@@ -1,22 +1,23 @@
-slot0 = class("SpringFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
-slot0.Id2EffectName = {
-	[70114.0] = "yanhua_xiaojiajia",
-	[70113.0] = "yanhua_xinxin",
-	[70112.0] = "yanhua_jiezhi",
-	[70111.0] = "yanhua_huangji",
-	[70110.0] = "yanhua_chuanmao",
-	[70109.0] = "yanhua_tutu",
-	[70108.0] = "yanhua_mofang",
-	[70107.0] = "yanhua_maomao",
-	[70106.0] = "yanhua_02",
-	[70105.0] = "yanhua_01",
-	[70118.0] = "yanhua_denglong",
-	[70117.0] = "yanhua_hongbao",
-	[70116.0] = "yanhua_Azurlane",
-	[70115.0] = "yanhua_2023"
+﻿local var_0_0 = class("SpringFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
+
+var_0_0.Id2EffectName = {
+	[70114] = "yanhua_xiaojiajia",
+	[70113] = "yanhua_xinxin",
+	[70112] = "yanhua_jiezhi",
+	[70111] = "yanhua_huangji",
+	[70110] = "yanhua_chuanmao",
+	[70109] = "yanhua_tutu",
+	[70108] = "yanhua_mofang",
+	[70107] = "yanhua_maomao",
+	[70106] = "yanhua_02",
+	[70105] = "yanhua_01",
+	[70118] = "yanhua_denglong",
+	[70117] = "yanhua_hongbao",
+	[70116] = "yanhua_Azurlane",
+	[70115] = "yanhua_2023"
 }
-slot0.FireworkRange = Vector2(300, 300)
-slot0.EffectPosLimit = {
+var_0_0.FireworkRange = Vector2(300, 300)
+var_0_0.EffectPosLimit = {
 	limitX = {
 		-700,
 		700
@@ -26,295 +27,314 @@ slot0.EffectPosLimit = {
 		500
 	}
 }
-slot0.EffectInterval = 1
-slot0.DelayPop = 2.5
-slot0.SFX_LIST = {
+var_0_0.EffectInterval = 1
+var_0_0.DelayPop = 2.5
+var_0_0.SFX_LIST = {
 	"event:/ui/firework1",
 	"event:/ui/firework2",
 	"event:/ui/firework3",
 	"event:/ui/firework4"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SpringFestival2023UI"
 end
 
-slot0.edge2area = {
+var_0_0.edge2area = {
 	default = "map_middle"
 }
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0._map = slot0:findTF("map")
+function var_0_0.init(arg_2_0)
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0._map = arg_2_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["map_" .. go(slot5).name] = slot5
+	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
+		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
+		local var_2_1 = go(var_2_0).name
+
+		arg_2_0["map_" .. var_2_1] = var_2_0
 	end
 
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0._upper = slot0:findTF("upper")
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0._upper = arg_2_0:findTF("upper")
 
-	for slot4 = 0, slot0._upper.childCount - 1 do
-		slot5 = slot0._upper:GetChild(slot4)
-		slot0["upper_" .. go(slot5).name] = slot5
+	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
+		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
+		local var_2_3 = go(var_2_2).name
+
+		arg_2_0["upper_" .. var_2_3] = var_2_2
 	end
 
-	slot0.tipTfs = _.map(_.range(slot0._upper.childCount), function (slot0)
-		slot1 = uv0._upper:GetChild(slot0 - 1)
+	arg_2_0.tipTfs = _.map(_.range(arg_2_0._upper.childCount), function(arg_3_0)
+		local var_3_0 = arg_2_0._upper:GetChild(arg_3_0 - 1)
 
 		return {
-			name = slot1.name,
-			trans = slot1:Find("tip")
+			name = var_3_0.name,
+			trans = var_3_0:Find("tip")
 		}
 	end)
-	slot0.fireworksTF = slot0:findTF("play_fireworks")
-	slot0.containers = {
-		slot0.map_front,
-		slot0.map_middle
+	arg_2_0.fireworksTF = arg_2_0:findTF("play_fireworks")
+	arg_2_0.containers = {
+		arg_2_0.map_front,
+		arg_2_0.map_middle
 	}
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestival2023Graph"))
-	slot0.loader = AutoLoader.New()
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestival2023Graph"))
+	arg_2_0.loader = AutoLoader.New()
 end
 
-function slot0.didEnter(slot0)
-	if slot0.contextData.openFireworkLayer then
-		slot0.contextData.openFireworkLayer = nil
+function var_0_0.didEnter(arg_4_0)
+	if arg_4_0.contextData.openFireworkLayer then
+		arg_4_0.contextData.openFireworkLayer = nil
 
-		slot0:OpenFireworkLayer()
+		arg_4_0:OpenFireworkLayer()
 	end
 
-	onButton(slot0, slot0:findTF("top/return_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_4_0, arg_4_0:findTF("top/return_btn"), function()
+		arg_4_0:emit(var_0_0.ON_BACK)
 	end)
-	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_4_0, arg_4_0:findTF("top/return_main_btn"), function()
+		arg_4_0:emit(var_0_0.ON_HOME)
 	end)
-	onButton(slot0, slot0:findTF("top/help_btn"), function ()
+	onButton(arg_4_0, arg_4_0:findTF("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie2023.tip
 		})
 	end)
-	onButton(slot0, slot0:findTF("top/firework_btn"), function ()
-		uv0:OpenFireworkLayer()
+	onButton(arg_4_0, arg_4_0:findTF("top/firework_btn"), function()
+		arg_4_0:OpenFireworkLayer()
 	end)
-	onButton(slot0, slot0.fireworksTF, function ()
-		uv0:StopPlayFireworks()
+	onButton(arg_4_0, arg_4_0.fireworksTF, function()
+		arg_4_0:StopPlayFireworks()
 	end)
-	slot0:BindItemSkinShop()
-	slot0:BindItemBuildShip()
-	slot0:InitStudents(getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_SPRING_FESTIVAL_2023) and slot1.id, 2, 3)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "xiaoyouxi", function ()
+	arg_4_0:BindItemSkinShop()
+	arg_4_0:BindItemBuildShip()
+
+	local var_4_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_SPRING_FESTIVAL_2023)
+
+	arg_4_0:InitStudents(var_4_0 and var_4_0.id, 2, 3)
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "xiaoyouxi", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 48)
 	end)
 
-	slot2 = getProxy(ActivityProxy):getActivityById(ActivityConst.FIREWORK_PT_ID)
+	local var_4_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FIREWORK_PT_ID)
 
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "yanhua", function ()
-		uv0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.ACTIVITY, {
-			id = uv1 and uv1.id
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "yanhua", function()
+		arg_4_0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.ACTIVITY, {
+			id = var_4_1 and var_4_1.id
 		})
 	end)
 
-	slot3 = getProxy(ActivityProxy):getActivityById(ActivityConst.ACTIVITY_COUPLET)
+	local var_4_2 = getProxy(ActivityProxy):getActivityById(ActivityConst.ACTIVITY_COUPLET)
 
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "duilian", function ()
-		uv0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.ACTIVITY, {
-			id = uv1 and uv1.id
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "duilian", function()
+		arg_4_0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.ACTIVITY, {
+			id = var_4_2 and var_4_2.id
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "jiulou", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "jiulou", function()
+		arg_4_0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
 			mediator = RedPacketMediator,
 			viewComponent = RedPacketLayer,
-			onRemoved = function ()
-				uv0:PlayBGM()
+			onRemoved = function()
+				arg_4_0:PlayBGM()
 			end
 		}))
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "huituriji", function ()
-		uv0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.COLORING)
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "huituriji", function()
+		arg_4_0:emit(SpringFestival2023Mediator.GO_SCENE, SCENE.COLORING)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "huazhongshijie", function ()
-		if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE) or slot0:isEnd() then
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "huazhongshijie", function()
+		local var_16_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE)
+
+		if not var_16_0 or var_16_0:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
+		local var_16_1 = var_16_0:getConfig("config_client").linkActID
+
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = slot0:getConfig("config_client").linkActID
+			id = var_16_1
 		})
 	end)
-	slot0:UpdateView()
-	slot0:AutoFitScreen()
+	arg_4_0:UpdateView()
+	arg_4_0:AutoFitScreen()
 end
 
-function slot0.OpenFireworkLayer(slot0)
-	slot0:emit(SpringFestival2023Mediator.GO_SUBLAYER, Context.New({
+function var_0_0.OpenFireworkLayer(arg_17_0)
+	arg_17_0:emit(SpringFestival2023Mediator.GO_SUBLAYER, Context.New({
 		mediator = FireworkPanelMediator,
 		viewComponent = FireworkPanelLayer
 	}))
 end
 
-function slot0.PlayFireworks(slot0, slot1)
-	if not slot1 or #slot1 == 0 then
+function var_0_0.PlayFireworks(arg_18_0, arg_18_1)
+	if not arg_18_1 or #arg_18_1 == 0 then
 		return
 	end
 
-	setActive(slot0._upper, false)
-	setActive(slot0.top, false)
-	eachChild(slot0.fireworksTF, function (slot0)
-		setActive(slot0, false)
+	setActive(arg_18_0._upper, false)
+	setActive(arg_18_0.top, false)
+	eachChild(arg_18_0.fireworksTF, function(arg_19_0)
+		setActive(arg_19_0, false)
 	end)
-	setActive(slot0.fireworksTF, true)
-	slot0:StopFireworksTimer()
+	setActive(arg_18_0.fireworksTF, true)
+	arg_18_0:StopFireworksTimer()
 
-	slot0.fireworks = slot1
-	slot0.index = 1
+	arg_18_0.fireworks = arg_18_1
+	arg_18_0.index = 1
 
-	slot0:PlayerOneFirework()
+	arg_18_0:PlayerOneFirework()
 
-	if #slot1 > 1 then
-		slot0.fireworksTimer = Timer.New(function ()
-			uv0:PlayerOneFirework()
-		end, uv0.EffectInterval, #slot1 - 1)
+	if #arg_18_1 > 1 then
+		arg_18_0.fireworksTimer = Timer.New(function()
+			arg_18_0:PlayerOneFirework()
+		end, var_0_0.EffectInterval, #arg_18_1 - 1)
 
-		slot0.fireworksTimer:Start()
+		arg_18_0.fireworksTimer:Start()
 	end
 end
 
-function slot0.PlayerOneFirework(slot0)
-	if slot0.index == #slot0.fireworks then
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			uv0:StopPlayFireworks()
-		end, uv0.DelayPop, nil)
+function var_0_0.PlayerOneFirework(arg_21_0)
+	if arg_21_0.index == #arg_21_0.fireworks then
+		arg_21_0:managedTween(LeanTween.delayedCall, function()
+			arg_21_0:StopPlayFireworks()
+		end, var_0_0.DelayPop, nil)
 	end
 
-	slot3 = math.random(#uv0.SFX_LIST)
+	local var_21_0 = arg_21_0.fireworks[arg_21_0.index]
+	local var_21_1 = arg_21_0.fireworksTF:Find(tostring(var_21_0))
+	local var_21_2 = math.random(#var_0_0.SFX_LIST)
 
-	if slot0.fireworksTF:Find(tostring(slot0.fireworks[slot0.index])) then
-		setLocalPosition(slot2, slot0:GetFireworkPos())
-		setActive(slot2, true)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_LIST[slot3])
+	if var_21_1 then
+		setLocalPosition(var_21_1, arg_21_0:GetFireworkPos())
+		setActive(var_21_1, true)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_0.SFX_LIST[var_21_2])
 	else
-		slot4 = slot0.loader
+		arg_21_0.loader:GetPrefab("ui/" .. var_0_0.Id2EffectName[var_21_0], "", function(arg_23_0)
+			pg.ViewUtils.SetSortingOrder(arg_23_0, 1)
 
-		slot4:GetPrefab("ui/" .. uv0.Id2EffectName[slot1], "", function (slot0)
-			pg.ViewUtils.SetSortingOrder(slot0, 1)
+			arg_23_0.name = var_21_0
 
-			slot0.name = uv0
-
-			setParent(slot0, uv1.fireworksTF)
-			setLocalPosition(slot0, uv1:GetFireworkPos())
-			setActive(slot0, true)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2.SFX_LIST[uv3])
+			setParent(arg_23_0, arg_21_0.fireworksTF)
+			setLocalPosition(arg_23_0, arg_21_0:GetFireworkPos())
+			setActive(arg_23_0, true)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_0.SFX_LIST[var_21_2])
 		end)
 	end
 
-	slot0.index = slot0.index + 1
+	arg_21_0.index = arg_21_0.index + 1
 end
 
-function slot0.GetFireworkPos(slot0)
-	slot1 = Vector2(0, 0)
+function var_0_0.GetFireworkPos(arg_24_0)
+	local var_24_0 = Vector2(0, 0)
 
-	if slot0.lastPos then
-		slot2 = Vector2(slot0.lastPos.x, slot0.lastPos.y)
-		slot3 = math.abs(slot2.x - slot0.lastPos.x)
-		slot4 = math.abs(slot2.y - slot0.lastPos.y)
+	if arg_24_0.lastPos then
+		local var_24_1 = Vector2(arg_24_0.lastPos.x, arg_24_0.lastPos.y)
+		local var_24_2 = math.abs(var_24_1.x - arg_24_0.lastPos.x)
+		local var_24_3 = math.abs(var_24_1.y - arg_24_0.lastPos.y)
 
-		while slot3 < uv0.FireworkRange.x / 2 and slot4 < uv0.FireworkRange.y or slot4 < uv0.FireworkRange.y / 2 and slot3 < uv0.FireworkRange.x do
-			slot2.x = math.random(uv0.EffectPosLimit.limitX[1], uv0.EffectPosLimit.limitX[2])
-			slot2.y = math.random(uv0.EffectPosLimit.limitY[1], uv0.EffectPosLimit.limitY[2])
-			slot3 = math.abs(slot2.x - slot0.lastPos.x)
-			slot4 = math.abs(slot2.y - slot0.lastPos.y)
+		while var_24_2 < var_0_0.FireworkRange.x / 2 and var_24_3 < var_0_0.FireworkRange.y or var_24_3 < var_0_0.FireworkRange.y / 2 and var_24_2 < var_0_0.FireworkRange.x do
+			var_24_1.x = math.random(var_0_0.EffectPosLimit.limitX[1], var_0_0.EffectPosLimit.limitX[2])
+			var_24_1.y = math.random(var_0_0.EffectPosLimit.limitY[1], var_0_0.EffectPosLimit.limitY[2])
+			var_24_2 = math.abs(var_24_1.x - arg_24_0.lastPos.x)
+			var_24_3 = math.abs(var_24_1.y - arg_24_0.lastPos.y)
 		end
 
-		slot1 = slot2
+		var_24_0 = var_24_1
 	else
-		slot1.x = math.random(uv0.EffectPosLimit.limitX[1], uv0.EffectPosLimit.limitX[2])
-		slot1.y = math.random(uv0.EffectPosLimit.limitY[1], uv0.EffectPosLimit.limitY[2])
+		var_24_0.x = math.random(var_0_0.EffectPosLimit.limitX[1], var_0_0.EffectPosLimit.limitX[2])
+		var_24_0.y = math.random(var_0_0.EffectPosLimit.limitY[1], var_0_0.EffectPosLimit.limitY[2])
 	end
 
-	slot0.lastPos = slot1
+	arg_24_0.lastPos = var_24_0
 
-	return slot1
+	return var_24_0
 end
 
-function slot0.StopFireworksTimer(slot0)
-	if slot0.fireworksTimer then
-		slot0.fireworksTimer:Stop()
+function var_0_0.StopFireworksTimer(arg_25_0)
+	if arg_25_0.fireworksTimer then
+		arg_25_0.fireworksTimer:Stop()
 
-		slot0.fireworksTimer = nil
+		arg_25_0.fireworksTimer = nil
 	end
 end
 
-function slot0.StopPlayFireworks(slot0)
-	slot0:StopFireworksTimer()
+function var_0_0.StopPlayFireworks(arg_26_0)
+	arg_26_0:StopFireworksTimer()
 
-	slot0.fireworks = nil
-	slot0.index = nil
+	arg_26_0.fireworks = nil
+	arg_26_0.index = nil
 
-	setActive(slot0._upper, true)
-	setActive(slot0.top, true)
-	setActive(slot0.fireworksTF, false)
-	slot0:OpenFireworkLayer()
+	setActive(arg_26_0._upper, true)
+	setActive(arg_26_0.top, true)
+	setActive(arg_26_0.fireworksTF, false)
+	arg_26_0:OpenFireworkLayer()
 end
 
-function slot0.UpdateView(slot0)
-	_.each(slot0.tipTfs, function (slot0)
-		if slot0.trans then
-			setActive(slot0.trans, tobool(uv0.CheckTip(slot0.name)))
+function var_0_0.UpdateView(arg_27_0)
+	_.each(arg_27_0.tipTfs, function(arg_28_0)
+		if arg_28_0.trans then
+			setActive(arg_28_0.trans, tobool(var_0_0.CheckTip(arg_28_0.name)))
 		end
 	end)
 end
 
-function slot0.willExit(slot0)
-	slot0:clearStudents()
-	slot0:StopFireworksTimer()
-	slot0:cleanManagedTween()
-	slot0.loader:Clear()
+function var_0_0.willExit(arg_29_0)
+	arg_29_0:clearStudents()
+	arg_29_0:StopFireworksTimer()
+	arg_29_0:cleanManagedTween()
+	arg_29_0.loader:Clear()
 end
 
-function slot0.CheckTip(slot0)
-	slot1 = getProxy(ActivityProxy)
+function var_0_0.CheckTip(arg_30_0)
+	local var_30_0 = getProxy(ActivityProxy)
 
-	return switch(slot0, {
-		xiaoyouxi = function ()
+	return switch(arg_30_0, {
+		xiaoyouxi = function()
 			return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_SPRING_FESTIVAL_2023)
 		end,
-		huituriji = function ()
+		huituriji = function()
 			return getProxy(ColoringProxy):CheckTodayTip()
 		end,
-		huazhongshijie = function ()
-			return Activity.IsActivityReady(uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE))
+		huazhongshijie = function()
+			local var_33_0 = var_30_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE)
+
+			return Activity.IsActivityReady(var_33_0)
 		end,
-		jiulou = function ()
+		jiulou = function()
 			return RedPacketLayer.isShowRedPoint()
 		end,
-		yanhua = function ()
-			return Activity.IsActivityReady(uv0:getActivityById(ActivityConst.FIREWORK_PT_ID))
+		yanhua = function()
+			local var_35_0 = var_30_0:getActivityById(ActivityConst.FIREWORK_PT_ID)
+
+			return Activity.IsActivityReady(var_35_0)
 		end,
-		duilian = function ()
-			return Activity.IsActivityReady(uv0:getActivityById(ActivityConst.ACTIVITY_COUPLET))
+		duilian = function()
+			local var_36_0 = var_30_0:getActivityById(ActivityConst.ACTIVITY_COUPLET)
+
+			return Activity.IsActivityReady(var_36_0)
 		end
-	}, function ()
+	}, function()
 		return false
 	end)
 end
 
-function slot0.IsShowMainTip(slot0)
-	return _.any({
+function var_0_0.IsShowMainTip(arg_38_0)
+	local var_38_0 = {
 		"xiaoyouxi",
 		"huituriji",
 		"huazhongshijie",
 		"jiulou",
 		"yanhua",
 		"duilian"
-	}, function (slot0)
-		return tobool(uv0.CheckTip(slot0))
+	}
+
+	return _.any(var_38_0, function(arg_39_0)
+		return tobool(var_0_0.CheckTip(arg_39_0))
 	end)
 end
 
-return slot0
+return var_0_0

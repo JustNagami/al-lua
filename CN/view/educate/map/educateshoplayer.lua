@@ -1,246 +1,268 @@
-slot0 = class("EducateShopLayer", import("..base.EducateBaseUI"))
+﻿local var_0_0 = class("EducateShopLayer", import("..base.EducateBaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateShopUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.initData(slot0)
-	assert(slot0.contextData.shopId, "打开商店layer需要传入shopId")
+function var_0_0.initData(arg_3_0)
+	assert(arg_3_0.contextData.shopId, "打开商店layer需要传入shopId")
 
-	slot0.shopId = slot0.contextData.shopId
+	arg_3_0.shopId = arg_3_0.contextData.shopId
 end
 
-function slot0.findUI(slot0)
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+function var_0_0.findUI(arg_4_0)
+	arg_4_0.anim = arg_4_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_4_0.animEvent = arg_4_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	arg_4_0.animEvent:SetEndEvent(function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end)
 
-	slot0.windowTF = slot0:findTF("anim_root/window")
-	slot0.titleTF = slot0:findTF("title", slot0.windowTF)
+	arg_4_0.windowTF = arg_4_0:findTF("anim_root/window")
+	arg_4_0.titleTF = arg_4_0:findTF("title", arg_4_0.windowTF)
 
-	setText(slot0:findTF("Text", slot0.titleTF), i18n("word_shop"))
+	setText(arg_4_0:findTF("Text", arg_4_0.titleTF), i18n("word_shop"))
 
-	slot0.closeBtn = slot0:findTF("close_btn", slot0.titleTF)
-	slot0.discountTF = slot0:findTF("Text/discount", slot0.titleTF)
-	slot0.discountValueTF = slot0:findTF("Text", slot0.discountTF)
-	slot0.goodContent = slot0:findTF("view/content", slot0.windowTF)
-	slot0.goodUIList = UIItemList.New(slot0.goodContent, slot0:findTF("tpl", slot0.goodContent))
+	arg_4_0.closeBtn = arg_4_0:findTF("close_btn", arg_4_0.titleTF)
+	arg_4_0.discountTF = arg_4_0:findTF("Text/discount", arg_4_0.titleTF)
+	arg_4_0.discountValueTF = arg_4_0:findTF("Text", arg_4_0.discountTF)
+	arg_4_0.goodContent = arg_4_0:findTF("view/content", arg_4_0.windowTF)
+	arg_4_0.goodUIList = UIItemList.New(arg_4_0.goodContent, arg_4_0:findTF("tpl", arg_4_0.goodContent))
 
-	setText(slot0:findTF("tpl/sellout/Text", slot0.goodContent), i18n("word_sell_out"))
+	setText(arg_4_0:findTF("tpl/sellout/Text", arg_4_0.goodContent), i18n("word_sell_out"))
 
-	slot0.tipTF = slot0:findTF("tip", slot0.windowTF)
-	slot0.detailPanelTF = slot0:findTF("detail/content", slot0.windowTF)
-	slot0.detailEmptyTF = slot0:findTF("detail/empty", slot0.windowTF)
+	arg_4_0.tipTF = arg_4_0:findTF("tip", arg_4_0.windowTF)
+	arg_4_0.detailPanelTF = arg_4_0:findTF("detail/content", arg_4_0.windowTF)
+	arg_4_0.detailEmptyTF = arg_4_0:findTF("detail/empty", arg_4_0.windowTF)
 
-	setText(slot0:findTF("Text", slot0.detailEmptyTF), i18n("child_shop_empty_tip"))
+	setText(arg_4_0:findTF("Text", arg_4_0.detailEmptyTF), i18n("child_shop_empty_tip"))
 
-	slot0.detailName = slot0:findTF("title/Text", slot0.detailPanelTF)
-	slot0.detailDesc = slot0:findTF("desc", slot0.detailPanelTF)
-	slot0.detailIcon = slot0:findTF("icon", slot0.detailPanelTF)
-	slot0.detailAttrsTF = slot0:findTF("attrs", slot0.detailPanelTF)
+	arg_4_0.detailName = arg_4_0:findTF("title/Text", arg_4_0.detailPanelTF)
+	arg_4_0.detailDesc = arg_4_0:findTF("desc", arg_4_0.detailPanelTF)
+	arg_4_0.detailIcon = arg_4_0:findTF("icon", arg_4_0.detailPanelTF)
+	arg_4_0.detailAttrsTF = arg_4_0:findTF("attrs", arg_4_0.detailPanelTF)
 
-	setActive(slot0:findTF("count", slot0.detailPanelTF), false)
+	setActive(arg_4_0:findTF("count", arg_4_0.detailPanelTF), false)
 
-	slot0.countValueTF = slot0:findTF("count/bg/Text", slot0.detailPanelTF)
-	slot0.addCountBtn = slot0:findTF("count/add", slot0.detailPanelTF)
-	slot0.reduceCountBtn = slot0:findTF("count/reduce", slot0.detailPanelTF)
-	slot0.maxCountBtn = slot0:findTF("count/max", slot0.detailPanelTF)
-	slot0.priceValue = slot0:findTF("price/value/Text", slot0.detailPanelTF)
+	arg_4_0.countValueTF = arg_4_0:findTF("count/bg/Text", arg_4_0.detailPanelTF)
+	arg_4_0.addCountBtn = arg_4_0:findTF("count/add", arg_4_0.detailPanelTF)
+	arg_4_0.reduceCountBtn = arg_4_0:findTF("count/reduce", arg_4_0.detailPanelTF)
+	arg_4_0.maxCountBtn = arg_4_0:findTF("count/max", arg_4_0.detailPanelTF)
+	arg_4_0.priceValue = arg_4_0:findTF("price/value/Text", arg_4_0.detailPanelTF)
 
-	setText(slot0:findTF("price/title", slot0.detailPanelTF), i18n("child_shop_price_title"))
+	setText(arg_4_0:findTF("price/title", arg_4_0.detailPanelTF), i18n("child_shop_price_title"))
 
-	slot0.purchaseBtn = slot0:findTF("purchase_btn", slot0.detailPanelTF)
+	arg_4_0.purchaseBtn = arg_4_0:findTF("purchase_btn", arg_4_0.detailPanelTF)
 
-	setText(slot0:findTF("Text", slot0.purchaseBtn), i18n("word_buy"))
+	setText(arg_4_0:findTF("Text", arg_4_0.purchaseBtn), i18n("word_buy"))
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0:findTF("anim_root/bg"), function ()
-		uv0:_close()
+function var_0_0.addListener(arg_6_0)
+	onButton(arg_6_0, arg_6_0:findTF("anim_root/bg"), function()
+		arg_6_0:_close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:_close()
+	onButton(arg_6_0, arg_6_0.closeBtn, function()
+		arg_6_0:_close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.addCountBtn, function ()
-		if uv0:GetMaxCount() <= uv0.countValue then
+	onButton(arg_6_0, arg_6_0.addCountBtn, function()
+		if arg_6_0.countValue >= arg_6_0:GetMaxCount() then
 			return
 		end
 
-		uv0.countValue = uv0.countValue + 1
+		arg_6_0.countValue = arg_6_0.countValue + 1
 
-		uv0:updateDetailPrice()
+		arg_6_0:updateDetailPrice()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.reduceCountBtn, function ()
-		if uv0.countValue <= 1 then
+	onButton(arg_6_0, arg_6_0.reduceCountBtn, function()
+		if arg_6_0.countValue <= 1 then
 			return
 		end
 
-		uv0.countValue = uv0.countValue - 1
+		arg_6_0.countValue = arg_6_0.countValue - 1
 
-		uv0:updateDetailPrice()
+		arg_6_0:updateDetailPrice()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.maxCountBtn, function ()
-		if uv0.countValue == uv0:GetMaxCount() then
+	onButton(arg_6_0, arg_6_0.maxCountBtn, function()
+		local var_11_0 = arg_6_0:GetMaxCount()
+
+		if arg_6_0.countValue == var_11_0 then
 			return
 		end
 
-		uv0.countValue = slot0
+		arg_6_0.countValue = var_11_0
 
-		uv0:updateDetailPrice()
+		arg_6_0:updateDetailPrice()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.purchaseBtn, function ()
-		if uv0:GetMaxCount() == 0 then
+	onButton(arg_6_0, arg_6_0.purchaseBtn, function()
+		if arg_6_0:GetMaxCount() == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 			return
 		end
 
-		uv0:emit(EducateShopMediator.ON_SHOPPING, {
-			shopId = uv0.shopId,
+		arg_6_0:emit(EducateShopMediator.ON_SHOPPING, {
+			shopId = arg_6_0.shopId,
 			goods = {
 				{
-					id = uv0.goods[uv0.selectedIndex].id,
-					num = uv0.countValue
+					id = arg_6_0.goods[arg_6_0.selectedIndex].id,
+					num = arg_6_0.countValue
 				}
 			}
 		})
 	end, SFX_PANEL)
-
-	slot1 = slot0.goodUIList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateGoodItem(slot1, slot2)
+	arg_6_0.goodUIList:make(function(arg_13_0, arg_13_1, arg_13_2)
+		if arg_13_0 == UIItemList.EventUpdate then
+			arg_6_0:updateGoodItem(arg_13_1, arg_13_2)
 		end
 	end)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
-		groupName = slot0:getGroupNameFromData(),
-		weight = slot0:getWeightFromData() + 2
+function var_0_0.didEnter(arg_14_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_14_0._tf, {
+		groupName = arg_14_0:getGroupNameFromData(),
+		weight = arg_14_0:getWeightFromData() + 2
 	})
 
-	slot0.selectedIndex = 1
-	slot0.countValue = 1
+	arg_14_0.selectedIndex = 1
+	arg_14_0.countValue = 1
 
-	slot0:refreshShops()
+	arg_14_0:refreshShops()
 end
 
-function slot0.updateGoodItem(slot0, slot1, slot2)
-	setActive(slot0:findTF("discount", slot2), slot0.isDiscount)
-	setText(slot0:findTF("discount/Text", slot2), "-" .. slot0.discountValue)
+function var_0_0.updateGoodItem(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_1 + 1
+	local var_15_1 = arg_15_0.goods[var_15_0]
 
-	slot5 = slot0.goods[slot1 + 1]:GetPrice()
+	setActive(arg_15_0:findTF("discount", arg_15_2), arg_15_0.isDiscount)
+	setText(arg_15_0:findTF("discount/Text", arg_15_2), "-" .. arg_15_0.discountValue)
 
-	setActive(slot0:findTF("bottom/price/price_original", slot2), slot0.isDiscount)
-	setText(slot0:findTF("bottom/price/price_original", slot2), slot5)
-	setText(slot0:findTF("bottom/price/price_final", slot2), slot0.isDiscount and slot4:GetPrice(slot0.discountRatio) or slot5)
-	EducateHelper.UpdateDropShow(slot0:findTF("item", slot2), slot4:GetShowInfo())
-	setActive(slot0:findTF("sellout", slot2), not slot4:CanBuy())
-	setActive(slot0:findTF("selected", slot2), slot3 == slot0.selectedIndex)
-	onButton(slot0, slot2, function ()
-		if uv0 == uv1.selectedIndex then
+	local var_15_2 = var_15_1:GetPrice()
+	local var_15_3 = arg_15_0.isDiscount and var_15_1:GetPrice(arg_15_0.discountRatio) or var_15_2
+
+	setActive(arg_15_0:findTF("bottom/price/price_original", arg_15_2), arg_15_0.isDiscount)
+	setText(arg_15_0:findTF("bottom/price/price_original", arg_15_2), var_15_2)
+	setText(arg_15_0:findTF("bottom/price/price_final", arg_15_2), var_15_3)
+
+	local var_15_4 = var_15_1:GetShowInfo()
+
+	EducateHelper.UpdateDropShow(arg_15_0:findTF("item", arg_15_2), var_15_4)
+	setActive(arg_15_0:findTF("sellout", arg_15_2), not var_15_1:CanBuy())
+	setActive(arg_15_0:findTF("selected", arg_15_2), var_15_0 == arg_15_0.selectedIndex)
+	onButton(arg_15_0, arg_15_2, function()
+		if var_15_0 == arg_15_0.selectedIndex then
 			return
 		end
 
-		uv1.selectedIndex = uv0
+		arg_15_0.selectedIndex = var_15_0
 
-		for slot3 = 0, uv1.goodContent.childCount - 1 do
-			setActive(uv1:findTF("selected", uv1.goodContent:GetChild(slot3)), slot3 + 1 == uv1.selectedIndex)
+		for iter_16_0 = 0, arg_15_0.goodContent.childCount - 1 do
+			local var_16_0 = arg_15_0.goodContent:GetChild(iter_16_0)
+
+			setActive(arg_15_0:findTF("selected", var_16_0), iter_16_0 + 1 == arg_15_0.selectedIndex)
 		end
 
-		uv1:updateDetail()
+		arg_15_0:updateDetail()
 	end, SFX_PANEL)
 end
 
-function slot0.refreshShops(slot0)
-	slot0.shopProxy = getProxy(EducateProxy):GetShopProxy()
-	slot0.shop = slot0.shopProxy:GetShopWithId(slot0.shopId)
-	slot0.goods = slot0.shop:GetGoods(getProxy(EducateProxy):GetCurTime())
-	slot0.char = getProxy(EducateProxy):GetCharData()
-	slot0.isDiscount = slot0.shopProxy:IsDiscountById(slot0.shopId)
-	slot0.discountRatio = slot0.shopProxy:GetDiscountById(slot0.shopId)
-	slot0.discountValue = slot0.isDiscount and slot0.discountRatio / 100 .. "%" or ""
+function var_0_0.refreshShops(arg_17_0)
+	local var_17_0 = getProxy(EducateProxy):GetCurTime()
 
-	setActive(slot0.discountTF, slot0.isDiscount)
-	setText(slot0.discountValueTF, slot0.discountValue)
-	setText(slot0.tipTF, slot0.shop:GetShopTip())
-	slot0.goodUIList:align(#slot0.goods)
+	arg_17_0.shopProxy = getProxy(EducateProxy):GetShopProxy()
+	arg_17_0.shop = arg_17_0.shopProxy:GetShopWithId(arg_17_0.shopId)
+	arg_17_0.goods = arg_17_0.shop:GetGoods(var_17_0)
+	arg_17_0.char = getProxy(EducateProxy):GetCharData()
+	arg_17_0.isDiscount = arg_17_0.shopProxy:IsDiscountById(arg_17_0.shopId)
+	arg_17_0.discountRatio = arg_17_0.shopProxy:GetDiscountById(arg_17_0.shopId)
+	arg_17_0.discountValue = arg_17_0.isDiscount and arg_17_0.discountRatio / 100 .. "%" or ""
 
-	slot2 = underscore.detect(slot0.goods, function (slot0)
-		return slot0:GetRemainCnt() > 0
+	setActive(arg_17_0.discountTF, arg_17_0.isDiscount)
+	setText(arg_17_0.discountValueTF, arg_17_0.discountValue)
+	setText(arg_17_0.tipTF, arg_17_0.shop:GetShopTip())
+	arg_17_0.goodUIList:align(#arg_17_0.goods)
+
+	local var_17_1 = underscore.detect(arg_17_0.goods, function(arg_18_0)
+		return arg_18_0:GetRemainCnt() > 0
 	end)
 
-	setActive(slot0.detailEmptyTF, not slot2)
-	setActive(slot0.detailPanelTF, slot2)
+	setActive(arg_17_0.detailEmptyTF, not var_17_1)
+	setActive(arg_17_0.detailPanelTF, var_17_1)
 
-	if slot2 then
-		slot0:updateDetail()
+	if var_17_1 then
+		arg_17_0:updateDetail()
 	end
 end
 
-function slot0.updateDetail(slot0)
-	slot0.countValue = 1
-	slot2 = slot0.goods[slot0.selectedIndex]:GetShowInfo()
-	slot3 = pg.child_item[slot2.id]
+function var_0_0.updateDetail(arg_19_0)
+	arg_19_0.countValue = 1
 
-	setText(slot0.detailName, slot3.name)
-	setText(slot0.detailDesc, slot3.desc)
-	setText(slot0.countValueTF, slot0.countValue)
-	LoadImageSpriteAsync("educateprops/" .. slot3.icon, slot0.detailIcon)
-	slot0:updateDetailAttrs(EducateHelper.GetItemAddDrops(slot2))
-	slot0:updateDetailPrice()
+	local var_19_0 = arg_19_0.goods[arg_19_0.selectedIndex]:GetShowInfo()
+	local var_19_1 = pg.child_item[var_19_0.id]
+
+	setText(arg_19_0.detailName, var_19_1.name)
+	setText(arg_19_0.detailDesc, var_19_1.desc)
+	setText(arg_19_0.countValueTF, arg_19_0.countValue)
+	LoadImageSpriteAsync("educateprops/" .. var_19_1.icon, arg_19_0.detailIcon)
+
+	local var_19_2 = EducateHelper.GetItemAddDrops(var_19_0)
+
+	arg_19_0:updateDetailAttrs(var_19_2)
+	arg_19_0:updateDetailPrice()
 end
 
-function slot0.updateDetailAttrs(slot0, slot1)
-	slot2 = #slot1 > 2 and 2 or #slot1
+function var_0_0.updateDetailAttrs(arg_20_0, arg_20_1)
+	local var_20_0
 
-	for slot6 = 1, slot0.detailAttrsTF.childCount do
-		slot8 = slot0.detailAttrsTF:GetChild(slot6 - 1)
+	var_20_0 = #arg_20_1 > 2 and 2 or #arg_20_1
 
-		if slot1[slot6] then
-			setActive(slot8, true)
-			EducateHelper.UpdateDropShowForAttr(slot8, slot7)
+	for iter_20_0 = 1, arg_20_0.detailAttrsTF.childCount do
+		local var_20_1 = arg_20_1[iter_20_0]
+		local var_20_2 = arg_20_0.detailAttrsTF:GetChild(iter_20_0 - 1)
+
+		if var_20_1 then
+			setActive(var_20_2, true)
+			EducateHelper.UpdateDropShowForAttr(var_20_2, var_20_1)
 		else
-			setActive(slot8, false)
+			setActive(var_20_2, false)
 		end
 	end
 end
 
-function slot0.updateDetailPrice(slot0)
-	setText(slot0.countValueTF, slot0.countValue)
-	setText(slot0.priceValue, slot0.goods[slot0.selectedIndex]:GetCost(slot0.discountRatio).num * slot0.countValue)
-	setGray(slot0.purchaseBtn, slot0:GetMaxCount() == 0, true)
+function var_0_0.updateDetailPrice(arg_21_0)
+	setText(arg_21_0.countValueTF, arg_21_0.countValue)
+
+	local var_21_0 = arg_21_0.goods[arg_21_0.selectedIndex]:GetCost(arg_21_0.discountRatio)
+
+	setText(arg_21_0.priceValue, var_21_0.num * arg_21_0.countValue)
+	setGray(arg_21_0.purchaseBtn, arg_21_0:GetMaxCount() == 0, true)
 end
 
-function slot0.GetMaxCount(slot0)
-	slot1 = slot0.goods[slot0.selectedIndex]
-	slot3 = slot1:GetCost(slot0.discountRatio)
+function var_0_0.GetMaxCount(arg_22_0)
+	local var_22_0 = arg_22_0.goods[arg_22_0.selectedIndex]
+	local var_22_1 = var_22_0:GetRemainCnt()
+	local var_22_2 = var_22_0:GetCost(arg_22_0.discountRatio)
+	local var_22_3 = math.floor(arg_22_0.char:GetResById(var_22_2.id) / var_22_2.num)
 
-	return math.min(slot1:GetRemainCnt(), math.floor(slot0.char:GetResById(slot3.id) / slot3.num))
+	return math.min(var_22_1, var_22_3)
 end
 
-function slot0._close(slot0)
-	slot0.anim:Play("anim_educate_shop_out")
+function var_0_0._close(arg_23_0)
+	arg_23_0.anim:Play("anim_educate_shop_out")
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:_close()
+function var_0_0.onBackPressed(arg_24_0)
+	arg_24_0:_close()
 end
 
-function slot0.willExit(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_25_0)
+	arg_25_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_25_0._tf)
 end
 
-return slot0
+return var_0_0

@@ -1,70 +1,76 @@
-function printf(slot0, ...)
-	print(string.format(tostring(slot0), ...))
+﻿function printf(arg_1_0, ...)
+	print(string.format(tostring(arg_1_0), ...))
 end
 
-function AssureTable(slot0)
-	if type(slot0) ~= "table" then
-		slot0 = {}
+function AssureTable(arg_2_0)
+	if type(arg_2_0) ~= "table" then
+		arg_2_0 = {}
 	end
 
-	return slot0
+	return arg_2_0
 end
 
-function checknumber(slot0, slot1)
-	return tonumber(slot0, slot1) or 0
+function checknumber(arg_3_0, arg_3_1)
+	return tonumber(arg_3_0, arg_3_1) or 0
 end
 
-function math.round(slot0)
-	return math.floor(checknumber(slot0) + 0.5)
+function math.round(arg_4_0)
+	arg_4_0 = checknumber(arg_4_0)
+
+	return math.floor(arg_4_0 + 0.5)
 end
 
-function checkint(slot0)
-	return math.round(checknumber(slot0))
+function checkint(arg_5_0)
+	return math.round(checknumber(arg_5_0))
 end
 
-function handler(slot0, slot1)
-	return function (...)
-		return uv0(uv1, ...)
-	end
-end
-
-function handlerArg1(slot0, slot1, slot2)
-	return function (...)
-		return uv0(uv1, uv2, ...)
+function handler(arg_6_0, arg_6_1)
+	return function(...)
+		return arg_6_1(arg_6_0, ...)
 	end
 end
 
-slot0 = print
-slot1 = table.concat
-slot2 = table.insert
-slot3 = string.rep
-slot4 = type
-slot5 = pairs
-slot6 = tostring
-slot7 = next
+function handlerArg1(arg_8_0, arg_8_1, arg_8_2)
+	return function(...)
+		return arg_8_1(arg_8_0, arg_8_2, ...)
+	end
+end
 
-function print_r(slot0)
-	slot1 = {
-		[slot0] = "."
+local var_0_0 = print
+local var_0_1 = table.concat
+local var_0_2 = table.insert
+local var_0_3 = string.rep
+local var_0_4 = type
+local var_0_5 = pairs
+local var_0_6 = tostring
+local var_0_7 = next
+
+function print_r(arg_10_0)
+	local var_10_0 = {
+		[arg_10_0] = "."
 	}
 
-	uv7((function (slot0, slot1, slot2)
-		slot3 = {}
+	local function var_10_1(arg_11_0, arg_11_1, arg_11_2)
+		local var_11_0 = {}
 
-		for slot7, slot8 in uv0(slot0) do
-			slot9 = uv1(slot7)
+		for iter_11_0, iter_11_1 in var_0_5(arg_11_0) do
+			local var_11_1 = var_0_6(iter_11_0)
 
-			if uv2[slot8] then
-				uv3(slot3, "+" .. slot9 .. " {" .. uv2[slot8] .. "}")
-			elseif uv4(slot8) == "table" then
-				uv2[slot8] = slot2 .. "." .. slot9
+			if var_10_0[iter_11_1] then
+				var_0_2(var_11_0, "+" .. var_11_1 .. " {" .. var_10_0[iter_11_1] .. "}")
+			elseif var_0_4(iter_11_1) == "table" then
+				local var_11_2 = arg_11_2 .. "." .. var_11_1
 
-				uv3(slot3, "+" .. slot9 .. uv5(slot8, slot1 .. (uv6(slot0, slot7) and "|" or " ") .. uv7(" ", #slot9), slot10))
+				var_10_0[iter_11_1] = var_11_2
+
+				var_0_2(var_11_0, "+" .. var_11_1 .. var_10_1(iter_11_1, arg_11_1 .. (var_0_7(arg_11_0, iter_11_0) and "|" or " ") .. var_0_3(" ", #var_11_1), var_11_2))
 			else
-				uv3(slot3, "+" .. slot9 .. " [" .. uv1(slot8) .. "]")
+				var_0_2(var_11_0, "+" .. var_11_1 .. " [" .. var_0_6(iter_11_1) .. "]")
 			end
 		end
 
-		return uv8(slot3, "\n" .. slot1)
-	end)(slot0, "", ""))
+		return var_0_1(var_11_0, "\n" .. arg_11_1)
+	end
+
+	var_0_0(var_10_1(arg_10_0, "", ""))
 end

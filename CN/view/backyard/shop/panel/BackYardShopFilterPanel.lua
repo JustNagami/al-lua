@@ -1,89 +1,104 @@
-slot0 = class("BackYardShopFilterPanel", import("...Decoration.panles.BackYardDecorationFilterPanel"))
+﻿local var_0_0 = class("BackYardShopFilterPanel", import("...Decoration.panles.BackYardDecorationFilterPanel"))
 
-function slot0.SortForDecorate(slot0, slot1, slot2)
-	slot3 = slot2[1]
-	slot4 = slot2[2]
-	slot5 = slot2[3]
+function var_0_0.SortForDecorate(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = arg_1_2[1]
+	local var_1_1 = arg_1_2[2]
+	local var_1_2 = arg_1_2[3]
 
-	function slot6(slot0)
-		if slot0:getConfig("new") == -1 then
+	local function var_1_3(arg_2_0)
+		if arg_2_0:getConfig("new") == -1 then
 			return 0
-		elseif slot0:canPurchaseByGem() and not slot0:canPurchaseByDormMoeny() then
+		elseif arg_2_0:canPurchaseByGem() and not arg_2_0:canPurchaseByDormMoeny() then
 			return 1
-		elseif slot0:canPurchaseByGem() and slot0:canPurchaseByDormMoeny() then
+		elseif arg_2_0:canPurchaseByGem() and arg_2_0:canPurchaseByDormMoeny() then
 			return 3
-		elseif slot0:canPurchaseByDormMoeny() then
+		elseif arg_2_0:canPurchaseByDormMoeny() then
 			return 4
 		else
 			return 5
 		end
 	end
 
-	function slot7(slot0)
-		slot1 = pg.furniture_shop_template[slot0.configId].time
+	local function var_1_4(arg_3_0)
+		local var_3_0 = pg.furniture_shop_template[arg_3_0.configId].time
 
-		if slot0:getConfig("new") > 0 then
+		if arg_3_0:getConfig("new") > 0 then
 			return 4
-		elseif slot1 ~= "always" then
+		elseif var_3_0 ~= "always" then
 			return 3
-		elseif slot1 == "always" then
+		elseif var_3_0 == "always" then
 			return 2
 		else
 			return 1
 		end
 	end
 
-	function uv0.SortByDefault1(slot0, slot1)
-		if uv0(slot0) == uv0(slot1) then
-			if uv1(slot0) == uv1(slot1) then
-				return slot0.id < slot1.id
+	function var_0_0.SortByDefault1(arg_4_0, arg_4_1)
+		local var_4_0 = var_1_3(arg_4_0)
+		local var_4_1 = var_1_3(arg_4_1)
+
+		if var_4_0 == var_4_1 then
+			local var_4_2 = var_1_4(arg_4_0)
+			local var_4_3 = var_1_4(arg_4_1)
+
+			if var_4_2 == var_4_3 then
+				return arg_4_0.id < arg_4_1.id
 			else
-				return slot4 < slot5
+				return var_4_2 < var_4_3
 			end
 		else
-			return slot2 < slot3
+			return var_4_0 < var_4_1
 		end
 	end
 
-	function uv0.SortByDefault2(slot0, slot1)
-		if uv0(slot0) == uv0(slot1) then
-			if uv1(slot0) == uv1(slot1) then
-				return slot1.id < slot0.id
+	function var_0_0.SortByDefault2(arg_5_0, arg_5_1)
+		local var_5_0 = var_1_3(arg_5_0)
+		local var_5_1 = var_1_3(arg_5_1)
+
+		if var_5_0 == var_5_1 then
+			local var_5_2 = var_1_4(arg_5_0)
+			local var_5_3 = var_1_4(arg_5_1)
+
+			if var_5_2 == var_5_3 then
+				return arg_5_0.id > arg_5_1.id
 			else
-				return slot5 < slot4
+				return var_5_3 < var_5_2
 			end
 		else
-			return slot2 < slot3
+			return var_5_0 < var_5_1
 		end
 	end
 
-	if (slot0:canPurchase() and 1 or 0) == (slot1:canPurchase() and 1 or 0) then
-		if slot3 == uv0.SORT_MODE.BY_DEFAULT then
-			return uv0["SortByDefault" .. slot5](slot0, slot1)
-		elseif slot3 == uv0.SORT_MODE.BY_FUNC then
-			return uv0.SORT_BY_FUNC(slot0, slot1, slot4, slot5, function ()
-				return uv0["SortByDefault" .. uv1](uv2, uv3)
+	local var_1_5 = arg_1_0:canPurchase() and 1 or 0
+	local var_1_6 = arg_1_1:canPurchase() and 1 or 0
+
+	if var_1_5 == var_1_6 then
+		if var_1_0 == var_0_0.SORT_MODE.BY_DEFAULT then
+			return var_0_0["SortByDefault" .. var_1_2](arg_1_0, arg_1_1)
+		elseif var_1_0 == var_0_0.SORT_MODE.BY_FUNC then
+			return var_0_0.SORT_BY_FUNC(arg_1_0, arg_1_1, var_1_1, var_1_2, function()
+				return var_0_0["SortByDefault" .. var_1_2](arg_1_0, arg_1_1)
 			end)
-		elseif slot3 == uv0.SORT_MODE.BY_CONFIG then
-			return uv0.SORT_BY_CONFIG(slot0, slot1, slot4, slot5, function ()
-				return uv0["SortByDefault" .. uv1](uv2, uv3)
+		elseif var_1_0 == var_0_0.SORT_MODE.BY_CONFIG then
+			return var_0_0.SORT_BY_CONFIG(arg_1_0, arg_1_1, var_1_1, var_1_2, function()
+				return var_0_0["SortByDefault" .. var_1_2](arg_1_0, arg_1_1)
 			end)
 		end
 	else
-		return slot9 < slot8
+		return var_1_6 < var_1_5
 	end
 end
 
-function slot0.sort(slot0, slot1)
-	table.sort(slot1, function (slot0, slot1)
-		return uv0.SortForDecorate(slot0, slot1, {
-			uv1.sortData[1],
-			uv1.sortData[2],
-			uv1.orderMode
+function var_0_0.sort(arg_8_0, arg_8_1)
+	table.sort(arg_8_1, function(arg_9_0, arg_9_1)
+		return var_0_0.SortForDecorate(arg_9_0, arg_9_1, {
+			arg_8_0.sortData[1],
+			arg_8_0.sortData[2],
+			arg_8_0.orderMode
 		})
 	end)
 
-	slot0.furnitures = slot1
+	arg_8_0.furnitures = arg_8_1
 end
 
-return slot0
+return var_0_0

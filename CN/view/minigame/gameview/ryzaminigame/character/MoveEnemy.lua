@@ -1,26 +1,26 @@
-slot0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
+﻿local var_0_0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
 
-function slot0.InitUI(slot0, slot1)
-	slot0.hp = slot1.hp or 3
-	slot0.hpMax = slot0.hp
-	slot0.speed = slot1.speed or 1
-	slot0.search = slot1.search or 4
-	slot0.wander = slot1.wander or 3
-	slot0.mainTarget = slot0.rtScale:Find("main")
+function var_0_0.InitUI(arg_1_0, arg_1_1)
+	arg_1_0.hp = arg_1_1.hp or 3
+	arg_1_0.hpMax = arg_1_0.hp
+	arg_1_0.speed = arg_1_1.speed or 1
+	arg_1_0.search = arg_1_1.search or 4
+	arg_1_0.wander = arg_1_1.wander or 3
+	arg_1_0.mainTarget = arg_1_0.rtScale:Find("main")
 
-	slot0:PlayWait()
-	slot0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0.lock = false
+	arg_1_0:PlayWait()
+	arg_1_0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_1_0.lock = false
 
-		if uv0.hp <= 0 then
-			uv0:Destroy()
+		if arg_1_0.hp <= 0 then
+			arg_1_0:Destroy()
 		end
 	end)
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot0:Register("burn", function ()
-		uv0:Hurt(1)
+function var_0_0.InitRegister(arg_3_0, arg_3_1)
+	arg_3_0:Register("burn", function()
+		arg_3_0:Hurt(1)
 	end, {
 		{
 			0,
@@ -29,23 +29,23 @@ function slot0.InitRegister(slot0, slot1)
 	})
 end
 
-function slot0.Hurt(slot0, slot1)
-	slot0.hp = slot0.hp - slot1
+function var_0_0.Hurt(arg_5_0, arg_5_1)
+	arg_5_0.hp = arg_5_0.hp - arg_5_1
 
-	slot0.responder:SyncStatus(slot0, "hp", {
-		num = slot0.hp,
-		max = slot0.hpMax
+	arg_5_0.responder:SyncStatus(arg_5_0, "hp", {
+		num = arg_5_0.hp,
+		max = arg_5_0.hpMax
 	})
 
-	if slot0.hp > 0 then
-		slot0:PlayDamage()
+	if arg_5_0.hp > 0 then
+		arg_5_0:PlayDamage()
 	else
-		slot0:DeregisterAll()
-		slot0:PlayDead()
+		arg_5_0:DeregisterAll()
+		arg_5_0:PlayDead()
 	end
 end
 
-slot0.SpeedDistance = {
+var_0_0.SpeedDistance = {
 	[0] = 0,
 	1,
 	1.5,
@@ -56,133 +56,148 @@ slot0.SpeedDistance = {
 	4
 }
 
-function slot0.TimeUpdate(slot0, slot1)
-	if not slot0.lock then
-		slot2, slot3 = slot0:GetMoveInfo()
-		slot4 = nil
+function var_0_0.TimeUpdate(arg_6_0, arg_6_1)
+	if not arg_6_0.lock then
+		local var_6_0, var_6_1 = arg_6_0:GetMoveInfo()
+		local var_6_2
 
-		if slot2 then
-			slot4 = slot0:MoveDelta(slot2, slot0:GetSpeedDis() * slot1)
+		if var_6_0 then
+			var_6_2 = arg_6_0:MoveDelta(var_6_0, arg_6_0:GetSpeedDis() * arg_6_1)
 
-			slot0:ClearWander()
+			arg_6_0:ClearWander()
 		else
-			slot5, slot6 = nil
+			local var_6_3
+			local var_6_4
 
-			if not slot0.wanderPos then
-				slot0.wanderPos = slot0.pos
-				slot0.wanderDir = NewPos(0, 0)
-				slot0.wanderTime = 1.5
+			if not arg_6_0.wanderPos then
+				arg_6_0.wanderPos = arg_6_0.pos
+				arg_6_0.wanderDir = NewPos(0, 0)
+				arg_6_0.wanderTime = 1.5
 			end
 
-			if slot0.wanderTime <= slot1 then
-				slot0.wanderDir = (slot0.wanderPos + NewPos(math.random() * 2 - 1, math.random() * 2 - 1) * slot0.wander - slot0.realPos):Normalize()
+			if arg_6_1 >= arg_6_0.wanderTime then
+				arg_6_0.wanderDir = (arg_6_0.wanderPos + NewPos(math.random() * 2 - 1, math.random() * 2 - 1) * arg_6_0.wander - arg_6_0.realPos):Normalize()
 			end
 
-			if uv0.super.MoveDelta(slot0, slot0.wanderDir, slot0:GetSpeedDis() * slot1).x == 0 and slot4.y == 0 then
-				slot0.wanderTime = slot0.wanderTime - slot1
+			var_6_2 = var_0_0.super.MoveDelta(arg_6_0, arg_6_0.wanderDir, arg_6_0:GetSpeedDis() * arg_6_1)
+
+			if var_6_2.x == 0 and var_6_2.y == 0 then
+				arg_6_0.wanderTime = arg_6_0.wanderTime - arg_6_1
 			else
-				slot0.wanderTime = 1.5
+				arg_6_0.wanderTime = 1.5
 			end
 
-			slot0.wanderDir = slot4:Normalize()
-			slot3 = slot0.wanderDir
+			arg_6_0.wanderDir = var_6_2:Normalize()
+			var_6_1 = arg_6_0.wanderDir
 		end
 
-		if slot3.x == 0 and slot3.y == 0 then
-			slot0:PlayWait()
+		if var_6_1.x == 0 and var_6_1.y == 0 then
+			arg_6_0:PlayWait()
 		else
-			slot0:PlayMove(RyzaMiniGameConfig.GetFourDirMark(slot3))
+			arg_6_0:PlayMove(RyzaMiniGameConfig.GetFourDirMark(var_6_1))
 		end
 
-		slot0:MoveUpdate(slot4)
+		arg_6_0:MoveUpdate(var_6_2)
 	end
 
-	slot0:TimeTrigger(slot1)
+	arg_6_0:TimeTrigger(arg_6_1)
 
-	if slot0.hide then
-		slot0:UpdateAlpha()
+	if arg_6_0.hide then
+		arg_6_0:UpdateAlpha()
 	end
 end
 
-function slot0.MoveDelta(slot0, slot1, slot2)
-	if (slot1 - slot0.realPos).x == 0 and slot3.y == 0 then
+function var_0_0.MoveDelta(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_1 - arg_7_0.realPos
+
+	if var_7_0.x == 0 and var_7_0.y == 0 then
 		return NewPos(0, 0)
 	else
-		return slot3 * math.min(1, slot2 / math.sqrt(slot3:SqrMagnitude()))
+		return var_7_0 * math.min(1, arg_7_2 / math.sqrt(var_7_0:SqrMagnitude()))
 	end
 end
 
-function slot0.GetMoveInfo(slot0)
-	if slot0.responder:SearchRyza(slot0, slot0.search) and slot0.responder:Wayfinding(slot0) and #slot1 > 0 then
-		slot2 = slot1[#slot1]
+function var_0_0.GetMoveInfo(arg_8_0)
+	if arg_8_0.responder:SearchRyza(arg_8_0, arg_8_0.search) then
+		local var_8_0 = arg_8_0.responder:Wayfinding(arg_8_0)
 
-		if (slot2 - slot0.pos):SqrMagnitude() < (slot2 - slot0.realPos):SqrMagnitude() then
-			slot2 = slot0.pos
+		if var_8_0 and #var_8_0 > 0 then
+			local var_8_1 = var_8_0[#var_8_0]
+			local var_8_2 = var_8_1 - arg_8_0.realPos
+			local var_8_3 = var_8_1 - arg_8_0.pos
+
+			if var_8_2:SqrMagnitude() > var_8_3:SqrMagnitude() then
+				var_8_1 = arg_8_0.pos
+			end
+
+			local var_8_4 = var_8_1 - arg_8_0.realPos
+
+			if var_8_4.x ~= 0 or var_8_4.y ~= 0 then
+				var_8_4 = var_8_4 * (1 / math.sqrt(var_8_4:SqrMagnitude()))
+			end
+
+			return var_8_1, var_8_4
 		end
-
-		if (slot2 - slot0.realPos).x ~= 0 or slot5.y ~= 0 then
-			slot5 = slot5 * 1 / math.sqrt(slot5:SqrMagnitude())
-		end
-
-		return slot2, slot5
 	end
 
 	return nil, NewPos(0, 0)
 end
 
-function slot0.ClearWander(slot0)
-	slot0.wanderPos = nil
-	slot0.wanderDir = nil
-	slot0.wanderTime = nil
+function var_0_0.ClearWander(arg_9_0)
+	arg_9_0.wanderPos = nil
+	arg_9_0.wanderDir = nil
+	arg_9_0.wanderTime = nil
 end
 
-function slot0.PlayWait(slot0)
-	slot0:PlayAnim("Wait_" .. (string.split(slot0.status, "_")[2] or "S"))
+function var_0_0.PlayWait(arg_10_0)
+	arg_10_0:PlayAnim("Wait_" .. (string.split(arg_10_0.status, "_")[2] or "S"))
 end
 
-function slot0.PlayMove(slot0, slot1)
-	slot0:PlayAnim("Move_" .. slot1)
+function var_0_0.PlayMove(arg_11_0, arg_11_1)
+	arg_11_0:PlayAnim("Move_" .. arg_11_1)
 end
 
-function slot0.PlayDamage(slot0)
-	if not slot0.lock then
-		slot0:PlayAnim("Damage_" .. (string.split(slot0.status, "_")[2] or "S"))
+function var_0_0.PlayDamage(arg_12_0)
+	if not arg_12_0.lock then
+		arg_12_0:PlayAnim("Damage_" .. (string.split(arg_12_0.status, "_")[2] or "S"))
 	end
 end
 
-function slot0.PlayDead(slot0)
-	slot0:SetHide(false)
-	slot0:PlayAnim("Dead_" .. (string.split(slot0.status, "_")[2] or "S"))
+function var_0_0.PlayDead(arg_13_0)
+	arg_13_0:SetHide(false)
+	arg_13_0:PlayAnim("Dead_" .. (string.split(arg_13_0.status, "_")[2] or "S"))
 end
 
-slot0.loopDic = {
+var_0_0.loopDic = {
 	Wait = true,
 	Move = true
 }
 
-function slot0.GetUIHeight(slot0)
+function var_0_0.GetUIHeight(arg_14_0)
 	return 128
 end
 
-function slot0.SetHide(slot0, slot1)
-	uv0.super.SetHide(slot0, slot1)
-	slot0:UpdateAlpha()
+function var_0_0.SetHide(arg_15_0, arg_15_1)
+	var_0_0.super.SetHide(arg_15_0, arg_15_1)
+	arg_15_0:UpdateAlpha()
 end
 
-slot1 = 7
+local var_0_1 = 7
 
-function slot0.UpdateAlpha(slot0)
-	slot1 = 1
-	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).alpha = not slot0.hide and 1 or slot0.responder.reactorRyza.hide and (slot0.responder.reactorRyza.realPos - slot0.realPos):SqrMagnitude() < uv0 * uv0 and 0.7 or 0
+function var_0_0.UpdateAlpha(arg_16_0)
+	local var_16_0 = 1
+	local var_16_1 = not arg_16_0.hide and 1 or arg_16_0.responder.reactorRyza.hide and (arg_16_0.responder.reactorRyza.realPos - arg_16_0.realPos):SqrMagnitude() < var_0_1 * var_0_1 and 0.7 or 0
+
+	GetOrAddComponent(arg_16_0._tf, typeof(CanvasGroup)).alpha = var_16_1
 end
 
-function slot0.TimeTrigger(slot0, slot1)
-	if slot0.hp > 0 and slot0.responder:CollideRyza(slot0) then
-		slot0:Calling("hit", {
+function var_0_0.TimeTrigger(arg_17_0, arg_17_1)
+	if arg_17_0.hp > 0 and arg_17_0.responder:CollideRyza(arg_17_0) then
+		arg_17_0:Calling("hit", {
 			1,
-			slot0.realPos
+			arg_17_0.realPos
 		}, MoveRyza)
 	end
 end
 
-return slot0
+return var_0_0

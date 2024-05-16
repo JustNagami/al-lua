@@ -1,44 +1,45 @@
-slot0 = class("ClassOverCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ClassOverCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.slotVO
-	slot5 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.courseID
+	local var_1_2 = var_1_0.slotVO
 
-	slot5:Send(22006, {
-		room_id = slot2.courseID,
-		ship_id = slot4:GetShip().id
-	}, 22007, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(BayProxy)
-			slot2 = uv0:GetShip()
-			slot4 = {}
+	pg.ConnectionMgr.GetInstance():Send(22006, {
+		room_id = var_1_1,
+		ship_id = var_1_2:GetShip().id
+	}, 22007, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(BayProxy)
+			local var_2_1 = var_1_2:GetShip()
+			local var_2_2 = var_1_2:GetAttrList()
+			local var_2_3 = {}
 
-			for slot8, slot9 in pairs(uv0:GetAttrList()) do
-				slot2:addAttr(slot8, slot9)
-				slot1:updateShip(slot2)
+			for iter_2_0, iter_2_1 in pairs(var_2_2) do
+				var_2_1:addAttr(iter_2_0, iter_2_1)
+				var_2_0:updateShip(var_2_1)
 
-				slot4[#slot4 + 1] = {
-					pg.attribute_info_by_type[slot8].condition,
-					slot9
+				var_2_3[#var_2_3 + 1] = {
+					pg.attribute_info_by_type[iter_2_0].condition,
+					iter_2_1
 				}
 			end
 
-			slot5 = slot2:getConfig("name")
+			local var_2_4 = var_2_1:getConfig("name")
 
-			if #slot4 == 2 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_quest_Classover_long", slot5, slot4[1][1], slot4[1][2], slot4[2][1], slot4[2][2]))
+			if #var_2_3 == 2 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_quest_Classover_long", var_2_4, var_2_3[1][1], var_2_3[1][2], var_2_3[2][1], var_2_3[2][2]))
 			else
-				for slot9, slot10 in ipairs(slot4) do
-					pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_quest_Classover_short", slot5, slot10[1], slot10[2]))
+				for iter_2_2, iter_2_3 in ipairs(var_2_3) do
+					pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_quest_Classover_short", var_2_4, iter_2_3[1], iter_2_3[2]))
 				end
 			end
 
-			getProxy(NavalAcademyProxy):GetReward(uv1, slot2.id)
+			getProxy(NavalAcademyProxy):GetReward(var_1_1, var_2_1.id)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_classOver", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_classOver", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

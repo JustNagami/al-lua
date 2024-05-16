@@ -1,47 +1,51 @@
-slot0 = class("BuildShipImmediatelyCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BuildShipImmediatelyCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().type or 1
-	slot5 = getProxy(BuildShipProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type or 1
+	local var_1_2 = var_1_0.pos_list
+	local var_1_3 = getProxy(BuildShipProxy)
+	local var_1_4 = underscore.filter(var_1_2, function(arg_2_0)
+		return var_1_3:getBuildShip(arg_2_0).state ~= BuildShip.FINISH
+	end)
 
-	if #underscore.filter(slot2.pos_list, function (slot0)
-		return uv0:getBuildShip(slot0).state ~= BuildShip.FINISH
-	end) == 0 then
-		existCall(slot2.callback)
+	if #var_1_4 == 0 then
+		existCall(var_1_0.callback)
 
 		return
 	end
 
-	if getProxy(BagProxy):getItemCountById(ITEM_ID_EQUIP_QUICK_FINISH) == 0 then
+	local var_1_5 = getProxy(BagProxy)
+	local var_1_6 = var_1_5:getItemCountById(ITEM_ID_EQUIP_QUICK_FINISH)
+
+	if var_1_6 == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	else
-		slot4 = underscore.slice(slot4, 1, slot7)
+		var_1_4 = underscore.slice(var_1_4, 1, var_1_6)
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(12008, {
+		type = var_1_1,
+		pos_list = var_1_4
+	}, 12009, function(arg_3_0)
+		local var_3_0 = {}
 
-	slot8:Send(12008, {
-		type = slot3,
-		pos_list = slot4
-	}, 12009, function (slot0)
-		slot1 = {}
-
-		for slot5, slot6 in ipairs(slot0.pos_list) do
-			uv0:removeItemById(ITEM_ID_EQUIP_QUICK_FINISH, 1)
-			uv1:getBuildShip(slot6):finish()
-			uv1:finishBuildShip(slot6)
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.pos_list) do
+			var_1_5:removeItemById(ITEM_ID_EQUIP_QUICK_FINISH, 1)
+			var_1_3:getBuildShip(iter_3_1):finish()
+			var_1_3:finishBuildShip(iter_3_1)
 		end
 
-		if slot0.result == 0 then
+		if arg_3_0.result == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_speedUp") .. i18n("word_succeed"))
-			uv2:sendNotification(GAME.BUILD_SHIP_IMMEDIATELY_DONE)
-			existCall(uv3.callback)
+			arg_1_0:sendNotification(GAME.BUILD_SHIP_IMMEDIATELY_DONE)
+			existCall(var_1_0.callback)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_buildShipImmediately", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_buildShipImmediately", arg_3_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

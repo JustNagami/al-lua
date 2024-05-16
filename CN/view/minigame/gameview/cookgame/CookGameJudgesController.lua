@@ -1,119 +1,118 @@
-slot0 = class("CookGameJudgesController")
+﻿local var_0_0 = class("CookGameJudgesController")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._sceneTf = findTF(slot1, "scene")
-	slot0._sceneBackground = findTF(slot1, "scene_background")
-	slot0._sceneFrontTf = findTF(slot1, "scene_front")
-	slot0._tpl = findTF(slot0._sceneBackground, "judgeTpl")
-	slot0._gameData = slot2
-	slot0._event = slot3
-	slot0.initFlag = false
-	slot0.jiujiuTf = findTF(slot0._sceneBackground, "jiujiuTime")
-	slot0.jiujiuAnim = GetComponent(findTF(slot0.jiujiuTf, "anim"), typeof(Animator))
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._sceneTf = findTF(arg_1_1, "scene")
+	arg_1_0._sceneBackground = findTF(arg_1_1, "scene_background")
+	arg_1_0._sceneFrontTf = findTF(arg_1_1, "scene_front")
+	arg_1_0._tpl = findTF(arg_1_0._sceneBackground, "judgeTpl")
+	arg_1_0._gameData = arg_1_2
+	arg_1_0._event = arg_1_3
+	arg_1_0.initFlag = false
+	arg_1_0.jiujiuTf = findTF(arg_1_0._sceneBackground, "jiujiuTime")
+	arg_1_0.jiujiuAnim = GetComponent(findTF(arg_1_0.jiujiuTf, "anim"), typeof(Animator))
 
-	setActive(slot0._tpl, false)
+	setActive(arg_1_0._tpl, false)
 end
 
-function slot0.init(slot0)
-	slot0.initFlag = true
-	slot0._judgeDatas = {}
+function var_0_0.init(arg_2_0)
+	arg_2_0.initFlag = true
+	arg_2_0._judgeDatas = {}
 
-	for slot4 = 1, #CookGameConst.judge_data do
-		slot5 = CookGameConst.judge_data[slot4]
+	for iter_2_0 = 1, #CookGameConst.judge_data do
+		local var_2_0 = CookGameConst.judge_data[iter_2_0]
+		local var_2_1 = ResourceMgr.Inst:getAssetSync(arg_2_0._gameData.path, var_2_0.name, typeof(RuntimeAnimatorController), false, false)
 
-		table.insert(slot0._judgeDatas, {
-			data = Clone(slot5),
-			runtimeAnimator = ResourceMgr.Inst:getAssetSync(slot0._gameData.path, slot5.name, typeof(RuntimeAnimatorController), false, false)
+		table.insert(arg_2_0._judgeDatas, {
+			data = Clone(var_2_0),
+			runtimeAnimator = var_2_1
 		})
 	end
 
-	slot0.judges = {}
+	arg_2_0.judges = {}
 
-	for slot4 = 1, CookGameConst.judge_num do
-		slot6 = tf(instantiate(slot0._tpl))
+	for iter_2_1 = 1, CookGameConst.judge_num do
+		local var_2_2 = iter_2_1
+		local var_2_3 = tf(instantiate(arg_2_0._tpl))
+		local var_2_4 = findTF(arg_2_0._sceneBackground, "judgesPos" .. iter_2_1).anchoredPosition
 
-		setParent(slot6, slot0._sceneTf)
-		setActive(slot6, true)
+		setParent(var_2_3, arg_2_0._sceneTf)
+		setActive(var_2_3, true)
 
-		slot6.anchoredPosition = findTF(slot0._sceneBackground, "judgesPos" .. slot4).anchoredPosition
-		slot8 = CookGameJudge.New(slot6, slot4, slot0._judgeDatas, slot0._gameData, slot0._event)
+		var_2_3.anchoredPosition = var_2_4
 
-		slot8:setFrontContainer(slot0._sceneFrontTf)
-		slot8:setClickCallback(function ()
-			uv0:onJudgeClick(uv1)
+		local var_2_5 = CookGameJudge.New(var_2_3, var_2_2, arg_2_0._judgeDatas, arg_2_0._gameData, arg_2_0._event)
+
+		var_2_5:setFrontContainer(arg_2_0._sceneFrontTf)
+		var_2_5:setClickCallback(function()
+			arg_2_0:onJudgeClick(var_2_2)
 		end)
-		table.insert(slot0.judges, slot8)
+		table.insert(arg_2_0.judges, var_2_5)
 	end
 
-	slot0._gameData.judges = slot0.judges
+	arg_2_0._gameData.judges = arg_2_0.judges
 end
 
-function slot0.changeSpeed(slot0, slot1)
-	for slot5 = 1, #slot0.judges do
-		slot0.judges[slot5]:changeSpeed(slot1)
+function var_0_0.changeSpeed(arg_4_0, arg_4_1)
+	for iter_4_0 = 1, #arg_4_0.judges do
+		arg_4_0.judges[iter_4_0]:changeSpeed(arg_4_1)
 	end
 end
 
-function slot0.serverIndex(slot0, slot1, slot2, slot3)
-	if slot1 and slot1 < #slot0.judges then
-		slot0.judges[slot1]:server(slot2, slot3)
+function var_0_0.serverIndex(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if arg_5_1 and arg_5_1 < #arg_5_0.judges then
+		arg_5_0.judges[arg_5_1]:server(arg_5_2, arg_5_3)
 	else
-		slot3(false)
+		arg_5_3(false)
 	end
 end
 
-function slot0.onJudgeClick(slot0, slot1)
-	for slot5 = 1, #slot0.judges do
-		if slot5 == slot1 then
-			slot6 = slot0.judges[slot5]
-
-			slot6:select(true)
-
-			slot6 = slot0._event
-
-			slot6:emit(CookGameView.CLICK_JUDGE_EVENT, slot0.judges[slot1], function (slot0)
-				if not slot0 then
-					uv0.judges[uv1]:select(false)
+function var_0_0.onJudgeClick(arg_6_0, arg_6_1)
+	for iter_6_0 = 1, #arg_6_0.judges do
+		if iter_6_0 == arg_6_1 then
+			arg_6_0.judges[iter_6_0]:select(true)
+			arg_6_0._event:emit(CookGameView.CLICK_JUDGE_EVENT, arg_6_0.judges[arg_6_1], function(arg_7_0)
+				if not arg_7_0 then
+					arg_6_0.judges[iter_6_0]:select(false)
 				end
 			end)
 		else
-			slot0.judges[slot5]:select(false)
+			arg_6_0.judges[iter_6_0]:select(false)
 		end
 	end
 end
 
-function slot0.start(slot0)
-	if not slot0.initFlag then
-		slot0:init()
+function var_0_0.start(arg_8_0)
+	if not arg_8_0.initFlag then
+		arg_8_0:init()
 	end
 
-	for slot4 = 1, #slot0.judges do
-		slot0.judges[slot4]:start()
-	end
-end
-
-function slot0.step(slot0, slot1)
-	for slot5 = 1, #slot0.judges do
-		slot0.judges[slot5]:step(slot1)
+	for iter_8_0 = 1, #arg_8_0.judges do
+		arg_8_0.judges[iter_8_0]:start()
 	end
 end
 
-function slot0.clear(slot0)
-	for slot4 = 1, #slot0.judges do
-		slot0.judges[slot4]:clear()
+function var_0_0.step(arg_9_0, arg_9_1)
+	for iter_9_0 = 1, #arg_9_0.judges do
+		arg_9_0.judges[iter_9_0]:step(arg_9_1)
 	end
 end
 
-function slot0.extend(slot0)
-	if slot0.jiujiuAnim then
-		slot0.jiujiuAnim:SetTrigger("extend")
+function var_0_0.clear(arg_10_0)
+	for iter_10_0 = 1, #arg_10_0.judges do
+		arg_10_0.judges[iter_10_0]:clear()
 	end
 end
 
-function slot0.timeUp(slot0)
-	if slot0.jiujiuAnim then
-		slot0.jiujiuAnim:SetTrigger("time_up")
+function var_0_0.extend(arg_11_0)
+	if arg_11_0.jiujiuAnim then
+		arg_11_0.jiujiuAnim:SetTrigger("extend")
 	end
 end
 
-return slot0
+function var_0_0.timeUp(arg_12_0)
+	if arg_12_0.jiujiuAnim then
+		arg_12_0.jiujiuAnim:SetTrigger("time_up")
+	end
+end
+
+return var_0_0

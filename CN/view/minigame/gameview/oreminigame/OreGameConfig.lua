@@ -1,4 +1,4 @@
-return {
+﻿local var_0_0 = {
 	CARRY_LOOKAT_RADIUS = 75,
 	CARRY_RADIUS = 50,
 	MAX_WEIGHT = 180,
@@ -501,19 +501,22 @@ return {
 				4
 			}
 		}
-	},
-	EVENT_ORE_NEW = "ore new",
-	EVENT_ORE_DESTROY = "ore destroy",
-	EVENT_ORE_EF_MINED = "ore effect mined",
-	EVENT_UPDATE_ORE_TARGET = "update ore target",
-	EVENT_CHECK_CARRY = "check carry",
-	EVENT_DO_CARRY = "do carry",
-	EVENT_DELIVER = "deliver",
-	EVENT_ENEMY_NEW = "enemy new",
-	EVENT_ENEMY_DESTROY = "enemy destroy",
-	EVENT_AKASHI_COLLISION = "akashi collision",
-	EVENT_AKASHI_HIT = "akashi hit",
-	EVENT_PLAY_CONTAINER_HIT = "container hit",
-	EVENT_ENEMY_COLLISION = "enemy collision",
-	SHOW_AABB = false
+	}
 }
+
+var_0_0.EVENT_ORE_NEW = "ore new"
+var_0_0.EVENT_ORE_DESTROY = "ore destroy"
+var_0_0.EVENT_ORE_EF_MINED = "ore effect mined"
+var_0_0.EVENT_UPDATE_ORE_TARGET = "update ore target"
+var_0_0.EVENT_CHECK_CARRY = "check carry"
+var_0_0.EVENT_DO_CARRY = "do carry"
+var_0_0.EVENT_DELIVER = "deliver"
+var_0_0.EVENT_ENEMY_NEW = "enemy new"
+var_0_0.EVENT_ENEMY_DESTROY = "enemy destroy"
+var_0_0.EVENT_AKASHI_COLLISION = "akashi collision"
+var_0_0.EVENT_AKASHI_HIT = "akashi hit"
+var_0_0.EVENT_PLAY_CONTAINER_HIT = "container hit"
+var_0_0.EVENT_ENEMY_COLLISION = "enemy collision"
+var_0_0.SHOW_AABB = false
+
+return var_0_0

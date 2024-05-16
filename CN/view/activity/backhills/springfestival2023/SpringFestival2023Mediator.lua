@@ -1,54 +1,60 @@
-slot0 = class("SpringFestival2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
-slot0.MINI_GAME_OPERATOR = "MINI_GAME_OPERATOR"
-slot0.GO_SCENE = "GO_SCENE"
-slot0.GO_SUBLAYER = "GO_SUBLAYER"
-slot0.PLAY_FIREWORKS = "PLAY_FIREWORKS"
+﻿local var_0_0 = class("SpringFestival2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
+var_0_0.MINI_GAME_OPERATOR = "MINI_GAME_OPERATOR"
+var_0_0.GO_SCENE = "GO_SCENE"
+var_0_0.GO_SUBLAYER = "GO_SUBLAYER"
+var_0_0.PLAY_FIREWORKS = "PLAY_FIREWORKS"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(uv0.GO_SCENE, function (slot0, slot1, ...)
-		uv0:sendNotification(GAME.GO_SCENE, slot1, ...)
+function var_0_0.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_2_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 	end)
-	slot0:bind(uv0.GO_SUBLAYER, function (slot0, slot1, slot2)
-		uv0:addSubLayers(slot1, nil, slot2)
+	arg_2_0:bind(var_0_0.GO_SUBLAYER, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_2_0:addSubLayers(arg_4_1, nil, arg_4_2)
 	end)
-	slot0:bind(uv0.MINI_GAME_OPERATOR, function (slot0, ...)
-		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, ...)
+	arg_2_0:bind(var_0_0.MINI_GAME_OPERATOR, function(arg_5_0, ...)
+		arg_2_0:sendNotification(GAME.SEND_MINI_GAME_OP, ...)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_6_0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		ActivityProxy.ACTIVITY_UPDATED,
-		uv0.PLAY_FIREWORKS
+		var_0_0.PLAY_FIREWORKS
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	if var_7_0 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var_7_2 = {
+			function(arg_8_0)
+				local var_8_0 = var_7_1.awards
+
+				if #var_8_0 > 0 then
+					arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_8_0, arg_8_0)
 				else
-					slot0()
+					arg_8_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:UpdateView()
+			function(arg_9_0)
+				arg_7_0.viewComponent:UpdateView()
 			end
-		})
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:UpdateActivity(slot3)
-	elseif slot2 == uv0.PLAY_FIREWORKS then
-		slot0.viewComponent:PlayFireworks(slot3)
+		}
+
+		seriesAsync(var_7_2)
+	elseif var_7_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_7_0.viewComponent:UpdateActivity(var_7_1)
+	elseif var_7_0 == var_0_0.PLAY_FIREWORKS then
+		arg_7_0.viewComponent:PlayFireworks(var_7_1)
 	end
 end
 
-return slot0
+return var_0_0

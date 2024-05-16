@@ -1,178 +1,194 @@
-slot0 = class("BossSingleActivity", import("model.vo.Activity"))
+﻿local var_0_0 = class("BossSingleActivity", import("model.vo.Activity"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.enemyData = {}
+	arg_1_0.enemyData = {}
 
-	for slot5, slot6 in ipairs(slot0:GetEnemyIds()) do
-		slot0.enemyData[slot6] = BossSingleEnemyData.New({
-			id = slot6,
-			index = slot5
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0:GetEnemyIds()) do
+		local var_1_0 = BossSingleEnemyData.New({
+			id = iter_1_1,
+			index = iter_1_0
 		})
+
+		arg_1_0.enemyData[iter_1_1] = var_1_0
 	end
 end
 
-function slot0.GetEnemyDatas(slot0)
-	return slot0.enemyData
+function var_0_0.GetEnemyDatas(arg_2_0)
+	return arg_2_0.enemyData
 end
 
-function slot0.GetEnemyDataById(slot0, slot1)
-	return slot0.enemyData[slot1]
+function var_0_0.GetEnemyDataById(arg_3_0, arg_3_1)
+	return arg_3_0.enemyData[arg_3_1]
 end
 
-function slot0.GetEnemyDataByStageId(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		if slot6:GetExpeditionId() == slot1 then
-			return slot6
+function var_0_0.GetEnemyDataByStageId(arg_4_0, arg_4_1)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.enemyData) do
+		if iter_4_1:GetExpeditionId() == arg_4_1 then
+			return iter_4_1
 		end
 	end
 end
 
-function slot0.GetEnemyDataByFleetIdx(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		if slot6:GetFleetIdx() == slot1 then
-			return slot6
+function var_0_0.GetEnemyDataByFleetIdx(arg_5_0, arg_5_1)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.enemyData) do
+		if iter_5_1:GetFleetIdx() == arg_5_1 then
+			return iter_5_1
 		end
 	end
 end
 
-function slot0.GetEnemyDataByType(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		if slot6:GetType() == slot1 then
-			return slot6
+function var_0_0.GetEnemyDataByType(arg_6_0, arg_6_1)
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.enemyData) do
+		if iter_6_1:GetType() == arg_6_1 then
+			return iter_6_1
 		end
 	end
 end
 
-function slot0.GetCommonEnemyDatas(slot0)
-	slot1 = {}
+function var_0_0.GetCommonEnemyDatas(arg_7_0)
+	local var_7_0 = {}
 
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		if slot6:GetType() == BossSingleEnemyData.TYPE.EAST or slot6:GetType() == BossSingleEnemyData.TYPE.NORMAL or slot6:GetType() == BossSingleEnemyData.TYPE.HARD then
-			table.insert(slot1, slot6)
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.enemyData) do
+		if iter_7_1:GetType() == BossSingleEnemyData.TYPE.EAST or iter_7_1:GetType() == BossSingleEnemyData.TYPE.NORMAL or iter_7_1:GetType() == BossSingleEnemyData.TYPE.HARD then
+			table.insert(var_7_0, iter_7_1)
 		end
 	end
 
-	return slot1
+	return var_7_0
 end
 
-function slot0.GetStageIDs(slot0)
-	slot1 = {}
+function var_0_0.GetStageIDs(arg_8_0)
+	local var_8_0 = {}
 
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		slot1[slot6:GetFleetIdx()] = slot6:GetExpeditionId()
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.enemyData) do
+		var_8_0[iter_8_1:GetFleetIdx()] = iter_8_1:GetExpeditionId()
 	end
 
-	return slot1
+	return var_8_0
 end
 
-function slot0.GetOilLimits(slot0)
-	slot1 = {}
+function var_0_0.GetOilLimits(arg_9_0)
+	local var_9_0 = {}
 
-	for slot5, slot6 in pairs(slot0.enemyData) do
-		slot1[slot6:GetFleetIdx()] = slot6:GetOilLimit()
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.enemyData) do
+		var_9_0[iter_9_1:GetFleetIdx()] = iter_9_1:GetOilLimit()
 	end
 
-	return slot1
+	return var_9_0
 end
 
-function slot0.GetEnemyIds(slot0)
-	return slot0:getConfig("config_data")
+function var_0_0.GetEnemyIds(arg_10_0)
+	return arg_10_0:getConfig("config_data")
 end
 
-function slot0.GetDailyCounts(slot0)
-	return slot0.data1_list
+function var_0_0.GetDailyCounts(arg_11_0)
+	return arg_11_0.data1_list
 end
 
-function slot0.AddDailyCount(slot0, slot1)
-	if not slot0:IsCountLimit(slot1) then
+function var_0_0.AddDailyCount(arg_12_0, arg_12_1)
+	if not arg_12_0:IsCountLimit(arg_12_1) then
 		return
 	end
 
-	slot0:GetDailyCounts()[slot2] = (slot0:GetDailyCounts()[slot0.enemyData[slot1]:GetFleetIdx()] or 0) + 1
+	local var_12_0 = arg_12_0.enemyData[arg_12_1]:GetFleetIdx()
+
+	arg_12_0:GetDailyCounts()[var_12_0] = (arg_12_0:GetDailyCounts()[var_12_0] or 0) + 1
 end
 
-function slot0.GetPassStages(slot0)
-	return slot0.data2_list
+function var_0_0.GetPassStages(arg_13_0)
+	return arg_13_0.data2_list
 end
 
-function slot0.AddPassStage(slot0, slot1)
-	if slot0:HasPassStage(slot1) then
+function var_0_0.AddPassStage(arg_14_0, arg_14_1)
+	if arg_14_0:HasPassStage(arg_14_1) then
 		return
 	end
 
-	table.insert(slot0:GetPassStages(), slot1)
+	table.insert(arg_14_0:GetPassStages(), arg_14_1)
 end
 
-function slot0.HasPassStage(slot0, slot1)
-	return table.contains(slot0:GetPassStages(), slot1)
+function var_0_0.HasPassStage(arg_15_0, arg_15_1)
+	return table.contains(arg_15_0:GetPassStages(), arg_15_1)
 end
 
-function slot0.IsUnlockByEnemyId(slot0, slot1)
-	if not slot0.enemyData[slot1] then
+function var_0_0.IsUnlockByEnemyId(arg_16_0, arg_16_1)
+	if not arg_16_0.enemyData[arg_16_1] then
 		return false
 	end
 
-	return slot0.enemyData[slot1]:GetPreChapterId() == 0 or slot0:HasPassStage(slot0.enemyData[slot2]:GetExpeditionId())
+	local var_16_0 = arg_16_0.enemyData[arg_16_1]:GetPreChapterId()
+
+	return var_16_0 == 0 or arg_16_0:HasPassStage(arg_16_0.enemyData[var_16_0]:GetExpeditionId())
 end
 
-function slot0.IsCountLimit(slot0, slot1)
-	if not slot0.enemyData[slot1] then
+function var_0_0.IsCountLimit(arg_17_0, arg_17_1)
+	if not arg_17_0.enemyData[arg_17_1] then
 		return false
 	end
 
-	return slot0.enemyData[slot1]:GetCount() > 0
+	return arg_17_0.enemyData[arg_17_1]:GetCount() > 0
 end
 
-function slot0.GetCounts(slot0, slot1)
-	if not slot0.enemyData[slot1] then
+function var_0_0.GetCounts(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0.enemyData[arg_18_1]
+
+	if not var_18_0 then
 		return
 	end
 
-	return slot2:GetCount() - slot0:GetDailyCounts()[slot2:GetFleetIdx()], slot2:GetCount()
+	local var_18_1 = var_18_0:GetFleetIdx()
+
+	return var_18_0:GetCount() - arg_18_0:GetDailyCounts()[var_18_1], var_18_0:GetCount()
 end
 
-function slot0.CheckEntranceByIdx(slot0, slot1)
-	if not slot0:GetEnemyDataByFleetIdx(slot1) then
-		return false, "not exist enemy data, index: " .. slot1
+function var_0_0.CheckEntranceByIdx(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0:GetEnemyDataByFleetIdx(arg_19_1)
+
+	if not var_19_0 then
+		return false, "not exist enemy data, index: " .. arg_19_1
 	end
 
-	if not slot2:InTime() then
+	if not var_19_0:InTime() then
 		return false, i18n("common_activity_end")
 	end
 
-	if not slot0:IsUnlockByEnemyId(slot2.id) then
+	if not arg_19_0:IsUnlockByEnemyId(var_19_0.id) then
 		return false, i18n("adventure_unlock_tip")
 	end
 
 	return true
 end
 
-function slot0.CheckCntByIdx(slot0, slot1)
-	if not slot0:GetEnemyDataByFleetIdx(slot1) then
-		return false, "not exist enemy data, index: " .. slot1
+function var_0_0.CheckCntByIdx(arg_20_0, arg_20_1)
+	local var_20_0 = arg_20_0:GetEnemyDataByFleetIdx(arg_20_1)
+
+	if not var_20_0 then
+		return false, "not exist enemy data, index: " .. arg_20_1
 	end
 
-	if slot0:IsCountLimit(slot2.id) and slot0:GetCounts(slot2.id) <= 0 then
+	if arg_20_0:IsCountLimit(var_20_0.id) and arg_20_0:GetCounts(var_20_0.id) <= 0 then
 		return false, i18n("sp_no_quota")
 	end
 
 	return true
 end
 
-function slot0.GetBuffIdsByStageId(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityById(slot0:getConfig("config_id")) or slot2:isEnd() then
+function var_0_0.GetBuffIdsByStageId(arg_21_0, arg_21_1)
+	local var_21_0 = getProxy(ActivityProxy):getActivityById(arg_21_0:getConfig("config_id"))
+
+	if not var_21_0 or var_21_0:isEnd() then
 		return {}
 	end
 
-	if not slot0:GetEnemyDataByStageId(slot1):IsGuardianEffective() then
+	if not arg_21_0:GetEnemyDataByStageId(arg_21_1):IsGuardianEffective() then
 		return {}
 	end
 
-	return _.map(slot2.data2_list, function (slot0)
-		return pg.guardian_template[slot0].buff
+	return _.map(var_21_0.data2_list, function(arg_22_0)
+		return pg.guardian_template[arg_22_0].buff
 	end)
 end
 
-return slot0
+return var_0_0

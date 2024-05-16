@@ -1,88 +1,100 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleEvent
-slot3 = slot0.Battle.BattleConst
-slot4 = class("BattleSubRoutineCommand", slot0.Battle.BattleSubmarineRunCommand)
-slot0.Battle.BattleSubRoutineCommand = slot4
-slot4.__name = "BattleSubRoutineCommand"
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleEvent
+local var_0_3 = var_0_0.Battle.BattleConst
+local var_0_4 = class("BattleSubRoutineCommand", var_0_0.Battle.BattleSubmarineRunCommand)
+
+var_0_0.Battle.BattleSubRoutineCommand = var_0_4
+var_0_4.__name = "BattleSubRoutineCommand"
+
+function var_0_4.Ctor(arg_1_0)
+	var_0_4.super.Ctor(arg_1_0)
 end
 
-function slot4.Initialize(slot0)
-	uv0.super.Initialize(slot0)
-	slot0._dataProxy:SubmarineRunInit()
+function var_0_4.Initialize(arg_2_0)
+	var_0_4.super.Initialize(arg_2_0)
+	arg_2_0._dataProxy:SubmarineRunInit()
 end
 
-function slot4.DoPrologue(slot0)
+function var_0_4.DoPrologue(arg_3_0)
 	pg.UIMgr.GetInstance():Marching()
 
-	function slot1()
-		uv0._uiMediator:OpeningEffect(function ()
-			uv0._uiMediator:ShowTimer()
-			uv0._state:ChangeState(uv1.Battle.BattleState.BATTLE_STATE_FIGHT)
-			uv0._waveUpdater:Start()
+	local function var_3_0()
+		arg_3_0._uiMediator:OpeningEffect(function()
+			arg_3_0._uiMediator:ShowTimer()
+			arg_3_0._state:ChangeState(var_0_0.Battle.BattleState.BATTLE_STATE_FIGHT)
+			arg_3_0._waveUpdater:Start()
 		end, SYSTEM_SUB_ROUTINE)
 
-		slot0 = uv0._dataProxy:GetFleetByIFF(uv1.Battle.BattleConfig.FRIENDLY_CODE)
+		local var_4_0 = arg_3_0._dataProxy:GetFleetByIFF(var_0_0.Battle.BattleConfig.FRIENDLY_CODE)
 
-		slot0:FleetWarcry()
-		slot0:ChangeSubmarineState(uv1.Battle.OxyState.STATE_FREE_DIVE)
-		slot0:GetSubBoostVO():ResetCurrent()
-		uv0._dataProxy:InitAllFleetUnitsWeaponCD()
-		uv0._dataProxy:TirggerBattleStartBuffs()
+		var_4_0:FleetWarcry()
+		var_4_0:ChangeSubmarineState(var_0_0.Battle.OxyState.STATE_FREE_DIVE)
+		var_4_0:GetSubBoostVO():ResetCurrent()
+		arg_3_0._dataProxy:InitAllFleetUnitsWeaponCD()
+		arg_3_0._dataProxy:TirggerBattleStartBuffs()
 	end
 
-	for slot6, slot7 in ipairs(slot0._userFleet:GetUnitList()) do
-		slot7:AddBuff(uv0.Battle.BattleBuffUnit.New(9040))
-		slot7:RemoveBuff(8520)
+	local var_3_1 = arg_3_0._userFleet:GetUnitList()
+
+	for iter_3_0, iter_3_1 in ipairs(var_3_1) do
+		local var_3_2 = var_0_0.Battle.BattleBuffUnit.New(9040)
+
+		iter_3_1:AddBuff(var_3_2)
+		iter_3_1:RemoveBuff(8520)
 	end
 
-	slot0._uiMediator:SeaSurfaceShift(45, 0, nil, slot1)
+	arg_3_0._uiMediator:SeaSurfaceShift(45, 0, nil, var_3_0)
 end
 
-function slot4.initWaveModule(slot0)
-	slot0._waveUpdater = uv0.Battle.BattleWaveUpdater.New(function (slot0, slot1, slot2)
-		uv0._dataProxy:SpawnMonster(slot0, slot1, slot2, uv1.Battle.BattleConfig.FOE_CODE)
-	end, nil, function ()
-		if uv0._vertifyFail then
+function var_0_4.initWaveModule(arg_6_0)
+	local function var_6_0(arg_7_0, arg_7_1, arg_7_2)
+		arg_6_0._dataProxy:SpawnMonster(arg_7_0, arg_7_1, arg_7_2, var_0_0.Battle.BattleConfig.FOE_CODE)
+	end
+
+	local function var_6_1()
+		if arg_6_0._vertifyFail then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
-				reason = uv0._vertifyFail
+				reason = arg_6_0._vertifyFail
 			})
 
 			return
 		end
 
-		uv0._dataProxy:CalcSubRoutineScore()
-		uv0._state:BattleEnd()
-	end, nil)
+		arg_6_0._dataProxy:CalcSubRoutineScore()
+		arg_6_0._state:BattleEnd()
+	end
+
+	arg_6_0._waveUpdater = var_0_0.Battle.BattleWaveUpdater.New(var_6_0, nil, var_6_1, nil)
 end
 
-function slot4.onUpdateCountDown(slot0, slot1)
-	if slot0._dataProxy:GetCountDown() <= 0 then
-		slot0._dataProxy:EnemyEscape()
-		slot0._dataProxy:CalcSubRountineTimeUp()
-		slot0._state:BattleTimeUp()
+function var_0_4.onUpdateCountDown(arg_9_0, arg_9_1)
+	if arg_9_0._dataProxy:GetCountDown() <= 0 then
+		arg_9_0._dataProxy:EnemyEscape()
+		arg_9_0._dataProxy:CalcSubRountineTimeUp()
+		arg_9_0._state:BattleTimeUp()
 	end
 end
 
-function slot4.onShutDownPlayer(slot0, slot1)
-	slot0._dataProxy:ShutdownPlayerUnit(slot1.Dispatcher:GetUniqueID())
+function var_0_4.onShutDownPlayer(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1.Dispatcher:GetUniqueID()
+
+	arg_10_0._dataProxy:ShutdownPlayerUnit(var_10_0)
 end
 
-function slot4.onPlayerShutDown(slot0, slot1)
-	if slot0._state:GetState() ~= slot0._state.BATTLE_STATE_FIGHT then
+function var_0_4.onPlayerShutDown(arg_11_0, arg_11_1)
+	if arg_11_0._state:GetState() ~= arg_11_0._state.BATTLE_STATE_FIGHT then
 		return
 	end
 
-	slot2 = slot1.Data.unit
+	local var_11_0 = arg_11_1.Data.unit
 
-	if #slot0._userFleet:GetSubBench() > 0 then
-		slot0._userFleet:ShiftManualSub()
+	if #arg_11_0._userFleet:GetSubBench() > 0 then
+		arg_11_0._userFleet:ShiftManualSub()
 	else
-		slot0._dataProxy:CalcSubRountineElimate()
-		slot0._state:BattleEnd()
+		arg_11_0._dataProxy:CalcSubRountineElimate()
+		arg_11_0._state:BattleEnd()
 	end
 end

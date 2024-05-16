@@ -1,256 +1,290 @@
-slot0 = class("DecodeGameModel")
+﻿local var_0_0 = class("DecodeGameModel")
 
-function slot0.SetData(slot0, slot1)
-	slot0.data = slot1
-	slot0.mapId = slot1.mapId
-	slot0.unlocks = slot1.unlocks
-	slot0.canUseCnt = slot1.canUseCnt
-	slot0.passwords = slot1.passwords
-	slot0.isFinished = slot1.isFinished
-	slot0.mapIndexs = {}
+function var_0_0.SetData(arg_1_0, arg_1_1)
+	arg_1_0.data = arg_1_1
+	arg_1_0.mapId = arg_1_1.mapId
+	arg_1_0.unlocks = arg_1_1.unlocks
+	arg_1_0.canUseCnt = arg_1_1.canUseCnt
+	arg_1_0.passwords = arg_1_1.passwords
+	arg_1_0.isFinished = arg_1_1.isFinished
+	arg_1_0.mapIndexs = {}
 
-	if slot0.isFinished then
-		slot0:BuildMapIndexs()
+	if arg_1_0.isFinished then
+		arg_1_0:BuildMapIndexs()
 	else
-		for slot5 = 1, #DecodeGameConst.PASSWORD do
-			table.insert(slot0.mapIndexs, false)
+		for iter_1_0 = 1, #DecodeGameConst.PASSWORD do
+			table.insert(arg_1_0.mapIndexs, false)
 		end
 	end
 
-	slot0.maps = {}
+	arg_1_0.maps = {}
 
-	for slot5 = 1, DecodeGameConst.MAX_MAP_COUNT do
-		table.insert(slot0.maps, slot0:InitMap(slot5))
+	for iter_1_1 = 1, DecodeGameConst.MAX_MAP_COUNT do
+		table.insert(arg_1_0.maps, arg_1_0:InitMap(iter_1_1))
 	end
 
-	slot0:SwitchMap(slot1.mapId)
+	arg_1_0:SwitchMap(arg_1_1.mapId)
 end
 
-function slot0.BuildMapIndexs(slot0)
-	function slot2(slot0)
-		for slot4, slot5 in ipairs(DecodeGameConst.MAPS_PASSWORD) do
-			if _.any(slot5, function (slot0)
-				return slot0[1] == uv0[1] and slot0[2] == uv0[2]
+function var_0_0.BuildMapIndexs(arg_2_0)
+	local var_2_0 = DecodeGameConst.PASSWORD
+
+	local function var_2_1(arg_3_0)
+		for iter_3_0, iter_3_1 in ipairs(DecodeGameConst.MAPS_PASSWORD) do
+			if _.any(iter_3_1, function(arg_4_0)
+				return arg_4_0[1] == arg_3_0[1] and arg_4_0[2] == arg_3_0[2]
 			end) then
-				return slot4
+				return iter_3_0
 			end
 		end
 	end
 
-	for slot6 = 1, #DecodeGameConst.PASSWORD do
-		slot7 = slot1[slot6]
+	for iter_2_0 = 1, #var_2_0 do
+		local var_2_2 = var_2_0[iter_2_0]
+		local var_2_3 = var_2_1(var_2_2)
+		local var_2_4 = DecodeGameConst.Vect2Index(var_2_2[1], var_2_2[2]) + (var_2_3 - 1) * (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
 
-		table.insert(slot0.mapIndexs, DecodeGameConst.Vect2Index(slot7[1], slot7[2]) + (slot2(slot7) - 1) * DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
+		table.insert(arg_2_0.mapIndexs, var_2_4)
 	end
 end
 
-function slot0.InitMap(slot0, slot1)
-	function slot2(slot0, slot1, slot2)
+function var_0_0.InitMap(arg_5_0, arg_5_1)
+	local function var_5_0(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0 = DecodeGameConst.START_POS[1] + (arg_6_1 - 1) * DecodeGameConst.BLOCK_SIZE[1]
+		local var_6_1 = DecodeGameConst.START_POS[2] - (arg_6_0 - 1) * DecodeGameConst.BLOCK_SIZE[2]
+		local var_6_2 = table.contains(arg_5_0.unlocks, arg_6_2)
+
 		return {
 			isUsed = false,
-			index = slot2,
-			i = slot0,
-			j = slot1,
-			position = Vector3(DecodeGameConst.START_POS[1] + (slot1 - 1) * DecodeGameConst.BLOCK_SIZE[1], DecodeGameConst.START_POS[2] - (slot0 - 1) * DecodeGameConst.BLOCK_SIZE[2], 0),
-			isUnlock = table.contains(uv0.unlocks, slot2)
+			index = arg_6_2,
+			i = arg_6_0,
+			j = arg_6_1,
+			position = Vector3(var_6_0, var_6_1, 0),
+			isUnlock = var_6_2
 		}
 	end
 
-	slot3 = {}
-	slot5 = (slot1 - 1) * DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN
+	local var_5_1 = {}
+	local var_5_2 = (arg_5_1 - 1) * (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
+	local var_5_3 = var_5_2
 
-	for slot9 = 1, DecodeGameConst.MAP_ROW do
-		for slot13 = 1, DecodeGameConst.MAP_COLUMN do
-			table.insert(slot3, slot2(slot9, slot13, slot4 + 1))
+	for iter_5_0 = 1, DecodeGameConst.MAP_ROW do
+		for iter_5_1 = 1, DecodeGameConst.MAP_COLUMN do
+			var_5_2 = var_5_2 + 1
+
+			local var_5_4 = var_5_0(iter_5_0, iter_5_1, var_5_2)
+
+			table.insert(var_5_1, var_5_4)
 		end
 	end
 
-	slot6 = slot0:IsUnlockMap(slot1)
-	slot8 = {}
+	local var_5_5 = arg_5_0:IsUnlockMap(arg_5_1)
+	local var_5_6 = arg_5_0.passwords[arg_5_1]
+	local var_5_7 = {}
 
-	for slot12 = 1, #slot0.passwords[slot1] do
-		slot13 = slot7[slot12]
+	for iter_5_2 = 1, #var_5_6 do
+		local var_5_8 = var_5_6[iter_5_2]
+		local var_5_9 = var_5_3 + DecodeGameConst.Vect2Index(var_5_8[1], var_5_8[2])
 
-		table.insert(slot8, slot5 + DecodeGameConst.Vect2Index(slot13[1], slot13[2]))
+		table.insert(var_5_7, var_5_9)
 	end
 
 	return {
-		id = slot1,
-		items = slot3,
-		isUnlock = slot6,
-		password = slot7,
-		passwordIndexs = slot8
+		id = arg_5_1,
+		items = var_5_1,
+		isUnlock = var_5_5,
+		password = var_5_6,
+		passwordIndexs = var_5_7
 	}
 end
 
-function slot0.SwitchMap(slot0, slot1)
-	slot0.map = slot0.maps[slot1]
+function var_0_0.SwitchMap(arg_7_0, arg_7_1)
+	arg_7_0.map = arg_7_0.maps[arg_7_1]
 
-	for slot5, slot6 in ipairs(slot0.map.items) do
-		slot6.isUsed = slot0:IsUsedMapKey(slot6.index)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.map.items) do
+		iter_7_1.isUsed = arg_7_0:IsUsedMapKey(iter_7_1.index)
 	end
 end
 
-function slot0.ExitMap(slot0)
-	slot0.map = nil
+function var_0_0.ExitMap(arg_8_0)
+	arg_8_0.map = nil
 end
 
-function slot0.UnlockMapItem(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0.map.items) do
-		if slot7.index == slot1 then
-			slot7.isUnlock = true
+function var_0_0.UnlockMapItem(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0.map
+
+	for iter_9_0, iter_9_1 in ipairs(var_9_0.items) do
+		if iter_9_1.index == arg_9_1 then
+			iter_9_1.isUnlock = true
 
 			break
 		end
 	end
 
-	if not table.contains(slot0.unlocks, slot1) then
-		table.insert(slot0.unlocks, slot1)
+	if not table.contains(arg_9_0.unlocks, arg_9_1) then
+		table.insert(arg_9_0.unlocks, arg_9_1)
 	end
 
-	slot0.canUseCnt = slot0.canUseCnt - 1
+	arg_9_0.canUseCnt = arg_9_0.canUseCnt - 1
 end
 
-function slot0.OnRepairMap(slot0)
-	slot0.map.isUnlock = true
+function var_0_0.OnRepairMap(arg_10_0)
+	arg_10_0.map.isUnlock = true
 end
 
-function slot0.IsUnlock(slot0, slot1)
-	return _.any(slot0.map.items, function (slot0)
-		return slot0.index == uv0 and slot0.isUnlock
+function var_0_0.IsUnlock(arg_11_0, arg_11_1)
+	return _.any(arg_11_0.map.items, function(arg_12_0)
+		return arg_12_0.index == arg_11_1 and arg_12_0.isUnlock
 	end)
 end
 
-function slot0.GetUnlockedCnt(slot0)
-	return #slot0.unlocks
+function var_0_0.GetUnlockedCnt(arg_13_0)
+	return #arg_13_0.unlocks
 end
 
-function slot0.IsUnlockMap(slot0, slot1)
-	slot2 = DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN
-	slot3 = (slot1 - 1) * slot2 + 1
+function var_0_0.IsUnlockMap(arg_14_0, arg_14_1)
+	local var_14_0 = DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN
+	local var_14_1 = (arg_14_1 - 1) * var_14_0 + 1
+	local var_14_2 = var_14_1 + var_14_0 - 1
 
-	return _.all(_.range(slot3, slot3 + slot2 - 1), function (slot0)
-		return table.contains(uv0.unlocks, slot0)
+	return _.all(_.range(var_14_1, var_14_2), function(arg_15_0)
+		return table.contains(arg_14_0.unlocks, arg_15_0)
 	end)
 end
 
-function slot0.GetUnlockMapCnt(slot0)
-	slot1 = 0
+function var_0_0.GetUnlockMapCnt(arg_16_0)
+	local var_16_0 = 0
 
-	for slot5, slot6 in ipairs(slot0.maps) do
-		if slot6.isUnlock then
-			slot1 = slot1 + 1
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.maps) do
+		if iter_16_1.isUnlock then
+			var_16_0 = var_16_0 + 1
 		end
 	end
 
-	return slot1
+	return var_16_0
 end
 
-function slot0.CheckIndex(slot0, slot1)
-	slot2 = #DecodeGameConst.MAPS_PASSWORD[1]
-	slot3 = slot0:GetCurrMapKeyIndex(slot1)
-	slot4 = (math.ceil(slot3 / slot2) - 1) * slot2 + 1
-	slot5 = slot4 + slot2 - 1
+function var_0_0.CheckIndex(arg_17_0, arg_17_1)
+	local var_17_0 = #DecodeGameConst.MAPS_PASSWORD[1]
+	local var_17_1 = arg_17_0:GetCurrMapKeyIndex(arg_17_1)
+	local var_17_2 = (math.ceil(var_17_1 / var_17_0) - 1) * var_17_0 + 1
+	local var_17_3 = var_17_2 + (var_17_0 - 1)
 
-	if slot3 == slot4 then
+	if var_17_1 == var_17_2 then
 		return true
 	end
 
-	if slot4 < slot3 and slot0.mapIndexs[slot3 - 1] ~= false then
-		return true
+	if var_17_2 < var_17_1 then
+		local var_17_4 = var_17_1 - 1
+
+		if arg_17_0.mapIndexs[var_17_4] ~= false then
+			return true
+		end
 	end
 
 	return false
 end
 
-function slot0.IsUsedMapKey(slot0, slot1)
-	return table.contains(slot0.mapIndexs, slot1)
+function var_0_0.IsUsedMapKey(arg_18_0, arg_18_1)
+	return table.contains(arg_18_0.mapIndexs, arg_18_1)
 end
 
-function slot0.IsMapKey(slot0, slot1)
-	return _.any(slot0.map.passwordIndexs, function (slot0)
-		return slot0 == uv0
+function var_0_0.IsMapKey(arg_19_0, arg_19_1)
+	return _.any(arg_19_0.map.passwordIndexs, function(arg_20_0)
+		return arg_20_0 == arg_19_1
 	end)
 end
 
-function slot0.InsertMapKey(slot0, slot1)
-	slot0.mapIndexs[slot0:GetCurrMapKeyIndex(slot1)] = slot1
+function var_0_0.InsertMapKey(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_0:GetCurrMapKeyIndex(arg_21_1)
+
+	arg_21_0.mapIndexs[var_21_0] = arg_21_1
 end
 
-function slot0.GetMapKeyStr(slot0, slot1)
-	return DecodeGameConst.PASSWORDS[slot1 - (slot0.map.id - 1) * DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN]
+function var_0_0.GetMapKeyStr(arg_22_0, arg_22_1)
+	arg_22_1 = arg_22_1 - (arg_22_0.map.id - 1) * (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
+
+	return DecodeGameConst.PASSWORDS[arg_22_1]
 end
 
-function slot0.ClearMapKeys(slot0)
-	if slot0.isFinished then
+function var_0_0.ClearMapKeys(arg_23_0)
+	if arg_23_0.isFinished then
 		return
 	end
 
-	slot0.mapIndexs = _.map(slot0.mapIndexs, function (slot0)
+	arg_23_0.mapIndexs = _.map(arg_23_0.mapIndexs, function(arg_24_0)
 		return false
 	end)
 end
 
-function slot0.GetCurrMapKeyIndex(slot0, slot1)
-	slot3, slot4 = DecodeGameConst.Index2Vect(slot1 % (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN))
-	slot5 = nil
+function var_0_0.GetCurrMapKeyIndex(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1 % (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
+	local var_25_1, var_25_2 = DecodeGameConst.Index2Vect(var_25_0)
+	local var_25_3
 
-	for slot9, slot10 in ipairs(DecodeGameConst.PASSWORD) do
-		if slot10[1] == slot3 and slot10[2] == slot4 then
-			slot5 = slot9
+	for iter_25_0, iter_25_1 in ipairs(DecodeGameConst.PASSWORD) do
+		if iter_25_1[1] == var_25_1 and iter_25_1[2] == var_25_2 then
+			var_25_3 = iter_25_0
 
 			break
 		end
 	end
 
-	assert(slot5)
+	assert(var_25_3)
 
-	return slot5
+	return var_25_3
 end
 
-function slot0.IsSuccess(slot0)
-	return _.all(slot0.mapIndexs, function (slot0)
-		return slot0 ~= false
+function var_0_0.IsSuccess(arg_26_0)
+	return _.all(arg_26_0.mapIndexs, function(arg_27_0)
+		return arg_27_0 ~= false
 	end)
 end
 
-function slot0.GetMapKeyStrs(slot0)
-	return _.map(slot0.mapIndexs, function (slot0)
-		if slot0 == false then
+function var_0_0.GetMapKeyStrs(arg_28_0)
+	return _.map(arg_28_0.mapIndexs, function(arg_29_0)
+		if arg_29_0 == false then
 			return false
 		end
 
-		return DecodeGameConst.PASSWORDS[slot0 % (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)]
+		local var_29_0 = arg_29_0 % (DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN)
+
+		return DecodeGameConst.PASSWORDS[var_29_0]
 	end)
 end
 
-function slot0.GetPassWordProgress(slot0)
-	slot1 = 1
-	slot2 = {}
-	slot3 = 0
+function var_0_0.GetPassWordProgress(arg_30_0)
+	local var_30_0 = 1
+	local var_30_1 = {}
+	local var_30_2 = 0
 
-	for slot7 = 1, #DecodeGameConst.PASSWORD, DecodeGameConst.MAX_MAP_COUNT do
-		if _.all(_.slice(slot0.mapIndexs, slot7, 3), function (slot0)
-			return slot0 ~= false
-		end) == true then
-			slot3 = slot3 + 1
+	for iter_30_0 = 1, #DecodeGameConst.PASSWORD, DecodeGameConst.MAX_MAP_COUNT do
+		local var_30_3 = _.all(_.slice(arg_30_0.mapIndexs, iter_30_0, 3), function(arg_31_0)
+			return arg_31_0 ~= false
+		end)
+
+		if var_30_3 == true then
+			var_30_2 = var_30_2 + 1
 		end
 
-		table.insert(slot2, slot8)
+		table.insert(var_30_1, var_30_3)
 	end
 
-	return slot2, slot3
+	return var_30_1, var_30_2
 end
 
-function slot0.Finish(slot0)
-	slot0.isFinished = true
+function var_0_0.Finish(arg_32_0)
+	arg_32_0.isFinished = true
 end
 
-function slot0.CanUnlockAward(slot0)
-	return not slot0.isFinished and DecodeGameConst.MAX_MAP_COUNT * DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN <= slot0:GetUnlockedCnt()
+function var_0_0.CanUnlockAward(arg_33_0)
+	local var_33_0 = DecodeGameConst.MAX_MAP_COUNT * DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN
+
+	return not arg_33_0.isFinished and var_33_0 <= arg_33_0:GetUnlockedCnt()
 end
 
-function slot0.Dispose(slot0)
+function var_0_0.Dispose(arg_34_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行6次攻击，触发全弹发射-{namecode:66}级I",
-	stack = 1,
-	id = 22261,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -44,5 +24,25 @@ return {
 				countType = 22260
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行6次攻击，触发全弹发射-{namecode:66}级I",
+	stack = 1,
+	id = 22261,
+	icon = 20200,
+	last_effect = ""
 }

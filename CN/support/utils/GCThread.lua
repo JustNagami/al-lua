@@ -1,52 +1,56 @@
-GCThread = singletonClass("GCThread")
-slot0 = GCThread
-slot0.R1024 = 0.00097656
+﻿GCThread = singletonClass("GCThread")
 
-function slot0.Ctor(slot0)
-	slot0.step = 1
-	slot0.gctick = 0
-	slot0.gccost = 0
-	slot0.running = false
-	slot0.gcHandle = UpdateBeat:CreateListener(slot0.GCStep, slot0)
-	slot0.checkHandle = UpdateBeat:CreateListener(slot0.WatchStep, slot0)
+local var_0_0 = GCThread
+
+var_0_0.R1024 = 0.00097656
+
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.step = 1
+	arg_1_0.gctick = 0
+	arg_1_0.gccost = 0
+	arg_1_0.running = false
+	arg_1_0.gcHandle = UpdateBeat:CreateListener(arg_1_0.GCStep, arg_1_0)
+	arg_1_0.checkHandle = UpdateBeat:CreateListener(arg_1_0.WatchStep, arg_1_0)
 end
 
-function slot0.GC(slot0, slot1)
-	slot0.needUnityGC = true
+function var_0_0.GC(arg_2_0, arg_2_1)
+	arg_2_0.needUnityGC = true
 
-	slot0:LuaGC(slot1)
+	arg_2_0:LuaGC(arg_2_1)
 end
 
-function slot0.LuaGC(slot0, slot1)
-	if slot1 then
+function var_0_0.LuaGC(arg_3_0, arg_3_1)
+	if arg_3_1 then
 		collectgarbage("collect")
-		slot0:GCFinal()
-	elseif not slot0.running then
-		slot0.running = true
+		arg_3_0:GCFinal()
+	elseif not arg_3_0.running then
+		arg_3_0.running = true
 
-		slot0:CalcStep()
+		arg_3_0:CalcStep()
 
-		slot0.gctick = 0
-		slot0.gccost = 0
+		arg_3_0.gctick = 0
+		arg_3_0.gccost = 0
 
-		UpdateBeat:AddListener(slot0.gcHandle)
+		UpdateBeat:AddListener(arg_3_0.gcHandle)
 	end
 end
 
-function slot0.GCFinal(slot0)
-	slot0.running = false
+function var_0_0.GCFinal(arg_4_0)
+	arg_4_0.running = false
 
-	UpdateBeat:RemoveListener(slot0.gcHandle)
+	UpdateBeat:RemoveListener(arg_4_0.gcHandle)
 
-	if slot0.needUnityGC then
-		slot0.needUnityGC = false
-		slot2 = PoolMgr.GetInstance():SpriteMemUsage()
-		slot3 = 24
+	if arg_4_0.needUnityGC then
+		arg_4_0.needUnityGC = false
 
-		originalPrint("cached sprite size: " .. math.ceil(slot2 * 10) / 10 .. "/" .. slot3 .. "MB")
+		local var_4_0 = PoolMgr.GetInstance()
+		local var_4_1 = var_4_0:SpriteMemUsage()
+		local var_4_2 = 24
 
-		if slot3 < slot2 then
-			slot1:DestroyAllSprite()
+		originalPrint("cached sprite size: " .. math.ceil(var_4_1 * 10) / 10 .. "/" .. var_4_2 .. "MB")
+
+		if var_4_2 < var_4_1 then
+			var_4_0:DestroyAllSprite()
 		else
 			ResourceMgr.Inst:ResUnloadAsync()
 		end
@@ -55,91 +59,99 @@ function slot0.GCFinal(slot0)
 	end
 
 	if IsUnityEditor then
-		print("lua mem: " .. collectgarbage("count") * uv0.R1024 .. "MB")
+		print("lua mem: " .. collectgarbage("count") * var_0_0.R1024 .. "MB")
 	end
 end
 
-function slot0.GCStep(slot0)
-	slot1 = os.clock()
+function var_0_0.GCStep(arg_5_0)
+	local var_5_0 = os.clock()
 
-	if not slot0.running then
-		-- Nothing
-	elseif collectgarbage("step", slot0.step) then
-		slot0:GCFinal()
+	if not arg_5_0.running then
+		-- block empty
+	elseif collectgarbage("step", arg_5_0.step) then
+		arg_5_0:GCFinal()
 	else
-		slot2 = os.clock() * 1000 - slot1 * 1000
-		slot0.gccost = slot0.gccost <= 0 and slot2 or slot0.gccost
-		slot0.gccost = (slot0.gccost + slot2) * 0.5
-		slot0.gctick = slot0.gctick + 1
+		local var_5_1 = os.clock() * 1000 - var_5_0 * 1000
 
-		if slot0.gctick > 300 and slot0.gctick % 30 == 0 then
-			slot0:CalcStep()
+		arg_5_0.gccost = arg_5_0.gccost <= 0 and var_5_1 or arg_5_0.gccost
+		arg_5_0.gccost = (arg_5_0.gccost + var_5_1) * 0.5
+		arg_5_0.gctick = arg_5_0.gctick + 1
+
+		if arg_5_0.gctick > 300 and arg_5_0.gctick % 30 == 0 then
+			arg_5_0:CalcStep()
 		end
 	end
 end
 
-function slot0.CalcStep(slot0)
-	slot0.step = math.max(slot0.gctick - 60, 30) / 30 * 500 * math.max(1 - math.max(slot0.gccost - 3, 0) * 0.1, 0.1)
+function var_0_0.CalcStep(arg_6_0)
+	arg_6_0.step = math.max(arg_6_0.gctick - 60, 30) / 30 * 500 * math.max(1 - math.max(arg_6_0.gccost - 3, 0) * 0.1, 0.1)
 end
 
-function slot0.StartWatch(slot0, slot1)
+function var_0_0.StartWatch(arg_7_0, arg_7_1)
 	originalPrint("overhead: start watch")
 
-	if slot1 < collectgarbage("count") * uv0.R1024 + 12 then
-		slot1 = slot2 + 12
+	local var_7_0 = collectgarbage("count") * var_0_0.R1024
+
+	if arg_7_1 < var_7_0 + 12 then
+		arg_7_1 = var_7_0 + 12
 	end
 
-	slot0.watcher = Timer.New(function ()
-		if not uv0.running and uv2 < collectgarbage("count") * uv1.R1024 then
-			originalPrint("overhead: start gc " .. slot0 .. "MB")
+	arg_7_0.watcher = Timer.New(function()
+		if not arg_7_0.running then
+			local var_8_0 = collectgarbage("count") * var_0_0.R1024
 
-			uv0.running = true
+			if var_8_0 > arg_7_1 then
+				originalPrint("overhead: start gc " .. var_8_0 .. "MB")
 
-			uv0:CalcStep()
+				arg_7_0.running = true
 
-			uv0.gctick = 0
-			uv0.gccost = 0
+				arg_7_0:CalcStep()
 
-			UpdateBeat:AddListener(uv0.checkHandle)
+				arg_7_0.gctick = 0
+				arg_7_0.gccost = 0
+
+				UpdateBeat:AddListener(arg_7_0.checkHandle)
+			end
 		end
 	end, 5, -1)
 
-	slot0.watcher:Start()
+	arg_7_0.watcher:Start()
 end
 
-function slot0.StopWatch(slot0)
+function var_0_0.StopWatch(arg_9_0)
 	originalPrint("overhead: stop watch")
 
-	if slot0.watcher then
-		slot0.watcher:Stop()
+	if arg_9_0.watcher then
+		arg_9_0.watcher:Stop()
 
-		slot0.watcher = nil
+		arg_9_0.watcher = nil
 	end
 end
 
-function slot0.WatchStep(slot0)
-	slot1 = os.clock()
+function var_0_0.WatchStep(arg_10_0)
+	local var_10_0 = os.clock()
 
-	if collectgarbage("step", slot0.step) then
+	if collectgarbage("step", arg_10_0.step) then
 		originalPrint("overhead: gc complete")
 
 		if IsUnityEditor then
-			print("lua mem: " .. collectgarbage("count") * uv0.R1024 .. "MB")
+			print("lua mem: " .. collectgarbage("count") * var_0_0.R1024 .. "MB")
 		end
 
-		slot0.running = false
+		arg_10_0.running = false
 
-		UpdateBeat:RemoveListener(slot0.checkHandle)
+		UpdateBeat:RemoveListener(arg_10_0.checkHandle)
 	else
-		slot2 = os.clock() * 1000 - slot1 * 1000
-		slot0.gccost = slot0.gccost <= 0 and slot2 or slot0.gccost
-		slot0.gccost = (slot0.gccost + slot2) * 0.5
-		slot0.gctick = slot0.gctick + 1
+		local var_10_1 = os.clock() * 1000 - var_10_0 * 1000
 
-		if slot0.gctick > 300 and slot0.gctick % 30 == 0 then
-			slot0:CalcStep()
+		arg_10_0.gccost = arg_10_0.gccost <= 0 and var_10_1 or arg_10_0.gccost
+		arg_10_0.gccost = (arg_10_0.gccost + var_10_1) * 0.5
+		arg_10_0.gctick = arg_10_0.gctick + 1
+
+		if arg_10_0.gctick > 300 and arg_10_0.gctick % 30 == 0 then
+			arg_10_0:CalcStep()
 		end
 	end
 end
 
-return slot0
+return var_0_0

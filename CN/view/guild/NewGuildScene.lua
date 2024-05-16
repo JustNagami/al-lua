@@ -1,210 +1,211 @@
-slot0 = class("NewGuildScene", import("..base.BaseUI"))
+﻿local var_0_0 = class("NewGuildScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewGuildUI"
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_2_0)
 	return true
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.playerVO = slot1
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
+	arg_3_0.playerVO = arg_3_1
 end
 
-function slot0.init(slot0)
-	slot0.createPanel = slot0:findTF("create_panel")
-	slot0.factionPanel = slot0:findTF("faction_panel")
-	slot0.createBtn = slot0:findTF("create_panel/frame/create_btn")
-	slot0.joinBtn = slot0:findTF("create_panel/frame/join_btn")
-	slot0.topPanel = slot0:findTF("blur_panel/adapt/top")
-	slot0.publicGuildBtn = slot0:findTF("create_panel/frame/public_btn")
-	slot0.backBtn = slot0:findTF("back", slot0.topPanel)
+function var_0_0.init(arg_4_0)
+	arg_4_0.createPanel = arg_4_0:findTF("create_panel")
+	arg_4_0.factionPanel = arg_4_0:findTF("faction_panel")
+	arg_4_0.createBtn = arg_4_0:findTF("create_panel/frame/create_btn")
+	arg_4_0.joinBtn = arg_4_0:findTF("create_panel/frame/join_btn")
+	arg_4_0.topPanel = arg_4_0:findTF("blur_panel/adapt/top")
+	arg_4_0.publicGuildBtn = arg_4_0:findTF("create_panel/frame/public_btn")
+	arg_4_0.backBtn = arg_4_0:findTF("back", arg_4_0.topPanel)
 
-	setActive(slot0.factionPanel, false)
+	setActive(arg_4_0.factionPanel, false)
 
-	slot0.mask = slot0:findTF("mask")
+	arg_4_0.mask = arg_4_0:findTF("mask")
 
-	SetActive(slot0.mask, false)
+	SetActive(arg_4_0.mask, false)
 
-	slot0.mainRedPage = NewGuildMainRedPage.New(slot0._tf, slot0.event)
-	slot0.mainBluePage = NewGuildMainBluePage.New(slot0._tf, slot0.event)
+	arg_4_0.mainRedPage = NewGuildMainRedPage.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.mainBluePage = NewGuildMainBluePage.New(arg_4_0._tf, arg_4_0.event)
 end
 
-function slot0.didEnter(slot0)
-	slot0:startCreate()
-	onButton(slot0, slot0.createBtn, function ()
-		uv0:createGuild()
+function var_0_0.didEnter(arg_5_0)
+	arg_5_0:startCreate()
+	onButton(arg_5_0, arg_5_0.createBtn, function()
+		arg_5_0:createGuild()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.joinBtn, function ()
-		uv0:emit(NewGuildMediator.OPEN_GUILD_LIST)
+	onButton(arg_5_0, arg_5_0.joinBtn, function()
+		arg_5_0:emit(NewGuildMediator.OPEN_GUILD_LIST)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.createPanel, function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_5_0, arg_5_0.createPanel, function()
+		arg_5_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.publicGuildBtn, function ()
-		uv0:emit(NewGuildMediator.OPEN_PUBLIC_GUILD)
+	onButton(arg_5_0, arg_5_0.publicGuildBtn, function()
+		arg_5_0:emit(NewGuildMediator.OPEN_PUBLIC_GUILD)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.backBtn, function ()
-		if go(uv0.createPanel).activeSelf then
-			uv0:emit(uv1.ON_BACK)
+	onButton(arg_5_0, arg_5_0.backBtn, function()
+		if go(arg_5_0.createPanel).activeSelf then
+			arg_5_0:emit(var_0_0.ON_BACK)
 		end
 	end, SFX_CANCEL)
 end
 
-function slot0.startCreate(slot0)
-	setActive(slot0.createPanel, true)
+function var_0_0.startCreate(arg_11_0)
+	setActive(arg_11_0.createPanel, true)
 end
 
-function slot0.createGuild(slot0)
-	setActive(slot0.createPanel, false)
-	setActive(slot0.factionPanel, false)
+function var_0_0.createGuild(arg_12_0)
+	setActive(arg_12_0.createPanel, false)
+	setActive(arg_12_0.factionPanel, false)
 
-	slot0.createProcess = coroutine.wrap(function ()
-		setActive(uv0.createPanel, false)
+	arg_12_0.createProcess = coroutine.wrap(function()
+		setActive(arg_12_0.createPanel, false)
 
-		slot0 = Guild.New({})
+		local var_13_0 = Guild.New({})
 
-		uv0:selectFaction(slot0, uv0.createProcess)
+		arg_12_0:selectFaction(var_13_0, arg_12_0.createProcess)
 		coroutine.yield()
-		uv0:setDescInfo(slot0)
+		arg_12_0:setDescInfo(var_13_0)
 	end)
 
-	slot0.createProcess()
+	arg_12_0.createProcess()
 end
 
-function slot0.selectFaction(slot0, slot1, slot2)
-	function slot3(slot0, slot1)
-		uv0.isPlaying = true
-		slot2 = slot0:Find("bg")
+function var_0_0.selectFaction(arg_14_0, arg_14_1, arg_14_2)
+	local function var_14_0(arg_15_0, arg_15_1)
+		arg_14_0.isPlaying = true
 
-		setActive(slot2, true)
+		local var_15_0 = arg_15_0:Find("bg")
 
-		slot3 = slot2:GetComponent("CanvasGroup")
+		setActive(var_15_0, true)
 
-		LeanTween.value(go(slot2), 1, 3, 0.5):setOnUpdate(System.Action_float(function (slot0)
-			uv0.localScale = Vector3(slot0, slot0, 1)
-			uv1.alpha = 1 - slot0 / 3
-		end)):setOnComplete(System.Action(function ()
-			setActive(uv0, false)
+		local var_15_1 = var_15_0:GetComponent("CanvasGroup")
 
-			uv0.localScale = Vector3(1, 1, 1)
-			uv1.isPlaying = false
+		LeanTween.value(go(var_15_0), 1, 3, 0.5):setOnUpdate(System.Action_float(function(arg_16_0)
+			var_15_0.localScale = Vector3(arg_16_0, arg_16_0, 1)
+			var_15_1.alpha = 1 - arg_16_0 / 3
+		end)):setOnComplete(System.Action(function()
+			setActive(var_15_0, false)
 
-			uv2()
+			var_15_0.localScale = Vector3(1, 1, 1)
+			arg_14_0.isPlaying = false
+
+			arg_15_1()
 		end))
 	end
 
-	setActive(slot0.factionPanel, true)
+	setActive(arg_14_0.factionPanel, true)
 
-	slot5 = slot0.factionPanel:Find("panel")
-	slot6 = slot5:Find("blhx")
-	slot7 = slot5:Find("cszz")
-	slot8 = slot5:Find("bg")
+	local var_14_1 = arg_14_0.factionPanel:Find("panel")
+	local var_14_2 = var_14_1:Find("blhx")
+	local var_14_3 = var_14_1:Find("cszz")
+	local var_14_4 = var_14_1:Find("bg")
 
-	if not slot0.isInitFaction then
-		setImageSprite(slot8, GetSpriteFromAtlas("commonbg/camp_bg", ""))
-		setImageSprite(slot6:Find("bg"), GetSpriteFromAtlas("clutter/blhx_icon", ""))
-		setImageSprite(slot7:Find("bg"), GetSpriteFromAtlas("clutter/cszz_icon", ""))
-		setActive(slot6:Find("bg"), false)
-		setActive(slot7:Find("bg"), false)
+	if not arg_14_0.isInitFaction then
+		setImageSprite(var_14_4, GetSpriteFromAtlas("commonbg/camp_bg", ""))
+		setImageSprite(var_14_2:Find("bg"), GetSpriteFromAtlas("clutter/blhx_icon", ""))
+		setImageSprite(var_14_3:Find("bg"), GetSpriteFromAtlas("clutter/cszz_icon", ""))
+		setActive(var_14_2:Find("bg"), false)
+		setActive(var_14_3:Find("bg"), false)
 
-		slot0.isInitFaction = true
+		arg_14_0.isInitFaction = true
 	end
 
-	onButton(slot0, slot6, function ()
-		if uv0.isPlaying then
+	onButton(arg_14_0, var_14_2, function()
+		if arg_14_0.isPlaying then
 			return
 		end
 
-		uv1:setFaction(GuildConst.FACTION_TYPE_BLHX)
+		arg_14_1:setFaction(GuildConst.FACTION_TYPE_BLHX)
 
-		if uv2 then
-			uv2()
+		if arg_14_2 then
+			arg_14_2()
 		else
 			return
 		end
 
-		uv3(uv4, function ()
-			uv0 = nil
+		var_14_0(var_14_2, function()
+			arg_14_2 = nil
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot7, function ()
-		if uv0.isPlaying then
+	onButton(arg_14_0, var_14_3, function()
+		if arg_14_0.isPlaying then
 			return
 		end
 
-		uv1:setFaction(GuildConst.FACTION_TYPE_CSZZ)
+		arg_14_1:setFaction(GuildConst.FACTION_TYPE_CSZZ)
 
-		if uv2 then
-			uv2()
+		if arg_14_2 then
+			arg_14_2()
 		else
 			return
 		end
 
-		uv3(uv4, function ()
-			uv0 = nil
+		var_14_0(var_14_3, function()
+			arg_14_2 = nil
 		end)
 	end)
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0.isPlaying then
+	onButton(arg_14_0, arg_14_0.backBtn, function()
+		if arg_14_0.isPlaying then
 			return
 		end
 
-		uv0.createProcess = nil
+		arg_14_0.createProcess = nil
 
-		setActive(uv0.createPanel, true)
-		setActive(uv0.factionPanel, false)
-		onButton(uv0, uv0.backBtn, function ()
-			uv0:emit(uv1.ON_BACK)
+		setActive(arg_14_0.createPanel, true)
+		setActive(arg_14_0.factionPanel, false)
+		onButton(arg_14_0, arg_14_0.backBtn, function()
+			arg_14_0:emit(var_0_0.ON_BACK)
 		end, SFX_CANCEL)
 	end, SFX_CANCEL)
-	setActive(slot0.topPanel, true)
+	setActive(arg_14_0.topPanel, true)
 end
 
-function slot0.setDescInfo(slot0, slot1)
-	if slot1:getFaction() == GuildConst.FACTION_TYPE_BLHX then
-		slot0.mainPage = slot0.mainBluePage
-	elseif slot2 == GuildConst.FACTION_TYPE_CSZZ then
-		slot0.mainPage = slot0.mainRedPage
+function var_0_0.setDescInfo(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_1:getFaction()
+
+	if var_24_0 == GuildConst.FACTION_TYPE_BLHX then
+		arg_24_0.mainPage = arg_24_0.mainBluePage
+	elseif var_24_0 == GuildConst.FACTION_TYPE_CSZZ then
+		arg_24_0.mainPage = arg_24_0.mainRedPage
 	end
 
-	function slot3()
-		if not uv0.mainPage:GetLoaded() or uv0.mainPage:IsPlaying() then
+	local function var_24_1()
+		if not arg_24_0.mainPage:GetLoaded() or arg_24_0.mainPage:IsPlaying() then
 			return
 		end
 
-		uv0.createProcess = nil
+		arg_24_0.createProcess = nil
 
-		uv0:createGuild()
-		uv0.mainPage:Hide()
+		arg_24_0:createGuild()
+		arg_24_0.mainPage:Hide()
 	end
 
-	slot4 = slot0.mainPage
-
-	slot4:ExecuteAction("Show", slot1, slot0.playerVO, function ()
-		setActive(uv0.factionPanel, false)
-	end, slot3)
-	onButton(slot0, slot0.backBtn, slot3, SFX_CANCEL)
+	arg_24_0.mainPage:ExecuteAction("Show", arg_24_1, arg_24_0.playerVO, function()
+		setActive(arg_24_0.factionPanel, false)
+	end, var_24_1)
+	onButton(arg_24_0, arg_24_0.backBtn, var_24_1, SFX_CANCEL)
 end
 
-function slot0.ClosePage(slot0)
-	if slot0.page and slot0.page:GetLoaded() and slot0.page:isShowing() then
-		slot0.page:Hide()
+function var_0_0.ClosePage(arg_27_0)
+	if arg_27_0.page and arg_27_0.page:GetLoaded() and arg_27_0.page:isShowing() then
+		arg_27_0.page:Hide()
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.createProcess ~= nil then
-		triggerButton(slot0.backBtn)
+function var_0_0.onBackPressed(arg_28_0)
+	if arg_28_0.createProcess ~= nil then
+		triggerButton(arg_28_0.backBtn)
 	else
-		triggerButton(slot0.createPanel)
+		triggerButton(arg_28_0.createPanel)
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0.mainRedPage:Destroy()
-	slot0.mainBluePage:Destroy()
+function var_0_0.willExit(arg_29_0)
+	arg_29_0.mainRedPage:Destroy()
+	arg_29_0.mainBluePage:Destroy()
 end
 
-return slot0
+return var_0_0

@@ -1,10 +1,11 @@
-slot0 = class("BackYardDecorationFilterPanel", import("....base.BaseSubView"))
-slot0.SORT_MODE = {
+﻿local var_0_0 = class("BackYardDecorationFilterPanel", import("....base.BaseSubView"))
+
+var_0_0.SORT_MODE = {
 	BY_DEFAULT = 1,
 	BY_CONFIG = 3,
 	BY_FUNC = 2
 }
-slot0.SORT_TAG = {
+var_0_0.SORT_TAG = {
 	{
 		{
 			1,
@@ -34,347 +35,358 @@ slot0.SORT_TAG = {
 		i18n("backyard_sort_tag_size")
 	}
 }
-slot0.ORDER_MODE_ASC = 1
-slot0.ORDER_MODE_DASC = 2
+var_0_0.ORDER_MODE_ASC = 1
+var_0_0.ORDER_MODE_DASC = 2
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardIndexUI"
 end
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot1, slot2, slot3)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_0.super.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
-	slot0.filterConfig = pg.backyard_theme_template
-	slot0.sortData = uv0.SORT_TAG[1][1]
-	slot0.sortTxt = uv0.SORT_TAG[1][2]
-	slot0.filterData = _.select(slot0.filterConfig.all, function (slot0)
-		return uv0.filterConfig[slot0].is_view == 1
+	arg_2_0.filterConfig = pg.backyard_theme_template
+	arg_2_0.sortData = var_0_0.SORT_TAG[1][1]
+	arg_2_0.sortTxt = var_0_0.SORT_TAG[1][2]
+	arg_2_0.filterData = _.select(arg_2_0.filterConfig.all, function(arg_3_0)
+		return arg_2_0.filterConfig[arg_3_0].is_view == 1
 	end)
-	slot0.totalThemeCnt = #slot0.filterData
-	slot0.themes = pg.furniture_data_template.get_id_list_by_themeId
+	arg_2_0.totalThemeCnt = #arg_2_0.filterData
+	arg_2_0.themes = pg.furniture_data_template.get_id_list_by_themeId
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.sortTpl = slot0:findTF("bg/sort_tpl")
-	slot0.filterTpl = slot0:findTF("bg/filter_tpl")
-	slot0.sortContainer = slot0:findTF("bg/frame/sorts/sort_container")
-	slot0.filterContainer = slot0:findTF("bg/frame/filters/rect_view/conent/theme_panel")
-	slot0.selectedAllBtn = slot0:findTF("bg/frame/filters/rect_view/conent/all_panel/sort_tpl")
-	slot0.close = slot0:findTF("bg/close")
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.sortTpl = arg_4_0:findTF("bg/sort_tpl")
+	arg_4_0.filterTpl = arg_4_0:findTF("bg/filter_tpl")
+	arg_4_0.sortContainer = arg_4_0:findTF("bg/frame/sorts/sort_container")
+	arg_4_0.filterContainer = arg_4_0:findTF("bg/frame/filters/rect_view/conent/theme_panel")
+	arg_4_0.selectedAllBtn = arg_4_0:findTF("bg/frame/filters/rect_view/conent/all_panel/sort_tpl")
+	arg_4_0.close = arg_4_0:findTF("bg/close")
 
-	setText(slot0:findTF("bg/frame/title"), i18n("indexsort_sort"))
-	setText(slot0:findTF("bg/frame/title_filter"), i18n("indexsort_index"))
-	setText(slot0.selectedAllBtn:Find("Text"), i18n("index_all"))
-	setText(slot0:findTF("bg/frame/confirm_btn/Text"), i18n("word_ok"))
-	setText(slot0:findTF("bg/title"), i18n("courtyard_label_filter"))
+	setText(arg_4_0:findTF("bg/frame/title"), i18n("indexsort_sort"))
+	setText(arg_4_0:findTF("bg/frame/title_filter"), i18n("indexsort_index"))
+	setText(arg_4_0.selectedAllBtn:Find("Text"), i18n("index_all"))
+	setText(arg_4_0:findTF("bg/frame/confirm_btn/Text"), i18n("word_ok"))
+	setText(arg_4_0:findTF("bg/title"), i18n("courtyard_label_filter"))
 end
 
-function slot0.setFilterData(slot0, slot1)
-	slot0.furnitures = slot1 or {}
+function var_0_0.setFilterData(arg_5_0, arg_5_1)
+	arg_5_0.furnitures = arg_5_1 or {}
 end
 
-function slot0.GetFilterData(slot0)
-	return slot0.furnitures
+function var_0_0.GetFilterData(arg_6_0)
+	return arg_6_0.furnitures
 end
 
-function slot0.SetDorm(slot0, slot1)
-	slot0.dorm = slot1
+function var_0_0.SetDorm(arg_7_0, arg_7_1)
+	arg_7_0.dorm = arg_7_1
 end
 
-function slot0.updateOrderMode(slot0, slot1)
-	slot0.orderMode = slot1 or uv0.ORDER_MODE_ASC
+function var_0_0.updateOrderMode(arg_8_0, arg_8_1)
+	arg_8_0.orderMode = arg_8_1 or var_0_0.ORDER_MODE_ASC
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0:findTF("bg/frame/confirm_btn"), function ()
-		uv0:filter()
-		uv0:Hide()
+function var_0_0.OnInit(arg_9_0)
+	onButton(arg_9_0, arg_9_0:findTF("bg/frame/confirm_btn"), function()
+		arg_9_0:filter()
+		arg_9_0:Hide()
 
-		if uv0.confirmFunc then
-			uv0.confirmFunc()
+		if arg_9_0.confirmFunc then
+			arg_9_0.confirmFunc()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0._go, function ()
-		uv0:Hide()
+	onButton(arg_9_0, arg_9_0._go, function()
+		arg_9_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.close, function ()
-		uv0:Hide()
+	onButton(arg_9_0, arg_9_0.close, function()
+		arg_9_0:Hide()
 	end, SFX_PANEL)
-	slot0:initSortPanel()
-	slot0:initFilterPanel()
-	triggerToggle(slot0.selectedAllBtn, true)
-	triggerToggle(slot0.sortBtns[1], true)
+	arg_9_0:initSortPanel()
+	arg_9_0:initFilterPanel()
+	triggerToggle(arg_9_0.selectedAllBtn, true)
+	triggerToggle(arg_9_0.sortBtns[1], true)
 end
 
-function slot0.initSortPanel(slot0)
-	slot0.sortBtns = {}
+function var_0_0.initSortPanel(arg_13_0)
+	arg_13_0.sortBtns = {}
 
-	for slot4, slot5 in pairs(uv0.SORT_TAG) do
-		slot6 = cloneTplTo(slot0.sortTpl, slot0.sortContainer)
+	for iter_13_0, iter_13_1 in pairs(var_0_0.SORT_TAG) do
+		local var_13_0 = cloneTplTo(arg_13_0.sortTpl, arg_13_0.sortContainer)
 
-		setText(slot6:Find("Text"), slot5[2])
+		setText(var_13_0:Find("Text"), iter_13_1[2])
 
-		slot0.sortBtns[slot4] = slot6
+		arg_13_0.sortBtns[iter_13_0] = var_13_0
 
-		slot0:onSwitch(slot6, function (slot0)
-			if slot0 then
-				uv0.sortData = uv1[1]
-				uv0.sortTxt = uv1[2]
+		arg_13_0:onSwitch(var_13_0, function(arg_14_0)
+			if arg_14_0 then
+				arg_13_0.sortData = iter_13_1[1]
+				arg_13_0.sortTxt = iter_13_1[2]
 			end
 		end)
 	end
 end
 
-function slot0.onSwitch(slot0, slot1, slot2)
-	onToggle(slot0, slot1, function (slot0)
-		uv0:Find("Text"):GetComponent(typeof(Text)).color = slot0 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
+function var_0_0.onSwitch(arg_15_0, arg_15_1, arg_15_2)
+	onToggle(arg_15_0, arg_15_1, function(arg_16_0)
+		arg_15_1:Find("Text"):GetComponent(typeof(Text)).color = arg_16_0 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
 
-		uv1(slot0)
+		arg_15_2(arg_16_0)
 	end, SFX_PANEL)
 end
 
-function slot0.initFilterPanel(slot0)
-	slot0.filterBtns = {}
-	slot1 = Clone(slot0.filterConfig.all)
+function var_0_0.initFilterPanel(arg_17_0)
+	arg_17_0.filterBtns = {}
 
-	table.sort(slot1, function (slot0, slot1)
-		return uv0.filterConfig[slot0].order < uv0.filterConfig[slot1].order
+	local var_17_0 = Clone(arg_17_0.filterConfig.all)
+
+	table.sort(var_17_0, function(arg_18_0, arg_18_1)
+		return arg_17_0.filterConfig[arg_18_0].order < arg_17_0.filterConfig[arg_18_1].order
 	end)
 
-	slot2 = 0
+	local var_17_1 = 0
 
-	for slot6, slot7 in ipairs(slot1) do
-		if slot0.filterConfig[slot7].is_view == 1 then
-			slot9 = cloneTplTo(slot0.filterTpl, slot0.filterContainer)
+	for iter_17_0, iter_17_1 in ipairs(var_17_0) do
+		local var_17_2 = arg_17_0.filterConfig[iter_17_1]
 
-			setText(slot9:Find("Text"), slot8.name)
+		if var_17_2.is_view == 1 then
+			var_17_1 = var_17_1 + 1
 
-			slot0.filterBtns[slot7] = slot9
+			local var_17_3 = cloneTplTo(arg_17_0.filterTpl, arg_17_0.filterContainer)
 
-			slot0:onSwitch(slot9, function (slot0)
-				if slot0 then
-					table.insert(uv0.filterData, uv1)
-					triggerToggle(uv0.selectedAllBtn, uv0:isSelectedAll())
+			setText(var_17_3:Find("Text"), var_17_2.name)
+
+			arg_17_0.filterBtns[iter_17_1] = var_17_3
+
+			arg_17_0:onSwitch(var_17_3, function(arg_19_0)
+				if arg_19_0 then
+					table.insert(arg_17_0.filterData, iter_17_1)
+					triggerToggle(arg_17_0.selectedAllBtn, arg_17_0:isSelectedAll())
 				else
-					uv0.filterData = _.reject(uv0.filterData, function (slot0)
-						return uv0 == slot0
+					arg_17_0.filterData = _.reject(arg_17_0.filterData, function(arg_20_0)
+						return iter_17_1 == arg_20_0
 					end)
 
-					if uv0:isSelectedNone() then
-						triggerToggle(uv0.selectedAllBtn, true)
+					if arg_17_0:isSelectedNone() then
+						triggerToggle(arg_17_0.selectedAllBtn, true)
 
-						uv0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = Color.New(1, 1, 1, 1)
+						arg_17_0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = Color.New(1, 1, 1, 1)
 					end
 				end
 			end)
-			setActive(slot9:Find("line"), (slot2 + 1) % 4 ~= 0)
+			setActive(var_17_3:Find("line"), var_17_1 % 4 ~= 0)
 		end
 	end
 
-	slot0.otherTF = cloneTplTo(slot0.filterTpl, slot0.filterContainer)
-	slot4 = slot0.otherTF
+	arg_17_0.otherTF = cloneTplTo(arg_17_0.filterTpl, arg_17_0.filterContainer)
 
-	setText(slot4:Find("Text"), i18n("backyard_filter_tag_other"))
+	setText(arg_17_0.otherTF:Find("Text"), i18n("backyard_filter_tag_other"))
 
-	slot3 = slot0.otherTF
-	slot0.otherTFToggle = slot3:GetComponent(typeof(Toggle))
-	slot0.selectedOther = false
+	arg_17_0.otherTFToggle = arg_17_0.otherTF:GetComponent(typeof(Toggle))
+	arg_17_0.selectedOther = false
 
-	slot0:onSwitch(slot0.otherTF, function (slot0)
-		uv0.selectedOther = slot0
+	arg_17_0:onSwitch(arg_17_0.otherTF, function(arg_21_0)
+		arg_17_0.selectedOther = arg_21_0
 
-		if slot0 then
-			triggerToggle(uv0.selectedAllBtn, uv0:isSelectedAll())
-		elseif uv0:isSelectedNone() then
-			triggerToggle(uv0.selectedAllBtn, true)
+		if arg_21_0 then
+			triggerToggle(arg_17_0.selectedAllBtn, arg_17_0:isSelectedAll())
+		elseif arg_17_0:isSelectedNone() then
+			triggerToggle(arg_17_0.selectedAllBtn, true)
 
-			uv0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = Color.New(0.2235294, 0.227451, 0.2352941, 1)
+			arg_17_0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = Color.New(0.2235294, 0.227451, 0.2352941, 1)
 		end
 	end)
-	onToggle(slot0, slot0.selectedAllBtn, function (slot0)
-		if uv0:isSelectedNone() then
+	onToggle(arg_17_0, arg_17_0.selectedAllBtn, function(arg_22_0)
+		if arg_17_0:isSelectedNone() then
 			return
 		end
 
-		if slot0 then
-			_.each(uv0.filterData, function (slot0)
-				triggerToggle(uv0.filterBtns[slot0], false)
+		if arg_22_0 then
+			_.each(arg_17_0.filterData, function(arg_23_0)
+				triggerToggle(arg_17_0.filterBtns[arg_23_0], false)
 			end)
 
-			uv0.filterData = {}
+			arg_17_0.filterData = {}
 
-			triggerToggle(uv0.otherTF, false)
+			triggerToggle(arg_17_0.otherTF, false)
 
-			uv0.selectedOther = false
+			arg_17_0.selectedOther = false
 		end
 
-		uv0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = slot0 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
+		arg_17_0.selectedAllBtn:Find("Text"):GetComponent(typeof(Text)).color = arg_22_0 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
 	end, SFX_PANEL)
 end
 
-function slot0.isSelectedAll(slot0)
-	return _.all(_.select(slot0.filterConfig.all, function (slot0)
-		return uv0.filterConfig[slot0].is_view == 1
-	end), function (slot0)
-		return table.contains(uv0.filterData, slot0)
-	end) and slot0.otherTFToggle.isOn == true or slot0:isSelectedNone()
+function var_0_0.isSelectedAll(arg_24_0)
+	return _.all(_.select(arg_24_0.filterConfig.all, function(arg_25_0)
+		return arg_24_0.filterConfig[arg_25_0].is_view == 1
+	end), function(arg_26_0)
+		return table.contains(arg_24_0.filterData, arg_26_0)
+	end) and arg_24_0.otherTFToggle.isOn == true or arg_24_0:isSelectedNone()
 end
 
-function slot0.isSelectedNone(slot0)
-	return #slot0.filterData == 0 and slot0.otherTFToggle.isOn == false
+function var_0_0.isSelectedNone(arg_27_0)
+	return #arg_27_0.filterData == 0 and arg_27_0.otherTFToggle.isOn == false
 end
 
-function slot0.filter(slot0)
-	if table.getCount(slot0.furnitures) == 0 then
+function var_0_0.filter(arg_28_0)
+	if table.getCount(arg_28_0.furnitures) == 0 then
 		return
 	end
 
-	slot1 = {}
+	local var_28_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.filterData) do
-		slot7 = slot0.themes[slot6] or {}
+	for iter_28_0, iter_28_1 in ipairs(arg_28_0.filterData) do
+		local var_28_1 = arg_28_0.themes[iter_28_1] or {}
 
-		for slot11, slot12 in ipairs(slot7) do
-			table.insert(slot1, slot12)
+		for iter_28_2, iter_28_3 in ipairs(var_28_1) do
+			table.insert(var_28_0, iter_28_3)
 		end
 	end
 
-	function slot2(slot0)
-		slot1 = slot0.id
-		slot3 = uv0.selectedOther and slot0:getConfig("themeId") == 0
+	local function var_28_2(arg_29_0)
+		local var_29_0 = arg_29_0.id
+		local var_29_1 = arg_29_0:getConfig("themeId") == 0
+		local var_29_2 = arg_28_0.selectedOther and var_29_1
 
-		if #uv0.filterData == uv0.totalThemeCnt and slot2 then
+		if #arg_28_0.filterData == arg_28_0.totalThemeCnt and var_29_1 then
 			return false
 		end
 
-		if slot3 then
+		if var_29_2 then
 			return false
 		end
 
-		return not table.contains(uv1, slot1)
+		return not table.contains(var_28_0, var_29_0)
 	end
 
-	if #slot1 ~= 0 or not not slot0.selectedOther then
-		for slot6 = #slot0.furnitures, 1, -1 do
-			slot7 = slot0.furnitures[slot6].id
+	if #var_28_0 ~= 0 or not not arg_28_0.selectedOther then
+		for iter_28_4 = #arg_28_0.furnitures, 1, -1 do
+			local var_28_3 = arg_28_0.furnitures[iter_28_4].id
 
-			if slot2(slot0.furnitures[slot6]) then
-				table.remove(slot0.furnitures, slot6)
+			if var_28_2(arg_28_0.furnitures[iter_28_4]) then
+				table.remove(arg_28_0.furnitures, iter_28_4)
 			end
 		end
 	end
 
-	slot0:sort(slot0.furnitures)
+	arg_28_0:sort(arg_28_0.furnitures)
 end
 
-function slot0.SORT_BY_FUNC(slot0, slot1, slot2, slot3, slot4)
-	if slot0:__slot2_None__() == slot1:__slot2_None__() then
-		return slot4()
-	elseif slot3 == uv0.ORDER_MODE_ASC then
-		return slot0:__slot2_None__() < slot1:__slot2_None__()
+function var_0_0.SORT_BY_FUNC(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
+	if arg_30_0[arg_30_2](arg_30_0) == arg_30_1[arg_30_2](arg_30_1) then
+		return arg_30_4()
+	elseif arg_30_3 == var_0_0.ORDER_MODE_ASC then
+		return arg_30_0[arg_30_2](arg_30_0) < arg_30_1[arg_30_2](arg_30_1)
 	else
-		return slot1:__slot2_None__() < slot0:__slot2_None__()
+		return arg_30_0[arg_30_2](arg_30_0) > arg_30_1[arg_30_2](arg_30_1)
 	end
 end
 
-function slot0.SORT_BY_CONFIG(slot0, slot1, slot2, slot3, slot4)
-	if slot0:getConfig(slot2) == slot1:getConfig(slot2) then
-		return slot4()
-	elseif slot3 == uv0.ORDER_MODE_ASC then
-		return slot0:getConfig(slot2) < slot1:getConfig(slot2)
+function var_0_0.SORT_BY_CONFIG(arg_31_0, arg_31_1, arg_31_2, arg_31_3, arg_31_4)
+	if arg_31_0:getConfig(arg_31_2) == arg_31_1:getConfig(arg_31_2) then
+		return arg_31_4()
+	elseif arg_31_3 == var_0_0.ORDER_MODE_ASC then
+		return arg_31_0:getConfig(arg_31_2) < arg_31_1:getConfig(arg_31_2)
 	else
-		return slot1:getConfig(slot2) < slot0:getConfig(slot2)
+		return arg_31_0:getConfig(arg_31_2) > arg_31_1:getConfig(arg_31_2)
 	end
 end
 
-function slot0.SortForDecorate(slot0, slot1, slot2)
-	slot3 = slot2[1]
-	slot4 = slot2[2]
-	slot5 = slot2[3]
-	slot6 = slot2[4]
-	slot7 = slot2[5]
+function var_0_0.SortForDecorate(arg_32_0, arg_32_1, arg_32_2)
+	local var_32_0 = arg_32_2[1]
+	local var_32_1 = arg_32_2[2]
+	local var_32_2 = arg_32_2[3]
+	local var_32_3 = arg_32_2[4]
+	local var_32_4 = arg_32_2[5]
+	local var_32_5 = arg_32_2[6]
 
-	function uv0.SortByDefault1(slot0, slot1)
-		return slot0.id < slot1.id
+	function var_0_0.SortByDefault1(arg_33_0, arg_33_1)
+		return arg_33_0.id < arg_33_1.id
 	end
 
-	function uv0.SortByDefault2(slot0, slot1)
-		return slot1.id < slot0.id
+	function var_0_0.SortByDefault2(arg_34_0, arg_34_1)
+		return arg_34_0.id > arg_34_1.id
 	end
 
-	if ((slot2[6][slot0.configId] or 0) == slot0.count and 1 or 0) == ((slot8[slot1.configId] or 0) == slot1.count and 1 or 0) then
-		if slot3 == uv0.SORT_MODE.BY_DEFAULT then
-			return uv0["SortByDefault" .. slot6](slot0, slot1)
-		elseif slot3 == uv0.SORT_MODE.BY_FUNC then
-			return uv0.SORT_BY_FUNC(slot0, slot1, slot4, slot6, function ()
-				return uv0["SortByDefault" .. uv1](uv2, uv3)
+	local var_32_6 = (var_32_5[arg_32_0.configId] or 0) == arg_32_0.count and 1 or 0
+	local var_32_7 = (var_32_5[arg_32_1.configId] or 0) == arg_32_1.count and 1 or 0
+
+	if var_32_6 == var_32_7 then
+		if var_32_0 == var_0_0.SORT_MODE.BY_DEFAULT then
+			return var_0_0["SortByDefault" .. var_32_3](arg_32_0, arg_32_1)
+		elseif var_32_0 == var_0_0.SORT_MODE.BY_FUNC then
+			return var_0_0.SORT_BY_FUNC(arg_32_0, arg_32_1, var_32_1, var_32_3, function()
+				return var_0_0["SortByDefault" .. var_32_3](arg_32_0, arg_32_1)
 			end)
-		elseif slot3 == uv0.SORT_MODE.BY_CONFIG then
-			return uv0.SORT_BY_CONFIG(slot0, slot1, slot4, slot6, function ()
-				return uv0["SortByDefault" .. uv1](uv2, uv3)
+		elseif var_32_0 == var_0_0.SORT_MODE.BY_CONFIG then
+			return var_0_0.SORT_BY_CONFIG(arg_32_0, arg_32_1, var_32_1, var_32_3, function()
+				return var_0_0["SortByDefault" .. var_32_3](arg_32_0, arg_32_1)
 			end)
 		end
 	else
-		return slot10 < slot9
+		return var_32_7 < var_32_6
 	end
 end
 
-function slot0.sort(slot0, slot1)
-	slot2 = slot0:GetConfigIdAndCntMapInAllFloor(slot0.dorm)
+function var_0_0.sort(arg_37_0, arg_37_1)
+	local var_37_0 = arg_37_0:GetConfigIdAndCntMapInAllFloor(arg_37_0.dorm)
 
-	table.sort(slot1, function (slot0, slot1)
-		return uv0.SortForDecorate(slot0, slot1, {
-			uv1.sortData[1],
-			uv1.sortData[2],
-			uv1.dorm,
-			uv1.orderMode,
+	table.sort(arg_37_1, function(arg_38_0, arg_38_1)
+		return var_0_0.SortForDecorate(arg_38_0, arg_38_1, {
+			arg_37_0.sortData[1],
+			arg_37_0.sortData[2],
+			arg_37_0.dorm,
+			arg_37_0.orderMode,
 			{},
-			uv2
+			var_37_0
 		})
 	end)
 
-	slot0.furnitures = slot1
+	arg_37_0.furnitures = arg_37_1
 end
 
-function slot0.GetConfigIdAndCntMapInAllFloor(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetConfigIdAndCntMapInAllFloor(arg_39_0, arg_39_1)
+	local var_39_0 = {}
 
-	for slot6, slot7 in pairs(slot1:GetThemeList()) do
-		for slot11, slot12 in pairs(slot7:GetAllFurniture()) do
-			slot2[slot11] = slot12
+	for iter_39_0, iter_39_1 in pairs(arg_39_1:GetThemeList()) do
+		for iter_39_2, iter_39_3 in pairs(iter_39_1:GetAllFurniture()) do
+			var_39_0[iter_39_2] = iter_39_3
 		end
 	end
 
-	slot3 = {}
+	local var_39_1 = {}
 
-	for slot7, slot8 in pairs(slot2) do
-		if not slot3[slot8.configId] then
-			slot3[slot9] = 0
+	for iter_39_4, iter_39_5 in pairs(var_39_0) do
+		local var_39_2 = iter_39_5.configId
+
+		if not var_39_1[var_39_2] then
+			var_39_1[var_39_2] = 0
 		end
 
-		slot3[slot9] = slot3[slot9] + 1
+		var_39_1[var_39_2] = var_39_1[var_39_2] + 1
 	end
 
-	return slot3
+	return var_39_1
 end
 
-function slot0.Sort(slot0)
-	slot0:sort(slot0.furnitures)
+function var_0_0.Sort(arg_40_0)
+	arg_40_0:sort(arg_40_0.furnitures)
 end
 
-function slot0.Show(slot0)
-	setActive(slot0._go, true)
+function var_0_0.Show(arg_41_0)
+	setActive(arg_41_0._go, true)
 end
 
-function slot0.Hide(slot0)
-	setActive(slot0._go, false)
+function var_0_0.Hide(arg_42_0)
+	setActive(arg_42_0._go, false)
 
-	if slot0.onHideFunc then
-		slot0.onHideFunc()
+	if arg_42_0.onHideFunc then
+		arg_42_0.onHideFunc()
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_43_0)
+	return
 end
 
-return slot0
+return var_0_0

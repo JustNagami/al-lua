@@ -1,78 +1,85 @@
-slot0 = class("ExtendCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ExtendCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.count
-	slot6 = getProxy(PlayerProxy):getData()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = getProxy(PlayerProxy)
+	local var_1_4 = var_1_3:getData()
+	local var_1_5 = pg.shop_template[var_1_1]
 
-	if pg.shop_template[slot2.id].effect_args == ShopArgs.EffecetEquipBagSize then
-		slot6:addEquipmentBagCount(slot7.num * slot4)
-	elseif slot7.effect_args == ShopArgs.EffecetShipBagSize then
-		slot6:addShipBagCount(slot7.num * slot4)
-	elseif slot7.effect_args == ShopArgs.EffectDromExpPos then
-		slot8 = getProxy(DormProxy)
-		slot9 = slot8:getData()
+	if var_1_5.effect_args == ShopArgs.EffecetEquipBagSize then
+		var_1_4:addEquipmentBagCount(var_1_5.num * var_1_2)
+	elseif var_1_5.effect_args == ShopArgs.EffecetShipBagSize then
+		var_1_4:addShipBagCount(var_1_5.num * var_1_2)
+	elseif var_1_5.effect_args == ShopArgs.EffectDromExpPos then
+		local var_1_6 = getProxy(DormProxy)
+		local var_1_7 = var_1_6:getData()
 
-		slot9:increaseTrainPos()
-		slot9:increaseRestPos()
-		slot8:updateDrom(slot9, BackYardConst.DORM_UPDATE_TYPE_SHIP)
-		slot0:sendNotification(GAME.EXTEND_BACKYARD_DONE)
-	elseif slot7.effect_args == ShopArgs.EffectDromFoodMax then
-		slot8 = getProxy(DormProxy)
-		slot9 = slot8:getData()
+		var_1_7:increaseTrainPos()
+		var_1_7:increaseRestPos()
+		var_1_6:updateDrom(var_1_7, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+		arg_1_0:sendNotification(GAME.EXTEND_BACKYARD_DONE)
+	elseif var_1_5.effect_args == ShopArgs.EffectDromFoodMax then
+		local var_1_8 = getProxy(DormProxy)
+		local var_1_9 = var_1_8:getData()
 
-		slot9:extendFoodCapacity(slot7.num)
-		slot9:increaseFoodExtendCount()
-		slot8:updateDrom(slot9, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_extendCapacity_ok", slot7.num))
-	elseif slot7.effect_args == ShopArgs.EffectShopStreetFlash then
+		var_1_9:extendFoodCapacity(var_1_5.num)
+		var_1_9:increaseFoodExtendCount()
+		var_1_8:updateDrom(var_1_9, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_extendCapacity_ok", var_1_5.num))
+	elseif var_1_5.effect_args == ShopArgs.EffectShopStreetFlash then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("refresh_shopStreet_ok"))
-	elseif slot7.effect_args == ShopArgs.EffectTradingPortLevel or slot7.effect_args == ShopArgs.EffectOilFieldLevel or slot7.effect_args == ShopArgs.EffectClassLevel then
-		slot8 = nil
-		slot9 = getProxy(NavalAcademyProxy)
+	elseif var_1_5.effect_args == ShopArgs.EffectTradingPortLevel or var_1_5.effect_args == ShopArgs.EffectOilFieldLevel or var_1_5.effect_args == ShopArgs.EffectClassLevel then
+		local var_1_10
+		local var_1_11 = getProxy(NavalAcademyProxy)
 
-		if slot7.effect_args == ShopArgs.EffectTradingPortLevel then
-			slot8 = slot9._goldVO
-		elseif slot7.effect_args == ShopArgs.EffectOilFieldLevel then
-			slot8 = slot9._oilVO
-		elseif slot7.effect_args == ShopArgs.EffectClassLevel then
-			if slot9._classVO:GetLevel() == 7 then
+		if var_1_5.effect_args == ShopArgs.EffectTradingPortLevel then
+			var_1_10 = var_1_11._goldVO
+		elseif var_1_5.effect_args == ShopArgs.EffectOilFieldLevel then
+			var_1_10 = var_1_11._oilVO
+		elseif var_1_5.effect_args == ShopArgs.EffectClassLevel then
+			var_1_10 = var_1_11._classVO
+
+			local var_1_12 = var_1_10:GetLevel()
+
+			if var_1_12 == 7 then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_CLASS_LEVEL_UP_8)
-			elseif slot10 == 8 then
+			elseif var_1_12 == 8 then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_CLASS_LEVEL_UP_9)
-			elseif slot10 == 9 then
+			elseif var_1_12 == 9 then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_CLASS_LEVEL_UP_10)
 			end
 		end
 
-		slot9:StartUpGradeSuccess(slot8)
+		var_1_11:StartUpGradeSuccess(var_1_10)
 
 		if PLATFORM_CODE == PLATFORM_US then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_start") .. " " .. i18n("word_levelup"))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_start") .. i18n("word_levelup"))
 		end
-	elseif slot7.effect_args == ShopArgs.EffectGuildFlash then
+	elseif var_1_5.effect_args == ShopArgs.EffectGuildFlash then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_shop_flash_success"))
-	elseif slot7.effect_args == ShopArgs.EffectDormFloor then
-		slot8 = getProxy(DormProxy)
-		slot9 = slot8:getData()
+	elseif var_1_5.effect_args == ShopArgs.EffectDormFloor then
+		local var_1_13 = getProxy(DormProxy)
+		local var_1_14 = var_1_13:getData()
 
-		slot9:setFloorNum(slot9.floorNum + 1)
-		slot8:updateDrom(slot9, BackYardConst.DORM_UPDATE_TYPE_FLOOR)
+		var_1_14:setFloorNum(var_1_14.floorNum + 1)
+		var_1_13:updateDrom(var_1_14, BackYardConst.DORM_UPDATE_TYPE_FLOOR)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
-	elseif slot7.effect_args == ShopArgs.EffectSkillPos then
+	elseif var_1_5.effect_args == ShopArgs.EffectSkillPos then
 		getProxy(NavalAcademyProxy):inCreaseKillClassNum()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("open_skill_class_success"))
-	elseif slot7.effect_args == ShopArgs.EffectCommanderBagSize then
-		slot6:updateCommanderBagMax(slot7.num)
-	elseif slot7.effect_args == ShopArgs.EffectSpWeaponBagSize then
-		getProxy(EquipmentProxy):AddSpWeaponCapacity(slot7.num)
+	elseif var_1_5.effect_args == ShopArgs.EffectCommanderBagSize then
+		var_1_4:updateCommanderBagMax(var_1_5.num)
+	elseif var_1_5.effect_args == ShopArgs.EffectSpWeaponBagSize then
+		getProxy(EquipmentProxy):AddSpWeaponCapacity(var_1_5.num)
 	else
 		assert(false, "未处理类型")
 	end
 
-	slot5:updatePlayer(slot6)
+	var_1_3:updatePlayer(var_1_4)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.user_level = {
 	{
 		max_oil = 1000,

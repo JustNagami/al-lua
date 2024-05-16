@@ -1,82 +1,83 @@
-slot0 = class("EducatePolaroidLayer", import(".EducateCollectLayerTemplate"))
+﻿local var_0_0 = class("EducatePolaroidLayer", import(".EducateCollectLayerTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducatePolaroidUI"
 end
 
-function slot0.initConfig(slot0)
-	slot0.config = pg.child_polaroid
+function var_0_0.initConfig(arg_2_0)
+	arg_2_0.config = pg.child_polaroid
 end
 
-function slot0.initGroups(slot0)
-	slot0.groupIds = {}
-	slot0.group2polaroidIds = {}
+function var_0_0.initGroups(arg_3_0)
+	arg_3_0.groupIds = {}
+	arg_3_0.group2polaroidIds = {}
 
-	for slot4, slot5 in pairs(pg.child_polaroid.get_id_list_by_group) do
-		table.insert(slot0.groupIds, slot4)
+	for iter_3_0, iter_3_1 in pairs(pg.child_polaroid.get_id_list_by_group) do
+		table.insert(arg_3_0.groupIds, iter_3_0)
 
-		slot0.group2polaroidIds[slot4] = slot5
+		arg_3_0.group2polaroidIds[iter_3_0] = iter_3_1
 	end
 
-	table.sort(slot0.groupIds)
+	table.sort(arg_3_0.groupIds)
 end
 
-function slot0.initUnlockAttr(slot0)
-	slot0.unlockAttrs = {}
-	slot1 = getProxy(EducateProxy)
-	slot0.endings = slot1:GetFinishEndings()
+function var_0_0.initUnlockAttr(arg_4_0)
+	arg_4_0.unlockAttrs = {}
+	arg_4_0.endings = getProxy(EducateProxy):GetFinishEndings()
 
-	underscore.each(slot0.endings, function (slot0)
-		if pg.child_ending[slot0].polaroid_condition ~= 0 and not table.contains(uv0.unlockAttrs, slot1) then
-			table.insert(uv0.unlockAttrs, slot1)
+	underscore.each(arg_4_0.endings, function(arg_5_0)
+		local var_5_0 = pg.child_ending[arg_5_0].polaroid_condition
+
+		if var_5_0 ~= 0 and not table.contains(arg_4_0.unlockAttrs, var_5_0) then
+			table.insert(arg_4_0.unlockAttrs, var_5_0)
 		end
 	end)
 end
 
-function slot0.didEnter(slot0)
-	slot0:initUnlockAttr()
-	slot0:initGroups()
+function var_0_0.didEnter(arg_6_0)
+	arg_6_0:initUnlockAttr()
+	arg_6_0:initGroups()
 
-	slot0.polaroidData = getProxy(EducateProxy):GetPolaroidData()
-	slot1, slot2 = getProxy(EducateProxy):GetPolaroidGroupCnt()
+	arg_6_0.polaroidData = getProxy(EducateProxy):GetPolaroidData()
 
-	setText(slot0.curCntTF, slot1)
-	setText(slot0.allCntTF, "/" .. slot2)
-	onButton(slot0, slot0.performTF, function ()
-		setActive(uv0.performTF, false)
+	local var_6_0, var_6_1 = getProxy(EducateProxy):GetPolaroidGroupCnt()
+
+	setText(arg_6_0.curCntTF, var_6_0)
+	setText(arg_6_0.allCntTF, "/" .. var_6_1)
+	onButton(arg_6_0, arg_6_0.performTF, function()
+		setActive(arg_6_0.performTF, false)
 	end, SFX_PANEL)
-	slot0:initShowList()
+	arg_6_0:initShowList()
 
-	slot0.pages = math.ceil(#slot0.groupIds / slot0.onePageCnt)
+	arg_6_0.pages = math.ceil(#arg_6_0.groupIds / arg_6_0.onePageCnt)
 
-	slot0:updatePage()
+	arg_6_0:updatePage()
 	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_POLAROID)
 end
 
-function slot0.initShowList(slot0)
-	slot0.showIds = {}
-	slot0.selectedIndex = 1
-	slot0.groupsTF = slot0:findTF("bg/groups", slot0.performTF)
-	slot0.showList = UIItemList.New(slot0.groupsTF, slot0:findTF("tpl", slot0.groupsTF))
-	slot1 = slot0.showList
+function var_0_0.initShowList(arg_8_0)
+	arg_8_0.showIds = {}
+	arg_8_0.selectedIndex = 1
+	arg_8_0.groupsTF = arg_8_0:findTF("bg/groups", arg_8_0.performTF)
+	arg_8_0.showList = UIItemList.New(arg_8_0.groupsTF, arg_8_0:findTF("tpl", arg_8_0.groupsTF))
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.showIds[slot1 + 1]
-			slot4 = uv0:IsUnlock(slot3)
+	arg_8_0.showList:make(function(arg_9_0, arg_9_1, arg_9_2)
+		if arg_9_0 == UIItemList.EventUpdate then
+			local var_9_0 = arg_8_0.showIds[arg_9_1 + 1]
+			local var_9_1 = arg_8_0:IsUnlock(var_9_0)
 
-			setText(uv0:findTF("unlock/unselected/Text", slot2), slot3)
-			setText(uv0:findTF("unlock/selected/Text", slot2), slot3)
-			setActive(uv0:findTF("lock", slot2), not slot4)
-			setActive(uv0:findTF("unlock", slot2), slot4)
-			setActive(uv0:findTF("unlock/selected", slot2), uv0.selectedIndex == slot1 + 1)
-			setActive(uv0:findTF("unlock/unselected", slot2), uv0.selectedIndex ~= slot1 + 1)
-			onButton(uv0, slot2, function (slot0)
-				if uv0 then
-					uv1.selectedIndex = uv2 + 1
+			setText(arg_8_0:findTF("unlock/unselected/Text", arg_9_2), var_9_0)
+			setText(arg_8_0:findTF("unlock/selected/Text", arg_9_2), var_9_0)
+			setActive(arg_8_0:findTF("lock", arg_9_2), not var_9_1)
+			setActive(arg_8_0:findTF("unlock", arg_9_2), var_9_1)
+			setActive(arg_8_0:findTF("unlock/selected", arg_9_2), arg_8_0.selectedIndex == arg_9_1 + 1)
+			setActive(arg_8_0:findTF("unlock/unselected", arg_9_2), arg_8_0.selectedIndex ~= arg_9_1 + 1)
+			onButton(arg_8_0, arg_9_2, function(arg_10_0)
+				if var_9_1 then
+					arg_8_0.selectedIndex = arg_9_1 + 1
 
-					uv1:updatePerform(uv3)
-					uv1.showList:align(#uv1.showIds)
+					arg_8_0:updatePerform(var_9_0)
+					arg_8_0.showList:align(#arg_8_0.showIds)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("child_polaroid_lock_tip"))
 				end
@@ -85,98 +86,103 @@ function slot0.initShowList(slot0)
 	end)
 end
 
-function slot0.IsUnlock(slot0, slot1)
-	if slot0.polaroidData[slot1] then
+function var_0_0.IsUnlock(arg_11_0, arg_11_1)
+	if arg_11_0.polaroidData[arg_11_1] then
 		return true
 	end
 
-	if #slot0.endings > 0 then
-		if slot0.config[slot1].stage[1] == 2 or slot2[1] == 3 then
+	if #arg_11_0.endings > 0 then
+		local var_11_0 = arg_11_0.config[arg_11_1].stage
+
+		if var_11_0[1] == 2 or var_11_0[1] == 3 then
 			return true
-		elseif slot2[1] == 4 then
-			return table.contains(slot0.unlockAttrs, slot0.config[slot1].xingge[1])
+		elseif var_11_0[1] == 4 then
+			local var_11_1 = arg_11_0.config[arg_11_1].xingge[1]
+
+			return table.contains(arg_11_0.unlockAttrs, var_11_1)
 		end
 	end
 
 	return false
 end
 
-function slot0.updatePage(slot0)
-	setActive(slot0.nextBtn, slot0.pages ~= 1 and slot0.curPageIndex < slot0.pages)
-	setActive(slot0.lastBtn, slot0.pages ~= 1 and slot0.curPageIndex > 1)
-	setText(slot0.paginationTF, slot0.curPageIndex .. "/" .. slot0.pages)
+function var_0_0.updatePage(arg_12_0)
+	setActive(arg_12_0.nextBtn, arg_12_0.pages ~= 1 and arg_12_0.curPageIndex < arg_12_0.pages)
+	setActive(arg_12_0.lastBtn, arg_12_0.pages ~= 1 and arg_12_0.curPageIndex > 1)
+	setText(arg_12_0.paginationTF, arg_12_0.curPageIndex .. "/" .. arg_12_0.pages)
 
-	slot1 = (slot0.curPageIndex - 1) * slot0.onePageCnt
+	local var_12_0 = (arg_12_0.curPageIndex - 1) * arg_12_0.onePageCnt
 
-	for slot5 = 1, slot0.onePageCnt do
-		slot6 = slot0:findTF("frame_" .. slot5, slot0.pageTF)
+	for iter_12_0 = 1, arg_12_0.onePageCnt do
+		local var_12_1 = arg_12_0:findTF("frame_" .. iter_12_0, arg_12_0.pageTF)
+		local var_12_2 = arg_12_0.groupIds[var_12_0 + iter_12_0]
 
-		if slot0.groupIds[slot1 + slot5] then
-			setActive(slot6, true)
-			slot0:updateItem(slot7, slot6)
+		if var_12_2 then
+			setActive(var_12_1, true)
+			arg_12_0:updateItem(var_12_2, var_12_1)
 		else
-			setActive(slot6, false)
+			setActive(var_12_1, false)
 		end
 	end
 end
 
-function slot0.updateItem(slot0, slot1, slot2)
-	slot3 = slot0.group2polaroidIds[slot1]
+function var_0_0.updateItem(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = arg_13_0.group2polaroidIds[arg_13_1]
 
-	table.sort(slot3, CompareFuncs({
-		function (slot0)
-			return uv0.polaroidData[slot0] and 0 or 1
+	table.sort(var_13_0, CompareFuncs({
+		function(arg_14_0)
+			return arg_13_0.polaroidData[arg_14_0] and 0 or 1
 		end,
-		function (slot0)
-			return uv0.polaroidData[slot0] and uv0.polaroidData[slot0]:GetTimeWeight() or 1
+		function(arg_15_0)
+			return arg_13_0.polaroidData[arg_15_0] and arg_13_0.polaroidData[arg_15_0]:GetTimeWeight() or 1
 		end,
-		function (slot0)
-			return slot0
+		function(arg_16_0)
+			return arg_16_0
 		end
 	}))
 
-	slot4 = slot0.config[slot3[1]]
-	slot5 = slot0.polaroidData[slot3[1]]
+	local var_13_1 = arg_13_0.config[var_13_0[1]]
+	local var_13_2 = arg_13_0.polaroidData[var_13_0[1]]
 
-	setActive(slot0:findTF("lock", slot2), not slot5)
-	setActive(slot0:findTF("unlock", slot2), slot5)
+	setActive(arg_13_0:findTF("lock", arg_13_2), not var_13_2)
+	setActive(arg_13_0:findTF("unlock", arg_13_2), var_13_2)
 
-	if slot5 then
-		slot6 = slot0.polaroidData[slot3[1]]
+	if var_13_2 then
+		local var_13_3 = arg_13_0.polaroidData[var_13_0[1]]
 
-		LoadImageSpriteAsync("educatepolaroid/" .. slot4.pic, slot0:findTF("unlock/mask/Image", slot2))
-		setText(slot0:findTF("unlock/name", slot2), slot4.title)
-		onButton(slot0, slot2, function ()
-			uv0:showPerformWindow(uv1)
+		LoadImageSpriteAsync("educatepolaroid/" .. var_13_1.pic, arg_13_0:findTF("unlock/mask/Image", arg_13_2))
+		setText(arg_13_0:findTF("unlock/name", arg_13_2), var_13_1.title)
+		onButton(arg_13_0, arg_13_2, function()
+			arg_13_0:showPerformWindow(var_13_0)
 		end, SFX_PANEL)
 	else
-		removeOnButton(slot2)
-		setText(slot0:findTF("lock/Text", slot2), slot4.condition)
+		removeOnButton(arg_13_2)
+		setText(arg_13_0:findTF("lock/Text", arg_13_2), var_13_1.condition)
 	end
 end
 
-function slot0.showPerformWindow(slot0, slot1, slot2)
-	slot0.showIds = slot1
+function var_0_0.showPerformWindow(arg_18_0, arg_18_1, arg_18_2)
+	arg_18_0.showIds = arg_18_1
 
-	slot0.showList:align(#slot0.showIds)
-	triggerButton(slot0.groupsTF:GetChild(0))
-	setActive(slot0.performTF, true)
+	arg_18_0.showList:align(#arg_18_0.showIds)
+	triggerButton(arg_18_0.groupsTF:GetChild(0))
+	setActive(arg_18_0.performTF, true)
 end
 
-function slot0.updatePerform(slot0, slot1)
-	slot2 = slot0.config[slot1]
+function var_0_0.updatePerform(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0.config[arg_19_1]
 
-	LoadImageSpriteAsync("educatepolaroid/" .. slot2.pic, slot0:findTF("bg/mask/Image", slot0.performTF))
-	setText(slot0:findTF("bg/Text", slot0.performTF), slot2.title)
+	LoadImageSpriteAsync("educatepolaroid/" .. var_19_0.pic, arg_19_0:findTF("bg/mask/Image", arg_19_0.performTF))
+	setText(arg_19_0:findTF("bg/Text", arg_19_0.performTF), var_19_0.title)
 end
 
-function slot0.playAnimChange(slot0)
-	slot0.anim:Stop()
-	slot0.anim:Play("anim_educate_Polaroid_change")
+function var_0_0.playAnimChange(arg_20_0)
+	arg_20_0.anim:Stop()
+	arg_20_0.anim:Play("anim_educate_Polaroid_change")
 end
 
-function slot0.playAnimClose(slot0)
-	slot0.anim:Play("anim_educate_Polaroid_out")
+function var_0_0.playAnimClose(arg_21_0)
+	arg_21_0.anim:Play("anim_educate_Polaroid_out")
 end
 
-return slot0
+return var_0_0

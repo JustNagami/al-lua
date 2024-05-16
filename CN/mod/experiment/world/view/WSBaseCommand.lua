@@ -1,88 +1,95 @@
-slot0 = class("WSBaseCommand")
+﻿local var_0_0 = class("WSBaseCommand")
 
-function slot1(slot0, slot1)
-	return slot0 ~= nil and type(slot0) == slot1
+local function var_0_1(arg_1_0, arg_1_1)
+	return arg_1_0 ~= nil and type(arg_1_0) == arg_1_1
 end
 
-slot2 = {
-	__index = function (slot0, slot1)
-		slot2 = rawget(slot0, "class")
+local var_0_2 = {
+	__index = function(arg_2_0, arg_2_1)
+		local var_2_0 = rawget(arg_2_0, "class")
 
-		if uv0(rawget(uv1, slot1), "function") then
-			return slot2[slot1]
-		elseif uv0(rawget(slot2, slot1), "function") then
-			return function (slot0, ...)
-				slot0:Op(uv0, ...)
+		if var_0_1(rawget(var_0_0, arg_2_1), "function") then
+			return var_2_0[arg_2_1]
+		elseif var_0_1(rawget(var_2_0, arg_2_1), "function") then
+			return function(arg_3_0, ...)
+				arg_3_0:Op(arg_2_1, ...)
 			end
-		elseif rawget(slot0, slot1) == nil then
-			return slot2[slot1]
 		else
-			return slot3
+			local var_2_1 = rawget(arg_2_0, arg_2_1)
+
+			if var_2_1 == nil then
+				return var_2_0[arg_2_1]
+			else
+				return var_2_1
+			end
 		end
 	end
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0.index = slot1
-	slot0.wsOps = {}
+function var_0_0.Ctor(arg_4_0, arg_4_1)
+	arg_4_0.index = arg_4_1
+	arg_4_0.wsOps = {}
 
-	setmetatable(slot0, uv0)
+	setmetatable(arg_4_0, var_0_2)
 end
 
-function slot0.Dispose(slot0)
+function var_0_0.Dispose(arg_5_0)
+	return
 end
 
-function slot0.Op(slot0, slot1, ...)
-	assert(slot1 and #slot1 > 0)
+function var_0_0.Op(arg_6_0, arg_6_1, ...)
+	assert(arg_6_1 and #arg_6_1 > 0)
 
-	if #slot0.wsOps > 0 then
-		WorldConst.Print("ignore operation: " .. slot1 .. ", current operation: " .. slot0.wsOps[#slot0.wsOps])
+	if #arg_6_0.wsOps > 0 then
+		WorldConst.Print("ignore operation: " .. arg_6_1 .. ", current operation: " .. arg_6_0.wsOps[#arg_6_0.wsOps])
 
 		return
 	end
 
-	WorldConst.Print(slot0.index .. " do operation: " .. slot1)
-	table.insert(slot0.wsOps, slot1)
-	slot0.class[slot1](slot0, ...)
+	WorldConst.Print(arg_6_0.index .. " do operation: " .. arg_6_1)
+	table.insert(arg_6_0.wsOps, arg_6_1)
+	arg_6_0.class[arg_6_1](arg_6_0, ...)
 end
 
-function slot0.OpDone(slot0, slot1, ...)
-	assert(#slot0.wsOps > 0, "current operation can not be nil.")
+function var_0_0.OpDone(arg_7_0, arg_7_1, ...)
+	assert(#arg_7_0.wsOps > 0, "current operation can not be nil.")
 
-	slot2 = slot0.wsOps[#slot0.wsOps]
+	local var_7_0 = arg_7_0.wsOps[#arg_7_0.wsOps]
 
-	if slot1 ~= nil and slot2 .. "Done" ~= slot1 then
-		assert(false, "current operation " .. slot2 .. " mismatch with " .. slot1)
+	if arg_7_1 ~= nil and var_7_0 .. "Done" ~= arg_7_1 then
+		assert(false, "current operation " .. var_7_0 .. " mismatch with " .. arg_7_1)
 
 		return
 	end
 
-	WorldConst.Print(slot0.index .. " operation done: " .. slot2)
-	table.remove(slot0.wsOps, #slot0.wsOps)
+	WorldConst.Print(arg_7_0.index .. " operation done: " .. var_7_0)
+	table.remove(arg_7_0.wsOps, #arg_7_0.wsOps)
 
-	if slot1 then
-		slot0.class[slot1](slot0, ...)
+	if arg_7_1 then
+		arg_7_0.class[arg_7_1](arg_7_0, ...)
 	end
 end
 
-function slot0.OpRaw(slot0, slot1, ...)
-	setmetatable({
-		Op = function (slot0, slot1, ...)
-			slot0.class[slot1](slot0, ...)
+function var_0_0.OpRaw(arg_8_0, arg_8_1, ...)
+	local var_8_0 = setmetatable({
+		Op = function(arg_9_0, arg_9_1, ...)
+			arg_9_0.class[arg_9_1](arg_9_0, ...)
 		end,
-		OpDone = function (slot0, slot1, ...)
-			if slot1 then
-				slot0:__slot1_None__(...)
+		OpDone = function(arg_10_0, arg_10_1, ...)
+			if arg_10_1 then
+				arg_10_0[arg_10_1](arg_10_0, ...)
 			end
 		end
 	}, {
-		__index = slot0,
-		__newindex = slot0
-	}):__slot1_None__(...)
+		__index = arg_8_0,
+		__newindex = arg_8_0
+	})
+
+	var_8_0[arg_8_1](var_8_0, ...)
 end
 
-function slot0.OpClear(slot0)
-	slot0.wsOps = {}
+function var_0_0.OpClear(arg_11_0)
+	arg_11_0.wsOps = {}
 end
 
-return slot0
+return var_0_0

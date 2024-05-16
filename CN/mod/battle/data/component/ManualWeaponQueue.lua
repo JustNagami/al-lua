@@ -1,174 +1,179 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleUnitEvent
-slot0.Battle.ManualWeaponQueue = class("ManualWeaponQueue")
-slot0.Battle.ManualWeaponQueue.__name = "ManualWeaponQueue"
-slot3 = slot0.Battle.ManualWeaponQueue
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0:init()
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleUnitEvent
 
-	slot0._maxCount = slot1 or 1
+var_0_0.Battle.ManualWeaponQueue = class("ManualWeaponQueue")
+var_0_0.Battle.ManualWeaponQueue.__name = "ManualWeaponQueue"
+
+local var_0_3 = var_0_0.Battle.ManualWeaponQueue
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0:init()
+
+	arg_1_0._maxCount = arg_1_1 or 1
 end
 
-function slot3.init(slot0)
-	uv0.EventListener.AttachEventListener(slot0)
+function var_0_3.init(arg_2_0)
+	var_0_0.EventListener.AttachEventListener(arg_2_0)
 
-	slot0._weaponList = {}
-	slot0._overheatQueue = {}
-	slot0._cooldownList = {}
+	arg_2_0._weaponList = {}
+	arg_2_0._overheatQueue = {}
+	arg_2_0._cooldownList = {}
 end
 
-function slot3.AppendWeapon(slot0, slot1)
-	slot0._weaponList[slot1] = true
+function var_0_3.AppendWeapon(arg_3_0, arg_3_1)
+	arg_3_0._weaponList[arg_3_1] = true
 
-	slot0:addWeaponEvent(slot1)
+	arg_3_0:addWeaponEvent(arg_3_1)
 
-	if slot1:GetCurrentState() == slot1.STATE_OVER_HEAT then
-		slot0._overheatQueue[#slot0._overheatQueue + 1] = slot1
+	if arg_3_1:GetCurrentState() == arg_3_1.STATE_OVER_HEAT then
+		arg_3_0._overheatQueue[#arg_3_0._overheatQueue + 1] = arg_3_1
 	end
 end
 
-function slot3.RemoveWeapon(slot0, slot1)
-	slot0._weaponList[slot1] = nil
+function var_0_3.RemoveWeapon(arg_4_0, arg_4_1)
+	arg_4_0._weaponList[arg_4_1] = nil
 
-	slot0:removeWeaponEvent(slot1)
+	arg_4_0:removeWeaponEvent(arg_4_1)
 
-	for slot5, slot6 in ipairs(slot0._overheatQueue) do
-		if slot6 == slot1 then
-			table.remove(slot0._overheatQueue, slot5)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._overheatQueue) do
+		if iter_4_1 == arg_4_1 then
+			table.remove(arg_4_0._overheatQueue, iter_4_0)
 
 			break
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot0._cooldownList) do
-		if slot6 == slot1 then
-			table.remove(slot0._cooldownList, slot5)
+	for iter_4_2, iter_4_3 in ipairs(arg_4_0._cooldownList) do
+		if iter_4_3 == arg_4_1 then
+			table.remove(arg_4_0._cooldownList, iter_4_2)
 		end
 	end
 end
 
-function slot3.Containers(slot0, slot1)
-	return slot0._weaponList[slot1]
+function var_0_3.Containers(arg_5_0, arg_5_1)
+	return arg_5_0._weaponList[arg_5_1]
 end
 
-function slot3.GetCoolDownList(slot0)
-	return slot0._cooldownList
+function var_0_3.GetCoolDownList(arg_6_0)
+	return arg_6_0._cooldownList
 end
 
-function slot3.GetQueueHead(slot0)
-	return slot0._overheatQueue[#slot0._overheatQueue] or slot0._cooldownList[1]
+function var_0_3.GetQueueHead(arg_7_0)
+	return arg_7_0._overheatQueue[#arg_7_0._overheatQueue] or arg_7_0._cooldownList[1]
 end
 
-function slot3.CheckWeaponInitalCD(slot0)
-	for slot4, slot5 in pairs(slot0._weaponList) do
-		if not slot4:GetModifyInitialCD() then
-			slot0._overheatQueue[#slot0._overheatQueue + 1] = slot4
+function var_0_3.CheckWeaponInitalCD(arg_8_0)
+	for iter_8_0, iter_8_1 in pairs(arg_8_0._weaponList) do
+		if not iter_8_0:GetModifyInitialCD() then
+			arg_8_0._overheatQueue[#arg_8_0._overheatQueue + 1] = iter_8_0
 		end
 	end
 
-	slot1 = #slot0._cooldownList
+	local var_8_0 = #arg_8_0._cooldownList
 
-	while slot1 < slot0._maxCount and #slot0._overheatQueue > 0 do
-		slot2 = table.remove(slot0._overheatQueue, 1)
+	while var_8_0 < arg_8_0._maxCount and #arg_8_0._overheatQueue > 0 do
+		local var_8_1 = table.remove(arg_8_0._overheatQueue, 1)
 
-		slot2:InitialCD()
+		var_8_1:InitialCD()
 
-		slot0._cooldownList[#slot0._cooldownList + 1] = slot2
-		slot1 = #slot0._cooldownList
+		arg_8_0._cooldownList[#arg_8_0._cooldownList + 1] = var_8_1
+		var_8_0 = #arg_8_0._cooldownList
 	end
 
-	for slot5, slot6 in ipairs(slot0._overheatQueue) do
-		slot6:OverHeat()
-	end
-end
-
-function slot3.FlushWeaponReloadRequire(slot0)
-	for slot4, slot5 in pairs(slot0._weaponList) do
-		slot4:FlushReloadRequire()
+	for iter_8_2, iter_8_3 in ipairs(arg_8_0._overheatQueue) do
+		iter_8_3:OverHeat()
 	end
 end
 
-function slot3.Clear(slot0)
-	for slot4, slot5 in pairs(slot0._weaponList) do
-		slot0:removeWeaponEvent(slot4)
+function var_0_3.FlushWeaponReloadRequire(arg_9_0)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0._weaponList) do
+		iter_9_0:FlushReloadRequire()
+	end
+end
+
+function var_0_3.Clear(arg_10_0)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0._weaponList) do
+		arg_10_0:removeWeaponEvent(iter_10_0)
 	end
 
-	slot0._weaponList = nil
-	slot0._overheatQueue = nil
+	arg_10_0._weaponList = nil
+	arg_10_0._overheatQueue = nil
 
-	uv0.EventListener.DetachEventListener(slot0)
+	var_0_0.EventListener.DetachEventListener(arg_10_0)
 end
 
-function slot3.addWeaponEvent(slot0, slot1)
-	slot1:RegisterEventListener(slot0, uv0.MANUAL_WEAPON_FIRE, slot0.onManualWeaponFire)
-	slot1:RegisterEventListener(slot0, uv0.MANUAL_WEAPON_READY, slot0.onManualWeaponReady)
-	slot1:RegisterEventListener(slot0, uv0.MANUAL_WEAPON_INSTANT_READY, slot0.onManualInstantReady)
+function var_0_3.addWeaponEvent(arg_11_0, arg_11_1)
+	arg_11_1:RegisterEventListener(arg_11_0, var_0_2.MANUAL_WEAPON_FIRE, arg_11_0.onManualWeaponFire)
+	arg_11_1:RegisterEventListener(arg_11_0, var_0_2.MANUAL_WEAPON_READY, arg_11_0.onManualWeaponReady)
+	arg_11_1:RegisterEventListener(arg_11_0, var_0_2.MANUAL_WEAPON_INSTANT_READY, arg_11_0.onManualInstantReady)
 end
 
-function slot3.removeWeaponEvent(slot0, slot1)
-	slot1:UnregisterEventListener(slot0, uv0.MANUAL_WEAPON_READY)
-	slot1:UnregisterEventListener(slot0, uv0.MANUAL_WEAPON_FIRE)
-	slot1:UnregisterEventListener(slot0, uv0.MANUAL_WEAPON_INSTANT_READY)
+function var_0_3.removeWeaponEvent(arg_12_0, arg_12_1)
+	arg_12_1:UnregisterEventListener(arg_12_0, var_0_2.MANUAL_WEAPON_READY)
+	arg_12_1:UnregisterEventListener(arg_12_0, var_0_2.MANUAL_WEAPON_FIRE)
+	arg_12_1:UnregisterEventListener(arg_12_0, var_0_2.MANUAL_WEAPON_INSTANT_READY)
 end
 
-function slot3.onManualWeaponFire(slot0, slot1)
-	slot2 = slot1.Dispatcher
+function var_0_3.onManualWeaponFire(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1.Dispatcher
 
-	slot2:OverHeat()
+	var_13_0:OverHeat()
 
-	slot0._overheatQueue[#slot0._overheatQueue + 1] = slot2
+	arg_13_0._overheatQueue[#arg_13_0._overheatQueue + 1] = var_13_0
 
-	slot0:fillCooldownList()
+	arg_13_0:fillCooldownList()
 end
 
-function slot3.onManualWeaponReady(slot0, slot1)
-	slot0:removeFromCDList(slot1.Dispatcher)
-	slot0:fillCooldownList()
+function var_0_3.onManualWeaponReady(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_1.Dispatcher
+
+	arg_14_0:removeFromCDList(var_14_0)
+	arg_14_0:fillCooldownList()
 end
 
-function slot3.onManualInstantReady(slot0, slot1)
-	slot2 = slot1.Dispatcher
-	slot3 = nil
+function var_0_3.onManualInstantReady(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1.Dispatcher
+	local var_15_1
 
-	for slot7, slot8 in ipairs(slot0._overheatQueue) do
-		if slot2 == slot8 then
-			table.remove(slot0._overheatQueue, slot7)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0._overheatQueue) do
+		if var_15_0 == iter_15_1 then
+			table.remove(arg_15_0._overheatQueue, iter_15_0)
 
-			slot3 = true
+			var_15_1 = true
 
 			break
 		end
 	end
 
-	if not slot3 then
-		slot0:removeFromCDList(slot2)
+	if not var_15_1 then
+		arg_15_0:removeFromCDList(var_15_0)
 	end
 
-	slot0:fillCooldownList()
+	arg_15_0:fillCooldownList()
 end
 
-function slot3.removeFromCDList(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0._cooldownList) do
-		if slot1 == slot6 then
-			table.remove(slot0._cooldownList, slot5)
+function var_0_3.removeFromCDList(arg_16_0, arg_16_1)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0._cooldownList) do
+		if arg_16_1 == iter_16_1 then
+			table.remove(arg_16_0._cooldownList, iter_16_0)
 
 			break
 		end
 	end
 end
 
-function slot3.fillCooldownList(slot0)
-	slot1 = #slot0._cooldownList
+function var_0_3.fillCooldownList(arg_17_0)
+	local var_17_0 = #arg_17_0._cooldownList
 
-	while slot1 < slot0._maxCount and #slot0._overheatQueue > 0 do
-		slot2 = table.remove(slot0._overheatQueue, 1)
+	while var_17_0 < arg_17_0._maxCount and #arg_17_0._overheatQueue > 0 do
+		local var_17_1 = table.remove(arg_17_0._overheatQueue, 1)
 
-		slot2:EnterCoolDown()
+		var_17_1:EnterCoolDown()
 
-		slot0._cooldownList[#slot0._cooldownList + 1] = slot2
-		slot1 = #slot0._cooldownList
+		arg_17_0._cooldownList[#arg_17_0._cooldownList + 1] = var_17_1
+		var_17_0 = #arg_17_0._cooldownList
 	end
 end

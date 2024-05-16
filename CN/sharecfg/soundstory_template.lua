@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.soundstory_template = {
 	{
 		CV_JP = "石见 舞菜香",

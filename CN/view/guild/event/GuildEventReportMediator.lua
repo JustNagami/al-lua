@@ -1,41 +1,43 @@
-slot0 = class("GuildEventReportMediator", import("...base.ContextMediator"))
-slot0.ON_GET_REPORTS = "GuildEventReportMediator:ON_GET_REPORTS"
-slot0.ON_SUBMIT_REPORTS = "GuildEventReportMediator:ON_SUBMIT_REPORTS"
-slot0.GET_REPORT_RANK = "GuildEventReportMediator:GET_REPORT_RANK"
+﻿local var_0_0 = class("GuildEventReportMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.GET_REPORT_RANK, function (slot0, slot1)
-		uv0:sendNotification(GAME.GET_GUILD_REPORT_RANK, {
-			id = slot1
+var_0_0.ON_GET_REPORTS = "GuildEventReportMediator:ON_GET_REPORTS"
+var_0_0.ON_SUBMIT_REPORTS = "GuildEventReportMediator:ON_SUBMIT_REPORTS"
+var_0_0.GET_REPORT_RANK = "GuildEventReportMediator:GET_REPORT_RANK"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GET_REPORT_RANK, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT_RANK, {
+			id = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_SUBMIT_REPORTS, function (slot0, slot1)
-		uv0:sendNotification(GAME.SUBMIT_GUILD_REPORT, {
-			ids = slot1
+	arg_1_0:bind(var_0_0.ON_SUBMIT_REPORTS, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_GUILD_REPORT, {
+			ids = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.ON_GET_REPORTS, function (slot0, slot1)
-		uv0:sendNotification(GAME.GET_GUILD_REPORT, {
-			callback = slot1
+	arg_1_0:bind(var_0_0.ON_GET_REPORTS, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT, {
+			callback = arg_4_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		GAME.SUBMIT_GUILD_REPORT_DONE,
 		GAME.GET_GUILD_REPORT_RANK_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == GAME.SUBMIT_GUILD_REPORT_DONE then
-		slot0.viewComponent:UpdateReports(slot3.list)
-	elseif slot2 == GAME.GET_GUILD_REPORT_RANK_DONE then
-		slot0.viewComponent:OnGetReportRankList(slot3.ranks)
+	if var_6_0 == GAME.SUBMIT_GUILD_REPORT_DONE then
+		arg_6_0.viewComponent:UpdateReports(var_6_1.list)
+	elseif var_6_0 == GAME.GET_GUILD_REPORT_RANK_DONE then
+		arg_6_0.viewComponent:OnGetReportRankList(var_6_1.ranks)
 	end
 end
 
-return slot0
+return var_0_0

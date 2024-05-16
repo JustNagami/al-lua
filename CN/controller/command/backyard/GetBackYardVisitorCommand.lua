@@ -1,27 +1,28 @@
-slot0 = class("GetBackYardVisitorCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetBackYardVisitorCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
 
-	slot4:Send(19024, {
+	pg.ConnectionMgr.GetInstance():Send(19024, {
 		type = 0
-	}, 19025, function (slot0)
-		if slot0.visitor and slot0.visitor.ship_template ~= 0 then
-			getProxy(DormProxy):SetVisitorShip(Ship.New({
+	}, 19025, function(arg_2_0)
+		if arg_2_0.visitor and arg_2_0.visitor.ship_template ~= 0 then
+			local var_2_0 = Ship.New({
 				id = 99999999,
-				template_id = slot0.visitor.ship_template,
-				name = slot0.visitor.name,
-				skin_id = slot0.visitor.ship_skin
-			}))
+				template_id = arg_2_0.visitor.ship_template,
+				name = arg_2_0.visitor.name,
+				skin_id = arg_2_0.visitor.ship_skin
+			})
+
+			getProxy(DormProxy):SetVisitorShip(var_2_0)
 		end
 
-		if uv0 then
-			uv0()
+		if var_1_0 then
+			var_1_0()
 		end
 
-		uv1:sendNotification(GAME.BACKYARD_GET_VISITOR_SHIP_DONE)
+		arg_1_0:sendNotification(GAME.BACKYARD_GET_VISITOR_SHIP_DONE)
 	end)
 end
 
-return slot0
+return var_0_0

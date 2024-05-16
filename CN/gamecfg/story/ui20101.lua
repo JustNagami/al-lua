@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "UI20101",
 	mode = 3,
 	noWaitFade = true,
@@ -45,12 +45,7 @@ return {
 			},
 			sequence = {
 				{
-					[[
-          第二章   珊瑚之海 <size=34.5>Coral Sea</size> 
-
-
-
-]],
+					"          第二章   珊瑚之海 <size=34.5>Coral Sea</size> \n\n\n\n",
 					2
 				}
 			}

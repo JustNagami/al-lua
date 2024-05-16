@@ -1,70 +1,73 @@
-slot0 = class("UrExchangeItemPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("UrExchangeItemPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.exchangeBtn = slot0:findTF("AD/exchange")
-	slot0.exchangeTip = slot0:findTF("AD/exchange/tip")
-	slot0.battleBtn = slot0:findTF("AD/battle")
-	slot0.taskBtn = slot0:findTF("AD/task")
-	slot0.progress = slot0:findTF("AD/progress/Image")
-	slot1 = slot0:findTF("AD/Text")
-	slot0.progressTxt = slot1:GetComponent(typeof(Text))
-	slot0.itemTF = slot0:findTF("AD/item")
-	slot0.helpBtn = slot0:findTF("AD/help")
-	slot0.moreBtn = slot0:findTF("AD/more")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.exchangeBtn = arg_1_0:findTF("AD/exchange")
+	arg_1_0.exchangeTip = arg_1_0:findTF("AD/exchange/tip")
+	arg_1_0.battleBtn = arg_1_0:findTF("AD/battle")
+	arg_1_0.taskBtn = arg_1_0:findTF("AD/task")
+	arg_1_0.progress = arg_1_0:findTF("AD/progress/Image")
+	arg_1_0.progressTxt = arg_1_0:findTF("AD/Text"):GetComponent(typeof(Text))
+	arg_1_0.itemTF = arg_1_0:findTF("AD/item")
+	arg_1_0.helpBtn = arg_1_0:findTF("AD/help")
+	arg_1_0.moreBtn = arg_1_0:findTF("AD/more")
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.ur_exchange_help_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.moreBtn, function ()
+	onButton(arg_1_0, arg_1_0.moreBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.ur_exchange_help_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.exchangeBtn, function ()
-		slot1, slot2 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "FragmentShop")
+	onButton(arg_1_0, arg_1_0.exchangeBtn, function()
+		local var_4_0 = getProxy(PlayerProxy):getRawData()
+		local var_4_1, var_4_2 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_4_0.level, "FragmentShop")
 
-		if not slot1 then
-			pg.TipsMgr:GetInstance():ShowTips(slot2)
+		if not var_4_1 then
+			pg.TipsMgr:GetInstance():ShowTips(var_4_2)
 
 			return
 		end
 
-		uv0:emit(ActivityMediator.GO_SHOPS_LAYER_STEEET, {
+		arg_1_0:emit(ActivityMediator.GO_SHOPS_LAYER_STEEET, {
 			warp = NewShopsScene.TYPE_FRAGMENT
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
+		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.taskBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+	onButton(arg_1_0, arg_1_0.taskBtn, function()
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 	end, SFX_PANEL)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = pg.gameset.urpt_chapter_max.description
-	slot2 = slot1[1]
-	slot3 = slot1[2]
-	slot4 = getProxy(BagProxy):GetLimitCntById(slot2)
-	slot0.progressTxt.text = slot4 .. "/" .. slot3
+function var_0_0.OnFirstFlush(arg_7_0)
+	local var_7_0 = pg.gameset.urpt_chapter_max.description
+	local var_7_1 = var_7_0[1]
+	local var_7_2 = var_7_0[2]
+	local var_7_3 = getProxy(BagProxy):GetLimitCntById(var_7_1)
 
-	setFillAmount(slot0.progress, slot4 / slot3)
-	updateDrop(slot0.itemTF, Drop.New({
+	arg_7_0.progressTxt.text = var_7_3 .. "/" .. var_7_2
+
+	setFillAmount(arg_7_0.progress, var_7_3 / var_7_2)
+	updateDrop(arg_7_0.itemTF, Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
-		id = slot2
+		id = var_7_1
 	}))
-	setActive(slot0.exchangeTip, NotifyTipHelper.ShouldShowUrTip())
+	setActive(arg_7_0.exchangeTip, NotifyTipHelper.ShouldShowUrTip())
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_8_0)
+	return
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_9_0)
+	return
 end
 
-return slot0
+return var_0_0

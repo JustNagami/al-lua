@@ -1,86 +1,92 @@
-slot0 = class("CourtYardExtendTipPage", import(".CourtYardBaseSubPage"))
+﻿local var_0_0 = class("CourtYardExtendTipPage", import(".CourtYardBaseSubPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CourtYardExtendTipUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.valueTxt = findTF(slot0._tf, "frame/tip_2/value_bg/Text")
-	slot0.text1 = findTF(slot0._tf, "frame/tip_1/text_1")
-	slot0.text2 = findTF(slot0._tf, "frame/tip_1/value_bg/Text")
-	slot0.text3 = findTF(slot0._tf, "frame/tip_1/text_2")
-	slot0.text4 = findTF(slot0._tf, "frame/tip_2/text_1")
-	slot0.text5 = findTF(slot0._tf, "frame/tip_2/text_2")
-	slot0.itemTF = findTF(slot0._tf, "frame")
-	slot0.okBtn = findTF(slot0._tf, "frame/ok_btn")
-	slot0.cancelBtn = findTF(slot0._tf, "frame/cancel_btn")
-	slot0.closeBtn = findTF(slot0._tf, "frame/close")
-	slot0._parent = slot0._tf.parent
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.valueTxt = findTF(arg_2_0._tf, "frame/tip_2/value_bg/Text")
+	arg_2_0.text1 = findTF(arg_2_0._tf, "frame/tip_1/text_1")
+	arg_2_0.text2 = findTF(arg_2_0._tf, "frame/tip_1/value_bg/Text")
+	arg_2_0.text3 = findTF(arg_2_0._tf, "frame/tip_1/text_2")
+	arg_2_0.text4 = findTF(arg_2_0._tf, "frame/tip_2/text_1")
+	arg_2_0.text5 = findTF(arg_2_0._tf, "frame/tip_2/text_2")
+	arg_2_0.itemTF = findTF(arg_2_0._tf, "frame")
+	arg_2_0.okBtn = findTF(arg_2_0._tf, "frame/ok_btn")
+	arg_2_0.cancelBtn = findTF(arg_2_0._tf, "frame/cancel_btn")
+	arg_2_0.closeBtn = findTF(arg_2_0._tf, "frame/close")
+	arg_2_0._parent = arg_2_0._tf.parent
 
-	setText(slot0.okBtn:Find("Text"), i18n("word_ok"))
-	setText(slot0.cancelBtn:Find("Text"), i18n("word_cancel"))
-	setText(slot0:findTF("frame/tip_1/text_1"), i18n("backyard_extend_tip_1"))
-	setText(slot0:findTF("frame/tip_1/text_2"), i18n("backyard_extend_tip_2"))
-	setText(slot0:findTF("frame/tip_2/text_1"), i18n("backyard_extend_tip_3"))
-	setText(slot0:findTF("frame/tip_2/text_2"), i18n("backyard_extend_tip_4"))
-	setText(slot0:findTF("frame/title"), i18n("words_information"))
+	setText(arg_2_0.okBtn:Find("Text"), i18n("word_ok"))
+	setText(arg_2_0.cancelBtn:Find("Text"), i18n("word_cancel"))
+	setText(arg_2_0:findTF("frame/tip_1/text_1"), i18n("backyard_extend_tip_1"))
+	setText(arg_2_0:findTF("frame/tip_1/text_2"), i18n("backyard_extend_tip_2"))
+	setText(arg_2_0:findTF("frame/tip_2/text_1"), i18n("backyard_extend_tip_3"))
+	setText(arg_2_0:findTF("frame/tip_2/text_2"), i18n("backyard_extend_tip_4"))
+	setText(arg_2_0:findTF("frame/title"), i18n("words_information"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.okBtn, function ()
-		uv0:Emit("Extend")
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.okBtn, function()
+		arg_3_0:Emit("Extend")
+		arg_3_0:Hide()
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_CANCEL)
 end
 
-function slot0.Show(slot0)
-	slot1 = getProxy(BagProxy):getItemById(ITEM_BACKYARD_AREA_EXTEND) or Item.New({
+function var_0_0.Show(arg_8_0)
+	local var_8_0 = getProxy(BagProxy):getItemById(ITEM_BACKYARD_AREA_EXTEND) or Item.New({
 		count = 0,
 		id = ITEM_BACKYARD_AREA_EXTEND
 	})
-	slot3 = {}
-	slot7 = "||"
+	local var_8_1 = i18n("backyard_extendArea_tip", 1, var_8_0.count)
+	local var_8_2 = {}
 
-	for slot7, slot8 in ipairs(string.split(i18n("backyard_extendArea_tip", 1, slot1.count), slot7)) do
-		slot3["text" .. slot7] = slot8
+	for iter_8_0, iter_8_1 in ipairs(string.split(var_8_1, "||")) do
+		var_8_2["text" .. iter_8_0] = iter_8_1
 	end
 
-	setActive(slot0._tf, true)
-	setText(slot0.text1, slot3.text1)
-	setText(slot0.text2, setColorStr(slot3.text2, "#72bc42"))
-	setText(slot0.text3, slot3.text3)
-	setText(slot0.text4, slot3.text4)
-	setText(slot0.valueTxt, tonumber(slot1.count) <= 0 and setColorStr(slot1.count, COLOR_RED) or setColorStr(slot1.count, "#72bc42"))
-	setText(slot0.text5, slot3.text6)
-	updateDrop(slot0.itemTF, {
+	setActive(arg_8_0._tf, true)
+
+	local var_8_3 = {
 		type = DROP_TYPE_ITEM,
-		id = slot1.id
-	})
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+		id = var_8_0.id
+	}
 
-	slot0.showing = true
+	setText(arg_8_0.text1, var_8_2.text1)
+	setText(arg_8_0.text2, setColorStr(var_8_2.text2, "#72bc42"))
+	setText(arg_8_0.text3, var_8_2.text3)
+	setText(arg_8_0.text4, var_8_2.text4)
+
+	local var_8_4 = tonumber(var_8_0.count) <= 0 and setColorStr(var_8_0.count, COLOR_RED) or setColorStr(var_8_0.count, "#72bc42")
+
+	setText(arg_8_0.valueTxt, var_8_4)
+	setText(arg_8_0.text5, var_8_2.text6)
+	updateDrop(arg_8_0.itemTF, var_8_3)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_8_0._tf)
+
+	arg_8_0.showing = true
 end
 
-function slot0.Hide(slot0)
-	if slot0.showing == true then
-		slot0.showing = false
+function var_0_0.Hide(arg_9_0)
+	if arg_9_0.showing == true then
+		arg_9_0.showing = false
 
-		setActive(slot0._tf, false)
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf, slot0._parent)
+		setActive(arg_9_0._tf, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0._tf, arg_9_0._parent)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_10_0)
+	arg_10_0:Hide()
 end
 
-return slot0
+return var_0_0

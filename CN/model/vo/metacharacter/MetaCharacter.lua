@@ -1,214 +1,222 @@
-slot0 = class("MetaCharacter", import("..BaseVO"))
+﻿local var_0_0 = class("MetaCharacter", import("..BaseVO"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.ship_strengthen_meta
 end
 
-function slot0.Ctor(slot0, slot1, slot2)
-	assert(slot1.id)
-	assert(slot2)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
+	assert(arg_2_1.id)
+	assert(arg_2_2)
 
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.shipVO = slot2
-	slot0.maxRepairExp = slot0:getConfig("repair_total_exp")
-	slot0.attrs = {}
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.configId = arg_2_0.id
+	arg_2_0.shipVO = arg_2_2
+	arg_2_0.maxRepairExp = arg_2_0:getConfig("repair_total_exp")
+	arg_2_0.attrs = {}
 
-	for slot6, slot7 in ipairs(MetaCharacterConst.REPAIR_ATTRS) do
-		slot0.attrs[slot7] = MetaCharacterAttr.New({
-			attr = slot7,
-			items = slot0:getConfig("repair_" .. slot7)
+	for iter_2_0, iter_2_1 in ipairs(MetaCharacterConst.REPAIR_ATTRS) do
+		arg_2_0.attrs[iter_2_1] = MetaCharacterAttr.New({
+			attr = iter_2_1,
+			items = arg_2_0:getConfig("repair_" .. iter_2_1)
 		})
 	end
 
-	slot0.effects = _.map(slot0:getConfig("repair_effect"), function (slot0)
+	arg_2_0.effects = _.map(arg_2_0:getConfig("repair_effect"), function(arg_3_0)
 		return MetaRepairEffect.New({
-			id = slot0[2],
-			progress = slot0[1]
+			id = arg_3_0[2],
+			progress = arg_3_0[1]
 		})
 	end)
-	slot3 = ipairs
-	slot4 = slot1.repair_attr_info or {}
 
-	for slot6, slot7 in slot3(slot4) do
-		for slot11, slot12 in pairs(slot0.attrs) do
-			if slot12:hasItemId(slot7) then
-				slot12:updateCount(slot12:getLevelByItemId(slot7))
+	for iter_2_2, iter_2_3 in ipairs(arg_2_1.repair_attr_info or {}) do
+		for iter_2_4, iter_2_5 in pairs(arg_2_0.attrs) do
+			if iter_2_5:hasItemId(iter_2_3) then
+				local var_2_0 = iter_2_5:getLevelByItemId(iter_2_3)
+
+				iter_2_5:updateCount(var_2_0)
 			end
 		end
 	end
 end
 
-function slot0.getBreakOutInfo(slot0)
-	assert(slot0.shipVO)
+function var_0_0.getBreakOutInfo(arg_4_0)
+	assert(arg_4_0.shipVO)
 
-	slot1 = slot0.shipVO
+	local var_4_0 = arg_4_0.shipVO
 
-	if not slot0.beakOutInfo or slot1.configId ~= slot0.beakOutInfo.id then
-		slot0.beakOutInfo = MetaCharacterBreakout.New({
-			id = slot1.configId
+	if not arg_4_0.beakOutInfo or var_4_0.configId ~= arg_4_0.beakOutInfo.id then
+		arg_4_0.beakOutInfo = MetaCharacterBreakout.New({
+			id = var_4_0.configId
 		})
 	end
 
-	return slot0.beakOutInfo
+	return arg_4_0.beakOutInfo
 end
 
-function slot0.getSpecialMaterialInfoToMaxStar(slot0)
-	slot1 = slot0:getBreakOutInfo()
-	slot2 = {
+function var_0_0.getSpecialMaterialInfoToMaxStar(arg_5_0)
+	local var_5_0 = arg_5_0:getBreakOutInfo()
+	local var_5_1 = {
 		count = 0,
-		itemID = slot0.beakOutInfo:getConfig("item1")
+		itemID = arg_5_0.beakOutInfo:getConfig("item1")
 	}
 
 	while true do
-		if not slot1:hasNextInfo() then
-			return slot2
+		if not var_5_0:hasNextInfo() then
+			return var_5_1
 		else
-			slot2.count = slot2.count + slot1:getConfig("item1_num")
-			slot1 = slot1:getNextInfo()
+			var_5_1.count = var_5_1.count + var_5_0:getConfig("item1_num")
+			var_5_0 = var_5_0:getNextInfo()
 		end
 	end
 end
 
-function slot0.getCurRepairExp(slot0)
-	slot1 = 0
+function var_0_0.getCurRepairExp(arg_6_0)
+	local var_6_0 = 0
 
-	for slot5, slot6 in pairs(slot0.attrs) do
-		slot1 = slot1 + slot6:getRepairExp()
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.attrs) do
+		var_6_0 = var_6_0 + iter_6_1:getRepairExp()
 	end
 
-	return slot1
+	return var_6_0
 end
 
-function slot0.getMaxRepairExp(slot0)
-	return slot0.maxRepairExp
+function var_0_0.getMaxRepairExp(arg_7_0)
+	return arg_7_0.maxRepairExp
 end
 
-function slot0.getRepairRate(slot0)
-	return slot0:getCurRepairExp() / slot0:getMaxRepairExp()
+function var_0_0.getRepairRate(arg_8_0)
+	return arg_8_0:getCurRepairExp() / arg_8_0:getMaxRepairExp()
 end
 
-function slot0.isMaxRepairExp(slot0)
-	return slot0:getCurRepairExp() == slot0:getMaxRepairExp()
+function var_0_0.isMaxRepairExp(arg_9_0)
+	return arg_9_0:getCurRepairExp() == arg_9_0:getMaxRepairExp()
 end
 
-function slot0.getAttrAddition(slot0, slot1)
-	return slot0:getRepairAddition(slot1) + slot0:getPercentageAddition(slot1)
+function var_0_0.getAttrAddition(arg_10_0, arg_10_1)
+	return arg_10_0:getRepairAddition(arg_10_1) + arg_10_0:getPercentageAddition(arg_10_1)
 end
 
-function slot0.getPercentageAddition(slot0, slot1)
-	slot2 = 0
-	slot3 = slot0:getRepairRate() * 100
+function var_0_0.getPercentageAddition(arg_11_0, arg_11_1)
+	local var_11_0 = 0
+	local var_11_1 = arg_11_0:getRepairRate() * 100
 
-	for slot7, slot8 in ipairs(slot0.effects) do
-		if slot8.progress <= slot3 then
-			slot2 = slot2 + slot8:getAttrAddition(slot1)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.effects) do
+		if var_11_1 >= iter_11_1.progress then
+			var_11_0 = var_11_0 + iter_11_1:getAttrAddition(arg_11_1)
 		end
 	end
 
-	return slot2
+	return var_11_0
 end
 
-function slot0.getRepairAddition(slot0, slot1)
-	slot2 = 0
+function var_0_0.getRepairAddition(arg_12_0, arg_12_1)
+	local var_12_0 = 0
+	local var_12_1 = arg_12_0.attrs[arg_12_1]
 
-	if slot0.attrs[slot1] and slot3:isLock() then
+	if var_12_1 and var_12_1:isLock() then
 		return 0
 	end
 
-	if slot3 then
-		slot2 = slot2 + slot3:getAddition()
+	if var_12_1 then
+		var_12_0 = var_12_0 + var_12_1:getAddition()
 	end
 
-	return slot2
+	return var_12_0
 end
 
-function slot0.getTotalMaxAddition(slot0)
-	slot1 = {}
+function var_0_0.getTotalMaxAddition(arg_13_0)
+	local var_13_0 = {}
 
-	for slot5, slot6 in pairs(slot0.attrs) do
-		slot7 = slot6.attr
-		slot8 = 0
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.attrs) do
+		local var_13_1 = iter_13_1.attr
+		local var_13_2 = 0
 
-		if slot6 and slot6:isLock() then
-			slot8 = 0
+		if iter_13_1 and iter_13_1:isLock() then
+			var_13_2 = 0
 		else
-			slot9 = Clone(slot6)
-			slot9.level = slot9:getItemCount() + 1
-			slot8 = slot8 + slot9:getAddition()
+			local var_13_3 = Clone(iter_13_1)
+
+			var_13_3.level = var_13_3:getItemCount() + 1
+			var_13_2 = var_13_2 + var_13_3:getAddition()
 		end
 
-		if slot1[slot7] then
-			slot1[slot7] = slot1[slot7] + slot8
+		if var_13_0[var_13_1] then
+			var_13_0[var_13_1] = var_13_0[var_13_1] + var_13_2
 		else
-			slot1[slot7] = slot8
+			var_13_0[var_13_1] = var_13_2
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot0.effects) do
-		for slot11, slot12 in ipairs(slot6:getAttrAdditionList()) do
-			slot14 = slot12[2]
+	for iter_13_2, iter_13_3 in ipairs(arg_13_0.effects) do
+		local var_13_4 = iter_13_3:getAttrAdditionList()
 
-			if slot1[slot12[1]] then
-				slot1[slot13] = slot1[slot13] + slot14
+		for iter_13_4, iter_13_5 in ipairs(var_13_4) do
+			local var_13_5 = iter_13_5[1]
+			local var_13_6 = iter_13_5[2]
+
+			if var_13_0[var_13_5] then
+				var_13_0[var_13_5] = var_13_0[var_13_5] + var_13_6
 			else
-				slot1[slot13] = slot14
+				var_13_0[var_13_5] = var_13_6
 			end
 		end
 	end
 
-	return slot1
+	return var_13_0
 end
 
-function slot0.getFinalAddition(slot0, slot1)
-	assert(slot1, "shipVO can not be nil")
+function var_0_0.getFinalAddition(arg_14_0, arg_14_1)
+	assert(arg_14_1, "shipVO can not be nil")
 
-	slot3 = slot0:getTotalMaxAddition()
+	local var_14_0 = arg_14_1:getBaseProperties()
+	local var_14_1 = arg_14_0:getTotalMaxAddition()
 
-	for slot7, slot8 in pairs(slot1:getBaseProperties()) do
-		slot2[slot7] = slot2[slot7] + (slot3[slot7] or 0)
+	for iter_14_0, iter_14_1 in pairs(var_14_0) do
+		var_14_0[iter_14_0] = var_14_0[iter_14_0] + (var_14_1[iter_14_0] or 0)
 	end
 
-	return slot2
+	return var_14_0
 end
 
-function slot0.getAttrVO(slot0, slot1)
-	return slot0.attrs[slot1]
+function var_0_0.getAttrVO(arg_15_0, arg_15_1)
+	return arg_15_0.attrs[arg_15_1]
 end
 
-function slot0.existAttr(slot0, slot1)
-	return not slot0:getAttrVO(slot1):isLock()
+function var_0_0.existAttr(arg_16_0, arg_16_1)
+	return not arg_16_0:getAttrVO(arg_16_1):isLock()
 end
 
-function slot0.getEffects(slot0)
-	return slot0.effects
+function var_0_0.getEffects(arg_17_0)
+	return arg_17_0.effects
 end
 
-function slot0.getUnlockedVoiceList(slot0)
-	slot2 = slot0:getRepairRate() * 100
-	slot3 = {}
+function var_0_0.getUnlockedVoiceList(arg_18_0)
+	local var_18_0 = arg_18_0:getEffects()
+	local var_18_1 = arg_18_0:getRepairRate() * 100
+	local var_18_2 = {}
 
-	for slot7, slot8 in ipairs(slot0:getEffects()) do
-		if slot8.progress <= slot2 and slot8.words ~= "" then
-			for slot13, slot14 in ipairs(slot8.words) do
-				table.insert(slot3, slot14)
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		if var_18_1 >= iter_18_1.progress and iter_18_1.words ~= "" then
+			for iter_18_2, iter_18_3 in ipairs(iter_18_1.words) do
+				table.insert(var_18_2, iter_18_3)
 			end
 		end
 	end
 
-	return slot3
+	return var_18_2
 end
 
-function slot0.getUnlockVoiceRepairPercent(slot0, slot1)
-	slot3 = 0
+function var_0_0.getUnlockVoiceRepairPercent(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0:getEffects()
+	local var_19_1 = 0
 
-	for slot7, slot8 in ipairs(slot0:getEffects()) do
-		if slot8.words ~= "" and table.contains(slot8.words, slot1) then
-			slot3 = slot8.progress
+	for iter_19_0, iter_19_1 in ipairs(var_19_0) do
+		if iter_19_1.words ~= "" and table.contains(iter_19_1.words, arg_19_1) then
+			var_19_1 = iter_19_1.progress
 		end
 	end
 
-	return slot3
+	return var_19_1
 end
 
-return slot0
+return var_0_0

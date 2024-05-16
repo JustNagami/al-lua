@@ -1,25 +1,31 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleDelayWave = class("BattleDelayWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleDelayWave.__name = "BattleDelayWave"
-slot1 = slot0.Battle.BattleDelayWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleDelayWave = class("BattleDelayWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleDelayWave.__name = "BattleDelayWave"
+
+local var_0_1 = var_0_0.Battle.BattleDelayWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._duration = slot0._param.timeout
+	arg_2_0._duration = arg_2_0._param.timeout
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
 
-	slot1 = nil
-	slot1 = pg.TimeMgr.GetInstance():AddBattleTimer("delayWave", 1, slot0._duration, function ()
-		uv0:doPass()
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(uv1)
-	end, true)
+	local var_3_0
+
+	local function var_3_1()
+		arg_3_0:doPass()
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var_3_0)
+	end
+
+	var_3_0 = pg.TimeMgr.GetInstance():AddBattleTimer("delayWave", 1, arg_3_0._duration, var_3_1, true)
 end

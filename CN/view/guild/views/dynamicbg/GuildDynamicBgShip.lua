@@ -1,447 +1,500 @@
-slot0 = class("GuildDynamicBgShip")
+﻿local var_0_0 = class("GuildDynamicBgShip")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0._go = slot1.go
-	slot0._tf = tf(slot0._go)
-	slot0.parent = slot0._tf.parent
-	slot0.spineAnimUI = slot0._go:GetComponent("SpineAnimUI")
-	slot0.path = slot1.path
-	slot0.speed = 1
-	slot0.stepCnt = 0
-	slot0.scale = slot0._tf.localScale.x
-	slot0.furnitures = slot1.furnitures
-	slot0.interAction = nil
-	slot0.interActionRatio = 10000 / GuildConst.MAX_DISPLAY_MEMBER_SHIP
-	slot0.name = slot1.name
-	slot0.isCommander = slot1.isCommander
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0._go = arg_1_1.go
+	arg_1_0._tf = tf(arg_1_0._go)
+	arg_1_0.parent = arg_1_0._tf.parent
+	arg_1_0.spineAnimUI = arg_1_0._go:GetComponent("SpineAnimUI")
+	arg_1_0.path = arg_1_1.path
+	arg_1_0.speed = 1
+	arg_1_0.stepCnt = 0
+	arg_1_0.scale = arg_1_0._tf.localScale.x
+	arg_1_0.furnitures = arg_1_1.furnitures
+	arg_1_0.interAction = nil
+	arg_1_0.interActionRatio = 10000 / GuildConst.MAX_DISPLAY_MEMBER_SHIP
+	arg_1_0.name = arg_1_1.name
+	arg_1_0.isCommander = arg_1_1.isCommander
 
-	slot0:Init(slot1)
+	arg_1_0:Init(arg_1_1)
 end
 
-function slot0.Init(slot0, slot1)
-	slot0:SetPosition(slot1.grid, true)
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0:SetPosition(arg_2_1.grid, true)
 
-	slot0.nameTF = slot0._tf:Find("name")
-	slot0.nameTF.localScale = Vector3(1 / slot0.scale, 1 / slot0.scale, 1)
-	slot0.nameTF.localPosition = Vector3(0, 300, 0)
+	arg_2_0.nameTF = arg_2_0._tf:Find("name")
+	arg_2_0.nameTF.localScale = Vector3(1 / arg_2_0.scale, 1 / arg_2_0.scale, 1)
+	arg_2_0.nameTF.localPosition = Vector3(0, 300, 0)
 
-	setText(slot0.nameTF, slot0.name)
+	setText(arg_2_0.nameTF, arg_2_0.name)
 
-	if slot0.isCommander then
-		slot0.tagTF = slot0._tf:Find("tag")
-		slot0.tagTF.localScale = Vector3(1 / slot0.scale, 1 / slot0.scale, 1)
-		slot0.tagTF.localPosition = Vector3(0, 380, 0)
+	if arg_2_0.isCommander then
+		arg_2_0.tagTF = arg_2_0._tf:Find("tag")
+		arg_2_0.tagTF.localScale = Vector3(1 / arg_2_0.scale, 1 / arg_2_0.scale, 1)
+		arg_2_0.tagTF.localPosition = Vector3(0, 380, 0)
 	end
 
-	if not slot1.stand then
-		slot0:AddRandomMove()
+	if not arg_2_1.stand then
+		arg_2_0:AddRandomMove()
 	end
 end
 
-function slot0.SetOnMoveCallBack(slot0, slot1)
-	slot0.callback = slot1
+function var_0_0.SetOnMoveCallBack(arg_3_0, arg_3_1)
+	arg_3_0.callback = arg_3_1
 end
 
-function slot0.SetPosition(slot0, slot1, slot2)
-	if slot0.exited then
+function var_0_0.SetPosition(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_0.exited then
 		return
 	end
 
-	if slot0.grid then
-		slot0.grid:UnlockAll()
+	if arg_4_0.grid then
+		arg_4_0.grid:UnlockAll()
 	end
 
-	slot0.grid = slot1
+	arg_4_0.grid = arg_4_1
 
-	if slot2 then
-		slot0._tf.localPosition = slot0.grid:GetCenterPosition()
+	if arg_4_2 then
+		local var_4_0 = arg_4_0.grid:GetCenterPosition()
 
-		slot0:SetAction("stand2")
+		arg_4_0._tf.localPosition = var_4_0
+
+		arg_4_0:SetAction("stand2")
 	end
 
-	if slot0.callback then
-		slot0.callback()
+	if arg_4_0.callback then
+		arg_4_0.callback()
 	end
 end
 
-function slot0.AddRandomMove(slot0)
-	slot0.stepCnt = math.random(1, 10)
-	slot0.timer = Timer.New(function ()
-		uv0.timer:Stop()
+function var_0_0.AddRandomMove(arg_5_0)
+	arg_5_0.stepCnt = math.random(1, 10)
 
-		uv0.timer = nil
+	local var_5_0 = math.random(1, 8)
 
-		uv0:StartMove()
-	end, math.random(1, 8), 1)
+	arg_5_0.timer = Timer.New(function()
+		arg_5_0.timer:Stop()
 
-	slot0.timer:Start()
+		arg_5_0.timer = nil
+
+		arg_5_0:StartMove()
+	end, var_5_0, 1)
+
+	arg_5_0.timer:Start()
 end
 
-function slot0.IsCanWalkPonit(slot0, slot1)
-	if not slot0.path[slot1.x] then
+function var_0_0.IsCanWalkPonit(arg_7_0, arg_7_1)
+	if not arg_7_0.path[arg_7_1.x] then
 		return false
 	end
 
-	if slot0.path[slot1.x][slot1.y] then
-		return slot2:CanWalk()
+	local var_7_0 = arg_7_0.path[arg_7_1.x][arg_7_1.y]
+
+	if var_7_0 then
+		return var_7_0:CanWalk()
 	else
 		return false
 	end
 end
 
-function slot0.StartMove(slot0)
-	slot1 = slot0.grid
-
-	if not _.select(slot1:GetAroundGrids(), function (slot0)
-		return uv0:IsCanWalkPonit(slot0)
-	end) or #slot2 == 0 then
-		slot0:AddRandomMove()
-	else
-		slot0.stepCnt = slot0.stepCnt - 1
-		slot4 = slot2[math.random(1, #slot2)]
-
-		slot0:MoveToGrid(slot0.path[slot4.x][slot4.y])
-	end
-end
-
-function slot0.MoveToGrid(slot0, slot1)
-	function slot2()
-		uv0:SetAction("stand2")
-
-		uv0.idleTimer = Timer.New(function ()
-			uv0.idleTimer:Stop()
-
-			uv0.idleTimer = nil
-
-			uv0:AddRandomMove()
-		end, math.random(3, 8), 1)
-
-		uv0.idleTimer:Start()
-	end
-
-	slot0:MoveNext(slot1, false, function ()
-		if uv0.stepCnt ~= 0 then
-			uv0:StartMove()
-
-			return
-		end
-
-		slot0, slot1 = uv0:CanInterAction(uv0.interActionRatio)
-
-		if slot0 then
-			uv0:MoveToFurniture(slot1)
-		else
-			uv1()
-		end
+function var_0_0.StartMove(arg_8_0)
+	local var_8_0 = arg_8_0.grid:GetAroundGrids()
+	local var_8_1 = _.select(var_8_0, function(arg_9_0)
+		return arg_8_0:IsCanWalkPonit(arg_9_0)
 	end)
+
+	if not var_8_1 or #var_8_1 == 0 then
+		arg_8_0:AddRandomMove()
+	else
+		arg_8_0.stepCnt = arg_8_0.stepCnt - 1
+
+		local var_8_2 = var_8_1[math.random(1, #var_8_1)]
+		local var_8_3 = arg_8_0.path[var_8_2.x][var_8_2.y]
+
+		arg_8_0:MoveToGrid(var_8_3)
+	end
 end
 
-function slot0.MoveNext(slot0, slot1, slot2, slot3)
-	if not slot2 and not slot1:CanWalk() then
-		return
+function var_0_0.MoveToGrid(arg_10_0, arg_10_1)
+	local function var_10_0()
+		arg_10_0:SetAction("stand2")
+
+		local var_11_0 = math.random(3, 8)
+
+		arg_10_0.idleTimer = Timer.New(function()
+			arg_10_0.idleTimer:Stop()
+
+			arg_10_0.idleTimer = nil
+
+			arg_10_0:AddRandomMove()
+		end, var_11_0, 1)
+
+		arg_10_0.idleTimer:Start()
 	end
 
-	if slot0.exited then
-		return
-	end
+	local function var_10_1()
+		if arg_10_0.stepCnt ~= 0 then
+			arg_10_0:StartMove()
 
-	slot1:Lock()
-	slot0:SetAction("walk")
-	slot0:UpdateShipDir(slot1.position.x < slot0.grid.position.x and -1 or 1)
-
-	slot5 = slot1:GetCenterPosition()
-
-	LeanTween.moveLocal(slot0._go, Vector3(slot5.x, slot5.y, 0), 1 / slot0.speed):setOnComplete(System.Action(function ()
-		if uv0.exited then
 			return
 		end
 
-		uv0:SetPosition(uv1)
-		uv2()
+		local var_13_0, var_13_1 = arg_10_0:CanInterAction(arg_10_0.interActionRatio)
+
+		if var_13_0 then
+			arg_10_0:MoveToFurniture(var_13_1)
+		else
+			var_10_0()
+		end
+	end
+
+	arg_10_0:MoveNext(arg_10_1, false, var_10_1)
+end
+
+function var_0_0.MoveNext(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	if not arg_14_2 and not arg_14_1:CanWalk() then
+		return
+	end
+
+	if arg_14_0.exited then
+		return
+	end
+
+	arg_14_1:Lock()
+	arg_14_0:SetAction("walk")
+
+	local var_14_0 = arg_14_1.position.x < arg_14_0.grid.position.x and -1 or 1
+
+	arg_14_0:UpdateShipDir(var_14_0)
+
+	local var_14_1 = arg_14_1:GetCenterPosition()
+
+	LeanTween.moveLocal(arg_14_0._go, Vector3(var_14_1.x, var_14_1.y, 0), 1 / arg_14_0.speed):setOnComplete(System.Action(function()
+		if arg_14_0.exited then
+			return
+		end
+
+		arg_14_0:SetPosition(arg_14_1)
+		arg_14_3()
 	end))
 end
 
-function slot0.MoveLeft(slot0)
-	slot1 = slot0.grid.position
+function var_0_0.MoveLeft(arg_16_0)
+	local var_16_0 = arg_16_0.grid.position
+	local var_16_1 = Vector2(var_16_0.x - 1, var_16_0.y)
+	local var_16_2 = arg_16_0.path[var_16_1.x] and arg_16_0.path[var_16_1.x][var_16_1.y]
 
-	if slot0.path[Vector2(slot1.x - 1, slot1.y).x] and slot0.path[slot2.x][slot2.y] then
-		slot0:MoveNext(slot3, false, function ()
-			uv0:SetAction("stand2")
+	if var_16_2 then
+		arg_16_0:MoveNext(var_16_2, false, function()
+			arg_16_0:SetAction("stand2")
 		end)
 	end
 end
 
-function slot0.MoveRight(slot0)
-	slot1 = slot0.grid.position
+function var_0_0.MoveRight(arg_18_0)
+	local var_18_0 = arg_18_0.grid.position
+	local var_18_1 = Vector2(var_18_0.x + 1, var_18_0.y)
+	local var_18_2 = arg_18_0.path[var_18_1.x] and arg_18_0.path[var_18_1.x][var_18_1.y]
 
-	if slot0.path[Vector2(slot1.x + 1, slot1.y).x] and slot0.path[slot2.x][slot2.y] then
-		slot0:MoveNext(slot3, false, function ()
-			uv0:SetAction("stand2")
+	if var_18_2 then
+		arg_18_0:MoveNext(var_18_2, false, function()
+			arg_18_0:SetAction("stand2")
 		end)
 	end
 end
 
-function slot0.MoveDown(slot0)
-	slot1 = slot0.grid.position
+function var_0_0.MoveDown(arg_20_0)
+	local var_20_0 = arg_20_0.grid.position
+	local var_20_1 = Vector2(var_20_0.x, var_20_0.y - 1)
+	local var_20_2 = arg_20_0.path[var_20_1.x] and arg_20_0.path[var_20_1.x][var_20_1.y]
 
-	if slot0.path[Vector2(slot1.x, slot1.y - 1).x] and slot0.path[slot2.x][slot2.y] then
-		slot0:MoveNext(slot3, false, function ()
-			uv0:SetAction("stand2")
+	if var_20_2 then
+		arg_20_0:MoveNext(var_20_2, false, function()
+			arg_20_0:SetAction("stand2")
 		end)
 	end
 end
 
-function slot0.MoveUp(slot0)
-	slot1 = slot0.grid.position
+function var_0_0.MoveUp(arg_22_0)
+	local var_22_0 = arg_22_0.grid.position
+	local var_22_1 = Vector2(var_22_0.x, var_22_0.y + 1)
+	local var_22_2 = arg_22_0.path[var_22_1.x] and arg_22_0.path[var_22_1.x][var_22_1.y]
 
-	if slot0.path[Vector2(slot1.x, slot1.y + 1).x] and slot0.path[slot2.x][slot2.y] then
-		slot0:MoveNext(slot3, false, function ()
-			uv0:SetAction("stand2")
+	if var_22_2 then
+		arg_22_0:MoveNext(var_22_2, false, function()
+			arg_22_0:SetAction("stand2")
 		end)
 	end
 end
 
-function slot0.SetAction(slot0, slot1)
-	if slot0.actionName == slot1 then
+function var_0_0.SetAction(arg_24_0, arg_24_1)
+	if arg_24_0.actionName == arg_24_1 then
 		return
 	end
 
-	slot0.actionName = slot1
+	arg_24_0.actionName = arg_24_1
 
-	slot0.spineAnimUI:SetAction(slot1, 0)
+	arg_24_0.spineAnimUI:SetAction(arg_24_1, 0)
 end
 
-function slot0.SetAsLastSibling(slot0)
-	slot0._tf:SetAsLastSibling()
+function var_0_0.SetAsLastSibling(arg_25_0)
+	arg_25_0._tf:SetAsLastSibling()
 end
 
-function slot0.MoveToFurniture(slot0, slot1)
-	slot1[1]:Lock()
+function var_0_0.MoveToFurniture(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_1[1]
+	local var_26_1 = arg_26_1[2]
 
-	for slot7, slot8 in ipairs(slot1[2]) do
-		slot0.path[slot8.x][slot8.y]:Lock()
+	var_26_0:Lock()
+
+	for iter_26_0, iter_26_1 in ipairs(var_26_1) do
+		arg_26_0.path[iter_26_1.x][iter_26_1.y]:Lock()
 	end
 
-	slot0:MoveByPath(slot3, function ()
-		uv0:InterActionFurniture(uv1)
+	arg_26_0:MoveByPath(var_26_1, function()
+		arg_26_0:InterActionFurniture(var_26_0)
 	end)
 end
 
-function slot0.UpdateShipDir(slot0, slot1)
-	slot0._tf.localScale = Vector3(slot1 * slot0.scale, slot0.scale, slot0.scale)
-	slot0.nameTF.localScale = Vector3(1 / slot0.scale * slot1, slot0.nameTF.localScale.y, 1)
+function var_0_0.UpdateShipDir(arg_28_0, arg_28_1)
+	arg_28_0._tf.localScale = Vector3(arg_28_1 * arg_28_0.scale, arg_28_0.scale, arg_28_0.scale)
 
-	if slot0.isCommander then
-		slot0.tagTF.localScale = Vector3(slot2, slot0.tagTF.localScale.y, 1)
+	local var_28_0 = 1 / arg_28_0.scale * arg_28_1
+
+	arg_28_0.nameTF.localScale = Vector3(var_28_0, arg_28_0.nameTF.localScale.y, 1)
+
+	if arg_28_0.isCommander then
+		arg_28_0.tagTF.localScale = Vector3(var_28_0, arg_28_0.tagTF.localScale.y, 1)
 	end
 end
 
-function slot0.InterActionFurniture(slot0, slot1)
-	setParent(slot0._tf, slot1._tf)
-	slot0:UpdateShipDir(slot1:GetInteractionDir())
+function var_0_0.InterActionFurniture(arg_29_0, arg_29_1)
+	setParent(arg_29_0._tf, arg_29_1._tf)
 
-	slot0._tf.anchoredPosition = slot1:GetInterActionPos()
-	slot5 = nil
+	local var_29_0 = arg_29_1:GetInteractionDir()
 
-	if GuildDynamicFurniture.INTERACTION_MODE_SIT == slot1:GetInterActionMode() then
-		slot5 = "sit"
+	arg_29_0:UpdateShipDir(var_29_0)
+
+	local var_29_1 = arg_29_1:GetInterActionPos()
+
+	arg_29_0._tf.anchoredPosition = var_29_1
+
+	local var_29_2 = arg_29_1:GetInterActionMode()
+	local var_29_3
+
+	if GuildDynamicFurniture.INTERACTION_MODE_SIT == var_29_2 then
+		var_29_3 = "sit"
 	end
 
-	assert(slot5)
-	slot0:SetAction(slot5)
-	slot0:CancelInterAction(slot1)
+	assert(var_29_3)
+	arg_29_0:SetAction(var_29_3)
+	arg_29_0:CancelInterAction(arg_29_1)
 end
 
-function slot0.CancelInterAction(slot0, slot1)
-	slot0.interActionTimer = Timer.New(function ()
-		uv0.interActionTimer:Stop()
+function var_0_0.CancelInterAction(arg_30_0, arg_30_1)
+	local var_30_0 = math.random(15, 30)
 
-		uv0.interActionTimer = nil
+	arg_30_0.interActionTimer = Timer.New(function()
+		arg_30_0.interActionTimer:Stop()
 
-		uv1:Unlock()
-		setParent(uv0._tf, uv0.parent)
-		assert(uv0.grid)
-		uv0:SetPosition(uv0.grid, true)
-		uv0:AddRandomMove()
-	end, math.random(15, 30), 1)
+		arg_30_0.interActionTimer = nil
 
-	slot0.interActionTimer:Start()
+		arg_30_1:Unlock()
+		setParent(arg_30_0._tf, arg_30_0.parent)
+		assert(arg_30_0.grid)
+		arg_30_0:SetPosition(arg_30_0.grid, true)
+		arg_30_0:AddRandomMove()
+	end, var_30_0, 1)
+
+	arg_30_0.interActionTimer:Start()
 end
 
-function slot0.MoveByPath(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.MoveByPath(arg_32_0, arg_32_1, arg_32_2)
+	local var_32_0 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		table.insert(slot3, function (slot0)
-			if uv0.exited then
+	for iter_32_0, iter_32_1 in ipairs(arg_32_1) do
+		table.insert(var_32_0, function(arg_33_0)
+			if arg_32_0.exited then
 				return
 			end
 
-			uv0:MoveNext(uv0.path[uv1.x][uv1.y], true, slot0)
+			local var_33_0 = arg_32_0.path[iter_32_1.x][iter_32_1.y]
+
+			arg_32_0:MoveNext(var_33_0, true, arg_33_0)
 		end)
 	end
 
-	seriesAsync(slot3, slot2)
+	seriesAsync(var_32_0, arg_32_2)
 end
 
-function slot0.SearchPoint(slot0, slot1, slot2)
-	function slot3(slot0, slot1, slot2, slot3)
-		if _.any(slot0, function (slot0)
-			return uv0 == slot0.point
-		end) or _.any(slot1, function (slot0)
-			return uv0 == slot0
+function var_0_0.SearchPoint(arg_34_0, arg_34_1, arg_34_2)
+	local function var_34_0(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
+		if _.any(arg_35_0, function(arg_36_0)
+			return arg_35_2 == arg_36_0.point
+		end) or _.any(arg_35_1, function(arg_37_0)
+			return arg_35_2 == arg_37_0
 		end) then
 			return false
 		end
 
-		if uv0.path[slot2.x] then
-			return uv0.path[slot2.x][slot2.y] and slot4:CanWalk()
+		if arg_34_0.path[arg_35_2.x] then
+			local var_35_0 = arg_34_0.path[arg_35_2.x][arg_35_2.y]
+
+			return var_35_0 and var_35_0:CanWalk()
 		end
 
 		return false
 	end
 
-	function slot4(slot0)
-		slot1 = {}
+	local function var_34_1(arg_38_0)
+		local var_38_0 = {}
 
-		table.insert(slot1, Vector2(slot0.x + 1, slot0.y))
-		table.insert(slot1, Vector2(slot0.x - 1, slot0.y))
-		table.insert(slot1, Vector2(slot0.x, slot0.y + 1))
-		table.insert(slot1, Vector2(slot0.x, slot0.y - 1))
+		table.insert(var_38_0, Vector2(arg_38_0.x + 1, arg_38_0.y))
+		table.insert(var_38_0, Vector2(arg_38_0.x - 1, arg_38_0.y))
+		table.insert(var_38_0, Vector2(arg_38_0.x, arg_38_0.y + 1))
+		table.insert(var_38_0, Vector2(arg_38_0.x, arg_38_0.y - 1))
 
-		return slot1
+		return var_38_0
 	end
 
-	function slot5(slot0, slot1, slot2)
-		return math.abs(slot2.x - slot0.x) + math.abs(slot2.y - slot0.y) < math.abs(slot2.x - slot1.x) + math.abs(slot2.y - slot1.y)
+	local function var_34_2(arg_39_0, arg_39_1, arg_39_2)
+		return math.abs(arg_39_2.x - arg_39_0.x) + math.abs(arg_39_2.y - arg_39_0.y) < math.abs(arg_39_2.x - arg_39_1.x) + math.abs(arg_39_2.y - arg_39_1.y)
 	end
 
-	slot7 = {}
-	slot8 = {}
-	slot9 = nil
+	local var_34_3 = {}
+	local var_34_4 = {}
+	local var_34_5 = {}
+	local var_34_6
 
-	table.insert({}, {
+	table.insert(var_34_3, {
 		parent = 0,
-		point = slot1
+		point = arg_34_1
 	})
 
-	while #slot6 > 0 do
-		if table.remove(slot6, 1).point == slot2 then
-			slot9 = slot10
+	while #var_34_3 > 0 do
+		local var_34_7 = table.remove(var_34_3, 1)
+		local var_34_8 = var_34_7.point
+
+		if var_34_8 == arg_34_2 then
+			var_34_6 = var_34_7
 
 			break
 		end
 
-		table.insert(slot7, slot11)
+		table.insert(var_34_4, var_34_8)
 
-		for slot15, slot16 in ipairs(slot4(slot11)) do
-			if slot3(slot6, slot7, slot16, slot2) then
-				table.insert(slot6, {
-					point = slot16,
-					parent = slot10
+		for iter_34_0, iter_34_1 in ipairs(var_34_1(var_34_8)) do
+			if var_34_0(var_34_3, var_34_4, iter_34_1, arg_34_2) then
+				table.insert(var_34_3, {
+					point = iter_34_1,
+					parent = var_34_7
 				})
 			else
-				if slot16 == slot2 then
-					slot9 = slot10
+				if iter_34_1 == arg_34_2 then
+					var_34_6 = var_34_7
 
 					break
 				end
 
-				table.insert(slot7, slot16)
+				table.insert(var_34_4, iter_34_1)
 			end
 		end
 
-		table.sort(slot6, function (slot0, slot1)
-			return uv0(slot0.point, slot1.point, uv1)
+		table.sort(var_34_3, function(arg_40_0, arg_40_1)
+			return var_34_2(arg_40_0.point, arg_40_1.point, arg_34_2)
 		end)
 	end
 
-	if slot9 then
-		while slot9.parent ~= 0 do
-			table.insert(slot8, 1, slot9.point)
+	if var_34_6 then
+		while var_34_6.parent ~= 0 do
+			table.insert(var_34_5, 1, var_34_6.point)
 
-			slot9 = slot9.parent
+			var_34_6 = var_34_6.parent
 		end
 	end
 
-	return slot8
+	return var_34_5
 end
 
-function slot0.CanInterAction(slot0, slot1)
-	if slot1 < math.random(1, 10000) then
+function var_0_0.CanInterAction(arg_41_0, arg_41_1)
+	if arg_41_1 < math.random(1, 10000) then
 		return false
 	end
 
-	slot3 = {}
+	local var_41_0 = {}
 
-	for slot7, slot8 in ipairs(slot0.furnitures) do
-		if not slot8:BeLock() then
-			table.insert(slot3, slot8)
+	for iter_41_0, iter_41_1 in ipairs(arg_41_0.furnitures) do
+		if not iter_41_1:BeLock() then
+			table.insert(var_41_0, iter_41_1)
 		end
 	end
 
-	if #slot3 == 0 then
+	if #var_41_0 == 0 then
 		return false
 	end
 
-	slot7 = 999999
-	slot8 = nil
-	slot9 = slot0.grid.position
+	local var_41_1 = var_41_0[math.random(1, #var_41_0)]
+	local var_41_2 = var_41_1:GetOccupyGrid()
+	local var_41_3 = 999999
+	local var_41_4
+	local var_41_5 = arg_41_0.grid.position
 
-	for slot13, slot14 in ipairs(slot3[math.random(1, #slot3)]:GetOccupyGrid()) do
-		slot15 = slot14.position
+	for iter_41_2, iter_41_3 in ipairs(var_41_2) do
+		local var_41_6 = iter_41_3.position
+		local var_41_7 = math.abs(var_41_5.x - var_41_6.x) + math.abs(var_41_5.y - var_41_6.y)
 
-		if slot7 > math.abs(slot9.x - slot15.x) + math.abs(slot9.y - slot15.y) then
-			slot7 = slot16
-			slot8 = slot15
+		if var_41_7 < var_41_3 then
+			var_41_3 = var_41_7
+			var_41_4 = var_41_6
 		end
 	end
 
-	if not slot0:SearchPoint(slot0.grid.position, slot8) or #slot10 == 0 then
+	local var_41_8 = arg_41_0:SearchPoint(arg_41_0.grid.position, var_41_4)
+
+	if not var_41_8 or #var_41_8 == 0 then
 		return false
 	end
 
 	return true, {
-		slot5,
-		slot10
+		var_41_1,
+		var_41_8
 	}
 end
 
-function slot0.Dispose(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.Dispose(arg_42_0)
+	if arg_42_0.timer then
+		arg_42_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_42_0.timer = nil
 	end
 
-	if slot0.idleTimer then
-		slot0.idleTimer:Stop()
+	if arg_42_0.idleTimer then
+		arg_42_0.idleTimer:Stop()
 
-		slot0.idleTimer = nil
+		arg_42_0.idleTimer = nil
 	end
 
-	if slot0.interActionTimer then
-		slot0.interActionTimer:Stop()
+	if arg_42_0.interActionTimer then
+		arg_42_0.interActionTimer:Stop()
 
-		slot0.interActionTimer = nil
+		arg_42_0.interActionTimer = nil
 	end
 
-	if not IsNil(slot0._go) and LeanTween.isTweening(slot0._go) then
-		LeanTween.cancel(slot0._go)
+	if not IsNil(arg_42_0._go) and LeanTween.isTweening(arg_42_0._go) then
+		LeanTween.cancel(arg_42_0._go)
 	end
 
-	Destroy(slot0.nameTF)
+	Destroy(arg_42_0.nameTF)
 
-	if slot0.isCommander then
-		Destroy(slot0.tagTF)
+	if arg_42_0.isCommander then
+		Destroy(arg_42_0.tagTF)
 	end
 
-	slot0.actionName = nil
+	arg_42_0.actionName = nil
 
-	slot0:SetOnMoveCallBack()
+	arg_42_0:SetOnMoveCallBack()
 
-	slot0.exited = true
+	arg_42_0.exited = true
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 20,
+				target = "TargetSelf",
+				skill_id = 32004
+			}
+		}
+	},
 	{
 		desc = "每20秒，有20%概率触发护盾，一定时间内取消子弹，护盾持续8秒"
 	},
@@ -37,18 +50,5 @@ return {
 	stack = 1,
 	id = 32004,
 	icon = 32004,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 20,
-				target = "TargetSelf",
-				skill_id = 32004
-			}
-		}
-	}
+	last_effect = ""
 }

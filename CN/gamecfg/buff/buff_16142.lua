@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeHit"
+			},
+			arg_list = {
+				quota = 1,
+				rant = 7500,
+				skill_id = 16142,
+				target = "TargetSelf",
+				be_hit_condition = {
+					bullet_type = 3,
+					damage_type = 2
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -17,23 +35,5 @@ return {
 	stack = 1,
 	id = 16142,
 	icon = 16140,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeHit"
-			},
-			arg_list = {
-				quota = 1,
-				rant = 7500,
-				skill_id = 16142,
-				target = "TargetSelf",
-				be_hit_condition = {
-					bullet_type = 3,
-					damage_type = 2
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,78 +1,81 @@
-slot0 = class("GuideFindUIStep", import(".GuideStep"))
-slot0.TRIGGER_TYPE_BUTTON = 1
-slot0.TRIGGER_TYPE_TOGGLE = 2
-slot0.EVENT_TYPE_CLICK = 3
-slot0.EVENT_TYPE_STICK = 4
-slot0.SHOW_UI = 5
-slot0.TRIGGER_TYPE_BUTTONEX = 6
-slot0.SNAP_PAGE = 7
+﻿local var_0_0 = class("GuideFindUIStep", import(".GuideStep"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.TRIGGER_TYPE_BUTTON = 1
+var_0_0.TRIGGER_TYPE_TOGGLE = 2
+var_0_0.EVENT_TYPE_CLICK = 3
+var_0_0.EVENT_TYPE_STICK = 4
+var_0_0.SHOW_UI = 5
+var_0_0.TRIGGER_TYPE_BUTTONEX = 6
+var_0_0.SNAP_PAGE = 7
 
-	slot0.eventUI = slot0:GenEventSearchData(slot1.ui)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0.eventUI = arg_1_0:GenEventSearchData(arg_1_1.ui)
 end
 
-function slot0.GenEventSearchData(slot0, slot1)
-	if not slot1 then
+function var_0_0.GenEventSearchData(arg_2_0, arg_2_1)
+	if not arg_2_1 then
 		return nil
 	end
 
-	slot2 = slot0:GenSearchData(slot1)
-	slot3 = slot1.scale ~= nil
-	slot4 = slot1.scale or 1
+	local var_2_0 = arg_2_0:GenSearchData(arg_2_1)
+	local var_2_1 = arg_2_1.scale ~= nil
+	local var_2_2 = arg_2_1.scale or 1
 
-	if slot1.dynamicPath then
-		slot5, slot6 = slot1.dynamicPath()
+	if arg_2_1.dynamicPath then
+		local var_2_3, var_2_4 = arg_2_1.dynamicPath()
 
-		if slot5 then
-			slot2.path = slot5
+		if var_2_3 then
+			var_2_0.path = var_2_3
 		end
 
-		if slot6 then
-			slot3 = true
-			slot4 = slot6
+		if var_2_4 then
+			var_2_1 = true
+			var_2_2 = var_2_4
 		end
 	end
 
-	slot2.settings = {
-		pos = slot1.pos,
-		scale = slot4,
-		eulerAngles = slot1.eulerAngles,
-		isLevelPoint = slot1.isLevelPoint,
-		image = slot1.image,
-		customPosition = slot1.pos or slot3 or slot1.eulerAngles or slot1.isLevelPoint,
-		clearChildEvent = slot1.eventPath ~= nil,
-		keepScrollTxt = slot1.keepScrollTxt
+	var_2_0.settings = {
+		pos = arg_2_1.pos,
+		scale = var_2_2,
+		eulerAngles = arg_2_1.eulerAngles,
+		isLevelPoint = arg_2_1.isLevelPoint,
+		image = arg_2_1.image,
+		customPosition = arg_2_1.pos or var_2_1 or arg_2_1.eulerAngles or arg_2_1.isLevelPoint,
+		clearChildEvent = arg_2_1.eventPath ~= nil,
+		keepScrollTxt = arg_2_1.keepScrollTxt
 	}
-	slot5, slot6 = nil
 
-	if slot1.onClick then
-		slot5 = uv0.TRIGGER_TYPE_BUTTONEX
-		slot6 = slot1.onClick
+	local var_2_5
+	local var_2_6
+
+	if arg_2_1.onClick then
+		var_2_5 = var_0_0.TRIGGER_TYPE_BUTTONEX
+		var_2_6 = arg_2_1.onClick
 	else
-		slot5 = slot1.triggerType and slot1.triggerType[1] or uv0.TRIGGER_TYPE_BUTTON
-		slot6 = slot1.triggerType and slot1.triggerType[2]
+		var_2_5 = arg_2_1.triggerType and arg_2_1.triggerType[1] or var_0_0.TRIGGER_TYPE_BUTTON
+		var_2_6 = arg_2_1.triggerType and arg_2_1.triggerType[2]
 	end
 
-	slot2.triggerData = {
-		type = slot5,
-		arg = slot6
+	var_2_0.triggerData = {
+		type = var_2_5,
+		arg = var_2_6
 	}
-	slot2.childIndex = slot1.eventIndex
-	slot2.eventPath = slot1.eventPath
-	slot2.fingerPos = slot1.fingerPos
-	slot2.slipAnim = slot5 == uv0.SNAP_PAGE
+	var_2_0.childIndex = arg_2_1.eventIndex
+	var_2_0.eventPath = arg_2_1.eventPath
+	var_2_0.fingerPos = arg_2_1.fingerPos
+	var_2_0.slipAnim = var_2_5 == var_0_0.SNAP_PAGE
 
-	return slot2
+	return var_2_0
 end
 
-function slot0.GetType(slot0)
+function var_0_0.GetType(arg_3_0)
 	return GuideStep.TYPE_FINDUI
 end
 
-function slot0.GetEventUI(slot0)
-	return slot0.eventUI
+function var_0_0.GetEventUI(arg_4_0)
+	return arg_4_0.eventUI
 end
 
-return slot0
+return var_0_0

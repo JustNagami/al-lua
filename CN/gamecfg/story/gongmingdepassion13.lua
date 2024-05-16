@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "GONGMINGDEPASSION13",
 	mode = 2,
 	fadeOut = 1.5,
@@ -304,7 +304,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 207140,
-			say = "等下你可千万不要拖累可畏的后腿！",
+			say = "等下你可千万不要拖可畏的后腿！",
 			painting = {
 				alpha = 0.3,
 				time = 1

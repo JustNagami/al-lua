@@ -1,72 +1,78 @@
-slot0 = class("GuildEventTimerView")
+﻿local var_0_0 = class("GuildEventTimerView")
 
-function slot0.Flush(slot0, slot1, slot2)
-	slot0.text = slot1
+function var_0_0.Flush(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.text = arg_1_1
 
-	slot0:RemoveEndEventTimer()
+	arg_1_0:RemoveEndEventTimer()
 
-	if slot2:GetLeftTime() < 86400 then
-		slot0.timer = Timer.New(function ()
-			slot0 = uv0:GetLeftTime()
+	local var_1_0 = arg_1_2:GetLeftTime()
 
-			uv1:UpdateText("<size=31><color=#FF3838>" .. pg.TimeMgr.GetInstance():DescCDTime(slot0) .. "</color></size>")
+	if var_1_0 < 86400 then
+		arg_1_0.timer = Timer.New(function()
+			local var_2_0 = arg_1_2:GetLeftTime()
 
-			if slot0 <= 0 then
-				uv1:OnOver()
+			arg_1_0:UpdateText("<size=31><color=#FF3838>" .. pg.TimeMgr.GetInstance():DescCDTime(var_2_0) .. "</color></size>")
+
+			if var_2_0 <= 0 then
+				arg_1_0:OnOver()
 			end
 		end, 1, -1)
 
-		slot0.timer.func()
+		arg_1_0.timer.func()
 	else
-		slot4, slot5, slot6, slot7 = pg.TimeMgr.GetInstance():parseTimeFrom(slot3)
+		local var_1_1, var_1_2, var_1_3, var_1_4 = pg.TimeMgr.GetInstance():parseTimeFrom(var_1_0)
 
-		assert(slot4 > 0)
+		assert(var_1_1 > 0)
 
-		if slot5 <= 0 and (slot6 > 0 or slot7 > 0) then
-			slot5 = slot5 + 1
+		if var_1_2 <= 0 and (var_1_3 > 0 or var_1_4 > 0) then
+			var_1_2 = var_1_2 + 1
 		end
 
-		slot8 = string.format("%s" .. i18n("word_date") .. "%s" .. i18n("word_hour"), slot4, slot5)
+		local var_1_5 = string.format("%s" .. i18n("word_date") .. "%s" .. i18n("word_hour"), var_1_1, var_1_2)
 
-		if slot4 < 7 then
-			slot8 = "<size=31><color=#FF3838>" .. slot8 .. "</color></size>"
+		if var_1_1 < 7 then
+			var_1_5 = "<size=31><color=#FF3838>" .. var_1_5 .. "</color></size>"
 		end
 
-		slot0:UpdateText(slot8)
+		arg_1_0:UpdateText(var_1_5)
 
-		if slot6 * 60 + slot7 <= 0 then
-			slot9 = 3600
+		local var_1_6 = var_1_3 * 60 + var_1_4
+
+		if var_1_6 <= 0 then
+			var_1_6 = 3600
 		end
 
-		slot0.timer = Timer.New(function ()
-			uv0:Flush(uv1, uv2)
-		end, math.min(slot3 - 86400, slot9) + 2, 1)
+		local var_1_7 = math.min(var_1_0 - 86400, var_1_6)
+
+		arg_1_0.timer = Timer.New(function()
+			arg_1_0:Flush(arg_1_1, arg_1_2)
+		end, var_1_7 + 2, 1)
 	end
 
-	slot0.timer:Start()
+	arg_1_0.timer:Start()
 end
 
-function slot0.UpdateText(slot0, slot1)
-	slot0.text.text = slot1
+function var_0_0.UpdateText(arg_4_0, arg_4_1)
+	arg_4_0.text.text = arg_4_1
 end
 
-function slot0.RemoveEndEventTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveEndEventTimer(arg_5_0)
+	if arg_5_0.timer then
+		arg_5_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_5_0.timer = nil
 	end
 end
 
-function slot0.OnOver(slot0)
-	slot0:RemoveEndEventTimer()
+function var_0_0.OnOver(arg_6_0)
+	arg_6_0:RemoveEndEventTimer()
 	pg.m02:sendNotification(GAME.GUILD_GET_ACTIVATION_EVENT, {
 		force = true
 	})
 end
 
-function slot0.Dispose(slot0)
-	slot0:RemoveEndEventTimer()
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0:RemoveEndEventTimer()
 end
 
-return slot0
+return var_0_0

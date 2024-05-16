@@ -1,4 +1,26 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "airPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 500
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -247,27 +269,5 @@ return {
 	stack = 1,
 	id = 16224,
 	icon = 16224,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "airPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 500
-			}
-		}
-	}
+	last_effect = ""
 }

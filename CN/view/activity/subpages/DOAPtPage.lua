@@ -1,477 +1,498 @@
-slot0 = class("DOAPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("DOAPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.buffModule = slot0:findTF("buff_module", slot0.bg)
-	slot0.buffPanel = slot0:findTF("skill", slot0.buffModule)
-	slot0.buffLvs = {}
+	arg_1_0.buffModule = arg_1_0:findTF("buff_module", arg_1_0.bg)
+	arg_1_0.buffPanel = arg_1_0:findTF("skill", arg_1_0.buffModule)
+	arg_1_0.buffLvs = {}
 
-	eachChild(slot0.buffPanel, function (slot0)
-		table.insert(uv0.buffLvs, slot0)
+	eachChild(arg_1_0.buffPanel, function(arg_2_0)
+		table.insert(arg_1_0.buffLvs, arg_2_0)
 	end)
 
-	slot0.getGreyBtn = slot0:findTF("get_grey_btn", slot0.bg)
-	slot0.helpBtn = slot0:findTF("help_btn", slot0.bg)
-	slot0.levelPanel = slot0:findTF("level", slot0.buffModule)
-	slot0.f2aPanel = slot0:findTF("f_to_a", slot0.levelPanel)
-	slot0.sPanel = slot0:findTF("s_ss", slot0.levelPanel)
-	slot0.sssPanel = slot0:findTF("sss", slot0.levelPanel)
-	slot0.lvBarImages = slot0:findTF("lv_bars", slot0.bg)
-	slot0.lvTagImages = slot0:findTF("lv_tags", slot0.bg)
-	slot0.shieldEffect = slot0:findTF("level/shield_effect", slot0.buffModule)
-	slot0.starEffect = slot0:findTF("level/star_effect", slot0.buffModule)
-	slot0.mask = slot0:findTF("mask", slot0.bg)
-	slot0.trainWindow = slot0:findTF("TrainWindow")
-	slot0.trainBtn = slot0:findTF("panel/train_btn", slot0.trainWindow)
-	slot0.trainSkills = slot0:findTF("panel/skills", slot0.trainWindow)
-	slot0.trainSkillBtns = {}
+	arg_1_0.getGreyBtn = arg_1_0:findTF("get_grey_btn", arg_1_0.bg)
+	arg_1_0.helpBtn = arg_1_0:findTF("help_btn", arg_1_0.bg)
+	arg_1_0.levelPanel = arg_1_0:findTF("level", arg_1_0.buffModule)
+	arg_1_0.f2aPanel = arg_1_0:findTF("f_to_a", arg_1_0.levelPanel)
+	arg_1_0.sPanel = arg_1_0:findTF("s_ss", arg_1_0.levelPanel)
+	arg_1_0.sssPanel = arg_1_0:findTF("sss", arg_1_0.levelPanel)
+	arg_1_0.lvBarImages = arg_1_0:findTF("lv_bars", arg_1_0.bg)
+	arg_1_0.lvTagImages = arg_1_0:findTF("lv_tags", arg_1_0.bg)
+	arg_1_0.shieldEffect = arg_1_0:findTF("level/shield_effect", arg_1_0.buffModule)
+	arg_1_0.starEffect = arg_1_0:findTF("level/star_effect", arg_1_0.buffModule)
+	arg_1_0.mask = arg_1_0:findTF("mask", arg_1_0.bg)
+	arg_1_0.trainWindow = arg_1_0:findTF("TrainWindow")
+	arg_1_0.trainBtn = arg_1_0:findTF("panel/train_btn", arg_1_0.trainWindow)
+	arg_1_0.trainSkills = arg_1_0:findTF("panel/skills", arg_1_0.trainWindow)
+	arg_1_0.trainSkillBtns = {}
 
-	eachChild(slot0.trainSkills, function (slot0)
-		table.insert(uv0.trainSkillBtns, slot0)
+	eachChild(arg_1_0.trainSkills, function(arg_3_0)
+		table.insert(arg_1_0.trainSkillBtns, arg_3_0)
 	end)
 
-	slot0.curInfoPanel = slot0:findTF("panel/info_bg", slot0.trainWindow)
-	slot0.curInfo = slot0:findTF("panel/info_bg/cur", slot0.trainWindow)
-	slot0.nextInfo = slot0:findTF("panel/info_bg/next", slot0.trainWindow)
-	slot0.msgBox = slot0:findTF("MsgBox")
-	slot0.msgContent = slot0:findTF("panel/content", slot0.msgBox)
-	slot0.msgBoxMask = slot0:findTF("mengban", slot0.msgBox)
-	slot0.cancelBtn = slot0:findTF("panel/cancel_btn", slot0.msgBox)
-	slot0.confirmBtn = slot0:findTF("panel/confirm_btn", slot0.msgBox)
-	slot0.tipPanel = slot0:findTF("Tip")
-	slot0.buffBox = slot0:findTF("BuffBox")
-	slot0.buffMask = slot0:findTF("mask", slot0.buffBox)
-	slot0.buffIconParent = slot0:findTF("window/panel/icon", slot0.buffBox)
-	slot0.buffDescContent = slot0:findTF("window/panel/intro_view/Viewport/Content", slot0.buffBox)
-	slot0.buffDescTpl = slot0:findTF("window/panel/intro_view/buff_desc_tpl", slot0.buffBox)
-	slot0.singleBuffBox = slot0:findTF("SingleBuffBox")
-	slot0.singleBuffMask = slot0:findTF("bg", slot0.singleBuffBox)
-	slot0.singleSureBtn = slot0:findTF("window/top/btnBack", slot0.singleBuffBox)
-	slot0.singleCloseBtn = slot0:findTF("window/sure_btn", slot0.singleBuffBox)
-	slot0.singleIconParent = slot0:findTF("window/panel/icon", slot0.singleBuffBox)
-	slot0.singleDescContent = slot0:findTF("window/panel/intro_view/Viewport/Content", slot0.singleBuffBox)
-	slot0.singleDescTpl = slot0:findTF("window/panel/intro_view/buff_desc_tpl", slot0.singleBuffBox)
+	arg_1_0.curInfoPanel = arg_1_0:findTF("panel/info_bg", arg_1_0.trainWindow)
+	arg_1_0.curInfo = arg_1_0:findTF("panel/info_bg/cur", arg_1_0.trainWindow)
+	arg_1_0.nextInfo = arg_1_0:findTF("panel/info_bg/next", arg_1_0.trainWindow)
+	arg_1_0.msgBox = arg_1_0:findTF("MsgBox")
+	arg_1_0.msgContent = arg_1_0:findTF("panel/content", arg_1_0.msgBox)
+	arg_1_0.msgBoxMask = arg_1_0:findTF("mengban", arg_1_0.msgBox)
+	arg_1_0.cancelBtn = arg_1_0:findTF("panel/cancel_btn", arg_1_0.msgBox)
+	arg_1_0.confirmBtn = arg_1_0:findTF("panel/confirm_btn", arg_1_0.msgBox)
+	arg_1_0.tipPanel = arg_1_0:findTF("Tip")
+	arg_1_0.buffBox = arg_1_0:findTF("BuffBox")
+	arg_1_0.buffMask = arg_1_0:findTF("mask", arg_1_0.buffBox)
+	arg_1_0.buffIconParent = arg_1_0:findTF("window/panel/icon", arg_1_0.buffBox)
+	arg_1_0.buffDescContent = arg_1_0:findTF("window/panel/intro_view/Viewport/Content", arg_1_0.buffBox)
+	arg_1_0.buffDescTpl = arg_1_0:findTF("window/panel/intro_view/buff_desc_tpl", arg_1_0.buffBox)
+	arg_1_0.singleBuffBox = arg_1_0:findTF("SingleBuffBox")
+	arg_1_0.singleBuffMask = arg_1_0:findTF("bg", arg_1_0.singleBuffBox)
+	arg_1_0.singleSureBtn = arg_1_0:findTF("window/top/btnBack", arg_1_0.singleBuffBox)
+	arg_1_0.singleCloseBtn = arg_1_0:findTF("window/sure_btn", arg_1_0.singleBuffBox)
+	arg_1_0.singleIconParent = arg_1_0:findTF("window/panel/icon", arg_1_0.singleBuffBox)
+	arg_1_0.singleDescContent = arg_1_0:findTF("window/panel/intro_view/Viewport/Content", arg_1_0.singleBuffBox)
+	arg_1_0.singleDescTpl = arg_1_0:findTF("window/panel/intro_view/buff_desc_tpl", arg_1_0.singleBuffBox)
 
-	setText(slot0:findTF("window/top/bg/infomation/title", slot0.singleBuffBox), i18n("words_information"))
-	setText(slot0:findTF("window/sure_btn/pic", slot0.singleBuffBox), i18n("text_confirm"))
+	setText(arg_1_0:findTF("window/top/bg/infomation/title", arg_1_0.singleBuffBox), i18n("words_information"))
+	setText(arg_1_0:findTF("window/sure_btn/pic", arg_1_0.singleBuffBox), i18n("text_confirm"))
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	setActive(slot0.bg, true)
-	removeOnButton(slot0.getBtn)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0 = {}
-		slot3 = getProxy(PlayerProxy):getData()
+function var_0_0.OnFirstFlush(arg_4_0)
+	var_0_0.super.OnFirstFlush(arg_4_0)
+	setActive(arg_4_0.bg, true)
+	removeOnButton(arg_4_0.getBtn)
+	onButton(arg_4_0, arg_4_0.getBtn, function()
+		local var_5_0 = {}
+		local var_5_1 = arg_4_0.ptData:GetAward()
+		local var_5_2 = getProxy(PlayerProxy):getData()
 
-		if uv0.ptData:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and slot3:GoldMax(slot1.count) then
-			table.insert(slot0, function (slot0)
+		if var_5_1.type == DROP_TYPE_RESOURCE and var_5_1.id == PlayerConst.ResGold and var_5_2:GoldMax(var_5_1.count) then
+			table.insert(var_5_0, function(arg_6_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
-					onYes = slot0
+					onYes = arg_6_0
 				})
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			uv0.isShowEffect = true
-			slot0 = uv0.ptData:CanTrain() and uv0.ptData:isInBuffTime()
-			slot2, slot3 = uv0.ptData:GetResProgress()
+		seriesAsync(var_5_0, function()
+			arg_4_0.isShowEffect = true
 
-			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
-				cmd = 1,
-				activity_id = uv0.ptData:GetId(),
-				arg1 = slot3,
-				callback = function ()
-					if uv0 then
-						uv1:showUpEffect()
-					else
-						uv1:updateLevelPanel()
-					end
+			local var_7_0 = arg_4_0.ptData:CanTrain() and arg_4_0.ptData:isInBuffTime()
+
+			local function var_7_1()
+				if var_7_0 then
+					arg_4_0:showUpEffect()
+				else
+					arg_4_0:updateLevelPanel()
 				end
+			end
+
+			local var_7_2, var_7_3 = arg_4_0.ptData:GetResProgress()
+
+			arg_4_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+				cmd = 1,
+				activity_id = arg_4_0.ptData:GetId(),
+				arg1 = var_7_3,
+				callback = var_7_1
 			})
 		end)
 	end, SFX_PANEL)
-	removeOnButton(slot0.battleBtn)
-	onButton(slot0, slot0.battleBtn, function ()
-		slot0, slot1 = nil
+	removeOnButton(arg_4_0.battleBtn)
+	onButton(arg_4_0, arg_4_0.battleBtn, function()
+		local var_9_0
+		local var_9_1
 
-		if uv0.activity:getConfig("config_client") ~= "" and uv0.activity:getConfig("config_client").linkActID then
-			slot1 = getProxy(ActivityProxy):getActivityById(slot0)
+		if arg_4_0.activity:getConfig("config_client") ~= "" then
+			var_9_0 = arg_4_0.activity:getConfig("config_client").linkActID
+
+			if var_9_0 then
+				var_9_1 = getProxy(ActivityProxy):getActivityById(var_9_0)
+			end
 		end
 
-		if not slot0 then
-			uv0:emit(ActivityMediator.BATTLE_OPERA)
-		elseif slot1 and not slot1:isEnd() then
-			uv0:emit(ActivityMediator.BATTLE_OPERA)
+		if not var_9_0 then
+			arg_4_0:emit(ActivityMediator.BATTLE_OPERA)
+		elseif var_9_1 and not var_9_1:isEnd() then
+			arg_4_0:emit(ActivityMediator.BATTLE_OPERA)
 		else
-			uv0:showTip(i18n("common_activity_end"))
+			arg_4_0:showTip(i18n("common_activity_end"))
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("doa_pt_help")
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.buffModule, function ()
-		uv0:showBuffBox()
+	onButton(arg_4_0, arg_4_0.buffModule, function()
+		arg_4_0:showBuffBox()
 	end, SFX_PANEL)
 
-	if slot0.contextData.singleActivity then
-		setActive(slot0.bg, false)
-		slot0:showSingleBuffBox()
+	if arg_4_0.contextData.singleActivity then
+		setActive(arg_4_0.bg, false)
+		arg_4_0:showSingleBuffBox()
 	end
 
-	slot1 = slot0.starEffect
-	slot1 = slot1:GetComponent("DftAniEvent")
-
-	slot1:SetEndEvent(function ()
-		slot0 = uv0
-
-		slot0:updateLevelPanel()
-
-		slot0 = uv0
-
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			uv0:showTrianPanel()
-			setActive(uv0.starEffect, false)
-			setActive(uv0.mask, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0.mask, uv0.bg)
+	arg_4_0.starEffect:GetComponent("DftAniEvent"):SetEndEvent(function()
+		arg_4_0:updateLevelPanel()
+		arg_4_0:managedTween(LeanTween.delayedCall, function()
+			arg_4_0:showTrianPanel()
+			setActive(arg_4_0.starEffect, false)
+			setActive(arg_4_0.mask, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0.mask, arg_4_0.bg)
+		end, 0.2, nil)
+	end)
+	arg_4_0.shieldEffect:GetComponent("DftAniEvent"):SetEndEvent(function()
+		arg_4_0:updateLevelPanel()
+		arg_4_0:managedTween(LeanTween.delayedCall, function()
+			arg_4_0:showTrianPanel()
+			setActive(arg_4_0.starEffect, false)
+			setActive(arg_4_0.mask, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0.mask, arg_4_0.bg)
 		end, 0.2, nil)
 	end)
 
-	slot1 = slot0.shieldEffect
-	slot1 = slot1:GetComponent("DftAniEvent")
-
-	slot1:SetEndEvent(function ()
-		slot0 = uv0
-
-		slot0:updateLevelPanel()
-
-		slot0 = uv0
-
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			uv0:showTrianPanel()
-			setActive(uv0.starEffect, false)
-			setActive(uv0.mask, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0.mask, uv0.bg)
-		end, 0.2, nil)
-	end)
-
-	slot0.isShowEffect = false
+	arg_4_0.isShowEffect = false
 end
 
-function slot0.showUpEffect(slot0, slot1)
-	setSlider(slot0.curPanel, 0, 1, 1)
+function var_0_0.showUpEffect(arg_16_0, arg_16_1)
+	setSlider(arg_16_0.curPanel, 0, 1, 1)
 
-	if slot0.ptData:GetBuffLevelProgress() == 8 or slot2 == 9 then
-		setActive(slot0.starEffect, true)
-		slot0.starEffect:GetComponent("Animator"):Play("saoguang_anim", -1, 0)
+	local var_16_0 = arg_16_0.ptData:GetBuffLevelProgress()
+
+	if var_16_0 == 8 or var_16_0 == 9 then
+		setActive(arg_16_0.starEffect, true)
+		arg_16_0.starEffect:GetComponent("Animator"):Play("saoguang_anim", -1, 0)
 	else
-		setActive(slot0.shieldEffect, true)
-		slot0.shieldEffect:GetComponent("Animator"):Play("saoguang_anim", -1, 0)
+		setActive(arg_16_0.shieldEffect, true)
+		arg_16_0.shieldEffect:GetComponent("Animator"):Play("saoguang_anim", -1, 0)
 	end
 
-	setActive(slot0.mask, true)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.mask)
+	setActive(arg_16_0.mask, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_16_0.mask)
 end
 
-function slot0.updateLevelPanel(slot0)
-	slot1, slot2 = slot0.ptData:GetBuffLevelProgress()
+function var_0_0.updateLevelPanel(arg_17_0)
+	local var_17_0, var_17_1 = arg_17_0.ptData:GetBuffLevelProgress()
 
-	setActive(slot0.f2aPanel, false)
-	setActive(slot0.sPanel, false)
-	setActive(slot0.sssPanel, false)
+	setActive(arg_17_0.f2aPanel, false)
+	setActive(arg_17_0.sPanel, false)
+	setActive(arg_17_0.sssPanel, false)
 
-	slot0.curPanel = nil
+	arg_17_0.curPanel = nil
 
-	if slot1 == 9 then
-		slot0.curPanel = slot0.sssPanel
-	elseif slot1 > 6 then
-		slot0.curPanel = slot0.sPanel
+	if var_17_0 == 9 then
+		arg_17_0.curPanel = arg_17_0.sssPanel
+	elseif var_17_0 > 6 then
+		arg_17_0.curPanel = arg_17_0.sPanel
 	else
-		slot0.curPanel = slot0.f2aPanel
+		arg_17_0.curPanel = arg_17_0.f2aPanel
 	end
 
-	setActive(slot0.curPanel, true)
-	setImageSprite(slot0:findTF("bar", slot0.curPanel), slot0.lvBarImages:Find(slot1):GetComponent(typeof(Image)).sprite)
-	setImageSprite(slot0:findTF("lv_tag", slot0.curPanel), slot0.lvTagImages:Find(slot1):GetComponent(typeof(Image)).sprite, true)
-	setSlider(slot0.curPanel, 0, 1, slot2)
+	setActive(arg_17_0.curPanel, true)
+	setImageSprite(arg_17_0:findTF("bar", arg_17_0.curPanel), arg_17_0.lvBarImages:Find(var_17_0):GetComponent(typeof(Image)).sprite)
+	setImageSprite(arg_17_0:findTF("lv_tag", arg_17_0.curPanel), arg_17_0.lvTagImages:Find(var_17_0):GetComponent(typeof(Image)).sprite, true)
+	setSlider(arg_17_0.curPanel, 0, 1, var_17_1)
 
-	return slot0.curPanel
+	return arg_17_0.curPanel
 end
 
-function slot0.OnUpdateFlush(slot0)
-	setActive(slot0.starEffect, false)
-	setActive(slot0.shieldEffect, false)
+function var_0_0.OnUpdateFlush(arg_18_0)
+	setActive(arg_18_0.starEffect, false)
+	setActive(arg_18_0.shieldEffect, false)
 
-	if slot0.ptData:CanTrain() and slot1 <= slot0.ptData.level and slot0.ptData:isInBuffTime() and not slot0.contextData.singleActivity and not slot0.isShowEffect then
-		slot0:showTrianPanel()
+	local var_18_0 = arg_18_0.ptData:CanTrain()
+
+	if var_18_0 and var_18_0 <= arg_18_0.ptData.level and arg_18_0.ptData:isInBuffTime() and not arg_18_0.contextData.singleActivity and not arg_18_0.isShowEffect then
+		arg_18_0:showTrianPanel()
 	end
 
-	slot2, slot3, slot4 = slot0.ptData:GetLevelProgress()
-	slot5, slot6, slot7 = slot0.ptData:GetResProgress()
+	local var_18_1, var_18_2, var_18_3 = arg_18_0.ptData:GetLevelProgress()
+	local var_18_4, var_18_5, var_18_6 = arg_18_0.ptData:GetResProgress()
 
-	setText(slot0.step, slot2 .. "/" .. slot3)
-	setText(slot0.progress, (slot7 >= 1 and setColorStr(slot5, COLOR_GREEN) or slot5) .. "/" .. slot6)
-	setSlider(slot0.slider, 0, 1, slot7)
+	setText(arg_18_0.step, var_18_1 .. "/" .. var_18_2)
+	setText(arg_18_0.progress, (var_18_6 >= 1 and setColorStr(var_18_4, COLOR_GREEN) or var_18_4) .. "/" .. var_18_5)
+	setSlider(arg_18_0.slider, 0, 1, var_18_6)
 
-	if not slot0.isShowEffect then
-		slot0:updateLevelPanel()
+	if not arg_18_0.isShowEffect then
+		arg_18_0:updateLevelPanel()
 	end
 
-	slot8 = slot0.ptData:CanGetAward()
-	slot9 = slot0.ptData:CanGetNextAward()
+	local var_18_7 = arg_18_0.ptData:CanGetAward()
+	local var_18_8 = arg_18_0.ptData:CanGetNextAward()
+	local var_18_9 = arg_18_0.ptData:CanGetMorePt()
+	local var_18_10 = arg_18_0.ptData:CanTrain()
 
-	setActive(slot0.battleBtn, slot0.ptData:CanGetMorePt() and not slot8 and slot9)
-	setActive(slot0.getBtn, slot8)
-	setActive(slot0.getGreyBtn, not slot8)
-	setActive(slot0.gotBtn, not slot9 and not slot0.ptData:CanTrain())
-	setActive(slot0.buffModule, slot0.ptData:isInBuffTime())
-	updateDrop(slot0.awardTF, slot0.ptData:GetAward())
-	onButton(slot0, slot0.awardTF, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	setActive(arg_18_0.battleBtn, var_18_9 and not var_18_7 and var_18_8)
+	setActive(arg_18_0.getBtn, var_18_7)
+	setActive(arg_18_0.getGreyBtn, not var_18_7)
+	setActive(arg_18_0.gotBtn, not var_18_8 and not var_18_10)
+	setActive(arg_18_0.buffModule, arg_18_0.ptData:isInBuffTime())
+
+	local var_18_11 = arg_18_0.ptData:GetAward()
+
+	updateDrop(arg_18_0.awardTF, var_18_11)
+	onButton(arg_18_0, arg_18_0.awardTF, function()
+		arg_18_0:emit(BaseUI.ON_DROP, var_18_11)
 	end, SFX_PANEL)
 
-	for slot16, slot17 in ipairs(slot0.ptData:GetCurBuffInfos()) do
-		setText(slot0.buffLvs[slot17.group], slot17.next and "LV." .. slot17.lv or "MAX")
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.ptData:GetCurBuffInfos()) do
+		setText(arg_18_0.buffLvs[iter_18_1.group], iter_18_1.next and "LV." .. iter_18_1.lv or "MAX")
 	end
 end
 
-function slot0.showTrianPanel(slot0)
-	setActive(slot0.trainWindow, true)
+function var_0_0.showTrianPanel(arg_20_0)
+	setActive(arg_20_0.trainWindow, true)
 
-	slot1 = slot0.ptData:GetCurBuffInfos()
-	slot0.selectIndex = nil
-	slot0.selectBuffId = nil
-	slot0.selectBuffLv = nil
-	slot0.selectNewBuffId = nil
+	local var_20_0 = arg_20_0.ptData:GetCurBuffInfos()
 
-	for slot5, slot6 in ipairs(slot0.trainSkillBtns) do
-		onButton(slot0, slot6, function ()
-			for slot3, slot4 in ipairs(uv0) do
-				if uv1 == slot4.group then
-					if slot4.next then
-						uv2.selectIndex = uv1
-						uv2.selectBuffId = slot4.id
-						uv2.selectNewBuffId = slot4.next
-						uv2.selectBuffLv = slot4.lv
+	arg_20_0.selectIndex = nil
+	arg_20_0.selectBuffId = nil
+	arg_20_0.selectBuffLv = nil
+	arg_20_0.selectNewBuffId = nil
+
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.trainSkillBtns) do
+		onButton(arg_20_0, iter_20_1, function()
+			for iter_21_0, iter_21_1 in ipairs(var_20_0) do
+				if iter_20_0 == iter_21_1.group then
+					if iter_21_1.next then
+						arg_20_0.selectIndex = iter_20_0
+						arg_20_0.selectBuffId = iter_21_1.id
+						arg_20_0.selectNewBuffId = iter_21_1.next
+						arg_20_0.selectBuffLv = iter_21_1.lv
 					else
-						uv2.selectIndex = nil
-						uv2.selectBuffId = nil
-						uv2.selectNewBuffId = nil
-						uv2.selectBuffLv = nil
+						arg_20_0.selectIndex = nil
+						arg_20_0.selectBuffId = nil
+						arg_20_0.selectNewBuffId = nil
+						arg_20_0.selectBuffLv = nil
 					end
 				end
 			end
 
-			uv2:flushTrainPanel()
+			arg_20_0:flushTrainPanel()
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.trainBtn, function ()
-		uv0:showMsgBox()
+	onButton(arg_20_0, arg_20_0.trainBtn, function()
+		arg_20_0:showMsgBox()
 	end, SFX_PANEL)
-	(function ()
-		for slot3, slot4 in ipairs(uv0) do
-			if slot4.next then
-				uv1.selectIndex = slot4.group
-				uv1.selectBuffId = slot4.id
-				uv1.selectNewBuffId = slot4.next
-				uv1.selectBuffLv = slot4.lv
+	;(function()
+		for iter_23_0, iter_23_1 in ipairs(var_20_0) do
+			if iter_23_1.next then
+				arg_20_0.selectIndex = iter_23_1.group
+				arg_20_0.selectBuffId = iter_23_1.id
+				arg_20_0.selectNewBuffId = iter_23_1.next
+				arg_20_0.selectBuffLv = iter_23_1.lv
 
 				return
 			end
 		end
 	end)()
-	slot0:flushTrainPanel()
+	arg_20_0:flushTrainPanel()
 end
 
-function slot0.hideTrianPanel(slot0)
-	setActive(slot0.trainWindow, false)
+function var_0_0.hideTrianPanel(arg_24_0)
+	setActive(arg_24_0.trainWindow, false)
 end
 
-function slot0.flushTrainPanel(slot0)
-	if slot0.ptData:GetCurBuffInfos() then
-		for slot5, slot6 in ipairs(slot1) do
-			setText(slot0:findTF("lv_bg/lv", slot0.trainSkillBtns[slot6.group]), slot6.next and "LV." .. slot6.lv or "MAX")
+function var_0_0.flushTrainPanel(arg_25_0)
+	local var_25_0 = arg_25_0.ptData:GetCurBuffInfos()
+
+	if var_25_0 then
+		for iter_25_0, iter_25_1 in ipairs(var_25_0) do
+			setText(arg_25_0:findTF("lv_bg/lv", arg_25_0.trainSkillBtns[iter_25_1.group]), iter_25_1.next and "LV." .. iter_25_1.lv or "MAX")
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot0.trainSkillBtns) do
-		if slot5 == slot0.selectIndex then
-			setActive(slot0:findTF("selected", slot6), true)
+	for iter_25_2, iter_25_3 in ipairs(arg_25_0.trainSkillBtns) do
+		if iter_25_2 == arg_25_0.selectIndex then
+			setActive(arg_25_0:findTF("selected", iter_25_3), true)
 		else
-			setActive(slot0:findTF("selected", slot6), false)
+			setActive(arg_25_0:findTF("selected", iter_25_3), false)
 		end
 	end
 
-	if slot0.selectIndex then
-		setActive(slot0.curInfoPanel, true)
-		setActive(slot0.trainBtn, true)
-		setText(slot0.curInfo, pg.benefit_buff_template[slot0.selectBuffId].desc)
-		setText(slot0.nextInfo, pg.benefit_buff_template[slot0.selectNewBuffId].desc)
+	if arg_25_0.selectIndex then
+		setActive(arg_25_0.curInfoPanel, true)
+		setActive(arg_25_0.trainBtn, true)
+		setText(arg_25_0.curInfo, pg.benefit_buff_template[arg_25_0.selectBuffId].desc)
+		setText(arg_25_0.nextInfo, pg.benefit_buff_template[arg_25_0.selectNewBuffId].desc)
 	else
-		setActive(slot0.curInfoPanel, false)
-		setActive(slot0.trainBtn, false)
+		setActive(arg_25_0.curInfoPanel, false)
+		setActive(arg_25_0.trainBtn, false)
 	end
 end
 
-function slot0.getBuffNameIndex(slot0, slot1)
-	if slot1 == 35 or slot1 == 36 or slot1 == 37 then
+function var_0_0.getBuffNameIndex(arg_26_0, arg_26_1)
+	if arg_26_1 == 35 or arg_26_1 == 36 or arg_26_1 == 37 then
 		return 1
-	elseif slot1 == 38 or slot1 == 39 or slot1 == 40 then
+	elseif arg_26_1 == 38 or arg_26_1 == 39 or arg_26_1 == 40 then
 		return 2
-	elseif slot1 == 41 or slot1 == 42 or slot1 == 43 then
+	elseif arg_26_1 == 41 or arg_26_1 == 42 or arg_26_1 == 43 then
 		return 3
-	elseif slot1 == 44 or slot1 == 45 or slot1 == 46 then
+	elseif arg_26_1 == 44 or arg_26_1 == 45 or arg_26_1 == 46 then
 		return 4
 	end
 
 	return 1
 end
 
-function slot0.getTip(slot0, slot1)
-	if slot1 == 35 or slot1 == 36 or slot1 == 37 then
+function var_0_0.getTip(arg_27_0, arg_27_1)
+	if arg_27_1 == 35 or arg_27_1 == 36 or arg_27_1 == 37 then
 		return i18n("doa_liliang")
-	elseif slot1 == 38 or slot1 == 39 or slot1 == 40 then
+	elseif arg_27_1 == 38 or arg_27_1 == 39 or arg_27_1 == 40 then
 		return i18n("doa_jiqiao")
-	elseif slot1 == 41 or slot1 == 42 or slot1 == 43 then
+	elseif arg_27_1 == 41 or arg_27_1 == 42 or arg_27_1 == 43 then
 		return i18n("doa_tili")
-	elseif slot1 == 44 or slot1 == 45 or slot1 == 46 then
+	elseif arg_27_1 == 44 or arg_27_1 == 45 or arg_27_1 == 46 then
 		return i18n("doa_meili")
 	end
 
 	return ""
 end
 
-function slot0.showMsgBox(slot0)
-	if slot0.selectBuffId then
-		setActive(slot0.msgBox, true)
-		setText(slot0.msgContent, i18n("doa_pt_up", slot0:getTip(pg.benefit_buff_template[slot0.selectBuffId].id)))
-		onButton(slot0, slot0.msgBoxMask, function ()
-			uv0:hideMsgBox()
+function var_0_0.showMsgBox(arg_28_0)
+	if arg_28_0.selectBuffId then
+		setActive(arg_28_0.msgBox, true)
+		setText(arg_28_0.msgContent, i18n("doa_pt_up", arg_28_0:getTip(pg.benefit_buff_template[arg_28_0.selectBuffId].id)))
+		onButton(arg_28_0, arg_28_0.msgBoxMask, function()
+			arg_28_0:hideMsgBox()
 		end, SFX_PANEL)
-		onButton(slot0, slot0.cancelBtn, function ()
-			uv0:hideMsgBox()
+		onButton(arg_28_0, arg_28_0.cancelBtn, function()
+			arg_28_0:hideMsgBox()
 		end, SFX_PANEL)
-		onButton(slot0, slot0.confirmBtn, function ()
-			uv0:hideMsgBox()
-			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		onButton(arg_28_0, arg_28_0.confirmBtn, function()
+			arg_28_0:hideMsgBox()
+			arg_28_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 3,
-				activity_id = uv0.ptData:GetId(),
-				arg1 = uv0.ptData:CanTrain(),
-				arg2 = uv0.selectNewBuffId,
-				oldBuffId = uv0.selectBuffId
+				activity_id = arg_28_0.ptData:GetId(),
+				arg1 = arg_28_0.ptData:CanTrain(),
+				arg2 = arg_28_0.selectNewBuffId,
+				oldBuffId = arg_28_0.selectBuffId
 			})
-			uv0:hideTrianPanel()
-			uv0:showTip(i18n("doa_pt_complete"))
+			arg_28_0:hideTrianPanel()
+			arg_28_0:showTip(i18n("doa_pt_complete"))
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.hideMsgBox(slot0)
-	setActive(slot0.msgBox, false)
+function var_0_0.hideMsgBox(arg_32_0)
+	setActive(arg_32_0.msgBox, false)
 end
 
-function slot0.showTip(slot0, slot1)
-	slot2 = cloneTplTo(slot0.tipPanel, slot0._tf)
+function var_0_0.showTip(arg_33_0, arg_33_1)
+	local var_33_0 = cloneTplTo(arg_33_0.tipPanel, arg_33_0._tf)
 
-	setActive(slot2, true)
-	setText(slot0:findTF("Text", slot2), slot1)
+	setActive(var_33_0, true)
+	setText(arg_33_0:findTF("Text", var_33_0), arg_33_1)
 
-	slot2.transform.localScale = Vector3(0, 0.1, 1)
+	var_33_0.transform.localScale = Vector3(0, 0.1, 1)
 
-	LeanTween.scale(slot2, Vector3(1.8, 0.1, 1), 0.1):setUseEstimatedTime(true)
-	LeanTween.scale(slot2, Vector3(1.1, 1.1, 1), 0.1):setDelay(0.1):setUseEstimatedTime(true)
+	LeanTween.scale(var_33_0, Vector3(1.8, 0.1, 1), 0.1):setUseEstimatedTime(true)
+	LeanTween.scale(var_33_0, Vector3(1.1, 1.1, 1), 0.1):setDelay(0.1):setUseEstimatedTime(true)
 
-	slot3 = GetOrAddComponent(slot2, "CanvasGroup")
+	local var_33_1 = GetOrAddComponent(var_33_0, "CanvasGroup")
 
-	Timer.New(function ()
-		if IsNil(uv0) then
+	Timer.New(function()
+		if IsNil(var_33_0) then
 			return
 		end
 
-		LeanTween.scale(uv0, Vector3(0.1, 1.5, 1), 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function ()
-			LeanTween.scale(uv0, Vector3.zero, 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function ()
-				Destroy(uv0)
+		LeanTween.scale(var_33_0, Vector3(0.1, 1.5, 1), 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function()
+			LeanTween.scale(var_33_0, Vector3.zero, 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function()
+				Destroy(var_33_0)
 			end))
 		end))
 	end, 3):Start()
 end
 
-function slot0.showBuffBox(slot0)
-	setActive(slot0.buffBox, true)
-	removeAllChildren(slot0.buffIconParent)
+function var_0_0.showBuffBox(arg_37_0)
+	setActive(arg_37_0.buffBox, true)
+	removeAllChildren(arg_37_0.buffIconParent)
 
-	slot1 = cloneTplTo(slot0:updateLevelPanel(), slot0.buffIconParent)
+	local var_37_0 = cloneTplTo(arg_37_0:updateLevelPanel(), arg_37_0.buffIconParent)
 
-	setLocalPosition(slot1, Vector3(0, 0, 0))
-	setLocalScale(slot1, Vector3(1.3, 1.3, 1))
+	setLocalPosition(var_37_0, Vector3(0, 0, 0))
+	setLocalScale(var_37_0, Vector3(1.3, 1.3, 1))
 
-	if slot0.ptData:GetCurBuffInfos() then
-		for slot6, slot7 in ipairs(slot2) do
-			slot8 = nil
+	local var_37_1 = arg_37_0.ptData:GetCurBuffInfos()
 
-			setText((slot6 > slot0.buffDescContent.childCount or slot0.buffDescContent:GetChild(slot6 - 1)) and cloneTplTo(slot0.buffDescTpl, slot0.buffDescContent), pg.benefit_buff_template[slot7.id].name .. pg.benefit_buff_template[slot7.id].desc)
+	if var_37_1 then
+		for iter_37_0, iter_37_1 in ipairs(var_37_1) do
+			local var_37_2
+
+			if iter_37_0 <= arg_37_0.buffDescContent.childCount then
+				var_37_2 = arg_37_0.buffDescContent:GetChild(iter_37_0 - 1)
+			else
+				var_37_2 = cloneTplTo(arg_37_0.buffDescTpl, arg_37_0.buffDescContent)
+			end
+
+			setText(var_37_2, pg.benefit_buff_template[iter_37_1.id].name .. pg.benefit_buff_template[iter_37_1.id].desc)
 		end
 	end
 
-	onButton(slot0, slot0.buffMask, function ()
-		setActive(uv0.buffBox, false)
+	onButton(arg_37_0, arg_37_0.buffMask, function()
+		setActive(arg_37_0.buffBox, false)
 	end, SFX_PANEL)
 end
 
-function slot0.showSingleBuffBox(slot0)
-	setActive(slot0.singleBuffBox, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.singleBuffBox, false, {
+function var_0_0.showSingleBuffBox(arg_39_0)
+	setActive(arg_39_0.singleBuffBox, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_39_0.singleBuffBox, false, {
 		overlayType = LayerWeightConst.OVERLAY_UI_TOP
 	})
-	removeAllChildren(slot0.singleIconParent)
+	removeAllChildren(arg_39_0.singleIconParent)
 
-	slot1 = cloneTplTo(slot0:updateLevelPanel(), slot0.singleIconParent)
+	local var_39_0 = cloneTplTo(arg_39_0:updateLevelPanel(), arg_39_0.singleIconParent)
 
-	setLocalPosition(slot1, Vector3(0, 0, 0))
-	setLocalScale(slot1, Vector3(1.3, 1.3, 1))
+	setLocalPosition(var_39_0, Vector3(0, 0, 0))
+	setLocalScale(var_39_0, Vector3(1.3, 1.3, 1))
 
-	if slot0.ptData:GetCurBuffInfos() then
-		for slot6, slot7 in ipairs(slot2) do
-			slot8 = nil
+	local var_39_1 = arg_39_0.ptData:GetCurBuffInfos()
 
-			setText((slot6 > slot0.singleDescContent.childCount or slot0.singleDescContent:GetChild(slot6 - 1)) and cloneTplTo(slot0.singleDescTpl, slot0.singleDescContent), pg.benefit_buff_template[slot7.id].name .. pg.benefit_buff_template[slot7.id].desc)
+	if var_39_1 then
+		for iter_39_0, iter_39_1 in ipairs(var_39_1) do
+			local var_39_2
+
+			if iter_39_0 <= arg_39_0.singleDescContent.childCount then
+				var_39_2 = arg_39_0.singleDescContent:GetChild(iter_39_0 - 1)
+			else
+				var_39_2 = cloneTplTo(arg_39_0.singleDescTpl, arg_39_0.singleDescContent)
+			end
+
+			setText(var_39_2, pg.benefit_buff_template[iter_39_1.id].name .. pg.benefit_buff_template[iter_39_1.id].desc)
 		end
 	end
 
-	function slot3()
-		setActive(uv0.singleBuffBox, false)
-		uv0:emit(ActivitySingleScene.EXIT)
-		uv0:emit(ActivitySingleScene.ON_CLOSE)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.singleBuffBox, uv0._tf)
+	local function var_39_3()
+		setActive(arg_39_0.singleBuffBox, false)
+		arg_39_0:emit(ActivitySingleScene.EXIT)
+		arg_39_0:emit(ActivitySingleScene.ON_CLOSE)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_39_0.singleBuffBox, arg_39_0._tf)
 	end
 
-	onButton(slot0, slot0.singleBuffMask, function ()
-		uv0()
+	onButton(arg_39_0, arg_39_0.singleBuffMask, function()
+		var_39_3()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.singleCloseBtn, function ()
-		uv0()
+	onButton(arg_39_0, arg_39_0.singleCloseBtn, function()
+		var_39_3()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.singleSureBtn, function ()
-		uv0()
+	onButton(arg_39_0, arg_39_0.singleSureBtn, function()
+		var_39_3()
 	end, SFX_PANEL)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.contextData.singleActivity then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0.singleBuffBox, slot0._tf)
+function var_0_0.onBackPressed(arg_44_0)
+	if arg_44_0.contextData.singleActivity then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_44_0.singleBuffBox, arg_44_0._tf)
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.contextData.singleActivity then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0.singleBuffBox, slot0._tf)
+function var_0_0.willExit(arg_45_0)
+	if arg_45_0.contextData.singleActivity then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_45_0.singleBuffBox, arg_45_0._tf)
 	end
 end
 
-return slot0
+return var_0_0

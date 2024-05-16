@@ -1,77 +1,84 @@
-slot0 = class("EquipESkinFormShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("EquipESkinFormShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.oldShipPos
-	slot5 = slot2.newShipId
-	slot6 = slot2.newShipPos
-	slot7 = getProxy(EquipmentProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.oldShipId
+	local var_1_2 = var_1_0.oldShipPos
+	local var_1_3 = var_1_0.newShipId
+	local var_1_4 = var_1_0.newShipPos
+	local var_1_5 = getProxy(EquipmentProxy)
+	local var_1_6 = getProxy(BayProxy)
+	local var_1_7 = var_1_6:getShipById(var_1_1)
 
-	if not getProxy(BayProxy):getShipById(slot2.oldShipId) then
+	if not var_1_7 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_no_old_ship"))
 
 		return
 	end
 
-	if slot9:getEquipSkin(slot4) == 0 then
+	local var_1_8 = var_1_7:getEquipSkin(var_1_2)
+
+	if var_1_8 == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_no_old_skinorequipment"))
 
 		return
 	end
 
-	if not slot8:getShipById(slot5) then
+	local var_1_9 = var_1_6:getShipById(var_1_3)
+
+	if not var_1_9 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_no_new_ship"))
 
 		return
 	end
 
-	function slot12()
-		if not uv0:getEquipmnentSkinById(uv1) or slot0.count == 0 then
+	local function var_1_10()
+		local var_2_0 = var_1_5:getEquipmnentSkinById(var_1_8)
+
+		if not var_2_0 or var_2_0.count == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_count_noenough"))
 
 			return
 		end
 
-		slot1 = pg.ConnectionMgr.GetInstance()
+		pg.ConnectionMgr.GetInstance():Send(12036, {
+			ship_id = var_1_3,
+			equip_skin_id = var_1_8,
+			pos = var_1_4
+		}, 12037, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				local var_3_0 = var_1_9:getEquipSkin(var_1_4)
 
-		slot1:Send(12036, {
-			ship_id = uv2,
-			equip_skin_id = uv1,
-			pos = uv3
-		}, 12037, function (slot0)
-			if slot0.result == 0 then
-				if uv0:getEquipSkin(uv1) ~= 0 then
-					uv2:addEquipmentSkin(slot1, 1)
+				if var_3_0 ~= 0 then
+					var_1_5:addEquipmentSkin(var_3_0, 1)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 				end
 
-				uv0:updateEquipmentSkin(uv1, uv3)
-				uv4:updateShip(uv0)
-				uv2:useageEquipmnentSkin(uv3)
+				var_1_9:updateEquipmentSkin(var_1_4, var_1_8)
+				var_1_6:updateShip(var_1_9)
+				var_1_5:useageEquipmnentSkin(var_1_8)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_replace_done"))
-				uv5:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_FROM_SHIP_DONE)
+				arg_1_0:sendNotification(GAME.EQUIP_EQUIPMENTSKIN_FROM_SHIP_DONE)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload_failed" .. slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload_failed" .. arg_3_0.result))
 			end
 		end)
 	end
 
-	slot13 = pg.ConnectionMgr.GetInstance()
-
-	slot13:Send(12036, {
+	pg.ConnectionMgr.GetInstance():Send(12036, {
 		equip_skin_id = 0,
-		ship_id = slot3,
-		pos = slot4
-	}, 12037, function (slot0)
-		if slot0.result == 0 then
-			uv0:updateEquipmentSkin(uv1, 0)
-			uv2:updateShip(uv0)
-			uv3:addEquipmentSkin(uv4, 1)
-			uv5()
+		ship_id = var_1_1,
+		pos = var_1_2
+	}, 12037, function(arg_4_0)
+		if arg_4_0.result == 0 then
+			var_1_7:updateEquipmentSkin(var_1_2, 0)
+			var_1_6:updateShip(var_1_7)
+			var_1_5:addEquipmentSkin(var_1_8, 1)
+			var_1_10()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload_failed" .. slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload_failed" .. arg_4_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

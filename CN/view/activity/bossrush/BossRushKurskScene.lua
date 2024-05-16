@@ -1,96 +1,97 @@
-slot0 = class("BossRushKurskScene", import("view.base.BaseUI"))
-slot1 = require("Mgr/Pool/PoolPlural")
-slot0.DISPLAY = {
+﻿local var_0_0 = class("BossRushKurskScene", import("view.base.BaseUI"))
+local var_0_1 = require("Mgr/Pool/PoolPlural")
+
+var_0_0.DISPLAY = {
 	STORY = 2,
 	BATTLE = 1
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BossRushKurskUI"
 end
 
-function slot0.GetAtalsName(slot0)
+function var_0_0.GetAtalsName(arg_2_0)
 	return "ui/BossRushKurskUI_atlas"
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_3_0)
 	return true
 end
 
-function slot0.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+function var_0_0.Ctor(arg_4_0)
+	var_0_0.super.Ctor(arg_4_0)
 
-	slot0.loader = AutoLoader.New()
+	arg_4_0.loader = AutoLoader.New()
 end
 
-function slot0.preload(slot0, slot1)
-	existCall(slot1)
-	slot0.loader:LoadBundle(slot0:GetAtalsName())
+function var_0_0.preload(arg_5_0, arg_5_1)
+	existCall(arg_5_1)
+	arg_5_0.loader:LoadBundle(arg_5_0:GetAtalsName())
 end
 
-function slot0.init(slot0)
-	slot0.top = slot0._tf:Find("Top")
-	slot0.map = slot0._tf:Find("Map")
-	slot0.seriesNodes = _.map(_.range(slot0._tf:Find("Battle/Nodes").childCount), function (slot0)
-		return uv0._tf:Find("Battle/Nodes"):GetChild(slot0 - 1)
+function var_0_0.init(arg_6_0)
+	arg_6_0.top = arg_6_0._tf:Find("Top")
+	arg_6_0.map = arg_6_0._tf:Find("Map")
+	arg_6_0.seriesNodes = _.map(_.range(arg_6_0._tf:Find("Battle/Nodes").childCount), function(arg_7_0)
+		return arg_6_0._tf:Find("Battle/Nodes"):GetChild(arg_7_0 - 1)
 	end)
-	slot0.ptText = slot0._tf:Find("Battle/Reward/Text")
-	slot0.nodes = {}
-	slot4 = "Map"
+	arg_6_0.ptText = arg_6_0._tf:Find("Battle/Reward/Text")
+	arg_6_0.nodes = {}
 
-	for slot4 = 1, slot0._tf:Find(slot4).childCount do
-		slot5 = slot0._tf:Find("Map"):GetChild(slot4 - 1)
-		slot0.nodes[slot5.name] = {
+	for iter_6_0 = 1, arg_6_0._tf:Find("Map").childCount do
+		local var_6_0 = arg_6_0._tf:Find("Map"):GetChild(iter_6_0 - 1)
+
+		arg_6_0.nodes[var_6_0.name] = {
 			tfType = 1,
-			trans = slot5
+			trans = var_6_0
 		}
 	end
 
-	slot4 = "Story/Nodes"
+	for iter_6_1 = 1, arg_6_0._tf:Find("Story/Nodes").childCount do
+		local var_6_1 = arg_6_0._tf:Find("Story/Nodes"):GetChild(iter_6_1 - 1)
 
-	for slot4 = 1, slot0._tf:Find(slot4).childCount do
-		slot5 = slot0._tf:Find("Story/Nodes"):GetChild(slot4 - 1)
-		slot0.nodes[slot5.name] = {
+		arg_6_0.nodes[var_6_1.name] = {
 			tfType = 2,
-			trans = slot5
+			trans = var_6_1
 		}
 	end
 
-	slot0.pluralRoot = pg.PoolMgr.GetInstance().root
-	slot1 = go(slot0._tf:Find("Link"))
+	arg_6_0.pluralRoot = pg.PoolMgr.GetInstance().root
 
-	setActive(slot1, false)
+	local var_6_2 = go(arg_6_0._tf:Find("Link"))
 
-	slot0.plural = uv0.New(slot1, 32)
-	slot0.linksContainer = slot0._tf:Find("Links")
-	slot0.links = {}
-	slot0.storyBar = slot0._tf:Find("Story/StoryBar")
-	slot0.storyAward = slot0._tf:Find("Story/PassLevel/Award")
-	slot0.ActionSequence = {}
+	setActive(var_6_2, false)
 
-	setText(slot0._tf:Find("Battle/Rank/Title"), i18n("word_billboard"))
-	setText(slot0._tf:Find("Battle/Reward/Title"), i18n("series_enemy_reward"))
-	setText(slot0._tf:Find("Story/PassLevel/Title"), i18n("series_enemy_storyreward"))
-	setText(slot0._tf:Find("Story/PassLevel/PT/Tips"), i18n("series_enemy_storyunlock"))
+	arg_6_0.plural = var_0_1.New(var_6_2, 32)
+	arg_6_0.linksContainer = arg_6_0._tf:Find("Links")
+	arg_6_0.links = {}
+	arg_6_0.storyBar = arg_6_0._tf:Find("Story/StoryBar")
+	arg_6_0.storyAward = arg_6_0._tf:Find("Story/PassLevel/Award")
+	arg_6_0.ActionSequence = {}
+
+	setText(arg_6_0._tf:Find("Battle/Rank/Title"), i18n("word_billboard"))
+	setText(arg_6_0._tf:Find("Battle/Reward/Title"), i18n("series_enemy_reward"))
+	setText(arg_6_0._tf:Find("Story/PassLevel/Title"), i18n("series_enemy_storyreward"))
+	setText(arg_6_0._tf:Find("Story/PassLevel/PT/Tips"), i18n("series_enemy_storyunlock"))
 end
 
-function slot0.SetActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.SetActivity(arg_8_0, arg_8_1)
+	arg_8_0.activity = arg_8_1
 end
 
-function slot0.SetPtActivity(slot0, slot1)
-	slot0.ptActivity = slot1
-	slot0.ptData = ActivityPtData.New(slot0.ptActivity)
+function var_0_0.SetPtActivity(arg_9_0, arg_9_1)
+	arg_9_0.ptActivity = arg_9_1
+	arg_9_0.ptData = ActivityPtData.New(arg_9_0.ptActivity)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.top:Find("back_btn"), function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_10_0)
+	onButton(arg_10_0, arg_10_0.top:Find("back_btn"), function()
+		arg_10_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.top:Find("option"), function ()
-		uv0:quickExitFunc()
+	onButton(arg_10_0, arg_10_0.top:Find("option"), function()
+		arg_10_0:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Help"), function ()
+	onButton(arg_10_0, arg_10_0._tf:Find("Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = {
@@ -100,406 +101,458 @@ function slot0.didEnter(slot0)
 			}
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Battle/Rank"), function ()
-		uv0:emit(BossRushKurskMediator.ON_EXTRA_RANK)
+	onButton(arg_10_0, arg_10_0._tf:Find("Battle/Rank"), function()
+		arg_10_0:emit(BossRushKurskMediator.ON_EXTRA_RANK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Battle/Reward"), function ()
-		uv0:emit(BossRushKurskMediator.GO_ACT_SHOP, uv0.ptData)
+	onButton(arg_10_0, arg_10_0._tf:Find("Battle/Reward"), function()
+		arg_10_0:emit(BossRushKurskMediator.GO_ACT_SHOP, arg_10_0.ptData)
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Battle/Story"), function ()
-		uv0:SetDisplayMode(uv1.DISPLAY.STORY)
+	onButton(arg_10_0, arg_10_0._tf:Find("Battle/Story"), function()
+		arg_10_0:SetDisplayMode(var_0_0.DISPLAY.STORY)
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Story/Battle"), function ()
-		uv0:SetDisplayMode(uv1.DISPLAY.BATTLE)
+	onButton(arg_10_0, arg_10_0._tf:Find("Story/Battle"), function()
+		arg_10_0:SetDisplayMode(var_0_0.DISPLAY.BATTLE)
 	end, SFX_PANEL)
 
-	slot0.storyNodesDict = {}
+	local var_10_0 = arg_10_0.activity:getConfig("config_client").storys
 
-	_.each(slot0.activity:getConfig("config_client").storys, function (slot0)
-		uv0.storyNodesDict[slot0] = BossRushStoryNode.New({
-			id = slot0
+	arg_10_0.storyNodesDict = {}
+
+	_.each(var_10_0, function(arg_18_0)
+		arg_10_0.storyNodesDict[arg_18_0] = BossRushStoryNode.New({
+			id = arg_18_0
 		})
 	end)
 
-	slot0.storyTask = getProxy(TaskProxy):getTaskVO(slot0.activity:getConfig("config_client").tasks[1]) or Task.New({
-		submitTime = 1,
-		id = slot2
-	})
-	slot0.contextData.displayMode = nil
+	local var_10_1 = arg_10_0.activity:getConfig("config_client").tasks[1]
 
-	slot0:SetDisplayMode(slot0.contextData.displayMode or BossRushKurskScene.DISPLAY.BATTLE)
+	arg_10_0.storyTask = getProxy(TaskProxy):getTaskVO(var_10_1) or Task.New({
+		submitTime = 1,
+		id = var_10_1
+	})
+
+	local var_10_2 = arg_10_0.contextData.displayMode or BossRushKurskScene.DISPLAY.BATTLE
+
+	arg_10_0.contextData.displayMode = nil
+
+	arg_10_0:SetDisplayMode(var_10_2)
 end
 
-function slot0.getBGM(slot0)
-	if not pg.voice_bgm[slot0.__cname] then
+function var_0_0.getBGM(arg_19_0)
+	local var_19_0 = pg.voice_bgm[arg_19_0.__cname]
+
+	if not var_19_0 then
 		return nil
 	end
 
-	slot2 = slot1.bgm
-	slot3 = slot1.special_bgm
+	local var_19_1 = var_19_0.bgm
+	local var_19_2 = var_19_0.special_bgm
+	local var_19_3 = arg_19_0.contextData.displayMode
 
-	if slot0.contextData.displayMode == uv0.DISPLAY.BATTLE then
-		return slot2
-	elseif slot4 == uv0.DISPLAY.STORY then
-		return slot3
+	if var_19_3 == var_0_0.DISPLAY.BATTLE then
+		return var_19_1
+	elseif var_19_3 == var_0_0.DISPLAY.STORY then
+		return var_19_2
 	end
 end
 
-function slot0.SetDisplayMode(slot0, slot1)
-	if slot1 == slot0.contextData.displayMode then
+function var_0_0.SetDisplayMode(arg_20_0, arg_20_1)
+	if arg_20_1 == arg_20_0.contextData.displayMode then
 		return
 	end
 
-	slot0.contextData.displayMode = slot1
+	arg_20_0.contextData.displayMode = arg_20_1
 
-	slot0:PlayBGM()
-	slot0:UpdateView()
+	arg_20_0:PlayBGM()
+	arg_20_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot1 = slot0.contextData.displayMode == uv0.DISPLAY.BATTLE
+function var_0_0.UpdateView(arg_21_0)
+	local var_21_0 = arg_21_0.contextData.displayMode == var_0_0.DISPLAY.BATTLE
 
-	setActive(slot0._tf:Find("Battle"), slot1)
-	setActive(slot0._tf:Find("Story"), not slot1)
-	setActive(slot0._tf:Find("Links"), not slot1)
-	slot0:UpdateBattle()
-	slot0:UpdateStory()
+	setActive(arg_21_0._tf:Find("Battle"), var_21_0)
+	setActive(arg_21_0._tf:Find("Story"), not var_21_0)
+	setActive(arg_21_0._tf:Find("Links"), not var_21_0)
+	arg_21_0:UpdateBattle()
+	arg_21_0:UpdateStory()
 
-	slot2 = slot0.contextData.displayMode
+	local var_21_1 = arg_21_0.contextData.displayMode
 
-	slot0:addbubbleMsgBoxList({
-		function (slot0)
-			if uv0.activity:HasPassSeries(1001) then
-				pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0036", nil, slot0)
+	arg_21_0:addbubbleMsgBoxList({
+		function(arg_22_0)
+			if arg_21_0.activity:HasPassSeries(1001) then
+				pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0036", nil, arg_22_0)
 
 				return
 			end
 
-			slot0()
+			arg_22_0()
 		end,
-		function (slot0)
-			slot1 = nil
+		function(arg_23_0)
+			local var_23_0
 
-			if uv0 == uv1.DISPLAY.BATTLE then
-				slot1 = uv2.activity:getConfig("config_client").openActivityStory
-			elseif uv0 == uv1.DISPLAY.STORY then
-				slot1 = uv2.activity:getConfig("config_client").openStory
+			if var_21_1 == var_0_0.DISPLAY.BATTLE then
+				var_23_0 = arg_21_0.activity:getConfig("config_client").openActivityStory
+			elseif var_21_1 == var_0_0.DISPLAY.STORY then
+				var_23_0 = arg_21_0.activity:getConfig("config_client").openStory
 			end
 
-			uv2:PlayStory(slot1, slot0)
+			arg_21_0:PlayStory(var_23_0, arg_23_0)
 		end,
-		function (slot0)
-			slot1 = true
+		function(arg_24_0)
+			local var_24_0 = true
 
-			for slot5, slot6 in pairs(uv0.storyNodesDict) do
-				if slot6:GetStory() and slot7 ~= "" then
-					slot1 = slot1 and pg.NewStoryMgr.GetInstance():IsPlayed(slot7)
+			for iter_24_0, iter_24_1 in pairs(arg_21_0.storyNodesDict) do
+				local var_24_1 = iter_24_1:GetStory()
+
+				if var_24_1 and var_24_1 ~= "" then
+					var_24_0 = var_24_0 and pg.NewStoryMgr.GetInstance():IsPlayed(var_24_1)
 				end
 
-				if not slot1 then
+				if not var_24_0 then
 					break
 				end
 			end
 
-			if slot1 then
-				uv0:PlayStory(uv0.activity:getConfig("config_client").endStory, function (slot0)
-					uv0()
+			if var_24_0 then
+				local var_24_2 = arg_21_0.activity:getConfig("config_client").endStory
 
-					if slot0 then
-						uv1:UpdateView()
+				arg_21_0:PlayStory(var_24_2, function(arg_25_0)
+					arg_24_0()
+
+					if arg_25_0 then
+						arg_21_0:UpdateView()
 					end
 				end)
 
 				return
 			end
 
-			slot0()
+			arg_24_0()
 		end
 	})
 end
 
-function slot0.UpdateBattle(slot0)
-	slot2 = slot0.activity:GetActiveSeriesIds()
+function var_0_0.UpdateBattle(arg_26_0)
+	local var_26_0 = arg_26_0.activity
+	local var_26_1 = var_26_0:GetActiveSeriesIds()
 
-	table.Foreach(slot0.seriesNodes, function (slot0, slot1)
-		slot3 = BossRushSeriesData.New({
-			id = uv0[slot0],
-			actId = uv1.id
+	table.Foreach(arg_26_0.seriesNodes, function(arg_27_0, arg_27_1)
+		local var_27_0 = var_26_1[arg_27_0]
+		local var_27_1 = BossRushSeriesData.New({
+			id = var_27_0,
+			actId = var_26_0.id
 		})
-		slot4 = slot3:IsUnlock(uv1)
+		local var_27_2 = var_27_1:IsUnlock(var_26_0)
 
-		setActive(slot1:Find("Pin/NameBG"), slot4)
-		setActive(slot1:Find("Pin/Lock"), not slot4)
-		setText(slot1:Find("Pin/ChapterName"), slot3:GetSeriesCode())
-		setText(slot1:Find("Pin/NameBG/Name"), slot3:GetName())
+		setActive(arg_27_1:Find("Pin/NameBG"), var_27_2)
+		setActive(arg_27_1:Find("Pin/Lock"), not var_27_2)
+		setText(arg_27_1:Find("Pin/ChapterName"), var_27_1:GetSeriesCode())
+		setText(arg_27_1:Find("Pin/NameBG/Name"), var_27_1:GetName())
 
-		slot5 = slot3:GetType() == BossRushSeriesData.TYPE.SP
+		local var_27_3 = var_27_1:GetType() == BossRushSeriesData.TYPE.SP
 
-		setActive(slot1:Find("Pin/NameBG/BonusCount"), slot4 and slot5)
+		setActive(arg_27_1:Find("Pin/NameBG/BonusCount"), var_27_2 and var_27_3)
 
-		slot6 = true
+		local var_27_4 = true
 
-		if slot5 then
-			slot7 = uv1:GetUsedBonus()[slot0] or 0
-			slot8 = slot3:GetMaxBonusCount()
+		if var_27_3 then
+			local var_27_5 = var_26_0:GetUsedBonus()[arg_27_0] or 0
+			local var_27_6 = var_27_1:GetMaxBonusCount()
 
-			setText(slot1:Find("Pin/NameBG/BonusCount"):GetChild(0), i18n("series_enemy_SP_count"))
-			setText(slot1:Find("Pin/NameBG/BonusCount"):GetChild(1), math.max(0, slot8 - slot7) .. "/" .. slot8)
+			setText(arg_27_1:Find("Pin/NameBG/BonusCount"):GetChild(0), i18n("series_enemy_SP_count"))
+			setText(arg_27_1:Find("Pin/NameBG/BonusCount"):GetChild(1), math.max(0, var_27_6 - var_27_5) .. "/" .. var_27_6)
 
-			slot6 = slot8 - slot7 > 0
+			var_27_4 = var_27_6 - var_27_5 > 0
 		end
 
-		onButton(uv2, slot1, function ()
-			if not uv0 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_unlock", BossRushSeriesData.New({
-					id = uv1:GetPreSeriesId()
-				}):GetName()))
+		onButton(arg_26_0, arg_27_1, function()
+			if not var_27_2 then
+				local var_28_0 = var_27_1:GetPreSeriesId()
+				local var_28_1 = BossRushSeriesData.New({
+					id = var_28_0
+				})
+
+				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_unlock", var_28_1:GetName()))
 
 				return
 			end
 
-			if not uv2 then
+			if not var_27_4 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("series_enemy_SP_error"))
 
 				return
 			end
 
-			uv3:emit(BossRushKurskMediator.ON_FLEET_SELECT, uv1)
+			arg_26_0:emit(BossRushKurskMediator.ON_FLEET_SELECT, var_27_1)
 		end, SFX_PANEL)
 	end)
-	setActive(slot0._tf:Find("Battle/Reward/Tip"), slot0.ptData:CanGetAward())
-	setText(slot0.ptText, slot0.ptActivity.data1)
+	setActive(arg_26_0._tf:Find("Battle/Reward/Tip"), arg_26_0.ptData:CanGetAward())
+	setText(arg_26_0.ptText, arg_26_0.ptActivity.data1)
 end
 
-slot2 = {
+local var_0_2 = {
 	"story_bar_green",
 	"story_bar_yellow",
 	"story_bar_purple"
 }
 
-function slot0.UpdateStory(slot0)
-	slot1 = {}
-	slot2 = pg.NewStoryMgr.GetInstance()
-	slot3 = 1
-	slot4 = 2
-	slot5 = 3
-	slot6 = 0
-	slot7 = 0
+function var_0_0.UpdateStory(arg_29_0)
+	local var_29_0 = {}
+	local var_29_1 = pg.NewStoryMgr.GetInstance()
+	local var_29_2 = 1
+	local var_29_3 = 2
+	local var_29_4 = 3
+	local var_29_5 = 0
+	local var_29_6 = 0
 
-	for slot11, slot12 in pairs(slot0.storyNodesDict) do
-		slot1[slot11] = {}
-		slot14 = true
+	for iter_29_0, iter_29_1 in pairs(arg_29_0.storyNodesDict) do
+		var_29_0[iter_29_0] = {}
 
-		if slot12:GetStory() and slot13 ~= "" then
-			slot6 = slot6 + (slot2:IsPlayed(slot13) and 1 or 0)
-			slot7 = slot7 + 1
+		local var_29_7 = iter_29_1:GetStory()
+		local var_29_8 = true
+
+		if var_29_7 and var_29_7 ~= "" then
+			var_29_8 = var_29_1:IsPlayed(var_29_7)
+			var_29_5 = var_29_5 + (var_29_8 and 1 or 0)
+			var_29_6 = var_29_6 + 1
 		end
 
-		slot1[slot11].status = slot14 and slot5 or slot3
+		var_29_0[iter_29_0].status = var_29_8 and var_29_4 or var_29_2
 	end
 
-	slot10 = _.sort(_.values(slot0.storyNodesDict), function (slot0, slot1)
-		return slot0.id < slot1.id
+	local var_29_9
+	local var_29_10
+	local var_29_11 = _.sort(_.values(arg_29_0.storyNodesDict), function(arg_30_0, arg_30_1)
+		return arg_30_0.id < arg_30_1.id
 	end)
 
-	_.each(slot10, function (slot0)
-		slot1 = slot0:GetTriggers()
+	_.each(var_29_11, function(arg_31_0)
+		local var_31_0 = arg_31_0:GetTriggers()
 
-		if uv0[slot0.id].status == uv1 then
+		if var_29_0[arg_31_0.id].status == var_29_4 then
 			return
 		end
 
-		if not _.any(slot1, function (slot0)
-			if slot0.type == BossRushStoryNode.TRIGGER_TYPE.PT_GOT then
-				return uv0.ptActivity.data1 < slot0.value
-			elseif slot0.type == BossRushStoryNode.TRIGGER_TYPE.SERIES_PASSED then
+		if not _.any(var_31_0, function(arg_32_0)
+			if arg_32_0.type == BossRushStoryNode.TRIGGER_TYPE.PT_GOT then
+				return arg_29_0.ptActivity.data1 < arg_32_0.value
+			elseif arg_32_0.type == BossRushStoryNode.TRIGGER_TYPE.SERIES_PASSED then
 				return not BossRushSeriesData.New({
-					id = slot0.value,
-					actId = uv0.activity.id
-				}):IsUnlock(uv0.activity)
-			elseif slot0.type == BossRushStoryNode.TRIGGER_TYPE.STORY_READED then
-				return uv1[slot0.value].status < uv2
+					id = arg_32_0.value,
+					actId = arg_29_0.activity.id
+				}):IsUnlock(arg_29_0.activity)
+			elseif arg_32_0.type == BossRushStoryNode.TRIGGER_TYPE.STORY_READED then
+				return var_29_0[arg_32_0.value].status < var_29_4
 			end
 		end) then
-			uv0[slot0.id].status = uv3
+			var_29_0[arg_31_0.id].status = var_29_3
 		end
 	end)
-	_.each(slot10, function (slot0)
-		_.each(slot0:GetTriggers(), function (slot0)
-			if slot0.type == BossRushStoryNode.TRIGGER_TYPE.PT_GOT then
-				if uv2 < uv0[uv1.id].status then
-					uv3 = uv3 and math.max(slot0.value, uv3) or slot0.value
-				elseif uv0[uv1.id].status == uv2 then
-					uv4 = uv4 and math.min(slot0.value, uv4) or slot0.value
+	_.each(var_29_11, function(arg_33_0)
+		local var_33_0 = arg_33_0:GetTriggers()
+
+		_.each(var_33_0, function(arg_34_0)
+			if arg_34_0.type == BossRushStoryNode.TRIGGER_TYPE.PT_GOT then
+				if var_29_0[arg_33_0.id].status > var_29_2 then
+					var_29_10 = var_29_10 and math.max(arg_34_0.value, var_29_10) or arg_34_0.value
+				elseif var_29_0[arg_33_0.id].status == var_29_2 then
+					var_29_9 = var_29_9 and math.min(arg_34_0.value, var_29_9) or arg_34_0.value
 				end
 			end
 		end)
 	end)
-	setText(slot0._tf:Find("Story/PassLevel/PT/Text"), slot0.ptActivity.data1 .. "/" .. (nil or slot9 or ""))
-	setText(slot0._tf:Find("Story/PassLevel/Values"):GetChild(0), slot6)
-	setText(slot0._tf:Find("Story/PassLevel/Values"):GetChild(2), slot7)
-	slot0:ReturnLinks()
-	table.Foreach(slot0.storyNodesDict, function (slot0, slot1)
-		slot2 = uv0.nodes[slot1:GetIconName()].trans
-		slot3 = uv1[slot0].status == uv2
+	setText(arg_29_0._tf:Find("Story/PassLevel/PT/Text"), arg_29_0.ptActivity.data1 .. "/" .. (var_29_9 or var_29_10 or ""))
+	setText(arg_29_0._tf:Find("Story/PassLevel/Values"):GetChild(0), var_29_5)
+	setText(arg_29_0._tf:Find("Story/PassLevel/Values"):GetChild(2), var_29_6)
+	arg_29_0:ReturnLinks()
 
-		if slot1:GetType() == BossRushStoryNode.NODE_TYPE.NORMAL then
-			uv0.loader:GetSprite(uv0:GetAtalsName(), slot3 and "story_green_active" or "story_green", slot2:GetChild(0), true)
-		elseif slot4 == BossRushStoryNode.NODE_TYPE.EVENT then
-			setActive(slot2, uv3 < uv1[slot0].status)
-			uv0.loader:GetSprite(uv0:GetAtalsName(), slot3 and "story_yellow_active" or "story_yellow", slot2:GetChild(0), true)
-		elseif slot4 == BossRushStoryNode.NODE_TYPE.BATTLE then
-			-- Nothing
+	local var_29_12 = false
+
+	table.Foreach(arg_29_0.storyNodesDict, function(arg_35_0, arg_35_1)
+		local var_35_0 = arg_29_0.nodes[arg_35_1:GetIconName()].trans
+		local var_35_1 = var_29_0[arg_35_0].status == var_29_3
+		local var_35_2 = arg_35_1:GetType()
+
+		if var_35_2 == BossRushStoryNode.NODE_TYPE.NORMAL then
+			arg_29_0.loader:GetSprite(arg_29_0:GetAtalsName(), var_35_1 and "story_green_active" or "story_green", var_35_0:GetChild(0), true)
+		elseif var_35_2 == BossRushStoryNode.NODE_TYPE.EVENT then
+			setActive(var_35_0, var_29_0[arg_35_0].status > var_29_2)
+			arg_29_0.loader:GetSprite(arg_29_0:GetAtalsName(), var_35_1 and "story_yellow_active" or "story_yellow", var_35_0:GetChild(0), true)
+		elseif var_35_2 == BossRushStoryNode.NODE_TYPE.BATTLE then
+			-- block empty
 		end
 
-		if slot3 then
-			setAnchoredPosition(uv0.storyBar, uv0._tf:Find("Story"):InverseTransformPoint(slot2.position))
-			setText(uv0.storyBar:Find("Text"), slot1:GetName())
-			uv0.loader:GetSprite(uv0:GetAtalsName(), uv4[slot4], uv0.storyBar, true)
-			onButton(uv0, uv0.storyBar, function ()
-				uv1:PlayStory(uv0:GetStory(), function ()
-					uv0:UpdateView()
+		if var_35_1 then
+			local var_35_3 = arg_29_0._tf:Find("Story"):InverseTransformPoint(var_35_0.position)
+
+			setAnchoredPosition(arg_29_0.storyBar, var_35_3)
+			setText(arg_29_0.storyBar:Find("Text"), arg_35_1:GetName())
+			arg_29_0.loader:GetSprite(arg_29_0:GetAtalsName(), var_0_2[var_35_2], arg_29_0.storyBar, true)
+			onButton(arg_29_0, arg_29_0.storyBar, function()
+				local var_36_0 = arg_35_1:GetStory()
+
+				arg_29_0:PlayStory(var_36_0, function()
+					arg_29_0:UpdateView()
 				end)
 			end)
 
-			uv5 = true
+			var_29_12 = true
 		end
 
-		slot5 = slot1:GetActiveLink()
+		local var_35_4 = arg_35_1:GetActiveLink()
 
-		(function ()
-			if uv0 == 0 or uv1[uv0].status ~= uv2 then
+		;(function()
+			if var_35_4 == 0 or var_29_0[var_35_4].status ~= var_29_4 then
 				return
 			end
 
-			slot2 = uv3.plural:Dequeue()
+			local var_38_0 = arg_29_0.storyNodesDict[var_35_4]
+			local var_38_1 = arg_29_0.nodes[var_38_0:GetIconName()].trans
+			local var_38_2 = arg_29_0.plural:Dequeue()
 
-			table.insert(uv3.links, go(slot2))
-			setActive(slot2, true)
-			setParent(slot2, uv3.linksContainer)
+			table.insert(arg_29_0.links, go(var_38_2))
+			setActive(var_38_2, true)
+			setParent(var_38_2, arg_29_0.linksContainer)
 
-			slot3 = uv3.linksContainer:InverseTransformPoint(uv4.position)
-			slot5 = uv3.linksContainer:InverseTransformPoint(uv3.nodes[uv3.storyNodesDict[uv0]:GetIconName()].trans.position) - slot3
-			tf(slot2).sizeDelta = Vector2(Vector2.Magnitude(slot5), 2)
-			tf(slot2).anchoredPosition = slot3
-			tf(slot2).localRotation = Quaternion.FromToRotation(Vector3.right, slot5)
+			local var_38_3 = arg_29_0.linksContainer:InverseTransformPoint(var_35_0.position)
+			local var_38_4 = arg_29_0.linksContainer:InverseTransformPoint(var_38_1.position) - var_38_3
+			local var_38_5 = Vector2.Magnitude(var_38_4)
+
+			tf(var_38_2).sizeDelta = Vector2(var_38_5, 2)
+			tf(var_38_2).anchoredPosition = var_38_3
+			tf(var_38_2).localRotation = Quaternion.FromToRotation(Vector3.right, var_38_4)
 		end)()
 	end)
-	setActive(slot0.storyBar, false)
-	setActive(slot0.storyAward, tobool(slot0.storyTask))
+	setActive(arg_29_0.storyBar, var_29_12)
+	setActive(arg_29_0.storyAward, tobool(arg_29_0.storyTask))
 
-	if slot0.storyTask then
-		slot12 = slot0.storyTask:getConfig("award_display")
+	if arg_29_0.storyTask then
+		local var_29_13 = arg_29_0.storyTask:getConfig("award_display")
+		local var_29_14 = {
+			type = var_29_13[1][1],
+			id = var_29_13[1][2],
+			count = var_29_13[1][3]
+		}
 
-		updateDrop(slot0.storyAward:Find("Mask"):GetChild(0), {
-			type = slot12[1][1],
-			id = slot12[1][2],
-			count = slot12[1][3]
-		})
-		onButton(slot0, slot0.storyAward:Find("Mask"):GetChild(0), function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		updateDrop(arg_29_0.storyAward:Find("Mask"):GetChild(0), var_29_14)
+		onButton(arg_29_0, arg_29_0.storyAward:Find("Mask"):GetChild(0), function()
+			arg_29_0:emit(BaseUI.ON_DROP, var_29_14)
 		end)
-		setActive(slot0.storyAward:Find("Got"), slot0.storyTask:getTaskStatus() == 2)
 
-		if slot14 == 1 then
-			slot0:emit(BossRushKurskMediator.ON_TASK_SUBMIT, slot0.storyTask)
+		local var_29_15 = arg_29_0.storyTask:getTaskStatus()
+
+		setActive(arg_29_0.storyAward:Find("Got"), var_29_15 == 2)
+
+		if var_29_15 == 1 then
+			arg_29_0:emit(BossRushKurskMediator.ON_TASK_SUBMIT, arg_29_0.storyTask)
 		end
 	end
 
-	setActive(slot0._tf:Find("Battle/Story/New"), slot11)
+	setActive(arg_29_0._tf:Find("Battle/Story/New"), var_29_12)
 end
 
-function slot0.ReturnLinks(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.links) do
-		if not slot0.plural:Enqueue(slot6, slot1) then
-			setParent(slot6, slot0.pluralRoot)
+function var_0_0.ReturnLinks(arg_40_0, arg_40_1)
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0.links) do
+		if not arg_40_0.plural:Enqueue(iter_40_1, arg_40_1) then
+			setParent(iter_40_1, arg_40_0.pluralRoot)
 		end
 	end
 
-	table.clean(slot0.links)
+	table.clean(arg_40_0.links)
 end
 
-function slot0.PlayStory(slot0, slot1, slot2)
-	if not slot1 then
-		return existCall(slot2)
+function var_0_0.PlayStory(arg_41_0, arg_41_1, arg_41_2)
+	if not arg_41_1 then
+		return existCall(arg_41_2)
 	end
 
-	slot3 = pg.NewStoryMgr.GetInstance()
-	slot4 = slot3:IsPlayed(slot1)
+	local var_41_0 = pg.NewStoryMgr.GetInstance()
+	local var_41_1 = var_41_0:IsPlayed(arg_41_1)
 
 	seriesAsync({
-		function (slot0)
-			if uv0 then
-				return slot0()
+		function(arg_42_0)
+			if var_41_1 then
+				return arg_42_0()
 			end
 
-			if tonumber(uv1) and slot1 > 0 then
-				uv2:emit(BossRushKurskMediator.ON_PERFORM_COMBAT, slot1)
+			local var_42_0 = tonumber(arg_41_1)
+
+			if var_42_0 and var_42_0 > 0 then
+				arg_41_0:emit(BossRushKurskMediator.ON_PERFORM_COMBAT, var_42_0)
 			else
-				uv3:Play(uv1, slot0)
+				var_41_0:Play(arg_41_1, arg_42_0)
 			end
 		end,
-		function (slot0, ...)
-			existCall(uv0, ...)
+		function(arg_43_0, ...)
+			existCall(arg_41_2, ...)
 		end
 	})
 end
 
-function slot0.UpdateTasks(slot0, slot1)
-	if _.any(slot1, function (slot0)
-		return uv0.storyTask and uv0.storyTask.id == slot0
+function var_0_0.UpdateTasks(arg_44_0, arg_44_1)
+	if _.any(arg_44_1, function(arg_45_0)
+		return arg_44_0.storyTask and arg_44_0.storyTask.id == arg_45_0
 	end) then
-		slot0.storyTask.submitTime = 1
+		arg_44_0.storyTask.submitTime = 1
 
-		slot0:UpdateView()
+		arg_44_0:UpdateView()
 	end
 end
 
-function slot0.addbubbleMsgBoxList(slot0, slot1)
-	table.insertto(slot0.ActionSequence, slot1)
+function var_0_0.addbubbleMsgBoxList(arg_46_0, arg_46_1)
+	local var_46_0 = #arg_46_0.ActionSequence == 0
 
-	if not (#slot0.ActionSequence == 0) then
+	table.insertto(arg_46_0.ActionSequence, arg_46_1)
+
+	if not var_46_0 then
 		return
 	end
 
-	slot0:resumeBubble()
+	arg_46_0:resumeBubble()
 end
 
-function slot0.addbubbleMsgBox(slot0, slot1)
-	table.insert(slot0.ActionSequence, slot1)
+function var_0_0.addbubbleMsgBox(arg_47_0, arg_47_1)
+	local var_47_0 = #arg_47_0.ActionSequence == 0
 
-	if not (#slot0.ActionSequence == 0) then
+	table.insert(arg_47_0.ActionSequence, arg_47_1)
+
+	if not var_47_0 then
 		return
 	end
 
-	slot0:resumeBubble()
+	arg_47_0:resumeBubble()
 end
 
-function slot0.resumeBubble(slot0)
-	if #slot0.ActionSequence == 0 then
+function var_0_0.resumeBubble(arg_48_0)
+	if #arg_48_0.ActionSequence == 0 then
 		return
 	end
 
-	slot1 = nil
+	local var_48_0
 
-	(function ()
-		if uv0.ActionSequence[1] then
-			slot0(function ()
-				table.remove(uv0.ActionSequence, 1)
-				uv1()
+	local function var_48_1()
+		local var_49_0 = arg_48_0.ActionSequence[1]
+
+		if var_49_0 then
+			var_49_0(function()
+				table.remove(arg_48_0.ActionSequence, 1)
+				var_48_1()
 			end)
 		end
-	end)()
+	end
+
+	var_48_1()
 end
 
-function slot0.CleanBubbleMsgbox(slot0)
-	table.clean(slot0.ActionSequence)
+function var_0_0.CleanBubbleMsgbox(arg_51_0)
+	table.clean(arg_51_0.ActionSequence)
 end
 
-function slot0.willExit(slot0)
-	slot0:ReturnLinks(true)
-	slot0.loader:Clear()
-	uv0.super.willExit(slot0)
+function var_0_0.willExit(arg_52_0)
+	arg_52_0:ReturnLinks(true)
+	arg_52_0.loader:Clear()
+	var_0_0.super.willExit(arg_52_0)
 end
 
-return slot0
+return var_0_0

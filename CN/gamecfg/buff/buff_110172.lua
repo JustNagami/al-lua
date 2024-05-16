@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 110174,
+				fleetAttr = "huohun=5"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,17 +30,5 @@ return {
 	stack = 1,
 	id = 110172,
 	icon = 110170,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 110174,
-				fleetAttr = "huohun=5"
-			}
-		}
-	}
+	last_effect = ""
 }

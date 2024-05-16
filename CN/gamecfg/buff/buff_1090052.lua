@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 3,
-	name = "火力全开-长良",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1090052,
-	icon = 1090020,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -59,5 +39,25 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 3,
+	name = "火力全开-长良",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1090052,
+	icon = 1090020,
+	last_effect = ""
 }

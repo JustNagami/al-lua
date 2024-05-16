@@ -1,18 +1,21 @@
-slot0 = class("CastlePtPage", import(".TemplatePage.PtTemplatePage"))
-slot0.MAIN_ID = ActivityConst.CASTLE_ACT_ID
+﻿local var_0_0 = class("CastlePtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0:findTF("main_btn", slot0.bg), function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CASTLE_MAIN)
+var_0_0.MAIN_ID = ActivityConst.CASTLE_ACT_ID
+
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0:findTF("main_btn", arg_1_0.bg), function()
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CASTLE_MAIN)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_3_0)
+	var_0_0.super.OnUpdateFlush(arg_3_0)
 
-	slot0.mainAct = getProxy(ActivityProxy):getActivityById(uv0.MAIN_ID)
-	slot1 = slot0.mainAct.data2
+	arg_3_0.mainAct = getProxy(ActivityProxy):getActivityById(var_0_0.MAIN_ID)
+
+	local var_3_0 = arg_3_0.mainAct.data2
+	local var_3_1 = arg_3_0.mainAct.data1
 
 	if table.contains({
 		4565,
@@ -23,12 +26,12 @@ function slot0.OnUpdateFlush(slot0)
 		4580,
 		4583,
 		4586
-	}, slot0.mainAct.data1) and not pg.NewStoryMgr.GetInstance():IsPlayed(pg.NewStoryMgr.GetInstance():StoryId2StoryName(slot2)) then
-		slot1 = slot1 - 1
+	}, var_3_1) and not pg.NewStoryMgr.GetInstance():IsPlayed(pg.NewStoryMgr.GetInstance():StoryId2StoryName(var_3_1)) then
+		var_3_0 = var_3_0 - 1
 	end
 
-	setText(slot0:findTF("main_btn/Text", slot0.bg), i18n("roll_times_left", slot1))
-	setText(slot0:findTF("description", slot0.bg), i18n("activity_kill"))
+	setText(arg_3_0:findTF("main_btn/Text", arg_3_0.bg), i18n("roll_times_left", var_3_0))
+	setText(arg_3_0:findTF("description", arg_3_0.bg), i18n("activity_kill"))
 end
 
-return slot0
+return var_0_0

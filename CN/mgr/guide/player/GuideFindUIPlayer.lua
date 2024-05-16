@@ -1,120 +1,129 @@
-slot0 = class("GuideFindUIPlayer", import(".GuidePlayer"))
+﻿local var_0_0 = class("GuideFindUIPlayer", import(".GuidePlayer"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.topContainer = slot1:Find("top")
-	slot0.fingerTF = slot1:Find("top/finger")
-	slot0.fingerXyz = slot0.fingerTF:Find("Xyz")
-	slot0.fingerAnim = slot0.fingerXyz:GetComponent(typeof(Animator))
+	arg_1_0.topContainer = arg_1_1:Find("top")
+	arg_1_0.fingerTF = arg_1_1:Find("top/finger")
+	arg_1_0.fingerXyz = arg_1_0.fingerTF:Find("Xyz")
+	arg_1_0.fingerAnim = arg_1_0.fingerXyz:GetComponent(typeof(Animator))
 end
 
-function slot0.OnExecution(slot0, slot1, slot2)
+function var_0_0.OnExecution(arg_2_0, arg_2_1, arg_2_2)
 	seriesAsync({
-		function (slot0)
-			uv0:DuplicateNode(uv1, slot0)
+		function(arg_3_0)
+			arg_2_0:DuplicateNode(arg_2_1, arg_3_0)
 		end
-	}, slot2)
+	}, arg_2_2)
 end
 
-function slot0.DuplicateNode(slot0, slot1, slot2)
-	slot0:ClearFingerTimer()
-	slot0:SearchUI(slot1:GetEventUI(), function (slot0)
-		if not slot0 and uv0.notfoundSkip then
-			uv1()
+function var_0_0.DuplicateNode(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_1:GetEventUI()
+
+	arg_4_0:ClearFingerTimer()
+	arg_4_0:SearchUI(var_4_0, function(arg_5_0)
+		if not arg_5_0 and var_4_0.notfoundSkip then
+			arg_4_2()
 
 			return
 		end
 
-		if not slot0 then
+		if not arg_5_0 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		slot2 = slot0
-		slot3 = uv2.uiDuplicator:Duplicate(slot0, uv0.settings)
+		local var_5_0, var_5_1 = arg_4_0.uiDuplicator:Duplicate(arg_5_0, var_4_0.settings), arg_5_0
 
-		if uv0.childIndex then
-			slot2 = slot2:GetChild(uv0.childIndex)
-			slot3 = slot3:GetChild(uv0.childIndex)
-		elseif uv0.eventPath then
-			slot2 = GameObject.Find(uv0.eventPath) or slot0
+		if var_4_0.childIndex then
+			var_5_1 = var_5_1:GetChild(var_4_0.childIndex)
+			var_5_0 = var_5_0:GetChild(var_4_0.childIndex)
+		elseif var_4_0.eventPath then
+			var_5_1 = GameObject.Find(var_4_0.eventPath) or arg_5_0
 		end
 
-		uv2.fingerTimer = Timer.New(function ()
-			uv0:UpdateFinger(uv1, uv2)
+		arg_4_0.fingerTimer = Timer.New(function()
+			arg_4_0:UpdateFinger(var_5_0, var_4_0)
 		end, 0.05, -1)
 
-		uv2.fingerTimer:Start()
-		uv2.fingerTimer:func()
+		arg_4_0.fingerTimer:Start()
+		arg_4_0.fingerTimer:func()
 
-		slot4 = uv0.triggerData
-		uv2.eventTrigger = GuideEventTrigger.New(slot4.type, slot3, slot2, slot4.arg, uv1)
+		local var_5_2 = var_4_0.triggerData
+
+		arg_4_0.eventTrigger = GuideEventTrigger.New(var_5_2.type, var_5_0, var_5_1, var_5_2.arg, arg_4_2)
 	end)
 end
 
-function slot0.NextOne(slot0)
-	if slot0.eventTrigger then
-		slot0.eventTrigger:Trigger()
+function var_0_0.NextOne(arg_7_0)
+	if arg_7_0.eventTrigger then
+		arg_7_0.eventTrigger:Trigger()
 	end
 end
 
-function slot0.UpdateFinger(slot0, slot1, slot2)
-	slot3 = slot1.pivot - Vector2(0.5, 0.5)
+function var_0_0.UpdateFinger(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = arg_8_1.pivot - Vector2(0.5, 0.5)
+	local var_8_1 = Vector2(arg_8_1.sizeDelta.x * var_8_0.x, arg_8_1.sizeDelta.y * var_8_0.y)
 
-	SetActive(slot0.fingerTF, not slot2.fingerPos or not slot2.fingerPos.hideFinger)
+	SetActive(arg_8_0.fingerTF, not arg_8_2.fingerPos or not arg_8_2.fingerPos.hideFinger)
 
-	slot5 = Vector2(slot1.sizeDelta.x / 2, -slot1.sizeDelta.y / 2) - Vector2(slot1.sizeDelta.x * slot3.x, slot1.sizeDelta.y * slot3.y)
-	slot6 = slot2.scale and 1 / slot2.scale or 1
-	slot0.fingerTF.localScale = Vector3(slot6, slot6, 1)
-	slot7 = slot2.fingerPos and Vector3(slot2.fingerPos.posX, slot2.fingerPos.posY, 0) or Vector3(slot5.x, slot5.y, 0)
-	slot8 = Vector3(0, 0, 0)
+	local var_8_2 = Vector2(arg_8_1.sizeDelta.x / 2, -arg_8_1.sizeDelta.y / 2) - var_8_1
+	local var_8_3 = arg_8_2.scale and 1 / arg_8_2.scale or 1
 
-	if slot2.fingerPos then
-		slot8 = Vector3(slot2.fingerPos.rotateX or 0, slot2.fingerPos.rotateY or 0, slot2.fingerPos.rotateZ or 0)
+	arg_8_0.fingerTF.localScale = Vector3(var_8_3, var_8_3, 1)
+
+	local var_8_4 = arg_8_2.fingerPos and Vector3(arg_8_2.fingerPos.posX, arg_8_2.fingerPos.posY, 0) or Vector3(var_8_2.x, var_8_2.y, 0)
+	local var_8_5 = Vector3(0, 0, 0)
+
+	if arg_8_2.fingerPos then
+		var_8_5 = Vector3(arg_8_2.fingerPos.rotateX or 0, arg_8_2.fingerPos.rotateY or 0, arg_8_2.fingerPos.rotateZ or 0)
 	end
 
-	slot0.fingerTF.localPosition = slot0.topContainer:InverseTransformPoint(slot1.parent:TransformPoint(slot1.localPosition + slot7))
-	slot0.fingerTF.localEulerAngles = slot8
+	local var_8_6 = arg_8_1.localPosition + var_8_4
+	local var_8_7 = arg_8_1.parent:TransformPoint(var_8_6)
+	local var_8_8 = arg_8_0.topContainer:InverseTransformPoint(var_8_7)
 
-	if slot2.slipAnim and not LeanTween.isTweening(slot0.fingerXyz.gameObject) then
-		slot0.fingerAnim.enabled = false
+	arg_8_0.fingerTF.localPosition = var_8_8
+	arg_8_0.fingerTF.localEulerAngles = var_8_5
 
-		LeanTween.value(slot0.fingerXyz.gameObject, 0, -200, 1):setOnUpdate(System.Action_float(function (slot0)
-			uv0.fingerXyz.localPosition = Vector3(slot0, 0, 0)
+	if arg_8_2.slipAnim and not LeanTween.isTweening(arg_8_0.fingerXyz.gameObject) then
+		arg_8_0.fingerAnim.enabled = false
+
+		LeanTween.value(arg_8_0.fingerXyz.gameObject, 0, -200, 1):setOnUpdate(System.Action_float(function(arg_9_0)
+			arg_8_0.fingerXyz.localPosition = Vector3(arg_9_0, 0, 0)
 		end)):setRepeat(-1)
-	elseif not slot2.slipAnim and LeanTween.isTweening(slot0.fingerXyz.gameObject) then
-		LeanTween.cancel(slot0.fingerXyz.gameObject)
+	elseif not arg_8_2.slipAnim and LeanTween.isTweening(arg_8_0.fingerXyz.gameObject) then
+		LeanTween.cancel(arg_8_0.fingerXyz.gameObject)
 	else
-		slot0.fingerXyz.localPosition = Vector3.zero
+		arg_8_0.fingerXyz.localPosition = Vector3.zero
 	end
 end
 
-function slot0.ClearFingerTimer(slot0)
-	if slot0.fingerTimer then
-		slot0.fingerTimer:Stop()
+function var_0_0.ClearFingerTimer(arg_10_0)
+	if arg_10_0.fingerTimer then
+		arg_10_0.fingerTimer:Stop()
 
-		slot0.fingerTimer = nil
+		arg_10_0.fingerTimer = nil
 	end
 end
 
-function slot0.OnClear(slot0)
-	if slot0.eventTrigger then
-		slot0.eventTrigger:Clear()
+function var_0_0.OnClear(arg_11_0)
+	if arg_11_0.eventTrigger then
+		arg_11_0.eventTrigger:Clear()
 
-		slot0.eventTrigger = nil
+		arg_11_0.eventTrigger = nil
 	end
 
-	setActive(slot0.fingerTF, false)
+	setActive(arg_11_0.fingerTF, false)
 
-	slot0.fingerTF.localScale = Vector3(1, 1, 1)
+	arg_11_0.fingerTF.localScale = Vector3(1, 1, 1)
 
-	slot0:ClearFingerTimer()
-	LeanTween.cancel(slot0.fingerXyz.gameObject)
+	arg_11_0:ClearFingerTimer()
+	LeanTween.cancel(arg_11_0.fingerXyz.gameObject)
 
-	slot0.fingerXyz.localPosition = Vector3.zero
-	slot0.fingerAnim.enabled = true
+	arg_11_0.fingerXyz.localPosition = Vector3.zero
+	arg_11_0.fingerAnim.enabled = true
 end
 
-return slot0
+return var_0_0

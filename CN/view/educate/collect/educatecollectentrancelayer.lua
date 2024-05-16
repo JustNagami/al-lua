@@ -1,69 +1,70 @@
-slot0 = class("EducateCollectEntranceLayer", import("..base.EducateBaseUI"))
+﻿local var_0_0 = class("EducateCollectEntranceLayer", import("..base.EducateBaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateCollectEntranceUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.initData(slot0)
-	slot1 = getProxy(EducateProxy)
-	slot0.memories = slot1:GetMemories()
-	slot0.endings = slot1:GetFinishEndings()
+function var_0_0.initData(arg_3_0)
+	local var_3_0 = getProxy(EducateProxy)
+
+	arg_3_0.memories = var_3_0:GetMemories()
+	arg_3_0.endings = var_3_0:GetFinishEndings()
 end
 
-function slot0.findUI(slot0)
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+function var_0_0.findUI(arg_4_0)
+	arg_4_0.anim = arg_4_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_4_0.animEvent = arg_4_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	arg_4_0.animEvent:SetEndEvent(function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end)
 
-	slot0.contentTF = slot0:findTF("anim_root/content")
-	slot0.memoryBtn = slot0:findTF("memory_btn", slot0.contentTF)
-	slot0.polaroidBtn = slot0:findTF("polaroid_btn", slot0.contentTF)
-	slot0.endingBtn = slot0:findTF("ending_btn", slot0.contentTF)
-	slot0.reviewBtn = slot0:findTF("review_btn", slot0.contentTF)
+	arg_4_0.contentTF = arg_4_0:findTF("anim_root/content")
+	arg_4_0.memoryBtn = arg_4_0:findTF("memory_btn", arg_4_0.contentTF)
+	arg_4_0.polaroidBtn = arg_4_0:findTF("polaroid_btn", arg_4_0.contentTF)
+	arg_4_0.endingBtn = arg_4_0:findTF("ending_btn", arg_4_0.contentTF)
+	arg_4_0.reviewBtn = arg_4_0:findTF("review_btn", arg_4_0.contentTF)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:_close()
+function var_0_0.addListener(arg_6_0)
+	onButton(arg_6_0, arg_6_0._tf, function()
+		arg_6_0:_close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.memoryBtn, function ()
-		uv0:emit(uv1.EDUCATE_GO_SUBLAYER, Context.New({
+	onButton(arg_6_0, arg_6_0.memoryBtn, function()
+		arg_6_0:emit(var_0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateCollectMediatorTemplate,
 			viewComponent = EducateMemoryLayer
 		}))
 	end, SFX_PANEL)
-	onButton(slot0, slot0.polaroidBtn, function ()
-		if isActive(uv0:findTF("lock", uv0.polaroidBtn)) then
+	onButton(arg_6_0, arg_6_0.polaroidBtn, function()
+		if isActive(arg_6_0:findTF("lock", arg_6_0.polaroidBtn)) then
 			return
 		end
 
-		uv0:emit(uv1.EDUCATE_GO_SUBLAYER, Context.New({
+		arg_6_0:emit(var_0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateCollectMediatorTemplate,
 			viewComponent = EducatePolaroidLayer
 		}))
-		setActive(uv0:findTF("new", uv0.polaroidBtn), false)
+		setActive(arg_6_0:findTF("new", arg_6_0.polaroidBtn), false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.endingBtn, function ()
-		if isActive(uv0:findTF("lock", uv0.endingBtn)) then
+	onButton(arg_6_0, arg_6_0.endingBtn, function()
+		if isActive(arg_6_0:findTF("lock", arg_6_0.endingBtn)) then
 			return
 		end
 
-		uv0:emit(uv1.EDUCATE_GO_SUBLAYER, Context.New({
+		arg_6_0:emit(var_0_0.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateCollectMediatorTemplate,
 			viewComponent = EducateEndingLayer
 		}))
 	end, SFX_PANEL)
-	onButton(slot0, slot0.reviewBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_6_0, arg_6_0.reviewBtn, function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 			page = WorldMediaCollectionScene.PAGE_MEMORTY,
 			memoryGroup = EducateConst.REVIEW_GROUP_ID
@@ -71,43 +72,51 @@ function slot0.addListener(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.didEnter(slot0)
-	setText(slot0:findTF("Text", slot0.memoryBtn), #slot0.memories .. "/" .. #pg.child_memory.all)
-	slot0:updateMemoryTip()
+function var_0_0.didEnter(arg_12_0)
+	local var_12_0 = #pg.child_memory.all
 
-	slot2, slot3 = getProxy(EducateProxy):GetPolaroidGroupCnt()
+	setText(arg_12_0:findTF("Text", arg_12_0.memoryBtn), #arg_12_0.memories .. "/" .. var_12_0)
+	arg_12_0:updateMemoryTip()
 
-	setText(slot0:findTF("Text", slot0.polaroidBtn), slot2 .. "/" .. slot3)
-	setActive(slot0:findTF("lock", slot0.polaroidBtn), not EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_POLAROID))
-	setActive(slot0:findTF("new", slot0.polaroidBtn), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_POLAROID))
-	setText(slot0:findTF("unlock/Text", slot0.endingBtn), #slot0.endings .. "/" .. #pg.child_ending.all)
+	local var_12_1, var_12_2 = getProxy(EducateProxy):GetPolaroidGroupCnt()
 
-	slot5 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_ENDING) or #slot0.endings > 0
+	setText(arg_12_0:findTF("Text", arg_12_0.polaroidBtn), var_12_1 .. "/" .. var_12_2)
+	setActive(arg_12_0:findTF("lock", arg_12_0.polaroidBtn), not EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_POLAROID))
+	setActive(arg_12_0:findTF("new", arg_12_0.polaroidBtn), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_POLAROID))
 
-	setActive(slot0:findTF("unlock", slot0.endingBtn), slot5)
-	setActive(slot0:findTF("lock", slot0.endingBtn), not slot5)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	EducateGuideSequence.CheckGuide(slot0.__cname, function ()
+	local var_12_3 = #pg.child_ending.all
+
+	setText(arg_12_0:findTF("unlock/Text", arg_12_0.endingBtn), #arg_12_0.endings .. "/" .. var_12_3)
+
+	local var_12_4 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_ENDING) or #arg_12_0.endings > 0
+
+	setActive(arg_12_0:findTF("unlock", arg_12_0.endingBtn), var_12_4)
+	setActive(arg_12_0:findTF("lock", arg_12_0.endingBtn), not var_12_4)
+	pg.UIMgr.GetInstance():BlurPanel(arg_12_0._tf)
+	EducateGuideSequence.CheckGuide(arg_12_0.__cname, function()
+		return
 	end)
 end
 
-function slot0.updateMemoryTip(slot0)
-	setActive(slot0:findTF("new", slot0.memoryBtn), underscore.any(pg.child_memory.all, function (slot0)
-		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, slot0)
-	end))
+function var_0_0.updateMemoryTip(arg_14_0)
+	local var_14_0 = underscore.any(pg.child_memory.all, function(arg_15_0)
+		return EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg_15_0)
+	end)
+
+	setActive(arg_14_0:findTF("new", arg_14_0.memoryBtn), var_14_0)
 end
 
-function slot0._close(slot0)
-	slot0.anim:Play("anim_educate_collectentrance_out")
+function var_0_0._close(arg_16_0)
+	arg_16_0.anim:Play("anim_educate_collectentrance_out")
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:_close()
+function var_0_0.onBackPressed(arg_17_0)
+	arg_17_0:_close()
 end
 
-function slot0.willExit(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_18_0)
+	arg_18_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_18_0._tf)
 end
 
-return slot0
+return var_0_0

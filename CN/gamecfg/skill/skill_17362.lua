@@ -1,4 +1,65 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFireSupport",
+			casterAniEffect = "",
+			target_choise = "TargetHarmNearest",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163811,
+				supportTarget = {
+					targetChoice = {
+						"TargetPlayerAidUnit",
+						"TargetShipTag"
+					},
+					arg_list = {
+						ship_tag_list = {
+							"GUAM"
+						}
+					}
+				}
+			}
+		},
+		{
+			type = "BattleSkillFireSupport",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163851,
+				supportTarget = {
+					targetChoice = {
+						"TargetPlayerAidUnit",
+						"TargetShipTag"
+					},
+					arg_list = {
+						ship_tag_list = {
+							"GUAM"
+						}
+					}
+				}
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				buff_id = 17364
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -555,66 +616,5 @@ return {
 	painting = "guandao",
 	id = 17362,
 	picture = "0",
-	desc = "关岛弹幕",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFireSupport",
-			casterAniEffect = "",
-			target_choise = "TargetHarmNearest",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163811,
-				supportTarget = {
-					targetChoice = {
-						"TargetPlayerAidUnit",
-						"TargetShipTag"
-					},
-					arg_list = {
-						ship_tag_list = {
-							"GUAM"
-						}
-					}
-				}
-			}
-		},
-		{
-			type = "BattleSkillFireSupport",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163851,
-				supportTarget = {
-					targetChoice = {
-						"TargetPlayerAidUnit",
-						"TargetShipTag"
-					},
-					arg_list = {
-						ship_tag_list = {
-							"GUAM"
-						}
-					}
-				}
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				buff_id = 17364
-			}
-		}
-	}
+	desc = "关岛弹幕"
 }

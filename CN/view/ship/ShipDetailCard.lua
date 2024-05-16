@@ -1,113 +1,125 @@
-slot0 = class("ShipDetailCard")
-slot1 = 0.5
+﻿local var_0_0 = class("ShipDetailCard")
+local var_0_1 = 0.5
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.go = slot1
-	slot0.tr = slot1.transform
-	slot0.tagFlags = slot2 or {}
-	slot0.toggle = GetOrAddComponent(slot0.tr, typeof(Toggle))
-	slot0.content = findTF(slot0.tr, "content").gameObject
-	slot0.quit = findTF(slot0.tr, "quit_button").gameObject
-	slot0.detail = findTF(slot0.tr, "content/dockyard/detail").gameObject
-	slot0.detailLayoutTr = findTF(slot0.detail, "layout")
-	slot0.imageQuit = slot0.quit:GetComponent("Image")
-	slot0.imageFrame = findTF(slot0.tr, "content/front/frame"):GetComponent("Image")
-	slot0.labelName = findTF(slot0.tr, "content/info/name_mask/name")
-	slot0.npc = findTF(slot0.tr, "content/dockyard/npc")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.tagFlags = arg_1_2 or {}
+	arg_1_0.toggle = GetOrAddComponent(arg_1_0.tr, typeof(Toggle))
+	arg_1_0.content = findTF(arg_1_0.tr, "content").gameObject
+	arg_1_0.quit = findTF(arg_1_0.tr, "quit_button").gameObject
+	arg_1_0.detail = findTF(arg_1_0.tr, "content/dockyard/detail").gameObject
+	arg_1_0.detailLayoutTr = findTF(arg_1_0.detail, "layout")
+	arg_1_0.imageQuit = arg_1_0.quit:GetComponent("Image")
+	arg_1_0.imageFrame = findTF(arg_1_0.tr, "content/front/frame"):GetComponent("Image")
+	arg_1_0.labelName = findTF(arg_1_0.tr, "content/info/name_mask/name")
+	arg_1_0.npc = findTF(arg_1_0.tr, "content/dockyard/npc")
 
-	setActive(slot0.npc, false)
+	setActive(arg_1_0.npc, false)
 
-	slot0.lock = findTF(slot0.tr, "content/dockyard/container/lock")
-	slot0.maskStatusOb = findTF(slot0.tr, "content/front/status_mask")
-	slot0.iconStatus = findTF(slot0.tr, "content/dockyard/status")
-	slot0.iconStatusTxt = findTF(slot0.tr, "content/dockyard/status/Text"):GetComponent("Text")
-	slot0.selectedGo = findTF(slot0.tr, "content/front/selected").gameObject
-	slot0.energyTF = findTF(slot0.tr, "content/dockyard/container/energy")
-	slot0.proposeTF = findTF(slot0.tr, "content/dockyard/propose")
+	arg_1_0.lock = findTF(arg_1_0.tr, "content/dockyard/container/lock")
+	arg_1_0.maskStatusOb = findTF(arg_1_0.tr, "content/front/status_mask")
+	arg_1_0.iconStatus = findTF(arg_1_0.tr, "content/dockyard/status")
+	arg_1_0.iconStatusTxt = findTF(arg_1_0.tr, "content/dockyard/status/Text"):GetComponent("Text")
+	arg_1_0.selectedGo = findTF(arg_1_0.tr, "content/front/selected").gameObject
+	arg_1_0.energyTF = findTF(arg_1_0.tr, "content/dockyard/container/energy")
+	arg_1_0.proposeTF = findTF(arg_1_0.tr, "content/dockyard/propose")
 
-	slot0.selectedGo:SetActive(false)
+	arg_1_0.selectedGo:SetActive(false)
 
-	slot0.hpBar = findTF(slot0.tr, "content/dockyard/blood")
+	arg_1_0.hpBar = findTF(arg_1_0.tr, "content/dockyard/blood")
 end
 
-function slot0.update(slot0, slot1)
-	if slot0.shipVO ~= slot1 then
-		slot0.shipVO = slot1
+function var_0_0.update(arg_2_0, arg_2_1)
+	if arg_2_0.shipVO ~= arg_2_1 then
+		arg_2_0.shipVO = arg_2_1
 
-		slot0:flush()
+		arg_2_0:flush()
 	end
 end
 
-function slot0.updateSelected(slot0, slot1)
-	slot0.selected = slot1
+function var_0_0.updateSelected(arg_3_0, arg_3_1)
+	arg_3_0.selected = arg_3_1
 
-	slot0.selectedGo:SetActive(slot0.selected)
+	arg_3_0.selectedGo:SetActive(arg_3_0.selected)
 
-	if slot0.selected then
-		if not slot0.selectedTw then
-			slot0.selectedTw = LeanTween.alpha(slot0.selectedGo.transform, 1, uv0):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+	if arg_3_0.selected then
+		if not arg_3_0.selectedTw then
+			arg_3_0.selectedTw = LeanTween.alpha(arg_3_0.selectedGo.transform, 1, var_0_1):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 		end
-	elseif slot0.selectedTw then
-		LeanTween.cancel(slot0.selectedTw.uniqueId)
+	elseif arg_3_0.selectedTw then
+		LeanTween.cancel(arg_3_0.selectedTw.uniqueId)
 
-		slot0.selectedTw = nil
+		arg_3_0.selectedTw = nil
 	end
 end
 
-function slot0.flush(slot0)
-	if tobool(slot0.shipVO) then
-		if not slot1:getConfigTable() then
+function var_0_0.flush(arg_4_0)
+	local var_4_0 = arg_4_0.shipVO
+	local var_4_1 = tobool(var_4_0)
+
+	if var_4_1 then
+		if not var_4_0:getConfigTable() then
 			return
 		end
 
-		flushShipCard(slot0.tr, slot1)
-		setActive(slot0.npc, slot1:isActivityNpc())
+		flushShipCard(arg_4_0.tr, var_4_0)
 
-		if slot0.lock then
-			slot0.lock.gameObject:SetActive(slot1:GetLockState() == Ship.LOCK_STATE_LOCK)
+		local var_4_2 = var_4_0:isActivityNpc()
+
+		setActive(arg_4_0.npc, var_4_2)
+
+		if arg_4_0.lock then
+			arg_4_0.lock.gameObject:SetActive(var_4_0:GetLockState() == Ship.LOCK_STATE_LOCK)
 		end
 
-		if slot1.energy <= Ship.ENERGY_MID then
-			if not GetSpriteFromAtlas("energy", slot1:getEnergyPrint()) then
+		local var_4_3 = var_4_0.energy <= Ship.ENERGY_MID
+
+		if var_4_3 then
+			local var_4_4 = GetSpriteFromAtlas("energy", var_4_0:getEnergyPrint())
+
+			if not var_4_4 then
 				warning("找不到疲劳")
 			end
 
-			setImageSprite(slot0.energyTF, slot6)
+			setImageSprite(arg_4_0.energyTF, var_4_4)
 		end
 
-		setActive(slot0.energyTF, slot5)
-		setScrollText(slot0.labelName, slot1:getName())
+		setActive(arg_4_0.energyTF, var_4_3)
+		setScrollText(arg_4_0.labelName, var_4_0:getName())
 
-		if ShipStatus.ShipStatusToTag(slot1, slot0.tagFlags) then
-			slot0.iconStatusTxt.text = slot6[3]
+		local var_4_5 = ShipStatus.ShipStatusToTag(var_4_0, arg_4_0.tagFlags)
 
-			GetSpriteFromAtlasAsync(slot6[1], slot6[2], function (slot0)
-				setImageSprite(uv0.iconStatus, slot0, true)
-				setActive(uv0.iconStatus, true)
+		if var_4_5 then
+			arg_4_0.iconStatusTxt.text = var_4_5[3]
 
-				if uv1[1] == "shipstatus" then
-					uv0.iconStatus.sizeDelta = Vector2(195, 36)
-					uv0.iconStatusTxt.fontSize = 30
+			GetSpriteFromAtlasAsync(var_4_5[1], var_4_5[2], function(arg_5_0)
+				setImageSprite(arg_4_0.iconStatus, arg_5_0, true)
+				setActive(arg_4_0.iconStatus, true)
+
+				if var_4_5[1] == "shipstatus" then
+					arg_4_0.iconStatus.sizeDelta = Vector2(195, 36)
+					arg_4_0.iconStatusTxt.fontSize = 30
 				end
 			end)
 		else
-			setActive(slot0.iconStatus, false)
+			setActive(arg_4_0.iconStatus, false)
 		end
 
-		slot7, slot8 = slot1:getIntimacyIcon()
+		local var_4_6, var_4_7 = var_4_0:getIntimacyIcon()
 
-		setActive(slot0.proposeTF, tobool(slot8 and not slot4))
+		setActive(arg_4_0.proposeTF, tobool(var_4_7 and not var_4_2))
 	end
 
-	slot0.content:SetActive(slot2)
+	arg_4_0.content:SetActive(var_4_1)
 end
 
-function slot0.clear(slot0)
-	if slot0.selectedTw then
-		LeanTween.cancel(slot0.selectedTw.uniqueId)
+function var_0_0.clear(arg_6_0)
+	if arg_6_0.selectedTw then
+		LeanTween.cancel(arg_6_0.selectedTw.uniqueId)
 
-		slot0.selectedTw = nil
+		arg_6_0.selectedTw = nil
 	end
 end
 
-return slot0
+return var_0_0

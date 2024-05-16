@@ -1,79 +1,83 @@
-slot0 = class("LevelAwardPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("LevelAwardPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.award = slot0:findTF("scroll/award")
-	slot0.content = slot0:findTF("scroll/content")
-	slot0.scrollTF = slot0:findTF("scroll")
-	slot0.pageSignDownTF = slot0:findTF("sign")
-	slot0.pageSignUpTF = slot0:findTF("sign_up")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("bg")
+	arg_1_0.award = arg_1_0:findTF("scroll/award")
+	arg_1_0.content = arg_1_0:findTF("scroll/content")
+	arg_1_0.scrollTF = arg_1_0:findTF("scroll")
+	arg_1_0.pageSignDownTF = arg_1_0:findTF("sign")
+	arg_1_0.pageSignUpTF = arg_1_0:findTF("sign_up")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.config = pg.activity_level_award[slot0.activity:getConfig("config_id")]
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.config = pg.activity_level_award[arg_2_0.activity:getConfig("config_id")]
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.award, false)
+function var_0_0.OnFirstFlush(arg_3_0)
+	setActive(arg_3_0.award, false)
 
-	for slot4 = 1, #slot0.config.front_drops do
-		slot5 = slot0.config.front_drops[slot4]
-		slot7 = cloneTplTo(slot0.award, slot0.content, "award" .. tostring(slot4))
-		slot9 = slot0:findTF("btnAchieve", slot7)
-		slot10 = slot0:findTF("items", slot7)
+	for iter_3_0 = 1, #arg_3_0.config.front_drops do
+		local var_3_0 = arg_3_0.config.front_drops[iter_3_0]
+		local var_3_1 = var_3_0[1]
+		local var_3_2 = cloneTplTo(arg_3_0.award, arg_3_0.content, "award" .. tostring(iter_3_0))
+		local var_3_3 = arg_3_0:findTF("limit_label/labelLevel", var_3_2)
+		local var_3_4 = arg_3_0:findTF("btnAchieve", var_3_2)
+		local var_3_5 = arg_3_0:findTF("items", var_3_2)
+		local var_3_6 = arg_3_0:findTF("item", var_3_2)
 
-		setActive(slot0:findTF("item", slot7), false)
+		setActive(var_3_6, false)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(var_3_1), var_3_3, true)
 
-		slot15 = slot0:findTF("limit_label/labelLevel", slot7)
+		for iter_3_1 = 2, #var_3_0 do
+			local var_3_7 = cloneTplTo(var_3_6, var_3_5)
+			local var_3_8 = var_3_0[iter_3_1]
+			local var_3_9 = {
+				type = var_3_8[1],
+				id = var_3_8[2],
+				count = var_3_8[3]
+			}
 
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(slot5[1]) .. ".png", slot15, true)
-
-		for slot15 = 2, #slot5 do
-			slot16 = cloneTplTo(slot11, slot10)
-			slot17 = slot5[slot15]
-
-			updateDrop(slot16, {
-				type = slot17[1],
-				id = slot17[2],
-				count = slot17[3]
-			})
-			onButton(slot0, slot16, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_3_7, var_3_9)
+			onButton(arg_3_0, var_3_7, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_3_9)
 			end, SFX_PANEL)
 		end
 
-		onButton(slot0, slot9, function ()
-			uv0:emit(ActivityMediator.EVENT_OPERATION, {
+		onButton(arg_3_0, var_3_4, function()
+			arg_3_0:emit(ActivityMediator.EVENT_OPERATION, {
 				cmd = 1,
-				activity_id = uv0.activity.id,
-				arg1 = uv1
+				activity_id = arg_3_0.activity.id,
+				arg1 = var_3_1
 			})
 		end, SFX_PANEL)
-		onScroll(slot0, slot0.scrollTF, function (slot0)
-			setActive(uv0.pageSignDownTF, slot0.y > 0.01)
-			setActive(uv0.pageSignUpTF, slot0.y < 0.99)
+		onScroll(arg_3_0, arg_3_0.scrollTF, function(arg_6_0)
+			setActive(arg_3_0.pageSignDownTF, arg_6_0.y > 0.01)
+			setActive(arg_3_0.pageSignUpTF, arg_6_0.y < 0.99)
 		end)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	for slot4 = 1, #slot0.config.front_drops do
-		slot6 = slot0:findTF("award" .. tostring(slot4), slot0.content)
-		slot7 = slot0:findTF("btnAchieve", slot6)
-		slot8 = slot0:findTF("achieve_sign", slot6)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	for iter_7_0 = 1, #arg_7_0.config.front_drops do
+		local var_7_0 = arg_7_0.config.front_drops[iter_7_0]
+		local var_7_1 = arg_7_0:findTF("award" .. tostring(iter_7_0), arg_7_0.content)
+		local var_7_2 = arg_7_0:findTF("btnAchieve", var_7_1)
+		local var_7_3 = arg_7_0:findTF("achieve_sign", var_7_1)
+		local var_7_4 = _.include(arg_7_0.activity.data1_list, var_7_0[1])
 
-		if _.include(slot0.activity.data1_list, slot0.config.front_drops[slot4][1]) then
-			slot6.transform:SetAsLastSibling()
+		if var_7_4 then
+			var_7_1.transform:SetAsLastSibling()
 		end
 
-		setGray(slot0:findTF("limit_label", slot6), slot9)
-		setGray(slot0:findTF("items", slot6), slot9)
-		setActive(slot8, slot9)
-		setActive(slot7, slot5[1] <= slot0.shareData.player.level and not slot9)
+		setGray(arg_7_0:findTF("limit_label", var_7_1), var_7_4)
+		setGray(arg_7_0:findTF("items", var_7_1), var_7_4)
+		setActive(var_7_3, var_7_4)
+		setActive(var_7_2, arg_7_0.shareData.player.level >= var_7_0[1] and not var_7_4)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

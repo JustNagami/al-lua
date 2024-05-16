@@ -1,130 +1,154 @@
-slot0 = class("BattleGateWorld")
-ys.Battle.BattleGateWorld = slot0
-slot0.__name = "BattleGateWorld"
+﻿local var_0_0 = class("BattleGateWorld")
 
-function slot0.Entrance(slot0, slot1)
-	slot2 = nowWorld()
+ys.Battle.BattleGateWorld = var_0_0
+var_0_0.__name = "BattleGateWorld"
+
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = nowWorld()
 
 	if BeginStageCommand.DockOverload() then
-		slot2:TriggerAutoFight(false)
+		var_1_0:TriggerAutoFight(false)
 
 		return
 	end
 
-	slot3 = getProxy(PlayerProxy)
-	slot4 = getProxy(BayProxy)
-	slot6 = pg.battle_cost_template[SYSTEM_WORLD].oil_cost > 0
-	slot7 = {}
-	slot8 = 0
-	slot9 = 0
-	slot10 = 0
-	slot11 = 0
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = getProxy(BayProxy)
+	local var_1_3 = pg.battle_cost_template[SYSTEM_WORLD]
+	local var_1_4 = var_1_3.oil_cost > 0
+	local var_1_5 = {}
+	local var_1_6 = 0
+	local var_1_7 = 0
+	local var_1_8 = 0
+	local var_1_9 = 0
+	local var_1_10 = var_1_0:GetActiveMap():GetFleet()
+	local var_1_11 = var_1_10:GetShipVOs(false)
 
-	for slot18, slot19 in ipairs(slot2:GetActiveMap():GetFleet():GetShipVOs(false)) do
-		slot7[#slot7 + 1] = slot19.id
+	for iter_1_0, iter_1_1 in ipairs(var_1_11) do
+		var_1_5[#var_1_5 + 1] = iter_1_1.id
 	end
 
-	slot15, slot16 = slot13:GetCost()
-	slot8 = slot15.gold
-	slot9 = slot15.oil
-	slot10 = slot15.gold + slot16.gold
-	slot11 = slot15.oil + slot16.oil
-	slot17 = slot3:getData()
+	local var_1_12, var_1_13 = var_1_10:GetCost()
+	local var_1_14 = var_1_12.gold
+	local var_1_15 = var_1_12.oil
+	local var_1_16 = var_1_12.gold + var_1_13.gold
+	local var_1_17 = var_1_12.oil + var_1_13.oil
+	local var_1_18 = var_1_1:getData()
 
-	if slot6 and slot17.oil < slot11 then
+	if var_1_4 and var_1_17 > var_1_18.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot18 = slot0.stageId
-	slot20 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot18].dungeon_id).fleet_prefab
+	local var_1_19 = arg_1_0.stageId
+	local var_1_20 = pg.expedition_data_template[var_1_19].dungeon_id
+	local var_1_21 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_20).fleet_prefab
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(SYSTEM_WORLD, slot7, {
-		slot18
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_22(arg_2_0)
+		if var_1_4 then
+			var_1_18:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_15
 			})
 		end
 
-		if uv3.enter_energy_cost > 0 and not exFlag then
-			slot1 = pg.gameset.battle_consume_energy.key_value
+		if var_1_3.enter_energy_cost > 0 and not exFlag then
+			local var_2_0 = pg.gameset.battle_consume_energy.key_value
 
-			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
-				uv5:updateShip(slot6)
+			for iter_2_0, iter_2_1 in ipairs(var_1_11) do
+				iter_2_1:cosumeEnergy(var_2_0)
+				var_1_2:updateShip(iter_2_1)
 			end
 		end
 
-		slot1 = uv6
+		var_1_1:updatePlayer(var_1_18)
 
-		slot1:updatePlayer(uv1)
-		uv9:sendNotification(GAME.BEGIN_STAGE_DONE, {
-			prefabFleet = uv7,
-			stageId = uv8,
+		local var_2_1 = {
+			prefabFleet = var_1_21,
+			stageId = var_1_19,
 			system = SYSTEM_WORLD,
-			token = slot0.key
-		})
-	end, function (slot0)
-		uv0:RequestFailStandardProcess(slot0)
-	end)
+			token = arg_2_0.key
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
+	end
+
+	local function var_1_23(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
+	end
+
+	BeginStageCommand.SendRequest(SYSTEM_WORLD, var_1_5, {
+		var_1_19
+	}, var_1_22, var_1_23)
 end
 
-function slot0.Exit(slot0, slot1)
-	if slot1.CheaterVertify() then
+function var_0_0.Exit(arg_4_0, arg_4_1)
+	if arg_4_1.CheaterVertify() then
 		return
 	end
 
-	slot2 = pg.battle_cost_template[SYSTEM_WORLD]
-	slot3 = slot0.statistics._battleScore
-	slot4 = 0
-	slot5 = {}
-	slot8 = nowWorld():GetActiveMap():GetFleet()
-	slot5 = slot8:GetShipVOs(true)
-	slot9, slot10 = slot8:GetCost()
-	slot4 = slot10.oil
+	local var_4_0 = pg.battle_cost_template[SYSTEM_WORLD]
+	local var_4_1 = arg_4_0.statistics._battleScore
+	local var_4_2 = 0
+	local var_4_3 = {}
+	local var_4_4 = nowWorld():GetActiveMap()
+	local var_4_5 = var_4_4:GetFleet()
+	local var_4_6 = var_4_5:GetShipVOs(true)
+	local var_4_7, var_4_8 = var_4_5:GetCost()
+	local var_4_9 = var_4_8.oil
 
-	if slot0.statistics.submarineAid then
-		slot11 = slot7:GetSubmarineFleet()
+	if arg_4_0.statistics.submarineAid then
+		local var_4_10 = var_4_4:GetSubmarineFleet()
 
-		assert(slot11, "submarine fleet not exist.")
+		assert(var_4_10, "submarine fleet not exist.")
 
-		for slot16, slot17 in ipairs(slot11:GetTeamShipVOs(TeamType.Submarine, true)) do
-			if slot0.statistics[slot17.id] then
-				table.insert(slot5, slot17)
+		local var_4_11 = var_4_10:GetTeamShipVOs(TeamType.Submarine, true)
+
+		for iter_4_0, iter_4_1 in ipairs(var_4_11) do
+			if arg_4_0.statistics[iter_4_1.id] then
+				table.insert(var_4_6, iter_4_1)
 			end
 		end
 
-		slot13, slot14 = slot11:GetCost()
-		slot4 = slot4 + slot14.oil
+		local var_4_12, var_4_13 = var_4_10:GetCost()
+
+		var_4_9 = var_4_9 + var_4_13.oil
 	end
 
-	slot1:SendRequest(slot1.GeneralPackage(slot0, slot5), function (slot0)
-		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, true)
+	local var_4_14 = arg_4_1.GeneralPackage(arg_4_0, var_4_6)
 
-		uv1.statistics.mvpShipID = slot0.mvp
-		slot2, slot3 = uv0:GeneralLoot(slot0)
-		slot4 = ys.Battle.BattleConst.BattleScore.C < uv4
+	local function var_4_15(arg_5_0)
+		arg_4_1.addShipsExp(arg_5_0.ship_exp_list, arg_4_0.statistics, true)
 
-		uv0.GeneralPlayerCosume(SYSTEM_WORLD, slot4, uv5, slot0.player_exp, exFlag)
+		local var_5_0 = arg_4_1.GenerateCommanderExp(arg_5_0, var_4_5, var_4_4:GetSubmarineFleet())
 
-		uv1.hpDropInfo = slot0.hp_drop_info
+		arg_4_0.statistics.mvpShipID = arg_5_0.mvp
 
-		uv0:sendNotification(GAME.FINISH_STAGE_DONE, {
+		local var_5_1, var_5_2 = arg_4_1:GeneralLoot(arg_5_0)
+		local var_5_3 = var_4_1 > ys.Battle.BattleConst.BattleScore.C
+
+		arg_4_1.GeneralPlayerCosume(SYSTEM_WORLD, var_5_3, var_4_9, arg_5_0.player_exp, exFlag)
+
+		arg_4_0.hpDropInfo = arg_5_0.hp_drop_info
+
+		local var_5_4 = {
 			system = SYSTEM_WORLD,
-			statistics = uv1.statistics,
-			score = uv4,
-			drops = slot2,
-			commanderExps = uv0.GenerateCommanderExp(slot0, uv2, uv3:GetSubmarineFleet()),
-			result = slot0.result,
-			extraDrops = slot3
-		})
-		uv3:WriteBack(slot4, uv1)
-	end)
+			statistics = arg_4_0.statistics,
+			score = var_4_1,
+			drops = var_5_1,
+			commanderExps = var_5_0,
+			result = arg_5_0.result,
+			extraDrops = var_5_2
+		}
+
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_5_4)
+		var_4_4:WriteBack(var_5_3, arg_4_0)
+	end
+
+	arg_4_1:SendRequest(var_4_14, var_4_15)
 end
 
-return slot0
+return var_0_0

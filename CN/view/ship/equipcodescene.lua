@@ -1,145 +1,152 @@
-slot0 = class("EquipCodeScene", import("..base.BaseUI"))
-slot0.optionsPath = {
+﻿local var_0_0 = class("EquipCodeScene", import("..base.BaseUI"))
+
+var_0_0.optionsPath = {
 	"adpter/frame/option"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EquipCodeUI"
 end
 
-function slot0.setEquipments(slot0, slot1, slot2)
-	slot0.equips = slot1
+function var_0_0.setEquipments(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.equips = arg_2_1
 
-	table.sort(slot0.equips, CompareFuncs(EquipmentSortCfg.sortFunc(EquipmentSortCfg.sort[1], false)))
+	table.sort(arg_2_0.equips, CompareFuncs(EquipmentSortCfg.sortFunc(EquipmentSortCfg.sort[1], false)))
 
-	slot0.spWeapons = slot2
+	arg_2_0.spWeapons = arg_2_2
 
-	table.sort(slot0.spWeapons, CompareFuncs(SpWeaponSortCfg.sortFunc(SpWeaponSortCfg.sort[1], false)))
+	table.sort(arg_2_0.spWeapons, CompareFuncs(SpWeaponSortCfg.sortFunc(SpWeaponSortCfg.sort[1], false)))
 end
 
-function slot0.setShip(slot0, slot1)
-	slot0.shipVO = getProxy(BayProxy):getShipById(slot1)
-	slot0.shipData = {}
+function var_0_0.setShip(arg_3_0, arg_3_1)
+	arg_3_0.shipVO = getProxy(BayProxy):getShipById(arg_3_1)
+	arg_3_0.shipData = {}
 
-	for slot5, slot6 in ipairs(slot0.shipVO:getAllEquipments()) do
-		if not slot6 then
-			slot0.shipData[slot5] = false
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0.shipVO:getAllEquipments()) do
+		if not iter_3_1 then
+			arg_3_0.shipData[iter_3_0] = false
 		else
-			slot0.shipData[slot5] = underscore.detect(slot0.equips, function (slot0)
-				return slot0.configId == uv0.configId and slot0.shipId == uv1.shipVO.id and slot0.shipPos == uv2
+			arg_3_0.shipData[iter_3_0] = underscore.detect(arg_3_0.equips, function(arg_4_0)
+				return arg_4_0.configId == iter_3_1.configId and arg_4_0.shipId == arg_3_0.shipVO.id and arg_4_0.shipPos == iter_3_0
 			end) or false
 		end
 	end
 
-	if not slot0.shipVO:GetSpWeapon() then
-		slot0.shipData[6] = false
+	local var_3_0 = arg_3_0.shipVO:GetSpWeapon()
+
+	if not var_3_0 then
+		arg_3_0.shipData[6] = false
 	else
-		slot0.shipData[6] = underscore.detect(slot0.spWeapons, function (slot0)
-			return slot0.configId == uv0.configId and slot0:GetShipId() == uv1.shipVO.id
+		arg_3_0.shipData[6] = underscore.detect(arg_3_0.spWeapons, function(arg_5_0)
+			return arg_5_0.configId == var_3_0.configId and arg_5_0:GetShipId() == arg_3_0.shipVO.id
 		end) or false
 	end
 end
 
-function slot0.getEquipShipVO(slot0, slot1)
-	slot0.shipVO:clone().equipments = underscore.first(slot1, 5)
-	slot2.spWeapon = slot1[6] or nil
+function var_0_0.getEquipShipVO(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_0.shipVO:clone()
 
-	return slot2
+	var_6_0.equipments = underscore.first(arg_6_1, 5)
+	var_6_0.spWeapon = arg_6_1[6] or nil
+
+	return var_6_0
 end
 
-function slot1(slot0, slot1, slot2)
-	setActive(slot0:Find("IconTpl"), tobool(slot1))
+local function var_0_1(arg_7_0, arg_7_1, arg_7_2)
+	setActive(arg_7_0:Find("IconTpl"), tobool(arg_7_1))
 
-	if slot1 then
-		updateEquipment(slot0:Find("IconTpl"), slot1)
+	if arg_7_1 then
+		updateEquipment(arg_7_0:Find("IconTpl"), arg_7_1)
 	end
 
-	if slot0:Find("equip_flag") then
-		setActive(slot0:Find("equip_flag"), slot2)
+	if arg_7_0:Find("equip_flag") then
+		setActive(arg_7_0:Find("equip_flag"), arg_7_2)
 
-		if slot2 then
-			setImageSprite(slot0:Find("equip_flag/Image"), LoadSprite("qicon/" .. slot2:getPainting()))
+		if arg_7_2 then
+			setImageSprite(arg_7_0:Find("equip_flag/Image"), LoadSprite("qicon/" .. arg_7_2:getPainting()))
 		end
 	end
 end
 
-function slot2(slot0, slot1, slot2)
-	setActive(slot0:Find("IconTpl"), tobool(slot1))
+local function var_0_2(arg_8_0, arg_8_1, arg_8_2)
+	setActive(arg_8_0:Find("IconTpl"), tobool(arg_8_1))
 
-	if slot1 then
-		updateSpWeapon(slot0:Find("IconTpl"), slot1)
+	if arg_8_1 then
+		updateSpWeapon(arg_8_0:Find("IconTpl"), arg_8_1)
 	end
 
-	if slot0:Find("equip_flag") then
-		setActive(slot0:Find("equip_flag"), slot2)
+	if arg_8_0:Find("equip_flag") then
+		setActive(arg_8_0:Find("equip_flag"), arg_8_2)
 
-		if slot2 then
-			setImageSprite(slot0:Find("equip_flag/Image"), LoadSprite("qicon/" .. slot2:getPainting()))
+		if arg_8_2 then
+			setImageSprite(arg_8_0:Find("equip_flag/Image"), LoadSprite("qicon/" .. arg_8_2:getPainting()))
 		end
 	end
 end
 
-function slot3(slot0, slot1, slot2)
-	setActive(slot0:Find("Icon"), slot1)
-	setActive(slot0:Find("IconShadow"), slot1)
+local function var_0_3(arg_9_0, arg_9_1, arg_9_2)
+	setActive(arg_9_0:Find("Icon"), arg_9_1)
+	setActive(arg_9_0:Find("IconShadow"), arg_9_1)
 
-	if slot1 then
-		UpdateSpWeaponSlot(slot0, slot1)
+	if arg_9_1 then
+		UpdateSpWeaponSlot(arg_9_0, arg_9_1)
 	end
 
-	if slot0:Find("equip_flag") then
-		setActive(slot0:Find("equip_flag"), slot2)
+	if arg_9_0:Find("equip_flag") then
+		setActive(arg_9_0:Find("equip_flag"), arg_9_2)
 
-		if slot2 then
-			setImageSprite(slot0:Find("equip_flag/Image"), LoadSprite("qicon/" .. slot2:getPainting()))
+		if arg_9_2 then
+			setImageSprite(arg_9_0:Find("equip_flag/Image"), LoadSprite("qicon/" .. arg_9_2:getPainting()))
 		end
 	end
 end
 
-function slot4(slot0, slot1, slot2)
-	slot3 = slot0:Find("error")
+local function var_0_4(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = arg_10_0:Find("error")
 
-	if not slot1 or not slot2 then
-		setActive(slot3, false)
-	elseif slot1.configId == slot2.configId then
-		setActive(slot3, false)
+	if not arg_10_1 or not arg_10_2 then
+		setActive(var_10_0, false)
+	elseif arg_10_1.configId == arg_10_2.configId then
+		setActive(var_10_0, false)
 	else
-		slot4 = false
-		slot5 = instanceof(slot1, SpWeapon) and pg.spweapon_data_statistics or pg.equip_data_template
+		local var_10_1 = false
+		local var_10_2 = instanceof(arg_10_1, SpWeapon) and pg.spweapon_data_statistics or pg.equip_data_template
 
-		for slot9, slot10 in ipairs({
+		for iter_10_0, iter_10_1 in ipairs({
 			"next",
 			"prev"
 		}) do
-			slot11 = slot1.configId
+			local var_10_3 = arg_10_1.configId
 
-			while slot5[slot11][slot10] > 0 do
-				if slot5[slot11][slot10] == slot2.configId then
-					slot4 = true
+			while var_10_2[var_10_3][iter_10_1] > 0 do
+				var_10_3 = var_10_2[var_10_3][iter_10_1]
+
+				if var_10_3 == arg_10_2.configId then
+					var_10_1 = true
 
 					break
 				end
 			end
 
-			if slot4 then
+			if var_10_1 then
 				break
 			end
 		end
 
-		setActive(slot3, true)
-		setText(slot3:Find("Text"), i18n(slot4 and "equipcode_level_unmatched" or "equipcode_diff_selected"))
+		setActive(var_10_0, true)
+		setText(var_10_0:Find("Text"), i18n(var_10_1 and "equipcode_level_unmatched" or "equipcode_diff_selected"))
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	slot1 = {}
+function var_0_0.onBackPressed(arg_11_0)
+	local var_11_0 = {}
 
-	for slot5 = 1, #slot0.shipData do
-		if (slot0.shipData[slot5] and slot0.shipData[slot5].configId or 0) ~= (slot0.equipData[slot5] and slot0.equipData[slot5].configId or 0) then
-			table.insert(slot1, function (slot0)
+	for iter_11_0 = 1, #arg_11_0.shipData do
+		if (arg_11_0.shipData[iter_11_0] and arg_11_0.shipData[iter_11_0].configId or 0) ~= (arg_11_0.equipData[iter_11_0] and arg_11_0.equipData[iter_11_0].configId or 0) then
+			table.insert(var_11_0, function(arg_12_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("equipcode_unsaved_tips"),
-					onYes = slot0
+					onYes = arg_12_0
 				})
 			end)
 
@@ -147,15 +154,15 @@ function slot0.onBackPressed(slot0)
 		end
 	end
 
-	seriesAsync(slot1, function ()
-		uv0:closeView()
+	seriesAsync(var_11_0, function()
+		arg_11_0:closeView()
 	end)
 end
 
-slot5 = nil
+local var_0_5
 
-function slot0.init(slot0)
-	uv0 = uv0 or {
+function var_0_0.init(arg_14_0)
+	var_0_5 = var_0_5 or {
 		customPanels = {
 			labelIndex = {
 				num = 2,
@@ -176,519 +183,531 @@ function slot0.init(slot0)
 		},
 		tip = i18n("equipcode_share_ruletips")
 	}
-	slot0.btnBack = slot0._tf:Find("adpter/frame/btnBack")
+	arg_14_0.btnBack = arg_14_0._tf:Find("adpter/frame/btnBack")
 
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:onBackPressed()
+	onButton(arg_14_0, arg_14_0.btnBack, function()
+		arg_14_0:onBackPressed()
 	end, SFX_CANCEL)
 
-	slot0.rtMainPanel = slot0._tf:Find("main_panel")
+	arg_14_0.rtMainPanel = arg_14_0._tf:Find("main_panel")
 
-	onButton(slot0, slot0.rtMainPanel:Find("btns/btn_export"), function ()
-		UniPasteBoard.SetClipBoardString(buildEquipCode(uv0.shipVO))
+	onButton(arg_14_0, arg_14_0.rtMainPanel:Find("btns/btn_export"), function()
+		UniPasteBoard.SetClipBoardString(buildEquipCode(arg_14_0.shipVO))
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_export_success"))
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.rtMainPanel:Find("share/btn_comments"), function ()
-		uv0:emit(EquipCodeMediator.OPEN_EQUIP_CODE_SHARE, uv0.shipVO:getGroupId())
+	onButton(arg_14_0, arg_14_0.rtMainPanel:Find("share/btn_comments"), function()
+		arg_14_0:emit(EquipCodeMediator.OPEN_EQUIP_CODE_SHARE, arg_14_0.shipVO:getGroupId())
 	end, SFX_PANEL)
 
-	slot0.tagIndexData = {}
+	arg_14_0.tagIndexData = {}
 
-	onButton(slot0, slot0.rtMainPanel:Find("share/btn_share"), function ()
-		uv0:emit(EquipCodeMediator.OPEN_CUSTOM_INDEX, setmetatable({
-			indexDatas = Clone(uv0.tagIndexData),
-			callback = function (slot0)
-				uv0.tagIndexData.labelIndex = slot0.labelIndex
-				slot1 = 0
-				slot2 = slot0.labelIndex
+	onButton(arg_14_0, arg_14_0.rtMainPanel:Find("share/btn_share"), function()
+		arg_14_0:emit(EquipCodeMediator.OPEN_CUSTOM_INDEX, setmetatable({
+			indexDatas = Clone(arg_14_0.tagIndexData),
+			callback = function(arg_19_0)
+				arg_14_0.tagIndexData.labelIndex = arg_19_0.labelIndex
 
-				while slot2 > 0 do
-					slot1 = slot1 + 1
-					slot2 = bit.band(slot2, slot2 - 1)
+				local var_19_0 = 0
+				local var_19_1 = arg_19_0.labelIndex
+
+				while var_19_1 > 0 do
+					var_19_0 = var_19_0 + 1
+					var_19_1 = bit.band(var_19_1, var_19_1 - 1)
 				end
 
-				if slot1 == 2 then
-					slot3 = buildEquipCode(uv0.shipVO)
-					slot4 = {}
-					slot5 = uv0.tagIndexData.labelIndex
+				if var_19_0 == 2 then
+					local var_19_2 = buildEquipCode(arg_14_0.shipVO)
+					local var_19_3 = {}
+					local var_19_4 = arg_14_0.tagIndexData.labelIndex
 
-					while slot5 > 0 do
-						slot5 = slot5 - bit.band(slot5, -slot5)
-						slot7 = 0
+					while var_19_4 > 0 do
+						local var_19_5 = bit.band(var_19_4, -var_19_4)
 
-						while slot6 > 0 do
-							slot7 = slot7 + 1
-							slot6 = math.floor(slot6 / 2)
+						var_19_4 = var_19_4 - var_19_5
+
+						local var_19_6 = 0
+
+						while var_19_5 > 0 do
+							var_19_6 = var_19_6 + 1
+							var_19_5 = math.floor(var_19_5 / 2)
 						end
 
-						table.insert(slot4, tostring(slot7))
+						table.insert(var_19_3, tostring(var_19_6))
 					end
 
-					slot6 = uv0.shipVO:getGroupId()
+					local var_19_7 = arg_14_0.shipVO:getGroupId()
+					local var_19_8 = table.concat({
+						var_19_2,
+						ConversionBase(32, var_19_7),
+						var_19_3[1],
+						var_19_3[2]
+					}, "&")
 
-					uv0:emit(EquipCodeMediator.SHARE_EQUIP_CODE, slot6, table.concat({
-						slot3,
-						ConversionBase(32, slot6),
-						slot4[1],
-						slot4[2]
-					}, "&"))
+					arg_14_0:emit(EquipCodeMediator.SHARE_EQUIP_CODE, var_19_7, var_19_8)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_share_nolabel"))
 				end
 			end
 		}, {
-			__index = uv1
+			__index = var_0_5
 		}))
 	end, SFX_PANEL)
 
-	slot0.rtCodePanel = slot0._tf:Find("code_panel")
+	arg_14_0.rtCodePanel = arg_14_0._tf:Find("code_panel")
 
-	onButton(slot0, slot0.rtCodePanel:Find("btns/btn_import"), function ()
+	onButton(arg_14_0, arg_14_0.rtCodePanel:Find("btns/btn_import"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("equipcode_confirm_doublecheck"),
-			onYes = function ()
-				uv0:emit(EquipCodeMediator.IMPORT_SHIP_EQUIP, uv0.shipVO.id, uv0.equipData)
+			onYes = function()
+				arg_14_0:emit(EquipCodeMediator.IMPORT_SHIP_EQUIP, arg_14_0.shipVO.id, arg_14_0.equipData)
 			end
 		})
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.rtCodePanel:Find("btns/btn_withdrawn"), function ()
-		uv0.code = nil
+	onButton(arg_14_0, arg_14_0.rtCodePanel:Find("btns/btn_withdrawn"), function()
+		arg_14_0.code = nil
 
-		uv0:updateDispalyPanel(uv0.rtCodePanel, "code")
+		arg_14_0:updateDispalyPanel(arg_14_0.rtCodePanel, "code")
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.rtCodePanel:Find("btns/btn_cancel"), function ()
-		uv0:updateDispalyPanel(uv0.rtCodePanel, "code")
-		uv0:initQuickPanel()
+	onButton(arg_14_0, arg_14_0.rtCodePanel:Find("btns/btn_cancel"), function()
+		arg_14_0:updateDispalyPanel(arg_14_0.rtCodePanel, "code")
+		arg_14_0:initQuickPanel()
 	end, SFX_CANCEL)
-	onToggle(slot0, slot0.rtCodePanel:Find("btns/toggle_quick"), function (slot0)
-		setActive(uv0.rtMainPanel, false)
-		setActive(uv0.rtBottomPanel, false)
-		setActive(uv0.rtQuickPanel, false)
-		setActive(uv0.rtCodePanel:Find("btns/btn_withdrawn"), not slot0)
-		setActive(uv0.rtCodePanel:Find("btns/btn_cancel"), slot0)
+	onToggle(arg_14_0, arg_14_0.rtCodePanel:Find("btns/toggle_quick"), function(arg_24_0)
+		setActive(arg_14_0.rtMainPanel, false)
+		setActive(arg_14_0.rtBottomPanel, false)
+		setActive(arg_14_0.rtQuickPanel, false)
+		setActive(arg_14_0.rtCodePanel:Find("btns/btn_withdrawn"), not arg_24_0)
+		setActive(arg_14_0.rtCodePanel:Find("btns/btn_cancel"), arg_24_0)
 
-		if uv0.quickIndex then
-			triggerToggle(uv0.rtCodePanel:Find("equipments_quick"):GetChild(uv0.quickIndex - 1), false)
+		if arg_14_0.quickIndex then
+			triggerToggle(arg_14_0.rtCodePanel:Find("equipments_quick"):GetChild(arg_14_0.quickIndex - 1), false)
 		end
 
-		eachChild(uv0.rtCodePanel:Find("equipments_quick"), function (slot0)
-			SetCompomentEnabled(slot0, typeof(Toggle), false)
+		eachChild(arg_14_0.rtCodePanel:Find("equipments_quick"), function(arg_25_0)
+			SetCompomentEnabled(arg_25_0, typeof(Toggle), false)
 		end)
 
-		uv0.ltID = LeanTween.moveY(uv0.rtCodePanel, slot0 and 420 or 80, math.max(math.abs((slot0 and 420 or 80) - uv0.rtCodePanel.anchoredPosition.y), 0.1) / 2000):setOnComplete(System.Action(function ()
-			uv0.ltID = nil
+		arg_14_0.ltID = LeanTween.moveY(arg_14_0.rtCodePanel, arg_24_0 and 420 or 80, math.max(math.abs((arg_24_0 and 420 or 80) - arg_14_0.rtCodePanel.anchoredPosition.y), 0.1) / 2000):setOnComplete(System.Action(function()
+			arg_14_0.ltID = nil
 
-			setActive(uv0.rtMainPanel, not uv1)
-			setActive(uv0.rtBottomPanel, not uv1)
-			setActive(uv0.rtQuickPanel, uv1)
+			setActive(arg_14_0.rtMainPanel, not arg_24_0)
+			setActive(arg_14_0.rtBottomPanel, not arg_24_0)
+			setActive(arg_14_0.rtQuickPanel, arg_24_0)
 
-			if uv1 then
-				uv0:initQuickPanel()
+			if arg_24_0 then
+				arg_14_0:initQuickPanel()
 			end
 		end)).uniqueId
 	end)
-	eachChild(slot0.rtCodePanel:Find("equipments_quick"), function (slot0)
-		onToggle(uv0, slot0, function (slot0)
-			if slot0 then
-				uv0.quickIndex = uv1:GetSiblingIndex() + 1
+	eachChild(arg_14_0.rtCodePanel:Find("equipments_quick"), function(arg_27_0)
+		onToggle(arg_14_0, arg_27_0, function(arg_28_0)
+			if arg_28_0 then
+				arg_14_0.quickIndex = arg_27_0:GetSiblingIndex() + 1
 
-				uv0:updateQuickPanel()
-			elseif uv0.quickIndex == uv1:GetSiblingIndex() + 1 then
-				uv0.quickIndex = nil
+				arg_14_0:updateQuickPanel()
+			elseif arg_14_0.quickIndex == arg_27_0:GetSiblingIndex() + 1 then
+				arg_14_0.quickIndex = nil
 
-				uv0:updateQuickPanel()
+				arg_14_0:updateQuickPanel()
 			end
 		end, SFX_PANEL)
-		SetCompomentEnabled(slot0, typeof(Toggle), false)
+		SetCompomentEnabled(arg_27_0, typeof(Toggle), false)
 	end)
 
-	slot0.rtQuickPanel = slot0._tf:Find("quick_panel")
+	arg_14_0.rtQuickPanel = arg_14_0._tf:Find("quick_panel")
 
-	onToggle(slot0, slot0.rtQuickPanel:Find("title/equiping"), function (slot0)
-		uv0.equipingFlag = slot0
+	onToggle(arg_14_0, arg_14_0.rtQuickPanel:Find("title/equiping"), function(arg_29_0)
+		arg_14_0.equipingFlag = arg_29_0
 
-		if isActive(uv0.rtQuickPanel) then
-			uv0:updateQuickPanel(true)
+		if isActive(arg_14_0.rtQuickPanel) then
+			arg_14_0:updateQuickPanel(true)
 		end
 	end, SFX_PANEL)
 
-	slot0.indexData = slot0.indexData or {}
-	slot0.spweaponIndexDatas = slot0.spweaponIndexDatas or {}
-	slot1 = slot0.rtQuickPanel:Find("title/filter")
+	arg_14_0.indexData = arg_14_0.indexData or {}
+	arg_14_0.spweaponIndexDatas = arg_14_0.spweaponIndexDatas or {}
 
-	onButton(slot0, slot1, function ()
-		assert(uv0.quickIndex)
-		uv0:emit(EquipCodeMediator.OPEN_CUSTOM_INDEX, switch(uv0.quickIndex, {
-			[6] = function ()
+	local var_14_0 = arg_14_0.rtQuickPanel:Find("title/filter")
+
+	onButton(arg_14_0, var_14_0, function()
+		assert(arg_14_0.quickIndex)
+
+		local var_30_0 = switch(arg_14_0.quickIndex, {
+			[6] = function()
 				return setmetatable({
-					indexDatas = Clone(uv0.spweaponIndexDatas),
-					callback = function (slot0)
-						uv0.spweaponIndexDatas.typeIndex = slot0.typeIndex
-						uv0.spweaponIndexDatas.rarityIndex = slot0.rarityIndex
-						slot1 = underscore(uv0.spweaponIndexDatas):chain():keys():all(function (slot0)
-							return uv0.spweaponIndexDatas[slot0] == StoreHouseConst.SPWEAPON_INDEX_COMMON.customPanels[slot0].options[1]
+					indexDatas = Clone(arg_14_0.spweaponIndexDatas),
+					callback = function(arg_32_0)
+						arg_14_0.spweaponIndexDatas.typeIndex = arg_32_0.typeIndex
+						arg_14_0.spweaponIndexDatas.rarityIndex = arg_32_0.rarityIndex
+
+						local var_32_0 = underscore(arg_14_0.spweaponIndexDatas):chain():keys():all(function(arg_33_0)
+							return arg_14_0.spweaponIndexDatas[arg_33_0] == StoreHouseConst.SPWEAPON_INDEX_COMMON.customPanels[arg_33_0].options[1]
 						end):value()
 
-						setActive(uv1:Find("on"), not slot1)
-						setActive(uv1:Find("off"), slot1)
-						uv0:updateQuickPanel()
+						setActive(var_14_0:Find("on"), not var_32_0)
+						setActive(var_14_0:Find("off"), var_32_0)
+						arg_14_0:updateQuickPanel()
 					end
 				}, {
 					__index = StoreHouseConst.SPWEAPON_INDEX_COMMON
 				})
 			end
-		}, function ()
+		}, function()
 			return setmetatable({
-				indexDatas = Clone(uv0.indexData),
-				callback = function (slot0)
-					uv0.indexData.typeIndex = slot0.typeIndex
-					uv0.indexData.equipPropertyIndex = slot0.equipPropertyIndex
-					uv0.indexData.equipPropertyIndex2 = slot0.equipPropertyIndex2
-					uv0.indexData.equipAmmoIndex1 = slot0.equipAmmoIndex1
-					uv0.indexData.equipAmmoIndex2 = slot0.equipAmmoIndex2
-					uv0.indexData.equipCampIndex = slot0.equipCampIndex
-					uv0.indexData.rarityIndex = slot0.rarityIndex
-					uv0.indexData.extraIndex = slot0.extraIndex
-					slot1 = underscore(uv0.indexData):chain():keys():all(function (slot0)
-						return uv0.indexData[slot0] == StoreHouseConst.EQUIPMENT_INDEX_COMMON.customPanels[slot0].options[1]
+				indexDatas = Clone(arg_14_0.indexData),
+				callback = function(arg_35_0)
+					arg_14_0.indexData.typeIndex = arg_35_0.typeIndex
+					arg_14_0.indexData.equipPropertyIndex = arg_35_0.equipPropertyIndex
+					arg_14_0.indexData.equipPropertyIndex2 = arg_35_0.equipPropertyIndex2
+					arg_14_0.indexData.equipAmmoIndex1 = arg_35_0.equipAmmoIndex1
+					arg_14_0.indexData.equipAmmoIndex2 = arg_35_0.equipAmmoIndex2
+					arg_14_0.indexData.equipCampIndex = arg_35_0.equipCampIndex
+					arg_14_0.indexData.rarityIndex = arg_35_0.rarityIndex
+					arg_14_0.indexData.extraIndex = arg_35_0.extraIndex
+
+					local var_35_0 = underscore(arg_14_0.indexData):chain():keys():all(function(arg_36_0)
+						return arg_14_0.indexData[arg_36_0] == StoreHouseConst.EQUIPMENT_INDEX_COMMON.customPanels[arg_36_0].options[1]
 					end):value()
 
-					setActive(uv1:Find("on"), not slot1)
-					setActive(uv1:Find("off"), slot1)
-					uv0:updateQuickPanel()
+					setActive(var_14_0:Find("on"), not var_35_0)
+					setActive(var_14_0:Find("off"), var_35_0)
+					arg_14_0:updateQuickPanel()
 				end
 			}, {
 				__index = StoreHouseConst.EQUIPMENT_INDEX_COMMON
 			})
-		end))
+		end)
+
+		arg_14_0:emit(EquipCodeMediator.OPEN_CUSTOM_INDEX, var_30_0)
 	end, SFX_PANEL)
 
-	slot0.comList = slot0.rtQuickPanel:Find("frame/container"):GetComponent("LScrollRect")
+	arg_14_0.comList = arg_14_0.rtQuickPanel:Find("frame/container"):GetComponent("LScrollRect")
 
-	function slot0.comList.onInitItem(slot0)
-		ClearTweenItemAlphaAndWhite(slot0)
+	function arg_14_0.comList.onInitItem(arg_37_0)
+		ClearTweenItemAlphaAndWhite(arg_37_0)
 	end
 
-	function slot0.comList.onReturnItem(slot0, slot1)
-		ClearTweenItemAlphaAndWhite(slot1)
+	function arg_14_0.comList.onReturnItem(arg_38_0, arg_38_1)
+		ClearTweenItemAlphaAndWhite(arg_38_1)
 	end
 
-	function slot0.comList.onUpdateItem(slot0, slot1)
-		if not uv0.quickIndex then
+	function arg_14_0.comList.onUpdateItem(arg_39_0, arg_39_1)
+		if not arg_14_0.quickIndex then
 			return
 		end
 
-		TweenItemAlphaAndWhite(slot1)
+		TweenItemAlphaAndWhite(arg_39_1)
 
-		slot2 = tf(slot1)
-		slot3 = uv0.filterEquipments[slot0 + 1]
+		local var_39_0 = tf(arg_39_1)
+		local var_39_1 = arg_14_0.filterEquipments[arg_39_0 + 1]
 
-		setActive(slot2:Find("unEquip"), not slot3)
-		setActive(slot2:Find("bg"), slot3)
-		setActive(slot2:Find("IconTpl"), slot3)
+		setActive(var_39_0:Find("unEquip"), not var_39_1)
+		setActive(var_39_0:Find("bg"), var_39_1)
+		setActive(var_39_0:Find("IconTpl"), var_39_1)
 
-		if uv0.quickIndex == 6 then
-			uv1(slot2, slot3, slot3 and slot3.shipId and getProxy(BayProxy):getShipById(slot3.shipId) or nil)
-			onButton(uv0, slot2, function ()
-				slot0 = {}
+		if arg_14_0.quickIndex == 6 then
+			var_0_2(var_39_0, var_39_1, var_39_1 and var_39_1.shipId and getProxy(BayProxy):getShipById(var_39_1.shipId) or nil)
+			onButton(arg_14_0, var_39_0, function()
+				local var_40_0 = {}
 
-				if uv0 and PlayerPrefs.GetInt("QUICK_CHANGE_EQUIP", 1) == 1 then
-					table.insert(slot0, function (slot0)
-						uv0:emit(uv1.ON_SPWEAPON, {
+				if var_39_1 and PlayerPrefs.GetInt("QUICK_CHANGE_EQUIP", 1) == 1 then
+					table.insert(var_40_0, function(arg_41_0)
+						arg_14_0:emit(var_0_0.ON_SPWEAPON, {
 							quickFlag = true,
 							type = EquipmentInfoMediator.TYPE_REPLACE,
-							oldSpWeaponUid = uv2:GetUID(),
-							oldShipId = uv2:GetShipId(),
-							shipVO = uv0:getEquipShipVO(uv0.equipData),
-							quickCallback = slot0
+							oldSpWeaponUid = var_39_1:GetUID(),
+							oldShipId = var_39_1:GetShipId(),
+							shipVO = arg_14_0:getEquipShipVO(arg_14_0.equipData),
+							quickCallback = arg_41_0
 						})
 					end)
 				end
 
-				seriesAsync(slot0, function ()
-					uv0.equipData[uv0.quickIndex] = uv1
+				seriesAsync(var_40_0, function()
+					arg_14_0.equipData[arg_14_0.quickIndex] = var_39_1
 
-					uv2(uv0.rtCodePanel:Find("equipments_quick/SpSlot"), uv1, uv1 and uv1.shipId and getProxy(BayProxy):getShipById(uv1.shipId) or nil)
-					uv3(slot0, uv0.codeData[uv0.quickIndex], uv1)
-					uv0:updateQuickPanel()
+					local var_42_0 = arg_14_0.rtCodePanel:Find("equipments_quick/SpSlot")
+
+					var_0_3(var_42_0, var_39_1, var_39_1 and var_39_1.shipId and getProxy(BayProxy):getShipById(var_39_1.shipId) or nil)
+					var_0_4(var_42_0, arg_14_0.codeData[arg_14_0.quickIndex], var_39_1)
+					arg_14_0:updateQuickPanel()
 				end)
 			end, SFX_PANEL)
 		else
-			uv5(slot2, slot3 and setmetatable({
-				count = slot3.count - underscore.reduce(uv0.equipData, 0, function (slot0, slot1)
-					return slot0 + (slot1 == uv0 and 1 or 0)
+			var_0_1(var_39_0, var_39_1 and setmetatable({
+				count = var_39_1.count - underscore.reduce(arg_14_0.equipData, 0, function(arg_43_0, arg_43_1)
+					return arg_43_0 + (arg_43_1 == var_39_1 and 1 or 0)
 				end)
 			}, {
-				__index = slot3
-			}) or slot3, slot3 and slot3.shipId and getProxy(BayProxy):getShipById(slot3.shipId) or nil)
-			setActive(slot2:Find("IconTpl/mask"), slot3 and slot3.mask)
-			onButton(uv0, slot2, function ()
-				if uv0 and uv0.mask then
+				__index = var_39_1
+			}) or var_39_1, var_39_1 and var_39_1.shipId and getProxy(BayProxy):getShipById(var_39_1.shipId) or nil)
+			setActive(var_39_0:Find("IconTpl/mask"), var_39_1 and var_39_1.mask)
+			onButton(arg_14_0, var_39_0, function()
+				if var_39_1 and var_39_1.mask then
 					return
 				end
 
-				slot0 = {}
+				local var_44_0 = {}
 
-				if uv0 and PlayerPrefs.GetInt("QUICK_CHANGE_EQUIP", 1) == 1 then
-					table.insert(slot0, function (slot0)
-						uv0:emit(uv1.ON_EQUIPMENT, {
+				if var_39_1 and PlayerPrefs.GetInt("QUICK_CHANGE_EQUIP", 1) == 1 then
+					table.insert(var_44_0, function(arg_45_0)
+						arg_14_0:emit(var_0_0.ON_EQUIPMENT, {
 							quickFlag = true,
 							type = EquipmentInfoMediator.TYPE_REPLACE,
-							equipmentId = uv2.id,
-							oldShipId = uv2.shipId,
-							oldPos = uv2.shipPos,
-							shipVO = uv0:getEquipShipVO(uv0.equipData),
-							pos = uv0.quickIndex,
-							quickCallback = slot0
+							equipmentId = var_39_1.id,
+							oldShipId = var_39_1.shipId,
+							oldPos = var_39_1.shipPos,
+							shipVO = arg_14_0:getEquipShipVO(arg_14_0.equipData),
+							pos = arg_14_0.quickIndex,
+							quickCallback = arg_45_0
 						})
 					end)
 				end
 
-				seriesAsync(slot0, function ()
-					uv0.equipData[uv0.quickIndex] = uv1
+				seriesAsync(var_44_0, function()
+					arg_14_0.equipData[arg_14_0.quickIndex] = var_39_1
 
-					uv2(uv0.rtCodePanel:Find("equipments_quick"):GetChild(uv0.quickIndex - 1), uv1, uv1 and uv1.shipId and getProxy(BayProxy):getShipById(uv1.shipId) or nil)
-					uv3(slot0, uv0.codeData[uv0.quickIndex], uv1)
-					uv0:updateQuickPanel()
+					local var_46_0 = arg_14_0.rtCodePanel:Find("equipments_quick"):GetChild(arg_14_0.quickIndex - 1)
+
+					var_0_1(var_46_0, var_39_1, var_39_1 and var_39_1.shipId and getProxy(BayProxy):getShipById(var_39_1.shipId) or nil)
+					var_0_4(var_46_0, arg_14_0.codeData[arg_14_0.quickIndex], var_39_1)
+					arg_14_0:updateQuickPanel()
 				end)
 			end, SFX_PANEL)
 		end
 	end
 
-	setText(slot1:Find("on/text2"), i18n("quick_equip_tip2"))
-	setText(slot1:Find("off/text2"), i18n("quick_equip_tip2"))
-	setText(slot0.rtQuickPanel:Find("title/equiping/on/text2"), i18n("quick_equip_tip1"))
-	setText(slot0.rtQuickPanel:Find("title/equiping/off/text2"), i18n("quick_equip_tip1"))
-	setText(slot0.rtQuickPanel:Find("title/text"), i18n("quick_equip_tip3"))
-	setText(slot0.rtQuickPanel:Find("frame/emptyTitle/text"), i18n("quick_equip_tip4"))
-	setText(slot0.rtQuickPanel:Find("frame/selectTitle/text"), i18n("quick_equip_tip5"))
+	setText(var_14_0:Find("on/text2"), i18n("quick_equip_tip2"))
+	setText(var_14_0:Find("off/text2"), i18n("quick_equip_tip2"))
+	setText(arg_14_0.rtQuickPanel:Find("title/equiping/on/text2"), i18n("quick_equip_tip1"))
+	setText(arg_14_0.rtQuickPanel:Find("title/equiping/off/text2"), i18n("quick_equip_tip1"))
+	setText(arg_14_0.rtQuickPanel:Find("title/text"), i18n("quick_equip_tip3"))
+	setText(arg_14_0.rtQuickPanel:Find("frame/emptyTitle/text"), i18n("quick_equip_tip4"))
+	setText(arg_14_0.rtQuickPanel:Find("frame/selectTitle/text"), i18n("quick_equip_tip5"))
 
-	slot0.rtBottomPanel = slot0._tf:Find("bottom_panel")
-	slot0.rtInputField = slot0.rtBottomPanel:Find("InputField")
+	arg_14_0.rtBottomPanel = arg_14_0._tf:Find("bottom_panel")
+	arg_14_0.rtInputField = arg_14_0.rtBottomPanel:Find("InputField")
 
-	setText(slot0.rtInputField:Find("Placeholder"), i18n("equipcode_input"))
-	setInputText(slot0.rtInputField, slot0.contextData.code or nil)
+	setText(arg_14_0.rtInputField:Find("Placeholder"), i18n("equipcode_input"))
+	setInputText(arg_14_0.rtInputField, arg_14_0.contextData.code or nil)
 
-	slot0.btnInput = slot0.rtBottomPanel:Find("btn_confirm")
+	arg_14_0.btnInput = arg_14_0.rtBottomPanel:Find("btn_confirm")
 
-	onButton(slot0, slot0.btnInput, function ()
-		uv0.code = getInputText(uv0.rtInputField)
+	onButton(arg_14_0, arg_14_0.btnInput, function()
+		arg_14_0.code = getInputText(arg_14_0.rtInputField)
 
-		uv0:updateDispalyPanel(uv0.rtCodePanel, "code")
+		arg_14_0:updateDispalyPanel(arg_14_0.rtCodePanel, "code")
 	end, SFX_CONFIRM)
 end
 
-function slot0.didEnter(slot0)
-	slot0.code = buildEquipCode(slot0.shipVO)
+function var_0_0.didEnter(arg_48_0)
+	arg_48_0.code = buildEquipCode(arg_48_0.shipVO)
 
-	slot0:updateDispalyPanel(slot0.rtMainPanel, "main")
-	slot0:updateDispalyPanel(slot0.rtCodePanel, "code")
+	arg_48_0:updateDispalyPanel(arg_48_0.rtMainPanel, "main")
+	arg_48_0:updateDispalyPanel(arg_48_0.rtCodePanel, "code")
 end
 
-function slot0.updateDispalyPanel(slot0, slot1, slot2)
-	updateDrop(slot1:Find("IconTpl"), {
+function var_0_0.updateDispalyPanel(arg_49_0, arg_49_1, arg_49_2)
+	updateDrop(arg_49_1:Find("IconTpl"), {
 		type = DROP_TYPE_SHIP,
-		id = slot0.shipVO.configId
+		id = arg_49_0.shipVO.configId
 	})
-	setActive(slot1:Find("equipments/SpSlot/Lock"), not slot0.shipVO:IsSpweaponUnlock())
 
-	if slot2 == "main" then
-		for slot7, slot8 in ipairs(slot0.shipVO:getAllEquipments()) do
-			uv0(slot1:Find("equipments"):GetChild(slot7 - 1), slot8)
+	local var_49_0 = arg_49_0.shipVO:IsSpweaponUnlock()
+
+	setActive(arg_49_1:Find("equipments/SpSlot/Lock"), not var_49_0)
+
+	if arg_49_2 == "main" then
+		for iter_49_0, iter_49_1 in ipairs(arg_49_0.shipVO:getAllEquipments()) do
+			var_0_1(arg_49_1:Find("equipments"):GetChild(iter_49_0 - 1), iter_49_1)
 		end
 
-		uv1(slot1:Find("equipments/SpSlot"), slot0.shipVO:GetSpWeapon(), slot0.shipVO)
-	elseif slot2 == "code" then
-		slot4 = pg.equip_data_template
-		slot5 = pg.spweapon_data_statistics
-		slot6 = false
-		slot0.codeData = {}
+		var_0_3(arg_49_1:Find("equipments/SpSlot"), arg_49_0.shipVO:GetSpWeapon(), arg_49_0.shipVO)
+	elseif arg_49_2 == "code" then
+		local var_49_1 = pg.equip_data_template
+		local var_49_2 = pg.spweapon_data_statistics
+		local var_49_3 = false
 
-		for slot10, slot11 in ipairs(parseEquipCode(slot0.code)) do
-			if slot10 == 6 then
-				slot0.codeData[slot10] = slot3 and slot5[slot11] and SpWeapon.New({
-					id = slot11
+		arg_49_0.codeData = {}
+
+		for iter_49_2, iter_49_3 in ipairs(parseEquipCode(arg_49_0.code)) do
+			if iter_49_2 == 6 then
+				arg_49_0.codeData[iter_49_2] = var_49_0 and var_49_2[iter_49_3] and SpWeapon.New({
+					id = iter_49_3
 				}) or false
 
-				if slot0.codeData[slot10] and not slot0:getEquipShipVO(slot0.codeData):CanEquipSpWeapon(slot0.codeData[slot10]) then
-					slot0.codeData[slot10] = false
-					slot6 = true
+				if arg_49_0.codeData[iter_49_2] and not arg_49_0:getEquipShipVO(arg_49_0.codeData):CanEquipSpWeapon(arg_49_0.codeData[iter_49_2]) then
+					arg_49_0.codeData[iter_49_2] = false
+					var_49_3 = true
 				end
 
-				uv1(slot1:Find("equipments/SpSlot"), slot0.codeData[slot10])
+				var_0_3(arg_49_1:Find("equipments/SpSlot"), arg_49_0.codeData[iter_49_2])
 			else
-				slot0.codeData[slot10] = slot4[slot11] and Equipment.New({
-					id = slot11
+				arg_49_0.codeData[iter_49_2] = var_49_1[iter_49_3] and Equipment.New({
+					id = iter_49_3
 				}) or false
 
-				if slot0.codeData[slot10] and not slot0:getEquipShipVO(slot0.codeData):canEquipAtPos(slot0.codeData[slot10], slot10) then
-					slot0.codeData[slot10] = false
-					slot6 = true
+				if arg_49_0.codeData[iter_49_2] and not arg_49_0:getEquipShipVO(arg_49_0.codeData):canEquipAtPos(arg_49_0.codeData[iter_49_2], iter_49_2) then
+					arg_49_0.codeData[iter_49_2] = false
+					var_49_3 = true
 				end
 
-				uv0(slot1:Find("equipments"):GetChild(slot10 - 1), slot0.codeData[slot10])
+				var_0_1(arg_49_1:Find("equipments"):GetChild(iter_49_2 - 1), arg_49_0.codeData[iter_49_2])
 			end
 		end
 
-		if slot6 then
+		if var_49_3 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_slot_unmatch"))
 		end
 
-		slot0.equipData = {}
+		arg_49_0.equipData = {}
 
-		for slot10, slot11 in ipairs(slot0.codeData) do
-			if slot11 and slot0.shipData[slot10] and slot11.configId == slot0.shipData[slot10].configId then
-				slot0.equipData[slot10] = slot0.shipData[slot10]
+		for iter_49_4, iter_49_5 in ipairs(arg_49_0.codeData) do
+			if iter_49_5 and arg_49_0.shipData[iter_49_4] and iter_49_5.configId == arg_49_0.shipData[iter_49_4].configId then
+				arg_49_0.equipData[iter_49_4] = arg_49_0.shipData[iter_49_4]
 			end
 		end
 
-		for slot10, slot11 in ipairs(slot0.codeData) do
-			if slot11 and not slot0.equipData[slot10] then
-				slot12 = slot10 == 6 and slot5 or slot4
-				slot13 = {
-					slot11.configId
+		for iter_49_6, iter_49_7 in ipairs(arg_49_0.codeData) do
+			if iter_49_7 and not arg_49_0.equipData[iter_49_6] then
+				local var_49_4 = iter_49_6 == 6 and var_49_2 or var_49_1
+				local var_49_5 = {
+					iter_49_7.configId
 				}
 
-				for slot17, slot18 in ipairs({
+				for iter_49_8, iter_49_9 in ipairs({
 					"next",
 					"prev"
 				}) do
-					slot19 = slot11.configId
+					local var_49_6 = iter_49_7.configId
 
-					while slot12[slot19][slot18] > 0 do
-						table.insert(slot13, slot12[slot19][slot18])
+					while var_49_4[var_49_6][iter_49_9] > 0 do
+						var_49_6 = var_49_4[var_49_6][iter_49_9]
+
+						table.insert(var_49_5, var_49_6)
 					end
 				end
 
-				if slot10 == 6 then
-					function slot17(slot0)
-						return not slot0.shipId
-					end
+				if iter_49_6 == 6 then
+					for iter_49_10, iter_49_11 in ipairs(underscore.filter(arg_49_0.spWeapons, function(arg_50_0)
+						return not arg_50_0.shipId
+					end)) do
+						local var_49_7 = table.indexof(var_49_5, iter_49_11.configId)
 
-					for slot17, slot18 in ipairs(underscore.filter(slot0.spWeapons, slot17)) do
-						if table.indexof(slot13, slot18.configId) and (not slot0.equipData[slot10] or slot19 < table.indexof(slot13, slot0.equipData[slot10].configId)) then
-							slot0.equipData[slot10] = slot18
+						if var_49_7 and (not arg_49_0.equipData[iter_49_6] or var_49_7 < table.indexof(var_49_5, arg_49_0.equipData[iter_49_6].configId)) then
+							arg_49_0.equipData[iter_49_6] = iter_49_11
 						end
 					end
 				else
-					function slot17(slot0)
-						return not slot0.shipId or slot0.shipId == uv0.shipVO.id
-					end
+					for iter_49_12, iter_49_13 in ipairs(underscore.filter(arg_49_0.equips, function(arg_51_0)
+						return not arg_51_0.shipId or arg_51_0.shipId == arg_49_0.shipVO.id
+					end)) do
+						local var_49_8 = table.indexof(var_49_5, iter_49_13.configId)
 
-					for slot17, slot18 in ipairs(underscore.filter(slot0.equips, slot17)) do
-						if table.indexof(slot13, slot18.configId) and (not slot0.equipData[slot10] or slot19 < table.indexof(slot13, slot0.equipData[slot10].configId)) and underscore.reduce(slot0.equipData, 0, function (slot0, slot1)
-							return slot0 + (slot1 == uv0 and 1 or 0)
-						end) < slot18.count then
-							slot0.equipData[slot10] = slot18
+						if var_49_8 and (not arg_49_0.equipData[iter_49_6] or var_49_8 < table.indexof(var_49_5, arg_49_0.equipData[iter_49_6].configId)) and iter_49_13.count > underscore.reduce(arg_49_0.equipData, 0, function(arg_52_0, arg_52_1)
+							return arg_52_0 + (arg_52_1 == iter_49_13 and 1 or 0)
+						end) then
+							arg_49_0.equipData[iter_49_6] = iter_49_13
 						end
 					end
 				end
 			end
 
-			slot0.equipData[slot10] = defaultValue(slot0.equipData[slot10], false)
+			arg_49_0.equipData[iter_49_6] = defaultValue(arg_49_0.equipData[iter_49_6], false)
 		end
 
-		slot10 = "equipments_quick/SpSlot/Lock"
+		setActive(arg_49_1:Find("equipments_quick/SpSlot/Lock"), not var_49_0)
 
-		setActive(slot1:Find(slot10), not slot3)
+		for iter_49_14, iter_49_15 in ipairs(arg_49_0.equipData) do
+			local var_49_9 = arg_49_1:Find("equipments_quick"):GetChild(iter_49_14 - 1)
 
-		for slot10, slot11 in ipairs(slot0.equipData) do
-			slot12 = slot1:Find("equipments_quick"):GetChild(slot10 - 1)
-
-			if slot10 == 6 then
-				uv1(slot12, slot11, slot11 and slot11.shipId and getProxy(BayProxy):getShipById(slot11.shipId) or nil)
+			if iter_49_14 == 6 then
+				var_0_3(var_49_9, iter_49_15, iter_49_15 and iter_49_15.shipId and getProxy(BayProxy):getShipById(iter_49_15.shipId) or nil)
 			else
-				slot13 = uv0
-				slot14 = slot12
-				slot15 = slot11
-				slot16 = slot11 and slot11.shipId and getProxy(BayProxy):getShipById(slot11.shipId) or nil
-
-				slot13(slot14, slot15, slot16)
+				var_0_1(var_49_9, iter_49_15, iter_49_15 and iter_49_15.shipId and getProxy(BayProxy):getShipById(iter_49_15.shipId) or nil)
 			end
 
-			uv2(slot12, slot0.codeData[slot10], slot11)
+			var_0_4(var_49_9, arg_49_0.codeData[iter_49_14], iter_49_15)
 		end
 	else
 		assert(false)
 	end
 end
 
-function slot0.initQuickPanel(slot0)
-	slot2 = slot0.rtCodePanel
-
-	eachChild(slot2:Find("equipments_quick"), function (slot0)
-		if slot0:GetSiblingIndex() + 1 == 6 then
-			SetCompomentEnabled(slot0, typeof(Toggle), uv0.shipVO:IsSpweaponUnlock())
+function var_0_0.initQuickPanel(arg_53_0)
+	eachChild(arg_53_0.rtCodePanel:Find("equipments_quick"), function(arg_54_0)
+		if arg_54_0:GetSiblingIndex() + 1 == 6 then
+			SetCompomentEnabled(arg_54_0, typeof(Toggle), arg_53_0.shipVO:IsSpweaponUnlock())
 		else
-			SetCompomentEnabled(slot0, typeof(Toggle), true)
+			SetCompomentEnabled(arg_54_0, typeof(Toggle), true)
 		end
 	end)
 
-	if slot0.quickIndex then
-		triggerToggle(slot0.rtCodePanel:Find("equipments_quick"):GetChild(slot0.quickIndex - 1), false)
+	if arg_53_0.quickIndex then
+		triggerToggle(arg_53_0.rtCodePanel:Find("equipments_quick"):GetChild(arg_53_0.quickIndex - 1), false)
 	end
 
-	triggerToggle(slot0.rtQuickPanel:Find("title/equiping"), true)
-	slot0:updateQuickPanel()
+	triggerToggle(arg_53_0.rtQuickPanel:Find("title/equiping"), true)
+	arg_53_0:updateQuickPanel()
 end
 
-function slot0.updateQuickPanel(slot0)
-	if not isActive(slot0.rtQuickPanel) then
+function var_0_0.updateQuickPanel(arg_55_0)
+	if not isActive(arg_55_0.rtQuickPanel) then
 		return
 	end
 
-	setActive(slot0.rtQuickPanel:Find("title/filter"), slot0.quickIndex)
-	setActive(slot0.rtQuickPanel:Find("frame/selectTitle"), not slot0.quickIndex)
+	setActive(arg_55_0.rtQuickPanel:Find("title/filter"), arg_55_0.quickIndex)
+	setActive(arg_55_0.rtQuickPanel:Find("frame/selectTitle"), not arg_55_0.quickIndex)
 
-	if slot0.quickIndex then
-		if slot0.quickIndex == 6 then
-			slot0.filterEquipments = slot0:getFilterSpWeapon()
+	if arg_55_0.quickIndex then
+		if arg_55_0.quickIndex == 6 then
+			arg_55_0.filterEquipments = arg_55_0:getFilterSpWeapon()
 		else
-			slot0.filterEquipments = slot0:getFilterEquipments()
+			arg_55_0.filterEquipments = arg_55_0:getFilterEquipments()
 		end
 
-		if slot0.equipData[slot0.quickIndex] then
-			table.insert(slot0.filterEquipments, 1, false)
+		if arg_55_0.equipData[arg_55_0.quickIndex] then
+			table.insert(arg_55_0.filterEquipments, 1, false)
 		end
 
-		slot0.comList:SetTotalCount(#slot0.filterEquipments)
-		setActive(slot0.rtQuickPanel:Find("frame/emptyTitle"), #slot0.filterEquipments == 0)
+		arg_55_0.comList:SetTotalCount(#arg_55_0.filterEquipments)
+		setActive(arg_55_0.rtQuickPanel:Find("frame/emptyTitle"), #arg_55_0.filterEquipments == 0)
 	else
-		slot0.comList:SetTotalCount(0)
-		setActive(slot0.rtQuickPanel:Find("frame/emptyTitle"), false)
+		arg_55_0.comList:SetTotalCount(0)
+		setActive(arg_55_0.rtQuickPanel:Find("frame/emptyTitle"), false)
 	end
 end
 
-function slot0.getFilterEquipments(slot0)
-	slot1 = slot0:getEquipShipVO(slot0.equipData)
-	slot2 = {
-		slot0.indexData.equipPropertyIndex,
-		slot0.indexData.equipPropertyIndex2
+function var_0_0.getFilterEquipments(arg_56_0)
+	local var_56_0 = arg_56_0:getEquipShipVO(arg_56_0.equipData)
+	local var_56_1 = {
+		arg_56_0.indexData.equipPropertyIndex,
+		arg_56_0.indexData.equipPropertyIndex2
 	}
 
-	return underscore(slot0.equips):chain():filter(function (slot0)
-		return (not slot0.shipId or uv0.equipingFlag) and underscore.reduce(uv0.equipData, 0, function (slot0, slot1)
-			return slot0 + (uv0 == slot1 and 1 or 0)
-		end) < slot0.count and not uv1:isForbiddenAtPos(slot0, uv0.quickIndex) and IndexConst.filterEquipByType(slot0, uv0.indexData.typeIndex) and IndexConst.filterEquipByProperty(slot0, uv2) and IndexConst.filterEquipAmmo1(slot0, uv0.indexData.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot0, uv0.indexData.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot0, uv0.indexData.equipCampIndex) and IndexConst.filterEquipByRarity(slot0, uv0.indexData.rarityIndex) and IndexConst.filterEquipByExtra(slot0, uv0.indexData.extraIndex)
-	end):each(function (slot0)
-		slot0.mask = not uv0:canEquipAtPos(slot0, uv1.quickIndex)
+	return underscore(arg_56_0.equips):chain():filter(function(arg_57_0)
+		return (not arg_57_0.shipId or arg_56_0.equipingFlag) and arg_57_0.count > underscore.reduce(arg_56_0.equipData, 0, function(arg_58_0, arg_58_1)
+			return arg_58_0 + (arg_57_0 == arg_58_1 and 1 or 0)
+		end) and not var_56_0:isForbiddenAtPos(arg_57_0, arg_56_0.quickIndex) and IndexConst.filterEquipByType(arg_57_0, arg_56_0.indexData.typeIndex) and IndexConst.filterEquipByProperty(arg_57_0, var_56_1) and IndexConst.filterEquipAmmo1(arg_57_0, arg_56_0.indexData.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(arg_57_0, arg_56_0.indexData.equipAmmoIndex2) and IndexConst.filterEquipByCamp(arg_57_0, arg_56_0.indexData.equipCampIndex) and IndexConst.filterEquipByRarity(arg_57_0, arg_56_0.indexData.rarityIndex) and IndexConst.filterEquipByExtra(arg_57_0, arg_56_0.indexData.extraIndex)
+	end):each(function(arg_59_0)
+		arg_59_0.mask = not var_56_0:canEquipAtPos(arg_59_0, arg_56_0.quickIndex)
 	end):value()
 end
 
-function slot0.getFilterSpWeapon(slot0)
-	slot1 = slot0:getEquipShipVO(slot0.equipData)
+function var_0_0.getFilterSpWeapon(arg_60_0)
+	local var_60_0 = arg_60_0:getEquipShipVO(arg_60_0.equipData)
 
-	return underscore.filter(slot0.spWeapons, function (slot0)
-		return (not slot0.shipId or uv0.equipingFlag) and slot0 ~= uv0.equipData[6] and not uv1:IsSpWeaponForbidden(slot0) and IndexConst.filterSpWeaponByType(slot0, uv0.spweaponIndexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(slot0, uv0.spweaponIndexDatas.rarityIndex)
+	return underscore.filter(arg_60_0.spWeapons, function(arg_61_0)
+		return (not arg_61_0.shipId or arg_60_0.equipingFlag) and arg_61_0 ~= arg_60_0.equipData[6] and not var_60_0:IsSpWeaponForbidden(arg_61_0) and IndexConst.filterSpWeaponByType(arg_61_0, arg_60_0.spweaponIndexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(arg_61_0, arg_60_0.spweaponIndexDatas.rarityIndex)
 	end)
 end
 
-function slot0.willExit(slot0)
-	if slot0.ltID then
-		LeanTween.cancel(slot0.ltID)
+function var_0_0.willExit(arg_62_0)
+	if arg_62_0.ltID then
+		LeanTween.cancel(arg_62_0.ltID)
 
-		slot0.ltID = nil
+		arg_62_0.ltID = nil
 	end
 end
 
-return slot0
+return var_0_0

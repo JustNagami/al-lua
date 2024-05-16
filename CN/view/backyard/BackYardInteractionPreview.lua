@@ -1,287 +1,289 @@
-slot0 = class("BackYardInteractionPreview")
-slot1 = 0.5
+﻿local var_0_0 = class("BackYardInteractionPreview")
+local var_0_1 = 0.5
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.container = slot1
-	slot0.initPosition = slot2
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.container = arg_1_1
+	arg_1_0.initPosition = arg_1_2
 end
 
-function slot0.Flush(slot0, slot1, slot2, slot3, slot4)
-	if slot0.furnitureId == slot2 and slot0.shipSkinId == slot1 then
+function var_0_0.Flush(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	if arg_2_0.furnitureId == arg_2_2 and arg_2_0.shipSkinId == arg_2_1 then
 		return
 	end
 
-	slot0.scale = slot3 or 1
+	arg_2_0.scale = arg_2_3 or 1
 
-	if slot4 then
-		slot0.position = Vector3(slot4[1], slot4[2], 0)
+	if arg_2_4 then
+		arg_2_0.position = Vector3(arg_2_4[1], arg_2_4[2], 0)
 	else
-		slot0.position = slot0.initPosition
+		arg_2_0.position = arg_2_0.initPosition
 	end
 
-	slot0:StartLoad(slot1, slot2)
+	arg_2_0:StartLoad(arg_2_1, arg_2_2)
 
-	slot0.shipSkinId = slot1
-	slot0.furnitureId = slot2
+	arg_2_0.shipSkinId = arg_2_1
+	arg_2_0.furnitureId = arg_2_2
 end
 
-function slot0.StartLoad(slot0, slot1, slot2)
-	slot0:UnloadSpines()
-
-	slot3 = pg.UIMgr.GetInstance()
-
-	slot3:LoadingOn()
+function var_0_0.StartLoad(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0:UnloadSpines()
+	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync({
-		function (slot0)
-			uv0:LoadFurniture(uv1, slot0)
+		function(arg_4_0)
+			arg_3_0:LoadFurniture(arg_3_2, arg_4_0)
 		end,
-		function (slot0)
-			uv0:LoadShip(uv1, slot0)
+		function(arg_5_0)
+			arg_3_0:LoadShip(arg_3_1, arg_5_0)
 		end,
-		function (slot0)
-			uv0:StartInteraction(uv1, uv2, slot0)
+		function(arg_6_0)
+			arg_3_0:StartInteraction(arg_3_2, arg_3_1, arg_6_0)
 		end
-	}, function ()
+	}, function()
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
 
-function slot0.LoadShip(slot0, slot1, slot2)
-	slot4 = pg.PoolMgr.GetInstance()
+function var_0_0.LoadShip(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = pg.ship_skin_template[arg_8_1].prefab
 
-	slot4:GetSpineChar(pg.ship_skin_template[slot1].prefab, true, function (slot0)
-		if uv0.loadedAnimator then
-			setParent(slot0, uv0.loadedAnimator)
+	pg.PoolMgr.GetInstance():GetSpineChar(var_8_0, true, function(arg_9_0)
+		if arg_8_0.loadedAnimator then
+			setParent(arg_9_0, arg_8_0.loadedAnimator)
 		else
-			setParent(slot0, uv0.loadedFurniture)
+			setParent(arg_9_0, arg_8_0.loadedFurniture)
 		end
 
-		slot0.name = uv1
-		slot0.transform.localScale = Vector3(uv2, uv2, 1)
-		uv0.loadedShip = slot0
-		slot0.transform.localPosition = Vector3()
+		arg_9_0.name = var_8_0
+		arg_9_0.transform.localScale = Vector3(var_0_1, var_0_1, 1)
+		arg_8_0.loadedShip = arg_9_0
+		arg_9_0.transform.localPosition = Vector3()
 
-		uv3()
+		arg_8_2()
 	end)
 end
 
-function slot0.LoadFurniture(slot0, slot1, slot2)
-	slot3 = pg.furniture_data_template
-	slot4 = slot3[slot1].spine[1][1]
-	slot5 = nil
+function var_0_0.LoadFurniture(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = pg.furniture_data_template
+	local var_10_1 = var_10_0[arg_10_1].spine[1][1]
+	local var_10_2
 
-	if slot3[slot1].spine[2] then
-		slot5 = slot3[slot1].spine[2][1]
+	if var_10_0[arg_10_1].spine[2] then
+		var_10_2 = var_10_0[arg_10_1].spine[2][1]
 	end
 
-	slot6 = nil
+	local var_10_3
 
-	if slot3[slot1].animator and slot3[slot1].animator[1] then
-		slot6 = slot3[slot1].animator[1][1]
+	if var_10_0[arg_10_1].animator and var_10_0[arg_10_1].animator[1] then
+		var_10_3 = var_10_0[arg_10_1].animator[1][1]
 	end
 
 	seriesAsync({
-		function (slot0)
-			slot1 = uv0
+		function(arg_11_0)
+			arg_10_0:LoadRes("sfurniture/" .. var_10_1, function(arg_12_0)
+				setParent(arg_12_0, arg_10_0.container)
 
-			slot1:LoadRes("sfurniture/" .. uv1, function (slot0)
-				setParent(slot0, uv0.container)
+				arg_10_0.loadedFurniture = arg_12_0
 
-				uv0.loadedFurniture = slot0
-
-				uv0:AdjustTranform(slot0)
-				uv1()
+				arg_10_0:AdjustTranform(arg_12_0)
+				arg_11_0()
 			end)
 		end,
-		function (slot0)
-			if not uv0 then
-				slot0()
+		function(arg_13_0)
+			if not var_10_3 then
+				arg_13_0()
 
 				return
 			end
 
-			slot1 = uv1
+			arg_10_0:LoadRes("sfurniture/" .. var_10_3, function(arg_14_0)
+				setActive(arg_14_0, false)
+				setParent(arg_14_0, arg_10_0.loadedFurniture)
 
-			slot1:LoadRes("sfurniture/" .. uv0, function (slot0)
-				setActive(slot0, false)
-				setParent(slot0, uv0.loadedFurniture)
+				arg_10_0.loadedAnimator = arg_14_0
 
-				uv0.loadedAnimator = slot0
-
-				uv1()
+				arg_13_0()
 			end)
 		end,
-		function (slot0)
-			if not uv0 then
-				slot0()
+		function(arg_15_0)
+			if not var_10_2 then
+				arg_15_0()
 
 				return
 			end
 
-			slot1 = uv1
+			arg_10_0:LoadRes("sfurniture/" .. var_10_2, function(arg_16_0)
+				setParent(arg_16_0, arg_10_0.container)
 
-			slot1:LoadRes("sfurniture/" .. uv0, function (slot0)
-				setParent(slot0, uv0.container)
+				arg_10_0.loadedFurnitureMask = arg_16_0
 
-				uv0.loadedFurnitureMask = slot0
-
-				uv0:AdjustTranform(slot0)
-				uv1()
+				arg_10_0:AdjustTranform(arg_16_0)
+				arg_15_0()
 			end)
 		end
-	}, slot2)
+	}, arg_10_2)
 end
 
-function slot0.AdjustTranform(slot0, slot1)
-	slot1.transform.localScale = Vector3(slot0.scale, slot0.scale, 1)
-	slot1.transform.localPosition = slot0.position
+function var_0_0.AdjustTranform(arg_17_0, arg_17_1)
+	arg_17_1.transform.localScale = Vector3(arg_17_0.scale, arg_17_0.scale, 1)
+	arg_17_1.transform.localPosition = arg_17_0.position
 end
 
-function slot0.StartInteraction(slot0, slot1, slot2, slot3)
-	slot5 = pg.furniture_data_template[slot1].spine_action_replace
-	slot6 = {}
-	slot7 = {}
+function var_0_0.StartInteraction(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = pg.furniture_data_template[arg_18_1].spine[3][2]
+	local var_18_1 = pg.furniture_data_template[arg_18_1].spine_action_replace
+	local var_18_2 = {}
+	local var_18_3 = {}
 
-	for slot11, slot12 in ipairs(pg.furniture_data_template[slot1].spine[3][2]) do
-		slot13, slot14 = nil
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		local var_18_4
+		local var_18_5
 
-		if type(slot12) == "string" then
-			slot13 = slot12
-			slot14 = slot12
-		elseif type(slot12) == "table" then
-			slot13 = slot12[3] or slot12[1]
-			slot14 = slot12[1]
+		if type(iter_18_1) == "string" then
+			var_18_5, var_18_4 = iter_18_1, iter_18_1
+		elseif type(iter_18_1) == "table" then
+			var_18_5, var_18_4 = iter_18_1[1], iter_18_1[3] or iter_18_1[1]
 		end
 
-		slot15, slot16 = slot0:GetReplaceAction(slot5, slot2, slot14, slot13)
+		local var_18_6, var_18_7 = arg_18_0:GetReplaceAction(var_18_1, arg_18_2, var_18_5, var_18_4)
 
-		table.insert(slot6, slot15)
-		table.insert(slot7, slot16)
+		table.insert(var_18_2, var_18_6)
+		table.insert(var_18_3, var_18_7)
 	end
 
-	slot0:StartActions(slot1, slot6, slot7)
-	slot3()
+	arg_18_0:StartActions(arg_18_1, var_18_2, var_18_3)
+	arg_18_3()
 end
 
-function slot0.GetReplaceAction(slot0, slot1, slot2, slot3, slot4)
-	if not slot1 or slot1 == "" or #slot1 == 0 then
-		return slot3, slot4
+function var_0_0.GetReplaceAction(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4)
+	if not arg_19_1 or arg_19_1 == "" or #arg_19_1 == 0 then
+		return arg_19_3, arg_19_4
 	end
 
-	if _.detect(slot1, function (slot0)
-		return _.any(slot0[2], function (slot0)
-			return slot0 == uv0
-		end) and uv1 == slot0[1] and slot0[5] == 1
-	end) then
-		if (slot5[4] or 0) == 0 then
-			return slot5[3], slot5[3]
-		elseif slot6 == 1 then
-			return slot3, slot5[3]
-		elseif slot6 == 2 then
-			return slot5[3], slot4
+	local var_19_0 = _.detect(arg_19_1, function(arg_20_0)
+		return _.any(arg_20_0[2], function(arg_21_0)
+			return arg_21_0 == arg_19_2
+		end) and arg_19_4 == arg_20_0[1] and arg_20_0[5] == 1
+	end)
+
+	if var_19_0 then
+		local var_19_1 = var_19_0[4] or 0
+
+		if var_19_1 == 0 then
+			return var_19_0[3], var_19_0[3]
+		elseif var_19_1 == 1 then
+			return arg_19_3, var_19_0[3]
+		elseif var_19_1 == 2 then
+			return var_19_0[3], arg_19_4
 		end
 	else
-		return slot3, slot4
+		return arg_19_3, arg_19_4
 	end
 end
 
-function slot0.StartActions(slot0, slot1, slot2, slot3)
-	slot5 = 0
-	slot6 = nil
+function var_0_0.StartActions(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
+	local var_22_0 = 1
+	local var_22_1 = 0
+	local var_22_2
 
-	function slot7()
-		uv0 = uv0 + 1
+	local function var_22_3()
+		var_22_1 = var_22_1 + 1
 
-		if uv0 == 3 then
-			uv1 = uv1 + 1
-			uv0 = 0
+		if var_22_1 == 3 then
+			var_22_1, var_22_0 = 0, var_22_0 + 1
 
-			uv2(uv1)
+			var_22_2(var_22_0)
 		end
 	end
 
-	(function (slot0)
-		if slot0 > #uv0 then
-			if uv1.loadedAnimator then
-				setActive(uv1.loadedAnimator, false)
+	function var_22_2(arg_24_0)
+		if arg_24_0 > #arg_22_2 then
+			if arg_22_0.loadedAnimator then
+				setActive(arg_22_0.loadedAnimator, false)
 			end
 
 			return
 		end
 
-		slot2 = uv2[slot0]
+		local var_24_0 = arg_22_2[arg_24_0]
+		local var_24_1 = arg_22_3[arg_24_0]
 
-		uv1:PlayAction(uv1.loadedFurniture.transform:Find("spine"), uv0[slot0], uv3)
+		arg_22_0:PlayAction(arg_22_0.loadedFurniture.transform:Find("spine"), var_24_0, var_22_3)
 
-		if uv1.loadedFurnitureMask then
-			uv1:PlayAction(uv1.loadedFurniture.transform:Find("spine"), slot1, uv3)
+		if arg_22_0.loadedFurnitureMask then
+			arg_22_0:PlayAction(arg_22_0.loadedFurniture.transform:Find("spine"), var_24_0, var_22_3)
 		else
-			uv3()
+			var_22_3()
 		end
 
-		uv1:PlayAction(uv1.loadedShip, slot2, uv3)
-	end)(1)
+		arg_22_0:PlayAction(arg_22_0.loadedShip, var_24_1, var_22_3)
+	end
 
-	if slot0.loadedAnimator then
-		setActive(slot0.loadedAnimator, true)
+	var_22_2(var_22_0)
+
+	if arg_22_0.loadedAnimator then
+		setActive(arg_22_0.loadedAnimator, true)
 	else
-		slot0:StartFollowBone(slot1)
+		arg_22_0:StartFollowBone(arg_22_1)
 	end
 end
 
-function slot0.StartFollowBone(slot0, slot1)
-	if not pg.furniture_data_template[slot1].followBone then
+function var_0_0.StartFollowBone(arg_25_0, arg_25_1)
+	local var_25_0 = pg.furniture_data_template[arg_25_1].followBone
+
+	if not var_25_0 then
 		return
 	end
 
-	slot0.loadedShip.transform.localScale = Vector3(slot2[2] * uv0, uv0, 1)
-	SpineAnimUI.AddFollower(slot2[1], slot0.loadedFurniture.transform:Find("spine"), slot0.loadedShip.transform):GetComponent("Spine.Unity.BoneFollowerGraphic").followLocalScale = true
-	slot0.loadedShip.transform.localPosition = Vector3(0, 0, 0)
+	local var_25_1 = var_25_0[1]
+	local var_25_2 = var_25_0[2]
+	local var_25_3 = arg_25_0.loadedFurniture.transform
+
+	arg_25_0.loadedShip.transform.localScale = Vector3(var_25_2 * var_0_1, var_0_1, 1)
+	SpineAnimUI.AddFollower(var_25_1, var_25_3:Find("spine"), arg_25_0.loadedShip.transform):GetComponent("Spine.Unity.BoneFollowerGraphic").followLocalScale = true
+	arg_25_0.loadedShip.transform.localPosition = Vector3(0, 0, 0)
 end
 
-function slot0.PlayAction(slot0, slot1, slot2, slot3)
-	slot4 = GetOrAddComponent(slot1, typeof(SpineAnimUI))
+function var_0_0.PlayAction(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+	local var_26_0 = GetOrAddComponent(arg_26_1, typeof(SpineAnimUI))
 
-	slot4:SetActionCallBack(function (slot0)
-		if slot0 == "finish" then
-			uv0:SetActionCallBack(nil)
-			uv1()
+	var_26_0:SetActionCallBack(function(arg_27_0)
+		if arg_27_0 == "finish" then
+			var_26_0:SetActionCallBack(nil)
+			arg_26_3()
 		end
 	end)
-	slot4:SetAction(slot2, 0)
+	var_26_0:SetAction(arg_26_2, 0)
 end
 
-function slot0.UnloadSpines(slot0)
-	if not IsNil(slot0.loadedShip) then
-		pg.PoolMgr.GetInstance():ReturnSpineChar(slot0.loadedShip.name, slot0.loadedShip)
+function var_0_0.UnloadSpines(arg_28_0)
+	if not IsNil(arg_28_0.loadedShip) then
+		pg.PoolMgr.GetInstance():ReturnSpineChar(arg_28_0.loadedShip.name, arg_28_0.loadedShip)
 	end
 
-	if not IsNil(slot0.loadedAnimator) then
-		Object.Destroy(slot0.loadedAnimator)
+	if not IsNil(arg_28_0.loadedAnimator) then
+		Object.Destroy(arg_28_0.loadedAnimator)
 	end
 
-	if not IsNil(slot0.loadedFurniture) then
-		Object.Destroy(slot0.loadedFurniture)
+	if not IsNil(arg_28_0.loadedFurniture) then
+		Object.Destroy(arg_28_0.loadedFurniture)
 	end
 
-	if not IsNil(slot0.loadedFurnitureMask) then
-		Object.Destroy(slot0.loadedFurnitureMask)
+	if not IsNil(arg_28_0.loadedFurnitureMask) then
+		Object.Destroy(arg_28_0.loadedFurnitureMask)
 	end
 
-	slot0.shipSkinId = nil
-	slot0.furnitureId = nil
+	arg_28_0.shipSkinId = nil
+	arg_28_0.furnitureId = nil
 end
 
-function slot0.Dispose(slot0)
-	slot0:UnloadSpines()
+function var_0_0.Dispose(arg_29_0)
+	arg_29_0:UnloadSpines()
 end
 
-function slot0.LoadRes(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync(slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		uv0(Instantiate(slot0))
+function var_0_0.LoadRes(arg_30_0, arg_30_1, arg_30_2)
+	ResourceMgr.Inst:getAssetAsync(arg_30_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_31_0)
+		arg_30_2(Instantiate(arg_31_0))
 	end), true, true)
 end
 
-return slot0
+return var_0_0

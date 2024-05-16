@@ -1,65 +1,70 @@
-slot0 = class("MainBuffView", import("view.base.BaseEventLogic"))
+﻿local var_0_0 = class("MainBuffView", import("view.base.BaseEventLogic"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot2)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0._tf = slot1
-	slot0._go = slot1.gameObject
-	slot0.buffs = {
-		slot1:Find("buff").gameObject
+	arg_1_0._tf = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_0.buffs = {
+		arg_1_1:Find("buff").gameObject
 	}
-	slot0.skinFreeUsageTag = nil
-	slot0.timers = {}
+	arg_1_0.skinFreeUsageTag = nil
+	arg_1_0.timers = {}
 
-	slot0:bind(NewMainScene.ON_BUFF_UPDATE, function (slot0)
-		uv0:Refresh()
+	arg_1_0:bind(NewMainScene.ON_BUFF_UPDATE, function(arg_2_0)
+		arg_1_0:Refresh()
 	end)
 end
 
-function slot0.CollectBuffs(slot0)
-	slot1 = BuffHelper.GetBuffsForMainUI()
+function var_0_0.CollectBuffs(arg_3_0)
+	local var_3_0 = BuffHelper.GetBuffsForMainUI()
+	local var_3_1 = import("GameCfg.activity.MainUIVirtualIconData")
 
-	for slot6, slot7 in ipairs(import("GameCfg.activity.MainUIVirtualIconData").CurrentIconList) do
-		if slot2[slot7]:CheckExist() then
-			table.insert(slot1, slot2[slot7])
+	for iter_3_0, iter_3_1 in ipairs(var_3_1.CurrentIconList) do
+		if var_3_1[iter_3_1]:CheckExist() then
+			table.insert(var_3_0, var_3_1[iter_3_1])
 		end
 	end
 
-	return slot1
+	return var_3_0
 end
 
-function slot0.Init(slot0)
-	slot1 = slot0:CollectBuffs()
-	slot0._tf.anchoredPosition = Vector3(slot0:ShouldFreeUsageSkinTag() and 390 or 285, slot0._tf.anchoredPosition.y, 0)
+function var_0_0.Init(arg_4_0)
+	local var_4_0 = arg_4_0:CollectBuffs()
+	local var_4_1 = arg_4_0:ShouldFreeUsageSkinTag()
 
-	if slot2 then
-		slot0:UpdateFreeUsageSkinTag()
-	elseif slot0.skinFreeUsageTag then
-		setActive(slot0.skinFreeUsageTag, false)
+	arg_4_0._tf.anchoredPosition = Vector3(var_4_1 and 390 or 285, arg_4_0._tf.anchoredPosition.y, 0)
+
+	if var_4_1 then
+		arg_4_0:UpdateFreeUsageSkinTag()
+	elseif arg_4_0.skinFreeUsageTag then
+		setActive(arg_4_0.skinFreeUsageTag, false)
 	end
 
-	slot0:ClearTimers()
-	slot0:UpdateBuffs(slot1)
+	arg_4_0:ClearTimers()
+	arg_4_0:UpdateBuffs(var_4_0)
 
-	slot0.buffList = slot1
-	slot0.showTag = slot2
+	arg_4_0.buffList = var_4_0
+	arg_4_0.showTag = var_4_1
 end
 
-function slot0.Refresh(slot0)
-	slot1 = slot0:CollectBuffs()
-	slot2 = slot0:ShouldFreeUsageSkinTag()
+function var_0_0.Refresh(arg_5_0)
+	local var_5_0 = arg_5_0:CollectBuffs()
+	local var_5_1 = arg_5_0:ShouldFreeUsageSkinTag()
 
-	slot0:Init()
+	arg_5_0:Init()
 end
 
-function slot0.Disable(slot0)
-	slot0.lpos = nil
+function var_0_0.Disable(arg_6_0)
+	arg_6_0.lpos = nil
 end
 
-function slot0.ShouldFreeUsageSkinTag(slot0)
-	for slot5, slot6 in pairs(getProxy(ShipSkinProxy):getRawData()) do
-		if slot6:isExpireType() and not slot6:isExpired() then
+function var_0_0.ShouldFreeUsageSkinTag(arg_7_0)
+	local var_7_0 = getProxy(ShipSkinProxy):getRawData()
+
+	for iter_7_0, iter_7_1 in pairs(var_7_0) do
+		if iter_7_1:isExpireType() and not iter_7_1:isExpired() then
 			return true
 		end
 	end
@@ -67,120 +72,133 @@ function slot0.ShouldFreeUsageSkinTag(slot0)
 	return false
 end
 
-function slot0.UpdateFreeUsageSkinTag(slot0)
-	slot1 = slot0.skinFreeUsageTag or Object.Instantiate(slot0.buffs[1], slot0.buffs[1].transform.parent).transform
-	slot0.skinFreeUsageTag = slot1
-	slot3 = slot1:GetComponent(typeof(Image))
-	slot3.sprite = GetSpriteFromAtlas("ui/mainui_atlas", "huanzhuangtiyan")
+function var_0_0.UpdateFreeUsageSkinTag(arg_8_0)
+	local var_8_0 = arg_8_0.skinFreeUsageTag or Object.Instantiate(arg_8_0.buffs[1], arg_8_0.buffs[1].transform.parent).transform
 
-	slot3:SetNativeSize()
-	onButton(slot0, slot1, function ()
-		uv0:emit(NewMainScene.ON_SKIN_FREEUSAGE_DESC, uv0:GetFreeUsageSkins())
+	arg_8_0.skinFreeUsageTag = var_8_0
+
+	local var_8_1
+
+	var_8_1.sprite, var_8_1 = GetSpriteFromAtlas("ui/mainui_atlas", "huanzhuangtiyan"), var_8_0:GetComponent(typeof(Image))
+
+	var_8_1:SetNativeSize()
+	onButton(arg_8_0, var_8_0, function()
+		local var_9_0 = arg_8_0:GetFreeUsageSkins()
+
+		arg_8_0:emit(NewMainScene.ON_SKIN_FREEUSAGE_DESC, var_9_0)
 	end, SFX_PANEL)
 
-	slot1.anchoredPosition = Vector3(-169, -18, 0)
+	var_8_0.anchoredPosition = Vector3(-169, -18, 0)
 
-	setActive(slot0.skinFreeUsageTag, true)
+	setActive(arg_8_0.skinFreeUsageTag, true)
 end
 
-function slot0.GetFreeUsageSkins(slot0)
-	slot1 = {}
+function var_0_0.GetFreeUsageSkins(arg_10_0)
+	local var_10_0 = {}
+	local var_10_1 = getProxy(ShipSkinProxy):getRawData()
 
-	for slot6, slot7 in pairs(getProxy(ShipSkinProxy):getRawData()) do
-		if slot7:isExpireType() and not slot7:isExpired() then
-			table.insert(slot1, slot7)
+	for iter_10_0, iter_10_1 in pairs(var_10_1) do
+		if iter_10_1:isExpireType() and not iter_10_1:isExpired() then
+			table.insert(var_10_0, iter_10_1)
 		end
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.GetTpl(slot0, slot1)
-	if not slot0.buffs[slot1] then
-		slot2 = slot0.buffs[1]
-		slot3 = Object.Instantiate(slot2, slot2.transform.parent)
-		slot3.transform.anchoredPosition = Vector3(slot2.transform.anchoredPosition.x + (slot1 - 1) * (slot2.transform.sizeDelta.x + 20), slot2.transform.anchoredPosition.y, 0)
-		slot0.buffs[slot1] = slot3
+function var_0_0.GetTpl(arg_11_0, arg_11_1)
+	if not arg_11_0.buffs[arg_11_1] then
+		local var_11_0 = arg_11_0.buffs[1]
+		local var_11_1 = Object.Instantiate(var_11_0, var_11_0.transform.parent)
+		local var_11_2 = var_11_0.transform.anchoredPosition.x + (arg_11_1 - 1) * (var_11_0.transform.sizeDelta.x + 20)
+
+		var_11_1.transform.anchoredPosition = Vector3(var_11_2, var_11_0.transform.anchoredPosition.y, 0)
+		arg_11_0.buffs[arg_11_1] = var_11_1
 	end
 
-	return slot0.buffs[slot1]
+	return arg_11_0.buffs[arg_11_1]
 end
 
-function slot0.UpdateBuffs(slot0, slot1)
-	for slot5 = #slot0.buffs, #slot1 + 1, -1 do
-		if slot0.buffs[slot5] then
-			setActive(slot0.buffs[slot5], false)
+function var_0_0.UpdateBuffs(arg_12_0, arg_12_1)
+	for iter_12_0 = #arg_12_0.buffs, #arg_12_1 + 1, -1 do
+		if arg_12_0.buffs[iter_12_0] then
+			setActive(arg_12_0.buffs[iter_12_0], false)
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot0:GetTpl(slot5)
+	for iter_12_1, iter_12_2 in ipairs(arg_12_1) do
+		local var_12_0 = arg_12_0:GetTpl(iter_12_1)
 
-		if slot6.IsVirtualIcon then
-			slot0:UpdateVirtualBuff(slot7, slot6)
+		if iter_12_2.IsVirtualIcon then
+			arg_12_0:UpdateVirtualBuff(var_12_0, iter_12_2)
 		else
-			slot0:UpdateBuff(slot7, slot6)
-			slot0:AddEndTimer(slot7, slot6)
+			arg_12_0:UpdateBuff(var_12_0, iter_12_2)
+			arg_12_0:AddEndTimer(var_12_0, iter_12_2)
 		end
 	end
 end
 
-function slot0.UpdateVirtualBuff(slot0, slot1, slot2)
-	LoadImageSpriteAtlasAsync("ui/mainui_atlas", slot2.Image, slot1)
-	onButton(slot0, slot1, function ()
-		uv0:emit(NewMainMediator.GO_SINGLE_ACTIVITY, ActivityConst.DOA_PT_ID)
+function var_0_0.UpdateVirtualBuff(arg_13_0, arg_13_1, arg_13_2)
+	LoadImageSpriteAtlasAsync("ui/mainui_atlas", arg_13_2.Image, arg_13_1)
+	onButton(arg_13_0, arg_13_1, function()
+		arg_13_0:emit(NewMainMediator.GO_SINGLE_ACTIVITY, ActivityConst.DOA_PT_ID)
 	end, SFX_PANEL)
-	setActive(slot1, true)
+	setActive(arg_13_1, true)
 end
 
-function slot0.UpdateBuff(slot0, slot1, slot2)
-	LoadImageSpriteAsync(slot2:getConfig("icon"), slot1)
-	onButton(slot0, slot1, function ()
-		slot0 = pg.UIMgr.GetInstance().UIMain:InverseTransformPoint(uv0.transform.position)
+function var_0_0.UpdateBuff(arg_15_0, arg_15_1, arg_15_2)
+	LoadImageSpriteAsync(arg_15_2:getConfig("icon"), arg_15_1)
+	onButton(arg_15_0, arg_15_1, function()
+		local var_16_0 = pg.UIMgr.GetInstance().UIMain:InverseTransformPoint(arg_15_1.transform.position)
 
-		uv1:emit(NewMainScene.ON_BUFF_DESC, uv2, Vector3(slot0.x, slot0.y - 55, 0))
+		arg_15_0:emit(NewMainScene.ON_BUFF_DESC, arg_15_2, Vector3(var_16_0.x, var_16_0.y - 55, 0))
 	end, SFX_PANEL)
-	setActive(slot1, true)
+	setActive(arg_15_1, true)
 end
 
-function slot0.AddEndTimer(slot0, slot1, slot2)
-	slot0.timers[slot1] = Timer.New(function ()
-		setActive(uv0, false)
-	end, slot2:getLeftTime(), 1)
+function var_0_0.AddEndTimer(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_2:getLeftTime()
 
-	slot0.timers[slot1]:Start()
+	arg_17_0.timers[arg_17_1] = Timer.New(function()
+		setActive(arg_17_1, false)
+	end, var_17_0, 1)
+
+	arg_17_0.timers[arg_17_1]:Start()
 end
 
-function slot0.ClearTimers(slot0)
-	for slot4, slot5 in pairs(slot0.timers) do
-		slot5:Stop()
+function var_0_0.ClearTimers(arg_19_0)
+	for iter_19_0, iter_19_1 in pairs(arg_19_0.timers) do
+		iter_19_1:Stop()
 	end
 
-	slot0.timers = {}
+	arg_19_0.timers = {}
 end
 
-function slot0.Fold(slot0, slot1, slot2)
-	slot0.lpos = slot0.lpos or slot0._tf.localPosition
-	slot3 = slot1 and slot0.lpos.y + 200 or slot0.lpos.y
+function var_0_0.Fold(arg_20_0, arg_20_1, arg_20_2)
+	arg_20_0.lpos = arg_20_0.lpos or arg_20_0._tf.localPosition
 
-	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot0._go.transform.localPosition.x, slot3, 0)
+	local var_20_0 = arg_20_1 and arg_20_0.lpos.y + 200 or arg_20_0.lpos.y
+
+	if arg_20_2 == 0 then
+		local var_20_1 = arg_20_0._go.transform.localPosition
+
+		arg_20_0._go.transform.localPosition = Vector3(var_20_1.x, var_20_0, 0)
 	else
-		LeanTween.moveLocalY(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalY(arg_20_0._go, var_20_0, arg_20_2):setEase(LeanTweenType.easeInOutExpo)
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:disposeEvent()
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_21_0)
+	arg_21_0:disposeEvent()
+	pg.DelegateInfo.Dispose(arg_21_0)
 
-	if slot0.skinFreeUsageTag then
-		Destroy(slot0.skinFreeUsageTag.gameObject)
+	if arg_21_0.skinFreeUsageTag then
+		Destroy(arg_21_0.skinFreeUsageTag.gameObject)
 
-		slot0.skinFreeUsageTag = nil
+		arg_21_0.skinFreeUsageTag = nil
 	end
 
-	slot0:ClearTimers()
+	arg_21_0:ClearTimers()
 end
 
-return slot0
+return var_0_0

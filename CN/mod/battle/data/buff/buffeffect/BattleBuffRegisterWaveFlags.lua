@@ -1,21 +1,21 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffRegisterWaveFlags", slot0.Battle.BattleBuffEffect)
-slot1.__name = "BattleBuffRegisterWaveFlags"
-slot0.Battle.BattleBuffRegisterWaveFlags = slot1
+﻿ys = ys or {}
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._flags = slot0._tempData.arg_list.flags
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffRegisterWaveFlags", var_0_0.Battle.BattleBuffEffect)
+
+var_0_1.__name = "BattleBuffRegisterWaveFlags"
+var_0_0.Battle.BattleBuffRegisterWaveFlags = var_0_1
+
+function var_0_1.SetArgs(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._flags = arg_1_0._tempData.arg_list.flags
 end
 
-function slot1.onTrigger(slot0, slot1, slot2, slot3)
-	slot8 = slot3
+function var_0_1.onTrigger(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_1.super.onTrigger(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
-	uv0.super.onTrigger(slot0, slot1, slot2, slot8)
+	local var_2_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
 
-	slot4 = uv1.Battle.BattleDataProxy.GetInstance()
-
-	for slot8, slot9 in ipairs(slot0._flags) do
-		slot4:AddWaveFlag(slot9)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0._flags) do
+		var_2_0:AddWaveFlag(iter_2_1)
 	end
 end

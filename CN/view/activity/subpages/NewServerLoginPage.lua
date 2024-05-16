@@ -1,58 +1,55 @@
-slot0 = class("NewServerLoginPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("NewServerLoginPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.item = slot0:findTF("item", slot0.bg)
-	slot0.items = slot0:findTF("scrollrect/items", slot0.bg)
-	slot0.itemList = UIItemList.New(slot0.items, slot0.item)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("scrollrect/items", arg_1_0.bg)
+	arg_1_0.itemList = UIItemList.New(arg_1_0.items, arg_1_0.item)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.config = pg.activity_7_day_sign[slot0.activity:getConfig("config_id")]
-	slot0.Day = #slot0.config.front_drops
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.config = pg.activity_7_day_sign[arg_2_0.activity:getConfig("config_id")]
+	arg_2_0.Day = #arg_2_0.config.front_drops
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.item, false)
+function var_0_0.OnFirstFlush(arg_3_0)
+	setActive(arg_3_0.item, false)
+	arg_3_0.itemList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventInit then
+			local var_4_0 = arg_3_0:findTF("item", arg_4_2)
+			local var_4_1 = arg_3_0.config.front_drops[arg_4_1 + 1]
+			local var_4_2 = {
+				type = var_4_1[1],
+				id = var_4_1[2],
+				count = var_4_1[3]
+			}
 
-	slot1 = slot0.itemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot4 = uv0.config.front_drops[slot1 + 1]
-
-			updateDrop(uv0:findTF("item", slot2), {
-				type = slot4[1],
-				id = slot4[2],
-				count = slot4[3]
-			})
-			onButton(uv0, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_4_0, var_4_2)
+			onButton(arg_3_0, arg_4_2, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_4_2)
 			end, SFX_PANEL)
-			GetImageSpriteFromAtlasAsync("ui/activityuipage/newserverloginpage_atlas", slot1 + 1, uv0:findTF("day", slot2), true)
+			GetImageSpriteFromAtlasAsync("ui/activityuipage/newserverloginpage_atlas", arg_4_1 + 1, arg_3_0:findTF("day", arg_4_2), true)
+		elseif arg_4_0 == UIItemList.EventUpdate then
+			local var_4_3 = arg_3_0:findTF("got", arg_4_2)
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			setActive(uv0:findTF("got", slot2), slot1 < uv0.nday)
+			setActive(var_4_3, arg_4_1 < arg_3_0.nday)
 		end
 	end)
-	onButton(slot0, slot0:findTF("go_btn", slot0.bg), function ()
+	onButton(arg_3_0, arg_3_0:findTF("go_btn", arg_3_0.bg), function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.NAVALTACTICS)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data1
+function var_0_0.OnUpdateFlush(arg_7_0)
+	arg_7_0.nday = arg_7_0.activity.data1
 
-	slot0.itemList:align(slot0.Day)
-	setLocalPosition(slot0.items, Vector2(-185 - 106 * (slot0.nday - 1), 0))
+	arg_7_0.itemList:align(arg_7_0.Day)
+	setLocalPosition(arg_7_0.items, Vector2(-185 - 106 * (arg_7_0.nday - 1), 0))
 end
 
-function slot0.OnDestroy(slot0)
-	clearImageSprite(slot0.bg)
-	removeAllChildren(slot0.items)
+function var_0_0.OnDestroy(arg_8_0)
+	clearImageSprite(arg_8_0.bg)
+	removeAllChildren(arg_8_0.items)
 end
 
-return slot0
+return var_0_0

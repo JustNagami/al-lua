@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_goods_data = {
 	[10101] = {
 		id = 10101,

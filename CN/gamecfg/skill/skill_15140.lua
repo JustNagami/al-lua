@@ -1,4 +1,31 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetShipType",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.01,
+				ship_type_list = {
+					4,
+					5
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -216,32 +243,5 @@ return {
 	id = 15140,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetShipType",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.01,
-				ship_type_list = {
-					4,
-					5
-				}
-			}
-		}
-	}
+	desc = ""
 }

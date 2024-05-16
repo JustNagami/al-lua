@@ -1,80 +1,81 @@
-slot0 = class("EggCellView", import(".EnemyCellView"))
+﻿local var_0_0 = class("EggCellView", import(".EnemyCellView"))
 
-function slot0.InitEggCellTransform(slot0)
-	slot0.tfIcon = slot0.tf:Find("icon")
-	slot0.tfBufficons = slot0.tf:Find("random_buff_container")
-	slot0.tfBossIcon = slot0.tf:Find("titleContain/bg_boss")
-	slot0.textLV = slot0.tf:Find("lv/Text")
-	slot0.tfEffectFound = slot0.tf:Find("effect_found")
-	slot0.tfEffectFoundBoss = slot0.tf:Find("effect_found_boss")
-	slot0.tfFighting = slot0.tf:Find("fighting")
+function var_0_0.InitEggCellTransform(arg_1_0)
+	arg_1_0.tfIcon = arg_1_0.tf:Find("icon")
+	arg_1_0.tfBufficons = arg_1_0.tf:Find("random_buff_container")
+	arg_1_0.tfBossIcon = arg_1_0.tf:Find("titleContain/bg_boss")
+	arg_1_0.textLV = arg_1_0.tf:Find("lv/Text")
+	arg_1_0.tfEffectFound = arg_1_0.tf:Find("effect_found")
+	arg_1_0.tfEffectFoundBoss = arg_1_0.tf:Find("effect_found_boss")
+	arg_1_0.tfFighting = arg_1_0.tf:Find("fighting")
 
-	setText(findTF(slot0.tfFighting, "Text"), i18n("ui_word_levelui2_inevent"))
+	setText(findTF(arg_1_0.tfFighting, "Text"), i18n("ui_word_levelui2_inevent"))
 
-	slot0.tfDamageCount = slot0.tf:Find("damage_count")
-	slot0.animator = GetComponent(slot0.go, typeof(Animator))
-	slot0.effectFireball = slot0.tf:Find("huoqiubaozha")
+	arg_1_0.tfDamageCount = arg_1_0.tf:Find("damage_count")
+	arg_1_0.animator = GetComponent(arg_1_0.go, typeof(Animator))
+	arg_1_0.effectFireball = arg_1_0.tf:Find("huoqiubaozha")
 end
 
-function slot0.StartEggCellView(slot0, slot1, slot2)
-	if ChapterConst.EnemySize[slot1.type] == 99 then
-		setActive(slot0.tfBossIcon, true)
-		slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_boss", slot0.tfBossIcon)
-	elseif ChapterConst.EnemySize[slot1.type] == 98 then
-		setActive(slot0.tfBossIcon, true)
-		slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_elite", slot0.tfBossIcon)
+function var_0_0.StartEggCellView(arg_2_0, arg_2_1, arg_2_2)
+	if ChapterConst.EnemySize[arg_2_1.type] == 99 then
+		setActive(arg_2_0.tfBossIcon, true)
+		arg_2_0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_boss", arg_2_0.tfBossIcon)
+	elseif ChapterConst.EnemySize[arg_2_1.type] == 98 then
+		setActive(arg_2_0.tfBossIcon, true)
+		arg_2_0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_elite", arg_2_0.tfBossIcon)
 	else
-		setActive(slot0.tfBossIcon, false)
+		setActive(arg_2_0.tfBossIcon, false)
 	end
 
-	if ChapterConst.EnemySize[slot1.type] == 98 then
-		slot0.tfBossIcon.localScale = Vector3(0.5, 0.5, 1)
-		slot0.tfBossIcon.anchoredPosition = Vector2(61.1, -30.6)
+	if ChapterConst.EnemySize[arg_2_1.type] == 98 then
+		arg_2_0.tfBossIcon.localScale = Vector3(0.5, 0.5, 1)
+		arg_2_0.tfBossIcon.anchoredPosition = Vector2(61.1, -30.6)
 	else
-		slot0.tfBossIcon.localScale = Vector3(1, 1, 1)
-		slot0.tfBossIcon.anchoredPosition = Vector2(39.5, -23)
+		arg_2_0.tfBossIcon.localScale = Vector3(1, 1, 1)
+		arg_2_0.tfBossIcon.anchoredPosition = Vector2(39.5, -23)
 	end
 
-	uv0.ClearExtraEffects(slot0)
-	uv0.LoadExtraEffects(slot0, slot1.effect_prefab)
-	slot0:GetLoader():GetSprite("enemies/" .. slot1.icon, "", slot0.tfIcon)
-	setText(slot0.textLV, slot1.level)
-	existCall(slot2)
+	var_0_0.ClearExtraEffects(arg_2_0)
+	var_0_0.LoadExtraEffects(arg_2_0, arg_2_1.effect_prefab)
+	arg_2_0:GetLoader():GetSprite("enemies/" .. arg_2_1.icon, "", arg_2_0.tfIcon)
+	setText(arg_2_0.textLV, arg_2_1.level)
+	existCall(arg_2_2)
 end
 
-function slot0.UpdateEggCell(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot2.row
-	slot6 = slot2.column
-	slot7 = slot2.trait ~= ChapterConst.TraitLurk and slot2.flag == ChapterConst.CellFlagActive and not slot1:existFleet(FleetType.Transport, slot5, slot6)
+function var_0_0.UpdateEggCell(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	local var_3_0 = arg_3_2.row
+	local var_3_1 = arg_3_2.column
+	local var_3_2 = arg_3_2.trait ~= ChapterConst.TraitLurk and arg_3_2.flag == ChapterConst.CellFlagActive and not arg_3_1:existFleet(FleetType.Transport, var_3_0, var_3_1)
+	local var_3_3 = arg_3_1:existEnemy(ChapterConst.SubjectChampion, var_3_0, var_3_1)
 
-	setActive(slot0.tfFighting, slot7 and slot1:existEnemy(ChapterConst.SubjectChampion, slot5, slot6))
+	setActive(arg_3_0.tfFighting, var_3_2 and var_3_3)
 
-	slot0.animator.enabled = slot7 and slot2.data > 0
+	arg_3_0.animator.enabled = var_3_2 and arg_3_2.data > 0
 
-	setActive(slot0.tfDamageCount, slot7 and slot2.data > 0)
-	setActive(slot0.effectFireball, false)
+	setActive(arg_3_0.tfDamageCount, var_3_2 and arg_3_2.data > 0)
+	setActive(arg_3_0.effectFireball, false)
 
-	if slot2.trait == ChapterConst.TraitVirgin then
+	if arg_3_2.trait == ChapterConst.TraitVirgin then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 	end
 
-	if slot7 then
-		EnemyCellView.RefreshEnemyTplIcons(slot0, slot3, slot1)
+	if var_3_2 then
+		EnemyCellView.RefreshEnemyTplIcons(arg_3_0, arg_3_3, arg_3_1)
 	end
 
-	slot0:SetActive(slot7)
+	arg_3_0:SetActive(var_3_2)
 
-	slot9 = slot2.trait == ChapterConst.TraitVirgin
-	slot10 = ChapterConst.IsBossCell(slot2)
+	local var_3_4 = arg_3_2.trait == ChapterConst.TraitVirgin
+	local var_3_5 = ChapterConst.IsBossCell(arg_3_2)
 
-	setActive(slot0.tfEffectFound, slot9 and not slot10)
-	setActive(slot0.tfEffectFoundBoss, slot9 and slot10)
+	setActive(arg_3_0.tfEffectFound, var_3_4 and not var_3_5)
+	setActive(arg_3_0.tfEffectFoundBoss, var_3_4 and var_3_5)
 
-	if slot9 then
+	if var_3_4 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 	end
 
-	existCall(slot4)
+	existCall(arg_3_4)
 end
 
-return slot0
+return var_0_0

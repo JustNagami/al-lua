@@ -1,4 +1,23 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 161221
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -136,24 +155,5 @@ return {
 	id = 1090141,
 	picture = "0",
 	castCV = "skill",
-	desc = "舰炮掩护",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 161221
-			}
-		}
-	}
+	desc = "舰炮掩护"
 }

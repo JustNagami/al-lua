@@ -1,154 +1,175 @@
-slot0 = class("GameHallExchangePanel")
+﻿local var_0_0 = class("GameHallExchangePanel")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._tf = slot1
-	slot0._parentTf = slot2
-	slot0._event = slot3
-	slot4 = pg.player_resource[GameRoomProxy.coin_res_id].itemid
-	slot0.itemCfg = Item.getConfigData(slot4)
-	slot0.coinMax = pg.gameset.game_coin_max.key_value
-	slot0.gameCoinGold = pg.gameset.game_coin_gold.description
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._parentTf = arg_1_2
+	arg_1_0._event = arg_1_3
 
-	updateDrop(findTF(slot0._tf, "window/single_item_panel/iconPos/icon"), {
-		id = slot4,
+	local var_1_0 = pg.player_resource[GameRoomProxy.coin_res_id].itemid
+
+	arg_1_0.itemCfg = Item.getConfigData(var_1_0)
+	arg_1_0.coinMax = pg.gameset.game_coin_max.key_value
+	arg_1_0.gameCoinGold = pg.gameset.game_coin_gold.description
+
+	local var_1_1 = findTF(arg_1_0._tf, "window/single_item_panel/iconPos/icon")
+
+	updateDrop(var_1_1, {
+		id = var_1_0,
 		type = DROP_TYPE_ITEM
 	})
-	setText(findTF(slot0._tf, "window/single_item_panel/name_mode/name_mask/name"), slot0.itemCfg.name)
-	setText(findTF(slot0._tf, "window/single_item_panel/own/label"), i18n("word_own1"))
-	onButton(slot0._event, findTF(slot0._tf, "bg"), function ()
-		uv0:setVisible(false)
+	setText(findTF(arg_1_0._tf, "window/single_item_panel/name_mode/name_mask/name"), arg_1_0.itemCfg.name)
+	setText(findTF(arg_1_0._tf, "window/single_item_panel/own/label"), i18n("word_own1"))
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "bg"), function()
+		arg_1_0:setVisible(false)
 	end)
-	onButton(slot0._event, findTF(slot0._tf, "top/btnBack"), function ()
-		uv0:setVisible(false)
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "top/btnBack"), function()
+		arg_1_0:setVisible(false)
 	end)
-	onButton(slot0._event, findTF(slot0._tf, "window/btnCancel"), function ()
-		uv0:setVisible(false)
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "window/btnCancel"), function()
+		arg_1_0:setVisible(false)
 	end)
-	onButton(slot0._event, findTF(slot0._tf, "window/btnConfirm"), function ()
-		if uv0.myGold < uv0.costPrice then
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "window/btnConfirm"), function()
+		if arg_1_0.costPrice > arg_1_0.myGold then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_no_gold"))
 		else
-			uv0:exchangeCoin()
-			uv0:setVisible(false)
+			arg_1_0:exchangeCoin()
+			arg_1_0:setVisible(false)
 		end
 	end)
 
-	slot0.disCount = findTF(slot0._tf, "window/discount")
-	slot0.disCountText = findTF(slot0._tf, "window/discount/Text")
+	arg_1_0.disCount = findTF(arg_1_0._tf, "window/discount")
+	arg_1_0.disCountText = findTF(arg_1_0._tf, "window/discount/Text")
 
-	onButton(slot0._event, findTF(slot0._tf, "window/count_select/value_bg/left"), function ()
-		uv0.coinCount = uv0.coinCount - 1
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "window/count_select/value_bg/left"), function()
+		arg_1_0.coinCount = arg_1_0.coinCount - 1
 
-		uv0:coinCountChange()
+		arg_1_0:coinCountChange()
 	end)
-	onButton(slot0._event, findTF(slot0._tf, "window/count_select/value_bg/right"), function ()
-		uv0.coinCount = uv0.coinCount + 1
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "window/count_select/value_bg/right"), function()
+		arg_1_0.coinCount = arg_1_0.coinCount + 1
 
-		uv0:coinCountChange()
+		arg_1_0:coinCountChange()
 	end)
-	onButton(slot0._event, findTF(slot0._tf, "window/count_select/max"), function ()
-		uv0.coinCount = uv0.coinMax - uv0.myCoinCount
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "window/count_select/max"), function()
+		arg_1_0.coinCount = arg_1_0.coinMax - arg_1_0.myCoinCount
 
-		uv0:coinCountChange()
+		arg_1_0:coinCountChange()
 	end)
-	setText(findTF(slot0._tf, "window/btnConfirm/pic"), i18n("word_ok"))
-	setText(findTF(slot0._tf, "window/btnCancel/pic"), i18n("word_cancel"))
-	setText(findTF(slot0._tf, "top/bg/infomation/title"), i18n("title_info"))
-	setActive(findTF(slot0._tf, "top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
+	setText(findTF(arg_1_0._tf, "window/btnConfirm/pic"), i18n("word_ok"))
+	setText(findTF(arg_1_0._tf, "window/btnCancel/pic"), i18n("word_cancel"))
+	setText(findTF(arg_1_0._tf, "top/bg/infomation/title"), i18n("title_info"))
+	setActive(findTF(arg_1_0._tf, "top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
 end
 
-function slot0.exchangeCoin(slot0)
-	if slot0.coinCount == 0 then
+function var_0_0.exchangeCoin(arg_9_0)
+	if arg_9_0.coinCount == 0 then
 		return
 	end
 
-	slot0._event:emit(GameHallMediator.EXCHANGE_COIN, {
-		price = slot0.costPrice,
-		times = slot0.coinCount
+	arg_9_0._event:emit(GameHallMediator.EXCHANGE_COIN, {
+		price = arg_9_0.costPrice,
+		times = arg_9_0.coinCount
 	})
 end
 
-function slot0.coinCountChange(slot0)
-	if slot0.coinCount < 0 then
-		slot0.coinCount = 0
+function var_0_0.coinCountChange(arg_10_0)
+	if arg_10_0.coinCount < 0 then
+		arg_10_0.coinCount = 0
 	end
 
-	if slot0.coinMax < slot0.coinCount + slot0.myCoinCount then
-		slot0.coinCount = slot0.coinMax - slot0.myCoinCount
+	if arg_10_0.coinCount + arg_10_0.myCoinCount > arg_10_0.coinMax then
+		arg_10_0.coinCount = arg_10_0.coinMax - arg_10_0.myCoinCount
 	end
 
-	slot1 = 0
+	local var_10_0 = 0
 
-	for slot5 = 1, slot0.coinCount do
-		slot1 = slot1 + slot0:getPriceByCount(slot0.payCoinCount + slot5)
+	for iter_10_0 = 1, arg_10_0.coinCount do
+		local var_10_1 = arg_10_0.payCoinCount + iter_10_0
+
+		var_10_0 = var_10_0 + arg_10_0:getPriceByCount(var_10_1)
 	end
 
-	slot0.costPrice = slot1
-	slot2 = nil
+	arg_10_0.costPrice = var_10_0
 
-	setText(findTF(slot0._tf, "window/count_select/desc_txt"), i18n("charge_game_room_coin_tip", slot1, slot0.coinCount, (slot1 >= slot0.myGold or COLOR_GREEN) and COLOR_RED, slot0.itemCfg.name))
-	setText(findTF(slot0._tf, "window/count_select/value_bg/value"), slot0.coinCount)
-	setActive(slot0.disCount, slot0:getDiscount(slot0.coinCount + slot0.payCoinCount) ~= 0)
-	setText(slot0.disCountText, slot3 .. "%OFF")
+	local var_10_2
+
+	if var_10_0 < arg_10_0.myGold then
+		var_10_2 = COLOR_GREEN
+	else
+		var_10_2 = COLOR_RED
+	end
+
+	setText(findTF(arg_10_0._tf, "window/count_select/desc_txt"), i18n("charge_game_room_coin_tip", var_10_0, arg_10_0.coinCount, var_10_2, arg_10_0.itemCfg.name))
+	setText(findTF(arg_10_0._tf, "window/count_select/value_bg/value"), arg_10_0.coinCount)
+
+	local var_10_3 = arg_10_0:getDiscount(arg_10_0.coinCount + arg_10_0.payCoinCount)
+
+	setActive(arg_10_0.disCount, var_10_3 ~= 0)
+	setText(arg_10_0.disCountText, var_10_3 .. "%OFF")
 end
 
-function slot0.getDiscount(slot0, slot1)
-	if slot1 <= 0 then
-		slot1 = 1
+function var_0_0.getDiscount(arg_11_0, arg_11_1)
+	if arg_11_1 <= 0 then
+		arg_11_1 = 1
 	end
 
-	if slot0:getPriceByCount(slot1) ~= slot0.gameCoinGold[#slot0.gameCoinGold][2] then
-		return tonumber((slot2 - slot3) * 100 / slot2)
+	local var_11_0 = arg_11_0.gameCoinGold[#arg_11_0.gameCoinGold][2]
+	local var_11_1 = arg_11_0:getPriceByCount(arg_11_1)
+
+	if var_11_1 ~= var_11_0 then
+		return tonumber((var_11_0 - var_11_1) * 100 / var_11_0)
 	end
 
 	return 0
 end
 
-function slot0.getPriceByCount(slot0, slot1)
-	for slot5 = #slot0.gameCoinGold, 1, -1 do
-		if slot0.gameCoinGold[slot5][1] < slot1 then
-			return slot6[2]
+function var_0_0.getPriceByCount(arg_12_0, arg_12_1)
+	for iter_12_0 = #arg_12_0.gameCoinGold, 1, -1 do
+		local var_12_0 = arg_12_0.gameCoinGold[iter_12_0]
+
+		if arg_12_1 > var_12_0[1] then
+			return var_12_0[2]
 		end
 	end
 
 	return 0
 end
 
-function slot0.updateUI(slot0)
-	slot0.coinCount = 0
-	slot0.myCoinCount = getProxy(GameRoomProxy):getCoin()
-	slot0.myGold = getProxy(PlayerProxy):getRawData().gold
-	slot0.payCoinCount = getProxy(GameRoomProxy):getPayCoinCount()
+function var_0_0.updateUI(arg_13_0)
+	arg_13_0.coinCount = 0
+	arg_13_0.myCoinCount = getProxy(GameRoomProxy):getCoin()
+	arg_13_0.myGold = getProxy(PlayerProxy):getRawData().gold
+	arg_13_0.payCoinCount = getProxy(GameRoomProxy):getPayCoinCount()
 
-	setText(findTF(slot0._tf, "window/single_item_panel/own/Text"), slot0.myCoinCount)
-	slot0:coinCountChange()
+	setText(findTF(arg_13_0._tf, "window/single_item_panel/own/Text"), arg_13_0.myCoinCount)
+	arg_13_0:coinCountChange()
 end
 
-function slot0.setVisible(slot0, slot1)
-	if slot1 then
-		slot0.bulrFlag = true
+function var_0_0.setVisible(arg_14_0, arg_14_1)
+	if arg_14_1 then
+		arg_14_0.bulrFlag = true
 
-		pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+		pg.UIMgr.GetInstance():BlurPanel(arg_14_0._tf)
 	else
-		slot0.bulrFlag = false
+		arg_14_0.bulrFlag = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_14_0._tf, arg_14_0._parentTf)
 	end
 
-	setActive(slot0._tf, slot1)
-	slot0:updateUI()
+	setActive(arg_14_0._tf, arg_14_1)
+	arg_14_0:updateUI()
 end
 
-function slot0.getVisible(slot0)
-	return isActive(slot0._tf)
+function var_0_0.getVisible(arg_15_0)
+	return isActive(arg_15_0._tf)
 end
 
-function slot0.dispose(slot0)
-	if slot0.bulrFlag == true then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.dispose(arg_16_0)
+	if arg_16_0.bulrFlag == true then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_16_0._tf, arg_16_0._parentTf)
 
-		slot0.bulrFlag = false
+		arg_16_0.bulrFlag = false
 	end
 end
 
-return slot0
+return var_0_0

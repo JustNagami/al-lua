@@ -1,4 +1,24 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 170172,
+				emitter = "BattleBulletEmitter"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -20,25 +40,5 @@ return {
 	id = 800952,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 170172,
-				emitter = "BattleBulletEmitter"
-			}
-		}
-	}
+	desc = ""
 }

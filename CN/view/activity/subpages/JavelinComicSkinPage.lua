@@ -1,27 +1,28 @@
-slot0 = class("JavelinComicSkinPage", import(".TemplatePage.SkinTemplatePage"))
-slot0.FADE_OUT_TIME = 1
+﻿local var_0_0 = class("JavelinComicSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	slot0:InitView()
-	slot0:RegisterEvent()
-	uv0.super.OnFirstFlush(slot0)
+var_0_0.FADE_OUT_TIME = 1
+
+function var_0_0.OnFirstFlush(arg_1_0)
+	arg_1_0:InitView()
+	arg_1_0:RegisterEvent()
+	var_0_0.super.OnFirstFlush(arg_1_0)
 end
 
-function slot0.InitView(slot0)
-	slot0.animations = {}
-	slot0.puzzle = slot0:findTF("Puzzle", slot0.bg)
-	slot0.linkActId = slot0:GetLinkId()
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.chargeIDList = Clone(slot0.activityProxy:getActivityById(slot0.linkActId).data1_list)
-	slot0.puzzleIDList = Clone(pg.activity_template[slot0.linkActId].config_data)
+function var_0_0.InitView(arg_2_0)
+	arg_2_0.animations = {}
+	arg_2_0.puzzle = arg_2_0:findTF("Puzzle", arg_2_0.bg)
+	arg_2_0.linkActId = arg_2_0:GetLinkId()
+	arg_2_0.activityProxy = getProxy(ActivityProxy)
+	arg_2_0.chargeIDList = Clone(arg_2_0.activityProxy:getActivityById(arg_2_0.linkActId).data1_list)
+	arg_2_0.puzzleIDList = Clone(pg.activity_template[arg_2_0.linkActId].config_data)
 
-	slot0:CheckFinalAward()
+	arg_2_0:CheckFinalAward()
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0.helpBtn = slot0:findTF("HelpBtn", slot0.bg)
+function var_0_0.RegisterEvent(arg_3_0)
+	arg_3_0.helpBtn = arg_3_0:findTF("HelpBtn", arg_3_0.bg)
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
 		if pg.gametip.comic_help then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -32,93 +33,101 @@ function slot0.RegisterEvent(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.GetLinkId(slot0)
+function var_0_0.GetLinkId(arg_5_0)
 	return pg.activity_const.JAVELIN_COMIC_PUZZLE_TASK.act_id
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_6_0)
+	var_0_0.super.OnUpdateFlush(arg_6_0)
 
-	slot0.linkActivity = slot0.activityProxy:getActivityById(slot0.linkActId)
-	slot1 = true
+	arg_6_0.linkActivity = arg_6_0.activityProxy:getActivityById(arg_6_0.linkActId)
 
-	for slot5 = 1, #slot0.puzzleIDList do
-		slot7 = slot0.puzzleIDList[slot5]
-		slot8 = table.contains(slot0.linkActivity.data1_list, slot7)
+	local var_6_0 = true
 
-		slot0:UpdatePuzzle(slot0.puzzle:GetChild(slot5 - 1), slot8, slot7)
+	for iter_6_0 = 1, #arg_6_0.puzzleIDList do
+		local var_6_1 = arg_6_0.puzzle:GetChild(iter_6_0 - 1)
+		local var_6_2 = arg_6_0.puzzleIDList[iter_6_0]
+		local var_6_3 = table.contains(arg_6_0.linkActivity.data1_list, var_6_2)
 
-		if not slot8 then
-			slot1 = false
+		arg_6_0:UpdatePuzzle(var_6_1, var_6_3, var_6_2)
+
+		if not var_6_3 then
+			var_6_0 = false
 		end
 	end
 
-	slot0:UpdateMainView(slot1)
+	arg_6_0:UpdateMainView(var_6_0)
 end
 
-function slot0.UpdatePuzzle(slot0, slot1, slot2, slot3)
-	if slot2 and not table.contains(slot0.chargeIDList, slot3) then
-		table.insert(slot0.chargeIDList, slot3)
-		slot0:DoPieceAnimation(slot1, 0, 1, function ()
-			setActive(uv0, uv1)
-			uv2:CheckFinalAward()
+function var_0_0.UpdatePuzzle(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	if arg_7_2 and not table.contains(arg_7_0.chargeIDList, arg_7_3) then
+		table.insert(arg_7_0.chargeIDList, arg_7_3)
+		arg_7_0:DoPieceAnimation(arg_7_1, 0, 1, function()
+			setActive(arg_7_1, arg_7_2)
+			arg_7_0:CheckFinalAward()
 		end)
 	else
-		setActive(slot1, slot2)
+		setActive(arg_7_1, arg_7_2)
 	end
 end
 
-function slot0.DoPieceAnimation(slot0, slot1, slot2, slot3, slot4)
-	if LeanTween.isTweening(slot1) then
-		LeanTween.cancel(go(slot1), true)
+function var_0_0.DoPieceAnimation(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	if LeanTween.isTweening(arg_9_1) then
+		LeanTween.cancel(go(arg_9_1), true)
 
-		slot0.animations[slot1] = nil
+		arg_9_0.animations[arg_9_1] = nil
 	end
 
-	slot0.animations[slot1] = true
+	arg_9_0.animations[arg_9_1] = true
 
-	LeanTween.alpha(slot1, slot3, uv0.FADE_OUT_TIME):setFrom(slot2):setOnComplete(System.Action(slot4))
+	LeanTween.alpha(arg_9_1, arg_9_3, var_0_0.FADE_OUT_TIME):setFrom(arg_9_2):setOnComplete(System.Action(arg_9_4))
 end
 
-function slot0.UpdateMainView(slot0, slot1)
-	slot2 = nil
+function var_0_0.UpdateMainView(arg_10_0, arg_10_1)
+	local var_10_0
 
-	setText(slot0.dayTF, #slot0.chargeIDList == #slot0.taskGroup and "<color=#00FF00><size=48>" .. #slot0.chargeIDList .. "</size></color><color=#00B8FF><size=28>     " .. #slot0.taskGroup .. "</size></color>" or "<color=#E75198><size=48>" .. #slot0.chargeIDList .. "</size></color><color=#00B8FF><size=28>     " .. #slot0.taskGroup .. "</size></color>")
+	if #arg_10_0.chargeIDList == #arg_10_0.taskGroup then
+		var_10_0 = "<color=#00FF00><size=48>" .. #arg_10_0.chargeIDList .. "</size></color><color=#00B8FF><size=28>     " .. #arg_10_0.taskGroup .. "</size></color>"
+	else
+		var_10_0 = "<color=#E75198><size=48>" .. #arg_10_0.chargeIDList .. "</size></color><color=#00B8FF><size=28>     " .. #arg_10_0.taskGroup .. "</size></color>"
+	end
+
+	setText(arg_10_0.dayTF, var_10_0)
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_11_0)
+	var_0_0.super.OnDestroy(arg_11_0)
 
-	slot1 = pairs
-	slot2 = slot0.animations or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		if LeanTween.isTweening(slot4.gameObject) then
-			LeanTween.cancel(slot4.gameObject)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.animations or {}) do
+		if LeanTween.isTweening(iter_11_0.gameObject) then
+			LeanTween.cancel(iter_11_0.gameObject)
 		end
 	end
 
-	slot0.animations = nil
+	arg_11_0.animations = nil
 end
 
-function slot0.CheckFinalAward(slot0)
-	if #slot0.activityProxy:getActivityById(slot0.linkActId).data1_list == #slot0.puzzleIDList then
-		if slot1.data1 == 0 then
-			slot0:FetchFinalAward()
+function var_0_0.CheckFinalAward(arg_12_0)
+	local var_12_0 = arg_12_0.activityProxy:getActivityById(arg_12_0.linkActId)
+
+	if #var_12_0.data1_list == #arg_12_0.puzzleIDList then
+		if var_12_0.data1 == 0 then
+			arg_12_0:FetchFinalAward()
 		else
-			slot0:OnFetchFinalAwardDone()
+			arg_12_0:OnFetchFinalAwardDone()
 		end
 	end
 end
 
-function slot0.FetchFinalAward(slot0)
-	slot0:emit(ActivityMediator.EVENT_OPERATION, {
+function var_0_0.FetchFinalAward(arg_13_0)
+	arg_13_0:emit(ActivityMediator.EVENT_OPERATION, {
 		cmd = 1,
-		activity_id = slot0.linkActId
+		activity_id = arg_13_0.linkActId
 	})
 end
 
-function slot0.OnFetchFinalAwardDone(slot0)
+function var_0_0.OnFetchFinalAwardDone(arg_14_0)
+	return
 end
 
-return slot0
+return var_0_0

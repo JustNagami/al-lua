@@ -1,74 +1,76 @@
-slot0 = class("MeritorousShop", import(".BaseShop"))
-slot0.REFRESH_TYPE_AUTO = 1
-slot0.REFRESH_TYPE_MANUAL = 2
+﻿local var_0_0 = class("MeritorousShop", import(".BaseShop"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.goods = {}
+var_0_0.REFRESH_TYPE_AUTO = 1
+var_0_0.REFRESH_TYPE_MANUAL = 2
 
-	for slot5, slot6 in ipairs(slot1.good_list) do
-		slot7 = Goods.Create(slot6, Goods.TYPE_MILITARY)
-		slot0.goods[slot7.id] = slot7
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.goods = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.good_list) do
+		local var_1_0 = Goods.Create(iter_1_1, Goods.TYPE_MILITARY)
+
+		arg_1_0.goods[var_1_0.id] = var_1_0
 	end
 
-	slot0.nextTime = slot1.nextTime
-	slot0.refreshCount = slot1.refreshCount + 1
-	slot0.type = ShopArgs.MilitaryShop
+	arg_1_0.nextTime = arg_1_1.nextTime
+	arg_1_0.refreshCount = arg_1_1.refreshCount + 1
+	arg_1_0.type = ShopArgs.MilitaryShop
 end
 
-function slot0.IsSameKind(slot0, slot1)
-	return isa(slot1, MeritorousShop)
+function var_0_0.IsSameKind(arg_2_0, arg_2_1)
+	return isa(arg_2_1, MeritorousShop)
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	return slot0:getGoodsById(slot1)
+function var_0_0.GetCommodityById(arg_3_0, arg_3_1)
+	return arg_3_0:getGoodsById(arg_3_1)
 end
 
-function slot0.GetCommodities(slot0)
-	slot1 = {}
+function var_0_0.GetCommodities(arg_4_0)
+	local var_4_0 = {}
 
-	for slot5, slot6 in pairs(slot0.goods) do
-		table.insert(slot1, slot6)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.goods) do
+		table.insert(var_4_0, iter_4_1)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		return slot0:getConfig("order") < slot1:getConfig("order")
+	table.sort(var_4_0, function(arg_5_0, arg_5_1)
+		return arg_5_0:getConfig("order") < arg_5_1:getConfig("order")
 	end)
 
-	return slot1
+	return var_4_0
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_6_0)
 	return pg.arena_data_shop
 end
 
-function slot0.getRefreshCount(slot0)
-	return slot0.refreshCount
+function var_0_0.getRefreshCount(arg_7_0)
+	return arg_7_0.refreshCount
 end
 
-function slot0.resetRefreshCount(slot0)
-	slot0.refreshCount = 1
+function var_0_0.resetRefreshCount(arg_8_0)
+	arg_8_0.refreshCount = 1
 end
 
-function slot0.increaseRefreshCount(slot0)
-	slot0.refreshCount = slot0.refreshCount + 1
+function var_0_0.increaseRefreshCount(arg_9_0)
+	arg_9_0.refreshCount = arg_9_0.refreshCount + 1
 end
 
-function slot0.updateAllGoods(slot0, slot1)
-	slot0.goods = slot1
+function var_0_0.updateAllGoods(arg_10_0, arg_10_1)
+	arg_10_0.goods = arg_10_1
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	assert(slot0.goods[slot1], "should exist good" .. slot1)
+function var_0_0.getGoodsById(arg_11_0, arg_11_1)
+	assert(arg_11_0.goods[arg_11_1], "should exist good" .. arg_11_1)
 
-	return Clone(slot0.goods[slot1])
+	return Clone(arg_11_0.goods[arg_11_1])
 end
 
-function slot0.updateGoods(slot0, slot1)
-	assert(slot0.goods[slot1.id], "should exist good" .. slot1.id)
+function var_0_0.updateGoods(arg_12_0, arg_12_1)
+	assert(arg_12_0.goods[arg_12_1.id], "should exist good" .. arg_12_1.id)
 
-	slot0.goods[slot1.id] = slot1
+	arg_12_0.goods[arg_12_1.id] = arg_12_1
 end
 
-return slot0
+return var_0_0

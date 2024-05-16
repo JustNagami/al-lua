@@ -1,4 +1,20 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 13221,
+				target = "TargetSelf",
+				streakRange = {
+					2,
+					5
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,21 +34,5 @@ return {
 	stack = 1,
 	id = 13221,
 	icon = 13220,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 13221,
-				target = "TargetSelf",
-				streakRange = {
-					2,
-					5
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

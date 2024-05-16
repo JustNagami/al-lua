@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_meta_repair = {
 	[1301] = {
 		id = 1301,

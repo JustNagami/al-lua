@@ -1,77 +1,86 @@
-slot0 = class("IslandShoppingCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("IslandShoppingCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.shop
-	slot4 = getProxy(ActivityProxy):getActivityById(slot3.activityId)
-	slot5 = slot3:bindConfigTable()[slot2.arg1]
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shop
+	local var_1_2 = getProxy(ActivityProxy):getActivityById(var_1_1.activityId)
+	local var_1_3 = var_1_1:bindConfigTable()[var_1_0.arg1]
+	local var_1_4 = var_1_0.arg2 or 1
+	local var_1_5 = getProxy(PlayerProxy)
+	local var_1_6 = var_1_5:getData()
 
-	if getProxy(PlayerProxy):getData()[id2res(slot5.resource_type)] < slot5.resource_num * (slot2.arg2 or 1) then
+	if var_1_6[id2res(var_1_3.resource_type)] < var_1_3.resource_num * var_1_4 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	if slot5.commodity_type == DROP_TYPE_RESOURCE then
-		if slot5.commodity_id == 1 and slot8:GoldMax(slot5.num * slot6) then
+	if var_1_3.commodity_type == DROP_TYPE_RESOURCE then
+		if var_1_3.commodity_id == 1 and var_1_6:GoldMax(var_1_3.num * var_1_4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if slot5.commodity_id == 2 and slot8:OilMax(slot5.num * slot6) then
+		if var_1_3.commodity_id == 2 and var_1_6:OilMax(var_1_3.num * var_1_4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
-	elseif slot5.commodity_type == DROP_TYPE_ITEM and Item.getConfigData(slot5.commodity_id).max_num > 0 and slot9 < getProxy(BagProxy):getItemCountById(slot5.commodity_id) + slot5.num * slot6 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("island_shop_limit_error"))
+	elseif var_1_3.commodity_type == DROP_TYPE_ITEM then
+		local var_1_7 = Item.getConfigData(var_1_3.commodity_id).max_num
 
-		return
+		if var_1_7 > 0 and var_1_7 < getProxy(BagProxy):getItemCountById(var_1_3.commodity_id) + var_1_3.num * var_1_4 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_shop_limit_error"))
+
+			return
+		end
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = slot4.id,
-		arg1 = slot2.arg1,
-		arg2 = slot2.arg2
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			if table.contains(uv0.data1_list, uv1.arg1) then
-				for slot4, slot5 in ipairs(uv0.data1_list) do
-					if slot5 == uv1.arg1 then
-						uv0.data2_list[slot4] = uv0.data2_list[slot4] + uv1.arg2
+		activity_id = var_1_2.id,
+		arg1 = var_1_0.arg1,
+		arg2 = var_1_0.arg2
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			if table.contains(var_1_2.data1_list, var_1_0.arg1) then
+				for iter_2_0, iter_2_1 in ipairs(var_1_2.data1_list) do
+					if iter_2_1 == var_1_0.arg1 then
+						var_1_2.data2_list[iter_2_0] = var_1_2.data2_list[iter_2_0] + var_1_0.arg2
 
 						break
 					end
 				end
 			else
-				table.insert(uv0.data1_list, uv1.arg1)
-				table.insert(uv0.data2_list, uv1.arg2)
+				table.insert(var_1_2.data1_list, var_1_0.arg1)
+				table.insert(var_1_2.data2_list, var_1_0.arg2)
 			end
 
-			slot1 = uv2:bindConfigTable()[uv1.arg1]
-			slot3 = uv3:getData()
+			local var_2_0 = var_1_1:bindConfigTable()[var_1_0.arg1]
+			local var_2_1 = var_2_0.resource_num * var_1_0.arg2
+			local var_2_2 = var_1_5:getData()
 
-			slot3:consume({
-				[id2res(slot1.resource_type)] = slot1.resource_num * uv1.arg2
+			var_2_2:consume({
+				[id2res(var_2_0.resource_type)] = var_2_1
 			})
-			uv3:updatePlayer(slot3)
-			uv2:getGoodsById(uv1.arg1):addBuyCount(uv1.arg2)
-			getProxy(ActivityProxy):updateActivity(uv0)
-			uv4:sendNotification(GAME.ISLAND_SHOPPING_DONE, {
-				awards = PlayerConst.GetTranAwards(uv1, slot0),
-				goodsId = uv1.arg1
+			var_1_5:updatePlayer(var_2_2)
+			var_1_1:getGoodsById(var_1_0.arg1):addBuyCount(var_1_0.arg2)
+			getProxy(ActivityProxy):updateActivity(var_1_2)
+
+			local var_2_3 = PlayerConst.GetTranAwards(var_1_0, arg_2_0)
+
+			arg_1_0:sendNotification(GAME.ISLAND_SHOPPING_DONE, {
+				awards = var_2_3,
+				goodsId = var_1_0.arg1
 			})
 		else
-			uv4:sendNotification(ActivityProxy.ACTIVITY_OPERATION_ERRO, {
-				actId = uv0.id,
-				code = slot0.result
+			arg_1_0:sendNotification(ActivityProxy.ACTIVITY_OPERATION_ERRO, {
+				actId = var_1_2.id,
+				code = arg_2_0.result
 			})
 		end
 	end)
 end
 
-return slot0
+return var_0_0

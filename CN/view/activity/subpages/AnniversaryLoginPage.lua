@@ -1,17 +1,19 @@
-slot0 = class("AnniversaryLoginPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var_0_0 = class("AnniversaryLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.item = slot0:findTF("item", slot0.bg)
-	slot0.items = slot0:findTF("mask/items", slot0.bg)
-	slot0.itemList = UIItemList.New(slot0.items, slot0.item)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("mask/items", arg_1_0.bg)
+	arg_1_0.itemList = UIItemList.New(arg_1_0.items, arg_1_0.item)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	eachChild(slot0.items, function (slot0)
-		setText(uv0:findTF("day/Text", slot0), slot0:GetSiblingIndex() + 1)
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	eachChild(arg_2_0.items, function(arg_3_0)
+		local var_3_0 = arg_2_0:findTF("day/Text", arg_3_0)
+
+		setText(var_3_0, arg_3_0:GetSiblingIndex() + 1)
 	end)
 end
 
-return slot0
+return var_0_0

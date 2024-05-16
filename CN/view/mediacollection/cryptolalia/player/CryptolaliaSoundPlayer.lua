@@ -1,80 +1,80 @@
-slot0 = class("CryptolaliaSoundPlayer")
+﻿local var_0_0 = class("CryptolaliaSoundPlayer")
 
-function slot0.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	return
 end
 
-function slot0.Load(slot0, slot1, slot2, slot3, slot4)
-	if slot0.preCvCueSheetName == slot1 then
-		slot0:Play(slot1, slot2, slot3, slot4)
+function var_0_0.Load(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	if arg_2_0.preCvCueSheetName == arg_2_1 then
+		arg_2_0:Play(arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 	else
-		slot0:Unload()
+		arg_2_0:Unload()
+		pg.CriMgr.GetInstance():LoadCueSheet(arg_2_1, function(arg_3_0)
+			arg_2_0.preCvCueSheetName = arg_2_1
 
-		slot5 = pg.CriMgr.GetInstance()
-
-		slot5:LoadCueSheet(slot1, function (slot0)
-			uv0.preCvCueSheetName = uv1
-
-			if slot0 then
-				uv0:Play(uv1, uv2, uv3, uv4)
+			if arg_3_0 then
+				arg_2_0:Play(arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 			else
-				uv4(-1)
+				arg_2_4(-1)
 			end
 		end)
 	end
 end
 
-function slot0.Play(slot0, slot1, slot2, slot3, slot4)
-	slot0:Stop()
+function var_0_0.Play(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+	arg_4_0:Stop()
 
-	function slot5()
-		pg.CriMgr.GetInstance():PlayCV_V3(uv0, uv1, function (slot0)
-			if slot0 then
-				uv0._currentVoice = slot0.playback
+	local function var_4_0()
+		pg.CriMgr.GetInstance():PlayCV_V3(arg_4_1, arg_4_2, function(arg_6_0)
+			if arg_6_0 then
+				arg_4_0._currentVoice = arg_6_0.playback
 
-				uv1(slot0:GetLength() * 0.001)
+				local var_6_0 = arg_6_0:GetLength() * 0.001
+
+				arg_4_4(var_6_0)
 			else
-				uv1(-1)
+				arg_4_4(-1)
 			end
 		end)
 	end
 
-	if (slot3 or 0) <= 0 then
-		slot5()
+	if (arg_4_3 or 0) <= 0 then
+		var_4_0()
 	else
-		slot0.timer = Timer.New(slot5, slot3, 1)
+		arg_4_0.timer = Timer.New(var_4_0, arg_4_3, 1)
 
-		slot0.timer:Start()
+		arg_4_0.timer:Start()
 	end
 end
 
-function slot0.Stop(slot0)
-	slot0:RemoveTimer()
+function var_0_0.Stop(arg_7_0)
+	arg_7_0:RemoveTimer()
 
-	if slot0._currentVoice then
-		slot0._currentVoice:Stop(true)
+	if arg_7_0._currentVoice then
+		arg_7_0._currentVoice:Stop(true)
 	end
 end
 
-function slot0.Unload(slot0)
-	slot0:Stop()
+function var_0_0.Unload(arg_8_0)
+	arg_8_0:Stop()
 
-	if slot0.preCvCueSheetName then
-		pg.CriMgr.GetInstance():UnloadCueSheet(slot0.preCvCueSheetName)
+	if arg_8_0.preCvCueSheetName then
+		pg.CriMgr.GetInstance():UnloadCueSheet(arg_8_0.preCvCueSheetName)
 
-		slot0.preCvCueSheetName = nil
+		arg_8_0.preCvCueSheetName = nil
 	end
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_9_0)
+	if arg_9_0.timer then
+		arg_9_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_9_0.timer = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:Unload()
+function var_0_0.Dispose(arg_10_0)
+	arg_10_0:Unload()
 end
 
-return slot0
+return var_0_0

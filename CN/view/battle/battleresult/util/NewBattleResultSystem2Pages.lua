@@ -1,4 +1,4 @@
-return {
+﻿return {
 	[SYSTEM_CHALLENGE] = {
 		NewChallengeResultGradePage
 	},

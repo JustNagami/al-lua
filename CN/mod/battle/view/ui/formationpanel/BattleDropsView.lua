@@ -1,199 +1,218 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = class("BattleDropsView")
-slot0.Battle.BattleDropsView = slot2
-slot2.__name = "BattleDropsView"
-slot2.FLOAT_DURATION = 0.4
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0._container = slot2
-	slot0._containerTF = slot0._container.transform
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = class("BattleDropsView")
 
-	slot0:init()
+var_0_0.Battle.BattleDropsView = var_0_2
+var_0_2.__name = "BattleDropsView"
+var_0_2.FLOAT_DURATION = 0.4
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0._container = arg_1_2
+	arg_1_0._containerTF = arg_1_0._container.transform
+
+	arg_1_0:init()
 end
 
-function slot2.SetActive(slot0, slot1)
-	setActive(slot0._go, slot1)
+function var_0_2.SetActive(arg_2_0, arg_2_1)
+	setActive(arg_2_0._go, arg_2_1)
 end
 
-function slot2.AddCamera(slot0, slot1, slot2)
-	slot0._camera = slot1
-	slot0._uiCamera = slot2
-	slot0._cameraTF = slot0._camera.transform
-	slot3 = slot0._cameraTF.localPosition
-	slot0._cameraSrcX = slot3.x
-	slot0._cameraSrcZ = slot3.z
-	slot0._cameraXRotate = slot0._cameraTF.localEulerAngles.x
+function var_0_2.AddCamera(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0._camera = arg_3_1
+	arg_3_0._uiCamera = arg_3_2
+	arg_3_0._cameraTF = arg_3_0._camera.transform
+
+	local var_3_0 = arg_3_0._cameraTF.localPosition
+
+	arg_3_0._cameraSrcX = var_3_0.x
+	arg_3_0._cameraSrcZ = var_3_0.z
+	arg_3_0._cameraXRotate = arg_3_0._cameraTF.localEulerAngles.x
 end
 
-function slot2.RefreshScaleRate(slot0)
-	slot1 = UnityEngine.Screen.width
-	slot2 = UnityEngine.Screen.height
-	slot3 = slot0._camera:ScreenToWorldPoint(Vector3(slot1, slot2, 0))
-	slot0._xScale = slot1 / slot3.x
-	slot0._yScale = slot2 / slot3.y
+function var_0_2.RefreshScaleRate(arg_4_0)
+	local var_4_0 = UnityEngine.Screen.width
+	local var_4_1 = UnityEngine.Screen.height
+	local var_4_2 = arg_4_0._camera:ScreenToWorldPoint(Vector3(var_4_0, var_4_1, 0))
+
+	arg_4_0._xScale = var_4_0 / var_4_2.x
+	arg_4_0._yScale = var_4_1 / var_4_2.y
 end
 
-function slot2.Update(slot0)
-	if #slot0._resourceList == #slot0._resourcePool then
+function var_0_2.Update(arg_5_0)
+	if #arg_5_0._resourceList == #arg_5_0._resourcePool then
 		return
 	end
 
-	slot0:updateContainerPosition()
+	arg_5_0:updateContainerPosition()
 end
 
-function slot2.init(slot0)
-	slot0._resourceIcon = slot0._tf:Find("resourceIcon")
-	slot0._resourceText = slot0._tf:Find("resourceText"):GetComponent(typeof(Text))
-	slot0._resourceGO = slot0._containerTF:Find("spin_gold")
-	slot0._resourceIconX = slot0._resourceIcon.transform.anchoredPosition.x + slot0._tf.rect.width / 2
-	slot0._resourceIconY = slot0._resourceIcon.transform.anchoredPosition.y + slot0._tf.rect.height / 2
-	slot0._itemPool = {}
-	slot0._resourcePool = {}
-	slot0._resourceList = {}
-	slot0._itemCount = 0
-	slot0._resourceCount = 0
+function var_0_2.init(arg_6_0)
+	arg_6_0._resourceIcon = arg_6_0._tf:Find("resourceIcon")
+	arg_6_0._resourceText = arg_6_0._tf:Find("resourceText"):GetComponent(typeof(Text))
+	arg_6_0._resourceGO = arg_6_0._containerTF:Find("spin_gold")
 
-	slot0:updateCountText(slot0._resourceText)
+	local var_6_0 = arg_6_0._tf.rect.width / 2
+	local var_6_1 = arg_6_0._tf.rect.height / 2
 
-	slot0._timerList = {}
-	slot3 = {}
+	arg_6_0._resourceIconX = arg_6_0._resourceIcon.transform.anchoredPosition.x + var_6_0
+	arg_6_0._resourceIconY = arg_6_0._resourceIcon.transform.anchoredPosition.y + var_6_1
+	arg_6_0._itemPool = {}
+	arg_6_0._resourcePool = {}
+	arg_6_0._resourceList = {}
+	arg_6_0._itemCount = 0
+	arg_6_0._resourceCount = 0
 
-	for slot7 = 1, 5 do
-		table.insert(slot3, slot0:pop(slot0._resourcePool))
+	arg_6_0:updateCountText(arg_6_0._resourceText)
+
+	arg_6_0._timerList = {}
+
+	local var_6_2 = {}
+
+	for iter_6_0 = 1, 5 do
+		table.insert(var_6_2, arg_6_0:pop(arg_6_0._resourcePool))
 	end
 
-	for slot7 = 1, 5 do
-		slot0:push(slot3[slot7], slot0._resourcePool)
+	for iter_6_1 = 1, 5 do
+		arg_6_0:push(var_6_2[iter_6_1], arg_6_0._resourcePool)
 	end
 
-	slot3 = nil
+	local var_6_3
 end
 
-function slot2.pop(slot0, slot1)
-	slot2 = nil
+function var_0_2.pop(arg_7_0, arg_7_1)
+	local var_7_0
 
-	if #slot1 == 0 then
-		if slot1 == slot0._resourcePool then
-			slot0._resourceList[#slot0._resourceList + 1] = Object.Instantiate(slot0._resourceGO, Vector3.zero, Quaternion.identity)
+	if #arg_7_1 == 0 then
+		if arg_7_1 == arg_7_0._resourcePool then
+			var_7_0 = Object.Instantiate(arg_7_0._resourceGO, Vector3.zero, Quaternion.identity)
+			arg_7_0._resourceList[#arg_7_0._resourceList + 1] = var_7_0
 		end
 
-		slot2.transform:SetParent(slot0._go, false)
+		var_7_0.transform:SetParent(arg_7_0._go, false)
 	else
-		slot2 = slot1[#slot1]
-		slot1[#slot1] = nil
+		var_7_0 = arg_7_1[#arg_7_1]
+		arg_7_1[#arg_7_1] = nil
 	end
 
-	return slot2
+	return var_7_0
 end
 
-function slot2.push(slot0, slot1, slot2)
-	slot1.transform.localScale = Vector3(0.35, 0.35, 0.35)
-	slot1:GetComponent(typeof(Animator)).enabled = false
+function var_0_2.push(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_1.transform.localScale = Vector3(0.35, 0.35, 0.35)
+	arg_8_1:GetComponent(typeof(Animator)).enabled = false
 
-	SetActive(slot1, false)
+	SetActive(arg_8_1, false)
 
-	slot2[#slot2 + 1] = slot1
+	arg_8_2[#arg_8_2 + 1] = arg_8_1
 end
 
-function slot2.updateCountText(slot0, slot1)
-	slot2 = nil
+function var_0_2.updateCountText(arg_9_0, arg_9_1)
+	local var_9_0
 
-	if slot1 == slot0._resourceText then
-		slot2 = slot0._resourceCount
+	if arg_9_1 == arg_9_0._resourceText then
+		var_9_0 = arg_9_0._resourceCount
 	end
 
-	if slot2 > 999 then
-		slot1.text = string.format("%s%.1f%s", "x", slot2 / 1000, "k")
+	if var_9_0 > 999 then
+		arg_9_1.text = string.format("%s%.1f%s", "x", var_9_0 / 1000, "k")
 	else
-		slot1.text = string.format("%s%d", "x", slot2)
+		arg_9_1.text = string.format("%s%d", "x", var_9_0)
 	end
 end
 
-function slot2.ShowDrop(slot0, slot1)
-	if #slot0._resourceList == #slot0._resourcePool then
-		slot0:updateContainerPosition()
+function var_0_2.ShowDrop(arg_10_0, arg_10_1)
+	if #arg_10_0._resourceList == #arg_10_0._resourcePool then
+		arg_10_0:updateContainerPosition()
 	end
 
-	slot2 = uv0.Battle.BattleVariable.CameraPosToUICamera(slot1.scenePos:Clone())
-	slot3 = Vector3(slot2.x, slot2.y, 2)
-	slot5, slot6 = math.modf(slot1.drops.resourceCount / uv1.RESOURCE_STEP)
+	local var_10_0 = var_0_0.Battle.BattleVariable.CameraPosToUICamera(arg_10_1.scenePos:Clone())
+	local var_10_1 = Vector3(var_10_0.x, var_10_0.y, 2)
+	local var_10_2 = arg_10_1.drops.resourceCount
+	local var_10_3, var_10_4 = math.modf(var_10_2 / var_0_1.RESOURCE_STEP)
 
-	if slot6 > 0 then
-		slot0:makeFloatAnima(slot3, slot0._resourcePool, slot0._resourceIconX, slot0._resourceIconY, slot0._resourceIcon, "_resourceCount", slot6 * uv1.RESOURCE_STEP, slot0._resourceText, 0)
+	if var_10_4 > 0 then
+		arg_10_0:makeFloatAnima(var_10_1, arg_10_0._resourcePool, arg_10_0._resourceIconX, arg_10_0._resourceIconY, arg_10_0._resourceIcon, "_resourceCount", var_10_4 * var_0_1.RESOURCE_STEP, arg_10_0._resourceText, 0)
 	end
 
-	while slot5 > 0 do
-		slot0:makeFloatAnima(slot3, slot0._resourcePool, slot0._resourceIconX, slot0._resourceIconY, slot0._resourceIcon, "_resourceCount", uv1.RESOURCE_STEP, slot0._resourceText, slot5)
+	while var_10_3 > 0 do
+		arg_10_0:makeFloatAnima(var_10_1, arg_10_0._resourcePool, arg_10_0._resourceIconX, arg_10_0._resourceIconY, arg_10_0._resourceIcon, "_resourceCount", var_0_1.RESOURCE_STEP, arg_10_0._resourceText, var_10_3)
 
-		slot5 = slot5 - 1
+		var_10_3 = var_10_3 - 1
 	end
 end
 
-function slot2.updateContainerPosition(slot0)
-	slot1 = slot0._cameraTF.localPosition
-	slot0._containerTF.localPosition = Vector3(slot0._xScale * (slot0._cameraSrcX - slot1.x), slot0._yScale * (slot0._cameraSrcZ - slot1.z), 0)
+function var_0_2.updateContainerPosition(arg_11_0)
+	local var_11_0 = arg_11_0._cameraTF.localPosition
+
+	arg_11_0._containerTF.localPosition = Vector3(arg_11_0._xScale * (arg_11_0._cameraSrcX - var_11_0.x), arg_11_0._yScale * (arg_11_0._cameraSrcZ - var_11_0.z), 0)
 end
 
-function slot2.makeFloatAnima(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
-	slot10 = slot0:pop(slot2)
-	slot11 = slot10.transform
+function var_0_2.makeFloatAnima(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4, arg_12_5, arg_12_6, arg_12_7, arg_12_8, arg_12_9)
+	local var_12_0 = arg_12_0:pop(arg_12_2)
+	local var_12_1 = var_12_0.transform
 
-	SetActive(slot10, true)
+	SetActive(var_12_0, true)
 
-	slot11.position = slot1
-	slot11.localPosition = slot11.localPosition - slot0._containerTF.localPosition
+	var_12_1.position = arg_12_1
+	var_12_1.localPosition = var_12_1.localPosition - arg_12_0._containerTF.localPosition
 
-	slot0:Update()
-	slot11:SetParent(slot0._container, false)
+	arg_12_0:Update()
+	var_12_1:SetParent(arg_12_0._container, false)
 
-	slot13 = math.random() * 200
+	local var_12_2 = math.random() * 200 - 100
+	local var_12_3 = math.random() * 200
 
-	LeanTween.moveX(rtf(slot10), slot11.anchoredPosition.x + math.random() * 200 - 100, uv0.RESOURCE_STAY_DURATION + slot9 * 0.05):setOnComplete(System.Action(function ()
-		LeanTween.scale(go(uv0), Vector3(0.2, 0.2, 1), uv1.FLOAT_DURATION)
+	LeanTween.moveX(rtf(var_12_0), var_12_1.anchoredPosition.x + var_12_2, var_0_1.RESOURCE_STAY_DURATION + arg_12_9 * 0.05):setOnComplete(System.Action(function()
+		LeanTween.scale(go(var_12_0), Vector3(0.2, 0.2, 1), var_0_2.FLOAT_DURATION)
 
-		uv3.localPosition = uv3.localPosition + uv5._containerTF.localPosition
+		local var_13_0 = Vector3(arg_12_3 - var_12_1.position.x, arg_12_4 - var_12_1.position.y, 0)
 
-		uv3:SetParent(uv5._go, false)
-		LeanTween.move(rtf(uv0), Vector3(uv2 - uv3.position.x, uv4 - uv3.position.y, 0), uv1.FLOAT_DURATION):setOnComplete(System.Action(function ()
-			uv0:push(uv1, uv2)
+		var_12_1.localPosition = var_12_1.localPosition + arg_12_0._containerTF.localPosition
 
-			uv3.transform.localScale = Vector3(0.35, 0.35, 0.35)
-			uv0[uv4] = uv0[uv4] + uv5
+		var_12_1:SetParent(arg_12_0._go, false)
+		LeanTween.move(rtf(var_12_0), var_13_0, var_0_2.FLOAT_DURATION):setOnComplete(System.Action(function()
+			arg_12_0:push(var_12_0, arg_12_2)
 
-			uv0:updateCountText(uv6)
-			LeanTween.scale(go(uv3), Vector3(0.5, 0.5, 0.5), 0.12):setEase(LeanTweenType.easeOutExpo):setOnComplete(System.Action(function ()
-				LeanTween.scale(go(uv0), Vector3(0.35, 0.35, 0.35), 0.3)
+			arg_12_5.transform.localScale = Vector3(0.35, 0.35, 0.35)
+			arg_12_0[arg_12_6] = arg_12_0[arg_12_6] + arg_12_7
+
+			arg_12_0:updateCountText(arg_12_8)
+			LeanTween.scale(go(arg_12_5), Vector3(0.5, 0.5, 0.5), 0.12):setEase(LeanTweenType.easeOutExpo):setOnComplete(System.Action(function()
+				LeanTween.scale(go(arg_12_5), Vector3(0.35, 0.35, 0.35), 0.3)
 			end))
 		end))
 	end))
-	LeanTween.moveY(rtf(slot10), slot11.anchoredPosition.y + slot13, 0.5 * slot13 / 200):setOnComplete(System.Action(function ()
-		uv0:GetComponent("Animator").enabled = true
 
-		LeanTween.moveY(rtf(uv0), uv1.anchoredPosition.y - uv2, 1.5 * uv3):setEase(LeanTweenType.easeOutBounce)
+	local var_12_4 = var_12_3 / 200
+
+	LeanTween.moveY(rtf(var_12_0), var_12_1.anchoredPosition.y + var_12_3, 0.5 * var_12_4):setOnComplete(System.Action(function()
+		var_12_0:GetComponent("Animator").enabled = true
+
+		LeanTween.moveY(rtf(var_12_0), var_12_1.anchoredPosition.y - var_12_3, 1.5 * var_12_4):setEase(LeanTweenType.easeOutBounce)
 	end))
 end
 
-function slot2.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0._timerList) do
-		if slot5 then
-			pg.TimeMgr.GetInstance():RemoveBattleTimer(slot4)
+function var_0_2.Dispose(arg_17_0)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0._timerList) do
+		if iter_17_1 then
+			pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_17_0)
 		end
 	end
 
-	for slot4, slot5 in ipairs(slot0._resourceList) do
-		LeanTween.cancel(go(slot5))
+	for iter_17_2, iter_17_3 in ipairs(arg_17_0._resourceList) do
+		LeanTween.cancel(go(iter_17_3))
 	end
 
-	slot0._timerList = nil
-	slot0._go = nil
-	slot0._resourceIcon = nil
-	slot0._resourceText = nil
-	slot0._itemIcon = nil
-	slot0._itemText = nil
-	slot0._camera = nil
-	slot0._uiCamera = nil
+	arg_17_0._timerList = nil
+	arg_17_0._go = nil
+	arg_17_0._resourceIcon = nil
+	arg_17_0._resourceText = nil
+	arg_17_0._itemIcon = nil
+	arg_17_0._itemText = nil
+	arg_17_0._camera = nil
+	arg_17_0._uiCamera = nil
 end

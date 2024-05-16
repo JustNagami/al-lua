@@ -1,101 +1,125 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleCardPuzzleConfig
-slot3 = slot0.Battle.BattleCardPuzzleEvent
-slot0.Battle.CardPuzzleFleetIconList = class("CardPuzzleFleetIconList")
-slot4 = slot0.Battle.CardPuzzleFleetIconList
-slot4.__name = "CardPuzzleFleetIconList"
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0, slot1)
-	slot0._go = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleCardPuzzleConfig
+local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
 
-	slot0:init()
+var_0_0.Battle.CardPuzzleFleetIconList = class("CardPuzzleFleetIconList")
+
+local var_0_4 = var_0_0.Battle.CardPuzzleFleetIconList
+
+var_0_4.__name = "CardPuzzleFleetIconList"
+
+function var_0_4.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+
+	arg_1_0:init()
 end
 
-function slot4.SetCardPuzzleComponent(slot0, slot1)
-	uv0.EventListener.AttachEventListener(slot0)
+function var_0_4.SetCardPuzzleComponent(arg_2_0, arg_2_1)
+	var_0_0.EventListener.AttachEventListener(arg_2_0)
 
-	slot0._info = slot1
-	slot0._attrManager = slot0._info:GetAttrManager()
-	slot0._buffManager = slot0._info:GetBuffManager()
+	arg_2_0._info = arg_2_1
+	arg_2_0._attrManager = arg_2_0._info:GetAttrManager()
+	arg_2_0._buffManager = arg_2_0._info:GetBuffManager()
 
-	slot0._info:RegisterEventListener(slot0, uv1.UPDATE_FLEET_ATTR, slot0.onUpdateFleetAttr)
+	arg_2_0._info:RegisterEventListener(arg_2_0, var_0_3.UPDATE_FLEET_ATTR, arg_2_0.onUpdateFleetAttr)
 end
 
-function slot4.init(slot0)
-	slot0._buffIconList = {}
-	slot0._attrIconList = {}
-	slot0._tf = slot0._go.transform
-	slot0._iconTpl = slot0._tf:Find("icon_tpl")
-	slot0._iconContainer = slot0._tf:Find("icon_list")
+function var_0_4.init(arg_3_0)
+	arg_3_0._buffIconList = {}
+	arg_3_0._attrIconList = {}
+	arg_3_0._tf = arg_3_0._go.transform
+	arg_3_0._iconTpl = arg_3_0._tf:Find("icon_tpl")
+	arg_3_0._iconContainer = arg_3_0._tf:Find("icon_list")
 end
 
-function slot4.AddBuffIcon(slot0, slot1)
-	slot2 = cloneTplTo(slot0._iconTpl, slot0._iconContainer)
-	slot4 = slot2:Find("icon")
-	slot6 = {
-		tf = slot2,
-		count = slot2:Find("count_bg/count_label"),
-		durationIMG = slot2:Find("buff_duration"):GetComponent(typeof(Image)),
-		buffID = slot1
+function var_0_4.AddBuffIcon(arg_4_0, arg_4_1)
+	local var_4_0 = cloneTplTo(arg_4_0._iconTpl, arg_4_0._iconContainer)
+	local var_4_1 = var_4_0:Find("count_bg/count_label")
+	local var_4_2 = var_4_0:Find("icon")
+	local var_4_3 = var_4_0:Find("buff_duration"):GetComponent(typeof(Image))
+	local var_4_4 = {
+		tf = var_4_0,
+		count = var_4_1,
+		durationIMG = var_4_3,
+		buffID = arg_4_1
 	}
-	slot0._buffIconList[slot1] = slot6
 
-	slot0:updateBuffIcon(slot6)
+	arg_4_0._buffIconList[arg_4_1] = var_4_4
+
+	arg_4_0:updateBuffIcon(var_4_4)
 end
 
-function slot4.AddAttrIcon(slot0, slot1)
-	slot2 = cloneTplTo(slot0._iconTpl, slot0._iconContainer)
-	slot4 = slot2:Find("icon")
-	slot5 = {
-		tf = slot2,
-		count = slot2:Find("count_bg/count_label"),
-		attr = slot1
+function var_0_4.AddAttrIcon(arg_5_0, arg_5_1)
+	local var_5_0 = cloneTplTo(arg_5_0._iconTpl, arg_5_0._iconContainer)
+	local var_5_1 = var_5_0:Find("count_bg/count_label")
+	local var_5_2 = var_5_0:Find("icon")
+	local var_5_3 = {
+		tf = var_5_0,
+		count = var_5_1,
+		attr = arg_5_1
 	}
-	slot0._attrIconList[slot1] = slot5
 
-	slot0:updateAttrIcon(slot5)
+	arg_5_0._attrIconList[arg_5_1] = var_5_3
+
+	arg_5_0:updateAttrIcon(var_5_3)
 end
 
-function slot4.onUpdateFleetAttr(slot0, slot1)
-	if uv0.FleetIconRegisterAttr[slot1.Data.attrName] then
-		if slot0._attrIconList[slot2] then
-			slot0:updateAttrIcon(slot3)
+function var_0_4.onUpdateFleetAttr(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.Data.attrName
+
+	if var_0_2.FleetIconRegisterAttr[var_6_0] then
+		local var_6_1 = arg_6_0._attrIconList[var_6_0]
+
+		if var_6_1 then
+			arg_6_0:updateAttrIcon(var_6_1)
 		else
-			slot0:AddAttrIcon(slot2)
+			arg_6_0:AddAttrIcon(var_6_0)
 		end
 	end
 end
 
-function slot4.updateAttrIcon(slot0, slot1)
-	setText(slot1.count, slot0._attrManager:GetCurrent(slot1.attr))
+function var_0_4.updateAttrIcon(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1.count
+	local var_7_1 = arg_7_1.attr
+	local var_7_2 = arg_7_0._attrManager:GetCurrent(var_7_1)
+
+	setText(var_7_0, var_7_2)
 end
 
-function slot4.updateBuffIcon(slot0, slot1)
-	slot3 = slot0._buffManager:GetCardPuzzleBuff(slot1.buffID)
+function var_0_4.updateBuffIcon(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1.buffID
+	local var_8_1 = arg_8_0._buffManager:GetCardPuzzleBuff(var_8_0)
+	local var_8_2 = arg_8_1.count
+	local var_8_3 = var_8_1:GetStack()
 
-	setText(slot1.count, slot3:GetStack())
+	setText(var_8_2, var_8_3)
 
-	slot1.durationIMG.fillAmount = slot3:GetDurationRate()
+	arg_8_1.durationIMG.fillAmount = var_8_1:GetDurationRate()
 end
 
-function slot4.Update(slot0)
-	for slot5, slot6 in pairs(slot0._buffManager:GetCardPuzzleBuffList()) do
-		if uv0.FleetIconRegisterBuff[slot5] then
-			if slot0._buffIconList[slot5] == nil then
-				slot0:AddBuffIcon(slot5)
+function var_0_4.Update(arg_9_0)
+	local var_9_0 = arg_9_0._buffManager:GetCardPuzzleBuffList()
+
+	for iter_9_0, iter_9_1 in pairs(var_9_0) do
+		if var_0_2.FleetIconRegisterBuff[iter_9_0] then
+			local var_9_1 = arg_9_0._buffIconList[iter_9_0]
+
+			if var_9_1 == nil then
+				arg_9_0:AddBuffIcon(iter_9_0)
 			else
-				slot0:updateBuffIcon(slot7)
+				arg_9_0:updateBuffIcon(var_9_1)
 			end
 		end
 	end
 end
 
-function slot4.Dispose(slot0)
-	slot0._buffIconList = nil
-	slot0._attrIconList = nil
-	slot0._tf = nil
-	slot0._iconTpl = nil
-	slot0._iconContainer = nil
+function var_0_4.Dispose(arg_10_0)
+	arg_10_0._buffIconList = nil
+	arg_10_0._attrIconList = nil
+	arg_10_0._tf = nil
+	arg_10_0._iconTpl = nil
+	arg_10_0._iconContainer = nil
 end

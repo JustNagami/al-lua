@@ -1,191 +1,194 @@
-slot0 = class("PlayerResUI", pm.Mediator)
-slot0.GO_MALL = "PlayerResUI:GO_MALL"
-slot0.CHANGE_TOUCH_ABLE = "PlayerResUI:CHANGE_TOUCH_ABLE"
-slot0.HIDE = "PlayerResUI:HIDE"
-slot0.SHOW = "PlayerResUI:SHOW"
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = 4
-slot0.TYPE_OIL = 2
-slot0.TYPE_GOLD = 4
-slot0.TYPE_GEM = 8
-slot0.TYPE_ALL = bit.bor(2, 4, 8)
-slot0.DEFAULT_MODE = {
-	showType = slot0.TYPE_ALL
+﻿local var_0_0 = class("PlayerResUI", pm.Mediator)
+
+var_0_0.GO_MALL = "PlayerResUI:GO_MALL"
+var_0_0.CHANGE_TOUCH_ABLE = "PlayerResUI:CHANGE_TOUCH_ABLE"
+var_0_0.HIDE = "PlayerResUI:HIDE"
+var_0_0.SHOW = "PlayerResUI:SHOW"
+
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+
+var_0_0.TYPE_OIL = 2
+var_0_0.TYPE_GOLD = 4
+var_0_0.TYPE_GEM = 8
+var_0_0.TYPE_ALL = bit.bor(2, 4, 8)
+var_0_0.DEFAULT_MODE = {
+	showType = var_0_0.TYPE_ALL
 }
 
-function slot0.Ctor(slot0)
-	uv0.super.Ctor(slot0)
-	pg.DelegateInfo.New(slot0)
-	pg.m02:registerMediator(slot0)
+function var_0_0.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
+	pg.m02:registerMediator(arg_1_0)
 
-	slot0.state = uv1
-	slot0.settingsStack = {}
+	arg_1_0.state = var_0_1
+	arg_1_0.settingsStack = {}
 end
 
-function slot0.GetPlayer(slot0)
+function var_0_0.GetPlayer(arg_2_0)
 	return getProxy(PlayerProxy):getRawData()
 end
 
-function slot0.IsLoaded(slot0)
-	return uv0 < slot0.state
+function var_0_0.IsLoaded(arg_3_0)
+	return arg_3_0.state > var_0_2
 end
 
-function slot0.IsEnable(slot0)
-	return slot0.state == uv0
+function var_0_0.IsEnable(arg_4_0)
+	return arg_4_0.state == var_0_4
 end
 
-function slot0.Load(slot0, slot1)
-	if slot0.state ~= uv0 then
+function var_0_0.Load(arg_5_0, arg_5_1)
+	if arg_5_0.state ~= var_0_1 then
 		return
 	end
 
-	slot0.state = uv1
+	arg_5_0.state = var_0_2
 
-	PoolMgr.GetInstance():GetUI("ResPanel", true, slot1)
+	PoolMgr.GetInstance():GetUI("ResPanel", true, arg_5_1)
 end
 
-function slot0.Init(slot0, slot1)
-	slot0._go = slot1
-	slot0.oilAddBtn = findTF(slot0._go, "oil")
-	slot0.goldAddBtn = findTF(slot0._go, "gold")
-	slot0.gemAddBtn = findTF(slot0._go, "gem")
-	slot2 = findTF(slot0._go, "gold/gold_max_value")
-	slot0.goldMax = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "gold/gold_value")
-	slot0.goldValue = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "oil/oil_max_value")
-	slot0.oilMax = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "oil/oil_value")
-	slot0.oilValue = slot2:GetComponent(typeof(Text))
-	slot2 = findTF(slot0._go, "gem/gem_value")
-	slot0.gemValue = slot2:GetComponent(typeof(Text))
-	slot2 = slot0._go
-	slot0.animation = slot2:GetComponent(typeof(Animation))
-	slot0.gemPos = slot0.gemAddBtn.anchoredPosition
-	slot0.oilPos = slot0.oilAddBtn.anchoredPosition
+function var_0_0.Init(arg_6_0, arg_6_1)
+	arg_6_0._go = arg_6_1
+	arg_6_0.oilAddBtn = findTF(arg_6_0._go, "oil")
+	arg_6_0.goldAddBtn = findTF(arg_6_0._go, "gold")
+	arg_6_0.gemAddBtn = findTF(arg_6_0._go, "gem")
+	arg_6_0.goldMax = findTF(arg_6_0._go, "gold/gold_max_value"):GetComponent(typeof(Text))
+	arg_6_0.goldValue = findTF(arg_6_0._go, "gold/gold_value"):GetComponent(typeof(Text))
+	arg_6_0.oilMax = findTF(arg_6_0._go, "oil/oil_max_value"):GetComponent(typeof(Text))
+	arg_6_0.oilValue = findTF(arg_6_0._go, "oil/oil_value"):GetComponent(typeof(Text))
+	arg_6_0.gemValue = findTF(arg_6_0._go, "gem/gem_value"):GetComponent(typeof(Text))
+	arg_6_0.animation = arg_6_0._go:GetComponent(typeof(Animation))
+	arg_6_0.gemPos = arg_6_0.gemAddBtn.anchoredPosition
+	arg_6_0.oilPos = arg_6_0.oilAddBtn.anchoredPosition
 
-	onButton(slot0, slot0.goldAddBtn, function ()
+	onButton(arg_6_0, arg_6_0.goldAddBtn, function()
 		if not pg.goldExchangeMgr then
 			pg.goldExchangeMgr = GoldExchangeView.New()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.oilAddBtn, function ()
-		uv0:ClickOil()
+	onButton(arg_6_0, arg_6_0.oilAddBtn, function()
+		arg_6_0:ClickOil()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.gemAddBtn, function ()
-		uv0:ClickGem()
+	onButton(arg_6_0, arg_6_0.gemAddBtn, function()
+		arg_6_0:ClickGem()
 	end, SFX_PANEL)
 
-	slot0.position = tf(slot0._go).anchoredPosition
+	arg_6_0.position = tf(arg_6_0._go).anchoredPosition
 
-	setActive(slot0._go, true)
+	setActive(arg_6_0._go, true)
 end
 
-function slot0.SetActive(slot0, slot1)
-	if slot1.active then
-		table.insert(slot0.settingsStack, slot1)
-		slot0:Enable(slot1)
+function var_0_0.SetActive(arg_10_0, arg_10_1)
+	if arg_10_1.active then
+		table.insert(arg_10_0.settingsStack, arg_10_1)
+		arg_10_0:Enable(arg_10_1)
 	else
-		if slot1.clear then
-			slot0.settingsStack = {}
+		if arg_10_1.clear then
+			arg_10_0.settingsStack = {}
 		else
-			table.remove(slot0.settingsStack)
+			table.remove(arg_10_0.settingsStack)
 		end
 
-		slot0:Disable()
+		arg_10_0:Disable()
 	end
 end
 
-function slot0.Enable(slot0, slot1)
-	if not slot0:IsLoaded() then
-		slot0:Load(function (slot0)
-			uv0._tf = slot0.transform
-			uv0.state = uv1
+function var_0_0.Enable(arg_11_0, arg_11_1)
+	if not arg_11_0:IsLoaded() then
+		arg_11_0:Load(function(arg_12_0)
+			arg_11_0._tf = arg_12_0.transform
+			arg_11_0.state = var_0_4
 
-			uv0:Init(uv0._tf:Find("frame").gameObject)
-			uv0:CustomSetting(uv2)
-			uv0:Flush()
+			arg_11_0:Init(arg_11_0._tf:Find("frame").gameObject)
+			arg_11_0:CustomSetting(arg_11_1)
+			arg_11_0:Flush()
 		end)
-	elseif slot0.state == uv0 then
-		slot0:CustomSetting(slot1)
+	elseif arg_11_0.state == var_0_4 then
+		arg_11_0:CustomSetting(arg_11_1)
 	else
-		slot0.state = uv0
+		arg_11_0.state = var_0_4
 
-		slot0:CustomSetting(slot1)
-		setActive(slot0._go, true)
+		arg_11_0:CustomSetting(arg_11_1)
+		setActive(arg_11_0._go, true)
 
-		if slot0:IsDirty() then
-			slot0:Flush()
+		if arg_11_0:IsDirty() then
+			arg_11_0:Flush()
 		end
 	end
 end
 
-function slot0.Disable(slot0)
+function var_0_0.Disable(arg_13_0)
 	if pg.goldExchangeMgr then
 		pg.goldExchangeMgr:exit()
 
 		pg.goldExchangeMgr = nil
 	end
 
-	if #slot0.settingsStack > 0 then
-		slot1 = slot0.settingsStack[#slot0.settingsStack]
-		slot1.anim = false
+	if #arg_13_0.settingsStack > 0 then
+		local var_13_0 = arg_13_0.settingsStack[#arg_13_0.settingsStack]
 
-		slot0:Enable(slot1)
-	elseif slot0:IsLoaded() then
-		slot0.state = uv0
+		var_13_0.anim = false
 
-		setActive(slot0._go, false)
+		arg_13_0:Enable(var_13_0)
+	elseif arg_13_0:IsLoaded() then
+		if arg_13_0:IsLoaded() then
+			setActive(arg_13_0._go, false)
+		end
+
+		arg_13_0.state = var_0_3
 	end
 end
 
-function slot0.CustomSetting(slot0, slot1)
-	setActive(slot0.oilAddBtn, bit.band(slot1.showType, uv0.TYPE_OIL) > 0)
-	setActive(slot0.goldAddBtn, bit.band(slot2, uv0.TYPE_GOLD) > 0)
-	setActive(slot0.gemAddBtn, bit.band(slot2, uv0.TYPE_GEM) > 0)
-	slot0._go.transform:SetAsLastSibling()
+function var_0_0.CustomSetting(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_1.showType
 
-	if slot1.anim then
-		slot0:DoAnimation()
+	setActive(arg_14_0.oilAddBtn, bit.band(var_14_0, var_0_0.TYPE_OIL) > 0)
+	setActive(arg_14_0.goldAddBtn, bit.band(var_14_0, var_0_0.TYPE_GOLD) > 0)
+	setActive(arg_14_0.gemAddBtn, bit.band(var_14_0, var_0_0.TYPE_GEM) > 0)
+	arg_14_0._go.transform:SetAsLastSibling()
+
+	if arg_14_1.anim then
+		arg_14_0:DoAnimation()
 	end
 
-	slot3 = slot1.gemOffsetX or 0
-	slot0.gemAddBtn.anchoredPosition3D = Vector3(slot0.gemPos.x + slot3, slot0.gemPos.y, 1)
-	slot0.oilAddBtn.anchoredPosition3D = Vector3(slot0.oilPos.x + slot3, slot0.oilPos.y, 1)
+	local var_14_1 = arg_14_1.gemOffsetX or 0
+
+	arg_14_0.gemAddBtn.anchoredPosition3D = Vector3(arg_14_0.gemPos.x + var_14_1, arg_14_0.gemPos.y, 1)
+	arg_14_0.oilAddBtn.anchoredPosition3D = Vector3(arg_14_0.oilPos.x + var_14_1, arg_14_0.oilPos.y, 1)
 
 	NotchAdapt.AdjustUI()
-	setCanvasOverrideSorting(slot0._tf, tobool(slot1.canvasOrder))
+	setCanvasOverrideSorting(arg_14_0._tf, tobool(arg_14_1.canvasOrder))
 
-	if slot1.canvasOrder then
-		GetComponent(slot0._tf, typeof(Canvas)).sortingOrder = slot1.canvasOrder
+	if arg_14_1.canvasOrder then
+		GetComponent(arg_14_0._tf, typeof(Canvas)).sortingOrder = arg_14_1.canvasOrder
 	end
 
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, slot0._tf, {
-		weight = slot1.weight,
-		groupName = slot1.groupName
+	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg_14_0._tf, {
+		weight = arg_14_1.weight,
+		groupName = arg_14_1.groupName
 	})
 end
 
-function slot0.DoAnimation(slot0)
-	slot0.posY = slot0.posY or slot0._go.transform.anchoredPosition.y
+function var_0_0.DoAnimation(arg_15_0)
+	arg_15_0.posY = arg_15_0.posY or arg_15_0._go.transform.anchoredPosition.y
 
-	LeanTween.value(slot0._go, slot0.posY + 200, slot0.posY, 0.5):setOnUpdate(System.Action_float(function (slot0)
-		uv0._go.transform.anchoredPosition = Vector3(uv0._go.transform.anchoredPosition.x, slot0, 0)
+	LeanTween.value(arg_15_0._go, arg_15_0.posY + 200, arg_15_0.posY, 0.5):setOnUpdate(System.Action_float(function(arg_16_0)
+		arg_15_0._go.transform.anchoredPosition = Vector3(arg_15_0._go.transform.anchoredPosition.x, arg_16_0, 0)
 	end)):setEase(LeanTweenType.easeInOutExpo)
 end
 
-function slot0.ClickGem(slot0)
-	slot1 = slot0:GetPlayer()
+function var_0_0.ClickGem(arg_17_0)
+	local var_17_0 = arg_17_0:GetPlayer()
 
-	function slot2()
+	local function var_17_1()
 		if not pg.m02:hasMediator(ChargeMediator.__cname) then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		else
-			pg.m02:sendNotification(uv0.GO_MALL)
+			pg.m02:sendNotification(var_0_0.GO_MALL)
 		end
 	end
 
@@ -193,49 +196,51 @@ function slot0.ClickGem(slot0)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			fontSize = 23,
 			yesText = "text_buy",
-			content = i18n("word_diamond_tip", slot1:getFreeGem(), slot1:getChargeGem(), slot1:getTotalGem()),
-			onYes = slot2,
+			content = i18n("word_diamond_tip", var_17_0:getFreeGem(), var_17_0:getChargeGem(), var_17_0:getTotalGem()),
+			onYes = var_17_1,
 			alignment = TextAnchor.UpperLeft,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		slot2()
+		var_17_1()
 	end
 end
 
-function slot0.ClickOil(slot0)
-	slot2 = pg.shop_template
+function var_0_0.ClickOil(arg_19_0)
+	local var_19_0 = arg_19_0:GetPlayer()
+	local var_19_1 = pg.shop_template
+	local var_19_2 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var_19_0.buyOilCount)
 
-	if not ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, slot0:GetPlayer().buyOilCount) then
+	if not var_19_2 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_today_buy_limit"))
 
 		return
 	end
 
-	slot4 = pg.shop_template[slot3]
-	slot5 = slot4.num
+	local var_19_3 = pg.shop_template[var_19_2]
+	local var_19_4 = var_19_3.num
 
-	if slot4.num == -1 and slot4.genre == ShopArgs.BuyOil then
-		slot5 = ShopArgs.getOilByLevel(slot1.level)
+	if var_19_3.num == -1 and var_19_3.genre == ShopArgs.BuyOil then
+		var_19_4 = ShopArgs.getOilByLevel(var_19_0.level)
 	end
 
-	if slot1.buyOilCount < pg.gameset.buy_oil_limit.key_value then
+	if pg.gameset.buy_oil_limit.key_value > var_19_0.buyOilCount then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
 			windowSize = {
 				y = 570
 			},
-			content = i18n("oil_buy_tip", slot4.resource_num, slot5, slot1.buyOilCount),
+			content = i18n("oil_buy_tip", var_19_3.resource_num, var_19_4, var_19_0.buyOilCount),
 			drop = {
 				id = 2,
 				type = DROP_TYPE_RESOURCE,
-				count = slot5
+				count = var_19_4
 			},
-			onYes = function ()
+			onYes = function()
 				pg.m02:sendNotification(GAME.SHOPPING, {
 					isQuickShopping = true,
 					count = 1,
-					id = uv0
+					id = var_19_2
 				})
 			end,
 			weight = LayerWeightConst.TOP_LAYER
@@ -254,81 +259,89 @@ function slot0.ClickOil(slot0)
 	end
 end
 
-function slot0.Flush(slot0)
-	slot1 = slot0:GetPlayer()
-	slot0.goldMax.text = "MAX: " .. slot1:getLevelMaxGold()
-	slot0.goldValue.text = slot1.gold
-	slot0.oilMax.text = "MAX: " .. slot1:getLevelMaxOil()
-	slot0.oilValue.text = slot1.oil
-	slot0.gemValue.text = slot1:getTotalGem()
+function var_0_0.Flush(arg_21_0)
+	local var_21_0 = arg_21_0:GetPlayer()
+	local var_21_1 = var_21_0:getLevelMaxGold()
+	local var_21_2 = var_21_0:getLevelMaxOil()
 
-	slot0:SetDirty(false)
+	arg_21_0.goldMax.text = "MAX: " .. var_21_1
+	arg_21_0.goldValue.text = var_21_0.gold
+	arg_21_0.oilMax.text = "MAX: " .. var_21_2
+	arg_21_0.oilValue.text = var_21_0.oil
+	arg_21_0.gemValue.text = var_21_0:getTotalGem()
+
+	arg_21_0:SetDirty(false)
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Disable()
-	pg.m02:removeMediator(slot0.__cname)
-	PoolMgr.GetInstance():ReturnUI("ResPanel", slot0._go)
+function var_0_0.Dispose(arg_22_0)
+	pg.DelegateInfo.Dispose(arg_22_0)
+	arg_22_0:Disable()
+	pg.m02:removeMediator(arg_22_0.__cname)
+	PoolMgr.GetInstance():ReturnUI("ResPanel", arg_22_0._go)
 
-	slot0.state = uv0
+	arg_22_0.state = var_0_1
 end
 
-function slot0.SetDirty(slot0, slot1)
-	slot0.dirty = slot1
+function var_0_0.SetDirty(arg_23_0, arg_23_1)
+	arg_23_0.dirty = arg_23_1
 end
 
-function slot0.IsDirty(slot0)
-	return slot0.dirty
+function var_0_0.IsDirty(arg_24_0)
+	return arg_24_0.dirty
 end
 
-function slot0.Fold(slot0, slot1, slot2)
-	if not slot0:IsLoaded() then
+function var_0_0.Fold(arg_25_0, arg_25_1, arg_25_2)
+	if not arg_25_0:IsLoaded() then
 		return
 	end
 
-	slot0.lposY = slot0.lposY or slot0._go.transform.localPosition.y
+	arg_25_0.lposY = arg_25_0.lposY or arg_25_0._go.transform.localPosition.y
 
-	LeanTween.moveLocalY(slot0._go, slot1 and slot0.lposY + 200 or slot0.lposY, slot2):setEase(LeanTweenType.easeInOutExpo)
+	local var_25_0 = arg_25_1 and arg_25_0.lposY + 200 or arg_25_0.lposY
+
+	LeanTween.moveLocalY(arg_25_0._go, var_25_0, arg_25_2):setEase(LeanTweenType.easeInOutExpo)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_26_0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.GUILD_GET_USER_INFO_DONE,
 		GAME.GET_PUBLIC_GUILD_USER_DATA_DONE,
 		PlayerResUI.CHANGE_TOUCH_ABLE,
-		uv0.HIDE,
-		uv0.SHOW
+		var_0_0.HIDE,
+		var_0_0.SHOW
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == PlayerResUI.CHANGE_TOUCH_ABLE then
-		slot3 = slot1:getBody()
-		slot4 = GetComponent(tf(slot0._go), typeof(CanvasGroup))
-		slot4.interactable = slot3
-		slot4.blocksRaycasts = slot3
+function var_0_0.handleNotification(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_1:getName()
+
+	if var_27_0 == PlayerResUI.CHANGE_TOUCH_ABLE then
+		local var_27_1 = arg_27_1:getBody()
+		local var_27_2 = GetComponent(tf(arg_27_0._go), typeof(CanvasGroup))
+
+		var_27_2.interactable = var_27_1
+		var_27_2.blocksRaycasts = var_27_1
 
 		return
 	end
 
-	slot0:updateResPanel(slot2)
+	arg_27_0:updateResPanel(var_27_0)
 end
 
-function slot0.updateResPanel(slot0, slot1)
-	if not slot0:IsEnable() then
-		slot0:SetDirty(true)
+function var_0_0.updateResPanel(arg_28_0, arg_28_1)
+	if not arg_28_0:IsEnable() then
+		arg_28_0:SetDirty(true)
 
 		return
 	end
 
-	if slot1 == PlayerProxy.UPDATED or slot1 == GAME.GUILD_GET_USER_INFO_DONE or slot1 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
-		slot0:Flush()
+	if arg_28_1 == PlayerProxy.UPDATED or arg_28_1 == GAME.GUILD_GET_USER_INFO_DONE or arg_28_1 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
+		arg_28_0:Flush()
 	end
 end
 
-function slot0.checkBackPressed(slot0)
+function var_0_0.checkBackPressed(arg_29_0)
 	if pg.goldExchangeMgr then
 		pg.goldExchangeMgr:exit()
 
@@ -340,4 +353,4 @@ function slot0.checkBackPressed(slot0)
 	end
 end
 
-return slot0
+return var_0_0

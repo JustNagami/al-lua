@@ -1,7 +1,7 @@
-slot0 = class("BossSingleTotalRewardPanel", import("view.activity.worldboss.ActivityBossTotalRewardPanel"))
+﻿local var_0_0 = class("BossSingleTotalRewardPanel", import("view.activity.worldboss.ActivityBossTotalRewardPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BossSingleTotalRewardPanel"
 end
 
-return slot0
+return var_0_0

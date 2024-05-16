@@ -1,149 +1,179 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleVariable = slot0.Battle.BattleVariable or {}
-slot1 = slot0.Battle.BattleVariable
-slot2 = slot0.Battle.BattleConfig
+﻿ys = ys or {}
 
-function slot1.Init()
-	uv0.speedRatioByIFF = {
+local var_0_0 = ys
+
+var_0_0.Battle.BattleVariable = var_0_0.Battle.BattleVariable or {}
+
+local var_0_1 = var_0_0.Battle.BattleVariable
+local var_0_2 = var_0_0.Battle.BattleConfig
+
+function var_0_1.Init()
+	var_0_1.speedRatioByIFF = {
 		[0] = 1,
 		1,
-		[-1.0] = 1
+		[-1] = 1
 	}
-	uv0.focusExemptList = {}
-	uv0.MapSpeedRatio = 1
-	uv0.MapSpeedFacotrList = {}
-	uv0.IFFFactorList = {}
+	var_0_1.focusExemptList = {}
+	var_0_1.MapSpeedRatio = 1
+	var_0_1.MapSpeedFacotrList = {}
+	var_0_1.IFFFactorList = {}
 
-	for slot3, slot4 in pairs(uv0.speedRatioByIFF) do
-		uv0.IFFFactorList[slot3] = {}
+	for iter_1_0, iter_1_1 in pairs(var_0_1.speedRatioByIFF) do
+		var_0_1.IFFFactorList[iter_1_0] = {}
 	end
 
-	uv0._lastCameraPos = nil
-	slot0 = pg.UIMgr.GetInstance():GetMainCamera()
+	var_0_1._lastCameraPos = nil
 
-	setActive(slot0, true)
+	local var_1_0 = pg.UIMgr.GetInstance():GetMainCamera()
 
-	uv0._camera = slot0:GetComponent(typeof(Camera))
-	uv0._cameraTF = uv0._camera.transform
-	uv0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-	slot1 = math.deg2Rad * uv0._cameraTF.localEulerAngles.x
-	uv0._camera_radian_x_sin = math.sin(slot1)
-	uv0._camera_radian_x_cos = math.cos(slot1)
-	uv0._camera_radian_x_tan = uv0._camera_radian_x_sin / uv0._camera_radian_x_cos
-	uv0.CameraNormalHeight = uv0._camera_radian_x_cos * uv1.CAMERA_SIZE + uv1.CAMERA_BASE_HEIGH
-	uv0.CameraFocusHeight = uv0._camera_radian_x_cos * uv1.CAST_CAM_ZOOM_SIZE + uv1.CAMERA_BASE_HEIGH
+	setActive(var_1_0, true)
+
+	var_0_1._camera = var_1_0:GetComponent(typeof(Camera))
+	var_0_1._cameraTF = var_0_1._camera.transform
+	var_0_1._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+
+	local var_1_1 = math.deg2Rad * var_0_1._cameraTF.localEulerAngles.x
+
+	var_0_1._camera_radian_x_sin = math.sin(var_1_1)
+	var_0_1._camera_radian_x_cos = math.cos(var_1_1)
+	var_0_1._camera_radian_x_tan = var_0_1._camera_radian_x_sin / var_0_1._camera_radian_x_cos
+	var_0_1.CameraNormalHeight = var_0_1._camera_radian_x_cos * var_0_2.CAMERA_SIZE + var_0_2.CAMERA_BASE_HEIGH
+	var_0_1.CameraFocusHeight = var_0_1._camera_radian_x_cos * var_0_2.CAST_CAM_ZOOM_SIZE + var_0_2.CAMERA_BASE_HEIGH
 end
 
-function slot1.Clear()
-	uv0.speedRatioByIFF = nil
-	uv0.focusExemptList = nil
-	uv0.MapSpeedRatio = nil
-	uv0.MapSpeedFacotrList = nil
-	uv0.IFFFactorList = nil
-	uv0._lastCameraPos = nil
-	uv0._camera = nil
-	uv0._cameraTF = nil
-	uv0._uiCamera = nil
-	uv0._camera_radian_x_sin = nil
-	uv0._camera_radian_x_cos = nil
-	uv0._camera_radian_x_tan = nil
-	uv0.CameraNormalHeight = nil
-	uv0.CameraFocusHeight = nil
+function var_0_1.Clear()
+	var_0_1.speedRatioByIFF = nil
+	var_0_1.focusExemptList = nil
+	var_0_1.MapSpeedRatio = nil
+	var_0_1.MapSpeedFacotrList = nil
+	var_0_1.IFFFactorList = nil
+	var_0_1._lastCameraPos = nil
+	var_0_1._camera = nil
+	var_0_1._cameraTF = nil
+	var_0_1._uiCamera = nil
+	var_0_1._camera_radian_x_sin = nil
+	var_0_1._camera_radian_x_cos = nil
+	var_0_1._camera_radian_x_tan = nil
+	var_0_1.CameraNormalHeight = nil
+	var_0_1.CameraFocusHeight = nil
 end
 
-slot3 = 0
-slot4 = 0
-slot5 = 0
-slot6 = 0
-slot7 = 0
-slot8 = 0
+local var_0_3 = 0
+local var_0_4 = 0
+local var_0_5 = 0
+local var_0_6 = 0
+local var_0_7 = 0
+local var_0_8 = 0
 
-function slot1.UpdateCameraPositionArgs()
-	slot1 = uv0._camera.orthographicSize
+function var_0_1.UpdateCameraPositionArgs()
+	local var_3_0 = var_0_1._cameraTF.position
+	local var_3_1 = var_0_1._camera.orthographicSize
 
-	if uv0._lastCameraPos == uv0._cameraTF.position and uv0._lastCameraSize == slot1 then
+	if var_0_1._lastCameraPos == var_3_0 and var_0_1._lastCameraSize == var_3_1 then
 		return
 	else
-		uv0._lastCameraPos = slot0
-		uv0._lastCameraSize = slot1
+		var_0_1._lastCameraPos = var_3_0
+		var_0_1._lastCameraSize = var_3_1
 	end
 
-	slot2 = pg.CameraFixMgr.GetInstance()
-	slot3 = uv0._camera:ScreenToWorldPoint(slot2.leftBottomVector)
-	slot4 = uv0._camera:ScreenToWorldPoint(slot2.rightTopVector)
-	slot5 = uv0._uiCamera:ScreenToWorldPoint(slot2.leftBottomVector)
-	slot6 = uv0._uiCamera:ScreenToWorldPoint(slot2.rightTopVector)
-	uv1 = slot3.x
-	uv2 = slot5.x
-	uv3 = (slot6.x - slot5.x) / (slot4.x - slot3.x)
-	slot7 = slot3.y * 0.866 + slot3.z * 0.5
-	uv4 = slot7
-	uv5 = slot5.y
-	uv6 = (slot6.y - slot5.y) / (slot4.y * 0.866 + slot4.z * 0.5 - slot7)
+	local var_3_2 = pg.CameraFixMgr.GetInstance()
+	local var_3_3 = var_0_1._camera:ScreenToWorldPoint(var_3_2.leftBottomVector)
+	local var_3_4 = var_0_1._camera:ScreenToWorldPoint(var_3_2.rightTopVector)
+	local var_3_5 = var_0_1._uiCamera:ScreenToWorldPoint(var_3_2.leftBottomVector)
+	local var_3_6 = var_0_1._uiCamera:ScreenToWorldPoint(var_3_2.rightTopVector)
+
+	var_0_3 = var_3_3.x
+	var_0_4 = var_3_5.x
+	var_0_5 = (var_3_6.x - var_3_5.x) / (var_3_4.x - var_3_3.x)
+
+	local var_3_7 = var_3_3.y * 0.866 + var_3_3.z * 0.5
+	local var_3_8 = var_3_4.y * 0.866 + var_3_4.z * 0.5
+
+	var_0_6 = var_3_7
+	var_0_7 = var_3_5.y
+	var_0_8 = (var_3_6.y - var_3_5.y) / (var_3_8 - var_3_7)
 end
 
-function slot1.CameraPosToUICamera(slot0)
-	uv0.CameraPosToUICameraByRef(slot0)
+function var_0_1.CameraPosToUICamera(arg_4_0)
+	var_0_1.CameraPosToUICameraByRef(arg_4_0)
 
-	return slot0
+	return arg_4_0
 end
 
-function slot1.CameraPosToUICameraByRef(slot0)
-	slot0.x = (slot0.x - uv0) * uv1 + uv2
-	slot0.y = (slot0.y * 0.866 + slot0.z * 0.5 - uv3) * uv4 + uv5
-	slot0.z = 0
+function var_0_1.CameraPosToUICameraByRef(arg_5_0)
+	local var_5_0 = (arg_5_0.x - var_0_3) * var_0_5 + var_0_4
+
+	arg_5_0.y, arg_5_0.x = (arg_5_0.y * 0.866 + arg_5_0.z * 0.5 - var_0_6) * var_0_8 + var_0_7, var_5_0
+	arg_5_0.z = 0
 end
 
-function slot1.UIPosToScenePos(slot0, slot1)
-	slot2 = pg.CameraFixMgr.GetInstance()
-	slot7 = uv0._uiCamera:ScreenToWorldPoint(Vector2(slot2:GetCurrentWidth() / 1920 * slot0.x, slot2:GetCurrentHeight() / 1080 * slot0.y))
-	slot9 = (slot7.y - uv4) / uv5 + uv6
-	slot10 = math.tan(30 * Mathf.Deg2Rad)
+function var_0_1.UIPosToScenePos(arg_6_0, arg_6_1)
+	local var_6_0 = pg.CameraFixMgr.GetInstance()
+	local var_6_1 = var_6_0:GetCurrentWidth()
+	local var_6_2 = var_6_0:GetCurrentHeight()
+	local var_6_3 = var_6_1 / 1920
+	local var_6_4 = var_6_2 / 1080
 
-	slot1:Set((slot7.x - uv1) / uv2 + uv3, 0, slot9 / slot10 + slot9 * slot10 * 0.5)
+	arg_6_0 = Vector2(var_6_3 * arg_6_0.x, var_6_4 * arg_6_0.y)
+
+	local var_6_5 = var_0_1._uiCamera:ScreenToWorldPoint(arg_6_0)
+	local var_6_6 = (var_6_5.x - var_0_4) / var_0_5 + var_0_3
+	local var_6_7 = (var_6_5.y - var_0_7) / var_0_8 + var_0_6
+	local var_6_8 = math.tan(30 * Mathf.Deg2Rad)
+	local var_6_9 = var_6_7 / var_6_8 + var_6_7 * var_6_8 * 0.5
+
+	arg_6_1:Set(var_6_6, 0, var_6_9)
 end
 
-function slot1.AppendMapFactor(slot0, slot1)
-	if uv0.MapSpeedFacotrList[slot0] ~= nil then
-		uv0.RemoveMapFactor(slot0)
+function var_0_1.AppendMapFactor(arg_7_0, arg_7_1)
+	if var_0_1.MapSpeedFacotrList[arg_7_0] ~= nil then
+		var_0_1.RemoveMapFactor(arg_7_0)
 	end
 
-	uv0.MapSpeedRatio = uv0.MapSpeedRatio * slot1
-	uv0.MapSpeedFacotrList[slot0] = slot1
+	var_0_1.MapSpeedRatio = var_0_1.MapSpeedRatio * arg_7_1
+	var_0_1.MapSpeedFacotrList[arg_7_0] = arg_7_1
 end
 
-function slot1.RemoveMapFactor(slot0)
-	if uv0.MapSpeedFacotrList[slot0] ~= nil then
-		uv0.MapSpeedRatio = uv0.MapSpeedRatio / slot1
-		uv0.MapSpeedFacotrList[slot0] = nil
-	end
-end
+function var_0_1.RemoveMapFactor(arg_8_0)
+	local var_8_0 = var_0_1.MapSpeedFacotrList[arg_8_0]
 
-function slot1.AppendIFFFactor(slot0, slot1, slot2)
-	if uv0.IFFFactorList[slot0][slot1] ~= nil then
-		uv0.RemoveIFFFactor(slot0, slot1)
-	end
-
-	uv0.speedRatioByIFF[slot0] = uv0.speedRatioByIFF[slot0] * slot2
-	slot3[slot1] = slot2
-	uv0.focusExemptList = {}
-end
-
-function slot1.RemoveIFFFactor(slot0, slot1)
-	if uv0.IFFFactorList[slot0][slot1] ~= nil then
-		uv0.speedRatioByIFF[slot0] = uv0.speedRatioByIFF[slot0] / slot3
-		slot2[slot1] = nil
-		uv0.focusExemptList = {}
+	if var_8_0 ~= nil then
+		var_0_1.MapSpeedRatio = var_0_1.MapSpeedRatio / var_8_0
+		var_0_1.MapSpeedFacotrList[arg_8_0] = nil
 	end
 end
 
-function slot1.GetSpeedRatio(slot0, slot1)
-	return uv0.focusExemptList[slot0] or uv0.speedRatioByIFF[slot1]
+function var_0_1.AppendIFFFactor(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = var_0_1.IFFFactorList[arg_9_0]
+
+	if var_9_0[arg_9_1] ~= nil then
+		var_0_1.RemoveIFFFactor(arg_9_0, arg_9_1)
+	end
+
+	var_0_1.speedRatioByIFF[arg_9_0] = var_0_1.speedRatioByIFF[arg_9_0] * arg_9_2
+	var_9_0[arg_9_1] = arg_9_2
+	var_0_1.focusExemptList = {}
 end
 
-function slot1.AddExempt(slot0, slot1, slot2)
-	if uv0.IFFFactorList[slot1][slot2] ~= nil then
-		uv0.focusExemptList[slot0] = uv0.speedRatioByIFF[slot1] / slot4
+function var_0_1.RemoveIFFFactor(arg_10_0, arg_10_1)
+	local var_10_0 = var_0_1.IFFFactorList[arg_10_0]
+	local var_10_1 = var_10_0[arg_10_1]
+
+	if var_10_1 ~= nil then
+		var_0_1.speedRatioByIFF[arg_10_0] = var_0_1.speedRatioByIFF[arg_10_0] / var_10_1
+		var_10_0[arg_10_1] = nil
+		var_0_1.focusExemptList = {}
+	end
+end
+
+function var_0_1.GetSpeedRatio(arg_11_0, arg_11_1)
+	return var_0_1.focusExemptList[arg_11_0] or var_0_1.speedRatioByIFF[arg_11_1]
+end
+
+function var_0_1.AddExempt(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = var_0_1.IFFFactorList[arg_12_1][arg_12_2]
+
+	if var_12_0 ~= nil then
+		var_0_1.focusExemptList[arg_12_0] = var_0_1.speedRatioByIFF[arg_12_1] / var_12_0
 	end
 end

@@ -1,24 +1,24 @@
-slot0 = class("DeleteFriendCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("DeleteFriendCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = getProxy(FriendProxy)
-	slot3 = slot3:getFriend(slot2)
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(FriendProxy):getFriend(var_1_0)
 
-	slot4:Send(50011, {
-		id = slot2
-	}, 50012, function (slot0)
-		if slot0.result == 0 then
-			if getProxy(DormProxy):GetVisitorShip() and slot1.name == uv0.name then
+	pg.ConnectionMgr.GetInstance():Send(50011, {
+		id = var_1_0
+	}, 50012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(DormProxy):GetVisitorShip()
+
+			if var_2_0 and var_2_0.name == var_1_1.name then
 				getProxy(DormProxy):SetVisitorShip(nil)
 			end
 
-			uv1:sendNotification(GAME.FRIEND_DELETE_DONE, uv2)
+			arg_1_0:sendNotification(GAME.FRIEND_DELETE_DONE, var_1_0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("friend_deleteFriend", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("friend_deleteFriend", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿local var_0_0 = {
 	sort = {
 		{
 			type = 1,
@@ -21,18 +21,21 @@ return {
 			}
 		}
 	},
-	getWeight = function (slot0, slot1)
-		return SpWeapon.bindConfigTable()[slot0.GetConfigID(slot0)][slot1]
-	end,
-	sortFunc = function (slot0, slot1)
-		slot2 = {}
-
-		for slot6, slot7 in ipairs(slot0.values) do
-			table.insert(slot2, function (slot0)
-				return (uv0 and -1 or 1) * -uv1.getWeight(slot0, uv2)
-			end)
-		end
-
-		return slot2
+	getWeight = function(arg_1_0, arg_1_1)
+		return SpWeapon.bindConfigTable()[arg_1_0:GetConfigID()][arg_1_1]
 	end
 }
+
+function var_0_0.sortFunc(arg_2_0, arg_2_1)
+	local var_2_0 = {}
+
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.values) do
+		table.insert(var_2_0, function(arg_3_0)
+			return (arg_2_1 and -1 or 1) * -var_0_0.getWeight(arg_3_0, iter_2_1)
+		end)
+	end
+
+	return var_2_0
+end
+
+return var_0_0

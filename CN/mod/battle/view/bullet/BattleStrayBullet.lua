@@ -1,39 +1,47 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleResourceManager
-slot0.Battle.BattleStrayBullet = class("BattleStrayBullet", slot0.Battle.BattleBullet)
-slot0.Battle.BattleStrayBullet.__name = "BattleStrayBullet"
-slot2 = slot0.Battle.BattleStrayBullet
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleResourceManager
+
+var_0_0.Battle.BattleStrayBullet = class("BattleStrayBullet", var_0_0.Battle.BattleBullet)
+var_0_0.Battle.BattleStrayBullet.__name = "BattleStrayBullet"
+
+local var_0_2 = var_0_0.Battle.BattleStrayBullet
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
-function slot2.SetSpawn(slot0, slot1)
-	uv0.super.SetSpawn(slot0, slot1)
+function var_0_2.SetSpawn(arg_2_0, arg_2_1)
+	var_0_2.super.SetSpawn(arg_2_0, arg_2_1)
 
-	slot0._targetPos = Clone(slot0._bulletData:GetExplodePostion())
-	slot0._spawnDir = slot0._speed.normalized
-	slot0._velocity = slot0._bulletData:GetVelocity() * (1 + uv1.Battle.BattleAttr.GetCurrent(slot0._bulletData, "bulletSpeedRatio"))
-	slot0._velocity = uv1.Battle.BattleFormulas.ConvertBulletSpeed(slot0._velocity)
-	slot0._step = Vector3.Distance(slot0._targetPos, slot0._spawnPos) / slot0._velocity
-	slot0._count = math.random(600) - 300
-	slot0.updateSpeed = uv0._doStray
+	arg_2_0._targetPos = Clone(arg_2_0._bulletData:GetExplodePostion())
+	arg_2_0._spawnDir = arg_2_0._speed.normalized
+
+	local var_2_0 = 1 + var_0_0.Battle.BattleAttr.GetCurrent(arg_2_0._bulletData, "bulletSpeedRatio")
+
+	arg_2_0._velocity = arg_2_0._bulletData:GetVelocity() * var_2_0
+	arg_2_0._velocity = var_0_0.Battle.BattleFormulas.ConvertBulletSpeed(arg_2_0._velocity)
+	arg_2_0._step = Vector3.Distance(arg_2_0._targetPos, arg_2_0._spawnPos) / arg_2_0._velocity
+	arg_2_0._count = math.random(600) - 300
+	arg_2_0.updateSpeed = var_0_2._doStray
 end
 
-function slot2._doStray(slot0)
-	slot1 = slot0._targetPos
+function var_0_2._doStray(arg_3_0)
+	local var_3_0 = arg_3_0._targetPos
 
-	if slot0._step > 0 and slot1 and not slot1:EqualZero() then
-		slot0._count = slot0._count / 1.06
-		slot0._step = slot0._step - 1
-		slot2 = slot0._bulletData:GetPosition()
-		slot3 = slot0._velocity
-		slot0._speed = Vector3(slot1.x - slot2.x, 0, slot1.z - slot2.z).normalized
-		slot0._speed = slot0._speed + Vector3(slot0._speed.z * slot0._count / 100, 0, -slot0._speed.x * slot0._count / 100)
-		slot0._speed = slot0._speed.normalized
-		slot0._speed = Vector3(slot0._speed.x * slot3, 0, slot0._speed.z * slot3)
+	if arg_3_0._step > 0 and var_3_0 and not var_3_0:EqualZero() then
+		arg_3_0._count = arg_3_0._count / 1.06
+		arg_3_0._step = arg_3_0._step - 1
+
+		local var_3_1 = arg_3_0._bulletData:GetPosition()
+		local var_3_2 = arg_3_0._velocity
+
+		arg_3_0._speed = Vector3(var_3_0.x - var_3_1.x, 0, var_3_0.z - var_3_1.z).normalized
+		arg_3_0._speed = arg_3_0._speed + Vector3(arg_3_0._speed.z * arg_3_0._count / 100, 0, -arg_3_0._speed.x * arg_3_0._count / 100)
+		arg_3_0._speed = arg_3_0._speed.normalized
+		arg_3_0._speed = Vector3(arg_3_0._speed.x * var_3_2, 0, arg_3_0._speed.z * var_3_2)
 	else
-		slot0.updateSpeed = uv0._updateSpeed
+		arg_3_0.updateSpeed = var_0_2._updateSpeed
 	end
 end

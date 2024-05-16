@@ -1,43 +1,49 @@
-slot0 = class("LoginTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("LoginTemplatePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.item = slot0:findTF("item", slot0.bg)
-	slot0.items = slot0:findTF("items", slot0.bg)
-	slot0.itemList = UIItemList.New(slot0.items, slot0.item)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.bg)
+	arg_1_0.itemList = UIItemList.New(arg_1_0.items, arg_1_0.item)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.config = pg.activity_7_day_sign[slot0.activity:getConfig("config_id")]
-	slot0.Day = #slot0.config.front_drops
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.config = pg.activity_7_day_sign[arg_2_0.activity:getConfig("config_id")]
+	arg_2_0.Day = #arg_2_0.config.front_drops
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.item, false)
+function var_0_0.OnFirstFlush(arg_3_0)
+	setActive(arg_3_0.item, false)
+	arg_3_0.itemList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_3_0:findTF("item", arg_4_2)
+			local var_4_1 = Drop.Create(arg_3_0.config.front_drops[arg_4_1 + 1])
 
-	slot1 = slot0.itemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			updateDrop(uv0:findTF("item", slot2), Drop.Create(uv0.config.front_drops[slot1 + 1]))
-			onButton(uv0, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_4_0, var_4_1)
+			onButton(arg_3_0, arg_4_2, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_4_1)
 			end, SFX_PANEL)
-			setActive(uv0:findTF("got", slot2), slot1 < uv0.nday)
-			setText(uv0:findTF("day/Text", slot2), slot1 < uv0.nday and i18n("word_status_inEventFinished") or i18n("which_day_2", slot1 + 1))
+
+			local var_4_2 = arg_3_0:findTF("got", arg_4_2)
+
+			setActive(var_4_2, arg_4_1 < arg_3_0.nday)
+
+			local var_4_3 = arg_3_0:findTF("day/Text", arg_4_2)
+
+			setText(var_4_3, arg_4_1 < arg_3_0.nday and i18n("word_status_inEventFinished") or i18n("which_day_2", arg_4_1 + 1))
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data1
+function var_0_0.OnUpdateFlush(arg_6_0)
+	arg_6_0.nday = arg_6_0.activity.data1
 
-	slot0.itemList:align(slot0.Day)
+	arg_6_0.itemList:align(arg_6_0.Day)
 end
 
-function slot0.OnDestroy(slot0)
-	clearImageSprite(slot0.bg)
-	removeAllChildren(slot0.items)
+function var_0_0.OnDestroy(arg_7_0)
+	clearImageSprite(arg_7_0.bg)
+	removeAllChildren(arg_7_0.items)
 end
 
-return slot0
+return var_0_0

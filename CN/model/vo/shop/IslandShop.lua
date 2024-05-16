@@ -1,1 +1,1 @@
-return class("IslandShop", import(".ActivityShop"))
+﻿return (class("IslandShop", import(".ActivityShop")))

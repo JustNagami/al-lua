@@ -1,34 +1,37 @@
-slot0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
-slot0.CONFIRM_PASSWORD = "SecondaryPasswordMediator:CONFIRM_PASSWORD"
-slot0.SET_PASSWORD = "SecondaryPasswordMediator:SET_PASSWORD"
-slot0.CANCEL_OPERATION = "SecondaryPasswordMediator:CANCEL_OPERATION"
+﻿local var_0_0 = class("SecondaryPasswordMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.CONFIRM_PASSWORD, function (slot0, slot1)
-		if uv0.contextData.type == pg.SecondaryPWDMgr.CHANGE_SETTING or uv0.contextData.type == pg.SecondaryPWDMgr.CLOSE_PASSWORD then
-			uv0:sendNotification(GAME.SET_PASSWORD_SETTINGS, {
-				pwd = slot1,
-				settings = uv0.contextData.settings
+var_0_0.CONFIRM_PASSWORD = "SecondaryPasswordMediator:CONFIRM_PASSWORD"
+var_0_0.SET_PASSWORD = "SecondaryPasswordMediator:SET_PASSWORD"
+var_0_0.CANCEL_OPERATION = "SecondaryPasswordMediator:CANCEL_OPERATION"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.CONFIRM_PASSWORD, function(arg_2_0, arg_2_1)
+		if arg_1_0.contextData.type == pg.SecondaryPWDMgr.CHANGE_SETTING or arg_1_0.contextData.type == pg.SecondaryPWDMgr.CLOSE_PASSWORD then
+			arg_1_0:sendNotification(GAME.SET_PASSWORD_SETTINGS, {
+				pwd = arg_2_1,
+				settings = arg_1_0.contextData.settings
 			})
 		else
-			uv0:sendNotification(GAME.CONFIRM_PASSWORD, {
-				pwd = slot1
+			arg_1_0:sendNotification(GAME.CONFIRM_PASSWORD, {
+				pwd = arg_2_1
 			})
 		end
 	end)
-	slot0:bind(uv0.SET_PASSWORD, function (slot0, slot1, slot2)
-		uv1:sendNotification(GAME.SET_PASSWORD, {
-			pwd = slot1,
-			tip = uv0.ClipUnicodeStr(slot2, 20),
-			settings = uv1.contextData.settings
+	arg_1_0:bind(var_0_0.SET_PASSWORD, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_3_2 = var_0_0.ClipUnicodeStr(arg_3_2, 20)
+
+		arg_1_0:sendNotification(GAME.SET_PASSWORD, {
+			pwd = arg_3_1,
+			tip = arg_3_2,
+			settings = arg_1_0.contextData.settings
 		})
 	end)
-	slot0:bind(uv0.CANCEL_OPERATION, function ()
-		uv0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
+	arg_1_0:bind(var_0_0.CANCEL_OPERATION, function()
+		arg_1_0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		GAME.CONFIRM_PASSWORD_DONE,
 		GAME.SET_PASSWORD_SETTINGS_DONE,
@@ -37,76 +40,92 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-	slot5 = getProxy(SecondaryPWDProxy):getRawData()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
+	local var_6_2 = getProxy(SecondaryPWDProxy)
+	local var_6_3 = var_6_2:getRawData()
 
-	if slot1:getName() == GAME.FETCH_PASSWORD_STATE_DONE then
-		if not slot4:GetPermissionState() then
-			slot0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+	if var_6_0 == GAME.FETCH_PASSWORD_STATE_DONE then
+		if not var_6_2:GetPermissionState() then
+			arg_6_0:sendNotification(GAME.CANCEL_LIMITED_OPERATION)
+
+			local var_6_4 = {
 				mode = "showresttime",
 				title = "warning",
 				hideNo = true,
 				type = MSGBOX_TYPE_SECONDPWD,
-				onPreShow = function ()
-					uv0.viewComponent:emit(BaseUI.ON_CLOSE)
+				onPreShow = function()
+					arg_6_0.viewComponent:emit(BaseUI.ON_CLOSE)
 				end
-			})
-		end
-	elseif slot2 == GAME.CONFIRM_PASSWORD_DONE or slot2 == GAME.SET_PASSWORD_SETTINGS_DONE then
-		if slot3.result > 0 then
-			if slot6 == 9 then
-				slot5.fail_count = slot5.fail_count + 1
+			}
 
-				if slot5.fail_count >= 5 then
-					slot0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox(var_6_4)
+		end
+	elseif var_6_0 == GAME.CONFIRM_PASSWORD_DONE or var_6_0 == GAME.SET_PASSWORD_SETTINGS_DONE then
+		local var_6_5 = var_6_1.result
+
+		if var_6_5 > 0 then
+			if var_6_5 == 9 then
+				var_6_3.fail_count = var_6_3.fail_count + 1
+
+				if var_6_3.fail_count >= 5 then
+					arg_6_0:sendNotification(GAME.FETCH_PASSWORD_STATE)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(string.format(i18n("secondarypassword_incorrectpwd_error"), 5 - slot5.fail_count))
+					pg.TipsMgr.GetInstance():ShowTips(string.format(i18n("secondarypassword_incorrectpwd_error"), 5 - var_6_3.fail_count))
 				end
-			elseif slot6 == 40 or slot6 == 1 then
-				slot0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+			elseif var_6_5 == 40 or var_6_5 == 1 then
+				arg_6_0:sendNotification(GAME.FETCH_PASSWORD_STATE)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot6))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("", var_6_5))
 			end
 
-			slot0.viewComponent:UpdateView()
-			slot0.viewComponent:ClearInputs()
+			arg_6_0.viewComponent:UpdateView()
+			arg_6_0.viewComponent:ClearInputs()
 		else
-			slot0:CloseAndCallback()
+			arg_6_0:CloseAndCallback()
 		end
-	elseif slot2 == GAME.SET_PASSWORD_DONE then
-		if slot3.result > 0 then
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot6))
-			slot0:sendNotification(GAME.FETCH_PASSWORD_STATE)
+	elseif var_6_0 == GAME.SET_PASSWORD_DONE then
+		local var_6_6 = var_6_1.result
+
+		if var_6_6 > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", var_6_6))
+			arg_6_0:sendNotification(GAME.FETCH_PASSWORD_STATE)
 		else
-			slot0:CloseAndCallback()
+			arg_6_0:CloseAndCallback()
 		end
 	end
 end
 
-function slot0.CloseAndCallback(slot0)
-	slot0.viewComponent:emit(BaseUI.ON_CLOSE)
+function var_0_0.CloseAndCallback(arg_8_0)
+	local var_8_0 = arg_8_0.contextData.callback
 
-	if slot0.contextData.callback then
-		slot1()
+	arg_8_0.viewComponent:emit(BaseUI.ON_CLOSE)
+
+	if var_8_0 then
+		var_8_0()
 	end
 end
 
-function slot0.ClipUnicodeStr(slot0, slot1)
-	slot2, slot3 = utf8_to_unicode(slot0)
+function var_0_0.ClipUnicodeStr(arg_9_0, arg_9_1)
+	local var_9_0, var_9_1 = utf8_to_unicode(arg_9_0)
 
-	if slot1 < slot3 then
-		slot5, slot6 = utf8_to_unicode(unicode_to_utf8(string.sub(slot2, 1, -7)))
+	if arg_9_1 < var_9_1 then
+		local var_9_2 = string.sub(var_9_0, 1, -7)
+		local var_9_3, var_9_4 = utf8_to_unicode(unicode_to_utf8(var_9_2))
 
-		while slot1 < slot6 - 1 do
-			slot5, slot6 = utf8_to_unicode(unicode_to_utf8(string.sub(slot4, 1, -7)))
+		while arg_9_1 < var_9_4 - 1 do
+			var_9_2 = string.sub(var_9_2, 1, -7)
+
+			local var_9_5
+
+			var_9_5, var_9_4 = utf8_to_unicode(unicode_to_utf8(var_9_2))
 		end
 
-		return string.sub(unicode_to_utf8(slot4), 1, -2)
+		return string.sub(unicode_to_utf8(var_9_2), 1, -2)
 	end
 
-	return slot0
+	return arg_9_0
 end
 
-return slot0
+return var_0_0

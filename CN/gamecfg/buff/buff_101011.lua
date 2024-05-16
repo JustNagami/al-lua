@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				number = -0.06
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.04
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -247,34 +276,5 @@ return {
 	stack = 1,
 	id = 101011,
 	icon = 101010,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				number = -0.06
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.04
-			}
-		}
-	}
+	last_effect = ""
 }

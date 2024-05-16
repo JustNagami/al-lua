@@ -1,54 +1,55 @@
-slot0 = class("FinishTechnologyCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FinishTechnologyCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.pool_id
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.pool_id
+	local var_1_3 = getProxy(TechnologyProxy)
+	local var_1_4 = var_1_3:getTechnologyById(var_1_1)
 
-	if not getProxy(TechnologyProxy):getTechnologyById(slot2.id) then
+	if not var_1_4 then
 		return
 	end
 
-	if not slot6:isCompleted() then
+	if not var_1_4:isCompleted() then
 		return
 	end
 
-	slot7 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(63003, {
+		tech_id = var_1_1,
+		refresh_id = var_1_2
+	}, 63004, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_4:reset()
+			var_1_3:updateTechnology(var_1_4)
 
-	slot7:Send(63003, {
-		tech_id = slot3,
-		refresh_id = slot4
-	}, 63004, function (slot0)
-		if slot0.result == 0 then
-			uv0:reset()
+			local var_2_0 = {
+				items = PlayerConst.addTranDrop(arg_2_0.common_list),
+				commons = PlayerConst.addTranDrop(arg_2_0.drop_list),
+				catchupItems = PlayerConst.addTranDrop(arg_2_0.catchup_list),
+				catchupActItems = PlayerConst.addTranDrop(arg_2_0.catchupact_list)
+			}
 
-			slot1 = uv1
-
-			slot1:updateTechnology(uv0)
-			underscore.each(({
-				items = PlayerConst.addTranDrop(slot0.common_list),
-				commons = PlayerConst.addTranDrop(slot0.drop_list),
-				catchupItems = PlayerConst.addTranDrop(slot0.catchup_list),
-				catchupActItems = PlayerConst.addTranDrop(slot0.catchupact_list)
-			}).catchupItems, function (slot0)
-				uv0:addCatupPrintsNum(slot0.count)
+			underscore.each(var_2_0.catchupItems, function(arg_3_0)
+				var_1_3:addCatupPrintsNum(arg_3_0.count)
 			end)
 
-			if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP) and not slot3:isEnd() then
-				underscore.each(slot1.catchupActItems, function (slot0)
-					uv0.data1 = uv0.data1 + slot0.count
+			local var_2_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP)
+
+			if var_2_1 and not var_2_1:isEnd() then
+				underscore.each(var_2_0.catchupActItems, function(arg_4_0)
+					var_2_1.data1 = var_2_1.data1 + arg_4_0.count
 				end)
 			end
 
-			uv1:updateTechnologys(slot0.refresh_list)
-			uv2:sendNotification(GAME.FINISH_TECHNOLOGY_DONE, {
-				items = PlayerConst.MergeTechnologyAward(slot1)
+			var_1_3:updateTechnologys(arg_2_0.refresh_list)
+			arg_1_0:sendNotification(GAME.FINISH_TECHNOLOGY_DONE, {
+				items = PlayerConst.MergeTechnologyAward(var_2_0)
 			})
-
-			return
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("technology_finish_erro") .. arg_2_0.result)
 		end
-
-		pg.TipsMgr.GetInstance():ShowTips(i18n("technology_finish_erro") .. slot0.result)
 	end)
 end
 
-return slot0
+return var_0_0

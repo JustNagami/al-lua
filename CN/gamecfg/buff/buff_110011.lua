@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onStack"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -159,25 +179,5 @@ return {
 	stack = 3,
 	id = 110011,
 	icon = 110010,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onStack"
-			},
-			arg_list = {
-				attr = "criDamage",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					16801,
+					16802
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,19 +33,5 @@ return {
 	stack = 1,
 	id = 16803,
 	icon = 16800,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					16801,
-					16802
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

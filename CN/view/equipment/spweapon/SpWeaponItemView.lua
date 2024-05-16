@@ -1,59 +1,65 @@
-slot0 = class("SpWeaponItemView")
-slot1 = 0.5
+﻿local var_0_0 = class("SpWeaponItemView")
+local var_0_1 = 0.5
 
-function slot0.Ctor(slot0, slot1)
-	slot0.go = slot1
-	slot0.bg = findTF(slot1, "frame/bg")
-	slot0.mask = findTF(slot1, "frame/bg/mask")
-	slot0.nameTF = findTF(slot1, "frame/bg/name"):GetComponent(typeof(Text))
-	slot0.newTF = findTF(slot1, "frame/bg/icon_bg/new")
-	slot0.unloadBtn = findTF(slot1, "frame/unload")
-	slot0.reduceBtn = findTF(slot1, "frame/bg/selected/reduce")
-	slot0.selectCount = findTF(slot1, "frame/bg/selected/reduce/Text")
-	slot0.specialFrame = findTF(slot1, "frame/bg/icon_bg/frame/specialFrame")
-	slot0.tr = slot1.transform
-	slot0.equiped = findTF(slot0.tr, "frame/bg/equip_flag")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.go = arg_1_1
+	arg_1_0.bg = findTF(arg_1_1, "frame/bg")
+	arg_1_0.mask = findTF(arg_1_1, "frame/bg/mask")
+	arg_1_0.nameTF = findTF(arg_1_1, "frame/bg/name"):GetComponent(typeof(Text))
+	arg_1_0.newTF = findTF(arg_1_1, "frame/bg/icon_bg/new")
+	arg_1_0.unloadBtn = findTF(arg_1_1, "frame/unload")
+	arg_1_0.reduceBtn = findTF(arg_1_1, "frame/bg/selected/reduce")
+	arg_1_0.selectCount = findTF(arg_1_1, "frame/bg/selected/reduce/Text")
+	arg_1_0.specialFrame = findTF(arg_1_1, "frame/bg/icon_bg/frame/specialFrame")
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.equiped = findTF(arg_1_0.tr, "frame/bg/equip_flag")
 
-	setActive(slot0.equiped, false)
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	setActive(arg_1_0.equiped, false)
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 end
 
-function slot0.update(slot0, slot1, slot2)
-	setActive(slot0.equiped, false)
-	setActive(slot0.unloadBtn, not slot1)
-	setActive(slot0.bg, tobool(slot1))
-	TweenItemAlphaAndWhite(slot0.go)
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
+	setActive(arg_2_0.equiped, false)
+	setActive(arg_2_0.unloadBtn, not arg_2_1)
+	setActive(arg_2_0.bg, tobool(arg_2_1))
+	TweenItemAlphaAndWhite(arg_2_0.go)
 
-	if not slot1 then
+	if not arg_2_1 then
 		return
 	end
 
-	slot0.spWeaponVO = slot1
+	arg_2_0.spWeaponVO = arg_2_1
 
-	updateSpWeapon(slot0.bg, slot1)
+	updateSpWeapon(arg_2_0.bg, arg_2_1)
 
-	if not IsNil(slot0.mask) then
-		setActive(slot0.mask, false)
+	if not IsNil(arg_2_0.mask) then
+		setActive(arg_2_0.mask, false)
 	end
 
-	setActive(slot0.newTF, false)
-	setActive(slot0.nameTF, not slot2)
+	setActive(arg_2_0.newTF, false)
+	setActive(arg_2_0.nameTF, not arg_2_2)
 
-	slot0.nameTF.text = shortenString(slot0.spWeaponVO:GetName(), 5)
-	slot3 = slot0.spWeaponVO:GetShipId()
+	arg_2_0.nameTF.text = shortenString(arg_2_0.spWeaponVO:GetName(), 5)
 
-	setActive(slot0.equiped, tobool(slot3))
+	local var_2_0 = arg_2_0.spWeaponVO:GetShipId()
 
-	if slot3 and slot3 > 0 then
-		setImageSprite(findTF(slot0.equiped, "Image"), LoadSprite("qicon/" .. getProxy(BayProxy):getShipById(slot3):getPainting()))
+	setActive(arg_2_0.equiped, tobool(var_2_0))
+
+	if var_2_0 and var_2_0 > 0 then
+		local var_2_1 = getProxy(BayProxy):getShipById(var_2_0)
+
+		setImageSprite(findTF(arg_2_0.equiped, "Image"), LoadSprite("qicon/" .. var_2_1:getPainting()))
 	end
 
-	setActive(slot0.specialFrame, not slot1:IsReal())
-	GetImageSpriteFromAtlasAsync("weaponframes", slot1.owned and "frame6_owned" or "frame6", slot0.specialFrame)
+	setActive(arg_2_0.specialFrame, not arg_2_1:IsReal())
+
+	local var_2_2 = arg_2_1.owned and "frame_design_owned" or "frame_design"
+
+	GetImageSpriteFromAtlasAsync("weaponframes", var_2_2, arg_2_0.specialFrame)
 end
 
-function slot0.clear(slot0)
-	ClearTweenItemAlphaAndWhite(slot0.go)
+function var_0_0.clear(arg_3_0)
+	ClearTweenItemAlphaAndWhite(arg_3_0.go)
 end
 
-return slot0
+return var_0_0

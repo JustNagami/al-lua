@@ -1,77 +1,74 @@
-slot0 = class("GuildEventBasePage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("GuildEventBasePage", import("....base.BaseSubView"))
 
-function slot0.Show(slot0, slot1, slot2, slot3)
-	slot0:UpdateData(slot1, slot2, slot3)
-	uv0.super.Show(slot0)
-	assert(slot0._tf)
+function var_0_0.Show(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0:UpdateData(arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Show(arg_1_0)
+	assert(arg_1_0._tf)
+	pg.UIMgr:GetInstance():BlurPanel(arg_1_0._tf)
+	arg_1_0:OnShow()
 
-	slot4 = pg.UIMgr
-	slot4 = slot4:GetInstance()
+	arg_1_0.inAnim = true
 
-	slot4:BlurPanel(slot0._tf)
-	slot0:OnShow()
-
-	slot0.inAnim = true
-
-	slot0:EnterAnim(function ()
-		uv0.inAnim = false
+	arg_1_0:EnterAnim(function()
+		arg_1_0.inAnim = false
 	end)
 end
 
-function slot0.SetHideCallBack(slot0, slot1)
-	slot0.exitCallback = slot1
+function var_0_0.SetHideCallBack(arg_3_0, arg_3_1)
+	arg_3_0.exitCallback = arg_3_1
 end
 
-function slot0.UpdateData(slot0, slot1, slot2, slot3)
-	slot0.guild = slot1
-	slot0.player = slot2
-	slot0.extraData = slot3
+function var_0_0.UpdateData(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0.guild = arg_4_1
+	arg_4_0.player = arg_4_2
+	arg_4_0.extraData = arg_4_3
 end
 
-function slot0.Hide(slot0, slot1)
-	function slot2()
-		uv0.inAnim = false
+function var_0_0.Hide(arg_5_0, arg_5_1)
+	local function var_5_0()
+		arg_5_0.inAnim = false
 
-		uv1.super.Hide(uv0)
-		assert(uv0._tf)
-		assert(uv0._parentTf)
-		pg.UIMgr:GetInstance():UnblurPanel(uv0._tf, uv0._parentTf)
+		var_0_0.super.Hide(arg_5_0)
+		assert(arg_5_0._tf)
+		assert(arg_5_0._parentTf)
+		pg.UIMgr:GetInstance():UnblurPanel(arg_5_0._tf, arg_5_0._parentTf)
 
-		if not uv2 and uv0.exitCallback then
-			uv0.exitCallback()
+		if not arg_5_1 and arg_5_0.exitCallback then
+			arg_5_0.exitCallback()
 		end
 	end
 
-	if not slot1 then
-		slot0.inAnim = true
+	if not arg_5_1 then
+		arg_5_0.inAnim = true
 
-		slot0:ExistAnim(slot2)
+		arg_5_0:ExistAnim(var_5_0)
 	else
-		slot2()
+		var_5_0()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide(true)
+function var_0_0.OnDestroy(arg_7_0)
+	arg_7_0:Hide(true)
 end
 
-function slot0.emit(slot0, ...)
-	if slot0.inAnim then
+function var_0_0.emit(arg_8_0, ...)
+	if arg_8_0.inAnim then
 		return
 	end
 
-	uv0.super.emit(slot0, ...)
+	var_0_0.super.emit(arg_8_0, ...)
 end
 
-function slot0.EnterAnim(slot0, slot1)
-	slot1()
+function var_0_0.EnterAnim(arg_9_0, arg_9_1)
+	arg_9_1()
 end
 
-function slot0.ExistAnim(slot0, slot1)
-	slot1()
+function var_0_0.ExistAnim(arg_10_0, arg_10_1)
+	arg_10_1()
 end
 
-function slot0.OnShow(slot0)
+function var_0_0.OnShow(arg_11_0)
+	return
 end
 
-return slot0
+return var_0_0

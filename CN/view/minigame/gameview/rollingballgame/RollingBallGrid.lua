@@ -1,174 +1,170 @@
-slot0 = class("RollingBallGrid")
+﻿local var_0_0 = class("RollingBallGrid")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0.type = nil
-	slot0.pos = nil
-	slot0.eventActive = false
-	slot0.gridTf = findTF(slot0._tf, "grid")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.type = nil
+	arg_1_0.pos = nil
+	arg_1_0.eventActive = false
+	arg_1_0.gridTf = findTF(arg_1_0._tf, "grid")
 end
 
-function slot0.changeImage(slot0)
-	GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "grid_" .. slot0.type, function (slot0)
-		setImageSprite(uv0.gridTf, slot0, true)
+function var_0_0.changeImage(arg_2_0)
+	GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "grid_" .. arg_2_0.type, function(arg_3_0)
+		setImageSprite(arg_2_0.gridTf, arg_3_0, true)
 	end)
 end
 
-function slot0.setType(slot0, slot1)
-	slot0.type = slot1
+function var_0_0.setType(arg_4_0, arg_4_1)
+	arg_4_0.type = arg_4_1
 
-	slot0:changeImage()
+	arg_4_0:changeImage()
 end
 
-function slot0.getType(slot0)
-	return slot0.type
+function var_0_0.getType(arg_5_0)
+	return arg_5_0.type
 end
 
-function slot0.setPosData(slot0, slot1, slot2)
-	slot0.x = slot1
-	slot0.y = slot2
+function var_0_0.setPosData(arg_6_0, arg_6_1, arg_6_2)
+	arg_6_0.x = arg_6_1
+	arg_6_0.y = arg_6_2
 
-	if slot0.gridTf then
-		slot0.gridTf.name = slot0:printData()
+	if arg_6_0.gridTf then
+		arg_6_0.gridTf.name = arg_6_0:printData()
 	end
 end
 
-function slot0.addDownCallback(slot0, slot1)
-	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot2 = slot0.dragDelegate
+function var_0_0.addDownCallback(arg_7_0, arg_7_1)
+	arg_7_0.dragDelegate = GetOrAddComponent(arg_7_0._tf, "EventTriggerListener")
 
-	slot2:AddPointDownFunc(function ()
-		if uv0.eventActive then
-			uv1()
+	arg_7_0.dragDelegate:AddPointDownFunc(function()
+		if arg_7_0.eventActive then
+			arg_7_1()
 		end
 	end)
 end
 
-function slot0.addUpCallback(slot0, slot1)
-	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot2 = slot0.dragDelegate
+function var_0_0.addUpCallback(arg_9_0, arg_9_1)
+	arg_9_0.dragDelegate = GetOrAddComponent(arg_9_0._tf, "EventTriggerListener")
 
-	slot2:AddPointUpFunc(function ()
-		if uv0.eventActive then
-			uv1()
+	arg_9_0.dragDelegate:AddPointUpFunc(function()
+		if arg_9_0.eventActive then
+			arg_9_1()
 		end
 	end)
 end
 
-function slot0.addBeginDragCallback(slot0, slot1)
-	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot2 = slot0.dragDelegate
+function var_0_0.addBeginDragCallback(arg_11_0, arg_11_1)
+	arg_11_0.dragDelegate = GetOrAddComponent(arg_11_0._tf, "EventTriggerListener")
 
-	slot2:AddBeginDragFunc(function (slot0, slot1)
-		if uv0.eventActive then
-			uv1(slot0, slot1)
+	arg_11_0.dragDelegate:AddBeginDragFunc(function(arg_12_0, arg_12_1)
+		if arg_11_0.eventActive then
+			arg_11_1(arg_12_0, arg_12_1)
 		end
 	end)
 end
 
-function slot0.addDragCallback(slot0, slot1)
-	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot2 = slot0.dragDelegate
+function var_0_0.addDragCallback(arg_13_0, arg_13_1)
+	arg_13_0.dragDelegate = GetOrAddComponent(arg_13_0._tf, "EventTriggerListener")
 
-	slot2:AddDragFunc(function (slot0, slot1)
-		if uv0.eventActive then
-			uv1(slot0, slot1)
+	arg_13_0.dragDelegate:AddDragFunc(function(arg_14_0, arg_14_1)
+		if arg_13_0.eventActive then
+			arg_13_1(arg_14_0, arg_14_1)
 		end
 	end)
 end
 
-function slot0.onEndDrag(slot0)
-	slot0.dragDelegate:RemoveDragFunc()
-	slot0.dragDelegate:RemovePointUpFunc()
+function var_0_0.onEndDrag(arg_15_0)
+	arg_15_0.dragDelegate:RemoveDragFunc()
+	arg_15_0.dragDelegate:RemovePointUpFunc()
 end
 
-function slot0.getPosData(slot0)
-	return slot0.x, slot0.y
+function var_0_0.getPosData(arg_16_0)
+	return arg_16_0.x, arg_16_0.y
 end
 
-function slot0.getPosition(slot0)
-	return slot0._tf.localPosition
+function var_0_0.getPosition(arg_17_0)
+	return arg_17_0._tf.localPosition
 end
 
-function slot0.setPosition(slot0, slot1, slot2)
-	slot0._tf.localPosition = Vector3(slot1, slot2, 0)
+function var_0_0.setPosition(arg_18_0, arg_18_1, arg_18_2)
+	arg_18_0._tf.localPosition = Vector3(arg_18_1, arg_18_2, 0)
 end
 
-function slot0.changePosition(slot0, slot1, slot2)
-	slot0._tf.localPosition = Vector3(slot1, slot2, 0)
+function var_0_0.changePosition(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0._tf.localPosition = Vector3(arg_19_1, arg_19_2, 0)
 end
 
-function slot0.getRealPosition(slot0)
-	return (slot0.x - 1) * RollingBallConst.grid_width, (slot0.y - 1) * RollingBallConst.grid_height
+function var_0_0.getRealPosition(arg_20_0)
+	return (arg_20_0.x - 1) * RollingBallConst.grid_width, (arg_20_0.y - 1) * RollingBallConst.grid_height
 end
 
-function slot0.setRemoveFlagV(slot0, slot1, slot2)
-	slot0.removeFlagV = slot1
-	slot0.removeKey = slot2
+function var_0_0.setRemoveFlagV(arg_21_0, arg_21_1, arg_21_2)
+	arg_21_0.removeFlagV = arg_21_1
+	arg_21_0.removeKey = arg_21_2
 end
 
-function slot0.getRemoveFlagV(slot0)
-	return slot0.removeFlagV
+function var_0_0.getRemoveFlagV(arg_22_0)
+	return arg_22_0.removeFlagV
 end
 
-function slot0.setRemoveFlagH(slot0, slot1, slot2)
-	slot0.removeFlagH = slot1
-	slot0.removeKey = slot2
+function var_0_0.setRemoveFlagH(arg_23_0, arg_23_1, arg_23_2)
+	arg_23_0.removeFlagH = arg_23_1
+	arg_23_0.removeKey = arg_23_2
 end
 
-function slot0.getRemoveFlagH(slot0)
-	return slot0.removeFlagH
+function var_0_0.getRemoveFlagH(arg_24_0)
+	return arg_24_0.removeFlagH
 end
 
-function slot0.getRemoveId(slot0)
-	return slot0.removeKey
+function var_0_0.getRemoveId(arg_25_0)
+	return arg_25_0.removeKey
 end
 
-function slot0.setParent(slot0, slot1)
-	setParent(slot0._tf, slot1, false)
+function var_0_0.setParent(arg_26_0, arg_26_1)
+	setParent(arg_26_0._tf, arg_26_1, false)
 end
 
-function slot0.setSelect(slot0, slot1)
-	setActive(findTF(slot0._tf, "select"), slot1)
+function var_0_0.setSelect(arg_27_0, arg_27_1)
+	setActive(findTF(arg_27_0._tf, "select"), arg_27_1)
 end
 
-function slot0.setDirect(slot0, slot1, slot2, slot3, slot4)
-	setActive(findTF(slot0._tf, "direct/up"), slot1)
-	setActive(findTF(slot0._tf, "direct/bottom"), slot2)
-	setActive(findTF(slot0._tf, "direct/left"), slot3)
-	setActive(findTF(slot0._tf, "direct/right"), slot4)
+function var_0_0.setDirect(arg_28_0, arg_28_1, arg_28_2, arg_28_3, arg_28_4)
+	setActive(findTF(arg_28_0._tf, "direct/up"), arg_28_1)
+	setActive(findTF(arg_28_0._tf, "direct/bottom"), arg_28_2)
+	setActive(findTF(arg_28_0._tf, "direct/left"), arg_28_3)
+	setActive(findTF(arg_28_0._tf, "direct/right"), arg_28_4)
 end
 
-function slot0.clearDirect(slot0)
-	slot0:setDirect(false, false, false, false)
+function var_0_0.clearDirect(arg_29_0)
+	arg_29_0:setDirect(false, false, false, false)
 end
 
-function slot0.getTf(slot0)
-	return slot0._tf
+function var_0_0.getTf(arg_30_0)
+	return arg_30_0._tf
 end
 
-function slot0.setEventActive(slot0, slot1)
-	slot0.eventActive = slot1
+function var_0_0.setEventActive(arg_31_0, arg_31_1)
+	arg_31_0.eventActive = arg_31_1
 end
 
-function slot0.printData(slot0)
-	return "x:" .. slot0.x .. " , y:" .. slot0.y .. " , type:" .. slot0.type
+function var_0_0.printData(arg_32_0)
+	return "x:" .. arg_32_0.x .. " , y:" .. arg_32_0.y .. " , type:" .. arg_32_0.type
 end
 
-function slot0.getWolrdVec3(slot0)
-	return slot0._tf:TransformPoint(RollingBallConst.grid_width / 2, RollingBallConst.grid_height / 2, 0)
+function var_0_0.getWolrdVec3(arg_33_0)
+	return arg_33_0._tf:TransformPoint(RollingBallConst.grid_width / 2, RollingBallConst.grid_height / 2, 0)
 end
 
-function slot0.clearData(slot0)
-	slot0.removeFlagH = false
-	slot0.removeFlagV = false
-	slot0.removeKey = nil
+function var_0_0.clearData(arg_34_0)
+	arg_34_0.removeFlagH = false
+	arg_34_0.removeFlagV = false
+	arg_34_0.removeKey = nil
 end
 
-function slot0.dispose(slot0)
-	if slot0.dragDelegate then
-		ClearEventTrigger(slot0.dragDelegate)
+function var_0_0.dispose(arg_35_0)
+	if arg_35_0.dragDelegate then
+		ClearEventTrigger(arg_35_0.dragDelegate)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,117 +1,132 @@
-slot0 = class("StoryRecorder")
-slot1 = "#5ce6ff"
-slot2 = "#70747F"
-slot3 = "#BCBCBC"
-slot4 = "#FFFFFF"
+﻿local var_0_0 = class("StoryRecorder")
+local var_0_1 = "#5ce6ff"
+local var_0_2 = "#70747F"
+local var_0_3 = "#BCBCBC"
+local var_0_4 = "#FFFFFF"
 
-function slot0.Ctor(slot0, slot1)
-	slot0.recordList = {}
-	slot0.displays = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.recordList = {}
+	arg_1_0.displays = {}
 end
 
-function slot0.Add(slot0, slot1)
-	table.insert(slot0.recordList, slot1)
+function var_0_0.Add(arg_2_0, arg_2_1)
+	table.insert(arg_2_0.recordList, arg_2_1)
 end
 
-function slot0.GetContentList(slot0)
-	for slot5, slot6 in ipairs(slot0:Convert()) do
-		table.insert(slot0.displays, slot6)
+function var_0_0.GetContentList(arg_3_0)
+	local var_3_0 = arg_3_0:Convert()
+
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		table.insert(arg_3_0.displays, iter_3_1)
 	end
 
-	return slot0.displays
+	return arg_3_0.displays
 end
 
-function slot0.Convert(slot0)
-	slot1 = {}
+function var_0_0.Convert(arg_4_0)
+	local var_4_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.recordList) do
-		if slot6:GetMode() == Story.MODE_ASIDE then
-			slot0:CollectAsideContent(slot1, slot6)
-		elseif slot7 == Story.MODE_DIALOGUE or slot7 == Story.MODE_BG then
-			slot0:CollectDialogueContent(slot1, slot6)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.recordList) do
+		local var_4_1 = iter_4_1:GetMode()
+
+		if var_4_1 == Story.MODE_ASIDE then
+			arg_4_0:CollectAsideContent(var_4_0, iter_4_1)
+		elseif var_4_1 == Story.MODE_DIALOGUE or var_4_1 == Story.MODE_BG then
+			arg_4_0:CollectDialogueContent(var_4_0, iter_4_1)
 		end
 	end
 
-	slot0.recordList = {}
+	arg_4_0.recordList = {}
 
-	return slot1
+	return var_4_0
 end
 
-function slot5(slot0)
-	slot2 = slot0
-
-	for slot6, slot7 in ipairs({
+local function var_0_5(arg_5_0)
+	local var_5_0 = {
 		"<size=%d+>",
 		"</size>",
 		"<color=%w+>",
 		"</color>"
-	}) do
-		slot2 = string.gsub(slot2, slot7, "")
+	}
+	local var_5_1 = arg_5_0
+
+	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+		var_5_1 = string.gsub(var_5_1, iter_5_1, "")
 	end
 
-	return slot2
+	return var_5_1
 end
 
-function slot0.CollectAsideContent(slot0, slot1, slot2)
-	slot4 = {}
+function var_0_0.CollectAsideContent(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = arg_6_2:GetSequence()
+	local var_6_1 = {}
 
-	for slot8, slot9 in ipairs(slot2:GetSequence()) do
-		table.insert(slot4, uv0(slot9[1]))
+	for iter_6_0, iter_6_1 in ipairs(var_6_0) do
+		table.insert(var_6_1, var_0_5(iter_6_1[1]))
 	end
 
-	table.insert(slot1, {
+	table.insert(arg_6_1, {
 		isPlayer = false,
-		list = slot4
+		list = var_6_1
 	})
 end
 
-function slot0.CollectDialogueContent(slot0, slot1, slot2)
-	slot3 = slot2:GetPaintingIcon()
-	slot4 = slot2:GetName()
-	slot5 = ""
+function var_0_0.CollectDialogueContent(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_2:GetPaintingIcon()
+	local var_7_1 = arg_7_2:GetName()
+	local var_7_2 = ""
 
 	if getProxy(PlayerProxy) then
-		slot5 = getProxy(PlayerProxy):getRawData().name
+		var_7_2 = getProxy(PlayerProxy):getRawData().name
 	end
 
-	slot6 = slot4 == slot5
+	local var_7_3 = var_7_1 == var_7_2
 
-	table.insert(slot1, {
-		icon = slot3,
-		name = slot4,
-		nameColor = (function ()
-			return uv1 and uv2 or uv0:GetNameColor() or uv3
-		end)(),
+	local function var_7_4()
+		local var_8_0 = arg_7_2:GetNameColor()
+
+		return var_7_3 and var_0_1 or var_8_0 or var_0_3
+	end
+
+	local var_7_5 = arg_7_2:GetContent()
+
+	table.insert(arg_7_1, {
+		icon = var_7_0,
+		name = var_7_1,
+		nameColor = var_7_4(),
 		list = {
-			setColorStr(uv2(slot2:GetContent()), slot6 and uv0 or uv3)
+			setColorStr(var_0_5(var_7_5), var_7_3 and var_0_1 or var_0_4)
 		},
-		isPlayer = slot6
+		isPlayer = var_7_3
 	})
 
-	if slot2:ExistOption() then
-		slot9 = slot2:GetSelectedBranchCode()
-		slot10 = {}
+	if arg_7_2:ExistOption() then
+		local var_7_6 = arg_7_2:GetSelectedBranchCode()
+		local var_7_7 = {}
 
-		for slot14, slot15 in ipairs(slot2:GetOptions()) do
-			table.insert(slot10, setColorStr("[ " .. uv2(slot15[1]) .. " ]", slot15[2] == slot9 and uv0 or uv4))
+		for iter_7_0, iter_7_1 in ipairs(arg_7_2:GetOptions()) do
+			local var_7_8 = iter_7_1[2] == var_7_6
+			local var_7_9 = setColorStr("[ " .. var_0_5(iter_7_1[1]) .. " ]", var_7_8 and var_0_1 or var_0_2)
+
+			table.insert(var_7_7, var_7_9)
 		end
 
-		table.insert(slot1, {
+		table.insert(arg_7_1, {
 			isPlayer = true,
-			name = slot5,
-			nameColor = uv0,
-			list = slot10
+			name = var_7_2,
+			nameColor = var_0_1,
+			list = var_7_7
 		})
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0.recordList = {}
-	slot0.displays = {}
+function var_0_0.Clear(arg_9_0)
+	arg_9_0.recordList = {}
+	arg_9_0.displays = {}
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_10_0)
+	arg_10_0:Clear()
 end
 
-return slot0
+return var_0_0

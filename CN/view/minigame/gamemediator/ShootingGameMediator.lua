@@ -1,37 +1,34 @@
-slot0 = class("ShootingGameMediator", import(".MiniHubMediator"))
+﻿local var_0_0 = class("ShootingGameMediator", import(".MiniHubMediator"))
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getName()
+	local var_1_1 = arg_1_1:getBody()
 
-	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE and slot3.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		slot4 = {
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	if var_1_0 == GAME.SEND_MINI_GAME_OP_DONE and var_1_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_1_2 = {
+			function(arg_2_0)
+				local var_2_0 = var_1_1.awards
+
+				if #var_2_0 > 0 then
+					arg_1_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_2_0, arg_2_0)
 				else
-					slot0()
+					arg_2_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:OnGetAwardDone(uv1)
-				slot0()
+			function(arg_3_0)
+				arg_1_0.viewComponent:OnGetAwardDone(var_1_1)
+				arg_3_0()
 			end
 		}
-		slot5 = slot0.viewComponent
 
-		slot5:updateAfterFinish()
-
-		slot5 = slot0.viewComponent
-
-		slot5:showResultPanel(slot3.awards, function ()
-			seriesAsync(uv0)
-			uv1.viewComponent:OnSendMiniGameOPDone(uv2)
+		arg_1_0.viewComponent:updateAfterFinish()
+		arg_1_0.viewComponent:showResultPanel(var_1_1.awards, function()
+			seriesAsync(var_1_2)
+			arg_1_0.viewComponent:OnSendMiniGameOPDone(var_1_1)
 		end)
-
-		return
+	else
+		var_0_0.super.handleNotification(arg_1_0, arg_1_1)
 	end
-
-	uv0.super.handleNotification(slot0, slot1)
 end
 
-return slot0
+return var_0_0

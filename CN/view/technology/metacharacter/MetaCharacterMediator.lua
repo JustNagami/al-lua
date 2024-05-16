@@ -1,139 +1,150 @@
-slot0 = class("MetaCharacterMediator", import("...base.ContextMediator"))
-slot0.OPEN_PT_PREVIEW_LAYER = "MetaCharacterMediator:OPEN_PT_PREVIEW_LAYER"
-slot0.OPEN_PT_GET_WAY_LAYER = "MetaCharacterMediator:OPEN_PT_GET_WAY_LAYER"
-slot0.OPEN_INDEX_LAYER = "MetaCharacterMediator:OPEN_INDEX_LAYER"
-slot0.ON_REPAIR = "MetaCharacterMediator:ON_REPAIR"
-slot0.ON_ENERGY = "MetaCharacterMediator:ON_ENERGY"
-slot0.ON_TACTICS = "MetaCharacterMediator:ON_TACTICS"
-slot0.ON_SYN = "MetaCharacterMediator:ON_SYN"
-slot0.ON_UNLOCK = "MetaCharacterMediator:ON_UNLOCK"
+﻿local var_0_0 = class("MetaCharacterMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.OPEN_PT_PREVIEW_LAYER, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+var_0_0.OPEN_PT_PREVIEW_LAYER = "MetaCharacterMediator:OPEN_PT_PREVIEW_LAYER"
+var_0_0.OPEN_PT_GET_WAY_LAYER = "MetaCharacterMediator:OPEN_PT_GET_WAY_LAYER"
+var_0_0.OPEN_INDEX_LAYER = "MetaCharacterMediator:OPEN_INDEX_LAYER"
+var_0_0.ON_REPAIR = "MetaCharacterMediator:ON_REPAIR"
+var_0_0.ON_ENERGY = "MetaCharacterMediator:ON_ENERGY"
+var_0_0.ON_TACTICS = "MetaCharacterMediator:ON_TACTICS"
+var_0_0.ON_SYN = "MetaCharacterMediator:ON_SYN"
+var_0_0.ON_UNLOCK = "MetaCharacterMediator:ON_UNLOCK"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OPEN_PT_PREVIEW_LAYER, function(arg_2_0, arg_2_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = MetaPTAwardPreviewLayer,
 			mediator = MetaPTAwardPreviewMediator,
 			data = {
-				metaProgressVO = slot1
+				metaProgressVO = arg_2_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_PT_GET_WAY_LAYER, function (slot0)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_PT_GET_WAY_LAYER, function(arg_3_0)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = MetaPTGetPreviewLayer,
 			mediator = MetaPTGetPreviewMediator,
 			data = {}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_INDEX_LAYER, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_INDEX_LAYER, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_4_1
 		}))
 	end)
-	slot0:bind(uv0.ON_REPAIR, function (slot0, slot1, slot2)
-		uv0:enbalePage(Context.New({
+	arg_1_0:bind(var_0_0.ON_REPAIR, function(arg_5_0, arg_5_1, arg_5_2)
+		arg_1_0:enbalePage(Context.New({
 			viewComponent = MetaCharacterRepairLayer,
 			mediator = MetaCharacterRepairMediator,
 			data = {
-				shipID = slot1,
+				shipID = arg_5_1,
 				LayerWeightMgr_groupName = LayerWeightConst.GROUP_META
 			},
-			onRemoved = function ()
-				uv0.viewComponent:enterMenuPage(false)
+			onRemoved = function()
+				arg_1_0.viewComponent:enterMenuPage(false)
 
-				uv0.viewComponent.curPageIndex = nil
+				arg_1_0.viewComponent.curPageIndex = nil
 
-				uv0.viewComponent:resetToggleList()
-				uv0.viewComponent:refreshBannerTF()
-				uv0.viewComponent:updateRedPoints()
+				arg_1_0.viewComponent:resetToggleList()
+				arg_1_0.viewComponent:refreshBannerTF()
+				arg_1_0.viewComponent:updateRedPoints()
 			end
-		}), slot2)
+		}), arg_5_2)
 	end)
-	slot0:bind(uv0.ON_ENERGY, function (slot0, slot1, slot2)
-		uv0.viewComponent.isMainOpenLayerTag = nil
+	arg_1_0:bind(var_0_0.ON_ENERGY, function(arg_7_0, arg_7_1, arg_7_2)
+		local var_7_0 = arg_1_0.viewComponent.isMainOpenLayerTag and true or nil
 
-		uv0:enbalePage(Context.New({
+		arg_1_0.viewComponent.isMainOpenLayerTag = nil
+
+		arg_1_0:enbalePage(Context.New({
 			viewComponent = MetaCharacterEnergyLayer,
 			mediator = MetaCharacterEnergyMediator,
 			data = {
-				shipID = slot1,
+				shipID = arg_7_1,
 				LayerWeightMgr_groupName = LayerWeightConst.GROUP_META,
-				isMainOpen = uv0.viewComponent.isMainOpenLayerTag and true or nil
+				isMainOpen = var_7_0
 			},
-			onRemoved = function ()
-				uv0.viewComponent:enterMenuPage(false)
+			onRemoved = function()
+				arg_1_0.viewComponent:enterMenuPage(false)
 
-				uv0.viewComponent.curPageIndex = nil
+				arg_1_0.viewComponent.curPageIndex = nil
 
-				uv0.viewComponent:resetToggleList()
-				uv0.viewComponent:refreshBannerTF()
-				uv0.viewComponent:updateRedPoints()
+				arg_1_0.viewComponent:resetToggleList()
+				arg_1_0.viewComponent:refreshBannerTF()
+				arg_1_0.viewComponent:updateRedPoints()
 			end
-		}), slot2)
+		}), arg_7_2)
 	end)
-	slot0:bind(uv0.ON_TACTICS, function (slot0, slot1, slot2)
-		uv0.viewComponent.isMainOpenLayerTag = nil
+	arg_1_0:bind(var_0_0.ON_TACTICS, function(arg_9_0, arg_9_1, arg_9_2)
+		local var_9_0 = arg_1_0.viewComponent.isMainOpenLayerTag and true or nil
 
-		uv0:enbalePage(Context.New({
+		arg_1_0.viewComponent.isMainOpenLayerTag = nil
+
+		arg_1_0:enbalePage(Context.New({
 			viewComponent = MetaCharacterTacticsLayer,
 			mediator = MetaCharacterTacticsMediator,
 			data = {
-				shipID = slot1,
+				shipID = arg_9_1,
 				LayerWeightMgr_groupName = LayerWeightConst.GROUP_META,
-				isMainOpen = uv0.viewComponent.isMainOpenLayerTag and true or nil
+				isMainOpen = var_9_0
 			},
-			onRemoved = function ()
-				if uv0.contextData.isFromNavalMeta == true then
-					uv0.viewComponent:closeView()
+			onRemoved = function()
+				if arg_1_0.contextData.isFromNavalMeta == true then
+					arg_1_0.viewComponent:closeView()
 
-					uv0.contextData.isFromNavalMeta = nil
+					arg_1_0.contextData.isFromNavalMeta = nil
 				else
-					uv0.viewComponent:enterMenuPage(false)
+					arg_1_0.viewComponent:enterMenuPage(false)
 
-					uv0.viewComponent.curPageIndex = nil
+					arg_1_0.viewComponent.curPageIndex = nil
 
-					uv0.viewComponent:resetToggleList()
-					uv0.viewComponent:updateRedPoints()
+					arg_1_0.viewComponent:resetToggleList()
+					arg_1_0.viewComponent:updateRedPoints()
 				end
 			end
-		}), slot2)
+		}), arg_9_2)
 	end)
-	slot0:bind(uv0.ON_SYN, function (slot0, slot1, slot2)
-		uv0.viewComponent.isMainOpenLayerTag = nil
+	arg_1_0:bind(var_0_0.ON_SYN, function(arg_11_0, arg_11_1, arg_11_2)
+		local var_11_0 = arg_1_0.viewComponent.isMainOpenLayerTag and true or nil
 
-		uv0:enbalePage(Context.New({
+		arg_1_0.viewComponent.isMainOpenLayerTag = nil
+
+		arg_1_0:enbalePage(Context.New({
 			viewComponent = MetaCharacterSynLayer,
 			mediator = MetaCharacterSynMediator,
 			data = {
-				shipID = slot1,
+				shipID = arg_11_1,
 				LayerWeightMgr_groupName = LayerWeightConst.GROUP_META,
-				isMainOpen = uv0.viewComponent.isMainOpenLayerTag and true or nil
+				isMainOpen = var_11_0
 			},
-			onRemoved = function ()
-				uv0.viewComponent:enterMenuPage(false)
+			onRemoved = function()
+				arg_1_0.viewComponent:enterMenuPage(false)
 
-				uv0.viewComponent.curPageIndex = nil
+				arg_1_0.viewComponent.curPageIndex = nil
 
-				uv0.viewComponent:resetToggleList()
-				uv0.viewComponent:updateRedPoints()
+				arg_1_0.viewComponent:resetToggleList()
+				arg_1_0.viewComponent:updateRedPoints()
 			end
-		}), slot2)
+		}), arg_11_2)
 	end)
 end
 
-function slot0.enbalePage(slot0, slot1, slot2)
-	if slot2 then
-		slot0:addSubLayers(slot1)
-	elseif getProxy(ContextProxy):getContextByMediator(slot1.mediator) then
-		slot0:sendNotification(GAME.REMOVE_LAYERS, {
-			context = slot4
-		})
+function var_0_0.enbalePage(arg_13_0, arg_13_1, arg_13_2)
+	if arg_13_2 then
+		arg_13_0:addSubLayers(arg_13_1)
+	else
+		local var_13_0 = getProxy(ContextProxy):getContextByMediator(arg_13_1.mediator)
+
+		if var_13_0 then
+			arg_13_0:sendNotification(GAME.REMOVE_LAYERS, {
+				context = var_13_0
+			})
+		end
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_14_0)
 	return {
 		GAME.ACT_NEW_PT_DONE,
 		BayProxy.SHIP_ADDED,
@@ -141,30 +152,31 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1:getName()
+	local var_15_1 = arg_15_1:getBody()
 
-	if slot1:getName() == BayProxy.SHIP_ADDED then
-		slot4 = slot0.viewComponent:getCurMetaProgressVO()
+	if var_15_0 == BayProxy.SHIP_ADDED then
+		local var_15_2 = arg_15_0.viewComponent:getCurMetaProgressVO()
 
-		slot4:updateDataAfterAddShip()
+		var_15_2:updateDataAfterAddShip()
 
-		if slot4:isPassType() or slot4:isBuildType() then
-			slot0.viewComponent:refreshBannerTF()
-			slot0.viewComponent:updateMain()
+		if var_15_2:isPassType() or var_15_2:isBuildType() then
+			arg_15_0.viewComponent:refreshBannerTF()
+			arg_15_0.viewComponent:updateMain()
 		end
-	elseif slot2 == GAME.GET_META_PT_AWARD_DONE then
-		slot5 = slot0.viewComponent
-
-		slot5:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
-			if uv0.callback then
-				uv0.callback()
+	elseif var_15_0 == GAME.GET_META_PT_AWARD_DONE then
+		local function var_15_3()
+			if var_15_1.callback then
+				var_15_1.callback()
 			end
 
-			uv1.viewComponent:refreshBannerTF()
-			uv1.viewComponent:updateMain(true)
-		end)
+			arg_15_0.viewComponent:refreshBannerTF()
+			arg_15_0.viewComponent:updateMain(true)
+		end
+
+		arg_15_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_15_1.awards, var_15_3)
 	end
 end
 
-return slot0
+return var_0_0

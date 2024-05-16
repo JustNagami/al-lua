@@ -1,154 +1,176 @@
-slot0 = class("MetaExpView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("MetaExpView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MetaExpUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:initUITip()
-	slot0:initData()
-	slot0:initUI()
-	slot0:addListener()
-	slot0:updateIconList()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:initUITip()
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:addListener()
+	arg_2_0:updateIconList()
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.closeCB then
-		slot0.closeCB()
+function var_0_0.OnDestroy(arg_3_0)
+	if arg_3_0.closeCB then
+		arg_3_0.closeCB()
 	end
 end
 
-function slot0.setData(slot0, slot1, slot2)
-	slot0.expInfoList = slot1
-	slot0.closeCB = slot2
+function var_0_0.setData(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0.expInfoList = arg_4_1
+	arg_4_0.closeCB = arg_4_2
 end
 
-function slot0.initUITip(slot0)
-	setText(slot0:findTF("Panel/Title/Text"), i18n("battle_end_subtitle2"))
+function var_0_0.initUITip(arg_5_0)
+	local var_5_0 = arg_5_0:findTF("Panel/Title/Text")
+
+	setText(var_5_0, i18n("battle_end_subtitle2"))
 end
 
-function slot0.initData(slot0)
-	slot0.metaProxy = getProxy(MetaCharacterProxy)
+function var_0_0.initData(arg_6_0)
+	arg_6_0.metaProxy = getProxy(MetaCharacterProxy)
 end
 
-function slot0.initUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.iconTpl = slot0:findTF("IconTpl")
-	slot0.panelTF = slot0:findTF("Panel")
-	slot0.iconContainer = slot0:findTF("ScrollView/Content", slot0.panelTF)
-	slot0.gridLayoutGroupSC = GetComponent(slot0.iconContainer, typeof(GridLayoutGroup))
-	slot0.iconUIItemList = UIItemList.New(slot0.iconContainer, slot0.iconTpl)
+function var_0_0.initUI(arg_7_0)
+	arg_7_0.bg = arg_7_0:findTF("BG")
+	arg_7_0.iconTpl = arg_7_0:findTF("IconTpl")
+	arg_7_0.panelTF = arg_7_0:findTF("Panel")
+	arg_7_0.iconContainer = arg_7_0:findTF("ScrollView/Content", arg_7_0.panelTF)
+	arg_7_0.gridLayoutGroupSC = GetComponent(arg_7_0.iconContainer, typeof(GridLayoutGroup))
+	arg_7_0.iconUIItemList = UIItemList.New(arg_7_0.iconContainer, arg_7_0.iconTpl)
 end
 
-function slot0.addListener(slot0)
+function var_0_0.addListener(arg_8_0)
+	return
 end
 
-function slot0.updateIconList(slot0)
-	slot0.gridLayoutGroupSC.constraintCount = #slot0:sortDataList(slot0.expInfoList or slot0.metaProxy:getMetaTacticsInfoOnEnd()) > 4 and 2 or 1
+function var_0_0.updateIconList(arg_9_0)
+	local var_9_0 = arg_9_0.expInfoList or arg_9_0.metaProxy:getMetaTacticsInfoOnEnd()
+	local var_9_1 = arg_9_0:sortDataList(var_9_0)
+	local var_9_2 = #var_9_1
 
-	slot0.iconUIItemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_9_0.gridLayoutGroupSC.constraintCount = var_9_2 > 4 and 2 or 1
 
-		if slot0 == UIItemList.EventUpdate then
-			slot5 = uv0:findTF("LevelMaxText", slot2)
-			slot6 = uv0:findTF("ExpMaxText", slot2)
-			slot7 = uv0:findTF("Slider", slot2)
-			slot9 = uv1[slot1]
-			slot14 = slot9.isExpMax
-			slot15 = slot9.progressOld
-			slot16 = slot9.progressNew
-			slot18 = getProxy(BayProxy):getShipById(slot9.shipID):getPainting()
+	arg_9_0.iconUIItemList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		arg_10_1 = arg_10_1 + 1
 
-			setImageSprite(uv0:findTF("Icon", slot2), LoadSprite("SquareIcon/" .. slot18, slot18))
-			setText(uv0:findTF("AddExpText", slot2), "EXP + " .. slot9.addDayExp)
-			setActive(uv0:findTF("Light", slot2), slot9.isUpLevel and slot9.isMaxLevel)
+		if arg_10_0 == UIItemList.EventUpdate then
+			local var_10_0 = arg_9_0:findTF("Icon", arg_10_2)
+			local var_10_1 = arg_9_0:findTF("AddExpText", arg_10_2)
+			local var_10_2 = arg_9_0:findTF("LevelMaxText", arg_10_2)
+			local var_10_3 = arg_9_0:findTF("ExpMaxText", arg_10_2)
+			local var_10_4 = arg_9_0:findTF("Slider", arg_10_2)
+			local var_10_5 = arg_9_0:findTF("Light", arg_10_2)
+			local var_10_6 = var_9_1[arg_10_1]
+			local var_10_7 = var_10_6.shipID
+			local var_10_8 = var_10_6.addDayExp
+			local var_10_9 = var_10_6.isUpLevel
+			local var_10_10 = var_10_6.isMaxLevel
+			local var_10_11 = var_10_6.isExpMax
+			local var_10_12 = var_10_6.progressOld
+			local var_10_13 = var_10_6.progressNew
+			local var_10_14 = getProxy(BayProxy):getShipById(var_10_7)
+			local var_10_15 = var_10_14:getPainting()
+			local var_10_16 = "SquareIcon/" .. var_10_15
 
-			if slot12 and slot13 then
-				setActive(slot4, false)
-				setActive(slot5, true)
-				setActive(slot6, false)
-			elseif slot14 then
-				setActive(slot4, false)
-				setActive(slot5, false)
-				setActive(slot6, true)
+			setImageSprite(var_10_0, LoadSprite(var_10_16, var_10_15))
+			setText(var_10_1, "EXP + " .. var_10_8)
+			setActive(var_10_5, var_10_9 and var_10_10)
+
+			if var_10_9 and var_10_10 then
+				setActive(var_10_1, false)
+				setActive(var_10_2, true)
+				setActive(var_10_3, false)
+			elseif var_10_11 then
+				setActive(var_10_1, false)
+				setActive(var_10_2, false)
+				setActive(var_10_3, true)
 			else
-				setActive(slot4, true)
-				setActive(slot5, false)
-				setActive(slot6, false)
+				setActive(var_10_1, true)
+				setActive(var_10_2, false)
+				setActive(var_10_3, false)
 			end
 
-			setSlider(slot7, 0, 1, slot16)
-			onButton(uv0, slot2, function ()
+			setSlider(var_10_4, 0, 1, var_10_13)
+			onButton(arg_9_0, arg_10_2, function()
 				LoadContextCommand.LoadLayerOnTopContext(Context.New({
 					viewComponent = MetaSkillDetailBoxLayer,
 					mediator = MetaSkillDetailBoxMediator,
 					data = {
-						metaShipID = uv0.id,
-						expInfoList = uv1.lastMetaExpInfoList
+						metaShipID = var_10_14.id,
+						expInfoList = arg_9_0.lastMetaExpInfoList
 					},
-					onRemoved = function ()
-						uv0:updateIconList()
+					onRemoved = function()
+						arg_9_0:updateIconList()
 					end
 				}))
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.iconUIItemList:align(#slot1)
+	arg_9_0.iconUIItemList:align(#var_9_1)
 end
 
-function slot0.openPanel(slot0)
-	if slot0.isAni == true then
+function var_0_0.openPanel(arg_13_0)
+	if arg_13_0.isAni == true then
 		return
 	end
 
-	slot0.isAni = true
+	arg_13_0.isAni = true
 
 	Canvas.ForceUpdateCanvases()
 
-	slot2 = LeanTween.value(go(slot0.panelTF), 0, slot0.panelTF.sizeDelta.x, 0.5)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.panelTF, {
-			x = -slot0
-		})
-	end))
+	local var_13_0 = arg_13_0.panelTF.sizeDelta.x
 
-	slot2:setOnComplete(System.Action(function ()
-		uv0.isAni = false
+	LeanTween.value(go(arg_13_0.panelTF), 0, var_13_0, 0.5):setOnUpdate(System.Action_float(function(arg_14_0)
+		setAnchoredPosition(arg_13_0.panelTF, {
+			x = -arg_14_0
+		})
+	end)):setOnComplete(System.Action(function()
+		arg_13_0.isAni = false
 	end))
 end
 
-function slot0.closePanel(slot0)
-	if slot0.isAni == true then
+function var_0_0.closePanel(arg_16_0)
+	if arg_16_0.isAni == true then
 		return
 	end
 
-	slot0.isAni = true
-	slot2 = LeanTween.value(go(slot0.panelTF), -slot0.panelTF.sizeDelta.x, 0, 0.5)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.panelTF, {
-			x = slot0
+	arg_16_0.isAni = true
+
+	local var_16_0 = arg_16_0.panelTF.sizeDelta.x
+
+	LeanTween.value(go(arg_16_0.panelTF), -var_16_0, 0, 0.5):setOnUpdate(System.Action_float(function(arg_17_0)
+		setAnchoredPosition(arg_16_0.panelTF, {
+			x = arg_17_0
 		})
-	end))
+	end)):setOnComplete(System.Action(function()
+		arg_16_0.isAni = false
 
-	slot2:setOnComplete(System.Action(function ()
-		uv0.isAni = false
-
-		uv0:Destroy()
+		arg_16_0:Destroy()
 	end))
 end
 
-function slot0.sortDataList(slot0, slot1)
-	table.sort(slot1, function (slot0, slot1)
-		if (slot0.isUpLevel and slot0.isMaxLevel and 9999 or 0) + slot0.progressNew > (slot1.isUpLevel and slot1.isMaxLevel and 9999 or 0) + slot1.progressNew then
+function var_0_0.sortDataList(arg_19_0, arg_19_1)
+	table.sort(arg_19_1, function(arg_20_0, arg_20_1)
+		local var_20_0 = arg_20_0.isUpLevel and arg_20_0.isMaxLevel and 9999 or 0
+		local var_20_1 = arg_20_1.isUpLevel and arg_20_1.isMaxLevel and 9999 or 0
+		local var_20_2 = arg_20_0.progressNew
+		local var_20_3 = arg_20_1.progressNew
+		local var_20_4 = var_20_0 + var_20_2
+		local var_20_5 = var_20_1 + var_20_3
+
+		if var_20_5 < var_20_4 then
 			return true
-		elseif slot6 == slot7 then
-			return slot0.shipID < slot1.shipID
-		elseif slot6 < slot7 then
+		elseif var_20_4 == var_20_5 then
+			return arg_20_0.shipID < arg_20_1.shipID
+		elseif var_20_4 < var_20_5 then
 			return false
 		end
 	end)
 
-	return slot1
+	return arg_19_1
 end
 
-return slot0
+return var_0_0

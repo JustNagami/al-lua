@@ -1,25 +1,29 @@
-slot0 = class("WorkBenchActivity", import("model.vo.Activity"))
+﻿local var_0_0 = class("WorkBenchActivity", import("model.vo.Activity"))
 
-function slot0.GetFormulaUseCount(slot0, slot1)
-	return slot0.data1KeyValueList[1][slot1] or 0
+function var_0_0.GetFormulaUseCount(arg_1_0, arg_1_1)
+	return arg_1_0.data1KeyValueList[1][arg_1_1] or 0
 end
 
-function slot0.AddFormulaUseCount(slot0, slot1, slot2)
-	slot0.data1KeyValueList[1][slot1] = slot0:GetFormulaUseCount(slot1) + slot2
+function var_0_0.AddFormulaUseCount(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0:GetFormulaUseCount(arg_2_1)
+
+	arg_2_0.data1KeyValueList[1][arg_2_1] = var_2_0 + arg_2_2
 end
 
-function slot0.HasAvaliableFormula(slot0)
-	return _.any(_.map(pg.activity_workbench_recipe.all, function (slot0)
-		slot1 = WorkBenchFormula.New({
-			configId = slot0
+function var_0_0.HasAvaliableFormula(arg_3_0)
+	local var_3_0 = _.map(pg.activity_workbench_recipe.all, function(arg_4_0)
+		local var_4_0 = WorkBenchFormula.New({
+			configId = arg_4_0
 		})
 
-		slot1:BuildFromActivity()
+		var_4_0:BuildFromActivity()
 
-		return slot1
-	end), function (slot0)
-		return slot0:IsUnlock() and slot0:IsAvaliable()
+		return var_4_0
+	end)
+
+	return _.any(var_3_0, function(arg_5_0)
+		return arg_5_0:IsUnlock() and arg_5_0:IsAvaliable()
 	end)
 end
 
-return slot0
+return var_0_0

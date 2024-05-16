@@ -1,66 +1,71 @@
-slot0 = class("Map", import(".BaseVO"))
-slot0.INVALID = 0
-slot0.SCENARIO = 1
-slot0.ELITE = 2
-slot0.EVENT = 3
-slot0.ACTIVITY_EASY = 4
-slot0.ACTIVITY_HARD = 5
-slot0.ACT_EXTRA = 8
-slot0.ESCORT = 9
-slot0.SKIRMISH = 10
-slot0.NORMAL_MAP = {
-	slot0.INVALID,
-	slot0.SCENARIO,
-	slot0.ELITE,
-	slot0.EVENT,
-	slot0.ACTIVITY_EASY,
-	slot0.ACTIVITY_HARD,
-	slot0.ACT_EXTRA
+﻿local var_0_0 = class("Map", import(".BaseVO"))
+
+var_0_0.INVALID = 0
+var_0_0.SCENARIO = 1
+var_0_0.ELITE = 2
+var_0_0.EVENT = 3
+var_0_0.ACTIVITY_EASY = 4
+var_0_0.ACTIVITY_HARD = 5
+var_0_0.ACT_EXTRA = 8
+var_0_0.ESCORT = 9
+var_0_0.SKIRMISH = 10
+var_0_0.NORMAL_MAP = {
+	var_0_0.INVALID,
+	var_0_0.SCENARIO,
+	var_0_0.ELITE,
+	var_0_0.EVENT,
+	var_0_0.ACTIVITY_EASY,
+	var_0_0.ACTIVITY_HARD,
+	var_0_0.ACT_EXTRA
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0.configId = slot1.id
-	slot0.id = slot0.configId
-	slot0.chapterIds = slot1.chapterIds
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.configId = arg_1_1.id
+	arg_1_0.id = arg_1_0.configId
+	arg_1_0.chapterIds = arg_1_1.chapterIds
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.expedition_data_by_map
 end
 
-function slot0.isUnlock(slot0)
-	if getProxy(PlayerProxy):getRawData().level < slot0:getConfig("level_limit") then
-		return false, i18n("levelScene_chapter_unlock_tip", slot0:getConfig("level_limit"))
-	elseif slot0:isActivity() then
-		if slot0:isRemaster() then
-			if slot0:isAnyChapterUnlocked() then
+function var_0_0.isUnlock(arg_3_0)
+	if getProxy(PlayerProxy):getRawData().level < arg_3_0:getConfig("level_limit") then
+		return false, i18n("levelScene_chapter_unlock_tip", arg_3_0:getConfig("level_limit"))
+	elseif arg_3_0:isActivity() then
+		if arg_3_0:isRemaster() then
+			if arg_3_0:isAnyChapterUnlocked() then
 				return true
 			else
 				return false, i18n("battle_levelScene_lock")
 			end
-		elseif not getProxy(ActivityProxy):getActivityById(slot0:getConfig("on_activity")) or slot2:isEnd() then
-			return false, i18n("common_activity_end")
 		else
-			slot3, slot4 = slot0:isAnyChapterUnlocked(true)
+			local var_3_0 = getProxy(ActivityProxy):getActivityById(arg_3_0:getConfig("on_activity"))
 
-			if slot3 then
-				return true
-			elseif slot4 then
-				return false, i18n("battle_levelScene_close")
-			elseif ChapterConst.IsAtelierMap(slot0) and slot0:isHardMap() then
-				return false, i18n("battle_levelScene_ryza_lock")
+			if not var_3_0 or var_3_0:isEnd() then
+				return false, i18n("common_activity_end")
 			else
-				return false, i18n("battle_levelScene_lock")
+				local var_3_1, var_3_2 = arg_3_0:isAnyChapterUnlocked(true)
+
+				if var_3_1 then
+					return true
+				elseif var_3_2 then
+					return false, i18n("battle_levelScene_close")
+				elseif ChapterConst.IsAtelierMap(arg_3_0) and arg_3_0:isHardMap() then
+					return false, i18n("battle_levelScene_ryza_lock")
+				else
+					return false, i18n("battle_levelScene_lock")
+				end
 			end
 		end
-	elseif slot0:getMapType() == Map.SCENARIO then
-		if slot0:isAnyChapterUnlocked(false) then
+	elseif arg_3_0:getMapType() == Map.SCENARIO then
+		if arg_3_0:isAnyChapterUnlocked(false) then
 			return true
 		else
 			return false, i18n("battle_levelScene_lock")
 		end
-	elseif slot0:getMapType() == Map.ELITE then
-		if slot0:isEliteEnabled() then
+	elseif arg_3_0:getMapType() == Map.ELITE then
+		if arg_3_0:isEliteEnabled() then
 			return true
 		else
 			return false, i18n("battle_levelScene_hard_lock")
@@ -70,86 +75,98 @@ function slot0.isUnlock(slot0)
 	end
 end
 
-function slot0.setRemaster(slot0, slot1)
-	slot0.remasterId = slot1
+function var_0_0.setRemaster(arg_4_0, arg_4_1)
+	arg_4_0.remasterId = arg_4_1
 end
 
-function slot0.isRemaster(slot0)
-	return slot0.remasterId ~= nil
+function var_0_0.isRemaster(arg_5_0)
+	return arg_5_0.remasterId ~= nil
 end
 
-function slot0.getRemaster(slot0)
-	return slot0.remasterId
+function var_0_0.getRemaster(arg_6_0)
+	return arg_6_0.remasterId
 end
 
-function slot0.getMapType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.getMapType(arg_7_0)
+	return arg_7_0:getConfig("type")
 end
 
-function slot0.getMapTitleNumber(slot0)
-	return slot0:getConfig("title")
+function var_0_0.getMapTitleNumber(arg_8_0)
+	return arg_8_0:getConfig("title")
 end
 
-function slot0.getBindMapId(slot0)
-	return slot0:getConfig("bind_map")
+function var_0_0.getBindMapId(arg_9_0)
+	return arg_9_0:getConfig("bind_map")
 end
 
-function slot0.getBindMap(slot0)
-	return getProxy(ChapterProxy):getMapById(slot0:getBindMapId())
+function var_0_0.getBindMap(arg_10_0)
+	return getProxy(ChapterProxy):getMapById(arg_10_0:getBindMapId())
 end
 
-function slot0.getChapters(slot0)
-	return _.filter(slot0:GetChapterItems(), function (slot0)
-		return isa(slot0, Chapter)
+function var_0_0.getChapters(arg_11_0)
+	return _.filter(arg_11_0:GetChapterItems(), function(arg_12_0)
+		return isa(arg_12_0, Chapter)
 	end)
 end
 
-function slot0.GetChapterItems(slot0)
-	slot1 = getProxy(ChapterProxy)
+function var_0_0.GetChapterItems(arg_13_0)
+	local var_13_0 = getProxy(ChapterProxy)
 
-	return _.map(slot0:GetChapterList(), function (slot0)
-		return uv0:GetChapterItemById(slot0)
+	return _.map(arg_13_0:GetChapterList(), function(arg_14_0)
+		return var_13_0:GetChapterItemById(arg_14_0)
 	end)
 end
 
-function slot0.getEscortConfig(slot0)
-	if slot0:isEscort() then
-		return pg.escort_map_template[slot0.id]
+function var_0_0.getEscortConfig(arg_15_0)
+	if arg_15_0:isEscort() then
+		return pg.escort_map_template[arg_15_0.id]
 	end
 end
 
-function slot0.getChapterTimeLimit(slot0)
-	if not slot0:isActivity() or slot0:isRemaster() then
+function var_0_0.getChapterTimeLimit(arg_16_0)
+	if not arg_16_0:isActivity() or arg_16_0:isRemaster() then
 		return 0
 	end
 
-	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = 0
+	local var_16_0 = pg.TimeMgr.GetInstance()
+	local var_16_1 = 0
 
-	for slot6, slot7 in ipairs(slot0:getChapters()) do
-		if pg.activity_template[slot7:GetBindActID()] and slot8.time and #slot8.time == 3 and slot1:parseTimeFromConfig(slot8.time[2]) - slot1:GetServerTime() > 0 then
-			slot2 = slot2 == 0 and slot9 or math.min(slot9, slot9)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0:getChapters()) do
+		local var_16_2 = pg.activity_template[iter_16_1:GetBindActID()]
+
+		if var_16_2 and var_16_2.time and #var_16_2.time == 3 then
+			local var_16_3 = var_16_0:parseTimeFromConfig(var_16_2.time[2]) - var_16_0:GetServerTime()
+
+			if var_16_3 > 0 then
+				if var_16_1 == 0 then
+					var_16_1 = var_16_3
+				else
+					var_16_1 = math.min(var_16_1, var_16_3)
+				end
+			end
 		end
 	end
 
-	return slot2
+	return var_16_1
 end
 
-function slot0.isClear(slot0)
-	if slot0:getMapType() == uv0.SCENARIO then
-		return slot0:isAllChaptersClear()
-	elseif slot0:isActivity() then
-		return slot0:isClearForActivity()
+function var_0_0.isClear(arg_17_0)
+	if arg_17_0:getMapType() == var_0_0.SCENARIO then
+		return arg_17_0:isAllChaptersClear()
+	elseif arg_17_0:isActivity() then
+		return arg_17_0:isClearForActivity()
 	else
 		return true
 	end
 end
 
-function slot0.isClearForActivity(slot0)
-	for slot5, slot6 in ipairs(slot0:GetChapterItems()) do
-		if slot5 > 1 and slot6.id - slot1[slot5 - 1].id > 1 then
+function var_0_0.isClearForActivity(arg_18_0)
+	local var_18_0 = arg_18_0:GetChapterItems()
+
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		if iter_18_0 > 1 and iter_18_1.id - var_18_0[iter_18_0 - 1].id > 1 then
 			break
-		elseif not slot6:isClear() then
+		elseif not iter_18_1:isClear() then
 			return false
 		end
 	end
@@ -157,38 +174,43 @@ function slot0.isClearForActivity(slot0)
 	return true
 end
 
-function slot0.isEliteEnabled(slot0)
-	slot1 = nil
-	slot1 = (slot0:getMapType() ~= uv0.ELITE or getProxy(ChapterProxy):getMapById(slot0:getBindMapId())) and slot0
+function var_0_0.isEliteEnabled(arg_19_0)
+	local var_19_0
 
-	return slot1:isAllChaptersClear() and slot1:isAllChaptersAchieve()
+	if arg_19_0:getMapType() == var_0_0.ELITE then
+		var_19_0 = getProxy(ChapterProxy):getMapById(arg_19_0:getBindMapId())
+	else
+		var_19_0 = arg_19_0
+	end
+
+	return var_19_0:isAllChaptersClear() and var_19_0:isAllChaptersAchieve()
 end
 
-function slot0.isAnyChapterUnlocked(slot0, slot1)
-	slot2 = false
+function var_0_0.isAnyChapterUnlocked(arg_20_0, arg_20_1)
+	local var_20_0 = false
 
-	for slot6, slot7 in ipairs(slot0:GetChapterItems()) do
-		if slot7:isUnlock() then
-			if not slot1 or slot7:inActTime() then
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0:GetChapterItems()) do
+		if iter_20_1:isUnlock() then
+			if not arg_20_1 or iter_20_1:inActTime() then
 				return true
 			else
-				slot2 = true
+				var_20_0 = true
 			end
 		end
 	end
 
-	return false, slot2
+	return false, var_20_0
 end
 
-function slot0.isAnyChapterClear(slot0)
-	return underscore.any(slot0:GetChapterItems(), function (slot0)
-		return slot0:isClear()
+function var_0_0.isAnyChapterClear(arg_21_0)
+	return underscore.any(arg_21_0:GetChapterItems(), function(arg_22_0)
+		return arg_22_0:isClear()
 	end)
 end
 
-function slot0.isAllChaptersClear(slot0)
-	for slot4, slot5 in ipairs(slot0:GetChapterItems()) do
-		if not slot5:isClear() then
+function var_0_0.isAllChaptersClear(arg_23_0)
+	for iter_23_0, iter_23_1 in ipairs(arg_23_0:GetChapterItems()) do
+		if not iter_23_1:isClear() then
 			return false
 		end
 	end
@@ -196,9 +218,9 @@ function slot0.isAllChaptersClear(slot0)
 	return true
 end
 
-function slot0.isAllChaptersAchieve(slot0)
-	for slot4, slot5 in ipairs(slot0:getChapters()) do
-		if not slot5:isAllAchieve() then
+function var_0_0.isAllChaptersAchieve(arg_24_0)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0:getChapters()) do
+		if not iter_24_1:isAllAchieve() then
 			return false
 		end
 	end
@@ -206,90 +228,102 @@ function slot0.isAllChaptersAchieve(slot0)
 	return true
 end
 
-function slot0.getLastUnlockChapterName(slot0)
-	slot1 = nil
+function var_0_0.getLastUnlockChapterName(arg_25_0)
+	local var_25_0
 
-	for slot5, slot6 in ipairs(slot0:getChapters()) do
-		if not slot6:isUnlock() then
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0:getChapters()) do
+		if not iter_25_1:isUnlock() then
 			break
 		end
 
-		slot1 = slot6
+		var_25_0 = iter_25_1
 	end
 
-	return slot1:getConfig("chapter_name")
+	return var_25_0:getConfig("chapter_name")
 end
 
-function slot0.GetChapterInProgress(slot0)
-	return underscore.detect(slot0:GetChapterItems(), function (slot0)
-		return slot0:isUnlock() and not slot0:isClear()
+function var_0_0.GetChapterInProgress(arg_26_0)
+	return underscore.detect(arg_26_0:GetChapterItems(), function(arg_27_0)
+		return arg_27_0:isUnlock() and not arg_27_0:isClear()
 	end)
 end
 
-function slot0.GetChapterList(slot0)
-	return slot0.chapterIds
+function var_0_0.GetChapterList(arg_28_0)
+	return arg_28_0.chapterIds
 end
 
-function slot0.GetRearChaptersOfRemaster(slot0)
-	if not slot0 or slot0 == 0 then
+function var_0_0.GetRearChaptersOfRemaster(arg_29_0)
+	if not arg_29_0 or arg_29_0 == 0 then
 		return
 	end
 
-	slot1 = getProxy(ChapterProxy)
+	local var_29_0 = getProxy(ChapterProxy)
+	local var_29_1 = _.reduce(pg.re_map_template[arg_29_0].config_data, {}, function(arg_30_0, arg_30_1)
+		local var_30_0 = var_29_0:getChapterById(arg_30_1, true):getConfig("map")
+		local var_30_1 = var_29_0:getMapById(var_30_0):getConfig("type")
 
-	table.Foreach(_.reduce(pg.re_map_template[slot0].config_data, {}, function (slot0, slot1)
-		slot0[slot5] = slot0[uv0:getMapById(uv0:getChapterById(slot1, true):getConfig("map")):getConfig("type")] or {}
+		arg_30_0[var_30_1] = arg_30_0[var_30_1] or {}
 
-		table.insert(slot0[slot5], slot1)
+		table.insert(arg_30_0[var_30_1], arg_30_1)
 
-		return slot0
-	end), function (slot0, slot1)
-		slot2 = _.reduce(slot1, {}, function (slot0, slot1)
-			slot0[uv0:getChapterById(slot1, true):getConfig("pre_chapter")] = slot1
+		return arg_30_0
+	end)
+	local var_29_2 = {}
 
-			return slot0
+	table.Foreach(var_29_1, function(arg_31_0, arg_31_1)
+		local var_31_0 = _.reduce(arg_31_1, {}, function(arg_32_0, arg_32_1)
+			arg_32_0[var_29_0:getChapterById(arg_32_1, true):getConfig("pre_chapter")] = arg_32_1
+
+			return arg_32_0
+		end)
+		local var_31_1 = _.filter(arg_31_1, function(arg_33_0)
+			return not var_31_0[arg_33_0]
 		end)
 
-		table.insert(uv1, _.max(_.filter(slot1, function (slot0)
-			return not uv0[slot0]
-		end)))
+		table.insert(var_29_2, _.max(var_31_1))
 	end)
 
-	return {}
+	return var_29_2
 end
 
-function slot0.isActivity(slot0)
-	if slot0:getMapType() == Map.EVENT then
+function var_0_0.isActivity(arg_34_0)
+	local var_34_0 = arg_34_0:getMapType()
+
+	if var_34_0 == Map.EVENT then
 		return true, false
-	elseif slot1 == Map.ACTIVITY_EASY or slot1 == Map.ACTIVITY_HARD or slot1 == Map.ACT_EXTRA then
+	elseif var_34_0 == Map.ACTIVITY_EASY or var_34_0 == Map.ACTIVITY_HARD or var_34_0 == Map.ACT_EXTRA then
 		return true, true
 	else
 		return false
 	end
 end
 
-function slot0.isHardMap(slot0)
-	return slot0:getMapType() == Map.ELITE or slot1 == Map.ACTIVITY_HARD
+function var_0_0.isHardMap(arg_35_0)
+	local var_35_0 = arg_35_0:getMapType()
+
+	return var_35_0 == Map.ELITE or var_35_0 == Map.ACTIVITY_HARD
 end
 
-function slot0.isActExtra(slot0)
-	return slot0:getMapType() == Map.ACT_EXTRA
+function var_0_0.isActExtra(arg_36_0)
+	return arg_36_0:getMapType() == Map.ACT_EXTRA
 end
 
-function slot0.isEscort(slot0)
-	return slot0:getMapType() == Map.ESCORT
+function var_0_0.isEscort(arg_37_0)
+	return arg_37_0:getMapType() == Map.ESCORT
 end
 
-function slot0.isSkirmish(slot0)
-	return slot0:getMapType() == Map.SKIRMISH
+function var_0_0.isSkirmish(arg_38_0)
+	return arg_38_0:getMapType() == Map.SKIRMISH
 end
 
-function slot0.isNormalMap(slot0)
-	return table.contains(Map.NORMAL_MAP, slot0:getMapType())
+function var_0_0.isNormalMap(arg_39_0)
+	return table.contains(Map.NORMAL_MAP, arg_39_0:getMapType())
 end
 
-function slot0.NeedRecordMap(slot0)
-	return slot0:getMapType() == uv0.INVALID or slot1 == uv0.SCENARIO or slot1 == uv0.ELITE
+function var_0_0.NeedRecordMap(arg_40_0)
+	local var_40_0 = arg_40_0:getMapType()
+
+	return var_40_0 == var_0_0.INVALID or var_40_0 == var_0_0.SCENARIO or var_40_0 == var_0_0.ELITE
 end
 
-return slot0
+return var_0_0

@@ -1,75 +1,79 @@
-slot0 = class("Rival", import(".PlayerAttire"))
+﻿local var_0_0 = class("Rival", import(".PlayerAttire"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.id = slot1.id
-	slot0.level = slot1.level
-	slot0.name = slot1.name
-	slot0.score = slot1.score or 0
-	slot0.rank = slot1.rank
-	slot0.vanguardShips = {}
-	slot0.mainShips = {}
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.level = arg_1_1.level
+	arg_1_0.name = arg_1_1.name
+	arg_1_0.score = arg_1_1.score or 0
+	arg_1_0.rank = arg_1_1.rank
+	arg_1_0.vanguardShips = {}
+	arg_1_0.mainShips = {}
 
-	function slot2(slot0)
-		if slot0:getTeamType() == TeamType.Vanguard then
-			table.insert(uv0.vanguardShips, slot0)
-		elseif slot0:getTeamType() == TeamType.Main then
-			table.insert(uv0.mainShips, slot0)
+	local function var_1_0(arg_2_0)
+		if arg_2_0:getTeamType() == TeamType.Vanguard then
+			table.insert(arg_1_0.vanguardShips, arg_2_0)
+		elseif arg_2_0:getTeamType() == TeamType.Main then
+			table.insert(arg_1_0.mainShips, arg_2_0)
 		end
 	end
 
-	for slot6, slot7 in ipairs(slot1.vanguard_ship_list) do
-		slot8 = RivalShip.New(slot7)
-		slot8.isRival = true
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.vanguard_ship_list) do
+		local var_1_1 = RivalShip.New(iter_1_1)
 
-		slot2(slot8)
+		var_1_1.isRival = true
+
+		var_1_0(var_1_1)
 	end
 
-	for slot6, slot7 in ipairs(slot1.main_ship_list) do
-		slot8 = RivalShip.New(slot7)
-		slot8.isRival = true
+	for iter_1_2, iter_1_3 in ipairs(arg_1_1.main_ship_list) do
+		local var_1_2 = RivalShip.New(iter_1_3)
 
-		slot2(slot8)
+		var_1_2.isRival = true
+
+		var_1_0(var_1_2)
 	end
 
-	slot0.score = slot0.score + SeasonInfo.INIT_POINT
+	arg_1_0.score = arg_1_0.score + SeasonInfo.INIT_POINT
 end
 
-function slot0.getPainting(slot0)
-	return pg.ship_skin_template[slot0.skinId] and slot1.painting or "unknown"
+function var_0_0.getPainting(arg_3_0)
+	local var_3_0 = pg.ship_skin_template[arg_3_0.skinId]
+
+	return var_3_0 and var_3_0.painting or "unknown"
 end
 
-function slot0.getShips(slot0)
-	slot1 = {}
+function var_0_0.getShips(arg_4_0)
+	local var_4_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.vanguardShips) do
-		table.insert(slot1, slot6)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.vanguardShips) do
+		table.insert(var_4_0, iter_4_1)
 	end
 
-	for slot5, slot6 in ipairs(slot0.mainShips) do
-		table.insert(slot1, slot6)
+	for iter_4_2, iter_4_3 in ipairs(arg_4_0.mainShips) do
+		table.insert(var_4_0, iter_4_3)
 	end
 
-	return slot1
+	return var_4_0
 end
 
-function slot0.GetGearScoreSum(slot0, slot1)
-	slot2 = nil
+function var_0_0.GetGearScoreSum(arg_5_0, arg_5_1)
+	local var_5_0
 
-	if slot1 == "main" then
-		slot2 = slot0.mainShips
-	elseif slot1 == "vanguard" then
-		slot2 = slot0.vanguardShips
+	if arg_5_1 == "main" then
+		var_5_0 = arg_5_0.mainShips
+	elseif arg_5_1 == "vanguard" then
+		var_5_0 = arg_5_0.vanguardShips
 	end
 
-	slot3 = 0
+	local var_5_1 = 0
 
-	for slot7, slot8 in ipairs(slot2) do
-		slot3 = slot3 + slot8:getShipCombatPower()
+	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+		var_5_1 = var_5_1 + iter_5_1:getShipCombatPower()
 	end
 
-	return slot3
+	return var_5_1
 end
 
-return slot0
+return var_0_0

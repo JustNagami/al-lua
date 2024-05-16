@@ -1,51 +1,52 @@
-slot0 = class("FeastResWindow", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("FeastResWindow", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FeastResWindow"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.icon = slot0:findTF("frame/item/icon"):GetComponent(typeof(Image))
-	slot0.name = slot0:findTF("frame/name/Text"):GetComponent(typeof(Text))
-	slot0.desc = slot0:findTF("frame/Text"):GetComponent(typeof(Text))
-	slot0.outPut = slot0:findTF("frame/output/Text"):GetComponent(typeof(Text))
-	slot0.goBtn = slot0:findTF("frame/go")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.icon = arg_2_0:findTF("frame/item/icon"):GetComponent(typeof(Image))
+	arg_2_0.name = arg_2_0:findTF("frame/name/Text"):GetComponent(typeof(Text))
+	arg_2_0.desc = arg_2_0:findTF("frame/Text"):GetComponent(typeof(Text))
+	arg_2_0.outPut = arg_2_0:findTF("frame/output/Text"):GetComponent(typeof(Text))
+	arg_2_0.goBtn = arg_2_0:findTF("frame/go")
 
-	setText(slot0.goBtn:Find("Text"), i18n("feast_res_window_go_label"))
-	setText(slot0:findTF("frame/title"), i18n("feast_res_window_title"))
+	setText(arg_2_0.goBtn:Find("Text"), i18n("feast_res_window_go_label"))
+	setText(arg_2_0:findTF("frame/title"), i18n("feast_res_window_title"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_5_0, arg_5_1)
+	var_0_0.super.Show(arg_5_0)
 
-	slot0.id = slot1
+	arg_5_0.id = arg_5_1
 
-	slot0:UpdateView()
+	arg_5_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot1 = pg.activity_workbench_item[slot0.id]
-	slot0.icon.sprite = LoadSprite("props/" .. slot1.icon)
-	slot2 = slot0.icon
+function var_0_0.UpdateView(arg_6_0)
+	local var_6_0 = pg.activity_workbench_item[arg_6_0.id]
 
-	slot2:SetNativeSize()
+	arg_6_0.icon.sprite = LoadSprite("props/" .. var_6_0.icon)
 
-	slot0.name.text = slot1.name
-	slot0.desc.text = slot1.display
-	slot0.outPut.text = slot1.get_access[1]
+	arg_6_0.icon:SetNativeSize()
 
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.WORKBENCH_ITEM_GO, uv0.id)
+	arg_6_0.name.text = var_6_0.name
+	arg_6_0.desc.text = var_6_0.display
+	arg_6_0.outPut.text = var_6_0.get_access[1]
+
+	onButton(arg_6_0, arg_6_0.goBtn, function()
+		pg.m02:sendNotification(GAME.WORKBENCH_ITEM_GO, arg_6_0.id)
 	end, SFX_PANEL)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

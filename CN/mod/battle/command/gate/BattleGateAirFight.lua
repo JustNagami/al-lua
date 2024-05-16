@@ -1,39 +1,49 @@
-slot0 = class("BattleGateAirFight")
-ys.Battle.BattleGateAirFight = slot0
-slot0.__name = "BattleGateAirFight"
+﻿local var_0_0 = class("BattleGateAirFight")
 
-function slot0.Entrance(slot0, slot1)
-	slot2 = slot0.stageId
+ys.Battle.BattleGateAirFight = var_0_0
+var_0_0.__name = "BattleGateAirFight"
 
-	slot1:sendNotification(GAME.BEGIN_STAGE_DONE, {
-		prefabFleet = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot2].dungeon_id).fleet_prefab,
-		stageId = slot2,
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.stageId
+	local var_1_1 = pg.expedition_data_template[var_1_0].dungeon_id
+	local var_1_2 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_1).fleet_prefab
+	local var_1_3 = {
+		prefabFleet = var_1_2,
+		stageId = var_1_0,
 		system = SYSTEM_AIRFIGHT
-	})
+	}
+
+	arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_1_3)
 end
 
-function slot0.Exit(slot0, slot1)
-	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
+function var_0_0.Exit(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
 
-	if ys.Battle.BattleConst.BattleScore.B <= slot0.statistics._battleScore and slot2 and not slot2:isEnd() then
-		slot4 = 0
+	if arg_2_0.statistics._battleScore >= ys.Battle.BattleConst.BattleScore.B and var_2_0 and not var_2_0:isEnd() then
+		local var_2_1 = 0
+		local var_2_2 = var_2_0:getConfig("config_client")[1]
 
-		for slot9 = 1, slot2:getConfig("config_client")[1] do
-			slot4 = slot4 + (slot2:getKVPList(1, slot9) or 0)
+		for iter_2_0 = 1, var_2_2 do
+			var_2_1 = var_2_1 + (var_2_0:getKVPList(1, iter_2_0) or 0)
 		end
 
-		slot6 = pg.TimeMgr.GetInstance()
+		local var_2_3 = pg.TimeMgr.GetInstance()
+		local var_2_4 = var_2_3:DiffDay(var_2_0.data1, var_2_3:GetServerTime()) + 1
 
-		if slot4 < math.min((slot6:DiffDay(slot2.data1, slot6:GetServerTime()) + 1) * 2, slot5 * 3) then
-			slot10 = slot2:getConfig("config_client")[2]
-			slot13 = slot2:getKVPList(2, slot11) == 1
+		if var_2_1 < math.min(var_2_4 * 2, var_2_2 * 3) then
+			local var_2_5 = arg_2_0.stageId
+			local var_2_6 = var_2_0:getConfig("config_client")[2]
+			local var_2_7 = table.indexof(var_2_6, var_2_5)
+			local var_2_8 = math.floor((var_2_7 - 1) / (#var_2_6 / var_2_2)) + 1
+			local var_2_9 = var_2_0:getKVPList(1, var_2_8) or 0
+			local var_2_10 = var_2_0:getKVPList(2, var_2_8) == 1
 
-			if (slot2:getKVPList(1, math.floor((table.indexof(slot10, slot0.stageId) - 1) / (#slot10 / slot5)) + 1) or 0) < 3 and not slot13 then
-				slot1:sendNotification(GAME.ACTIVITY_OPERATION, {
+			if var_2_9 < 3 and not var_2_10 then
+				arg_2_1:sendNotification(GAME.ACTIVITY_OPERATION, {
 					cmd = 1,
-					activity_id = slot2 and slot2.id,
-					arg1 = slot11,
-					statistics = slot0.statistics
+					activity_id = var_2_0 and var_2_0.id,
+					arg1 = var_2_8,
+					statistics = arg_2_0.statistics
 				})
 
 				return
@@ -41,11 +51,11 @@ function slot0.Exit(slot0, slot1)
 		end
 	end
 
-	slot1:sendNotification(GAME.FINISH_STAGE_DONE, {
-		statistics = slot0.statistics,
-		score = slot0.statistics._battleScore,
+	arg_2_1:sendNotification(GAME.FINISH_STAGE_DONE, {
+		statistics = arg_2_0.statistics,
+		score = arg_2_0.statistics._battleScore,
 		system = SYSTEM_AIRFIGHT
 	})
 end
 
-return slot0
+return var_0_0

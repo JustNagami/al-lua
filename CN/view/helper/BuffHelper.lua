@@ -1,170 +1,224 @@
-slot0 = class("BuffHelper")
+﻿local var_0_0 = class("BuffHelper")
 
-function slot1(slot0, slot1)
-	if slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUFF then
-		if slot1 and not slot1:isEnd() then
-			slot3 = {}
+local function var_0_1(arg_1_0, arg_1_1)
+	if arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUFF then
+		if arg_1_1 and not arg_1_1:isEnd() then
+			local var_1_0 = arg_1_1:getConfig("config_id")
+			local var_1_1 = {}
 
-			if slot1:getConfig("config_id") == 0 then
-				slot3 = slot1:getConfig("config_data")
+			if var_1_0 == 0 then
+				var_1_1 = arg_1_1:getConfig("config_data")
 			else
-				table.insert(slot3, slot2)
+				table.insert(var_1_1, var_1_0)
 			end
 
-			for slot7, slot8 in ipairs(slot3) do
-				if ActivityBuff.New(slot1.id, slot8):isActivate() then
-					table.insert(slot0, slot9)
+			for iter_1_0, iter_1_1 in ipairs(var_1_1) do
+				local var_1_2 = ActivityBuff.New(arg_1_1.id, iter_1_1)
+
+				if var_1_2:isActivate() then
+					table.insert(arg_1_0, var_1_2)
 				end
 			end
 		end
-	elseif slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		if slot1 and not slot1:isEnd() then
-			for slot6, slot7 in pairs(slot1:GetBuildingIds()) do
-				if pg.activity_event_building[slot7] then
-					_.each(slot8.buff, function (slot0)
-						if ActivityBuff.New(uv0.id, slot0):isActivate() then
-							table.insert(uv1, slot1)
+	elseif arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+		if arg_1_1 and not arg_1_1:isEnd() then
+			local var_1_3 = arg_1_1:GetBuildingIds()
+
+			for iter_1_2, iter_1_3 in pairs(var_1_3) do
+				local var_1_4 = pg.activity_event_building[iter_1_3]
+
+				if var_1_4 then
+					_.each(var_1_4.buff, function(arg_2_0)
+						local var_2_0 = ActivityBuff.New(arg_1_1.id, arg_2_0)
+
+						if var_2_0:isActivate() then
+							table.insert(arg_1_0, var_2_0)
 						end
 					end)
 				end
 			end
 
-			if slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 and slot1:GetSceneBuildingId() > 0 and pg.activity_event_building[slot3] then
-				_.each(slot4.buff, function (slot0)
-					if ActivityBuff.New(uv0.id, slot0):isActivate() then
-						table.insert(uv1, slot1)
-					end
-				end)
-			end
-		end
-	elseif slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
-		if slot1 then
-			slot2 = ActivityPtData.New(slot1)
+			if arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+				local var_1_5 = arg_1_1:GetSceneBuildingId()
 
-			if not slot1:isEnd() and slot2:isInBuffTime() then
-				for slot7, slot8 in pairs(slot1.data3_list) do
-					table.insert(slot0, ActivityBuff.New(slot1.id, slot8))
+				if var_1_5 > 0 then
+					local var_1_6 = pg.activity_event_building[var_1_5]
+
+					if var_1_6 then
+						_.each(var_1_6.buff, function(arg_3_0)
+							local var_3_0 = ActivityBuff.New(arg_1_1.id, arg_3_0)
+
+							if var_3_0:isActivate() then
+								table.insert(arg_1_0, var_3_0)
+							end
+						end)
+					end
 				end
 			end
 		end
-	elseif slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and slot1 then
-		for slot6, slot7 in ipairs(slot1:GetSlots()) do
-			slot9 = slot7[2]
+	elseif arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
+		if arg_1_1 then
+			local var_1_7 = ActivityPtData.New(arg_1_1)
 
-			if slot7[1] > 0 and slot9 > 0 then
-				table.insert(slot0, ActivityBuff.New(slot1.id, AtelierMaterial.New({
-					configId = slot8
-				}):GetBuffs()[slot9]))
+			if not arg_1_1:isEnd() and var_1_7:isInBuffTime() then
+				local var_1_8 = arg_1_1.data3_list
+
+				for iter_1_4, iter_1_5 in pairs(var_1_8) do
+					table.insert(arg_1_0, ActivityBuff.New(arg_1_1.id, iter_1_5))
+				end
+			end
+		end
+	elseif arg_1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and arg_1_1 then
+		local var_1_9 = arg_1_1:GetSlots()
+
+		for iter_1_6, iter_1_7 in ipairs(var_1_9) do
+			local var_1_10 = iter_1_7[1]
+			local var_1_11 = iter_1_7[2]
+
+			if var_1_10 > 0 and var_1_11 > 0 then
+				table.insert(arg_1_0, ActivityBuff.New(arg_1_1.id, AtelierMaterial.New({
+					configId = var_1_10
+				}):GetBuffs()[var_1_11]))
 			end
 		end
 	end
 
-	for slot5, slot6 in pairs(slot1:GetBuffList()) do
-		table.insert(slot0, slot6)
+	for iter_1_8, iter_1_9 in pairs(arg_1_1:GetBuffList()) do
+		table.insert(arg_1_0, iter_1_9)
 	end
 end
 
-function slot0.GetAllBuff(slot0)
-	slot1 = {}
+function var_0_0.GetAllBuff(arg_4_0)
+	local var_4_0 = {}
+	local var_4_1 = getProxy(PlayerProxy):getRawData()
 
-	for slot6, slot7 in ipairs(getProxy(PlayerProxy):getRawData():GetBuffs()) do
-		table.insert(slot1, CommonBuff.New(slot7))
+	for iter_4_0, iter_4_1 in ipairs(var_4_1:GetBuffs()) do
+		table.insert(var_4_0, CommonBuff.New(iter_4_1))
 	end
 
-	for slot7, slot8 in pairs(getProxy(ActivityProxy):getRawData()) do
-		if (function ()
-			if uv0 and uv0.system and uv0.system == SYSTEM_SCENARIO and uv1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK and (getProxy(ChapterProxy):getActiveChapter(true) and getProxy(ChapterProxy):getMapById(slot0:getConfig("map")) or nil) and not AtelierActivity.IsActivityBuffMap(slot1) then
-				return false
+	local var_4_2 = getProxy(ActivityProxy):getRawData()
+
+	for iter_4_2, iter_4_3 in pairs(var_4_2) do
+		if (function()
+			if arg_4_0 and arg_4_0.system and arg_4_0.system == SYSTEM_SCENARIO and iter_4_3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
+				local var_5_0 = getProxy(ChapterProxy):getActiveChapter(true)
+				local var_5_1 = var_5_0 and getProxy(ChapterProxy):getMapById(var_5_0:getConfig("map")) or nil
+
+				if var_5_1 and not AtelierActivity.IsActivityBuffMap(var_5_1) then
+					return false
+				end
 			end
 
 			return true
 		end)() then
-			uv0(slot1, slot8)
+			var_0_1(var_4_0, iter_4_3)
 		end
 	end
 
-	return slot1
+	return var_4_0
 end
 
-function slot0.GetBackYardExpBuffs()
-	slot0 = {}
+function var_0_0.GetBackYardExpBuffs()
+	local var_6_0 = {}
+	local var_6_1 = var_0_0.GetAllBuff()
 
-	for slot5, slot6 in ipairs(uv0.GetAllBuff()) do
-		if slot6:BackYardExpUsage() then
-			table.insert(slot0, slot6)
+	for iter_6_0, iter_6_1 in ipairs(var_6_1) do
+		if iter_6_1:BackYardExpUsage() then
+			table.insert(var_6_0, iter_6_1)
 		end
 	end
 
-	return slot0
+	return var_6_0
 end
 
-function slot0.GetShipModExpBuff()
+function var_0_0.GetShipModExpBuff()
 	return getProxy(ActivityProxy):getShipModExpActivity()
 end
 
-function slot0.GetBackYardPlayerBuffs()
-	slot0 = {}
+function var_0_0.GetBackYardPlayerBuffs()
+	local var_8_0 = {}
+	local var_8_1 = getProxy(PlayerProxy):getRawData()
 
-	for slot5, slot6 in ipairs(getProxy(PlayerProxy):getRawData():GetBuffs()) do
-		if CommonBuff.New(slot6):BackYardExpUsage() then
-			table.insert(slot0, slot7)
+	for iter_8_0, iter_8_1 in ipairs(var_8_1:GetBuffs()) do
+		local var_8_2 = CommonBuff.New(iter_8_1)
+
+		if var_8_2:BackYardExpUsage() then
+			table.insert(var_8_0, var_8_2)
 		end
 	end
 
-	return slot0
+	return var_8_0
 end
 
-function slot0.GetBattleBuffs(slot0)
-	slot1 = {}
+function var_0_0.GetBattleBuffs(arg_9_0)
+	local var_9_0 = {}
+	local var_9_1 = var_0_0.GetAllBuff({
+		system = arg_9_0
+	})
 
-	for slot6, slot7 in ipairs(uv0.GetAllBuff({
-		system = slot0
-	})) do
-		if slot7:BattleUsage() then
-			table.insert(slot1, slot7)
+	for iter_9_0, iter_9_1 in ipairs(var_9_1) do
+		if iter_9_1:BattleUsage() then
+			table.insert(var_9_0, iter_9_1)
 		end
 	end
 
-	return slot1
+	return var_9_0
 end
 
-function slot0.GetBuffsByActivityType(slot0)
-	slot2 = getProxy(ActivityProxy)
+function var_0_0.GetBuffsByActivityType(arg_10_0)
+	local var_10_0 = {}
+	local var_10_1 = getProxy(ActivityProxy):getActivitiesByType(arg_10_0)
 
-	_.each(slot2:getActivitiesByType(slot0), function (slot0)
-		uv0(uv1, slot0)
+	_.each(var_10_1, function(arg_11_0)
+		var_0_1(var_10_0, arg_11_0)
 	end)
 
-	return {}
+	return var_10_0
 end
 
-function slot0.GetBuffsForMainUI()
-	slot0 = getProxy(ActivityProxy)
+function var_0_0.GetBuffsForMainUI()
+	local var_12_0 = getProxy(ActivityProxy)
+	local var_12_1 = var_0_0.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF)
 
-	for slot5 = #uv0.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), 1, -1 do
-		if not slot1[slot5]:checkShow() then
-			table.remove(slot1, slot5)
+	for iter_12_0 = #var_12_1, 1, -1 do
+		if not var_12_1[iter_12_0]:checkShow() then
+			table.remove(var_12_1, iter_12_0)
 		end
 	end
 
-	if slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and not slot2:isEnd() then
-		slot3 = slot2:getConfig("config_client").bufflist
+	local var_12_2 = var_12_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-		for slot8, slot9 in pairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if pg.TimeMgr:GetInstance():GetServerTime() < slot9.timestamp and table.contains(slot3, slot9.id) and ActivityBuff.New(slot2.id, slot9.id, slot9.timestamp):checkShow() then
-				table.insert(slot1, slot12)
+	if var_12_2 and not var_12_2:isEnd() then
+		local var_12_3 = var_12_2:getConfig("config_client").bufflist
+		local var_12_4 = getProxy(PlayerProxy):getRawData()
+
+		for iter_12_1, iter_12_2 in pairs(var_12_4.buff_list) do
+			if pg.TimeMgr:GetInstance():GetServerTime() < iter_12_2.timestamp and table.contains(var_12_3, iter_12_2.id) then
+				local var_12_5 = ActivityBuff.New(var_12_2.id, iter_12_2.id, iter_12_2.timestamp)
+
+				if var_12_5:checkShow() then
+					table.insert(var_12_1, var_12_5)
+				end
 			end
 		end
 	end
 
-	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3) then
-		slot5 = slot3:getConfig("config_data")[2]
-		slot6 = nil
+	local var_12_6 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3)
 
-		for slot10, slot11 in ipairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if table.indexof(slot5, slot11.id, 1) then
-				if pg.TimeMgr.GetInstance():GetServerTime() < slot11.timestamp and ActivityBuff.New(slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME).id, slot11.id, slot11.timestamp):checkShow() then
-					table.insert(slot1, slot15)
+	if var_12_6 then
+		local var_12_7 = getProxy(PlayerProxy):getRawData()
+		local var_12_8 = var_12_6:getConfig("config_data")[2]
+		local var_12_9
+
+		for iter_12_3, iter_12_4 in ipairs(var_12_7.buff_list) do
+			if table.indexof(var_12_8, iter_12_4.id, 1) then
+				if pg.TimeMgr.GetInstance():GetServerTime() < iter_12_4.timestamp then
+					local var_12_10 = var_12_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+					local var_12_11 = ActivityBuff.New(var_12_10.id, iter_12_4.id, iter_12_4.timestamp)
+
+					if var_12_11:checkShow() then
+						table.insert(var_12_1, var_12_11)
+					end
 				end
 
 				break
@@ -172,14 +226,22 @@ function slot0.GetBuffsForMainUI()
 		end
 	end
 
-	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5) then
-		slot6 = slot4:getConfig("config_data")[2]
-		slot7 = nil
+	local var_12_12 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-		for slot11, slot12 in ipairs(getProxy(PlayerProxy):getRawData().buff_list) do
-			if table.indexof(slot6, slot12.id, 1) then
-				if pg.TimeMgr.GetInstance():GetServerTime() < slot12.timestamp and ActivityBuff.New(slot0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME).id, slot12.id, slot12.timestamp):checkShow() then
-					table.insert(slot1, slot16)
+	if var_12_12 then
+		local var_12_13 = getProxy(PlayerProxy):getRawData()
+		local var_12_14 = var_12_12:getConfig("config_data")[2]
+		local var_12_15
+
+		for iter_12_5, iter_12_6 in ipairs(var_12_13.buff_list) do
+			if table.indexof(var_12_14, iter_12_6.id, 1) then
+				if pg.TimeMgr.GetInstance():GetServerTime() < iter_12_6.timestamp then
+					local var_12_16 = var_12_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+					local var_12_17 = ActivityBuff.New(var_12_16.id, iter_12_6.id, iter_12_6.timestamp)
+
+					if var_12_17:checkShow() then
+						table.insert(var_12_1, var_12_17)
+					end
 				end
 
 				break
@@ -187,7 +249,7 @@ function slot0.GetBuffsForMainUI()
 		end
 	end
 
-	return slot1
+	return var_12_1
 end
 
-return slot0
+return var_0_0

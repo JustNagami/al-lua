@@ -1,93 +1,101 @@
-slot0 = class("SailBoatEffectControl")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatEffectControl")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0 = SailBoatGameVo
-	slot0._tf = slot1
-	slot0._event = slot2
-	slot0._content = findTF(slot0._tf, "scene_front/content")
-	slot0._effects = {}
-	slot0._effectPool = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1 = SailBoatGameVo
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	arg_1_0._content = findTF(arg_1_0._tf, "scene_front/content")
+	arg_1_0._effects = {}
+	arg_1_0._effectPool = {}
 end
 
-function slot0.start(slot0)
-	for slot4 = #slot0._effects, 1, -1 do
-		slot5 = table.remove(slot0._effects, slot4)
+function var_0_0.start(arg_2_0)
+	for iter_2_0 = #arg_2_0._effects, 1, -1 do
+		local var_2_0 = table.remove(arg_2_0._effects, iter_2_0)
 
-		setActive(slot5.tf, false)
-		table.insert(slot0._effectPool, slot5)
+		setActive(var_2_0.tf, false)
+		table.insert(arg_2_0._effectPool, var_2_0)
 	end
 end
 
-function slot0.step(slot0, slot1)
+function var_0_0.step(arg_3_0, arg_3_1)
+	return
 end
 
-function slot0.getEffect(slot0, slot1)
-	if #slot0._effectPool > 0 then
-		for slot5 = 1, #slot0._effectPool do
-			if #slot0._effectPool[slot5].name == slot1 then
-				return table.remove(slot0._effectPool, slot5)
+function var_0_0.getEffect(arg_4_0, arg_4_1)
+	if #arg_4_0._effectPool > 0 then
+		for iter_4_0 = 1, #arg_4_0._effectPool do
+			if #arg_4_0._effectPool[iter_4_0].name == arg_4_1 then
+				return (table.remove(arg_4_0._effectPool, iter_4_0))
 			end
 		end
 	end
 
-	slot2 = uv0.GetGameEffectTf(slot1)
-	slot4 = GetComponent(findTF(slot2, "img"), typeof(DftAniEvent))
+	local var_4_0 = var_0_1.GetGameEffectTf(arg_4_1)
+	local var_4_1 = {
+		tf = var_4_0,
+		name = arg_4_1
+	}
 
-	slot4:SetEndEvent(function ()
-		uv0:effectEnd(uv1)
+	GetComponent(findTF(var_4_0, "img"), typeof(DftAniEvent)):SetEndEvent(function()
+		arg_4_0:effectEnd(var_4_1)
 	end)
 
-	return {
-		tf = slot2,
-		name = slot1
-	}
+	return var_4_1
 end
 
-function slot0.onEventCall(slot0, slot1, slot2)
-	if slot1 == SailBoatGameEvent.CREATE_EFFECT then
-		slot0:createEffect(slot2.effect, slot2.direct, slot2.position, slot2.content)
+function var_0_0.onEventCall(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_1 == SailBoatGameEvent.CREATE_EFFECT then
+		local var_6_0 = arg_6_2.effect
+		local var_6_1 = arg_6_2.direct
+		local var_6_2 = arg_6_2.position
+		local var_6_3 = arg_6_2.content
+
+		arg_6_0:createEffect(var_6_0, var_6_1, var_6_2, var_6_3)
 	end
 end
 
-function slot0.createEffect(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot0:getEffect(slot1)
+function var_0_0.createEffect(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
+	local var_7_0 = arg_7_0:getEffect(arg_7_1)
 
-	if slot2 then
-		slot5.tf.localScale = slot2
+	if arg_7_2 then
+		var_7_0.tf.localScale = arg_7_2
 	end
 
-	if slot3 then
-		slot5.tf.anchoredPosition = slot3
+	if arg_7_3 then
+		var_7_0.tf.anchoredPosition = arg_7_3
 	end
 
-	if slot4 then
-		SetParent(slot5.tf, slot4)
+	if arg_7_4 then
+		SetParent(var_7_0.tf, arg_7_4)
 	else
-		SetParent(slot5.tf, slot0._content)
+		SetParent(var_7_0.tf, arg_7_0._content)
 	end
 
-	setActive(slot5.tf, true)
-	table.insert(slot0._effects, slot5)
+	setActive(var_7_0.tf, true)
+	table.insert(arg_7_0._effects, var_7_0)
 end
 
-function slot0.effectEnd(slot0, slot1)
-	for slot5 = 1, #slot0._effects do
-		if slot0._effects[slot5] == slot1 then
-			slot6 = table.remove(slot0._effects, slot5)
+function var_0_0.effectEnd(arg_8_0, arg_8_1)
+	for iter_8_0 = 1, #arg_8_0._effects do
+		if arg_8_0._effects[iter_8_0] == arg_8_1 then
+			local var_8_0 = table.remove(arg_8_0._effects, iter_8_0)
 
-			setActive(slot6.tf, false)
-			table.insert(slot0._effectPool, slot6)
+			setActive(var_8_0.tf, false)
+			table.insert(arg_8_0._effectPool, var_8_0)
 
 			return
 		end
 	end
 end
 
-function slot0.dispose(slot0)
+function var_0_0.dispose(arg_9_0)
+	return
 end
 
-function slot0.clear(slot0)
+function var_0_0.clear(arg_10_0)
+	return
 end
 
-return slot0
+return var_0_0

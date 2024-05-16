@@ -1,164 +1,184 @@
-slot0 = class("GuildMainMediator", import("..base.ContextMediator"))
-slot0.OPEN_MEMBER = "GuildMainMediator:OPEN_MEMBER"
-slot0.CLOSE_MEMBER = "GuildMainMediator:CLOSE_MEMBER"
-slot0.OPEN_APPLY = "GuildMainMediator:OPEN_APPLY"
-slot0.CLOSE_APPLY = "GuildMainMediator:CLOSE_APPLY"
-slot0.MODIFY = "GuildMainMediator:MODIFY"
-slot0.DISSOLVE = "GuildMainMediator:DISSOLVE"
-slot0.QUIT = "GuildMainMediator:QUIT"
-slot0.ON_BACK = "GuildMainMediator:ON_BACK"
-slot0.REBUILD_ALL = "GuildMainMediator:REBUILD_ALL"
-slot0.ON_REBUILD_LOG_ALL = "GuildMainMediator:ON_REBUILD_LOG_ALL"
-slot0.SEND_MSG = "GuildMainMediator:SEND_MSG"
-slot0.OPEN_EMOJI = "GuildMainMediator:OPEN_EMOJI"
-slot0.OPEN_OFFICE = "GuildMainMediator:OPEN_OFFICE"
-slot0.OPEN_TECH = "GuildMainMediator:OPEN_TECH"
-slot0.OPEN_BATTLE = "GuildMainMediator:OPEN_BATTLE"
-slot0.CLOSE_OFFICE = "GuildMainMediator:CLOSE_OFFICE"
-slot0.CLOSE_TECH = "GuildMainMediator:CLOSE_TECH"
-slot0.CLOSE_BATTLE = "GuildMainMediator:CLOSE_BATTLE"
-slot0.ON_FETCH_CAPITAL = "GuildOfficeMediator:ON_FETCH_CAPITAL"
-slot0.ON_FETCH_CAPITAL_LOG = "GuildOfficeMediator:ON_FETCH_CAPITAL_LOG"
-slot0.OPEN_EVENT_REPORT = "GuildOfficeMediator:OPEN_EVENT_REPORT"
-slot0.OPEN_EVENT = "GuildOfficeMediator:OPEN_EVENT"
-slot0.OPEN_MAIN = "GuildOfficeMediator:OPEN_MAIN"
-slot0.SWITCH_TO_OFFICE = "GuildOfficeMediator:SWITCH_TO_OFFICE"
-slot0.OPEN_SHOP = "GuildMainMediator:OPEN_SHOP"
+﻿local var_0_0 = class("GuildMainMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	if getProxy(ContextProxy):GetPrevContext(1).mediator == NewGuildMediator then
-		slot1:RemoveContext(slot2)
+var_0_0.OPEN_MEMBER = "GuildMainMediator:OPEN_MEMBER"
+var_0_0.CLOSE_MEMBER = "GuildMainMediator:CLOSE_MEMBER"
+var_0_0.OPEN_APPLY = "GuildMainMediator:OPEN_APPLY"
+var_0_0.CLOSE_APPLY = "GuildMainMediator:CLOSE_APPLY"
+var_0_0.MODIFY = "GuildMainMediator:MODIFY"
+var_0_0.DISSOLVE = "GuildMainMediator:DISSOLVE"
+var_0_0.QUIT = "GuildMainMediator:QUIT"
+var_0_0.ON_BACK = "GuildMainMediator:ON_BACK"
+var_0_0.REBUILD_ALL = "GuildMainMediator:REBUILD_ALL"
+var_0_0.ON_REBUILD_LOG_ALL = "GuildMainMediator:ON_REBUILD_LOG_ALL"
+var_0_0.SEND_MSG = "GuildMainMediator:SEND_MSG"
+var_0_0.OPEN_EMOJI = "GuildMainMediator:OPEN_EMOJI"
+var_0_0.OPEN_OFFICE = "GuildMainMediator:OPEN_OFFICE"
+var_0_0.OPEN_TECH = "GuildMainMediator:OPEN_TECH"
+var_0_0.OPEN_BATTLE = "GuildMainMediator:OPEN_BATTLE"
+var_0_0.CLOSE_OFFICE = "GuildMainMediator:CLOSE_OFFICE"
+var_0_0.CLOSE_TECH = "GuildMainMediator:CLOSE_TECH"
+var_0_0.CLOSE_BATTLE = "GuildMainMediator:CLOSE_BATTLE"
+var_0_0.ON_FETCH_CAPITAL = "GuildOfficeMediator:ON_FETCH_CAPITAL"
+var_0_0.ON_FETCH_CAPITAL_LOG = "GuildOfficeMediator:ON_FETCH_CAPITAL_LOG"
+var_0_0.OPEN_EVENT_REPORT = "GuildOfficeMediator:OPEN_EVENT_REPORT"
+var_0_0.OPEN_EVENT = "GuildOfficeMediator:OPEN_EVENT"
+var_0_0.OPEN_MAIN = "GuildOfficeMediator:OPEN_MAIN"
+var_0_0.SWITCH_TO_OFFICE = "GuildOfficeMediator:SWITCH_TO_OFFICE"
+var_0_0.OPEN_SHOP = "GuildMainMediator:OPEN_SHOP"
+
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ContextProxy)
+	local var_1_1 = var_1_0:GetPrevContext(1)
+
+	if var_1_1.mediator == NewGuildMediator then
+		var_1_0:RemoveContext(var_1_1)
 	end
 
-	slot3 = getProxy(GuildProxy)
+	local var_1_2 = getProxy(GuildProxy)
+	local var_1_3 = var_1_2:getData()
 
-	slot0.viewComponent:setGuildVO(slot3:getData())
-	slot0.viewComponent:setChatMsgs(slot3:getChatMsgs())
-	slot0:bind(uv0.OPEN_SHOP, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	arg_1_0.viewComponent:setGuildVO(var_1_3)
+
+	local var_1_4 = var_1_2:getChatMsgs()
+
+	arg_1_0.viewComponent:setChatMsgs(var_1_4)
+	arg_1_0:bind(var_0_0.OPEN_SHOP, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_GUILD
 		})
 	end)
-	slot0:bind(uv0.OPEN_MAIN, function ()
-		uv0:closePage(GuildEventReportMediator)
+	arg_1_0:bind(var_0_0.OPEN_MAIN, function()
+		arg_1_0:closePage(GuildEventReportMediator)
 	end)
-	slot0:bind(uv0.OPEN_EVENT, function (slot0)
-		uv0.viewComponent:openPage(GuildMainScene.TOGGLE_TAG[6])
+	arg_1_0:bind(var_0_0.OPEN_EVENT, function(arg_4_0)
+		arg_1_0.viewComponent:openPage(GuildMainScene.TOGGLE_TAG[6])
 	end)
-	slot0:bind(uv0.OPEN_EVENT_REPORT, function (slot0)
-		uv0:sendNotification(GAME.GUILD_OPEN_EVENT_REPORT)
+	arg_1_0:bind(var_0_0.OPEN_EVENT_REPORT, function(arg_5_0)
+		arg_1_0:sendNotification(GAME.GUILD_OPEN_EVENT_REPORT)
 	end)
-	slot0:bind(uv0.ON_FETCH_CAPITAL, function (slot0)
-		uv0:sendNotification(GAME.GUILD_REFRESH_CAPITAL)
+	arg_1_0:bind(var_0_0.ON_FETCH_CAPITAL, function(arg_6_0)
+		arg_1_0:sendNotification(GAME.GUILD_REFRESH_CAPITAL)
 	end)
-	slot0.viewComponent:setPlayerVO(getProxy(PlayerProxy):getData())
-	slot0:bind(uv0.ON_BACK, function (slot0)
-		uv0:sendNotification(GAME.GO_BACK)
+
+	local var_1_5 = getProxy(PlayerProxy):getData()
+
+	arg_1_0.viewComponent:setPlayerVO(var_1_5)
+	arg_1_0:bind(var_0_0.ON_BACK, function(arg_7_0)
+		arg_1_0:sendNotification(GAME.GO_BACK)
 	end)
-	slot0:bind(uv0.REBUILD_ALL, function (slot0)
-		uv0.viewComponent:UpdateAllChat(getProxy(GuildProxy):getChatMsgs())
+	arg_1_0:bind(var_0_0.REBUILD_ALL, function(arg_8_0)
+		local var_8_0 = getProxy(GuildProxy):getChatMsgs()
+
+		arg_1_0.viewComponent:UpdateAllChat(var_8_0)
 	end)
-	slot0:bind(uv0.OPEN_MEMBER, function ()
-		uv0:closePage(GuildEventReportMediator)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_MEMBER, function()
+		arg_1_0:closePage(GuildEventReportMediator)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = GuildMemberLayer,
 			mediator = GuildMemberMediator
 		}))
 	end)
-	slot0:bind(uv0.CLOSE_MEMBER, function ()
-		uv0:closePage(GuildMemberMediator)
+	arg_1_0:bind(var_0_0.CLOSE_MEMBER, function()
+		arg_1_0:closePage(GuildMemberMediator)
 	end)
-	slot0:bind(uv0.OPEN_APPLY, function ()
-		uv0:closePage(GuildEventReportMediator)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_APPLY, function()
+		arg_1_0:closePage(GuildEventReportMediator)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = GuildRequestLayer,
 			mediator = GuildRequestMediator
 		}))
 	end)
-	slot0:bind(uv0.CLOSE_APPLY, function ()
-		uv0:closePage(GuildRequestMediator)
+	arg_1_0:bind(var_0_0.CLOSE_APPLY, function()
+		arg_1_0:closePage(GuildRequestMediator)
 	end)
-	slot0:bind(uv0.MODIFY, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.MODIFY_GUILD_INFO, {
-			type = slot1,
-			int = slot2,
-			string = slot3
+	arg_1_0:bind(var_0_0.MODIFY, function(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+		arg_1_0:sendNotification(GAME.MODIFY_GUILD_INFO, {
+			type = arg_13_1,
+			int = arg_13_2,
+			string = arg_13_3
 		})
 	end)
-	slot0:bind(uv0.DISSOLVE, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUILD_DISSOLVE, slot1)
+	arg_1_0:bind(var_0_0.DISSOLVE, function(arg_14_0, arg_14_1)
+		arg_1_0:sendNotification(GAME.GUILD_DISSOLVE, arg_14_1)
 	end)
-	slot0:bind(uv0.QUIT, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUILD_QUIT, slot1)
+	arg_1_0:bind(var_0_0.QUIT, function(arg_15_0, arg_15_1)
+		arg_1_0:sendNotification(GAME.GUILD_QUIT, arg_15_1)
 	end)
-	slot0:bind(uv0.ON_REBUILD_LOG_ALL, function (slot0)
-		uv0.viewComponent:UpdateAllLog(getProxy(GuildProxy):getData():getLogs())
+	arg_1_0:bind(var_0_0.ON_REBUILD_LOG_ALL, function(arg_16_0)
+		local var_16_0 = getProxy(GuildProxy):getData():getLogs()
+
+		arg_1_0.viewComponent:UpdateAllLog(var_16_0)
 	end)
-	slot0:bind(uv0.SEND_MSG, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUILD_SEND_MSG, slot1)
+	arg_1_0:bind(var_0_0.SEND_MSG, function(arg_17_0, arg_17_1)
+		arg_1_0:sendNotification(GAME.GUILD_SEND_MSG, arg_17_1)
 	end)
-	slot0:bind(uv0.OPEN_EMOJI, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_EMOJI, function(arg_18_0, arg_18_1, arg_18_2)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = EmojiLayer,
 			mediator = EmojiMediator,
 			data = {
-				pos = slot1,
-				callback = slot2,
-				emojiIconCallback = function (slot0)
-					uv0.viewComponent:insertEmojiToInputText(slot0)
+				pos = arg_18_1,
+				callback = arg_18_2,
+				emojiIconCallback = function(arg_19_0)
+					arg_1_0.viewComponent:insertEmojiToInputText(arg_19_0)
 				end
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_OFFICE, function ()
-		uv0:closePage(GuildEventReportMediator)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_OFFICE, function()
+		arg_1_0:closePage(GuildEventReportMediator)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = GuildOfficeLayer,
 			mediator = GuildOfficeMediator
 		}))
 	end)
-	slot0:bind(uv0.CLOSE_OFFICE, function ()
-		uv0:closePage(GuildOfficeMediator)
+	arg_1_0:bind(var_0_0.CLOSE_OFFICE, function()
+		arg_1_0:closePage(GuildOfficeMediator)
 	end)
-	slot0:bind(uv0.OPEN_TECH, function ()
-		uv0:closePage(GuildEventReportMediator)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_TECH, function()
+		arg_1_0:closePage(GuildEventReportMediator)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = GuildTechnologyLayer,
 			mediator = GuildTechnologyMediator
 		}))
 	end)
-	slot0:bind(uv0.CLOSE_TECH, function ()
-		uv0:closePage(GuildTechnologyMediator)
+	arg_1_0:bind(var_0_0.CLOSE_TECH, function()
+		arg_1_0:closePage(GuildTechnologyMediator)
 	end)
-	slot0:bind(uv0.ON_FETCH_CAPITAL_LOG, function (slot0)
-		if uv0:getData():shouldRequestCapitalLog() then
-			uv1:sendNotification(GAME.GUILD_FETCH_CAPITAL_LOG)
+	arg_1_0:bind(var_0_0.ON_FETCH_CAPITAL_LOG, function(arg_24_0)
+		if var_1_2:getData():shouldRequestCapitalLog() then
+			arg_1_0:sendNotification(GAME.GUILD_FETCH_CAPITAL_LOG)
 		else
-			uv1.viewComponent:openResourceLog()
+			arg_1_0.viewComponent:openResourceLog()
 		end
 	end)
-	slot0:bind(uv0.OPEN_BATTLE, function ()
-		uv0:closePage(GuildEventReportMediator)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_BATTLE, function()
+		arg_1_0:closePage(GuildEventReportMediator)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = GuildEventLayer,
 			mediator = GuildEventMediator
 		}))
 	end)
-	slot0:bind(uv0.CLOSE_BATTLE, function ()
-		uv0:closePage(GuildEventMediator)
+	arg_1_0:bind(var_0_0.CLOSE_BATTLE, function()
+		arg_1_0:closePage(GuildEventMediator)
 	end)
-	slot0.viewComponent:setPlayerVO(getProxy(PlayerProxy):getData())
+
+	local var_1_6 = getProxy(PlayerProxy):getData()
+
+	arg_1_0.viewComponent:setPlayerVO(var_1_6)
 end
 
-function slot0.closePage(slot0, slot1)
-	if getProxy(ContextProxy):getContextByMediator(slot1) then
-		slot0:sendNotification(GAME.REMOVE_LAYERS, {
-			context = slot3
+function var_0_0.closePage(arg_27_0, arg_27_1)
+	local var_27_0 = getProxy(ContextProxy):getContextByMediator(arg_27_1)
+
+	if var_27_0 then
+		arg_27_0:sendNotification(GAME.REMOVE_LAYERS, {
+			context = var_27_0
 		})
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_28_0)
 	return {
 		GuildProxy.GUILD_UPDATED,
 		GuildProxy.EXIT_GUILD,
@@ -192,68 +212,73 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_29_0, arg_29_1)
+	local var_29_0 = arg_29_1:getName()
+	local var_29_1 = arg_29_1:getBody()
 
-	if slot1:getName() == GuildProxy.GUILD_UPDATED then
-		slot0.viewComponent:setGuildVO(slot3)
-	elseif slot2 == GuildProxy.EXIT_GUILD then
-		slot0.viewComponent:emit(uv0.ON_BACK)
-	elseif slot2 == GAME.MODIFY_GUILD_INFO_DONE then
-		slot0.viewComponent:initTheme()
-	elseif slot2 == GuildProxy.NEW_MSG_ADDED then
-		slot0.viewComponent:Append(slot3, -1)
-	elseif slot2 == GuildProxy.LOG_ADDED then
-		slot0.viewComponent:AppendLog(slot3, true)
-	elseif slot2 == GuildProxy.REQUEST_COUNT_UPDATED or slot2 == GuildProxy.REQUEST_DELETED or slot2 == GAME.GUILD_GET_REQUEST_LIST_DONE then
-		slot4 = getProxy(GuildProxy)
+	if var_29_0 == GuildProxy.GUILD_UPDATED then
+		arg_29_0.viewComponent:setGuildVO(var_29_1)
+	elseif var_29_0 == GuildProxy.EXIT_GUILD then
+		arg_29_0.viewComponent:emit(var_0_0.ON_BACK)
+	elseif var_29_0 == GAME.MODIFY_GUILD_INFO_DONE then
+		arg_29_0.viewComponent:initTheme()
+	elseif var_29_0 == GuildProxy.NEW_MSG_ADDED then
+		arg_29_0.viewComponent:Append(var_29_1, -1)
+	elseif var_29_0 == GuildProxy.LOG_ADDED then
+		arg_29_0.viewComponent:AppendLog(var_29_1, true)
+	elseif var_29_0 == GuildProxy.REQUEST_COUNT_UPDATED or var_29_0 == GuildProxy.REQUEST_DELETED or var_29_0 == GAME.GUILD_GET_REQUEST_LIST_DONE then
+		local var_29_2 = getProxy(GuildProxy)
 
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_APPLY)
-	elseif slot2 == GAME.GUILD_FETCH_CAPITAL_LOG_DONE then
-		slot0.viewComponent:openResourceLog()
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayerVO(slot3)
-		slot0.viewComponent:UpdateRes()
-	elseif slot2 == GAME.GUILD_COMMIT_DONATE_DONE or slot2 == GAME.GUILD_GET_SUPPLY_AWARD_DONE then
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_OFFICE)
-	elseif GuildProxy.ON_DELETED_MEMBER == slot2 then
-		slot0.viewComponent:OnDeleteMember(slot3.member)
-	elseif GuildProxy.ON_ADDED_MEMBER == slot2 then
-		slot0.viewComponent:OnAddMember(slot3.member)
-	elseif slot2 == GAME.GUILD_OPEN_EVENT_REPORT then
-		slot0:addSubLayers(Context.New({
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_APPLY)
+	elseif var_29_0 == GAME.GUILD_FETCH_CAPITAL_LOG_DONE then
+		arg_29_0.viewComponent:openResourceLog()
+	elseif var_29_0 == PlayerProxy.UPDATED then
+		arg_29_0.viewComponent:setPlayerVO(var_29_1)
+		arg_29_0.viewComponent:UpdateRes()
+	elseif var_29_0 == GAME.GUILD_COMMIT_DONATE_DONE or var_29_0 == GAME.GUILD_GET_SUPPLY_AWARD_DONE then
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_OFFICE)
+	elseif GuildProxy.ON_DELETED_MEMBER == var_29_0 then
+		arg_29_0.viewComponent:OnDeleteMember(var_29_1.member)
+	elseif GuildProxy.ON_ADDED_MEMBER == var_29_0 then
+		arg_29_0.viewComponent:OnAddMember(var_29_1.member)
+	elseif var_29_0 == GAME.GUILD_OPEN_EVENT_REPORT then
+		arg_29_0:addSubLayers(Context.New({
 			viewComponent = GuildEventReportLayer,
 			mediator = GuildEventReportMediator
 		}))
-	elseif slot2 == GAME.SUBMIT_GUILD_REPORT_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
-		slot0.viewComponent:OnReportUpdated()
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_BATTLE)
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_MAIN)
-	elseif slot2 == GuildProxy.BATTLE_BTN_FLAG_CHANGE or slot2 == GAME.ON_GUILD_JOIN_EVENT_DONE or slot2 == GAME.GUILD_ACTIVE_EVENT_DONE or slot2 == GAME.GUILD_JOIN_MISSION_DONE then
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_BATTLE)
-	elseif slot2 == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
-	elseif slot2 == GuildTechnologyMediator.ON_OPEN_OFFICE then
-		triggerToggle(slot0.contextData.toggles[GuildMainScene.TOGGLE_TAG[4]], true)
-	elseif slot2 == GAME.OPEN_MSGBOX_DONE then
+	elseif var_29_0 == GAME.SUBMIT_GUILD_REPORT_DONE then
+		arg_29_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_29_1.awards, var_29_1.callback)
+		arg_29_0.viewComponent:OnReportUpdated()
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_BATTLE)
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_MAIN)
+	elseif var_29_0 == GuildProxy.BATTLE_BTN_FLAG_CHANGE or var_29_0 == GAME.ON_GUILD_JOIN_EVENT_DONE or var_29_0 == GAME.GUILD_ACTIVE_EVENT_DONE or var_29_0 == GAME.GUILD_JOIN_MISSION_DONE then
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_BATTLE)
+	elseif var_29_0 == GAME.BEGIN_STAGE_DONE then
+		arg_29_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_29_1)
+	elseif var_29_0 == GuildTechnologyMediator.ON_OPEN_OFFICE then
+		local var_29_3 = arg_29_0.contextData.toggles[GuildMainScene.TOGGLE_TAG[4]]
+
+		triggerToggle(var_29_3, true)
+	elseif var_29_0 == GAME.OPEN_MSGBOX_DONE then
 		pg.GuildLayerMgr:GetInstance():OnShowMsgBox()
-	elseif slot2 == GuildProxy.TECHNOLOGY_START then
-		slot0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_TECH)
-	elseif slot2 == GAME.GUILD_START_TECH_DONE then
-		slot0.viewComponent:setPlayerVO(getProxy(PlayerProxy):getData())
-		slot0.viewComponent:UpdateRes()
-	elseif slot2 == GAME.GO_WORLD_BOSS_SCENE then
-		slot0.contextData.page = nil
-	elseif slot2 == GuildMainMediator.SWITCH_TO_OFFICE then
-		slot0.viewComponent:TriggerOfficePage()
-	elseif slot2 == GAME.LOAD_LAYERS then
-		if slot3.context.mediator == AwardInfoMediator then
+	elseif var_29_0 == GuildProxy.TECHNOLOGY_START then
+		arg_29_0.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_TECH)
+	elseif var_29_0 == GAME.GUILD_START_TECH_DONE then
+		local var_29_4 = getProxy(PlayerProxy):getData()
+
+		arg_29_0.viewComponent:setPlayerVO(var_29_4)
+		arg_29_0.viewComponent:UpdateRes()
+	elseif var_29_0 == GAME.GO_WORLD_BOSS_SCENE then
+		arg_29_0.contextData.page = nil
+	elseif var_29_0 == GuildMainMediator.SWITCH_TO_OFFICE then
+		arg_29_0.viewComponent:TriggerOfficePage()
+	elseif var_29_0 == GAME.LOAD_LAYERS then
+		if var_29_1.context.mediator == AwardInfoMediator then
 			pg.GuildLayerMgr:GetInstance():UnBlurTopPanel()
 		end
-	elseif slot2 == GAME.REMOVE_LAYERS and slot3.context.mediator == AwardInfoMediator then
+	elseif var_29_0 == GAME.REMOVE_LAYERS and var_29_1.context.mediator == AwardInfoMediator then
 		pg.GuildLayerMgr:GetInstance():_BlurTopPanel()
 	end
 end
 
-return slot0
+return var_0_0

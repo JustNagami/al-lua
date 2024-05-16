@@ -1,4 +1,4 @@
-return {
+﻿return {
 	short_music_name = "song05",
 	bpm = 720,
 	offset_time = 0,

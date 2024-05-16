@@ -1,56 +1,54 @@
-slot0 = class("MapEventStoryCellView", import("view.level.cell.StaticCellView"))
+﻿local var_0_0 = class("MapEventStoryCellView", import("view.level.cell.StaticCellView"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.attachTw = nil
+	arg_1_0.attachTw = nil
 end
 
-function slot0.GetOrder(slot0)
+function var_0_0.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.info
+function var_0_0.Update(arg_3_0)
+	local var_3_0 = arg_3_0.info
 
-	if IsNil(slot0.go) then
-		slot4 = slot1.data
-		slot6 = pg.map_event_template[slot1.attachmentId].icon
+	if IsNil(arg_3_0.go) then
+		local var_3_1 = var_3_0.row
+		local var_3_2 = var_3_0.column
+		local var_3_3 = var_3_0.data
+		local var_3_4 = pg.map_event_template[var_3_0.attachmentId].icon
+		local var_3_5 = "story_" .. var_3_1 .. "_" .. var_3_2 .. "_" .. var_3_0.attachmentId
 
-		slot0:PrepareBase("story_" .. slot1.row .. "_" .. slot1.column .. "_" .. slot1.attachmentId)
-		setAnchoredPosition(slot0.tf, Vector2(0, 30))
+		arg_3_0:PrepareBase(var_3_5)
+		setAnchoredPosition(arg_3_0.tf, Vector2(0, 30))
 
-		slot8 = LeanTween.moveY(rtf(slot0.go), 40, 1.5)
-		slot8 = slot8:setEase(LeanTweenType.easeInOutSine)
-		slot0.attachTw = slot8:setLoopPingPong()
-		slot8 = slot0:GetLoader()
+		arg_3_0.attachTw = LeanTween.moveY(rtf(arg_3_0.go), 40, 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-		slot8:GetPrefab("leveluiview/tpl_box", "tpl_box", function (slot0)
-			slot0.name = uv0
+		arg_3_0:GetLoader():GetPrefab("leveluiview/tpl_box", "tpl_box", function(arg_4_0)
+			arg_4_0.name = var_3_4
 
-			setParent(slot0, uv1.tf)
-			setAnchoredPosition(slot0, Vector2.zero)
-
-			slot1 = uv1
-			slot1 = slot1:GetLoader()
-
-			slot1:GetPrefab("boxprefab/" .. uv0, uv0, function (slot0)
-				setParent(slot0, tf(uv0):Find("icon"))
+			setParent(arg_4_0, arg_3_0.tf)
+			setAnchoredPosition(arg_4_0, Vector2.zero)
+			arg_3_0:GetLoader():GetPrefab("boxprefab/" .. var_3_4, var_3_4, function(arg_5_0)
+				setParent(arg_5_0, tf(arg_4_0):Find("icon"))
 			end)
 		end)
 	end
 
-	setActive(slot0.tf, slot1.flag == ChapterConst.CellFlagActive)
+	local var_3_6 = var_3_0.flag == ChapterConst.CellFlagActive
+
+	setActive(arg_3_0.tf, var_3_6)
 end
 
-function slot0.DestroyGO(slot0)
-	if slot0.attachTw then
-		LeanTween.cancel(slot0.attachTw.uniqueId)
+function var_0_0.DestroyGO(arg_6_0)
+	if arg_6_0.attachTw then
+		LeanTween.cancel(arg_6_0.attachTw.uniqueId)
 
-		slot0.attachTw = nil
+		arg_6_0.attachTw = nil
 	end
 
-	uv0.super.DestroyGO(slot0)
+	var_0_0.super.DestroyGO(arg_6_0)
 end
 
-return slot0
+return var_0_0

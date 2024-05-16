@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "NG0038",
 	events = {
 		{
@@ -20,7 +20,7 @@ return {
 		{
 			alpha = 0.4,
 			ui = {
-				dynamicPath = function ()
+				dynamicPath = function()
 					if USE_OLD_MAIN_LIVE_AREA_UI then
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaOldUI(Clone)/school_btn"
 					else
@@ -35,7 +35,7 @@ return {
 		{
 			alpha = 0.4,
 			ui = {
-				path = "UICamera/Canvas/UIMain/NavalAcademySpringFesUI(Clone)/academyMap/map/minigamehall",
+				path = "/UICamera/Canvas/UIMain/NavalAcademySpringUI(Clone)/academyMap/map/minigamehall",
 				triggerType = {
 					1
 				}

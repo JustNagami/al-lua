@@ -1,79 +1,77 @@
-slot0 = class("CatteryAnimCard", import("..CatterySettlementCard"))
-slot1 = 1
+﻿local var_0_0 = class("CatteryAnimCard", import("..CatterySettlementCard"))
+local var_0_1 = 1
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0.emptyTF = findTF(slot0._tf, "empty")
-	slot0.commanderTF = findTF(slot0._tf, "commander")
-	slot0.char = slot0.commanderTF:Find("mask/char")
-	slot0.slider = slot0.commanderTF:Find("slider"):GetComponent(typeof(Slider))
-	slot0.nameTxt = slot0.commanderTF:Find("name/Text"):GetComponent(typeof(Text))
-	slot0.levelTxt = slot0.commanderTF:Find("name/level"):GetComponent(typeof(Text))
-	slot0.expTxt = slot0.commanderTF:Find("exp"):GetComponent(typeof(Text))
-	slot0.addition = slot0.commanderTF:Find("addition")
-	slot0.additionTxt = slot0.addition:Find("Text"):GetComponent(typeof(Text))
-	slot0.additionY = slot0.addition.localPosition.y
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.emptyTF = findTF(arg_1_0._tf, "empty")
+	arg_1_0.commanderTF = findTF(arg_1_0._tf, "commander")
+	arg_1_0.char = arg_1_0.commanderTF:Find("mask/char")
+	arg_1_0.slider = arg_1_0.commanderTF:Find("slider"):GetComponent(typeof(Slider))
+	arg_1_0.nameTxt = arg_1_0.commanderTF:Find("name/Text"):GetComponent(typeof(Text))
+	arg_1_0.levelTxt = arg_1_0.commanderTF:Find("name/level"):GetComponent(typeof(Text))
+	arg_1_0.expTxt = arg_1_0.commanderTF:Find("exp"):GetComponent(typeof(Text))
+	arg_1_0.addition = arg_1_0.commanderTF:Find("addition")
+	arg_1_0.additionTxt = arg_1_0.addition:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.additionY = arg_1_0.addition.localPosition.y
 end
 
-function slot0.UpdateCommander(slot0)
-	uv0.super.UpdateCommander(slot0)
+function var_0_0.UpdateCommander(arg_2_0)
+	var_0_0.super.UpdateCommander(arg_2_0)
 
-	slot0.additionTxt.text = slot0.exp .. "<size=40>EXP</size>"
+	arg_2_0.additionTxt.text = arg_2_0.exp .. "<size=40>EXP</size>"
 end
 
-function slot0.Action(slot0, slot1)
-	setActive(slot0.addition, false)
+function var_0_0.Action(arg_3_0, arg_3_1)
+	setActive(arg_3_0.addition, false)
 
-	if not slot0.commander or slot0.exp <= 0 then
-		slot1()
+	if not arg_3_0.commander or arg_3_0.exp <= 0 then
+		arg_3_1()
 
 		return
 	end
 
-	slot2 = {}
+	local var_3_0 = {}
 
-	slot0:InitAnim(slot2)
-	table.insert(slot2, function (slot0)
-		uv0:AdditionAnim(uv1, slot0)
+	arg_3_0:InitAnim(var_3_0)
+	table.insert(var_3_0, function(arg_4_0)
+		arg_3_0:AdditionAnim(var_0_1, arg_4_0)
 	end)
-	parallelAsync(slot2, slot1)
+	parallelAsync(var_3_0, arg_3_1)
 end
 
-function slot0.Clear(slot0)
-	uv0.super.Clear(slot0)
+function var_0_0.Clear(arg_5_0)
+	var_0_0.super.Clear(arg_5_0)
 
-	if LeanTween.isTweening(go(slot0.addition)) then
-		LeanTween.cancel(go(slot0.addition))
+	if LeanTween.isTweening(go(arg_5_0.addition)) then
+		LeanTween.cancel(go(arg_5_0.addition))
 	end
 end
 
-function slot0.LoadCommander(slot0, slot1)
-	slot0:ReturnCommander()
+function var_0_0.LoadCommander(arg_6_0, arg_6_1)
+	arg_6_0:ReturnCommander()
 
-	slot0.painting = slot1:getPainting()
+	arg_6_0.painting = arg_6_1:getPainting()
 
-	setCommanderPaintingPrefab(slot0.char, slot0.painting, "result1")
+	setCommanderPaintingPrefab(arg_6_0.char, arg_6_0.painting, "result1")
 end
 
-function slot0.AdditionAnim(slot0, slot1, slot2)
-	setActive(slot0.addition, true)
+function var_0_0.AdditionAnim(arg_7_0, arg_7_1, arg_7_2)
+	setActive(arg_7_0.addition, true)
 
-	slot3 = slot0.additionY
-	slot4 = LeanTween.value(go(slot0.addition), slot3, slot3 + 25, slot1)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
-		uv0.addition.localPosition = Vector3(uv0.addition.localPosition.x, slot0, 0)
-	end))
+	local var_7_0 = arg_7_0.additionY
 
-	slot4:setOnComplete(System.Action(function ()
-		setActive(uv0.addition, false)
-		uv1()
+	LeanTween.value(go(arg_7_0.addition), var_7_0, var_7_0 + 25, arg_7_1):setOnUpdate(System.Action_float(function(arg_8_0)
+		arg_7_0.addition.localPosition = Vector3(arg_7_0.addition.localPosition.x, arg_8_0, 0)
+	end)):setOnComplete(System.Action(function()
+		setActive(arg_7_0.addition, false)
+		arg_7_2()
 
-		uv0.addition.localPosition = Vector3(uv0.addition.localPosition.x, uv2, 0)
+		arg_7_0.addition.localPosition = Vector3(arg_7_0.addition.localPosition.x, var_7_0, 0)
 	end))
 end
 
-function slot0.GetColor(slot0)
+function var_0_0.GetColor(arg_10_0)
 	return "#ffffff"
 end
 
-return slot0
+return var_0_0

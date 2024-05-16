@@ -1,149 +1,150 @@
-slot0 = class("CommanderCatMediator", import("view.base.ContextMediator"))
-slot0.RESERVE_BOX = "CommanderCatMediator:RESERVE_BOX"
-slot0.OPEN_HOME = "CommanderCatMediator:OPEN_HOME"
-slot0.ON_SELECT = "CommanderCatMediator:ON_SELECT"
-slot0.UPGRADE = "CommanderCatMediator:UPGRADE"
-slot0.LOCK = "CommanderCatMediator:LOCK"
-slot0.SKILL_INFO = "CommanderCatMediator:SKILL_INFO"
-slot0.RENAME = "CommanderCatMediator:RENAME"
-slot0.FETCH_NOT_LEARNED_TALENT = "CommanderCatMediator:FETCH_NOT_LEARNED_TALENT"
-slot0.LEARN_TALENT = "CommanderCatMediator:LEARN_TALENT"
-slot0.RESET_TALENT = "CommanderCatMediator:RESET_TALENT"
-slot0.BATCH_GET = "CommanderCatMediator:BATCH_GET"
-slot0.ONE_KEY = "CommanderCatMediator:ONE_KEY"
-slot0.BATCH_BUILD = "CommanderCatMediator:BATCH_BUILD"
-slot0.BUILD = "CommanderCatMediator:BUILD"
-slot0.GET = "CommanderCatMediator:GET"
-slot0.USE_QUICKLY_TOOL = "CommanderCatMediator:USE_QUICKLY_TOOL"
+﻿local var_0_0 = class("CommanderCatMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.USE_QUICKLY_TOOL, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.USE_ITEM, {
-			id = slot1,
-			count = slot2,
+var_0_0.RESERVE_BOX = "CommanderCatMediator:RESERVE_BOX"
+var_0_0.OPEN_HOME = "CommanderCatMediator:OPEN_HOME"
+var_0_0.ON_SELECT = "CommanderCatMediator:ON_SELECT"
+var_0_0.UPGRADE = "CommanderCatMediator:UPGRADE"
+var_0_0.LOCK = "CommanderCatMediator:LOCK"
+var_0_0.SKILL_INFO = "CommanderCatMediator:SKILL_INFO"
+var_0_0.RENAME = "CommanderCatMediator:RENAME"
+var_0_0.FETCH_NOT_LEARNED_TALENT = "CommanderCatMediator:FETCH_NOT_LEARNED_TALENT"
+var_0_0.LEARN_TALENT = "CommanderCatMediator:LEARN_TALENT"
+var_0_0.RESET_TALENT = "CommanderCatMediator:RESET_TALENT"
+var_0_0.BATCH_GET = "CommanderCatMediator:BATCH_GET"
+var_0_0.ONE_KEY = "CommanderCatMediator:ONE_KEY"
+var_0_0.BATCH_BUILD = "CommanderCatMediator:BATCH_BUILD"
+var_0_0.BUILD = "CommanderCatMediator:BUILD"
+var_0_0.GET = "CommanderCatMediator:GET"
+var_0_0.USE_QUICKLY_TOOL = "CommanderCatMediator:USE_QUICKLY_TOOL"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.USE_QUICKLY_TOOL, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+		arg_1_0:sendNotification(GAME.USE_ITEM, {
+			id = arg_2_1,
+			count = arg_2_2,
 			arg = {
-				slot3
+				arg_2_3
 			}
 		})
 	end)
-	slot0:bind(uv0.GET, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COMMANDER_ON_OPEN_BOX, {
-			id = slot1,
-			callback = slot2
+	arg_1_0:bind(var_0_0.GET, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.COMMANDER_ON_OPEN_BOX, {
+			id = arg_3_1,
+			callback = arg_3_2
 		})
 	end)
-	slot0:bind(uv0.BUILD, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COMMANDER_ON_BUILD, {
+	arg_1_0:bind(var_0_0.BUILD, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.COMMANDER_ON_BUILD, {
 			tip = true,
-			id = slot1,
-			callback = slot2
+			id = arg_4_1,
+			callback = arg_4_2
 		})
 	end)
-	slot0:bind(uv0.BATCH_BUILD, function (slot0, slot1)
-		slot2 = {}
+	arg_1_0:bind(var_0_0.BATCH_BUILD, function(arg_5_0, arg_5_1)
+		local var_5_0 = {}
 
-		for slot6 = 1, #slot1 do
-			slot7 = slot1[slot6]
+		for iter_5_0 = 1, #arg_5_1 do
+			local var_5_1 = arg_5_1[iter_5_0]
 
-			table.insert(slot2, function (slot0)
-				uv0:sendNotification(GAME.COMMANDER_ON_BUILD, {
+			table.insert(var_5_0, function(arg_6_0)
+				arg_1_0:sendNotification(GAME.COMMANDER_ON_BUILD, {
 					tip = false,
-					id = uv1,
-					callback = slot0
+					id = var_5_1,
+					callback = arg_6_0
 				})
 			end)
 		end
 
-		seriesAsync(slot2, function ()
+		seriesAsync(var_5_0, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_build_done"))
 		end)
 	end)
-	slot0:bind(uv0.ONE_KEY, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES, {
-			itemCnt = slot1,
-			affectCnt = slot2,
-			finishCnt = slot3
+	arg_1_0:bind(var_0_0.ONE_KEY, function(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+		arg_1_0:sendNotification(GAME.COMMANDER_QUICKLY_FINISH_BOXES, {
+			itemCnt = arg_8_1,
+			affectCnt = arg_8_2,
+			finishCnt = arg_8_3
 		})
 	end)
-	slot0:bind(uv0.BATCH_GET, function (slot0, slot1)
-		slot2 = {}
+	arg_1_0:bind(var_0_0.BATCH_GET, function(arg_9_0, arg_9_1)
+		local var_9_0 = {}
 
-		for slot6, slot7 in pairs(slot1) do
-			if slot7:getState() == CommanderBox.STATE_FINISHED then
-				table.insert(slot2, slot7.id)
+		for iter_9_0, iter_9_1 in pairs(arg_9_1) do
+			if iter_9_1:getState() == CommanderBox.STATE_FINISHED then
+				table.insert(var_9_0, iter_9_1.id)
 			end
 		end
 
-		uv0:sendNotification(GAME.COMMANDER_ON_BATCH, {
-			boxIds = slot2
+		arg_1_0:sendNotification(GAME.COMMANDER_ON_BATCH, {
+			boxIds = var_9_0
 		})
 	end)
-	slot0:bind(uv0.RESET_TALENT, function (slot0, slot1)
-		uv0:sendNotification(GAME.COMMANDER_RESET_TALENTS, {
-			id = slot1
+	arg_1_0:bind(var_0_0.RESET_TALENT, function(arg_10_0, arg_10_1)
+		arg_1_0:sendNotification(GAME.COMMANDER_RESET_TALENTS, {
+			id = arg_10_1
 		})
 	end)
-	slot0:bind(uv0.LEARN_TALENT, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.COMMANDER_LEARN_TALENTS, {
-			id = slot1,
-			talentId = slot2,
-			replaceid = slot3
+	arg_1_0:bind(var_0_0.LEARN_TALENT, function(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+		arg_1_0:sendNotification(GAME.COMMANDER_LEARN_TALENTS, {
+			id = arg_11_1,
+			talentId = arg_11_2,
+			replaceid = arg_11_3
 		})
 	end)
-	slot0:bind(uv0.FETCH_NOT_LEARNED_TALENT, function (slot0, slot1)
-		uv0:sendNotification(GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT, {
-			id = slot1
+	arg_1_0:bind(var_0_0.FETCH_NOT_LEARNED_TALENT, function(arg_12_0, arg_12_1)
+		arg_1_0:sendNotification(GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT, {
+			id = arg_12_1
 		})
 	end)
-	slot0:bind(uv0.RENAME, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COMMANDER_RENAME, {
-			commanderId = slot1,
-			name = slot2
+	arg_1_0:bind(var_0_0.RENAME, function(arg_13_0, arg_13_1, arg_13_2)
+		arg_1_0:sendNotification(GAME.COMMANDER_RENAME, {
+			commanderId = arg_13_1,
+			name = arg_13_2
 		})
 	end)
-	slot0:bind(uv0.SKILL_INFO, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.SKILL_INFO, function(arg_14_0, arg_14_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = NewCommanderSkillLayer,
 			data = {
-				skill = slot1
+				skill = arg_14_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.LOCK, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COMMANDER_LOCK, {
-			commanderId = slot1,
-			flag = slot2
+	arg_1_0:bind(var_0_0.LOCK, function(arg_15_0, arg_15_1, arg_15_2)
+		arg_1_0:sendNotification(GAME.COMMANDER_LOCK, {
+			commanderId = arg_15_1,
+			flag = arg_15_2
 		})
 	end)
-	slot0:bind(uv0.UPGRADE, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.COMMANDER_UPGRADE, {
-			id = slot1,
-			materialIds = slot2,
-			skillId = slot3
+	arg_1_0:bind(var_0_0.UPGRADE, function(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+		arg_1_0:sendNotification(GAME.COMMANDER_UPGRADE, {
+			id = arg_16_1,
+			materialIds = arg_16_2,
+			skillId = arg_16_3
 		})
 	end)
-	slot0:bind(uv0.ON_SELECT, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_SELECT, function(arg_17_0, arg_17_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ContextMediator,
 			viewComponent = SelectCommanderCatForPlayScene,
-			data = slot1
+			data = arg_17_1
 		}))
 	end)
-	slot0:bind(uv0.RESERVE_BOX, function (slot0, slot1)
-		uv0:sendNotification(GAME.COMMANDER_RESERVE_BOX, {
-			count = slot1
+	arg_1_0:bind(var_0_0.RESERVE_BOX, function(arg_18_0, arg_18_1)
+		arg_1_0:sendNotification(GAME.COMMANDER_RESERVE_BOX, {
+			count = arg_18_1
 		})
 	end)
-	slot0:bind(uv0.OPEN_HOME, function (slot0)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_HOME, function(arg_19_0)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CommanderHomeLayer,
 			mediator = CommanderHomeMediator
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_20_0)
 	return {
 		GAME.COMMANDER_RESERVE_BOX_DONE,
 		GAME.COMMANDER_QUICKLY_FINISH_BOXES_ERROR,
@@ -165,111 +166,109 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_1:getName()
+	local var_21_1 = arg_21_1:getBody()
 
-	if slot1:getName() == GAME.COMMANDER_RESERVE_BOX_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_RESERVE_BOX, slot3.awards)
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_RES_UPDATE)
-	elseif slot2 == GAME.COMMANDER_QUICKLY_FINISH_BOXES_ERROR then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_QUICKLY_FINISH_TOOL_ERROR)
-	elseif slot2 == GAME.COMMANDER_UPGRADE_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_UPGRADE, slot3.oldCommander, slot3.commander)
-	elseif slot2 == GAME.COMMANDER_LOCK_DONE then
-		if slot3.flag == 1 then
+	if var_21_0 == GAME.COMMANDER_RESERVE_BOX_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_RESERVE_BOX, var_21_1.awards)
+	elseif var_21_0 == PlayerProxy.UPDATED then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_RES_UPDATE)
+	elseif var_21_0 == GAME.COMMANDER_QUICKLY_FINISH_BOXES_ERROR then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_QUICKLY_FINISH_TOOL_ERROR)
+	elseif var_21_0 == GAME.COMMANDER_UPGRADE_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_UPGRADE, var_21_1.oldCommander, var_21_1.commander)
+	elseif var_21_0 == GAME.COMMANDER_LOCK_DONE then
+		if var_21_1.flag == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_lock_done"))
-		elseif slot3.flag == 0 then
+		elseif var_21_1.flag == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_unlock_done"))
 		end
-	elseif slot2 == GAME.COMMANDER_RENAME_DONE then
+	elseif var_21_0 == GAME.COMMANDER_RENAME_DONE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_rename_success_tip"))
-	elseif slot2 == GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_FETCH_TALENT_LIST)
-	elseif slot2 == GAME.COMMANDER_LEARN_TALENTS_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_LEARN_TALENT)
-	elseif slot2 == CommanderProxy.COMMANDER_UPDATED or slot2 == CommanderProxy.COMMANDER_ADDED or slot2 == CommanderProxy.COMMANDER_DELETED then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_UPDATE)
-	elseif slot2 == GAME.COMMANDER_CATTERY_OP_DONE or slot2 == GAME.ZERO_HOUR_OP_DONE or slot2 == GAME.PUT_COMMANDER_IN_CATTERY_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_HOME_TIP)
-	elseif slot2 == GAME.COMMANDER_ON_BUILD_DONE or slot2 == GAME.REFRESH_COMMANDER_BOXES_DONE then
-		slot0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
-	elseif slot2 == GAME.COMMANDER_ON_OPEN_BOX_DONE then
-		slot4 = pg.UIMgr.GetInstance()
-
-		slot4:LoadingOn(false)
+	elseif var_21_0 == GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_FETCH_TALENT_LIST)
+	elseif var_21_0 == GAME.COMMANDER_LEARN_TALENTS_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_LEARN_TALENT)
+	elseif var_21_0 == CommanderProxy.COMMANDER_UPDATED or var_21_0 == CommanderProxy.COMMANDER_ADDED or var_21_0 == CommanderProxy.COMMANDER_DELETED then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_UPDATE)
+	elseif var_21_0 == GAME.COMMANDER_CATTERY_OP_DONE or var_21_0 == GAME.ZERO_HOUR_OP_DONE or var_21_0 == GAME.PUT_COMMANDER_IN_CATTERY_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_HOME_TIP)
+	elseif var_21_0 == GAME.COMMANDER_ON_BUILD_DONE or var_21_0 == GAME.REFRESH_COMMANDER_BOXES_DONE then
+		arg_21_0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
+	elseif var_21_0 == GAME.COMMANDER_ON_OPEN_BOX_DONE then
+		pg.UIMgr.GetInstance():LoadingOn(false)
 		seriesAsync({
-			function (slot0)
-				uv0.viewComponent:emit(CommanderCatScene.MSG_OPEN_BOX, uv1.boxId, slot0)
+			function(arg_22_0)
+				arg_21_0.viewComponent:emit(CommanderCatScene.MSG_OPEN_BOX, var_21_1.boxId, arg_22_0)
 			end,
-			function (slot0)
+			function(arg_23_0)
 				pg.UIMgr.GetInstance():LoadingOff()
-				uv0:DisplayNewCommander(uv1.commander, slot0)
+				arg_21_0:DisplayNewCommander(var_21_1.commander, arg_23_0)
 			end,
-			function ()
-				uv0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
+			function()
+				arg_21_0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
 			end
-		}, slot3.callback)
-	elseif slot2 == GAME.COMMANDER_ON_BATCH_DONE then
-		slot0:BatchDisplayCommander(slot3.boxIds, slot3.commanders)
+		}, var_21_1.callback)
+	elseif var_21_0 == GAME.COMMANDER_ON_BATCH_DONE then
+		arg_21_0:BatchDisplayCommander(var_21_1.boxIds, var_21_1.commanders)
 	end
 end
 
-function slot0.BatchDisplayCommander(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.BatchDisplayCommander(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		table.insert(slot3, function (slot0)
-			uv0.viewComponent:emit(CommanderCatScene.MSG_OPEN_BOX, uv1, slot0)
+	for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
+		table.insert(var_25_0, function(arg_26_0)
+			arg_25_0.viewComponent:emit(CommanderCatScene.MSG_OPEN_BOX, iter_25_1, arg_26_0)
 		end)
 	end
 
 	getProxy(CommanderProxy).hasSkipFlag = false
-	slot4 = pg.UIMgr.GetInstance()
 
-	slot4:LoadingOn(false)
-	parallelAsync(slot3, function ()
+	pg.UIMgr.GetInstance():LoadingOn(false)
+	parallelAsync(var_25_0, function()
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		slot0 = {}
+		local var_27_0 = {}
 
-		for slot4, slot5 in ipairs(uv0) do
-			table.insert(slot0, function (slot0)
-				if getProxy(CommanderProxy).hasSkipFlag and not uv0:ShouldTipLock() then
-					slot0()
+		for iter_27_0, iter_27_1 in ipairs(arg_25_2) do
+			table.insert(var_27_0, function(arg_28_0)
+				if getProxy(CommanderProxy).hasSkipFlag and not iter_27_1:ShouldTipLock() then
+					arg_28_0()
 				else
-					uv1:DisplayNewCommander(uv0, slot0)
+					arg_25_0:DisplayNewCommander(iter_27_1, arg_28_0)
 				end
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			uv0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
+		seriesAsync(var_27_0, function()
+			arg_25_0.viewComponent:emit(CommanderCatScene.MSG_BUILD)
 
 			getProxy(CommanderProxy).hasSkipFlag = false
 
-			uv0.viewComponent:emit(CommanderCatScene.MSG_BATCH_BUILD, uv1)
+			arg_25_0.viewComponent:emit(CommanderCatScene.MSG_BATCH_BUILD, arg_25_2)
 		end)
 	end)
 end
 
-function slot0.DisplayNewCommander(slot0, slot1, slot2)
-	slot0:addSubLayers(Context.New({
+function var_0_0.DisplayNewCommander(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0:addSubLayers(Context.New({
 		viewComponent = NewCommanderScene,
 		mediator = NewCommanderMediator,
 		data = {
-			commander = slot1,
-			onExit = slot2
+			commander = arg_30_1,
+			onExit = arg_30_2
 		}
 	}))
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_31_0)
 	if pg.ConnectionMgr.GetInstance():isConnected() then
-		slot0:sendNotification(GAME.OPEN_OR_CLOSE_CATTERY, {
+		arg_31_0:sendNotification(GAME.OPEN_OR_CLOSE_CATTERY, {
 			open = false
 		})
 	end
 end
 
-return slot0
+return var_0_0

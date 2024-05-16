@@ -1,29 +1,32 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleRangeWave = class("BattleRangeWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleRangeWave.__name = "BattleRangeWave"
-slot1 = slot0.Battle.BattleRangeWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleRangeWave = class("BattleRangeWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleRangeWave.__name = "BattleRangeWave"
+
+local var_0_1 = var_0_0.Battle.BattleRangeWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._pos = Vector3(slot0._param.rect[1], 0, slot0._param.rect[2])
-	slot0._width = slot0._param.rect[3]
-	slot0._height = slot0._param.rect[4]
-	slot0._lifeTime = 99999
+	arg_2_0._pos = Vector3(arg_2_0._param.rect[1], 0, arg_2_0._param.rect[2])
+	arg_2_0._width = arg_2_0._param.rect[3]
+	arg_2_0._height = arg_2_0._param.rect[4]
+	arg_2_0._lifeTime = 99999
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
-	slot0._spawnFunc(slot0._pos, slot0._width, slot0._height, slot0._lifeTime, function (slot0, slot1)
-		for slot5, slot6 in ipairs(slot0) do
-			if slot6.IFF ~= slot1:GetCldData().IFF then
-				slot1:SetActiveFlag(false)
-				uv0:doPass()
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
+	arg_3_0._spawnFunc(arg_3_0._pos, arg_3_0._width, arg_3_0._height, arg_3_0._lifeTime, function(arg_4_0, arg_4_1)
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0) do
+			if iter_4_1.IFF ~= arg_4_1:GetCldData().IFF then
+				arg_4_1:SetActiveFlag(false)
+				arg_3_0:doPass()
 
 				break
 			end

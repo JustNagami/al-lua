@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"武器强化完毕！战斗力飞升！！",
 	"点击返回按钮退出角色详情",
 	"点击返回按钮退出船坞"
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -301,
 				posX = 422,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				hideChildEvent = true,
@@ -52,7 +52,7 @@ return {
 				mode = 2,
 				posY = 211.84,
 				posX = -105.86,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back_btn",
@@ -74,7 +74,7 @@ return {
 				mode = 2,
 				posY = 230.33,
 				posX = -231.7,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back",

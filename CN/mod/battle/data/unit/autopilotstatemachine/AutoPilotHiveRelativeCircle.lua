@@ -1,66 +1,80 @@
-ys = ys or {}
-slot0 = ys
-slot1 = Vector3.up
-slot2 = class("AutoPilotHiveRelativeCircle", slot0.Battle.IPilot)
-slot0.Battle.AutoPilotHiveRelativeCircle = slot2
-slot2.__name = "AutoPilotHiveRelativeCircle"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+local var_0_0 = ys
+local var_0_1 = Vector3.up
+local var_0_2 = class("AutoPilotHiveRelativeCircle", var_0_0.Battle.IPilot)
+
+var_0_0.Battle.AutoPilotHiveRelativeCircle = var_0_2
+var_0_2.__name = "AutoPilotHiveRelativeCircle"
+
+function var_0_2.Ctor(arg_1_0, ...)
+	var_0_2.super.Ctor(arg_1_0, ...)
 end
 
-function slot2.SetParameter(slot0, slot1, slot2)
-	uv0.super.SetParameter(slot0, slot1, slot2)
+function var_0_2.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+	var_0_2.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
 
-	slot0._radius = slot1.radius
+	arg_2_0._radius = arg_2_1.radius
 
-	if slot1.antiClockWise == true then
-		slot0.GetDirection = uv0._antiClockWise
+	if arg_2_1.antiClockWise == true then
+		arg_2_0.GetDirection = var_0_2._antiClockWise
 	else
-		slot0.GetDirection = uv0._clockWise
-	end
-end
-
-function slot2._clockWise(slot0, slot1)
-	if slot0:IsExpired() then
-		slot0:Finish()
-
-		return Vector3.zero
-	end
-
-	if not slot0._pilot:GetHiveUnit():IsAlive() then
-		slot0._pilot:OnHiveUnitDead()
-
-		return Vector3.zero
-	end
-
-	if slot0._radius < (slot1 - slot2:GetPosition()).magnitude then
-		return (slot3 - slot1).normalized
-	else
-		slot5 = (slot3 - slot1).normalized
-
-		return Vector3(-slot5.z, 0, slot5.x)
+		arg_2_0.GetDirection = var_0_2._clockWise
 	end
 end
 
-function slot2._antiClockWise(slot0, slot1)
-	if slot0._duration > 0 and slot0._duration < pg.TimeMgr.GetInstance():GetCombatTime() - slot0._startTime then
-		slot0:Finish()
+function var_0_2._clockWise(arg_3_0, arg_3_1)
+	if arg_3_0:IsExpired() then
+		arg_3_0:Finish()
 
 		return Vector3.zero
 	end
 
-	if not slot0._pilot:GetHiveUnit():IsAlive() then
-		slot0._pilot:OnHiveUnitDead()
+	local var_3_0 = arg_3_0._pilot:GetHiveUnit()
+
+	if not var_3_0:IsAlive() then
+		arg_3_0._pilot:OnHiveUnitDead()
 
 		return Vector3.zero
 	end
 
-	if slot0._radius < (slot1 - slot2:GetPosition()).magnitude then
-		return (slot3 - slot1).normalized
+	local var_3_1 = var_3_0:GetPosition()
+
+	if (arg_3_1 - var_3_1).magnitude > arg_3_0._radius then
+		return (var_3_1 - arg_3_1).normalized
 	else
-		slot5 = (slot3 - slot1).normalized
+		local var_3_2 = (var_3_1 - arg_3_1).normalized
+		local var_3_3 = -var_3_2.z
+		local var_3_4 = var_3_2.x
 
-		return Vector3(slot5.z, 0, -slot5.x)
+		return Vector3(var_3_3, 0, var_3_4)
+	end
+end
+
+function var_0_2._antiClockWise(arg_4_0, arg_4_1)
+	if arg_4_0._duration > 0 and pg.TimeMgr.GetInstance():GetCombatTime() - arg_4_0._startTime > arg_4_0._duration then
+		arg_4_0:Finish()
+
+		return Vector3.zero
+	end
+
+	local var_4_0 = arg_4_0._pilot:GetHiveUnit()
+
+	if not var_4_0:IsAlive() then
+		arg_4_0._pilot:OnHiveUnitDead()
+
+		return Vector3.zero
+	end
+
+	local var_4_1 = var_4_0:GetPosition()
+
+	if (arg_4_1 - var_4_1).magnitude > arg_4_0._radius then
+		return (var_4_1 - arg_4_1).normalized
+	else
+		local var_4_2 = (var_4_1 - arg_4_1).normalized
+		local var_4_3 = var_4_2.z
+		local var_4_4 = -var_4_2.x
+
+		return Vector3(var_4_3, 0, var_4_4)
 	end
 end

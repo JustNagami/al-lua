@@ -1,1074 +1,1180 @@
-slot0 = class("GuildMissionBattleView")
-slot1 = Vector3(40, -3, 40)
-slot2 = 10
-slot3 = 1028
-slot4 = Vector3(80, -3, 40)
+﻿local var_0_0 = class("GuildMissionBattleView")
+local var_0_1 = Vector3(40, -3, 40)
+local var_0_2 = 10
+local var_0_3 = 1028
+local var_0_4 = Vector3(80, -3, 40)
 
-function slot5(slot0)
-	slot1 = {}
-	slot2 = {}
+local function var_0_5(arg_1_0)
+	local var_1_0 = {}
+	local var_1_1 = {}
 
-	for slot6, slot7 in ipairs(ys.Battle.BattleConst.FXContainerIndex) do
-		slot8 = slot0[slot6]
-		slot2[slot6] = Vector3(slot8[1], slot8[2], slot8[3])
+	for iter_1_0, iter_1_1 in ipairs(ys.Battle.BattleConst.FXContainerIndex) do
+		local var_1_2 = arg_1_0[iter_1_0]
+
+		var_1_1[iter_1_0] = Vector3(var_1_2[1], var_1_2[2], var_1_2[3])
 	end
 
-	slot1._FXOffset = slot2
-	slot1._FXAttachPoint = GameObject()
+	var_1_0._FXOffset = var_1_1
+	var_1_0._FXAttachPoint = GameObject()
 
-	function slot1.GetFXOffsets(slot0, slot1)
-		return slot0._FXOffset[slot1 or 1]
+	function var_1_0.GetFXOffsets(arg_2_0, arg_2_1)
+		arg_2_1 = arg_2_1 or 1
+
+		return arg_2_0._FXOffset[arg_2_1]
 	end
 
-	function slot1.GetAttachPoint(slot0)
-		return slot0._FXAttachPoint
+	function var_1_0.GetAttachPoint(arg_3_0)
+		return arg_3_0._FXAttachPoint
 	end
 
-	function slot1.GetGO(slot0)
-		return slot0._go
+	function var_1_0.GetGO(arg_4_0)
+		return arg_4_0._go
 	end
 
-	function slot1.SetGo(slot0, slot1)
-		assert(slot1)
+	function var_1_0.SetGo(arg_5_0, arg_5_1)
+		assert(arg_5_1)
 
-		slot0._go = slot1
-		slot2 = slot0._FXAttachPoint.transform
+		arg_5_0._go = arg_5_1
 
-		slot2:SetParent(slot1.transform, false)
+		local var_5_0 = arg_5_0._FXAttachPoint.transform
 
-		slot2.localPosition = Vector3.zero
-		slot2.localEulerAngles = Vector3(330, 0, 0)
+		var_5_0:SetParent(arg_5_1.transform, false)
+
+		var_5_0.localPosition = Vector3.zero
+		var_5_0.localEulerAngles = Vector3(330, 0, 0)
 	end
 
-	function slot1.GetSpecificFXScale(slot0)
+	function var_1_0.GetSpecificFXScale(arg_6_0)
 		return {}
 	end
 
-	return slot1
+	return var_1_0
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.rawImage = slot1
+function var_0_0.Ctor(arg_7_0, arg_7_1)
+	arg_7_0.rawImage = arg_7_1
 
-	setActive(slot0.rawImage, false)
+	setActive(arg_7_0.rawImage, false)
 
-	slot0.seaCameraGO = GameObject.Find("BarrageCamera")
-	slot0.seaCameraGO.tag = "MainCamera"
-	slot0.seaCamera = slot0.seaCameraGO:GetComponent(typeof(Camera))
-	slot0.seaCamera.targetTexture = slot0.rawImage.texture
-	slot0.seaCamera.enabled = true
-	slot0.mainCameraGO = pg.UIMgr.GetInstance():GetMainCamera()
+	arg_7_0.seaCameraGO = GameObject.Find("BarrageCamera")
+	arg_7_0.seaCameraGO.tag = "MainCamera"
+	arg_7_0.seaCamera = arg_7_0.seaCameraGO:GetComponent(typeof(Camera))
+	arg_7_0.seaCamera.targetTexture = arg_7_0.rawImage.texture
+	arg_7_0.seaCamera.enabled = true
+	arg_7_0.mainCameraGO = pg.UIMgr.GetInstance():GetMainCamera()
 end
 
-function slot0.configUI(slot0, slot1, slot2)
-	slot0.nameTF = slot2
-	slot0.healTF = slot1
+function var_0_0.configUI(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0.nameTF = arg_8_2
+	arg_8_0.healTF = arg_8_1
 
-	setActive(slot0.healTF, false)
-
-	slot3 = slot0.healTF
-	slot3 = slot3:GetComponent("DftAniEvent")
-
-	slot3:SetEndEvent(function ()
-		setActive(uv0.healTF, false)
-		setText(uv0.healTF:Find("text"), "")
+	setActive(arg_8_0.healTF, false)
+	arg_8_0.healTF:GetComponent("DftAniEvent"):SetEndEvent(function()
+		setActive(arg_8_0.healTF, false)
+		setText(arg_8_0.healTF:Find("text"), "")
 	end)
 end
 
-function slot0.load(slot0, slot1, slot2)
+function var_0_0.load(arg_10_0, arg_10_1, arg_10_2)
 	ys.Battle.BattleVariable.Init()
 
-	slot3 = ys.Battle.BattleResourceManager.GetInstance()
+	local var_10_0 = ys.Battle.BattleResourceManager.GetInstance()
 
-	slot3:Init()
-	slot3:AddPreloadResource(slot3.GetMapResource(slot1))
-	slot3:StartPreload(function ()
+	var_10_0:Init()
+	var_10_0:AddPreloadResource(var_10_0.GetMapResource(arg_10_1))
+
+	local function var_10_1()
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		uv0.seaView = ys.Battle.BattleMap.New(uv1)
+		arg_10_0.seaView = ys.Battle.BattleMap.New(arg_10_1)
 
-		setActive(uv0.rawImage, true)
+		setActive(arg_10_0.rawImage, true)
 
 		GameObject.Find("scenes").transform.position = Vector3(0, -26, 0)
 
-		uv2:Clear()
+		var_10_0:Clear()
 
-		if uv3 then
-			onNextTick(uv3)
+		if arg_10_2 then
+			onNextTick(arg_10_2)
 		end
-	end, nil)
+	end
+
+	var_10_0:StartPreload(var_10_1, nil)
 	pg.UIMgr.GetInstance():LoadingOn()
 end
 
-function slot0.LoadShip(slot0, slot1, slot2, slot3, slot4)
-	if not slot1 then
-		slot4()
+function var_0_0.LoadShip(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	if not arg_12_1 then
+		arg_12_4()
 
 		return
 	end
 
-	if slot0.shipVO then
-		slot4()
+	if arg_12_0.shipVO then
+		arg_12_4()
 
 		return
 	end
 
-	slot0.unitList = {}
-	slot0.bulletUnitList = {}
-	slot0.shipVO = slot1
-	slot0.equipSkinId = 0
-	slot0.weaponIds = slot2
+	arg_12_0.unitList = {}
+	arg_12_0.bulletUnitList = {}
+	arg_12_0.shipVO = arg_12_1
+	arg_12_0.equipSkinId = 0
+	arg_12_0.weaponIds = arg_12_2
 
 	ys.Battle.BattleFXPool.GetInstance():Init()
 
-	slot0._cldSystem = ys.Battle.BattleCldSystem.New(slot0)
-	slot5 = ys.Battle.BattleResourceManager.GetInstance()
+	arg_12_0._cldSystem = ys.Battle.BattleCldSystem.New(arg_12_0)
 
-	slot5:Init()
-	slot5:AddPreloadResource(slot5.GetDisplayCommonResource())
+	local var_12_0 = ys.Battle.BattleResourceManager.GetInstance()
 
-	if slot0.equipSkinId > 0 then
-		slot5:AddPreloadResource(slot5.GetEquipSkinPreviewRes(slot0.equipSkinId))
+	var_12_0:Init()
+	var_12_0:AddPreloadResource(var_12_0.GetDisplayCommonResource())
+
+	if arg_12_0.equipSkinId > 0 then
+		var_12_0:AddPreloadResource(var_12_0.GetEquipSkinPreviewRes(arg_12_0.equipSkinId))
 	end
 
-	slot5:AddPreloadResource(slot5.GetCharacterPath(pg.enemy_data_statistics[uv0].prefab), false)
-	slot5:AddPreloadResource(slot5.GetCharacterPath(pg.enemy_data_statistics[uv1].prefab), false)
-	slot5:AddPreloadResource(slot5.GetShipResource(slot1.configId, slot1.skinId), false)
+	local var_12_1 = pg.enemy_data_statistics[var_0_2]
 
-	if slot1:getShipType() ~= ShipType.WeiXiu then
-		for slot11, slot12 in ipairs(slot2) do
-			if slot12 ~= 0 then
-				for slot17, slot18 in ipairs(ys.Battle.BattleDataFunction.GetWeaponDataFromID(slot12).weapon_id) do
-					slot5:AddPreloadResource(slot5.GetWeaponResource(slot18))
+	var_12_0:AddPreloadResource(var_12_0.GetCharacterPath(var_12_1.prefab), false)
+
+	local var_12_2 = pg.enemy_data_statistics[var_0_3]
+
+	var_12_0:AddPreloadResource(var_12_0.GetCharacterPath(var_12_2.prefab), false)
+	var_12_0:AddPreloadResource(var_12_0.GetShipResource(arg_12_1.configId, arg_12_1.skinId), false)
+
+	if arg_12_1:getShipType() ~= ShipType.WeiXiu then
+		for iter_12_0, iter_12_1 in ipairs(arg_12_2) do
+			if iter_12_1 ~= 0 then
+				local var_12_3 = ys.Battle.BattleDataFunction.GetWeaponDataFromID(iter_12_1).weapon_id
+
+				for iter_12_2, iter_12_3 in ipairs(var_12_3) do
+					var_12_0:AddPreloadResource(var_12_0.GetWeaponResource(iter_12_3))
 				end
 			end
 		end
 	end
 
-	slot5:StartPreload(function ()
-		function slot0(slot0)
-			uv0.seaCharacter = slot0
-			slot1 = uv1:getConfig("scale") / 50
-			slot0.transform.localScale = Vector3(slot1 - 0.4, slot1, slot1)
-			slot0.transform.localPosition = uv0:GetCharacterOffset()
-			slot0.transform.localEulerAngles = Vector3(30, 0, 0)
-			uv0.seaAnimator = slot0.transform:GetComponent("SpineAnim")
-			uv0.characterAction = ys.Battle.BattleConst.ActionName.MOVE
+	local function var_12_4()
+		local function var_13_0(arg_14_0)
+			arg_12_0.seaCharacter = arg_14_0
 
-			uv0.seaAnimator:SetAction(uv0.characterAction, 0, true)
+			local var_14_0 = arg_12_1:getConfig("scale") / 50
 
-			slot2 = cloneTplTo(uv0.nameTF, slot0)
-			slot2.localPosition = Vector3(0, -0.35, -1)
+			arg_14_0.transform.localScale = Vector3(var_14_0 - 0.4, var_14_0, var_14_0)
+			arg_14_0.transform.localPosition = arg_12_0:GetCharacterOffset()
+			arg_14_0.transform.localEulerAngles = Vector3(30, 0, 0)
+			arg_12_0.seaAnimator = arg_14_0.transform:GetComponent("SpineAnim")
+			arg_12_0.characterAction = ys.Battle.BattleConst.ActionName.MOVE
 
-			setText(slot2:Find("Text"), uv2)
+			arg_12_0.seaAnimator:SetAction(arg_12_0.characterAction, 0, true)
 
-			slot4 = uv3(pg.ship_skin_template[uv1.skinId].fx_container)
+			local var_14_1 = cloneTplTo(arg_12_0.nameTF, arg_14_0)
 
-			slot4:SetGo(slot0)
+			var_14_1.localPosition = Vector3(0, -0.35, -1)
 
-			slot5 = ys.Battle.BattleFXPool.GetInstance()
+			setText(var_14_1:Find("Text"), arg_12_3)
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(slot5:GetCharacterFX("movewave", slot4), Vector3(0, 0, 0), true)
+			local var_14_2 = pg.ship_skin_template[arg_12_1.skinId]
+			local var_14_3 = var_0_5(var_14_2.fx_container)
 
-			uv0.seaFXPool = slot5
+			var_14_3:SetGo(arg_14_0)
 
-			if uv1:getShipType() ~= ShipType.WeiXiu then
-				uv0.boneList = {}
+			local var_14_4 = ys.Battle.BattleFXPool.GetInstance()
+			local var_14_5 = var_14_4:GetCharacterFX("movewave", var_14_3)
 
-				for slot11, slot12 in pairs(pg.ship_skin_template[uv1.skinId].bound_bone) do
-					slot13 = {}
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var_14_5, Vector3(0, 0, 0), true)
 
-					for slot17, slot18 in ipairs(slot12) do
-						if type(slot18) == "table" then
-							slot13[#slot13 + 1] = Vector3(slot18[1], slot18[2], slot18[3])
+			arg_12_0.seaFXPool = var_14_4
+
+			if arg_12_1:getShipType() ~= ShipType.WeiXiu then
+				arg_12_0.boneList = {}
+
+				local var_14_6 = pg.ship_skin_template[arg_12_1.skinId]
+
+				for iter_14_0, iter_14_1 in pairs(var_14_6.bound_bone) do
+					local var_14_7 = {}
+
+					for iter_14_2, iter_14_3 in ipairs(iter_14_1) do
+						if type(iter_14_3) == "table" then
+							var_14_7[#var_14_7 + 1] = Vector3(iter_14_3[1], iter_14_3[2], iter_14_3[3])
 						else
-							slot13[#slot13 + 1] = Vector3.zero
+							var_14_7[#var_14_7 + 1] = Vector3.zero
 						end
 					end
 
-					uv0.boneList[slot11] = slot13[1]
+					arg_12_0.boneList[iter_14_0] = var_14_7[1]
 				end
 			end
 
-			slot7 = LeanTween.value(slot0, -20, 0, 2)
-
-			slot7:setOnUpdate(System.Action_float(function (slot0)
-				uv0.transform.position = Vector3(slot0, uv0.transform.position.y, uv0.transform.position.z)
+			LeanTween.value(arg_14_0, -20, 0, 2):setOnUpdate(System.Action_float(function(arg_15_0)
+				arg_14_0.transform.position = Vector3(arg_15_0, arg_14_0.transform.position.y, arg_14_0.transform.position.z)
 			end))
 		end
 
 		seriesAsync({
-			function (slot0)
-				slot1 = uv0
-				slot3 = uv1
-
-				slot1:InstCharacter(slot3:getPrefab(), function (slot0)
-					uv0(slot0)
-					uv1()
+			function(arg_16_0)
+				var_12_0:InstCharacter(arg_12_1:getPrefab(), function(arg_17_0)
+					var_13_0(arg_17_0)
+					arg_16_0()
 				end)
 			end,
-			function (slot0)
-				uv0:CreateMonster(slot0)
+			function(arg_18_0)
+				arg_12_0:CreateMonster(arg_18_0)
 			end,
-			function (slot0)
-				uv0:CreateItemBox(slot0)
+			function(arg_19_0)
+				arg_12_0:CreateItemBox(arg_19_0)
 			end
-		}, function ()
-			uv0.loaded = true
+		}, function()
+			arg_12_0.loaded = true
 
 			pg.TimeMgr.GetInstance():ResumeBattleTimer()
 
-			if uv1:getShipType() ~= ShipType.WeiXiu then
-				uv0:onWeaponUpdate()
-				uv0:SeaUpdate()
+			if arg_12_1:getShipType() ~= ShipType.WeiXiu then
+				arg_12_0:onWeaponUpdate()
+				arg_12_0:SeaUpdate()
 			end
 
-			if uv2 then
-				uv2()
+			if arg_12_4 then
+				arg_12_4()
 			end
-		end)
-	end, nil)
-end
-
-function slot0.StartMoveOtherShips(slot0, slot1)
-	function slot2(slot0, slot1)
-		LeanTween.value(slot0, slot0.transform.localPosition.x, 80, math.random(5, 8)):setOnUpdate(System.Action_float(function (slot0)
-			uv0.transform.localPosition = Vector3(slot0, uv1.y, uv1.z)
-		end)):setOnComplete(System.Action(slot1)):setDelay(math.random(0, 5))
-	end
-
-	slot3 = {}
-
-	for slot7, slot8 in ipairs(slot0.otherShipGos) do
-		table.insert(slot3, function (slot0)
-			uv0(uv1, slot0)
 		end)
 	end
 
-	parallelAsync(slot3, slot1)
+	var_12_0:StartPreload(var_12_4, nil)
 end
 
-function slot0.PlayOtherShipAnim(slot0, slot1, slot2)
-	if not slot0.loaded then
+function var_0_0.StartMoveOtherShips(arg_21_0, arg_21_1)
+	local function var_21_0(arg_22_0, arg_22_1)
+		local var_22_0 = arg_22_0.transform.localPosition
+		local var_22_1 = math.random(5, 8)
+		local var_22_2 = math.random(0, 5)
+
+		LeanTween.value(arg_22_0, var_22_0.x, 80, var_22_1):setOnUpdate(System.Action_float(function(arg_23_0)
+			arg_22_0.transform.localPosition = Vector3(arg_23_0, var_22_0.y, var_22_0.z)
+		end)):setOnComplete(System.Action(arg_22_1)):setDelay(var_22_2)
+	end
+
+	local var_21_1 = {}
+
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.otherShipGos) do
+		table.insert(var_21_1, function(arg_24_0)
+			var_21_0(iter_21_1, arg_24_0)
+		end)
+	end
+
+	parallelAsync(var_21_1, arg_21_1)
+end
+
+function var_0_0.PlayOtherShipAnim(arg_25_0, arg_25_1, arg_25_2)
+	if not arg_25_0.loaded then
 		return
 	end
 
-	slot0.otherShipGos = {}
-	slot3 = ys.Battle.BattleResourceManager.GetInstance()
+	arg_25_0.otherShipGos = {}
 
-	slot3:Init()
-	slot3:AddPreloadResource(slot3.GetDisplayCommonResource())
+	local var_25_0 = ys.Battle.BattleResourceManager.GetInstance()
 
-	function slot4(slot0, slot1, slot2)
-		slot4 = pg.ship_data_statistics[slot0.id].scale / 50
-		slot2.transform.localScale = Vector3(slot4 - 0.4, slot4, slot4)
-		slot2.transform.localPosition = Vector3(-20, 0, slot1)
-		slot2.transform.localEulerAngles = Vector3(30, 0, 0)
+	var_25_0:Init()
+	var_25_0:AddPreloadResource(var_25_0.GetDisplayCommonResource())
 
-		slot2.transform:GetComponent("SpineAnim"):SetAction(ys.Battle.BattleConst.ActionName.MOVE, 0, true)
+	local function var_25_1(arg_26_0, arg_26_1, arg_26_2)
+		local var_26_0 = pg.ship_data_statistics[arg_26_0.id].scale / 50
 
-		slot6 = cloneTplTo(uv0.nameTF, slot2)
-		slot6.localPosition = Vector3(0, -0.35, -1)
+		arg_26_2.transform.localScale = Vector3(var_26_0 - 0.4, var_26_0, var_26_0)
+		arg_26_2.transform.localPosition = Vector3(-20, 0, arg_26_1)
+		arg_26_2.transform.localEulerAngles = Vector3(30, 0, 0)
 
-		setText(slot6:Find("Text"), slot0.name)
+		arg_26_2.transform:GetComponent("SpineAnim"):SetAction(ys.Battle.BattleConst.ActionName.MOVE, 0, true)
 
-		slot8 = uv1(pg.ship_skin_template[slot0.skin].fx_container)
+		local var_26_1 = cloneTplTo(arg_25_0.nameTF, arg_26_2)
 
-		slot8:SetGo(slot2)
-		pg.EffectMgr.GetInstance():PlayBattleEffect(ys.Battle.BattleFXPool.GetInstance():GetCharacterFX("movewave", slot8), Vector3(0, 0, 0), true)
-		table.insert(uv0.otherShipGos, slot2)
+		var_26_1.localPosition = Vector3(0, -0.35, -1)
+
+		setText(var_26_1:Find("Text"), arg_26_0.name)
+
+		local var_26_2 = pg.ship_skin_template[arg_26_0.skin]
+		local var_26_3 = var_0_5(var_26_2.fx_container)
+
+		var_26_3:SetGo(arg_26_2)
+
+		local var_26_4 = ys.Battle.BattleFXPool.GetInstance():GetCharacterFX("movewave", var_26_3)
+
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_26_4, Vector3(0, 0, 0), true)
+		table.insert(arg_25_0.otherShipGos, arg_26_2)
 	end
 
-	slot5 = {}
-	slot6 = {
+	local var_25_2 = {}
+	local var_25_3 = {
 		math.random(43, 48),
 		math.random(49, 53)
 	}
 
-	for slot10, slot11 in ipairs(slot1) do
-		slot3:AddPreloadResource(slot3.GetShipResource(slot11.id, slot11.skin), false)
-		table.insert(slot5, function (slot0)
-			slot1 = pg.ship_skin_template[uv0.skin]
+	for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
+		var_25_0:AddPreloadResource(var_25_0.GetShipResource(iter_25_1.id, iter_25_1.skin), false)
+		table.insert(var_25_2, function(arg_27_0)
+			local var_27_0 = pg.ship_skin_template[iter_25_1.skin]
 
-			assert(slot1, uv0.skin)
-
-			slot2 = uv1
-
-			slot2:InstCharacter(slot1.prefab, function (slot0)
-				uv0(uv1, uv2[uv3], slot0)
-				uv4()
+			assert(var_27_0, iter_25_1.skin)
+			var_25_0:InstCharacter(var_27_0.prefab, function(arg_28_0)
+				var_25_1(iter_25_1, var_25_3[iter_25_0], arg_28_0)
+				arg_27_0()
 			end)
 		end)
 	end
 
-	function slot7()
-		for slot3, slot4 in ipairs(uv0.otherShipGos) do
-			Destroy(slot4)
+	local function var_25_4()
+		for iter_29_0, iter_29_1 in ipairs(arg_25_0.otherShipGos) do
+			Destroy(iter_29_1)
 		end
 
-		uv0.otherShipGos = nil
+		arg_25_0.otherShipGos = nil
 
-		uv1()
+		arg_25_2()
 	end
 
-	slot3:StartPreload(function ()
-		seriesAsync(uv0, function ()
-			uv0:StartMoveOtherShips(uv1)
+	local function var_25_5()
+		seriesAsync(var_25_2, function()
+			arg_25_0:StartMoveOtherShips(var_25_4)
 		end)
-	end, nil)
+	end
+
+	var_25_0:StartPreload(var_25_5, nil)
 end
 
-function slot0.PlayAttackAnim(slot0)
-	slot0.isFinish = nil
+function var_0_0.PlayAttackAnim(arg_32_0)
+	arg_32_0.isFinish = nil
 
-	function slot1()
-		if not uv0.animTimer then
+	local function var_32_0()
+		if not arg_32_0.animTimer then
 			return
 		end
 
-		uv0.animTimer:Stop()
+		arg_32_0.animTimer:Stop()
 
-		uv0.animTimer = nil
+		arg_32_0.animTimer = nil
+	end
+
+	local function var_32_1(arg_34_0)
+		var_32_0()
+		arg_32_0.seaEmenyAnimator:SetAction("move", 0, true)
+
+		local var_34_0
+
+		var_34_0.localPosition, var_34_0 = var_0_1 + Vector3(40, 0, 0), arg_32_0.seaEmeny.transform
+
+		setActive(arg_32_0.seaEmeny, true)
+
+		arg_32_0.animTimer = Timer.New(function()
+			var_34_0.localPosition = Vector3.Lerp(var_34_0.localPosition, var_0_1, Time.deltaTime * 3)
+
+			if Vector3.Distance(var_0_1, var_34_0.localPosition) <= 1 then
+				arg_34_0()
+			end
+		end, 0.033, -1)
+
+		arg_32_0.animTimer:Start()
+	end
+
+	local function var_32_2(arg_36_0)
+		var_32_0()
+
+		if arg_32_0.shipVO:getShipType() ~= ShipType.WeiXiu then
+			arg_32_0:SeaFire()
+		end
+
+		arg_32_0.animTimer = Timer.New(arg_36_0, 3, 1)
+
+		arg_32_0.animTimer:Start()
+	end
+
+	local function var_32_3(arg_37_0)
+		var_32_0()
+
+		if not arg_32_0.isFinish then
+			arg_32_0:HandleBulletHit(nil, arg_32_0.unitList[1])
+		end
+
+		arg_32_0.seaAnimator:SetActionCallBack(function(arg_38_0)
+			if arg_38_0 == "finish" then
+				arg_32_0.seaAnimator:SetAction("move", 0, true)
+				arg_32_0.seaAnimator:SetActionCallBack(nil)
+				arg_37_0()
+			end
+		end)
+		arg_32_0.seaAnimator:SetAction("victory", 0, true)
 	end
 
 	seriesAsync({
-		function (slot0)
-			uv0()
-			uv1.seaEmenyAnimator:SetAction("move", 0, true)
-
-			uv1.seaEmeny.transform.localPosition = uv2 + Vector3(40, 0, 0)
-
-			setActive(uv1.seaEmeny, true)
-
-			uv1.animTimer = Timer.New(function ()
-				uv0.localPosition = Vector3.Lerp(uv0.localPosition, uv1, Time.deltaTime * 3)
-
-				if Vector3.Distance(uv1, uv0.localPosition) <= 1 then
-					uv2()
-				end
-			end, 0.033, -1)
-
-			uv1.animTimer:Start()
-		end,
-		function (slot0)
-			uv0()
-
-			if uv1.shipVO:getShipType() ~= ShipType.WeiXiu then
-				uv1:SeaFire()
-			end
-
-			uv1.animTimer = Timer.New(slot0, 3, 1)
-
-			uv1.animTimer:Start()
-		end,
-		function (slot0)
-			uv0()
-
-			if not uv1.isFinish then
-				uv1:HandleBulletHit(nil, uv1.unitList[1])
-			end
-
-			uv1.seaAnimator:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0.seaAnimator:SetAction("move", 0, true)
-					uv0.seaAnimator:SetActionCallBack(nil)
-					uv1()
-				end
-			end)
-			uv1.seaAnimator:SetAction("victory", 0, true)
-		end
+		var_32_1,
+		var_32_2,
+		var_32_3
 	})
 end
 
-function slot0.PlayItemAnim(slot0)
-	(function ()
-		if not uv0.animTimer then
+function var_0_0.PlayItemAnim(arg_39_0)
+	local function var_39_0()
+		if not arg_39_0.animTimer then
 			return
 		end
 
-		uv0.animTimer:Stop()
+		arg_39_0.animTimer:Stop()
 
-		uv0.animTimer = nil
-	end)()
+		arg_39_0.animTimer = nil
+	end
+
+	var_39_0()
+
+	local function var_39_1(arg_41_0)
+		arg_39_0.seaItemBoxAnimator:SetAction("move", 0, true)
+		setActive(arg_39_0.seaItemBox, true)
+
+		local var_41_0 = arg_39_0.seaItemBox.transform
+
+		var_41_0.localPosition = var_0_4
+		arg_39_0.animTimer = Timer.New(function()
+			var_41_0.localPosition = Vector3.Lerp(var_41_0.localPosition, var_0_1, Time.deltaTime * 3)
+
+			if Vector3.Distance(var_0_1, var_41_0.localPosition) <= 1 then
+				arg_41_0()
+			end
+		end, 0.033, -1)
+
+		arg_39_0.animTimer:Start()
+	end
+
+	local function var_39_2(arg_43_0)
+		var_39_0()
+		arg_39_0.seaAnimator:SetActionCallBack(function(arg_44_0)
+			if arg_44_0 == "finish" then
+				arg_39_0.seaAnimator:SetAction("move", 0, true)
+				arg_39_0.seaAnimator:SetActionCallBack(nil)
+				arg_43_0()
+			end
+		end)
+		arg_39_0.seaAnimator:SetAction("victory", 0, true)
+	end
+
 	seriesAsync({
-		function (slot0)
-			uv0.seaItemBoxAnimator:SetAction("move", 0, true)
-			setActive(uv0.seaItemBox, true)
-
-			uv0.seaItemBox.transform.localPosition = uv1
-			uv0.animTimer = Timer.New(function ()
-				uv0.localPosition = Vector3.Lerp(uv0.localPosition, uv1, Time.deltaTime * 3)
-
-				if Vector3.Distance(uv1, uv0.localPosition) <= 1 then
-					uv2()
-				end
-			end, 0.033, -1)
-
-			uv0.animTimer:Start()
-		end,
-		function (slot0)
-			uv0()
-			uv1.seaAnimator:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0.seaAnimator:SetAction("move", 0, true)
-					uv0.seaAnimator:SetActionCallBack(nil)
-					uv1()
-				end
-			end)
-			uv1.seaAnimator:SetAction("victory", 0, true)
-		end
+		var_39_1,
+		var_39_2
 	})
 end
 
-function slot0.CreateMonster(slot0, slot1)
-	slot2 = 1
-	slot3 = ys.Battle.BattleDataFunction.CreateBattleUnitData(slot2, ys.Battle.BattleConst.UnitType.ENEMY_UNIT, -1, uv0, nil, {}, nil, , false, 1, 1, nil, , 1)
+function var_0_0.CreateMonster(arg_45_0, arg_45_1)
+	local var_45_0 = 1
+	local var_45_1 = ys.Battle.BattleDataFunction.CreateBattleUnitData(var_45_0, ys.Battle.BattleConst.UnitType.ENEMY_UNIT, -1, var_0_2, nil, {}, nil, nil, false, 1, 1, nil, nil, 1)
 
-	slot3:SetPosition(uv1)
-	slot3:ActiveCldBox()
+	var_45_1:SetPosition(var_0_1)
+	var_45_1:ActiveCldBox()
+	arg_45_0._cldSystem:InitShipCld(var_45_1)
 
-	slot4 = slot0._cldSystem
+	local var_45_2 = var_0_5(var_45_1:GetTemplate().fx_container)
 
-	slot4:InitShipCld(slot3)
+	ys.Battle.BattleResourceManager.GetInstance():InstCharacter(var_45_1:GetTemplate().prefab, function(arg_46_0)
+		var_45_2:SetGo(arg_46_0)
 
-	slot4 = uv2(slot3:GetTemplate().fx_container)
-	slot5 = ys.Battle.BattleResourceManager.GetInstance()
+		local var_46_0 = var_45_1:GetTemplate().scale / 50
 
-	slot5:InstCharacter(slot3:GetTemplate().prefab, function (slot0)
-		uv0:SetGo(slot0)
+		arg_46_0.transform.localScale = Vector3(var_46_0, var_46_0, var_46_0)
+		arg_46_0.transform.localPosition = var_0_1
+		arg_46_0.transform.localEulerAngles = Vector3(30, 0, 0)
 
-		slot1 = uv1:GetTemplate().scale / 50
-		slot0.transform.localScale = Vector3(slot1, slot1, slot1)
-		slot0.transform.localPosition = uv2
-		slot0.transform.localEulerAngles = Vector3(30, 0, 0)
+		local var_46_1 = var_45_1:GetTemplate().wave_fx
+		local var_46_2 = ys.Battle.BattleFXPool.GetInstance():GetCharacterFX(var_46_1, var_45_2)
 
-		pg.EffectMgr.GetInstance():PlayBattleEffect(ys.Battle.BattleFXPool.GetInstance():GetCharacterFX(uv1:GetTemplate().wave_fx, uv0), Vector3(0, 0, 0), true)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_46_2, Vector3(0, 0, 0), true)
 
-		uv3.seaEmeny = slot0
-		uv3.seaEmenyAnimator = slot0.transform:GetComponent("SpineAnim")
+		arg_45_0.seaEmeny = arg_46_0
+		arg_45_0.seaEmenyAnimator = arg_46_0.transform:GetComponent("SpineAnim")
 
-		setActive(slot0, false)
-		uv4()
+		setActive(arg_46_0, false)
+		arg_45_1()
 	end)
 
-	slot0.unitList[slot2] = slot3
+	arg_45_0.unitList[var_45_0] = var_45_1
 end
 
-function slot0.CreateItemBox(slot0, slot1)
-	slot3 = ys.Battle.BattleResourceManager.GetInstance()
+function var_0_0.CreateItemBox(arg_47_0, arg_47_1)
+	local var_47_0 = pg.enemy_data_statistics[var_0_3]
 
-	slot3:InstCharacter(pg.enemy_data_statistics[uv0].prefab, function (slot0)
-		slot1 = uv0.scale / 50
-		slot0.transform.localScale = Vector3(slot1, slot1, slot1)
-		slot0.transform.localPosition = uv1
-		slot0.transform.localEulerAngles = Vector3(30, 0, 0)
-		uv2.seaItemBox = slot0
-		uv2.seaItemBoxAnimator = slot0.transform:GetComponent("SpineAnim")
+	ys.Battle.BattleResourceManager.GetInstance():InstCharacter(var_47_0.prefab, function(arg_48_0)
+		local var_48_0 = var_47_0.scale / 50
 
-		setActive(slot0, false)
-		uv3()
+		arg_48_0.transform.localScale = Vector3(var_48_0, var_48_0, var_48_0)
+		arg_48_0.transform.localPosition = var_0_4
+		arg_48_0.transform.localEulerAngles = Vector3(30, 0, 0)
+		arg_47_0.seaItemBox = arg_48_0
+		arg_47_0.seaItemBoxAnimator = arg_48_0.transform:GetComponent("SpineAnim")
+
+		setActive(arg_48_0, false)
+		arg_47_1()
 	end)
 end
 
-function slot0.playShipAnims(slot0)
-	if slot0.loaded and slot0.seaAnimator then
-		slot1 = {
+function var_0_0.playShipAnims(arg_49_0)
+	if arg_49_0.loaded and arg_49_0.seaAnimator then
+		local var_49_0 = {
 			"attack",
 			"victory",
 			"dead"
 		}
 
-		function slot2(slot0)
-			if uv0.seaAnimator then
-				uv0.seaAnimator:SetActionCallBack(nil)
+		local function var_49_1(arg_50_0)
+			if arg_49_0.seaAnimator then
+				arg_49_0.seaAnimator:SetActionCallBack(nil)
 			end
 
-			slot1 = uv0.seaAnimator
-
-			slot1:SetAction(uv1[slot0], 0, false)
-
-			slot1 = uv0.seaAnimator
-
-			slot1:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0.seaAnimator:SetActionCallBack(nil)
-					uv0.seaAnimator:SetAction("stand", 0, false)
+			arg_49_0.seaAnimator:SetAction(var_49_0[arg_50_0], 0, false)
+			arg_49_0.seaAnimator:SetActionCallBack(function(arg_51_0)
+				if arg_51_0 == "finish" then
+					arg_49_0.seaAnimator:SetActionCallBack(nil)
+					arg_49_0.seaAnimator:SetAction("stand", 0, false)
 				end
 			end)
 		end
 
-		if slot0.palyAnimTimer then
-			slot0.palyAnimTimer:Stop()
+		if arg_49_0.palyAnimTimer then
+			arg_49_0.palyAnimTimer:Stop()
 
-			slot0.palyAnimTimer = nil
+			arg_49_0.palyAnimTimer = nil
 		end
 
-		slot0.palyAnimTimer = Timer.New(function ()
-			uv0(math.random(1, #uv1))
+		arg_49_0.palyAnimTimer = Timer.New(function()
+			var_49_1(math.random(1, #var_49_0))
 		end, 5, -1)
 
-		slot0.palyAnimTimer:Start()
-		slot0.palyAnimTimer.func()
+		arg_49_0.palyAnimTimer:Start()
+		arg_49_0.palyAnimTimer.func()
 	end
 end
 
-function slot0.onWeaponUpdate(slot0)
-	if slot0.loaded and slot0.weaponIds then
-		if slot0.seaAnimator then
-			slot0.seaAnimator:SetActionCallBack(nil)
+function var_0_0.onWeaponUpdate(arg_53_0)
+	if arg_53_0.loaded and arg_53_0.weaponIds then
+		if arg_53_0.seaAnimator then
+			arg_53_0.seaAnimator:SetActionCallBack(nil)
 		end
 
-		function slot1()
-			slot0 = pairs
-			slot1 = uv0.weaponList or {}
-
-			for slot3, slot4 in slot0(slot1) do
-				slot5 = pairs
-				slot6 = slot4.emitterList or {}
-
-				for slot8, slot9 in slot5(slot6) do
-					slot9:Destroy()
+		local function var_53_0()
+			for iter_54_0, iter_54_1 in pairs(arg_53_0.weaponList or {}) do
+				for iter_54_2, iter_54_3 in pairs(iter_54_1.emitterList or {}) do
+					iter_54_3:Destroy()
 				end
 			end
 
-			slot0 = ipairs
-			slot1 = uv0.bulletList or {}
-
-			for slot3, slot4 in slot0(slot1) do
-				Object.Destroy(slot4._go)
+			for iter_54_4, iter_54_5 in ipairs(arg_53_0.bulletList or {}) do
+				Object.Destroy(iter_54_5._go)
 			end
 
-			slot0 = pairs
-			slot1 = uv0.aircraftList or {}
-
-			for slot3, slot4 in slot0(slot1) do
-				Object.Destroy(slot4.obj)
+			for iter_54_6, iter_54_7 in pairs(arg_53_0.aircraftList or {}) do
+				Object.Destroy(iter_54_7.obj)
 			end
 
-			uv0.bulletList = {}
-			uv0.aircraftList = {}
+			arg_53_0.bulletList = {}
+			arg_53_0.aircraftList = {}
 		end
 
-		if #slot0.weaponIds == 0 and slot0.playRandomAnims then
-			if slot0._fireTimer then
-				slot0._fireTimer:Stop()
+		if #arg_53_0.weaponIds == 0 and arg_53_0.playRandomAnims then
+			if arg_53_0._fireTimer then
+				arg_53_0._fireTimer:Stop()
 			end
 
-			if slot0._delayTimer then
-				slot0._delayTimer:Stop()
+			if arg_53_0._delayTimer then
+				arg_53_0._delayTimer:Stop()
 			end
 
-			if slot0.shipVO:getShipType() ~= ShipType.WeiXiu then
-				slot1()
-			elseif slot0.buffTimer then
-				pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0.buffTimer)
+			if arg_53_0.shipVO:getShipType() ~= ShipType.WeiXiu then
+				var_53_0()
+			elseif arg_53_0.buffTimer then
+				pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_53_0.buffTimer)
 
-				slot0.buffTimer = nil
+				arg_53_0.buffTimer = nil
 			end
 
-			slot0:playShipAnims()
-		elseif slot0.shipVO:getShipType() ~= ShipType.WeiXiu then
-			slot1()
-			slot0:MakeWeapon(slot0.weaponIds)
-		elseif slot0.weaponIds[1] then
-			slot0:MakeBuff(Equipment.getConfigData(slot2).skill_id[1])
+			arg_53_0:playShipAnims()
+		elseif arg_53_0.shipVO:getShipType() ~= ShipType.WeiXiu then
+			var_53_0()
+			arg_53_0:MakeWeapon(arg_53_0.weaponIds)
+		else
+			local var_53_1 = arg_53_0.weaponIds[1]
+
+			if var_53_1 then
+				local var_53_2 = Equipment.getConfigData(var_53_1).skill_id[1]
+
+				arg_53_0:MakeBuff(var_53_2)
+			end
 		end
 	end
 end
 
-function slot0.SeaFire(slot0)
-	slot1 = 1
-	slot2 = nil
+function var_0_0.SeaFire(arg_55_0)
+	local var_55_0 = 1
+	local var_55_1
 
-	(function ()
-		if uv0.weaponList[uv1] then
-			function slot1()
-				slot0 = 1
-				slot1 = 0
+	local function var_55_2()
+		local var_56_0 = arg_55_0.weaponList[var_55_0]
 
-				for slot5, slot6 in ipairs(uv0.emitterList) do
-					slot6:Ready()
+		if var_56_0 then
+			local function var_56_1()
+				local var_57_0 = 1
+				local var_57_1 = 0
+
+				for iter_57_0, iter_57_1 in ipairs(var_56_0.emitterList) do
+					iter_57_1:Ready()
 				end
 
-				for slot5, slot6 in ipairs(uv0.emitterList) do
-					slot6:Fire(nil, slot0, slot1)
+				for iter_57_2, iter_57_3 in ipairs(var_56_0.emitterList) do
+					iter_57_3:Fire(nil, var_57_0, var_57_1)
 				end
 
-				uv1 = uv1 + 1
+				var_55_0 = var_55_0 + 1
 			end
 
-			if slot0.tmpData.action_index ~= "" then
-				uv0.characterAction = slot0.tmpData.action_index
-				slot2 = uv0.seaAnimator
+			if var_56_0.tmpData.action_index ~= "" then
+				arg_55_0.characterAction = var_56_0.tmpData.action_index
 
-				slot2:SetAction(uv0.characterAction, 0, false)
-
-				slot2 = uv0.seaAnimator
-
-				slot2:SetActionCallBack(function (slot0)
-					if slot0 == "action" then
-						uv0()
+				arg_55_0.seaAnimator:SetAction(arg_55_0.characterAction, 0, false)
+				arg_55_0.seaAnimator:SetActionCallBack(function(arg_58_0)
+					if arg_58_0 == "action" then
+						var_56_1()
 					end
 				end)
 			else
-				slot1()
+				var_56_1()
 			end
 
-			if slot0.tmpData.type == ys.Battle.BattleConst.EquipmentType.PREVIEW_ARICRAFT then
-				uv0.timer = Timer.New(uv2, 1.5, 1)
+			if var_56_0.tmpData.type == ys.Battle.BattleConst.EquipmentType.PREVIEW_ARICRAFT then
+				arg_55_0.timer = Timer.New(var_55_2, 1.5, 1)
 
-				uv0.timer:Start()
+				arg_55_0.timer:Start()
 			end
+		elseif arg_55_0.characterAction ~= ys.Battle.BattleConst.ActionName.MOVE then
+			arg_55_0.characterAction = ys.Battle.BattleConst.ActionName.MOVE
 
-			return
+			arg_55_0.seaAnimator:SetAction(arg_55_0.characterAction, 0, true)
+
+			var_55_0 = 1
 		end
-
-		if uv0.characterAction ~= ys.Battle.BattleConst.ActionName.MOVE then
-			uv0.characterAction = ys.Battle.BattleConst.ActionName.MOVE
-
-			uv0.seaAnimator:SetAction(uv0.characterAction, 0, true)
-
-			uv1 = 1
-		end
-	end)()
-end
-
-function slot0.MakeBuff(slot0, slot1)
-	slot2 = getSkillConfig(slot1)
-	slot4 = slot2.effect_list[1].arg_list.time
-	slot5 = require("GameCfg.skill.skill_" .. slot2.effect_list[1].arg_list.skill_id)
-
-	if slot0.buffTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0.buffTimer)
-
-		slot0.buffTimer = nil
 	end
 
-	slot6 = pg.TimeMgr.GetInstance()
-	slot0.buffTimer = slot6:AddBattleTimer("buffTimer", -1, slot4, function ()
-		setActive(uv0.healTF, true)
-		setText(uv0.healTF:Find("text"), uv1.effect_list[1].arg_list.number)
+	var_55_2()
+end
+
+function var_0_0.MakeBuff(arg_59_0, arg_59_1)
+	local var_59_0 = getSkillConfig(arg_59_1)
+	local var_59_1 = var_59_0.effect_list[1].arg_list.skill_id
+	local var_59_2 = var_59_0.effect_list[1].arg_list.time
+	local var_59_3 = require("GameCfg.skill.skill_" .. var_59_1)
+
+	if arg_59_0.buffTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_59_0.buffTimer)
+
+		arg_59_0.buffTimer = nil
+	end
+
+	arg_59_0.buffTimer = pg.TimeMgr.GetInstance():AddBattleTimer("buffTimer", -1, var_59_2, function()
+		setActive(arg_59_0.healTF, true)
+		setText(arg_59_0.healTF:Find("text"), var_59_3.effect_list[1].arg_list.number)
 	end)
 end
 
-function slot0.MakeWeapon(slot0, slot1)
-	slot0.weaponList = {}
-	slot0.bulletList = {}
-	slot0.aircraftList = {}
-	slot2 = 0
-	slot3 = ys.Battle.BattleConst
+function var_0_0.MakeWeapon(arg_61_0, arg_61_1)
+	arg_61_0.weaponList = {}
+	arg_61_0.bulletList = {}
+	arg_61_0.aircraftList = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		for slot13, slot14 in ipairs(Equipment.getConfigData(slot8).weapon_id) do
-			if slot14 <= 0 then
+	local var_61_0 = 0
+	local var_61_1 = ys.Battle.BattleConst
+
+	for iter_61_0, iter_61_1 in ipairs(arg_61_1) do
+		local var_61_2 = Equipment.getConfigData(iter_61_1).weapon_id
+
+		for iter_61_2, iter_61_3 in ipairs(var_61_2) do
+			if iter_61_3 <= 0 then
 				break
 			end
 
-			slot2 = slot2 + 1
+			var_61_0 = var_61_0 + 1
 
-			if ys.Battle.BattleDataFunction.GetWeaponPropertyDataFromID(slot14).type == slot3.EquipmentType.MAIN_CANNON or slot15.type == slot3.EquipmentType.SUB_CANNON or slot15.type == slot3.EquipmentType.TORPEDO or slot15.type == slot3.EquipmentType.MANUAL_TORPEDO or slot15.type == slot3.EquipmentType.POINT_HIT_AND_LOCK then
-				if type(slot15.barrage_ID) == "table" then
-					slot0.weaponList[slot2] = {
-						tmpData = slot15,
+			local var_61_3 = ys.Battle.BattleDataFunction.GetWeaponPropertyDataFromID(iter_61_3)
+
+			if var_61_3.type == var_61_1.EquipmentType.MAIN_CANNON or var_61_3.type == var_61_1.EquipmentType.SUB_CANNON or var_61_3.type == var_61_1.EquipmentType.TORPEDO or var_61_3.type == var_61_1.EquipmentType.MANUAL_TORPEDO or var_61_3.type == var_61_1.EquipmentType.POINT_HIT_AND_LOCK then
+				if type(var_61_3.barrage_ID) == "table" then
+					arg_61_0.weaponList[var_61_0] = {
+						tmpData = var_61_3,
 						emitterList = {}
 					}
 
-					for slot19, slot20 in ipairs(slot15.barrage_ID) do
-						slot0.weaponList[slot2].emitterList[slot19] = slot0:createEmitterCannon(slot20, slot15.bullet_ID[slot19], slot15.spawn_bound)
+					for iter_61_4, iter_61_5 in ipairs(var_61_3.barrage_ID) do
+						local var_61_4 = arg_61_0:createEmitterCannon(iter_61_5, var_61_3.bullet_ID[iter_61_4], var_61_3.spawn_bound)
+
+						arg_61_0.weaponList[var_61_0].emitterList[iter_61_4] = var_61_4
 					end
 				end
-			elseif slot15.type == slot3.EquipmentType.PREVIEW_ARICRAFT and type(slot15.barrage_ID) == "table" then
-				slot0.weaponList[slot2] = {
-					tmpData = slot15,
+			elseif var_61_3.type == var_61_1.EquipmentType.PREVIEW_ARICRAFT and type(var_61_3.barrage_ID) == "table" then
+				arg_61_0.weaponList[var_61_0] = {
+					tmpData = var_61_3,
 					emitterList = {}
 				}
 
-				for slot19, slot20 in ipairs(slot15.barrage_ID) do
-					slot0.weaponList[slot2].emitterList[slot19] = slot0:createEmitterAir(slot20, slot15.bullet_ID[slot19], slot15.spawn_bound)
+				for iter_61_6, iter_61_7 in ipairs(var_61_3.barrage_ID) do
+					local var_61_5 = arg_61_0:createEmitterAir(iter_61_7, var_61_3.bullet_ID[iter_61_6], var_61_3.spawn_bound)
+
+					arg_61_0.weaponList[var_61_0].emitterList[iter_61_6] = var_61_5
 				end
 			end
 		end
 	end
 end
 
-function slot0.createEmitterCannon(slot0, slot1, slot2, slot3)
-	return ys.Battle.BattleBulletEmitter.New(function (slot0, slot1, slot2, slot3, slot4)
-		slot5 = ys.Battle.BattlePlayerUnit.New(1, ys.Battle.BattleConfig.FRIENDLY_CODE)
-
-		slot5:SetSkinId(uv0.shipVO.skinId)
-		slot5:SetTemplate(uv0.shipVO.configId, {
+function var_0_0.createEmitterCannon(arg_62_0, arg_62_1, arg_62_2, arg_62_3)
+	local function var_62_0(arg_63_0, arg_63_1, arg_63_2, arg_63_3, arg_63_4)
+		local var_63_0 = ys.Battle.BattlePlayerUnit.New(1, ys.Battle.BattleConfig.FRIENDLY_CODE)
+		local var_63_1 = {
 			speed = 0
-		})
+		}
 
-		slot9, slot10 = ys.Battle.BattleDataFunction.CreateBattleBulletData(uv1, uv1, slot5, nil, uv0:GetCharacterOffset() + Vector3(40, 0, 0))
+		var_63_0:SetSkinId(arg_62_0.shipVO.skinId)
+		var_63_0:SetTemplate(arg_62_0.shipVO.configId, var_63_1)
 
-		if slot10 then
-			uv0._cldSystem:InitBulletCld(slot9)
+		local var_63_2
+		local var_63_3 = arg_62_0:GetCharacterOffset()
+		local var_63_4, var_63_5 = ys.Battle.BattleDataFunction.CreateBattleBulletData(arg_62_2, arg_62_2, var_63_0, var_63_2, var_63_3 + Vector3(40, 0, 0))
+
+		if var_63_5 then
+			arg_62_0._cldSystem:InitBulletCld(var_63_4)
 		end
 
-		slot9:SetOffsetPriority(slot3)
-		slot9:SetShiftInfo(slot0, slot1)
-		slot9:SetRotateInfo(nil, 0, slot2)
+		var_63_4:SetOffsetPriority(arg_63_3)
+		var_63_4:SetShiftInfo(arg_63_0, arg_63_1)
+		var_63_4:SetRotateInfo(nil, 0, arg_63_2)
 
-		if uv0.equipSkinId > 0 then
-			slot11 = pg.equip_skin_template[uv0.equipSkinId]
-			slot12, slot13, slot14, slot15 = ys.Battle.BattleDataFunction.GetEquipSkin(uv0.equipSkinId)
-			slot18 = nil
+		if arg_62_0.equipSkinId > 0 then
+			local var_63_6 = pg.equip_skin_template[arg_62_0.equipSkinId]
+			local var_63_7, var_63_8, var_63_9, var_63_10 = ys.Battle.BattleDataFunction.GetEquipSkin(arg_62_0.equipSkinId)
+			local var_63_11 = var_63_4:GetType()
+			local var_63_12 = ys.Battle.BattleConst.BulletType
+			local var_63_13
 
-			if slot9:GetType() == ys.Battle.BattleConst.BulletType.CANNON or slot16 == slot17.BOMB then
-				if _.any({
+			if var_63_11 == var_63_12.CANNON or var_63_11 == var_63_12.BOMB then
+				local var_63_14 = {
 					EquipType.CannonQuZhu,
 					EquipType.CannonQingXun,
 					EquipType.CannonZhongXun,
 					EquipType.CannonZhanlie,
 					EquipType.CannonZhongXun2
-				}, function (slot0)
-					return table.contains(uv0.equip_type, slot0)
+				}
+
+				if _.any(var_63_14, function(arg_64_0)
+					return table.contains(var_63_6.equip_type, arg_64_0)
 				end) then
-					slot9:SetModleID(slot12)
-				elseif slot13 and #slot13 > 0 then
-					slot9:SetModleID(slot13)
-				elseif slot15 and #slot15 > 0 then
-					slot9:SetModleID(slot15)
+					var_63_4:SetModleID(var_63_7)
+				elseif var_63_8 and #var_63_8 > 0 then
+					var_63_4:SetModleID(var_63_8)
+				elseif var_63_10 and #var_63_10 > 0 then
+					var_63_4:SetModleID(var_63_10)
 				end
-			elseif slot16 == slot17.TORPEDO then
-				if table.contains(slot11.equip_type, EquipType.Torpedo) then
-					slot9:SetModleID(slot12)
-				elseif slot14 and #slot14 > 0 then
-					slot9:SetModleID(slot14)
+			elseif var_63_11 == var_63_12.TORPEDO then
+				if table.contains(var_63_6.equip_type, EquipType.Torpedo) then
+					var_63_4:SetModleID(var_63_7)
+				elseif var_63_9 and #var_63_9 > 0 then
+					var_63_4:SetModleID(var_63_9)
 				end
 			end
 		end
 
-		slot13 = nil
-		slot13 = (slot9:GetType() ~= ys.Battle.BattleConst.BulletType.CANNON or ys.Battle.BattleCannonBullet.New()) and (slot11 ~= slot12.BOMB or ys.Battle.BattleBombBullet.New()) and (slot11 ~= slot12.TORPEDO or ys.Battle.BattleTorpedoBullet.New()) and ys.Battle.BattleBullet.New()
+		local var_63_15 = var_63_4:GetType()
+		local var_63_16 = ys.Battle.BattleConst.BulletType
+		local var_63_17
 
-		slot13:SetBulletData(slot9)
-		table.insert(uv0.bulletUnitList, slot9)
+		if var_63_15 == var_63_16.CANNON then
+			var_63_17 = ys.Battle.BattleCannonBullet.New()
+		elseif var_63_15 == var_63_16.BOMB then
+			var_63_17 = ys.Battle.BattleBombBullet.New()
+		elseif var_63_15 == var_63_16.TORPEDO then
+			var_63_17 = ys.Battle.BattleTorpedoBullet.New()
+		else
+			var_63_17 = ys.Battle.BattleBullet.New()
+		end
 
-		function slot14(slot0)
-			uv0:SetGO(slot0)
-			uv0:AddRotateScript()
+		var_63_17:SetBulletData(var_63_4)
+		table.insert(arg_62_0.bulletUnitList, var_63_4)
 
-			if tf(slot0).parent then
-				tf(slot0).parent = nil
+		local function var_63_18(arg_65_0)
+			var_63_17:SetGO(arg_65_0)
+			var_63_17:AddRotateScript()
+
+			if tf(arg_65_0).parent then
+				tf(arg_65_0).parent = nil
 			end
 
-			uv0:SetSpawn(uv1:GetCharacterOffset() + (uv1.boneList[uv2] or Vector3.zero))
+			local var_65_0 = arg_62_0.boneList[arg_62_3] or Vector3.zero
+			local var_65_1 = arg_62_0:GetCharacterOffset()
 
-			if uv1.bulletList then
-				table.insert(uv1.bulletList, uv0)
+			var_63_17:SetSpawn(var_65_1 + var_65_0)
+
+			if arg_62_0.bulletList then
+				table.insert(arg_62_0.bulletList, var_63_17)
 			end
 		end
 
-		ys.Battle.BattleResourceManager.GetInstance():InstBullet(slot13:GetModleID(), function (slot0)
-			uv0(slot0)
+		ys.Battle.BattleResourceManager.GetInstance():InstBullet(var_63_17:GetModleID(), function(arg_66_0)
+			var_63_18(arg_66_0)
 		end)
-	end, function ()
-	end, slot1)
-end
-
-function slot0.createEmitterAir(slot0, slot1, slot2, slot3)
-	return ys.Battle.BattleBulletEmitter.New(function (slot0, slot1, slot2, slot3, slot4)
-		slot5 = {
-			id = uv0,
-			tmpData = slot6
-		}
-		slot6 = pg.aircraft_template[uv0]
-		slot7 = math.deg2Rad * slot2
-		slot8 = Vector3(math.cos(slot7), 0, math.sin(slot7))
-
-		function slot9(slot0)
-			slot1 = uv0:GetCharacterOffset()
-			slot2 = slot1 + Vector3(uv1.position_offset[1] + uv2, uv1.position_offset[2], uv1.position_offset[3] + uv3)
-			slot0.transform.localPosition = slot2
-			slot0.transform.localScale = Vector3(0.1, 0.1, 0.1)
-			uv4.obj = slot0
-			uv4.tf = slot0.transform
-			uv4.pos = slot2
-			uv4.baseVelocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(uv4.tmpData.speed)
-			uv4.speed = uv5 * uv4.baseVelocity
-			uv4.speedZ = (math.random() - 0.5) * 0.5
-			uv4.targetZ = slot1.z
-
-			if uv0.aircraftList then
-				table.insert(uv0.aircraftList, uv4)
-			end
-		end
-
-		slot10 = slot6.model_ID
-
-		if uv1.equipSkinId > 0 and table.contains(pg.equip_skin_template[uv1.equipSkinId].equip_type, ({
-			EquipType.FighterAircraft,
-			EquipType.TorpedoAircraft,
-			EquipType.BomberAircraft
-		})[slot6.type]) then
-			slot10 = ys.Battle.BattleDataFunction.GetEquipSkin(uv1.equipSkinId)
-		end
-
-		slot11 = ys.Battle.BattleResourceManager.GetInstance()
-
-		slot11:InstAirCharacter(slot10, function (slot0)
-			uv0(slot0)
-		end)
-	end, function ()
-	end, slot1)
-end
-
-function slot0.RemoveBullet(slot0, slot1, slot2)
-	table.remove(slot0.bulletUnitList, slot1)
-	Object.Destroy(slot0.bulletList[slot1]._go)
-	table.remove(slot0.bulletList, slot1)
-
-	if slot2 and slot3:GetMissFXID() and slot4 ~= "" then
-		slot5, slot6 = slot0.seaFXPool:GetFX(slot4)
-
-		pg.EffectMgr.GetInstance():PlayBattleEffect(slot5, slot3:GetPosition() + slot6, true)
 	end
-end
 
-function slot0.SeaUpdate(slot0)
-	if not slot0.bulletList then
+	local function var_62_1()
 		return
 	end
 
-	slot1 = 0
-	slot2 = -20
-	slot3 = 60
-	slot4 = 0
-	slot5 = 60
-	slot6 = ys.Battle.BattleConfig
-	slot7 = ys.Battle.BattleConst
-	slot9 = pg.TimeMgr.GetInstance()
+	local var_62_2 = "BattleBulletEmitter"
 
-	slot9:AddBattleTimer("barrageUpdateTimer", -1, 0.033, function ()
-		for slot3 = #uv0.bulletUnitList, 1, -1 do
-			uv0._cldSystem:UpdateBulletCld(uv0.bulletUnitList[slot3])
+	return (ys.Battle[var_62_2].New(var_62_0, var_62_1, arg_62_1))
+end
+
+function var_0_0.createEmitterAir(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
+	local function var_68_0(arg_69_0, arg_69_1, arg_69_2, arg_69_3, arg_69_4)
+		local var_69_0 = {
+			id = arg_68_2
+		}
+		local var_69_1 = pg.aircraft_template[arg_68_2]
+
+		var_69_0.tmpData = var_69_1
+
+		local var_69_2 = math.deg2Rad * arg_69_2
+		local var_69_3 = Vector3(math.cos(var_69_2), 0, math.sin(var_69_2))
+
+		local function var_69_4(arg_70_0)
+			local var_70_0 = arg_68_0:GetCharacterOffset()
+			local var_70_1 = var_70_0 + Vector3(var_69_1.position_offset[1] + arg_69_0, var_69_1.position_offset[2], var_69_1.position_offset[3] + arg_69_1)
+
+			arg_70_0.transform.localPosition = var_70_1
+			arg_70_0.transform.localScale = Vector3(0.1, 0.1, 0.1)
+			var_69_0.obj = arg_70_0
+			var_69_0.tf = arg_70_0.transform
+			var_69_0.pos = var_70_1
+			var_69_0.baseVelocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(var_69_0.tmpData.speed)
+			var_69_0.speed = var_69_3 * var_69_0.baseVelocity
+			var_69_0.speedZ = (math.random() - 0.5) * 0.5
+			var_69_0.targetZ = var_70_0.z
+
+			if arg_68_0.aircraftList then
+				table.insert(arg_68_0.aircraftList, var_69_0)
+			end
 		end
 
-		for slot3 = #uv0.bulletList, 1, -1 do
-			slot4 = uv0.bulletList[slot3]
-			slot5 = slot4._bulletData:GetSpeed()()
+		local var_69_5 = var_69_1.model_ID
 
-			if uv1 < slot4:GetPosition().x and slot5.x > 0 or slot6.z < uv2 and slot5.z < 0 then
-				uv0:RemoveBullet(slot3, false)
-			elseif slot6.x < uv3 and slot5.x < 0 and slot4:GetType() ~= uv4.BulletType.BOMB then
-				uv0:RemoveBullet(slot3, false)
+		if arg_68_0.equipSkinId > 0 then
+			local var_69_6 = pg.equip_skin_template[arg_68_0.equipSkinId]
+			local var_69_7 = {
+				EquipType.FighterAircraft,
+				EquipType.TorpedoAircraft,
+				EquipType.BomberAircraft
+			}
+
+			if table.contains(var_69_6.equip_type, var_69_7[var_69_1.type]) then
+				var_69_5 = ys.Battle.BattleDataFunction.GetEquipSkin(arg_68_0.equipSkinId)
+			end
+		end
+
+		ys.Battle.BattleResourceManager.GetInstance():InstAirCharacter(var_69_5, function(arg_71_0)
+			var_69_4(arg_71_0)
+		end)
+	end
+
+	local function var_68_1()
+		return
+	end
+
+	local var_68_2 = "BattleBulletEmitter"
+
+	return (ys.Battle[var_68_2].New(var_68_0, var_68_1, arg_68_1))
+end
+
+function var_0_0.RemoveBullet(arg_73_0, arg_73_1, arg_73_2)
+	table.remove(arg_73_0.bulletUnitList, arg_73_1)
+
+	local var_73_0 = arg_73_0.bulletList[arg_73_1]
+
+	Object.Destroy(var_73_0._go)
+	table.remove(arg_73_0.bulletList, arg_73_1)
+
+	if arg_73_2 then
+		local var_73_1 = var_73_0:GetMissFXID()
+
+		if var_73_1 and var_73_1 ~= "" then
+			local var_73_2, var_73_3 = arg_73_0.seaFXPool:GetFX(var_73_1)
+
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var_73_2, var_73_0:GetPosition() + var_73_3, true)
+		end
+	end
+end
+
+function var_0_0.SeaUpdate(arg_74_0)
+	if not arg_74_0.bulletList then
+		return
+	end
+
+	local var_74_0 = 0
+	local var_74_1 = -20
+	local var_74_2 = 60
+	local var_74_3 = 0
+	local var_74_4 = 60
+	local var_74_5 = ys.Battle.BattleConfig
+	local var_74_6 = ys.Battle.BattleConst
+
+	local function var_74_7()
+		for iter_75_0 = #arg_74_0.bulletUnitList, 1, -1 do
+			local var_75_0 = arg_74_0.bulletUnitList[iter_75_0]
+
+			arg_74_0._cldSystem:UpdateBulletCld(var_75_0)
+		end
+
+		for iter_75_1 = #arg_74_0.bulletList, 1, -1 do
+			local var_75_1 = arg_74_0.bulletList[iter_75_1]
+			local var_75_2 = var_75_1._bulletData:GetSpeed()()
+			local var_75_3 = var_75_1:GetPosition()
+
+			if var_75_3.x > var_74_2 and var_75_2.x > 0 or var_75_3.z < var_74_3 and var_75_2.z < 0 then
+				arg_74_0:RemoveBullet(iter_75_1, false)
+			elseif var_75_3.x < var_74_1 and var_75_2.x < 0 and var_75_1:GetType() ~= var_74_6.BulletType.BOMB then
+				arg_74_0:RemoveBullet(iter_75_1, false)
 			else
-				slot4._bulletData:Update(pg.TimeMgr.GetInstance():GetCombatTime())
-				slot4:Update(uv5)
+				local var_75_4 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-				if uv6 < slot6.z and slot5.z > 0 or slot4._bulletData:IsOutRange(uv5) then
-					uv0:RemoveBullet(slot3, true)
+				var_75_1._bulletData:Update(var_75_4)
+				var_75_1:Update(var_74_0)
+
+				if var_75_3.z > var_74_4 and var_75_2.z > 0 or var_75_1._bulletData:IsOutRange(var_74_0) then
+					arg_74_0:RemoveBullet(iter_75_1, true)
 				end
 			end
 		end
 
-		for slot3, slot4 in ipairs(uv0.aircraftList) do
-			if (slot4.pos + slot4.speed).y < uv7.AircraftHeight + 5 then
-				slot4.speed.y = math.max(0.4, 1 - slot5.y / uv7.AircraftHeight)
-				slot6 = math.min(1, slot5.y / uv7.AircraftHeight)
-				slot4.tf.localScale = Vector3(slot6, slot6, slot6)
+		for iter_75_2, iter_75_3 in ipairs(arg_74_0.aircraftList) do
+			local var_75_5 = iter_75_3.pos + iter_75_3.speed
+
+			if var_75_5.y < var_74_5.AircraftHeight + 5 then
+				iter_75_3.speed.y = math.max(0.4, 1 - var_75_5.y / var_74_5.AircraftHeight)
+
+				local var_75_6 = math.min(1, var_75_5.y / var_74_5.AircraftHeight)
+
+				iter_75_3.tf.localScale = Vector3(var_75_6, var_75_6, var_75_6)
 			end
 
-			slot4.speed.z = slot4.baseVelocity * slot4.speedZ
+			iter_75_3.speed.z = iter_75_3.baseVelocity * iter_75_3.speedZ
 
-			if slot4.baseVelocity < slot4.targetZ - slot5.z then
-				slot4.speed.z = slot4.baseVelocity * 0.5
-			elseif slot6 < -slot4.baseVelocity then
-				slot4.speed.z = -slot4.baseVelocity * 0.5
+			local var_75_7 = iter_75_3.targetZ - var_75_5.z
+
+			if var_75_7 > iter_75_3.baseVelocity then
+				iter_75_3.speed.z = iter_75_3.baseVelocity * 0.5
+			elseif var_75_7 < -iter_75_3.baseVelocity then
+				iter_75_3.speed.z = -iter_75_3.baseVelocity * 0.5
 			else
-				slot7 = uv0:GetCharacterOffset()
-				slot4.targetZ = slot7.z + slot7.z * (math.random() - 0.5) * 0.6
+				local var_75_8 = arg_74_0:GetCharacterOffset()
+
+				iter_75_3.targetZ = var_75_8.z + var_75_8.z * (math.random() - 0.5) * 0.6
 			end
 
-			if uv1 < slot5.x or slot5.x < uv3 then
-				Object.Destroy(slot4.obj)
-				table.remove(uv0.aircraftList, slot3)
+			if var_75_5.x > var_74_2 or var_75_5.x < var_74_1 then
+				Object.Destroy(iter_75_3.obj)
+				table.remove(arg_74_0.aircraftList, iter_75_2)
 			else
-				slot4.tf.localPosition = slot5
-				slot4.pos = slot5
+				iter_75_3.tf.localPosition = var_75_5
+				iter_75_3.pos = var_75_5
 			end
 		end
 
-		uv5 = uv5 + 1
-	end)
+		var_74_0 = var_74_0 + 1
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var_74_7)
 end
 
-function slot0.GetCharacterOffset(slot0)
+function var_0_0.GetCharacterOffset(arg_76_0)
 	return Vector3(0, -3, 40)
 end
 
-function slot0.GetTotalBounds(slot0)
-	slot1 = {
+function var_0_0.GetTotalBounds(arg_77_0)
+	local var_77_0 = {
 		-70,
 		20,
 		90,
 		70
 	}
+	local var_77_1 = var_77_0[1]
+	local var_77_2 = var_77_0[1] + var_77_0[3]
+	local var_77_3 = var_77_0[2] + var_77_0[4]
+	local var_77_4 = var_77_0[2]
 
-	return slot1[2] + slot1[4], slot1[2], slot1[1], slot1[1] + slot1[3]
+	return var_77_3, var_77_4, var_77_1, var_77_2
 end
 
-function slot0.HandleShipCrashDecelerate(slot0)
+function var_0_0.HandleShipCrashDecelerate(arg_78_0)
+	return
 end
 
-function slot0.HandleShipCrashDecelerate(slot0)
+function var_0_0.HandleShipCrashDecelerate(arg_79_0)
+	return
 end
 
-function slot0.HandleShipCrashDamageList(slot0)
+function var_0_0.HandleShipCrashDamageList(arg_80_0)
+	return
 end
 
-function slot0.HandleBulletHit(slot0, slot1, slot2)
-	for slot6 = #slot0.bulletUnitList, 1, -1 do
-		if slot0.bulletUnitList[slot6] == slot1 then
-			slot0:RemoveBullet(slot6, true)
+function var_0_0.HandleBulletHit(arg_81_0, arg_81_1, arg_81_2)
+	for iter_81_0 = #arg_81_0.bulletUnitList, 1, -1 do
+		if arg_81_0.bulletUnitList[iter_81_0] == arg_81_1 then
+			arg_81_0:RemoveBullet(iter_81_0, true)
 		end
 	end
 
-	if not slot0.isFinish then
-		slot0.isFinish = true
+	if not arg_81_0.isFinish then
+		arg_81_0.isFinish = true
 
-		setActive(slot0.seaEmeny, false)
+		setActive(arg_81_0.seaEmeny, false)
 
-		slot3, slot4 = ys.Battle.BattleFXPool.GetInstance():GetFX("Bomb")
+		local var_81_0, var_81_1 = ys.Battle.BattleFXPool.GetInstance():GetFX("Bomb")
 
-		pg.EffectMgr.GetInstance():PlayBattleEffect(slot3, slot4:Add(slot2:GetPosition()), true)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_81_0, var_81_1:Add(arg_81_2:GetPosition()), true)
 	end
 end
 
-function slot0.HandleWallHitByBullet(slot0)
+function var_0_0.HandleWallHitByBullet(arg_82_0)
+	return
 end
 
-function slot0.GetUnitList(slot0)
-	return slot0.unitList
+function var_0_0.GetUnitList(arg_83_0)
+	return arg_83_0.unitList
 end
 
-function slot0.GetAircraftList(slot0)
+function var_0_0.GetAircraftList(arg_84_0)
 	return {}
 end
 
-function slot0.GetBulletList(slot0)
-	return slot0.bulletUnitList
+function var_0_0.GetBulletList(arg_85_0)
+	return arg_85_0.bulletUnitList
 end
 
-function slot0.GetAOEList(slot0)
+function var_0_0.GetAOEList(arg_86_0)
 	return {}
 end
 
-function slot0.GetFriendlyCode(slot0)
+function var_0_0.GetFriendlyCode(arg_87_0)
 	return 1
 end
 
-function slot0.GetFoeCode(slot0)
+function var_0_0.GetFoeCode(arg_88_0)
 	return -1
 end
 
-function slot0.clear(slot0)
-	if slot0.animTimer then
-		slot0.animTimer:Stop()
+function var_0_0.clear(arg_89_0)
+	if arg_89_0.animTimer then
+		arg_89_0.animTimer:Stop()
 
-		slot0.animTimer = nil
+		arg_89_0.animTimer = nil
 	end
 
-	if slot0._cldSystem then
-		slot0._cldSystem:Dispose()
+	if arg_89_0._cldSystem then
+		arg_89_0._cldSystem:Dispose()
 	end
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_89_0.timer then
+		arg_89_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_89_0.timer = nil
 	end
 
 	pg.TimeMgr.GetInstance():RemoveAllBattleTimer()
 
-	if slot0.seaCharacter then
-		Destroy(slot0.seaCharacter)
+	if arg_89_0.seaCharacter then
+		Destroy(arg_89_0.seaCharacter)
 
-		slot0.seaCharacter = nil
+		arg_89_0.seaCharacter = nil
 	end
 
-	if slot0.otherShipGos then
-		for slot4, slot5 in ipairs(slot0.otherShipGos) do
-			Destroy(slot5)
+	if arg_89_0.otherShipGos then
+		for iter_89_0, iter_89_1 in ipairs(arg_89_0.otherShipGos) do
+			Destroy(iter_89_1)
 		end
 
-		slot0.otherShipGos = nil
+		arg_89_0.otherShipGos = nil
 	end
 
-	if slot0.aircraftList then
-		for slot4, slot5 in ipairs(slot0.aircraftList) do
-			Destroy(slot5.obj)
+	if arg_89_0.aircraftList then
+		for iter_89_2, iter_89_3 in ipairs(arg_89_0.aircraftList) do
+			Destroy(iter_89_3.obj)
 		end
 
-		slot0.aircraftList = nil
+		arg_89_0.aircraftList = nil
 	end
 
-	if slot0.seaView then
-		slot0.seaView:Dispose()
+	if arg_89_0.seaView then
+		arg_89_0.seaView:Dispose()
 
-		slot0.seaView = nil
+		arg_89_0.seaView = nil
 	end
 
-	if slot0.weaponList then
-		for slot4, slot5 in ipairs(slot0.weaponList) do
-			for slot9, slot10 in ipairs(slot5.emitterList) do
-				slot10:Destroy()
+	if arg_89_0.weaponList then
+		for iter_89_4, iter_89_5 in ipairs(arg_89_0.weaponList) do
+			for iter_89_6, iter_89_7 in ipairs(iter_89_5.emitterList) do
+				iter_89_7:Destroy()
 			end
 		end
 
-		slot0.weaponList = nil
+		arg_89_0.weaponList = nil
 	end
 
-	if slot0.bulletList then
-		for slot4, slot5 in ipairs(slot0.bulletList) do
-			Destroy(slot5._go)
+	if arg_89_0.bulletList then
+		for iter_89_8, iter_89_9 in ipairs(arg_89_0.bulletList) do
+			Destroy(iter_89_9._go)
 		end
 
-		slot0.bulletList = nil
+		arg_89_0.bulletList = nil
 	end
 
-	if slot0.seaFXPool then
-		slot0.seaFXPool:Clear()
+	if arg_89_0.seaFXPool then
+		arg_89_0.seaFXPool:Clear()
 
-		slot0.seaFXPool = nil
+		arg_89_0.seaFXPool = nil
 	end
 
-	if slot0.seaEmeny then
-		Destroy(slot0.seaEmeny)
+	if arg_89_0.seaEmeny then
+		Destroy(arg_89_0.seaEmeny)
 
-		slot0.seaEmeny = nil
+		arg_89_0.seaEmeny = nil
 	end
 
-	if slot0.seaItemBox then
-		Destroy(slot0.seaItemBox)
+	if arg_89_0.seaItemBox then
+		Destroy(arg_89_0.seaItemBox)
 
-		slot0.seaItemBox = nil
+		arg_89_0.seaItemBox = nil
 	end
 
-	if slot0.seaFXContainersPool then
-		slot0.seaFXContainersPool:Clear()
+	if arg_89_0.seaFXContainersPool then
+		arg_89_0.seaFXContainersPool:Clear()
 
-		slot0.seaFXContainersPool = nil
+		arg_89_0.seaFXContainersPool = nil
 	end
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	slot0.seaCameraGO.tag = "Untagged"
-	slot0.seaCameraGO = nil
-	slot0.seaCamera = nil
+	arg_89_0.seaCameraGO.tag = "Untagged"
+	arg_89_0.seaCameraGO = nil
+	arg_89_0.seaCamera = nil
 
-	slot0.mainCameraGO:SetActive(true)
+	arg_89_0.mainCameraGO:SetActive(true)
 
-	slot0.mainCameraGO = nil
-	slot0.loaded = false
+	arg_89_0.mainCameraGO = nil
+	arg_89_0.loaded = false
 
-	if slot0.palyAnimTimer then
-		slot0.palyAnimTimer:Stop()
+	if arg_89_0.palyAnimTimer then
+		arg_89_0.palyAnimTimer:Stop()
 
-		slot0.palyAnimTimer = nil
+		arg_89_0.palyAnimTimer = nil
 	end
 end
 
-return slot0
+return var_0_0

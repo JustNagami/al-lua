@@ -1,200 +1,221 @@
-pg = pg or {}
-slot0 = pg
-slot0.SendWindow = class("SendWindow")
-slot1 = slot0.SendWindow
-slot2 = nil
+﻿pg = pg or {}
 
-function slot1.Ctor(slot0, slot1, slot2)
-	slot0.connectionMgr = slot1
-	slot0.packetIdx = defaultValue(slot2, 0)
-	slot0.isSending = false
-	slot0.toSends = {}
-	slot0.retryCount = 0
-	uv0 = {}
+local var_0_0 = pg
+
+var_0_0.SendWindow = class("SendWindow")
+
+local var_0_1 = var_0_0.SendWindow
+local var_0_2
+
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.connectionMgr = arg_1_1
+	arg_1_0.packetIdx = defaultValue(arg_1_2, 0)
+	arg_1_0.isSending = false
+	arg_1_0.toSends = {}
+	arg_1_0.retryCount = 0
+	var_0_2 = {}
 end
 
-function slot1.setPacketIdx(slot0, slot1)
-	slot0.packetIdx = slot1
+function var_0_1.setPacketIdx(arg_2_0, arg_2_1)
+	arg_2_0.packetIdx = arg_2_1
 end
 
-function slot1.getPacketIdx(slot0)
-	return slot0.packetIdx
+function var_0_1.getPacketIdx(arg_3_0)
+	return arg_3_0.packetIdx
 end
 
-function slot1.incPacketIdx(slot0)
-	slot0.packetIdx = slot0.packetIdx + 1
+function var_0_1.incPacketIdx(arg_4_0)
+	arg_4_0.packetIdx = arg_4_0.packetIdx + 1
 end
 
-function slot1.Queue(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	table.insert(slot0.toSends, {
-		slot1,
-		slot2,
-		slot3,
-		slot4 and function (slot0)
-			table.remove(uv0.toSends, 1)
-			uv1(slot0)
+function var_0_1.Queue(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5, arg_5_6, arg_5_7)
+	table.insert(arg_5_0.toSends, {
+		arg_5_1,
+		arg_5_2,
+		arg_5_3,
+		arg_5_4 and function(arg_6_0)
+			table.remove(arg_5_0.toSends, 1)
+			arg_5_4(arg_6_0)
 
-			if slot0 and slot0.result and slot0.result == 0 then
-				uv2.SeriesGuideMgr.GetInstance():receiceProtocol(uv3, uv4, slot0)
+			if arg_6_0 and arg_6_0.result and arg_6_0.result == 0 then
+				var_0_0.SeriesGuideMgr.GetInstance():receiceProtocol(arg_5_3, arg_5_2, arg_6_0)
 			end
 		end,
-		slot5,
-		slot6,
-		slot7
+		arg_5_5,
+		arg_5_6,
+		arg_5_7
 	})
 
-	if slot0.isSending then
+	if arg_5_0.isSending then
 		return
 	end
 
-	slot0:StartSend()
+	arg_5_0:StartSend()
 end
 
-function slot1.StartSend(slot0)
-	if #slot0.toSends > 0 then
-		slot0:Send(unpack(slot0.toSends[1]))
+function var_0_1.StartSend(arg_7_0)
+	if #arg_7_0.toSends > 0 then
+		arg_7_0:Send(unpack(arg_7_0.toSends[1]))
 	else
 		warning("No more packets to send.")
 	end
 end
 
-function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot0.isSending = true
-	slot0.currentCS = slot1
+function var_0_1.Send(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5, arg_8_6, arg_8_7)
+	arg_8_0.isSending = true
+	arg_8_0.currentCS = arg_8_1
 
-	if slot0.connectionMgr:isConnecting() then
-		slot0.connectionMgr.needStartSend = true
+	if arg_8_0.connectionMgr:isConnecting() then
+		arg_8_0.connectionMgr.needStartSend = true
 
 		return
 	end
 
-	if not slot0.connectionMgr:getConnection() then
-		slot0.connectionMgr.needStartSend = true
+	local var_8_0 = arg_8_0.connectionMgr:getConnection()
 
-		slot0.connectionMgr:Reconnect(function ()
+	if not var_8_0 then
+		arg_8_0.connectionMgr.needStartSend = true
+
+		arg_8_0.connectionMgr:Reconnect(function()
+			return
 		end)
 
 		return
 	end
 
-	slot5 = defaultValue(slot5, true)
-	slot6 = defaultValue(slot6, true)
-	slot7 = defaultValue(slot7, SEND_TIMEOUT)
-	slot9 = slot0:getPacketIdx()
+	arg_8_5 = defaultValue(arg_8_5, true)
+	arg_8_6 = defaultValue(arg_8_6, true)
+	arg_8_7 = defaultValue(arg_8_7, SEND_TIMEOUT)
 
-	if slot3 ~= nil then
-		uv0.UIMgr.GetInstance():LoadingOn()
+	local var_8_1 = arg_8_0:getPacketIdx()
 
-		slot10 = nil
+	if arg_8_3 ~= nil then
+		var_0_0.UIMgr.GetInstance():LoadingOn()
 
-		uv1[slot5 and slot3 .. "_" .. slot9 or slot3] = function (slot0)
-			uv0.isSending = false
+		local var_8_2
 
-			uv1.UIMgr.GetInstance():LoadingOff()
-			uv0.connectionMgr:resetHBTimer()
-
-			if uv0.timer then
-				uv0.timer:Stop()
-
-				uv0.timer = nil
-			end
-
-			uv2(slot0)
-
-			if uv3 and not uv0.isSending and #uv0.toSends > 0 then
-				uv0:StartSend()
-			end
+		if arg_8_5 then
+			var_8_2 = arg_8_3 .. "_" .. var_8_1
+		else
+			var_8_2 = arg_8_3
 		end
 
-		slot0.timer = Timer.New(function ()
-			uv0.UIMgr.GetInstance():LoadingOff()
+		var_0_2[var_8_2] = function(arg_10_0)
+			arg_8_0.isSending = false
 
-			uv1[uv2] = nil
+			var_0_0.UIMgr.GetInstance():LoadingOff()
+			arg_8_0.connectionMgr:resetHBTimer()
 
-			uv3:setPacketIdx(uv4)
+			if arg_8_0.timer then
+				arg_8_0.timer:Stop()
 
-			if uv3.retryCount > 3 then
-				uv3.connectionMgr.onDisconnected(false, DISCONNECT_TIME_OUT)
+				arg_8_0.timer = nil
+			end
 
-				uv3.retryCount = 0
+			arg_8_4(arg_10_0)
+
+			if arg_8_6 and not arg_8_0.isSending and #arg_8_0.toSends > 0 then
+				arg_8_0:StartSend()
+			end
+		end
+		arg_8_0.timer = Timer.New(function()
+			var_0_0.UIMgr.GetInstance():LoadingOff()
+
+			var_0_2[var_8_2] = nil
+
+			arg_8_0:setPacketIdx(var_8_1)
+
+			if arg_8_0.retryCount > 3 then
+				arg_8_0.connectionMgr.onDisconnected(false, DISCONNECT_TIME_OUT)
+
+				arg_8_0.retryCount = 0
 			end
 
 			if PLATFORM_CODE == PLATFORM_CHT then
-				uv3.connectionMgr.SwitchProxy()
+				arg_8_0.connectionMgr.SwitchProxy()
 			end
 
-			warning("Network is timedOut, resend: " .. uv4 .. ", protocal: " .. uv5)
+			warning("Network is timedOut, resend: " .. var_8_1 .. ", protocal: " .. arg_8_1)
 
-			uv3.retryCount = uv3.retryCount + 1
+			arg_8_0.retryCount = arg_8_0.retryCount + 1
 
-			uv3:StartSend()
-		end, slot7, 1)
+			arg_8_0:StartSend()
+		end, arg_8_7, 1)
 
-		slot0.timer:Start()
+		arg_8_0.timer:Start()
 	else
-		slot5 = false
+		arg_8_5 = false
 	end
 
-	slot10 = uv0.Packer.GetInstance():GetProtocolWithName("cs_" .. slot1)
+	local var_8_3 = var_0_0.Packer.GetInstance():GetProtocolWithName("cs_" .. arg_8_1)
 
-	(function (slot0, slot1)
-		for slot5, slot6 in pairs(slot1) do
-			assert(slot0[slot5] ~= nil, "key does not exist: " .. slot5)
+	local function var_8_4(arg_12_0, arg_12_1)
+		for iter_12_0, iter_12_1 in pairs(arg_12_1) do
+			assert(arg_12_0[iter_12_0] ~= nil, "key does not exist: " .. iter_12_0)
 
-			if type(slot6) == "table" then
-				for slot10, slot11 in ipairs(slot6) do
-					if slot0[slot5].add then
-						uv0(slot0[slot5]:add(), slot11)
+			if type(iter_12_1) == "table" then
+				for iter_12_2, iter_12_3 in ipairs(iter_12_1) do
+					if arg_12_0[iter_12_0].add then
+						var_8_4(arg_12_0[iter_12_0]:add(), iter_12_3)
 					else
-						slot0[slot5]:append(slot11)
+						arg_12_0[iter_12_0]:append(iter_12_3)
 					end
 				end
 			else
-				slot0[slot5] = slot6
+				arg_12_0[iter_12_0] = iter_12_1
 			end
 		end
-	end)(slot10:GetMessage(), slot2)
-
-	if slot5 then
-		slot8:Send(uv0.Packer.GetInstance():Pack(slot9, slot10:GetId(), slot12))
-		originalPrint("Network sent protocol: " .. slot1 .. " with idx: " .. slot9)
-		slot0:incPacketIdx()
-	else
-		slot8:Send(uv0.Packer.GetInstance():Pack(0, slot10:GetId(), slot12))
-		originalPrint("Network sent protocol: " .. slot1 .. " without idx")
 	end
 
-	if not slot3 then
-		table.remove(slot0.toSends, 1)
+	local var_8_5 = var_8_3:GetMessage()
 
-		if #slot0.toSends > 0 then
-			slot0:StartSend()
+	var_8_4(var_8_5, arg_8_2)
+
+	if arg_8_5 then
+		var_8_0:Send(var_0_0.Packer.GetInstance():Pack(var_8_1, var_8_3:GetId(), var_8_5))
+		originalPrint("Network sent protocol: " .. arg_8_1 .. " with idx: " .. var_8_1)
+		arg_8_0:incPacketIdx()
+	else
+		var_8_0:Send(var_0_0.Packer.GetInstance():Pack(0, var_8_3:GetId(), var_8_5))
+		originalPrint("Network sent protocol: " .. arg_8_1 .. " without idx")
+	end
+
+	if not arg_8_3 then
+		table.remove(arg_8_0.toSends, 1)
+
+		if #arg_8_0.toSends > 0 then
+			arg_8_0:StartSend()
 		else
-			slot0.isSending = false
+			arg_8_0.isSending = false
 		end
 	end
 end
 
-function slot1.stopTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_1.stopTimer(arg_13_0)
+	if arg_13_0.timer then
+		arg_13_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_13_0.timer = nil
 	end
 end
 
-function slot1.onData(slot0)
-	originalPrint("Network Receive idx: " .. slot0.idx .. " cmd: " .. slot0.cmd)
+function var_0_1.onData(arg_14_0)
+	originalPrint("Network Receive idx: " .. arg_14_0.idx .. " cmd: " .. arg_14_0.cmd)
 
-	slot1 = uv0.Packer.GetInstance():Unpack(slot0.cmd, slot0:getLuaStringBuffer())
+	local var_14_0 = var_0_0.Packer.GetInstance():Unpack(arg_14_0.cmd, arg_14_0:getLuaStringBuffer())
+	local var_14_1 = arg_14_0.cmd .. "_" .. arg_14_0.idx
 
-	if uv1[slot0.cmd .. "_" .. slot0.idx] then
-		uv1[slot2] = nil
+	if var_0_2[var_14_1] then
+		local var_14_2 = var_0_2[var_14_1]
 
-		uv1[slot2](slot1)
-	elseif uv1[slot0.cmd] then
-		uv1[slot0.cmd] = nil
+		var_0_2[var_14_1] = nil
 
-		uv1[slot0.cmd](slot1)
+		var_14_2(var_14_0)
+	elseif var_0_2[arg_14_0.cmd] then
+		local var_14_3 = var_0_2[arg_14_0.cmd]
+
+		var_0_2[arg_14_0.cmd] = nil
+
+		var_14_3(var_14_0)
 	end
 end

@@ -1,245 +1,252 @@
-slot1 = class("MapBuilderNormal", import(".MapBuilder"))
+﻿local var_0_0 = import(".MapBuilder")
+local var_0_1 = class("MapBuilderNormal", var_0_0)
 
-function slot1.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+function var_0_1.Ctor(arg_1_0, ...)
+	var_0_1.super.Ctor(arg_1_0, ...)
 
-	slot0.mapItemTimer = {}
-	slot0.chapterTFsById = {}
-	slot0.chaptersInBackAnimating = {}
+	arg_1_0.mapItemTimer = {}
+	arg_1_0.chapterTFsById = {}
+	arg_1_0.chaptersInBackAnimating = {}
 end
 
-function slot1.GetType(slot0)
-	return uv0.TYPENORMAL
+function var_0_1.GetType(arg_2_0)
+	return var_0_0.TYPENORMAL
 end
 
-function slot1.getUIName(slot0)
+function var_0_1.getUIName(arg_3_0)
 	return "levels"
 end
 
-function slot1.Load(slot0)
-	if slot0._state ~= uv0.STATES.NONE then
+function var_0_1.Load(arg_4_0)
+	if arg_4_0._state ~= var_0_1.STATES.NONE then
 		return
 	end
 
-	slot0._state = uv0.STATES.LOADING
-	slot1 = pg.UIMgr.GetInstance()
+	arg_4_0._state = var_0_1.STATES.LOADING
 
-	slot1:LoadingOn()
+	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync({
-		function (slot0)
-			uv0:preload(slot0)
+		function(arg_5_0)
+			arg_4_0:preload(arg_5_0)
 		end,
-		function (slot0)
-			uv0:Loaded(uv0.float:Find("levels").gameObject)
-			uv0:Init()
+		function(arg_6_0)
+			local var_6_0 = arg_4_0.float:Find("levels").gameObject
+
+			arg_4_0:Loaded(var_6_0)
+			arg_4_0:Init()
 		end
 	})
 end
 
-function slot1.Destroy(slot0)
-	if slot0._state == uv0.STATES.DESTROY then
+function var_0_1.Destroy(arg_7_0)
+	if arg_7_0._state == var_0_1.STATES.DESTROY then
 		return
 	end
 
-	if not slot0:GetLoaded() then
-		slot0._state = uv0.STATES.DESTROY
+	if not arg_7_0:GetLoaded() then
+		arg_7_0._state = var_0_1.STATES.DESTROY
 
 		return
 	end
 
-	slot0:Hide()
-	slot0:OnDestroy()
-	pg.DelegateInfo.Dispose(slot0)
+	arg_7_0:Hide()
+	arg_7_0:OnDestroy()
+	pg.DelegateInfo.Dispose(arg_7_0)
 
-	slot0._go = nil
+	arg_7_0._go = nil
 
-	slot0:disposeEvent()
-	slot0:cleanManagedTween()
+	arg_7_0:disposeEvent()
+	arg_7_0:cleanManagedTween()
 
-	slot0._state = uv0.STATES.DESTROY
+	arg_7_0._state = var_0_1.STATES.DESTROY
 end
 
-function slot1.OnInit(slot0)
-	slot0.chapterTpl = slot0._tf:Find("level_tpl")
+function var_0_1.OnInit(arg_8_0)
+	arg_8_0.chapterTpl = arg_8_0._tf:Find("level_tpl")
 
-	setActive(slot0.chapterTpl, false)
+	setActive(arg_8_0.chapterTpl, false)
 
-	slot0.storyTpl = slot0._tf:Find("story_tpl")
+	arg_8_0.storyTpl = arg_8_0._tf:Find("story_tpl")
 
-	setActive(slot0.storyTpl, false)
+	setActive(arg_8_0.storyTpl, false)
 
-	slot0.itemHolder = slot0._tf:Find("items")
-	slot0.storyHolder = slot0._tf:Find("stories")
+	arg_8_0.itemHolder = arg_8_0._tf:Find("items")
+	arg_8_0.storyHolder = arg_8_0._tf:Find("stories")
 end
 
-function slot1.OnShow(slot0)
-	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
-	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), true)
-	setActive(slot0.sceneParent.topChapter:Find("type_chapter"), true)
+function var_0_1.OnShow(arg_9_0)
+	setActive(arg_9_0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
+	setActive(arg_9_0.sceneParent.topChapter:Find("title_chapter"), true)
+	setActive(arg_9_0.sceneParent.topChapter:Find("type_chapter"), true)
 end
 
-function slot1.OnHide(slot0)
-	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
-	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), false)
+function var_0_1.OnHide(arg_10_0)
+	setActive(arg_10_0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
+	setActive(arg_10_0.sceneParent.topChapter:Find("title_chapter"), false)
+	setActive(arg_10_0.sceneParent.topChapter:Find("type_chapter"), false)
+	table.clear(arg_10_0.chaptersInBackAnimating)
+	arg_10_0:StopMapItemTimers()
 
-	slot4 = "type_chapter"
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.chapterTFsById) do
+		local var_10_0 = findTF(iter_10_1, "main/info/bk")
 
-	setActive(slot0.sceneParent.topChapter:Find(slot4), false)
-	table.clear(slot0.chaptersInBackAnimating)
-	slot0:StopMapItemTimers()
-
-	for slot4, slot5 in pairs(slot0.chapterTFsById) do
-		LeanTween.cancel(rtf(findTF(slot5, "main/info/bk")))
+		LeanTween.cancel(rtf(var_10_0))
 	end
 
-	uv0.super.OnHide(slot0)
+	var_0_1.super.OnHide(arg_10_0)
 end
 
-function slot1.OnDestroy(slot0)
-	slot0.mapItemTimer = nil
+function var_0_1.OnDestroy(arg_11_0)
+	arg_11_0.mapItemTimer = nil
 
-	uv0.super.OnDestroy(slot0)
+	var_0_1.super.OnDestroy(arg_11_0)
 end
 
-function slot1.StartTimer(slot0, slot1, slot2, slot3)
-	if not slot0.mapItemTimer[slot1] then
-		slot0.mapItemTimer[slot1] = Timer.New(slot2, slot3)
+function var_0_1.StartTimer(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	if not arg_12_0.mapItemTimer[arg_12_1] then
+		arg_12_0.mapItemTimer[arg_12_1] = Timer.New(arg_12_2, arg_12_3)
 	else
-		slot0.mapItemTimer[slot1]:Reset(slot2, slot3)
+		arg_12_0.mapItemTimer[arg_12_1]:Reset(arg_12_2, arg_12_3)
 	end
 
-	slot0.mapItemTimer[slot1]:Start()
+	arg_12_0.mapItemTimer[arg_12_1]:Start()
 end
 
-function slot1.StopMapItemTimers(slot0)
-	for slot4, slot5 in pairs(slot0.mapItemTimer) do
-		slot5:Stop()
+function var_0_1.StopMapItemTimers(arg_13_0)
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.mapItemTimer) do
+		iter_13_1:Stop()
 	end
 
-	table.clear(slot0.mapItemTimer)
+	table.clear(arg_13_0.mapItemTimer)
 end
 
-function slot1.Update(slot0, slot1)
-	slot0.float.pivot = Vector2(0.5, 0.5)
-	slot0.float.anchoredPosition = Vector2(0, 0)
+function var_0_1.Update(arg_14_0, arg_14_1)
+	arg_14_0.float.pivot = Vector2(0.5, 0.5)
+	arg_14_0.float.anchoredPosition = Vector2(0, 0)
 
-	setText(slot0.sceneParent.chapterName, string.split(slot1:getConfig("name"), "||")[1])
-	slot0.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. slot1:getMapTitleNumber(), slot0.sceneParent.chapterNoTitle, true)
-	uv0.super.Update(slot0, slot1)
+	local var_14_0 = string.split(arg_14_1:getConfig("name"), "||")
+
+	setText(arg_14_0.sceneParent.chapterName, var_14_0[1])
+
+	local var_14_1 = arg_14_1:getMapTitleNumber()
+
+	arg_14_0.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. var_14_1, arg_14_0.sceneParent.chapterNoTitle, true)
+	var_0_1.super.Update(arg_14_0, arg_14_1)
 end
 
-function slot1.UpdateButtons(slot0)
-	slot0.sceneParent:updateDifficultyBtns()
-	slot0.sceneParent:updateActivityBtns()
+function var_0_1.UpdateButtons(arg_15_0)
+	arg_15_0.sceneParent:updateDifficultyBtns()
+	arg_15_0.sceneParent:updateActivityBtns()
 end
 
-function slot1.UpdateMapItems(slot0)
-	if not slot0:isShowing() then
+function var_0_1.UpdateMapItems(arg_16_0)
+	if not arg_16_0:isShowing() then
 		return
 	end
 
-	uv0.super.UpdateMapItems(slot0)
-	slot0:StopMapItemTimers()
+	var_0_1.super.UpdateMapItems(arg_16_0)
+	arg_16_0:StopMapItemTimers()
 
-	if slot0.data:GetChapterInProgress() and isa(slot2, ChapterStoryGroup) then
-		setActive(slot0.itemHolder, false)
-		setActive(slot0.storyHolder, true)
-		slot0:UpdateStoryGroup()
+	local var_16_0 = arg_16_0.data
+	local var_16_1 = var_16_0:GetChapterInProgress()
+
+	if var_16_1 and isa(var_16_1, ChapterStoryGroup) then
+		setActive(arg_16_0.itemHolder, false)
+		setActive(arg_16_0.storyHolder, true)
+		arg_16_0:UpdateStoryGroup()
 
 		return
 	end
 
-	setActive(slot0.itemHolder, true)
-	setActive(slot0.storyHolder, false)
+	setActive(arg_16_0.itemHolder, true)
+	setActive(arg_16_0.storyHolder, false)
 
-	slot3 = getProxy(ChapterProxy)
-	slot4 = {}
+	local var_16_2 = getProxy(ChapterProxy)
+	local var_16_3 = {}
 
-	for slot8, slot9 in pairs(slot1:getChapters()) do
-		if (slot9:isUnlock() or slot9:activeAlways()) and (not slot9:ifNeedHide() or slot3:GetJustClearChapters(slot9.id)) then
-			table.insert(slot4, slot9)
+	for iter_16_0, iter_16_1 in pairs(var_16_0:getChapters()) do
+		if (iter_16_1:isUnlock() or iter_16_1:activeAlways()) and (not iter_16_1:ifNeedHide() or var_16_2:GetJustClearChapters(iter_16_1.id)) then
+			table.insert(var_16_3, iter_16_1)
 		end
 	end
 
-	table.clear(slot0.chapterTFsById)
+	table.clear(arg_16_0.chapterTFsById)
+	UIItemList.StaticAlign(arg_16_0.itemHolder, arg_16_0.chapterTpl, #var_16_3, function(arg_17_0, arg_17_1, arg_17_2)
+		if arg_17_0 == UIItemList.EventUpdate then
+			local var_17_0 = var_16_3[arg_17_1 + 1]
 
-	function slot9(slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+			arg_16_0:UpdateMapItem(arg_17_2, var_17_0)
 
-			uv1:UpdateMapItem(slot2, slot3)
-
-			slot2.name = "Chapter_" .. slot3.id
-			uv1.chapterTFsById[slot3.id] = slot2
+			arg_17_2.name = "Chapter_" .. var_17_0.id
+			arg_16_0.chapterTFsById[var_17_0.id] = arg_17_2
 		end
+	end)
+
+	local var_16_4 = {}
+
+	for iter_16_2, iter_16_3 in pairs(var_16_3) do
+		local var_16_5 = iter_16_3:getConfigTable()
+
+		var_16_4[var_16_5.pos_x] = var_16_4[var_16_5.pos_x] or {}
+
+		local var_16_6 = var_16_4[var_16_5.pos_x]
+
+		var_16_6[var_16_5.pos_y] = var_16_6[var_16_5.pos_y] or {}
+
+		local var_16_7 = var_16_6[var_16_5.pos_y]
+
+		table.insert(var_16_7, iter_16_3)
 	end
 
-	UIItemList.StaticAlign(slot0.itemHolder, slot0.chapterTpl, #slot4, slot9)
-
-	slot5 = {}
-
-	for slot9, slot10 in pairs(slot4) do
-		slot11 = slot10:getConfigTable()
-		slot5[slot11.pos_x] = slot5[slot11.pos_x] or {}
-		slot12[slot11.pos_y] = slot5[slot11.pos_x][slot11.pos_y] or {}
-
-		table.insert(slot12[slot11.pos_y], slot10)
-	end
-
-	for slot9, slot10 in pairs(slot5) do
-		for slot14, slot15 in pairs(slot10) do
-			slot16 = {}
+	for iter_16_4, iter_16_5 in pairs(var_16_4) do
+		for iter_16_6, iter_16_7 in pairs(iter_16_5) do
+			local var_16_8 = {}
 
 			seriesAsync({
-				function (slot0)
-					slot1 = 0
+				function(arg_18_0)
+					local var_18_0 = 0
 
-					for slot5, slot6 in pairs(uv0) do
-						if slot6:ifNeedHide() and uv1:GetJustClearChapters(slot6.id) and uv2.chapterTFsById[slot6.id] then
-							slot1 = slot1 + 1
-							slot7 = uv2.chapterTFsById[slot6.id]
+					for iter_18_0, iter_18_1 in pairs(iter_16_7) do
+						if iter_18_1:ifNeedHide() and var_16_2:GetJustClearChapters(iter_18_1.id) and arg_16_0.chapterTFsById[iter_18_1.id] then
+							var_18_0 = var_18_0 + 1
 
-							setActive(slot7, true)
+							local var_18_1 = arg_16_0.chapterTFsById[iter_18_1.id]
 
-							slot8 = uv2
+							setActive(var_18_1, true)
+							arg_16_0:PlayChapterItemAnimationBackward(var_18_1, iter_18_1, function()
+								var_18_0 = var_18_0 - 1
 
-							slot8:PlayChapterItemAnimationBackward(slot7, slot6, function ()
-								uv0 = uv0 - 1
+								setActive(var_18_1, false)
+								var_16_2:RecordJustClearChapters(iter_18_1.id, nil)
 
-								setActive(uv1, false)
-								uv2:RecordJustClearChapters(uv3.id, nil)
-
-								if uv0 <= 0 then
-									uv4()
+								if var_18_0 <= 0 then
+									arg_18_0()
 								end
 							end)
 
-							uv3[slot6.id] = true
-						elseif uv2.chapterTFsById[slot6.id] then
-							setActive(uv2.chapterTFsById[slot6.id], false)
+							var_16_8[iter_18_1.id] = true
+						elseif arg_16_0.chapterTFsById[iter_18_1.id] then
+							setActive(arg_16_0.chapterTFsById[iter_18_1.id], false)
 						end
 					end
 
-					if slot1 <= 0 then
-						slot0()
+					if var_18_0 <= 0 then
+						arg_18_0()
 					end
 				end,
-				function (slot0)
-					slot1 = 0
+				function(arg_20_0)
+					local var_20_0 = 0
 
-					for slot5, slot6 in pairs(uv0) do
-						if not uv1[slot6.id] then
-							slot1 = slot1 + 1
+					for iter_20_0, iter_20_1 in pairs(iter_16_7) do
+						if not var_16_8[iter_20_1.id] then
+							var_20_0 = var_20_0 + 1
 
-							setActive(uv2.chapterTFsById[slot6.id], true)
+							setActive(arg_16_0.chapterTFsById[iter_20_1.id], true)
+							arg_16_0:PlayChapterItemAnimation(arg_16_0.chapterTFsById[iter_20_1.id], iter_20_1, function()
+								var_20_0 = var_20_0 - 1
 
-							slot7 = uv2
-
-							slot7:PlayChapterItemAnimation(uv2.chapterTFsById[slot6.id], slot6, function ()
-								uv0 = uv0 - 1
-
-								if uv0 <= 0 then
-									uv1()
+								if var_20_0 <= 0 then
+									arg_20_0()
 								end
 							end)
 						end
@@ -250,286 +257,335 @@ function slot1.UpdateMapItems(slot0)
 	end
 end
 
-function slot1.UpdateMapItem(slot0, slot1, slot2)
-	slot3 = slot2:getConfigTable()
+function var_0_1.UpdateMapItem(arg_22_0, arg_22_1, arg_22_2)
+	local var_22_0 = arg_22_2:getConfigTable()
 
-	setAnchoredPosition(slot1, {
-		x = slot0.mapWidth * slot3.pos_x,
-		y = slot0.mapHeight * slot3.pos_y
+	setAnchoredPosition(arg_22_1, {
+		x = arg_22_0.mapWidth * var_22_0.pos_x,
+		y = arg_22_0.mapHeight * var_22_0.pos_y
 	})
 
-	slot4 = findTF(slot1, "main")
+	local var_22_1 = findTF(arg_22_1, "main")
 
-	setActive(slot4, true)
-	setActive(findTF(slot4, "circle/fordark"), slot3.icon_outline == 1)
-	setActive(findTF(slot4, "info/bk/fordark"), slot3.icon_outline == 1)
+	setActive(var_22_1, true)
 
-	slot7 = findTF(slot4, "circle/clear_flag")
-	slot11 = string.split(slot3.name, "|")
+	local var_22_2 = findTF(var_22_1, "circle/fordark")
+	local var_22_3 = findTF(var_22_1, "info/bk/fordark")
 
-	setText(findTF(slot4, "info/bk/title_form/title_index"), slot3.chapter_name .. "  ")
-	setText(findTF(slot4, "info/bk/title_form/title"), slot11[1])
-	setText(findTF(slot4, "info/bk/title_form/title_en"), slot11[2] or "")
-	setFillAmount(findTF(slot4, "circle/progress"), slot2.progress / 100)
-	setText(findTF(slot4, "circle/progress_text"), string.format("%d%%", slot2.progress))
-	setActive(findTF(slot4, "circle/stars"), slot2:existAchieve())
+	setActive(var_22_2, var_22_0.icon_outline == 1)
+	setActive(var_22_3, var_22_0.icon_outline == 1)
 
-	if slot2:existAchieve() then
-		for slot15, slot16 in ipairs(slot2.achieves) do
-			setActive(slot10:Find("star" .. slot15 .. "/light"), ChapterConst.IsAchieved(slot16))
+	local var_22_4 = findTF(var_22_1, "circle/clear_flag")
+	local var_22_5 = findTF(var_22_1, "circle/progress")
+	local var_22_6 = findTF(var_22_1, "circle/progress_text")
+	local var_22_7 = findTF(var_22_1, "circle/stars")
+	local var_22_8 = string.split(var_22_0.name, "|")
+
+	setText(findTF(var_22_1, "info/bk/title_form/title_index"), var_22_0.chapter_name .. "  ")
+	setText(findTF(var_22_1, "info/bk/title_form/title"), var_22_8[1])
+	setText(findTF(var_22_1, "info/bk/title_form/title_en"), var_22_8[2] or "")
+	setFillAmount(var_22_5, arg_22_2.progress / 100)
+	setText(var_22_6, string.format("%d%%", arg_22_2.progress))
+	setActive(var_22_7, arg_22_2:existAchieve())
+
+	if arg_22_2:existAchieve() then
+		for iter_22_0, iter_22_1 in ipairs(arg_22_2.achieves) do
+			local var_22_9 = ChapterConst.IsAchieved(iter_22_1)
+			local var_22_10 = var_22_7:Find("star" .. iter_22_0 .. "/light")
+
+			setActive(var_22_10, var_22_9)
 		end
 	end
 
-	slot12 = not slot2.active and slot2:isClear()
+	local var_22_11 = not arg_22_2.active and arg_22_2:isClear()
 
-	setActive(slot7, slot12)
-	setActive(slot9, not slot12)
-	slot0:DeleteTween("fighting" .. slot2.id)
+	setActive(var_22_4, var_22_11)
+	setActive(var_22_6, not var_22_11)
+	arg_22_0:DeleteTween("fighting" .. arg_22_2.id)
 
-	slot13 = findTF(slot4, "circle/fighting")
+	local var_22_12 = findTF(var_22_1, "circle/fighting")
 
-	setText(findTF(slot13, "Text"), i18n("tag_level_fighting"))
+	setText(findTF(var_22_12, "Text"), i18n("tag_level_fighting"))
 
-	slot14 = findTF(slot4, "circle/oni")
+	local var_22_13 = findTF(var_22_1, "circle/oni")
 
-	setText(findTF(slot14, "Text"), i18n("tag_level_oni"))
+	setText(findTF(var_22_13, "Text"), i18n("tag_level_oni"))
 
-	slot15 = findTF(slot4, "circle/narrative")
+	local var_22_14 = findTF(var_22_1, "circle/narrative")
 
-	setText(findTF(slot15, "Text"), i18n("tag_level_narrative"))
-	setActive(slot13, false)
-	setActive(slot14, false)
-	setActive(slot15, false)
+	setText(findTF(var_22_14, "Text"), i18n("tag_level_narrative"))
+	setActive(var_22_12, false)
+	setActive(var_22_13, false)
+	setActive(var_22_14, false)
 
-	slot16, slot17 = nil
+	local var_22_15
+	local var_22_16
 
-	if slot2:getConfig("chapter_tag") == 1 then
-		slot16 = slot15
+	if arg_22_2:getConfig("chapter_tag") == 1 then
+		var_22_15 = var_22_14
 	end
 
-	if slot2.active then
-		slot16 = slot2:existOni() and slot14 or slot13
+	if arg_22_2.active then
+		var_22_15 = arg_22_2:existOni() and var_22_13 or var_22_12
 	end
 
-	if slot16 then
-		setActive(slot16, true)
+	if var_22_15 then
+		setActive(var_22_15, true)
 
-		slot17 = GetOrAddComponent(slot16, "CanvasGroup")
-		slot17.alpha = 1
+		local var_22_17 = GetOrAddComponent(var_22_15, "CanvasGroup")
 
-		slot0:RecordTween("fighting" .. slot2.id, LeanTween.alphaCanvas(slot17, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
+		var_22_17.alpha = 1
+
+		arg_22_0:RecordTween("fighting" .. arg_22_2.id, LeanTween.alphaCanvas(var_22_17, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	setActive(findTF(slot4, "triesLimit"), false)
+	local var_22_18 = findTF(var_22_1, "triesLimit")
 
-	if slot2:isTriesLimit() then
-		slot20 = slot2:getConfig("count")
+	setActive(var_22_18, false)
 
-		setText(slot18:Find("label"), i18n("levelScene_chapter_count_tip"))
-		setText(slot18:Find("Text"), setColorStr(slot20 - slot2:getTodayDefeatCount() .. "/" .. slot20, slot20 <= slot2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
-		setActive(slot18:Find("TipRect"), getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip())
+	if arg_22_2:isTriesLimit() then
+		local var_22_19 = arg_22_2:getConfig("count")
+		local var_22_20 = var_22_19 - arg_22_2:getTodayDefeatCount() .. "/" .. var_22_19
+
+		setText(var_22_18:Find("label"), i18n("levelScene_chapter_count_tip"))
+		setText(var_22_18:Find("Text"), setColorStr(var_22_20, var_22_19 <= arg_22_2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
+
+		local var_22_21 = getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
+
+		setActive(var_22_18:Find("TipRect"), var_22_21)
 	end
 
-	slot20 = slot2:GetDailyBonusQuota()
-	slot21 = findTF(slot4, "mark")
+	local var_22_22 = arg_22_2:GetDailyBonusQuota()
+	local var_22_23 = findTF(var_22_1, "mark")
 
-	setActive(slot21:Find("bonus"), slot20)
-	setActive(slot21, slot20)
+	setActive(var_22_23:Find("bonus"), var_22_22)
+	setActive(var_22_23, var_22_22)
 
-	if slot20 then
-		slot0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", slot0.sceneParent.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us", slot21:Find("bonus"))
-		LeanTween.cancel(go(slot21), true)
+	if var_22_22 then
+		local var_22_24 = var_22_23:GetComponent(typeof(CanvasGroup))
+		local var_22_25 = arg_22_0.sceneParent.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
 
-		slot25 = slot21.anchoredPosition.y
-		slot21:GetComponent(typeof(CanvasGroup)).alpha = 0
+		arg_22_0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var_22_25, var_22_23:Find("bonus"))
+		LeanTween.cancel(go(var_22_23), true)
 
-		LeanTween.value(go(slot21), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
-			uv0.alpha = slot0
-			slot1 = uv1.anchoredPosition
-			slot1.y = uv2 * slot0
-			uv1.anchoredPosition = slot1
-		end)):setOnComplete(System.Action(function ()
-			uv0.alpha = 1
-			slot0 = uv1.anchoredPosition
-			slot0.y = uv2
-			uv1.anchoredPosition = slot0
+		local var_22_26 = var_22_23.anchoredPosition.y
+
+		var_22_24.alpha = 0
+
+		LeanTween.value(go(var_22_23), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_23_0)
+			var_22_24.alpha = arg_23_0
+
+			local var_23_0 = var_22_23.anchoredPosition
+
+			var_23_0.y = var_22_26 * arg_23_0
+			var_22_23.anchoredPosition = var_23_0
+		end)):setOnComplete(System.Action(function()
+			var_22_24.alpha = 1
+
+			local var_24_0 = var_22_23.anchoredPosition
+
+			var_24_0.y = var_22_26
+			var_22_23.anchoredPosition = var_24_0
 		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 	end
 
-	slot22 = slot2.id
+	local var_22_27 = arg_22_2.id
 
-	onButton(slot0.sceneParent, slot4, function ()
-		if uv0:InvokeParent("isfrozen") then
+	onButton(arg_22_0.sceneParent, var_22_1, function()
+		if arg_22_0:InvokeParent("isfrozen") then
 			return
 		end
 
-		if uv0.chaptersInBackAnimating[uv1] then
+		if arg_22_0.chaptersInBackAnimating[var_22_27] then
 			return
 		end
 
-		if not getProxy(ChapterProxy):getChapterById(uv1):isUnlock() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", slot0:getPrevChapterName()))
+		local var_25_0 = getProxy(ChapterProxy):getChapterById(var_22_27)
 
-			return
-		end
+		if not var_25_0:isUnlock() then
+			local var_25_1 = var_25_0:getPrevChapterName()
 
-		if uv0.sceneParent.player.level < slot0:getConfig("unlocklevel") then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", slot1))
-
-			return
-		end
-
-		if getProxy(ChapterProxy):getActiveChapter(true) and slot2.id ~= uv1 then
-			uv0:InvokeParent("emit", LevelMediator2.ON_STRATEGYING_CHAPTER)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var_25_1))
 
 			return
 		end
 
-		if slot0.active then
-			uv0:InvokeParent("switchToChapter", slot0)
+		local var_25_2 = var_25_0:getConfig("unlocklevel")
+
+		if var_25_2 > arg_22_0.sceneParent.player.level then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var_25_2))
+
+			return
+		end
+
+		local var_25_3 = getProxy(ChapterProxy):getActiveChapter(true)
+
+		if var_25_3 and var_25_3.id ~= var_22_27 then
+			arg_22_0:InvokeParent("emit", LevelMediator2.ON_STRATEGYING_CHAPTER)
+
+			return
+		end
+
+		if var_25_0.active then
+			arg_22_0:InvokeParent("switchToChapter", var_25_0)
 		else
-			if uv0.sceneParent.contextData.map:getConfig("type") == Map.ACT_EXTRA and slot0:getPlayType() == ChapterConst.TypeRange then
+			if arg_22_0.sceneParent.contextData.map:getConfig("type") == Map.ACT_EXTRA and var_25_0:getPlayType() == ChapterConst.TypeRange then
 				SettingsProxy.SetActivityMapSPTip()
-				uv0:UpdateChapterTF(uv1)
+				arg_22_0:UpdateChapterTF(var_22_27)
 			end
 
-			slot4 = uv2.localPosition
+			local var_25_4 = arg_22_1.localPosition
 
-			uv0:InvokeParent("displayChapterPanel", slot0, Vector3(slot4.x - 10, slot4.y + 150))
+			arg_22_0:InvokeParent("displayChapterPanel", var_25_0, Vector3(var_25_4.x - 10, var_25_4.y + 150))
 		end
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 
-function slot1.PlayChapterItemAnimation(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot1, "main")
-	slot6 = findTF(slot4, "circle")
-	slot7 = findTF(slot4, "info/bk")
+function var_0_1.PlayChapterItemAnimation(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+	local var_26_0 = findTF(arg_26_1, "main")
+	local var_26_1 = var_26_0:Find("info")
+	local var_26_2 = findTF(var_26_0, "circle")
+	local var_26_3 = findTF(var_26_0, "info/bk")
 
-	LeanTween.cancel(go(slot6))
+	LeanTween.cancel(go(var_26_2))
 
-	slot6.localScale = Vector3.zero
-	slot8 = LeanTween.scale(slot6, Vector3.one, 0.3)
+	var_26_2.localScale = Vector3.zero
 
-	slot0:RecordTween(slot8:setDelay(0.3).uniqueId)
-	LeanTween.cancel(go(slot7))
-	setAnchoredPosition(slot7, {
-		x = -1 * slot4:Find("info").rect.width
+	local var_26_4 = LeanTween.scale(var_26_2, Vector3.one, 0.3):setDelay(0.3)
+
+	arg_26_0:RecordTween(var_26_4.uniqueId)
+	LeanTween.cancel(go(var_26_3))
+	setAnchoredPosition(var_26_3, {
+		x = -1 * var_26_1.rect.width
 	})
-	shiftPanel(slot7, 0, nil, 0.4, 0.4, true, true, nil, function ()
-		if uv0:isTriesLimit() then
-			setActive(findTF(uv1, "triesLimit"), true)
+	shiftPanel(var_26_3, 0, nil, 0.4, 0.4, true, true, nil, function()
+		if arg_26_2:isTriesLimit() then
+			setActive(findTF(var_26_0, "triesLimit"), true)
 		end
 
-		if uv2 then
-			uv2()
+		if arg_26_3 then
+			arg_26_3()
 		end
 	end)
 end
 
-function slot1.PlayChapterItemAnimationBackward(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot1, "main")
-	slot6 = findTF(slot4, "circle")
-	slot7 = findTF(slot4, "info/bk")
+function var_0_1.PlayChapterItemAnimationBackward(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
+	local var_28_0 = findTF(arg_28_1, "main")
+	local var_28_1 = var_28_0:Find("info")
+	local var_28_2 = findTF(var_28_0, "circle")
+	local var_28_3 = findTF(var_28_0, "info/bk")
 
-	LeanTween.cancel(go(slot6))
+	LeanTween.cancel(go(var_28_2))
 
-	slot6.localScale = Vector3.one
+	var_28_2.localScale = Vector3.one
 
-	slot0:RecordTween(LeanTween.scale(go(slot6), Vector3.zero, 0.3):setDelay(0.3).uniqueId)
+	local var_28_4 = LeanTween.scale(go(var_28_2), Vector3.zero, 0.3):setDelay(0.3)
 
-	slot0.chaptersInBackAnimating[slot2.id] = true
+	arg_28_0:RecordTween(var_28_4.uniqueId)
 
-	LeanTween.cancel(go(slot7))
-	setAnchoredPosition(slot7, {
+	arg_28_0.chaptersInBackAnimating[arg_28_2.id] = true
+
+	LeanTween.cancel(go(var_28_3))
+	setAnchoredPosition(var_28_3, {
 		x = 0
 	})
-	shiftPanel(slot7, -1 * slot4:Find("info").rect.width, nil, 0.4, 0.4, true, true, nil, function ()
-		uv0.chaptersInBackAnimating[uv1.id] = nil
+	shiftPanel(var_28_3, -1 * var_28_1.rect.width, nil, 0.4, 0.4, true, true, nil, function()
+		arg_28_0.chaptersInBackAnimating[arg_28_2.id] = nil
 
-		if uv2 then
-			uv2()
+		if arg_28_3 then
+			arg_28_3()
 		end
 	end)
 
-	if slot2:isTriesLimit() then
-		setActive(findTF(slot4, "triesLimit"), false)
+	if arg_28_2:isTriesLimit() then
+		setActive(findTF(var_28_0, "triesLimit"), false)
 	end
 end
 
-function slot1.UpdateChapterTF(slot0, slot1)
-	if slot0.chapterTFsById[slot1] then
-		slot3 = getProxy(ChapterProxy):getChapterById(slot1)
+function var_0_1.UpdateChapterTF(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_0.chapterTFsById[arg_30_1]
 
-		slot0:UpdateMapItem(slot2, slot3)
-		slot0:PlayChapterItemAnimation(slot2, slot3)
+	if var_30_0 then
+		local var_30_1 = getProxy(ChapterProxy):getChapterById(arg_30_1)
+
+		arg_30_0:UpdateMapItem(var_30_0, var_30_1)
+		arg_30_0:PlayChapterItemAnimation(var_30_0, var_30_1)
 	end
 end
 
-function slot1.AddChapterTF(slot0, slot1)
-	slot2 = slot0.data
+function var_0_1.AddChapterTF(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_0.data
 
-	if slot0.chapterTFsById[slot1] then
-		slot0:UpdateChapterTF(slot1)
-	elseif _.contains(slot2:GetChapterList(), function (slot0)
-		if slot0 ~= uv0 then
+	if arg_31_0.chapterTFsById[arg_31_1] then
+		arg_31_0:UpdateChapterTF(arg_31_1)
+	elseif _.contains(var_31_0:GetChapterList(), function(arg_32_0)
+		if arg_32_0 ~= arg_31_1 then
 			return false
 		end
 
-		return (getProxy(ChapterProxy):getChapterById(uv0, true):isUnlock() or slot1:activeAlways()) and not slot1:ifNeedHide()
+		local var_32_0 = getProxy(ChapterProxy):getChapterById(arg_31_1, true)
+
+		return (var_32_0:isUnlock() or var_32_0:activeAlways()) and not var_32_0:ifNeedHide()
 	end) then
-		slot4 = getProxy(ChapterProxy):getChapterById(slot1, true)
-		slot3 = cloneTplTo(slot0.chapterTpl, slot0.itemHolder, "Chapter_" .. slot4.id)
+		local var_31_1 = getProxy(ChapterProxy):getChapterById(arg_31_1, true)
+		local var_31_2 = cloneTplTo(arg_31_0.chapterTpl, arg_31_0.itemHolder, "Chapter_" .. var_31_1.id)
 
-		slot0:UpdateMapItem(slot3, slot4)
+		arg_31_0:UpdateMapItem(var_31_2, var_31_1)
 
-		slot0.chapterTFsById[slot4.id] = slot3
+		arg_31_0.chapterTFsById[var_31_1.id] = var_31_2
 
-		slot0:PlayChapterItemAnimation(slot3)
+		arg_31_0:PlayChapterItemAnimation(var_31_2)
 	end
 end
 
-function slot1.TryOpenChapter(slot0, slot1)
-	if slot0.chapterTFsById[slot1] then
-		triggerButton(slot2:Find("main"))
+function var_0_1.TryOpenChapter(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_0.chapterTFsById[arg_33_1]
+
+	if var_33_0 then
+		local var_33_1 = var_33_0:Find("main")
+
+		triggerButton(var_33_1)
 	end
 end
 
-function slot1.UpdateStoryGroup(slot0)
-	slot1 = slot0.data
-	slot1 = slot1:GetChapterInProgress()
+function var_0_1.UpdateStoryGroup(arg_34_0)
+	local var_34_0 = arg_34_0.data:GetChapterInProgress():GetChapterStories()
 
-	UIItemList.StaticAlign(slot0.storyHolder, slot0.storyTpl, #slot1:GetChapterStories(), function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg_34_0.storyHolder, arg_34_0.storyTpl, #var_34_0, function(arg_35_0, arg_35_1, arg_35_2)
+		if arg_35_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		slot3 = uv0[slot1 + 1]
+		local var_35_0 = var_34_0[arg_35_1 + 1]
 
-		uv1:UpdateMapStory(slot2, slot3)
+		arg_34_0:UpdateMapStory(arg_35_2, var_35_0)
 
-		slot2.name = "Chapter_" .. slot3:GetName()
+		arg_35_2.name = "Chapter_" .. var_35_0:GetName()
 	end)
 end
 
-function slot1.UpdateMapStory(slot0, slot1, slot2)
-	slot3 = slot2:GetPosition()
+function var_0_1.UpdateMapStory(arg_36_0, arg_36_1, arg_36_2)
+	local var_36_0 = arg_36_2:GetPosition()
 
-	setAnchoredPosition(slot1, {
-		x = slot0.mapWidth * slot3[1],
-		y = slot0.mapHeight * slot3[2]
+	setAnchoredPosition(arg_36_1, {
+		x = arg_36_0.mapWidth * var_36_0[1],
+		y = arg_36_0.mapHeight * var_36_0[2]
 	})
-	setText(slot1:Find("Name"), slot2:GetName())
+	setText(arg_36_1:Find("Name"), arg_36_2:GetName())
 
-	slot4, slot5 = slot2:GetIcon()
+	local var_36_1, var_36_2 = arg_36_2:GetIcon()
 
-	slot0.sceneParent.loader:GetSpriteQuiet(slot4, slot5, slot1:Find("Icon"), true)
-	onButton(slot0, slot1, function ()
-		pg.NewStoryMgr.GetInstance():Play(uv0, function ()
-			uv0.sceneParent:RefreshMapBG()
-			uv0:UpdateMapItems()
+	arg_36_0.sceneParent.loader:GetSpriteQuiet(var_36_1, var_36_2, arg_36_1:Find("Icon"), true)
+
+	local var_36_3 = arg_36_2:GetStoryName()
+
+	onButton(arg_36_0, arg_36_1, function()
+		pg.NewStoryMgr.GetInstance():Play(var_36_3, function()
+			arg_36_0.sceneParent:RefreshMapBG()
+			arg_36_0:UpdateMapItems()
 		end)
 	end, SFX_PANEL)
-	setActive(slot1, not pg.NewStoryMgr.GetInstance():IsPlayed(slot2:GetStoryName()))
+	setActive(arg_36_1, not pg.NewStoryMgr.GetInstance():IsPlayed(var_36_3))
 end
 
-return slot1
+return var_0_1

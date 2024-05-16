@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_spring_couplets = {
 	[70119] = {
 		id = 70119,

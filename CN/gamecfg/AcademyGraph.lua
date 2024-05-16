@@ -1,9 +1,5 @@
-AcademyGraph = {
+﻿AcademyGraph = {
 	Points = {
-		{
-			x = -348,
-			y = -63
-		},
 		[2] = {
 			x = 66,
 			y = 87
@@ -23,6 +19,10 @@ AcademyGraph = {
 		[23] = {
 			x = 408,
 			y = -189
+		},
+		{
+			x = -348,
+			y = -63
 		},
 		[32] = {
 			x = 372,

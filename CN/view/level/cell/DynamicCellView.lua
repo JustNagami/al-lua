@@ -1,14 +1,14 @@
-slot0 = class("DynamicCellView", import(".LevelCellView"))
+﻿local var_0_0 = class("DynamicCellView", import(".LevelCellView"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0)
 
-	slot0.go = slot1
-	slot0.tf = slot0.go.transform
+	arg_1_0.go = arg_1_1
+	arg_1_0.tf = arg_1_0.go.transform
 
-	slot0:OverrideCanvas()
+	arg_1_0:OverrideCanvas()
 
-	slot0.buffer = FuncBuffer.New()
+	arg_1_0.buffer = FuncBuffer.New()
 end
 
-return slot0
+return var_0_0

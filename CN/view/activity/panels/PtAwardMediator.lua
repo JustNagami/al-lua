@@ -1,39 +1,41 @@
-slot0 = class("PtAwardMediator", import("view.base.ContextMediator"))
+﻿local var_0_0 = class("PtAwardMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(ActivityMediator.EVENT_PT_OPERATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_NEW_PT, slot1)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(ActivityMediator.EVENT_PT_OPERATION, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACT_NEW_PT, arg_2_1)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.ACT_NEW_PT_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == nil then
-		-- Nothing
-	elseif slot2 == ActivityProxy.ACTIVITY_ADDED or slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and slot3:getDataConfig("pt") == slot0.contextData.ptId then
-			if slot0.contextData.ptData then
-				slot0.contextData.ptData:Update(slot3)
+	if var_4_0 == nil then
+		-- block empty
+	elseif var_4_0 == ActivityProxy.ACTIVITY_ADDED or var_4_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_4_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and var_4_1:getDataConfig("pt") == arg_4_0.contextData.ptId then
+			if arg_4_0.contextData.ptData then
+				arg_4_0.contextData.ptData:Update(var_4_1)
 			else
-				slot0.contextData.ptData = ActivityBossPtData.New(slot3)
+				arg_4_0.contextData.ptData = ActivityBossPtData.New(var_4_1)
 			end
 
-			slot0.viewComponent:UpdateView()
+			arg_4_0.viewComponent:UpdateView()
 		end
-	elseif slot2 == GAME.ACT_NEW_PT_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif var_4_0 == GAME.ACT_NEW_PT_DONE then
+		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.awards)
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_5_0)
+	return
 end
 
-return slot0
+return var_0_0

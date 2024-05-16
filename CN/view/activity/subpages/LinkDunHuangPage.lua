@@ -1,91 +1,91 @@
-slot0 = class("LinkDunHuangPage", import(".JavelinComicSkinPage"))
+﻿local var_0_0 = class("LinkDunHuangPage", import(".JavelinComicSkinPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.item = slot0:findTF("items/item", slot0.bg)
-	slot0.items = slot0:findTF("items", slot0.bg)
-	slot0.uilist = UIItemList.New(slot0.items, slot0.item)
-	slot0.bgImg = slot0.bg:GetComponent(typeof(Image))
-	slot0.isReplaceBG = false
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.item = arg_1_0:findTF("items/item", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.bg)
+	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0.item)
+	arg_1_0.bgImg = arg_1_0.bg:GetComponent(typeof(Image))
+	arg_1_0.isReplaceBG = false
 end
 
-function slot0.GetLinkId(slot0)
-	return slot0.activity:getConfig("config_client").link_act
+function var_0_0.GetLinkId(arg_2_0)
+	return arg_2_0.activity:getConfig("config_client").link_act
 end
 
-function slot0.UpdatePuzzle(slot0, slot1, slot2, slot3)
-	if slot2 and not table.contains(slot0.chargeIDList, slot3) then
-		table.insert(slot0.chargeIDList, slot3)
-		slot0:DoPieceAnimation(slot1, 1, 0, function ()
-			setActive(uv0, not uv1)
-			uv2:CheckFinalAward()
+function var_0_0.UpdatePuzzle(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if arg_3_2 and not table.contains(arg_3_0.chargeIDList, arg_3_3) then
+		table.insert(arg_3_0.chargeIDList, arg_3_3)
+		arg_3_0:DoPieceAnimation(arg_3_1, 1, 0, function()
+			setActive(arg_3_1, not arg_3_2)
+			arg_3_0:CheckFinalAward()
 		end)
 	else
-		setActive(slot1, not slot2)
+		setActive(arg_3_1, not arg_3_2)
 	end
 end
 
-function slot0.DoPieceAnimation(slot0, slot1, slot2, slot3, slot4)
-	if LeanTween.isTweening(slot1) then
-		LeanTween.cancel(go(slot1), true)
+function var_0_0.DoPieceAnimation(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	if LeanTween.isTweening(arg_5_1) then
+		LeanTween.cancel(go(arg_5_1), true)
 
-		slot0.animations[slot1] = nil
+		arg_5_0.animations[arg_5_1] = nil
 	end
 
-	slot5 = pg.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():LoadingOn(false)
 
-	slot5:LoadingOn(false)
+	arg_5_0.animations[arg_5_1] = true
 
-	slot0.animations[slot1] = true
-	slot5 = LeanTween.value(slot1.gameObject, 1, 0, 1)
-	slot5 = slot5:setOnUpdate(System.Action_float(function (slot0)
-		setFillAmount(uv0, slot0)
-	end))
-	slot5 = slot5:setFrom(1)
-
-	slot5:setOnComplete(System.Action(function ()
+	LeanTween.value(arg_5_1.gameObject, 1, 0, 1):setOnUpdate(System.Action_float(function(arg_6_0)
+		setFillAmount(arg_5_1, arg_6_0)
+	end)):setFrom(1):setOnComplete(System.Action(function()
 		pg.UIMgr.GetInstance():LoadingOff()
-		uv0()
+		arg_5_4()
 	end))
 end
 
-function slot0.RegisterEvent(slot0)
+function var_0_0.RegisterEvent(arg_8_0)
+	return
 end
 
-function slot0.UpdateMainView(slot0, slot1)
-	if slot1 and not slot0.isReplaceBG then
-		slot0:ReplaceBg()
+function var_0_0.UpdateMainView(arg_9_0, arg_9_1)
+	if arg_9_1 and not arg_9_0.isReplaceBG then
+		arg_9_0:ReplaceBg()
 	end
 end
 
-function slot0.PlayStory(slot0)
+function var_0_0.PlayStory(arg_10_0)
+	return
 end
 
-function slot0.FetchFinalAward(slot0)
-	uv0.super.FetchFinalAward(slot0)
+function var_0_0.FetchFinalAward(arg_11_0)
+	var_0_0.super.FetchFinalAward(arg_11_0)
 
-	if (slot0.activity:getConfig("config_client").story[slot0.nday] or {})[1] then
-		pg.NewStoryMgr.GetInstance():Play(slot2[1])
+	local var_11_0 = arg_11_0.activity:getConfig("config_client").story[arg_11_0.nday] or {}
+
+	if var_11_0[1] then
+		pg.NewStoryMgr.GetInstance():Play(var_11_0[1])
 	end
 end
 
-function slot0.OnFetchFinalAwardDone(slot0)
-	slot1 = {}
-	slot3 = ipairs
-	slot4 = slot0.activity:getConfig("config_client").story or {}
+function var_0_0.OnFetchFinalAwardDone(arg_12_0)
+	local var_12_0 = {}
+	local var_12_1 = arg_12_0.activity:getConfig("config_client").story
 
-	for slot6, slot7 in slot3(slot4) do
-		if (slot2[slot6] or {})[1] and not pg.NewStoryMgr.GetInstance():IsPlayed(slot8[1]) then
-			table.insert(slot1, slot8[1])
+	for iter_12_0, iter_12_1 in ipairs(var_12_1 or {}) do
+		local var_12_2 = var_12_1[iter_12_0] or {}
+
+		if var_12_2[1] and not pg.NewStoryMgr.GetInstance():IsPlayed(var_12_2[1]) then
+			table.insert(var_12_0, var_12_2[1])
 		end
 	end
 
-	pg.NewStoryMgr.GetInstance():SeriesPlay(slot1)
+	pg.NewStoryMgr.GetInstance():SeriesPlay(var_12_0)
 end
 
-function slot0.ReplaceBg(slot0)
-	slot0.isReplaceBG = true
-	slot0.bgImg.sprite = GetSpriteFromAtlas("ui/activityuipage/LinkDunhuangPage_atlas", "bg_finish")
+function var_0_0.ReplaceBg(arg_13_0)
+	arg_13_0.isReplaceBG = true
+	arg_13_0.bgImg.sprite = GetSpriteFromAtlas("ui/activityuipage/LinkDunhuangPage_atlas", "bg_finish")
 end
 
-return slot0
+return var_0_0

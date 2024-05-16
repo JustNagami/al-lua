@@ -1,119 +1,121 @@
-slot0 = class("SixthAnniversaryIslandShopLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("SixthAnniversaryIslandShopLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SixthAnniversaryIslandShopUI"
 end
 
-function slot0.setShop(slot0, slot1)
-	slot0.shop = slot1
-	slot0.goodsList = slot1:getSortGoods()
-	slot0.activity = getProxy(ActivityProxy):getActivityById(slot1.activityId)
+function var_0_0.setShop(arg_2_0, arg_2_1)
+	arg_2_0.shop = arg_2_1
+	arg_2_0.goodsList = arg_2_1:getSortGoods()
+	arg_2_0.activity = getProxy(ActivityProxy):getActivityById(arg_2_1.activityId)
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
+	arg_3_0.player = arg_3_1
 
-	setText(slot0.rtRes:Find("Text"), slot0.player:getResById(350) or 0)
+	setText(arg_3_0.rtRes:Find("Text"), arg_3_0.player:getResById(350) or 0)
 end
 
-function slot0.init(slot0)
-	slot1 = pg.UIMgr.GetInstance()
+function var_0_0.init(arg_4_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf)
 
-	slot1:BlurPanel(slot0._tf)
+	local var_4_0 = arg_4_0._tf:Find("main")
 
-	slot1 = slot0._tf
-	slot1 = slot1:Find("main")
+	setText(var_4_0:Find("time/Text"), i18n("islandshop_tips1"))
 
-	setText(slot1:Find("time/Text"), i18n("islandshop_tips1"))
+	arg_4_0.rtTime = var_4_0:Find("time/Text_2")
+	arg_4_0.rtRes = var_4_0:Find("tpl")
 
-	slot0.rtTime = slot1:Find("time/Text_2")
-	slot0.rtRes = slot1:Find("tpl")
-	slot2 = slot0._tf
-	slot2 = slot2:Find("main/view/content")
-	slot0.goodsItemList = UIItemList.New(slot2, slot2:Find("goods"))
-	slot3 = slot0.goodsItemList
+	local var_4_1 = arg_4_0._tf:Find("main/view/content")
 
-	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_4_0.goodsItemList = UIItemList.New(var_4_1, var_4_1:Find("goods"))
 
-		if slot0 == UIItemList.EventUpdate then
-			uv0.goodsCardDic[uv0.goodsList[slot1].id] = slot2
+	arg_4_0.goodsItemList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		arg_5_1 = arg_5_1 + 1
 
-			onButton(uv0, slot2, function ()
-				uv0:emit(SixthAnniversaryIslandShopMediator.OPEN_GOODS_WINDOW, uv0.goodsList[uv1])
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_4_0.goodsCardDic[arg_4_0.goodsList[arg_5_1].id] = arg_5_2
+
+			onButton(arg_4_0, arg_5_2, function()
+				arg_4_0:emit(SixthAnniversaryIslandShopMediator.OPEN_GOODS_WINDOW, arg_4_0.goodsList[arg_5_1])
 			end, SFX_PANEL)
-			uv0:updateGoodsCard(slot2, uv0.goodsList[slot1])
+			arg_4_0:updateGoodsCard(arg_5_2, arg_4_0.goodsList[arg_5_1])
 		end
 	end)
-
-	slot5 = slot0._tf
-
-	onButton(slot0, slot5:Find("bg"), function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0._tf:Find("bg"), function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
-
-	slot5 = slot0._tf
-
-	onButton(slot0, slot5:Find("main/btn_back"), function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0._tf:Find("main/btn_back"), function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
 end
 
-function slot0.updateGoodsCard(slot0, slot1, slot2)
-	slot3 = slot2:CheckCntLimit()
+function var_0_0.updateGoodsCard(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = arg_9_2:CheckCntLimit()
 
-	setActive(slot1:Find("mask"), not slot3)
-	setGray(slot1, slot3 and not slot2:CheckArgLimit())
-	setActive(slot1:Find("btn_pay"), slot3)
-	setActive(slot1:Find("btn_unable"), not slot3)
-	setButtonEnabled(slot1, slot3)
-	updateDrop(slot1:Find("icon/IconTpl"), {
-		type = slot2:getConfig("commodity_type"),
-		id = slot2:getConfig("commodity_id"),
-		count = slot2:getConfig("num")
-	})
-	onNextTick(function ()
-		changeToScrollText(uv0:Find("Text"), uv1:getConfig("name"))
+	setActive(arg_9_1:Find("mask"), not var_9_0)
+
+	local var_9_1 = var_9_0 and not arg_9_2:CheckArgLimit()
+
+	setGray(arg_9_1, var_9_1)
+	setActive(arg_9_1:Find("btn_pay"), var_9_0)
+	setActive(arg_9_1:Find("btn_unable"), not var_9_0)
+	setButtonEnabled(arg_9_1, var_9_0)
+
+	local var_9_2 = {
+		type = arg_9_2:getConfig("commodity_type"),
+		id = arg_9_2:getConfig("commodity_id"),
+		count = arg_9_2:getConfig("num")
+	}
+
+	updateDrop(arg_9_1:Find("icon/IconTpl"), var_9_2)
+	onNextTick(function()
+		changeToScrollText(arg_9_1:Find("Text"), var_9_2:getConfig("name"))
 	end)
 	GetImageSpriteFromAtlasAsync(Drop.New({
-		type = slot2:getConfig("resource_category"),
-		id = slot2:getConfig("resource_type")
-	}):getIcon(), "", slot1:Find("res_icon"))
-	setText(slot1:Find("btn_pay/cost"), slot2:getConfig("resource_num"))
-	setText(slot1:Find("btn_unable/cost"), slot2:getConfig("resource_num"))
+		type = arg_9_2:getConfig("resource_category"),
+		id = arg_9_2:getConfig("resource_type")
+	}):getIcon(), "", arg_9_1:Find("res_icon"))
+	setText(arg_9_1:Find("btn_pay/cost"), arg_9_2:getConfig("resource_num"))
+	setText(arg_9_1:Find("btn_unable/cost"), arg_9_2:getConfig("resource_num"))
 
-	if slot2:getConfig("num_limit") == 0 then
-		setText(slot1:Find("limit"), i18n("common_no_limit"))
+	local var_9_3 = arg_9_2:getConfig("num_limit")
+
+	if var_9_3 == 0 then
+		setText(arg_9_1:Find("limit"), i18n("common_no_limit"))
 	else
-		setText(slot1:Find("limit"), i18n("islandshop_tips2") .. math.max(slot2:GetPurchasableCnt(), 0) .. "/" .. slot6)
+		setText(arg_9_1:Find("limit"), i18n("islandshop_tips2") .. math.max(arg_9_2:GetPurchasableCnt(), 0) .. "/" .. var_9_3)
 	end
 end
 
-function slot0.refreshGoodsCard(slot0, slot1)
-	slot0:updateGoodsCard(slot0.goodsCardDic[slot1], slot0.shop:getGoodsById(slot1))
+function var_0_0.refreshGoodsCard(arg_11_0, arg_11_1)
+	arg_11_0:updateGoodsCard(arg_11_0.goodsCardDic[arg_11_1], arg_11_0.shop:getGoodsById(arg_11_1))
 end
 
-function slot0.didEnter(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot0.timer = Timer.New(function ()
-		uv0.delta = uv0.delta and uv0.delta - 1 or uv0.activity.stopTime - uv1:GetServerTime()
+function var_0_0.didEnter(arg_12_0)
+	local var_12_0 = pg.TimeMgr.GetInstance()
 
-		if uv0.strTime ~= string.format("%d" .. i18n("word_date") .. "%d" .. i18n("word_hour"), uv1:parseTimeFrom(uv0.delta)) then
-			setText(uv0.rtTime, slot0)
+	arg_12_0.timer = Timer.New(function()
+		arg_12_0.delta = arg_12_0.delta and arg_12_0.delta - 1 or arg_12_0.activity.stopTime - var_12_0:GetServerTime()
+
+		local var_13_0 = string.format("%d" .. i18n("word_date") .. "%d" .. i18n("word_hour"), var_12_0:parseTimeFrom(arg_12_0.delta))
+
+		if arg_12_0.strTime ~= var_13_0 then
+			setText(arg_12_0.rtTime, var_13_0)
 		end
 	end, 1)
 
-	slot0.timer.func()
-	slot0.timer:Start()
+	arg_12_0.timer.func()
+	arg_12_0.timer:Start()
 
-	slot0.goodsCardDic = {}
+	arg_12_0.goodsCardDic = {}
 
-	slot0.goodsItemList:align(#slot0.goodsList)
+	arg_12_0.goodsItemList:align(#arg_12_0.goodsList)
 end
 
-function slot0.willExit(slot0)
-	slot0.timer:Stop()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_14_0)
+	arg_14_0.timer:Stop()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_14_0._tf)
 end
 
-return slot0
+return var_0_0

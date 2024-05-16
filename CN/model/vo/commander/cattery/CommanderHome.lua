@@ -1,192 +1,200 @@
-slot0 = class("CommanderHome", import("...BaseVO"))
+﻿local var_0_0 = class("CommanderHome", import("...BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.level = slot1.level
-	slot0.configId = slot0.level
-	slot0.exp = slot1.exp
-	slot0.catterys = {}
-	slot0.unlockCatteryId = 1
-	slot0.clean = slot1.clean or 0
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.level = arg_1_1.level
+	arg_1_0.configId = arg_1_0.level
+	arg_1_0.exp = arg_1_1.exp
+	arg_1_0.catterys = {}
+	arg_1_0.unlockCatteryId = 1
+	arg_1_0.clean = arg_1_1.clean or 0
 
-	for slot5, slot6 in ipairs(slot1.slots) do
-		slot0.catterys[slot6.id] = Cattery.New(slot0, slot6)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.slots) do
+		arg_1_0.catterys[iter_1_1.id] = Cattery.New(arg_1_0, iter_1_1)
 
-		if slot0.unlockCatteryId < slot6.id then
-			slot0.unlockCatteryId = slot6.id
+		if iter_1_1.id > arg_1_0.unlockCatteryId then
+			arg_1_0.unlockCatteryId = iter_1_1.id
 		end
 	end
 
-	for slot5 = 1, pg.gameset.commander_home_number.key_value do
-		if not slot0.catterys[slot5] then
-			slot0.catterys[slot5] = Cattery.New(slot0, {
+	for iter_1_2 = 1, pg.gameset.commander_home_number.key_value do
+		if not arg_1_0.catterys[iter_1_2] then
+			arg_1_0.catterys[iter_1_2] = Cattery.New(arg_1_0, {
 				op_flag = 7,
-				id = slot5
+				id = iter_1_2
 			})
 		end
 	end
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.commander_home
 end
 
-function slot0.GetLevel(slot0)
-	return slot0.level
+function var_0_0.GetLevel(arg_3_0)
+	return arg_3_0.level
 end
 
-function slot0.GetMaxLevel(slot0)
-	slot1 = slot0:bindConfigTable()
+function var_0_0.GetMaxLevel(arg_4_0)
+	local var_4_0 = arg_4_0:bindConfigTable()
 
-	return slot1.all[#slot1.all]
+	return var_4_0.all[#var_4_0.all]
 end
 
-function slot0.IsMaxLevel(slot0)
-	return slot0:GetMaxLevel() <= slot0.level
+function var_0_0.IsMaxLevel(arg_5_0)
+	return arg_5_0:GetMaxLevel() <= arg_5_0.level
 end
 
-function slot0.AddExp(slot0, slot1)
-	slot0.exp = slot0.exp + slot1
+function var_0_0.AddExp(arg_6_0, arg_6_1)
+	arg_6_0.exp = arg_6_0.exp + arg_6_1
 
-	while slot0:CanUpgrade() do
-		slot0:LevelUp(slot0.level + 1)
+	while arg_6_0:CanUpgrade() do
+		local var_6_0 = arg_6_0:GetNextLevelExp()
 
-		slot0.exp = slot0.exp - slot0:GetNextLevelExp()
+		arg_6_0:LevelUp(arg_6_0.level + 1)
+
+		arg_6_0.exp = arg_6_0.exp - var_6_0
 	end
 end
 
-function slot0.UpdateExpAndLevel(slot0, slot1, slot2)
-	if slot0.level < slot1 then
-		slot0:LevelUp(slot1)
+function var_0_0.UpdateExpAndLevel(arg_7_0, arg_7_1, arg_7_2)
+	if arg_7_1 > arg_7_0.level then
+		arg_7_0:LevelUp(arg_7_1)
 	end
 
-	slot0.exp = slot2
+	arg_7_0.exp = arg_7_2
 end
 
-function slot0.LevelUp(slot0, slot1)
-	slot0.level = slot1
-	slot0.configId = slot1
+function var_0_0.LevelUp(arg_8_0, arg_8_1)
+	arg_8_0.level = arg_8_1
+	arg_8_0.configId = arg_8_1
 end
 
-function slot0.CanUpgrade(slot0)
-	if slot0:GetNextLevelExp() <= slot0.exp and not slot0:IsMaxLevel() then
+function var_0_0.CanUpgrade(arg_9_0)
+	if arg_9_0:GetNextLevelExp() <= arg_9_0.exp and not arg_9_0:IsMaxLevel() then
 		return true
 	end
 
 	return false
 end
 
-function slot0.GetNextLevelExp(slot0)
-	return slot0:getConfig("home_exp")
+function var_0_0.GetNextLevelExp(arg_10_0)
+	return arg_10_0:getConfig("home_exp")
 end
 
-function slot0.GetPrevLevelExp(slot0)
-	return slot0:bindConfigTable()[slot0.level - 1] and slot1[slot0.level - 1].home_exp or 0
+function var_0_0.GetPrevLevelExp(arg_11_0)
+	local var_11_0 = arg_11_0:bindConfigTable()
+
+	return var_11_0[arg_11_0.level - 1] and var_11_0[arg_11_0.level - 1].home_exp or 0
 end
 
-function slot0.GetCatteries(slot0)
-	return slot0.catterys
+function var_0_0.GetCatteries(arg_12_0)
+	return arg_12_0.catterys
 end
 
-function slot0.GetCatteryById(slot0, slot1)
-	return slot0.catterys[slot1]
+function var_0_0.GetCatteryById(arg_13_0, arg_13_1)
+	return arg_13_0.catterys[arg_13_1]
 end
 
-function slot0.GetAllLevel(slot0)
-	return slot0:bindConfigTable().all
+function var_0_0.GetAllLevel(arg_14_0)
+	return arg_14_0:bindConfigTable().all
 end
 
-function slot0.IsHeadLevel(slot0, slot1)
-	return slot0:GetAllLevel()[1] == slot1
+function var_0_0.IsHeadLevel(arg_15_0, arg_15_1)
+	return arg_15_0:GetAllLevel()[1] == arg_15_1
 end
 
-function slot0.isTailLevel(slot0, slot1)
-	slot2 = slot0:GetAllLevel()
+function var_0_0.isTailLevel(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0:GetAllLevel()
 
-	return slot2[#slot2] == slot1
+	return var_16_0[#var_16_0] == arg_16_1
 end
 
-function slot0.GetLevelConfig(slot0, slot1)
-	return slot0:bindConfigTable()[slot1]
+function var_0_0.GetLevelConfig(arg_17_0, arg_17_1)
+	return arg_17_0:bindConfigTable()[arg_17_1]
 end
 
-function slot0.GetTargetExpForLevel(slot0, slot1)
-	slot2 = 0
+function var_0_0.GetTargetExpForLevel(arg_18_0, arg_18_1)
+	local var_18_0 = 0
 
-	for slot6 = 1, slot1 - 1 do
-		slot2 = slot2 + slot0:GetLevelConfig(slot6).home_exp
+	for iter_18_0 = 1, arg_18_1 - 1 do
+		var_18_0 = var_18_0 + arg_18_0:GetLevelConfig(iter_18_0).home_exp
 	end
 
-	return slot2
+	return var_18_0
 end
 
-function slot0.GetClean(slot0)
-	return slot0.clean
+function var_0_0.GetClean(arg_19_0)
+	return arg_19_0.clean
 end
 
-function slot0.IncCleanValue(slot0)
-	slot0.clean = slot0.clean + slot0:getConfig("flower")[1]
+function var_0_0.IncCleanValue(arg_20_0)
+	arg_20_0.clean = arg_20_0.clean + arg_20_0:getConfig("flower")[1]
 end
 
-function slot0.ReduceClean(slot0)
-	slot1 = false
-	slot2 = slot0:getConfig("flower")[2]
+function var_0_0.ReduceClean(arg_21_0)
+	local var_21_0 = false
+	local var_21_1 = arg_21_0:getConfig("flower")[2]
+	local var_21_2 = arg_21_0:GetCatteries()
 
-	for slot7, slot8 in pairs(slot0:GetCatteries()) do
-		if slot8:IsDirty() then
-			slot0.clean = slot0.clean - slot2
+	for iter_21_0, iter_21_1 in pairs(var_21_2) do
+		if iter_21_1:IsDirty() then
+			arg_21_0.clean = arg_21_0.clean - var_21_1
 
 			break
 		end
 	end
 end
 
-function slot0.GetCleanLevel(slot0)
-	slot2 = 0
+function var_0_0.GetCleanLevel(arg_22_0)
+	local var_22_0 = arg_22_0:getConfig("flower")[3]
+	local var_22_1 = 0
 
-	for slot6, slot7 in ipairs(slot0:getConfig("flower")[3]) do
-		if slot7 <= slot0.clean then
-			slot2 = slot6
+	for iter_22_0, iter_22_1 in ipairs(var_22_0) do
+		if iter_22_1 <= arg_22_0.clean then
+			var_22_1 = iter_22_0
 		end
 	end
 
-	return slot2
+	return var_22_1
 end
 
-function slot0.GetOwnStyles(slot0)
-	return slot0:getConfig("nest_appearance")
+function var_0_0.GetOwnStyles(arg_23_0)
+	return arg_23_0:getConfig("nest_appearance")
 end
 
-function slot0.GetMaxCatteryCnt(slot0)
-	return slot0:getConfig("nest_number")
+function var_0_0.GetMaxCatteryCnt(arg_24_0)
+	return arg_24_0:getConfig("nest_number")
 end
 
-function slot0.GetCatteriesCommanders(slot0)
-	slot1 = {}
+function var_0_0.GetCatteriesCommanders(arg_25_0)
+	local var_25_0 = {}
 
-	for slot5, slot6 in pairs(slot0:GetCatteries()) do
-		if slot6:ExistCommander() then
-			table.insert(slot1, slot6:GetCommanderId())
+	for iter_25_0, iter_25_1 in pairs(arg_25_0:GetCatteries()) do
+		if iter_25_1:ExistCommander() then
+			table.insert(var_25_0, iter_25_1:GetCommanderId())
 		end
 	end
 
-	return slot1
+	return var_25_0
 end
 
-function slot0.ResetCatteryOP(slot0)
-	for slot5, slot6 in pairs(slot0:GetCatteries()) do
-		if slot6:ExistCommander() then
-			slot6:ResetOP()
+function var_0_0.ResetCatteryOP(arg_26_0)
+	local var_26_0 = arg_26_0:GetCatteries()
+
+	for iter_26_0, iter_26_1 in pairs(var_26_0) do
+		if iter_26_1:ExistCommander() then
+			iter_26_1:ResetOP()
 		end
 	end
 end
 
-function slot0.GetFeedCommanderExp(slot0)
-	return slot0:getConfig("feed_level")[2]
+function var_0_0.GetFeedCommanderExp(arg_27_0)
+	return arg_27_0:getConfig("feed_level")[2]
 end
 
-function slot0.AnyCatteryExistOP(slot0)
-	for slot4, slot5 in pairs(slot0:GetCatteries()) do
-		if not slot5:IsLocked() and (slot5:ExiseFeedOP() or slot5:ExistPlayOP() or slot5:ExistCleanOP()) then
+function var_0_0.AnyCatteryExistOP(arg_28_0)
+	for iter_28_0, iter_28_1 in pairs(arg_28_0:GetCatteries()) do
+		if not iter_28_1:IsLocked() and (iter_28_1:ExiseFeedOP() or iter_28_1:ExistPlayOP() or iter_28_1:ExistCleanOP()) then
 			return true
 		end
 	end
@@ -194,9 +202,9 @@ function slot0.AnyCatteryExistOP(slot0)
 	return false
 end
 
-function slot0.AnyCatteryCanUse(slot0)
-	for slot4, slot5 in pairs(slot0:GetCatteries()) do
-		if slot5:GetState() == Cattery.STATE_EMPTY then
+function var_0_0.AnyCatteryCanUse(arg_29_0)
+	for iter_29_0, iter_29_1 in pairs(arg_29_0:GetCatteries()) do
+		if iter_29_1:GetState() == Cattery.STATE_EMPTY then
 			return true
 		end
 	end
@@ -204,29 +212,32 @@ function slot0.AnyCatteryCanUse(slot0)
 	return false
 end
 
-function slot0.GetFeedLevel(slot0)
-	return slot0:getConfig("feed_level")[1]
+function var_0_0.GetFeedLevel(arg_30_0)
+	return arg_30_0:getConfig("feed_level")[1]
 end
 
-function slot0.GetPlayLevel(slot0)
-	return slot0:getConfig("teast_level")[1]
+function var_0_0.GetPlayLevel(arg_31_0)
+	return arg_31_0:getConfig("teast_level")[1]
 end
 
-function slot0.GetExistCommanderCattertCnt(slot0)
-	slot1 = 0
+function var_0_0.GetExistCommanderCattertCnt(arg_32_0)
+	local var_32_0 = 0
+	local var_32_1 = arg_32_0:GetCatteries()
 
-	for slot6, slot7 in pairs(slot0:GetCatteries()) do
-		if slot7:ExistCommander() then
-			slot1 = slot1 + 1
+	for iter_32_0, iter_32_1 in pairs(var_32_1) do
+		if iter_32_1:ExistCommander() then
+			var_32_0 = var_32_0 + 1
 		end
 	end
 
-	return slot1
+	return var_32_0
 end
 
-function slot0.CommanderInHome(slot0, slot1)
-	for slot6, slot7 in pairs(slot0:GetCatteries()) do
-		if slot7:GetCommanderId() == slot1 then
+function var_0_0.CommanderInHome(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_0:GetCatteries()
+
+	for iter_33_0, iter_33_1 in pairs(var_33_0) do
+		if iter_33_1:GetCommanderId() == arg_33_1 then
 			return true
 		end
 	end
@@ -234,9 +245,11 @@ function slot0.CommanderInHome(slot0, slot1)
 	return false
 end
 
-function slot0.ShouldSettleCattery(slot0)
-	for slot5, slot6 in pairs(slot0:GetCatteries()) do
-		if slot6:ExistCommander() and slot6:ExistCacheExp() then
+function var_0_0.ShouldSettleCattery(arg_34_0)
+	local var_34_0 = arg_34_0:GetCatteries()
+
+	for iter_34_0, iter_34_1 in pairs(var_34_0) do
+		if iter_34_1:ExistCommander() and iter_34_1:ExistCacheExp() then
 			return true
 		end
 	end
@@ -244,4 +257,4 @@ function slot0.ShouldSettleCattery(slot0)
 	return false
 end
 
-return slot0
+return var_0_0

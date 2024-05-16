@@ -1,464 +1,526 @@
-slot0 = class("TechnologyTreeNationScene", import("..base.BaseUI"))
+﻿local var_0_0 = class("TechnologyTreeNationScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "TechnologyTreeCampUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
 end
 
-function slot0.didEnter(slot0)
-	slot0:addListener()
-	slot0:updateTecItemList()
-	slot0:updateOneStepBtn()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:addListener()
+	arg_3_0:updateTecItemList()
+	arg_3_0:updateOneStepBtn()
 end
 
-function slot0.willExit(slot0)
-	for slot4, slot5 in pairs(slot0.timerList) do
-		slot5:Stop()
+function var_0_0.willExit(arg_4_0)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.timerList) do
+		iter_4_1:Stop()
 	end
 end
 
-function slot0.initData(slot0)
-	slot0.nationProxy = getProxy(TechnologyNationProxy)
-	slot0.nationToPoint = slot0.nationProxy:getNationPointList()
-	slot0.tecList = slot0.nationProxy:GetTecList()
-	slot0.panelList = {}
-	slot0.timerList = {}
+function var_0_0.initData(arg_5_0)
+	arg_5_0.nationProxy = getProxy(TechnologyNationProxy)
+	arg_5_0.nationToPoint = arg_5_0.nationProxy:getNationPointList()
+	arg_5_0.tecList = arg_5_0.nationProxy:GetTecList()
+	arg_5_0.panelList = {}
+	arg_5_0.timerList = {}
 end
 
-function slot0.calculateCurBuff(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_0.calculateCurBuff(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0
 
-	if slot1 == 0 then
+	if arg_6_1 == 0 then
 		return {}, {}, {}
 	else
-		slot3 = pg.fleet_tech_group[slot2].techs[slot1]
+		var_6_0 = pg.fleet_tech_group[arg_6_2].techs[arg_6_1]
 	end
 
-	slot5 = {}
-	slot6 = {}
+	local var_6_1 = pg.fleet_tech_template[var_6_0].add
+	local var_6_2 = {}
+	local var_6_3 = {}
 
-	for slot10, slot11 in ipairs(pg.fleet_tech_template[slot3].add) do
-		slot12 = slot11[2]
-		slot13 = slot11[3]
+	for iter_6_0, iter_6_1 in ipairs(var_6_1) do
+		local var_6_4 = iter_6_1[2]
+		local var_6_5 = iter_6_1[3]
+		local var_6_6 = iter_6_1[1]
 
-		for slot18, slot19 in ipairs(slot11[1]) do
-			if slot5[slot19] then
-				table.insert(slot5[slot19], {
-					attr = slot12,
-					value = slot13
+		for iter_6_2, iter_6_3 in ipairs(var_6_6) do
+			if var_6_2[iter_6_3] then
+				table.insert(var_6_2[iter_6_3], {
+					attr = var_6_4,
+					value = var_6_5
 				})
 			else
-				slot5[slot19] = {
+				var_6_2[iter_6_3] = {
 					{
-						attr = slot12,
-						value = slot13
+						attr = var_6_4,
+						value = var_6_5
 					}
 				}
-				slot6[#slot6 + 1] = slot19
+				var_6_3[#var_6_3 + 1] = iter_6_3
 			end
 		end
 	end
 
-	slot7 = {}
-	slot8 = {}
+	local var_6_7 = {}
+	local var_6_8 = {}
 
-	for slot12, slot13 in pairs(slot5) do
-		if not slot7[slot12] then
-			slot7[slot12] = {}
-			slot8[slot12] = {}
+	for iter_6_4, iter_6_5 in pairs(var_6_2) do
+		if not var_6_7[iter_6_4] then
+			var_6_7[iter_6_4] = {}
+			var_6_8[iter_6_4] = {}
 		end
 
-		for slot17, slot18 in ipairs(slot13) do
-			slot20 = slot18.value
+		for iter_6_6, iter_6_7 in ipairs(iter_6_5) do
+			local var_6_9 = iter_6_7.attr
+			local var_6_10 = iter_6_7.value
 
-			if not slot7[slot12][slot18.attr] then
-				slot7[slot12][slot19] = slot20
-				slot8[slot12][#slot8[slot12] + 1] = slot19
+			if not var_6_7[iter_6_4][var_6_9] then
+				var_6_7[iter_6_4][var_6_9] = var_6_10
+				var_6_8[iter_6_4][#var_6_8[iter_6_4] + 1] = var_6_9
 			else
-				slot7[slot12][slot19] = slot7[slot12][slot19] + slot20
+				var_6_7[iter_6_4][var_6_9] = var_6_7[iter_6_4][var_6_9] + var_6_10
 			end
 		end
 	end
 
-	table.sort(slot6, function (slot0, slot1)
-		return slot0 < slot1
+	table.sort(var_6_3, function(arg_7_0, arg_7_1)
+		return arg_7_0 < arg_7_1
 	end)
 
-	for slot12, slot13 in pairs(slot8) do
-		table.sort(slot13, function (slot0, slot1)
-			return slot0 < slot1
+	for iter_6_8, iter_6_9 in pairs(var_6_8) do
+		table.sort(iter_6_9, function(arg_8_0, arg_8_1)
+			return arg_8_0 < arg_8_1
 		end)
 	end
 
-	return slot6, slot8, slot7
+	return var_6_3, var_6_8, var_6_7
 end
 
-function slot0.findUI(slot0)
-	slot0.scrollRect = slot0:findTF("Scroll View")
-	slot0.tecItemContainer = slot0:findTF("Scroll View/Viewport/Content")
-	slot0.scrollRectCom = GetComponent(slot0.scrollRect, "ScrollRect")
-	slot0.tecItemTpl = slot0:findTF("CampTecItem")
-	slot0.typeItemTpl = slot0:findTF("TypeItem")
-	slot0.buffItemTpl = slot0:findTF("BuffItem")
-	slot0.tecItemTplOriginWidth = slot0.tecItemTpl.rect.width
-	slot0.oneStepBtn = slot0:findTF("OneStepBtn")
+function var_0_0.findUI(arg_9_0)
+	arg_9_0.scrollRect = arg_9_0:findTF("Scroll View")
+	arg_9_0.tecItemContainer = arg_9_0:findTF("Scroll View/Viewport/Content")
+	arg_9_0.scrollRectCom = GetComponent(arg_9_0.scrollRect, "ScrollRect")
+	arg_9_0.tecItemTpl = arg_9_0:findTF("CampTecItem")
+	arg_9_0.typeItemTpl = arg_9_0:findTF("TypeItem")
+	arg_9_0.buffItemTpl = arg_9_0:findTF("BuffItem")
+	arg_9_0.tecItemTplOriginWidth = arg_9_0.tecItemTpl.rect.width
+	arg_9_0.oneStepBtn = arg_9_0:findTF("OneStepBtn")
 
 	if not LOCK_TEC_NATION_AWARD then
-		slot0.awardTpl = Instantiate(GetComponent(slot0._tf, "ItemList").prefabItem[0])
+		arg_9_0.awardTpl = Instantiate(GetComponent(arg_9_0._tf, "ItemList").prefabItem[0])
 
-		setActive(slot0.awardTpl, false)
+		setActive(arg_9_0.awardTpl, false)
 
-		slot1 = slot0.awardTpl:AddComponent(typeof(LayoutElement))
-		slot1.preferredWidth = 204
-		slot1.preferredHeight = 206
+		local var_9_0 = arg_9_0.awardTpl:AddComponent(typeof(LayoutElement))
 
-		setText(slot0:findTF("CampTecItem/AwardPanel/FinishBtn/Text"), i18n("tec_nation_award_finish"))
+		var_9_0.preferredWidth = 204
+		var_9_0.preferredHeight = 206
+
+		local var_9_1 = arg_9_0:findTF("CampTecItem/AwardPanel/FinishBtn/Text")
+
+		setText(var_9_1, i18n("tec_nation_award_finish"))
 	else
-		setActive(slot0.oneStepBtn, false)
+		setActive(arg_9_0.oneStepBtn, false)
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:emit(uv0.ON_BACK)
+function var_0_0.onBackPressed(arg_10_0)
+	arg_10_0:emit(var_0_0.ON_BACK)
 end
 
-function slot0.closeMyself(slot0)
-	slot0:emit(uv0.ON_CLOSE)
+function var_0_0.closeMyself(arg_11_0)
+	arg_11_0:emit(var_0_0.ON_CLOSE)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.oneStepBtn, function ()
+function var_0_0.addListener(arg_12_0)
+	onButton(arg_12_0, arg_12_0.oneStepBtn, function()
 		pg.m02:sendNotification(GAME.GET_CAMP_TEC_AWARD_ONESTEP)
 	end, SFX_PANEL)
 end
 
-function slot0.updateTecItemList(slot0)
-	slot1 = UIItemList.New(slot0.tecItemContainer, slot0.tecItemTpl)
+function var_0_0.updateTecItemList(arg_14_0)
+	local var_14_0 = UIItemList.New(arg_14_0.tecItemContainer, arg_14_0.tecItemTpl)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot1 + 1
-			uv0.panelList[slot3] = slot2
+	var_14_0:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventUpdate then
+			local var_15_0 = arg_15_1 + 1
 
-			uv0:updateTecItem(slot3)
+			arg_14_0.panelList[var_15_0] = arg_15_2
+
+			arg_14_0:updateTecItem(var_15_0)
 		end
 	end)
-	slot1:align(#pg.fleet_tech_group.all)
+	var_14_0:align(#pg.fleet_tech_group.all)
 end
 
-function slot0.updateTecItem(slot0, slot1)
-	slot2 = slot0.panelList[slot1]
+function var_0_0.updateTecItem(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.panelList[arg_16_1]
+	local var_16_1 = arg_16_0:findTF("AwardPanel", var_16_0)
 
-	slot0:updateTecLevelAward(slot0:findTF("AwardPanel", slot2), slot1)
+	arg_16_0:updateTecLevelAward(var_16_1, arg_16_1)
 
-	slot4 = slot0:findTF("BaseInfo", slot2)
-	slot6 = slot0:findTF("BG/UpLevelColor", slot4)
-	slot10 = slot0:findTF("UpLevelBG", slot4)
-	slot11 = slot0:findTF("UpLevelBtn", slot10)
-	slot12 = slot0:findTF("FinishBtn", slot10)
-	slot14 = slot0:findTF("Text", slot0:findTF("Uping", slot4))
-	slot21 = pg.fleet_tech_group[slot1].nation[1]
+	local var_16_2 = arg_16_0:findTF("BaseInfo", var_16_0)
+	local var_16_3 = arg_16_0:findTF("BG/Title/Text", var_16_2)
+	local var_16_4 = arg_16_0:findTF("BG/UpLevelColor", var_16_2)
+	local var_16_5 = arg_16_0:findTF("NationBG", var_16_2)
+	local var_16_6 = arg_16_0:findTF("Code", var_16_2)
+	local var_16_7 = arg_16_0:findTF("NationTextImg", var_16_6)
+	local var_16_8 = arg_16_0:findTF("UpLevelBG", var_16_2)
+	local var_16_9 = arg_16_0:findTF("UpLevelBtn", var_16_8)
+	local var_16_10 = arg_16_0:findTF("FinishBtn", var_16_8)
+	local var_16_11 = arg_16_0:findTF("Uping", var_16_2)
+	local var_16_12 = arg_16_0:findTF("Text", var_16_11)
+	local var_16_13 = arg_16_0:findTF("EnglishTextImg", var_16_2)
+	local var_16_14 = arg_16_0:findTF("ProgressBarBG/Progress", var_16_2)
+	local var_16_15 = arg_16_0:findTF("CampLogo", var_16_2)
+	local var_16_16 = arg_16_0:findTF("LevelText/Text", var_16_2)
+	local var_16_17 = arg_16_0:findTF("PointTextBar", var_16_2)
+	local var_16_18 = pg.fleet_tech_group[arg_16_1].name
+	local var_16_19 = pg.fleet_tech_group[arg_16_1].nation[1]
 
-	setImageSprite(slot0:findTF("NationBG", slot4), GetSpriteFromAtlas("TecNation", "camptec_nation_bar_" .. slot21))
-	setImageSprite(slot0:findTF("NationTextImg", slot0:findTF("Code", slot4)), GetSpriteFromAtlas("TecNation", "camptec_nation_text_" .. slot21), true)
-	setImageSprite(slot0:findTF("EnglishTextImg", slot4), GetSpriteFromAtlas("TecNation", "camp_tec_english_" .. slot21), true)
-	setImageSprite(slot0:findTF("CampLogo", slot4), GetSpriteFromAtlas("TecNation", "camptec_logo_" .. slot21))
-	setText(slot0:findTF("BG/Title/Text", slot4), pg.fleet_tech_group[slot1].name)
+	setImageSprite(var_16_5, GetSpriteFromAtlas("TecNation", "camptec_nation_bar_" .. var_16_19))
+	setImageSprite(var_16_7, GetSpriteFromAtlas("TecNation", "camptec_nation_text_" .. var_16_19), true)
+	setImageSprite(var_16_13, GetSpriteFromAtlas("TecNation", "camp_tec_english_" .. var_16_19), true)
+	setImageSprite(var_16_15, GetSpriteFromAtlas("TecNation", "camptec_logo_" .. var_16_19))
+	setText(var_16_3, var_16_18)
 
-	slot22, slot23 = nil
-	slot22 = not slot0.tecList[slot1] and 0 or table.indexof(pg.fleet_tech_group[slot1].techs, slot0.tecList[slot1].completeID, 1) or 0
-	slot24 = slot0.nationToPoint[slot21]
-	slot25 = nil
-	slot25 = (slot22 ~= 0 or pg.fleet_tech_template[pg.fleet_tech_group[slot1].techs[1]].pt) and (slot22 ~= #pg.fleet_tech_group[slot1].techs or pg.fleet_tech_template[pg.fleet_tech_group[slot1].techs[slot22]].pt) and pg.fleet_tech_template[pg.fleet_tech_group[slot1].techs[slot22 + 1]].pt
+	local var_16_20
+	local var_16_21
+	local var_16_22 = not arg_16_0.tecList[arg_16_1] and 0 or table.indexof(pg.fleet_tech_group[arg_16_1].techs, arg_16_0.tecList[arg_16_1].completeID, 1) or 0
+	local var_16_23 = arg_16_0.nationToPoint[var_16_19]
+	local var_16_24
 
-	BaseUI:setImageAmount(slot0:findTF("ProgressBarBG/Progress", slot4), 0.1 + 0.8 * slot24 / slot25)
-	setText(slot0:findTF("LevelText/Text", slot4), slot22)
-	setText(slot0:findTF("PointTextBar", slot4), slot24 .. "/" .. slot25)
-
-	function slot26(slot0, slot1, slot2)
-		setActive(uv0, slot0)
-		setActive(uv1, slot1)
-		setActive(uv2, slot1)
-		setActive(uv3, slot1)
-		setActive(uv4, slot2)
+	if var_16_22 == 0 then
+		var_16_21 = pg.fleet_tech_group[arg_16_1].techs[1]
+		var_16_24 = pg.fleet_tech_template[var_16_21].pt
+	elseif var_16_22 == #pg.fleet_tech_group[arg_16_1].techs then
+		var_16_21 = pg.fleet_tech_group[arg_16_1].techs[var_16_22]
+		var_16_24 = pg.fleet_tech_template[var_16_21].pt
+	else
+		var_16_21 = pg.fleet_tech_group[arg_16_1].techs[var_16_22 + 1]
+		var_16_24 = pg.fleet_tech_template[var_16_21].pt
 	end
 
-	if not slot0.tecList[slot1] then
-		if slot25 <= slot24 then
-			slot26(false, true, false)
+	BaseUI:setImageAmount(var_16_14, 0.1 + 0.8 * var_16_23 / var_16_24)
+	setText(var_16_16, var_16_22)
+	setText(var_16_17, var_16_23 .. "/" .. var_16_24)
+
+	local function var_16_25(arg_17_0, arg_17_1, arg_17_2)
+		setActive(var_16_6, arg_17_0)
+		setActive(var_16_8, arg_17_1)
+		setActive(var_16_4, arg_17_1)
+		setActive(var_16_9, arg_17_1)
+		setActive(var_16_11, arg_17_2)
+	end
+
+	if not arg_16_0.tecList[arg_16_1] then
+		if var_16_24 <= var_16_23 then
+			var_16_25(false, true, false)
 		else
-			slot26(true, false, false)
+			var_16_25(true, false, false)
 		end
-	elseif slot22 == #pg.fleet_tech_group[slot1].techs then
-		slot26(true, false, false)
-	elseif slot0.tecList[slot1].studyID ~= 0 then
-		slot26(false, false, true)
+	elseif var_16_22 == #pg.fleet_tech_group[arg_16_1].techs then
+		var_16_25(true, false, false)
+	elseif arg_16_0.tecList[arg_16_1].studyID ~= 0 then
+		var_16_25(false, false, true)
 
-		if slot0.timerList[slot1] then
-			slot0.timerList[slot1]:Stop()
+		if arg_16_0.timerList[arg_16_1] then
+			arg_16_0.timerList[arg_16_1]:Stop()
 		end
 
-		setText(slot14, pg.TimeMgr.GetInstance():DescCDTime(slot0.nationProxy:getLeftTime()))
+		local var_16_26 = arg_16_0.nationProxy:getLeftTime()
 
-		slot0.timerList[slot1] = Timer.New(function ()
-			uv0 = uv0 - 1
+		setText(var_16_12, pg.TimeMgr.GetInstance():DescCDTime(var_16_26))
 
-			setText(uv1, pg.TimeMgr.GetInstance():DescCDTime(uv0))
+		arg_16_0.timerList[arg_16_1] = Timer.New(function()
+			var_16_26 = var_16_26 - 1
 
-			if uv0 == 0 then
-				uv2.timerList[uv3]:Stop()
+			setText(var_16_12, pg.TimeMgr.GetInstance():DescCDTime(var_16_26))
+
+			if var_16_26 == 0 then
+				arg_16_0.timerList[arg_16_1]:Stop()
 			end
 		end, 1, -1)
 
-		slot0.timerList[slot1]:Start()
-	elseif slot25 <= slot24 then
-		slot26(false, true, false)
+		arg_16_0.timerList[arg_16_1]:Start()
+	elseif var_16_24 <= var_16_23 then
+		var_16_25(false, true, false)
 	else
-		slot26(true, false, false)
+		var_16_25(true, false, false)
 	end
 
-	onButton(slot0, slot11, function ()
-		uv0:emit(TechnologyConst.CLICK_UP_TEC_BTN, uv1, uv2)
+	onButton(arg_16_0, var_16_9, function()
+		arg_16_0:emit(TechnologyConst.CLICK_UP_TEC_BTN, arg_16_1, var_16_21)
 	end, SFX_PANEL)
 
-	slot27 = slot0:findTF("Mask/DetailPanel", slot2)
-	slot28 = GetComponent(slot2, "LayoutElement")
-	slot29 = slot0:findTF("Toggle", slot27)
+	local var_16_27 = arg_16_0:findTF("Mask/DetailPanel", var_16_0)
+	local var_16_28 = GetComponent(var_16_0, "LayoutElement")
+	local var_16_29 = arg_16_0:findTF("Toggle", var_16_27)
 
-	slot0:updateDetailPanel(slot27, slot22, slot1, slot21, false)
-	onToggle(slot0, slot0:findTF("BG", slot4), function (slot0)
-		if slot0 then
-			triggerToggle(uv0, false)
+	arg_16_0:updateDetailPanel(var_16_27, var_16_22, arg_16_1, var_16_19, false)
+	onToggle(arg_16_0, arg_16_0:findTF("BG", var_16_2), function(arg_20_0)
+		if arg_20_0 then
+			triggerToggle(var_16_29, false)
+			LeanTween.value(go(var_16_0), arg_16_0.tecItemTplOriginWidth, arg_16_0.tecItemTplOriginWidth + var_16_27.rect.width, 0.25):setOnUpdate(System.Action_float(function(arg_21_0)
+				var_16_28.preferredWidth = arg_21_0
 
-			slot1 = LeanTween.value(go(uv1), uv2.tecItemTplOriginWidth, uv2.tecItemTplOriginWidth + uv3.rect.width, 0.25)
-			slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-				uv0.preferredWidth = slot0
-
-				if uv1 == #pg.fleet_tech_group.all then
-					uv2.scrollRectCom.horizontalNormalizedPosition = 1
+				if arg_16_1 == #pg.fleet_tech_group.all then
+					arg_16_0.scrollRectCom.horizontalNormalizedPosition = 1
 				end
-			end))
-
-			slot1:setOnComplete(System.Action(function ()
-				if uv0 == #pg.fleet_tech_group.all then
-					uv1.scrollRectCom.horizontalNormalizedPosition = 1
+			end)):setOnComplete(System.Action(function()
+				if arg_16_1 == #pg.fleet_tech_group.all then
+					arg_16_0.scrollRectCom.horizontalNormalizedPosition = 1
 				end
 			end))
 		else
-			LeanTween.cancel(go(uv1))
+			LeanTween.cancel(go(var_16_0))
 
-			slot2 = LeanTween.value(go(uv1), uv4.preferredWidth, uv2.tecItemTplOriginWidth, 0.25)
+			local var_20_0 = var_16_28.preferredWidth
 
-			slot2:setOnUpdate(System.Action_float(function (slot0)
-				uv0.preferredWidth = slot0
+			LeanTween.value(go(var_16_0), var_20_0, arg_16_0.tecItemTplOriginWidth, 0.25):setOnUpdate(System.Action_float(function(arg_23_0)
+				var_16_28.preferredWidth = arg_23_0
 			end))
 		end
 	end)
 end
 
-function slot0.updateDetailPanel(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = slot0:findTF("TypeItemContainer", slot1)
+function var_0_0.updateDetailPanel(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4, arg_24_5)
+	local var_24_0 = arg_24_0:findTF("TypeItemContainer", arg_24_1)
+	local var_24_1 = arg_24_0:findTF("BG/Logo", arg_24_1)
 
-	setImageSprite(slot0:findTF("BG/Logo", slot1), GetSpriteFromAtlas("TecNation", "camptec_logo_" .. slot4))
+	setImageSprite(var_24_1, GetSpriteFromAtlas("TecNation", "camptec_logo_" .. arg_24_4))
 
-	slot8 = slot0:findTF("Toggle", slot1)
+	local var_24_2 = arg_24_0:findTF("Toggle", arg_24_1)
 
-	if slot2 == #pg.fleet_tech_group[slot3].techs and slot5 == false then
-		setActive(slot8, false)
+	if arg_24_2 == #pg.fleet_tech_group[arg_24_3].techs and arg_24_5 == false then
+		setActive(var_24_2, false)
 	end
 
-	function slot9(slot0, slot1, slot2)
-		slot3 = UIItemList.New(uv0, uv1.typeItemTpl)
-		slot4 = nil
+	local function var_24_3(arg_25_0, arg_25_1, arg_25_2)
+		local var_25_0 = UIItemList.New(var_24_0, arg_24_0.typeItemTpl)
+		local var_25_1
 
-		if slot0 == 0 then
-			slot3:align(0)
+		if arg_25_0 == 0 then
+			var_25_0:align(0)
 
 			return
 		else
-			slot4 = pg.fleet_tech_group[slot1].techs[slot0]
+			var_25_1 = pg.fleet_tech_group[arg_25_1].techs[arg_25_0]
 		end
 
-		slot5, slot6, slot7 = nil
-		slot8 = Color.New(1, 0.9333333333333333, 0.19215686274509805)
+		local var_25_2
+		local var_25_3
+		local var_25_4
+		local var_25_5 = Color.New(1, 0.9333333333333333, 0.19215686274509805)
 
-		if slot2 then
-			slot5, slot6, slot7 = uv1:calculateCurBuff(slot0 - 1, slot1)
+		if arg_25_2 then
+			var_25_2, var_25_3, var_25_4 = arg_24_0:calculateCurBuff(arg_25_0 - 1, arg_25_1)
 		end
 
-		slot10 = {}
-		slot11 = {}
+		local var_25_6 = pg.fleet_tech_template[var_25_1].add
+		local var_25_7 = {}
+		local var_25_8 = {}
 
-		for slot15, slot16 in ipairs(pg.fleet_tech_template[slot4].add) do
-			slot17 = slot16[2]
-			slot18 = slot16[3]
+		for iter_25_0, iter_25_1 in ipairs(var_25_6) do
+			local var_25_9 = iter_25_1[2]
+			local var_25_10 = iter_25_1[3]
+			local var_25_11 = ShipType.FilterOverQuZhuType(iter_25_1[1])
 
-			for slot23, slot24 in ipairs(ShipType.FilterOverQuZhuType(slot16[1])) do
-				slot25 = nil
-				slot25 = (not slot2 or (table.indexof(slot5, slot24, 1) or {
-					attr = slot17,
-					value = slot18,
-					attrColor = slot8,
-					valueColor = slot8
-				}) and (table.indexof(slot6[slot24], slot17, 1) or {
-					attr = slot17,
-					value = slot18,
-					attrColor = slot8,
-					valueColor = slot8
-				}) and (slot18 == slot7[slot24][slot17] or {
-					attr = slot17,
-					value = slot18,
-					valueColor = slot8
-				}) and {
-					attr = slot17,
-					value = slot18
-				}) and {
-					attr = slot17,
-					value = slot18
-				}
+			for iter_25_2, iter_25_3 in ipairs(var_25_11) do
+				local var_25_12
 
-				if slot10[slot24] then
-					table.insert(slot10[slot24], slot25)
+				if arg_25_2 then
+					if not table.indexof(var_25_2, iter_25_3, 1) then
+						var_25_12 = {
+							attr = var_25_9,
+							value = var_25_10,
+							attrColor = var_25_5,
+							valueColor = var_25_5
+						}
+					elseif not table.indexof(var_25_3[iter_25_3], var_25_9, 1) then
+						var_25_12 = {
+							attr = var_25_9,
+							value = var_25_10,
+							attrColor = var_25_5,
+							valueColor = var_25_5
+						}
+					elseif var_25_10 ~= var_25_4[iter_25_3][var_25_9] then
+						var_25_12 = {
+							attr = var_25_9,
+							value = var_25_10,
+							valueColor = var_25_5
+						}
+					else
+						var_25_12 = {
+							attr = var_25_9,
+							value = var_25_10
+						}
+					end
 				else
-					slot10[slot24] = {
-						slot25
+					var_25_12 = {
+						attr = var_25_9,
+						value = var_25_10
 					}
-					slot11[#slot11 + 1] = slot24
+				end
+
+				if var_25_7[iter_25_3] then
+					table.insert(var_25_7[iter_25_3], var_25_12)
+				else
+					var_25_7[iter_25_3] = {
+						var_25_12
+					}
+					var_25_8[#var_25_8 + 1] = iter_25_3
 				end
 			end
 		end
 
-		slot3:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				slot4 = uv0:findTF("BuffItemContainer", slot2)
-				slot5 = uv1[slot1 + 1]
+		var_25_0:make(function(arg_26_0, arg_26_1, arg_26_2)
+			if arg_26_0 == UIItemList.EventUpdate then
+				local var_26_0 = arg_24_0:findTF("TypeIcon", arg_26_2)
+				local var_26_1 = arg_24_0:findTF("BuffItemContainer", arg_26_2)
+				local var_26_2 = var_25_8[arg_26_1 + 1]
 
-				setImageSprite(uv0:findTF("TypeIcon", slot2), GetSpriteFromAtlas("ShipType", "buffitem_tec_" .. slot5))
-				uv0:upBuffList(slot2, uv2[slot5])
+				setImageSprite(var_26_0, GetSpriteFromAtlas("ShipType", "buffitem_tec_" .. var_26_2))
+				arg_24_0:upBuffList(arg_26_2, var_25_7[var_26_2])
 			end
 		end)
-		slot3:align(#slot11)
+		var_25_0:align(#var_25_8)
 	end
 
-	onToggle(slot0, slot8, function (slot0)
-		if slot0 == true then
-			uv0(uv1 + 1, uv2, true)
+	onToggle(arg_24_0, var_24_2, function(arg_27_0)
+		if arg_27_0 == true then
+			var_24_3(arg_24_2 + 1, arg_24_3, true)
 		else
-			uv0(uv1, uv2)
+			var_24_3(arg_24_2, arg_24_3)
 		end
 	end, SFX_PANEL)
 
-	if slot5 == false then
-		triggerToggle(slot8, false)
+	if arg_24_5 == false then
+		triggerToggle(var_24_2, false)
 	end
 end
 
-function slot0.upBuffList(slot0, slot1, slot2)
-	slot4 = UIItemList.New(slot0:findTF("BuffItemContainer", slot1), slot0.buffItemTpl)
+function var_0_0.upBuffList(arg_28_0, arg_28_1, arg_28_2)
+	local var_28_0 = arg_28_0:findTF("BuffItemContainer", arg_28_1)
+	local var_28_1 = UIItemList.New(var_28_0, arg_28_0.buffItemTpl)
 
-	slot4:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot8 = uv1[slot1 + 1].valueColor
+	var_28_1:make(function(arg_29_0, arg_29_1, arg_29_2)
+		if arg_29_0 == UIItemList.EventUpdate then
+			local var_29_0 = arg_28_0:findTF("AttrText", arg_29_2)
+			local var_29_1 = arg_28_0:findTF("ValueText", arg_29_2)
+			local var_29_2 = arg_28_2[arg_29_1 + 1].attr
+			local var_29_3 = arg_28_2[arg_29_1 + 1].value
+			local var_29_4 = arg_28_2[arg_29_1 + 1].attrColor
+			local var_29_5 = arg_28_2[arg_29_1 + 1].valueColor
 
-			setText(uv0:findTF("AttrText", slot2), AttributeType.Type2Name(pg.attribute_info_by_type[uv1[slot1 + 1].attr].name))
-			setText(uv0:findTF("ValueText", slot2), "+" .. uv1[slot1 + 1].value)
+			setText(var_29_0, AttributeType.Type2Name(pg.attribute_info_by_type[var_29_2].name))
+			setText(var_29_1, "+" .. var_29_3)
 
-			if uv1[slot1 + 1].attrColor then
-				setTextColor(slot3, slot7)
+			if var_29_4 then
+				setTextColor(var_29_0, var_29_4)
 			else
-				setTextColor(slot3, Color.white)
+				setTextColor(var_29_0, Color.white)
 			end
 
-			if slot8 then
-				setTextColor(slot4, slot8)
+			if var_29_5 then
+				setTextColor(var_29_1, var_29_5)
 			else
-				setTextColor(slot4, Color.green)
+				setTextColor(var_29_1, Color.green)
 			end
 		end
 	end)
-	slot4:align(#slot2)
+	var_28_1:align(#arg_28_2)
 end
 
-function slot0.updateTecLevelAward(slot0, slot1, slot2)
+function var_0_0.updateTecLevelAward(arg_30_0, arg_30_1, arg_30_2)
 	if LOCK_TEC_NATION_AWARD then
-		setActive(slot1, false)
+		setActive(arg_30_1, false)
 
 		return
 	end
 
-	slot3 = slot0:findTF("AwardItem")
-	slot5 = UIItemList.New(slot0:findTF("ItemContainer", slot1), slot0.awardTpl)
-	slot6 = slot0:findTF("Level", slot1)
-	slot7 = slot0:findTF("Level/Num", slot1)
-	slot8 = slot0:findTF("GetBtn", slot1)
-	slot9 = slot0:findTF("DisGetBtn", slot1)
-	slot10 = slot0:findTF("FinishBtn", slot1)
-	slot12 = pg.fleet_tech_group[slot2]
-	slot15 = table.indexof(slot12.techs, slot0.nationProxy:GetTecItemByGroupID(slot2) and slot11.rewardedID or 0, 1) or 0
-	slot17 = slot15 + 1
-	slot18 = nil
+	local var_30_0 = arg_30_0:findTF("AwardItem")
+	local var_30_1 = arg_30_0:findTF("ItemContainer", arg_30_1)
+	local var_30_2 = UIItemList.New(var_30_1, arg_30_0.awardTpl)
+	local var_30_3 = arg_30_0:findTF("Level", arg_30_1)
+	local var_30_4 = arg_30_0:findTF("Level/Num", arg_30_1)
+	local var_30_5 = arg_30_0:findTF("GetBtn", arg_30_1)
+	local var_30_6 = arg_30_0:findTF("DisGetBtn", arg_30_1)
+	local var_30_7 = arg_30_0:findTF("FinishBtn", arg_30_1)
+	local var_30_8 = arg_30_0.nationProxy:GetTecItemByGroupID(arg_30_2)
+	local var_30_9 = pg.fleet_tech_group[arg_30_2]
+	local var_30_10 = var_30_8 and var_30_8.rewardedID or 0
+	local var_30_11 = var_30_8 and var_30_8.completeID or 0
+	local var_30_12 = table.indexof(var_30_9.techs, var_30_10, 1) or 0
+	local var_30_13 = table.indexof(var_30_9.techs, var_30_11, 1) or 0
+	local var_30_14 = var_30_12 + 1
+	local var_30_15
 
-	if slot15 < (table.indexof(slot12.techs, slot11 and slot11.completeID or 0, 1) or 0) then
-		slot18 = slot12.techs[slot17]
-	elseif slot15 == slot16 and slot15 < #slot12.techs then
-		slot18 = slot12.techs[slot17]
+	if var_30_12 < var_30_13 then
+		var_30_15 = var_30_9.techs[var_30_14]
+	elseif var_30_12 == var_30_13 and var_30_12 < #var_30_9.techs then
+		var_30_15 = var_30_9.techs[var_30_14]
 	end
 
-	if slot18 then
-		setActive(slot6, true)
-		setActive(slot4, true)
-		setActive(slot8, slot15 < slot16)
-		setActive(slot9, slot15 == slot16)
-		setActive(slot10, false)
-		setText(slot7, slot17)
-		slot5:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				slot3 = uv0[slot1 + 1]
+	if var_30_15 then
+		setActive(var_30_3, true)
+		setActive(var_30_1, true)
+		setActive(var_30_5, var_30_12 < var_30_13)
+		setActive(var_30_6, var_30_12 == var_30_13)
+		setActive(var_30_7, false)
+		setText(var_30_4, var_30_14)
 
-				updateDrop(slot2, {
-					type = slot3[1],
-					id = slot3[2],
-					count = slot3[3]
-				})
+		local var_30_16 = pg.fleet_tech_template[var_30_15].level_award_display
+
+		var_30_2:make(function(arg_31_0, arg_31_1, arg_31_2)
+			if arg_31_0 == UIItemList.EventUpdate then
+				arg_31_1 = arg_31_1 + 1
+
+				local var_31_0 = var_30_16[arg_31_1]
+				local var_31_1 = {
+					type = var_31_0[1],
+					id = var_31_0[2],
+					count = var_31_0[3]
+				}
+
+				updateDrop(arg_31_2, var_31_1)
 			end
 		end)
-		slot5:align(#pg.fleet_tech_template[slot18].level_award_display)
+		var_30_2:align(#var_30_16)
 
-		if slot15 < slot16 then
-			onButton(slot0, slot8, function ()
+		if var_30_12 < var_30_13 then
+			onButton(arg_30_0, var_30_5, function()
 				pg.m02:sendNotification(GAME.GET_CAMP_TEC_AWARD, {
-					groupID = uv0,
-					tecID = uv1
+					groupID = arg_30_2,
+					tecID = var_30_15
 				})
 			end, SFX_PANEL)
 		end
-
-		return
+	else
+		setActive(var_30_3, false)
+		setActive(var_30_1, false)
+		setActive(var_30_5, false)
+		setActive(var_30_6, false)
+		setActive(var_30_7, true)
 	end
-
-	setActive(slot6, false)
-	setActive(slot4, false)
-	setActive(slot8, false)
-	setActive(slot9, false)
-	setActive(slot10, true)
 end
 
-function slot0.updateOneStepBtn(slot0)
+function var_0_0.updateOneStepBtn(arg_33_0)
 	if LOCK_TEC_NATION_AWARD then
-		setActive(slot0.oneStepBtn, false)
+		setActive(arg_33_0.oneStepBtn, false)
 
 		return
 	end
 
-	setActive(slot0.oneStepBtn, slot0.nationProxy:isAnyTecCampCanGetAward())
+	setActive(arg_33_0.oneStepBtn, arg_33_0.nationProxy:isAnyTecCampCanGetAward())
 end
 
-function slot0.updateTecListData(slot0)
-	slot0.tecList = getProxy(TechnologyNationProxy):GetTecList()
+function var_0_0.updateTecListData(arg_34_0)
+	arg_34_0.tecList = getProxy(TechnologyNationProxy):GetTecList()
 end
 
-return slot0
+return var_0_0

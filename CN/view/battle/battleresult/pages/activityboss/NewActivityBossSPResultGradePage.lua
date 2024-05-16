@@ -1,78 +1,92 @@
-slot0 = class("NewActivityBossSPResultGradePage", import(".NewActivityBossResultGradePage"))
+﻿local var_0_0 = class("NewActivityBossSPResultGradePage", import(".NewActivityBossResultGradePage"))
 
-function slot0.LoadBGAndGrade(slot0, slot1)
+function var_0_0.LoadBGAndGrade(arg_1_0, arg_1_1)
 	parallelAsync({
-		function (slot0)
-			uv0:LoadBG(slot0)
+		function(arg_2_0)
+			arg_1_0:LoadBG(arg_2_0)
 		end,
-		function (slot0)
-			uv0:LoadGrade(slot0)
+		function(arg_3_0)
+			arg_1_0:LoadGrade(arg_3_0)
 		end,
-		function (slot0)
-			uv0:LoadActivityBossSPRes(slot0)
+		function(arg_4_0)
+			arg_1_0:LoadActivityBossSPRes(arg_4_0)
 		end
-	}, slot1)
+	}, arg_1_1)
 end
 
-function slot0.LoadActivityBossSPRes(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/ActivitybossSP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited then
+function var_0_0.LoadActivityBossSPRes(arg_5_0, arg_5_1)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ActivitybossSP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_6_0)
+		if arg_5_0.exited then
 			return
 		end
 
-		uv0:InitActivityPanel(Object.Instantiate(slot0, uv0.bgTr).transform)
-		uv1()
+		local var_6_0 = Object.Instantiate(arg_6_0, arg_5_0.bgTr)
+
+		arg_5_0:InitActivityPanel(var_6_0.transform)
+		arg_5_1()
 	end), true, true)
 end
 
-function slot0.InitActivityPanel(slot0, slot1)
-	slot1:SetSiblingIndex(1)
+function var_0_0.InitActivityPanel(arg_7_0, arg_7_1)
+	arg_7_1:SetSiblingIndex(1)
 
-	slot0.playAgain = slot1:Find("playAgain")
-	slot0.toggle = slot1:Find("playAgain/ticket/checkbox")
-	slot2 = getProxy(ActivityProxy):GetActivityBossRuntime(slot0.contextData.actId)
-	slot3 = slot2.spScore
-	slot2.spScore = {
+	arg_7_0.playAgain = arg_7_1:Find("playAgain")
+	arg_7_0.toggle = arg_7_1:Find("playAgain/ticket/checkbox")
+
+	local var_7_0 = getProxy(ActivityProxy):GetActivityBossRuntime(arg_7_0.contextData.actId)
+	local var_7_1 = var_7_0.spScore
+
+	var_7_0.spScore = {
 		score = 0
 	}
 
-	setText(slot1:Find("Score/Text"), slot3.score)
-	setActive(slot1:Find("Score/NewText"), slot3.new)
-	setActive(slot1:Find("Score/NotNewText"), not slot3.new)
-	slot0:UpdateActiveBuffs(slot1:Find("Active"), slot2.buffIds)
-	setText(slot1:Find("Score/Title"), i18n("activityboss_sp_score"))
-	setText(slot1:Find("Score/NewText"), i18n("activityboss_sp_score_update"))
-	setText(slot1:Find("Score/NotNewText"), i18n("activityboss_sp_score_not_update"))
-	setText(slot1:Find("Active/PTTitle"), i18n("activityboss_sp_score_bonus"))
-	setText(slot1:Find("Active/BuffTitle"), i18n("activityboss_sp_active_buff"))
+	setText(arg_7_1:Find("Score/Text"), var_7_1.score)
+	setActive(arg_7_1:Find("Score/NewText"), var_7_1.new)
+	setActive(arg_7_1:Find("Score/NotNewText"), not var_7_1.new)
+
+	local var_7_2 = var_7_0.buffIds
+
+	arg_7_0:UpdateActiveBuffs(arg_7_1:Find("Active"), var_7_2)
+	setText(arg_7_1:Find("Score/Title"), i18n("activityboss_sp_score"))
+	setText(arg_7_1:Find("Score/NewText"), i18n("activityboss_sp_score_update"))
+	setText(arg_7_1:Find("Score/NotNewText"), i18n("activityboss_sp_score_not_update"))
+	setText(arg_7_1:Find("Active/PTTitle"), i18n("activityboss_sp_score_bonus"))
+	setText(arg_7_1:Find("Active/BuffTitle"), i18n("activityboss_sp_active_buff"))
 end
 
-function slot0.UpdateActiveBuffs(slot0, slot1, slot2)
-	slot4 = slot1:Find("ScrollView")
-	slot4 = slot4:GetComponent("LScrollRect")
+function var_0_0.UpdateActiveBuffs(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = _.map(arg_8_2, function(arg_9_0)
+		return ActivityBossBuff.New({
+			configId = arg_9_0
+		})
+	end)
+	local var_8_1 = arg_8_1:Find("ScrollView"):GetComponent("LScrollRect")
 
-	function slot4.onUpdateItem(slot0, slot1)
-		slot3 = uv0[slot0 + 1]
+	function var_8_1.onUpdateItem(arg_10_0, arg_10_1)
+		arg_10_0 = arg_10_0 + 1
 
-		setActive(tf(slot1):Find("Icon"), tobool(slot3))
+		local var_10_0 = tf(arg_10_1)
+		local var_10_1 = var_8_0[arg_10_0]
 
-		if not slot3 then
+		setActive(var_10_0:Find("Icon"), tobool(var_10_1))
+
+		if not var_10_1 then
 			return
 		end
 
-		GetImageSpriteFromAtlasAsync(slot3:GetIconPath(), "", slot2:Find("Icon"))
+		GetImageSpriteFromAtlasAsync(var_10_1:GetIconPath(), "", var_10_0:Find("Icon"))
 	end
 
-	slot4:SetTotalCount(20)
-	setText(slot1:Find("Text"), "+" .. Mathf.Round(_.reduce(_.map(slot2, function (slot0)
-		return ActivityBossBuff.New({
-			configId = slot0
-		})
-	end), 0, function (slot0, slot1)
-		return slot0 + slot1:GetBonus()
-	end) * 100) .. "%")
+	local var_8_2 = 20
+
+	var_8_1:SetTotalCount(var_8_2)
+
+	local var_8_3 = _.reduce(var_8_0, 0, function(arg_11_0, arg_11_1)
+		return arg_11_0 + arg_11_1:GetBonus()
+	end)
+	local var_8_4 = Mathf.Round(var_8_3 * 100)
+
+	setText(arg_8_1:Find("Text"), "+" .. var_8_4 .. "%")
 end
 
-return slot0
+return var_0_0

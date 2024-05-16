@@ -1,31 +1,31 @@
-slot0 = class("GetSpineRequestPackage", import(".RequestPackage"))
+﻿local var_0_0 = class("GetSpineRequestPackage", import(".RequestPackage"))
 
-function slot0.__call(slot0)
-	if slot0.stopped then
+function var_0_0.__call(arg_1_0)
+	if arg_1_0.stopped then
 		return
 	end
 
-	slot2 = PoolMgr.GetInstance()
+	local var_1_0 = arg_1_0.name
 
-	slot2:GetSpineChar(slot0.name, true, function (slot0)
-		if uv0.stopped then
-			PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
+	PoolMgr.GetInstance():GetSpineChar(var_1_0, true, function(arg_2_0)
+		if arg_1_0.stopped then
+			PoolMgr.GetInstance():ReturnSpineChar(var_1_0, arg_2_0)
 
 			return
 		end
 
-		if uv0.onLoaded then
-			uv0.onLoaded(slot0)
+		if arg_1_0.onLoaded then
+			arg_1_0.onLoaded(arg_2_0)
 		end
 	end)
 
-	return slot0
+	return arg_1_0
 end
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.name = slot1
-	slot0.path = "Spine"
-	slot0.onLoaded = slot2
+function var_0_0.Ctor(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.name = arg_3_1
+	arg_3_0.path = "Spine"
+	arg_3_0.onLoaded = arg_3_2
 end
 
-return slot0
+return var_0_0

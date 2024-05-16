@@ -1,4 +1,4 @@
-return {
+﻿local var_0_0 = {
 	index = {
 		{
 			spr = "index_all",
@@ -330,44 +330,47 @@ return {
 			}
 		}
 	},
-	getWeight = function (slot0, slot1)
-		if slot1 == "nationality" then
-			return 100 - slot0.getConfig(slot0, slot1)
+	getWeight = function(arg_1_0, arg_1_1)
+		if arg_1_1 == "nationality" then
+			return 100 - arg_1_0:getConfig(arg_1_1)
 		else
-			return slot0.getConfig(slot0, slot1)
+			return arg_1_0:getConfig(arg_1_1)
 		end
-	end,
-	sortFunc = function (slot0, slot1)
-		slot2 = {
-			function (slot0)
-				return slot0.isSkin and 0 or 1
-			end,
-			function (slot0)
-				if not slot0.isSkin then
-					return 0
-				else
-					return (uv0 and -1 or 1) * (pg.equip_skin_template[slot0.id][uv1.value] or 0)
-				end
-			end,
-			function (slot0)
-				if not slot0.isSkin then
-					return 0
-				else
-					return (uv0 and -1 or 1) * -slot0.id
-				end
-			end
-		}
-
-		for slot6, slot7 in ipairs(slot0.values) do
-			table.insert(slot2, function (slot0)
-				if slot0.isSkin then
-					return 0
-				else
-					return (uv0 and -1 or 1) * -uv1.getWeight(slot0, uv2)
-				end
-			end)
-		end
-
-		return slot2
 	end
 }
+
+function var_0_0.sortFunc(arg_2_0, arg_2_1)
+	local var_2_0 = {
+		function(arg_3_0)
+			return arg_3_0.isSkin and 0 or 1
+		end,
+		function(arg_4_0)
+			if not arg_4_0.isSkin then
+				return 0
+			else
+				return (arg_2_1 and -1 or 1) * (pg.equip_skin_template[arg_4_0.id][arg_2_0.value] or 0)
+			end
+		end,
+		function(arg_5_0)
+			if not arg_5_0.isSkin then
+				return 0
+			else
+				return (arg_2_1 and -1 or 1) * -arg_5_0.id
+			end
+		end
+	}
+
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.values) do
+		table.insert(var_2_0, function(arg_6_0)
+			if arg_6_0.isSkin then
+				return 0
+			else
+				return (arg_2_1 and -1 or 1) * -var_0_0.getWeight(arg_6_0, iter_2_1)
+			end
+		end)
+	end
+
+	return var_2_0
+end
+
+return var_0_0

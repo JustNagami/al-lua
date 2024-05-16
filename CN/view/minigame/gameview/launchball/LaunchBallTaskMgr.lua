@@ -1,110 +1,119 @@
-slot0 = class("LaunchBallTaskMgr")
-slot0.type_split = 1
-slot0.type_series_split = 2
-slot0.type_close_split = 3
-slot0.type_over_split = 4
-slot0.type_many_split = 5
-slot0.type_pass_skill = 200
-slot0.type_pass_skill_split = 201
-slot0.type_trigger_skill = 300
-slot0.type_trigger_skill_split = 301
-slot0.type_trigger_skill_split_all = 302
-slot0.type_trigger_skill_time = 303
-slot0.type_player_target_round = 400
-slot0.type_player_round = 401
+﻿local var_0_0 = class("LaunchBallTaskMgr")
 
-function slot0.CheckTaskUpdate(slot0)
-	slot3 = nil
+var_0_0.type_split = 1
+var_0_0.type_series_split = 2
+var_0_0.type_close_split = 3
+var_0_0.type_over_split = 4
+var_0_0.type_many_split = 5
+var_0_0.type_pass_skill = 200
+var_0_0.type_pass_skill_split = 201
+var_0_0.type_trigger_skill = 300
+var_0_0.type_trigger_skill_split = 301
+var_0_0.type_trigger_skill_split_all = 302
+var_0_0.type_trigger_skill_time = 303
+var_0_0.type_player_target_round = 400
+var_0_0.type_player_round = 401
 
-	if LaunchBallActivityMgr.GetPlayerZhuanshuIndex(slot0.player) and not LaunchBallActivityMgr.CheckZhuanShuAble(ActivityConst.MINIGAME_ZUMA, slot2) then
+function var_0_0.CheckTaskUpdate(arg_1_0)
+	local var_1_0 = arg_1_0.player
+	local var_1_1 = LaunchBallActivityMgr.GetPlayerZhuanshuIndex(var_1_0)
+	local var_1_2
+
+	if var_1_1 and not LaunchBallActivityMgr.CheckZhuanShuAble(ActivityConst.MINIGAME_ZUMA, var_1_1) then
 		return
 	end
 
-	slot6 = {}
+	local var_1_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK):getConfig("config_client")
+	local var_1_4 = {}
 
-	for slot10 = 1, #getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK):getConfig("config_client") do
-		if slot5[slot10].player == slot1 then
-			slot6 = slot5[slot10].task
+	for iter_1_0 = 1, #var_1_3 do
+		if var_1_3[iter_1_0].player == var_1_0 then
+			var_1_4 = var_1_3[iter_1_0].task
 		end
 	end
 
-	slot7 = {}
+	local var_1_5 = {}
 
-	for slot11 = 1, #slot6 do
-		slot12 = slot6[slot11][1]
-		slot14 = slot6[slot11][3]
-		slot15 = slot6[slot11][4]
+	for iter_1_1 = 1, #var_1_4 do
+		local var_1_6 = var_1_4[iter_1_1][1]
+		local var_1_7 = var_1_4[iter_1_1][2]
+		local var_1_8 = var_1_4[iter_1_1][3]
+		local var_1_9 = var_1_4[iter_1_1][4]
+		local var_1_10 = getProxy(TaskProxy):getTaskById(var_1_7)
 
-		if getProxy(TaskProxy):getTaskById(slot6[slot11][2]) and slot16:getTaskStatus() == 0 then
-			slot17 = 0
-			slot18 = slot16:getTargetNumber()
-			slot19 = slot16:getProgress()
+		if var_1_10 and var_1_10:getTaskStatus() == 0 then
+			local var_1_11 = 0
+			local var_1_12 = var_1_10:getTargetNumber()
+			local var_1_13 = var_1_10:getProgress()
 
-			if slot12 == uv0.type_split and slot0.split_count ~= 0 then
-				slot17 = slot18 < slot0.split_count + slot19 and slot18 or slot0.split_count + slot19
-			elseif slot12 == uv0.type_player_target_round then
-				if slot15 == slot0.round then
-					slot17 = slot19 + 1
+			if var_1_6 == var_0_0.type_split and arg_1_0.split_count ~= 0 then
+				var_1_11 = var_1_12 < arg_1_0.split_count + var_1_13 and var_1_12 or arg_1_0.split_count + var_1_13
+			elseif var_1_6 == var_0_0.type_player_target_round then
+				if var_1_9 == arg_1_0.round then
+					var_1_11 = var_1_13 + 1
 				end
-			elseif slot12 == uv0.type_player_round then
-				slot17 = slot19 + 1
-			elseif slot12 == uv0.type_trigger_skill and slot0.use_skill ~= 0 then
-				slot17 = slot19 + slot0.use_skill
-			elseif slot12 == uv0.type_series_split and slot0.series_count ~= 0 then
-				slot17 = slot19 + slot0.series_count
-			elseif slot12 == uv0.type_close_split and slot0.mix_count ~= 0 then
-				slot17 = slot19 + slot0.mix_count
-			elseif slot12 == uv0.type_over_split and slot0.over_count ~= 0 then
-				slot17 = slot19 + slot0.over_count
-			elseif slot12 == uv0.type_many_split and slot0.many_count ~= 0 then
-				slot17 = slot19 + slot0.many_count
-			elseif slot12 == uv0.type_pass_skill and slot0.use_pass_skill ~= 0 then
-				slot17 = slot19 + slot0.use_pass_skill
-			elseif slot12 == uv0.type_trigger_skill_split and slot0.skill_count ~= 0 then
-				if slot14 <= slot0.skill_count then
-					slot17 = slot18
+			elseif var_1_6 == var_0_0.type_player_round then
+				var_1_11 = var_1_13 + 1
+			elseif var_1_6 == var_0_0.type_trigger_skill and arg_1_0.use_skill ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.use_skill
+			elseif var_1_6 == var_0_0.type_series_split and arg_1_0.series_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.series_count
+			elseif var_1_6 == var_0_0.type_close_split and arg_1_0.mix_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.mix_count
+			elseif var_1_6 == var_0_0.type_over_split and arg_1_0.over_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.over_count
+			elseif var_1_6 == var_0_0.type_many_split and arg_1_0.many_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.many_count
+			elseif var_1_6 == var_0_0.type_pass_skill and arg_1_0.use_pass_skill ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.use_pass_skill
+			elseif var_1_6 == var_0_0.type_trigger_skill_split and arg_1_0.skill_count ~= 0 then
+				if var_1_8 <= arg_1_0.skill_count then
+					var_1_11 = var_1_12
 				end
-			elseif slot12 == uv0.type_trigger_skill_split_all and slot0.skill_count ~= 0 then
-				slot17 = slot19 + slot0.skill_count
-			elseif slot12 == uv0.type_pass_skill_split and slot0.pass_skill_count ~= 0 then
-				slot17 = slot19 + slot0.pass_skill_count
-			elseif slot12 == uv0.type_trigger_skill_time and slot0.double_skill_time and slot0.double_skill_time <= slot14 then
-				slot17 = slot18
+			elseif var_1_6 == var_0_0.type_trigger_skill_split_all and arg_1_0.skill_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.skill_count
+			elseif var_1_6 == var_0_0.type_pass_skill_split and arg_1_0.pass_skill_count ~= 0 then
+				var_1_11 = var_1_13 + arg_1_0.pass_skill_count
+			elseif var_1_6 == var_0_0.type_trigger_skill_time and arg_1_0.double_skill_time and var_1_8 >= arg_1_0.double_skill_time then
+				var_1_11 = var_1_12
 			end
 
-			if slot17 and slot17 ~= 0 then
-				if slot18 < slot17 then
-					slot17 = slot18
+			if var_1_11 and var_1_11 ~= 0 then
+				if var_1_12 < var_1_11 then
+					var_1_11 = var_1_12
 				end
 
-				table.insert(slot7, {
-					id = slot13,
-					progress = slot17
+				table.insert(var_1_5, {
+					id = var_1_7,
+					progress = var_1_11
 				})
 			end
 		end
 	end
 
-	for slot11 = 1, #slot7 do
+	for iter_1_2 = 1, #var_1_5 do
 		pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
-			taskId = slot7[slot11].id,
-			progress = slot7[slot11].progress
+			taskId = var_1_5[iter_1_2].id,
+			progress = var_1_5[iter_1_2].progress
 		})
 	end
 end
 
-function slot0.GetRedTip()
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK) and not slot0:isEnd() then
-		slot2 = getProxy(TaskProxy)
+function var_0_0.GetRedTip()
+	local var_2_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK)
 
-		return underscore.any(slot0:getConfig("config_data"), function (slot0)
-			assert(uv0:getTaskVO(slot0), "without this task:" .. slot0)
+	if var_2_0 and not var_2_0:isEnd() then
+		local var_2_1 = var_2_0:getConfig("config_data")
+		local var_2_2 = getProxy(TaskProxy)
 
-			return uv0:getTaskVO(slot0):getTaskStatus() == 1
+		return underscore.any(var_2_1, function(arg_3_0)
+			assert(var_2_2:getTaskVO(arg_3_0), "without this task:" .. arg_3_0)
+
+			return var_2_2:getTaskVO(arg_3_0):getTaskStatus() == 1
 		end)
 	end
 
 	return false
 end
 
-return slot0
+return var_0_0

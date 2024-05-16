@@ -1,37 +1,39 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSkillCLS", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillCLS = slot1
-slot1.__name = "BattleSkillCLS"
-slot1.TYPE_BULLET = 1
-slot1.TYPE_AIRCRAFT = 2
-slot1.TYPE_MINION = 3
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1, lv)
+local var_0_0 = ys
+local var_0_1 = class("BattleSkillCLS", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._clsTypeList = slot0._tempData.arg_list.typeList or {}
+var_0_0.Battle.BattleSkillCLS = var_0_1
+var_0_1.__name = "BattleSkillCLS"
+var_0_1.TYPE_BULLET = 1
+var_0_1.TYPE_AIRCRAFT = 2
+var_0_1.TYPE_MINION = 3
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, lv)
+
+	arg_1_0._clsTypeList = arg_1_0._tempData.arg_list.typeList or {}
 end
 
-function slot1.DoDataEffect(slot0, slot1)
-	slot0:doCls(slot1)
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1)
+	arg_2_0:doCls(arg_2_1)
 end
 
-function slot1.DoDataEffectWithoutTarget(slot0, slot1)
-	slot0:doCls(slot1)
+function var_0_1.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+	arg_3_0:doCls(arg_3_1)
 end
 
-function slot1.doCls(slot0, slot1)
-	slot2 = uv0.Battle.BattleDataProxy.GetInstance()
-	slot3 = slot1:GetIFF() * -1
+function var_0_1.doCls(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	local var_4_1 = arg_4_1:GetIFF() * -1
 
-	for slot7, slot8 in ipairs(slot0._clsTypeList) do
-		if slot8 == uv1.TYPE_BULLET then
-			slot2:CLSBullet(slot3)
-		elseif slot8 == uv1.TYPE_AIRCRAFT then
-			slot2:CLSAircraft(slot3)
-		elseif slot8 == uv1.TYPE_MINION then
-			slot2:CLSMinion()
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._clsTypeList) do
+		if iter_4_1 == var_0_1.TYPE_BULLET then
+			var_4_0:CLSBullet(var_4_1)
+		elseif iter_4_1 == var_0_1.TYPE_AIRCRAFT then
+			var_4_0:CLSAircraft(var_4_1)
+		elseif iter_4_1 == var_0_1.TYPE_MINION then
+			var_4_0:CLSMinion()
 		end
 	end
 end

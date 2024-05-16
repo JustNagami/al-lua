@@ -1,4 +1,30 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 15,
+				skill_id = 13971
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13972,
+				target = "TargetSelf"
+			}
+		}
+	},
+	ship_type = {
+		8
+	},
 	{
 		desc = "战斗后，队伍中潜艇获得经验值增加1.0%",
 		exp_ratio = 0.01,
@@ -110,31 +136,5 @@ return {
 	stack = 1,
 	id = 13970,
 	icon = 13970,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 15,
-				skill_id = 13971
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 13972,
-				target = "TargetSelf"
-			}
-		}
-	},
-	ship_type = {
-		8
-	}
+	last_effect = ""
 }

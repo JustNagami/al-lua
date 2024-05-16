@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_64 = {}
-slot1 = slot0.word_template_64
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_64 = {}
+
+local var_0_1 = var_0_0.word_template_64
 
 function temp()
-	uv0["嘏"] = {
+	var_0_1.嘏 = {
 		this = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["鲴"] = {
+	var_0_1.鲴 = {
 		this = {
 			this = true
 		}
@@ -24,7 +27,7 @@ end
 temp()
 
 function temp()
-	uv0["宄"] = {
+	var_0_1.宄 = {
 		this = {
 			this = true
 		}
@@ -34,7 +37,7 @@ end
 temp()
 
 function temp()
-	uv0["庋"] = {
+	var_0_1.庋 = {
 		this = {
 			this = true
 		}
@@ -44,7 +47,7 @@ end
 temp()
 
 function temp()
-	uv0["刿"] = {
+	var_0_1.刿 = {
 		this = {
 			this = true
 		}
@@ -54,7 +57,7 @@ end
 temp()
 
 function temp()
-	uv0["虢"] = {
+	var_0_1.虢 = {
 		this = {
 			this = true
 		}
@@ -64,7 +67,7 @@ end
 temp()
 
 function temp()
-	uv0["馘"] = {
+	var_0_1.馘 = {
 		this = {
 			this = true
 		}
@@ -74,7 +77,7 @@ end
 temp()
 
 function temp()
-	uv0["撖"] = {
+	var_0_1.撖 = {
 		this = {
 			this = true
 		}
@@ -84,7 +87,7 @@ end
 temp()
 
 function temp()
-	uv0["夯"] = {
+	var_0_1.夯 = {
 		this = {
 			this = true
 		}
@@ -94,7 +97,7 @@ end
 temp()
 
 function temp()
-	uv0["薅"] = {
+	var_0_1.薅 = {
 		this = {
 			this = true
 		}

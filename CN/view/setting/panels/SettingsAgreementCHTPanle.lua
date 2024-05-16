@@ -1,19 +1,19 @@
-slot0 = class("SettingsAgreementCHTPanle", import(".SettingsAgreementPanle"))
+﻿local var_0_0 = class("SettingsAgreementCHTPanle", import(".SettingsAgreementPanle"))
 
-function slot0.OnInit(slot0)
-	slot1 = slot0._tf:Find("private")
+function var_0_0.OnInit(arg_1_0)
+	local var_1_0 = arg_1_0._tf:Find("private")
 
-	onButton(slot0, slot1, function ()
+	onButton(arg_1_0, var_1_0, function()
 		pg.UserAgreementMgr.GetInstance():ShowChtPrivate()
 	end, SFX_PANEL)
 
-	slot2 = slot0._tf:Find("licence")
+	local var_1_1 = arg_1_0._tf:Find("licence")
 
-	onButton(slot0, slot2, function ()
+	onButton(arg_1_0, var_1_1, function()
 		pg.UserAgreementMgr.GetInstance():ShowChtLicence()
 	end, SFX_PANEL)
-	setText(slot1:Find("Text"), i18n("setting_label_private"))
-	setText(slot2:Find("Text"), i18n("setting_label_licence"))
+	setText(var_1_0:Find("Text"), i18n("setting_label_private"))
+	setText(var_1_1:Find("Text"), i18n("setting_label_licence"))
 end
 
-return slot0
+return var_0_0

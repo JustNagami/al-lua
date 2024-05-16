@@ -1,4 +1,32 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillEditTag",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				tag = "DanmakuFire",
+				operation = -1
+			}
+		},
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillManualWeaponReloadBoost",
+			arg_list = {
+				value = 1,
+				weaponType = "TorpedoWeapon"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -226,33 +254,5 @@ return {
 	id = 14660,
 	picture = "0",
 	castCV = "",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillEditTag",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				tag = "DanmakuFire",
-				operation = -1
-			}
-		},
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillManualWeaponReloadBoost",
-			arg_list = {
-				value = 1,
-				weaponType = "TorpedoWeapon"
-			}
-		}
-	}
+	desc = ""
 }

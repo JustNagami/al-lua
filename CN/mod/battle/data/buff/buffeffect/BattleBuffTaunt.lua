@@ -1,61 +1,65 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleAttr
-slot2 = class("BattleBuffTaunt", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffTaunt = slot2
-slot2.__name = "BattleBuffTaunt"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleAttr
+local var_0_2 = class("BattleBuffTaunt", var_0_0.Battle.BattleBuffEffect)
 
-	slot0._tauntActive = false
+var_0_0.Battle.BattleBuffTaunt = var_0_2
+var_0_2.__name = "BattleBuffTaunt"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0._tauntActive = false
 end
 
-function slot2.SetArgs(slot0, slot1, slot2)
-	slot0._guardTargetFilter = slot0._tempData.arg_list.guardTarget
-	slot0._handleCloak = slot1:GetCloak() ~= nil
+function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._guardTargetFilter = arg_2_0._tempData.arg_list.guardTarget
+	arg_2_0._handleCloak = arg_2_1:GetCloak() ~= nil
 end
 
-function slot2.onTrigger(slot0, slot1, slot2, slot3)
-	if not slot0._handleCloak then
+function var_0_2.onTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if not arg_3_0._handleCloak then
 		return
 	end
 
-	slot5 = true
+	local var_3_0 = arg_3_0:getTargetList(arg_3_1, arg_3_0._guardTargetFilter, arg_3_0._tempData.arg_list)
+	local var_3_1 = true
 
-	for slot9, slot10 in ipairs(slot0:getTargetList(slot1, slot0._guardTargetFilter, slot0._tempData.arg_list)) do
-		slot5 = slot5 and uv0.IsCloak(slot10)
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		var_3_1 = var_3_1 and var_0_1.IsCloak(iter_3_1)
 	end
 
-	if not slot5 and not slot0._tauntActive then
-		slot0:forceToExpose(slot1)
-	elseif slot5 and slot0._tauntActive then
-		slot0:releaseExpose(slot1)
+	if not var_3_1 and not arg_3_0._tauntActive then
+		arg_3_0:forceToExpose(arg_3_1)
+	elseif var_3_1 and arg_3_0._tauntActive then
+		arg_3_0:releaseExpose(arg_3_1)
 	end
 end
 
-function slot2.onRemove(slot0, slot1, slot2, slot3)
-	slot0:releaseExpose(slot1)
+function var_0_2.onRemove(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0:releaseExpose(arg_4_1)
 end
 
-function slot2.forceToExpose(slot0, slot1)
-	if not slot0._handleCloak then
+function var_0_2.forceToExpose(arg_5_0, arg_5_1)
+	if not arg_5_0._handleCloak then
 		return
 	end
 
-	slot0._tauntActive = true
-	slot2 = slot1:GetCloak()
+	arg_5_0._tauntActive = true
 
-	slot2:ForceToMax()
-	slot2:UpdateTauntExpose(true)
+	local var_5_0 = arg_5_1:GetCloak()
+
+	var_5_0:ForceToMax()
+	var_5_0:UpdateTauntExpose(true)
 end
 
-function slot2.releaseExpose(slot0, slot1)
-	if not slot0._handleCloak then
+function var_0_2.releaseExpose(arg_6_0, arg_6_1)
+	if not arg_6_0._handleCloak then
 		return
 	end
 
-	slot0._tauntActive = false
+	arg_6_0._tauntActive = false
 
-	slot1:GetCloak():UpdateTauntExpose(false)
+	arg_6_1:GetCloak():UpdateTauntExpose(false)
 end

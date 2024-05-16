@@ -1,115 +1,128 @@
-slot0 = class("ShoppingStreet", import(".BaseShop"))
+﻿local var_0_0 = class("ShoppingStreet", import(".BaseShop"))
 
-function slot0.getRiseShopId(slot0, slot1)
-	for slot5, slot6 in ipairs(pg.shop_template.all) do
-		if pg.shop_template[slot6].genre == slot0 and slot7.limit_args[2] <= slot1 and slot1 <= slot7.limit_args[3] then
-			return slot6
+function var_0_0.getRiseShopId(arg_1_0, arg_1_1)
+	for iter_1_0, iter_1_1 in ipairs(pg.shop_template.all) do
+		local var_1_0 = pg.shop_template[iter_1_1]
+
+		if var_1_0.genre == arg_1_0 and arg_1_1 >= var_1_0.limit_args[2] and arg_1_1 <= var_1_0.limit_args[3] then
+			return iter_1_1
 		end
 	end
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.level = slot1.lv
-	slot0.configId = slot0.level
-	slot0.nextFlashTime = slot1.next_flash_time
-	slot0.levelUpTime = slot1.lv_up_time
-	slot0.flashCount = slot1.flash_count
-	slot0.goods = {}
-	slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_DISCOUNT) and not slot2:isEnd()
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.level = arg_2_1.lv
+	arg_2_0.configId = arg_2_0.level
+	arg_2_0.nextFlashTime = arg_2_1.next_flash_time
+	arg_2_0.levelUpTime = arg_2_1.lv_up_time
+	arg_2_0.flashCount = arg_2_1.flash_count
+	arg_2_0.goods = {}
 
-	for slot7, slot8 in ipairs(slot1.goods_list) do
-		slot9 = Goods.Create(slot8, Goods.TYPE_SHOPSTREET)
-		slot9.activityDiscount = slot3
+	local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_DISCOUNT)
+	local var_2_1 = var_2_0 and not var_2_0:isEnd()
 
-		table.insert(slot0.goods, slot9)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.goods_list) do
+		local var_2_2 = Goods.Create(iter_2_1, Goods.TYPE_SHOPSTREET)
+
+		var_2_2.activityDiscount = var_2_1
+
+		table.insert(arg_2_0.goods, var_2_2)
 	end
 
-	slot0.type = ShopArgs.ShopStreet
+	arg_2_0.type = ShopArgs.ShopStreet
 end
 
-function slot0.IsSameKind(slot0, slot1)
-	return isa(slot1, ShoppingStreet)
+function var_0_0.IsSameKind(arg_3_0, arg_3_1)
+	return isa(arg_3_1, ShoppingStreet)
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	return slot0:getGoodsById(slot1)
+function var_0_0.GetCommodityById(arg_4_0, arg_4_1)
+	return arg_4_0:getGoodsById(arg_4_1)
 end
 
-function slot0.GetCommodities(slot0)
-	return slot0.goods
+function var_0_0.GetCommodities(arg_5_0)
+	return arg_5_0.goods
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_6_0)
 	return pg.navalacademy_shoppingstreet_template
 end
 
-function slot0.resetflashCount(slot0)
-	slot0.flashCount = 0
+function var_0_0.resetflashCount(arg_7_0)
+	arg_7_0.flashCount = 0
 end
 
-function slot0.increaseFlashCount(slot0)
-	slot0.flashCount = slot0.flashCount + 1
+function var_0_0.increaseFlashCount(arg_8_0)
+	arg_8_0.flashCount = arg_8_0.flashCount + 1
 end
 
-function slot0.isUpdateGoods(slot0)
-	if slot0.nextFlashTime <= pg.TimeMgr.GetInstance():GetServerTime() then
+function var_0_0.isUpdateGoods(arg_9_0)
+	if pg.TimeMgr.GetInstance():GetServerTime() >= arg_9_0.nextFlashTime then
 		return true
 	end
 
 	return false
 end
 
-function slot0.getMaxLevel(slot0)
-	slot1 = slot0:bindConfigTable()
+function var_0_0.getMaxLevel(arg_10_0)
+	local var_10_0 = arg_10_0:bindConfigTable()
 
-	return slot1.all[#slot1.all]
+	return var_10_0.all[#var_10_0.all]
 end
 
-function slot0.isMaxLevel(slot0)
-	return slot0:getMaxLevel() <= slot0.level
+function var_0_0.isMaxLevel(arg_11_0)
+	return arg_11_0:getMaxLevel() <= arg_11_0.level
 end
 
-function slot0.isUpgradeProcess(slot0)
-	return pg.TimeMgr.GetInstance():GetServerTime() < slot0.levelUpTime
+function var_0_0.isUpgradeProcess(arg_12_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() < arg_12_0.levelUpTime
 end
 
-function slot0.isFinishUpgrade(slot0)
-	if slot0.levelUpTime <= pg.TimeMgr.GetInstance():GetServerTime() then
+function var_0_0.isFinishUpgrade(arg_13_0)
+	if pg.TimeMgr.GetInstance():GetServerTime() >= arg_13_0.levelUpTime then
 		return true
 	end
 
 	return false
 end
 
-function slot0.getLevelUpTime(slot0)
-	return slot0.levelUpTime
+function var_0_0.getLevelUpTime(arg_14_0)
+	return arg_14_0.levelUpTime
 end
 
-function slot0.updateLeftTime(slot0)
-	return slot0.levelUpTime - pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.updateLeftTime(arg_15_0)
+	local var_15_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return arg_15_0.levelUpTime - var_15_0
 end
 
-function slot0.levelUp(slot0)
-	slot0.levelUpTime = 0
-	slot0.level = math.min(slot0.level + 1, #slot0:bindConfigTable().all)
+function var_0_0.levelUp(arg_16_0)
+	arg_16_0.levelUpTime = 0
 
-	if slot0.level == slot0.level then
+	local var_16_0 = arg_16_0:bindConfigTable()
+	local var_16_1 = arg_16_0.level
+
+	arg_16_0.level = math.min(arg_16_0.level + 1, #var_16_0.all)
+
+	if var_16_1 == arg_16_0.level then
 		warning("商品街配置最大等级")
 	end
 
-	slot0.configId = slot0.level
+	arg_16_0.configId = arg_16_0.level
 end
 
-function slot0.setLevelUpTime(slot0)
-	slot0.levelUpTime = getConfigFromLevel1(pg.navalacademy_shoppingstreet_template, slot0.level).levelUpTime + pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.setLevelUpTime(arg_17_0)
+	local var_17_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	arg_17_0.levelUpTime = getConfigFromLevel1(pg.navalacademy_shoppingstreet_template, arg_17_0.level).levelUpTime + var_17_0
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.goods) do
-		if slot1 == slot6.id then
-			return slot6
+function var_0_0.getGoodsById(arg_18_0, arg_18_1)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.goods) do
+		if arg_18_1 == iter_18_1.id then
+			return iter_18_1
 		end
 	end
 end
 
-return slot0
+return var_0_0

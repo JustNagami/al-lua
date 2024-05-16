@@ -1,141 +1,152 @@
-slot0 = class("EducateSiteOption", import("model.vo.BaseVO"))
-slot0.TYPE_SHOP = 1
-slot0.TYPE_EVENT = 2
-slot0.TYPE_SITE = 3
+﻿local var_0_0 = class("EducateSiteOption", import("model.vo.BaseVO"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.id = slot1
-	slot0.configId = slot0.id
-	slot0.usedCnt = slot2 or 0
-	slot0.remainCnt = slot0:GetOriginalCnt() - slot0.usedCnt
-	slot0.curTime = getProxy(EducateProxy):GetCurTime()
+var_0_0.TYPE_SHOP = 1
+var_0_0.TYPE_EVENT = 2
+var_0_0.TYPE_SITE = 3
 
-	slot0:initTime()
-	slot0:initRefreshTime()
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.id = arg_1_1
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.usedCnt = arg_1_2 or 0
+	arg_1_0.remainCnt = arg_1_0:GetOriginalCnt() - arg_1_0.usedCnt
+	arg_1_0.curTime = getProxy(EducateProxy):GetCurTime()
+
+	arg_1_0:initTime()
+	arg_1_0:initRefreshTime()
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.child_site_option
 end
 
-function slot0.initTime(slot0)
-	if slot0:IsLimitTime() then
-		slot0.startTime, slot0.endTime = EducateHelper.CfgTime2Time(slot0:getConfig("time_limit"))
+function var_0_0.initTime(arg_3_0)
+	if arg_3_0:IsLimitTime() then
+		local var_3_0 = arg_3_0:getConfig("time_limit")
+
+		arg_3_0.startTime, arg_3_0.endTime = EducateHelper.CfgTime2Time(var_3_0)
 	end
 end
 
-function slot0.initRefreshTime(slot0)
-	if slot0:IsEventType() and slot0:IsCountLimit() then
-		slot0.refreshWeeks = {}
-		slot2 = 60
-		slot3 = slot0:getConfig("count_limit")[2]
+function var_0_0.initRefreshTime(arg_4_0)
+	if arg_4_0:IsEventType() and arg_4_0:IsCountLimit() then
+		arg_4_0.refreshWeeks = {}
 
-		table.insert(slot0.refreshWeeks, 9)
+		local var_4_0 = 9
+		local var_4_1 = 60
+		local var_4_2 = arg_4_0:getConfig("count_limit")[2]
 
-		while slot1 < slot2 do
-			table.insert(slot0.refreshWeeks, slot1 + slot3)
+		table.insert(arg_4_0.refreshWeeks, var_4_0)
+
+		while var_4_0 < var_4_1 do
+			var_4_0 = var_4_0 + var_4_2
+
+			table.insert(arg_4_0.refreshWeeks, var_4_0)
 		end
 	end
 end
 
-function slot0.IsShowLimit(slot0)
-	return slot0:getConfig("is_limit") == 1 and slot0.remainCnt > 0
+function var_0_0.IsShowLimit(arg_5_0)
+	return arg_5_0:getConfig("is_limit") == 1 and arg_5_0.remainCnt > 0
 end
 
-function slot0.IsLimitTime(slot0)
-	return #slot0:getConfig("time_limit") ~= 0
+function var_0_0.IsLimitTime(arg_6_0)
+	return #arg_6_0:getConfig("time_limit") ~= 0
 end
 
-function slot0.IsCountLimit(slot0)
-	return slot0:getConfig("count_limit") ~= "" and #slot0:getConfig("count_limit") == 2
+function var_0_0.IsCountLimit(arg_7_0)
+	return arg_7_0:getConfig("count_limit") ~= "" and #arg_7_0:getConfig("count_limit") == 2
 end
 
-function slot0.IsShow(slot0)
-	if slot0:IsLimitTime() then
-		return EducateHelper.InTime(slot0.curTime, slot0.startTime, slot0.endTime)
+function var_0_0.IsShow(arg_8_0)
+	if arg_8_0:IsLimitTime() then
+		return EducateHelper.InTime(arg_8_0.curTime, arg_8_0.startTime, arg_8_0.endTime)
 	else
 		return true
 	end
 end
 
-function slot0.GetType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.GetType(arg_9_0)
+	return arg_9_0:getConfig("type")
 end
 
-function slot0.IsEventType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_EVENT
+function var_0_0.IsEventType(arg_10_0)
+	return arg_10_0:getConfig("type") == var_0_0.TYPE_EVENT
 end
 
-function slot0.IsReplace(slot0)
-	return slot0:getConfig("replace") ~= 0
+function var_0_0.IsReplace(arg_11_0)
+	return arg_11_0:getConfig("replace") ~= 0
 end
 
-function slot0.GetCost(slot0)
-	return slot0:getConfig("cost")
+function var_0_0.GetCost(arg_12_0)
+	return arg_12_0:getConfig("cost")
 end
 
-function slot0.GetLinkId(slot0)
-	return slot0:getConfig("param")[1]
+function var_0_0.GetLinkId(arg_13_0)
+	return arg_13_0:getConfig("param")[1]
 end
 
-function slot0.GetOriginalCnt(slot0)
-	return slot0:IsCountLimit() and slot0:getConfig("count_limit")[1] or 999
+function var_0_0.GetOriginalCnt(arg_14_0)
+	return arg_14_0:IsCountLimit() and arg_14_0:getConfig("count_limit")[1] or 999
 end
 
-function slot0.GetRemainCnt(slot0)
-	return slot0.remainCnt
+function var_0_0.GetRemainCnt(arg_15_0)
+	return arg_15_0.remainCnt
 end
 
-function slot0.GetCntText(slot0)
-	if not slot0:IsCountLimit() then
+function var_0_0.GetCntText(arg_16_0)
+	if not arg_16_0:IsCountLimit() then
 		return ""
 	end
 
-	return string.format("(%d/%d)", slot0.remainCnt, slot0:getConfig("count_limit")[1])
+	return string.format("(%d/%d)", arg_16_0.remainCnt, arg_16_0:getConfig("count_limit")[1])
 end
 
-function slot0.CanTrigger(slot0)
-	return slot0.remainCnt > 0
+function var_0_0.CanTrigger(arg_17_0)
+	return arg_17_0.remainCnt > 0
 end
 
-function slot0.ReduceCnt(slot0)
-	slot0.remainCnt = slot0.remainCnt - 1
+function var_0_0.ReduceCnt(arg_18_0)
+	arg_18_0.remainCnt = arg_18_0.remainCnt - 1
 end
 
-function slot0.IsShowPolaroid(slot0)
-	if #slot0:getConfig("polarid_list") == 0 then
+function var_0_0.IsShowPolaroid(arg_19_0)
+	if #arg_19_0:getConfig("polarid_list") == 0 then
 		return false
 	end
 
-	return underscore.any(slot0:getConfig("polarid_list"), function (slot0)
-		return not getProxy(EducateProxy):IsExistPolaroidByGroup(slot0) and getProxy(EducateProxy):CanGetPolaroidByGroup(slot0)
+	return underscore.any(arg_19_0:getConfig("polarid_list"), function(arg_20_0)
+		return not getProxy(EducateProxy):IsExistPolaroidByGroup(arg_20_0) and getProxy(EducateProxy):CanGetPolaroidByGroup(arg_20_0)
 	end)
 end
 
-function slot0.GetResults(slot0)
+function var_0_0.GetResults(arg_21_0)
 	if EducateHelper.IsShowNature() then
-		return slot0:getConfig("result_display")
+		return arg_21_0:getConfig("result_display")
 	else
-		return underscore.select(slot0:getConfig("result_display"), function (slot0)
-			return slot0[1] ~= EducateConst.DROP_TYPE_ATTR or not getProxy(EducateProxy):GetCharData():IsPersonalityAttr(slot0[2])
+		return underscore.select(arg_21_0:getConfig("result_display"), function(arg_22_0)
+			return arg_22_0[1] ~= EducateConst.DROP_TYPE_ATTR or not getProxy(EducateProxy):GetCharData():IsPersonalityAttr(arg_22_0[2])
 		end)
 	end
 end
 
-function slot0.IsResetWeek(slot0, slot1)
-	return table.contains(slot0.refreshWeeks, slot1)
+function var_0_0.IsResetWeek(arg_23_0, arg_23_1)
+	return table.contains(arg_23_0.refreshWeeks, arg_23_1)
 end
 
-function slot0.OnWeekUpdate(slot0, slot1)
-	slot0.curTime = slot1
+function var_0_0.OnWeekUpdate(arg_24_0, arg_24_1)
+	arg_24_0.curTime = arg_24_1
 
-	slot0:CheckCntReset()
+	arg_24_0:CheckCntReset()
 end
 
-function slot0.CheckCntReset(slot0)
-	if slot0:IsEventType() and slot0:IsCountLimit() and slot0:IsResetWeek(EducateHelper.GetWeekIdxWithTime(slot0.curTime)) then
-		slot0.remainCnt = slot0:GetOriginalCnt()
+function var_0_0.CheckCntReset(arg_25_0)
+	if arg_25_0:IsEventType() and arg_25_0:IsCountLimit() then
+		local var_25_0 = EducateHelper.GetWeekIdxWithTime(arg_25_0.curTime)
+
+		if arg_25_0:IsResetWeek(var_25_0) then
+			arg_25_0.remainCnt = arg_25_0:GetOriginalCnt()
+		end
 	end
 end
 
-return slot0
+return var_0_0

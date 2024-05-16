@@ -1,61 +1,65 @@
-slot0 = class("VoteCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("VoteCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.gid
-	slot5 = slot2.count
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.voteId
+	local var_1_2 = var_1_0.gid
+	local var_1_3 = var_1_0.count
+	local var_1_4 = getProxy(VoteProxy)
+	local var_1_5 = var_1_4:GetVoteActivityByConfigId(var_1_1)
 
-	if not getProxy(VoteProxy):GetVoteActivityByConfigId(slot2.voteId) or slot7:isEnd() then
+	if not var_1_5 or var_1_5:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	slot8 = slot7.id
+	local var_1_6 = var_1_5.id
+	local var_1_7 = var_1_4:RawGetVoteGroupByConfigId(var_1_1)
 
-	if not slot6:RawGetVoteGroupByConfigId(slot3) then
+	if not var_1_7 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	if not slot9:IsOpening() then
+	if not var_1_7:IsOpening() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	if slot6:GetVotesByConfigId(slot3) < slot5 then
+	if var_1_3 > var_1_4:GetVotesByConfigId(var_1_1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("vote_not_enough"))
 
 		return
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
-
-	slot10:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = slot8,
-		arg1 = slot3,
-		arg2 = slot4,
-		arg3 = slot5,
+		activity_id = var_1_6,
+		arg1 = var_1_1,
+		arg2 = var_1_2,
+		arg3 = var_1_3,
 		arg_list = {}
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			slot2 = getProxy(ActivityProxy)
-			slot3 = slot2:getActivityById(uv0)
-			slot3.data1 = slot3.data1 - uv1
-			slot3.data2 = slot3.data2 + uv1
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
+			local var_2_1 = getProxy(ActivityProxy)
+			local var_2_2 = var_2_1:getActivityById(var_1_6)
 
-			slot2:updateActivity(slot3)
-			uv2:UpdateVoteCnt(uv3, uv1)
-			uv4:sendNotification(GAME.ON_NEW_VOTE_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.award_list)
+			var_2_2.data1 = var_2_2.data1 - var_1_3
+			var_2_2.data2 = var_2_2.data2 + var_1_3
+
+			var_2_1:updateActivity(var_2_2)
+			var_1_7:UpdateVoteCnt(var_1_2, var_1_3)
+			arg_1_0:sendNotification(GAME.ON_NEW_VOTE_DONE, {
+				awards = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result])
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result])
 		end
 	end)
 end
 
-return slot0
+return var_0_0

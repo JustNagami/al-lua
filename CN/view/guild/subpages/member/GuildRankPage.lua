@@ -1,147 +1,151 @@
-slot0 = class("GuildRankPage", import("...base.GuildBasePage"))
+﻿local var_0_0 = class("GuildRankPage", import("...base.GuildBasePage"))
 
-function slot0.getTargetUI(slot0)
+function var_0_0.getTargetUI(arg_1_0)
 	return "GuildRankBluePage", "GuildRankRedPage"
 end
 
-slot1 = {
+local var_0_1 = {
 	"commit",
 	"task",
 	"battle"
 }
-slot2 = {
+local var_0_2 = {
 	i18n("guild_member_rank_title_donate"),
 	i18n("guild_member_rank_title_finish_cnt"),
 	i18n("guild_member_rank_title_join_cnt")
 }
 
-function slot0.PageId2RankLabel(slot0)
-	return uv0[slot0]
+function var_0_0.PageId2RankLabel(arg_2_0)
+	return var_0_2[arg_2_0]
 end
 
-function slot0.GetRank(slot0, slot1)
-	return slot0.ranks[slot1]
+function var_0_0.GetRank(arg_3_0, arg_3_1)
+	return arg_3_0.ranks[arg_3_1]
 end
 
-function slot0.OnUpdateRankList(slot0, slot1, slot2)
-	if slot2 and table.getCount(slot2) > 0 then
-		slot0.ranks[slot1] = slot2
+function var_0_0.OnUpdateRankList(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_2 and table.getCount(arg_4_2) > 0 then
+		arg_4_0.ranks[arg_4_1] = arg_4_2
 
-		if slot0.pageId == slot1 then
-			slot0:SwitchPage(slot1)
+		if arg_4_0.pageId == arg_4_1 then
+			arg_4_0:SwitchPage(arg_4_1)
 		end
 	end
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.tabContainer = slot0:findTF("frame/bg/tab")
-	slot0.ranTypeTF = slot0:findTF("frame/bg/week")
-	slot0.closeBtn = slot0:findTF("frame/close")
-	slot0.rankLabel = slot0:findTF("frame/bg/title/Text"):GetComponent(typeof(Text))
-	slot0.scrollrect = slot0:findTF("frame/bg/scrollrect"):GetComponent("LScrollRect")
+function var_0_0.OnLoaded(arg_5_0)
+	arg_5_0.tabContainer = arg_5_0:findTF("frame/bg/tab")
+	arg_5_0.ranTypeTF = arg_5_0:findTF("frame/bg/week")
+	arg_5_0.closeBtn = arg_5_0:findTF("frame/close")
+	arg_5_0.rankLabel = arg_5_0:findTF("frame/bg/title/Text"):GetComponent(typeof(Text))
+	arg_5_0.scrollrect = arg_5_0:findTF("frame/bg/scrollrect"):GetComponent("LScrollRect")
 
-	function slot0.scrollrect.onUpdateItem(slot0, slot1)
-		uv0:OnUpdateItem(slot0, slot1)
+	function arg_5_0.scrollrect.onUpdateItem(arg_6_0, arg_6_1)
+		arg_5_0:OnUpdateItem(arg_6_0, arg_6_1)
 	end
 
-	setActive(slot0.ranTypeTF:Find("month"), true)
-	setActive(slot0.ranTypeTF:Find("total"), true)
+	setActive(arg_5_0.ranTypeTF:Find("month"), true)
+	setActive(arg_5_0.ranTypeTF:Find("total"), true)
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_7_0)
+	onButton(arg_7_0, arg_7_0._tf, function()
+		arg_7_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_7_0, arg_7_0.closeBtn, function()
+		arg_7_0:Hide()
 	end, SFX_PANEL)
 
-	slot0.ranType = 0
-
-	onButton(slot0, slot0.ranTypeTF, function ()
-		uv0.ranType = (uv0.ranType + 1) % 3
-
-		uv1()
-	end, SFX_PANEL)
-	slot0:InitTags()
-	(function ()
-		if uv0.pageId then
-			uv0:SwitchPage(uv0.pageId)
+	local function var_7_0()
+		if arg_7_0.pageId then
+			arg_7_0:SwitchPage(arg_7_0.pageId)
 		end
 
-		uv0.ranTypeTF:Find("month"):GetComponent(typeof(Image)).enabled = uv0.ranType == 0
-		uv0.ranTypeTF:Find("total"):GetComponent(typeof(Image)).enabled = uv0.ranType == 2
-		uv0.ranTypeTF:GetComponent(typeof(Image)).enabled = uv0.ranType == 1
-	end)()
+		arg_7_0.ranTypeTF:Find("month"):GetComponent(typeof(Image)).enabled = arg_7_0.ranType == 0
+		arg_7_0.ranTypeTF:Find("total"):GetComponent(typeof(Image)).enabled = arg_7_0.ranType == 2
+		arg_7_0.ranTypeTF:GetComponent(typeof(Image)).enabled = arg_7_0.ranType == 1
+	end
+
+	arg_7_0.ranType = 0
+
+	onButton(arg_7_0, arg_7_0.ranTypeTF, function()
+		arg_7_0.ranType = (arg_7_0.ranType + 1) % 3
+
+		var_7_0()
+	end, SFX_PANEL)
+	arg_7_0:InitTags()
+	var_7_0()
 end
 
-function slot0.InitTags(slot0)
-	for slot4, slot5 in ipairs(uv0) do
-		slot6 = slot0.tabContainer
+function var_0_0.InitTags(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(var_0_1) do
+		local var_12_0 = arg_12_0.tabContainer:Find(iter_12_1)
 
-		onToggle(slot0, slot6:Find(slot5), function (slot0)
-			if slot0 then
-				uv0:SwitchPage(uv1)
+		onToggle(arg_12_0, var_12_0, function(arg_13_0)
+			if arg_13_0 then
+				arg_12_0:SwitchPage(iter_12_0)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.ranks = slot1
+function var_0_0.Flush(arg_14_0, arg_14_1)
+	arg_14_0.ranks = arg_14_1
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0:Show()
-	slot0._tf:SetAsLastSibling()
-	triggerToggle(slot0.tabContainer:Find("commit"), true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_14_0._tf)
+	arg_14_0:Show()
+	arg_14_0._tf:SetAsLastSibling()
+	triggerToggle(arg_14_0.tabContainer:Find("commit"), true)
 end
 
-function slot0.SwitchPage(slot0, slot1)
-	slot0.pageId = slot1
+function var_0_0.SwitchPage(arg_15_0, arg_15_1)
+	arg_15_0.pageId = arg_15_1
 
-	slot0.scrollrect:SetTotalCount(0)
+	arg_15_0.scrollrect:SetTotalCount(0)
 
-	if not slot0:GetRank(slot1) or getProxy(GuildProxy):ShouldRefreshRank(slot1) then
-		slot0:emit(GuildMemberMediator.GET_RANK, slot1)
+	local var_15_0 = arg_15_0:GetRank(arg_15_1)
+
+	if not var_15_0 or getProxy(GuildProxy):ShouldRefreshRank(arg_15_1) then
+		arg_15_0:emit(GuildMemberMediator.GET_RANK, arg_15_1)
 	else
-		assert(slot2)
-		slot0:InitRank(slot2)
+		assert(var_15_0)
+		arg_15_0:InitRank(var_15_0)
 	end
 
-	slot0.rankLabel.text = uv0.PageId2RankLabel(slot1)
+	arg_15_0.rankLabel.text = var_0_0.PageId2RankLabel(arg_15_1)
 end
 
-function slot0.InitRank(slot0, slot1)
-	slot0.displays = {}
+function var_0_0.InitRank(arg_16_0, arg_16_1)
+	arg_16_0.displays = {}
 
-	for slot5, slot6 in pairs(slot1) do
-		table.insert(slot0.displays, slot6)
+	for iter_16_0, iter_16_1 in pairs(arg_16_1) do
+		table.insert(arg_16_0.displays, iter_16_1)
 	end
 
-	table.sort(slot0.displays, function (slot0, slot1)
-		return slot1:GetScore(uv0.ranType) < slot0:GetScore(uv0.ranType)
+	table.sort(arg_16_0.displays, function(arg_17_0, arg_17_1)
+		return arg_17_0:GetScore(arg_16_0.ranType) > arg_17_1:GetScore(arg_16_0.ranType)
 	end)
-	slot0.scrollrect:SetTotalCount(#slot0.displays)
+	arg_16_0.scrollrect:SetTotalCount(#arg_16_0.displays)
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.displays[slot1 + 1]
+function var_0_0.OnUpdateItem(arg_18_0, arg_18_1, arg_18_2)
+	local var_18_0 = arg_18_0.displays[arg_18_1 + 1]
 
-	setText(tf(slot2):Find("number"), slot1 + 1)
-	setText(tf(slot2):Find("name"), slot3:GetName())
-	setText(tf(slot2):Find("score"), slot3:GetScore(slot0.ranType))
+	setText(tf(arg_18_2):Find("number"), arg_18_1 + 1)
+	setText(tf(arg_18_2):Find("name"), var_18_0:GetName())
+	setText(tf(arg_18_2):Find("score"), var_18_0:GetScore(arg_18_0.ranType))
 end
 
-function slot0.Hide(slot0)
-	if slot0:isShowing() then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_19_0)
+	if arg_19_0:isShowing() then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_19_0._tf, arg_19_0._parentTf)
 	end
 
-	uv0.super.Hide(slot0)
+	var_0_0.super.Hide(arg_19_0)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_20_0)
+	arg_20_0:Hide()
 end
 
-return slot0
+return var_0_0

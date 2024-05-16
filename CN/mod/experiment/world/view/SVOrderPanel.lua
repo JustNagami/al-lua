@@ -1,397 +1,388 @@
-slot0 = class("SVOrderPanel", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("SVOrderPanel", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SVOrderPanel"
 end
 
-function slot0.getBGM(slot0)
+function var_0_0.getBGM(arg_2_0)
 	return "echo-loop"
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_3_0)
+	return
 end
 
-function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot2 = slot1:Find("adapt/order_list")
-	slot0.btnRedeploy = slot2:Find("redeploy")
-	slot0.btnExpansion = slot2:Find("expansion")
-	slot0.btnMaintenance = slot2:Find("maintenance")
-	slot0.btnFOV = slot2:Find("fov")
-	slot0.btnSubmarine = slot2:Find("submarine")
-	slot0.btnHelp = slot1:Find("adapt/help")
+function var_0_0.OnInit(arg_4_0)
+	local var_4_0 = arg_4_0._tf
+	local var_4_1 = var_4_0:Find("adapt/order_list")
 
-	onButton(slot0, slot0.btnHelp, function ()
+	arg_4_0.btnRedeploy = var_4_1:Find("redeploy")
+	arg_4_0.btnExpansion = var_4_1:Find("expansion")
+	arg_4_0.btnMaintenance = var_4_1:Find("maintenance")
+	arg_4_0.btnFOV = var_4_1:Find("fov")
+	arg_4_0.btnSubmarine = var_4_1:Find("submarine")
+	arg_4_0.btnHelp = var_4_0:Find("adapt/help")
+
+	onButton(arg_4_0, arg_4_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("world_instruction_help_1")
 		})
 	end, SFX_PANEL)
 
-	slot0.btnBack = slot1:Find("adapt/back")
+	arg_4_0.btnBack = var_4_0:Find("adapt/back")
 
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:Hide()
+	onButton(arg_4_0, arg_4_0.btnBack, function()
+		arg_4_0:Hide()
 	end, SFX_CANCEL)
 
-	slot0.rtRing = slot1:Find("bg/ring")
-	slot0.wsCompass = WSCompass.New()
-	slot0.wsCompass.tf = slot1:Find("bg/ring/compass")
-	slot0.wsCompass.pool = slot0.contextData.wsPool
-	slot3 = slot0.wsCompass
+	arg_4_0.rtRing = var_4_0:Find("bg/ring")
+	arg_4_0.wsCompass = WSCompass.New()
+	arg_4_0.wsCompass.tf = var_4_0:Find("bg/ring/compass")
+	arg_4_0.wsCompass.pool = arg_4_0.contextData.wsPool
 
-	slot3:Setup(true)
+	arg_4_0.wsCompass:Setup(true)
 
-	slot0.rtMsgbox = slot1:Find("Msgbox")
-	slot4 = slot0.rtMsgbox
+	arg_4_0.rtMsgbox = var_4_0:Find("Msgbox")
 
-	setText(slot4:Find("window/top/bg/infomation/title"), i18n("title_info"))
-	setActive(slot0.rtMsgbox, false)
-
-	slot5 = slot0.rtMsgbox
-
-	onButton(slot0, slot5:Find("bg"), function ()
-		uv0:HideMsgbox()
+	setText(arg_4_0.rtMsgbox:Find("window/top/bg/infomation/title"), i18n("title_info"))
+	setActive(arg_4_0.rtMsgbox, false)
+	onButton(arg_4_0, arg_4_0.rtMsgbox:Find("bg"), function()
+		arg_4_0:HideMsgbox()
+	end, SFX_CANCEL)
+	onButton(arg_4_0, arg_4_0.rtMsgbox:Find("window/top/btnBack"), function()
+		arg_4_0:HideMsgbox()
 	end, SFX_CANCEL)
 
-	slot5 = slot0.rtMsgbox
+	arg_4_0.rtMsgStamina = arg_4_0.rtMsgbox:Find("window/top/bg/stamina")
 
-	onButton(slot0, slot5:Find("window/top/btnBack"), function ()
-		uv0:HideMsgbox()
-	end, SFX_CANCEL)
+	setText(arg_4_0.rtMsgStamina:Find("name"), i18n("world_ap"))
 
-	slot3 = slot0.rtMsgbox
-	slot0.rtMsgStamina = slot3:Find("window/top/bg/stamina")
-	slot4 = slot0.rtMsgStamina
+	arg_4_0.rtMsgBase = arg_4_0.rtMsgbox:Find("window/msg_panel/base")
+	arg_4_0.rtMsgExtra = arg_4_0.rtMsgbox:Find("window/msg_panel/extra")
+	arg_4_0.rtMsgBtns = arg_4_0.rtMsgbox:Find("window/button_container")
 
-	setText(slot4:Find("name"), i18n("world_ap"))
-
-	slot3 = slot0.rtMsgbox
-	slot0.rtMsgBase = slot3:Find("window/msg_panel/base")
-	slot3 = slot0.rtMsgbox
-	slot0.rtMsgExtra = slot3:Find("window/msg_panel/extra")
-	slot3 = slot0.rtMsgbox
-	slot0.rtMsgBtns = slot3:Find("window/button_container")
-	slot4 = slot0.rtMsgBtns
-
-	setText(slot4:Find("btn_setting/pic"), i18n("msgbox_text_save"))
-
-	slot4 = slot0.rtMsgBtns
-
-	setText(slot4:Find("btn_confirm/pic"), i18n("text_confirm"))
-
-	slot4 = slot0.rtMsgBtns
-
-	setText(slot4:Find("btn_cancel/pic"), i18n("text_cancel"))
-
-	slot5 = slot0.rtMsgBtns
-
-	onButton(slot0, slot5:Find("btn_cancel"), function ()
-		uv0:HideMsgbox()
+	setText(arg_4_0.rtMsgBtns:Find("btn_setting/pic"), i18n("msgbox_text_save"))
+	setText(arg_4_0.rtMsgBtns:Find("btn_confirm/pic"), i18n("text_confirm"))
+	setText(arg_4_0.rtMsgBtns:Find("btn_cancel/pic"), i18n("text_cancel"))
+	onButton(arg_4_0, arg_4_0.rtMsgBtns:Find("btn_cancel"), function()
+		arg_4_0:HideMsgbox()
 	end, SFX_CANCEL)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:ClearBtnTimers()
-	slot0.wsCompass:Dispose()
+function var_0_0.OnDestroy(arg_10_0)
+	arg_10_0:ClearBtnTimers()
+	arg_10_0.wsCompass:Dispose()
 end
 
-function slot0.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_11_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_11_0._tf, false)
+	var_0_0.super.Show(arg_11_0)
 end
 
-function slot0.Hide(slot0)
-	if isActive(slot0.rtMsgbox) then
-		slot0:HideMsgbox()
+function var_0_0.Hide(arg_12_0)
+	if isActive(arg_12_0.rtMsgbox) then
+		arg_12_0:HideMsgbox()
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-	slot0:ClearComppass()
-	slot0:ClearBtnTimers()
-	uv0.super.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_12_0._tf, arg_12_0._parentTf)
+	arg_12_0:ClearComppass()
+	arg_12_0:ClearBtnTimers()
+	var_0_0.super.Hide(arg_12_0)
 end
 
-function slot0.Setup(slot0, slot1, slot2, slot3)
-	slot0:Update(slot1, slot2)
-	slot0.wsCompass:SetAnchorEulerAngles(slot3)
+function var_0_0.Setup(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	arg_13_0:Update(arg_13_1, arg_13_2)
+	arg_13_0.wsCompass:SetAnchorEulerAngles(arg_13_3)
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	if slot0.entrance ~= slot1 or slot0.map ~= slot2 or slot0.gid ~= slot2.gid then
-		slot0.entrance = slot1
-		slot0.map = slot2
-		slot0.gid = slot2.gid
+function var_0_0.Update(arg_14_0, arg_14_1, arg_14_2)
+	if arg_14_0.entrance ~= arg_14_1 or arg_14_0.map ~= arg_14_2 or arg_14_0.gid ~= arg_14_2.gid then
+		arg_14_0.entrance = arg_14_1
+		arg_14_0.map = arg_14_2
+		arg_14_0.gid = arg_14_2.gid
 	end
 
-	slot0:UpdateCompassMarks()
-	slot0:UpdateOrderBtn()
+	arg_14_0:UpdateCompassMarks()
+	arg_14_0:UpdateOrderBtn()
 end
 
-function slot0.SetButton(slot0, slot1, slot2)
-	slot3 = slot1:Find("type_lock")
+function var_0_0.SetButton(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_1:Find("type_lock")
+	local var_15_1 = arg_15_1:Find("type_unable")
+	local var_15_2 = arg_15_1:Find("type_enable")
+	local var_15_3 = nowWorld():IsSystemOpen(arg_15_2.system)
 
-	setActive(slot3, not nowWorld():IsSystemOpen(slot2.system))
-	setActive(slot1:Find("type_unable"), not isActive(slot3) and (slot2.isLock or slot2.timeStamp and pg.TimeMgr.GetInstance():GetServerTime() < slot2.timeStamp))
-	setActive(slot1:Find("type_enable"), not isActive(slot3) and not isActive(slot4))
+	setActive(var_15_0, not var_15_3)
+	setActive(var_15_1, not isActive(var_15_0) and (arg_15_2.isLock or arg_15_2.timeStamp and arg_15_2.timeStamp > pg.TimeMgr.GetInstance():GetServerTime()))
+	setActive(var_15_2, not isActive(var_15_0) and not isActive(var_15_1))
 
-	if isActive(slot3) then
-		onButton(slot0, slot3, function ()
+	if isActive(var_15_0) then
+		onButton(arg_15_0, var_15_0, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_all_1"))
 		end, SFX_CONFIRM)
 	end
 
-	if isActive(slot4) then
-		setActive(slot4:Find("cost"), slot2.isLock)
-		setActive(slot4:Find("time"), not slot2.isLock)
+	if isActive(var_15_1) then
+		setActive(var_15_1:Find("cost"), arg_15_2.isLock)
+		setActive(var_15_1:Find("time"), not arg_15_2.isLock)
 
-		if slot2.isLock then
-			setText(slot4:Find("cost/Text"), slot2.cost)
-			onButton(slot0, slot4, slot2.lockFunc, SFX_CONFIRM)
+		if arg_15_2.isLock then
+			setText(var_15_1:Find("cost/Text"), arg_15_2.cost)
+			onButton(arg_15_0, var_15_1, arg_15_2.lockFunc, SFX_CONFIRM)
 		else
-			slot0.timers[slot4] = Timer.New(function ()
-				if uv0.timeStamp - pg.TimeMgr.GetInstance():GetServerTime() < 0 then
-					uv1:UpdateOrderBtn()
+			arg_15_0.timers[var_15_1] = Timer.New(function()
+				local var_17_0 = arg_15_2.timeStamp - pg.TimeMgr.GetInstance():GetServerTime()
+
+				if var_17_0 < 0 then
+					arg_15_0:UpdateOrderBtn()
 				else
-					setText(uv2:Find("time/Text"), string.format("%d:%02d:%02d", math.floor(slot0 / 3600), math.floor(slot0 % 3600 / 60), slot0 % 60))
+					setText(var_15_1:Find("time/Text"), string.format("%d:%02d:%02d", math.floor(var_17_0 / 3600), math.floor(var_17_0 % 3600 / 60), var_17_0 % 60))
 				end
 			end, 1, -1)
 
-			slot0.timers[slot4].func()
-			slot0.timers[slot4]:Start()
-			onButton(slot0, slot4, slot2.timeFunc, SFX_CONFIRM)
+			arg_15_0.timers[var_15_1].func()
+			arg_15_0.timers[var_15_1]:Start()
+			onButton(arg_15_0, var_15_1, arg_15_2.timeFunc, SFX_CONFIRM)
 		end
 	end
 
-	if isActive(slot5) then
-		setText(slot5:Find("cost/Text"), slot2.cost)
-		onButton(slot0, slot5, slot2.enableFunc, SFX_CONFIRM)
+	if isActive(var_15_2) then
+		setText(var_15_2:Find("cost/Text"), arg_15_2.cost)
+		onButton(arg_15_0, var_15_2, arg_15_2.enableFunc, SFX_CONFIRM)
 	end
 end
 
-function slot0.UpdateOrderBtn(slot0)
-	slot0:ClearBtnTimers()
+function var_0_0.UpdateOrderBtn(arg_18_0)
+	arg_18_0:ClearBtnTimers()
 
-	slot0.timers = {}
-	slot1 = nowWorld()
-	slot2 = slot0.map:GetConfig("instruction_available")
-	slot3 = checkExist(slot0.map, {
+	arg_18_0.timers = {}
+
+	local var_18_0 = nowWorld()
+	local var_18_1 = arg_18_0.map:GetConfig("instruction_available")
+	local var_18_2 = checkExist(arg_18_0.map, {
 		"GetPort"
 	})
-	slot4 = slot1:GetRealm()
-	slot5 = slot1:IsSystemOpen(WorldConst.SystemOrderRedeploy) and slot4 == checkExist(slot3, {
+	local var_18_3 = var_18_0:GetRealm()
+	local var_18_4 = var_18_0:IsSystemOpen(WorldConst.SystemOrderRedeploy) and var_18_3 == checkExist(var_18_2, {
 		"GetRealm"
-	}) and checkExist(slot3, {
+	}) and checkExist(var_18_2, {
 		"IsOpen",
 		{
-			slot4,
-			slot1:GetProgress()
+			var_18_3,
+			var_18_0:GetProgress()
 		}
-	}) and slot1:BuildFormationIds()
-	slot6 = {
+	}) and var_18_0:BuildFormationIds()
+	local var_18_5 = {
 		system = WorldConst.SystemOrderRedeploy,
-		isLock = not slot5,
-		lockFunc = function ()
+		isLock = not var_18_4,
+		lockFunc = function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_redeploy_1"))
 		end,
-		cost = slot1:CalcOrderCost(WorldConst.OpReqRedeploy),
-		enableFunc = function (slot0, slot1)
-			uv0:Hide()
-			uv0:emit(WorldScene.SceneOp, "OpRedeploy")
+		cost = var_18_0:CalcOrderCost(WorldConst.OpReqRedeploy),
+		enableFunc = function(arg_20_0, arg_20_1)
+			arg_18_0:Hide()
+			arg_18_0:emit(WorldScene.SceneOp, "OpRedeploy")
 		end
 	}
 
-	slot0:SetButton(slot0.btnRedeploy, slot6)
-	slot0:SetButton(slot0.btnExpansion, slot6)
-	setActive(slot0.btnRedeploy, slot5 ~= WorldConst.FleetExpansion)
-	setActive(slot0.btnExpansion, slot5 == WorldConst.FleetExpansion)
-	slot0:SetButton(slot0.btnSubmarine, {
+	arg_18_0:SetButton(arg_18_0.btnRedeploy, var_18_5)
+	arg_18_0:SetButton(arg_18_0.btnExpansion, var_18_5)
+	setActive(arg_18_0.btnRedeploy, var_18_4 ~= WorldConst.FleetExpansion)
+	setActive(arg_18_0.btnExpansion, var_18_4 == WorldConst.FleetExpansion)
+	arg_18_0:SetButton(arg_18_0.btnSubmarine, {
 		system = WorldConst.SystemOrderSubmarine,
-		isLock = slot2[1] == 0 or not slot1:CanCallSubmarineSupport() or slot1:IsSubmarineSupporting() and slot1:GetSubAidFlag(),
-		lockFunc = function ()
-			if uv0[1] == 0 then
+		isLock = var_18_1[1] == 0 or not var_18_0:CanCallSubmarineSupport() or var_18_0:IsSubmarineSupporting() and var_18_0:GetSubAidFlag(),
+		lockFunc = function()
+			if var_18_1[1] == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_1"))
-			elseif not uv1:CanCallSubmarineSupport() then
+			elseif not var_18_0:CanCallSubmarineSupport() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_4"))
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_3"))
 			end
 		end,
-		cost = slot1:CalcOrderCost(WorldConst.OpReqSub),
-		enableFunc = function ()
-			uv0:ShowMsgbox(WorldConst.OpReqSub)
+		cost = var_18_0:CalcOrderCost(WorldConst.OpReqSub),
+		enableFunc = function()
+			arg_18_0:ShowMsgbox(WorldConst.OpReqSub)
 		end
 	})
-	slot0:SetButton(slot0.btnFOV, {
+	arg_18_0:SetButton(arg_18_0.btnFOV, {
 		system = WorldConst.SystemOrderFOV,
-		isLock = slot2[2] == 0 or slot0.map.visionFlag,
-		lockFunc = function ()
-			if uv0[2] == 0 then
+		isLock = var_18_1[2] == 0 or arg_18_0.map.visionFlag,
+		lockFunc = function()
+			if var_18_1[2] == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_1"))
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_detect_2"))
 			end
 		end,
-		cost = slot1:CalcOrderCost(WorldConst.OpReqVision),
-		enableFunc = function ()
-			uv0:ShowMsgbox(WorldConst.OpReqVision)
+		cost = var_18_0:CalcOrderCost(WorldConst.OpReqVision),
+		enableFunc = function()
+			arg_18_0:ShowMsgbox(WorldConst.OpReqVision)
 		end
 	})
 
-	slot7 = pg.TimeMgr.GetInstance()
+	local var_18_6 = pg.TimeMgr.GetInstance()
+	local var_18_7 = pg.gameset.world_instruction_maintenance.description[2]
+	local var_18_8 = var_18_0:GetReqCDTime(WorldConst.OpReqMaintenance) + var_18_7
 
-	slot0:SetButton(slot0.btnMaintenance, {
+	arg_18_0:SetButton(arg_18_0.btnMaintenance, {
 		system = WorldConst.SystemOrderMaintenance,
-		isLock = slot2[3] == 0,
-		lockFunc = function ()
+		isLock = var_18_1[3] == 0,
+		lockFunc = function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_1"))
 		end,
-		timeStamp = slot1:GetReqCDTime(WorldConst.OpReqMaintenance) + pg.gameset.world_instruction_maintenance.description[2],
-		timeFunc = function (slot0)
-			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_supply_2", uv0:DescCDTime(uv1 - pg.TimeMgr.GetInstance():GetServerTime())))
+		timeStamp = var_18_8,
+		timeFunc = function(arg_26_0)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_supply_2", var_18_6:DescCDTime(var_18_8 - pg.TimeMgr.GetInstance():GetServerTime())))
 		end,
-		cost = slot1:CalcOrderCost(WorldConst.OpReqMaintenance),
-		enableFunc = function ()
-			uv0:ShowMsgbox(WorldConst.OpReqMaintenance)
+		cost = var_18_0:CalcOrderCost(WorldConst.OpReqMaintenance),
+		enableFunc = function()
+			arg_18_0:ShowMsgbox(WorldConst.OpReqMaintenance)
 		end
 	})
 end
 
-function slot0.ClearBtnTimers(slot0)
-	if slot0.timers then
-		for slot4, slot5 in pairs(slot0.timers) do
-			slot5:Stop()
+function var_0_0.ClearBtnTimers(arg_28_0)
+	if arg_28_0.timers then
+		for iter_28_0, iter_28_1 in pairs(arg_28_0.timers) do
+			iter_28_1:Stop()
 		end
 	end
 
-	slot0.timers = nil
+	arg_28_0.timers = nil
 end
 
-function slot0.UpdateCompassMarks(slot0)
-	slot0.wsCompass:ClearMarks()
-	slot0.wsCompass:Update(slot0.entrance, slot0.map)
+function var_0_0.UpdateCompassMarks(arg_29_0)
+	arg_29_0.wsCompass:ClearMarks()
+	arg_29_0.wsCompass:Update(arg_29_0.entrance, arg_29_0.map)
 end
 
-function slot0.ClearComppass(slot0)
-	slot0.wsCompass.map = nil
+function var_0_0.ClearComppass(arg_30_0)
+	arg_30_0.wsCompass.map = nil
 
-	slot0.wsCompass:RemoveCellsListener()
+	arg_30_0.wsCompass:RemoveCellsListener()
 end
 
-function slot0.ShowMsgbox(slot0, slot1)
-	slot2 = nowWorld()
+function var_0_0.ShowMsgbox(arg_31_0, arg_31_1)
+	local var_31_0 = nowWorld()
+	local var_31_1 = var_31_0.staminaMgr:GetTotalStamina()
 
-	setText(slot0.rtMsgStamina:Find("Text"), slot2.staminaMgr:GetTotalStamina())
+	setText(arg_31_0.rtMsgStamina:Find("Text"), var_31_1)
 
-	slot4 = slot2:CalcOrderCost(slot1)
-	slot5 = ""
-	slot6 = ""
-	slot7 = nil
+	local var_31_2 = var_31_0:CalcOrderCost(arg_31_1)
+	local var_31_3 = ""
+	local var_31_4 = ""
+	local var_31_5
 
-	if slot1 == WorldConst.OpReqMaintenance then
-		slot5 = i18n("world_instruction_morale_1", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
-		slot6 = i18n("world_instruction_morale_4")
+	if arg_31_1 == WorldConst.OpReqMaintenance then
+		var_31_3 = i18n("world_instruction_morale_1", setColorStr(var_31_2, COLOR_GREEN), setColorStr(var_31_1, var_31_2 <= var_31_1 and COLOR_GREEN or COLOR_RED))
+		var_31_4 = i18n("world_instruction_morale_4")
 
-		function slot7()
-			uv0:emit(WorldScene.SceneOp, "OpReqMaintenance", uv0.map:GetFleet().id)
+		function var_31_5()
+			arg_31_0:emit(WorldScene.SceneOp, "OpReqMaintenance", arg_31_0.map:GetFleet().id)
 		end
-	elseif slot1 == WorldConst.OpReqSub then
-		slot5 = i18n(slot2:IsSubmarineSupporting() and "world_instruction_submarine_7" or "world_instruction_submarine_2", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
-		slot6 = i18n("world_instruction_submarine_8")
+	elseif arg_31_1 == WorldConst.OpReqSub then
+		var_31_3 = i18n(var_31_0:IsSubmarineSupporting() and "world_instruction_submarine_7" or "world_instruction_submarine_2", setColorStr(var_31_2, COLOR_GREEN), setColorStr(var_31_1, var_31_2 <= var_31_1 and COLOR_GREEN or COLOR_RED))
+		var_31_4 = i18n("world_instruction_submarine_8")
 
-		function slot7()
-			uv0:emit(WorldScene.SceneOp, "OpReqSub")
+		function var_31_5()
+			arg_31_0:emit(WorldScene.SceneOp, "OpReqSub")
 		end
-	elseif slot1 == WorldConst.OpReqVision then
-		slot5 = i18n("world_instruction_detect_1", setColorStr(slot4, COLOR_GREEN), setColorStr(slot3, slot4 <= slot3 and COLOR_GREEN or COLOR_RED))
-		slot6 = i18n("world_instruction_submarine_8")
+	elseif arg_31_1 == WorldConst.OpReqVision then
+		var_31_3 = i18n("world_instruction_detect_1", setColorStr(var_31_2, COLOR_GREEN), setColorStr(var_31_1, var_31_2 <= var_31_1 and COLOR_GREEN or COLOR_RED))
+		var_31_4 = i18n("world_instruction_submarine_8")
 
-		function slot7()
-			uv0:emit(WorldScene.SceneOp, "OpReqVision")
+		function var_31_5()
+			arg_31_0:emit(WorldScene.SceneOp, "OpReqVision")
 		end
 	else
 		assert(false, "req error")
 	end
 
-	setText(slot0.rtMsgBase:Find("content"), slot5)
-	setText(slot0.rtMsgBase:Find("other"), slot6)
-	onButton(slot0, slot0.rtMsgBtns:Find("btn_confirm"), function ()
-		uv0:Hide()
+	setText(arg_31_0.rtMsgBase:Find("content"), var_31_3)
+	setText(arg_31_0.rtMsgBase:Find("other"), var_31_4)
+	onButton(arg_31_0, arg_31_0.rtMsgBtns:Find("btn_confirm"), function()
+		arg_31_0:Hide()
 
-		if uv1.staminaMgr:GetTotalStamina() < uv2 then
-			uv1.staminaMgr:Show()
+		if var_31_0.staminaMgr:GetTotalStamina() < var_31_2 then
+			var_31_0.staminaMgr:Show()
 		else
-			uv3()
+			var_31_5()
 		end
 	end, SFX_CONFIRM)
-	setActive(slot0.rtMsgExtra, slot1 == WorldConst.OpReqSub)
+	setActive(arg_31_0.rtMsgExtra, arg_31_1 == WorldConst.OpReqSub)
 
-	if slot1 == WorldConst.OpReqSub then
-		setText(slot0.rtMsgExtra:Find("content/text_1"), i18n("world_instruction_submarine_9"))
+	if arg_31_1 == WorldConst.OpReqSub then
+		setText(arg_31_0.rtMsgExtra:Find("content/text_1"), i18n("world_instruction_submarine_9"))
 
-		slot8 = slot0.rtMsgExtra:Find("content/toggle_area/toggle")
+		local var_31_6 = arg_31_0.rtMsgExtra:Find("content/toggle_area/toggle")
+		local var_31_7 = PlayerPrefs.GetInt("world_sub_auto_call", 0) == 1
 
-		triggerToggle(slot8, PlayerPrefs.GetInt("world_sub_auto_call", 0) == 1)
-		onToggle(slot0, slot8, function (slot0)
-			uv0 = slot0
+		triggerToggle(var_31_6, var_31_7)
+		onToggle(arg_31_0, var_31_6, function(arg_36_0)
+			var_31_7 = arg_36_0
 
-			uv1:DisplayAutoSetting(true)
+			arg_31_0:DisplayAutoSetting(true)
 		end, SFX_PANEL)
 
-		slot12 = slot0.rtMsgExtra:Find("content/counter")
+		local var_31_8 = pg.gameset.world_instruction_submarine.description[1]
+		local var_31_9 = math.clamp(PlayerPrefs.GetInt("world_sub_call_line", 0), 0, var_31_8)
+		local var_31_10 = arg_31_0.rtMsgExtra:Find("content/counter")
 
-		setText(slot12:Find("number/Text"), math.clamp(PlayerPrefs.GetInt("world_sub_call_line", 0), 0, pg.gameset.world_instruction_submarine.description[1]))
-		pressPersistTrigger(slot12:Find("minus"), 0.5, function (slot0)
-			if uv0 == 0 then
-				if slot0 then
-					slot0()
+		setText(var_31_10:Find("number/Text"), var_31_9)
+		pressPersistTrigger(var_31_10:Find("minus"), 0.5, function(arg_37_0)
+			if var_31_9 == 0 then
+				if arg_37_0 then
+					arg_37_0()
 				end
 
 				return
 			end
 
-			uv0 = math.clamp(uv0 - 1, 0, uv1)
+			var_31_9 = math.clamp(var_31_9 - 1, 0, var_31_8)
 
-			setText(uv2:Find("number/Text"), uv0)
-			uv3:DisplayAutoSetting(true)
+			setText(var_31_10:Find("number/Text"), var_31_9)
+			arg_31_0:DisplayAutoSetting(true)
 		end, nil, true, true, 0.1, SFX_PANEL)
-		pressPersistTrigger(slot12:Find("plus"), 0.5, function (slot0)
-			if uv0 == uv1 then
-				if slot0 then
-					slot0()
+		pressPersistTrigger(var_31_10:Find("plus"), 0.5, function(arg_38_0)
+			if var_31_9 == var_31_8 then
+				if arg_38_0 then
+					arg_38_0()
 				end
 
 				return
 			end
 
-			uv0 = math.clamp(uv0 + 1, 0, uv1)
+			var_31_9 = math.clamp(var_31_9 + 1, 0, var_31_8)
 
-			setText(uv2:Find("number/Text"), uv0)
-			uv3:DisplayAutoSetting(true)
+			setText(var_31_10:Find("number/Text"), var_31_9)
+			arg_31_0:DisplayAutoSetting(true)
 		end, nil, true, true, 0.1, SFX_PANEL)
-		onButton(slot0, slot0.rtMsgBtns:Find("btn_setting"), function ()
+		onButton(arg_31_0, arg_31_0.rtMsgBtns:Find("btn_setting"), function()
 			isSetting = false
 
-			PlayerPrefs.SetInt("world_sub_auto_call", uv0 and 1 or 0)
-			PlayerPrefs.SetInt("world_sub_call_line", uv1)
-			uv2:DisplayAutoSetting(false)
+			PlayerPrefs.SetInt("world_sub_auto_call", var_31_7 and 1 or 0)
+			PlayerPrefs.SetInt("world_sub_call_line", var_31_9)
+			arg_31_0:DisplayAutoSetting(false)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_11"))
 		end, SFX_PANEL)
 	end
 
-	slot0:DisplayAutoSetting(false)
-	setActive(slot0.rtMsgbox, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.rtMsgbox)
+	arg_31_0:DisplayAutoSetting(false)
+	setActive(arg_31_0.rtMsgbox, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_31_0.rtMsgbox)
 end
 
-function slot0.HideMsgbox(slot0)
-	setActive(slot0.rtMsgbox, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.rtMsgbox, slot0._tf)
+function var_0_0.HideMsgbox(arg_40_0)
+	setActive(arg_40_0.rtMsgbox, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_40_0.rtMsgbox, arg_40_0._tf)
 end
 
-function slot0.DisplayAutoSetting(slot0, slot1)
-	setActive(slot0.rtMsgBtns:Find("btn_confirm"), not slot1)
-	setActive(slot0.rtMsgBtns:Find("btn_setting"), slot1)
+function var_0_0.DisplayAutoSetting(arg_41_0, arg_41_1)
+	setActive(arg_41_0.rtMsgBtns:Find("btn_confirm"), not arg_41_1)
+	setActive(arg_41_0.rtMsgBtns:Find("btn_setting"), arg_41_1)
 end
 
-return slot0
+return var_0_0

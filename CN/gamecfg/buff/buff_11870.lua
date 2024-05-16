@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "神射手·改",
-	init_effect = "",
-	time = 15,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 11870,
-	icon = 11870,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -52,5 +31,26 @@ return {
 				skill_id = 11872
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "神射手·改",
+	init_effect = "",
+	time = 15,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 11870,
+	icon = 11870,
+	last_effect = ""
 }

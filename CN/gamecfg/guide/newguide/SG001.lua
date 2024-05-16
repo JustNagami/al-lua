@@ -1,4 +1,4 @@
-return {
+﻿return {
 	{
 		index = 1,
 		view = {
@@ -27,7 +27,7 @@ return {
 				12026
 			}
 		},
-		getSegment = function ()
+		getSegment = function()
 			return getProxy(BuildShipProxy):getFinishCount() > 0 and 2 or 1
 		end
 	},
@@ -103,16 +103,16 @@ return {
 				1,
 				40004
 			},
-			func = function (slot0, slot1)
-				if slot0 == "NewMainScene" then
+			func = function(arg_2_0, arg_2_1)
+				if arg_2_0 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 7
-				elseif slot0 == "LevelScene" then
-					if not slot1 then
+				elseif arg_2_0 == "LevelScene" then
+					if not arg_2_1 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 7
-					elseif slot1 then
-						if slot1.score > 1 then
+					elseif arg_2_1 then
+						if arg_2_1.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 9
-						elseif slot1.total_time >= 180 then
+						elseif arg_2_1.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 7
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 4
@@ -196,8 +196,8 @@ return {
 			arg = {
 				2
 			},
-			func = function (slot0)
-				if slot0.getEquip(slot0, 2) then
+			func = function(arg_3_0)
+				if arg_3_0:getEquip(2) then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 15
 				end
 
@@ -252,11 +252,12 @@ return {
 				12003
 			}
 		},
-		getSegment = function ()
-			slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1) and not slot0:isEnd()
+		getSegment = function()
+			local var_4_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1)
+			local var_4_1 = var_4_0 and not var_4_0:isEnd()
 
 			if not BuildShipScene.projectName then
-				if slot1 then
+				if var_4_1 then
 					return 1
 				else
 					return 2
@@ -282,7 +283,7 @@ return {
 				12026
 			}
 		},
-		getSegment = function ()
+		getSegment = function()
 			return getProxy(BuildShipProxy):getFinishCount() > 0 and 2 or 1
 		end
 	},
@@ -370,16 +371,16 @@ return {
 				1,
 				40004
 			},
-			func = function (slot0, slot1)
-				if slot0 == "NewMainScene" then
+			func = function(arg_6_0, arg_6_1)
+				if arg_6_0 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 24
-				elseif slot0 == "LevelScene" then
-					if not slot1 then
+				elseif arg_6_0 == "LevelScene" then
+					if not arg_6_1 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 24
-					elseif slot1 then
-						if slot1.score > 1 then
+					elseif arg_6_1 then
+						if arg_6_1.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 26
-						elseif slot1.total_time >= 180 then
+						elseif arg_6_1.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 24
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 20
@@ -426,16 +427,16 @@ return {
 				1,
 				40004
 			},
-			func = function (slot0, slot1)
-				if slot0 == "NewMainScene" then
+			func = function(arg_7_0, arg_7_1)
+				if arg_7_0 == "NewMainScene" then
 					return pg.SeriesGuideMgr.CODES.MAINUI, 27
-				elseif slot0 == "LevelScene" then
-					if not slot1 then
+				elseif arg_7_0 == "LevelScene" then
+					if not arg_7_1 then
 						return pg.SeriesGuideMgr.CODES.CONDITION, 27
-					elseif slot1 then
-						if slot1.score > 1 then
+					elseif arg_7_1 then
+						if arg_7_1.score > 1 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 29
-						elseif slot1.total_time >= 180 then
+						elseif arg_7_1.total_time >= 180 then
 							return pg.SeriesGuideMgr.CODES.CONDITION, 27
 						else
 							return pg.SeriesGuideMgr.CODES.CONDITION, 20

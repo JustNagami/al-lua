@@ -1,88 +1,87 @@
-slot0 = class("NewYear23SkinShowPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("NewYear23SkinShowPage", import("...base.BaseActivityPage"))
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_1_0)
+	return
 end
 
-function slot0.OnInit(slot0)
-	slot0.goBtn = slot0:findTF("BtnGO")
-	slot0.skinShopBtn = slot0:findTF("BtnShop")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.goBtn = arg_2_0:findTF("BtnGO")
+	arg_2_0.skinShopBtn = arg_2_0:findTF("BtnShop")
 
-	onButton(slot0, slot0.skinShopBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	onButton(arg_2_0, arg_2_0.skinShopBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.goBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NEWYEAR_BACKHILL_2023)
+	onButton(arg_2_0, arg_2_0.goBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NEWYEAR_BACKHILL_2023)
 	end, SFX_PANEL)
 
-	slot0.rtBg = slot0._tf:Find("AD")
-	slot0.rtFront = slot0.rtBg:Find("front")
+	arg_2_0.rtBg = arg_2_0._tf:Find("AD")
+	arg_2_0.rtFront = arg_2_0.rtBg:Find("front")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot0.showList = {}
-	slot5 = "config_client"
+function var_0_0.OnDataSetting(arg_5_0)
+	local var_5_0 = pg.TimeMgr.GetInstance()
 
-	for slot5, slot6 in ipairs(slot0.activity:getConfig(slot5).display_link) do
-		if slot6[2] == 0 or slot1:inTime(pg.shop_template[slot6[2]].time) then
-			table.insert(slot0.showList, math.random(#slot0.showList + 1), slot6[1])
+	arg_5_0.showList = {}
+
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.activity:getConfig("config_client").display_link) do
+		if iter_5_1[2] == 0 or var_5_0:inTime(pg.shop_template[iter_5_1[2]].time) then
+			table.insert(arg_5_0.showList, math.random(#arg_5_0.showList + 1), iter_5_1[1])
 		end
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:ActionInvoke("ShowOrHide", false)
+function var_0_0.OnFirstFlush(arg_6_0)
+	arg_6_0:ActionInvoke("ShowOrHide", false)
 
-	slot0.index = 1
+	arg_6_0.index = 1
 
-	GetSpriteFromAtlasAsync("clutter/newyear23skinshowpage_" .. slot0.showList[slot0.index], "", function (slot0)
-		if uv0._state == uv1.STATES.DESTROY then
+	GetSpriteFromAtlasAsync("clutter/newyear23skinshowpage_" .. arg_6_0.showList[arg_6_0.index], "", function(arg_7_0)
+		if arg_6_0._state == var_0_0.STATES.DESTROY then
 			return
 		end
 
-		setImageSprite(uv0.rtBg, slot0)
-		setImageAlpha(uv0.rtFront, 0)
-		uv0:ActionInvoke("ShowOrHide", true)
-		uv0:DelayCall()
+		setImageSprite(arg_6_0.rtBg, arg_7_0)
+		setImageAlpha(arg_6_0.rtFront, 0)
+		arg_6_0:ActionInvoke("ShowOrHide", true)
+		arg_6_0:DelayCall()
 	end)
 end
 
-function slot0.DelayCall(slot0)
-	slot1 = {}
+function var_0_0.DelayCall(arg_8_0)
+	local var_8_0 = {}
 
-	table.insert(slot1, function (slot0)
-		uv0.uniqueId = LeanTween.delayedCall(3, System.Action(slot0)).uniqueId
+	table.insert(var_8_0, function(arg_9_0)
+		arg_8_0.uniqueId = LeanTween.delayedCall(3, System.Action(arg_9_0)).uniqueId
 	end)
-	table.insert(slot1, function (slot0)
-		uv0.index = uv0.index % #uv0.showList + 1
+	table.insert(var_8_0, function(arg_10_0)
+		arg_8_0.index = arg_8_0.index % #arg_8_0.showList + 1
 
-		GetSpriteFromAtlasAsync("clutter/newyear23skinshowpage_" .. uv0.showList[uv0.index], "", function (slot0)
-			if uv0._state == uv1.STATES.DESTROY then
+		GetSpriteFromAtlasAsync("clutter/newyear23skinshowpage_" .. arg_8_0.showList[arg_8_0.index], "", function(arg_11_0)
+			if arg_8_0._state == var_0_0.STATES.DESTROY then
 				return
 			end
 
-			uv0.nextSprite = slot0
+			arg_8_0.nextSprite = arg_11_0
 
-			uv2()
+			arg_10_0()
 		end)
 	end)
-	parallelAsync(slot1, function ()
-		setImageSprite(uv0.rtFront, getImageSprite(uv0.rtBg))
-		setImageAlpha(uv0.rtFront, 1)
-		setImageSprite(uv0.rtBg, uv0.nextSprite)
+	parallelAsync(var_8_0, function()
+		setImageSprite(arg_8_0.rtFront, getImageSprite(arg_8_0.rtBg))
+		setImageAlpha(arg_8_0.rtFront, 1)
+		setImageSprite(arg_8_0.rtBg, arg_8_0.nextSprite)
 
-		slot1 = LeanTween.alpha(uv0.rtFront, 0, 0.5)
-		slot1 = slot1:setEase(LeanTweenType.easeOutSine)
-		uv0.uniqueId = slot1:setOnComplete(System.Action(function ()
-			uv0:DelayCall()
+		arg_8_0.uniqueId = LeanTween.alpha(arg_8_0.rtFront, 0, 0.5):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
+			arg_8_0:DelayCall()
 		end)).uniqueId
 	end)
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.uniqueId then
-		LeanTween.cancel(slot0.uniqueId)
+function var_0_0.OnDestroy(arg_14_0)
+	if arg_14_0.uniqueId then
+		LeanTween.cancel(arg_14_0.uniqueId)
 	end
 end
 
-return slot0
+return var_0_0

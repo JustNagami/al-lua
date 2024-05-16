@@ -1,47 +1,56 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleEvent
-slot2 = slot0.Battle.BattleConfig
-slot3 = class("BattleDuelDamageRateView")
-slot0.Battle.BattleDuelDamageRateView = slot3
-slot3.__name = "BattleDuelDamageRateView"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	uv0.EventListener.AttachEventListener(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleEvent
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = class("BattleDuelDamageRateView")
 
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0._progressList = {}
-	slot0._rateBarList = {}
-	slot0._fleetList = {}
-	slot0._rateBarList[uv1.FRIENDLY_CODE] = slot0._tf:Find("leftDamageBar")
-	slot0._rateBarList[uv1.FOE_CODE] = slot0._tf:Find("rightDamageBar")
+var_0_0.Battle.BattleDuelDamageRateView = var_0_3
+var_0_3.__name = "BattleDuelDamageRateView"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	var_0_0.EventListener.AttachEventListener(arg_1_0)
+
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0._progressList = {}
+	arg_1_0._rateBarList = {}
+	arg_1_0._fleetList = {}
+	arg_1_0._rateBarList[var_0_2.FRIENDLY_CODE] = arg_1_0._tf:Find("leftDamageBar")
+	arg_1_0._rateBarList[var_0_2.FOE_CODE] = arg_1_0._tf:Find("rightDamageBar")
 end
 
-function slot3.SetActive(slot0, slot1)
-	setActive(slot0._go, slot1)
+function var_0_3.SetActive(arg_2_0, arg_2_1)
+	setActive(arg_2_0._go, arg_2_1)
 end
 
-function slot3.SetFleetVO(slot0, slot1, slot2)
-	slot0._fleetList[slot1] = true
-	slot3 = slot0._rateBarList[slot1:GetIFF()]
-	slot3:Find("nameText"):GetComponent(typeof(Text)).text = slot2.name
-	slot3:Find("LVText"):GetComponent(typeof(Text)).text = "Lv." .. slot2.level
-	slot0._progressList[slot1:GetIFF()] = slot3:Find("bar/progress"):GetComponent(typeof(Image))
+function var_0_3.SetFleetVO(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0._fleetList[arg_3_1] = true
 
-	slot1:RegisterEventListener(slot0, uv0.FLEET_DMG_CHANGE, slot0.onDMGChange)
+	local var_3_0 = arg_3_0._rateBarList[arg_3_1:GetIFF()]
+
+	var_3_0:Find("nameText"):GetComponent(typeof(Text)).text = arg_3_2.name
+	var_3_0:Find("LVText"):GetComponent(typeof(Text)).text = "Lv." .. arg_3_2.level
+
+	local var_3_1 = var_3_0:Find("bar/progress"):GetComponent(typeof(Image))
+
+	arg_3_0._progressList[arg_3_1:GetIFF()] = var_3_1
+
+	arg_3_1:RegisterEventListener(arg_3_0, var_0_1.FLEET_DMG_CHANGE, arg_3_0.onDMGChange)
 end
 
-function slot3.onDMGChange(slot0, slot1)
-	slot2 = slot1.Dispatcher
-	slot0._progressList[slot2:GetIFF()].fillAmount = slot2:GetDamageRatio()
+function var_0_3.onDMGChange(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1.Dispatcher
+	local var_4_1 = var_4_0:GetIFF()
+
+	arg_4_0._progressList[var_4_1].fillAmount = var_4_0:GetDamageRatio()
 end
 
-function slot3.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0._fleetList) do
-		slot4:UnregisterEventListener(slot0, uv0.FLEET_DMG_CHANGE)
+function var_0_3.Dispose(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0._fleetList) do
+		iter_5_0:UnregisterEventListener(arg_5_0, var_0_1.FLEET_DMG_CHANGE)
 	end
 
-	slot0._rateBarList = nil
-	slot0._progressList = nil
+	arg_5_0._rateBarList = nil
+	arg_5_0._progressList = nil
 end

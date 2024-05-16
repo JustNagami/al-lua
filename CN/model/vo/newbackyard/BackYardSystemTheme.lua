@@ -1,88 +1,101 @@
-slot0 = class("BackYardSystemTheme", import(".BackYardSelfThemeTemplate"))
+﻿local var_0_0 = class("BackYardSystemTheme", import(".BackYardSelfThemeTemplate"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.level = 1
-	slot0.order = slot0:getConfig("order")
+	arg_1_0.level = 1
+	arg_1_0.order = arg_1_0:getConfig("order")
 end
 
-function slot0.GetRawPutList(slot0)
-	slot0:CheckLevel()
+function var_0_0.GetRawPutList(arg_2_0)
+	arg_2_0:CheckLevel()
 
-	slot1 = getProxy(DormProxy):getRawData().level
+	local var_2_0 = getProxy(DormProxy):getRawData().level
 
-	if not slot0.putInfo then
-		pcall(function ()
-			uv0 = require("GameCfg.backyardTheme.theme_" .. uv1.id)
+	if not arg_2_0.putInfo then
+		local var_2_1
+
+		pcall(function()
+			var_2_1 = require("GameCfg.backyardTheme.theme_" .. arg_2_0.id)
 		end)
 
-		slot0.putInfo = _.select((nil or require("GameCfg.backyardTheme.theme_empty"))["furnitures_" .. slot1] or {}, function (slot0)
-			return pg.furniture_data_template[slot0.id]
+		var_2_1 = var_2_1 or require("GameCfg.backyardTheme.theme_empty")
+
+		local var_2_2 = var_2_1["furnitures_" .. var_2_0] or {}
+
+		arg_2_0.putInfo = _.select(var_2_2, function(arg_4_0)
+			return pg.furniture_data_template[arg_4_0.id]
 		end)
 	end
 
-	return slot0.putInfo
+	return arg_2_0.putInfo
 end
 
-function slot0.CheckLevel(slot0)
-	if slot0.level ~= getProxy(DormProxy):getRawData().level then
-		slot0.furnitruesByIds = nil
-		slot0.putInfo = nil
-		slot0.level = slot1
+function var_0_0.CheckLevel(arg_5_0)
+	local var_5_0 = getProxy(DormProxy):getRawData().level
+
+	if arg_5_0.level ~= var_5_0 then
+		arg_5_0.furnitruesByIds = nil
+		arg_5_0.putInfo = nil
+		arg_5_0.level = var_5_0
 	end
 end
 
-function slot0.GetAllFurniture(slot0)
-	slot0:CheckLevel()
-	uv0.super.GetAllFurniture(slot0)
+function var_0_0.GetAllFurniture(arg_6_0)
+	arg_6_0:CheckLevel()
 
-	if not slot0.furnitruesByIds then
-		slot0:CheckData()
+	local var_6_0 = not arg_6_0.furnitruesByIds
+
+	var_0_0.super.GetAllFurniture(arg_6_0)
+
+	if var_6_0 then
+		arg_6_0:CheckData()
 	end
 
-	return slot0.furnitruesByIds
+	return arg_6_0.furnitruesByIds
 end
 
-function slot0.GetWarpFurnitures(slot0)
-	slot0:CheckLevel()
+function var_0_0.GetWarpFurnitures(arg_7_0)
+	arg_7_0:CheckLevel()
 
-	return uv0.super.GetWarpFurnitures(slot0)
+	return var_0_0.super.GetWarpFurnitures(arg_7_0)
 end
 
-function slot0.CheckData(slot0)
-	slot1 = getProxy(DormProxy):getRawData()
-	slot2 = {}
-	slot3 = {}
+function var_0_0.CheckData(arg_8_0)
+	local var_8_0 = getProxy(DormProxy):getRawData()
+	local var_8_1 = {}
+	local var_8_2 = {}
 
-	for slot7, slot8 in pairs(slot0.furnitruesByIds) do
-		if not slot1:IsPurchasedFurniture(slot8.configId) then
-			if slot8.parent ~= 0 then
-				table.insert(slot3, {
-					pid = slot8.parent,
-					id = slot7
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.furnitruesByIds) do
+		if not var_8_0:IsPurchasedFurniture(iter_8_1.configId) then
+			if iter_8_1.parent ~= 0 then
+				table.insert(var_8_2, {
+					pid = iter_8_1.parent,
+					id = iter_8_0
 				})
-			elseif table.getCount(slot8.child) > 0 then
-				for slot12, slot13 in pairs(slot8.child) do
-					table.insert(slot2, slot12)
+			elseif table.getCount(iter_8_1.child) > 0 then
+				for iter_8_2, iter_8_3 in pairs(iter_8_1.child) do
+					table.insert(var_8_1, iter_8_2)
 				end
 			end
 
-			table.insert(slot2, slot7)
+			table.insert(var_8_1, iter_8_0)
 		end
 	end
 
-	slot4 = #slot2 > 0 or #slot3 > 0
+	local var_8_3 = #var_8_1 > 0 or #var_8_2 > 0
 
-	for slot8, slot9 in ipairs(slot2) do
-		slot0.furnitruesByIds[slot9] = nil
+	for iter_8_4, iter_8_5 in ipairs(var_8_1) do
+		arg_8_0.furnitruesByIds[iter_8_5] = nil
 	end
 
-	for slot8, slot9 in pairs(slot3) do
-		if slot0.furnitruesByIds[slot9.pid] then
-			for slot14, slot15 in pairs(slot10.child) do
-				if slot14 == slot9.id then
-					slot10.child[slot9.id] = nil
+	for iter_8_6, iter_8_7 in pairs(var_8_2) do
+		local var_8_4 = arg_8_0.furnitruesByIds[iter_8_7.pid]
+
+		if var_8_4 then
+			for iter_8_8, iter_8_9 in pairs(var_8_4.child) do
+				if iter_8_8 == iter_8_7.id then
+					var_8_4.child[iter_8_7.id] = nil
 
 					break
 				end
@@ -90,55 +103,58 @@ function slot0.CheckData(slot0)
 		end
 	end
 
-	return slot4
+	return var_8_3
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_9_0)
 	return pg.backyard_theme_template
 end
 
-function slot0.IsOverTime(slot0)
-	slot1 = pg.furniture_shop_template
+function var_0_0.IsOverTime(arg_10_0)
+	local var_10_0 = pg.furniture_shop_template
+	local var_10_1 = arg_10_0:getConfig("ids")
 
-	return _.all(slot0:getConfig("ids"), function (slot0)
-		return not uv0[slot0] or not pg.TimeMgr.GetInstance():inTime(uv0[slot0].time)
+	return _.all(var_10_1, function(arg_11_0)
+		return not var_10_0[arg_11_0] or not pg.TimeMgr.GetInstance():inTime(var_10_0[arg_11_0].time)
 	end)
 end
 
-function slot0.GetFurnitures(slot0)
-	return slot0:getConfig("ids")
+function var_0_0.GetFurnitures(arg_12_0)
+	return arg_12_0:getConfig("ids")
 end
 
-function slot0.HasDiscount(slot0)
-	return _.any(slot0:GetFurnitures(), function (slot0)
-		slot1 = Furniture.New({
-			id = slot0
+function var_0_0.HasDiscount(arg_13_0)
+	local var_13_0 = arg_13_0:GetFurnitures()
+
+	return _.any(var_13_0, function(arg_14_0)
+		local var_14_0 = Furniture.New({
+			id = arg_14_0
 		})
 
-		return slot1:getPrice(PlayerConst.ResDormMoney) < slot1:getConfig("dorm_icon_price")
+		return var_14_0:getConfig("dorm_icon_price") > var_14_0:getPrice(PlayerConst.ResDormMoney)
 	end)
 end
 
-function slot0.GetDiscount(slot0)
-	slot2 = _.map(slot0:GetFurnitures(), function (slot0)
+function var_0_0.GetDiscount(arg_15_0)
+	local var_15_0 = arg_15_0:GetFurnitures()
+	local var_15_1 = _.map(var_15_0, function(arg_16_0)
 		return Furniture.New({
-			id = slot0
+			id = arg_16_0
 		})
 	end)
-	slot4 = _.reduce(slot2, 0, function (slot0, slot1)
-		return slot0 + slot1:getConfig("dorm_icon_price")
+	local var_15_2 = _.reduce(var_15_1, 0, function(arg_17_0, arg_17_1)
+		return arg_17_0 + arg_17_1:getPrice(PlayerConst.ResDormMoney)
+	end)
+	local var_15_3 = _.reduce(var_15_1, 0, function(arg_18_0, arg_18_1)
+		return arg_18_0 + arg_18_1:getConfig("dorm_icon_price")
 	end)
 
-	return (slot4 - _.reduce(slot2, 0, function (slot0, slot1)
-		return slot0 + slot1:getPrice(PlayerConst.ResDormMoney)
-	end)) / slot4 * 100
+	return (var_15_3 - var_15_2) / var_15_3 * 100
 end
 
-function slot0.IsPurchased(slot0, slot1)
-	slot5 = "ids"
-
-	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
-		if not slot1[slot6] then
+function var_0_0.IsPurchased(arg_19_0, arg_19_1)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0:getConfig("ids")) do
+		if not arg_19_1[iter_19_1] then
 			return false
 		end
 	end
@@ -146,28 +162,28 @@ function slot0.IsPurchased(slot0, slot1)
 	return true
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_20_0)
+	return arg_20_0:getConfig("name")
 end
 
-function slot0.GetDesc(slot0)
-	return slot0:getConfig("desc")
+function var_0_0.GetDesc(arg_21_0)
+	return arg_21_0:getConfig("desc")
 end
 
-function slot0.IsSystem(slot0)
+function var_0_0.IsSystem(arg_22_0)
 	return true
 end
 
-function slot0.getName(slot0)
-	return slot0:GetName()
+function var_0_0.getName(arg_23_0)
+	return arg_23_0:GetName()
 end
 
-function slot0.getIcon(slot0)
-	return slot0:getConfig("icon")
+function var_0_0.getIcon(arg_24_0)
+	return arg_24_0:getConfig("icon")
 end
 
-function slot0.isUnLock(slot0, slot1)
-	return slot0:getConfig("deblocking") <= slot1.level
+function var_0_0.isUnLock(arg_25_0, arg_25_1)
+	return arg_25_0:getConfig("deblocking") <= arg_25_1.level
 end
 
-return slot0
+return var_0_0

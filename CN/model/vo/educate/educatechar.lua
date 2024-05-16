@@ -1,348 +1,355 @@
-slot0 = class("EducateChar", import("model.vo.BaseVO"))
-slot0.ATTR_TYPE_MAJOR = 1
-slot0.ATTR_TYPE_PERSONALITY = 2
-slot0.ATTR_TYPE_MINOR = 3
-slot0.RES_MONEY_ID = 1
-slot0.RES_MOOD_ID = 2
-slot0.RES_SITE_ID = 3
-slot0.RES_FAVOR_ID = 4
-slot0.RES_ID_2_NAME = {
-	[slot0.RES_MONEY_ID] = "money",
-	[slot0.RES_MOOD_ID] = "mood",
-	[slot0.RES_SITE_ID] = "site",
-	[slot0.RES_FAVOR_ID] = "favor"
+﻿local var_0_0 = class("EducateChar", import("model.vo.BaseVO"))
+
+var_0_0.ATTR_TYPE_MAJOR = 1
+var_0_0.ATTR_TYPE_PERSONALITY = 2
+var_0_0.ATTR_TYPE_MINOR = 3
+var_0_0.RES_MONEY_ID = 1
+var_0_0.RES_MOOD_ID = 2
+var_0_0.RES_SITE_ID = 3
+var_0_0.RES_FAVOR_ID = 4
+var_0_0.RES_ID_2_NAME = {
+	[var_0_0.RES_MONEY_ID] = "money",
+	[var_0_0.RES_MOOD_ID] = "mood",
+	[var_0_0.RES_SITE_ID] = "site",
+	[var_0_0.RES_FAVOR_ID] = "favor"
 }
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.child_data
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.tid or 1
-	slot0.configId = slot0.id
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.tid or 1
+	arg_2_0.configId = arg_2_0.id
 
-	slot0:checkCfg()
-	slot0:initStageCfg()
-	slot0:initFavorCfg()
+	arg_2_0:checkCfg()
+	arg_2_0:initStageCfg()
+	arg_2_0:initFavorCfg()
 
-	slot0.curTime = slot1.cur_time or {
+	arg_2_0.curTime = arg_2_1.cur_time or {
 		week = 4,
 		month = 2,
 		day = 7
 	}
-	slot0.stage = slot0:GetStageByTime(slot0.curTime)
-	slot0.mood = slot1.mood or pg.child_resource[uv0.RES_MOOD_ID].default_value
-	slot0.money = slot1.money or pg.child_resource[uv0.RES_MONEY_ID].default_value
-	slot0.site = slot1.site_number or slot0:GetSiteCnt()
-	slot0.favor = slot1.favor or {
+	arg_2_0.stage = arg_2_0:GetStageByTime(arg_2_0.curTime)
+	arg_2_0.mood = arg_2_1.mood or pg.child_resource[var_0_0.RES_MOOD_ID].default_value
+	arg_2_0.money = arg_2_1.money or pg.child_resource[var_0_0.RES_MONEY_ID].default_value
+	arg_2_0.site = arg_2_1.site_number or arg_2_0:GetSiteCnt()
+	arg_2_0.favor = arg_2_1.favor or {
 		lv = 1,
 		exp = 0
 	}
-	slot0.attrs = {}
+	arg_2_0.attrs = {}
 
-	for slot5, slot6 in ipairs(slot1.attrs) do
-		slot0.attrs[slot6.id] = slot6.val
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.attrs) do
+		arg_2_0.attrs[iter_2_1.id] = iter_2_1.val
 	end
 
-	slot0.isAddedExtraAttr = slot1.had_adjustment == 1 or false
-	slot0.addExtraAttrTime = EducateHelper.GetTimeFromCfg(pg.gameset.child_attr_2_add.description)
-	slot0.callName = slot1.user_name or ""
+	arg_2_0.isAddedExtraAttr = arg_2_1.had_adjustment == 1 or false
+	arg_2_0.addExtraAttrTime = EducateHelper.GetTimeFromCfg(pg.gameset.child_attr_2_add.description)
+	arg_2_0.callName = arg_2_1.user_name or ""
 
-	slot0:UpdateMainInfo()
+	arg_2_0:UpdateMainInfo()
 end
 
-function slot0.checkCfg(slot0)
-	assert(#slot0:getConfig("char_prefab") == #slot0:getConfig("main_word") and #slot0:getConfig("main_word") == #slot0:getConfig("word_expression"), "主界面立绘展示/台词/差分数量不一致，请检查相关配置")
+function var_0_0.checkCfg(arg_3_0)
+	assert(#arg_3_0:getConfig("char_prefab") == #arg_3_0:getConfig("main_word") and #arg_3_0:getConfig("main_word") == #arg_3_0:getConfig("word_expression"), "主界面立绘展示/台词/差分数量不一致，请检查相关配置")
 end
 
-function slot0.initStageCfg(slot0)
-	slot0.stage2timeRange = {}
-	slot4 = "stage"
+function var_0_0.initStageCfg(arg_4_0)
+	arg_4_0.stage2timeRange = {}
 
-	for slot4, slot5 in ipairs(slot0:getConfig(slot4)) do
-		slot0.stage2timeRange[slot4] = {
-			EducateHelper.CfgTime2Time(slot5)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0:getConfig("stage")) do
+		arg_4_0.stage2timeRange[iter_4_0] = {
+			EducateHelper.CfgTime2Time(iter_4_1)
 		}
 	end
 end
 
-function slot0.GetStageByTime(slot0, slot1)
-	slot0.time2stage = {}
+function var_0_0.GetStageByTime(arg_5_0, arg_5_1)
+	arg_5_0.time2stage = {}
 
-	for slot5, slot6 in pairs(slot0.stage2timeRange) do
-		if EducateHelper.InTime(slot1, slot6[1], slot6[2]) then
-			return slot5
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.stage2timeRange) do
+		if EducateHelper.InTime(arg_5_1, iter_5_1[1], iter_5_1[2]) then
+			return iter_5_0
 		end
 	end
 
 	return 1
 end
 
-function slot0.initFavorCfg(slot0)
-	slot0.favorLv2NeedExp = {}
-	slot0.favorLv2PerformIds = {}
-	slot0.favorReplaceCfg = {}
-	slot0.favorMaxLv = slot0:getConfig("favor_level")
-	slot4 = "favor_exp"
+function var_0_0.initFavorCfg(arg_6_0)
+	arg_6_0.favorLv2NeedExp = {}
+	arg_6_0.favorLv2PerformIds = {}
+	arg_6_0.favorReplaceCfg = {}
+	arg_6_0.favorMaxLv = arg_6_0:getConfig("favor_level")
 
-	for slot4, slot5 in ipairs(slot0:getConfig(slot4)) do
-		slot0.favorLv2NeedExp[slot4] = slot5
-		slot0.favorLv2PerformIds[slot4] = slot0:getConfig("trigger_performance")[slot4]
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0:getConfig("favor_exp")) do
+		arg_6_0.favorLv2NeedExp[iter_6_0] = iter_6_1
+		arg_6_0.favorLv2PerformIds[iter_6_0] = arg_6_0:getConfig("trigger_performance")[iter_6_0]
 	end
 
-	slot4 = "trigger_performance_replace"
-
-	for slot4, slot5 in ipairs(slot0:getConfig(slot4)) do
-		slot0.favorReplaceCfg[slot5[1]] = slot5[2]
+	for iter_6_2, iter_6_3 in ipairs(arg_6_0:getConfig("trigger_performance_replace")) do
+		arg_6_0.favorReplaceCfg[iter_6_3[1]] = iter_6_3[2]
 	end
 end
 
-function slot0.SetCallName(slot0, slot1)
-	slot0.callName = slot1
+function var_0_0.SetCallName(arg_7_0, arg_7_1)
+	arg_7_0.callName = arg_7_1
 end
 
-function slot0.GetCallName(slot0)
-	return slot0.callName
+function var_0_0.GetCallName(arg_8_0)
+	return arg_8_0.callName
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_9_0)
+	return arg_9_0:getConfig("name")
 end
 
-function slot0.GetStage(slot0)
-	return slot0.stage
+function var_0_0.GetStage(arg_10_0)
+	return arg_10_0.stage
 end
 
-function slot0.GetNextWeekStage(slot0)
-	return slot0:GetStageByTime(EducateHelper.GetTimeAfterWeeks(slot0.curTime, 1)) or 1
+function var_0_0.GetNextWeekStage(arg_11_0)
+	local var_11_0 = EducateHelper.GetTimeAfterWeeks(arg_11_0.curTime, 1)
+
+	return arg_11_0:GetStageByTime(var_11_0) or 1
 end
 
-function slot0.GetPlanCnt(slot0)
-	return slot0:getConfig("stage_plan_number")[slot0.stage]
+function var_0_0.GetPlanCnt(arg_12_0)
+	return arg_12_0:getConfig("stage_plan_number")[arg_12_0.stage]
 end
 
-function slot0.GetNextWeekPlanCnt(slot0)
-	return slot0:getConfig("stage_plan_number")[slot0:GetNextWeekStage()]
+function var_0_0.GetNextWeekPlanCnt(arg_13_0)
+	return arg_13_0:getConfig("stage_plan_number")[arg_13_0:GetNextWeekStage()]
 end
 
-function slot0.GetSiteCnt(slot0)
+function var_0_0.GetSiteCnt(arg_14_0)
 	if not getProxy(EducateProxy):InVirtualStage() then
-		return slot0:getConfig("stage_site_number")[slot0.stage]
+		return arg_14_0:getConfig("stage_site_number")[arg_14_0.stage]
 	else
-		return slot0:getConfig("stage_site_number")[slot0.stage + 1]
+		return arg_14_0:getConfig("stage_site_number")[arg_14_0.stage + 1]
 	end
 end
 
-function slot0.GetStageReaminWeek(slot0, slot1)
-	return (slot0:getConfig("stage")[slot1][2][1] + 1 - slot0.curTime.month) * 4 - slot0.curTime.week
+function var_0_0.GetStageReaminWeek(arg_15_0, arg_15_1)
+	return (arg_15_0:getConfig("stage")[arg_15_1][2][1] + 1 - arg_15_0.curTime.month) * 4 - arg_15_0.curTime.week
 end
 
-function slot0.GetAttrIdsByType(slot0, slot1)
-	if slot1 == uv0.ATTR_TYPE_MAJOR then
-		return slot0:getConfig("attr_1_list")
+function var_0_0.GetAttrIdsByType(arg_16_0, arg_16_1)
+	if arg_16_1 == var_0_0.ATTR_TYPE_MAJOR then
+		return arg_16_0:getConfig("attr_1_list")
 	end
 
-	if slot1 == uv0.ATTR_TYPE_PERSONALITY then
-		return slot0:getConfig("attr_2_list")
+	if arg_16_1 == var_0_0.ATTR_TYPE_PERSONALITY then
+		return arg_16_0:getConfig("attr_2_list")
 	end
 
-	if slot1 == uv0.ATTR_TYPE_MINOR then
-		return slot0:getConfig("attr_3_list")
+	if arg_16_1 == var_0_0.ATTR_TYPE_MINOR then
+		return arg_16_0:getConfig("attr_3_list")
 	end
 
 	return {}
 end
 
-function slot0.GetAttrTypeById(slot0, slot1)
-	if table.contains(slot0:getConfig("attr_1_list"), slot1) then
-		return uv0.ATTR_TYPE_MAJOR
+function var_0_0.GetAttrTypeById(arg_17_0, arg_17_1)
+	if table.contains(arg_17_0:getConfig("attr_1_list"), arg_17_1) then
+		return var_0_0.ATTR_TYPE_MAJOR
 	end
 
-	if table.contains(slot0:getConfig("attr_2_list"), slot1) then
-		return uv0.ATTR_TYPE_PERSONALITY
+	if table.contains(arg_17_0:getConfig("attr_2_list"), arg_17_1) then
+		return var_0_0.ATTR_TYPE_PERSONALITY
 	end
 
-	if table.contains(slot0:getConfig("attr_3_list"), slot1) then
-		return uv0.ATTR_TYPE_MINOR
+	if table.contains(arg_17_0:getConfig("attr_3_list"), arg_17_1) then
+		return var_0_0.ATTR_TYPE_MINOR
 	end
 
-	assert(false, "not exist attr id:" .. slot1)
+	assert(false, "not exist attr id:" .. arg_17_1)
 end
 
-function slot0.IsPersonalityAttr(slot0, slot1)
-	return table.contains(slot0:getConfig("attr_2_list"), slot1)
+function var_0_0.IsPersonalityAttr(arg_18_0, arg_18_1)
+	return table.contains(arg_18_0:getConfig("attr_2_list"), arg_18_1)
 end
 
-function slot0.GetAttrGroupByType(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetAttrGroupByType(arg_19_0, arg_19_1)
+	local var_19_0 = {}
 
-	for slot6, slot7 in pairs(slot0.attrs) do
-		if pg.child_attr[slot6].type == slot1 then
-			table.insert(slot2, {
-				slot6,
-				slot7
+	for iter_19_0, iter_19_1 in pairs(arg_19_0.attrs) do
+		if pg.child_attr[iter_19_0].type == arg_19_1 then
+			table.insert(var_19_0, {
+				iter_19_0,
+				iter_19_1
 			})
 		end
 	end
 
-	table.sort(slot2, CompareFuncs({
-		function (slot0)
-			return slot0[1]
+	table.sort(var_19_0, CompareFuncs({
+		function(arg_20_0)
+			return arg_20_0[1]
 		end
 	}))
 
-	return slot2
+	return var_19_0
 end
 
-function slot0.GetAttrSortIds(slot0)
-	slot1 = table.mergeArray(table.mergeArray(slot0:getConfig("attr_1_list"), slot0:getConfig("attr_2_list")), slot0:getConfig("attr_3_list"))
+function var_0_0.GetAttrSortIds(arg_21_0)
+	local var_21_0 = table.mergeArray(arg_21_0:getConfig("attr_1_list"), arg_21_0:getConfig("attr_2_list"))
+	local var_21_1 = table.mergeArray(var_21_0, arg_21_0:getConfig("attr_3_list"))
 
-	table.sort(slot1, CompareFuncs({
-		function (slot0)
-			return -uv0:GetAttrById(slot0)
+	table.sort(var_21_1, CompareFuncs({
+		function(arg_22_0)
+			return -arg_21_0:GetAttrById(arg_22_0)
 		end,
-		function (slot0)
-			return slot0
+		function(arg_23_0)
+			return arg_23_0
 		end
 	}))
 
-	return slot1
+	return var_21_1
 end
 
-function slot0.GetAttrById(slot0, slot1)
-	return slot0.attrs[slot1] or 0
+function var_0_0.GetAttrById(arg_24_0, arg_24_1)
+	return arg_24_0.attrs[arg_24_1] or 0
 end
 
-function slot0.GetAttrInfo(slot0, slot1)
-	slot3 = slot0.attrs[slot1]
+function var_0_0.GetAttrInfo(arg_25_0, arg_25_1)
+	local var_25_0 = pg.child_attr[arg_25_1].rank
+	local var_25_1 = arg_25_0.attrs[arg_25_1]
 
-	for slot7, slot8 in ipairs(pg.child_attr[slot1].rank) do
-		if slot8[1][1] <= slot3 and slot3 < slot8[1][2] then
-			return slot8[2], slot3 .. "/" .. slot8[1][2]
+	for iter_25_0, iter_25_1 in ipairs(var_25_0) do
+		if var_25_1 >= iter_25_1[1][1] and var_25_1 < iter_25_1[1][2] then
+			return iter_25_1[2], var_25_1 .. "/" .. iter_25_1[1][2]
 		end
 	end
 
-	return slot2[#slot2][2], slot3 .. "/" .. slot2[#slot2][1][2]
+	return var_25_0[#var_25_0][2], var_25_1 .. "/" .. var_25_0[#var_25_0][1][2]
 end
 
-function slot0.UpdateAttr(slot0, slot1, slot2)
-	assert(slot0.attrs[slot1], "not exist attr id: " .. slot1)
+function var_0_0.UpdateAttr(arg_26_0, arg_26_1, arg_26_2)
+	assert(arg_26_0.attrs[arg_26_1], "not exist attr id: " .. arg_26_1)
 
-	slot0.attrs[slot1] = slot0.attrs[slot1] + slot2
+	arg_26_0.attrs[arg_26_1] = arg_26_0.attrs[arg_26_1] + arg_26_2
 end
 
-function slot0.GetPersonalityId(slot0)
-	slot1 = slot0:getConfig("attr_2_list")
-	slot2 = slot1[1]
+function var_0_0.GetPersonalityId(arg_27_0)
+	local var_27_0 = arg_27_0:getConfig("attr_2_list")
+	local var_27_1 = var_27_0[1]
 
-	for slot6, slot7 in ipairs(slot1) do
-		if slot0.attrs[slot2] < slot0.attrs[slot7] then
-			slot2 = slot7
+	for iter_27_0, iter_27_1 in ipairs(var_27_0) do
+		if arg_27_0.attrs[iter_27_1] > arg_27_0.attrs[var_27_1] then
+			var_27_1 = iter_27_1
 		end
 	end
 
-	return slot2
+	return var_27_1
 end
 
-function slot0.CheckExtraAttrAdd(slot0)
-	return not slot0.isAddedExtraAttr and EducateHelper.IsSameDay(slot0.addExtraAttrTime, slot0.curTime)
+function var_0_0.CheckExtraAttrAdd(arg_28_0)
+	return not arg_28_0.isAddedExtraAttr and EducateHelper.IsSameDay(arg_28_0.addExtraAttrTime, arg_28_0.curTime)
 end
 
-function slot0.SetIsAddedExtraAttr(slot0, slot1)
-	slot0.isAddedExtraAttr = slot1
+function var_0_0.SetIsAddedExtraAttr(arg_29_0, arg_29_1)
+	arg_29_0.isAddedExtraAttr = arg_29_1
 end
 
-function slot0.GetResById(slot0, slot1)
-	return slot0[uv0.RES_ID_2_NAME[slot1]]
+function var_0_0.GetResById(arg_30_0, arg_30_1)
+	return arg_30_0[var_0_0.RES_ID_2_NAME[arg_30_1]]
 end
 
-function slot0.UpdateRes(slot0, slot1, slot2)
-	if slot1 ~= uv0.RES_FAVOR_ID then
-		slot0[uv0.RES_ID_2_NAME[slot1]] = slot0[uv0.RES_ID_2_NAME[slot1]] + slot2
-		slot0[uv0.RES_ID_2_NAME[slot1]] = math.max(pg.child_resource[slot1].min_value, slot0[uv0.RES_ID_2_NAME[slot1]])
-		slot0[uv0.RES_ID_2_NAME[slot1]] = math.min(pg.child_resource[slot1].max_value, slot0[uv0.RES_ID_2_NAME[slot1]])
+function var_0_0.UpdateRes(arg_31_0, arg_31_1, arg_31_2)
+	if arg_31_1 ~= var_0_0.RES_FAVOR_ID then
+		arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]] = arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]] + arg_31_2
+		arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]] = math.max(pg.child_resource[arg_31_1].min_value, arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]])
+		arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]] = math.min(pg.child_resource[arg_31_1].max_value, arg_31_0[var_0_0.RES_ID_2_NAME[arg_31_1]])
 	else
-		slot0.favor.exp = slot0.favor.exp + slot2
+		arg_31_0.favor.exp = arg_31_0.favor.exp + arg_31_2
 	end
 end
 
-function slot0.GetFavor(slot0)
-	return slot0.favor
+function var_0_0.GetFavor(arg_32_0)
+	return arg_32_0.favor
 end
 
-function slot0.GetFavorMaxLv(slot0)
-	return slot0.favorMaxLv
+function var_0_0.GetFavorMaxLv(arg_33_0)
+	return arg_33_0.favorMaxLv
 end
 
-function slot0.GetFavorUpgradExp(slot0, slot1)
-	return slot0.favorLv2NeedExp[slot1] or 999999
+function var_0_0.GetFavorUpgradExp(arg_34_0, arg_34_1)
+	return arg_34_0.favorLv2NeedExp[arg_34_1] or 999999
 end
 
-function slot0.GetFavorUpgradPerformIds(slot0, slot1)
-	return slot0:GetPerformByReplace(slot1) or {}
+function var_0_0.GetFavorUpgradPerformIds(arg_35_0, arg_35_1)
+	return arg_35_0:GetPerformByReplace(arg_35_1) or {}
 end
 
-function slot0.GetPerformByReplace(slot0, slot1)
-	if slot0.favorReplaceCfg[slot1] then
-		slot2 = slot0:GetPersonalityId()
+function var_0_0.GetPerformByReplace(arg_36_0, arg_36_1)
+	if arg_36_0.favorReplaceCfg[arg_36_1] then
+		local var_36_0 = arg_36_0:GetPersonalityId()
 
-		for slot6, slot7 in ipairs(slot0.favorReplaceCfg[slot1]) do
-			if slot7[1] == 1 and slot2 == slot7[2] then
-				return slot7[3]
+		for iter_36_0, iter_36_1 in ipairs(arg_36_0.favorReplaceCfg[arg_36_1]) do
+			if iter_36_1[1] == 1 and var_36_0 == iter_36_1[2] then
+				return iter_36_1[3]
 			end
 		end
 	end
 
-	return slot0.favorLv2PerformIds[slot1]
+	return arg_36_0.favorLv2PerformIds[arg_36_1]
 end
 
-function slot0.CheckFavor(slot0)
-	if slot0:GetFavorMaxLv() <= slot0.favor.lv then
+function var_0_0.CheckFavor(arg_37_0)
+	if arg_37_0.favor.lv >= arg_37_0:GetFavorMaxLv() then
 		return false
 	end
 
-	return slot0:GetFavorUpgradExp(slot0.favor.lv) <= slot0.favor.exp
+	return arg_37_0.favor.exp >= arg_37_0:GetFavorUpgradExp(arg_37_0.favor.lv)
 end
 
-function slot0.UpgradeFavor(slot0)
-	slot0.favor.lv = slot0.favor.lv + 1
-	slot0.favor.exp = slot0.favor.exp - slot0:GetFavorUpgradExp(slot0.favor.lv)
+function var_0_0.UpgradeFavor(arg_38_0)
+	local var_38_0 = arg_38_0:GetFavorUpgradExp(arg_38_0.favor.lv)
+
+	arg_38_0.favor.lv = arg_38_0.favor.lv + 1
+	arg_38_0.favor.exp = arg_38_0.favor.exp - var_38_0
 end
 
-function slot0.GetFavorPerformIds(slot0)
-	return slot0:GetFavorUpgradPerformIds(slot0.favor.lv)
+function var_0_0.GetFavorPerformIds(arg_39_0)
+	return arg_39_0:GetFavorUpgradPerformIds(arg_39_0.favor.lv)
 end
 
-function slot0.GetMoodStage(slot0)
-	if slot0.mood <= pg.gameset.child_emotion.description[1][1][1] then
+function var_0_0.GetMoodStage(arg_40_0)
+	local var_40_0 = pg.gameset.child_emotion.description
+
+	if arg_40_0.mood <= var_40_0[1][1][1] then
 		return 1
 	end
 
-	if slot1[#slot1][1][2] <= slot0.mood then
-		return #slot1
+	if arg_40_0.mood >= var_40_0[#var_40_0][1][2] then
+		return #var_40_0
 	end
 
-	for slot5, slot6 in ipairs(slot1) do
-		if slot6[1][1] <= slot0.mood and slot0.mood <= slot6[1][2] then
-			return slot5
+	for iter_40_0, iter_40_1 in ipairs(var_40_0) do
+		if arg_40_0.mood >= iter_40_1[1][1] and arg_40_0.mood <= iter_40_1[1][2] then
+			return iter_40_0
 		end
 	end
 end
 
-function slot0.CheckEndCondition(slot0, slot1)
-	slot2 = slot0:GetPersonalityId()
-	slot3 = true
+function var_0_0.CheckEndCondition(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_0:GetPersonalityId()
+	local var_41_1 = true
 
-	for slot7, slot8 in ipairs(slot1) do
-		if slot8[1] == EducateConst.DROP_TYPE_ATTR then
-			if not slot8[3] then
-				if slot2 ~= slot8[2] then
+	for iter_41_0, iter_41_1 in ipairs(arg_41_1) do
+		local var_41_2 = iter_41_1[1]
+
+		if var_41_2 == EducateConst.DROP_TYPE_ATTR then
+			if not iter_41_1[3] then
+				if var_41_0 ~= iter_41_1[2] then
 					return false
 				end
-			elseif slot0.attrs[slot8[2]] < slot8[3] then
+			elseif arg_41_0.attrs[iter_41_1[2]] < iter_41_1[3] then
 				return false
 			end
-		elseif slot9 == EducateConst.DROP_TYPE_RES and slot0[uv0.RES_ID_2_NAME[slot8[2]]] < slot8[3] then
+		elseif var_41_2 == EducateConst.DROP_TYPE_RES and arg_41_0[var_0_0.RES_ID_2_NAME[iter_41_1[2]]] < iter_41_1[3] then
 			return false
 		end
 	end
@@ -350,19 +357,18 @@ function slot0.CheckEndCondition(slot0, slot1)
 	return true
 end
 
-function slot0.getCurMainIndex(slot0, slot1)
-	slot2 = slot1 or slot0.curTime
-	slot3 = slot0:GetPersonalityId()
-	slot7 = "char_prefab"
+function var_0_0.getCurMainIndex(arg_42_0, arg_42_1)
+	local var_42_0 = arg_42_1 or arg_42_0.curTime
+	local var_42_1 = arg_42_0:GetPersonalityId()
 
-	for slot7, slot8 in ipairs(slot0:getConfig(slot7)) do
-		slot9, slot10 = EducateHelper.CfgTime2Time(slot8[1])
+	for iter_42_0, iter_42_1 in ipairs(arg_42_0:getConfig("char_prefab")) do
+		local var_42_2, var_42_3 = EducateHelper.CfgTime2Time(iter_42_1[1])
 
-		if EducateHelper.InTime(slot2, slot9, slot10) then
-			if slot8[2] == 0 then
-				return slot7
-			elseif slot8[2] == slot3 then
-				return slot7
+		if EducateHelper.InTime(var_42_0, var_42_2, var_42_3) then
+			if iter_42_1[2] == 0 then
+				return iter_42_0
+			elseif iter_42_1[2] == var_42_1 then
+				return iter_42_0
 			end
 		end
 	end
@@ -370,75 +376,79 @@ function slot0.getCurMainIndex(slot0, slot1)
 	return 1
 end
 
-function slot0.UpdateMainInfo(slot0)
-	slot1 = slot0:getCurMainIndex()
-	slot0.paintingName = slot0:getConfig("char_prefab")[slot1][3]
-	slot0.mainWordList = slot0:getConfig("main_word")[slot1]
-	slot0.mainFaceList = slot0:getConfig("word_expression")[slot1]
+function var_0_0.UpdateMainInfo(arg_43_0)
+	local var_43_0 = arg_43_0:getCurMainIndex()
+
+	arg_43_0.paintingName = arg_43_0:getConfig("char_prefab")[var_43_0][3]
+	arg_43_0.mainWordList = arg_43_0:getConfig("main_word")[var_43_0]
+	arg_43_0.mainFaceList = arg_43_0:getConfig("word_expression")[var_43_0]
 end
 
-function slot0.GetBGName(slot0)
+function var_0_0.GetBGName(arg_44_0)
 	if not getProxy(EducateProxy):InVirtualStage() then
-		return slot0:getConfig("background_prefab")[slot0.stage] or ""
+		return arg_44_0:getConfig("background_prefab")[arg_44_0.stage] or ""
 	else
-		return slot0:getConfig("background_prefab")[slot0.stage + 1] or ""
+		return arg_44_0:getConfig("background_prefab")[arg_44_0.stage + 1] or ""
 	end
 end
 
-function slot0.getBgmByStage(slot0, slot1)
-	if type(slot0:getConfig("bgm")[slot1]) == "string" then
-		return slot2
-	elseif type(slot2) == "table" then
-		slot3 = slot0:GetPersonalityId()
+function var_0_0.getBgmByStage(arg_45_0, arg_45_1)
+	local var_45_0 = arg_45_0:getConfig("bgm")[arg_45_1]
 
-		for slot7, slot8 in ipairs(slot2) do
-			if slot8[1] == slot3 then
-				return slot8[2]
+	if type(var_45_0) == "string" then
+		return var_45_0
+	elseif type(var_45_0) == "table" then
+		local var_45_1 = arg_45_0:GetPersonalityId()
+
+		for iter_45_0, iter_45_1 in ipairs(var_45_0) do
+			if iter_45_1[1] == var_45_1 then
+				return iter_45_1[2]
 			end
 		end
 	end
 end
 
-function slot0.GetBgm(slot0)
+function var_0_0.GetBgm(arg_46_0)
 	if not getProxy(EducateProxy):InVirtualStage() then
-		return slot0:getBgmByStage(slot0.stage)
+		return arg_46_0:getBgmByStage(arg_46_0.stage)
 	else
-		return slot0:getBgmByStage(slot0.stage + 1)
+		return arg_46_0:getBgmByStage(arg_46_0.stage + 1)
 	end
 end
 
-function slot0.GetPaintingName(slot0)
+function var_0_0.GetPaintingName(arg_47_0)
 	if not getProxy(EducateProxy):InVirtualStage() then
-		return slot0.paintingName or "tbniang"
+		return arg_47_0.paintingName or "tbniang"
 	else
-		slot1, slot2, slot3 = slot0:GetNextWeekMainInfo()
+		local var_47_0, var_47_1, var_47_2 = arg_47_0:GetNextWeekMainInfo()
 
-		return slot1
+		return var_47_0
 	end
 end
 
-function slot0.GetMainDialogueInfo(slot0)
+function var_0_0.GetMainDialogueInfo(arg_48_0)
 	if not getProxy(EducateProxy):InVirtualStage() then
-		return slot0.mainWordList, slot0.mainFaceList
+		return arg_48_0.mainWordList, arg_48_0.mainFaceList
 	else
-		slot1, slot2, slot3 = slot0:GetNextWeekMainInfo()
+		local var_48_0, var_48_1, var_48_2 = arg_48_0:GetNextWeekMainInfo()
 
-		return slot2, slot3
+		return var_48_1, var_48_2
 	end
 end
 
-function slot0.GetNextWeekMainInfo(slot0)
-	slot2 = slot0:getCurMainIndex(EducateHelper.GetTimeAfterWeeks(slot0.curTime, 1))
+function var_0_0.GetNextWeekMainInfo(arg_49_0)
+	local var_49_0 = EducateHelper.GetTimeAfterWeeks(arg_49_0.curTime, 1)
+	local var_49_1 = arg_49_0:getCurMainIndex(var_49_0)
 
-	return slot0:getConfig("char_prefab")[slot2][3], slot0:getConfig("main_word")[slot2], slot0:getConfig("word_expression")[slot2]
+	return arg_49_0:getConfig("char_prefab")[var_49_1][3], arg_49_0:getConfig("main_word")[var_49_1], arg_49_0:getConfig("word_expression")[var_49_1]
 end
 
-function slot0.OnNewWeek(slot0, slot1)
-	slot0.curTime = slot1
-	slot0.stage = slot0:GetStageByTime(slot0.curTime)
-	slot0.site = slot0:GetSiteCnt()
+function var_0_0.OnNewWeek(arg_50_0, arg_50_1)
+	arg_50_0.curTime = arg_50_1
+	arg_50_0.stage = arg_50_0:GetStageByTime(arg_50_0.curTime)
+	arg_50_0.site = arg_50_0:GetSiteCnt()
 
-	slot0:UpdateMainInfo()
+	arg_50_0:UpdateMainInfo()
 end
 
-return slot0
+return var_0_0

@@ -1,33 +1,39 @@
-slot0 = class("BossRushCMDFormationMediator", import("view.base.ContextMediator"))
+﻿local var_0_0 = class("BossRushCMDFormationMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.viewComponent:updateFleet(slot0.contextData.fleet)
-	slot0.viewComponent:setCommanderPrefabs(getProxy(CommanderProxy):getPrefabFleet())
-	slot0.viewComponent:setCallback(slot0.contextData.callback)
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(CommanderProxy):getPrefabFleet()
+
+	arg_1_0.viewComponent:updateFleet(arg_1_0.contextData.fleet)
+	arg_1_0.viewComponent:setCommanderPrefabs(var_1_0)
+	arg_1_0.viewComponent:setCallback(arg_1_0.contextData.callback)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {
 		CommanderProxy.PREFAB_FLEET_UPDATE,
 		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getName()
+	local var_3_1 = arg_3_1:getBody()
 
-	if slot1:getName() == nil then
-		-- Nothing
-	elseif slot2 == CommanderProxy.PREFAB_FLEET_UPDATE then
-		slot0.viewComponent:setCommanderPrefabs(getProxy(CommanderProxy):getPrefabFleet())
-	elseif slot2 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
-		slot0.viewComponent:updateRecordFleet()
-		slot0.viewComponent:updateDesc()
-		slot0.viewComponent:updateRecordPanel()
+	if var_3_0 == nil then
+		-- block empty
+	elseif var_3_0 == CommanderProxy.PREFAB_FLEET_UPDATE then
+		local var_3_2 = getProxy(CommanderProxy):getPrefabFleet()
+
+		arg_3_0.viewComponent:setCommanderPrefabs(var_3_2)
+	elseif var_3_0 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
+		arg_3_0.viewComponent:updateRecordFleet()
+		arg_3_0.viewComponent:updateDesc()
+		arg_3_0.viewComponent:updateRecordPanel()
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_4_0)
+	return
 end
 
-return slot0
+return var_0_0

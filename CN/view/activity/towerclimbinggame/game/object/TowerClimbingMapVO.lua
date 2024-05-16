@@ -1,81 +1,85 @@
-slot0 = class("TowerClimbingMapVO")
+﻿local var_0_0 = class("TowerClimbingMapVO")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.view = slot2
-	slot0.nextBlockIndex = 0
-	slot0.level = 0
-	slot0.higestLevel = 0
-	slot0.id = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.view = arg_1_2
+	arg_1_0.nextBlockIndex = 0
+	arg_1_0.level = 0
+	arg_1_0.higestLevel = 0
+	arg_1_0.id = arg_1_1
 
-	assert(slot0.id, slot1)
+	assert(arg_1_0.id, arg_1_1)
 end
 
-function slot0.Init(slot0, slot1, slot2)
-	slot0.mapWidth = slot1.screenWidth
-	slot0.mapHeight = slot1.screenHeight
-	slot0.awards = slot1.awards[slot0.id]
+function var_0_0.Init(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.mapWidth = arg_2_1.screenWidth
+	arg_2_0.mapHeight = arg_2_1.screenHeight
+	arg_2_0.awards = arg_2_1.awards[arg_2_0.id]
 
 	seriesAsync({
-		function (slot0)
-			uv0:InitBlock(slot0)
+		function(arg_3_0)
+			arg_2_0:InitBlock(arg_3_0)
 		end,
-		function (slot0)
-			uv0:InitPlayer(uv1, slot0)
+		function(arg_4_0)
+			arg_2_0:InitPlayer(arg_2_1, arg_4_0)
 		end,
-		function (slot0)
-			uv0:InitGround(uv1, slot0)
+		function(arg_5_0)
+			arg_2_0:InitGround(arg_2_1, arg_5_0)
 		end,
-		function (slot0)
-			slot1 = uv0.blocks[1]
+		function(arg_6_0)
+			local var_6_0 = arg_2_0.blocks[1]
 
-			assert(slot1)
-			uv0.player:SetPosition(slot1.position)
-			uv0:SendMapEvent("OnPlayerLifeUpdate", uv0.player.life)
-			slot0()
+			assert(var_6_0)
+			arg_2_0.player:SetPosition(var_6_0.position)
+			arg_2_0:SendMapEvent("OnPlayerLifeUpdate", arg_2_0.player.life)
+			arg_6_0()
 		end
-	}, slot2)
+	}, arg_2_2)
 end
 
-function slot0.InitGround(slot0, slot1, slot2)
-	slot0.ground = {
+function var_0_0.InitGround(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = TowerClimbingGameSettings.MANJUU_START_POS
+
+	arg_7_0.ground = {
 		sleepTime = 0,
 		IsRuning = false,
-		position = TowerClimbingGameSettings.MANJUU_START_POS,
-		name = slot1.npcName
+		position = var_7_0,
+		name = arg_7_1.npcName
 	}
 
-	slot0:SendMapEvent("OnCreateGround", slot0.ground, slot2)
+	arg_7_0:SendMapEvent("OnCreateGround", arg_7_0.ground, arg_7_2)
 end
 
-function slot0.InitBlock(slot0, slot1)
-	slot0.blocks = {}
-	slot2 = {}
+function var_0_0.InitBlock(arg_8_0, arg_8_1)
+	arg_8_0.blocks = {}
 
-	for slot7 = 1, TowerClimbingGameSettings.GetBlockInitCnt(slot0.mapHeight) do
-		table.insert(slot2, function (slot0)
-			slot1 = uv0:CreateBlock()
+	local var_8_0 = {}
+	local var_8_1 = TowerClimbingGameSettings.GetBlockInitCnt(arg_8_0.mapHeight)
 
-			table.insert(uv0.blocks, slot1)
-			uv0:SendMapEvent("OnCreateBlock", slot1, slot0)
+	for iter_8_0 = 1, var_8_1 do
+		table.insert(var_8_0, function(arg_9_0)
+			local var_9_0 = arg_8_0:CreateBlock()
+
+			table.insert(arg_8_0.blocks, var_9_0)
+			arg_8_0:SendMapEvent("OnCreateBlock", var_9_0, arg_9_0)
 		end)
 	end
 
-	parallelAsync(slot2, slot1)
+	parallelAsync(var_8_0, arg_8_1)
 end
 
-function slot1(slot0, slot1)
-	if slot0 == 1 then
+local function var_0_1(arg_10_0, arg_10_1)
+	if arg_10_0 == 1 then
 		return TowerClimbingGameSettings.HEAD_BLOCK_TYPE
 	else
-		slot2 = TowerClimbingGameSettings.MapId2BlockType[slot1]
+		local var_10_0 = TowerClimbingGameSettings.MapId2BlockType[arg_10_1]
 
-		assert(slot2, slot1)
+		assert(var_10_0, arg_10_1)
 
-		slot3 = math.random(1, 100)
+		local var_10_1 = math.random(1, 100)
 
-		for slot7, slot8 in ipairs(slot2) do
-			if slot3 <= slot8[2] then
-				return slot8[1]
+		for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+			if var_10_1 <= iter_10_1[2] then
+				return iter_10_1[1]
 			end
 		end
 
@@ -83,67 +87,84 @@ function slot1(slot0, slot1)
 	end
 end
 
-function slot2(slot0, slot1)
-	if not slot1 then
+local function var_0_2(arg_11_0, arg_11_1)
+	if not arg_11_1 then
 		return TowerClimbingGameSettings.BLOCK_START_POSITION
 	else
-		slot4 = TowerClimbingGameSettings.BLOCK_INTERVAL_HEIGHT
-		slot6 = TowerClimbingGameSettings.BLOCK_MAX_INTERVAL_WIDTH[2]
-		slot7 = TowerClimbingGameSettings.BOUNDS[1]
-		slot9 = {}
+		local var_11_0 = arg_11_1.position
+		local var_11_1 = arg_11_1.width
+		local var_11_2 = TowerClimbingGameSettings.BLOCK_INTERVAL_HEIGHT
+		local var_11_3 = TowerClimbingGameSettings.BLOCK_MAX_INTERVAL_WIDTH[1]
+		local var_11_4 = TowerClimbingGameSettings.BLOCK_MAX_INTERVAL_WIDTH[2]
+		local var_11_5 = TowerClimbingGameSettings.BOUNDS[1]
+		local var_11_6 = TowerClimbingGameSettings.BOUNDS[2]
+		local var_11_7 = {}
+		local var_11_8 = var_11_0.x + var_11_1 / 2
+		local var_11_9 = var_11_6 - var_11_8 - arg_11_0
 
-		if TowerClimbingGameSettings.BLOCK_MAX_INTERVAL_WIDTH[1] < TowerClimbingGameSettings.BOUNDS[2] - (slot1.position.x + slot1.width / 2) - slot0 then
-			slot12 = math.min(slot6, slot11)
-			slot13 = slot5
+		if var_11_3 < var_11_9 then
+			local var_11_10 = math.min(var_11_4, var_11_9)
+			local var_11_11 = var_11_3
 
-			if slot11 >= 0 then
-				slot13 = 0
+			if var_11_9 >= 0 then
+				var_11_11 = 0
 			end
 
-			table.insert(slot9, slot10 + math.random(slot13, slot12) + slot0 / 2)
+			local var_11_12 = math.random(var_11_11, var_11_10)
+
+			table.insert(var_11_7, var_11_8 + var_11_12 + arg_11_0 / 2)
 		end
 
-		if slot5 < math.abs(slot7 - (slot2.x - slot3 / 2)) - slot0 then
-			slot14 = math.min(slot6, slot13)
-			slot15 = slot5
+		local var_11_13 = var_11_0.x - var_11_1 / 2
+		local var_11_14 = math.abs(var_11_5 - var_11_13) - arg_11_0
 
-			if slot13 >= 0 then
-				slot15 = 0
+		if var_11_3 < var_11_14 then
+			local var_11_15 = math.min(var_11_4, var_11_14)
+			local var_11_16 = var_11_3
+
+			if var_11_14 >= 0 then
+				var_11_16 = 0
 			end
 
-			table.insert(slot9, slot12 - math.random(slot15, slot14) - slot0 / 2)
+			local var_11_17 = math.random(var_11_16, var_11_15)
+
+			table.insert(var_11_7, var_11_13 - var_11_17 - arg_11_0 / 2)
 		end
 
-		assert(#slot9 > 0, slot11 .. " & " .. slot13 .. " - " .. slot0 .. " - " .. slot2.x .. "-" .. slot3)
+		assert(#var_11_7 > 0, var_11_9 .. " & " .. var_11_14 .. " - " .. arg_11_0 .. " - " .. var_11_0.x .. "-" .. var_11_1)
 
-		return Vector2(slot9[math.random(1, #slot9)], slot2.y + slot4)
+		local var_11_18 = math.random(1, #var_11_7)
+
+		return Vector2(var_11_7[var_11_18], var_11_0.y + var_11_2)
 	end
 end
 
-function slot0.CreateBlock(slot0)
-	slot0.nextBlockIndex = slot0.nextBlockIndex + 1
-	slot1 = slot0.blocks[#slot0.blocks]
-	slot2 = uv0(slot0.nextBlockIndex, slot0.id)
+function var_0_0.CreateBlock(arg_12_0)
+	arg_12_0.nextBlockIndex = arg_12_0.nextBlockIndex + 1
+
+	local var_12_0 = arg_12_0.blocks[#arg_12_0.blocks]
+	local var_12_1 = var_0_1(arg_12_0.nextBlockIndex, arg_12_0.id)
+	local var_12_2 = var_0_2(var_12_1[2], var_12_0)
 
 	return {
-		id = slot0.nextBlockIndex,
-		type = slot2[1],
-		width = slot2[2],
-		position = uv1(slot2[2], slot1),
-		isActive = not slot1,
-		level = slot0.nextBlockIndex
+		id = arg_12_0.nextBlockIndex,
+		type = var_12_1[1],
+		width = var_12_1[2],
+		position = var_12_2,
+		isActive = not var_12_0,
+		level = arg_12_0.nextBlockIndex
 	}
 end
 
-function slot0.ActicveNextBlock(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.blocks) do
-		if slot6.level == slot1 then
-			slot6.isActive = true
+function var_0_0.ActicveNextBlock(arg_13_0, arg_13_1)
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.blocks) do
+		if iter_13_1.level == arg_13_1 then
+			iter_13_1.isActive = true
 
-			slot0:SendMapEvent("OnActiveBlock", slot6)
+			arg_13_0:SendMapEvent("OnActiveBlock", iter_13_1)
 
-			if slot0.player:IsInvincible() then
-				slot0:SendMapEvent("OnEnableStab", slot6, false)
+			if arg_13_0.player:IsInvincible() then
+				arg_13_0:SendMapEvent("OnEnableStab", iter_13_1, false)
 			end
 
 			break
@@ -151,105 +172,120 @@ function slot0.ActicveNextBlock(slot0, slot1)
 	end
 end
 
-function slot0.DeactiveAboveBlocks(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.blocks) do
-		if slot1 < slot6.level and slot6.isActive == true then
-			slot6.isActive = false
+function var_0_0.DeactiveAboveBlocks(arg_14_0, arg_14_1)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.blocks) do
+		if arg_14_1 < iter_14_1.level and iter_14_1.isActive == true then
+			iter_14_1.isActive = false
 
-			slot0:SendMapEvent("OnActiveBlock", slot6)
+			arg_14_0:SendMapEvent("OnActiveBlock", iter_14_1)
 		end
 	end
 end
 
-function slot0.AddNewBlock(slot0, slot1)
-	slot2 = slot0:CreateBlock()
+function var_0_0.AddNewBlock(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_0:CreateBlock()
 
-	table.insert(slot0.blocks, slot2)
-	slot0:SendMapEvent("OnCreateBlock", slot2, slot1)
+	table.insert(arg_15_0.blocks, var_15_0)
+	arg_15_0:SendMapEvent("OnCreateBlock", var_15_0, arg_15_1)
 end
 
-function slot0.DoSink(slot0, slot1, slot2, slot3)
-	slot4 = {}
+function var_0_0.DoSink(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local var_16_0 = {}
 
-	table.insert(slot4, function (slot0)
-		uv0:SendMapEvent("SinkHandler", TowerClimbingGameSettings.SINK_DISTANCE * uv1)
+	table.insert(var_16_0, function(arg_17_0)
+		arg_16_0:SendMapEvent("SinkHandler", TowerClimbingGameSettings.SINK_DISTANCE * arg_16_2)
 	end)
-	table.insert(slot4, 1, function (slot0)
-		if not uv0.ground.IsRuning then
-			slot0()
+	table.insert(var_16_0, 1, function(arg_18_0)
+		if not arg_16_0.ground.IsRuning then
+			arg_18_0()
 
 			return
 		end
 
-		slot1 = uv0.ground.position
-		uv0.ground.position = Vector2(slot1.x, slot1.y - TowerClimbingGameSettings.SINK_DISTANCE * uv1)
+		local var_18_0 = arg_16_0.ground.position
+		local var_18_1 = var_18_0.y - TowerClimbingGameSettings.SINK_DISTANCE * arg_16_2
 
-		uv0:SendMapEvent("OnGroundPositionChange", uv0.ground.position)
-		slot0()
+		arg_16_0.ground.position = Vector2(var_18_0.x, var_18_1)
+
+		arg_16_0:SendMapEvent("OnGroundPositionChange", arg_16_0.ground.position)
+		arg_18_0()
 	end)
-	parallelAsync(slot4, slot3)
+	parallelAsync(var_16_0, arg_16_3)
 end
 
-function slot0.CheckCorssBoundBlocks(slot0, slot1)
-	slot2 = 0
+function var_0_0.CheckCorssBoundBlocks(arg_19_0, arg_19_1)
+	local var_19_0 = 0
 
-	for slot6 = #slot0.blocks, 1, -1 do
-		if slot0.blocks[slot6].position.y <= slot2 then
-			table.remove(slot0.blocks, slot6)
-			slot0:SendMapEvent("OnBlockDestory", slot7.level)
-		elseif slot7.position.y <= TowerClimbingGameSettings.MANJUU_HEIGHT + slot0.ground.position.y then
-			slot7.isActive = false
+	for iter_19_0 = #arg_19_0.blocks, 1, -1 do
+		local var_19_1 = arg_19_0.blocks[iter_19_0]
 
-			slot0:SendMapEvent("OnActiveBlock", slot7)
+		if var_19_0 >= var_19_1.position.y then
+			local var_19_2 = var_19_1.level
+
+			table.remove(arg_19_0.blocks, iter_19_0)
+			arg_19_0:SendMapEvent("OnBlockDestory", var_19_2)
+		elseif TowerClimbingGameSettings.MANJUU_HEIGHT + arg_19_0.ground.position.y >= var_19_1.position.y then
+			var_19_1.isActive = false
+
+			arg_19_0:SendMapEvent("OnActiveBlock", var_19_1)
 		end
 	end
 
-	slot1()
+	arg_19_1()
 end
 
-function slot0.InitPlayer(slot0, slot1, slot2)
-	slot0.player = TowerClimbingPlayerVO.New(slot0.view, {
-		id = slot1.shipId,
-		life = slot1.life,
-		score = slot1.score,
-		higestscore = slot1.higestscore,
-		pageIndex = slot1.pageIndex,
-		mapScore = slot1.mapScores[slot0.id]
+function var_0_0.InitPlayer(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = arg_20_1.life
+	local var_20_1 = arg_20_1.score
+	local var_20_2 = arg_20_1.shipId
+	local var_20_3 = arg_20_1.higestscore
+	local var_20_4 = arg_20_1.pageIndex
+	local var_20_5 = arg_20_1.mapScores[arg_20_0.id]
+
+	arg_20_0.player = TowerClimbingPlayerVO.New(arg_20_0.view, {
+		id = var_20_2,
+		life = var_20_0,
+		score = var_20_1,
+		higestscore = var_20_3,
+		pageIndex = var_20_4,
+		mapScore = var_20_5
 	})
 
-	slot0:SendMapEvent("OnCreatePlayer", slot0.player, slot2)
+	arg_20_0:SendMapEvent("OnCreatePlayer", arg_20_0.player, arg_20_2)
 end
 
-function slot0.GetPlayer(slot0)
-	return slot0.player
+function var_0_0.GetPlayer(arg_21_0)
+	return arg_21_0.player
 end
 
-function slot0.GetBlocks(slot0)
-	return slot0.blocks
+function var_0_0.GetBlocks(arg_22_0)
+	return arg_22_0.blocks
 end
 
-function slot0.SetCurrentLevel(slot0, slot1)
-	if slot0.level < slot1 then
-		slot0:ActicveNextBlock(slot1 + 1)
-	elseif slot1 < slot0.level then
-		slot0:DeactiveAboveBlocks(slot1 + 1)
+function var_0_0.SetCurrentLevel(arg_23_0, arg_23_1)
+	if arg_23_1 > arg_23_0.level then
+		arg_23_0:ActicveNextBlock(arg_23_1 + 1)
+	elseif arg_23_1 < arg_23_0.level then
+		arg_23_0:DeactiveAboveBlocks(arg_23_1 + 1)
 	end
 
-	slot0.level = slot1
+	arg_23_0.level = arg_23_1
 
-	if slot0.higestLevel < slot1 then
-		slot0.higestLevel = slot1
+	if arg_23_1 > arg_23_0.higestLevel then
+		local var_23_0 = arg_23_1 - arg_23_0.higestLevel
 
-		slot0.player:AddScore()
-		slot0:DoCheck(slot1 - slot0.higestLevel)
-		slot0:OverHigestScore()
+		arg_23_0.higestLevel = arg_23_1
+
+		arg_23_0.player:AddScore()
+		arg_23_0:DoCheck(var_23_0)
+		arg_23_0:OverHigestScore()
 	end
 end
 
-function slot0.OverHigestScore(slot0)
-	function slot1(slot0)
-		for slot4, slot5 in ipairs(uv0.awards) do
-			if slot0 == slot5 then
+function var_0_0.OverHigestScore(arg_24_0)
+	local function var_24_0(arg_25_0)
+		for iter_25_0, iter_25_1 in ipairs(arg_24_0.awards) do
+			if arg_25_0 == iter_25_1 then
 				return true
 			end
 		end
@@ -257,157 +293,169 @@ function slot0.OverHigestScore(slot0)
 		return false
 	end
 
-	if slot0.player:IsOverHigestScore() and slot1(slot0.player.score) then
-		slot0:SendMapEvent("OnReachAwardScore")
+	if arg_24_0.player:IsOverHigestScore() and var_24_0(arg_24_0.player.score) then
+		arg_24_0:SendMapEvent("OnReachAwardScore")
 	end
 end
 
-function slot0.DoCheck(slot0, slot1)
-	if slot0.higestLevel <= 1 then
+function var_0_0.DoCheck(arg_26_0, arg_26_1)
+	if arg_26_0.higestLevel <= 1 then
 		return
 	end
 
 	seriesAsync({
-		function (slot0)
-			uv0:AddNewBlock(slot0)
+		function(arg_27_0)
+			arg_26_0:AddNewBlock(arg_27_0)
 		end,
-		function (slot0)
+		function(arg_28_0)
 			parallelAsync({
-				function (slot0)
-					uv0:DoSink(uv0.higestLevel, uv1, slot0)
+				function(arg_29_0)
+					arg_26_0:DoSink(arg_26_0.higestLevel, arg_26_1, arg_29_0)
 				end,
-				function (slot0)
-					uv1:SendMapEvent("OnSink", TowerClimbingGameSettings.SINK_DISTANCE * uv0, slot0)
+				function(arg_30_0)
+					local var_30_0 = TowerClimbingGameSettings.SINK_DISTANCE * arg_26_1
+
+					arg_26_0:SendMapEvent("OnSink", var_30_0, arg_30_0)
 				end
-			}, slot0)
+			}, arg_28_0)
 		end,
-		function (slot0)
-			uv0:CheckCorssBoundBlocks(slot0)
+		function(arg_31_0)
+			arg_26_0:CheckCorssBoundBlocks(arg_31_0)
 		end,
-		function (slot0)
-			uv0:CheckGroundState()
-			slot0()
+		function(arg_32_0)
+			arg_26_0:CheckGroundState()
+			arg_32_0()
 		end
 	})
 end
 
-function slot0.CheckGroundState(slot0)
-	if not slot0.ground.IsRuning and TowerClimbingGameSettings.GROUND_RISE_UP_LEVEL <= slot0.higestLevel then
-		slot0.ground.IsRuning = true
+function var_0_0.CheckGroundState(arg_33_0)
+	if not arg_33_0.ground.IsRuning and arg_33_0.higestLevel >= TowerClimbingGameSettings.GROUND_RISE_UP_LEVEL then
+		arg_33_0.ground.IsRuning = true
 
-		slot0:SendMapEvent("OnGroundRuning")
+		arg_33_0:SendMapEvent("OnGroundRuning")
 	end
 end
 
-function slot0.ReBornPlayer(slot0)
-	slot1 = {}
-	slot2 = nil
+function var_0_0.ReBornPlayer(arg_34_0)
+	local var_34_0 = {}
+	local var_34_1
 
-	for slot6, slot7 in ipairs(slot0.blocks) do
-		if slot7.isActive then
-			table.insert(slot1, slot7)
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.blocks) do
+		if iter_34_1.isActive then
+			table.insert(var_34_0, iter_34_1)
 		end
 	end
 
-	assert(#slot1 > 0)
+	assert(#var_34_0 > 0)
 
-	if not _.detect(slot1, function (slot0)
-		return slot0.level == uv0.higestLevel
-	end) then
-		table.sort(slot1, function (slot0, slot1)
-			return slot1.position.y < slot0.position.y
+	local var_34_2 = _.detect(var_34_0, function(arg_35_0)
+		return arg_35_0.level == arg_34_0.higestLevel
+	end)
+
+	if not var_34_2 then
+		table.sort(var_34_0, function(arg_36_0, arg_36_1)
+			return arg_36_0.position.y > arg_36_1.position.y
 		end)
 
-		slot3 = slot1[1]
+		var_34_2 = var_34_0[1]
 	end
 
-	slot0.player:SetPosition(slot3.position + Vector2(0, 10))
+	arg_34_0.player:SetPosition(var_34_2.position + Vector2(0, 10))
 end
 
-function slot0.AddPlayerInvincibleEffect(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.blocks) do
-		if slot6.isActive then
-			slot0:SendMapEvent("OnEnableStab", slot6, not slot1)
+function var_0_0.AddPlayerInvincibleEffect(arg_37_0, arg_37_1)
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.blocks) do
+		if iter_37_1.isActive then
+			arg_37_0:SendMapEvent("OnEnableStab", iter_37_1, not arg_37_1)
 		end
 	end
 
-	if slot0.ground.IsRuning then
-		slot0:SendMapEvent("OnEnableGround", not slot1)
+	if arg_37_0.ground.IsRuning then
+		arg_37_0:SendMapEvent("OnEnableGround", not arg_37_1)
 	end
 end
 
-function slot3(slot0)
-	slot1 = TowerClimbingGameSettings.GROUND_RISE_UP_SPEED
-	slot2 = slot1[#slot1][2]
+local function var_0_3(arg_38_0)
+	local var_38_0 = TowerClimbingGameSettings.GROUND_RISE_UP_SPEED
+	local var_38_1 = var_38_0[#var_38_0][2]
 
-	for slot6, slot7 in ipairs(slot1) do
-		if slot0 < slot7[1] then
-			slot2 = slot7[2]
+	for iter_38_0, iter_38_1 in ipairs(var_38_0) do
+		if arg_38_0 < iter_38_1[1] then
+			var_38_1 = iter_38_1[2]
 
 			break
 		end
 	end
 
-	return slot2
+	return var_38_1
 end
 
-function slot0.Update(slot0)
-	if slot0.ground.sleepTime > 0 then
-		slot0.ground.sleepTime = slot0.ground.sleepTime - Time.deltaTime
+function var_0_0.Update(arg_39_0)
+	if arg_39_0.ground.sleepTime > 0 then
+		arg_39_0.ground.sleepTime = arg_39_0.ground.sleepTime - Time.deltaTime
 
-		slot0:SendMapEvent("OnGroundSleepTimeChange", slot0.ground.sleepTime)
+		arg_39_0:SendMapEvent("OnGroundSleepTimeChange", arg_39_0.ground.sleepTime)
 	end
 
-	if slot0.ground.IsRuning and slot0.ground.sleepTime <= 0 then
-		slot1 = slot0.ground.position
-		slot0.ground.position = Vector2(slot1.x, slot1.y + uv0(slot0.higestLevel) * Time.deltaTime)
+	if arg_39_0.ground.IsRuning and arg_39_0.ground.sleepTime <= 0 then
+		local var_39_0 = arg_39_0.ground.position
+		local var_39_1 = var_0_3(arg_39_0.higestLevel)
 
-		slot0:SendMapEvent("OnGroundPositionChange", slot0.ground.position)
+		arg_39_0.ground.position = Vector2(var_39_0.x, var_39_0.y + var_39_1 * Time.deltaTime)
+
+		arg_39_0:SendMapEvent("OnGroundPositionChange", arg_39_0.ground.position)
 	end
 
-	if slot0.player:IsInvincible() then
-		if slot0.player:GetInvincibleTime() == TowerClimbingGameSettings.INVINCEIBLE_TIME then
-			slot0:AddPlayerInvincibleEffect(true)
+	if arg_39_0.player:IsInvincible() then
+		local var_39_2 = arg_39_0.player:GetInvincibleTime()
+
+		if var_39_2 == TowerClimbingGameSettings.INVINCEIBLE_TIME then
+			arg_39_0:AddPlayerInvincibleEffect(true)
 		end
 
-		slot0.player:SetInvincibleTime(slot1 - Time.deltaTime)
+		local var_39_3 = var_39_2 - Time.deltaTime
 
-		if not slot0.player:IsInvincible() then
-			slot0:AddPlayerInvincibleEffect(false)
+		arg_39_0.player:SetInvincibleTime(var_39_3)
+
+		if not arg_39_0.player:IsInvincible() then
+			arg_39_0:AddPlayerInvincibleEffect(false)
 		end
 	end
 end
 
-function slot0.SetGroundSleep(slot0, slot1)
-	if slot0.ground.IsRuning then
-		slot0.ground.position = Vector2(slot0.ground.position.x, slot0.ground.position.y - TowerClimbingGameSettings.GROUND_SLIDE_DOWNWARD_DISTANCE)
+function var_0_0.SetGroundSleep(arg_40_0, arg_40_1)
+	if arg_40_0.ground.IsRuning then
+		arg_40_0.ground.position = Vector2(arg_40_0.ground.position.x, arg_40_0.ground.position.y - TowerClimbingGameSettings.GROUND_SLIDE_DOWNWARD_DISTANCE)
 
-		slot0:SendMapEvent("OnGroundPositionChange", slot0.ground.position)
+		arg_40_0:SendMapEvent("OnGroundPositionChange", arg_40_0.ground.position)
 
-		slot0.ground.sleepTime = slot1
+		arg_40_0.ground.sleepTime = arg_40_1
 	end
 end
 
-function slot0.SendMapEvent(slot0, slot1, ...)
-	slot0.view.map:__slot1_None__(unpack({
+function var_0_0.SendMapEvent(arg_41_0, arg_41_1, ...)
+	local var_41_0 = arg_41_0.view.map
+
+	var_41_0[arg_41_1](var_41_0, unpack({
 		...
 	}))
 end
 
-function slot0.Dispose(slot0)
-	if slot0.player then
-		slot0.player:Dispose()
+function var_0_0.Dispose(arg_42_0)
+	if arg_42_0.player then
+		arg_42_0.player:Dispose()
 
-		slot0.player = nil
+		arg_42_0.player = nil
 	end
 
-	if slot0.ground then
-		slot0.ground = nil
+	if arg_42_0.ground then
+		arg_42_0.ground = nil
 	end
 
-	if slot0.blocks then
-		slot0.blocks = nil
+	if arg_42_0.blocks then
+		arg_42_0.blocks = nil
 	end
 end
 
-return slot0
+return var_0_0

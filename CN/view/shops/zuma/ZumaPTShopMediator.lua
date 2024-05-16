@@ -1,20 +1,21 @@
-slot0 = class("ZumaPTShopMediator", import("...base.ContextMediator"))
-slot0.OPEN_ZUMA_PT_SHOP_BUY_WINDOW = "ZumaPTShopMediator.OPEN_ZUMA_PT_SHOP_BUY_WINDOW"
+﻿local var_0_0 = class("ZumaPTShopMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.OPEN_ZUMA_PT_SHOP_BUY_WINDOW, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+var_0_0.OPEN_ZUMA_PT_SHOP_BUY_WINDOW = "ZumaPTShopMediator.OPEN_ZUMA_PT_SHOP_BUY_WINDOW"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OPEN_ZUMA_PT_SHOP_BUY_WINDOW, function(arg_2_0, arg_2_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ZumaPTShopWindowMediator,
 			viewComponent = ZumaPTShopWindowLayer,
 			data = {
-				actShopVO = uv0.viewComponent.actShopVO,
-				goodVO = slot1
+				actShopVO = arg_1_0.viewComponent.actShopVO,
+				goodVO = arg_2_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		GAME.ISLAND_SHOPPING_DONE,
 		GAME.USE_ITEM_DONE,
@@ -22,32 +23,32 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == GAME.ISLAND_SHOPPING_DONE then
-		slot5 = {}
+	if var_4_0 == GAME.ISLAND_SHOPPING_DONE then
+		local var_4_2 = arg_4_1:getBody()
+		local var_4_3 = {}
 
-		if #slot1:getBody().awards > 0 then
-			table.insert(slot5, function (slot0)
-				uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, uv1.awards, slot0)
+		if #var_4_2.awards > 0 then
+			table.insert(var_4_3, function(arg_5_0)
+				arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_2.awards, arg_5_0)
 			end)
 		end
 
-		seriesAsync(slot5, function ()
-			uv0.viewComponent:updateTplByGoodID(uv1.goodsId)
+		seriesAsync(var_4_3, function()
+			arg_4_0.viewComponent:updateTplByGoodID(var_4_2.goodsId)
 		end)
+	elseif var_4_0 == GAME.USE_ITEM_DONE then
+		local var_4_4 = arg_4_1:getBody()
 
-		return
-	end
-
-	if slot2 == GAME.USE_ITEM_DONE then
-		if #slot1:getBody() > 0 then
-			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot4)
+		if #var_4_4 > 0 then
+			arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_4)
 		end
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:updatePTPanel()
+	elseif var_4_0 == PlayerProxy.UPDATED then
+		arg_4_0.viewComponent:updatePTPanel()
 	end
 end
 
-return slot0
+return var_0_0

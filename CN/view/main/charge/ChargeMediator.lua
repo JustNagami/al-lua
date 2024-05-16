@@ -1,103 +1,100 @@
-slot0 = class("ChargeMediator", import("...base.ContextMediator"))
-slot0.SWITCH_TO_SHOP = "ChargeMediator:SWITCH_TO_SHOP"
-slot0.CHARGE = "ChargeMediator:CHARGE"
-slot0.BUY_ITEM = "ChargeMediator:BUY_ITEM"
-slot0.CLICK_MING_SHI = "ChargeMediator:CLICK_MING_SHI"
-slot0.GET_CHARGE_LIST = "ChargeMediator:GET_CHARGE_LIST"
-slot0.ON_SKIN_SHOP = "ChargeMediator:ON_SKIN_SHOP"
-slot0.OPEN_CHARGE_ITEM_PANEL = "ChargeMediator:OPEN_CHARGE_ITEM_PANEL"
-slot0.OPEN_CHARGE_ITEM_BOX = "ChargeMediator:OPEN_CHARGE_ITEM_BOX"
-slot0.OPEN_CHARGE_BIRTHDAY = "ChargeMediator:OPEN_CHARGE_BIRTHDAY"
-slot0.OPEN_USER_AGREE = "ChargeMediator:OPEN_USER_AGREE"
-slot0.VIEW_SKIN_PROBABILITY = "ChargeMediator:VIEW_SKIN_PROBABILITY"
-slot0.OPEN_TEC_SHIP_GIFT_SELL_LAYER = "ChargeMediator:OPEN_TEC_SHIP_GIFT_SELL_LAYER"
+﻿local var_0_0 = class("ChargeMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = getProxy(PlayerProxy)
-	slot3 = slot0.viewComponent
+var_0_0.SWITCH_TO_SHOP = "ChargeMediator:SWITCH_TO_SHOP"
+var_0_0.CHARGE = "ChargeMediator:CHARGE"
+var_0_0.BUY_ITEM = "ChargeMediator:BUY_ITEM"
+var_0_0.CLICK_MING_SHI = "ChargeMediator:CLICK_MING_SHI"
+var_0_0.GET_CHARGE_LIST = "ChargeMediator:GET_CHARGE_LIST"
+var_0_0.ON_SKIN_SHOP = "ChargeMediator:ON_SKIN_SHOP"
+var_0_0.OPEN_CHARGE_ITEM_PANEL = "ChargeMediator:OPEN_CHARGE_ITEM_PANEL"
+var_0_0.OPEN_CHARGE_ITEM_BOX = "ChargeMediator:OPEN_CHARGE_ITEM_BOX"
+var_0_0.OPEN_CHARGE_BIRTHDAY = "ChargeMediator:OPEN_CHARGE_BIRTHDAY"
+var_0_0.OPEN_USER_AGREE = "ChargeMediator:OPEN_USER_AGREE"
+var_0_0.VIEW_SKIN_PROBABILITY = "ChargeMediator:VIEW_SKIN_PROBABILITY"
+var_0_0.OPEN_TEC_SHIP_GIFT_SELL_LAYER = "ChargeMediator:OPEN_TEC_SHIP_GIFT_SELL_LAYER"
 
-	slot3:setPlayer(slot1:getData())
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(PlayerProxy):getData()
 
-	slot3 = slot0.viewComponent
+	arg_1_0.viewComponent:setPlayer(var_1_0)
+	arg_1_0.viewComponent:checkFreeGiftTag()
+	arg_1_0:bind(var_0_0.VIEW_SKIN_PROBABILITY, function(arg_2_0, arg_2_1)
+		arg_1_0.contextData.wrap = ChargeScene.TYPE_GIFT
 
-	slot3:checkFreeGiftTag()
-	slot0:bind(uv0.VIEW_SKIN_PROBABILITY, function (slot0, slot1)
-		uv0.contextData.wrap = ChargeScene.TYPE_GIFT
-
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.PROBABILITY_SKINSHOP, {
-			commodityId = slot1
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.PROBABILITY_SKINSHOP, {
+			commodityId = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.GET_CHARGE_LIST, function (slot0)
-		uv0:sendNotification(GAME.GET_CHARGE_LIST)
+	arg_1_0:bind(var_0_0.GET_CHARGE_LIST, function(arg_3_0)
+		arg_1_0:sendNotification(GAME.GET_CHARGE_LIST)
 	end)
-	slot0:bind(uv0.ON_SKIN_SHOP, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
+	arg_1_0:bind(var_0_0.ON_SKIN_SHOP, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	slot0:bind(uv0.SWITCH_TO_SHOP, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, slot1)
+	arg_1_0:bind(var_0_0.SWITCH_TO_SHOP, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, arg_5_1)
 	end)
-	slot0:bind(uv0.CHARGE, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHARGE_OPERATION, {
-			shopId = slot1
+	arg_1_0:bind(var_0_0.CHARGE, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.CHARGE_OPERATION, {
+			shopId = arg_6_1
 		})
 	end)
-	slot0:bind(uv0.BUY_ITEM, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SHOPPING, {
-			id = slot1,
-			count = slot2
+	arg_1_0:bind(var_0_0.BUY_ITEM, function(arg_7_0, arg_7_1, arg_7_2)
+		arg_1_0:sendNotification(GAME.SHOPPING, {
+			id = arg_7_1,
+			count = arg_7_2
 		})
 	end)
-	slot0:bind(uv0.CLICK_MING_SHI, function (slot0)
-		uv0:sendNotification(GAME.CLICK_MING_SHI)
+	arg_1_0:bind(var_0_0.CLICK_MING_SHI, function(arg_8_0)
+		arg_1_0:sendNotification(GAME.CLICK_MING_SHI)
 	end)
-	slot0:bind(uv0.OPEN_CHARGE_ITEM_PANEL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_CHARGE_ITEM_PANEL, function(arg_9_0, arg_9_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeItemPanelMediator,
 			viewComponent = ChargeItemPanelLayer,
 			data = {
-				panelConfig = slot1
+				panelConfig = arg_9_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_CHARGE_ITEM_BOX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_CHARGE_ITEM_BOX, function(arg_10_0, arg_10_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeItemBoxMediator,
 			viewComponent = ChargeItemBoxLayer,
 			data = {
-				panelConfig = slot1
+				panelConfig = arg_10_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_CHARGE_BIRTHDAY, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_CHARGE_BIRTHDAY, function(arg_11_0, arg_11_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeBirthdayMediator,
 			viewComponent = ChargeBirthdayLayer,
 			data = {}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_USER_AGREE, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_USER_AGREE, function(arg_12_0, arg_12_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeJPUserAgreeMediator,
 			viewComponent = ChargeJPUserAgreeLayer,
 			data = {
-				contentStr = slot1
+				contentStr = arg_12_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_TEC_SHIP_GIFT_SELL_LAYER, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_TEC_SHIP_GIFT_SELL_LAYER, function(arg_13_0, arg_13_1, arg_13_2)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeTecShipGiftSellMediator,
 			viewComponent = ChargeTecShipGiftSellLayer,
 			data = {
-				showGoodVO = slot1,
-				chargedList = slot2
+				showGoodVO = arg_13_1,
+				chargedList = arg_13_2
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_14_0)
 	return {
 		PlayerProxy.UPDATED,
 		ShopsProxy.FIRST_CHARGE_IDS_UPDATED,
@@ -113,92 +110,98 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1:getName()
+	local var_15_1 = arg_15_1:getBody()
 
-	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayer(slot3)
-		slot0.viewComponent:updateNoRes()
-	elseif slot2 == ShopsProxy.FIRST_CHARGE_IDS_UPDATED then
-		slot0.viewComponent:setFirstChargeIds(slot3)
-		slot0.viewComponent:updateCurSubView()
-	elseif slot2 == ShopsProxy.CHARGED_LIST_UPDATED then
-		slot0.viewComponent:setChargedList(slot3)
-		slot0.viewComponent:updateCurSubView()
-	elseif slot2 == GAME.CHARGE_CONFIRM_FAILED then
-		getProxy(ShopsProxy):chargeFailed(slot3.payId, slot3.bsId)
-	elseif slot2 == GAME.SHOPPING_DONE then
-		if slot3.awards and #slot3.awards > 0 then
-			slot0.viewComponent:unBlurView()
-			slot0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = slot3.awards
+	if var_15_0 == PlayerProxy.UPDATED then
+		arg_15_0.viewComponent:setPlayer(var_15_1)
+		arg_15_0.viewComponent:updateNoRes()
+	elseif var_15_0 == ShopsProxy.FIRST_CHARGE_IDS_UPDATED then
+		arg_15_0.viewComponent:setFirstChargeIds(var_15_1)
+		arg_15_0.viewComponent:updateCurSubView()
+	elseif var_15_0 == ShopsProxy.CHARGED_LIST_UPDATED then
+		arg_15_0.viewComponent:setChargedList(var_15_1)
+		arg_15_0.viewComponent:updateCurSubView()
+	elseif var_15_0 == GAME.CHARGE_CONFIRM_FAILED then
+		getProxy(ShopsProxy):chargeFailed(var_15_1.payId, var_15_1.bsId)
+	elseif var_15_0 == GAME.SHOPPING_DONE then
+		if var_15_1.awards and #var_15_1.awards > 0 then
+			arg_15_0.viewComponent:unBlurView()
+			arg_15_0.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var_15_1.awards
 			})
 		end
 
-		slot5 = slot3.normalGroupList
+		local var_15_2 = var_15_1.normalList
+		local var_15_3 = var_15_1.normalGroupList
 
-		if slot3.normalList then
-			slot0.viewComponent:setNormalList(slot4)
+		if var_15_2 then
+			arg_15_0.viewComponent:setNormalList(var_15_2)
 		end
 
-		if slot5 then
-			slot0.viewComponent:setNormalGroupList(slot5)
+		if var_15_3 then
+			arg_15_0.viewComponent:setNormalGroupList(var_15_3)
 		end
 
-		slot6 = pg.shop_template[slot3.id]
+		local var_15_4 = pg.shop_template[var_15_1.id]
 
-		slot0.viewComponent:checkBuyDone(slot3.id)
-		slot0.viewComponent:updateCurSubView()
-		slot0.viewComponent:checkFreeGiftTag()
-	elseif slot2 == GAME.USE_ITEM_DONE then
-		if table.getCount(slot3) ~= 0 then
-			slot0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = slot3
+		arg_15_0.viewComponent:checkBuyDone(var_15_1.id)
+		arg_15_0.viewComponent:updateCurSubView()
+		arg_15_0.viewComponent:checkFreeGiftTag()
+	elseif var_15_0 == GAME.USE_ITEM_DONE then
+		if table.getCount(var_15_1) ~= 0 then
+			arg_15_0.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var_15_1
 			})
 		end
-	elseif slot2 == GAME.GET_CHARGE_LIST_DONE then
-		slot5 = slot3.chargedList
-		slot6 = slot3.normalList
-		slot7 = slot3.normalGroupList
+	elseif var_15_0 == GAME.GET_CHARGE_LIST_DONE then
+		local var_15_5 = var_15_1.firstChargeIds
+		local var_15_6 = var_15_1.chargedList
+		local var_15_7 = var_15_1.normalList
+		local var_15_8 = var_15_1.normalGroupList
 
-		if slot3.firstChargeIds then
-			slot0.viewComponent:setFirstChargeIds(slot4)
+		if var_15_5 then
+			arg_15_0.viewComponent:setFirstChargeIds(var_15_5)
 		end
 
-		if slot5 then
-			slot0.viewComponent:setChargedList(slot5)
+		if var_15_6 then
+			arg_15_0.viewComponent:setChargedList(var_15_6)
 		end
 
-		if slot6 then
-			slot0.viewComponent:setNormalList(slot6)
+		if var_15_7 then
+			arg_15_0.viewComponent:setNormalList(var_15_7)
 		end
 
-		if slot7 then
-			slot0.viewComponent:setNormalGroupList(slot7)
+		if var_15_8 then
+			arg_15_0.viewComponent:setNormalGroupList(var_15_8)
 		end
 
-		if slot4 or slot5 or slot6 or slot7 then
-			slot0.viewComponent:updateCurSubView()
+		if var_15_5 or var_15_6 or var_15_7 or var_15_8 then
+			arg_15_0.viewComponent:updateCurSubView()
 		end
 
-		slot0.viewComponent:checkFreeGiftTag()
-	elseif slot2 == GAME.CLICK_MING_SHI_SUCCESS then
-		slot0.viewComponent:playHeartEffect()
-	elseif slot2 == PlayerResUI.GO_MALL then
-		slot4 = ChargeScene.TYPE_DIAMOND
+		arg_15_0.viewComponent:checkFreeGiftTag()
+	elseif var_15_0 == GAME.CLICK_MING_SHI_SUCCESS then
+		arg_15_0.viewComponent:playHeartEffect()
+	elseif var_15_0 == PlayerResUI.GO_MALL then
+		local var_15_9 = ChargeScene.TYPE_DIAMOND
 
-		if slot3 then
-			slot4 = slot3.type or ChargeScene.TYPE_DIAMOND
+		if var_15_1 then
+			var_15_9 = var_15_1.type or ChargeScene.TYPE_DIAMOND
 		end
 
-		slot0.viewComponent:switchSubViewByTogger(slot4)
-		slot0.viewComponent:updateNoRes(slot3 and slot3.noRes or nil)
-	elseif slot2 == GAME.CHARGE_SUCCESS then
-		slot0.viewComponent:checkBuyDone("damonds")
-		slot0.viewComponent:OnChargeSuccess(Goods.Create({
-			shop_id = slot3.shopId
-		}, Goods.TYPE_CHARGE))
+		arg_15_0.viewComponent:switchSubViewByTogger(var_15_9)
+		arg_15_0.viewComponent:updateNoRes(var_15_1 and var_15_1.noRes or nil)
+	elseif var_15_0 == GAME.CHARGE_SUCCESS then
+		arg_15_0.viewComponent:checkBuyDone("damonds")
+
+		local var_15_10 = Goods.Create({
+			shop_id = var_15_1.shopId
+		}, Goods.TYPE_CHARGE)
+
+		arg_15_0.viewComponent:OnChargeSuccess(var_15_10)
 	end
 end
 
-return slot0
+return var_0_0

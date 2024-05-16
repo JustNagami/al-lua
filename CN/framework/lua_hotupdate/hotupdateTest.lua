@@ -1,21 +1,21 @@
-slot0 = 0
+﻿local var_0_0 = 0
 
 function HUT_Var1()
-	uv0 = uv0 + 2
+	var_0_0 = var_0_0 + 2
 
-	print("x = ", uv0)
+	print("x = ", var_0_0)
 end
 
 function HUT_Var3()
-	uv0 = uv0 + 10
+	var_0_0 = var_0_0 + 10
 
-	print("x = ", uv0)
+	print("x = ", var_0_0)
 end
 
-slot1 = HUT_Var1
+local var_0_1 = HUT_Var1
 
 function HUT_Func()
-	uv0()
+	var_0_1()
 end
 
 function HUT_FUNC2()

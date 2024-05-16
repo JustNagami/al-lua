@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				rant = 4000,
+				target = "TargetSelf",
+				skill_id = 800502
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -167,19 +181,5 @@ return {
 	stack = 99,
 	id = 800502,
 	icon = 800500,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				rant = 4000,
-				target = "TargetSelf",
-				skill_id = 800502
-			}
-		}
-	}
+	last_effect = ""
 }

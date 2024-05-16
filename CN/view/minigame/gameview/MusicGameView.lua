@@ -1,1988 +1,2094 @@
-slot0 = class("MusicGameView", import("..BaseMiniGameView"))
-slot1 = false
-slot2 = 0.95
-slot3 = 0
-slot4 = 1
-slot5 = 3
-slot6 = 5
-slot7 = 2
+﻿local var_0_0 = class("MusicGameView", import("..BaseMiniGameView"))
+local var_0_1 = false
+local var_0_2 = 0.95
+local var_0_3 = 0
+local var_0_4 = 1
+local var_0_5 = 3
+local var_0_6 = 5
+local var_0_7 = 2
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MusicGameUI"
 end
 
-function slot0.MyGetRuntimeData(slot0)
-	slot0.achieve_times = checkExist(slot0:GetMGData():GetRuntimeData("elements"), {
+function var_0_0.MyGetRuntimeData(arg_2_0)
+	local var_2_0 = getProxy(PlayerProxy):getData().id
+
+	arg_2_0.achieve_times = checkExist(arg_2_0:GetMGData():GetRuntimeData("elements"), {
 		1
 	}) or 0
-	slot0.isFirstgame = PlayerPrefs.GetInt("musicgame_first_" .. getProxy(PlayerProxy):getData().id)
-	slot0.bestScorelist = {}
+	arg_2_0.isFirstgame = PlayerPrefs.GetInt("musicgame_first_" .. var_2_0)
+	arg_2_0.bestScorelist = {}
 
-	for slot5 = 1, slot0.music_amount * 2 do
-		slot0.bestScorelist[slot5] = checkExist(slot0:GetMGData():GetRuntimeData("elements"), {
-			slot5 + 2
+	for iter_2_0 = 1, arg_2_0.music_amount * 2 do
+		local var_2_1 = arg_2_0:GetMGData():GetRuntimeData("elements")
+
+		arg_2_0.bestScorelist[iter_2_0] = checkExist(var_2_1, {
+			iter_2_0 + 2
 		}) or 0
 	end
 
-	slot0:updatSelectview()
+	arg_2_0:updatSelectview()
 end
 
-function slot0.MyStoreDataToServer(slot0)
-	slot2 = {
-		slot0.achieve_times,
+function var_0_0.MyStoreDataToServer(arg_3_0)
+	local var_3_0 = getProxy(PlayerProxy):getData().id
+	local var_3_1 = {
+		arg_3_0.achieve_times,
 		1
 	}
 
-	PlayerPrefs.SetInt("musicgame_first_" .. getProxy(PlayerProxy):getData().id, 1)
+	PlayerPrefs.SetInt("musicgame_first_" .. var_3_0, 1)
 
-	for slot6 = 1, slot0.music_amount * 2 do
-		table.insert(slot2, slot6 + 2, slot0.bestScorelist[slot6])
+	for iter_3_0 = 1, arg_3_0.music_amount * 2 do
+		table.insert(var_3_1, iter_3_0 + 2, arg_3_0.bestScorelist[iter_3_0])
 	end
 
-	slot0:StoreDataToServer(slot2)
+	arg_3_0:StoreDataToServer(var_3_1)
 end
 
-function slot0.init(slot0)
-	slot0.UIMgr = pg.UIMgr.GetInstance()
-	slot0.useGetKey_flag = true
-	slot0.game_playingflag = false
-	slot0.countingfive_flag = false
-	slot0.downingleft_flag = false
-	slot0.downingright_flag = false
-	slot0.downingright_lastflag = false
-	slot0.downingleft_lastflag = false
-	slot0.nowS_flag = false
-	slot0.firstview_timerRunflag = false
-	slot0.ahead_timeflag = false
-	slot0.ahead_timerPauseFlag = false
-	slot0.changeLocalposTimerflag = false
-	slot0.piecelist_rf = {
-		[0] = 0
-	}
-	slot0.piecelist_lf = {
-		[0] = 0
-	}
-	slot0.piece_nowl = {}
-	slot0.piece_nowr = {}
-	slot0.piece_nowl_downflag = false
-	slot0.piece_nowr_downflag = false
-	slot0.piece_nowl_aloneflag = false
-	slot0.piece_nowr_aloneflag = false
-	slot0.SDmodel = {}
-	slot0.SDmodel_idolflag = false
-	slot0.musicgame_nowtime = 0
-	slot0.musicgame_lasttime = 0
-	slot0.time_interval = 0.01666
-	slot0.music_amount = #pg.beat_game_music.all
-	slot0.music_amount_middle = math.ceil(#pg.beat_game_music.all / 2)
-	slot0.musicDatas = {}
+function var_0_0.init(arg_4_0)
+	arg_4_0.UIMgr = pg.UIMgr.GetInstance()
+	arg_4_0.useGetKey_flag = true
+	arg_4_0.game_playingflag = false
+	arg_4_0.countingfive_flag = false
+	arg_4_0.downingleft_flag = false
+	arg_4_0.downingright_flag = false
+	arg_4_0.downingright_lastflag = false
+	arg_4_0.downingleft_lastflag = false
+	arg_4_0.nowS_flag = false
+	arg_4_0.firstview_timerRunflag = false
+	arg_4_0.ahead_timeflag = false
+	arg_4_0.ahead_timerPauseFlag = false
+	arg_4_0.changeLocalposTimerflag = false
+	arg_4_0.piecelist_rf = {}
+	arg_4_0.piecelist_rf[0] = 0
+	arg_4_0.piecelist_lf = {}
+	arg_4_0.piecelist_lf[0] = 0
+	arg_4_0.piece_nowl = {}
+	arg_4_0.piece_nowr = {}
+	arg_4_0.piece_nowl_downflag = false
+	arg_4_0.piece_nowr_downflag = false
+	arg_4_0.piece_nowl_aloneflag = false
+	arg_4_0.piece_nowr_aloneflag = false
+	arg_4_0.SDmodel = {}
+	arg_4_0.SDmodel_idolflag = false
+	arg_4_0.musicgame_nowtime = 0
+	arg_4_0.musicgame_lasttime = 0
+	arg_4_0.time_interval = 0.01666
+	arg_4_0.music_amount = #pg.beat_game_music.all
+	arg_4_0.music_amount_middle = math.ceil(#pg.beat_game_music.all / 2)
+	arg_4_0.musicDatas = {}
 
-	for slot4 = 1, #pg.beat_game_music.all do
-		table.insert(slot0.musicDatas, pg.beat_game_music[pg.beat_game_music.all[slot4]])
+	for iter_4_0 = 1, #pg.beat_game_music.all do
+		local var_4_0 = pg.beat_game_music.all[iter_4_0]
+		local var_4_1 = pg.beat_game_music[var_4_0]
+
+		table.insert(arg_4_0.musicDatas, var_4_1)
 	end
 
-	table.sort(slot0.musicDatas, function (slot0, slot1)
-		if slot0.sort and slot1.sort then
-			return slot0.sort < slot1.sort
+	table.sort(arg_4_0.musicDatas, function(arg_5_0, arg_5_1)
+		if arg_5_0.sort and arg_5_1.sort then
+			return arg_5_0.sort < arg_5_1.sort
 		end
 
-		return slot0.id < slot1.id
+		return arg_5_0.id < arg_5_1.id
 	end)
 
-	slot0.game_speed = PlayerPrefs.GetInt("musicgame_idol_speed") > 0 and PlayerPrefs.GetInt("musicgame_idol_speed") or 1
-	slot0.game_dgree = 1
-	slot0.countContent = slot0:findTF("countContent")
-	slot0.countTf = nil
-	slot0.top = slot0:findTF("top")
-	slot0.btn_pause = slot0.top:Find("pause")
-	slot0.score = slot0.top:Find("score")
-	slot0.game_content = slot0:findTF("GameContent")
-	slot0.noteTpl = slot0.game_content:Find("noteTpl")
-	slot0.pauseview = slot0:findTF("Pauseview")
-	slot0.selectview = slot0:findTF("Selectview")
-	slot1 = findTF(slot0.selectview, "bg")
+	arg_4_0.game_speed = PlayerPrefs.GetInt("musicgame_idol_speed") > 0 and PlayerPrefs.GetInt("musicgame_idol_speed") or 1
+	arg_4_0.game_dgree = 1
+	arg_4_0.countContent = arg_4_0:findTF("countContent")
+	arg_4_0.countTf = nil
+	arg_4_0.top = arg_4_0:findTF("top")
+	arg_4_0.btn_pause = arg_4_0.top:Find("pause")
+	arg_4_0.score = arg_4_0.top:Find("score")
+	arg_4_0.game_content = arg_4_0:findTF("GameContent")
+	arg_4_0.noteTpl = arg_4_0.game_content:Find("noteTpl")
+	arg_4_0.pauseview = arg_4_0:findTF("Pauseview")
+	arg_4_0.selectview = arg_4_0:findTF("Selectview")
 
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "selectbg", function (slot0)
-		GetComponent(uv0, typeof(Image)).sprite = slot0
+	local var_4_2 = findTF(arg_4_0.selectview, "bg")
 
-		setActive(uv0, true)
+	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "selectbg", function(arg_6_0)
+		GetComponent(var_4_2, typeof(Image)).sprite = arg_6_0
+
+		setActive(var_4_2, true)
 	end)
 
-	slot0.firstview = slot0:findTF("firstview")
-	slot0.scoreview = slot0:findTF("ScoreView")
+	arg_4_0.firstview = arg_4_0:findTF("firstview")
+	arg_4_0.scoreview = arg_4_0:findTF("ScoreView")
 
-	setActive(slot0.scoreview, false)
+	setActive(arg_4_0.scoreview, false)
 
-	slot0.scoreview_flag = false
-	slot0.bg = findTF(slot0._tf, "bg")
+	arg_4_0.scoreview_flag = false
+	arg_4_0.bg = findTF(arg_4_0._tf, "bg")
 
-	pg.BgmMgr.GetInstance():StopPlay()
-	slot0:updateMusic(uv0)
+	pg.CriMgr.GetInstance():StopBGM()
+	arg_4_0:updateMusic(var_0_4)
 end
 
-function slot0.didEnter(slot0)
-	slot1 = 0
+function var_0_0.didEnter(arg_7_0)
+	local var_7_0 = 0
 
-	LeanTween.delayedCall(go(slot0.selectview), 2, System.Action(function ()
-		uv0:MyGetRuntimeData()
+	local function var_7_1()
+		var_7_0 = var_7_0 + arg_7_0.time_interval
+
+		if var_7_0 == arg_7_0.time_interval then
+			arg_7_0:MyGetRuntimeData()
+			arg_7_0:showSelevtView()
+		elseif var_7_0 == arg_7_0.time_interval * 2 then
+			arg_7_0:updatSelectview()
+			arg_7_0.Getdata_timer:Stop()
+		end
+	end
+
+	LeanTween.delayedCall(go(arg_7_0.selectview), 2, System.Action(function()
+		arg_7_0:MyGetRuntimeData()
 	end))
 
-	slot0.Getdata_timer = Timer.New(function ()
-		uv0 = uv0 + uv1.time_interval
+	arg_7_0.Getdata_timer = Timer.New(var_7_1, arg_7_0.time_interval, -1)
 
-		if uv0 == uv1.time_interval then
-			uv1:MyGetRuntimeData()
-			uv1:showSelevtView()
-		elseif uv0 == uv1.time_interval * 2 then
-			uv1:updatSelectview()
-			uv1.Getdata_timer:Stop()
-		end
-	end, slot0.time_interval, -1)
+	arg_7_0.Getdata_timer:Start()
 
-	slot0.Getdata_timer:Start()
+	arg_7_0.score_number = 0
+	arg_7_0.combo_link = 0
+	arg_7_0.combo_number = 0
+	arg_7_0.perfect_number = 0
+	arg_7_0.good_number = 0
+	arg_7_0.miss_number = 0
 
-	slot0.score_number = 0
-	slot0.combo_link = 0
-	slot0.combo_number = 0
-	slot0.perfect_number = 0
-	slot0.good_number = 0
-	slot0.miss_number = 0
-	slot3 = slot0:GetMGData():getConfig("simple_config_data")
-	slot0.piecelist_speed = slot3.speed
-	slot0.piecelist_speedmin = slot3.speed_min
-	slot0.piecelist_speedmax = slot3.speed_max
-	slot0.specialcombo_number = slot3.special_combo
-	slot0.specialscore_number = slot3.special_score
-	slot0.score_perfect = slot3.perfect
-	slot0.score_good = slot3.good
-	slot0.score_miss = slot3.miss
-	slot0.score_combo = slot3.combo
-	slot0.time_perfect = slot3.perfecttime
-	slot0.time_good = slot3.goodtime
-	slot0.time_miss = slot3.misstime
-	slot0.time_laterperfect = slot3.laterperfecttime
-	slot0.time_latergood = slot3.latergoodtime
-	slot0.combo_interval = slot3.combo_interval
-	slot0.BtnRightDelegate = GetOrAddComponent(slot0.game_content:Find("btn_right"), "EventTriggerListener")
+	local var_7_2 = arg_7_0:GetMGData():getConfig("simple_config_data")
 
-	slot0.BtnRightDelegate:AddPointDownFunc(function ()
-		uv0.mousedowningright_flag = true
+	arg_7_0.piecelist_speed = var_7_2.speed
+	arg_7_0.piecelist_speedmin = var_7_2.speed_min
+	arg_7_0.piecelist_speedmax = var_7_2.speed_max
+	arg_7_0.specialcombo_number = var_7_2.special_combo
+	arg_7_0.specialscore_number = var_7_2.special_score
+	arg_7_0.score_perfect = var_7_2.perfect
+	arg_7_0.score_good = var_7_2.good
+	arg_7_0.score_miss = var_7_2.miss
+	arg_7_0.score_combo = var_7_2.combo
+	arg_7_0.time_perfect = var_7_2.perfecttime
+	arg_7_0.time_good = var_7_2.goodtime
+	arg_7_0.time_miss = var_7_2.misstime
+	arg_7_0.time_laterperfect = var_7_2.laterperfecttime
+	arg_7_0.time_latergood = var_7_2.latergoodtime
+	arg_7_0.combo_interval = var_7_2.combo_interval
+	arg_7_0.BtnRightDelegate = GetOrAddComponent(arg_7_0.game_content:Find("btn_right"), "EventTriggerListener")
 
-		setActive(uv0.bottonRightBg, true)
+	arg_7_0.BtnRightDelegate:AddPointDownFunc(function()
+		arg_7_0.mousedowningright_flag = true
+
+		setActive(arg_7_0.bottonRightBg, true)
 	end)
-	slot0.BtnRightDelegate:AddPointUpFunc(function ()
-		uv0.mousedowningright_flag = false
+	arg_7_0.BtnRightDelegate:AddPointUpFunc(function()
+		arg_7_0.mousedowningright_flag = false
 
-		setActive(uv0.bottonRightBg, false)
+		setActive(arg_7_0.bottonRightBg, false)
 	end)
 
-	slot0.BtnLeftDelegate = GetOrAddComponent(slot0.game_content:Find("btn_left"), "EventTriggerListener")
+	arg_7_0.BtnLeftDelegate = GetOrAddComponent(arg_7_0.game_content:Find("btn_left"), "EventTriggerListener")
 
-	slot0.BtnLeftDelegate:AddPointDownFunc(function ()
-		uv0.mousedowningleft_flag = true
+	arg_7_0.BtnLeftDelegate:AddPointDownFunc(function()
+		arg_7_0.mousedowningleft_flag = true
 
-		setActive(uv0.bottonLeftBg, true)
+		setActive(arg_7_0.bottonLeftBg, true)
 	end)
-	slot0.BtnLeftDelegate:AddPointUpFunc(function ()
-		uv0.mousedowningleft_flag = false
+	arg_7_0.BtnLeftDelegate:AddPointUpFunc(function()
+		arg_7_0.mousedowningleft_flag = false
 
-		setActive(uv0.bottonLeftBg, false)
+		setActive(arg_7_0.bottonLeftBg, false)
 	end)
-	onButton(slot0, slot0.top:Find("pause"), function ()
-		uv0.UIMgr:BlurPanel(uv0.pauseview)
-		setActive(uv0.pauseview, true)
+	onButton(arg_7_0, arg_7_0.top:Find("pause"), function()
+		arg_7_0.UIMgr:BlurPanel(arg_7_0.pauseview)
+		setActive(arg_7_0.pauseview, true)
 
-		uv0.game_playingflag = false
+		arg_7_0.game_playingflag = false
 
-		uv0:effect_play("nothing")
-		LoadSpriteAtlasAsync("ui/musicgameother_atlas", "pause_" .. uv0.musicData.picture, function (slot0)
-			setImageSprite(uv0.pauseview:Find("bottom/song"), slot0, true)
+		arg_7_0:effect_play("nothing")
+		LoadSpriteAtlasAsync("ui/musicgameother_atlas", "pause_" .. arg_7_0.musicData.picture, function(arg_15_0)
+			setImageSprite(arg_7_0.pauseview:Find("bottom/song"), arg_15_0, true)
 		end)
-		GetComponent(uv0.pauseview:Find("bottom/img"), typeof(Image)):SetNativeSize()
+		GetComponent(arg_7_0.pauseview:Find("bottom/img"), typeof(Image)):SetNativeSize()
 
-		if not uv0.ahead_timeflag then
-			uv0:pauseBgm()
+		if not arg_7_0.ahead_timeflag then
+			arg_7_0:pauseBgm()
 
-			slot1 = uv0.song_Tlength
+			local var_14_0 = arg_7_0:getStampTime()
+			local var_14_1 = arg_7_0.song_Tlength
 
-			if uv0:getStampTime() < 0 then
-				slot0 = 0
+			if var_14_0 < 0 then
+				var_14_0 = 0
 			end
 
-			if slot0 >= 0 and slot1 > 0 then
-				function slot2(slot0)
-					if slot0 < 10 then
-						return "0" .. slot0
+			if var_14_0 >= 0 and var_14_1 > 0 then
+				local function var_14_2(arg_16_0)
+					if arg_16_0 < 10 then
+						return "0" .. arg_16_0
 					else
-						return slot0
+						return arg_16_0
 					end
 				end
 
-				setText(uv0.pauseview:Find("bottom/now"), slot2(math.floor(slot0 / 60000)) .. ":" .. slot2(math.floor(slot0 % 60000 / 1000)))
-				setText(uv0.pauseview:Find("bottom/total"), slot2(math.floor(slot1 / 60000)) .. ":" .. slot2(math.floor(slot1 % 60000 / 1000)))
-				setActive(uv0.pauseview:Find("bottom/triangle"), true)
-				setActive(uv0.pauseview:Find("bottom/TimeSlider"), true)
-				setActive(uv0.pauseview:Find("bottom/now"), true)
-				setActive(uv0.pauseview:Find("bottom/total"), true)
-				setSlider(uv0.pauseview:Find("bottom/TimeSlider"), 0, 1, slot0 / slot1)
+				local var_14_3 = var_14_2(math.floor(var_14_0 % 60000 / 1000))
+				local var_14_4 = var_14_2(math.floor(var_14_0 / 60000))
 
-				slot5 = uv0.pauseview:Find("bottom/triangle/min").localPosition.x
-				slot7 = uv0.pauseview:Find("bottom/triangle/now").localPosition
-				uv0.pauseview:Find("bottom/triangle/now").localPosition = Vector3(slot5 + slot0 / slot1 * (uv0.pauseview:Find("bottom/triangle/max").localPosition.x - slot5), slot7.y, slot7.z)
+				setText(arg_7_0.pauseview:Find("bottom/now"), var_14_4 .. ":" .. var_14_3)
 
-				uv0:setActionSDmodel("stand2")
+				local var_14_5 = var_14_2(math.floor(var_14_1 % 60000 / 1000))
+				local var_14_6 = var_14_2(math.floor(var_14_1 / 60000))
+
+				setText(arg_7_0.pauseview:Find("bottom/total"), var_14_6 .. ":" .. var_14_5)
+				setActive(arg_7_0.pauseview:Find("bottom/triangle"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/TimeSlider"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/now"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/total"), true)
+				setSlider(arg_7_0.pauseview:Find("bottom/TimeSlider"), 0, 1, var_14_0 / var_14_1)
+
+				local var_14_7 = arg_7_0.pauseview:Find("bottom/triangle/min").localPosition.x
+				local var_14_8 = arg_7_0.pauseview:Find("bottom/triangle/max").localPosition.x
+				local var_14_9 = arg_7_0.pauseview:Find("bottom/triangle/now").localPosition
+
+				arg_7_0.pauseview:Find("bottom/triangle/now").localPosition = Vector3(var_14_7 + var_14_0 / var_14_1 * (var_14_8 - var_14_7), var_14_9.y, var_14_9.z)
+
+				arg_7_0:setActionSDmodel("stand2")
 			end
 		else
-			setActive(uv0.pauseview:Find("bottom/triangle"), false)
-			setActive(uv0.pauseview:Find("bottom/TimeSlider"), false)
-			setActive(uv0.pauseview:Find("bottom/now"), false)
-			setActive(uv0.pauseview:Find("bottom/total"), false)
+			setActive(arg_7_0.pauseview:Find("bottom/triangle"), false)
+			setActive(arg_7_0.pauseview:Find("bottom/TimeSlider"), false)
+			setActive(arg_7_0.pauseview:Find("bottom/now"), false)
+			setActive(arg_7_0.pauseview:Find("bottom/total"), false)
 
-			uv0.ahead_timerPauseFlag = true
+			arg_7_0.ahead_timerPauseFlag = true
 		end
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot0.pauseview:Find("bottom/back"), function ()
+	onButton(arg_7_0, arg_7_0.pauseview:Find("bottom/back"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("reselect_music_game"),
-			onYes = function ()
-				uv0.UIMgr:UnblurPanel(uv0.pauseview, uv0._tf)
-				setActive(uv0.pauseview, false)
-				uv0:stopTimer()
+			onYes = function()
+				arg_7_0.UIMgr:UnblurPanel(arg_7_0.pauseview, arg_7_0._tf)
+				setActive(arg_7_0.pauseview, false)
+				arg_7_0:stopTimer()
 
-				if uv0.ahead_timer then
-					uv0.ahead_timer:Stop()
+				if arg_7_0.ahead_timer then
+					arg_7_0.ahead_timer:Stop()
 
-					uv0.ahead_timeflag = false
+					arg_7_0.ahead_timeflag = false
 				end
 
-				setActive(uv0.selectview, true)
+				setActive(arg_7_0.selectview, true)
 
-				GetOrAddComponent(uv0.selectview, "CanvasGroup").blocksRaycasts = true
+				GetOrAddComponent(arg_7_0.selectview, "CanvasGroup").blocksRaycasts = true
 
-				uv0.song_btns[uv0.game_music]:GetComponent(typeof(Animator)):Play("plate_out")
+				arg_7_0.song_btns[arg_7_0.game_music]:GetComponent(typeof(Animator)):Play("plate_out")
 
-				uv0.game_playingflag = false
+				arg_7_0.game_playingflag = false
 
-				uv0:loadAndPlayMusic()
-				uv0:rec_scorce()
+				arg_7_0:loadAndPlayMusic()
+				arg_7_0:rec_scorce()
 			end
 		})
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot0.pauseview:Find("bottom/restart"), function ()
+	onButton(arg_7_0, arg_7_0.pauseview:Find("bottom/restart"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("restart_music_game"),
-			onYes = function ()
-				uv0.UIMgr:UnblurPanel(uv0.pauseview, uv0._tf)
-				setActive(uv0.pauseview, false)
-				uv0:stopTimer()
+			onYes = function()
+				arg_7_0.UIMgr:UnblurPanel(arg_7_0.pauseview, arg_7_0._tf)
+				setActive(arg_7_0.pauseview, false)
+				arg_7_0:stopTimer()
 
-				if uv0.ahead_timer then
-					uv0.ahead_timer:Stop()
+				if arg_7_0.ahead_timer then
+					arg_7_0.ahead_timer:Stop()
 
-					uv0.ahead_timeflag = false
+					arg_7_0.ahead_timeflag = false
 				end
 
-				uv0:rec_scorce()
-				uv0:game_start()
-				uv0:effect_play("prepare")
+				arg_7_0:rec_scorce()
+				arg_7_0:game_start()
+				arg_7_0:effect_play("prepare")
 			end
 		})
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot0.pauseview:Find("bottom/resume"), function ()
-		uv0.UIMgr:UnblurPanel(uv0.pauseview, uv0._tf)
-		setActive(uv0.pauseview, false)
-		uv0:effect_play("prepare")
+	onButton(arg_7_0, arg_7_0.pauseview:Find("bottom/resume"), function()
+		arg_7_0.UIMgr:UnblurPanel(arg_7_0.pauseview, arg_7_0._tf)
+		setActive(arg_7_0.pauseview, false)
+		arg_7_0:effect_play("prepare")
 
-		if not uv0.ahead_timeflag then
-			uv0:count_five(function ()
-				uv0:resumeBgm()
+		if not arg_7_0.ahead_timeflag then
+			local function var_21_0()
+				arg_7_0:resumeBgm()
 
-				uv0.game_playingflag = true
-			end)
+				arg_7_0.game_playingflag = true
+			end
+
+			arg_7_0:count_five(var_21_0)
 		else
-			uv0:count_five(function ()
-				uv0.ahead_timerPauseFlag = false
-				uv0.game_playingflag = true
+			local function var_21_1()
+				arg_7_0.ahead_timerPauseFlag = false
+				arg_7_0.game_playingflag = true
 
-				setActive(uv0.pauseview:Find("bottom/triangle"), true)
-				setActive(uv0.pauseview:Find("bottom/TimeSlider"), true)
-				setActive(uv0.pauseview:Find("bottom/now"), true)
-				setActive(uv0.pauseview:Find("bottom/total"), true)
-			end)
+				setActive(arg_7_0.pauseview:Find("bottom/triangle"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/TimeSlider"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/now"), true)
+				setActive(arg_7_0.pauseview:Find("bottom/total"), true)
+			end
+
+			arg_7_0:count_five(var_21_1)
 		end
 	end, SFX_UI_CLICK)
-	slot0:addRingDragListenter()
-	setActive(slot0.selectview, true)
+	arg_7_0:addRingDragListenter()
+	setActive(arg_7_0.selectview, true)
 
-	GetOrAddComponent(slot0.selectview, "CanvasGroup").blocksRaycasts = true
+	GetOrAddComponent(arg_7_0.selectview, "CanvasGroup").blocksRaycasts = true
 end
 
-function slot0.updateBg(slot0)
-	if slot0.isLoading then
-		slot0:dynamicBgHandler(slot0.bgGo, function ()
-			setParent(uv0.bgGo, uv0.bg)
-			setActive(uv0.bgGo, true)
+function var_0_0.updateBg(arg_24_0)
+	if arg_24_0.isLoading then
+		arg_24_0:dynamicBgHandler(arg_24_0.bgGo, function()
+			setParent(arg_24_0.bgGo, arg_24_0.bg)
+			setActive(arg_24_0.bgGo, true)
 		end)
 
 		return
 	end
 
-	if slot0.bgGo and slot0.bgName then
-		slot0:dynamicBgHandler(slot0.bgGo)
-		PoolMgr.GetInstance():ReturnUI(slot0.bgName, slot0.bgGo)
+	if arg_24_0.bgGo and arg_24_0.bgName then
+		arg_24_0:dynamicBgHandler(arg_24_0.bgGo)
+		PoolMgr.GetInstance():ReturnUI(arg_24_0.bgName, arg_24_0.bgGo)
 	end
 
-	slot0.bgName = "musicgamebg" .. slot0.musicBg
-	slot0.isLoading = true
-	slot2 = PoolMgr.GetInstance()
+	arg_24_0.bgName = "musicgamebg" .. arg_24_0.musicBg
+	arg_24_0.isLoading = true
 
-	slot2:GetUI("" .. slot0.bgName, true, function (slot0)
-		uv0.bgGo = slot0
+	local var_24_0 = arg_24_0.bgName
 
-		if uv0.isLoading == false then
-			uv0:dynamicBgHandler(uv0.bgGo)
-			PoolMgr.GetInstance():ReturnUI(uv1, uv0.bgGo)
+	PoolMgr.GetInstance():GetUI("" .. var_24_0, true, function(arg_26_0)
+		arg_24_0.bgGo = arg_26_0
+
+		if arg_24_0.isLoading == false then
+			arg_24_0:dynamicBgHandler(arg_24_0.bgGo)
+			PoolMgr.GetInstance():ReturnUI(var_24_0, arg_24_0.bgGo)
 		else
-			uv0.isLoading = false
+			arg_24_0.isLoading = false
 
-			setParent(uv0.bgGo, uv0.bg)
-			setActive(uv0.bgGo, true)
+			setParent(arg_24_0.bgGo, arg_24_0.bg)
+			setActive(arg_24_0.bgGo, true)
 		end
 	end)
 end
 
-function slot0.dynamicBgHandler(slot0, slot1, slot2)
-	if IsNil(slot1) then
+function var_0_0.dynamicBgHandler(arg_27_0, arg_27_1, arg_27_2)
+	if IsNil(arg_27_1) then
 		return
 	end
 
-	if slot2 ~= nil then
-		slot2()
+	if arg_27_2 ~= nil then
+		arg_27_2()
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.countingfive_flag and not slot0.firstview_timerRunflag then
-		if slot0.game_playingflag then
-			if not isActive(slot0.top:Find("pause_above")) then
-				triggerButton(slot0.top:Find("pause"))
+function var_0_0.onBackPressed(arg_28_0)
+	if not arg_28_0.countingfive_flag and not arg_28_0.firstview_timerRunflag then
+		if arg_28_0.game_playingflag then
+			if not isActive(arg_28_0.top:Find("pause_above")) then
+				triggerButton(arg_28_0.top:Find("pause"))
 			end
-		elseif isActive(slot0.selectview) and uv0 == 0 then
-			slot0:emit(uv1.ON_BACK)
+		elseif isActive(arg_28_0.selectview) and var_0_3 == 0 then
+			arg_28_0:emit(var_0_0.ON_BACK)
 		end
 	end
 end
 
-function slot0.OnApplicationPaused(slot0, slot1)
-	if slot1 and not slot0.countingfive_flag and not slot0.firstview_timerRunflag and slot0.game_playingflag and not isActive(slot0.top:Find("pause_above")) then
-		triggerButton(slot0.top:Find("pause"))
+function var_0_0.OnApplicationPaused(arg_29_0, arg_29_1)
+	if arg_29_1 and not arg_29_0.countingfive_flag and not arg_29_0.firstview_timerRunflag and arg_29_0.game_playingflag and not isActive(arg_29_0.top:Find("pause_above")) then
+		triggerButton(arg_29_0.top:Find("pause"))
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0.isLoading = false
+function var_0_0.willExit(arg_30_0)
+	arg_30_0.isLoading = false
 
-	if slot0.bgGo and slot0.bgName then
-		slot0:dynamicBgHandler(slot0.bgGo)
-		PoolMgr.GetInstance():ReturnUI(slot0.bgName, slot0.bgGo)
+	if arg_30_0.bgGo and arg_30_0.bgName then
+		arg_30_0:dynamicBgHandler(arg_30_0.bgGo)
+		PoolMgr.GetInstance():ReturnUI(arg_30_0.bgName, arg_30_0.bgGo)
 	end
 
-	if slot0.timer then
-		if slot0.timer.running then
-			slot0.timer:Stop()
+	if arg_30_0.timer then
+		if arg_30_0.timer.running then
+			arg_30_0.timer:Stop()
 		end
 
-		slot0.timer = nil
+		arg_30_0.timer = nil
 	end
 
-	if slot0.ahead_timer then
-		if slot0.ahead_timer.running then
-			slot0.ahead_timer:Stop()
+	if arg_30_0.ahead_timer then
+		if arg_30_0.ahead_timer.running then
+			arg_30_0.ahead_timer:Stop()
 		end
 
-		slot0.ahead_timer = nil
+		arg_30_0.ahead_timer = nil
 	end
 
-	if slot0.firstview_timer then
-		if slot0.firstview_timer.running then
-			slot0.firstview_timer:Stop()
+	if arg_30_0.firstview_timer then
+		if arg_30_0.firstview_timer.running then
+			arg_30_0.firstview_timer:Stop()
 		end
 
-		slot0.firstview_timer = nil
+		arg_30_0.firstview_timer = nil
 	end
 
-	if slot0.changeLocalpos_timer then
-		if slot0.changeLocalpos_timer.running then
-			slot0.changeLocalpos_timer:Stop()
+	if arg_30_0.changeLocalpos_timer then
+		if arg_30_0.changeLocalpos_timer.running then
+			arg_30_0.changeLocalpos_timer:Stop()
 		end
 
-		slot0.changeLocalpos_timer = nil
+		arg_30_0.changeLocalpos_timer = nil
 	end
 
-	if slot0.count_timer then
-		if slot0.count_timer.running then
-			slot0.count_timer:Stop()
+	if arg_30_0.count_timer then
+		if arg_30_0.count_timer.running then
+			arg_30_0.count_timer:Stop()
 		end
 
-		slot0.count_timer = nil
+		arg_30_0.count_timer = nil
 	end
 
-	if slot0.Scoceview_timer then
-		if slot0.Scoceview_timer.running then
-			slot0.Scoceview_timer:Stop()
+	if arg_30_0.Scoceview_timer then
+		if arg_30_0.Scoceview_timer.running then
+			arg_30_0.Scoceview_timer:Stop()
 		end
 
-		slot0.Scoceview_timer = nil
+		arg_30_0.Scoceview_timer = nil
 	end
 
-	if slot0.Getdata_timer then
-		if slot0.Getdata_timer.running then
-			slot0.Getdata_timer:Stop()
+	if arg_30_0.Getdata_timer then
+		if arg_30_0.Getdata_timer.running then
+			arg_30_0.Getdata_timer:Stop()
 		end
 
-		slot0.Getdata_timer = nil
+		arg_30_0.Getdata_timer = nil
 	end
 
-	slot0:clearSDModel()
+	arg_30_0:clearSDModel()
 
-	slot0.piecelist_lt = {}
-	slot0.piecelist_lf = {}
-	slot0.musictable_l = {}
-	slot0.piece_nowl = {}
-	slot0.piecelist_rt = {}
-	slot0.piecelist_rf = {}
-	slot0.musictable_r = {}
-	slot0.piece_nowr = {}
+	arg_30_0.piecelist_lt = {}
+	arg_30_0.piecelist_lf = {}
+	arg_30_0.musictable_l = {}
+	arg_30_0.piece_nowl = {}
+	arg_30_0.piecelist_rt = {}
+	arg_30_0.piecelist_rf = {}
+	arg_30_0.musictable_r = {}
+	arg_30_0.piece_nowr = {}
 
-	if slot0.painting then
-		retPaintingPrefab(slot0.scoreview:Find("paint"), slot0.painting)
+	if arg_30_0.painting then
+		retPaintingPrefab(arg_30_0.scoreview:Find("paint"), arg_30_0.painting)
 
-		slot0.painting = nil
+		arg_30_0.painting = nil
 	end
 
-	if slot0.criInfo then
-		slot0.criInfo:PlaybackStop()
-		slot0.criInfo:SetStartTimeAndPlay(0)
-		pg.CriMgr.GetInstance():UnloadCueSheet(slot0:getMusicBgm(slot0.musicData))
+	if arg_30_0.criInfo then
+		arg_30_0.criInfo:PlaybackStop()
+		arg_30_0.criInfo:SetStartTimeAndPlay(0)
+		pg.CriMgr.GetInstance():UnloadCueSheet(arg_30_0:getMusicBgm(arg_30_0.musicData))
 
-		slot0.criInfo = nil
+		arg_30_0.criInfo = nil
 	end
 
-	if LeanTween.isTweening(go(slot0.selectview)) then
-		LeanTween.cancel(go(slot0.selectview))
+	if LeanTween.isTweening(go(arg_30_0.selectview)) then
+		LeanTween.cancel(go(arg_30_0.selectview))
 	end
 
-	if LeanTween.isTweening(go(slot0.countContent)) then
-		LeanTween.cancel(go(slot0.countContent))
+	if LeanTween.isTweening(go(arg_30_0.countContent)) then
+		LeanTween.cancel(go(arg_30_0.countContent))
 	end
 
-	if LeanTween.isTweening(go(slot0.scoreview)) then
-		LeanTween.cancel(go(slot0.scoreview))
+	if LeanTween.isTweening(go(arg_30_0.scoreview)) then
+		LeanTween.cancel(go(arg_30_0.scoreview))
 	end
 
-	if LeanTween.isTweening(go(slot0.game_content)) then
-		LeanTween.cancel(go(slot0.game_content))
+	if LeanTween.isTweening(go(arg_30_0.game_content)) then
+		LeanTween.cancel(go(arg_30_0.game_content))
 	end
-
-	pg.BgmMgr.GetInstance():ContinuePlay()
 end
 
-function slot0.clearSDModel(slot0)
-	if not slot0.SDmodel or not slot0.SDname or slot0.SDname == "" or slot0.SDname == "none" then
+function var_0_0.clearSDModel(arg_31_0)
+	if not arg_31_0.SDmodel or not arg_31_0.SDname or arg_31_0.SDname == "" or arg_31_0.SDname == "none" then
 		return
 	end
 
-	for slot4 = 1, #slot0.SDmodel do
-		if slot0.SDmodel[slot4] then
-			PoolMgr.GetInstance():ReturnSpineChar(slot0.SDname[slot4], slot0.SDmodel[slot4])
+	for iter_31_0 = 1, #arg_31_0.SDmodel do
+		if arg_31_0.SDmodel[iter_31_0] then
+			PoolMgr.GetInstance():ReturnSpineChar(arg_31_0.SDname[iter_31_0], arg_31_0.SDmodel[iter_31_0])
 		end
 	end
 
-	slot0.SDmodel = {}
+	arg_31_0.SDmodel = {}
 end
 
-function slot0.list_push(slot0, slot1, slot2)
-	slot1[slot1[0] + 1] = slot2
-	slot1[0] = slot1[0] + 1
+function var_0_0.list_push(arg_32_0, arg_32_1, arg_32_2)
+	arg_32_1[arg_32_1[0] + 1] = arg_32_2
+	arg_32_1[0] = arg_32_1[0] + 1
 end
 
-function slot0.list_pop(slot0, slot1)
-	if slot1[0] == 0 then
+function var_0_0.list_pop(arg_33_0, arg_33_1)
+	if arg_33_1[0] == 0 then
 		return
 	end
 
-	slot2 = slot1[1]
+	local var_33_0 = arg_33_1[1]
 
-	for slot6 = 1, slot1[0] - 1 do
-		slot1[slot6] = slot1[slot6 + 1]
+	for iter_33_0 = 1, arg_33_1[0] - 1 do
+		arg_33_1[iter_33_0] = arg_33_1[iter_33_0 + 1]
 	end
 
-	slot1[0] = slot1[0] - 1
+	arg_33_1[0] = arg_33_1[0] - 1
 
-	return slot2
+	return var_33_0
 end
 
-function slot0.game_start(slot0)
-	slot0:game_before()
-	slot0:effect_play("prepare")
+function var_0_0.game_start(arg_34_0)
+	arg_34_0:game_before()
+	arg_34_0:effect_play("prepare")
 
-	slot0.game_playingflag = true
-	slot0.SDmodel_jumpcount = 0
-	slot0.gotspecialcombo_flag = false
+	arg_34_0.game_playingflag = true
+	arg_34_0.SDmodel_jumpcount = 0
+	arg_34_0.gotspecialcombo_flag = false
 
-	slot0:updateBg()
+	arg_34_0:updateBg()
 
-	slot0.song_Tlength = false
+	arg_34_0.song_Tlength = false
 
-	slot0:effect_play("nothing")
-	slot0:effect_play("prepare")
+	arg_34_0:effect_play("nothing")
+	arg_34_0:effect_play("prepare")
 
-	if slot0.isFirstgame == 0 then
-		slot0:Firstshow(slot0.firstview, function ()
-			uv0:gameStart()
+	if arg_34_0.isFirstgame == 0 then
+		arg_34_0:Firstshow(arg_34_0.firstview, function()
+			arg_34_0:gameStart()
 		end, 2)
-		slot0:MyStoreDataToServer()
+		arg_34_0:MyStoreDataToServer()
 	else
-		slot0:gameStart()
+		arg_34_0:gameStart()
 	end
 end
 
-function slot0.game_before(slot0)
-	slot0:effect_play("nothing")
+function var_0_0.game_before(arg_36_0)
+	arg_36_0:effect_play("nothing")
 
-	slot0.nowS_flag = false
+	arg_36_0.nowS_flag = false
 
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/scroll"), false)
+	arg_36_0:setTfChildVisible(arg_36_0.top:Find("scoreContent/scroll"), false)
 
-	slot0.scoreSliderTf = slot0.top:Find("scoreContent/scroll/" .. tostring(slot0.musicData.content_type))
+	arg_36_0.scoreSliderTf = arg_36_0.top:Find("scoreContent/scroll/" .. tostring(arg_36_0.musicData.content_type))
 
-	setSlider(slot0.scoreSliderTf, 0, 1, 0)
-	setActive(slot0.scoreSliderTf, true)
-	setActive(findTF(slot0.scoreSliderTf, "img/mask/yinyue20_S"), false)
+	setSlider(arg_36_0.scoreSliderTf, 0, 1, 0)
+	setActive(arg_36_0.scoreSliderTf, true)
+	setActive(findTF(arg_36_0.scoreSliderTf, "img/mask/yinyue20_S"), false)
 
-	slot0.scoreSFlag = false
-	slot5 = 1
+	arg_36_0.scoreSFlag = false
 
-	setImageColor(findTF(slot0.scoreSliderTf, "img"), Color(1, slot5, 1, 1))
+	setImageColor(findTF(arg_36_0.scoreSliderTf, "img"), Color(1, 1, 1, 1))
 
-	for slot5 = 1, slot0.game_content:Find("evaluate").childCount do
-		for slot10 = 1, slot1:GetChild(slot5 - 1).childCount do
-			setActive(slot6:GetChild(slot10 - 1), false)
+	local var_36_0 = arg_36_0.game_content:Find("evaluate")
+
+	for iter_36_0 = 1, var_36_0.childCount do
+		local var_36_1 = var_36_0:GetChild(iter_36_0 - 1)
+
+		for iter_36_1 = 1, var_36_1.childCount do
+			setActive(var_36_1:GetChild(iter_36_1 - 1), false)
 		end
 
-		setActive(findTF(slot6, tostring(slot0.musicData.content_type)), true)
-		setActive(slot1:GetChild(slot5 - 1), false)
+		setActive(findTF(var_36_1, tostring(arg_36_0.musicData.content_type)), true)
+		setActive(var_36_0:GetChild(iter_36_0 - 1), false)
 	end
 
-	for slot6 = 1, slot0.game_content:Find("bottomList").childCount do
-		setActive(slot2:GetChild(slot6 - 1), false)
+	local var_36_2 = arg_36_0.game_content:Find("bottomList")
+
+	for iter_36_2 = 1, var_36_2.childCount do
+		local var_36_3 = var_36_2:GetChild(iter_36_2 - 1)
+
+		setActive(var_36_3, false)
 	end
 
-	if slot0.musicData.bottom_type and slot0.musicData.bottom_type > 0 then
-		slot0.bottonLeftBg = slot0.game_content:Find("bottomList/" .. slot0.musicData.bottom_type .. "/bottom_leftbg")
-		slot0.bottonRightBg = slot0.game_content:Find("bottomList/" .. slot0.musicData.bottom_type .. "/bottom_rightbg")
+	if arg_36_0.musicData.bottom_type and arg_36_0.musicData.bottom_type > 0 then
+		arg_36_0.bottonLeftBg = arg_36_0.game_content:Find("bottomList/" .. arg_36_0.musicData.bottom_type .. "/bottom_leftbg")
+		arg_36_0.bottonRightBg = arg_36_0.game_content:Find("bottomList/" .. arg_36_0.musicData.bottom_type .. "/bottom_rightbg")
 
-		setActive(slot0.bottonLeftBg, false)
-		setActive(slot0.bottonRightBg, false)
-		setActive(slot0.game_content:Find("bottomList/" .. slot0.musicData.bottom_type), true)
-		setActive(slot0.game_content:Find("bottomList/" .. slot0.musicData.bottom_type), true)
+		setActive(arg_36_0.bottonLeftBg, false)
+		setActive(arg_36_0.bottonRightBg, false)
+		setActive(arg_36_0.game_content:Find("bottomList/" .. arg_36_0.musicData.bottom_type), true)
+		setActive(arg_36_0.game_content:Find("bottomList/" .. arg_36_0.musicData.bottom_type), true)
 	end
 
-	slot0:clearSDModel()
+	arg_36_0:clearSDModel()
 
-	for slot6 = 1, #slot0.SDname do
-		slot0:loadSDModel(slot6)
+	for iter_36_3 = 1, #arg_36_0.SDname do
+		arg_36_0:loadSDModel(iter_36_3)
 	end
 
-	slot0:setActionSDmodel("stand2")
-	setActive(slot0.game_content:Find("combo"), false)
-	setActive(slot0.game_content:Find("combo_n"), false)
-	setActive(slot0.game_content:Find("MusicStar"), false)
-	setActive(slot0.game_content, true)
-	setActive(slot0._tf:Find("Spinelist"), true)
-	setActive(slot0.top, true)
-	setActive(slot0.fullComboEffect, false)
-	setActive(slot0.liveClearEffect, false)
+	arg_36_0:setActionSDmodel("stand2")
+	setActive(arg_36_0.game_content:Find("combo"), false)
+	setActive(arg_36_0.game_content:Find("combo_n"), false)
+	setActive(arg_36_0.game_content:Find("MusicStar"), false)
+	setActive(arg_36_0.game_content, true)
+	setActive(arg_36_0._tf:Find("Spinelist"), true)
+	setActive(arg_36_0.top, true)
+	setActive(arg_36_0.fullComboEffect, false)
+	setActive(arg_36_0.liveClearEffect, false)
 
-	slot0.leftPu = {}
-	slot0.rightPu = {}
+	local var_36_4 = arg_36_0:getMusicNote(arg_36_0.musicData, arg_36_0.game_dgree)
+	local var_36_5 = require(var_36_4)
 
-	for slot8, slot9 in ipairs(require(slot0:getMusicNote(slot0.musicData, slot0.game_dgree)).left_track) do
-		table.insert(slot0.leftPu, slot9)
+	arg_36_0.leftPu = {}
+	arg_36_0.rightPu = {}
+
+	for iter_36_4, iter_36_5 in ipairs(var_36_5.left_track) do
+		table.insert(arg_36_0.leftPu, iter_36_5)
 	end
 
-	for slot8, slot9 in ipairs(slot4.right_track) do
-		table.insert(slot0.rightPu, slot9)
+	for iter_36_6, iter_36_7 in ipairs(var_36_5.right_track) do
+		table.insert(arg_36_0.rightPu, iter_36_7)
 	end
 
-	slot0:setTfChildVisible(slot0.noteTpl, false)
+	arg_36_0:setTfChildVisible(arg_36_0.noteTpl, false)
 
-	if not slot0.gameNoteLeft then
-		slot0.gameNoteLeft = MusicGameNote.New(findTF(slot0.game_content, "MusicPieceLeft"), slot0.noteTpl, MusicGameNote.type_left)
+	if not arg_36_0.gameNoteLeft then
+		arg_36_0.gameNoteLeft = MusicGameNote.New(findTF(arg_36_0.game_content, "MusicPieceLeft"), arg_36_0.noteTpl, MusicGameNote.type_left)
 	end
 
-	if not slot0.gameNoteRight then
-		slot0.gameNoteRight = MusicGameNote.New(findTF(slot0.game_content, "MusicPieceRight"), slot0.noteTpl, MusicGameNote.type_right)
+	if not arg_36_0.gameNoteRight then
+		arg_36_0.gameNoteRight = MusicGameNote.New(findTF(arg_36_0.game_content, "MusicPieceRight"), arg_36_0.noteTpl, MusicGameNote.type_right)
 	end
 
-	slot0.gameNoteLeft:setStartData(slot0.leftPu, slot0.game_speed, slot0.game_dgree, slot0.noteType)
-	slot0.gameNoteLeft:setStateCallback(function (slot0)
-		uv0:onStateCallback(slot0)
+	arg_36_0.gameNoteLeft:setStartData(arg_36_0.leftPu, arg_36_0.game_speed, arg_36_0.game_dgree, arg_36_0.noteType)
+	arg_36_0.gameNoteLeft:setStateCallback(function(arg_37_0)
+		arg_36_0:onStateCallback(arg_37_0)
 	end)
-	slot0.gameNoteLeft:setLongTimeCallback(function (slot0)
-		uv0:onLongTimeCallback(slot0)
+	arg_36_0.gameNoteLeft:setLongTimeCallback(function(arg_38_0)
+		arg_36_0:onLongTimeCallback(arg_38_0)
+	end)
+	arg_36_0.gameNoteRight:setStartData(arg_36_0.rightPu, arg_36_0.game_speed, arg_36_0.game_dgree, arg_36_0.noteType)
+	arg_36_0.gameNoteRight:setStateCallback(function(arg_39_0)
+		arg_36_0:onStateCallback(arg_39_0)
+	end)
+	arg_36_0.gameNoteRight:setLongTimeCallback(function(arg_40_0)
+		arg_36_0:onLongTimeCallback(arg_40_0)
 	end)
 
-	slot9 = slot0.game_dgree
-	slot10 = slot0.noteType
+	arg_36_0.gameStepTime = 0
+	arg_36_0.musictable_l = {}
+	arg_36_0.musictable_l[0] = 0
+	arg_36_0.musictable_r = {}
+	arg_36_0.musictable_r[0] = 0
+	arg_36_0.nowmusic_l = nil
+	arg_36_0.nowmusic_r = nil
 
-	slot0.gameNoteRight:setStartData(slot0.rightPu, slot0.game_speed, slot9, slot10)
-	slot0.gameNoteRight:setStateCallback(function (slot0)
-		uv0:onStateCallback(slot0)
-	end)
-	slot0.gameNoteRight:setLongTimeCallback(function (slot0)
-		uv0:onLongTimeCallback(slot0)
-	end)
+	local var_36_6 = arg_36_0:getMusicNote(arg_36_0.musicData, arg_36_0.game_dgree)
 
-	slot0.gameStepTime = 0
-	slot0.musictable_l = {
-		[0] = 0
-	}
-	slot0.musictable_r = {
-		[0] = 0
-	}
-	slot0.nowmusic_l = nil
-	slot0.nowmusic_r = nil
-	slot0.musicpu = require(slot0:getMusicNote(slot0.musicData, slot0.game_dgree))
+	arg_36_0.musicpu = require(var_36_6)
 
-	for slot9, slot10 in ipairs(slot0.musicpu.left_track) do
-		slot0:list_push(slot0.musictable_l, slot10)
+	for iter_36_8, iter_36_9 in ipairs(arg_36_0.musicpu.left_track) do
+		arg_36_0:list_push(arg_36_0.musictable_l, iter_36_9)
 	end
 
-	for slot9, slot10 in ipairs(slot0.musicpu.right_track) do
-		slot0:list_push(slot0.musictable_r, slot10)
+	for iter_36_10, iter_36_11 in ipairs(arg_36_0.musicpu.right_track) do
+		arg_36_0:list_push(arg_36_0.musictable_r, iter_36_11)
 	end
 
-	slot6 = slot0.scoreSliderTf
-	slot7 = slot0.top:Find("scoreContent/B")
-	slot7.anchoredPosition = Vector3(slot0.scoreSliderTf.anchoredPosition.x + slot6.rect.width * 0.53, slot7.anchoredPosition.y, slot7.anchoredPosition.z)
-	slot0.top:Find("scoreContent/A").anchoredPosition = Vector3(slot0.scoreSliderTf.anchoredPosition.x + slot6.rect.width * 0.72, slot7.anchoredPosition.y, slot7.anchoredPosition.z)
-	slot0.top:Find("scoreContent/S").anchoredPosition = Vector3(slot0.scoreSliderTf.anchoredPosition.x + slot6.rect.width * 0.885, slot7.anchoredPosition.y, slot7.anchoredPosition.z)
+	local var_36_7 = arg_36_0.scoreSliderTf
+	local var_36_8 = arg_36_0.top:Find("scoreContent/B")
+	local var_36_9 = arg_36_0.top:Find("scoreContent/A")
+	local var_36_10 = arg_36_0.top:Find("scoreContent/S")
 
-	slot0:scoresliderAcombo_update()
+	var_36_8.anchoredPosition = Vector3(arg_36_0.scoreSliderTf.anchoredPosition.x + var_36_7.rect.width * 0.53, var_36_8.anchoredPosition.y, var_36_8.anchoredPosition.z)
+	var_36_9.anchoredPosition = Vector3(arg_36_0.scoreSliderTf.anchoredPosition.x + var_36_7.rect.width * 0.72, var_36_8.anchoredPosition.y, var_36_8.anchoredPosition.z)
+	var_36_10.anchoredPosition = Vector3(arg_36_0.scoreSliderTf.anchoredPosition.x + var_36_7.rect.width * 0.885, var_36_8.anchoredPosition.y, var_36_8.anchoredPosition.z)
+
+	arg_36_0:scoresliderAcombo_update()
 end
 
-function slot0.stopTimer(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.stopTimer(arg_41_0)
+	if arg_41_0.timer.running then
+		arg_41_0.timer:Stop()
 	end
 end
 
-function slot0.startTimer(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.startTimer(arg_42_0)
+	if not arg_42_0.timer.running then
+		arg_42_0.timer:Start()
 	end
 end
 
-function slot0.loadSDModel(slot0, slot1)
-	if not slot0.SDname[slot1] or slot0.SDname[slot1] == "" or slot0.SDname[slot1] == "none" then
-		slot0.SDmodel[slot1] = false
+function var_0_0.loadSDModel(arg_43_0, arg_43_1)
+	if not arg_43_0.SDname[arg_43_1] or arg_43_0.SDname[arg_43_1] == "" or arg_43_0.SDname[arg_43_1] == "none" then
+		arg_43_0.SDmodel[arg_43_1] = false
 
-		setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/shadow"), false)
-		setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/light"), false)
+		setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/shadow"), false)
+		setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/light"), false)
 
 		return
 	end
 
-	slot2 = findTF(slot0._tf, "Spinelist/" .. slot1 .. "/light")
-	slot4 = findTF(slot0._tf, "Spinelist/" .. slot1 .. "/" .. slot0.musicData.content_type)
-	slot2.anchoredPosition = slot4.anchoredPosition
-	findTF(slot0._tf, "Spinelist/" .. slot1 .. "/shadow").anchoredPosition = slot4.anchoredPosition
+	local var_43_0 = findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/light")
+	local var_43_1 = findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/shadow")
+	local var_43_2 = findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/" .. arg_43_0.musicData.content_type)
 
-	setActive(slot2, true)
+	var_43_0.anchoredPosition = var_43_2.anchoredPosition
+	var_43_1.anchoredPosition = var_43_2.anchoredPosition
 
-	if slot0.musicLight and slot0.shadowLight then
-		setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/shadow"), true)
+	setActive(var_43_0, true)
+
+	if arg_43_0.musicLight and arg_43_0.shadowLight then
+		setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/shadow"), true)
 	else
-		setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/shadow"), false)
+		setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/shadow"), false)
 	end
 
-	for slot8 = 1, uv0 do
-		if slot0.musicLight and slot0.musicLight > 0 then
-			setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/light"), false)
+	for iter_43_0 = 1, var_0_6 do
+		if arg_43_0.musicLight and arg_43_0.musicLight > 0 then
+			setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/light"), false)
 
-			slot9 = slot8
+			local var_43_3 = iter_43_0
 
-			if slot0.musicData.ships[slot8] and slot0.musicData.ships[slot8] ~= "" and slot0.musicData.ships[slot8] ~= "none" then
-				LoadSpriteAtlasAsync("ui/musicgameother_atlas", "light" .. slot0.musicLight, function (slot0)
-					setActive(findTF(uv0._tf, "Spinelist/" .. uv1 .. "/light"), true)
-					setImageSprite(findTF(uv0._tf, "Spinelist/" .. uv1 .. "/light"), slot0, true)
+			if arg_43_0.musicData.ships[iter_43_0] and arg_43_0.musicData.ships[iter_43_0] ~= "" and arg_43_0.musicData.ships[iter_43_0] ~= "none" then
+				LoadSpriteAtlasAsync("ui/musicgameother_atlas", "light" .. arg_43_0.musicLight, function(arg_44_0)
+					setActive(findTF(arg_43_0._tf, "Spinelist/" .. var_43_3 .. "/light"), true)
+					setImageSprite(findTF(arg_43_0._tf, "Spinelist/" .. var_43_3 .. "/light"), arg_44_0, true)
 				end)
 			end
 		end
 
-		setActive(findTF(slot0._tf, "Spinelist/" .. slot1 .. "/light"), false)
+		setActive(findTF(arg_43_0._tf, "Spinelist/" .. arg_43_1 .. "/light"), false)
 	end
 
-	slot5 = pg.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():LoadingOff()
+	PoolMgr.GetInstance():GetSpineChar(arg_43_0.SDname[arg_43_1], true, function(arg_45_0)
+		arg_43_0.SDmodel[arg_43_1] = arg_45_0
+		tf(arg_45_0).localScale = Vector3(1, 1, 1)
 
-	slot5:LoadingOff()
+		arg_45_0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+		setParent(arg_45_0, arg_43_0._tf:Find("Spinelist/" .. arg_43_1))
 
-	slot5 = PoolMgr.GetInstance()
+		local var_45_0 = arg_43_0._tf:Find("Spinelist/" .. arg_43_1 .. "/" .. arg_43_0.musicData.content_type)
 
-	slot5:GetSpineChar(slot0.SDname[slot1], true, function (slot0)
-		uv0.SDmodel[uv1] = slot0
-		tf(slot0).localScale = Vector3(1, 1, 1)
-
-		slot0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
-		setParent(slot0, uv0._tf:Find("Spinelist/" .. uv1))
-
-		tf(slot0).anchoredPosition = uv0._tf:Find("Spinelist/" .. uv1 .. "/" .. uv0.musicData.content_type).anchoredPosition
+		tf(arg_45_0).anchoredPosition = var_45_0.anchoredPosition
 	end)
 end
 
-function slot0.SDmodeljump_btnup(slot0)
-	if slot0.downingright_flag or slot0.downingleft_flag then
-		slot0.SDmodel_jumpcount = slot0.SDmodel_jumpcount + slot0.time_interval
-		slot0.SDmodel_jumpcount = slot0.SDmodel_jumpcount > 1 and 1 or slot0.SDmodel_jumpcount
+function var_0_0.SDmodeljump_btnup(arg_46_0)
+	if arg_46_0.downingright_flag or arg_46_0.downingleft_flag then
+		arg_46_0.SDmodel_jumpcount = arg_46_0.SDmodel_jumpcount + arg_46_0.time_interval
+		arg_46_0.SDmodel_jumpcount = arg_46_0.SDmodel_jumpcount > 1 and 1 or arg_46_0.SDmodel_jumpcount
 	else
-		if slot0.SDmodel_jumpcount == 1 then
-			slot0:setActionSDmodel("jump")
+		if arg_46_0.SDmodel_jumpcount == 1 then
+			arg_46_0:setActionSDmodel("jump")
 
-			slot0.SDmodel_idolflag = false
+			arg_46_0.SDmodel_idolflag = false
 		end
 
-		if slot0.SDmodel_jumpcount > 0 then
-			slot0.SDmodel_jumpcount = slot0.SDmodel_jumpcount - slot0.time_interval
-			slot0.SDmodel_jumpcount = slot0.SDmodel_jumpcount < 0 and 0 or slot0.SDmodel_jumpcount
+		if arg_46_0.SDmodel_jumpcount > 0 then
+			arg_46_0.SDmodel_jumpcount = arg_46_0.SDmodel_jumpcount - arg_46_0.time_interval
+			arg_46_0.SDmodel_jumpcount = arg_46_0.SDmodel_jumpcount < 0 and 0 or arg_46_0.SDmodel_jumpcount
 		end
 
-		if slot0.SDmodel_jumpcount == 0 and not slot0.SDmodel_idolflag then
-			slot0.SDmodel_idolflag = true
+		if arg_46_0.SDmodel_jumpcount == 0 and not arg_46_0.SDmodel_idolflag then
+			arg_46_0.SDmodel_idolflag = true
 
-			slot0:setActionSDmodel("idol")
-		end
-	end
-end
-
-function slot0.setActionSDmodel(slot0, slot1, slot2)
-	slot2 = slot2 or 0
-
-	for slot6 = 1, #slot0.SDmodel do
-		if slot0.SDmodel[slot6] then
-			slot0.SDmodel[slot6]:GetComponent("SpineAnimUI"):SetAction(slot1, slot2)
+			arg_46_0:setActionSDmodel("idol")
 		end
 	end
 end
 
-function slot0.loadAndPlayMusic(slot0, slot1, slot2)
-	uv0 = uv0 + 1
-	slot4 = CriWareMgr.Inst
+function var_0_0.setActionSDmodel(arg_47_0, arg_47_1, arg_47_2)
+	arg_47_2 = arg_47_2 or 0
 
-	slot4:PlayBGM(slot0:getMusicBgm(slot0.musicData), CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function (slot0)
-		if slot0 == nil then
-			warning("Missing BGM :" .. (uv0 or "NIL"))
+	for iter_47_0 = 1, #arg_47_0.SDmodel do
+		if arg_47_0.SDmodel[iter_47_0] then
+			arg_47_0.SDmodel[iter_47_0]:GetComponent("SpineAnimUI"):SetAction(arg_47_1, arg_47_2)
+		end
+	end
+end
+
+function var_0_0.loadAndPlayMusic(arg_48_0, arg_48_1, arg_48_2)
+	local var_48_0 = arg_48_0:getMusicBgm(arg_48_0.musicData)
+
+	var_0_3 = var_0_3 + 1
+
+	CriWareMgr.Inst:PlayBGM(var_48_0, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function(arg_49_0)
+		if arg_49_0 == nil then
+			warning("Missing BGM :" .. (var_48_0 or "NIL"))
 		else
 			print("加载完毕,开始播放音乐")
 
-			if uv1.countingfive_flag then
+			if arg_48_0.countingfive_flag then
 				return
 			end
 
-			uv1.criInfo = slot0
-			uv1.song_Tlength = slot0:GetLength()
+			arg_48_0.criInfo = arg_49_0
+			arg_48_0.song_Tlength = arg_49_0:GetLength()
 
-			slot0:PlaybackStop()
+			arg_49_0:PlaybackStop()
 
-			if IsUnityEditor and uv2 then
-				uv1.criInfo:SetStartTimeAndPlay(uv1.criInfo:GetLength() * uv3)
+			if IsUnityEditor and var_0_1 then
+				arg_48_0.criInfo:SetStartTimeAndPlay(arg_48_0.criInfo:GetLength() * var_0_2)
 			else
-				slot2 = slot0
-				slot1 = slot0.SetStartTimeAndPlay
-				slot3 = uv4 and uv4 >= 0 and uv4 or 0
-
-				slot1(slot2, slot3)
+				arg_49_0:SetStartTimeAndPlay(arg_48_2 and arg_48_2 >= 0 and arg_48_2 or 0)
 			end
 
-			uv5 = uv5 - 1
+			var_0_3 = var_0_3 - 1
 
-			if uv6 then
-				uv6()
+			if arg_48_1 then
+				arg_48_1()
 			end
 		end
 	end)
 end
 
-function slot0.getStampTime(slot0)
-	if slot0.aheadtime_count then
-		return (slot0.aheadtime_count - 2) * 1000
-	elseif slot0.criInfo then
-		return slot0.criInfo:GetTime()
+function var_0_0.getStampTime(arg_50_0)
+	if arg_50_0.aheadtime_count then
+		return (arg_50_0.aheadtime_count - 2) * 1000
+	elseif arg_50_0.criInfo then
+		return arg_50_0.criInfo:GetTime()
 	end
 
 	return nil
 end
 
-function slot0.pauseBgm(slot0)
-	if slot0.criInfo then
-		slot0.pauseTime = slot0.criInfo:GetTime()
+function var_0_0.pauseBgm(arg_51_0)
+	if arg_51_0.criInfo then
+		arg_51_0.pauseTime = arg_51_0.criInfo:GetTime()
 
-		slot0.criInfo:PlaybackStop()
+		arg_51_0.criInfo:PlaybackStop()
 	end
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_51_0.timer and arg_51_0.timer.running then
+		arg_51_0.timer:Stop()
 	end
 end
 
-function slot0.resumeBgm(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.resumeBgm(arg_52_0)
+	if not arg_52_0.timer.running then
+		arg_52_0.timer:Start()
 	end
 
-	slot0:loadAndPlayMusic(function ()
-	end, slot0.pauseTime)
+	arg_52_0:loadAndPlayMusic(function()
+		return
+	end, arg_52_0.pauseTime)
 end
 
-function slot0.rec_scorce(slot0)
-	slot0.score_number = 0
-	slot0.combo_link = 0
-	slot0.combo_number = 0
-	slot0.perfect_number = 0
-	slot0.good_number = 0
-	slot0.miss_number = 0
-	slot0.gotspecialcombo_flag = false
+function var_0_0.rec_scorce(arg_54_0)
+	arg_54_0.score_number = 0
+	arg_54_0.combo_link = 0
+	arg_54_0.combo_number = 0
+	arg_54_0.perfect_number = 0
+	arg_54_0.good_number = 0
+	arg_54_0.miss_number = 0
+	arg_54_0.gotspecialcombo_flag = false
 
-	setActive(slot0.top:Find("scoreContent/B/bl"), false)
-	setActive(slot0.top:Find("scoreContent/A/al"), false)
-	setActive(slot0.top:Find("scoreContent/S/sl"), false)
-	setText(slot0.gameScoreTf, 0)
-	setText(slot0.game_content:Find("combo_n/" .. slot0.musicData.content_type), 0)
+	setActive(arg_54_0.top:Find("scoreContent/B/bl"), false)
+	setActive(arg_54_0.top:Find("scoreContent/A/al"), false)
+	setActive(arg_54_0.top:Find("scoreContent/S/sl"), false)
+	setText(arg_54_0.gameScoreTf, 0)
+	setText(arg_54_0.game_content:Find("combo_n/" .. arg_54_0.musicData.content_type), 0)
 end
 
-function slot0.effect_play(slot0, slot1, slot2)
-	if slot1 == "nothing" then
-		setActive(slot0.yinyuePefectLoop, false)
-		setActive(slot0.top:Find("scoreContent/S/liubianxing"), false)
-		setActive(slot0.yinyueGood, false)
-		setActive(slot0.yinyuePerfect, false)
-		setActive(slot0.game_content:Find("MusicStar"), false)
-		SetActive(slot0.yinyueComboeffect, false)
-	elseif slot1 == "prepare" then
-		-- Nothing
-	elseif slot1 == "good" then
-		setActive(slot0.yinyueGood, false)
-		setActive(slot0.yinyueGood, true)
-	elseif slot1 == "perfect" then
-		setActive(slot0.yinyuePerfect, false)
-		setActive(slot0.yinyuePerfect, true)
-	elseif slot1 == "perfect_loop02" then
-		if slot2 then
-			if not isActive(slot0.yinyuePefectLoop) then
-				setActive(slot0.yinyuePefectLoop, true)
+function var_0_0.effect_play(arg_55_0, arg_55_1, arg_55_2)
+	if arg_55_1 == "nothing" then
+		setActive(arg_55_0.yinyuePefectLoop, false)
+		setActive(arg_55_0.top:Find("scoreContent/S/liubianxing"), false)
+		setActive(arg_55_0.yinyueGood, false)
+		setActive(arg_55_0.yinyuePerfect, false)
+		setActive(arg_55_0.game_content:Find("MusicStar"), false)
+		SetActive(arg_55_0.yinyueComboeffect, false)
+	elseif arg_55_1 == "prepare" then
+		-- block empty
+	elseif arg_55_1 == "good" then
+		setActive(arg_55_0.yinyueGood, false)
+		setActive(arg_55_0.yinyueGood, true)
+	elseif arg_55_1 == "perfect" then
+		setActive(arg_55_0.yinyuePerfect, false)
+		setActive(arg_55_0.yinyuePerfect, true)
+	elseif arg_55_1 == "perfect_loop02" then
+		if arg_55_2 then
+			if not isActive(arg_55_0.yinyuePefectLoop) then
+				setActive(arg_55_0.yinyuePefectLoop, true)
 			end
 		else
-			setActive(slot0.yinyuePefectLoop, false)
+			setActive(arg_55_0.yinyuePefectLoop, false)
 		end
-	elseif slot1 == "S" then
-		if slot2 then
-			setActive(findTF(slot0.scoreSliderTf, "img/mask/yinyue20_S"), true)
+	elseif arg_55_1 == "S" then
+		if arg_55_2 then
+			setActive(findTF(arg_55_0.scoreSliderTf, "img/mask/yinyue20_S"), true)
 		else
-			setActive(findTF(slot0.scoreSliderTf, "img/mask/yinyue20_S"), false)
+			setActive(findTF(arg_55_0.scoreSliderTf, "img/mask/yinyue20_S"), false)
 		end
 	end
 end
 
-function slot0.scoresliderAcombo_update(slot0)
-	slot2 = 0
+function var_0_0.scoresliderAcombo_update(arg_56_0)
+	local var_56_0 = arg_56_0.score_number
+	local var_56_1 = 0
 
-	setText(slot0.gameScoreTf, slot0.score_number)
+	setText(arg_56_0.gameScoreTf, arg_56_0.score_number)
 
-	slot3 = slot0.game_music
-	slot2 = slot0.score_number < slot0.score_blist[slot0.game_dgree] and slot1 / slot0.score_blist[slot4] * 0.53 or slot0.score_blist[slot4] <= slot1 and slot1 < slot0.score_alist[slot4] and 0.53 + (slot1 - slot0.score_blist[slot4]) / (slot0.score_alist[slot4] - slot0.score_blist[slot4]) * 0.19 or slot0.score_alist[slot4] <= slot1 and slot1 < slot0.score_slist[slot4] and 0.72 + (slot1 - slot0.score_alist[slot4]) / (slot0.score_slist[slot4] - slot0.score_alist[slot4]) * 0.155 or 0.885 + (slot1 - slot0.score_slist[slot4]) / (slot0.score_sslist[slot4] - slot0.score_slist[slot4]) * 0.115
+	local var_56_2 = arg_56_0.game_music
+	local var_56_3 = arg_56_0.game_dgree
 
-	setSlider(slot0.scoreSliderTf, 0, 1, slot2)
+	if var_56_0 < arg_56_0.score_blist[var_56_3] then
+		var_56_1 = var_56_0 / arg_56_0.score_blist[var_56_3] * 0.53
+	elseif var_56_0 >= arg_56_0.score_blist[var_56_3] and var_56_0 < arg_56_0.score_alist[var_56_3] then
+		var_56_1 = 0.53 + (var_56_0 - arg_56_0.score_blist[var_56_3]) / (arg_56_0.score_alist[var_56_3] - arg_56_0.score_blist[var_56_3]) * 0.19
+	elseif var_56_0 >= arg_56_0.score_alist[var_56_3] and var_56_0 < arg_56_0.score_slist[var_56_3] then
+		var_56_1 = 0.72 + (var_56_0 - arg_56_0.score_alist[var_56_3]) / (arg_56_0.score_slist[var_56_3] - arg_56_0.score_alist[var_56_3]) * 0.155
+	else
+		var_56_1 = 0.885 + (var_56_0 - arg_56_0.score_slist[var_56_3]) / (arg_56_0.score_sslist[var_56_3] - arg_56_0.score_slist[var_56_3]) * 0.115
+	end
 
-	if slot2 < 0.53 then
-		setActive(slot0.top:Find("scoreContent/B/bl"), false)
-		setActive(slot0.top:Find("scoreContent/A/al"), false)
-		setActive(slot0.top:Find("scoreContent/S/sl"), false)
-	elseif slot2 >= 0.53 then
-		setActive(slot0.top:Find("scoreContent/B/bl"), true)
+	setSlider(arg_56_0.scoreSliderTf, 0, 1, var_56_1)
 
-		if slot2 >= 0.72 then
-			setActive(slot0.top:Find("scoreContent/A/al"), true)
+	if var_56_1 < 0.53 then
+		setActive(arg_56_0.top:Find("scoreContent/B/bl"), false)
+		setActive(arg_56_0.top:Find("scoreContent/A/al"), false)
+		setActive(arg_56_0.top:Find("scoreContent/S/sl"), false)
+	elseif var_56_1 >= 0.53 then
+		setActive(arg_56_0.top:Find("scoreContent/B/bl"), true)
 
-			if slot2 >= 0.885 then
-				if not slot0.nowS_flag then
-					slot0.nowS_flag = true
+		if var_56_1 >= 0.72 then
+			setActive(arg_56_0.top:Find("scoreContent/A/al"), true)
 
-					slot0:effect_play("S", true)
+			if var_56_1 >= 0.885 then
+				if not arg_56_0.nowS_flag then
+					arg_56_0.nowS_flag = true
+
+					arg_56_0:effect_play("S", true)
 				end
 
-				setActive(slot0.top:Find("scoreContent/S/sl"), true)
+				setActive(arg_56_0.top:Find("scoreContent/S/sl"), true)
 			end
 		end
 	end
 
-	setText(slot0.game_content:Find("combo_n/" .. slot0.musicData.content_type), slot0.combo_link)
+	setText(arg_56_0.game_content:Find("combo_n/" .. arg_56_0.musicData.content_type), arg_56_0.combo_link)
 end
 
-function slot0.score_update(slot0, slot1)
-	slot2 = slot0.game_content:Find("evaluate")
+function var_0_0.score_update(arg_57_0, arg_57_1)
+	local var_57_0 = arg_57_0.game_content:Find("evaluate")
 
-	for slot6 = 1, 3 do
-		setActive(slot2:GetChild(slot6 - 1), false)
+	for iter_57_0 = 1, 3 do
+		setActive(var_57_0:GetChild(iter_57_0 - 1), false)
 	end
 
-	setActive(slot2:GetChild(slot1), true)
+	setActive(var_57_0:GetChild(arg_57_1), true)
 
-	if slot1 == 0 then
-		slot0.combo_link = 0
-		slot0.score_number = slot0.score_number + slot0.score_miss
-		slot0.miss_number = slot0.miss_number + 1
+	if arg_57_1 == 0 then
+		arg_57_0.combo_link = 0
+		arg_57_0.score_number = arg_57_0.score_number + arg_57_0.score_miss
+		arg_57_0.miss_number = arg_57_0.miss_number + 1
 
-		setActive(slot0.game_content:Find("combo"), false)
-		setActive(slot0.game_content:Find("combo_n"), false)
+		setActive(arg_57_0.game_content:Find("combo"), false)
+		setActive(arg_57_0.game_content:Find("combo_n"), false)
 	else
-		slot0.combo_link = slot0.combo_link + 1
-		slot0.combo_number = slot0.combo_link < slot0.combo_number and slot0.combo_number or slot0.combo_link
+		arg_57_0.combo_link = arg_57_0.combo_link + 1
+		arg_57_0.combo_number = arg_57_0.combo_number > arg_57_0.combo_link and arg_57_0.combo_number or arg_57_0.combo_link
 
-		if slot0.combo_link > 1 then
-			setActive(slot0.game_content:Find("combo"), true)
-			setActive(slot0.game_content:Find("combo_n"), true)
-			slot0.game_content:Find("combo"):GetComponent(typeof(Animation)):Play()
-			slot0.game_content:Find("combo_n"):GetComponent(typeof(Animation)):Play()
+		if arg_57_0.combo_link > 1 then
+			setActive(arg_57_0.game_content:Find("combo"), true)
+			setActive(arg_57_0.game_content:Find("combo_n"), true)
+			arg_57_0.game_content:Find("combo"):GetComponent(typeof(Animation)):Play()
+			arg_57_0.game_content:Find("combo_n"):GetComponent(typeof(Animation)):Play()
 		else
-			setActive(slot0.game_content:Find("combo"), false)
-			setActive(slot0.game_content:Find("combo_n"), false)
+			setActive(arg_57_0.game_content:Find("combo"), false)
+			setActive(arg_57_0.game_content:Find("combo_n"), false)
 		end
 
 		pg.CriMgr.GetInstance():PlaySE_V3("ui-maoudamashii")
 	end
 
-	slot3 = 0
+	local var_57_1 = 0
 
-	for slot7 = 1, #slot0.combo_interval do
-		if slot0.combo_interval[slot7] < slot0.combo_link then
-			slot3 = slot3 + 1
+	for iter_57_1 = 1, #arg_57_0.combo_interval do
+		if arg_57_0.combo_link > arg_57_0.combo_interval[iter_57_1] then
+			var_57_1 = var_57_1 + 1
 		else
 			break
 		end
 	end
 
-	if slot1 == 1 then
-		slot0.score_number = slot0.score_number + slot0.score_good + slot3 * slot0.score_combo
-		slot0.good_number = slot0.good_number + 1
+	if arg_57_1 == 1 then
+		arg_57_0.score_number = arg_57_0.score_number + arg_57_0.score_good + var_57_1 * arg_57_0.score_combo
+		arg_57_0.good_number = arg_57_0.good_number + 1
 
-		slot0:effect_play("good")
-	elseif slot1 == 2 then
-		slot0.score_number = slot0.score_number + slot0.score_perfect + slot3 * slot0.score_combo
-		slot0.perfect_number = slot0.perfect_number + 1
+		arg_57_0:effect_play("good")
+	elseif arg_57_1 == 2 then
+		arg_57_0.score_number = arg_57_0.score_number + arg_57_0.score_perfect + var_57_1 * arg_57_0.score_combo
+		arg_57_0.perfect_number = arg_57_0.perfect_number + 1
 
-		slot0:effect_play("perfect")
+		arg_57_0:effect_play("perfect")
 	end
 
-	if slot0.gameNoteLeft:loopTime() or slot0.gameNoteRight:loopTime() then
-		slot0:effect_play("perfect_loop02", true)
+	if arg_57_0.gameNoteLeft:loopTime() or arg_57_0.gameNoteRight:loopTime() then
+		arg_57_0:effect_play("perfect_loop02", true)
 	else
-		slot0:effect_play("perfect_loop02", false)
+		arg_57_0:effect_play("perfect_loop02", false)
 	end
 
-	slot4 = slot0.yinyueComboeffect
+	local var_57_2 = arg_57_0.yinyueComboeffect
 
-	if slot0.game_dgree == 2 and slot0.combo_link > 50 or slot0.game_dgree == 1 and slot0.combo_link > 20 then
-		if not isActive(slot4) then
-			SetActive(slot4, true)
-			setActive(slot0.game_content:Find("MusicStar"), true)
+	if arg_57_0.game_dgree == 2 and arg_57_0.combo_link > 50 or arg_57_0.game_dgree == 1 and arg_57_0.combo_link > 20 then
+		if not isActive(var_57_2) then
+			SetActive(var_57_2, true)
+			setActive(arg_57_0.game_content:Find("MusicStar"), true)
 		end
 	else
-		SetActive(slot4, false)
-		setActive(slot0.game_content:Find("MusicStar"), false)
+		SetActive(var_57_2, false)
+		setActive(arg_57_0.game_content:Find("MusicStar"), false)
 	end
 end
 
-function slot0.count_five(slot0, slot1)
-	if slot0.countingfive_flag then
+function var_0_0.count_five(arg_58_0, arg_58_1)
+	if arg_58_0.countingfive_flag then
 		return
 	end
 
-	slot0.countingfive_flag = true
+	arg_58_0.countingfive_flag = true
 
-	setActive(slot0.countTf, true)
-	setActive(slot0.countContent, true)
-	slot0:setActionSDmodel("stand2")
+	setActive(arg_58_0.countTf, true)
+	setActive(arg_58_0.countContent, true)
+	arg_58_0:setActionSDmodel("stand2")
 
-	slot2 = uv0
-	slot3 = findTF(slot0.countTf, "img")
+	local var_58_0 = var_0_5
+	local var_58_1 = findTF(arg_58_0.countTf, "img")
+	local var_58_2 = findTF(arg_58_0.countTf, "bg")
 
-	setActive(findTF(slot0.countTf, "bg"), false)
-	(function (slot0)
-		for slot4 = 1, uv0.childCount do
-			setActive(uv0:GetChild(slot4 - 1), slot4 == slot0)
+	local function var_58_3(arg_59_0)
+		for iter_59_0 = 1, var_58_1.childCount do
+			local var_59_0 = var_58_1:GetChild(iter_59_0 - 1)
+			local var_59_1 = iter_59_0 == arg_59_0
+
+			setActive(var_59_0, var_59_1)
 		end
-	end)(0)
-	setActive(findTF(slot0.countTf, "effectContent"), false)
-	setActive(findTF(slot0.countTf, "ready"), false)
+	end
 
-	slot0.count_timer = Timer.New(function ()
-		if uv0.criInfo and uv0.criInfo:GetTime() > 0 then
-			uv0:pauseBgm()
+	setActive(var_58_2, false)
+	var_58_3(0)
+
+	local var_58_4 = findTF(arg_58_0.countTf, "ready")
+	local var_58_5 = findTF(arg_58_0.countTf, "effectContent")
+
+	setActive(var_58_5, false)
+	setActive(var_58_4, false)
+
+	arg_58_0.count_timer = Timer.New(function()
+		if arg_58_0.criInfo and arg_58_0.criInfo:GetTime() > 0 then
+			arg_58_0:pauseBgm()
 		end
 
-		uv1(uv2)
+		var_58_3(var_58_0)
 
-		uv2 = uv2 - 1
+		var_58_0 = var_58_0 - 1
 
-		if uv2 < 0 then
-			uv0.count_timer:Stop()
-			setActive(uv3, false)
-			uv1(0)
-			setActive(uv4, true)
-			setActive(uv5, true)
-			LeanTween.value(go(uv0.countContent), 0, 2, 2):setOnUpdate(System.Action_float(function (slot0)
-				slot1 = nil
+		if var_58_0 < 0 then
+			arg_58_0.count_timer:Stop()
+			setActive(var_58_2, false)
+			var_58_3(0)
+			setActive(var_58_4, true)
+			setActive(var_58_5, true)
+			LeanTween.value(go(arg_58_0.countContent), 0, 2, 2):setOnUpdate(System.Action_float(function(arg_61_0)
+				local var_61_0
 
-				if slot0 <= 0.25 then
-					slot1 = slot0 * 4
-					uv0.localScale = Vector3(slot1, slot1, slot1)
+				if arg_61_0 <= 0.25 then
+					local var_61_1 = arg_61_0 * 4
 
-					setImageAlpha(uv0, slot1)
-					setLocalScale(uv1, Vector3(slot1, slot1, slot1))
-				elseif slot0 >= 1.8 then
-					slot1 = (2 - slot0) * 4
-					uv0.localScale = Vector3(slot1, slot1, slot1)
+					var_58_4.localScale = Vector3(var_61_1, var_61_1, var_61_1)
 
-					setLocalScale(uv1, Vector3(slot1, slot1, slot1))
-					setImageAlpha(uv0, slot1)
+					setImageAlpha(var_58_4, var_61_1)
+					setLocalScale(var_58_5, Vector3(var_61_1, var_61_1, var_61_1))
+				elseif arg_61_0 >= 1.8 then
+					local var_61_2 = (2 - arg_61_0) * 4
+
+					var_58_4.localScale = Vector3(var_61_2, var_61_2, var_61_2)
+
+					setLocalScale(var_58_5, Vector3(var_61_2, var_61_2, var_61_2))
+					setImageAlpha(var_58_4, var_61_2)
 				end
-			end)):setEase(LeanTweenType.linear):setOnComplete(System.Action(function ()
-				uv0.localScale = Vector3(1, 1, 1, 1)
+			end)):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
+				var_58_4.localScale = Vector3(1, 1, 1, 1)
 
-				setLocalScale(uv1, Vector3(1, 1, 1, 1))
-				setImageAlpha(uv0, 1)
-				setActive(uv0, false)
+				setLocalScale(var_58_5, Vector3(1, 1, 1, 1))
+				setImageAlpha(var_58_4, 1)
+				setActive(var_58_4, false)
 
-				uv2.countingfive_flag = false
+				arg_58_0.countingfive_flag = false
 
-				setActive(uv2.countContent, false)
-				setActive(uv2.countTf, false)
-				uv2:setActionSDmodel("idol")
-				uv3()
+				setActive(arg_58_0.countContent, false)
+				setActive(arg_58_0.countTf, false)
+				arg_58_0:setActionSDmodel("idol")
+				arg_58_1()
 			end))
 		else
-			setActive(uv3, true)
+			setActive(var_58_2, true)
 		end
 	end, 1, -1)
 
-	slot0.count_timer:Start()
+	arg_58_0.count_timer:Start()
 end
 
-function slot0.showSelevtView(slot0)
-	if slot0.isFirstgame == 0 then
-		slot0:Firstshow(slot0.firstview, function ()
+function var_0_0.showSelevtView(arg_63_0)
+	if arg_63_0.isFirstgame == 0 then
+		arg_63_0:Firstshow(arg_63_0.firstview, function()
+			return
 		end, 1)
 	end
 
-	slot1 = slot0.selectview:Find("Main")
-	slot3 = slot1:Find("DgreeList")
-	slot5 = slot1:Find("namelist")
-	slot6 = slot0.selectview:Find("top")
-	slot10 = slot0.selectview:GetComponent("Animator")
+	local var_63_0 = arg_63_0.selectview:Find("Main")
+	local var_63_1 = var_63_0:Find("Start_btn")
+	local var_63_2 = var_63_0:Find("DgreeList")
+	local var_63_3 = var_63_0:Find("MusicList")
+	local var_63_4 = var_63_0:Find("namelist")
+	local var_63_5 = arg_63_0.selectview:Find("top")
+	local var_63_6 = var_63_5:Find("Speedlist")
+	local var_63_7 = var_63_5:Find("help_btn")
+	local var_63_8 = var_63_5:Find("back")
+	local var_63_9 = arg_63_0.selectview:GetComponent("Animator")
 
-	slot0.selectview:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		setActive(uv0.selectview, false)
+	arg_63_0.selectview:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_65_0)
+		setActive(arg_63_0.selectview, false)
 	end)
-	onButton(slot0, slot6:Find("help_btn"), function ()
+	onButton(arg_63_0, var_63_7, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_music_game.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot6:Find("back"), function ()
-		if uv0 == 0 then
-			uv1:emit(uv2.ON_BACK)
+	onButton(arg_63_0, var_63_8, function()
+		if var_0_3 == 0 then
+			arg_63_0:emit(var_0_0.ON_BACK)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("Start_btn"), function ()
-		if uv0 == 0 then
-			uv1:Play("selectExitAnim")
-			uv2:clearSDModel()
-			uv2:updateMusic(uv2.selectIndex)
-			uv2:game_start()
+	onButton(arg_63_0, var_63_1, function()
+		if var_0_3 == 0 then
+			var_63_9:Play("selectExitAnim")
+			arg_63_0:clearSDModel()
+			arg_63_0:updateMusic(arg_63_0.selectIndex)
+			arg_63_0:game_start()
 
-			GetOrAddComponent(uv2.selectview, "CanvasGroup").blocksRaycasts = false
+			GetOrAddComponent(arg_63_0.selectview, "CanvasGroup").blocksRaycasts = false
 		else
-			uv2.startBtnReady = true
+			arg_63_0.startBtnReady = true
 		end
 	end, SFX_UI_CONFIRM)
-	onButton(slot0, slot3:Find("easy"), function ()
-		uv0.game_dgree = 1
+	onButton(arg_63_0, var_63_2:Find("easy"), function()
+		arg_63_0.game_dgree = 1
 
-		setActive(uv1:Find("hard/frame"), false)
-		setActive(uv1:Find("easy/frame"), true)
-		uv0:updatSelectview()
+		setActive(var_63_2:Find("hard/frame"), false)
+		setActive(var_63_2:Find("easy/frame"), true)
+		arg_63_0:updatSelectview()
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot3:Find("hard"), function ()
-		uv0.game_dgree = 2
+	onButton(arg_63_0, var_63_2:Find("hard"), function()
+		arg_63_0.game_dgree = 2
 
-		setActive(uv1:Find("easy/frame"), false)
-		setActive(uv1:Find("hard/frame"), true)
-		uv0:updatSelectview()
+		setActive(var_63_2:Find("easy/frame"), false)
+		setActive(var_63_2:Find("hard/frame"), true)
+		arg_63_0:updatSelectview()
+	end, SFX_UI_CLICK)
+	onButton(arg_63_0, var_63_6, function()
+		setActive(var_63_6:Find("x" .. arg_63_0.game_speed), false)
+
+		arg_63_0.game_speed = arg_63_0.game_speed + 1 > 4 and 1 or arg_63_0.game_speed + 1
+
+		PlayerPrefs.SetInt("musicgame_idol_speed", arg_63_0.game_speed)
+		setActive(var_63_6:Find("x" .. arg_63_0.game_speed), true)
 	end, SFX_UI_CLICK)
 
-	slot16 = SFX_UI_CLICK
+	arg_63_0.song_btn = var_63_3:Find("song")
 
-	onButton(slot0, slot6:Find("Speedlist"), function ()
-		setActive(uv0:Find("x" .. uv1.game_speed), false)
+	setActive(arg_63_0.song_btn, false)
 
-		uv1.game_speed = uv1.game_speed + 1 > 4 and 1 or uv1.game_speed + 1
+	arg_63_0.song_btns = {}
 
-		PlayerPrefs.SetInt("musicgame_idol_speed", uv1.game_speed)
-		setActive(uv0:Find("x" .. uv1.game_speed), true)
-	end, slot16)
+	local var_63_10 = arg_63_0.gameMusicIndex
 
-	slot0.song_btn = slot1:Find("MusicList"):Find("song")
+	for iter_63_0 = 1, arg_63_0.music_amount do
+		arg_63_0.song_btns[iter_63_0] = cloneTplTo(arg_63_0.song_btn, var_63_3, "music" .. iter_63_0)
 
-	setActive(slot0.song_btn, false)
+		local var_63_11 = arg_63_0.musicDatas[iter_63_0]
 
-	slot0.song_btns = {}
-	slot12 = slot0.gameMusicIndex
+		setActive(arg_63_0.song_btns[iter_63_0], true)
 
-	for slot16 = 1, slot0.music_amount do
-		slot0.song_btns[slot16] = cloneTplTo(slot0.song_btn, slot4, "music" .. slot16)
-		slot17 = slot0.musicDatas[slot16]
+		local var_63_12 = arg_63_0.song_btn.localPosition
+		local var_63_13 = math.abs(iter_63_0 - var_63_10)
+		local var_63_14 = iter_63_0 - var_63_10 < arg_63_0.music_amount_middle and var_63_13 or iter_63_0 - arg_63_0.music_amount_middle * 2
 
-		setActive(slot0.song_btns[slot16], true)
+		arg_63_0.song_btns[iter_63_0].localPosition = Vector3(var_63_12.x + var_63_14 * 1022, var_63_12.y, var_63_12.z)
 
-		slot18 = slot0.song_btn.localPosition
-		slot20 = slot16 - slot12 < slot0.music_amount_middle and math.abs(slot16 - slot12) or slot16 - slot0.music_amount_middle * 2
-		slot0.song_btns[slot16].localPosition = Vector3(slot18.x + slot20 * 1022, slot18.y, slot18.z)
-		slot18 = slot0.song_btn.localScale
-		slot0.song_btns[slot16].localScale = Vector3(slot18.x - math.abs(slot20) * 0.2, slot18.y - math.abs(slot20) * 0.2, slot18.z - math.abs(slot20) * 0.2)
-		slot21 = slot0.song_btns[slot16]:Find("song"):GetComponent(typeof(Image))
-		slot21.sprite = slot4:Find("img/" .. slot17.picture):GetComponent(typeof(Image)).sprite
-		slot0.song_btns[slot16]:Find("zhuanji3/zhuanji2_5"):GetComponent(typeof(Image)).sprite = slot4:Find("img/" .. slot17.picture .. "_1"):GetComponent(typeof(Image)).sprite
-		slot21.color = Color.New(1, 1, 1, 1 - math.abs(slot20) * 0.6)
+		local var_63_15 = arg_63_0.song_btn.localScale
 
-		onButton(slot0, slot0.song_btns[slot16], function ()
-			uv0:clickSongBtns(uv1, uv2)
+		arg_63_0.song_btns[iter_63_0].localScale = Vector3(var_63_15.x - math.abs(var_63_14) * 0.2, var_63_15.y - math.abs(var_63_14) * 0.2, var_63_15.z - math.abs(var_63_14) * 0.2)
+
+		local var_63_16 = arg_63_0.song_btns[iter_63_0]:Find("song"):GetComponent(typeof(Image))
+
+		var_63_16.sprite = var_63_3:Find("img/" .. var_63_11.picture):GetComponent(typeof(Image)).sprite
+		arg_63_0.song_btns[iter_63_0]:Find("zhuanji3/zhuanji2_5"):GetComponent(typeof(Image)).sprite = var_63_3:Find("img/" .. var_63_11.picture .. "_1"):GetComponent(typeof(Image)).sprite
+		var_63_16.color = Color.New(1, 1, 1, 1 - math.abs(var_63_14) * 0.6)
+
+		onButton(arg_63_0, arg_63_0.song_btns[iter_63_0], function()
+			arg_63_0:clickSongBtns(var_63_4, iter_63_0)
 		end, SFX_UI_CLICK)
 
-		if slot16 == slot12 then
-			slot0.song_btns[slot16]:GetComponent(typeof(Animator)):Play("plate_out")
+		if iter_63_0 == var_63_10 then
+			arg_63_0.song_btns[iter_63_0]:GetComponent(typeof(Animator)):Play("plate_out")
 
-			slot0.song_btns[slot16]:GetComponent(typeof(Button)).interactable = false
+			arg_63_0.song_btns[iter_63_0]:GetComponent(typeof(Button)).interactable = false
 		end
 	end
 
-	slot0:clickSongBtns(slot5, 1)
+	arg_63_0:clickSongBtns(var_63_4, 1)
 end
 
-function slot0.updateMusic(slot0, slot1)
-	slot0.musicData = slot0.musicDatas[slot1]
-	slot0.selectIndex = slot1
-	slot0.game_music = slot0.musicData.id
+function var_0_0.updateMusic(arg_73_0, arg_73_1)
+	arg_73_0.musicData = arg_73_0.musicDatas[arg_73_1]
+	arg_73_0.selectIndex = arg_73_1
+	arg_73_0.game_music = arg_73_0.musicData.id
 
-	if slot0.musicData.ships and #slot0.musicData.ships > 0 then
-		slot0.musicShips = slot0.musicData.ships
-		slot0.settlementPainting = slot0.musicData.settlement_painting
-		slot0.musicLight = slot0.musicData.light
-		slot0.shadowLight = slot0.musicData.shadow == 1
-		slot0.musicBg = slot0.musicData.bg
+	if arg_73_0.musicData.ships and #arg_73_0.musicData.ships > 0 then
+		arg_73_0.musicShips = arg_73_0.musicData.ships
+		arg_73_0.settlementPainting = arg_73_0.musicData.settlement_painting
+		arg_73_0.musicLight = arg_73_0.musicData.light
+		arg_73_0.shadowLight = arg_73_0.musicData.shadow == 1
+		arg_73_0.musicBg = arg_73_0.musicData.bg
 	else
-		slot2 = MusicGameConst.getRandomBand()
-		slot0.musicShips = slot2.ships
-		slot0.settlementPainting = slot2.settlement_painting
-		slot0.musicLight = slot2.light
-		slot0.shadowLight = true
-		slot0.musicBg = slot2.bg
+		local var_73_0 = MusicGameConst.getRandomBand()
+
+		arg_73_0.musicShips = var_73_0.ships
+		arg_73_0.settlementPainting = var_73_0.settlement_painting
+		arg_73_0.musicLight = var_73_0.light
+		arg_73_0.shadowLight = true
+		arg_73_0.musicBg = var_73_0.bg
 	end
 
-	slot0.noteType = slot0.musicData.note_type
-	slot0.gameMusicIndex = uv0
-	slot0.SDname = slot0.musicShips
-	slot0.score_blist = slot0.musicData.score_rank[1]
-	slot0.score_alist = slot0.musicData.score_rank[2]
-	slot0.score_slist = slot0.musicData.score_rank[3]
-	slot0.score_sslist = slot0.musicData.score_rank[4]
+	arg_73_0.noteType = arg_73_0.musicData.note_type
+	arg_73_0.gameMusicIndex = var_0_4
+	arg_73_0.SDname = arg_73_0.musicShips
+	arg_73_0.score_blist = arg_73_0.musicData.score_rank[1]
+	arg_73_0.score_alist = arg_73_0.musicData.score_rank[2]
+	arg_73_0.score_slist = arg_73_0.musicData.score_rank[3]
+	arg_73_0.score_sslist = arg_73_0.musicData.score_rank[4]
 
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/B/bl"), false)
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/B/b"), false)
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/A/al"), false)
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/A/a"), false)
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/S/sl"), false)
-	slot0:setTfChildVisible(slot0.top:Find("scoreContent/S/s"), false)
-	setActive(slot0.top:Find("scoreContent/B/b/" .. slot0.musicData.content_type), true)
-	setActive(slot0.top:Find("scoreContent/B/bl/" .. slot0.musicData.content_type), true)
-	setActive(slot0.top:Find("scoreContent/A/a/" .. slot0.musicData.content_type), true)
-	setActive(slot0.top:Find("scoreContent/A/al/" .. slot0.musicData.content_type), true)
-	setActive(slot0.top:Find("scoreContent/S/s/" .. slot0.musicData.content_type), true)
-	setActive(slot0.top:Find("scoreContent/S/sl/" .. slot0.musicData.content_type), true)
-	slot0:setTfChildVisible(slot0.game_content:Find("combo_n"), false)
-	slot0:setTfChildVisible(slot0.game_content:Find("combo"), false)
-	setActive(slot0.game_content:Find("combo_n/" .. slot0.musicData.content_type), true)
-	setActive(slot0.game_content:Find("combo/" .. slot0.musicData.content_type), true)
-	slot0:setTfChildVisible(slot0.btn_pause, false)
-	setActive(findTF(slot0.btn_pause, slot0.musicData.content_type), true)
-	slot0:setTfChildVisible(slot0.countContent, false)
-	slot0:setTfChildVisible(slot0.top:Find("score"), false)
-	setActive(slot0.top:Find("score/" .. tostring(slot0.musicData.content_type)), true)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/B/bl"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/B/b"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/A/al"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/A/a"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/S/sl"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("scoreContent/S/s"), false)
+	setActive(arg_73_0.top:Find("scoreContent/B/b/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.top:Find("scoreContent/B/bl/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.top:Find("scoreContent/A/a/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.top:Find("scoreContent/A/al/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.top:Find("scoreContent/S/s/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.top:Find("scoreContent/S/sl/" .. arg_73_0.musicData.content_type), true)
+	arg_73_0:setTfChildVisible(arg_73_0.game_content:Find("combo_n"), false)
+	arg_73_0:setTfChildVisible(arg_73_0.game_content:Find("combo"), false)
+	setActive(arg_73_0.game_content:Find("combo_n/" .. arg_73_0.musicData.content_type), true)
+	setActive(arg_73_0.game_content:Find("combo/" .. arg_73_0.musicData.content_type), true)
+	arg_73_0:setTfChildVisible(arg_73_0.btn_pause, false)
+	setActive(findTF(arg_73_0.btn_pause, arg_73_0.musicData.content_type), true)
+	arg_73_0:setTfChildVisible(arg_73_0.countContent, false)
+	arg_73_0:setTfChildVisible(arg_73_0.top:Find("score"), false)
+	setActive(arg_73_0.top:Find("score/" .. tostring(arg_73_0.musicData.content_type)), true)
 
-	slot0.gameScoreTf = slot0.top:Find("score/" .. tostring(slot0.musicData.content_type) .. "/text")
-	slot0.countTf = findTF(slot0.countContent, slot0.musicData.content_type)
+	arg_73_0.gameScoreTf = arg_73_0.top:Find("score/" .. tostring(arg_73_0.musicData.content_type) .. "/text")
+	arg_73_0.countTf = findTF(arg_73_0.countContent, arg_73_0.musicData.content_type)
 
-	slot0:updateEffectTf()
+	arg_73_0:updateEffectTf()
 end
 
-function slot0.setTfChildVisible(slot0, slot1, slot2)
-	for slot6 = 1, slot1.childCount do
-		setActive(slot1:GetChild(slot6 - 1), false)
+function var_0_0.setTfChildVisible(arg_74_0, arg_74_1, arg_74_2)
+	for iter_74_0 = 1, arg_74_1.childCount do
+		local var_74_0 = arg_74_1:GetChild(iter_74_0 - 1)
+
+		setActive(var_74_0, false)
 	end
 end
 
-function slot0.updateEffectTf(slot0)
-	for slot5 = 1, findTF(slot0.game_content, "effect").childCount do
-		setActive(slot1:GetChild(slot5 - 1), false)
+function var_0_0.updateEffectTf(arg_75_0)
+	local var_75_0 = findTF(arg_75_0.game_content, "effect")
+
+	for iter_75_0 = 1, var_75_0.childCount do
+		local var_75_1 = var_75_0:GetChild(iter_75_0 - 1)
+
+		setActive(var_75_1, false)
 	end
 
-	slot2 = slot0.musicData.content_type
+	local var_75_2 = arg_75_0.musicData.content_type
 
-	setActive(findTF(slot0.game_content, "effect/" .. slot2))
+	setActive(findTF(arg_75_0.game_content, "effect/" .. var_75_2))
 
-	slot0.fullComboEffect = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_Fullcombo")
-	slot0.liveClearEffect = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_LiveClear")
-	slot0.yinyueGood = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_good")
-	slot0.yinyueComboeffect = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_comboeffect")
-	slot0.yinyuePerfect = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_perfect")
-	slot0.yinyuePefectLoop = slot0.game_content:Find("effect/" .. slot2 .. "/yinyue_perfect_loop02")
+	arg_75_0.fullComboEffect = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_Fullcombo")
+	arg_75_0.liveClearEffect = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_LiveClear")
+	arg_75_0.yinyueGood = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_good")
+	arg_75_0.yinyueComboeffect = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_comboeffect")
+	arg_75_0.yinyuePerfect = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_perfect")
+	arg_75_0.yinyuePefectLoop = arg_75_0.game_content:Find("effect/" .. var_75_2 .. "/yinyue_perfect_loop02")
 end
 
-function slot0.getBeatGameMusicData(slot0, slot1)
-	for slot5 = 1, #slot0.musicDatas do
-		if slot0.musicDatas[slot5].id == slot1 then
-			return slot0.musicDatas[slot5]
+function var_0_0.getBeatGameMusicData(arg_76_0, arg_76_1)
+	for iter_76_0 = 1, #arg_76_0.musicDatas do
+		if arg_76_0.musicDatas[iter_76_0].id == arg_76_1 then
+			return arg_76_0.musicDatas[iter_76_0]
 		end
 	end
 
 	return nil
 end
 
-function slot0.clickSongBtns(slot0, slot1, slot2)
-	if uv0 > 0 then
+function var_0_0.clickSongBtns(arg_77_0, arg_77_1, arg_77_2)
+	if var_0_3 > 0 then
 		return
 	end
 
-	setActive(slot1:Find("song" .. slot0.musicData.picture), false)
-	slot0:MyGetRuntimeData()
-	slot0:clearSDModel()
-	slot0:updateMusic(slot2)
-	slot0:loadAndPlayMusic()
-	slot0:updatSelectview()
-	slot0:changeLocalpos(slot2)
-	setActive(slot1:Find("song" .. slot0.musicData.picture), true)
+	setActive(arg_77_1:Find("song" .. arg_77_0.musicData.picture), false)
+	arg_77_0:MyGetRuntimeData()
+	arg_77_0:clearSDModel()
+	arg_77_0:updateMusic(arg_77_2)
+	arg_77_0:loadAndPlayMusic()
+	arg_77_0:updatSelectview()
+	arg_77_0:changeLocalpos(arg_77_2)
+	setActive(arg_77_1:Find("song" .. arg_77_0.musicData.picture), true)
 end
 
-function slot0.changeLocalpos(slot0, slot1)
-	slot3 = slot0.music_amount_middle - slot1
-	slot4 = 0.5
-	slot5 = {}
+function var_0_0.changeLocalpos(arg_78_0, arg_78_1)
+	local var_78_0 = arg_78_0.music_amount_middle
+	local var_78_1 = var_78_0 - arg_78_1
+	local var_78_2 = 0.5
+	local var_78_3 = {}
 
-	for slot9 = 1, slot0.music_amount do
-		slot5[slot9] = slot0.song_btns[slot9].localPosition
+	for iter_78_0 = 1, arg_78_0.music_amount do
+		var_78_3[iter_78_0] = arg_78_0.song_btns[iter_78_0].localPosition
 	end
 
-	slot6 = {}
+	local var_78_4 = {}
 
-	for slot10 = 1, slot0.music_amount do
-		slot6[slot10] = slot0.song_btns[slot10].localScale
+	for iter_78_1 = 1, arg_78_0.music_amount do
+		var_78_4[iter_78_1] = arg_78_0.song_btns[iter_78_1].localScale
 	end
 
-	slot0.changeLocalpos_timer = Timer.New(function ()
-		uv0 = uv0 - uv1.time_interval
-		uv1.changeLocalposTimerflag = true
+	arg_78_0.changeLocalpos_timer = Timer.New(function()
+		var_78_2 = var_78_2 - arg_78_0.time_interval
+		arg_78_0.changeLocalposTimerflag = true
 
-		for slot3 = 1, uv1.music_amount do
-			slot4 = slot3 + uv2
+		for iter_79_0 = 1, arg_78_0.music_amount do
+			local var_79_0 = iter_79_0 + var_78_1
 
-			if uv1.music_amount < slot3 + uv2 then
-				slot4 = slot3 + uv2 - uv1.music_amount
+			if iter_79_0 + var_78_1 > arg_78_0.music_amount then
+				var_79_0 = iter_79_0 + var_78_1 - arg_78_0.music_amount
 			end
 
-			if slot3 + uv2 < 1 then
-				slot4 = slot3 + uv2 + uv1.music_amount
+			if iter_79_0 + var_78_1 < 1 then
+				var_79_0 = iter_79_0 + var_78_1 + arg_78_0.music_amount
 			end
 
-			if uv0 <= 0 then
-				if slot4 == uv3 then
-					uv1.song_btns[slot3]:GetComponent(typeof(Animator)):Play("plate_out")
+			if var_78_2 <= 0 then
+				if var_79_0 == var_78_0 then
+					arg_78_0.song_btns[iter_79_0]:GetComponent(typeof(Animator)):Play("plate_out")
 				else
-					uv1.song_btns[slot3]:GetComponent(typeof(Animator)):Play("plate_static")
+					arg_78_0.song_btns[iter_79_0]:GetComponent(typeof(Animator)):Play("plate_static")
 
-					uv1.song_btns[slot3]:GetComponent(typeof(Button)).interactable = true
+					arg_78_0.song_btns[iter_79_0]:GetComponent(typeof(Button)).interactable = true
 				end
 			else
-				uv1.song_btns[slot3]:GetComponent(typeof(Animator)):Play("plate_static")
+				arg_78_0.song_btns[iter_79_0]:GetComponent(typeof(Animator)):Play("plate_static")
 
-				uv1.song_btns[slot3]:GetComponent(typeof(Button)).interactable = false
+				arg_78_0.song_btns[iter_79_0]:GetComponent(typeof(Button)).interactable = false
 			end
 
-			slot6 = math.abs(slot4 - uv3)
-			uv1.song_btns[slot3].localPosition = Vector3((uv1.song_btn.localPosition.x + (slot4 - uv3 > 0 and 1 or -1) * slot6 * 1022) * (1 - uv0 * 2) + uv4[slot3].x * uv0 * 2, slot5.y, slot5.z)
-			slot5 = uv1.song_btns[slot3].localScale
-			slot7 = (1 - slot6 * 0.2) * (1 - uv0 * 2) + uv5[slot3].x * uv0 * 2
-			uv1.song_btns[slot3].localScale = Vector3(slot7, slot7, slot7)
-			slot8 = uv1.song_btns[slot3]:Find("song"):GetComponent(typeof(Image))
-			slot7 = (1 - slot6 * 0.6) * (1 - uv0 * 2) + slot8.color.a * uv0 * 2
-			slot8.color = Color.New(1, 1, 1, 1 - slot6 * 0.6)
+			local var_79_1 = arg_78_0.song_btn.localPosition
+			local var_79_2 = math.abs(var_79_0 - var_78_0)
+			local var_79_3 = (var_79_1.x + (var_79_0 - var_78_0 > 0 and 1 or -1) * var_79_2 * 1022) * (1 - var_78_2 * 2) + var_78_3[iter_79_0].x * var_78_2 * 2
+
+			arg_78_0.song_btns[iter_79_0].localPosition = Vector3(var_79_3, var_79_1.y, var_79_1.z)
+
+			local var_79_4 = arg_78_0.song_btns[iter_79_0].localScale
+			local var_79_5 = (1 - var_79_2 * 0.2) * (1 - var_78_2 * 2) + var_78_4[iter_79_0].x * var_78_2 * 2
+
+			arg_78_0.song_btns[iter_79_0].localScale = Vector3(var_79_5, var_79_5, var_79_5)
+
+			local var_79_6 = arg_78_0.song_btns[iter_79_0]:Find("song"):GetComponent(typeof(Image))
+			local var_79_7 = (1 - var_79_2 * 0.6) * (1 - var_78_2 * 2) + var_79_6.color.a * var_78_2 * 2
+
+			var_79_6.color = Color.New(1, 1, 1, 1 - var_79_2 * 0.6)
 		end
 
-		if uv0 <= 0 then
-			uv1.changeLocalposTimerflag = false
+		if var_78_2 <= 0 then
+			arg_78_0.changeLocalposTimerflag = false
 
-			uv1.changeLocalpos_timer:Stop()
+			arg_78_0.changeLocalpos_timer:Stop()
 		end
-	end, slot0.time_interval, -1)
+	end, arg_78_0.time_interval, -1)
 
-	slot0.changeLocalpos_timer:Start()
+	arg_78_0.changeLocalpos_timer:Start()
 end
 
-function slot0.addRingDragListenter(slot0)
-	slot1 = GetOrAddComponent(slot0.selectview, "EventTriggerListener")
-	slot2 = nil
-	slot3 = 0
-	slot4 = nil
+function var_0_0.addRingDragListenter(arg_80_0)
+	local var_80_0 = GetOrAddComponent(arg_80_0.selectview, "EventTriggerListener")
+	local var_80_1
+	local var_80_2 = 0
+	local var_80_3
 
-	slot1:AddBeginDragFunc(function ()
-		uv0 = 0
-		uv1 = nil
+	var_80_0:AddBeginDragFunc(function()
+		var_80_2 = 0
+		var_80_1 = nil
 	end)
-	slot1:AddDragFunc(function (slot0, slot1)
-		if not uv0.inPaintingView then
-			slot2 = slot1.position
+	var_80_0:AddDragFunc(function(arg_82_0, arg_82_1)
+		if not arg_80_0.inPaintingView then
+			local var_82_0 = arg_82_1.position
 
-			if not uv1 then
-				uv1 = slot2
+			if not var_80_1 then
+				var_80_1 = var_82_0
 			end
 
-			uv2 = slot2.x - uv1.x
+			var_80_2 = var_82_0.x - var_80_1.x
 		end
 	end)
-	slot1:AddDragEndFunc(function (slot0, slot1)
-		if not uv0.inPaintingView and not uv0.changeLocalposTimerflag then
-			slot2, slot3 = uv0:getNextPreSelectId()
+	var_80_0:AddDragEndFunc(function(arg_83_0, arg_83_1)
+		if not arg_80_0.inPaintingView and not arg_80_0.changeLocalposTimerflag then
+			local var_83_0, var_83_1 = arg_80_0:getNextPreSelectId()
 
-			if uv1 < -50 then
-				triggerButton(uv0.song_btns[slot2])
-			elseif uv1 > 50 then
-				triggerButton(uv0.song_btns[slot3])
+			if var_80_2 < -50 then
+				triggerButton(arg_80_0.song_btns[var_83_0])
+			elseif var_80_2 > 50 then
+				triggerButton(arg_80_0.song_btns[var_83_1])
 			end
 		end
 	end)
 end
 
-function slot0.getNextPreSelectId(slot0)
-	slot1, slot2 = nil
-	slot3 = slot0.game_music + 1
+function var_0_0.getNextPreSelectId(arg_84_0)
+	local var_84_0
+	local var_84_1
+	local var_84_2 = arg_84_0.game_music + 1
+	local var_84_3 = arg_84_0.game_music - 1
 
-	if slot0.game_music - 1 <= 0 then
-		slot4 = #slot0.musicDatas
+	if var_84_3 <= 0 then
+		var_84_3 = #arg_84_0.musicDatas
 	end
 
-	if slot3 > #slot0.musicDatas then
-		slot3 = 1
+	if var_84_2 > #arg_84_0.musicDatas then
+		var_84_2 = 1
 	end
 
-	for slot8, slot9 in ipairs(slot0.musicDatas) do
-		if slot0.musicDatas[slot8].id == slot3 then
-			slot1 = slot8
+	for iter_84_0, iter_84_1 in ipairs(arg_84_0.musicDatas) do
+		if arg_84_0.musicDatas[iter_84_0].id == var_84_2 then
+			var_84_0 = iter_84_0
 		end
 
-		if slot0.musicDatas[slot8].id == slot4 then
-			slot2 = slot8
+		if arg_84_0.musicDatas[iter_84_0].id == var_84_3 then
+			var_84_1 = iter_84_0
 		end
 	end
 
-	return slot1, slot2
+	return var_84_0, var_84_1
 end
 
-function slot0.Firstshow(slot0, slot1, slot2, slot3)
-	slot0.count = 0
+function var_0_0.Firstshow(arg_85_0, arg_85_1, arg_85_2, arg_85_3)
+	arg_85_0.count = 0
 
-	setActive(slot1, true)
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help1", function (slot0)
-		GetComponent(findTF(uv0.firstview, "num/img1"), typeof(Image)).sprite = slot0
+	setActive(arg_85_1, true)
+	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help1", function(arg_86_0)
+		GetComponent(findTF(arg_85_0.firstview, "num/img1"), typeof(Image)).sprite = arg_86_0
+	end)
+	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help2", function(arg_87_0)
+		GetComponent(findTF(arg_85_0.firstview, "num/img2"), typeof(Image)).sprite = arg_87_0
 	end)
 
-	function slot7(slot0)
-		GetComponent(findTF(uv0.firstview, "num/img2"), typeof(Image)).sprite = slot0
+	for iter_85_0 = 1, 2 do
+		local var_85_0 = findTF(arg_85_1, "num/img" .. iter_85_0)
+
+		setActive(var_85_0, iter_85_0 == arg_85_3 and true or false)
 	end
 
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "help2", slot7)
-
-	for slot7 = 1, 2 do
-		setActive(findTF(slot1, "num/img" .. slot7), slot7 == slot3 and true or false)
-	end
-
-	if slot0.firstview_timer then
-		if slot0.firstview_timer.running then
-			slot0.firstview_timer:Stop()
+	if arg_85_0.firstview_timer then
+		if arg_85_0.firstview_timer.running then
+			arg_85_0.firstview_timer:Stop()
 		end
 
-		slot0.firstview_timer = nil
+		arg_85_0.firstview_timer = nil
 	end
 
-	slot0.firstview_timerRunflag = true
-	slot0.firstview_timer = Timer.New(function ()
-		uv0.count = uv0.count + 1
+	arg_85_0.firstview_timerRunflag = true
+	arg_85_0.firstview_timer = Timer.New(function()
+		arg_85_0.count = arg_85_0.count + 1
 
-		if uv0.count > 3 then
-			onButton(uv0, uv0.firstview, function ()
-				if uv0 then
-					uv0()
+		if arg_85_0.count > 3 then
+			onButton(arg_85_0, arg_85_0.firstview, function()
+				if arg_85_2 then
+					arg_85_2()
 				end
 
-				uv1.firstview_timer:Stop()
-				setActive(uv2, false)
+				arg_85_0.firstview_timer:Stop()
+				setActive(arg_85_1, false)
 
-				uv1.firstview_timerRunflag = false
+				arg_85_0.firstview_timerRunflag = false
 
-				removeOnButton(uv1.firstview)
+				removeOnButton(arg_85_0.firstview)
 			end)
 		end
 	end, 1, -1)
 
-	slot0.firstview_timer:Start()
+	arg_85_0.firstview_timer:Start()
 end
 
-function slot0.updatSelectview(slot0)
-	if not slot0.song_btns or #slot0.song_btns <= 0 or not slot0.selectview then
+function var_0_0.updatSelectview(arg_90_0)
+	if not arg_90_0.song_btns or #arg_90_0.song_btns <= 0 or not arg_90_0.selectview then
 		return
 	end
 
-	slot4 = "top/Speedlist/x" .. slot0.game_speed
+	setActive(arg_90_0.selectview:Find("top/Speedlist/x" .. arg_90_0.game_speed), true)
 
-	setActive(slot0.selectview:Find(slot4), true)
+	for iter_90_0 = 1, arg_90_0.music_amount do
+		local var_90_0 = arg_90_0.musicDatas[iter_90_0].id
 
-	for slot4 = 1, slot0.music_amount do
-		slot5 = slot0.musicDatas[slot4].id
-
-		setActive(slot0.song_btns[slot5]:Find("song/best"), false)
-		slot0:setSelectview_pj("e", slot5)
+		setActive(arg_90_0.song_btns[var_90_0]:Find("song/best"), false)
+		arg_90_0:setSelectview_pj("e", var_90_0)
 	end
 
-	slot2 = slot0.game_music
-	slot3 = slot0.bestScorelist[slot2 + (slot0.game_dgree - 1) * slot0.music_amount]
+	local var_90_1 = arg_90_0.game_dgree
+	local var_90_2 = arg_90_0.game_music
+	local var_90_3 = arg_90_0.bestScorelist[var_90_2 + (var_90_1 - 1) * arg_90_0.music_amount]
 
-	if slot0.song_btns[slot2] and slot3 > 0 then
-		setActive(slot0.song_btns[slot2]:Find("song/best"), true)
-		setText(slot0.song_btns[slot2]:Find("song/best/score"), slot3)
-		slot0:setSelectview_pj("e", slot2)
+	if arg_90_0.song_btns[var_90_2] and var_90_3 > 0 then
+		setActive(arg_90_0.song_btns[var_90_2]:Find("song/best"), true)
 
-		if slot3 < slot0.score_blist[slot1] then
-			slot0:setSelectview_pj("c", slot2)
-		elseif slot0.score_blist[slot1] <= slot3 and slot3 < slot0.score_alist[slot1] then
-			slot0:setSelectview_pj("b", slot2)
-		elseif slot0.score_alist[slot1] <= slot3 and slot3 < slot0.score_slist[slot1] then
-			slot0:setSelectview_pj("a", slot2)
+		local var_90_4 = arg_90_0.song_btns[var_90_2]:Find("song/best/score")
+
+		setText(var_90_4, var_90_3)
+		arg_90_0:setSelectview_pj("e", var_90_2)
+
+		if var_90_3 < arg_90_0.score_blist[var_90_1] then
+			arg_90_0:setSelectview_pj("c", var_90_2)
+		elseif var_90_3 >= arg_90_0.score_blist[var_90_1] and var_90_3 < arg_90_0.score_alist[var_90_1] then
+			arg_90_0:setSelectview_pj("b", var_90_2)
+		elseif var_90_3 >= arg_90_0.score_alist[var_90_1] and var_90_3 < arg_90_0.score_slist[var_90_1] then
+			arg_90_0:setSelectview_pj("a", var_90_2)
 		else
-			slot0:setSelectview_pj("s", slot2)
+			arg_90_0:setSelectview_pj("s", var_90_2)
 		end
 	end
 end
 
-function slot0.setSelectview_pj(slot0, slot1, slot2)
-	if slot1 == "e" then
-		setActive(slot0.song_btns[slot2]:Find("song/c"), false)
-		setActive(slot0.song_btns[slot2]:Find("song/b"), false)
-		setActive(slot0.song_btns[slot2]:Find("song/a"), false)
-		setActive(slot0.song_btns[slot2]:Find("song/s"), false)
-	elseif slot1 == "c" then
-		setActive(slot0.song_btns[slot2]:Find("song/c"), true)
-	elseif slot1 == "b" then
-		setActive(slot0.song_btns[slot2]:Find("song/b"), true)
-	elseif slot1 == "a" then
-		setActive(slot0.song_btns[slot2]:Find("song/a"), true)
-	elseif slot1 == "s" then
-		setActive(slot0.song_btns[slot2]:Find("song/s"), true)
+function var_0_0.setSelectview_pj(arg_91_0, arg_91_1, arg_91_2)
+	if arg_91_1 == "e" then
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/c"), false)
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/b"), false)
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/a"), false)
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/s"), false)
+	elseif arg_91_1 == "c" then
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/c"), true)
+	elseif arg_91_1 == "b" then
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/b"), true)
+	elseif arg_91_1 == "a" then
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/a"), true)
+	elseif arg_91_1 == "s" then
+		setActive(arg_91_0.song_btns[arg_91_2]:Find("song/s"), true)
 	end
 end
 
-function slot0.updateScoreUIContent(slot0)
-	for slot5 = 1, findTF(slot0.scoreview, "ui").childCount do
-		setActive(slot1:GetChild(slot5 - 1), false)
+function var_0_0.updateScoreUIContent(arg_92_0)
+	local var_92_0 = findTF(arg_92_0.scoreview, "ui")
+
+	for iter_92_0 = 1, var_92_0.childCount do
+		local var_92_1 = var_92_0:GetChild(iter_92_0 - 1)
+
+		setActive(var_92_1, false)
 	end
 
-	if slot0.musicData.settlement_type and slot0.musicData.settlement_type ~= "" then
-		slot0.scoreUIContent = findTF(slot0.scoreview, "ui/" .. slot0.musicData.settlement_type)
+	if arg_92_0.musicData.settlement_type and arg_92_0.musicData.settlement_type ~= "" then
+		arg_92_0.scoreUIContent = findTF(arg_92_0.scoreview, "ui/" .. arg_92_0.musicData.settlement_type)
 	else
-		slot0.scoreUIContent = findTF(slot0.scoreview, "ui/normal")
+		arg_92_0.scoreUIContent = findTF(arg_92_0.scoreview, "ui/normal")
 	end
 
-	setActive(slot0.scoreUIContent, true)
+	setActive(arg_92_0.scoreUIContent, true)
 end
 
-function slot0.locadScoreView(slot0)
-	slot0:updateScoreUIContent()
-	slot0:effect_play("nothing")
+function var_0_0.locadScoreView(arg_93_0)
+	arg_93_0:updateScoreUIContent()
+	arg_93_0:effect_play("nothing")
 
-	slot0.game_playingflag = false
+	arg_93_0.game_playingflag = false
 
-	setActive(slot0.scoreview, true)
+	setActive(arg_93_0.scoreview, true)
 
-	slot0.scoreview_flag = true
-	slot6 = 0
+	arg_93_0.scoreview_flag = true
 
-	setImageColor(findTF(slot0.scoreview, "bg"), Color(0, slot6, 0))
-	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "scoreBg" .. slot0.musicBg, function (slot0)
-		if uv0 then
-			GetComponent(uv0, typeof(Image)).sprite = slot0
+	local var_93_0 = findTF(arg_93_0.scoreview, "bg")
 
-			setImageColor(uv0, Color(1, 1, 1))
-			setActive(uv0, true)
+	setImageColor(var_93_0, Color(0, 0, 0))
+	LoadSpriteAtlasAsync("ui/musicgameother_atlas", "scoreBg" .. arg_93_0.musicBg, function(arg_94_0)
+		if var_93_0 then
+			GetComponent(var_93_0, typeof(Image)).sprite = arg_94_0
+
+			setImageColor(var_93_0, Color(1, 1, 1))
+			setActive(var_93_0, true)
 		end
 	end)
-	setActive(slot0.game_content:Find("combo"), false)
-	setActive(slot0.game_content:Find("MusicStar"), false)
-	setActive(slot0.game_content:Find("combo_n"), false)
-	setActive(slot0.game_content, false)
-	setActive(slot0.top, false)
-	setActive(slot0._tf:Find("Spinelist"), false)
+	setActive(arg_93_0.game_content:Find("combo"), false)
+	setActive(arg_93_0.game_content:Find("MusicStar"), false)
+	setActive(arg_93_0.game_content:Find("combo_n"), false)
+	setActive(arg_93_0.game_content, false)
+	setActive(arg_93_0.top, false)
+	setActive(arg_93_0._tf:Find("Spinelist"), false)
 
-	for slot6 = 1, slot0.scoreview:Find("maskBg").childCount do
-		setActive(slot0.scoreview:Find("maskBg/bg" .. slot6), slot6 == slot0.musicBg)
+	local var_93_1 = arg_93_0.scoreview:Find("maskBg").childCount
+
+	for iter_93_0 = 1, var_93_1 do
+		setActive(arg_93_0.scoreview:Find("maskBg/bg" .. iter_93_0), iter_93_0 == arg_93_0.musicBg)
 	end
 
-	for slot7 = 1, slot0.scoreview:Find("maskBgBottom").childCount do
-		setActive(slot0.scoreview:Find("maskBgBottom/bg" .. slot7), slot7 == slot0.musicBg)
+	local var_93_2 = arg_93_0.scoreview:Find("maskBgBottom").childCount
+
+	for iter_93_1 = 1, var_93_2 do
+		local var_93_3 = iter_93_1 == arg_93_0.musicBg
+
+		setActive(arg_93_0.scoreview:Find("maskBgBottom/bg" .. iter_93_1), var_93_3)
 	end
 
-	slot4 = slot0.game_dgree
-	slot5 = slot0.game_music
+	local var_93_4 = arg_93_0.game_dgree
+	local var_93_5 = arg_93_0.game_music
 
-	if slot0.painting then
-		retPaintingPrefab(slot0.scoreview:Find("paint"), slot0.painting)
+	if arg_93_0.painting then
+		retPaintingPrefab(arg_93_0.scoreview:Find("paint"), arg_93_0.painting)
 	end
 
-	slot6 = {}
+	local var_93_6 = {}
 
-	for slot10 = 1, #slot0.settlementPainting do
-		if slot0.settlementPainting[slot10] and slot0.settlementPainting[slot10] ~= "" and slot0.settlementPainting[slot10] ~= "none" then
-			table.insert(slot6, slot0.settlementPainting[slot10])
+	for iter_93_2 = 1, #arg_93_0.settlementPainting do
+		if arg_93_0.settlementPainting[iter_93_2] and arg_93_0.settlementPainting[iter_93_2] ~= "" and arg_93_0.settlementPainting[iter_93_2] ~= "none" then
+			table.insert(var_93_6, arg_93_0.settlementPainting[iter_93_2])
 		end
 	end
 
-	slot0.painting = slot6[math.random(1, #slot6)]
+	arg_93_0.painting = var_93_6[math.random(1, #var_93_6)]
 
-	if MusicGameConst.painting_const_key[string.lower(slot0.painting)] then
-		slot8 = {}
+	setPaintingPrefabAsync(arg_93_0.scoreview:Find("paint"), arg_93_0.painting, "mainNormal")
+	setActive(arg_93_0.scoreUIContent:Find("scoreImg/square/easy"), var_93_4 == 1)
+	setActive(arg_93_0.scoreUIContent:Find("scoreImg/square/hard"), var_93_4 == 2)
+	setActive(arg_93_0.scoreUIContent:Find("scoreList/fullCombo"), arg_93_0.miss_number == 0)
+	setActive(arg_93_0.scoreUIContent:Find("scoreImg/perfect/noMiss"), arg_93_0.miss_number == 0 and arg_93_0.good_number == 0)
 
-		PaintingConst.AddPaintingNameWithFilteMap(slot8, slot7)
-		PaintingConst.PaintingDownload({
-			isShowBox = false,
-			paintingNameList = slot8,
-			finishFunc = function ()
-				setPaintingPrefabAsync(uv0.scoreview:Find("paint"), uv0.painting, "mainNormal")
-			end
-		})
-	else
-		setPaintingPrefabAsync(slot0.scoreview:Find("paint"), slot0.painting, "mainNormal")
-	end
-
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/easy"), slot4 == 1)
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/hard"), slot4 == 2)
-	setActive(slot0.scoreUIContent:Find("scoreList/fullCombo"), slot0.miss_number == 0)
-	setActive(slot0.scoreUIContent:Find("scoreImg/perfect/noMiss"), slot0.miss_number == 0 and slot0.good_number == 0)
-
-	function slot8(slot0, slot1, slot2)
-		LeanTween.value(go(uv0.scoreview), 0, slot1, 0.6):setOnUpdate(System.Action_float(function (slot0)
-			setText(uv0, math.round(slot0))
-		end)):setOnComplete(System.Action(function ()
-			uv0()
+	local function var_93_7(arg_95_0, arg_95_1, arg_95_2)
+		LeanTween.value(go(arg_93_0.scoreview), 0, arg_95_1, 0.6):setOnUpdate(System.Action_float(function(arg_96_0)
+			setText(arg_95_0, math.round(arg_96_0))
+		end)):setOnComplete(System.Action(function()
+			arg_95_2()
 		end))
 	end
 
 	seriesAsync({
-		function (slot0)
-			uv0(uv1.scoreUIContent:Find("scoreList/perfect"), uv1.perfect_number, slot0)
+		function(arg_98_0)
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreList/perfect"), arg_93_0.perfect_number, arg_98_0)
 		end,
-		function (slot0)
-			uv0(uv1.scoreUIContent:Find("scoreList/good"), uv1.good_number, slot0)
+		function(arg_99_0)
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreList/good"), arg_93_0.good_number, arg_99_0)
 		end,
-		function (slot0)
-			uv0(uv1.scoreUIContent:Find("scoreList/miss"), uv1.miss_number, slot0)
+		function(arg_100_0)
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreList/miss"), arg_93_0.miss_number, arg_100_0)
 		end,
-		function (slot0)
-			uv0(uv1.scoreUIContent:Find("scoreList/combo"), uv1.combo_number, slot0)
+		function(arg_101_0)
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreList/combo"), arg_93_0.combo_number, arg_101_0)
 		end,
-		function (slot0)
-			if not uv0.bestScorelist[uv1 + (uv2 - 1) * uv0.music_amount] or slot1 == 0 then
-				slot1 = uv0.score_number
+		function(arg_102_0)
+			local var_102_0 = arg_93_0.bestScorelist[var_93_5 + (var_93_4 - 1) * arg_93_0.music_amount]
+
+			if not var_102_0 or var_102_0 == 0 then
+				var_102_0 = arg_93_0.score_number
 			end
 
-			if uv0.bestScorelist[uv1 + (uv2 - 1) * uv0.music_amount] < uv0.score_number then
-				setActive(uv0.scoreUIContent:Find("scoreImg/square/newScore"), true)
+			if arg_93_0.score_number > arg_93_0.bestScorelist[var_93_5 + (var_93_4 - 1) * arg_93_0.music_amount] then
+				setActive(arg_93_0.scoreUIContent:Find("scoreImg/square/newScore"), true)
 
-				uv0.bestScorelist[uv1 + (uv2 - 1) * uv0.music_amount] = uv0.score_number
+				arg_93_0.bestScorelist[var_93_5 + (var_93_4 - 1) * arg_93_0.music_amount] = arg_93_0.score_number
 			else
-				setActive(uv0.scoreUIContent:Find("scoreImg/square/newScore"), false)
+				setActive(arg_93_0.scoreUIContent:Find("scoreImg/square/newScore"), false)
 			end
 
-			uv3(uv0.scoreUIContent:Find("scoreImg/square/bestscore"), slot1, slot0)
-			uv3(uv0.scoreUIContent:Find("scoreImg/square/score"), uv0.score_number, function ()
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreImg/square/bestscore"), var_102_0, arg_102_0)
+			var_93_7(arg_93_0.scoreUIContent:Find("scoreImg/square/score"), arg_93_0.score_number, function()
+				return
 			end)
-			uv0:MyStoreDataToServer()
-			uv0:MyGetRuntimeData()
+			arg_93_0:MyStoreDataToServer()
+			arg_93_0:MyGetRuntimeData()
 		end,
-		function (slot0)
-			slot1 = nil
-			slot1 = (uv0.score_number >= uv0.score_blist[uv1] or function ()
-				uv0:setScoceview_pj("c")
-			end) and (uv0.score_blist[uv1] > uv0.score_number or uv0.score_number >= uv0.score_alist[uv1] or function ()
-				uv0:setScoceview_pj("b")
-				uv0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
-			end) and (uv0.score_alist[uv1] > uv0.score_number or uv0.score_number >= uv0.score_slist[uv1] or function ()
-				uv0:setScoceview_pj("a")
-				uv0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
-			end) and function ()
-				uv0:setScoceview_pj("s")
-				uv0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
-			end
-			slot3 = pg.NewStoryMgr.GetInstance()
-			slot5 = uv0:GetMGData():getConfig("simple_config_data").story[uv0:GetMGHubData().usedtime + 1] and slot4[slot2.usedtime + 1][1] or nil
+		function(arg_104_0)
+			local var_104_0
 
-			if slot2.count > 0 and slot5 and not slot3:IsPlayed(slot5) and uv0.score_blist[uv1] <= uv0.score_number then
-				slot3:Play(slot5, slot1)
+			if arg_93_0.score_number < arg_93_0.score_blist[var_93_4] then
+				function var_104_0()
+					arg_93_0:setScoceview_pj("c")
+				end
+			elseif arg_93_0.score_number >= arg_93_0.score_blist[var_93_4] and arg_93_0.score_number < arg_93_0.score_alist[var_93_4] then
+				function var_104_0()
+					arg_93_0:setScoceview_pj("b")
+					arg_93_0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
+				end
+			elseif arg_93_0.score_number >= arg_93_0.score_alist[var_93_4] and arg_93_0.score_number < arg_93_0.score_slist[var_93_4] then
+				function var_104_0()
+					arg_93_0:setScoceview_pj("a")
+					arg_93_0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
+				end
 			else
-				slot1()
+				function var_104_0()
+					arg_93_0:setScoceview_pj("s")
+					arg_93_0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
+				end
 			end
 
-			slot0()
+			local var_104_1 = arg_93_0:GetMGHubData()
+			local var_104_2 = pg.NewStoryMgr.GetInstance()
+			local var_104_3 = arg_93_0:GetMGData():getConfig("simple_config_data").story
+			local var_104_4 = var_104_3[var_104_1.usedtime + 1] and var_104_3[var_104_1.usedtime + 1][1] or nil
+
+			if var_104_1.count > 0 and var_104_4 and not var_104_2:IsPlayed(var_104_4) and arg_93_0.score_number >= arg_93_0.score_blist[var_93_4] then
+				var_104_2:Play(var_104_4, var_104_0)
+			else
+				var_104_0()
+			end
+
+			arg_104_0()
 		end
-	}, function ()
+	}, function()
+		return
 	end)
-	setText(slot0.scoreUIContent:Find("scoreImg/square/nameText"), slot0.musicData.music_name)
 
-	slot10 = slot0.scoreUIContent:Find("scoreImg/square/name"):GetComponent(typeof(Image))
-	slot10.sprite = slot0.selectview:Find("Main/namelist/song" .. slot0.musicData.picture):GetComponent(typeof(Image)).sprite
+	local var_93_8 = arg_93_0.scoreUIContent:Find("scoreImg/square/nameText")
 
-	slot10:SetNativeSize()
+	setText(var_93_8, arg_93_0.musicData.music_name)
 
-	slot0.scoreUIContent:Find("scoreImg/square/song"):GetComponent(typeof(Image)).sprite = slot0.selectview:Find("Main/MusicList/img/" .. slot0.musicData.picture):GetComponent(typeof(Image)).sprite
+	local var_93_9 = arg_93_0.scoreUIContent:Find("scoreImg/square/name"):GetComponent(typeof(Image))
 
-	GetComponent(slot0.scoreUIContent:Find("btnList/share"), typeof(Image)):SetNativeSize()
-	onButton(slot0, slot0.scoreUIContent:Find("btnList/share"), function ()
+	var_93_9.sprite = arg_93_0.selectview:Find("Main/namelist/song" .. arg_93_0.musicData.picture):GetComponent(typeof(Image)).sprite
+
+	var_93_9:SetNativeSize()
+
+	arg_93_0.scoreUIContent:Find("scoreImg/square/song"):GetComponent(typeof(Image)).sprite = arg_93_0.selectview:Find("Main/MusicList/img/" .. arg_93_0.musicData.picture):GetComponent(typeof(Image)).sprite
+
+	onButton(arg_93_0, arg_93_0.scoreUIContent:Find("btnList/share"), function()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeSummary)
 	end, SFX_PANEL)
-	GetComponent(slot0.scoreUIContent:Find("btnList/restart"), typeof(Image)):SetNativeSize()
-	onButton(slot0, slot0.scoreUIContent:Find("btnList/restart"), function ()
-		setActive(uv0.scoreview, false)
+	onButton(arg_93_0, arg_93_0.scoreUIContent:Find("btnList/restart"), function()
+		setActive(arg_93_0.scoreview, false)
 
-		uv0.scoreview_flag = false
+		arg_93_0.scoreview_flag = false
 
-		uv0:stopTimer()
-		uv0:rec_scorce()
-		uv0:game_start()
-		uv0:setScoceview_pj("e")
+		arg_93_0:stopTimer()
+		arg_93_0:rec_scorce()
+		arg_93_0:game_start()
+		arg_93_0:setScoceview_pj("e")
 
-		if uv0.painting then
-			retPaintingPrefab(uv0.scoreview:Find("paint"), uv0.painting)
+		if arg_93_0.painting then
+			retPaintingPrefab(arg_93_0.scoreview:Find("paint"), arg_93_0.painting)
 
-			uv0.painting = nil
+			arg_93_0.painting = nil
 		end
 	end, SFX_UI_CLICK)
-	GetComponent(slot0.scoreUIContent:Find("btnList/reselect"), typeof(Image)):SetNativeSize()
-	onButton(slot0, slot0.scoreUIContent:Find("btnList/reselect"), function ()
-		uv0:dynamicBgHandler(uv0.bgGo)
-		setActive(uv0.scoreview, false)
+	onButton(arg_93_0, arg_93_0.scoreUIContent:Find("btnList/reselect"), function()
+		arg_93_0:dynamicBgHandler(arg_93_0.bgGo)
+		setActive(arg_93_0.scoreview, false)
 
-		uv0.scoreview_flag = false
+		arg_93_0.scoreview_flag = false
 
-		uv0:stopTimer()
-		setActive(uv0.selectview, true)
+		arg_93_0:stopTimer()
+		setActive(arg_93_0.selectview, true)
 
-		GetOrAddComponent(uv0.selectview, "CanvasGroup").blocksRaycasts = true
+		GetOrAddComponent(arg_93_0.selectview, "CanvasGroup").blocksRaycasts = true
 
-		uv0:updatSelectview()
-		uv0.song_btns[uv0.game_music]:GetComponent(typeof(Animator)):Play("plate_out")
-		uv0:loadAndPlayMusic()
-		uv0:rec_scorce()
-		uv0:setScoceview_pj("e")
+		arg_93_0:updatSelectview()
+		arg_93_0.song_btns[arg_93_0.game_music]:GetComponent(typeof(Animator)):Play("plate_out")
+		arg_93_0:loadAndPlayMusic()
+		arg_93_0:rec_scorce()
+		arg_93_0:setScoceview_pj("e")
 
-		if uv0.painting then
-			retPaintingPrefab(uv0.scoreview:Find("paint"), uv0.painting)
+		if arg_93_0.painting then
+			retPaintingPrefab(arg_93_0.scoreview:Find("paint"), arg_93_0.painting)
 
-			uv0.painting = nil
+			arg_93_0.painting = nil
 		end
 	end, SFX_UI_CLICK)
 end
 
-function slot0.setScoceview_pj(slot0, slot1)
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/c"), false)
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/b"), false)
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/a"), false)
-	setActive(slot0.scoreUIContent:Find("scoreImg/square/s"), false)
+function var_0_0.setScoceview_pj(arg_113_0, arg_113_1)
+	setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/c"), false)
+	setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/b"), false)
+	setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/a"), false)
+	setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/s"), false)
 
-	if slot1 == "e" then
-		-- Nothing
-	elseif slot1 == "c" then
-		setActive(slot0.scoreUIContent:Find("scoreImg/square/c"), true)
-	elseif slot1 == "b" then
-		setActive(slot0.scoreUIContent:Find("scoreImg/square/b"), true)
-	elseif slot1 == "a" then
-		setActive(slot0.scoreUIContent:Find("scoreImg/square/a"), true)
-	elseif slot1 == "s" then
-		setActive(slot0.scoreUIContent:Find("scoreImg/square/s"), true)
+	if arg_113_1 == "e" then
+		-- block empty
+	elseif arg_113_1 == "c" then
+		setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/c"), true)
+	elseif arg_113_1 == "b" then
+		setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/b"), true)
+	elseif arg_113_1 == "a" then
+		setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/a"), true)
+	elseif arg_113_1 == "s" then
+		setActive(arg_113_0.scoreUIContent:Find("scoreImg/square/s"), true)
 	end
 end
 
-function slot0.Scoceview_ani(slot0)
-	slot1 = 0
+function var_0_0.Scoceview_ani(arg_114_0)
+	local var_114_0 = 0
 
-	setActive(slot0.scoreUIContent:Find("btnList/reselect"), false)
-	setActive(slot0.scoreUIContent:Find("btnList/restart"), false)
-	setActive(slot0.scoreUIContent:Find("btnList/share"), false)
+	setActive(arg_114_0.scoreUIContent:Find("btnList/reselect"), false)
+	setActive(arg_114_0.scoreUIContent:Find("btnList/restart"), false)
+	setActive(arg_114_0.scoreUIContent:Find("btnList/share"), false)
 
-	slot0.Scoceview_timer = Timer.New(function ()
-		uv0 = uv0 + uv1.time_interval
+	local function var_114_1()
+		var_114_0 = var_114_0 + arg_114_0.time_interval
 
-		if uv0 >= 0.99 then
-			setActive(uv1.scoreUIContent:Find("btnList/reselect"), true)
-			setActive(uv1.scoreUIContent:Find("btnList/restart"), true)
-			setActive(uv1.scoreUIContent:Find("btnList/share"), true)
-			setText(uv1.scoreUIContent:Find("scoreList/perfect"), uv1.perfect_number)
-			setText(uv1.scoreUIContent:Find("scoreList/good"), uv1.good_number)
-			setText(uv1.scoreUIContent:Find("scoreList/miss"), uv1.miss_number)
-			setText(uv1.scoreUIContent:Find("scoreList/combo"), uv1.combo_number)
-			setText(uv1.scoreUIContent:Find("scoreImg/square/bestscore"), uv1.score_number)
+		if var_114_0 >= 0.99 then
+			setActive(arg_114_0.scoreUIContent:Find("btnList/reselect"), true)
+			setActive(arg_114_0.scoreUIContent:Find("btnList/restart"), true)
+			setActive(arg_114_0.scoreUIContent:Find("btnList/share"), true)
+			setText(arg_114_0.scoreUIContent:Find("scoreList/perfect"), arg_114_0.perfect_number)
+			setText(arg_114_0.scoreUIContent:Find("scoreList/good"), arg_114_0.good_number)
+			setText(arg_114_0.scoreUIContent:Find("scoreList/miss"), arg_114_0.miss_number)
+			setText(arg_114_0.scoreUIContent:Find("scoreList/combo"), arg_114_0.combo_number)
+			setText(arg_114_0.scoreUIContent:Find("scoreImg/square/bestscore"), arg_114_0.score_number)
 		else
-			setText(uv1.scoreUIContent:Find("scoreList/perfect"), math.floor(uv1.perfect_number * uv0))
-			setText(uv1.scoreUIContent:Find("scoreList/good"), math.floor(uv1.good_number * uv0))
-			setText(uv1.scoreUIContent:Find("scoreList/miss"), math.floor(uv1.miss_number * uv0))
-			setText(uv1.scoreUIContent:Find("scoreList/combo"), math.floor(uv1.combo_number * uv0))
-			setText(uv1.scoreUIContent:Find("scoreImg/square/bestscore"), math.floor(uv1.score_number * uv0))
+			setText(arg_114_0.scoreUIContent:Find("scoreList/perfect"), math.floor(arg_114_0.perfect_number * var_114_0))
+			setText(arg_114_0.scoreUIContent:Find("scoreList/good"), math.floor(arg_114_0.good_number * var_114_0))
+			setText(arg_114_0.scoreUIContent:Find("scoreList/miss"), math.floor(arg_114_0.miss_number * var_114_0))
+			setText(arg_114_0.scoreUIContent:Find("scoreList/combo"), math.floor(arg_114_0.combo_number * var_114_0))
+			setText(arg_114_0.scoreUIContent:Find("scoreImg/square/bestscore"), math.floor(arg_114_0.score_number * var_114_0))
 		end
 
-		if uv0 >= 1.03 then
-			uv1.Scoceview_timer:Stop()
+		if var_114_0 >= 1.03 then
+			arg_114_0.Scoceview_timer:Stop()
 		end
-	end, slot0.time_interval, -1)
-
-	slot0.Scoceview_timer:Start()
-end
-
-function slot0.gameStart(slot0)
-	if not slot0.timer then
-		slot0.timer = Timer.New(function ()
-			uv0:gameStepNew()
-		end, slot0.time_interval, -1)
 	end
 
-	slot0.aheadtime_count = 0
-	slot1 = 2
-	slot0.ahead_timerPauseFlag = false
-	slot3 = CriWareMgr.Inst
+	arg_114_0.Scoceview_timer = Timer.New(var_114_1, arg_114_0.time_interval, -1)
 
-	slot3:UnloadCueSheet(slot0:getMusicBgm(slot0.musicData))
+	arg_114_0.Scoceview_timer:Start()
+end
 
-	slot0.ahead_timer = Timer.New(function ()
-		uv0.ahead_timeflag = true
+function var_0_0.gameStart(arg_116_0)
+	if not arg_116_0.timer then
+		arg_116_0.timer = Timer.New(function()
+			arg_116_0:gameStepNew()
+		end, arg_116_0.time_interval, -1)
+	end
 
-		if not uv0.timer.running then
-			uv0:startTimer()
+	arg_116_0.aheadtime_count = 0
+
+	local var_116_0 = 2
+
+	arg_116_0.ahead_timerPauseFlag = false
+
+	local function var_116_1()
+		arg_116_0.ahead_timeflag = true
+
+		if not arg_116_0.timer.running then
+			arg_116_0:startTimer()
 		end
 
-		if not uv0.ahead_timerPauseFlag then
-			uv0.aheadtime_count = uv0.aheadtime_count + uv0.time_interval
+		if not arg_116_0.ahead_timerPauseFlag then
+			arg_116_0.aheadtime_count = arg_116_0.aheadtime_count + arg_116_0.time_interval
 
-			if uv1 < uv0.aheadtime_count then
-				uv0.aheadtime_count = nil
-				uv0.ahead_timeflag = false
-				uv0.gotspecialcombo_flag = false
-				slot0 = uv0.ahead_timer
+			if arg_116_0.aheadtime_count > var_116_0 then
+				arg_116_0.aheadtime_count = nil
+				arg_116_0.ahead_timeflag = false
+				arg_116_0.gotspecialcombo_flag = false
 
-				slot0:Stop()
-
-				slot0 = uv0
-
-				slot0:loadAndPlayMusic(function ()
+				arg_116_0.ahead_timer:Stop()
+				arg_116_0:loadAndPlayMusic(function()
+					return
 				end)
 			end
 		end
-	end, slot0.time_interval, -1)
+	end
 
-	slot0:count_five(function ()
-		uv0.ahead_timer:Start()
+	CriWareMgr.Inst:UnloadCueSheet(arg_116_0:getMusicBgm(arg_116_0.musicData))
+
+	arg_116_0.ahead_timer = Timer.New(var_116_1, arg_116_0.time_interval, -1)
+
+	arg_116_0:count_five(function()
+		arg_116_0.ahead_timer:Start()
 	end)
 end
 
-function slot0.getMusicBgm(slot0, slot1)
-	slot2 = "bgm-song"
+function var_0_0.getMusicBgm(arg_121_0, arg_121_1)
+	local var_121_0 = "bgm-song"
 
-	return slot1.bgm < 10 and slot2 .. "0" .. tostring(slot1.bgm) or slot2 .. tostring(slot1.bgm)
+	if arg_121_1.bgm < 10 then
+		var_121_0 = var_121_0 .. "0" .. tostring(arg_121_1.bgm)
+	else
+		var_121_0 = var_121_0 .. tostring(arg_121_1.bgm)
+	end
+
+	return var_121_0
 end
 
-function slot0.getMusicNote(slot0, slot1, slot2)
-	return "view/miniGame/gameView/musicGame/bgm_song" .. "0" .. slot1.note .. "_" .. slot2
+function var_0_0.getMusicNote(arg_122_0, arg_122_1, arg_122_2)
+	return "view/miniGame/gameView/musicGame/bgm_song" .. "0" .. arg_122_1.note .. "_" .. arg_122_2
 end
 
-function slot0.gameStepNew(slot0)
-	slot1 = slot0.game_dgree
-	slot0.gameStepTime = slot0:getStampTime()
-	slot0.downingright_lastflag = slot0.downingright_flag
-	slot0.downingleft_lastflag = slot0.downingleft_flag
+function var_0_0.gameStepNew(arg_123_0)
+	local var_123_0 = arg_123_0.game_dgree
+
+	arg_123_0.gameStepTime = arg_123_0:getStampTime()
+	arg_123_0.downingright_lastflag = arg_123_0.downingright_flag
+	arg_123_0.downingleft_lastflag = arg_123_0.downingleft_flag
 
 	if IsUnityEditor then
-		if slot1 == 2 then
-			slot0.downingright_flag = Input.GetKey(KeyCode.J)
-			slot0.downingleft_flag = Input.GetKey(KeyCode.F)
-		elseif slot1 == 1 then
+		if var_123_0 == 2 then
+			arg_123_0.downingright_flag = Input.GetKey(KeyCode.J)
+			arg_123_0.downingleft_flag = Input.GetKey(KeyCode.F)
+		elseif var_123_0 == 1 then
 			if Input.GetKey(KeyCode.J) or Input.GetKey(KeyCode.F) then
-				slot0.downingright_flag = true
-				slot0.downingleft_flag = true
+				arg_123_0.downingright_flag = true
+				arg_123_0.downingleft_flag = true
 			else
-				slot0.downingright_flag = false
-				slot0.downingleft_flag = false
+				arg_123_0.downingright_flag = false
+				arg_123_0.downingleft_flag = false
 			end
 		end
-	elseif slot1 == 2 then
-		slot0.downingright_flag = slot0.mousedowningright_flag
-		slot0.downingleft_flag = slot0.mousedowningleft_flag
-	elseif slot1 == 1 then
-		if slot0.mousedowningright_flag or slot0.mousedowningleft_flag then
-			slot0.downingright_flag = true
-			slot0.downingleft_flag = true
+	elseif var_123_0 == 2 then
+		arg_123_0.downingright_flag = arg_123_0.mousedowningright_flag
+		arg_123_0.downingleft_flag = arg_123_0.mousedowningleft_flag
+	elseif var_123_0 == 1 then
+		if arg_123_0.mousedowningright_flag or arg_123_0.mousedowningleft_flag then
+			arg_123_0.downingright_flag = true
+			arg_123_0.downingleft_flag = true
 		else
-			slot0.downingright_flag = false
-			slot0.downingleft_flag = false
+			arg_123_0.downingright_flag = false
+			arg_123_0.downingleft_flag = false
 		end
 	end
 
-	if slot1 == 2 then
-		if not slot0.downingleft_lastflag and slot0.downingleft_flag then
-			slot0.gameNoteLeft:onKeyDown()
+	if var_123_0 == 2 then
+		if not arg_123_0.downingleft_lastflag and arg_123_0.downingleft_flag then
+			arg_123_0.gameNoteLeft:onKeyDown()
 
-			slot0.leftDownStepTime = slot0.gameStepTime
+			arg_123_0.leftDownStepTime = arg_123_0.gameStepTime
 
-			if slot0.rightDownStepTime and math.abs(slot0.leftDownStepTime - slot0.rightDownStepTime) < 100 then
-				slot0.gameNoteLeft:bothDown()
-				slot0.gameNoteRight:bothDown()
+			if arg_123_0.rightDownStepTime and math.abs(arg_123_0.leftDownStepTime - arg_123_0.rightDownStepTime) < 100 then
+				arg_123_0.gameNoteLeft:bothDown()
+				arg_123_0.gameNoteRight:bothDown()
 			end
-		elseif slot0.downingleft_lastflag and not slot0.downingleft_flag then
-			slot0.leftUpStepTime = slot0.gameStepTime
+		elseif arg_123_0.downingleft_lastflag and not arg_123_0.downingleft_flag then
+			arg_123_0.leftUpStepTime = arg_123_0.gameStepTime
 
-			slot0.gameNoteLeft:onKeyUp()
+			arg_123_0.gameNoteLeft:onKeyUp()
 
-			if slot0.rightUpStepTime and math.abs(slot0.leftUpStepTime - slot0.rightUpStepTime) < 100 then
-				slot0.gameNoteLeft:bothUp()
-				slot0.gameNoteRight:bothUp()
-			end
-		end
-
-		if not slot0.downingright_lastflag and slot0.downingright_flag then
-			slot0.gameNoteRight:onKeyDown()
-
-			slot0.rightDownStepTime = slot0.gameStepTime
-
-			if slot0.leftDownStepTime and math.abs(slot0.leftDownStepTime - slot0.rightDownStepTime) < 200 then
-				slot0.gameNoteLeft:bothDown()
-				slot0.gameNoteRight:bothDown()
-			end
-		elseif slot0.downingright_lastflag and not slot0.downingright_flag then
-			slot0.rightUpStepTime = slot0.gameStepTime
-
-			slot0.gameNoteRight:onKeyUp()
-
-			if slot0.leftUpStepTime and math.abs(slot0.leftUpStepTime - slot0.rightUpStepTime) < 200 then
-				slot0.gameNoteLeft:bothUp()
-				slot0.gameNoteRight:bothUp()
+			if arg_123_0.rightUpStepTime and math.abs(arg_123_0.leftUpStepTime - arg_123_0.rightUpStepTime) < 100 then
+				arg_123_0.gameNoteLeft:bothUp()
+				arg_123_0.gameNoteRight:bothUp()
 			end
 		end
-	elseif not slot0.downingright_lastflag and slot0.downingright_flag then
-		slot0.gameNoteLeft:onKeyDown()
-		slot0.gameNoteRight:onKeyDown()
-	elseif slot0.downingleft_lastflag and not slot0.downingleft_flag then
-		slot0.gameNoteLeft:onKeyUp()
-		slot0.gameNoteRight:onKeyUp()
+
+		if not arg_123_0.downingright_lastflag and arg_123_0.downingright_flag then
+			arg_123_0.gameNoteRight:onKeyDown()
+
+			arg_123_0.rightDownStepTime = arg_123_0.gameStepTime
+
+			if arg_123_0.leftDownStepTime and math.abs(arg_123_0.leftDownStepTime - arg_123_0.rightDownStepTime) < 200 then
+				arg_123_0.gameNoteLeft:bothDown()
+				arg_123_0.gameNoteRight:bothDown()
+			end
+		elseif arg_123_0.downingright_lastflag and not arg_123_0.downingright_flag then
+			arg_123_0.rightUpStepTime = arg_123_0.gameStepTime
+
+			arg_123_0.gameNoteRight:onKeyUp()
+
+			if arg_123_0.leftUpStepTime and math.abs(arg_123_0.leftUpStepTime - arg_123_0.rightUpStepTime) < 200 then
+				arg_123_0.gameNoteLeft:bothUp()
+				arg_123_0.gameNoteRight:bothUp()
+			end
+		end
+	elseif not arg_123_0.downingright_lastflag and arg_123_0.downingright_flag then
+		arg_123_0.gameNoteLeft:onKeyDown()
+		arg_123_0.gameNoteRight:onKeyDown()
+	elseif arg_123_0.downingleft_lastflag and not arg_123_0.downingleft_flag then
+		arg_123_0.gameNoteLeft:onKeyUp()
+		arg_123_0.gameNoteRight:onKeyUp()
 	end
 
-	slot0.musicgame_lasttime = slot0.musicgame_nowtime or 0
+	arg_123_0.musicgame_lasttime = arg_123_0.musicgame_nowtime or 0
 
-	if slot0.criInfo then
-		slot0.musicgame_nowtime = slot0:getStampTime() / 1000
+	if arg_123_0.criInfo then
+		arg_123_0.musicgame_nowtime = arg_123_0:getStampTime() / 1000
 	else
-		slot0.musicgame_nowtime = 0
+		arg_123_0.musicgame_nowtime = 0
 	end
 
-	if slot0.song_Tlength and not slot0.scoreview_flag and long2int(slot0.song_Tlength) / 1000 - slot0.musicgame_nowtime <= 0.01666 then
+	if arg_123_0.song_Tlength and not arg_123_0.scoreview_flag and long2int(arg_123_0.song_Tlength) / 1000 - arg_123_0.musicgame_nowtime <= 0.01666 then
 		print("歌曲播放结束")
-		slot0:pauseBgm()
+		arg_123_0:pauseBgm()
 
-		slot0.game_playingflag = false
+		arg_123_0.game_playingflag = false
 
-		function slot2()
-			uv0:locadScoreView()
+		local function var_123_1()
+			arg_123_0:locadScoreView()
 		end
 
-		if slot0.perfect_number > 0 and slot0.good_number == 0 and slot0.miss_number == 0 then
-			setActive(slot0.fullComboEffect, true)
+		if arg_123_0.perfect_number > 0 and arg_123_0.good_number == 0 and arg_123_0.miss_number == 0 then
+			setActive(arg_123_0.fullComboEffect, true)
 
-			if not slot0.gotspecialcombo_flag then
-				slot0.score_number = slot0.score_number + slot0.specialscore_number
-				slot0.gotspecialcombo_flag = true
+			if not arg_123_0.gotspecialcombo_flag then
+				arg_123_0.score_number = arg_123_0.score_number + arg_123_0.specialscore_number
+				arg_123_0.gotspecialcombo_flag = true
 			end
 
-			LeanTween.delayedCall(go(slot0.fullComboEffect), 2, System.Action(function ()
-				uv0()
+			LeanTween.delayedCall(go(arg_123_0.fullComboEffect), 2, System.Action(function()
+				var_123_1()
 			end))
-		elseif (slot0.good_number > 0 or slot0.perfect_number > 0) and slot0.miss_number <= 0 then
-			setActive(slot0.fullComboEffect, true)
+		elseif (arg_123_0.good_number > 0 or arg_123_0.perfect_number > 0) and arg_123_0.miss_number <= 0 then
+			setActive(arg_123_0.fullComboEffect, true)
 
-			if not slot0.gotspecialcombo_flag then
-				slot0.score_number = slot0.score_number + slot0.specialscore_number
-				slot0.gotspecialcombo_flag = true
+			if not arg_123_0.gotspecialcombo_flag then
+				arg_123_0.score_number = arg_123_0.score_number + arg_123_0.specialscore_number
+				arg_123_0.gotspecialcombo_flag = true
 			end
 
-			LeanTween.delayedCall(go(slot0.fullComboEffect), 2, System.Action(function ()
-				uv0()
+			LeanTween.delayedCall(go(arg_123_0.fullComboEffect), 2, System.Action(function()
+				var_123_1()
 			end))
 		else
-			setActive(slot0.liveClearEffect, true)
-			LeanTween.delayedCall(go(slot0.liveClearEffect), 2, System.Action(function ()
-				uv0()
+			setActive(arg_123_0.liveClearEffect, true)
+			LeanTween.delayedCall(go(arg_123_0.liveClearEffect), 2, System.Action(function()
+				var_123_1()
 			end))
 		end
 
 		return
 	end
 
-	slot0.gameNoteLeft:step(slot0.gameStepTime)
-	slot0.gameNoteRight:step(slot0.gameStepTime)
-	slot0:scoresliderAcombo_update()
+	arg_123_0.gameNoteLeft:step(arg_123_0.gameStepTime)
+	arg_123_0.gameNoteRight:step(arg_123_0.gameStepTime)
+	arg_123_0:scoresliderAcombo_update()
 
-	if slot0.drumpFlag and not slot0.gameNoteLeft:loopTime() and not slot0.gameNoteRight:loopTime() then
-		slot0.drumpFlag = false
-		slot0.drupTime = Time.realtimeSinceStartup
+	if arg_123_0.drumpFlag and not arg_123_0.gameNoteLeft:loopTime() and not arg_123_0.gameNoteRight:loopTime() then
+		arg_123_0.drumpFlag = false
+		arg_123_0.drupTime = Time.realtimeSinceStartup
 
-		slot0:setActionSDmodel("jump")
-		LeanTween.delayedCall(go(slot0.game_content), 1, System.Action(function ()
-			uv0:setActionSDmodel("idol")
+		arg_123_0:setActionSDmodel("jump")
+		LeanTween.delayedCall(go(arg_123_0.game_content), 1, System.Action(function()
+			arg_123_0:setActionSDmodel("idol")
 		end))
 	end
 end
 
-function slot0.onStateCallback(slot0, slot1)
-	slot0:score_update(slot1)
+function var_0_0.onStateCallback(arg_129_0, arg_129_1)
+	arg_129_0:score_update(arg_129_1)
 end
 
-function slot0.onLongTimeCallback(slot0, slot1)
-	if slot0.drupTime and Time.realtimeSinceStartup - slot0.drupTime < 2 then
+function var_0_0.onLongTimeCallback(arg_130_0, arg_130_1)
+	if arg_130_0.drupTime and Time.realtimeSinceStartup - arg_130_0.drupTime < 2 then
 		return
 	end
 
-	if slot1 > 0.5 then
-		slot0.drumpFlag = true
+	if arg_130_1 > 0.5 then
+		arg_130_0.drumpFlag = true
 	end
 end
 
-return slot0
+return var_0_0

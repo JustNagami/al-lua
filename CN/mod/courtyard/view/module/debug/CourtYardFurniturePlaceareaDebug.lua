@@ -1,48 +1,49 @@
-slot0 = class("CourtYardFurniturePlaceareaDebug")
-slot1 = true
+﻿local var_0_0 = class("CourtYardFurniturePlaceareaDebug")
+local var_0_1 = true
 
-function slot0.Ctor(slot0, slot1)
-	slot0.furniture = slot1
-	slot0.mapGrids = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.furniture = arg_1_1
+	arg_1_0.mapGrids = {}
 
-	slot0:Flush()
+	arg_1_0:Flush()
 end
 
-function slot0.GetView(slot0)
-	return slot0.furniture:GetHost():GetBridge():GetView()
+function var_0_0.GetView(arg_2_0)
+	return arg_2_0.furniture:GetHost():GetBridge():GetView()
 end
 
-function slot0.Flush(slot0)
-	slot0:Clear()
+function var_0_0.Flush(arg_3_0)
+	arg_3_0:Clear()
 
-	slot1 = slot0:GetView():GetRect():Find("grids")
-	slot2 = uv0 and slot0.furniture:RawGetOffset() or Vector3.zero
+	local var_3_0 = arg_3_0:GetView():GetRect():Find("grids")
+	local var_3_1 = var_0_1 and arg_3_0.furniture:RawGetOffset() or Vector3.zero
+	local var_3_2 = arg_3_0.furniture:GetCanputonPosition()
 
-	for slot7, slot8 in ipairs(slot0.furniture:GetCanputonPosition()) do
-		slot9 = slot0:GetView().poolMgr:GetGridPool():Dequeue()
+	for iter_3_0, iter_3_1 in ipairs(var_3_2) do
+		local var_3_3 = arg_3_0:GetView().poolMgr:GetGridPool():Dequeue()
 
-		setParent(slot9, slot1)
+		setParent(var_3_3, var_3_0)
 
-		tf(slot9).localScale = Vector3.one
-		tf(slot9).localPosition = CourtYardCalcUtil.Map2Local(slot8) + slot2
-		slot9:GetComponent(typeof(Image)).color = Color.New(0, 0, 1, 1)
+		tf(var_3_3).localScale = Vector3.one
+		tf(var_3_3).localPosition = CourtYardCalcUtil.Map2Local(iter_3_1) + var_3_1
+		var_3_3:GetComponent(typeof(Image)).color = Color.New(0, 0, 1, 1)
 
-		table.insert(slot0.mapGrids, slot9)
+		table.insert(arg_3_0.mapGrids, var_3_3)
 	end
 end
 
-function slot0.Clear(slot0)
-	for slot4, slot5 in pairs(slot0.mapGrids) do
-		slot5:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
+function var_0_0.Clear(arg_4_0)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.mapGrids) do
+		iter_4_1:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
 
-		slot0:GetView().poolMgr:GetGridPool():Enqueue(slot5)
+		arg_4_0:GetView().poolMgr:GetGridPool():Enqueue(iter_4_1)
 	end
 
-	slot0.mapGrids = {}
+	arg_4_0.mapGrids = {}
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_5_0)
+	arg_5_0:Clear()
 end
 
-return slot0
+return var_0_0

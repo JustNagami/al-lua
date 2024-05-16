@@ -1,458 +1,463 @@
-slot0 = class("SixthAnniversaryIslandScene", import("..base.BaseUI"))
-slot0.optionsPath = {
+﻿local var_0_0 = class("SixthAnniversaryIslandScene", import("..base.BaseUI"))
+
+var_0_0.optionsPath = {
 	"top/btn_home"
 }
-slot0.SHOP = "SixthAnniversaryIslandScene.SHOP"
+var_0_0.SHOP = "SixthAnniversaryIslandScene.SHOP"
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SixthAnniversaryIslandUI"
 end
 
-function slot0.setActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.setActivity(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1
 end
 
-function slot0.setNodeIds(slot0, slot1)
-	slot0.ids = slot1
+function var_0_0.setNodeIds(arg_3_0, arg_3_1)
+	arg_3_0.ids = arg_3_1
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_4_0, arg_4_1)
+	arg_4_0.player = arg_4_1
 
-	setText(slot0.rtResPanel:Find("tpl/Text"), slot0.player:getResById(350) or 0)
+	setText(arg_4_0.rtResPanel:Find("tpl/Text"), arg_4_0.player:getResById(350) or 0)
 end
 
-function slot0.setResDrop(slot0, slot1, slot2)
-	slot0.resDrop = slot1
-	slot0.resDailyNumber = slot2
+function var_0_0.setResDrop(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0.resDrop = arg_5_1
+	arg_5_0.resDailyNumber = arg_5_2
 
-	setText(slot0.rtResPanel:Find("tpl_2/Text"), slot1.count or 0)
+	setText(arg_5_0.rtResPanel:Find("tpl_2/Text"), arg_5_1.count or 0)
 end
 
-function slot0.init(slot0)
-	slot1 = slot0._tf
-	slot0.rtTop = slot1:Find("top")
-	slot1 = pg.UIMgr.GetInstance()
+function var_0_0.init(arg_6_0)
+	arg_6_0.rtTop = arg_6_0._tf:Find("top")
 
-	slot1:OverlayPanel(slot0.rtTop)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.rtTop)
 
-	slot0.effectObjs = {}
-	slot0.proxy = getProxy(IslandProxy)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = slot0._tf
-	slot2 = slot2:Find("map/content")
-	slot0.nodeItemList = UIItemList.New(slot2, slot2:Find("node"))
-	slot3 = slot0.nodeItemList
+	arg_6_0.effectObjs = {}
+	arg_6_0.proxy = getProxy(IslandProxy)
 
-	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	local var_6_0 = pg.TimeMgr.GetInstance()
+	local var_6_1 = arg_6_0._tf:Find("map/content")
 
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0.proxy:GetNode(uv0.ids[slot1])
-			slot2.name = slot4.id
-			slot5, slot6 = unpack(slot4:getConfig("address"))
+	arg_6_0.nodeItemList = UIItemList.New(var_6_1, var_6_1:Find("node"))
 
-			setAnchoredPosition(slot2, {
-				x = slot5,
-				y = slot6
+	arg_6_0.nodeItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		arg_7_1 = arg_7_1 + 1
+
+		if arg_7_0 == UIItemList.EventUpdate then
+			local var_7_0 = arg_6_0.ids[arg_7_1]
+			local var_7_1 = arg_6_0.proxy:GetNode(var_7_0)
+
+			arg_7_2.name = var_7_1.id
+
+			local var_7_2, var_7_3 = unpack(var_7_1:getConfig("address"))
+
+			setAnchoredPosition(arg_7_2, {
+				x = var_7_2,
+				y = var_7_3
 			})
 
-			slot7 = slot4:getConfig("type")
+			local var_7_4 = var_7_1:getConfig("type")
 
-			eachChild(slot2:Find("main/type"), function (slot0)
-				setActive(slot0, slot0.name == tostring(uv0))
+			eachChild(arg_7_2:Find("main/type"), function(arg_8_0)
+				setActive(arg_8_0, arg_8_0.name == tostring(var_7_4))
 			end)
-			setLocalScale(slot2, Vector3(0, 0, 1))
-			setActive(slot2:Find("name"), slot4:getConfig("icon_name") ~= "")
-			onToggle(uv0, slot2, function (slot0)
-				if slot0 then
-					uv0.selectId = uv1
-					uv0.contextData.lastNodeId = uv1
+			setLocalScale(arg_7_2, Vector3(0, 0, 1))
+			setActive(arg_7_2:Find("name"), var_7_1:getConfig("icon_name") ~= "")
+			onToggle(arg_6_0, arg_7_2, function(arg_9_0)
+				if arg_9_0 then
+					arg_6_0.selectId = var_7_0
+					arg_6_0.contextData.lastNodeId = var_7_0
 				end
 			end)
-			setActive(slot2:Find("click"), true)
-			onButton(uv0, slot2:Find("click"), function ()
-				slot0 = uv0.proxy:GetNode(uv1)
+			setActive(arg_7_2:Find("click"), true)
+			onButton(arg_6_0, arg_7_2:Find("click"), function()
+				local var_10_0 = arg_6_0.proxy:GetNode(var_7_0)
 
-				triggerToggle(uv2, slot0:CanToggleOn())
+				triggerToggle(arg_7_2, var_10_0:CanToggleOn())
 
-				if slot0:CanTrigger() then
-					uv0.isAutoPlayStory = false
+				if var_10_0:CanTrigger() then
+					arg_6_0.isAutoPlayStory = false
 
-					uv0:triggerNode(uv1)
-				elseif slot0:IsRefresh() and slot0:IsCompleted() then
-					slot1 = uv3:GetNextTime(0, 0, 0) - uv3:GetServerTime()
-					slot2 = 3
-					slot3 = nil
-					slot3 = Timer.New(function ()
-						if uv0.exited then
-							uv1:Stop()
+					arg_6_0:triggerNode(var_7_0)
+				elseif var_10_0:IsRefresh() and var_10_0:IsCompleted() then
+					local var_10_1 = var_6_0:GetNextTime(0, 0, 0) - var_6_0:GetServerTime()
+					local var_10_2 = 3
+					local var_10_3
 
-							uv1 = nil
+					var_10_3 = Timer.New(function()
+						if arg_6_0.exited then
+							var_10_3:Stop()
+
+							var_10_3 = nil
 						end
 
-						if uv2 == 0 then
-							setActive(uv3:Find("main/time"), false)
+						if var_10_2 == 0 then
+							setActive(arg_7_2:Find("main/time"), false)
 						else
-							setText(uv3:Find("main/time/Text"), i18n("islandnode_tips1") .. uv4:DescCDTime(uv5))
+							setText(arg_7_2:Find("main/time/Text"), i18n("islandnode_tips1") .. var_6_0:DescCDTime(var_10_1))
 
-							uv5 = uv5 - 1
-							uv2 = uv2 - 1
+							var_10_1 = var_10_1 - 1
+							var_10_2 = var_10_2 - 1
 						end
 					end, 1, 3)
 
-					slot3.func()
-					slot3:Start()
-					setActive(uv2:Find("main/time"), true)
+					var_10_3.func()
+					var_10_3:Start()
+					setActive(arg_7_2:Find("main/time"), true)
 				end
 			end, SFX_CONFIRM)
-			uv0:refreshNode(slot3)
+			arg_6_0:refreshNode(var_7_0)
 		end
 	end)
 
-	slot3 = slot0.rtTop
-	slot3 = slot3:Find("panel/content/mask/scroll_rect")
-	slot0.panelItemList = UIItemList.New(slot3, slot3:Find("tpl"))
-	slot4 = slot0.panelItemList
+	local var_6_2 = arg_6_0.rtTop:Find("panel/content/mask/scroll_rect")
 
-	slot4:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_6_0.panelItemList = UIItemList.New(var_6_2, var_6_2:Find("tpl"))
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.proxy
-			slot3 = slot3:GetNode(uv0.dailyIds[slot1])
-			slot2.name = slot3.id
+	arg_6_0.panelItemList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		arg_12_1 = arg_12_1 + 1
 
-			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", slot3:getConfig("icon"), slot2:Find("Image"))
-			setActive(slot2:Find("mask"), not slot3:RedDotHint())
-			onButton(uv0, slot2, function ()
-				uv0:focus(uv1.id, LeanTweenType.easeInOutSine)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = arg_6_0.proxy:GetNode(arg_6_0.dailyIds[arg_12_1])
+
+			arg_12_2.name = var_12_0.id
+
+			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", var_12_0:getConfig("icon"), arg_12_2:Find("Image"))
+			setActive(arg_12_2:Find("mask"), not var_12_0:RedDotHint())
+			onButton(arg_6_0, arg_12_2, function()
+				arg_6_0:focus(var_12_0.id, LeanTweenType.easeInOutSine)
+			end, SFX_PANEL)
+		end
+	end)
+	triggerToggle(arg_6_0.rtTop:Find("panel/toggle"), false)
+
+	local var_6_3 = arg_6_0._tf:Find("top/focus")
+
+	arg_6_0.floatItemList = UIItemList.New(var_6_3, var_6_3:Find("main_mark"))
+
+	arg_6_0.floatItemList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		arg_14_1 = arg_14_1 + 1
+
+		if arg_14_0 == UIItemList.EventUpdate then
+			arg_14_2.name = arg_6_0.mainIds[arg_14_1]
+
+			onButton(arg_6_0, arg_14_2, function()
+				arg_6_0:focus(arg_6_0.mainIds[arg_14_1], LeanTweenType.easeInOutSine)
 			end, SFX_PANEL)
 		end
 	end)
 
-	slot5 = slot0.rtTop
+	arg_6_0.rtResPanel = arg_6_0.rtTop:Find("res")
+	arg_6_0.rtMap = arg_6_0._tf:Find("map")
 
-	triggerToggle(slot5:Find("panel/toggle"), false)
-
-	slot4 = slot0._tf
-	slot4 = slot4:Find("top/focus")
-	slot0.floatItemList = UIItemList.New(slot4, slot4:Find("main_mark"))
-	slot5 = slot0.floatItemList
-
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
-
-		if slot0 == UIItemList.EventUpdate then
-			slot2.name = uv0.mainIds[slot1]
-
-			onButton(uv0, slot2, function ()
-				uv0:focus(uv0.mainIds[uv1], LeanTweenType.easeInOutSine)
-			end, SFX_PANEL)
-		end
+	arg_6_0.rtMap:GetComponent(typeof(ScrollRect)).onValueChanged:AddListener(function()
+		arg_6_0:onDragFunction()
 	end)
 
-	slot5 = slot0.rtTop
-	slot0.rtResPanel = slot5:Find("res")
-	slot5 = slot0._tf
-	slot0.rtMap = slot5:Find("map")
-	slot5 = slot0.rtMap
-	slot5 = slot5:GetComponent(typeof(ScrollRect)).onValueChanged
+	local var_6_4, var_6_5, var_6_6 = getSizeRate()
 
-	slot5:AddListener(function ()
-		uv0:onDragFunction()
-	end)
+	arg_6_0.delta = Vector2(var_6_5 - 100, var_6_6 - 100) / 2
+	arg_6_0.extendLimit = Vector2(arg_6_0.rtMap.rect.width - arg_6_0._tf.rect.width, arg_6_0.rtMap.rect.height - arg_6_0._tf.rect.height) / 2
+	arg_6_0.displayDic = {}
 
-	slot5, slot6, slot7 = getSizeRate()
-	slot0.delta = Vector2(slot6 - 100, slot7 - 100) / 2
-	slot0.extendLimit = Vector2(slot0.rtMap.rect.width - slot0._tf.rect.width, slot0.rtMap.rect.height - slot0._tf.rect.height) / 2
-	slot0.displayDic = {}
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btn_back"), function ()
-		uv0:closeView()
+	onButton(arg_6_0, arg_6_0.rtTop:Find("btn_back"), function()
+		arg_6_0:closeView()
 	end, SFX_CANCEL)
-
-	slot9 = slot0.rtTop
-
-	setActive(slot9:Find("btn_now"), false)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_shop"), function ()
-		uv0:emit(SixthAnniversaryIslandMediator.GO_SHOP)
+	setActive(arg_6_0.rtTop:Find("btn_now"), false)
+	onButton(arg_6_0, arg_6_0.rtTop:Find("btns/btn_shop"), function()
+		arg_6_0:emit(SixthAnniversaryIslandMediator.GO_SHOP)
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_note"), function ()
-		uv0:emit(SixthAnniversaryIslandMediator.OPEN_NOTE)
+	onButton(arg_6_0, arg_6_0.rtTop:Find("btns/btn_note"), function()
+		arg_6_0:emit(SixthAnniversaryIslandMediator.OPEN_NOTE)
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtTop
-
-	onButton(slot0, slot10:Find("btns/btn_help"), function ()
+	onButton(arg_6_0, arg_6_0.rtTop:Find("btns/btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("island_help")
 		})
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtResPanel
-
-	onButton(slot0, slot10:Find("tpl"), function ()
-		uv0:emit(SixthAnniversaryIslandMediator.OPEN_RES, {
+	onButton(arg_6_0, arg_6_0.rtResPanel:Find("tpl"), function()
+		arg_6_0:emit(SixthAnniversaryIslandMediator.OPEN_RES, {
 			id = 350,
 			type = 1
 		}, "")
 	end, SFX_PANEL)
-
-	slot10 = slot0.rtResPanel
-
-	onButton(slot0, slot10:Find("tpl_2"), function ()
-		uv0:emit(SixthAnniversaryIslandMediator.OPEN_RES, Clone(uv0.resDrop), i18n("island_game_limit_help", uv0.resDailyNumber))
+	onButton(arg_6_0, arg_6_0.rtResPanel:Find("tpl_2"), function()
+		arg_6_0:emit(SixthAnniversaryIslandMediator.OPEN_RES, Clone(arg_6_0.resDrop), i18n("island_game_limit_help", arg_6_0.resDailyNumber))
 	end, SFX_PANEL)
 end
 
-function slot0.onDragFunction(slot0)
-	if not uv0.screenPoints then
-		uv0.screenPoints = {
-			Vector2(-slot0.delta.x, slot0.delta.y),
-			Vector2(slot0.delta.x, slot0.delta.y),
-			Vector2(slot0.delta.x, -slot0.delta.y),
-			Vector2(-slot0.delta.x, -slot0.delta.y)
+function var_0_0.onDragFunction(arg_23_0)
+	if not var_0_0.screenPoints then
+		var_0_0.screenPoints = {
+			Vector2(-arg_23_0.delta.x, arg_23_0.delta.y),
+			Vector2(arg_23_0.delta.x, arg_23_0.delta.y),
+			Vector2(arg_23_0.delta.x, -arg_23_0.delta.y),
+			Vector2(-arg_23_0.delta.x, -arg_23_0.delta.y)
 		}
 	end
 
-	for slot4, slot5 in ipairs(slot0.mainIds) do
-		slot7 = slot0._tf:InverseTransformPoint(slot0.nodeItemList.container:Find(slot5).position)
-		slot8 = nil
+	for iter_23_0, iter_23_1 in ipairs(arg_23_0.mainIds) do
+		local var_23_0 = arg_23_0.nodeItemList.container:Find(iter_23_1)
+		local var_23_1 = arg_23_0._tf:InverseTransformPoint(var_23_0.position)
+		local var_23_2
 
-		for slot12, slot13 in ipairs(uv0.screenPoints) do
-			slot15, slot16, slot17 = LineLine(Vector2.zero, Vector2(slot7.x, slot7.y), slot13, uv0.screenPoints[slot12 % 4 + 1])
+		for iter_23_2, iter_23_3 in ipairs(var_0_0.screenPoints) do
+			local var_23_3 = var_0_0.screenPoints[iter_23_2 % 4 + 1]
+			local var_23_4, var_23_5, var_23_6 = LineLine(Vector2.zero, Vector2(var_23_1.x, var_23_1.y), iter_23_3, var_23_3)
 
-			if slot15 then
-				slot8 = slot7 * slot16
+			if var_23_4 then
+				var_23_2 = var_23_1 * var_23_5
 
 				break
 			end
 		end
 
-		slot10 = slot0.floatItemList.container:Find(slot5):GetComponent(typeof(CanvasGroup))
-		slot10.interactable = tobool(slot8)
-		slot10.blocksRaycasts = tobool(slot8)
-		slot10.alpha = tobool(slot8) and 1 or 0
+		local var_23_7 = arg_23_0.floatItemList.container:Find(iter_23_1)
+		local var_23_8 = var_23_7:GetComponent(typeof(CanvasGroup))
 
-		if slot8 then
-			setAnchoredPosition(slot9, slot8 * (1 - 50 / slot8:Magnitude()))
+		var_23_8.interactable = tobool(var_23_2)
+		var_23_8.blocksRaycasts = tobool(var_23_2)
+		var_23_8.alpha = tobool(var_23_2) and 1 or 0
 
-			slot11 = math.rad2Deg * math.atan2(slot8.y, slot8.x) - 45
+		if var_23_2 then
+			setAnchoredPosition(var_23_7, var_23_2 * (1 - 50 / var_23_2:Magnitude()))
 
-			setLocalEulerAngles(slot9:Find("arrow"), {
-				z = slot11
+			local var_23_9 = math.rad2Deg * math.atan2(var_23_2.y, var_23_2.x) - 45
+
+			setLocalEulerAngles(var_23_7:Find("arrow"), {
+				z = var_23_9
 			})
-			setLocalEulerAngles(slot9:Find("arrow_shadow"), {
-				z = slot11
+			setLocalEulerAngles(var_23_7:Find("arrow_shadow"), {
+				z = var_23_9
 			})
 		end
 	end
 end
 
-function slot0.focus(slot0, slot1, slot2, slot3)
-	slot4 = slot0.nodeItemList.container:Find(slot1)
+function var_0_0.focus(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
+	local var_24_0 = arg_24_0.nodeItemList.container:Find(arg_24_1)
 
-	if not slot3 then
-		triggerToggle(slot4, slot0.proxy:GetNode(slot1):CanToggleOn())
+	if not arg_24_3 then
+		triggerToggle(var_24_0, arg_24_0.proxy:GetNode(arg_24_1):CanToggleOn())
 	end
 
-	slot5 = slot4.anchoredPosition * -1
-	slot5.x = math.clamp(slot5.x, -slot0.extendLimit.x, slot0.extendLimit.x)
-	slot5.y = math.clamp(slot5.y, -slot0.extendLimit.y, slot0.extendLimit.y)
+	local var_24_1 = var_24_0.anchoredPosition * -1
 
-	if slot0.twFocusId then
-		LeanTween.cancel(slot0.twFocusId)
+	var_24_1.x = math.clamp(var_24_1.x, -arg_24_0.extendLimit.x, arg_24_0.extendLimit.x)
+	var_24_1.y = math.clamp(var_24_1.y, -arg_24_0.extendLimit.y, arg_24_0.extendLimit.y)
 
-		slot0.twFocusId = nil
+	if arg_24_0.twFocusId then
+		LeanTween.cancel(arg_24_0.twFocusId)
+
+		arg_24_0.twFocusId = nil
 	end
 
-	if slot2 then
-		slot6 = {}
+	if arg_24_2 then
+		local var_24_2 = {}
 
-		table.insert(slot6, function (slot0)
-			SetCompomentEnabled(uv0.rtMap, typeof(ScrollRect), false)
+		table.insert(var_24_2, function(arg_25_0)
+			SetCompomentEnabled(arg_24_0.rtMap, typeof(ScrollRect), false)
 
-			uv0.twFocusId = LeanTween.move(uv0.rtMap, Vector3(uv1.x, uv1.y), (uv0.rtMap.anchoredPosition - uv1).magnitude > 0 and slot1 / (40 * math.sqrt(slot1)) or 0):setEase(uv2):setOnUpdate(System.Action_float(function (slot0)
-				uv0:onDragFunction()
-			end)):setOnComplete(System.Action(slot0)).uniqueId
+			local var_25_0 = (arg_24_0.rtMap.anchoredPosition - var_24_1).magnitude
+			local var_25_1 = var_25_0 > 0 and var_25_0 / (40 * math.sqrt(var_25_0)) or 0
+
+			arg_24_0.twFocusId = LeanTween.move(arg_24_0.rtMap, Vector3(var_24_1.x, var_24_1.y), var_25_1):setEase(arg_24_2):setOnUpdate(System.Action_float(function(arg_26_0)
+				arg_24_0:onDragFunction()
+			end)):setOnComplete(System.Action(arg_25_0)).uniqueId
 		end)
-		seriesAsync(slot6, function ()
-			SetCompomentEnabled(uv0.rtMap, typeof(ScrollRect), true)
+		seriesAsync(var_24_2, function()
+			SetCompomentEnabled(arg_24_0.rtMap, typeof(ScrollRect), true)
 		end)
 	else
-		slot0.rtMap.anchoredPosition = slot5
+		arg_24_0.rtMap.anchoredPosition = var_24_1
 
-		slot0:onDragFunction()
+		arg_24_0:onDragFunction()
 	end
 end
 
-function slot0.triggerNode(slot0, slot1)
-	if getProxy(IslandProxy):GetNode(slot1):IsNew() then
-		slot0:emit(SixthAnniversaryIslandMediator.MARK_NODE_AFTER_NEW, slot1)
+function var_0_0.triggerNode(arg_28_0, arg_28_1)
+	local var_28_0 = getProxy(IslandProxy):GetNode(arg_28_1)
+
+	if var_28_0:IsNew() then
+		arg_28_0:emit(SixthAnniversaryIslandMediator.MARK_NODE_AFTER_NEW, arg_28_1)
 	end
 
-	if slot2:IsCompleted() then
-		if slot2:getConfig("type") == 5 then
-			slot0:emit(SixthAnniversaryIslandMediator.INTO_ENTRANCE, slot2:getConfig("params")[1])
+	if var_28_0:IsCompleted() then
+		if var_28_0:getConfig("type") == 5 then
+			arg_28_0:emit(SixthAnniversaryIslandMediator.INTO_ENTRANCE, var_28_0:getConfig("params")[1])
 		end
 	else
-		slot0:triggerEvent(slot2)
+		arg_28_0:triggerEvent(var_28_0)
 	end
 end
 
-function slot0.triggerEvent(slot0, slot1)
-	assert(slot1.eventId and slot1.eventId ~= 0)
-	switch(IslandEvent.New({
-		id = slot1.eventId
-	}):getConfig("type"), {
-		[3] = function ()
-			slot0 = {}
+function var_0_0.triggerEvent(arg_29_0, arg_29_1)
+	assert(arg_29_1.eventId and arg_29_1.eventId ~= 0)
 
-			if uv0:getConfig("story") and slot1 ~= "" then
-				table.insert(slot0, function (slot0)
-					if uv0.isAutoPlayStory then
-						pg.NewStoryMgr.GetInstance():ForceAutoPlay(uv1, slot0)
+	local var_29_0 = IslandEvent.New({
+		id = arg_29_1.eventId
+	})
+
+	switch(var_29_0:getConfig("type"), {
+		[3] = function()
+			local var_30_0 = {}
+			local var_30_1 = var_29_0:getConfig("story")
+
+			if var_30_1 and var_30_1 ~= "" then
+				table.insert(var_30_0, function(arg_31_0)
+					if arg_29_0.isAutoPlayStory then
+						pg.NewStoryMgr.GetInstance():ForceAutoPlay(var_30_1, arg_31_0)
 					else
-						pg.NewStoryMgr.GetInstance():ForceManualPlay(uv1, slot0)
+						pg.NewStoryMgr.GetInstance():ForceManualPlay(var_30_1, arg_31_0)
 					end
 				end)
-				table.insert(slot0, function (slot0, slot1, slot2, slot3)
-					uv0.isAutoPlayStory = slot3
+				table.insert(var_30_0, function(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
+					arg_29_0.isAutoPlayStory = arg_32_3
 
-					slot0(slot2)
+					arg_32_0(arg_32_2)
 				end)
 			end
 
-			seriesAsync(slot0, function (slot0)
-				uv0:emit(SixthAnniversaryIslandMediator.OPEN_QTE_GAME, uv1:getConfig("params")[1], function (slot0)
-					uv0:emit(SixthAnniversaryIslandMediator.TRIGGER_NODE_EVENT, uv1.id, slot0 or 0)
+			seriesAsync(var_30_0, function(arg_33_0)
+				arg_29_0:emit(SixthAnniversaryIslandMediator.OPEN_QTE_GAME, var_29_0:getConfig("params")[1], function(arg_34_0)
+					arg_29_0:emit(SixthAnniversaryIslandMediator.TRIGGER_NODE_EVENT, arg_29_1.id, arg_34_0 or 0)
 				end)
 			end)
 		end
-	}, function ()
-		slot0 = {}
+	}, function()
+		local var_35_0 = {}
+		local var_35_1 = var_29_0:getConfig("story")
 
-		if uv0:getConfig("story") and slot1 ~= "" then
-			table.insert(slot0, function (slot0)
-				if uv0.isAutoPlayStory then
-					pg.NewStoryMgr.GetInstance():ForceAutoPlay(uv1, slot0, true)
+		if var_35_1 and var_35_1 ~= "" then
+			table.insert(var_35_0, function(arg_36_0)
+				if arg_29_0.isAutoPlayStory then
+					pg.NewStoryMgr.GetInstance():ForceAutoPlay(var_35_1, arg_36_0, true)
 				else
-					pg.NewStoryMgr.GetInstance():ForceManualPlay(uv1, slot0, true)
+					pg.NewStoryMgr.GetInstance():ForceManualPlay(var_35_1, arg_36_0, true)
 				end
 			end)
-			table.insert(slot0, function (slot0, slot1, slot2, slot3)
-				uv0.isAutoPlayStory = slot3
+			table.insert(var_35_0, function(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
+				arg_29_0.isAutoPlayStory = arg_37_3
 
-				slot0(slot2)
+				arg_37_0(arg_37_2)
 			end)
 		end
 
-		seriesAsync(slot0, function (slot0)
-			uv0:emit(SixthAnniversaryIslandMediator.TRIGGER_NODE_EVENT, uv1.id, slot0 or 0)
+		seriesAsync(var_35_0, function(arg_38_0)
+			arg_29_0:emit(SixthAnniversaryIslandMediator.TRIGGER_NODE_EVENT, arg_29_1.id, arg_38_0 or 0)
 		end)
 	end)
 end
 
-function slot0.afterTriggerEvent(slot0, slot1)
-	if slot0.proxy:GetNode(slot1):IsCompleted() then
-		underscore.each(slot0.ids, function (slot0)
-			uv0:refreshNode(slot0)
+function var_0_0.afterTriggerEvent(arg_39_0, arg_39_1)
+	local var_39_0 = arg_39_0.proxy:GetNode(arg_39_1)
+
+	if var_39_0:IsCompleted() then
+		underscore.each(arg_39_0.ids, function(arg_40_0)
+			arg_39_0:refreshNode(arg_40_0)
 		end)
-		slot0:refreshDailyPanel()
+		arg_39_0:refreshDailyPanel()
 	else
-		slot0:refreshNode(slot1)
+		arg_39_0:refreshNode(arg_39_1)
 	end
 
-	if slot2:CanTrigger() then
-		triggerToggle(slot0.nodeItemList.container:Find(slot1), slot2:CanToggleOn())
-		slot0:triggerNode(slot1)
+	if var_39_0:CanTrigger() then
+		triggerToggle(arg_39_0.nodeItemList.container:Find(arg_39_1), var_39_0:CanToggleOn())
+		arg_39_0:triggerNode(arg_39_1)
 	end
 end
 
-function slot0.refreshNode(slot0, slot1)
-	slot4 = getProxy(IslandProxy):GetNode(slot1):IsVisual()
+function var_0_0.refreshNode(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_0.nodeItemList.container:Find(arg_41_1)
+	local var_41_1 = getProxy(IslandProxy):GetNode(arg_41_1)
+	local var_41_2 = var_41_1:IsVisual()
 
-	setActive(slot0.nodeItemList.container:Find(slot1):Find("click"), slot4)
+	setActive(var_41_0:Find("click"), var_41_2)
 
-	slot5 = slot4 and slot3:GetScale() or 0
+	local var_41_3 = var_41_2 and var_41_1:GetScale() or 0
+	local var_41_4 = Vector3(var_41_3, var_41_3, 1)
 
-	if slot2.localScale ~= Vector3(slot5, slot5, 1) then
-		LeanTween.cancel(slot2)
-		LeanTween.scale(slot2, slot5, 0.3):setEase(LeanTweenType.easeInOutSine)
+	if var_41_0.localScale ~= var_41_4 then
+		LeanTween.cancel(var_41_0)
+		LeanTween.scale(var_41_0, var_41_4, 0.3):setEase(LeanTweenType.easeInOutSine)
 	end
 
-	if slot4 and not slot0.displayDic[slot1] then
-		slot0.displayDic[slot1] = true
+	if var_41_2 and not arg_41_0.displayDic[arg_41_1] then
+		arg_41_0.displayDic[arg_41_1] = true
 
-		if slot3:getConfig("icon") == "" then
-			SetCompomentEnabled(slot2:Find("main"), typeof(Image), false)
-			SetCompomentEnabled(slot2:Find("selected_back/light"), typeof(Image), false)
+		local var_41_5 = var_41_1:getConfig("icon")
+
+		if var_41_5 == "" then
+			SetCompomentEnabled(var_41_0:Find("main"), typeof(Image), false)
+			SetCompomentEnabled(var_41_0:Find("selected_back/light"), typeof(Image), false)
 		else
-			GetSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", slot6, function (slot0)
-				setImageSprite(uv0:Find("main"), slot0)
-				setImageSprite(uv0:Find("main/mask"), slot0)
+			GetSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", var_41_5, function(arg_42_0)
+				setImageSprite(var_41_0:Find("main"), arg_42_0)
+				setImageSprite(var_41_0:Find("main/mask"), arg_42_0)
 			end)
-			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", slot6 .. "_light", slot2:Find("selected_back/light"))
+			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", var_41_5 .. "_light", var_41_0:Find("selected_back/light"))
 		end
 
-		if slot3:getConfig("icon_name") ~= "" then
-			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", slot3:getConfig("icon_name"), slot2:Find("name/Image"), true)
+		if var_41_1:getConfig("icon_name") ~= "" then
+			GetImageSpriteFromAtlasAsync("ui/sixthanniversaryislandui_atlas", var_41_1:getConfig("icon_name"), var_41_0:Find("name/Image"), true)
 		end
 
-		if slot3:GetEffectName() ~= "" then
-			slot8 = pg.PoolMgr.GetInstance()
+		local var_41_6 = var_41_1:GetEffectName()
 
-			slot8:GetUI(slot7, true, function (slot0)
-				table.insert(uv0.effectObjs, {
-					name = uv1,
-					go = slot0
+		if var_41_6 ~= "" then
+			pg.PoolMgr.GetInstance():GetUI(var_41_6, true, function(arg_43_0)
+				table.insert(arg_41_0.effectObjs, {
+					name = var_41_6,
+					go = arg_43_0
 				})
-				setParent(slot0, uv2:Find("click"), false)
+				setParent(arg_43_0, var_41_0:Find("click"), false)
 			end)
 		end
 	end
 
-	setActive(slot2:Find("main/type"), slot3:RedDotHint())
+	setActive(var_41_0:Find("main/type"), var_41_1:RedDotHint())
 
-	slot6 = slot3:IsRefresh() and slot3:IsCompleted()
+	local var_41_7 = var_41_1:IsRefresh() and var_41_1:IsCompleted()
 
-	setActive(slot2:Find("name"), not slot6 and not slot3:IsTreasure())
-	setActive(slot2:Find("main/mask"), slot6)
-	setActive(slot2:Find("main/time"), false)
-	setActive(slot2:Find("main/new"), slot3:IsNew())
-	ReflectionHelp.RefSetField(typeof("LOutLine"), "OutlineWidth", GetOrAddComponent(slot2:Find("main"), typeof("LOutLine")), slot6 and 0 or 3)
-	ReflectionHelp.RefCallMethod(typeof("LOutLine"), "_Refresh", slot7)
-	triggerToggle(slot2, slot0.selectId == slot1 and slot3:CanToggleOn())
+	setActive(var_41_0:Find("name"), not var_41_7 and not var_41_1:IsTreasure())
+	setActive(var_41_0:Find("main/mask"), var_41_7)
+	setActive(var_41_0:Find("main/time"), false)
+	setActive(var_41_0:Find("main/new"), var_41_1:IsNew())
+
+	local var_41_8 = GetOrAddComponent(var_41_0:Find("main"), typeof("LOutLine"))
+
+	ReflectionHelp.RefSetField(typeof("LOutLine"), "OutlineWidth", var_41_8, var_41_7 and 0 or 3)
+	ReflectionHelp.RefCallMethod(typeof("LOutLine"), "_Refresh", var_41_8)
+	triggerToggle(var_41_0, arg_41_0.selectId == arg_41_1 and var_41_1:CanToggleOn())
 end
 
-function slot0.refreshDailyPanel(slot0)
-	slot0.dailyIds = underscore.select(slot0.ids, function (slot0)
-		return (uv0.proxy:GetNode(slot0):IsRefresh() or slot1:IsFlowerField()) and slot1:IsVisual()
+function var_0_0.refreshDailyPanel(arg_44_0)
+	arg_44_0.dailyIds = underscore.select(arg_44_0.ids, function(arg_45_0)
+		local var_45_0 = arg_44_0.proxy:GetNode(arg_45_0)
+
+		return (var_45_0:IsRefresh() or var_45_0:IsFlowerField()) and var_45_0:IsVisual()
 	end)
 
-	slot0.panelItemList:align(#slot0.dailyIds)
+	arg_44_0.panelItemList:align(#arg_44_0.dailyIds)
 
-	slot0.mainIds = underscore.select(slot0.ids, function (slot0)
-		return uv0.proxy:GetNode(slot0):IsMain() and slot1:IsVisual()
+	arg_44_0.mainIds = underscore.select(arg_44_0.ids, function(arg_46_0)
+		local var_46_0 = arg_44_0.proxy:GetNode(arg_46_0)
+
+		return var_46_0:IsMain() and var_46_0:IsVisual()
 	end)
 
-	slot0.floatItemList:align(#slot0.mainIds)
-	slot0:onDragFunction()
+	arg_44_0.floatItemList:align(#arg_44_0.mainIds)
+	arg_44_0:onDragFunction()
 end
 
-function slot0.focusList(slot0, slot1, slot2, slot3)
-	for slot7, slot8 in ipairs(slot1) do
-		if slot0.proxy:GetNode(slot8):IsVisual() then
-			slot0:focus(slot8, slot2, slot3)
+function var_0_0.focusList(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
+	for iter_47_0, iter_47_1 in ipairs(arg_47_1) do
+		if arg_47_0.proxy:GetNode(iter_47_1):IsVisual() then
+			arg_47_0:focus(iter_47_1, arg_47_2, arg_47_3)
 
 			return true
 		end
@@ -461,45 +466,45 @@ function slot0.focusList(slot0, slot1, slot2, slot3)
 	return false
 end
 
-function slot0.didEnter(slot0)
-	slot0.nodeItemList:align(#slot0.ids)
-	slot0:refreshDailyPanel()
-	slot0:updateTaskTip()
+function var_0_0.didEnter(arg_48_0)
+	arg_48_0.nodeItemList:align(#arg_48_0.ids)
+	arg_48_0:refreshDailyPanel()
+	arg_48_0:updateTaskTip()
 
-	slot1 = {}
+	local var_48_0 = {}
 
-	if slot0.contextData.nodeIds and #slot0.contextData.nodeIds > 0 then
-		table.insert(slot1, function (slot0)
-			if not uv0:focusList(uv0.contextData.nodeIds) then
+	if arg_48_0.contextData.nodeIds and #arg_48_0.contextData.nodeIds > 0 then
+		table.insert(var_48_0, function(arg_49_0)
+			if not arg_48_0:focusList(arg_48_0.contextData.nodeIds) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("islandnode_tips8"))
-				slot0()
+				arg_49_0()
 			end
 
-			uv0.contextData.nodeIds = nil
+			arg_48_0.contextData.nodeIds = nil
 		end)
-	elseif slot0.contextData.checkMain then
-		table.insert(slot1, function (slot0)
-			slot1 = getProxy(IslandProxy)
-			slot3 = getProxy(ActivityProxy)
-			slot3 = slot3:getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
-			slot3 = slot3:GetTotalBuildingLevel()
+	elseif arg_48_0.contextData.checkMain then
+		table.insert(var_48_0, function(arg_50_0)
+			local var_50_0 = getProxy(IslandProxy)
+			local var_50_1 = underscore.filter(underscore.map(arg_48_0.ids, function(arg_51_0)
+				return var_50_0:GetNode(arg_51_0)
+			end), function(arg_52_0)
+				return arg_52_0:IsMain() and not arg_52_0:IsCompleted()
+			end)
+			local var_50_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetTotalBuildingLevel()
 
-			if #underscore.filter(underscore.map(uv0.ids, function (slot0)
-				return uv0:GetNode(slot0)
-			end), function (slot0)
-				return slot0:IsMain() and not slot0:IsCompleted()
-			end) > 0 and underscore.all(slot2, function (slot0)
-				return not slot0:IsUnlock() and uv0 < slot0:getConfig("open_need")[1]
+			if #var_50_1 > 0 and underscore.all(var_50_1, function(arg_53_0)
+				return not arg_53_0:IsUnlock() and arg_53_0:getConfig("open_need")[1] > var_50_2
 			end) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("islandnode_tips9"))
 			end
 
-			slot0()
+			arg_50_0()
 		end)
 	end
 
-	slot0.contextData.checkMain = nil
-	slot2 = {
+	arg_48_0.contextData.checkMain = nil
+
+	local var_48_1 = {
 		1001,
 		1002,
 		1003,
@@ -507,17 +512,17 @@ function slot0.didEnter(slot0)
 		1005
 	}
 
-	if slot0.contextData.lastNodeId then
-		table.insert(slot2, 1, slot0.contextData.lastNodeId)
+	if arg_48_0.contextData.lastNodeId then
+		table.insert(var_48_1, 1, arg_48_0.contextData.lastNodeId)
 	end
 
-	table.insert(slot1, function (slot0)
-		if not uv0:focusList(uv1) then
-			slot0()
+	table.insert(var_48_0, function(arg_54_0)
+		if not arg_48_0:focusList(var_48_1) then
+			arg_54_0()
 		end
 	end)
-	seriesAsync(slot1, function ()
-		uv0:focusList({
+	seriesAsync(var_48_0, function()
+		arg_48_0:focusList({
 			1050,
 			1051,
 			1052,
@@ -525,34 +530,34 @@ function slot0.didEnter(slot0)
 		}, nil, true)
 	end)
 
-	slot4 = pg.NewStoryMgr.GetInstance()
+	local var_48_2 = "HAIDAORICHANG2"
 
-	slot4:Play("HAIDAORICHANG2", function ()
-		if uv0.contextData.wraps then
-			switch(uv0.contextData.wraps, {
-				[uv1.SHOP] = function ()
-					uv0:emit(SixthAnniversaryIslandMediator.GO_SHOP)
+	pg.NewStoryMgr.GetInstance():Play(var_48_2, function()
+		if arg_48_0.contextData.wraps then
+			switch(arg_48_0.contextData.wraps, {
+				[var_0_0.SHOP] = function()
+					arg_48_0:emit(SixthAnniversaryIslandMediator.GO_SHOP)
 				end
 			})
 
-			uv0.contextData.wraps = nil
+			arg_48_0.contextData.wraps = nil
 		end
 	end)
 end
 
-function slot0.updateTaskTip(slot0)
-	setActive(slot0.rtTop:Find("btns/btn_note/tip"), getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.ISLAND_TASK_ID))
+function var_0_0.updateTaskTip(arg_58_0)
+	setActive(arg_58_0.rtTop:Find("btns/btn_note/tip"), getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.ISLAND_TASK_ID))
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.rtTop, slot0._tf)
-	slot0.rtMap:GetComponent(typeof(ScrollRect)).onValueChanged:RemoveAllListeners()
+function var_0_0.willExit(arg_59_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_59_0.rtTop, arg_59_0._tf)
+	arg_59_0.rtMap:GetComponent(typeof(ScrollRect)).onValueChanged:RemoveAllListeners()
 
-	slot1 = pg.PoolMgr.GetInstance()
+	local var_59_0 = pg.PoolMgr.GetInstance()
 
-	for slot5, slot6 in ipairs(slot0.effectObjs) do
-		slot1:ReturnUI(slot6.name, slot6.go)
+	for iter_59_0, iter_59_1 in ipairs(arg_59_0.effectObjs) do
+		var_59_0:ReturnUI(iter_59_1.name, iter_59_1.go)
 	end
 end
 
-return slot0
+return var_0_0

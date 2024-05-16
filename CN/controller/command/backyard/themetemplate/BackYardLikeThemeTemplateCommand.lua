@@ -1,34 +1,39 @@
-slot0 = class("BackYardLikeThemeTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardLikeThemeTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.templateId
+	local var_1_2 = var_1_0.uploadTime
 
-	function slot5(slot0)
-		if getProxy(DormProxy):GetCollectionThemeTemplateById(uv0) then
-			slot2:AddLike()
-			slot1:UpdateCollectionThemeTemplate(slot2)
+	local function var_1_3(arg_2_0)
+		local var_2_0 = getProxy(DormProxy)
+		local var_2_1 = var_2_0:GetCollectionThemeTemplateById(var_1_1)
+
+		if var_2_1 then
+			var_2_1:AddLike()
+			var_2_0:UpdateCollectionThemeTemplate(var_2_1)
 		end
 
-		if slot1:GetShopThemeTemplateById(uv0) then
-			slot3:AddLike()
-			slot1:UpdateShopThemeTemplate(slot3)
+		local var_2_2 = var_2_0:GetShopThemeTemplateById(var_1_1)
+
+		if var_2_2 then
+			var_2_2:AddLike()
+			var_2_0:UpdateShopThemeTemplate(var_2_2)
 		end
 
-		uv1:sendNotification(GAME.BACKYARD_LIKE_THEME_TEMPLATE_DONE)
+		arg_1_0:sendNotification(GAME.BACKYARD_LIKE_THEME_TEMPLATE_DONE)
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(19121, {
-		theme_id = slot2.templateId,
-		upload_time = slot2.uploadTime
-	}, 19122, function (slot0)
-		if slot0.result == 0 then
-			uv0(slot0)
+	pg.ConnectionMgr.GetInstance():Send(19121, {
+		theme_id = var_1_1,
+		upload_time = var_1_2
+	}, 19122, function(arg_3_0)
+		if arg_3_0.result == 0 then
+			var_1_3(arg_3_0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

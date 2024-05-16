@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "GONGMINGDEPASSION12",
 	mode = 2,
 	fadeOut = 1.5,
@@ -254,7 +254,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 108050,
-			say = "别担心啦~反正我们也拿出了我们的最高的水平♪",
+			say = "别担心啦~反正我们也拿出了我们的最高水平♪",
 			painting = {
 				alpha = 0.3,
 				time = 1

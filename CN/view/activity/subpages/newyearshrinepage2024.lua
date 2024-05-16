@@ -1,19 +1,20 @@
-slot0 = class("NewYearShrinePage2024", import(".NewYearShrinePage"))
-slot0.GO_MINI_GAME_ID = 62
-slot0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2024
+﻿local var_0_0 = class("NewYearShrinePage2024", import(".NewYearShrinePage"))
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.GO_MINI_GAME_ID, {
-			callback = function ()
-				slot0 = Context.New()
+var_0_0.GO_MINI_GAME_ID = 62
+var_0_0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2024
 
-				SCENE.SetSceneInfo(slot0, uv0.GO_BACKHILL_SCENE)
-				getProxy(ContextProxy):PushContext2Prev(slot0)
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.GO_MINI_GAME_ID, {
+			callback = function()
+				local var_3_0 = Context.New()
+
+				SCENE.SetSceneInfo(var_3_0, var_0_0.GO_BACKHILL_SCENE)
+				getProxy(ContextProxy):PushContext2Prev(var_3_0)
 			end
 		})
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

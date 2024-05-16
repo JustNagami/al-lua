@@ -1,188 +1,215 @@
-slot0 = class("CourtYardDepthMap")
+﻿local var_0_0 = class("CourtYardDepthMap")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.sizeX = slot1
-	slot0.sizeY = slot2
-	slot0.depths = {}
-	slot0.dependInfo = {}
-	slot0.allItems = {}
-	slot0.sortedFlag = false
-	slot0.sortedItems = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.sizeX = arg_1_1
+	arg_1_0.sizeY = arg_1_2
+	arg_1_0.depths = {}
+	arg_1_0.dependInfo = {}
+	arg_1_0.allItems = {}
+	arg_1_0.sortedFlag = false
+	arg_1_0.sortedItems = {}
 
-	slot0:ResetDepth()
+	arg_1_0:ResetDepth()
 end
 
-function slot0.SetAfterFunc(slot0, slot1)
-	slot0.afterSortFunc = slot1
+function var_0_0.SetAfterFunc(arg_2_0, arg_2_1)
+	arg_2_0.afterSortFunc = arg_2_1
 end
 
-function slot0.GetDepth(slot0, slot1, slot2)
-	return slot0.depths[slot0:GetIndex(slot1, slot2)]
+function var_0_0.GetDepth(arg_3_0, arg_3_1, arg_3_2)
+	return arg_3_0.depths[arg_3_0:GetIndex(arg_3_1, arg_3_2)]
 end
 
-function slot0.InsertChar(slot0, slot1)
-	slot1:SetDepth(slot0:GetDepth(slot1.posX, slot1.posY))
+function var_0_0.InsertChar(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0:GetDepth(arg_4_1.posX, arg_4_1.posY)
 
-	for slot6, slot7 in ipairs(slot0.sortedItems) do
-		if slot7.posZ < slot2 then
-			table.insert(slot0.sortedItems, slot6, slot1)
-			slot0:CheckCharByIndex()
+	arg_4_1:SetDepth(var_4_0)
 
-			return slot6 - 1
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.sortedItems) do
+		if var_4_0 > iter_4_1.posZ then
+			table.insert(arg_4_0.sortedItems, iter_4_0, arg_4_1)
+			arg_4_0:CheckCharByIndex()
+
+			return iter_4_0 - 1
 		end
 	end
 
-	slot3 = #slot0.sortedItems
+	local var_4_1 = #arg_4_0.sortedItems
 
-	table.insert(slot0.sortedItems, slot3 + 1, slot1)
-	slot0:CheckCharByIndex()
+	table.insert(arg_4_0.sortedItems, var_4_1 + 1, arg_4_1)
+	arg_4_0:CheckCharByIndex()
 
-	return slot3
+	return var_4_1
 end
 
-function slot0.CheckCharByIndex(slot0)
-	for slot4 = 1, #slot0.sortedItems do
-		assert(slot0.sortedItems[math.min(slot4 + 1, #slot0.sortedItems)].posZ <= slot0.sortedItems[slot4].posZ, "舰娘插入队列位置错误")
+function var_0_0.CheckCharByIndex(arg_5_0)
+	for iter_5_0 = 1, #arg_5_0.sortedItems do
+		local var_5_0 = math.min(iter_5_0 + 1, #arg_5_0.sortedItems)
+
+		assert(arg_5_0.sortedItems[iter_5_0].posZ >= arg_5_0.sortedItems[var_5_0].posZ, "舰娘插入队列位置错误")
 	end
 end
 
-function slot0.RemoveChar(slot0, slot1)
-	table.removebyvalue(slot0.sortedItems, slot1)
+function var_0_0.RemoveChar(arg_6_0, arg_6_1)
+	table.removebyvalue(arg_6_0.sortedItems, arg_6_1)
 end
 
-function slot0.GetIndex(slot0, slot1, slot2)
-	return (slot2 - 1) * slot0.sizeX + slot1
+function var_0_0.GetIndex(arg_7_0, arg_7_1, arg_7_2)
+	return (arg_7_2 - 1) * arg_7_0.sizeX + arg_7_1
 end
 
-function slot0.ResetDepth(slot0)
-	slot1 = slot0.depths
+function var_0_0.ResetDepth(arg_8_0)
+	local var_8_0 = arg_8_0.depths
 
-	for slot5 = 1, slot0.sizeX do
-		for slot9 = 1, slot0.sizeY do
-			slot1[slot0:GetIndex(slot5, slot9)] = slot5 + slot9 - 1
-		end
-	end
-end
-
-function slot0.AddDepth(slot0, slot1, slot2, slot3)
-	slot4 = slot0.depths
-
-	for slot8 = 1, slot1 do
-		for slot12 = 1, slot2 do
-			slot13 = slot0:GetIndex(slot8, slot12)
-			slot4[slot13] = slot4[slot13] + slot3
+	for iter_8_0 = 1, arg_8_0.sizeX do
+		for iter_8_1 = 1, arg_8_0.sizeY do
+			var_8_0[arg_8_0:GetIndex(iter_8_0, iter_8_1)] = iter_8_0 + iter_8_1 - 1
 		end
 	end
 end
 
-function slot0.ModifyDepth(slot0, slot1)
-	slot2 = slot0.depths
+function var_0_0.AddDepth(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	local var_9_0 = arg_9_0.depths
 
-	if slot2[slot0:GetIndex(slot1.maxX, slot1.posY)] == slot2[slot0:GetIndex(slot1.posX, slot1.maxY)] then
-		slot1:SetDepth(slot7)
+	for iter_9_0 = 1, arg_9_1 do
+		for iter_9_1 = 1, arg_9_2 do
+			local var_9_1 = arg_9_0:GetIndex(iter_9_0, iter_9_1)
+
+			var_9_0[var_9_1] = var_9_0[var_9_1] + arg_9_3
+		end
+	end
+end
+
+function var_0_0.ModifyDepth(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0.depths
+	local var_10_1 = arg_10_1.posX
+	local var_10_2 = arg_10_1.posY
+	local var_10_3 = arg_10_1.maxX
+	local var_10_4 = arg_10_1.maxY
+	local var_10_5 = var_10_0[arg_10_0:GetIndex(var_10_3, var_10_2)]
+	local var_10_6 = var_10_0[arg_10_0:GetIndex(var_10_1, var_10_4)]
+
+	if var_10_5 == var_10_6 then
+		arg_10_1:SetDepth(var_10_5)
 
 		return
 	end
 
-	if slot7 < slot8 then
-		if slot3 > 1 and slot7 - 1 - slot2[slot0:GetIndex(slot3 - 1, slot6)] < 0 then
-			slot0:AddDepth(slot3 - 1, slot6, slot9)
+	if var_10_5 < var_10_6 then
+		if var_10_1 > 1 then
+			local var_10_7 = var_10_5 - 1 - var_10_0[arg_10_0:GetIndex(var_10_1 - 1, var_10_4)]
+
+			if var_10_7 < 0 then
+				arg_10_0:AddDepth(var_10_1 - 1, var_10_4, var_10_7)
+			end
 		end
 
-		slot1:SetDepth(slot7)
+		arg_10_1:SetDepth(var_10_5)
 
 		return
 	else
-		if slot4 > 1 and slot8 - 1 - slot2[slot0:GetIndex(slot5, slot4 - 1)] < 0 then
-			slot0:AddDepth(slot5, slot4 - 1, slot9)
+		if var_10_2 > 1 then
+			local var_10_8 = var_10_6 - 1 - var_10_0[arg_10_0:GetIndex(var_10_3, var_10_2 - 1)]
+
+			if var_10_8 < 0 then
+				arg_10_0:AddDepth(var_10_3, var_10_2 - 1, var_10_8)
+			end
 		end
 
-		slot1:SetDepth(slot8)
+		arg_10_1:SetDepth(var_10_6)
 
 		return
 	end
 end
 
-function slot0.PlaceItem(slot0, slot1)
-	slot2 = slot1.maxX
-	slot3 = slot1.maxY
-	slot4 = slot1.posX
-	slot5 = slot1.posY
-	slot0.dependInfo[slot1] = {}
+function var_0_0.PlaceItem(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1.maxX
+	local var_11_1 = arg_11_1.maxY
+	local var_11_2 = arg_11_1.posX
+	local var_11_3 = arg_11_1.posY
+	local var_11_4 = {}
 
-	for slot10, slot11 in ipairs(slot0.allItems) do
-		if slot4 <= slot11.maxX and slot5 <= slot11.maxY then
-			slot6[#slot6 + 1] = slot11
-		elseif slot11.posX <= slot2 and slot11.posY <= slot3 then
-			table.insert(slot0.dependInfo[slot11], slot1)
+	arg_11_0.dependInfo[arg_11_1] = var_11_4
+
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.allItems) do
+		if var_11_2 <= iter_11_1.maxX and var_11_3 <= iter_11_1.maxY then
+			var_11_4[#var_11_4 + 1] = iter_11_1
+		elseif var_11_0 >= iter_11_1.posX and var_11_1 >= iter_11_1.posY then
+			table.insert(arg_11_0.dependInfo[iter_11_1], arg_11_1)
 		end
 	end
 
-	table.insert(slot0.allItems, slot1)
+	table.insert(arg_11_0.allItems, arg_11_1)
 
-	slot1.sortedFlag = slot0.sortedFlag
+	arg_11_1.sortedFlag = arg_11_0.sortedFlag
 
-	slot0:SortAndCalcDepth()
+	arg_11_0:SortAndCalcDepth()
 
-	if slot0.afterSortFunc then
-		slot7(slot0.sortedItems)
+	local var_11_5 = arg_11_0.afterSortFunc
+
+	if var_11_5 then
+		var_11_5(arg_11_0.sortedItems)
 	end
 end
 
-function slot0.sortItemByDepth(slot0, slot1)
-	return slot1.posZ < slot0.posZ
+function var_0_0.sortItemByDepth(arg_12_0, arg_12_1)
+	return arg_12_0.posZ > arg_12_1.posZ
 end
 
-function slot0.SortAndCalcDepth(slot0)
-	slot0.sortedItems = {}
-	slot0.sortedFlag = not slot0.sortedFlag
+function var_0_0.SortAndCalcDepth(arg_13_0)
+	local var_13_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.allItems) do
-		slot0:AddItemAndDepend(slot6)
+	arg_13_0.sortedItems = var_13_0
+	arg_13_0.sortedFlag = not arg_13_0.sortedFlag
+
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.allItems) do
+		arg_13_0:AddItemAndDepend(iter_13_1)
 	end
 
-	slot0:ResetDepth()
+	arg_13_0:ResetDepth()
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:ModifyDepth(slot6)
+	for iter_13_2, iter_13_3 in ipairs(var_13_0) do
+		arg_13_0:ModifyDepth(iter_13_3)
 	end
 
-	table.sort(slot1, uv0.sortItemByDepth)
+	table.sort(var_13_0, var_0_0.sortItemByDepth)
 end
 
-function slot0.AddItemAndDepend(slot0, slot1)
-	if slot1.sortedFlag == slot0.sortedFlag then
+function var_0_0.AddItemAndDepend(arg_14_0, arg_14_1)
+	if arg_14_1.sortedFlag == arg_14_0.sortedFlag then
 		return
 	end
 
-	for slot5, slot6 in ipairs(slot0.dependInfo[slot1]) do
-		slot0:AddItemAndDepend(slot6)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.dependInfo[arg_14_1]) do
+		arg_14_0:AddItemAndDepend(iter_14_1)
 	end
 
-	table.insert(slot0.sortedItems, slot1)
-	assert(slot1.sortedFlag ~= sortedFlag, "依赖关系产生了循环！")
+	table.insert(arg_14_0.sortedItems, arg_14_1)
+	assert(arg_14_1.sortedFlag ~= sortedFlag, "依赖关系产生了循环！")
 
-	slot1.sortedFlag = slot0.sortedFlag
+	arg_14_1.sortedFlag = arg_14_0.sortedFlag
 end
 
-function slot0.RemoveItem(slot0, slot1)
-	slot2 = slot1.posX
-	slot3 = slot1.posY
-	slot4 = slot1.maxX
-	slot5 = slot1.maxY
+function var_0_0.RemoveItem(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1.posX
+	local var_15_1 = arg_15_1.posY
+	local var_15_2 = arg_15_1.maxX
+	local var_15_3 = arg_15_1.maxY
 
-	table.removebyvalue(slot0.allItems, slot1)
+	table.removebyvalue(arg_15_0.allItems, arg_15_1)
 
-	slot0.dependInfo[slot1] = nil
+	local var_15_4 = arg_15_0.dependInfo
 
-	for slot10, slot11 in ipairs(slot0.allItems) do
-		if slot11.posX <= slot4 and slot11.posY <= slot5 then
-			table.removebyvalue(slot6[slot11], slot1)
+	var_15_4[arg_15_1] = nil
+
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.allItems) do
+		if var_15_2 >= iter_15_1.posX and var_15_3 >= iter_15_1.posY then
+			table.removebyvalue(var_15_4[iter_15_1], arg_15_1)
 		end
 	end
 
-	slot0:SortAndCalcDepth()
-	table.removebyvalue(slot0.sortedItems, slot1)
+	arg_15_0:SortAndCalcDepth()
+	table.removebyvalue(arg_15_0.sortedItems, arg_15_1)
 end
 
-return slot0
+return var_0_0

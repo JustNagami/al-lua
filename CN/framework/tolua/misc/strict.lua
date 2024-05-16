@@ -1,30 +1,39 @@
-slot0 = debug.getinfo
-slot1 = error
-slot2 = rawset
-slot3 = rawget
+﻿local var_0_0 = debug.getinfo
+local var_0_1 = error
+local var_0_2 = rawset
+local var_0_3 = rawget
+local var_0_4 = getmetatable(_G)
 
-if getmetatable(_G) == nil then
-	setmetatable(_G, {})
+if var_0_4 == nil then
+	var_0_4 = {}
+
+	setmetatable(_G, var_0_4)
 end
 
-slot4.__declared = {}
+var_0_4.__declared = {}
 
-function slot4.__newindex(slot0, slot1, slot2)
-	if not uv0.__declared[slot1] then
-		if uv1(2, "S") and slot3.linedefined > 0 then
-			uv2("assign to undeclared variable '" .. slot1 .. "'", 2)
+function var_0_4.__newindex(arg_1_0, arg_1_1, arg_1_2)
+	if not var_0_4.__declared[arg_1_1] then
+		local var_1_0 = var_0_0(2, "S")
+
+		if var_1_0 and var_1_0.linedefined > 0 then
+			var_0_1("assign to undeclared variable '" .. arg_1_1 .. "'", 2)
 		end
 
-		uv0.__declared[slot1] = true
+		var_0_4.__declared[arg_1_1] = true
 	end
 
-	uv3(slot0, slot1, slot2)
+	var_0_2(arg_1_0, arg_1_1, arg_1_2)
 end
 
-function slot4.__index(slot0, slot1)
-	if not uv0.__declared[slot1] and uv1(2, "S") and slot2.linedefined > 0 then
-		uv2("variable '" .. slot1 .. "' is not declared", 2)
+function var_0_4.__index(arg_2_0, arg_2_1)
+	if not var_0_4.__declared[arg_2_1] then
+		local var_2_0 = var_0_0(2, "S")
+
+		if var_2_0 and var_2_0.linedefined > 0 then
+			var_0_1("variable '" .. arg_2_1 .. "' is not declared", 2)
+		end
 	end
 
-	return uv3(slot0, slot1)
+	return var_0_3(arg_2_0, arg_2_1)
 end

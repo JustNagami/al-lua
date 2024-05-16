@@ -1,120 +1,128 @@
-slot0 = class("ActivityBossBuffSelectLayerTemplate", import("view.base.BaseUI"))
+﻿local var_0_0 = class("ActivityBossBuffSelectLayerTemplate", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	error("Need Complete")
 end
 
-function slot0.init(slot0)
-	slot0.buffList = slot0._tf:Find("BuffList")
-	slot0.buffScrollComp = slot0.buffList:Find("ScrollView"):GetComponent("LScrollRect")
-	slot0.activeBuffRect = slot0._tf:Find("Active")
-	slot0.activeBuffScrollComp = slot0.activeBuffRect:Find("ScrollView"):GetComponent("LScrollRect")
-	slot0.startBtn = slot0._tf:Find("Start")
-	slot0.top = slot0._tf:Find("top")
+function var_0_0.init(arg_2_0)
+	arg_2_0.buffList = arg_2_0._tf:Find("BuffList")
+	arg_2_0.buffScrollComp = arg_2_0.buffList:Find("ScrollView"):GetComponent("LScrollRect")
+	arg_2_0.activeBuffRect = arg_2_0._tf:Find("Active")
+	arg_2_0.activeBuffScrollComp = arg_2_0.activeBuffRect:Find("ScrollView"):GetComponent("LScrollRect")
+	arg_2_0.startBtn = arg_2_0._tf:Find("Start")
+	arg_2_0.top = arg_2_0._tf:Find("top")
 
-	setText(slot0._tf:Find("BuffList/Title/Text"), i18n("activityboss_sp_all_buff"))
-	setText(slot0._tf:Find("Rewards/Desc"), i18n("activityboss_sp_best_score"))
-	setText(slot0._tf:Find("Rewards/Reward/Text"), i18n("activityboss_sp_display_reward"))
-	setText(slot0._tf:Find("Active/Title/Text"), i18n("activityboss_sp_active_buff"))
-	setText(slot0._tf:Find("Active/PT/Title"), i18n("activityboss_sp_score_bonus"))
+	setText(arg_2_0._tf:Find("BuffList/Title/Text"), i18n("activityboss_sp_all_buff"))
+	setText(arg_2_0._tf:Find("Rewards/Desc"), i18n("activityboss_sp_best_score"))
+	setText(arg_2_0._tf:Find("Rewards/Reward/Text"), i18n("activityboss_sp_display_reward"))
+	setText(arg_2_0._tf:Find("Active/Title/Text"), i18n("activityboss_sp_active_buff"))
+	setText(arg_2_0._tf:Find("Active/PT/Title"), i18n("activityboss_sp_score_bonus"))
 end
 
-function slot0.didEnter(slot0)
-	slot0.buffDatas = {}
-	slot0.buffs = _.map(slot0.contextData.spEnemyInfo:GetSelectableBuffs(), function (slot0)
-		slot1 = ActivityBossBuff.New({
-			configId = slot0
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.buffDatas = {}
+	arg_3_0.buffs = _.map(arg_3_0.contextData.spEnemyInfo:GetSelectableBuffs(), function(arg_4_0)
+		local var_4_0 = ActivityBossBuff.New({
+			configId = arg_4_0
 		})
-		uv0.buffDatas[slot1] = {}
 
-		return slot1
-	end)
-	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
+		arg_3_0.buffDatas[var_4_0] = {}
 
-	_.each(slot1:GetHistoryBuffs(), function (slot0)
-		uv0.buffDatas[_.detect(uv0.buffs, function (slot0)
-			return slot0:GetConfigID() == uv0
-		end)].selected = true
+		return var_4_0
 	end)
 
-	slot0.rewards = slot0.contextData.spEnemyInfo:GetRewards()
-	slot0.targets = slot0.contextData.spEnemyInfo:GetScoreTargets()
-	slot0.score = slot0.contextData.score
+	local var_3_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
 
-	function slot0.buffScrollComp.onUpdateItem(slot0, slot1)
-		uv0:UpdateBuffItem(slot0 + 1, slot1)
+	_.each(var_3_0:GetHistoryBuffs(), function(arg_5_0)
+		local var_5_0 = _.detect(arg_3_0.buffs, function(arg_6_0)
+			return arg_6_0:GetConfigID() == arg_5_0
+		end)
+
+		arg_3_0.buffDatas[var_5_0].selected = true
+	end)
+
+	arg_3_0.rewards = arg_3_0.contextData.spEnemyInfo:GetRewards()
+	arg_3_0.targets = arg_3_0.contextData.spEnemyInfo:GetScoreTargets()
+	arg_3_0.score = arg_3_0.contextData.score
+
+	function arg_3_0.buffScrollComp.onUpdateItem(arg_7_0, arg_7_1)
+		arg_3_0:UpdateBuffItem(arg_7_0 + 1, arg_7_1)
 	end
 
-	function slot0.activeBuffScrollComp.onUpdateItem(slot0, slot1)
-		uv0:UpdateActiveBuffItem(slot0 + 1, slot1)
+	function arg_3_0.activeBuffScrollComp.onUpdateItem(arg_8_0, arg_8_1)
+		arg_3_0:UpdateActiveBuffItem(arg_8_0 + 1, arg_8_1)
 	end
 
-	onButton(slot0, slot0.top:Find("back_btn"), function ()
-		uv0:closeView()
+	onButton(arg_3_0, arg_3_0.top:Find("back_btn"), function()
+		arg_3_0:closeView()
 	end, SOUND_BACK)
-	onButton(slot0, slot0.top:Find("option"), function ()
-		uv0:quickExitFunc()
+	onButton(arg_3_0, arg_3_0.top:Find("option"), function()
+		arg_3_0:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("Rewards/Reward"), function ()
-		uv0:emit(ActivityBossBuffSelectMediator.SHOW_REWARDS, uv0.rewards, uv0.targets, uv1:GetHighestScore())
+	onButton(arg_3_0, arg_3_0._tf:Find("Rewards/Reward"), function()
+		arg_3_0:emit(ActivityBossBuffSelectMediator.SHOW_REWARDS, arg_3_0.rewards, arg_3_0.targets, var_3_0:GetHighestScore())
 	end, SFX_PANEL)
-	onButton(slot0, slot0.startBtn, function ()
-		uv0:emit(ActivityBossBuffSelectMediator.ON_START, uv0.activeBuffs)
+	onButton(arg_3_0, arg_3_0.startBtn, function()
+		arg_3_0:emit(ActivityBossBuffSelectMediator.ON_START, arg_3_0.activeBuffs)
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	setText(slot0._tf:Find("Rewards/Score"), slot1:GetHighestScore())
-	slot0:UpdateView()
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+	setText(arg_3_0._tf:Find("Rewards/Score"), var_3_0:GetHighestScore())
+	arg_3_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot0.buffScrollComp:SetTotalCount(#slot0.buffs)
-	slot0:UpdateActiveBuffs()
+function var_0_0.UpdateView(arg_13_0)
+	arg_13_0.buffScrollComp:SetTotalCount(#arg_13_0.buffs)
+	arg_13_0:UpdateActiveBuffs()
 end
 
-function slot0.UpdateBuffItem(slot0, slot1, slot2)
-	slot3 = tf(slot2)
-	slot4 = slot0.buffs[slot1]
+function var_0_0.UpdateBuffItem(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = tf(arg_14_2)
+	local var_14_1 = arg_14_0.buffs[arg_14_1]
+	local var_14_2 = arg_14_0.buffDatas[var_14_1]
 
-	setActive(slot3:Find("Selected"), slot0.buffDatas[slot4].selected)
-	setText(slot3:Find("Name/Text"), slot4:GetDesc())
-	setText(slot3:Find("PT/Text"), "+" .. slot4:GetBonusText())
-	GetImageSpriteFromAtlasAsync(slot4:GetIconPath(), "", slot3:Find("Item/Icon"))
-	onButton(slot0, slot3, function ()
-		uv0.selected = not uv0.selected
+	setActive(var_14_0:Find("Selected"), var_14_2.selected)
+	setText(var_14_0:Find("Name/Text"), var_14_1:GetDesc())
+	setText(var_14_0:Find("PT/Text"), "+" .. var_14_1:GetBonusText())
+	GetImageSpriteFromAtlasAsync(var_14_1:GetIconPath(), "", var_14_0:Find("Item/Icon"))
+	onButton(arg_14_0, var_14_0, function()
+		var_14_2.selected = not var_14_2.selected
 
-		uv1:UpdateView()
+		arg_14_0:UpdateView()
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateActiveBuffs(slot0)
-	slot0.activeBuffs = _.select(slot0.buffs, function (slot0)
-		return uv0.buffDatas[slot0].selected
+function var_0_0.UpdateActiveBuffs(arg_16_0)
+	arg_16_0.activeBuffs = _.select(arg_16_0.buffs, function(arg_17_0)
+		return arg_16_0.buffDatas[arg_17_0].selected
 	end)
-	slot2 = slot0.activeBuffScrollComp
 
-	slot2:SetTotalCount(math.max(math.floor((#slot0.activeBuffs - 1) / 5) + 1, 4) * 5)
+	local var_16_0 = math.max(math.floor((#arg_16_0.activeBuffs - 1) / 5) + 1, 4) * 5
 
-	slot4 = slot0.activeBuffRect
+	arg_16_0.activeBuffScrollComp:SetTotalCount(var_16_0)
 
-	setText(slot4:Find("PT/Text"), "+" .. Mathf.Round(_.reduce(slot0.activeBuffs, 0, function (slot0, slot1)
-		return slot0 + slot1:GetBonus()
-	end) * 100) .. "%")
+	local var_16_1 = _.reduce(arg_16_0.activeBuffs, 0, function(arg_18_0, arg_18_1)
+		return arg_18_0 + arg_18_1:GetBonus()
+	end)
+	local var_16_2 = Mathf.Round(var_16_1 * 100)
+
+	setText(arg_16_0.activeBuffRect:Find("PT/Text"), "+" .. var_16_2 .. "%")
 end
 
-function slot0.UpdateActiveBuffItem(slot0, slot1, slot2)
-	slot4 = slot0.activeBuffs[slot1]
+function var_0_0.UpdateActiveBuffItem(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = tf(arg_19_2)
+	local var_19_1 = arg_19_0.activeBuffs[arg_19_1]
 
-	setActive(tf(slot2):Find("Icon"), tobool(slot4))
+	setActive(var_19_0:Find("Icon"), tobool(var_19_1))
 
-	if not slot4 then
+	if not var_19_1 then
 		return
 	end
 
-	GetImageSpriteFromAtlasAsync(slot4:GetIconPath(), "", slot3:Find("Icon"))
+	GetImageSpriteFromAtlasAsync(var_19_1:GetIconPath(), "", var_19_0:Find("Icon"))
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_20_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_20_0._tf)
 end
 
-return slot0
+return var_0_0

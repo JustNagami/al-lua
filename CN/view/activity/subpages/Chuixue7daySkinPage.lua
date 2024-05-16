@@ -1,57 +1,61 @@
-slot0 = class("Chuixue7daySkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("Chuixue7daySkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.step_txt = slot0:findTF("step_text", slot0.bg)
+	arg_1_0.step_txt = arg_1_0:findTF("step_text", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = slot0.uilist
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.uilist:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventUpdate then
+			local var_3_0 = arg_3_1 + 1
+			local var_3_1 = arg_2_0:findTF("item", arg_3_2)
+			local var_3_2 = arg_2_0.taskGroup[arg_2_0.nday][var_3_0]
+			local var_3_3 = arg_2_0.taskProxy:getTaskById(var_3_2) or arg_2_0.taskProxy:getFinishTaskById(var_3_2)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0:findTF("item", slot2)
-			slot6 = uv0.taskProxy:getTaskById(uv0.taskGroup[uv0.nday][slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot5)
+			assert(var_3_3, "without this task by id: " .. var_3_2)
 
-			assert(slot6, "without this task by id: " .. slot5)
+			local var_3_4 = var_3_3:getConfig("award_display")[1]
+			local var_3_5 = {
+				type = var_3_4[1],
+				id = var_3_4[2],
+				count = var_3_4[3]
+			}
 
-			slot7 = slot6:getConfig("award_display")[1]
-
-			updateDrop(slot4, {
-				type = slot7[1],
-				id = slot7[2],
-				count = slot7[3]
-			})
-			onButton(uv0, slot4, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_3_1, var_3_5)
+			onButton(arg_2_0, var_3_1, function()
+				arg_2_0:emit(BaseUI.ON_DROP, var_3_5)
 			end, SFX_PANEL)
 
-			slot9 = slot6:getProgress()
-			slot10 = slot6:getConfig("target_num")
+			local var_3_6 = var_3_3:getProgress()
+			local var_3_7 = var_3_3:getConfig("target_num")
 
-			setText(uv0:findTF("description", slot2), slot6:getConfig("desc"))
-			setText(uv0:findTF("progressText", slot2), slot9 .. "/" .. slot10)
-			setSlider(uv0:findTF("progress", slot2), 0, slot10, slot9)
+			setText(arg_2_0:findTF("description", arg_3_2), var_3_3:getConfig("desc"))
+			setText(arg_2_0:findTF("progressText", arg_3_2), var_3_6 .. "/" .. var_3_7)
+			setSlider(arg_2_0:findTF("progress", arg_3_2), 0, var_3_7, var_3_6)
 
-			slot12 = uv0:findTF("get_btn", slot2)
+			local var_3_8 = arg_2_0:findTF("go_btn", arg_3_2)
+			local var_3_9 = arg_2_0:findTF("get_btn", arg_3_2)
+			local var_3_10 = arg_2_0:findTF("got_btn", arg_3_2)
+			local var_3_11 = var_3_3:getTaskStatus()
 
-			setActive(uv0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
-			setActive(slot12, slot14 == 1)
-			setActive(uv0:findTF("got_btn", slot2), slot14 == 2)
-			onButton(uv0, slot11, function ()
-				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
+			setActive(var_3_8, var_3_11 == 0)
+			setActive(var_3_9, var_3_11 == 1)
+			setActive(var_3_10, var_3_11 == 2)
+			onButton(arg_2_0, var_3_8, function()
+				arg_2_0:emit(ActivityMediator.ON_TASK_GO, var_3_3)
 			end, SFX_PANEL)
-			onButton(uv0, slot12, function ()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+			onButton(arg_2_0, var_3_9, function()
+				arg_2_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_3_3)
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setText(slot0.step_txt, setColorStr(slot0.nday, "#89FF59FF") .. "/" .. #slot0.taskGroup)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	var_0_0.super.OnUpdateFlush(arg_7_0)
+	setText(arg_7_0.step_txt, setColorStr(arg_7_0.nday, "#89FF59FF") .. "/" .. #arg_7_0.taskGroup)
 end
 
-return slot0
+return var_0_0

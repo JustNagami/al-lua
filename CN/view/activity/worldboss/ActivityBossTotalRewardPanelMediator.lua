@@ -1,7 +1,7 @@
-slot0 = class("ActivityBossTotalRewardPanelMediator", import("view.base.ContextMediator"))
+﻿local var_0_0 = class("ActivityBossTotalRewardPanelMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
+function var_0_0.register(arg_1_0)
 	getProxy(SettingsProxy):ResetContinuousOperationAutoSub()
 end
 
-return slot0
+return var_0_0

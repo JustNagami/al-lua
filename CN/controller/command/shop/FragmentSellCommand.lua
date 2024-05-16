@@ -1,56 +1,58 @@
-slot0 = class("FragmentSellCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FragmentSellCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = getProxy(BagProxy)
-	slot5 = getProxy(PlayerProxy):getRawData()
-	slot6 = {}
-	slot7 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(BagProxy)
+	local var_1_2 = getProxy(PlayerProxy):getRawData()
+	local var_1_3 = {}
+	local var_1_4 = {}
 
-	for slot11, slot12 in pairs(slot1:getBody()) do
-		if slot3:getItemCountById(slot12.id) < slot12.count then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot12:getConfig("name")))
+	for iter_1_0, iter_1_1 in pairs(var_1_0) do
+		if var_1_1:getItemCountById(iter_1_1.id) < iter_1_1.count then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", iter_1_1:getConfig("name")))
 
 			return
 		end
 
-		slot7[slot14[1]] = (slot7[slot12:getConfig("price")[1]] or 0) + slot14[2] * slot12.count
+		local var_1_5 = iter_1_1:getConfig("price")
+		local var_1_6 = (var_1_4[var_1_5[1]] or 0) + var_1_5[2] * iter_1_1.count
 
-		table.insert(slot6, {
-			id = slot12.id,
-			count = slot12.count
+		var_1_4[var_1_5[1]] = var_1_6
+
+		table.insert(var_1_3, {
+			id = iter_1_1.id,
+			count = iter_1_1.count
 		})
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
-
-	slot8:Send(15008, {
-		item_list = slot6
-	}, 15009, function (slot0)
-		if slot0.result == 0 then
-			for slot4, slot5 in ipairs(uv0) do
-				reducePlayerOwn(slot5)
+	pg.ConnectionMgr.GetInstance():Send(15008, {
+		item_list = var_1_3
+	}, 15009, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			for iter_2_0, iter_2_1 in ipairs(var_1_0) do
+				reducePlayerOwn(iter_2_1)
 			end
 
-			slot1 = {}
+			local var_2_0 = {}
 
-			for slot5, slot6 in pairs(uv1) do
-				slot7 = {
+			for iter_2_2, iter_2_3 in pairs(var_1_4) do
+				local var_2_1 = {
 					type = DROP_TYPE_RESOURCE,
-					id = slot5,
-					count = slot6
+					id = iter_2_2,
+					count = iter_2_3
 				}
 
-				addPlayerOwn(slot7)
-				table.insert(slot1, slot7)
+				addPlayerOwn(var_2_1)
+				table.insert(var_2_0, var_2_1)
 			end
 
-			uv2:sendNotification(GAME.FRAG_SELL_DONE, {
-				awards = slot1
+			arg_1_0:sendNotification(GAME.FRAG_SELL_DONE, {
+				awards = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

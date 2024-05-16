@@ -1,30 +1,30 @@
-slot0 = class("Challenge2ResetRequestCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("Challenge2ResetRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody().mode
-	slot3 = slot1:getBody().isInfiniteSeasonClear
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().mode
+	local var_1_1 = arg_1_1:getBody().isInfiniteSeasonClear
+	local var_1_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
 
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE) or slot5:isEnd() then
+	if not var_1_2 or var_1_2:isEnd() then
 		return
 	end
 
-	slot6 = getProxy(ChallengeProxy)
-	slot7 = pg.ConnectionMgr.GetInstance()
+	local var_1_3 = getProxy(ChallengeProxy)
 
-	slot7:Send(24011, {
-		activity_id = slot5.id,
-		mode = slot2
-	}, 24012, function (slot0)
-		if slot0.result == 0 then
-			uv0:getUserChallengeInfoList()[uv1] = nil
+	pg.ConnectionMgr.GetInstance():Send(24011, {
+		activity_id = var_1_2.id,
+		mode = var_1_0
+	}, 24012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_3:getUserChallengeInfoList()[var_1_0] = nil
 
-			if uv2 == true then
-				uv0:setCurMode(ChallengeProxy.MODE_CASUAL)
+			if var_1_1 == true then
+				var_1_3:setCurMode(ChallengeProxy.MODE_CASUAL)
 			end
 
-			uv3:sendNotification(GAME.CHALLENGE2_RESET_DONE)
+			arg_1_0:sendNotification(GAME.CHALLENGE2_RESET_DONE)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

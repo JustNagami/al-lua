@@ -1,28 +1,28 @@
-slot0 = class("IslandRequestCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("IslandRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = pg.TimeMgr.GetInstance()
-	slot3 = slot3:GetServerTime()
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	slot4:Send(26108, {
-		act_id = slot1:getBody().act_id
-	}, 26109, function (slot0)
-		if slot0.ret == 0 then
-			slot1 = getProxy(IslandProxy)
-			slot1.timeStamp = uv0
-			slot1.nodeDic = {}
+	pg.ConnectionMgr.GetInstance():Send(26108, {
+		act_id = var_1_0.act_id
+	}, 26109, function(arg_2_0)
+		if arg_2_0.ret == 0 then
+			local var_2_0 = getProxy(IslandProxy)
 
-			for slot5, slot6 in ipairs(slot0.node_list) do
-				slot1.nodeDic[slot6.id] = IslandNode.New(slot6)
+			var_2_0.timeStamp = var_1_1
+			var_2_0.nodeDic = {}
+
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.node_list) do
+				var_2_0.nodeDic[iter_2_1.id] = IslandNode.New(iter_2_1)
 			end
 
-			existCall(uv1.callback)
+			existCall(var_1_0.callback)
 			pg.m02:sendNotification(GAME.REQUEST_NODE_LIST_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Request island data failed:" .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Request island data failed:" .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

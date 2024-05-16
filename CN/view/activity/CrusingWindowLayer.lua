@@ -1,67 +1,65 @@
-slot0 = class("CrusingWindowLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("CrusingWindowLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CrusingWindowUI"
 end
 
-function slot0.preload(slot0, slot1)
-	slot2 = getProxy(ActivityProxy)
-	slot2 = slot2:getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+function var_0_0.preload(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 
-	GetSpriteFromAtlasAsync("crusingwindow/" .. slot2:getConfig("config_client").map_name, "", function (slot0)
-		uv0.windowSprite = slot0
+	GetSpriteFromAtlasAsync("crusingwindow/" .. var_2_0:getConfig("config_client").map_name, "", function(arg_3_0)
+		arg_2_0.windowSprite = arg_3_0
 
-		uv1()
+		arg_2_1()
 	end)
 end
 
-function slot0.init(slot0)
-	setImageSprite(slot0._tf:Find("panel"), slot0.windowSprite, true)
+function var_0_0.init(arg_4_0)
+	setImageSprite(arg_4_0._tf:Find("panel"), arg_4_0.windowSprite, true)
 
-	slot0.rtBg = slot0._tf:Find("bg")
-	slot0.btnBack = slot0._tf:Find("panel/btn_back")
-	slot0.btnGo = slot0._tf:Find("panel/btn_go")
-	slot0.itemContent = slot0._tf:Find("panel/content")
-	slot0.itemList = UIItemList.New(slot0.itemContent, slot0.itemContent:GetChild(0))
+	arg_4_0.rtBg = arg_4_0._tf:Find("bg")
+	arg_4_0.btnBack = arg_4_0._tf:Find("panel/btn_back")
+	arg_4_0.btnGo = arg_4_0._tf:Find("panel/btn_go")
+	arg_4_0.itemContent = arg_4_0._tf:Find("panel/content")
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	local var_4_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING):getConfig("config_client").equip_skin or {}
 
-		if slot0 == UIItemList.EventUpdate then
-			slot4, slot5, slot6 = unpack(uv0[slot1])
+	arg_4_0.itemList = UIItemList.New(arg_4_0.itemContent, arg_4_0.itemContent:GetChild(0))
 
-			updateDrop(slot2, {
-				count = slot6,
-				id = slot5,
-				type = slot4
-			})
-			onButton(uv1, slot2, function ()
-				uv0:emit(uv1.ON_DROP, uv2)
+	arg_4_0.itemList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		arg_5_1 = arg_5_1 + 1
+
+		if arg_5_0 == UIItemList.EventUpdate then
+			local var_5_0 = {}
+
+			var_5_0.type, var_5_0.id, var_5_0.count = unpack(var_4_0[arg_5_1])
+
+			updateDrop(arg_5_2, var_5_0)
+			onButton(arg_4_0, arg_5_2, function()
+				arg_4_0:emit(var_0_0.ON_DROP, var_5_0)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.itemList:align(#(getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING):getConfig("config_client").equip_skin or {}))
+	arg_4_0.itemList:align(#var_4_0)
 end
 
-function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:BlurPanel(slot0._tf, false, {
+function var_0_0.didEnter(arg_7_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
-	onButton(slot0, slot0.rtBg, function ()
-		uv0:closeView()
+	onButton(arg_7_0, arg_7_0.rtBg, function()
+		arg_7_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+	onButton(arg_7_0, arg_7_0.btnBack, function()
+		arg_7_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnGo, function ()
-		uv0:emit(CrusingWindowMediator.GO_CRUSING)
+	onButton(arg_7_0, arg_7_0.btnGo, function()
+		arg_7_0:emit(CrusingWindowMediator.GO_CRUSING)
 	end, SFX_CONFIRM)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_11_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf)
 end
 
-return slot0
+return var_0_0

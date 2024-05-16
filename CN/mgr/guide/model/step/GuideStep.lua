@@ -1,227 +1,243 @@
-slot0 = class("GuideStep")
-slot0.TYPE_DOFUNC = 0
-slot0.TYPE_DONOTHING = 1
-slot0.TYPE_FINDUI = 2
-slot0.TYPE_HIDEUI = 3
-slot0.TYPE_SENDNOTIFIES = 4
-slot0.TYPE_SHOWSIGN = 5
-slot0.TYPE_STORY = 6
-slot0.DIALOGUE_BLUE = 1
-slot0.DIALOGUE_WHITE = 2
-slot0.HIGH_TYPE_LINE = 1
-slot0.HIGH_TYPE_GAMEOBJECT = 2
+﻿local var_0_0 = class("GuideStep")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.delay = slot1.delay
-	slot0.waitScene = slot1.waitScene
-	slot0.code = slot1.code
-	slot0.alpha = slot1.alpha
-	slot0.styleData = slot0:GenStyleData(slot1.style)
-	slot0.highLightData = slot0:GenHighLightData(slot1.style)
-	slot0.baseUI = slot0:GenSearchData(slot1.baseui)
-	slot0.spriteUI = slot0:GenSpriteSearchData(slot1.spriteui)
-	slot0.sceneName = slot1.style and slot1.style.scene
-	slot0.otherTriggerTarget = slot1.style and slot1.style.trigger
-	slot0.isWorld = defaultValue(slot1.isWorld, true)
+var_0_0.TYPE_DOFUNC = 0
+var_0_0.TYPE_DONOTHING = 1
+var_0_0.TYPE_FINDUI = 2
+var_0_0.TYPE_HIDEUI = 3
+var_0_0.TYPE_SENDNOTIFIES = 4
+var_0_0.TYPE_SHOWSIGN = 5
+var_0_0.TYPE_STORY = 6
+var_0_0.DIALOGUE_BLUE = 1
+var_0_0.DIALOGUE_WHITE = 2
+var_0_0.HIGH_TYPE_LINE = 1
+var_0_0.HIGH_TYPE_GAMEOBJECT = 2
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.delay = arg_1_1.delay
+	arg_1_0.waitScene = arg_1_1.waitScene
+	arg_1_0.code = arg_1_1.code
+	arg_1_0.alpha = arg_1_1.alpha
+	arg_1_0.styleData = arg_1_0:GenStyleData(arg_1_1.style)
+	arg_1_0.highLightData = arg_1_0:GenHighLightData(arg_1_1.style)
+	arg_1_0.baseUI = arg_1_0:GenSearchData(arg_1_1.baseui)
+	arg_1_0.spriteUI = arg_1_0:GenSpriteSearchData(arg_1_1.spriteui)
+	arg_1_0.sceneName = arg_1_1.style and arg_1_1.style.scene
+	arg_1_0.otherTriggerTarget = arg_1_1.style and arg_1_1.style.trigger
+	arg_1_0.isWorld = defaultValue(arg_1_1.isWorld, true)
 end
 
-function slot0.UpdateIsWorld(slot0, slot1)
-	slot0.isWorld = slot1
+function var_0_0.UpdateIsWorld(arg_2_0, arg_2_1)
+	arg_2_0.isWorld = arg_2_1
 end
 
-function slot0.IsMatchWithCode(slot0, slot1)
-	if not slot0:GetMatchCode() then
+function var_0_0.IsMatchWithCode(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0:GetMatchCode()
+
+	if not var_3_0 then
 		return true
 	end
 
-	if type(slot2) == "number" then
-		return table.contains(slot1, slot2)
-	elseif type(slot2) == "table" then
-		return _.any(slot1, function (slot0)
-			return table.contains(uv0, slot0)
+	if type(var_3_0) == "number" then
+		return table.contains(arg_3_1, var_3_0)
+	elseif type(var_3_0) == "table" then
+		return _.any(arg_3_1, function(arg_4_0)
+			return table.contains(var_3_0, arg_4_0)
 		end)
 	end
 
 	return false
 end
 
-function slot0.GetMatchCode(slot0)
-	return slot0.code
+function var_0_0.GetMatchCode(arg_5_0)
+	return arg_5_0.code
 end
 
-function slot0.GetDelay(slot0)
-	return slot0.delay or 0
+function var_0_0.GetDelay(arg_6_0)
+	return arg_6_0.delay or 0
 end
 
-function slot0.GetAlpha(slot0)
-	return slot0.alpha or 0.4
+function var_0_0.GetAlpha(arg_7_0)
+	return arg_7_0.alpha or 0.4
 end
 
-function slot0.ShouldWaitScene(slot0)
-	return slot0.waitScene and slot0.waitScene ~= ""
+function var_0_0.ShouldWaitScene(arg_8_0)
+	return arg_8_0.waitScene and arg_8_0.waitScene ~= ""
 end
 
-function slot0.GetWaitScene(slot0)
-	return slot0.waitScene
+function var_0_0.GetWaitScene(arg_9_0)
+	return arg_9_0.waitScene
 end
 
-function slot0.ShouldShowDialogue(slot0)
-	return slot0.styleData ~= nil
+function var_0_0.ShouldShowDialogue(arg_10_0)
+	return arg_10_0.styleData ~= nil
 end
 
-function slot0.GetDialogueType(slot0)
-	return slot0.styleData.mode
+function var_0_0.GetDialogueType(arg_11_0)
+	return arg_11_0.styleData.mode
 end
 
-function slot1(slot0, slot1)
-	slot2 = "char"
+local function var_0_1(arg_12_0, arg_12_1)
+	local var_12_0 = "char"
 
-	if slot1.char and slot1.char == 1 then
-		slot2 = slot0.isWorld and "char_world" or "char_world1"
-	elseif slot1.char and slot1.char == "amazon" then
-		slot2 = "char_amazon"
+	if arg_12_1.char and arg_12_1.char == 1 then
+		var_12_0 = arg_12_0.isWorld and "char_world" or "char_world1"
+	elseif arg_12_1.char and arg_12_1.char == "amazon" then
+		var_12_0 = "char_amazon"
 	end
 
-	return slot2
+	return var_12_0
 end
 
-function slot2(slot0, slot1)
-	if slot1.charPos then
-		return Vector2(slot1.charPos[1], slot1.charPos[2])
-	elseif slot1.dir == 1 then
-		return slot1.mode == uv0.DIALOGUE_BLUE and Vector2(-400, -170) or Vector2(-350, 0)
+local function var_0_2(arg_13_0, arg_13_1)
+	if arg_13_1.charPos then
+		return Vector2(arg_13_1.charPos[1], arg_13_1.charPos[2])
+	elseif arg_13_1.dir == 1 then
+		return arg_13_1.mode == var_0_0.DIALOGUE_BLUE and Vector2(-400, -170) or Vector2(-350, 0)
 	else
-		return slot1.mode == uv0.DIALOGUE_BLUE and Vector2(400, -170) or Vector2(350, 0)
+		return arg_13_1.mode == var_0_0.DIALOGUE_BLUE and Vector2(400, -170) or Vector2(350, 0)
 	end
 end
 
-function slot3(slot0)
-	slot1 = nil
-	slot1 = (not slot0.charScale or Vector2(slot0.charScale[1], slot0.charScale[2])) and Vector2(1, 1)
+local function var_0_3(arg_14_0)
+	local var_14_0
 
-	return slot0.dir == 1 and slot1 or Vector3(-slot1.x, slot1.y, 1)
+	if arg_14_0.charScale then
+		var_14_0 = Vector2(arg_14_0.charScale[1], arg_14_0.charScale[2])
+	else
+		var_14_0 = Vector2(1, 1)
+	end
+
+	return arg_14_0.dir == 1 and var_14_0 or Vector3(-var_14_0.x, var_14_0.y, 1)
 end
 
-function slot0.GenStyleData(slot0, slot1)
-	if not slot1 then
+function var_0_0.GenStyleData(arg_15_0, arg_15_1)
+	if not arg_15_1 then
 		return nil
 	end
 
 	return {
-		mode = slot1.mode,
-		text = HXSet.hxLan(slot1.text or ""),
+		mode = arg_15_1.mode,
+		text = HXSet.hxLan(arg_15_1.text or ""),
 		counsellor = {
-			name = uv0(slot0, slot1),
-			position = uv1(slot0, slot1),
-			scale = uv2(slot1)
+			name = var_0_1(arg_15_0, arg_15_1),
+			position = var_0_2(arg_15_0, arg_15_1),
+			scale = var_0_3(arg_15_1)
 		},
-		scale = slot1.dir == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1),
-		position = Vector2(slot1.posX or 0, slot1.posY or 0),
-		handPosition = slot1.handPos and Vector3(slot1.handPos.x, slot1.handPos.y, 0) or Vector3(-267, -96, 0),
-		handAngle = slot1.handPos and Vector3(0, 0, slot1.handPos.w or 0) or Vector3(0, 0, 0)
+		scale = arg_15_1.dir == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1),
+		position = Vector2(arg_15_1.posX or 0, arg_15_1.posY or 0),
+		handPosition = arg_15_1.handPos and Vector3(arg_15_1.handPos.x, arg_15_1.handPos.y, 0) or Vector3(-267, -96, 0),
+		handAngle = arg_15_1.handPos and Vector3(0, 0, arg_15_1.handPos.w or 0) or Vector3(0, 0, 0)
 	}
 end
 
-function slot0.GetStyleData(slot0)
-	return slot0.styleData
+function var_0_0.GetStyleData(arg_16_0)
+	return arg_16_0.styleData
 end
 
-function slot0.GenHighLightData(slot0, slot1)
-	function slot2(slot0)
-		slot1 = uv0:GenSearchData(slot0)
-		slot1.type = slot0.lineMode or uv1.HIGH_TYPE_GAMEOBJECT
+function var_0_0.GenHighLightData(arg_17_0, arg_17_1)
+	local function var_17_0(arg_18_0)
+		local var_18_0 = arg_17_0:GenSearchData(arg_18_0)
 
-		return slot1
+		var_18_0.type = arg_18_0.lineMode or var_0_0.HIGH_TYPE_GAMEOBJECT
+
+		return var_18_0
 	end
 
-	slot3 = {}
+	local var_17_1 = {}
 
-	if slot1 and slot1.ui then
-		table.insert(slot3, slot2(slot1.ui))
-	elseif slot1 and slot1.uiset then
-		for slot7, slot8 in ipairs(slot1.uiset) do
-			table.insert(slot3, slot2(slot8))
+	if arg_17_1 and arg_17_1.ui then
+		table.insert(var_17_1, var_17_0(arg_17_1.ui))
+	elseif arg_17_1 and arg_17_1.uiset then
+		for iter_17_0, iter_17_1 in ipairs(arg_17_1.uiset) do
+			table.insert(var_17_1, var_17_0(iter_17_1))
 		end
-	elseif slot1 and slot1.uiFunc then
-		for slot8, slot9 in ipairs(slot1.uiFunc()) do
-			table.insert(slot3, slot2(slot9))
+	elseif arg_17_1 and arg_17_1.uiFunc then
+		local var_17_2 = arg_17_1.uiFunc()
+
+		for iter_17_2, iter_17_3 in ipairs(var_17_2) do
+			table.insert(var_17_1, var_17_0(iter_17_3))
 		end
 	end
 
-	return slot3
+	return var_17_1
 end
 
-function slot0.ShouldHighLightTarget(slot0)
-	return #slot0.highLightData > 0
+function var_0_0.ShouldHighLightTarget(arg_19_0)
+	return #arg_19_0.highLightData > 0
 end
 
-function slot0.GetHighLightTarget(slot0)
-	return slot0.highLightData
+function var_0_0.GetHighLightTarget(arg_20_0)
+	return arg_20_0.highLightData
 end
 
-function slot0.ExistTrigger(slot0)
-	return slot0:GetType() == uv0.TYPE_FINDUI or slot1 == uv0.TYPE_STORY
+function var_0_0.ExistTrigger(arg_21_0)
+	local var_21_0 = arg_21_0:GetType()
+
+	return var_21_0 == var_0_0.TYPE_FINDUI or var_21_0 == var_0_0.TYPE_STORY
 end
 
-function slot0.ShouldGoScene(slot0)
-	return slot0.sceneName and slot0.sceneName ~= ""
+function var_0_0.ShouldGoScene(arg_22_0)
+	return arg_22_0.sceneName and arg_22_0.sceneName ~= ""
 end
 
-function slot0.GetSceneName(slot0)
-	return slot0.sceneName
+function var_0_0.GetSceneName(arg_23_0)
+	return arg_23_0.sceneName
 end
 
-function slot0.ShouldTriggerOtherTarget(slot0)
-	return slot0.otherTriggerTarget ~= nil
+function var_0_0.ShouldTriggerOtherTarget(arg_24_0)
+	return arg_24_0.otherTriggerTarget ~= nil
 end
 
-function slot0.GetOtherTriggerTarget(slot0)
-	return slot0:GenSearchData(slot0.otherTriggerTarget)
+function var_0_0.GetOtherTriggerTarget(arg_25_0)
+	local var_25_0 = arg_25_0.otherTriggerTarget
+
+	return arg_25_0:GenSearchData(var_25_0)
 end
 
-function slot0.GenSearchData(slot0, slot1)
-	if not slot1 then
+function var_0_0.GenSearchData(arg_26_0, arg_26_1)
+	if not arg_26_1 then
 		return nil
 	end
 
 	return {
-		path = slot1.path,
-		delay = slot1.delay,
-		pathIndex = slot1.pathIndex,
-		conditionData = slot1.conditionData
+		path = arg_26_1.path,
+		delay = arg_26_1.delay,
+		pathIndex = arg_26_1.pathIndex,
+		conditionData = arg_26_1.conditionData
 	}
 end
 
-function slot0.GenSpriteSearchData(slot0, slot1)
-	if not slot1 then
+function var_0_0.GenSpriteSearchData(arg_27_0, arg_27_1)
+	if not arg_27_1 then
 		return nil
 	end
 
-	slot2 = slot0:GenSearchData(slot1)
-	slot2.defaultName = slot1.defaultName
-	slot2.childPath = slot1.childPath
+	local var_27_0 = arg_27_0:GenSearchData(arg_27_1)
 
-	return slot2
+	var_27_0.defaultName = arg_27_1.defaultName
+	var_27_0.childPath = arg_27_1.childPath
+
+	return var_27_0
 end
 
-function slot0.ShouldCheckBaseUI(slot0)
-	return slot0.baseUI ~= nil
+function var_0_0.ShouldCheckBaseUI(arg_28_0)
+	return arg_28_0.baseUI ~= nil
 end
 
-function slot0.GetBaseUI(slot0)
-	return slot0.baseUI
+function var_0_0.GetBaseUI(arg_29_0)
+	return arg_29_0.baseUI
 end
 
-function slot0.ShouldCheckSpriteUI(slot0)
-	return slot0.spriteUI ~= nil
+function var_0_0.ShouldCheckSpriteUI(arg_30_0)
+	return arg_30_0.spriteUI ~= nil
 end
 
-function slot0.GetSpriteUI(slot0)
-	return slot0.spriteUI
+function var_0_0.GetSpriteUI(arg_31_0)
+	return arg_31_0.spriteUI
 end
 
-function slot0.GetType(slot0)
+function var_0_0.GetType(arg_32_0)
 	assert(false, "overwrite me!!!")
 end
 
-return slot0
+return var_0_0

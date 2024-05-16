@@ -1,152 +1,152 @@
-slot0 = class("GuideEventTrigger")
+﻿local var_0_0 = class("GuideEventTrigger")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot6 = nil
+	local var_1_0
 
-	if slot1 == GuideFindUIStep.TRIGGER_TYPE_BUTTON then
-		slot6 = slot0:HandleBtnTrigger(slot2, slot3, slot5)
-	elseif slot1 == GuideFindUIStep.TRIGGER_TYPE_TOGGLE then
-		slot6 = slot0:HandleToggleTrigger(slot2, slot3, slot4, slot5)
-	elseif slot1 == GuideFindUIStep.EVENT_TYPE_CLICK then
-		slot6 = slot0:HandleClickTrigger(slot2, slot3, slot5)
-	elseif slot1 == GuideFindUIStep.EVENT_TYPE_STICK then
-		slot6 = slot0:HandleStickTrigger(slot2, slot3, slot5)
-	elseif slot1 == GuideFindUIStep.SHOW_UI then
-		slot6 = slot0:HandleShowUITrigger(slot2, slot3, slot5)
-	elseif slot1 == GuideFindUIStep.TRIGGER_TYPE_BUTTONEX then
-		slot6 = slot0:HandleBtnExTrigger(slot2, slot3, slot4, slot5)
-	elseif slot1 == GuideFindUIStep.SNAP_PAGE then
-		slot6 = slot0:HandleSnapPageTrigger(slot2, slot3, slot4, slot5)
+	if arg_1_1 == GuideFindUIStep.TRIGGER_TYPE_BUTTON then
+		var_1_0 = arg_1_0:HandleBtnTrigger(arg_1_2, arg_1_3, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.TRIGGER_TYPE_TOGGLE then
+		var_1_0 = arg_1_0:HandleToggleTrigger(arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.EVENT_TYPE_CLICK then
+		var_1_0 = arg_1_0:HandleClickTrigger(arg_1_2, arg_1_3, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.EVENT_TYPE_STICK then
+		var_1_0 = arg_1_0:HandleStickTrigger(arg_1_2, arg_1_3, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.SHOW_UI then
+		var_1_0 = arg_1_0:HandleShowUITrigger(arg_1_2, arg_1_3, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.TRIGGER_TYPE_BUTTONEX then
+		var_1_0 = arg_1_0:HandleBtnExTrigger(arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	elseif arg_1_1 == GuideFindUIStep.SNAP_PAGE then
+		var_1_0 = arg_1_0:HandleSnapPageTrigger(arg_1_2, arg_1_3, arg_1_4, arg_1_5)
 	end
 
-	slot0.trigger = slot6
+	arg_1_0.trigger = var_1_0
 end
 
-function slot0.Trigger(slot0)
-	if slot0.trigger then
-		slot0.trigger(true)
-	end
-end
-
-function slot0.HandleSnapPageTrigger(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot4
-	slot6 = slot4
-
-	if slot3 == -1 then
-		slot5 = nil
-	end
-
-	if slot3 == 1 then
-		slot6 = nil
-	end
-
-	addSlip(SLIP_TYPE_HRZ, slot1, slot5, slot6)
-
-	return function ()
-		uv0()
+function var_0_0.Trigger(arg_2_0)
+	if arg_2_0.trigger then
+		arg_2_0.trigger(true)
 	end
 end
 
-function slot0.HandleBtnTrigger(slot0, slot1, slot2, slot3)
-	function slot4()
-		if IsNil(uv0) then
+function var_0_0.HandleSnapPageTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	local var_3_0 = arg_3_4
+	local var_3_1 = arg_3_4
+
+	if arg_3_3 == -1 then
+		var_3_0 = nil
+	end
+
+	if arg_3_3 == 1 then
+		var_3_1 = nil
+	end
+
+	addSlip(SLIP_TYPE_HRZ, arg_3_1, var_3_0, var_3_1)
+
+	return function()
+		arg_3_4()
+	end
+end
+
+function var_0_0.HandleBtnTrigger(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	local function var_5_0()
+		if IsNil(arg_5_2) then
 			return
 		end
 
-		triggerButton(uv0)
-		uv1()
+		triggerButton(arg_5_2)
+		arg_5_3()
 	end
 
-	onButton(slot0, slot1, slot4, SFX_PANEL)
+	onButton(arg_5_0, arg_5_1, var_5_0, SFX_PANEL)
 
-	return slot4
+	return var_5_0
 end
 
-function slot0.HandleBtnExTrigger(slot0, slot1, slot2, slot3, slot4)
-	function slot5()
-		if IsNil(uv0) then
+function var_0_0.HandleBtnExTrigger(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
+	local function var_7_0()
+		if IsNil(arg_7_2) then
 			return
 		end
 
-		uv1()
-		uv2()
+		arg_7_3()
+		arg_7_4()
 	end
 
-	onButton(slot0, slot1, slot5, SFX_PANEL)
+	onButton(arg_7_0, arg_7_1, var_7_0, SFX_PANEL)
 
-	return slot5
+	return var_7_0
 end
 
-function slot0.HandleToggleTrigger(slot0, slot1, slot2, slot3, slot4)
-	function slot5(slot0)
-		if IsNil(uv0) then
+function var_0_0.HandleToggleTrigger(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local function var_9_0(arg_10_0)
+		if IsNil(arg_9_2) then
 			return
 		end
 
-		uv1()
-		triggerToggle(uv0, slot0)
+		arg_9_4()
+		triggerToggle(arg_9_2, arg_10_0)
 	end
 
-	onToggle(slot0, slot1, slot5, SFX_PANEL)
+	onToggle(arg_9_0, arg_9_1, var_9_0, SFX_PANEL)
 
-	return slot5
+	return var_9_0
 end
 
-function slot0.HandleClickTrigger(slot0, slot1, slot2, slot3)
-	slot4 = slot2:GetComponent(typeof(EventTriggerListener))
+function var_0_0.HandleClickTrigger(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = arg_11_2:GetComponent(typeof(EventTriggerListener))
 
-	function slot5(slot0, slot1)
-		uv0()
+	local function var_11_1(arg_12_0, arg_12_1)
+		arg_11_3()
 
-		if not IsNil(uv1) then
-			uv2:OnPointerUp(slot1)
+		if not IsNil(arg_11_2) then
+			var_11_0:OnPointerUp(arg_12_1)
 		end
 	end
 
-	slot6 = slot1:GetComponent(typeof(EventTriggerListener))
+	local var_11_2 = arg_11_1:GetComponent(typeof(EventTriggerListener))
 
-	slot6:AddPointDownFunc(function (slot0, slot1)
-		if not IsNil(uv0) then
-			uv1:OnPointerDown(slot1)
+	var_11_2:AddPointDownFunc(function(arg_13_0, arg_13_1)
+		if not IsNil(arg_11_2) then
+			var_11_0:OnPointerDown(arg_13_1)
 		end
 	end)
-	slot6:AddPointUpFunc(slot5)
+	var_11_2:AddPointUpFunc(var_11_1)
 
-	return slot5
+	return var_11_1
 end
 
-function slot0.HandleStickTrigger(slot0, slot1, slot2, slot3)
-	function slot4(slot0, slot1)
-		if IsNil(uv0) then
+function var_0_0.HandleStickTrigger(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	local function var_14_0(arg_15_0, arg_15_1)
+		if IsNil(arg_14_2) then
 			return
 		end
 
-		uv1()
+		arg_14_3()
 	end
 
-	GetOrAddComponent(slot1, typeof(EventTriggerListener)):AddPointDownFunc(slot4)
+	GetOrAddComponent(arg_14_1, typeof(EventTriggerListener)):AddPointDownFunc(var_14_0)
 
-	return slot4
+	return var_14_0
 end
 
-function slot0.HandleShowUITrigger(slot0, slot1, slot2, slot3)
-	function slot4(slot0, slot1)
-		if IsNil(uv0) then
+function var_0_0.HandleShowUITrigger(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local function var_16_0(arg_17_0, arg_17_1)
+		if IsNil(arg_16_2) then
 			return
 		end
 
-		uv1()
+		arg_16_3()
 	end
 
-	GetOrAddComponent(slot1, typeof(EventTriggerListener)):AddPointUpFunc(slot4)
+	GetOrAddComponent(arg_16_1, typeof(EventTriggerListener)):AddPointUpFunc(var_16_0)
 
-	return slot4
+	return var_16_0
 end
 
-function slot0.Clear(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Clear(arg_18_0)
+	pg.DelegateInfo.Dispose(arg_18_0)
 end
 
-return slot0
+return var_0_0

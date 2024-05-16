@@ -1,106 +1,119 @@
-slot0 = class("CommanderHomeLevelInfoPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CommanderHomeLevelInfoPage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderHomeLevelUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.close = slot0:findTF("bg/frame/close_btn")
-	slot0.scrollrect = slot0:findTF("bg/frame/scrollrect"):GetComponent("LScrollRect")
-	slot0.levelTxt = slot0:findTF("bg/frame/level/Text"):GetComponent(typeof(Text))
-	slot0.descPanel = slot0:findTF("desc_panel")
-	slot0.descLevelTxt = slot0.descPanel:Find("frame/level"):GetComponent(typeof(Text))
-	slot0.descTxt = slot0.descPanel:Find("frame/Text"):GetComponent(typeof(Text))
-	slot0.expTxt = slot0:findTF("bg/frame/level/exp"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.close = arg_2_0:findTF("bg/frame/close_btn")
+	arg_2_0.scrollrect = arg_2_0:findTF("bg/frame/scrollrect"):GetComponent("LScrollRect")
+	arg_2_0.levelTxt = arg_2_0:findTF("bg/frame/level/Text"):GetComponent(typeof(Text))
+	arg_2_0.descPanel = arg_2_0:findTF("desc_panel")
+	arg_2_0.descLevelTxt = arg_2_0.descPanel:Find("frame/level"):GetComponent(typeof(Text))
+	arg_2_0.descTxt = arg_2_0.descPanel:Find("frame/Text"):GetComponent(typeof(Text))
+	arg_2_0.expTxt = arg_2_0:findTF("bg/frame/level/exp"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("bg/frame/level/label"), i18n("commander_home_level_label"))
+	setText(arg_2_0:findTF("bg/frame/level/label"), i18n("commander_home_level_label"))
 end
 
-function slot0.OnInit(slot0)
-	slot0.cards = {}
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.cards = {}
 
-	function slot0.scrollrect.onInitItem(slot0)
-		uv0:OnInitItem(slot0)
+	function arg_3_0.scrollrect.onInitItem(arg_4_0)
+		arg_3_0:OnInitItem(arg_4_0)
 	end
 
-	function slot0.scrollrect.onUpdateItem(slot0, slot1)
-		uv0:OnUpdateItem(slot0, slot1)
+	function arg_3_0.scrollrect.onUpdateItem(arg_5_0, arg_5_1)
+		arg_3_0:OnUpdateItem(arg_5_0, arg_5_1)
 	end
 
-	onButton(slot0, slot0.descPanel, function ()
-		uv0:CloseDescWindow()
+	onButton(arg_3_0, arg_3_0.descPanel, function()
+		arg_3_0:CloseDescWindow()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.close, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.close, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot0.cards[slot1] = CommanderHomeLevelCard.New(slot1, slot0)
+function var_0_0.OnInitItem(arg_9_0, arg_9_1)
+	local var_9_0 = CommanderHomeLevelCard.New(arg_9_1, arg_9_0)
+
+	arg_9_0.cards[arg_9_1] = var_9_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:OnInitItem(slot2)
+function var_0_0.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = arg_10_0.cards[arg_10_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_10_0 then
+		arg_10_0:OnInitItem(arg_10_2)
+
+		var_10_0 = arg_10_0.cards[arg_10_2]
 	end
 
-	slot3:Update(slot0.home, slot0.displays[slot1 + 1])
+	local var_10_1 = arg_10_0.displays[arg_10_1 + 1]
+
+	var_10_0:Update(arg_10_0.home, var_10_1)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_11_0, arg_11_1)
+	var_0_0.super.Show(arg_11_0)
 
-	slot0.home = slot1
+	arg_11_0.home = arg_11_1
 
-	slot0:InitMainView()
+	arg_11_0:InitMainView()
 end
 
-function slot0.InitMainView(slot0)
-	slot1 = slot0.home
-	slot0.levelTxt.text = "LV." .. slot1:GetLevel()
+function var_0_0.InitMainView(arg_12_0)
+	local var_12_0 = arg_12_0.home
 
-	if slot1:IsMaxLevel() then
-		slot0.expTxt.text = "EXP MAX"
+	arg_12_0.levelTxt.text = "LV." .. var_12_0:GetLevel()
+
+	if var_12_0:IsMaxLevel() then
+		arg_12_0.expTxt.text = "EXP MAX"
 	else
-		slot0.expTxt.text = "EXP " .. slot1.exp .. "/" .. slot1:GetNextLevelExp()
+		arg_12_0.expTxt.text = "EXP " .. var_12_0.exp .. "/" .. var_12_0:GetNextLevelExp()
 	end
 
-	slot0.displays = {}
-	slot3 = slot1:bindConfigTable()
+	local var_12_1 = var_12_0:GetAllLevel()
 
-	for slot7, slot8 in ipairs(slot1:GetAllLevel()) do
-		table.insert(slot0.displays, {
-			level = slot3[slot8].level,
-			totalExp = slot1:GetTargetExpForLevel(slot8),
-			tail = slot7 == #slot2,
-			exp = slot9.home_exp,
-			desc = slot3[slot8].desc
+	arg_12_0.displays = {}
+
+	local var_12_2 = var_12_0:bindConfigTable()
+
+	for iter_12_0, iter_12_1 in ipairs(var_12_1) do
+		local var_12_3 = var_12_2[iter_12_1]
+		local var_12_4 = var_12_0:GetTargetExpForLevel(iter_12_1)
+
+		table.insert(arg_12_0.displays, {
+			level = var_12_3.level,
+			totalExp = var_12_4,
+			tail = iter_12_0 == #var_12_1,
+			exp = var_12_3.home_exp,
+			desc = var_12_2[iter_12_1].desc
 		})
 	end
 
-	slot0.scrollrect:SetTotalCount(#slot0.displays)
+	arg_12_0.scrollrect:SetTotalCount(#arg_12_0.displays)
 end
 
-function slot0.ShowDescWindow(slot0, slot1, slot2)
-	setActive(slot0.descPanel, true)
+function var_0_0.ShowDescWindow(arg_13_0, arg_13_1, arg_13_2)
+	setActive(arg_13_0.descPanel, true)
 
-	slot0.descTxt.text = slot1
-	slot0.descLevelTxt.text = "LV." .. slot2
+	arg_13_0.descTxt.text = arg_13_1
+	arg_13_0.descLevelTxt.text = "LV." .. arg_13_2
 end
 
-function slot0.CloseDescWindow(slot0)
-	setActive(slot0.descPanel, false)
+function var_0_0.CloseDescWindow(arg_14_0)
+	setActive(arg_14_0.descPanel, false)
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Dispose()
+function var_0_0.OnDestroy(arg_15_0)
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.cards) do
+		iter_15_1:Dispose()
 	end
 end
 
-return slot0
+return var_0_0

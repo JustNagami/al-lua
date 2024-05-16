@@ -1,166 +1,168 @@
-slot0 = class("CourtYardStoreyModule", import("..CourtYardBaseModule"))
-slot1 = false
+﻿local var_0_0 = class("CourtYardStoreyModule", import("..CourtYardBaseModule"))
+local var_0_1 = false
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
-	slot0.modules = {}
-	slot0.gridAgents = {
-		CourtYardGridAgent.New(slot0),
-		CourtYardWallGridAgent.New(slot0)
+	arg_1_0.modules = {}
+	arg_1_0.gridAgents = {
+		CourtYardGridAgent.New(arg_1_0),
+		CourtYardWallGridAgent.New(arg_1_0)
 	}
-	slot0.effectAgent = CourtYardEffectAgent.New(slot0)
-	slot0.soundAgent = CourtYardSoundAgent.New(slot0)
-	slot0.bgAgent = CourtYardBGAgent.New(slot0)
-	slot0.bgmAgent = CourtYardBGMAgent.New(slot0)
-	slot0.factorys = {
-		[CourtYardConst.OBJ_TYPE_SHIP] = CourtYardShipFactory.New(slot0:GetView().poolMgr),
-		[CourtYardConst.OBJ_TYPE_COMMOM] = CourtYardFurnitureFactory.New(slot0:GetView().poolMgr)
+	arg_1_0.effectAgent = CourtYardEffectAgent.New(arg_1_0)
+	arg_1_0.soundAgent = CourtYardSoundAgent.New(arg_1_0)
+	arg_1_0.bgAgent = CourtYardBGAgent.New(arg_1_0)
+	arg_1_0.bgmAgent = CourtYardBGMAgent.New(arg_1_0)
+	arg_1_0.factorys = {
+		[CourtYardConst.OBJ_TYPE_SHIP] = CourtYardShipFactory.New(arg_1_0:GetView().poolMgr),
+		[CourtYardConst.OBJ_TYPE_COMMOM] = CourtYardFurnitureFactory.New(arg_1_0:GetView().poolMgr)
 	}
-	slot0.descPage = CourtYardFurnitureDescPage.New(slot0)
-	slot0.playTheLutePage = CourtyardPlayTheLutePage.New(slot0)
+	arg_1_0.descPage = CourtYardFurnitureDescPage.New(arg_1_0)
+	arg_1_0.playTheLutePage = CourtyardPlayTheLutePage.New(arg_1_0)
 end
 
-function slot0.GetDefaultBgm(slot0)
+function var_0_0.GetDefaultBgm(arg_2_0)
 	return pg.voice_bgm.CourtYardScene.default_bgm
 end
 
-function slot0.OnInit(slot0)
-	slot0.zoomAgent = slot0._tf:Find("bg"):GetComponent("PinchZoom")
-	slot0.scrollrect = slot0._tf:Find("scroll_view")
-	slot0.bg = slot0._tf:Find("bg")
-	slot0.rectTF = slot0._tf:Find("bg/rect")
-	slot0.gridsTF = slot0.rectTF:Find("grids")
-	slot0.rootTF = slot0._tf:Find("root")
-	slot0.selectedTF = slot0._tf:Find("root/drag")
-	slot0.selectedAnimation = slot0.selectedTF:GetComponent(typeof(Animation))
-	slot0.dftAniEvent = slot0.selectedTF:GetComponent(typeof(DftAniEvent))
-	slot0.rotationBtn = slot0.selectedTF:Find("panel/animroot/rotation")
-	slot0.removeBtn = slot0.selectedTF:Find("panel/animroot/cancel")
-	slot0.confirmBtn = slot0.selectedTF:Find("panel/animroot/ok")
-	slot0.dragBtn = CourtYardStoreyDragBtn.New(slot0.selectedTF:Find("panel/animroot"), slot0.rectTF)
-	slot0.effectContainer = slot0._tf:Find("effects")
-	slot1 = slot0.rootTF:Find("white"):GetComponent(typeof(Image)).material
-	slot2 = slot0.rootTF:Find("green"):GetComponent(typeof(Image)).material
-	slot3 = slot0.rootTF:Find("red"):GetComponent(typeof(Image)).material
-	slot0.furnitureStateMgrs = {
-		CourtyardFurnitureState.New(slot0._tf:Find("root/furnitureState"), slot0.rectTF, slot1, slot2, slot3),
-		CourtyardSpineFurnitureState.New(slot0._tf:Find("root/furnitureSpineState"), slot0.rectTF, slot1, slot2, slot3)
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.zoomAgent = arg_3_0._tf:Find("bg"):GetComponent("PinchZoom")
+	arg_3_0.scrollrect = arg_3_0._tf:Find("scroll_view")
+	arg_3_0.bg = arg_3_0._tf:Find("bg")
+	arg_3_0.rectTF = arg_3_0._tf:Find("bg/rect")
+	arg_3_0.gridsTF = arg_3_0.rectTF:Find("grids")
+	arg_3_0.rootTF = arg_3_0._tf:Find("root")
+	arg_3_0.selectedTF = arg_3_0._tf:Find("root/drag")
+	arg_3_0.selectedAnimation = arg_3_0.selectedTF:GetComponent(typeof(Animation))
+	arg_3_0.dftAniEvent = arg_3_0.selectedTF:GetComponent(typeof(DftAniEvent))
+	arg_3_0.rotationBtn = arg_3_0.selectedTF:Find("panel/animroot/rotation")
+	arg_3_0.removeBtn = arg_3_0.selectedTF:Find("panel/animroot/cancel")
+	arg_3_0.confirmBtn = arg_3_0.selectedTF:Find("panel/animroot/ok")
+	arg_3_0.dragBtn = CourtYardStoreyDragBtn.New(arg_3_0.selectedTF:Find("panel/animroot"), arg_3_0.rectTF)
+	arg_3_0.effectContainer = arg_3_0._tf:Find("effects")
+
+	local var_3_0 = arg_3_0.rootTF:Find("white"):GetComponent(typeof(Image)).material
+	local var_3_1 = arg_3_0.rootTF:Find("green"):GetComponent(typeof(Image)).material
+	local var_3_2 = arg_3_0.rootTF:Find("red"):GetComponent(typeof(Image)).material
+
+	arg_3_0.furnitureStateMgrs = {
+		CourtyardFurnitureState.New(arg_3_0._tf:Find("root/furnitureState"), arg_3_0.rectTF, var_3_0, var_3_1, var_3_2),
+		CourtyardSpineFurnitureState.New(arg_3_0._tf:Find("root/furnitureSpineState"), arg_3_0.rectTF, var_3_0, var_3_1, var_3_2)
 	}
 
-	slot0:InitPedestalModule()
+	arg_3_0:InitPedestalModule()
 
-	slot0.bg.localScale = Vector3(1.438, 1.438, 1)
+	arg_3_0.bg.localScale = Vector3(1.438, 1.438, 1)
 end
 
-function slot0.GetFurnitureStateMgr(slot0, slot1)
-	return slot1:IsSpine() and slot0.furnitureStateMgrs[2] or slot0.furnitureStateMgrs[1]
+function var_0_0.GetFurnitureStateMgr(arg_4_0, arg_4_1)
+	return arg_4_1:IsSpine() and arg_4_0.furnitureStateMgrs[2] or arg_4_0.furnitureStateMgrs[1]
 end
 
-function slot0.InitPedestalModule(slot0)
-	slot0.pedestalModule = CourtYardPedestalModule.New(slot0.data, slot0.bg)
+function var_0_0.InitPedestalModule(arg_5_0)
+	arg_5_0.pedestalModule = CourtYardPedestalModule.New(arg_5_0.data, arg_5_0.bg)
 end
 
-function slot0.AddListeners(slot0)
-	slot0:AddListener(CourtYardEvent.INITED, slot0.OnInited)
-	slot0:AddListener(CourtYardEvent.CREATE_ITEM, slot0.OnCreateItem)
-	slot0:AddListener(CourtYardEvent.REMOVE_ITEM, slot0.OnRemoveItem)
-	slot0:AddListener(CourtYardEvent.ADD_MAT_ITEM, slot0.OnAddMatItem)
-	slot0:AddListener(CourtYardEvent.REMOVE_MAT_ITEM, slot0.OnRemoveMatItem)
-	slot0:AddListener(CourtYardEvent.ADD_ITEM, slot0.OnAddItem)
-	slot0:AddListener(CourtYardEvent.DRAG_ITEM, slot0.OnDragItem)
-	slot0:AddListener(CourtYardEvent.DRAGING_ITEM, slot0.OnDragingItem)
-	slot0:AddListener(CourtYardEvent.DRAG_ITEM_END, slot0.OnDragItemEnd)
-	slot0:AddListener(CourtYardEvent.SELETED_ITEM, slot0.OnSelectedItem)
-	slot0:AddListener(CourtYardEvent.UNSELETED_ITEM, slot0.OnUnSelectedItem)
-	slot0:AddListener(CourtYardEvent.ENTER_EDIT_MODE, slot0.OnEnterEidtMode)
-	slot0:AddListener(CourtYardEvent.EXIT_EDIT_MODE, slot0.OnExitEidtMode)
-	slot0:AddListener(CourtYardEvent.ROTATE_ITEM, slot0.OnItemDirChange)
-	slot0:AddListener(CourtYardEvent.ROTATE_ITEM_FAILED, slot0.OnRotateItemFailed)
-	slot0:AddListener(CourtYardEvent.DETORY_ITEM, slot0.OnDestoryItem)
-	slot0:AddListener(CourtYardEvent.CHILD_ITEM, slot0.OnChildItem)
-	slot0:AddListener(CourtYardEvent.UN_CHILD_ITEM, slot0.OnUnChildItem)
-	slot0:AddListener(CourtYardEvent.REMIND_SAVE, slot0.OnRemindSave)
-	slot0:AddListener(CourtYardEvent.ADD_ITEM_FAILED, slot0.OnAddItemFailed)
-	slot0:AddListener(CourtYardEvent.SHOW_FURNITURE_DESC, slot0.OnShowFurnitureDesc)
-	slot0:AddListener(CourtYardEvent.ITEM_INTERACTION, slot0.OnItemInterAction)
-	slot0:AddListener(CourtYardEvent.CLEAR_ITEM_INTERACTION, slot0.OnClearItemInterAction)
-	slot0:AddListener(CourtYardEvent.ON_TOUCH_ITEM, slot0.OnTouchItem)
-	slot0:AddListener(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, slot0.OnCancelTouchItem)
-	slot0:AddListener(CourtYardEvent.ON_ITEM_PLAY_MUSIC, slot0.OnItemPlayMusic)
-	slot0:AddListener(CourtYardEvent.ON_ITEM_STOP_MUSIC, slot0.OnItemStopMusic)
-	slot0:AddListener(CourtYardEvent.ON_ADD_EFFECT, slot0.OnAddEffect)
-	slot0:AddListener(CourtYardEvent.ON_REMOVE_EFFECT, slot0.OnRemoveEffect)
-	slot0:AddListener(CourtYardEvent.DISABLE_ROTATE_ITEM, slot0.OnDisableRotation)
-	slot0:AddListener(CourtYardEvent.TAKE_PHOTO, slot0.OnTakePhoto)
-	slot0:AddListener(CourtYardEvent.END_TAKE_PHOTO, slot0.OnEndTakePhoto)
-	slot0:AddListener(CourtYardEvent.ENTER_ARCH, slot0.OnEnterArch)
-	slot0:AddListener(CourtYardEvent.EXIT_ARCH, slot0.OnExitArch)
-	slot0:AddListener(CourtYardEvent.REMOVE_ILLEGALITY_ITEM, slot0.OnRemoveIllegalityItem)
-	slot0:AddListener(CourtYardEvent.OPEN_LAYER, slot0.OnOpenLayer)
-	slot0:AddListener(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, slot0.OnPlayMusicalInstruments)
-	slot0:AddListener(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, slot0.OnStopPlayMusicalInstruments)
-	slot0:AddListener(CourtYardEvent.FURNITURE_MUTE_ALL, slot0.OnMuteAll)
-	slot0:AddListener(CourtYardEvent.BACK_PRESSED, slot0.OnBackPressed)
+function var_0_0.AddListeners(arg_6_0)
+	arg_6_0:AddListener(CourtYardEvent.INITED, arg_6_0.OnInited)
+	arg_6_0:AddListener(CourtYardEvent.CREATE_ITEM, arg_6_0.OnCreateItem)
+	arg_6_0:AddListener(CourtYardEvent.REMOVE_ITEM, arg_6_0.OnRemoveItem)
+	arg_6_0:AddListener(CourtYardEvent.ADD_MAT_ITEM, arg_6_0.OnAddMatItem)
+	arg_6_0:AddListener(CourtYardEvent.REMOVE_MAT_ITEM, arg_6_0.OnRemoveMatItem)
+	arg_6_0:AddListener(CourtYardEvent.ADD_ITEM, arg_6_0.OnAddItem)
+	arg_6_0:AddListener(CourtYardEvent.DRAG_ITEM, arg_6_0.OnDragItem)
+	arg_6_0:AddListener(CourtYardEvent.DRAGING_ITEM, arg_6_0.OnDragingItem)
+	arg_6_0:AddListener(CourtYardEvent.DRAG_ITEM_END, arg_6_0.OnDragItemEnd)
+	arg_6_0:AddListener(CourtYardEvent.SELETED_ITEM, arg_6_0.OnSelectedItem)
+	arg_6_0:AddListener(CourtYardEvent.UNSELETED_ITEM, arg_6_0.OnUnSelectedItem)
+	arg_6_0:AddListener(CourtYardEvent.ENTER_EDIT_MODE, arg_6_0.OnEnterEidtMode)
+	arg_6_0:AddListener(CourtYardEvent.EXIT_EDIT_MODE, arg_6_0.OnExitEidtMode)
+	arg_6_0:AddListener(CourtYardEvent.ROTATE_ITEM, arg_6_0.OnItemDirChange)
+	arg_6_0:AddListener(CourtYardEvent.ROTATE_ITEM_FAILED, arg_6_0.OnRotateItemFailed)
+	arg_6_0:AddListener(CourtYardEvent.DETORY_ITEM, arg_6_0.OnDestoryItem)
+	arg_6_0:AddListener(CourtYardEvent.CHILD_ITEM, arg_6_0.OnChildItem)
+	arg_6_0:AddListener(CourtYardEvent.UN_CHILD_ITEM, arg_6_0.OnUnChildItem)
+	arg_6_0:AddListener(CourtYardEvent.REMIND_SAVE, arg_6_0.OnRemindSave)
+	arg_6_0:AddListener(CourtYardEvent.ADD_ITEM_FAILED, arg_6_0.OnAddItemFailed)
+	arg_6_0:AddListener(CourtYardEvent.SHOW_FURNITURE_DESC, arg_6_0.OnShowFurnitureDesc)
+	arg_6_0:AddListener(CourtYardEvent.ITEM_INTERACTION, arg_6_0.OnItemInterAction)
+	arg_6_0:AddListener(CourtYardEvent.CLEAR_ITEM_INTERACTION, arg_6_0.OnClearItemInterAction)
+	arg_6_0:AddListener(CourtYardEvent.ON_TOUCH_ITEM, arg_6_0.OnTouchItem)
+	arg_6_0:AddListener(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, arg_6_0.OnCancelTouchItem)
+	arg_6_0:AddListener(CourtYardEvent.ON_ITEM_PLAY_MUSIC, arg_6_0.OnItemPlayMusic)
+	arg_6_0:AddListener(CourtYardEvent.ON_ITEM_STOP_MUSIC, arg_6_0.OnItemStopMusic)
+	arg_6_0:AddListener(CourtYardEvent.ON_ADD_EFFECT, arg_6_0.OnAddEffect)
+	arg_6_0:AddListener(CourtYardEvent.ON_REMOVE_EFFECT, arg_6_0.OnRemoveEffect)
+	arg_6_0:AddListener(CourtYardEvent.DISABLE_ROTATE_ITEM, arg_6_0.OnDisableRotation)
+	arg_6_0:AddListener(CourtYardEvent.TAKE_PHOTO, arg_6_0.OnTakePhoto)
+	arg_6_0:AddListener(CourtYardEvent.END_TAKE_PHOTO, arg_6_0.OnEndTakePhoto)
+	arg_6_0:AddListener(CourtYardEvent.ENTER_ARCH, arg_6_0.OnEnterArch)
+	arg_6_0:AddListener(CourtYardEvent.EXIT_ARCH, arg_6_0.OnExitArch)
+	arg_6_0:AddListener(CourtYardEvent.REMOVE_ILLEGALITY_ITEM, arg_6_0.OnRemoveIllegalityItem)
+	arg_6_0:AddListener(CourtYardEvent.OPEN_LAYER, arg_6_0.OnOpenLayer)
+	arg_6_0:AddListener(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, arg_6_0.OnPlayMusicalInstruments)
+	arg_6_0:AddListener(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, arg_6_0.OnStopPlayMusicalInstruments)
+	arg_6_0:AddListener(CourtYardEvent.FURNITURE_MUTE_ALL, arg_6_0.OnMuteAll)
+	arg_6_0:AddListener(CourtYardEvent.BACK_PRESSED, arg_6_0.OnBackPressed)
 end
 
-function slot0.RemoveListeners(slot0)
-	slot0:RemoveListener(CourtYardEvent.INITED, slot0.OnInited)
-	slot0:RemoveListener(CourtYardEvent.CREATE_ITEM, slot0.OnCreateItem)
-	slot0:RemoveListener(CourtYardEvent.REMOVE_ITEM, slot0.OnRemoveItem)
-	slot0:RemoveListener(CourtYardEvent.ADD_MAT_ITEM, slot0.OnAddMatItem)
-	slot0:RemoveListener(CourtYardEvent.REMOVE_MAT_ITEM, slot0.OnRemoveMatItem)
-	slot0:RemoveListener(CourtYardEvent.ADD_ITEM, slot0.OnAddItem)
-	slot0:RemoveListener(CourtYardEvent.DRAG_ITEM, slot0.OnDragItem)
-	slot0:RemoveListener(CourtYardEvent.DRAGING_ITEM, slot0.OnDragingItem)
-	slot0:RemoveListener(CourtYardEvent.DRAG_ITEM_END, slot0.OnDragItemEnd)
-	slot0:RemoveListener(CourtYardEvent.SELETED_ITEM, slot0.OnSelectedItem)
-	slot0:RemoveListener(CourtYardEvent.UNSELETED_ITEM, slot0.OnUnSelectedItem)
-	slot0:RemoveListener(CourtYardEvent.ENTER_EDIT_MODE, slot0.OnEnterEidtMode)
-	slot0:RemoveListener(CourtYardEvent.EXIT_EDIT_MODE, slot0.OnExitEidtMode)
-	slot0:RemoveListener(CourtYardEvent.ROTATE_ITEM, slot0.OnItemDirChange)
-	slot0:RemoveListener(CourtYardEvent.ROTATE_ITEM_FAILED, slot0.OnRotateItemFailed)
-	slot0:RemoveListener(CourtYardEvent.DETORY_ITEM, slot0.OnDestoryItem)
-	slot0:RemoveListener(CourtYardEvent.CHILD_ITEM, slot0.OnChildItem)
-	slot0:RemoveListener(CourtYardEvent.UN_CHILD_ITEM, slot0.OnUnChildItem)
-	slot0:RemoveListener(CourtYardEvent.REMIND_SAVE, slot0.OnRemindSave)
-	slot0:RemoveListener(CourtYardEvent.ADD_ITEM_FAILED, slot0.OnAddItemFailed)
-	slot0:RemoveListener(CourtYardEvent.SHOW_FURNITURE_DESC, slot0.OnShowFurnitureDesc)
-	slot0:RemoveListener(CourtYardEvent.ITEM_INTERACTION, slot0.OnItemInterAction)
-	slot0:RemoveListener(CourtYardEvent.CLEAR_ITEM_INTERACTION, slot0.OnClearItemInterAction)
-	slot0:RemoveListener(CourtYardEvent.ON_TOUCH_ITEM, slot0.OnTouchItem)
-	slot0:RemoveListener(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, slot0.OnCancelTouchItem)
-	slot0:RemoveListener(CourtYardEvent.ON_ITEM_PLAY_MUSIC, slot0.OnItemPlayMusic)
-	slot0:RemoveListener(CourtYardEvent.ON_ITEM_STOP_MUSIC, slot0.OnItemStopMusic)
-	slot0:RemoveListener(CourtYardEvent.ON_ADD_EFFECT, slot0.OnAddEffect)
-	slot0:RemoveListener(CourtYardEvent.ON_REMOVE_EFFECT, slot0.OnRemoveEffect)
-	slot0:RemoveListener(CourtYardEvent.DISABLE_ROTATE_ITEM, slot0.OnDisableRotation)
-	slot0:RemoveListener(CourtYardEvent.TAKE_PHOTO, slot0.OnTakePhoto)
-	slot0:RemoveListener(CourtYardEvent.END_TAKE_PHOTO, slot0.OnEndTakePhoto)
-	slot0:RemoveListener(CourtYardEvent.ENTER_ARCH, slot0.OnEnterArch)
-	slot0:RemoveListener(CourtYardEvent.EXIT_ARCH, slot0.OnExitArch)
-	slot0:RemoveListener(CourtYardEvent.REMOVE_ILLEGALITY_ITEM, slot0.OnRemoveIllegalityItem)
-	slot0:RemoveListener(CourtYardEvent.OPEN_LAYER, slot0.OnOpenLayer)
-	slot0:RemoveListener(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, slot0.OnPlayMusicalInstruments)
-	slot0:RemoveListener(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, slot0.OnStopPlayMusicalInstruments)
-	slot0:RemoveListener(CourtYardEvent.FURNITURE_MUTE_ALL, slot0.OnMuteAll)
-	slot0:RemoveListener(CourtYardEvent.BACK_PRESSED, slot0.OnBackPressed)
+function var_0_0.RemoveListeners(arg_7_0)
+	arg_7_0:RemoveListener(CourtYardEvent.INITED, arg_7_0.OnInited)
+	arg_7_0:RemoveListener(CourtYardEvent.CREATE_ITEM, arg_7_0.OnCreateItem)
+	arg_7_0:RemoveListener(CourtYardEvent.REMOVE_ITEM, arg_7_0.OnRemoveItem)
+	arg_7_0:RemoveListener(CourtYardEvent.ADD_MAT_ITEM, arg_7_0.OnAddMatItem)
+	arg_7_0:RemoveListener(CourtYardEvent.REMOVE_MAT_ITEM, arg_7_0.OnRemoveMatItem)
+	arg_7_0:RemoveListener(CourtYardEvent.ADD_ITEM, arg_7_0.OnAddItem)
+	arg_7_0:RemoveListener(CourtYardEvent.DRAG_ITEM, arg_7_0.OnDragItem)
+	arg_7_0:RemoveListener(CourtYardEvent.DRAGING_ITEM, arg_7_0.OnDragingItem)
+	arg_7_0:RemoveListener(CourtYardEvent.DRAG_ITEM_END, arg_7_0.OnDragItemEnd)
+	arg_7_0:RemoveListener(CourtYardEvent.SELETED_ITEM, arg_7_0.OnSelectedItem)
+	arg_7_0:RemoveListener(CourtYardEvent.UNSELETED_ITEM, arg_7_0.OnUnSelectedItem)
+	arg_7_0:RemoveListener(CourtYardEvent.ENTER_EDIT_MODE, arg_7_0.OnEnterEidtMode)
+	arg_7_0:RemoveListener(CourtYardEvent.EXIT_EDIT_MODE, arg_7_0.OnExitEidtMode)
+	arg_7_0:RemoveListener(CourtYardEvent.ROTATE_ITEM, arg_7_0.OnItemDirChange)
+	arg_7_0:RemoveListener(CourtYardEvent.ROTATE_ITEM_FAILED, arg_7_0.OnRotateItemFailed)
+	arg_7_0:RemoveListener(CourtYardEvent.DETORY_ITEM, arg_7_0.OnDestoryItem)
+	arg_7_0:RemoveListener(CourtYardEvent.CHILD_ITEM, arg_7_0.OnChildItem)
+	arg_7_0:RemoveListener(CourtYardEvent.UN_CHILD_ITEM, arg_7_0.OnUnChildItem)
+	arg_7_0:RemoveListener(CourtYardEvent.REMIND_SAVE, arg_7_0.OnRemindSave)
+	arg_7_0:RemoveListener(CourtYardEvent.ADD_ITEM_FAILED, arg_7_0.OnAddItemFailed)
+	arg_7_0:RemoveListener(CourtYardEvent.SHOW_FURNITURE_DESC, arg_7_0.OnShowFurnitureDesc)
+	arg_7_0:RemoveListener(CourtYardEvent.ITEM_INTERACTION, arg_7_0.OnItemInterAction)
+	arg_7_0:RemoveListener(CourtYardEvent.CLEAR_ITEM_INTERACTION, arg_7_0.OnClearItemInterAction)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_TOUCH_ITEM, arg_7_0.OnTouchItem)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, arg_7_0.OnCancelTouchItem)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_ITEM_PLAY_MUSIC, arg_7_0.OnItemPlayMusic)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_ITEM_STOP_MUSIC, arg_7_0.OnItemStopMusic)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_ADD_EFFECT, arg_7_0.OnAddEffect)
+	arg_7_0:RemoveListener(CourtYardEvent.ON_REMOVE_EFFECT, arg_7_0.OnRemoveEffect)
+	arg_7_0:RemoveListener(CourtYardEvent.DISABLE_ROTATE_ITEM, arg_7_0.OnDisableRotation)
+	arg_7_0:RemoveListener(CourtYardEvent.TAKE_PHOTO, arg_7_0.OnTakePhoto)
+	arg_7_0:RemoveListener(CourtYardEvent.END_TAKE_PHOTO, arg_7_0.OnEndTakePhoto)
+	arg_7_0:RemoveListener(CourtYardEvent.ENTER_ARCH, arg_7_0.OnEnterArch)
+	arg_7_0:RemoveListener(CourtYardEvent.EXIT_ARCH, arg_7_0.OnExitArch)
+	arg_7_0:RemoveListener(CourtYardEvent.REMOVE_ILLEGALITY_ITEM, arg_7_0.OnRemoveIllegalityItem)
+	arg_7_0:RemoveListener(CourtYardEvent.OPEN_LAYER, arg_7_0.OnOpenLayer)
+	arg_7_0:RemoveListener(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, arg_7_0.OnPlayMusicalInstruments)
+	arg_7_0:RemoveListener(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, arg_7_0.OnStopPlayMusicalInstruments)
+	arg_7_0:RemoveListener(CourtYardEvent.FURNITURE_MUTE_ALL, arg_7_0.OnMuteAll)
+	arg_7_0:RemoveListener(CourtYardEvent.BACK_PRESSED, arg_7_0.OnBackPressed)
 end
 
-function slot0.OnInited(slot0)
-	slot0.isInit = true
+function var_0_0.OnInited(arg_8_0)
+	arg_8_0.isInit = true
 
-	if uv0 then
-		slot0.mapDebug = CourtYardMapDebug.New(slot0.data)
+	if var_0_1 then
+		arg_8_0.mapDebug = CourtYardMapDebug.New(arg_8_0.data)
 	end
 
-	slot0:RefreshDepth()
-	slot0:RefreshMatDepth()
+	arg_8_0:RefreshDepth()
+	arg_8_0:RefreshMatDepth()
 end
 
-function slot0.AllModulesAreCompletion(slot0)
-	for slot4, slot5 in pairs(slot0.modules) do
-		if not slot5:IsCompletion() then
+function var_0_0.AllModulesAreCompletion(arg_9_0)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.modules) do
+		if not iter_9_1:IsCompletion() then
 			return false
 		end
 	end
@@ -168,471 +170,513 @@ function slot0.AllModulesAreCompletion(slot0)
 	return true
 end
 
-function slot0.OnRemindSave(slot0)
+function var_0_0.OnRemindSave(arg_10_0)
 	_BackyardMsgBoxMgr:Show({
 		content = i18n("backyard_backyardScene_quest_saveFurniture"),
-		onYes = function ()
-			uv0:Emit("SaveFurnitures")
+		onYes = function()
+			arg_10_0:Emit("SaveFurnitures")
 		end,
 		yesSound = SFX_FURNITRUE_SAVE,
-		onNo = function ()
-			uv0:Emit("RestoreFurnitures")
+		onNo = function()
+			arg_10_0:Emit("RestoreFurnitures")
 		end
 	})
 end
 
-function slot0.OnEnterEidtMode(slot0)
-	for slot4, slot5 in pairs(slot0.modules) do
-		if isa(slot5, CourtYardShipModule) then
-			slot5:SetActive(false)
+function var_0_0.OnEnterEidtMode(arg_13_0)
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.modules) do
+		if isa(iter_13_1, CourtYardShipModule) then
+			iter_13_1:SetActive(false)
 		else
-			slot5:BlocksRaycasts(true)
+			iter_13_1:BlocksRaycasts(true)
 		end
 	end
 
-	slot0.bg.localScale = Vector3(0.95, 0.95, 1)
+	arg_13_0.bg.localScale = Vector3(0.95, 0.95, 1)
 end
 
-function slot0.OnExitEidtMode(slot0)
-	for slot4, slot5 in pairs(slot0.modules) do
-		if isa(slot5, CourtYardShipModule) then
-			slot5:SetActive(true)
+function var_0_0.OnExitEidtMode(arg_14_0)
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.modules) do
+		if isa(iter_14_1, CourtYardShipModule) then
+			iter_14_1:SetActive(true)
 		else
-			slot5:BlocksRaycasts(false)
+			iter_14_1:BlocksRaycasts(false)
 		end
 	end
 end
 
-function slot0.OnCreateItem(slot0, slot1, slot2)
-	slot4 = slot0.factorys[slot1:GetObjType()]:Make(slot1)
+function var_0_0.OnCreateItem(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_0.factorys[arg_15_1:GetObjType()]:Make(arg_15_1)
 
-	if slot2 then
-		slot4:CreateWhenStoreyInit()
+	if arg_15_2 then
+		var_15_0:CreateWhenStoreyInit()
 	end
 
-	slot0.modules[slot1:GetDeathType() .. slot1.id] = slot4
+	arg_15_0.modules[arg_15_1:GetDeathType() .. arg_15_1.id] = var_15_0
 end
 
-function slot0.OnAddItem(slot0)
-	if not slot0.isInit then
+function var_0_0.OnAddItem(arg_16_0)
+	if not arg_16_0.isInit then
 		return
 	end
 
-	slot0:RefreshDepth()
+	arg_16_0:RefreshDepth()
 
-	if uv0 then
-		slot0.mapDebug:Flush()
+	if var_0_1 then
+		arg_16_0.mapDebug:Flush()
 	end
 end
 
-function slot0.OnRemoveItem(slot0, slot1)
-	slot0:Item2Module(slot1):SetAsLastSibling()
+function var_0_0.OnRemoveItem(arg_17_0, arg_17_1)
+	arg_17_0:Item2Module(arg_17_1):SetAsLastSibling()
 
-	if uv0 then
-		slot0.mapDebug:Flush()
+	if var_0_1 then
+		arg_17_0.mapDebug:Flush()
 	end
 end
 
-function slot0.OnSelectedItem(slot0, slot1, slot2)
-	slot0.selectedModule = slot0:Item2Module(slot1)
-	slot0.gridAgent = slot0:GetGridAgent(slot1, slot2)
+function var_0_0.OnSelectedItem(arg_18_0, arg_18_1, arg_18_2)
+	arg_18_0.selectedModule = arg_18_0:Item2Module(arg_18_1)
+	arg_18_0.gridAgent = arg_18_0:GetGridAgent(arg_18_1, arg_18_2)
 
-	if isa(slot1, CourtYardFurniture) then
-		slot0.selectedAnimation:Play("anim_courtyard_dragin")
+	if isa(arg_18_1, CourtYardFurniture) then
+		arg_18_0.selectedAnimation:Play("anim_courtyard_dragin")
 
-		slot3 = slot0:Item2Module(slot1)
+		local var_18_0 = arg_18_0:Item2Module(arg_18_1)
 
-		slot0:InitFurnitureState(slot3, slot1)
-		setParent(slot0.selectedTF, slot0.rectTF)
+		arg_18_0:InitFurnitureState(var_18_0, arg_18_1)
+		setParent(arg_18_0.selectedTF, arg_18_0.rectTF)
 
-		slot0.selectedTF.sizeDelta = slot3._tf.sizeDelta
+		arg_18_0.selectedTF.sizeDelta = var_18_0._tf.sizeDelta
 
-		slot0:UpdateSelectedPosition(slot1)
-		slot0:RegisterOp(slot1)
+		arg_18_0:UpdateSelectedPosition(arg_18_1)
+		arg_18_0:RegisterOp(arg_18_1)
 	end
 end
 
-function slot0.InitFurnitureState(slot0, slot1, slot2)
-	slot0:GetFurnitureStateMgr(slot2):OnInit(slot1, slot2)
+function var_0_0.InitFurnitureState(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0:GetFurnitureStateMgr(arg_19_2):OnInit(arg_19_1, arg_19_2)
 end
 
-function slot0.UpdateFurnitureState(slot0, slot1, slot2, slot3)
-	slot4 = slot0:GetFurnitureStateMgr(slot3)
+function var_0_0.UpdateFurnitureState(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
+	local var_20_0 = arg_20_0:GetFurnitureStateMgr(arg_20_3)
 
-	if _.any(slot2, function (slot0)
-		return slot0.flag == 2
+	if _.any(arg_20_2, function(arg_21_0)
+		return arg_21_0.flag == 2
 	end) then
-		slot4:OnCantPlace()
+		var_20_0:OnCantPlace()
 	else
-		slot4:OnCanPlace()
+		var_20_0:OnCanPlace()
 	end
 end
 
-function slot0.ResetFurnitureSelectedState(slot0, slot1)
-	slot0:GetFurnitureStateMgr(slot1):OnReset(slot0:Item2Module(slot1))
+function var_0_0.ResetFurnitureSelectedState(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0:GetFurnitureStateMgr(arg_22_1)
+	local var_22_1 = arg_22_0:Item2Module(arg_22_1)
+
+	var_22_0:OnReset(var_22_1)
 end
 
-function slot0.ClearFurnitureSelectedState(slot0, slot1)
-	slot0:GetFurnitureStateMgr(slot1):OnClear()
+function var_0_0.ClearFurnitureSelectedState(arg_23_0, arg_23_1)
+	arg_23_0:GetFurnitureStateMgr(arg_23_1):OnClear()
 end
 
-function slot0.OnDragItem(slot0, slot1)
-	slot0:EnableZoom(false)
+function var_0_0.OnDragItem(arg_24_0, arg_24_1)
+	arg_24_0:EnableZoom(false)
 end
 
-function slot0.OnDragingItem(slot0, slot1, slot2, slot3, slot4)
-	slot0:Item2Module(slot1):UpdatePosition(slot3, slot4)
-	slot0.gridAgent:Flush(slot2)
+function var_0_0.OnDragingItem(arg_25_0, arg_25_1, arg_25_2, arg_25_3, arg_25_4)
+	local var_25_0 = arg_25_0:Item2Module(arg_25_1)
 
-	if isa(slot1, CourtYardFurniture) then
-		slot0:UpdateSelectedPosition(slot1)
-		slot0:UpdateFurnitureState(slot5, slot2, slot1)
+	var_25_0:UpdatePosition(arg_25_3, arg_25_4)
+	arg_25_0.gridAgent:Flush(arg_25_2)
+
+	if isa(arg_25_1, CourtYardFurniture) then
+		arg_25_0:UpdateSelectedPosition(arg_25_1)
+		arg_25_0:UpdateFurnitureState(var_25_0, arg_25_2, arg_25_1)
 	end
 end
 
-function slot0.OnDragItemEnd(slot0, slot1, slot2)
-	slot0:EnableZoom(true)
+function var_0_0.OnDragItemEnd(arg_26_0, arg_26_1, arg_26_2)
+	arg_26_0:EnableZoom(true)
 
-	if isa(slot1, CourtYardFurniture) then
-		slot0.gridAgent:Flush(slot2)
-		slot0:UpdateSelectedPosition(slot1)
-		slot0:ResetFurnitureSelectedState(slot1)
+	if isa(arg_26_1, CourtYardFurniture) then
+		arg_26_0.gridAgent:Flush(arg_26_2)
+		arg_26_0:UpdateSelectedPosition(arg_26_1)
+		arg_26_0:ResetFurnitureSelectedState(arg_26_1)
 	end
 end
 
-function slot0.OnUnSelectedItem(slot0, slot1)
-	slot0.selectedModule = nil
+function var_0_0.OnUnSelectedItem(arg_27_0, arg_27_1)
+	arg_27_0.selectedModule = nil
 
-	slot0.gridAgent:Clear()
+	arg_27_0.gridAgent:Clear()
 
-	slot0.gridAgent = nil
+	arg_27_0.gridAgent = nil
 
-	if isa(slot1, CourtYardFurniture) then
-		slot0.dftAniEvent:SetEndEvent(function ()
-			uv0.dftAniEvent:SetEndEvent(nil)
-			setParent(uv0.selectedTF, uv0.rootTF)
+	if isa(arg_27_1, CourtYardFurniture) then
+		arg_27_0.dftAniEvent:SetEndEvent(function()
+			arg_27_0.dftAniEvent:SetEndEvent(nil)
+			setParent(arg_27_0.selectedTF, arg_27_0.rootTF)
 		end)
-		slot0:ClearFurnitureSelectedState(slot1)
-		slot0.selectedAnimation:Play("anim_courtyard_dragout")
-		slot0:UnRegisterOp()
+		arg_27_0:ClearFurnitureSelectedState(arg_27_1)
+		arg_27_0.selectedAnimation:Play("anim_courtyard_dragout")
+		arg_27_0:UnRegisterOp()
 	end
 end
 
-function slot0.OnRemoveIllegalityItem(slot0)
+function var_0_0.OnRemoveIllegalityItem(arg_29_0)
 	pg.TipsMgr.GetInstance():ShowTips("Remove illegal Item")
 end
 
-function slot0.OnOpenLayer(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.modules) do
-		if isa(slot6, CourtYardShipModule) then
-			slot6:HideAttachment(slot1)
+function var_0_0.OnOpenLayer(arg_30_0, arg_30_1)
+	for iter_30_0, iter_30_1 in pairs(arg_30_0.modules) do
+		if isa(iter_30_1, CourtYardShipModule) then
+			iter_30_1:HideAttachment(arg_30_1)
 		end
 	end
 end
 
-function slot0.EnableZoom(slot0, slot1)
-	slot0.zoomAgent.enabled = slot1
+function var_0_0.EnableZoom(arg_31_0, arg_31_1)
+	arg_31_0.zoomAgent.enabled = arg_31_1
 end
 
-function slot0.RegisterOp(slot0, slot1)
-	setActive(slot0.rotationBtn, not slot1:DisableRotation())
-	onButton(slot0, slot0.rotationBtn, function ()
-		uv0:Emit("RotateFurniture", uv1.id)
+function var_0_0.RegisterOp(arg_32_0, arg_32_1)
+	setActive(arg_32_0.rotationBtn, not arg_32_1:DisableRotation())
+	onButton(arg_32_0, arg_32_0.rotationBtn, function()
+		arg_32_0:Emit("RotateFurniture", arg_32_1.id)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		uv0:Emit("UnSelectFurniture", uv1.id)
+	onButton(arg_32_0, arg_32_0.confirmBtn, function()
+		arg_32_0:Emit("UnSelectFurniture", arg_32_1.id)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.removeBtn, function ()
-		uv0:Emit("RemoveFurniture", uv1.id)
+	onButton(arg_32_0, arg_32_0.removeBtn, function()
+		arg_32_0:Emit("RemoveFurniture", arg_32_1.id)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.scrollrect, function ()
-		uv0:Emit("UnSelectFurniture", uv1.id)
+	onButton(arg_32_0, arg_32_0.scrollrect, function()
+		arg_32_0:Emit("UnSelectFurniture", arg_32_1.id)
 	end, SFX_PANEL)
 
-	slot5 = slot0.dragBtn
+	local function var_32_0()
+		arg_32_0:Emit("BeginDragFurniture", arg_32_1.id)
+	end
 
-	slot5:Active(function ()
-		uv0:Emit("BeginDragFurniture", uv1.id)
-	end, function (slot0)
-		uv0:Emit("DragingFurniture", uv1.id, slot0)
-	end, function (slot0)
-		uv0:Emit("DragFurnitureEnd", uv1.id, slot0)
-	end)
+	local function var_32_1(arg_38_0)
+		arg_32_0:Emit("DragingFurniture", arg_32_1.id, arg_38_0)
+	end
+
+	local function var_32_2(arg_39_0)
+		arg_32_0:Emit("DragFurnitureEnd", arg_32_1.id, arg_39_0)
+	end
+
+	arg_32_0.dragBtn:Active(var_32_0, var_32_1, var_32_2)
 end
 
-function slot0.UnRegisterOp(slot0)
-	removeOnButton(slot0.rotationBtn)
-	removeOnButton(slot0.confirmBtn)
-	removeOnButton(slot0.removeBtn)
-	removeOnButton(slot0.scrollrect)
-	slot0.dragBtn:DeActive(false)
+function var_0_0.UnRegisterOp(arg_40_0)
+	removeOnButton(arg_40_0.rotationBtn)
+	removeOnButton(arg_40_0.confirmBtn)
+	removeOnButton(arg_40_0.removeBtn)
+	removeOnButton(arg_40_0.scrollrect)
+	arg_40_0.dragBtn:DeActive(false)
 end
 
-function slot0.OnItemDirChange(slot0, slot1, slot2)
-	if isa(slot1, CourtYardFurniture) then
-		slot0:UpdateSelectedPosition(slot1)
+function var_0_0.OnItemDirChange(arg_41_0, arg_41_1, arg_41_2)
+	if isa(arg_41_1, CourtYardFurniture) then
+		arg_41_0:UpdateSelectedPosition(arg_41_1)
 
-		if slot0.data:InEidtMode() and slot0.gridAgent then
-			slot0.gridAgent:Flush(slot2)
+		if arg_41_0.data:InEidtMode() and arg_41_0.gridAgent then
+			arg_41_0.gridAgent:Flush(arg_41_2)
 		end
 
-		slot0:GetFurnitureStateMgr(slot1):OnUpdateScale(slot0:Item2Module(slot1))
+		arg_41_0:GetFurnitureStateMgr(arg_41_1):OnUpdateScale(arg_41_0:Item2Module(arg_41_1))
 	else
-		slot0.gridAgent:Flush(slot2)
+		arg_41_0.gridAgent:Flush(arg_41_2)
 	end
 end
 
-function slot0.OnRotateItemFailed(slot0)
+function var_0_0.OnRotateItemFailed(arg_42_0)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardScene_error_canNotRotate"))
 end
 
-function slot0.OnDisableRotation(slot0)
+function var_0_0.OnDisableRotation(arg_43_0)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardScene_Disable_Rotation"))
 end
 
-function slot0.OnAddItemFailed(slot0)
+function var_0_0.OnAddItemFailed(arg_44_0)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardScene_error_noPosPutFurniture"))
 end
 
-function slot0.OnDestoryItem(slot0, slot1)
-	slot0:Item2Module(slot1):Dispose()
+function var_0_0.OnDestoryItem(arg_45_0, arg_45_1)
+	arg_45_0:Item2Module(arg_45_1):Dispose()
 
-	slot0.modules[slot1:GetDeathType() .. slot1.id] = nil
+	arg_45_0.modules[arg_45_1:GetDeathType() .. arg_45_1.id] = nil
 end
 
-function slot0.OnChildItem(slot0, slot1, slot2)
-	slot0:Item2Module(slot2):AddChild(slot0:Item2Module(slot1))
+function var_0_0.OnChildItem(arg_46_0, arg_46_1, arg_46_2)
+	local var_46_0 = arg_46_0:Item2Module(arg_46_1)
+	local var_46_1 = arg_46_0:Item2Module(arg_46_2)
 
-	if isa(slot1, CourtYardShip) then
-		slot4:BlocksRaycasts(true)
+	var_46_1:AddChild(var_46_0)
+
+	if isa(arg_46_1, CourtYardShip) then
+		var_46_1:BlocksRaycasts(true)
 	end
 end
 
-function slot0.OnUnChildItem(slot0, slot1, slot2)
-	slot0:Item2Module(slot2):RemoveChild(slot0:Item2Module(slot1))
+function var_0_0.OnUnChildItem(arg_47_0, arg_47_1, arg_47_2)
+	local var_47_0 = arg_47_0:Item2Module(arg_47_1)
+	local var_47_1 = arg_47_0:Item2Module(arg_47_2)
 
-	if isa(slot1, CourtYardShip) then
-		slot4:BlocksRaycasts(false)
+	var_47_1:RemoveChild(var_47_0)
+
+	if isa(arg_47_1, CourtYardShip) then
+		var_47_1:BlocksRaycasts(false)
 	end
 end
 
-function slot0.OnEnterArch(slot0, slot1, slot2)
+function var_0_0.OnEnterArch(arg_48_0, arg_48_1, arg_48_2)
+	return
 end
 
-function slot0.OnExitArch(slot0, slot1, slot2)
+function var_0_0.OnExitArch(arg_49_0, arg_49_1, arg_49_2)
+	return
 end
 
-function slot0.OnAddMatItem(slot0)
-	if not slot0.isInit then
+function var_0_0.OnAddMatItem(arg_50_0)
+	if not arg_50_0.isInit then
 		return
 	end
 
-	slot0:RefreshMatDepth()
+	arg_50_0:RefreshMatDepth()
 end
 
-function slot0.OnRemoveMatItem(slot0, slot1)
-	slot0:Item2Module(slot1):SetAsLastSibling()
+function var_0_0.OnRemoveMatItem(arg_51_0, arg_51_1)
+	arg_51_0:Item2Module(arg_51_1):SetAsLastSibling()
 end
 
-function slot0.OnShowFurnitureDesc(slot0, slot1)
-	slot0.descPage:ExecuteAction("Show", slot1)
+function var_0_0.OnShowFurnitureDesc(arg_52_0, arg_52_1)
+	arg_52_0.descPage:ExecuteAction("Show", arg_52_1)
 end
 
-function slot0.OnItemInterAction(slot0, slot1, slot2, slot3)
-	slot4 = slot0:Item2Module(slot1)
+function var_0_0.OnItemInterAction(arg_53_0, arg_53_1, arg_53_2, arg_53_3)
+	local var_53_0 = arg_53_0:Item2Module(arg_53_1)
+	local var_53_1 = arg_53_0:Item2Module(arg_53_2)
 
-	slot0:Item2Module(slot2):BlocksRaycasts(true)
+	var_53_1:BlocksRaycasts(true)
 
-	slot6 = {}
+	local var_53_2 = {}
 
-	if slot3:GetBodyMask() then
-		table.insert(slot6, slot5:GetBodyMask(slot3.id))
+	if arg_53_3:GetBodyMask() then
+		table.insert(var_53_2, var_53_1:GetBodyMask(arg_53_3.id))
 	end
 
-	if slot3:GetUsingAnimator() then
-		table.insert(slot6, slot5:GetAnimator(slot7.key))
+	local var_53_3 = arg_53_3:GetUsingAnimator()
+
+	if var_53_3 then
+		table.insert(var_53_2, var_53_1:GetAnimator(var_53_3.key))
 	end
 
-	slot8 = nil
+	local var_53_4
 
-	if #slot6 == 0 then
-		slot4._tf:SetParent(slot5.interactionTF)
+	if #var_53_2 == 0 then
+		var_53_0._tf:SetParent(var_53_1.interactionTF)
 
-		slot8 = slot4._tf
+		var_53_4 = var_53_0._tf
 	else
-		slot9 = slot4._tf
+		local var_53_5 = var_53_0._tf
 
-		for slot13, slot14 in ipairs(slot6) do
-			slot9:SetParent(slot14, false)
+		for iter_53_0, iter_53_1 in ipairs(var_53_2) do
+			var_53_5:SetParent(iter_53_1, false)
 
-			slot9 = slot14
+			var_53_5 = iter_53_1
 		end
 
-		slot8 = slot9
-		slot11 = slot4._tf.localScale
-		slot4._tf.localScale = Vector3(CourtYardCalcUtil.GetSign(slot5._tf.localScale.x) * slot11.x, slot11.y, 1)
+		var_53_4 = var_53_5
+
+		local var_53_6 = CourtYardCalcUtil.GetSign(var_53_1._tf.localScale.x)
+		local var_53_7 = var_53_0._tf.localScale
+
+		var_53_0._tf.localScale = Vector3(var_53_6 * var_53_7.x, var_53_7.y, 1)
 	end
 
-	slot4:SetSiblingIndex(slot3.id - 1)
-	slot0.bgmAgent:Play(slot2:GetInterActionBgm())
-	slot0:AddInteractionFollower(slot3, slot8, slot5)
+	var_53_0:SetSiblingIndex(arg_53_3.id - 1)
+	arg_53_0.bgmAgent:Play(arg_53_2:GetInterActionBgm())
+	arg_53_0:AddInteractionFollower(arg_53_3, var_53_4, var_53_1)
 end
 
-function slot0.OnClearItemInterAction(slot0, slot1, slot2, slot3)
-	slot4 = slot0:Item2Module(slot1)
+function var_0_0.OnClearItemInterAction(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
+	local var_54_0 = arg_54_0:Item2Module(arg_54_1)
+	local var_54_1 = arg_54_0:Item2Module(arg_54_2)
 
-	if isa(slot0:Item2Module(slot2), CourtYardFurnitureModule) and #slot2:GetUsingSlots() == 0 then
-		slot5:BlocksRaycasts(false)
+	if isa(var_54_1, CourtYardFurnitureModule) and #arg_54_2:GetUsingSlots() == 0 then
+		var_54_1:BlocksRaycasts(false)
 	end
 
-	slot6 = slot0:Item2Module(slot2)
+	local var_54_2 = arg_54_0:Item2Module(arg_54_2)
 
-	if slot3:GetBodyMask() then
-		slot7 = slot5:GetBodyMask(slot3.id)
+	if arg_54_3:GetBodyMask() then
+		local var_54_3 = var_54_1:GetBodyMask(arg_54_3.id)
 
-		slot7:SetParent(slot5.interactionTF)
+		var_54_3:SetParent(var_54_1.interactionTF)
 
-		slot9 = slot2:GetBodyMasks()[slot3.id]
-		slot7.sizeDelta = slot9.size
-		slot7.anchoredPosition = slot9.offset
+		local var_54_4 = arg_54_2:GetBodyMasks()[arg_54_3.id]
+
+		var_54_3.sizeDelta = var_54_4.size
+		var_54_3.anchoredPosition = var_54_4.offset
 	end
 
-	slot4._tf:SetParent(slot4:GetParentTF())
-	slot0.bgmAgent:Stop(slot2:GetInterActionBgm())
-	slot0:ClearInteractionFollower(slot3, slot4, slot5)
+	var_54_0._tf:SetParent(var_54_0:GetParentTF())
+	arg_54_0.bgmAgent:Stop(arg_54_2:GetInterActionBgm())
+	arg_54_0:ClearInteractionFollower(arg_54_3, var_54_0, var_54_1)
 end
 
-function slot0.AddInteractionFollower(slot0, slot1, slot2, slot3)
-	if not slot1:GetFollower() or not slot2 then
+function var_0_0.AddInteractionFollower(arg_55_0, arg_55_1, arg_55_2, arg_55_3)
+	local var_55_0 = arg_55_1:GetFollower()
+
+	if not var_55_0 or not arg_55_2 then
 		return
 	end
 
-	if IsNil(slot3:FindBoneFollower(slot4.bone)) then
-		slot6 = slot3:NewBoneFollower(slot5)
+	local var_55_1 = var_55_0.bone
+	local var_55_2 = arg_55_3:FindBoneFollower(var_55_1)
+
+	if IsNil(var_55_2) then
+		var_55_2 = arg_55_3:NewBoneFollower(var_55_1)
 	else
-		setActive(slot6, true)
+		setActive(var_55_2, true)
 	end
 
-	slot6.localScale = Vector3(1, 1, 1)
+	var_55_2.localScale = Vector3(1, 1, 1)
 
-	slot2:SetParent(slot6, false)
+	arg_55_2:SetParent(var_55_2, false)
 end
 
-function slot0.ClearInteractionFollower(slot0, slot1, slot2, slot3)
-	if not slot1:GetFollower() then
+function var_0_0.ClearInteractionFollower(arg_56_0, arg_56_1, arg_56_2, arg_56_3)
+	local var_56_0 = arg_56_1:GetFollower()
+
+	if not var_56_0 then
 		return
 	end
 
-	if not IsNil(slot3:FindBoneFollower(slot4.bone)) then
-		setActive(slot6, false)
+	local var_56_1 = var_56_0.bone
+	local var_56_2 = arg_56_3:FindBoneFollower(var_56_1)
+
+	if not IsNil(var_56_2) then
+		setActive(var_56_2, false)
 	end
 end
 
-function slot0.OnTouchItem(slot0, slot1)
-	if isa(slot1, CourtYardFurniture) then
-		slot0.effectAgent:EnableEffect(slot1:GetTouchEffect())
-		slot0.soundAgent:Play(slot1:GetTouchSound())
-		slot0.bgAgent:Switch(true, slot1:GetTouchBg())
+function var_0_0.OnTouchItem(arg_57_0, arg_57_1)
+	if isa(arg_57_1, CourtYardFurniture) then
+		arg_57_0.effectAgent:EnableEffect(arg_57_1:GetTouchEffect())
+		arg_57_0.soundAgent:Play(arg_57_1:GetTouchSound())
+		arg_57_0.bgAgent:Switch(true, arg_57_1:GetTouchBg())
 	end
 end
 
-function slot0.OnCancelTouchItem(slot0, slot1)
-	if isa(slot1, CourtYardFurniture) then
-		slot0.effectAgent:DisableEffect(slot1:GetTouchEffect())
-		slot0.bgAgent:Switch(false, slot1:GetTouchBg())
+function var_0_0.OnCancelTouchItem(arg_58_0, arg_58_1)
+	if isa(arg_58_1, CourtYardFurniture) then
+		arg_58_0.effectAgent:DisableEffect(arg_58_1:GetTouchEffect())
+		arg_58_0.bgAgent:Switch(false, arg_58_1:GetTouchBg())
 	end
 end
 
-function slot0.OnItemPlayMusic(slot0, slot1, slot2)
-	if slot2 == 1 then
-		slot0.soundAgent:Play(slot1)
-	elseif slot2 == 2 then
-		slot0.bgmAgent:Play(slot1)
+function var_0_0.OnItemPlayMusic(arg_59_0, arg_59_1, arg_59_2)
+	if arg_59_2 == 1 then
+		arg_59_0.soundAgent:Play(arg_59_1)
+	elseif arg_59_2 == 2 then
+		arg_59_0.bgmAgent:Play(arg_59_1)
 	end
 end
 
-function slot0.OnItemStopMusic(slot0, slot1, slot2)
-	if slot2 == 2 then
-		slot0.bgmAgent:Reset()
-	elseif slot2 == 1 then
-		slot0.soundAgent:Stop()
+function var_0_0.OnItemStopMusic(arg_60_0, arg_60_1, arg_60_2)
+	if arg_60_2 == 2 then
+		arg_60_0.bgmAgent:Reset()
+	elseif arg_60_2 == 1 then
+		arg_60_0.soundAgent:Stop()
 	end
 end
 
-function slot0.OnMuteAll(slot0)
-	slot0.bgmAgent:Clear()
-	slot0.soundAgent:Clear()
+function var_0_0.OnMuteAll(arg_61_0)
+	arg_61_0.bgmAgent:Clear()
+	arg_61_0.soundAgent:Clear()
 end
 
-function slot0.OnPlayMusicalInstruments(slot0, slot1)
-	if slot0.descPage and slot0.descPage:GetLoaded() and slot0.descPage:isShowing() then
-		slot0.descPage:Close()
+function var_0_0.OnPlayMusicalInstruments(arg_62_0, arg_62_1)
+	if arg_62_0.descPage and arg_62_0.descPage:GetLoaded() and arg_62_0.descPage:isShowing() then
+		arg_62_0.descPage:Close()
 	end
 
-	if slot1:GetType() == Furniture.TYPE_LUTE then
-		slot0.playTheLutePage:ExecuteAction("Show", slot1)
-	end
-end
-
-function slot0.OnStopPlayMusicalInstruments(slot0, slot1)
-	slot0.bgmAgent:Reset()
-
-	if slot0.descPage and slot0.descPage:GetLoaded() then
-		slot0.descPage:ExecuteAction("Show", slot1)
+	if arg_62_1:GetType() == Furniture.TYPE_LUTE then
+		arg_62_0.playTheLutePage:ExecuteAction("Show", arg_62_1)
 	end
 end
 
-function slot0.OnAddEffect(slot0, slot1)
-	slot0.effectAgent:EnableEffect(slot1)
+function var_0_0.OnStopPlayMusicalInstruments(arg_63_0, arg_63_1)
+	arg_63_0.bgmAgent:Reset()
+
+	if arg_63_0.descPage and arg_63_0.descPage:GetLoaded() then
+		arg_63_0.descPage:ExecuteAction("Show", arg_63_1)
+	end
 end
 
-function slot0.OnRemoveEffect(slot0, slot1)
-	slot0.effectAgent:DisableEffect(slot1)
+function var_0_0.OnAddEffect(arg_64_0, arg_64_1)
+	arg_64_0.effectAgent:EnableEffect(arg_64_1)
 end
 
-function slot0.OnBackPressed(slot0)
-	if slot0.playTheLutePage and slot0.playTheLutePage:GetLoaded() and slot0.playTheLutePage:isShowing() then
-		slot0.playTheLutePage:Hide()
+function var_0_0.OnRemoveEffect(arg_65_0, arg_65_1)
+	arg_65_0.effectAgent:DisableEffect(arg_65_1)
+end
+
+function var_0_0.OnBackPressed(arg_66_0)
+	if arg_66_0.playTheLutePage and arg_66_0.playTheLutePage:GetLoaded() and arg_66_0.playTheLutePage:isShowing() then
+		arg_66_0.playTheLutePage:Hide()
 
 		return
 	end
 
-	if slot0.descPage and slot0.descPage:GetLoaded() and slot0.descPage:isShowing() then
-		slot0.descPage:Close()
+	if arg_66_0.descPage and arg_66_0.descPage:GetLoaded() and arg_66_0.descPage:isShowing() then
+		arg_66_0.descPage:Close()
 
 		return
 	end
 
-	slot0:Emit("Quit")
+	arg_66_0:Emit("Quit")
 end
 
-function slot0.UpdateSelectedPosition(slot0, slot1)
-	slot2 = slot0:Item2Module(slot1)
-	slot0.selectedTF.localPosition = slot2:GetCenterPoint()
+function var_0_0.UpdateSelectedPosition(arg_67_0, arg_67_1)
+	local var_67_0 = arg_67_0:Item2Module(arg_67_1)
+	local var_67_1 = var_67_0:GetCenterPoint()
 
-	slot0:GetFurnitureStateMgr(slot1):OnUpdate(slot2)
+	arg_67_0.selectedTF.localPosition = var_67_1
+
+	arg_67_0:GetFurnitureStateMgr(arg_67_1):OnUpdate(var_67_0)
 end
 
-function slot0.GetGridAgent(slot0, slot1, slot2)
-	slot3 = nil
-	slot3 = (not isa(slot1, CourtYardWallFurniture) or slot0.gridAgents[2]) and slot0.gridAgents[1]
+function var_0_0.GetGridAgent(arg_68_0, arg_68_1, arg_68_2)
+	local var_68_0
 
-	if slot0.gridAgent and slot3 ~= slot0.gridAgent then
-		slot0.gridAgent:Clear()
+	if isa(arg_68_1, CourtYardWallFurniture) then
+		var_68_0 = arg_68_0.gridAgents[2]
+	else
+		var_68_0 = arg_68_0.gridAgents[1]
 	end
 
-	slot3:Reset(slot2)
+	if arg_68_0.gridAgent and var_68_0 ~= arg_68_0.gridAgent then
+		arg_68_0.gridAgent:Clear()
+	end
 
-	return slot3
+	var_68_0:Reset(arg_68_2)
+
+	return var_68_0
 end
 
-function slot0.ItemsIsLoaded(slot0)
-	if table.getCount(slot0.modules) == 0 then
+function var_0_0.ItemsIsLoaded(arg_69_0)
+	if table.getCount(arg_69_0.modules) == 0 then
 		return false
 	end
 
-	for slot4, slot5 in pairs(slot0.modules) do
-		if not slot5:IsInit() then
+	for iter_69_0, iter_69_1 in pairs(arg_69_0.modules) do
+		if not iter_69_1:IsInit() then
 			return false
 		end
 	end
@@ -640,109 +684,112 @@ function slot0.ItemsIsLoaded(slot0)
 	return true
 end
 
-function slot0.Item2Module(slot0, slot1)
-	return slot0.modules[slot1:GetDeathType() .. slot1.id]
+function var_0_0.Item2Module(arg_70_0, arg_70_1)
+	return arg_70_0.modules[arg_70_1:GetDeathType() .. arg_70_1.id]
 end
 
-function slot0.RefreshDepth(slot0)
-	for slot4, slot5 in ipairs(slot0.data:GetItems()) do
-		slot0:Item2Module(slot5):SetSiblingIndex(slot4 - 1)
-	end
-end
-
-function slot0.RefreshMatDepth(slot0)
-	for slot4, slot5 in ipairs(slot0.data:GetMatItems()) do
-		slot0:Item2Module(slot5):SetSiblingIndex(slot4 - 1)
+function var_0_0.RefreshDepth(arg_71_0)
+	for iter_71_0, iter_71_1 in ipairs(arg_71_0.data:GetItems()) do
+		arg_71_0:Item2Module(iter_71_1):SetSiblingIndex(iter_71_0 - 1)
 	end
 end
 
-function slot0.OnTakePhoto(slot0)
-	GetOrAddComponent(slot0.selectedTF, typeof(CanvasGroup)).alpha = 0
-	slot0.bgScale = slot0.bg.localScale
-	slot0.bg.localScale = Vector3(0.6, 0.6, 1)
-
-	if slot0.bg.localPosition ~= Vector3(0, -100, 0) then
-		slot0.bgPos = slot0.bg.localPosition
-		slot0.bg.localPosition = Vector3(0, -100, 0)
+function var_0_0.RefreshMatDepth(arg_72_0)
+	for iter_72_0, iter_72_1 in ipairs(arg_72_0.data:GetMatItems()) do
+		arg_72_0:Item2Module(iter_72_1):SetSiblingIndex(iter_72_0 - 1)
 	end
 end
 
-function slot0.OnEndTakePhoto(slot0)
-	GetOrAddComponent(slot0.selectedTF, typeof(CanvasGroup)).alpha = 1
+function var_0_0.OnTakePhoto(arg_73_0)
+	GetOrAddComponent(arg_73_0.selectedTF, typeof(CanvasGroup)).alpha = 0
 
-	if slot0.bgScale then
-		slot0.bg.localScale = slot0.bgScale
-	end
+	local var_73_0 = Vector3(0.6, 0.6, 1)
 
-	if slot0.bgPos then
-		slot0.bg.localPosition = slot0.bgPos
-	end
-end
+	arg_73_0.bgScale = arg_73_0.bg.localScale
+	arg_73_0.bg.localScale = var_73_0
 
-function slot0.OnDispose(slot0)
-	slot0.exited = true
-
-	slot0.dftAniEvent:SetEndEvent(nil)
-
-	for slot4, slot5 in pairs(slot0.modules) do
-		slot5:Dispose()
-	end
-
-	slot0.modules = nil
-
-	for slot4, slot5 in pairs(slot0.factorys) do
-		slot5:Dispose()
-	end
-
-	slot0.factorys = nil
-
-	slot0.dragBtn:Dispose()
-
-	slot0.dragBtn = nil
-
-	for slot4, slot5 in pairs(slot0.gridAgents) do
-		slot5:Dispose()
-	end
-
-	slot0.gridAgents = nil
-
-	if uv0 then
-		slot0.mapDebug:Dispose()
-	end
-
-	if slot0.pedestalModule then
-		slot0.pedestalModule:Dispose()
-
-		slot0.pedestalModule = nil
-	end
-
-	slot0.effectAgent:Dispose()
-
-	slot0.effectAgent = nil
-
-	slot0.soundAgent:Dispose()
-
-	slot0.soundAgent = nil
-
-	slot0.bgAgent:Dispose()
-
-	slot0.bgAgent = nil
-
-	slot0.bgmAgent:Dispose()
-
-	slot0.bgmAgent = nil
-
-	slot0.descPage:Destroy()
-
-	slot0.descPage = nil
-
-	slot0.playTheLutePage:Destroy()
-
-	slot0.playTheLutePage = nil
-
-	if not IsNil(slot0._go) then
-		Object.Destroy(slot0._go)
+	if arg_73_0.bg.localPosition ~= Vector3(0, -100, 0) then
+		arg_73_0.bgPos = arg_73_0.bg.localPosition
+		arg_73_0.bg.localPosition = Vector3(0, -100, 0)
 	end
 end
 
-return slot0
+function var_0_0.OnEndTakePhoto(arg_74_0)
+	GetOrAddComponent(arg_74_0.selectedTF, typeof(CanvasGroup)).alpha = 1
+
+	if arg_74_0.bgScale then
+		arg_74_0.bg.localScale = arg_74_0.bgScale
+	end
+
+	if arg_74_0.bgPos then
+		arg_74_0.bg.localPosition = arg_74_0.bgPos
+	end
+end
+
+function var_0_0.OnDispose(arg_75_0)
+	arg_75_0.exited = true
+
+	arg_75_0.dftAniEvent:SetEndEvent(nil)
+
+	for iter_75_0, iter_75_1 in pairs(arg_75_0.modules) do
+		iter_75_1:Dispose()
+	end
+
+	arg_75_0.modules = nil
+
+	for iter_75_2, iter_75_3 in pairs(arg_75_0.factorys) do
+		iter_75_3:Dispose()
+	end
+
+	arg_75_0.factorys = nil
+
+	arg_75_0.dragBtn:Dispose()
+
+	arg_75_0.dragBtn = nil
+
+	for iter_75_4, iter_75_5 in pairs(arg_75_0.gridAgents) do
+		iter_75_5:Dispose()
+	end
+
+	arg_75_0.gridAgents = nil
+
+	if var_0_1 then
+		arg_75_0.mapDebug:Dispose()
+	end
+
+	if arg_75_0.pedestalModule then
+		arg_75_0.pedestalModule:Dispose()
+
+		arg_75_0.pedestalModule = nil
+	end
+
+	arg_75_0.effectAgent:Dispose()
+
+	arg_75_0.effectAgent = nil
+
+	arg_75_0.soundAgent:Dispose()
+
+	arg_75_0.soundAgent = nil
+
+	arg_75_0.bgAgent:Dispose()
+
+	arg_75_0.bgAgent = nil
+
+	arg_75_0.bgmAgent:Dispose()
+
+	arg_75_0.bgmAgent = nil
+
+	arg_75_0.descPage:Destroy()
+
+	arg_75_0.descPage = nil
+
+	arg_75_0.playTheLutePage:Destroy()
+
+	arg_75_0.playTheLutePage = nil
+
+	if not IsNil(arg_75_0._go) then
+		Object.Destroy(arg_75_0._go)
+	end
+end
+
+return var_0_0

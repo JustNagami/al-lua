@@ -1,30 +1,30 @@
-slot0 = class("JoinGuildMediator", import("..base.ContextMediator"))
-slot0.APPLY = "JoinGuildMediator:APPLY"
-slot0.REFRESH = "JoinGuildMediator:REFRESH"
-slot0.SEARCH = "JoinGuildMediator:SEARCH"
+﻿local var_0_0 = class("JoinGuildMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:sendNotification(GAME.GUILD_LIST_REFRESH)
+var_0_0.APPLY = "JoinGuildMediator:APPLY"
+var_0_0.REFRESH = "JoinGuildMediator:REFRESH"
+var_0_0.SEARCH = "JoinGuildMediator:SEARCH"
 
-	slot1 = getProxy(PlayerProxy)
-	slot3 = slot0.viewComponent
+function var_0_0.register(arg_1_0)
+	arg_1_0:sendNotification(GAME.GUILD_LIST_REFRESH)
 
-	slot3:setPlayerVO(slot1:getData())
-	slot0:bind(uv0.APPLY, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.GUILD_APPLY, {
-			id = slot1,
-			content = slot2
+	local var_1_0 = getProxy(PlayerProxy):getData()
+
+	arg_1_0.viewComponent:setPlayerVO(var_1_0)
+	arg_1_0:bind(var_0_0.APPLY, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.GUILD_APPLY, {
+			id = arg_2_1,
+			content = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.REFRESH, function (slot0)
-		uv0:sendNotification(GAME.GUILD_LIST_REFRESH)
+	arg_1_0:bind(var_0_0.REFRESH, function(arg_3_0)
+		arg_1_0:sendNotification(GAME.GUILD_LIST_REFRESH)
 	end)
-	slot0:bind(uv0.SEARCH, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUILD_SEARCH, slot1)
+	arg_1_0:bind(var_0_0.SEARCH, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.GUILD_SEARCH, arg_4_1)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		GAME.GUILD_LIST_REFRESH_DONE,
 		GAME.GUILD_SEARCH_DONE,
@@ -33,20 +33,21 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == GAME.GUILD_LIST_REFRESH_DONE or slot2 == GAME.GUILD_SEARCH_DONE then
-		slot0.viewComponent:setGuildVOs(slot3)
+	if var_6_0 == GAME.GUILD_LIST_REFRESH_DONE or var_6_0 == GAME.GUILD_SEARCH_DONE then
+		arg_6_0.viewComponent:setGuildVOs(var_6_1)
 
-		if slot0.contextData.filterData then
-			slot0.viewComponent:filter()
+		if arg_6_0.contextData.filterData then
+			arg_6_0.viewComponent:filter()
 		else
-			slot0.viewComponent:sortGuilds()
+			arg_6_0.viewComponent:sortGuilds()
 		end
-	elseif slot2 == GAME.GUILD_APPLY_DONE then
-		slot0.viewComponent:CloseApply()
+	elseif var_6_0 == GAME.GUILD_APPLY_DONE then
+		arg_6_0.viewComponent:CloseApply()
 	end
 end
 
-return slot0
+return var_0_0

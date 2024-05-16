@@ -1,86 +1,89 @@
-slot0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD", slot0._tf)
-	slot0.btn = slot0:findTF("battle_btn", slot0.bg)
-	slot0.tip = slot0:findTF("help", slot0.bg)
-	slot0.mainAward = slot0:findTF("award", slot0.bg)
-	slot0.subAwards = CustomIndexLayer.Clone2Full(slot0:findTF("list", slot0.bg), 7)
-	slot0.step = slot0:findTF("receivetimes", slot0.bg)
-	slot0.score = slot0:findTF("highscore", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD", arg_1_0._tf)
+	arg_1_0.btn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
+	arg_1_0.tip = arg_1_0:findTF("help", arg_1_0.bg)
+	arg_1_0.mainAward = arg_1_0:findTF("award", arg_1_0.bg)
+	arg_1_0.subAwards = CustomIndexLayer.Clone2Full(arg_1_0:findTF("list", arg_1_0.bg), 7)
+	arg_1_0.step = arg_1_0:findTF("receivetimes", arg_1_0.bg)
+	arg_1_0.score = arg_1_0:findTF("highscore", arg_1_0.bg)
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.activity.data4 == 0 and slot1.data2 >= 7 then
-		slot0:emit(ActivityMediator.EVENT_OPERATION, {
+function var_0_0.OnDataSetting(arg_2_0)
+	local var_2_0 = arg_2_0.activity
+
+	if var_2_0.data4 == 0 and var_2_0.data2 >= 7 then
+		arg_2_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 3,
-			activity_id = slot1.id
+			activity_id = var_2_0.id
 		})
 
 		return true
-	elseif defaultValue(slot1.data2_list[1], 0) > 0 or defaultValue(slot1.data2_list[2], 0) > 0 then
-		slot0:emit(ActivityMediator.EVENT_OPERATION, {
+	elseif defaultValue(var_2_0.data2_list[1], 0) > 0 or defaultValue(var_2_0.data2_list[2], 0) > 0 then
+		arg_2_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 2,
-			activity_id = slot1.id
+			activity_id = var_2_0.id
 		})
 
 		return true
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = slot0.activity
-	slot2 = slot1:getConfig("config_client")[2]
-	slot3 = {
-		type = slot2[1],
-		id = slot2[2],
-		count = slot2[3]
+function var_0_0.OnFirstFlush(arg_3_0)
+	local var_3_0 = arg_3_0.activity
+	local var_3_1 = var_3_0:getConfig("config_client")[2]
+	local var_3_2 = {
+		type = var_3_1[1],
+		id = var_3_1[2],
+		count = var_3_1[3]
 	}
 
-	function slot7()
-		uv0:emit(BaseUI.ON_DROP, uv1)
-	end
+	onButton(arg_3_0, arg_3_0.mainAward, function()
+		arg_3_0:emit(BaseUI.ON_DROP, var_3_2)
+	end, SFX_PANEL)
 
-	onButton(slot0, slot0.mainAward, slot7, SFX_PANEL)
-
-	for slot7 = 1, 7 do
-		slot9 = slot1:getConfig("config_client")[1]
-		slot10 = {
-			type = slot9[1],
-			id = slot9[2],
-			count = slot9[3]
+	for iter_3_0 = 1, 7 do
+		local var_3_3 = arg_3_0.subAwards[iter_3_0]
+		local var_3_4 = var_3_0:getConfig("config_client")[1]
+		local var_3_5 = {
+			type = var_3_4[1],
+			id = var_3_4[2],
+			count = var_3_4[3]
 		}
 
-		onButton(slot0, slot0.subAwards[slot7], function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		onButton(arg_3_0, var_3_3, function()
+			arg_3_0:emit(BaseUI.ON_DROP, var_3_5)
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.tip, function ()
+	onButton(arg_3_0, arg_3_0.tip, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.goldship_help_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btn, function ()
-		uv0:emit(ActivityMediator.GO_DODGEM)
+	onButton(arg_3_0, arg_3_0.btn, function()
+		arg_3_0:emit(ActivityMediator.GO_DODGEM)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1 = slot0.activity
-	slot2 = pg.TimeMgr.GetInstance()
-	slot3 = slot2:DiffDay(slot1.data1, slot2:GetServerTime()) + 1
+function var_0_0.OnUpdateFlush(arg_8_0)
+	local var_8_0 = arg_8_0.activity
+	local var_8_1 = pg.TimeMgr.GetInstance()
+	local var_8_2 = var_8_1:DiffDay(var_8_0.data1, var_8_1:GetServerTime()) + 1
 
-	setActive(findTF(slot0.mainAward, "get"), slot1.data4 > 0)
+	setActive(findTF(arg_8_0.mainAward, "get"), var_8_0.data4 > 0)
 
-	for slot7 = 1, 7 do
-		setActive(findTF(slot0.subAwards[slot7], "get"), slot7 <= slot1.data2)
-		setActive(findTF(slot8, "lock"), slot3 < slot7)
+	for iter_8_0 = 1, 7 do
+		local var_8_3 = arg_8_0.subAwards[iter_8_0]
+
+		setActive(findTF(var_8_3, "get"), iter_8_0 <= var_8_0.data2)
+		setActive(findTF(var_8_3, "lock"), var_8_2 < iter_8_0)
 	end
 
-	setText(slot0.step, slot1.data2)
-	setText(slot0.score, slot1.data1_list[1])
+	setText(arg_8_0.step, var_8_0.data2)
+	setText(arg_8_0.score, var_8_0.data1_list[1])
 end
 
-return slot0
+return var_0_0

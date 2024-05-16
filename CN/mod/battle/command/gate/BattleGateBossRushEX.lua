@@ -1,141 +1,164 @@
-slot0 = class("BattleGateBossRushEX")
-ys.Battle.BattleGateBossRushEX = slot0
-slot0.__name = "BattleGateBossRushEX"
+﻿local var_0_0 = class("BattleGateBossRushEX")
 
-function slot0.Entrance(slot0, slot1)
-	slot3 = getProxy(PlayerProxy)
-	slot4 = getProxy(FleetProxy)
-	slot5 = getProxy(BayProxy)
-	slot7 = pg.battle_cost_template[SYSTEM_BOSS_RUSH_EX].oil_cost > 0
-	slot8 = 0
-	slot9 = 0
-	slot10 = 0
-	slot11 = 0
-	slot13 = getProxy(ActivityProxy):getActivityById(slot0.actId):GetSeriesData()
-	slot14 = slot13:GetStaegLevel() + 1
-	slot15 = slot13:GetExpeditionIds()[slot14]
-	slot16 = slot13:GetFleetIds()
-	slot17 = slot16[slot14]
-	slot18 = slot16[#slot16]
+ys.Battle.BattleGateBossRushEX = var_0_0
+var_0_0.__name = "BattleGateBossRushEX"
 
-	if slot13:GetMode() == BossRushSeriesData.MODE.SINGLE then
-		slot17 = slot16[1]
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.actId
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = getProxy(FleetProxy)
+	local var_1_3 = getProxy(BayProxy)
+	local var_1_4 = pg.battle_cost_template[SYSTEM_BOSS_RUSH_EX]
+	local var_1_5 = var_1_4.oil_cost > 0
+	local var_1_6 = 0
+	local var_1_7 = 0
+	local var_1_8 = 0
+	local var_1_9 = 0
+	local var_1_10 = getProxy(ActivityProxy):getActivityById(var_1_0):GetSeriesData()
+	local var_1_11 = var_1_10:GetStaegLevel() + 1
+	local var_1_12 = var_1_10:GetExpeditionIds()[var_1_11]
+	local var_1_13 = var_1_10:GetFleetIds()
+	local var_1_14 = var_1_13[var_1_11]
+	local var_1_15 = var_1_13[#var_1_13]
+
+	if var_1_10:GetMode() == BossRushSeriesData.MODE.SINGLE then
+		var_1_14 = var_1_13[1]
 	end
 
-	slot20 = slot4:getActivityFleets()[slot2]
-	slot22 = slot20[slot18]
-	slot23 = {}
+	local var_1_16 = var_1_2:getActivityFleets()[var_1_0]
+	local var_1_17 = var_1_16[var_1_14]
+	local var_1_18 = var_1_16[var_1_15]
+	local var_1_19 = {}
+	local var_1_20 = var_1_3:getSortShipsByFleet(var_1_17)
 
-	for slot28, slot29 in ipairs(slot5:getSortShipsByFleet(slot20[slot17])) do
-		slot23[#slot23 + 1] = slot29.id
+	for iter_1_0, iter_1_1 in ipairs(var_1_20) do
+		var_1_19[#var_1_19 + 1] = iter_1_1.id
 	end
 
-	slot25 = slot3:getRawData()
+	local var_1_21 = var_1_1:getRawData()
 
-	if slot7 and slot25.oil < slot11 then
+	if var_1_5 and var_1_9 > var_1_21.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(SYSTEM_BOSS_RUSH_EX, slot23, {
-		slot15
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_22(arg_2_0)
+		if var_1_5 then
+			var_1_21:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_7
 			})
 		end
 
-		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
+		if var_1_4.enter_energy_cost > 0 then
+			local var_2_0 = pg.gameset.battle_consume_energy.key_value
 
-			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
-				uv5:updateShip(slot6)
+			for iter_2_0, iter_2_1 in ipairs(var_1_20) do
+				iter_2_1:cosumeEnergy(var_2_0)
+				var_1_3:updateShip(iter_2_1)
 			end
 		end
 
-		slot1 = uv6
+		var_1_1:updatePlayer(var_1_21)
 
-		slot1:updatePlayer(uv1)
-		uv9:sendNotification(GAME.BEGIN_STAGE_DONE, {
+		local var_2_1 = {
 			prefabFleet = {},
-			stageId = uv7,
+			stageId = var_1_12,
 			system = SYSTEM_BOSS_RUSH_EX,
-			actId = uv8,
-			token = slot0.key
-		})
-	end, function (slot0)
-		uv0:RequestFailStandardProcess(slot0)
-	end)
+			actId = var_1_0,
+			token = arg_2_0.key
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
+	end
+
+	local function var_1_23(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
+	end
+
+	BeginStageCommand.SendRequest(SYSTEM_BOSS_RUSH_EX, var_1_19, {
+		var_1_12
+	}, var_1_22, var_1_23)
 end
 
-function slot0.Exit(slot0, slot1)
-	slot2 = pg.battle_cost_template[SYSTEM_BOSS_RUSH_EX]
-	slot3 = getProxy(FleetProxy)
-	slot4 = getProxy(BayProxy)
-	slot6 = ys.Battle.BattleConst.BattleScore.C < slot0.statistics._battleScore
-	slot7 = 0
+function var_0_0.Exit(arg_4_0, arg_4_1)
+	local var_4_0 = pg.battle_cost_template[SYSTEM_BOSS_RUSH_EX]
+	local var_4_1 = getProxy(FleetProxy)
+	local var_4_2 = getProxy(BayProxy)
+	local var_4_3 = arg_4_0.statistics._battleScore
+	local var_4_4 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
+	local var_4_5 = 0
+	local var_4_6 = {}
+	local var_4_7 = {}
 
-	(function ()
-		slot2 = getProxy(ActivityProxy):getActivityById(uv0.actId):GetSeriesData()
-		slot4 = slot2:GetFleetIds()
-		slot5 = slot4[slot2:GetStaegLevel() + 1]
-		slot6 = slot4[#slot4]
+	;(function()
+		local var_5_0 = arg_4_0.actId
+		local var_5_1 = getProxy(ActivityProxy):getActivityById(var_5_0):GetSeriesData()
+		local var_5_2 = var_5_1:GetStaegLevel() + 1
+		local var_5_3 = var_5_1:GetFleetIds()
+		local var_5_4 = var_5_3[var_5_2]
+		local var_5_5 = var_5_3[#var_5_3]
 
-		if slot2:GetMode() == BossRushSeriesData.MODE.SINGLE then
-			slot5 = slot4[1]
+		if var_5_1:GetMode() == BossRushSeriesData.MODE.SINGLE then
+			var_5_4 = var_5_3[1]
 		end
 
-		slot8 = uv1:getActivityFleets()[slot0]
-		slot10 = slot8[slot6]
+		local var_5_6 = var_4_1:getActivityFleets()[var_5_0]
+		local var_5_7 = var_5_6[var_5_4]
+		local var_5_8 = var_5_6[var_5_5]
 
-		(function (slot0)
-			table.insertto(uv0, _.values(slot0.commanderIds))
-			table.insertto(uv1, uv2:getSortShipsByFleet(slot0))
-		end)(slot8[slot5])
+		local function var_5_9(arg_6_0)
+			table.insertto(var_4_7, _.values(arg_6_0.commanderIds))
+			table.insertto(var_4_6, var_4_2:getSortShipsByFleet(arg_6_0))
+		end
 
-		if uv0.statistics.submarineAid then
-			slot11(slot10)
+		var_5_9(var_5_7)
+
+		if arg_4_0.statistics.submarineAid then
+			var_5_9(var_5_8)
 		end
 	end)()
 
-	slot1.GeneralPackage(slot0, {}).commander_id_list = {}
+	local var_4_8 = arg_4_1.GeneralPackage(arg_4_0, var_4_6)
 
-	function slot12(slot0)
-		uv0.statistics.mvpShipID = slot0.mvp
-		slot1 = {
+	var_4_8.commander_id_list = var_4_7
+
+	local function var_4_9(arg_7_0)
+		arg_4_0.statistics.mvpShipID = arg_7_0.mvp
+
+		local var_7_0 = {
 			system = SYSTEM_BOSS_RUSH_EX,
-			statistics = uv0.statistics,
-			score = uv1,
-			result = slot0.result
+			statistics = arg_4_0.statistics,
+			score = var_4_3,
+			result = arg_7_0.result
 		}
-		slot3 = getProxy(ActivityProxy):getActivityById(uv0.actId)
+		local var_7_1 = arg_4_0.actId
+		local var_7_2 = getProxy(ActivityProxy):getActivityById(var_7_1)
 
-		slot3:GetSeriesData():PassStage(slot1)
-		getProxy(ActivityProxy):updateActivity(slot3)
-		uv2:sendNotification(GAME.FINISH_STAGE_DONE, slot1)
+		var_7_2:GetSeriesData():PassStage(var_7_0)
+		getProxy(ActivityProxy):updateActivity(var_7_2)
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_7_0)
 	end
 
 	seriesAsync({
-		function (slot0)
-			if uv0 then
-				uv1:SendRequest(uv2, function (slot0)
-					uv0(slot0)
+		function(arg_8_0)
+			if var_4_4 then
+				arg_4_1:SendRequest(var_4_8, function(arg_9_0)
+					arg_8_0(arg_9_0)
 				end)
 
 				return
 			end
 
-			slot0({})
+			arg_8_0({})
 		end,
-		function (slot0, slot1)
-			uv0(slot1)
+		function(arg_10_0, arg_10_1)
+			var_4_9(arg_10_1)
 		end
 	})
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 400
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,25 +177,5 @@ return {
 	stack = 1,
 	id = 11253,
 	icon = 11250,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 400
-			}
-		}
-	}
+	last_effect = ""
 }

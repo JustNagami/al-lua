@@ -1,172 +1,173 @@
-slot0 = class("ShipProfileCVLoader")
-slot1 = pg.ship_skin_words
+﻿local var_0_0 = class("ShipProfileCVLoader")
+local var_0_1 = pg.ship_skin_words
 
-function slot0.Ctor(slot0)
-	slot0.loadedCVBankName = nil
-	slot0.loadedCVBattleBankName = nil
-	slot0.playbackInfo = nil
-	slot0.timers = {}
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.loadedCVBankName = nil
+	arg_1_0.loadedCVBattleBankName = nil
+	arg_1_0.playbackInfo = nil
+	arg_1_0.timers = {}
 end
 
-function slot0.Load(slot0, slot1)
-	slot0:ClearSound()
+function var_0_0.Load(arg_2_0, arg_2_1)
+	arg_2_0:ClearSound()
 
-	if ShipWordHelper.ExistVoiceKey(slot1) then
-		slot0:SetUp(ShipWordHelper.RawGetCVKey(slot1))
+	if ShipWordHelper.ExistVoiceKey(arg_2_1) then
+		local var_2_0 = ShipWordHelper.RawGetCVKey(arg_2_1)
+
+		arg_2_0:SetUp(var_2_0)
 	end
 end
 
-function slot0.SetUp(slot0, slot1)
-	seriesAsync({
-		function (slot0)
-			pg.CriMgr.GetInstance():LoadCV(uv0, slot0)
-		end,
-		function (slot0)
-			pg.CriMgr.GetInstance():LoadBattleCV(uv0, slot0)
-		end
-	}, function ()
-		slot0 = pg.CriMgr.GetCVBankName(uv0)
-		slot1 = pg.CriMgr.GetBattleCVBankName(uv0)
+function var_0_0.SetUp(arg_3_0, arg_3_1)
+	local function var_3_0()
+		local var_4_0 = pg.CriMgr.GetCVBankName(arg_3_1)
+		local var_4_1 = pg.CriMgr.GetBattleCVBankName(arg_3_1)
 
-		if uv1.exited then
-			pg.CriMgr.UnloadCVBank(slot0)
-			pg.CriMgr.UnloadCVBank(slot1)
+		if arg_3_0.exited then
+			pg.CriMgr.UnloadCVBank(var_4_0)
+			pg.CriMgr.UnloadCVBank(var_4_1)
 		else
-			uv1.loadedCVBankName = slot0
-			uv1.loadedCVBattleBankName = slot1
+			arg_3_0.loadedCVBankName = var_4_0
+			arg_3_0.loadedCVBattleBankName = var_4_1
 		end
-	end)
+	end
+
+	seriesAsync({
+		function(arg_5_0)
+			pg.CriMgr.GetInstance():LoadCV(arg_3_1, arg_5_0)
+		end,
+		function(arg_6_0)
+			pg.CriMgr.GetInstance():LoadBattleCV(arg_3_1, arg_6_0)
+		end
+	}, var_3_0)
 end
 
-function slot0.PlaySound(slot0, slot1, slot2)
-	if not slot0.playbackInfo or slot1 ~= slot0.prevCvPath or slot0.playbackInfo.channelPlayer == nil then
-		slot0:StopSound()
+function var_0_0.PlaySound(arg_7_0, arg_7_1, arg_7_2)
+	if not arg_7_0.playbackInfo or arg_7_1 ~= arg_7_0.prevCvPath or arg_7_0.playbackInfo.channelPlayer == nil then
+		arg_7_0:StopSound()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_7_1, function(arg_8_0)
+			if arg_8_0 then
+				arg_7_0.playbackInfo = arg_8_0
 
-		slot3 = pg.CriMgr.GetInstance()
+				arg_7_0.playbackInfo:SetIgnoreAutoUnload(true)
 
-		slot3:PlaySoundEffect_V3(slot1, function (slot0)
-			if slot0 then
-				uv0.playbackInfo = slot0
-
-				uv0.playbackInfo:SetIgnoreAutoUnload(true)
-
-				if uv1 then
-					uv1(uv0.playbackInfo.cueInfo)
+				if arg_7_2 then
+					arg_7_2(arg_7_0.playbackInfo.cueInfo)
 				end
-			elseif uv1 then
-				uv1()
+			elseif arg_7_2 then
+				arg_7_2()
 			end
 		end)
 
-		slot0.prevCvPath = slot1
+		arg_7_0.prevCvPath = arg_7_1
 
-		if slot0.playbackInfo == nil then
+		if arg_7_0.playbackInfo == nil then
 			return nil
 		end
 
-		return slot0.playbackInfo.cueInfo
-	elseif slot0.playbackInfo then
-		slot0.playbackInfo:PlaybackStop()
-		slot0.playbackInfo:SetStartTimeAndPlay()
+		return arg_7_0.playbackInfo.cueInfo
+	elseif arg_7_0.playbackInfo then
+		arg_7_0.playbackInfo:PlaybackStop()
+		arg_7_0.playbackInfo:SetStartTimeAndPlay()
 
-		if slot2 then
-			slot2(slot0.playbackInfo.cueInfo)
+		if arg_7_2 then
+			arg_7_2(arg_7_0.playbackInfo.cueInfo)
 		end
 
-		return slot0.playbackInfo.cueInfo
-	elseif slot2 then
-		slot2()
+		return arg_7_0.playbackInfo.cueInfo
+	elseif arg_7_2 then
+		arg_7_2()
 	end
 
 	return nil
 end
 
-function slot0.DelayPlaySound(slot0, slot1, slot2, slot3)
-	slot0:RemoveTimer(slot1)
+function var_0_0.DelayPlaySound(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	arg_9_0:RemoveTimer(arg_9_1)
 
-	if slot2 > 0 then
-		slot0.timers[slot1] = Timer.New(function ()
-			slot0 = uv0:PlaySound(uv1, function (slot0)
-				if uv0 then
-					uv0(slot0)
+	if arg_9_2 > 0 then
+		arg_9_0.timers[arg_9_1] = Timer.New(function()
+			local var_10_0 = arg_9_0:PlaySound(arg_9_1, function(arg_11_0)
+				if arg_9_3 then
+					arg_9_3(arg_11_0)
 				end
 			end)
-		end, slot2, 1)
+		end, arg_9_2, 1)
 
-		slot0.timers[slot1]:Start()
+		arg_9_0.timers[arg_9_1]:Start()
 	else
-		slot4 = slot0:PlaySound(slot1, function (slot0)
-			if uv0 then
-				uv0(slot0)
+		local var_9_0 = arg_9_0:PlaySound(arg_9_1, function(arg_12_0)
+			if arg_9_3 then
+				arg_9_3(arg_12_0)
 			end
 		end)
 	end
 end
 
-function slot0.RawPlaySound(slot0, slot1, slot2)
-	slot0:RemoveTimer(slot1)
+function var_0_0.RawPlaySound(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0:RemoveTimer(arg_13_1)
 
-	if slot2 > 0 then
-		slot0.timers[slot1] = Timer.New(function ()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-		end, slot2, 1)
+	if arg_13_2 > 0 then
+		arg_13_0.timers[arg_13_1] = Timer.New(function()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_13_1)
+		end, arg_13_2, 1)
 
-		slot0.timers[slot1]:Start()
+		arg_13_0.timers[arg_13_1]:Start()
 	else
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_13_1)
 	end
 end
 
-function slot0.RemoveTimer(slot0, slot1)
-	if slot0.timers[slot1] then
-		slot0.timers[slot1]:Stop()
+function var_0_0.RemoveTimer(arg_15_0, arg_15_1)
+	if arg_15_0.timers[arg_15_1] then
+		arg_15_0.timers[arg_15_1]:Stop()
 
-		slot0.timers[slot1] = nil
+		arg_15_0.timers[arg_15_1] = nil
 	end
 end
 
-function slot0.StopSound(slot0)
-	if slot0.playbackInfo then
-		pg.CriMgr.GetInstance():StopPlaybackInfoForce(slot0.playbackInfo)
-		slot0.playbackInfo:SetIgnoreAutoUnload(false)
+function var_0_0.StopSound(arg_16_0)
+	if arg_16_0.playbackInfo then
+		pg.CriMgr.GetInstance():StopPlaybackInfoForce(arg_16_0.playbackInfo)
+		arg_16_0.playbackInfo:SetIgnoreAutoUnload(false)
 	end
 end
 
-function slot0.Unload(slot0)
-	if slot0.loadedCVBankName then
-		pg.CriMgr.UnloadCVBank(slot0.loadedCVBankName)
+function var_0_0.Unload(arg_17_0)
+	if arg_17_0.loadedCVBankName then
+		pg.CriMgr.UnloadCVBank(arg_17_0.loadedCVBankName)
 
-		slot0.loadedCVBankName = nil
+		arg_17_0.loadedCVBankName = nil
 	end
 
-	if slot0.loadedCVBattleBankName then
-		pg.CriMgr.UnloadCVBank(slot0.loadedCVBattleBankName)
+	if arg_17_0.loadedCVBattleBankName then
+		pg.CriMgr.UnloadCVBank(arg_17_0.loadedCVBattleBankName)
 
-		slot0.loadedCVBattleBankName = nil
-	end
-end
-
-function slot0.ClearSound(slot0)
-	slot0:StopSound()
-	slot0:Unload()
-
-	if slot0.playbackInfo then
-		slot0.playbackInfo:Dispose()
-
-		slot0.playbackInfo = nil
+		arg_17_0.loadedCVBattleBankName = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:ClearSound()
+function var_0_0.ClearSound(arg_18_0)
+	arg_18_0:StopSound()
+	arg_18_0:Unload()
 
-	slot0.exited = true
+	if arg_18_0.playbackInfo then
+		arg_18_0.playbackInfo:Dispose()
 
-	for slot4, slot5 in pairs(slot0.timers) do
-		slot5:Stop()
+		arg_18_0.playbackInfo = nil
 	end
-
-	slot0.timers = nil
 end
 
-return slot0
+function var_0_0.Dispose(arg_19_0)
+	arg_19_0:ClearSound()
+
+	arg_19_0.exited = true
+
+	for iter_19_0, iter_19_1 in pairs(arg_19_0.timers) do
+		iter_19_1:Stop()
+	end
+
+	arg_19_0.timers = nil
+end
+
+return var_0_0

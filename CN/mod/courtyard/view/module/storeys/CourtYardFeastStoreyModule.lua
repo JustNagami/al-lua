@@ -1,11 +1,11 @@
-slot0 = class("CourtYardFeastStoreyModule", import(".CourtYardStoreyModule"))
+﻿local var_0_0 = class("CourtYardFeastStoreyModule", import(".CourtYardStoreyModule"))
 
-function slot0.GetDefaultBgm(slot0)
+function var_0_0.GetDefaultBgm(arg_1_0)
 	return pg.voice_bgm.FeastScene.default_bgm
 end
 
-function slot0.InitPedestalModule(slot0)
-	slot0.pedestalModule = CourtYardFeastPedestalModule.New(slot0.data, slot0.bg)
+function var_0_0.InitPedestalModule(arg_2_0)
+	arg_2_0.pedestalModule = CourtYardFeastPedestalModule.New(arg_2_0.data, arg_2_0.bg)
 end
 
-return slot0
+return var_0_0

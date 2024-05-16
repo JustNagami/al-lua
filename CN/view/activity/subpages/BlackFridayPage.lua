@@ -1,32 +1,34 @@
-slot0 = class("BlackFridayPage", import("...base.BaseActivityPage"))
-slot1 = 1
-slot2 = 2
-slot3 = 3
+﻿local var_0_0 = class("BlackFridayPage", import("...base.BaseActivityPage"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
 
-function slot0.OnInit(slot0)
-	slot0.shopBtn = slot0:findTF("AD/shop_btn")
-	slot0.uiList = UIItemList.New(slot0:findTF("AD/list"), slot0:findTF("AD/list/award"))
-	slot0.finishCntTxt = slot0:findTF("AD/Text"):GetComponent(typeof(Text))
-	slot0.helpBtn = slot0:findTF("AD/help")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.shopBtn = arg_1_0:findTF("AD/shop_btn")
+	arg_1_0.uiList = UIItemList.New(arg_1_0:findTF("AD/list"), arg_1_0:findTF("AD/list/award"))
+	arg_1_0.finishCntTxt = arg_1_0:findTF("AD/Text"):GetComponent(typeof(Text))
+	arg_1_0.helpBtn = arg_1_0:findTF("AD/help")
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.ptData then
-		slot0.ptData:Update(slot0.activity)
+function var_0_0.OnDataSetting(arg_2_0)
+	if arg_2_0.ptData then
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		slot0.ptData = ActivityPtData.New(slot0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 
-	slot0.endTime = slot0.activity.stopTime
+	arg_2_0.endTime = arg_2_0.activity.stopTime
 
-	if slot0.activity:getConfig("config_client") and slot1[1] and type(slot1[1]) == "table" then
-		slot0.endTime = pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[1])
+	local var_2_0 = arg_2_0.activity:getConfig("config_client")
+
+	if var_2_0 and var_2_0[1] and type(var_2_0[1]) == "table" then
+		arg_2_0.endTime = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_2_0[1])
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	if not IsNil(slot0.helpBtn) then
-		onButton(slot0, slot0.helpBtn, function ()
+function var_0_0.OnFirstFlush(arg_3_0)
+	if not IsNil(arg_3_0.helpBtn) then
+		onButton(arg_3_0, arg_3_0.helpBtn, function()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = pg.gametip.blackfriday_help.tip
@@ -34,79 +36,83 @@ function slot0.OnFirstFlush(slot0)
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.shopBtn, function ()
-		if uv0.endTime <= pg.TimeMgr.GetInstance():GetServerTime() then
+	onButton(arg_3_0, arg_3_0.shopBtn, function()
+		if pg.TimeMgr.GetInstance():GetServerTime() >= arg_3_0.endTime then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP, {
+			arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP, {
 				warp = SkinShopScene.PAGE_ENCORE
 			})
 		end
 	end, SFX_PANEL)
-
-	slot1 = slot0.uiList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateAward(slot1 + 1, slot2)
+	arg_3_0.uiList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateAward(arg_6_1 + 1, arg_6_2)
 		end
 	end)
 end
 
-function slot0.GetState(slot0, slot1)
-	slot2 = slot1 <= slot0.finishCnt
+function var_0_0.GetState(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1 <= arg_7_0.finishCnt
+	local var_7_1 = arg_7_0.ptData.targets[arg_7_1]
+	local var_7_2 = table.contains(arg_7_0.finishList, var_7_1)
 
-	if table.contains(slot0.finishList, slot0.ptData.targets[slot1]) then
-		return uv0
-	elseif not slot4 and slot2 then
-		return uv1
+	if var_7_2 then
+		return var_0_3
+	elseif not var_7_2 and var_7_0 then
+		return var_0_2
 	else
-		return uv2
+		return var_0_1
 	end
 end
 
-function slot0.UpdateAward(slot0, slot1, slot2)
-	slot3 = slot0.awards[slot1]
-	slot4 = {
-		type = slot3[1],
-		id = slot3[2],
-		count = slot3[3]
+function var_0_0.UpdateAward(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = arg_8_0.awards[arg_8_1]
+	local var_8_1 = {
+		type = var_8_0[1],
+		id = var_8_0[2],
+		count = var_8_0[3]
 	}
 
-	updateDrop(slot2, slot4)
-	setActive(slot2:Find("icon_bg/count"), slot4.count > 0)
+	updateDrop(arg_8_2, var_8_1)
+	setActive(arg_8_2:Find("icon_bg/count"), var_8_1.count > 0)
 
-	slot2:Find("icon_bg/frame"):GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0)
+	arg_8_2:Find("icon_bg/frame"):GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0)
 
-	setActive(slot2:Find("got"), slot0:GetState(slot1) == uv0)
-	setActive(slot2:Find("get"), slot5 == uv1)
-	setActive(slot2:Find("lock"), slot5 == uv2)
+	local var_8_2 = arg_8_0:GetState(arg_8_1)
 
-	if slot5 == uv1 then
-		onButton(slot0, slot2, function ()
-			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+	setActive(arg_8_2:Find("got"), var_8_2 == var_0_3)
+	setActive(arg_8_2:Find("get"), var_8_2 == var_0_2)
+	setActive(arg_8_2:Find("lock"), var_8_2 == var_0_1)
+
+	if var_8_2 == var_0_2 then
+		onButton(arg_8_0, arg_8_2, function()
+			local var_9_0 = arg_8_0.ptData.targets[arg_8_1]
+
+			arg_8_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = uv0.ptData:GetId(),
-				arg1 = uv0.ptData.targets[uv1]
+				activity_id = arg_8_0.ptData:GetId(),
+				arg1 = var_9_0
 			})
 		end, SFX_PANEL)
 	else
-		onButton(slot0, slot2, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		onButton(arg_8_0, arg_8_2, function()
+			arg_8_0:emit(BaseUI.ON_DROP, var_8_1)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.awards = slot0.ptData.dropList
-	slot0.finishCnt = slot0.ptData.count
-	slot0.finishList = slot0.ptData.activity.data1_list
-	slot0.finishCntTxt.text = "X" .. slot0.finishCnt
+function var_0_0.OnUpdateFlush(arg_11_0)
+	arg_11_0.awards = arg_11_0.ptData.dropList
+	arg_11_0.finishCnt = arg_11_0.ptData.count
+	arg_11_0.finishList = arg_11_0.ptData.activity.data1_list
+	arg_11_0.finishCntTxt.text = "X" .. arg_11_0.finishCnt
 
-	slot0.uiList:align(#slot0.awards)
+	arg_11_0.uiList:align(#arg_11_0.awards)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_12_0)
+	return
 end
 
-return slot0
+return var_0_0

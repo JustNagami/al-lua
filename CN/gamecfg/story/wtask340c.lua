@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "WTask340C",
 	mode = 2,
 	skipTip = false,

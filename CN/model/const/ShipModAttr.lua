@@ -1,19 +1,20 @@
-slot0 = class("ShipModAttr")
-slot0.ID_TO_ATTR = {
+﻿local var_0_0 = class("ShipModAttr")
+
+var_0_0.ID_TO_ATTR = {
 	[2] = AttributeType.Cannon,
 	[3] = AttributeType.Torpedo,
 	[4] = AttributeType.AntiAircraft,
 	[5] = AttributeType.Air,
 	[6] = AttributeType.Reload
 }
-slot0.ATTR_TO_INDEX = {
+var_0_0.ATTR_TO_INDEX = {
 	[AttributeType.Cannon] = 1,
 	[AttributeType.Torpedo] = 2,
 	[AttributeType.AntiAircraft] = 3,
 	[AttributeType.Air] = 4,
 	[AttributeType.Reload] = 5
 }
-slot0.BLUEPRINT_ATTRS = {
+var_0_0.BLUEPRINT_ATTRS = {
 	AttributeType.Cannon,
 	AttributeType.Torpedo,
 	AttributeType.AntiAircraft,
@@ -21,8 +22,8 @@ slot0.BLUEPRINT_ATTRS = {
 	AttributeType.Reload
 }
 
-function slot0.id2Name(slot0)
-	return AttributeType.Type2Name(uv0.ID_TO_ATTR[slot0])
+function var_0_0.id2Name(arg_1_0)
+	return AttributeType.Type2Name(var_0_0.ID_TO_ATTR[arg_1_0])
 end
 
-return slot0
+return var_0_0

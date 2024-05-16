@@ -1,4 +1,4 @@
-return {
+﻿return {
 	map_id = 10007,
 	id = 101310,
 	stages = {

@@ -1,4 +1,25 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "antiAirPower",
+				number = 100
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -168,26 +189,5 @@ return {
 	stack = 3,
 	id = 17312,
 	icon = 17310,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "antiAirPower",
-				number = 100
-			}
-		}
-	}
+	last_effect = ""
 }

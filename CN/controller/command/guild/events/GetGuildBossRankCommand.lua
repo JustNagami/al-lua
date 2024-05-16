@@ -1,33 +1,35 @@
-slot0 = class("GetGuildBossRankCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GetGuildBossRankCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
 
-	slot4:Send(61029, {
+	pg.ConnectionMgr.GetInstance():Send(61029, {
 		type = 0
-	}, 61030, function (slot0)
-		slot2 = getProxy(GuildProxy):getRawData()
-		slot3 = {}
+	}, 61030, function(arg_2_0)
+		local var_2_0 = getProxy(GuildProxy)
+		local var_2_1 = var_2_0:getRawData()
+		local var_2_2 = {}
 
-		for slot7, slot8 in ipairs(slot0.list) do
-			if slot2:getMemberById(slot8.user_id) then
-				table.insert(slot3, {
-					name = slot9.name,
-					damage = slot8.damage
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.list) do
+			local var_2_3 = var_2_1:getMemberById(iter_2_1.user_id)
+
+			if var_2_3 then
+				table.insert(var_2_2, {
+					name = var_2_3.name,
+					damage = iter_2_1.damage
 				})
 			end
 		end
 
-		slot1:UpdateBossRank(slot3)
-		slot1:UpdateBossRankRefreshTime(pg.TimeMgr.GetInstance():GetServerTime())
+		var_2_0:UpdateBossRank(var_2_2)
+		var_2_0:UpdateBossRankRefreshTime(pg.TimeMgr.GetInstance():GetServerTime())
 
-		if uv0 then
-			uv0()
+		if var_1_0 then
+			var_1_0()
 		end
 
-		uv1:sendNotification(GAME.GET_GUILD_BOSS_RANK_DONE)
+		arg_1_0:sendNotification(GAME.GET_GUILD_BOSS_RANK_DONE)
 	end)
 end
 
-return slot0
+return var_0_0

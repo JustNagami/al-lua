@@ -1,1 +1,1 @@
-return class("YingxiV4MainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("YingxiV4MainPage", import(".TemplatePage.PreviewTemplatePage")))

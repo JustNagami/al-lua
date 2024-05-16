@@ -1,168 +1,178 @@
-slot0 = class("CardPairsScene", import("..base.BaseUI"))
-slot0.CARD_NUM = 18
-slot0.GAME_STATE_BEGIN = 0
-slot0.GAME_STATE_GAMING = 1
-slot0.GAME_STATE_END = 2
-slot0.config_init = false
+﻿local var_0_0 = class("CardPairsScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.CARD_NUM = 18
+var_0_0.GAME_STATE_BEGIN = 0
+var_0_0.GAME_STATE_GAMING = 1
+var_0_0.GAME_STATE_END = 2
+var_0_0.config_init = false
+
+function var_0_0.getUIName(arg_1_0)
 	return "CardPairsUI"
 end
 
-function slot0.setPlayerData(slot0, slot1)
-	slot0.playerData = slot1
+function var_0_0.setPlayerData(arg_2_0, arg_2_1)
+	arg_2_0.playerData = arg_2_1
 end
 
-function slot0.setActivityData(slot0, slot1)
-	slot0.activityData = slot1
+function var_0_0.setActivityData(arg_3_0, arg_3_1)
+	arg_3_0.activityData = arg_3_1
 
-	if not slot0.config_init then
-		if slot0.activityData:getConfig("config_client")[2] then
-			slot0.firstShowingTime = slot2.firstShowingTime
-			slot0.showingTime = slot2.showingTime
-			slot0.aniTime = slot2.aniTime
-			slot0.cardEffectTimesMax = slot0.activityData:getConfig("config_data")[4]
+	if not arg_3_0.config_init then
+		local var_3_0 = arg_3_0.activityData:getConfig("config_client")[2]
+
+		if var_3_0 then
+			arg_3_0.firstShowingTime = var_3_0.firstShowingTime
+			arg_3_0.showingTime = var_3_0.showingTime
+			arg_3_0.aniTime = var_3_0.aniTime
+			arg_3_0.cardEffectTimesMax = arg_3_0.activityData:getConfig("config_data")[4]
 		else
-			slot0.firstShowingTime = 2
-			slot0.showingTime = 0.3
-			slot0.aniTime = 0.2
-			slot0.cardEffectTimesMax = 7
+			arg_3_0.firstShowingTime = 2
+			arg_3_0.showingTime = 0.3
+			arg_3_0.aniTime = 0.2
+			arg_3_0.cardEffectTimesMax = 7
 		end
 
-		CardPairsCard.ANI_TIME = slot0.aniTime
-		slot0.config_init = true
+		CardPairsCard.ANI_TIME = arg_3_0.aniTime
+		arg_3_0.config_init = true
 	end
 
-	slot0:updateTimes()
+	arg_3_0:updateTimes()
 
-	if slot0.activityData.data4 <= 0 then
-		setText(slot0.bestTxt, "--'--'--")
+	if arg_3_0.activityData.data4 <= 0 then
+		setText(arg_3_0.bestTxt, "--'--'--")
 	else
-		setText(slot0.bestTxt, slot0:getTimeFormat(slot0.activityData.data4))
+		setText(arg_3_0.bestTxt, arg_3_0:getTimeFormat(arg_3_0.activityData.data4))
 	end
 end
 
-function slot0.checkActivityEnd(slot0)
+function var_0_0.checkActivityEnd(arg_4_0)
+	return
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("top/back", slot0._tf)
-	slot0.cardTpl = slot0:findTF("res/card", slot0._tf)
-	slot0.cardCon = slot0:findTF("card_con/layout", slot0._tf)
-	slot0.pics = slot0:findTF("res/pics", slot0._tf)
-	slot0.helpBtn = slot0:findTF("top/help_btn", slot0._tf)
-	slot0.timesTxt = slot0:findTF("num_txt", slot0._tf)
-	slot0.timeTxt = slot0:findTF("time_txt", slot0._tf)
-	slot0.bestTxt = slot0:findTF("best_txt", slot0._tf)
-	slot0.maskBtn = slot0:findTF("mask_btn", slot0._tf)
-	slot0.endTips = slot0:findTF("end_tips", slot0._tf)
+function var_0_0.init(arg_5_0)
+	arg_5_0.backBtn = arg_5_0:findTF("top/back", arg_5_0._tf)
+	arg_5_0.cardTpl = arg_5_0:findTF("res/card", arg_5_0._tf)
+	arg_5_0.cardCon = arg_5_0:findTF("card_con/layout", arg_5_0._tf)
+	arg_5_0.pics = arg_5_0:findTF("res/pics", arg_5_0._tf)
+	arg_5_0.helpBtn = arg_5_0:findTF("top/help_btn", arg_5_0._tf)
+	arg_5_0.timesTxt = arg_5_0:findTF("num_txt", arg_5_0._tf)
+	arg_5_0.timeTxt = arg_5_0:findTF("time_txt", arg_5_0._tf)
+	arg_5_0.bestTxt = arg_5_0:findTF("best_txt", arg_5_0._tf)
+	arg_5_0.maskBtn = arg_5_0:findTF("mask_btn", arg_5_0._tf)
+	arg_5_0.endTips = arg_5_0:findTF("end_tips", arg_5_0._tf)
 
-	slot0:hideChild(slot0:findTF("res", slot0._tf))
+	arg_5_0:hideChild(arg_5_0:findTF("res", arg_5_0._tf))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("card_pairs_help_tip")
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.maskBtn, function ()
-		if uv0.lastTimes > 0 then
-			uv0:gameInit()
+	onButton(arg_6_0, arg_6_0.maskBtn, function()
+		if arg_6_0.lastTimes > 0 then
+			arg_6_0:gameInit()
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("card_pairs_tips"),
-				onYes = function ()
-					uv0:gameInit()
+				onYes = function()
+					arg_6_0:gameInit()
 				end
 			})
 		end
 	end, SFX_PANEL)
 
-	slot0.updateTimer = Timer.New(function ()
-		uv0:updateTimes()
+	arg_6_0.updateTimer = Timer.New(function()
+		arg_6_0:updateTimes()
 	end, 10, -1)
 
-	slot0.updateTimer:Start()
+	arg_6_0.updateTimer:Start()
 
-	slot0.showCards = {}
-	slot0.showingCards = {}
-	slot0.cardList = {}
-	slot0.cardUIList = UIItemList.New(slot0.cardCon, slot0.cardTpl)
+	arg_6_0.showCards = {}
+	arg_6_0.showingCards = {}
+	arg_6_0.cardList = {}
+	arg_6_0.cardUIList = UIItemList.New(arg_6_0.cardCon, arg_6_0.cardTpl)
 
-	slot0.cardUIList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			if uv0.cardList[slot1 + 1] ~= nil then
-				slot3:initCard(uv0.cardIndexList[slot1 + 1][1])
+	arg_6_0.cardUIList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = arg_6_0.cardList[arg_12_1 + 1]
+
+			if var_12_0 ~= nil then
+				var_12_0:initCard(arg_6_0.cardIndexList[arg_12_1 + 1][1])
 			else
-				table.insert(uv0.cardList, slot1 + 1, CardPairsCard.New(slot2, uv0.pics, uv0.cardIndexList[slot1 + 1][1], function (slot0)
-					if uv0.gameState == uv0.GAME_STATE_GAMING then
-						if uv0.isFrist then
-							uv0.isFrist = false
-							uv0.beginTime = Time.realtimeSinceStartup
-							uv0.countTimer = Timer.New(function ()
-								uv0:setTimeTxt(math.floor((Time.realtimeSinceStartup - uv0.beginTime) * 1000))
+				table.insert(arg_6_0.cardList, arg_12_1 + 1, CardPairsCard.New(arg_12_2, arg_6_0.pics, arg_6_0.cardIndexList[arg_12_1 + 1][1], function(arg_13_0)
+					if arg_6_0.gameState == arg_6_0.GAME_STATE_GAMING then
+						if arg_6_0.isFrist then
+							arg_6_0.isFrist = false
+							arg_6_0.beginTime = Time.realtimeSinceStartup
+							arg_6_0.countTimer = Timer.New(function()
+								local var_14_0 = math.floor((Time.realtimeSinceStartup - arg_6_0.beginTime) * 1000)
+
+								arg_6_0:setTimeTxt(var_14_0)
 							end, 0.12, -1)
 
-							uv0.countTimer:Start()
+							arg_6_0.countTimer:Start()
 						end
 
-						if slot0.canClick and slot0.enable and #uv0.showCards < 2 then
-							slot0:aniShowBack(slot0.cardState == CardPairsCard.CARD_STATE_BACK)
+						if arg_13_0.canClick and arg_13_0.enable and #arg_6_0.showCards < 2 then
+							arg_13_0:aniShowBack(arg_13_0.cardState == CardPairsCard.CARD_STATE_BACK)
 						end
 					end
-				end, function (slot0, slot1)
-					if uv0.gameState == uv0.GAME_STATE_GAMING then
-						slot0:setEnable(false)
+				end, function(arg_15_0, arg_15_1)
+					if arg_6_0.gameState == arg_6_0.GAME_STATE_GAMING then
+						arg_15_0:setEnable(false)
 
-						if slot1 then
-							table.insert(uv0.showCards, #uv0.showCards + 1, slot0)
+						if arg_15_1 then
+							table.insert(arg_6_0.showCards, #arg_6_0.showCards + 1, arg_15_0)
 
-							if #uv0.showCards == 2 then
-								uv0:setAllCardEnale(false)
+							if #arg_6_0.showCards == 2 then
+								arg_6_0:setAllCardEnale(false)
 							end
 						end
 					end
-				end, function (slot0, slot1)
-					if uv0.gameState == uv0.GAME_STATE_GAMING then
-						if slot1 then
-							slot0:setOutline(true)
-							table.insert(uv0.showingCards, #uv0.showingCards + 1, slot0)
+				end, function(arg_16_0, arg_16_1)
+					if arg_6_0.gameState == arg_6_0.GAME_STATE_GAMING then
+						if arg_16_1 then
+							arg_16_0:setOutline(true)
+							table.insert(arg_6_0.showingCards, #arg_6_0.showingCards + 1, arg_16_0)
 
-							if #uv0.showingCards % 2 == 0 then
-								slot2 = #uv0.showingCards
-								slot3 = #uv0.showingCards - 1
+							if #arg_6_0.showingCards % 2 == 0 then
+								local var_16_0 = #arg_6_0.showingCards
+								local var_16_1 = #arg_6_0.showingCards - 1
+								local var_16_2 = arg_6_0.showingCards[var_16_1]
+								local var_16_3 = arg_6_0.showingCards[var_16_0]
 
-								table.remove(uv0.showingCards, slot2)
-								table.remove(uv0.showingCards, slot3)
+								table.remove(arg_6_0.showingCards, var_16_0)
+								table.remove(arg_6_0.showingCards, var_16_1)
 
-								if uv0.showingCards[slot3]:getCardIndex() == uv0.showingCards[slot2]:getCardIndex() then
-									slot4:setClear(true)
-									slot5:setClear(true)
+								if var_16_2:getCardIndex() == var_16_3:getCardIndex() then
+									var_16_2:setClear(true)
+									var_16_3:setClear(true)
 
-									uv0.curValue = uv0.curValue + 2
+									arg_6_0.curValue = arg_6_0.curValue + 2
 
-									if uv0.CARD_NUM <= uv0.curValue then
-										uv0:gameEndHandler()
+									if arg_6_0.curValue >= arg_6_0.CARD_NUM then
+										arg_6_0:gameEndHandler()
 									else
-										for slot9 = #uv0.showCards, 0, -1 do
-											table.remove(uv0.showCards, slot9)
+										for iter_16_0 = #arg_6_0.showCards, 0, -1 do
+											table.remove(arg_6_0.showCards, iter_16_0)
 										end
 
-										uv0:setAllCardEnale(true)
+										arg_6_0:setAllCardEnale(true)
 									end
 								else
-									slot4:aniShowBack(false, false, uv0.showingTime)
-									slot5:aniShowBack(false, false, uv0.showingTime)
+									var_16_2:aniShowBack(false, false, arg_6_0.showingTime)
+									var_16_3:aniShowBack(false, false, arg_6_0.showingTime)
 								end
 							end
 						else
-							table.remove(uv0.showCards, #uv0.showCards)
-							uv0:setAllCardEnale(#uv0.showingCards == 0)
+							table.remove(arg_6_0.showCards, #arg_6_0.showCards)
+							arg_6_0:setAllCardEnale(#arg_6_0.showingCards == 0)
 						end
 					end
 				end))
@@ -170,177 +180,190 @@ function slot0.didEnter(slot0)
 		end
 	end)
 
-	if not slot0:tryFirstPlayStory() then
-		triggerButton(slot0.maskBtn)
+	if not arg_6_0:tryFirstPlayStory() then
+		triggerButton(arg_6_0.maskBtn)
 	end
 end
 
-function slot0.setAllCardEnale(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.cardList) do
-		slot6:setEnable(slot1)
+function var_0_0.setAllCardEnale(arg_17_0, arg_17_1)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.cardList) do
+		iter_17_1:setEnable(arg_17_1)
 	end
 end
 
-function slot0.setTimeTxt(slot0, slot1)
-	setText(slot0.timeTxt, slot0:getTimeFormat(slot1))
+function var_0_0.setTimeTxt(arg_18_0, arg_18_1)
+	setText(arg_18_0.timeTxt, arg_18_0:getTimeFormat(arg_18_1))
 end
 
-function slot0.getTimeFormat(slot0, slot1)
-	return (math.floor(slot1 / 60000) >= 10 and slot2 or "0" .. slot2) .. "'" .. (math.floor(slot1 % 60000 / 1000) >= 10 and slot3 or "0" .. slot3) .. "'" .. (math.floor(slot1 % 1000 / 10) >= 10 and slot4 or "0" .. slot4)
+function var_0_0.getTimeFormat(arg_19_0, arg_19_1)
+	local var_19_0 = math.floor(arg_19_1 / 60000)
+
+	var_19_0 = var_19_0 >= 10 and var_19_0 or "0" .. var_19_0
+
+	local var_19_1 = math.floor(arg_19_1 % 60000 / 1000)
+
+	var_19_1 = var_19_1 >= 10 and var_19_1 or "0" .. var_19_1
+
+	local var_19_2 = math.floor(arg_19_1 % 1000 / 10)
+
+	var_19_2 = var_19_2 >= 10 and var_19_2 or "0" .. var_19_2
+
+	return var_19_0 .. "'" .. var_19_1 .. "'" .. var_19_2
 end
 
-function slot0.updateTimes(slot0)
-	if math.ceil(os.difftime(pg.TimeMgr.GetInstance():GetServerTime(), slot0.activityData.data3) / 86400) < 0 then
-		slot2 = 0
-	end
+function var_0_0.updateTimes(arg_20_0)
+	local var_20_0 = os.difftime(pg.TimeMgr.GetInstance():GetServerTime(), arg_20_0.activityData.data3)
+	local var_20_1 = math.ceil(var_20_0 / 86400)
 
-	if slot0.cardEffectTimesMax < slot2 then
-		slot2 = slot0.cardEffectTimesMax or slot2
-	end
+	var_20_1 = var_20_1 < 0 and 0 or var_20_1
+	var_20_1 = var_20_1 > arg_20_0.cardEffectTimesMax and arg_20_0.cardEffectTimesMax or var_20_1
+	arg_20_0.lastTimes = var_20_1 - arg_20_0.activityData.data2
 
-	slot0.lastTimes = slot2 - slot0.activityData.data2
-
-	setText(slot0.timesTxt, slot0.lastTimes >= 0 and slot0.lastTimes or 0)
+	setText(arg_20_0.timesTxt, arg_20_0.lastTimes >= 0 and arg_20_0.lastTimes or 0)
 end
 
-function slot0.gameInit(slot0)
-	setActive(slot0.maskBtn, false)
-	setActive(slot0.endTips, false)
+function var_0_0.gameInit(arg_21_0)
+	setActive(arg_21_0.maskBtn, false)
+	setActive(arg_21_0.endTips, false)
 
-	slot0.isFrist = true
-	slot0.curValue = 0
-	slot0.showCards = {}
-	slot0.showingCards = {}
-	slot0.cardIndexList = {}
+	arg_21_0.isFrist = true
+	arg_21_0.curValue = 0
+	arg_21_0.showCards = {}
+	arg_21_0.showingCards = {}
+	arg_21_0.cardIndexList = {}
 
-	for slot4 = 1, slot0.CARD_NUM / 2 do
-		table.insert(slot0.cardIndexList, #slot0.cardIndexList + 1, {
-			slot4,
+	for iter_21_0 = 1, arg_21_0.CARD_NUM / 2 do
+		table.insert(arg_21_0.cardIndexList, #arg_21_0.cardIndexList + 1, {
+			iter_21_0,
 			math.random(0, 100)
 		})
-		table.insert(slot0.cardIndexList, #slot0.cardIndexList + 1, {
-			slot4,
+		table.insert(arg_21_0.cardIndexList, #arg_21_0.cardIndexList + 1, {
+			iter_21_0,
 			math.random(0, 100)
 		})
 	end
 
-	table.sort(slot0.cardIndexList, function (slot0, slot1)
-		if slot1[2] < slot0[2] then
+	table.sort(arg_21_0.cardIndexList, function(arg_22_0, arg_22_1)
+		if arg_22_0[2] > arg_22_1[2] then
 			return true
 		end
 
 		return false
 	end)
-	slot0:setTimeTxt(0)
-	slot0:clearCountTimer()
-	slot0:clearAllCard()
-	slot0.cardUIList:align(slot0.CARD_NUM)
+	arg_21_0:setTimeTxt(0)
+	arg_21_0:clearCountTimer()
+	arg_21_0:clearAllCard()
+	arg_21_0.cardUIList:align(arg_21_0.CARD_NUM)
 
-	slot0.gameState = slot0.GAME_STATE_BEGIN
+	arg_21_0.gameState = arg_21_0.GAME_STATE_BEGIN
 
-	slot0:checkGameState()
+	arg_21_0:checkGameState()
 end
 
-function slot0.checkGameState(slot0)
-	if slot0.gameState == slot0.GAME_STATE_BEGIN then
-		slot0:showAllCard()
-	elseif slot0.gameState == slot0.GAME_STATE_GAMING then
-		-- Nothing
-	elseif slot0.gameState == slot0.GAME_STATE_END then
-		slot0:clearCountTimer()
+function var_0_0.checkGameState(arg_23_0)
+	if arg_23_0.gameState == arg_23_0.GAME_STATE_BEGIN then
+		arg_23_0:showAllCard()
+	elseif arg_23_0.gameState == arg_23_0.GAME_STATE_GAMING then
+		-- block empty
+	elseif arg_23_0.gameState == arg_23_0.GAME_STATE_END then
+		arg_23_0:clearCountTimer()
 	end
 end
 
-function slot0.gameEndHandler(slot0)
-	slot0.gameState = slot0.GAME_STATE_END
+function var_0_0.gameEndHandler(arg_24_0)
+	arg_24_0.gameState = arg_24_0.GAME_STATE_END
 
-	slot0:checkGameState()
-	setActive(slot0.maskBtn, true)
+	arg_24_0:checkGameState()
+	setActive(arg_24_0.maskBtn, true)
 
-	if math.floor((Time.realtimeSinceStartup - slot0.beginTime) * 1000) < 0 then
-		slot1 = 9 * slot0.aniTime or slot1
-	end
+	local var_24_0 = math.floor((Time.realtimeSinceStartup - arg_24_0.beginTime) * 1000)
 
-	slot0:setTimeTxt(slot1)
+	var_24_0 = var_24_0 < 0 and 9 * arg_24_0.aniTime or var_24_0
 
-	if slot0.cardEffectTimesMax < (slot0.lastTimes > 0 and slot0.activityData.data2 + 1 or slot0.activityData.data2) then
-		slot2 = slot0.cardEffectTimesMax or slot2
-	end
+	arg_24_0:setTimeTxt(var_24_0)
 
-	if slot0.lastTimes > 0 or slot1 < slot0.activityData.data4 then
-		slot0:emit(CardPairsMediator.EVENT_OPERATION, {
+	local var_24_1 = arg_24_0.lastTimes > 0 and arg_24_0.activityData.data2 + 1 or arg_24_0.activityData.data2
+
+	var_24_1 = var_24_1 > arg_24_0.cardEffectTimesMax and arg_24_0.cardEffectTimesMax or var_24_1
+
+	if arg_24_0.lastTimes > 0 or var_24_0 < arg_24_0.activityData.data4 then
+		arg_24_0:emit(CardPairsMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = slot0.activityData.id,
-			arg1 = slot2,
-			arg2 = slot1
+			activity_id = arg_24_0.activityData.id,
+			arg1 = var_24_1,
+			arg2 = var_24_0
 		})
 	end
 
-	setActive(slot0.endTips, true)
+	setActive(arg_24_0.endTips, true)
 end
 
-function slot0.showAllCard(slot0)
-	slot0:setAllCardEnale(false)
+function var_0_0.showAllCard(arg_25_0)
+	arg_25_0:setAllCardEnale(false)
 
-	slot0.timer = Timer.New(function ()
-		for slot3, slot4 in pairs(uv0.cardList) do
-			slot4:aniShowBack(true)
+	arg_25_0.timer = Timer.New(function()
+		for iter_26_0, iter_26_1 in pairs(arg_25_0.cardList) do
+			iter_26_1:aniShowBack(true)
 		end
 
-		uv0.timer = Timer.New(function ()
-			for slot3, slot4 in pairs(uv0.cardList) do
-				slot4:aniShowBack()
+		arg_25_0.timer = Timer.New(function()
+			for iter_27_0, iter_27_1 in pairs(arg_25_0.cardList) do
+				iter_27_1:aniShowBack()
 			end
 
-			uv0.timer = Timer.New(function ()
-				uv0.gameState = uv0.GAME_STATE_GAMING
+			arg_25_0.timer = Timer.New(function()
+				arg_25_0.gameState = arg_25_0.GAME_STATE_GAMING
 
-				uv0:checkGameState()
-				uv0:setAllCardEnale(true)
-			end, uv0.aniTime, 1)
+				arg_25_0:checkGameState()
+				arg_25_0:setAllCardEnale(true)
+			end, arg_25_0.aniTime, 1)
 
-			uv0.timer:Start()
-		end, uv0.firstShowingTime, 1)
+			arg_25_0.timer:Start()
+		end, arg_25_0.firstShowingTime, 1)
 
-		uv0.timer:Start()
+		arg_25_0.timer:Start()
 	end, 0.5, 1)
 
-	slot0.timer:Start()
+	arg_25_0.timer:Start()
 end
 
-function slot0.clearAllCard(slot0, slot1)
-	if slot0.timer ~= nil then
-		slot0.timer:Stop()
+function var_0_0.clearAllCard(arg_29_0, arg_29_1)
+	if arg_29_0.timer ~= nil then
+		arg_29_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_29_0.timer = nil
 	end
 
-	if slot1 then
-		for slot5, slot6 in pairs(slot0.cardList) do
-			slot6:destroy()
+	if arg_29_1 then
+		for iter_29_0, iter_29_1 in pairs(arg_29_0.cardList) do
+			iter_29_1:destroy()
 		end
 
-		slot0.cardList = {}
+		arg_29_0.cardList = {}
 	else
-		for slot5, slot6 in pairs(slot0.cardList) do
-			slot6:clear()
+		for iter_29_2, iter_29_3 in pairs(arg_29_0.cardList) do
+			iter_29_3:clear()
 		end
 	end
 end
 
-function slot0.hideChild(slot0, slot1)
-	for slot6 = 0, slot1.childCount - 1 do
-		setActive(slot1:GetChild(slot6), false)
+function var_0_0.hideChild(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_1.childCount
+
+	for iter_30_0 = 0, var_30_0 - 1 do
+		local var_30_1 = arg_30_1:GetChild(iter_30_0)
+
+		setActive(var_30_1, false)
 	end
 end
 
-function slot0.tryFirstPlayStory(slot0)
-	if slot0.activityData:getConfig("config_client")[1] then
-		if slot0.activityData:getConfig("config_client")[1][1] ~= nil and not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
-			slot2 = pg.NewStoryMgr.GetInstance()
+function var_0_0.tryFirstPlayStory(arg_31_0)
+	if arg_31_0.activityData:getConfig("config_client")[1] then
+		local var_31_0 = arg_31_0.activityData:getConfig("config_client")[1][1]
 
-			slot2:Play(slot1, function ()
-				triggerButton(uv0.maskBtn)
+		if var_31_0 ~= nil and not pg.NewStoryMgr.GetInstance():IsPlayed(var_31_0) then
+			pg.NewStoryMgr.GetInstance():Play(var_31_0, function()
+				triggerButton(arg_31_0.maskBtn)
 			end)
 
 			return true
@@ -352,23 +375,23 @@ function slot0.tryFirstPlayStory(slot0)
 	end
 end
 
-function slot0.clearCountTimer(slot0)
-	if slot0.countTimer ~= nil then
-		slot0.countTimer:Stop()
+function var_0_0.clearCountTimer(arg_33_0)
+	if arg_33_0.countTimer ~= nil then
+		arg_33_0.countTimer:Stop()
 
-		slot0.countTimer = nil
+		arg_33_0.countTimer = nil
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0:clearAllCard(true)
-	slot0:clearCountTimer()
+function var_0_0.willExit(arg_34_0)
+	arg_34_0:clearAllCard(true)
+	arg_34_0:clearCountTimer()
 
-	if slot0.updateTimer ~= nil then
-		slot0.updateTimer:Stop()
+	if arg_34_0.updateTimer ~= nil then
+		arg_34_0.updateTimer:Stop()
 
-		slot0.updateTimer = nil
+		arg_34_0.updateTimer = nil
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,298 +1,358 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleBuffEvent
-slot2 = slot0.Battle.BattleUnitEvent
-slot3 = slot0.Battle.BattleResourceManager
-slot4 = slot0.Battle.BattleDataFunction
-slot0.Battle.BattleEffectComponent = class("BattleEffectComponent")
-slot5 = slot0.Battle.BattleEffectComponent
-slot5.__name = "BattleEffectComponent"
+﻿ys = ys or {}
 
-function slot5.Ctor(slot0, slot1)
-	uv0.EventListener.AttachEventListener(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleBuffEvent
+local var_0_2 = var_0_0.Battle.BattleUnitEvent
+local var_0_3 = var_0_0.Battle.BattleResourceManager
+local var_0_4 = var_0_0.Battle.BattleDataFunction
 
-	slot0._owner = slot1
-	slot0._blinkIDList = {}
-	slot0._buffLastEffects = {}
-	slot0._effectIndex = 0
-	slot0._effectList = {}
+var_0_0.Battle.BattleEffectComponent = class("BattleEffectComponent")
+
+local var_0_5 = var_0_0.Battle.BattleEffectComponent
+
+var_0_5.__name = "BattleEffectComponent"
+
+function var_0_5.Ctor(arg_1_0, arg_1_1)
+	var_0_0.EventListener.AttachEventListener(arg_1_0)
+
+	arg_1_0._owner = arg_1_1
+	arg_1_0._blinkIDList = {}
+	arg_1_0._buffLastEffects = {}
+	arg_1_0._effectIndex = 0
+	arg_1_0._effectList = {}
 end
 
-function slot5.SwitchOwner(slot0, slot1, slot2)
-	slot0._owner = slot1
+function var_0_5.SwitchOwner(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._owner = arg_2_1
 
-	for slot6, slot7 in pairs(slot0._blinkIDList) do
-		if slot2[slot7] then
-			slot0._blinkIDList[slot6] = slot2[slot7]
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._blinkIDList) do
+		if arg_2_2[iter_2_1] then
+			arg_2_0._blinkIDList[iter_2_0] = arg_2_2[iter_2_1]
 		end
 	end
 end
 
-function slot5.ClearEffect(slot0)
-	for slot4, slot5 in pairs(slot0._blinkIDList) do
-		slot0._owner:RemoveBlink(slot5)
+function var_0_5.ClearEffect(arg_3_0)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0._blinkIDList) do
+		arg_3_0._owner:RemoveBlink(iter_3_1)
 	end
 
-	slot0._blinkIDList = {}
+	arg_3_0._blinkIDList = {}
 end
 
-function slot5.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0._blinkIDList) do
-		slot0._owner:RemoveBlink(slot5)
+function var_0_5.Dispose(arg_4_0)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0._blinkIDList) do
+		arg_4_0._owner:RemoveBlink(iter_4_1)
 	end
 
-	slot0._effectList = nil
-	slot0._buffLastEffects = nil
+	arg_4_0._effectList = nil
+	arg_4_0._buffLastEffects = nil
 
-	uv0.EventListener.DetachEventListener(slot0)
+	var_0_0.EventListener.DetachEventListener(arg_4_0)
 end
 
-function slot5.GetFXPool(slot0)
-	return uv0.Battle.BattleFXPool.GetInstance()
+function var_0_5.GetFXPool(arg_5_0)
+	return var_0_0.Battle.BattleFXPool.GetInstance()
 end
 
-function slot5.SetUnitDataEvent(slot0, slot1)
-	slot1:RegisterEventListener(slot0, uv0.BUFF_CAST, slot0.onBuffCast)
-	slot1:RegisterEventListener(slot0, uv0.BUFF_ATTACH, slot0.onBuffAdd)
-	slot1:RegisterEventListener(slot0, uv0.BUFF_STACK, slot0.onBuffStack)
-	slot1:RegisterEventListener(slot0, uv0.BUFF_REMOVE, slot0.onBuffRemove)
-	slot1:RegisterEventListener(slot0, uv1.ADD_EFFECT, slot0.onAddEffect)
-	slot1:RegisterEventListener(slot0, uv1.CANCEL_EFFECT, slot0.onCancelEffect)
-	slot1:RegisterEventListener(slot0, uv1.DEACTIVE_EFFECT, slot0.onDeactiveEffect)
+function var_0_5.SetUnitDataEvent(arg_6_0, arg_6_1)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_1.BUFF_CAST, arg_6_0.onBuffCast)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_1.BUFF_ATTACH, arg_6_0.onBuffAdd)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_1.BUFF_STACK, arg_6_0.onBuffStack)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_1.BUFF_REMOVE, arg_6_0.onBuffRemove)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_2.ADD_EFFECT, arg_6_0.onAddEffect)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_2.CANCEL_EFFECT, arg_6_0.onCancelEffect)
+	arg_6_1:RegisterEventListener(arg_6_0, var_0_2.DEACTIVE_EFFECT, arg_6_0.onDeactiveEffect)
 end
 
-function slot5.RemoveUnitEvent(slot0, slot1)
-	slot1:UnregisterEventListener(slot0, uv0.BUFF_ATTACH)
-	slot1:UnregisterEventListener(slot0, uv0.BUFF_CAST)
-	slot1:UnregisterEventListener(slot0, uv0.BUFF_STACK)
-	slot1:UnregisterEventListener(slot0, uv0.BUFF_REMOVE)
-	slot1:UnregisterEventListener(slot0, uv1.ADD_EFFECT)
-	slot1:UnregisterEventListener(slot0, uv1.CANCEL_EFFECT)
-	slot1:UnregisterEventListener(slot0, uv1.DEACTIVE_EFFECT)
+function var_0_5.RemoveUnitEvent(arg_7_0, arg_7_1)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_1.BUFF_ATTACH)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_1.BUFF_CAST)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_1.BUFF_STACK)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_1.BUFF_REMOVE)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_2.ADD_EFFECT)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_2.CANCEL_EFFECT)
+	arg_7_1:UnregisterEventListener(arg_7_0, var_0_2.DEACTIVE_EFFECT)
 end
 
-function slot5.Update(slot0, slot1)
-	slot0._dir = slot0._owner:GetUnitData():GetDirection()
+function var_0_5.Update(arg_8_0, arg_8_1)
+	arg_8_0._dir = arg_8_0._owner:GetUnitData():GetDirection()
 
-	for slot5, slot6 in pairs(slot0._effectList) do
-		slot6.currentTime = slot1 - slot6.startTime
+	for iter_8_0, iter_8_1 in pairs(arg_8_0._effectList) do
+		iter_8_1.currentTime = arg_8_1 - iter_8_1.startTime
 
-		slot0:updateEffect(slot6)
+		arg_8_0:updateEffect(iter_8_1)
 	end
 end
 
-function slot5.onAddEffect(slot0, slot1)
-	slot0:addEffect(slot1.Data)
+function var_0_5.onAddEffect(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1.Data
+
+	arg_9_0:addEffect(var_9_0)
 end
 
-function slot5.onCancelEffect(slot0, slot1)
-	slot0:cancelEffect(slot1.Data)
+function var_0_5.onCancelEffect(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1.Data
+
+	arg_10_0:cancelEffect(var_10_0)
 end
 
-function slot5.onDeactiveEffect(slot0, slot1)
-	slot0:deactiveEffect(slot1.Data)
+function var_0_5.onDeactiveEffect(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1.Data
+
+	arg_11_0:deactiveEffect(var_11_0)
 end
 
-function slot5.onBuffAdd(slot0, slot1)
-	slot0:DoWhenAddBuff(slot1)
+function var_0_5.onBuffAdd(arg_12_0, arg_12_1)
+	arg_12_0:DoWhenAddBuff(arg_12_1)
 end
 
-function slot5.onBuffCast(slot0, slot1)
-	slot0:addBlink(slot1.Data.buff_id)
+function var_0_5.onBuffCast(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1.Data.buff_id
+
+	arg_13_0:addBlink(var_13_0)
 end
 
-function slot5.DoWhenAddBuff(slot0, slot1)
-	slot2 = slot1.Data.buff_id
-	slot3 = slot1.Data.buff_level
+function var_0_5.DoWhenAddBuff(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_1.Data.buff_id
+	local var_14_1 = arg_14_1.Data.buff_level
 
-	slot0:addInitFX(slot2)
-	slot0:addLastFX(slot2)
+	arg_14_0:addInitFX(var_14_0)
+	arg_14_0:addLastFX(var_14_0)
 end
 
-function slot5.onBuffStack(slot0, slot1)
-	slot0:DoWhenStackBuff(slot1)
+function var_0_5.onBuffStack(arg_15_0, arg_15_1)
+	arg_15_0:DoWhenStackBuff(arg_15_1)
 end
 
-function slot5.DoWhenStackBuff(slot0, slot1)
-	slot2 = slot1.Data.buff_id
+function var_0_5.DoWhenStackBuff(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_1.Data.buff_id
 
-	slot0:addInitFX(slot2)
+	arg_16_0:addInitFX(var_16_0)
 
-	if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot2).last_effect ~= "" and slot3.last_effect_stack then
-		if slot1.Data.stack_count > #slot0._buffLastEffects[slot2] then
-			slot0:addLastFX(slot2)
-		elseif slot4 < slot5 then
-			slot6 = slot5 - slot4
+	local var_16_1 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(var_16_0)
 
-			while slot6 > 0 do
-				slot0:removeLastFX(slot2)
+	if var_16_1.last_effect ~= "" and var_16_1.last_effect_stack then
+		local var_16_2 = arg_16_1.Data.stack_count
+		local var_16_3 = #arg_16_0._buffLastEffects[var_16_0]
 
-				slot6 = slot6 - 1
+		if var_16_3 < var_16_2 then
+			arg_16_0:addLastFX(var_16_0)
+		elseif var_16_2 < var_16_3 then
+			local var_16_4 = var_16_3 - var_16_2
+
+			while var_16_4 > 0 do
+				arg_16_0:removeLastFX(var_16_0)
+
+				var_16_4 = var_16_4 - 1
 			end
 		end
 	end
 end
 
-function slot5.onBuffRemove(slot0, slot1)
-	if slot0._buffLastEffects[slot1.Data.buff_id] then
-		slot3 = #slot0._buffLastEffects[slot2]
+function var_0_5.onBuffRemove(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_1.Data.buff_id
 
-		while slot3 > 0 do
-			slot0:removeLastFX(slot2)
+	if arg_17_0._buffLastEffects[var_17_0] then
+		local var_17_1 = #arg_17_0._buffLastEffects[var_17_0]
 
-			slot3 = slot3 - 1
+		while var_17_1 > 0 do
+			arg_17_0:removeLastFX(var_17_0)
+
+			var_17_1 = var_17_1 - 1
 		end
 	end
 
-	if slot0._blinkIDList[slot2] then
-		slot0._owner:RemoveBlink(slot3)
+	local var_17_2 = arg_17_0._blinkIDList[var_17_0]
 
-		slot0._blinkIDList[slot2] = nil
+	if var_17_2 then
+		arg_17_0._owner:RemoveBlink(var_17_2)
+
+		arg_17_0._blinkIDList[var_17_0] = nil
 	end
 end
 
-function slot5.addInitFX(slot0, slot1)
-	if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot1).init_effect and slot2.init_effect ~= "" then
-		slot3 = slot2.init_effect
+function var_0_5.addInitFX(arg_18_0, arg_18_1)
+	local var_18_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_18_1)
 
-		if slot2.skin_adapt then
-			slot3 = uv1.SkinAdaptFXID(slot3, slot0._owner:GetUnitData():GetSkinID())
+	if var_18_0.init_effect and var_18_0.init_effect ~= "" then
+		local var_18_1 = var_18_0.init_effect
+
+		if var_18_0.skin_adapt then
+			var_18_1 = var_0_4.SkinAdaptFXID(var_18_1, arg_18_0._owner:GetUnitData():GetSkinID())
 		end
 
-		slot0._owner:AddFX(slot3)
+		arg_18_0._owner:AddFX(var_18_1)
 	end
 end
 
-function slot5.removeLastFX(slot0, slot1)
-	if slot0._buffLastEffects[slot1] ~= nil and #slot2 > 0 then
-		slot0._owner:RemoveFX(table.remove(slot2))
+function var_0_5.removeLastFX(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0._buffLastEffects[arg_19_1]
+
+	if var_19_0 ~= nil and #var_19_0 > 0 then
+		local var_19_1 = table.remove(var_19_0)
+
+		arg_19_0._owner:RemoveFX(var_19_1)
 	end
 end
 
-function slot5.addLastFX(slot0, slot1)
-	if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot1).last_effect ~= nil and slot2.last_effect ~= "" then
-		slot4 = slot0._buffLastEffects[slot1] or {}
+function var_0_5.addLastFX(arg_20_0, arg_20_1)
+	local var_20_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_20_1)
 
-		table.insert(slot4, slot0._owner:AddFX(slot2.last_effect))
+	if var_20_0.last_effect ~= nil and var_20_0.last_effect ~= "" then
+		local var_20_1 = arg_20_0._owner:AddFX(var_20_0.last_effect)
+		local var_20_2 = arg_20_0._buffLastEffects[arg_20_1] or {}
 
-		slot0._buffLastEffects[slot1] = slot4
+		table.insert(var_20_2, var_20_1)
 
-		if slot2.last_effect_cld_scale or slot2.last_effect_cld_angle then
-			slot5 = nil
-			slot6 = slot2[buffLv] or slot2.effect_list
+		arg_20_0._buffLastEffects[arg_20_1] = var_20_2
 
-			for slot10, slot11 in ipairs(slot6) do
-				if slot11.arg_list.cld_data then
-					slot5 = slot11
+		if var_20_0.last_effect_cld_scale or var_20_0.last_effect_cld_angle then
+			local var_20_3
+			local var_20_4 = var_20_0[buffLv] or var_20_0.effect_list
+
+			for iter_20_0, iter_20_1 in ipairs(var_20_4) do
+				if iter_20_1.arg_list.cld_data then
+					var_20_3 = iter_20_1
 
 					break
 				end
 			end
 
-			if slot5 then
-				if slot2.last_effect_cld_scale then
-					slot8 = slot3.transform.localScale
+			if var_20_3 then
+				if var_20_0.last_effect_cld_scale then
+					local var_20_5 = var_20_3.arg_list.cld_data.box
+					local var_20_6 = var_20_1.transform.localScale
 
-					if slot5.arg_list.cld_data.box.range then
-						slot8.x = slot8.x * slot7.range
-						slot8.y = slot8.y * slot7.range
-						slot8.z = slot8.z * slot7.range
+					if var_20_5.range then
+						var_20_6.x = var_20_6.x * var_20_5.range
+						var_20_6.y = var_20_6.y * var_20_5.range
+						var_20_6.z = var_20_6.z * var_20_5.range
 					else
-						slot8.x = slot8.x * slot7[1]
-						slot8.y = slot8.y * slot7[2]
-						slot8.z = slot8.z * slot7[3]
+						var_20_6.x = var_20_6.x * var_20_5[1]
+						var_20_6.y = var_20_6.y * var_20_5[2]
+						var_20_6.z = var_20_6.z * var_20_5[3]
 					end
 
-					slot3.transform.localScale = slot8
+					var_20_1.transform.localScale = var_20_6
 				end
 
-				if slot2.last_effect_cld_angle then
-					slot3.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material:SetInt("_AngleControl", (360 - slot5.arg_list.cld_data.angle) * 0.5 - 5)
+				if var_20_0.last_effect_cld_angle then
+					local var_20_7 = var_20_3.arg_list.cld_data.angle
+					local var_20_8 = var_20_1.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material
+					local var_20_9 = (360 - var_20_7) * 0.5 - 5
+
+					var_20_8:SetInt("_AngleControl", var_20_9)
 				end
 
-				if slot2.last_effect_bound_bone and slot0._owner:GetBoneList()[slot2.last_effect_bound_bone] then
-					slot3.transform.localPosition = slot7[1]
+				if var_20_0.last_effect_bound_bone then
+					local var_20_10 = arg_20_0._owner:GetBoneList()[var_20_0.last_effect_bound_bone]
+
+					if var_20_10 then
+						var_20_1.transform.localPosition = var_20_10[1]
+					end
 				end
 			end
 		end
 
-		slot3:SetActive(true)
+		var_20_1:SetActive(true)
 	end
 end
 
-function slot5.addBlink(slot0, slot1)
-	if uv0.Battle.BattleDataFunction.GetBuffTemplate(slot1).blink then
-		slot3 = slot2.blink
-		slot0._blinkIDList[slot1] = slot0._owner:AddBlink(slot3[1], slot3[2], slot3[3], slot3[4], slot3[5])
+function var_0_5.addBlink(arg_21_0, arg_21_1)
+	local var_21_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_21_1)
+
+	if var_21_0.blink then
+		local var_21_1 = var_21_0.blink
+		local var_21_2 = arg_21_0._owner:AddBlink(var_21_1[1], var_21_1[2], var_21_1[3], var_21_1[4], var_21_1[5])
+
+		arg_21_0._blinkIDList[arg_21_1] = var_21_2
 	end
 end
 
-function slot5.addEffect(slot0, slot1)
-	if slot0._effectList[slot1.index or slot0:getIndex()] then
-		slot3.effect_go:SetActive(true)
+function var_0_5.addEffect(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_1.index or arg_22_0:getIndex()
+	local var_22_1 = arg_22_0._effectList[var_22_0]
 
-		slot3.effect_tf.localScale = slot3.effect_tf.localScale
+	if var_22_1 then
+		local var_22_2 = var_22_1.effect_tf.localScale
+
+		var_22_1.effect_go:SetActive(true)
+
+		var_22_1.effect_tf.localScale = var_22_2
 	else
-		slot4 = slot0._owner:AddFX(slot1.effect)
-		slot3 = {
+		local var_22_3 = arg_22_0._owner:AddFX(arg_22_1.effect)
+		local var_22_4 = {
 			currentTime = 0,
-			effect_go = slot4,
-			effect_tf = slot4.transform,
-			posFun = slot1.posFun,
-			rotationFun = slot1.rotationFun,
+			effect_go = var_22_3,
+			effect_tf = var_22_3.transform,
+			posFun = arg_22_1.posFun,
+			rotationFun = arg_22_1.rotationFun,
 			startTime = pg.TimeMgr.GetInstance():GetCombatTime(),
-			fillFunc = slot1.fillFunc
+			fillFunc = arg_22_1.fillFunc
 		}
-		slot0._effectList[slot2] = slot3
 
-		slot0:updateEffect(slot3)
-		pg.EffectMgr.GetInstance():PlayBattleEffect(slot4, slot4.transform.localPosition, false, function (slot0)
-			uv0._owner:RemoveFX(uv1)
+		arg_22_0._effectList[var_22_0] = var_22_4
 
-			uv0._effectList[uv2] = nil
+		arg_22_0:updateEffect(var_22_4)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_22_3, var_22_3.transform.localPosition, false, function(arg_23_0)
+			arg_22_0._owner:RemoveFX(var_22_3)
+
+			arg_22_0._effectList[var_22_0] = nil
 		end)
 	end
 end
 
-function slot5.cancelEffect(slot0, slot1)
-	if slot0._effectList[slot1.index] then
-		slot0._owner:RemoveFX(slot3.effect_go)
+function var_0_5.cancelEffect(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_1.index
+	local var_24_1 = arg_24_0._effectList[var_24_0]
 
-		slot0._effectList[slot2] = nil
+	if var_24_1 then
+		arg_24_0._owner:RemoveFX(var_24_1.effect_go)
+
+		arg_24_0._effectList[var_24_0] = nil
 	end
 end
 
-function slot5.deactiveEffect(slot0, slot1)
-	if slot0._effectList[slot1.index] then
-		slot3.effect_go:SetActive(false)
+function var_0_5.deactiveEffect(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1.index
+	local var_25_1 = arg_25_0._effectList[var_25_0]
+
+	if var_25_1 then
+		var_25_1.effect_go:SetActive(false)
 	end
 end
 
-function slot5.getIndex(slot0)
-	slot0._effectIndex = slot0._effectIndex + 1
+function var_0_5.getIndex(arg_26_0)
+	arg_26_0._effectIndex = arg_26_0._effectIndex + 1
 
-	return slot0._effectIndex
+	return arg_26_0._effectIndex
 end
 
-function slot5.updateEffect(slot0, slot1)
-	if slot1.posFun then
-		slot1.effect_tf.localPosition = slot1.posFun(slot1.currentTime)
+function var_0_5.updateEffect(arg_27_0, arg_27_1)
+	if arg_27_1.posFun then
+		local var_27_0 = arg_27_1.posFun(arg_27_1.currentTime)
+
+		arg_27_1.effect_tf.localPosition = var_27_0
 	end
 
-	if slot1.rotationFun then
-		slot2 = slot1.rotationFun(slot1.currentTime)
+	if arg_27_1.rotationFun then
+		local var_27_1 = arg_27_1.rotationFun(arg_27_1.currentTime)
 
-		if slot0._dir == uv0.Battle.BattleConst.UnitDir.LEFT then
-			slot2.y = slot2.y - 180
+		if arg_27_0._dir == var_0_0.Battle.BattleConst.UnitDir.LEFT then
+			var_27_1.y = var_27_1.y - 180
 		end
 
-		slot1.effect_tf.localEulerAngles = slot2
+		arg_27_1.effect_tf.localEulerAngles = var_27_1
 	end
 
-	if slot1.fillFunc then
-		slot0._characterScaleX = slot0._characterScaleX or slot0._owner:GetTf().localScale.x
-		slot0._characterScaleZ = slot0._characterScaleZ or slot0._owner:GetTf().localScale.z
-		slot1.effect_tf.position, slot3, slot4 = slot1.fillFunc()
-		slot1.effect_tf.localScale = Vector3(slot3 / slot0._characterScaleX, 0, slot4 / slot0._characterScaleZ)
+	if arg_27_1.fillFunc then
+		arg_27_0._characterScaleX = arg_27_0._characterScaleX or arg_27_0._owner:GetTf().localScale.x
+		arg_27_0._characterScaleZ = arg_27_0._characterScaleZ or arg_27_0._owner:GetTf().localScale.z
+
+		local var_27_2, var_27_3, var_27_4 = arg_27_1.fillFunc()
+
+		arg_27_1.effect_tf.position = var_27_2
+		arg_27_1.effect_tf.localScale = Vector3(var_27_3 / arg_27_0._characterScaleX, 0, var_27_4 / arg_27_0._characterScaleZ)
 	end
 end

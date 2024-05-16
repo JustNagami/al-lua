@@ -1,92 +1,90 @@
-slot0 = class("ShopSingleWindow", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ShopSingleWindow", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShopsUISinglebox"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.itemTF = slot0:findTF("window/item")
-	slot0.nameTF = slot0.itemTF:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
-	slot0.descTF = slot0.itemTF:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
-	slot0.itemOwnTF = slot0.itemTF:Find("left/own")
-	slot0.itemDetailTF = slot0.itemTF:Find("left/detail")
-	slot0.confirmBtn = slot0:findTF("window/actions/confirm_btn")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.itemTF = arg_2_0:findTF("window/item")
+	arg_2_0.nameTF = arg_2_0.itemTF:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
+	arg_2_0.descTF = arg_2_0.itemTF:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
+	arg_2_0.itemOwnTF = arg_2_0.itemTF:Find("left/own")
+	arg_2_0.itemDetailTF = arg_2_0.itemTF:Find("left/detail")
+	arg_2_0.confirmBtn = arg_2_0:findTF("window/actions/confirm_btn")
 
-	setText(slot0:findTF("window/actions/cancel_btn/pic"), i18n("shop_word_cancel"))
-	setText(slot0:findTF("window/actions/confirm_btn/pic"), i18n("shop_word_exchange"))
-	setText(slot0.itemTF:Find("ship_group/locked/Text"), i18n("tag_ship_locked"))
-	setText(slot0.itemTF:Find("ship_group/unlocked/Text"), i18n("tag_ship_unlocked"))
+	setText(arg_2_0:findTF("window/actions/cancel_btn/pic"), i18n("shop_word_cancel"))
+	setText(arg_2_0:findTF("window/actions/confirm_btn/pic"), i18n("shop_word_exchange"))
+	setText(arg_2_0.itemTF:Find("ship_group/locked/Text"), i18n("tag_ship_locked"))
+	setText(arg_2_0.itemTF:Find("ship_group/unlocked/Text"), i18n("tag_ship_unlocked"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0:findTF("window/actions/cancel_btn"), function ()
-		uv0:Close()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0:findTF("window/actions/cancel_btn"), function()
+		arg_3_0:Close()
 	end, SFX_CANCEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
-		uv0:Close()
+	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
+		arg_3_0:Close()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("window/top/btnBack"), function ()
-		uv0:Close()
+	onButton(arg_3_0, arg_3_0:findTF("window/top/btnBack"), function()
+		arg_3_0:Close()
 	end, SFX_CANCEL)
 end
 
-function slot0.Open(slot0, slot1, slot2)
-	slot0.opening = true
+function var_0_0.Open(arg_7_0, arg_7_1, arg_7_2)
+	arg_7_0.opening = true
 
-	slot0:Show()
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0:InitWindow(slot1, slot2)
+	arg_7_0:Show()
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf)
+	arg_7_0:InitWindow(arg_7_1, arg_7_2)
 end
 
-function slot0.InitWindow(slot0, slot1, slot2)
-	slot3 = {
-		id = slot1:getConfig("commodity_id"),
-		type = slot1:getConfig("commodity_type"),
-		count = slot1:getConfig("num")
+function var_0_0.InitWindow(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = {
+		id = arg_8_1:getConfig("commodity_id"),
+		type = arg_8_1:getConfig("commodity_type"),
+		count = arg_8_1:getConfig("num")
 	}
 
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0 then
-			uv0(uv1, 1, uv2:getConfig("name"))
+	onButton(arg_8_0, arg_8_0.confirmBtn, function()
+		if arg_8_2 then
+			arg_8_2(arg_8_1, 1, var_8_0:getConfig("name"))
 		end
 
-		uv3:Close()
+		arg_8_0:Close()
 	end, SFX_CANCEL)
-	updateDrop(slot0.itemTF:Find("left/IconTpl"), slot3)
-	UpdateOwnDisplay(slot0.itemOwnTF, slot3)
-	RegisterDetailButton(slot0, slot0.itemDetailTF, slot3)
+	updateDrop(arg_8_0.itemTF:Find("left/IconTpl"), var_8_0)
+	UpdateOwnDisplay(arg_8_0.itemOwnTF, var_8_0)
+	RegisterDetailButton(arg_8_0, arg_8_0.itemDetailTF, var_8_0)
 
-	slot4 = slot3.type == DROP_TYPE_SHIP
+	local var_8_1 = var_8_0.type == DROP_TYPE_SHIP
+	local var_8_2 = arg_8_0.itemTF:Find("ship_group")
 
-	SetActive(slot0.itemTF:Find("ship_group"), slot4)
+	SetActive(var_8_2, var_8_1)
 
-	if slot4 then
-		slot6 = tobool(getProxy(CollectionProxy):getShipGroup(pg.ship_data_template[slot3.id].group_type))
+	if var_8_1 then
+		local var_8_3 = tobool(getProxy(CollectionProxy):getShipGroup(pg.ship_data_template[var_8_0.id].group_type))
 
-		SetActive(slot5:Find("unlocked"), slot6)
-		SetActive(slot5:Find("locked"), not slot6)
+		SetActive(var_8_2:Find("unlocked"), var_8_3)
+		SetActive(var_8_2:Find("locked"), not var_8_3)
 	end
 
-	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
-	slot0.nameTF.text = slot3:getConfig("name")
+	arg_8_0.descTF.text = var_8_0.desc or var_8_0:getConfig("desc")
+	arg_8_0.nameTF.text = var_8_0:getConfig("name")
 end
 
-function slot0.Close(slot0)
-	if slot0.opening then
-		slot0.opening = false
+function var_0_0.Close(arg_10_0)
+	if arg_10_0.opening then
+		arg_10_0.opening = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-		slot0:Hide()
-	end
-end
-
-function slot0.OnDestroy(slot0)
-	if slot0.opening then
-		slot0:Close()
+		pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf, arg_10_0._parentTf)
+		arg_10_0:Hide()
 	end
 end
 
-return slot0
+function var_0_0.OnDestroy(arg_11_0)
+	if arg_11_0.opening then
+		arg_11_0:Close()
+	end
+end
+
+return var_0_0

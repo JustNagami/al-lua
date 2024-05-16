@@ -1,81 +1,85 @@
-slot0 = class("Msgbox4LinkCollectGuide", import(".MsgboxSubPanel"))
-slot0.SHOW_TYPE_NORMAL = 1
-slot0.SHOW_TYPE_LIMIT = 2
-slot0.SKIP_TYPE_SCENE = 2
-slot0.SKIP_TYPE_ACTIVITY = 3
+﻿local var_0_0 = class("Msgbox4LinkCollectGuide", import(".MsgboxSubPanel"))
 
-function slot0.getUIName(slot0)
+var_0_0.SHOW_TYPE_NORMAL = 1
+var_0_0.SHOW_TYPE_LIMIT = 2
+var_0_0.SKIP_TYPE_SCENE = 2
+var_0_0.SKIP_TYPE_ACTIVITY = 3
+
+function var_0_0.getUIName(arg_1_0)
 	return "Msgbox4LinkCollectGuide"
 end
 
-function slot0.OnInit(slot0)
-	slot0.title = slot0:findTF("name_mask/name")
-	slot0.owner = slot0:findTF("owner")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.title = arg_2_0:findTF("name_mask/name")
+	arg_2_0.owner = arg_2_0:findTF("owner")
 
-	setText(slot0:findTF("title", slot0.owner), i18n("collect_page_got"))
+	setText(arg_2_0:findTF("title", arg_2_0.owner), i18n("collect_page_got"))
 
-	slot0.ownerLimit = slot0:findTF("owner_limit")
+	arg_2_0.ownerLimit = arg_2_0:findTF("owner_limit")
 
-	setText(slot0:findTF("title", slot0.ownerLimit), i18n("collect_page_got"))
+	setText(arg_2_0:findTF("title", arg_2_0.ownerLimit), i18n("collect_page_got"))
 
-	slot0.iconTF = slot0:findTF("left/IconTpl")
-	slot0.ownTF = slot0:findTF("left/own")
-	slot0.detailTF = slot0:findTF("left/detail")
-	slot0.desc = slot0:findTF("content/desc")
-	slot0.list = slot0:findTF("content/skipable_list")
-	slot0.tpl = slot0:findTF("tpl", slot0.list)
+	arg_2_0.iconTF = arg_2_0:findTF("left/IconTpl")
+	arg_2_0.ownTF = arg_2_0:findTF("left/own")
+	arg_2_0.detailTF = arg_2_0:findTF("left/detail")
+	arg_2_0.desc = arg_2_0:findTF("content/desc")
+	arg_2_0.list = arg_2_0:findTF("content/skipable_list")
+	arg_2_0.tpl = arg_2_0:findTF("tpl", arg_2_0.list)
 end
 
-function slot0.OnRefresh(slot0, slot1)
-	slot0:SetWindowSize(Vector2(930, 540))
-	setActive(slot0.viewParent._btnContainer, false)
+function var_0_0.OnRefresh(arg_3_0, arg_3_1)
+	arg_3_0:SetWindowSize(Vector2(930, 540))
+	setActive(arg_3_0.viewParent._btnContainer, false)
 
-	slot2 = Drop.New({
-		type = slot1.drop_type,
-		id = slot1.drop_id
+	local var_3_0 = Drop.New({
+		type = arg_3_1.drop_type,
+		id = arg_3_1.drop_id
 	})
 
-	updateDrop(slot0.iconTF, slot2)
-	UpdateOwnDisplay(slot0.ownTF, slot2)
-	RegisterDetailButton(slot0.viewParent, slot0.detailTF, slot2)
-	changeToScrollText(slot0.title, slot2.cfg.name)
-	setText(slot0.desc, slot2.desc)
+	updateDrop(arg_3_0.iconTF, var_3_0)
+	UpdateOwnDisplay(arg_3_0.ownTF, var_3_0)
+	RegisterDetailButton(arg_3_0.viewParent, arg_3_0.detailTF, var_3_0)
 
-	if slot1.show_type == uv0.SHOW_TYPE_NORMAL then
-		setActive(slot0.owner, true)
-		setActive(slot0.ownerLimit, false)
-		setText(slot0:findTF("Text", slot0.owner), slot1.count)
-	elseif slot1.show_type == uv0.SHOW_TYPE_LIMIT then
-		setActive(slot0.owner, false)
-		setActive(slot0.ownerLimit, true)
-		setText(slot0:findTF("Text", slot0.ownerLimit), slot1.count .. "/" .. (slot1.count_limit or 0))
+	local var_3_1 = var_3_0.cfg
+
+	changeToScrollText(arg_3_0.title, var_3_1.name)
+	setText(arg_3_0.desc, var_3_0.desc)
+
+	if arg_3_1.show_type == var_0_0.SHOW_TYPE_NORMAL then
+		setActive(arg_3_0.owner, true)
+		setActive(arg_3_0.ownerLimit, false)
+		setText(arg_3_0:findTF("Text", arg_3_0.owner), arg_3_1.count)
+	elseif arg_3_1.show_type == var_0_0.SHOW_TYPE_LIMIT then
+		setActive(arg_3_0.owner, false)
+		setActive(arg_3_0.ownerLimit, true)
+		setText(arg_3_0:findTF("Text", arg_3_0.ownerLimit), arg_3_1.count .. "/" .. (arg_3_1.count_limit or 0))
 	end
 
-	UIItemList.StaticAlign(slot0.list, slot0.tpl, #slot1.skipable_list, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.skipable_list[slot1 + 1]
-			slot4 = slot3[1]
-			slot5 = slot3[2]
-			slot8 = uv1
+	UIItemList.StaticAlign(arg_3_0.list, arg_3_0.tpl, #arg_3_1.skipable_list, function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_3_1.skipable_list[arg_4_1 + 1]
+			local var_4_1 = var_4_0[1]
+			local var_4_2 = var_4_0[2]
+			local var_4_3 = var_4_0[3]
 
-			changeToScrollText(slot8:findTF("mask/title", slot2), slot3[3])
+			changeToScrollText(arg_3_0:findTF("mask/title", arg_4_2), var_4_3)
 
-			slot7 = uv1
+			local var_4_4 = arg_3_0:findTF("skip_btn", arg_4_2)
 
-			onButton(uv1, slot7:findTF("skip_btn", slot2), function ()
-				if uv0 == uv1.SKIP_TYPE_SCENE then
-					pg.m02:sendNotification(GAME.GO_SCENE, uv2[1], uv2[2] or {})
-				elseif uv0 == uv1.SKIP_TYPE_ACTIVITY then
+			onButton(arg_3_0, var_4_4, function()
+				if var_4_1 == var_0_0.SKIP_TYPE_SCENE then
+					pg.m02:sendNotification(GAME.GO_SCENE, var_4_2[1], var_4_2[2] or {})
+				elseif var_4_1 == var_0_0.SKIP_TYPE_ACTIVITY then
 					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-						id = uv2
+						id = var_4_2
 					})
 				end
 
-				uv3.viewParent:hide()
+				arg_3_0.viewParent:hide()
 			end, SFX_PANEL)
 			Canvas.ForceUpdateCanvases()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

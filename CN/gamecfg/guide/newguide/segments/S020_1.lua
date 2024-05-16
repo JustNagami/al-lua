@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
 	"建造材料准备充足！ 点击<color=#ffde38>开始建造</color>",
 	"点击<color=#ff7d36>确定</color>开始建造"
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/buildButton",
@@ -35,7 +35,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 205.91,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/start_btn",
@@ -56,7 +56,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/BuildShipMsgBoxUI(Clone)/window/btns/confirm_btn",

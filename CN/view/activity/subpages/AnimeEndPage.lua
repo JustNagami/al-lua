@@ -1,81 +1,84 @@
-slot0 = class("AnimeEndPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var_0_0 = class("AnimeEndPage", import(".TemplatePage.LoginTemplatePage"))
 
-function slot0.OnInit(slot0)
-	slot0.dayProgressImg = slot0:findTF("DayProgress")
-	slot0.awardImg = slot0:findTF("Award")
-	slot0.maskImg = slot0:findTF("Mask", slot0.awardImg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.dayProgressImg = arg_1_0:findTF("DayProgress")
+	arg_1_0.awardImg = arg_1_0:findTF("Award")
+	arg_1_0.maskImg = arg_1_0:findTF("Mask", arg_1_0.awardImg)
 
-	addSlip(SLIP_TYPE_HRZ, slot0.awardImg, function ()
-		if uv0.curShowDay > 1 then
-			triggerButton(uv0.arrowLeft)
+	addSlip(SLIP_TYPE_HRZ, arg_1_0.awardImg, function()
+		if arg_1_0.curShowDay > 1 then
+			triggerButton(arg_1_0.arrowLeft)
 		end
-	end, function ()
-		if uv0.curShowDay < uv0.allDaycount then
-			triggerButton(uv0.arrowRight)
+	end, function()
+		if arg_1_0.curShowDay < arg_1_0.allDaycount then
+			triggerButton(arg_1_0.arrowRight)
 		end
 	end)
 
-	slot0.arrowLeft = slot0:findTF("ArrowLeft")
-	slot0.arrowRight = slot0:findTF("ArrowRight")
+	arg_1_0.arrowLeft = arg_1_0:findTF("ArrowLeft")
+	arg_1_0.arrowRight = arg_1_0:findTF("ArrowRight")
 
-	onButton(slot0, slot0.arrowLeft, function ()
-		uv0.curShowDay = uv0.curShowDay - 1
+	onButton(arg_1_0, arg_1_0.arrowLeft, function()
+		arg_1_0.curShowDay = arg_1_0.curShowDay - 1
 
-		uv0:updateAwardInfo(uv0.curShowDay)
+		arg_1_0:updateAwardInfo(arg_1_0.curShowDay)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.arrowRight, function ()
-		uv0.curShowDay = uv0.curShowDay + 1
+	onButton(arg_1_0, arg_1_0.arrowRight, function()
+		arg_1_0.curShowDay = arg_1_0.curShowDay + 1
 
-		uv0:updateAwardInfo(uv0.curShowDay)
+		arg_1_0:updateAwardInfo(arg_1_0.curShowDay)
 	end, SFX_PANEL)
 
-	slot0.pointTpl = slot0:findTF("Point")
-	slot0.pointContainer = slot0:findTF("PointList")
-	slot0.pointUIItemList = UIItemList.New(slot0.pointContainer, slot0.pointTpl)
-	slot1 = slot0.pointUIItemList
+	arg_1_0.pointTpl = arg_1_0:findTF("Point")
+	arg_1_0.pointContainer = arg_1_0:findTF("PointList")
+	arg_1_0.pointUIItemList = UIItemList.New(arg_1_0.pointContainer, arg_1_0.pointTpl)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0:findTF("Selected", slot2)
+	arg_1_0.pointUIItemList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_6_1 = arg_6_1 + 1
 
-			if slot1 + 1 <= uv0.nday then
-				setImageAlpha(slot2, 1)
+			local var_6_0 = arg_1_0:findTF("Selected", arg_6_2)
+
+			if arg_6_1 <= arg_1_0.nday then
+				setImageAlpha(arg_6_2, 1)
 			else
-				setImageAlpha(slot2, 0.3)
+				setImageAlpha(arg_6_2, 0.3)
 			end
 
-			setActive(slot3, slot1 == uv0.curShowDay)
+			setActive(var_6_0, arg_6_1 == arg_1_0.curShowDay)
 		end
 	end)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.config = pg.activity_7_day_sign[slot0.activity:getConfig("config_id")]
-	slot0.allDaycount = #slot0.config.front_drops
-	slot0.nday = slot0.activity.data1
-	slot0.curShowDay = slot0.nday
+function var_0_0.OnDataSetting(arg_7_0)
+	arg_7_0.config = pg.activity_7_day_sign[arg_7_0.activity:getConfig("config_id")]
+	arg_7_0.allDaycount = #arg_7_0.config.front_drops
+	arg_7_0.nday = arg_7_0.activity.data1
+	arg_7_0.curShowDay = arg_7_0.nday
 end
 
-function slot0.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_8_0)
+	return
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data1
-	slot0.curShowDay = slot0.nday
+function var_0_0.OnUpdateFlush(arg_9_0)
+	arg_9_0.nday = arg_9_0.activity.data1
+	arg_9_0.curShowDay = arg_9_0.nday
 
-	slot0:updateAwardInfo(slot0.curShowDay)
+	arg_9_0:updateAwardInfo(arg_9_0.curShowDay)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_10_0)
+	return
 end
 
-function slot0.updateAwardInfo(slot0, slot1)
-	setImageSprite(slot0.dayProgressImg, GetSpriteFromAtlas("ui/activityuipage/animeend_atlas", "tianshu_" .. slot1), true)
-	setImageSprite(slot0.awardImg, GetSpriteFromAtlas("ui/activityuipage/animeend_atlas", "icon_" .. slot1), true)
-	setActive(slot0.maskImg, slot1 <= slot0.nday)
-	setActive(slot0.arrowLeft, slot1 ~= 1)
-	setActive(slot0.arrowRight, slot1 ~= slot0.allDaycount)
-	slot0.pointUIItemList:align(slot0.allDaycount)
+function var_0_0.updateAwardInfo(arg_11_0, arg_11_1)
+	setImageSprite(arg_11_0.dayProgressImg, GetSpriteFromAtlas("ui/activityuipage/animeend_atlas", "tianshu_" .. arg_11_1), true)
+	setImageSprite(arg_11_0.awardImg, GetSpriteFromAtlas("ui/activityuipage/animeend_atlas", "icon_" .. arg_11_1), true)
+	setActive(arg_11_0.maskImg, arg_11_1 <= arg_11_0.nday)
+	setActive(arg_11_0.arrowLeft, arg_11_1 ~= 1)
+	setActive(arg_11_0.arrowRight, arg_11_1 ~= arg_11_0.allDaycount)
+	arg_11_0.pointUIItemList:align(arg_11_0.allDaycount)
 end
 
-return slot0
+return var_0_0

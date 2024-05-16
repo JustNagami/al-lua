@@ -1,57 +1,58 @@
-slot0 = {}
+﻿local var_0_0 = {}
+local var_0_1 = {
+	function()
+		local var_1_0 = class("Object")
 
-for slot5, slot6 in ipairs({
-	function ()
-		slot0 = class("Object")
-		slot0.colliderSize = nil
+		var_1_0.colliderSize = nil
 
-		function slot0.Ctor(slot0, slot1, slot2, slot3)
-			slot0.rt = slot1
-			slot0.pos = slot2
+		function var_1_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+			arg_2_0.rt = arg_2_1
+			arg_2_0.pos = arg_2_2
 
-			setAnchoredPosition(slot0.rt, slot0.pos)
+			setAnchoredPosition(arg_2_0.rt, arg_2_0.pos)
 
-			slot0.controller = slot3
-			slot0.isTriggered = false
+			arg_2_0.controller = arg_2_3
+			arg_2_0.isTriggered = false
 
-			slot0:Show("base")
+			arg_2_0:Show("base")
 		end
 
-		function slot0.UpdatePos(slot0, slot1)
-			slot0.pos = slot0.pos + slot1
+		function var_1_0.UpdatePos(arg_3_0, arg_3_1)
+			arg_3_0.pos = arg_3_0.pos + arg_3_1
 
-			setAnchoredPosition(slot0.rt, slot0.pos)
+			setAnchoredPosition(arg_3_0.rt, arg_3_0.pos)
 		end
 
-		function slot0.Show(slot0, slot1)
-			slot0.state = slot1
+		function var_1_0.Show(arg_4_0, arg_4_1)
+			arg_4_0.state = arg_4_1
 
-			setActive(slot0.rt, true)
+			setActive(arg_4_0.rt, true)
 		end
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_1_0.Trigger(arg_5_0, arg_5_1)
+			arg_5_0.isTriggered = true
 
-			slot0:TriggerEffect(slot1)
+			arg_5_0:TriggerEffect(arg_5_1)
 		end
 
-		function slot0.TriggerEffect(slot0, slot1)
-			slot1:TriggerEffect(slot0)
+		function var_1_0.TriggerEffect(arg_6_0, arg_6_1)
+			arg_6_1:TriggerEffect(arg_6_0)
 		end
 
-		function slot0.Clear(slot0)
-			table.removebyvalue(slot0.controller.queue, slot0)
-			Destroy(slot0.rt)
+		function var_1_0.Clear(arg_7_0)
+			table.removebyvalue(arg_7_0.controller.queue, arg_7_0)
+			Destroy(arg_7_0.rt)
 		end
 
-		return slot0
+		return var_1_0
 	end,
-	function ()
-		return class("StartMark", uv0.Object)
+	function()
+		return (class("StartMark", var_0_0.Object))
 	end,
-	function ()
-		slot0 = class("Mire", uv0.Object)
-		slot0.colliderSize = {
+	function()
+		local var_9_0 = class("Mire", var_0_0.Object)
+
+		var_9_0.colliderSize = {
 			{
 				-100,
 				100
@@ -62,19 +63,22 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_9_0.Trigger(arg_10_0, arg_10_1)
+			arg_10_0.isTriggered = true
 
-			if not slot1.invincibleTime then
-				slot0:TriggerEffect(slot1)
+			if arg_10_1.invincibleTime then
+				-- block empty
+			else
+				arg_10_0:TriggerEffect(arg_10_1)
 			end
 		end
 
-		return slot0
+		return var_9_0
 	end,
-	function ()
-		slot0 = class("SpeedBumps", uv0.Object)
-		slot0.colliderSize = {
+	function()
+		local var_11_0 = class("SpeedBumps", var_0_0.Object)
+
+		var_11_0.colliderSize = {
 			{
 				-100,
 				100
@@ -85,76 +89,81 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_11_0.Trigger(arg_12_0, arg_12_1)
+			arg_12_0.isTriggered = true
 
-			if not slot1.invincibleTime then
-				slot0:TriggerEffect(slot1)
+			if arg_12_1.invincibleTime then
+				-- block empty
+			else
+				arg_12_0:TriggerEffect(arg_12_1)
 			end
 		end
 
-		return slot0
+		return var_11_0
 	end,
-	function ()
-		slot0 = class("Obstacle", uv0.Object)
-		slot0.actionDic = {}
+	function()
+		local var_13_0 = class("Obstacle", var_0_0.Object)
 
-		function slot0.Ctor(slot0, slot1, slot2, slot3)
-			slot0.rt = slot1
-			slot0.pos = slot2
+		var_13_0.actionDic = {}
 
-			setAnchoredPosition(slot0.rt, slot0.pos)
+		function var_13_0.Ctor(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+			arg_14_0.rt = arg_14_1
+			arg_14_0.pos = arg_14_2
 
-			slot0.controller = slot3
-			slot0.isTriggered = false
-			slot0.comSpineAnim = slot1:Find("GameObject"):GetComponent("SpineAnimUI")
+			setAnchoredPosition(arg_14_0.rt, arg_14_0.pos)
 
-			slot0.comSpineAnim:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0:ActionCallback()
+			arg_14_0.controller = arg_14_3
+			arg_14_0.isTriggered = false
+			arg_14_0.comSpineAnim = arg_14_1:Find("GameObject"):GetComponent("SpineAnimUI")
+
+			arg_14_0.comSpineAnim:SetActionCallBack(function(arg_15_0)
+				if arg_15_0 == "finish" then
+					arg_14_0:ActionCallback()
 				end
 			end)
-			slot0:Show("base")
+			arg_14_0:Show("base")
 		end
 
-		function slot0.ActionCallback(slot0)
-			switch(slot0.state, {
-				base = function ()
+		function var_13_0.ActionCallback(arg_16_0)
+			switch(arg_16_0.state, {
+				base = function()
+					return
 				end,
-				trigger = function ()
-					uv0:Clear()
+				trigger = function()
+					arg_16_0:Clear()
 				end,
-				broken = function ()
-					uv0:Clear()
+				broken = function()
+					arg_16_0:Clear()
 				end
 			})
 		end
 
-		function slot0.Show(slot0, ...)
-			uv0.super.Show(slot0, ...)
+		function var_13_0.Show(arg_20_0, ...)
+			var_13_0.super.Show(arg_20_0, ...)
 
-			slot0.action = slot0.actionDic[slot0.state]
+			arg_20_0.action = arg_20_0.actionDic[arg_20_0.state]
 
-			slot0.comSpineAnim:SetAction(slot0.action, 0)
+			arg_20_0.comSpineAnim:SetAction(arg_20_0.action, 0)
 		end
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_13_0.Trigger(arg_21_0, arg_21_1)
+			arg_21_0.isTriggered = true
 
-			if slot1.invincibleTime then
-				slot0:Show("broken")
+			if arg_21_1.invincibleTime then
+				arg_21_0:Show("broken")
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-crash")
 			else
-				slot0:Show("trigger")
-				slot0:TriggerEffect(slot1)
+				arg_21_0:Show("trigger")
+				arg_21_0:TriggerEffect(arg_21_1)
 			end
 		end
 
-		return slot0
+		return var_13_0
 	end,
-	function ()
-		slot0 = class("TrafficCone", uv0.Obstacle)
-		slot0.colliderSize = {
+	function()
+		local var_22_0 = class("TrafficCone", var_0_0.Obstacle)
+
+		var_22_0.colliderSize = {
 			{
 				-100,
 				100
@@ -164,17 +173,18 @@ for slot5, slot6 in ipairs({
 				114
 			}
 		}
-		slot0.actionDic = {
+		var_22_0.actionDic = {
 			trigger = "roadblocks_vanish1",
 			broken = "roadblocks_smash1",
 			base = "roadblocks_normal1"
 		}
 
-		return slot0
+		return var_22_0
 	end,
-	function ()
-		slot0 = class("Roadblock", uv0.Obstacle)
-		slot0.colliderSize = {
+	function()
+		local var_23_0 = class("Roadblock", var_0_0.Obstacle)
+
+		var_23_0.colliderSize = {
 			{
 				-100,
 				100
@@ -184,17 +194,18 @@ for slot5, slot6 in ipairs({
 				114
 			}
 		}
-		slot0.actionDic = {
+		var_23_0.actionDic = {
 			trigger = "roadblocks_vanish2",
 			broken = "roadblocks_smash2",
 			base = "roadblocks_normal2"
 		}
 
-		return slot0
+		return var_23_0
 	end,
-	function ()
-		slot0 = class("Bomb", uv0.Obstacle)
-		slot0.colliderSize = {
+	function()
+		local var_24_0 = class("Bomb", var_0_0.Obstacle)
+
+		var_24_0.colliderSize = {
 			{
 				-100,
 				100
@@ -204,34 +215,35 @@ for slot5, slot6 in ipairs({
 				114
 			}
 		}
-		slot0.actionDic = {
+		var_24_0.actionDic = {
 			trigger = "bomb",
 			broken = "bombsmash",
 			base = "bomb_normal"
 		}
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_24_0.Trigger(arg_25_0, arg_25_1)
+			arg_25_0.isTriggered = true
 
-			if slot1.invincibleTime then
-				slot0:Show("broken")
+			if arg_25_1.invincibleTime then
+				arg_25_0:Show("broken")
 			else
-				slot0:Show("trigger")
+				arg_25_0:Show("trigger")
 
-				slot0.rt:Find("GameObject"):GetComponent("SkeletonGraphic").color = Color.New(1, 1, 1, 0)
+				arg_25_0.rt:Find("GameObject"):GetComponent("SkeletonGraphic").color = Color.New(1, 1, 1, 0)
 
-				setActive(slot0.rt:Find("GameObject/saiche_zhadan"), true)
-				slot0:TriggerEffect(slot1)
+				setActive(arg_25_0.rt:Find("GameObject/saiche_zhadan"), true)
+				arg_25_0:TriggerEffect(arg_25_1)
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/baozha1")
 		end
 
-		return slot0
+		return var_24_0
 	end,
-	function ()
-		slot0 = class("Item", uv0.Object)
-		slot0.colliderSize = {
+	function()
+		local var_26_0 = class("Item", var_0_0.Object)
+
+		var_26_0.colliderSize = {
 			{
 				-100,
 				100
@@ -242,25 +254,26 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		function slot0.Trigger(slot0, slot1)
-			slot0.isTriggered = true
+		function var_26_0.Trigger(arg_27_0, arg_27_1)
+			arg_27_0.isTriggered = true
 
-			slot0:TriggerEffect(slot1)
+			arg_27_0:TriggerEffect(arg_27_1)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/mini_perfect")
-			slot0:Clear()
+			arg_27_0:Clear()
 		end
 
-		return slot0
+		return var_26_0
 	end,
-	function ()
-		return class("MoreTime", uv0.Item)
+	function()
+		return (class("MoreTime", var_0_0.Item))
 	end,
-	function ()
-		return class("Invincibility", uv0.Item)
+	function()
+		return (class("Invincibility", var_0_0.Item))
 	end,
-	function ()
-		slot0 = class("Motorcycle", uv0.Object)
-		slot0.colliderSize = {
+	function()
+		local var_30_0 = class("Motorcycle", var_0_0.Object)
+
+		var_30_0.colliderSize = {
 			{
 				-100,
 				100
@@ -271,157 +284,158 @@ for slot5, slot6 in ipairs({
 			}
 		}
 
-		function slot0.Ctor(slot0, slot1, slot2, slot3)
-			slot0.rt = slot1
-			slot0.pos = slot2
+		function var_30_0.Ctor(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
+			arg_31_0.rt = arg_31_1
+			arg_31_0.pos = arg_31_2
 
-			setAnchoredPosition(slot0.rt, slot0.pos)
+			setAnchoredPosition(arg_31_0.rt, arg_31_0.pos)
 
-			slot0.controller = slot3
-			slot0.isTriggered = false
-			slot4 = slot1:Find("GameObject")
-			slot7 = SpineAnimUI
-			slot0.comSpineAnim = slot4:GetComponent(typeof(slot7))
-			slot4 = slot0.comSpineAnim
+			arg_31_0.controller = arg_31_3
+			arg_31_0.isTriggered = false
+			arg_31_0.comSpineAnim = arg_31_1:Find("GameObject"):GetComponent(typeof(SpineAnimUI))
 
-			slot4:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0:ActionCallback()
+			arg_31_0.comSpineAnim:SetActionCallBack(function(arg_32_0)
+				if arg_32_0 == "finish" then
+					arg_31_0:ActionCallback()
 				end
 			end)
 
-			slot0.effectList = {}
+			arg_31_0.effectList = {}
 
-			for slot7, slot8 in ipairs({
+			for iter_31_0, iter_31_1 in ipairs({
 				"saiche_sudu_01",
 				"saiche_sudu_02",
 				"saiche_sudu_03",
 				"saiche_sudu_04"
 			}) do
-				table.insert(slot0.effectList, slot0.rt:Find("GameObject/" .. slot8))
+				table.insert(arg_31_0.effectList, arg_31_0.rt:Find("GameObject/" .. iter_31_1))
 			end
 
-			slot0:Show("base")
+			arg_31_0:Show("base")
 		end
 
-		function slot0.UpdatePos(slot0, slot1, slot2)
-			slot0.pos = slot0.pos + slot1
-			slot0.pos.y = math.clamp(slot0.pos.y, -slot2, slot2)
+		function var_30_0.UpdatePos(arg_33_0, arg_33_1, arg_33_2)
+			arg_33_0.pos = arg_33_0.pos + arg_33_1
+			arg_33_0.pos.y = math.clamp(arg_33_0.pos.y, -arg_33_2, arg_33_2)
 
-			setAnchoredPosition(slot0.rt, slot0.pos)
+			setAnchoredPosition(arg_33_0.rt, arg_33_0.pos)
 		end
 
-		function slot0.ActionCallback(slot0)
-			switch(slot0.action, {
-				ride = function ()
+		function var_30_0.ActionCallback(arg_34_0)
+			switch(arg_34_0.action, {
+				ride = function()
+					return
 				end,
-				accel = function ()
-					uv0.action = "ride"
+				accel = function()
+					arg_34_0.action = "ride"
 
-					uv0.comSpineAnim:SetAction(uv0.action, 0)
+					arg_34_0.comSpineAnim:SetAction(arg_34_0.action, 0)
 				end,
-				fall = function ()
-					uv0.isBlock = false
+				fall = function()
+					arg_34_0.isBlock = false
 
-					uv0:Show("base")
+					arg_34_0:Show("base")
 				end,
-				yunxuan = function ()
-					uv0.isVertigo = false
+				yunxuan = function()
+					arg_34_0.isVertigo = false
 
-					setActive(uv0.rt:Find("GameObject/saiche_xuanyun"), false)
-					setActive(uv0.rt:Find("GameObject/saiche_jiansu"), false)
-					uv0:Show("accel")
+					setActive(arg_34_0.rt:Find("GameObject/saiche_xuanyun"), false)
+					setActive(arg_34_0.rt:Find("GameObject/saiche_jiansu"), false)
+					arg_34_0:Show("accel")
 				end
 			})
 		end
 
-		function slot0.Show(slot0, ...)
-			uv0.super.Show(slot0, ...)
-			switch(slot0.state, {
-				base = function ()
-					uv0.action = "stop"
+		function var_30_0.Show(arg_39_0, ...)
+			var_30_0.super.Show(arg_39_0, ...)
+			switch(arg_39_0.state, {
+				base = function()
+					arg_39_0.action = "stop"
 				end,
-				accel = function ()
-					if not uv0.afterFirstAccel then
-						uv0.afterFirstAccel = true
-						uv0.action = "accel"
+				accel = function()
+					if not arg_39_0.afterFirstAccel then
+						arg_39_0.afterFirstAccel = true
+						arg_39_0.action = "accel"
 					else
-						uv0.action = "ride"
+						arg_39_0.action = "ride"
 					end
 				end,
-				fall = function ()
-					uv0.action = "fall"
-					uv0.isBlock = true
+				fall = function()
+					arg_39_0.action = "fall"
+					arg_39_0.isBlock = true
 				end,
-				yunxuan = function ()
-					uv0.action = "yunxuan"
-					uv0.isVertigo = true
+				yunxuan = function()
+					arg_39_0.action = "yunxuan"
+					arg_39_0.isVertigo = true
 
-					setActive(uv0.rt:Find("GameObject/saiche_xuanyun"), true)
-					setActive(uv0.rt:Find("GameObject/saiche_jiansu"), true)
+					setActive(arg_39_0.rt:Find("GameObject/saiche_xuanyun"), true)
+					setActive(arg_39_0.rt:Find("GameObject/saiche_jiansu"), true)
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-yunxuan")
 				end
 			})
-			slot0.comSpineAnim:SetAction(slot0.action, 0)
+			arg_39_0.comSpineAnim:SetAction(arg_39_0.action, 0)
 		end
 
-		function slot0.TriggerEffect(slot0, slot1)
-			switch(slot1.__cname, {
-				MoreTime = function ()
-					uv0.controller:AddTime(RacingMiniGameConfig.ITEM_ADD_TIME)
+		function var_30_0.TriggerEffect(arg_44_0, arg_44_1)
+			switch(arg_44_1.__cname, {
+				MoreTime = function()
+					arg_44_0.controller:AddTime(RacingMiniGameConfig.ITEM_ADD_TIME)
 				end,
-				Invincibility = function ()
-					uv0.invincibleTime = RacingMiniGameConfig.INVINCIBLE_TIME
+				Invincibility = function()
+					arg_44_0.invincibleTime = RacingMiniGameConfig.INVINCIBLE_TIME
 
-					setActive(uv0.rt:Find("invincibility"), true)
+					setActive(arg_44_0.rt:Find("invincibility"), true)
 				end,
-				TrafficCone = function ()
-					uv0.controller:SetEnginePower(0)
-					uv0:Show("fall")
+				TrafficCone = function()
+					arg_44_0.controller:SetEnginePower(0)
+					arg_44_0:Show("fall")
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-fall")
 				end,
-				Roadblock = function ()
-					uv0.controller:SetEnginePower(0)
-					uv0:Show("fall")
+				Roadblock = function()
+					arg_44_0.controller:SetEnginePower(0)
+					arg_44_0:Show("fall")
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-fall")
 				end,
-				Bomb = function ()
-					uv0.controller:SetEnginePower(0)
-					uv0:Show("fall")
+				Bomb = function()
+					arg_44_0.controller:SetEnginePower(0)
+					arg_44_0:Show("fall")
 				end,
-				Mire = function ()
-					uv0.controller:SetEnginePower(math.min(uv0.controller.enginePower, RacingMiniGameConfig.OBSTACLE_POWER_BLOCK))
-					uv0:Show("yunxuan")
+				Mire = function()
+					arg_44_0.controller:SetEnginePower(math.min(arg_44_0.controller.enginePower, RacingMiniGameConfig.OBSTACLE_POWER_BLOCK))
+					arg_44_0:Show("yunxuan")
 				end,
-				SpeedBumps = function ()
-					uv0.controller:SetEnginePower(math.min(uv0.controller.enginePower, RacingMiniGameConfig.OBSTACLE_POWER_BLOCK))
-					uv0:Show("yunxuan")
+				SpeedBumps = function()
+					arg_44_0.controller:SetEnginePower(math.min(arg_44_0.controller.enginePower, RacingMiniGameConfig.OBSTACLE_POWER_BLOCK))
+					arg_44_0:Show("yunxuan")
 				end
 			})
 		end
 
-		function slot0.UpdateInvincibility(slot0, slot1)
-			assert(slot0.invincibleTime)
+		function var_30_0.UpdateInvincibility(arg_52_0, arg_52_1)
+			assert(arg_52_0.invincibleTime)
 
-			slot0.invincibleTime = slot0.invincibleTime - slot1
+			arg_52_0.invincibleTime = arg_52_0.invincibleTime - arg_52_1
 
-			if slot0.invincibleTime <= 0 then
-				setActive(slot0.rt:Find("invincibility"), false)
+			if arg_52_0.invincibleTime <= 0 then
+				setActive(arg_52_0.rt:Find("invincibility"), false)
 
-				slot0.invincibleTime = nil
+				arg_52_0.invincibleTime = nil
 			else
-				slot2 = slot0.invincibleTime < 2
+				local var_52_0 = arg_52_0.invincibleTime < 2
 
-				setActive(slot0.rt:Find("invincibility/saiche_wudihudun_xiaoshi"), slot2)
-				setActive(slot0.rt:Find("invincibility/saiche_wudihudun"), not slot2)
+				setActive(arg_52_0.rt:Find("invincibility/saiche_wudihudun_xiaoshi"), var_52_0)
+				setActive(arg_52_0.rt:Find("invincibility/saiche_wudihudun"), not var_52_0)
 			end
 		end
 
-		return slot0
+		return var_30_0
 	end
-}) do
-	slot7 = slot6()
-	slot0[slot7.__cname] = slot7
+}
+
+for iter_0_0, iter_0_1 in ipairs(var_0_1) do
+	local var_0_2 = iter_0_1()
+
+	var_0_0[var_0_2.__cname] = var_0_2
 end
 
-return slot0
+return var_0_0

@@ -1,13 +1,16 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_289 = {}
-slot1 = slot0.word_template_289
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_289 = {}
+
+local var_0_1 = var_0_0.word_template_289
 
 function temp()
-	uv0["貂"] = {
-		["婵"] = {
-			["丝"] = {
-				["袜"] = {
+	var_0_1.貂 = {
+		婵 = {
+			丝 = {
+				袜 = {
 					this = true
 				}
 			}
@@ -18,44 +21,44 @@ end
 temp()
 
 function temp()
-	uv0["颩"] = {
-		["騒"] = {
-			["亾"] = {
-				["軆"] = {
-					["兿"] = {
-						["朮"] = {
+	var_0_1.颩 = {
+		騒 = {
+			亾 = {
+				軆 = {
+					兿 = {
+						朮 = {
 							this = true
 						}
 					}
 				}
 			},
-			["滟"] = {
-				["妇"] = {
+			滟 = {
+				妇 = {
 					this = true
 				}
 			}
 		},
-		["騷"] = {
-			["亽"] = {
-				["躰"] = {
-					["藝"] = {
-						["ポ"] = {
+		騷 = {
+			亽 = {
+				躰 = {
+					藝 = {
+						ポ = {
 							this = true
 						}
 					}
 				}
 			},
-			["滟"] = {
-				["婦"] = {
+			滟 = {
+				婦 = {
 					this = true
 				}
 			}
 		},
-		["仴"] = {
-			["阁"] = {
+		仴 = {
+			阁 = {
 				this = true
 			},
-			["閣"] = {
+			閣 = {
 				this = true
 			}
 		}
@@ -65,16 +68,16 @@ end
 temp()
 
 function temp()
-	uv0["碟"] = {
-		["仙"] = {
-			["淫"] = {
-				["事"] = {
+	var_0_1.碟 = {
+		仙 = {
+			淫 = {
+				事 = {
 					this = true
 				}
 			}
 		},
-		["中"] = {
-			["谍"] = {
+		中 = {
+			谍 = {
 				["5"] = {
 					this = true
 				}
@@ -86,8 +89,8 @@ end
 temp()
 
 function temp()
-	uv0["蝶"] = {
-		["妖"] = {
+	var_0_1.蝶 = {
+		妖 = {
 			this = true
 		}
 	}
@@ -96,13 +99,13 @@ end
 temp()
 
 function temp()
-	uv0["玎"] = {
-		["萫"] = {
-			["荿"] = {
-				["亾"] = {
-					["涻"] = {
-						["岖"] = {
-							["蛧"] = {
+	var_0_1.玎 = {
+		萫 = {
+			荿 = {
+				亾 = {
+					涻 = {
+						岖 = {
+							蛧 = {
 								this = true
 							}
 						}
@@ -116,9 +119,9 @@ end
 temp()
 
 function temp()
-	uv0["町"] = {
-		["山"] = {
-			["茜"] = {
+	var_0_1.町 = {
+		山 = {
+			茜 = {
 				this = true
 			}
 		}
@@ -128,11 +131,11 @@ end
 temp()
 
 function temp()
-	uv0["頂"] = {
-		["級"] = {
-			["朋"] = {
-				["友"] = {
-					["圈"] = {
+	var_0_1.頂 = {
+		級 = {
+			朋 = {
+				友 = {
+					圈 = {
 						this = true
 					}
 				}
@@ -144,8 +147,8 @@ end
 temp()
 
 function temp()
-	uv0["訂"] = {
-		["購"] = {
+	var_0_1.訂 = {
+		購 = {
 			this = true
 		}
 	}
@@ -154,9 +157,9 @@ end
 temp()
 
 function temp()
-	uv0["萣"] = {
-		["莅"] = {
-			["噐"] = {
+	var_0_1.萣 = {
+		莅 = {
+			噐 = {
 				this = true
 			}
 		}
@@ -166,10 +169,10 @@ end
 temp()
 
 function temp()
-	uv0["丢"] = {
-		["你"] = {
-			["老"] = {
-				["母"] = {
+	var_0_1.丢 = {
+		你 = {
+			老 = {
+				母 = {
 					this = true
 				}
 			}

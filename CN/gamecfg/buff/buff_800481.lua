@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "damageToArmorRateEnhance_1",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -147,24 +166,5 @@ return {
 	stack = 1,
 	id = 800481,
 	icon = 800480,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "damageToArmorRateEnhance_1",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

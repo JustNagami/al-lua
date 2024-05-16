@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "loadSpeed",
+				number = 450
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -148,24 +167,5 @@ return {
 	stack = 1,
 	id = 105152,
 	icon = 105150,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "loadSpeed",
-				number = 450
-			}
-		}
-	}
+	last_effect = ""
 }

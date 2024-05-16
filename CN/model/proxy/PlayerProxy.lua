@@ -1,252 +1,266 @@
-slot0 = class("PlayerProxy", import(".NetProxy"))
-slot0.UPDATED = "PlayerProxy.UPDATED"
-slot0.RESOURCE_UPDATED = "PlayerProxy.RESOURCE_UPDATED"
+﻿local var_0_0 = class("PlayerProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0._flags = {}
-	slot0.combatFleetId = 1
-	slot0.mainBGShiftFlag = false
-	slot0.inited = false
-	slot0.botHelp = false
-	slot0.playerAssists = {}
-	slot0.playerGuildAssists = {}
-	slot0.summaryInfo = nil
+var_0_0.UPDATED = "PlayerProxy.UPDATED"
+var_0_0.RESOURCE_UPDATED = "PlayerProxy.RESOURCE_UPDATED"
 
-	slot0:on(11000, function (slot0)
-		uv0:sendNotification(GAME.TIME_SYNCHRONIZATION, slot0)
+function var_0_0.register(arg_1_0)
+	arg_1_0._flags = {}
+	arg_1_0.combatFleetId = 1
+	arg_1_0.mainBGShiftFlag = false
+	arg_1_0.inited = false
+	arg_1_0.botHelp = false
+	arg_1_0.playerAssists = {}
+	arg_1_0.playerGuildAssists = {}
+	arg_1_0.summaryInfo = nil
+
+	arg_1_0:on(11000, function(arg_2_0)
+		arg_1_0:sendNotification(GAME.TIME_SYNCHRONIZATION, arg_2_0)
 	end)
-	slot0:on(11003, function (slot0)
-		slot1 = Player.New(slot0)
-		slot1.resUpdateTm = pg.TimeMgr.GetInstance():GetServerTime()
+	arg_1_0:on(11003, function(arg_3_0)
+		local var_3_0 = Player.New(arg_3_0)
 
-		uv0:updatePlayer(slot1)
+		var_3_0.resUpdateTm = pg.TimeMgr.GetInstance():GetServerTime()
+
+		arg_1_0:updatePlayer(var_3_0)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inAdmiral")
-		pg.NewStoryMgr.GetInstance():SetData(slot0.story_list or {})
-		print("days from regist time to new :" .. uv0.data:GetDaysFromRegister())
+		pg.NewStoryMgr.GetInstance():SetData(arg_3_0.story_list or {})
+		print("days from regist time to new :" .. arg_1_0.data:GetDaysFromRegister())
 
-		if uv0.data:GetDaysFromRegister() == 1 then
+		if arg_1_0.data:GetDaysFromRegister() == 1 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_2D_RETENTION)
-		elseif uv0.data:GetDaysFromRegister() == 6 then
+		elseif arg_1_0.data:GetDaysFromRegister() == 6 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_7D_RETENTION)
 		end
 
-		uv0:flushTimesListener()
+		arg_1_0:flushTimesListener()
 	end)
-	slot0:on(11004, function (slot0)
-		if not uv0.data then
+	arg_1_0:on(11004, function(arg_4_0)
+		if not arg_1_0.data then
 			return
 		end
 
-		slot1 = uv0.data:clone()
+		local var_4_0 = arg_1_0.data:clone()
 
-		slot1:updateResources(slot0.resource_list)
+		var_4_0:updateResources(arg_4_0.resource_list)
 
-		slot1.resUpdateTm = pg.TimeMgr.GetInstance():GetServerTime()
+		var_4_0.resUpdateTm = pg.TimeMgr.GetInstance():GetServerTime()
 
-		uv0:updatePlayer(slot1)
+		arg_1_0:updatePlayer(var_4_0)
 
-		if uv0.data:isFull() then
-			-- Nothing
+		if arg_1_0.data:isFull() then
+			-- block empty
 		end
 	end)
-	slot0:on(10999, function (slot0)
-		if slot0.reason == LOGOUT_NEW_VERSION then
+	arg_1_0:on(10999, function(arg_5_0)
+		if arg_5_0.reason == LOGOUT_NEW_VERSION then
 			getProxy(SettingsProxy).lastRequestVersionTime = nil
 		else
-			uv0:sendNotification(GAME.LOGOUT, {
-				code = slot0.reason
+			arg_1_0:sendNotification(GAME.LOGOUT, {
+				code = arg_5_0.reason
 			})
 		end
 	end)
-	slot0:on(11015, function (slot0)
-		uv0.data:clone().buff_list = {}
+	arg_1_0:on(11015, function(arg_6_0)
+		local var_6_0 = arg_1_0.data:clone()
 
-		for slot5, slot6 in ipairs(slot0.buff_list) do
-			table.insert(slot1.buff_list, {
-				id = slot6.id,
-				timestamp = slot6.timestamp
-			})
+		var_6_0.buff_list = {}
+
+		for iter_6_0, iter_6_1 in ipairs(arg_6_0.buff_list) do
+			local var_6_1 = {
+				id = iter_6_1.id,
+				timestamp = iter_6_1.timestamp
+			}
+
+			table.insert(var_6_0.buff_list, var_6_1)
 		end
 
-		uv0:updatePlayer(slot1)
+		arg_1_0:updatePlayer(var_6_0)
 	end)
-	slot0:on(11503, function (slot0)
-		getProxy(ShopsProxy):removeChargeTimer(slot0.pay_id)
-		uv0:sendNotification(GAME.CHARGE_SUCCESS, {
-			shopId = slot0.shop_id,
-			payId = slot0.pay_id,
-			gem = slot0.gem,
-			gem_free = slot0.gem_free
+	arg_1_0:on(11503, function(arg_7_0)
+		getProxy(ShopsProxy):removeChargeTimer(arg_7_0.pay_id)
+		arg_1_0:sendNotification(GAME.CHARGE_SUCCESS, {
+			shopId = arg_7_0.shop_id,
+			payId = arg_7_0.pay_id,
+			gem = arg_7_0.gem,
+			gem_free = arg_7_0.gem_free
 		})
 	end)
-	slot0:on(11802, function (slot0)
-		slot1 = uv0.data:clone()
+	arg_1_0:on(11802, function(arg_8_0)
+		local var_8_0 = arg_1_0.data:clone()
 
-		slot1:SetCommonFlag(slot0.id, slot0.value == 1)
-		uv0:updatePlayer(slot1)
+		var_8_0:SetCommonFlag(arg_8_0.id, arg_8_0.value == 1)
+		arg_1_0:updatePlayer(var_8_0)
 	end)
 end
 
-function slot0.remove(slot0)
-	slot0:clearTimesListener()
+function var_0_0.remove(arg_9_0)
+	arg_9_0:clearTimesListener()
 end
 
-function slot0.getSummaryInfo(slot0)
-	return slot0.summaryInfo
+function var_0_0.getSummaryInfo(arg_10_0)
+	return arg_10_0.summaryInfo
 end
 
-function slot0.setSummaryInfo(slot0, slot1)
-	slot0.summaryInfo = slot1
+function var_0_0.setSummaryInfo(arg_11_0, arg_11_1)
+	arg_11_0.summaryInfo = arg_11_1
 end
 
-function slot0.flushTimesListener(slot0)
-	slot0:clearTimesListener()
+function var_0_0.flushTimesListener(arg_12_0)
+	arg_12_0:clearTimesListener()
 
-	slot1 = pg.TimeMgr.GetInstance()
-	slot0.fourClockId = slot1:AddTimer("daily_four", slot1:GetNextTime(4, 0, 0) - slot1:GetServerTime(), 86400, function ()
-		uv0:sendNotification(GAME.FOUR_HOUR)
+	local var_12_0 = pg.TimeMgr.GetInstance()
+
+	arg_12_0.fourClockId = var_12_0:AddTimer("daily_four", var_12_0:GetNextTime(4, 0, 0) - var_12_0:GetServerTime(), 86400, function()
+		arg_12_0:sendNotification(GAME.FOUR_HOUR)
 	end)
 end
 
-function slot0.clearTimesListener(slot0)
-	if slot0.fourClockId then
-		pg.TimeMgr.GetInstance():RemoveTimer(slot0.fourClockId)
+function var_0_0.clearTimesListener(arg_14_0)
+	if arg_14_0.fourClockId then
+		pg.TimeMgr.GetInstance():RemoveTimer(arg_14_0.fourClockId)
 
-		slot0.fourClockId = nil
+		arg_14_0.fourClockId = nil
 	end
 end
 
-function slot0.updatePlayer(slot0, slot1)
-	assert(isa(slot1, Player), "should be an instance of Player")
+function var_0_0.updatePlayer(arg_15_0, arg_15_1)
+	assert(isa(arg_15_1, Player), "should be an instance of Player")
 
-	if slot0.data then
-		slot0:sendNotification(GAME.ON_PLAYER_RES_CHANGE, {
-			oldPlayer = slot0.data,
-			newPlayer = slot1
+	if arg_15_0.data then
+		arg_15_0:sendNotification(GAME.ON_PLAYER_RES_CHANGE, {
+			oldPlayer = arg_15_0.data,
+			newPlayer = arg_15_1
 		})
 	end
 
-	slot0.data = slot1:clone()
+	arg_15_0.data = arg_15_1:clone()
 
-	slot0.data:display("updated")
-	slot0:sendNotification(uv0.UPDATED, slot1:clone())
+	arg_15_0.data:display("updated")
+	arg_15_0:sendNotification(var_0_0.UPDATED, arg_15_1:clone())
 end
 
-function slot0.UpdatePlayerRes(slot0, slot1, slot2)
-	if not slot0.data then
+function var_0_0.UpdatePlayerRes(arg_16_0, arg_16_1, arg_16_2)
+	if not arg_16_0.data then
 		return
 	end
 
-	slot3 = id2res(slot1)
-	slot0.data[slot3] = math.max(slot0.data[slot3] + slot2, 0)
+	local var_16_0 = id2res(arg_16_1)
 
-	slot0:sendNotification(uv0.RESOURCE_UPDATED, {
-		id = slot1,
-		diff = slot2,
-		amount = slot0.data[slot3]
+	arg_16_0.data[var_16_0] = math.max(arg_16_0.data[var_16_0] + arg_16_2, 0)
+
+	arg_16_0:sendNotification(var_0_0.RESOURCE_UPDATED, {
+		id = arg_16_1,
+		diff = arg_16_2,
+		amount = arg_16_0.data[var_16_0]
 	})
-	slot0:updatePlayer(slot0.data)
+	arg_16_0:updatePlayer(arg_16_0.data)
 end
 
-function slot0.updatePlayerMedalDisplay(slot0, slot1)
-	slot0.data.displayTrophyList = slot1
+function var_0_0.updatePlayerMedalDisplay(arg_17_0, arg_17_1)
+	arg_17_0.data.displayTrophyList = arg_17_1
 end
 
-function slot0.getPlayerId(slot0)
-	return slot0.data.id
+function var_0_0.getPlayerId(arg_18_0)
+	return arg_18_0.data.id
 end
 
-function slot0.setFlag(slot0, slot1, slot2)
-	slot0._flags[slot1] = slot2
+function var_0_0.setFlag(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0._flags[arg_19_1] = arg_19_2
 end
 
-function slot0.getFlag(slot0, slot1)
-	return slot0._flags[slot1]
+function var_0_0.getFlag(arg_20_0, arg_20_1)
+	return arg_20_0._flags[arg_20_1]
 end
 
-function slot0.isSelf(slot0, slot1)
-	return slot0.data.id == slot1
+function var_0_0.isSelf(arg_21_0, arg_21_1)
+	return arg_21_0.data.id == arg_21_1
 end
 
-function slot0.setInited(slot0, slot1)
-	slot0.inited = slot1
+function var_0_0.setInited(arg_22_0, arg_22_1)
+	arg_22_0.inited = arg_22_1
 end
 
-function slot0.getInited(slot0)
-	return slot0.inited
+function var_0_0.getInited(arg_23_0)
+	return arg_23_0.inited
 end
 
-function slot0.setRefundInfo(slot0, slot1)
-	slot2 = nil
+function var_0_0.setRefundInfo(arg_24_0, arg_24_1)
+	local var_24_0
 
-	if slot1 and #slot1 > 0 then
-		slot2 = {}
+	if arg_24_1 and #arg_24_1 > 0 then
+		var_24_0 = {}
 
-		for slot6, slot7 in ipairs(slot1) do
-			table.insert(slot2, {
-				shopId = slot7.shop_id,
-				buyTime = slot7.buy_time,
-				refundTime = slot7.refund_time
+		for iter_24_0, iter_24_1 in ipairs(arg_24_1) do
+			table.insert(var_24_0, {
+				shopId = iter_24_1.shop_id,
+				buyTime = iter_24_1.buy_time,
+				refundTime = iter_24_1.refund_time
 			})
 		end
 	end
 
-	slot0.refundInfo = slot2
+	arg_24_0.refundInfo = var_24_0
 end
 
-function slot0.getRefundInfo(slot0)
-	if not slot0.refundInfo then
+function var_0_0.getRefundInfo(arg_25_0)
+	if not arg_25_0.refundInfo then
 		return nil
 	end
 
-	if #slot0.refundInfo <= 0 then
+	if #arg_25_0.refundInfo <= 0 then
 		return nil
 	end
 
-	return slot0.refundInfo
+	return arg_25_0.refundInfo
 end
 
-function slot0.IsShowCommssionTip(slot0)
-	slot2 = getProxy(EventProxy):hasFinishState()
-	slot3 = getProxy(NavalAcademyProxy)
-	slot4 = slot0:getRawData()
-	slot7 = slot3:GetClassVO()
-	slot8 = slot3:GetOilVO():isCommissionNotify(slot4.oilField)
-	slot9 = slot3:GetGoldVO():isCommissionNotify(slot4.goldField)
-	slot10 = slot7:GetGenResCnt()
-	slot12 = 0
+function var_0_0.IsShowCommssionTip(arg_26_0)
+	local var_26_0 = getProxy(EventProxy):hasFinishState()
+	local var_26_1 = getProxy(NavalAcademyProxy)
+	local var_26_2 = arg_26_0:getRawData()
+	local var_26_3 = var_26_1:GetOilVO()
+	local var_26_4 = var_26_1:GetGoldVO()
+	local var_26_5 = var_26_1:GetClassVO()
+	local var_26_6 = var_26_3:isCommissionNotify(var_26_2.oilField)
+	local var_26_7 = var_26_4:isCommissionNotify(var_26_2.goldField)
+	local var_26_8 = var_26_5:GetGenResCnt()
+	local var_26_9 = var_26_5:GetEffectAttrs()
+	local var_26_10 = 0
 
-	for slot16, slot17 in ipairs(slot7:GetEffectAttrs()) do
-		if slot17.attrName == "stock" then
-			slot12 = slot17.value
+	for iter_26_0, iter_26_1 in ipairs(var_26_9) do
+		if iter_26_1.attrName == "stock" then
+			var_26_10 = iter_26_1.value
 		end
 	end
 
-	slot13 = NotifyTipHelper.ShouldShowUrTip()
-	slot15 = 0
+	local var_26_11 = NotifyTipHelper.ShouldShowUrTip()
+	local var_26_12 = var_26_1:getStudents()
+	local var_26_13 = 0
 
-	_.each(_.values(slot3:getStudents()), function (slot0)
-		if slot0:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
-			uv0 = uv0 + 1
+	_.each(_.values(var_26_12), function(arg_27_0)
+		if arg_27_0:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
+			var_26_13 = var_26_13 + 1
 		end
 	end)
 
-	slot16 = 0
+	local var_26_14 = 0
 
-	_.each(getProxy(TechnologyProxy):getPlanningTechnologys(), function (slot0)
-		if slot0:isCompleted() then
-			uv0 = uv0 + 1
+	_.each(getProxy(TechnologyProxy):getPlanningTechnologys(), function(arg_28_0)
+		if arg_28_0:isCompleted() then
+			var_26_14 = var_26_14 + 1
 		end
 	end)
 
-	slot18 = CommissionMetaBossBtn.STATE_GET_AWARDS == WorldBossConst.GetCommissionSceneMetaBossBtnState() or CommissionMetaBossBtn.STATE_FINSH_BATTLE == slot17
-	slot20 = false
+	local var_26_15 = WorldBossConst.GetCommissionSceneMetaBossBtnState()
+	local var_26_16 = CommissionMetaBossBtn.STATE_GET_AWARDS == var_26_15 or CommissionMetaBossBtn.STATE_FINSH_BATTLE == var_26_15
+	local var_26_17 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	local var_26_18 = false
 
-	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot19:isEnd() then
-		slot20 = #slot19:GetCrusingUnreceiveAward() > 0
+	if var_26_17 and not var_26_17:isEnd() then
+		var_26_18 = #var_26_17:GetCrusingUnreceiveAward() > 0
 	end
 
-	return slot18 or slot2 or slot8 or slot9 or slot12 ~= 0 and slot10 > slot12 - 10 or slot13 or slot15 > 0 or slot16 > 0 or slot20
+	return var_26_16 or var_26_0 or var_26_6 or var_26_7 or var_26_10 ~= 0 and var_26_8 > var_26_10 - 10 or var_26_11 or var_26_13 > 0 or var_26_14 > 0 or var_26_18
 end
 
-return slot0
+return var_0_0

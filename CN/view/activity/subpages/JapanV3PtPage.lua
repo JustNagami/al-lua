@@ -1,11 +1,11 @@
-slot0 = class("JapanV3PtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("JapanV3PtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
+	local var_1_0, var_1_1, var_1_2 = arg_1_0.ptData:GetResProgress()
 
-	setText(slot0.progress, setColorStr(slot1, "#1a97cb") .. "/" .. slot2)
+	setText(arg_1_0.progress, setColorStr(var_1_0, "#1a97cb") .. "/" .. var_1_1)
 end
 
-return slot0
+return var_0_0

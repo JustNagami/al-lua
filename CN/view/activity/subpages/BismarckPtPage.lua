@@ -1,1 +1,1 @@
-return class("BismarckPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿return (class("BismarckPtPage", import(".TemplatePage.PtTemplatePage")))

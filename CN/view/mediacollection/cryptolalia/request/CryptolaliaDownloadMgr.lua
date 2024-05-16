@@ -1,63 +1,77 @@
-slot0 = class("CryptolaliaDownloadMgr")
-slot0.PROGRESS_FINISH = -99
-slot0.PROGRESS_ERROR = -100
+﻿local var_0_0 = class("CryptolaliaDownloadMgr")
 
-function slot0.Ctor(slot0)
-	slot0.callbacks = {}
-	slot1 = pg.CipherGroupMgr
-	slot0.mgr = slot1:GetInstance()
+var_0_0.PROGRESS_FINISH = -99
+var_0_0.PROGRESS_ERROR = -100
 
-	slot0.mgr:SetCallBack({
-		progressCB = function (slot0, slot1)
-			if uv0.callbacks[slot0] then
-				uv0.callbacks[slot0](slot0, slot1)
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.callbacks = {}
+	arg_1_0.mgr = pg.CipherGroupMgr:GetInstance()
+
+	local var_1_0 = {
+		progressCB = function(arg_2_0, arg_2_1)
+			if arg_1_0.callbacks[arg_2_0] then
+				arg_1_0.callbacks[arg_2_0](arg_2_0, arg_2_1)
 			end
 		end,
-		allFinishCB = function (slot0, slot1)
+		allFinishCB = function(arg_3_0, arg_3_1)
 			warning("全部完成")
 		end,
-		singleFinshCB = function (slot0, slot1, slot2)
-			if uv0.callbacks[slot0] then
-				uv0.callbacks[slot0](slot0, uv1.PROGRESS_FINISH)
+		singleFinshCB = function(arg_4_0, arg_4_1, arg_4_2)
+			if arg_1_0.callbacks[arg_4_0] then
+				arg_1_0.callbacks[arg_4_0](arg_4_0, var_0_0.PROGRESS_FINISH)
 
-				uv0.callbacks[slot0] = nil
+				arg_1_0.callbacks[arg_4_0] = nil
 			end
 		end,
-		errorCB = function (slot0)
-			warning(string.format("出错文件:%s", slot0))
+		errorCB = function(arg_5_0)
+			local var_5_0 = string.format("出错文件:%s", arg_5_0)
 
-			if uv0.callbacks[slot0] then
-				uv0.callbacks[slot0](slot0, uv1.PROGRESS_ERROR)
+			warning(var_5_0)
 
-				uv0.callbacks[slot0] = nil
+			if arg_1_0.callbacks[arg_5_0] then
+				arg_1_0.callbacks[arg_5_0](arg_5_0, var_0_0.PROGRESS_ERROR)
+
+				arg_1_0.callbacks[arg_5_0] = nil
 			end
 		end
-	})
+	}
+
+	arg_1_0.mgr:SetCallBack(var_1_0)
 end
 
-function slot0.Request(slot0, slot1, slot2)
-	slot0.callbacks[string.lower(slot1[#slot1])] = slot2
-	slot4 = GroupHelper.GetGroupMgrByName("CIPHER")
-	slot6 = table.concat(slot1, ",")
+function var_0_0.Request(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = string.lower(arg_6_1[#arg_6_1])
 
-	if slot0.mgr:IsAnyFileInProgress() then
-		slot0.mgr:AddFileList(slot1)
+	arg_6_0.callbacks[var_6_0] = arg_6_2
+
+	local var_6_1 = GroupHelper.GetGroupMgrByName("CIPHER")
+	local var_6_2 = arg_6_0.mgr:IsAnyFileInProgress()
+	local var_6_3 = table.concat(arg_6_1, ",")
+
+	if var_6_2 then
+		arg_6_0.mgr:AddFileList(arg_6_1)
 	else
-		slot0.mgr:StartWithFileList(slot1)
+		arg_6_0.mgr:StartWithFileList(arg_6_1)
 	end
 end
 
-function slot0.ReConnection(slot0, slot1, slot2)
-	if slot0:IsDownloadState(slot1[#slot1]) then
-		slot0.callbacks[string.lower(slot3)] = slot2
+function var_0_0.ReConnection(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_1[#arg_7_1]
+
+	if arg_7_0:IsDownloadState(var_7_0) then
+		local var_7_1 = string.lower(var_7_0)
+
+		arg_7_0.callbacks[var_7_1] = arg_7_2
 	end
 end
 
-function slot0.IsDownloadState(slot0, slot1)
-	slot1 = string.lower(slot1)
+function var_0_0.IsDownloadState(arg_8_0, arg_8_1)
+	arg_8_1 = string.lower(arg_8_1)
 
-	for slot7 = slot0.mgr.curIndex, #slot0.mgr.downloadList do
-		if slot2[slot7] == slot1 then
+	local var_8_0 = arg_8_0.mgr.downloadList
+
+	for iter_8_0 = arg_8_0.mgr.curIndex, #var_8_0 do
+		if var_8_0[iter_8_0] == arg_8_1 then
 			return true
 		end
 	end
@@ -65,10 +79,12 @@ function slot0.IsDownloadState(slot0, slot1)
 	return false
 end
 
-function slot0.Dispose(slot0)
-	slot0.callbacks = {}
+function var_0_0.Dispose(arg_9_0)
+	arg_9_0.callbacks = {}
 
-	slot0.mgr:SetCallBack({})
+	local var_9_0 = {}
+
+	arg_9_0.mgr:SetCallBack(var_9_0)
 end
 
-return slot0
+return var_0_0

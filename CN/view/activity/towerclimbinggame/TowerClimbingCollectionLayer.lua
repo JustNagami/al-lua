@@ -1,40 +1,43 @@
-slot0 = class("TowerClimbingCollectionLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("TowerClimbingCollectionLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "TowerClimbingCollectionUI"
 end
 
-function slot0.SetData(slot0, slot1)
-	slot0.miniGameData = slot1
-	slot3, slot4 = TowerClimbingGameView.GetTowerClimbingPageAndScore(slot0.miniGameData:GetRuntimeData("kvpElements"))
-	slot0.score = slot3
-	slot0.pageIndex = slot4
+function var_0_0.SetData(arg_2_0, arg_2_1)
+	arg_2_0.miniGameData = arg_2_1
 
-	assert(slot3)
-	assert(slot4)
+	local var_2_0 = arg_2_0.miniGameData:GetRuntimeData("kvpElements")
+	local var_2_1, var_2_2 = TowerClimbingGameView.GetTowerClimbingPageAndScore(var_2_0)
 
-	slot0.config = pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data
+	arg_2_0.score = var_2_1
+	arg_2_0.pageIndex = var_2_2
+
+	assert(var_2_1)
+	assert(var_2_2)
+
+	arg_2_0.config = pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data
 end
 
-function slot1(slot0, slot1, slot2)
-	if slot1 < slot0.pageIndex then
+local function var_0_1(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_1 < arg_3_0.pageIndex then
 		return true
-	elseif slot1 == slot0.pageIndex then
-		return slot2 <= slot0.score
+	elseif arg_3_1 == arg_3_0.pageIndex then
+		return arg_3_2 <= arg_3_0.score
 	else
 		return false
 	end
 end
 
-slot2 = 0
-slot3 = 1
-slot4 = 2
+local var_0_2 = 0
+local var_0_3 = 1
+local var_0_4 = 2
 
-function slot0.IsGotAward(slot0, slot1)
-	slot3 = slot0.miniGameData:GetRuntimeData("kvpElements")[1] or {}
+function var_0_0.IsGotAward(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.miniGameData:GetRuntimeData("kvpElements")[1] or {}
 
-	for slot7, slot8 in ipairs(slot3) do
-		if slot8.key == slot1 and slot8.value == 1 then
+	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
+		if iter_4_1.key == arg_4_1 and iter_4_1.value == 1 then
 			return true
 		end
 	end
@@ -42,140 +45,156 @@ function slot0.IsGotAward(slot0, slot1)
 	return false
 end
 
-function slot0.GetAwardState(slot0, slot1)
-	slot2 = slot0.config[slot1][1]
-	slot3 = slot2[#slot2]
+function var_0_0.GetAwardState(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0.config[arg_5_1][1]
+	local var_5_1 = var_5_0[#var_5_0]
 
-	if slot1 < slot0.pageIndex then
-		if slot0:IsGotAward(slot1) then
-			return uv0
+	if arg_5_1 < arg_5_0.pageIndex then
+		if arg_5_0:IsGotAward(arg_5_1) then
+			return var_0_4
 		else
-			return uv1
+			return var_0_3
 		end
-	elseif slot1 == slot0.pageIndex then
-		if slot0:IsGotAward(slot1) then
-			return uv0
-		elseif slot3 <= slot0.score and not slot4 then
-			return uv1
-		elseif slot0.score < slot3 then
-			return uv2
+	elseif arg_5_1 == arg_5_0.pageIndex then
+		local var_5_2 = arg_5_0:IsGotAward(arg_5_1)
+
+		if var_5_2 then
+			return var_0_4
+		elseif var_5_1 <= arg_5_0.score and not var_5_2 then
+			return var_0_3
+		elseif var_5_1 > arg_5_0.score then
+			return var_0_2
 		end
 	else
-		return uv2
+		return var_0_2
 	end
 end
 
-function slot0.init(slot0)
-	slot0.bookContainer = slot0:findTF("books")
-	slot0.book = slot0:findTF("book")
-	slot0.nextPageBtn = slot0:findTF("book/next")
-	slot0.prevPageBtn = slot0:findTF("book/prev")
-	slot0.scoreList = UIItemList.New(slot0:findTF("book/list"), slot0:findTF("book/list/tpl"))
-	slot0.getBtn = slot0:findTF("book/get")
-	slot0.gotBtn = slot0:findTF("book/got")
-	slot0.goBtn = slot0:findTF("book/go")
-	slot0.books = {
-		slot0:findTF("books/1"),
-		slot0:findTF("books/2"),
-		slot0:findTF("books/3")
+function var_0_0.init(arg_6_0)
+	arg_6_0.bookContainer = arg_6_0:findTF("books")
+	arg_6_0.book = arg_6_0:findTF("book")
+	arg_6_0.nextPageBtn = arg_6_0:findTF("book/next")
+	arg_6_0.prevPageBtn = arg_6_0:findTF("book/prev")
+	arg_6_0.scoreList = UIItemList.New(arg_6_0:findTF("book/list"), arg_6_0:findTF("book/list/tpl"))
+	arg_6_0.getBtn = arg_6_0:findTF("book/get")
+	arg_6_0.gotBtn = arg_6_0:findTF("book/got")
+	arg_6_0.goBtn = arg_6_0:findTF("book/go")
+	arg_6_0.books = {
+		arg_6_0:findTF("books/1"),
+		arg_6_0:findTF("books/2"),
+		arg_6_0:findTF("books/3")
 	}
-	slot0.parent = slot0._tf.parent
+	arg_6_0.parent = arg_6_0._tf.parent
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.isOpenBook then
-			uv0:CloseBook()
+function var_0_0.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0._tf, function()
+		if arg_7_0.isOpenBook then
+			arg_7_0:CloseBook()
 		else
-			uv0:emit(uv1.ON_CLOSE)
+			arg_7_0:emit(var_0_0.ON_CLOSE)
 		end
 	end, SFX_CANCEL)
-	slot0:InitBooks()
+	arg_7_0:InitBooks()
 end
 
-function slot0.InitBooks(slot0)
-	setActive(slot0.bookContainer, true)
-	setActive(slot0.book, false)
+function var_0_0.InitBooks(arg_9_0)
+	setActive(arg_9_0.bookContainer, true)
+	setActive(arg_9_0.book, false)
 
-	for slot4, slot5 in ipairs(slot0.books) do
-		slot6 = slot4 <= slot0.pageIndex
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.books) do
+		local var_9_0 = iter_9_0 <= arg_9_0.pageIndex
 
-		setActive(slot5:Find("lock"), not slot6)
+		setActive(iter_9_1:Find("lock"), not var_9_0)
 
-		slot5:GetComponent(typeof(Image)).color = slot6 and Color.New(1, 1, 1, 1) or Color.New(0.46, 0.46, 0.46, 1)
+		iter_9_1:GetComponent(typeof(Image)).color = var_9_0 and Color.New(1, 1, 1, 1) or Color.New(0.46, 0.46, 0.46, 1)
 
-		onButton(slot0, slot5, function ()
-			if uv0 then
-				uv1:OpenBook(uv2)
+		onButton(arg_9_0, iter_9_1, function()
+			if var_9_0 then
+				arg_9_0:OpenBook(iter_9_0)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("towerclimbing_book_tip"))
 			end
 		end, SFX_PANEL)
 	end
 
-	slot0:UpdateTip()
+	arg_9_0:UpdateTip()
 end
 
-function slot0.UpdateTip(slot0)
-	for slot4, slot5 in ipairs(slot0.books) do
-		setActive(slot5:Find("tip"), slot0:GetAwardState(slot4) == uv0)
+function var_0_0.UpdateTip(arg_11_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.books) do
+		local var_11_0 = arg_11_0:GetAwardState(iter_11_0) == var_0_3
+
+		setActive(iter_11_1:Find("tip"), var_11_0)
 	end
 end
 
-function slot0.OpenBook(slot0, slot1)
-	slot0.isOpenBook = true
+function var_0_0.OpenBook(arg_12_0, arg_12_1)
+	arg_12_0.isOpenBook = true
 
-	setActive(slot0.bookContainer, false)
-	setActive(slot0.book, true)
-	setActive(slot0.book:Find("1"), slot1 == 1)
-	setActive(slot0.book:Find("2"), slot1 == 2)
-	setActive(slot0.book:Find("3"), slot1 == 3)
+	setActive(arg_12_0.bookContainer, false)
+	setActive(arg_12_0.book, true)
+	setActive(arg_12_0.book:Find("1"), arg_12_1 == 1)
+	setActive(arg_12_0.book:Find("2"), arg_12_1 == 2)
+	setActive(arg_12_0.book:Find("3"), arg_12_1 == 3)
 
-	slot2 = slot0.config[slot1][1]
+	local var_12_0 = arg_12_0.config[arg_12_1][1]
 
-	onButton(slot0, slot0.nextPageBtn, function ()
-		setActive(uv0.nextPageBtn, false)
-		setActive(uv0.prevPageBtn, true)
-		uv0:UpdatePage(uv2, _.slice(uv1, 4, 2), 3)
+	onButton(arg_12_0, arg_12_0.nextPageBtn, function()
+		setActive(arg_12_0.nextPageBtn, false)
+		setActive(arg_12_0.prevPageBtn, true)
+
+		local var_13_0 = _.slice(var_12_0, 4, 2)
+
+		arg_12_0:UpdatePage(arg_12_1, var_13_0, 3)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.prevPageBtn, function ()
-		setActive(uv0.nextPageBtn, true)
-		setActive(uv0.prevPageBtn, false)
-		uv0:UpdatePage(uv2, _.slice(uv1, 1, 3), 0)
+	onButton(arg_12_0, arg_12_0.prevPageBtn, function()
+		setActive(arg_12_0.nextPageBtn, true)
+		setActive(arg_12_0.prevPageBtn, false)
+
+		local var_14_0 = _.slice(var_12_0, 1, 3)
+
+		arg_12_0:UpdatePage(arg_12_1, var_14_0, 0)
 	end, SFX_PANEL)
-	setActive(slot0.getBtn, slot0:GetAwardState(slot1) == uv0)
-	setActive(slot0.gotBtn, slot3 == uv1)
-	setActive(slot0.goBtn, slot3 == uv2)
-	onButton(slot0, slot0.getBtn, function ()
-		uv0:emit(TowerClimbingCollectionMediator.ON_GET, uv1)
+
+	local var_12_1 = arg_12_0:GetAwardState(arg_12_1)
+
+	setActive(arg_12_0.getBtn, var_12_1 == var_0_3)
+	setActive(arg_12_0.gotBtn, var_12_1 == var_0_4)
+	setActive(arg_12_0.goBtn, var_12_1 == var_0_2)
+	onButton(arg_12_0, arg_12_0.getBtn, function()
+		arg_12_0:emit(TowerClimbingCollectionMediator.ON_GET, arg_12_1)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.goBtn, function ()
+	onButton(arg_12_0, arg_12_0.goBtn, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("towerclimbing_reward_tip"))
 	end, SFX_PANEL)
-	triggerButton(slot0.prevPageBtn)
+	triggerButton(arg_12_0.prevPageBtn)
 end
 
-function slot0.UpdatePage(slot0, slot1, slot2, slot3)
-	slot0.scoreList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			GetImageSpriteFromAtlasAsync("TowerClimbingCollectionIcon/" .. uv1 .. "_" .. slot1 + 1 + uv2, "", slot2:Find("icon"))
-			setActive(slot2:Find("lock"), not uv3(uv4, uv1, uv0[slot1 + 1]))
+function var_0_0.UpdatePage(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	arg_17_0.scoreList:make(function(arg_18_0, arg_18_1, arg_18_2)
+		if arg_18_0 == UIItemList.EventUpdate then
+			local var_18_0 = arg_17_2[arg_18_1 + 1]
+			local var_18_1 = "TowerClimbingCollectionIcon/" .. arg_17_1 .. "_" .. arg_18_1 + 1 + arg_17_3
+
+			GetImageSpriteFromAtlasAsync(var_18_1, "", arg_18_2:Find("icon"))
+			setActive(arg_18_2:Find("lock"), not var_0_1(arg_17_0, arg_17_1, var_18_0))
 		end
 	end)
-	slot0.scoreList:align(#slot2)
+	arg_17_0.scoreList:align(#arg_17_2)
 end
 
-function slot0.CloseBook(slot0)
-	slot0.isOpenBook = false
+function var_0_0.CloseBook(arg_19_0)
+	arg_19_0.isOpenBook = false
 
-	setActive(slot0.bookContainer, true)
-	setActive(slot0.book, false)
+	setActive(arg_19_0.bookContainer, true)
+	setActive(arg_19_0.book, false)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.parent)
+function var_0_0.willExit(arg_20_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_20_0._tf, arg_20_0.parent)
 end
 
-return slot0
+return var_0_0

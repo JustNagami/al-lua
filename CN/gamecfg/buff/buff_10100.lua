@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				rant = 2000,
+				time = 10,
+				skill_id = 10100,
+				target = "TargetSelf",
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		desc = "主炮射击时有20%几率触发，自身机动属性提升60.0%，持续15秒",
 		addition = {
@@ -69,22 +86,5 @@ return {
 	stack = 1,
 	id = 10100,
 	icon = 10100,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				rant = 2000,
-				time = 10,
-				skill_id = 10100,
-				target = "TargetSelf",
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

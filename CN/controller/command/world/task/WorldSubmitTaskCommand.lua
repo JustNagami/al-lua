@@ -1,104 +1,112 @@
-slot0 = class("WorldSubmitTaskCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldSubmitTaskCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = nowWorld()
-	slot5 = slot4:GetInventoryProxy()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().taskId
+	local var_1_1 = nowWorld()
+	local var_1_2 = var_1_1:GetInventoryProxy()
+	local var_1_3 = var_1_1:GetTaskProxy()
+	local var_1_4 = var_1_3:getTaskById(var_1_0)
 
-	if not slot4:GetTaskProxy():getTaskById(slot1:getBody().taskId) then
+	if not var_1_4 then
 		return
 	end
 
-	table.insert({}, function (slot0)
-		slot1, slot2 = uv0:canSubmit()
+	local var_1_5 = {}
 
-		if slot1 then
-			slot0()
+	table.insert(var_1_5, function(arg_2_0)
+		local var_2_0, var_2_1 = var_1_4:canSubmit()
+
+		if var_2_0 then
+			arg_2_0()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(slot2)
+			pg.TipsMgr.GetInstance():ShowTips(var_2_1)
 		end
 	end)
 
-	slot9 = slot7.config.complete_condition == WorldConst.TaskTypeSubmitItem and slot7.config.item_retrieve == 1
+	local var_1_6 = var_1_4.config.complete_condition == WorldConst.TaskTypeSubmitItem and var_1_4.config.item_retrieve == 1
 
-	if not slot7:IsAutoSubmit() and slot9 then
-		table.insert(slot8, function (slot0)
+	if not var_1_4:IsAutoSubmit() and var_1_6 then
+		table.insert(var_1_5, function(arg_3_0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("sub_item_warning"),
 				items = {
 					{
 						type = DROP_TYPE_WORLD_ITEM,
-						id = uv0.config.complete_parameter[1],
-						count = uv0:getMaxProgress()
+						id = var_1_4.config.complete_parameter[1],
+						count = var_1_4:getMaxProgress()
 					}
 				},
-				onYes = slot0
+				onYes = arg_3_0
 			})
 		end)
 	end
 
-	seriesAsync(slot8, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
+	seriesAsync(var_1_5, function()
+		pg.ConnectionMgr.GetInstance():Send(33207, {
+			taskId = var_1_0
+		}, 33208, function(arg_5_0)
+			if arg_5_0.result == 0 then
+				local function var_5_0(arg_6_0, arg_6_1, arg_6_2)
+					local var_6_0 = getProxy(BayProxy)
+					local var_6_1 = {}
+					local var_6_2 = {}
+					local var_6_3 = arg_6_0:GetShipVOs()
 
-		slot0:Send(33207, {
-			taskId = uv0
-		}, 33208, function (slot0)
-			if slot0.result == 0 then
-				function slot1(slot0, slot1, slot2)
-					slot3 = getProxy(BayProxy)
-					slot4 = {}
-					slot5 = {}
+					for iter_6_0, iter_6_1 in ipairs(var_6_3) do
+						table.insert(var_6_1, iter_6_1)
 
-					for slot10, slot11 in ipairs(slot0:GetShipVOs()) do
-						table.insert(slot4, slot11)
+						local var_6_4 = var_6_0:getShipById(iter_6_1.id)
 
-						slot12 = slot3:getShipById(slot11.id)
+						var_6_4:setIntimacy(var_6_4:getIntimacy() + arg_6_2)
+						var_6_4:addExp(arg_6_1)
+						var_6_0:updateShip(var_6_4)
 
-						slot12:setIntimacy(slot12:getIntimacy() + slot2)
-						slot12:addExp(slot1)
-						slot3:updateShip(slot12)
-						table.insert(slot5, WorldConst.FetchShipVO(slot11.id))
+						local var_6_5 = WorldConst.FetchShipVO(iter_6_1.id)
+
+						table.insert(var_6_2, var_6_5)
 					end
 
 					return {
-						oldships = slot4,
-						newships = slot5
+						oldships = var_6_1,
+						newships = var_6_2
 					}
 				end
 
-				slot2 = {}
-				slot3 = slot0.exp
-				slot4 = slot0.intimacy
+				local var_5_1 = {}
+				local var_5_2 = arg_5_0.exp
+				local var_5_3 = arg_5_0.intimacy
+				local var_5_4 = var_1_1:GetFleets()
 
-				for slot9, slot10 in pairs(uv0:GetFleets()) do
-					slot11 = slot1(slot10, slot3, slot4)
+				for iter_5_0, iter_5_1 in pairs(var_5_4) do
+					local var_5_5 = var_5_0(iter_5_1, var_5_2, var_5_3)
 
-					if slot3 > 0 then
-						table.insert(slot2, slot11)
+					if var_5_2 > 0 then
+						table.insert(var_5_1, var_5_5)
 					end
 				end
 
-				slot6 = PlayerConst.addTranDrop(slot0.drops)
+				local var_5_6 = PlayerConst.addTranDrop(arg_5_0.drops)
 
-				uv1:commited()
-				uv2:updateTask(uv1)
-				uv2:riseTaskFinishCount()
-				uv0:UpdateProgress(uv1.config.complete_stage)
+				var_1_4:commited()
+				var_1_3:updateTask(var_1_4)
+				var_1_3:riseTaskFinishCount()
+				var_1_1:UpdateProgress(var_1_4.config.complete_stage)
 
-				if uv3 then
-					uv4:RemoveItem(uv1.config.complete_parameter[1], uv1:getMaxProgress())
+				if var_1_6 then
+					var_1_2:RemoveItem(var_1_4.config.complete_parameter[1], var_1_4:getMaxProgress())
 				end
 
-				uv5:sendNotification(GAME.WORLD_SUMBMIT_TASK_DONE, {
-					task = uv1,
-					drops = slot6,
-					expfleets = slot2
+				arg_1_0:sendNotification(GAME.WORLD_SUMBMIT_TASK_DONE, {
+					task = var_1_4,
+					drops = var_5_6,
+					expfleets = var_5_1
 				})
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_5_0.result))
 			end
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

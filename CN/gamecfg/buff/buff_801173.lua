@@ -1,4 +1,37 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffHP",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				weaponType = 16,
+				target = "TargetSelf",
+				damageConvertRatio = 350,
+				victimTag = {
+					"MetaVampireskill"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -289,38 +322,5 @@ return {
 	stack = 1,
 	id = 801173,
 	icon = 801170,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffHP",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				weaponType = 16,
-				target = "TargetSelf",
-				damageConvertRatio = 350,
-				victimTag = {
-					"MetaVampireskill"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

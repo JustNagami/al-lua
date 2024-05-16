@@ -1,84 +1,93 @@
-slot0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
-slot0.MINI_GAME_SUCCESS = "BaseMiniGameMediator:MINI_GAME_SUCCESS"
-slot0.MINI_GAME_FAILURE = "BaseMiniGameMediator:MINI_GAME_FAILURE"
-slot0.MINI_GAME_OPERATOR = "BaseMiniGameMediator:MINI_GAME_OPERATOR"
-slot0.OPEN_SUB_LAYER = "BaseMiniGameMediator:OPEN_SUB_LAYER"
-slot0.MINI_GAME_COIN = "BaseMiniGameMediator:MINI_GAME_COIN"
-slot0.COIN_WINDOW_CHANGE = "BaseMiniGameMediator:COIN_WINDOW_CHANGE"
-slot0.GAME_FINISH_TRACKING = "BaseMiniGameMediator:GAME_FINISH_TRACKING"
+﻿local var_0_0 = class("BaseMiniGameMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.miniGameId = slot0.contextData.miniGameId
-	slot0.miniGameProxy = getProxy(MiniGameProxy)
+var_0_0.MINI_GAME_SUCCESS = "BaseMiniGameMediator:MINI_GAME_SUCCESS"
+var_0_0.MINI_GAME_FAILURE = "BaseMiniGameMediator:MINI_GAME_FAILURE"
+var_0_0.MINI_GAME_OPERATOR = "BaseMiniGameMediator:MINI_GAME_OPERATOR"
+var_0_0.OPEN_SUB_LAYER = "BaseMiniGameMediator:OPEN_SUB_LAYER"
+var_0_0.MINI_GAME_COIN = "BaseMiniGameMediator:MINI_GAME_COIN"
+var_0_0.COIN_WINDOW_CHANGE = "BaseMiniGameMediator:COIN_WINDOW_CHANGE"
+var_0_0.GAME_FINISH_TRACKING = "BaseMiniGameMediator:GAME_FINISH_TRACKING"
 
-	slot0.viewComponent:SetMGData(slot0.miniGameProxy:GetMiniGameData(slot0.miniGameId))
-	slot0.viewComponent:SetMGHubData(slot0.miniGameProxy:GetHubByGameId(slot0.miniGameId))
-	slot0.miniGameProxy:RequestInitData(slot0.miniGameId)
+function var_0_0.register(arg_1_0)
+	arg_1_0.miniGameId = arg_1_0.contextData.miniGameId
+	arg_1_0.miniGameProxy = getProxy(MiniGameProxy)
 
-	slot0.gameRoomId = pg.mini_game[slot0.miniGameId].game_room
+	local var_1_0 = arg_1_0.miniGameProxy:GetHubByGameId(arg_1_0.miniGameId)
+	local var_1_1 = arg_1_0.miniGameProxy:GetMiniGameData(arg_1_0.miniGameId)
 
-	if slot0.gameRoomId and slot0.gameRoomId > 0 then
-		slot0.gameRoomData = pg.game_room_template[slot0.gameRoomId]
-		slot0.gameRoonCoinCount = 0
+	arg_1_0.viewComponent:SetMGData(var_1_1)
+	arg_1_0.viewComponent:SetMGHubData(var_1_0)
+	arg_1_0.miniGameProxy:RequestInitData(arg_1_0.miniGameId)
 
-		slot0.viewComponent:setGameRoomData(slot0.gameRoomData)
+	arg_1_0.gameRoomId = pg.mini_game[arg_1_0.miniGameId].game_room
+
+	if arg_1_0.gameRoomId and arg_1_0.gameRoomId > 0 then
+		arg_1_0.gameRoomData = pg.game_room_template[arg_1_0.gameRoomId]
+		arg_1_0.gameRoonCoinCount = 0
+
+		arg_1_0.viewComponent:setGameRoomData(arg_1_0.gameRoomData)
 	end
 
-	slot0:bind(BaseMiniGameMediator.MINI_GAME_SUCCESS, function (slot0, ...)
-		uv0:OnMiniGameSuccess(...)
+	arg_1_0:bind(BaseMiniGameMediator.MINI_GAME_SUCCESS, function(arg_2_0, ...)
+		arg_1_0:OnMiniGameSuccess(...)
 	end)
-	slot0:bind(BaseMiniGameMediator.MINI_GAME_FAILURE, function (slot0, ...)
-		uv0:OnMiniGameFailure(...)
+	arg_1_0:bind(BaseMiniGameMediator.MINI_GAME_FAILURE, function(arg_3_0, ...)
+		arg_1_0:OnMiniGameFailure(...)
 	end)
-	slot0:bind(BaseMiniGameMediator.MINI_GAME_OPERATOR, function (slot0, ...)
-		uv0:OnMiniGameOPeration(...)
+	arg_1_0:bind(BaseMiniGameMediator.MINI_GAME_OPERATOR, function(arg_4_0, ...)
+		arg_1_0:OnMiniGameOPeration(...)
 	end)
-	slot0:bind(BaseMiniGameMediator.OPEN_SUB_LAYER, function (slot0, slot1)
-		uv0:addSubLayers(Context.New(slot1))
+	arg_1_0:bind(BaseMiniGameMediator.OPEN_SUB_LAYER, function(arg_5_0, arg_5_1)
+		local var_5_0 = Context.New(arg_5_1)
+
+		arg_1_0:addSubLayers(var_5_0)
 	end)
-	slot0:bind(BaseMiniGameMediator.MINI_GAME_COIN, function (slot0, ...)
-		uv0:loadCoinLayer()
+	arg_1_0:bind(BaseMiniGameMediator.MINI_GAME_COIN, function(arg_6_0, ...)
+		arg_1_0:loadCoinLayer()
 	end)
-	slot0:bind(BaseMiniGameMediator.COIN_WINDOW_CHANGE, function (slot0, slot1)
-		uv0:sendNotification(GameRoomCoinMediator.CHANGE_VISIBLE, slot1)
+	arg_1_0:bind(BaseMiniGameMediator.COIN_WINDOW_CHANGE, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GameRoomCoinMediator.CHANGE_VISIBLE, arg_7_1)
 	end)
-	slot0:bind(BaseMiniGameMediator.GAME_FINISH_TRACKING, function (slot0, slot1)
-		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot1.hub_id,
+	arg_1_0:bind(BaseMiniGameMediator.GAME_FINISH_TRACKING, function(arg_8_0, arg_8_1)
+		arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_8_1.hub_id,
 			cmd = MiniGameOPCommand.CMD_PLAY,
 			args1 = {
-				slot1.game_id,
-				slot1.isComplete
+				arg_8_1.game_id,
+				arg_8_1.isComplete
 			}
 		})
 	end)
 end
 
-function slot0.onUIAvalible(slot0)
-	if slot0.gameRoomData and slot0.gameRoomData.add_base > 0 then
-		slot0:loadCoinLayer()
+function var_0_0.onUIAvalible(arg_9_0)
+	if arg_9_0.gameRoomData and arg_9_0.gameRoomData.add_base > 0 then
+		arg_9_0:loadCoinLayer()
 	end
 end
 
-function slot0.loadCoinLayer(slot0)
-	slot0.viewComponent:setCoinLayer()
-	slot0:addSubLayers(Context.New({
+function var_0_0.loadCoinLayer(arg_10_0)
+	arg_10_0.viewComponent:setCoinLayer()
+	arg_10_0:addSubLayers(Context.New({
 		mediator = GameRoomCoinMediator,
 		viewComponent = GameRoomCoinLayer,
-		data = slot0.gameRoomData
+		data = arg_10_0.gameRoomData
 	}))
 end
 
-function slot0.OnMiniGameOPeration(slot0, ...)
+function var_0_0.OnMiniGameOPeration(arg_11_0, ...)
+	return
 end
 
-function slot0.OnMiniGameSuccess(slot0, ...)
+function var_0_0.OnMiniGameSuccess(arg_12_0, ...)
+	return
 end
 
-function slot0.OnMiniGameFailure(slot0, ...)
+function var_0_0.OnMiniGameFailure(arg_13_0, ...)
+	return
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_14_0)
 	return {
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
 		GAME.SEND_MINI_GAME_OP_DONE,
@@ -90,44 +99,49 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1:getName()
+	local var_15_1 = arg_15_1:getBody()
 
-	if slot1:getName() == MiniGameProxy.ON_HUB_DATA_UPDATE then
-		slot0.viewComponent:SetMGHubData(slot3)
-	elseif slot2 == GAME.SEND_MINI_GAME_OP_DONE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	if var_15_0 == MiniGameProxy.ON_HUB_DATA_UPDATE then
+		arg_15_0.viewComponent:SetMGHubData(var_15_1)
+	elseif var_15_0 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var_15_2 = {
+			function(arg_16_0)
+				local var_16_0 = var_15_1.awards
+
+				if #var_16_0 > 0 then
+					arg_15_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_16_0, arg_16_0)
 				else
-					slot0()
+					arg_16_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:OnGetAwardDone(uv1)
-				slot0()
+			function(arg_17_0)
+				arg_15_0.viewComponent:OnGetAwardDone(var_15_1)
+				arg_17_0()
 			end
-		})
-		slot0.viewComponent:OnSendMiniGameOPDone(slot3)
-	elseif slot2 == GAME.MODIFY_MINI_GAME_DATA_DONE then
-		slot0.viewComponent:OnModifyMiniGameDataDone(slot3)
-	elseif slot2 == GAME.ON_APPLICATION_PAUSE then
-		slot0.viewComponent:OnApplicationPaused(slot3)
-	elseif slot2 == GAME.GAME_COIN_COUNT_CHANGE then
-		slot0.gameRoonCoinCount = slot3
-	elseif slot2 == GAME.GAME_ROOM_AWARD_DONE then
-		if #slot3 > 0 then
-			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3)
-			slot0.viewComponent:OnGetAwardDone(slot3)
+		}
+
+		seriesAsync(var_15_2)
+		arg_15_0.viewComponent:OnSendMiniGameOPDone(var_15_1)
+	elseif var_15_0 == GAME.MODIFY_MINI_GAME_DATA_DONE then
+		arg_15_0.viewComponent:OnModifyMiniGameDataDone(var_15_1)
+	elseif var_15_0 == GAME.ON_APPLICATION_PAUSE then
+		arg_15_0.viewComponent:OnApplicationPaused(var_15_1)
+	elseif var_15_0 == GAME.GAME_COIN_COUNT_CHANGE then
+		arg_15_0.gameRoonCoinCount = var_15_1
+	elseif var_15_0 == GAME.GAME_ROOM_AWARD_DONE then
+		if #var_15_1 > 0 then
+			arg_15_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_15_1)
+			arg_15_0.viewComponent:OnGetAwardDone(var_15_1)
 		end
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+	elseif var_15_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
 		if getProxy(ContextProxy):getContextByMediator(ActivityMediator) then
 			return
 		end
 
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+		arg_15_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_15_1.awards, var_15_1.callback)
 	end
 end
 
-return slot0
+return var_0_0

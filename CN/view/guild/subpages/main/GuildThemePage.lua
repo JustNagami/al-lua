@@ -1,526 +1,560 @@
-slot0 = class("GuildThemePage", import("...base.GuildBasePage"))
+﻿local var_0_0 = class("GuildThemePage", import("...base.GuildBasePage"))
 
-function slot0.getTargetUI(slot0)
+function var_0_0.getTargetUI(arg_1_0)
 	return "GuildThemeBlueUI", "GuildThemeRedUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0.chatBtn = slot0:findTF("chat_bg")
-	slot0.chatBtnTip = slot0.chatBtn:Find("tip")
-	slot0.chatBtnTipCnt = slot0.chatBtn:Find("tip/Text"):GetComponent(typeof(Text))
-	slot0.chatPanel = slot0:findTF("chat_frame")
-	slot0.chatCloseBtn = slot0.chatPanel:Find("close")
-	slot0.bottomPanel = slot0:findTF("bottom")
-	slot0.battleEvent = slot0:findTF("bottom/battle_event")
-	slot0.battleEventTip = slot0.battleEvent:Find("tip")
-	slot0.battleEventTipCnt = slot0.battleEventTip:Find("Text"):GetComponent(typeof(Text))
-	slot0.battleReport = slot0:findTF("bottom/battle_report")
-	slot0.battleReportTip = slot0.battleReport:Find("tip")
-	slot0.battleReportCnt = slot0.battleReportTip:Find("Text"):GetComponent(typeof(Text))
-	slot0.shopBtn = slot0:findTF("bottom/battle_shop")
-	slot0.nameTxt = slot0:findTF("top/name/Text"):GetComponent(typeof(Text))
-	slot0.modifyBtn = slot0:findTF("top/name")
-	slot0.levelImg = slot0:findTF("top/level/Text"):GetComponent(typeof(Text))
-	slot0.factionTxt = slot0:findTF("top/policy/label"):GetComponent(typeof(Text))
-	slot0.policyTxt = slot0:findTF("top/policy/Text"):GetComponent(typeof(Text))
-	slot0.idTxt = slot0:findTF("top/id/Text"):GetComponent(typeof(Text))
-	slot0.numberTxt = slot0:findTF("top/id/number"):GetComponent(typeof(Text))
-	slot0.expImg = slot0:findTF("top/exp/bar")
-	slot0.levelTxt = slot0:findTF("top/exp/lv/Text"):GetComponent(typeof(Text))
-	slot1 = 300
-	slot0.topPanelWidth = slot0.top.rect.height
-	slot0.bottomPanelWidth = -165
-	slot0.chatPanelWidth = slot0.chatPanel.rect.width + slot1
-	slot0.chatBtnWidth = slot0.chatBtn.rect.width + slot1
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0.chatBtn = arg_2_0:findTF("chat_bg")
+	arg_2_0.chatBtnTip = arg_2_0.chatBtn:Find("tip")
+	arg_2_0.chatBtnTipCnt = arg_2_0.chatBtn:Find("tip/Text"):GetComponent(typeof(Text))
+	arg_2_0.chatPanel = arg_2_0:findTF("chat_frame")
+	arg_2_0.chatCloseBtn = arg_2_0.chatPanel:Find("close")
+	arg_2_0.bottomPanel = arg_2_0:findTF("bottom")
+	arg_2_0.battleEvent = arg_2_0:findTF("bottom/battle_event")
+	arg_2_0.battleEventTip = arg_2_0.battleEvent:Find("tip")
+	arg_2_0.battleEventTipCnt = arg_2_0.battleEventTip:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.battleReport = arg_2_0:findTF("bottom/battle_report")
+	arg_2_0.battleReportTip = arg_2_0.battleReport:Find("tip")
+	arg_2_0.battleReportCnt = arg_2_0.battleReportTip:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.shopBtn = arg_2_0:findTF("bottom/battle_shop")
+	arg_2_0.nameTxt = arg_2_0:findTF("top/name/Text"):GetComponent(typeof(Text))
+	arg_2_0.modifyBtn = arg_2_0:findTF("top/name")
+	arg_2_0.levelImg = arg_2_0:findTF("top/level/Text"):GetComponent(typeof(Text))
+	arg_2_0.factionTxt = arg_2_0:findTF("top/policy/label"):GetComponent(typeof(Text))
+	arg_2_0.policyTxt = arg_2_0:findTF("top/policy/Text"):GetComponent(typeof(Text))
+	arg_2_0.idTxt = arg_2_0:findTF("top/id/Text"):GetComponent(typeof(Text))
+	arg_2_0.numberTxt = arg_2_0:findTF("top/id/number"):GetComponent(typeof(Text))
+	arg_2_0.expImg = arg_2_0:findTF("top/exp/bar")
+	arg_2_0.levelTxt = arg_2_0:findTF("top/exp/lv/Text"):GetComponent(typeof(Text))
 
-	setAnchoredPosition(slot0.chatPanel, {
-		x = slot0.chatPanelWidth
+	local var_2_0 = 300
+
+	arg_2_0.topPanelWidth = arg_2_0.top.rect.height
+	arg_2_0.bottomPanelWidth = -165
+	arg_2_0.chatPanelWidth = arg_2_0.chatPanel.rect.width + var_2_0
+	arg_2_0.chatBtnWidth = arg_2_0.chatBtn.rect.width + var_2_0
+
+	setAnchoredPosition(arg_2_0.chatPanel, {
+		x = arg_2_0.chatPanelWidth
 	})
-	setAnchoredPosition(slot0.chatBtn, {
+	setAnchoredPosition(arg_2_0.chatBtn, {
 		x = 0
 	})
 
-	slot0.modifyPage = GuildModifitonPage.New(slot0._tf, slot0.event)
-	slot0.chatBubbles = {}
+	arg_2_0.modifyPage = GuildModifitonPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.chatBubbles = {}
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.battleEvent, function ()
-		triggerToggle(uv0.contextData.toggles[GuildMainScene.TOGGLE_TAG[6]], true)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.battleEvent, function()
+		local var_4_0 = arg_3_0.contextData.toggles[GuildMainScene.TOGGLE_TAG[6]]
+
+		triggerToggle(var_4_0, true)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleReport, function ()
-		uv0:emit(GuildMainMediator.OPEN_EVENT_REPORT)
+	onButton(arg_3_0, arg_3_0.battleReport, function()
+		arg_3_0:emit(GuildMainMediator.OPEN_EVENT_REPORT)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.shopBtn, function ()
-		uv0:emit(GuildMainMediator.OPEN_SHOP)
+	onButton(arg_3_0, arg_3_0.shopBtn, function()
+		arg_3_0:emit(GuildMainMediator.OPEN_SHOP)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.chatBtn, function ()
-		uv0:InitChatWindow()
-		uv0:ShowOrHideChatWindow(true)
+	onButton(arg_3_0, arg_3_0.chatBtn, function()
+		arg_3_0:InitChatWindow()
+		arg_3_0:ShowOrHideChatWindow(true)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.chatCloseBtn, function ()
+	onButton(arg_3_0, arg_3_0.chatCloseBtn, function()
 		getProxy(GuildProxy):ClearNewChatMsgCnt()
-		uv0:UpdateChatBtn()
-		uv0:ShowOrHideChatWindow(false)
+		arg_3_0:UpdateChatBtn()
+		arg_3_0:ShowOrHideChatWindow(false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.modifyBtn, function ()
-		uv0.modifyPage:ExecuteAction("Show", uv0.guildVO, uv0.playerVO)
+	onButton(arg_3_0, arg_3_0.modifyBtn, function()
+		arg_3_0.modifyPage:ExecuteAction("Show", arg_3_0.guildVO, arg_3_0.playerVO)
 	end, SFX_PANEL)
 end
 
-function slot0.Update(slot0, slot1, slot2, slot3)
-	slot0:UpdateData(slot1, slot2, slot3)
-	slot0:UpdateMainInfo()
-	slot0:UpdateChatBtn()
-	slot0:UpdateBattleBtn()
-	slot0:Show()
+function var_0_0.Update(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	arg_10_0:UpdateData(arg_10_1, arg_10_2, arg_10_3)
+	arg_10_0:UpdateMainInfo()
+	arg_10_0:UpdateChatBtn()
+	arg_10_0:UpdateBattleBtn()
+	arg_10_0:Show()
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_11_0)
 	return {
 		showType = PlayerResUI.TYPE_ALL
 	}
 end
 
-function slot0.UpdateData(slot0, slot1, slot2, slot3)
-	slot0:UpdateGuild(slot1)
+function var_0_0.UpdateData(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	arg_12_0:UpdateGuild(arg_12_1)
 
-	slot0.playerVO = slot2
-	slot0.chatMsgs = slot3
-	slot0.isAdmin = slot1:IsAdministrator()
+	arg_12_0.playerVO = arg_12_2
+	arg_12_0.chatMsgs = arg_12_3
+	arg_12_0.isAdmin = arg_12_1:IsAdministrator()
 end
 
-function slot0.UpdateGuild(slot0, slot1)
-	slot0.guildVO = slot1
+function var_0_0.UpdateGuild(arg_13_0, arg_13_1)
+	arg_13_0.guildVO = arg_13_1
 end
 
-function slot0.RefreshReportBtn(slot0)
-	slot0:UpdateBattleBtn()
+function var_0_0.RefreshReportBtn(arg_14_0)
+	arg_14_0:UpdateBattleBtn()
 end
 
-function slot0.UpdateBattleBtn(slot0)
-	setActive(slot0.battleEvent, slot0.guildVO:GetActiveEvent() ~= nil)
-	setActive(slot0.battleEventTip, false)
+function var_0_0.UpdateBattleBtn(arg_15_0)
+	local var_15_0 = getProxy(GuildProxy):GetReports()
 
-	slot4 = #_.select(_.values(getProxy(GuildProxy):GetReports()), function (slot0)
-		return slot0:CanSubmit()
-	end) > 0 and not slot0.guildVO:getMemberById(slot0.playerVO.id):IsRecruit()
+	setActive(arg_15_0.battleEvent, arg_15_0.guildVO:GetActiveEvent() ~= nil)
+	setActive(arg_15_0.battleEventTip, false)
 
-	setActive(slot0.battleReport, slot4)
-	setActive(slot0.battleReportTip, slot4)
+	local var_15_1 = arg_15_0.guildVO:getMemberById(arg_15_0.playerVO.id)
+	local var_15_2 = _.select(_.values(var_15_0), function(arg_16_0)
+		return arg_16_0:CanSubmit()
+	end)
+	local var_15_3 = #var_15_2 > 0 and not var_15_1:IsRecruit()
 
-	if slot4 then
-		slot0.battleReportCnt.text = #slot3
+	setActive(arg_15_0.battleReport, var_15_3)
+	setActive(arg_15_0.battleReportTip, var_15_3)
+
+	if var_15_3 then
+		arg_15_0.battleReportCnt.text = #var_15_2
 	end
 end
 
-function slot0.UpdateChatBtn(slot0)
-	slot2 = getProxy(GuildProxy):GetNewChatMsgCnt() > 0
+function var_0_0.UpdateChatBtn(arg_17_0)
+	local var_17_0 = getProxy(GuildProxy):GetNewChatMsgCnt()
+	local var_17_1 = var_17_0 > 0
 
-	setActive(slot0.chatBtnTip, slot2)
+	setActive(arg_17_0.chatBtnTip, var_17_1)
 
-	if slot2 then
-		slot0.chatBtnTipCnt.text = slot1
+	if var_17_1 then
+		arg_17_0.chatBtnTipCnt.text = var_17_0
 	end
 end
 
-function slot0.InitChatWindow(slot0)
-	if slot0.isInitChatWindow then
+function var_0_0.InitChatWindow(arg_18_0)
+	if arg_18_0.isInitChatWindow then
 		return
 	end
 
-	slot0.isInitChatWindow = true
-	slot0.noticeTxt = slot0.chatPanel:Find("log/notice/InputField"):GetComponent(typeof(InputField))
-	slot0.noticeMask = slot0.chatPanel:Find("log/notice/mask")
-	slot0.noticeScrollTxt = slot0.chatPanel:Find("log/notice/mask/label"):GetComponent(typeof(ScrollText))
-	slot0.logContent = slot0.chatPanel:Find("log/content/viewport/list")
-	slot0.prefabPublic = slot0:getTpl("tpl", slot0.logContent)
-	slot0.chatRect = slot0.chatPanel:Find("bottom/list")
-	slot0.chatContent = slot0.chatPanel:Find("bottom/list/content")
-	slot0.prefabOthers = slot0.chatPanel:Find("bottom/list/popo_other")
-	slot0.prefabSelf = slot0.chatPanel:Find("bottom/list/popo_self")
-	slot0.prefabWorldboss = slot0.chatPanel:Find("bottom/list/popo_worldboss")
-	slot0.sendBtn = slot0.chatPanel:Find("bottom/bottom/send")
-	slot0.msgInput = slot0.chatPanel:Find("bottom/bottom/input"):GetComponent(typeof(InputField))
-	slot0.emojiBtn = slot0.chatPanel:Find("bottom/bottom/emoji")
-	slot0.newMsgTip = slot0.chatPanel:Find("bottom/bottom/tip")
+	arg_18_0.isInitChatWindow = true
+	arg_18_0.noticeTxt = arg_18_0.chatPanel:Find("log/notice/InputField"):GetComponent(typeof(InputField))
+	arg_18_0.noticeMask = arg_18_0.chatPanel:Find("log/notice/mask")
+	arg_18_0.noticeScrollTxt = arg_18_0.chatPanel:Find("log/notice/mask/label"):GetComponent(typeof(ScrollText))
+	arg_18_0.logContent = arg_18_0.chatPanel:Find("log/content/viewport/list")
+	arg_18_0.prefabPublic = arg_18_0:getTpl("tpl", arg_18_0.logContent)
+	arg_18_0.chatRect = arg_18_0.chatPanel:Find("bottom/list")
+	arg_18_0.chatContent = arg_18_0.chatPanel:Find("bottom/list/content")
+	arg_18_0.prefabOthers = arg_18_0.chatPanel:Find("bottom/list/popo_other")
+	arg_18_0.prefabSelf = arg_18_0.chatPanel:Find("bottom/list/popo_self")
+	arg_18_0.prefabWorldboss = arg_18_0.chatPanel:Find("bottom/list/popo_worldboss")
+	arg_18_0.sendBtn = arg_18_0.chatPanel:Find("bottom/bottom/send")
+	arg_18_0.msgInput = arg_18_0.chatPanel:Find("bottom/bottom/input"):GetComponent(typeof(InputField))
+	arg_18_0.emojiBtn = arg_18_0.chatPanel:Find("bottom/bottom/emoji")
+	arg_18_0.newMsgTip = arg_18_0.chatPanel:Find("bottom/bottom/tip")
 
-	onButton(slot0, slot0.sendBtn, function ()
-		if wordVer(uv0.msgInput.text) > 0 then
+	onButton(arg_18_0, arg_18_0.sendBtn, function()
+		local var_19_0 = arg_18_0.msgInput.text
+
+		if wordVer(var_19_0) > 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("playerinfo_mask_word"))
 
 			return
 		end
 
-		if slot0 == "" then
+		if var_19_0 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_msg_is_null"))
 
 			return
 		end
 
-		if uv0.chatTimer and pg.TimeMgr.GetInstance():GetServerTime() - uv0.chatTimer < 5 then
+		if arg_18_0.chatTimer and pg.TimeMgr.GetInstance():GetServerTime() - arg_18_0.chatTimer < 5 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dont_send_message_frequently"))
 
 			return
 		end
 
-		uv0.chatTimer = pg.TimeMgr.GetInstance():GetServerTime()
+		arg_18_0.chatTimer = pg.TimeMgr.GetInstance():GetServerTime()
 
-		uv0:emit(GuildMainMediator.SEND_MSG, slot0)
+		arg_18_0:emit(GuildMainMediator.SEND_MSG, var_19_0)
 
-		uv0.msgInput.text = ""
+		arg_18_0.msgInput.text = ""
 	end, SFX_PANEL)
-	onButton(slot0, slot0.emojiBtn, function ()
-		slot0 = uv0.emojiBtn.position
+	onButton(arg_18_0, arg_18_0.emojiBtn, function()
+		local var_20_0 = arg_18_0.emojiBtn.position
 
-		uv0:emit(GuildMainMediator.OPEN_EMOJI, Vector3(slot0.x, slot0.y, 0), function (slot0)
-			uv0:emit(GuildMainMediator.SEND_MSG, string.gsub(ChatConst.EmojiCode, "code", slot0))
+		arg_18_0:emit(GuildMainMediator.OPEN_EMOJI, Vector3(var_20_0.x, var_20_0.y, 0), function(arg_21_0)
+			arg_18_0:emit(GuildMainMediator.SEND_MSG, string.gsub(ChatConst.EmojiCode, "code", arg_21_0))
 		end)
 	end, SFX_PANEL)
-	GetOrAddComponent(slot0.chatRect, typeof(EventTriggerListener)):AddDragEndFunc(function (slot0, slot1)
-		if GetComponent(uv0.chatRect, typeof(ScrollRect)).normalizedPosition.y <= 0.1 then
-			uv0:ClearChatTip()
+	GetOrAddComponent(arg_18_0.chatRect, typeof(EventTriggerListener)):AddDragEndFunc(function(arg_22_0, arg_22_1)
+		if GetComponent(arg_18_0.chatRect, typeof(ScrollRect)).normalizedPosition.y <= 0.1 then
+			arg_18_0:ClearChatTip()
 		end
 	end)
-	slot0:UpdateChatWindow()
+	arg_18_0:UpdateChatWindow()
 
-	if slot0.isAdmin then
-		onInputEndEdit(slot0, slot0.noticeTxt.gameObject, function ()
-			slot0 = uv0.guildVO:GetAnnounce() or ""
+	if arg_18_0.isAdmin then
+		onInputEndEdit(arg_18_0, arg_18_0.noticeTxt.gameObject, function()
+			local var_23_0 = arg_18_0.guildVO:GetAnnounce() or ""
+			local var_23_1 = getInputText(arg_18_0.noticeTxt.gameObject)
 
-			if getInputText(uv0.noticeTxt.gameObject) == "" or slot1 == slot0 then
+			if var_23_1 == "" or var_23_1 == var_23_0 then
 				return
 			end
 
-			if wordVer(slot1) > 0 then
+			if wordVer(var_23_1) > 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("playerinfo_mask_word"))
-				setInputText(uv0.noticeTxt.gameObject, "")
+				setInputText(arg_18_0.noticeTxt.gameObject, "")
 
 				return
 			end
 
-			uv0.noticeScrollTxt:SetText(slot1)
-			uv0:emit(GuildMainMediator.MODIFY, 5, 0, slot1)
-			setInputText(uv0.noticeTxt.gameObject, "")
+			arg_18_0.noticeScrollTxt:SetText(var_23_1)
+			arg_18_0:emit(GuildMainMediator.MODIFY, 5, 0, var_23_1)
+			setInputText(arg_18_0.noticeTxt.gameObject, "")
 		end)
 	end
 
-	setButtonEnabled(slot0.noticeMask, slot0.isAdmin)
+	setButtonEnabled(arg_18_0.noticeMask, arg_18_0.isAdmin)
 end
 
-function slot0.UpdateChatWindow(slot0)
-	slot0:UpdateNotice()
-	slot0:UpdateAllLog(slot0.guildVO.logInfo)
-	slot0:UpdateAllChat(slot0.chatMsgs)
+function var_0_0.UpdateChatWindow(arg_24_0)
+	local var_24_0 = arg_24_0.guildVO
+
+	arg_24_0:UpdateNotice()
+
+	local var_24_1 = var_24_0.logInfo
+
+	arg_24_0:UpdateAllLog(var_24_1)
+
+	local var_24_2 = arg_24_0.chatMsgs
+
+	arg_24_0:UpdateAllChat(var_24_2)
 end
 
-function slot0.UpdateNotice(slot0)
-	slot0.noticeScrollTxt:SetText((not slot0.guildVO:GetAnnounce() or slot2 == "") and i18n("guild_not_exist_notifycation") or slot2)
+function var_0_0.UpdateNotice(arg_25_0)
+	local var_25_0 = arg_25_0.guildVO:GetAnnounce()
+	local var_25_1 = (not var_25_0 or var_25_0 == "") and i18n("guild_not_exist_notifycation") or var_25_0
+
+	arg_25_0.noticeScrollTxt:SetText(var_25_1)
 end
 
-function slot0.UpdateAllLog(slot0, slot1)
-	removeAllChildren(slot0.logContent)
+function var_0_0.UpdateAllLog(arg_26_0, arg_26_1)
+	removeAllChildren(arg_26_0.logContent)
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:AppendLog(slot6)
+	for iter_26_0, iter_26_1 in ipairs(arg_26_1) do
+		arg_26_0:AppendLog(iter_26_1)
 	end
 end
 
-function slot0.AppendLog(slot0, slot1, slot2)
-	if not slot0.isInitChatWindow then
+function var_0_0.AppendLog(arg_27_0, arg_27_1, arg_27_2)
+	if not arg_27_0.isInitChatWindow then
 		return
 	end
 
-	if slot0.logContent.childCount >= 200 then
-		slot0:emit(GuildMainMediator.ON_REBUILD_LOG_ALL)
+	if arg_27_0.logContent.childCount >= 200 then
+		arg_27_0:emit(GuildMainMediator.ON_REBUILD_LOG_ALL)
 	else
-		slot3 = cloneTplTo(slot0.prefabPublic, slot0.logContent)
+		local var_27_0 = cloneTplTo(arg_27_0.prefabPublic, arg_27_0.logContent)
 
-		if slot2 then
-			slot3:SetAsFirstSibling()
+		if arg_27_2 then
+			var_27_0:SetAsFirstSibling()
 		end
 
-		slot4 = slot3:Find("text"):GetComponent("RichText")
-		slot5 = slot3:Find("time"):GetComponent(typeof(Text))
-		slot6, slot7 = slot1:getConent()
+		local var_27_1 = var_27_0:Find("text"):GetComponent("RichText")
+		local var_27_2 = var_27_0:Find("time"):GetComponent(typeof(Text))
+		local var_27_3, var_27_4 = arg_27_1:getConent()
 
-		if slot1.cmd == GuildLogInfo.CMD_TYPE_GET_SHIP then
-			ChatProxy.InjectPublic(slot4, slot6, true)
+		if arg_27_1.cmd == GuildLogInfo.CMD_TYPE_GET_SHIP then
+			ChatProxy.InjectPublic(var_27_1, var_27_3, true)
 		else
-			slot4.text = slot6
+			var_27_1.text = var_27_3
 		end
 
-		slot5.text = slot7
+		var_27_2.text = var_27_4
 	end
 end
 
-function slot0.UpdateAllChat(slot0, slot1)
-	removeAllChildren(slot0.chatContent)
+function var_0_0.UpdateAllChat(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1 or {}
 
-	slot3 = {}
-	slot0.index = math.max(1, #(slot1 or {}) - GuildConst.CHAT_LOG_MAX_COUNT)
+	removeAllChildren(arg_28_0.chatContent)
 
-	for slot7 = slot0.index, #slot2 do
-		table.insert(slot3, function (slot0)
-			uv0:Append(uv1[uv2], -1, true)
-			slot0()
+	local var_28_1 = {}
+
+	arg_28_0.index = math.max(1, #var_28_0 - GuildConst.CHAT_LOG_MAX_COUNT)
+
+	for iter_28_0 = arg_28_0.index, #var_28_0 do
+		table.insert(var_28_1, function(arg_29_0)
+			arg_28_0:Append(var_28_0[iter_28_0], -1, true)
+			arg_29_0()
 		end)
 	end
 
-	seriesAsync(slot3, function ()
-		Timer.New(function ()
-			if not IsNil(uv0.chatContent) then
-				scrollToBottom(uv0.chatContent.parent)
+	seriesAsync(var_28_1, function()
+		Timer.New(function()
+			if not IsNil(arg_28_0.chatContent) then
+				scrollToBottom(arg_28_0.chatContent.parent)
 			end
 		end, 0.5, 1):Start()
 	end)
 end
 
-function slot0.Append(slot0, slot1, slot2, slot3)
-	slot0:UpdateChatBtn()
+function var_0_0.Append(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
+	arg_32_0:UpdateChatBtn()
 
-	if not slot0.isInitChatWindow then
+	if not arg_32_0.isInitChatWindow then
 		return
 	end
 
-	if slot0.chatContent.childCount >= GuildConst.CHAT_LOG_MAX_COUNT * 2 then
-		slot0:emit(GuildMainMediator.REBUILD_ALL)
-	elseif slot1.id and slot1.id == 4 then
-		slot0:AddWorldBossMsg(slot1, slot2, slot3)
+	if arg_32_0.chatContent.childCount >= GuildConst.CHAT_LOG_MAX_COUNT * 2 then
+		arg_32_0:emit(GuildMainMediator.REBUILD_ALL)
+	elseif arg_32_1.id and arg_32_1.id == 4 then
+		arg_32_0:AddWorldBossMsg(arg_32_1, arg_32_2, arg_32_3)
 	else
-		slot0:AppendWorld(slot1, slot2, slot3)
+		arg_32_0:AppendWorld(arg_32_1, arg_32_2, arg_32_3)
 	end
 end
 
-function slot0.ShowChatTip(slot0)
-	setActive(slot0.newMsgTip, true)
+function var_0_0.ShowChatTip(arg_33_0)
+	setActive(arg_33_0.newMsgTip, true)
 end
 
-function slot0.ClearChatTip(slot0)
-	setActive(slot0.newMsgTip, false)
+function var_0_0.ClearChatTip(arg_34_0)
+	setActive(arg_34_0.newMsgTip, false)
 end
 
-function slot0.AddWorldBossMsg(slot0, slot1, slot2, slot3)
-	slot5 = Clone(slot1).player
+function var_0_0.AddWorldBossMsg(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
+	local var_35_0 = Clone(arg_35_1)
+	local var_35_1 = var_35_0.player
 
-	if not slot3 then
-		slot0:ShowChatTip()
+	if not arg_35_3 then
+		arg_35_0:ShowChatTip()
 	end
 
-	slot7 = ChatBubbleWorldBoss.New(cloneTplTo(slot0.prefabWorldboss, slot0.chatContent))
+	local var_35_2 = cloneTplTo(arg_35_0.prefabWorldboss, arg_35_0.chatContent)
+	local var_35_3 = ChatBubbleWorldBoss.New(var_35_2)
 
-	if slot2 >= 0 then
-		slot7.tf:SetSiblingIndex(slot2)
+	if arg_35_2 >= 0 then
+		var_35_3.tf:SetSiblingIndex(arg_35_2)
 	end
 
-	slot7:update(slot4)
-	table.insert(slot0.chatBubbles, slot7)
+	var_35_3:update(var_35_0)
+	table.insert(arg_35_0.chatBubbles, var_35_3)
 end
 
-function slot0.AppendWorld(slot0, slot1, slot2, slot3)
-	slot6 = slot0.prefabOthers
+function var_0_0.AppendWorld(arg_36_0, arg_36_1, arg_36_2, arg_36_3)
+	local var_36_0 = Clone(arg_36_1)
+	local var_36_1 = var_36_0.player
+	local var_36_2 = arg_36_0.prefabOthers
 
-	if Clone(slot1).player.id == slot0.playerVO.id then
-		slot6 = slot0.prefabSelf
-		slot4.player = setmetatable(Clone(slot0.playerVO), {
-			__index = slot4.player
+	if var_36_1.id == arg_36_0.playerVO.id then
+		var_36_2 = arg_36_0.prefabSelf
+		var_36_0.player = setmetatable(Clone(arg_36_0.playerVO), {
+			__index = var_36_0.player
 		})
-	elseif not slot3 then
-		slot0:ShowChatTip()
+	elseif not arg_36_3 then
+		arg_36_0:ShowChatTip()
 	end
 
-	slot8 = GuildChatBubble.New(cloneTplTo(slot6, slot0.chatContent))
+	local var_36_3 = cloneTplTo(var_36_2, arg_36_0.chatContent)
+	local var_36_4 = GuildChatBubble.New(var_36_3)
 
-	if slot2 >= 0 then
-		slot8.tf:SetSiblingIndex(slot2)
+	if arg_36_2 >= 0 then
+		var_36_4.tf:SetSiblingIndex(arg_36_2)
 	end
 
-	slot4.isSelf = slot5.id == slot0.playerVO.id
+	var_36_0.isSelf = var_36_1.id == arg_36_0.playerVO.id
 
-	slot8:update(slot4)
+	var_36_4:update(var_36_0)
 
-	if not slot3 and slot4.isSelf then
-		onNextTick(function ()
-			scrollToBottom(uv0.chatContent.parent)
+	if not arg_36_3 and var_36_0.isSelf then
+		onNextTick(function()
+			scrollToBottom(arg_36_0.chatContent.parent)
 		end)
 	end
 
-	table.insert(slot0.chatBubbles, slot8)
+	table.insert(arg_36_0.chatBubbles, var_36_4)
 end
 
-function slot0.UpdateMainInfo(slot0)
-	slot1 = slot0.guildVO
-	slot0.nameTxt.text = slot1:getName()
-	slot0.factionTxt.text = slot1:getFactionName()
-	slot0.policyTxt.text = slot1:getPolicyName()
-	slot0.idTxt.text = "ID:" .. slot1.id
-	slot0.numberTxt.text = slot1.memberCount .. "/" .. slot1:getMaxMember()
+function var_0_0.UpdateMainInfo(arg_38_0)
+	local var_38_0 = arg_38_0.guildVO
 
-	setFillAmount(slot0.expImg, slot1.exp / math.max(slot1:getLevelMaxExp(), 1))
+	arg_38_0.nameTxt.text = var_38_0:getName()
+	arg_38_0.factionTxt.text = var_38_0:getFactionName()
+	arg_38_0.policyTxt.text = var_38_0:getPolicyName()
+	arg_38_0.idTxt.text = "ID:" .. var_38_0.id
+	arg_38_0.numberTxt.text = var_38_0.memberCount .. "/" .. var_38_0:getMaxMember()
 
-	slot0.levelTxt.text = slot1.level <= 9 and "0" .. slot1.level or slot1.level
-	slot2 = ""
-	slot3 = ""
+	setFillAmount(arg_38_0.expImg, var_38_0.exp / math.max(var_38_0:getLevelMaxExp(), 1))
 
-	for slot8 = 1, math.floor(slot1.level / 10) do
-		slot3 = slot3 .. ":"
+	arg_38_0.levelTxt.text = var_38_0.level <= 9 and "0" .. var_38_0.level or var_38_0.level
+
+	local var_38_1 = ""
+	local var_38_2 = ""
+	local var_38_3 = math.floor(var_38_0.level / 10)
+
+	for iter_38_0 = 1, var_38_3 do
+		var_38_2 = var_38_2 .. ":"
 	end
 
-	slot0.levelImg.text = slot3 .. (slot1.level % 10 == 0 and "" or slot5)
+	local var_38_4 = var_38_0.level % 10
+	local var_38_5 = var_38_2 .. (var_38_4 == 0 and "" or var_38_4)
 
-	if slot0.isInitChatWindow then
-		slot0:UpdateNotice()
+	arg_38_0.levelImg.text = var_38_5
+
+	if arg_38_0.isInitChatWindow then
+		arg_38_0:UpdateNotice()
 	end
 end
 
-function slot0.ShowOrHideChatWindow(slot0, slot1)
-	if LeanTween.isTweening(go(slot0.chatPanel)) then
+function var_0_0.ShowOrHideChatWindow(arg_39_0, arg_39_1)
+	if LeanTween.isTweening(go(arg_39_0.chatPanel)) then
 		return
 	end
 
-	slot2, slot3, slot4, slot5 = nil
+	local var_39_0
+	local var_39_1
+	local var_39_2
+	local var_39_3
 
-	if not slot1 then
-		slot3 = slot0.chatPanelWidth
-		slot2 = 0
-		slot5 = 0
-		slot4 = slot0.chatBtnWidth
+	if not arg_39_1 then
+		var_39_0, var_39_1 = 0, arg_39_0.chatPanelWidth
+		var_39_2, var_39_3 = arg_39_0.chatBtnWidth, 0
 	else
-		slot3 = 0
-		slot2 = slot0.chatPanelWidth
-		slot5 = slot0.chatBtnWidth
-		slot4 = 0
+		var_39_0, var_39_1 = arg_39_0.chatPanelWidth, 0
+		var_39_2, var_39_3 = 0, arg_39_0.chatBtnWidth
 	end
 
-	slot0.isShowChatWindow = slot1
-	slot7 = LeanTween.value(go(slot0.chatPanel), slot2, slot3, 0.3)
-	slot7 = slot7:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.chatPanel, {
-			x = slot0
-		})
-	end))
+	arg_39_0.isShowChatWindow = arg_39_1
 
-	slot7:setOnComplete(System.Action(function ()
-		if uv0 then
-			setParent(uv1.chatPanel, pg.UIMgr:GetInstance().OverlayMain, true)
+	local function var_39_4()
+		if arg_39_1 then
+			setParent(arg_39_0.chatPanel, pg.UIMgr:GetInstance().OverlayMain, true)
 
-			slot0 = uv1.chatPanel.localPosition
-			uv1.chatPanel.localPosition = Vector3(slot0.x, slot0.y, 0)
+			local var_40_0 = arg_39_0.chatPanel.localPosition
 
-			pg.UIMgr.GetInstance():OverlayPanelPB(uv1.chatPanel, {
+			arg_39_0.chatPanel.localPosition = Vector3(var_40_0.x, var_40_0.y, 0)
+
+			pg.UIMgr.GetInstance():OverlayPanelPB(arg_39_0.chatPanel, {
 				pbList = {
-					uv1.chatPanel
+					arg_39_0.chatPanel
 				}
 			})
 
-			uv1.chatPanelAnchoredPositionX = uv1.chatPanel.anchoredPosition.x
+			arg_39_0.chatPanelAnchoredPositionX = arg_39_0.chatPanel.anchoredPosition.x
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv1.chatPanel, uv1._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_39_0.chatPanel, arg_39_0._tf)
 		end
-	end))
+	end
 
-	slot7 = LeanTween.value(go(slot0.chatBtn), slot4, slot5, 0.3)
-
-	slot7:setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.chatBtn, {
-			x = slot0
+	LeanTween.value(go(arg_39_0.chatPanel), var_39_0, var_39_1, 0.3):setOnUpdate(System.Action_float(function(arg_41_0)
+		setAnchoredPosition(arg_39_0.chatPanel, {
+			x = arg_41_0
+		})
+	end)):setOnComplete(System.Action(var_39_4))
+	LeanTween.value(go(arg_39_0.chatBtn), var_39_2, var_39_3, 0.3):setOnUpdate(System.Action_float(function(arg_42_0)
+		setAnchoredPosition(arg_39_0.chatBtn, {
+			x = arg_42_0
 		})
 	end))
 end
 
-function slot0.EnterOrExitPreView(slot0, slot1)
-	if LeanTween.isTweening(go(slot0.top)) or LeanTween.isTweening(go(slot0.bottomPanel)) or LeanTween.isTweening(go(slot0.chatPanel)) or LeanTween.isTweening(go(slot0.chatBtn)) then
+function var_0_0.EnterOrExitPreView(arg_43_0, arg_43_1)
+	if LeanTween.isTweening(go(arg_43_0.top)) or LeanTween.isTweening(go(arg_43_0.bottomPanel)) or LeanTween.isTweening(go(arg_43_0.chatPanel)) or LeanTween.isTweening(go(arg_43_0.chatBtn)) then
 		return
 	end
 
-	slot2 = slot1 and {
+	local var_43_0 = arg_43_1 and {
 		0,
-		slot0.topPanelWidth
+		arg_43_0.topPanelWidth
 	} or {
-		slot0.topPanelWidth,
+		arg_43_0.topPanelWidth,
 		0
 	}
 
-	LeanTween.value(go(slot0.top), slot2[1], slot2[2], 0.3):setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.top, {
-			y = slot0
+	LeanTween.value(go(arg_43_0.top), var_43_0[1], var_43_0[2], 0.3):setOnUpdate(System.Action_float(function(arg_44_0)
+		setAnchoredPosition(arg_43_0.top, {
+			y = arg_44_0
 		})
 	end))
 
-	slot3 = slot1 and {
+	local var_43_1 = arg_43_1 and {
 		94,
-		94 + slot0.bottomPanelWidth
+		94 + arg_43_0.bottomPanelWidth
 	} or {
-		94 + slot0.bottomPanelWidth,
+		94 + arg_43_0.bottomPanelWidth,
 		94
 	}
 
-	LeanTween.value(go(slot0.bottomPanel), slot3[1], slot3[2], 0.3):setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.bottomPanel, {
-			y = slot0
+	LeanTween.value(go(arg_43_0.bottomPanel), var_43_1[1], var_43_1[2], 0.3):setOnUpdate(System.Action_float(function(arg_45_0)
+		setAnchoredPosition(arg_43_0.bottomPanel, {
+			y = arg_45_0
 		})
 	end))
 
-	if slot0.isShowChatWindow then
-		slot4 = slot1 and {
+	if arg_43_0.isShowChatWindow then
+		local var_43_2 = arg_43_1 and {
 			0,
-			slot0.chatPanelWidth
+			arg_43_0.chatPanelWidth
 		} or {
-			slot0.chatPanelWidth,
-			slot0.chatPanelAnchoredPositionX or 0
+			arg_43_0.chatPanelWidth,
+			arg_43_0.chatPanelAnchoredPositionX or 0
 		}
 
-		LeanTween.value(go(slot0.chatPanel), slot4[1], slot4[2], 0.3):setOnUpdate(System.Action_float(function (slot0)
-			setAnchoredPosition(uv0.chatPanel, {
-				x = slot0
+		LeanTween.value(go(arg_43_0.chatPanel), var_43_2[1], var_43_2[2], 0.3):setOnUpdate(System.Action_float(function(arg_46_0)
+			setAnchoredPosition(arg_43_0.chatPanel, {
+				x = arg_46_0
 			})
 		end))
 	else
-		slot4 = slot1 and {
+		local var_43_3 = arg_43_1 and {
 			0,
-			slot0.chatBtnWidth
+			arg_43_0.chatBtnWidth
 		} or {
-			slot0.chatBtnWidth,
+			arg_43_0.chatBtnWidth,
 			0
 		}
 
-		LeanTween.value(go(slot0.chatBtn), slot4[1], slot4[2], 0.3):setOnUpdate(System.Action_float(function (slot0)
-			setAnchoredPosition(uv0.chatBtn, {
-				x = slot0
+		LeanTween.value(go(arg_43_0.chatBtn), var_43_3[1], var_43_3[2], 0.3):setOnUpdate(System.Action_float(function(arg_47_0)
+			setAnchoredPosition(arg_43_0.chatBtn, {
+				x = arg_47_0
 			})
 		end))
 	end
 end
 
-function slot0.InsertEmojiToInputText(slot0, slot1)
-	slot0.msgInput.text = slot0.msgInput.text .. string.gsub(ChatConst.EmojiIconCode, "code", slot1)
+function var_0_0.InsertEmojiToInputText(arg_48_0, arg_48_1)
+	arg_48_0.msgInput.text = arg_48_0.msgInput.text .. string.gsub(ChatConst.EmojiIconCode, "code", arg_48_1)
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.isShowChatWindow then
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0.chatPanel, slot0._tf)
+function var_0_0.OnDestroy(arg_49_0)
+	if arg_49_0.isShowChatWindow then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_49_0.chatPanel, arg_49_0._tf)
 	end
 
-	if LeanTween.isTweening(go(slot0.chatPanel)) then
-		LeanTween.cancel(go(slot0.chatPanel))
+	if LeanTween.isTweening(go(arg_49_0.chatPanel)) then
+		LeanTween.cancel(go(arg_49_0.chatPanel))
 	end
 
-	if LeanTween.isTweening(go(slot0.chatBtn)) then
-		LeanTween.cancel(go(slot0.chatBtn))
+	if LeanTween.isTweening(go(arg_49_0.chatBtn)) then
+		LeanTween.cancel(go(arg_49_0.chatBtn))
 	end
 
-	slot0.modifyPage:Destroy()
+	arg_49_0.modifyPage:Destroy()
 
-	for slot4, slot5 in ipairs(slot0.chatBubbles) do
-		if slot5 then
-			slot5:dispose()
+	for iter_49_0, iter_49_1 in ipairs(arg_49_0.chatBubbles) do
+		if iter_49_1 then
+			iter_49_1:dispose()
 		end
 	end
 
-	slot0.chatBubbles = nil
+	arg_49_0.chatBubbles = nil
 
-	slot0:Hide()
+	arg_49_0:Hide()
 end
 
-return slot0
+return var_0_0

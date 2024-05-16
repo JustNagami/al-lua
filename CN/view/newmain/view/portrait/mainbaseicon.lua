@@ -1,31 +1,35 @@
-slot0 = class("MainBaseIcon")
+﻿local var_0_0 = class("MainBaseIcon")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0._go = slot1.gameObject
-	slot0.loading = false
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_0.loading = false
 end
 
-function slot0.Resume(slot0)
+function var_0_0.Resume(arg_2_0)
+	return
 end
 
-function slot0.Pause(slot0)
+function var_0_0.Pause(arg_3_0)
+	return
 end
 
-function slot0.Load(slot0, slot1)
+function var_0_0.Load(arg_4_0, arg_4_1)
+	return
 end
 
-function slot0.Unload(slot0)
+function var_0_0.Unload(arg_5_0)
+	return
 end
 
-function slot0.IsLoading(slot0)
-	return slot0.loading
+function var_0_0.IsLoading(arg_6_0)
+	return arg_6_0.loading
 end
 
-function slot0.Dispose(slot0)
-	slot0.exited = true
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0.exited = true
 
-	slot0:Unload()
+	arg_7_0:Unload()
 end
 
-return slot0
+return var_0_0

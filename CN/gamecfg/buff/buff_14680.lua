@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 14681
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 14681
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,25 +39,5 @@ return {
 	stack = 1,
 	id = 14680,
 	icon = 14680,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 14681
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 14681
-			}
-		}
-	}
+	last_effect = ""
 }

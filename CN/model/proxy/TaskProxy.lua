@@ -1,418 +1,467 @@
-slot0 = class("TaskProxy", import(".NetProxy"))
-slot0.TASK_ADDED = "task added"
-slot0.TASK_UPDATED = "task updated"
-slot0.TASK_REMOVED = "task removed"
-slot0.TASK_FINISH = "task finish"
-slot0.TASK_PROGRESS_UPDATE = "task TASK_PROGRESS_UPDATE"
-slot0.WEEK_TASK_UPDATED = "week task updated"
-slot0.WEEK_TASKS_ADDED = "week tasks added"
-slot0.WEEK_TASKS_DELETED = "week task deleted"
-slot0.WEEK_TASK_RESET = "week task refresh"
+﻿local var_0_0 = class("TaskProxy", import(".NetProxy"))
+
+var_0_0.TASK_ADDED = "task added"
+var_0_0.TASK_UPDATED = "task updated"
+var_0_0.TASK_REMOVED = "task removed"
+var_0_0.TASK_FINISH = "task finish"
+var_0_0.TASK_PROGRESS_UPDATE = "task TASK_PROGRESS_UPDATE"
+var_0_0.WEEK_TASK_UPDATED = "week task updated"
+var_0_0.WEEK_TASKS_ADDED = "week tasks added"
+var_0_0.WEEK_TASKS_DELETED = "week task deleted"
+var_0_0.WEEK_TASK_RESET = "week task refresh"
 mingshiTriggerId = 1
 mingshiActivityId = 21
 changdaoActivityId = 10006
 changdaoTaskStartId = 5031
 
-function slot0.register(slot0)
-	slot0:on(20001, function (slot0)
-		uv0.data = {}
-		uv0.finishData = {}
-		uv0.tmpInfo = {}
+function var_0_0.register(arg_1_0)
+	arg_1_0:on(20001, function(arg_2_0)
+		arg_1_0.data = {}
+		arg_1_0.finishData = {}
+		arg_1_0.tmpInfo = {}
 
-		for slot4, slot5 in ipairs(slot0.info) do
-			if Task.New(slot5):getConfigTable() ~= nil then
-				slot6:display("loaded")
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.info) do
+			local var_2_0 = Task.New(iter_2_1)
 
-				if slot6:getTaskStatus() ~= 2 then
-					uv0.data[slot6.id] = slot6
+			if var_2_0:getConfigTable() ~= nil then
+				var_2_0:display("loaded")
+
+				if var_2_0:getTaskStatus() ~= 2 then
+					arg_1_0.data[var_2_0.id] = var_2_0
 				else
-					uv0.finishData[slot6.id] = slot6
+					arg_1_0.finishData[var_2_0.id] = var_2_0
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(slot5.id))
-				Debugger.LogWarning("Missing Task Config, id :" .. tostring(slot5.id))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(iter_2_1.id))
+				Debugger.LogWarning("Missing Task Config, id :" .. tostring(iter_2_1.id))
 			end
 		end
 
 		getProxy(TechnologyProxy):updateBlueprintStates()
 	end)
-	slot0:on(20002, function (slot0)
-		for slot4, slot5 in ipairs(slot0.info) do
-			if uv0.data[slot5.id] ~= nil then
-				slot6.progress = slot5.progress
+	arg_1_0:on(20002, function(arg_3_0)
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.info) do
+			local var_3_0 = arg_1_0.data[iter_3_1.id]
 
-				uv0:updateTask(slot6)
+			if var_3_0 ~= nil then
+				local var_3_1 = var_3_0:isFinish()
 
-				if not slot6:isFinish() then
-					uv0:sendNotification(uv1.TASK_PROGRESS_UPDATE, slot6:clone())
+				var_3_0.progress = iter_3_1.progress
+
+				arg_1_0:updateTask(var_3_0)
+
+				if not var_3_1 then
+					arg_1_0:sendNotification(var_0_0.TASK_PROGRESS_UPDATE, var_3_0:clone())
 				end
 			end
 		end
 
-		uv0:sendNotification(GAME.TASK_PROGRESS_UPDATE)
+		arg_1_0:sendNotification(GAME.TASK_PROGRESS_UPDATE)
 	end)
-	slot0:on(20003, function (slot0)
-		for slot4, slot5 in ipairs(slot0.info) do
-			uv0:addTask(Task.New(slot5))
+	arg_1_0:on(20003, function(arg_4_0)
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0.info) do
+			local var_4_0 = Task.New(iter_4_1)
+
+			arg_1_0:addTask(var_4_0)
 		end
 	end)
-	slot0:on(20004, function (slot0)
-		for slot4, slot5 in ipairs(slot0.id_list) do
-			uv0:removeTaskById(slot5)
+	arg_1_0:on(20004, function(arg_5_0)
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0.id_list) do
+			arg_1_0:removeTaskById(iter_5_1)
 		end
 	end)
-	slot0:on(20015, function (slot0)
-		slot1 = slot0.time
+	arg_1_0:on(20015, function(arg_6_0)
+		local var_6_0 = arg_6_0.time
 
-		uv0:sendNotification(GAME.ZERO_HOUR)
+		arg_1_0:sendNotification(GAME.ZERO_HOUR)
 	end)
 
-	slot0.taskTriggers = {}
-	slot0.weekTaskProgressInfo = WeekTaskProgress.New()
+	arg_1_0.taskTriggers = {}
+	arg_1_0.weekTaskProgressInfo = WeekTaskProgress.New()
 
-	slot0:on(20101, function (slot0)
-		uv0.weekTaskProgressInfo:Init(slot0.info)
-		uv0:sendNotification(uv1.WEEK_TASK_RESET)
+	arg_1_0:on(20101, function(arg_7_0)
+		arg_1_0.weekTaskProgressInfo:Init(arg_7_0.info)
+		arg_1_0:sendNotification(var_0_0.WEEK_TASK_RESET)
 	end)
-	slot0:on(20102, function (slot0)
-		for slot4, slot5 in ipairs(slot0.task) do
-			print("update sub task ", slot5)
+	arg_1_0:on(20102, function(arg_8_0)
+		for iter_8_0, iter_8_1 in ipairs(arg_8_0.task) do
+			print("update sub task ", iter_8_1)
 
-			slot6 = WeekPtTask.New(slot5)
+			local var_8_0 = WeekPtTask.New(iter_8_1)
 
-			uv0.weekTaskProgressInfo:UpdateSubTask(slot6)
-			uv0:sendNotification(uv1.WEEK_TASK_UPDATED, {
-				id = slot6.id
+			arg_1_0.weekTaskProgressInfo:UpdateSubTask(var_8_0)
+			arg_1_0:sendNotification(var_0_0.WEEK_TASK_UPDATED, {
+				id = var_8_0.id
 			})
 		end
 	end)
-	slot0:on(20103, function (slot0)
-		for slot4, slot5 in ipairs(slot0.id) do
-			print("add sub task ", slot5)
-			uv0.weekTaskProgressInfo:AddSubTask(WeekPtTask.New({
+	arg_1_0:on(20103, function(arg_9_0)
+		for iter_9_0, iter_9_1 in ipairs(arg_9_0.id) do
+			print("add sub task ", iter_9_1)
+
+			local var_9_0 = WeekPtTask.New({
 				progress = 0,
-				id = slot5
-			}))
+				id = iter_9_1
+			})
+
+			arg_1_0.weekTaskProgressInfo:AddSubTask(var_9_0)
 		end
 
-		uv0:sendNotification(uv1.WEEK_TASKS_ADDED)
+		arg_1_0:sendNotification(var_0_0.WEEK_TASKS_ADDED)
 	end)
-	slot0:on(20104, function (slot0)
-		for slot4, slot5 in ipairs(slot0.id) do
-			print("remove sub task ", slot5)
-			uv0.weekTaskProgressInfo:RemoveSubTask(slot5)
+	arg_1_0:on(20104, function(arg_10_0)
+		for iter_10_0, iter_10_1 in ipairs(arg_10_0.id) do
+			print("remove sub task ", iter_10_1)
+			arg_1_0.weekTaskProgressInfo:RemoveSubTask(iter_10_1)
 		end
 
-		uv0:sendNotification(uv1.WEEK_TASKS_DELETED)
+		arg_1_0:sendNotification(var_0_0.WEEK_TASKS_DELETED)
 	end)
-	slot0:on(20105, function (slot0)
-		uv0.weekTaskProgressInfo:UpdateProgress(slot0.pt)
+	arg_1_0:on(20105, function(arg_11_0)
+		local var_11_0 = arg_11_0.pt
+
+		arg_1_0.weekTaskProgressInfo:UpdateProgress(var_11_0)
 	end)
 
-	slot0.submittingTask = {}
+	arg_1_0.submittingTask = {}
 end
 
-function slot0.GetWeekTaskProgressInfo(slot0)
-	return slot0.weekTaskProgressInfo
+function var_0_0.GetWeekTaskProgressInfo(arg_12_0)
+	return arg_12_0.weekTaskProgressInfo
 end
 
-function slot0.getTasksForBluePrint(slot0)
-	slot1 = {}
-	slot2 = pairs
-	slot3 = slot0.data or {}
+function var_0_0.getTasksForBluePrint(arg_13_0)
+	local var_13_0 = {}
 
-	for slot5, slot6 in slot2(slot3) do
-		slot1[slot6.id] = slot6
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.data or {}) do
+		var_13_0[iter_13_1.id] = iter_13_1
 	end
 
-	for slot5, slot6 in pairs(slot0.finishData) do
-		slot1[slot6.id] = slot6
+	for iter_13_2, iter_13_3 in pairs(arg_13_0.finishData) do
+		var_13_0[iter_13_3.id] = iter_13_3
 	end
 
-	return slot1
+	return var_13_0
 end
 
-function slot0.addTmpTask(slot0, slot1)
-	slot0.tmpInfo[slot1.id] = slot1
+function var_0_0.addTmpTask(arg_14_0, arg_14_1)
+	arg_14_0.tmpInfo[arg_14_1.id] = arg_14_1
 end
 
-function slot0.checkTmpTask(slot0, slot1)
-	if slot0.tmpInfo[slot1] then
-		slot0:addTask(slot0.tmpInfo[slot1])
+function var_0_0.checkTmpTask(arg_15_0, arg_15_1)
+	if arg_15_0.tmpInfo[arg_15_1] then
+		arg_15_0:addTask(arg_15_0.tmpInfo[arg_15_1])
 
-		slot0.tmpInfo[slot1] = nil
+		arg_15_0.tmpInfo[arg_15_1] = nil
 	end
 end
 
-function slot0.addTask(slot0, slot1)
-	assert(isa(slot1, Task), "should be an instance of Task")
+function var_0_0.addTask(arg_16_0, arg_16_1)
+	assert(isa(arg_16_1, Task), "should be an instance of Task")
 
-	if slot0.data[slot1.id] then
-		slot0:addTmpTask(slot1)
+	if arg_16_0.data[arg_16_1.id] then
+		arg_16_0:addTmpTask(arg_16_1)
 
 		return
 	end
 
-	if slot1:getConfigTable() == nil then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(slot1.id))
-		Debugger.LogWarning("Missing Task Config, id :" .. tostring(slot1.id))
+	if arg_16_1:getConfigTable() == nil then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(arg_16_1.id))
+		Debugger.LogWarning("Missing Task Config, id :" .. tostring(arg_16_1.id))
 
 		return
 	end
 
-	slot0.data[slot1.id] = slot1:clone()
+	arg_16_0.data[arg_16_1.id] = arg_16_1:clone()
 
-	slot0.data[slot1.id]:display("added")
-	slot0.data[slot1.id]:onAdded()
-	slot0.facade:sendNotification(uv0.TASK_ADDED, slot1:clone())
-	slot0:checkAutoSubmitTask(slot1)
+	arg_16_0.data[arg_16_1.id]:display("added")
+	arg_16_0.data[arg_16_1.id]:onAdded()
+	arg_16_0.facade:sendNotification(var_0_0.TASK_ADDED, arg_16_1:clone())
+	arg_16_0:checkAutoSubmitTask(arg_16_1)
 end
 
-function slot0.updateTask(slot0, slot1)
-	assert(isa(slot1, Task), "should be an instance of Task")
-	assert(slot0.data[slot1.id] ~= nil, "task should exist")
+function var_0_0.updateTask(arg_17_0, arg_17_1)
+	assert(isa(arg_17_1, Task), "should be an instance of Task")
 
-	slot0.data[slot1.id] = slot1:clone()
-	slot0.data[slot1.id].acceptTime = slot2.acceptTime
+	local var_17_0 = arg_17_0.data[arg_17_1.id]
 
-	slot0.data[slot1.id]:display("updated")
-	slot0.facade:sendNotification(uv0.TASK_UPDATED, slot1:clone())
-	slot0:checkAutoSubmitTask(slot1)
+	assert(var_17_0 ~= nil, "task should exist")
+
+	arg_17_0.data[arg_17_1.id] = arg_17_1:clone()
+	arg_17_0.data[arg_17_1.id].acceptTime = var_17_0.acceptTime
+
+	arg_17_0.data[arg_17_1.id]:display("updated")
+	arg_17_0.facade:sendNotification(var_0_0.TASK_UPDATED, arg_17_1:clone())
+	arg_17_0:checkAutoSubmitTask(arg_17_1)
 end
 
-function slot0.getTasks(slot0)
-	slot1 = {}
+function var_0_0.getTasks(arg_18_0)
+	local var_18_0 = {}
 
-	for slot5, slot6 in pairs(slot0.data) do
-		table.insert(slot1, slot6)
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.data) do
+		table.insert(var_18_0, iter_18_1)
 	end
 
-	return Clone(slot1)
+	return Clone(var_18_0)
 end
 
-function slot0.getTaskById(slot0, slot1)
-	if slot0.data[slot1] then
-		return slot0.data[slot1]:clone()
-	end
-end
-
-function slot0.getFinishTaskById(slot0, slot1)
-	if slot0.finishData[slot1] then
-		return slot0.finishData[slot1]:clone()
+function var_0_0.getTaskById(arg_19_0, arg_19_1)
+	if arg_19_0.data[arg_19_1] then
+		return arg_19_0.data[arg_19_1]:clone()
 	end
 end
 
-function slot0.getTaskVO(slot0, slot1)
-	return slot0:getTaskById(slot1) or slot0:getFinishTaskById(slot1)
+function var_0_0.getFinishTaskById(arg_20_0, arg_20_1)
+	if arg_20_0.finishData[arg_20_1] then
+		return arg_20_0.finishData[arg_20_1]:clone()
+	end
 end
 
-function slot0.getCanReceiveCount(slot0)
-	slot1 = 0
+function var_0_0.getTaskVO(arg_21_0, arg_21_1)
+	return arg_21_0:getTaskById(arg_21_1) or arg_21_0:getFinishTaskById(arg_21_1)
+end
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:ShowOnTaskScene() and slot6:isFinish() and slot6:isReceive() == false then
-			slot1 = slot1 + 1
+function var_0_0.getCanReceiveCount(arg_22_0)
+	local var_22_0 = 0
 
-			for slot11, slot12 in ipairs(slot6:getConfig("award_display")) do
-				slot13, slot14, slot15 = unpack(slot12)
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.data) do
+		if iter_22_1:ShowOnTaskScene() and iter_22_1:isFinish() and iter_22_1:isReceive() == false then
+			var_22_0 = var_22_0 + 1
 
-				if not LOCK_UR_SHIP and slot13 == DROP_TYPE_VITEM and Item.getConfigData(slot14).virtual_type == 20 and (not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]) or 0) + slot15 - (not LOCK_UR_SHIP and pg.gameset.urpt_chapter_max.description[2] or 0) > 0 then
-					slot1 = slot1 - 1
+			local var_22_1 = iter_22_1:getConfig("award_display")
+
+			for iter_22_2, iter_22_3 in ipairs(var_22_1) do
+				local var_22_2, var_22_3, var_22_4 = unpack(iter_22_3)
+
+				if not LOCK_UR_SHIP and var_22_2 == DROP_TYPE_VITEM and Item.getConfigData(var_22_3).virtual_type == 20 then
+					local var_22_5 = pg.gameset.urpt_chapter_max.description[1]
+					local var_22_6 = not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var_22_5) or 0
+					local var_22_7 = not LOCK_UR_SHIP and pg.gameset.urpt_chapter_max.description[2] or 0
+
+					if var_22_6 + var_22_4 - var_22_7 > 0 then
+						var_22_0 = var_22_0 - 1
+					end
 				end
 			end
 		end
 	end
 
-	if slot0:GetWeekTaskProgressInfo():CanUpgrade() then
-		slot1 = slot1 + 1
+	local var_22_8 = arg_22_0:GetWeekTaskProgressInfo()
+
+	if var_22_8:CanUpgrade() then
+		var_22_0 = var_22_0 + 1
 	end
 
-	return slot1 + slot2:GetCanSubmitSubTaskCnt()
+	return var_22_0 + var_22_8:GetCanSubmitSubTaskCnt()
 end
 
-function slot0.getNotFinishCount(slot0, slot1)
-	slot2 = slot1 or 3
-	slot3 = 0
+function var_0_0.getNotFinishCount(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_1 or 3
+	local var_23_1 = 0
 
-	for slot7, slot8 in pairs(slot0.data) do
-		if slot8:GetRealType() == slot2 and slot8:isFinish() == false then
-			slot3 = slot3 + 1
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.data) do
+		if iter_23_1:GetRealType() == var_23_0 and iter_23_1:isFinish() == false then
+			var_23_1 = var_23_1 + 1
 		end
 	end
 
-	return slot3
+	return var_23_1
 end
 
-function slot0.removeTask(slot0, slot1)
-	assert(isa(slot1, Task), "should be an instance of Task")
-	slot0:removeTaskById(slot1.id)
+function var_0_0.removeTask(arg_24_0, arg_24_1)
+	assert(isa(arg_24_1, Task), "should be an instance of Task")
+	arg_24_0:removeTaskById(arg_24_1.id)
 end
 
-function slot0.removeTaskById(slot0, slot1)
-	if slot0.data[slot1] == nil then
+function var_0_0.removeTaskById(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0.data[arg_25_1]
+
+	if var_25_0 == nil then
 		return
 	end
 
-	slot0.finishData[slot1] = slot0.data[slot1]:clone()
-	slot0.finishData[slot1].submitTime = pg.TimeMgr.GetInstance():GetServerTime()
-	slot0.data[slot1] = nil
+	arg_25_0.finishData[arg_25_1] = arg_25_0.data[arg_25_1]:clone()
+	arg_25_0.finishData[arg_25_1].submitTime = pg.TimeMgr.GetInstance():GetServerTime()
+	arg_25_0.data[arg_25_1] = nil
 
-	slot0.facade:sendNotification(uv0.TASK_REMOVED, slot2)
-	slot0:checkTmpTask(slot1)
+	arg_25_0.facade:sendNotification(var_0_0.TASK_REMOVED, var_25_0)
+	arg_25_0:checkTmpTask(arg_25_1)
 end
 
-function slot0.getmingshiTaskID(slot0, slot1)
-	if pg.task_data_trigger[mingshiTriggerId].count <= slot1 and slot2.task_id and not slot0:getTaskVO(slot4) then
-		return slot4
+function var_0_0.getmingshiTaskID(arg_26_0, arg_26_1)
+	local var_26_0 = pg.task_data_trigger[mingshiTriggerId]
+
+	if arg_26_1 >= var_26_0.count then
+		local var_26_1 = var_26_0.task_id
+
+		if var_26_1 and not arg_26_0:getTaskVO(var_26_1) then
+			return var_26_1
+		end
 	end
 
 	return 0
 end
 
-function slot0.dealMingshiTouchFlag(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityById(mingshiActivityId) or slot2:isEnd() then
+function var_0_0.dealMingshiTouchFlag(arg_27_0, arg_27_1)
+	local var_27_0 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
+
+	if not var_27_0 or var_27_0:isEnd() then
 		return
 	end
 
-	slot3 = slot2:getConfig("config_id")
+	local var_27_1 = var_27_0:getConfig("config_id")
+	local var_27_2 = var_27_0:getConfig("config_data")[1]
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
-		content = i18n("mingshi_task_tip_" .. slot1)
+		content = i18n("mingshi_task_tip_" .. arg_27_1)
 	})
 
-	if slot0:getTaskById(slot2:getConfig("config_data")[1]) and slot5:getTaskStatus() < 1 then
-		if not slot0.mingshiTouchList then
-			slot0.mingshiTouchList = {}
+	local var_27_3 = arg_27_0:getTaskById(var_27_2)
+
+	if var_27_3 and var_27_3:getTaskStatus() < 1 then
+		if not arg_27_0.mingshiTouchList then
+			arg_27_0.mingshiTouchList = {}
 		end
 
-		for slot9, slot10 in pairs(slot0.mingshiTouchList) do
-			if slot10 == slot1 then
+		for iter_27_0, iter_27_1 in pairs(arg_27_0.mingshiTouchList) do
+			if iter_27_1 == arg_27_1 then
 				return
 			end
 		end
 
-		for slot9, slot10 in pairs(slot2.data1_list) do
-			if slot10 == slot1 then
+		for iter_27_2, iter_27_3 in pairs(var_27_0.data1_list) do
+			if iter_27_3 == arg_27_1 then
 				return
 			end
 		end
 
-		table.insert(slot0.mingshiTouchList, slot1)
-		slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
+		table.insert(arg_27_0.mingshiTouchList, arg_27_1)
+		arg_27_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
 			activity_id = mingshiActivityId,
-			arg1 = slot1
+			arg1 = arg_27_1
 		})
 	end
 end
 
-function slot0.mingshiTouchFlagEnabled(slot0)
-	if not getProxy(ActivityProxy):getActivityById(mingshiActivityId) or slot1:isEnd() then
+function var_0_0.mingshiTouchFlagEnabled(arg_28_0)
+	local var_28_0 = getProxy(ActivityProxy):getActivityById(mingshiActivityId)
+
+	if not var_28_0 or var_28_0:isEnd() then
 		return
 	end
 
-	slot2 = tonumber(slot1:getConfig("config_id"))
+	local var_28_1 = tonumber(var_28_0:getConfig("config_id"))
+	local var_28_2 = tonumber(var_28_0:getConfig("config_data")[1])
+	local var_28_3 = arg_28_0:getTaskById(var_28_2)
 
-	if slot0:getTaskById(tonumber(slot1:getConfig("config_data")[1])) and slot4:getTaskStatus() < 1 then
+	if var_28_3 and var_28_3:getTaskStatus() < 1 then
 		return true
 	end
 
-	if slot0:getTaskVO(slot2) then
+	if arg_28_0:getTaskVO(var_28_1) then
 		return false
 	end
 
 	return true
 end
 
-function slot0.getAcademyTask(slot0, slot1)
-	slot2 = getProxy(ActivityProxy)
+function var_0_0.getAcademyTask(arg_29_0, arg_29_1)
+	local var_29_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+	local var_29_1 = _.detect(var_29_0, function(arg_30_0)
+		local var_30_0 = arg_30_0:getTaskShip()
 
-	if _.detect(slot2:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function (slot0)
-		return slot0:getTaskShip() and slot1.groupId == uv0
-	end) and not slot4:isEnd() then
-		return getActivityTask(slot4, true)
+		return var_30_0 and var_30_0.groupId == arg_29_1
+	end)
+
+	if var_29_1 and not var_29_1:isEnd() then
+		return getActivityTask(var_29_1, true)
 	end
 end
 
-function slot0.isFinishPrevTasks(slot0, slot1)
-	if Task.New({
-		id = slot1
-	}):getConfig("open_need") and type(slot3) == "table" and #slot3 > 0 then
-		return _.all(slot3, function (slot0)
-			slot1 = uv0:getTaskById(slot0) or uv0:getFinishTaskById(slot0)
+function var_0_0.isFinishPrevTasks(arg_31_0, arg_31_1)
+	local var_31_0 = Task.New({
+		id = arg_31_1
+	}):getConfig("open_need")
 
-			return slot1 and slot1:isReceive()
+	if var_31_0 and type(var_31_0) == "table" and #var_31_0 > 0 then
+		return _.all(var_31_0, function(arg_32_0)
+			local var_32_0 = arg_31_0:getTaskById(arg_32_0) or arg_31_0:getFinishTaskById(arg_32_0)
+
+			return var_32_0 and var_32_0:isReceive()
 		end)
 	end
 
 	return true
 end
 
-function slot0.isReceiveTasks(slot0, slot1)
-	return _.all(slot1, function (slot0)
-		return uv0:getFinishTaskById(slot0) and slot1:isReceive()
+function var_0_0.isReceiveTasks(arg_33_0, arg_33_1)
+	return _.all(arg_33_1, function(arg_34_0)
+		local var_34_0 = arg_33_0:getFinishTaskById(arg_34_0)
+
+		return var_34_0 and var_34_0:isReceive()
 	end)
 end
 
-function slot0.pushAutoSubmitTask(slot0)
-	for slot4, slot5 in pairs(slot0.data) do
-		slot0:checkAutoSubmitTask(slot5)
+function var_0_0.pushAutoSubmitTask(arg_35_0)
+	for iter_35_0, iter_35_1 in pairs(arg_35_0.data) do
+		arg_35_0:checkAutoSubmitTask(iter_35_1)
 	end
 end
 
-function slot0.checkAutoSubmitTask(slot0, slot1)
-	if slot1:getConfig("auto_commit") == 1 and slot1:isFinish() then
-		slot0:sendNotification(GAME.SUBMIT_TASK, slot1.id)
+function var_0_0.checkAutoSubmitTask(arg_36_0, arg_36_1)
+	if arg_36_1:getConfig("auto_commit") == 1 and arg_36_1:isFinish() then
+		arg_36_0:sendNotification(GAME.SUBMIT_TASK, arg_36_1.id)
 	end
 end
 
-function slot0.addSubmittingTask(slot0, slot1)
-	slot0.submittingTask[slot1] = true
+function var_0_0.addSubmittingTask(arg_37_0, arg_37_1)
+	arg_37_0.submittingTask[arg_37_1] = true
 end
 
-function slot0.removeSubmittingTask(slot0, slot1)
-	slot0.submittingTask[slot1] = nil
+function var_0_0.removeSubmittingTask(arg_38_0, arg_38_1)
+	arg_38_0.submittingTask[arg_38_1] = nil
 end
 
-function slot0.isSubmitting(slot0, slot1)
-	return slot0.submittingTask[slot1]
+function var_0_0.isSubmitting(arg_39_0, arg_39_1)
+	return arg_39_0.submittingTask[arg_39_1]
 end
 
-function slot0.triggerClientTasks(slot0)
-	slot1 = {}
+function var_0_0.triggerClientTasks(arg_40_0)
+	local var_40_0 = {}
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:isClientTrigger() then
-			table.insert(slot1, slot6)
+	for iter_40_0, iter_40_1 in pairs(arg_40_0.data) do
+		if iter_40_1:isClientTrigger() then
+			table.insert(var_40_0, iter_40_1)
 		end
 	end
 
-	return slot1
+	return var_40_0
 end
 
-function slot0.GetBackYardInterActionTaskList(slot0)
-	slot1 = {}
+function var_0_0.GetBackYardInterActionTaskList(arg_41_0)
+	local var_41_0 = {}
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:IsBackYardInterActionType() then
-			table.insert(slot1, slot6)
+	for iter_41_0, iter_41_1 in pairs(arg_41_0.data) do
+		if iter_41_1:IsBackYardInterActionType() then
+			table.insert(var_41_0, iter_41_1)
 		end
 	end
 
-	return slot1
+	return var_41_0
 end
 
-function slot0.GetFlagShipInterActionTaskList(slot0)
-	slot1 = {}
+function var_0_0.GetFlagShipInterActionTaskList(arg_42_0)
+	local var_42_0 = {}
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:IsFlagShipInterActionType() then
-			table.insert(slot1, slot6)
+	for iter_42_0, iter_42_1 in pairs(arg_42_0.data) do
+		if iter_42_1:IsFlagShipInterActionType() then
+			table.insert(var_42_0, iter_42_1)
 		end
 	end
 
-	return slot1
+	return var_42_0
 end
 
-return slot0
+return var_0_0

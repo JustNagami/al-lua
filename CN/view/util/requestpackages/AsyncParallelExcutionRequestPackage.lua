@@ -1,38 +1,41 @@
-slot0 = class("AsyncParallelExcutionRequestPackage", import(".RequestPackage"))
+﻿local var_0_0 = class("AsyncParallelExcutionRequestPackage", import(".RequestPackage"))
 
-function slot0.__call(slot0)
-	if slot0.stopped then
+function var_0_0.__call(arg_1_0)
+	if arg_1_0.stopped then
 		return
 	end
 
-	if not slot0.funcs or #slot0.funcs == 0 then
+	if not arg_1_0.funcs or #arg_1_0.funcs == 0 then
 		return
 	end
 
-	function slot3()
-		if uv0.stopped then
+	local var_1_0 = arg_1_0.funcs
+	local var_1_1 = #var_1_0
+
+	local function var_1_2()
+		if arg_1_0.stopped then
 			return
 		end
 
-		uv1 = uv1 - 1
+		var_1_1 = var_1_1 - 1
 
-		if uv1 == 0 and uv0.final then
-			uv0.final()
+		if var_1_1 == 0 and arg_1_0.final then
+			arg_1_0.final()
 		end
 	end
 
-	if #slot0.funcs > 0 then
-		for slot7, slot8 in ipairs(slot1) do
-			slot8(slot3)
+	if var_1_1 > 0 then
+		for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+			iter_1_1(var_1_2)
 		end
-	elseif slot0.final then
-		slot0.final()
+	elseif arg_1_0.final then
+		arg_1_0.final()
 	end
 end
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.funcs = slot1
-	slot0.final = slot2
+function var_0_0.Ctor(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.funcs = arg_3_1
+	arg_3_0.final = arg_3_2
 end
 
-return slot0
+return var_0_0

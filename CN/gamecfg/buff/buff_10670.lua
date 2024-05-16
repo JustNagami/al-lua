@@ -1,4 +1,23 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFriendlyShipDying",
+				"onStartGame"
+			},
+			arg_list = {
+				check_target = "TargetShipTypeFriendly",
+				quota = 1,
+				skill_id = 10670,
+				maxTargetNumber = 1,
+				ship_type_list = {
+					4,
+					5
+				}
+			}
+		}
+	},
 	{
 		desc = "主力舰队中战列、战巡只存在自己一艘时（可以有其他类型舰船）伤害提升10.0%",
 		addition = {
@@ -69,24 +88,5 @@ return {
 	stack = 1,
 	id = 10670,
 	icon = 10670,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFriendlyShipDying",
-				"onStartGame"
-			},
-			arg_list = {
-				check_target = "TargetShipTypeFriendly",
-				quota = 1,
-				skill_id = 10670,
-				maxTargetNumber = 1,
-				ship_type_list = {
-					4,
-					5
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

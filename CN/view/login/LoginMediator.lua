@@ -1,175 +1,181 @@
-slot0 = class("LoginMediator", import("..base.ContextMediator"))
-slot0.ON_LOGIN = "LoginMediator:ON_LOGIN"
-slot0.ON_REGISTER = "LoginMediator:ON_REGISTER"
-slot0.ON_SERVER = "LoginMediator:ON_SERVER"
-slot0.ON_LOGIN_PROCESS = "LoginMediator:ON_LOGIN_PROCESS"
-slot0.ON_SEARCH_ACCOUNT = "LoginMediator:ON_SEARCH_ACCOUNT"
-slot0.CHECK_RES = "LoginMediator:CHECK_RES"
+﻿local var_0_0 = class("LoginMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_LOGIN, function (slot0, slot1)
-		uv0:sendNotification(GAME.USER_LOGIN, slot1)
+var_0_0.ON_LOGIN = "LoginMediator:ON_LOGIN"
+var_0_0.ON_REGISTER = "LoginMediator:ON_REGISTER"
+var_0_0.ON_SERVER = "LoginMediator:ON_SERVER"
+var_0_0.ON_LOGIN_PROCESS = "LoginMediator:ON_LOGIN_PROCESS"
+var_0_0.ON_SEARCH_ACCOUNT = "LoginMediator:ON_SEARCH_ACCOUNT"
+var_0_0.CHECK_RES = "LoginMediator:CHECK_RES"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_LOGIN, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.USER_LOGIN, arg_2_1)
 	end)
-	slot0:bind(uv0.ON_REGISTER, function (slot0, slot1)
-		uv0:sendNotification(GAME.USER_REGISTER, slot1)
+	arg_1_0:bind(var_0_0.ON_REGISTER, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.USER_REGISTER, arg_3_1)
 	end)
-	slot0:bind(uv0.ON_SERVER, function (slot0, slot1)
-		uv0:sendNotification(GAME.SERVER_LOGIN, slot1)
+	arg_1_0:bind(var_0_0.ON_SERVER, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.SERVER_LOGIN, arg_4_1)
 	end)
-	slot0:bind(uv0.ON_LOGIN_PROCESS, function (slot0)
+	arg_1_0:bind(var_0_0.ON_LOGIN_PROCESS, function(arg_5_0)
 		if PLATFORM_CODE == PLATFORM_CHT and (CSharpVersion == 31 or CSharpVersion == 32 or CSharpVersion == 33 or CSharpVersion == 34) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				modal = true,
 				hideNo = true,
 				content = "檢測到版本更新，需要手動下載更新包，是否前往下載？",
 				hideClose = true,
-				onYes = function ()
-					if YongshiSdkMgr.inst.channelUID == "0" then
+				onYes = function()
+					local var_6_0 = YongshiSdkMgr.inst.channelUID
+
+					if var_6_0 == "0" then
 						Application.OpenURL("https://play.google.com/store/apps/details?id=com.hkmanjuu.azurlane.gp")
-					elseif slot0 == "1" then
+					elseif var_6_0 == "1" then
 						Application.OpenURL("https://apps.apple.com/app/id1479022429")
-					elseif slot0 == "2" then
+					elseif var_6_0 == "2" then
 						Application.OpenURL("http://www.mygame.com.tw/MyGameAD/Accept.aspx?P=YAS3ZA2RSR&S=QUNRMMN7HY")
 					end
 
 					Application.Quit()
 				end,
-				onClose = function ()
+				onClose = function()
 					Application.Quit()
 				end
 			})
 		else
-			uv0:loginProcessHandler()
+			arg_1_0:loginProcessHandler()
 		end
 	end)
-	slot0:bind(uv0.ON_SEARCH_ACCOUNT, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACCOUNT_SEARCH, slot1)
+	arg_1_0:bind(var_0_0.ON_SEARCH_ACCOUNT, function(arg_8_0, arg_8_1)
+		arg_1_0:sendNotification(GAME.ACCOUNT_SEARCH, arg_8_1)
 	end)
-	slot0:bind(uv0.CHECK_RES, function (slot0)
-		uv0:checkPaintingRes()
+	arg_1_0:bind(var_0_0.CHECK_RES, function(arg_9_0)
+		arg_1_0:checkPaintingRes()
 	end)
 	pg.SdkMgr.GetInstance():EnterLoginScene()
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_10_0)
 	pg.SdkMgr.GetInstance():ExitLoginScene()
 end
 
-function slot0.loginProcessHandler(slot0)
-	slot1 = getProxy(SettingsProxy)
-	slot2 = pg.SdkMgr.GetInstance()
+function var_0_0.loginProcessHandler(arg_11_0)
+	local var_11_0 = getProxy(SettingsProxy)
+	local var_11_1 = pg.SdkMgr.GetInstance():GetLoginType()
 
-	assert(slot2:GetLoginType())
+	assert(var_11_1)
 
-	slot0.process = coroutine.wrap(function ()
-		uv0.viewComponent:switchSubView({})
+	arg_11_0.process = coroutine.wrap(function()
+		arg_11_0.viewComponent:switchSubView({})
 
-		if uv1:CheckNeedUserAgreement() then
-			uv0.viewComponent:showUserAgreement(uv0.process)
+		if var_11_0:CheckNeedUserAgreement() then
+			arg_11_0.viewComponent:showUserAgreement(arg_11_0.process)
 			coroutine.yield()
-			uv1:SetUserAgreement()
+			var_11_0:SetUserAgreement()
 		end
 
-		slot0 = nil
+		local var_12_0
 
-		if uv2 == LoginType.PLATFORM then
-			uv0.viewComponent:switchToServer()
-		elseif uv2 == LoginType.PLATFORM_TENCENT then
-			uv0.viewComponent:switchToTencentLogin()
-		elseif uv2 == LoginType.PLATFORM_INNER then
-			uv0.viewComponent:switchToLogin()
-			uv0.viewComponent:setLastLogin(getProxy(UserProxy):getLastLoginUser())
-		elseif uv2 == LoginType.PLATFORM_AIRIJP or uv2 == LoginType.PLATFORM_AIRIUS then
-			uv0.viewComponent:switchToAiriLogin()
+		if var_11_1 == LoginType.PLATFORM then
+			arg_11_0.viewComponent:switchToServer()
+		elseif var_11_1 == LoginType.PLATFORM_TENCENT then
+			arg_11_0.viewComponent:switchToTencentLogin()
+		elseif var_11_1 == LoginType.PLATFORM_INNER then
+			arg_11_0.viewComponent:switchToLogin()
+
+			var_12_0 = getProxy(UserProxy):getLastLoginUser()
+
+			arg_11_0.viewComponent:setLastLogin(var_12_0)
+		elseif var_11_1 == LoginType.PLATFORM_AIRIJP or var_11_1 == LoginType.PLATFORM_AIRIUS then
+			arg_11_0.viewComponent:switchToAiriLogin()
 		end
 
 		if not IsUnityEditor then
-			uv0:CheckMaintain()
+			arg_11_0:CheckMaintain()
 			coroutine.yield()
 		end
 
-		if uv0.contextData.code then
-			if uv0.contextData.code ~= 0 then
-				if uv0.contextData.code ~= SDK_EXIT_CODE then
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						modal = true,
-						hideNo = true,
-						content = ({
-							i18n("login_loginMediator_kickOtherLogin"),
-							i18n("login_loginMediator_kickServerClose"),
-							i18n("login_loginMediator_kickIntError"),
-							i18n("login_loginMediator_kickTimeError"),
-							i18n("login_loginMediator_kickLoginOut"),
-							i18n("login_loginMediator_serverLoginErro"),
-							i18n("login_loginMediator_vertifyFail"),
-							[199] = i18n("login_loginMediator_dataExpired")
-						})[uv0.contextData.code] or i18n("login_loginMediator_kickUndefined", uv0.contextData.code),
-						onYes = function ()
-							uv0.process()
-						end
-					})
-					coroutine.yield()
-				end
+		if arg_11_0.contextData.code then
+			if arg_11_0.contextData.code == 0 or arg_11_0.contextData.code == SDK_EXIT_CODE then
+				-- block empty
+			else
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					modal = true,
+					hideNo = true,
+					content = ({
+						i18n("login_loginMediator_kickOtherLogin"),
+						i18n("login_loginMediator_kickServerClose"),
+						i18n("login_loginMediator_kickIntError"),
+						i18n("login_loginMediator_kickTimeError"),
+						i18n("login_loginMediator_kickLoginOut"),
+						i18n("login_loginMediator_serverLoginErro"),
+						i18n("login_loginMediator_vertifyFail"),
+						[199] = i18n("login_loginMediator_dataExpired")
+					})[arg_11_0.contextData.code] or i18n("login_loginMediator_kickUndefined", arg_11_0.contextData.code),
+					onYes = function()
+						arg_11_0.process()
+					end
+				})
+				coroutine.yield()
 			end
 
-			if slot0 then
-				if slot0.type == 1 then
-					slot0.arg3 = ""
-				elseif slot0.type == 2 then
-					slot0.arg2 = ""
+			if var_12_0 then
+				if var_12_0.type == 1 then
+					var_12_0.arg3 = ""
+				elseif var_12_0.type == 2 then
+					var_12_0.arg2 = ""
 				end
 
-				uv0.viewComponent:setLastLogin(slot0)
+				arg_11_0.viewComponent:setLastLogin(var_12_0)
 			end
 		else
-			uv0.viewComponent:setAutoLogin()
+			arg_11_0.viewComponent:setAutoLogin()
 		end
 
-		if uv2 == LoginType.PLATFORM then
+		if var_11_1 == LoginType.PLATFORM then
 			pg.SdkMgr.GetInstance():LoginSdk()
-		elseif uv2 == LoginType.PLATFORM_TENCENT then
+		elseif var_11_1 == LoginType.PLATFORM_TENCENT then
 			pg.SdkMgr.GetInstance():TryLoginSdk()
-		elseif uv2 == LoginType.PLATFORM_INNER then
-			-- Nothing
+		elseif var_11_1 == LoginType.PLATFORM_INNER then
+			-- block empty
 		end
 
-		uv0.viewComponent:autoLogin()
+		arg_11_0.viewComponent:autoLogin()
 	end)
 
-	slot0.process()
+	arg_11_0.process()
 end
 
-function slot0.CheckMaintain(slot0)
-	slot1 = -1
-	slot2 = 0
-	slot3 = 1
-	slot4 = 2
+function var_0_0.CheckMaintain(arg_14_0)
+	local var_14_0 = -1
+	local var_14_1 = 0
+	local var_14_2 = 1
+	local var_14_3 = 2
 
-	GetServerState(function (slot0)
-		if slot0 == uv0 then
+	GetServerState(function(arg_15_0)
+		if arg_15_0 == var_14_2 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("login_loginMediator_kickServerClose"),
-				onNo = function ()
-					uv0.process()
+				onNo = function()
+					arg_14_0.process()
 				end,
-				onYes = function ()
-					uv0.process()
+				onYes = function()
+					arg_14_0.process()
 				end
 			})
-		elseif slot0 == uv2 then
+		elseif arg_15_0 == var_14_1 then
 			print("All servers working well. thanks God.")
-			uv1.process()
-		elseif slot0 == uv3 then
+			arg_14_0.process()
+		elseif arg_15_0 == var_14_0 then
 			print("Check server maintain state failed. but it doesnt matter. keep going.")
-			uv1.process()
+			arg_14_0.process()
 		else
 			print("no servers working. anyway. you should have a try. ")
-			uv1.process()
+			arg_14_0.process()
 		end
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_18_0)
 	return {
 		GAME.USER_LOGIN_SUCCESS,
 		GAME.USER_LOGIN_FAILED,
@@ -187,149 +193,163 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_1:getName()
+	local var_19_1 = arg_19_1:getBody()
 
-	if slot1:getName() == ServerProxy.SERVERS_UPDATED then
-		slot0.viewComponent:updateServerList(slot3)
-	elseif slot2 == GAME.USER_LOGIN_SUCCESS then
+	if var_19_0 == ServerProxy.SERVERS_UPDATED then
+		arg_19_0.viewComponent:updateServerList(var_19_1)
+	elseif var_19_0 == GAME.USER_LOGIN_SUCCESS then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginMediator_loginSuccess"))
-		slot0.viewComponent:setLastLoginServer(getProxy(ServerProxy):getLastServer(slot3.id))
-		slot0.viewComponent:switchToServer()
 
-		slot6 = getProxy(UserProxy)
+		local var_19_2 = getProxy(ServerProxy):getLastServer(var_19_1.id)
+
+		arg_19_0.viewComponent:setLastLoginServer(var_19_2)
+		arg_19_0.viewComponent:switchToServer()
+
+		local var_19_3 = getProxy(UserProxy)
 
 		if PLATFORM_CODE == PLATFORM_JP then
-			slot0.viewComponent:setUserData(slot6.getLastLoginUser())
+			arg_19_0.viewComponent:setUserData(var_19_3.getLastLoginUser())
 		end
 
 		if #getProxy(GatewayNoticeProxy):getGatewayNotices(false) > 0 then
-			slot0:addSubLayers(Context.New({
+			arg_19_0:addSubLayers(Context.New({
 				mediator = GatewayNoticeMediator,
 				viewComponent = GatewayNoticeLayer
 			}))
 		end
 
-		if getProxy(UserProxy).data.limitServerIds and #slot9.data.limitServerIds > 0 then
-			slot0.viewComponent:fillterRefundServer()
-			slot0.viewComponent:setLastLoginServer(nil)
+		local var_19_4 = getProxy(UserProxy)
+
+		if var_19_4.data.limitServerIds and #var_19_4.data.limitServerIds > 0 then
+			arg_19_0.viewComponent:fillterRefundServer()
+			arg_19_0.viewComponent:setLastLoginServer(nil)
 		end
 
-		slot0.viewComponent.switchGatewayBtn:Flush()
-	elseif slot2 == GAME.USER_REGISTER_SUCCESS then
+		arg_19_0.viewComponent.switchGatewayBtn:Flush()
+	elseif var_19_0 == GAME.USER_REGISTER_SUCCESS then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			content = i18n("login_loginMediator_quest_RegisterSuccess"),
-			onYes = function ()
-				uv0:sendNotification(GAME.USER_LOGIN, uv1)
+			onYes = function()
+				arg_19_0:sendNotification(GAME.USER_LOGIN, var_19_1)
 			end
 		})
-	elseif slot2 == GAME.SERVER_LOGIN_SUCCESS then
-		if slot3.uid == 0 then
+	elseif var_19_0 == GAME.SERVER_LOGIN_SUCCESS then
+		if var_19_1.uid == 0 then
 			if EPILOGUE_SKIPPABLE then
-				slot0:sendNotification(GAME.GO_SCENE, SCENE.CREATE_PLAYER)
+				arg_19_0:sendNotification(GAME.GO_SCENE, SCENE.CREATE_PLAYER)
 			else
-				slot0:sendNotification(GAME.BEGIN_STAGE, {
+				arg_19_0:sendNotification(GAME.BEGIN_STAGE, {
 					system = SYSTEM_PROLOGUE
 				})
 			end
 		else
-			slot0.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
-				id = slot3.uid
+			arg_19_0.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
+				id = var_19_1.uid
 			})
 		end
-	elseif slot2 == GAME.USER_REGISTER_FAILED then
+	elseif var_19_0 == GAME.USER_REGISTER_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_registerFail", slot3)
+			content = errorTip("login_loginMediator_registerFail", var_19_1)
 		})
-	elseif slot2 == GAME.USER_LOGIN_FAILED then
+	elseif var_19_0 == GAME.USER_LOGIN_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_userLoginFail_error", slot3),
-			onYes = function ()
-				slot0 = pg.SdkMgr.GetInstance():GetLoginType()
+			content = errorTip("login_loginMediator_userLoginFail_error", var_19_1),
+			onYes = function()
+				local var_21_0 = pg.SdkMgr.GetInstance():GetLoginType()
 
-				if uv0 == 20 then
-					uv1.viewComponent:switchToRegister()
-				elseif uv0 == 3 or uv0 == 6 then
-					uv1.viewComponent:switchToServer()
-				elseif uv0 == 1 or uv0 == 9 or uv0 == 11 or uv0 == 12 then
-					if slot0 == LoginType.PLATFORM_AIRIJP or slot0 == LoginType.PLATFORM_AIRIUS then
-						uv1.viewComponent:switchToAiriLogin()
+				if var_19_1 == 20 then
+					arg_19_0.viewComponent:switchToRegister()
+				elseif var_19_1 == 3 or var_19_1 == 6 then
+					arg_19_0.viewComponent:switchToServer()
+				elseif var_19_1 == 1 or var_19_1 == 9 or var_19_1 == 11 or var_19_1 == 12 then
+					if var_21_0 == LoginType.PLATFORM_AIRIJP or var_21_0 == LoginType.PLATFORM_AIRIUS then
+						arg_19_0.viewComponent:switchToAiriLogin()
 					else
-						uv1.viewComponent:switchToLogin()
+						arg_19_0.viewComponent:switchToLogin()
 					end
-				elseif slot0 == LoginType.PLATFORM or slot0 == LoginType.PLATFORM_TENCENT then
-					uv1.viewComponent:switchToServer()
-				elseif slot0 == LoginType.PLATFORM_AIRIJP or slot0 == LoginType.PLATFORM_AIRIUS then
-					uv1.viewComponent:switchToAiriLogin()
+				elseif var_21_0 == LoginType.PLATFORM or var_21_0 == LoginType.PLATFORM_TENCENT then
+					arg_19_0.viewComponent:switchToServer()
+				elseif var_21_0 == LoginType.PLATFORM_AIRIJP or var_21_0 == LoginType.PLATFORM_AIRIUS then
+					arg_19_0.viewComponent:switchToAiriLogin()
 				else
-					uv1.viewComponent:switchToLogin()
+					arg_19_0.viewComponent:switchToLogin()
 				end
 			end
 		})
-	elseif slot2 == GAME.SERVER_LOGIN_FAILED then
+	elseif var_19_0 == GAME.SERVER_LOGIN_FAILED then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
-			content = errorTip("login_loginMediator_serverLoginFail", slot3),
-			onYes = function ()
-				if pg.SdkMgr.GetInstance():GetLoginType() == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
-					uv0.viewComponent:switchToServer()
-				elseif slot0 == LoginType.PLATFORM_AIRIJP or slot0 == LoginType.PLATFORM_AIRIUS then
-					uv0.viewComponent:switchToAiriLogin()
+			content = errorTip("login_loginMediator_serverLoginFail", var_19_1),
+			onYes = function()
+				local var_22_0 = pg.SdkMgr.GetInstance():GetLoginType()
+
+				if var_22_0 == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
+					arg_19_0.viewComponent:switchToServer()
+				elseif var_22_0 == LoginType.PLATFORM_AIRIJP or var_22_0 == LoginType.PLATFORM_AIRIUS then
+					arg_19_0.viewComponent:switchToAiriLogin()
 				else
-					uv0.viewComponent:switchToLogin()
+					arg_19_0.viewComponent:switchToLogin()
 				end
 			end
 		})
-	elseif slot2 == GAME.LOAD_PLAYER_DATA_DONE then
-		slot0:checkPaintingRes()
-	elseif slot2 == GAME.BEGIN_STAGE_DONE then
-		slot0.viewComponent:unloadExtraVoice()
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
-	elseif slot2 == GAME.PLATFORM_LOGIN_DONE then
-		slot0:sendNotification(GAME.USER_LOGIN, slot3.user)
-	elseif slot2 == GAME.SERVER_LOGIN_WAIT then
-		slot0.viewComponent:SwitchToWaitPanel(slot3)
-	elseif slot2 == GAME.SERVER_LOGIN_FAILED_USER_BANNED then
-		if slot3 == 0 then
+	elseif var_19_0 == GAME.LOAD_PLAYER_DATA_DONE then
+		arg_19_0:checkPaintingRes()
+	elseif var_19_0 == GAME.BEGIN_STAGE_DONE then
+		arg_19_0.viewComponent:unloadExtraVoice()
+		arg_19_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_19_1)
+	elseif var_19_0 == GAME.PLATFORM_LOGIN_DONE then
+		arg_19_0:sendNotification(GAME.USER_LOGIN, var_19_1.user)
+	elseif var_19_0 == GAME.SERVER_LOGIN_WAIT then
+		arg_19_0.viewComponent:SwitchToWaitPanel(var_19_1)
+	elseif var_19_0 == GAME.SERVER_LOGIN_FAILED_USER_BANNED then
+		if var_19_1 == 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("user_is_forever_banned")
 			})
 		else
+			local var_19_5 = pg.TimeMgr.GetInstance():STimeDescS(var_19_1, "%Y-%m-%d %H:%M")
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("user_is_banned", pg.TimeMgr.GetInstance():STimeDescS(slot3, "%Y-%m-%d %H:%M"))
+				content = i18n("user_is_banned", var_19_5)
 			})
 		end
-	elseif slot2 == GAME.ON_SOCIAL_LINKED then
-		slot0.viewComponent:closeYostarAlertView()
+	elseif var_19_0 == GAME.ON_SOCIAL_LINKED then
+		arg_19_0.viewComponent:closeYostarAlertView()
 	end
 end
 
-function slot0.checkPaintingRes(slot0)
-	function slot2()
-		uv0.viewComponent.isNeedResCheck = true
+function var_0_0.checkPaintingRes(arg_23_0)
+	local function var_23_0()
+		arg_23_0.viewComponent:onLoadDataDone()
 	end
 
-	slot3 = pg.FileDownloadMgr.GetInstance()
+	local function var_23_1()
+		arg_23_0.viewComponent.isNeedResCheck = true
+	end
 
-	slot3:SetRemind(false)
-	PaintingConst.PaintingDownload({
+	pg.FileDownloadMgr.GetInstance():SetRemind(false)
+
+	local var_23_2 = PaintingGroupConst.GetPaintingNameListInLogin()
+	local var_23_3 = {
 		isShowBox = true,
-		paintingNameList = PaintingConst.GetPaintingNameListInLogin(),
-		finishFunc = function ()
-			uv0.viewComponent:onLoadDataDone()
-		end,
-		onNo = slot2,
-		onClose = slot2
-	})
+		paintingNameList = var_23_2,
+		finishFunc = var_23_0,
+		onNo = var_23_1,
+		onClose = var_23_1
+	}
+
+	PaintingGroupConst.PaintingDownload(var_23_3)
 end
 
-return slot0
+return var_0_0

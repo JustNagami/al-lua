@@ -1,58 +1,62 @@
-slot0 = class("MainSpineIcon", import(".MainBaseIcon"))
+﻿local var_0_0 = class("MainSpineIcon", import(".MainBaseIcon"))
 
-function slot0.Resume(slot0)
-	if slot0.spineAnim then
-		slot0.spineAnim:Resume()
+function var_0_0.Resume(arg_1_0)
+	if arg_1_0.spineAnim then
+		arg_1_0.spineAnim:Resume()
 	end
 end
 
-function slot0.Pause(slot0)
-	if not IsNil(slot0.spineAnim) then
-		slot0.spineAnim:Pause()
+function var_0_0.Pause(arg_2_0)
+	if not IsNil(arg_2_0.spineAnim) then
+		arg_2_0.spineAnim:Pause()
 	end
 end
 
-function slot0.Load(slot0, slot1)
-	slot0.loading = true
-	slot2 = PoolMgr.GetInstance()
+function var_0_0.Load(arg_3_0, arg_3_1)
+	arg_3_0.loading = true
 
-	slot2:GetSpineChar(slot1, true, function (slot0)
-		if uv0.exited then
+	PoolMgr.GetInstance():GetSpineChar(arg_3_1, true, function(arg_4_0)
+		if arg_3_0.exited then
 			return
 		end
 
-		LeanTween.cancel(slot0)
+		LeanTween.cancel(arg_4_0)
 
-		uv0.loading = false
-		uv0.shipModel = slot0
-		tf(slot0).localScale = Vector3(0.75, 0.75, 1)
+		arg_3_0.loading = false
+		arg_3_0.shipModel = arg_4_0
+		tf(arg_4_0).localScale = Vector3(0.75, 0.75, 1)
 
-		setParent(slot0, uv0._tf)
+		local var_4_0 = pg.ship_spine_shift[arg_3_1]
+		local var_4_1 = var_4_0 and var_4_0.mainui_shift[1] or 0
+		local var_4_2 = -130 + (var_4_0 and var_4_0.mainui_shift[2] or 0)
 
-		tf(slot0).localPosition = Vector3(pg.ship_spine_shift[uv1] and slot1.mainui_shift[1] or 0, -130 + (slot1 and slot1.mainui_shift[2] or 0), 0)
-		slot4 = slot0:GetComponent("SpineAnimUI")
+		setParent(arg_4_0, arg_3_0._tf)
 
-		slot4:SetAction("normal", 0)
+		tf(arg_4_0).localPosition = Vector3(var_4_1, var_4_2, 0)
 
-		uv0.spineAnim = slot4
+		local var_4_3 = arg_4_0:GetComponent("SpineAnimUI")
 
-		onNextTick(function ()
-			if uv0.spineAnim then
-				uv0.spineAnim:Resume()
+		var_4_3:SetAction("normal", 0)
+
+		arg_3_0.spineAnim = var_4_3
+
+		onNextTick(function()
+			if arg_3_0.spineAnim then
+				arg_3_0.spineAnim:Resume()
 			end
 		end)
 	end)
 
-	slot0.name = slot1
+	arg_3_0.name = arg_3_1
 end
 
-function slot0.Unload(slot0)
-	if slot0.name and slot0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(slot0.name, slot0.shipModel)
+function var_0_0.Unload(arg_6_0)
+	if arg_6_0.name and arg_6_0.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg_6_0.name, arg_6_0.shipModel)
 
-		slot0.spineAnim = nil
-		slot0.name = nil
+		arg_6_0.spineAnim = nil
+		arg_6_0.name = nil
 	end
 end
 
-return slot0
+return var_0_0

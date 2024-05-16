@@ -1,39 +1,44 @@
-slot0 = class("NewNavalTacticsStudentsPage", import("....base.BaseSubView"))
-slot1 = 1
-slot2 = 2
-slot3 = 3
+﻿local var_0_0 = class("NewNavalTacticsStudentsPage", import("....base.BaseSubView"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewNavalTacticsStudentsPage"
 end
 
-function slot0.OnUnlockSlot(slot0)
-	slot0:Flush()
+function var_0_0.OnUnlockSlot(arg_2_0)
+	arg_2_0:Flush()
 end
 
-function slot0.OnAddStudent(slot0)
-	slot0:Flush()
+function var_0_0.OnAddStudent(arg_3_0)
+	arg_3_0:Flush()
 end
 
-function slot0.OnExitStudent(slot0)
-	slot0:Flush()
+function var_0_0.OnExitStudent(arg_4_0)
+	arg_4_0:Flush()
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.helpBtn = slot0:findTF("help_btn")
-	slot0.cards = {
+function var_0_0.OnLoaded(arg_5_0)
+	arg_5_0.helpBtn = arg_5_0:findTF("help_btn")
+
+	local var_5_0 = arg_5_0:findTF("info")
+	local var_5_1 = arg_5_0:findTF("add")
+	local var_5_2 = arg_5_0:findTF("lock")
+
+	arg_5_0.cards = {
 		{},
 		{},
 		{}
 	}
 
-	table.insert(slot0.cards[uv0], NewNavalTacticsShipCard.New(slot0:findTF("info"), slot0.event))
-	table.insert(slot0.cards[uv1], NewNavalTacticsEmptyCard.New(slot0:findTF("add"), slot0.event))
-	table.insert(slot0.cards[uv2], NewNavalTacticsLockCard.New(slot0:findTF("lock"), slot0.event))
+	table.insert(arg_5_0.cards[var_0_1], NewNavalTacticsShipCard.New(var_5_0, arg_5_0.event))
+	table.insert(arg_5_0.cards[var_0_2], NewNavalTacticsEmptyCard.New(var_5_1, arg_5_0.event))
+	table.insert(arg_5_0.cards[var_0_3], NewNavalTacticsLockCard.New(var_5_2, arg_5_0.event))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.helpBtn, function ()
+function var_0_0.OnInit(arg_6_0)
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.tactics_lesson_system_introduce.tip
@@ -41,71 +46,83 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_8_0, arg_8_1)
+	var_0_0.super.Show(arg_8_0)
 
-	slot0.students = slot1
+	arg_8_0.students = arg_8_1
 
-	slot0:Flush()
+	arg_8_0:Flush()
 end
 
-function slot0.Flush(slot0)
-	slot1 = {
+function var_0_0.Flush(arg_9_0)
+	local var_9_0 = {
 		0,
 		0,
 		0
 	}
-	slot2 = getProxy(NavalAcademyProxy):getSkillClassNum()
+	local var_9_1 = getProxy(NavalAcademyProxy):getSkillClassNum()
 
-	for slot6 = 1, NavalAcademyProxy.MAX_SKILL_CLASS_NUM do
-		slot7 = slot0:GetCardType(slot6, slot2)
-		slot1[slot7] = slot1[slot7] + 1
+	for iter_9_0 = 1, NavalAcademyProxy.MAX_SKILL_CLASS_NUM do
+		local var_9_2 = arg_9_0:GetCardType(iter_9_0, var_9_1)
 
-		slot0:UpdateTypeCard(slot7, slot1[slot7], slot6)
+		var_9_0[var_9_2] = var_9_0[var_9_2] + 1
+
+		arg_9_0:UpdateTypeCard(var_9_2, var_9_0[var_9_2], iter_9_0)
 	end
 
-	for slot6, slot7 in ipairs(slot1) do
-		slot0:ClearDisableCards(slot6, slot7)
+	for iter_9_1, iter_9_2 in ipairs(var_9_0) do
+		arg_9_0:ClearDisableCards(iter_9_1, iter_9_2)
 	end
 end
 
-function slot0.GetCardType(slot0, slot1, slot2)
-	if slot2 < slot1 then
-		return uv0
+function var_0_0.GetCardType(arg_10_0, arg_10_1, arg_10_2)
+	if arg_10_2 < arg_10_1 then
+		return var_0_3
 	else
-		return slot0.students[slot1] and uv1 or uv2
+		return arg_10_0.students[arg_10_1] and var_0_1 or var_0_2
 	end
 end
 
-function slot0.UpdateTypeCard(slot0, slot1, slot2, slot3)
-	if not slot0.cards[slot1][slot2] then
-		slot4[slot2] = slot4[1]:Clone()
+function var_0_0.UpdateTypeCard(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = arg_11_0.cards[arg_11_1]
+	local var_11_1 = var_11_0[arg_11_2]
+
+	if not var_11_1 then
+		var_11_1 = var_11_0[1]:Clone()
+		var_11_0[arg_11_2] = var_11_1
 	end
 
-	slot5:Enable()
-	slot5:Update(slot3, slot0.students[slot3])
+	var_11_1:Enable()
+
+	local var_11_2 = arg_11_0.students[arg_11_3]
+
+	var_11_1:Update(arg_11_3, var_11_2)
 end
 
-function slot0.ClearDisableCards(slot0, slot1, slot2)
-	for slot7 = #slot0.cards[slot1], slot2 + 1, -1 do
-		slot3[slot7]:Disable()
+function var_0_0.ClearDisableCards(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = arg_12_0.cards[arg_12_1]
+
+	for iter_12_0 = #var_12_0, arg_12_2 + 1, -1 do
+		var_12_0[iter_12_0]:Disable()
 	end
 end
 
-function slot0.GetCard(slot0, slot1)
-	return underscore.detect(slot0.cards[uv0], function (slot0)
-		return slot0.index == uv0
+function var_0_0.GetCard(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.cards[var_0_1]
+
+	return underscore.detect(var_13_0, function(arg_14_0)
+		return arg_14_0.index == arg_13_1
 	end)
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in ipairs(slot0.cards) do
-		for slot9, slot10 in ipairs(slot5) do
-			slot10:Dispose()
+function var_0_0.OnDestroy(arg_15_0)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.cards) do
+		for iter_15_2, iter_15_3 in ipairs(iter_15_1) do
+			iter_15_3:Dispose()
 		end
 	end
 
-	slot0.cards = nil
+	arg_15_0.cards = nil
 end
 
-return slot0
+return var_0_0

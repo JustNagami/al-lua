@@ -1,18 +1,20 @@
-slot0 = class("EventPtBonus")
+﻿local var_0_0 = class("EventPtBonus")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.tr = slot1
-	slot0.resIcon = findTF(slot0.tr, "Image"):GetComponent(typeof(Image))
-	slot0.resName = findTF(slot0.tr, "Text"):GetComponent(typeof(Text))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.tr = arg_1_1
+	arg_1_0.resIcon = findTF(arg_1_0.tr, "Image"):GetComponent(typeof(Image))
+	arg_1_0.resName = findTF(arg_1_0.tr, "Text"):GetComponent(typeof(Text))
 
-	setActive(slot0.tr, false)
-	slot0:Update()
+	setActive(arg_1_0.tr, false)
+	arg_1_0:Update()
 end
 
-function slot0.Update(slot0)
-	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT) and slot1:getConfig("config_client").shopActID then
-		setActive(slot0.tr, true)
+function var_0_0.Update(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT)
+
+	if var_2_0 and var_2_0:getConfig("config_client").shopActID then
+		setActive(arg_2_0.tr, true)
 	end
 end
 
-return slot0
+return var_0_0

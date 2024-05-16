@@ -1,4 +1,4 @@
-return {
+﻿return {
 	tilewidth = 96,
 	name = "Map",
 	spacing = 0,

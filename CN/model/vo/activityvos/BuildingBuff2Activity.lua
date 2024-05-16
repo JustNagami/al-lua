@@ -1,55 +1,57 @@
-slot0 = class("BuildingBuff2Activity", import("model.vo.Activity"))
+﻿local var_0_0 = class("BuildingBuff2Activity", import("model.vo.Activity"))
 
-function slot0.GetBuildingConfigTable(slot0, slot1)
-	return pg.activity_event_building[slot1]
+function var_0_0.GetBuildingConfigTable(arg_1_0, arg_1_1)
+	return pg.activity_event_building[arg_1_1]
 end
 
-function slot0.GetBuildingLevel(slot0, slot1)
-	return slot0.data1KeyValueList[2][slot1] or 1
+function var_0_0.GetBuildingLevel(arg_2_0, arg_2_1)
+	return arg_2_0.data1KeyValueList[2][arg_2_1] or 1
 end
 
-function slot0.SetBuildingLevel(slot0, slot1, slot2)
-	slot0.data1KeyValueList[2][slot1] = slot2
+function var_0_0.SetBuildingLevel(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.data1KeyValueList[2][arg_3_1] = arg_3_2
 end
 
-function slot0.GetBuildingIds(slot0)
-	return slot0:getConfig("config_data")[1]
+function var_0_0.GetBuildingIds(arg_4_0)
+	return arg_4_0:getConfig("config_data")[1]
 end
 
-function slot0.GetTotalBuildingLevel(slot0)
-	slot2 = 0
+function var_0_0.GetTotalBuildingLevel(arg_5_0)
+	local var_5_0 = arg_5_0:GetBuildingIds()
+	local var_5_1 = 0
 
-	for slot6, slot7 in ipairs(slot0:GetBuildingIds()) do
-		slot2 = slot2 + slot0:GetBuildingLevel(slot7)
+	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+		var_5_1 = var_5_1 + arg_5_0:GetBuildingLevel(iter_5_1)
 	end
 
-	return math.floor(slot2 / #slot1)
+	return math.floor(var_5_1 / #var_5_0)
 end
 
-function slot0.GetBuildingLevelSum(slot0)
-	slot2 = 0
+function var_0_0.GetBuildingLevelSum(arg_6_0)
+	local var_6_0 = arg_6_0:GetBuildingIds()
+	local var_6_1 = 0
 
-	for slot6, slot7 in ipairs(slot0:GetBuildingIds()) do
-		slot2 = slot2 + slot0:GetBuildingLevel(slot7) - 1
+	for iter_6_0, iter_6_1 in ipairs(var_6_0) do
+		var_6_1 = var_6_1 + (arg_6_0:GetBuildingLevel(iter_6_1) - 1)
 	end
 
-	return slot2
+	return var_6_1
 end
 
-function slot0.GetSceneBuildingId(slot0)
-	return slot0:getConfig("config_id")
+function var_0_0.GetSceneBuildingId(arg_7_0)
+	return arg_7_0:getConfig("config_id")
 end
 
-function slot0.GetLastRequestTime(slot0)
-	return slot0.data1
+function var_0_0.GetLastRequestTime(arg_8_0)
+	return arg_8_0.data1
 end
 
-function slot0.RecordLastRequestTime(slot0)
-	slot0.data1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.RecordLastRequestTime(arg_9_0)
+	arg_9_0.data1 = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.CanRequest(slot0)
-	return slot0:GetLastRequestTime() < pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0) - 86400
+function var_0_0.CanRequest(arg_10_0)
+	return pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0) - 86400 > arg_10_0:GetLastRequestTime()
 end
 
-return slot0
+return var_0_0

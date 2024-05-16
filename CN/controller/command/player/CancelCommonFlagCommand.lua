@@ -1,18 +1,20 @@
-slot0 = class("CancelCommonFlagCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("CancelCommonFlagCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().flagID
 
-	slot4:Send(11021, {
-		flag_id = slot1:getBody().flagID
-	}, 11022, function (slot0)
-		if getProxy(PlayerProxy) then
-			slot2 = slot1:getData()
+	pg.ConnectionMgr.GetInstance():Send(11021, {
+		flag_id = var_1_0
+	}, 11022, function(arg_2_0)
+		local var_2_0 = getProxy(PlayerProxy)
 
-			slot2:CancelCommonFlag(uv0)
-			slot1:updatePlayer(slot2)
+		if var_2_0 then
+			local var_2_1 = var_2_0:getData()
+
+			var_2_1:CancelCommonFlag(var_1_0)
+			var_2_0:updatePlayer(var_2_1)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

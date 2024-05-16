@@ -1,543 +1,578 @@
-slot0 = class("CrusingScene", import("view.base.BaseUI"))
-slot0.optionsPath = {
+﻿local var_0_0 = class("CrusingScene", import("view.base.BaseUI"))
+
+var_0_0.optionsPath = {
 	"top/home"
 }
-slot0.FrameSpeed = 10
-slot0.PlaySpeed = 1.5
+var_0_0.FrameSpeed = 10
+var_0_0.PlaySpeed = 1.5
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CrusingUI"
 end
 
-function slot0.preload(slot0, slot1)
-	slot2 = getProxy(ActivityProxy)
-	slot2 = slot2:getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-	slot3 = PoolMgr.GetInstance()
-	slot4 = {}
+function var_0_0.preload(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	local var_2_1 = PoolMgr.GetInstance()
+	local var_2_2 = {}
 
-	table.insert(slot4, function (slot0)
-		slot2 = uv0
-		slot2 = uv1
+	table.insert(var_2_2, function(arg_3_0)
+		local var_3_0 = CrusingMapInfo.VersionInfo[var_2_0:getConfig("config_client").map_name]
 
-		slot2:GetPrefab("crusingmap/" .. CrusingMapInfo.VersionInfo[slot2:getConfig("config_client").map_name], "", true, function (slot0)
-			uv0.rtMap = tf(slot0)
-			uv0.PhaseFrame, uv0.AllFrameCount = CrusingMapInfo.GetPhaseFrame(uv1)
+		var_2_1:GetPrefab("crusingmap/" .. var_3_0, "", true, function(arg_4_0)
+			arg_2_0.rtMap = tf(arg_4_0)
+			arg_2_0.PhaseFrame, arg_2_0.AllFrameCount = CrusingMapInfo.GetPhaseFrame(var_3_0)
 
-			uv2()
+			arg_3_0()
 		end)
 	end)
-	table.insert(slot4, function (slot0)
-		slot1 = uv0
-		slot3 = uv1
+	table.insert(var_2_2, function(arg_5_0)
+		var_2_1:GetSpineChar(var_2_0:getConfig("config_client").spine_name, true, function(arg_6_0)
+			arg_2_0.rtModel = tf(arg_6_0)
 
-		slot1:GetSpineChar(slot3:getConfig("config_client").spine_name, true, function (slot0)
-			uv0.rtModel = tf(slot0)
-
-			uv1()
+			arg_5_0()
 		end)
 	end)
-	parallelAsync(slot4, function ()
-		setParent(uv0.rtModel, uv0.rtMap:Find("icon/model"))
+	parallelAsync(var_2_2, function()
+		setParent(arg_2_0.rtModel, arg_2_0.rtMap:Find("icon/model"))
 
-		uv0.rtModel.localScale = Vector3.one
+		arg_2_0.rtModel.localScale = Vector3.one
 
-		uv1()
+		arg_2_1()
 	end)
 end
 
-function slot0.init(slot0)
-	slot0.rtBg = slot0._tf:Find("bg")
-	slot0.scrollMap = slot0.rtBg:Find("map_scroll")
-	slot0.btnTask = slot0.rtBg:Find("task_btn")
-	slot0.textTip = slot0.rtBg:Find("tip")
-	slot0.rtAward = slot0._tf:Find("award_panel")
-	slot0.textPhase = slot0.rtAward:Find("phase/Text")
-	slot0.sliderPt = slot0.rtAward:Find("Slider")
-	slot0.comScroll = GetComponent(slot0.rtAward:Find("view/content"), "LScrollRect")
+function var_0_0.init(arg_8_0)
+	arg_8_0.rtBg = arg_8_0._tf:Find("bg")
+	arg_8_0.scrollMap = arg_8_0.rtBg:Find("map_scroll")
+	arg_8_0.btnTask = arg_8_0.rtBg:Find("task_btn")
+	arg_8_0.textTip = arg_8_0.rtBg:Find("tip")
+	arg_8_0.rtAward = arg_8_0._tf:Find("award_panel")
+	arg_8_0.textPhase = arg_8_0.rtAward:Find("phase/Text")
+	arg_8_0.sliderPt = arg_8_0.rtAward:Find("Slider")
+	arg_8_0.comScroll = GetComponent(arg_8_0.rtAward:Find("view/content"), "LScrollRect")
 
-	function slot0.comScroll.onUpdateItem(slot0, slot1)
-		uv0:updateAwardInfo(tf(slot1), uv0.awardList[slot0 + 1])
+	function arg_8_0.comScroll.onUpdateItem(arg_9_0, arg_9_1)
+		arg_8_0:updateAwardInfo(tf(arg_9_1), arg_8_0.awardList[arg_9_0 + 1])
 	end
 
-	slot0.rtNextAward = slot0.rtAward:Find("next")
-	slot0.btnAll = slot0.rtAward:Find("btn_all")
-	slot0.btnPay = slot0.rtAward:Find("btn_pay")
-	slot0.btnAfter = slot0.rtAward:Find("btn_after")
-	slot0.btnFinish = slot0.rtAward:Find("btn_finish")
-	slot0.rtTop = slot0._tf:Find("top")
-	slot0.btnBack = slot0.rtTop:Find("back")
-	slot0.btnHelp = slot0.rtTop:Find("help")
-	slot0.textDay = slot0.rtTop:Find("day/Text")
-	slot0.chargeTipWindow = ChargeTipWindow.New(slot0._tf, slot0.event)
-	slot0.LTDic = {}
+	arg_8_0.rtNextAward = arg_8_0.rtAward:Find("next")
+	arg_8_0.btnAll = arg_8_0.rtAward:Find("btn_all")
+	arg_8_0.btnPay = arg_8_0.rtAward:Find("btn_pay")
+	arg_8_0.btnAfter = arg_8_0.rtAward:Find("btn_after")
+	arg_8_0.btnFinish = arg_8_0.rtAward:Find("btn_finish")
+	arg_8_0.rtTop = arg_8_0._tf:Find("top")
+	arg_8_0.btnBack = arg_8_0.rtTop:Find("back")
+	arg_8_0.btnHelp = arg_8_0.rtTop:Find("help")
+	arg_8_0.textDay = arg_8_0.rtTop:Find("day/Text")
+	arg_8_0.chargeTipWindow = ChargeTipWindow.New(arg_8_0._tf, arg_8_0.event)
+	arg_8_0.LTDic = {}
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_10_0)
+	onButton(arg_10_0, arg_10_0.btnBack, function()
+		arg_10_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnTask, function ()
-		if uv0.phase < #uv0.awardList then
-			uv0:emit(CrusingMediator.EVENT_OPEN_TASK)
+	onButton(arg_10_0, arg_10_0.btnTask, function()
+		if arg_10_0.phase < #arg_10_0.awardList then
+			arg_10_0:emit(CrusingMediator.EVENT_OPEN_TASK)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("battlepass_complete"))
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnAll, function ()
-		if #uv0.activity:GetCrusingUnreceiveAward() > 0 then
-			slot1 = {}
+	onButton(arg_10_0, arg_10_0.btnAll, function()
+		local var_13_0 = arg_10_0.activity:GetCrusingUnreceiveAward()
 
-			if uv0:checkLimitMax(slot0) then
-				table.insert(slot1, function (slot0)
+		if #var_13_0 > 0 then
+			local var_13_1 = {}
+
+			if arg_10_0:checkLimitMax(var_13_0) then
+				table.insert(var_13_1, function(arg_14_0)
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("player_expResource_mail_fullBag"),
-						onYes = slot0
+						onYes = arg_14_0
 					})
 				end)
 			end
 
-			seriesAsync(slot1, function ()
-				uv0:emit(CrusingMediator.EVENT_GET_AWARD_ALL)
+			seriesAsync(var_13_1, function()
+				arg_10_0:emit(CrusingMediator.EVENT_GET_AWARD_ALL)
 			end)
 		end
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.btnPay, function ()
-		uv0:openBuyPanel()
+	onButton(arg_10_0, arg_10_0.btnPay, function()
+		arg_10_0:openBuyPanel()
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.btnAfter, function ()
-		if #uv0.activity:GetCrusingUnreceiveAward() > 0 then
-			slot1 = {}
+	onButton(arg_10_0, arg_10_0.btnAfter, function()
+		local var_17_0 = arg_10_0.activity:GetCrusingUnreceiveAward()
 
-			if uv0:checkLimitMax(slot0) then
-				table.insert(slot1, function (slot0)
+		if #var_17_0 > 0 then
+			local var_17_1 = {}
+
+			if arg_10_0:checkLimitMax(var_17_0) then
+				table.insert(var_17_1, function(arg_18_0)
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("player_expResource_mail_fullBag"),
-						onYes = slot0
+						onYes = arg_18_0
 					})
 				end)
 			end
 
-			seriesAsync(slot1, function ()
-				uv0:emit(CrusingMediator.EVENT_GET_AWARD_ALL)
+			seriesAsync(var_17_1, function()
+				arg_10_0:emit(CrusingMediator.EVENT_GET_AWARD_ALL)
 			end)
 		end
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.btnHelp, function ()
+	onButton(arg_10_0, arg_10_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n(uv0.activity:getConfig("config_client").tips[2])
+			helps = i18n(arg_10_0.activity:getConfig("config_client").tips[2])
 		})
 	end, SFX_PANEL)
 
-	slot0.maps = {
-		(function (slot0)
-			slot1 = {
-				_tf = slot0,
-				rtLine = slot0:Find("line"),
-				rtIcon = slot0:Find("icon"),
-				rtSimple = slot0:Find("simple")
-			}
+	local function var_10_0(arg_21_0)
+		local var_21_0 = {
+			_tf = arg_21_0,
+			rtLine = arg_21_0:Find("line"),
+			rtIcon = arg_21_0:Find("icon"),
+			rtSimple = arg_21_0:Find("simple")
+		}
 
-			setParent(slot0, uv0.scrollMap)
-			SetCompomentEnabled(slot0, typeof(Image), false)
+		setParent(arg_21_0, arg_10_0.scrollMap)
+		SetCompomentEnabled(arg_21_0, typeof(Image), false)
 
-			slot0.name = "map_tpl"
+		arg_21_0.name = "map_tpl"
 
-			SetAction(slot1.rtIcon:Find("model"):GetChild(0), "normal")
+		SetAction(var_21_0.rtIcon:Find("model"):GetChild(0), "normal")
 
-			return slot1
-		end)(slot0.rtMap)
+		return var_21_0
+	end
+
+	arg_10_0.maps = {
+		var_10_0(arg_10_0.rtMap)
 	}
 
-	while #slot0.maps < 3 do
-		table.insert(slot0.maps, slot1(tf(Instantiate(slot0.rtMap))))
+	while #arg_10_0.maps < 3 do
+		table.insert(arg_10_0.maps, var_10_0(tf(Instantiate(arg_10_0.rtMap))))
 	end
 
 	Canvas.ForceUpdateCanvases()
 
-	for slot5, slot6 in ipairs(slot0.maps) do
-		setParent(slot6.rtLine, slot0.scrollMap:Find("bg"), true)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.maps) do
+		setParent(iter_10_1.rtLine, arg_10_0.scrollMap:Find("bg"), true)
 	end
 
-	GetComponent(slot0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
+	GetComponent(arg_10_0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot0.ptId
+		id = arg_10_0.ptId
 	}):getIcon(), ""))
-	setText(slot0.textTip, i18n(slot0.activity:getConfig("config_client").tips[1]))
+	setText(arg_10_0.textTip, i18n(arg_10_0.activity:getConfig("config_client").tips[1]))
 
-	slot2 = slot0.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
+	local var_10_1 = arg_10_0.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-	setText(slot0.textDay, i18n("battlepass_main_time", math.floor(slot2 / 86400), math.floor(slot2 % 86400 / 3600)))
+	setText(arg_10_0.textDay, i18n("battlepass_main_time", math.floor(var_10_1 / 86400), math.floor(var_10_1 % 86400 / 3600)))
 
-	slot3 = GetComponent(slot0.scrollMap, typeof(ScrollRect))
-	slot4 = slot3.content.rect.width
-	slot7 = slot4 / 3 / (slot4 - slot3.viewport.rect.width)
+	local var_10_2 = GetComponent(arg_10_0.scrollMap, typeof(ScrollRect))
+	local var_10_3 = var_10_2.content.rect.width
+	local var_10_4 = var_10_2.viewport.rect.width
+	local var_10_5 = var_10_3 / 3 / (var_10_3 - var_10_4)
 
-	onScroll(slot0, slot0.scrollMap, function (slot0)
-		if slot0.x < 0.1 then
-			slot2 = uv0.normalizedPosition
-			slot2.x = slot0.x + uv1
-			uv0.normalizedPosition = slot2
-			uv0.velocity = uv0.velocity
-		elseif slot0.x > 0.9 then
-			slot2 = uv0.normalizedPosition
-			slot2.x = slot0.x - uv1
-			uv0.normalizedPosition = slot2
-			uv0.velocity = uv0.velocity
+	onScroll(arg_10_0, arg_10_0.scrollMap, function(arg_22_0)
+		if arg_22_0.x < 0.1 then
+			local var_22_0 = var_10_2.velocity
+			local var_22_1 = var_10_2.normalizedPosition
+
+			var_22_1.x = arg_22_0.x + var_10_5
+			var_10_2.normalizedPosition = var_22_1
+			var_10_2.velocity = var_22_0
+		elseif arg_22_0.x > 0.9 then
+			local var_22_2 = var_10_2.velocity
+			local var_22_3 = var_10_2.normalizedPosition
+
+			var_22_3.x = arg_22_0.x - var_10_5
+			var_10_2.normalizedPosition = var_22_3
+			var_10_2.velocity = var_22_2
 		end
 	end)
-	slot0:onScroll(slot0.comScroll, function (slot0)
-		uv0:updateNextAward(slot0.y)
+	arg_10_0:onScroll(arg_10_0.comScroll, function(arg_23_0)
+		arg_10_0:updateNextAward(arg_23_0.y)
 	end)
-	slot0:updateAwardPanel()
-	slot0:buildPhaseAwardScrollPos()
+	arg_10_0:updateAwardPanel()
+	arg_10_0:buildPhaseAwardScrollPos()
 
-	if slot0.phase == 0 then
-		slot0.comScroll:ScrollTo(0)
-	elseif slot0.phase == #slot0.awardList then
-		slot0.comScroll:ScrollTo(1)
+	if arg_10_0.phase == 0 then
+		arg_10_0.comScroll:ScrollTo(0)
+	elseif arg_10_0.phase == #arg_10_0.awardList then
+		arg_10_0.comScroll:ScrollTo(1)
 	else
-		slot0.comScroll:ScrollTo(math.clamp(slot0.phasePos[slot0.phase], 0, 1))
+		arg_10_0.comScroll:ScrollTo(math.clamp(arg_10_0.phasePos[arg_10_0.phase], 0, 1))
 	end
 
-	slot0:updateMapStatus()
+	arg_10_0:updateMapStatus()
 	LoadImageSpriteAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot0.ptId
-	}):getIcon(), "", slot0.sliderPt:Find("Text/icon"), true)
-	slot0:updateMapWay()
+		id = arg_10_0.ptId
+	}):getIcon(), "", arg_10_0.sliderPt:Find("Text/icon"), true)
+	arg_10_0:updateMapWay()
 end
 
-function slot0.willExit(slot0)
-	for slot4, slot5 in pairs(slot0.LTDic) do
-		if slot5 then
-			LeanTween.cancel(slot4)
+function var_0_0.willExit(arg_24_0)
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.LTDic) do
+		if iter_24_1 then
+			LeanTween.cancel(iter_24_0)
 		end
 	end
 
-	slot1 = PoolMgr.GetInstance()
-	slot2 = CrusingMapInfo.VersionInfo[slot0.activity:getConfig("config_client").map_name]
-	slot3 = slot0.activity:getConfig("config_client").spine_name
+	local var_24_0 = PoolMgr.GetInstance()
+	local var_24_1 = CrusingMapInfo.VersionInfo[arg_24_0.activity:getConfig("config_client").map_name]
+	local var_24_2 = arg_24_0.activity:getConfig("config_client").spine_name
 
-	for slot7, slot8 in ipairs(slot0.maps) do
-		setParent(slot8.rtLine, slot8._tf, true)
-		slot1:ReturnSpineChar(slot3, go(slot8.rtIcon:Find("model"):GetChild(0)))
-		slot1:ReturnPrefab("crusingmap/" .. slot2, "", go(slot8._tf))
+	for iter_24_2, iter_24_3 in ipairs(arg_24_0.maps) do
+		setParent(iter_24_3.rtLine, iter_24_3._tf, true)
+		var_24_0:ReturnSpineChar(var_24_2, go(iter_24_3.rtIcon:Find("model"):GetChild(0)))
+		var_24_0:ReturnPrefab("crusingmap/" .. var_24_1, "", go(iter_24_3._tf))
 	end
 
-	if slot0.chargeTipWindow then
-		slot0.chargeTipWindow:Destroy()
+	if arg_24_0.chargeTipWindow then
+		arg_24_0.chargeTipWindow:Destroy()
 
-		slot0.chargeTipWindow = nil
-	end
-end
-
-function slot0.setActivity(slot0, slot1)
-	slot0.activity = slot1
-
-	for slot5, slot6 in pairs(slot1:GetCrusingInfo()) do
-		slot0[slot5] = slot6
+		arg_24_0.chargeTipWindow = nil
 	end
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setActivity(arg_25_0, arg_25_1)
+	arg_25_0.activity = arg_25_1
+
+	for iter_25_0, iter_25_1 in pairs(arg_25_1:GetCrusingInfo()) do
+		arg_25_0[iter_25_0] = iter_25_1
+	end
 end
 
-function slot0.updateAwardInfo(slot0, slot1, slot2)
-	slot3 = slot2.pt <= slot0.pt
+function var_0_0.setPlayer(arg_26_0, arg_26_1)
+	arg_26_0.player = arg_26_1
+end
 
-	if slot1:Find("mask") then
-		setActive(slot1:Find("mask"), not slot3)
+function var_0_0.updateAwardInfo(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_2.pt <= arg_27_0.pt
+
+	if arg_27_1:Find("mask") then
+		setActive(arg_27_1:Find("mask"), not var_27_0)
 	end
 
-	setText(slot1:Find("Text"), slot2.id)
-	updateDrop(slot1:Find("award"), Drop.Create(slot2.award))
-	setActive(slot1:Find("award/get"), slot3 and not slot0.awardDic[slot2.pt])
-	setActive(slot1:Find("award/got"), slot0.awardDic[slot2.pt])
-	setActive(slot1:Find("award/mask"), slot0.awardDic[slot2.pt])
-	onButton(slot0, slot1:Find("award"), function ()
-		uv0:emit(uv1.ON_DROP, uv2)
+	setText(arg_27_1:Find("Text"), arg_27_2.id)
+
+	local var_27_1 = Drop.Create(arg_27_2.award)
+
+	updateDrop(arg_27_1:Find("award"), var_27_1)
+	setActive(arg_27_1:Find("award/get"), var_27_0 and not arg_27_0.awardDic[arg_27_2.pt])
+	setActive(arg_27_1:Find("award/got"), arg_27_0.awardDic[arg_27_2.pt])
+	setActive(arg_27_1:Find("award/mask"), arg_27_0.awardDic[arg_27_2.pt])
+	onButton(arg_27_0, arg_27_1:Find("award"), function()
+		arg_27_0:emit(var_0_0.ON_DROP, var_27_1)
 	end, SFX_CONFIRM)
-	updateDrop(slot1:Find("award_pay"), Drop.Create(slot2.award_pay))
-	setActive(slot1:Find("award_pay/lock"), not slot0.isPay)
-	setActive(slot1:Find("award_pay/get"), slot0.isPay and slot3 and not slot0.awardPayDic[slot2.pt])
-	setActive(slot1:Find("award_pay/got"), slot0.awardPayDic[slot2.pt])
-	setActive(slot1:Find("award_pay/mask"), not slot0.isPay or slot0.awardPayDic[slot2.pt])
-	onButton(slot0, slot1:Find("award_pay"), function ()
-		uv0:emit(uv1.ON_DROP, uv2)
+
+	local var_27_2 = Drop.Create(arg_27_2.award_pay)
+
+	updateDrop(arg_27_1:Find("award_pay"), var_27_2)
+	setActive(arg_27_1:Find("award_pay/lock"), not arg_27_0.isPay)
+	setActive(arg_27_1:Find("award_pay/get"), arg_27_0.isPay and var_27_0 and not arg_27_0.awardPayDic[arg_27_2.pt])
+	setActive(arg_27_1:Find("award_pay/got"), arg_27_0.awardPayDic[arg_27_2.pt])
+	setActive(arg_27_1:Find("award_pay/mask"), not arg_27_0.isPay or arg_27_0.awardPayDic[arg_27_2.pt])
+	onButton(arg_27_0, arg_27_1:Find("award_pay"), function()
+		arg_27_0:emit(var_0_0.ON_DROP, var_27_2)
 	end, SFX_CONFIRM)
 end
 
-function slot0.updateAwardPanel(slot0)
-	setText(slot0.textPhase, slot0.phase)
+function var_0_0.updateAwardPanel(arg_30_0)
+	setText(arg_30_0.textPhase, arg_30_0.phase)
 
-	if slot0.phase < #slot0.awardList then
-		slot1 = slot0.phase == 0 and 0 or slot0.awardList[slot0.phase].pt
-		slot2 = slot0.pt - slot1
-		slot3 = slot0.awardList[slot0.phase + 1].pt - slot1
+	if arg_30_0.phase < #arg_30_0.awardList then
+		local var_30_0 = arg_30_0.phase == 0 and 0 or arg_30_0.awardList[arg_30_0.phase].pt
+		local var_30_1 = arg_30_0.pt - var_30_0
+		local var_30_2 = arg_30_0.awardList[arg_30_0.phase + 1].pt - var_30_0
 
-		setSlider(slot0.sliderPt, 0, slot3, slot2)
-		setText(slot0.sliderPt:Find("Text"), slot2 .. "/" .. slot3)
+		setSlider(arg_30_0.sliderPt, 0, var_30_2, var_30_1)
+		setText(arg_30_0.sliderPt:Find("Text"), var_30_1 .. "/" .. var_30_2)
 	else
-		setSlider(slot0.sliderPt, 0, 1, 1)
-		setText(slot0.sliderPt:Find("Text"), "MAX")
+		setSlider(arg_30_0.sliderPt, 0, 1, 1)
+		setText(arg_30_0.sliderPt:Find("Text"), "MAX")
 	end
 
-	slot0.nextAward = nil
+	arg_30_0.nextAward = nil
 
-	slot0.comScroll:SetTotalCount(#slot0.awardList - 1)
-	slot0:updateNextAward(slot0.comScroll.value)
+	arg_30_0.comScroll:SetTotalCount(#arg_30_0.awardList - 1)
+	arg_30_0:updateNextAward(arg_30_0.comScroll.value)
 
-	slot1 = #slot0.activity:GetCrusingUnreceiveAward() > 0
+	local var_30_3 = #arg_30_0.activity:GetCrusingUnreceiveAward() > 0
 
-	setActive(slot0.btnAll, not slot0.isPay and slot1)
-	setActive(slot0.btnPay, not slot0.isPay)
-	setActive(slot0.rtAward:Find("text_image_3"), not slot0.isPay)
-	setActive(slot0.btnFinish, slot0.isPay and slot0.phase == #slot0.awardList and not slot1)
-	setActive(slot0.btnAfter, slot0.isPay and not isActive(slot0.btnFinish))
-	setButtonEnabled(slot0.btnAfter, slot1)
+	setActive(arg_30_0.btnAll, not arg_30_0.isPay and var_30_3)
+	setActive(arg_30_0.btnPay, not arg_30_0.isPay)
+	setActive(arg_30_0.rtAward:Find("text_image_3"), not arg_30_0.isPay)
+	setActive(arg_30_0.btnFinish, arg_30_0.isPay and arg_30_0.phase == #arg_30_0.awardList and not var_30_3)
+	setActive(arg_30_0.btnAfter, arg_30_0.isPay and not isActive(arg_30_0.btnFinish))
+	setButtonEnabled(arg_30_0.btnAfter, var_30_3)
 end
 
-function slot0.updateMapStatus(slot0)
-	for slot4, slot5 in ipairs(slot0.maps) do
-		slot6 = nil
-		slot7 = {}
+function var_0_0.updateMapStatus(arg_31_0)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_0.maps) do
+		local var_31_0
+		local var_31_1 = {}
 
-		eachChild(slot5.rtLine, function (slot0)
-			if uv0.phase < tonumber(slot0.name) then
-				if not uv1 then
-					uv1 = slot1
+		eachChild(iter_31_1.rtLine, function(arg_32_0)
+			local var_32_0 = tonumber(arg_32_0.name)
 
-					table.insert(uv2, slot0)
-					setActive(slot0, true)
-				elseif slot1 < uv1 then
-					while #uv2 > 0 do
-						setActive(table.remove(uv2), false)
+			if var_32_0 > arg_31_0.phase then
+				if not var_31_0 then
+					var_31_0 = var_32_0
+
+					table.insert(var_31_1, arg_32_0)
+					setActive(arg_32_0, true)
+				elseif var_32_0 < var_31_0 then
+					while #var_31_1 > 0 do
+						setActive(table.remove(var_31_1), false)
 					end
 
-					uv1 = slot1
+					var_31_0 = var_32_0
 
-					table.insert(uv2, slot0)
-					setActive(slot0, true)
-				elseif uv1 == slot1 then
-					table.insert(uv2, slot0)
-					setActive(slot0, true)
+					table.insert(var_31_1, arg_32_0)
+					setActive(arg_32_0, true)
+				elseif var_31_0 == var_32_0 then
+					table.insert(var_31_1, arg_32_0)
+					setActive(arg_32_0, true)
 				else
-					setActive(slot0, false)
+					setActive(arg_32_0, false)
 				end
 			else
-				setActive(slot0, true)
+				setActive(arg_32_0, true)
 			end
 
-			slot2 = uv0.phase < slot1
+			local var_32_1 = var_32_0 > arg_31_0.phase
 
-			setGray(slot0, not slot2, false)
-			setImageAlpha(slot0, slot2 and 1 or 0.9)
+			setGray(arg_32_0, not var_32_1, false)
+			setImageAlpha(arg_32_0, var_32_1 and 1 or 0.9)
 
-			if isActive(slot0) then
-				slot3 = nil
+			if isActive(arg_32_0) then
+				local var_32_2
 
-				function slot3(slot0, slot1)
-					if getImageSprite(slot0) then
-						setImageSprite(slot1, slot2)
+				local function var_32_3(arg_33_0, arg_33_1)
+					local var_33_0 = getImageSprite(arg_33_0)
+
+					if var_33_0 then
+						setImageSprite(arg_33_1, var_33_0)
 					end
 
-					eachChild(slot0, function (slot0)
-						uv0(slot0, uv1:Find(slot0.name))
+					eachChild(arg_33_0, function(arg_34_0)
+						var_32_3(arg_34_0, arg_33_1:Find(arg_34_0.name))
 					end)
 				end
 
-				slot4 = uv3.rtSimple
-				slot4 = slot4:Find(slot2 and "active" or "gray")
+				local var_32_4 = iter_31_1.rtSimple:Find(var_32_1 and "active" or "gray")
 
-				eachChild(slot0, function (slot0)
-					uv0(uv1:Find(slot0.name), slot0)
+				eachChild(arg_32_0, function(arg_35_0)
+					var_32_3(var_32_4:Find(arg_35_0.name), arg_35_0)
 				end)
 			end
 		end)
 	end
 end
 
-function slot0.updateMapWay(slot0)
-	if slot0.exited or slot0.contextData.frozenMapUpdate then
+function var_0_0.updateMapWay(arg_36_0)
+	if arg_36_0.exited or arg_36_0.contextData.frozenMapUpdate then
 		return
 	end
 
-	slot1 = PlayerPrefs.GetInt(string.format("crusing_%d_phase_display", slot0.activity.id), 0)
-	slot5 = slot0.activity.id
+	local var_36_0 = PlayerPrefs.GetInt(string.format("crusing_%d_phase_display", arg_36_0.activity.id), 0)
 
-	PlayerPrefs.SetInt(string.format("crusing_%d_phase_display", slot5), slot0.phase)
+	PlayerPrefs.SetInt(string.format("crusing_%d_phase_display", arg_36_0.activity.id), arg_36_0.phase)
 
-	for slot5, slot6 in ipairs(slot0.maps) do
-		slot7 = GetComponent(slot6.rtIcon, typeof(Animator))
+	for iter_36_0, iter_36_1 in ipairs(arg_36_0.maps) do
+		local var_36_1 = GetComponent(iter_36_1.rtIcon, typeof(Animator))
 
-		if slot1 < slot0.phase then
-			slot9 = slot0.PhaseFrame[slot0.phase]
-			slot7.speed = uv0.PlaySpeed
+		if var_36_0 < arg_36_0.phase then
+			local var_36_2 = arg_36_0.PhaseFrame[var_36_0]
+			local var_36_3 = arg_36_0.PhaseFrame[arg_36_0.phase]
 
-			slot7:Play("empty")
-			slot7:Play("mix", 0, slot0.PhaseFrame[slot1] / slot0.AllFrameCount)
+			var_36_1.speed = var_0_0.PlaySpeed
 
-			if slot6.rtIcon:Find("model").childCount > 0 then
-				SetAction(slot6.rtIcon:Find("model"):GetChild(0), "move")
+			var_36_1:Play("empty")
+			var_36_1:Play("mix", 0, var_36_2 / arg_36_0.AllFrameCount)
+
+			if iter_36_1.rtIcon:Find("model").childCount > 0 then
+				SetAction(iter_36_1.rtIcon:Find("model"):GetChild(0), "move")
 			end
 
-			slot10 = nil
-			slot0.LTDic[LeanTween.delayedCall((slot9 - slot8) / uv0.FrameSpeed / uv0.PlaySpeed, System.Action(function ()
-				uv0.speed = 0
+			local var_36_4
 
-				uv0:Play("empty")
-				uv0:Play("mix", 0, uv1 / uv2.AllFrameCount)
+			var_36_4 = LeanTween.delayedCall((var_36_3 - var_36_2) / var_0_0.FrameSpeed / var_0_0.PlaySpeed, System.Action(function()
+				var_36_1.speed = 0
 
-				uv2.LTDic[uv3] = false
+				var_36_1:Play("empty")
+				var_36_1:Play("mix", 0, var_36_3 / arg_36_0.AllFrameCount)
 
-				if uv4.rtIcon:Find("model").childCount > 0 then
-					SetAction(uv4.rtIcon:Find("model"):GetChild(0), "normal")
+				arg_36_0.LTDic[var_36_4] = false
+
+				if iter_36_1.rtIcon:Find("model").childCount > 0 then
+					SetAction(iter_36_1.rtIcon:Find("model"):GetChild(0), "normal")
 				end
-			end)).uniqueId] = true
+			end)).uniqueId
+			arg_36_0.LTDic[var_36_4] = true
 		else
-			slot7.speed = 0
+			var_36_1.speed = 0
 
-			slot7:Play("empty")
-			slot7:Play("mix", 0, slot0.PhaseFrame[slot0.phase] / slot0.AllFrameCount)
+			var_36_1:Play("empty")
+			var_36_1:Play("mix", 0, arg_36_0.PhaseFrame[arg_36_0.phase] / arg_36_0.AllFrameCount)
 		end
 	end
 end
 
-function slot0.buildPhaseAwardScrollPos(slot0)
-	slot0.phasePos = {}
+function var_0_0.buildPhaseAwardScrollPos(arg_38_0)
+	arg_38_0.phasePos = {}
 
-	for slot4 = 1, #slot0.awardList - 1 do
-		table.insert(slot0.phasePos, slot0.comScroll:HeadIndexToValue(slot4 - 1))
+	for iter_38_0 = 1, #arg_38_0.awardList - 1 do
+		table.insert(arg_38_0.phasePos, arg_38_0.comScroll:HeadIndexToValue(iter_38_0 - 1))
 	end
 end
 
-function slot0.onScroll(slot0, slot1, slot2)
-	slot3 = slot1.onValueChanged
+function var_0_0.onScroll(arg_39_0, arg_39_1, arg_39_2)
+	local var_39_0 = arg_39_1.onValueChanged
 
-	assert(slot2, "callback should exist")
-	slot3:RemoveAllListeners()
-	pg.DelegateInfo.Add(slot0, slot3)
-	slot3:AddListener(slot2)
+	assert(arg_39_2, "callback should exist")
+	var_39_0:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg_39_0, var_39_0)
+	var_39_0:AddListener(arg_39_2)
 end
 
-function slot0.updateNextAward(slot0, slot1)
-	if not slot0.phasePos then
+function var_0_0.updateNextAward(arg_40_0, arg_40_1)
+	if not arg_40_0.phasePos then
 		return
 	end
 
-	slot2 = slot0.phasePos[#slot0.phasePos] - 1
+	local var_40_0 = arg_40_0.phasePos[#arg_40_0.phasePos] - 1
+	local var_40_1 = #arg_40_0.awardList
 
-	for slot7 = #slot0.awardList - 1, 1, -1 do
-		slot8 = slot0.awardList[slot7]
+	for iter_40_0 = var_40_1 - 1, 1, -1 do
+		local var_40_2 = arg_40_0.awardList[iter_40_0]
 
-		if slot0.phasePos[slot7] < slot1 + slot2 or slot8.pt <= slot0.pt then
+		if arg_40_0.phasePos[iter_40_0] < arg_40_1 + var_40_0 or var_40_2.pt <= arg_40_0.pt then
 			break
-		elseif slot8.isImportent then
-			slot3 = slot7
+		elseif var_40_2.isImportent then
+			var_40_1 = iter_40_0
 		end
 	end
 
-	if slot0.nextAward ~= slot3 then
-		slot0.nextAward = slot3
+	if arg_40_0.nextAward ~= var_40_1 then
+		arg_40_0.nextAward = var_40_1
 
-		slot0:updateAwardInfo(slot0.rtNextAward, slot0.awardList[slot3])
+		arg_40_0:updateAwardInfo(arg_40_0.rtNextAward, arg_40_0.awardList[var_40_1])
 	end
 end
 
-function slot0.checkLimitMax(slot0, slot1)
-	slot2 = slot0.player
+function var_0_0.checkLimitMax(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_0.player
 
-	for slot6, slot7 in ipairs(slot1) do
-		if slot7.type == DROP_TYPE_RESOURCE then
-			if slot7.id == 1 then
-				if slot2:GoldMax(slot7.count) then
+	for iter_41_0, iter_41_1 in ipairs(arg_41_1) do
+		if iter_41_1.type == DROP_TYPE_RESOURCE then
+			if iter_41_1.id == 1 then
+				if var_41_0:GoldMax(iter_41_1.count) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 
 					return true
 				end
-			elseif slot7.id == 2 and slot2:OilMax(slot7.count) then
+			elseif iter_41_1.id == 2 and var_41_0:OilMax(iter_41_1.count) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title"))
 
 				return true
 			end
-		elseif slot7.type == DROP_TYPE_ITEM and Item.getConfigData(slot7.id).type == Item.EXP_BOOK_TYPE and slot8.max_num < getProxy(BagProxy):getItemCountById(slot7.id) + slot7.count then
-			return true
+		elseif iter_41_1.type == DROP_TYPE_ITEM then
+			local var_41_1 = Item.getConfigData(iter_41_1.id)
+
+			if var_41_1.type == Item.EXP_BOOK_TYPE and getProxy(BagProxy):getItemCountById(iter_41_1.id) + iter_41_1.count > var_41_1.max_num then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-function slot0.openBuyPanel(slot0)
-	slot2 = Goods.Create({
-		shop_id = slot0:getPassID()
+function var_0_0.openBuyPanel(arg_42_0)
+	local var_42_0 = arg_42_0:getPassID()
+	local var_42_1 = Goods.Create({
+		shop_id = var_42_0
 	}, Goods.TYPE_CHARGE)
-	slot3 = slot2:getConfig("tag")
-	slot4 = underscore.map(slot2:getConfig("extra_service_item"), function (slot0)
-		return Drop.Create(slot0)
+	local var_42_2 = var_42_1:getConfig("tag")
+	local var_42_3 = underscore.map(var_42_1:getConfig("extra_service_item"), function(arg_43_0)
+		return Drop.Create(arg_43_0)
 	end)
-	slot5 = nil
-	slot6 = slot2:getConfig("sub_display")
-	slot7 = slot6[1]
-	slot8 = pg.battlepass_event_pt[slot7].pt
-	slot5 = Drop.New({
+	local var_42_4
+	local var_42_5 = var_42_1:getConfig("sub_display")
+	local var_42_6 = var_42_5[1]
+	local var_42_7 = pg.battlepass_event_pt[var_42_6].pt
+	local var_42_8 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = pg.battlepass_event_pt[slot7].pt,
-		count = slot6[2]
+		id = pg.battlepass_event_pt[var_42_6].pt,
+		count = var_42_5[2]
 	})
-	slot4 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot7].drop_client_pay, function (slot0)
-		return Drop.Create(slot0)
+	local var_42_9 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_42_6].drop_client_pay, function(arg_44_0)
+		return Drop.Create(arg_44_0)
 	end))
-	slot10 = nil
+	local var_42_10 = var_42_1:getConfig("gem") + var_42_1:getConfig("extra_gem")
+	local var_42_11
 
-	if slot2:getConfig("gem") + slot2:getConfig("extra_gem") > 0 then
-		table.insert(slot4, Drop.New({
+	if var_42_10 > 0 then
+		table.insert(var_42_9, Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = PlayerConst.ResDiamond,
-			count = slot9
+			count = var_42_10
 		}))
 	end
 
-	slot0:emit(CrusingMediator.EVENT_GO_CHARGE, {
+	local var_42_12
+	local var_42_13
+	local var_42_14 = i18n("battlepass_pay_tip")
+	local var_42_15 = {
 		isChargeType = true,
-		icon = "chargeicon/" .. slot2:getConfig("picture"),
-		name = slot2:getConfig("name_display"),
-		tipExtra = i18n("battlepass_pay_tip"),
-		extraItems = slot4,
-		price = slot2:getConfig("money"),
-		isLocalPrice = slot2:IsLocalPrice(),
-		tagType = slot3,
-		isMonthCard = slot2:isMonthCard(),
-		tipBonus = nil,
-		bonusItem = slot10,
-		extraDrop = slot5,
-		descExtra = slot2:getConfig("descrip_extra"),
-		onYes = function ()
+		icon = "chargeicon/" .. var_42_1:getConfig("picture"),
+		name = var_42_1:getConfig("name_display"),
+		tipExtra = var_42_14,
+		extraItems = var_42_9,
+		price = var_42_1:getConfig("money"),
+		isLocalPrice = var_42_1:IsLocalPrice(),
+		tagType = var_42_2,
+		isMonthCard = var_42_1:isMonthCard(),
+		tipBonus = var_42_13,
+		bonusItem = var_42_11,
+		extraDrop = var_42_8,
+		descExtra = var_42_1:getConfig("descrip_extra"),
+		onYes = function()
 			if ChargeConst.isNeedSetBirth() then
-				uv0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+				arg_42_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
 			else
 				pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
-					shopId = uv1.id
+					shopId = var_42_1.id
 				})
 			end
 		end
-	})
+	}
+
+	arg_42_0:emit(CrusingMediator.EVENT_GO_CHARGE, var_42_15)
 end
 
-function slot0.getPassID(slot0)
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot2:isEnd() then
-		for slot6, slot7 in ipairs(pg.pay_data_display.all) do
-			if pg.pay_data_display[slot7].sub_display and type(slot8.sub_display) == "table" and slot8.sub_display[1] == slot2.id then
-				return slot7
+function var_0_0.getPassID(arg_46_0)
+	local var_46_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+
+	if var_46_0 and not var_46_0:isEnd() then
+		for iter_46_0, iter_46_1 in ipairs(pg.pay_data_display.all) do
+			local var_46_1 = pg.pay_data_display[iter_46_1]
+
+			if var_46_1.sub_display and type(var_46_1.sub_display) == "table" and var_46_1.sub_display[1] == var_46_0.id then
+				return iter_46_1
 			end
 		end
 	end
 end
 
-function slot0.OnChargeSuccess(slot0, slot1)
-	slot0.chargeTipWindow:ExecuteAction("Show", slot1)
+function var_0_0.OnChargeSuccess(arg_47_0, arg_47_1)
+	arg_47_0.chargeTipWindow:ExecuteAction("Show", arg_47_1)
 end
 
-return slot0
+return var_0_0

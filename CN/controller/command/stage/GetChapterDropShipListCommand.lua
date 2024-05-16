@@ -1,56 +1,57 @@
-slot0 = class("GetChapterDropShipListCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetChapterDropShipListCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.chapterId
+	local var_1_2 = var_1_0.callback
 
-	assert(slot2.chapterId)
+	assert(var_1_1)
 
-	if not getProxy(ChapterProxy).FectchDropShipListFlags then
-		slot5.FectchDropShipListFlags = {}
+	local var_1_3 = getProxy(ChapterProxy)
+
+	if not var_1_3.FectchDropShipListFlags then
+		var_1_3.FectchDropShipListFlags = {}
 	end
 
-	if not slot5.FectchDropShipListFlags[slot3] then
-		slot6 = pg.ConnectionMgr.GetInstance()
+	if not var_1_3.FectchDropShipListFlags[var_1_1] then
+		pg.ConnectionMgr.GetInstance():Send(13109, {
+			id = var_1_1
+		}, 13110, function(arg_2_0)
+			local var_2_0 = {}
 
-		slot6:Send(13109, {
-			id = slot3
-		}, 13110, function (slot0)
-			slot1 = {}
-
-			for slot5, slot6 in ipairs(slot0.drop_ship_list) do
-				table.insert(slot1, slot6)
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.drop_ship_list) do
+				table.insert(var_2_0, iter_2_1)
 			end
 
-			slot2 = uv0:getChapterById(uv1)
+			local var_2_1 = var_1_3:getChapterById(var_1_1)
 
-			slot2:UpdateDropShipList(slot1)
+			var_2_1:UpdateDropShipList(var_2_0)
 
-			uv0.FectchDropShipListFlags[uv1] = true
+			var_1_3.FectchDropShipListFlags[var_1_1] = true
 
-			uv0:updateChapter(slot2)
+			var_1_3:updateChapter(var_2_1)
 
-			slot3 = slot2:GetDropShipList()
+			local var_2_2 = var_2_1:GetDropShipList()
 
-			if uv2 then
-				uv2(slot3)
+			if var_1_2 then
+				var_1_2(var_2_2)
 			end
 
-			uv3:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
-				shipIds = slot3
+			arg_1_0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
+				shipIds = var_2_2
 			})
 		end)
 	else
-		slot7 = slot5:getChapterById(slot3):GetDropShipList()
+		local var_1_4 = var_1_3:getChapterById(var_1_1):GetDropShipList()
 
-		if slot4 then
-			slot4(slot7)
+		if var_1_2 then
+			var_1_2(var_1_4)
 		end
 
-		slot0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
-			shipIds = slot7
+		arg_1_0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST_DONE, {
+			shipIds = var_1_4
 		})
 	end
 end
 
-return slot0
+return var_0_0

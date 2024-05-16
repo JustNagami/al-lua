@@ -1,22 +1,8 @@
-return {
+﻿return {
 	id = 4001201,
 	bgm = "story-french2",
 	stages = {
 		{
-			{
-				triggerType = 8,
-				key = true,
-				waveIndex = 900,
-				preWaves = {
-					201
-				},
-				triggerParams = {}
-			},
-			stageIndex = 1,
-			failCondition = 1,
-			timeCount = 300,
-			passCondition = 1,
-			backGroundStageID = 1,
 			totalArea = {
 				-75,
 				20,
@@ -269,7 +255,21 @@ return {
 						}
 					}
 				}
-			}
+			},
+			{
+				triggerType = 8,
+				key = true,
+				waveIndex = 900,
+				preWaves = {
+					201
+				},
+				triggerParams = {}
+			},
+			stageIndex = 1,
+			failCondition = 1,
+			timeCount = 300,
+			passCondition = 1,
+			backGroundStageID = 1
 		}
 	},
 	fleet_prefab = {}

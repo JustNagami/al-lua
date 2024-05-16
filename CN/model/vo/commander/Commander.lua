@@ -1,12 +1,12 @@
-slot0 = class("Commander", import("..BaseVO"))
-slot1 = pg.commander_level
-slot2 = pg.commander_attribute_template
-slot3 = 0
-slot4 = 1
+﻿local var_0_0 = class("Commander", import("..BaseVO"))
+local var_0_1 = pg.commander_level
+local var_0_2 = pg.commander_attribute_template
+local var_0_3 = 0
+local var_0_4 = 1
 
-function slot0.rarity2Print(slot0)
-	if not uv0.prints then
-		uv0.prints = {
+function var_0_0.rarity2Print(arg_1_0)
+	if not var_0_0.prints then
+		var_0_0.prints = {
 			"n",
 			"n",
 			"r",
@@ -15,188 +15,198 @@ function slot0.rarity2Print(slot0)
 		}
 	end
 
-	return uv0.prints[slot0]
+	return var_0_0.prints[arg_1_0]
 end
 
-function slot0.rarity2Frame(slot0)
-	if not uv0.frames then
-		uv0.frames = {
+function var_0_0.rarity2Frame(arg_2_0)
+	if not var_0_0.frames then
+		var_0_0.frames = {
+			"2",
 			"2",
 			"2",
 			"3",
-			"4",
-			"5"
+			"4"
 		}
 	end
 
-	return uv0.frames[slot0]
+	return var_0_0.frames[arg_2_0]
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot1.template_id or slot0.id
-	slot0.level = slot1.level
-	slot0.exp = slot1.exp
-	slot0.isLock = slot1.is_locked
-	slot0.pt = slot1.used_pt
+function var_0_0.Ctor(arg_3_0, arg_3_1)
+	arg_3_0.id = arg_3_1.id
+	arg_3_0.configId = arg_3_1.template_id or arg_3_0.id
+	arg_3_0.level = arg_3_1.level
+	arg_3_0.exp = arg_3_1.exp
+	arg_3_0.isLock = arg_3_1.is_locked
+	arg_3_0.pt = arg_3_1.used_pt
 
-	if slot1.name and slot1.name ~= "" then
-		slot0.name = slot1.name
+	if arg_3_1.name and arg_3_1.name ~= "" then
+		arg_3_0.name = arg_3_1.name
 	end
 
-	slot0.renameTime = (slot1.rename_time or 0) + pg.gameset.commander_rename_coldtime.key_value
-	slot0.talentOrigins = {}
+	local var_3_0 = pg.gameset.commander_rename_coldtime.key_value
 
-	for slot6, slot7 in ipairs(slot1.ability_origin) do
-		slot8 = CommanderTalent.New({
-			id = slot7
+	arg_3_0.renameTime = (arg_3_1.rename_time or 0) + var_3_0
+	arg_3_0.talentOrigins = {}
+
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1.ability_origin) do
+		local var_3_1 = CommanderTalent.New({
+			id = iter_3_1
 		})
 
-		slot8:setOrigin(slot8)
-		table.insert(slot0.talentOrigins, slot8)
+		var_3_1:setOrigin(var_3_1)
+		table.insert(arg_3_0.talentOrigins, var_3_1)
 	end
 
-	slot0.talents = {}
+	arg_3_0.talents = {}
 
-	for slot6, slot7 in ipairs(slot1.ability) do
-		slot0:addTalent(CommanderTalent.New({
-			id = slot7
-		}))
+	for iter_3_2, iter_3_3 in ipairs(arg_3_1.ability) do
+		local var_3_2 = CommanderTalent.New({
+			id = iter_3_3
+		})
+
+		arg_3_0:addTalent(var_3_2)
 	end
 
-	slot0.notLearnedList = {}
-	slot0.abilityTime = slot1.ability_time
-	slot0.skills = {}
+	arg_3_0.notLearnedList = {}
+	arg_3_0.abilityTime = arg_3_1.ability_time
+	arg_3_0.skills = {}
 
-	for slot6, slot7 in ipairs(slot1.skill) do
-		table.insert(slot0.skills, CommanderSkill.New({
-			id = slot7.id,
-			exp = slot7.exp
-		}))
+	for iter_3_4, iter_3_5 in ipairs(arg_3_1.skill) do
+		local var_3_3 = CommanderSkill.New({
+			id = iter_3_5.id,
+			exp = iter_3_5.exp
+		})
+
+		table.insert(arg_3_0.skills, var_3_3)
 	end
 
-	slot0.abilitys = {}
+	arg_3_0.abilitys = {}
 
-	slot0:updateAbilitys()
+	arg_3_0:updateAbilitys()
 
-	slot0.maxLevel = uv0.all[#uv0.all]
-	slot0.groupId = slot0:getConfig("group_type")
-	slot0.cleanTime = slot1.home_clean_time or 0
-	slot0.playTime = slot1.home_play_time or 0
-	slot0.feedTime = slot1.home_feed_time or 0
+	arg_3_0.maxLevel = var_0_1.all[#var_0_1.all]
+	arg_3_0.groupId = arg_3_0:getConfig("group_type")
+	arg_3_0.cleanTime = arg_3_1.home_clean_time or 0
+	arg_3_0.playTime = arg_3_1.home_play_time or 0
+	arg_3_0.feedTime = arg_3_1.home_feed_time or 0
 end
 
-function slot0.IsRegularTalent(slot0)
-	return slot0:getConfig("ability_refresh_type") == uv0
+function var_0_0.IsRegularTalent(arg_4_0)
+	return arg_4_0:getConfig("ability_refresh_type") == var_0_4
 end
 
-function slot0.getRenameTime(slot0)
-	return slot0.renameTime
+function var_0_0.getRenameTime(arg_5_0)
+	return arg_5_0.renameTime
 end
 
-function slot0.setRenameTime(slot0, slot1)
-	slot0.renameTime = slot1
+function var_0_0.setRenameTime(arg_6_0, arg_6_1)
+	arg_6_0.renameTime = arg_6_1
 end
 
-function slot0.canModifyName(slot0)
-	return slot0.renameTime <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.canModifyName(arg_7_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_7_0.renameTime
 end
 
-function slot0.getRenameTimeDesc(slot0)
-	slot3, slot4, slot5, slot6 = pg.TimeMgr.GetInstance():parseTimeFrom(slot0.renameTime - pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.getRenameTimeDesc(arg_8_0)
+	local var_8_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_8_1 = arg_8_0.renameTime
+	local var_8_2, var_8_3, var_8_4, var_8_5 = pg.TimeMgr.GetInstance():parseTimeFrom(var_8_1 - var_8_0)
 
-	if slot3 < 1 then
-		if slot4 < 1 then
-			return slot5 .. i18n("word_minute")
+	if var_8_2 < 1 then
+		if var_8_3 < 1 then
+			return var_8_4 .. i18n("word_minute")
 		else
-			return slot4 .. i18n("word_hour")
+			return var_8_3 .. i18n("word_hour")
 		end
 	else
-		return slot3 .. i18n("word_date")
+		return var_8_2 .. i18n("word_date")
 	end
 end
 
-function slot0.setLock(slot0, slot1)
-	assert(type(slot1) == "number")
+function var_0_0.setLock(arg_9_0, arg_9_1)
+	assert(type(arg_9_1) == "number")
 
-	slot0.isLock = slot1
+	arg_9_0.isLock = arg_9_1
 end
 
-function slot0.getLock(slot0)
-	return slot0.isLock
+function var_0_0.getLock(arg_10_0)
+	return arg_10_0.isLock
 end
 
-function slot0.isLocked(slot0)
-	return slot0.isLock == 1
+function var_0_0.isLocked(arg_11_0)
+	return arg_11_0.isLock == 1
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_12_0)
 	return pg.commander_data_template
 end
 
-function slot0.getSkill(slot0, slot1)
-	return _.detect(slot0.skills, function (slot0)
-		return slot0.id == uv0
+function var_0_0.getSkill(arg_13_0, arg_13_1)
+	return _.detect(arg_13_0.skills, function(arg_14_0)
+		return arg_14_0.id == arg_13_1
 	end)
 end
 
-function slot0.getSkills(slot0)
-	return slot0.skills
+function var_0_0.getSkills(arg_15_0)
+	return arg_15_0.skills
 end
 
-function slot5(slot0, slot1)
-	table.sort(slot1, function (slot0, slot1)
-		return slot0.configId < slot1.configId
+local function var_0_5(arg_16_0, arg_16_1)
+	table.sort(arg_16_1, function(arg_17_0, arg_17_1)
+		return arg_17_0.configId < arg_17_1.configId
 	end)
 
-	for slot5, slot6 in ipairs(slot1) do
-		if slot0:IsLearnedTalent(slot6.id) then
-			return slot6
+	for iter_16_0, iter_16_1 in ipairs(arg_16_1) do
+		if arg_16_0:IsLearnedTalent(iter_16_1.id) then
+			return iter_16_1
 		end
 	end
 
-	return slot1[1]
+	return arg_16_1[1]
 end
 
-function slot0.GetDisplayTalents(slot0)
-	if slot0:IsRegularTalent() then
-		slot1 = {}
-		slot5 = "ability_show"
+function var_0_0.GetDisplayTalents(arg_18_0)
+	if arg_18_0:IsRegularTalent() then
+		local var_18_0 = {}
 
-		for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
-			if not slot1[CommanderTalent.New({
-				id = slot6
-			}).groupId] then
-				slot1[slot7.groupId] = {}
+		for iter_18_0, iter_18_1 in ipairs(arg_18_0:getConfig("ability_show")) do
+			local var_18_1 = CommanderTalent.New({
+				id = iter_18_1
+			})
+
+			if not var_18_0[var_18_1.groupId] then
+				var_18_0[var_18_1.groupId] = {}
 			end
 
-			table.insert(slot1[slot7.groupId], slot7)
+			table.insert(var_18_0[var_18_1.groupId], var_18_1)
 		end
 
-		slot2 = {}
-		slot3 = {}
+		local var_18_2 = {}
+		local var_18_3 = {}
 
-		for slot7, slot8 in pairs(slot1) do
-			slot9 = uv0(slot0, slot8)
+		for iter_18_2, iter_18_3 in pairs(var_18_0) do
+			local var_18_4 = var_0_5(arg_18_0, iter_18_3)
 
-			table.insert(slot2, slot9)
+			table.insert(var_18_2, var_18_4)
 
-			slot3[slot9.id] = slot0:IsLearnedTalent(slot9.id)
+			var_18_3[var_18_4.id] = arg_18_0:IsLearnedTalent(var_18_4.id)
 		end
 
-		table.sort(slot2, function (slot0, slot1)
-			return (uv0[slot0.id] and 1 or 0) > (uv0[slot1.id] and 1 or 0)
+		table.sort(var_18_2, function(arg_19_0, arg_19_1)
+			return (var_18_3[arg_19_0.id] and 1 or 0) > (var_18_3[arg_19_1.id] and 1 or 0)
 		end)
 
-		return slot2
-	else
-		return slot0:getTalents()
+		do return var_18_2 end
+		return
 	end
+
+	return arg_18_0:getTalents()
 end
 
-function slot0.IsLearnedTalent(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.talents) do
-		if slot6.id == slot1 then
+function var_0_0.IsLearnedTalent(arg_20_0, arg_20_1)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.talents) do
+		if iter_20_1.id == arg_20_1 then
 			return true
 		end
 	end
@@ -204,386 +214,419 @@ function slot0.IsLearnedTalent(slot0, slot1)
 	return false
 end
 
-function slot0.getTalents(slot0)
-	return slot0.talents
+function var_0_0.getTalents(arg_21_0)
+	return arg_21_0.talents
 end
 
-function slot0.getTalentOrigins(slot0)
-	return slot0.talentOrigins
+function var_0_0.getTalentOrigins(arg_22_0)
+	return arg_22_0.talentOrigins
 end
 
-function slot0.addTalent(slot0, slot1)
-	slot1:setOrigin(_.detect(slot0.talentOrigins, function (slot0)
-		return slot0.groupId == uv0.groupId
-	end))
-	table.insert(slot0.talents, slot1)
+function var_0_0.addTalent(arg_23_0, arg_23_1)
+	local var_23_0 = _.detect(arg_23_0.talentOrigins, function(arg_24_0)
+		return arg_24_0.groupId == arg_23_1.groupId
+	end)
+
+	arg_23_1:setOrigin(var_23_0)
+	table.insert(arg_23_0.talents, arg_23_1)
 end
 
-function slot0.deleteTablent(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.talents) do
-		if slot6.id == slot1 then
-			table.remove(slot0.talents, slot5)
+function var_0_0.deleteTablent(arg_25_0, arg_25_1)
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0.talents) do
+		if iter_25_1.id == arg_25_1 then
+			table.remove(arg_25_0.talents, iter_25_0)
 
 			break
 		end
 	end
 end
 
-function slot0.getTalent(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.talents) do
-		if slot6 == slot1 then
-			return slot6
+function var_0_0.getTalent(arg_26_0, arg_26_1)
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.talents) do
+		if iter_26_1 == arg_26_1 then
+			return iter_26_1
 		end
 	end
 end
 
-function slot0.resetTalents(slot0)
-	slot0.talents = Clone(slot0.talentOrigins)
+function var_0_0.resetTalents(arg_27_0)
+	arg_27_0.talents = Clone(arg_27_0.talentOrigins)
 end
 
-function slot0.getNotLearnedList(slot0)
-	return slot0.notLearnedList
+function var_0_0.getNotLearnedList(arg_28_0)
+	return arg_28_0.notLearnedList
 end
 
-function slot0.updateNotLearnedList(slot0, slot1)
-	slot0.notLearnedList = slot1
+function var_0_0.updateNotLearnedList(arg_29_0, arg_29_1)
+	arg_29_0.notLearnedList = arg_29_1
 end
 
-function slot0.getResetTalentConsume(slot0)
-	return pg.gameset.commander_skill_reset_cost.description[1][slot0.pt]
+function var_0_0.getResetTalentConsume(arg_30_0)
+	return pg.gameset.commander_skill_reset_cost.description[1][arg_30_0.pt]
 end
 
-function slot0.getTotalPoint(slot0)
-	return math.floor(slot0.level / CommanderConst.TALENT_POINT_LEVEL) * CommanderConst.TALENT_POINT
+function var_0_0.getTotalPoint(arg_31_0)
+	return math.floor(arg_31_0.level / CommanderConst.TALENT_POINT_LEVEL) * CommanderConst.TALENT_POINT
 end
 
-function slot0.getTalentPoint(slot0)
-	return slot0:getTotalPoint() - slot0.pt
+function var_0_0.getTalentPoint(arg_32_0)
+	return arg_32_0:getTotalPoint() - arg_32_0.pt
 end
 
-function slot0.updatePt(slot0, slot1)
-	slot0.pt = slot1
+function var_0_0.updatePt(arg_33_0, arg_33_1)
+	arg_33_0.pt = arg_33_1
 end
 
-function slot0.getPt(slot0)
-	return slot0.pt
+function var_0_0.getPt(arg_34_0)
+	return arg_34_0.pt
 end
 
-function slot0.fullTalentCnt(slot0)
-	return CommanderConst.MAX_TELENT_COUNT <= #slot0.talents
+function var_0_0.fullTalentCnt(arg_35_0)
+	return #arg_35_0.talents >= CommanderConst.MAX_TELENT_COUNT
 end
 
-function slot0.hasTalent(slot0, slot1)
-	return slot0:getSameGroupTalent(slot1.groupId) ~= nil
+function var_0_0.hasTalent(arg_36_0, arg_36_1)
+	return arg_36_0:getSameGroupTalent(arg_36_1.groupId) ~= nil
 end
 
-function slot0.getSameGroupTalent(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.talents) do
-		if slot6.groupId == slot1 then
-			return slot6
+function var_0_0.getSameGroupTalent(arg_37_0, arg_37_1)
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.talents) do
+		if iter_37_1.groupId == arg_37_1 then
+			return iter_37_1
 		end
 	end
 end
 
-function slot0.getTalentsDesc(slot0)
-	slot1 = {}
+function var_0_0.getTalentsDesc(arg_38_0)
+	local var_38_0 = {}
+	local var_38_1 = arg_38_0:getTalents()
 
-	for slot6, slot7 in ipairs(slot0:getTalents()) do
-		for slot11, slot12 in pairs(slot7:getDesc()) do
-			if slot1[slot11] then
-				slot1[slot11].value = slot1[slot11].value + slot12.value
+	for iter_38_0, iter_38_1 in ipairs(var_38_1) do
+		for iter_38_2, iter_38_3 in pairs(iter_38_1:getDesc()) do
+			if var_38_0[iter_38_2] then
+				var_38_0[iter_38_2].value = var_38_0[iter_38_2].value + iter_38_3.value
 			else
-				slot1[slot11] = {
-					name = slot11,
-					value = slot12.value,
-					type = slot12.type
+				var_38_0[iter_38_2] = {
+					name = iter_38_2,
+					value = iter_38_3.value,
+					type = iter_38_3.type
 				}
 			end
 		end
 	end
 
-	return slot1
+	return var_38_0
 end
 
-function slot0.getAbilitys(slot0)
-	return slot0.abilitys
+function var_0_0.getAbilitys(arg_39_0)
+	return arg_39_0.abilitys
 end
 
-function slot0.updateAbilitys(slot0)
-	slot1 = pg.gameset.commander_grow_form_a.key_value
-	slot2 = pg.gameset.commander_grow_form_b.key_value
+function var_0_0.updateAbilitys(arg_40_0)
+	local var_40_0 = pg.gameset.commander_grow_form_a.key_value
+	local var_40_1 = pg.gameset.commander_grow_form_b.key_value
 
-	function slot3(slot0)
-		slot1 = uv0:getConfig(slot0 .. "_value")
+	local function var_40_2(arg_41_0)
+		local var_41_0 = arg_40_0:getConfig(arg_41_0 .. "_value")
 
-		return math.floor(slot1 + slot1 * (uv0.level - 1) * uv1 / uv2)
+		return math.floor(var_41_0 + var_41_0 * (arg_40_0.level - 1) * var_40_0 / var_40_1)
 	end
 
-	slot5 = {
+	local var_40_3 = {
+		"command",
+		"tactic",
+		"support"
+	}
+	local var_40_4 = {
 		101,
 		102,
 		103
 	}
 
-	for slot9, slot10 in ipairs({
-		"command",
-		"tactic",
-		"support"
-	}) do
-		slot0.abilitys[slot10] = {
-			value = slot3(slot10),
-			id = slot5[slot9]
+	for iter_40_0, iter_40_1 in ipairs(var_40_3) do
+		local var_40_5 = var_40_2(iter_40_1)
+
+		arg_40_0.abilitys[iter_40_1] = {
+			value = var_40_5,
+			id = var_40_4[iter_40_0]
 		}
 	end
 end
 
-function slot0.getAbilitysAddition(slot0)
-	slot1 = pg.gameset.commander_form_a.key_value
-	slot2 = pg.gameset.commander_form_b.key_value
-	slot3 = pg.gameset.commander_form_c.key_value
-	slot4 = pg.gameset.commander_form_n.key_value
+function var_0_0.getAbilitysAddition(arg_42_0)
+	local var_42_0 = pg.gameset.commander_form_a.key_value
+	local var_42_1 = pg.gameset.commander_form_b.key_value
+	local var_42_2 = pg.gameset.commander_form_c.key_value
+	local var_42_3 = pg.gameset.commander_form_n.key_value
 
-	function slot5(slot0)
-		slot1 = 0
+	local function var_42_4(arg_43_0)
+		local var_43_0 = 0
 
-		for slot5, slot6 in pairs(uv0.abilitys) do
-			if uv1[slot6.id]["rate_" .. slot0] and slot7["rate_" .. slot0] / 10000 > 0 then
-				slot1 = slot1 + slot6.value * slot8
+		for iter_43_0, iter_43_1 in pairs(arg_42_0.abilitys) do
+			local var_43_1 = var_0_2[iter_43_1.id]
+
+			if var_43_1["rate_" .. arg_43_0] then
+				local var_43_2 = var_43_1["rate_" .. arg_43_0] / 10000
+
+				if var_43_2 > 0 then
+					var_43_0 = var_43_0 + iter_43_1.value * var_43_2
+				end
 			end
 		end
 
-		return tonumber(string.format("%0.3f", (uv2 - uv3 / (slot1 + uv4)) * uv5))
+		return tonumber(string.format("%0.3f", (var_42_0 - var_42_1 / (var_43_0 + var_42_2)) * var_42_3))
 	end
 
-	slot6 = {}
+	local var_42_5 = {}
 
-	for slot10, slot11 in ipairs(CommanderConst.PROPERTIES) do
-		slot6[slot11] = slot5(slot11)
+	for iter_42_0, iter_42_1 in ipairs(CommanderConst.PROPERTIES) do
+		var_42_5[iter_42_1] = var_42_4(iter_42_1)
 	end
 
-	return slot6
+	return var_42_5
 end
 
-function slot0.getTalentsAddition(slot0, slot1, slot2, slot3, slot4)
-	slot5 = 0
+function var_0_0.getTalentsAddition(arg_44_0, arg_44_1, arg_44_2, arg_44_3, arg_44_4)
+	local var_44_0 = 0
+	local var_44_1 = arg_44_0:getTalents()
 
-	for slot10, slot11 in pairs(slot0:getTalents()) do
-		slot12, slot13 = slot11:getAttrsAddition()
-		slot14 = nil
+	for iter_44_0, iter_44_1 in pairs(var_44_1) do
+		local var_44_2, var_44_3 = iter_44_1:getAttrsAddition()
+		local var_44_4
 
-		if slot1 == CommanderConst.TALENT_ADDITION_NUMBER then
-			slot14 = slot12
-		elseif slot1 == CommanderConst.TALENT_ADDITION_RATIO then
-			slot14 = slot13
+		if arg_44_1 == CommanderConst.TALENT_ADDITION_NUMBER then
+			var_44_4 = var_44_2
+		elseif arg_44_1 == CommanderConst.TALENT_ADDITION_RATIO then
+			var_44_4 = var_44_3
 		end
 
-		slot16 = true
+		local var_44_5 = var_44_4[arg_44_2]
+		local var_44_6 = true
 
-		if slot14[slot2] then
-			if #slot15.nation > 0 and not table.contains(slot15.nation, slot3) then
-				slot16 = false
+		if var_44_5 then
+			if #var_44_5.nation > 0 and not table.contains(var_44_5.nation, arg_44_3) then
+				var_44_6 = false
 			end
 
-			if #slot15.shiptype > 0 and not table.contains(slot15.shiptype, slot4) then
-				slot16 = false
+			if #var_44_5.shiptype > 0 and not table.contains(var_44_5.shiptype, arg_44_4) then
+				var_44_6 = false
 			end
 		else
-			slot16 = false
+			var_44_6 = false
 		end
 
-		if slot16 then
-			slot5 = slot5 + slot15.value
+		if var_44_6 then
+			var_44_0 = var_44_0 + var_44_5.value
 		end
 	end
 
-	return slot5
+	return var_44_0
 end
 
-function slot0.getAttrRatioAddition(slot0, slot1, slot2, slot3)
-	if table.contains(CommanderConst.PROPERTIES, slot1) then
-		return slot0:getAbilitysAddition()[slot1] + slot0:getTalentsAddition(CommanderConst.TALENT_ADDITION_RATIO, slot1, slot2, slot3) / 100
+function var_0_0.getAttrRatioAddition(arg_45_0, arg_45_1, arg_45_2, arg_45_3)
+	if table.contains(CommanderConst.PROPERTIES, arg_45_1) then
+		return arg_45_0:getAbilitysAddition()[arg_45_1] + arg_45_0:getTalentsAddition(CommanderConst.TALENT_ADDITION_RATIO, arg_45_1, arg_45_2, arg_45_3) / 100
 	else
 		return 0
 	end
 end
 
-function slot0.getAttrValueAddition(slot0, slot1, slot2, slot3)
-	if table.contains(CommanderConst.PROPERTIES, slot1) then
-		return slot0:getTalentsAddition(CommanderConst.TALENT_ADDITION_NUMBER, slot1, slot2, slot3)
+function var_0_0.getAttrValueAddition(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
+	if table.contains(CommanderConst.PROPERTIES, arg_46_1) then
+		return (arg_46_0:getTalentsAddition(CommanderConst.TALENT_ADDITION_NUMBER, arg_46_1, arg_46_2, arg_46_3))
 	else
 		return 0
 	end
 end
 
-function slot0.addExp(slot0, slot1)
-	if slot0:isMaxLevel() then
+function var_0_0.addExp(arg_47_0, arg_47_1)
+	if arg_47_0:isMaxLevel() then
 		return
 	end
 
-	slot0.exp = slot0.exp + slot1
+	arg_47_0.exp = arg_47_0.exp + arg_47_1
 
-	while not slot0:isMaxLevel() and slot0:canLevelUp() do
-		slot0.exp = slot0.exp - slot0:getNextLevelExp()
+	while not arg_47_0:isMaxLevel() and arg_47_0:canLevelUp() do
+		arg_47_0.exp = arg_47_0.exp - arg_47_0:getNextLevelExp()
 
-		slot0:updateLevel()
+		arg_47_0:updateLevel()
 	end
 end
 
-function slot0.ReduceExp(slot0, slot1)
-	slot0.exp = slot0.exp - slot1
+function var_0_0.ReduceExp(arg_48_0, arg_48_1)
+	arg_48_0.exp = arg_48_0.exp - arg_48_1
 
-	while slot0.exp < 0 do
-		slot0.level = slot0.level - 1
-		slot0.exp = slot0:getNextLevelExp() + slot0.exp
+	while arg_48_0.exp < 0 do
+		arg_48_0.level = arg_48_0.level - 1
+		arg_48_0.exp = arg_48_0:getNextLevelExp() + arg_48_0.exp
 	end
 end
 
-function slot0.canLevelUp(slot0)
-	return slot0:getNextLevelExp() <= slot0.exp
+function var_0_0.canLevelUp(arg_49_0)
+	return arg_49_0.exp >= arg_49_0:getNextLevelExp()
 end
 
-function slot0.isMaxLevel(slot0)
-	return slot0:getMaxLevel() <= slot0.level
+function var_0_0.isMaxLevel(arg_50_0)
+	return arg_50_0:getMaxLevel() <= arg_50_0.level
 end
 
-function slot0.getMaxLevel(slot0)
-	return slot0.maxLevel
+function var_0_0.getMaxLevel(arg_51_0)
+	return arg_51_0.maxLevel
 end
 
-function slot0.updateLevel(slot0)
-	slot0.level = slot0.level + 1
+function var_0_0.updateLevel(arg_52_0)
+	arg_52_0.level = arg_52_0.level + 1
 
-	slot0:updateAbilitys()
+	arg_52_0:updateAbilitys()
 
-	if slot0.level % CommanderConst.TALENT_POINT_LEVEL == 0 then
-		slot0.notLearnedList = {}
+	if arg_52_0.level % CommanderConst.TALENT_POINT_LEVEL == 0 then
+		arg_52_0.notLearnedList = {}
 	end
 end
 
-function slot0.getConfigExp(slot0, slot1)
-	return uv0[math.max(slot1, 1)]["exp_" .. slot0:getRarity()] or slot2.exp
+function var_0_0.getConfigExp(arg_53_0, arg_53_1)
+	arg_53_1 = math.max(arg_53_1, 1)
+
+	local var_53_0 = var_0_1[arg_53_1]
+
+	return var_53_0["exp_" .. arg_53_0:getRarity()] or var_53_0.exp
 end
 
-function slot0.getNextLevelExp(slot0)
-	return slot0:getConfigExp(slot0.level)
+function var_0_0.getNextLevelExp(arg_54_0)
+	return arg_54_0:getConfigExp(arg_54_0.level)
 end
 
-function slot0.UpdateLevelAndExp(slot0, slot1, slot2)
-	slot0.exp = slot2
-	slot0.level = slot1
+function var_0_0.UpdateLevelAndExp(arg_55_0, arg_55_1, arg_55_2)
+	arg_55_0.exp = arg_55_2
+	arg_55_0.level = arg_55_1
 end
 
-function slot0.getName(slot0, slot1)
-	if slot1 then
-		return slot0:getConfig("name")
+function var_0_0.getName(arg_56_0, arg_56_1)
+	if arg_56_1 then
+		return arg_56_0:getConfig("name")
 	else
-		return slot0.name or slot0:getConfig("name")
+		return arg_56_0.name or arg_56_0:getConfig("name")
 	end
 end
 
-function slot0.setName(slot0, slot1)
-	slot0.name = slot1
+function var_0_0.setName(arg_57_0, arg_57_1)
+	arg_57_0.name = arg_57_1
 end
 
-function slot0.getRarity(slot0)
-	return slot0:getConfig("rarity")
+function var_0_0.getRarity(arg_58_0)
+	return arg_58_0:getConfig("rarity")
 end
 
-function slot0.isSSR(slot0)
-	return slot0:getRarity() == 5
+function var_0_0.isSSR(arg_59_0)
+	return arg_59_0:getRarity() == 5
 end
 
-function slot0.isSR(slot0)
-	return slot0:getRarity() == 4
+function var_0_0.isSR(arg_60_0)
+	return arg_60_0:getRarity() == 4
 end
 
-function slot0.isR(slot0)
-	return slot0:getRarity() == 3
+function var_0_0.isR(arg_61_0)
+	return arg_61_0:getRarity() == 3
 end
 
-function slot0.getPainting(slot0)
-	return slot0:getConfig("painting")
+function var_0_0.getPainting(arg_62_0)
+	return arg_62_0:getConfig("painting")
 end
 
-function slot0.getLevel(slot0)
-	return slot0.level
+function var_0_0.getLevel(arg_63_0)
+	return arg_63_0.level
 end
 
-function slot0.getDestoryedExp(slot0, slot1)
-	slot2 = 0
+function var_0_0.getDestoryedExp(arg_64_0, arg_64_1)
+	local var_64_0 = 0
 
-	for slot6 = 1, slot0.level - 1 do
-		slot2 = slot2 + slot0:getConfigExp(slot6)
+	for iter_64_0 = 1, arg_64_0.level - 1 do
+		var_64_0 = var_64_0 + arg_64_0:getConfigExp(iter_64_0)
 	end
 
-	slot7, slot8 = (function ()
-		slot0 = 0
-		slot1 = 0
+	local var_64_1 = var_64_0 + arg_64_0.exp
 
-		for slot6, slot7 in ipairs(uv0:getTalents()) do
-			slot0 = slot0 + slot7:getDestoryExpValue()
-			slot1 = slot1 + slot7:getDestoryExpRetio()
+	local function var_64_2()
+		local var_65_0 = 0
+		local var_65_1 = 0
+		local var_65_2 = arg_64_0:getTalents()
+
+		for iter_65_0, iter_65_1 in ipairs(var_65_2) do
+			var_65_0 = var_65_0 + iter_65_1:getDestoryExpValue()
+			var_65_1 = var_65_1 + iter_65_1:getDestoryExpRetio()
 		end
 
-		return slot0, slot1 / 10000
-	end)()
+		return var_65_0, var_65_1 / 10000
+	end
 
-	return (slot0:getConfig("exp") + (slot2 + slot0.exp) * pg.gameset.commander_exp_a.key_value / 10000) * (slot1 == slot0.groupId and pg.gameset.commander_exp_same_rate.key_value / 10000 or 1) * (1 + slot8) + slot7
+	local var_64_3 = pg.gameset.commander_exp_a.key_value / 10000
+	local var_64_4 = pg.gameset.commander_exp_same_rate.key_value / 10000
+	local var_64_5 = arg_64_1 == arg_64_0.groupId and var_64_4 or 1
+	local var_64_6, var_64_7 = var_64_2()
+
+	return (arg_64_0:getConfig("exp") + var_64_1 * var_64_3) * var_64_5 * (1 + var_64_7) + var_64_6
 end
 
-function slot0.getDestoryedSkillExp(slot0, slot1)
-	if slot1 == slot0.groupId then
+function var_0_0.getDestoryedSkillExp(arg_66_0, arg_66_1)
+	if arg_66_1 == arg_66_0.groupId then
 		return pg.gameset.commander_skill_exp.key_value
 	end
 
 	return 0
 end
 
-function slot0.updateAbilityTime(slot0, slot1)
-	slot0.abilityTime = slot1
+function var_0_0.updateAbilityTime(arg_67_0, arg_67_1)
+	arg_67_0.abilityTime = arg_67_1
 end
 
-function slot0.GetNextResetAbilityTime(slot0)
+function var_0_0.GetNextResetAbilityTime(arg_68_0)
 	if pg.gameset.commander_ability_reset_time.key_value == 1 then
-		return pg.TimeMgr:GetInstance():GetNextTimeByTimeStamp(slot0.abilityTime) + 86400
+		return pg.TimeMgr:GetInstance():GetNextTimeByTimeStamp(arg_68_0.abilityTime) + 86400
 	else
-		return slot0.abilityTime + pg.gameset.commander_ability_reset_coldtime.key_value
+		return arg_68_0.abilityTime + pg.gameset.commander_ability_reset_coldtime.key_value
 	end
 end
 
-function slot0.isLevelUp(slot0, slot1)
-	return slot0.level > 1 and slot0.exp - slot1 < 0
+function var_0_0.isLevelUp(arg_69_0, arg_69_1)
+	return arg_69_0.level > 1 and arg_69_0.exp - arg_69_1 < 0
 end
 
-function slot0.isSameGroup(slot0, slot1)
-	return slot1 == slot0.groupId
+function var_0_0.isSameGroup(arg_70_0, arg_70_1)
+	return arg_70_1 == arg_70_0.groupId
 end
 
-function slot0.getUpgradeConsume(slot0)
-	slot1 = slot0:getConfig("exp_cost")
+function var_0_0.getUpgradeConsume(arg_71_0)
+	local var_71_0 = arg_71_0:getConfig("exp_cost")
 
-	return slot1 + slot1 * (slot0.level - 1) * (0.85 + 0.15 * slot0.level)
+	return var_71_0 + var_71_0 * (arg_71_0.level - 1) * (0.85 + 0.15 * arg_71_0.level)
 end
 
-function slot0.canEquipToEliteChapter(slot0, slot1, slot2, slot3)
-	return uv0.canEquipToFleetList(getProxy(ChapterProxy):getChapterById(slot0):getEliteFleetCommanders() or {}, slot1, slot2, slot3)
+function var_0_0.canEquipToEliteChapter(arg_72_0, arg_72_1, arg_72_2, arg_72_3)
+	local var_72_0 = getProxy(ChapterProxy):getChapterById(arg_72_0):getEliteFleetCommanders() or {}
+
+	return var_0_0.canEquipToFleetList(var_72_0, arg_72_1, arg_72_2, arg_72_3)
 end
 
-function slot0.canEquipToFleetList(slot0, slot1, slot2, slot3)
-	if not getProxy(CommanderProxy):getCommanderById(slot3) then
+function var_0_0.canEquipToFleetList(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
+	local var_73_0 = getProxy(CommanderProxy)
+	local var_73_1 = var_73_0:getCommanderById(arg_73_3)
+
+	if not var_73_1 then
 		return false, i18n("commander_not_found")
 	end
 
-	for slot9, slot10 in pairs(slot0) do
-		if slot9 == slot1 then
-			for slot14, slot15 in pairs(slot10) do
-				if slot4:getCommanderById(slot15) and slot16.groupId == slot5.groupId and slot14 ~= slot2 then
+	for iter_73_0, iter_73_1 in pairs(arg_73_0) do
+		if iter_73_0 == arg_73_1 then
+			for iter_73_2, iter_73_3 in pairs(iter_73_1) do
+				local var_73_2 = var_73_0:getCommanderById(iter_73_3)
+
+				if var_73_2 and var_73_2.groupId == var_73_1.groupId and iter_73_2 ~= arg_73_2 then
 					return false, i18n("commander_can_not_select_same_group")
 				end
 			end
 		else
-			for slot14, slot15 in pairs(slot10) do
-				if slot3 == slot15 then
+			for iter_73_4, iter_73_5 in pairs(iter_73_1) do
+				if arg_73_3 == iter_73_5 then
 					return false, i18n("commander_is_in_fleet_already")
 				end
 			end
@@ -593,32 +636,41 @@ function slot0.canEquipToFleetList(slot0, slot1, slot2, slot3)
 	return true
 end
 
-function slot0.ExistCleanFlag(slot0)
-	return not pg.TimeMgr.GetInstance():IsSameDay(slot0.cleanTime, pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.ExistCleanFlag(arg_74_0)
+	local var_74_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return not pg.TimeMgr.GetInstance():IsSameDay(arg_74_0.cleanTime, var_74_0)
 end
 
-function slot0.ExitFeedFlag(slot0)
-	return not pg.TimeMgr.GetInstance():IsSameDay(slot0.feedTime, pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.ExitFeedFlag(arg_75_0)
+	local var_75_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return not pg.TimeMgr.GetInstance():IsSameDay(arg_75_0.feedTime, var_75_0)
 end
 
-function slot0.ExitPlayFlag(slot0)
-	return not pg.TimeMgr.GetInstance():IsSameDay(slot0.playTime, pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.ExitPlayFlag(arg_76_0)
+	local var_76_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return not pg.TimeMgr.GetInstance():IsSameDay(arg_76_0.playTime, var_76_0)
 end
 
-function slot0.UpdateHomeOpTime(slot0, slot1, slot2)
-	if slot1 == 1 then
-		slot0.cleanTime = slot2
-	elseif slot1 == 2 then
-		slot0.feedTime = slot2
-	elseif slot1 == 3 then
-		slot0.playTime = slot2
+function var_0_0.UpdateHomeOpTime(arg_77_0, arg_77_1, arg_77_2)
+	if arg_77_1 == 1 then
+		arg_77_0.cleanTime = arg_77_2
+	elseif arg_77_1 == 2 then
+		arg_77_0.feedTime = arg_77_2
+	elseif arg_77_1 == 3 then
+		arg_77_0.playTime = arg_77_2
 	end
 end
 
-function slot0.IsSameTalent(slot0)
-	if #slot0:getTalentOrigins() == #slot0:getTalents() and _.all(slot1, function (slot0)
-		return _.any(uv0, function (slot0)
-			return slot0.id == uv0.id
+function var_0_0.IsSameTalent(arg_78_0)
+	local var_78_0 = arg_78_0:getTalentOrigins()
+	local var_78_1 = arg_78_0:getTalents()
+
+	if #var_78_0 == #var_78_1 and _.all(var_78_0, function(arg_79_0)
+		return _.any(var_78_1, function(arg_80_0)
+			return arg_80_0.id == arg_79_0.id
 		end)
 	end) then
 		return true
@@ -627,12 +679,12 @@ function slot0.IsSameTalent(slot0)
 	return false
 end
 
-function slot0.CanReset(slot0)
-	return slot0:GetNextResetAbilityTime() <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.CanReset(arg_81_0)
+	return arg_81_0:GetNextResetAbilityTime() <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.ShouldTipLock(slot0)
-	return slot0:isSSR() and not slot0:isLocked()
+function var_0_0.ShouldTipLock(arg_82_0)
+	return arg_82_0:isSSR() and not arg_82_0:isLocked()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = 312671,
 	stages = {
 		{
@@ -848,7 +848,7 @@ return {
 						105
 					},
 					conditionWaves = {
-						[105.0] = true
+						[105] = true
 					},
 					triggerParams = {
 						kill_list = {

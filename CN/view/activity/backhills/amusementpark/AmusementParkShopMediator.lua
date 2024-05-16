@@ -1,67 +1,68 @@
-slot0 = class("AmusementParkShopMediator", import("view.base.ContextMediator"))
-slot0.ON_ACT_SHOPPING = "AmusementParkShopMediator:ON_ACT_SHOPPING"
-slot0.GO_SCENE = "GO_SCENE"
+﻿local var_0_0 = class("AmusementParkShopMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
+var_0_0.ON_ACT_SHOPPING = "AmusementParkShopMediator:ON_ACT_SHOPPING"
+var_0_0.GO_SCENE = "GO_SCENE"
 
-	assert(slot2, "Activity Type ACTIVITY_TYPE_SHOP_PROGRESS_REWARD Not exist")
-	slot0:TransActivity2ShopData(slot2)
-	slot0:AddSpecialList(slot2)
-	slot0:bind(uv0.ON_ACT_SHOPPING, function (slot0, slot1, slot2, slot3, slot4)
-		uv0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
-			activity_id = slot1,
-			cmd = slot2,
-			arg1 = slot3,
-			arg2 = slot4
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
+
+	assert(var_1_0, "Activity Type ACTIVITY_TYPE_SHOP_PROGRESS_REWARD Not exist")
+	arg_1_0:TransActivity2ShopData(var_1_0)
+	arg_1_0:AddSpecialList(var_1_0)
+	arg_1_0:bind(var_0_0.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		arg_1_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
+			activity_id = arg_2_1,
+			cmd = arg_2_2,
+			arg1 = arg_2_3,
+			arg2 = arg_2_4
 		})
 	end)
-	slot0:bind(uv0.GO_SCENE, function (slot0, slot1, ...)
-		uv0:sendNotification(GAME.GO_SCENE, slot1, ...)
+	arg_1_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 	end)
-	slot0:HandleSpecialReach(slot2)
+	arg_1_0:HandleSpecialReach(var_1_0)
 end
 
-function slot0.TransActivity2ShopData(slot0, slot1)
-	if slot1 and not slot1:isEnd() then
-		slot0.viewComponent:SetShop(ActivityShop.New(slot1))
+function var_0_0.TransActivity2ShopData(arg_4_0, arg_4_1)
+	if arg_4_1 and not arg_4_1:isEnd() then
+		local var_4_0 = ActivityShop.New(arg_4_1)
+
+		arg_4_0.viewComponent:SetShop(var_4_0)
 	end
 end
 
-function slot0.AddSpecialList(slot0, slot1)
-	slot2 = {}
+function var_0_0.AddSpecialList(arg_5_0, arg_5_1)
+	local var_5_0 = {}
 
 	if pg.gameset.activity_lottery_rewards then
-		slot3 = ipairs
-		slot4 = pg.gameset.activity_lottery_rewards.description or {}
+		for iter_5_0, iter_5_1 in ipairs(pg.gameset.activity_lottery_rewards.description or {}) do
+			local var_5_1 = Drop.Create(iter_5_1[2])
 
-		for slot6, slot7 in slot3(slot4) do
-			slot8 = Drop.Create(slot7[2])
-			slot8.HasGot = table.contains(slot1.data3_list, slot7[1])
+			var_5_1.HasGot = table.contains(arg_5_1.data3_list, iter_5_1[1])
 
-			table.insert(slot2, slot8)
+			table.insert(var_5_0, var_5_1)
 		end
 	end
 
-	slot0.viewComponent:SetSpecial(slot2)
+	arg_5_0.viewComponent:SetSpecial(var_5_0)
 end
 
-function slot0.HandleSpecialReach(slot0, slot1)
+function var_0_0.HandleSpecialReach(arg_6_0, arg_6_1)
 	if not pg.gameset.activity_lottery_rewards or not pg.gameset.activity_lottery_rewards.description then
 		return
 	end
 
-	slot2 = _.reduce(slot1.data2_list, 0, function (slot0, slot1)
-		return slot0 + slot1
+	local var_6_0 = _.reduce(arg_6_1.data2_list, 0, function(arg_7_0, arg_7_1)
+		return arg_7_0 + arg_7_1
 	end)
 
-	for slot6, slot7 in ipairs(pg.gameset.activity_lottery_rewards.description) do
-		if slot7[1] <= slot2 and not table.contains(slot1.data3_list, slot7[1]) then
-			slot0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
+	for iter_6_0, iter_6_1 in ipairs(pg.gameset.activity_lottery_rewards.description) do
+		if var_6_0 >= iter_6_1[1] and not table.contains(arg_6_1.data3_list, iter_6_1[1]) then
+			arg_6_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
 				cmd = 2,
 				arg2 = 0,
-				activity_id = slot1.id,
-				arg1 = slot7[1]
+				activity_id = arg_6_1.id,
+				arg1 = iter_6_1[1]
 			})
 
 			return true
@@ -71,38 +72,37 @@ function slot0.HandleSpecialReach(slot0, slot1)
 	return false
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
-			slot4 = slot3
+	if var_9_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_9_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
+			local var_9_2 = var_9_1
 
-			slot0:TransActivity2ShopData(slot4)
-			slot0:AddSpecialList(slot4)
-			slot0.viewComponent:UpdateView()
-			slot0:HandleSpecialReach(slot4)
+			arg_9_0:TransActivity2ShopData(var_9_2)
+			arg_9_0:AddSpecialList(var_9_2)
+			arg_9_0.viewComponent:UpdateView()
+			arg_9_0:HandleSpecialReach(var_9_2)
 		end
-	elseif slot2 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
-			if uv0.shopType == 1 then
-				uv1.viewComponent:ShowShipWord(i18n("amusementpark_shop_success"))
-			elseif uv0.shopType == 2 then
-				uv1.viewComponent:ShowShipWord(i18n("amusementpark_shop_special"))
+	elseif var_9_0 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
+		arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_1.awards, function()
+			if var_9_1.shopType == 1 then
+				arg_9_0.viewComponent:ShowShipWord(i18n("amusementpark_shop_success"))
+			elseif var_9_1.shopType == 2 then
+				arg_9_0.viewComponent:ShowShipWord(i18n("amusementpark_shop_special"))
 			end
 
-			existCall(uv0.callback)
+			existCall(var_9_1.callback)
 		end)
 	end
 end
 
-return slot0
+return var_0_0

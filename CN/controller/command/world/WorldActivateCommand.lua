@@ -1,23 +1,23 @@
-slot0 = class("WorldActivateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldActivateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot3:Send(33101, slot1:getBody(), 33102, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(WorldProxy)
+	pg.ConnectionMgr.GetInstance():Send(33101, var_1_0, 33102, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(WorldProxy)
 
-			slot1:NetUpdateWorld(slot0.world, slot0.global_flag_list or {}, uv0.camp)
-			slot1:NetUpdateWorldCountInfo(slot0.count_info)
-			slot1:NetUpdateWorldMapPressing({})
-			slot1:NetUpdateWorldPressingAward(slot0.chapter_award)
-			slot1:NetUpdateWorldPortShopMark(slot0.port_list, slot0.new_flag_port_list)
+			var_2_0:NetUpdateWorld(arg_2_0.world, arg_2_0.global_flag_list or {}, var_1_0.camp)
+			var_2_0:NetUpdateWorldCountInfo(arg_2_0.count_info)
+			var_2_0:NetUpdateWorldMapPressing({})
+			var_2_0:NetUpdateWorldPressingAward(arg_2_0.chapter_award)
+			var_2_0:NetUpdateWorldPortShopMark(arg_2_0.port_list, arg_2_0.new_flag_port_list)
 			nowWorld():GetBossProxy():GenFleet()
-			uv1:sendNotification(GAME.WORLD_ACTIVATE_DONE)
+			arg_1_0:sendNotification(GAME.WORLD_ACTIVATE_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_activate_error_", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_activate_error_", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

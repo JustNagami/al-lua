@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.equip_skin_template = {
 	{
 		hit_sfx = "",
@@ -26060,29 +26060,29 @@ pg.equip_skin_template = {
 			},
 			change = {
 				{
-					{
-						active = true,
-						node = "spine",
-						activate = true
-					},
 					condition = {
 						type = 1,
 						param = {
 							">=0.4"
 						}
-					}
-				},
-				{
+					},
 					{
 						active = true,
 						node = "spine",
-						activate = false
-					},
+						activate = true
+					}
+				},
+				{
 					condition = {
 						type = 1,
 						param = {
 							"<0.4"
 						}
+					},
+					{
+						active = true,
+						node = "spine",
+						activate = false
 					}
 				}
 			}

@@ -1,164 +1,166 @@
-slot0 = class("ActivityBossHuanChangScene", import(".ActivityBossSceneTemplate"))
+﻿local var_0_0 = class("ActivityBossHuanChangScene", import(".ActivityBossSceneTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivityBossHuanChangUI"
 end
 
-function slot0.init(slot0)
-	slot0.mainTF = slot0:findTF("adapt")
-	slot0.bg = slot0:findTF("bg")
-	slot0.bottom = slot0:findTF("bottom", slot0.mainTF)
-	slot4 = slot0.bottom
-	slot0.hpBar = slot0:findTF("progress", slot4)
-	slot0.barList = {}
+function var_0_0.init(arg_2_0)
+	arg_2_0.mainTF = arg_2_0:findTF("adapt")
+	arg_2_0.bg = arg_2_0:findTF("bg")
+	arg_2_0.bottom = arg_2_0:findTF("bottom", arg_2_0.mainTF)
+	arg_2_0.hpBar = arg_2_0:findTF("progress", arg_2_0.bottom)
+	arg_2_0.barList = {}
 
-	for slot4 = 1, 4 do
-		slot0.barList[slot4] = slot0:findTF(slot4, slot0.hpBar)
+	for iter_2_0 = 1, 4 do
+		arg_2_0.barList[iter_2_0] = arg_2_0:findTF(iter_2_0, arg_2_0.hpBar)
 	end
 
-	slot0.progressDigit = slot0:findTF("digit", slot0.bottom)
-	slot0.digitbig = slot0.progressDigit:Find("big")
-	slot0.digitsmall = slot0.progressDigit:Find("small")
-	slot0.left = slot0:findTF("left", slot0.mainTF)
-	slot0.right = slot0:findTF("right", slot0.mainTF)
-	slot0.rankTF = slot0:findTF("rank", slot0.right)
-	slot4 = "layout"
-	slot0.rankList = CustomIndexLayer.Clone2Full(slot0.rankTF:Find(slot4), 3)
+	arg_2_0.progressDigit = arg_2_0:findTF("digit", arg_2_0.bottom)
+	arg_2_0.digitbig = arg_2_0.progressDigit:Find("big")
+	arg_2_0.digitsmall = arg_2_0.progressDigit:Find("small")
+	arg_2_0.left = arg_2_0:findTF("left", arg_2_0.mainTF)
+	arg_2_0.right = arg_2_0:findTF("right", arg_2_0.mainTF)
+	arg_2_0.rankTF = arg_2_0:findTF("rank", arg_2_0.right)
+	arg_2_0.rankList = CustomIndexLayer.Clone2Full(arg_2_0.rankTF:Find("layout"), 3)
 
-	for slot4, slot5 in ipairs(slot0.rankList) do
-		setActive(slot5, false)
+	for iter_2_1, iter_2_2 in ipairs(arg_2_0.rankList) do
+		setActive(iter_2_2, false)
 	end
 
-	slot0.stageList = {}
+	arg_2_0.stageList = {}
 
-	for slot4 = 1, 4 do
-		slot0.stageList[slot4] = slot0:findTF(slot4, slot0.right)
+	for iter_2_3 = 1, 4 do
+		arg_2_0.stageList[iter_2_3] = arg_2_0:findTF(iter_2_3, arg_2_0.right)
 	end
 
-	slot0.stageSP = slot0:findTF("6", slot0.right)
+	arg_2_0.stageSP = arg_2_0:findTF("6", arg_2_0.right)
 
-	if not IsNil(slot0.stageSP) then
-		setActive(slot0.stageSP, false)
+	if not IsNil(arg_2_0.stageSP) then
+		setActive(arg_2_0.stageSP, false)
 	end
 
-	slot0.awardFlash = slot0:findTF("ptaward/flash", slot0.right)
-	slot0.awardBtn = slot0:findTF("ptaward/button", slot0.right)
-	slot0.ptScoreTxt = slot0:findTF("ptaward/Text", slot0.right)
-	slot0.top = slot0:findTF("top", slot0.mainTF)
-	slot0.ticketNum = slot0:findTF("ticket/Text", slot0.top)
-	slot0.helpBtn = slot0:findTF("help", slot0.top)
+	arg_2_0.awardFlash = arg_2_0:findTF("ptaward/flash", arg_2_0.right)
+	arg_2_0.awardBtn = arg_2_0:findTF("ptaward/button", arg_2_0.right)
+	arg_2_0.ptScoreTxt = arg_2_0:findTF("ptaward/Text", arg_2_0.right)
+	arg_2_0.top = arg_2_0:findTF("top", arg_2_0.mainTF)
+	arg_2_0.ticketNum = arg_2_0:findTF("ticket/Text", arg_2_0.top)
+	arg_2_0.helpBtn = arg_2_0:findTF("help", arg_2_0.top)
 
-	onButton(slot0, slot0.top:Find("back_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_2_0, arg_2_0.top:Find("back_btn"), function()
+		arg_2_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	setActive(slot0.top, false)
-	setAnchoredPosition(slot0.top, {
+	setActive(arg_2_0.top, false)
+	setAnchoredPosition(arg_2_0.top, {
 		y = 1080
 	})
-	setActive(slot0.left, false)
-	setAnchoredPosition(slot0.left, {
+	setActive(arg_2_0.left, false)
+	setAnchoredPosition(arg_2_0.left, {
 		x = -1920
 	})
-	setActive(slot0.right, false)
-	setAnchoredPosition(slot0.right, {
+	setActive(arg_2_0.right, false)
+	setAnchoredPosition(arg_2_0.right, {
 		x = 1920
 	})
-	setActive(slot0.bottom, false)
-	setAnchoredPosition(slot0.bottom, {
+	setActive(arg_2_0.bottom, false)
+	setAnchoredPosition(arg_2_0.bottom, {
 		y = -1080
 	})
-	slot0:buildCommanderPanel()
+	arg_2_0:buildCommanderPanel()
 end
 
-function slot0.UpdateDropItems(slot0)
-	slot1 = ipairs
-	slot2 = slot0.contextData.DisplayItems or {}
+function var_0_0.UpdateDropItems(arg_4_0)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.contextData.DisplayItems or {}) do
+		local var_4_0 = arg_4_0:findTF("milestone/item", arg_4_0.barList[iter_4_0])
+		local var_4_1 = {
+			type = arg_4_0.contextData.DisplayItems[5 - iter_4_0][1],
+			id = arg_4_0.contextData.DisplayItems[5 - iter_4_0][2],
+			count = arg_4_0.contextData.DisplayItems[5 - iter_4_0][3]
+		}
 
-	for slot4, slot5 in slot1(slot2) do
-		slot6 = slot0:findTF("milestone/item", slot0.barList[slot4])
-
-		updateDrop(slot6:GetChild(0), {
-			type = slot0.contextData.DisplayItems[5 - slot4][1],
-			id = slot0.contextData.DisplayItems[5 - slot4][2],
-			count = slot0.contextData.DisplayItems[5 - slot4][3]
-		})
-		onButton(slot0, slot6, function ()
-			uv0:emit(uv1.ON_DROP, uv2)
+		updateDrop(var_4_0:GetChild(0), var_4_1)
+		onButton(arg_4_0, var_4_0, function()
+			arg_4_0:emit(var_0_0.ON_DROP, var_4_1)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.UpdatePage(slot0)
-	slot1 = slot0.contextData.bossHP
+function var_0_0.UpdatePage(arg_6_0)
+	local var_6_0 = arg_6_0.contextData.bossHP
 
-	setText(slot0.digitbig, math.floor(slot1 / 100))
+	setText(arg_6_0.digitbig, math.floor(var_6_0 / 100))
+	setText(arg_6_0.digitsmall, string.format("%02d", var_6_0 % 100) .. "%")
 
-	slot6 = slot1 % 100
+	local var_6_1 = pg.TimeMgr.GetInstance()
 
-	setText(slot0.digitsmall, string.format("%02d", slot6) .. "%")
+	for iter_6_0 = 1, 4 do
+		local var_6_2 = arg_6_0.barList[iter_6_0]
 
-	slot2 = pg.TimeMgr.GetInstance()
+		setSlider(arg_6_0:findTF("Slider", var_6_2), 0, 2500, math.min(math.max(var_6_0 - (iter_6_0 - 1) * 2500, 0), 2500))
 
-	for slot6 = 1, 4 do
-		slot7 = slot0.barList[slot6]
+		local var_6_3 = arg_6_0.contextData.mileStones[5 - iter_6_0]
 
-		setSlider(slot0:findTF("Slider", slot7), 0, 2500, math.min(math.max(slot1 - (slot6 - 1) * 2500, 0), 2500))
+		setActive(arg_6_0:findTF("milestone/item", var_6_2), not var_6_3)
+		setActive(arg_6_0:findTF("milestone/time", var_6_2), var_6_3)
 
-		slot8 = slot0.contextData.mileStones[5 - slot6]
+		if var_6_3 then
+			local var_6_4 = var_6_1:STimeDescC(arg_6_0.contextData.mileStones[5 - iter_6_0], "%m/%d/%H:%M")
 
-		setActive(slot0:findTF("milestone/item", slot7), not slot8)
-		setActive(slot0:findTF("milestone/time", slot7), slot8)
-
-		if slot8 then
-			setText(slot0:findTF("milestone/time/Text", slot7), slot2:STimeDescC(slot0.contextData.mileStones[5 - slot6], "%m/%d/%H:%M"))
+			setText(arg_6_0:findTF("milestone/time/Text", var_6_2), var_6_4)
 		end
 	end
 
-	for slot6 = 1, #slot0.stageList - 1 do
-		slot7 = slot0.contextData.normalStageIDs[slot6]
-		slot8 = slot0.stageList[slot6]
+	for iter_6_1 = 1, #arg_6_0.stageList - 1 do
+		local var_6_5 = arg_6_0.contextData.normalStageIDs[iter_6_1]
+		local var_6_6 = arg_6_0.stageList[iter_6_1]
 
-		for slot12, slot13 in ipairs(slot0.contextData.ticketInitPools) do
-			for slot17, slot18 in ipairs(slot13[1]) do
-				if slot18 == slot7 then
-					slot20 = slot0.contextData.stageTickets[slot7] or 0
+		for iter_6_2, iter_6_3 in ipairs(arg_6_0.contextData.ticketInitPools) do
+			for iter_6_4, iter_6_5 in ipairs(iter_6_3[1]) do
+				if iter_6_5 == var_6_5 then
+					local var_6_7 = iter_6_3[2]
+					local var_6_8 = arg_6_0.contextData.stageTickets[var_6_5] or 0
+					local var_6_9 = var_6_6:Find("count")
 
-					setActive(slot8:Find("count"), slot20 > 0)
-					setText(slot21:Find("res"), slot20)
-					setText(slot21:Find("max"), slot13[2])
+					setActive(var_6_9, var_6_8 > 0)
+					setText(var_6_9:Find("res"), var_6_8)
+					setText(var_6_9:Find("max"), var_6_7)
 				end
 			end
 		end
 	end
 
-	setText(slot0.ptScoreTxt, slot0.contextData.ptData.count)
-	setActive(slot0.awardFlash, slot0.contextData.ptData:CanGetAward())
+	setText(arg_6_0.ptScoreTxt, arg_6_0.contextData.ptData.count)
+	setActive(arg_6_0.awardFlash, arg_6_0.contextData.ptData:CanGetAward())
 
-	if slot0.bonusWindow and slot0.bonusWindow:IsShowing() then
-		slot0.bonusWindow.buffer:UpdateView(slot0.contextData.ptData)
+	if arg_6_0.bonusWindow and arg_6_0.bonusWindow:IsShowing() then
+		arg_6_0.bonusWindow.buffer:UpdateView(arg_6_0.contextData.ptData)
 	end
 
-	setText(slot0.ticketNum, slot0:GetEXTicket())
+	local var_6_10 = arg_6_0:GetEXTicket()
+
+	setText(arg_6_0.ticketNum, var_6_10)
 end
 
-function slot0.UpdateRank(slot0, slot1)
-	slot1 = slot1 or {}
+function var_0_0.UpdateRank(arg_7_0, arg_7_1)
+	arg_7_1 = arg_7_1 or {}
 
-	for slot5 = 1, #slot0.rankList do
-		setActive(slot0.rankList[slot5], slot5 <= #slot1)
+	for iter_7_0 = 1, #arg_7_0.rankList do
+		local var_7_0 = arg_7_0.rankList[iter_7_0]
 
-		if slot5 <= #slot1 then
-			slot7 = slot6:Find("Text")
+		setActive(var_7_0, iter_7_0 <= #arg_7_1)
 
-			if #tostring(slot1[slot5].name) >= 11 then
-				slot7:GetComponent(typeof(Text)).fontSize = 23
+		if iter_7_0 <= #arg_7_1 then
+			local var_7_1 = var_7_0:Find("Text")
+			local var_7_2 = tostring(arg_7_1[iter_7_0].name)
+
+			if #var_7_2 >= 11 then
+				var_7_1:GetComponent(typeof(Text)).fontSize = 23
 			else
-				slot7:GetComponent(typeof(Text)).fontSize = 28
+				var_7_1:GetComponent(typeof(Text)).fontSize = 28
 			end
 
-			setText(slot7, slot8)
+			setText(var_7_1, var_7_2)
 		end
 	end
 end
 
-return slot0
+return var_0_0

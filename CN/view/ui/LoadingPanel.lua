@@ -1,147 +1,148 @@
-slot0 = class("LoadingPanel", import("..base.BaseUI"))
+﻿local var_0_0 = class("LoadingPanel", import("..base.BaseUI"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0)
 	seriesAsync({
-		function (slot0)
-			uv0:preload(slot0)
+		function(arg_2_0)
+			arg_1_0:preload(arg_2_0)
 		end
-	}, function ()
-		slot0 = PoolMgr.GetInstance()
+	}, function()
+		PoolMgr.GetInstance():GetUI("Loading", true, function(arg_4_0)
+			local var_4_0 = GameObject.Find("Overlay/UIOverlay")
 
-		slot0:GetUI("Loading", true, function (slot0)
-			slot0.transform:SetParent(GameObject.Find("Overlay/UIOverlay").transform, false)
-			slot0:SetActive(false)
-			uv0:onUILoaded(slot0)
-			uv1()
+			arg_4_0.transform:SetParent(var_4_0.transform, false)
+			arg_4_0:SetActive(false)
+			arg_1_0:onUILoaded(arg_4_0)
+			arg_1_1()
 		end)
 	end)
 end
 
-function slot0.preload(slot0, slot1)
-	slot0.isCri, slot0.bgPath = getLoginConfig()
+function var_0_0.preload(arg_5_0, arg_5_1)
+	arg_5_0.isCri, arg_5_0.bgPath = getLoginConfig()
 
-	if slot0.isCri then
-		LoadAndInstantiateAsync("effect", slot0.bgPath, function (slot0)
-			uv0.criBgGo = slot0
+	if arg_5_0.isCri then
+		LoadAndInstantiateAsync("effect", arg_5_0.bgPath, function(arg_6_0)
+			arg_5_0.criBgGo = arg_6_0
 
-			if uv1 then
-				uv1()
+			if arg_5_1 then
+				arg_5_1()
 			end
 		end)
 	else
-		LoadSpriteAsync("loadingbg/" .. slot0.bgPath, function (slot0)
-			uv0.staticBgSprite = slot0
+		LoadSpriteAsync("loadingbg/" .. arg_5_0.bgPath, function(arg_7_0)
+			arg_5_0.staticBgSprite = arg_7_0
 
-			if uv1 then
-				uv1()
+			if arg_5_1 then
+				arg_5_1()
 			end
 		end)
 	end
 end
 
-function slot0.init(slot0)
-	slot0.infos = slot0:findTF("infos")
-	slot0.infoTpl = slot0:getTpl("infos/info_tpl")
-	slot0.indicator = slot0:findTF("load")
-	slot0.bg = slot0:findTF("BG")
-	slot0.logo = slot0:findTF("logo")
+function var_0_0.init(arg_8_0)
+	arg_8_0.infos = arg_8_0:findTF("infos")
+	arg_8_0.infoTpl = arg_8_0:getTpl("infos/info_tpl")
+	arg_8_0.indicator = arg_8_0:findTF("load")
+	arg_8_0.bg = arg_8_0:findTF("BG")
+	arg_8_0.logo = arg_8_0:findTF("logo")
 
-	slot0:displayBG(true)
+	arg_8_0:displayBG(true)
 end
 
-function slot0.appendInfo(slot0, slot1)
-	slot2 = cloneTplTo(slot0.infoTpl, slot0.infos)
+function var_0_0.appendInfo(arg_9_0, arg_9_1)
+	local var_9_0 = cloneTplTo(arg_9_0.infoTpl, arg_9_0.infos)
 
-	setText(slot2, slot1)
+	setText(var_9_0, arg_9_1)
 
-	slot4 = LeanTween.alphaCanvas(GetOrAddComponent(slot2, "CanvasGroup"), 0, 0.3)
+	local var_9_1 = GetOrAddComponent(var_9_0, "CanvasGroup")
+	local var_9_2 = LeanTween.alphaCanvas(var_9_1, 0, 0.3)
 
-	slot4:setDelay(1.5)
-	slot4:setOnComplete(System.Action(function ()
-		destroy(uv0)
+	var_9_2:setDelay(1.5)
+	var_9_2:setOnComplete(System.Action(function()
+		destroy(var_9_0)
 	end))
 end
 
-function slot0.onLoading(slot0)
-	return slot0._go.activeInHierarchy
+function var_0_0.onLoading(arg_11_0)
+	return arg_11_0._go.activeInHierarchy
 end
 
-slot1 = 0
+local var_0_1 = 0
 
-function slot0.on(slot0, slot1)
-	setImageAlpha(slot0._tf, defaultValue(slot1, true) and 0.01 or 0)
+function var_0_0.on(arg_12_0, arg_12_1)
+	arg_12_1 = defaultValue(arg_12_1, true)
 
-	if slot1 then
-		slot2 = pg.TimeMgr.GetInstance()
+	setImageAlpha(arg_12_0._tf, arg_12_1 and 0.01 or 0)
 
-		slot2:RemoveTimer(slot0.delayTimer)
+	if arg_12_1 then
+		pg.TimeMgr.GetInstance():RemoveTimer(arg_12_0.delayTimer)
 
-		slot2 = pg.TimeMgr.GetInstance()
-		slot0.delayTimer = slot2:AddTimer("loading", 1, 0, function ()
-			setImageAlpha(uv0._tf, 0.2)
-			setActive(uv0.indicator, true)
+		arg_12_0.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function()
+			setImageAlpha(arg_12_0._tf, 0.2)
+			setActive(arg_12_0.indicator, true)
 
-			uv0.delayTimer = nil
+			arg_12_0.delayTimer = nil
 		end)
 	else
-		setActive(slot0.indicator, false)
+		setActive(arg_12_0.indicator, false)
 	end
 
-	uv0 = uv0 + 1
+	var_0_1 = var_0_1 + 1
 
-	if uv0 > 0 then
-		setActive(slot0._go, true)
-		slot0._go.transform:SetAsLastSibling()
+	if var_0_1 > 0 then
+		setActive(arg_12_0._go, true)
+		arg_12_0._go.transform:SetAsLastSibling()
 	end
 end
 
-function slot0.off(slot0)
-	if uv0 > 0 then
-		uv0 = uv0 - 1
+function var_0_0.off(arg_14_0)
+	if var_0_1 > 0 then
+		var_0_1 = var_0_1 - 1
 
-		if uv0 == 0 then
-			setActive(slot0._go, false)
-			setActive(slot0.indicator, false)
-			pg.TimeMgr.GetInstance():RemoveTimer(slot0.delayTimer)
+		if var_0_1 == 0 then
+			setActive(arg_14_0._go, false)
+			setActive(arg_14_0.indicator, false)
+			pg.TimeMgr.GetInstance():RemoveTimer(arg_14_0.delayTimer)
 
-			slot0.delayTimer = nil
+			arg_14_0.delayTimer = nil
 		end
 	end
 end
 
-function slot0.displayBG(slot0, slot1)
-	setActive(slot0.bg, slot1)
-	setActive(slot0.logo, slot1)
+function var_0_0.displayBG(arg_15_0, arg_15_1)
+	setActive(arg_15_0.bg, arg_15_1)
+	setActive(arg_15_0.logo, arg_15_1)
 
-	slot2 = GetComponent(slot0.bg, "Image")
+	local var_15_0 = GetComponent(arg_15_0.bg, "Image")
 
-	if slot1 then
-		if not slot0.isCri then
-			if IsNil(slot2.sprite) then
-				slot2.sprite = slot0.staticBgSprite
+	if arg_15_1 then
+		if not arg_15_0.isCri then
+			if IsNil(var_15_0.sprite) then
+				var_15_0.sprite = arg_15_0.staticBgSprite
 			end
-		elseif slot0.bg.childCount == 0 then
-			slot2.enabled = false
-			slot3 = slot0.criBgGo.transform
+		elseif arg_15_0.bg.childCount == 0 then
+			var_15_0.enabled = false
 
-			slot3:SetParent(slot0.bg.transform, false)
-			slot3:SetAsFirstSibling()
+			local var_15_1 = arg_15_0.criBgGo.transform
+
+			var_15_1:SetParent(arg_15_0.bg.transform, false)
+			var_15_1:SetAsFirstSibling()
 		end
 	else
-		if not slot0.isCri then
-			slot2.sprite = nil
+		if not arg_15_0.isCri then
+			var_15_0.sprite = nil
 		else
-			removeAllChildren(slot0.bg)
+			removeAllChildren(arg_15_0.bg)
 		end
 
-		slot0.criBgGo = nil
-		slot0.staticBgSprite = nil
+		arg_15_0.criBgGo = nil
+		arg_15_0.staticBgSprite = nil
 	end
 end
 
-function slot0.getRetainCount(slot0)
-	return uv0
+function var_0_0.getRetainCount(arg_16_0)
+	return var_0_1
 end
 
-return slot0
+return var_0_0

@@ -1,12 +1,12 @@
-slot0 = class("AmericanPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("AmericanPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
-	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
+	local var_1_0, var_1_1, var_1_2 = arg_1_0.ptData:GetLevelProgress()
+	local var_1_3, var_1_4, var_1_5 = arg_1_0.ptData:GetResProgress()
 
-	setText(slot0.progress, setColorStr(slot4, "#4465DEFF") .. "/" .. slot5)
+	setText(arg_1_0.progress, setColorStr(var_1_3, "#4465DEFF") .. "/" .. var_1_4)
 end
 
-return slot0
+return var_0_0

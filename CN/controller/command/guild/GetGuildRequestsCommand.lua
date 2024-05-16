@@ -1,28 +1,29 @@
-slot0 = class("GetGuildRequestsCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetGuildRequestsCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot3:Send(60003, {
-		id = slot1:getBody()
-	}, 60004, function (slot0)
-		slot1 = {}
-		slot2 = {}
+	pg.ConnectionMgr.GetInstance():Send(60003, {
+		id = var_1_0
+	}, 60004, function(arg_2_0)
+		local var_2_0 = {}
+		local var_2_1 = {}
 
-		for slot6, slot7 in ipairs(slot0.request_list) do
-			slot8 = ChatMsg.New(ChatConst.ChannelGuild, {
-				player = Player.New(slot7.player),
-				content = slot7.content,
-				timestamp = slot7.timestamp
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.request_list) do
+			local var_2_2 = ChatMsg.New(ChatConst.ChannelGuild, {
+				player = Player.New(iter_2_1.player),
+				content = iter_2_1.content,
+				timestamp = iter_2_1.timestamp
 			})
-			slot1[slot8.player.id] = slot8
 
-			table.insert(slot2, slot8)
+			var_2_0[var_2_2.player.id] = var_2_2
+
+			table.insert(var_2_1, var_2_2)
 		end
 
-		getProxy(GuildProxy):setRequestList(slot1)
-		uv0:sendNotification(GAME.GUILD_GET_REQUEST_LIST_DONE, slot2)
+		getProxy(GuildProxy):setRequestList(var_2_0)
+		arg_1_0:sendNotification(GAME.GUILD_GET_REQUEST_LIST_DONE, var_2_1)
 	end)
 end
 
-return slot0
+return var_0_0

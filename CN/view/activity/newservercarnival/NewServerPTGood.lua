@@ -1,60 +1,64 @@
-slot0 = class("NewServerPTGood", import(".....model.vo.BaseVO"))
-slot0.GoodType = {
+﻿local var_0_0 = class("NewServerPTGood", import(".....model.vo.BaseVO"))
+
+var_0_0.GoodType = {
 	MultiTotalLimit = 2,
 	SingleLimit = 1,
 	MultiEachLimit = 4,
 	RandomLimit = 3
 }
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.newserver_shop_template
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1
-	slot0.configId = slot1
-	slot0.configID = slot1
-	slot0.count = -1
-	slot0.multiEachInfoMap = {}
-	slot0.isMultiEachLimit = false
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1
+	arg_2_0.configId = arg_2_1
+	arg_2_0.configID = arg_2_1
+	arg_2_0.count = -1
+	arg_2_0.multiEachInfoMap = {}
+	arg_2_0.isMultiEachLimit = false
 end
 
-function slot0.updateAllInfo(slot0, slot1)
-	slot2 = slot1.data2KeyValueList[slot0.configId]
-	slot3 = slot2.dataMap
-	slot0.count = slot2.value
+function var_0_0.updateAllInfo(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1.data2KeyValueList[arg_3_0.configId]
+	local var_3_1 = var_3_0.dataMap
 
-	if slot0:getConfig("goods_type") == uv0.GoodType.MultiEachLimit then
-		slot0.isMultiEachLimit = true
+	arg_3_0.count = var_3_0.value
 
-		for slot8, slot9 in pairs(slot3) do
-			slot0.multiEachInfoMap[slot8] = slot9
+	if arg_3_0:getConfig("goods_type") == var_0_0.GoodType.MultiEachLimit then
+		arg_3_0.isMultiEachLimit = true
+
+		for iter_3_0, iter_3_1 in pairs(var_3_1) do
+			arg_3_0.multiEachInfoMap[iter_3_0] = iter_3_1
 		end
 	end
 end
 
-function slot0.updateCount(slot0, slot1)
-	slot0.count = slot0.count - slot1
+function var_0_0.updateCount(arg_4_0, arg_4_1)
+	arg_4_0.count = arg_4_0.count - arg_4_1
 end
 
-function slot0.isLeftCount(slot0)
-	return slot0.count > 0
+function var_0_0.isLeftCount(arg_5_0)
+	return arg_5_0.count > 0
 end
 
-function slot0.getCount(slot0)
-	return slot0.count
+function var_0_0.getCount(arg_6_0)
+	return arg_6_0.count
 end
 
-function slot0.isSelectable(slot0)
-	return slot0:getConfig("goods_type") == uv0.GoodType.MultiTotalLimit or slot1 == uv0.GoodType.MultiEachLimit
+function var_0_0.isSelectable(arg_7_0)
+	local var_7_0 = arg_7_0:getConfig("goods_type")
+
+	return var_7_0 == var_0_0.GoodType.MultiTotalLimit or var_7_0 == var_0_0.GoodType.MultiEachLimit
 end
 
-function slot0.getContainIDList(slot0)
-	return slot0:getConfig("goods")
+function var_0_0.getContainIDList(arg_8_0)
+	return arg_8_0:getConfig("goods")
 end
 
-function slot0.getUnlockIndex(slot0)
-	return slot0:getConfig("unlock_time") / 604800 + 1
+function var_0_0.getUnlockIndex(arg_9_0)
+	return arg_9_0:getConfig("unlock_time") / 604800 + 1
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,27 @@
-pg = pg or {}
-slot0 = pg
-slot0.Protocol = class("Protocol")
+﻿pg = pg or {}
 
-function slot0.Protocol.Ctor(slot0, slot1, slot2, slot3)
-	assert(slot1 ~= nil and slot2 ~= nil and slot3 ~= nil, "pg.Protocol:Ctor invalid argument")
+local var_0_0 = pg
 
-	slot0._id = slot1
-	slot0._name = slot2
-	slot0._object = slot3
+var_0_0.Protocol = class("Protocol")
+
+function var_0_0.Protocol.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	assert(arg_1_1 ~= nil and arg_1_2 ~= nil and arg_1_3 ~= nil, "pg.Protocol:Ctor invalid argument")
+
+	arg_1_0._id = arg_1_1
+	arg_1_0._name = arg_1_2
+	arg_1_0._object = arg_1_3
 end
 
-function slot0.Protocol.GetMessage(slot0)
-	assert(slot0._name ~= nil and slot0._object ~= nil, "pg.Protocol:GetMessage object and name must not be nil")
+function var_0_0.Protocol.GetMessage(arg_2_0)
+	assert(arg_2_0._name ~= nil and arg_2_0._object ~= nil, "pg.Protocol:GetMessage object and name must not be nil")
 
-	return slot0._object[slot0._name]()
+	return arg_2_0._object[arg_2_0._name]()
 end
 
-function slot0.Protocol.GetId(slot0)
-	return slot0._id
+function var_0_0.Protocol.GetId(arg_3_0)
+	return arg_3_0._id
 end
 
-function slot0.Protocol.GetName(slot0)
-	return slot0._name
+function var_0_0.Protocol.GetName(arg_4_0)
+	return arg_4_0._name
 end

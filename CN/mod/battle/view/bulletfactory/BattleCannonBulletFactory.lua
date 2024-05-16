@@ -1,99 +1,116 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst.UnitType
-slot2 = slot0.Battle.BattleConst.AircraftUnitType
-slot3 = slot0.Battle.BattleConst.CharacterUnitType
-slot0.Battle.BattleCannonBulletFactory = singletonClass("BattleCannonBulletFactory", slot0.Battle.BattleBulletFactory)
-slot0.Battle.BattleCannonBulletFactory.__name = "BattleCannonBulletFactory"
-slot4 = slot0.Battle.BattleCannonBulletFactory
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst.UnitType
+local var_0_2 = var_0_0.Battle.BattleConst.AircraftUnitType
+local var_0_3 = var_0_0.Battle.BattleConst.CharacterUnitType
+
+var_0_0.Battle.BattleCannonBulletFactory = singletonClass("BattleCannonBulletFactory", var_0_0.Battle.BattleBulletFactory)
+var_0_0.Battle.BattleCannonBulletFactory.__name = "BattleCannonBulletFactory"
+
+local var_0_4 = var_0_0.Battle.BattleCannonBulletFactory
+
+function var_0_4.Ctor(arg_1_0)
+	var_0_4.super.Ctor(arg_1_0)
 end
 
-function slot4.MakeBullet(slot0)
-	return uv0.Battle.BattleCannonBullet.New()
+function var_0_4.MakeBullet(arg_2_0)
+	return var_0_0.Battle.BattleCannonBullet.New()
 end
 
-slot5 = Quaternion.Euler(-90, 0, 0)
+local var_0_5 = Quaternion.Euler(-90, 0, 0)
 
-function slot4.onBulletHitFunc(slot0, slot1, slot2)
-	slot3 = uv0.GetDataProxy()
-	slot5 = slot0:GetBulletData():GetTemplate()
-	slot6 = nil
+function var_0_4.onBulletHitFunc(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = var_0_4.GetDataProxy()
+	local var_3_1 = arg_3_0:GetBulletData()
+	local var_3_2 = var_3_1:GetTemplate()
+	local var_3_3
 
-	if table.contains(uv1, slot2) then
-		slot6 = uv0.GetSceneMediator():GetAircraft(slot1)
-	elseif table.contains(uv2, slot2) then
-		slot6 = uv0.GetSceneMediator():GetCharacter(slot1)
+	if table.contains(var_0_2, arg_3_2) then
+		var_3_3 = var_0_4.GetSceneMediator():GetAircraft(arg_3_1)
+	elseif table.contains(var_0_3, arg_3_2) then
+		var_3_3 = var_0_4.GetSceneMediator():GetCharacter(arg_3_1)
 	end
 
-	if not slot6 then
+	if not var_3_3 then
 		return
 	end
 
-	slot8, slot9 = slot3:HandleDamage(slot4, slot6:GetUnitData())
-	slot10 = nil
+	local var_3_4 = var_3_3:GetUnitData()
+	local var_3_5, var_3_6 = var_3_0:HandleDamage(var_3_1, var_3_4)
+	local var_3_7
 
-	if slot6:GetGO() then
-		if slot8 then
-			slot11, slot12 = uv0.GetFXPool():GetFX(slot0:GetMissFXID())
-			slot13 = slot6:GetUnitData():GetBoxSize()
+	if var_3_3:GetGO() then
+		if var_3_5 then
+			local var_3_8, var_3_9 = var_0_4.GetFXPool():GetFX(arg_3_0:GetMissFXID())
+			local var_3_10 = var_3_3:GetUnitData():GetBoxSize()
+			local var_3_11 = math.random(0, 1)
 
-			if math.random(0, 1) == 0 then
-				slot14 = -1
+			if var_3_11 == 0 then
+				var_3_11 = -1
 			end
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(slot11, Vector3((math.random() - 0.5) * slot13.x, 0, slot13.z * slot14):Add(slot6:GetPosition()):Add(slot12), true)
-			uv3.Battle.PlayBattleSFX(slot4:GetMissSFX())
+			local var_3_12 = (math.random() - 0.5) * var_3_10.x
+			local var_3_13 = Vector3(var_3_12, 0, var_3_10.z * var_3_11):Add(var_3_3:GetPosition())
+
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var_3_8, var_3_13:Add(var_3_9), true)
+			var_0_0.Battle.PlayBattleSFX(var_3_1:GetMissSFX())
 		else
-			slot10 = slot6:AddFX(slot0:GetFXID())
+			var_3_7 = var_3_3:AddFX(arg_3_0:GetFXID())
 
-			uv3.Battle.PlayBattleSFX(slot4:GetHitSFX())
+			var_0_0.Battle.PlayBattleSFX(var_3_1:GetHitSFX())
 
-			slot12 = slot0:GetPosition() - slot6:GetPosition()
-			slot12.x = slot12.x * slot7:GetDirection()
-			slot13 = slot10.transform.localPosition
-			slot12.y = math.cos(math.deg2Rad * (uv4 * slot6:GetTf().localRotation).eulerAngles.x) * slot12.z
-			slot12.z = 0
+			local var_3_14 = var_3_4:GetDirection()
+			local var_3_15 = arg_3_0:GetPosition() - var_3_3:GetPosition()
 
-			slot13:Add(slot12 / slot6:GetInitScale())
+			var_3_15.x = var_3_15.x * var_3_14
 
-			slot10.transform.localPosition = slot13
+			local var_3_16 = var_3_7.transform.localPosition
+			local var_3_17 = (var_0_5 * var_3_3:GetTf().localRotation).eulerAngles.x
+
+			var_3_15.y = math.cos(math.deg2Rad * var_3_17) * var_3_15.z
+			var_3_15.z = 0
+
+			local var_3_18 = var_3_15 / var_3_3:GetInitScale()
+
+			var_3_16:Add(var_3_18)
+
+			var_3_7.transform.localPosition = var_3_16
 		end
 	end
 
-	if slot10 and slot7:GetIFF() == slot3:GetFoeCode() then
-		slot11 = slot10.transform
-		slot12 = slot11.localRotation
-		slot11.localRotation = Vector3(slot12.x, 180, slot12.z)
+	if var_3_7 and var_3_4:GetIFF() == var_3_0:GetFoeCode() then
+		local var_3_19 = var_3_7.transform
+		local var_3_20 = var_3_19.localRotation
+
+		var_3_19.localRotation = Vector3(var_3_20.x, 180, var_3_20.z)
 	end
 
-	if slot4:GetPierceCount() <= 0 then
-		slot3:RemoveBulletUnit(slot4:GetUniqueID())
+	if var_3_1:GetPierceCount() <= 0 then
+		var_3_0:RemoveBulletUnit(var_3_1:GetUniqueID())
 	end
 end
 
-function slot4.onBulletMissFunc(slot0)
-	slot1 = slot0:GetBulletData()
-	slot2 = slot1:GetTemplate()
-	slot3, slot4 = uv0.GetFXPool():GetFX(slot0:GetMissFXID())
+function var_0_4.onBulletMissFunc(arg_4_0)
+	local var_4_0 = arg_4_0:GetBulletData()
+	local var_4_1 = var_4_0:GetTemplate()
+	local var_4_2, var_4_3 = var_0_4.GetFXPool():GetFX(arg_4_0:GetMissFXID())
 
-	pg.EffectMgr.GetInstance():PlayBattleEffect(slot3, slot4:Add(slot0:GetPosition()), true)
-	uv1.Battle.PlayBattleSFX(slot1:GetMissSFX())
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_4_2, var_4_3:Add(arg_4_0:GetPosition()), true)
+	var_0_0.Battle.PlayBattleSFX(var_4_0:GetMissSFX())
 end
 
-function slot4.MakeModel(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot0:GetDataProxy()
-	slot6 = slot1:GetBulletData()
+function var_0_4.MakeModel(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	local var_5_0 = arg_5_0:GetDataProxy()
+	local var_5_1 = arg_5_1:GetBulletData()
 
-	if not slot0:GetBulletPool():InstBullet(slot1:GetModleID(), function (slot0)
-		uv0:AddModel(slot0)
+	if not arg_5_0:GetBulletPool():InstBullet(arg_5_1:GetModleID(), function(arg_6_0)
+		arg_5_1:AddModel(arg_6_0)
 	end) then
-		slot1:AddTempModel(slot0:GetTempGOPool():GetObject())
+		arg_5_1:AddTempModel(arg_5_0:GetTempGOPool():GetObject())
 	end
 
-	slot1:SetSpawn(slot2)
-	slot1:SetFXFunc(slot0.onBulletHitFunc, slot0.onBulletMissFunc)
-	slot0:GetSceneMediator():AddBullet(slot1)
+	arg_5_1:SetSpawn(arg_5_2)
+	arg_5_1:SetFXFunc(arg_5_0.onBulletHitFunc, arg_5_0.onBulletMissFunc)
+	arg_5_0:GetSceneMediator():AddBullet(arg_5_1)
 end

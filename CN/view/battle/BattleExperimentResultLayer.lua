@@ -1,137 +1,158 @@
-slot0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
+﻿local var_0_0 = class("BattleExperimentResultLayer", import(".BattleContributionResultLayer"))
 
-function slot0.setPoint(slot0)
-	slot0._contributionPoint = 0
+function var_0_0.setPoint(arg_1_0)
+	arg_1_0._contributionPoint = 0
 end
 
-function slot0.skip(slot0)
-	for slot4, slot5 in ipairs(slot0._delayLeanList) do
-		LeanTween.cancel(slot5)
+function var_0_0.skip(arg_2_0)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0._delayLeanList) do
+		LeanTween.cancel(iter_2_1)
 	end
 
-	if slot0._stateFlag == uv0.STATE_RANK_ANIMA then
-		-- Nothing
-	elseif slot0._stateFlag == uv0.STATE_REPORT then
-		slot1 = slot0._conditionContainer.childCount
+	if arg_2_0._stateFlag == var_0_0.STATE_RANK_ANIMA then
+		-- block empty
+	elseif arg_2_0._stateFlag == var_0_0.STATE_REPORT then
+		local var_2_0 = arg_2_0._conditionContainer.childCount
 
-		while slot1 > 0 do
-			SetActive(slot0._conditionContainer:GetChild(slot1 - 1), true)
+		while var_2_0 > 0 do
+			SetActive(arg_2_0._conditionContainer:GetChild(var_2_0 - 1), true)
 
-			slot1 = slot1 - 1
+			var_2_0 = var_2_0 - 1
 		end
 
-		SetActive(slot0:findTF("jieuan01/tips", slot0._bg), true)
+		SetActive(arg_2_0:findTF("jieuan01/tips", arg_2_0._bg), true)
 
-		slot0._stateFlag = uv0.STATE_REPORTED
-	elseif slot0._stateFlag == uv0.STATE_REPORTED then
-		slot0:displayBG()
-		SetActive(slot0:findTF("jieuan01/tips", slot0._bg), false)
+		arg_2_0._stateFlag = var_0_0.STATE_REPORTED
+	elseif arg_2_0._stateFlag == var_0_0.STATE_REPORTED then
+		arg_2_0:displayBG()
+		SetActive(arg_2_0:findTF("jieuan01/tips", arg_2_0._bg), false)
 	end
 end
 
-function slot0.displayBG(slot0)
-	LeanTween.moveX(rtf(slot0._conditions), 1300, uv0.DURATION_MOVE)
-	LeanTween.scale(slot0._grade, Vector3(0.6, 0.6, 0), uv0.DURATION_MOVE)
-	LeanTween.moveLocal(go(rtf(slot0._grade)), slot0._gradeUpperLeftPos, uv0.DURATION_MOVE):setOnComplete(System.Action(function ()
-		uv0:displayShips()
-		uv0:showRightBottomPanel()
-		triggerButton(uv0._statisticsBtn)
-		uv0:skipAtkAnima(uv0._atkContainerNext)
-		uv0:skipAtkAnima(uv0._atkContainer)
-		setActive(uv0._statisticsBtn, false)
+function var_0_0.displayBG(arg_3_0)
+	local var_3_0 = rtf(arg_3_0._grade)
 
-		uv0._stateFlag = uv1.STATE_DISPLAY
+	LeanTween.moveX(rtf(arg_3_0._conditions), 1300, var_0_0.DURATION_MOVE)
+	LeanTween.scale(arg_3_0._grade, Vector3(0.6, 0.6, 0), var_0_0.DURATION_MOVE)
+	LeanTween.moveLocal(go(var_3_0), arg_3_0._gradeUpperLeftPos, var_0_0.DURATION_MOVE):setOnComplete(System.Action(function()
+		arg_3_0:displayShips()
+		arg_3_0:showRightBottomPanel()
+		triggerButton(arg_3_0._statisticsBtn)
+		arg_3_0:skipAtkAnima(arg_3_0._atkContainerNext)
+		arg_3_0:skipAtkAnima(arg_3_0._atkContainer)
+		setActive(arg_3_0._statisticsBtn, false)
+
+		arg_3_0._stateFlag = var_0_0.STATE_DISPLAY
 	end))
-	setActive(slot0:findTF("jieuan01/Bomb", slot0._bg), false)
+	setActive(arg_3_0:findTF("jieuan01/Bomb", arg_3_0._bg), false)
 end
 
-function slot0.closeStatistics(slot0)
+function var_0_0.closeStatistics(arg_5_0)
+	return
 end
 
-function slot0.displayShips(slot0)
-	slot0._expTFs = {}
-	slot0._nameTxts = {}
-	slot0._initExp = {}
-	slot0._skipExp = {}
-	slot0._subSkipExp = {}
-	slot0._subCardAnimaFuncList = {}
-	slot1 = {}
+function var_0_0.displayShips(arg_6_0)
+	arg_6_0._expTFs = {}
+	arg_6_0._nameTxts = {}
+	arg_6_0._initExp = {}
+	arg_6_0._skipExp = {}
+	arg_6_0._subSkipExp = {}
+	arg_6_0._subCardAnimaFuncList = {}
 
-	for slot6, slot7 in ipairs(slot0.shipVOs) do
-		slot1[slot7.id] = slot7
+	local var_6_0 = {}
+	local var_6_1 = arg_6_0.shipVOs
+
+	for iter_6_0, iter_6_1 in ipairs(var_6_1) do
+		var_6_0[iter_6_1.id] = iter_6_1
 	end
 
-	slot3 = slot0.contextData.statistics
+	local var_6_2 = arg_6_0.contextData.statistics
 
-	for slot7, slot8 in ipairs(slot2) do
-		if slot3[slot8.id] then
-			slot3[slot8.id].vo = slot8
+	for iter_6_2, iter_6_3 in ipairs(var_6_1) do
+		if var_6_2[iter_6_3.id] then
+			var_6_2[iter_6_3.id].vo = iter_6_3
 		end
 	end
 
-	slot5 = 0
+	local var_6_3 = arg_6_0.contextData.oldMainShips
+	local var_6_4 = 0
 
-	for slot9, slot10 in ipairs(slot0.contextData.oldMainShips) do
-		if slot3[slot10.id] and slot5 < slot11.output then
-			slot0.mvpShipVO = slot10
-			slot5 = slot11.output
+	for iter_6_4, iter_6_5 in ipairs(var_6_3) do
+		local var_6_5 = var_6_2[iter_6_5.id]
+
+		if var_6_5 and var_6_4 < var_6_5.output then
+			arg_6_0.mvpShipVO = iter_6_5
+			var_6_4 = var_6_5.output
 		end
 	end
 
-	slot0._atkFuncs = {}
-	slot0._commonAtkTplList = {}
-	slot0._subAtkTplList = {}
-	slot6, slot7 = nil
+	arg_6_0._atkFuncs = {}
+	arg_6_0._commonAtkTplList = {}
+	arg_6_0._subAtkTplList = {}
 
-	SetActive(slot0._atkToggle, #slot4 > 6)
+	local var_6_6
+	local var_6_7
 
-	if #slot4 > 6 then
-		onToggle(slot0, slot0._atkToggle, function (slot0)
-			SetActive(uv0._atkContainer, slot0)
-			SetActive(uv0._atkContainerNext, not slot0)
+	SetActive(arg_6_0._atkToggle, #var_6_3 > 6)
 
-			if slot0 then
-				uv0:skipAtkAnima(uv0._atkContainerNext)
+	if #var_6_3 > 6 then
+		onToggle(arg_6_0, arg_6_0._atkToggle, function(arg_7_0)
+			SetActive(arg_6_0._atkContainer, arg_7_0)
+			SetActive(arg_6_0._atkContainerNext, not arg_7_0)
+
+			if arg_7_0 then
+				arg_6_0:skipAtkAnima(arg_6_0._atkContainerNext)
 			else
-				uv0:skipAtkAnima(uv0._atkContainer)
+				arg_6_0:skipAtkAnima(arg_6_0._atkContainer)
 			end
 		end, SFX_PANEL)
 	end
 
-	slot8 = {}
-	slot9 = {}
+	local var_6_8 = {}
+	local var_6_9 = {}
 
-	for slot13, slot14 in ipairs(slot4) do
-		slot15 = slot1[slot14.id]
+	for iter_6_6, iter_6_7 in ipairs(var_6_3) do
+		local var_6_10 = var_6_0[iter_6_7.id]
 
-		if slot3[slot14.id] then
-			slot17 = table.contains(TeamType.SubShipType, ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot14.configId).type)
-			slot18, slot19 = nil
-			slot20 = 0
+		if var_6_2[iter_6_7.id] then
+			local var_6_11 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter_6_7.configId).type
+			local var_6_12 = table.contains(TeamType.SubShipType, var_6_11)
+			local var_6_13
+			local var_6_14
+			local var_6_15 = 0
+			local var_6_16
 
-			if slot13 > 6 then
-				slot19 = slot0._atkContainerNext
-				slot20 = 7
+			if iter_6_6 > 6 then
+				var_6_14 = arg_6_0._atkContainerNext
+				var_6_16 = 7
 			else
-				slot19 = slot0._atkContainer
-				slot20 = 1
+				var_6_14 = arg_6_0._atkContainer
+				var_6_16 = 1
 			end
 
-			slot18 = cloneTplTo(slot0._atkTpl, slot19)
-			slot21 = slot18.localPosition
-			slot21.x = slot21.x + (slot13 - slot20) * 74
-			slot21.y = slot21.y + (slot13 - slot20) * -124
-			slot18.localPosition = slot21
-			slot0:findTF("result/mask/icon", slot18):GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. slot14:getPainting())
+			local var_6_17 = cloneTplTo(arg_6_0._atkTpl, var_6_14)
+			local var_6_18 = var_6_17.localPosition
 
-			setImageSprite(slot0:findTF("result/type", slot18), GetSpriteFromAtlas("shiptype", shipType2print(slot14:getShipType())), true)
-			slot0:setAtkAnima(slot18, slot19, slot3[slot14.id].output / slot5, slot5, slot0.mvpShipVO == slot14, slot3[slot14.id].output, slot3[slot14.id].kill_count)
+			var_6_18.x = var_6_18.x + (iter_6_6 - var_6_16) * 74
+			var_6_18.y = var_6_18.y + (iter_6_6 - var_6_16) * -124
+			var_6_17.localPosition = var_6_18
 
-			if slot14.id == slot3._flagShipID then
-				slot0.flagShipVO = slot14
+			local var_6_19 = arg_6_0:findTF("result/mask/icon", var_6_17)
+			local var_6_20 = arg_6_0:findTF("result/type", var_6_17)
+
+			var_6_19:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter_6_7:getPainting())
+
+			local var_6_21 = var_6_2[iter_6_7.id].output / var_6_4
+			local var_6_22 = GetSpriteFromAtlas("shiptype", shipType2print(iter_6_7:getShipType()))
+
+			setImageSprite(var_6_20, var_6_22, true)
+			arg_6_0:setAtkAnima(var_6_17, var_6_14, var_6_21, var_6_4, arg_6_0.mvpShipVO == iter_6_7, var_6_2[iter_6_7.id].output, var_6_2[iter_6_7.id].kill_count)
+
+			if iter_6_7.id == var_6_2._flagShipID then
+				arg_6_0.flagShipVO = iter_6_7
 			end
 		end
 	end
 end
 
-return slot0
+return var_0_0

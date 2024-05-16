@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.task_data_trigger = {
 	{
 		group_id = 0,
@@ -760,6 +760,14 @@ pg.task_data_trigger = {
 		id = 97,
 		task_id = 5991
 	},
+	[98] = {
+		group_id = 50207,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 98,
+		task_id = 500001
+	},
 	all = {
 		1,
 		2,
@@ -855,6 +863,7 @@ pg.task_data_trigger = {
 		94,
 		95,
 		96,
-		97
+		97,
+		98
 	}
 }

@@ -1,23 +1,23 @@
-slot0 = class("GuildRequestRejectCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildRequestRejectCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getType()
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = arg_1_1:getType()
 
-	slot4:Send(60022, {
-		player_id = slot1:getBody()
-	}, 60023, function (slot0)
-		if slot0.result == 0 then
-			getProxy(GuildProxy):deleteRequest(uv0)
-			uv1:sendNotification(GAME.GUIDL_REQUEST_REJECT_DONE)
+	pg.ConnectionMgr.GetInstance():Send(60022, {
+		player_id = var_1_0
+	}, 60023, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(GuildProxy):deleteRequest(var_1_0)
+			arg_1_0:sendNotification(GAME.GUIDL_REQUEST_REJECT_DONE)
 
-			if not uv2 then
+			if not var_1_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_rejecet_apply_sucess"))
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_reject_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_reject_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

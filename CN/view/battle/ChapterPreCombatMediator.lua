@@ -1,97 +1,107 @@
-slot0 = class("ChapterPreCombatMediator", import("..base.ContextMediator"))
-slot0.ON_START = "ChapterPreCombatMediator:ON_START"
-slot0.ON_SWITCH_SHIP = "ChapterPreCombatMediator:ON_SWITCH_SHIP"
-slot0.ON_SWITCH_FLEET = "ChapterPreCombatMediator:ON_SWITCH_FLEET"
-slot0.ON_OP = "ChapterPreCombatMediator:ON_OP"
-slot0.ON_AUTO = "ChapterPreCombatMediator:ON_AUTO"
-slot0.ON_SUB_AUTO = "ChapterPreCombatMediator:ON_SUB_AUTO"
-slot0.GET_CHAPTER_DROP_SHIP_LIST = "ChapterPreCombatMediator:GET_CHAPTER_DROP_SHIP_LIST"
+﻿local var_0_0 = class("ChapterPreCombatMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.GET_CHAPTER_DROP_SHIP_LIST, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST, {
-			chapterId = slot1,
-			callback = slot2
+var_0_0.ON_START = "ChapterPreCombatMediator:ON_START"
+var_0_0.ON_SWITCH_SHIP = "ChapterPreCombatMediator:ON_SWITCH_SHIP"
+var_0_0.ON_SWITCH_FLEET = "ChapterPreCombatMediator:ON_SWITCH_FLEET"
+var_0_0.ON_OP = "ChapterPreCombatMediator:ON_OP"
+var_0_0.ON_AUTO = "ChapterPreCombatMediator:ON_AUTO"
+var_0_0.ON_SUB_AUTO = "ChapterPreCombatMediator:ON_SUB_AUTO"
+var_0_0.GET_CHAPTER_DROP_SHIP_LIST = "ChapterPreCombatMediator:GET_CHAPTER_DROP_SHIP_LIST"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GET_CHAPTER_DROP_SHIP_LIST, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.GET_CHAPTER_DROP_SHIP_LIST, {
+			chapterId = arg_2_1,
+			callback = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.ON_SWITCH_SHIP, function (slot0, slot1)
-		slot2 = getProxy(ChapterProxy)
-		slot3 = slot2:getActiveChapter()
+	arg_1_0:bind(var_0_0.ON_SWITCH_SHIP, function(arg_3_0, arg_3_1)
+		local var_3_0 = getProxy(ChapterProxy)
+		local var_3_1 = var_3_0:getActiveChapter()
 
-		slot3.fleet:synchronousShipIndex(slot1)
-		slot2:updateChapter(slot3, ChapterConst.DirtyFleet)
+		var_3_1.fleet:synchronousShipIndex(arg_3_1)
+		var_3_0:updateChapter(var_3_1, ChapterConst.DirtyFleet)
 	end)
-	slot0:bind(uv0.ON_AUTO, function (slot0, slot1)
-		uv0:onAutoBtn(slot1)
+	arg_1_0:bind(var_0_0.ON_AUTO, function(arg_4_0, arg_4_1)
+		arg_1_0:onAutoBtn(arg_4_1)
 	end)
-	slot0:bind(uv0.ON_SUB_AUTO, function (slot0, slot1)
-		uv0:onAutoSubBtn(slot1)
+	arg_1_0:bind(var_0_0.ON_SUB_AUTO, function(arg_5_0, arg_5_1)
+		arg_1_0:onAutoSubBtn(arg_5_1)
 	end)
-	slot0:bind(uv0.ON_START, function (slot0)
-		slot1 = getProxy(ChapterProxy):getActiveChapter()
-		slot2 = slot1.fleet
-		slot3 = slot1:getStageId(slot2.line.row, slot2.line.column)
+	arg_1_0:bind(var_0_0.ON_START, function(arg_6_0)
+		local var_6_0 = getProxy(ChapterProxy):getActiveChapter()
+		local var_6_1 = var_6_0.fleet
+		local var_6_2 = var_6_0:getStageId(var_6_1.line.row, var_6_1.line.column)
 
 		seriesAsync({
-			function (slot0)
-				slot1 = {}
+			function(arg_7_0)
+				local var_7_0 = {}
 
-				for slot5, slot6 in pairs(uv0.ships) do
-					table.insert(slot1, slot6)
+				for iter_7_0, iter_7_1 in pairs(var_6_1.ships) do
+					table.insert(var_7_0, iter_7_1)
 				end
 
-				Fleet.EnergyCheck(slot1, uv0.name, function (slot0)
-					if slot0 then
-						uv0()
+				Fleet.EnergyCheck(var_7_0, var_6_1.name, function(arg_8_0)
+					if arg_8_0 then
+						arg_7_0()
 					end
 				end)
 			end,
-			function (slot0)
+			function(arg_9_0)
 				if getProxy(PlayerProxy):getRawData():GoldMax(1) then
+					local var_9_0 = i18n("gold_max_tip_title") .. i18n("resource_max_tip_battle")
+
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("gold_max_tip_title") .. i18n("resource_max_tip_battle"),
-						onYes = slot0,
+						content = var_9_0,
+						onYes = arg_9_0,
 						weight = LayerWeightConst.SECOND_LAYER
 					})
 				else
-					slot0()
+					arg_9_0()
 				end
 			end
-		}, function ()
-			uv0:sendNotification(GAME.BEGIN_STAGE, {
+		}, function()
+			arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_SCENARIO,
-				stageId = uv1
+				stageId = var_6_2
 			})
 		end)
 	end)
-	slot0:bind(uv0.ON_OP, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHAPTER_OP, slot1)
+	arg_1_0:bind(var_0_0.ON_OP, function(arg_11_0, arg_11_1)
+		arg_1_0:sendNotification(GAME.CHAPTER_OP, arg_11_1)
 	end)
 
-	slot1 = getProxy(ChapterProxy)
-	slot2 = slot1:getActiveChapter()
-	slot3 = slot2.fleet
+	local var_1_0 = getProxy(ChapterProxy)
+	local var_1_1 = var_1_0:getActiveChapter()
+	local var_1_2 = var_1_1.fleet
+	local var_1_3 = var_1_1:getStageId(var_1_2.line.row, var_1_2.line.column)
 
-	slot0.viewComponent:setSubFlag(slot1.getSubAidFlag(slot2, slot2:getStageId(slot3.line.row, slot3.line.column)))
-	slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	slot0:display()
+	arg_1_0.viewComponent:setSubFlag(var_1_0.getSubAidFlag(var_1_1, var_1_3))
+	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	arg_1_0:display()
 end
 
-function slot0.onAutoBtn(slot0, slot1)
-	slot0:sendNotification(GAME.AUTO_BOT, {
-		isActiveBot = slot1.isOn,
-		toggle = slot1.toggle
+function var_0_0.onAutoBtn(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1.isOn
+	local var_12_1 = arg_12_1.toggle
+
+	arg_12_0:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = var_12_0,
+		toggle = var_12_1
 	})
 end
 
-function slot0.onAutoSubBtn(slot0, slot1)
-	slot0:sendNotification(GAME.AUTO_SUB, {
-		isActiveSub = slot1.isOn,
-		toggle = slot1.toggle
+function var_0_0.onAutoSubBtn(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1.isOn
+	local var_13_1 = arg_13_1.toggle
+
+	arg_13_0:sendNotification(GAME.AUTO_SUB, {
+		isActiveSub = var_13_0,
+		toggle = var_13_1
 	})
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_14_0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.BEGIN_STAGE_ERRO,
@@ -99,31 +109,34 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1:getName()
+	local var_15_1 = arg_15_1:getBody()
 
-	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	elseif slot2 == GAME.BEGIN_STAGE_ERRO then
-		setActive(slot0.viewComponent._startBtn, true)
+	if var_15_0 == PlayerProxy.UPDATED then
+		arg_15_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	elseif var_15_0 == GAME.BEGIN_STAGE_ERRO then
+		setActive(arg_15_0.viewComponent._startBtn, true)
 
-		if slot3 == 3 then
+		if var_15_1 == 3 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("battle_preCombatMediator_timeout"),
-				onYes = function ()
-					uv0.viewComponent:emit(BaseUI.ON_CLOSE)
+				onYes = function()
+					arg_15_0.viewComponent:emit(BaseUI.ON_CLOSE)
 				end,
 				weight = LayerWeightConst.SECOND_LAYER
 			})
 		end
-	elseif slot2 == GAME.CHAPTER_OP_DONE and (slot3.type == ChapterConst.OpStrategy or slot3.type == ChapterConst.OpRepair or slot3.type == ChapterConst.OpRequest) then
-		slot0:display()
+	elseif var_15_0 == GAME.CHAPTER_OP_DONE and (var_15_1.type == ChapterConst.OpStrategy or var_15_1.type == ChapterConst.OpRepair or var_15_1.type == ChapterConst.OpRequest) then
+		arg_15_0:display()
 	end
 end
 
-function slot0.display(slot0)
-	slot0.viewComponent:updateChapter(getProxy(ChapterProxy):getActiveChapter())
+function var_0_0.display(arg_17_0)
+	local var_17_0 = getProxy(ChapterProxy):getActiveChapter()
+
+	arg_17_0.viewComponent:updateChapter(var_17_0)
 end
 
-return slot0
+return var_0_0

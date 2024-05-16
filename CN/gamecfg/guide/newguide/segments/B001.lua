@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"新兵，让我来教你如何控制舰队吧",
 	"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
 	"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
@@ -40,7 +40,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			}
 		},
 		{
@@ -53,7 +53,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CombatUI(Clone)/Stick/Area",
@@ -72,7 +72,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -97,7 +97,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_2/ActCtl",
@@ -116,7 +116,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[5]
+				text = var_0_0[5]
 			}
 		},
 		{
@@ -141,7 +141,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[6]
+				text = var_0_0[6]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_1/ActCtl",

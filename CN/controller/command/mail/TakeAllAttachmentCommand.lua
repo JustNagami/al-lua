@@ -1,20 +1,22 @@
-slot0 = class("TakeAllAttachmentCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TakeAllAttachmentCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4, slot5 = CheckOverflow(getProxy(MailProxy):GetAttchmentDic())
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(MailProxy)
+	local var_1_1 = var_1_0:GetAttchmentDic()
+	local var_1_2, var_1_3 = CheckOverflow(var_1_1)
 
-	if not slot4 then
-		switch(slot5, {
-			gold = function ()
+	if not var_1_2 then
+		switch(var_1_3, {
+			gold = function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_mail"))
 			end,
-			oil = function ()
+			oil = function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_mail"))
 			end,
-			equip = function ()
+			equip = function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("mail_takeAttachment_error_magazine_full"))
 			end,
-			ship = function ()
+			ship = function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("mail_takeAttachment_error_dockYrad_full"))
 			end
 		})
@@ -22,58 +24,61 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot6 = {}
+	local var_1_4 = {}
 
-	if not CheckShipExpOverflow(slot3) then
-		table.insert(slot6, function (slot0)
+	if not CheckShipExpOverflow(var_1_1) then
+		table.insert(var_1_4, function(arg_6_0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("player_expResource_mail_fullBag"),
-				onYes = slot0
+				onYes = arg_6_0
 			})
 		end)
 	end
 
-	if slot3[DROP_TYPE_WORLD_ITEM] > 0 then
-		if not nowWorld():IsActivate() then
+	if var_1_1[DROP_TYPE_WORLD_ITEM] > 0 then
+		local var_1_5 = nowWorld()
+
+		if not var_1_5:IsActivate() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("mail_takeAttachment_error_noWorld"))
 
 			return
-		elseif slot7:CheckReset() then
-			table.insert(slot6, function (slot0)
+		elseif var_1_5:CheckReset() then
+			table.insert(var_1_4, function(arg_7_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("mail_takeAttachment_error_reWorld"),
-					onYes = slot0
+					onYes = arg_7_0
 				})
 			end)
 		end
 	end
 
-	slot7 = underscore.select(slot2:getMailAttachments(), function (slot0)
-		return slot0.attachFlag == Mail.ATTACHMENT_EXIST
+	local var_1_6 = underscore.select(var_1_0:getMailAttachments(), function(arg_8_0)
+		return arg_8_0.attachFlag == Mail.ATTACHMENT_EXIST
 	end)
 
-	seriesAsync(slot6, function (slot0)
-		slot1 = pg.ConnectionMgr.GetInstance()
-
-		slot1:Send(30004, {
-			id = underscore.map(uv0, function (slot0)
-				return slot0.id
+	seriesAsync(var_1_4, function(arg_9_0)
+		pg.ConnectionMgr.GetInstance():Send(30004, {
+			id = underscore.map(var_1_6, function(arg_10_0)
+				return arg_10_0.id
 			end)
-		}, 30005, function (slot0)
-			for slot4, slot5 in ipairs(uv0) do
-				slot5.readFlag = 2
-				slot5.attachFlag = slot5.ATTACHMENT_TAKEN
+		}, 30005, function(arg_11_0)
+			for iter_11_0, iter_11_1 in ipairs(var_1_6) do
+				iter_11_1.readFlag = 2
+				iter_11_1.attachFlag = iter_11_1.ATTACHMENT_TAKEN
 
-				uv1:updateMail(slot5)
+				var_1_0:updateMail(iter_11_1)
 			end
 
-			uv1:unpdateExistAttachment(math.max(uv1._existAttachmentCount - #slot0.attachment_list, 0))
-			uv2:sendNotification(GAME.TAKE_ALL_ATTACHMENT_DONE, {
-				mails = uv0,
-				items = PlayerConst.addTranDrop(slot0.attachment_list)
+			local var_11_0 = PlayerConst.addTranDrop(arg_11_0.attachment_list)
+			local var_11_1 = math.max(var_1_0._existAttachmentCount - #arg_11_0.attachment_list, 0)
+
+			var_1_0:unpdateExistAttachment(var_11_1)
+			arg_1_0:sendNotification(GAME.TAKE_ALL_ATTACHMENT_DONE, {
+				mails = var_1_6,
+				items = var_11_0
 			})
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

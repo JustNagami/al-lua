@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_event_monopoly_map = {
 	[1001] = {
 		id = 1001,

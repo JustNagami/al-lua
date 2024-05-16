@@ -1,122 +1,138 @@
-slot0 = class("AppreciateProxy", import(".NetProxy"))
+﻿local var_0_0 = class("AppreciateProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0:initData()
-	slot0:checkPicFileState()
-	slot0:checkMusicFileState()
+function var_0_0.register(arg_1_0)
+	arg_1_0:initData()
+	arg_1_0:checkPicFileState()
+	arg_1_0:checkMusicFileState()
 end
 
-function slot0.initData(slot0)
-	slot0.picManager = BundleWizard.Inst:GetGroupMgr("GALLERY_PIC")
-	slot1 = BundleWizard.Inst
-	slot0.musicManager = slot1:GetGroupMgr("GALLERY_BGM")
-	slot0.reForVer = PathMgr.MD5Result
-	slot0.galleryPicUnLockIDLIst = {}
-	slot0.galleryPicExistStateTable = {}
-	slot0.galleryPicLikeIDList = {}
-	slot0.musicUnLockIDLIst = {}
-	slot0.musicExistStateTable = {}
-	slot0.musicLikeIDList = {}
-	slot0.mangaReadIDList = {}
-	slot0.mangaLikeIDList = {}
-	slot0.galleryRunData = {
+function var_0_0.initData(arg_2_0)
+	arg_2_0.picManager = BundleWizard.Inst:GetGroupMgr("GALLERY_PIC")
+	arg_2_0.musicManager = BundleWizard.Inst:GetGroupMgr("GALLERY_BGM")
+	arg_2_0.reForVer = PathMgr.MD5Result
+	arg_2_0.galleryPicUnLockIDLIst = {}
+	arg_2_0.galleryPicExistStateTable = {}
+	arg_2_0.galleryPicLikeIDList = {}
+	arg_2_0.musicUnLockIDLIst = {}
+	arg_2_0.musicExistStateTable = {}
+	arg_2_0.musicLikeIDList = {}
+	arg_2_0.mangaReadIDList = {}
+	arg_2_0.mangaLikeIDList = {}
+	arg_2_0.galleryRunData = {
 		middleIndex = 1,
 		dateValue = GalleryConst.Data_All_Value,
 		sortValue = GalleryConst.Sort_Order_Up,
 		likeValue = GalleryConst.Filte_Normal_Value,
 		bgFilteValue = GalleryConst.Loading_BG_NO_Filte
 	}
-	slot0.musicRunData = {
+	arg_2_0.musicRunData = {
 		middleIndex = 1,
 		sortValue = MusicCollectionConst.Sort_Order_Up,
 		likeValue = MusicCollectionConst.Filte_Normal_Value
 	}
 end
 
-function slot0.checkPicFileState(slot0)
-	slot1, slot2 = nil
+function var_0_0.checkPicFileState(arg_3_0)
+	local var_3_0
+	local var_3_1
 
-	for slot6, slot7 in ipairs(pg.gallery_config.all) do
-		slot0.galleryPicExistStateTable[slot7] = PathMgr.FileExists(PathMgr.getAssetBundle(GalleryConst.PIC_PATH_PREFIX .. pg.gallery_config[slot7].illustration))
+	for iter_3_0, iter_3_1 in ipairs(pg.gallery_config.all) do
+		local var_3_2 = pg.gallery_config[iter_3_1].illustration
+		local var_3_3 = GalleryConst.PIC_PATH_PREFIX .. var_3_2
+		local var_3_4 = PathMgr.FileExists(PathMgr.getAssetBundle(var_3_3))
+
+		arg_3_0.galleryPicExistStateTable[iter_3_1] = var_3_4
 	end
 end
 
-function slot0.checkMusicFileState(slot0)
-	slot1, slot2 = nil
+function var_0_0.checkMusicFileState(arg_4_0)
+	local var_4_0
+	local var_4_1
 
-	for slot6, slot7 in ipairs(pg.music_collect_config.all) do
-		slot0.musicExistStateTable[slot7] = PathMgr.FileExists(PathMgr.getAssetBundle(MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. pg.music_collect_config[slot7].music .. ".b"))
+	for iter_4_0, iter_4_1 in ipairs(pg.music_collect_config.all) do
+		local var_4_2 = pg.music_collect_config[iter_4_1].music
+		local var_4_3 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var_4_2 .. ".b"
+		local var_4_4 = PathMgr.FileExists(PathMgr.getAssetBundle(var_4_3))
+
+		arg_4_0.musicExistStateTable[iter_4_1] = var_4_4
 	end
 end
 
-function slot0.updatePicFileExistStateTable(slot0, slot1, slot2)
-	slot0.galleryPicExistStateTable[slot1] = slot2
+function var_0_0.updatePicFileExistStateTable(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0.galleryPicExistStateTable[arg_5_1] = arg_5_2
 end
 
-function slot0.updateMusicFileExistStateTable(slot0, slot1, slot2)
-	slot0.musicExistStateTable[slot1] = slot2
+function var_0_0.updateMusicFileExistStateTable(arg_6_0, arg_6_1, arg_6_2)
+	arg_6_0.musicExistStateTable[arg_6_1] = arg_6_2
 end
 
-function slot0.getPicExistStateByID(slot0, slot1)
-	if not slot1 then
-		assert("不能为空的picID:" .. tostring(slot1))
+function var_0_0.getPicExistStateByID(arg_7_0, arg_7_1)
+	if not arg_7_1 then
+		assert("不能为空的picID:" .. tostring(arg_7_1))
 	end
 
-	return slot0.galleryPicExistStateTable[slot1]
+	return arg_7_0.galleryPicExistStateTable[arg_7_1]
 end
 
-function slot0.getMusicExistStateByID(slot0, slot1)
-	if not slot1 then
-		assert("不能为空的musicID:" .. tostring(slot1))
+function var_0_0.getMusicExistStateByID(arg_8_0, arg_8_1)
+	if not arg_8_1 then
+		assert("不能为空的musicID:" .. tostring(arg_8_1))
 	end
 
-	return slot0.musicExistStateTable[slot1]
+	return arg_8_0.musicExistStateTable[arg_8_1]
 end
 
-function slot0.getSinglePicConfigByID(slot0, slot1)
-	if pg.gallery_config[slot1] then
-		return slot2
+function var_0_0.getSinglePicConfigByID(arg_9_0, arg_9_1)
+	local var_9_0 = pg.gallery_config[arg_9_1]
+
+	if var_9_0 then
+		return var_9_0
 	else
-		assert(false, "不存在的插画ID:" .. tostring(slot1))
+		assert(false, "不存在的插画ID:" .. tostring(arg_9_1))
 	end
 end
 
-function slot0.getSingleMusicConfigByID(slot0, slot1)
-	if pg.music_collect_config[slot1] then
-		return slot2
+function var_0_0.getSingleMusicConfigByID(arg_10_0, arg_10_1)
+	local var_10_0 = pg.music_collect_config[arg_10_1]
+
+	if var_10_0 then
+		return var_10_0
 	else
-		assert(false, "不存在的音乐ID:" .. tostring(slot1))
+		assert(false, "不存在的音乐ID:" .. tostring(arg_10_1))
 	end
 end
 
-function slot0.updateGalleryRunData(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0.galleryRunData.dateValue = slot1 and slot1 or slot0.galleryRunData.dateValue
-	slot0.galleryRunData.sortValue = slot2 and slot2 or slot0.galleryRunData.sortValue
-	slot0.galleryRunData.middleIndex = slot3 and slot3 or slot0.galleryRunData.middleIndex
-	slot0.galleryRunData.likeValue = slot4 and slot4 or slot0.galleryRunData.likeValue
-	slot0.galleryRunData.bgFilteValue = slot5 and slot5 or slot0.galleryRunData.bgFilteValue
+function var_0_0.updateGalleryRunData(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5)
+	arg_11_0.galleryRunData.dateValue = arg_11_1 and arg_11_1 or arg_11_0.galleryRunData.dateValue
+	arg_11_0.galleryRunData.sortValue = arg_11_2 and arg_11_2 or arg_11_0.galleryRunData.sortValue
+	arg_11_0.galleryRunData.middleIndex = arg_11_3 and arg_11_3 or arg_11_0.galleryRunData.middleIndex
+	arg_11_0.galleryRunData.likeValue = arg_11_4 and arg_11_4 or arg_11_0.galleryRunData.likeValue
+	arg_11_0.galleryRunData.bgFilteValue = arg_11_5 and arg_11_5 or arg_11_0.galleryRunData.bgFilteValue
 end
 
-function slot0.updateMusicRunData(slot0, slot1, slot2, slot3)
-	slot0.musicRunData.sortValue = slot1 and slot1 or slot0.musicRunData.sortValue
-	slot0.musicRunData.middleIndex = slot2 and slot2 or slot0.musicRunData.middleIndex
-	slot0.musicRunData.likeValue = slot3 and slot3 or slot0.musicRunData.likeValue
+function var_0_0.updateMusicRunData(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	arg_12_0.musicRunData.sortValue = arg_12_1 and arg_12_1 or arg_12_0.musicRunData.sortValue
+	arg_12_0.musicRunData.middleIndex = arg_12_2 and arg_12_2 or arg_12_0.musicRunData.middleIndex
+	arg_12_0.musicRunData.likeValue = arg_12_3 and arg_12_3 or arg_12_0.musicRunData.likeValue
 end
 
-function slot0.getGalleryRunData(slot0, slot1)
-	return slot0.galleryRunData
+function var_0_0.getGalleryRunData(arg_13_0, arg_13_1)
+	return arg_13_0.galleryRunData
 end
 
-function slot0.getMusicRunData(slot0, slot1)
-	return slot0.musicRunData
+function var_0_0.getMusicRunData(arg_14_0, arg_14_1)
+	return arg_14_0.musicRunData
 end
 
-function slot0.isPicNeedUnlockByID(slot0, slot1)
-	slot2 = slot0:getPicUnlockMaterialByID(slot1)
+function var_0_0.isPicNeedUnlockByID(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_0:getPicUnlockMaterialByID(arg_15_1)
+	local var_15_1 = arg_15_0:getSinglePicConfigByID(arg_15_1)
 
-	if slot0:getSinglePicConfigByID(slot1) then
-		if slot3.unlock_level[1] == 1 and slot4[2] == 0 then
-			if #slot2 == 0 then
+	if var_15_1 then
+		local var_15_2 = var_15_1.unlock_level
+
+		if var_15_2[1] == 1 and var_15_2[2] == 0 then
+			if #var_15_0 == 0 then
 				return false
 			else
 				return true
@@ -125,16 +141,19 @@ function slot0.isPicNeedUnlockByID(slot0, slot1)
 			return true
 		end
 	else
-		assert(false, "不存在的插画ID:" .. slot1)
+		assert(false, "不存在的插画ID:" .. arg_15_1)
 	end
 end
 
-function slot0.isMusicNeedUnlockByID(slot0, slot1)
-	slot2 = slot0:getMusicUnlockMaterialByID(slot1)
+function var_0_0.isMusicNeedUnlockByID(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0:getMusicUnlockMaterialByID(arg_16_1)
+	local var_16_1 = arg_16_0:getSingleMusicConfigByID(arg_16_1)
 
-	if slot0:getSingleMusicConfigByID(slot1) then
-		if slot3.unlock_level[1] == 1 and slot4[2] == 0 then
-			if #slot2 == 0 then
+	if var_16_1 then
+		local var_16_2 = var_16_1.unlock_level
+
+		if var_16_2[1] == 1 and var_16_2[2] == 0 then
+			if #var_16_0 == 0 then
 				return false
 			else
 				return true
@@ -143,117 +162,137 @@ function slot0.isMusicNeedUnlockByID(slot0, slot1)
 			return true
 		end
 	else
-		assert(false, "不存在的音乐ID:" .. slot1)
+		assert(false, "不存在的音乐ID:" .. arg_16_1)
 	end
 end
 
-function slot0.getPicUnlockMaterialByID(slot0, slot1)
-	if slot0:getSinglePicConfigByID(slot1) then
-		slot4 = {}
+function var_0_0.getPicUnlockMaterialByID(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_0:getSinglePicConfigByID(arg_17_1)
 
-		for slot8, slot9 in ipairs(slot2.unlock_cost) do
-			slot4[#slot4 + 1] = {
-				type = slot9[1],
-				id = slot9[2],
-				count = slot9[3]
+	if var_17_0 then
+		local var_17_1 = var_17_0.unlock_cost
+		local var_17_2 = {}
+
+		for iter_17_0, iter_17_1 in ipairs(var_17_1) do
+			local var_17_3 = {
+				type = iter_17_1[1],
+				id = iter_17_1[2],
+				count = iter_17_1[3]
 			}
+
+			var_17_2[#var_17_2 + 1] = var_17_3
 		end
 
-		return slot4
+		return var_17_2
 	else
-		assert(false, "不存在的插画ID:" .. slot1)
+		assert(false, "不存在的插画ID:" .. arg_17_1)
 	end
 end
 
-function slot0.getMusicUnlockMaterialByID(slot0, slot1)
-	if slot0:getSingleMusicConfigByID(slot1) then
-		slot4 = {}
+function var_0_0.getMusicUnlockMaterialByID(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0:getSingleMusicConfigByID(arg_18_1)
 
-		for slot8, slot9 in ipairs(slot2.unlock_cost) do
-			slot4[#slot4 + 1] = {
-				type = slot9[1],
-				id = slot9[2],
-				count = slot9[3]
+	if var_18_0 then
+		local var_18_1 = var_18_0.unlock_cost
+		local var_18_2 = {}
+
+		for iter_18_0, iter_18_1 in ipairs(var_18_1) do
+			local var_18_3 = {
+				type = iter_18_1[1],
+				id = iter_18_1[2],
+				count = iter_18_1[3]
 			}
+
+			var_18_2[#var_18_2 + 1] = var_18_3
 		end
 
-		return slot4
+		return var_18_2
 	else
-		assert(false, "不存在的音乐ID:" .. slot1)
+		assert(false, "不存在的音乐ID:" .. arg_18_1)
 	end
 end
 
-function slot0.isPicNeedUnlockMaterialByID(slot0, slot1)
-	if #slot0:getPicUnlockMaterialByID(slot1) == 0 then
+function var_0_0.isPicNeedUnlockMaterialByID(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0:getPicUnlockMaterialByID(arg_19_1)
+
+	if #var_19_0 == 0 then
 		return false
 	else
-		return slot2
+		return var_19_0
 	end
 end
 
-function slot0.isMusicNeedUnlockMaterialByID(slot0, slot1)
-	if #slot0:getMusicUnlockMaterialByID(slot1) == 0 then
+function var_0_0.isMusicNeedUnlockMaterialByID(arg_20_0, arg_20_1)
+	local var_20_0 = arg_20_0:getMusicUnlockMaterialByID(arg_20_1)
+
+	if #var_20_0 == 0 then
 		return false
 	else
-		return slot2
+		return var_20_0
 	end
 end
 
-function slot0.getPicUnlockTipTextByID(slot0, slot1)
-	if slot0:getSinglePicConfigByID(slot1) then
-		return slot2.illustrate
+function var_0_0.getPicUnlockTipTextByID(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_0:getSinglePicConfigByID(arg_21_1)
+
+	if var_21_0 then
+		return var_21_0.illustrate
 	else
-		assert(false, "不存在的插画ID:" .. slot1)
+		assert(false, "不存在的插画ID:" .. arg_21_1)
 	end
 end
 
-function slot0.getMusicUnlockTipTextByID(slot0, slot1)
-	if slot0:getSingleMusicConfigByID(slot1) then
-		return slot2.illustrate
+function var_0_0.getMusicUnlockTipTextByID(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0:getSingleMusicConfigByID(arg_22_1)
+
+	if var_22_0 then
+		return var_22_0.illustrate
 	else
-		assert(false, "不存在的音乐ID:" .. slot1)
+		assert(false, "不存在的音乐ID:" .. arg_22_1)
 	end
 end
 
-function slot0.getResultForVer(slot0)
-	return slot0.reForVer
+function var_0_0.getResultForVer(arg_23_0)
+	return arg_23_0.reForVer
 end
 
-function slot0.clearVer(slot0)
-	slot0.reForVer = nil
+function var_0_0.clearVer(arg_24_0)
+	arg_24_0.reForVer = nil
 end
 
-function slot0.addPicIDToUnlockList(slot0, slot1)
-	if table.contains(slot0.galleryPicUnLockIDLIst, slot1) then
-		print("already exist picID:" .. slot1)
+function var_0_0.addPicIDToUnlockList(arg_25_0, arg_25_1)
+	if table.contains(arg_25_0.galleryPicUnLockIDLIst, arg_25_1) then
+		print("already exist picID:" .. arg_25_1)
 	else
-		slot0.galleryPicUnLockIDLIst[#slot0.galleryPicUnLockIDLIst + 1] = slot1
+		arg_25_0.galleryPicUnLockIDLIst[#arg_25_0.galleryPicUnLockIDLIst + 1] = arg_25_1
 	end
 end
 
-function slot0.addMusicIDToUnlockList(slot0, slot1)
-	if table.contains(slot0.musicUnLockIDLIst, slot1) then
-		print("already exist musicID:" .. slot1)
+function var_0_0.addMusicIDToUnlockList(arg_26_0, arg_26_1)
+	if table.contains(arg_26_0.musicUnLockIDLIst, arg_26_1) then
+		print("already exist musicID:" .. arg_26_1)
 	else
-		slot0.musicUnLockIDLIst[#slot0.musicUnLockIDLIst + 1] = slot1
+		arg_26_0.musicUnLockIDLIst[#arg_26_0.musicUnLockIDLIst + 1] = arg_26_1
 	end
 end
 
-function slot0.addMangaIDToReadList(slot0, slot1)
-	if table.contains(slot0.mangaReadIDList, slot1) then
-		print("already exist mangaID:" .. slot1)
+function var_0_0.addMangaIDToReadList(arg_27_0, arg_27_1)
+	if table.contains(arg_27_0.mangaReadIDList, arg_27_1) then
+		print("already exist mangaID:" .. arg_27_1)
 	else
-		table.insert(slot0.mangaReadIDList, slot1)
+		table.insert(arg_27_0.mangaReadIDList, arg_27_1)
 	end
 end
 
-function slot0.initMangaReadIDList(slot0, slot1)
-	slot0.mangaReadIDList = {}
+function var_0_0.initMangaReadIDList(arg_28_0, arg_28_1)
+	arg_28_0.mangaReadIDList = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		for slot10 = 1, 32 do
-			if bit.band(slot6, bit.lshift(1, slot10 - 1)) ~= 0 then
-				slot0:addMangaIDToReadList((slot5 - 1) * 32 + slot10)
+	for iter_28_0, iter_28_1 in ipairs(arg_28_1) do
+		for iter_28_2 = 1, 32 do
+			if bit.band(iter_28_1, bit.lshift(1, iter_28_2 - 1)) ~= 0 then
+				local var_28_0 = (iter_28_0 - 1) * 32 + iter_28_2
+
+				arg_28_0:addMangaIDToReadList(var_28_0)
 			end
 		end
 	end
@@ -261,68 +300,72 @@ function slot0.initMangaReadIDList(slot0, slot1)
 	MangaConst.setVersionAndNewCount()
 end
 
-function slot0.getMangaReadIDList(slot0)
-	return slot0.mangaReadIDList
+function var_0_0.getMangaReadIDList(arg_29_0)
+	return arg_29_0.mangaReadIDList
 end
 
-function slot0.addMangaIDToLikeList(slot0, slot1)
-	if table.contains(slot0.mangaLikeIDList, slot1) then
-		print("already exist mangaID:" .. slot1)
+function var_0_0.addMangaIDToLikeList(arg_30_0, arg_30_1)
+	if table.contains(arg_30_0.mangaLikeIDList, arg_30_1) then
+		print("already exist mangaID:" .. arg_30_1)
 	else
-		table.insert(slot0.mangaLikeIDList, slot1)
+		table.insert(arg_30_0.mangaLikeIDList, arg_30_1)
 	end
 end
 
-function slot0.removeMangaIDFromLikeList(slot0, slot1)
-	if table.contains(slot0.mangaLikeIDList, slot1) then
-		table.removebyvalue(slot0.mangaLikeIDList, slot1, true)
+function var_0_0.removeMangaIDFromLikeList(arg_31_0, arg_31_1)
+	if table.contains(arg_31_0.mangaLikeIDList, arg_31_1) then
+		table.removebyvalue(arg_31_0.mangaLikeIDList, arg_31_1, true)
 	else
-		print("not exist mangaID:" .. slot1)
+		print("not exist mangaID:" .. arg_31_1)
 	end
 end
 
-function slot0.initMangaLikeIDList(slot0, slot1)
-	slot0.mangaLikeIDList = {}
+function var_0_0.initMangaLikeIDList(arg_32_0, arg_32_1)
+	arg_32_0.mangaLikeIDList = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		for slot10 = 1, 32 do
-			if bit.band(slot6, bit.lshift(1, slot10 - 1)) ~= 0 then
-				slot0:addMangaIDToLikeList((slot5 - 1) * 32 + slot10)
+	for iter_32_0, iter_32_1 in ipairs(arg_32_1) do
+		for iter_32_2 = 1, 32 do
+			if bit.band(iter_32_1, bit.lshift(1, iter_32_2 - 1)) ~= 0 then
+				local var_32_0 = (iter_32_0 - 1) * 32 + iter_32_2
+
+				arg_32_0:addMangaIDToLikeList(var_32_0)
 			end
 		end
 	end
 end
 
-function slot0.getMangaLikeIDList(slot0)
-	return slot0.mangaLikeIDList
+function var_0_0.getMangaLikeIDList(arg_33_0)
+	return arg_33_0.mangaLikeIDList
 end
 
-function slot0.isPicUnlockedByID(slot0, slot1)
-	if table.contains(slot0.galleryPicUnLockIDLIst, slot1) then
+function var_0_0.isPicUnlockedByID(arg_34_0, arg_34_1)
+	if table.contains(arg_34_0.galleryPicUnLockIDLIst, arg_34_1) then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.isMusicUnlockedByID(slot0, slot1)
-	if table.contains(slot0.musicUnLockIDLIst, slot1) then
+function var_0_0.isMusicUnlockedByID(arg_35_0, arg_35_1)
+	if table.contains(arg_35_0.musicUnLockIDLIst, arg_35_1) then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.isPicUnlockableByID(slot0, slot1)
-	slot3 = getProxy(PlayerProxy):getData().level
+function var_0_0.isPicUnlockableByID(arg_36_0, arg_36_1)
+	local var_36_0 = getProxy(PlayerProxy):getData().level
+	local var_36_1 = arg_36_0:getSinglePicConfigByID(arg_36_1)
 
-	if slot0:getSinglePicConfigByID(slot1) then
-		slot5 = slot4.unlock_level
-		slot7 = slot5[2]
+	if var_36_1 then
+		local var_36_2 = var_36_1.unlock_level
+		local var_36_3 = var_36_2[1]
+		local var_36_4 = var_36_2[2]
 
-		if slot5[1] <= slot3 then
+		if var_36_3 <= var_36_0 then
 			return true
-		elseif slot7 == GalleryConst.Still_Show_On_Lock then
+		elseif var_36_4 == GalleryConst.Still_Show_On_Lock then
 			return false, true
 		else
 			return false, false
@@ -330,16 +373,18 @@ function slot0.isPicUnlockableByID(slot0, slot1)
 	end
 end
 
-function slot0.isMusicUnlockableByID(slot0, slot1)
-	slot3 = getProxy(PlayerProxy):getData().level
+function var_0_0.isMusicUnlockableByID(arg_37_0, arg_37_1)
+	local var_37_0 = getProxy(PlayerProxy):getData().level
+	local var_37_1 = arg_37_0:getSingleMusicConfigByID(arg_37_1)
 
-	if slot0:getSingleMusicConfigByID(slot1) then
-		slot5 = slot4.unlock_level
-		slot7 = slot5[2]
+	if var_37_1 then
+		local var_37_2 = var_37_1.unlock_level
+		local var_37_3 = var_37_2[1]
+		local var_37_4 = var_37_2[2]
 
-		if slot5[1] <= slot3 then
+		if var_37_3 <= var_37_0 then
 			return true
-		elseif slot7 == MusicCollectionConst.Still_Show_On_Lock then
+		elseif var_37_4 == MusicCollectionConst.Still_Show_On_Lock then
 			return false, true
 		else
 			return false, false
@@ -347,55 +392,55 @@ function slot0.isMusicUnlockableByID(slot0, slot1)
 	end
 end
 
-function slot0.addPicIDToLikeList(slot0, slot1)
-	if table.contains(slot0.galleryPicLikeIDList, slot1) then
-		print("already exist picID:" .. slot1)
+function var_0_0.addPicIDToLikeList(arg_38_0, arg_38_1)
+	if table.contains(arg_38_0.galleryPicLikeIDList, arg_38_1) then
+		print("already exist picID:" .. arg_38_1)
 	else
-		slot0.galleryPicLikeIDList[#slot0.galleryPicLikeIDList + 1] = slot1
+		arg_38_0.galleryPicLikeIDList[#arg_38_0.galleryPicLikeIDList + 1] = arg_38_1
 	end
 end
 
-function slot0.removePicIDFromLikeList(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.galleryPicLikeIDList) do
-		if slot6 == slot1 then
-			table.remove(slot0.galleryPicLikeIDList, slot5)
+function var_0_0.removePicIDFromLikeList(arg_39_0, arg_39_1)
+	for iter_39_0, iter_39_1 in ipairs(arg_39_0.galleryPicLikeIDList) do
+		if iter_39_1 == arg_39_1 then
+			table.remove(arg_39_0.galleryPicLikeIDList, iter_39_0)
 
 			return
 		end
 	end
 
-	print("no exist picID:" .. slot1)
+	print("no exist picID:" .. arg_39_1)
 end
 
-function slot0.isLikedByPicID(slot0, slot1)
-	return table.contains(slot0.galleryPicLikeIDList, slot1)
+function var_0_0.isLikedByPicID(arg_40_0, arg_40_1)
+	return table.contains(arg_40_0.galleryPicLikeIDList, arg_40_1)
 end
 
-function slot0.addMusicIDToLikeList(slot0, slot1)
-	if table.contains(slot0.musicLikeIDList, slot1) then
-		print("already exist picID:" .. slot1)
+function var_0_0.addMusicIDToLikeList(arg_41_0, arg_41_1)
+	if table.contains(arg_41_0.musicLikeIDList, arg_41_1) then
+		print("already exist picID:" .. arg_41_1)
 	else
-		slot0.musicLikeIDList[#slot0.musicLikeIDList + 1] = slot1
+		arg_41_0.musicLikeIDList[#arg_41_0.musicLikeIDList + 1] = arg_41_1
 	end
 end
 
-function slot0.removeMusicIDFromLikeList(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.musicLikeIDList) do
-		if slot6 == slot1 then
-			table.remove(slot0.musicLikeIDList, slot5)
+function var_0_0.removeMusicIDFromLikeList(arg_42_0, arg_42_1)
+	for iter_42_0, iter_42_1 in ipairs(arg_42_0.musicLikeIDList) do
+		if iter_42_1 == arg_42_1 then
+			table.remove(arg_42_0.musicLikeIDList, iter_42_0)
 
 			return
 		end
 	end
 
-	print("no exist musicID:" .. slot1)
+	print("no exist musicID:" .. arg_42_1)
 end
 
-function slot0.isLikedByMusicID(slot0, slot1)
-	return table.contains(slot0.musicLikeIDList, slot1)
+function var_0_0.isLikedByMusicID(arg_43_0, arg_43_1)
+	return table.contains(arg_43_0.musicLikeIDList, arg_43_1)
 end
 
-function slot0.isGalleryHaveNewRes(slot0)
+function var_0_0.isGalleryHaveNewRes(arg_44_0)
 	if PlayerPrefs.GetInt("galleryVersion", 0) < GalleryConst.Version then
 		return true
 	else
@@ -403,7 +448,7 @@ function slot0.isGalleryHaveNewRes(slot0)
 	end
 end
 
-function slot0.isMusicHaveNewRes(slot0)
+function var_0_0.isMusicHaveNewRes(arg_45_0)
 	if PlayerPrefs.GetInt("musicVersion", 0) < MusicCollectionConst.Version then
 		return true
 	else
@@ -411,7 +456,7 @@ function slot0.isMusicHaveNewRes(slot0)
 	end
 end
 
-function slot0.isMangaHaveNewRes(slot0)
+function var_0_0.isMangaHaveNewRes(arg_46_0)
 	if PlayerPrefs.GetInt("mangaVersion", 0) < MangaConst.Version then
 		return true
 	else
@@ -419,4 +464,4 @@ function slot0.isMangaHaveNewRes(slot0)
 	end
 end
 
-return slot0
+return var_0_0

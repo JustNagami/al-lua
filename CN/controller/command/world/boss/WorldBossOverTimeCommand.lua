@@ -1,29 +1,29 @@
-slot0 = class("WorldBossOverTimeCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldBossOverTimeCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = nowWorld().worldBossProxy
+	local var_1_2 = var_1_1:GetSelfBoss()
 
-	if nowWorld().worldBossProxy:GetSelfBoss() and slot5:IsExpired() then
-		if slot5:isDeath() then
-			slot0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD, {
-				bossId = slot5.id
+	if var_1_2 and var_1_2:IsExpired() then
+		if var_1_2:isDeath() then
+			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD, {
+				bossId = var_1_2.id
 			})
 		else
-			slot6 = pg.ConnectionMgr.GetInstance()
-
-			slot6:Send(34513, {
+			pg.ConnectionMgr.GetInstance():Send(34513, {
 				type = 0
-			}, 34514, function (slot0)
-				if slot0.result == 0 then
-					-- Nothing
+			}, 34514, function(arg_2_0)
+				if arg_2_0.result == 0 then
+					-- block empty
 				end
 			end)
 		end
 
-		slot4:ClearRank(slot5.id)
-		slot4:RemoveSelfBoss()
-		slot0:sendNotification(GAME.WORLD_SELF_BOSS_OVERTIME_DONE)
+		var_1_1:ClearRank(var_1_2.id)
+		var_1_1:RemoveSelfBoss()
+		arg_1_0:sendNotification(GAME.WORLD_SELF_BOSS_OVERTIME_DONE)
 	end
 end
 
-return slot0
+return var_0_0

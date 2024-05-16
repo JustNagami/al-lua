@@ -1,323 +1,319 @@
-slot0 = class("WorldBossItemList")
-slot1 = 18
-slot2 = -15
-slot3 = 100
+﻿local var_0_0 = class("WorldBossItemList")
+local var_0_1 = 18
+local var_0_2 = -15
+local var_0_3 = 100
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.tpl = slot2
-	slot0.container = slot1
-	slot0.angle = uv0
-	slot0.space = uv1
-	slot0.distance = uv2
-	slot0.tplHeight = slot0.tpl.rect.height
-	slot0.trigger = slot0.container:GetComponent(typeof(EventTriggerListener))
-	slot0.hrzOffset = (slot0.tplHeight + slot0.space) / math.tan((90 - slot0.angle) * math.rad(1))
-	slot6 = slot0.space
-	slot0.capacity = math.ceil(slot0.container.parent.parent.rect.height / (slot0.tplHeight + slot6))
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.tpl = arg_1_2
+	arg_1_0.container = arg_1_1
+	arg_1_0.angle = var_0_1
+	arg_1_0.space = var_0_2
+	arg_1_0.distance = var_0_3
+	arg_1_0.tplHeight = arg_1_0.tpl.rect.height
+	arg_1_0.trigger = arg_1_0.container:GetComponent(typeof(EventTriggerListener))
+	arg_1_0.hrzOffset = (arg_1_0.tplHeight + arg_1_0.space) / math.tan((90 - arg_1_0.angle) * math.rad(1))
+	arg_1_0.capacity = math.ceil(arg_1_0.container.parent.parent.rect.height / (arg_1_0.tplHeight + arg_1_0.space))
 
-	for slot6 = 1, slot0.capacity do
-		cloneTplTo(slot0.tpl, slot0.container, slot6)
+	for iter_1_0 = 1, arg_1_0.capacity do
+		cloneTplTo(arg_1_0.tpl, arg_1_0.container, iter_1_0)
 	end
 
-	slot0.OnSwitch = nil
-	slot0.OnRelease = nil
+	arg_1_0.OnSwitch = nil
+	arg_1_0.OnRelease = nil
 
-	setActive(slot0.tpl, false)
+	setActive(arg_1_0.tpl, false)
 
-	slot0.tweens = {}
+	arg_1_0.tweens = {}
 
-	slot0:AddListener()
+	arg_1_0:AddListener()
 end
 
-function slot0.Make(slot0, slot1, slot2, slot3)
-	slot0.OnInit = slot1
-	slot0.OnSwitch = slot2
-	slot0.OnRelease = slot3
+function var_0_0.Make(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_0.OnInit = arg_2_1
+	arg_2_0.OnSwitch = arg_2_2
+	arg_2_0.OnRelease = arg_2_3
 end
 
-function slot0.ClearTweens(slot0)
-	for slot4, slot5 in ipairs(slot0.tweens) do
-		if LeanTween.isTweening(slot5) then
-			LeanTween.cancel(slot5)
+function var_0_0.ClearTweens(arg_3_0)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0.tweens) do
+		if LeanTween.isTweening(iter_3_1) then
+			LeanTween.cancel(iter_3_1)
 		end
 	end
 
-	slot0.tweens = {}
+	arg_3_0.tweens = {}
 end
 
-function slot0.Align(slot0, slot1, slot2)
-	slot0:ClearTweens()
+function var_0_0.Align(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0:ClearTweens()
 
-	slot0.childs = {}
-	slot0.padding = 0
-	slot0.animFlag = false
-	slot0.totalCnt = slot1
-	slot0.index = 0
-	slot0.value = slot2 and slot2 or 0
-	slot0.midIndex = math.ceil(slot0.capacity * 0.5)
-	slot0.ranges = {
+	arg_4_0.childs = {}
+	arg_4_0.padding = 0
+	arg_4_0.animFlag = false
+	arg_4_0.totalCnt = arg_4_1
+	arg_4_0.index = 0
+	arg_4_0.value = arg_4_2 and arg_4_2 or 0
+	arg_4_0.midIndex = math.ceil(arg_4_0.capacity * 0.5)
+	arg_4_0.ranges = {
 		math.huge,
 		math.huge,
-		slot0.capacity - slot0.midIndex + 1,
-		slot0.midIndex - 1
+		arg_4_0.capacity - arg_4_0.midIndex + 1,
+		arg_4_0.midIndex - 1
 	}
 
-	if slot1 < slot0.capacity then
-		slot3 = math.floor(slot1 * 0.5) + 1
-		slot0.ranges[1] = slot1 - slot3
-		slot0.ranges[2] = slot3
+	if arg_4_1 < arg_4_0.capacity then
+		local var_4_0 = math.floor(arg_4_1 * 0.5) + 1
+
+		arg_4_0.ranges[1] = arg_4_1 - var_4_0
+		arg_4_0.ranges[2] = var_4_0
 	end
 
-	slot0:InitList()
+	arg_4_0:InitList()
 end
 
-function slot0.InitList(slot0)
-	for slot4 = 1, slot0.capacity do
-		slot5 = slot0.container:GetChild(slot4 - 1)
-		slot5.localScale = Vector3.one
+function var_0_0.InitList(arg_5_0)
+	for iter_5_0 = 1, arg_5_0.capacity do
+		local var_5_0 = arg_5_0.container:GetChild(iter_5_0 - 1)
 
-		slot5.gameObject:SetActive(true)
-		table.insert(slot0.childs, {
+		var_5_0.localScale = Vector3.one
+
+		var_5_0.gameObject:SetActive(true)
+		table.insert(arg_5_0.childs, {
 			index = -9999,
-			tr = slot5
+			tr = var_5_0
 		})
 	end
 
-	slot0.animTime = 0
+	arg_5_0.animTime = 0
 
-	slot0:Switch()
+	arg_5_0:Switch()
 
-	slot1 = slot0.value - 1
-	slot2 = 1
+	local var_5_1 = arg_5_0.value - 1
+	local var_5_2 = 1
 
-	if slot0.totalCnt < slot0.capacity and slot0.ranges[2] < slot0.value then
-		slot2 = -1
-		slot1 = slot0.totalCnt - slot0.value + 1
+	if arg_5_0.totalCnt < arg_5_0.capacity and arg_5_0.value > arg_5_0.ranges[2] then
+		var_5_1, var_5_2 = arg_5_0.totalCnt - arg_5_0.value + 1, -1
 	end
 
-	for slot6 = 1, slot1 do
-		slot0:Switch(slot2)
+	for iter_5_1 = 1, var_5_1 do
+		arg_5_0:Switch(var_5_2)
 	end
 
-	slot0:Release()
+	arg_5_0:Release()
 
-	slot0.animTime = 0.05
+	arg_5_0.animTime = 0.05
 end
 
-function slot0.AddListener(slot0)
-	slot1 = Vector2.zero
-	slot2 = 0
-	slot3 = 0
-	slot4 = 0
-	slot5 = true
+function var_0_0.AddListener(arg_6_0)
+	local var_6_0 = Vector2.zero
+	local var_6_1 = 0
+	local var_6_2 = 0
+	local var_6_3 = 0
+	local var_6_4 = true
 
-	function slot6(slot0)
-		if slot0 > 0 then
-			return uv0.index < uv0.ranges[2] - 1
+	local function var_6_5(arg_7_0)
+		if arg_7_0 > 0 then
+			return arg_6_0.index < arg_6_0.ranges[2] - 1
 		else
-			return uv0.index > -uv0.ranges[1]
+			return arg_6_0.index > -arg_6_0.ranges[1]
 		end
 	end
 
-	slot7 = slot0.trigger
-
-	slot7:AddBeginDragFunc(function (slot0, slot1)
-		if uv0.animFlag then
+	arg_6_0.trigger:AddBeginDragFunc(function(arg_8_0, arg_8_1)
+		if arg_6_0.animFlag then
 			return
 		end
 
-		uv2 = 0
-		uv1 = 0
-		uv3 = slot1.position
-		uv4 = uv3.y
-		uv5 = true
+		var_6_1, var_6_2 = 0, 0
+		var_6_0 = arg_8_1.position
+		var_6_3 = var_6_0.y
+		var_6_4 = true
 	end)
-
-	slot7 = slot0.trigger
-
-	slot7:AddDragFunc(function (slot0, slot1)
-		if uv0.animFlag then
+	arg_6_0.trigger:AddDragFunc(function(arg_9_0, arg_9_1)
+		if arg_6_0.animFlag then
 			return
 		end
 
-		if slot1.position.y < uv1 and uv2 ~= 0 then
-			uv2 = 0
-			uv3 = slot1.position
+		if var_6_3 > arg_9_1.position.y and var_6_1 ~= 0 then
+			var_6_0, var_6_1 = arg_9_1.position, 0
 		end
 
-		if uv1 < slot1.position.y and uv4 ~= 0 then
-			uv4 = 0
-			uv3 = slot1.position
+		if var_6_3 < arg_9_1.position.y and var_6_2 ~= 0 then
+			var_6_0, var_6_2 = arg_9_1.position, 0
 		end
 
-		if not uv5(slot1.position.y - uv3.y) then
-			uv6 = false
+		local var_9_0 = arg_9_1.position.y - var_6_0.y
+
+		if not var_6_5(var_9_0) then
+			var_6_4 = false
 
 			return
 		end
 
-		if uv4 < math.abs(slot2 / uv0.distance) then
-			uv4 = slot3
+		local var_9_1 = math.abs(var_9_0 / arg_6_0.distance)
 
-			uv0:Switch(slot2)
+		if var_9_1 > var_6_2 then
+			var_6_2 = var_9_1
+
+			arg_6_0:Switch(var_9_0)
 		end
 
-		if slot3 < uv2 then
-			uv2 = slot3
+		if var_9_1 < var_6_1 then
+			var_6_1 = var_9_1
 
-			uv0:Switch(slot2)
+			arg_6_0:Switch(var_9_0)
 		end
 
-		uv1 = uv3.y
+		var_6_3 = var_6_0.y
 	end)
-
-	slot7 = slot0.trigger
-
-	slot7:AddDragEndFunc(function (slot0, slot1)
-		if not uv0 then
+	arg_6_0.trigger:AddDragEndFunc(function(arg_10_0, arg_10_1)
+		if not var_6_4 then
 			return
 		end
 
-		uv1:Release()
+		arg_6_0:Release()
 	end)
 end
 
-function slot0.RefreshChildPos(slot0, slot1)
-	slot0.padding = 0
-	slot0.animFlag = true
-	slot2 = slot0.midIndex
+function var_0_0.RefreshChildPos(arg_11_0, arg_11_1)
+	arg_11_0.animFlag, arg_11_0.padding = true, 0
 
-	for slot6 = 1, #slot0.childs do
-		if not IsNil(slot0.childs[slot6].tr) then
-			slot8 = slot6 - 1
+	local var_11_0 = arg_11_0.midIndex
 
-			if slot6 == slot2 or slot6 == slot2 + 1 then
-				slot0.padding = slot0.padding + math.abs(slot0.space) * 2
+	for iter_11_0 = 1, #arg_11_0.childs do
+		local var_11_1 = arg_11_0.childs[iter_11_0].tr
+
+		if not IsNil(var_11_1) then
+			local var_11_2 = iter_11_0 - 1
+
+			if iter_11_0 == var_11_0 or iter_11_0 == var_11_0 + 1 then
+				arg_11_0.padding = arg_11_0.padding + math.abs(arg_11_0.space) * 2
 			end
 
-			if slot0.totalCnt == 0 then
-				slot0.padding = 0
+			if arg_11_0.totalCnt == 0 then
+				arg_11_0.padding = 0
 			end
 
-			slot11 = Vector3(-slot0.hrzOffset * slot8 - slot0.padding / math.tan((90 - slot0.angle) * math.rad(1)), -1 * (slot0.tplHeight + slot0.space) * slot8 - slot0.padding, 0)
+			local var_11_3 = arg_11_0.padding / math.tan((90 - arg_11_0.angle) * math.rad(1))
+			local var_11_4 = Vector3(-arg_11_0.hrzOffset * var_11_2 - var_11_3, -1 * (arg_11_0.tplHeight + arg_11_0.space) * var_11_2 - arg_11_0.padding, 0)
+			local var_11_5 = var_11_4
 
-			if slot1 and slot10.y < slot7.localPosition.y then
-				slot11 = Vector3(slot0.hrzOffset, slot0.tplHeight + slot0.space, 0)
-			elseif not slot1 and slot7.localPosition.y < slot10.y then
-				slot7.localPosition = Vector3(slot0.hrzOffset, slot0.tplHeight + slot0.space, 0)
+			if arg_11_1 and var_11_4.y < var_11_1.localPosition.y then
+				var_11_5 = Vector3(arg_11_0.hrzOffset, arg_11_0.tplHeight + arg_11_0.space, 0)
+			elseif not arg_11_1 and var_11_4.y > var_11_1.localPosition.y then
+				var_11_1.localPosition = Vector3(arg_11_0.hrzOffset, arg_11_0.tplHeight + arg_11_0.space, 0)
 			end
 
-			if slot6 == slot2 or slot0.animTime <= 0 then
-				slot7:SetAsLastSibling()
+			if iter_11_0 == var_11_0 or arg_11_0.animTime <= 0 then
+				var_11_1:SetAsLastSibling()
 
-				slot7.localPosition = slot10
+				var_11_1.localPosition = var_11_4
 			end
 
-			table.insert(slot0.tweens, slot7.gameObject)
-
-			slot12 = LeanTween.moveLocal(slot7.gameObject, slot11, slot0.animTime)
-
-			slot12:setOnComplete(System.Action(function ()
-				if not IsNil(uv0) then
-					uv0.localPosition = uv1
+			table.insert(arg_11_0.tweens, var_11_1.gameObject)
+			LeanTween.moveLocal(var_11_1.gameObject, var_11_5, arg_11_0.animTime):setOnComplete(System.Action(function()
+				if not IsNil(var_11_1) then
+					var_11_1.localPosition = var_11_4
 				end
 
-				uv2.animFlag = false
+				arg_11_0.animFlag = false
 			end))
 		end
 	end
 end
 
-function slot0.Switch(slot0, slot1)
-	if slot1 then
-		table.insert(slot0.childs, slot1 > 0 and #slot0.childs + 1 or 1, table.remove(slot0.childs, slot1 > 0 and 1 or #slot0.childs))
+function var_0_0.Switch(arg_13_0, arg_13_1)
+	if arg_13_1 then
+		local var_13_0 = table.remove(arg_13_0.childs, arg_13_1 > 0 and 1 or #arg_13_0.childs)
 
-		slot0.index = (slot1 > 0 and 1 or -1) + slot0.index
+		table.insert(arg_13_0.childs, arg_13_1 > 0 and #arg_13_0.childs + 1 or 1, var_13_0)
+
+		arg_13_0.index = (arg_13_1 > 0 and 1 or -1) + arg_13_0.index
 	end
 
-	slot2 = 0
-	slot3 = 0
+	local var_13_1 = 0
+	local var_13_2 = 0
 
-	if slot0.totalCnt < slot0.capacity then
-		slot3 = math.min(slot0.ranges[4] - slot0.ranges[1] - slot0.index, slot0.ranges[4])
-		slot2 = math.min(slot0.ranges[3] - slot0.ranges[2] + slot0.index, slot0.ranges[3])
+	if arg_13_0.totalCnt < arg_13_0.capacity then
+		var_13_2 = math.min(arg_13_0.ranges[4] - arg_13_0.ranges[1] - arg_13_0.index, arg_13_0.ranges[4])
+		var_13_1 = math.min(arg_13_0.ranges[3] - arg_13_0.ranges[2] + arg_13_0.index, arg_13_0.ranges[3])
 	end
 
-	slot4 = slot0.index % slot0.totalCnt
+	local var_13_3 = arg_13_0.index % arg_13_0.totalCnt
 
-	for slot8, slot9 in ipairs(slot0.childs) do
-		slot10 = slot9.index
-		slot11 = slot8 - slot0.midIndex
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.childs) do
+		local var_13_4 = iter_13_1.index
+		local var_13_5 = iter_13_0 - arg_13_0.midIndex
 
-		if slot3 > 0 and slot8 <= slot3 or slot2 > 0 and slot2 > slot0.capacity - slot8 then
-			slot9.index = -1
+		if var_13_2 > 0 and iter_13_0 <= var_13_2 or var_13_1 > 0 and var_13_1 > arg_13_0.capacity - iter_13_0 then
+			iter_13_1.index = -1
 		else
-			slot9.index = (slot11 + slot4) % slot0.totalCnt
+			iter_13_1.index = (var_13_5 + var_13_3) % arg_13_0.totalCnt
 		end
 
-		if slot10 ~= slot9.index and slot0.OnInit then
-			slot0.OnInit(slot9.tr, slot9.index)
+		if var_13_4 ~= iter_13_1.index and arg_13_0.OnInit then
+			arg_13_0.OnInit(iter_13_1.tr, iter_13_1.index)
 		end
 	end
 
-	slot0:RefreshChildPos((slot1 or 0) > 0)
+	arg_13_0:RefreshChildPos((arg_13_1 or 0) > 0)
 
-	slot5 = slot0.childs[slot0.midIndex]
+	local var_13_6 = arg_13_0.childs[arg_13_0.midIndex]
 
-	if slot0.OnSwitch ~= nil then
-		slot0.OnSwitch(slot5.tr, slot5.index)
+	if arg_13_0.OnSwitch ~= nil then
+		arg_13_0.OnSwitch(var_13_6.tr, var_13_6.index)
 	end
 end
 
-function slot0.SliceTo(slot0, slot1)
-	if slot0.animFlag then
+function var_0_0.SliceTo(arg_14_0, arg_14_1)
+	if arg_14_0.animFlag then
 		return
 	end
 
-	slot2 = -1
+	local var_14_0 = -1
 
-	for slot6, slot7 in ipairs(slot0.childs) do
-		if slot7.tr == slot1 then
-			slot2 = slot6
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.childs) do
+		if iter_14_1.tr == arg_14_1 then
+			var_14_0 = iter_14_0
 
 			break
 		end
 	end
 
-	if slot2 == -1 then
+	if var_14_0 == -1 then
 		return
 	end
 
-	slot3 = slot2 - slot0.midIndex
-	slot4 = Mathf.Sign(slot3)
-	slot5 = {}
+	local var_14_1 = var_14_0 - arg_14_0.midIndex
+	local var_14_2 = Mathf.Sign(var_14_1)
+	local var_14_3 = {}
 
-	for slot9 = 1, math.abs(slot3) do
-		table.insert(slot5, function (slot0)
-			uv0:Switch(uv1)
-			Timer.New(slot0, uv0.animTime * 2, 1):Start()
+	for iter_14_2 = 1, math.abs(var_14_1) do
+		table.insert(var_14_3, function(arg_15_0)
+			arg_14_0:Switch(var_14_2)
+			Timer.New(arg_15_0, arg_14_0.animTime * 2, 1):Start()
 		end)
 	end
 
-	seriesAsync(slot5, function ()
-		uv0:Release()
+	seriesAsync(var_14_3, function()
+		arg_14_0:Release()
 	end)
 end
 
-function slot0.Release(slot0)
-	slot1 = slot0.childs[slot0.midIndex]
+function var_0_0.Release(arg_17_0)
+	local var_17_0 = arg_17_0.childs[arg_17_0.midIndex]
 
-	if slot0.OnRelease ~= nil then
-		slot0.OnRelease(slot1.tr, slot1.index)
+	if arg_17_0.OnRelease ~= nil then
+		arg_17_0.OnRelease(var_17_0.tr, var_17_0.index)
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:ClearTweens()
+function var_0_0.Dispose(arg_18_0)
+	arg_18_0:ClearTweens()
 
-	slot0.OnSwitch = nil
-	slot0.OnRelease = nil
-	slot0.OnInit = nil
+	arg_18_0.OnSwitch = nil
+	arg_18_0.OnRelease = nil
+	arg_18_0.OnInit = nil
 end
 
-return slot0
+return var_0_0

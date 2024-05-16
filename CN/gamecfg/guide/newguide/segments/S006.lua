@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
 	"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
 	"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 61.61,
 				posX = 261.62,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -37,7 +37,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -47,7 +47,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			baseui = {
 				delay = 0.2,
@@ -62,7 +62,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/cells/chapter_cell_4_6/attachment",

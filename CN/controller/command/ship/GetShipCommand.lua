@@ -1,97 +1,105 @@
-slot0 = class("GetShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().type or 1
-	slot5 = getProxy(BuildShipProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type or 1
+	local var_1_2 = var_1_0.pos_list
+	local var_1_3 = getProxy(BuildShipProxy)
+	local var_1_4 = underscore.filter(var_1_2, function(arg_2_0)
+		return var_1_3:getBuildShip(arg_2_0).state == BuildShip.FINISH
+	end)
 
-	if #underscore.filter(slot2.pos_list, function (slot0)
-		return uv0:getBuildShip(slot0).state == BuildShip.FINISH
-	end) == 0 then
+	if #var_1_4 == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_getShip_error_notFinish"))
 
 		return
 	end
 
-	if getProxy(PlayerProxy):getData():getMaxShipBag() - getProxy(BayProxy):getShipCount() <= 0 then
+	local var_1_5 = getProxy(BayProxy)
+	local var_1_6 = getProxy(PlayerProxy):getData():getMaxShipBag() - var_1_5:getShipCount()
+
+	if var_1_6 <= 0 then
 		NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
 
 		return
 	else
-		slot4 = underscore.slice(slot4, 1, slot8)
+		var_1_4 = underscore.slice(var_1_4, 1, var_1_6)
 	end
 
-	slot9 = {}
+	local var_1_7 = {}
 
-	table.insert(slot9, function (slot0)
-		slot1 = pg.ConnectionMgr.GetInstance()
-
-		slot1:Send(12043, {
+	table.insert(var_1_7, function(arg_3_0)
+		pg.ConnectionMgr.GetInstance():Send(12043, {
 			type = 0
-		}, 12044, function (slot0)
-			slot1 = {}
+		}, 12044, function(arg_4_0)
+			local var_4_0 = {}
 
-			for slot5, slot6 in ipairs(slot0.infoList) do
-				slot1[slot6.pos] = slot6.tid
+			for iter_4_0, iter_4_1 in ipairs(arg_4_0.infoList) do
+				var_4_0[iter_4_1.pos] = iter_4_1.tid
 			end
 
-			uv0(underscore.map(uv1, function (slot0)
-				return uv0[slot0]
+			arg_3_0(underscore.map(var_1_4, function(arg_5_0)
+				return var_4_0[arg_5_0]
 			end))
 		end)
 	end)
-	table.insert(slot9, function (slot0, slot1)
-		slot2 = {}
+	table.insert(var_1_7, function(arg_6_0, arg_6_1)
+		local var_6_0 = {}
 
-		for slot6, slot7 in ipairs(slot1) do
-			PaintingConst.AddPaintingNameByShipConfigID(slot2, slot7)
+		for iter_6_0, iter_6_1 in ipairs(arg_6_1) do
+			PaintingGroupConst.AddPaintingNameByShipConfigID(var_6_0, iter_6_1)
 		end
 
-		PaintingConst.PaintingDownload({
+		local var_6_1 = {
 			isShowBox = true,
-			paintingNameList = slot2,
-			finishFunc = slot0
-		})
+			paintingNameList = var_6_0,
+			finishFunc = arg_6_0
+		}
+
+		PaintingGroupConst.PaintingDownload(var_6_1)
 	end)
-	seriesAsync(slot9, function ()
-		slot0 = uv0
-		slot0 = slot0:getBuildShip(uv1[1]).type
-		slot1 = pg.ConnectionMgr.GetInstance()
+	seriesAsync(var_1_7, function()
+		local var_7_0 = var_1_3:getBuildShip(var_1_4[1]).type
 
-		slot1:Send(12025, {
-			type = uv2,
-			pos_list = uv1
-		}, 12026, function (slot0)
-			slot1 = {}
+		pg.ConnectionMgr.GetInstance():Send(12025, {
+			type = var_1_1,
+			pos_list = var_1_4
+		}, 12026, function(arg_8_0)
+			local var_8_0 = {}
 
-			for slot5, slot6 in ipairs(slot0.ship_list) do
-				uv0:removeBuildShipByIndex(uv1[1])
+			for iter_8_0, iter_8_1 in ipairs(arg_8_0.ship_list) do
+				var_1_3:removeBuildShipByIndex(var_1_4[1])
 
-				slot7 = Ship.New(slot6)
+				local var_8_1 = Ship.New(iter_8_1)
 
-				table.insert(slot1, slot7)
+				table.insert(var_8_0, var_8_1)
 
-				if slot7:isMetaShip() and not slot7.virgin and Player.isMetaShipNeedToTrans(slot7.configId) then
-					if MetaCharacterConst.addReMetaTransItem(slot7) then
-						slot7:setReMetaSpecialItemVO(slot8)
+				if var_8_1:isMetaShip() and not var_8_1.virgin and Player.isMetaShipNeedToTrans(var_8_1.configId) then
+					local var_8_2 = MetaCharacterConst.addReMetaTransItem(var_8_1)
+
+					if var_8_2 then
+						var_8_1:setReMetaSpecialItemVO(var_8_2)
 					end
 				else
-					uv2:addShip(slot7)
+					var_1_5:addShip(var_8_1)
 				end
 			end
 
-			if #slot1 > 0 then
-				uv0:setBuildShipState()
-				uv3:sendNotification(GAME.GET_SHIP_DONE, {
-					ships = slot1,
-					type = uv4
+			if #var_8_0 > 0 then
+				var_1_3:setBuildShipState()
+				arg_1_0:sendNotification(GAME.GET_SHIP_DONE, {
+					ships = var_8_0,
+					type = var_7_0
 				})
 			end
 
-			if slot0.result ~= 0 then
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_getShip", slot0.result))
+			if arg_8_0.result == 0 then
+				-- block empty
+			else
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_getShip", arg_8_0.result))
 			end
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

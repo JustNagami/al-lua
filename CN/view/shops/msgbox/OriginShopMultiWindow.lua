@@ -1,115 +1,117 @@
-slot0 = class("OriginShopMultiWindow", import("...base.BaseSubView"))
+﻿local var_0_0 = class("OriginShopMultiWindow", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShopsUIMsgbox"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.topItem = slot0:findTF("item/panel_bg")
-	slot0.ownerTF = slot0.topItem:Find("left/own")
-	slot0.detailTF = slot0.topItem:Find("left/detail")
-	slot0.nameTF = slot0.topItem:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
-	slot0.descTF = slot0.topItem:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
-	slot0.bottomItem = slot0:findTF("got/panel_bg/list/item")
-	slot0.itemCountTF = slot0.bottomItem:Find("icon_bg/count"):GetComponent(typeof(Text))
-	slot0.maxBtn = slot0:findTF("count/max")
-	slot0.leftBtn = slot0:findTF("count/number_panel/left")
-	slot0.rightBtn = slot0:findTF("count/number_panel/right")
-	slot0.countTF = slot0:findTF("count/number_panel/value"):GetComponent(typeof(Text))
-	slot0.cancelBtn = slot0:findTF("actions/cancel_button")
-	slot0.confirmBtn = slot0:findTF("actions/confirm_button")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.topItem = arg_2_0:findTF("item/panel_bg")
+	arg_2_0.ownerTF = arg_2_0.topItem:Find("left/own")
+	arg_2_0.detailTF = arg_2_0.topItem:Find("left/detail")
+	arg_2_0.nameTF = arg_2_0.topItem:Find("display_panel/name_container/name/Text"):GetComponent(typeof(Text))
+	arg_2_0.descTF = arg_2_0.topItem:Find("display_panel/desc/Text"):GetComponent(typeof(Text))
+	arg_2_0.bottomItem = arg_2_0:findTF("got/panel_bg/list/item")
+	arg_2_0.itemCountTF = arg_2_0.bottomItem:Find("icon_bg/count"):GetComponent(typeof(Text))
+	arg_2_0.maxBtn = arg_2_0:findTF("count/max")
+	arg_2_0.leftBtn = arg_2_0:findTF("count/number_panel/left")
+	arg_2_0.rightBtn = arg_2_0:findTF("count/number_panel/right")
+	arg_2_0.countTF = arg_2_0:findTF("count/number_panel/value"):GetComponent(typeof(Text))
+	arg_2_0.cancelBtn = arg_2_0:findTF("actions/cancel_button")
+	arg_2_0.confirmBtn = arg_2_0:findTF("actions/confirm_button")
 
-	setText(slot0:findTF("got/panel_bg/got_text"), i18n("shops_msgbox_output"))
-	setText(slot0:findTF("count/image_text"), i18n("shops_msgbox_exchange_count"))
-	setText(slot0:findTF("actions/cancel_button/label"), i18n("shop_word_cancel"))
-	setText(slot0:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
+	setText(arg_2_0:findTF("got/panel_bg/got_text"), i18n("shops_msgbox_output"))
+	setText(arg_2_0:findTF("count/image_text"), i18n("shops_msgbox_exchange_count"))
+	setText(arg_2_0:findTF("actions/cancel_button/label"), i18n("shop_word_cancel"))
+	setText(arg_2_0:findTF("actions/confirm_button/label"), i18n("shop_word_exchange"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Close()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Close()
 	end, SFX_PANEL)
-
-	slot3 = slot0._tf
-
-	onButton(slot0, slot3:Find("bg"), function ()
-		uv0:Close()
+	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
+		arg_3_0:Close()
 	end, SFX_PANEL)
 end
 
-function slot0.Open(slot0, slot1, slot2)
-	slot0.opening = true
+function var_0_0.Open(arg_6_0, arg_6_1, arg_6_2)
+	arg_6_0.opening = true
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0:InitWindow(slot1, slot2)
-	slot0:Show()
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
+	arg_6_0:InitWindow(arg_6_1, arg_6_2)
+	arg_6_0:Show()
 end
 
-function slot0.InitWindow(slot0, slot1, slot2)
-	slot3, slot4, slot5 = nil
+function var_0_0.InitWindow(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0
+	local var_7_1
+	local var_7_2
 
-	if isa(slot1, WorldNShopCommodity) then
-		slot3 = slot1:GetDropInfo()
-		slot4 = slot1:GetPriceInfo()
-		slot5 = slot1:GetLimitGoodCount()
+	if isa(arg_7_1, WorldNShopCommodity) then
+		var_7_0 = arg_7_1:GetDropInfo()
+		var_7_1 = arg_7_1:GetPriceInfo()
+		var_7_2 = arg_7_1:GetLimitGoodCount()
 	else
-		slot3 = slot1:getDropInfo()
-		slot4 = Drop.New({
+		var_7_0 = arg_7_1:getDropInfo()
+		var_7_1 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = slot1:getConfig("resource_type"),
-			count = slot1:getConfig("resource_num")
+			id = arg_7_1:getConfig("resource_type"),
+			count = arg_7_1:getConfig("resource_num")
 		})
-		slot5 = slot1:getLimitCount()
+		var_7_2 = arg_7_1:getLimitCount()
 	end
 
-	slot6 = math.max(math.floor(slot4:getOwnedCount() / slot4.count), 1)
+	local var_7_3 = math.max(math.floor(var_7_1:getOwnedCount() / var_7_1.count), 1)
 
-	if slot5 ~= 0 then
-		slot6 = math.min(slot6, slot5 - slot1.buyCount)
+	if var_7_2 ~= 0 then
+		var_7_3 = math.min(var_7_3, var_7_2 - arg_7_1.buyCount)
 	end
 
-	(function (slot0)
-		slot0 = math.min(math.max(slot0, 1), uv0)
-		uv1.countTF.text = slot0
-		uv1.curCount = slot0
-		uv1.itemCountTF.text = slot0 * uv2.count
-	end)(1)
-	updateDrop(slot0.topItem:Find("left/IconTpl"), slot3)
-	UpdateOwnDisplay(slot0.ownerTF, slot3)
-	RegisterDetailButton(slot0, slot0.detailTF, slot3)
+	local function var_7_4(arg_8_0)
+		arg_8_0 = math.max(arg_8_0, 1)
+		arg_8_0 = math.min(arg_8_0, var_7_3)
+		arg_7_0.countTF.text = arg_8_0
+		arg_7_0.curCount = arg_8_0
+		arg_7_0.itemCountTF.text = arg_8_0 * var_7_0.count
+	end
 
-	slot0.nameTF.text = slot3:getConfig("name")
-	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
+	var_7_4(1)
+	updateDrop(arg_7_0.topItem:Find("left/IconTpl"), var_7_0)
+	UpdateOwnDisplay(arg_7_0.ownerTF, var_7_0)
+	RegisterDetailButton(arg_7_0, arg_7_0.detailTF, var_7_0)
 
-	updateDrop(slot0.bottomItem, slot3)
-	onButton(slot0, slot0.confirmBtn, function ()
-		existCall(uv0, uv1, uv2.curCount)
-		uv2:Close()
+	arg_7_0.nameTF.text = var_7_0:getConfig("name")
+	arg_7_0.descTF.text = var_7_0.desc or var_7_0:getConfig("desc")
+
+	updateDrop(arg_7_0.bottomItem, var_7_0)
+	onButton(arg_7_0, arg_7_0.confirmBtn, function()
+		existCall(arg_7_2, arg_7_1, arg_7_0.curCount)
+		arg_7_0:Close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.leftBtn, function ()
-		uv0(uv1.curCount - 1)
+	onButton(arg_7_0, arg_7_0.leftBtn, function()
+		var_7_4(arg_7_0.curCount - 1)
 	end)
-	onButton(slot0, slot0.rightBtn, function ()
-		uv0(uv1.curCount + 1)
+	onButton(arg_7_0, arg_7_0.rightBtn, function()
+		var_7_4(arg_7_0.curCount + 1)
 	end)
-	onButton(slot0, slot0.maxBtn, function ()
-		uv0(uv1)
+	onButton(arg_7_0, arg_7_0.maxBtn, function()
+		var_7_4(var_7_3)
 	end)
 end
 
-function slot0.Close(slot0)
-	if slot0.opening then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-		slot0:Hide()
+function var_0_0.Close(arg_13_0)
+	if arg_13_0.opening then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_13_0._tf, arg_13_0._parentTf)
+		arg_13_0:Hide()
 
-		slot0.opening = false
+		arg_13_0.opening = false
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.opening then
-		slot0:Close()
+function var_0_0.OnDestroy(arg_14_0)
+	if arg_14_0.opening then
+		arg_14_0:Close()
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,56 +1,58 @@
-slot0 = class("ShipRotateLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("ShipRotateLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShipRotateUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
 end
 
-function slot0.didEnter(slot0)
-	slot0:SetPainting(slot0.skin and slot0.skin.id or slot0.shipGroup:GetSkin(slot0.showTrans).id, slot0.showTrans)
-	slot0.paintingView:setBGCallback(function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_3_0)
+	local var_3_0 = arg_3_0.skin and arg_3_0.skin.id or arg_3_0.shipGroup:GetSkin(arg_3_0.showTrans).id
+
+	arg_3_0:SetPainting(var_3_0, arg_3_0.showTrans)
+	arg_3_0.paintingView:setBGCallback(function()
+		arg_3_0:closeView()
 	end)
-	slot0.paintingView:Start()
-	setActive(slot0:findTF("Enc"), true)
+	arg_3_0.paintingView:Start()
+	setActive(arg_3_0:findTF("Enc"), true)
 end
 
-function slot0.willExit(slot0)
-	slot0.paintingView:Dispose()
-	slot0:RecyclePainting()
+function var_0_0.willExit(arg_5_0)
+	arg_5_0.paintingView:Dispose()
+	arg_5_0:RecyclePainting()
 end
 
-function slot0.initData(slot0)
-	slot0.paintingName = nil
-	slot0.shipGroup = slot0.contextData.shipGroup
-	slot0.showTrans = slot0.contextData.showTrans
-	slot0.skin = slot0.contextData.skin
+function var_0_0.initData(arg_6_0)
+	arg_6_0.paintingName = nil
+	arg_6_0.shipGroup = arg_6_0.contextData.shipGroup
+	arg_6_0.showTrans = arg_6_0.contextData.showTrans
+	arg_6_0.skin = arg_6_0.contextData.skin
 end
 
-function slot0.findUI(slot0)
-	slot0.painting = slot0:findTF("paint")
-	slot0.paintingFitter = findTF(slot0.painting, "fitter")
-	slot0.paintingInitPos = slot0.painting.transform.localPosition
-	slot0.paintingView = ShipProfilePaintingView.New(slot0._tf, slot0.painting, true)
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.painting = arg_7_0:findTF("paint")
+	arg_7_0.paintingFitter = findTF(arg_7_0.painting, "fitter")
+	arg_7_0.paintingInitPos = arg_7_0.painting.transform.localPosition
+	arg_7_0.paintingView = ShipProfilePaintingView.New(arg_7_0._tf, arg_7_0.painting, true)
 end
 
-function slot0.SetPainting(slot0, slot1, slot2)
-	slot0:RecyclePainting()
+function var_0_0.SetPainting(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0:RecyclePainting()
 
-	slot3 = pg.ship_skin_template[slot1].painting
+	local var_8_0 = pg.ship_skin_template[arg_8_1].painting
 
-	setPaintingPrefabAsync(slot0.painting, slot3, "chuanwu")
+	setPaintingPrefabAsync(arg_8_0.painting, var_8_0, "chuanwu")
 
-	slot0.paintingName = slot3
+	arg_8_0.paintingName = var_8_0
 end
 
-function slot0.RecyclePainting(slot0)
-	if slot0.paintingName then
-		retPaintingPrefab(slot0.painting, slot0.paintingName)
+function var_0_0.RecyclePainting(arg_9_0)
+	if arg_9_0.paintingName then
+		retPaintingPrefab(arg_9_0.painting, arg_9_0.paintingName)
 	end
 end
 
-return slot0
+return var_0_0

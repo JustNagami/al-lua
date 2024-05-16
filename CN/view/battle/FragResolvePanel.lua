@@ -1,299 +1,326 @@
-slot0 = class("FragResolvePanel", BaseSubPanel)
+﻿local var_0_0 = class("FragResolvePanel", BaseSubPanel)
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FragResolveUI"
 end
 
-slot1 = {
+local var_0_1 = {
 	"control",
 	"resolve"
 }
 
-function slot0.OnInit(slot0)
-	slot0.bagProxy = getProxy(BagProxy)
-	slot0.technologyProxy = getProxy(TechnologyProxy)
-	slot0.toggles = {}
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.bagProxy = getProxy(BagProxy)
+	arg_2_0.technologyProxy = getProxy(TechnologyProxy)
+	arg_2_0.toggles = {}
 
-	for slot4, slot5 in ipairs(uv0) do
-		slot7 = slot0._tf
-		slot0[slot5 .. "Panel"] = slot7:Find(slot5)
-		slot6 = slot0._tf
-		slot6 = slot6:Find("toggle_controll/" .. slot5)
-		slot0.toggles[slot5] = slot6
+	for iter_2_0, iter_2_1 in ipairs(var_0_1) do
+		arg_2_0[iter_2_1 .. "Panel"] = arg_2_0._tf:Find(iter_2_1)
 
-		onToggle(slot0, slot6, function (slot0)
-			uv0["Reset" .. uv1](uv0)
+		local var_2_0 = arg_2_0._tf:Find("toggle_controll/" .. iter_2_1)
+
+		arg_2_0.toggles[iter_2_1] = var_2_0
+
+		onToggle(arg_2_0, var_2_0, function(arg_3_0)
+			arg_2_0["Reset" .. iter_2_1](arg_2_0)
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0._tf:Find("bg"), function ()
-		uv0:Back()
+	onButton(arg_2_0, arg_2_0._tf:Find("bg"), function()
+		arg_2_0:Back()
 	end, SFX_PANEL)
 
-	slot1 = slot0.controlPanel:Find("got/empty/Text")
+	local var_2_1 = arg_2_0.controlPanel:Find("got/empty/Text")
 
-	setText(slot0.controlPanel:Find("allMax/txt"), i18n("onebutton_max_tip"))
+	setText(arg_2_0.controlPanel:Find("allMax/txt"), i18n("onebutton_max_tip"))
 
-	slot2 = slot0._tf:Find("control/condition/text")
-	slot3 = slot0.resolvePanel:Find("cancel_button/label")
+	local var_2_2 = arg_2_0._tf:Find("control/condition/text")
+	local var_2_3 = arg_2_0.resolvePanel:Find("cancel_button/label")
 
 	if PLATFORM_CODE == PLATFORM_US then
-		setTextEN(slot2, i18n("fenjie_lantu_tip"))
-		setTextEN(slot1, i18n("fragresolve_empty_tip"))
+		setTextEN(var_2_2, i18n("fenjie_lantu_tip"))
+		setTextEN(var_2_1, i18n("fragresolve_empty_tip"))
 	else
-		setText(slot2, i18n("fenjie_lantu_tip"))
-		setText(slot1, i18n("fragresolve_empty_tip"))
+		setText(var_2_2, i18n("fenjie_lantu_tip"))
+		setText(var_2_1, i18n("fragresolve_empty_tip"))
 	end
 
-	setText(slot3, i18n("msgbox_text_cancel"))
+	setText(var_2_3, i18n("msgbox_text_cancel"))
 
-	uv1.keepFateTog = slot0._tf:Find("control/condition/keep_tog")
+	local var_2_4 = getProxy(PlayerProxy):getData()
 
-	setText(slot0:findTF("label", slot0.keepFateTog), i18n("keep_fate_tip"))
+	var_0_0.keepFateTog = arg_2_0._tf:Find("control/condition/keep_tog")
 
-	uv1.keepFateState = not getProxy(PlayerProxy):getData():GetCommonFlag(SHOW_DONT_KEEP_FATE_ITEM)
-	GetComponent(slot0.keepFateTog, typeof(Toggle)).isOn = uv1.keepFateState
+	setText(arg_2_0:findTF("label", arg_2_0.keepFateTog), i18n("keep_fate_tip"))
 
-	onToggle(slot0, slot0.keepFateTog, function (slot0)
-		uv0.keepFateState = slot0
+	local var_2_5 = GetComponent(arg_2_0.keepFateTog, typeof(Toggle))
 
-		uv1:emit(NewShopsMediator.SET_PLAYER_FLAG, SHOW_DONT_KEEP_FATE_ITEM, not slot0)
-		uv1:Trigger("control")
+	var_0_0.keepFateState = not var_2_4:GetCommonFlag(SHOW_DONT_KEEP_FATE_ITEM)
+	var_2_5.isOn = var_0_0.keepFateState
+
+	onToggle(arg_2_0, arg_2_0.keepFateTog, function(arg_5_0)
+		var_0_0.keepFateState = arg_5_0
+
+		arg_2_0:emit(NewShopsMediator.SET_PLAYER_FLAG, SHOW_DONT_KEEP_FATE_ITEM, not arg_5_0)
+		arg_2_0:Trigger("control")
 	end)
-	slot0:Trigger("control")
+	arg_2_0:Trigger("control")
 end
 
-function slot0.OnShow(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.OnShow(arg_6_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
 end
 
-function slot0.OnHide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.OnHide(arg_7_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_7_0._tf)
 end
 
-function slot0.Reset(slot0)
-	if slot0.resolveItems then
-		table.clear(slot0.resolveItems)
+function var_0_0.Reset(arg_8_0)
+	if arg_8_0.resolveItems then
+		table.clear(arg_8_0.resolveItems)
 	end
 end
 
-function slot0.Resetcontrol(slot0)
-	slot0.blueprintItems = slot0.GetAllBluePrintStrengthenItems()
-	slot2 = slot0.controlPanel
+function var_0_0.Resetcontrol(arg_9_0)
+	arg_9_0.blueprintItems = arg_9_0.GetAllBluePrintStrengthenItems()
 
-	setActive(slot2:Find("got/empty"), #slot0.blueprintItems <= 0)
-	setActive(slot2:Find("got/list"), #slot1 > 0)
+	local var_9_0 = arg_9_0.blueprintItems
+	local var_9_1 = arg_9_0.controlPanel
+	local var_9_2 = var_9_1:Find("got/empty")
+	local var_9_3 = var_9_1:Find("got/list")
 
-	if #slot1 <= 0 then
-		slot0:Updatecontrol()
+	setActive(var_9_2, #var_9_0 <= 0)
+	setActive(var_9_3, #var_9_0 > 0)
+
+	if #var_9_0 <= 0 then
+		arg_9_0:Updatecontrol()
 
 		return
 	end
 
-	slot5 = {}
-	slot6 = ipairs
-	slot7 = slot0.resolveItems or {}
+	local var_9_4 = {}
 
-	for slot9, slot10 in slot6(slot7) do
-		slot5[slot10.id] = slot10
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.resolveItems or {}) do
+		var_9_4[iter_9_1.id] = iter_9_1
 	end
 
-	UIItemList.StaticAlign(slot4, slot4:Find("item"), #slot1, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	UIItemList.StaticAlign(var_9_3, var_9_3:Find("item"), #var_9_0, function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			local var_10_0 = var_9_0[arg_10_1 + 1]
 
-			updateDrop(slot2:Find("icon"), slot3)
+			updateDrop(arg_10_2:Find("icon"), var_10_0)
 
-			slot3.curCount = math.clamp(uv1[slot3.id] and uv1[slot3.id].curCount or 0, 0, slot3.maxCount)
+			var_10_0.curCount = math.clamp(var_9_4[var_10_0.id] and var_9_4[var_10_0.id].curCount or 0, 0, var_10_0.maxCount)
 
-			onButton(uv2, slot2:Find("icon/icon_bg"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			onButton(arg_9_0, arg_10_2:Find("icon/icon_bg"), function()
+				arg_9_0:emit(BaseUI.ON_DROP, var_10_0)
 			end, SFX_PANEL)
 
-			slot4 = slot2:Find("count")
+			local var_10_1 = arg_10_2:Find("count")
 
-			onButton(uv2, slot4:Find("max"), function ()
-				if uv0.curCount ~= uv0.maxCount then
-					uv0.curCount = uv0.maxCount
+			onButton(arg_9_0, var_10_1:Find("max"), function()
+				if var_10_0.curCount ~= var_10_0.maxCount then
+					var_10_0.curCount = var_10_0.maxCount
 
-					uv1:Updatecontrol()
+					arg_9_0:Updatecontrol()
 				end
 			end)
-			pressPersistTrigger(slot4:Find("number_panel/left"), 0.5, function (slot0)
-				if uv0.curCount <= 0 then
-					slot0()
+			pressPersistTrigger(var_10_1:Find("number_panel/left"), 0.5, function(arg_13_0)
+				if var_10_0.curCount <= 0 then
+					arg_13_0()
 
 					return
 				end
 
-				uv0.curCount = uv0.curCount - 1
+				var_10_0.curCount = var_10_0.curCount - 1
 
-				uv1:Updatecontrol()
+				arg_9_0:Updatecontrol()
 			end, nil, true, true, 0.1, SFX_PANEL)
-			pressPersistTrigger(slot4:Find("number_panel/right"), 0.5, function (slot0)
-				if uv0.maxCount <= uv0.curCount then
-					slot0()
+			pressPersistTrigger(var_10_1:Find("number_panel/right"), 0.5, function(arg_14_0)
+				if var_10_0.curCount >= var_10_0.maxCount then
+					arg_14_0()
 
 					return
 				end
 
-				uv0.curCount = uv0.curCount + 1
+				var_10_0.curCount = var_10_0.curCount + 1
 
-				uv1:Updatecontrol()
+				arg_9_0:Updatecontrol()
 			end, nil, true, true, 0.1, SFX_PANEL)
 		end
 	end)
-	onButton(slot0, slot2:Find("button_1"), function ()
-		slot0 = {}
+	onButton(arg_9_0, var_9_1:Find("button_1"), function()
+		local var_15_0 = {}
 
-		for slot4, slot5 in ipairs(uv0.blueprintItems) do
-			if slot5.curCount > 0 then
-				slot6 = Clone(slot5)
-				slot6.count = slot5.curCount
+		for iter_15_0, iter_15_1 in ipairs(arg_9_0.blueprintItems) do
+			if iter_15_1.curCount > 0 then
+				local var_15_1 = Clone(iter_15_1)
 
-				table.insert(slot0, slot6)
+				var_15_1.count = iter_15_1.curCount
+
+				table.insert(var_15_0, var_15_1)
 			end
 		end
 
-		if #slot0 > 0 then
-			uv0.resolveItems = slot0
+		if #var_15_0 > 0 then
+			arg_9_0.resolveItems = var_15_0
 
-			triggerToggle(uv0.toggles.resolve, true)
+			triggerToggle(arg_9_0.toggles.resolve, true)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot2:Find("allMax"), function ()
-		for slot3 = 1, #uv0 do
-			slot4 = uv0[slot3]
+	onButton(arg_9_0, var_9_1:Find("allMax"), function()
+		for iter_16_0 = 1, #var_9_0 do
+			local var_16_0 = var_9_0[iter_16_0]
 
-			if slot4.curCount ~= slot4.maxCount then
-				slot4.curCount = slot4.maxCount
+			if var_16_0.curCount ~= var_16_0.maxCount then
+				var_16_0.curCount = var_16_0.maxCount
 			end
 
-			uv1:Updatecontrol()
+			arg_9_0:Updatecontrol()
 		end
 	end, SFX_PANEL)
-	slot0:Updatecontrol()
+	arg_9_0:Updatecontrol()
 end
 
-function slot0.Updatecontrol(slot0)
-	slot1 = slot0.controlPanel
-	slot2 = slot1:Find("got/list")
+function var_0_0.Updatecontrol(arg_17_0)
+	local var_17_0 = arg_17_0.controlPanel
+	local var_17_1 = var_17_0:Find("got/list")
+	local var_17_2 = arg_17_0.blueprintItems
+	local var_17_3 = 0
 
-	UIItemList.StaticAlign(slot2, slot2:Find("item"), #slot0.blueprintItems, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	UIItemList.StaticAlign(var_17_1, var_17_1:Find("item"), #var_17_2, function(arg_18_0, arg_18_1, arg_18_2)
+		if arg_18_0 == UIItemList.EventUpdate then
+			local var_18_0 = var_17_2[arg_18_1 + 1]
+			local var_18_1 = arg_18_2:Find("count")
 
-			setText(slot2:Find("count"):Find("number_panel/value"), slot3.curCount)
+			setText(var_18_1:Find("number_panel/value"), var_18_0.curCount)
 
-			uv1 = uv1 + slot3.curCount
+			var_17_3 = var_17_3 + var_18_0.curCount
 		end
 	end)
-	setButtonEnabled(slot1:Find("button_1"), 0 > 0)
-	setGray(slot5, slot4 <= 0)
-	setGray(slot1:Find("allMax"), not slot3 or #slot3 == 0)
-	setButtonEnabled(slot6, slot3 and #slot3 > 0)
+
+	local var_17_4 = var_17_0:Find("button_1")
+
+	setButtonEnabled(var_17_4, var_17_3 > 0)
+	setGray(var_17_4, var_17_3 <= 0)
+
+	local var_17_5 = var_17_0:Find("allMax")
+
+	setGray(var_17_5, not var_17_2 or #var_17_2 == 0)
+	setButtonEnabled(var_17_5, var_17_2 and #var_17_2 > 0)
 end
 
-function slot0.Resetresolve(slot0)
-	slot1 = slot0.resolvePanel
-	slot2 = slot1:Find("preview/got/list")
-	slot3 = slot1:Find("result/got/list")
-	slot4 = slot0.resolveItems
+function var_0_0.Resetresolve(arg_19_0)
+	local var_19_0 = arg_19_0.resolvePanel
+	local var_19_1 = var_19_0:Find("preview/got/list")
+	local var_19_2 = var_19_0:Find("result/got/list")
+	local var_19_3 = arg_19_0.resolveItems
 
-	UIItemList.StaticAlign(slot2, slot2:Find("item"), #slot4, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	UIItemList.StaticAlign(var_19_1, var_19_1:Find("item"), #var_19_3, function(arg_20_0, arg_20_1, arg_20_2)
+		if arg_20_0 == UIItemList.EventUpdate then
+			local var_20_0 = var_19_3[arg_20_1 + 1]
 
-			updateDrop(slot2:Find("icon"), slot3)
-			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(arg_20_2:Find("icon"), var_20_0)
+			onButton(arg_19_0, arg_20_2:Find("icon/icon_bg"), function()
+				arg_19_0:emit(BaseUI.ON_DROP, var_20_0)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
-			setText(slot2:Find("name_panel/number"), "x " .. slot3.curCount)
+			setText(arg_20_2:Find("name_panel/name"), var_20_0:getConfig("name"))
+			setText(arg_20_2:Find("name_panel/number"), "x " .. var_20_0.curCount)
 		end
 	end)
 
-	slot5 = {}
-	slot6 = {}
+	local var_19_4 = {}
+	local var_19_5 = {}
 
-	for slot10, slot11 in pairs(slot4) do
-		slot12 = slot11
-		slot13 = Item.getConfigData(slot12.id)
+	for iter_19_0, iter_19_1 in pairs(var_19_3) do
+		local var_19_6 = iter_19_1
+		local var_19_7 = Item.getConfigData(var_19_6.id)
 
-		assert(slot13, "Can't find the price " .. slot12.id)
+		assert(var_19_7, "Can't find the price " .. var_19_6.id)
 
-		slot5[slot13.price[1]] = (slot5[slot13.price[1]] or 0) + slot13.price[2] * slot12.count
+		local var_19_8 = (var_19_4[var_19_7.price[1]] or 0) + var_19_7.price[2] * var_19_6.count
+
+		var_19_4[var_19_7.price[1]] = var_19_8
 	end
 
-	for slot10, slot11 in pairs(slot5) do
-		table.insert(slot6, {
+	for iter_19_2, iter_19_3 in pairs(var_19_4) do
+		table.insert(var_19_5, {
 			type = DROP_TYPE_RESOURCE,
-			id = slot10,
-			count = slot11
+			id = iter_19_2,
+			count = iter_19_3
 		})
 	end
 
-	UIItemList.StaticAlign(slot3, slot3:Find("item"), #slot6, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	UIItemList.StaticAlign(var_19_2, var_19_2:Find("item"), #var_19_5, function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			local var_22_0 = var_19_5[arg_22_1 + 1]
 
-			updateDrop(slot2:Find("icon"), slot3)
-			onButton(uv1, slot2:Find("icon/icon_bg"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(arg_22_2:Find("icon"), var_22_0)
+			onButton(arg_19_0, arg_22_2:Find("icon/icon_bg"), function()
+				arg_19_0:emit(BaseUI.ON_DROP, var_22_0)
 			end, SFX_PANEL)
-			setText(slot2:Find("name_panel/name"), slot3:getConfig("name"))
-			setText(slot2:Find("name_panel/number"), "x " .. slot3.count)
+			setText(arg_22_2:Find("name_panel/name"), var_22_0:getConfig("name"))
+			setText(arg_22_2:Find("name_panel/number"), "x " .. var_22_0.count)
 		end
 	end)
-	onButton(slot0, slot1:Find("cancel_button"), function ()
-		uv0:Back()
+	onButton(arg_19_0, var_19_0:Find("cancel_button"), function()
+		arg_19_0:Back()
 	end)
-	onButton(slot0, slot1:Find("destroy_button"), function ()
-		uv0:emit(NewShopsMediator.SELL_BLUEPRINT, uv0.resolveItems)
+	onButton(arg_19_0, var_19_0:Find("destroy_button"), function()
+		arg_19_0:emit(NewShopsMediator.SELL_BLUEPRINT, arg_19_0.resolveItems)
 	end)
 end
 
-function slot0.GetAllBluePrintStrengthenItems()
-	slot0 = {}
-	slot1 = getProxy(TechnologyProxy)
-	slot2 = getProxy(BagProxy)
+function var_0_0.GetAllBluePrintStrengthenItems()
+	local var_26_0 = {}
+	local var_26_1 = getProxy(TechnologyProxy)
+	local var_26_2 = getProxy(BagProxy)
+	local var_26_3 = pg.ship_data_blueprint
 
-	for slot7, slot8 in ipairs(pg.ship_data_blueprint.all) do
-		slot9 = slot3[slot8]
+	for iter_26_0, iter_26_1 in ipairs(var_26_3.all) do
+		local var_26_4 = var_26_3[iter_26_1]
 
-		if slot1:getBluePrintById(slot8):isMaxLevel() and slot2:getItemById(slot9.strengthen_item) then
-			slot13 = slot1:getBluePrintById(slot1:GetBlueprint4Item(slot11))
-			slot14 = slot12.count
+		if var_26_1:getBluePrintById(iter_26_1):isMaxLevel() then
+			local var_26_5 = var_26_4.strengthen_item
+			local var_26_6 = var_26_2:getItemById(var_26_5)
 
-			if slot12 and slot12.count > 0 and uv0.keepFateState and slot12.count - slot13:getFateMaxLeftOver() < 0 then
-				slot14 = 0
+			if var_26_6 then
+				local var_26_7 = var_26_1:getBluePrintById(var_26_1:GetBlueprint4Item(var_26_5))
+				local var_26_8 = var_26_6.count
+
+				if var_26_6 and var_26_6.count > 0 and var_0_0.keepFateState then
+					var_26_8 = var_26_6.count - var_26_7:getFateMaxLeftOver()
+					var_26_8 = var_26_8 < 0 and 0 or var_26_8
+				end
+
+				table.insert(var_26_0, Drop.New({
+					id = var_26_6.id,
+					type = DROP_TYPE_ITEM,
+					count = var_26_6.count,
+					maxCount = var_26_8
+				}))
 			end
-
-			table.insert(slot0, Drop.New({
-				id = slot12.id,
-				type = DROP_TYPE_ITEM,
-				count = slot12.count,
-				maxCount = slot14
-			}))
 		end
 	end
 
-	return slot0
+	return var_26_0
 end
 
-function slot0.Trigger(slot0, slot1)
-	if slot0.toggles[slot1] then
-		slot0.buffer:Show()
-		triggerToggle(slot2, true)
+function var_0_0.Trigger(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.toggles[arg_27_1]
+
+	if var_27_0 then
+		arg_27_0.buffer:Show()
+		triggerToggle(var_27_0, true)
 	end
 end
 
-function slot0.Back(slot0)
-	if getToggleState(slot0.toggles.resolve) then
-		triggerToggle(slot0.toggles.control, true)
-	elseif getToggleState(slot0.toggles.control) then
-		slot0:Hide()
+function var_0_0.Back(arg_28_0)
+	if getToggleState(arg_28_0.toggles.resolve) then
+		triggerToggle(arg_28_0.toggles.control, true)
+	elseif getToggleState(arg_28_0.toggles.control) then
+		arg_28_0:Hide()
 	end
 end
 
-return slot0
+return var_0_0

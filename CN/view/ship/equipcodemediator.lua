@@ -1,62 +1,65 @@
-slot0 = class("EquipCodeMediator", import("..base.ContextMediator"))
-slot0.SHARE_EQUIP_CODE = "EquipCodeMediator.SHARE_EQUIP_CODE"
-slot0.IMPORT_SHIP_EQUIP = "EquipCodeMediator.IMPORT_SHIP_EQUIP"
-slot0.OPEN_CUSTOM_INDEX = "EquipCodeMediator.OPEN_CUSTOM_INDEX"
-slot0.OPEN_EQUIP_CODE_SHARE = "EquipCodeMediator.OPEN_EQUIP_CODE_SHARE"
+﻿local var_0_0 = class("EquipCodeMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.SHARE_EQUIP_CODE, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.EQUIP_CODE_SHARE, {
-			groupId = slot1,
-			code = slot2
+var_0_0.SHARE_EQUIP_CODE = "EquipCodeMediator.SHARE_EQUIP_CODE"
+var_0_0.IMPORT_SHIP_EQUIP = "EquipCodeMediator.IMPORT_SHIP_EQUIP"
+var_0_0.OPEN_CUSTOM_INDEX = "EquipCodeMediator.OPEN_CUSTOM_INDEX"
+var_0_0.OPEN_EQUIP_CODE_SHARE = "EquipCodeMediator.OPEN_EQUIP_CODE_SHARE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SHARE_EQUIP_CODE, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.EQUIP_CODE_SHARE, {
+			groupId = arg_2_1,
+			code = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.IMPORT_SHIP_EQUIP, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SHIP_EQUIP_ALL_CHANGE, {
-			shipId = slot1,
-			equipData = slot2
+	arg_1_0:bind(var_0_0.IMPORT_SHIP_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.SHIP_EQUIP_ALL_CHANGE, {
+			shipId = arg_3_1,
+			equipData = arg_3_2
 		})
 	end)
-	slot0:bind(uv0.OPEN_CUSTOM_INDEX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_CUSTOM_INDEX, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_4_1
 		}))
 	end)
-	slot0:bind(uv0.OPEN_EQUIP_CODE_SHARE, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_EQUIP_CODE_SHARE, function(arg_5_0, arg_5_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = EquipCodeShareMediator,
 			viewComponent = EquipCodeShareLayer,
 			data = {
-				shipGroupId = slot1
+				shipGroupId = arg_5_1
 			}
 		}))
 	end)
 
-	slot1 = getProxy(EquipmentProxy):getEquipments(true)
+	local var_1_0 = getProxy(EquipmentProxy):getEquipments(true)
 
-	for slot5, slot6 in ipairs(getProxy(BayProxy):getEquipsInShips()) do
-		table.insert(slot1, slot6)
+	for iter_1_0, iter_1_1 in ipairs(getProxy(BayProxy):getEquipsInShips()) do
+		table.insert(var_1_0, iter_1_1)
 	end
 
-	slot2 = underscore.values(getProxy(EquipmentProxy):GetSpWeapons())
+	local var_1_1 = underscore.values(getProxy(EquipmentProxy):GetSpWeapons())
 
-	for slot6, slot7 in ipairs(getProxy(BayProxy):GetSpWeaponsInShips()) do
-		table.insert(slot2, slot7)
+	for iter_1_2, iter_1_3 in ipairs(getProxy(BayProxy):GetSpWeaponsInShips()) do
+		table.insert(var_1_1, iter_1_3)
 	end
 
-	slot0.viewComponent:setEquipments(slot1, slot2)
-	slot0.viewComponent:setShip(slot0.contextData.shipId)
+	arg_1_0.viewComponent:setEquipments(var_1_0, var_1_1)
+	arg_1_0.viewComponent:setShip(arg_1_0.contextData.shipId)
 end
 
-function slot0.initNotificationHandleDic(slot0)
-	slot0.handleDic = {
-		[GAME.SHIP_EQUIP_ALL_CHANGE_DONE] = function (slot0, slot1)
-			assert(slot1:getBody() == slot0.contextData.shipId)
-			slot0.viewComponent:closeView()
+function var_0_0.initNotificationHandleDic(arg_6_0)
+	arg_6_0.handleDic = {
+		[GAME.SHIP_EQUIP_ALL_CHANGE_DONE] = function(arg_7_0, arg_7_1)
+			local var_7_0 = arg_7_1:getBody()
+
+			assert(var_7_0 == arg_7_0.contextData.shipId)
+			arg_7_0.viewComponent:closeView()
 		end
 	}
 end
 
-return slot0
+return var_0_0

@@ -1,132 +1,147 @@
-slot0 = class("ChargeDiamondCard")
-slot0.NewTagType = 2
-slot0.DoubleTagType = 4
+﻿local var_0_0 = class("ChargeDiamondCard")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.go = slot1
-	slot0.tr = tf(slot1)
-	slot0.firstTag = slot0.tr:Find("FirstTag")
-	slot0.iconImg = slot0.tr:Find("IconImg")
-	slot0.diamondCountText = slot0.tr:Find("Count/Text")
-	slot0.tipTF = slot0.tr:Find("Tip")
-	slot0.firstTipTag = slot0.tr:Find("Tip/Text/FirstTag")
-	slot0.exTipTag = slot0.tr:Find("Tip/Text/EXTag")
-	slot0.firstEXTip = slot0.tr:Find("Tip/Text/NumText")
-	slot0.priceText = slot0.tr:Find("Price/Text")
-	slot0.priceIcon = slot0.tr:Find("Price/Icon")
-	slot0.monthTF = slot2
-	slot0.goods = nil
-	slot0.parentContext = slot3
+var_0_0.NewTagType = 2
+var_0_0.DoubleTagType = 4
+
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = tf(arg_1_1)
+	arg_1_0.firstTag = arg_1_0.tr:Find("FirstTag")
+	arg_1_0.iconImg = arg_1_0.tr:Find("IconImg")
+	arg_1_0.diamondCountText = arg_1_0.tr:Find("Count/Text")
+	arg_1_0.tipTF = arg_1_0.tr:Find("Tip")
+	arg_1_0.firstTipTag = arg_1_0.tr:Find("Tip/Text/FirstTag")
+	arg_1_0.exTipTag = arg_1_0.tr:Find("Tip/Text/EXTag")
+	arg_1_0.firstEXTip = arg_1_0.tr:Find("Tip/Text/NumText")
+	arg_1_0.priceText = arg_1_0.tr:Find("Price/Text")
+	arg_1_0.priceIcon = arg_1_0.tr:Find("Price/Icon")
+	arg_1_0.monthTF = arg_1_2
+	arg_1_0.goods = nil
+	arg_1_0.parentContext = arg_1_3
 end
 
-function slot0.update(slot0, slot1, slot2, slot3)
-	slot0.goods = slot1
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_0.goods = arg_2_1
 
-	if slot1:isMonthCard() then
-		setActive(slot0.tr, false)
-		slot0:updateForMonthTF(slot1, slot2)
+	if arg_2_1:isMonthCard() then
+		setActive(arg_2_0.tr, false)
+		arg_2_0:updateForMonthTF(arg_2_1, arg_2_2)
 
 		return
 	end
 
-	slot5 = table.contains(slot3, slot1.id) or slot1:firstPayDouble()
+	local var_2_0 = not table.contains(arg_2_3, arg_2_1.id) and arg_2_1:firstPayDouble()
+	local var_2_1 = var_2_0 and var_0_0.DoubleTagType or arg_2_1:getConfig("tag")
 
-	setActive(slot0.firstTag, (slot5 and uv0.DoubleTagType or slot1:getConfig("tag")) == uv0.DoubleTagType)
+	setActive(arg_2_0.firstTag, var_2_1 == var_0_0.DoubleTagType)
 
-	if slot5 then
-		setText(slot0.firstEXTip, slot1:getConfig("gem"))
-		setActive(slot0.firstTipTag, true)
-		setActive(slot0.exTipTag, false)
-		setActive(slot0.firstEXTip, true)
-		setActive(slot0.tipTF, true)
-	elseif slot1:hasExtraGem() then
-		setText(slot0.firstEXTip, slot1:getConfig("extra_gem"))
-		setActive(slot0.firstTipTag, false)
-		setActive(slot0.exTipTag, true)
-		setActive(slot0.firstEXTip, true)
-		setActive(slot0.tipTF, true)
+	if var_2_0 then
+		local var_2_2 = arg_2_1:getConfig("gem")
+
+		setText(arg_2_0.firstEXTip, var_2_2)
+		setActive(arg_2_0.firstTipTag, true)
+		setActive(arg_2_0.exTipTag, false)
+		setActive(arg_2_0.firstEXTip, true)
+		setActive(arg_2_0.tipTF, true)
+	elseif arg_2_1:hasExtraGem() then
+		local var_2_3 = arg_2_1:getConfig("extra_gem")
+
+		setText(arg_2_0.firstEXTip, var_2_3)
+		setActive(arg_2_0.firstTipTag, false)
+		setActive(arg_2_0.exTipTag, true)
+		setActive(arg_2_0.firstEXTip, true)
+		setActive(arg_2_0.tipTF, true)
 	else
-		setActive(slot0.tipTF, false)
+		setActive(arg_2_0.tipTF, false)
 	end
 
-	setText(slot0.diamondCountText, slot1:getConfig("gem"))
-	setText(slot0.priceText, slot1:getConfig("money"))
+	setText(arg_2_0.diamondCountText, arg_2_1:getConfig("gem"))
+	setText(arg_2_0.priceText, arg_2_1:getConfig("money"))
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(slot0.priceIcon, not slot1:IsLocalPrice())
+		setActive(arg_2_0.priceIcon, not arg_2_1:IsLocalPrice())
 	end
 
-	LoadSpriteAsync("chargeicon/" .. slot1:getConfig("picture"), function (slot0)
-		if slot0 then
-			setImageSprite(uv0.iconImg, slot0, true)
+	LoadSpriteAsync("chargeicon/" .. arg_2_1:getConfig("picture"), function(arg_3_0)
+		if arg_3_0 then
+			setImageSprite(arg_2_0.iconImg, arg_3_0, true)
 		end
 	end)
 end
 
-function slot0.updateForMonthTF(slot0, slot1, slot2)
-	slot3 = slot0.monthTF:Find("IconImg")
-	slot6 = slot0.monthTF:Find("ItemIconTpl")
-	slot7 = slot0.monthTF:Find("ItemIconList")
-	slot8 = slot0.monthTF:Find("Mask")
-	slot9 = slot0.monthTF:Find("Mask/LimitText")
-	slot10 = slot0.monthTF:Find("Price/Icon")
+function var_0_0.updateForMonthTF(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_0.monthTF:Find("IconImg")
+	local var_4_1 = arg_4_0.monthTF:Find("ResCountText")
+	local var_4_2 = arg_4_0.monthTF:Find("Price/Text")
+	local var_4_3 = arg_4_0.monthTF:Find("ItemIconTpl")
+	local var_4_4 = arg_4_0.monthTF:Find("ItemIconList")
+	local var_4_5 = arg_4_0.monthTF:Find("Mask")
+	local var_4_6 = arg_4_0.monthTF:Find("Mask/LimitText")
+	local var_4_7 = arg_4_0.monthTF:Find("Price/Icon")
 
-	setText(slot0.monthTF:Find("Tip/Text"), i18n("monthly_card_tip"))
-	setText(slot0.monthTF:Find("ResCountText"), "x" .. slot1:getConfig("gem") + slot1:getConfig("extra_gem"))
-	setText(slot0.monthTF:Find("Price/Text"), slot1:getConfig("money"))
+	setText(arg_4_0.monthTF:Find("Tip/Text"), i18n("monthly_card_tip"))
+
+	local var_4_8 = arg_4_1:getConfig("gem") + arg_4_1:getConfig("extra_gem")
+
+	setText(var_4_1, "x" .. var_4_8)
+	setText(var_4_2, arg_4_1:getConfig("money"))
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(slot10, not slot1:IsLocalPrice())
+		setActive(var_4_7, not arg_4_1:IsLocalPrice())
 	end
 
-	if #slot1:getConfig("display") == 0 then
-		slot12 = slot1:getConfig("extra_service_item")
+	local var_4_9 = arg_4_1:getConfig("display")
+
+	if #var_4_9 == 0 then
+		var_4_9 = arg_4_1:getConfig("extra_service_item")
 	end
 
-	if slot12 and #slot12 > 0 then
-		slot13 = {}
+	if var_4_9 and #var_4_9 > 0 then
+		local var_4_10 = {}
 
-		for slot17, slot18 in ipairs(slot12) do
-			table.insert(slot13, {
-				type = slot18[1],
-				id = slot18[2],
-				count = slot18[3]
+		for iter_4_0, iter_4_1 in ipairs(var_4_9) do
+			table.insert(var_4_10, {
+				type = iter_4_1[1],
+				id = iter_4_1[2],
+				count = iter_4_1[3]
 			})
 		end
 
-		slot14 = UIItemList.New(slot7, slot6)
+		local var_4_11 = UIItemList.New(var_4_4, var_4_3)
 
-		slot14:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				updateDrop(slot2, uv0[slot1 + 1])
+		var_4_11:make(function(arg_5_0, arg_5_1, arg_5_2)
+			if arg_5_0 == UIItemList.EventUpdate then
+				updateDrop(arg_5_2, var_4_10[arg_5_1 + 1])
 			end
 		end)
-		slot14:align(#slot13)
+		var_4_11:align(#var_4_10)
 	end
 
-	if slot2:getCardById(VipCard.MONTH) and not slot13:isExpire() then
-		slot16 = math.floor((slot13:getLeftDate() - pg.TimeMgr.GetInstance():GetServerTime()) / 86400)
+	local var_4_12 = arg_4_2:getCardById(VipCard.MONTH)
 
-		setActive(slot8, (slot1:getConfig("limit_arg") or 0) < slot16)
-		setText(slot9, i18n("charge_month_card_lefttime_tip", slot16))
+	if var_4_12 and not var_4_12:isExpire() then
+		local var_4_13 = var_4_12:getLeftDate()
+		local var_4_14 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_4_15 = math.floor((var_4_13 - var_4_14) / 86400)
+		local var_4_16 = arg_4_1:getConfig("limit_arg") or 0
+
+		setActive(var_4_5, var_4_16 < var_4_15)
+		setText(var_4_6, i18n("charge_month_card_lefttime_tip", var_4_15))
 	else
-		setActive(slot8, false)
+		setActive(var_4_5, false)
 	end
 
-	slot14 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
-	slot16 = slot0.monthTF
+	local var_4_17 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
 
-	setActive(slot16:Find("monthcard_tag"), slot14)
-
-	slot16 = slot0.monthTF
-
-	setActive(slot16:Find("NewTag"), not slot14)
-	onButton(slot0.parentContext, slot3, function ()
-		triggerButton(uv0.tr)
+	setActive(arg_4_0.monthTF:Find("monthcard_tag"), var_4_17)
+	setActive(arg_4_0.monthTF:Find("NewTag"), not var_4_17)
+	onButton(arg_4_0.parentContext, var_4_0, function()
+		triggerButton(arg_4_0.tr)
 	end, SFX_PANEL)
 end
 
-function slot0.destoryTimer(slot0)
+function var_0_0.destoryTimer(arg_7_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,37 +1,33 @@
-slot0 = class("ObjectBreakable", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
+﻿local var_0_0 = class("ObjectBreakable", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
-function slot0.FirePassability(slot0)
+function var_0_0.FirePassability(arg_1_0)
 	return 1
 end
 
-function slot0.InitUI(slot0, slot1)
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
-
-	slot2:SetEndEvent(function ()
-		uv0:TryDrop(uv1.drop, "Drop")
-		uv0:Destroy()
+function var_0_0.InitUI(arg_2_0, arg_2_1)
+	arg_2_0._tf:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_2_0:TryDrop(arg_2_1.drop, "Drop")
+		arg_2_0:Destroy()
 	end)
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot0:Register("burn", function ()
-		uv0:Break()
+function var_0_0.InitRegister(arg_4_0, arg_4_1)
+	arg_4_0:Register("burn", function()
+		arg_4_0:Break()
 	end, {
 		{
 			0,
 			0
 		}
 	})
-	slot0:Register("break", function ()
-		uv0:Break()
+	arg_4_0:Register("break", function()
+		arg_4_0:Break()
 	end, {})
 end
 
-function slot0.Break(slot0)
-	slot0:DeregisterAll()
-	slot0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Break")
+function var_0_0.Break(arg_7_0)
+	arg_7_0:DeregisterAll()
+	arg_7_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Break")
 end
 
-return slot0
+return var_0_0

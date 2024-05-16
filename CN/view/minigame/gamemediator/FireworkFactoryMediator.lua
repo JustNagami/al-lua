@@ -1,41 +1,47 @@
-slot0 = class("FireworkFactoryMediator", import(".MiniHubMediator"))
+﻿local var_0_0 = class("FireworkFactoryMediator", import(".MiniHubMediator"))
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getName()
+	local var_1_1 = arg_1_1:getBody()
 
-	if slot1:getName() == MiniGameProxy.ON_HUB_DATA_UPDATE then
-		slot0.viewComponent:SetMGHubData(slot3)
-	elseif slot2 == GAME.SEND_MINI_GAME_OP_DONE and slot3.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		slot4 = slot3.argList
-		slot5 = slot3.cmd
+	if var_1_0 == MiniGameProxy.ON_HUB_DATA_UPDATE then
+		arg_1_0.viewComponent:SetMGHubData(var_1_1)
+	elseif var_1_0 == GAME.SEND_MINI_GAME_OP_DONE and var_1_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_1_2 = var_1_1.argList
+		local var_1_3 = var_1_1.cmd
+		local var_1_4 = {
+			function(arg_2_0)
+				local var_2_0 = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.ShrineGameID):GetRuntimeData("count") or 0) + 1
 
-		seriesAsync({
-			function (slot0)
-				uv0:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
+				arg_1_0:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
 					id = MiniGameDataCreator.ShrineGameID,
 					map = {
-						count = (getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.ShrineGameID):GetRuntimeData("count") or 0) + 1
+						count = var_2_0
 					}
 				})
-				slot0()
+				arg_2_0()
 			end,
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+			function(arg_3_0)
+				local var_3_0 = var_1_1.awards
+
+				if #var_3_0 > 0 then
+					arg_1_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_3_0, arg_3_0)
 				else
-					slot0()
+					arg_3_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:OnGetAwardDone(uv1)
+			function(arg_4_0)
+				arg_1_0.viewComponent:OnGetAwardDone(var_1_1)
 			end
-		})
-		slot0.viewComponent:OnSendMiniGameOPDone(slot3)
-	elseif slot2 == GAME.MODIFY_MINI_GAME_DATA_DONE then
-		slot0.viewComponent:OnModifyMiniGameDataDone(slot3)
+		}
+
+		seriesAsync(var_1_4)
+		arg_1_0.viewComponent:OnSendMiniGameOPDone(var_1_1)
+	elseif var_1_0 == GAME.MODIFY_MINI_GAME_DATA_DONE then
+		arg_1_0.viewComponent:OnModifyMiniGameDataDone(var_1_1)
 	else
-		uv0.super.handleNotification(slot0, slot1)
+		var_0_0.super.handleNotification(arg_1_0, arg_1_1)
 	end
 end
 
-return slot0
+return var_0_0

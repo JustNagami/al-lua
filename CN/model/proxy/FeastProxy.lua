@@ -1,263 +1,296 @@
-slot0 = class("FeastProxy", import("model.proxy.NetProxy"))
+﻿local var_0_0 = class("FeastProxy", import("model.proxy.NetProxy"))
 
-function slot0.register(slot0)
+function var_0_0.register(arg_1_0)
+	return
 end
 
-function slot1(slot0, slot1, slot2)
-	if slot0:getRawData() ~= nil then
-		slot2()
+local function var_0_1(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_0:getRawData() ~= nil then
+		arg_2_2()
 
 		return
 	end
 
-	slot0:sendNotification(GAME.GET_FEAST_DATA, {
-		activityId = slot1.id,
-		callback = slot2
+	arg_2_0:sendNotification(GAME.GET_FEAST_DATA, {
+		activityId = arg_2_1.id,
+		callback = arg_2_2
 	})
 end
 
-function slot2(slot0, slot1, slot2)
-	slot4 = slot1:getConfig("config_data")[1] or 5
+local function var_0_2(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_1:getConfig("config_data")
+	local var_3_1 = var_3_0[1] or 5
 
-	if not slot0:getRawData():ShouldRandomShips() then
-		slot2()
+	if not arg_3_0:getRawData():ShouldRandomShips() then
+		arg_3_2()
 
 		return
 	end
 
-	slot0:sendNotification(GAME.FEAST_OP, {
-		activityId = slot1.id,
+	local var_3_2 = var_3_0[3] or {}
+	local var_3_3 = arg_3_0:RandomShips(var_3_2, var_3_1)
+	local var_3_4 = _.map(var_3_3, function(arg_4_0)
+		return arg_4_0.id
+	end)
+
+	arg_3_0:sendNotification(GAME.FEAST_OP, {
+		activityId = arg_3_1.id,
 		cmd = FeastDorm.OP_RANDOM_SHIPS,
-		argList = _.map(slot0:RandomShips(slot3[3] or {}, slot4), function (slot0)
-			return slot0.id
-		end),
-		callback = slot2
+		argList = var_3_4,
+		callback = arg_3_2
 	})
 end
 
-function slot0.RequestData(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) or slot2:isEnd() then
-		slot1()
+function var_0_0.RequestData(arg_5_0, arg_5_1)
+	local var_5_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
+
+	if not var_5_0 or var_5_0:isEnd() then
+		arg_5_1()
 
 		return
 	end
 
 	seriesAsync({
-		function (slot0)
-			uv0(uv1, uv2, slot0)
+		function(arg_6_0)
+			var_0_1(arg_5_0, var_5_0, arg_6_0)
 		end,
-		function (slot0)
-			uv0(uv1, uv2, slot0)
+		function(arg_7_0)
+			var_0_2(arg_5_0, var_5_0, arg_7_0)
 		end
-	}, slot1)
+	}, arg_5_1)
 end
 
-function slot0.SetData(slot0, slot1)
-	assert(isa(slot1, FeastDorm))
+function var_0_0.SetData(arg_8_0, arg_8_1)
+	assert(isa(arg_8_1, FeastDorm))
 
-	slot0.data = slot1
+	arg_8_0.data = arg_8_1
 
-	slot0:AddRefreshTimer()
+	arg_8_0:AddRefreshTimer()
 end
 
-function slot0.UpdateData(slot0, slot1)
-	assert(isa(slot1, FeastDorm))
+function var_0_0.UpdateData(arg_9_0, arg_9_1)
+	assert(isa(arg_9_1, FeastDorm))
 
-	slot0.data = slot1
+	arg_9_0.data = arg_9_1
 end
 
-function slot0.GetConsumeList(slot0)
-	slot5 = pg.activity_partyinvitation_template[(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST):getConfig("config_data")[3] or {})[1]]
+function var_0_0.GetConsumeList(arg_10_0)
+	local var_10_0 = (getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST):getConfig("config_data")[3] or {})[1]
+	local var_10_1 = pg.activity_partyinvitation_template[var_10_0]
+	local var_10_2 = var_10_1.invitationID[2]
+	local var_10_3 = var_10_1.giftID[2]
 
-	return slot5.invitationID[2], slot5.giftID[2]
+	return var_10_2, var_10_3
 end
 
-function slot3(slot0)
-	slot2 = {}
-	slot3 = {}
+local function var_0_3(arg_11_0)
+	local var_11_0 = _.filter(pg.ship_data_group.all, function(arg_12_0)
+		return pg.ship_data_group[arg_12_0].handbook_type ~= 1
+	end)
+	local var_11_1 = {}
+	local var_11_2 = {}
 
-	for slot7, slot8 in ipairs(_.filter(pg.ship_data_group.all, function (slot0)
-		return pg.ship_data_group[slot0].handbook_type ~= 1
-	end)) do
-		if slot0[pg.ship_data_group[slot8].group_type] then
-			table.insert(slot2, slot10)
+	for iter_11_0, iter_11_1 in ipairs(var_11_0) do
+		local var_11_3 = pg.ship_data_group[iter_11_1]
+		local var_11_4 = arg_11_0[var_11_3.group_type]
+
+		if var_11_4 then
+			table.insert(var_11_1, var_11_4)
 		else
-			table.insert(slot2, ShipGroup.New({
-				id = slot9.group_type
+			table.insert(var_11_1, ShipGroup.New({
+				id = var_11_3.group_type
 			}))
 		end
 	end
 
-	return slot2, slot3
+	return var_11_1, var_11_2
 end
 
-function slot4(slot0, slot1, slot2, slot3)
-	slot4 = {}
+local function var_0_4(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = {}
 
-	for slot8, slot9 in pairs(slot0) do
-		if not table.contains(slot1, slot9.id) then
-			table.insert(slot4, slot9)
+	for iter_13_0, iter_13_1 in pairs(arg_13_0) do
+		if not table.contains(arg_13_1, iter_13_1.id) then
+			table.insert(var_13_0, iter_13_1)
 		end
 	end
 
-	slot5 = {}
-	slot6 = {}
-	slot7 = {}
+	local var_13_1 = {}
+	local var_13_2 = {}
+	local var_13_3 = {}
 
-	for slot11, slot12 in ipairs(slot4) do
-		for slot17, slot18 in ipairs(ShipGroup.getSkinList(slot12.id)) do
-			table.insert(ShipSkin.GetShopTypeIdBySkinId(slot18.id, slot7) == 7 and slot5 or slot6, slot12)
+	for iter_13_2, iter_13_3 in ipairs(var_13_0) do
+		local var_13_4 = ShipGroup.getSkinList(iter_13_3.id)
+
+		for iter_13_4, iter_13_5 in ipairs(var_13_4) do
+			local var_13_5 = ShipSkin.GetShopTypeIdBySkinId(iter_13_5.id, var_13_3) == 7 and var_13_1 or var_13_2
+
+			table.insert(var_13_5, iter_13_3)
 		end
 	end
 
-	shuffle(slot5)
-	shuffle(slot6)
+	shuffle(var_13_1)
+	shuffle(var_13_2)
 
-	for slot11, slot12 in ipairs(slot5) do
-		if table.getCount(slot2) == slot3 then
+	for iter_13_6, iter_13_7 in ipairs(var_13_1) do
+		if table.getCount(arg_13_2) == arg_13_3 then
 			break
 		end
 
-		slot2[slot12.id] = slot12
+		arg_13_2[iter_13_7.id] = iter_13_7
 	end
 
-	for slot11, slot12 in ipairs(slot6) do
-		if table.getCount(slot2) == slot3 then
+	for iter_13_8, iter_13_9 in ipairs(var_13_2) do
+		if table.getCount(arg_13_2) == arg_13_3 then
 			break
 		end
 
-		slot2[slot12.id] = slot12
+		arg_13_2[iter_13_9.id] = iter_13_9
 	end
 end
 
-function slot0.RandomShips(slot0, slot1, slot2)
-	slot3 = pg.activity_partyinvitation_template or {}
-	slot4 = {}
+function var_0_0.RandomShips(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = pg.activity_partyinvitation_template or {}
+	local var_14_1 = {}
 
-	for slot8, slot9 in ipairs(slot1) do
-		table.insert(slot4, slot3[slot9].groupid)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_1) do
+		table.insert(var_14_1, var_14_0[iter_14_1].groupid)
 	end
 
-	for slot9, slot10 in pairs(slot0:getRawData():GetFeastShipList()) do
-		if not table.contains(slot4, slot9) then
-			table.insert(slot4, slot9)
+	local var_14_2 = arg_14_0:getRawData():GetFeastShipList()
+
+	for iter_14_2, iter_14_3 in pairs(var_14_2) do
+		if not table.contains(var_14_1, iter_14_2) then
+			table.insert(var_14_1, iter_14_2)
 		end
 	end
 
-	slot7, slot8 = uv0(getProxy(CollectionProxy):RawgetGroups())
-	slot9 = {}
+	local var_14_3 = getProxy(CollectionProxy):RawgetGroups()
+	local var_14_4, var_14_5 = var_0_3(var_14_3)
+	local var_14_6 = {}
 
-	uv1(slot7, slot4, slot9, slot2)
+	var_0_4(var_14_4, var_14_1, var_14_6, arg_14_2)
+	var_0_4(var_14_5, var_14_1, var_14_6, arg_14_2)
 
-	slot14 = slot2
+	local var_14_7 = {}
 
-	uv1(slot8, slot4, slot9, slot14)
-
-	slot10 = {}
-
-	for slot14, slot15 in pairs(slot9) do
-		table.insert(slot10, slot15)
+	for iter_14_4, iter_14_5 in pairs(var_14_6) do
+		table.insert(var_14_7, iter_14_5)
 	end
 
-	return slot10
+	return var_14_7
 end
 
-function slot0.AddRefreshTimer(slot0)
-	slot0:RemoveRefreshTimer()
+function var_0_0.AddRefreshTimer(arg_15_0)
+	arg_15_0:RemoveRefreshTimer()
 
-	slot0.timer = Timer.New(function ()
-		uv0:RemoveRefreshTimer()
+	local var_15_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_15_1 = GetZeroTime() - var_15_0
 
-		if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) and not slot0:isEnd() then
-			uv1(uv0, slot0, function ()
+	arg_15_0.timer = Timer.New(function()
+		arg_15_0:RemoveRefreshTimer()
+
+		local var_16_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
+
+		if var_16_0 and not var_16_0:isEnd() then
+			var_0_2(arg_15_0, var_16_0, function()
+				return
 			end)
 		end
-	end, GetZeroTime() - pg.TimeMgr.GetInstance():GetServerTime() + 1, 1)
+	end, var_15_1 + 1, 1)
 
-	slot0.timer:Start()
+	arg_15_0.timer:Start()
 end
 
-function slot0.RemoveRefreshTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveRefreshTimer(arg_18_0)
+	if arg_18_0.timer then
+		arg_18_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_18_0.timer = nil
 	end
 end
 
-function slot0.remove(slot0)
-	slot0:RemoveRefreshTimer()
+function var_0_0.remove(arg_19_0)
+	arg_19_0:RemoveRefreshTimer()
 end
 
-function slot0.GetBuffList(slot0)
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT) or slot1:isEnd() then
+function var_0_0.GetBuffList(arg_20_0)
+	local var_20_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT)
+
+	if not var_20_0 or var_20_0:isEnd() then
 		return {}
 	end
 
-	return slot1:GetBuffList()
+	return var_20_0:GetBuffList()
 end
 
-function slot0.GetTaskList(slot0)
-	slot1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_TASK_ACT)
+function var_0_0.GetTaskList(arg_21_0)
+	local var_21_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_TASK_ACT)
 
-	assert(slot1)
+	assert(var_21_0)
 
-	slot2 = {}
-	slot3 = getProxy(TaskProxy)
-	slot7 = "config_data"
+	local var_21_1 = {}
+	local var_21_2 = getProxy(TaskProxy)
 
-	for slot7, slot8 in ipairs(slot1:getConfig(slot7)) do
-		if slot3:getTaskById(slot8) or slot3:getFinishTaskById(slot8) then
-			table.insert(slot2, slot8)
+	for iter_21_0, iter_21_1 in ipairs(var_21_0:getConfig("config_data")) do
+		if var_21_2:getTaskById(iter_21_1) or var_21_2:getFinishTaskById(iter_21_1) then
+			table.insert(var_21_1, iter_21_1)
 		end
 	end
 
-	return slot2
+	return var_21_1
 end
 
-function slot0.GetPtActData(slot0)
-	slot1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT)
+function var_0_0.GetPtActData(arg_22_0)
+	local var_22_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT)
 
-	assert(slot1)
+	assert(var_22_0)
 
-	return ActivityPtData.New(slot1)
+	return (ActivityPtData.New(var_22_0))
 end
 
-function slot0.GetSubmittedTaskStories(slot0)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST) or slot1:isEnd() then
+function var_0_0.GetSubmittedTaskStories(arg_23_0)
+	local var_23_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST)
+
+	if not var_23_0 or var_23_0:isEnd() then
 		return {}
 	end
 
-	slot2 = slot1:getConfig("config_client")
-	slot4 = {}
+	local var_23_1 = var_23_0:getConfig("config_client")
+	local var_23_2 = {
+		var_23_1[8],
+		var_23_1[9]
+	}
+	local var_23_3 = {}
 
-	for slot8, slot9 in ipairs({
-		slot2[8],
-		slot2[9]
-	}) do
-		slot10 = slot9[1]
+	for iter_23_0, iter_23_1 in ipairs(var_23_2) do
+		local var_23_4 = iter_23_1[1]
+		local var_23_5 = iter_23_1[2]
 
-		if not pg.NewStoryMgr.GetInstance():IsPlayed(slot9[2]) then
-			slot4[slot10] = slot11
+		if not pg.NewStoryMgr.GetInstance():IsPlayed(var_23_5) then
+			var_23_3[var_23_4] = var_23_5
 		end
 	end
 
-	return slot4
+	return var_23_3
 end
 
-function slot0.ShouldTipPt(slot0)
-	if slot0:GetPtActData():AnyAwardCanGet() then
+function var_0_0.ShouldTipPt(arg_24_0)
+	if arg_24_0:GetPtActData():AnyAwardCanGet() then
 		return true
 	end
 
 	return false
 end
 
-function slot0.ShouldTipFeastTask(slot0)
-	slot1 = getProxy(TaskProxy)
+function var_0_0.ShouldTipFeastTask(arg_25_0)
+	local var_25_0 = getProxy(TaskProxy)
+	local var_25_1 = arg_25_0:GetTaskList()
 
-	for slot6, slot7 in ipairs(slot0:GetTaskList()) do
-		if slot1:getTaskById(slot7) and slot8:isFinish() and not slot8:isReceive() then
+	for iter_25_0, iter_25_1 in ipairs(var_25_1) do
+		local var_25_2 = var_25_0:getTaskById(iter_25_1)
+
+		if var_25_2 and var_25_2:isFinish() and not var_25_2:isReceive() then
 			return true
 		end
 	end
@@ -265,26 +298,27 @@ function slot0.ShouldTipFeastTask(slot0)
 	return false
 end
 
-function slot0.ShouldTipTask(slot0)
-	if slot0:ShouldTipPt() then
+function var_0_0.ShouldTipTask(arg_26_0)
+	if arg_26_0:ShouldTipPt() then
 		return true
 	end
 
-	if slot0:ShouldTipFeastTask() then
+	if arg_26_0:ShouldTipFeastTask() then
 		return true
 	end
 
 	return false
 end
 
-function slot0.ShouldTipInvitation(slot0)
-	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
-	slot2, slot3 = slot0:GetConsumeList()
-	slot4 = slot1:getVitemNumber(slot2)
-	slot5 = slot1:getVitemNumber(slot3)
+function var_0_0.ShouldTipInvitation(arg_27_0)
+	local var_27_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	local var_27_1, var_27_2 = arg_27_0:GetConsumeList()
+	local var_27_3 = var_27_0:getVitemNumber(var_27_1)
+	local var_27_4 = var_27_0:getVitemNumber(var_27_2)
+	local var_27_5 = arg_27_0.data:GetInvitedFeastShipList()
 
-	for slot10, slot11 in ipairs(slot0.data:GetInvitedFeastShipList()) do
-		if not slot11:GotGift() and slot5 > 0 or not slot11:GotTicket() and slot4 > 0 then
+	for iter_27_0, iter_27_1 in ipairs(var_27_5) do
+		if not iter_27_1:GotGift() and var_27_4 > 0 or not iter_27_1:GotTicket() and var_27_3 > 0 then
 			return true
 		end
 	end
@@ -292,68 +326,78 @@ function slot0.ShouldTipInvitation(slot0)
 	return false
 end
 
-function slot0.ShouldTip(slot0)
-	if not slot0.data then
+function var_0_0.ShouldTip(arg_28_0)
+	if not arg_28_0.data then
 		return false
 	end
 
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_TASK_ACT) or slot1:isEnd() then
+	local var_28_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_TASK_ACT)
+
+	if not var_28_0 or var_28_0:isEnd() then
 		return false
 	end
 
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT) or slot2:isEnd() then
+	local var_28_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.FEAST_PT_ACT)
+
+	if not var_28_1 or var_28_1:isEnd() then
 		return false
 	end
 
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG) or slot3:isEnd() then
+	local var_28_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+
+	if not var_28_2 or var_28_2:isEnd() then
 		return false
 	end
 
-	if slot0.data == nil then
+	if arg_28_0.data == nil then
 		return false
 	end
 
-	for slot8, slot9 in pairs(slot0.data:GetFeastShipList()) do
-		if slot9:HasBubble() then
+	local var_28_3 = arg_28_0.data:GetFeastShipList()
+
+	for iter_28_0, iter_28_1 in pairs(var_28_3) do
+		if iter_28_1:HasBubble() then
 			return true
 		end
 	end
 
-	if slot0:ShouldTipTask() then
+	if arg_28_0:ShouldTipTask() then
 		return true
 	end
 
-	if slot0:ShouldTipInvitation() then
+	if arg_28_0:ShouldTipInvitation() then
 		return true
 	end
 
 	return false
 end
 
-function slot0.HandleTaskStories(slot0, slot1, slot2)
-	if not slot0:GetSubmittedTaskStories() or table.getCount(slot3) == 0 then
-		if slot2 then
-			slot2()
+function var_0_0.HandleTaskStories(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0 = arg_29_0:GetSubmittedTaskStories()
+
+	if not var_29_0 or table.getCount(var_29_0) == 0 then
+		if arg_29_2 then
+			arg_29_2()
 		end
 
 		return
 	end
 
-	slot4 = {}
+	local var_29_1 = {}
 
-	for slot8, slot9 in ipairs(slot1) do
-		if slot3[slot9] ~= nil then
-			table.insert(slot4, slot3[slot9])
+	for iter_29_0, iter_29_1 in ipairs(arg_29_1) do
+		if var_29_0[iter_29_1] ~= nil then
+			table.insert(var_29_1, var_29_0[iter_29_1])
 		end
 	end
 
-	if #slot4 > 0 then
-		if slot2 then
-			pg.NewStoryMgr.GetInstance():SeriesPlay(slot4, slot2)
+	if #var_29_1 > 0 then
+		if arg_29_2 then
+			pg.NewStoryMgr.GetInstance():SeriesPlay(var_29_1, arg_29_2)
 		else
-			pg.NewStoryMgr.GetInstance():SeriesPlay(slot4)
+			pg.NewStoryMgr.GetInstance():SeriesPlay(var_29_1)
 		end
 	end
 end
 
-return slot0
+return var_0_0

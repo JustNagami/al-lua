@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "UI10201",
 	mode = 3,
 	noWaitFade = true,
@@ -134,12 +134,7 @@ return {
 			},
 			sequence = {
 				{
-					[[
-          第一章   珍珠之泪 <size=34.5>Tears Of Pearls</size> 
-
-
-
-]],
+					"          第一章   珍珠之泪 <size=34.5>Tears Of Pearls</size> \n\n\n\n",
 					2
 				}
 			}

@@ -1,35 +1,40 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffOverrideBullet = class("BattleBuffOverrideBullet", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffOverrideBullet.__name = "BattleBuffOverrideBullet"
-slot1 = slot0.Battle.BattleBuffOverrideBullet
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffOverrideBullet = class("BattleBuffOverrideBullet", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffOverrideBullet.__name = "BattleBuffOverrideBullet"
+
+local var_0_1 = var_0_0.Battle.BattleBuffOverrideBullet
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._bulletType = slot0._tempData.arg_list.bullet_type
-	slot0._override = slot0._tempData.arg_list.override
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._bulletType = arg_2_0._tempData.arg_list.bullet_type
+	arg_2_0._override = arg_2_0._tempData.arg_list.override
 end
 
-function slot1.onBulletCreate(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onBulletCreate(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if not arg_3_0:equipIndexRequire(arg_3_3.equipIndex) then
 		return
 	end
 
-	if slot3._bullet:GetType() == slot0._bulletType then
-		slot0:overrideBullet(slot4)
+	local var_3_0 = arg_3_3._bullet
+
+	if var_3_0:GetType() == arg_3_0._bulletType then
+		arg_3_0:overrideBullet(var_3_0)
 	end
 end
 
-function slot1.overrideBullet(slot0, slot1)
-	for slot5, slot6 in pairs(slot0._override) do
-		if slot5 == "diverFilter" then
-			slot1:SetDiverFilter(slot6)
-			slot1:ResetCldSurface()
-		elseif slot5 == "ignoreShield" then
-			slot1:SetIgnoreShield(slot6)
+function var_0_1.overrideBullet(arg_4_0, arg_4_1)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0._override) do
+		if iter_4_0 == "diverFilter" then
+			arg_4_1:SetDiverFilter(iter_4_1)
+			arg_4_1:ResetCldSurface()
+		elseif iter_4_0 == "ignoreShield" then
+			arg_4_1:SetIgnoreShield(iter_4_1)
 		end
 	end
 end

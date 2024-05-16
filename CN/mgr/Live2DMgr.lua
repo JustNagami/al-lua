@@ -1,15 +1,16 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.Live2DMgr = singletonClass("Live2DMgr")
-this = pg.Live2DMgr
 
-function this.Ctor(slot0)
-	slot0.loader = AutoLoader.New()
+local var_0_0 = pg.Live2DMgr
+
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.loader = AutoLoader.New()
 end
 
-function this.GetLive2DModelAsync(slot0, slot1, slot2)
-	return slot0.loader:LoadLive2D(slot1, slot2)
+function var_0_0.GetLive2DModelAsync(arg_2_0, arg_2_1, arg_2_2)
+	return (arg_2_0.loader:LoadLive2D(arg_2_1, arg_2_2))
 end
 
-function this.StopLoadingLive2d(slot0, slot1)
-	slot0.loader:ClearRequest(slot1)
+function var_0_0.StopLoadingLive2d(arg_3_0, arg_3_1)
+	arg_3_0.loader:ClearRequest(arg_3_1)
 end

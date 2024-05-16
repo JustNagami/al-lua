@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.chapter_capture = {
 	[1150001] = {
 		escape_grid_icon = 0,

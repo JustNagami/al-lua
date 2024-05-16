@@ -1,58 +1,62 @@
-slot0 = class("GuildDynamicBgPathGrid")
+﻿local var_0_0 = class("GuildDynamicBgPathGrid")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.canWalk = slot1.canWalk
-	slot0.position = slot1.position
-	slot0.sizeDelta = slot1.sizeDelta
-	slot0.startPosOffset = slot1.startPosOffset
-	slot0.lockCnt = 0
-	slot0.localPosition = slot0.startPosOffset + Vector3(slot0.position.x * slot0.sizeDelta.x, slot0.position.y * slot0.sizeDelta.y, 0)
-	slot0.centerPosition = Vector3(slot0.localPosition.x + slot0.sizeDelta.x / 2, slot0.localPosition.y + slot0.sizeDelta.y / 2)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.canWalk = arg_1_1.canWalk
+	arg_1_0.position = arg_1_1.position
+	arg_1_0.sizeDelta = arg_1_1.sizeDelta
+	arg_1_0.startPosOffset = arg_1_1.startPosOffset
+	arg_1_0.lockCnt = 0
+	arg_1_0.localPosition = arg_1_0.startPosOffset + Vector3(arg_1_0.position.x * arg_1_0.sizeDelta.x, arg_1_0.position.y * arg_1_0.sizeDelta.y, 0)
+	arg_1_0.centerPosition = Vector3(arg_1_0.localPosition.x + arg_1_0.sizeDelta.x / 2, arg_1_0.localPosition.y + arg_1_0.sizeDelta.y / 2)
 end
 
-function slot0.GetPosition(slot0)
-	return slot0.position
+function var_0_0.GetPosition(arg_2_0)
+	return arg_2_0.position
 end
 
-function slot0.GetLocalPosition(slot0)
-	return slot0.localPosition
+function var_0_0.GetLocalPosition(arg_3_0)
+	return arg_3_0.localPosition
 end
 
-function slot0.GetCenterPosition(slot0)
-	return slot0.centerPosition
+function var_0_0.GetCenterPosition(arg_4_0)
+	return arg_4_0.centerPosition
 end
 
-function slot0.CanWalk(slot0)
-	return slot0.canWalk and not slot0:IsLock()
+function var_0_0.CanWalk(arg_5_0)
+	return arg_5_0.canWalk and not arg_5_0:IsLock()
 end
 
-function slot0.Lock(slot0)
-	slot0.lockCnt = slot0.lockCnt + 1
+function var_0_0.Lock(arg_6_0)
+	arg_6_0.lockCnt = arg_6_0.lockCnt + 1
 end
 
-function slot0.Unlock(slot0)
-	if slot0.lockCnt > 0 then
-		slot0.lockCnt = slot0.lockCnt - 1
+function var_0_0.Unlock(arg_7_0)
+	if arg_7_0.lockCnt > 0 then
+		arg_7_0.lockCnt = arg_7_0.lockCnt - 1
 	end
 end
 
-function slot0.UnlockAll(slot0)
-	slot0.lockCnt = 0
+function var_0_0.UnlockAll(arg_8_0)
+	arg_8_0.lockCnt = 0
 end
 
-function slot0.IsLock(slot0)
-	return slot0.lockCnt > 0
+function var_0_0.IsLock(arg_9_0)
+	return arg_9_0.lockCnt > 0
 end
 
-function slot0.GetAroundGrids(slot0)
-	slot1 = slot0.position
+function var_0_0.GetAroundGrids(arg_10_0)
+	local var_10_0 = arg_10_0.position
+	local var_10_1 = Vector2(var_10_0.x, var_10_0.y + 1)
+	local var_10_2 = Vector2(var_10_0.x, var_10_0.y - 1)
+	local var_10_3 = Vector2(var_10_0.x + 1, var_10_0.y)
+	local var_10_4 = Vector2(var_10_0.x - 1, var_10_0.y)
 
 	return {
-		Vector2(slot1.x, slot1.y + 1),
-		Vector2(slot1.x, slot1.y - 1),
-		Vector2(slot1.x + 1, slot1.y),
-		Vector2(slot1.x - 1, slot1.y)
+		var_10_1,
+		var_10_2,
+		var_10_3,
+		var_10_4
 	}
 end
 
-return slot0
+return var_0_0

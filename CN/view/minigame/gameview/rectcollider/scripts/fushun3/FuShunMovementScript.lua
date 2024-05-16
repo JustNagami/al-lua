@@ -1,48 +1,55 @@
-slot0 = class("FuShunMovementScript", import("..RectBaseScript"))
+﻿local var_0_0 = class("FuShunMovementScript", import("..RectBaseScript"))
 
-function slot0.onInit(slot0)
-	slot0._loop = true
-	slot0._active = true
-	slot0._weight = 1
-	slot0._scriptTime = nil
-	slot0._name = "FuShunMovementScript"
+function var_0_0.onInit(arg_1_0)
+	arg_1_0._loop = true
+	arg_1_0._active = true
+	arg_1_0._weight = 1
+	arg_1_0._scriptTime = nil
+	arg_1_0._name = "FuShunMovementScript"
 end
 
-function slot0.onStep(slot0)
-	slot0._collisionInfo.playerInput.x = 1
-	slot3 = slot0._collisionInfo.velocityXSmoothing
+function var_0_0.onStep(arg_2_0)
+	arg_2_0._collisionInfo.playerInput.x = 1
 
-	if slot0._collisionInfo:getVelocity().x == slot0._collisionInfo.playerInput.x * slot0._collisionInfo.config.moveSpeed then
-		slot3 = 0
+	local var_2_0 = arg_2_0._collisionInfo.playerInput.x * arg_2_0._collisionInfo.config.moveSpeed
+	local var_2_1 = arg_2_0._collisionInfo:getVelocity()
+	local var_2_2 = arg_2_0._collisionInfo.velocityXSmoothing
+
+	if var_2_1.x == var_2_0 then
+		var_2_2 = 0
 	end
 
-	slot2.x, slot3 = Mathf.SmoothDamp(slot2.x, slot1, slot3, slot0._collisionInfo.below and slot0._collisionInfo.config.accelerationTimeGrounded or slot0._collisionInfo.config.accelerationTimeAirborne)
+	local var_2_3 = arg_2_0._collisionInfo.below and arg_2_0._collisionInfo.config.accelerationTimeGrounded or arg_2_0._collisionInfo.config.accelerationTimeAirborne
+	local var_2_4
 
-	if not slot0._collisionInfo.below then
-		slot2.y = slot2.y + slot0._collisionInfo.config.gravity * slot0._collisionInfo.frameRate
+	var_2_1.x, var_2_4 = Mathf.SmoothDamp(var_2_1.x, var_2_0, var_2_2, var_2_3)
+
+	if not arg_2_0._collisionInfo.below then
+		var_2_1.y = var_2_1.y + arg_2_0._collisionInfo.config.gravity * arg_2_0._collisionInfo.frameRate
 	end
 
-	slot0._collisionInfo:setVelocity(slot2)
+	arg_2_0._collisionInfo:setVelocity(var_2_1)
 
-	slot0._collisionInfo.velocityXSmoothing = slot3
+	arg_2_0._collisionInfo.velocityXSmoothing = var_2_4
 end
 
-function slot0.onLateStep(slot0)
+function var_0_0.onLateStep(arg_3_0)
+	return
 end
 
-function slot0.onTrigger(slot0)
-	if Application.isEditor and slot0._triggerKey == KeyCode.A or slot0._triggerKey == KeyCode.D then
-		slot1 = slot0._keyInfo:getKeyCode(KeyCode.A)
-		slot2 = slot0._keyInfo:getKeyCode(KeyCode.D)
+function var_0_0.onTrigger(arg_4_0)
+	if Application.isEditor and arg_4_0._triggerKey == KeyCode.A or arg_4_0._triggerKey == KeyCode.D then
+		local var_4_0 = arg_4_0._keyInfo:getKeyCode(KeyCode.A)
+		local var_4_1 = arg_4_0._keyInfo:getKeyCode(KeyCode.D)
 
-		if slot0._triggerKey == KeyCode.A then
-			slot0._collisionInfo.playerInput.x = slot0._triggerStatus and -1 or slot2 and 1 or 0
-		elseif slot0._triggerKey == KeyCode.D then
-			slot0._collisionInfo.playerInput.x = slot0._triggerStatus and 1 or slot1 and -1 or 0
+		if arg_4_0._triggerKey == KeyCode.A then
+			arg_4_0._collisionInfo.playerInput.x = arg_4_0._triggerStatus and -1 or var_4_1 and 1 or 0
+		elseif arg_4_0._triggerKey == KeyCode.D then
+			arg_4_0._collisionInfo.playerInput.x = arg_4_0._triggerStatus and 1 or var_4_0 and -1 or 0
 		end
 
-		slot0._collisionInfo.directionalInput = slot0._collisionInfo.playerInput
+		arg_4_0._collisionInfo.directionalInput = arg_4_0._collisionInfo.playerInput
 	end
 end
 
-return slot0
+return var_0_0

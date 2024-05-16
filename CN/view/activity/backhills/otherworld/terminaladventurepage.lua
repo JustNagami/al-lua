@@ -1,179 +1,191 @@
-slot0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
-slot0.BIND_PT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_PT_ID
-slot0.BIND_TASK_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_TASK_ID
+﻿local var_0_0 = class("TerminalAdventurePage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.BIND_PT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_PT_ID
+var_0_0.BIND_TASK_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_TASK_ID
+
+function var_0_0.getUIName(arg_1_0)
 	return "TerminalAdventurePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0._tf.name = tostring(OtherworldTerminalLayer.PAGE_ADVENTURE)
-	slot0.levelTF = slot0:findTF("frame/level")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0._tf.name = tostring(OtherworldTerminalLayer.PAGE_ADVENTURE)
+	arg_2_0.levelTF = arg_2_0:findTF("frame/level")
 
-	setText(slot0:findTF("title/content/Text", slot0.levelTF), i18n("adventure_award_title"))
-	setText(slot0:findTF("progress/title", slot0.levelTF), i18n("adventure_progress_title"))
-	setText(slot0:findTF("lv", slot0.levelTF), i18n("adventure_lv_title"))
+	setText(arg_2_0:findTF("title/content/Text", arg_2_0.levelTF), i18n("adventure_award_title"))
+	setText(arg_2_0:findTF("progress/title", arg_2_0.levelTF), i18n("adventure_progress_title"))
+	setText(arg_2_0:findTF("lv", arg_2_0.levelTF), i18n("adventure_lv_title"))
 
-	slot0.ptIconTF = slot0:findTF("progress/Image", slot0.levelTF)
-	slot0.ptValueTF = slot0:findTF("progress/value", slot0.levelTF)
-	slot0.ptLvTF = slot0:findTF("lv/Text", slot0.levelTF)
-	slot0.awardView = slot0:findTF("awards/view", slot0.levelTF)
-	slot0.awardUIList = UIItemList.New(slot0:findTF("content", slot0.awardView), slot0:findTF("content/tpl", slot0.awardView))
-	slot0.recordTF = slot0:findTF("frame/record")
+	arg_2_0.ptIconTF = arg_2_0:findTF("progress/Image", arg_2_0.levelTF)
+	arg_2_0.ptValueTF = arg_2_0:findTF("progress/value", arg_2_0.levelTF)
+	arg_2_0.ptLvTF = arg_2_0:findTF("lv/Text", arg_2_0.levelTF)
+	arg_2_0.awardView = arg_2_0:findTF("awards/view", arg_2_0.levelTF)
+	arg_2_0.awardUIList = UIItemList.New(arg_2_0:findTF("content", arg_2_0.awardView), arg_2_0:findTF("content/tpl", arg_2_0.awardView))
+	arg_2_0.recordTF = arg_2_0:findTF("frame/record")
 
-	setText(slot0:findTF("title/content/Text", slot0.recordTF), i18n("adventure_record_title"))
-	setText(slot0:findTF("grade", slot0.recordTF), i18n("adventure_record_grade_title"))
+	setText(arg_2_0:findTF("title/content/Text", arg_2_0.recordTF), i18n("adventure_record_title"))
+	setText(arg_2_0:findTF("grade", arg_2_0.recordTF), i18n("adventure_record_grade_title"))
 
-	slot0.recordGradeTF = slot0:findTF("grade/Text", slot0.recordTF)
-	slot0.taskUIList = UIItemList.New(slot0:findTF("form", slot0.recordTF), slot0:findTF("form/tpl", slot0.recordTF))
+	arg_2_0.recordGradeTF = arg_2_0:findTF("grade/Text", arg_2_0.recordTF)
+	arg_2_0.taskUIList = UIItemList.New(arg_2_0:findTF("form", arg_2_0.recordTF), arg_2_0:findTF("form/tpl", arg_2_0.recordTF))
 
-	setText(slot0:findTF("frame/tip"), i18n("adventure_award_end_tip"))
+	setText(arg_2_0:findTF("frame/tip"), i18n("adventure_award_end_tip"))
 
-	slot0.getBtn = slot0:findTF("frame/get_all_btn")
+	arg_2_0.getBtn = arg_2_0:findTF("frame/get_all_btn")
 
-	setText(slot0:findTF("Text", slot0.getBtn), i18n("adventure_get_all"))
+	setText(arg_2_0:findTF("Text", arg_2_0.getBtn), i18n("adventure_get_all"))
 
-	slot0.getGreyBtn = slot0:findTF("frame/get_all_btn_grey")
+	arg_2_0.getGreyBtn = arg_2_0:findTF("frame/get_all_btn_grey")
 
-	setText(slot0:findTF("Text", slot0.getGreyBtn), i18n("adventure_get_all"))
+	setText(arg_2_0:findTF("Text", arg_2_0.getGreyBtn), i18n("adventure_get_all"))
 end
 
-function slot0.OnInit(slot0)
-	slot1 = getProxy(ActivityProxy):getActivityById(uv0.BIND_PT_ACT_ID)
+function var_0_0.OnInit(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getActivityById(var_0_0.BIND_PT_ACT_ID)
 
-	assert(slot1, "not exist bind pt act, id" .. uv0.BIND_PT_ACT_ID)
+	assert(var_3_0, "not exist bind pt act, id" .. var_0_0.BIND_PT_ACT_ID)
 
-	slot0.ptData = ActivityPtData.New(slot1)
-	slot0.taskActivity = getProxy(ActivityProxy):getActivityById(uv0.BIND_TASK_ACT_ID)
+	arg_3_0.ptData = ActivityPtData.New(var_3_0)
+	arg_3_0.taskActivity = getProxy(ActivityProxy):getActivityById(var_0_0.BIND_TASK_ACT_ID)
 
-	assert(slot0.taskActivity, "not exist bind task act, id" .. uv0.BIND_TASK_ACT_ID)
-	onButton(slot0, slot0.getBtn, function ()
-		uv0:emit(OtherworldTerminalMediator.ON_GET_PT_ALL_AWARD, {
-			actId = uv1.BIND_PT_ACT_ID,
-			arg1 = uv0.ptData:GetCurrTarget()
+	assert(arg_3_0.taskActivity, "not exist bind task act, id" .. var_0_0.BIND_TASK_ACT_ID)
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		local var_4_0 = arg_3_0.ptData:GetCurrTarget()
+
+		arg_3_0:emit(OtherworldTerminalMediator.ON_GET_PT_ALL_AWARD, {
+			actId = var_0_0.BIND_PT_ACT_ID,
+			arg1 = var_4_0
 		})
 	end, SFX_PANEL)
-	slot0:InitPtUI()
-	slot0:UpdatePtView()
-	slot0:InitTaskUI()
-	slot0:UpdateTaskView()
+	arg_3_0:InitPtUI()
+	arg_3_0:UpdatePtView()
+	arg_3_0:InitTaskUI()
+	arg_3_0:UpdateTaskView()
 end
 
-function slot0.InitPtUI(slot0)
-	slot3 = slot0.ptData
-	slot2 = Drop.New(slot3:GetRes())
+function var_0_0.InitPtUI(arg_5_0)
+	LoadImageSpriteAsync(Drop.New(arg_5_0.ptData:GetRes()):getIcon(), arg_5_0.ptIconTF, false)
+	arg_5_0.awardUIList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			local var_6_0 = arg_6_1 + 1
+			local var_6_1 = arg_5_0.ptData.dropList[var_6_0]
+			local var_6_2 = arg_5_0.ptData.targets[var_6_0]
+			local var_6_3 = Drop.New({
+				type = var_6_1[1],
+				id = var_6_1[2],
+				count = var_6_1[3]
+			})
 
-	LoadImageSpriteAsync(slot2:getIcon(), slot0.ptIconTF, false)
-
-	slot1 = slot0.awardUIList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot1 + 1
-			slot4 = uv0.ptData.dropList[slot3]
-			slot5 = uv0.ptData.targets[slot3]
-
-			updateDrop(slot2:Find("IconTpl"), Drop.New({
-				type = slot4[1],
-				id = slot4[2],
-				count = slot4[3]
-			}), {
+			updateDrop(arg_6_2:Find("IconTpl"), var_6_3, {
 				hideName = true
 			})
-			onButton(uv0.binder, slot2:Find("IconTpl"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			onButton(arg_5_0.binder, arg_6_2:Find("IconTpl"), function()
+				arg_5_0:emit(BaseUI.ON_DROP, var_6_3)
 			end, SFX_PANEL)
-			setActive(slot2:Find("IconTpl/got"), slot3 <= uv0.ptData:GetLevel())
-			setText(slot2:Find("lv"), "Lv:" .. slot3)
-			setActive(slot2:Find("lv0"), slot3 == 1)
-			setActive(slot2:Find("progress"):Find("left"), slot3 ~= 1)
-			setActive(slot8:Find("right"), slot3 == #uv0.ptData.targets)
 
-			if slot3 <= slot7 then
-				setSlider(slot8, 0, 1, 1)
+			local var_6_4 = arg_5_0.ptData:GetLevel()
+
+			setActive(arg_6_2:Find("IconTpl/got"), var_6_0 <= var_6_4)
+			setText(arg_6_2:Find("lv"), "Lv:" .. var_6_0)
+			setActive(arg_6_2:Find("lv0"), var_6_0 == 1)
+
+			local var_6_5 = arg_6_2:Find("progress")
+
+			setActive(var_6_5:Find("left"), var_6_0 ~= 1)
+			setActive(var_6_5:Find("right"), var_6_0 == #arg_5_0.ptData.targets)
+
+			if var_6_0 <= var_6_4 then
+				setSlider(var_6_5, 0, 1, 1)
 			else
-				slot10 = slot3 == 1 and 0 or uv0.ptData.targets[slot3 - 1]
+				local var_6_6 = arg_5_0.ptData.targets[var_6_0]
+				local var_6_7 = var_6_0 == 1 and 0 or arg_5_0.ptData.targets[var_6_0 - 1]
+				local var_6_8 = arg_5_0.ptData.count
 
-				setSlider(slot8, 0, 1, (uv0.ptData.count - slot10) / (uv0.ptData.targets[slot3] - slot10))
+				setSlider(var_6_5, 0, 1, (var_6_8 - var_6_7) / (var_6_6 - var_6_7))
 			end
 		end
 	end)
 end
 
-function slot0.UpdatePt(slot0, slot1)
-	slot0.ptData = ActivityPtData.New(slot1)
+function var_0_0.UpdatePt(arg_8_0, arg_8_1)
+	arg_8_0.ptData = ActivityPtData.New(arg_8_1)
 
-	slot0:UpdatePtView()
+	arg_8_0:UpdatePtView()
 end
 
-function slot0.UpdatePtView(slot0)
-	slot1 = slot0.ptData:CanGetAward()
+function var_0_0.UpdatePtView(arg_9_0)
+	local var_9_0 = arg_9_0.ptData:CanGetAward()
 
-	setActive(slot0.getBtn, slot1)
-	setActive(slot0.getGreyBtn, not slot1)
+	setActive(arg_9_0.getBtn, var_9_0)
+	setActive(arg_9_0.getGreyBtn, not var_9_0)
 
-	slot2 = slot0.ptData:GetLevel()
-	slot3, slot4 = slot0.ptData:GetResProgress()
+	local var_9_1 = arg_9_0.ptData:GetLevel()
+	local var_9_2, var_9_3 = arg_9_0.ptData:GetResProgress()
 
-	setText(slot0.ptValueTF, math.max(slot4 - slot3, 0))
-	setText(slot0.ptLvTF, slot2)
-	slot0.awardUIList:align(#slot0.ptData.targets)
-	scrollTo(slot0.awardView, slot2 / #slot0.ptData.targets, 0)
+	setText(arg_9_0.ptValueTF, math.max(var_9_3 - var_9_2, 0))
+	setText(arg_9_0.ptLvTF, var_9_1)
+	arg_9_0.awardUIList:align(#arg_9_0.ptData.targets)
+	scrollTo(arg_9_0.awardView, var_9_1 / #arg_9_0.ptData.targets, 0)
 end
 
-function slot0.InitTaskUI(slot0)
-	slot1 = slot0.taskActivity
-	slot0.taskIds = slot1:getConfig("config_data")
-	slot1 = slot0.taskUIList
+function var_0_0.InitTaskUI(arg_10_0)
+	arg_10_0.taskIds = arg_10_0.taskActivity:getConfig("config_data")
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = getProxy(TaskProxy):getTaskById(uv0.taskIds[slot1 + 1])
+	arg_10_0.taskUIList:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			local var_11_0 = arg_10_0.taskIds[arg_11_1 + 1]
+			local var_11_1 = getProxy(TaskProxy):getTaskById(var_11_0)
 
-			setText(uv0:findTF("name", slot2), slot4:getConfig("desc"))
-			setText(uv0:findTF("value", slot2), slot4:getProgress())
+			setText(arg_10_0:findTF("name", arg_11_2), var_11_1:getConfig("desc"))
+			setText(arg_10_0:findTF("value", arg_11_2), var_11_1:getProgress())
 		end
 	end)
 end
 
-function slot0.UpdateTask(slot0, slot1)
-	slot0.taskActivity = slot1
+function var_0_0.UpdateTask(arg_12_0, arg_12_1)
+	arg_12_0.taskActivity = arg_12_1
 
-	slot0:UpdateTaskView()
+	arg_12_0:UpdateTaskView()
 end
 
-function slot0.UpdateTaskView(slot0)
-	slot0.taskUIList:align(#slot0.taskIds)
-	setText(slot0.recordGradeTF, slot0:GetAdventureGrade())
+function var_0_0.UpdateTaskView(arg_13_0)
+	arg_13_0.taskUIList:align(#arg_13_0.taskIds)
+	setText(arg_13_0.recordGradeTF, arg_13_0:GetAdventureGrade())
 end
 
-function slot0.GetAdventureGrade(slot0)
-	for slot5, slot6 in ipairs(slot0.taskActivity:getConfig("config_client")) do
-		if #slot6[2] > 0 then
-			for slot10, slot11 in ipairs(slot6[2]) do
-				slot13 = slot11[2]
+function var_0_0.GetAdventureGrade(arg_14_0)
+	local var_14_0 = arg_14_0.taskActivity:getConfig("config_client")
 
-				if getProxy(TaskProxy):getTaskById(slot11[1]) and slot13 <= slot14:getProgress() then
-					return slot6[1]
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		if #iter_14_1[2] > 0 then
+			for iter_14_2, iter_14_3 in ipairs(iter_14_1[2]) do
+				local var_14_1 = iter_14_3[1]
+				local var_14_2 = iter_14_3[2]
+				local var_14_3 = getProxy(TaskProxy):getTaskById(var_14_1)
+
+				if var_14_3 and var_14_2 <= var_14_3:getProgress() then
+					return iter_14_1[1]
 				end
 			end
 		else
-			return slot6[1]
+			return iter_14_1[1]
 		end
 	end
 
 	return ""
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_15_0)
+	return
 end
 
-function slot0.IsTip()
-	if not getProxy(ActivityProxy):getActivityById(uv0.BIND_PT_ACT_ID) or slot0:isEnd() then
+function var_0_0.IsTip()
+	local var_16_0 = getProxy(ActivityProxy):getActivityById(var_0_0.BIND_PT_ACT_ID)
+
+	if not var_16_0 or var_16_0:isEnd() then
 		return false
 	end
 
-	return ActivityPtData.New(slot0):CanGetAward()
+	return ActivityPtData.New(var_16_0):CanGetAward()
 end
 
-return slot0
+return var_0_0

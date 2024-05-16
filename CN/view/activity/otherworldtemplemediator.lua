@@ -1,23 +1,25 @@
-slot0 = class("OtherWorldTempleMediator", import("..base.ContextMediator"))
-slot0.OPEN_TERMINAL = "OPEN_TERMINAL"
-slot0.SHOW_CHAR_AWARDS = "SHOW_CHAR_AWARDS"
+﻿local var_0_0 = class("OtherWorldTempleMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.OPEN_TERMINAL, function ()
-		uv0:addSubLayers(Context.New({
+var_0_0.OPEN_TERMINAL = "OPEN_TERMINAL"
+var_0_0.SHOW_CHAR_AWARDS = "SHOW_CHAR_AWARDS"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OPEN_TERMINAL, function()
+		arg_1_0:addSubLayers(Context.New({
 			mediator = OtherworldTerminalMediator,
 			viewComponent = OtherworldTerminalLayer
 		}))
 	end)
-	slot0:bind(uv0.SHOW_CHAR_AWARDS, function (slot0, slot1, slot2)
-		uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot2)
+	arg_1_0:bind(var_0_0.SHOW_CHAR_AWARDS, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_3_1, arg_3_2)
 	end)
 end
 
-function slot0.onUIAvalible(slot0)
+function var_0_0.onUIAvalible(arg_4_0)
+	return
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		ActivityProxy.ACTIVITY_OPERATION_DONE,
 		ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS,
@@ -25,25 +27,24 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		if slot3 == ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID then
-			slot0.viewComponent:updateActivity()
-			slot0.viewComponent:displayTempleCharAward()
+	if var_6_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		if var_6_1 == ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID then
+			arg_6_0.viewComponent:updateActivity()
+			arg_6_0.viewComponent:displayTempleCharAward()
 		end
-	elseif slot2 == ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
-			if uv0.callback then
-				uv0.callback()
+	elseif var_6_0 == ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS then
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.awards, function()
+			if var_6_1.callback then
+				var_6_1.callback()
 			end
 		end)
-	elseif slot2 == GAME.ZERO_HOUR_OP_DONE then
-		-- Nothing
+	elseif var_6_0 == GAME.ZERO_HOUR_OP_DONE then
+		-- block empty
 	end
 end
 
-return slot0
+return var_0_0

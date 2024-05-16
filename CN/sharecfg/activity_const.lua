@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_const = {
 	TASK_ACTIVITY_ID = {
 		act_id = 16
@@ -22,7 +22,7 @@ pg.activity_const = {
 		act_id = 171
 	},
 	ACT_NPC_SHIP_ID = {
-		act_id = 5315
+		act_id = 5320
 	},
 	SANLI_7DAYS_LOGIN = {
 		act_id = 274
@@ -1037,8 +1037,5 @@ pg.activity_const = {
 	},
 	MUSIC_FESTIVAL_MEDALCOLLECTION_3 = {
 		act_id = 5309
-	},
-	MUSIC_FESTIVAL_PT_ID_3 = {
-		act_id = 5308
 	}
 }

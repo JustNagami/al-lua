@@ -1,4 +1,52 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160831
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 16591
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160831,
+				delay = 0.1
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 16592,
+				delay = 0.1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -426,53 +474,5 @@ return {
 	id = 16590,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160831
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 16591
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160831,
-				delay = 0.1
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 16592,
-				delay = 0.1
-			}
-		}
-	}
+	desc = ""
 }

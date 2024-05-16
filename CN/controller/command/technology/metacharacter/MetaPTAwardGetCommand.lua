@@ -1,30 +1,31 @@
-slot0 = class("MetaPTAwardGetCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MetaPTAwardGetCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = getProxy(MetaCharacterProxy)
-	slot3 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(MetaCharacterProxy)
+	local var_1_1 = arg_1_1:getBody()
+	local var_1_2 = {
+		group_id = var_1_1.groupID,
+		target_pt = var_1_1.targetCount
+	}
 
-	print("34003 meta pt award send:", slot3.groupID, slot3.targetCount)
+	print("34003 meta pt award send:", var_1_1.groupID, var_1_1.targetCount)
+	pg.ConnectionMgr.GetInstance():Send(34003, var_1_2, 34004, function(arg_2_0)
+		print("34004 meta pt award done:", arg_2_0.result)
 
-	slot5 = pg.ConnectionMgr.GetInstance()
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_1 = var_1_0:getMetaProgressVOByID(var_1_1.groupID)
+			local var_2_2 = var_2_1.metaPtData.targets
+			local var_2_3 = table.indexof(var_2_2, var_1_1.targetCount)
 
-	slot5:Send(34003, {
-		group_id = slot3.groupID,
-		target_pt = slot3.targetCount
-	}, 34004, function (slot0)
-		print("34004 meta pt award done:", slot0.result)
-
-		if slot0.result == 0 then
-			slot2 = uv0:getMetaProgressVOByID(uv1.groupID)
-
-			slot2:updatePTLevel(table.indexof(slot2.metaPtData.targets, uv1.targetCount))
-			uv2:sendNotification(GAME.GET_META_PT_AWARD_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.drop_list)
+			var_2_1:updatePTLevel(var_2_3)
+			arg_1_0:sendNotification(GAME.GET_META_PT_AWARD_DONE, {
+				awards = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(34004 + " : " + slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(34004 + " : " + arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

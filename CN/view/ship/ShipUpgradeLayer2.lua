@@ -1,319 +1,332 @@
-slot0 = class("ShipUpgradeLayer2", import("..base.BaseUI"))
-slot1 = 3
+﻿local var_0_0 = class("ShipUpgradeLayer2", import("..base.BaseUI"))
+local var_0_1 = 3
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShipBreakOutUI"
 end
 
-function slot0.setItems(slot0, slot1)
-	slot0.items = slot1
+function var_0_0.setItems(arg_2_0, arg_2_1)
+	arg_2_0.items = arg_2_1
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
+	arg_3_0.player = arg_3_1
 end
 
-function slot0.init(slot0)
-	slot0.leftPanel = slot0:findTF("blur_panel/left_panel")
-	slot0.stages = slot0:findTF("stageScrollRect/stages", slot0.leftPanel)
-	slot0.stagesSnap = slot0:findTF("stageScrollRect", slot0.leftPanel):GetComponent("HorizontalScrollSnap")
-	slot0.breakView = slot0:findTF("content/Text", slot0.leftPanel)
-	slot0.rightPanel = slot0:findTF("blur_panel/right_panel")
-	slot0.attrs = slot0:findTF("top/attrs", slot0.rightPanel)
-	slot0.starTpl = slot0:findTF("top/rare/startpl", slot0.rightPanel)
+function var_0_0.init(arg_4_0)
+	arg_4_0.leftPanel = arg_4_0:findTF("blur_panel/left_panel")
+	arg_4_0.stages = arg_4_0:findTF("stageScrollRect/stages", arg_4_0.leftPanel)
+	arg_4_0.stagesSnap = arg_4_0:findTF("stageScrollRect", arg_4_0.leftPanel):GetComponent("HorizontalScrollSnap")
+	arg_4_0.breakView = arg_4_0:findTF("content/Text", arg_4_0.leftPanel)
+	arg_4_0.rightPanel = arg_4_0:findTF("blur_panel/right_panel")
+	arg_4_0.attrs = arg_4_0:findTF("top/attrs", arg_4_0.rightPanel)
+	arg_4_0.starTpl = arg_4_0:findTF("top/rare/startpl", arg_4_0.rightPanel)
 
-	setActive(slot0.starTpl, false)
+	setActive(arg_4_0.starTpl, false)
 
-	slot0.starsFrom = slot0:findTF("top/rare/stars_from", slot0.rightPanel)
-	slot0.starsTo = slot0:findTF("top/rare/stars_to", slot0.rightPanel)
-	slot0.starOpera = slot0:findTF("top/rare/opera", slot0.rightPanel)
-	slot0.materials = slot0:findTF("bottom/materials", slot0.rightPanel)
-	slot0.breakOutBtn = slot0:findTF("bottom/break_btn/tip_active/image", slot0.rightPanel)
-	slot0.appendStarTips = slot0:findTF("bottom/panel_title/tip", slot0.rightPanel)
-	slot0.tipActive = slot0:findTF("bottom/break_btn/tip_active", slot0.rightPanel)
-	slot0.tipDeactive = slot0:findTF("bottom/break_btn/tip_deactive", slot0.rightPanel)
-	slot0.recommandBtn = slot0.rightPanel:Find("bottom/auto_btn")
-	slot0.isEnoughItems = true
-	slot0.sea = slot0:findTF("sea", slot0.leftPanel)
-	slot0.rawImage = slot0.sea:GetComponent("RawImage")
+	arg_4_0.starsFrom = arg_4_0:findTF("top/rare/stars_from", arg_4_0.rightPanel)
+	arg_4_0.starsTo = arg_4_0:findTF("top/rare/stars_to", arg_4_0.rightPanel)
+	arg_4_0.starOpera = arg_4_0:findTF("top/rare/opera", arg_4_0.rightPanel)
+	arg_4_0.materials = arg_4_0:findTF("bottom/materials", arg_4_0.rightPanel)
+	arg_4_0.breakOutBtn = arg_4_0:findTF("bottom/break_btn/tip_active/image", arg_4_0.rightPanel)
+	arg_4_0.appendStarTips = arg_4_0:findTF("bottom/panel_title/tip", arg_4_0.rightPanel)
+	arg_4_0.tipActive = arg_4_0:findTF("bottom/break_btn/tip_active", arg_4_0.rightPanel)
+	arg_4_0.tipDeactive = arg_4_0:findTF("bottom/break_btn/tip_deactive", arg_4_0.rightPanel)
+	arg_4_0.recommandBtn = arg_4_0.rightPanel:Find("bottom/auto_btn")
+	arg_4_0.isEnoughItems = true
+	arg_4_0.sea = arg_4_0:findTF("sea", arg_4_0.leftPanel)
+	arg_4_0.rawImage = arg_4_0.sea:GetComponent("RawImage")
 
-	setActive(slot0.rawImage, false)
+	setActive(arg_4_0.rawImage, false)
 
-	slot0.healTF = slot0:findTF("resources/heal")
-	slot0.healTF.transform.localPosition = Vector3(-360, 50, 40)
+	arg_4_0.healTF = arg_4_0:findTF("resources/heal")
+	arg_4_0.healTF.transform.localPosition = Vector3(-360, 50, 40)
 
-	setActive(slot0.healTF, false)
+	setActive(arg_4_0.healTF, false)
 
-	slot0.qCharaContain = slot0:findTF("top/panel_bg/q_chara", slot0.rightPanel)
-	slot0.seaLoading = slot0:findTF("bg/loading", slot0.leftPanel)
+	arg_4_0.qCharaContain = arg_4_0:findTF("top/panel_bg/q_chara", arg_4_0.rightPanel)
+	arg_4_0.seaLoading = arg_4_0:findTF("bg/loading", arg_4_0.leftPanel)
 
-	slot0:playLoadingAni()
+	arg_4_0:playLoadingAni()
 
-	slot0.destroyConfirmWindow = ShipDestoryConfirmWindow.New(slot0._tf, slot0.event)
+	arg_4_0.destroyConfirmWindow = ShipDestoryConfirmWindow.New(arg_4_0._tf, arg_4_0.event)
 end
 
-function slot0.loadChar(slot0)
-	if not slot0.shipPrefab then
-		slot1 = slot0.shipVO
-		slot2 = pg.UIMgr.GetInstance()
+function var_0_0.loadChar(arg_5_0)
+	if not arg_5_0.shipPrefab then
+		local var_5_0 = arg_5_0.shipVO:getPrefab()
 
-		slot2:LoadingOn()
-
-		slot2 = PoolMgr.GetInstance()
-
-		slot2:GetSpineChar(slot1:getPrefab(), true, function (slot0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		PoolMgr.GetInstance():GetSpineChar(var_5_0, true, function(arg_6_0)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			uv0.shipPrefab = uv1
-			uv0.shipModel = slot0
-			tf(slot0).localScale = Vector3(0.8, 0.8, 1)
+			arg_5_0.shipPrefab = var_5_0
+			arg_5_0.shipModel = arg_6_0
+			tf(arg_6_0).localScale = Vector3(0.8, 0.8, 1)
 
-			slot0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-			setParent(slot0, uv0.qCharaContain)
+			arg_6_0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+			setParent(arg_6_0, arg_5_0.qCharaContain)
 		end)
 	end
 end
 
-function slot0.recycleSpineChar(slot0)
-	if slot0.shipPrefab and slot0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(slot0.shipPrefab, slot0.shipModel)
+function var_0_0.recycleSpineChar(arg_7_0)
+	if arg_7_0.shipPrefab and arg_7_0.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg_7_0.shipPrefab, arg_7_0.shipModel)
 
-		slot0.shipPrefab = nil
-		slot0.shipModel = nil
+		arg_7_0.shipPrefab = nil
+		arg_7_0.shipModel = nil
 	end
 end
 
-function slot0.enabledToggles(slot0, slot1)
-	eachChild(slot0.toggles, function (slot0)
-		slot0:GetComponent("Toggle").enabled = uv0
+function var_0_0.enabledToggles(arg_8_0, arg_8_1)
+	eachChild(arg_8_0.toggles, function(arg_9_0)
+		arg_9_0:GetComponent("Toggle").enabled = arg_8_1
 	end)
 end
 
-function slot0.addDragListenter(slot0)
-	slot1 = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot0.dragTrigger = slot1
-	slot2 = nil
-	slot3 = 0
+function var_0_0.addDragListenter(arg_10_0)
+	local var_10_0 = GetOrAddComponent(arg_10_0._tf, "EventTriggerListener")
 
-	slot1:AddBeginDragFunc(function ()
-		uv0 = nil
-		uv1 = 0
+	arg_10_0.dragTrigger = var_10_0
+
+	local var_10_1
+	local var_10_2 = 0
+
+	var_10_0:AddBeginDragFunc(function()
+		var_10_1 = nil
+		var_10_2 = 0
 	end)
-	slot1:AddDragFunc(function (slot0, slot1)
-		slot2 = slot1.position
+	var_10_0:AddDragFunc(function(arg_12_0, arg_12_1)
+		local var_12_0 = arg_12_1.position
 
-		if not uv0 then
-			uv0 = slot2
+		if not var_10_1 then
+			var_10_1 = var_12_0
 		end
 
-		uv1 = slot2.x - uv0.x
+		var_10_2 = var_12_0.x - var_10_1.x
 	end)
-	slot1:AddDragEndFunc(function (slot0, slot1)
-		if uv0 < -50 then
-			uv1:emit(ShipUpgradeMediator2.NEXTSHIP, -1)
-		elseif uv0 > 50 then
-			uv1:emit(ShipUpgradeMediator2.NEXTSHIP)
+	var_10_0:AddDragEndFunc(function(arg_13_0, arg_13_1)
+		if var_10_2 < -50 then
+			arg_10_0:emit(ShipUpgradeMediator2.NEXTSHIP, -1)
+		elseif var_10_2 > 50 then
+			arg_10_0:emit(ShipUpgradeMediator2.NEXTSHIP)
 		end
 	end)
 end
 
-function slot0.didEnter(slot0)
-	slot0.UIMgr = pg.UIMgr.GetInstance()
+function var_0_0.didEnter(arg_14_0)
+	arg_14_0.UIMgr = pg.UIMgr.GetInstance()
 
-	slot0.UIMgr:BlurPanel(slot0._tf, false, {
-		groupName = slot0:getGroupNameFromData(),
+	arg_14_0.UIMgr:BlurPanel(arg_14_0._tf, false, {
+		groupName = arg_14_0:getGroupNameFromData(),
 		weight = LayerWeightConst.LOWER_LAYER
 	})
-	slot0:addDragListenter()
-	onButton(slot0, slot0.seaLoading, function ()
-		if not uv0.previewer then
-			uv0:showBarrage()
+	arg_14_0:addDragListenter()
+	onButton(arg_14_0, arg_14_0.seaLoading, function()
+		if not arg_14_0.previewer then
+			arg_14_0:showBarrage()
 		end
 	end)
-	onButton(slot0, slot0.breakOutBtn, function ()
-		slot0 = {}
+	onButton(arg_14_0, arg_14_0.breakOutBtn, function()
+		local var_16_0 = {}
 
-		if uv0.shipVO:isActivityNpc() then
-			table.insert(slot0, function (slot0)
+		if arg_14_0.shipVO:isActivityNpc() then
+			table.insert(var_16_0, function(arg_17_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("npc_breakout_tip"),
-					onYes = slot0
+					onYes = arg_17_0
 				})
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			slot0, slot1 = ShipStatus.ShipStatusCheck("onModify", uv0.shipVO)
+		seriesAsync(var_16_0, function()
+			local var_18_0, var_18_1 = ShipStatus.ShipStatusCheck("onModify", arg_14_0.shipVO)
 
-			if not slot0 then
-				pg.TipsMgr.GetInstance():ShowTips(slot1)
+			if not var_18_0 then
+				pg.TipsMgr.GetInstance():ShowTips(var_18_1)
 
 				return
 			end
 
-			if uv0.breakCfg.breakout_id == 0 then
+			if arg_14_0.breakCfg.breakout_id == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_upgradeStar_maxLevel"))
 
 				return
 			end
 
-			if uv0.shipVO.level < uv0.breakCfg.level then
+			if arg_14_0.shipVO.level < arg_14_0.breakCfg.level then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_upgradeStar_error_lvLimit"))
 
 				return
 			end
 
-			if not uv0.isEnoughItems then
+			if not arg_14_0.isEnoughItems then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_upgradeStar_error_noEnoughMatrail"))
 
 				return
 			end
 
-			if uv0.player.gold < uv0.breakCfg.use_gold then
+			if arg_14_0.player.gold < arg_14_0.breakCfg.use_gold then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						uv0.breakCfg.use_gold - uv0.player.gold,
-						uv0.breakCfg.use_gold
+						arg_14_0.breakCfg.use_gold - arg_14_0.player.gold,
+						arg_14_0.breakCfg.use_gold
 					}
 				})
 
 				return
 			end
 
-			if not uv0.contextData.materialShipIds or #uv0.contextData.materialShipIds < uv0.breakCfg.use_char_num then
+			if not arg_14_0.contextData.materialShipIds or #arg_14_0.contextData.materialShipIds < arg_14_0.breakCfg.use_char_num then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_upgradeStar_select_material_tip"))
 
 				return
 			end
 
-			uv0:emit(ShipUpgradeMediator2.UPGRADE_SHIP, uv0.contextData.materialShipIds)
+			arg_14_0:emit(ShipUpgradeMediator2.UPGRADE_SHIP, arg_14_0.contextData.materialShipIds)
 		end)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.recommandBtn, function ()
-		slot0 = getProxy(BayProxy)
+	onButton(arg_14_0, arg_14_0.recommandBtn, function()
+		local var_19_0 = getProxy(BayProxy)
 
-		if uv0.contextData.materialShipIds and #uv0.contextData.materialShipIds == uv0.breakCfg.use_char_num then
+		if arg_14_0.contextData.materialShipIds and #arg_14_0.contextData.materialShipIds == arg_14_0.breakCfg.use_char_num then
 			return
 		end
 
-		if #slot0:getUpgradeRecommendShip(uv0.shipVO, uv0.contextData.materialShipIds or {}, uv0.breakCfg.use_char_num) > 0 then
-			slot2 = {}
+		local var_19_1 = var_19_0:getUpgradeRecommendShip(arg_14_0.shipVO, arg_14_0.contextData.materialShipIds or {}, arg_14_0.breakCfg.use_char_num)
 
-			table.insert(slot2, function (slot0)
-				slot1, slot2 = ShipCalcHelper.GetEliteAndHightLevelShips(underscore.map(uv0, function (slot0)
-					return uv0:getShipById(slot0)
+		if #var_19_1 > 0 then
+			local var_19_2 = {}
+
+			table.insert(var_19_2, function(arg_20_0)
+				local var_20_0, var_20_1 = ShipCalcHelper.GetEliteAndHightLevelShips(underscore.map(var_19_1, function(arg_21_0)
+					return var_19_0:getShipById(arg_21_0)
 				end))
 
-				if #slot1 > 0 or #slot2 > 0 then
-					uv2.destroyConfirmWindow:ExecuteAction("Show", slot1, slot2, false, slot0)
+				if #var_20_0 > 0 or #var_20_1 > 0 then
+					arg_14_0.destroyConfirmWindow:ExecuteAction("Show", var_20_0, var_20_1, false, arg_20_0)
 				else
-					slot0()
+					arg_20_0()
 				end
 			end)
-			seriesAsync(slot2, function ()
-				uv0.contextData.materialShipIds = uv1
+			seriesAsync(var_19_2, function()
+				arg_14_0.contextData.materialShipIds = var_19_1
 
-				uv0:updateBreakOutView(uv0.shipVO)
+				arg_14_0:updateBreakOutView(arg_14_0.shipVO)
 			end)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("without_selected_ship"))
 		end
 	end, SFX_CONFIRM)
-	slot0:initMaterialShips()
+	arg_14_0:initMaterialShips()
 end
 
-function slot0.getMaterialShip(slot0, slot1)
-	slot2 = nil
+function var_0_0.getMaterialShip(arg_23_0, arg_23_1)
+	local var_23_0
 
-	for slot6 = #slot1, 1, -1 do
-		if not slot1[slot6]:isTestShip() then
-			slot2 = slot6
+	for iter_23_0 = #arg_23_1, 1, -1 do
+		if not arg_23_1[iter_23_0]:isTestShip() then
+			var_23_0 = iter_23_0
 
 			break
 		end
 	end
 
-	return slot2 or #slot1
+	var_23_0 = var_23_0 or #arg_23_1
+
+	return var_23_0
 end
 
-function slot0.setShip(slot0, slot1)
-	slot0.shipVO = slot1
-	slot0.shipTempCfg = pg.ship_data_template
-	slot0.shipBreakOutCfg = pg.ship_data_breakout
-	slot0.breakIds = slot0:getStages()
-	slot0.itemTFs = {}
+function var_0_0.setShip(arg_24_0, arg_24_1)
+	arg_24_0.shipVO = arg_24_1
+	arg_24_0.shipTempCfg = pg.ship_data_template
+	arg_24_0.shipBreakOutCfg = pg.ship_data_breakout
+	arg_24_0.breakIds = arg_24_0:getStages()
+	arg_24_0.itemTFs = {}
 
-	for slot5 = 1, 3 do
-		slot0.itemTFs[slot5] = slot0:findTF("item_" .. slot5, slot0.materials)
+	for iter_24_0 = 1, 3 do
+		arg_24_0.itemTFs[iter_24_0] = arg_24_0:findTF("item_" .. iter_24_0, arg_24_0.materials)
 	end
 
-	slot0:updateBattleView()
-	slot0:updateBreakOutView(slot0.shipVO)
+	arg_24_0:updateBattleView()
+	arg_24_0:updateBreakOutView(arg_24_0.shipVO)
 
-	slot2 = slot0.shipVO.level < slot0.breakCfg.level or slot0.breakCfg.breakout_id == 0
+	local var_24_0 = arg_24_0.shipVO.level < arg_24_0.breakCfg.level or arg_24_0.breakCfg.breakout_id == 0
 
-	setActive(slot0.tipActive, not slot2)
-	setActive(slot0.tipDeactive, slot2)
-	setButtonEnabled(slot0.breakOutBtn, not slot2)
-	setActive(slot0.recommandBtn, slot0.breakCfg.breakout_id ~= 0)
-	slot0:loadChar()
+	setActive(arg_24_0.tipActive, not var_24_0)
+	setActive(arg_24_0.tipDeactive, var_24_0)
+	setButtonEnabled(arg_24_0.breakOutBtn, not var_24_0)
+	setActive(arg_24_0.recommandBtn, arg_24_0.breakCfg.breakout_id ~= 0)
+	arg_24_0:loadChar()
 end
 
-function slot0.getStages(slot0)
-	slot1 = {}
-	slot2 = math.floor(slot0.shipVO.configId / 10)
+function var_0_0.getStages(arg_25_0)
+	local var_25_0 = {}
+	local var_25_1 = math.floor(arg_25_0.shipVO.configId / 10)
 
-	for slot6 = 1, 4 do
-		slot7 = tonumber(slot2 .. slot6)
+	for iter_25_0 = 1, 4 do
+		local var_25_2 = tonumber(var_25_1 .. iter_25_0)
 
-		assert(slot0.shipBreakOutCfg[slot7], "必须存在配置" .. slot7)
-		table.insert(slot1, slot7)
+		assert(arg_25_0.shipBreakOutCfg[var_25_2], "必须存在配置" .. var_25_2)
+		table.insert(var_25_0, var_25_2)
 	end
 
-	return slot1
+	return var_25_0
 end
 
-function slot0.updateStagesScrollView(slot0)
-	if table.indexof(slot0.breakIds, slot0.shipVO.configId) and slot1 >= 1 and slot1 <= uv0 then
-		slot0:findTF("stage" .. slot1, slot0.stages):GetComponent(typeof(Toggle)).isOn = true
+function var_0_0.updateStagesScrollView(arg_26_0)
+	local var_26_0 = table.indexof(arg_26_0.breakIds, arg_26_0.shipVO.configId)
+
+	if var_26_0 and var_26_0 >= 1 and var_26_0 <= var_0_1 then
+		arg_26_0:findTF("stage" .. var_26_0, arg_26_0.stages):GetComponent(typeof(Toggle)).isOn = true
 	end
 end
 
-function slot0.updateBattleView(slot0)
-	if #slot0.breakIds < uv0 then
+function var_0_0.updateBattleView(arg_27_0)
+	if #arg_27_0.breakIds < var_0_1 then
 		return
 	end
 
-	for slot4 = 1, uv0 do
-		slot5 = slot0.breakIds[slot4]
+	for iter_27_0 = 1, var_0_1 do
+		local var_27_0 = arg_27_0.breakIds[iter_27_0]
+		local var_27_1 = arg_27_0.shipBreakOutCfg[var_27_0]
 
-		assert(slot0.shipBreakOutCfg[slot5], "不存在配置" .. slot5)
-		onToggle(slot0, slot0:findTF("stage" .. slot4, slot0.stages), function (slot0)
-			if slot0 then
-				slot1 = uv0.breakout_view
-				slot2 = checkExist(pg.ship_data_template[uv0.breakout_id], {
+		assert(var_27_1, "不存在配置" .. var_27_0)
+
+		local var_27_2 = arg_27_0:findTF("stage" .. iter_27_0, arg_27_0.stages)
+
+		onToggle(arg_27_0, var_27_2, function(arg_28_0)
+			if arg_28_0 then
+				local var_28_0 = var_27_1.breakout_view
+				local var_28_1 = checkExist(pg.ship_data_template[var_27_1.breakout_id], {
 					"specific_type"
 				}) or {}
 
-				for slot6, slot7 in ipairs(slot2) do
-					slot1 = slot1 .. "/" .. i18n(ShipType.SpecificTableTips[slot7])
+				for iter_28_0, iter_28_1 in ipairs(var_28_1) do
+					var_28_0 = var_28_0 .. "/" .. i18n(ShipType.SpecificTableTips[iter_28_1])
 				end
 
-				changeToScrollText(uv1.breakView, slot1)
-				uv1:switchStage(uv2)
+				changeToScrollText(arg_27_0.breakView, var_28_0)
+				arg_27_0:switchStage(var_27_0)
 			end
 		end, SFX_PANEL)
 	end
 
-	slot0:findTF("stage1", slot0.stages):GetComponent(typeof(Toggle)).group:SetAllTogglesOff()
+	arg_27_0:findTF("stage1", arg_27_0.stages):GetComponent(typeof(Toggle)).group:SetAllTogglesOff()
 
-	if math.clamp(table.indexof(slot0.breakIds, slot0.shipVO.configId), 1, uv0) and slot2 >= 1 and slot2 <= uv0 then
-		triggerToggle(slot0:findTF("stage" .. slot2, slot0.stages), true)
+	local var_27_3 = table.indexof(arg_27_0.breakIds, arg_27_0.shipVO.configId)
+	local var_27_4 = math.clamp(var_27_3, 1, var_0_1)
+
+	if var_27_4 and var_27_4 >= 1 and var_27_4 <= var_0_1 then
+		local var_27_5 = arg_27_0:findTF("stage" .. var_27_4, arg_27_0.stages)
+
+		triggerToggle(var_27_5, true)
 	end
 end
 
-slot2 = {
+local var_0_2 = {
 	"durability",
 	"cannon",
 	"torpedo",
@@ -322,231 +335,252 @@ slot2 = {
 	"antisub"
 }
 
-function slot0.showBarrage(slot0)
-	slot0.previewer = WeaponPreviewer.New(slot0.rawImage)
-	slot1 = slot0.previewer
+function var_0_0.showBarrage(arg_29_0)
+	arg_29_0.previewer = WeaponPreviewer.New(arg_29_0.rawImage)
 
-	slot1:configUI(slot0.healTF)
-
-	slot1 = slot0.previewer
-
-	slot1:setDisplayWeapon(slot0:getWaponIdsById(slot0.breakOutId))
-
-	slot1 = slot0.previewer
-
-	slot1:load(40000, slot0.shipVO, slot0:getAllWeaponIds(), function ()
-		uv0:stopLoadingAni()
+	arg_29_0.previewer:configUI(arg_29_0.healTF)
+	arg_29_0.previewer:setDisplayWeapon(arg_29_0:getWaponIdsById(arg_29_0.breakOutId))
+	arg_29_0.previewer:load(40000, arg_29_0.shipVO, arg_29_0:getAllWeaponIds(), function()
+		arg_29_0:stopLoadingAni()
 	end)
 end
 
-function slot0.getWaponIdsById(slot0, slot1)
-	return slot0.shipBreakOutCfg[slot1].weapon_ids
+function var_0_0.getWaponIdsById(arg_31_0, arg_31_1)
+	return arg_31_0.shipBreakOutCfg[arg_31_1].weapon_ids
 end
 
-function slot0.switchStage(slot0, slot1)
-	if slot0.breakOutId == slot1 then
+function var_0_0.switchStage(arg_32_0, arg_32_1)
+	if arg_32_0.breakOutId == arg_32_1 then
 		return
 	end
 
-	slot0.breakOutId = slot1
+	arg_32_0.breakOutId = arg_32_1
 
-	if slot0.previewer then
-		slot0.previewer:setDisplayWeapon(slot0:getWaponIdsById(slot0.breakOutId))
+	if arg_32_0.previewer then
+		arg_32_0.previewer:setDisplayWeapon(arg_32_0:getWaponIdsById(arg_32_0.breakOutId))
 	end
 end
 
-function slot0.getAllWeaponIds(slot0)
-	slot1 = {}
+function var_0_0.getAllWeaponIds(arg_33_0)
+	local var_33_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.breakIds) do
-		setmetatable(slot1, {
-			__add = function (slot0, slot1)
-				for slot5, slot6 in ipairs(slot0) do
-					if not table.contains(slot1, slot6) then
-						table.insert(slot1, slot6)
+	for iter_33_0, iter_33_1 in ipairs(arg_33_0.breakIds) do
+		local var_33_1 = Clone(arg_33_0.shipBreakOutCfg[iter_33_1].weapon_ids)
+		local var_33_2 = {
+			__add = function(arg_34_0, arg_34_1)
+				for iter_34_0, iter_34_1 in ipairs(arg_34_0) do
+					if not table.contains(arg_34_1, iter_34_1) then
+						table.insert(arg_34_1, iter_34_1)
 					end
 				end
 
-				return slot1
+				return arg_34_1
 			end
-		})
+		}
 
-		slot1 = slot1 + Clone(slot0.shipBreakOutCfg[slot6].weapon_ids)
+		setmetatable(var_33_0, var_33_2)
+
+		var_33_0 = var_33_0 + var_33_1
 	end
 
-	return slot1
+	return var_33_0
 end
 
-function slot0.updateBreakOutView(slot0, slot1)
-	slot0.breakCfg = slot0.shipBreakOutCfg[slot1.configId]
+function var_0_0.updateBreakOutView(arg_35_0, arg_35_1)
+	arg_35_0.breakCfg = arg_35_0.shipBreakOutCfg[arg_35_1.configId]
 
-	for slot5, slot6 in ipairs(slot0.itemTFs) do
-		setActive(slot6, false)
+	for iter_35_0, iter_35_1 in ipairs(arg_35_0.itemTFs) do
+		setActive(iter_35_1, false)
 	end
 
-	slot2 = slot1:getShipProperties()
-	Clone(slot1).configId = slot0.breakCfg.breakout_id
-	slot4 = {}
-	slot6 = slot1:getBattleTotalExpend()
-	slot7, slot8 = nil
+	local var_35_0 = arg_35_1:getShipProperties()
+	local var_35_1 = Clone(arg_35_1)
 
-	setText(slot0.tipDeactive:Find("values/label"), "")
-	setText(slot0.tipDeactive:Find("values/value"), "")
+	var_35_1.configId = arg_35_0.breakCfg.breakout_id
 
-	if slot0.breakCfg.breakout_id == 0 then
-		slot4 = slot2
-		slot7 = slot6
+	local var_35_2 = {}
+	local var_35_3 = arg_35_0.breakCfg.breakout_id == 0
+	local var_35_4 = arg_35_1:getBattleTotalExpend()
+	local var_35_5
+	local var_35_6
+	local var_35_7 = arg_35_0.tipDeactive:Find("values/label")
+	local var_35_8 = arg_35_0.tipDeactive:Find("values/value")
 
-		setText(slot9, i18n("word_level_upperLimit"))
+	setText(var_35_7, "")
+	setText(var_35_8, "")
+
+	if var_35_3 then
+		var_35_2 = var_35_0
+		var_35_5 = var_35_4
+
+		setText(var_35_7, i18n("word_level_upperLimit"))
 	else
-		slot3:getShipProperties().level = slot1:getMaxLevel() <= slot0.shipTempCfg[slot0.breakCfg.breakout_id].max_level and slot8 or slot1:getMaxLevel()
-		slot7 = slot3:getBattleTotalExpend()
+		var_35_6 = arg_35_0.shipTempCfg[arg_35_0.breakCfg.breakout_id].max_level
+		var_35_2 = var_35_1:getShipProperties()
+		var_35_2.level = var_35_6 >= arg_35_1:getMaxLevel() and var_35_6 or arg_35_1:getMaxLevel()
+		var_35_5 = var_35_1:getBattleTotalExpend()
 
-		setColorCount(slot10, slot0.shipVO.level, slot0.breakCfg.level)
-		setText(slot9, i18n("word_level_require"))
+		setColorCount(var_35_8, arg_35_0.shipVO.level, arg_35_0.breakCfg.level)
+		setText(var_35_7, i18n("word_level_require"))
 	end
 
-	function slot11(slot0, slot1)
-		setText(slot0:Find("name"), slot1.name)
-		setText(slot0:Find("value"), slot1.preAttr)
+	local function var_35_9(arg_36_0, arg_36_1)
+		setText(arg_36_0:Find("name"), arg_36_1.name)
+		setText(arg_36_0:Find("value"), arg_36_1.preAttr)
 
-		slot3 = slot0:Find("addition")
-		slot4 = nil
+		local var_36_0 = arg_36_0:Find("value1")
+		local var_36_1 = arg_36_0:Find("addition")
+		local var_36_2
 
-		setText(slot0:Find("value1"), (slot1.afterAttr ~= 0 or setColorStr(slot1.afterAttr, "#FFFFFFFF")) and setColorStr(slot1.afterAttr, COLOR_GREEN))
-		setActive(slot3, slot1.afterAttr - slot1.preAttr ~= 0)
-		setText(slot3, "(+" .. slot1.afterAttr - slot1.preAttr .. ")")
+		if arg_36_1.afterAttr == 0 then
+			var_36_2 = setColorStr(arg_36_1.afterAttr, "#FFFFFFFF")
+		else
+			var_36_2 = setColorStr(arg_36_1.afterAttr, COLOR_GREEN)
+		end
+
+		setText(var_36_0, var_36_2)
+		setActive(var_36_1, arg_36_1.afterAttr - arg_36_1.preAttr ~= 0)
+		setText(var_36_1, "(+" .. arg_36_1.afterAttr - arg_36_1.preAttr .. ")")
 	end
 
-	slot12 = 0
+	local var_35_10 = 0
 
-	if slot8 and slot8 ~= slot0.shipTempCfg[slot1.configId].max_level then
-		slot11(slot0:findTF("attr_1", slot0.attrs), {
-			preAttr = slot0.shipTempCfg[slot1.configId].max_level,
-			afterAttr = slot8,
+	if var_35_6 and var_35_6 ~= arg_35_0.shipTempCfg[arg_35_1.configId].max_level then
+		local var_35_11 = arg_35_0:findTF("attr_1", arg_35_0.attrs)
+
+		var_35_9(var_35_11, {
+			preAttr = arg_35_0.shipTempCfg[arg_35_1.configId].max_level,
+			afterAttr = var_35_6,
 			name = i18n("word_level_upperLimit")
 		})
 
-		slot12 = 1
+		var_35_10 = 1
 	end
 
-	for slot16 = 1, #uv0 do
-		slot17 = slot0:findTF("attr_" .. slot12 + slot16, slot0.attrs)
+	for iter_35_2 = 1, #var_0_2 do
+		local var_35_12 = arg_35_0:findTF("attr_" .. var_35_10 + iter_35_2, arg_35_0.attrs)
 
-		setActive(slot17, true)
-		slot11(slot17, {
-			preAttr = math.floor(slot2[uv0[slot16]]),
-			afterAttr = math.floor(slot4[uv0[slot16]]),
-			name = i18n("word_attr_" .. uv0[slot16])
+		setActive(var_35_12, true)
+
+		local var_35_13 = math.floor(var_35_0[var_0_2[iter_35_2]])
+		local var_35_14 = math.floor(var_35_2[var_0_2[iter_35_2]])
+
+		var_35_9(var_35_12, {
+			preAttr = var_35_13,
+			afterAttr = var_35_14,
+			name = i18n("word_attr_" .. var_0_2[iter_35_2])
 		})
 	end
 
-	slot13 = slot12 + #uv0 + 1
-	slot14 = slot0:findTF("attr_" .. slot13, slot0.attrs)
+	local var_35_15 = var_35_10 + #var_0_2 + 1
+	local var_35_16 = arg_35_0:findTF("attr_" .. var_35_15, arg_35_0.attrs)
 
-	setActive(slot14, true)
-
-	slot18 = i18n("word_attr_luck")
-
-	slot11(slot14, {
-		preAttr = slot6,
-		afterAttr = slot7,
-		name = slot18
+	setActive(var_35_16, true)
+	var_35_9(var_35_16, {
+		preAttr = var_35_4,
+		afterAttr = var_35_5,
+		name = i18n("word_attr_luck")
 	})
 
-	for slot18 = slot13 + 1, 8 do
-		setActive(slot0:findTF("attr_" .. slot18, slot0.attrs), false)
+	for iter_35_3 = var_35_15 + 1, 8 do
+		local var_35_17 = arg_35_0:findTF("attr_" .. iter_35_3, arg_35_0.attrs)
+
+		setActive(var_35_17, false)
 	end
 
-	removeAllChildren(slot0.starsFrom)
+	removeAllChildren(arg_35_0.starsFrom)
 
-	for slot18 = 1, slot1:getStar() do
-		cloneTplTo(slot0.starTpl, slot0.starsFrom)
+	for iter_35_4 = 1, arg_35_1:getStar() do
+		cloneTplTo(arg_35_0.starTpl, arg_35_0.starsFrom)
 	end
 
-	if slot5 then
+	if var_35_3 then
 		return
 	end
 
-	removeAllChildren(slot0.starsTo)
+	removeAllChildren(arg_35_0.starsTo)
 
-	if slot1:getStar() < slot3:getStar() and not slot5 then
-		for slot18 = 1, slot3:getStar() do
-			cloneTplTo(slot0.starTpl, slot0.starsTo)
+	if var_35_1:getStar() > arg_35_1:getStar() and not var_35_3 then
+		for iter_35_5 = 1, var_35_1:getStar() do
+			cloneTplTo(arg_35_0.starTpl, arg_35_0.starsTo)
 		end
 	end
 
-	setActive(slot0.appendStarTips, slot3:getStar() ~= slot1:getStar())
-	setActive(slot0.starOpera, slot3:getStar() ~= slot1:getStar())
+	setActive(arg_35_0.appendStarTips, var_35_1:getStar() ~= arg_35_1:getStar())
+	setActive(arg_35_0.starOpera, var_35_1:getStar() ~= arg_35_1:getStar())
 
-	if slot0.player.gold < slot0.breakCfg.use_gold then
-		slot15 = "<color=#FB4A2C>" .. slot15 .. "</color>"
+	local var_35_18 = arg_35_0.breakCfg.use_gold
+
+	if var_35_18 > arg_35_0.player.gold then
+		var_35_18 = "<color=#FB4A2C>" .. var_35_18 .. "</color>"
 	end
 
-	setText(slot0.tipActive:Find("text"), slot15)
-	slot0:initMaterialShips()
+	setText(arg_35_0.tipActive:Find("text"), var_35_18)
+	arg_35_0:initMaterialShips()
 end
 
-function slot0.initMaterialShips(slot0)
-	slot1 = slot0.breakCfg.use_char_num
-	slot2 = getProxy(BayProxy)
+function var_0_0.initMaterialShips(arg_37_0)
+	local var_37_0 = arg_37_0.breakCfg.use_char_num
+	local var_37_1 = getProxy(BayProxy)
 
-	for slot6 = 1, 3 do
-		SetActive(slot0.itemTFs[slot6], slot6 <= slot1)
+	for iter_37_0 = 1, 3 do
+		SetActive(arg_37_0.itemTFs[iter_37_0], iter_37_0 <= var_37_0)
 
-		slot7 = slot0.itemTFs[slot6]:Find("IconTpl")
-		slot8 = slot0.contextData.materialShipIds
+		local var_37_2 = arg_37_0.itemTFs[iter_37_0]:Find("IconTpl")
+		local var_37_3 = arg_37_0.contextData.materialShipIds
 
-		if slot6 <= slot1 and slot8 and slot8[slot6] then
-			updateShip(slot7, slot2:getShipById(slot8[slot6]), {
+		if iter_37_0 <= var_37_0 and var_37_3 and var_37_3[iter_37_0] then
+			local var_37_4 = var_37_1:getShipById(var_37_3[iter_37_0])
+
+			updateShip(var_37_2, var_37_4, {
 				initStar = true
 			})
-			SetActive(slot7, true)
+			SetActive(var_37_2, true)
 		else
-			SetActive(slot7, false)
+			SetActive(var_37_2, false)
 		end
 
-		onButton(slot0, slot0.itemTFs[slot6], function ()
-			uv0:emit(ShipUpgradeMediator2.ON_SELECT_SHIP, uv0.shipVO, uv1)
+		onButton(arg_37_0, arg_37_0.itemTFs[iter_37_0], function()
+			arg_37_0:emit(ShipUpgradeMediator2.ON_SELECT_SHIP, arg_37_0.shipVO, var_37_0)
 		end)
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0.UIMgr:UnblurPanel(slot0._tf, slot0.UIMain)
-	slot0:recycleSpineChar()
+function var_0_0.willExit(arg_39_0)
+	arg_39_0.UIMgr:UnblurPanel(arg_39_0._tf, arg_39_0.UIMain)
+	arg_39_0:recycleSpineChar()
 
-	if slot0.previewer then
-		slot0.previewer:clear()
+	if arg_39_0.previewer then
+		arg_39_0.previewer:clear()
 
-		slot0.previewer = nil
+		arg_39_0.previewer = nil
 	end
 
-	if slot0.dragTrigger then
-		ClearEventTrigger(slot0.dragTrigger)
+	if arg_39_0.dragTrigger then
+		ClearEventTrigger(arg_39_0.dragTrigger)
 
-		slot0.dragTrigger = nil
+		arg_39_0.dragTrigger = nil
 	end
 
-	slot0.destroyConfirmWindow:Destroy()
+	arg_39_0.destroyConfirmWindow:Destroy()
 end
 
-function slot0.playLoadingAni(slot0)
-	setActive(slot0.seaLoading, true)
+function var_0_0.playLoadingAni(arg_40_0)
+	setActive(arg_40_0.seaLoading, true)
 end
 
-function slot0.stopLoadingAni(slot0)
-	setActive(slot0.seaLoading, false)
+function var_0_0.stopLoadingAni(arg_41_0)
+	setActive(arg_41_0.seaLoading, false)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.destroyConfirmWindow:isShowing() then
-		slot0.destroyConfirmWindow:ActionInvoke("Hide")
+function var_0_0.onBackPressed(arg_42_0)
+	if arg_42_0.destroyConfirmWindow:isShowing() then
+		arg_42_0.destroyConfirmWindow:ActionInvoke("Hide")
 
 		return
 	end
 
-	slot0:emit(BaseUI.ON_BACK_PRESSED, true)
+	arg_42_0:emit(BaseUI.ON_BACK_PRESSED, true)
 end
 
-return slot0
+return var_0_0

@@ -1,19 +1,21 @@
-slot0 = class("GetMiniGameShopCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetMiniGameShopCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
 
 	pg.ConnectionMgr.GetInstance():Send(26150, {
 		type = 1
-	}, 26151, function (slot0)
-		slot2 = getProxy(ShopsProxy):setMiniShop(MiniGameShop.New(slot0))
+	}, 26151, function(arg_2_0)
+		local var_2_0 = MiniGameShop.New(arg_2_0)
+		local var_2_1 = getProxy(ShopsProxy):setMiniShop(var_2_0)
 
-		uv0:sendNotification(GAME.GET_MINI_GAME_SHOP_DONE)
+		arg_1_0:sendNotification(GAME.GET_MINI_GAME_SHOP_DONE)
 
-		if uv1 then
-			uv1(slot1)
+		if var_1_1 then
+			var_1_1(var_2_0)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

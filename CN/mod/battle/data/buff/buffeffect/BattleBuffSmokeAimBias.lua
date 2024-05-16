@@ -1,61 +1,74 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleConfig
-slot3 = slot0.Battle.BattleAttr
-slot0.Battle.BattleBuffSmokeAimBias = class("BattleBuffSmokeAimBias", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffSmokeAimBias.__name = "BattleBuffSmokeAimBias"
-slot4 = slot0.Battle.BattleBuffSmokeAimBias
-slot5 = slot0.Battle.BattleAttr
-slot4.ATTR_SMOKE = "smoke_aim_bias"
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = var_0_0.Battle.BattleAttr
+
+var_0_0.Battle.BattleBuffSmokeAimBias = class("BattleBuffSmokeAimBias", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffSmokeAimBias.__name = "BattleBuffSmokeAimBias"
+
+local var_0_4 = var_0_0.Battle.BattleBuffSmokeAimBias
+local var_0_5 = var_0_0.Battle.BattleAttr
+
+var_0_4.ATTR_SMOKE = "smoke_aim_bias"
+
+function var_0_4.Ctor(arg_1_0, arg_1_1)
+	var_0_4.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot4.SetArgs(slot0, slot1, slot2)
+function var_0_4.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	return
 end
 
-function slot4.onAttach(slot0, slot1, slot2)
-	uv0.SetCurrent(slot1, uv1.ATTR_SMOKE, 1)
-	uv2.AttachSmoke(slot1)
+function var_0_4.onAttach(arg_3_0, arg_3_1, arg_3_2)
+	var_0_5.SetCurrent(arg_3_1, var_0_4.ATTR_SMOKE, 1)
+	var_0_1.AttachSmoke(arg_3_1)
 
 	if BATTLE_ENEMY_AIMBIAS_RANGE then
-		uv3.Battle.BattleDataProxy.GetInstance():DispatchEvent(uv3.Event.New(uv3.Battle.BattleEvent.ADD_AIM_BIAS, {
-			aimBias = slot1:GetAimBias()
+		var_0_0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleEvent.ADD_AIM_BIAS, {
+			aimBias = arg_3_1:GetAimBias()
 		}))
 	end
 end
 
-function slot4.onUpdate(slot0, slot1, slot2, slot3)
-	slot4 = {
-		[uv0.FRIENDLY_CODE] = 0,
-		[uv0.FOE_CODE] = 0
+function var_0_4.onUpdate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	local var_4_0 = {
+		[var_0_2.FRIENDLY_CODE] = 0,
+		[var_0_2.FOE_CODE] = 0
 	}
-	slot5 = {
-		[uv0.FRIENDLY_CODE] = 0,
-		[uv0.FOE_CODE] = 0
+	local var_4_1 = {
+		[var_0_2.FRIENDLY_CODE] = 0,
+		[var_0_2.FOE_CODE] = 0
 	}
+	local var_4_2 = var_0_0.Battle.BattleDataProxy.GetInstance():GetUnitList()
 
-	for slot10, slot11 in pairs(uv1.Battle.BattleDataProxy.GetInstance():GetUnitList()) do
-		slot12 = slot11:GetIFF()
-		slot4[slot12] = math.max(slot4[slot12], uv2.GetCurrent(slot11, "attackRating"))
-		slot5[slot12] = slot5[slot12] + uv2.GetCurrent(slot11, "aimBiasExtraACC")
+	for iter_4_0, iter_4_1 in pairs(var_4_2) do
+		local var_4_3 = iter_4_1:GetIFF()
+		local var_4_4 = var_4_0[var_4_3]
+		local var_4_5 = var_0_3.GetCurrent(iter_4_1, "attackRating")
+		local var_4_6 = var_0_3.GetCurrent(iter_4_1, "aimBiasExtraACC")
+
+		var_4_0[var_4_3] = math.max(var_4_4, var_4_5)
+		var_4_1[var_4_3] = var_4_1[var_4_3] + var_4_6
 	end
 
-	slot7 = slot1:GetAimBias()
+	local var_4_7 = arg_4_1:GetAimBias()
 
-	slot7:SetDecayFactor(slot4[uv0.FRIENDLY_CODE], slot5[uv0.FRIENDLY_CODE])
-	slot7:Update(slot3.timeStamp)
+	var_4_7:SetDecayFactor(var_4_0[var_0_2.FRIENDLY_CODE], var_4_1[var_0_2.FRIENDLY_CODE])
+
+	local var_4_8 = arg_4_3.timeStamp
+
+	var_4_7:Update(var_4_8)
 end
 
-function slot4.onRemove(slot0, slot1, slot2)
+function var_0_4.onRemove(arg_5_0, arg_5_1, arg_5_2)
 	if BATTLE_ENEMY_AIMBIAS_RANGE then
-		uv0.Battle.BattleDataProxy.GetInstance():DispatchEvent(uv0.Event.New(uv0.Battle.BattleEvent.REMOVE_AIM_BIAS, {
-			aimBias = slot1:GetAimBias()
+		var_0_0.Battle.BattleDataProxy.GetInstance():DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleEvent.REMOVE_AIM_BIAS, {
+			aimBias = arg_5_1:GetAimBias()
 		}))
 	end
 
-	uv1.SetCurrent(slot1, uv2.ATTR_SMOKE, 0)
-	slot1:ExitSmokeArea()
+	var_0_5.SetCurrent(arg_5_1, var_0_4.ATTR_SMOKE, 0)
+	arg_5_1:ExitSmokeArea()
 end

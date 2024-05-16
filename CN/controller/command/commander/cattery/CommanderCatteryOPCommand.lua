@@ -1,85 +1,100 @@
-slot0 = class("CommanderCatteryOPCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("CommanderCatteryOPCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = getProxy(CommanderProxy)
-	slot4 = slot4:GetCommanderHome()
-	slot5 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().op
+	local var_1_1 = getProxy(CommanderProxy):GetCommanderHome()
 
-	slot5:Send(25028, {
-		type = slot1:getBody().op
-	}, 25029, function (slot0)
-		if slot0.result == 0 then
-			slot1 = PlayerConst.addTranDrop(slot0.awards)
-			slot2 = 0
-			slot3 = 0
-			slot4 = {}
+	pg.ConnectionMgr.GetInstance():Send(25028, {
+		type = var_1_0
+	}, 25029, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.awards)
+			local var_2_1 = 0
+			local var_2_2 = 0
+			local var_2_3 = {}
 
-			if uv0 == 1 then
-				uv1:IncCleanValue()
-			elseif uv0 == 2 then
-				slot4 = uv2:AddCommanderExpByFeed()
-			elseif uv0 == 3 then
-				-- Nothing
+			if var_1_0 == 1 then
+				var_1_1:IncCleanValue()
+			elseif var_1_0 == 2 then
+				var_2_3 = arg_1_0:AddCommanderExpByFeed()
+			elseif var_1_0 == 3 then
+				-- block empty
 			end
 
-			slot6 = {}
+			local var_2_4 = var_1_1:GetCatteries()
+			local var_2_5 = {}
 
-			for slot10, slot11 in pairs(uv1:GetCatteries()) do
-				if slot11:ExistOP(uv0) and slot11:CommanderCanOP(uv0) then
-					slot12 = slot11:GetCommander()
+			for iter_2_0, iter_2_1 in pairs(var_2_4) do
+				if iter_2_1:ExistOP(var_1_0) and iter_2_1:CommanderCanOP(var_1_0) then
+					local var_2_6 = iter_2_1:GetCommander()
 
-					slot11:ClearOP(uv0)
-					slot12:UpdateHomeOpTime(uv0, slot0.op_time)
-					getProxy(CommanderProxy):updateCommander(slot12)
-					table.insert(slot6, slot11.id)
+					iter_2_1:ClearOP(var_1_0)
+					var_2_6:UpdateHomeOpTime(var_1_0, arg_2_0.op_time)
+					getProxy(CommanderProxy):updateCommander(var_2_6)
+					table.insert(var_2_5, iter_2_1.id)
 				end
 			end
 
-			uv1:UpdateExpAndLevel(slot0.level, slot0.exp)
-			uv2:sendNotification(GAME.COMMANDER_CATTERY_OP_DONE, {
-				awards = slot1,
-				cmd = uv0,
-				opCatteries = slot6,
-				commanderExps = slot4,
-				homeExp = Clone(uv1).level < uv1.level and slot7:GetNextLevelExp() - slot7.exp + uv1.exp or uv1.exp - slot7.exp
+			local var_2_7 = Clone(var_1_1)
+
+			var_1_1:UpdateExpAndLevel(arg_2_0.level, arg_2_0.exp)
+
+			if var_1_1.level > var_2_7.level then
+				var_2_2 = var_2_7:GetNextLevelExp() - var_2_7.exp + var_1_1.exp
+			else
+				var_2_2 = var_1_1.exp - var_2_7.exp
+			end
+
+			arg_1_0:sendNotification(GAME.COMMANDER_CATTERY_OP_DONE, {
+				awards = var_2_0,
+				cmd = var_1_0,
+				opCatteries = var_2_5,
+				commanderExps = var_2_3,
+				homeExp = var_2_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-function slot0.AddCommanderExpByFeed(slot0)
-	slot1 = {}
+function var_0_0.AddCommanderExpByFeed(arg_3_0)
+	local var_3_0 = {}
 
-	function slot2(slot0, slot1)
-		if getProxy(CommanderProxy):getCommanderById(slot0:GetCommanderId()):isMaxLevel() then
-			slot1 = 0
+	local function var_3_1(arg_4_0, arg_4_1)
+		local var_4_0 = arg_4_0:GetCommanderId()
+		local var_4_1 = getProxy(CommanderProxy)
+		local var_4_2 = var_4_1:getCommanderById(var_4_0)
+		local var_4_3 = var_4_2:isMaxLevel()
+
+		if var_4_3 then
+			arg_4_1 = 0
 		end
 
-		slot4:addExp(slot1)
+		var_4_2:addExp(arg_4_1)
 
-		if not slot5 and slot4:isMaxLevel() then
-			slot1 = slot1 - slot4.exp
+		if not var_4_3 and var_4_2:isMaxLevel() then
+			arg_4_1 = arg_4_1 - var_4_2.exp
 		end
 
-		table.insert(uv0, {
-			id = slot0.id,
-			value = slot1
+		table.insert(var_3_0, {
+			id = arg_4_0.id,
+			value = arg_4_1
 		})
-		slot3:updateCommander(slot4)
+		var_4_1:updateCommander(var_4_2)
 	end
 
-	slot3 = getProxy(CommanderProxy):GetCommanderHome()
-	slot5 = slot3:getConfig("feed_level")[2]
+	local var_3_2 = getProxy(CommanderProxy):GetCommanderHome()
+	local var_3_3 = var_3_2:GetCatteries()
+	local var_3_4 = var_3_2:getConfig("feed_level")[2]
 
-	for slot9, slot10 in pairs(slot3:GetCatteries()) do
-		if slot10:ExistCommander() and slot10:ExiseFeedOP() then
-			slot2(slot10, slot5)
+	for iter_3_0, iter_3_1 in pairs(var_3_3) do
+		if iter_3_1:ExistCommander() and iter_3_1:ExiseFeedOP() then
+			var_3_1(iter_3_1, var_3_4)
 		end
 	end
 
-	return slot1
+	return var_3_0
 end
 
-return slot0
+return var_0_0

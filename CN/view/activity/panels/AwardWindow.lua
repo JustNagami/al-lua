@@ -1,77 +1,76 @@
-slot0 = class("AwardWindow", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("AwardWindow", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivitybonusWindow_nonPt"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("window/top/btnBack")
-	slot0.uiItemList = UIItemList.New(slot0:findTF("window/panel/list"), slot0:findTF("window/panel/list/item"))
-	slot0.currentTitle = slot0:findTF("window/pt/title"):GetComponent(typeof(Text))
-	slot0.currentTxt = slot0:findTF("window/pt/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("window/top/btnBack")
+	arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("window/panel/list"), arg_2_0:findTF("window/panel/list/item"))
+	arg_2_0.currentTitle = arg_2_0:findTF("window/pt/title"):GetComponent(typeof(Text))
+	arg_2_0.currentTxt = arg_2_0:findTF("window/pt/Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
+	setText(arg_2_0:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-
-	slot1 = slot0.uiItemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateItem(slot1, slot2)
+	arg_3_0.uiItemList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateItem(arg_6_1, arg_6_2)
 		end
 	end)
 end
 
-function slot0.UpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.awards[slot1 + 1]
-	slot4 = slot2:Find("award")
+function var_0_0.UpdateItem(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_0.awards[arg_7_1 + 1]
+	local var_7_1 = arg_7_2:Find("award")
+	local var_7_2 = {
+		type = var_7_0[1],
+		id = var_7_0[2],
+		count = var_7_0[3]
+	}
 
-	updateDrop(slot4, {
-		type = slot3[1],
-		id = slot3[2],
-		count = slot3[3]
-	})
-	onButton(slot0, slot4, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	updateDrop(var_7_1, var_7_2)
+	onButton(arg_7_0, var_7_1, function()
+		arg_7_0:emit(BaseUI.ON_DROP, var_7_2)
 	end, SFX_PANEL)
-	setActive(slot2:Find("award/mask"), slot1 + 1 <= slot0.finishIndex)
-	setText(slot2:Find("target/title"), slot0.targetTitle)
-	setText(slot2:Find("target/Text"), slot1 + 1)
-	setText(slot2:Find("title/Text"), "PHASE  " .. slot1 + 1)
+	setActive(arg_7_2:Find("award/mask"), arg_7_1 + 1 <= arg_7_0.finishIndex)
+	setText(arg_7_2:Find("target/title"), arg_7_0.targetTitle)
+	setText(arg_7_2:Find("target/Text"), arg_7_1 + 1)
+	setText(arg_7_2:Find("title/Text"), "PHASE  " .. arg_7_1 + 1)
 end
 
-function slot0.Flush(slot0, slot1, slot2, slot3)
-	slot0.awards = slot1
-	slot0.finishIndex = slot2
-	slot0.targetTitle = slot3[2]
+function var_0_0.Flush(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	arg_9_0.awards = arg_9_1
+	arg_9_0.finishIndex = arg_9_2
+	arg_9_0.targetTitle = arg_9_3[2]
 
-	slot0.uiItemList:align(#slot0.awards)
+	arg_9_0.uiItemList:align(#arg_9_0.awards)
 
-	slot0.currentTitle.text = slot3[1]
-	slot0.currentTxt.text = slot2
+	arg_9_0.currentTitle.text = arg_9_3[1]
+	arg_9_0.currentTxt.text = arg_9_2
 
-	slot0:Show()
+	arg_9_0:Show()
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.Show(arg_10_0)
+	var_0_0.super.Show(arg_10_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_10_0._tf)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_11_0)
+	var_0_0.super.Hide(arg_11_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf, arg_11_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_12_0)
+	return
 end
 
-return slot0
+return var_0_0

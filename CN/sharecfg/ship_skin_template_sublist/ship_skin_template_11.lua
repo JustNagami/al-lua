@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_11 = {
 	[306081] = {
@@ -5305,7 +5305,7 @@ pg.base.ship_skin_template_11 = {
 	},
 	[307140] = {
 		ship_group = 30714,
-		name = "{namecode:534}",
+		name = "小{namecode:182}",
 		hand_id = 6,
 		bgm = "",
 		l2d_drag_rate = "",

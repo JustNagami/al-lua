@@ -1,130 +1,133 @@
-slot0 = class("DestroyEquipmentsCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("DestroyEquipmentsCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = {}
-	slot4 = getProxy(EquipmentProxy)
-	slot5 = nil
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = {}
+	local var_1_2 = getProxy(EquipmentProxy)
+	local var_1_3
 
-	for slot9, slot10 in ipairs(slot1:getBody().equipments) do
-		slot12 = slot10[2]
+	for iter_1_0, iter_1_1 in ipairs(var_1_0.equipments) do
+		local var_1_4 = iter_1_1[1]
+		local var_1_5 = iter_1_1[2]
+		local var_1_6 = var_1_2:getEquipmentById(var_1_4)
 
-		if not slot4:getEquipmentById(slot10[1]) then
+		if not var_1_6 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_destroyEquipments_error_noEquip"))
 
 			return
 		end
 
-		if slot13.count < slot12 then
+		if var_1_5 > var_1_6.count then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_destroyEquipments_error_notEnoughEquip"))
 
 			return
 		end
 
-		table.insert(slot3, {
-			id = slot11,
-			count = slot12
+		table.insert(var_1_1, {
+			id = var_1_4,
+			count = var_1_5
 		})
 
-		if not slot5 then
-			slot14 = false
+		if not var_1_3 then
+			local var_1_7 = false
 
-			if slot13:isImportance() then
-				slot14 = true
+			if var_1_6:isImportance() then
+				var_1_7 = true
 			end
 
-			if EquipmentRarity.Gold <= slot13:getConfig("rarity") then
-				slot14 = true
+			if var_1_6:getConfig("rarity") >= EquipmentRarity.Gold then
+				var_1_7 = true
 			end
 
-			if slot13:getConfig("id") % 20 >= 10 then
-				slot14 = true
+			if var_1_6:getConfig("id") % 20 >= 10 then
+				var_1_7 = true
 			end
 
-			slot5 = slot14 and slot11
+			var_1_3 = var_1_7 and var_1_4
 		end
 	end
 
-	slot6 = {}
+	local var_1_8 = {}
 
-	if slot5 then
-		table.insert(slot6, function (slot0)
-			slot1 = pg.SecondaryPWDMgr
+	if var_1_3 then
+		table.insert(var_1_8, function(arg_2_0)
+			local var_2_0 = pg.SecondaryPWDMgr
 
-			slot1:LimitedOperation(slot1.RESOLVE_EQUIPMENT, uv0, slot0)
+			var_2_0:LimitedOperation(var_2_0.RESOLVE_EQUIPMENT, var_1_3, arg_2_0)
 		end)
 	end
 
-	seriesAsync(slot6, function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
+	seriesAsync(var_1_8, function()
+		pg.ConnectionMgr.GetInstance():Send(14008, {
+			equip_list = var_1_1
+		}, 14009, function(arg_4_0)
+			if arg_4_0.result == 0 then
+				local var_4_0 = getProxy(PlayerProxy):getData()
+				local var_4_1 = {}
+				local var_4_2 = 0
 
-		slot0:Send(14008, {
-			equip_list = uv0
-		}, 14009, function (slot0)
-			if slot0.result == 0 then
-				slot2 = getProxy(PlayerProxy):getData()
-				slot3 = {}
-				slot4 = 0
+				local function var_4_3(arg_5_0, arg_5_1)
+					print("remove: " .. arg_5_0 .. " " .. arg_5_1)
 
-				function slot5(slot0, slot1)
-					print("remove: " .. slot0 .. " " .. slot1)
-					uv0:removeEquipmentById(slot0, slot1)
+					local var_5_0 = var_1_2:getEquipmentById(arg_5_0)
 
-					slot3 = uv0:getEquipmentById(slot0):getConfig("destory_item") or {}
-					uv1 = uv1 + (slot2:getConfig("destory_gold") or 0) * slot1
+					var_1_2:removeEquipmentById(arg_5_0, arg_5_1)
 
-					for slot8, slot9 in ipairs(slot3) do
-						slot10 = false
+					local var_5_1 = var_5_0:getConfig("destory_item") or {}
+					local var_5_2 = var_5_0:getConfig("destory_gold") or 0
 
-						for slot14, slot15 in ipairs(uv2) do
-							if slot9[1] == uv2[slot14].id then
-								uv2[slot14].count = uv2[slot14].count + slot9[2] * slot1
-								slot10 = true
+					var_4_2 = var_4_2 + var_5_2 * arg_5_1
+
+					for iter_5_0, iter_5_1 in ipairs(var_5_1) do
+						local var_5_3 = false
+
+						for iter_5_2, iter_5_3 in ipairs(var_4_1) do
+							if iter_5_1[1] == var_4_1[iter_5_2].id then
+								var_4_1[iter_5_2].count = var_4_1[iter_5_2].count + iter_5_1[2] * arg_5_1
+								var_5_3 = true
 
 								break
 							end
 						end
 
-						if not slot10 then
-							table.insert(uv2, Drop.New({
+						if not var_5_3 then
+							table.insert(var_4_1, Drop.New({
 								type = DROP_TYPE_ITEM,
-								id = slot9[1],
-								count = slot9[2] * slot1
+								id = iter_5_1[1],
+								count = iter_5_1[2] * arg_5_1
 							}))
 						end
 					end
 				end
 
-				uv1:sendNotification(EquipmentMediator.NO_UPDATE)
+				arg_1_0:sendNotification(EquipmentMediator.NO_UPDATE)
 
-				for slot9, slot10 in ipairs(uv2) do
-					slot5(slot10.id, slot10.count)
+				for iter_4_0, iter_4_1 in ipairs(var_1_1) do
+					var_4_3(iter_4_1.id, iter_4_1.count)
 				end
 
-				slot9 = {
+				table.insert(var_4_1, Drop.New({
 					id = 1,
-					type = slot10,
-					count = slot4
-				}
-				slot10 = DROP_TYPE_RESOURCE
+					type = DROP_TYPE_RESOURCE,
+					count = var_4_2
+				}))
 
-				table.insert(slot3, Drop.New(slot9))
-
-				for slot9, slot10 in ipairs(slot3) do
-					uv1:sendNotification(GAME.ADD_ITEM, slot10)
+				for iter_4_2, iter_4_3 in ipairs(var_4_1) do
+					arg_1_0:sendNotification(GAME.ADD_ITEM, iter_4_3)
 				end
 
 				if not LOCK_QUOTA_SHOP then
-					getProxy(ShopsProxy):updateQuotaShop(QuotaShop.New())
+					local var_4_4 = QuotaShop.New()
+
+					getProxy(ShopsProxy):updateQuotaShop(var_4_4)
 				end
 
-				uv1:sendNotification(GAME.DESTROY_EQUIPMENTS_DONE, slot3)
-
-				return
+				arg_1_0:sendNotification(GAME.DESTROY_EQUIPMENTS_DONE, var_4_1)
+			else
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_destroyEquipments", arg_4_0.result))
 			end
-
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_destroyEquipments", slot0.result))
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "accuracyToShipType_3",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -748,24 +767,5 @@ return {
 	stack = 1,
 	id = 11862,
 	icon = 11860,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "accuracyToShipType_3",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,5 +1,5 @@
-slot0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
-slot1 = {
+﻿local var_0_0 = class("TargetItem", import("view.miniGame.gameView.RyzaMiniGame.Reactor"))
+local var_0_1 = {
 	hp1 = "4",
 	speed = "3",
 	power = "2",
@@ -8,43 +8,29 @@ slot1 = {
 	hp2 = "5"
 }
 
-function slot0.InitUI(slot0, slot1)
-	slot0.type = slot1.type
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot2 = slot2:GetComponent(typeof(Animator))
+function var_0_0.InitUI(arg_1_0, arg_1_1)
+	arg_1_0.type = arg_1_1.type
 
-	slot2:Play(uv0[slot0.type])
-
-	slot3 = slot0._tf
-
-	setActive(slot3:Find("Burn"), false)
-
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Burn")
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
-
-	slot2:SetEndEvent(function ()
-		uv0:Destroy(false)
+	arg_1_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play(var_0_1[arg_1_0.type])
+	setActive(arg_1_0._tf:Find("Burn"), false)
+	arg_1_0._tf:Find("Burn"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_1_0:Destroy(false)
 	end)
-
-	slot3 = slot0._tf
-
-	eachChild(slot3:Find("front"), function (slot0)
-		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-			setActive(uv0, false)
+	eachChild(arg_1_0._tf:Find("front"), function(arg_3_0)
+		arg_3_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+			setActive(arg_3_0, false)
 		end)
-		setActive(slot0, slot0.name == uv0.drop)
+		setActive(arg_3_0, arg_3_0.name == arg_1_1.drop)
 	end)
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot0:Register("move", function (slot0)
-		if isa(slot0, MoveRyza) then
-			slot0:AddItem(uv0.type)
-			uv0:Destroy()
+function var_0_0.InitRegister(arg_5_0, arg_5_1)
+	arg_5_0:Register("move", function(arg_6_0)
+		if isa(arg_6_0, MoveRyza) then
+			arg_6_0:AddItem(arg_5_0.type)
+			arg_5_0:Destroy()
 		else
-			uv0:Destroy(false)
+			arg_5_0:Destroy(false)
 		end
 	end, {
 		{
@@ -52,10 +38,10 @@ function slot0.InitRegister(slot0, slot1)
 			0
 		}
 	})
-	slot0:Register("burn", function ()
-		uv0:DeregisterAll()
-		setActive(uv0._tf:Find("Image"), false)
-		setActive(uv0._tf:Find("Burn"), true)
+	arg_5_0:Register("burn", function()
+		arg_5_0:DeregisterAll()
+		setActive(arg_5_0._tf:Find("Image"), false)
+		setActive(arg_5_0._tf:Find("Burn"), true)
 	end, {
 		{
 			0,
@@ -64,4 +50,4 @@ function slot0.InitRegister(slot0, slot1)
 	})
 end
 
-return slot0
+return var_0_0

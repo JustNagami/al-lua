@@ -1,7 +1,7 @@
-slot0 = class("ChineseCalendar")
-slot1 = 1901
-slot2 = 199
-slot3 = {
+﻿local var_0_0 = class("ChineseCalendar")
+local var_0_1 = 1901
+local var_0_2 = 199
+local var_0_3 = {
 	306771,
 	677704,
 	5580477,
@@ -203,8 +203,21 @@ slot3 = {
 	2986677
 }
 
-function slot0.DayOfSolarYear(slot0, slot1, slot2)
-	slot4 = {
+function var_0_0.DayOfSolarYear(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0, var_1_1 = {
+		1,
+		32,
+		60,
+		91,
+		121,
+		152,
+		182,
+		213,
+		244,
+		274,
+		305,
+		335
+	}, {
 		1,
 		32,
 		61,
@@ -218,121 +231,130 @@ function slot0.DayOfSolarYear(slot0, slot1, slot2)
 		306,
 		336
 	}
-	slot5 = {
-		1,
-		32,
-		60,
-		91,
-		121,
-		152,
-		182,
-		213,
-		244,
-		274,
-		305,
-		335
-	}
 
-	if slot0 % 4 == 0 then
-		if slot0 % 100 ~= 0 then
-			slot5 = slot4
+	if arg_1_0 % 4 == 0 then
+		if arg_1_0 % 100 ~= 0 then
+			var_1_0 = var_1_1
 		end
 
-		if slot0 % 400 == 0 then
-			slot5 = slot4
+		if arg_1_0 % 400 == 0 then
+			var_1_0 = var_1_1
 		end
 	end
 
-	return slot5[slot1] + slot2 - 1
+	return var_1_0[arg_1_1] + arg_1_2 - 1
 end
 
-function slot0.CalDate(slot0, slot1, slot2)
-	slot3 = {
+function var_0_0.CalDate(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = {
 		day = 0,
 		month = 0,
 		leap = false,
-		year = slot0
+		year = arg_2_0
 	}
 
-	if slot0 <= uv0 or slot0 > uv0 + uv1 - 1 then
-		return slot3
+	if arg_2_0 <= var_0_1 or arg_2_0 > var_0_1 + var_0_2 - 1 then
+		return var_2_0
 	end
 
-	slot4 = slot0 - uv0 + 1
+	local var_2_1 = arg_2_0 - var_0_1 + 1
+	local var_2_2 = bit.rshift(bit.band(var_0_3[var_2_1], 96), 5)
+	local var_2_3 = bit.band(var_0_3[var_2_1], 31)
+	local var_2_4 = var_0_0.DayOfSolarYear(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_5 = var_2_4 - var_0_0.DayOfSolarYear(arg_2_0, var_2_2, var_2_3) + 1
 
-	if uv3.DayOfSolarYear(slot0, slot1, slot2) - uv3.DayOfSolarYear(slot0, bit.rshift(bit.band(uv2[slot4], 96), 5), bit.band(uv2[slot4], 31)) + 1 <= 0 then
-		slot3.year = slot3.year - 1
+	if var_2_5 <= 0 then
+		var_2_1 = var_2_1 - 1
+		var_2_0.year = var_2_0.year - 1
 
-		if slot4 - 1 <= 0 then
-			return slot3
+		if var_2_1 <= 0 then
+			return var_2_0
 		end
 
-		slot9 = slot7 + uv3.DayOfSolarYear(slot3.year, 12, 31) - uv3.DayOfSolarYear(slot3.year, bit.rshift(bit.band(uv2[slot4], 96), 5), bit.band(uv2[slot4], 31)) + 1
+		local var_2_6 = bit.rshift(bit.band(var_0_3[var_2_1], 96), 5)
+		local var_2_7 = bit.band(var_0_3[var_2_1], 31)
+		local var_2_8 = var_0_0.DayOfSolarYear(var_2_0.year, var_2_6, var_2_7)
+
+		var_2_5 = var_2_4 + var_0_0.DayOfSolarYear(var_2_0.year, 12, 31) - var_2_8 + 1
 	end
 
-	slot10 = 1
+	local var_2_9 = 1
 
-	while slot10 <= 13 do
-		slot11 = 29
+	while var_2_9 <= 13 do
+		local var_2_10 = 29
 
-		if bit.band(bit.rshift(uv2[slot4], 6 + slot10), 1) == 1 then
-			slot11 = 30
+		if bit.band(bit.rshift(var_0_3[var_2_1], 6 + var_2_9), 1) == 1 then
+			var_2_10 = 30
 		end
 
-		if slot9 <= slot11 then
+		if var_2_5 <= var_2_10 then
 			break
 		else
-			slot9 = slot9 - slot11
+			var_2_5 = var_2_5 - var_2_10
 		end
 
-		slot10 = slot10 + 1
+		var_2_9 = var_2_9 + 1
 	end
 
-	slot3.day = slot9
+	var_2_0.day = var_2_5
 
-	if bit.band(bit.rshift(uv2[slot4], 20), 15) > 0 and slot11 < slot10 and slot10 - 1 == slot11 then
-		slot3.leap = true
+	local var_2_11 = bit.band(bit.rshift(var_0_3[var_2_1], 20), 15)
+
+	if var_2_11 > 0 and var_2_11 < var_2_9 then
+		var_2_9 = var_2_9 - 1
+
+		if var_2_9 == var_2_11 then
+			var_2_0.leap = true
+		end
 	end
 
-	assert(slot11 <= 12)
+	assert(var_2_11 <= 12)
 
-	slot3.month = slot10
+	var_2_0.month = var_2_9
 
-	return slot3
+	return var_2_0
 end
 
-function slot0.IsNewYear(slot0, slot1, slot2)
-	return slot1 == 1 and slot2 == 1
+function var_0_0.IsNewYear(arg_3_0, arg_3_1, arg_3_2)
+	return arg_3_1 == 1 and arg_3_2 == 1
 end
 
-function slot0.IsLunarNewYear(slot0, slot1, slot2)
-	return uv0.CalDate(slot0, slot1, slot2 + 1).month == 1 and slot3.day == 1
+function var_0_0.IsLunarNewYear(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = var_0_0.CalDate(arg_4_0, arg_4_1, arg_4_2 + 1)
+
+	return var_4_0.month == 1 and var_4_0.day == 1
 end
 
-function slot0.IsValentineDay(slot0, slot1, slot2)
-	return slot1 == 2 and slot2 == 14
+function var_0_0.IsValentineDay(arg_5_0, arg_5_1, arg_5_2)
+	return arg_5_1 == 2 and arg_5_2 == 14
 end
 
-function slot0.IsMidAutumnFestival(slot0, slot1, slot2)
-	return uv0.CalDate(slot0, slot1, slot2).month == 8 and slot3.day == 15
+function var_0_0.IsMidAutumnFestival(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = var_0_0.CalDate(arg_6_0, arg_6_1, arg_6_2)
+
+	return var_6_0.month == 8 and var_6_0.day == 15
 end
 
-function slot0.AllHallowsDay(slot0, slot1, slot2)
-	return slot1 == 10 and slot2 == 31
+function var_0_0.AllHallowsDay(arg_7_0, arg_7_1, arg_7_2)
+	return arg_7_1 == 10 and arg_7_2 == 31
 end
 
-function slot0.IsChristmas(slot0, slot1, slot2)
-	return slot1 == 12 and slot2 == 25
+function var_0_0.IsChristmas(arg_8_0, arg_8_1, arg_8_2)
+	return arg_8_1 == 12 and arg_8_2 == 25
 end
 
-function slot0.GetCurrYearMonthDay(slot0)
-	slot2 = string.split(pg.TimeMgr.GetInstance():STimeDescC(slot0, "%Y.%m.%d"), ".")
+function var_0_0.GetCurrYearMonthDay(arg_9_0)
+	local var_9_0 = pg.TimeMgr.GetInstance():STimeDescC(arg_9_0, "%Y.%m.%d")
+	local var_9_1 = string.split(var_9_0, ".")
+	local var_9_2 = tonumber(var_9_1[1])
+	local var_9_3 = tonumber(var_9_1[2])
+	local var_9_4 = tonumber(var_9_1[3])
 
-	return tonumber(slot2[1]), tonumber(slot2[2]), tonumber(slot2[3])
+	return var_9_2, var_9_3, var_9_4
 end
 
-function slot0.AnySpecialDay(slot0, slot1, slot2)
-	return uv0.IsNewYear(slot0, slot1, slot2) or uv0.IsLunarNewYear(slot0, slot1, slot2) or uv0.IsValentineDay(slot0, slot1, slot2) or uv0.IsMidAutumnFestival(slot0, slot1, slot2) or uv0.AllHallowsDay(slot0, slot1, slot2) or uv0.IsChristmas(slot0, slot1, slot2)
+function var_0_0.AnySpecialDay(arg_10_0, arg_10_1, arg_10_2)
+	return var_0_0.IsNewYear(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsLunarNewYear(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsValentineDay(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsMidAutumnFestival(arg_10_0, arg_10_1, arg_10_2) or var_0_0.AllHallowsDay(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsChristmas(arg_10_0, arg_10_1, arg_10_2)
 end
 
-return slot0
+return var_0_0

@@ -1,152 +1,152 @@
-slot0 = class("PtAwardWindow")
+﻿local var_0_0 = class("PtAwardWindow")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1
-	slot0.binder = slot2
-	slot3 = slot0._tf
-	slot0.scrollPanel = slot3:Find("window/panel")
-	slot4 = slot0._tf
-	slot5 = slot0._tf
-	slot0.UIlist = UIItemList.New(slot4:Find("window/panel/list"), slot5:Find("window/panel/list/item"))
-	slot3 = slot0._tf
-	slot0.ptTF = slot3:Find("window/pt")
-	slot3 = slot0._tf
-	slot3 = slot3:Find("window/pt/Text")
-	slot0.totalTxt = slot3:GetComponent(typeof(Text))
-	slot3 = slot0._tf
-	slot3 = slot3:Find("window/pt/title")
-	slot0.totalTitleTxt = slot3:GetComponent(typeof(Text))
-	slot3 = slot0._tf
-	slot3 = slot3:Find("window/pt/icon/image")
-	slot0.totalTitleIcon = slot3:GetComponent(typeof(Image))
-	slot3 = slot0._tf
-	slot0.closeBtn = slot3:Find("window/top/btnBack")
-	slot3 = slot0._tf
-	slot0.ptIcon = slot3:Find("window/pt/icon")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.binder = arg_1_2
+	arg_1_0.scrollPanel = arg_1_0._tf:Find("window/panel")
+	arg_1_0.UIlist = UIItemList.New(arg_1_0._tf:Find("window/panel/list"), arg_1_0._tf:Find("window/panel/list/item"))
+	arg_1_0.ptTF = arg_1_0._tf:Find("window/pt")
+	arg_1_0.totalTxt = arg_1_0._tf:Find("window/pt/Text"):GetComponent(typeof(Text))
+	arg_1_0.totalTitleTxt = arg_1_0._tf:Find("window/pt/title"):GetComponent(typeof(Text))
+	arg_1_0.totalTitleIcon = arg_1_0._tf:Find("window/pt/icon/image"):GetComponent(typeof(Image))
+	arg_1_0.closeBtn = arg_1_0._tf:Find("window/top/btnBack")
+	arg_1_0.ptIcon = arg_1_0._tf:Find("window/pt/icon")
 
-	onButton(slot0.binder, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_1_0.binder, arg_1_0._tf, function()
+		arg_1_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0.binder, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_1_0.binder, arg_1_0.closeBtn, function()
+		arg_1_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateList(slot0, slot1, slot2, slot3, slot4)
-	assert(#slot1 == #slot2)
-	slot0.UIlist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
-			slot5 = GetPerceptualSize(uv2.resTitle)
+function var_0_0.UpdateList(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+	assert(#arg_4_1 == #arg_4_2)
+	arg_4_0.UIlist:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			local var_5_0 = arg_4_1[arg_5_1 + 1]
+			local var_5_1 = arg_4_2[arg_5_1 + 1]
+			local var_5_2 = GetPerceptualSize(arg_4_0.resTitle)
 
-			setText(slot2:Find("title/Text"), "PHASE " .. slot1 + 1)
-			setText(slot2:Find("target/Text"), uv1[slot1 + 1])
+			setText(arg_5_2:Find("title/Text"), "PHASE " .. arg_5_1 + 1)
+			setText(arg_5_2:Find("target/Text"), var_5_1)
 
-			if slot2:Find("target/icon") then
-				if uv2.resIcon == "" then
-					uv2.resIcon = nil
+			if arg_5_2:Find("target/icon") then
+				if arg_4_0.resIcon == "" then
+					arg_4_0.resIcon = nil
 				end
 
-				if uv2.resIcon then
-					LoadImageSpriteAsync(uv2.resIcon, slot2:Find("target/icon"), false)
+				if arg_4_0.resIcon then
+					LoadImageSpriteAsync(arg_4_0.resIcon, arg_5_2:Find("target/icon"), false)
 				end
 
-				setActive(slot2:Find("target/icon"), uv2.resIcon)
-				setActive(slot2:Find("target/mark"), uv2.resIcon)
+				setActive(arg_5_2:Find("target/icon"), arg_4_0.resIcon)
+				setActive(arg_5_2:Find("target/mark"), arg_4_0.resIcon)
 			end
 
-			setText(slot2:Find("target/title"), uv2.resTitle)
-			updateDrop(slot2:Find("award"), Drop.Create(slot3), {
+			setText(arg_5_2:Find("target/title"), arg_4_0.resTitle)
+
+			local var_5_3 = Drop.Create(var_5_0)
+
+			updateDrop(arg_5_2:Find("award"), var_5_3, {
 				hideName = true
 			})
-			onButton(uv2.binder, slot2:Find("award"), function ()
-				uv0.binder:emit(BaseUI.ON_DROP, uv1)
+			onButton(arg_4_0.binder, arg_5_2:Find("award"), function()
+				arg_4_0.binder:emit(BaseUI.ON_DROP, var_5_3)
 			end, SFX_PANEL)
-			setActive(slot2:Find("award/mask"), slot1 + 1 <= uv3)
+			setActive(arg_5_2:Find("award/mask"), arg_5_1 + 1 <= arg_4_3)
 
-			if not IsNil(slot2:Find("mask")) then
-				if uv4 then
-					setActive(slot2:Find("mask"), pg.TimeMgr.GetInstance():GetServerTime() < uv4[slot1 + 1])
-					setText(slot2:Find("mask/Text"), i18n("unlock_date_tip", slot7:STimeDescS(slot8, "%m"), slot7:STimeDescS(slot8, "%d")))
+			if not IsNil(arg_5_2:Find("mask")) then
+				if arg_4_4 then
+					local var_5_4 = pg.TimeMgr.GetInstance()
+					local var_5_5 = arg_4_4[arg_5_1 + 1]
+
+					setActive(arg_5_2:Find("mask"), var_5_5 > var_5_4:GetServerTime())
+
+					local var_5_6 = var_5_4:STimeDescS(var_5_5, "%m")
+					local var_5_7 = var_5_4:STimeDescS(var_5_5, "%d")
+
+					setText(arg_5_2:Find("mask/Text"), i18n("unlock_date_tip", var_5_6, var_5_7))
 				else
-					setActive(slot2:Find("mask"), false)
+					setActive(arg_5_2:Find("mask"), false)
 				end
 			end
 		end
 	end)
-	slot0.UIlist:align(#slot1)
-	scrollTo(slot0.scrollPanel, 0, 1 - slot3 * 166 / (#slot2 * 166 + 20 - 570))
+	arg_4_0.UIlist:align(#arg_4_1)
+	scrollTo(arg_4_0.scrollPanel, 0, 1 - arg_4_3 * 166 / (#arg_4_2 * 166 + 20 - 570))
 end
 
-function slot0.Show(slot0, slot1)
-	slot6 = slot1.resId
-	slot0.resIcon = nil
+function var_0_0.Show(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1.dropList
+	local var_7_1 = arg_7_1.targets
+	local var_7_2 = arg_7_1.level
+	local var_7_3 = arg_7_1.count
+	local var_7_4 = arg_7_1.resId
+	local var_7_5 = arg_7_1.type
+	local var_7_6 = arg_7_1.unlockStamps
 
-	slot0:UpdateTitle(slot1.type)
-	slot0:updateResIcon(slot1.resId, slot1.resIcon, slot1.type)
-	slot0:UpdateList(slot1.dropList, slot1.targets, slot1.level, slot1.unlockStamps)
+	arg_7_0.resIcon = nil
 
-	slot0.totalTxt.text = slot1.count
-	slot0.totalTitleTxt.text = slot0.cntTitle
+	arg_7_0:UpdateTitle(var_7_5)
+	arg_7_0:updateResIcon(arg_7_1.resId, arg_7_1.resIcon, arg_7_1.type)
+	arg_7_0:UpdateList(var_7_0, var_7_1, var_7_2, var_7_6)
+
+	arg_7_0.totalTxt.text = var_7_3
+	arg_7_0.totalTitleTxt.text = arg_7_0.cntTitle
 
 	Canvas.ForceUpdateCanvases()
-	setActive(slot0._tf, true)
+	setActive(arg_7_0._tf, true)
 end
 
-function slot0.UpdateTitle(slot0, slot1)
-	slot2 = ""
+function var_0_0.UpdateTitle(arg_8_0, arg_8_1)
+	local var_8_0 = ""
 
-	if slot1 == 2 then
-		slot0.cntTitle = i18n("pt_total_count", i18n("pt_cosume", slot2))
-		slot0.resTitle = i18n("pt_cosume", slot2)
-		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
-	elseif slot1 == 3 then
-		slot0.cntTitle = i18n("pt_ship_now")
-		slot0.resTitle = i18n("pt_ship_goal")
-	elseif slot1 == 4 then
-		slot0.cntTitle = i18n("cumulative_victory_now_tip")
-		slot0.resTitle = i18n("cumulative_victory_target_tip")
-	elseif slot1 == 5 then
-		slot0.cntTitle = i18n("npcfriendly_total_count")
-		slot0.resTitle = i18n("npcfriendly_count")
-	elseif slot1 == 6 then
-		slot0.cntTitle = i18n("activity_yanhua_tip3")
-		slot0.resTitle = i18n("activity_yanhua_tip2")
+	if arg_8_1 == 2 then
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("pt_cosume", var_8_0), i18n("pt_total_count", i18n("pt_cosume", var_8_0))
+		arg_8_0.cntTitle = string.gsub(arg_8_0.cntTitle, "：", "")
+	elseif arg_8_1 == 3 then
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("pt_ship_goal"), i18n("pt_ship_now")
+	elseif arg_8_1 == 4 then
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("cumulative_victory_target_tip"), i18n("cumulative_victory_now_tip")
+	elseif arg_8_1 == 5 then
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("npcfriendly_count"), i18n("npcfriendly_total_count")
+	elseif arg_8_1 == 6 then
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("activity_yanhua_tip2"), i18n("activity_yanhua_tip3")
 	else
-		slot0.cntTitle = i18n("pt_total_count", slot2)
-		slot0.resTitle = i18n("target_get_tip")
-		slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
+		arg_8_0.resTitle, arg_8_0.cntTitle = i18n("target_get_tip"), i18n("pt_total_count", var_8_0)
+		arg_8_0.cntTitle = string.gsub(arg_8_0.cntTitle, "：", "")
 	end
 end
 
-function slot0.updateResIcon(slot0, slot1, slot2, slot3)
-	if slot3 == 2 or slot3 ~= 3 and slot3 ~= 4 and slot3 ~= 5 and slot3 ~= 6 then
-		if slot1 then
-			slot0.resIcon = Drop.New({
+function var_0_0.updateResIcon(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	if arg_9_3 == 2 or arg_9_3 ~= 3 and arg_9_3 ~= 4 and arg_9_3 ~= 5 and arg_9_3 ~= 6 then
+		if arg_9_1 then
+			arg_9_0.resIcon = Drop.New({
 				type = DROP_TYPE_RESOURCE,
-				id = slot1
+				id = arg_9_1
 			}):getIcon()
-		elseif slot2 then
-			slot0.resIcon = slot2
+		elseif arg_9_2 then
+			arg_9_0.resIcon = arg_9_2
 		end
 
-		if slot0.ptIcon and slot0.resIcon and slot0.resIcon ~= "" then
-			setActive(slot0.ptIcon, true)
-			LoadImageSpriteAsync(slot0.resIcon, slot0.totalTitleIcon, false)
+		if arg_9_0.ptIcon and arg_9_0.resIcon and arg_9_0.resIcon ~= "" then
+			setActive(arg_9_0.ptIcon, true)
+			LoadImageSpriteAsync(arg_9_0.resIcon, arg_9_0.totalTitleIcon, false)
 		else
-			setActive(slot0.ptIcon, false)
+			setActive(arg_9_0.ptIcon, false)
 		end
 	end
 end
 
-function slot0.Hide(slot0)
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_10_0)
+	setActive(arg_10_0._tf, false)
 end
 
-function slot0.Dispose(slot0)
-	slot0:Hide()
-	removeOnButton(slot0._tf)
-	removeOnButton(slot0.closeBtn)
+function var_0_0.Dispose(arg_11_0)
+	arg_11_0:Hide()
+	removeOnButton(arg_11_0._tf)
+	removeOnButton(arg_11_0.closeBtn)
 end
 
-return slot0
+return var_0_0

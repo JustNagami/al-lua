@@ -1,455 +1,478 @@
-slot0 = class("MusicGameNote")
-slot0.easyTriggerStepTime = nil
-slot0.type_left = 1
-slot0.type_right = 2
-slot0.type_pu_normal = 1
-slot0.type_pu_both = 2
-slot0.type_dgree_easy = 1
-slot0.type_dgree_hard = 2
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = 4
-slot5 = 4
-slot6 = 0
-slot7 = 1
-slot8 = 2
-slot9 = {
+﻿local var_0_0 = class("MusicGameNote")
+
+var_0_0.easyTriggerStepTime = nil
+var_0_0.type_left = 1
+var_0_0.type_right = 2
+var_0_0.type_pu_normal = 1
+var_0_0.type_pu_both = 2
+var_0_0.type_dgree_easy = 1
+var_0_0.type_dgree_hard = 2
+
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+local var_0_5 = 4
+local var_0_6 = 0
+local var_0_7 = 1
+local var_0_8 = 2
+local var_0_9 = {
 	500,
 	800,
 	1250,
 	1450
 }
-slot10 = {
+local var_0_10 = {
 	0.26,
 	0.2,
 	0.15,
 	0.13
 }
-slot11 = 3
-slot12 = nil
-slot13 = false
+local var_0_11 = 3
+local var_0_12
+local var_0_13 = false
 
-function slot14(slot0)
-	slot1 = {
-		_tf = slot0,
-		type = nil,
-		beginTime = nil,
-		endTime = nil,
-		longFlag = nil,
-		removeTime = nil,
-		speedOffsetX = nil,
-		longTime = 0,
-		triggerDown = nil,
-		triggerUp = nil,
-		fixedScoreType = nil,
-		Ctor = function (slot0)
-			slot0.longTf = findTF(slot0._tf, "longNote")
-			slot0.singleTf = findTF(slot0._tf, "singleNote")
-		end,
-		stepUpdate = function (slot0, slot1)
-			if not isActive(slot0._tf) then
-				slot0:changeActive(true)
-			end
-
-			if (slot1 - slot0.beginTime) * slot0.speedOffsetX > 0 then
-				slot2 = 0
-			end
-
-			slot0._tf.localPosition = Vector3(slot2, 0, 0)
-
-			if slot0.longFlag then
-				slot3 = nil
-
-				if slot2 == 0 then
-					slot3 = (slot0.endTime - slot1) * slot0.speedOffsetX
-
-					if not slot0.triggerDown and not slot0.removeTime then
-						slot0.removeTime = slot1 + uv0
-					end
-				else
-					slot3 = (slot0.endTime - slot0.beginTime) * slot0.speedOffsetX
-				end
-
-				if slot3 < 0 then
-					slot3 = 0
-				end
-
-				slot0.longTf.sizeDelta = Vector2(slot3, slot0.longTf.sizeDelta.y)
-
-				if slot3 == 0 and not slot0.triggerUp and not slot0.removeTime then
-					slot0.removeTime = slot1 + uv0
-				end
-			elseif slot2 == 0 and not slot0.removeTime then
-				slot0.removeTime = slot1 + uv0
-			end
-		end,
-		setNoteData = function (slot0, slot1, slot2, slot3, slot4)
-			slot0.removeTime = nil
-			slot0.triggerDown = nil
-			slot0.triggerUp = nil
-			slot0.fixedScoreType = nil
-			slot0.keyType = slot1.key_flag == "K_BOTH" and MusicGameNote.type_pu_both or MusicGameNote.type_pu_normal
-			slot0.beginTime = tonumber(slot1.begin_time)
-			slot0.endTime = tonumber(slot1.end_time)
-			slot0.longTime = slot0.endTime - slot0.beginTime
-			slot0.longFlag = slot1.begin_time ~= slot1.end_time
-			slot0.speedOffsetX = slot2
-			slot0.dgree = slot3
-			slot0.directType = slot4
-			slot0.imgType = slot0:getImageType()
-			slot0._tf.localPosition = Vector3(0, 0, 0)
-			slot0._tf.name = "beginTime" .. slot0.beginTime
-
-			slot0:updateNoteTf()
-		end,
-		updateNoteTf = function (slot0)
-			setActive(findTF(slot0._tf, "singleNote"), false)
-			setActive(findTF(slot0._tf, "longNote"), false)
-
-			if slot0.longFlag then
-				slot4 = "longNote"
-
-				setActive(findTF(slot0._tf, slot4), true)
-
-				for slot4 = 1, uv0 do
-					setActive(findTF(slot0._tf, "longNote/note/img" .. slot4), slot4 == slot0.imgType)
-					setActive(findTF(slot0._tf, "longNote/long/img" .. slot4), slot4 == slot0.imgType)
-				end
-			else
-				slot4 = "singleNote"
-
-				setActive(findTF(slot0._tf, slot4), true)
-
-				for slot4 = 1, uv0 do
-					setActive(findTF(slot0._tf, "singleNote/note/img" .. slot4), slot4 == slot0.imgType)
-				end
-			end
-		end,
-		getImageType = function (slot0)
-			if slot0.dgree == MusicGameNote.type_dgree_easy then
-				return uv0
-			elseif slot0.keyType == MusicGameNote.type_pu_both then
-				return uv1
-			elseif slot0.directType == MusicGameNote.type_left then
-				return uv2
-			elseif slot0.directType == MusicGameNote.type_right then
-				return uv3
-			end
-
-			return uv0
-		end,
-		getRemoveTime = function (slot0)
-			return slot0.removeTime
-		end,
-		triggerScore = function (slot0)
-			if slot0.removeTime then
-				slot0.removeTime = nil
-			end
-		end,
-		changeActive = function (slot0, slot1)
-			setActive(slot0._tf, slot1)
-		end,
-		dispose = function (slot0)
-			if slot0._tf then
-				Destroy(slot0._tf)
-			end
-		end
+local function var_0_14(arg_1_0)
+	local var_1_0 = {
+		_tf = arg_1_0
 	}
 
-	slot1:Ctor()
+	var_1_0.type = nil
+	var_1_0.beginTime = nil
+	var_1_0.endTime = nil
+	var_1_0.longFlag = nil
+	var_1_0.removeTime = nil
+	var_1_0.speedOffsetX = nil
+	var_1_0.longTime = 0
+	var_1_0.triggerDown = nil
+	var_1_0.triggerUp = nil
+	var_1_0.fixedScoreType = nil
 
-	return slot1
+	function var_1_0.Ctor(arg_2_0)
+		arg_2_0.longTf = findTF(arg_2_0._tf, "longNote")
+		arg_2_0.singleTf = findTF(arg_2_0._tf, "singleNote")
+	end
+
+	function var_1_0.stepUpdate(arg_3_0, arg_3_1)
+		if not isActive(arg_3_0._tf) then
+			arg_3_0:changeActive(true)
+		end
+
+		local var_3_0 = (arg_3_1 - arg_3_0.beginTime) * arg_3_0.speedOffsetX
+
+		if var_3_0 > 0 then
+			var_3_0 = 0
+		end
+
+		arg_3_0._tf.localPosition = Vector3(var_3_0, 0, 0)
+
+		if arg_3_0.longFlag then
+			local var_3_1
+
+			if var_3_0 == 0 then
+				var_3_1 = (arg_3_0.endTime - arg_3_1) * arg_3_0.speedOffsetX
+
+				if not arg_3_0.triggerDown and not arg_3_0.removeTime then
+					arg_3_0.removeTime = arg_3_1 + var_0_12
+				end
+			else
+				var_3_1 = (arg_3_0.endTime - arg_3_0.beginTime) * arg_3_0.speedOffsetX
+			end
+
+			if var_3_1 < 0 then
+				var_3_1 = 0
+			end
+
+			arg_3_0.longTf.sizeDelta = Vector2(var_3_1, arg_3_0.longTf.sizeDelta.y)
+
+			if var_3_1 == 0 and not arg_3_0.triggerUp and not arg_3_0.removeTime then
+				arg_3_0.removeTime = arg_3_1 + var_0_12
+			end
+		elseif var_3_0 == 0 and not arg_3_0.removeTime then
+			arg_3_0.removeTime = arg_3_1 + var_0_12
+		end
+	end
+
+	function var_1_0.setNoteData(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+		arg_4_0.removeTime = nil
+		arg_4_0.triggerDown = nil
+		arg_4_0.triggerUp = nil
+		arg_4_0.fixedScoreType = nil
+		arg_4_0.keyType = arg_4_1.key_flag == "K_BOTH" and MusicGameNote.type_pu_both or MusicGameNote.type_pu_normal
+		arg_4_0.beginTime = tonumber(arg_4_1.begin_time)
+		arg_4_0.endTime = tonumber(arg_4_1.end_time)
+		arg_4_0.longTime = arg_4_0.endTime - arg_4_0.beginTime
+		arg_4_0.longFlag = arg_4_1.begin_time ~= arg_4_1.end_time
+		arg_4_0.speedOffsetX = arg_4_2
+		arg_4_0.dgree = arg_4_3
+		arg_4_0.directType = arg_4_4
+		arg_4_0.imgType = arg_4_0:getImageType()
+		arg_4_0._tf.localPosition = Vector3(0, 0, 0)
+		arg_4_0._tf.name = "beginTime" .. arg_4_0.beginTime
+
+		arg_4_0:updateNoteTf()
+	end
+
+	function var_1_0.updateNoteTf(arg_5_0)
+		setActive(findTF(arg_5_0._tf, "singleNote"), false)
+		setActive(findTF(arg_5_0._tf, "longNote"), false)
+
+		if arg_5_0.longFlag then
+			setActive(findTF(arg_5_0._tf, "longNote"), true)
+
+			for iter_5_0 = 1, var_0_5 do
+				setActive(findTF(arg_5_0._tf, "longNote/note/img" .. iter_5_0), iter_5_0 == arg_5_0.imgType)
+				setActive(findTF(arg_5_0._tf, "longNote/long/img" .. iter_5_0), iter_5_0 == arg_5_0.imgType)
+			end
+		else
+			setActive(findTF(arg_5_0._tf, "singleNote"), true)
+
+			for iter_5_1 = 1, var_0_5 do
+				setActive(findTF(arg_5_0._tf, "singleNote/note/img" .. iter_5_1), iter_5_1 == arg_5_0.imgType)
+			end
+		end
+	end
+
+	function var_1_0.getImageType(arg_6_0)
+		if arg_6_0.dgree == MusicGameNote.type_dgree_easy then
+			return var_0_1
+		elseif arg_6_0.keyType == MusicGameNote.type_pu_both then
+			return var_0_4
+		elseif arg_6_0.directType == MusicGameNote.type_left then
+			return var_0_2
+		elseif arg_6_0.directType == MusicGameNote.type_right then
+			return var_0_3
+		end
+
+		return var_0_1
+	end
+
+	function var_1_0.getRemoveTime(arg_7_0)
+		return arg_7_0.removeTime
+	end
+
+	function var_1_0.triggerScore(arg_8_0)
+		if arg_8_0.removeTime then
+			arg_8_0.removeTime = nil
+		end
+	end
+
+	function var_1_0.changeActive(arg_9_0, arg_9_1)
+		setActive(arg_9_0._tf, arg_9_1)
+	end
+
+	function var_1_0.dispose(arg_10_0)
+		if arg_10_0._tf then
+			Destroy(arg_10_0._tf)
+		end
+	end
+
+	var_1_0:Ctor()
+
+	return var_1_0
 end
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._tf = slot1
-	slot0.noteTpl = slot2
-	slot0.directType = slot3
-	slot0.noteStateCallback = nil
-	slot0.notePool = {}
-	slot0.noteList = {}
+function var_0_0.Ctor(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	arg_11_0._tf = arg_11_1
+	arg_11_0.noteTpl = arg_11_2
+	arg_11_0.directType = arg_11_3
+	arg_11_0.noteStateCallback = nil
+	arg_11_0.notePool = {}
+	arg_11_0.noteList = {}
 end
 
-function slot0.setStateCallback(slot0, slot1)
-	slot0.noteStateCallback = slot1
+function var_0_0.setStateCallback(arg_12_0, arg_12_1)
+	arg_12_0.noteStateCallback = arg_12_1
 end
 
-function slot0.setLongTimeCallback(slot0, slot1)
-	slot0.longNoteCallback = slot1
+function var_0_0.setLongTimeCallback(arg_13_0, arg_13_1)
+	arg_13_0.longNoteCallback = arg_13_1
 end
 
-function slot0.setStartData(slot0, slot1, slot2, slot3, slot4)
-	uv0 = uv1[slot2]
-	slot0.puList = slot1
-	slot0.speedLevel = slot2
-	slot0.dgree = slot3
-	slot0.noteType = slot4
-	slot0.speedOffsetX = uv2[slot2]
-	slot0.tplNote = findTF(slot0.noteTpl, "tplNote" .. slot4)
+function var_0_0.setStartData(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
+	var_0_12 = var_0_10[arg_14_2]
+	arg_14_0.puList = arg_14_1
+	arg_14_0.speedLevel = arg_14_2
+	arg_14_0.dgree = arg_14_3
+	arg_14_0.noteType = arg_14_4
+	arg_14_0.speedOffsetX = var_0_9[arg_14_2]
+	arg_14_0.tplNote = findTF(arg_14_0.noteTpl, "tplNote" .. arg_14_4)
 
-	if slot0.lastNoteType and slot0.lastNoteType ~= slot4 then
-		slot0:destroyNoteAll()
+	if arg_14_0.lastNoteType and arg_14_0.lastNoteType ~= arg_14_4 then
+		arg_14_0:destroyNoteAll()
 	else
-		slot0:clearNote()
+		arg_14_0:clearNote()
 	end
 
-	slot0.lastNoteType = slot0.noteType
+	arg_14_0.lastNoteType = arg_14_0.noteType
 end
 
-function slot0.step(slot0, slot1)
-	slot0.stepTime = slot1 / 1000
+function var_0_0.step(arg_15_0, arg_15_1)
+	arg_15_0.stepTime = arg_15_1 / 1000
 
-	if #slot0.noteList > 0 and slot0:checkScoreType(slot0.noteList[1]) then
-		slot2:triggerScore()
-		slot0.noteStateCallback(slot3)
+	if #arg_15_0.noteList > 0 then
+		local var_15_0 = arg_15_0.noteList[1]
+		local var_15_1 = arg_15_0:checkScoreType(var_15_0)
 
-		if not slot2.longFlag or slot3 == uv0 then
-			slot0:returnNote(table.remove(slot0.noteList, 1))
-		elseif slot2.longFlag and slot2.triggerUp then
-			slot0:returnNote(table.remove(slot0.noteList, 1))
+		if var_15_1 then
+			var_15_0:triggerScore()
+			arg_15_0.noteStateCallback(var_15_1)
 
-			if slot0.longNoteCallback then
-				slot0.longNoteCallback(slot2.longTime)
+			if not var_15_0.longFlag or var_15_1 == var_0_6 then
+				arg_15_0:returnNote(table.remove(arg_15_0.noteList, 1))
+			elseif var_15_0.longFlag and var_15_0.triggerUp then
+				arg_15_0:returnNote(table.remove(arg_15_0.noteList, 1))
+
+				if arg_15_0.longNoteCallback then
+					arg_15_0.longNoteCallback(var_15_0.longTime)
+				end
 			end
 		end
 	end
 
-	for slot5 = #slot0.noteList, 1, -1 do
-		if slot0.noteList[slot5].fixedScoreType and slot0.noteStateCallback then
-			slot0.noteStateCallback(slot7)
+	for iter_15_0 = #arg_15_0.noteList, 1, -1 do
+		local var_15_2 = arg_15_0.noteList[iter_15_0].fixedScoreType
 
-			if slot0.loopFlag then
-				slot0.loopFlag = false
+		if var_15_2 and arg_15_0.noteStateCallback then
+			arg_15_0.noteStateCallback(var_15_2)
+
+			if arg_15_0.loopFlag then
+				arg_15_0.loopFlag = false
 			end
 
-			slot0:returnNote(table.remove(slot0.noteList, slot5))
+			arg_15_0:returnNote(table.remove(arg_15_0.noteList, iter_15_0))
 		end
 	end
 
-	for slot5 = #slot0.noteList, 1, -1 do
-		slot6 = slot0.noteList[slot5]
-		slot7 = slot6.longFlag
-		slot8 = slot6.triggerDown
+	for iter_15_1 = #arg_15_0.noteList, 1, -1 do
+		local var_15_3 = arg_15_0.noteList[iter_15_1]
+		local var_15_4 = var_15_3.longFlag
+		local var_15_5 = var_15_3.triggerDown
+		local var_15_6 = arg_15_0.noteList[iter_15_1]:getRemoveTime()
 
-		if slot0.noteList[slot5]:getRemoveTime() and slot9 < slot0.stepTime then
-			if slot0.noteStateCallback then
-				if not uv1 then
-					slot0.noteStateCallback(uv0)
+		if var_15_6 and var_15_6 < arg_15_0.stepTime then
+			if arg_15_0.noteStateCallback then
+				if not var_0_13 then
+					arg_15_0.noteStateCallback(var_0_6)
 				else
-					slot0.noteStateCallback(uv2)
+					arg_15_0.noteStateCallback(var_0_8)
 				end
 			end
 
-			if slot0.loopFlag then
-				slot0.loopFlag = false
+			if arg_15_0.loopFlag then
+				arg_15_0.loopFlag = false
 			end
 
-			slot0:returnNote(table.remove(slot0.noteList, slot5))
+			arg_15_0:returnNote(table.remove(arg_15_0.noteList, iter_15_1))
 		end
 	end
 
-	for slot5 = #slot0.noteList, 1, -1 do
-		slot0.noteList[slot5]:stepUpdate(slot0.stepTime)
+	for iter_15_2 = #arg_15_0.noteList, 1, -1 do
+		arg_15_0.noteList[iter_15_2]:stepUpdate(arg_15_0.stepTime)
 	end
 
-	if slot0.puList and #slot0.puList > 0 and slot0:checkPuShow(slot0.puList[1]) then
-		slot0:pushNoteToList(slot0:getNote(slot2))
-		table.remove(slot0.puList, 1)
+	if arg_15_0.puList and #arg_15_0.puList > 0 then
+		local var_15_7 = arg_15_0.puList[1]
+
+		if arg_15_0:checkPuShow(var_15_7) then
+			arg_15_0:pushNoteToList(arg_15_0:getNote(var_15_7))
+			table.remove(arg_15_0.puList, 1)
+		end
 	end
 end
 
-function slot0.checkScoreType(slot0, slot1)
-	if slot0.dgree == MusicGameNote.type_dgree_easy and slot0.keyDownStepTime and slot0.keyDownStepTime and slot0.keyDownStepTime == MusicGameNote.easyTriggerStepTime then
-		slot0.keyDownTrigger = true
+function var_0_0.checkScoreType(arg_16_0, arg_16_1)
+	if arg_16_0.dgree == MusicGameNote.type_dgree_easy and arg_16_0.keyDownStepTime and arg_16_0.keyDownStepTime and arg_16_0.keyDownStepTime == MusicGameNote.easyTriggerStepTime then
+		arg_16_0.keyDownTrigger = true
 	end
 
-	slot2, slot3 = nil
-	slot4 = false
+	local var_16_0
+	local var_16_1
+	local var_16_2 = false
 
-	if not slot1.longFlag then
-		slot3 = slot1.beginTime
+	if not arg_16_1.longFlag then
+		local var_16_3 = arg_16_1.beginTime
 
-		if slot0.keyDownStepTime and not slot0.keyDownTrigger then
-			slot5 = math.abs(slot0.keyDownStepTime - slot3)
+		if arg_16_0.keyDownStepTime and not arg_16_0.keyDownTrigger then
+			local var_16_4 = math.abs(arg_16_0.keyDownStepTime - var_16_3)
 
-			if slot1.keyType == MusicGameNote.type_pu_both then
-				if slot0.keyBothDown then
-					slot2 = slot0:getScoreType(slot5)
+			if arg_16_1.keyType == MusicGameNote.type_pu_both then
+				if arg_16_0.keyBothDown then
+					var_16_0 = arg_16_0:getScoreType(var_16_4)
 				end
 			else
-				slot2 = slot0:getScoreType(slot5)
+				var_16_0 = arg_16_0:getScoreType(var_16_4)
 			end
 
-			if slot2 then
-				slot1.triggerDown = true
-				slot0.keyDownTrigger = true
+			if var_16_0 then
+				arg_16_1.triggerDown = true
+				arg_16_0.keyDownTrigger = true
 
-				if slot0.dgree == MusicGameNote.type_dgree_easy then
-					MusicGameNote.easyTriggerStepTime = slot0.keyDownStepTime
+				if arg_16_0.dgree == MusicGameNote.type_dgree_easy then
+					MusicGameNote.easyTriggerStepTime = arg_16_0.keyDownStepTime
 				end
 			end
 		end
-	elseif not slot1.triggerDown then
-		slot3 = slot1.beginTime
+	elseif not arg_16_1.triggerDown then
+		local var_16_5 = arg_16_1.beginTime
 
-		if slot0.keyDownStepTime and not slot0.keyDownTrigger then
-			slot5 = math.abs(slot0.keyDownStepTime - slot3)
+		if arg_16_0.keyDownStepTime and not arg_16_0.keyDownTrigger then
+			local var_16_6 = math.abs(arg_16_0.keyDownStepTime - var_16_5)
 
-			if slot1.keyType == MusicGameNote.type_pu_both then
-				if slot0.keyBothDown then
-					slot2 = slot0:getScoreType(slot5)
+			if arg_16_1.keyType == MusicGameNote.type_pu_both then
+				if arg_16_0.keyBothDown then
+					var_16_0 = arg_16_0:getScoreType(var_16_6)
 				end
 			else
-				slot2 = slot0:getScoreType(slot5)
+				var_16_0 = arg_16_0:getScoreType(var_16_6)
 			end
 
-			if slot2 then
-				slot1.triggerDown = true
-				slot0.keyDownTrigger = true
-				slot0.loopFlag = true
+			if var_16_0 then
+				arg_16_1.triggerDown = true
+				arg_16_0.keyDownTrigger = true
+				arg_16_0.loopFlag = true
 			end
 		end
 	else
-		slot5 = slot0.stepTime < slot1.endTime - uv0
+		local var_16_7 = arg_16_1.endTime
+		local var_16_8 = arg_16_0.stepTime < var_16_7 - var_0_12
 
-		if not slot0.keyDown and slot5 then
-			if slot0.loopFlag then
-				slot0.loopFlag = false
+		if not arg_16_0.keyDown and var_16_8 then
+			if arg_16_0.loopFlag then
+				arg_16_0.loopFlag = false
 			end
 
-			if not slot0:getScoreType(math.abs(slot0.stepTime - slot1.endTime)) then
-				slot6 = uv1
-			end
+			arg_16_1.fixedScoreType, arg_16_1.endTime = arg_16_0:getScoreType(math.abs(arg_16_0.stepTime - arg_16_1.endTime)) or var_0_7, arg_16_1.beginTime
+			var_16_0 = nil
+		elseif arg_16_0.keyUpStepTime and not arg_16_0.keyUpTrigger then
+			local var_16_9 = math.abs(arg_16_0.keyUpStepTime - var_16_7)
 
-			slot1.endTime = slot1.beginTime
-			slot1.fixedScoreType = slot6
-			slot2 = nil
-		elseif slot0.keyUpStepTime and not slot0.keyUpTrigger then
-			slot6 = math.abs(slot0.keyUpStepTime - slot3)
-
-			if slot1.keyType == MusicGameNote.type_pu_both then
-				if slot0.keyBothUp then
-					slot2 = slot0:getScoreType(slot6)
+			if arg_16_1.keyType == MusicGameNote.type_pu_both then
+				if arg_16_0.keyBothUp then
+					var_16_0 = arg_16_0:getScoreType(var_16_9)
 				end
 			else
-				slot2 = slot0:getScoreType(slot6)
+				var_16_0 = arg_16_0:getScoreType(var_16_9)
 			end
 
-			if slot2 then
-				if slot0.loopFlag then
-					slot0.loopFlag = false
+			if var_16_0 then
+				if arg_16_0.loopFlag then
+					arg_16_0.loopFlag = false
 				end
 
-				slot1.triggerUp = true
-				slot0.keyUpTrigger = true
+				arg_16_1.triggerUp = true
+				arg_16_0.keyUpTrigger = true
 			end
 		end
 	end
 
-	return slot2
+	return var_16_0
 end
 
-function slot0.loopTime(slot0)
-	return slot0.loopFlag
+function var_0_0.loopTime(arg_17_0)
+	return arg_17_0.loopFlag
 end
 
-function slot0.getScoreType(slot0, slot1)
-	if slot1 < uv0 / 2 then
-		return uv1
-	elseif slot1 < uv0 then
-		return uv2
+function var_0_0.getScoreType(arg_18_0, arg_18_1)
+	if arg_18_1 < var_0_12 / 2 then
+		return var_0_8
+	elseif arg_18_1 < var_0_12 then
+		return var_0_7
 	end
 
 	return nil
 end
 
-function slot0.pushNoteToList(slot0, slot1)
-	table.insert(slot0.noteList, slot1)
+function var_0_0.pushNoteToList(arg_19_0, arg_19_1)
+	table.insert(arg_19_0.noteList, arg_19_1)
 end
 
-function slot0.checkPuShow(slot0, slot1)
-	if slot1.begin_time - slot0.stepTime <= uv0 then
+function var_0_0.checkPuShow(arg_20_0, arg_20_1)
+	if arg_20_1.begin_time - arg_20_0.stepTime <= var_0_11 then
 		return true
 	end
 
 	return false
 end
 
-function slot0.destroyNoteAll(slot0)
-	for slot4 = #slot0.noteList, 1, -1 do
-		slot0.noteList[slot4]:dispose()
+function var_0_0.destroyNoteAll(arg_21_0)
+	for iter_21_0 = #arg_21_0.noteList, 1, -1 do
+		arg_21_0.noteList[iter_21_0]:dispose()
 	end
 
-	for slot4 = #slot0.notePool, 1, -1 do
-		slot0.notePool[slot4]:dispose()
+	for iter_21_1 = #arg_21_0.notePool, 1, -1 do
+		arg_21_0.notePool[iter_21_1]:dispose()
 	end
 
-	slot0.noteList = {}
-	slot0.notePool = {}
+	arg_21_0.noteList = {}
+	arg_21_0.notePool = {}
 end
 
-function slot0.clearNote(slot0)
-	for slot4 = #slot0.noteList, 1, -1 do
-		slot0:returnNote(table.remove(slot0.noteList, slot4))
+function var_0_0.clearNote(arg_22_0)
+	for iter_22_0 = #arg_22_0.noteList, 1, -1 do
+		local var_22_0 = table.remove(arg_22_0.noteList, iter_22_0)
+
+		arg_22_0:returnNote(var_22_0)
 	end
 end
 
-function slot0.getNote(slot0, slot1)
-	if #slot0.notePool == 0 then
-		table.insert(slot0.notePool, slot0:createNote())
+function var_0_0.getNote(arg_23_0, arg_23_1)
+	if #arg_23_0.notePool == 0 then
+		local var_23_0 = arg_23_0:createNote()
+
+		table.insert(arg_23_0.notePool, var_23_0)
 	end
 
-	slot2 = table.remove(slot0.notePool, 1)
+	local var_23_1 = table.remove(arg_23_0.notePool, 1)
 
-	slot2:setNoteData(slot1, slot0.speedOffsetX, slot0.dgree, slot0.directType)
+	var_23_1:setNoteData(arg_23_1, arg_23_0.speedOffsetX, arg_23_0.dgree, arg_23_0.directType)
 
-	return slot2
+	return var_23_1
 end
 
-function slot0.returnNote(slot0, slot1)
-	slot1:changeActive(false)
-	table.insert(slot0.notePool, slot1)
+function var_0_0.returnNote(arg_24_0, arg_24_1)
+	arg_24_1:changeActive(false)
+	table.insert(arg_24_0.notePool, arg_24_1)
 end
 
-function slot0.createNote(slot0)
-	slot1 = tf(instantiate(slot0.tplNote))
+function var_0_0.createNote(arg_25_0)
+	local var_25_0 = tf(instantiate(arg_25_0.tplNote))
 
-	setActive(slot1, false)
+	setActive(var_25_0, false)
 
-	slot2 = uv0(slot1)
+	local var_25_1 = var_0_14(var_25_0)
 
-	setParent(slot1, slot0._tf)
+	setParent(var_25_0, arg_25_0._tf)
 
-	return uv0(slot1)
+	return var_0_14(var_25_0)
 end
 
-function slot0.onKeyDown(slot0)
-	slot0.keyDown = true
-	slot0.keyUp = false
-	slot0.keyDownStepTime = slot0.stepTime
-	slot0.keyDownTrigger = false
-	slot0.keyBothDown = false
+function var_0_0.onKeyDown(arg_26_0)
+	arg_26_0.keyDown = true
+	arg_26_0.keyUp = false
+	arg_26_0.keyDownStepTime = arg_26_0.stepTime
+	arg_26_0.keyDownTrigger = false
+	arg_26_0.keyBothDown = false
 end
 
-function slot0.onKeyUp(slot0)
-	slot0.keyUp = true
-	slot0.keyDown = false
-	slot0.keyUpStepTime = slot0.stepTime
-	slot0.keyUpTrigger = false
-	slot0.keyBothUp = false
+function var_0_0.onKeyUp(arg_27_0)
+	arg_27_0.keyUp = true
+	arg_27_0.keyDown = false
+	arg_27_0.keyUpStepTime = arg_27_0.stepTime
+	arg_27_0.keyUpTrigger = false
+	arg_27_0.keyBothUp = false
 end
 
-function slot0.bothDown(slot0)
-	slot0.keyDownStepTime = slot0.stepTime
-	slot0.keyBothDown = true
-	slot0.keyBothUp = false
+function var_0_0.bothDown(arg_28_0)
+	arg_28_0.keyDownStepTime = arg_28_0.stepTime
+	arg_28_0.keyBothDown = true
+	arg_28_0.keyBothUp = false
 end
 
-function slot0.bothUp(slot0)
-	slot0.keyBothUp = true
-	slot0.keyBothDown = false
-	slot0.keyUpStepTime = slot0.stepTime
+function var_0_0.bothUp(arg_29_0)
+	arg_29_0.keyBothUp = true
+	arg_29_0.keyBothDown = false
+	arg_29_0.keyUpStepTime = arg_29_0.stepTime
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_link_button = {
 	{
 		param = "5301",
@@ -59,10 +59,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5310
+			5309
 		},
 		param = {
-			"music festival 3"
+			"IDOL_MEDAL_COLLECTION_SCENE3"
 		}
 	},
 	[30] = {

@@ -1,165 +1,175 @@
-slot0 = class("CourtYardBasePanel", import("...base.BasePanel"))
-slot1 = 0.5
-slot2 = 0
-slot3 = 1
+﻿local var_0_0 = class("CourtYardBasePanel", import("...base.BasePanel"))
+local var_0_1 = 0.5
+local var_0_2 = 0
+local var_0_3 = 1
 
-function slot0.Ctor(slot0, slot1)
-	slot0.state = uv0
-	slot3 = slot1._tf:Find(slot0:GetUIName())
-	slot0._go = slot3.gameObject
-	slot0._tf = slot3
-	slot0.contextData = slot1.contextData
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.state = var_0_2
 
-	slot0:Attach(slot1)
+	local var_1_0 = arg_1_0:GetUIName()
+	local var_1_1 = arg_1_1._tf:Find(var_1_0)
+
+	arg_1_0._go = var_1_1.gameObject
+	arg_1_0._tf = var_1_1
+	arg_1_0.contextData = arg_1_1.contextData
+
+	arg_1_0:Attach(arg_1_1)
 end
 
-function slot0.Attach(slot0, slot1)
-	uv0.super.attach(slot0, slot1)
-	slot0:init()
-	slot0:Active()
+function var_0_0.Attach(arg_2_0, arg_2_1)
+	var_0_0.super.attach(arg_2_0, arg_2_1)
+	arg_2_0:init()
+	arg_2_0:Active()
 
-	slot0.state = uv1
+	arg_2_0.state = var_0_3
 end
 
-function slot0.Active(slot0)
-	if slot0:IsVisit() then
-		slot0:OnVisitRegister()
+function var_0_0.Active(arg_3_0)
+	if arg_3_0:IsVisit() then
+		arg_3_0:OnVisitRegister()
 	else
-		slot0:OnRegister()
+		arg_3_0:OnRegister()
 	end
 end
 
-function slot0.Detach(slot0)
-	if slot0.state == uv0 then
-		slot0.state = uv1
+function var_0_0.Detach(arg_4_0)
+	if arg_4_0.state == var_0_3 then
+		arg_4_0.state = var_0_2
 
-		uv2.super.detach(slot0)
+		var_0_0.super.detach(arg_4_0)
 	end
 
-	slot0:OnDispose()
+	arg_4_0:OnDispose()
 end
 
-function slot0.Fold(slot0, slot1)
-	slot2 = slot0:GetMoveX()
+function var_0_0.Fold(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0:GetMoveX()
+	local var_5_1 = arg_5_0:GetMoveY()
 
-	if _.any(slot0:GetMoveY(), function (slot0)
-		return LeanTween.isTweening(go(slot0[1]))
-	end) or _.any(slot2, function (slot0)
-		return LeanTween.isTweening(go(slot0[1]))
+	if _.any(var_5_1, function(arg_6_0)
+		return LeanTween.isTweening(go(arg_6_0[1]))
+	end) or _.any(var_5_0, function(arg_7_0)
+		return LeanTween.isTweening(go(arg_7_0[1]))
 	end) then
 		return
 	end
 
-	_.each(slot2, function (slot0)
-		slot1 = 0
+	_.each(var_5_0, function(arg_8_0)
+		local var_8_0 = 0
 
-		if uv0 then
-			slot1 = slot0[1].anchoredPosition3D.x + slot0[1].rect.width * slot0[2]
+		if arg_5_1 then
+			var_8_0 = arg_8_0[1].anchoredPosition3D.x + arg_8_0[1].rect.width * arg_8_0[2]
 		end
 
-		uv1:Tween("moveX", uv0, slot0[1], slot1)
+		arg_5_0:Tween("moveX", arg_5_1, arg_8_0[1], var_8_0)
 	end)
-	_.each(slot3, function (slot0)
-		slot1 = 0
+	_.each(var_5_1, function(arg_9_0)
+		local var_9_0 = 0
 
-		if uv0 then
-			slot1 = slot0[1].anchoredPosition3D.y + slot0[1].rect.height * slot0[2]
+		if arg_5_1 then
+			var_9_0 = arg_9_0[1].anchoredPosition3D.y + arg_9_0[1].rect.height * arg_9_0[2]
 		end
 
-		uv1:Tween("moveY", uv0, slot0[1], slot1)
+		arg_5_0:Tween("moveY", arg_5_1, arg_9_0[1], var_9_0)
 	end)
 end
 
-function slot0.Flush(slot0, slot1, slot2)
-	if slot0.state == uv0 then
-		slot0.dorm = slot1
+function var_0_0.Flush(arg_10_0, arg_10_1, arg_10_2)
+	if arg_10_0.state == var_0_3 then
+		arg_10_0.dorm = arg_10_1
 
-		if slot0:IsVisit() then
-			slot0:OnVisitFlush()
+		if arg_10_0:IsVisit() then
+			arg_10_0:OnVisitFlush()
 		else
-			slot0:OnFlush(slot2)
+			arg_10_0:OnFlush(arg_10_2)
 		end
 	end
 end
 
-function slot0.GetMoveX(slot0)
+function var_0_0.GetMoveX(arg_11_0)
 	return {}
 end
 
-function slot0.GetMoveY(slot0)
+function var_0_0.GetMoveY(arg_12_0)
 	return {}
 end
 
-function slot0.Tween(slot0, slot1, slot2, slot3, slot4)
-	slot5 = LeanTween[slot1](slot3, slot4, uv0)
-	slot5 = slot5:setOnComplete(System.Action(function ()
-		if uv0 then
-			setActive(uv1, false)
+function var_0_0.Tween(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
+	LeanTween[arg_13_1](arg_13_3, arg_13_4, var_0_1):setOnComplete(System.Action(function()
+		if arg_13_2 then
+			setActive(arg_13_3, false)
 		end
-	end))
-
-	slot5:setOnStart(System.Action(function ()
-		if not uv0 then
-			setActive(uv1, true)
+	end)):setOnStart(System.Action(function()
+		if not arg_13_2 then
+			setActive(arg_13_3, true)
 		end
 	end))
 end
 
-function slot0.IsInner(slot0)
-	return slot0.contextData.floor == 1 or slot1 == 2
+function var_0_0.IsInner(arg_16_0)
+	local var_16_0 = arg_16_0.contextData.floor
+
+	return var_16_0 == 1 or var_16_0 == 2
 end
 
-function slot0.OnEnterOrExitEdit(slot0, slot1)
-	if slot1 then
-		slot0:OnEnterEditMode()
+function var_0_0.OnEnterOrExitEdit(arg_17_0, arg_17_1)
+	if arg_17_1 then
+		arg_17_0:OnEnterEditMode()
 	else
-		slot0:OnExitEditMode()
+		arg_17_0:OnExitEditMode()
 	end
 end
 
-function slot0.IsVisit(slot0)
-	return slot0.contextData.mode == CourtYardConst.SYSTEM_VISIT
+function var_0_0.IsVisit(arg_18_0)
+	return arg_18_0.contextData.mode == CourtYardConst.SYSTEM_VISIT
 end
 
-function slot0.OnEnterEditMode(slot0)
-	setActive(slot0._tf, false)
+function var_0_0.OnEnterEditMode(arg_19_0)
+	setActive(arg_19_0._tf, false)
 end
 
-function slot0.OnExitEditMode(slot0)
-	setActive(slot0._tf, true)
+function var_0_0.OnExitEditMode(arg_20_0)
+	setActive(arg_20_0._tf, true)
 end
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_21_0)
 	assert(false)
 end
 
-function slot0.OnRegister(slot0)
+function var_0_0.OnRegister(arg_22_0)
+	return
 end
 
-function slot0.OnVisitRegister(slot0)
+function var_0_0.OnVisitRegister(arg_23_0)
+	return
 end
 
-function slot0.OnDispose(slot0)
+function var_0_0.OnDispose(arg_24_0)
+	return
 end
 
-function slot0.OnVisitFlush(slot0)
+function var_0_0.OnVisitFlush(arg_25_0)
+	return
 end
 
-function slot0.OnFlush(slot0, slot1)
+function var_0_0.OnFlush(arg_26_0, arg_26_1)
+	return
 end
 
-function slot0.OnRemoveLayer(slot0, slot1)
+function var_0_0.OnRemoveLayer(arg_27_0, arg_27_1)
+	return
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_28_0)
 	return false
 end
 
-function slot0.UpdateFloor(slot0)
+function var_0_0.UpdateFloor(arg_29_0)
+	return
 end
 
-function slot0.SetActive(slot0, slot1, slot2)
-	setActiveViaCG(slot1, slot2)
+function var_0_0.SetActive(arg_30_0, arg_30_1, arg_30_2)
+	setActiveViaCG(arg_30_1, arg_30_2)
 end
 
-return slot0
+return var_0_0

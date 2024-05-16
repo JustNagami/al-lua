@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 25,
+				skill_id = 4031
+			}
+		}
+	},
 	{
 		desc = "每隔25秒，回复自身5.0%的耐久",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 4031,
 	icon = 4030,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 25,
-				skill_id = 4031
-			}
-		}
-	}
+	last_effect = ""
 }

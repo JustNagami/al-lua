@@ -1,45 +1,50 @@
-slot1 = require("Framework/lang/" .. "zh-cn")
+﻿local var_0_0 = "zh-cn"
+local var_0_1 = require("Framework/lang/" .. var_0_0)
 
-function l10n(slot0)
-	return uv0[slot0] or slot0
+function l10n(arg_1_0)
+	return var_0_1[arg_1_0] or arg_1_0
 end
 
-function i18n(slot0, ...)
-	if pg.gametip[slot0] then
-		slot2 = slot1.tip
+function i18n(arg_2_0, ...)
+	local var_2_0 = pg.gametip[arg_2_0]
 
-		for slot6, slot7 in ipairs({
+	if var_2_0 then
+		local var_2_1 = var_2_0.tip
+
+		for iter_2_0, iter_2_1 in ipairs({
 			...
 		}) do
-			slot2 = string.gsub(slot2, "$" .. slot6, slot7)
+			var_2_1 = string.gsub(var_2_1, "$" .. iter_2_0, iter_2_1)
 		end
 
-		return slot2
+		return var_2_1
 	else
-		return i18n_not_find(slot0)
+		return i18n_not_find(arg_2_0)
 	end
 end
 
-function i18n_not_find(slot0)
-	return "UndefinedLanguage:" .. slot0
+function i18n_not_find(arg_3_0)
+	return "UndefinedLanguage:" .. arg_3_0
 end
 
-function i18n1(slot0, ...)
-	return string.format(l10n(slot0), ...)
+function i18n1(arg_4_0, ...)
+	return string.format(l10n(arg_4_0), ...)
 end
 
-function i18n2(slot0, ...)
-	if pg.gameset_language_client[slot0] then
-		slot2 = slot1.value
+function i18n2(arg_5_0, ...)
+	local var_5_0 = pg.gameset_language_client[arg_5_0]
 
-		for slot6, slot7 in ipairs({
+	if var_5_0 then
+		local var_5_1 = var_5_0.value
+
+		for iter_5_0, iter_5_1 in ipairs({
 			...
 		}) do
-			slot2 = string.gsub(slot2, "$" .. slot6, slot7)
+			var_5_1 = string.gsub(var_5_1, "$" .. iter_5_0, iter_5_1)
 		end
 
-		return slot2
+		return var_5_1
 	else
-		return slot0
+		return arg_5_0
 	end
 end

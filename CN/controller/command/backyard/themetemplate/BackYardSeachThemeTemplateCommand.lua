@@ -1,54 +1,57 @@
-slot0 = class("BackYardSeachThemeTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardSeachThemeTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not slot1:getBody().str or slot3 == "" then
-		slot0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_ERRO)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().str
+
+	if not var_1_0 or var_1_0 == "" then
+		arg_1_0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_ERRO)
 
 		return
 	end
 
-	function slot4(slot0)
-		slot1 = slot0.theme
+	local function var_1_1(arg_2_0)
+		local var_2_0 = arg_2_0.theme
+		local var_2_1 = arg_2_0.has_fav and 1 or 0
+		local var_2_2 = arg_2_0.has_like and 1 or 0
+		local var_2_3 = BackYardThemeTemplate.New({
+			id = var_2_0.id,
+			name = var_2_0.name,
+			furniture_put_list = var_2_0.furniture_put_list,
+			user_id = var_2_0.user_id,
+			pos = var_2_0.pos,
+			like_count = var_2_0.like_count,
+			fav_count = var_2_0.fav_count,
+			upload_time = var_2_0.upload_time,
+			is_collection = var_2_1,
+			is_like = var_2_2,
+			image_md5 = var_2_0.image_md5,
+			icon_image_md5 = var_2_0.icon_image_md5
+		})
 
-		uv0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_DONE, {
-			template = BackYardThemeTemplate.New({
-				id = slot1.id,
-				name = slot1.name,
-				furniture_put_list = slot1.furniture_put_list,
-				user_id = slot1.user_id,
-				pos = slot1.pos,
-				like_count = slot1.like_count,
-				fav_count = slot1.fav_count,
-				upload_time = slot1.upload_time,
-				is_collection = slot0.has_fav and 1 or 0,
-				is_like = slot0.has_like and 1 or 0,
-				image_md5 = slot1.image_md5,
-				icon_image_md5 = slot1.icon_image_md5
-			})
+		arg_1_0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_DONE, {
+			template = var_2_3
 		})
 	end
 
-	function slot5(slot0)
-		uv0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_ERRO)
+	local function var_1_2(arg_3_0)
+		arg_1_0:sendNotification(GAME.BACKYARD_SEARCH_THEME_TEMPLATE_ERRO)
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(19113, {
-		theme_id = slot3
-	}, 19114, function (slot0)
-		if slot0.result == 0 then
-			uv0(slot0)
+	pg.ConnectionMgr.GetInstance():Send(19113, {
+		theme_id = var_1_0
+	}, 19114, function(arg_4_0)
+		if arg_4_0.result == 0 then
+			var_1_1(arg_4_0)
 		else
-			uv1(slot0)
+			var_1_2(arg_4_0)
 
-			if slot0.result == 20 then
+			if arg_4_0.result == 20 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_not_found_theme_template"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_4_0.result] .. arg_4_0.result)
 			end
 		end
 	end)
 end
 
-return slot0
+return var_0_0

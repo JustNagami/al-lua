@@ -1,43 +1,41 @@
-slot0 = class("XiaotianeSwimsuitSkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("XiaotianeSwimsuitSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.rtDayImage = slot0.bg:Find("day_image")
-	slot0.rtCharacter = slot0.bg:Find("character")
+	arg_1_0.rtDayImage = arg_1_0.bg:Find("day_image")
+	arg_1_0.rtCharacter = arg_1_0.bg:Find("character")
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setText(slot0.dayTF, i18n("activity_permanent_progress") .. slot0.nday .. "/" .. #slot0.taskGroup)
-	GetImageSpriteFromAtlasAsync("ui/activityuipage/xiaotianeswimsuitskinpage_atlas", tostring(slot0.nday), slot0.rtDayImage, true)
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	setText(arg_2_0.dayTF, i18n("activity_permanent_progress") .. arg_2_0.nday .. "/" .. #arg_2_0.taskGroup)
+	GetImageSpriteFromAtlasAsync("ui/activityuipage/xiaotianeswimsuitskinpage_atlas", tostring(arg_2_0.nday), arg_2_0.rtDayImage, true)
 
-	if not slot0.model then
-		slot1 = PoolMgr.GetInstance()
-
-		slot1:GetSpineChar("xiaotiane_2", true, function (slot0)
-			if uv0.model then
+	if not arg_2_0.model then
+		PoolMgr.GetInstance():GetSpineChar("xiaotiane_2", true, function(arg_3_0)
+			if arg_2_0.model then
 				return
 			end
 
-			uv0.model = slot0
-			tf(slot0).localScale = Vector3(1, 1, 1)
+			arg_2_0.model = arg_3_0
+			tf(arg_3_0).localScale = Vector3(1, 1, 1)
 
-			slot0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
-			setParent(slot0, uv0.rtCharacter)
+			arg_3_0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+			setParent(arg_3_0, arg_2_0.rtCharacter)
 		end)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.model then
-		PoolMgr.GetInstance():ReturnSpineChar("xiaotiane_2", slot0.model)
+function var_0_0.OnDestroy(arg_4_0)
+	if arg_4_0.model then
+		PoolMgr.GetInstance():ReturnSpineChar("xiaotiane_2", arg_4_0.model)
 
-		slot0.prefab1 = nil
-		slot0.model1 = nil
+		arg_4_0.prefab1 = nil
+		arg_4_0.model1 = nil
 	end
 
-	uv0.super.OnDestroy(slot0)
+	var_0_0.super.OnDestroy(arg_4_0)
 end
 
-return slot0
+return var_0_0

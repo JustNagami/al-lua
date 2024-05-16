@@ -1,255 +1,302 @@
-slot0 = class("Fushun3ItemController")
-slot1 = 3
-slot2 = 100
+﻿local var_0_0 = class("Fushun3ItemController")
+local var_0_1 = 3
+local var_0_2 = 100
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
-	slot0._sceneTf = slot1
-	slot0._charTf = slot2
-	slot0._itemTpls = slot3
-	slot0._event = slot4
-	slot8 = BoxCollider2D
-	slot0._charCollider = GetComponent(findTF(slot0._charTf, "collider"), typeof(slot8))
-	slot0._itemPos = findTF(slot0._sceneTf, "item")
-	slot0.weightTotal = 0
-	slot0.weightItems = {}
-	slot0.items = {}
-	slot0.itemPools = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	arg_1_0._sceneTf = arg_1_1
+	arg_1_0._charTf = arg_1_2
+	arg_1_0._itemTpls = arg_1_3
+	arg_1_0._event = arg_1_4
+	arg_1_0._charCollider = GetComponent(findTF(arg_1_0._charTf, "collider"), typeof(BoxCollider2D))
+	arg_1_0._itemPos = findTF(arg_1_0._sceneTf, "item")
+	arg_1_0.weightTotal = 0
+	arg_1_0.weightItems = {}
+	arg_1_0.items = {}
+	arg_1_0.itemPools = {}
 
-	for slot8 = 1, #Fushun3GameConst.item_instance_data do
-		slot9 = Fushun3GameConst.item_instance_data[slot8]
-		slot0.weightTotal = slot0.weightTotal + slot9.weight
+	for iter_1_0 = 1, #Fushun3GameConst.item_instance_data do
+		local var_1_0 = Fushun3GameConst.item_instance_data[iter_1_0]
 
-		table.insert(slot0.weightItems, {
-			id = slot9.id,
-			weight = slot0.weightTotal,
-			map = slot9.map
-		})
+		arg_1_0.weightTotal = arg_1_0.weightTotal + var_1_0.weight
+
+		local var_1_1 = arg_1_0.weightTotal
+		local var_1_2 = var_1_0.id
+		local var_1_3 = var_1_0.map
+		local var_1_4 = {
+			id = var_1_2,
+			weight = var_1_1,
+			map = var_1_3
+		}
+
+		table.insert(arg_1_0.weightItems, var_1_4)
 	end
 end
 
-function slot0.setCallback(slot0, slot1)
-	slot0._callback = slot1
+function var_0_0.setCallback(arg_2_0, arg_2_1)
+	arg_2_0._callback = arg_2_1
 end
 
-function slot0.start(slot0)
-	for slot4 = #slot0.items, 1, -1 do
-		slot0:returnItemToPool(table.remove(slot0.items, slot4))
+function var_0_0.start(arg_3_0)
+	for iter_3_0 = #arg_3_0.items, 1, -1 do
+		local var_3_0 = table.remove(arg_3_0.items, iter_3_0)
+
+		arg_3_0:returnItemToPool(var_3_0)
 	end
 
-	slot0.createTime = math.random(Fushun3GameConst.create_time[1], Fushun3GameConst.create_time[2])
-	slot0.createPos = Vector2.zero
-	slot0.itemTime = uv0
+	arg_3_0.createTime = math.random(Fushun3GameConst.create_time[1], Fushun3GameConst.create_time[2])
+	arg_3_0.createPos = Vector2.zero
+	arg_3_0.itemTime = var_0_1
 end
 
-function slot0.step(slot0)
-	slot0:removeOutItems()
+function var_0_0.step(arg_4_0)
+	arg_4_0:removeOutItems()
 
-	slot1 = slot0._charCollider.bounds
-	slot2 = {}
+	local var_4_0 = arg_4_0._charCollider.bounds
+	local var_4_1 = {}
 
-	for slot6 = #slot0.items, 1, -1 do
-		if slot0.items[slot6].collider and slot7.data.type ~= Fushun3GameConst.item_type_damage then
-			slot8 = slot7.collider.bounds
+	for iter_4_0 = #arg_4_0.items, 1, -1 do
+		local var_4_2 = arg_4_0.items[iter_4_0]
 
-			if Fushun3GameConst.CheckBoxCollider(slot1.min, slot8.min, slot1.size, slot8.size) then
-				if table.remove(slot0.items, slot6).data.effect then
-					slot0._event:emit(Fushun3GameEvent.add_effect_call, {
-						effectName = slot9.data.effect,
-						targetTf = slot9.tf
+		if var_4_2.collider and var_4_2.data.type ~= Fushun3GameConst.item_type_damage then
+			local var_4_3 = var_4_2.collider.bounds
+
+			if Fushun3GameConst.CheckBoxCollider(var_4_0.min, var_4_3.min, var_4_0.size, var_4_3.size) then
+				local var_4_4 = table.remove(arg_4_0.items, iter_4_0)
+
+				if var_4_4.data.effect then
+					arg_4_0._event:emit(Fushun3GameEvent.add_effect_call, {
+						effectName = var_4_4.data.effect,
+						targetTf = var_4_4.tf
 					})
 				end
 
-				if slot0._callback then
-					slot0._callback(Fushun3GameEvent.catch_item_call, {
-						data = slot9.data
+				if arg_4_0._callback then
+					arg_4_0._callback(Fushun3GameEvent.catch_item_call, {
+						data = var_4_4.data
 					})
 				end
 
-				slot0:returnItemToPool(slot9)
+				arg_4_0:returnItemToPool(var_4_4)
 			end
 		end
 
-		if slot7.data.speed then
-			slot8 = slot7.tf.anchoredPosition
-			slot8.x = slot8.x + slot7.data.speed * Time.deltaTime
-			slot7.tf.anchoredPosition = slot8
+		if var_4_2.data.speed then
+			local var_4_5 = var_4_2.tf.anchoredPosition
+
+			var_4_5.x = var_4_5.x + var_4_2.data.speed * Time.deltaTime
+			var_4_2.tf.anchoredPosition = var_4_5
 		end
 
-		if slot7.data.type == Fushun3GameConst.item_type_damage then
-			table.insert(slot2, slot7)
+		if var_4_2.data.type == Fushun3GameConst.item_type_damage then
+			table.insert(var_4_1, var_4_2)
 		end
 	end
 
-	for slot6 = #slot2, 1, -1 do
-		slot0._event:emit(Fushun3GameEvent.check_item_damage, {
-			collider = slot2[slot6].collider,
-			callback = function (slot0)
-				if slot0 then
+	for iter_4_1 = #var_4_1, 1, -1 do
+		local var_4_6 = var_4_1[iter_4_1]
+
+		arg_4_0._event:emit(Fushun3GameEvent.check_item_damage, {
+			collider = var_4_6.collider,
+			callback = function(arg_5_0)
+				if arg_5_0 then
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOOM)
-					uv0._event:emit(Fushun3GameEvent.add_effect_call, {
+					arg_4_0._event:emit(Fushun3GameEvent.add_effect_call, {
 						effectName = "EF_fr_Hit_LA",
-						targetTf = findTF(uv1.tf, "effectPos")
+						targetTf = findTF(var_4_6.tf, "effectPos")
 					})
-					uv0:removeItem(uv1)
+					arg_4_0:removeItem(var_4_6)
 				end
 			end
 		})
 	end
 end
 
-function slot0.removeItem(slot0, slot1)
-	for slot5 = #slot0.items, 1, -1 do
-		if slot1 == slot0.items[slot5] then
-			slot0:returnItemToPool(table.remove(slot0.items, slot5))
+function var_0_0.removeItem(arg_6_0, arg_6_1)
+	for iter_6_0 = #arg_6_0.items, 1, -1 do
+		if arg_6_1 == arg_6_0.items[iter_6_0] then
+			local var_6_0 = table.remove(arg_6_0.items, iter_6_0)
+
+			arg_6_0:returnItemToPool(var_6_0)
 
 			return
 		end
 	end
 end
 
-function slot0.createPlatformItem(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_0.createPlatformItem(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0
+	local var_7_1 = arg_7_0:getWeightItemsMap()
 
-	if slot0:getWeightItemsMap() then
-		slot3 = Fushun3GameConst.item_map[slot4]
+	if var_7_1 then
+		var_7_0 = Fushun3GameConst.item_map[var_7_1]
 	end
 
-	if slot3 then
-		slot6 = slot0._itemPos:InverseTransformPoint(slot1)
-		slot7 = 0
-		slot8 = 0
+	if var_7_0 then
+		local var_7_2 = var_7_0.list
+		local var_7_3 = arg_7_0._itemPos:InverseTransformPoint(arg_7_1)
+		local var_7_4 = 0
+		local var_7_5 = 0
 
-		for slot12 = #slot3.list, 1, -1 do
-			for slot17, slot18 in ipairs(slot5[slot12]) do
-				if slot18 and slot18 > 0 then
-					slot0:createItemById(slot18, Vector2(slot6.x + slot8, slot6.y + slot7))
+		for iter_7_0 = #var_7_2, 1, -1 do
+			local var_7_6 = var_7_2[iter_7_0]
+
+			for iter_7_1, iter_7_2 in ipairs(var_7_6) do
+				if iter_7_2 and iter_7_2 > 0 then
+					arg_7_0:createItemById(iter_7_2, Vector2(var_7_3.x + var_7_5, var_7_3.y + var_7_4))
 				end
 
-				slot8 = slot8 + Fushun3GameConst.item_h
+				var_7_5 = var_7_5 + Fushun3GameConst.item_h
 			end
 
-			slot8 = 0
-			slot7 = slot7 + Fushun3GameConst.item_v
+			var_7_5 = 0
+			var_7_4 = var_7_4 + Fushun3GameConst.item_v
 		end
 	end
 end
 
-function slot0.createItemById(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_0.createItemById(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0
 
-	for slot7 = 1, #Fushun3GameConst.item_data do
-		if Fushun3GameConst.item_data[slot7].id == slot1 then
-			slot3 = Fushun3GameConst.item_data[slot7].name
+	for iter_8_0 = 1, #Fushun3GameConst.item_data do
+		if Fushun3GameConst.item_data[iter_8_0].id == arg_8_1 then
+			var_8_0 = Fushun3GameConst.item_data[iter_8_0].name
 		end
 	end
 
-	if slot0:getOrCreateItem(slot3) then
-		setActive(slot4.tf, true)
+	local var_8_1 = arg_8_0:getOrCreateItem(var_8_0)
 
-		slot4.tf.anchoredPosition = slot2
+	if var_8_1 then
+		setActive(var_8_1.tf, true)
 
-		table.insert(slot0.items, slot4)
+		var_8_1.tf.anchoredPosition = arg_8_2
+
+		table.insert(arg_8_0.items, var_8_1)
 	end
 end
 
-function slot0.createItem(slot0, slot1, slot2)
-	if slot0:getOrCreateItem(slot1) then
-		slot3.tf.position = slot2
+function var_0_0.createItem(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = arg_9_0:getOrCreateItem(arg_9_1)
 
-		setActive(slot3.tf, true)
-		table.insert(slot0.items, slot3)
+	if var_9_0 then
+		var_9_0.tf.position = arg_9_2
+
+		setActive(var_9_0.tf, true)
+		table.insert(arg_9_0.items, var_9_0)
 	end
 end
 
-function slot0.itemFollow(slot0, slot1)
-	for slot5 = 1, #slot0.items do
-		if (slot0.items[slot5].data.type == Fushun3GameConst.item_type_buff or slot6.data.type == Fushun3GameConst.item_type_score) and math.abs(slot1.x - slot6.tf.anchoredPosition.x) <= 600 and math.abs(slot1.y - slot7.y) <= 700 then
-			slot9 = 2000 * Time.deltaTime * math.sign(slot1.x - slot7.x)
-			slot10 = 25 * math.sign(slot1.y - slot7.y)
+function var_0_0.itemFollow(arg_10_0, arg_10_1)
+	for iter_10_0 = 1, #arg_10_0.items do
+		local var_10_0 = arg_10_0.items[iter_10_0]
 
-			if math.abs(slot1.y - slot7.y) < 25 then
-				slot10 = 0
+		if var_10_0.data.type == Fushun3GameConst.item_type_buff or var_10_0.data.type == Fushun3GameConst.item_type_score then
+			local var_10_1 = var_10_0.tf.anchoredPosition
+
+			if math.abs(arg_10_1.x - var_10_1.x) <= 600 and math.abs(arg_10_1.y - var_10_1.y) <= 700 then
+				local var_10_2 = math.sign(arg_10_1.x - var_10_1.x)
+				local var_10_3 = 2000 * Time.deltaTime * var_10_2
+				local var_10_4 = 25 * math.sign(arg_10_1.y - var_10_1.y)
+
+				if math.abs(arg_10_1.y - var_10_1.y) < 25 then
+					var_10_4 = 0
+				end
+
+				var_10_1.x = var_10_1.x + var_10_3
+				var_10_1.y = var_10_1.y + var_10_4
+				var_10_0.tf.anchoredPosition = var_10_1
 			end
-
-			slot7.x = slot7.x + slot9
-			slot7.y = slot7.y + slot10
-			slot6.tf.anchoredPosition = slot7
 		end
 	end
 end
 
-function slot0.getOrCreateItem(slot0, slot1)
-	for slot5 = 1, #slot0.itemPools do
-		if slot0.itemPools[slot5].data.name == slot1 then
-			return table.remove(slot0.itemPools, slot5)
+function var_0_0.getOrCreateItem(arg_11_0, arg_11_1)
+	for iter_11_0 = 1, #arg_11_0.itemPools do
+		if arg_11_0.itemPools[iter_11_0].data.name == arg_11_1 then
+			return table.remove(arg_11_0.itemPools, iter_11_0)
 		end
 	end
 
-	for slot5 = 1, #Fushun3GameConst.item_data do
-		if Clone(Fushun3GameConst.item_data[slot5]).name == slot1 then
-			slot7 = tf(instantiate(findTF(slot0._itemTpls, slot1)))
-			slot7.localScale = Fushun3GameConst.game_scale_v3
+	for iter_11_1 = 1, #Fushun3GameConst.item_data do
+		local var_11_0 = Clone(Fushun3GameConst.item_data[iter_11_1])
 
-			setParent(slot7, slot0._itemPos)
+		if var_11_0.name == arg_11_1 then
+			local var_11_1 = tf(instantiate(findTF(arg_11_0._itemTpls, arg_11_1)))
+
+			var_11_1.localScale = Fushun3GameConst.game_scale_v3
+
+			local var_11_2 = GetComponent(findTF(var_11_1, "collider"), typeof(BoxCollider2D))
+
+			setParent(var_11_1, arg_11_0._itemPos)
 
 			return {
-				tf = slot7,
-				data = slot6,
-				collider = GetComponent(findTF(slot7, "collider"), typeof(BoxCollider2D))
+				tf = var_11_1,
+				data = var_11_0,
+				collider = var_11_2
 			}
 		end
 	end
 end
 
-function slot0.getWeightItemsMap(slot0)
-	if slot0.itemTime > 0 then
-		if math.random(1, slot0.itemTime) == slot0.itemTime then
-			slot0.itemTime = uv0
+function var_0_0.getWeightItemsMap(arg_12_0)
+	if arg_12_0.itemTime > 0 then
+		if math.random(1, arg_12_0.itemTime) == arg_12_0.itemTime then
+			arg_12_0.itemTime = var_0_2
 
-			if not slot0.itemsMap then
-				slot0.itemsMap = {}
+			if not arg_12_0.itemsMap then
+				arg_12_0.itemsMap = {}
 
-				for slot5 = 1, #slot0.weightItems do
-					if table.contains(Fushun3GameConst.item_map_ids, slot0.weightItems[slot5].map) then
-						table.insert(slot0.itemsMap, slot6.map)
+				for iter_12_0 = 1, #arg_12_0.weightItems do
+					local var_12_0 = arg_12_0.weightItems[iter_12_0]
+
+					if table.contains(Fushun3GameConst.item_map_ids, var_12_0.map) then
+						table.insert(arg_12_0.itemsMap, var_12_0.map)
 					end
 				end
 			end
 
-			return slot0.itemsMap[math.random(1, #slot0.itemsMap)]
+			return arg_12_0.itemsMap[math.random(1, #arg_12_0.itemsMap)]
 		else
-			slot0.itemTime = slot0.itemTime - 1
+			arg_12_0.itemTime = arg_12_0.itemTime - 1
 		end
 	end
 
-	slot1 = math.random(1, slot0.weightTotal)
+	local var_12_1 = math.random(1, arg_12_0.weightTotal)
 
-	for slot5 = 1, #slot0.weightItems do
-		if slot1 <= slot0.weightItems[slot5].weight then
-			return slot6.map
+	for iter_12_1 = 1, #arg_12_0.weightItems do
+		local var_12_2 = arg_12_0.weightItems[iter_12_1]
+
+		if var_12_1 <= var_12_2.weight then
+			return var_12_2.map
 		end
 	end
 
 	return nil
 end
 
-function slot0.removeOutItems(slot0)
-	for slot4 = #slot0.items, 1, -1 do
-		slot6 = slot0.items[slot4].data
+function var_0_0.removeOutItems(arg_13_0)
+	for iter_13_0 = #arg_13_0.items, 1, -1 do
+		local var_13_0 = arg_13_0.items[iter_13_0].tf
+		local var_13_1 = arg_13_0.items[iter_13_0].data
 
-		if slot0.items[slot4].tf.anchoredPosition.x < math.abs(slot0._sceneTf.anchoredPosition.x) - 1500 then
-			slot0:returnItemToPool(table.remove(slot0.items, slot4))
-		elseif slot6.type == Fushun3GameConst.item_type_damage and slot5.anchoredPosition.x >= math.abs(slot0._sceneTf.anchoredPosition.x) + 2000 then
-			slot0:returnItemToPool(table.remove(slot0.items, slot4))
-		elseif slot5.anchoredPosition.x >= math.abs(slot0._sceneTf.anchoredPosition.x) + 5000 then
-			slot0:returnItemToPool(table.remove(slot0.items, slot4))
+		if var_13_0.anchoredPosition.x < math.abs(arg_13_0._sceneTf.anchoredPosition.x) - 1500 then
+			local var_13_2 = table.remove(arg_13_0.items, iter_13_0)
+
+			arg_13_0:returnItemToPool(var_13_2)
+		elseif var_13_1.type == Fushun3GameConst.item_type_damage and var_13_0.anchoredPosition.x >= math.abs(arg_13_0._sceneTf.anchoredPosition.x) + 2000 then
+			local var_13_3 = table.remove(arg_13_0.items, iter_13_0)
+
+			arg_13_0:returnItemToPool(var_13_3)
+		elseif var_13_0.anchoredPosition.x >= math.abs(arg_13_0._sceneTf.anchoredPosition.x) + 5000 then
+			local var_13_4 = table.remove(arg_13_0.items, iter_13_0)
+
+			arg_13_0:returnItemToPool(var_13_4)
 		end
 	end
 end
 
-function slot0.returnItemToPool(slot0, slot1)
-	setActive(slot1.tf, false)
-	table.insert(slot0.itemPools, slot1)
+function var_0_0.returnItemToPool(arg_14_0, arg_14_1)
+	setActive(arg_14_1.tf, false)
+	table.insert(arg_14_0.itemPools, arg_14_1)
 end
 
-return slot0
+return var_0_0

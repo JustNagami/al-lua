@@ -1,5 +1,6 @@
-slot0 = class("PileGameBgMgr")
-slot0.bgMaps = {
+﻿local var_0_0 = class("PileGameBgMgr")
+
+var_0_0.bgMaps = {
 	"1",
 	"2",
 	"3",
@@ -13,163 +14,172 @@ slot0.bgMaps = {
 	"11",
 	"12"
 }
-slot0.effects = {
+var_0_0.effects = {
 	nil,
 	"diediele_1yanhua",
 	nil,
 	"diediele_2liuxin",
 	"diediele_2liuxin",
-	[12.0] = "diediele_3xinxin"
+	[12] = "diediele_3xinxin"
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0.tr = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.tr = arg_1_1
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.list = {
-		slot0.tr:Find("Image1"),
-		slot0.tr:Find("Image2"),
-		slot0.tr:Find("Image3")
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.list = {
+		arg_2_0.tr:Find("Image1"),
+		arg_2_0.tr:Find("Image2"),
+		arg_2_0.tr:Find("Image3")
 	}
-	slot0.names = {}
-	slot2 = {}
+	arg_2_0.names = {}
 
-	for slot6 = 1, 2 do
-		setActive(slot0.list[slot6], false)
-		table.insert(slot2, function (slot0)
-			slot1 = uv0:GetBg(uv1)
+	local var_2_0 = {}
 
-			uv0:LoadImage(slot1, function (slot0)
-				setActive(uv0.list[uv1], true)
+	for iter_2_0 = 1, 2 do
+		setActive(arg_2_0.list[iter_2_0], false)
+		table.insert(var_2_0, function(arg_3_0)
+			local var_3_0 = arg_2_0:GetBg(iter_2_0)
 
-				uv0.list[uv1]:GetComponent(typeof(Image)).sprite = slot0
+			arg_2_0:LoadImage(var_3_0, function(arg_4_0)
+				setActive(arg_2_0.list[iter_2_0], true)
 
-				uv2()
+				arg_2_0.list[iter_2_0]:GetComponent(typeof(Image)).sprite = arg_4_0
+
+				arg_3_0()
 			end)
 
-			uv0.names[uv0.list[uv1]] = slot1
+			arg_2_0.names[arg_2_0.list[iter_2_0]] = var_3_0
 
-			uv0:LoadEffect(slot1, uv0.list[uv1])
+			arg_2_0:LoadEffect(var_3_0, arg_2_0.list[iter_2_0])
 		end)
 	end
 
-	seriesAsync(slot2, function ()
-		slot0 = 0
+	seriesAsync(var_2_0, function()
+		local var_5_0 = 0
 
-		for slot4, slot5 in ipairs(uv0.list) do
-			if uv0.list[slot4 - 1] then
-				slot0 = slot0 + slot6.rect.height
+		for iter_5_0, iter_5_1 in ipairs(arg_2_0.list) do
+			local var_5_1 = arg_2_0.list[iter_5_0 - 1]
+
+			if var_5_1 then
+				var_5_0 = var_5_0 + var_5_1.rect.height
 			end
 
-			setAnchoredPosition(slot5, {
+			setAnchoredPosition(iter_5_1, {
 				x = 0,
 				z = 0,
-				y = slot0
+				y = var_5_0
 			})
 		end
 
-		uv1()
+		arg_2_1()
 	end)
 end
 
-function slot0.DoMove(slot0, slot1)
-	slot2 = nil
+function var_0_0.DoMove(arg_6_0, arg_6_1)
+	local var_6_0
 
-	for slot6, slot7 in ipairs(slot0.list) do
-		if slot7 then
-			slot2 = slot2 or slot6
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.list) do
+		if iter_6_1 then
+			var_6_0 = var_6_0 or iter_6_0
 
-			setAnchoredPosition(slot7, {
-				y = getAnchoredPosition(slot7).y - slot1
+			local var_6_1 = getAnchoredPosition(iter_6_1)
+
+			setAnchoredPosition(iter_6_1, {
+				y = var_6_1.y - arg_6_1
 			})
 		end
 	end
 
-	slot0:DoCheck(slot2)
+	arg_6_0:DoCheck(var_6_0)
 end
 
-function slot0.DoCheck(slot0, slot1)
-	slot2 = slot0.list[slot1]
-	slot3 = slot0.list[slot1 + 2]
+function var_0_0.DoCheck(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0.list[arg_7_1]
+	local var_7_1 = arg_7_0.list[arg_7_1 + 2]
+	local var_7_2 = getAnchoredPosition(var_7_0)
 
-	if getAnchoredPosition(slot2).y + slot2.rect.height + slot0.list[slot1 + 1].rect.height - slot0.tr.rect.height >= 50 then
-		slot6 = slot3:GetComponent(typeof(Image))
+	if var_7_2.y + var_7_0.rect.height + arg_7_0.list[arg_7_1 + 1].rect.height - arg_7_0.tr.rect.height >= 50 then
+		local var_7_3 = var_7_1:GetComponent(typeof(Image))
+		local var_7_4 = arg_7_0:GetBg(arg_7_1 + 2)
 
-		if slot0.names[slot3] ~= slot0:GetBg(slot1 + 2) then
-			slot0:LoadImage(slot7, function (slot0)
-				setActive(uv0, true)
+		if arg_7_0.names[var_7_1] ~= var_7_4 then
+			arg_7_0:LoadImage(var_7_4, function(arg_8_0)
+				setActive(var_7_1, true)
 
-				uv1.sprite = slot0
+				var_7_3.sprite = arg_8_0
 
-				uv1:SetNativeSize()
+				var_7_3:SetNativeSize()
 			end)
-			slot0:LoadEffect(slot7, slot3)
+			arg_7_0:LoadEffect(var_7_4, var_7_1)
 
-			slot0.names[slot3] = slot7
+			arg_7_0.names[var_7_1] = var_7_4
 		end
 	end
 
-	if slot2.rect.height <= math.abs(slot4.y) then
-		slot2:GetComponent(typeof(Image)).sprite = nil
-		slot0.names[slot2] = nil
+	if math.abs(var_7_2.y) >= var_7_0.rect.height then
+		var_7_0:GetComponent(typeof(Image)).sprite = nil
+		arg_7_0.names[var_7_0] = nil
 
-		slot2:SetAsFirstSibling()
+		var_7_0:SetAsFirstSibling()
 
-		slot0.list[slot1 + 3] = slot2
-		slot0.list[slot1] = false
+		arg_7_0.list[arg_7_1 + 3] = var_7_0
+		arg_7_0.list[arg_7_1] = false
 
-		setAnchoredPosition(slot2, {
-			y = getAnchoredPosition(slot3).y + slot3.rect.height
+		local var_7_5 = getAnchoredPosition(var_7_1)
+
+		setAnchoredPosition(var_7_0, {
+			y = var_7_5.y + var_7_1.rect.height
 		})
-		slot0:ReturnEffect(slot2)
+		arg_7_0:ReturnEffect(var_7_0)
 	end
 end
 
-function slot0.GetBg(slot0, slot1)
-	return uv0.bgMaps[slot1] or uv0.bgMaps[#uv0.bgMaps]
+function var_0_0.GetBg(arg_9_0, arg_9_1)
+	return var_0_0.bgMaps[arg_9_1] or var_0_0.bgMaps[#var_0_0.bgMaps]
 end
 
-function slot0.LoadImage(slot0, slot1, slot2)
-	LoadSpriteAtlasAsync("clutter/bg" .. slot1, nil, function (slot0)
-		uv0(slot0)
+function var_0_0.LoadImage(arg_10_0, arg_10_1, arg_10_2)
+	LoadSpriteAtlasAsync("clutter/bg" .. arg_10_1, nil, function(arg_11_0)
+		arg_10_2(arg_11_0)
 	end)
 end
 
-function slot0.LoadEffect(slot0, slot1, slot2)
-	if uv0.effects[tonumber(slot1)] then
-		slot4 = PoolMgr.GetInstance()
+function var_0_0.LoadEffect(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = var_0_0.effects[tonumber(arg_12_1)]
 
-		slot4:GetUI(slot3, true, function (slot0)
-			if not uv0.list then
-				PoolMgr.GetInstance():ReturnUI(uv1, slot0)
+	if var_12_0 then
+		PoolMgr.GetInstance():GetUI(var_12_0, true, function(arg_13_0)
+			if not arg_12_0.list then
+				PoolMgr.GetInstance():ReturnUI(var_12_0, arg_13_0)
 			else
-				slot0.name = uv1
+				arg_13_0.name = var_12_0
 
-				SetParent(slot0, uv2)
-				setActive(slot0, true)
+				SetParent(arg_13_0, arg_12_2)
+				setActive(arg_13_0, true)
 			end
 		end)
 	end
 end
 
-function slot0.ReturnEffect(slot0, slot1)
-	if slot1.childCount > 0 then
-		slot3 = slot1:GetChild(0)
+function var_0_0.ReturnEffect(arg_14_0, arg_14_1)
+	if arg_14_1.childCount > 0 then
+		local var_14_0 = arg_14_1:GetChild(0)
 
-		PoolMgr.GetInstance():ReturnUI(slot3.name, slot3.gameObject)
+		PoolMgr.GetInstance():ReturnUI(var_14_0.name, var_14_0.gameObject)
 	end
 end
 
-function slot0.Clear(slot0)
-	eachChild(slot0.tr, function (slot0)
-		slot0:GetComponent(typeof(Image)).sprite = nil
+function var_0_0.Clear(arg_15_0)
+	eachChild(arg_15_0.tr, function(arg_16_0)
+		arg_16_0:GetComponent(typeof(Image)).sprite = nil
 
-		uv0:ReturnEffect(slot0)
+		arg_15_0:ReturnEffect(arg_16_0)
 	end)
 
-	slot0.list = nil
-	slot0.names = nil
+	arg_15_0.list = nil
+	arg_15_0.names = nil
 end
 
-return slot0
+return var_0_0

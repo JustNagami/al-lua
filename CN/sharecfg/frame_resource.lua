@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.frame_resource = {
 	["13"] = {
 		param = {

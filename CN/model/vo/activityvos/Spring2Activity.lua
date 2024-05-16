@@ -1,62 +1,67 @@
-slot0 = class("Spring2Activity", import("model.vo.ActivityVOs.ITaskActivity"))
-slot0.OPERATION_SETSHIP = 1
+﻿local var_0_0 = class("Spring2Activity", import("model.vo.ActivityVOs.ITaskActivity"))
 
-function slot0.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+var_0_0.OPERATION_SETSHIP = 1
 
-	for slot4 = 1, slot0:GetSlotCount() do
-		slot0.data1_list[slot4] = slot0.data1_list[slot4] or 0
+function var_0_0.Ctor(arg_1_0, ...)
+	var_0_0.super.Ctor(arg_1_0, ...)
+
+	for iter_1_0 = 1, arg_1_0:GetSlotCount() do
+		arg_1_0.data1_list[iter_1_0] = arg_1_0.data1_list[iter_1_0] or 0
 	end
 end
 
-function slot0.GetSlotCount(slot0)
-	return slot0:getConfig("config_data")[2]
+function var_0_0.GetSlotCount(arg_2_0)
+	return arg_2_0:getConfig("config_data")[2]
 end
 
-function slot0.GetTotalSlotCount(slot0)
-	return slot0:getConfig("config_data")[2]
+function var_0_0.GetTotalSlotCount(arg_3_0)
+	return arg_3_0:getConfig("config_data")[2]
 end
 
-function slot0.GetAvaliableShipIds(slot0)
-	return _.filter(slot0.data1_list, function (slot0)
-		return slot0 > 0
+function var_0_0.GetAvaliableShipIds(arg_4_0)
+	return _.filter(arg_4_0.data1_list, function(arg_5_0)
+		return arg_5_0 > 0
 	end)
 end
 
-function slot0.GetShipIds(slot0)
-	return slot0.data1_list
+function var_0_0.GetShipIds(arg_6_0)
+	return arg_6_0.data1_list
 end
 
-function slot0.SetShipIds(slot0, slot1)
-	table.Foreach(slot1, function (slot0, slot1)
-		uv0.data1_list[slot1.key] = slot1.value
+function var_0_0.SetShipIds(arg_7_0, arg_7_1)
+	table.Foreach(arg_7_1, function(arg_8_0, arg_8_1)
+		arg_7_0.data1_list[arg_8_1.key] = arg_8_1.value
 	end)
 end
 
-function slot0.GetEnergyRecoverAddition(slot0)
-	return slot0:getConfig("config_data")[1]
+function var_0_0.GetEnergyRecoverAddition(arg_9_0)
+	return arg_9_0:getConfig("config_data")[1]
 end
 
-function slot0.GetUnlockTaskIds(slot0)
-	return _.flatten(slot0:GetTaskIdsByDay())
+function var_0_0.GetUnlockTaskIds(arg_10_0)
+	return _.flatten(arg_10_0:GetTaskIdsByDay())
 end
 
-function slot0.GetFinishedTaskIds(slot0)
-	return slot0.data2_list
+function var_0_0.GetFinishedTaskIds(arg_11_0)
+	return arg_11_0.data2_list
 end
 
-function slot0.GetTaskIdsByDay(slot0)
-	return slot0:getConfig("config_data")[3]
+function var_0_0.GetTaskIdsByDay(arg_12_0)
+	return arg_12_0:getConfig("config_data")[3]
 end
 
-function slot0.readyToAchieve(slot0)
-	assert(isa(slot0, Spring2Activity))
+function var_0_0.readyToAchieve(arg_13_0)
+	assert(isa(arg_13_0, Spring2Activity))
 
-	slot2 = getProxy(ActivityTaskProxy)
+	local var_13_0 = arg_13_0:GetConfigID()
+	local var_13_1 = getProxy(ActivityTaskProxy):getTaskVOsByActId(var_13_0)
 
-	return _.any(slot2:getTaskVOsByActId(slot0:GetConfigID()), function (slot0)
-		return slot0:isFinish() and not slot0:isOver()
+	return _.any(var_13_1, function(arg_14_0)
+		local var_14_0 = arg_14_0:isFinish()
+		local var_14_1 = arg_14_0:isOver()
+
+		return var_14_0 and not var_14_1
 	end)
 end
 
-return slot0
+return var_0_0

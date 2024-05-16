@@ -1,15 +1,15 @@
-slot0 = class("GuessForkGameView", import("..BaseMiniGameView"))
-slot1 = {
+﻿local var_0_0 = class("GuessForkGameView", import("..BaseMiniGameView"))
+local var_0_1 = {
 	100,
 	50
 }
-slot2 = {
+local var_0_2 = {
 	10
 }
-slot3 = {
+local var_0_3 = {
 	20
 }
-slot4 = {
+local var_0_4 = {
 	3,
 	3,
 	3,
@@ -47,45 +47,45 @@ slot4 = {
 	11,
 	12
 }
-slot5 = {
+local var_0_5 = {
 	1000,
 	200
 }
-slot6 = 10000
-slot7 = 2
-slot8 = 2
-slot9 = "event:/ui/ddldaoshu2"
-slot10 = "event:/ui/taosheng"
-slot11 = "event:/ui/zhengque"
-slot12 = "event:/ui/shibai"
-slot13 = "backyard"
-slot14 = {
+local var_0_6 = 10000
+local var_0_7 = 2
+local var_0_8 = 2
+local var_0_9 = "event:/ui/ddldaoshu2"
+local var_0_10 = "event:/ui/taosheng"
+local var_0_11 = "event:/ui/zhengque"
+local var_0_12 = "event:/ui/shibai"
+local var_0_13 = "backyard"
+local var_0_14 = {
 	"Cup_B",
 	"Cup_G",
 	"Cup_P",
 	"Cup_R",
 	"Cup_Y"
 }
-slot15 = 3
-slot16 = 0.5
-slot17 = "Thinking_Loop"
-slot18 = {
+local var_0_15 = 3
+local var_0_16 = 0.5
+local var_0_17 = "Thinking_Loop"
+local var_0_18 = {
 	"Select_L",
 	"Select_M",
 	"Select_R"
 }
-slot19 = {
+local var_0_19 = {
 	"Correct_L",
 	"Correct_M",
 	"Correct_R"
 }
-slot20 = {
+local var_0_20 = {
 	"Incorrect_L",
 	"Incorrect_M",
 	"Incorrect_R"
 }
-slot21 = "Manjuu_Correct"
-slot22 = {
+local var_0_21 = "Manjuu_Correct"
+local var_0_22 = {
 	"Ayanami",
 	"Cheshire",
 	"Eldridge",
@@ -102,427 +102,437 @@ slot22 = {
 	"Z23"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuessForkGameUI"
 end
 
-function slot0.getBGM(slot0)
-	return uv0
+function var_0_0.getBGM(arg_2_0)
+	return var_0_13
 end
 
-function slot0.init(slot0)
-	slot0.countUI = slot0:findTF("count_ui")
-	slot0.countAnimator = slot0:findTF("count_bg/count", slot0.countUI):GetComponent(typeof(Animator))
-	slot0.countDft = slot0:findTF("count_bg/count", slot0.countUI):GetComponent(typeof(DftAniEvent))
+function var_0_0.init(arg_3_0)
+	arg_3_0.countUI = arg_3_0:findTF("count_ui")
+	arg_3_0.countAnimator = arg_3_0:findTF("count_bg/count", arg_3_0.countUI):GetComponent(typeof(Animator))
+	arg_3_0.countDft = arg_3_0:findTF("count_bg/count", arg_3_0.countUI):GetComponent(typeof(DftAniEvent))
 
-	slot0.countDft:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:startGame()
+	arg_3_0.countDft:SetEndEvent(function()
+		setActive(arg_3_0.countUI, false)
+		arg_3_0:startGame()
 	end)
 
-	slot0.pauseUI = slot0:findTF("pause_ui")
-	slot0.resuemBtn = slot0:findTF("box/sure_btn", slot0.pauseUI)
+	arg_3_0.pauseUI = arg_3_0:findTF("pause_ui")
+	arg_3_0.resuemBtn = arg_3_0:findTF("box/sure_btn", arg_3_0.pauseUI)
 
-	setText(slot0:findTF("box/content", slot0.pauseUI), i18n("idolmaster_game_tip1"))
+	setText(arg_3_0:findTF("box/content", arg_3_0.pauseUI), i18n("idolmaster_game_tip1"))
 
-	slot0.exitUI = slot0:findTF("exit_ui")
-	slot0.exitSureBtn = slot0:findTF("box/sure_btn", slot0.exitUI)
-	slot0.exitCancelBtn = slot0:findTF("box/cancel_btn", slot0.exitUI)
+	arg_3_0.exitUI = arg_3_0:findTF("exit_ui")
+	arg_3_0.exitSureBtn = arg_3_0:findTF("box/sure_btn", arg_3_0.exitUI)
+	arg_3_0.exitCancelBtn = arg_3_0:findTF("box/cancel_btn", arg_3_0.exitUI)
 
-	setText(slot0:findTF("box/content", slot0.exitUI), i18n("idolmaster_game_tip2"))
+	setText(arg_3_0:findTF("box/content", arg_3_0.exitUI), i18n("idolmaster_game_tip2"))
 
-	slot0.endUI = slot0:findTF("end_ui")
-	slot0.endSureBtn = slot0:findTF("box/sure_btn", slot0.endUI)
+	arg_3_0.endUI = arg_3_0:findTF("end_ui")
+	arg_3_0.endSureBtn = arg_3_0:findTF("box/sure_btn", arg_3_0.endUI)
 
-	setText(slot0:findTF("box/cur_score", slot0.endUI), i18n("idolmaster_game_tip3"))
+	setText(arg_3_0:findTF("box/cur_score", arg_3_0.endUI), i18n("idolmaster_game_tip3"))
 
-	slot0.endScoreTxt = slot0:findTF("box/cur_score/score", slot0.endUI)
-	slot0.newTag = slot0:findTF("new", slot0.endScoreTxt)
+	arg_3_0.endScoreTxt = arg_3_0:findTF("box/cur_score/score", arg_3_0.endUI)
+	arg_3_0.newTag = arg_3_0:findTF("new", arg_3_0.endScoreTxt)
 
-	setText(slot0:findTF("box/highest_score", slot0.endUI), i18n("idolmaster_game_tip4"))
+	setText(arg_3_0:findTF("box/highest_score", arg_3_0.endUI), i18n("idolmaster_game_tip4"))
 
-	slot0.highestScoreTxt = slot0:findTF("box/highest_score/score", slot0.endUI)
-	slot0.gameUI = slot0:findTF("game_ui")
-	slot0.returnBtn = slot0:findTF("top/return_btn", slot0.gameUI)
-	slot0.pauseBtn = slot0:findTF("top/pause_btn", slot0.gameUI)
-	slot0.roundTxt = slot0:findTF("top/title/round/num", slot0.gameUI)
-	slot0.roundNum = 0
-	slot0.curScoreTxt = slot0:findTF("top/title/score_title/score", slot0.gameUI)
-	slot0.curScore = 0
+	arg_3_0.highestScoreTxt = arg_3_0:findTF("box/highest_score/score", arg_3_0.endUI)
+	arg_3_0.gameUI = arg_3_0:findTF("game_ui")
+	arg_3_0.returnBtn = arg_3_0:findTF("top/return_btn", arg_3_0.gameUI)
+	arg_3_0.pauseBtn = arg_3_0:findTF("top/pause_btn", arg_3_0.gameUI)
+	arg_3_0.roundTxt = arg_3_0:findTF("top/title/round/num", arg_3_0.gameUI)
+	arg_3_0.roundNum = 0
+	arg_3_0.curScoreTxt = arg_3_0:findTF("top/title/score_title/score", arg_3_0.gameUI)
+	arg_3_0.curScore = 0
 
-	setText(slot0.curScoreTxt, slot0.curScore)
+	setText(arg_3_0.curScoreTxt, arg_3_0.curScore)
 
-	slot0.curTimeTxt = slot0:findTF("top/time_bg/time", slot0.gameUI)
-	slot0.curTime = 0
+	arg_3_0.curTimeTxt = arg_3_0:findTF("top/time_bg/time", arg_3_0.gameUI)
+	arg_3_0.curTime = 0
 
-	setText(slot0:findTF("top/title/score_title", slot0.gameUI), i18n("idolmaster_game_tip5"))
+	setText(arg_3_0:findTF("top/title/score_title", arg_3_0.gameUI), i18n("idolmaster_game_tip5"))
 
-	slot0.correctBar = slot0:findTF("correct_bar", slot0.gameUI)
-	slot0.failBar = slot0:findTF("fail_bar", slot0.gameUI)
-	slot0.manjuu = slot0:findTF("play/manjuu", slot0.gameUI)
-	slot0.manjuuAnimator = slot0.manjuu:GetComponent(typeof(Animator))
-	slot0.manjuuDft = slot0.manjuu:GetComponent(typeof(DftAniEvent))
-	slot0.result = slot0:findTF("result", slot0.gameUI)
-	slot0.resultAnimator = slot0.result:GetComponent(typeof(Animator))
-	slot0.resultDft = slot0.result:GetComponent(typeof(DftAniEvent))
-	slot0.scoreAni = slot0:findTF("score", slot0.gameUI)
-	slot0.cupContainer = slot0:findTF("cup_container", slot0.gameUI)
-	slot0.fork = slot0:findTF("fork", slot0.gameUI)
-	slot0.isGuessTime = false
+	arg_3_0.correctBar = arg_3_0:findTF("correct_bar", arg_3_0.gameUI)
+	arg_3_0.failBar = arg_3_0:findTF("fail_bar", arg_3_0.gameUI)
+	arg_3_0.manjuu = arg_3_0:findTF("play/manjuu", arg_3_0.gameUI)
+	arg_3_0.manjuuAnimator = arg_3_0.manjuu:GetComponent(typeof(Animator))
+	arg_3_0.manjuuDft = arg_3_0.manjuu:GetComponent(typeof(DftAniEvent))
+	arg_3_0.result = arg_3_0:findTF("result", arg_3_0.gameUI)
+	arg_3_0.resultAnimator = arg_3_0.result:GetComponent(typeof(Animator))
+	arg_3_0.resultDft = arg_3_0.result:GetComponent(typeof(DftAniEvent))
+	arg_3_0.scoreAni = arg_3_0:findTF("score", arg_3_0.gameUI)
+	arg_3_0.cupContainer = arg_3_0:findTF("cup_container", arg_3_0.gameUI)
+	arg_3_0.fork = arg_3_0:findTF("fork", arg_3_0.gameUI)
+	arg_3_0.isGuessTime = false
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.pauseBtn, function ()
-		setActive(uv0.pauseUI, true)
-		uv0:pauseGame()
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0.pauseBtn, function()
+		setActive(arg_5_0.pauseUI, true)
+		arg_5_0:pauseGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.resuemBtn, function ()
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_5_0, arg_5_0.resuemBtn, function()
+		setActive(arg_5_0.pauseUI, false)
+		arg_5_0:resumeGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.returnBtn, function ()
-		setActive(uv0.exitUI, true)
-		uv0:pauseGame()
+	onButton(arg_5_0, arg_5_0.returnBtn, function()
+		setActive(arg_5_0.exitUI, true)
+		arg_5_0:pauseGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.exitSureBtn, function ()
-		setActive(uv0.exitUI, false)
-		uv0:enterResultUI()
+	onButton(arg_5_0, arg_5_0.exitSureBtn, function()
+		setActive(arg_5_0.exitUI, false)
+		arg_5_0:enterResultUI()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.exitCancelBtn, function ()
-		setActive(uv0.exitUI, false)
-		uv0:resumeGame()
+	onButton(arg_5_0, arg_5_0.exitCancelBtn, function()
+		setActive(arg_5_0.exitUI, false)
+		arg_5_0:resumeGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.endSureBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_5_0, arg_5_0.endSureBtn, function()
+		arg_5_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-	eachChild(slot0.cupContainer, function (slot0)
-		onButton(uv0, slot0, function ()
-			if not uv0.isGuessTime then
+	eachChild(arg_5_0.cupContainer, function(arg_12_0)
+		onButton(arg_5_0, arg_12_0, function()
+			if not arg_5_0.isGuessTime then
 				return
 			end
 
-			setActive(uv0:findTF("select", uv1), true)
+			setActive(arg_5_0:findTF("select", arg_12_0), true)
 
-			uv0.isGuessTime = false
-			uv0.selectIndex = tonumber(string.gsub(uv1.name, "cup_", ""))
+			arg_5_0.isGuessTime = false
 
-			uv0:endRound(uv0.selectIndex == uv0.forkIndex)
+			local var_13_0 = string.gsub(arg_12_0.name, "cup_", "")
+
+			arg_5_0.selectIndex = tonumber(var_13_0)
+
+			arg_5_0:endRound(arg_5_0.selectIndex == arg_5_0.forkIndex)
 		end, SFX_PANEL)
 	end)
-	slot0:initGameData()
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("countDown")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
+	arg_5_0:initGameData()
+	setActive(arg_5_0.countUI, true)
+	arg_5_0.countAnimator:Play("countDown")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_9)
 end
 
-function slot0.initGameData(slot0)
-	slot2 = uv0[math.random(#uv0)]
+function var_0_0.initGameData(arg_14_0)
+	local var_14_0 = math.random(#var_0_14)
+	local var_14_1 = var_0_14[var_14_0]
 
-	eachChild(slot0.cupContainer, function (slot0)
-		GetSpriteFromAtlasAsync("ui/minigameui/guessforkgameui", uv0, function (slot0)
-			setImageSprite(uv0:findTF("front", uv1), slot0, true)
+	eachChild(arg_14_0.cupContainer, function(arg_15_0)
+		GetSpriteFromAtlasAsync("ui/minigameui/guessforkgameui", var_14_1, function(arg_16_0)
+			setImageSprite(arg_14_0:findTF("front", arg_15_0), arg_16_0, true)
 		end)
 	end)
 
-	slot0.forkIndex = math.random(uv1)
-	slot0.selectIndex = nil
-	slot0.roundNum = slot0.roundNum + 1
+	arg_14_0.forkIndex = math.random(var_0_15)
+	arg_14_0.selectIndex = nil
+	arg_14_0.roundNum = arg_14_0.roundNum + 1
 
-	setText(slot0.roundTxt, slot0.roundNum)
+	setText(arg_14_0.roundTxt, arg_14_0.roundNum)
 
-	slot0.curTime = uv2[slot0.roundNum] or uv2[#uv2]
+	arg_14_0.curTime = var_0_3[arg_14_0.roundNum] or var_0_3[#var_0_3]
 
-	setText(slot0.curTimeTxt, slot0.curTime)
-	setActive(slot0.result, false)
+	setText(arg_14_0.curTimeTxt, arg_14_0.curTime)
+	setActive(arg_14_0.result, false)
 end
 
-function slot0.startGame(slot0)
-	slot0.manjuuAnimator:Play(uv0)
+function var_0_0.startGame(arg_17_0)
+	arg_17_0.manjuuAnimator:Play(var_0_17)
 
-	slot1 = uv1[slot0.roundNum] or uv1[#uv1]
+	local var_17_0 = var_0_4[arg_17_0.roundNum] or var_0_4[#var_0_4]
 
-	slot0:playForkAni(function ()
-		uv0:startSwap(uv1)
+	arg_17_0:playForkAni(function()
+		arg_17_0:startSwap(var_17_0)
 	end)
 
-	slot0.gameStartFlag = true
+	arg_17_0.gameStartFlag = true
 end
 
-function slot0.playForkAni(slot0, slot1)
-	setParent(slot0.fork, slot0:findTF("fork_node", slot0:findTF("cup_" .. slot0.forkIndex, slot0.cupContainer)), false)
-	setLocalScale(slot0.fork, Vector3.one)
-	setLocalPosition(slot0.fork, Vector3(0, 50, 0))
-	setActive(slot0.fork, true)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0:managedTween(LeanTween.moveY, function ()
-			setActive(uv0.fork, false)
+function var_0_0.playForkAni(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0:findTF("cup_" .. arg_19_0.forkIndex, arg_19_0.cupContainer)
 
-			if uv1 then
-				uv1()
+	setParent(arg_19_0.fork, arg_19_0:findTF("fork_node", var_19_0), false)
+	setLocalScale(arg_19_0.fork, Vector3.one)
+	setLocalPosition(arg_19_0.fork, Vector3(0, 50, 0))
+	setActive(arg_19_0.fork, true)
+	arg_19_0:managedTween(LeanTween.delayedCall, function()
+		arg_19_0:managedTween(LeanTween.moveY, function()
+			setActive(arg_19_0.fork, false)
+
+			if arg_19_1 then
+				arg_19_1()
 			end
-		end, uv0.fork, -20, uv2):setEase(LeanTweenType.linear)
+		end, arg_19_0.fork, -20, var_0_16):setEase(LeanTweenType.linear)
 	end, 0.5, nil)
 end
 
-function slot0.startSwap(slot0, slot1)
-	if slot1 < 1 then
-		slot0.isGuessTime = true
+function var_0_0.startSwap(arg_22_0, arg_22_1)
+	if arg_22_1 < 1 then
+		arg_22_0.isGuessTime = true
 
-		slot0:startTimer()
+		arg_22_0:startTimer()
 
 		return
 	end
 
-	slot2 = {
+	local var_22_0 = {
 		1,
 		2,
 		3
 	}
+	local var_22_1 = math.random(#var_22_0)
 
-	table.remove(slot2, math.random(#slot2))
-	slot0:swapCup(slot0:findTF("cup_" .. slot2[1], slot0.cupContainer), slot0:findTF("cup_" .. slot2[2], slot0.cupContainer), function ()
-		uv0:startSwap(uv1 - 1)
+	table.remove(var_22_0, var_22_1)
+
+	local var_22_2 = arg_22_0:findTF("cup_" .. var_22_0[1], arg_22_0.cupContainer)
+	local var_22_3 = arg_22_0:findTF("cup_" .. var_22_0[2], arg_22_0.cupContainer)
+
+	arg_22_0:swapCup(var_22_2, var_22_3, function()
+		arg_22_0:startSwap(arg_22_1 - 1)
 	end)
 end
 
-function slot0.swapCup(slot0, slot1, slot2, slot3)
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+function var_0_0.swapCup(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_10)
 
-	slot6 = slot2.anchoredPosition
-	slot7 = slot1.anchoredPosition
-	slot8 = math.abs(slot6.x - slot7.x) / (uv1[1] + (slot0.roundNum - 1) * uv1[2] < uv2 and slot4 or uv2)
+	local var_24_0 = var_0_5[1] + (arg_24_0.roundNum - 1) * var_0_5[2]
+	local var_24_1 = var_24_0 < var_0_6 and var_24_0 or var_0_6
+	local var_24_2 = arg_24_2.anchoredPosition
+	local var_24_3 = arg_24_1.anchoredPosition
+	local var_24_4 = math.abs(var_24_2.x - var_24_3.x) / var_24_1
 
-	slot0:managedTween(LeanTween.moveX, nil, slot1, slot6.x, slot8):setEase(LeanTweenType.linear)
-	slot0:managedTween(LeanTween.moveX, function ()
-		if uv0 then
-			uv0()
+	arg_24_0:managedTween(LeanTween.moveX, nil, arg_24_1, var_24_2.x, var_24_4):setEase(LeanTweenType.linear)
+	arg_24_0:managedTween(LeanTween.moveX, function()
+		if arg_24_3 then
+			arg_24_3()
 		end
-	end, slot2, slot7.x, slot8):setEase(LeanTweenType.linear)
+	end, arg_24_2, var_24_3.x, var_24_4):setEase(LeanTweenType.linear)
 end
 
-function slot0.startTimer(slot0)
-	slot1 = slot0.curTime
-	slot0.timer = Timer.New(function ()
-		uv0.curTime = uv0.curTime - 1
+function var_0_0.startTimer(arg_26_0)
+	local var_26_0 = arg_26_0.curTime
 
-		if uv0.curTime <= 0 then
-			uv0:endRound(false)
+	arg_26_0.timer = Timer.New(function()
+		arg_26_0.curTime = arg_26_0.curTime - 1
+
+		if arg_26_0.curTime <= 0 then
+			arg_26_0:endRound(false)
 		end
 
-		setText(uv0.curTimeTxt, uv0.curTime)
+		setText(arg_26_0.curTimeTxt, arg_26_0.curTime)
 	end, 1, -1)
 
-	slot0.timer:Start()
+	arg_26_0.timer:Start()
 end
 
-function slot0.stopTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.stopTimer(arg_28_0)
+	if arg_28_0.timer then
+		arg_28_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_28_0.timer = nil
 	end
 end
 
-function slot0.pauseGame(slot0)
-	slot0:pauseManagedTween()
+function var_0_0.pauseGame(arg_29_0)
+	arg_29_0:pauseManagedTween()
 
-	if slot0.timer then
-		slot0.timer:Pause()
+	if arg_29_0.timer then
+		arg_29_0.timer:Pause()
 	end
 
-	slot0.manjuuAnimator.speed = 0
-	slot0.resultAnimator.speed = 0
+	arg_29_0.manjuuAnimator.speed = 0
+	arg_29_0.resultAnimator.speed = 0
 end
 
-function slot0.resumeGame(slot0)
-	slot0:resumeManagedTween()
+function var_0_0.resumeGame(arg_30_0)
+	arg_30_0:resumeManagedTween()
 
-	if slot0.timer then
-		slot0.timer:Resume()
+	if arg_30_0.timer then
+		arg_30_0.timer:Resume()
 	end
 
-	slot0.manjuuAnimator.speed = 1
-	slot0.resultAnimator.speed = 1
+	arg_30_0.manjuuAnimator.speed = 1
+	arg_30_0.resultAnimator.speed = 1
 end
 
-function slot0.endRound(slot0, slot1)
-	slot0:stopTimer()
+function var_0_0.endRound(arg_31_0, arg_31_1)
+	arg_31_0:stopTimer()
 
-	if slot0.selectIndex then
-		slot0:playManjuuAni(slot1)
+	if arg_31_0.selectIndex then
+		arg_31_0:playManjuuAni(arg_31_1)
 	else
-		slot0:playTimeOutAni()
-		slot0:endGame()
+		arg_31_0:playTimeOutAni()
+		arg_31_0:endGame()
 	end
 end
 
-function slot0.playManjuuAni(slot0, slot1)
-	slot5 = slot0.manjuuAnimator
+function var_0_0.playManjuuAni(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_0:findTF("cup_" .. arg_32_0.selectIndex, arg_32_0.cupContainer)
+	local var_32_1 = (var_32_0.anchoredPosition.x + 480) / 480 + 1
 
-	slot5:Play(uv0[(slot0:findTF("cup_" .. slot0.selectIndex, slot0.cupContainer).anchoredPosition.x + 480) / 480 + 1])
+	arg_32_0.manjuuAnimator:Play(var_0_18[var_32_1])
+	arg_32_0.manjuuDft:SetEndEvent(function()
+		arg_32_0.manjuuDft:SetEndEvent(nil)
 
-	slot5 = slot0.manjuuDft
+		local var_33_0 = arg_32_1 and var_0_19[var_32_1] or var_0_20[var_32_1]
 
-	slot5:SetEndEvent(function ()
-		uv0.manjuuDft:SetEndEvent(nil)
-		setActive(uv0:findTF("select", uv5), false)
-		uv0.manjuuAnimator:Play(uv1 and uv2[uv3] or uv4[uv3])
-		uv0:playResultAni(uv1)
+		setActive(arg_32_0:findTF("select", var_32_0), false)
+		arg_32_0.manjuuAnimator:Play(var_33_0)
+		arg_32_0:playResultAni(arg_32_1)
 	end)
 end
 
-function slot0.playResultAni(slot0, slot1)
-	setParent(slot0.result, slot0:findTF("result_node", slot0:findTF("cup_" .. slot0.selectIndex, slot0.cupContainer)), false)
-	setLocalScale(slot0.result, Vector3.one)
-	setLocalPosition(slot0.result, Vector3.zero)
-	setActive(slot0.result, true)
+function var_0_0.playResultAni(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_0:findTF("cup_" .. arg_34_0.selectIndex, arg_34_0.cupContainer)
 
-	if slot1 then
-		slot3 = pg.CriMgr.GetInstance()
+	setParent(arg_34_0.result, arg_34_0:findTF("result_node", var_34_0), false)
+	setLocalScale(arg_34_0.result, Vector3.one)
+	setLocalPosition(arg_34_0.result, Vector3.zero)
+	setActive(arg_34_0.result, true)
 
-		slot3:PlaySoundEffect_V3(uv0)
-
-		slot3 = slot0.resultAnimator
-
-		slot3:Play(uv1)
-
-		slot3 = slot0.resultDft
-
-		slot3:SetEndEvent(function ()
-			uv0.resultDft:SetEndEvent(nil)
-			uv0:showCorrectBar()
+	if arg_34_1 then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_11)
+		arg_34_0.resultAnimator:Play(var_0_21)
+		arg_34_0.resultDft:SetEndEvent(function()
+			arg_34_0.resultDft:SetEndEvent(nil)
+			arg_34_0:showCorrectBar()
 		end)
 	else
-		slot3 = pg.CriMgr.GetInstance()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_12)
 
-		slot3:PlaySoundEffect_V3(uv2)
+		local var_34_1 = var_0_22[math.random(#var_0_22)]
 
-		slot4 = slot0.resultAnimator
-
-		slot4:Play(uv3[math.random(#uv3)])
-
-		slot4 = slot0.resultDft
-
-		slot4:SetEndEvent(function ()
-			uv0.resultDft:SetEndEvent(nil)
-			uv0:endGame()
+		arg_34_0.resultAnimator:Play(var_34_1)
+		arg_34_0.resultDft:SetEndEvent(function()
+			arg_34_0.resultDft:SetEndEvent(nil)
+			arg_34_0:endGame()
 		end)
 	end
 end
 
-function slot0.showCorrectBar(slot0)
-	setActive(slot0.correctBar, true)
+function var_0_0.showCorrectBar(arg_37_0)
+	setActive(arg_37_0.correctBar, true)
 
-	slot1 = uv0[1] + (slot0.roundNum - 1) * uv0[2]
-	slot0.curScore = slot0.curScore + slot1
+	local var_37_0 = var_0_1[1] + (arg_37_0.roundNum - 1) * var_0_1[2]
 
-	setText(slot0.curScoreTxt, slot0.curScore)
-	setLocalPosition(slot0.scoreAni, Vector3(0, 250, 0))
-	setText(slot0.scoreAni, "+" .. slot1)
-	setActive(slot0.scoreAni, true)
-	LeanTween.moveY(slot0.scoreAni, 300, 1):setOnComplete(System.Action(function ()
-		setActive(uv0.scoreAni, false)
+	arg_37_0.curScore = arg_37_0.curScore + var_37_0
+
+	setText(arg_37_0.curScoreTxt, arg_37_0.curScore)
+	setLocalPosition(arg_37_0.scoreAni, Vector3(0, 250, 0))
+	setText(arg_37_0.scoreAni, "+" .. var_37_0)
+	setActive(arg_37_0.scoreAni, true)
+	LeanTween.moveY(arg_37_0.scoreAni, 300, 1):setOnComplete(System.Action(function()
+		setActive(arg_37_0.scoreAni, false)
 	end))
 
-	slot2 = 0.5
+	local var_37_1 = 0.5
+	local var_37_2 = var_0_2[arg_37_0.roundNum] or var_0_2[#var_0_2]
+	local var_37_3 = arg_37_0.curScore + var_37_2 * arg_37_0.curTime
 
-	LeanTween.value(go(slot0.curScoreTxt), slot0.curScore, slot0.curScore + (uv1[slot0.roundNum] or uv1[#uv1]) * slot0.curTime, slot2):setOnUpdate(System.Action_float(function (slot0)
-		setText(uv0.curScoreTxt, math.ceil(slot0))
-	end)):setOnComplete(System.Action(function ()
-		uv0.curScore = uv1
+	LeanTween.value(go(arg_37_0.curScoreTxt), arg_37_0.curScore, var_37_3, var_37_1):setOnUpdate(System.Action_float(function(arg_39_0)
+		setText(arg_37_0.curScoreTxt, math.ceil(arg_39_0))
+	end)):setOnComplete(System.Action(function()
+		arg_37_0.curScore = var_37_3
 
-		setText(uv0.curScoreTxt, uv0.curScore)
+		setText(arg_37_0.curScoreTxt, arg_37_0.curScore)
 	end))
-	LeanTween.value(go(slot0.curTimeTxt), slot0.curTime, 0, slot2):setOnUpdate(System.Action_float(function (slot0)
-		setText(uv0.curTimeTxt, math.ceil(slot0))
-	end)):setOnComplete(System.Action(function ()
-		uv0.curScore = uv1
+	LeanTween.value(go(arg_37_0.curTimeTxt), arg_37_0.curTime, 0, var_37_1):setOnUpdate(System.Action_float(function(arg_41_0)
+		setText(arg_37_0.curTimeTxt, math.ceil(arg_41_0))
+	end)):setOnComplete(System.Action(function()
+		arg_37_0.curScore = var_37_3
 
-		setText(uv0.curTimeTxt, 0)
+		setText(arg_37_0.curTimeTxt, 0)
 	end))
-	onButton(slot0, slot0.correctBar, function ()
-		setActive(uv0.correctBar, false)
-		setActive(uv0.scoreAni, false)
-		uv0:initGameData()
-		uv0:startGame()
+	onButton(arg_37_0, arg_37_0.correctBar, function()
+		setActive(arg_37_0.correctBar, false)
+		setActive(arg_37_0.scoreAni, false)
+		arg_37_0:initGameData()
+		arg_37_0:startGame()
 	end, SFX_PANEL)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		if isActive(uv0.correctBar) then
-			triggerButton(uv0.correctBar)
+	arg_37_0:managedTween(LeanTween.delayedCall, function()
+		if isActive(arg_37_0.correctBar) then
+			triggerButton(arg_37_0.correctBar)
 		end
-	end, uv2, nil)
+	end, var_0_7, nil)
 end
 
-function slot0.playTimeOutAni(slot0)
-	setParent(slot0.result, slot0:findTF("result_node", slot0:findTF("cup_" .. slot0.forkIndex, slot0.cupContainer)), false)
-	setLocalScale(slot0.result, Vector3.one)
-	setLocalPosition(slot0.result, Vector3.zero)
-	setActive(slot0.result, true)
+function var_0_0.playTimeOutAni(arg_45_0)
+	local var_45_0 = arg_45_0:findTF("cup_" .. arg_45_0.forkIndex, arg_45_0.cupContainer)
 
-	slot2 = slot0.resultAnimator
-
-	slot2:Play(uv0)
-
-	slot2 = slot0.resultDft
-
-	slot2:SetEndEvent(function ()
-		uv0.resultDft:SetEndEvent(nil)
+	setParent(arg_45_0.result, arg_45_0:findTF("result_node", var_45_0), false)
+	setLocalScale(arg_45_0.result, Vector3.one)
+	setLocalPosition(arg_45_0.result, Vector3.zero)
+	setActive(arg_45_0.result, true)
+	arg_45_0.resultAnimator:Play(var_0_21)
+	arg_45_0.resultDft:SetEndEvent(function()
+		arg_45_0.resultDft:SetEndEvent(nil)
 	end)
 end
 
-function slot0.endGame(slot0)
-	setActive(slot0.failBar, true)
-	onButton(slot0, slot0.failBar, function ()
-		setActive(uv0.failBar, false)
-		uv0:enterResultUI()
+function var_0_0.endGame(arg_47_0)
+	setActive(arg_47_0.failBar, true)
+	onButton(arg_47_0, arg_47_0.failBar, function()
+		setActive(arg_47_0.failBar, false)
+		arg_47_0:enterResultUI()
 	end, SFX_PANEL)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		if isActive(uv0.failBar) then
-			triggerButton(uv0.failBar)
+	arg_47_0:managedTween(LeanTween.delayedCall, function()
+		if isActive(arg_47_0.failBar) then
+			triggerButton(arg_47_0.failBar)
 		end
-	end, uv0, nil)
+	end, var_0_7, nil)
 end
 
-function slot0.enterResultUI(slot0)
-	slot0.gameStartFlag = false
+function var_0_0.enterResultUI(arg_50_0)
+	arg_50_0.gameStartFlag = false
 
-	setActive(slot0.endUI, true)
-	setText(slot0.endScoreTxt, slot0.curScore)
+	setActive(arg_50_0.endUI, true)
+	setText(arg_50_0.endScoreTxt, arg_50_0.curScore)
 
-	slot2 = slot0:GetMGData():GetRuntimeData("elements") and #slot1 > 0 and slot1[1] or 0
+	local var_50_0 = arg_50_0:GetMGData():GetRuntimeData("elements")
+	local var_50_1 = var_50_0 and #var_50_0 > 0 and var_50_0[1] or 0
 
-	setActive(slot0.newTag, slot2 < slot0.curScore)
+	setActive(arg_50_0.newTag, var_50_1 < arg_50_0.curScore)
 
-	if slot2 <= slot0.curScore then
-		slot0:StoreDataToServer({
-			slot0.curScore
+	if var_50_1 <= arg_50_0.curScore then
+		var_50_1 = arg_50_0.curScore
+
+		arg_50_0:StoreDataToServer({
+			var_50_1
 		})
 	end
 
-	setText(slot0.highestScoreTxt, slot2)
+	setText(arg_50_0.highestScoreTxt, var_50_1)
 
-	if slot0:GetMGHubData().count > 0 then
-		slot0:SendSuccess(0)
+	if arg_50_0:GetMGHubData().count > 0 then
+		arg_50_0:SendSuccess(0)
 	end
 end
 
-function slot0.OnGetAwardDone(slot0, slot1)
-	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE and slot0:GetMGHubData().ultimate == 0 and slot2:getConfig("reward_need") <= slot2.usedtime then
-		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot2.id,
-			cmd = MiniGameOPCommand.CMD_ULTIMATE,
-			args1 = {}
-		})
+function var_0_0.OnGetAwardDone(arg_51_0, arg_51_1)
+	if arg_51_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_51_0 = arg_51_0:GetMGHubData()
+
+		if var_51_0.ultimate == 0 and var_51_0.usedtime >= var_51_0:getConfig("reward_need") then
+			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+				hubid = var_51_0.id,
+				cmd = MiniGameOPCommand.CMD_ULTIMATE,
+				args1 = {}
+			})
+		end
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.gameStartFlag then
-		slot0:emit(uv0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_52_0)
+	if not arg_52_0.gameStartFlag then
+		arg_52_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		setActive(slot0.exitUI, true)
-		slot0:pauseGame()
+		setActive(arg_52_0.exitUI, true)
+		arg_52_0:pauseGame()
 	end
 end
 
-return slot0
+return var_0_0

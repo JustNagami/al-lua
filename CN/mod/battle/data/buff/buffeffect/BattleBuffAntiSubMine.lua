@@ -1,14 +1,16 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffAntiSubMine", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffAntiSubMine = slot1
-slot1.__name = "BattleBuffAntiSubMine"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffAntiSubMine", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffAntiSubMine = var_0_1
+var_0_1.__name = "BattleBuffAntiSubMine"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.onAttach(slot0, slot1)
-	slot1:InitOxygen()
-	slot1:ChangeOxygenState(uv0.Battle.OxyState.STATE_DEEP_MINE)
+function var_0_1.onAttach(arg_2_0, arg_2_1)
+	arg_2_1:InitOxygen()
+	arg_2_1:ChangeOxygenState(var_0_0.Battle.OxyState.STATE_DEEP_MINE)
 end

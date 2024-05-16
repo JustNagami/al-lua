@@ -1,64 +1,68 @@
-slot0 = class("IdolPTPage", import(".TemplatePage.PtTemplatePage"))
-slot0.RefreshTime = 300
+﻿local var_0_0 = class("IdolPTPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+var_0_0.RefreshTime = 300
 
-	slot4 = slot0.bg
-	slot0.lableList = slot0:findTF("list", slot4)
-	slot0.lableItems = {}
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	for slot4 = 0, slot0.lableList.childCount - 1 do
-		table.insert(slot0.lableItems, slot0.lableList:GetChild(slot4))
+	arg_1_0.lableList = arg_1_0:findTF("list", arg_1_0.bg)
+	arg_1_0.lableItems = {}
+
+	for iter_1_0 = 0, arg_1_0.lableList.childCount - 1 do
+		table.insert(arg_1_0.lableItems, arg_1_0.lableList:GetChild(iter_1_0))
 	end
 
-	slot0.linkBtn = slot0:findTF("btn_link", slot0.bg)
+	arg_1_0.linkBtn = arg_1_0:findTF("btn_link", arg_1_0.bg)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot1 = uv0.super.OnDataSetting(slot0)
-	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
-	slot0.linkAct = slot2
+function var_0_0.OnDataSetting(arg_2_0)
+	local var_2_0 = var_0_0.super.OnDataSetting(arg_2_0)
+	local var_2_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
 
-	if slot2 and not slot2:isEnd() then
-		if slot0.RefreshTime <= pg.TimeMgr.GetInstance():GetServerTime() - (getProxy(ActivityProxy).requestTime[slot2.id] or 0) then
-			slot0:emit(ActivityMediator.FETCH_INSTARGRAM, {
-				activity_id = slot2.id
+	arg_2_0.linkAct = var_2_1
+
+	if var_2_1 and not var_2_1:isEnd() then
+		local var_2_2 = getProxy(ActivityProxy).requestTime[var_2_1.id]
+		local var_2_3 = pg.TimeMgr.GetInstance():GetServerTime() - (var_2_2 or 0) >= arg_2_0.RefreshTime
+
+		if var_2_3 then
+			arg_2_0:emit(ActivityMediator.FETCH_INSTARGRAM, {
+				activity_id = var_2_1.id
 			})
 		end
 
-		return slot4 or slot1
+		return var_2_3 or var_2_0
 	end
 
-	return slot1
+	return var_2_0
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.displayBtn, function ()
-		uv0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = uv0.ptData.type,
-			dropList = uv0.ptData.dropList,
-			targets = uv0.ptData.targets,
-			level = uv0.ptData.level,
-			count = uv0.ptData.count,
-			resId = uv0.ptData.resId
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.displayBtn, function()
+		arg_3_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = arg_3_0.ptData.type,
+			dropList = arg_3_0.ptData.dropList,
+			targets = arg_3_0.ptData.targets,
+			level = arg_3_0.ptData.level,
+			count = arg_3_0.ptData.count,
+			resId = arg_3_0.ptData.resId
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.BATTLE_OPERA)
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		arg_3_0:emit(ActivityMediator.BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		local var_6_0, var_6_1 = arg_3_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_3_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1
+			activity_id = arg_3_0.ptData:GetId(),
+			arg1 = var_6_1
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.linkBtn, function ()
-		if uv0.linkAct and not uv0.linkAct:isEnd() and uv0.linkAct:ExistMsg() then
-			uv0:emit(ActivityMediator.OPEN_LAYER, Context.New({
+	onButton(arg_3_0, arg_3_0.linkBtn, function()
+		if arg_3_0.linkAct and not arg_3_0.linkAct:isEnd() and arg_3_0.linkAct:ExistMsg() then
+			arg_3_0:emit(ActivityMediator.OPEN_LAYER, Context.New({
 				viewComponent = InstagramLayer,
 				mediator = InstagramMediator,
 				data = {
@@ -71,78 +75,91 @@ function slot0.OnFirstFlush(slot0)
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_8_0)
+	var_0_0.super.OnUpdateFlush(arg_8_0)
 
-	if slot0.linkAct and not slot1:isEnd() then
-		slot2 = {}
+	local var_8_0 = arg_8_0.linkAct
 
-		for slot7 = 1, math.floor(#slot1.data1_list / 2) do
-			slot2[slot8] = (slot2[slot1.data1_list[2 * slot7 - 1]] or 0) + (slot1.data1_list[2 * slot7] or 0)
+	if var_8_0 and not var_8_0:isEnd() then
+		local var_8_1 = {}
+		local var_8_2 = math.floor(#var_8_0.data1_list / 2)
+
+		for iter_8_0 = 1, var_8_2 do
+			local var_8_3 = var_8_0.data1_list[2 * iter_8_0 - 1]
+
+			var_8_1[var_8_3] = (var_8_1[var_8_3] or 0) + (var_8_0.data1_list[2 * iter_8_0] or 0)
 		end
 
-		slot4 = {}
+		local var_8_4 = {}
 
-		for slot8, slot9 in pairs(slot2) do
-			table.insert(slot4, {
-				name = slot8,
-				count = slot9
+		for iter_8_1, iter_8_2 in pairs(var_8_1) do
+			table.insert(var_8_4, {
+				name = iter_8_1,
+				count = iter_8_2
 			})
 		end
 
-		table.sort(slot4, function (slot0, slot1)
-			if slot0.count == slot1.count then
-				return slot0.name < slot1.name
+		table.sort(var_8_4, function(arg_9_0, arg_9_1)
+			if arg_9_0.count == arg_9_1.count then
+				return arg_9_0.name < arg_9_1.name
 			else
-				return slot1.count < slot0.count
+				return arg_9_0.count > arg_9_1.count
 			end
 		end)
 
-		for slot9 = 1, math.min(#slot4, #slot0.lableItems) do
-			slot10 = slot0.lableItems[slot9]
+		local var_8_5 = math.min(#var_8_4, #arg_8_0.lableItems)
 
-			setText(slot10:Find("name"), "#" .. tostring(ShipGroup.getDefaultShipNameByGroupID(slot4[slot9].name)) .. "#")
-			setText(slot10:Find("Text"), slot0:TransFormat(slot4[slot9].count))
+		for iter_8_3 = 1, var_8_5 do
+			local var_8_6 = arg_8_0.lableItems[iter_8_3]
+
+			setText(var_8_6:Find("name"), "#" .. tostring(ShipGroup.getDefaultShipNameByGroupID(var_8_4[iter_8_3].name)) .. "#")
+			setText(var_8_6:Find("Text"), arg_8_0:TransFormat(var_8_4[iter_8_3].count))
 		end
 
-		for slot9 = slot5 + 1, #slot0.lableItems do
-			slot10 = slot0.lableItems[slot9]
+		for iter_8_4 = var_8_5 + 1, #arg_8_0.lableItems do
+			local var_8_7 = arg_8_0.lableItems[iter_8_4]
 
-			setText(slot10:Find("name"), "")
-			setText(slot10:Find("Text"), "0")
+			setText(var_8_7:Find("name"), "")
+			setText(var_8_7:Find("Text"), "0")
 		end
 	end
 
-	slot0:GetWorldRank(slot0.RefreshTime)
+	arg_8_0:GetWorldRank(arg_8_0.RefreshTime)
 end
 
-function slot0.TransFormat(slot0, slot1)
-	slot1 = tonumber(slot1) or 0
-	slot3 = slot1 % 10
+function var_0_0.TransFormat(arg_10_0, arg_10_1)
+	arg_10_1 = tonumber(arg_10_1) or 0
 
-	if math.floor(slot1 / 1000) >= 1 then
-		return slot2 .. (slot3 > 0 and "." .. slot3 or "") .. "K"
+	local var_10_0 = math.floor(arg_10_1 / 1000)
+	local var_10_1 = arg_10_1 % 10
+
+	if var_10_0 >= 1 then
+		return var_10_0 .. (var_10_1 > 0 and "." .. var_10_1 or "") .. "K"
 	else
-		return slot1
+		return arg_10_1
 	end
 end
 
-function slot0.GetWorldRank(slot0, slot1)
-	if not slot0.linkAct or slot0.linkAct:isEnd() then
+function var_0_0.GetWorldRank(arg_11_0, arg_11_1)
+	if not arg_11_0.linkAct or arg_11_0.linkAct:isEnd() then
 		return
 	end
 
-	if slot1 <= pg.TimeMgr.GetInstance():GetServerTime() - (getProxy(ActivityProxy).requestTime[slot0.linkAct.id] or 0) then
-		slot0:emit(ActivityMediator.FETCH_INSTARGRAM, {
-			activity_id = slot2
+	local var_11_0 = arg_11_0.linkAct.id
+
+	if arg_11_1 <= pg.TimeMgr.GetInstance():GetServerTime() - (getProxy(ActivityProxy).requestTime[var_11_0] or 0) then
+		arg_11_0:emit(ActivityMediator.FETCH_INSTARGRAM, {
+			activity_id = var_11_0
 		})
 	end
 end
 
-function slot0.NeedTip()
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.IDOL_PT_ID) and not slot0:isEnd() then
-		return slot0:readyToAchieve()
+function var_0_0.NeedTip()
+	local var_12_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.IDOL_PT_ID)
+
+	if var_12_0 and not var_12_0:isEnd() then
+		return var_12_0:readyToAchieve()
 	end
 end
 
-return slot0
+return var_0_0

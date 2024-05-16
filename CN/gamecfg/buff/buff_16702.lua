@@ -1,4 +1,52 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			pop = {},
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				countTarget = 3,
+				countType = 16700
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				skill_id = 16700,
+				countType = 16700
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -507,53 +555,5 @@ return {
 	stack = 3,
 	id = 16702,
 	icon = 16702,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			pop = {},
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				countTarget = 3,
-				countType = 16700
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				skill_id = 16700,
-				countType = 16700
-			}
-		}
-	}
+	last_effect = ""
 }

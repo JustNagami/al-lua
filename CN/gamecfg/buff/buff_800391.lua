@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	picture = "",
-	desc = "弹药匮乏无视，准备速度提高",
-	stack = 1,
-	id = 800391,
-	icon = 800390,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddReloadRequirement",
@@ -39,5 +20,24 @@ return {
 				count = 3
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	picture = "",
+	desc = "弹药匮乏无视，准备速度提高",
+	stack = 1,
+	id = 800391,
+	icon = 800390,
+	last_effect = ""
 }

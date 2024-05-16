@@ -1,118 +1,127 @@
-slot0 = class("SettingsMainGroupBtn")
+﻿local var_0_0 = class("SettingsMainGroupBtn")
 
-function slot0.Ctor(slot0, slot1)
-	pg.DelegateInfo.New(slot0)
-	slot0:initData()
-	slot0:findUI(slot1)
-	slot0:addListener()
-	slot0:check()
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	pg.DelegateInfo.New(arg_1_0)
+	arg_1_0:initData()
+	arg_1_0:findUI(arg_1_1)
+	arg_1_0:addListener()
+	arg_1_0:check()
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_2_0.timer then
+		arg_2_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_2_0.timer = nil
 	end
 end
 
-function slot0.initData(slot0)
-	slot0.mgr = pg.MainGroupMgr:GetInstance()
+function var_0_0.initData(arg_3_0)
+	arg_3_0.mgr = pg.MainGroupMgr:GetInstance()
 end
 
-function slot0.findUI(slot0, slot1)
-	slot0._tf = slot1
-	slot2 = findTF(slot0._tf, "Content")
-	slot0.titleText = findTF(slot2, "Title")
-	slot0.progressBar = findTF(slot2, "Progress")
-	slot0.btn = findTF(slot2, "Btn")
-	slot0.btnText = findTF(slot0.btn, "Text")
-	slot0.loadingIcon = findTF(slot2, "Status/Loading")
-	slot0.newIcon = findTF(slot2, "Status/New")
-	slot0.finishIcon = findTF(slot2, "Status/Finish")
+function var_0_0.findUI(arg_4_0, arg_4_1)
+	arg_4_0._tf = arg_4_1
 
-	setText(slot0.titleText, i18n("setting_resdownload_title_main_group"))
+	local var_4_0 = findTF(arg_4_0._tf, "Content")
+
+	arg_4_0.titleText = findTF(var_4_0, "Title")
+	arg_4_0.progressBar = findTF(var_4_0, "Progress")
+	arg_4_0.btn = findTF(var_4_0, "Btn")
+	arg_4_0.btnText = findTF(arg_4_0.btn, "Text")
+	arg_4_0.loadingIcon = findTF(var_4_0, "Status/Loading")
+	arg_4_0.newIcon = findTF(var_4_0, "Status/New")
+	arg_4_0.finishIcon = findTF(var_4_0, "Status/Finish")
+
+	setText(arg_4_0.titleText, i18n("setting_resdownload_title_main_group"))
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.mgr:GetState() == DownloadState.CheckFailure then
-			uv0.mgr:StartCheckD()
-		elseif slot0 == DownloadState.CheckToUpdate or slot0 == DownloadState.UpdateFailure then
+function var_0_0.addListener(arg_5_0)
+	onButton(arg_5_0, arg_5_0._tf, function()
+		local var_6_0 = arg_5_0.mgr:GetState()
+
+		if var_6_0 == DownloadState.CheckFailure then
+			arg_5_0.mgr:StartCheckD()
+		elseif var_6_0 == DownloadState.CheckToUpdate or var_6_0 == DownloadState.UpdateFailure then
+			local var_6_1 = arg_5_0.mgr:GetTotalSize()
+			local var_6_2 = HashUtil.BytesToString(var_6_1)
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_NORMAL,
-				content = string.format(i18n("main_group_msgbox_content", HashUtil.BytesToString(uv0.mgr:GetTotalSize()))),
-				onYes = function ()
+				content = string.format(i18n("main_group_msgbox_content", var_6_2)),
+				onYes = function()
 					GroupMainHelper.SavePrefs(DMFileChecker.Prefs.Max)
-					uv0.mgr:StartUpdateD()
+					arg_5_0.mgr:StartUpdateD()
 				end
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.check(slot0)
-	if slot0.mgr:GetState() == DownloadState.None then
-		slot0.mgr:StartCheckD()
+function var_0_0.check(arg_8_0)
+	if arg_8_0.mgr:GetState() == DownloadState.None then
+		arg_8_0.mgr:StartCheckD()
 	end
 
-	slot0.timer = Timer.New(function ()
-		uv0:updateUI()
+	arg_8_0.timer = Timer.New(function()
+		arg_8_0:updateUI()
 	end, 0.5, -1)
 
-	slot0.timer:Start()
-	slot0:updateUI()
+	arg_8_0.timer:Start()
+	arg_8_0:updateUI()
 end
 
-function slot0.updateUI(slot0)
-	if slot0.mgr:GetState() == DownloadState.None then
-		setText(slot0.btnText, "无状态")
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
-	elseif slot1 == DownloadState.Checking then
-		setText(slot0.btnText, i18n("word_maingroup_checking"))
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
-	elseif slot1 == DownloadState.CheckToUpdate then
-		setText(slot0.btnText, i18n("word_maingroup_checktoupdate"))
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, true)
-		setActive(slot0.finishIcon, false)
-	elseif slot1 == DownloadState.CheckOver then
-		setText(slot0.btnText, "无需更新")
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
-	elseif slot1 == DownloadState.CheckFailure then
-		setText(slot0.btnText, i18n("word_maingroup_checkfailure"))
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
-	elseif slot1 == DownloadState.Updating then
-		setText(slot0.btnText, i18n("word_maingroup_updating"))
-		setActive(slot0.loadingIcon, true)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
+function var_0_0.updateUI(arg_10_0)
+	local var_10_0 = arg_10_0.mgr:GetState()
 
-		slot2, slot3 = slot0.mgr:GetCountProgress()
+	if var_10_0 == DownloadState.None then
+		setText(arg_10_0.btnText, "无状态")
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
+	elseif var_10_0 == DownloadState.Checking then
+		setText(arg_10_0.btnText, i18n("word_maingroup_checking"))
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
+	elseif var_10_0 == DownloadState.CheckToUpdate then
+		setText(arg_10_0.btnText, i18n("word_maingroup_checktoupdate"))
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, true)
+		setActive(arg_10_0.finishIcon, false)
+	elseif var_10_0 == DownloadState.CheckOver then
+		setText(arg_10_0.btnText, "无需更新")
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
+	elseif var_10_0 == DownloadState.CheckFailure then
+		setText(arg_10_0.btnText, i18n("word_maingroup_checkfailure"))
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
+	elseif var_10_0 == DownloadState.Updating then
+		setText(arg_10_0.btnText, i18n("word_maingroup_updating"))
+		setActive(arg_10_0.loadingIcon, true)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
 
-		setSlider(slot0.progressBar, 0, slot3, slot2)
-		setText(slot0.btnText, slot2 .. "/" .. slot3)
-	elseif slot1 == DownloadState.UpdateSuccess then
-		setText(slot0.btnText, i18n("word_maingroup_updatesuccess"))
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, true)
-	elseif slot1 == DownloadState.UpdateFailure then
-		setText(slot0.btnText, i18n("word_maingroup_updatefailure"))
-		setActive(slot0.loadingIcon, false)
-		setActive(slot0.newIcon, false)
-		setActive(slot0.finishIcon, false)
+		local var_10_1, var_10_2 = arg_10_0.mgr:GetCountProgress()
+
+		setSlider(arg_10_0.progressBar, 0, var_10_2, var_10_1)
+		setText(arg_10_0.btnText, var_10_1 .. "/" .. var_10_2)
+	elseif var_10_0 == DownloadState.UpdateSuccess then
+		setText(arg_10_0.btnText, i18n("word_maingroup_updatesuccess"))
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, true)
+	elseif var_10_0 == DownloadState.UpdateFailure then
+		setText(arg_10_0.btnText, i18n("word_maingroup_updatefailure"))
+		setActive(arg_10_0.loadingIcon, false)
+		setActive(arg_10_0.newIcon, false)
+		setActive(arg_10_0.finishIcon, false)
 	end
 end
 
-return slot0
+return var_0_0

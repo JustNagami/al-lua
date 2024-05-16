@@ -1,6 +1,9 @@
-pg = pg or {}
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
 this = {}
-pg.ChargeShipTalkInfo = this
+var_0_0.ChargeShipTalkInfo = this
 this.Actions = {
 	{
 		action = "main_2",

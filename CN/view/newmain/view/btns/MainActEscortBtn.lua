@@ -1,25 +1,28 @@
-slot0 = class("MainActEscortBtn", import(".MainBaseActivityBtn"))
+﻿local var_0_0 = class("MainActEscortBtn", import(".MainBaseActivityBtn"))
 
-function slot0.GetEventName(slot0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_escort"
 end
 
-function slot0.GetActivityID(slot0)
+function var_0_0.GetActivityID(arg_2_0)
 	return nil
 end
 
-function slot0.OnInit(slot0)
-	slot1 = getProxy(ChapterProxy)
-	slot0.maxTimes = slot1:getMaxEscortChallengeTimes()
+function var_0_0.OnInit(arg_3_0)
+	local var_3_0 = getProxy(ChapterProxy)
 
-	setActive(slot0._tf:Find("Tip"), slot1.escortChallengeTimes < slot0.maxTimes)
+	arg_3_0.maxTimes = var_3_0:getMaxEscortChallengeTimes()
+
+	local var_3_1 = var_3_0.escortChallengeTimes < arg_3_0.maxTimes
+
+	setActive(arg_3_0._tf:Find("Tip"), var_3_1)
 end
 
-function slot0.CustomOnClick(slot0)
-	slot1, slot2 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "Escort")
+function var_0_0.CustomOnClick(arg_4_0)
+	local var_4_0, var_4_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "Escort")
 
-	if not slot1 then
-		pg.TipsMgr.GetInstance():ShowTips(slot2)
+	if not var_4_0 then
+		pg.TipsMgr.GetInstance():ShowTips(var_4_1)
 
 		return
 	end
@@ -30,7 +33,7 @@ function slot0.CustomOnClick(slot0)
 		return
 	end
 
-	slot0:emit(NewMainMediator.SKIP_ESCORT)
+	arg_4_0:emit(NewMainMediator.SKIP_ESCORT)
 end
 
-return slot0
+return var_0_0

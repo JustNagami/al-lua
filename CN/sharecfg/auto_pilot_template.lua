@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.auto_pilot_template = {
 	[10001] = {
 		id = 10001,

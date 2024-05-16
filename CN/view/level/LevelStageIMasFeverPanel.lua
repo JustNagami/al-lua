@@ -1,104 +1,113 @@
-slot0 = class("LevelStageIMasFeverPanel", import("view.base.BaseSubPanel"))
+﻿local var_0_0 = class("LevelStageIMasFeverPanel", import("view.base.BaseSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelStageIMasFeverPanel"
 end
 
-function slot0.OnInit(slot0)
-	slot0.fillImg = slot0._tf:Find("Fill")
-	slot0.banner = slot0._tf:Find("Banner")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.fillImg = arg_2_0._tf:Find("Fill")
+	arg_2_0.banner = arg_2_0._tf:Find("Banner")
 
-	setActive(slot0.banner, false)
+	setActive(arg_2_0.banner, false)
 end
 
-slot1 = {
+local var_0_1 = {
 	[0] = 0,
 	0.38,
 	0.5471839,
 	0.7228736,
 	1
 }
-slot2 = {
+local var_0_2 = {
 	"Yellow",
 	"Red",
 	"Blue"
 }
 
-function slot0.UpdateView(slot0, slot1, slot2)
-	slot3 = getProxy(ChapterProxy)
-	slot3 = slot3:GetLastDefeatedEnemy(slot1.id)
-	slot6 = uv0[Mathf.Min(pg.gameset.doa_fever_count.key_value, slot1.defeatEnemies)]
+function var_0_0.UpdateView(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = getProxy(ChapterProxy):GetLastDefeatedEnemy(arg_3_1.id)
+	local var_3_1 = arg_3_1.defeatEnemies
+	local var_3_2 = pg.gameset.doa_fever_count.key_value
+	local var_3_3 = var_0_1[Mathf.Min(var_3_2, var_3_1)]
 
 	seriesAsync({
-		function (slot0)
-			LeanTween.cancel(go(uv0.fillImg))
+		function(arg_4_0)
+			LeanTween.cancel(go(arg_3_0.fillImg))
 
-			if not uv1 or uv3 < uv2 then
-				slot0()
+			if not var_3_0 or var_3_1 > var_3_2 then
+				arg_4_0()
 
 				return
 			end
 
-			slot2 = uv0.fillImg:GetComponent(typeof(Image))
-			slot3 = uv4[math.max(uv2 - 1, 0)]
+			local var_4_0 = math.max(var_3_1 - 1, 0)
+			local var_4_1 = arg_3_0.fillImg:GetComponent(typeof(Image))
+			local var_4_2 = var_0_1[var_4_0]
 
-			LeanTween.value(go(uv0.fillImg), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
-				uv2.fillAmount = Mathf.Lerp(uv0, uv1, slot0)
-			end)):setOnComplete(System.Action(slot0))
+			LeanTween.value(go(arg_3_0.fillImg), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_5_0)
+				local var_5_0 = Mathf.Lerp(var_4_2, var_3_3, arg_5_0)
+
+				var_4_1.fillAmount = var_5_0
+			end)):setOnComplete(System.Action(arg_4_0))
 		end,
-		function (slot0)
-			uv0.fillImg:GetComponent(typeof(Image)).fillAmount = uv1
+		function(arg_6_0)
+			arg_3_0.fillImg:GetComponent(typeof(Image)).fillAmount = var_3_3
 
-			if uv2 and uv3 == uv4 then
-				uv0:ShowPanel(uv5)
+			if var_3_0 and var_3_1 == var_3_2 then
+				arg_3_0:ShowPanel(arg_3_1)
 			end
 
-			existCall(uv6)
+			existCall(arg_3_2)
 		end
 	})
 end
 
-function slot0.ShowPanel(slot0, slot1)
-	slot0.viewParent:emit(LevelUIConst.FROZEN)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.banner)
+function var_0_0.ShowPanel(arg_7_0, arg_7_1)
+	arg_7_0.viewParent:emit(LevelUIConst.FROZEN)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0.banner)
 
-	slot2 = uv0[1]
+	local var_7_0 = var_0_2[1]
+	local var_7_1 = arg_7_1:GetBuffOfLinkAct()
 
-	if slot1:GetBuffOfLinkAct() then
-		slot2 = uv0[table.indexof(pg.gameset.doa_fever_buff.description, slot3)]
+	if var_7_1 then
+		local var_7_2 = pg.gameset.doa_fever_buff.description
+
+		var_7_0 = var_0_2[table.indexof(var_7_2, var_7_1)]
 	end
 
-	slot4 = slot0.banner:Find(slot2)
-	slot5 = slot4:Find("Character")
+	local var_7_3 = arg_7_0.banner:Find(var_7_0)
+	local var_7_4 = var_7_3:Find("Character")
+	local var_7_5 = var_7_4:GetComponent(typeof(Image))
+	local var_7_6 = math.random(1, 7)
 
-	setImageSprite(slot5, LoadSprite("ui/LevelStageIMasFeverPanel_atlas", "character" .. tostring(math.random(1, 7))))
-	setActive(slot0.banner, true)
-	setActive(slot4, true)
+	setImageSprite(var_7_4, LoadSprite("ui/LevelStageIMasFeverPanel_atlas", "character" .. tostring(var_7_6)))
+	setActive(arg_7_0.banner, true)
+	setActive(var_7_3, true)
 
-	slot5:GetComponent(typeof(Image)).enabled = true
+	var_7_5.enabled = true
 
-	function slot8()
-		uv0:ClosePanel()
+	local function var_7_7()
+		arg_7_0:ClosePanel()
 	end
 
-	slot4:GetComponent(typeof(DftAniEvent)):SetEndEvent(slot8)
-	onButton(slot0, slot0.banner, slot8)
+	var_7_3:GetComponent(typeof(DftAniEvent)):SetEndEvent(var_7_7)
+	onButton(arg_7_0, arg_7_0.banner, var_7_7)
 
-	slot0.showingPanel = true
+	arg_7_0.showingPanel = true
 end
 
-function slot0.ClosePanel(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.banner, slot0._tf)
-	setActive(slot0.banner, false)
-	slot0.viewParent:emit(LevelUIConst.UN_FROZEN)
+function var_0_0.ClosePanel(arg_9_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0.banner, arg_9_0._tf)
+	setActive(arg_9_0.banner, false)
+	arg_9_0.viewParent:emit(LevelUIConst.UN_FROZEN)
 
-	slot0.showingPanel = nil
+	arg_9_0.showingPanel = nil
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.showingPanel then
-		slot0:ClosePanel()
+function var_0_0.OnDestroy(arg_10_0)
+	if arg_10_0.showingPanel then
+		arg_10_0:ClosePanel()
 	end
 end
 
-return slot0
+return var_0_0

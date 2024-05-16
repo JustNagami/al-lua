@@ -1,63 +1,55 @@
-slot0 = class("AccountSearchCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("AccountSearchCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.callback
-	slot4 = slot2.update
-	slot6 = getProxy(UserProxy):getData()
-	slot8 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
+	local var_1_2 = var_1_0.update
+	local var_1_3 = getProxy(UserProxy):getData()
+	local var_1_4 = getProxy(ServerProxy).data
+	local var_1_5 = {}
 
-	for slot12, slot13 in pairs(getProxy(ServerProxy).data) do
-		table.insert(slot8, function (slot0)
-			slot1 = uv0
-			slot2 = uv0
-			slot3 = nil
-			slot4 = pg.SimpleConnectionMgr.GetInstance()
+	for iter_1_0, iter_1_1 in pairs(var_1_4) do
+		table.insert(var_1_5, function(arg_2_0)
+			local var_2_0 = iter_1_1:getHost()
+			local var_2_1 = iter_1_1:getPort()
+			local var_2_2
 
-			slot4:Disconnect()
-
-			slot4 = pg.SimpleConnectionMgr.GetInstance()
-
-			slot4:SetErrorCB(function ()
-				if not uv0 then
-					uv1({
-						id = uv2.id
+			pg.SimpleConnectionMgr.GetInstance():Disconnect()
+			pg.SimpleConnectionMgr.GetInstance():SetErrorCB(function()
+				if not var_2_2 then
+					var_1_2({
+						id = iter_1_1.id
 					})
-					uv3()
+					arg_2_0()
 				end
 			end)
-
-			slot4 = pg.SimpleConnectionMgr.GetInstance()
-
-			slot4:Connect(slot1:getHost(), slot2:getPort(), function ()
-				slot0 = pg.SimpleConnectionMgr.GetInstance()
-
-				slot0:Send(10026, {
-					account_id = uv0.uid
-				}, 10027, function (slot0)
-					if slot0.user_id and slot0.user_id ~= 0 and slot0.level and slot0.level > 0 then
-						uv0({
-							id = uv1.id,
-							user_id = slot0.user_id,
-							level = slot0.level
+			pg.SimpleConnectionMgr.GetInstance():Connect(var_2_0, var_2_1, function()
+				pg.SimpleConnectionMgr.GetInstance():Send(10026, {
+					account_id = var_1_3.uid
+				}, 10027, function(arg_5_0)
+					if arg_5_0.user_id and arg_5_0.user_id ~= 0 and arg_5_0.level and arg_5_0.level > 0 then
+						var_1_2({
+							id = iter_1_1.id,
+							user_id = arg_5_0.user_id,
+							level = arg_5_0.level
 						})
 					else
-						uv0({
-							id = uv1.id
+						var_1_2({
+							id = iter_1_1.id
 						})
 					end
 
-					uv2 = uv1.id
+					var_2_2 = iter_1_1.id
 
-					uv3()
+					arg_2_0()
 				end, nil, 0.5)
 			end, 0.5)
 		end)
 	end
 
-	seriesAsync(slot8, function ()
-		uv0()
+	seriesAsync(var_1_5, function()
+		var_1_1()
 	end)
 end
 
-return slot0
+return var_0_0

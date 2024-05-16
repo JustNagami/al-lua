@@ -73,7 +73,6 @@ _G.pg.base.aircraft_template[109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[110] = {
 	attack_power = 2,
 	name = "默认白鹰鱼雷机",
@@ -149,7 +148,6 @@ _G.pg.base.aircraft_template[110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[111] = {
 	attack_power = 2,
 	name = "默认白鹰轰炸机",
@@ -225,7 +223,6 @@ _G.pg.base.aircraft_template[111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[112] = {
 	attack_power = 2,
 	name = "默认白鹰战斗机-自动防空",
@@ -301,7 +298,6 @@ _G.pg.base.aircraft_template[112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[113] = {
 	attack_power = 2,
 	name = "默认皇家战斗机",
@@ -377,7 +373,6 @@ _G.pg.base.aircraft_template[113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[114] = {
 	attack_power = 2,
 	name = "默认皇家鱼雷机",
@@ -453,7 +448,6 @@ _G.pg.base.aircraft_template[114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[115] = {
 	attack_power = 2,
 	name = "默认皇家轰炸机",
@@ -529,7 +523,6 @@ _G.pg.base.aircraft_template[115] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[116] = {
 	attack_power = 2,
 	name = "默认皇家战斗机-自动防空",
@@ -605,7 +598,6 @@ _G.pg.base.aircraft_template[116] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[117] = {
 	attack_power = 2,
 	name = "默认重樱战斗机",
@@ -681,7 +673,6 @@ _G.pg.base.aircraft_template[117] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[118] = {
 	attack_power = 2,
 	name = "默认重樱鱼雷机",
@@ -757,7 +748,6 @@ _G.pg.base.aircraft_template[118] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[119] = {
 	attack_power = 2,
 	name = "默认重樱轰炸机",
@@ -833,7 +823,6 @@ _G.pg.base.aircraft_template[119] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[120] = {
 	attack_power = 2,
 	name = "默认重樱战斗机-自动防空",
@@ -909,7 +898,6 @@ _G.pg.base.aircraft_template[120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[121] = {
 	attack_power = 2,
 	name = "默认铁血战斗机",
@@ -985,7 +973,6 @@ _G.pg.base.aircraft_template[121] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[122] = {
 	attack_power = 2,
 	name = "默认铁血鱼雷机",
@@ -1061,7 +1048,6 @@ _G.pg.base.aircraft_template[122] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[123] = {
 	attack_power = 2,
 	name = "默认铁血轰炸机",
@@ -1137,7 +1123,6 @@ _G.pg.base.aircraft_template[123] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[124] = {
 	attack_power = 2,
 	name = "默认铁血战斗机-自动防空",
@@ -1213,7 +1198,6 @@ _G.pg.base.aircraft_template[124] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[125] = {
 	attack_power = 2,
 	name = "默认鸢尾战斗机",
@@ -1289,7 +1273,6 @@ _G.pg.base.aircraft_template[125] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[126] = {
 	attack_power = 2,
 	name = "默认鸢尾鱼雷机",
@@ -1365,7 +1348,6 @@ _G.pg.base.aircraft_template[126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[127] = {
 	attack_power = 2,
 	name = "默认鸢尾轰炸机",
@@ -1441,7 +1423,6 @@ _G.pg.base.aircraft_template[127] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[128] = {
 	attack_power = 2,
 	name = "默认鸢尾战斗机-自动防空",
@@ -1517,7 +1498,6 @@ _G.pg.base.aircraft_template[128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[144] = {
 	attack_power = 2,
 	name = "默认潜母水侦",
@@ -1593,7 +1573,6 @@ _G.pg.base.aircraft_template[144] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[145] = {
 	attack_power = 1,
 	name = "塞壬飞机",
@@ -1669,7 +1648,6 @@ _G.pg.base.aircraft_template[145] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[148] = {
 	attack_power = 2,
 	name = "默认撒丁战斗机",
@@ -1745,7 +1723,6 @@ _G.pg.base.aircraft_template[148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[149] = {
 	attack_power = 2,
 	name = "默认撒丁鱼雷机",
@@ -1821,7 +1798,6 @@ _G.pg.base.aircraft_template[149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[150] = {
 	attack_power = 2,
 	name = "默认撒丁轰炸机",
@@ -1897,7 +1873,6 @@ _G.pg.base.aircraft_template[150] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[151] = {
 	attack_power = 2,
 	name = "默认撒丁战斗机-自动防空",
@@ -1973,7 +1948,6 @@ _G.pg.base.aircraft_template[151] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[152] = {
 	attack_power = 2,
 	name = "默认鸢尾水侦",
@@ -2049,7 +2023,6 @@ _G.pg.base.aircraft_template[152] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[153] = {
 	attack_power = 2,
 	name = "默认北联战斗机",
@@ -2125,7 +2098,6 @@ _G.pg.base.aircraft_template[153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[154] = {
 	attack_power = 2,
 	name = "默认北联鱼雷机",
@@ -2201,7 +2173,6 @@ _G.pg.base.aircraft_template[154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[155] = {
 	attack_power = 2,
 	name = "默认北联轰炸机",
@@ -2277,7 +2248,6 @@ _G.pg.base.aircraft_template[155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[156] = {
 	attack_power = 2,
 	name = "默认北联战斗机-自动防空",
@@ -2353,7 +2323,6 @@ _G.pg.base.aircraft_template[156] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[444] = {
 	attack_power = 2,
 	name = "支援武器煌翼炎龙",
@@ -2429,7 +2398,6 @@ _G.pg.base.aircraft_template[444] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[476] = {
 	attack_power = 2,
 	name = "支援武器SOUNDLATH",
@@ -2505,7 +2473,6 @@ _G.pg.base.aircraft_template[476] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[484] = {
 	attack_power = 2,
 	name = "B2O通行证 普林斯顿追加迎击战斗机",
@@ -2582,7 +2549,6 @@ _G.pg.base.aircraft_template[484] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4200] = {
 	attack_power = 2,
 	name = "剑鱼Mark.II-ASV",
@@ -2658,7 +2624,6 @@ _G.pg.base.aircraft_template[4200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4201] = {
 	max_hp = 33,
 	hp_growth = 1259,
@@ -2669,7 +2634,6 @@ _G.pg.base.aircraft_template[4201] = {
 		53101
 	}
 }
-
 _G.pg.base.aircraft_template[4202] = {
 	max_hp = 37,
 	hp_growth = 1423,
@@ -2680,7 +2644,6 @@ _G.pg.base.aircraft_template[4202] = {
 		53102
 	}
 }
-
 _G.pg.base.aircraft_template[4203] = {
 	max_hp = 41,
 	hp_growth = 1587,
@@ -2691,7 +2654,6 @@ _G.pg.base.aircraft_template[4203] = {
 		53103
 	}
 }
-
 _G.pg.base.aircraft_template[4220] = {
 	attack_power = 2,
 	name = "剑鱼Mark.II-ASV",
@@ -2767,7 +2729,6 @@ _G.pg.base.aircraft_template[4220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4221] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -2778,7 +2739,6 @@ _G.pg.base.aircraft_template[4221] = {
 		53121
 	}
 }
-
 _G.pg.base.aircraft_template[4222] = {
 	max_hp = 41,
 	hp_growth = 1581,
@@ -2789,7 +2749,6 @@ _G.pg.base.aircraft_template[4222] = {
 		53122
 	}
 }
-
 _G.pg.base.aircraft_template[4223] = {
 	max_hp = 46,
 	hp_growth = 1763,
@@ -2800,7 +2759,6 @@ _G.pg.base.aircraft_template[4223] = {
 		53123
 	}
 }
-
 _G.pg.base.aircraft_template[4224] = {
 	max_hp = 51,
 	hp_growth = 1946,
@@ -2811,7 +2769,6 @@ _G.pg.base.aircraft_template[4224] = {
 		53124
 	}
 }
-
 _G.pg.base.aircraft_template[4225] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -2822,7 +2779,6 @@ _G.pg.base.aircraft_template[4225] = {
 		53125
 	}
 }
-
 _G.pg.base.aircraft_template[4226] = {
 	max_hp = 60,
 	hp_growth = 2310,
@@ -2833,7 +2789,6 @@ _G.pg.base.aircraft_template[4226] = {
 		53126
 	}
 }
-
 _G.pg.base.aircraft_template[4240] = {
 	attack_power = 2,
 	name = "剑鱼Mark.II-ASV",
@@ -2909,7 +2864,6 @@ _G.pg.base.aircraft_template[4240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4241] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -2920,7 +2874,6 @@ _G.pg.base.aircraft_template[4241] = {
 		53141
 	}
 }
-
 _G.pg.base.aircraft_template[4242] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -2931,7 +2884,6 @@ _G.pg.base.aircraft_template[4242] = {
 		53142
 	}
 }
-
 _G.pg.base.aircraft_template[4243] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -2942,7 +2894,6 @@ _G.pg.base.aircraft_template[4243] = {
 		53143
 	}
 }
-
 _G.pg.base.aircraft_template[4244] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -2953,7 +2904,6 @@ _G.pg.base.aircraft_template[4244] = {
 		53144
 	}
 }
-
 _G.pg.base.aircraft_template[4245] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -2964,7 +2914,6 @@ _G.pg.base.aircraft_template[4245] = {
 		53145
 	}
 }
-
 _G.pg.base.aircraft_template[4246] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -2975,7 +2924,6 @@ _G.pg.base.aircraft_template[4246] = {
 		53146
 	}
 }
-
 _G.pg.base.aircraft_template[4247] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -2986,7 +2934,6 @@ _G.pg.base.aircraft_template[4247] = {
 		53147
 	}
 }
-
 _G.pg.base.aircraft_template[4248] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -2997,7 +2944,6 @@ _G.pg.base.aircraft_template[4248] = {
 		53148
 	}
 }
-
 _G.pg.base.aircraft_template[4249] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -3008,7 +2954,6 @@ _G.pg.base.aircraft_template[4249] = {
 		53149
 	}
 }
-
 _G.pg.base.aircraft_template[4250] = {
 	max_hp = 87,
 	hp_growth = 3344,
@@ -3019,7 +2964,6 @@ _G.pg.base.aircraft_template[4250] = {
 		53150
 	}
 }
-
 _G.pg.base.aircraft_template[4251] = {
 	max_hp = 92,
 	hp_growth = 3545,
@@ -3030,7 +2974,6 @@ _G.pg.base.aircraft_template[4251] = {
 		53151
 	}
 }
-
 _G.pg.base.aircraft_template[4300] = {
 	attack_power = 2,
 	name = "TBM-3复仇者",
@@ -3106,7 +3049,6 @@ _G.pg.base.aircraft_template[4300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4301] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -3117,7 +3059,6 @@ _G.pg.base.aircraft_template[4301] = {
 		53201
 	}
 }
-
 _G.pg.base.aircraft_template[4302] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -3128,7 +3069,6 @@ _G.pg.base.aircraft_template[4302] = {
 		53202
 	}
 }
-
 _G.pg.base.aircraft_template[4303] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -3139,7 +3079,6 @@ _G.pg.base.aircraft_template[4303] = {
 		53203
 	}
 }
-
 _G.pg.base.aircraft_template[4320] = {
 	attack_power = 2,
 	name = "TBM-3复仇者",
@@ -3215,7 +3154,6 @@ _G.pg.base.aircraft_template[4320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4321] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -3226,7 +3164,6 @@ _G.pg.base.aircraft_template[4321] = {
 		53221
 	}
 }
-
 _G.pg.base.aircraft_template[4322] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -3237,7 +3174,6 @@ _G.pg.base.aircraft_template[4322] = {
 		53222
 	}
 }
-
 _G.pg.base.aircraft_template[4323] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -3248,7 +3184,6 @@ _G.pg.base.aircraft_template[4323] = {
 		53223
 	}
 }
-
 _G.pg.base.aircraft_template[4324] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -3259,7 +3194,6 @@ _G.pg.base.aircraft_template[4324] = {
 		53224
 	}
 }
-
 _G.pg.base.aircraft_template[4325] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -3270,7 +3204,6 @@ _G.pg.base.aircraft_template[4325] = {
 		53225
 	}
 }
-
 _G.pg.base.aircraft_template[4326] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -3281,7 +3214,6 @@ _G.pg.base.aircraft_template[4326] = {
 		53226
 	}
 }
-
 _G.pg.base.aircraft_template[4340] = {
 	attack_power = 2,
 	name = "TBM-3复仇者",
@@ -3357,7 +3289,6 @@ _G.pg.base.aircraft_template[4340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4341] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -3368,7 +3299,6 @@ _G.pg.base.aircraft_template[4341] = {
 		53241
 	}
 }
-
 _G.pg.base.aircraft_template[4342] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -3379,7 +3309,6 @@ _G.pg.base.aircraft_template[4342] = {
 		53242
 	}
 }
-
 _G.pg.base.aircraft_template[4343] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -3390,7 +3319,6 @@ _G.pg.base.aircraft_template[4343] = {
 		53243
 	}
 }
-
 _G.pg.base.aircraft_template[4344] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -3401,7 +3329,6 @@ _G.pg.base.aircraft_template[4344] = {
 		53244
 	}
 }
-
 _G.pg.base.aircraft_template[4345] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -3412,7 +3339,6 @@ _G.pg.base.aircraft_template[4345] = {
 		53245
 	}
 }
-
 _G.pg.base.aircraft_template[4346] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -3423,7 +3349,6 @@ _G.pg.base.aircraft_template[4346] = {
 		53246
 	}
 }
-
 _G.pg.base.aircraft_template[4347] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -3434,7 +3359,6 @@ _G.pg.base.aircraft_template[4347] = {
 		53247
 	}
 }
-
 _G.pg.base.aircraft_template[4348] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -3445,7 +3369,6 @@ _G.pg.base.aircraft_template[4348] = {
 		53248
 	}
 }
-
 _G.pg.base.aircraft_template[4349] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -3456,7 +3379,6 @@ _G.pg.base.aircraft_template[4349] = {
 		53249
 	}
 }
-
 _G.pg.base.aircraft_template[4350] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -3467,7 +3389,6 @@ _G.pg.base.aircraft_template[4350] = {
 		53250
 	}
 }
-
 _G.pg.base.aircraft_template[4351] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -3478,7 +3399,6 @@ _G.pg.base.aircraft_template[4351] = {
 		53251
 	}
 }
-
 _G.pg.base.aircraft_template[4360] = {
 	attack_power = 2,
 	name = "TBM复仇者(VT-51)",
@@ -3555,7 +3475,6 @@ _G.pg.base.aircraft_template[4360] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[4361] = {
 	max_hp = 47,
 	hp_growth = 1797,
@@ -3567,7 +3486,6 @@ _G.pg.base.aircraft_template[4361] = {
 		53381
 	}
 }
-
 _G.pg.base.aircraft_template[4362] = {
 	max_hp = 53,
 	hp_growth = 2032,
@@ -3579,7 +3497,6 @@ _G.pg.base.aircraft_template[4362] = {
 		53382
 	}
 }
-
 _G.pg.base.aircraft_template[4363] = {
 	max_hp = 59,
 	hp_growth = 2266,
@@ -3591,7 +3508,6 @@ _G.pg.base.aircraft_template[4363] = {
 		53383
 	}
 }
-
 _G.pg.base.aircraft_template[4364] = {
 	max_hp = 65,
 	hp_growth = 2500,
@@ -3603,7 +3519,6 @@ _G.pg.base.aircraft_template[4364] = {
 		53384
 	}
 }
-
 _G.pg.base.aircraft_template[4365] = {
 	max_hp = 71,
 	hp_growth = 2735,
@@ -3615,7 +3530,6 @@ _G.pg.base.aircraft_template[4365] = {
 		53385
 	}
 }
-
 _G.pg.base.aircraft_template[4366] = {
 	max_hp = 77,
 	hp_growth = 2969,
@@ -3627,7 +3541,6 @@ _G.pg.base.aircraft_template[4366] = {
 		53386
 	}
 }
-
 _G.pg.base.aircraft_template[4367] = {
 	max_hp = 83,
 	hp_growth = 3204,
@@ -3639,7 +3552,6 @@ _G.pg.base.aircraft_template[4367] = {
 		53387
 	}
 }
-
 _G.pg.base.aircraft_template[4368] = {
 	max_hp = 89,
 	hp_growth = 3438,
@@ -3651,7 +3563,6 @@ _G.pg.base.aircraft_template[4368] = {
 		53388
 	}
 }
-
 _G.pg.base.aircraft_template[4369] = {
 	max_hp = 95,
 	hp_growth = 3673,
@@ -3663,7 +3574,6 @@ _G.pg.base.aircraft_template[4369] = {
 		53389
 	}
 }
-
 _G.pg.base.aircraft_template[4370] = {
 	max_hp = 102,
 	hp_growth = 3907,
@@ -3675,7 +3585,6 @@ _G.pg.base.aircraft_template[4370] = {
 		53390
 	}
 }
-
 _G.pg.base.aircraft_template[4371] = {
 	max_hp = 108,
 	hp_growth = 4141,
@@ -3687,7 +3596,6 @@ _G.pg.base.aircraft_template[4371] = {
 		53391
 	}
 }
-
 _G.pg.base.aircraft_template[4372] = {
 	max_hp = 114,
 	hp_growth = 4376,
@@ -3699,7 +3607,6 @@ _G.pg.base.aircraft_template[4372] = {
 		53392
 	}
 }
-
 _G.pg.base.aircraft_template[4373] = {
 	max_hp = 120,
 	hp_growth = 4610,
@@ -3711,7 +3618,6 @@ _G.pg.base.aircraft_template[4373] = {
 		53393
 	}
 }
-
 _G.pg.base.aircraft_template[17000] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -3787,7 +3693,6 @@ _G.pg.base.aircraft_template[17000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17001] = {
 	max_hp = 34,
 	hp_growth = 1298,
@@ -3798,7 +3703,6 @@ _G.pg.base.aircraft_template[17001] = {
 		50301
 	}
 }
-
 _G.pg.base.aircraft_template[17002] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -3809,7 +3713,6 @@ _G.pg.base.aircraft_template[17002] = {
 		50302
 	}
 }
-
 _G.pg.base.aircraft_template[17003] = {
 	max_hp = 43,
 	hp_growth = 1637,
@@ -3820,7 +3723,6 @@ _G.pg.base.aircraft_template[17003] = {
 		50303
 	}
 }
-
 _G.pg.base.aircraft_template[17020] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -3896,7 +3798,6 @@ _G.pg.base.aircraft_template[17020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17021] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -3907,7 +3808,6 @@ _G.pg.base.aircraft_template[17021] = {
 		50321
 	}
 }
-
 _G.pg.base.aircraft_template[17022] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -3918,7 +3818,6 @@ _G.pg.base.aircraft_template[17022] = {
 		50322
 	}
 }
-
 _G.pg.base.aircraft_template[17023] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -3929,7 +3828,6 @@ _G.pg.base.aircraft_template[17023] = {
 		50323
 	}
 }
-
 _G.pg.base.aircraft_template[17040] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -4005,7 +3903,6 @@ _G.pg.base.aircraft_template[17040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17041] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -4016,7 +3913,6 @@ _G.pg.base.aircraft_template[17041] = {
 		50341
 	}
 }
-
 _G.pg.base.aircraft_template[17042] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -4027,7 +3923,6 @@ _G.pg.base.aircraft_template[17042] = {
 		50342
 	}
 }
-
 _G.pg.base.aircraft_template[17043] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -4038,7 +3933,6 @@ _G.pg.base.aircraft_template[17043] = {
 		50343
 	}
 }
-
 _G.pg.base.aircraft_template[17044] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -4049,7 +3943,6 @@ _G.pg.base.aircraft_template[17044] = {
 		50344
 	}
 }
-
 _G.pg.base.aircraft_template[17045] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -4060,7 +3953,6 @@ _G.pg.base.aircraft_template[17045] = {
 		50345
 	}
 }
-
 _G.pg.base.aircraft_template[17046] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -4071,7 +3963,6 @@ _G.pg.base.aircraft_template[17046] = {
 		50346
 	}
 }
-
 _G.pg.base.aircraft_template[17047] = {
 	max_hp = 75,
 	hp_growth = 2893,
@@ -4082,7 +3973,6 @@ _G.pg.base.aircraft_template[17047] = {
 		50347
 	}
 }
-
 _G.pg.base.aircraft_template[17060] = {
 	attack_power = 2,
 	name = "F2A水牛(萨奇队）",
@@ -4158,7 +4048,6 @@ _G.pg.base.aircraft_template[17060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17061] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -4169,7 +4058,6 @@ _G.pg.base.aircraft_template[17061] = {
 		50361
 	}
 }
-
 _G.pg.base.aircraft_template[17062] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -4180,7 +4068,6 @@ _G.pg.base.aircraft_template[17062] = {
 		50362
 	}
 }
-
 _G.pg.base.aircraft_template[17063] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -4191,7 +4078,6 @@ _G.pg.base.aircraft_template[17063] = {
 		50363
 	}
 }
-
 _G.pg.base.aircraft_template[17064] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -4202,7 +4088,6 @@ _G.pg.base.aircraft_template[17064] = {
 		50364
 	}
 }
-
 _G.pg.base.aircraft_template[17065] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -4213,7 +4098,6 @@ _G.pg.base.aircraft_template[17065] = {
 		50365
 	}
 }
-
 _G.pg.base.aircraft_template[17066] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -4224,7 +4108,6 @@ _G.pg.base.aircraft_template[17066] = {
 		50366
 	}
 }
-
 _G.pg.base.aircraft_template[17067] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -4235,7 +4118,6 @@ _G.pg.base.aircraft_template[17067] = {
 		50367
 	}
 }
-
 _G.pg.base.aircraft_template[17068] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -4246,7 +4128,6 @@ _G.pg.base.aircraft_template[17068] = {
 		50368
 	}
 }
-
 _G.pg.base.aircraft_template[17069] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -4257,7 +4138,6 @@ _G.pg.base.aircraft_template[17069] = {
 		50369
 	}
 }
-
 _G.pg.base.aircraft_template[17070] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -4268,7 +4148,6 @@ _G.pg.base.aircraft_template[17070] = {
 		50370
 	}
 }
-
 _G.pg.base.aircraft_template[17071] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -4279,7 +4158,6 @@ _G.pg.base.aircraft_template[17071] = {
 		50371
 	}
 }
-
 _G.pg.base.aircraft_template[17072] = {
 	max_hp = 113,
 	hp_growth = 4346,
@@ -4290,7 +4168,6 @@ _G.pg.base.aircraft_template[17072] = {
 		50372
 	}
 }
-
 _G.pg.base.aircraft_template[17073] = {
 	max_hp = 119,
 	hp_growth = 4579,
@@ -4301,7 +4178,6 @@ _G.pg.base.aircraft_template[17073] = {
 		50373
 	}
 }
-
 _G.pg.base.aircraft_template[17080] = {
 	attack_power = 2,
 	name = "试作型XF2A-4水牛",
@@ -4378,7 +4254,6 @@ _G.pg.base.aircraft_template[17080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17081] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -4390,7 +4265,6 @@ _G.pg.base.aircraft_template[17081] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[17082] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -4402,7 +4276,6 @@ _G.pg.base.aircraft_template[17082] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[17083] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -4414,7 +4287,6 @@ _G.pg.base.aircraft_template[17083] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[17084] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -4426,7 +4298,6 @@ _G.pg.base.aircraft_template[17084] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[17085] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -4438,7 +4309,6 @@ _G.pg.base.aircraft_template[17085] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[17086] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -4450,7 +4320,6 @@ _G.pg.base.aircraft_template[17086] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[17087] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -4462,7 +4331,6 @@ _G.pg.base.aircraft_template[17087] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[17088] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -4474,7 +4342,6 @@ _G.pg.base.aircraft_template[17088] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[17089] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -4486,7 +4353,6 @@ _G.pg.base.aircraft_template[17089] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[17090] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -4498,7 +4364,6 @@ _G.pg.base.aircraft_template[17090] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[17091] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -4510,7 +4375,6 @@ _G.pg.base.aircraft_template[17091] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[17100] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -4586,7 +4450,6 @@ _G.pg.base.aircraft_template[17100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17101] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -4597,7 +4460,6 @@ _G.pg.base.aircraft_template[17101] = {
 		50401
 	}
 }
-
 _G.pg.base.aircraft_template[17102] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -4608,7 +4470,6 @@ _G.pg.base.aircraft_template[17102] = {
 		50402
 	}
 }
-
 _G.pg.base.aircraft_template[17103] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -4619,7 +4480,6 @@ _G.pg.base.aircraft_template[17103] = {
 		50403
 	}
 }
-
 _G.pg.base.aircraft_template[17120] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -4695,7 +4555,6 @@ _G.pg.base.aircraft_template[17120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17121] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -4706,7 +4565,6 @@ _G.pg.base.aircraft_template[17121] = {
 		50421
 	}
 }
-
 _G.pg.base.aircraft_template[17122] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -4717,7 +4575,6 @@ _G.pg.base.aircraft_template[17122] = {
 		50422
 	}
 }
-
 _G.pg.base.aircraft_template[17123] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -4728,7 +4585,6 @@ _G.pg.base.aircraft_template[17123] = {
 		50423
 	}
 }
-
 _G.pg.base.aircraft_template[17124] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -4739,7 +4595,6 @@ _G.pg.base.aircraft_template[17124] = {
 		50424
 	}
 }
-
 _G.pg.base.aircraft_template[17125] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -4750,7 +4605,6 @@ _G.pg.base.aircraft_template[17125] = {
 		50425
 	}
 }
-
 _G.pg.base.aircraft_template[17126] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -4761,7 +4615,6 @@ _G.pg.base.aircraft_template[17126] = {
 		50426
 	}
 }
-
 _G.pg.base.aircraft_template[17140] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -4837,7 +4690,6 @@ _G.pg.base.aircraft_template[17140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17141] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -4848,7 +4700,6 @@ _G.pg.base.aircraft_template[17141] = {
 		50441
 	}
 }
-
 _G.pg.base.aircraft_template[17142] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -4859,7 +4710,6 @@ _G.pg.base.aircraft_template[17142] = {
 		50442
 	}
 }
-
 _G.pg.base.aircraft_template[17143] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -4870,7 +4720,6 @@ _G.pg.base.aircraft_template[17143] = {
 		50443
 	}
 }
-
 _G.pg.base.aircraft_template[17144] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -4881,7 +4730,6 @@ _G.pg.base.aircraft_template[17144] = {
 		50444
 	}
 }
-
 _G.pg.base.aircraft_template[17145] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -4892,7 +4740,6 @@ _G.pg.base.aircraft_template[17145] = {
 		50445
 	}
 }
-
 _G.pg.base.aircraft_template[17146] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -4903,7 +4750,6 @@ _G.pg.base.aircraft_template[17146] = {
 		50446
 	}
 }
-
 _G.pg.base.aircraft_template[17147] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -4914,7 +4760,6 @@ _G.pg.base.aircraft_template[17147] = {
 		50447
 	}
 }
-
 _G.pg.base.aircraft_template[17148] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -4925,7 +4770,6 @@ _G.pg.base.aircraft_template[17148] = {
 		50448
 	}
 }
-
 _G.pg.base.aircraft_template[17149] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -4936,7 +4780,6 @@ _G.pg.base.aircraft_template[17149] = {
 		50449
 	}
 }
-
 _G.pg.base.aircraft_template[17150] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -4947,7 +4790,6 @@ _G.pg.base.aircraft_template[17150] = {
 		50450
 	}
 }
-
 _G.pg.base.aircraft_template[17151] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -4958,7 +4800,6 @@ _G.pg.base.aircraft_template[17151] = {
 		50451
 	}
 }
-
 _G.pg.base.aircraft_template[17200] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -5035,7 +4876,6 @@ _G.pg.base.aircraft_template[17200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17201] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -5047,7 +4887,6 @@ _G.pg.base.aircraft_template[17201] = {
 		52301
 	}
 }
-
 _G.pg.base.aircraft_template[17202] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -5059,7 +4898,6 @@ _G.pg.base.aircraft_template[17202] = {
 		52302
 	}
 }
-
 _G.pg.base.aircraft_template[17203] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -5071,7 +4909,6 @@ _G.pg.base.aircraft_template[17203] = {
 		52303
 	}
 }
-
 _G.pg.base.aircraft_template[17220] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -5148,7 +4985,6 @@ _G.pg.base.aircraft_template[17220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17221] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -5160,7 +4996,6 @@ _G.pg.base.aircraft_template[17221] = {
 		52321
 	}
 }
-
 _G.pg.base.aircraft_template[17222] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -5172,7 +5007,6 @@ _G.pg.base.aircraft_template[17222] = {
 		52322
 	}
 }
-
 _G.pg.base.aircraft_template[17223] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -5184,7 +5018,6 @@ _G.pg.base.aircraft_template[17223] = {
 		52323
 	}
 }
-
 _G.pg.base.aircraft_template[17224] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -5196,7 +5029,6 @@ _G.pg.base.aircraft_template[17224] = {
 		52324
 	}
 }
-
 _G.pg.base.aircraft_template[17225] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -5208,7 +5040,6 @@ _G.pg.base.aircraft_template[17225] = {
 		52325
 	}
 }
-
 _G.pg.base.aircraft_template[17226] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -5220,7 +5051,6 @@ _G.pg.base.aircraft_template[17226] = {
 		52326
 	}
 }
-
 _G.pg.base.aircraft_template[17240] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -5297,7 +5127,6 @@ _G.pg.base.aircraft_template[17240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17241] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -5309,7 +5138,6 @@ _G.pg.base.aircraft_template[17241] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[17242] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -5321,7 +5149,6 @@ _G.pg.base.aircraft_template[17242] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[17243] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -5333,7 +5160,6 @@ _G.pg.base.aircraft_template[17243] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[17244] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -5345,7 +5171,6 @@ _G.pg.base.aircraft_template[17244] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[17245] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -5357,7 +5182,6 @@ _G.pg.base.aircraft_template[17245] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[17246] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -5369,7 +5193,6 @@ _G.pg.base.aircraft_template[17246] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[17247] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -5381,7 +5204,6 @@ _G.pg.base.aircraft_template[17247] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[17248] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -5393,7 +5215,6 @@ _G.pg.base.aircraft_template[17248] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[17249] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -5405,7 +5226,6 @@ _G.pg.base.aircraft_template[17249] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[17250] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -5417,7 +5237,6 @@ _G.pg.base.aircraft_template[17250] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[17251] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -5429,7 +5248,6 @@ _G.pg.base.aircraft_template[17251] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[17260] = {
 	attack_power = 2,
 	name = "F4U（VF-17“海盗”中队）",
@@ -5506,7 +5324,6 @@ _G.pg.base.aircraft_template[17260] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17261] = {
 	max_hp = 51,
 	hp_growth = 1947,
@@ -5518,7 +5335,6 @@ _G.pg.base.aircraft_template[17261] = {
 		52361
 	}
 }
-
 _G.pg.base.aircraft_template[17262] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -5530,7 +5346,6 @@ _G.pg.base.aircraft_template[17262] = {
 		52362
 	}
 }
-
 _G.pg.base.aircraft_template[17263] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -5542,7 +5357,6 @@ _G.pg.base.aircraft_template[17263] = {
 		52363
 	}
 }
-
 _G.pg.base.aircraft_template[17264] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -5554,7 +5368,6 @@ _G.pg.base.aircraft_template[17264] = {
 		52364
 	}
 }
-
 _G.pg.base.aircraft_template[17265] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -5566,7 +5379,6 @@ _G.pg.base.aircraft_template[17265] = {
 		52365
 	}
 }
-
 _G.pg.base.aircraft_template[17266] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -5578,7 +5390,6 @@ _G.pg.base.aircraft_template[17266] = {
 		52366
 	}
 }
-
 _G.pg.base.aircraft_template[17267] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -5590,7 +5401,6 @@ _G.pg.base.aircraft_template[17267] = {
 		52367
 	}
 }
-
 _G.pg.base.aircraft_template[17268] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -5602,7 +5412,6 @@ _G.pg.base.aircraft_template[17268] = {
 		52368
 	}
 }
-
 _G.pg.base.aircraft_template[17269] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -5614,7 +5423,6 @@ _G.pg.base.aircraft_template[17269] = {
 		52369
 	}
 }
-
 _G.pg.base.aircraft_template[17270] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -5626,7 +5434,6 @@ _G.pg.base.aircraft_template[17270] = {
 		52370
 	}
 }
-
 _G.pg.base.aircraft_template[17271] = {
 	max_hp = 117,
 	hp_growth = 4488,
@@ -5638,7 +5445,6 @@ _G.pg.base.aircraft_template[17271] = {
 		52371
 	}
 }
-
 _G.pg.base.aircraft_template[17272] = {
 	max_hp = 123,
 	hp_growth = 4742,
@@ -5650,7 +5456,6 @@ _G.pg.base.aircraft_template[17272] = {
 		52372
 	}
 }
-
 _G.pg.base.aircraft_template[17273] = {
 	max_hp = 130,
 	hp_growth = 4996,
@@ -5662,7 +5467,6 @@ _G.pg.base.aircraft_template[17273] = {
 		52373
 	}
 }
-
 _G.pg.base.aircraft_template[17300] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -5740,7 +5544,6 @@ _G.pg.base.aircraft_template[17300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17301] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -5753,7 +5556,6 @@ _G.pg.base.aircraft_template[17301] = {
 		52301
 	}
 }
-
 _G.pg.base.aircraft_template[17302] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -5766,7 +5568,6 @@ _G.pg.base.aircraft_template[17302] = {
 		52302
 	}
 }
-
 _G.pg.base.aircraft_template[17303] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -5779,7 +5580,6 @@ _G.pg.base.aircraft_template[17303] = {
 		52303
 	}
 }
-
 _G.pg.base.aircraft_template[17304] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -5792,7 +5592,6 @@ _G.pg.base.aircraft_template[17304] = {
 		52304
 	}
 }
-
 _G.pg.base.aircraft_template[17305] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -5805,7 +5604,6 @@ _G.pg.base.aircraft_template[17305] = {
 		52305
 	}
 }
-
 _G.pg.base.aircraft_template[17306] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -5818,7 +5616,6 @@ _G.pg.base.aircraft_template[17306] = {
 		52306
 	}
 }
-
 _G.pg.base.aircraft_template[17320] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -5896,7 +5693,6 @@ _G.pg.base.aircraft_template[17320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17321] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -5909,7 +5705,6 @@ _G.pg.base.aircraft_template[17321] = {
 		52321
 	}
 }
-
 _G.pg.base.aircraft_template[17322] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -5922,7 +5717,6 @@ _G.pg.base.aircraft_template[17322] = {
 		52322
 	}
 }
-
 _G.pg.base.aircraft_template[17323] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -5935,7 +5729,6 @@ _G.pg.base.aircraft_template[17323] = {
 		52323
 	}
 }
-
 _G.pg.base.aircraft_template[17324] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -5948,7 +5741,6 @@ _G.pg.base.aircraft_template[17324] = {
 		52324
 	}
 }
-
 _G.pg.base.aircraft_template[17325] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -5961,7 +5753,6 @@ _G.pg.base.aircraft_template[17325] = {
 		52325
 	}
 }
-
 _G.pg.base.aircraft_template[17326] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -5974,7 +5765,6 @@ _G.pg.base.aircraft_template[17326] = {
 		52326
 	}
 }
-
 _G.pg.base.aircraft_template[17327] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -5987,7 +5777,6 @@ _G.pg.base.aircraft_template[17327] = {
 		52327
 	}
 }
-
 _G.pg.base.aircraft_template[17328] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -6000,7 +5789,6 @@ _G.pg.base.aircraft_template[17328] = {
 		52328
 	}
 }
-
 _G.pg.base.aircraft_template[17329] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -6013,7 +5801,6 @@ _G.pg.base.aircraft_template[17329] = {
 		52329
 	}
 }
-
 _G.pg.base.aircraft_template[17330] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -6026,7 +5813,6 @@ _G.pg.base.aircraft_template[17330] = {
 		52330
 	}
 }
-
 _G.pg.base.aircraft_template[17340] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -6104,7 +5890,6 @@ _G.pg.base.aircraft_template[17340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17341] = {
 	max_hp = 51,
 	hp_growth = 1947,
@@ -6117,7 +5902,6 @@ _G.pg.base.aircraft_template[17341] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[17342] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -6130,7 +5914,6 @@ _G.pg.base.aircraft_template[17342] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[17343] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -6143,7 +5926,6 @@ _G.pg.base.aircraft_template[17343] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[17344] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -6156,7 +5938,6 @@ _G.pg.base.aircraft_template[17344] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[17345] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -6169,7 +5950,6 @@ _G.pg.base.aircraft_template[17345] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[17346] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -6182,7 +5962,6 @@ _G.pg.base.aircraft_template[17346] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[17347] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -6195,7 +5974,6 @@ _G.pg.base.aircraft_template[17347] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[17348] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -6208,7 +5986,6 @@ _G.pg.base.aircraft_template[17348] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[17349] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -6221,7 +5998,6 @@ _G.pg.base.aircraft_template[17349] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[17350] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -6234,7 +6010,6 @@ _G.pg.base.aircraft_template[17350] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[17351] = {
 	max_hp = 117,
 	hp_growth = 4488,
@@ -6247,7 +6022,6 @@ _G.pg.base.aircraft_template[17351] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[17352] = {
 	max_hp = 123,
 	hp_growth = 4742,
@@ -6260,7 +6034,6 @@ _G.pg.base.aircraft_template[17352] = {
 		52352
 	}
 }
-
 _G.pg.base.aircraft_template[17353] = {
 	max_hp = 130,
 	hp_growth = 4996,
@@ -6273,7 +6046,6 @@ _G.pg.base.aircraft_template[17353] = {
 		52353
 	}
 }
-
 _G.pg.base.aircraft_template[17360] = {
 	attack_power = 2,
 	name = "F7F虎猫",
@@ -6350,7 +6122,6 @@ _G.pg.base.aircraft_template[17360] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17361] = {
 	max_hp = 61,
 	hp_growth = 2337,
@@ -6362,7 +6133,6 @@ _G.pg.base.aircraft_template[17361] = {
 		52761
 	}
 }
-
 _G.pg.base.aircraft_template[17362] = {
 	max_hp = 69,
 	hp_growth = 2642,
@@ -6374,7 +6144,6 @@ _G.pg.base.aircraft_template[17362] = {
 		52762
 	}
 }
-
 _G.pg.base.aircraft_template[17363] = {
 	max_hp = 77,
 	hp_growth = 2947,
@@ -6386,7 +6155,6 @@ _G.pg.base.aircraft_template[17363] = {
 		52763
 	}
 }
-
 _G.pg.base.aircraft_template[17364] = {
 	max_hp = 85,
 	hp_growth = 3251,
@@ -6398,7 +6166,6 @@ _G.pg.base.aircraft_template[17364] = {
 		52764
 	}
 }
-
 _G.pg.base.aircraft_template[17365] = {
 	max_hp = 92,
 	hp_growth = 3556,
@@ -6410,7 +6177,6 @@ _G.pg.base.aircraft_template[17365] = {
 		52765
 	}
 }
-
 _G.pg.base.aircraft_template[17366] = {
 	max_hp = 100,
 	hp_growth = 3861,
@@ -6422,7 +6188,6 @@ _G.pg.base.aircraft_template[17366] = {
 		52766
 	}
 }
-
 _G.pg.base.aircraft_template[17367] = {
 	max_hp = 108,
 	hp_growth = 4166,
@@ -6434,7 +6199,6 @@ _G.pg.base.aircraft_template[17367] = {
 		52767
 	}
 }
-
 _G.pg.base.aircraft_template[17368] = {
 	max_hp = 116,
 	hp_growth = 4471,
@@ -6446,7 +6210,6 @@ _G.pg.base.aircraft_template[17368] = {
 		52768
 	}
 }
-
 _G.pg.base.aircraft_template[17369] = {
 	max_hp = 124,
 	hp_growth = 4776,
@@ -6458,7 +6221,6 @@ _G.pg.base.aircraft_template[17369] = {
 		52769
 	}
 }
-
 _G.pg.base.aircraft_template[17370] = {
 	max_hp = 132,
 	hp_growth = 5080,
@@ -6470,7 +6232,6 @@ _G.pg.base.aircraft_template[17370] = {
 		52770
 	}
 }
-
 _G.pg.base.aircraft_template[17371] = {
 	max_hp = 140,
 	hp_growth = 5385,
@@ -6482,7 +6243,6 @@ _G.pg.base.aircraft_template[17371] = {
 		52771
 	}
 }
-
 _G.pg.base.aircraft_template[17372] = {
 	max_hp = 148,
 	hp_growth = 5690,
@@ -6494,7 +6254,6 @@ _G.pg.base.aircraft_template[17372] = {
 		52772
 	}
 }
-
 _G.pg.base.aircraft_template[17373] = {
 	max_hp = 156,
 	hp_growth = 5995,
@@ -6506,7 +6265,6 @@ _G.pg.base.aircraft_template[17373] = {
 		52773
 	}
 }
-
 _G.pg.base.aircraft_template[17380] = {
 	attack_power = 2,
 	name = "F8F熊猫",
@@ -6583,7 +6341,6 @@ _G.pg.base.aircraft_template[17380] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17381] = {
 	max_hp = 55,
 	hp_growth = 2103,
@@ -6595,7 +6352,6 @@ _G.pg.base.aircraft_template[17381] = {
 		52661
 	}
 }
-
 _G.pg.base.aircraft_template[17382] = {
 	max_hp = 62,
 	hp_growth = 2378,
@@ -6607,7 +6363,6 @@ _G.pg.base.aircraft_template[17382] = {
 		52662
 	}
 }
-
 _G.pg.base.aircraft_template[17383] = {
 	max_hp = 69,
 	hp_growth = 2652,
@@ -6619,7 +6374,6 @@ _G.pg.base.aircraft_template[17383] = {
 		52663
 	}
 }
-
 _G.pg.base.aircraft_template[17384] = {
 	max_hp = 76,
 	hp_growth = 2926,
@@ -6631,7 +6385,6 @@ _G.pg.base.aircraft_template[17384] = {
 		52664
 	}
 }
-
 _G.pg.base.aircraft_template[17385] = {
 	max_hp = 83,
 	hp_growth = 3201,
@@ -6643,7 +6396,6 @@ _G.pg.base.aircraft_template[17385] = {
 		52665
 	}
 }
-
 _G.pg.base.aircraft_template[17386] = {
 	max_hp = 90,
 	hp_growth = 3475,
@@ -6655,7 +6407,6 @@ _G.pg.base.aircraft_template[17386] = {
 		52666
 	}
 }
-
 _G.pg.base.aircraft_template[17387] = {
 	max_hp = 97,
 	hp_growth = 3749,
@@ -6667,7 +6418,6 @@ _G.pg.base.aircraft_template[17387] = {
 		52667
 	}
 }
-
 _G.pg.base.aircraft_template[17388] = {
 	max_hp = 105,
 	hp_growth = 4024,
@@ -6679,7 +6429,6 @@ _G.pg.base.aircraft_template[17388] = {
 		52668
 	}
 }
-
 _G.pg.base.aircraft_template[17389] = {
 	max_hp = 112,
 	hp_growth = 4298,
@@ -6691,7 +6440,6 @@ _G.pg.base.aircraft_template[17389] = {
 		52669
 	}
 }
-
 _G.pg.base.aircraft_template[17390] = {
 	max_hp = 119,
 	hp_growth = 4572,
@@ -6703,7 +6451,6 @@ _G.pg.base.aircraft_template[17390] = {
 		52670
 	}
 }
-
 _G.pg.base.aircraft_template[17391] = {
 	max_hp = 126,
 	hp_growth = 4847,
@@ -6715,7 +6462,6 @@ _G.pg.base.aircraft_template[17391] = {
 		52671
 	}
 }
-
 _G.pg.base.aircraft_template[17392] = {
 	max_hp = 133,
 	hp_growth = 5121,
@@ -6727,7 +6473,6 @@ _G.pg.base.aircraft_template[17392] = {
 		52672
 	}
 }
-
 _G.pg.base.aircraft_template[17393] = {
 	max_hp = 140,
 	hp_growth = 5395,
@@ -6739,7 +6484,6 @@ _G.pg.base.aircraft_template[17393] = {
 		52673
 	}
 }
-
 _G.pg.base.aircraft_template[17400] = {
 	attack_power = 2,
 	name = "XF5F天箭",
@@ -6811,7 +6555,6 @@ _G.pg.base.aircraft_template[17400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17401] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -6823,7 +6566,6 @@ _G.pg.base.aircraft_template[17401] = {
 		50741
 	}
 }
-
 _G.pg.base.aircraft_template[17402] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -6835,7 +6577,6 @@ _G.pg.base.aircraft_template[17402] = {
 		50742
 	}
 }
-
 _G.pg.base.aircraft_template[17403] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -6847,7 +6588,6 @@ _G.pg.base.aircraft_template[17403] = {
 		50743
 	}
 }
-
 _G.pg.base.aircraft_template[17404] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -6859,7 +6599,6 @@ _G.pg.base.aircraft_template[17404] = {
 		50744
 	}
 }
-
 _G.pg.base.aircraft_template[17405] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -6871,7 +6610,6 @@ _G.pg.base.aircraft_template[17405] = {
 		50745
 	}
 }
-
 _G.pg.base.aircraft_template[17406] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -6883,7 +6621,6 @@ _G.pg.base.aircraft_template[17406] = {
 		50746
 	}
 }
-
 _G.pg.base.aircraft_template[17407] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -6895,7 +6632,6 @@ _G.pg.base.aircraft_template[17407] = {
 		50747
 	}
 }
-
 _G.pg.base.aircraft_template[17408] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -6907,7 +6643,6 @@ _G.pg.base.aircraft_template[17408] = {
 		50748
 	}
 }
-
 _G.pg.base.aircraft_template[17409] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -6919,7 +6654,6 @@ _G.pg.base.aircraft_template[17409] = {
 		50749
 	}
 }
-
 _G.pg.base.aircraft_template[17410] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -6931,7 +6665,6 @@ _G.pg.base.aircraft_template[17410] = {
 		50750
 	}
 }
-
 _G.pg.base.aircraft_template[17411] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -6943,7 +6676,6 @@ _G.pg.base.aircraft_template[17411] = {
 		50751
 	}
 }
-
 _G.pg.base.aircraft_template[17420] = {
 	attack_power = 2,
 	name = "试作型XF5U飞碟",
@@ -7020,7 +6752,6 @@ _G.pg.base.aircraft_template[17420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17421] = {
 	max_hp = 71,
 	hp_growth = 2726,
@@ -7032,7 +6763,6 @@ _G.pg.base.aircraft_template[17421] = {
 		52761
 	}
 }
-
 _G.pg.base.aircraft_template[17422] = {
 	max_hp = 80,
 	hp_growth = 3082,
@@ -7044,7 +6774,6 @@ _G.pg.base.aircraft_template[17422] = {
 		52762
 	}
 }
-
 _G.pg.base.aircraft_template[17423] = {
 	max_hp = 89,
 	hp_growth = 3438,
@@ -7056,7 +6785,6 @@ _G.pg.base.aircraft_template[17423] = {
 		52763
 	}
 }
-
 _G.pg.base.aircraft_template[17424] = {
 	max_hp = 99,
 	hp_growth = 3793,
@@ -7068,7 +6796,6 @@ _G.pg.base.aircraft_template[17424] = {
 		52764
 	}
 }
-
 _G.pg.base.aircraft_template[17425] = {
 	max_hp = 108,
 	hp_growth = 4149,
@@ -7080,7 +6807,6 @@ _G.pg.base.aircraft_template[17425] = {
 		52765
 	}
 }
-
 _G.pg.base.aircraft_template[17426] = {
 	max_hp = 117,
 	hp_growth = 4505,
@@ -7092,7 +6818,6 @@ _G.pg.base.aircraft_template[17426] = {
 		52766
 	}
 }
-
 _G.pg.base.aircraft_template[17427] = {
 	max_hp = 126,
 	hp_growth = 4860,
@@ -7104,7 +6829,6 @@ _G.pg.base.aircraft_template[17427] = {
 		52767
 	}
 }
-
 _G.pg.base.aircraft_template[17428] = {
 	max_hp = 136,
 	hp_growth = 5216,
@@ -7116,7 +6840,6 @@ _G.pg.base.aircraft_template[17428] = {
 		52768
 	}
 }
-
 _G.pg.base.aircraft_template[17429] = {
 	max_hp = 145,
 	hp_growth = 5571,
@@ -7128,7 +6851,6 @@ _G.pg.base.aircraft_template[17429] = {
 		52769
 	}
 }
-
 _G.pg.base.aircraft_template[17430] = {
 	max_hp = 154,
 	hp_growth = 5927,
@@ -7140,7 +6862,6 @@ _G.pg.base.aircraft_template[17430] = {
 		52770
 	}
 }
-
 _G.pg.base.aircraft_template[17431] = {
 	max_hp = 163,
 	hp_growth = 6283,
@@ -7152,7 +6873,6 @@ _G.pg.base.aircraft_template[17431] = {
 		52771
 	}
 }
-
 _G.pg.base.aircraft_template[17432] = {
 	max_hp = 173,
 	hp_growth = 6638,
@@ -7164,7 +6884,6 @@ _G.pg.base.aircraft_template[17432] = {
 		52772
 	}
 }
-
 _G.pg.base.aircraft_template[17433] = {
 	max_hp = 182,
 	hp_growth = 6994,
@@ -7176,7 +6895,6 @@ _G.pg.base.aircraft_template[17433] = {
 		52773
 	}
 }
-
 _G.pg.base.aircraft_template[17440] = {
 	attack_power = 2,
 	name = "F6F地狱猫（HVAR搭载型）",
@@ -7254,7 +6972,6 @@ _G.pg.base.aircraft_template[17440] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[17441] = {
 	max_hp = 51,
 	hp_growth = 1947,
@@ -7267,7 +6984,6 @@ _G.pg.base.aircraft_template[17441] = {
 		59861
 	}
 }
-
 _G.pg.base.aircraft_template[17442] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -7280,7 +6996,6 @@ _G.pg.base.aircraft_template[17442] = {
 		59862
 	}
 }
-
 _G.pg.base.aircraft_template[17443] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -7293,7 +7008,6 @@ _G.pg.base.aircraft_template[17443] = {
 		59863
 	}
 }
-
 _G.pg.base.aircraft_template[17444] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -7306,7 +7020,6 @@ _G.pg.base.aircraft_template[17444] = {
 		59864
 	}
 }
-
 _G.pg.base.aircraft_template[17445] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -7319,7 +7032,6 @@ _G.pg.base.aircraft_template[17445] = {
 		59865
 	}
 }
-
 _G.pg.base.aircraft_template[17446] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -7332,7 +7044,6 @@ _G.pg.base.aircraft_template[17446] = {
 		59866
 	}
 }
-
 _G.pg.base.aircraft_template[17447] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -7345,7 +7056,6 @@ _G.pg.base.aircraft_template[17447] = {
 		59867
 	}
 }
-
 _G.pg.base.aircraft_template[17448] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -7358,7 +7068,6 @@ _G.pg.base.aircraft_template[17448] = {
 		59868
 	}
 }
-
 _G.pg.base.aircraft_template[17449] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -7371,7 +7080,6 @@ _G.pg.base.aircraft_template[17449] = {
 		59869
 	}
 }
-
 _G.pg.base.aircraft_template[17450] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -7384,7 +7092,6 @@ _G.pg.base.aircraft_template[17450] = {
 		59870
 	}
 }
-
 _G.pg.base.aircraft_template[17451] = {
 	max_hp = 117,
 	hp_growth = 4488,
@@ -7397,7 +7104,6 @@ _G.pg.base.aircraft_template[17451] = {
 		59871
 	}
 }
-
 _G.pg.base.aircraft_template[17452] = {
 	max_hp = 123,
 	hp_growth = 4742,
@@ -7410,7 +7116,6 @@ _G.pg.base.aircraft_template[17452] = {
 		59872
 	}
 }
-
 _G.pg.base.aircraft_template[17453] = {
 	max_hp = 130,
 	hp_growth = 4996,
@@ -7423,7 +7128,6 @@ _G.pg.base.aircraft_template[17453] = {
 		59873
 	}
 }
-
 _G.pg.base.aircraft_template[18000] = {
 	attack_power = 2,
 	name = "TBD蹂躏者",
@@ -7500,7 +7204,6 @@ _G.pg.base.aircraft_template[18000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18001] = {
 	max_hp = 31,
 	hp_growth = 1175,
@@ -7512,7 +7215,6 @@ _G.pg.base.aircraft_template[18001] = {
 		51001
 	}
 }
-
 _G.pg.base.aircraft_template[18002] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -7524,7 +7226,6 @@ _G.pg.base.aircraft_template[18002] = {
 		51002
 	}
 }
-
 _G.pg.base.aircraft_template[18003] = {
 	max_hp = 39,
 	hp_growth = 1481,
@@ -7536,7 +7237,6 @@ _G.pg.base.aircraft_template[18003] = {
 		51003
 	}
 }
-
 _G.pg.base.aircraft_template[18020] = {
 	attack_power = 2,
 	name = "TBD蹂躏者",
@@ -7613,7 +7313,6 @@ _G.pg.base.aircraft_template[18020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18021] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -7625,7 +7324,6 @@ _G.pg.base.aircraft_template[18021] = {
 		51021
 	}
 }
-
 _G.pg.base.aircraft_template[18022] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -7637,7 +7335,6 @@ _G.pg.base.aircraft_template[18022] = {
 		51022
 	}
 }
-
 _G.pg.base.aircraft_template[18023] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -7649,7 +7346,6 @@ _G.pg.base.aircraft_template[18023] = {
 		51023
 	}
 }
-
 _G.pg.base.aircraft_template[18040] = {
 	attack_power = 2,
 	name = "TBD蹂躏者",
@@ -7726,7 +7422,6 @@ _G.pg.base.aircraft_template[18040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18041] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -7738,7 +7433,6 @@ _G.pg.base.aircraft_template[18041] = {
 		51041
 	}
 }
-
 _G.pg.base.aircraft_template[18042] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -7750,7 +7444,6 @@ _G.pg.base.aircraft_template[18042] = {
 		51042
 	}
 }
-
 _G.pg.base.aircraft_template[18043] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -7762,7 +7455,6 @@ _G.pg.base.aircraft_template[18043] = {
 		51043
 	}
 }
-
 _G.pg.base.aircraft_template[18044] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -7774,7 +7466,6 @@ _G.pg.base.aircraft_template[18044] = {
 		51044
 	}
 }
-
 _G.pg.base.aircraft_template[18045] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -7786,7 +7477,6 @@ _G.pg.base.aircraft_template[18045] = {
 		51045
 	}
 }
-
 _G.pg.base.aircraft_template[18046] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -7798,7 +7488,6 @@ _G.pg.base.aircraft_template[18046] = {
 		51046
 	}
 }
-
 _G.pg.base.aircraft_template[18047] = {
 	max_hp = 68,
 	hp_growth = 2617,
@@ -7810,7 +7499,6 @@ _G.pg.base.aircraft_template[18047] = {
 		51047
 	}
 }
-
 _G.pg.base.aircraft_template[18060] = {
 	attack_power = 2,
 	name = "TBD蹂躏者(VT-8中队)",
@@ -7887,7 +7575,6 @@ _G.pg.base.aircraft_template[18060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18061] = {
 	max_hp = 44,
 	hp_growth = 1674,
@@ -7899,7 +7586,6 @@ _G.pg.base.aircraft_template[18061] = {
 		59581
 	}
 }
-
 _G.pg.base.aircraft_template[18062] = {
 	max_hp = 49,
 	hp_growth = 1892,
@@ -7911,7 +7597,6 @@ _G.pg.base.aircraft_template[18062] = {
 		59582
 	}
 }
-
 _G.pg.base.aircraft_template[18063] = {
 	max_hp = 55,
 	hp_growth = 2111,
@@ -7923,7 +7608,6 @@ _G.pg.base.aircraft_template[18063] = {
 		59583
 	}
 }
-
 _G.pg.base.aircraft_template[18064] = {
 	max_hp = 61,
 	hp_growth = 2329,
@@ -7935,7 +7619,6 @@ _G.pg.base.aircraft_template[18064] = {
 		59584
 	}
 }
-
 _G.pg.base.aircraft_template[18065] = {
 	max_hp = 66,
 	hp_growth = 2547,
@@ -7947,7 +7630,6 @@ _G.pg.base.aircraft_template[18065] = {
 		59585
 	}
 }
-
 _G.pg.base.aircraft_template[18066] = {
 	max_hp = 72,
 	hp_growth = 2766,
@@ -7959,7 +7641,6 @@ _G.pg.base.aircraft_template[18066] = {
 		59586
 	}
 }
-
 _G.pg.base.aircraft_template[18067] = {
 	max_hp = 78,
 	hp_growth = 2984,
@@ -7971,7 +7652,6 @@ _G.pg.base.aircraft_template[18067] = {
 		59587
 	}
 }
-
 _G.pg.base.aircraft_template[18068] = {
 	max_hp = 83,
 	hp_growth = 3202,
@@ -7983,7 +7663,6 @@ _G.pg.base.aircraft_template[18068] = {
 		59588
 	}
 }
-
 _G.pg.base.aircraft_template[18069] = {
 	max_hp = 89,
 	hp_growth = 3421,
@@ -7995,7 +7674,6 @@ _G.pg.base.aircraft_template[18069] = {
 		59589
 	}
 }
-
 _G.pg.base.aircraft_template[18070] = {
 	max_hp = 95,
 	hp_growth = 3639,
@@ -8007,7 +7685,6 @@ _G.pg.base.aircraft_template[18070] = {
 		59590
 	}
 }
-
 _G.pg.base.aircraft_template[18071] = {
 	max_hp = 100,
 	hp_growth = 3857,
@@ -8019,7 +7696,6 @@ _G.pg.base.aircraft_template[18071] = {
 		59591
 	}
 }
-
 _G.pg.base.aircraft_template[18072] = {
 	max_hp = 106,
 	hp_growth = 4076,
@@ -8031,7 +7707,6 @@ _G.pg.base.aircraft_template[18072] = {
 		59592
 	}
 }
-
 _G.pg.base.aircraft_template[18073] = {
 	max_hp = 112,
 	hp_growth = 4294,
@@ -8043,7 +7718,6 @@ _G.pg.base.aircraft_template[18073] = {
 		59593
 	}
 }
-
 _G.pg.base.aircraft_template[18100] = {
 	attack_power = 2,
 	name = "TBF复仇者",
@@ -8120,7 +7794,6 @@ _G.pg.base.aircraft_template[18100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18101] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -8132,7 +7805,6 @@ _G.pg.base.aircraft_template[18101] = {
 		51101
 	}
 }
-
 _G.pg.base.aircraft_template[18102] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -8144,7 +7816,6 @@ _G.pg.base.aircraft_template[18102] = {
 		51102
 	}
 }
-
 _G.pg.base.aircraft_template[18103] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -8156,7 +7827,6 @@ _G.pg.base.aircraft_template[18103] = {
 		51103
 	}
 }
-
 _G.pg.base.aircraft_template[18120] = {
 	attack_power = 2,
 	name = "TBF复仇者",
@@ -8233,7 +7903,6 @@ _G.pg.base.aircraft_template[18120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18121] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -8245,7 +7914,6 @@ _G.pg.base.aircraft_template[18121] = {
 		51121
 	}
 }
-
 _G.pg.base.aircraft_template[18122] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -8257,7 +7925,6 @@ _G.pg.base.aircraft_template[18122] = {
 		51122
 	}
 }
-
 _G.pg.base.aircraft_template[18123] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -8269,7 +7936,6 @@ _G.pg.base.aircraft_template[18123] = {
 		51123
 	}
 }
-
 _G.pg.base.aircraft_template[18124] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -8281,7 +7947,6 @@ _G.pg.base.aircraft_template[18124] = {
 		51124
 	}
 }
-
 _G.pg.base.aircraft_template[18125] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -8293,7 +7958,6 @@ _G.pg.base.aircraft_template[18125] = {
 		51125
 	}
 }
-
 _G.pg.base.aircraft_template[18126] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -8305,7 +7969,6 @@ _G.pg.base.aircraft_template[18126] = {
 		51126
 	}
 }
-
 _G.pg.base.aircraft_template[18140] = {
 	attack_power = 2,
 	name = "TBF复仇者",
@@ -8382,7 +8045,6 @@ _G.pg.base.aircraft_template[18140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18141] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -8394,7 +8056,6 @@ _G.pg.base.aircraft_template[18141] = {
 		51141
 	}
 }
-
 _G.pg.base.aircraft_template[18142] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -8406,7 +8067,6 @@ _G.pg.base.aircraft_template[18142] = {
 		51142
 	}
 }
-
 _G.pg.base.aircraft_template[18143] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -8418,7 +8078,6 @@ _G.pg.base.aircraft_template[18143] = {
 		51143
 	}
 }
-
 _G.pg.base.aircraft_template[18144] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -8430,7 +8089,6 @@ _G.pg.base.aircraft_template[18144] = {
 		51144
 	}
 }
-
 _G.pg.base.aircraft_template[18145] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -8442,7 +8100,6 @@ _G.pg.base.aircraft_template[18145] = {
 		51145
 	}
 }
-
 _G.pg.base.aircraft_template[18146] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -8454,7 +8111,6 @@ _G.pg.base.aircraft_template[18146] = {
 		51146
 	}
 }
-
 _G.pg.base.aircraft_template[18147] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -8466,7 +8122,6 @@ _G.pg.base.aircraft_template[18147] = {
 		51147
 	}
 }
-
 _G.pg.base.aircraft_template[18148] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -8478,7 +8133,6 @@ _G.pg.base.aircraft_template[18148] = {
 		51148
 	}
 }
-
 _G.pg.base.aircraft_template[18149] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -8490,7 +8144,6 @@ _G.pg.base.aircraft_template[18149] = {
 		51149
 	}
 }
-
 _G.pg.base.aircraft_template[18150] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -8502,7 +8155,6 @@ _G.pg.base.aircraft_template[18150] = {
 		51150
 	}
 }
-
 _G.pg.base.aircraft_template[18151] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -8514,7 +8166,6 @@ _G.pg.base.aircraft_template[18151] = {
 		51151
 	}
 }
-
 _G.pg.base.aircraft_template[18160] = {
 	attack_power = 2,
 	name = "TBF复仇者(VT-8中队)",
@@ -8591,7 +8242,6 @@ _G.pg.base.aircraft_template[18160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18161] = {
 	max_hp = 44,
 	hp_growth = 1674,
@@ -8603,7 +8253,6 @@ _G.pg.base.aircraft_template[18161] = {
 		59601
 	}
 }
-
 _G.pg.base.aircraft_template[18162] = {
 	max_hp = 49,
 	hp_growth = 1892,
@@ -8615,7 +8264,6 @@ _G.pg.base.aircraft_template[18162] = {
 		59602
 	}
 }
-
 _G.pg.base.aircraft_template[18163] = {
 	max_hp = 55,
 	hp_growth = 2111,
@@ -8627,7 +8275,6 @@ _G.pg.base.aircraft_template[18163] = {
 		59603
 	}
 }
-
 _G.pg.base.aircraft_template[18164] = {
 	max_hp = 61,
 	hp_growth = 2329,
@@ -8639,7 +8286,6 @@ _G.pg.base.aircraft_template[18164] = {
 		59604
 	}
 }
-
 _G.pg.base.aircraft_template[18165] = {
 	max_hp = 66,
 	hp_growth = 2547,
@@ -8651,7 +8297,6 @@ _G.pg.base.aircraft_template[18165] = {
 		59605
 	}
 }
-
 _G.pg.base.aircraft_template[18166] = {
 	max_hp = 72,
 	hp_growth = 2766,
@@ -8663,7 +8308,6 @@ _G.pg.base.aircraft_template[18166] = {
 		59606
 	}
 }
-
 _G.pg.base.aircraft_template[18167] = {
 	max_hp = 78,
 	hp_growth = 2984,
@@ -8675,7 +8319,6 @@ _G.pg.base.aircraft_template[18167] = {
 		59607
 	}
 }
-
 _G.pg.base.aircraft_template[18168] = {
 	max_hp = 83,
 	hp_growth = 3202,
@@ -8687,7 +8330,6 @@ _G.pg.base.aircraft_template[18168] = {
 		59608
 	}
 }
-
 _G.pg.base.aircraft_template[18169] = {
 	max_hp = 89,
 	hp_growth = 3421,
@@ -8699,7 +8341,6 @@ _G.pg.base.aircraft_template[18169] = {
 		59609
 	}
 }
-
 _G.pg.base.aircraft_template[18170] = {
 	max_hp = 95,
 	hp_growth = 3639,
@@ -8711,7 +8352,6 @@ _G.pg.base.aircraft_template[18170] = {
 		59610
 	}
 }
-
 _G.pg.base.aircraft_template[18171] = {
 	max_hp = 100,
 	hp_growth = 3857,
@@ -8723,7 +8363,6 @@ _G.pg.base.aircraft_template[18171] = {
 		59611
 	}
 }
-
 _G.pg.base.aircraft_template[18172] = {
 	max_hp = 106,
 	hp_growth = 4076,
@@ -8735,7 +8374,6 @@ _G.pg.base.aircraft_template[18172] = {
 		59612
 	}
 }
-
 _G.pg.base.aircraft_template[18173] = {
 	max_hp = 112,
 	hp_growth = 4294,
@@ -8747,7 +8385,6 @@ _G.pg.base.aircraft_template[18173] = {
 		59613
 	}
 }
-
 _G.pg.base.aircraft_template[18180] = {
 	attack_power = 2,
 	name = "TBM复仇者(VT-18中队)",
@@ -8824,7 +8461,6 @@ _G.pg.base.aircraft_template[18180] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18181] = {
 	max_hp = 47,
 	hp_growth = 1797,
@@ -8836,7 +8472,6 @@ _G.pg.base.aircraft_template[18181] = {
 		59641
 	}
 }
-
 _G.pg.base.aircraft_template[18182] = {
 	max_hp = 53,
 	hp_growth = 2032,
@@ -8848,7 +8483,6 @@ _G.pg.base.aircraft_template[18182] = {
 		59642
 	}
 }
-
 _G.pg.base.aircraft_template[18183] = {
 	max_hp = 59,
 	hp_growth = 2266,
@@ -8860,7 +8494,6 @@ _G.pg.base.aircraft_template[18183] = {
 		59643
 	}
 }
-
 _G.pg.base.aircraft_template[18184] = {
 	max_hp = 65,
 	hp_growth = 2500,
@@ -8872,7 +8505,6 @@ _G.pg.base.aircraft_template[18184] = {
 		59644
 	}
 }
-
 _G.pg.base.aircraft_template[18185] = {
 	max_hp = 71,
 	hp_growth = 2735,
@@ -8884,7 +8516,6 @@ _G.pg.base.aircraft_template[18185] = {
 		59645
 	}
 }
-
 _G.pg.base.aircraft_template[18186] = {
 	max_hp = 77,
 	hp_growth = 2969,
@@ -8896,7 +8527,6 @@ _G.pg.base.aircraft_template[18186] = {
 		59646
 	}
 }
-
 _G.pg.base.aircraft_template[18187] = {
 	max_hp = 83,
 	hp_growth = 3204,
@@ -8908,7 +8538,6 @@ _G.pg.base.aircraft_template[18187] = {
 		59647
 	}
 }
-
 _G.pg.base.aircraft_template[18188] = {
 	max_hp = 89,
 	hp_growth = 3438,
@@ -8920,7 +8549,6 @@ _G.pg.base.aircraft_template[18188] = {
 		59648
 	}
 }
-
 _G.pg.base.aircraft_template[18189] = {
 	max_hp = 95,
 	hp_growth = 3673,
@@ -8932,7 +8560,6 @@ _G.pg.base.aircraft_template[18189] = {
 		59649
 	}
 }
-
 _G.pg.base.aircraft_template[18190] = {
 	max_hp = 102,
 	hp_growth = 3907,
@@ -8944,7 +8571,6 @@ _G.pg.base.aircraft_template[18190] = {
 		59650
 	}
 }
-
 _G.pg.base.aircraft_template[18191] = {
 	max_hp = 108,
 	hp_growth = 4141,
@@ -8956,7 +8582,6 @@ _G.pg.base.aircraft_template[18191] = {
 		59651
 	}
 }
-
 _G.pg.base.aircraft_template[18192] = {
 	max_hp = 114,
 	hp_growth = 4376,
@@ -8968,7 +8593,6 @@ _G.pg.base.aircraft_template[18192] = {
 		59652
 	}
 }
-
 _G.pg.base.aircraft_template[18193] = {
 	max_hp = 120,
 	hp_growth = 4610,
@@ -8980,7 +8604,6 @@ _G.pg.base.aircraft_template[18193] = {
 		59653
 	}
 }
-
 _G.pg.base.aircraft_template[18200] = {
 	attack_power = 2,
 	name = "TBM复仇者(VT-18中队)",
@@ -9057,7 +8680,6 @@ _G.pg.base.aircraft_template[18200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18201] = {
 	max_hp = 47,
 	hp_growth = 1797,
@@ -9069,7 +8691,6 @@ _G.pg.base.aircraft_template[18201] = {
 		59621
 	}
 }
-
 _G.pg.base.aircraft_template[18202] = {
 	max_hp = 53,
 	hp_growth = 2032,
@@ -9081,7 +8702,6 @@ _G.pg.base.aircraft_template[18202] = {
 		59622
 	}
 }
-
 _G.pg.base.aircraft_template[18203] = {
 	max_hp = 59,
 	hp_growth = 2266,
@@ -9093,7 +8713,6 @@ _G.pg.base.aircraft_template[18203] = {
 		59623
 	}
 }
-
 _G.pg.base.aircraft_template[18204] = {
 	max_hp = 65,
 	hp_growth = 2500,
@@ -9105,7 +8724,6 @@ _G.pg.base.aircraft_template[18204] = {
 		59624
 	}
 }
-
 _G.pg.base.aircraft_template[18205] = {
 	max_hp = 71,
 	hp_growth = 2735,
@@ -9117,7 +8735,6 @@ _G.pg.base.aircraft_template[18205] = {
 		59625
 	}
 }
-
 _G.pg.base.aircraft_template[18206] = {
 	max_hp = 77,
 	hp_growth = 2969,
@@ -9129,7 +8746,6 @@ _G.pg.base.aircraft_template[18206] = {
 		59626
 	}
 }
-
 _G.pg.base.aircraft_template[18207] = {
 	max_hp = 83,
 	hp_growth = 3204,
@@ -9141,7 +8757,6 @@ _G.pg.base.aircraft_template[18207] = {
 		59627
 	}
 }
-
 _G.pg.base.aircraft_template[18208] = {
 	max_hp = 89,
 	hp_growth = 3438,
@@ -9153,7 +8768,6 @@ _G.pg.base.aircraft_template[18208] = {
 		59628
 	}
 }
-
 _G.pg.base.aircraft_template[18209] = {
 	max_hp = 95,
 	hp_growth = 3673,
@@ -9165,7 +8779,6 @@ _G.pg.base.aircraft_template[18209] = {
 		59629
 	}
 }
-
 _G.pg.base.aircraft_template[18210] = {
 	max_hp = 102,
 	hp_growth = 3907,
@@ -9177,7 +8790,6 @@ _G.pg.base.aircraft_template[18210] = {
 		59630
 	}
 }
-
 _G.pg.base.aircraft_template[18211] = {
 	max_hp = 108,
 	hp_growth = 4141,
@@ -9189,7 +8801,6 @@ _G.pg.base.aircraft_template[18211] = {
 		59631
 	}
 }
-
 _G.pg.base.aircraft_template[18212] = {
 	max_hp = 114,
 	hp_growth = 4376,
@@ -9201,7 +8812,6 @@ _G.pg.base.aircraft_template[18212] = {
 		59632
 	}
 }
-
 _G.pg.base.aircraft_template[18213] = {
 	max_hp = 120,
 	hp_growth = 4610,
@@ -9213,7 +8823,6 @@ _G.pg.base.aircraft_template[18213] = {
 		59633
 	}
 }
-
 _G.pg.base.aircraft_template[18220] = {
 	attack_power = 2,
 	name = "XTB2D-1天空海盗",
@@ -9290,7 +8899,6 @@ _G.pg.base.aircraft_template[18220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[18221] = {
 	max_hp = 64,
 	hp_growth = 2448,
@@ -9302,7 +8910,6 @@ _G.pg.base.aircraft_template[18221] = {
 		51241
 	}
 }
-
 _G.pg.base.aircraft_template[18222] = {
 	max_hp = 72,
 	hp_growth = 2768,
@@ -9314,7 +8921,6 @@ _G.pg.base.aircraft_template[18222] = {
 		51242
 	}
 }
-
 _G.pg.base.aircraft_template[18223] = {
 	max_hp = 80,
 	hp_growth = 3087,
@@ -9326,7 +8932,6 @@ _G.pg.base.aircraft_template[18223] = {
 		51243
 	}
 }
-
 _G.pg.base.aircraft_template[18224] = {
 	max_hp = 89,
 	hp_growth = 3406,
@@ -9338,7 +8943,6 @@ _G.pg.base.aircraft_template[18224] = {
 		51244
 	}
 }
-
 _G.pg.base.aircraft_template[18225] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -9350,7 +8954,6 @@ _G.pg.base.aircraft_template[18225] = {
 		51245
 	}
 }
-
 _G.pg.base.aircraft_template[18226] = {
 	max_hp = 105,
 	hp_growth = 4045,
@@ -9362,7 +8965,6 @@ _G.pg.base.aircraft_template[18226] = {
 		51246
 	}
 }
-
 _G.pg.base.aircraft_template[18227] = {
 	max_hp = 113,
 	hp_growth = 4364,
@@ -9374,7 +8976,6 @@ _G.pg.base.aircraft_template[18227] = {
 		51247
 	}
 }
-
 _G.pg.base.aircraft_template[18228] = {
 	max_hp = 122,
 	hp_growth = 4684,
@@ -9386,7 +8987,6 @@ _G.pg.base.aircraft_template[18228] = {
 		51248
 	}
 }
-
 _G.pg.base.aircraft_template[18229] = {
 	max_hp = 130,
 	hp_growth = 5003,
@@ -9398,7 +8998,6 @@ _G.pg.base.aircraft_template[18229] = {
 		51249
 	}
 }
-
 _G.pg.base.aircraft_template[18230] = {
 	max_hp = 138,
 	hp_growth = 5322,
@@ -9410,7 +9009,6 @@ _G.pg.base.aircraft_template[18230] = {
 		51250
 	}
 }
-
 _G.pg.base.aircraft_template[18231] = {
 	max_hp = 147,
 	hp_growth = 5642,
@@ -9422,7 +9020,6 @@ _G.pg.base.aircraft_template[18231] = {
 		51251
 	}
 }
-
 _G.pg.base.aircraft_template[18232] = {
 	max_hp = 155,
 	hp_growth = 5961,
@@ -9434,7 +9031,6 @@ _G.pg.base.aircraft_template[18232] = {
 		51252
 	}
 }
-
 _G.pg.base.aircraft_template[18233] = {
 	max_hp = 163,
 	hp_growth = 6280,
@@ -9446,7 +9042,6 @@ _G.pg.base.aircraft_template[18233] = {
 		51253
 	}
 }
-
 _G.pg.base.aircraft_template[19000] = {
 	attack_power = 2,
 	name = "SBD-3无畏",
@@ -9524,7 +9119,6 @@ _G.pg.base.aircraft_template[19000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19001] = {
 	max_hp = 35,
 	hp_growth = 1360,
@@ -9537,7 +9131,6 @@ _G.pg.base.aircraft_template[19001] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[19002] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -9550,7 +9143,6 @@ _G.pg.base.aircraft_template[19002] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[19003] = {
 	max_hp = 45,
 	hp_growth = 1715,
@@ -9563,7 +9155,6 @@ _G.pg.base.aircraft_template[19003] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[19020] = {
 	attack_power = 2,
 	name = "SBD-3无畏",
@@ -9641,7 +9232,6 @@ _G.pg.base.aircraft_template[19020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19021] = {
 	max_hp = 40,
 	hp_growth = 1530,
@@ -9654,7 +9244,6 @@ _G.pg.base.aircraft_template[19021] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[19022] = {
 	max_hp = 45,
 	hp_growth = 1730,
@@ -9667,7 +9256,6 @@ _G.pg.base.aircraft_template[19022] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[19023] = {
 	max_hp = 50,
 	hp_growth = 1929,
@@ -9680,7 +9268,6 @@ _G.pg.base.aircraft_template[19023] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[19040] = {
 	attack_power = 2,
 	name = "SBD-3无畏",
@@ -9758,7 +9345,6 @@ _G.pg.base.aircraft_template[19040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19041] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -9771,7 +9357,6 @@ _G.pg.base.aircraft_template[19041] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[19042] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -9784,7 +9369,6 @@ _G.pg.base.aircraft_template[19042] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[19043] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -9797,7 +9381,6 @@ _G.pg.base.aircraft_template[19043] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[19044] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -9810,7 +9393,6 @@ _G.pg.base.aircraft_template[19044] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[19045] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -9823,7 +9405,6 @@ _G.pg.base.aircraft_template[19045] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[19046] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -9836,7 +9417,6 @@ _G.pg.base.aircraft_template[19046] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[19047] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -9849,7 +9429,6 @@ _G.pg.base.aircraft_template[19047] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[19060] = {
 	attack_power = 2,
 	name = "SBD-3无畏(麦克拉斯基队)",
@@ -9926,7 +9505,6 @@ _G.pg.base.aircraft_template[19060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19061] = {
 	max_hp = 53,
 	hp_growth = 2040,
@@ -9938,7 +9516,6 @@ _G.pg.base.aircraft_template[19061] = {
 		52161
 	}
 }
-
 _G.pg.base.aircraft_template[19062] = {
 	max_hp = 60,
 	hp_growth = 2306,
@@ -9950,7 +9527,6 @@ _G.pg.base.aircraft_template[19062] = {
 		52162
 	}
 }
-
 _G.pg.base.aircraft_template[19063] = {
 	max_hp = 67,
 	hp_growth = 2572,
@@ -9962,7 +9538,6 @@ _G.pg.base.aircraft_template[19063] = {
 		52163
 	}
 }
-
 _G.pg.base.aircraft_template[19064] = {
 	max_hp = 74,
 	hp_growth = 2839,
@@ -9974,7 +9549,6 @@ _G.pg.base.aircraft_template[19064] = {
 		52164
 	}
 }
-
 _G.pg.base.aircraft_template[19065] = {
 	max_hp = 81,
 	hp_growth = 3105,
@@ -9986,7 +9560,6 @@ _G.pg.base.aircraft_template[19065] = {
 		52165
 	}
 }
-
 _G.pg.base.aircraft_template[19066] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -9998,7 +9571,6 @@ _G.pg.base.aircraft_template[19066] = {
 		52166
 	}
 }
-
 _G.pg.base.aircraft_template[19067] = {
 	max_hp = 95,
 	hp_growth = 3637,
@@ -10010,7 +9582,6 @@ _G.pg.base.aircraft_template[19067] = {
 		52167
 	}
 }
-
 _G.pg.base.aircraft_template[19068] = {
 	max_hp = 101,
 	hp_growth = 3903,
@@ -10022,7 +9593,6 @@ _G.pg.base.aircraft_template[19068] = {
 		52168
 	}
 }
-
 _G.pg.base.aircraft_template[19069] = {
 	max_hp = 108,
 	hp_growth = 4169,
@@ -10034,7 +9604,6 @@ _G.pg.base.aircraft_template[19069] = {
 		52169
 	}
 }
-
 _G.pg.base.aircraft_template[19070] = {
 	max_hp = 115,
 	hp_growth = 4435,
@@ -10046,7 +9615,6 @@ _G.pg.base.aircraft_template[19070] = {
 		52170
 	}
 }
-
 _G.pg.base.aircraft_template[19071] = {
 	max_hp = 122,
 	hp_growth = 4701,
@@ -10058,7 +9626,6 @@ _G.pg.base.aircraft_template[19071] = {
 		52171
 	}
 }
-
 _G.pg.base.aircraft_template[19072] = {
 	max_hp = 129,
 	hp_growth = 4967,
@@ -10070,7 +9637,6 @@ _G.pg.base.aircraft_template[19072] = {
 		52172
 	}
 }
-
 _G.pg.base.aircraft_template[19073] = {
 	max_hp = 136,
 	hp_growth = 5234,
@@ -10082,7 +9648,6 @@ _G.pg.base.aircraft_template[19073] = {
 		52173
 	}
 }
-
 _G.pg.base.aircraft_template[19100] = {
 	attack_power = 2,
 	name = "SB2C地狱俯冲者",
@@ -10160,7 +9725,6 @@ _G.pg.base.aircraft_template[19100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19101] = {
 	max_hp = 40,
 	hp_growth = 1530,
@@ -10173,7 +9737,6 @@ _G.pg.base.aircraft_template[19101] = {
 		52301
 	}
 }
-
 _G.pg.base.aircraft_template[19102] = {
 	max_hp = 45,
 	hp_growth = 1730,
@@ -10186,7 +9749,6 @@ _G.pg.base.aircraft_template[19102] = {
 		52302
 	}
 }
-
 _G.pg.base.aircraft_template[19103] = {
 	max_hp = 50,
 	hp_growth = 1929,
@@ -10199,7 +9761,6 @@ _G.pg.base.aircraft_template[19103] = {
 		52303
 	}
 }
-
 _G.pg.base.aircraft_template[19120] = {
 	attack_power = 2,
 	name = "SB2C地狱俯冲者",
@@ -10277,7 +9838,6 @@ _G.pg.base.aircraft_template[19120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19121] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -10290,7 +9850,6 @@ _G.pg.base.aircraft_template[19121] = {
 		52321
 	}
 }
-
 _G.pg.base.aircraft_template[19122] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -10303,7 +9862,6 @@ _G.pg.base.aircraft_template[19122] = {
 		52322
 	}
 }
-
 _G.pg.base.aircraft_template[19123] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -10316,7 +9874,6 @@ _G.pg.base.aircraft_template[19123] = {
 		52323
 	}
 }
-
 _G.pg.base.aircraft_template[19124] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -10329,7 +9886,6 @@ _G.pg.base.aircraft_template[19124] = {
 		52324
 	}
 }
-
 _G.pg.base.aircraft_template[19125] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -10342,7 +9898,6 @@ _G.pg.base.aircraft_template[19125] = {
 		52325
 	}
 }
-
 _G.pg.base.aircraft_template[19126] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -10355,7 +9910,6 @@ _G.pg.base.aircraft_template[19126] = {
 		52326
 	}
 }
-
 _G.pg.base.aircraft_template[19140] = {
 	attack_power = 2,
 	name = "SB2C地狱俯冲者",
@@ -10433,7 +9987,6 @@ _G.pg.base.aircraft_template[19140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19141] = {
 	max_hp = 49,
 	hp_growth = 1870,
@@ -10446,7 +9999,6 @@ _G.pg.base.aircraft_template[19141] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[19142] = {
 	max_hp = 55,
 	hp_growth = 2114,
@@ -10459,7 +10011,6 @@ _G.pg.base.aircraft_template[19142] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[19143] = {
 	max_hp = 61,
 	hp_growth = 2358,
@@ -10472,7 +10023,6 @@ _G.pg.base.aircraft_template[19143] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[19144] = {
 	max_hp = 68,
 	hp_growth = 2602,
@@ -10485,7 +10035,6 @@ _G.pg.base.aircraft_template[19144] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[19145] = {
 	max_hp = 74,
 	hp_growth = 2846,
@@ -10498,7 +10047,6 @@ _G.pg.base.aircraft_template[19145] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[19146] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -10511,7 +10059,6 @@ _G.pg.base.aircraft_template[19146] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[19147] = {
 	max_hp = 87,
 	hp_growth = 3334,
@@ -10524,7 +10071,6 @@ _G.pg.base.aircraft_template[19147] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[19148] = {
 	max_hp = 93,
 	hp_growth = 3578,
@@ -10537,7 +10083,6 @@ _G.pg.base.aircraft_template[19148] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[19149] = {
 	max_hp = 99,
 	hp_growth = 3822,
@@ -10550,7 +10095,6 @@ _G.pg.base.aircraft_template[19149] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[19150] = {
 	max_hp = 106,
 	hp_growth = 4066,
@@ -10563,7 +10107,6 @@ _G.pg.base.aircraft_template[19150] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[19151] = {
 	max_hp = 112,
 	hp_growth = 4310,
@@ -10576,7 +10119,6 @@ _G.pg.base.aircraft_template[19151] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[19160] = {
 	attack_power = 2,
 	name = "实验型XSB3C-1",
@@ -10654,7 +10196,6 @@ _G.pg.base.aircraft_template[19160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19161] = {
 	max_hp = 57,
 	hp_growth = 2203,
@@ -10667,7 +10208,6 @@ _G.pg.base.aircraft_template[19161] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[19162] = {
 	max_hp = 65,
 	hp_growth = 2491,
@@ -10680,7 +10220,6 @@ _G.pg.base.aircraft_template[19162] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[19163] = {
 	max_hp = 72,
 	hp_growth = 2778,
@@ -10693,7 +10232,6 @@ _G.pg.base.aircraft_template[19163] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[19164] = {
 	max_hp = 80,
 	hp_growth = 3066,
@@ -10706,7 +10244,6 @@ _G.pg.base.aircraft_template[19164] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[19165] = {
 	max_hp = 87,
 	hp_growth = 3353,
@@ -10719,7 +10256,6 @@ _G.pg.base.aircraft_template[19165] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[19166] = {
 	max_hp = 95,
 	hp_growth = 3640,
@@ -10732,7 +10268,6 @@ _G.pg.base.aircraft_template[19166] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[19167] = {
 	max_hp = 102,
 	hp_growth = 3928,
@@ -10745,7 +10280,6 @@ _G.pg.base.aircraft_template[19167] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[19168] = {
 	max_hp = 110,
 	hp_growth = 4215,
@@ -10758,7 +10292,6 @@ _G.pg.base.aircraft_template[19168] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[19169] = {
 	max_hp = 117,
 	hp_growth = 4503,
@@ -10771,7 +10304,6 @@ _G.pg.base.aircraft_template[19169] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[19170] = {
 	max_hp = 125,
 	hp_growth = 4790,
@@ -10784,7 +10316,6 @@ _G.pg.base.aircraft_template[19170] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[19171] = {
 	max_hp = 132,
 	hp_growth = 5077,
@@ -10797,7 +10328,6 @@ _G.pg.base.aircraft_template[19171] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[19172] = {
 	max_hp = 139,
 	hp_growth = 5365,
@@ -10810,7 +10340,6 @@ _G.pg.base.aircraft_template[19172] = {
 		52352
 	}
 }
-
 _G.pg.base.aircraft_template[19173] = {
 	max_hp = 147,
 	hp_growth = 5652,
@@ -10823,7 +10352,6 @@ _G.pg.base.aircraft_template[19173] = {
 		52353
 	}
 }
-
 _G.pg.base.aircraft_template[19200] = {
 	attack_power = 2,
 	name = "BTD-1毁灭者",
@@ -10900,7 +10428,6 @@ _G.pg.base.aircraft_template[19200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19201] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -10912,7 +10439,6 @@ _G.pg.base.aircraft_template[19201] = {
 		52801
 	}
 }
-
 _G.pg.base.aircraft_template[19202] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -10924,7 +10450,6 @@ _G.pg.base.aircraft_template[19202] = {
 		52802
 	}
 }
-
 _G.pg.base.aircraft_template[19203] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -10936,7 +10461,6 @@ _G.pg.base.aircraft_template[19203] = {
 		52803
 	}
 }
-
 _G.pg.base.aircraft_template[19204] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -10948,7 +10472,6 @@ _G.pg.base.aircraft_template[19204] = {
 		52804
 	}
 }
-
 _G.pg.base.aircraft_template[19205] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -10960,7 +10483,6 @@ _G.pg.base.aircraft_template[19205] = {
 		52805
 	}
 }
-
 _G.pg.base.aircraft_template[19206] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -10972,7 +10494,6 @@ _G.pg.base.aircraft_template[19206] = {
 		52806
 	}
 }
-
 _G.pg.base.aircraft_template[19220] = {
 	attack_power = 2,
 	name = "BTD-1毁灭者",
@@ -11049,7 +10570,6 @@ _G.pg.base.aircraft_template[19220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19221] = {
 	max_hp = 49,
 	hp_growth = 1870,
@@ -11061,7 +10581,6 @@ _G.pg.base.aircraft_template[19221] = {
 		52821
 	}
 }
-
 _G.pg.base.aircraft_template[19222] = {
 	max_hp = 55,
 	hp_growth = 2114,
@@ -11073,7 +10592,6 @@ _G.pg.base.aircraft_template[19222] = {
 		52822
 	}
 }
-
 _G.pg.base.aircraft_template[19223] = {
 	max_hp = 61,
 	hp_growth = 2358,
@@ -11085,7 +10603,6 @@ _G.pg.base.aircraft_template[19223] = {
 		52823
 	}
 }
-
 _G.pg.base.aircraft_template[19224] = {
 	max_hp = 68,
 	hp_growth = 2602,
@@ -11097,7 +10614,6 @@ _G.pg.base.aircraft_template[19224] = {
 		52824
 	}
 }
-
 _G.pg.base.aircraft_template[19225] = {
 	max_hp = 74,
 	hp_growth = 2846,
@@ -11109,7 +10625,6 @@ _G.pg.base.aircraft_template[19225] = {
 		52825
 	}
 }
-
 _G.pg.base.aircraft_template[19226] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -11121,7 +10636,6 @@ _G.pg.base.aircraft_template[19226] = {
 		52826
 	}
 }
-
 _G.pg.base.aircraft_template[19227] = {
 	max_hp = 87,
 	hp_growth = 3334,
@@ -11133,7 +10647,6 @@ _G.pg.base.aircraft_template[19227] = {
 		52827
 	}
 }
-
 _G.pg.base.aircraft_template[19228] = {
 	max_hp = 93,
 	hp_growth = 3578,
@@ -11145,7 +10658,6 @@ _G.pg.base.aircraft_template[19228] = {
 		52828
 	}
 }
-
 _G.pg.base.aircraft_template[19229] = {
 	max_hp = 99,
 	hp_growth = 3822,
@@ -11157,7 +10669,6 @@ _G.pg.base.aircraft_template[19229] = {
 		52829
 	}
 }
-
 _G.pg.base.aircraft_template[19230] = {
 	max_hp = 106,
 	hp_growth = 4066,
@@ -11169,7 +10680,6 @@ _G.pg.base.aircraft_template[19230] = {
 		52830
 	}
 }
-
 _G.pg.base.aircraft_template[19240] = {
 	attack_power = 2,
 	name = "BTD-1毁灭者",
@@ -11246,7 +10756,6 @@ _G.pg.base.aircraft_template[19240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19241] = {
 	max_hp = 53,
 	hp_growth = 2040,
@@ -11258,7 +10767,6 @@ _G.pg.base.aircraft_template[19241] = {
 		52841
 	}
 }
-
 _G.pg.base.aircraft_template[19242] = {
 	max_hp = 60,
 	hp_growth = 2306,
@@ -11270,7 +10778,6 @@ _G.pg.base.aircraft_template[19242] = {
 		52842
 	}
 }
-
 _G.pg.base.aircraft_template[19243] = {
 	max_hp = 67,
 	hp_growth = 2572,
@@ -11282,7 +10789,6 @@ _G.pg.base.aircraft_template[19243] = {
 		52843
 	}
 }
-
 _G.pg.base.aircraft_template[19244] = {
 	max_hp = 74,
 	hp_growth = 2839,
@@ -11294,7 +10800,6 @@ _G.pg.base.aircraft_template[19244] = {
 		52844
 	}
 }
-
 _G.pg.base.aircraft_template[19245] = {
 	max_hp = 81,
 	hp_growth = 3105,
@@ -11306,7 +10811,6 @@ _G.pg.base.aircraft_template[19245] = {
 		52845
 	}
 }
-
 _G.pg.base.aircraft_template[19246] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -11318,7 +10822,6 @@ _G.pg.base.aircraft_template[19246] = {
 		52846
 	}
 }
-
 _G.pg.base.aircraft_template[19247] = {
 	max_hp = 95,
 	hp_growth = 3637,
@@ -11330,7 +10833,6 @@ _G.pg.base.aircraft_template[19247] = {
 		52847
 	}
 }
-
 _G.pg.base.aircraft_template[19248] = {
 	max_hp = 101,
 	hp_growth = 3903,
@@ -11342,7 +10844,6 @@ _G.pg.base.aircraft_template[19248] = {
 		52848
 	}
 }
-
 _G.pg.base.aircraft_template[19249] = {
 	max_hp = 108,
 	hp_growth = 4169,
@@ -11354,7 +10855,6 @@ _G.pg.base.aircraft_template[19249] = {
 		52849
 	}
 }
-
 _G.pg.base.aircraft_template[19250] = {
 	max_hp = 115,
 	hp_growth = 4435,
@@ -11366,7 +10866,6 @@ _G.pg.base.aircraft_template[19250] = {
 		52850
 	}
 }
-
 _G.pg.base.aircraft_template[19251] = {
 	max_hp = 122,
 	hp_growth = 4701,
@@ -11378,7 +10877,6 @@ _G.pg.base.aircraft_template[19251] = {
 		52851
 	}
 }
-
 _G.pg.base.aircraft_template[19252] = {
 	max_hp = 129,
 	hp_growth = 4967,
@@ -11390,7 +10888,6 @@ _G.pg.base.aircraft_template[19252] = {
 		52852
 	}
 }
-
 _G.pg.base.aircraft_template[19253] = {
 	max_hp = 136,
 	hp_growth = 5234,
@@ -11402,7 +10899,6 @@ _G.pg.base.aircraft_template[19253] = {
 		52853
 	}
 }
-
 _G.pg.base.aircraft_template[19300] = {
 	attack_power = 2,
 	name = "AD1天袭者",
@@ -11480,7 +10976,6 @@ _G.pg.base.aircraft_template[19300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[19301] = {
 	max_hp = 62,
 	hp_growth = 2387,
@@ -11493,7 +10988,6 @@ _G.pg.base.aircraft_template[19301] = {
 		59881
 	}
 }
-
 _G.pg.base.aircraft_template[19302] = {
 	max_hp = 70,
 	hp_growth = 2698,
@@ -11506,7 +11000,6 @@ _G.pg.base.aircraft_template[19302] = {
 		59882
 	}
 }
-
 _G.pg.base.aircraft_template[19303] = {
 	max_hp = 78,
 	hp_growth = 3010,
@@ -11519,7 +11012,6 @@ _G.pg.base.aircraft_template[19303] = {
 		59883
 	}
 }
-
 _G.pg.base.aircraft_template[19304] = {
 	max_hp = 86,
 	hp_growth = 3321,
@@ -11532,7 +11024,6 @@ _G.pg.base.aircraft_template[19304] = {
 		59884
 	}
 }
-
 _G.pg.base.aircraft_template[19305] = {
 	max_hp = 94,
 	hp_growth = 3632,
@@ -11545,7 +11036,6 @@ _G.pg.base.aircraft_template[19305] = {
 		59885
 	}
 }
-
 _G.pg.base.aircraft_template[19306] = {
 	max_hp = 103,
 	hp_growth = 3944,
@@ -11558,7 +11048,6 @@ _G.pg.base.aircraft_template[19306] = {
 		59886
 	}
 }
-
 _G.pg.base.aircraft_template[19307] = {
 	max_hp = 111,
 	hp_growth = 4255,
@@ -11571,7 +11060,6 @@ _G.pg.base.aircraft_template[19307] = {
 		59887
 	}
 }
-
 _G.pg.base.aircraft_template[19308] = {
 	max_hp = 119,
 	hp_growth = 4566,
@@ -11584,7 +11072,6 @@ _G.pg.base.aircraft_template[19308] = {
 		59888
 	}
 }
-
 _G.pg.base.aircraft_template[19309] = {
 	max_hp = 127,
 	hp_growth = 4878,
@@ -11597,7 +11084,6 @@ _G.pg.base.aircraft_template[19309] = {
 		59889
 	}
 }
-
 _G.pg.base.aircraft_template[19310] = {
 	max_hp = 135,
 	hp_growth = 5189,
@@ -11610,7 +11096,6 @@ _G.pg.base.aircraft_template[19310] = {
 		59890
 	}
 }
-
 _G.pg.base.aircraft_template[19311] = {
 	max_hp = 143,
 	hp_growth = 5501,
@@ -11623,7 +11108,6 @@ _G.pg.base.aircraft_template[19311] = {
 		59891
 	}
 }
-
 _G.pg.base.aircraft_template[19312] = {
 	max_hp = 151,
 	hp_growth = 5812,
@@ -11636,7 +11120,6 @@ _G.pg.base.aircraft_template[19312] = {
 		59892
 	}
 }
-
 _G.pg.base.aircraft_template[19313] = {
 	max_hp = 159,
 	hp_growth = 6123,
@@ -11649,7 +11132,6 @@ _G.pg.base.aircraft_template[19313] = {
 		59893
 	}
 }
-
 _G.pg.base.aircraft_template[27000] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -11727,7 +11209,6 @@ _G.pg.base.aircraft_template[27000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27001] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -11740,7 +11221,6 @@ _G.pg.base.aircraft_template[27001] = {
 		52201
 	}
 }
-
 _G.pg.base.aircraft_template[27002] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -11753,7 +11233,6 @@ _G.pg.base.aircraft_template[27002] = {
 		52202
 	}
 }
-
 _G.pg.base.aircraft_template[27003] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -11766,7 +11245,6 @@ _G.pg.base.aircraft_template[27003] = {
 		52203
 	}
 }
-
 _G.pg.base.aircraft_template[27020] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -11844,7 +11322,6 @@ _G.pg.base.aircraft_template[27020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27021] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -11857,7 +11334,6 @@ _G.pg.base.aircraft_template[27021] = {
 		52221
 	}
 }
-
 _G.pg.base.aircraft_template[27022] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -11870,7 +11346,6 @@ _G.pg.base.aircraft_template[27022] = {
 		52222
 	}
 }
-
 _G.pg.base.aircraft_template[27023] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -11883,7 +11358,6 @@ _G.pg.base.aircraft_template[27023] = {
 		52223
 	}
 }
-
 _G.pg.base.aircraft_template[27024] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -11896,7 +11370,6 @@ _G.pg.base.aircraft_template[27024] = {
 		52224
 	}
 }
-
 _G.pg.base.aircraft_template[27025] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -11909,7 +11382,6 @@ _G.pg.base.aircraft_template[27025] = {
 		52225
 	}
 }
-
 _G.pg.base.aircraft_template[27026] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -11922,7 +11394,6 @@ _G.pg.base.aircraft_template[27026] = {
 		52226
 	}
 }
-
 _G.pg.base.aircraft_template[27040] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -12000,7 +11471,6 @@ _G.pg.base.aircraft_template[27040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27041] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -12013,7 +11483,6 @@ _G.pg.base.aircraft_template[27041] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[27042] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -12026,7 +11495,6 @@ _G.pg.base.aircraft_template[27042] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[27043] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -12039,7 +11507,6 @@ _G.pg.base.aircraft_template[27043] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[27044] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -12052,7 +11519,6 @@ _G.pg.base.aircraft_template[27044] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[27045] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -12065,7 +11531,6 @@ _G.pg.base.aircraft_template[27045] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[27046] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -12078,7 +11543,6 @@ _G.pg.base.aircraft_template[27046] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[27047] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -12091,7 +11555,6 @@ _G.pg.base.aircraft_template[27047] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[27048] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -12104,7 +11567,6 @@ _G.pg.base.aircraft_template[27048] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[27049] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -12117,7 +11579,6 @@ _G.pg.base.aircraft_template[27049] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[27050] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -12130,7 +11591,6 @@ _G.pg.base.aircraft_template[27050] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[27051] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -12143,7 +11603,6 @@ _G.pg.base.aircraft_template[27051] = {
 		52251
 	}
 }
-
 _G.pg.base.aircraft_template[27060] = {
 	attack_power = 2,
 	name = "海喷火FR.47",
@@ -12221,7 +11680,6 @@ _G.pg.base.aircraft_template[27060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27061] = {
 	max_hp = 49,
 	hp_growth = 1883,
@@ -12234,7 +11692,6 @@ _G.pg.base.aircraft_template[27061] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[27062] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -12247,7 +11704,6 @@ _G.pg.base.aircraft_template[27062] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[27063] = {
 	max_hp = 62,
 	hp_growth = 2374,
@@ -12260,7 +11716,6 @@ _G.pg.base.aircraft_template[27063] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[27064] = {
 	max_hp = 68,
 	hp_growth = 2619,
@@ -12273,7 +11728,6 @@ _G.pg.base.aircraft_template[27064] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[27065] = {
 	max_hp = 74,
 	hp_growth = 2865,
@@ -12286,7 +11740,6 @@ _G.pg.base.aircraft_template[27065] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[27066] = {
 	max_hp = 81,
 	hp_growth = 3110,
@@ -12299,7 +11752,6 @@ _G.pg.base.aircraft_template[27066] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[27067] = {
 	max_hp = 87,
 	hp_growth = 3356,
@@ -12312,7 +11764,6 @@ _G.pg.base.aircraft_template[27067] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[27068] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -12325,7 +11776,6 @@ _G.pg.base.aircraft_template[27068] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[27069] = {
 	max_hp = 100,
 	hp_growth = 3847,
@@ -12338,7 +11788,6 @@ _G.pg.base.aircraft_template[27069] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[27070] = {
 	max_hp = 106,
 	hp_growth = 4092,
@@ -12351,7 +11800,6 @@ _G.pg.base.aircraft_template[27070] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[27071] = {
 	max_hp = 113,
 	hp_growth = 4338,
@@ -12364,7 +11812,6 @@ _G.pg.base.aircraft_template[27071] = {
 		52251
 	}
 }
-
 _G.pg.base.aircraft_template[27072] = {
 	max_hp = 119,
 	hp_growth = 4584,
@@ -12377,7 +11824,6 @@ _G.pg.base.aircraft_template[27072] = {
 		52252
 	}
 }
-
 _G.pg.base.aircraft_template[27073] = {
 	max_hp = 126,
 	hp_growth = 4829,
@@ -12390,7 +11836,6 @@ _G.pg.base.aircraft_template[27073] = {
 		52253
 	}
 }
-
 _G.pg.base.aircraft_template[27100] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -12467,7 +11912,6 @@ _G.pg.base.aircraft_template[27100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27101] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -12479,7 +11923,6 @@ _G.pg.base.aircraft_template[27101] = {
 		52301
 	}
 }
-
 _G.pg.base.aircraft_template[27102] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -12491,7 +11934,6 @@ _G.pg.base.aircraft_template[27102] = {
 		52302
 	}
 }
-
 _G.pg.base.aircraft_template[27103] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -12503,7 +11945,6 @@ _G.pg.base.aircraft_template[27103] = {
 		52303
 	}
 }
-
 _G.pg.base.aircraft_template[27104] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -12515,7 +11956,6 @@ _G.pg.base.aircraft_template[27104] = {
 		52304
 	}
 }
-
 _G.pg.base.aircraft_template[27105] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -12527,7 +11967,6 @@ _G.pg.base.aircraft_template[27105] = {
 		52305
 	}
 }
-
 _G.pg.base.aircraft_template[27106] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -12539,7 +11978,6 @@ _G.pg.base.aircraft_template[27106] = {
 		52306
 	}
 }
-
 _G.pg.base.aircraft_template[27120] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -12616,7 +12054,6 @@ _G.pg.base.aircraft_template[27120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27121] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -12628,7 +12065,6 @@ _G.pg.base.aircraft_template[27121] = {
 		52321
 	}
 }
-
 _G.pg.base.aircraft_template[27122] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -12640,7 +12076,6 @@ _G.pg.base.aircraft_template[27122] = {
 		52322
 	}
 }
-
 _G.pg.base.aircraft_template[27123] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -12652,7 +12087,6 @@ _G.pg.base.aircraft_template[27123] = {
 		52323
 	}
 }
-
 _G.pg.base.aircraft_template[27124] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -12664,7 +12098,6 @@ _G.pg.base.aircraft_template[27124] = {
 		52324
 	}
 }
-
 _G.pg.base.aircraft_template[27125] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -12676,7 +12109,6 @@ _G.pg.base.aircraft_template[27125] = {
 		52325
 	}
 }
-
 _G.pg.base.aircraft_template[27126] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -12688,7 +12120,6 @@ _G.pg.base.aircraft_template[27126] = {
 		52326
 	}
 }
-
 _G.pg.base.aircraft_template[27127] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -12700,7 +12131,6 @@ _G.pg.base.aircraft_template[27127] = {
 		52327
 	}
 }
-
 _G.pg.base.aircraft_template[27128] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -12712,7 +12142,6 @@ _G.pg.base.aircraft_template[27128] = {
 		52328
 	}
 }
-
 _G.pg.base.aircraft_template[27129] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -12724,7 +12153,6 @@ _G.pg.base.aircraft_template[27129] = {
 		52329
 	}
 }
-
 _G.pg.base.aircraft_template[27130] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -12736,7 +12164,6 @@ _G.pg.base.aircraft_template[27130] = {
 		52330
 	}
 }
-
 _G.pg.base.aircraft_template[27140] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -12813,7 +12240,6 @@ _G.pg.base.aircraft_template[27140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27141] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -12825,7 +12251,6 @@ _G.pg.base.aircraft_template[27141] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[27142] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -12837,7 +12262,6 @@ _G.pg.base.aircraft_template[27142] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[27143] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -12849,7 +12273,6 @@ _G.pg.base.aircraft_template[27143] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[27144] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -12861,7 +12284,6 @@ _G.pg.base.aircraft_template[27144] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[27145] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -12873,7 +12295,6 @@ _G.pg.base.aircraft_template[27145] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[27146] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -12885,7 +12306,6 @@ _G.pg.base.aircraft_template[27146] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[27147] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -12897,7 +12317,6 @@ _G.pg.base.aircraft_template[27147] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[27148] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -12909,7 +12328,6 @@ _G.pg.base.aircraft_template[27148] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[27149] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -12921,7 +12339,6 @@ _G.pg.base.aircraft_template[27149] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[27150] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -12933,7 +12350,6 @@ _G.pg.base.aircraft_template[27150] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[27151] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -12945,7 +12361,6 @@ _G.pg.base.aircraft_template[27151] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[27152] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -12957,7 +12372,6 @@ _G.pg.base.aircraft_template[27152] = {
 		52352
 	}
 }
-
 _G.pg.base.aircraft_template[27153] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -12969,7 +12383,6 @@ _G.pg.base.aircraft_template[27153] = {
 		52353
 	}
 }
-
 _G.pg.base.aircraft_template[27200] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -13045,7 +12458,6 @@ _G.pg.base.aircraft_template[27200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27201] = {
 	max_hp = 32,
 	hp_growth = 1236,
@@ -13056,7 +12468,6 @@ _G.pg.base.aircraft_template[27201] = {
 		50101
 	}
 }
-
 _G.pg.base.aircraft_template[27202] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -13067,7 +12478,6 @@ _G.pg.base.aircraft_template[27202] = {
 		50102
 	}
 }
-
 _G.pg.base.aircraft_template[27203] = {
 	max_hp = 41,
 	hp_growth = 1559,
@@ -13078,7 +12488,6 @@ _G.pg.base.aircraft_template[27203] = {
 		50103
 	}
 }
-
 _G.pg.base.aircraft_template[27220] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -13154,7 +12563,6 @@ _G.pg.base.aircraft_template[27220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27221] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -13165,7 +12573,6 @@ _G.pg.base.aircraft_template[27221] = {
 		50121
 	}
 }
-
 _G.pg.base.aircraft_template[27222] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -13176,7 +12583,6 @@ _G.pg.base.aircraft_template[27222] = {
 		50122
 	}
 }
-
 _G.pg.base.aircraft_template[27223] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -13187,7 +12593,6 @@ _G.pg.base.aircraft_template[27223] = {
 		50123
 	}
 }
-
 _G.pg.base.aircraft_template[27240] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -13263,7 +12668,6 @@ _G.pg.base.aircraft_template[27240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27241] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -13274,7 +12678,6 @@ _G.pg.base.aircraft_template[27241] = {
 		50141
 	}
 }
-
 _G.pg.base.aircraft_template[27242] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -13285,7 +12688,6 @@ _G.pg.base.aircraft_template[27242] = {
 		50142
 	}
 }
-
 _G.pg.base.aircraft_template[27243] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -13296,7 +12698,6 @@ _G.pg.base.aircraft_template[27243] = {
 		50143
 	}
 }
-
 _G.pg.base.aircraft_template[27244] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -13307,7 +12708,6 @@ _G.pg.base.aircraft_template[27244] = {
 		50144
 	}
 }
-
 _G.pg.base.aircraft_template[27245] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -13318,7 +12718,6 @@ _G.pg.base.aircraft_template[27245] = {
 		50145
 	}
 }
-
 _G.pg.base.aircraft_template[27246] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -13329,7 +12728,6 @@ _G.pg.base.aircraft_template[27246] = {
 		50146
 	}
 }
-
 _G.pg.base.aircraft_template[27247] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -13340,7 +12738,6 @@ _G.pg.base.aircraft_template[27247] = {
 		50147
 	}
 }
-
 _G.pg.base.aircraft_template[27260] = {
 	attack_power = 2,
 	name = "海飓风",
@@ -13416,7 +12813,6 @@ _G.pg.base.aircraft_template[27260] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27261] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -13427,7 +12823,6 @@ _G.pg.base.aircraft_template[27261] = {
 		50161
 	}
 }
-
 _G.pg.base.aircraft_template[27262] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -13438,7 +12833,6 @@ _G.pg.base.aircraft_template[27262] = {
 		50162
 	}
 }
-
 _G.pg.base.aircraft_template[27263] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -13449,7 +12843,6 @@ _G.pg.base.aircraft_template[27263] = {
 		50163
 	}
 }
-
 _G.pg.base.aircraft_template[27264] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -13460,7 +12853,6 @@ _G.pg.base.aircraft_template[27264] = {
 		50164
 	}
 }
-
 _G.pg.base.aircraft_template[27265] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -13471,7 +12863,6 @@ _G.pg.base.aircraft_template[27265] = {
 		50165
 	}
 }
-
 _G.pg.base.aircraft_template[27266] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -13482,7 +12873,6 @@ _G.pg.base.aircraft_template[27266] = {
 		50166
 	}
 }
-
 _G.pg.base.aircraft_template[27267] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -13493,7 +12883,6 @@ _G.pg.base.aircraft_template[27267] = {
 		50167
 	}
 }
-
 _G.pg.base.aircraft_template[27300] = {
 	attack_power = 2,
 	name = "海怒",
@@ -13570,7 +12959,6 @@ _G.pg.base.aircraft_template[27300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27301] = {
 	max_hp = 49,
 	hp_growth = 1892,
@@ -13582,7 +12970,6 @@ _G.pg.base.aircraft_template[27301] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[27302] = {
 	max_hp = 56,
 	hp_growth = 2139,
@@ -13594,7 +12981,6 @@ _G.pg.base.aircraft_template[27302] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[27303] = {
 	max_hp = 62,
 	hp_growth = 2385,
@@ -13606,7 +12992,6 @@ _G.pg.base.aircraft_template[27303] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[27304] = {
 	max_hp = 68,
 	hp_growth = 2632,
@@ -13618,7 +13003,6 @@ _G.pg.base.aircraft_template[27304] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[27305] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -13630,7 +13014,6 @@ _G.pg.base.aircraft_template[27305] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[27306] = {
 	max_hp = 81,
 	hp_growth = 3126,
@@ -13642,7 +13025,6 @@ _G.pg.base.aircraft_template[27306] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[27307] = {
 	max_hp = 88,
 	hp_growth = 3372,
@@ -13654,7 +13036,6 @@ _G.pg.base.aircraft_template[27307] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[27308] = {
 	max_hp = 94,
 	hp_growth = 3619,
@@ -13666,7 +13047,6 @@ _G.pg.base.aircraft_template[27308] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[27309] = {
 	max_hp = 101,
 	hp_growth = 3866,
@@ -13678,7 +13058,6 @@ _G.pg.base.aircraft_template[27309] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[27310] = {
 	max_hp = 107,
 	hp_growth = 4113,
@@ -13690,7 +13069,6 @@ _G.pg.base.aircraft_template[27310] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[27311] = {
 	max_hp = 113,
 	hp_growth = 4359,
@@ -13702,7 +13080,6 @@ _G.pg.base.aircraft_template[27311] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[27312] = {
 	max_hp = 120,
 	hp_growth = 4606,
@@ -13714,7 +13091,6 @@ _G.pg.base.aircraft_template[27312] = {
 		52352
 	}
 }
-
 _G.pg.base.aircraft_template[27313] = {
 	max_hp = 126,
 	hp_growth = 4853,
@@ -13726,7 +13102,6 @@ _G.pg.base.aircraft_template[27313] = {
 		52353
 	}
 }
-
 _G.pg.base.aircraft_template[27320] = {
 	attack_power = 2,
 	name = "海大黄蜂",
@@ -13803,7 +13178,6 @@ _G.pg.base.aircraft_template[27320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[27321] = {
 	max_hp = 57,
 	hp_growth = 2189,
@@ -13815,7 +13189,6 @@ _G.pg.base.aircraft_template[27321] = {
 		52761
 	}
 }
-
 _G.pg.base.aircraft_template[27322] = {
 	max_hp = 64,
 	hp_growth = 2474,
@@ -13827,7 +13200,6 @@ _G.pg.base.aircraft_template[27322] = {
 		52762
 	}
 }
-
 _G.pg.base.aircraft_template[27323] = {
 	max_hp = 72,
 	hp_growth = 2760,
@@ -13839,7 +13211,6 @@ _G.pg.base.aircraft_template[27323] = {
 		52763
 	}
 }
-
 _G.pg.base.aircraft_template[27324] = {
 	max_hp = 79,
 	hp_growth = 3045,
@@ -13851,7 +13222,6 @@ _G.pg.base.aircraft_template[27324] = {
 		52764
 	}
 }
-
 _G.pg.base.aircraft_template[27325] = {
 	max_hp = 87,
 	hp_growth = 3330,
@@ -13863,7 +13233,6 @@ _G.pg.base.aircraft_template[27325] = {
 		52765
 	}
 }
-
 _G.pg.base.aircraft_template[27326] = {
 	max_hp = 94,
 	hp_growth = 3616,
@@ -13875,7 +13244,6 @@ _G.pg.base.aircraft_template[27326] = {
 		52766
 	}
 }
-
 _G.pg.base.aircraft_template[27327] = {
 	max_hp = 101,
 	hp_growth = 3901,
@@ -13887,7 +13255,6 @@ _G.pg.base.aircraft_template[27327] = {
 		52767
 	}
 }
-
 _G.pg.base.aircraft_template[27328] = {
 	max_hp = 109,
 	hp_growth = 4187,
@@ -13899,7 +13266,6 @@ _G.pg.base.aircraft_template[27328] = {
 		52768
 	}
 }
-
 _G.pg.base.aircraft_template[27329] = {
 	max_hp = 116,
 	hp_growth = 4472,
@@ -13911,7 +13277,6 @@ _G.pg.base.aircraft_template[27329] = {
 		52769
 	}
 }
-
 _G.pg.base.aircraft_template[27330] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -13923,7 +13288,6 @@ _G.pg.base.aircraft_template[27330] = {
 		52770
 	}
 }
-
 _G.pg.base.aircraft_template[27331] = {
 	max_hp = 131,
 	hp_growth = 5043,
@@ -13935,7 +13299,6 @@ _G.pg.base.aircraft_template[27331] = {
 		52771
 	}
 }
-
 _G.pg.base.aircraft_template[27332] = {
 	max_hp = 139,
 	hp_growth = 5329,
@@ -13947,7 +13310,6 @@ _G.pg.base.aircraft_template[27332] = {
 		52772
 	}
 }
-
 _G.pg.base.aircraft_template[27333] = {
 	max_hp = 146,
 	hp_growth = 5614,
@@ -13959,7 +13321,6 @@ _G.pg.base.aircraft_template[27333] = {
 		52773
 	}
 }
-
 _G.pg.base.aircraft_template[28000] = {
 	attack_power = 2,
 	name = "剑鱼",
@@ -14036,7 +13397,6 @@ _G.pg.base.aircraft_template[28000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28001] = {
 	max_hp = 33,
 	hp_growth = 1259,
@@ -14048,7 +13408,6 @@ _G.pg.base.aircraft_template[28001] = {
 		51001
 	}
 }
-
 _G.pg.base.aircraft_template[28002] = {
 	max_hp = 37,
 	hp_growth = 1423,
@@ -14060,7 +13419,6 @@ _G.pg.base.aircraft_template[28002] = {
 		51002
 	}
 }
-
 _G.pg.base.aircraft_template[28003] = {
 	max_hp = 41,
 	hp_growth = 1587,
@@ -14072,7 +13430,6 @@ _G.pg.base.aircraft_template[28003] = {
 		51003
 	}
 }
-
 _G.pg.base.aircraft_template[28020] = {
 	attack_power = 2,
 	name = "剑鱼",
@@ -14149,7 +13506,6 @@ _G.pg.base.aircraft_template[28020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28021] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -14161,7 +13517,6 @@ _G.pg.base.aircraft_template[28021] = {
 		51021
 	}
 }
-
 _G.pg.base.aircraft_template[28022] = {
 	max_hp = 41,
 	hp_growth = 1581,
@@ -14173,7 +13528,6 @@ _G.pg.base.aircraft_template[28022] = {
 		51022
 	}
 }
-
 _G.pg.base.aircraft_template[28023] = {
 	max_hp = 46,
 	hp_growth = 1763,
@@ -14185,7 +13539,6 @@ _G.pg.base.aircraft_template[28023] = {
 		51023
 	}
 }
-
 _G.pg.base.aircraft_template[28024] = {
 	max_hp = 51,
 	hp_growth = 1946,
@@ -14197,7 +13550,6 @@ _G.pg.base.aircraft_template[28024] = {
 		51024
 	}
 }
-
 _G.pg.base.aircraft_template[28025] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -14209,7 +13561,6 @@ _G.pg.base.aircraft_template[28025] = {
 		51025
 	}
 }
-
 _G.pg.base.aircraft_template[28026] = {
 	max_hp = 60,
 	hp_growth = 2310,
@@ -14221,7 +13572,6 @@ _G.pg.base.aircraft_template[28026] = {
 		51026
 	}
 }
-
 _G.pg.base.aircraft_template[28040] = {
 	attack_power = 2,
 	name = "剑鱼",
@@ -14298,7 +13648,6 @@ _G.pg.base.aircraft_template[28040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28041] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -14310,7 +13659,6 @@ _G.pg.base.aircraft_template[28041] = {
 		51041
 	}
 }
-
 _G.pg.base.aircraft_template[28042] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -14322,7 +13670,6 @@ _G.pg.base.aircraft_template[28042] = {
 		51042
 	}
 }
-
 _G.pg.base.aircraft_template[28043] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -14334,7 +13681,6 @@ _G.pg.base.aircraft_template[28043] = {
 		51043
 	}
 }
-
 _G.pg.base.aircraft_template[28044] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -14346,7 +13692,6 @@ _G.pg.base.aircraft_template[28044] = {
 		51044
 	}
 }
-
 _G.pg.base.aircraft_template[28045] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -14358,7 +13703,6 @@ _G.pg.base.aircraft_template[28045] = {
 		51045
 	}
 }
-
 _G.pg.base.aircraft_template[28046] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -14370,7 +13714,6 @@ _G.pg.base.aircraft_template[28046] = {
 		51046
 	}
 }
-
 _G.pg.base.aircraft_template[28047] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -14382,7 +13725,6 @@ _G.pg.base.aircraft_template[28047] = {
 		51047
 	}
 }
-
 _G.pg.base.aircraft_template[28048] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -14394,7 +13736,6 @@ _G.pg.base.aircraft_template[28048] = {
 		51048
 	}
 }
-
 _G.pg.base.aircraft_template[28049] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -14406,7 +13747,6 @@ _G.pg.base.aircraft_template[28049] = {
 		51049
 	}
 }
-
 _G.pg.base.aircraft_template[28050] = {
 	max_hp = 87,
 	hp_growth = 3344,
@@ -14418,7 +13758,6 @@ _G.pg.base.aircraft_template[28050] = {
 		51050
 	}
 }
-
 _G.pg.base.aircraft_template[28051] = {
 	max_hp = 92,
 	hp_growth = 3545,
@@ -14430,7 +13769,6 @@ _G.pg.base.aircraft_template[28051] = {
 		51051
 	}
 }
-
 _G.pg.base.aircraft_template[28060] = {
 	attack_power = 2,
 	name = "剑鱼(818中队)",
@@ -14507,7 +13845,6 @@ _G.pg.base.aircraft_template[28060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28061] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -14519,7 +13856,6 @@ _G.pg.base.aircraft_template[28061] = {
 		51081
 	}
 }
-
 _G.pg.base.aircraft_template[28062] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -14531,7 +13867,6 @@ _G.pg.base.aircraft_template[28062] = {
 		51082
 	}
 }
-
 _G.pg.base.aircraft_template[28063] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -14543,7 +13878,6 @@ _G.pg.base.aircraft_template[28063] = {
 		51083
 	}
 }
-
 _G.pg.base.aircraft_template[28064] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -14555,7 +13889,6 @@ _G.pg.base.aircraft_template[28064] = {
 		51084
 	}
 }
-
 _G.pg.base.aircraft_template[28065] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -14567,7 +13900,6 @@ _G.pg.base.aircraft_template[28065] = {
 		51085
 	}
 }
-
 _G.pg.base.aircraft_template[28066] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -14579,7 +13911,6 @@ _G.pg.base.aircraft_template[28066] = {
 		51086
 	}
 }
-
 _G.pg.base.aircraft_template[28067] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -14591,7 +13922,6 @@ _G.pg.base.aircraft_template[28067] = {
 		51087
 	}
 }
-
 _G.pg.base.aircraft_template[28068] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -14603,7 +13933,6 @@ _G.pg.base.aircraft_template[28068] = {
 		51088
 	}
 }
-
 _G.pg.base.aircraft_template[28069] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -14615,7 +13944,6 @@ _G.pg.base.aircraft_template[28069] = {
 		51089
 	}
 }
-
 _G.pg.base.aircraft_template[28070] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -14627,7 +13955,6 @@ _G.pg.base.aircraft_template[28070] = {
 		51090
 	}
 }
-
 _G.pg.base.aircraft_template[28071] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -14639,7 +13966,6 @@ _G.pg.base.aircraft_template[28071] = {
 		51091
 	}
 }
-
 _G.pg.base.aircraft_template[28072] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -14651,7 +13977,6 @@ _G.pg.base.aircraft_template[28072] = {
 		51092
 	}
 }
-
 _G.pg.base.aircraft_template[28073] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -14663,7 +13988,6 @@ _G.pg.base.aircraft_template[28073] = {
 		51093
 	}
 }
-
 _G.pg.base.aircraft_template[28100] = {
 	attack_power = 2,
 	name = "梭鱼",
@@ -14740,7 +14064,6 @@ _G.pg.base.aircraft_template[28100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28101] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -14752,7 +14075,6 @@ _G.pg.base.aircraft_template[28101] = {
 		51101
 	}
 }
-
 _G.pg.base.aircraft_template[28102] = {
 	max_hp = 41,
 	hp_growth = 1581,
@@ -14764,7 +14086,6 @@ _G.pg.base.aircraft_template[28102] = {
 		51102
 	}
 }
-
 _G.pg.base.aircraft_template[28103] = {
 	max_hp = 46,
 	hp_growth = 1763,
@@ -14776,7 +14097,6 @@ _G.pg.base.aircraft_template[28103] = {
 		51103
 	}
 }
-
 _G.pg.base.aircraft_template[28104] = {
 	max_hp = 51,
 	hp_growth = 1946,
@@ -14788,7 +14108,6 @@ _G.pg.base.aircraft_template[28104] = {
 		51104
 	}
 }
-
 _G.pg.base.aircraft_template[28105] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -14800,7 +14119,6 @@ _G.pg.base.aircraft_template[28105] = {
 		51105
 	}
 }
-
 _G.pg.base.aircraft_template[28106] = {
 	max_hp = 60,
 	hp_growth = 2310,
@@ -14812,7 +14130,6 @@ _G.pg.base.aircraft_template[28106] = {
 		51106
 	}
 }
-
 _G.pg.base.aircraft_template[28120] = {
 	attack_power = 2,
 	name = "梭鱼",
@@ -14889,7 +14206,6 @@ _G.pg.base.aircraft_template[28120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28121] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -14901,7 +14217,6 @@ _G.pg.base.aircraft_template[28121] = {
 		51121
 	}
 }
-
 _G.pg.base.aircraft_template[28122] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -14913,7 +14228,6 @@ _G.pg.base.aircraft_template[28122] = {
 		51122
 	}
 }
-
 _G.pg.base.aircraft_template[28123] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -14925,7 +14239,6 @@ _G.pg.base.aircraft_template[28123] = {
 		51123
 	}
 }
-
 _G.pg.base.aircraft_template[28124] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -14937,7 +14250,6 @@ _G.pg.base.aircraft_template[28124] = {
 		51124
 	}
 }
-
 _G.pg.base.aircraft_template[28125] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -14949,7 +14261,6 @@ _G.pg.base.aircraft_template[28125] = {
 		51125
 	}
 }
-
 _G.pg.base.aircraft_template[28126] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -14961,7 +14272,6 @@ _G.pg.base.aircraft_template[28126] = {
 		51126
 	}
 }
-
 _G.pg.base.aircraft_template[28127] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -14973,7 +14283,6 @@ _G.pg.base.aircraft_template[28127] = {
 		51127
 	}
 }
-
 _G.pg.base.aircraft_template[28128] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -14985,7 +14294,6 @@ _G.pg.base.aircraft_template[28128] = {
 		51128
 	}
 }
-
 _G.pg.base.aircraft_template[28129] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -14997,7 +14305,6 @@ _G.pg.base.aircraft_template[28129] = {
 		51129
 	}
 }
-
 _G.pg.base.aircraft_template[28130] = {
 	max_hp = 87,
 	hp_growth = 3344,
@@ -15009,7 +14316,6 @@ _G.pg.base.aircraft_template[28130] = {
 		51130
 	}
 }
-
 _G.pg.base.aircraft_template[28140] = {
 	attack_power = 2,
 	name = "梭鱼",
@@ -15086,7 +14392,6 @@ _G.pg.base.aircraft_template[28140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28141] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -15098,7 +14403,6 @@ _G.pg.base.aircraft_template[28141] = {
 		51141
 	}
 }
-
 _G.pg.base.aircraft_template[28142] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -15110,7 +14414,6 @@ _G.pg.base.aircraft_template[28142] = {
 		51142
 	}
 }
-
 _G.pg.base.aircraft_template[28143] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -15122,7 +14425,6 @@ _G.pg.base.aircraft_template[28143] = {
 		51143
 	}
 }
-
 _G.pg.base.aircraft_template[28144] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -15134,7 +14436,6 @@ _G.pg.base.aircraft_template[28144] = {
 		51144
 	}
 }
-
 _G.pg.base.aircraft_template[28145] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -15146,7 +14447,6 @@ _G.pg.base.aircraft_template[28145] = {
 		51145
 	}
 }
-
 _G.pg.base.aircraft_template[28146] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -15158,7 +14458,6 @@ _G.pg.base.aircraft_template[28146] = {
 		51146
 	}
 }
-
 _G.pg.base.aircraft_template[28147] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -15170,7 +14469,6 @@ _G.pg.base.aircraft_template[28147] = {
 		51147
 	}
 }
-
 _G.pg.base.aircraft_template[28148] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -15182,7 +14480,6 @@ _G.pg.base.aircraft_template[28148] = {
 		51148
 	}
 }
-
 _G.pg.base.aircraft_template[28149] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -15194,7 +14491,6 @@ _G.pg.base.aircraft_template[28149] = {
 		51149
 	}
 }
-
 _G.pg.base.aircraft_template[28150] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -15206,7 +14502,6 @@ _G.pg.base.aircraft_template[28150] = {
 		51150
 	}
 }
-
 _G.pg.base.aircraft_template[28151] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -15218,7 +14513,6 @@ _G.pg.base.aircraft_template[28151] = {
 		51151
 	}
 }
-
 _G.pg.base.aircraft_template[28152] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -15230,7 +14524,6 @@ _G.pg.base.aircraft_template[28152] = {
 		51152
 	}
 }
-
 _G.pg.base.aircraft_template[28153] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -15242,7 +14535,6 @@ _G.pg.base.aircraft_template[28153] = {
 		51153
 	}
 }
-
 _G.pg.base.aircraft_template[28160] = {
 	attack_power = 2,
 	name = "剑鱼(818中队)",
@@ -15319,7 +14611,6 @@ _G.pg.base.aircraft_template[28160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28161] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -15331,7 +14622,6 @@ _G.pg.base.aircraft_template[28161] = {
 		51061
 	}
 }
-
 _G.pg.base.aircraft_template[28162] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -15343,7 +14633,6 @@ _G.pg.base.aircraft_template[28162] = {
 		51062
 	}
 }
-
 _G.pg.base.aircraft_template[28163] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -15355,7 +14644,6 @@ _G.pg.base.aircraft_template[28163] = {
 		51063
 	}
 }
-
 _G.pg.base.aircraft_template[28164] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -15367,7 +14655,6 @@ _G.pg.base.aircraft_template[28164] = {
 		51064
 	}
 }
-
 _G.pg.base.aircraft_template[28165] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -15379,7 +14666,6 @@ _G.pg.base.aircraft_template[28165] = {
 		51065
 	}
 }
-
 _G.pg.base.aircraft_template[28166] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -15391,7 +14677,6 @@ _G.pg.base.aircraft_template[28166] = {
 		51066
 	}
 }
-
 _G.pg.base.aircraft_template[28167] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -15403,7 +14688,6 @@ _G.pg.base.aircraft_template[28167] = {
 		51067
 	}
 }
-
 _G.pg.base.aircraft_template[28168] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -15415,7 +14699,6 @@ _G.pg.base.aircraft_template[28168] = {
 		51068
 	}
 }
-
 _G.pg.base.aircraft_template[28169] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -15427,7 +14710,6 @@ _G.pg.base.aircraft_template[28169] = {
 		51069
 	}
 }
-
 _G.pg.base.aircraft_template[28170] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -15439,7 +14721,6 @@ _G.pg.base.aircraft_template[28170] = {
 		51070
 	}
 }
-
 _G.pg.base.aircraft_template[28171] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -15451,7 +14732,6 @@ _G.pg.base.aircraft_template[28171] = {
 		51071
 	}
 }
-
 _G.pg.base.aircraft_template[28172] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -15463,7 +14743,6 @@ _G.pg.base.aircraft_template[28172] = {
 		51072
 	}
 }
-
 _G.pg.base.aircraft_template[28173] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -15475,7 +14754,6 @@ _G.pg.base.aircraft_template[28173] = {
 		51073
 	}
 }
-
 _G.pg.base.aircraft_template[28200] = {
 	attack_power = 2,
 	name = "火把",
@@ -15552,7 +14830,6 @@ _G.pg.base.aircraft_template[28200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28201] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -15564,7 +14841,6 @@ _G.pg.base.aircraft_template[28201] = {
 		51141
 	}
 }
-
 _G.pg.base.aircraft_template[28202] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -15576,7 +14852,6 @@ _G.pg.base.aircraft_template[28202] = {
 		51142
 	}
 }
-
 _G.pg.base.aircraft_template[28203] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -15588,7 +14863,6 @@ _G.pg.base.aircraft_template[28203] = {
 		51143
 	}
 }
-
 _G.pg.base.aircraft_template[28204] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -15600,7 +14874,6 @@ _G.pg.base.aircraft_template[28204] = {
 		51144
 	}
 }
-
 _G.pg.base.aircraft_template[28205] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -15612,7 +14885,6 @@ _G.pg.base.aircraft_template[28205] = {
 		51145
 	}
 }
-
 _G.pg.base.aircraft_template[28206] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -15624,7 +14896,6 @@ _G.pg.base.aircraft_template[28206] = {
 		51146
 	}
 }
-
 _G.pg.base.aircraft_template[28207] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -15636,7 +14907,6 @@ _G.pg.base.aircraft_template[28207] = {
 		51147
 	}
 }
-
 _G.pg.base.aircraft_template[28208] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -15648,7 +14918,6 @@ _G.pg.base.aircraft_template[28208] = {
 		51148
 	}
 }
-
 _G.pg.base.aircraft_template[28209] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -15660,7 +14929,6 @@ _G.pg.base.aircraft_template[28209] = {
 		51149
 	}
 }
-
 _G.pg.base.aircraft_template[28210] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -15672,7 +14940,6 @@ _G.pg.base.aircraft_template[28210] = {
 		51150
 	}
 }
-
 _G.pg.base.aircraft_template[28211] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -15684,7 +14951,6 @@ _G.pg.base.aircraft_template[28211] = {
 		51151
 	}
 }
-
 _G.pg.base.aircraft_template[28212] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -15696,7 +14962,6 @@ _G.pg.base.aircraft_template[28212] = {
 		51152
 	}
 }
-
 _G.pg.base.aircraft_template[28213] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -15708,7 +14973,6 @@ _G.pg.base.aircraft_template[28213] = {
 		51153
 	}
 }
-
 _G.pg.base.aircraft_template[28220] = {
 	attack_power = 2,
 	name = "火冠",
@@ -15785,7 +15049,6 @@ _G.pg.base.aircraft_template[28220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28221] = {
 	max_hp = 45,
 	hp_growth = 1728,
@@ -15797,7 +15060,6 @@ _G.pg.base.aircraft_template[28221] = {
 		51141
 	}
 }
-
 _G.pg.base.aircraft_template[28222] = {
 	max_hp = 51,
 	hp_growth = 1954,
@@ -15809,7 +15071,6 @@ _G.pg.base.aircraft_template[28222] = {
 		51142
 	}
 }
-
 _G.pg.base.aircraft_template[28223] = {
 	max_hp = 57,
 	hp_growth = 2179,
@@ -15821,7 +15082,6 @@ _G.pg.base.aircraft_template[28223] = {
 		51143
 	}
 }
-
 _G.pg.base.aircraft_template[28224] = {
 	max_hp = 63,
 	hp_growth = 2405,
@@ -15833,7 +15093,6 @@ _G.pg.base.aircraft_template[28224] = {
 		51144
 	}
 }
-
 _G.pg.base.aircraft_template[28225] = {
 	max_hp = 68,
 	hp_growth = 2630,
@@ -15845,7 +15104,6 @@ _G.pg.base.aircraft_template[28225] = {
 		51145
 	}
 }
-
 _G.pg.base.aircraft_template[28226] = {
 	max_hp = 74,
 	hp_growth = 2856,
@@ -15857,7 +15115,6 @@ _G.pg.base.aircraft_template[28226] = {
 		51146
 	}
 }
-
 _G.pg.base.aircraft_template[28227] = {
 	max_hp = 80,
 	hp_growth = 3081,
@@ -15869,7 +15126,6 @@ _G.pg.base.aircraft_template[28227] = {
 		51147
 	}
 }
-
 _G.pg.base.aircraft_template[28228] = {
 	max_hp = 86,
 	hp_growth = 3307,
@@ -15881,7 +15137,6 @@ _G.pg.base.aircraft_template[28228] = {
 		51148
 	}
 }
-
 _G.pg.base.aircraft_template[28229] = {
 	max_hp = 92,
 	hp_growth = 3532,
@@ -15893,7 +15148,6 @@ _G.pg.base.aircraft_template[28229] = {
 		51149
 	}
 }
-
 _G.pg.base.aircraft_template[28230] = {
 	max_hp = 98,
 	hp_growth = 3757,
@@ -15905,7 +15159,6 @@ _G.pg.base.aircraft_template[28230] = {
 		51150
 	}
 }
-
 _G.pg.base.aircraft_template[28231] = {
 	max_hp = 104,
 	hp_growth = 3983,
@@ -15917,7 +15170,6 @@ _G.pg.base.aircraft_template[28231] = {
 		51151
 	}
 }
-
 _G.pg.base.aircraft_template[28232] = {
 	max_hp = 109,
 	hp_growth = 4208,
@@ -15929,7 +15181,6 @@ _G.pg.base.aircraft_template[28232] = {
 		51152
 	}
 }
-
 _G.pg.base.aircraft_template[28233] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -15941,7 +15192,6 @@ _G.pg.base.aircraft_template[28233] = {
 		51153
 	}
 }
-
 _G.pg.base.aircraft_template[28300] = {
 	attack_power = 2,
 	name = "青花鱼",
@@ -16018,7 +15268,6 @@ _G.pg.base.aircraft_template[28300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28301] = {
 	max_hp = 33,
 	hp_growth = 1259,
@@ -16030,7 +15279,6 @@ _G.pg.base.aircraft_template[28301] = {
 		51001
 	}
 }
-
 _G.pg.base.aircraft_template[28302] = {
 	max_hp = 37,
 	hp_growth = 1423,
@@ -16042,7 +15290,6 @@ _G.pg.base.aircraft_template[28302] = {
 		51002
 	}
 }
-
 _G.pg.base.aircraft_template[28303] = {
 	max_hp = 41,
 	hp_growth = 1587,
@@ -16054,7 +15301,6 @@ _G.pg.base.aircraft_template[28303] = {
 		51003
 	}
 }
-
 _G.pg.base.aircraft_template[28320] = {
 	attack_power = 2,
 	name = "青花鱼",
@@ -16131,7 +15377,6 @@ _G.pg.base.aircraft_template[28320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28321] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -16143,7 +15388,6 @@ _G.pg.base.aircraft_template[28321] = {
 		51021
 	}
 }
-
 _G.pg.base.aircraft_template[28322] = {
 	max_hp = 41,
 	hp_growth = 1581,
@@ -16155,7 +15399,6 @@ _G.pg.base.aircraft_template[28322] = {
 		51022
 	}
 }
-
 _G.pg.base.aircraft_template[28323] = {
 	max_hp = 46,
 	hp_growth = 1763,
@@ -16167,7 +15410,6 @@ _G.pg.base.aircraft_template[28323] = {
 		51023
 	}
 }
-
 _G.pg.base.aircraft_template[28324] = {
 	max_hp = 51,
 	hp_growth = 1946,
@@ -16179,7 +15421,6 @@ _G.pg.base.aircraft_template[28324] = {
 		51024
 	}
 }
-
 _G.pg.base.aircraft_template[28325] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -16191,7 +15432,6 @@ _G.pg.base.aircraft_template[28325] = {
 		51025
 	}
 }
-
 _G.pg.base.aircraft_template[28326] = {
 	max_hp = 60,
 	hp_growth = 2310,
@@ -16203,7 +15443,6 @@ _G.pg.base.aircraft_template[28326] = {
 		51026
 	}
 }
-
 _G.pg.base.aircraft_template[28340] = {
 	attack_power = 2,
 	name = "青花鱼",
@@ -16280,7 +15519,6 @@ _G.pg.base.aircraft_template[28340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28341] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -16292,7 +15530,6 @@ _G.pg.base.aircraft_template[28341] = {
 		51041
 	}
 }
-
 _G.pg.base.aircraft_template[28342] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -16304,7 +15541,6 @@ _G.pg.base.aircraft_template[28342] = {
 		51042
 	}
 }
-
 _G.pg.base.aircraft_template[28343] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -16316,7 +15552,6 @@ _G.pg.base.aircraft_template[28343] = {
 		51043
 	}
 }
-
 _G.pg.base.aircraft_template[28344] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -16328,7 +15563,6 @@ _G.pg.base.aircraft_template[28344] = {
 		51044
 	}
 }
-
 _G.pg.base.aircraft_template[28345] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -16340,7 +15574,6 @@ _G.pg.base.aircraft_template[28345] = {
 		51045
 	}
 }
-
 _G.pg.base.aircraft_template[28346] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -16352,7 +15585,6 @@ _G.pg.base.aircraft_template[28346] = {
 		51046
 	}
 }
-
 _G.pg.base.aircraft_template[28347] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -16364,7 +15596,6 @@ _G.pg.base.aircraft_template[28347] = {
 		51047
 	}
 }
-
 _G.pg.base.aircraft_template[28348] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -16376,7 +15607,6 @@ _G.pg.base.aircraft_template[28348] = {
 		51048
 	}
 }
-
 _G.pg.base.aircraft_template[28349] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -16388,7 +15618,6 @@ _G.pg.base.aircraft_template[28349] = {
 		51049
 	}
 }
-
 _G.pg.base.aircraft_template[28350] = {
 	max_hp = 87,
 	hp_growth = 3344,
@@ -16400,7 +15629,6 @@ _G.pg.base.aircraft_template[28350] = {
 		51050
 	}
 }
-
 _G.pg.base.aircraft_template[28351] = {
 	max_hp = 92,
 	hp_growth = 3545,
@@ -16412,7 +15640,6 @@ _G.pg.base.aircraft_template[28351] = {
 		51051
 	}
 }
-
 _G.pg.base.aircraft_template[28400] = {
 	attack_power = 2,
 	name = "飞龙",
@@ -16489,7 +15716,6 @@ _G.pg.base.aircraft_template[28400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28401] = {
 	max_hp = 47,
 	hp_growth = 1818,
@@ -16501,7 +15727,6 @@ _G.pg.base.aircraft_template[28401] = {
 		51581
 	}
 }
-
 _G.pg.base.aircraft_template[28402] = {
 	max_hp = 53,
 	hp_growth = 2055,
@@ -16513,7 +15738,6 @@ _G.pg.base.aircraft_template[28402] = {
 		51582
 	}
 }
-
 _G.pg.base.aircraft_template[28403] = {
 	max_hp = 60,
 	hp_growth = 2292,
@@ -16525,7 +15749,6 @@ _G.pg.base.aircraft_template[28403] = {
 		51583
 	}
 }
-
 _G.pg.base.aircraft_template[28404] = {
 	max_hp = 66,
 	hp_growth = 2529,
@@ -16537,7 +15760,6 @@ _G.pg.base.aircraft_template[28404] = {
 		51584
 	}
 }
-
 _G.pg.base.aircraft_template[28405] = {
 	max_hp = 72,
 	hp_growth = 2766,
@@ -16549,7 +15771,6 @@ _G.pg.base.aircraft_template[28405] = {
 		51585
 	}
 }
-
 _G.pg.base.aircraft_template[28406] = {
 	max_hp = 78,
 	hp_growth = 3004,
@@ -16561,7 +15782,6 @@ _G.pg.base.aircraft_template[28406] = {
 		51586
 	}
 }
-
 _G.pg.base.aircraft_template[28407] = {
 	max_hp = 84,
 	hp_growth = 3241,
@@ -16573,7 +15793,6 @@ _G.pg.base.aircraft_template[28407] = {
 		51587
 	}
 }
-
 _G.pg.base.aircraft_template[28408] = {
 	max_hp = 90,
 	hp_growth = 3478,
@@ -16585,7 +15804,6 @@ _G.pg.base.aircraft_template[28408] = {
 		51588
 	}
 }
-
 _G.pg.base.aircraft_template[28409] = {
 	max_hp = 97,
 	hp_growth = 3715,
@@ -16597,7 +15815,6 @@ _G.pg.base.aircraft_template[28409] = {
 		51589
 	}
 }
-
 _G.pg.base.aircraft_template[28410] = {
 	max_hp = 103,
 	hp_growth = 3952,
@@ -16609,7 +15826,6 @@ _G.pg.base.aircraft_template[28410] = {
 		51590
 	}
 }
-
 _G.pg.base.aircraft_template[28411] = {
 	max_hp = 109,
 	hp_growth = 4189,
@@ -16621,7 +15837,6 @@ _G.pg.base.aircraft_template[28411] = {
 		51591
 	}
 }
-
 _G.pg.base.aircraft_template[28412] = {
 	max_hp = 115,
 	hp_growth = 4426,
@@ -16633,7 +15848,6 @@ _G.pg.base.aircraft_template[28412] = {
 		51592
 	}
 }
-
 _G.pg.base.aircraft_template[28413] = {
 	max_hp = 121,
 	hp_growth = 4663,
@@ -16645,7 +15859,6 @@ _G.pg.base.aircraft_template[28413] = {
 		51593
 	}
 }
-
 _G.pg.base.aircraft_template[28420] = {
 	attack_power = 2,
 	name = "旗鱼",
@@ -16723,7 +15936,6 @@ _G.pg.base.aircraft_template[28420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[28421] = {
 	max_hp = 47,
 	hp_growth = 1818,
@@ -16736,7 +15948,6 @@ _G.pg.base.aircraft_template[28421] = {
 		59941
 	}
 }
-
 _G.pg.base.aircraft_template[28422] = {
 	max_hp = 53,
 	hp_growth = 2055,
@@ -16749,7 +15960,6 @@ _G.pg.base.aircraft_template[28422] = {
 		59942
 	}
 }
-
 _G.pg.base.aircraft_template[28423] = {
 	max_hp = 60,
 	hp_growth = 2292,
@@ -16762,7 +15972,6 @@ _G.pg.base.aircraft_template[28423] = {
 		59943
 	}
 }
-
 _G.pg.base.aircraft_template[28424] = {
 	max_hp = 66,
 	hp_growth = 2529,
@@ -16775,7 +15984,6 @@ _G.pg.base.aircraft_template[28424] = {
 		59944
 	}
 }
-
 _G.pg.base.aircraft_template[28425] = {
 	max_hp = 72,
 	hp_growth = 2766,
@@ -16788,7 +15996,6 @@ _G.pg.base.aircraft_template[28425] = {
 		59945
 	}
 }
-
 _G.pg.base.aircraft_template[28426] = {
 	max_hp = 78,
 	hp_growth = 3004,
@@ -16801,7 +16008,6 @@ _G.pg.base.aircraft_template[28426] = {
 		59946
 	}
 }
-
 _G.pg.base.aircraft_template[28427] = {
 	max_hp = 84,
 	hp_growth = 3241,
@@ -16814,7 +16020,6 @@ _G.pg.base.aircraft_template[28427] = {
 		59947
 	}
 }
-
 _G.pg.base.aircraft_template[28428] = {
 	max_hp = 90,
 	hp_growth = 3478,
@@ -16827,7 +16032,6 @@ _G.pg.base.aircraft_template[28428] = {
 		59948
 	}
 }
-
 _G.pg.base.aircraft_template[28429] = {
 	max_hp = 97,
 	hp_growth = 3715,
@@ -16840,7 +16044,6 @@ _G.pg.base.aircraft_template[28429] = {
 		59949
 	}
 }
-
 _G.pg.base.aircraft_template[28430] = {
 	max_hp = 103,
 	hp_growth = 3952,
@@ -16853,7 +16056,6 @@ _G.pg.base.aircraft_template[28430] = {
 		59950
 	}
 }
-
 _G.pg.base.aircraft_template[28431] = {
 	max_hp = 109,
 	hp_growth = 4189,
@@ -16866,7 +16068,6 @@ _G.pg.base.aircraft_template[28431] = {
 		59951
 	}
 }
-
 _G.pg.base.aircraft_template[28432] = {
 	max_hp = 115,
 	hp_growth = 4426,
@@ -16879,7 +16080,6 @@ _G.pg.base.aircraft_template[28432] = {
 		59952
 	}
 }
-
 _G.pg.base.aircraft_template[28433] = {
 	max_hp = 121,
 	hp_growth = 4663,
@@ -16892,7 +16092,6 @@ _G.pg.base.aircraft_template[28433] = {
 		59953
 	}
 }
-
 _G.pg.base.aircraft_template[29000] = {
 	attack_power = 2,
 	name = "贼鸥",
@@ -16969,7 +16168,6 @@ _G.pg.base.aircraft_template[29000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29001] = {
 	max_hp = 34,
 	hp_growth = 1295,
@@ -16981,7 +16179,6 @@ _G.pg.base.aircraft_template[29001] = {
 		52201
 	}
 }
-
 _G.pg.base.aircraft_template[29002] = {
 	max_hp = 38,
 	hp_growth = 1464,
@@ -16993,7 +16190,6 @@ _G.pg.base.aircraft_template[29002] = {
 		52202
 	}
 }
-
 _G.pg.base.aircraft_template[29003] = {
 	max_hp = 42,
 	hp_growth = 1633,
@@ -17005,7 +16201,6 @@ _G.pg.base.aircraft_template[29003] = {
 		52203
 	}
 }
-
 _G.pg.base.aircraft_template[29020] = {
 	attack_power = 2,
 	name = "贼鸥",
@@ -17082,7 +16277,6 @@ _G.pg.base.aircraft_template[29020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29021] = {
 	max_hp = 38,
 	hp_growth = 1457,
@@ -17094,7 +16288,6 @@ _G.pg.base.aircraft_template[29021] = {
 		52221
 	}
 }
-
 _G.pg.base.aircraft_template[29022] = {
 	max_hp = 43,
 	hp_growth = 1647,
@@ -17106,7 +16299,6 @@ _G.pg.base.aircraft_template[29022] = {
 		52222
 	}
 }
-
 _G.pg.base.aircraft_template[29023] = {
 	max_hp = 48,
 	hp_growth = 1837,
@@ -17118,7 +16310,6 @@ _G.pg.base.aircraft_template[29023] = {
 		52223
 	}
 }
-
 _G.pg.base.aircraft_template[29040] = {
 	attack_power = 2,
 	name = "贼鸥",
@@ -17195,7 +16386,6 @@ _G.pg.base.aircraft_template[29040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29041] = {
 	max_hp = 42,
 	hp_growth = 1619,
@@ -17207,7 +16397,6 @@ _G.pg.base.aircraft_template[29041] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[29042] = {
 	max_hp = 48,
 	hp_growth = 1830,
@@ -17219,7 +16408,6 @@ _G.pg.base.aircraft_template[29042] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[29043] = {
 	max_hp = 53,
 	hp_growth = 2042,
@@ -17231,7 +16419,6 @@ _G.pg.base.aircraft_template[29043] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[29044] = {
 	max_hp = 59,
 	hp_growth = 2253,
@@ -17243,7 +16430,6 @@ _G.pg.base.aircraft_template[29044] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[29045] = {
 	max_hp = 64,
 	hp_growth = 2464,
@@ -17255,7 +16441,6 @@ _G.pg.base.aircraft_template[29045] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[29046] = {
 	max_hp = 70,
 	hp_growth = 2675,
@@ -17267,7 +16452,6 @@ _G.pg.base.aircraft_template[29046] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[29047] = {
 	max_hp = 75,
 	hp_growth = 2886,
@@ -17279,7 +16463,6 @@ _G.pg.base.aircraft_template[29047] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[29100] = {
 	attack_power = 2,
 	name = "海燕",
@@ -17356,7 +16539,6 @@ _G.pg.base.aircraft_template[29100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29101] = {
 	max_hp = 38,
 	hp_growth = 1457,
@@ -17368,7 +16550,6 @@ _G.pg.base.aircraft_template[29101] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[29102] = {
 	max_hp = 43,
 	hp_growth = 1647,
@@ -17380,7 +16561,6 @@ _G.pg.base.aircraft_template[29102] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[29103] = {
 	max_hp = 48,
 	hp_growth = 1837,
@@ -17392,7 +16572,6 @@ _G.pg.base.aircraft_template[29103] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[29120] = {
 	attack_power = 2,
 	name = "海燕",
@@ -17469,7 +16648,6 @@ _G.pg.base.aircraft_template[29120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29121] = {
 	max_hp = 42,
 	hp_growth = 1619,
@@ -17481,7 +16659,6 @@ _G.pg.base.aircraft_template[29121] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[29122] = {
 	max_hp = 48,
 	hp_growth = 1830,
@@ -17493,7 +16670,6 @@ _G.pg.base.aircraft_template[29122] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[29123] = {
 	max_hp = 53,
 	hp_growth = 2042,
@@ -17505,7 +16681,6 @@ _G.pg.base.aircraft_template[29123] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[29124] = {
 	max_hp = 59,
 	hp_growth = 2253,
@@ -17517,7 +16692,6 @@ _G.pg.base.aircraft_template[29124] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[29125] = {
 	max_hp = 64,
 	hp_growth = 2464,
@@ -17529,7 +16703,6 @@ _G.pg.base.aircraft_template[29125] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[29126] = {
 	max_hp = 70,
 	hp_growth = 2675,
@@ -17541,7 +16714,6 @@ _G.pg.base.aircraft_template[29126] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[29140] = {
 	attack_power = 2,
 	name = "海燕",
@@ -17618,7 +16790,6 @@ _G.pg.base.aircraft_template[29140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29141] = {
 	max_hp = 46,
 	hp_growth = 1781,
@@ -17630,7 +16801,6 @@ _G.pg.base.aircraft_template[29141] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[29142] = {
 	max_hp = 52,
 	hp_growth = 2013,
@@ -17642,7 +16812,6 @@ _G.pg.base.aircraft_template[29142] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[29143] = {
 	max_hp = 58,
 	hp_growth = 2246,
@@ -17654,7 +16823,6 @@ _G.pg.base.aircraft_template[29143] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[29144] = {
 	max_hp = 64,
 	hp_growth = 2478,
@@ -17666,7 +16834,6 @@ _G.pg.base.aircraft_template[29144] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[29145] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -17678,7 +16845,6 @@ _G.pg.base.aircraft_template[29145] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[29146] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -17690,7 +16856,6 @@ _G.pg.base.aircraft_template[29146] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[29147] = {
 	max_hp = 83,
 	hp_growth = 3175,
@@ -17702,7 +16867,6 @@ _G.pg.base.aircraft_template[29147] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[29148] = {
 	max_hp = 89,
 	hp_growth = 3407,
@@ -17714,7 +16878,6 @@ _G.pg.base.aircraft_template[29148] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[29149] = {
 	max_hp = 95,
 	hp_growth = 3640,
@@ -17726,7 +16889,6 @@ _G.pg.base.aircraft_template[29149] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[29150] = {
 	max_hp = 101,
 	hp_growth = 3872,
@@ -17738,7 +16900,6 @@ _G.pg.base.aircraft_template[29150] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[29151] = {
 	max_hp = 107,
 	hp_growth = 4104,
@@ -17750,7 +16911,6 @@ _G.pg.base.aircraft_template[29151] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[29200] = {
 	attack_power = 2,
 	name = "萤火虫",
@@ -17827,7 +16987,6 @@ _G.pg.base.aircraft_template[29200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29201] = {
 	max_hp = 51,
 	hp_growth = 1943,
@@ -17839,7 +16998,6 @@ _G.pg.base.aircraft_template[29201] = {
 		52741
 	}
 }
-
 _G.pg.base.aircraft_template[29202] = {
 	max_hp = 57,
 	hp_growth = 2196,
@@ -17851,7 +17009,6 @@ _G.pg.base.aircraft_template[29202] = {
 		52742
 	}
 }
-
 _G.pg.base.aircraft_template[29203] = {
 	max_hp = 64,
 	hp_growth = 2450,
@@ -17863,7 +17020,6 @@ _G.pg.base.aircraft_template[29203] = {
 		52743
 	}
 }
-
 _G.pg.base.aircraft_template[29204] = {
 	max_hp = 70,
 	hp_growth = 2703,
@@ -17875,7 +17031,6 @@ _G.pg.base.aircraft_template[29204] = {
 		52744
 	}
 }
-
 _G.pg.base.aircraft_template[29205] = {
 	max_hp = 77,
 	hp_growth = 2957,
@@ -17887,7 +17042,6 @@ _G.pg.base.aircraft_template[29205] = {
 		52745
 	}
 }
-
 _G.pg.base.aircraft_template[29206] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -17899,7 +17053,6 @@ _G.pg.base.aircraft_template[29206] = {
 		52746
 	}
 }
-
 _G.pg.base.aircraft_template[29207] = {
 	max_hp = 90,
 	hp_growth = 3464,
@@ -17911,7 +17064,6 @@ _G.pg.base.aircraft_template[29207] = {
 		52747
 	}
 }
-
 _G.pg.base.aircraft_template[29208] = {
 	max_hp = 97,
 	hp_growth = 3717,
@@ -17923,7 +17075,6 @@ _G.pg.base.aircraft_template[29208] = {
 		52748
 	}
 }
-
 _G.pg.base.aircraft_template[29209] = {
 	max_hp = 103,
 	hp_growth = 3971,
@@ -17935,7 +17086,6 @@ _G.pg.base.aircraft_template[29209] = {
 		52749
 	}
 }
-
 _G.pg.base.aircraft_template[29210] = {
 	max_hp = 110,
 	hp_growth = 4224,
@@ -17947,7 +17097,6 @@ _G.pg.base.aircraft_template[29210] = {
 		52750
 	}
 }
-
 _G.pg.base.aircraft_template[29211] = {
 	max_hp = 116,
 	hp_growth = 4477,
@@ -17959,7 +17108,6 @@ _G.pg.base.aircraft_template[29211] = {
 		52751
 	}
 }
-
 _G.pg.base.aircraft_template[29212] = {
 	max_hp = 123,
 	hp_growth = 4731,
@@ -17971,7 +17119,6 @@ _G.pg.base.aircraft_template[29212] = {
 		52752
 	}
 }
-
 _G.pg.base.aircraft_template[29213] = {
 	max_hp = 130,
 	hp_growth = 4984,
@@ -17983,7 +17130,6 @@ _G.pg.base.aircraft_template[29213] = {
 		52753
 	}
 }
-
 _G.pg.base.aircraft_template[29220] = {
 	attack_power = 2,
 	name = "萤火虫(1771中队)",
@@ -18060,7 +17206,6 @@ _G.pg.base.aircraft_template[29220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29221] = {
 	max_hp = 52,
 	hp_growth = 1982,
@@ -18072,7 +17217,6 @@ _G.pg.base.aircraft_template[29221] = {
 		52781
 	}
 }
-
 _G.pg.base.aircraft_template[29222] = {
 	max_hp = 58,
 	hp_growth = 2240,
@@ -18084,7 +17228,6 @@ _G.pg.base.aircraft_template[29222] = {
 		52782
 	}
 }
-
 _G.pg.base.aircraft_template[29223] = {
 	max_hp = 65,
 	hp_growth = 2499,
@@ -18096,7 +17239,6 @@ _G.pg.base.aircraft_template[29223] = {
 		52783
 	}
 }
-
 _G.pg.base.aircraft_template[29224] = {
 	max_hp = 72,
 	hp_growth = 2757,
@@ -18108,7 +17250,6 @@ _G.pg.base.aircraft_template[29224] = {
 		52784
 	}
 }
-
 _G.pg.base.aircraft_template[29225] = {
 	max_hp = 78,
 	hp_growth = 3016,
@@ -18120,7 +17261,6 @@ _G.pg.base.aircraft_template[29225] = {
 		52785
 	}
 }
-
 _G.pg.base.aircraft_template[29226] = {
 	max_hp = 85,
 	hp_growth = 3274,
@@ -18132,7 +17272,6 @@ _G.pg.base.aircraft_template[29226] = {
 		52786
 	}
 }
-
 _G.pg.base.aircraft_template[29227] = {
 	max_hp = 92,
 	hp_growth = 3533,
@@ -18144,7 +17283,6 @@ _G.pg.base.aircraft_template[29227] = {
 		52787
 	}
 }
-
 _G.pg.base.aircraft_template[29228] = {
 	max_hp = 99,
 	hp_growth = 3791,
@@ -18156,7 +17294,6 @@ _G.pg.base.aircraft_template[29228] = {
 		52788
 	}
 }
-
 _G.pg.base.aircraft_template[29229] = {
 	max_hp = 105,
 	hp_growth = 4050,
@@ -18168,7 +17305,6 @@ _G.pg.base.aircraft_template[29229] = {
 		52789
 	}
 }
-
 _G.pg.base.aircraft_template[29230] = {
 	max_hp = 112,
 	hp_growth = 4308,
@@ -18180,7 +17316,6 @@ _G.pg.base.aircraft_template[29230] = {
 		52790
 	}
 }
-
 _G.pg.base.aircraft_template[29231] = {
 	max_hp = 119,
 	hp_growth = 4567,
@@ -18192,7 +17327,6 @@ _G.pg.base.aircraft_template[29231] = {
 		52791
 	}
 }
-
 _G.pg.base.aircraft_template[29232] = {
 	max_hp = 125,
 	hp_growth = 4825,
@@ -18204,7 +17338,6 @@ _G.pg.base.aircraft_template[29232] = {
 		52792
 	}
 }
-
 _G.pg.base.aircraft_template[29233] = {
 	max_hp = 132,
 	hp_growth = 5084,
@@ -18216,7 +17349,6 @@ _G.pg.base.aircraft_template[29233] = {
 		52793
 	}
 }
-
 _G.pg.base.aircraft_template[29300] = {
 	attack_power = 2,
 	name = "梭鱼(831中队)",
@@ -18293,7 +17425,6 @@ _G.pg.base.aircraft_template[29300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29301] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -18305,7 +17436,6 @@ _G.pg.base.aircraft_template[29301] = {
 		53301
 	}
 }
-
 _G.pg.base.aircraft_template[29302] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -18317,7 +17447,6 @@ _G.pg.base.aircraft_template[29302] = {
 		53302
 	}
 }
-
 _G.pg.base.aircraft_template[29303] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -18329,7 +17458,6 @@ _G.pg.base.aircraft_template[29303] = {
 		53303
 	}
 }
-
 _G.pg.base.aircraft_template[29304] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -18341,7 +17469,6 @@ _G.pg.base.aircraft_template[29304] = {
 		53304
 	}
 }
-
 _G.pg.base.aircraft_template[29305] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -18353,7 +17480,6 @@ _G.pg.base.aircraft_template[29305] = {
 		53305
 	}
 }
-
 _G.pg.base.aircraft_template[29306] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -18365,7 +17491,6 @@ _G.pg.base.aircraft_template[29306] = {
 		53306
 	}
 }
-
 _G.pg.base.aircraft_template[29307] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -18377,7 +17502,6 @@ _G.pg.base.aircraft_template[29307] = {
 		53307
 	}
 }
-
 _G.pg.base.aircraft_template[29308] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -18389,7 +17513,6 @@ _G.pg.base.aircraft_template[29308] = {
 		53308
 	}
 }
-
 _G.pg.base.aircraft_template[29309] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -18401,7 +17524,6 @@ _G.pg.base.aircraft_template[29309] = {
 		53309
 	}
 }
-
 _G.pg.base.aircraft_template[29310] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -18413,7 +17535,6 @@ _G.pg.base.aircraft_template[29310] = {
 		53310
 	}
 }
-
 _G.pg.base.aircraft_template[29311] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -18425,7 +17546,6 @@ _G.pg.base.aircraft_template[29311] = {
 		53311
 	}
 }
-
 _G.pg.base.aircraft_template[29312] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -18437,7 +17557,6 @@ _G.pg.base.aircraft_template[29312] = {
 		53312
 	}
 }
-
 _G.pg.base.aircraft_template[29313] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -18449,7 +17568,6 @@ _G.pg.base.aircraft_template[29313] = {
 		53313
 	}
 }
-
 _G.pg.base.aircraft_template[29320] = {
 	attack_power = 2,
 	name = "梭鱼(831中队)",
@@ -18526,7 +17644,6 @@ _G.pg.base.aircraft_template[29320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[29321] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -18538,7 +17655,6 @@ _G.pg.base.aircraft_template[29321] = {
 		53281
 	}
 }
-
 _G.pg.base.aircraft_template[29322] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -18550,7 +17666,6 @@ _G.pg.base.aircraft_template[29322] = {
 		53282
 	}
 }
-
 _G.pg.base.aircraft_template[29323] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -18562,7 +17677,6 @@ _G.pg.base.aircraft_template[29323] = {
 		53283
 	}
 }
-
 _G.pg.base.aircraft_template[29324] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -18574,7 +17688,6 @@ _G.pg.base.aircraft_template[29324] = {
 		53284
 	}
 }
-
 _G.pg.base.aircraft_template[29325] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -18586,7 +17699,6 @@ _G.pg.base.aircraft_template[29325] = {
 		53285
 	}
 }
-
 _G.pg.base.aircraft_template[29326] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -18598,7 +17710,6 @@ _G.pg.base.aircraft_template[29326] = {
 		53286
 	}
 }
-
 _G.pg.base.aircraft_template[29327] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -18610,7 +17721,6 @@ _G.pg.base.aircraft_template[29327] = {
 		53287
 	}
 }
-
 _G.pg.base.aircraft_template[29328] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -18622,7 +17732,6 @@ _G.pg.base.aircraft_template[29328] = {
 		53288
 	}
 }
-
 _G.pg.base.aircraft_template[29329] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -18634,7 +17743,6 @@ _G.pg.base.aircraft_template[29329] = {
 		53289
 	}
 }
-
 _G.pg.base.aircraft_template[29330] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -18646,7 +17754,6 @@ _G.pg.base.aircraft_template[29330] = {
 		53290
 	}
 }
-
 _G.pg.base.aircraft_template[29331] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -18658,7 +17765,6 @@ _G.pg.base.aircraft_template[29331] = {
 		53291
 	}
 }
-
 _G.pg.base.aircraft_template[29332] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -18670,7 +17776,6 @@ _G.pg.base.aircraft_template[29332] = {
 		53292
 	}
 }
-
 _G.pg.base.aircraft_template[29333] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -18682,7 +17787,6 @@ _G.pg.base.aircraft_template[29333] = {
 		53293
 	}
 }
-
 _G.pg.base.aircraft_template[37000] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -18758,7 +17862,6 @@ _G.pg.base.aircraft_template[37000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37001] = {
 	max_hp = 31,
 	hp_growth = 1175,
@@ -18769,7 +17872,6 @@ _G.pg.base.aircraft_template[37001] = {
 		50001
 	}
 }
-
 _G.pg.base.aircraft_template[37002] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -18780,7 +17882,6 @@ _G.pg.base.aircraft_template[37002] = {
 		50002
 	}
 }
-
 _G.pg.base.aircraft_template[37003] = {
 	max_hp = 39,
 	hp_growth = 1481,
@@ -18791,7 +17892,6 @@ _G.pg.base.aircraft_template[37003] = {
 		50003
 	}
 }
-
 _G.pg.base.aircraft_template[37020] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -18867,7 +17967,6 @@ _G.pg.base.aircraft_template[37020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37021] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -18878,7 +17977,6 @@ _G.pg.base.aircraft_template[37021] = {
 		50021
 	}
 }
-
 _G.pg.base.aircraft_template[37022] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -18889,7 +17987,6 @@ _G.pg.base.aircraft_template[37022] = {
 		50022
 	}
 }
-
 _G.pg.base.aircraft_template[37023] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -18900,7 +17997,6 @@ _G.pg.base.aircraft_template[37023] = {
 		50023
 	}
 }
-
 _G.pg.base.aircraft_template[37040] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -18976,7 +18072,6 @@ _G.pg.base.aircraft_template[37040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37041] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -18987,7 +18082,6 @@ _G.pg.base.aircraft_template[37041] = {
 		50041
 	}
 }
-
 _G.pg.base.aircraft_template[37042] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -18998,7 +18092,6 @@ _G.pg.base.aircraft_template[37042] = {
 		50042
 	}
 }
-
 _G.pg.base.aircraft_template[37043] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -19009,7 +18102,6 @@ _G.pg.base.aircraft_template[37043] = {
 		50043
 	}
 }
-
 _G.pg.base.aircraft_template[37044] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -19020,7 +18112,6 @@ _G.pg.base.aircraft_template[37044] = {
 		50044
 	}
 }
-
 _G.pg.base.aircraft_template[37045] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -19031,7 +18122,6 @@ _G.pg.base.aircraft_template[37045] = {
 		50045
 	}
 }
-
 _G.pg.base.aircraft_template[37046] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -19042,7 +18132,6 @@ _G.pg.base.aircraft_template[37046] = {
 		50046
 	}
 }
-
 _G.pg.base.aircraft_template[37047] = {
 	max_hp = 68,
 	hp_growth = 2617,
@@ -19053,7 +18142,6 @@ _G.pg.base.aircraft_template[37047] = {
 		50047
 	}
 }
-
 _G.pg.base.aircraft_template[37100] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -19131,7 +18219,6 @@ _G.pg.base.aircraft_template[37100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37101] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -19144,7 +18231,6 @@ _G.pg.base.aircraft_template[37101] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[37102] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -19157,7 +18243,6 @@ _G.pg.base.aircraft_template[37102] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[37103] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -19170,7 +18255,6 @@ _G.pg.base.aircraft_template[37103] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[37120] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -19248,7 +18332,6 @@ _G.pg.base.aircraft_template[37120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37121] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -19261,7 +18344,6 @@ _G.pg.base.aircraft_template[37121] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[37122] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -19274,7 +18356,6 @@ _G.pg.base.aircraft_template[37122] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[37123] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -19287,7 +18368,6 @@ _G.pg.base.aircraft_template[37123] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[37124] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -19300,7 +18380,6 @@ _G.pg.base.aircraft_template[37124] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[37125] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -19313,7 +18392,6 @@ _G.pg.base.aircraft_template[37125] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[37126] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -19326,7 +18404,6 @@ _G.pg.base.aircraft_template[37126] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[37140] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -19404,7 +18481,6 @@ _G.pg.base.aircraft_template[37140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37141] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -19417,7 +18493,6 @@ _G.pg.base.aircraft_template[37141] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[37142] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -19430,7 +18505,6 @@ _G.pg.base.aircraft_template[37142] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[37143] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -19443,7 +18517,6 @@ _G.pg.base.aircraft_template[37143] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[37144] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -19456,7 +18529,6 @@ _G.pg.base.aircraft_template[37144] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[37145] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -19469,7 +18541,6 @@ _G.pg.base.aircraft_template[37145] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[37146] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -19482,7 +18553,6 @@ _G.pg.base.aircraft_template[37146] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[37147] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -19495,7 +18565,6 @@ _G.pg.base.aircraft_template[37147] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[37148] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -19508,7 +18577,6 @@ _G.pg.base.aircraft_template[37148] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[37149] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -19521,7 +18589,6 @@ _G.pg.base.aircraft_template[37149] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[37150] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -19534,7 +18601,6 @@ _G.pg.base.aircraft_template[37150] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[37151] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -19547,7 +18613,6 @@ _G.pg.base.aircraft_template[37151] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[37160] = {
 	attack_power = 2,
 	name = "零战三二型",
@@ -19625,7 +18690,6 @@ _G.pg.base.aircraft_template[37160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37161] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -19638,7 +18702,6 @@ _G.pg.base.aircraft_template[37161] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[37162] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -19651,7 +18714,6 @@ _G.pg.base.aircraft_template[37162] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[37163] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -19664,7 +18726,6 @@ _G.pg.base.aircraft_template[37163] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[37164] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -19677,7 +18738,6 @@ _G.pg.base.aircraft_template[37164] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[37165] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -19690,7 +18750,6 @@ _G.pg.base.aircraft_template[37165] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[37166] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -19703,7 +18762,6 @@ _G.pg.base.aircraft_template[37166] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[37167] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -19716,7 +18774,6 @@ _G.pg.base.aircraft_template[37167] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[37168] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -19729,7 +18786,6 @@ _G.pg.base.aircraft_template[37168] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[37169] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -19742,7 +18798,6 @@ _G.pg.base.aircraft_template[37169] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[37170] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -19755,7 +18810,6 @@ _G.pg.base.aircraft_template[37170] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[37171] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -19768,7 +18822,6 @@ _G.pg.base.aircraft_template[37171] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[37200] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -19846,7 +18899,6 @@ _G.pg.base.aircraft_template[37200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37201] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -19859,7 +18911,6 @@ _G.pg.base.aircraft_template[37201] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[37202] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -19872,7 +18923,6 @@ _G.pg.base.aircraft_template[37202] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[37203] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -19885,7 +18935,6 @@ _G.pg.base.aircraft_template[37203] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[37204] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -19898,7 +18947,6 @@ _G.pg.base.aircraft_template[37204] = {
 		52104
 	}
 }
-
 _G.pg.base.aircraft_template[37205] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -19911,7 +18959,6 @@ _G.pg.base.aircraft_template[37205] = {
 		52105
 	}
 }
-
 _G.pg.base.aircraft_template[37206] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -19924,7 +18971,6 @@ _G.pg.base.aircraft_template[37206] = {
 		52106
 	}
 }
-
 _G.pg.base.aircraft_template[37220] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -20002,7 +19048,6 @@ _G.pg.base.aircraft_template[37220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37221] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -20015,7 +19060,6 @@ _G.pg.base.aircraft_template[37221] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[37222] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -20028,7 +19072,6 @@ _G.pg.base.aircraft_template[37222] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[37223] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -20041,7 +19084,6 @@ _G.pg.base.aircraft_template[37223] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[37224] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -20054,7 +19096,6 @@ _G.pg.base.aircraft_template[37224] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[37225] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -20067,7 +19108,6 @@ _G.pg.base.aircraft_template[37225] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[37226] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -20080,7 +19120,6 @@ _G.pg.base.aircraft_template[37226] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[37227] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -20093,7 +19132,6 @@ _G.pg.base.aircraft_template[37227] = {
 		52127
 	}
 }
-
 _G.pg.base.aircraft_template[37228] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -20106,7 +19144,6 @@ _G.pg.base.aircraft_template[37228] = {
 		52128
 	}
 }
-
 _G.pg.base.aircraft_template[37229] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -20119,7 +19156,6 @@ _G.pg.base.aircraft_template[37229] = {
 		52129
 	}
 }
-
 _G.pg.base.aircraft_template[37230] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -20132,7 +19168,6 @@ _G.pg.base.aircraft_template[37230] = {
 		52130
 	}
 }
-
 _G.pg.base.aircraft_template[37240] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -20210,7 +19245,6 @@ _G.pg.base.aircraft_template[37240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37241] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -20223,7 +19257,6 @@ _G.pg.base.aircraft_template[37241] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[37242] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -20236,7 +19269,6 @@ _G.pg.base.aircraft_template[37242] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[37243] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -20249,7 +19281,6 @@ _G.pg.base.aircraft_template[37243] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[37244] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -20262,7 +19293,6 @@ _G.pg.base.aircraft_template[37244] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[37245] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -20275,7 +19305,6 @@ _G.pg.base.aircraft_template[37245] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[37246] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -20288,7 +19317,6 @@ _G.pg.base.aircraft_template[37246] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[37247] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -20301,7 +19329,6 @@ _G.pg.base.aircraft_template[37247] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[37248] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -20314,7 +19341,6 @@ _G.pg.base.aircraft_template[37248] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[37249] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -20327,7 +19353,6 @@ _G.pg.base.aircraft_template[37249] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[37250] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -20340,7 +19365,6 @@ _G.pg.base.aircraft_template[37250] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[37251] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -20353,7 +19377,6 @@ _G.pg.base.aircraft_template[37251] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[37252] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -20366,7 +19389,6 @@ _G.pg.base.aircraft_template[37252] = {
 		52152
 	}
 }
-
 _G.pg.base.aircraft_template[37253] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -20379,7 +19401,6 @@ _G.pg.base.aircraft_template[37253] = {
 		52153
 	}
 }
-
 _G.pg.base.aircraft_template[37300] = {
 	attack_power = 2,
 	name = "烈风",
@@ -20456,7 +19477,6 @@ _G.pg.base.aircraft_template[37300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37301] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -20468,7 +19488,6 @@ _G.pg.base.aircraft_template[37301] = {
 		52301
 	}
 }
-
 _G.pg.base.aircraft_template[37302] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -20480,7 +19499,6 @@ _G.pg.base.aircraft_template[37302] = {
 		52302
 	}
 }
-
 _G.pg.base.aircraft_template[37303] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -20492,7 +19510,6 @@ _G.pg.base.aircraft_template[37303] = {
 		52303
 	}
 }
-
 _G.pg.base.aircraft_template[37304] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -20504,7 +19521,6 @@ _G.pg.base.aircraft_template[37304] = {
 		52304
 	}
 }
-
 _G.pg.base.aircraft_template[37305] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -20516,7 +19532,6 @@ _G.pg.base.aircraft_template[37305] = {
 		52305
 	}
 }
-
 _G.pg.base.aircraft_template[37306] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -20528,7 +19543,6 @@ _G.pg.base.aircraft_template[37306] = {
 		52306
 	}
 }
-
 _G.pg.base.aircraft_template[37320] = {
 	attack_power = 2,
 	name = "烈风",
@@ -20605,7 +19619,6 @@ _G.pg.base.aircraft_template[37320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37321] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -20617,7 +19630,6 @@ _G.pg.base.aircraft_template[37321] = {
 		52321
 	}
 }
-
 _G.pg.base.aircraft_template[37322] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -20629,7 +19641,6 @@ _G.pg.base.aircraft_template[37322] = {
 		52322
 	}
 }
-
 _G.pg.base.aircraft_template[37323] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -20641,7 +19652,6 @@ _G.pg.base.aircraft_template[37323] = {
 		52323
 	}
 }
-
 _G.pg.base.aircraft_template[37324] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -20653,7 +19663,6 @@ _G.pg.base.aircraft_template[37324] = {
 		52324
 	}
 }
-
 _G.pg.base.aircraft_template[37325] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -20665,7 +19674,6 @@ _G.pg.base.aircraft_template[37325] = {
 		52325
 	}
 }
-
 _G.pg.base.aircraft_template[37326] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -20677,7 +19685,6 @@ _G.pg.base.aircraft_template[37326] = {
 		52326
 	}
 }
-
 _G.pg.base.aircraft_template[37327] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -20689,7 +19696,6 @@ _G.pg.base.aircraft_template[37327] = {
 		52327
 	}
 }
-
 _G.pg.base.aircraft_template[37328] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -20701,7 +19707,6 @@ _G.pg.base.aircraft_template[37328] = {
 		52328
 	}
 }
-
 _G.pg.base.aircraft_template[37329] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -20713,7 +19718,6 @@ _G.pg.base.aircraft_template[37329] = {
 		52329
 	}
 }
-
 _G.pg.base.aircraft_template[37330] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -20725,7 +19729,6 @@ _G.pg.base.aircraft_template[37330] = {
 		52330
 	}
 }
-
 _G.pg.base.aircraft_template[37340] = {
 	attack_power = 2,
 	name = "烈风",
@@ -20802,7 +19805,6 @@ _G.pg.base.aircraft_template[37340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37341] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -20814,7 +19816,6 @@ _G.pg.base.aircraft_template[37341] = {
 		52341
 	}
 }
-
 _G.pg.base.aircraft_template[37342] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -20826,7 +19827,6 @@ _G.pg.base.aircraft_template[37342] = {
 		52342
 	}
 }
-
 _G.pg.base.aircraft_template[37343] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -20838,7 +19838,6 @@ _G.pg.base.aircraft_template[37343] = {
 		52343
 	}
 }
-
 _G.pg.base.aircraft_template[37344] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -20850,7 +19849,6 @@ _G.pg.base.aircraft_template[37344] = {
 		52344
 	}
 }
-
 _G.pg.base.aircraft_template[37345] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -20862,7 +19860,6 @@ _G.pg.base.aircraft_template[37345] = {
 		52345
 	}
 }
-
 _G.pg.base.aircraft_template[37346] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -20874,7 +19871,6 @@ _G.pg.base.aircraft_template[37346] = {
 		52346
 	}
 }
-
 _G.pg.base.aircraft_template[37347] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -20886,7 +19882,6 @@ _G.pg.base.aircraft_template[37347] = {
 		52347
 	}
 }
-
 _G.pg.base.aircraft_template[37348] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -20898,7 +19893,6 @@ _G.pg.base.aircraft_template[37348] = {
 		52348
 	}
 }
-
 _G.pg.base.aircraft_template[37349] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -20910,7 +19904,6 @@ _G.pg.base.aircraft_template[37349] = {
 		52349
 	}
 }
-
 _G.pg.base.aircraft_template[37350] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -20922,7 +19915,6 @@ _G.pg.base.aircraft_template[37350] = {
 		52350
 	}
 }
-
 _G.pg.base.aircraft_template[37351] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -20934,7 +19926,6 @@ _G.pg.base.aircraft_template[37351] = {
 		52351
 	}
 }
-
 _G.pg.base.aircraft_template[37352] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -20946,7 +19937,6 @@ _G.pg.base.aircraft_template[37352] = {
 		52352
 	}
 }
-
 _G.pg.base.aircraft_template[37353] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -20958,7 +19948,6 @@ _G.pg.base.aircraft_template[37353] = {
 		52353
 	}
 }
-
 _G.pg.base.aircraft_template[37400] = {
 	attack_power = 2,
 	name = "紫电改二",
@@ -21036,7 +20025,6 @@ _G.pg.base.aircraft_template[37400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37401] = {
 	max_hp = 41,
 	hp_growth = 1586,
@@ -21049,7 +20037,6 @@ _G.pg.base.aircraft_template[37401] = {
 		50861
 	}
 }
-
 _G.pg.base.aircraft_template[37402] = {
 	max_hp = 47,
 	hp_growth = 1793,
@@ -21062,7 +20049,6 @@ _G.pg.base.aircraft_template[37402] = {
 		50862
 	}
 }
-
 _G.pg.base.aircraft_template[37403] = {
 	max_hp = 52,
 	hp_growth = 1999,
@@ -21075,7 +20061,6 @@ _G.pg.base.aircraft_template[37403] = {
 		50863
 	}
 }
-
 _G.pg.base.aircraft_template[37404] = {
 	max_hp = 57,
 	hp_growth = 2206,
@@ -21088,7 +20073,6 @@ _G.pg.base.aircraft_template[37404] = {
 		50864
 	}
 }
-
 _G.pg.base.aircraft_template[37405] = {
 	max_hp = 63,
 	hp_growth = 2413,
@@ -21101,7 +20085,6 @@ _G.pg.base.aircraft_template[37405] = {
 		50865
 	}
 }
-
 _G.pg.base.aircraft_template[37406] = {
 	max_hp = 68,
 	hp_growth = 2620,
@@ -21114,7 +20097,6 @@ _G.pg.base.aircraft_template[37406] = {
 		50866
 	}
 }
-
 _G.pg.base.aircraft_template[37407] = {
 	max_hp = 73,
 	hp_growth = 2827,
@@ -21127,7 +20109,6 @@ _G.pg.base.aircraft_template[37407] = {
 		50867
 	}
 }
-
 _G.pg.base.aircraft_template[37408] = {
 	max_hp = 79,
 	hp_growth = 3034,
@@ -21140,7 +20121,6 @@ _G.pg.base.aircraft_template[37408] = {
 		50868
 	}
 }
-
 _G.pg.base.aircraft_template[37409] = {
 	max_hp = 84,
 	hp_growth = 3241,
@@ -21153,7 +20133,6 @@ _G.pg.base.aircraft_template[37409] = {
 		50869
 	}
 }
-
 _G.pg.base.aircraft_template[37410] = {
 	max_hp = 90,
 	hp_growth = 3447,
@@ -21166,7 +20145,6 @@ _G.pg.base.aircraft_template[37410] = {
 		50870
 	}
 }
-
 _G.pg.base.aircraft_template[37411] = {
 	max_hp = 95,
 	hp_growth = 3654,
@@ -21179,7 +20157,6 @@ _G.pg.base.aircraft_template[37411] = {
 		50871
 	}
 }
-
 _G.pg.base.aircraft_template[37412] = {
 	max_hp = 100,
 	hp_growth = 3861,
@@ -21192,7 +20169,6 @@ _G.pg.base.aircraft_template[37412] = {
 		50872
 	}
 }
-
 _G.pg.base.aircraft_template[37413] = {
 	max_hp = 106,
 	hp_growth = 4068,
@@ -21205,7 +20181,6 @@ _G.pg.base.aircraft_template[37413] = {
 		50873
 	}
 }
-
 _G.pg.base.aircraft_template[37420] = {
 	attack_power = 2,
 	name = "二式水上战斗机",
@@ -21283,7 +20258,6 @@ _G.pg.base.aircraft_template[37420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37421] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -21296,7 +20270,6 @@ _G.pg.base.aircraft_template[37421] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[37422] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -21309,7 +20282,6 @@ _G.pg.base.aircraft_template[37422] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[37423] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -21322,7 +20294,6 @@ _G.pg.base.aircraft_template[37423] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[37424] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -21335,7 +20306,6 @@ _G.pg.base.aircraft_template[37424] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[37425] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -21348,7 +20318,6 @@ _G.pg.base.aircraft_template[37425] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[37426] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -21361,7 +20330,6 @@ _G.pg.base.aircraft_template[37426] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[37427] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -21374,7 +20342,6 @@ _G.pg.base.aircraft_template[37427] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[37428] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -21387,7 +20354,6 @@ _G.pg.base.aircraft_template[37428] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[37429] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -21400,7 +20366,6 @@ _G.pg.base.aircraft_template[37429] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[37430] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -21413,7 +20378,6 @@ _G.pg.base.aircraft_template[37430] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[37431] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -21426,7 +20390,6 @@ _G.pg.base.aircraft_template[37431] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[37440] = {
 	attack_power = 2,
 	name = "强风",
@@ -21504,7 +20467,6 @@ _G.pg.base.aircraft_template[37440] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37441] = {
 	max_hp = 43,
 	hp_growth = 1647,
@@ -21517,7 +20479,6 @@ _G.pg.base.aircraft_template[37441] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[37442] = {
 	max_hp = 48,
 	hp_growth = 1862,
@@ -21530,7 +20491,6 @@ _G.pg.base.aircraft_template[37442] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[37443] = {
 	max_hp = 54,
 	hp_growth = 2077,
@@ -21543,7 +20503,6 @@ _G.pg.base.aircraft_template[37443] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[37444] = {
 	max_hp = 60,
 	hp_growth = 2292,
@@ -21556,7 +20515,6 @@ _G.pg.base.aircraft_template[37444] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[37445] = {
 	max_hp = 65,
 	hp_growth = 2507,
@@ -21569,7 +20527,6 @@ _G.pg.base.aircraft_template[37445] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[37446] = {
 	max_hp = 71,
 	hp_growth = 2722,
@@ -21582,7 +20539,6 @@ _G.pg.base.aircraft_template[37446] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[37447] = {
 	max_hp = 76,
 	hp_growth = 2937,
@@ -21595,7 +20551,6 @@ _G.pg.base.aircraft_template[37447] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[37448] = {
 	max_hp = 82,
 	hp_growth = 3152,
@@ -21608,7 +20563,6 @@ _G.pg.base.aircraft_template[37448] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[37449] = {
 	max_hp = 88,
 	hp_growth = 3367,
@@ -21621,7 +20575,6 @@ _G.pg.base.aircraft_template[37449] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[37450] = {
 	max_hp = 93,
 	hp_growth = 3581,
@@ -21634,7 +20587,6 @@ _G.pg.base.aircraft_template[37450] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[37451] = {
 	max_hp = 99,
 	hp_growth = 3796,
@@ -21647,7 +20599,6 @@ _G.pg.base.aircraft_template[37451] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[37460] = {
 	attack_power = 2,
 	name = "试作型紫电改四",
@@ -21725,7 +20676,6 @@ _G.pg.base.aircraft_template[37460] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[37461] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -21738,7 +20688,6 @@ _G.pg.base.aircraft_template[37461] = {
 		50861
 	}
 }
-
 _G.pg.base.aircraft_template[37462] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -21751,7 +20700,6 @@ _G.pg.base.aircraft_template[37462] = {
 		50862
 	}
 }
-
 _G.pg.base.aircraft_template[37463] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -21764,7 +20712,6 @@ _G.pg.base.aircraft_template[37463] = {
 		50863
 	}
 }
-
 _G.pg.base.aircraft_template[37464] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -21777,7 +20724,6 @@ _G.pg.base.aircraft_template[37464] = {
 		50864
 	}
 }
-
 _G.pg.base.aircraft_template[37465] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -21790,7 +20736,6 @@ _G.pg.base.aircraft_template[37465] = {
 		50865
 	}
 }
-
 _G.pg.base.aircraft_template[37466] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -21803,7 +20748,6 @@ _G.pg.base.aircraft_template[37466] = {
 		50866
 	}
 }
-
 _G.pg.base.aircraft_template[37467] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -21816,7 +20760,6 @@ _G.pg.base.aircraft_template[37467] = {
 		50867
 	}
 }
-
 _G.pg.base.aircraft_template[37468] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -21829,7 +20772,6 @@ _G.pg.base.aircraft_template[37468] = {
 		50868
 	}
 }
-
 _G.pg.base.aircraft_template[37469] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -21842,7 +20784,6 @@ _G.pg.base.aircraft_template[37469] = {
 		50869
 	}
 }
-
 _G.pg.base.aircraft_template[37470] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -21855,7 +20796,6 @@ _G.pg.base.aircraft_template[37470] = {
 		50870
 	}
 }
-
 _G.pg.base.aircraft_template[37471] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -21868,7 +20808,6 @@ _G.pg.base.aircraft_template[37471] = {
 		50871
 	}
 }
-
 _G.pg.base.aircraft_template[37472] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -21881,7 +20820,6 @@ _G.pg.base.aircraft_template[37472] = {
 		50872
 	}
 }
-
 _G.pg.base.aircraft_template[37473] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -21894,7 +20832,6 @@ _G.pg.base.aircraft_template[37473] = {
 		50873
 	}
 }
-
 _G.pg.base.aircraft_template[38000] = {
 	attack_power = 2,
 	name = "九七式舰攻",
@@ -21971,7 +20908,6 @@ _G.pg.base.aircraft_template[38000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38001] = {
 	max_hp = 28,
 	hp_growth = 1063,
@@ -21983,7 +20919,6 @@ _G.pg.base.aircraft_template[38001] = {
 		51301
 	}
 }
-
 _G.pg.base.aircraft_template[38002] = {
 	max_hp = 31,
 	hp_growth = 1201,
@@ -21995,7 +20930,6 @@ _G.pg.base.aircraft_template[38002] = {
 		51302
 	}
 }
-
 _G.pg.base.aircraft_template[38003] = {
 	max_hp = 35,
 	hp_growth = 1340,
@@ -22007,7 +20941,6 @@ _G.pg.base.aircraft_template[38003] = {
 		51303
 	}
 }
-
 _G.pg.base.aircraft_template[38020] = {
 	attack_power = 2,
 	name = "九七式舰攻",
@@ -22084,7 +21017,6 @@ _G.pg.base.aircraft_template[38020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38021] = {
 	max_hp = 31,
 	hp_growth = 1196,
@@ -22096,7 +21028,6 @@ _G.pg.base.aircraft_template[38021] = {
 		51321
 	}
 }
-
 _G.pg.base.aircraft_template[38022] = {
 	max_hp = 35,
 	hp_growth = 1352,
@@ -22108,7 +21039,6 @@ _G.pg.base.aircraft_template[38022] = {
 		51322
 	}
 }
-
 _G.pg.base.aircraft_template[38023] = {
 	max_hp = 39,
 	hp_growth = 1508,
@@ -22120,7 +21050,6 @@ _G.pg.base.aircraft_template[38023] = {
 		51323
 	}
 }
-
 _G.pg.base.aircraft_template[38040] = {
 	attack_power = 2,
 	name = "九七式舰攻",
@@ -22197,7 +21126,6 @@ _G.pg.base.aircraft_template[38040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38041] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -22209,7 +21137,6 @@ _G.pg.base.aircraft_template[38041] = {
 		51341
 	}
 }
-
 _G.pg.base.aircraft_template[38042] = {
 	max_hp = 39,
 	hp_growth = 1502,
@@ -22221,7 +21148,6 @@ _G.pg.base.aircraft_template[38042] = {
 		51342
 	}
 }
-
 _G.pg.base.aircraft_template[38043] = {
 	max_hp = 44,
 	hp_growth = 1675,
@@ -22233,7 +21159,6 @@ _G.pg.base.aircraft_template[38043] = {
 		51343
 	}
 }
-
 _G.pg.base.aircraft_template[38044] = {
 	max_hp = 48,
 	hp_growth = 1848,
@@ -22245,7 +21170,6 @@ _G.pg.base.aircraft_template[38044] = {
 		51344
 	}
 }
-
 _G.pg.base.aircraft_template[38045] = {
 	max_hp = 53,
 	hp_growth = 2022,
@@ -22257,7 +21181,6 @@ _G.pg.base.aircraft_template[38045] = {
 		51345
 	}
 }
-
 _G.pg.base.aircraft_template[38046] = {
 	max_hp = 57,
 	hp_growth = 2195,
@@ -22269,7 +21192,6 @@ _G.pg.base.aircraft_template[38046] = {
 		51346
 	}
 }
-
 _G.pg.base.aircraft_template[38047] = {
 	max_hp = 62,
 	hp_growth = 2368,
@@ -22281,7 +21203,6 @@ _G.pg.base.aircraft_template[38047] = {
 		51347
 	}
 }
-
 _G.pg.base.aircraft_template[38060] = {
 	attack_power = 2,
 	name = "九七式舰攻改",
@@ -22358,7 +21279,6 @@ _G.pg.base.aircraft_template[38060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38061] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -22370,7 +21290,6 @@ _G.pg.base.aircraft_template[38061] = {
 		51341
 	}
 }
-
 _G.pg.base.aircraft_template[38062] = {
 	max_hp = 39,
 	hp_growth = 1502,
@@ -22382,7 +21301,6 @@ _G.pg.base.aircraft_template[38062] = {
 		51342
 	}
 }
-
 _G.pg.base.aircraft_template[38063] = {
 	max_hp = 44,
 	hp_growth = 1675,
@@ -22394,7 +21312,6 @@ _G.pg.base.aircraft_template[38063] = {
 		51343
 	}
 }
-
 _G.pg.base.aircraft_template[38064] = {
 	max_hp = 48,
 	hp_growth = 1848,
@@ -22406,7 +21323,6 @@ _G.pg.base.aircraft_template[38064] = {
 		51344
 	}
 }
-
 _G.pg.base.aircraft_template[38065] = {
 	max_hp = 53,
 	hp_growth = 2022,
@@ -22418,7 +21334,6 @@ _G.pg.base.aircraft_template[38065] = {
 		51345
 	}
 }
-
 _G.pg.base.aircraft_template[38066] = {
 	max_hp = 57,
 	hp_growth = 2195,
@@ -22430,7 +21345,6 @@ _G.pg.base.aircraft_template[38066] = {
 		51346
 	}
 }
-
 _G.pg.base.aircraft_template[38067] = {
 	max_hp = 62,
 	hp_growth = 2368,
@@ -22442,7 +21356,6 @@ _G.pg.base.aircraft_template[38067] = {
 		51347
 	}
 }
-
 _G.pg.base.aircraft_template[38100] = {
 	attack_power = 2,
 	name = "天山",
@@ -22519,7 +21432,6 @@ _G.pg.base.aircraft_template[38100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38101] = {
 	max_hp = 31,
 	hp_growth = 1196,
@@ -22531,7 +21443,6 @@ _G.pg.base.aircraft_template[38101] = {
 		51401
 	}
 }
-
 _G.pg.base.aircraft_template[38102] = {
 	max_hp = 35,
 	hp_growth = 1352,
@@ -22543,7 +21454,6 @@ _G.pg.base.aircraft_template[38102] = {
 		51402
 	}
 }
-
 _G.pg.base.aircraft_template[38103] = {
 	max_hp = 39,
 	hp_growth = 1508,
@@ -22555,7 +21465,6 @@ _G.pg.base.aircraft_template[38103] = {
 		51403
 	}
 }
-
 _G.pg.base.aircraft_template[38120] = {
 	attack_power = 2,
 	name = "天山",
@@ -22632,7 +21541,6 @@ _G.pg.base.aircraft_template[38120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38121] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -22644,7 +21552,6 @@ _G.pg.base.aircraft_template[38121] = {
 		51421
 	}
 }
-
 _G.pg.base.aircraft_template[38122] = {
 	max_hp = 39,
 	hp_growth = 1502,
@@ -22656,7 +21563,6 @@ _G.pg.base.aircraft_template[38122] = {
 		51422
 	}
 }
-
 _G.pg.base.aircraft_template[38123] = {
 	max_hp = 44,
 	hp_growth = 1675,
@@ -22668,7 +21574,6 @@ _G.pg.base.aircraft_template[38123] = {
 		51423
 	}
 }
-
 _G.pg.base.aircraft_template[38124] = {
 	max_hp = 48,
 	hp_growth = 1848,
@@ -22680,7 +21585,6 @@ _G.pg.base.aircraft_template[38124] = {
 		51424
 	}
 }
-
 _G.pg.base.aircraft_template[38125] = {
 	max_hp = 53,
 	hp_growth = 2022,
@@ -22692,7 +21596,6 @@ _G.pg.base.aircraft_template[38125] = {
 		51425
 	}
 }
-
 _G.pg.base.aircraft_template[38126] = {
 	max_hp = 57,
 	hp_growth = 2195,
@@ -22704,7 +21607,6 @@ _G.pg.base.aircraft_template[38126] = {
 		51426
 	}
 }
-
 _G.pg.base.aircraft_template[38140] = {
 	attack_power = 2,
 	name = "天山",
@@ -22781,7 +21683,6 @@ _G.pg.base.aircraft_template[38140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38141] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -22793,7 +21694,6 @@ _G.pg.base.aircraft_template[38141] = {
 		51441
 	}
 }
-
 _G.pg.base.aircraft_template[38142] = {
 	max_hp = 43,
 	hp_growth = 1652,
@@ -22805,7 +21705,6 @@ _G.pg.base.aircraft_template[38142] = {
 		51442
 	}
 }
-
 _G.pg.base.aircraft_template[38143] = {
 	max_hp = 48,
 	hp_growth = 1843,
@@ -22817,7 +21716,6 @@ _G.pg.base.aircraft_template[38143] = {
 		51443
 	}
 }
-
 _G.pg.base.aircraft_template[38144] = {
 	max_hp = 53,
 	hp_growth = 2033,
@@ -22829,7 +21727,6 @@ _G.pg.base.aircraft_template[38144] = {
 		51444
 	}
 }
-
 _G.pg.base.aircraft_template[38145] = {
 	max_hp = 58,
 	hp_growth = 2224,
@@ -22841,7 +21738,6 @@ _G.pg.base.aircraft_template[38145] = {
 		51445
 	}
 }
-
 _G.pg.base.aircraft_template[38146] = {
 	max_hp = 63,
 	hp_growth = 2414,
@@ -22853,7 +21749,6 @@ _G.pg.base.aircraft_template[38146] = {
 		51446
 	}
 }
-
 _G.pg.base.aircraft_template[38147] = {
 	max_hp = 68,
 	hp_growth = 2605,
@@ -22865,7 +21760,6 @@ _G.pg.base.aircraft_template[38147] = {
 		51447
 	}
 }
-
 _G.pg.base.aircraft_template[38148] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -22877,7 +21771,6 @@ _G.pg.base.aircraft_template[38148] = {
 		51448
 	}
 }
-
 _G.pg.base.aircraft_template[38149] = {
 	max_hp = 78,
 	hp_growth = 2986,
@@ -22889,7 +21782,6 @@ _G.pg.base.aircraft_template[38149] = {
 		51449
 	}
 }
-
 _G.pg.base.aircraft_template[38150] = {
 	max_hp = 83,
 	hp_growth = 3177,
@@ -22901,7 +21793,6 @@ _G.pg.base.aircraft_template[38150] = {
 		51450
 	}
 }
-
 _G.pg.base.aircraft_template[38151] = {
 	max_hp = 88,
 	hp_growth = 3367,
@@ -22913,7 +21804,6 @@ _G.pg.base.aircraft_template[38151] = {
 		51451
 	}
 }
-
 _G.pg.base.aircraft_template[38160] = {
 	attack_power = 2,
 	name = "天山改",
@@ -22991,7 +21881,6 @@ _G.pg.base.aircraft_template[38160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38161] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -23004,7 +21893,6 @@ _G.pg.base.aircraft_template[38161] = {
 		51461
 	}
 }
-
 _G.pg.base.aircraft_template[38162] = {
 	max_hp = 43,
 	hp_growth = 1652,
@@ -23017,7 +21905,6 @@ _G.pg.base.aircraft_template[38162] = {
 		51462
 	}
 }
-
 _G.pg.base.aircraft_template[38163] = {
 	max_hp = 48,
 	hp_growth = 1843,
@@ -23030,7 +21917,6 @@ _G.pg.base.aircraft_template[38163] = {
 		51463
 	}
 }
-
 _G.pg.base.aircraft_template[38164] = {
 	max_hp = 53,
 	hp_growth = 2033,
@@ -23043,7 +21929,6 @@ _G.pg.base.aircraft_template[38164] = {
 		51464
 	}
 }
-
 _G.pg.base.aircraft_template[38165] = {
 	max_hp = 58,
 	hp_growth = 2224,
@@ -23056,7 +21941,6 @@ _G.pg.base.aircraft_template[38165] = {
 		51465
 	}
 }
-
 _G.pg.base.aircraft_template[38166] = {
 	max_hp = 63,
 	hp_growth = 2414,
@@ -23069,7 +21953,6 @@ _G.pg.base.aircraft_template[38166] = {
 		51466
 	}
 }
-
 _G.pg.base.aircraft_template[38167] = {
 	max_hp = 68,
 	hp_growth = 2605,
@@ -23082,7 +21965,6 @@ _G.pg.base.aircraft_template[38167] = {
 		51467
 	}
 }
-
 _G.pg.base.aircraft_template[38168] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -23095,7 +21977,6 @@ _G.pg.base.aircraft_template[38168] = {
 		51468
 	}
 }
-
 _G.pg.base.aircraft_template[38169] = {
 	max_hp = 78,
 	hp_growth = 2986,
@@ -23108,7 +21989,6 @@ _G.pg.base.aircraft_template[38169] = {
 		51469
 	}
 }
-
 _G.pg.base.aircraft_template[38170] = {
 	max_hp = 83,
 	hp_growth = 3177,
@@ -23121,7 +22001,6 @@ _G.pg.base.aircraft_template[38170] = {
 		51470
 	}
 }
-
 _G.pg.base.aircraft_template[38171] = {
 	max_hp = 88,
 	hp_growth = 3367,
@@ -23134,7 +22013,6 @@ _G.pg.base.aircraft_template[38171] = {
 		51471
 	}
 }
-
 _G.pg.base.aircraft_template[38200] = {
 	attack_power = 2,
 	name = "流星",
@@ -23212,7 +22090,6 @@ _G.pg.base.aircraft_template[38200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38201] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -23225,7 +22102,6 @@ _G.pg.base.aircraft_template[38201] = {
 		51421
 	}
 }
-
 _G.pg.base.aircraft_template[38202] = {
 	max_hp = 39,
 	hp_growth = 1502,
@@ -23238,7 +22114,6 @@ _G.pg.base.aircraft_template[38202] = {
 		51422
 	}
 }
-
 _G.pg.base.aircraft_template[38203] = {
 	max_hp = 44,
 	hp_growth = 1675,
@@ -23251,7 +22126,6 @@ _G.pg.base.aircraft_template[38203] = {
 		51423
 	}
 }
-
 _G.pg.base.aircraft_template[38204] = {
 	max_hp = 48,
 	hp_growth = 1848,
@@ -23264,7 +22138,6 @@ _G.pg.base.aircraft_template[38204] = {
 		51424
 	}
 }
-
 _G.pg.base.aircraft_template[38205] = {
 	max_hp = 53,
 	hp_growth = 2022,
@@ -23277,7 +22150,6 @@ _G.pg.base.aircraft_template[38205] = {
 		51425
 	}
 }
-
 _G.pg.base.aircraft_template[38206] = {
 	max_hp = 57,
 	hp_growth = 2195,
@@ -23290,7 +22162,6 @@ _G.pg.base.aircraft_template[38206] = {
 		51426
 	}
 }
-
 _G.pg.base.aircraft_template[38220] = {
 	attack_power = 2,
 	name = "流星",
@@ -23368,7 +22239,6 @@ _G.pg.base.aircraft_template[38220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38221] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -23381,7 +22251,6 @@ _G.pg.base.aircraft_template[38221] = {
 		51441
 	}
 }
-
 _G.pg.base.aircraft_template[38222] = {
 	max_hp = 43,
 	hp_growth = 1652,
@@ -23394,7 +22263,6 @@ _G.pg.base.aircraft_template[38222] = {
 		51442
 	}
 }
-
 _G.pg.base.aircraft_template[38223] = {
 	max_hp = 48,
 	hp_growth = 1843,
@@ -23407,7 +22275,6 @@ _G.pg.base.aircraft_template[38223] = {
 		51443
 	}
 }
-
 _G.pg.base.aircraft_template[38224] = {
 	max_hp = 53,
 	hp_growth = 2033,
@@ -23420,7 +22287,6 @@ _G.pg.base.aircraft_template[38224] = {
 		51444
 	}
 }
-
 _G.pg.base.aircraft_template[38225] = {
 	max_hp = 58,
 	hp_growth = 2224,
@@ -23433,7 +22299,6 @@ _G.pg.base.aircraft_template[38225] = {
 		51445
 	}
 }
-
 _G.pg.base.aircraft_template[38226] = {
 	max_hp = 63,
 	hp_growth = 2414,
@@ -23446,7 +22311,6 @@ _G.pg.base.aircraft_template[38226] = {
 		51446
 	}
 }
-
 _G.pg.base.aircraft_template[38227] = {
 	max_hp = 68,
 	hp_growth = 2605,
@@ -23459,7 +22323,6 @@ _G.pg.base.aircraft_template[38227] = {
 		51447
 	}
 }
-
 _G.pg.base.aircraft_template[38228] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -23472,7 +22335,6 @@ _G.pg.base.aircraft_template[38228] = {
 		51448
 	}
 }
-
 _G.pg.base.aircraft_template[38229] = {
 	max_hp = 78,
 	hp_growth = 2986,
@@ -23485,7 +22347,6 @@ _G.pg.base.aircraft_template[38229] = {
 		51449
 	}
 }
-
 _G.pg.base.aircraft_template[38230] = {
 	max_hp = 83,
 	hp_growth = 3177,
@@ -23498,7 +22359,6 @@ _G.pg.base.aircraft_template[38230] = {
 		51450
 	}
 }
-
 _G.pg.base.aircraft_template[38240] = {
 	attack_power = 2,
 	name = "流星",
@@ -23576,7 +22436,6 @@ _G.pg.base.aircraft_template[38240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38241] = {
 	max_hp = 41,
 	hp_growth = 1594,
@@ -23589,7 +22448,6 @@ _G.pg.base.aircraft_template[38241] = {
 		51461
 	}
 }
-
 _G.pg.base.aircraft_template[38242] = {
 	max_hp = 47,
 	hp_growth = 1802,
@@ -23602,7 +22460,6 @@ _G.pg.base.aircraft_template[38242] = {
 		51462
 	}
 }
-
 _G.pg.base.aircraft_template[38243] = {
 	max_hp = 52,
 	hp_growth = 2010,
@@ -23615,7 +22472,6 @@ _G.pg.base.aircraft_template[38243] = {
 		51463
 	}
 }
-
 _G.pg.base.aircraft_template[38244] = {
 	max_hp = 58,
 	hp_growth = 2218,
@@ -23628,7 +22484,6 @@ _G.pg.base.aircraft_template[38244] = {
 		51464
 	}
 }
-
 _G.pg.base.aircraft_template[38245] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -23641,7 +22496,6 @@ _G.pg.base.aircraft_template[38245] = {
 		51465
 	}
 }
-
 _G.pg.base.aircraft_template[38246] = {
 	max_hp = 68,
 	hp_growth = 2634,
@@ -23654,7 +22508,6 @@ _G.pg.base.aircraft_template[38246] = {
 		51466
 	}
 }
-
 _G.pg.base.aircraft_template[38247] = {
 	max_hp = 74,
 	hp_growth = 2842,
@@ -23667,7 +22520,6 @@ _G.pg.base.aircraft_template[38247] = {
 		51467
 	}
 }
-
 _G.pg.base.aircraft_template[38248] = {
 	max_hp = 79,
 	hp_growth = 3050,
@@ -23680,7 +22532,6 @@ _G.pg.base.aircraft_template[38248] = {
 		51468
 	}
 }
-
 _G.pg.base.aircraft_template[38249] = {
 	max_hp = 85,
 	hp_growth = 3258,
@@ -23693,7 +22544,6 @@ _G.pg.base.aircraft_template[38249] = {
 		51469
 	}
 }
-
 _G.pg.base.aircraft_template[38250] = {
 	max_hp = 90,
 	hp_growth = 3466,
@@ -23706,7 +22556,6 @@ _G.pg.base.aircraft_template[38250] = {
 		51470
 	}
 }
-
 _G.pg.base.aircraft_template[38251] = {
 	max_hp = 96,
 	hp_growth = 3674,
@@ -23719,7 +22568,6 @@ _G.pg.base.aircraft_template[38251] = {
 		51471
 	}
 }
-
 _G.pg.base.aircraft_template[38252] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -23732,7 +22580,6 @@ _G.pg.base.aircraft_template[38252] = {
 		51472
 	}
 }
-
 _G.pg.base.aircraft_template[38253] = {
 	max_hp = 106,
 	hp_growth = 4089,
@@ -23745,7 +22592,6 @@ _G.pg.base.aircraft_template[38253] = {
 		51473
 	}
 }
-
 _G.pg.base.aircraft_template[38300] = {
 	attack_power = 2,
 	name = "彩云（舰攻型）",
@@ -23822,7 +22668,6 @@ _G.pg.base.aircraft_template[38300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[38301] = {
 	max_hp = 41,
 	hp_growth = 1594,
@@ -23834,7 +22679,6 @@ _G.pg.base.aircraft_template[38301] = {
 		51361
 	}
 }
-
 _G.pg.base.aircraft_template[38302] = {
 	max_hp = 47,
 	hp_growth = 1802,
@@ -23846,7 +22690,6 @@ _G.pg.base.aircraft_template[38302] = {
 		51362
 	}
 }
-
 _G.pg.base.aircraft_template[38303] = {
 	max_hp = 52,
 	hp_growth = 2010,
@@ -23858,7 +22701,6 @@ _G.pg.base.aircraft_template[38303] = {
 		51363
 	}
 }
-
 _G.pg.base.aircraft_template[38304] = {
 	max_hp = 58,
 	hp_growth = 2218,
@@ -23870,7 +22712,6 @@ _G.pg.base.aircraft_template[38304] = {
 		51364
 	}
 }
-
 _G.pg.base.aircraft_template[38305] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -23882,7 +22723,6 @@ _G.pg.base.aircraft_template[38305] = {
 		51365
 	}
 }
-
 _G.pg.base.aircraft_template[38306] = {
 	max_hp = 68,
 	hp_growth = 2634,
@@ -23894,7 +22734,6 @@ _G.pg.base.aircraft_template[38306] = {
 		51366
 	}
 }
-
 _G.pg.base.aircraft_template[38307] = {
 	max_hp = 74,
 	hp_growth = 2842,
@@ -23906,7 +22745,6 @@ _G.pg.base.aircraft_template[38307] = {
 		51367
 	}
 }
-
 _G.pg.base.aircraft_template[38308] = {
 	max_hp = 79,
 	hp_growth = 3050,
@@ -23918,7 +22756,6 @@ _G.pg.base.aircraft_template[38308] = {
 		51368
 	}
 }
-
 _G.pg.base.aircraft_template[38309] = {
 	max_hp = 85,
 	hp_growth = 3258,
@@ -23930,7 +22767,6 @@ _G.pg.base.aircraft_template[38309] = {
 		51369
 	}
 }
-
 _G.pg.base.aircraft_template[38310] = {
 	max_hp = 90,
 	hp_growth = 3466,
@@ -23942,7 +22778,6 @@ _G.pg.base.aircraft_template[38310] = {
 		51370
 	}
 }
-
 _G.pg.base.aircraft_template[38311] = {
 	max_hp = 96,
 	hp_growth = 3674,
@@ -23954,7 +22789,6 @@ _G.pg.base.aircraft_template[38311] = {
 		51371
 	}
 }
-
 _G.pg.base.aircraft_template[38312] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -23966,7 +22800,6 @@ _G.pg.base.aircraft_template[38312] = {
 		51372
 	}
 }
-
 _G.pg.base.aircraft_template[38313] = {
 	max_hp = 106,
 	hp_growth = 4089,
@@ -23978,7 +22811,6 @@ _G.pg.base.aircraft_template[38313] = {
 		51373
 	}
 }
-
 _G.pg.base.aircraft_template[39000] = {
 	attack_power = 2,
 	name = "九九式舰爆",
@@ -24056,7 +22888,6 @@ _G.pg.base.aircraft_template[39000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39001] = {
 	max_hp = 36,
 	hp_growth = 1384,
@@ -24069,7 +22900,6 @@ _G.pg.base.aircraft_template[39001] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[39002] = {
 	max_hp = 41,
 	hp_growth = 1565,
@@ -24082,7 +22912,6 @@ _G.pg.base.aircraft_template[39002] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[39003] = {
 	max_hp = 45,
 	hp_growth = 1746,
@@ -24095,7 +22924,6 @@ _G.pg.base.aircraft_template[39003] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[39020] = {
 	attack_power = 2,
 	name = "九九式舰爆",
@@ -24173,7 +23001,6 @@ _G.pg.base.aircraft_template[39020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39021] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -24186,7 +23013,6 @@ _G.pg.base.aircraft_template[39021] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[39022] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -24199,7 +23025,6 @@ _G.pg.base.aircraft_template[39022] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[39023] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -24212,7 +23037,6 @@ _G.pg.base.aircraft_template[39023] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[39024] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -24225,7 +23049,6 @@ _G.pg.base.aircraft_template[39024] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[39025] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -24238,7 +23061,6 @@ _G.pg.base.aircraft_template[39025] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[39026] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -24251,7 +23073,6 @@ _G.pg.base.aircraft_template[39026] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[39040] = {
 	attack_power = 2,
 	name = "九九式舰爆",
@@ -24329,7 +23150,6 @@ _G.pg.base.aircraft_template[39040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39041] = {
 	max_hp = 44,
 	hp_growth = 1692,
@@ -24342,7 +23162,6 @@ _G.pg.base.aircraft_template[39041] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[39042] = {
 	max_hp = 50,
 	hp_growth = 1913,
@@ -24355,7 +23174,6 @@ _G.pg.base.aircraft_template[39042] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[39043] = {
 	max_hp = 55,
 	hp_growth = 2133,
@@ -24368,7 +23186,6 @@ _G.pg.base.aircraft_template[39043] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[39044] = {
 	max_hp = 61,
 	hp_growth = 2354,
@@ -24381,7 +23198,6 @@ _G.pg.base.aircraft_template[39044] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[39045] = {
 	max_hp = 67,
 	hp_growth = 2575,
@@ -24394,7 +23210,6 @@ _G.pg.base.aircraft_template[39045] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[39046] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -24407,7 +23222,6 @@ _G.pg.base.aircraft_template[39046] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[39047] = {
 	max_hp = 78,
 	hp_growth = 3016,
@@ -24420,7 +23234,6 @@ _G.pg.base.aircraft_template[39047] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[39048] = {
 	max_hp = 84,
 	hp_growth = 3237,
@@ -24433,7 +23246,6 @@ _G.pg.base.aircraft_template[39048] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[39049] = {
 	max_hp = 90,
 	hp_growth = 3458,
@@ -24446,7 +23258,6 @@ _G.pg.base.aircraft_template[39049] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[39050] = {
 	max_hp = 96,
 	hp_growth = 3678,
@@ -24459,7 +23270,6 @@ _G.pg.base.aircraft_template[39050] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[39051] = {
 	max_hp = 101,
 	hp_growth = 3899,
@@ -24472,7 +23282,6 @@ _G.pg.base.aircraft_template[39051] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[39060] = {
 	attack_power = 2,
 	name = "九九式舰爆改",
@@ -24550,7 +23359,6 @@ _G.pg.base.aircraft_template[39060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39061] = {
 	max_hp = 44,
 	hp_growth = 1692,
@@ -24563,7 +23371,6 @@ _G.pg.base.aircraft_template[39061] = {
 		52161
 	}
 }
-
 _G.pg.base.aircraft_template[39062] = {
 	max_hp = 50,
 	hp_growth = 1913,
@@ -24576,7 +23383,6 @@ _G.pg.base.aircraft_template[39062] = {
 		52162
 	}
 }
-
 _G.pg.base.aircraft_template[39063] = {
 	max_hp = 55,
 	hp_growth = 2133,
@@ -24589,7 +23395,6 @@ _G.pg.base.aircraft_template[39063] = {
 		52163
 	}
 }
-
 _G.pg.base.aircraft_template[39064] = {
 	max_hp = 61,
 	hp_growth = 2354,
@@ -24602,7 +23407,6 @@ _G.pg.base.aircraft_template[39064] = {
 		52164
 	}
 }
-
 _G.pg.base.aircraft_template[39065] = {
 	max_hp = 67,
 	hp_growth = 2575,
@@ -24615,7 +23419,6 @@ _G.pg.base.aircraft_template[39065] = {
 		52165
 	}
 }
-
 _G.pg.base.aircraft_template[39066] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -24628,7 +23431,6 @@ _G.pg.base.aircraft_template[39066] = {
 		52166
 	}
 }
-
 _G.pg.base.aircraft_template[39067] = {
 	max_hp = 78,
 	hp_growth = 3016,
@@ -24641,7 +23443,6 @@ _G.pg.base.aircraft_template[39067] = {
 		52167
 	}
 }
-
 _G.pg.base.aircraft_template[39068] = {
 	max_hp = 84,
 	hp_growth = 3237,
@@ -24654,7 +23455,6 @@ _G.pg.base.aircraft_template[39068] = {
 		52168
 	}
 }
-
 _G.pg.base.aircraft_template[39069] = {
 	max_hp = 90,
 	hp_growth = 3458,
@@ -24667,7 +23467,6 @@ _G.pg.base.aircraft_template[39069] = {
 		52169
 	}
 }
-
 _G.pg.base.aircraft_template[39070] = {
 	max_hp = 96,
 	hp_growth = 3678,
@@ -24680,7 +23479,6 @@ _G.pg.base.aircraft_template[39070] = {
 		52170
 	}
 }
-
 _G.pg.base.aircraft_template[39071] = {
 	max_hp = 101,
 	hp_growth = 3899,
@@ -24693,7 +23491,6 @@ _G.pg.base.aircraft_template[39071] = {
 		52171
 	}
 }
-
 _G.pg.base.aircraft_template[39100] = {
 	attack_power = 2,
 	name = "彗星",
@@ -24771,7 +23568,6 @@ _G.pg.base.aircraft_template[39100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39101] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -24784,7 +23580,6 @@ _G.pg.base.aircraft_template[39101] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[39102] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -24797,7 +23592,6 @@ _G.pg.base.aircraft_template[39102] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[39103] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -24810,7 +23604,6 @@ _G.pg.base.aircraft_template[39103] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[39104] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -24823,7 +23616,6 @@ _G.pg.base.aircraft_template[39104] = {
 		52104
 	}
 }
-
 _G.pg.base.aircraft_template[39105] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -24836,7 +23628,6 @@ _G.pg.base.aircraft_template[39105] = {
 		52105
 	}
 }
-
 _G.pg.base.aircraft_template[39106] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -24849,7 +23640,6 @@ _G.pg.base.aircraft_template[39106] = {
 		52106
 	}
 }
-
 _G.pg.base.aircraft_template[39120] = {
 	attack_power = 2,
 	name = "彗星",
@@ -24927,7 +23717,6 @@ _G.pg.base.aircraft_template[39120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39121] = {
 	max_hp = 44,
 	hp_growth = 1692,
@@ -24940,7 +23729,6 @@ _G.pg.base.aircraft_template[39121] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[39122] = {
 	max_hp = 50,
 	hp_growth = 1913,
@@ -24953,7 +23741,6 @@ _G.pg.base.aircraft_template[39122] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[39123] = {
 	max_hp = 55,
 	hp_growth = 2133,
@@ -24966,7 +23753,6 @@ _G.pg.base.aircraft_template[39123] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[39124] = {
 	max_hp = 61,
 	hp_growth = 2354,
@@ -24979,7 +23765,6 @@ _G.pg.base.aircraft_template[39124] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[39125] = {
 	max_hp = 67,
 	hp_growth = 2575,
@@ -24992,7 +23777,6 @@ _G.pg.base.aircraft_template[39125] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[39126] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -25005,7 +23789,6 @@ _G.pg.base.aircraft_template[39126] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[39127] = {
 	max_hp = 78,
 	hp_growth = 3016,
@@ -25018,7 +23801,6 @@ _G.pg.base.aircraft_template[39127] = {
 		52127
 	}
 }
-
 _G.pg.base.aircraft_template[39128] = {
 	max_hp = 84,
 	hp_growth = 3237,
@@ -25031,7 +23813,6 @@ _G.pg.base.aircraft_template[39128] = {
 		52128
 	}
 }
-
 _G.pg.base.aircraft_template[39129] = {
 	max_hp = 90,
 	hp_growth = 3458,
@@ -25044,7 +23825,6 @@ _G.pg.base.aircraft_template[39129] = {
 		52129
 	}
 }
-
 _G.pg.base.aircraft_template[39130] = {
 	max_hp = 96,
 	hp_growth = 3678,
@@ -25057,7 +23837,6 @@ _G.pg.base.aircraft_template[39130] = {
 		52130
 	}
 }
-
 _G.pg.base.aircraft_template[39140] = {
 	attack_power = 2,
 	name = "彗星",
@@ -25135,7 +23914,6 @@ _G.pg.base.aircraft_template[39140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39141] = {
 	max_hp = 48,
 	hp_growth = 1846,
@@ -25148,7 +23926,6 @@ _G.pg.base.aircraft_template[39141] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[39142] = {
 	max_hp = 54,
 	hp_growth = 2087,
@@ -25161,7 +23938,6 @@ _G.pg.base.aircraft_template[39142] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[39143] = {
 	max_hp = 61,
 	hp_growth = 2327,
@@ -25174,7 +23950,6 @@ _G.pg.base.aircraft_template[39143] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[39144] = {
 	max_hp = 67,
 	hp_growth = 2568,
@@ -25187,7 +23962,6 @@ _G.pg.base.aircraft_template[39144] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[39145] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -25200,7 +23974,6 @@ _G.pg.base.aircraft_template[39145] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[39146] = {
 	max_hp = 79,
 	hp_growth = 3050,
@@ -25213,7 +23986,6 @@ _G.pg.base.aircraft_template[39146] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[39147] = {
 	max_hp = 86,
 	hp_growth = 3290,
@@ -25226,7 +23998,6 @@ _G.pg.base.aircraft_template[39147] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[39148] = {
 	max_hp = 92,
 	hp_growth = 3531,
@@ -25239,7 +24010,6 @@ _G.pg.base.aircraft_template[39148] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[39149] = {
 	max_hp = 98,
 	hp_growth = 3772,
@@ -25252,7 +24022,6 @@ _G.pg.base.aircraft_template[39149] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[39150] = {
 	max_hp = 104,
 	hp_growth = 4013,
@@ -25265,7 +24034,6 @@ _G.pg.base.aircraft_template[39150] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[39151] = {
 	max_hp = 111,
 	hp_growth = 4254,
@@ -25278,7 +24046,6 @@ _G.pg.base.aircraft_template[39151] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[39152] = {
 	max_hp = 117,
 	hp_growth = 4494,
@@ -25291,7 +24058,6 @@ _G.pg.base.aircraft_template[39152] = {
 		52152
 	}
 }
-
 _G.pg.base.aircraft_template[39153] = {
 	max_hp = 123,
 	hp_growth = 4735,
@@ -25304,7 +24070,6 @@ _G.pg.base.aircraft_template[39153] = {
 		52153
 	}
 }
-
 _G.pg.base.aircraft_template[39160] = {
 	attack_power = 2,
 	name = "彗星一二型甲",
@@ -25382,7 +24147,6 @@ _G.pg.base.aircraft_template[39160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39161] = {
 	max_hp = 48,
 	hp_growth = 1846,
@@ -25395,7 +24159,6 @@ _G.pg.base.aircraft_template[39161] = {
 		52161
 	}
 }
-
 _G.pg.base.aircraft_template[39162] = {
 	max_hp = 54,
 	hp_growth = 2087,
@@ -25408,7 +24171,6 @@ _G.pg.base.aircraft_template[39162] = {
 		52162
 	}
 }
-
 _G.pg.base.aircraft_template[39163] = {
 	max_hp = 61,
 	hp_growth = 2327,
@@ -25421,7 +24183,6 @@ _G.pg.base.aircraft_template[39163] = {
 		52163
 	}
 }
-
 _G.pg.base.aircraft_template[39164] = {
 	max_hp = 67,
 	hp_growth = 2568,
@@ -25434,7 +24195,6 @@ _G.pg.base.aircraft_template[39164] = {
 		52164
 	}
 }
-
 _G.pg.base.aircraft_template[39165] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -25447,7 +24207,6 @@ _G.pg.base.aircraft_template[39165] = {
 		52165
 	}
 }
-
 _G.pg.base.aircraft_template[39166] = {
 	max_hp = 79,
 	hp_growth = 3050,
@@ -25460,7 +24219,6 @@ _G.pg.base.aircraft_template[39166] = {
 		52166
 	}
 }
-
 _G.pg.base.aircraft_template[39167] = {
 	max_hp = 86,
 	hp_growth = 3290,
@@ -25473,7 +24231,6 @@ _G.pg.base.aircraft_template[39167] = {
 		52167
 	}
 }
-
 _G.pg.base.aircraft_template[39168] = {
 	max_hp = 92,
 	hp_growth = 3531,
@@ -25486,7 +24243,6 @@ _G.pg.base.aircraft_template[39168] = {
 		52168
 	}
 }
-
 _G.pg.base.aircraft_template[39169] = {
 	max_hp = 98,
 	hp_growth = 3772,
@@ -25499,7 +24255,6 @@ _G.pg.base.aircraft_template[39169] = {
 		52169
 	}
 }
-
 _G.pg.base.aircraft_template[39170] = {
 	max_hp = 104,
 	hp_growth = 4013,
@@ -25512,7 +24267,6 @@ _G.pg.base.aircraft_template[39170] = {
 		52170
 	}
 }
-
 _G.pg.base.aircraft_template[39171] = {
 	max_hp = 111,
 	hp_growth = 4254,
@@ -25525,7 +24279,6 @@ _G.pg.base.aircraft_template[39171] = {
 		52171
 	}
 }
-
 _G.pg.base.aircraft_template[39172] = {
 	max_hp = 117,
 	hp_growth = 4494,
@@ -25538,7 +24291,6 @@ _G.pg.base.aircraft_template[39172] = {
 		52172
 	}
 }
-
 _G.pg.base.aircraft_template[39173] = {
 	max_hp = 123,
 	hp_growth = 4735,
@@ -25551,7 +24303,6 @@ _G.pg.base.aircraft_template[39173] = {
 		52173
 	}
 }
-
 _G.pg.base.aircraft_template[39200] = {
 	attack_power = 2,
 	name = "瑞云",
@@ -25629,7 +24380,6 @@ _G.pg.base.aircraft_template[39200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39201] = {
 	max_hp = 31,
 	hp_growth = 1177,
@@ -25642,7 +24392,6 @@ _G.pg.base.aircraft_template[39201] = {
 		52201
 	}
 }
-
 _G.pg.base.aircraft_template[39202] = {
 	max_hp = 35,
 	hp_growth = 1330,
@@ -25655,7 +24404,6 @@ _G.pg.base.aircraft_template[39202] = {
 		52202
 	}
 }
-
 _G.pg.base.aircraft_template[39203] = {
 	max_hp = 39,
 	hp_growth = 1484,
@@ -25668,7 +24416,6 @@ _G.pg.base.aircraft_template[39203] = {
 		52203
 	}
 }
-
 _G.pg.base.aircraft_template[39220] = {
 	attack_power = 2,
 	name = "瑞云",
@@ -25746,7 +24493,6 @@ _G.pg.base.aircraft_template[39220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39221] = {
 	max_hp = 34,
 	hp_growth = 1308,
@@ -25759,7 +24505,6 @@ _G.pg.base.aircraft_template[39221] = {
 		52221
 	}
 }
-
 _G.pg.base.aircraft_template[39222] = {
 	max_hp = 38,
 	hp_growth = 1478,
@@ -25772,7 +24517,6 @@ _G.pg.base.aircraft_template[39222] = {
 		52222
 	}
 }
-
 _G.pg.base.aircraft_template[39223] = {
 	max_hp = 43,
 	hp_growth = 1649,
@@ -25785,7 +24529,6 @@ _G.pg.base.aircraft_template[39223] = {
 		52223
 	}
 }
-
 _G.pg.base.aircraft_template[39224] = {
 	max_hp = 47,
 	hp_growth = 1819,
@@ -25798,7 +24541,6 @@ _G.pg.base.aircraft_template[39224] = {
 		52224
 	}
 }
-
 _G.pg.base.aircraft_template[39225] = {
 	max_hp = 52,
 	hp_growth = 1990,
@@ -25811,7 +24553,6 @@ _G.pg.base.aircraft_template[39225] = {
 		52225
 	}
 }
-
 _G.pg.base.aircraft_template[39226] = {
 	max_hp = 56,
 	hp_growth = 2160,
@@ -25824,7 +24565,6 @@ _G.pg.base.aircraft_template[39226] = {
 		52226
 	}
 }
-
 _G.pg.base.aircraft_template[39240] = {
 	attack_power = 2,
 	name = "瑞云",
@@ -25902,7 +24642,6 @@ _G.pg.base.aircraft_template[39240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39241] = {
 	max_hp = 37,
 	hp_growth = 1438,
@@ -25915,7 +24654,6 @@ _G.pg.base.aircraft_template[39241] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[39242] = {
 	max_hp = 42,
 	hp_growth = 1626,
@@ -25928,7 +24666,6 @@ _G.pg.base.aircraft_template[39242] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[39243] = {
 	max_hp = 47,
 	hp_growth = 1813,
@@ -25941,7 +24678,6 @@ _G.pg.base.aircraft_template[39243] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[39244] = {
 	max_hp = 52,
 	hp_growth = 2001,
@@ -25954,7 +24690,6 @@ _G.pg.base.aircraft_template[39244] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[39245] = {
 	max_hp = 57,
 	hp_growth = 2189,
@@ -25967,7 +24702,6 @@ _G.pg.base.aircraft_template[39245] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[39246] = {
 	max_hp = 62,
 	hp_growth = 2376,
@@ -25980,7 +24714,6 @@ _G.pg.base.aircraft_template[39246] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[39247] = {
 	max_hp = 67,
 	hp_growth = 2564,
@@ -25993,7 +24726,6 @@ _G.pg.base.aircraft_template[39247] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[39248] = {
 	max_hp = 72,
 	hp_growth = 2751,
@@ -26006,7 +24738,6 @@ _G.pg.base.aircraft_template[39248] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[39249] = {
 	max_hp = 76,
 	hp_growth = 2939,
@@ -26019,7 +24750,6 @@ _G.pg.base.aircraft_template[39249] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[39250] = {
 	max_hp = 81,
 	hp_growth = 3127,
@@ -26032,7 +24762,6 @@ _G.pg.base.aircraft_template[39250] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[39251] = {
 	max_hp = 86,
 	hp_growth = 3314,
@@ -26045,7 +24774,6 @@ _G.pg.base.aircraft_template[39251] = {
 		52251
 	}
 }
-
 _G.pg.base.aircraft_template[39300] = {
 	attack_power = 2,
 	name = "晴岚",
@@ -26122,7 +24850,6 @@ _G.pg.base.aircraft_template[39300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39301] = {
 	max_hp = 44,
 	hp_growth = 1692,
@@ -26134,7 +24861,6 @@ _G.pg.base.aircraft_template[39301] = {
 		53261
 	}
 }
-
 _G.pg.base.aircraft_template[39302] = {
 	max_hp = 50,
 	hp_growth = 1913,
@@ -26146,7 +24872,6 @@ _G.pg.base.aircraft_template[39302] = {
 		53262
 	}
 }
-
 _G.pg.base.aircraft_template[39303] = {
 	max_hp = 55,
 	hp_growth = 2133,
@@ -26158,7 +24883,6 @@ _G.pg.base.aircraft_template[39303] = {
 		53263
 	}
 }
-
 _G.pg.base.aircraft_template[39304] = {
 	max_hp = 61,
 	hp_growth = 2354,
@@ -26170,7 +24894,6 @@ _G.pg.base.aircraft_template[39304] = {
 		53264
 	}
 }
-
 _G.pg.base.aircraft_template[39305] = {
 	max_hp = 67,
 	hp_growth = 2575,
@@ -26182,7 +24905,6 @@ _G.pg.base.aircraft_template[39305] = {
 		53265
 	}
 }
-
 _G.pg.base.aircraft_template[39306] = {
 	max_hp = 73,
 	hp_growth = 2796,
@@ -26194,7 +24916,6 @@ _G.pg.base.aircraft_template[39306] = {
 		53266
 	}
 }
-
 _G.pg.base.aircraft_template[39307] = {
 	max_hp = 78,
 	hp_growth = 3016,
@@ -26206,7 +24927,6 @@ _G.pg.base.aircraft_template[39307] = {
 		53267
 	}
 }
-
 _G.pg.base.aircraft_template[39308] = {
 	max_hp = 84,
 	hp_growth = 3237,
@@ -26218,7 +24938,6 @@ _G.pg.base.aircraft_template[39308] = {
 		53268
 	}
 }
-
 _G.pg.base.aircraft_template[39309] = {
 	max_hp = 90,
 	hp_growth = 3458,
@@ -26230,7 +24949,6 @@ _G.pg.base.aircraft_template[39309] = {
 		53269
 	}
 }
-
 _G.pg.base.aircraft_template[39310] = {
 	max_hp = 96,
 	hp_growth = 3678,
@@ -26242,7 +24960,6 @@ _G.pg.base.aircraft_template[39310] = {
 		53270
 	}
 }
-
 _G.pg.base.aircraft_template[39311] = {
 	max_hp = 101,
 	hp_growth = 3899,
@@ -26254,7 +24971,6 @@ _G.pg.base.aircraft_template[39311] = {
 		53271
 	}
 }
-
 _G.pg.base.aircraft_template[39320] = {
 	attack_power = 2,
 	name = "彗星二一型",
@@ -26332,7 +25048,6 @@ _G.pg.base.aircraft_template[39320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39321] = {
 	max_hp = 48,
 	hp_growth = 1846,
@@ -26345,7 +25060,6 @@ _G.pg.base.aircraft_template[39321] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[39322] = {
 	max_hp = 54,
 	hp_growth = 2087,
@@ -26358,7 +25072,6 @@ _G.pg.base.aircraft_template[39322] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[39323] = {
 	max_hp = 61,
 	hp_growth = 2327,
@@ -26371,7 +25084,6 @@ _G.pg.base.aircraft_template[39323] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[39324] = {
 	max_hp = 67,
 	hp_growth = 2568,
@@ -26384,7 +25096,6 @@ _G.pg.base.aircraft_template[39324] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[39325] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -26397,7 +25108,6 @@ _G.pg.base.aircraft_template[39325] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[39326] = {
 	max_hp = 79,
 	hp_growth = 3050,
@@ -26410,7 +25120,6 @@ _G.pg.base.aircraft_template[39326] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[39327] = {
 	max_hp = 86,
 	hp_growth = 3290,
@@ -26423,7 +25132,6 @@ _G.pg.base.aircraft_template[39327] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[39328] = {
 	max_hp = 92,
 	hp_growth = 3531,
@@ -26436,7 +25144,6 @@ _G.pg.base.aircraft_template[39328] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[39329] = {
 	max_hp = 98,
 	hp_growth = 3772,
@@ -26449,7 +25156,6 @@ _G.pg.base.aircraft_template[39329] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[39330] = {
 	max_hp = 104,
 	hp_growth = 4013,
@@ -26462,7 +25168,6 @@ _G.pg.base.aircraft_template[39330] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[39331] = {
 	max_hp = 111,
 	hp_growth = 4254,
@@ -26475,7 +25180,6 @@ _G.pg.base.aircraft_template[39331] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[39332] = {
 	max_hp = 117,
 	hp_growth = 4494,
@@ -26488,7 +25192,6 @@ _G.pg.base.aircraft_template[39332] = {
 		52152
 	}
 }
-
 _G.pg.base.aircraft_template[39333] = {
 	max_hp = 123,
 	hp_growth = 4735,
@@ -26501,7 +25204,6 @@ _G.pg.base.aircraft_template[39333] = {
 		52153
 	}
 }
-
 _G.pg.base.aircraft_template[39340] = {
 	attack_power = 2,
 	name = "天雷",
@@ -26579,7 +25281,6 @@ _G.pg.base.aircraft_template[39340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39341] = {
 	max_hp = 52,
 	hp_growth = 2000,
@@ -26592,7 +25293,6 @@ _G.pg.base.aircraft_template[39341] = {
 		53341
 	}
 }
-
 _G.pg.base.aircraft_template[39342] = {
 	max_hp = 59,
 	hp_growth = 2261,
@@ -26605,7 +25305,6 @@ _G.pg.base.aircraft_template[39342] = {
 		53342
 	}
 }
-
 _G.pg.base.aircraft_template[39343] = {
 	max_hp = 66,
 	hp_growth = 2521,
@@ -26618,7 +25317,6 @@ _G.pg.base.aircraft_template[39343] = {
 		53343
 	}
 }
-
 _G.pg.base.aircraft_template[39344] = {
 	max_hp = 72,
 	hp_growth = 2782,
@@ -26631,7 +25329,6 @@ _G.pg.base.aircraft_template[39344] = {
 		53344
 	}
 }
-
 _G.pg.base.aircraft_template[39345] = {
 	max_hp = 79,
 	hp_growth = 3043,
@@ -26644,7 +25341,6 @@ _G.pg.base.aircraft_template[39345] = {
 		53345
 	}
 }
-
 _G.pg.base.aircraft_template[39346] = {
 	max_hp = 86,
 	hp_growth = 3304,
@@ -26657,7 +25353,6 @@ _G.pg.base.aircraft_template[39346] = {
 		53346
 	}
 }
-
 _G.pg.base.aircraft_template[39347] = {
 	max_hp = 93,
 	hp_growth = 3565,
@@ -26670,7 +25365,6 @@ _G.pg.base.aircraft_template[39347] = {
 		53347
 	}
 }
-
 _G.pg.base.aircraft_template[39348] = {
 	max_hp = 99,
 	hp_growth = 3826,
@@ -26683,7 +25377,6 @@ _G.pg.base.aircraft_template[39348] = {
 		53348
 	}
 }
-
 _G.pg.base.aircraft_template[39349] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -26696,7 +25389,6 @@ _G.pg.base.aircraft_template[39349] = {
 		53349
 	}
 }
-
 _G.pg.base.aircraft_template[39350] = {
 	max_hp = 113,
 	hp_growth = 4347,
@@ -26709,7 +25401,6 @@ _G.pg.base.aircraft_template[39350] = {
 		53350
 	}
 }
-
 _G.pg.base.aircraft_template[39351] = {
 	max_hp = 120,
 	hp_growth = 4608,
@@ -26722,7 +25413,6 @@ _G.pg.base.aircraft_template[39351] = {
 		53351
 	}
 }
-
 _G.pg.base.aircraft_template[39352] = {
 	max_hp = 127,
 	hp_growth = 4869,
@@ -26735,7 +25425,6 @@ _G.pg.base.aircraft_template[39352] = {
 		53352
 	}
 }
-
 _G.pg.base.aircraft_template[39353] = {
 	max_hp = 133,
 	hp_growth = 5130,
@@ -26748,7 +25437,6 @@ _G.pg.base.aircraft_template[39353] = {
 		53353
 	}
 }
-
 _G.pg.base.aircraft_template[39360] = {
 	attack_power = 2,
 	name = "天雷",
@@ -26826,7 +25514,6 @@ _G.pg.base.aircraft_template[39360] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[39361] = {
 	max_hp = 52,
 	hp_growth = 2000,
@@ -26839,7 +25526,6 @@ _G.pg.base.aircraft_template[39361] = {
 		53321
 	}
 }
-
 _G.pg.base.aircraft_template[39362] = {
 	max_hp = 59,
 	hp_growth = 2261,
@@ -26852,7 +25538,6 @@ _G.pg.base.aircraft_template[39362] = {
 		53322
 	}
 }
-
 _G.pg.base.aircraft_template[39363] = {
 	max_hp = 66,
 	hp_growth = 2521,
@@ -26865,7 +25550,6 @@ _G.pg.base.aircraft_template[39363] = {
 		53323
 	}
 }
-
 _G.pg.base.aircraft_template[39364] = {
 	max_hp = 72,
 	hp_growth = 2782,
@@ -26878,7 +25562,6 @@ _G.pg.base.aircraft_template[39364] = {
 		53324
 	}
 }
-
 _G.pg.base.aircraft_template[39365] = {
 	max_hp = 79,
 	hp_growth = 3043,
@@ -26891,7 +25574,6 @@ _G.pg.base.aircraft_template[39365] = {
 		53325
 	}
 }
-
 _G.pg.base.aircraft_template[39366] = {
 	max_hp = 86,
 	hp_growth = 3304,
@@ -26904,7 +25586,6 @@ _G.pg.base.aircraft_template[39366] = {
 		53326
 	}
 }
-
 _G.pg.base.aircraft_template[39367] = {
 	max_hp = 93,
 	hp_growth = 3565,
@@ -26917,7 +25598,6 @@ _G.pg.base.aircraft_template[39367] = {
 		53327
 	}
 }
-
 _G.pg.base.aircraft_template[39368] = {
 	max_hp = 99,
 	hp_growth = 3826,
@@ -26930,7 +25610,6 @@ _G.pg.base.aircraft_template[39368] = {
 		53328
 	}
 }
-
 _G.pg.base.aircraft_template[39369] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -26943,7 +25622,6 @@ _G.pg.base.aircraft_template[39369] = {
 		53329
 	}
 }
-
 _G.pg.base.aircraft_template[39370] = {
 	max_hp = 113,
 	hp_growth = 4347,
@@ -26956,7 +25634,6 @@ _G.pg.base.aircraft_template[39370] = {
 		53330
 	}
 }
-
 _G.pg.base.aircraft_template[39371] = {
 	max_hp = 120,
 	hp_growth = 4608,
@@ -26969,7 +25646,6 @@ _G.pg.base.aircraft_template[39371] = {
 		53331
 	}
 }
-
 _G.pg.base.aircraft_template[39372] = {
 	max_hp = 127,
 	hp_growth = 4869,
@@ -26982,7 +25658,6 @@ _G.pg.base.aircraft_template[39372] = {
 		53332
 	}
 }
-
 _G.pg.base.aircraft_template[39373] = {
 	max_hp = 133,
 	hp_growth = 5130,
@@ -26995,7 +25670,6 @@ _G.pg.base.aircraft_template[39373] = {
 		53333
 	}
 }
-
 _G.pg.base.aircraft_template[47000] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T1",
@@ -27072,7 +25746,6 @@ _G.pg.base.aircraft_template[47000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47001] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -27084,7 +25757,6 @@ _G.pg.base.aircraft_template[47001] = {
 		59401
 	}
 }
-
 _G.pg.base.aircraft_template[47002] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -27096,7 +25768,6 @@ _G.pg.base.aircraft_template[47002] = {
 		59402
 	}
 }
-
 _G.pg.base.aircraft_template[47003] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -27108,7 +25779,6 @@ _G.pg.base.aircraft_template[47003] = {
 		59403
 	}
 }
-
 _G.pg.base.aircraft_template[47020] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T2",
@@ -27185,7 +25855,6 @@ _G.pg.base.aircraft_template[47020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47021] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -27197,7 +25866,6 @@ _G.pg.base.aircraft_template[47021] = {
 		59421
 	}
 }
-
 _G.pg.base.aircraft_template[47022] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -27209,7 +25877,6 @@ _G.pg.base.aircraft_template[47022] = {
 		59422
 	}
 }
-
 _G.pg.base.aircraft_template[47023] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -27221,7 +25888,6 @@ _G.pg.base.aircraft_template[47023] = {
 		59423
 	}
 }
-
 _G.pg.base.aircraft_template[47024] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -27233,7 +25899,6 @@ _G.pg.base.aircraft_template[47024] = {
 		59424
 	}
 }
-
 _G.pg.base.aircraft_template[47025] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -27245,7 +25910,6 @@ _G.pg.base.aircraft_template[47025] = {
 		59425
 	}
 }
-
 _G.pg.base.aircraft_template[47026] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -27257,7 +25921,6 @@ _G.pg.base.aircraft_template[47026] = {
 		59426
 	}
 }
-
 _G.pg.base.aircraft_template[47040] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T3",
@@ -27334,7 +25997,6 @@ _G.pg.base.aircraft_template[47040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47041] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -27346,7 +26008,6 @@ _G.pg.base.aircraft_template[47041] = {
 		59441
 	}
 }
-
 _G.pg.base.aircraft_template[47042] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -27358,7 +26019,6 @@ _G.pg.base.aircraft_template[47042] = {
 		59442
 	}
 }
-
 _G.pg.base.aircraft_template[47043] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -27370,7 +26030,6 @@ _G.pg.base.aircraft_template[47043] = {
 		59443
 	}
 }
-
 _G.pg.base.aircraft_template[47044] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -27382,7 +26041,6 @@ _G.pg.base.aircraft_template[47044] = {
 		59444
 	}
 }
-
 _G.pg.base.aircraft_template[47045] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -27394,7 +26052,6 @@ _G.pg.base.aircraft_template[47045] = {
 		59445
 	}
 }
-
 _G.pg.base.aircraft_template[47046] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -27406,7 +26063,6 @@ _G.pg.base.aircraft_template[47046] = {
 		59446
 	}
 }
-
 _G.pg.base.aircraft_template[47047] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -27418,7 +26074,6 @@ _G.pg.base.aircraft_template[47047] = {
 		59447
 	}
 }
-
 _G.pg.base.aircraft_template[47048] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -27430,7 +26085,6 @@ _G.pg.base.aircraft_template[47048] = {
 		59448
 	}
 }
-
 _G.pg.base.aircraft_template[47049] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -27442,7 +26096,6 @@ _G.pg.base.aircraft_template[47049] = {
 		59449
 	}
 }
-
 _G.pg.base.aircraft_template[47050] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -27454,7 +26107,6 @@ _G.pg.base.aircraft_template[47050] = {
 		59450
 	}
 }
-
 _G.pg.base.aircraft_template[47051] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -27466,7 +26118,6 @@ _G.pg.base.aircraft_template[47051] = {
 		59451
 	}
 }
-
 _G.pg.base.aircraft_template[47060] = {
 	attack_power = 2,
 	name = "Ar-197舰载战斗机",
@@ -27544,7 +26195,6 @@ _G.pg.base.aircraft_template[47060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47061] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -27557,7 +26207,6 @@ _G.pg.base.aircraft_template[47061] = {
 		53041
 	}
 }
-
 _G.pg.base.aircraft_template[47062] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -27570,7 +26219,6 @@ _G.pg.base.aircraft_template[47062] = {
 		53042
 	}
 }
-
 _G.pg.base.aircraft_template[47063] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -27583,7 +26231,6 @@ _G.pg.base.aircraft_template[47063] = {
 		53043
 	}
 }
-
 _G.pg.base.aircraft_template[47064] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -27596,7 +26243,6 @@ _G.pg.base.aircraft_template[47064] = {
 		53044
 	}
 }
-
 _G.pg.base.aircraft_template[47065] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -27609,7 +26255,6 @@ _G.pg.base.aircraft_template[47065] = {
 		53045
 	}
 }
-
 _G.pg.base.aircraft_template[47066] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -27622,7 +26267,6 @@ _G.pg.base.aircraft_template[47066] = {
 		53046
 	}
 }
-
 _G.pg.base.aircraft_template[47067] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -27635,7 +26279,6 @@ _G.pg.base.aircraft_template[47067] = {
 		53047
 	}
 }
-
 _G.pg.base.aircraft_template[47080] = {
 	attack_power = 2,
 	name = "试作型舰载FW-190 A-5",
@@ -27713,7 +26356,6 @@ _G.pg.base.aircraft_template[47080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47081] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -27726,7 +26368,6 @@ _G.pg.base.aircraft_template[47081] = {
 		59141
 	}
 }
-
 _G.pg.base.aircraft_template[47082] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -27739,7 +26380,6 @@ _G.pg.base.aircraft_template[47082] = {
 		59142
 	}
 }
-
 _G.pg.base.aircraft_template[47083] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -27752,7 +26392,6 @@ _G.pg.base.aircraft_template[47083] = {
 		59143
 	}
 }
-
 _G.pg.base.aircraft_template[47084] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -27765,7 +26404,6 @@ _G.pg.base.aircraft_template[47084] = {
 		59144
 	}
 }
-
 _G.pg.base.aircraft_template[47085] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -27778,7 +26416,6 @@ _G.pg.base.aircraft_template[47085] = {
 		59145
 	}
 }
-
 _G.pg.base.aircraft_template[47086] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -27791,7 +26428,6 @@ _G.pg.base.aircraft_template[47086] = {
 		59146
 	}
 }
-
 _G.pg.base.aircraft_template[47087] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -27804,7 +26440,6 @@ _G.pg.base.aircraft_template[47087] = {
 		59147
 	}
 }
-
 _G.pg.base.aircraft_template[47088] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -27817,7 +26452,6 @@ _G.pg.base.aircraft_template[47088] = {
 		59148
 	}
 }
-
 _G.pg.base.aircraft_template[47089] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -27830,7 +26464,6 @@ _G.pg.base.aircraft_template[47089] = {
 		59149
 	}
 }
-
 _G.pg.base.aircraft_template[47090] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -27843,7 +26476,6 @@ _G.pg.base.aircraft_template[47090] = {
 		59150
 	}
 }
-
 _G.pg.base.aircraft_template[47091] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -27856,7 +26488,6 @@ _G.pg.base.aircraft_template[47091] = {
 		59151
 	}
 }
-
 _G.pg.base.aircraft_template[47100] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T1",
@@ -27933,7 +26564,6 @@ _G.pg.base.aircraft_template[47100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47101] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -27945,7 +26575,6 @@ _G.pg.base.aircraft_template[47101] = {
 		59201
 	}
 }
-
 _G.pg.base.aircraft_template[47102] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -27957,7 +26586,6 @@ _G.pg.base.aircraft_template[47102] = {
 		59202
 	}
 }
-
 _G.pg.base.aircraft_template[47103] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -27969,7 +26597,6 @@ _G.pg.base.aircraft_template[47103] = {
 		59203
 	}
 }
-
 _G.pg.base.aircraft_template[47104] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -27981,7 +26608,6 @@ _G.pg.base.aircraft_template[47104] = {
 		59204
 	}
 }
-
 _G.pg.base.aircraft_template[47105] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -27993,7 +26619,6 @@ _G.pg.base.aircraft_template[47105] = {
 		59205
 	}
 }
-
 _G.pg.base.aircraft_template[47106] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -28005,7 +26630,6 @@ _G.pg.base.aircraft_template[47106] = {
 		59206
 	}
 }
-
 _G.pg.base.aircraft_template[47120] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T2",
@@ -28082,7 +26706,6 @@ _G.pg.base.aircraft_template[47120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47121] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -28094,7 +26717,6 @@ _G.pg.base.aircraft_template[47121] = {
 		59221
 	}
 }
-
 _G.pg.base.aircraft_template[47122] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -28106,7 +26728,6 @@ _G.pg.base.aircraft_template[47122] = {
 		59222
 	}
 }
-
 _G.pg.base.aircraft_template[47123] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -28118,7 +26739,6 @@ _G.pg.base.aircraft_template[47123] = {
 		59223
 	}
 }
-
 _G.pg.base.aircraft_template[47124] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -28130,7 +26750,6 @@ _G.pg.base.aircraft_template[47124] = {
 		59224
 	}
 }
-
 _G.pg.base.aircraft_template[47125] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -28142,7 +26761,6 @@ _G.pg.base.aircraft_template[47125] = {
 		59225
 	}
 }
-
 _G.pg.base.aircraft_template[47126] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -28154,7 +26772,6 @@ _G.pg.base.aircraft_template[47126] = {
 		59226
 	}
 }
-
 _G.pg.base.aircraft_template[47127] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -28166,7 +26783,6 @@ _G.pg.base.aircraft_template[47127] = {
 		59227
 	}
 }
-
 _G.pg.base.aircraft_template[47128] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -28178,7 +26794,6 @@ _G.pg.base.aircraft_template[47128] = {
 		59228
 	}
 }
-
 _G.pg.base.aircraft_template[47129] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -28190,7 +26805,6 @@ _G.pg.base.aircraft_template[47129] = {
 		59229
 	}
 }
-
 _G.pg.base.aircraft_template[47130] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -28202,7 +26816,6 @@ _G.pg.base.aircraft_template[47130] = {
 		59230
 	}
 }
-
 _G.pg.base.aircraft_template[47140] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T3",
@@ -28279,7 +26892,6 @@ _G.pg.base.aircraft_template[47140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47141] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -28291,7 +26903,6 @@ _G.pg.base.aircraft_template[47141] = {
 		59241
 	}
 }
-
 _G.pg.base.aircraft_template[47142] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -28303,7 +26914,6 @@ _G.pg.base.aircraft_template[47142] = {
 		59242
 	}
 }
-
 _G.pg.base.aircraft_template[47143] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -28315,7 +26925,6 @@ _G.pg.base.aircraft_template[47143] = {
 		59243
 	}
 }
-
 _G.pg.base.aircraft_template[47144] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -28327,7 +26936,6 @@ _G.pg.base.aircraft_template[47144] = {
 		59244
 	}
 }
-
 _G.pg.base.aircraft_template[47145] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -28339,7 +26947,6 @@ _G.pg.base.aircraft_template[47145] = {
 		59245
 	}
 }
-
 _G.pg.base.aircraft_template[47146] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -28351,7 +26958,6 @@ _G.pg.base.aircraft_template[47146] = {
 		59246
 	}
 }
-
 _G.pg.base.aircraft_template[47147] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -28363,7 +26969,6 @@ _G.pg.base.aircraft_template[47147] = {
 		59247
 	}
 }
-
 _G.pg.base.aircraft_template[47148] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -28375,7 +26980,6 @@ _G.pg.base.aircraft_template[47148] = {
 		59248
 	}
 }
-
 _G.pg.base.aircraft_template[47149] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -28387,7 +26991,6 @@ _G.pg.base.aircraft_template[47149] = {
 		59249
 	}
 }
-
 _G.pg.base.aircraft_template[47150] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -28399,7 +27002,6 @@ _G.pg.base.aircraft_template[47150] = {
 		59250
 	}
 }
-
 _G.pg.base.aircraft_template[47151] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -28411,7 +27013,6 @@ _G.pg.base.aircraft_template[47151] = {
 		59251
 	}
 }
-
 _G.pg.base.aircraft_template[47152] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -28423,7 +27024,6 @@ _G.pg.base.aircraft_template[47152] = {
 		59252
 	}
 }
-
 _G.pg.base.aircraft_template[47153] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -28435,7 +27035,6 @@ _G.pg.base.aircraft_template[47153] = {
 		59253
 	}
 }
-
 _G.pg.base.aircraft_template[47160] = {
 	attack_power = 2,
 	name = "BF-109G",
@@ -28513,7 +27112,6 @@ _G.pg.base.aircraft_template[47160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47161] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -28526,7 +27124,6 @@ _G.pg.base.aircraft_template[47161] = {
 		59841
 	}
 }
-
 _G.pg.base.aircraft_template[47162] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -28539,7 +27136,6 @@ _G.pg.base.aircraft_template[47162] = {
 		59842
 	}
 }
-
 _G.pg.base.aircraft_template[47163] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -28552,7 +27148,6 @@ _G.pg.base.aircraft_template[47163] = {
 		59843
 	}
 }
-
 _G.pg.base.aircraft_template[47164] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -28565,7 +27160,6 @@ _G.pg.base.aircraft_template[47164] = {
 		59844
 	}
 }
-
 _G.pg.base.aircraft_template[47165] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -28578,7 +27172,6 @@ _G.pg.base.aircraft_template[47165] = {
 		59845
 	}
 }
-
 _G.pg.base.aircraft_template[47166] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -28591,7 +27184,6 @@ _G.pg.base.aircraft_template[47166] = {
 		59846
 	}
 }
-
 _G.pg.base.aircraft_template[47167] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -28604,7 +27196,6 @@ _G.pg.base.aircraft_template[47167] = {
 		59847
 	}
 }
-
 _G.pg.base.aircraft_template[47168] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -28617,7 +27208,6 @@ _G.pg.base.aircraft_template[47168] = {
 		59848
 	}
 }
-
 _G.pg.base.aircraft_template[47169] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -28630,7 +27220,6 @@ _G.pg.base.aircraft_template[47169] = {
 		59849
 	}
 }
-
 _G.pg.base.aircraft_template[47170] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -28643,7 +27232,6 @@ _G.pg.base.aircraft_template[47170] = {
 		59850
 	}
 }
-
 _G.pg.base.aircraft_template[47171] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -28656,7 +27244,6 @@ _G.pg.base.aircraft_template[47171] = {
 		59851
 	}
 }
-
 _G.pg.base.aircraft_template[47172] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -28669,7 +27256,6 @@ _G.pg.base.aircraft_template[47172] = {
 		59852
 	}
 }
-
 _G.pg.base.aircraft_template[47173] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -28682,7 +27268,6 @@ _G.pg.base.aircraft_template[47173] = {
 		59853
 	}
 }
-
 _G.pg.base.aircraft_template[47180] = {
 	attack_power = 2,
 	name = "试作舰载型FW-190 A-6/R6",
@@ -28761,7 +27346,6 @@ _G.pg.base.aircraft_template[47180] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[47181] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -28775,7 +27359,6 @@ _G.pg.base.aircraft_template[47181] = {
 		59921
 	}
 }
-
 _G.pg.base.aircraft_template[47182] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -28789,7 +27372,6 @@ _G.pg.base.aircraft_template[47182] = {
 		59922
 	}
 }
-
 _G.pg.base.aircraft_template[47183] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -28803,7 +27385,6 @@ _G.pg.base.aircraft_template[47183] = {
 		59923
 	}
 }
-
 _G.pg.base.aircraft_template[47184] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -28817,7 +27398,6 @@ _G.pg.base.aircraft_template[47184] = {
 		59924
 	}
 }
-
 _G.pg.base.aircraft_template[47185] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -28831,7 +27411,6 @@ _G.pg.base.aircraft_template[47185] = {
 		59925
 	}
 }
-
 _G.pg.base.aircraft_template[47186] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -28845,7 +27424,6 @@ _G.pg.base.aircraft_template[47186] = {
 		59926
 	}
 }
-
 _G.pg.base.aircraft_template[47187] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -28859,7 +27437,6 @@ _G.pg.base.aircraft_template[47187] = {
 		59927
 	}
 }
-
 _G.pg.base.aircraft_template[47188] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -28873,7 +27450,6 @@ _G.pg.base.aircraft_template[47188] = {
 		59928
 	}
 }
-
 _G.pg.base.aircraft_template[47189] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -28887,7 +27463,6 @@ _G.pg.base.aircraft_template[47189] = {
 		59929
 	}
 }
-
 _G.pg.base.aircraft_template[47190] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -28901,7 +27476,6 @@ _G.pg.base.aircraft_template[47190] = {
 		59930
 	}
 }
-
 _G.pg.base.aircraft_template[47191] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -28915,7 +27489,6 @@ _G.pg.base.aircraft_template[47191] = {
 		59931
 	}
 }
-
 _G.pg.base.aircraft_template[47192] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -28929,7 +27502,6 @@ _G.pg.base.aircraft_template[47192] = {
 		59932
 	}
 }
-
 _G.pg.base.aircraft_template[47193] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -28943,7 +27515,6 @@ _G.pg.base.aircraft_template[47193] = {
 		59933
 	}
 }
-
 _G.pg.base.aircraft_template[48000] = {
 	attack_power = 2,
 	name = "Ar-195舰载鱼雷机",
@@ -29020,7 +27591,6 @@ _G.pg.base.aircraft_template[48000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[48001] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -29032,7 +27602,6 @@ _G.pg.base.aircraft_template[48001] = {
 		59661
 	}
 }
-
 _G.pg.base.aircraft_template[48002] = {
 	max_hp = 41,
 	hp_growth = 1581,
@@ -29044,7 +27613,6 @@ _G.pg.base.aircraft_template[48002] = {
 		59662
 	}
 }
-
 _G.pg.base.aircraft_template[48003] = {
 	max_hp = 46,
 	hp_growth = 1763,
@@ -29056,7 +27624,6 @@ _G.pg.base.aircraft_template[48003] = {
 		59663
 	}
 }
-
 _G.pg.base.aircraft_template[48004] = {
 	max_hp = 51,
 	hp_growth = 1946,
@@ -29068,7 +27635,6 @@ _G.pg.base.aircraft_template[48004] = {
 		59664
 	}
 }
-
 _G.pg.base.aircraft_template[48005] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -29080,7 +27646,6 @@ _G.pg.base.aircraft_template[48005] = {
 		59665
 	}
 }
-
 _G.pg.base.aircraft_template[48006] = {
 	max_hp = 60,
 	hp_growth = 2310,
@@ -29092,7 +27657,6 @@ _G.pg.base.aircraft_template[48006] = {
 		59666
 	}
 }
-
 _G.pg.base.aircraft_template[48007] = {
 	max_hp = 65,
 	hp_growth = 2493,
@@ -29104,7 +27668,6 @@ _G.pg.base.aircraft_template[48007] = {
 		59667
 	}
 }
-
 _G.pg.base.aircraft_template[48020] = {
 	attack_power = 2,
 	name = "Fi-167舰载鱼雷机",
@@ -29181,7 +27744,6 @@ _G.pg.base.aircraft_template[48020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[48021] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -29193,7 +27755,6 @@ _G.pg.base.aircraft_template[48021] = {
 		59681
 	}
 }
-
 _G.pg.base.aircraft_template[48022] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -29205,7 +27766,6 @@ _G.pg.base.aircraft_template[48022] = {
 		59682
 	}
 }
-
 _G.pg.base.aircraft_template[48023] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -29217,7 +27777,6 @@ _G.pg.base.aircraft_template[48023] = {
 		59683
 	}
 }
-
 _G.pg.base.aircraft_template[48024] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -29229,7 +27788,6 @@ _G.pg.base.aircraft_template[48024] = {
 		59684
 	}
 }
-
 _G.pg.base.aircraft_template[48025] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -29241,7 +27799,6 @@ _G.pg.base.aircraft_template[48025] = {
 		59685
 	}
 }
-
 _G.pg.base.aircraft_template[48026] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -29253,7 +27810,6 @@ _G.pg.base.aircraft_template[48026] = {
 		59686
 	}
 }
-
 _G.pg.base.aircraft_template[48027] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -29265,7 +27821,6 @@ _G.pg.base.aircraft_template[48027] = {
 		59687
 	}
 }
-
 _G.pg.base.aircraft_template[48028] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -29277,7 +27832,6 @@ _G.pg.base.aircraft_template[48028] = {
 		59688
 	}
 }
-
 _G.pg.base.aircraft_template[48029] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -29289,7 +27843,6 @@ _G.pg.base.aircraft_template[48029] = {
 		59689
 	}
 }
-
 _G.pg.base.aircraft_template[48030] = {
 	max_hp = 87,
 	hp_growth = 3344,
@@ -29301,7 +27854,6 @@ _G.pg.base.aircraft_template[48030] = {
 		59690
 	}
 }
-
 _G.pg.base.aircraft_template[48031] = {
 	max_hp = 92,
 	hp_growth = 3545,
@@ -29313,7 +27865,6 @@ _G.pg.base.aircraft_template[48031] = {
 		59691
 	}
 }
-
 _G.pg.base.aircraft_template[48040] = {
 	attack_power = 2,
 	name = "Ju-87 D-4",
@@ -29390,7 +27941,6 @@ _G.pg.base.aircraft_template[48040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[48041] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -29402,7 +27952,6 @@ _G.pg.base.aircraft_template[48041] = {
 		59701
 	}
 }
-
 _G.pg.base.aircraft_template[48042] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -29414,7 +27963,6 @@ _G.pg.base.aircraft_template[48042] = {
 		59702
 	}
 }
-
 _G.pg.base.aircraft_template[48043] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -29426,7 +27974,6 @@ _G.pg.base.aircraft_template[48043] = {
 		59703
 	}
 }
-
 _G.pg.base.aircraft_template[48044] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -29438,7 +27985,6 @@ _G.pg.base.aircraft_template[48044] = {
 		59704
 	}
 }
-
 _G.pg.base.aircraft_template[48045] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -29450,7 +27996,6 @@ _G.pg.base.aircraft_template[48045] = {
 		59705
 	}
 }
-
 _G.pg.base.aircraft_template[48046] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -29462,7 +28007,6 @@ _G.pg.base.aircraft_template[48046] = {
 		59706
 	}
 }
-
 _G.pg.base.aircraft_template[48047] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -29474,7 +28018,6 @@ _G.pg.base.aircraft_template[48047] = {
 		59707
 	}
 }
-
 _G.pg.base.aircraft_template[48048] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -29486,7 +28029,6 @@ _G.pg.base.aircraft_template[48048] = {
 		59708
 	}
 }
-
 _G.pg.base.aircraft_template[48049] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -29498,7 +28040,6 @@ _G.pg.base.aircraft_template[48049] = {
 		59709
 	}
 }
-
 _G.pg.base.aircraft_template[48050] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -29510,7 +28051,6 @@ _G.pg.base.aircraft_template[48050] = {
 		59710
 	}
 }
-
 _G.pg.base.aircraft_template[48051] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -29522,7 +28062,6 @@ _G.pg.base.aircraft_template[48051] = {
 		59711
 	}
 }
-
 _G.pg.base.aircraft_template[48052] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -29534,7 +28073,6 @@ _G.pg.base.aircraft_template[48052] = {
 		59712
 	}
 }
-
 _G.pg.base.aircraft_template[48053] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -29546,7 +28084,6 @@ _G.pg.base.aircraft_template[48053] = {
 		59713
 	}
 }
-
 _G.pg.base.aircraft_template[49000] = {
 	attack_power = 2,
 	name = "Ju-87C俯冲轰炸机T1",
@@ -29624,7 +28161,6 @@ _G.pg.base.aircraft_template[49000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[49001] = {
 	max_hp = 38,
 	hp_growth = 1457,
@@ -29637,7 +28173,6 @@ _G.pg.base.aircraft_template[49001] = {
 		53001
 	}
 }
-
 _G.pg.base.aircraft_template[49002] = {
 	max_hp = 43,
 	hp_growth = 1647,
@@ -29650,7 +28185,6 @@ _G.pg.base.aircraft_template[49002] = {
 		53002
 	}
 }
-
 _G.pg.base.aircraft_template[49003] = {
 	max_hp = 48,
 	hp_growth = 1837,
@@ -29663,7 +28197,6 @@ _G.pg.base.aircraft_template[49003] = {
 		53003
 	}
 }
-
 _G.pg.base.aircraft_template[49020] = {
 	attack_power = 2,
 	name = "Ju-87C俯冲轰炸机T2",
@@ -29741,7 +28274,6 @@ _G.pg.base.aircraft_template[49020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[49021] = {
 	max_hp = 42,
 	hp_growth = 1619,
@@ -29754,7 +28286,6 @@ _G.pg.base.aircraft_template[49021] = {
 		53021
 	}
 }
-
 _G.pg.base.aircraft_template[49022] = {
 	max_hp = 48,
 	hp_growth = 1830,
@@ -29767,7 +28298,6 @@ _G.pg.base.aircraft_template[49022] = {
 		53022
 	}
 }
-
 _G.pg.base.aircraft_template[49023] = {
 	max_hp = 53,
 	hp_growth = 2042,
@@ -29780,7 +28310,6 @@ _G.pg.base.aircraft_template[49023] = {
 		53023
 	}
 }
-
 _G.pg.base.aircraft_template[49024] = {
 	max_hp = 59,
 	hp_growth = 2253,
@@ -29793,7 +28322,6 @@ _G.pg.base.aircraft_template[49024] = {
 		53024
 	}
 }
-
 _G.pg.base.aircraft_template[49025] = {
 	max_hp = 64,
 	hp_growth = 2464,
@@ -29806,7 +28334,6 @@ _G.pg.base.aircraft_template[49025] = {
 		53025
 	}
 }
-
 _G.pg.base.aircraft_template[49026] = {
 	max_hp = 70,
 	hp_growth = 2675,
@@ -29819,7 +28346,6 @@ _G.pg.base.aircraft_template[49026] = {
 		53026
 	}
 }
-
 _G.pg.base.aircraft_template[49040] = {
 	attack_power = 2,
 	name = "Ju-87C俯冲轰炸机T3",
@@ -29897,7 +28423,6 @@ _G.pg.base.aircraft_template[49040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[49041] = {
 	max_hp = 46,
 	hp_growth = 1781,
@@ -29910,7 +28435,6 @@ _G.pg.base.aircraft_template[49041] = {
 		53041
 	}
 }
-
 _G.pg.base.aircraft_template[49042] = {
 	max_hp = 52,
 	hp_growth = 2013,
@@ -29923,7 +28447,6 @@ _G.pg.base.aircraft_template[49042] = {
 		53042
 	}
 }
-
 _G.pg.base.aircraft_template[49043] = {
 	max_hp = 58,
 	hp_growth = 2246,
@@ -29936,7 +28459,6 @@ _G.pg.base.aircraft_template[49043] = {
 		53043
 	}
 }
-
 _G.pg.base.aircraft_template[49044] = {
 	max_hp = 64,
 	hp_growth = 2478,
@@ -29949,7 +28471,6 @@ _G.pg.base.aircraft_template[49044] = {
 		53044
 	}
 }
-
 _G.pg.base.aircraft_template[49045] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -29962,7 +28483,6 @@ _G.pg.base.aircraft_template[49045] = {
 		53045
 	}
 }
-
 _G.pg.base.aircraft_template[49046] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -29975,7 +28495,6 @@ _G.pg.base.aircraft_template[49046] = {
 		53046
 	}
 }
-
 _G.pg.base.aircraft_template[49047] = {
 	max_hp = 83,
 	hp_growth = 3175,
@@ -29988,7 +28507,6 @@ _G.pg.base.aircraft_template[49047] = {
 		53047
 	}
 }
-
 _G.pg.base.aircraft_template[49048] = {
 	max_hp = 89,
 	hp_growth = 3407,
@@ -30001,7 +28519,6 @@ _G.pg.base.aircraft_template[49048] = {
 		53048
 	}
 }
-
 _G.pg.base.aircraft_template[49049] = {
 	max_hp = 95,
 	hp_growth = 3640,
@@ -30014,7 +28531,6 @@ _G.pg.base.aircraft_template[49049] = {
 		53049
 	}
 }
-
 _G.pg.base.aircraft_template[49050] = {
 	max_hp = 101,
 	hp_growth = 3872,
@@ -30027,7 +28543,6 @@ _G.pg.base.aircraft_template[49050] = {
 		53050
 	}
 }
-
 _G.pg.base.aircraft_template[49051] = {
 	max_hp = 107,
 	hp_growth = 4104,
@@ -30040,7 +28555,6 @@ _G.pg.base.aircraft_template[49051] = {
 		53051
 	}
 }
-
 _G.pg.base.aircraft_template[49060] = {
 	attack_power = 2,
 	name = "He-50b舰载轰炸机",
@@ -30117,7 +28631,6 @@ _G.pg.base.aircraft_template[49060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[49061] = {
 	max_hp = 42,
 	hp_growth = 1619,
@@ -30129,7 +28642,6 @@ _G.pg.base.aircraft_template[49061] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[49062] = {
 	max_hp = 48,
 	hp_growth = 1830,
@@ -30141,7 +28653,6 @@ _G.pg.base.aircraft_template[49062] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[49063] = {
 	max_hp = 53,
 	hp_growth = 2042,
@@ -30153,7 +28664,6 @@ _G.pg.base.aircraft_template[49063] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[49064] = {
 	max_hp = 59,
 	hp_growth = 2253,
@@ -30165,7 +28675,6 @@ _G.pg.base.aircraft_template[49064] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[49065] = {
 	max_hp = 64,
 	hp_growth = 2464,
@@ -30177,7 +28686,6 @@ _G.pg.base.aircraft_template[49065] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[49066] = {
 	max_hp = 70,
 	hp_growth = 2675,
@@ -30189,7 +28697,6 @@ _G.pg.base.aircraft_template[49066] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[49067] = {
 	max_hp = 75,
 	hp_growth = 2886,
@@ -30201,7 +28708,6 @@ _G.pg.base.aircraft_template[49067] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[61010] = {
 	attack_power = 2,
 	name = "皇家方舟技能LV1",
@@ -30277,7 +28783,6 @@ _G.pg.base.aircraft_template[61010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61011] = {
 	id = 61011,
 	name = "皇家方舟技能LV2",
@@ -30289,7 +28794,6 @@ _G.pg.base.aircraft_template[61011] = {
 		61014
 	}
 }
-
 _G.pg.base.aircraft_template[61012] = {
 	id = 61012,
 	name = "皇家方舟技能LV3",
@@ -30301,7 +28805,6 @@ _G.pg.base.aircraft_template[61012] = {
 		61015
 	}
 }
-
 _G.pg.base.aircraft_template[61016] = {
 	attack_power = 2,
 	name = "大凤技能彩云",
@@ -30375,7 +28878,6 @@ _G.pg.base.aircraft_template[61016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61017] = {
 	attack_power = 2,
 	name = "多多丸技能鱼雷机",
@@ -30451,7 +28953,6 @@ _G.pg.base.aircraft_template[61017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61019] = {
 	attack_power = 2,
 	name = "黑企业剧情轰炸机",
@@ -30527,7 +29028,6 @@ _G.pg.base.aircraft_template[61019] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61020] = {
 	attack_power = 2,
 	name = "黑企业剧情轰炸机",
@@ -30601,7 +29101,6 @@ _G.pg.base.aircraft_template[61020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61022] = {
 	attack_power = 2,
 	name = "香格里拉技能飞机",
@@ -30675,7 +29174,6 @@ _G.pg.base.aircraft_template[61022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61023] = {
 	attack_power = 2,
 	name = "伊13技能彩云",
@@ -30749,7 +29247,6 @@ _G.pg.base.aircraft_template[61023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61024] = {
 	attack_power = 2,
 	name = "信浓技能彩云",
@@ -30823,7 +29320,6 @@ _G.pg.base.aircraft_template[61024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61026] = {
 	attack_power = 2,
 	name = "次郎丸大世界内技能鱼雷机",
@@ -30899,7 +29395,6 @@ _G.pg.base.aircraft_template[61026] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61028] = {
 	attack_power = 2,
 	name = "阿尔比恩天袭者预警机",
@@ -30973,7 +29468,6 @@ _G.pg.base.aircraft_template[61028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61029] = {
 	attack_power = 2,
 	name = "约克城Ⅱ天袭者舰载机",
@@ -31047,7 +29541,6 @@ _G.pg.base.aircraft_template[61029] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[61030] = {
 	attack_power = 2,
 	name = "飞鸟川专武-巨大炎龙",
@@ -31121,7 +29614,6 @@ _G.pg.base.aircraft_template[61030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62141] = {
 	attack_power = 2,
 	name = "霞飞战斗机弹幕Lv1",
@@ -31197,7 +29689,6 @@ _G.pg.base.aircraft_template[62141] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62142] = {
 	id = 62142,
 	name = "霞飞战斗机弹幕Lv2",
@@ -31209,7 +29700,6 @@ _G.pg.base.aircraft_template[62142] = {
 		62152
 	}
 }
-
 _G.pg.base.aircraft_template[62143] = {
 	id = 62143,
 	name = "霞飞战斗机弹幕Lv3",
@@ -31221,7 +29711,6 @@ _G.pg.base.aircraft_template[62143] = {
 		62153
 	}
 }
-
 _G.pg.base.aircraft_template[62144] = {
 	id = 62144,
 	name = "霞飞战斗机弹幕Lv4",
@@ -31233,7 +29722,6 @@ _G.pg.base.aircraft_template[62144] = {
 		62154
 	}
 }
-
 _G.pg.base.aircraft_template[62145] = {
 	id = 62145,
 	name = "霞飞战斗机弹幕Lv5",
@@ -31245,7 +29733,6 @@ _G.pg.base.aircraft_template[62145] = {
 		62155
 	}
 }
-
 _G.pg.base.aircraft_template[62146] = {
 	id = 62146,
 	name = "霞飞战斗机弹幕Lv6",
@@ -31257,7 +29744,6 @@ _G.pg.base.aircraft_template[62146] = {
 		62156
 	}
 }
-
 _G.pg.base.aircraft_template[62147] = {
 	id = 62147,
 	name = "霞飞战斗机弹幕Lv7",
@@ -31269,7 +29755,6 @@ _G.pg.base.aircraft_template[62147] = {
 		62157
 	}
 }
-
 _G.pg.base.aircraft_template[62148] = {
 	id = 62148,
 	name = "霞飞战斗机弹幕Lv8",
@@ -31281,7 +29766,6 @@ _G.pg.base.aircraft_template[62148] = {
 		62158
 	}
 }
-
 _G.pg.base.aircraft_template[62149] = {
 	id = 62149,
 	name = "霞飞战斗机弹幕Lv9",
@@ -31293,7 +29777,6 @@ _G.pg.base.aircraft_template[62149] = {
 		62159
 	}
 }
-
 _G.pg.base.aircraft_template[62150] = {
 	id = 62150,
 	name = "霞飞战斗机弹幕Lv10",
@@ -31305,7 +29788,6 @@ _G.pg.base.aircraft_template[62150] = {
 		62160
 	}
 }
-
 _G.pg.base.aircraft_template[62161] = {
 	attack_power = 2,
 	name = "霞飞鱼雷机弹幕Lv1",
@@ -31381,7 +29863,6 @@ _G.pg.base.aircraft_template[62161] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62162] = {
 	id = 62162,
 	name = "霞飞鱼雷机弹幕Lv2",
@@ -31393,7 +29874,6 @@ _G.pg.base.aircraft_template[62162] = {
 		62172
 	}
 }
-
 _G.pg.base.aircraft_template[62163] = {
 	id = 62163,
 	name = "霞飞鱼雷机弹幕Lv3",
@@ -31405,7 +29885,6 @@ _G.pg.base.aircraft_template[62163] = {
 		62173
 	}
 }
-
 _G.pg.base.aircraft_template[62164] = {
 	id = 62164,
 	name = "霞飞鱼雷机弹幕Lv4",
@@ -31417,7 +29896,6 @@ _G.pg.base.aircraft_template[62164] = {
 		62174
 	}
 }
-
 _G.pg.base.aircraft_template[62165] = {
 	id = 62165,
 	name = "霞飞鱼雷机弹幕Lv5",
@@ -31429,7 +29907,6 @@ _G.pg.base.aircraft_template[62165] = {
 		62175
 	}
 }
-
 _G.pg.base.aircraft_template[62166] = {
 	id = 62166,
 	name = "霞飞鱼雷机弹幕Lv6",
@@ -31441,7 +29918,6 @@ _G.pg.base.aircraft_template[62166] = {
 		62176
 	}
 }
-
 _G.pg.base.aircraft_template[62167] = {
 	id = 62167,
 	name = "霞飞鱼雷机弹幕Lv7",
@@ -31453,7 +29929,6 @@ _G.pg.base.aircraft_template[62167] = {
 		62177
 	}
 }
-
 _G.pg.base.aircraft_template[62168] = {
 	id = 62168,
 	name = "霞飞鱼雷机弹幕Lv8",
@@ -31465,7 +29940,6 @@ _G.pg.base.aircraft_template[62168] = {
 		62178
 	}
 }
-
 _G.pg.base.aircraft_template[62169] = {
 	id = 62169,
 	name = "霞飞鱼雷机弹幕Lv9",
@@ -31477,7 +29951,6 @@ _G.pg.base.aircraft_template[62169] = {
 		62179
 	}
 }
-
 _G.pg.base.aircraft_template[62170] = {
 	id = 62170,
 	name = "霞飞鱼雷机弹幕Lv10",
@@ -31489,7 +29962,6 @@ _G.pg.base.aircraft_template[62170] = {
 		62180
 	}
 }
-
 _G.pg.base.aircraft_template[62181] = {
 	attack_power = 2,
 	name = "霞飞隐形飞机Lv1",
@@ -31565,7 +30037,6 @@ _G.pg.base.aircraft_template[62181] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62182] = {
 	id = 62182,
 	name = "霞飞隐形飞机Lv2",
@@ -31577,7 +30048,6 @@ _G.pg.base.aircraft_template[62182] = {
 		62192
 	}
 }
-
 _G.pg.base.aircraft_template[62183] = {
 	id = 62183,
 	name = "霞飞隐形飞机Lv3",
@@ -31589,7 +30059,6 @@ _G.pg.base.aircraft_template[62183] = {
 		62193
 	}
 }
-
 _G.pg.base.aircraft_template[62184] = {
 	id = 62184,
 	name = "霞飞隐形飞机Lv4",
@@ -31601,7 +30070,6 @@ _G.pg.base.aircraft_template[62184] = {
 		62194
 	}
 }
-
 _G.pg.base.aircraft_template[62185] = {
 	id = 62185,
 	name = "霞飞隐形飞机Lv5",
@@ -31613,7 +30081,6 @@ _G.pg.base.aircraft_template[62185] = {
 		62195
 	}
 }
-
 _G.pg.base.aircraft_template[62186] = {
 	id = 62186,
 	name = "霞飞隐形飞机Lv6",
@@ -31625,7 +30092,6 @@ _G.pg.base.aircraft_template[62186] = {
 		62196
 	}
 }
-
 _G.pg.base.aircraft_template[62187] = {
 	id = 62187,
 	name = "霞飞隐形飞机Lv7",
@@ -31637,7 +30103,6 @@ _G.pg.base.aircraft_template[62187] = {
 		62197
 	}
 }
-
 _G.pg.base.aircraft_template[62188] = {
 	id = 62188,
 	name = "霞飞隐形飞机Lv8",
@@ -31649,7 +30114,6 @@ _G.pg.base.aircraft_template[62188] = {
 		62198
 	}
 }
-
 _G.pg.base.aircraft_template[62189] = {
 	id = 62189,
 	name = "霞飞隐形飞机Lv9",
@@ -31661,7 +30125,6 @@ _G.pg.base.aircraft_template[62189] = {
 		62199
 	}
 }
-
 _G.pg.base.aircraft_template[62190] = {
 	id = 62190,
 	name = "霞飞隐形飞机Lv10",
@@ -31673,7 +30136,6 @@ _G.pg.base.aircraft_template[62190] = {
 		62200
 	}
 }
-
 _G.pg.base.aircraft_template[62611] = {
 	attack_power = 2,
 	name = "契卡洛夫技能轰炸机Lv1",
@@ -31749,7 +30211,6 @@ _G.pg.base.aircraft_template[62611] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62612] = {
 	id = 62612,
 	name = "契卡洛夫技能轰炸机Lv2",
@@ -31761,7 +30222,6 @@ _G.pg.base.aircraft_template[62612] = {
 		62622
 	}
 }
-
 _G.pg.base.aircraft_template[62613] = {
 	id = 62613,
 	name = "契卡洛夫技能轰炸机Lv3",
@@ -31773,7 +30233,6 @@ _G.pg.base.aircraft_template[62613] = {
 		62623
 	}
 }
-
 _G.pg.base.aircraft_template[62614] = {
 	id = 62614,
 	name = "契卡洛夫技能轰炸机Lv4",
@@ -31785,7 +30244,6 @@ _G.pg.base.aircraft_template[62614] = {
 		62624
 	}
 }
-
 _G.pg.base.aircraft_template[62615] = {
 	id = 62615,
 	name = "契卡洛夫技能轰炸机Lv5",
@@ -31797,7 +30255,6 @@ _G.pg.base.aircraft_template[62615] = {
 		62625
 	}
 }
-
 _G.pg.base.aircraft_template[62616] = {
 	id = 62616,
 	name = "契卡洛夫技能轰炸机Lv6",
@@ -31809,7 +30266,6 @@ _G.pg.base.aircraft_template[62616] = {
 		62626
 	}
 }
-
 _G.pg.base.aircraft_template[62617] = {
 	id = 62617,
 	name = "契卡洛夫技能轰炸机Lv7",
@@ -31821,7 +30277,6 @@ _G.pg.base.aircraft_template[62617] = {
 		62627
 	}
 }
-
 _G.pg.base.aircraft_template[62618] = {
 	id = 62618,
 	name = "契卡洛夫技能轰炸机Lv8",
@@ -31833,7 +30288,6 @@ _G.pg.base.aircraft_template[62618] = {
 		62628
 	}
 }
-
 _G.pg.base.aircraft_template[62619] = {
 	id = 62619,
 	name = "契卡洛夫技能轰炸机Lv9",
@@ -31845,7 +30299,6 @@ _G.pg.base.aircraft_template[62619] = {
 		62629
 	}
 }
-
 _G.pg.base.aircraft_template[62620] = {
 	id = 62620,
 	name = "契卡洛夫技能轰炸机Lv10",
@@ -31857,7 +30310,6 @@ _G.pg.base.aircraft_template[62620] = {
 		62630
 	}
 }
-
 _G.pg.base.aircraft_template[62631] = {
 	attack_power = 2,
 	name = "契卡洛夫技能鱼雷机",
@@ -31933,7 +30385,6 @@ _G.pg.base.aircraft_template[62631] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62632] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -31944,7 +30395,6 @@ _G.pg.base.aircraft_template[62632] = {
 		62642
 	}
 }
-
 _G.pg.base.aircraft_template[62633] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -31955,7 +30405,6 @@ _G.pg.base.aircraft_template[62633] = {
 		62643
 	}
 }
-
 _G.pg.base.aircraft_template[62634] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -31966,7 +30415,6 @@ _G.pg.base.aircraft_template[62634] = {
 		62644
 	}
 }
-
 _G.pg.base.aircraft_template[62635] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -31977,7 +30425,6 @@ _G.pg.base.aircraft_template[62635] = {
 		62645
 	}
 }
-
 _G.pg.base.aircraft_template[62636] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -31988,7 +30435,6 @@ _G.pg.base.aircraft_template[62636] = {
 		62646
 	}
 }
-
 _G.pg.base.aircraft_template[62637] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -31999,7 +30445,6 @@ _G.pg.base.aircraft_template[62637] = {
 		62647
 	}
 }
-
 _G.pg.base.aircraft_template[62638] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -32010,7 +30455,6 @@ _G.pg.base.aircraft_template[62638] = {
 		62648
 	}
 }
-
 _G.pg.base.aircraft_template[62639] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -32021,7 +30465,6 @@ _G.pg.base.aircraft_template[62639] = {
 		62649
 	}
 }
-
 _G.pg.base.aircraft_template[62640] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -32032,7 +30475,6 @@ _G.pg.base.aircraft_template[62640] = {
 		62650
 	}
 }
-
 _G.pg.base.aircraft_template[62651] = {
 	attack_power = 2,
 	name = "契卡洛夫技能轰炸机Lv1—追加",
@@ -32108,7 +30550,6 @@ _G.pg.base.aircraft_template[62651] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62652] = {
 	id = 62652,
 	name = "契卡洛夫技能轰炸机Lv2",
@@ -32120,7 +30561,6 @@ _G.pg.base.aircraft_template[62652] = {
 		62662
 	}
 }
-
 _G.pg.base.aircraft_template[62653] = {
 	id = 62653,
 	name = "契卡洛夫技能轰炸机Lv3",
@@ -32132,7 +30572,6 @@ _G.pg.base.aircraft_template[62653] = {
 		62663
 	}
 }
-
 _G.pg.base.aircraft_template[62654] = {
 	id = 62654,
 	name = "契卡洛夫技能轰炸机Lv4",
@@ -32144,7 +30583,6 @@ _G.pg.base.aircraft_template[62654] = {
 		62664
 	}
 }
-
 _G.pg.base.aircraft_template[62655] = {
 	id = 62655,
 	name = "契卡洛夫技能轰炸机Lv5",
@@ -32156,7 +30594,6 @@ _G.pg.base.aircraft_template[62655] = {
 		62665
 	}
 }
-
 _G.pg.base.aircraft_template[62656] = {
 	id = 62656,
 	name = "契卡洛夫技能轰炸机Lv6",
@@ -32168,7 +30605,6 @@ _G.pg.base.aircraft_template[62656] = {
 		62666
 	}
 }
-
 _G.pg.base.aircraft_template[62657] = {
 	id = 62657,
 	name = "契卡洛夫技能轰炸机Lv7",
@@ -32180,7 +30616,6 @@ _G.pg.base.aircraft_template[62657] = {
 		62667
 	}
 }
-
 _G.pg.base.aircraft_template[62658] = {
 	id = 62658,
 	name = "契卡洛夫技能轰炸机Lv8",
@@ -32192,7 +30627,6 @@ _G.pg.base.aircraft_template[62658] = {
 		62668
 	}
 }
-
 _G.pg.base.aircraft_template[62659] = {
 	id = 62659,
 	name = "契卡洛夫技能轰炸机Lv9",
@@ -32204,7 +30638,6 @@ _G.pg.base.aircraft_template[62659] = {
 		62669
 	}
 }
-
 _G.pg.base.aircraft_template[62660] = {
 	id = 62660,
 	name = "契卡洛夫技能轰炸机Lv10",
@@ -32216,7 +30649,6 @@ _G.pg.base.aircraft_template[62660] = {
 		62670
 	}
 }
-
 _G.pg.base.aircraft_template[62791] = {
 	attack_power = 2,
 	name = "齐柏林空艇Lv1",
@@ -32292,7 +30724,6 @@ _G.pg.base.aircraft_template[62791] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62792] = {
 	id = 62792,
 	name = "齐柏林空艇Lv2",
@@ -32304,7 +30735,6 @@ _G.pg.base.aircraft_template[62792] = {
 		62802
 	}
 }
-
 _G.pg.base.aircraft_template[62793] = {
 	id = 62793,
 	name = "齐柏林空艇Lv3",
@@ -32316,7 +30746,6 @@ _G.pg.base.aircraft_template[62793] = {
 		62803
 	}
 }
-
 _G.pg.base.aircraft_template[62794] = {
 	id = 62794,
 	name = "齐柏林空艇Lv4",
@@ -32328,7 +30757,6 @@ _G.pg.base.aircraft_template[62794] = {
 		62804
 	}
 }
-
 _G.pg.base.aircraft_template[62795] = {
 	id = 62795,
 	name = "齐柏林空艇Lv5",
@@ -32340,7 +30768,6 @@ _G.pg.base.aircraft_template[62795] = {
 		62805
 	}
 }
-
 _G.pg.base.aircraft_template[62796] = {
 	id = 62796,
 	name = "齐柏林空艇Lv6",
@@ -32352,7 +30779,6 @@ _G.pg.base.aircraft_template[62796] = {
 		62806
 	}
 }
-
 _G.pg.base.aircraft_template[62797] = {
 	id = 62797,
 	name = "齐柏林空艇Lv7",
@@ -32364,7 +30790,6 @@ _G.pg.base.aircraft_template[62797] = {
 		62807
 	}
 }
-
 _G.pg.base.aircraft_template[62798] = {
 	id = 62798,
 	name = "齐柏林空艇Lv8",
@@ -32376,7 +30801,6 @@ _G.pg.base.aircraft_template[62798] = {
 		62808
 	}
 }
-
 _G.pg.base.aircraft_template[62799] = {
 	id = 62799,
 	name = "齐柏林空艇Lv9",
@@ -32388,7 +30812,6 @@ _G.pg.base.aircraft_template[62799] = {
 		62809
 	}
 }
-
 _G.pg.base.aircraft_template[62800] = {
 	id = 62800,
 	name = "齐柏林空艇Lv10",
@@ -32400,7 +30823,6 @@ _G.pg.base.aircraft_template[62800] = {
 		62810
 	}
 }
-
 _G.pg.base.aircraft_template[62881] = {
 	attack_power = 2,
 	name = "光辉火箭弹战斗机LV1",
@@ -32476,7 +30898,6 @@ _G.pg.base.aircraft_template[62881] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[62882] = {
 	id = 62882,
 	name = "光辉火箭弹战斗机LV2",
@@ -32488,7 +30909,6 @@ _G.pg.base.aircraft_template[62882] = {
 		62892
 	}
 }
-
 _G.pg.base.aircraft_template[62883] = {
 	id = 62883,
 	name = "光辉火箭弹战斗机LV3",
@@ -32500,7 +30920,6 @@ _G.pg.base.aircraft_template[62883] = {
 		62893
 	}
 }
-
 _G.pg.base.aircraft_template[62884] = {
 	id = 62884,
 	name = "光辉火箭弹战斗机LV4",
@@ -32512,7 +30931,6 @@ _G.pg.base.aircraft_template[62884] = {
 		62894
 	}
 }
-
 _G.pg.base.aircraft_template[62885] = {
 	id = 62885,
 	name = "光辉火箭弹战斗机LV5",
@@ -32524,7 +30942,6 @@ _G.pg.base.aircraft_template[62885] = {
 		62895
 	}
 }
-
 _G.pg.base.aircraft_template[62886] = {
 	id = 62886,
 	name = "光辉火箭弹战斗机LV6",
@@ -32536,7 +30953,6 @@ _G.pg.base.aircraft_template[62886] = {
 		62896
 	}
 }
-
 _G.pg.base.aircraft_template[62887] = {
 	id = 62887,
 	name = "光辉火箭弹战斗机LV7",
@@ -32548,7 +30964,6 @@ _G.pg.base.aircraft_template[62887] = {
 		62897
 	}
 }
-
 _G.pg.base.aircraft_template[62888] = {
 	id = 62888,
 	name = "光辉火箭弹战斗机LV8",
@@ -32560,7 +30975,6 @@ _G.pg.base.aircraft_template[62888] = {
 		62898
 	}
 }
-
 _G.pg.base.aircraft_template[62889] = {
 	id = 62889,
 	name = "光辉火箭弹战斗机LV9",
@@ -32572,7 +30986,6 @@ _G.pg.base.aircraft_template[62889] = {
 		62899
 	}
 }
-
 _G.pg.base.aircraft_template[62890] = {
 	id = 62890,
 	name = "光辉火箭弹战斗机LV10",
@@ -32584,7 +30997,6 @@ _G.pg.base.aircraft_template[62890] = {
 		62900
 	}
 }
-
 _G.pg.base.aircraft_template[63051] = {
 	attack_power = 2,
 	name = "苍龙·META_轰炸机 Lv1",
@@ -32661,7 +31073,6 @@ _G.pg.base.aircraft_template[63051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63052] = {
 	id = 63052,
 	name = "苍龙·META_轰炸机 Lv2",
@@ -32674,7 +31085,6 @@ _G.pg.base.aircraft_template[63052] = {
 		63072
 	}
 }
-
 _G.pg.base.aircraft_template[63053] = {
 	id = 63053,
 	name = "苍龙·META_轰炸机 Lv3",
@@ -32687,7 +31097,6 @@ _G.pg.base.aircraft_template[63053] = {
 		63073
 	}
 }
-
 _G.pg.base.aircraft_template[63054] = {
 	id = 63054,
 	name = "苍龙·META_轰炸机 Lv4",
@@ -32700,7 +31109,6 @@ _G.pg.base.aircraft_template[63054] = {
 		63074
 	}
 }
-
 _G.pg.base.aircraft_template[63055] = {
 	id = 63055,
 	name = "苍龙·META_轰炸机 Lv5",
@@ -32713,7 +31121,6 @@ _G.pg.base.aircraft_template[63055] = {
 		63075
 	}
 }
-
 _G.pg.base.aircraft_template[63056] = {
 	id = 63056,
 	name = "苍龙·META_轰炸机 Lv6",
@@ -32726,7 +31133,6 @@ _G.pg.base.aircraft_template[63056] = {
 		63076
 	}
 }
-
 _G.pg.base.aircraft_template[63057] = {
 	id = 63057,
 	name = "苍龙·META_轰炸机 Lv7",
@@ -32739,7 +31145,6 @@ _G.pg.base.aircraft_template[63057] = {
 		63077
 	}
 }
-
 _G.pg.base.aircraft_template[63058] = {
 	id = 63058,
 	name = "苍龙·META_轰炸机 Lv8",
@@ -32752,7 +31157,6 @@ _G.pg.base.aircraft_template[63058] = {
 		63078
 	}
 }
-
 _G.pg.base.aircraft_template[63059] = {
 	id = 63059,
 	name = "苍龙·META_轰炸机 Lv9",
@@ -32765,7 +31169,6 @@ _G.pg.base.aircraft_template[63059] = {
 		63079
 	}
 }
-
 _G.pg.base.aircraft_template[63060] = {
 	id = 63060,
 	name = "苍龙·META_轰炸机 Lv10",
@@ -32778,7 +31181,6 @@ _G.pg.base.aircraft_template[63060] = {
 		63080
 	}
 }
-
 _G.pg.base.aircraft_template[63391] = {
 	attack_power = 2,
 	name = "貉-实例化-塞壬浮游炮-LV1",
@@ -32860,7 +31262,6 @@ _G.pg.base.aircraft_template[63391] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63392] = {
 	id = 63392,
 	name = "貉-实例化-塞壬浮游炮-LV2",
@@ -32871,7 +31272,6 @@ _G.pg.base.aircraft_template[63392] = {
 		63412
 	}
 }
-
 _G.pg.base.aircraft_template[63393] = {
 	id = 63393,
 	name = "貉-实例化-塞壬浮游炮-LV3",
@@ -32882,7 +31282,6 @@ _G.pg.base.aircraft_template[63393] = {
 		63413
 	}
 }
-
 _G.pg.base.aircraft_template[63394] = {
 	id = 63394,
 	name = "貉-实例化-塞壬浮游炮-LV4",
@@ -32893,7 +31292,6 @@ _G.pg.base.aircraft_template[63394] = {
 		63414
 	}
 }
-
 _G.pg.base.aircraft_template[63395] = {
 	id = 63395,
 	name = "貉-实例化-塞壬浮游炮-LV5",
@@ -32904,7 +31302,6 @@ _G.pg.base.aircraft_template[63395] = {
 		63415
 	}
 }
-
 _G.pg.base.aircraft_template[63396] = {
 	id = 63396,
 	name = "貉-实例化-塞壬浮游炮-LV6",
@@ -32915,7 +31312,6 @@ _G.pg.base.aircraft_template[63396] = {
 		63416
 	}
 }
-
 _G.pg.base.aircraft_template[63397] = {
 	id = 63397,
 	name = "貉-实例化-塞壬浮游炮-LV7",
@@ -32926,7 +31322,6 @@ _G.pg.base.aircraft_template[63397] = {
 		63417
 	}
 }
-
 _G.pg.base.aircraft_template[63398] = {
 	id = 63398,
 	name = "貉-实例化-塞壬浮游炮-LV8",
@@ -32937,7 +31332,6 @@ _G.pg.base.aircraft_template[63398] = {
 		63418
 	}
 }
-
 _G.pg.base.aircraft_template[63399] = {
 	id = 63399,
 	name = "貉-实例化-塞壬浮游炮-LV9",
@@ -32948,7 +31342,6 @@ _G.pg.base.aircraft_template[63399] = {
 		63419
 	}
 }
-
 _G.pg.base.aircraft_template[63400] = {
 	id = 63400,
 	name = "貉-实例化-塞壬浮游炮-LV10",
@@ -32959,7 +31352,6 @@ _G.pg.base.aircraft_template[63400] = {
 		63420
 	}
 }
-
 _G.pg.base.aircraft_template[63421] = {
 	attack_power = 2,
 	name = "新条茜-instance-特殊飞机 Lv1",
@@ -33035,7 +31427,6 @@ _G.pg.base.aircraft_template[63421] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63422] = {
 	id = 63422,
 	name = "新条茜-instance-特殊飞机 Lv2",
@@ -33047,7 +31438,6 @@ _G.pg.base.aircraft_template[63422] = {
 		63432
 	}
 }
-
 _G.pg.base.aircraft_template[63423] = {
 	id = 63423,
 	name = "新条茜-instance-特殊飞机 Lv3",
@@ -33059,7 +31449,6 @@ _G.pg.base.aircraft_template[63423] = {
 		63433
 	}
 }
-
 _G.pg.base.aircraft_template[63424] = {
 	id = 63424,
 	name = "新条茜-instance-特殊飞机 Lv4",
@@ -33071,7 +31460,6 @@ _G.pg.base.aircraft_template[63424] = {
 		63434
 	}
 }
-
 _G.pg.base.aircraft_template[63425] = {
 	id = 63425,
 	name = "新条茜-instance-特殊飞机 Lv5",
@@ -33083,7 +31471,6 @@ _G.pg.base.aircraft_template[63425] = {
 		63435
 	}
 }
-
 _G.pg.base.aircraft_template[63426] = {
 	id = 63426,
 	name = "新条茜-instance-特殊飞机 Lv6",
@@ -33095,7 +31482,6 @@ _G.pg.base.aircraft_template[63426] = {
 		63436
 	}
 }
-
 _G.pg.base.aircraft_template[63427] = {
 	id = 63427,
 	name = "新条茜-instance-特殊飞机 Lv7",
@@ -33107,7 +31493,6 @@ _G.pg.base.aircraft_template[63427] = {
 		63437
 	}
 }
-
 _G.pg.base.aircraft_template[63428] = {
 	id = 63428,
 	name = "新条茜-instance-特殊飞机 Lv8",
@@ -33119,7 +31504,6 @@ _G.pg.base.aircraft_template[63428] = {
 		63438
 	}
 }
-
 _G.pg.base.aircraft_template[63429] = {
 	id = 63429,
 	name = "新条茜-instance-特殊飞机 Lv9",
@@ -33131,7 +31515,6 @@ _G.pg.base.aircraft_template[63429] = {
 		63439
 	}
 }
-
 _G.pg.base.aircraft_template[63430] = {
 	id = 63430,
 	name = "新条茜-instance-特殊飞机 Lv10",
@@ -33143,7 +31526,6 @@ _G.pg.base.aircraft_template[63430] = {
 		63440
 	}
 }
-
 _G.pg.base.aircraft_template[63441] = {
 	attack_power = 2,
 	name = "千濑集束飞机Lv1",
@@ -33219,7 +31601,6 @@ _G.pg.base.aircraft_template[63441] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63442] = {
 	id = 63442,
 	name = "千濑集束飞机Lv2",
@@ -33231,7 +31612,6 @@ _G.pg.base.aircraft_template[63442] = {
 		63452
 	}
 }
-
 _G.pg.base.aircraft_template[63443] = {
 	id = 63443,
 	name = "千濑集束飞机Lv3",
@@ -33243,7 +31623,6 @@ _G.pg.base.aircraft_template[63443] = {
 		63453
 	}
 }
-
 _G.pg.base.aircraft_template[63444] = {
 	id = 63444,
 	name = "千濑集束飞机Lv4",
@@ -33255,7 +31634,6 @@ _G.pg.base.aircraft_template[63444] = {
 		63454
 	}
 }
-
 _G.pg.base.aircraft_template[63445] = {
 	id = 63445,
 	name = "千濑集束飞机Lv5",
@@ -33267,7 +31645,6 @@ _G.pg.base.aircraft_template[63445] = {
 		63455
 	}
 }
-
 _G.pg.base.aircraft_template[63446] = {
 	id = 63446,
 	name = "千濑集束飞机Lv6",
@@ -33279,7 +31656,6 @@ _G.pg.base.aircraft_template[63446] = {
 		63456
 	}
 }
-
 _G.pg.base.aircraft_template[63447] = {
 	id = 63447,
 	name = "千濑集束飞机Lv7",
@@ -33291,7 +31667,6 @@ _G.pg.base.aircraft_template[63447] = {
 		63457
 	}
 }
-
 _G.pg.base.aircraft_template[63448] = {
 	id = 63448,
 	name = "千濑集束飞机Lv8",
@@ -33303,7 +31678,6 @@ _G.pg.base.aircraft_template[63448] = {
 		63458
 	}
 }
-
 _G.pg.base.aircraft_template[63449] = {
 	id = 63449,
 	name = "千濑集束飞机Lv9",
@@ -33315,7 +31689,6 @@ _G.pg.base.aircraft_template[63449] = {
 		63459
 	}
 }
-
 _G.pg.base.aircraft_template[63450] = {
 	id = 63450,
 	name = "千濑集束飞机Lv10",
@@ -33327,7 +31700,6 @@ _G.pg.base.aircraft_template[63450] = {
 		63460
 	}
 }
-
 _G.pg.base.aircraft_template[63611] = {
 	attack_power = 2,
 	name = "镇海技能水上机Lv1",
@@ -33403,7 +31775,6 @@ _G.pg.base.aircraft_template[63611] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63612] = {
 	id = 63612,
 	name = "镇海技能水上机Lv2",
@@ -33415,7 +31786,6 @@ _G.pg.base.aircraft_template[63612] = {
 		63632
 	}
 }
-
 _G.pg.base.aircraft_template[63613] = {
 	id = 63613,
 	name = "镇海技能水上机Lv3",
@@ -33427,7 +31797,6 @@ _G.pg.base.aircraft_template[63613] = {
 		63633
 	}
 }
-
 _G.pg.base.aircraft_template[63614] = {
 	id = 63614,
 	name = "镇海技能水上机Lv4",
@@ -33439,7 +31808,6 @@ _G.pg.base.aircraft_template[63614] = {
 		63634
 	}
 }
-
 _G.pg.base.aircraft_template[63615] = {
 	id = 63615,
 	name = "镇海技能水上机Lv5",
@@ -33451,7 +31819,6 @@ _G.pg.base.aircraft_template[63615] = {
 		63635
 	}
 }
-
 _G.pg.base.aircraft_template[63616] = {
 	id = 63616,
 	name = "镇海技能水上机Lv6",
@@ -33463,7 +31830,6 @@ _G.pg.base.aircraft_template[63616] = {
 		63636
 	}
 }
-
 _G.pg.base.aircraft_template[63617] = {
 	id = 63617,
 	name = "镇海技能水上机Lv7",
@@ -33475,7 +31841,6 @@ _G.pg.base.aircraft_template[63617] = {
 		63637
 	}
 }
-
 _G.pg.base.aircraft_template[63618] = {
 	id = 63618,
 	name = "镇海技能水上机Lv8",
@@ -33487,7 +31852,6 @@ _G.pg.base.aircraft_template[63618] = {
 		63638
 	}
 }
-
 _G.pg.base.aircraft_template[63619] = {
 	id = 63619,
 	name = "镇海技能水上机Lv9",
@@ -33499,7 +31863,6 @@ _G.pg.base.aircraft_template[63619] = {
 		63639
 	}
 }
-
 _G.pg.base.aircraft_template[63620] = {
 	id = 63620,
 	name = "镇海技能水上机Lv10",
@@ -33511,7 +31874,6 @@ _G.pg.base.aircraft_template[63620] = {
 		63640
 	}
 }
-
 _G.pg.base.aircraft_template[63621] = {
 	attack_power = 2,
 	name = "镇海技能水上机地毯式Lv1",
@@ -33587,7 +31949,6 @@ _G.pg.base.aircraft_template[63621] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63622] = {
 	id = 63622,
 	name = "镇海技能水上机地毯式Lv2",
@@ -33599,7 +31960,6 @@ _G.pg.base.aircraft_template[63622] = {
 		63642
 	}
 }
-
 _G.pg.base.aircraft_template[63623] = {
 	id = 63623,
 	name = "镇海技能水上机地毯式Lv3",
@@ -33611,7 +31971,6 @@ _G.pg.base.aircraft_template[63623] = {
 		63643
 	}
 }
-
 _G.pg.base.aircraft_template[63624] = {
 	id = 63624,
 	name = "镇海技能水上机地毯式Lv4",
@@ -33623,7 +31982,6 @@ _G.pg.base.aircraft_template[63624] = {
 		63644
 	}
 }
-
 _G.pg.base.aircraft_template[63625] = {
 	id = 63625,
 	name = "镇海技能水上机地毯式Lv5",
@@ -33635,7 +31993,6 @@ _G.pg.base.aircraft_template[63625] = {
 		63645
 	}
 }
-
 _G.pg.base.aircraft_template[63626] = {
 	id = 63626,
 	name = "镇海技能水上机地毯式Lv6",
@@ -33647,7 +32004,6 @@ _G.pg.base.aircraft_template[63626] = {
 		63646
 	}
 }
-
 _G.pg.base.aircraft_template[63627] = {
 	id = 63627,
 	name = "镇海技能水上机地毯式Lv7",
@@ -33659,7 +32015,6 @@ _G.pg.base.aircraft_template[63627] = {
 		63647
 	}
 }
-
 _G.pg.base.aircraft_template[63628] = {
 	id = 63628,
 	name = "镇海技能水上机地毯式Lv8",
@@ -33671,7 +32026,6 @@ _G.pg.base.aircraft_template[63628] = {
 		63648
 	}
 }
-
 _G.pg.base.aircraft_template[63629] = {
 	id = 63629,
 	name = "镇海技能水上机地毯式Lv9",
@@ -33683,7 +32037,6 @@ _G.pg.base.aircraft_template[63629] = {
 		63649
 	}
 }
-
 _G.pg.base.aircraft_template[63630] = {
 	id = 63630,
 	name = "镇海技能水上机地毯式Lv10",
@@ -33695,7 +32048,6 @@ _G.pg.base.aircraft_template[63630] = {
 		63650
 	}
 }
-
 _G.pg.base.aircraft_template[63781] = {
 	attack_power = 2,
 	name = "帝国战斗机弹幕G.50Lv1",
@@ -33773,7 +32125,6 @@ _G.pg.base.aircraft_template[63781] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63782] = {
 	id = 63782,
 	name = "帝国战斗机弹幕G.50Lv2",
@@ -33787,7 +32138,6 @@ _G.pg.base.aircraft_template[63782] = {
 		63792
 	}
 }
-
 _G.pg.base.aircraft_template[63783] = {
 	id = 63783,
 	name = "帝国战斗机弹幕G.50Lv3",
@@ -33801,7 +32151,6 @@ _G.pg.base.aircraft_template[63783] = {
 		63793
 	}
 }
-
 _G.pg.base.aircraft_template[63784] = {
 	id = 63784,
 	name = "帝国战斗机弹幕G.50Lv4",
@@ -33815,7 +32164,6 @@ _G.pg.base.aircraft_template[63784] = {
 		63794
 	}
 }
-
 _G.pg.base.aircraft_template[63785] = {
 	id = 63785,
 	name = "帝国战斗机弹幕G.50Lv5",
@@ -33829,7 +32177,6 @@ _G.pg.base.aircraft_template[63785] = {
 		63795
 	}
 }
-
 _G.pg.base.aircraft_template[63786] = {
 	id = 63786,
 	name = "帝国战斗机弹幕G.50Lv6",
@@ -33843,7 +32190,6 @@ _G.pg.base.aircraft_template[63786] = {
 		63796
 	}
 }
-
 _G.pg.base.aircraft_template[63787] = {
 	id = 63787,
 	name = "帝国战斗机弹幕G.50Lv7",
@@ -33857,7 +32203,6 @@ _G.pg.base.aircraft_template[63787] = {
 		63797
 	}
 }
-
 _G.pg.base.aircraft_template[63788] = {
 	id = 63788,
 	name = "帝国战斗机弹幕G.50Lv8",
@@ -33871,7 +32216,6 @@ _G.pg.base.aircraft_template[63788] = {
 		63798
 	}
 }
-
 _G.pg.base.aircraft_template[63789] = {
 	id = 63789,
 	name = "帝国战斗机弹幕G.50Lv9",
@@ -33885,7 +32229,6 @@ _G.pg.base.aircraft_template[63789] = {
 		63799
 	}
 }
-
 _G.pg.base.aircraft_template[63790] = {
 	id = 63790,
 	name = "帝国战斗机弹幕G.50Lv10",
@@ -33899,7 +32242,6 @@ _G.pg.base.aircraft_template[63790] = {
 		63800
 	}
 }
-
 _G.pg.base.aircraft_template[63801] = {
 	attack_power = 2,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv1",
@@ -33975,7 +32317,6 @@ _G.pg.base.aircraft_template[63801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63802] = {
 	id = 63802,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv2",
@@ -33987,7 +32328,6 @@ _G.pg.base.aircraft_template[63802] = {
 		63812
 	}
 }
-
 _G.pg.base.aircraft_template[63803] = {
 	id = 63803,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv3",
@@ -33999,7 +32339,6 @@ _G.pg.base.aircraft_template[63803] = {
 		63813
 	}
 }
-
 _G.pg.base.aircraft_template[63804] = {
 	id = 63804,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv4",
@@ -34011,7 +32350,6 @@ _G.pg.base.aircraft_template[63804] = {
 		63814
 	}
 }
-
 _G.pg.base.aircraft_template[63805] = {
 	id = 63805,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv5",
@@ -34023,7 +32361,6 @@ _G.pg.base.aircraft_template[63805] = {
 		63815
 	}
 }
-
 _G.pg.base.aircraft_template[63806] = {
 	id = 63806,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv6",
@@ -34035,7 +32372,6 @@ _G.pg.base.aircraft_template[63806] = {
 		63816
 	}
 }
-
 _G.pg.base.aircraft_template[63807] = {
 	id = 63807,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv7",
@@ -34047,7 +32383,6 @@ _G.pg.base.aircraft_template[63807] = {
 		63817
 	}
 }
-
 _G.pg.base.aircraft_template[63808] = {
 	id = 63808,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv8",
@@ -34059,7 +32394,6 @@ _G.pg.base.aircraft_template[63808] = {
 		63818
 	}
 }
-
 _G.pg.base.aircraft_template[63809] = {
 	id = 63809,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv9",
@@ -34071,7 +32405,6 @@ _G.pg.base.aircraft_template[63809] = {
 		63819
 	}
 }
-
 _G.pg.base.aircraft_template[63810] = {
 	id = 63810,
 	name = "帝国战斗机弹幕Re2001鱼雷机Lv10",
@@ -34083,7 +32416,6 @@ _G.pg.base.aircraft_template[63810] = {
 		63820
 	}
 }
-
 _G.pg.base.aircraft_template[63821] = {
 	attack_power = 2,
 	name = "帝国轰炸机弹幕Re2001-Lv1",
@@ -34160,7 +32492,6 @@ _G.pg.base.aircraft_template[63821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63822] = {
 	id = 63822,
 	name = "帝国轰炸机弹幕Re2001-Lv2",
@@ -34173,7 +32504,6 @@ _G.pg.base.aircraft_template[63822] = {
 		63842
 	}
 }
-
 _G.pg.base.aircraft_template[63823] = {
 	id = 63823,
 	name = "帝国轰炸机弹幕Re2001-Lv3",
@@ -34186,7 +32516,6 @@ _G.pg.base.aircraft_template[63823] = {
 		63843
 	}
 }
-
 _G.pg.base.aircraft_template[63824] = {
 	id = 63824,
 	name = "帝国轰炸机弹幕Re2001-Lv4",
@@ -34199,7 +32528,6 @@ _G.pg.base.aircraft_template[63824] = {
 		63844
 	}
 }
-
 _G.pg.base.aircraft_template[63825] = {
 	id = 63825,
 	name = "帝国轰炸机弹幕Re2001-Lv5",
@@ -34212,7 +32540,6 @@ _G.pg.base.aircraft_template[63825] = {
 		63845
 	}
 }
-
 _G.pg.base.aircraft_template[63826] = {
 	id = 63826,
 	name = "帝国轰炸机弹幕Re2001-Lv6",
@@ -34225,7 +32552,6 @@ _G.pg.base.aircraft_template[63826] = {
 		63846
 	}
 }
-
 _G.pg.base.aircraft_template[63827] = {
 	id = 63827,
 	name = "帝国轰炸机弹幕Re2001-Lv7",
@@ -34238,7 +32564,6 @@ _G.pg.base.aircraft_template[63827] = {
 		63847
 	}
 }
-
 _G.pg.base.aircraft_template[63828] = {
 	id = 63828,
 	name = "帝国轰炸机弹幕Re2001-Lv8",
@@ -34251,7 +32576,6 @@ _G.pg.base.aircraft_template[63828] = {
 		63848
 	}
 }
-
 _G.pg.base.aircraft_template[63829] = {
 	id = 63829,
 	name = "帝国轰炸机弹幕Re2001-Lv9",
@@ -34264,7 +32588,6 @@ _G.pg.base.aircraft_template[63829] = {
 		63849
 	}
 }
-
 _G.pg.base.aircraft_template[63830] = {
 	id = 63830,
 	name = "帝国轰炸机弹幕Re2001-Lv10",
@@ -34277,7 +32600,6 @@ _G.pg.base.aircraft_template[63830] = {
 		63850
 	}
 }
-
 _G.pg.base.aircraft_template[63941] = {
 	attack_power = 2,
 	name = "不挠一技能海大黄蜂",
@@ -34353,7 +32675,6 @@ _G.pg.base.aircraft_template[63941] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63942] = {
 	max_hp = 64,
 	hp_growth = 2474,
@@ -34364,7 +32685,6 @@ _G.pg.base.aircraft_template[63942] = {
 		63952
 	}
 }
-
 _G.pg.base.aircraft_template[63943] = {
 	max_hp = 72,
 	hp_growth = 2760,
@@ -34375,7 +32695,6 @@ _G.pg.base.aircraft_template[63943] = {
 		63953
 	}
 }
-
 _G.pg.base.aircraft_template[63944] = {
 	max_hp = 79,
 	hp_growth = 3045,
@@ -34386,7 +32705,6 @@ _G.pg.base.aircraft_template[63944] = {
 		63954
 	}
 }
-
 _G.pg.base.aircraft_template[63945] = {
 	max_hp = 87,
 	hp_growth = 3330,
@@ -34397,7 +32715,6 @@ _G.pg.base.aircraft_template[63945] = {
 		63955
 	}
 }
-
 _G.pg.base.aircraft_template[63946] = {
 	max_hp = 94,
 	hp_growth = 3616,
@@ -34408,7 +32725,6 @@ _G.pg.base.aircraft_template[63946] = {
 		63956
 	}
 }
-
 _G.pg.base.aircraft_template[63947] = {
 	max_hp = 101,
 	hp_growth = 3901,
@@ -34419,7 +32735,6 @@ _G.pg.base.aircraft_template[63947] = {
 		63957
 	}
 }
-
 _G.pg.base.aircraft_template[63948] = {
 	max_hp = 109,
 	hp_growth = 4187,
@@ -34430,7 +32745,6 @@ _G.pg.base.aircraft_template[63948] = {
 		63958
 	}
 }
-
 _G.pg.base.aircraft_template[63949] = {
 	max_hp = 116,
 	hp_growth = 4472,
@@ -34441,7 +32755,6 @@ _G.pg.base.aircraft_template[63949] = {
 		63959
 	}
 }
-
 _G.pg.base.aircraft_template[63950] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -34452,7 +32765,6 @@ _G.pg.base.aircraft_template[63950] = {
 		63960
 	}
 }
-
 _G.pg.base.aircraft_template[63961] = {
 	attack_power = 2,
 	name = "不挠二技能海大黄蜂",
@@ -34529,7 +32841,6 @@ _G.pg.base.aircraft_template[63961] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[63962] = {
 	max_hp = 64,
 	hp_growth = 2474,
@@ -34541,7 +32852,6 @@ _G.pg.base.aircraft_template[63962] = {
 		63972
 	}
 }
-
 _G.pg.base.aircraft_template[63963] = {
 	max_hp = 72,
 	hp_growth = 2760,
@@ -34553,7 +32863,6 @@ _G.pg.base.aircraft_template[63963] = {
 		63973
 	}
 }
-
 _G.pg.base.aircraft_template[63964] = {
 	max_hp = 79,
 	hp_growth = 3045,
@@ -34565,7 +32874,6 @@ _G.pg.base.aircraft_template[63964] = {
 		63974
 	}
 }
-
 _G.pg.base.aircraft_template[63965] = {
 	max_hp = 87,
 	hp_growth = 3330,
@@ -34577,7 +32885,6 @@ _G.pg.base.aircraft_template[63965] = {
 		63975
 	}
 }
-
 _G.pg.base.aircraft_template[63966] = {
 	max_hp = 94,
 	hp_growth = 3616,
@@ -34589,7 +32896,6 @@ _G.pg.base.aircraft_template[63966] = {
 		63976
 	}
 }
-
 _G.pg.base.aircraft_template[63967] = {
 	max_hp = 101,
 	hp_growth = 3901,
@@ -34601,7 +32907,6 @@ _G.pg.base.aircraft_template[63967] = {
 		63977
 	}
 }
-
 _G.pg.base.aircraft_template[63968] = {
 	max_hp = 109,
 	hp_growth = 4187,
@@ -34613,7 +32918,6 @@ _G.pg.base.aircraft_template[63968] = {
 		63978
 	}
 }
-
 _G.pg.base.aircraft_template[63969] = {
 	max_hp = 116,
 	hp_growth = 4472,
@@ -34625,7 +32929,6 @@ _G.pg.base.aircraft_template[63969] = {
 		63979
 	}
 }
-
 _G.pg.base.aircraft_template[63970] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -34637,7 +32940,6 @@ _G.pg.base.aircraft_template[63970] = {
 		63980
 	}
 }
-
 _G.pg.base.aircraft_template[64121] = {
 	attack_power = 2,
 	name = "提康德罗加战斗机LV1",
@@ -34713,7 +33015,6 @@ _G.pg.base.aircraft_template[64121] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64122] = {
 	id = 64122,
 	name = "提康德罗加战斗机LV2",
@@ -34725,7 +33026,6 @@ _G.pg.base.aircraft_template[64122] = {
 		64132
 	}
 }
-
 _G.pg.base.aircraft_template[64123] = {
 	id = 64123,
 	name = "提康德罗加战斗机LV3",
@@ -34737,7 +33037,6 @@ _G.pg.base.aircraft_template[64123] = {
 		64133
 	}
 }
-
 _G.pg.base.aircraft_template[64124] = {
 	id = 64124,
 	name = "提康德罗加战斗机LV4",
@@ -34749,7 +33048,6 @@ _G.pg.base.aircraft_template[64124] = {
 		64134
 	}
 }
-
 _G.pg.base.aircraft_template[64125] = {
 	id = 64125,
 	name = "提康德罗加战斗机LV5",
@@ -34761,7 +33059,6 @@ _G.pg.base.aircraft_template[64125] = {
 		64135
 	}
 }
-
 _G.pg.base.aircraft_template[64126] = {
 	id = 64126,
 	name = "提康德罗加战斗机LV6",
@@ -34773,7 +33070,6 @@ _G.pg.base.aircraft_template[64126] = {
 		64136
 	}
 }
-
 _G.pg.base.aircraft_template[64127] = {
 	id = 64127,
 	name = "提康德罗加战斗机LV7",
@@ -34785,7 +33081,6 @@ _G.pg.base.aircraft_template[64127] = {
 		64137
 	}
 }
-
 _G.pg.base.aircraft_template[64128] = {
 	id = 64128,
 	name = "提康德罗加战斗机LV8",
@@ -34797,7 +33092,6 @@ _G.pg.base.aircraft_template[64128] = {
 		64138
 	}
 }
-
 _G.pg.base.aircraft_template[64129] = {
 	id = 64129,
 	name = "提康德罗加战斗机LV9",
@@ -34809,7 +33103,6 @@ _G.pg.base.aircraft_template[64129] = {
 		64139
 	}
 }
-
 _G.pg.base.aircraft_template[64130] = {
 	id = 64130,
 	name = "提康德罗加战斗机LV10",
@@ -34821,7 +33114,6 @@ _G.pg.base.aircraft_template[64130] = {
 		64140
 	}
 }
-
 _G.pg.base.aircraft_template[64301] = {
 	attack_power = 2,
 	name = "白龙天雷落雷飞机 Lv1",
@@ -34897,7 +33189,6 @@ _G.pg.base.aircraft_template[64301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64302] = {
 	id = 64302,
 	name = "白龙天雷落雷飞机 Lv2",
@@ -34909,7 +33200,6 @@ _G.pg.base.aircraft_template[64302] = {
 		64322
 	}
 }
-
 _G.pg.base.aircraft_template[64303] = {
 	id = 64303,
 	name = "白龙天雷落雷飞机 Lv3",
@@ -34921,7 +33211,6 @@ _G.pg.base.aircraft_template[64303] = {
 		64323
 	}
 }
-
 _G.pg.base.aircraft_template[64304] = {
 	id = 64304,
 	name = "白龙天雷落雷飞机 Lv4",
@@ -34933,7 +33222,6 @@ _G.pg.base.aircraft_template[64304] = {
 		64324
 	}
 }
-
 _G.pg.base.aircraft_template[64305] = {
 	id = 64305,
 	name = "白龙天雷落雷飞机 Lv5",
@@ -34945,7 +33233,6 @@ _G.pg.base.aircraft_template[64305] = {
 		64325
 	}
 }
-
 _G.pg.base.aircraft_template[64306] = {
 	id = 64306,
 	name = "白龙天雷落雷飞机 Lv6",
@@ -34957,7 +33244,6 @@ _G.pg.base.aircraft_template[64306] = {
 		64326
 	}
 }
-
 _G.pg.base.aircraft_template[64307] = {
 	id = 64307,
 	name = "白龙天雷落雷飞机 Lv7",
@@ -34969,7 +33255,6 @@ _G.pg.base.aircraft_template[64307] = {
 		64327
 	}
 }
-
 _G.pg.base.aircraft_template[64308] = {
 	id = 64308,
 	name = "白龙天雷落雷飞机 Lv8",
@@ -34981,7 +33266,6 @@ _G.pg.base.aircraft_template[64308] = {
 		64328
 	}
 }
-
 _G.pg.base.aircraft_template[64309] = {
 	id = 64309,
 	name = "白龙天雷落雷飞机 Lv9",
@@ -34993,7 +33277,6 @@ _G.pg.base.aircraft_template[64309] = {
 		64329
 	}
 }
-
 _G.pg.base.aircraft_template[64310] = {
 	id = 64310,
 	name = "白龙天雷落雷飞机 Lv10",
@@ -35005,7 +33288,6 @@ _G.pg.base.aircraft_template[64310] = {
 		64330
 	}
 }
-
 _G.pg.base.aircraft_template[64311] = {
 	attack_power = 2,
 	name = "白龙搭载彩云舰攻型 Lv1",
@@ -35081,7 +33363,6 @@ _G.pg.base.aircraft_template[64311] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64312] = {
 	id = 64312,
 	name = "白龙搭载彩云舰攻型 Lv2",
@@ -35093,7 +33374,6 @@ _G.pg.base.aircraft_template[64312] = {
 		64332
 	}
 }
-
 _G.pg.base.aircraft_template[64313] = {
 	id = 64313,
 	name = "白龙搭载彩云舰攻型 Lv3",
@@ -35105,7 +33385,6 @@ _G.pg.base.aircraft_template[64313] = {
 		64333
 	}
 }
-
 _G.pg.base.aircraft_template[64314] = {
 	id = 64314,
 	name = "白龙搭载彩云舰攻型 Lv4",
@@ -35117,7 +33396,6 @@ _G.pg.base.aircraft_template[64314] = {
 		64334
 	}
 }
-
 _G.pg.base.aircraft_template[64315] = {
 	id = 64315,
 	name = "白龙搭载彩云舰攻型 Lv5",
@@ -35129,7 +33407,6 @@ _G.pg.base.aircraft_template[64315] = {
 		64335
 	}
 }
-
 _G.pg.base.aircraft_template[64316] = {
 	id = 64316,
 	name = "白龙搭载彩云舰攻型 Lv6",
@@ -35141,7 +33418,6 @@ _G.pg.base.aircraft_template[64316] = {
 		64336
 	}
 }
-
 _G.pg.base.aircraft_template[64317] = {
 	id = 64317,
 	name = "白龙搭载彩云舰攻型 Lv7",
@@ -35153,7 +33429,6 @@ _G.pg.base.aircraft_template[64317] = {
 		64337
 	}
 }
-
 _G.pg.base.aircraft_template[64318] = {
 	id = 64318,
 	name = "白龙搭载彩云舰攻型 Lv8",
@@ -35165,7 +33440,6 @@ _G.pg.base.aircraft_template[64318] = {
 		64338
 	}
 }
-
 _G.pg.base.aircraft_template[64319] = {
 	id = 64319,
 	name = "白龙搭载彩云舰攻型 Lv9",
@@ -35177,7 +33451,6 @@ _G.pg.base.aircraft_template[64319] = {
 		64339
 	}
 }
-
 _G.pg.base.aircraft_template[64320] = {
 	id = 64320,
 	name = "白龙搭载彩云舰攻型 Lv10",
@@ -35189,7 +33462,6 @@ _G.pg.base.aircraft_template[64320] = {
 		64340
 	}
 }
-
 _G.pg.base.aircraft_template[64341] = {
 	attack_power = 2,
 	name = "奥古斯特技能版BF-109G",
@@ -35265,7 +33537,6 @@ _G.pg.base.aircraft_template[64341] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64342] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -35276,7 +33547,6 @@ _G.pg.base.aircraft_template[64342] = {
 		64352
 	}
 }
-
 _G.pg.base.aircraft_template[64343] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -35287,7 +33557,6 @@ _G.pg.base.aircraft_template[64343] = {
 		64353
 	}
 }
-
 _G.pg.base.aircraft_template[64344] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -35298,7 +33567,6 @@ _G.pg.base.aircraft_template[64344] = {
 		64354
 	}
 }
-
 _G.pg.base.aircraft_template[64345] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -35309,7 +33577,6 @@ _G.pg.base.aircraft_template[64345] = {
 		64355
 	}
 }
-
 _G.pg.base.aircraft_template[64346] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -35320,7 +33587,6 @@ _G.pg.base.aircraft_template[64346] = {
 		64356
 	}
 }
-
 _G.pg.base.aircraft_template[64347] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -35331,7 +33597,6 @@ _G.pg.base.aircraft_template[64347] = {
 		64357
 	}
 }
-
 _G.pg.base.aircraft_template[64348] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -35342,7 +33607,6 @@ _G.pg.base.aircraft_template[64348] = {
 		64358
 	}
 }
-
 _G.pg.base.aircraft_template[64349] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -35353,7 +33617,6 @@ _G.pg.base.aircraft_template[64349] = {
 		64359
 	}
 }
-
 _G.pg.base.aircraft_template[64350] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -35364,7 +33627,6 @@ _G.pg.base.aircraft_template[64350] = {
 		64360
 	}
 }
-
 _G.pg.base.aircraft_template[64531] = {
 	attack_power = 2,
 	name = "如月千早空艇Lv1",
@@ -35440,7 +33702,6 @@ _G.pg.base.aircraft_template[64531] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64532] = {
 	id = 64532,
 	name = "如月千早空艇Lv2",
@@ -35452,7 +33713,6 @@ _G.pg.base.aircraft_template[64532] = {
 		64542
 	}
 }
-
 _G.pg.base.aircraft_template[64533] = {
 	id = 64533,
 	name = "如月千早空艇Lv3",
@@ -35464,7 +33724,6 @@ _G.pg.base.aircraft_template[64533] = {
 		64543
 	}
 }
-
 _G.pg.base.aircraft_template[64534] = {
 	id = 64534,
 	name = "如月千早空艇Lv4",
@@ -35476,7 +33735,6 @@ _G.pg.base.aircraft_template[64534] = {
 		64544
 	}
 }
-
 _G.pg.base.aircraft_template[64535] = {
 	id = 64535,
 	name = "如月千早空艇Lv5",
@@ -35488,7 +33746,6 @@ _G.pg.base.aircraft_template[64535] = {
 		64545
 	}
 }
-
 _G.pg.base.aircraft_template[64536] = {
 	id = 64536,
 	name = "如月千早空艇Lv6",
@@ -35500,7 +33757,6 @@ _G.pg.base.aircraft_template[64536] = {
 		64546
 	}
 }
-
 _G.pg.base.aircraft_template[64537] = {
 	id = 64537,
 	name = "如月千早空艇Lv7",
@@ -35512,7 +33768,6 @@ _G.pg.base.aircraft_template[64537] = {
 		64547
 	}
 }
-
 _G.pg.base.aircraft_template[64538] = {
 	id = 64538,
 	name = "如月千早空艇Lv8",
@@ -35524,7 +33779,6 @@ _G.pg.base.aircraft_template[64538] = {
 		64548
 	}
 }
-
 _G.pg.base.aircraft_template[64539] = {
 	id = 64539,
 	name = "如月千早空艇Lv9",
@@ -35536,7 +33790,6 @@ _G.pg.base.aircraft_template[64539] = {
 		64549
 	}
 }
-
 _G.pg.base.aircraft_template[64540] = {
 	id = 64540,
 	name = "如月千早空艇Lv10",
@@ -35548,7 +33801,6 @@ _G.pg.base.aircraft_template[64540] = {
 		64550
 	}
 }
-
 _G.pg.base.aircraft_template[64571] = {
 	attack_power = 2,
 	name = "如月千早集束飞机Lv1",
@@ -35624,7 +33876,6 @@ _G.pg.base.aircraft_template[64571] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64572] = {
 	id = 64572,
 	name = "如月千早集束飞机Lv2",
@@ -35636,7 +33887,6 @@ _G.pg.base.aircraft_template[64572] = {
 		64582
 	}
 }
-
 _G.pg.base.aircraft_template[64573] = {
 	id = 64573,
 	name = "如月千早集束飞机Lv3",
@@ -35648,7 +33898,6 @@ _G.pg.base.aircraft_template[64573] = {
 		64583
 	}
 }
-
 _G.pg.base.aircraft_template[64574] = {
 	id = 64574,
 	name = "如月千早集束飞机Lv4",
@@ -35660,7 +33909,6 @@ _G.pg.base.aircraft_template[64574] = {
 		64584
 	}
 }
-
 _G.pg.base.aircraft_template[64575] = {
 	id = 64575,
 	name = "如月千早集束飞机Lv5",
@@ -35672,7 +33920,6 @@ _G.pg.base.aircraft_template[64575] = {
 		64585
 	}
 }
-
 _G.pg.base.aircraft_template[64576] = {
 	id = 64576,
 	name = "如月千早集束飞机Lv6",
@@ -35684,7 +33931,6 @@ _G.pg.base.aircraft_template[64576] = {
 		64586
 	}
 }
-
 _G.pg.base.aircraft_template[64577] = {
 	id = 64577,
 	name = "如月千早集束飞机Lv7",
@@ -35696,7 +33942,6 @@ _G.pg.base.aircraft_template[64577] = {
 		64587
 	}
 }
-
 _G.pg.base.aircraft_template[64578] = {
 	id = 64578,
 	name = "如月千早集束飞机Lv8",
@@ -35708,7 +33953,6 @@ _G.pg.base.aircraft_template[64578] = {
 		64588
 	}
 }
-
 _G.pg.base.aircraft_template[64579] = {
 	id = 64579,
 	name = "如月千早集束飞机Lv9",
@@ -35720,7 +33964,6 @@ _G.pg.base.aircraft_template[64579] = {
 		64589
 	}
 }
-
 _G.pg.base.aircraft_template[64580] = {
 	id = 64580,
 	name = "如月千早集束飞机Lv10",
@@ -35732,7 +33975,6 @@ _G.pg.base.aircraft_template[64580] = {
 		64590
 	}
 }
-
 _G.pg.base.aircraft_template[64601] = {
 	attack_power = 2,
 	name = "皇家方舟改技能剑鱼",
@@ -35808,7 +34050,6 @@ _G.pg.base.aircraft_template[64601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64602] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -35819,7 +34060,6 @@ _G.pg.base.aircraft_template[64602] = {
 		64612
 	}
 }
-
 _G.pg.base.aircraft_template[64603] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -35830,7 +34070,6 @@ _G.pg.base.aircraft_template[64603] = {
 		64613
 	}
 }
-
 _G.pg.base.aircraft_template[64604] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -35841,7 +34080,6 @@ _G.pg.base.aircraft_template[64604] = {
 		64614
 	}
 }
-
 _G.pg.base.aircraft_template[64605] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -35852,7 +34090,6 @@ _G.pg.base.aircraft_template[64605] = {
 		64615
 	}
 }
-
 _G.pg.base.aircraft_template[64606] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -35863,7 +34100,6 @@ _G.pg.base.aircraft_template[64606] = {
 		64616
 	}
 }
-
 _G.pg.base.aircraft_template[64607] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -35874,7 +34110,6 @@ _G.pg.base.aircraft_template[64607] = {
 		64617
 	}
 }
-
 _G.pg.base.aircraft_template[64608] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -35885,7 +34120,6 @@ _G.pg.base.aircraft_template[64608] = {
 		64618
 	}
 }
-
 _G.pg.base.aircraft_template[64609] = {
 	max_hp = 77,
 	hp_growth = 2943,
@@ -35896,7 +34130,6 @@ _G.pg.base.aircraft_template[64609] = {
 		64619
 	}
 }
-
 _G.pg.base.aircraft_template[64610] = {
 	max_hp = 82,
 	hp_growth = 3143,
@@ -35907,7 +34140,6 @@ _G.pg.base.aircraft_template[64610] = {
 		64620
 	}
 }
-
 _G.pg.base.aircraft_template[64671] = {
 	attack_power = 2,
 	name = "筑摩水上机Lv1",
@@ -35983,7 +34215,6 @@ _G.pg.base.aircraft_template[64671] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64672] = {
 	id = 64672,
 	name = "筑摩水上机Lv2",
@@ -35995,7 +34226,6 @@ _G.pg.base.aircraft_template[64672] = {
 		64682
 	}
 }
-
 _G.pg.base.aircraft_template[64673] = {
 	id = 64673,
 	name = "筑摩水上机Lv3",
@@ -36007,7 +34237,6 @@ _G.pg.base.aircraft_template[64673] = {
 		64683
 	}
 }
-
 _G.pg.base.aircraft_template[64674] = {
 	id = 64674,
 	name = "筑摩水上机Lv4",
@@ -36019,7 +34248,6 @@ _G.pg.base.aircraft_template[64674] = {
 		64684
 	}
 }
-
 _G.pg.base.aircraft_template[64675] = {
 	id = 64675,
 	name = "筑摩水上机Lv5",
@@ -36031,7 +34259,6 @@ _G.pg.base.aircraft_template[64675] = {
 		64685
 	}
 }
-
 _G.pg.base.aircraft_template[64676] = {
 	id = 64676,
 	name = "筑摩水上机Lv6",
@@ -36043,7 +34270,6 @@ _G.pg.base.aircraft_template[64676] = {
 		64686
 	}
 }
-
 _G.pg.base.aircraft_template[64677] = {
 	id = 64677,
 	name = "筑摩水上机Lv7",
@@ -36055,7 +34281,6 @@ _G.pg.base.aircraft_template[64677] = {
 		64687
 	}
 }
-
 _G.pg.base.aircraft_template[64678] = {
 	id = 64678,
 	name = "筑摩水上机Lv8",
@@ -36067,7 +34292,6 @@ _G.pg.base.aircraft_template[64678] = {
 		64688
 	}
 }
-
 _G.pg.base.aircraft_template[64679] = {
 	id = 64679,
 	name = "筑摩水上机Lv9",
@@ -36079,7 +34303,6 @@ _G.pg.base.aircraft_template[64679] = {
 		64689
 	}
 }
-
 _G.pg.base.aircraft_template[64680] = {
 	id = 64680,
 	name = "筑摩水上机Lv10",
@@ -36091,7 +34314,6 @@ _G.pg.base.aircraft_template[64680] = {
 		64690
 	}
 }
-
 _G.pg.base.aircraft_template[64691] = {
 	attack_power = 2,
 	name = "筑摩水上机Lv1 重樱航母",
@@ -36167,7 +34389,6 @@ _G.pg.base.aircraft_template[64691] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64692] = {
 	id = 64692,
 	name = "筑摩水上机Lv2",
@@ -36179,7 +34400,6 @@ _G.pg.base.aircraft_template[64692] = {
 		64702
 	}
 }
-
 _G.pg.base.aircraft_template[64693] = {
 	id = 64693,
 	name = "筑摩水上机Lv3",
@@ -36191,7 +34411,6 @@ _G.pg.base.aircraft_template[64693] = {
 		64703
 	}
 }
-
 _G.pg.base.aircraft_template[64694] = {
 	id = 64694,
 	name = "筑摩水上机Lv4",
@@ -36203,7 +34422,6 @@ _G.pg.base.aircraft_template[64694] = {
 		64704
 	}
 }
-
 _G.pg.base.aircraft_template[64695] = {
 	id = 64695,
 	name = "筑摩水上机Lv5",
@@ -36215,7 +34433,6 @@ _G.pg.base.aircraft_template[64695] = {
 		64705
 	}
 }
-
 _G.pg.base.aircraft_template[64696] = {
 	id = 64696,
 	name = "筑摩水上机Lv6",
@@ -36227,7 +34444,6 @@ _G.pg.base.aircraft_template[64696] = {
 		64706
 	}
 }
-
 _G.pg.base.aircraft_template[64697] = {
 	id = 64697,
 	name = "筑摩水上机Lv7",
@@ -36239,7 +34455,6 @@ _G.pg.base.aircraft_template[64697] = {
 		64707
 	}
 }
-
 _G.pg.base.aircraft_template[64698] = {
 	id = 64698,
 	name = "筑摩水上机Lv8",
@@ -36251,7 +34466,6 @@ _G.pg.base.aircraft_template[64698] = {
 		64708
 	}
 }
-
 _G.pg.base.aircraft_template[64699] = {
 	id = 64699,
 	name = "筑摩水上机Lv9",
@@ -36263,7 +34477,6 @@ _G.pg.base.aircraft_template[64699] = {
 		64709
 	}
 }
-
 _G.pg.base.aircraft_template[64700] = {
 	id = 64700,
 	name = "筑摩水上机Lv10",
@@ -36275,7 +34488,6 @@ _G.pg.base.aircraft_template[64700] = {
 		64710
 	}
 }
-
 _G.pg.base.aircraft_template[64721] = {
 	attack_power = 2,
 	name = "葛城支援弹幕烈风Lv1",
@@ -36352,7 +34564,6 @@ _G.pg.base.aircraft_template[64721] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64722] = {
 	id = 64722,
 	name = "葛城支援弹幕烈风Lv2",
@@ -36365,7 +34576,6 @@ _G.pg.base.aircraft_template[64722] = {
 		64742
 	}
 }
-
 _G.pg.base.aircraft_template[64723] = {
 	id = 64723,
 	name = "葛城支援弹幕烈风Lv3",
@@ -36378,7 +34588,6 @@ _G.pg.base.aircraft_template[64723] = {
 		64743
 	}
 }
-
 _G.pg.base.aircraft_template[64724] = {
 	id = 64724,
 	name = "葛城支援弹幕烈风Lv4",
@@ -36391,7 +34600,6 @@ _G.pg.base.aircraft_template[64724] = {
 		64744
 	}
 }
-
 _G.pg.base.aircraft_template[64725] = {
 	id = 64725,
 	name = "葛城支援弹幕烈风Lv5",
@@ -36404,7 +34612,6 @@ _G.pg.base.aircraft_template[64725] = {
 		64745
 	}
 }
-
 _G.pg.base.aircraft_template[64726] = {
 	id = 64726,
 	name = "葛城支援弹幕烈风Lv6",
@@ -36417,7 +34624,6 @@ _G.pg.base.aircraft_template[64726] = {
 		64746
 	}
 }
-
 _G.pg.base.aircraft_template[64727] = {
 	id = 64727,
 	name = "葛城支援弹幕烈风Lv7",
@@ -36430,7 +34636,6 @@ _G.pg.base.aircraft_template[64727] = {
 		64747
 	}
 }
-
 _G.pg.base.aircraft_template[64728] = {
 	id = 64728,
 	name = "葛城支援弹幕烈风Lv8",
@@ -36443,7 +34648,6 @@ _G.pg.base.aircraft_template[64728] = {
 		64748
 	}
 }
-
 _G.pg.base.aircraft_template[64729] = {
 	id = 64729,
 	name = "葛城支援弹幕烈风Lv9",
@@ -36456,7 +34660,6 @@ _G.pg.base.aircraft_template[64729] = {
 		64749
 	}
 }
-
 _G.pg.base.aircraft_template[64730] = {
 	id = 64730,
 	name = "葛城支援弹幕烈风Lv10",
@@ -36469,7 +34672,6 @@ _G.pg.base.aircraft_template[64730] = {
 		64750
 	}
 }
-
 _G.pg.base.aircraft_template[64731] = {
 	attack_power = 2,
 	name = "葛城技能流星 LV1",
@@ -36547,7 +34749,6 @@ _G.pg.base.aircraft_template[64731] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64732] = {
 	id = 64732,
 	name = "葛城技能流星 LV2",
@@ -36561,7 +34762,6 @@ _G.pg.base.aircraft_template[64732] = {
 		51462
 	}
 }
-
 _G.pg.base.aircraft_template[64733] = {
 	id = 64733,
 	name = "葛城技能流星 LV3",
@@ -36575,7 +34775,6 @@ _G.pg.base.aircraft_template[64733] = {
 		51463
 	}
 }
-
 _G.pg.base.aircraft_template[64734] = {
 	id = 64734,
 	name = "葛城技能流星 LV4",
@@ -36589,7 +34788,6 @@ _G.pg.base.aircraft_template[64734] = {
 		51464
 	}
 }
-
 _G.pg.base.aircraft_template[64735] = {
 	id = 64735,
 	name = "葛城技能流星 LV5",
@@ -36603,7 +34801,6 @@ _G.pg.base.aircraft_template[64735] = {
 		51465
 	}
 }
-
 _G.pg.base.aircraft_template[64736] = {
 	id = 64736,
 	name = "葛城技能流星 LV6",
@@ -36617,7 +34814,6 @@ _G.pg.base.aircraft_template[64736] = {
 		51466
 	}
 }
-
 _G.pg.base.aircraft_template[64737] = {
 	id = 64737,
 	name = "葛城技能流星 LV7",
@@ -36631,7 +34827,6 @@ _G.pg.base.aircraft_template[64737] = {
 		51467
 	}
 }
-
 _G.pg.base.aircraft_template[64738] = {
 	id = 64738,
 	name = "葛城技能流星 LV8",
@@ -36645,7 +34840,6 @@ _G.pg.base.aircraft_template[64738] = {
 		51468
 	}
 }
-
 _G.pg.base.aircraft_template[64739] = {
 	id = 64739,
 	name = "葛城技能流星 LV9",
@@ -36659,7 +34853,6 @@ _G.pg.base.aircraft_template[64739] = {
 		51469
 	}
 }
-
 _G.pg.base.aircraft_template[64740] = {
 	id = 64740,
 	name = "葛城技能流星 LV10",
@@ -36673,7 +34866,6 @@ _G.pg.base.aircraft_template[64740] = {
 		51470
 	}
 }
-
 _G.pg.base.aircraft_template[64771] = {
 	attack_power = 2,
 	name = "飞鹰META鱼雷机Lv1",
@@ -36749,7 +34941,6 @@ _G.pg.base.aircraft_template[64771] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64772] = {
 	id = 64772,
 	name = "飞鹰META鱼雷机Lv2",
@@ -36761,7 +34952,6 @@ _G.pg.base.aircraft_template[64772] = {
 		64782
 	}
 }
-
 _G.pg.base.aircraft_template[64773] = {
 	id = 64773,
 	name = "飞鹰META鱼雷机Lv3",
@@ -36773,7 +34963,6 @@ _G.pg.base.aircraft_template[64773] = {
 		64783
 	}
 }
-
 _G.pg.base.aircraft_template[64774] = {
 	id = 64774,
 	name = "飞鹰META鱼雷机Lv4",
@@ -36785,7 +34974,6 @@ _G.pg.base.aircraft_template[64774] = {
 		64784
 	}
 }
-
 _G.pg.base.aircraft_template[64775] = {
 	id = 64775,
 	name = "飞鹰META鱼雷机Lv5",
@@ -36797,7 +34985,6 @@ _G.pg.base.aircraft_template[64775] = {
 		64785
 	}
 }
-
 _G.pg.base.aircraft_template[64776] = {
 	id = 64776,
 	name = "飞鹰META鱼雷机Lv6",
@@ -36809,7 +34996,6 @@ _G.pg.base.aircraft_template[64776] = {
 		64786
 	}
 }
-
 _G.pg.base.aircraft_template[64777] = {
 	id = 64777,
 	name = "飞鹰META鱼雷机Lv7",
@@ -36821,7 +35007,6 @@ _G.pg.base.aircraft_template[64777] = {
 		64787
 	}
 }
-
 _G.pg.base.aircraft_template[64778] = {
 	id = 64778,
 	name = "飞鹰META鱼雷机Lv8",
@@ -36833,7 +35018,6 @@ _G.pg.base.aircraft_template[64778] = {
 		64788
 	}
 }
-
 _G.pg.base.aircraft_template[64779] = {
 	id = 64779,
 	name = "飞鹰META鱼雷机Lv9",
@@ -36845,7 +35029,6 @@ _G.pg.base.aircraft_template[64779] = {
 		64789
 	}
 }
-
 _G.pg.base.aircraft_template[64780] = {
 	id = 64780,
 	name = "飞鹰META鱼雷机Lv10",
@@ -36857,7 +35040,6 @@ _G.pg.base.aircraft_template[64780] = {
 		64790
 	}
 }
-
 _G.pg.base.aircraft_template[64831] = {
 	attack_power = 2,
 	name = "易北技能轰炸机Lv1",
@@ -36933,7 +35115,6 @@ _G.pg.base.aircraft_template[64831] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64832] = {
 	id = 64832,
 	name = "易北技能轰炸机Lv2",
@@ -36945,7 +35126,6 @@ _G.pg.base.aircraft_template[64832] = {
 		64842
 	}
 }
-
 _G.pg.base.aircraft_template[64833] = {
 	id = 64833,
 	name = "易北技能轰炸机Lv3",
@@ -36957,7 +35137,6 @@ _G.pg.base.aircraft_template[64833] = {
 		64843
 	}
 }
-
 _G.pg.base.aircraft_template[64834] = {
 	id = 64834,
 	name = "易北技能轰炸机Lv4",
@@ -36969,7 +35148,6 @@ _G.pg.base.aircraft_template[64834] = {
 		64844
 	}
 }
-
 _G.pg.base.aircraft_template[64835] = {
 	id = 64835,
 	name = "易北技能轰炸机Lv5",
@@ -36981,7 +35159,6 @@ _G.pg.base.aircraft_template[64835] = {
 		64845
 	}
 }
-
 _G.pg.base.aircraft_template[64836] = {
 	id = 64836,
 	name = "易北技能轰炸机Lv6",
@@ -36993,7 +35170,6 @@ _G.pg.base.aircraft_template[64836] = {
 		64846
 	}
 }
-
 _G.pg.base.aircraft_template[64837] = {
 	id = 64837,
 	name = "易北技能轰炸机Lv7",
@@ -37005,7 +35181,6 @@ _G.pg.base.aircraft_template[64837] = {
 		64847
 	}
 }
-
 _G.pg.base.aircraft_template[64838] = {
 	id = 64838,
 	name = "易北技能轰炸机Lv8",
@@ -37017,7 +35192,6 @@ _G.pg.base.aircraft_template[64838] = {
 		64848
 	}
 }
-
 _G.pg.base.aircraft_template[64839] = {
 	id = 64839,
 	name = "易北技能轰炸机Lv9",
@@ -37029,7 +35203,6 @@ _G.pg.base.aircraft_template[64839] = {
 		64849
 	}
 }
-
 _G.pg.base.aircraft_template[64840] = {
 	id = 64840,
 	name = "易北技能轰炸机Lv10",
@@ -37041,7 +35214,6 @@ _G.pg.base.aircraft_template[64840] = {
 		64850
 	}
 }
-
 _G.pg.base.aircraft_template[64931] = {
 	attack_power = 2,
 	name = "隼鹰META鱼雷机Lv1",
@@ -37117,7 +35289,6 @@ _G.pg.base.aircraft_template[64931] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64932] = {
 	id = 64932,
 	name = "隼鹰META鱼雷机Lv2",
@@ -37129,7 +35300,6 @@ _G.pg.base.aircraft_template[64932] = {
 		64942
 	}
 }
-
 _G.pg.base.aircraft_template[64933] = {
 	id = 64933,
 	name = "隼鹰META鱼雷机Lv3",
@@ -37141,7 +35311,6 @@ _G.pg.base.aircraft_template[64933] = {
 		64943
 	}
 }
-
 _G.pg.base.aircraft_template[64934] = {
 	id = 64934,
 	name = "隼鹰META鱼雷机Lv4",
@@ -37153,7 +35322,6 @@ _G.pg.base.aircraft_template[64934] = {
 		64944
 	}
 }
-
 _G.pg.base.aircraft_template[64935] = {
 	id = 64935,
 	name = "隼鹰META鱼雷机Lv5",
@@ -37165,7 +35333,6 @@ _G.pg.base.aircraft_template[64935] = {
 		64945
 	}
 }
-
 _G.pg.base.aircraft_template[64936] = {
 	id = 64936,
 	name = "隼鹰META鱼雷机Lv6",
@@ -37177,7 +35344,6 @@ _G.pg.base.aircraft_template[64936] = {
 		64946
 	}
 }
-
 _G.pg.base.aircraft_template[64937] = {
 	id = 64937,
 	name = "隼鹰META鱼雷机Lv7",
@@ -37189,7 +35355,6 @@ _G.pg.base.aircraft_template[64937] = {
 		64947
 	}
 }
-
 _G.pg.base.aircraft_template[64938] = {
 	id = 64938,
 	name = "隼鹰META鱼雷机Lv8",
@@ -37201,7 +35366,6 @@ _G.pg.base.aircraft_template[64938] = {
 		64948
 	}
 }
-
 _G.pg.base.aircraft_template[64939] = {
 	id = 64939,
 	name = "隼鹰META鱼雷机Lv9",
@@ -37213,7 +35377,6 @@ _G.pg.base.aircraft_template[64939] = {
 		64949
 	}
 }
-
 _G.pg.base.aircraft_template[64940] = {
 	id = 64940,
 	name = "隼鹰META鱼雷机Lv10",
@@ -37225,7 +35388,6 @@ _G.pg.base.aircraft_template[64940] = {
 		64950
 	}
 }
-
 _G.pg.base.aircraft_template[64951] = {
 	attack_power = 2,
 	name = "伏尔加技能鱼雷机Lv1",
@@ -37301,7 +35463,6 @@ _G.pg.base.aircraft_template[64951] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[64952] = {
 	id = 64952,
 	name = "伏尔加技能鱼雷机Lv2",
@@ -37313,7 +35474,6 @@ _G.pg.base.aircraft_template[64952] = {
 		64962
 	}
 }
-
 _G.pg.base.aircraft_template[64953] = {
 	id = 64953,
 	name = "伏尔加技能鱼雷机Lv3",
@@ -37325,7 +35485,6 @@ _G.pg.base.aircraft_template[64953] = {
 		64963
 	}
 }
-
 _G.pg.base.aircraft_template[64954] = {
 	id = 64954,
 	name = "伏尔加技能鱼雷机Lv4",
@@ -37337,7 +35496,6 @@ _G.pg.base.aircraft_template[64954] = {
 		64964
 	}
 }
-
 _G.pg.base.aircraft_template[64955] = {
 	id = 64955,
 	name = "伏尔加技能鱼雷机Lv5",
@@ -37349,7 +35507,6 @@ _G.pg.base.aircraft_template[64955] = {
 		64965
 	}
 }
-
 _G.pg.base.aircraft_template[64956] = {
 	id = 64956,
 	name = "伏尔加技能鱼雷机Lv6",
@@ -37361,7 +35518,6 @@ _G.pg.base.aircraft_template[64956] = {
 		64966
 	}
 }
-
 _G.pg.base.aircraft_template[64957] = {
 	id = 64957,
 	name = "伏尔加技能鱼雷机Lv7",
@@ -37373,7 +35529,6 @@ _G.pg.base.aircraft_template[64957] = {
 		64967
 	}
 }
-
 _G.pg.base.aircraft_template[64958] = {
 	id = 64958,
 	name = "伏尔加技能鱼雷机Lv8",
@@ -37385,7 +35540,6 @@ _G.pg.base.aircraft_template[64958] = {
 		64968
 	}
 }
-
 _G.pg.base.aircraft_template[64959] = {
 	id = 64959,
 	name = "伏尔加技能鱼雷机Lv9",
@@ -37397,7 +35551,6 @@ _G.pg.base.aircraft_template[64959] = {
 		64969
 	}
 }
-
 _G.pg.base.aircraft_template[64960] = {
 	id = 64960,
 	name = "伏尔加技能鱼雷机Lv10",
@@ -37409,7 +35562,6 @@ _G.pg.base.aircraft_template[64960] = {
 		64970
 	}
 }
-
 _G.pg.base.aircraft_template[65061] = {
 	attack_power = 2,
 	name = "普林斯顿技能鱼雷机Lv1",
@@ -37485,7 +35637,6 @@ _G.pg.base.aircraft_template[65061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65062] = {
 	id = 65062,
 	name = "普林斯顿技能鱼雷机Lv2",
@@ -37497,7 +35648,6 @@ _G.pg.base.aircraft_template[65062] = {
 		65072
 	}
 }
-
 _G.pg.base.aircraft_template[65063] = {
 	id = 65063,
 	name = "普林斯顿技能鱼雷机Lv3",
@@ -37509,7 +35659,6 @@ _G.pg.base.aircraft_template[65063] = {
 		65073
 	}
 }
-
 _G.pg.base.aircraft_template[65064] = {
 	id = 65064,
 	name = "普林斯顿技能鱼雷机Lv4",
@@ -37521,7 +35670,6 @@ _G.pg.base.aircraft_template[65064] = {
 		65074
 	}
 }
-
 _G.pg.base.aircraft_template[65065] = {
 	id = 65065,
 	name = "普林斯顿技能鱼雷机Lv5",
@@ -37533,7 +35681,6 @@ _G.pg.base.aircraft_template[65065] = {
 		65075
 	}
 }
-
 _G.pg.base.aircraft_template[65066] = {
 	id = 65066,
 	name = "普林斯顿技能鱼雷机Lv6",
@@ -37545,7 +35692,6 @@ _G.pg.base.aircraft_template[65066] = {
 		65076
 	}
 }
-
 _G.pg.base.aircraft_template[65067] = {
 	id = 65067,
 	name = "普林斯顿技能鱼雷机Lv7",
@@ -37557,7 +35703,6 @@ _G.pg.base.aircraft_template[65067] = {
 		65077
 	}
 }
-
 _G.pg.base.aircraft_template[65068] = {
 	id = 65068,
 	name = "普林斯顿技能鱼雷机Lv8",
@@ -37569,7 +35714,6 @@ _G.pg.base.aircraft_template[65068] = {
 		65078
 	}
 }
-
 _G.pg.base.aircraft_template[65069] = {
 	id = 65069,
 	name = "普林斯顿技能鱼雷机Lv9",
@@ -37581,7 +35725,6 @@ _G.pg.base.aircraft_template[65069] = {
 		65079
 	}
 }
-
 _G.pg.base.aircraft_template[65070] = {
 	id = 65070,
 	name = "普林斯顿技能鱼雷机Lv10",
@@ -37593,7 +35736,6 @@ _G.pg.base.aircraft_template[65070] = {
 		65080
 	}
 }
-
 _G.pg.base.aircraft_template[65121] = {
 	attack_power = 2,
 	name = "恶毒μ神圣天使轰炸机Lv1",
@@ -37669,7 +35811,6 @@ _G.pg.base.aircraft_template[65121] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65122] = {
 	id = 65122,
 	name = "恶毒μ神圣天使轰炸机Lv2",
@@ -37681,7 +35822,6 @@ _G.pg.base.aircraft_template[65122] = {
 		65132
 	}
 }
-
 _G.pg.base.aircraft_template[65123] = {
 	id = 65123,
 	name = "恶毒μ神圣天使轰炸机Lv3",
@@ -37693,7 +35833,6 @@ _G.pg.base.aircraft_template[65123] = {
 		65133
 	}
 }
-
 _G.pg.base.aircraft_template[65124] = {
 	id = 65124,
 	name = "恶毒μ神圣天使轰炸机Lv4",
@@ -37705,7 +35844,6 @@ _G.pg.base.aircraft_template[65124] = {
 		65134
 	}
 }
-
 _G.pg.base.aircraft_template[65125] = {
 	id = 65125,
 	name = "恶毒μ神圣天使轰炸机Lv5",
@@ -37717,7 +35855,6 @@ _G.pg.base.aircraft_template[65125] = {
 		65135
 	}
 }
-
 _G.pg.base.aircraft_template[65126] = {
 	id = 65126,
 	name = "恶毒μ神圣天使轰炸机Lv6",
@@ -37729,7 +35866,6 @@ _G.pg.base.aircraft_template[65126] = {
 		65136
 	}
 }
-
 _G.pg.base.aircraft_template[65127] = {
 	id = 65127,
 	name = "恶毒μ神圣天使轰炸机Lv7",
@@ -37741,7 +35877,6 @@ _G.pg.base.aircraft_template[65127] = {
 		65137
 	}
 }
-
 _G.pg.base.aircraft_template[65128] = {
 	id = 65128,
 	name = "恶毒μ神圣天使轰炸机Lv8",
@@ -37753,7 +35888,6 @@ _G.pg.base.aircraft_template[65128] = {
 		65138
 	}
 }
-
 _G.pg.base.aircraft_template[65129] = {
 	id = 65129,
 	name = "恶毒μ神圣天使轰炸机Lv9",
@@ -37765,7 +35899,6 @@ _G.pg.base.aircraft_template[65129] = {
 		65139
 	}
 }
-
 _G.pg.base.aircraft_template[65130] = {
 	id = 65130,
 	name = "恶毒μ神圣天使轰炸机Lv10",
@@ -37777,7 +35910,6 @@ _G.pg.base.aircraft_template[65130] = {
 		65140
 	}
 }
-
 _G.pg.base.aircraft_template[65181] = {
 	attack_power = 2,
 	name = "大凤μ技能鱼雷机Lv1",
@@ -37853,7 +35985,6 @@ _G.pg.base.aircraft_template[65181] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65182] = {
 	id = 65182,
 	name = "大凤μ技能鱼雷机Lv2",
@@ -37865,7 +35996,6 @@ _G.pg.base.aircraft_template[65182] = {
 		65192
 	}
 }
-
 _G.pg.base.aircraft_template[65183] = {
 	id = 65183,
 	name = "大凤μ技能鱼雷机Lv3",
@@ -37877,7 +36007,6 @@ _G.pg.base.aircraft_template[65183] = {
 		65193
 	}
 }
-
 _G.pg.base.aircraft_template[65184] = {
 	id = 65184,
 	name = "大凤μ技能鱼雷机Lv4",
@@ -37889,7 +36018,6 @@ _G.pg.base.aircraft_template[65184] = {
 		65194
 	}
 }
-
 _G.pg.base.aircraft_template[65185] = {
 	id = 65185,
 	name = "大凤μ技能鱼雷机Lv5",
@@ -37901,7 +36029,6 @@ _G.pg.base.aircraft_template[65185] = {
 		65195
 	}
 }
-
 _G.pg.base.aircraft_template[65186] = {
 	id = 65186,
 	name = "大凤μ技能鱼雷机Lv6",
@@ -37913,7 +36040,6 @@ _G.pg.base.aircraft_template[65186] = {
 		65196
 	}
 }
-
 _G.pg.base.aircraft_template[65187] = {
 	id = 65187,
 	name = "大凤μ技能鱼雷机Lv7",
@@ -37925,7 +36051,6 @@ _G.pg.base.aircraft_template[65187] = {
 		65197
 	}
 }
-
 _G.pg.base.aircraft_template[65188] = {
 	id = 65188,
 	name = "大凤μ技能鱼雷机Lv8",
@@ -37937,7 +36062,6 @@ _G.pg.base.aircraft_template[65188] = {
 		65198
 	}
 }
-
 _G.pg.base.aircraft_template[65189] = {
 	id = 65189,
 	name = "大凤μ技能鱼雷机Lv9",
@@ -37949,7 +36073,6 @@ _G.pg.base.aircraft_template[65189] = {
 		65199
 	}
 }
-
 _G.pg.base.aircraft_template[65190] = {
 	id = 65190,
 	name = "大凤μ技能鱼雷机Lv10",
@@ -37961,7 +36084,6 @@ _G.pg.base.aircraft_template[65190] = {
 		65200
 	}
 }
-
 _G.pg.base.aircraft_template[65201] = {
 	attack_power = 2,
 	name = "大凤μ技能轰炸机Lv1",
@@ -38038,7 +36160,6 @@ _G.pg.base.aircraft_template[65201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65202] = {
 	id = 65202,
 	name = "大凤μ技能轰炸机Lv2",
@@ -38051,7 +36172,6 @@ _G.pg.base.aircraft_template[65202] = {
 		65222
 	}
 }
-
 _G.pg.base.aircraft_template[65203] = {
 	id = 65203,
 	name = "大凤μ技能轰炸机Lv3",
@@ -38064,7 +36184,6 @@ _G.pg.base.aircraft_template[65203] = {
 		65223
 	}
 }
-
 _G.pg.base.aircraft_template[65204] = {
 	id = 65204,
 	name = "大凤μ技能轰炸机Lv4",
@@ -38077,7 +36196,6 @@ _G.pg.base.aircraft_template[65204] = {
 		65224
 	}
 }
-
 _G.pg.base.aircraft_template[65205] = {
 	id = 65205,
 	name = "大凤μ技能轰炸机Lv5",
@@ -38090,7 +36208,6 @@ _G.pg.base.aircraft_template[65205] = {
 		65225
 	}
 }
-
 _G.pg.base.aircraft_template[65206] = {
 	id = 65206,
 	name = "大凤μ技能轰炸机Lv6",
@@ -38103,7 +36220,6 @@ _G.pg.base.aircraft_template[65206] = {
 		65226
 	}
 }
-
 _G.pg.base.aircraft_template[65207] = {
 	id = 65207,
 	name = "大凤μ技能轰炸机Lv7",
@@ -38116,7 +36232,6 @@ _G.pg.base.aircraft_template[65207] = {
 		65227
 	}
 }
-
 _G.pg.base.aircraft_template[65208] = {
 	id = 65208,
 	name = "大凤μ技能轰炸机Lv8",
@@ -38129,7 +36244,6 @@ _G.pg.base.aircraft_template[65208] = {
 		65228
 	}
 }
-
 _G.pg.base.aircraft_template[65209] = {
 	id = 65209,
 	name = "大凤μ技能轰炸机Lv9",
@@ -38142,7 +36256,6 @@ _G.pg.base.aircraft_template[65209] = {
 		65229
 	}
 }
-
 _G.pg.base.aircraft_template[65210] = {
 	id = 65210,
 	name = "大凤μ技能轰炸机Lv10",
@@ -38155,7 +36268,6 @@ _G.pg.base.aircraft_template[65210] = {
 		65230
 	}
 }
-
 _G.pg.base.aircraft_template[65251] = {
 	attack_power = 2,
 	name = "坠星机LV1",
@@ -38231,7 +36343,6 @@ _G.pg.base.aircraft_template[65251] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65252] = {
 	id = 65252,
 	name = "坠星机LV2",
@@ -38243,7 +36354,6 @@ _G.pg.base.aircraft_template[65252] = {
 		65262
 	}
 }
-
 _G.pg.base.aircraft_template[65253] = {
 	id = 65253,
 	name = "坠星机LV3",
@@ -38255,7 +36365,6 @@ _G.pg.base.aircraft_template[65253] = {
 		65263
 	}
 }
-
 _G.pg.base.aircraft_template[65254] = {
 	id = 65254,
 	name = "坠星机LV4",
@@ -38267,7 +36376,6 @@ _G.pg.base.aircraft_template[65254] = {
 		65264
 	}
 }
-
 _G.pg.base.aircraft_template[65255] = {
 	id = 65255,
 	name = "坠星机LV5",
@@ -38279,7 +36387,6 @@ _G.pg.base.aircraft_template[65255] = {
 		65265
 	}
 }
-
 _G.pg.base.aircraft_template[65256] = {
 	id = 65256,
 	name = "坠星机LV6",
@@ -38291,7 +36398,6 @@ _G.pg.base.aircraft_template[65256] = {
 		65266
 	}
 }
-
 _G.pg.base.aircraft_template[65257] = {
 	id = 65257,
 	name = "坠星机LV7",
@@ -38303,7 +36409,6 @@ _G.pg.base.aircraft_template[65257] = {
 		65267
 	}
 }
-
 _G.pg.base.aircraft_template[65258] = {
 	id = 65258,
 	name = "坠星机LV8",
@@ -38315,7 +36420,6 @@ _G.pg.base.aircraft_template[65258] = {
 		65268
 	}
 }
-
 _G.pg.base.aircraft_template[65259] = {
 	id = 65259,
 	name = "坠星机LV9",
@@ -38327,7 +36431,6 @@ _G.pg.base.aircraft_template[65259] = {
 		65269
 	}
 }
-
 _G.pg.base.aircraft_template[65260] = {
 	id = 65260,
 	name = "坠星机LV10",
@@ -38339,7 +36442,6 @@ _G.pg.base.aircraft_template[65260] = {
 		65270
 	}
 }
-
 _G.pg.base.aircraft_template[65381] = {
 	attack_power = 2,
 	name = "女天狗沙排啾轰炸机Lv1",
@@ -38416,7 +36518,6 @@ _G.pg.base.aircraft_template[65381] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65382] = {
 	id = 65382,
 	name = "女天狗沙排啾轰炸机Lv2",
@@ -38429,7 +36530,6 @@ _G.pg.base.aircraft_template[65382] = {
 		65402
 	}
 }
-
 _G.pg.base.aircraft_template[65383] = {
 	id = 65383,
 	name = "女天狗沙排啾轰炸机Lv3",
@@ -38442,7 +36542,6 @@ _G.pg.base.aircraft_template[65383] = {
 		65403
 	}
 }
-
 _G.pg.base.aircraft_template[65384] = {
 	id = 65384,
 	name = "女天狗沙排啾轰炸机Lv4",
@@ -38455,7 +36554,6 @@ _G.pg.base.aircraft_template[65384] = {
 		65404
 	}
 }
-
 _G.pg.base.aircraft_template[65385] = {
 	id = 65385,
 	name = "女天狗沙排啾轰炸机Lv5",
@@ -38468,7 +36566,6 @@ _G.pg.base.aircraft_template[65385] = {
 		65405
 	}
 }
-
 _G.pg.base.aircraft_template[65386] = {
 	id = 65386,
 	name = "女天狗沙排啾轰炸机Lv6",
@@ -38481,7 +36578,6 @@ _G.pg.base.aircraft_template[65386] = {
 		65406
 	}
 }
-
 _G.pg.base.aircraft_template[65387] = {
 	id = 65387,
 	name = "女天狗沙排啾轰炸机Lv7",
@@ -38494,7 +36590,6 @@ _G.pg.base.aircraft_template[65387] = {
 		65407
 	}
 }
-
 _G.pg.base.aircraft_template[65388] = {
 	id = 65388,
 	name = "女天狗沙排啾轰炸机Lv8",
@@ -38507,7 +36602,6 @@ _G.pg.base.aircraft_template[65388] = {
 		65408
 	}
 }
-
 _G.pg.base.aircraft_template[65389] = {
 	id = 65389,
 	name = "女天狗沙排啾轰炸机Lv9",
@@ -38520,7 +36614,6 @@ _G.pg.base.aircraft_template[65389] = {
 		65409
 	}
 }
-
 _G.pg.base.aircraft_template[65390] = {
 	id = 65390,
 	name = "女天狗沙排啾轰炸机Lv10",
@@ -38533,7 +36626,6 @@ _G.pg.base.aircraft_template[65390] = {
 		65410
 	}
 }
-
 _G.pg.base.aircraft_template[65451] = {
 	attack_power = 2,
 	name = "META飞龙鱼雷机Lv1",
@@ -38609,7 +36701,6 @@ _G.pg.base.aircraft_template[65451] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65452] = {
 	id = 65452,
 	name = "META飞龙鱼雷机Lv2",
@@ -38621,7 +36712,6 @@ _G.pg.base.aircraft_template[65452] = {
 		65462
 	}
 }
-
 _G.pg.base.aircraft_template[65453] = {
 	id = 65453,
 	name = "META飞龙鱼雷机Lv3",
@@ -38633,7 +36723,6 @@ _G.pg.base.aircraft_template[65453] = {
 		65463
 	}
 }
-
 _G.pg.base.aircraft_template[65454] = {
 	id = 65454,
 	name = "META飞龙鱼雷机Lv4",
@@ -38645,7 +36734,6 @@ _G.pg.base.aircraft_template[65454] = {
 		65464
 	}
 }
-
 _G.pg.base.aircraft_template[65455] = {
 	id = 65455,
 	name = "META飞龙鱼雷机Lv5",
@@ -38657,7 +36745,6 @@ _G.pg.base.aircraft_template[65455] = {
 		65465
 	}
 }
-
 _G.pg.base.aircraft_template[65456] = {
 	id = 65456,
 	name = "META飞龙鱼雷机Lv6",
@@ -38669,7 +36756,6 @@ _G.pg.base.aircraft_template[65456] = {
 		65466
 	}
 }
-
 _G.pg.base.aircraft_template[65457] = {
 	id = 65457,
 	name = "META飞龙鱼雷机Lv7",
@@ -38681,7 +36767,6 @@ _G.pg.base.aircraft_template[65457] = {
 		65467
 	}
 }
-
 _G.pg.base.aircraft_template[65458] = {
 	id = 65458,
 	name = "META飞龙鱼雷机Lv8",
@@ -38693,7 +36778,6 @@ _G.pg.base.aircraft_template[65458] = {
 		65468
 	}
 }
-
 _G.pg.base.aircraft_template[65459] = {
 	id = 65459,
 	name = "META飞龙鱼雷机Lv9",
@@ -38705,7 +36789,6 @@ _G.pg.base.aircraft_template[65459] = {
 		65469
 	}
 }
-
 _G.pg.base.aircraft_template[65460] = {
 	id = 65460,
 	name = "META飞龙鱼雷机Lv10",
@@ -38717,7 +36800,6 @@ _G.pg.base.aircraft_template[65460] = {
 		65470
 	}
 }
-
 _G.pg.base.aircraft_template[65491] = {
 	attack_power = 2,
 	name = "彼得史特拉塞技能JU87鱼雷机LV1",
@@ -38793,7 +36875,6 @@ _G.pg.base.aircraft_template[65491] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65492] = {
 	id = 65492,
 	name = "彼得史特拉塞技能JU87鱼雷机LV2",
@@ -38805,7 +36886,6 @@ _G.pg.base.aircraft_template[65492] = {
 		65502
 	}
 }
-
 _G.pg.base.aircraft_template[65493] = {
 	id = 65493,
 	name = "彼得史特拉塞技能JU87鱼雷机LV3",
@@ -38817,7 +36897,6 @@ _G.pg.base.aircraft_template[65493] = {
 		65503
 	}
 }
-
 _G.pg.base.aircraft_template[65494] = {
 	id = 65494,
 	name = "彼得史特拉塞技能JU87鱼雷机LV4",
@@ -38829,7 +36908,6 @@ _G.pg.base.aircraft_template[65494] = {
 		65504
 	}
 }
-
 _G.pg.base.aircraft_template[65495] = {
 	id = 65495,
 	name = "彼得史特拉塞技能JU87鱼雷机LV5",
@@ -38841,7 +36919,6 @@ _G.pg.base.aircraft_template[65495] = {
 		65505
 	}
 }
-
 _G.pg.base.aircraft_template[65496] = {
 	id = 65496,
 	name = "彼得史特拉塞技能JU87鱼雷机LV6",
@@ -38853,7 +36930,6 @@ _G.pg.base.aircraft_template[65496] = {
 		65506
 	}
 }
-
 _G.pg.base.aircraft_template[65497] = {
 	id = 65497,
 	name = "彼得史特拉塞技能JU87鱼雷机LV7",
@@ -38865,7 +36941,6 @@ _G.pg.base.aircraft_template[65497] = {
 		65507
 	}
 }
-
 _G.pg.base.aircraft_template[65498] = {
 	id = 65498,
 	name = "彼得史特拉塞技能JU87鱼雷机LV8",
@@ -38877,7 +36952,6 @@ _G.pg.base.aircraft_template[65498] = {
 		65508
 	}
 }
-
 _G.pg.base.aircraft_template[65499] = {
 	id = 65499,
 	name = "彼得史特拉塞技能JU87鱼雷机LV9",
@@ -38889,7 +36963,6 @@ _G.pg.base.aircraft_template[65499] = {
 		65509
 	}
 }
-
 _G.pg.base.aircraft_template[65500] = {
 	id = 65500,
 	name = "彼得史特拉塞技能JU87鱼雷机LV10",
@@ -38901,7 +36974,6 @@ _G.pg.base.aircraft_template[65500] = {
 		65510
 	}
 }
-
 _G.pg.base.aircraft_template[65561] = {
 	attack_power = 2,
 	name = "威悉技能轰炸机Lv1",
@@ -38977,7 +37049,6 @@ _G.pg.base.aircraft_template[65561] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65562] = {
 	id = 65562,
 	name = "威悉技能轰炸机Lv2",
@@ -38989,7 +37060,6 @@ _G.pg.base.aircraft_template[65562] = {
 		65582
 	}
 }
-
 _G.pg.base.aircraft_template[65563] = {
 	id = 65563,
 	name = "威悉技能轰炸机Lv3",
@@ -39001,7 +37071,6 @@ _G.pg.base.aircraft_template[65563] = {
 		65583
 	}
 }
-
 _G.pg.base.aircraft_template[65564] = {
 	id = 65564,
 	name = "威悉技能轰炸机Lv4",
@@ -39013,7 +37082,6 @@ _G.pg.base.aircraft_template[65564] = {
 		65584
 	}
 }
-
 _G.pg.base.aircraft_template[65565] = {
 	id = 65565,
 	name = "威悉技能轰炸机Lv5",
@@ -39025,7 +37093,6 @@ _G.pg.base.aircraft_template[65565] = {
 		65585
 	}
 }
-
 _G.pg.base.aircraft_template[65566] = {
 	id = 65566,
 	name = "威悉技能轰炸机Lv6",
@@ -39037,7 +37104,6 @@ _G.pg.base.aircraft_template[65566] = {
 		65586
 	}
 }
-
 _G.pg.base.aircraft_template[65567] = {
 	id = 65567,
 	name = "威悉技能轰炸机Lv7",
@@ -39049,7 +37115,6 @@ _G.pg.base.aircraft_template[65567] = {
 		65587
 	}
 }
-
 _G.pg.base.aircraft_template[65568] = {
 	id = 65568,
 	name = "威悉技能轰炸机Lv8",
@@ -39061,7 +37126,6 @@ _G.pg.base.aircraft_template[65568] = {
 		65588
 	}
 }
-
 _G.pg.base.aircraft_template[65569] = {
 	id = 65569,
 	name = "威悉技能轰炸机Lv9",
@@ -39073,7 +37137,6 @@ _G.pg.base.aircraft_template[65569] = {
 		65589
 	}
 }
-
 _G.pg.base.aircraft_template[65570] = {
 	id = 65570,
 	name = "威悉技能轰炸机Lv10",
@@ -39085,7 +37148,6 @@ _G.pg.base.aircraft_template[65570] = {
 		65590
 	}
 }
-
 _G.pg.base.aircraft_template[65571] = {
 	attack_power = 2,
 	name = "威悉技能轰炸机PlusLv1",
@@ -39161,7 +37223,6 @@ _G.pg.base.aircraft_template[65571] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65572] = {
 	id = 65572,
 	name = "威悉技能轰炸机PlusLv2",
@@ -39173,7 +37234,6 @@ _G.pg.base.aircraft_template[65572] = {
 		65582
 	}
 }
-
 _G.pg.base.aircraft_template[65573] = {
 	id = 65573,
 	name = "威悉技能轰炸机PlusLv3",
@@ -39185,7 +37245,6 @@ _G.pg.base.aircraft_template[65573] = {
 		65583
 	}
 }
-
 _G.pg.base.aircraft_template[65574] = {
 	id = 65574,
 	name = "威悉技能轰炸机PlusLv4",
@@ -39197,7 +37256,6 @@ _G.pg.base.aircraft_template[65574] = {
 		65584
 	}
 }
-
 _G.pg.base.aircraft_template[65575] = {
 	id = 65575,
 	name = "威悉技能轰炸机PlusLv5",
@@ -39209,7 +37267,6 @@ _G.pg.base.aircraft_template[65575] = {
 		65585
 	}
 }
-
 _G.pg.base.aircraft_template[65576] = {
 	id = 65576,
 	name = "威悉技能轰炸机PlusLv6",
@@ -39221,7 +37278,6 @@ _G.pg.base.aircraft_template[65576] = {
 		65586
 	}
 }
-
 _G.pg.base.aircraft_template[65577] = {
 	id = 65577,
 	name = "威悉技能轰炸机PlusLv7",
@@ -39233,7 +37289,6 @@ _G.pg.base.aircraft_template[65577] = {
 		65587
 	}
 }
-
 _G.pg.base.aircraft_template[65578] = {
 	id = 65578,
 	name = "威悉技能轰炸机PlusLv8",
@@ -39245,7 +37300,6 @@ _G.pg.base.aircraft_template[65578] = {
 		65588
 	}
 }
-
 _G.pg.base.aircraft_template[65579] = {
 	id = 65579,
 	name = "威悉技能轰炸机PlusLv9",
@@ -39257,7 +37311,6 @@ _G.pg.base.aircraft_template[65579] = {
 		65589
 	}
 }
-
 _G.pg.base.aircraft_template[65580] = {
 	id = 65580,
 	name = "威悉技能轰炸机PlusLv10",
@@ -39269,7 +37322,6 @@ _G.pg.base.aircraft_template[65580] = {
 		65590
 	}
 }
-
 _G.pg.base.aircraft_template[65841] = {
 	attack_power = 2,
 	name = "黑方舟技能-特殊鱼雷机Lv1",
@@ -39345,7 +37397,6 @@ _G.pg.base.aircraft_template[65841] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65842] = {
 	id = 65842,
 	name = "黑方舟技能-特殊鱼雷机Lv2",
@@ -39357,7 +37408,6 @@ _G.pg.base.aircraft_template[65842] = {
 		65852
 	}
 }
-
 _G.pg.base.aircraft_template[65843] = {
 	id = 65843,
 	name = "黑方舟技能-特殊鱼雷机Lv3",
@@ -39369,7 +37419,6 @@ _G.pg.base.aircraft_template[65843] = {
 		65853
 	}
 }
-
 _G.pg.base.aircraft_template[65844] = {
 	id = 65844,
 	name = "黑方舟技能-特殊鱼雷机Lv4",
@@ -39381,7 +37430,6 @@ _G.pg.base.aircraft_template[65844] = {
 		65854
 	}
 }
-
 _G.pg.base.aircraft_template[65845] = {
 	id = 65845,
 	name = "黑方舟技能-特殊鱼雷机Lv5",
@@ -39393,7 +37441,6 @@ _G.pg.base.aircraft_template[65845] = {
 		65855
 	}
 }
-
 _G.pg.base.aircraft_template[65846] = {
 	id = 65846,
 	name = "黑方舟技能-特殊鱼雷机Lv6",
@@ -39405,7 +37452,6 @@ _G.pg.base.aircraft_template[65846] = {
 		65856
 	}
 }
-
 _G.pg.base.aircraft_template[65847] = {
 	id = 65847,
 	name = "黑方舟技能-特殊鱼雷机Lv7",
@@ -39417,7 +37463,6 @@ _G.pg.base.aircraft_template[65847] = {
 		65857
 	}
 }
-
 _G.pg.base.aircraft_template[65848] = {
 	id = 65848,
 	name = "黑方舟技能-特殊鱼雷机Lv8",
@@ -39429,7 +37474,6 @@ _G.pg.base.aircraft_template[65848] = {
 		65858
 	}
 }
-
 _G.pg.base.aircraft_template[65849] = {
 	id = 65849,
 	name = "黑方舟技能-特殊鱼雷机Lv9",
@@ -39441,7 +37485,6 @@ _G.pg.base.aircraft_template[65849] = {
 		65859
 	}
 }
-
 _G.pg.base.aircraft_template[65850] = {
 	id = 65850,
 	name = "黑方舟技能-特殊鱼雷机Lv10",
@@ -39453,7 +37496,6 @@ _G.pg.base.aircraft_template[65850] = {
 		65860
 	}
 }
-
 _G.pg.base.aircraft_template[65911] = {
 	attack_power = 2,
 	name = "天鹰技能G.50Lv1",
@@ -39531,7 +37573,6 @@ _G.pg.base.aircraft_template[65911] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65912] = {
 	id = 65912,
 	name = "天鹰技能G.50Lv2",
@@ -39545,7 +37586,6 @@ _G.pg.base.aircraft_template[65912] = {
 		65922
 	}
 }
-
 _G.pg.base.aircraft_template[65913] = {
 	id = 65913,
 	name = "天鹰技能G.50Lv3",
@@ -39559,7 +37599,6 @@ _G.pg.base.aircraft_template[65913] = {
 		65923
 	}
 }
-
 _G.pg.base.aircraft_template[65914] = {
 	id = 65914,
 	name = "天鹰技能G.50Lv4",
@@ -39573,7 +37612,6 @@ _G.pg.base.aircraft_template[65914] = {
 		65924
 	}
 }
-
 _G.pg.base.aircraft_template[65915] = {
 	id = 65915,
 	name = "天鹰技能G.50Lv5",
@@ -39587,7 +37625,6 @@ _G.pg.base.aircraft_template[65915] = {
 		65925
 	}
 }
-
 _G.pg.base.aircraft_template[65916] = {
 	id = 65916,
 	name = "天鹰技能G.50Lv6",
@@ -39601,7 +37638,6 @@ _G.pg.base.aircraft_template[65916] = {
 		65926
 	}
 }
-
 _G.pg.base.aircraft_template[65917] = {
 	id = 65917,
 	name = "天鹰技能G.50Lv7",
@@ -39615,7 +37651,6 @@ _G.pg.base.aircraft_template[65917] = {
 		65927
 	}
 }
-
 _G.pg.base.aircraft_template[65918] = {
 	id = 65918,
 	name = "天鹰技能G.50Lv8",
@@ -39629,7 +37664,6 @@ _G.pg.base.aircraft_template[65918] = {
 		65928
 	}
 }
-
 _G.pg.base.aircraft_template[65919] = {
 	id = 65919,
 	name = "天鹰技能G.50Lv9",
@@ -39643,7 +37677,6 @@ _G.pg.base.aircraft_template[65919] = {
 		65929
 	}
 }
-
 _G.pg.base.aircraft_template[65920] = {
 	id = 65920,
 	name = "天鹰技能G.50Lv10",
@@ -39657,7 +37690,6 @@ _G.pg.base.aircraft_template[65920] = {
 		65930
 	}
 }
-
 _G.pg.base.aircraft_template[65931] = {
 	attack_power = 2,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv1",
@@ -39733,7 +37765,6 @@ _G.pg.base.aircraft_template[65931] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[65932] = {
 	id = 65932,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv2",
@@ -39745,7 +37776,6 @@ _G.pg.base.aircraft_template[65932] = {
 		65942
 	}
 }
-
 _G.pg.base.aircraft_template[65933] = {
 	id = 65933,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv3",
@@ -39757,7 +37787,6 @@ _G.pg.base.aircraft_template[65933] = {
 		65943
 	}
 }
-
 _G.pg.base.aircraft_template[65934] = {
 	id = 65934,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv4",
@@ -39769,7 +37798,6 @@ _G.pg.base.aircraft_template[65934] = {
 		65944
 	}
 }
-
 _G.pg.base.aircraft_template[65935] = {
 	id = 65935,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv5",
@@ -39781,7 +37809,6 @@ _G.pg.base.aircraft_template[65935] = {
 		65945
 	}
 }
-
 _G.pg.base.aircraft_template[65936] = {
 	id = 65936,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv6",
@@ -39793,7 +37820,6 @@ _G.pg.base.aircraft_template[65936] = {
 		65946
 	}
 }
-
 _G.pg.base.aircraft_template[65937] = {
 	id = 65937,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv7",
@@ -39805,7 +37831,6 @@ _G.pg.base.aircraft_template[65937] = {
 		65947
 	}
 }
-
 _G.pg.base.aircraft_template[65938] = {
 	id = 65938,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv8",
@@ -39817,7 +37842,6 @@ _G.pg.base.aircraft_template[65938] = {
 		65948
 	}
 }
-
 _G.pg.base.aircraft_template[65939] = {
 	id = 65939,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv9",
@@ -39829,7 +37853,6 @@ _G.pg.base.aircraft_template[65939] = {
 		65949
 	}
 }
-
 _G.pg.base.aircraft_template[65940] = {
 	id = 65940,
 	name = "天鹰技能Re.2001舰载鱼雷机Lv10",
@@ -39841,7 +37864,6 @@ _G.pg.base.aircraft_template[65940] = {
 		65950
 	}
 }
-
 _G.pg.base.aircraft_template[66240] = {
 	attack_power = 2,
 	name = "山城改技能Lv0",
@@ -39917,7 +37939,6 @@ _G.pg.base.aircraft_template[66240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66241] = {
 	id = 66241,
 	name = "山城改技能Lv1",
@@ -39929,7 +37950,6 @@ _G.pg.base.aircraft_template[66241] = {
 		66261
 	}
 }
-
 _G.pg.base.aircraft_template[66242] = {
 	id = 66242,
 	name = "山城改技能Lv2",
@@ -39941,7 +37961,6 @@ _G.pg.base.aircraft_template[66242] = {
 		66262
 	}
 }
-
 _G.pg.base.aircraft_template[66243] = {
 	id = 66243,
 	name = "山城改技能Lv3",
@@ -39953,7 +37972,6 @@ _G.pg.base.aircraft_template[66243] = {
 		66263
 	}
 }
-
 _G.pg.base.aircraft_template[66244] = {
 	id = 66244,
 	name = "山城改技能Lv4",
@@ -39965,7 +37983,6 @@ _G.pg.base.aircraft_template[66244] = {
 		66264
 	}
 }
-
 _G.pg.base.aircraft_template[66245] = {
 	id = 66245,
 	name = "山城改技能Lv5",
@@ -39977,7 +37994,6 @@ _G.pg.base.aircraft_template[66245] = {
 		66265
 	}
 }
-
 _G.pg.base.aircraft_template[66246] = {
 	id = 66246,
 	name = "山城改技能Lv6",
@@ -39989,7 +38005,6 @@ _G.pg.base.aircraft_template[66246] = {
 		66266
 	}
 }
-
 _G.pg.base.aircraft_template[66247] = {
 	id = 66247,
 	name = "山城改技能Lv7",
@@ -40001,7 +38016,6 @@ _G.pg.base.aircraft_template[66247] = {
 		66267
 	}
 }
-
 _G.pg.base.aircraft_template[66248] = {
 	id = 66248,
 	name = "山城改技能Lv8",
@@ -40013,7 +38027,6 @@ _G.pg.base.aircraft_template[66248] = {
 		66268
 	}
 }
-
 _G.pg.base.aircraft_template[66249] = {
 	id = 66249,
 	name = "山城改技能Lv9",
@@ -40025,7 +38038,6 @@ _G.pg.base.aircraft_template[66249] = {
 		66269
 	}
 }
-
 _G.pg.base.aircraft_template[66250] = {
 	id = 66250,
 	name = "山城改技能Lv10",
@@ -40037,7 +38049,6 @@ _G.pg.base.aircraft_template[66250] = {
 		66270
 	}
 }
-
 _G.pg.base.aircraft_template[66420] = {
 	attack_power = 2,
 	name = "胡蜂技能LV0",
@@ -40115,7 +38126,6 @@ _G.pg.base.aircraft_template[66420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66421] = {
 	id = 66421,
 	name = "胡蜂技能LV1",
@@ -40129,7 +38139,6 @@ _G.pg.base.aircraft_template[66421] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[66422] = {
 	id = 66422,
 	name = "胡蜂技能LV2",
@@ -40143,7 +38152,6 @@ _G.pg.base.aircraft_template[66422] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[66423] = {
 	id = 66423,
 	name = "胡蜂技能LV3",
@@ -40157,7 +38165,6 @@ _G.pg.base.aircraft_template[66423] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[66424] = {
 	id = 66424,
 	name = "胡蜂技能LV4",
@@ -40171,7 +38178,6 @@ _G.pg.base.aircraft_template[66424] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[66425] = {
 	id = 66425,
 	name = "胡蜂技能LV5",
@@ -40185,7 +38191,6 @@ _G.pg.base.aircraft_template[66425] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[66426] = {
 	id = 66426,
 	name = "胡蜂技能LV6",
@@ -40199,7 +38204,6 @@ _G.pg.base.aircraft_template[66426] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[66427] = {
 	id = 66427,
 	name = "胡蜂技能LV7",
@@ -40213,7 +38217,6 @@ _G.pg.base.aircraft_template[66427] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[66428] = {
 	id = 66428,
 	name = "胡蜂技能LV8",
@@ -40227,7 +38230,6 @@ _G.pg.base.aircraft_template[66428] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[66429] = {
 	id = 66429,
 	name = "胡蜂技能LV9",
@@ -40241,7 +38243,6 @@ _G.pg.base.aircraft_template[66429] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[66430] = {
 	id = 66430,
 	name = "胡蜂技能LV10",
@@ -40255,7 +38256,6 @@ _G.pg.base.aircraft_template[66430] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[66580] = {
 	attack_power = 2,
 	name = "宝石枪雨LV0",
@@ -40331,7 +38331,6 @@ _G.pg.base.aircraft_template[66580] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66581] = {
 	id = 66581,
 	name = "宝石枪雨LV1",
@@ -40343,7 +38342,6 @@ _G.pg.base.aircraft_template[66581] = {
 		66621
 	}
 }
-
 _G.pg.base.aircraft_template[66582] = {
 	id = 66582,
 	name = "宝石枪雨LV2",
@@ -40355,7 +38353,6 @@ _G.pg.base.aircraft_template[66582] = {
 		66622
 	}
 }
-
 _G.pg.base.aircraft_template[66583] = {
 	id = 66583,
 	name = "宝石枪雨LV3",
@@ -40367,7 +38364,6 @@ _G.pg.base.aircraft_template[66583] = {
 		66623
 	}
 }
-
 _G.pg.base.aircraft_template[66584] = {
 	id = 66584,
 	name = "宝石枪雨LV4",
@@ -40379,7 +38375,6 @@ _G.pg.base.aircraft_template[66584] = {
 		66624
 	}
 }
-
 _G.pg.base.aircraft_template[66585] = {
 	id = 66585,
 	name = "宝石枪雨LV5",
@@ -40391,7 +38386,6 @@ _G.pg.base.aircraft_template[66585] = {
 		66625
 	}
 }
-
 _G.pg.base.aircraft_template[66586] = {
 	id = 66586,
 	name = "宝石枪雨LV6",
@@ -40403,7 +38397,6 @@ _G.pg.base.aircraft_template[66586] = {
 		66626
 	}
 }
-
 _G.pg.base.aircraft_template[66587] = {
 	id = 66587,
 	name = "宝石枪雨LV7",
@@ -40415,7 +38408,6 @@ _G.pg.base.aircraft_template[66587] = {
 		66627
 	}
 }
-
 _G.pg.base.aircraft_template[66588] = {
 	id = 66588,
 	name = "宝石枪雨LV8",
@@ -40427,7 +38419,6 @@ _G.pg.base.aircraft_template[66588] = {
 		66628
 	}
 }
-
 _G.pg.base.aircraft_template[66589] = {
 	id = 66589,
 	name = "宝石枪雨LV9",
@@ -40439,7 +38430,6 @@ _G.pg.base.aircraft_template[66589] = {
 		66629
 	}
 }
-
 _G.pg.base.aircraft_template[66590] = {
 	id = 66590,
 	name = "宝石枪雨LV10",
@@ -40451,7 +38441,6 @@ _G.pg.base.aircraft_template[66590] = {
 		66630
 	}
 }
-
 _G.pg.base.aircraft_template[66820] = {
 	attack_power = 2,
 	name = "飞鹰隼鹰技能Lv0",
@@ -40527,7 +38516,6 @@ _G.pg.base.aircraft_template[66820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66821] = {
 	id = 66821,
 	name = "飞鹰隼鹰技能Lv1",
@@ -40539,7 +38527,6 @@ _G.pg.base.aircraft_template[66821] = {
 		66841
 	}
 }
-
 _G.pg.base.aircraft_template[66822] = {
 	id = 66822,
 	name = "飞鹰隼鹰技能Lv2",
@@ -40551,7 +38538,6 @@ _G.pg.base.aircraft_template[66822] = {
 		66842
 	}
 }
-
 _G.pg.base.aircraft_template[66823] = {
 	id = 66823,
 	name = "飞鹰隼鹰技能Lv3",
@@ -40563,7 +38549,6 @@ _G.pg.base.aircraft_template[66823] = {
 		66843
 	}
 }
-
 _G.pg.base.aircraft_template[66824] = {
 	id = 66824,
 	name = "飞鹰隼鹰技能Lv4",
@@ -40575,7 +38560,6 @@ _G.pg.base.aircraft_template[66824] = {
 		66844
 	}
 }
-
 _G.pg.base.aircraft_template[66825] = {
 	id = 66825,
 	name = "飞鹰隼鹰技能Lv5",
@@ -40587,7 +38571,6 @@ _G.pg.base.aircraft_template[66825] = {
 		66845
 	}
 }
-
 _G.pg.base.aircraft_template[66826] = {
 	id = 66826,
 	name = "飞鹰隼鹰技能Lv6",
@@ -40599,7 +38582,6 @@ _G.pg.base.aircraft_template[66826] = {
 		66846
 	}
 }
-
 _G.pg.base.aircraft_template[66827] = {
 	id = 66827,
 	name = "飞鹰隼鹰技能Lv7",
@@ -40611,7 +38593,6 @@ _G.pg.base.aircraft_template[66827] = {
 		66847
 	}
 }
-
 _G.pg.base.aircraft_template[66828] = {
 	id = 66828,
 	name = "飞鹰隼鹰技能Lv8",
@@ -40623,7 +38604,6 @@ _G.pg.base.aircraft_template[66828] = {
 		66848
 	}
 }
-
 _G.pg.base.aircraft_template[66829] = {
 	id = 66829,
 	name = "飞鹰隼鹰技能Lv9",
@@ -40635,7 +38615,6 @@ _G.pg.base.aircraft_template[66829] = {
 		66849
 	}
 }
-
 _G.pg.base.aircraft_template[66830] = {
 	id = 66830,
 	name = "飞鹰隼鹰技能Lv10",
@@ -40647,7 +38626,6 @@ _G.pg.base.aircraft_template[66830] = {
 		66850
 	}
 }
-
 _G.pg.base.aircraft_template[66940] = {
 	attack_power = 2,
 	name = "萨拉托加技能鱼雷机Lv0",
@@ -40723,7 +38701,6 @@ _G.pg.base.aircraft_template[66940] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66941] = {
 	id = 66941,
 	name = "萨拉托加技能鱼雷机Lv1",
@@ -40735,7 +38712,6 @@ _G.pg.base.aircraft_template[66941] = {
 		66981
 	}
 }
-
 _G.pg.base.aircraft_template[66942] = {
 	id = 66942,
 	name = "萨拉托加技能鱼雷机Lv2",
@@ -40747,7 +38723,6 @@ _G.pg.base.aircraft_template[66942] = {
 		66982
 	}
 }
-
 _G.pg.base.aircraft_template[66943] = {
 	id = 66943,
 	name = "萨拉托加技能鱼雷机Lv3",
@@ -40759,7 +38734,6 @@ _G.pg.base.aircraft_template[66943] = {
 		66983
 	}
 }
-
 _G.pg.base.aircraft_template[66944] = {
 	id = 66944,
 	name = "萨拉托加技能鱼雷机Lv4",
@@ -40771,7 +38745,6 @@ _G.pg.base.aircraft_template[66944] = {
 		66984
 	}
 }
-
 _G.pg.base.aircraft_template[66945] = {
 	id = 66945,
 	name = "萨拉托加技能鱼雷机Lv5",
@@ -40783,7 +38756,6 @@ _G.pg.base.aircraft_template[66945] = {
 		66985
 	}
 }
-
 _G.pg.base.aircraft_template[66946] = {
 	id = 66946,
 	name = "萨拉托加技能鱼雷机Lv6",
@@ -40795,7 +38767,6 @@ _G.pg.base.aircraft_template[66946] = {
 		66986
 	}
 }
-
 _G.pg.base.aircraft_template[66947] = {
 	id = 66947,
 	name = "萨拉托加技能鱼雷机Lv7",
@@ -40807,7 +38778,6 @@ _G.pg.base.aircraft_template[66947] = {
 		66987
 	}
 }
-
 _G.pg.base.aircraft_template[66948] = {
 	id = 66948,
 	name = "萨拉托加技能鱼雷机Lv8",
@@ -40819,7 +38789,6 @@ _G.pg.base.aircraft_template[66948] = {
 		66988
 	}
 }
-
 _G.pg.base.aircraft_template[66949] = {
 	id = 66949,
 	name = "萨拉托加技能鱼雷机Lv9",
@@ -40831,7 +38800,6 @@ _G.pg.base.aircraft_template[66949] = {
 		66989
 	}
 }
-
 _G.pg.base.aircraft_template[66950] = {
 	id = 66950,
 	name = "萨拉托加技能鱼雷机Lv10",
@@ -40843,7 +38811,6 @@ _G.pg.base.aircraft_template[66950] = {
 		66990
 	}
 }
-
 _G.pg.base.aircraft_template[66960] = {
 	attack_power = 2,
 	name = "萨拉托加技能轰炸机Lv0",
@@ -40920,7 +38887,6 @@ _G.pg.base.aircraft_template[66960] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[66961] = {
 	id = 66961,
 	name = "萨拉托加技能轰炸机Lv1",
@@ -40933,7 +38899,6 @@ _G.pg.base.aircraft_template[66961] = {
 		67021
 	}
 }
-
 _G.pg.base.aircraft_template[66962] = {
 	id = 66962,
 	name = "萨拉托加技能轰炸机Lv2",
@@ -40946,7 +38911,6 @@ _G.pg.base.aircraft_template[66962] = {
 		67022
 	}
 }
-
 _G.pg.base.aircraft_template[66963] = {
 	id = 66963,
 	name = "萨拉托加技能轰炸机Lv3",
@@ -40959,7 +38923,6 @@ _G.pg.base.aircraft_template[66963] = {
 		67023
 	}
 }
-
 _G.pg.base.aircraft_template[66964] = {
 	id = 66964,
 	name = "萨拉托加技能轰炸机Lv4",
@@ -40972,7 +38935,6 @@ _G.pg.base.aircraft_template[66964] = {
 		67024
 	}
 }
-
 _G.pg.base.aircraft_template[66965] = {
 	id = 66965,
 	name = "萨拉托加技能轰炸机Lv5",
@@ -40985,7 +38947,6 @@ _G.pg.base.aircraft_template[66965] = {
 		67025
 	}
 }
-
 _G.pg.base.aircraft_template[66966] = {
 	id = 66966,
 	name = "萨拉托加技能轰炸机Lv6",
@@ -40998,7 +38959,6 @@ _G.pg.base.aircraft_template[66966] = {
 		67026
 	}
 }
-
 _G.pg.base.aircraft_template[66967] = {
 	id = 66967,
 	name = "萨拉托加技能轰炸机Lv7",
@@ -41011,7 +38971,6 @@ _G.pg.base.aircraft_template[66967] = {
 		67027
 	}
 }
-
 _G.pg.base.aircraft_template[66968] = {
 	id = 66968,
 	name = "萨拉托加技能轰炸机Lv8",
@@ -41024,7 +38983,6 @@ _G.pg.base.aircraft_template[66968] = {
 		67028
 	}
 }
-
 _G.pg.base.aircraft_template[66969] = {
 	id = 66969,
 	name = "萨拉托加技能轰炸机Lv9",
@@ -41037,7 +38995,6 @@ _G.pg.base.aircraft_template[66969] = {
 		67029
 	}
 }
-
 _G.pg.base.aircraft_template[66970] = {
 	id = 66970,
 	name = "萨拉托加技能轰炸机Lv10",
@@ -41050,7 +39007,6 @@ _G.pg.base.aircraft_template[66970] = {
 		67030
 	}
 }
-
 _G.pg.base.aircraft_template[67140] = {
 	attack_power = 2,
 	name = "半人马技能鱼雷机Lv0",
@@ -41126,7 +39082,6 @@ _G.pg.base.aircraft_template[67140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67141] = {
 	id = 67141,
 	name = "半人马技能鱼雷机Lv1",
@@ -41138,7 +39093,6 @@ _G.pg.base.aircraft_template[67141] = {
 		67181
 	}
 }
-
 _G.pg.base.aircraft_template[67142] = {
 	id = 67142,
 	name = "半人马技能鱼雷机Lv2",
@@ -41150,7 +39104,6 @@ _G.pg.base.aircraft_template[67142] = {
 		67182
 	}
 }
-
 _G.pg.base.aircraft_template[67143] = {
 	id = 67143,
 	name = "半人马技能鱼雷机Lv3",
@@ -41162,7 +39115,6 @@ _G.pg.base.aircraft_template[67143] = {
 		67183
 	}
 }
-
 _G.pg.base.aircraft_template[67144] = {
 	id = 67144,
 	name = "半人马技能鱼雷机Lv4",
@@ -41174,7 +39126,6 @@ _G.pg.base.aircraft_template[67144] = {
 		67184
 	}
 }
-
 _G.pg.base.aircraft_template[67145] = {
 	id = 67145,
 	name = "半人马技能鱼雷机Lv5",
@@ -41186,7 +39137,6 @@ _G.pg.base.aircraft_template[67145] = {
 		67185
 	}
 }
-
 _G.pg.base.aircraft_template[67146] = {
 	id = 67146,
 	name = "半人马技能鱼雷机Lv6",
@@ -41198,7 +39148,6 @@ _G.pg.base.aircraft_template[67146] = {
 		67186
 	}
 }
-
 _G.pg.base.aircraft_template[67147] = {
 	id = 67147,
 	name = "半人马技能鱼雷机Lv7",
@@ -41210,7 +39159,6 @@ _G.pg.base.aircraft_template[67147] = {
 		67187
 	}
 }
-
 _G.pg.base.aircraft_template[67148] = {
 	id = 67148,
 	name = "半人马技能鱼雷机Lv8",
@@ -41222,7 +39170,6 @@ _G.pg.base.aircraft_template[67148] = {
 		67188
 	}
 }
-
 _G.pg.base.aircraft_template[67149] = {
 	id = 67149,
 	name = "半人马技能鱼雷机Lv9",
@@ -41234,7 +39181,6 @@ _G.pg.base.aircraft_template[67149] = {
 		67189
 	}
 }
-
 _G.pg.base.aircraft_template[67150] = {
 	id = 67150,
 	name = "半人马技能鱼雷机Lv10",
@@ -41246,7 +39192,6 @@ _G.pg.base.aircraft_template[67150] = {
 		67190
 	}
 }
-
 _G.pg.base.aircraft_template[67160] = {
 	attack_power = 2,
 	name = "半人马技能鱼雷机Lv0",
@@ -41322,7 +39267,6 @@ _G.pg.base.aircraft_template[67160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67161] = {
 	id = 67161,
 	name = "半人马技能鱼雷机Lv1",
@@ -41334,7 +39278,6 @@ _G.pg.base.aircraft_template[67161] = {
 		67201
 	}
 }
-
 _G.pg.base.aircraft_template[67162] = {
 	id = 67162,
 	name = "半人马技能鱼雷机Lv2",
@@ -41346,7 +39289,6 @@ _G.pg.base.aircraft_template[67162] = {
 		67202
 	}
 }
-
 _G.pg.base.aircraft_template[67163] = {
 	id = 67163,
 	name = "半人马技能鱼雷机Lv3",
@@ -41358,7 +39300,6 @@ _G.pg.base.aircraft_template[67163] = {
 		67203
 	}
 }
-
 _G.pg.base.aircraft_template[67164] = {
 	id = 67164,
 	name = "半人马技能鱼雷机Lv4",
@@ -41370,7 +39311,6 @@ _G.pg.base.aircraft_template[67164] = {
 		67204
 	}
 }
-
 _G.pg.base.aircraft_template[67165] = {
 	id = 67165,
 	name = "半人马技能鱼雷机Lv5",
@@ -41382,7 +39322,6 @@ _G.pg.base.aircraft_template[67165] = {
 		67205
 	}
 }
-
 _G.pg.base.aircraft_template[67166] = {
 	id = 67166,
 	name = "半人马技能鱼雷机Lv6",
@@ -41394,7 +39333,6 @@ _G.pg.base.aircraft_template[67166] = {
 		67206
 	}
 }
-
 _G.pg.base.aircraft_template[67167] = {
 	id = 67167,
 	name = "半人马技能鱼雷机Lv7",
@@ -41406,7 +39344,6 @@ _G.pg.base.aircraft_template[67167] = {
 		67207
 	}
 }
-
 _G.pg.base.aircraft_template[67168] = {
 	id = 67168,
 	name = "半人马技能鱼雷机Lv8",
@@ -41418,7 +39355,6 @@ _G.pg.base.aircraft_template[67168] = {
 		67208
 	}
 }
-
 _G.pg.base.aircraft_template[67169] = {
 	id = 67169,
 	name = "半人马技能鱼雷机Lv9",
@@ -41430,7 +39366,6 @@ _G.pg.base.aircraft_template[67169] = {
 		67209
 	}
 }
-
 _G.pg.base.aircraft_template[67170] = {
 	id = 67170,
 	name = "半人马技能鱼雷机Lv10",
@@ -41442,7 +39377,6 @@ _G.pg.base.aircraft_template[67170] = {
 		67210
 	}
 }
-
 _G.pg.base.aircraft_template[67240] = {
 	attack_power = 2,
 	name = "伊势技能轰炸机Lv0",
@@ -41519,7 +39453,6 @@ _G.pg.base.aircraft_template[67240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67241] = {
 	id = 67241,
 	name = "伊势技能轰炸机Lv1",
@@ -41532,7 +39465,6 @@ _G.pg.base.aircraft_template[67241] = {
 		67281
 	}
 }
-
 _G.pg.base.aircraft_template[67242] = {
 	id = 67242,
 	name = "伊势技能轰炸机Lv2",
@@ -41545,7 +39477,6 @@ _G.pg.base.aircraft_template[67242] = {
 		67282
 	}
 }
-
 _G.pg.base.aircraft_template[67243] = {
 	id = 67243,
 	name = "伊势技能轰炸机Lv3",
@@ -41558,7 +39489,6 @@ _G.pg.base.aircraft_template[67243] = {
 		67283
 	}
 }
-
 _G.pg.base.aircraft_template[67244] = {
 	id = 67244,
 	name = "伊势技能轰炸机Lv4",
@@ -41571,7 +39501,6 @@ _G.pg.base.aircraft_template[67244] = {
 		67284
 	}
 }
-
 _G.pg.base.aircraft_template[67245] = {
 	id = 67245,
 	name = "伊势技能轰炸机Lv5",
@@ -41584,7 +39513,6 @@ _G.pg.base.aircraft_template[67245] = {
 		67285
 	}
 }
-
 _G.pg.base.aircraft_template[67246] = {
 	id = 67246,
 	name = "伊势技能轰炸机Lv6",
@@ -41597,7 +39525,6 @@ _G.pg.base.aircraft_template[67246] = {
 		67286
 	}
 }
-
 _G.pg.base.aircraft_template[67247] = {
 	id = 67247,
 	name = "伊势技能轰炸机Lv7",
@@ -41610,7 +39537,6 @@ _G.pg.base.aircraft_template[67247] = {
 		67287
 	}
 }
-
 _G.pg.base.aircraft_template[67248] = {
 	id = 67248,
 	name = "伊势技能轰炸机Lv8",
@@ -41623,7 +39549,6 @@ _G.pg.base.aircraft_template[67248] = {
 		67288
 	}
 }
-
 _G.pg.base.aircraft_template[67249] = {
 	id = 67249,
 	name = "伊势技能轰炸机Lv9",
@@ -41636,7 +39561,6 @@ _G.pg.base.aircraft_template[67249] = {
 		67289
 	}
 }
-
 _G.pg.base.aircraft_template[67250] = {
 	id = 67250,
 	name = "伊势技能轰炸机Lv10",
@@ -41649,7 +39573,6 @@ _G.pg.base.aircraft_template[67250] = {
 		67290
 	}
 }
-
 _G.pg.base.aircraft_template[67300] = {
 	attack_power = 2,
 	name = "大凤技能轰炸机Lv0",
@@ -41725,7 +39648,6 @@ _G.pg.base.aircraft_template[67300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67301] = {
 	id = 67301,
 	name = "大凤技能轰炸机Lv1",
@@ -41737,7 +39659,6 @@ _G.pg.base.aircraft_template[67301] = {
 		67381
 	}
 }
-
 _G.pg.base.aircraft_template[67302] = {
 	id = 67302,
 	name = "大凤技能轰炸机Lv2",
@@ -41749,7 +39670,6 @@ _G.pg.base.aircraft_template[67302] = {
 		67382
 	}
 }
-
 _G.pg.base.aircraft_template[67303] = {
 	id = 67303,
 	name = "大凤技能轰炸机Lv3",
@@ -41761,7 +39681,6 @@ _G.pg.base.aircraft_template[67303] = {
 		67383
 	}
 }
-
 _G.pg.base.aircraft_template[67304] = {
 	id = 67304,
 	name = "大凤技能轰炸机Lv4",
@@ -41773,7 +39692,6 @@ _G.pg.base.aircraft_template[67304] = {
 		67384
 	}
 }
-
 _G.pg.base.aircraft_template[67305] = {
 	id = 67305,
 	name = "大凤技能轰炸机Lv5",
@@ -41785,7 +39703,6 @@ _G.pg.base.aircraft_template[67305] = {
 		67385
 	}
 }
-
 _G.pg.base.aircraft_template[67306] = {
 	id = 67306,
 	name = "大凤技能轰炸机Lv6",
@@ -41797,7 +39714,6 @@ _G.pg.base.aircraft_template[67306] = {
 		67386
 	}
 }
-
 _G.pg.base.aircraft_template[67307] = {
 	id = 67307,
 	name = "大凤技能轰炸机Lv7",
@@ -41809,7 +39725,6 @@ _G.pg.base.aircraft_template[67307] = {
 		67387
 	}
 }
-
 _G.pg.base.aircraft_template[67308] = {
 	id = 67308,
 	name = "大凤技能轰炸机Lv8",
@@ -41821,7 +39736,6 @@ _G.pg.base.aircraft_template[67308] = {
 		67388
 	}
 }
-
 _G.pg.base.aircraft_template[67309] = {
 	id = 67309,
 	name = "大凤技能轰炸机Lv9",
@@ -41833,7 +39747,6 @@ _G.pg.base.aircraft_template[67309] = {
 		67389
 	}
 }
-
 _G.pg.base.aircraft_template[67310] = {
 	id = 67310,
 	name = "大凤技能轰炸机Lv10",
@@ -41845,7 +39758,6 @@ _G.pg.base.aircraft_template[67310] = {
 		67390
 	}
 }
-
 _G.pg.base.aircraft_template[67320] = {
 	attack_power = 2,
 	name = "大凤技能鱼雷机Lv0",
@@ -41921,7 +39833,6 @@ _G.pg.base.aircraft_template[67320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67321] = {
 	id = 67321,
 	name = "大凤技能鱼雷机Lv1",
@@ -41933,7 +39844,6 @@ _G.pg.base.aircraft_template[67321] = {
 		67401
 	}
 }
-
 _G.pg.base.aircraft_template[67322] = {
 	id = 67322,
 	name = "大凤技能鱼雷机Lv2",
@@ -41945,7 +39855,6 @@ _G.pg.base.aircraft_template[67322] = {
 		67402
 	}
 }
-
 _G.pg.base.aircraft_template[67323] = {
 	id = 67323,
 	name = "大凤技能鱼雷机Lv3",
@@ -41957,7 +39866,6 @@ _G.pg.base.aircraft_template[67323] = {
 		67403
 	}
 }
-
 _G.pg.base.aircraft_template[67324] = {
 	id = 67324,
 	name = "大凤技能鱼雷机Lv4",
@@ -41969,7 +39877,6 @@ _G.pg.base.aircraft_template[67324] = {
 		67404
 	}
 }
-
 _G.pg.base.aircraft_template[67325] = {
 	id = 67325,
 	name = "大凤技能鱼雷机Lv5",
@@ -41981,7 +39888,6 @@ _G.pg.base.aircraft_template[67325] = {
 		67405
 	}
 }
-
 _G.pg.base.aircraft_template[67326] = {
 	id = 67326,
 	name = "大凤技能鱼雷机Lv6",
@@ -41993,7 +39899,6 @@ _G.pg.base.aircraft_template[67326] = {
 		67406
 	}
 }
-
 _G.pg.base.aircraft_template[67327] = {
 	id = 67327,
 	name = "大凤技能鱼雷机Lv7",
@@ -42005,7 +39910,6 @@ _G.pg.base.aircraft_template[67327] = {
 		67407
 	}
 }
-
 _G.pg.base.aircraft_template[67328] = {
 	id = 67328,
 	name = "大凤技能鱼雷机Lv8",
@@ -42017,7 +39921,6 @@ _G.pg.base.aircraft_template[67328] = {
 		67408
 	}
 }
-
 _G.pg.base.aircraft_template[67329] = {
 	id = 67329,
 	name = "大凤技能鱼雷机Lv9",
@@ -42029,7 +39932,6 @@ _G.pg.base.aircraft_template[67329] = {
 		67409
 	}
 }
-
 _G.pg.base.aircraft_template[67330] = {
 	id = 67330,
 	name = "大凤技能鱼雷机Lv10",
@@ -42041,7 +39943,6 @@ _G.pg.base.aircraft_template[67330] = {
 		67410
 	}
 }
-
 _G.pg.base.aircraft_template[67340] = {
 	attack_power = 2,
 	name = "埃塞克斯技能鱼雷机Lv0",
@@ -42117,7 +40018,6 @@ _G.pg.base.aircraft_template[67340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67341] = {
 	id = 67341,
 	name = "埃塞克斯技能鱼雷机Lv1",
@@ -42129,7 +40029,6 @@ _G.pg.base.aircraft_template[67341] = {
 		67441
 	}
 }
-
 _G.pg.base.aircraft_template[67342] = {
 	id = 67342,
 	name = "埃塞克斯技能鱼雷机Lv2",
@@ -42141,7 +40040,6 @@ _G.pg.base.aircraft_template[67342] = {
 		67442
 	}
 }
-
 _G.pg.base.aircraft_template[67343] = {
 	id = 67343,
 	name = "埃塞克斯技能鱼雷机Lv3",
@@ -42153,7 +40051,6 @@ _G.pg.base.aircraft_template[67343] = {
 		67443
 	}
 }
-
 _G.pg.base.aircraft_template[67344] = {
 	id = 67344,
 	name = "埃塞克斯技能鱼雷机Lv4",
@@ -42165,7 +40062,6 @@ _G.pg.base.aircraft_template[67344] = {
 		67444
 	}
 }
-
 _G.pg.base.aircraft_template[67345] = {
 	id = 67345,
 	name = "埃塞克斯技能鱼雷机Lv5",
@@ -42177,7 +40073,6 @@ _G.pg.base.aircraft_template[67345] = {
 		67445
 	}
 }
-
 _G.pg.base.aircraft_template[67346] = {
 	id = 67346,
 	name = "埃塞克斯技能鱼雷机Lv6",
@@ -42189,7 +40084,6 @@ _G.pg.base.aircraft_template[67346] = {
 		67446
 	}
 }
-
 _G.pg.base.aircraft_template[67347] = {
 	id = 67347,
 	name = "埃塞克斯技能鱼雷机Lv7",
@@ -42201,7 +40095,6 @@ _G.pg.base.aircraft_template[67347] = {
 		67447
 	}
 }
-
 _G.pg.base.aircraft_template[67348] = {
 	id = 67348,
 	name = "埃塞克斯技能鱼雷机Lv8",
@@ -42213,7 +40106,6 @@ _G.pg.base.aircraft_template[67348] = {
 		67448
 	}
 }
-
 _G.pg.base.aircraft_template[67349] = {
 	id = 67349,
 	name = "埃塞克斯技能鱼雷机Lv9",
@@ -42225,7 +40117,6 @@ _G.pg.base.aircraft_template[67349] = {
 		67449
 	}
 }
-
 _G.pg.base.aircraft_template[67350] = {
 	id = 67350,
 	name = "埃塞克斯技能鱼雷机Lv10",
@@ -42237,7 +40128,6 @@ _G.pg.base.aircraft_template[67350] = {
 		67450
 	}
 }
-
 _G.pg.base.aircraft_template[67360] = {
 	attack_power = 2,
 	name = "大凤技能轰炸机Lv0",
@@ -42311,7 +40201,6 @@ _G.pg.base.aircraft_template[67360] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67361] = {
 	max_hp = 48,
 	name = "大凤技能轰炸机Lv1",
@@ -42320,7 +40209,6 @@ _G.pg.base.aircraft_template[67361] = {
 	id = 67361,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67362] = {
 	max_hp = 54,
 	name = "大凤技能轰炸机Lv2",
@@ -42329,7 +40217,6 @@ _G.pg.base.aircraft_template[67362] = {
 	id = 67362,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67363] = {
 	max_hp = 61,
 	name = "大凤技能轰炸机Lv3",
@@ -42338,7 +40225,6 @@ _G.pg.base.aircraft_template[67363] = {
 	id = 67363,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67364] = {
 	max_hp = 67,
 	name = "大凤技能轰炸机Lv4",
@@ -42347,7 +40233,6 @@ _G.pg.base.aircraft_template[67364] = {
 	id = 67364,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67365] = {
 	max_hp = 73,
 	name = "大凤技能轰炸机Lv5",
@@ -42356,7 +40241,6 @@ _G.pg.base.aircraft_template[67365] = {
 	id = 67365,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67366] = {
 	max_hp = 79,
 	name = "大凤技能轰炸机Lv6",
@@ -42365,7 +40249,6 @@ _G.pg.base.aircraft_template[67366] = {
 	id = 67366,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67367] = {
 	max_hp = 86,
 	name = "大凤技能轰炸机Lv7",
@@ -42374,7 +40257,6 @@ _G.pg.base.aircraft_template[67367] = {
 	id = 67367,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67368] = {
 	max_hp = 92,
 	name = "大凤技能轰炸机Lv8",
@@ -42383,7 +40265,6 @@ _G.pg.base.aircraft_template[67368] = {
 	id = 67368,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67369] = {
 	max_hp = 98,
 	name = "大凤技能轰炸机Lv9",
@@ -42392,7 +40273,6 @@ _G.pg.base.aircraft_template[67369] = {
 	id = 67369,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67370] = {
 	max_hp = 104,
 	name = "大凤技能轰炸机Lv10",
@@ -42401,7 +40281,6 @@ _G.pg.base.aircraft_template[67370] = {
 	id = 67370,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[67500] = {
 	attack_power = 2,
 	name = "约克城SBD",
@@ -42478,7 +40357,6 @@ _G.pg.base.aircraft_template[67500] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67501] = {
 	max_hp = 35,
 	hp_growth = 1345,
@@ -42490,7 +40368,6 @@ _G.pg.base.aircraft_template[67501] = {
 		67541
 	}
 }
-
 _G.pg.base.aircraft_template[67502] = {
 	max_hp = 39,
 	hp_growth = 1507,
@@ -42502,7 +40379,6 @@ _G.pg.base.aircraft_template[67502] = {
 		67542
 	}
 }
-
 _G.pg.base.aircraft_template[67503] = {
 	max_hp = 43,
 	hp_growth = 1669,
@@ -42514,7 +40390,6 @@ _G.pg.base.aircraft_template[67503] = {
 		67543
 	}
 }
-
 _G.pg.base.aircraft_template[67504] = {
 	max_hp = 47,
 	hp_growth = 1831,
@@ -42526,7 +40401,6 @@ _G.pg.base.aircraft_template[67504] = {
 		67544
 	}
 }
-
 _G.pg.base.aircraft_template[67505] = {
 	max_hp = 51,
 	hp_growth = 1994,
@@ -42538,7 +40412,6 @@ _G.pg.base.aircraft_template[67505] = {
 		67545
 	}
 }
-
 _G.pg.base.aircraft_template[67506] = {
 	max_hp = 55,
 	hp_growth = 2157,
@@ -42550,7 +40423,6 @@ _G.pg.base.aircraft_template[67506] = {
 		67546
 	}
 }
-
 _G.pg.base.aircraft_template[67507] = {
 	max_hp = 59,
 	hp_growth = 2320,
@@ -42562,7 +40434,6 @@ _G.pg.base.aircraft_template[67507] = {
 		67547
 	}
 }
-
 _G.pg.base.aircraft_template[67508] = {
 	max_hp = 63,
 	hp_growth = 2483,
@@ -42574,7 +40445,6 @@ _G.pg.base.aircraft_template[67508] = {
 		67548
 	}
 }
-
 _G.pg.base.aircraft_template[67509] = {
 	max_hp = 68,
 	hp_growth = 2646,
@@ -42586,7 +40456,6 @@ _G.pg.base.aircraft_template[67509] = {
 		67549
 	}
 }
-
 _G.pg.base.aircraft_template[67510] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -42598,7 +40467,6 @@ _G.pg.base.aircraft_template[67510] = {
 		67550
 	}
 }
-
 _G.pg.base.aircraft_template[67681] = {
 	attack_power = 2,
 	name = "龙骧技能轰炸机Lv1",
@@ -42675,7 +40543,6 @@ _G.pg.base.aircraft_template[67681] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67682] = {
 	id = 67682,
 	name = "龙骧技能轰炸机Lv2",
@@ -42688,7 +40555,6 @@ _G.pg.base.aircraft_template[67682] = {
 		67702
 	}
 }
-
 _G.pg.base.aircraft_template[67683] = {
 	id = 67683,
 	name = "龙骧技能轰炸机Lv3",
@@ -42701,7 +40567,6 @@ _G.pg.base.aircraft_template[67683] = {
 		67703
 	}
 }
-
 _G.pg.base.aircraft_template[67684] = {
 	id = 67684,
 	name = "龙骧技能轰炸机Lv4",
@@ -42714,7 +40579,6 @@ _G.pg.base.aircraft_template[67684] = {
 		67704
 	}
 }
-
 _G.pg.base.aircraft_template[67685] = {
 	id = 67685,
 	name = "龙骧技能轰炸机Lv5",
@@ -42727,7 +40591,6 @@ _G.pg.base.aircraft_template[67685] = {
 		67705
 	}
 }
-
 _G.pg.base.aircraft_template[67686] = {
 	id = 67686,
 	name = "龙骧技能轰炸机Lv6",
@@ -42740,7 +40603,6 @@ _G.pg.base.aircraft_template[67686] = {
 		67706
 	}
 }
-
 _G.pg.base.aircraft_template[67687] = {
 	id = 67687,
 	name = "龙骧技能轰炸机Lv7",
@@ -42753,7 +40615,6 @@ _G.pg.base.aircraft_template[67687] = {
 		67707
 	}
 }
-
 _G.pg.base.aircraft_template[67688] = {
 	id = 67688,
 	name = "龙骧技能轰炸机Lv8",
@@ -42766,7 +40627,6 @@ _G.pg.base.aircraft_template[67688] = {
 		67708
 	}
 }
-
 _G.pg.base.aircraft_template[67689] = {
 	id = 67689,
 	name = "龙骧技能轰炸机Lv9",
@@ -42779,7 +40639,6 @@ _G.pg.base.aircraft_template[67689] = {
 		67709
 	}
 }
-
 _G.pg.base.aircraft_template[67690] = {
 	id = 67690,
 	name = "龙骧技能轰炸机Lv10",
@@ -42792,7 +40651,6 @@ _G.pg.base.aircraft_template[67690] = {
 		67710
 	}
 }
-
 _G.pg.base.aircraft_template[67781] = {
 	attack_power = 2,
 	name = "双龙改轰炸5 Lv1",
@@ -42869,7 +40727,6 @@ _G.pg.base.aircraft_template[67781] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67782] = {
 	id = 67782,
 	name = "双龙改轰炸5 Lv2",
@@ -42882,7 +40739,6 @@ _G.pg.base.aircraft_template[67782] = {
 		67812
 	}
 }
-
 _G.pg.base.aircraft_template[67783] = {
 	id = 67783,
 	name = "双龙改轰炸5 Lv3",
@@ -42895,7 +40751,6 @@ _G.pg.base.aircraft_template[67783] = {
 		67813
 	}
 }
-
 _G.pg.base.aircraft_template[67784] = {
 	id = 67784,
 	name = "双龙改轰炸5 Lv4",
@@ -42908,7 +40763,6 @@ _G.pg.base.aircraft_template[67784] = {
 		67814
 	}
 }
-
 _G.pg.base.aircraft_template[67785] = {
 	id = 67785,
 	name = "双龙改轰炸5 Lv5",
@@ -42921,7 +40775,6 @@ _G.pg.base.aircraft_template[67785] = {
 		67815
 	}
 }
-
 _G.pg.base.aircraft_template[67786] = {
 	id = 67786,
 	name = "双龙改轰炸5 Lv6",
@@ -42934,7 +40787,6 @@ _G.pg.base.aircraft_template[67786] = {
 		67816
 	}
 }
-
 _G.pg.base.aircraft_template[67787] = {
 	id = 67787,
 	name = "双龙改轰炸5 Lv7",
@@ -42947,7 +40799,6 @@ _G.pg.base.aircraft_template[67787] = {
 		67817
 	}
 }
-
 _G.pg.base.aircraft_template[67788] = {
 	id = 67788,
 	name = "双龙改轰炸5 Lv8",
@@ -42960,7 +40811,6 @@ _G.pg.base.aircraft_template[67788] = {
 		67818
 	}
 }
-
 _G.pg.base.aircraft_template[67789] = {
 	id = 67789,
 	name = "双龙改轰炸5 Lv9",
@@ -42973,7 +40823,6 @@ _G.pg.base.aircraft_template[67789] = {
 		67819
 	}
 }
-
 _G.pg.base.aircraft_template[67790] = {
 	id = 67790,
 	name = "双龙改轰炸5 Lv10",
@@ -42986,7 +40835,6 @@ _G.pg.base.aircraft_template[67790] = {
 		67820
 	}
 }
-
 _G.pg.base.aircraft_template[67791] = {
 	attack_power = 2,
 	name = "双龙改雷1 Lv1",
@@ -43062,7 +40910,6 @@ _G.pg.base.aircraft_template[67791] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67792] = {
 	id = 67792,
 	name = "双龙改雷1 Lv2",
@@ -43074,7 +40921,6 @@ _G.pg.base.aircraft_template[67792] = {
 		67822
 	}
 }
-
 _G.pg.base.aircraft_template[67793] = {
 	id = 67793,
 	name = "双龙改雷1 Lv3",
@@ -43086,7 +40932,6 @@ _G.pg.base.aircraft_template[67793] = {
 		67823
 	}
 }
-
 _G.pg.base.aircraft_template[67794] = {
 	id = 67794,
 	name = "双龙改雷1 Lv4",
@@ -43098,7 +40943,6 @@ _G.pg.base.aircraft_template[67794] = {
 		67824
 	}
 }
-
 _G.pg.base.aircraft_template[67795] = {
 	id = 67795,
 	name = "双龙改雷1 Lv5",
@@ -43110,7 +40954,6 @@ _G.pg.base.aircraft_template[67795] = {
 		67825
 	}
 }
-
 _G.pg.base.aircraft_template[67796] = {
 	id = 67796,
 	name = "双龙改雷1 Lv6",
@@ -43122,7 +40965,6 @@ _G.pg.base.aircraft_template[67796] = {
 		67826
 	}
 }
-
 _G.pg.base.aircraft_template[67797] = {
 	id = 67797,
 	name = "双龙改雷1 Lv7",
@@ -43134,7 +40976,6 @@ _G.pg.base.aircraft_template[67797] = {
 		67827
 	}
 }
-
 _G.pg.base.aircraft_template[67798] = {
 	id = 67798,
 	name = "双龙改雷1 Lv8",
@@ -43146,7 +40987,6 @@ _G.pg.base.aircraft_template[67798] = {
 		67828
 	}
 }
-
 _G.pg.base.aircraft_template[67799] = {
 	id = 67799,
 	name = "双龙改雷1 Lv9",
@@ -43158,7 +40998,6 @@ _G.pg.base.aircraft_template[67799] = {
 		67829
 	}
 }
-
 _G.pg.base.aircraft_template[67800] = {
 	id = 67800,
 	name = "双龙改雷1 Lv10",
@@ -43170,7 +41009,6 @@ _G.pg.base.aircraft_template[67800] = {
 		67830
 	}
 }
-
 _G.pg.base.aircraft_template[67891] = {
 	attack_power = 2,
 	name = "追赶者剑鱼 Lv1",
@@ -43247,7 +41085,6 @@ _G.pg.base.aircraft_template[67891] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67892] = {
 	id = 67892,
 	name = "追赶者剑鱼 Lv2",
@@ -43260,7 +41097,6 @@ _G.pg.base.aircraft_template[67892] = {
 		67912
 	}
 }
-
 _G.pg.base.aircraft_template[67893] = {
 	id = 67893,
 	name = "追赶者剑鱼 Lv3",
@@ -43273,7 +41109,6 @@ _G.pg.base.aircraft_template[67893] = {
 		67913
 	}
 }
-
 _G.pg.base.aircraft_template[67894] = {
 	id = 67894,
 	name = "追赶者剑鱼 Lv4",
@@ -43286,7 +41121,6 @@ _G.pg.base.aircraft_template[67894] = {
 		67914
 	}
 }
-
 _G.pg.base.aircraft_template[67895] = {
 	id = 67895,
 	name = "追赶者剑鱼 Lv5",
@@ -43299,7 +41133,6 @@ _G.pg.base.aircraft_template[67895] = {
 		67915
 	}
 }
-
 _G.pg.base.aircraft_template[67896] = {
 	id = 67896,
 	name = "追赶者剑鱼 Lv6",
@@ -43312,7 +41145,6 @@ _G.pg.base.aircraft_template[67896] = {
 		67916
 	}
 }
-
 _G.pg.base.aircraft_template[67897] = {
 	id = 67897,
 	name = "追赶者剑鱼 Lv7",
@@ -43325,7 +41157,6 @@ _G.pg.base.aircraft_template[67897] = {
 		67917
 	}
 }
-
 _G.pg.base.aircraft_template[67898] = {
 	id = 67898,
 	name = "追赶者剑鱼 Lv8",
@@ -43338,7 +41169,6 @@ _G.pg.base.aircraft_template[67898] = {
 		67918
 	}
 }
-
 _G.pg.base.aircraft_template[67899] = {
 	id = 67899,
 	name = "追赶者剑鱼 Lv9",
@@ -43351,7 +41181,6 @@ _G.pg.base.aircraft_template[67899] = {
 		67919
 	}
 }
-
 _G.pg.base.aircraft_template[67900] = {
 	id = 67900,
 	name = "追赶者剑鱼 Lv10",
@@ -43364,7 +41193,6 @@ _G.pg.base.aircraft_template[67900] = {
 		67920
 	}
 }
-
 _G.pg.base.aircraft_template[67921] = {
 	attack_power = 2,
 	name = "独立技能鱼雷机Lv1",
@@ -43440,7 +41268,6 @@ _G.pg.base.aircraft_template[67921] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67922] = {
 	id = 67922,
 	name = "独立技能鱼雷机Lv2",
@@ -43452,7 +41279,6 @@ _G.pg.base.aircraft_template[67922] = {
 		67942
 	}
 }
-
 _G.pg.base.aircraft_template[67923] = {
 	id = 67923,
 	name = "独立技能鱼雷机Lv3",
@@ -43464,7 +41290,6 @@ _G.pg.base.aircraft_template[67923] = {
 		67943
 	}
 }
-
 _G.pg.base.aircraft_template[67924] = {
 	id = 67924,
 	name = "独立技能鱼雷机Lv4",
@@ -43476,7 +41301,6 @@ _G.pg.base.aircraft_template[67924] = {
 		67944
 	}
 }
-
 _G.pg.base.aircraft_template[67925] = {
 	id = 67925,
 	name = "独立技能鱼雷机Lv5",
@@ -43488,7 +41312,6 @@ _G.pg.base.aircraft_template[67925] = {
 		67945
 	}
 }
-
 _G.pg.base.aircraft_template[67926] = {
 	id = 67926,
 	name = "独立技能鱼雷机Lv6",
@@ -43500,7 +41323,6 @@ _G.pg.base.aircraft_template[67926] = {
 		67946
 	}
 }
-
 _G.pg.base.aircraft_template[67927] = {
 	id = 67927,
 	name = "独立技能鱼雷机Lv7",
@@ -43512,7 +41334,6 @@ _G.pg.base.aircraft_template[67927] = {
 		67947
 	}
 }
-
 _G.pg.base.aircraft_template[67928] = {
 	id = 67928,
 	name = "独立技能鱼雷机Lv8",
@@ -43524,7 +41345,6 @@ _G.pg.base.aircraft_template[67928] = {
 		67948
 	}
 }
-
 _G.pg.base.aircraft_template[67929] = {
 	id = 67929,
 	name = "独立技能鱼雷机Lv9",
@@ -43536,7 +41356,6 @@ _G.pg.base.aircraft_template[67929] = {
 		67949
 	}
 }
-
 _G.pg.base.aircraft_template[67930] = {
 	id = 67930,
 	name = "独立技能鱼雷机Lv10",
@@ -43548,7 +41367,6 @@ _G.pg.base.aircraft_template[67930] = {
 		67950
 	}
 }
-
 _G.pg.base.aircraft_template[67931] = {
 	attack_power = 2,
 	name = "独立技能鱼雷机Lv1",
@@ -43624,7 +41442,6 @@ _G.pg.base.aircraft_template[67931] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67932] = {
 	id = 67932,
 	name = "独立技能鱼雷机Lv2",
@@ -43636,7 +41453,6 @@ _G.pg.base.aircraft_template[67932] = {
 		67952
 	}
 }
-
 _G.pg.base.aircraft_template[67933] = {
 	id = 67933,
 	name = "独立技能鱼雷机Lv3",
@@ -43648,7 +41464,6 @@ _G.pg.base.aircraft_template[67933] = {
 		67953
 	}
 }
-
 _G.pg.base.aircraft_template[67934] = {
 	id = 67934,
 	name = "独立技能鱼雷机Lv4",
@@ -43660,7 +41475,6 @@ _G.pg.base.aircraft_template[67934] = {
 		67954
 	}
 }
-
 _G.pg.base.aircraft_template[67935] = {
 	id = 67935,
 	name = "独立技能鱼雷机Lv5",
@@ -43672,7 +41486,6 @@ _G.pg.base.aircraft_template[67935] = {
 		67955
 	}
 }
-
 _G.pg.base.aircraft_template[67936] = {
 	id = 67936,
 	name = "独立技能鱼雷机Lv6",
@@ -43684,7 +41497,6 @@ _G.pg.base.aircraft_template[67936] = {
 		67956
 	}
 }
-
 _G.pg.base.aircraft_template[67937] = {
 	id = 67937,
 	name = "独立技能鱼雷机Lv7",
@@ -43696,7 +41508,6 @@ _G.pg.base.aircraft_template[67937] = {
 		67957
 	}
 }
-
 _G.pg.base.aircraft_template[67938] = {
 	id = 67938,
 	name = "独立技能鱼雷机Lv8",
@@ -43708,7 +41519,6 @@ _G.pg.base.aircraft_template[67938] = {
 		67958
 	}
 }
-
 _G.pg.base.aircraft_template[67939] = {
 	id = 67939,
 	name = "独立技能鱼雷机Lv9",
@@ -43720,7 +41530,6 @@ _G.pg.base.aircraft_template[67939] = {
 		67959
 	}
 }
-
 _G.pg.base.aircraft_template[67940] = {
 	id = 67940,
 	name = "独立技能鱼雷机Lv10",
@@ -43732,7 +41541,6 @@ _G.pg.base.aircraft_template[67940] = {
 		67960
 	}
 }
-
 _G.pg.base.aircraft_template[67981] = {
 	attack_power = 2,
 	name = "香格里拉技能飞机-PVE",
@@ -43810,7 +41618,6 @@ _G.pg.base.aircraft_template[67981] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[67982] = {
 	id = 67982,
 	name = "香格里拉技能飞机-PVP",
@@ -43822,7 +41629,6 @@ _G.pg.base.aircraft_template[67982] = {
 		offsetX = 4
 	}
 }
-
 _G.pg.base.aircraft_template[68001] = {
 	attack_power = 2,
 	name = "邦克山技能鱼雷机Lv1",
@@ -43898,7 +41704,6 @@ _G.pg.base.aircraft_template[68001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68002] = {
 	id = 68002,
 	name = "邦克山技能鱼雷机Lv2",
@@ -43910,7 +41715,6 @@ _G.pg.base.aircraft_template[68002] = {
 		68012
 	}
 }
-
 _G.pg.base.aircraft_template[68003] = {
 	id = 68003,
 	name = "邦克山技能鱼雷机Lv3",
@@ -43922,7 +41726,6 @@ _G.pg.base.aircraft_template[68003] = {
 		68013
 	}
 }
-
 _G.pg.base.aircraft_template[68004] = {
 	id = 68004,
 	name = "邦克山技能鱼雷机Lv4",
@@ -43934,7 +41737,6 @@ _G.pg.base.aircraft_template[68004] = {
 		68014
 	}
 }
-
 _G.pg.base.aircraft_template[68005] = {
 	id = 68005,
 	name = "邦克山技能鱼雷机Lv5",
@@ -43946,7 +41748,6 @@ _G.pg.base.aircraft_template[68005] = {
 		68015
 	}
 }
-
 _G.pg.base.aircraft_template[68006] = {
 	id = 68006,
 	name = "邦克山技能鱼雷机Lv6",
@@ -43958,7 +41759,6 @@ _G.pg.base.aircraft_template[68006] = {
 		68016
 	}
 }
-
 _G.pg.base.aircraft_template[68007] = {
 	id = 68007,
 	name = "邦克山技能鱼雷机Lv7",
@@ -43970,7 +41770,6 @@ _G.pg.base.aircraft_template[68007] = {
 		68017
 	}
 }
-
 _G.pg.base.aircraft_template[68008] = {
 	id = 68008,
 	name = "邦克山技能鱼雷机Lv8",
@@ -43982,7 +41781,6 @@ _G.pg.base.aircraft_template[68008] = {
 		68018
 	}
 }
-
 _G.pg.base.aircraft_template[68009] = {
 	id = 68009,
 	name = "邦克山技能鱼雷机Lv9",
@@ -43994,7 +41792,6 @@ _G.pg.base.aircraft_template[68009] = {
 		68019
 	}
 }
-
 _G.pg.base.aircraft_template[68010] = {
 	id = 68010,
 	name = "邦克山技能鱼雷机Lv10",
@@ -44006,7 +41803,6 @@ _G.pg.base.aircraft_template[68010] = {
 		68020
 	}
 }
-
 _G.pg.base.aircraft_template[68021] = {
 	attack_power = 2,
 	name = "邦克山技能战斗机Lv1",
@@ -44083,7 +41879,6 @@ _G.pg.base.aircraft_template[68021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68022] = {
 	id = 68022,
 	name = "邦克山技能战斗机Lv2",
@@ -44096,7 +41891,6 @@ _G.pg.base.aircraft_template[68022] = {
 		68052
 	}
 }
-
 _G.pg.base.aircraft_template[68023] = {
 	id = 68023,
 	name = "邦克山技能战斗机Lv3",
@@ -44109,7 +41903,6 @@ _G.pg.base.aircraft_template[68023] = {
 		68053
 	}
 }
-
 _G.pg.base.aircraft_template[68024] = {
 	id = 68024,
 	name = "邦克山技能战斗机Lv4",
@@ -44122,7 +41915,6 @@ _G.pg.base.aircraft_template[68024] = {
 		68054
 	}
 }
-
 _G.pg.base.aircraft_template[68025] = {
 	id = 68025,
 	name = "邦克山技能战斗机Lv5",
@@ -44135,7 +41927,6 @@ _G.pg.base.aircraft_template[68025] = {
 		68055
 	}
 }
-
 _G.pg.base.aircraft_template[68026] = {
 	id = 68026,
 	name = "邦克山技能战斗机Lv6",
@@ -44148,7 +41939,6 @@ _G.pg.base.aircraft_template[68026] = {
 		68056
 	}
 }
-
 _G.pg.base.aircraft_template[68027] = {
 	id = 68027,
 	name = "邦克山技能战斗机Lv7",
@@ -44161,7 +41951,6 @@ _G.pg.base.aircraft_template[68027] = {
 		68057
 	}
 }
-
 _G.pg.base.aircraft_template[68028] = {
 	id = 68028,
 	name = "邦克山技能战斗机Lv8",
@@ -44174,7 +41963,6 @@ _G.pg.base.aircraft_template[68028] = {
 		68058
 	}
 }
-
 _G.pg.base.aircraft_template[68029] = {
 	id = 68029,
 	name = "邦克山技能战斗机Lv9",
@@ -44187,7 +41975,6 @@ _G.pg.base.aircraft_template[68029] = {
 		68059
 	}
 }
-
 _G.pg.base.aircraft_template[68030] = {
 	id = 68030,
 	name = "邦克山技能战斗机Lv10",
@@ -44200,7 +41987,6 @@ _G.pg.base.aircraft_template[68030] = {
 		68060
 	}
 }
-
 _G.pg.base.aircraft_template[68031] = {
 	attack_power = 2,
 	name = "邦克山技能轰炸机Lv1",
@@ -44277,7 +42063,6 @@ _G.pg.base.aircraft_template[68031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68032] = {
 	id = 68032,
 	name = "邦克山技能轰炸机Lv2",
@@ -44290,7 +42075,6 @@ _G.pg.base.aircraft_template[68032] = {
 		68052
 	}
 }
-
 _G.pg.base.aircraft_template[68033] = {
 	id = 68033,
 	name = "邦克山技能轰炸机Lv3",
@@ -44303,7 +42087,6 @@ _G.pg.base.aircraft_template[68033] = {
 		68053
 	}
 }
-
 _G.pg.base.aircraft_template[68034] = {
 	id = 68034,
 	name = "邦克山技能轰炸机Lv4",
@@ -44316,7 +42099,6 @@ _G.pg.base.aircraft_template[68034] = {
 		68054
 	}
 }
-
 _G.pg.base.aircraft_template[68035] = {
 	id = 68035,
 	name = "邦克山技能轰炸机Lv5",
@@ -44329,7 +42111,6 @@ _G.pg.base.aircraft_template[68035] = {
 		68055
 	}
 }
-
 _G.pg.base.aircraft_template[68036] = {
 	id = 68036,
 	name = "邦克山技能轰炸机Lv6",
@@ -44342,7 +42123,6 @@ _G.pg.base.aircraft_template[68036] = {
 		68056
 	}
 }
-
 _G.pg.base.aircraft_template[68037] = {
 	id = 68037,
 	name = "邦克山技能轰炸机Lv7",
@@ -44355,7 +42135,6 @@ _G.pg.base.aircraft_template[68037] = {
 		68057
 	}
 }
-
 _G.pg.base.aircraft_template[68038] = {
 	id = 68038,
 	name = "邦克山技能轰炸机Lv8",
@@ -44368,7 +42147,6 @@ _G.pg.base.aircraft_template[68038] = {
 		68058
 	}
 }
-
 _G.pg.base.aircraft_template[68039] = {
 	id = 68039,
 	name = "邦克山技能轰炸机Lv9",
@@ -44381,7 +42159,6 @@ _G.pg.base.aircraft_template[68039] = {
 		68059
 	}
 }
-
 _G.pg.base.aircraft_template[68040] = {
 	id = 68040,
 	name = "邦克山技能轰炸机Lv10",
@@ -44394,7 +42171,6 @@ _G.pg.base.aircraft_template[68040] = {
 		68060
 	}
 }
-
 _G.pg.base.aircraft_template[68301] = {
 	attack_power = 2,
 	name = "绊爱技能轰炸机Lv1",
@@ -44471,7 +42247,6 @@ _G.pg.base.aircraft_template[68301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68302] = {
 	id = 68302,
 	name = "绊爱技能轰炸机Lv2",
@@ -44484,7 +42259,6 @@ _G.pg.base.aircraft_template[68302] = {
 		68322
 	}
 }
-
 _G.pg.base.aircraft_template[68303] = {
 	id = 68303,
 	name = "绊爱技能轰炸机Lv3",
@@ -44497,7 +42271,6 @@ _G.pg.base.aircraft_template[68303] = {
 		68323
 	}
 }
-
 _G.pg.base.aircraft_template[68304] = {
 	id = 68304,
 	name = "绊爱技能轰炸机Lv4",
@@ -44510,7 +42283,6 @@ _G.pg.base.aircraft_template[68304] = {
 		68324
 	}
 }
-
 _G.pg.base.aircraft_template[68305] = {
 	id = 68305,
 	name = "绊爱技能轰炸机Lv5",
@@ -44523,7 +42295,6 @@ _G.pg.base.aircraft_template[68305] = {
 		68325
 	}
 }
-
 _G.pg.base.aircraft_template[68306] = {
 	id = 68306,
 	name = "绊爱技能轰炸机Lv6",
@@ -44536,7 +42307,6 @@ _G.pg.base.aircraft_template[68306] = {
 		68326
 	}
 }
-
 _G.pg.base.aircraft_template[68307] = {
 	id = 68307,
 	name = "绊爱技能轰炸机Lv7",
@@ -44549,7 +42319,6 @@ _G.pg.base.aircraft_template[68307] = {
 		68327
 	}
 }
-
 _G.pg.base.aircraft_template[68308] = {
 	id = 68308,
 	name = "绊爱技能轰炸机Lv8",
@@ -44562,7 +42331,6 @@ _G.pg.base.aircraft_template[68308] = {
 		68328
 	}
 }
-
 _G.pg.base.aircraft_template[68309] = {
 	id = 68309,
 	name = "绊爱技能轰炸机Lv9",
@@ -44575,7 +42343,6 @@ _G.pg.base.aircraft_template[68309] = {
 		68329
 	}
 }
-
 _G.pg.base.aircraft_template[68310] = {
 	id = 68310,
 	name = "绊爱技能轰炸机Lv10",
@@ -44588,7 +42355,6 @@ _G.pg.base.aircraft_template[68310] = {
 		68330
 	}
 }
-
 _G.pg.base.aircraft_template[68331] = {
 	attack_power = 2,
 	name = "小赤城技能飞机Lv1",
@@ -44665,7 +42431,6 @@ _G.pg.base.aircraft_template[68331] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68332] = {
 	id = 68332,
 	name = "小赤城技能飞机Lv2",
@@ -44678,7 +42443,6 @@ _G.pg.base.aircraft_template[68332] = {
 		68352
 	}
 }
-
 _G.pg.base.aircraft_template[68333] = {
 	id = 68333,
 	name = "小赤城技能飞机Lv3",
@@ -44691,7 +42455,6 @@ _G.pg.base.aircraft_template[68333] = {
 		68353
 	}
 }
-
 _G.pg.base.aircraft_template[68334] = {
 	id = 68334,
 	name = "小赤城技能飞机Lv4",
@@ -44704,7 +42467,6 @@ _G.pg.base.aircraft_template[68334] = {
 		68354
 	}
 }
-
 _G.pg.base.aircraft_template[68335] = {
 	id = 68335,
 	name = "小赤城技能飞机Lv5",
@@ -44717,7 +42479,6 @@ _G.pg.base.aircraft_template[68335] = {
 		68355
 	}
 }
-
 _G.pg.base.aircraft_template[68336] = {
 	id = 68336,
 	name = "小赤城技能飞机Lv6",
@@ -44730,7 +42491,6 @@ _G.pg.base.aircraft_template[68336] = {
 		68356
 	}
 }
-
 _G.pg.base.aircraft_template[68337] = {
 	id = 68337,
 	name = "小赤城技能飞机Lv7",
@@ -44743,7 +42503,6 @@ _G.pg.base.aircraft_template[68337] = {
 		68357
 	}
 }
-
 _G.pg.base.aircraft_template[68338] = {
 	id = 68338,
 	name = "小赤城技能飞机Lv8",
@@ -44756,7 +42515,6 @@ _G.pg.base.aircraft_template[68338] = {
 		68358
 	}
 }
-
 _G.pg.base.aircraft_template[68339] = {
 	id = 68339,
 	name = "小赤城技能飞机Lv9",
@@ -44769,7 +42527,6 @@ _G.pg.base.aircraft_template[68339] = {
 		68359
 	}
 }
-
 _G.pg.base.aircraft_template[68340] = {
 	id = 68340,
 	name = "小赤城技能飞机Lv10",
@@ -44782,7 +42539,6 @@ _G.pg.base.aircraft_template[68340] = {
 		68360
 	}
 }
-
 _G.pg.base.aircraft_template[68391] = {
 	attack_power = 2,
 	name = "科隆改直升机Lv1",
@@ -44861,7 +42617,6 @@ _G.pg.base.aircraft_template[68391] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68392] = {
 	max_hp = 48,
 	name = "科隆改直升机Lv2",
@@ -44870,7 +42625,6 @@ _G.pg.base.aircraft_template[68392] = {
 	id = 68392,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68393] = {
 	max_hp = 54,
 	name = "科隆改直升机Lv3",
@@ -44879,7 +42633,6 @@ _G.pg.base.aircraft_template[68393] = {
 	id = 68393,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68394] = {
 	max_hp = 61,
 	name = "科隆改直升机Lv4",
@@ -44888,7 +42641,6 @@ _G.pg.base.aircraft_template[68394] = {
 	id = 68394,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68395] = {
 	max_hp = 67,
 	name = "科隆改直升机Lv5",
@@ -44897,7 +42649,6 @@ _G.pg.base.aircraft_template[68395] = {
 	id = 68395,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68396] = {
 	max_hp = 73,
 	name = "科隆改直升机Lv6",
@@ -44906,7 +42657,6 @@ _G.pg.base.aircraft_template[68396] = {
 	id = 68396,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68397] = {
 	max_hp = 79,
 	name = "科隆改直升机Lv7",
@@ -44915,7 +42665,6 @@ _G.pg.base.aircraft_template[68397] = {
 	id = 68397,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68398] = {
 	max_hp = 86,
 	name = "科隆改直升机Lv8",
@@ -44924,7 +42673,6 @@ _G.pg.base.aircraft_template[68398] = {
 	id = 68398,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68399] = {
 	max_hp = 92,
 	name = "科隆改直升机Lv9",
@@ -44933,7 +42681,6 @@ _G.pg.base.aircraft_template[68399] = {
 	id = 68399,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68400] = {
 	max_hp = 98,
 	name = "科隆改直升机Lv10",
@@ -44942,7 +42689,6 @@ _G.pg.base.aircraft_template[68400] = {
 	id = 68400,
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[68541] = {
 	attack_power = 2,
 	name = "伊25技能零侦LV1",
@@ -45016,7 +42762,6 @@ _G.pg.base.aircraft_template[68541] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68542] = {
 	id = 68542,
 	name = "伊25技能零侦LV2",
@@ -45026,7 +42771,6 @@ _G.pg.base.aircraft_template[68542] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68543] = {
 	id = 68543,
 	name = "伊25技能零侦LV3",
@@ -45036,7 +42780,6 @@ _G.pg.base.aircraft_template[68543] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68544] = {
 	id = 68544,
 	name = "伊25技能零侦LV4",
@@ -45046,7 +42789,6 @@ _G.pg.base.aircraft_template[68544] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68545] = {
 	id = 68545,
 	name = "伊25技能零侦LV5",
@@ -45056,7 +42798,6 @@ _G.pg.base.aircraft_template[68545] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68546] = {
 	id = 68546,
 	name = "伊25技能零侦LV6",
@@ -45066,7 +42807,6 @@ _G.pg.base.aircraft_template[68546] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68547] = {
 	id = 68547,
 	name = "伊25技能零侦LV7",
@@ -45076,7 +42816,6 @@ _G.pg.base.aircraft_template[68547] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68548] = {
 	id = 68548,
 	name = "伊25技能零侦LV8",
@@ -45086,7 +42825,6 @@ _G.pg.base.aircraft_template[68548] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68549] = {
 	id = 68549,
 	name = "伊25技能零侦LV9",
@@ -45096,7 +42834,6 @@ _G.pg.base.aircraft_template[68549] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68550] = {
 	id = 68550,
 	name = "伊25技能零侦LV10",
@@ -45106,7 +42843,6 @@ _G.pg.base.aircraft_template[68550] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[68621] = {
 	attack_power = 2,
 	name = "巴丹技能F6FLV1",
@@ -45184,7 +42920,6 @@ _G.pg.base.aircraft_template[68621] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68622] = {
 	id = 68622,
 	name = "巴丹技能F6FLV2",
@@ -45198,7 +42933,6 @@ _G.pg.base.aircraft_template[68622] = {
 		68632
 	}
 }
-
 _G.pg.base.aircraft_template[68623] = {
 	id = 68623,
 	name = "巴丹技能F6FLV3",
@@ -45212,7 +42946,6 @@ _G.pg.base.aircraft_template[68623] = {
 		68633
 	}
 }
-
 _G.pg.base.aircraft_template[68624] = {
 	id = 68624,
 	name = "巴丹技能F6FLV4",
@@ -45226,7 +42959,6 @@ _G.pg.base.aircraft_template[68624] = {
 		68634
 	}
 }
-
 _G.pg.base.aircraft_template[68625] = {
 	id = 68625,
 	name = "巴丹技能F6FLV5",
@@ -45240,7 +42972,6 @@ _G.pg.base.aircraft_template[68625] = {
 		68635
 	}
 }
-
 _G.pg.base.aircraft_template[68626] = {
 	id = 68626,
 	name = "巴丹技能F6FLV6",
@@ -45254,7 +42985,6 @@ _G.pg.base.aircraft_template[68626] = {
 		68636
 	}
 }
-
 _G.pg.base.aircraft_template[68627] = {
 	id = 68627,
 	name = "巴丹技能F6FLV7",
@@ -45268,7 +42998,6 @@ _G.pg.base.aircraft_template[68627] = {
 		68637
 	}
 }
-
 _G.pg.base.aircraft_template[68628] = {
 	id = 68628,
 	name = "巴丹技能F6FLV8",
@@ -45282,7 +43011,6 @@ _G.pg.base.aircraft_template[68628] = {
 		68638
 	}
 }
-
 _G.pg.base.aircraft_template[68629] = {
 	id = 68629,
 	name = "巴丹技能F6FLV9",
@@ -45296,7 +43024,6 @@ _G.pg.base.aircraft_template[68629] = {
 		68639
 	}
 }
-
 _G.pg.base.aircraft_template[68630] = {
 	id = 68630,
 	name = "巴丹技能F6FLV10",
@@ -45310,7 +43037,6 @@ _G.pg.base.aircraft_template[68630] = {
 		68640
 	}
 }
-
 _G.pg.base.aircraft_template[68651] = {
 	attack_power = 2,
 	name = "可畏技能鱼雷机Lv1",
@@ -45386,7 +43112,6 @@ _G.pg.base.aircraft_template[68651] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68652] = {
 	id = 68652,
 	name = "可畏技能鱼雷机Lv2",
@@ -45398,7 +43123,6 @@ _G.pg.base.aircraft_template[68652] = {
 		68662
 	}
 }
-
 _G.pg.base.aircraft_template[68653] = {
 	id = 68653,
 	name = "可畏技能鱼雷机Lv3",
@@ -45410,7 +43134,6 @@ _G.pg.base.aircraft_template[68653] = {
 		68663
 	}
 }
-
 _G.pg.base.aircraft_template[68654] = {
 	id = 68654,
 	name = "可畏技能鱼雷机Lv4",
@@ -45422,7 +43145,6 @@ _G.pg.base.aircraft_template[68654] = {
 		68664
 	}
 }
-
 _G.pg.base.aircraft_template[68655] = {
 	id = 68655,
 	name = "可畏技能鱼雷机Lv5",
@@ -45434,7 +43156,6 @@ _G.pg.base.aircraft_template[68655] = {
 		68665
 	}
 }
-
 _G.pg.base.aircraft_template[68656] = {
 	id = 68656,
 	name = "可畏技能鱼雷机Lv6",
@@ -45446,7 +43167,6 @@ _G.pg.base.aircraft_template[68656] = {
 		68666
 	}
 }
-
 _G.pg.base.aircraft_template[68657] = {
 	id = 68657,
 	name = "可畏技能鱼雷机Lv7",
@@ -45458,7 +43178,6 @@ _G.pg.base.aircraft_template[68657] = {
 		68667
 	}
 }
-
 _G.pg.base.aircraft_template[68658] = {
 	id = 68658,
 	name = "可畏技能鱼雷机Lv8",
@@ -45470,7 +43189,6 @@ _G.pg.base.aircraft_template[68658] = {
 		68668
 	}
 }
-
 _G.pg.base.aircraft_template[68659] = {
 	id = 68659,
 	name = "可畏技能鱼雷机Lv9",
@@ -45482,7 +43200,6 @@ _G.pg.base.aircraft_template[68659] = {
 		68669
 	}
 }
-
 _G.pg.base.aircraft_template[68660] = {
 	id = 68660,
 	name = "可畏技能鱼雷机Lv10",
@@ -45494,7 +43211,6 @@ _G.pg.base.aircraft_template[68660] = {
 		68670
 	}
 }
-
 _G.pg.base.aircraft_template[68771] = {
 	attack_power = 2,
 	name = "赤城μ技能舰爆Lv1",
@@ -45571,7 +43287,6 @@ _G.pg.base.aircraft_template[68771] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68772] = {
 	id = 68772,
 	name = "赤城μ技能舰爆Lv2",
@@ -45584,7 +43299,6 @@ _G.pg.base.aircraft_template[68772] = {
 		68792
 	}
 }
-
 _G.pg.base.aircraft_template[68773] = {
 	id = 68773,
 	name = "赤城μ技能舰爆Lv3",
@@ -45597,7 +43311,6 @@ _G.pg.base.aircraft_template[68773] = {
 		68793
 	}
 }
-
 _G.pg.base.aircraft_template[68774] = {
 	id = 68774,
 	name = "赤城μ技能舰爆Lv4",
@@ -45610,7 +43323,6 @@ _G.pg.base.aircraft_template[68774] = {
 		68794
 	}
 }
-
 _G.pg.base.aircraft_template[68775] = {
 	id = 68775,
 	name = "赤城μ技能舰爆Lv5",
@@ -45623,7 +43335,6 @@ _G.pg.base.aircraft_template[68775] = {
 		68795
 	}
 }
-
 _G.pg.base.aircraft_template[68776] = {
 	id = 68776,
 	name = "赤城μ技能舰爆Lv6",
@@ -45636,7 +43347,6 @@ _G.pg.base.aircraft_template[68776] = {
 		68796
 	}
 }
-
 _G.pg.base.aircraft_template[68777] = {
 	id = 68777,
 	name = "赤城μ技能舰爆Lv7",
@@ -45649,7 +43359,6 @@ _G.pg.base.aircraft_template[68777] = {
 		68797
 	}
 }
-
 _G.pg.base.aircraft_template[68778] = {
 	id = 68778,
 	name = "赤城μ技能舰爆Lv8",
@@ -45662,7 +43371,6 @@ _G.pg.base.aircraft_template[68778] = {
 		68798
 	}
 }
-
 _G.pg.base.aircraft_template[68779] = {
 	id = 68779,
 	name = "赤城μ技能舰爆Lv9",
@@ -45675,7 +43383,6 @@ _G.pg.base.aircraft_template[68779] = {
 		68799
 	}
 }
-
 _G.pg.base.aircraft_template[68780] = {
 	id = 68780,
 	name = "赤城μ技能舰爆Lv10",
@@ -45688,7 +43395,6 @@ _G.pg.base.aircraft_template[68780] = {
 		68800
 	}
 }
-
 _G.pg.base.aircraft_template[68801] = {
 	attack_power = 2,
 	name = "赤城μ技能舰攻Lv1",
@@ -45764,7 +43470,6 @@ _G.pg.base.aircraft_template[68801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68802] = {
 	id = 68802,
 	name = "赤城μ技能舰攻Lv2",
@@ -45776,7 +43481,6 @@ _G.pg.base.aircraft_template[68802] = {
 		68812
 	}
 }
-
 _G.pg.base.aircraft_template[68803] = {
 	id = 68803,
 	name = "赤城μ技能舰攻Lv3",
@@ -45788,7 +43492,6 @@ _G.pg.base.aircraft_template[68803] = {
 		68813
 	}
 }
-
 _G.pg.base.aircraft_template[68804] = {
 	id = 68804,
 	name = "赤城μ技能舰攻Lv4",
@@ -45800,7 +43503,6 @@ _G.pg.base.aircraft_template[68804] = {
 		68814
 	}
 }
-
 _G.pg.base.aircraft_template[68805] = {
 	id = 68805,
 	name = "赤城μ技能舰攻Lv5",
@@ -45812,7 +43514,6 @@ _G.pg.base.aircraft_template[68805] = {
 		68815
 	}
 }
-
 _G.pg.base.aircraft_template[68806] = {
 	id = 68806,
 	name = "赤城μ技能舰攻Lv6",
@@ -45824,7 +43525,6 @@ _G.pg.base.aircraft_template[68806] = {
 		68816
 	}
 }
-
 _G.pg.base.aircraft_template[68807] = {
 	id = 68807,
 	name = "赤城μ技能舰攻Lv7",
@@ -45836,7 +43536,6 @@ _G.pg.base.aircraft_template[68807] = {
 		68817
 	}
 }
-
 _G.pg.base.aircraft_template[68808] = {
 	id = 68808,
 	name = "赤城μ技能舰攻Lv8",
@@ -45848,7 +43547,6 @@ _G.pg.base.aircraft_template[68808] = {
 		68818
 	}
 }
-
 _G.pg.base.aircraft_template[68809] = {
 	id = 68809,
 	name = "赤城μ技能舰攻Lv9",
@@ -45860,7 +43558,6 @@ _G.pg.base.aircraft_template[68809] = {
 		68819
 	}
 }
-
 _G.pg.base.aircraft_template[68810] = {
 	id = 68810,
 	name = "赤城μ技能舰攻Lv10",
@@ -45872,7 +43569,6 @@ _G.pg.base.aircraft_template[68810] = {
 		68820
 	}
 }
-
 _G.pg.base.aircraft_template[68861] = {
 	attack_power = 2,
 	name = "大神澪技能鱼雷机Lv1",
@@ -45948,7 +43644,6 @@ _G.pg.base.aircraft_template[68861] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68862] = {
 	id = 68862,
 	name = "大神澪技能鱼雷机Lv2",
@@ -45960,7 +43655,6 @@ _G.pg.base.aircraft_template[68862] = {
 		68872
 	}
 }
-
 _G.pg.base.aircraft_template[68863] = {
 	id = 68863,
 	name = "大神澪技能鱼雷机Lv3",
@@ -45972,7 +43666,6 @@ _G.pg.base.aircraft_template[68863] = {
 		68873
 	}
 }
-
 _G.pg.base.aircraft_template[68864] = {
 	id = 68864,
 	name = "大神澪技能鱼雷机Lv4",
@@ -45984,7 +43677,6 @@ _G.pg.base.aircraft_template[68864] = {
 		68874
 	}
 }
-
 _G.pg.base.aircraft_template[68865] = {
 	id = 68865,
 	name = "大神澪技能鱼雷机Lv5",
@@ -45996,7 +43688,6 @@ _G.pg.base.aircraft_template[68865] = {
 		68875
 	}
 }
-
 _G.pg.base.aircraft_template[68866] = {
 	id = 68866,
 	name = "大神澪技能鱼雷机Lv6",
@@ -46008,7 +43699,6 @@ _G.pg.base.aircraft_template[68866] = {
 		68876
 	}
 }
-
 _G.pg.base.aircraft_template[68867] = {
 	id = 68867,
 	name = "大神澪技能鱼雷机Lv7",
@@ -46020,7 +43710,6 @@ _G.pg.base.aircraft_template[68867] = {
 		68877
 	}
 }
-
 _G.pg.base.aircraft_template[68868] = {
 	id = 68868,
 	name = "大神澪技能鱼雷机Lv8",
@@ -46032,7 +43721,6 @@ _G.pg.base.aircraft_template[68868] = {
 		68878
 	}
 }
-
 _G.pg.base.aircraft_template[68869] = {
 	id = 68869,
 	name = "大神澪技能鱼雷机Lv9",
@@ -46044,7 +43732,6 @@ _G.pg.base.aircraft_template[68869] = {
 		68879
 	}
 }
-
 _G.pg.base.aircraft_template[68870] = {
 	id = 68870,
 	name = "大神澪技能鱼雷机Lv10",
@@ -46056,7 +43743,6 @@ _G.pg.base.aircraft_template[68870] = {
 		68880
 	}
 }
-
 _G.pg.base.aircraft_template[68881] = {
 	attack_power = 2,
 	name = "大神澪技能轰炸机Lv1",
@@ -46132,7 +43818,6 @@ _G.pg.base.aircraft_template[68881] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68882] = {
 	id = 68882,
 	name = "大神澪技能轰炸机Lv2",
@@ -46144,7 +43829,6 @@ _G.pg.base.aircraft_template[68882] = {
 		68892
 	}
 }
-
 _G.pg.base.aircraft_template[68883] = {
 	id = 68883,
 	name = "大神澪技能轰炸机Lv3",
@@ -46156,7 +43840,6 @@ _G.pg.base.aircraft_template[68883] = {
 		68893
 	}
 }
-
 _G.pg.base.aircraft_template[68884] = {
 	id = 68884,
 	name = "大神澪技能轰炸机Lv4",
@@ -46168,7 +43851,6 @@ _G.pg.base.aircraft_template[68884] = {
 		68894
 	}
 }
-
 _G.pg.base.aircraft_template[68885] = {
 	id = 68885,
 	name = "大神澪技能轰炸机Lv5",
@@ -46180,7 +43862,6 @@ _G.pg.base.aircraft_template[68885] = {
 		68895
 	}
 }
-
 _G.pg.base.aircraft_template[68886] = {
 	id = 68886,
 	name = "大神澪技能轰炸机Lv6",
@@ -46192,7 +43873,6 @@ _G.pg.base.aircraft_template[68886] = {
 		68896
 	}
 }
-
 _G.pg.base.aircraft_template[68887] = {
 	id = 68887,
 	name = "大神澪技能轰炸机Lv7",
@@ -46204,7 +43884,6 @@ _G.pg.base.aircraft_template[68887] = {
 		68897
 	}
 }
-
 _G.pg.base.aircraft_template[68888] = {
 	id = 68888,
 	name = "大神澪技能轰炸机Lv8",
@@ -46216,7 +43895,6 @@ _G.pg.base.aircraft_template[68888] = {
 		68898
 	}
 }
-
 _G.pg.base.aircraft_template[68889] = {
 	id = 68889,
 	name = "大神澪技能轰炸机Lv9",
@@ -46228,7 +43906,6 @@ _G.pg.base.aircraft_template[68889] = {
 		68899
 	}
 }
-
 _G.pg.base.aircraft_template[68890] = {
 	id = 68890,
 	name = "大神澪技能轰炸机Lv10",
@@ -46240,7 +43917,6 @@ _G.pg.base.aircraft_template[68890] = {
 		68900
 	}
 }
-
 _G.pg.base.aircraft_template[68951] = {
 	attack_power = 2,
 	name = "白上吹雪狐笋轰炸机Lv1",
@@ -46316,7 +43992,6 @@ _G.pg.base.aircraft_template[68951] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[68952] = {
 	id = 68952,
 	name = "白上吹雪狐笋轰炸机Lv2",
@@ -46328,7 +44003,6 @@ _G.pg.base.aircraft_template[68952] = {
 		68962
 	}
 }
-
 _G.pg.base.aircraft_template[68953] = {
 	id = 68953,
 	name = "白上吹雪狐笋轰炸机Lv3",
@@ -46340,7 +44014,6 @@ _G.pg.base.aircraft_template[68953] = {
 		68963
 	}
 }
-
 _G.pg.base.aircraft_template[68954] = {
 	id = 68954,
 	name = "白上吹雪狐笋轰炸机Lv4",
@@ -46352,7 +44025,6 @@ _G.pg.base.aircraft_template[68954] = {
 		68964
 	}
 }
-
 _G.pg.base.aircraft_template[68955] = {
 	id = 68955,
 	name = "白上吹雪狐笋轰炸机Lv5",
@@ -46364,7 +44036,6 @@ _G.pg.base.aircraft_template[68955] = {
 		68965
 	}
 }
-
 _G.pg.base.aircraft_template[68956] = {
 	id = 68956,
 	name = "白上吹雪狐笋轰炸机Lv6",
@@ -46376,7 +44047,6 @@ _G.pg.base.aircraft_template[68956] = {
 		68966
 	}
 }
-
 _G.pg.base.aircraft_template[68957] = {
 	id = 68957,
 	name = "白上吹雪狐笋轰炸机Lv7",
@@ -46388,7 +44058,6 @@ _G.pg.base.aircraft_template[68957] = {
 		68967
 	}
 }
-
 _G.pg.base.aircraft_template[68958] = {
 	id = 68958,
 	name = "白上吹雪狐笋轰炸机Lv8",
@@ -46400,7 +44069,6 @@ _G.pg.base.aircraft_template[68958] = {
 		68968
 	}
 }
-
 _G.pg.base.aircraft_template[68959] = {
 	id = 68959,
 	name = "白上吹雪狐笋轰炸机Lv9",
@@ -46412,7 +44080,6 @@ _G.pg.base.aircraft_template[68959] = {
 		68969
 	}
 }
-
 _G.pg.base.aircraft_template[68960] = {
 	id = 68960,
 	name = "白上吹雪狐笋轰炸机Lv10",
@@ -46424,7 +44091,6 @@ _G.pg.base.aircraft_template[68960] = {
 		68970
 	}
 }
-
 _G.pg.base.aircraft_template[69161] = {
 	attack_power = 2,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv1",
@@ -46501,7 +44167,6 @@ _G.pg.base.aircraft_template[69161] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69162] = {
 	id = 69162,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv2",
@@ -46514,7 +44179,6 @@ _G.pg.base.aircraft_template[69162] = {
 		69182
 	}
 }
-
 _G.pg.base.aircraft_template[69163] = {
 	id = 69163,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv3",
@@ -46527,7 +44191,6 @@ _G.pg.base.aircraft_template[69163] = {
 		69183
 	}
 }
-
 _G.pg.base.aircraft_template[69164] = {
 	id = 69164,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv4",
@@ -46540,7 +44203,6 @@ _G.pg.base.aircraft_template[69164] = {
 		69184
 	}
 }
-
 _G.pg.base.aircraft_template[69165] = {
 	id = 69165,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv5",
@@ -46553,7 +44215,6 @@ _G.pg.base.aircraft_template[69165] = {
 		69185
 	}
 }
-
 _G.pg.base.aircraft_template[69166] = {
 	id = 69166,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv6",
@@ -46566,7 +44227,6 @@ _G.pg.base.aircraft_template[69166] = {
 		69186
 	}
 }
-
 _G.pg.base.aircraft_template[69167] = {
 	id = 69167,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv7",
@@ -46579,7 +44239,6 @@ _G.pg.base.aircraft_template[69167] = {
 		69187
 	}
 }
-
 _G.pg.base.aircraft_template[69168] = {
 	id = 69168,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv8",
@@ -46592,7 +44251,6 @@ _G.pg.base.aircraft_template[69168] = {
 		69188
 	}
 }
-
 _G.pg.base.aircraft_template[69169] = {
 	id = 69169,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv9",
@@ -46605,7 +44263,6 @@ _G.pg.base.aircraft_template[69169] = {
 		69189
 	}
 }
-
 _G.pg.base.aircraft_template[69170] = {
 	id = 69170,
 	name = "无畏技能SB2C(VB-18)轰炸机Lv10",
@@ -46618,7 +44275,6 @@ _G.pg.base.aircraft_template[69170] = {
 		69190
 	}
 }
-
 _G.pg.base.aircraft_template[69201] = {
 	attack_power = 2,
 	name = "库珀反潜PBY-Lv1",
@@ -46694,7 +44350,6 @@ _G.pg.base.aircraft_template[69201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69202] = {
 	id = 69202,
 	name = "库珀反潜PBY-Lv2",
@@ -46706,7 +44361,6 @@ _G.pg.base.aircraft_template[69202] = {
 		53142
 	}
 }
-
 _G.pg.base.aircraft_template[69203] = {
 	id = 69203,
 	name = "库珀反潜PBY-Lv3",
@@ -46718,7 +44372,6 @@ _G.pg.base.aircraft_template[69203] = {
 		53143
 	}
 }
-
 _G.pg.base.aircraft_template[69204] = {
 	id = 69204,
 	name = "库珀反潜PBY-Lv4",
@@ -46730,7 +44383,6 @@ _G.pg.base.aircraft_template[69204] = {
 		53144
 	}
 }
-
 _G.pg.base.aircraft_template[69205] = {
 	id = 69205,
 	name = "库珀反潜PBY-Lv5",
@@ -46742,7 +44394,6 @@ _G.pg.base.aircraft_template[69205] = {
 		53145
 	}
 }
-
 _G.pg.base.aircraft_template[69206] = {
 	id = 69206,
 	name = "库珀反潜PBY-Lv6",
@@ -46754,7 +44405,6 @@ _G.pg.base.aircraft_template[69206] = {
 		53146
 	}
 }
-
 _G.pg.base.aircraft_template[69207] = {
 	id = 69207,
 	name = "库珀反潜PBY-Lv7",
@@ -46766,7 +44416,6 @@ _G.pg.base.aircraft_template[69207] = {
 		53147
 	}
 }
-
 _G.pg.base.aircraft_template[69208] = {
 	id = 69208,
 	name = "库珀反潜PBY-Lv8",
@@ -46778,7 +44427,6 @@ _G.pg.base.aircraft_template[69208] = {
 		53148
 	}
 }
-
 _G.pg.base.aircraft_template[69209] = {
 	id = 69209,
 	name = "库珀反潜PBY-Lv9",
@@ -46790,7 +44438,6 @@ _G.pg.base.aircraft_template[69209] = {
 		53149
 	}
 }
-
 _G.pg.base.aircraft_template[69210] = {
 	id = 69210,
 	name = "库珀反潜PBY-Lv10",
@@ -46802,7 +44449,6 @@ _G.pg.base.aircraft_template[69210] = {
 		53150
 	}
 }
-
 _G.pg.base.aircraft_template[69211] = {
 	attack_power = 2,
 	name = "库珀轰炸PBY-Lv1",
@@ -46878,7 +44524,6 @@ _G.pg.base.aircraft_template[69211] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69212] = {
 	id = 69212,
 	name = "库珀轰炸PBY-Lv2",
@@ -46890,7 +44535,6 @@ _G.pg.base.aircraft_template[69212] = {
 		69222
 	}
 }
-
 _G.pg.base.aircraft_template[69213] = {
 	id = 69213,
 	name = "库珀轰炸PBY-Lv3",
@@ -46902,7 +44546,6 @@ _G.pg.base.aircraft_template[69213] = {
 		69223
 	}
 }
-
 _G.pg.base.aircraft_template[69214] = {
 	id = 69214,
 	name = "库珀轰炸PBY-Lv4",
@@ -46914,7 +44557,6 @@ _G.pg.base.aircraft_template[69214] = {
 		69224
 	}
 }
-
 _G.pg.base.aircraft_template[69215] = {
 	id = 69215,
 	name = "库珀轰炸PBY-Lv5",
@@ -46926,7 +44568,6 @@ _G.pg.base.aircraft_template[69215] = {
 		69225
 	}
 }
-
 _G.pg.base.aircraft_template[69216] = {
 	id = 69216,
 	name = "库珀轰炸PBY-Lv6",
@@ -46938,7 +44579,6 @@ _G.pg.base.aircraft_template[69216] = {
 		69226
 	}
 }
-
 _G.pg.base.aircraft_template[69217] = {
 	id = 69217,
 	name = "库珀轰炸PBY-Lv7",
@@ -46950,7 +44590,6 @@ _G.pg.base.aircraft_template[69217] = {
 		69227
 	}
 }
-
 _G.pg.base.aircraft_template[69218] = {
 	id = 69218,
 	name = "库珀轰炸PBY-Lv8",
@@ -46962,7 +44601,6 @@ _G.pg.base.aircraft_template[69218] = {
 		69228
 	}
 }
-
 _G.pg.base.aircraft_template[69219] = {
 	id = 69219,
 	name = "库珀轰炸PBY-Lv9",
@@ -46974,7 +44612,6 @@ _G.pg.base.aircraft_template[69219] = {
 		69229
 	}
 }
-
 _G.pg.base.aircraft_template[69220] = {
 	id = 69220,
 	name = "库珀轰炸PBY-Lv10",
@@ -46986,7 +44623,6 @@ _G.pg.base.aircraft_template[69220] = {
 		69230
 	}
 }
-
 _G.pg.base.aircraft_template[69451] = {
 	attack_power = 2,
 	name = "贝亚恩V-156F-LV1",
@@ -47063,7 +44699,6 @@ _G.pg.base.aircraft_template[69451] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69452] = {
 	id = 69452,
 	name = "贝亚恩V-156F-LV2",
@@ -47076,7 +44711,6 @@ _G.pg.base.aircraft_template[69452] = {
 		69462
 	}
 }
-
 _G.pg.base.aircraft_template[69453] = {
 	id = 69453,
 	name = "贝亚恩V-156F-LV3",
@@ -47089,7 +44723,6 @@ _G.pg.base.aircraft_template[69453] = {
 		69463
 	}
 }
-
 _G.pg.base.aircraft_template[69454] = {
 	id = 69454,
 	name = "贝亚恩V-156F-LV4",
@@ -47102,7 +44735,6 @@ _G.pg.base.aircraft_template[69454] = {
 		69464
 	}
 }
-
 _G.pg.base.aircraft_template[69455] = {
 	id = 69455,
 	name = "贝亚恩V-156F-LV5",
@@ -47115,7 +44747,6 @@ _G.pg.base.aircraft_template[69455] = {
 		69465
 	}
 }
-
 _G.pg.base.aircraft_template[69456] = {
 	id = 69456,
 	name = "贝亚恩V-156F-LV6",
@@ -47128,7 +44759,6 @@ _G.pg.base.aircraft_template[69456] = {
 		69466
 	}
 }
-
 _G.pg.base.aircraft_template[69457] = {
 	id = 69457,
 	name = "贝亚恩V-156F-LV7",
@@ -47141,7 +44771,6 @@ _G.pg.base.aircraft_template[69457] = {
 		69467
 	}
 }
-
 _G.pg.base.aircraft_template[69458] = {
 	id = 69458,
 	name = "贝亚恩V-156F-LV8",
@@ -47154,7 +44783,6 @@ _G.pg.base.aircraft_template[69458] = {
 		69468
 	}
 }
-
 _G.pg.base.aircraft_template[69459] = {
 	id = 69459,
 	name = "贝亚恩V-156F-LV9",
@@ -47167,7 +44795,6 @@ _G.pg.base.aircraft_template[69459] = {
 		69469
 	}
 }
-
 _G.pg.base.aircraft_template[69460] = {
 	id = 69460,
 	name = "贝亚恩V-156F-LV10",
@@ -47180,7 +44807,6 @@ _G.pg.base.aircraft_template[69460] = {
 		69470
 	}
 }
-
 _G.pg.base.aircraft_template[69481] = {
 	attack_power = 2,
 	name = "小光辉技能鱼雷机Lv1",
@@ -47256,7 +44882,6 @@ _G.pg.base.aircraft_template[69481] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69482] = {
 	id = 69482,
 	name = "小光辉技能鱼雷机Lv2",
@@ -47268,7 +44893,6 @@ _G.pg.base.aircraft_template[69482] = {
 		69492
 	}
 }
-
 _G.pg.base.aircraft_template[69483] = {
 	id = 69483,
 	name = "小光辉技能鱼雷机Lv3",
@@ -47280,7 +44904,6 @@ _G.pg.base.aircraft_template[69483] = {
 		69493
 	}
 }
-
 _G.pg.base.aircraft_template[69484] = {
 	id = 69484,
 	name = "小光辉技能鱼雷机Lv4",
@@ -47292,7 +44915,6 @@ _G.pg.base.aircraft_template[69484] = {
 		69494
 	}
 }
-
 _G.pg.base.aircraft_template[69485] = {
 	id = 69485,
 	name = "小光辉技能鱼雷机Lv5",
@@ -47304,7 +44926,6 @@ _G.pg.base.aircraft_template[69485] = {
 		69495
 	}
 }
-
 _G.pg.base.aircraft_template[69486] = {
 	id = 69486,
 	name = "小光辉技能鱼雷机Lv6",
@@ -47316,7 +44937,6 @@ _G.pg.base.aircraft_template[69486] = {
 		69496
 	}
 }
-
 _G.pg.base.aircraft_template[69487] = {
 	id = 69487,
 	name = "小光辉技能鱼雷机Lv7",
@@ -47328,7 +44948,6 @@ _G.pg.base.aircraft_template[69487] = {
 		69497
 	}
 }
-
 _G.pg.base.aircraft_template[69488] = {
 	id = 69488,
 	name = "小光辉技能鱼雷机Lv8",
@@ -47340,7 +44959,6 @@ _G.pg.base.aircraft_template[69488] = {
 		69498
 	}
 }
-
 _G.pg.base.aircraft_template[69489] = {
 	id = 69489,
 	name = "小光辉技能鱼雷机Lv9",
@@ -47352,7 +44970,6 @@ _G.pg.base.aircraft_template[69489] = {
 		69499
 	}
 }
-
 _G.pg.base.aircraft_template[69490] = {
 	id = 69490,
 	name = "小光辉技能鱼雷机Lv10",
@@ -47364,7 +44981,6 @@ _G.pg.base.aircraft_template[69490] = {
 		69500
 	}
 }
-
 _G.pg.base.aircraft_template[69501] = {
 	attack_power = 2,
 	name = "小光辉圣光飞机Lv1",
@@ -47438,7 +45054,6 @@ _G.pg.base.aircraft_template[69501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69502] = {
 	id = 69502,
 	name = "小光辉圣光飞机Lv2",
@@ -47448,7 +45063,6 @@ _G.pg.base.aircraft_template[69502] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69503] = {
 	id = 69503,
 	name = "小光辉圣光飞机Lv3",
@@ -47458,7 +45072,6 @@ _G.pg.base.aircraft_template[69503] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69504] = {
 	id = 69504,
 	name = "小光辉圣光飞机Lv4",
@@ -47468,7 +45081,6 @@ _G.pg.base.aircraft_template[69504] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69505] = {
 	id = 69505,
 	name = "小光辉圣光飞机Lv5",
@@ -47478,7 +45090,6 @@ _G.pg.base.aircraft_template[69505] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69506] = {
 	id = 69506,
 	name = "小光辉圣光飞机Lv6",
@@ -47488,7 +45099,6 @@ _G.pg.base.aircraft_template[69506] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69507] = {
 	id = 69507,
 	name = "小光辉圣光飞机Lv7",
@@ -47498,7 +45108,6 @@ _G.pg.base.aircraft_template[69507] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69508] = {
 	id = 69508,
 	name = "小光辉圣光飞机Lv8",
@@ -47508,7 +45117,6 @@ _G.pg.base.aircraft_template[69508] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69509] = {
 	id = 69509,
 	name = "小光辉圣光飞机Lv9",
@@ -47518,7 +45126,6 @@ _G.pg.base.aircraft_template[69509] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69510] = {
 	id = 69510,
 	name = "小光辉圣光飞机Lv10",
@@ -47528,7 +45135,6 @@ _G.pg.base.aircraft_template[69510] = {
 	spawn_brownian = 1,
 	weapon_ID = {}
 }
-
 _G.pg.base.aircraft_template[69691] = {
 	attack_power = 2,
 	name = "英仙座技能海黄蜂Lv1",
@@ -47605,7 +45211,6 @@ _G.pg.base.aircraft_template[69691] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69692] = {
 	id = 69692,
 	name = "英仙座技能海黄蜂Lv2",
@@ -47618,7 +45223,6 @@ _G.pg.base.aircraft_template[69692] = {
 		69722
 	}
 }
-
 _G.pg.base.aircraft_template[69693] = {
 	id = 69693,
 	name = "英仙座技能海黄蜂Lv3",
@@ -47631,7 +45235,6 @@ _G.pg.base.aircraft_template[69693] = {
 		69723
 	}
 }
-
 _G.pg.base.aircraft_template[69694] = {
 	id = 69694,
 	name = "英仙座技能海黄蜂Lv4",
@@ -47644,7 +45247,6 @@ _G.pg.base.aircraft_template[69694] = {
 		69724
 	}
 }
-
 _G.pg.base.aircraft_template[69695] = {
 	id = 69695,
 	name = "英仙座技能海黄蜂Lv5",
@@ -47657,7 +45259,6 @@ _G.pg.base.aircraft_template[69695] = {
 		69725
 	}
 }
-
 _G.pg.base.aircraft_template[69696] = {
 	id = 69696,
 	name = "英仙座技能海黄蜂Lv6",
@@ -47670,7 +45271,6 @@ _G.pg.base.aircraft_template[69696] = {
 		69726
 	}
 }
-
 _G.pg.base.aircraft_template[69697] = {
 	id = 69697,
 	name = "英仙座技能海黄蜂Lv7",
@@ -47683,7 +45283,6 @@ _G.pg.base.aircraft_template[69697] = {
 		69727
 	}
 }
-
 _G.pg.base.aircraft_template[69698] = {
 	id = 69698,
 	name = "英仙座技能海黄蜂Lv8",
@@ -47696,7 +45295,6 @@ _G.pg.base.aircraft_template[69698] = {
 		69728
 	}
 }
-
 _G.pg.base.aircraft_template[69699] = {
 	id = 69699,
 	name = "英仙座技能海黄蜂Lv9",
@@ -47709,7 +45307,6 @@ _G.pg.base.aircraft_template[69699] = {
 		69729
 	}
 }
-
 _G.pg.base.aircraft_template[69700] = {
 	id = 69700,
 	name = "英仙座技能海黄蜂Lv10",
@@ -47722,7 +45319,6 @@ _G.pg.base.aircraft_template[69700] = {
 		69730
 	}
 }
-
 _G.pg.base.aircraft_template[69701] = {
 	attack_power = 2,
 	name = "英仙座技能TBFLv1",
@@ -47798,7 +45394,6 @@ _G.pg.base.aircraft_template[69701] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69702] = {
 	id = 69702,
 	name = "英仙座技能TBFLv2",
@@ -47810,7 +45405,6 @@ _G.pg.base.aircraft_template[69702] = {
 		69732
 	}
 }
-
 _G.pg.base.aircraft_template[69703] = {
 	id = 69703,
 	name = "英仙座技能TBFLv3",
@@ -47822,7 +45416,6 @@ _G.pg.base.aircraft_template[69703] = {
 		69733
 	}
 }
-
 _G.pg.base.aircraft_template[69704] = {
 	id = 69704,
 	name = "英仙座技能TBFLv4",
@@ -47834,7 +45427,6 @@ _G.pg.base.aircraft_template[69704] = {
 		69734
 	}
 }
-
 _G.pg.base.aircraft_template[69705] = {
 	id = 69705,
 	name = "英仙座技能TBFLv5",
@@ -47846,7 +45438,6 @@ _G.pg.base.aircraft_template[69705] = {
 		69735
 	}
 }
-
 _G.pg.base.aircraft_template[69706] = {
 	id = 69706,
 	name = "英仙座技能TBFLv6",
@@ -47858,7 +45449,6 @@ _G.pg.base.aircraft_template[69706] = {
 		69736
 	}
 }
-
 _G.pg.base.aircraft_template[69707] = {
 	id = 69707,
 	name = "英仙座技能TBFLv7",
@@ -47870,7 +45460,6 @@ _G.pg.base.aircraft_template[69707] = {
 		69737
 	}
 }
-
 _G.pg.base.aircraft_template[69708] = {
 	id = 69708,
 	name = "英仙座技能TBFLv8",
@@ -47882,7 +45471,6 @@ _G.pg.base.aircraft_template[69708] = {
 		69738
 	}
 }
-
 _G.pg.base.aircraft_template[69709] = {
 	id = 69709,
 	name = "英仙座技能TBFLv9",
@@ -47894,7 +45482,6 @@ _G.pg.base.aircraft_template[69709] = {
 		69739
 	}
 }
-
 _G.pg.base.aircraft_template[69710] = {
 	id = 69710,
 	name = "英仙座技能TBFLv10",
@@ -47906,7 +45493,6 @@ _G.pg.base.aircraft_template[69710] = {
 		69740
 	}
 }
-
 _G.pg.base.aircraft_template[69711] = {
 	attack_power = 2,
 	name = "英仙座技能萤火虫Lv1",
@@ -47983,7 +45569,6 @@ _G.pg.base.aircraft_template[69711] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69712] = {
 	id = 69712,
 	name = "英仙座技能萤火虫Lv2",
@@ -47996,7 +45581,6 @@ _G.pg.base.aircraft_template[69712] = {
 		52742
 	}
 }
-
 _G.pg.base.aircraft_template[69713] = {
 	id = 69713,
 	name = "英仙座技能萤火虫Lv3",
@@ -48009,7 +45593,6 @@ _G.pg.base.aircraft_template[69713] = {
 		52743
 	}
 }
-
 _G.pg.base.aircraft_template[69714] = {
 	id = 69714,
 	name = "英仙座技能萤火虫Lv4",
@@ -48022,7 +45605,6 @@ _G.pg.base.aircraft_template[69714] = {
 		52744
 	}
 }
-
 _G.pg.base.aircraft_template[69715] = {
 	id = 69715,
 	name = "英仙座技能萤火虫Lv5",
@@ -48035,7 +45617,6 @@ _G.pg.base.aircraft_template[69715] = {
 		52745
 	}
 }
-
 _G.pg.base.aircraft_template[69716] = {
 	id = 69716,
 	name = "英仙座技能萤火虫Lv6",
@@ -48048,7 +45629,6 @@ _G.pg.base.aircraft_template[69716] = {
 		52746
 	}
 }
-
 _G.pg.base.aircraft_template[69717] = {
 	id = 69717,
 	name = "英仙座技能萤火虫Lv7",
@@ -48061,7 +45641,6 @@ _G.pg.base.aircraft_template[69717] = {
 		52747
 	}
 }
-
 _G.pg.base.aircraft_template[69718] = {
 	id = 69718,
 	name = "英仙座技能萤火虫Lv8",
@@ -48074,7 +45653,6 @@ _G.pg.base.aircraft_template[69718] = {
 		52748
 	}
 }
-
 _G.pg.base.aircraft_template[69719] = {
 	id = 69719,
 	name = "英仙座技能萤火虫Lv9",
@@ -48087,7 +45665,6 @@ _G.pg.base.aircraft_template[69719] = {
 		52749
 	}
 }
-
 _G.pg.base.aircraft_template[69720] = {
 	id = 69720,
 	name = "英仙座技能萤火虫Lv10",
@@ -48100,7 +45677,6 @@ _G.pg.base.aircraft_template[69720] = {
 		52750
 	}
 }
-
 _G.pg.base.aircraft_template[69751] = {
 	attack_power = 2,
 	name = "鹰技能剑鱼 Lv1",
@@ -48176,7 +45752,6 @@ _G.pg.base.aircraft_template[69751] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69752] = {
 	id = 69752,
 	name = "鹰技能剑鱼 Lv2",
@@ -48188,7 +45763,6 @@ _G.pg.base.aircraft_template[69752] = {
 		69772
 	}
 }
-
 _G.pg.base.aircraft_template[69753] = {
 	id = 69753,
 	name = "鹰技能剑鱼 Lv3",
@@ -48200,7 +45774,6 @@ _G.pg.base.aircraft_template[69753] = {
 		69773
 	}
 }
-
 _G.pg.base.aircraft_template[69754] = {
 	id = 69754,
 	name = "鹰技能剑鱼 Lv4",
@@ -48212,7 +45785,6 @@ _G.pg.base.aircraft_template[69754] = {
 		69774
 	}
 }
-
 _G.pg.base.aircraft_template[69755] = {
 	id = 69755,
 	name = "鹰技能剑鱼 Lv5",
@@ -48224,7 +45796,6 @@ _G.pg.base.aircraft_template[69755] = {
 		69775
 	}
 }
-
 _G.pg.base.aircraft_template[69756] = {
 	id = 69756,
 	name = "鹰技能剑鱼 Lv6",
@@ -48236,7 +45807,6 @@ _G.pg.base.aircraft_template[69756] = {
 		69776
 	}
 }
-
 _G.pg.base.aircraft_template[69757] = {
 	id = 69757,
 	name = "鹰技能剑鱼 Lv7",
@@ -48248,7 +45818,6 @@ _G.pg.base.aircraft_template[69757] = {
 		69777
 	}
 }
-
 _G.pg.base.aircraft_template[69758] = {
 	id = 69758,
 	name = "鹰技能剑鱼 Lv8",
@@ -48260,7 +45829,6 @@ _G.pg.base.aircraft_template[69758] = {
 		69778
 	}
 }
-
 _G.pg.base.aircraft_template[69759] = {
 	id = 69759,
 	name = "鹰技能剑鱼 Lv9",
@@ -48272,7 +45840,6 @@ _G.pg.base.aircraft_template[69759] = {
 		69779
 	}
 }
-
 _G.pg.base.aircraft_template[69760] = {
 	id = 69760,
 	name = "鹰技能剑鱼 Lv10",
@@ -48284,7 +45851,6 @@ _G.pg.base.aircraft_template[69760] = {
 		69780
 	}
 }
-
 _G.pg.base.aircraft_template[69921] = {
 	attack_power = 2,
 	name = "信浓技能试制紫电改二 LV1",
@@ -48361,7 +45927,6 @@ _G.pg.base.aircraft_template[69921] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69922] = {
 	id = 69922,
 	name = "信浓技能试制紫电改二 LV2",
@@ -48374,7 +45939,6 @@ _G.pg.base.aircraft_template[69922] = {
 		69962
 	}
 }
-
 _G.pg.base.aircraft_template[69923] = {
 	id = 69923,
 	name = "信浓技能试制紫电改二 LV3",
@@ -48387,7 +45951,6 @@ _G.pg.base.aircraft_template[69923] = {
 		69963
 	}
 }
-
 _G.pg.base.aircraft_template[69924] = {
 	id = 69924,
 	name = "信浓技能试制紫电改二 LV4",
@@ -48400,7 +45963,6 @@ _G.pg.base.aircraft_template[69924] = {
 		69964
 	}
 }
-
 _G.pg.base.aircraft_template[69925] = {
 	id = 69925,
 	name = "信浓技能试制紫电改二 LV5",
@@ -48413,7 +45975,6 @@ _G.pg.base.aircraft_template[69925] = {
 		69965
 	}
 }
-
 _G.pg.base.aircraft_template[69926] = {
 	id = 69926,
 	name = "信浓技能试制紫电改二 LV6",
@@ -48426,7 +45987,6 @@ _G.pg.base.aircraft_template[69926] = {
 		69966
 	}
 }
-
 _G.pg.base.aircraft_template[69927] = {
 	id = 69927,
 	name = "信浓技能试制紫电改二 LV7",
@@ -48439,7 +45999,6 @@ _G.pg.base.aircraft_template[69927] = {
 		69967
 	}
 }
-
 _G.pg.base.aircraft_template[69928] = {
 	id = 69928,
 	name = "信浓技能试制紫电改二 LV8",
@@ -48452,7 +46011,6 @@ _G.pg.base.aircraft_template[69928] = {
 		69968
 	}
 }
-
 _G.pg.base.aircraft_template[69929] = {
 	id = 69929,
 	name = "信浓技能试制紫电改二 LV9",
@@ -48465,7 +46023,6 @@ _G.pg.base.aircraft_template[69929] = {
 		69969
 	}
 }
-
 _G.pg.base.aircraft_template[69930] = {
 	id = 69930,
 	name = "信浓技能试制紫电改二 LV10",
@@ -48478,7 +46035,6 @@ _G.pg.base.aircraft_template[69930] = {
 		69970
 	}
 }
-
 _G.pg.base.aircraft_template[69931] = {
 	attack_power = 2,
 	name = "信浓技能流星 LV1",
@@ -48556,7 +46112,6 @@ _G.pg.base.aircraft_template[69931] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69932] = {
 	id = 69932,
 	name = "信浓技能流星 LV2",
@@ -48570,7 +46125,6 @@ _G.pg.base.aircraft_template[69932] = {
 		51462
 	}
 }
-
 _G.pg.base.aircraft_template[69933] = {
 	id = 69933,
 	name = "信浓技能流星 LV3",
@@ -48584,7 +46138,6 @@ _G.pg.base.aircraft_template[69933] = {
 		51463
 	}
 }
-
 _G.pg.base.aircraft_template[69934] = {
 	id = 69934,
 	name = "信浓技能流星 LV4",
@@ -48598,7 +46151,6 @@ _G.pg.base.aircraft_template[69934] = {
 		51464
 	}
 }
-
 _G.pg.base.aircraft_template[69935] = {
 	id = 69935,
 	name = "信浓技能流星 LV5",
@@ -48612,7 +46164,6 @@ _G.pg.base.aircraft_template[69935] = {
 		51465
 	}
 }
-
 _G.pg.base.aircraft_template[69936] = {
 	id = 69936,
 	name = "信浓技能流星 LV6",
@@ -48626,7 +46177,6 @@ _G.pg.base.aircraft_template[69936] = {
 		51466
 	}
 }
-
 _G.pg.base.aircraft_template[69937] = {
 	id = 69937,
 	name = "信浓技能流星 LV7",
@@ -48640,7 +46190,6 @@ _G.pg.base.aircraft_template[69937] = {
 		51467
 	}
 }
-
 _G.pg.base.aircraft_template[69938] = {
 	id = 69938,
 	name = "信浓技能流星 LV8",
@@ -48654,7 +46203,6 @@ _G.pg.base.aircraft_template[69938] = {
 		51468
 	}
 }
-
 _G.pg.base.aircraft_template[69939] = {
 	id = 69939,
 	name = "信浓技能流星 LV9",
@@ -48668,7 +46216,6 @@ _G.pg.base.aircraft_template[69939] = {
 		51469
 	}
 }
-
 _G.pg.base.aircraft_template[69940] = {
 	id = 69940,
 	name = "信浓技能流星 LV10",
@@ -48682,7 +46229,6 @@ _G.pg.base.aircraft_template[69940] = {
 		51470
 	}
 }
-
 _G.pg.base.aircraft_template[69971] = {
 	attack_power = 2,
 	name = "千岁千代田技能瑞云",
@@ -48760,7 +46306,6 @@ _G.pg.base.aircraft_template[69971] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69972] = {
 	max_hp = 42,
 	hp_growth = 1626,
@@ -48773,7 +46318,6 @@ _G.pg.base.aircraft_template[69972] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[69973] = {
 	max_hp = 47,
 	hp_growth = 1813,
@@ -48786,7 +46330,6 @@ _G.pg.base.aircraft_template[69973] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[69974] = {
 	max_hp = 52,
 	hp_growth = 2001,
@@ -48799,7 +46342,6 @@ _G.pg.base.aircraft_template[69974] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[69975] = {
 	max_hp = 57,
 	hp_growth = 2189,
@@ -48812,7 +46354,6 @@ _G.pg.base.aircraft_template[69975] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[69976] = {
 	max_hp = 62,
 	hp_growth = 2376,
@@ -48825,7 +46366,6 @@ _G.pg.base.aircraft_template[69976] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[69977] = {
 	max_hp = 67,
 	hp_growth = 2564,
@@ -48838,7 +46378,6 @@ _G.pg.base.aircraft_template[69977] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[69978] = {
 	max_hp = 72,
 	hp_growth = 2751,
@@ -48851,7 +46390,6 @@ _G.pg.base.aircraft_template[69978] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[69979] = {
 	max_hp = 76,
 	hp_growth = 2939,
@@ -48864,7 +46402,6 @@ _G.pg.base.aircraft_template[69979] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[69980] = {
 	max_hp = 81,
 	hp_growth = 3127,
@@ -48877,7 +46414,6 @@ _G.pg.base.aircraft_template[69980] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[69981] = {
 	attack_power = 2,
 	name = "千岁千代田技能九七式舰攻",
@@ -48953,7 +46489,6 @@ _G.pg.base.aircraft_template[69981] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[69982] = {
 	max_hp = 41,
 	hp_growth = 1802,
@@ -48964,7 +46499,6 @@ _G.pg.base.aircraft_template[69982] = {
 		51342
 	}
 }
-
 _G.pg.base.aircraft_template[69983] = {
 	max_hp = 47,
 	hp_growth = 2010,
@@ -48975,7 +46509,6 @@ _G.pg.base.aircraft_template[69983] = {
 		51343
 	}
 }
-
 _G.pg.base.aircraft_template[69984] = {
 	max_hp = 52,
 	hp_growth = 2218,
@@ -48986,7 +46519,6 @@ _G.pg.base.aircraft_template[69984] = {
 		51344
 	}
 }
-
 _G.pg.base.aircraft_template[69985] = {
 	max_hp = 58,
 	hp_growth = 2426,
@@ -48997,7 +46529,6 @@ _G.pg.base.aircraft_template[69985] = {
 		51345
 	}
 }
-
 _G.pg.base.aircraft_template[69986] = {
 	max_hp = 63,
 	hp_growth = 2634,
@@ -49008,7 +46539,6 @@ _G.pg.base.aircraft_template[69986] = {
 		51346
 	}
 }
-
 _G.pg.base.aircraft_template[69987] = {
 	max_hp = 68,
 	hp_growth = 2842,
@@ -49019,7 +46549,6 @@ _G.pg.base.aircraft_template[69987] = {
 		51347
 	}
 }
-
 _G.pg.base.aircraft_template[69988] = {
 	max_hp = 74,
 	hp_growth = 3050,
@@ -49030,7 +46559,6 @@ _G.pg.base.aircraft_template[69988] = {
 		51348
 	}
 }
-
 _G.pg.base.aircraft_template[69989] = {
 	max_hp = 79,
 	hp_growth = 3258,
@@ -49041,7 +46569,6 @@ _G.pg.base.aircraft_template[69989] = {
 		51349
 	}
 }
-
 _G.pg.base.aircraft_template[69990] = {
 	max_hp = 85,
 	hp_growth = 3466,
@@ -49052,7 +46579,6 @@ _G.pg.base.aircraft_template[69990] = {
 		51350
 	}
 }
-
 _G.pg.base.aircraft_template[81000] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -49128,7 +46654,6 @@ _G.pg.base.aircraft_template[81000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81001] = {
 	max_hp = 34,
 	hp_growth = 1298,
@@ -49139,7 +46664,6 @@ _G.pg.base.aircraft_template[81001] = {
 		50301
 	}
 }
-
 _G.pg.base.aircraft_template[81002] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -49150,7 +46674,6 @@ _G.pg.base.aircraft_template[81002] = {
 		50302
 	}
 }
-
 _G.pg.base.aircraft_template[81003] = {
 	max_hp = 43,
 	hp_growth = 1637,
@@ -49161,7 +46684,6 @@ _G.pg.base.aircraft_template[81003] = {
 		50303
 	}
 }
-
 _G.pg.base.aircraft_template[81020] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -49237,7 +46759,6 @@ _G.pg.base.aircraft_template[81020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81021] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -49248,7 +46769,6 @@ _G.pg.base.aircraft_template[81021] = {
 		50321
 	}
 }
-
 _G.pg.base.aircraft_template[81022] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -49259,7 +46779,6 @@ _G.pg.base.aircraft_template[81022] = {
 		50322
 	}
 }
-
 _G.pg.base.aircraft_template[81023] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -49270,7 +46789,6 @@ _G.pg.base.aircraft_template[81023] = {
 		50323
 	}
 }
-
 _G.pg.base.aircraft_template[81040] = {
 	attack_power = 2,
 	name = "F2A水牛",
@@ -49346,7 +46864,6 @@ _G.pg.base.aircraft_template[81040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81041] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -49357,7 +46874,6 @@ _G.pg.base.aircraft_template[81041] = {
 		50341
 	}
 }
-
 _G.pg.base.aircraft_template[81042] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -49368,7 +46884,6 @@ _G.pg.base.aircraft_template[81042] = {
 		50342
 	}
 }
-
 _G.pg.base.aircraft_template[81043] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -49379,7 +46894,6 @@ _G.pg.base.aircraft_template[81043] = {
 		50343
 	}
 }
-
 _G.pg.base.aircraft_template[81044] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -49390,7 +46904,6 @@ _G.pg.base.aircraft_template[81044] = {
 		50344
 	}
 }
-
 _G.pg.base.aircraft_template[81045] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -49401,7 +46914,6 @@ _G.pg.base.aircraft_template[81045] = {
 		50345
 	}
 }
-
 _G.pg.base.aircraft_template[81046] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -49412,7 +46924,6 @@ _G.pg.base.aircraft_template[81046] = {
 		50346
 	}
 }
-
 _G.pg.base.aircraft_template[81047] = {
 	max_hp = 75,
 	hp_growth = 2893,
@@ -49423,7 +46934,6 @@ _G.pg.base.aircraft_template[81047] = {
 		50347
 	}
 }
-
 _G.pg.base.aircraft_template[81060] = {
 	attack_power = 2,
 	name = "F2A水牛(萨奇队）",
@@ -49499,7 +47009,6 @@ _G.pg.base.aircraft_template[81060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81061] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -49510,7 +47019,6 @@ _G.pg.base.aircraft_template[81061] = {
 		50361
 	}
 }
-
 _G.pg.base.aircraft_template[81062] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -49521,7 +47029,6 @@ _G.pg.base.aircraft_template[81062] = {
 		50362
 	}
 }
-
 _G.pg.base.aircraft_template[81063] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -49532,7 +47039,6 @@ _G.pg.base.aircraft_template[81063] = {
 		50363
 	}
 }
-
 _G.pg.base.aircraft_template[81064] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -49543,7 +47049,6 @@ _G.pg.base.aircraft_template[81064] = {
 		50364
 	}
 }
-
 _G.pg.base.aircraft_template[81065] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -49554,7 +47059,6 @@ _G.pg.base.aircraft_template[81065] = {
 		50365
 	}
 }
-
 _G.pg.base.aircraft_template[81066] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -49565,7 +47069,6 @@ _G.pg.base.aircraft_template[81066] = {
 		50366
 	}
 }
-
 _G.pg.base.aircraft_template[81067] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -49576,7 +47079,6 @@ _G.pg.base.aircraft_template[81067] = {
 		50367
 	}
 }
-
 _G.pg.base.aircraft_template[81068] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -49587,7 +47089,6 @@ _G.pg.base.aircraft_template[81068] = {
 		50368
 	}
 }
-
 _G.pg.base.aircraft_template[81069] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -49598,7 +47099,6 @@ _G.pg.base.aircraft_template[81069] = {
 		50369
 	}
 }
-
 _G.pg.base.aircraft_template[81070] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -49609,7 +47109,6 @@ _G.pg.base.aircraft_template[81070] = {
 		50370
 	}
 }
-
 _G.pg.base.aircraft_template[81071] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -49620,7 +47119,6 @@ _G.pg.base.aircraft_template[81071] = {
 		50371
 	}
 }
-
 _G.pg.base.aircraft_template[81072] = {
 	max_hp = 113,
 	hp_growth = 4346,
@@ -49631,7 +47129,6 @@ _G.pg.base.aircraft_template[81072] = {
 		50372
 	}
 }
-
 _G.pg.base.aircraft_template[81073] = {
 	max_hp = 119,
 	hp_growth = 4579,
@@ -49642,7 +47139,6 @@ _G.pg.base.aircraft_template[81073] = {
 		50373
 	}
 }
-
 _G.pg.base.aircraft_template[81080] = {
 	attack_power = 2,
 	name = "试作型XF2A-4水牛",
@@ -49718,7 +47214,6 @@ _G.pg.base.aircraft_template[81080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81081] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -49729,7 +47224,6 @@ _G.pg.base.aircraft_template[81081] = {
 		50341
 	}
 }
-
 _G.pg.base.aircraft_template[81082] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -49740,7 +47234,6 @@ _G.pg.base.aircraft_template[81082] = {
 		50342
 	}
 }
-
 _G.pg.base.aircraft_template[81083] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -49751,7 +47244,6 @@ _G.pg.base.aircraft_template[81083] = {
 		50343
 	}
 }
-
 _G.pg.base.aircraft_template[81084] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -49762,7 +47254,6 @@ _G.pg.base.aircraft_template[81084] = {
 		50344
 	}
 }
-
 _G.pg.base.aircraft_template[81085] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -49773,7 +47264,6 @@ _G.pg.base.aircraft_template[81085] = {
 		50345
 	}
 }
-
 _G.pg.base.aircraft_template[81086] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -49784,7 +47274,6 @@ _G.pg.base.aircraft_template[81086] = {
 		50346
 	}
 }
-
 _G.pg.base.aircraft_template[81087] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -49795,7 +47284,6 @@ _G.pg.base.aircraft_template[81087] = {
 		50347
 	}
 }
-
 _G.pg.base.aircraft_template[81088] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -49806,7 +47294,6 @@ _G.pg.base.aircraft_template[81088] = {
 		50348
 	}
 }
-
 _G.pg.base.aircraft_template[81089] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -49817,7 +47304,6 @@ _G.pg.base.aircraft_template[81089] = {
 		50349
 	}
 }
-
 _G.pg.base.aircraft_template[81090] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -49828,7 +47314,6 @@ _G.pg.base.aircraft_template[81090] = {
 		50350
 	}
 }
-
 _G.pg.base.aircraft_template[81091] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -49839,7 +47324,6 @@ _G.pg.base.aircraft_template[81091] = {
 		50351
 	}
 }
-
 _G.pg.base.aircraft_template[81100] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -49915,7 +47399,6 @@ _G.pg.base.aircraft_template[81100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81101] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -49926,7 +47409,6 @@ _G.pg.base.aircraft_template[81101] = {
 		50401
 	}
 }
-
 _G.pg.base.aircraft_template[81102] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -49937,7 +47419,6 @@ _G.pg.base.aircraft_template[81102] = {
 		50402
 	}
 }
-
 _G.pg.base.aircraft_template[81103] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -49948,7 +47429,6 @@ _G.pg.base.aircraft_template[81103] = {
 		50403
 	}
 }
-
 _G.pg.base.aircraft_template[81120] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -50024,7 +47504,6 @@ _G.pg.base.aircraft_template[81120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81121] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -50035,7 +47514,6 @@ _G.pg.base.aircraft_template[81121] = {
 		50421
 	}
 }
-
 _G.pg.base.aircraft_template[81122] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -50046,7 +47524,6 @@ _G.pg.base.aircraft_template[81122] = {
 		50422
 	}
 }
-
 _G.pg.base.aircraft_template[81123] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -50057,7 +47534,6 @@ _G.pg.base.aircraft_template[81123] = {
 		50423
 	}
 }
-
 _G.pg.base.aircraft_template[81124] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -50068,7 +47544,6 @@ _G.pg.base.aircraft_template[81124] = {
 		50424
 	}
 }
-
 _G.pg.base.aircraft_template[81125] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -50079,7 +47554,6 @@ _G.pg.base.aircraft_template[81125] = {
 		50425
 	}
 }
-
 _G.pg.base.aircraft_template[81126] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -50090,7 +47564,6 @@ _G.pg.base.aircraft_template[81126] = {
 		50426
 	}
 }
-
 _G.pg.base.aircraft_template[81140] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -50166,7 +47639,6 @@ _G.pg.base.aircraft_template[81140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81141] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -50177,7 +47649,6 @@ _G.pg.base.aircraft_template[81141] = {
 		50441
 	}
 }
-
 _G.pg.base.aircraft_template[81142] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -50188,7 +47659,6 @@ _G.pg.base.aircraft_template[81142] = {
 		50442
 	}
 }
-
 _G.pg.base.aircraft_template[81143] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -50199,7 +47669,6 @@ _G.pg.base.aircraft_template[81143] = {
 		50443
 	}
 }
-
 _G.pg.base.aircraft_template[81144] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -50210,7 +47679,6 @@ _G.pg.base.aircraft_template[81144] = {
 		50444
 	}
 }
-
 _G.pg.base.aircraft_template[81145] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -50221,7 +47689,6 @@ _G.pg.base.aircraft_template[81145] = {
 		50445
 	}
 }
-
 _G.pg.base.aircraft_template[81146] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -50232,7 +47699,6 @@ _G.pg.base.aircraft_template[81146] = {
 		50446
 	}
 }
-
 _G.pg.base.aircraft_template[81147] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -50243,7 +47709,6 @@ _G.pg.base.aircraft_template[81147] = {
 		50447
 	}
 }
-
 _G.pg.base.aircraft_template[81148] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -50254,7 +47719,6 @@ _G.pg.base.aircraft_template[81148] = {
 		50448
 	}
 }
-
 _G.pg.base.aircraft_template[81149] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -50265,7 +47729,6 @@ _G.pg.base.aircraft_template[81149] = {
 		50449
 	}
 }
-
 _G.pg.base.aircraft_template[81150] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -50276,7 +47739,6 @@ _G.pg.base.aircraft_template[81150] = {
 		50450
 	}
 }
-
 _G.pg.base.aircraft_template[81151] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -50287,7 +47749,6 @@ _G.pg.base.aircraft_template[81151] = {
 		50451
 	}
 }
-
 _G.pg.base.aircraft_template[81200] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -50363,7 +47824,6 @@ _G.pg.base.aircraft_template[81200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81201] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -50374,7 +47834,6 @@ _G.pg.base.aircraft_template[81201] = {
 		50401
 	}
 }
-
 _G.pg.base.aircraft_template[81202] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -50385,7 +47844,6 @@ _G.pg.base.aircraft_template[81202] = {
 		50402
 	}
 }
-
 _G.pg.base.aircraft_template[81203] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -50396,7 +47854,6 @@ _G.pg.base.aircraft_template[81203] = {
 		50403
 	}
 }
-
 _G.pg.base.aircraft_template[81220] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -50472,7 +47929,6 @@ _G.pg.base.aircraft_template[81220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81221] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -50483,7 +47939,6 @@ _G.pg.base.aircraft_template[81221] = {
 		50421
 	}
 }
-
 _G.pg.base.aircraft_template[81222] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -50494,7 +47949,6 @@ _G.pg.base.aircraft_template[81222] = {
 		50422
 	}
 }
-
 _G.pg.base.aircraft_template[81223] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -50505,7 +47959,6 @@ _G.pg.base.aircraft_template[81223] = {
 		50423
 	}
 }
-
 _G.pg.base.aircraft_template[81224] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -50516,7 +47969,6 @@ _G.pg.base.aircraft_template[81224] = {
 		50424
 	}
 }
-
 _G.pg.base.aircraft_template[81225] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -50527,7 +47979,6 @@ _G.pg.base.aircraft_template[81225] = {
 		50425
 	}
 }
-
 _G.pg.base.aircraft_template[81226] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -50538,7 +47989,6 @@ _G.pg.base.aircraft_template[81226] = {
 		50426
 	}
 }
-
 _G.pg.base.aircraft_template[81240] = {
 	attack_power = 2,
 	name = "F4U海盗",
@@ -50614,7 +48064,6 @@ _G.pg.base.aircraft_template[81240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81241] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -50625,7 +48074,6 @@ _G.pg.base.aircraft_template[81241] = {
 		50441
 	}
 }
-
 _G.pg.base.aircraft_template[81242] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -50636,7 +48084,6 @@ _G.pg.base.aircraft_template[81242] = {
 		50442
 	}
 }
-
 _G.pg.base.aircraft_template[81243] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -50647,7 +48094,6 @@ _G.pg.base.aircraft_template[81243] = {
 		50443
 	}
 }
-
 _G.pg.base.aircraft_template[81244] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -50658,7 +48104,6 @@ _G.pg.base.aircraft_template[81244] = {
 		50444
 	}
 }
-
 _G.pg.base.aircraft_template[81245] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -50669,7 +48114,6 @@ _G.pg.base.aircraft_template[81245] = {
 		50445
 	}
 }
-
 _G.pg.base.aircraft_template[81246] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -50680,7 +48124,6 @@ _G.pg.base.aircraft_template[81246] = {
 		50446
 	}
 }
-
 _G.pg.base.aircraft_template[81247] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -50691,7 +48134,6 @@ _G.pg.base.aircraft_template[81247] = {
 		50447
 	}
 }
-
 _G.pg.base.aircraft_template[81248] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -50702,7 +48144,6 @@ _G.pg.base.aircraft_template[81248] = {
 		50448
 	}
 }
-
 _G.pg.base.aircraft_template[81249] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -50713,7 +48154,6 @@ _G.pg.base.aircraft_template[81249] = {
 		50449
 	}
 }
-
 _G.pg.base.aircraft_template[81250] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -50724,7 +48164,6 @@ _G.pg.base.aircraft_template[81250] = {
 		50450
 	}
 }
-
 _G.pg.base.aircraft_template[81251] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -50735,7 +48174,6 @@ _G.pg.base.aircraft_template[81251] = {
 		50451
 	}
 }
-
 _G.pg.base.aircraft_template[81260] = {
 	attack_power = 2,
 	name = "F4U（VF-17“海盗”中队）",
@@ -50811,7 +48249,6 @@ _G.pg.base.aircraft_template[81260] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81261] = {
 	max_hp = 51,
 	hp_growth = 1947,
@@ -50822,7 +48259,6 @@ _G.pg.base.aircraft_template[81261] = {
 		50461
 	}
 }
-
 _G.pg.base.aircraft_template[81262] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -50833,7 +48269,6 @@ _G.pg.base.aircraft_template[81262] = {
 		50462
 	}
 }
-
 _G.pg.base.aircraft_template[81263] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -50844,7 +48279,6 @@ _G.pg.base.aircraft_template[81263] = {
 		50463
 	}
 }
-
 _G.pg.base.aircraft_template[81264] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -50855,7 +48289,6 @@ _G.pg.base.aircraft_template[81264] = {
 		50464
 	}
 }
-
 _G.pg.base.aircraft_template[81265] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -50866,7 +48299,6 @@ _G.pg.base.aircraft_template[81265] = {
 		50465
 	}
 }
-
 _G.pg.base.aircraft_template[81266] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -50877,7 +48309,6 @@ _G.pg.base.aircraft_template[81266] = {
 		50466
 	}
 }
-
 _G.pg.base.aircraft_template[81267] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -50888,7 +48319,6 @@ _G.pg.base.aircraft_template[81267] = {
 		50467
 	}
 }
-
 _G.pg.base.aircraft_template[81268] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -50899,7 +48329,6 @@ _G.pg.base.aircraft_template[81268] = {
 		50468
 	}
 }
-
 _G.pg.base.aircraft_template[81269] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -50910,7 +48339,6 @@ _G.pg.base.aircraft_template[81269] = {
 		50469
 	}
 }
-
 _G.pg.base.aircraft_template[81270] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -50921,7 +48349,6 @@ _G.pg.base.aircraft_template[81270] = {
 		50470
 	}
 }
-
 _G.pg.base.aircraft_template[81271] = {
 	max_hp = 117,
 	hp_growth = 4488,
@@ -50932,7 +48359,6 @@ _G.pg.base.aircraft_template[81271] = {
 		50471
 	}
 }
-
 _G.pg.base.aircraft_template[81272] = {
 	max_hp = 123,
 	hp_growth = 4742,
@@ -50943,7 +48369,6 @@ _G.pg.base.aircraft_template[81272] = {
 		50472
 	}
 }
-
 _G.pg.base.aircraft_template[81273] = {
 	max_hp = 130,
 	hp_growth = 4996,
@@ -50954,7 +48379,6 @@ _G.pg.base.aircraft_template[81273] = {
 		50473
 	}
 }
-
 _G.pg.base.aircraft_template[81300] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -51031,7 +48455,6 @@ _G.pg.base.aircraft_template[81300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81301] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -51043,7 +48466,6 @@ _G.pg.base.aircraft_template[81301] = {
 		50501
 	}
 }
-
 _G.pg.base.aircraft_template[81302] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -51055,7 +48477,6 @@ _G.pg.base.aircraft_template[81302] = {
 		50502
 	}
 }
-
 _G.pg.base.aircraft_template[81303] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -51067,7 +48488,6 @@ _G.pg.base.aircraft_template[81303] = {
 		50503
 	}
 }
-
 _G.pg.base.aircraft_template[81304] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -51079,7 +48499,6 @@ _G.pg.base.aircraft_template[81304] = {
 		50504
 	}
 }
-
 _G.pg.base.aircraft_template[81305] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -51091,7 +48510,6 @@ _G.pg.base.aircraft_template[81305] = {
 		50505
 	}
 }
-
 _G.pg.base.aircraft_template[81306] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -51103,7 +48521,6 @@ _G.pg.base.aircraft_template[81306] = {
 		50506
 	}
 }
-
 _G.pg.base.aircraft_template[81320] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -51180,7 +48597,6 @@ _G.pg.base.aircraft_template[81320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81321] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -51192,7 +48608,6 @@ _G.pg.base.aircraft_template[81321] = {
 		50521
 	}
 }
-
 _G.pg.base.aircraft_template[81322] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -51204,7 +48619,6 @@ _G.pg.base.aircraft_template[81322] = {
 		50522
 	}
 }
-
 _G.pg.base.aircraft_template[81323] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -51216,7 +48630,6 @@ _G.pg.base.aircraft_template[81323] = {
 		50523
 	}
 }
-
 _G.pg.base.aircraft_template[81324] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -51228,7 +48641,6 @@ _G.pg.base.aircraft_template[81324] = {
 		50524
 	}
 }
-
 _G.pg.base.aircraft_template[81325] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -51240,7 +48652,6 @@ _G.pg.base.aircraft_template[81325] = {
 		50525
 	}
 }
-
 _G.pg.base.aircraft_template[81326] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -51252,7 +48663,6 @@ _G.pg.base.aircraft_template[81326] = {
 		50526
 	}
 }
-
 _G.pg.base.aircraft_template[81327] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -51264,7 +48674,6 @@ _G.pg.base.aircraft_template[81327] = {
 		50527
 	}
 }
-
 _G.pg.base.aircraft_template[81328] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -51276,7 +48685,6 @@ _G.pg.base.aircraft_template[81328] = {
 		50528
 	}
 }
-
 _G.pg.base.aircraft_template[81329] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -51288,7 +48696,6 @@ _G.pg.base.aircraft_template[81329] = {
 		50529
 	}
 }
-
 _G.pg.base.aircraft_template[81330] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -51300,7 +48707,6 @@ _G.pg.base.aircraft_template[81330] = {
 		50530
 	}
 }
-
 _G.pg.base.aircraft_template[81340] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -51377,7 +48783,6 @@ _G.pg.base.aircraft_template[81340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81341] = {
 	max_hp = 51,
 	hp_growth = 1947,
@@ -51389,7 +48794,6 @@ _G.pg.base.aircraft_template[81341] = {
 		50541
 	}
 }
-
 _G.pg.base.aircraft_template[81342] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -51401,7 +48805,6 @@ _G.pg.base.aircraft_template[81342] = {
 		50542
 	}
 }
-
 _G.pg.base.aircraft_template[81343] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -51413,7 +48816,6 @@ _G.pg.base.aircraft_template[81343] = {
 		50543
 	}
 }
-
 _G.pg.base.aircraft_template[81344] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -51425,7 +48827,6 @@ _G.pg.base.aircraft_template[81344] = {
 		50544
 	}
 }
-
 _G.pg.base.aircraft_template[81345] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -51437,7 +48838,6 @@ _G.pg.base.aircraft_template[81345] = {
 		50545
 	}
 }
-
 _G.pg.base.aircraft_template[81346] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -51449,7 +48849,6 @@ _G.pg.base.aircraft_template[81346] = {
 		50546
 	}
 }
-
 _G.pg.base.aircraft_template[81347] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -51461,7 +48860,6 @@ _G.pg.base.aircraft_template[81347] = {
 		50547
 	}
 }
-
 _G.pg.base.aircraft_template[81348] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -51473,7 +48871,6 @@ _G.pg.base.aircraft_template[81348] = {
 		50548
 	}
 }
-
 _G.pg.base.aircraft_template[81349] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -51485,7 +48882,6 @@ _G.pg.base.aircraft_template[81349] = {
 		50549
 	}
 }
-
 _G.pg.base.aircraft_template[81350] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -51497,7 +48893,6 @@ _G.pg.base.aircraft_template[81350] = {
 		50550
 	}
 }
-
 _G.pg.base.aircraft_template[81351] = {
 	max_hp = 117,
 	hp_growth = 4488,
@@ -51509,7 +48904,6 @@ _G.pg.base.aircraft_template[81351] = {
 		50551
 	}
 }
-
 _G.pg.base.aircraft_template[81352] = {
 	max_hp = 123,
 	hp_growth = 4742,
@@ -51521,7 +48915,6 @@ _G.pg.base.aircraft_template[81352] = {
 		50552
 	}
 }
-
 _G.pg.base.aircraft_template[81353] = {
 	max_hp = 130,
 	hp_growth = 4996,
@@ -51533,7 +48926,6 @@ _G.pg.base.aircraft_template[81353] = {
 		50553
 	}
 }
-
 _G.pg.base.aircraft_template[81360] = {
 	attack_power = 2,
 	name = "F7F虎猫",
@@ -51609,7 +49001,6 @@ _G.pg.base.aircraft_template[81360] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81361] = {
 	max_hp = 61,
 	hp_growth = 2337,
@@ -51620,7 +49011,6 @@ _G.pg.base.aircraft_template[81361] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[81362] = {
 	max_hp = 69,
 	hp_growth = 2642,
@@ -51631,7 +49021,6 @@ _G.pg.base.aircraft_template[81362] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[81363] = {
 	max_hp = 77,
 	hp_growth = 2947,
@@ -51642,7 +49031,6 @@ _G.pg.base.aircraft_template[81363] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[81364] = {
 	max_hp = 85,
 	hp_growth = 3251,
@@ -51653,7 +49041,6 @@ _G.pg.base.aircraft_template[81364] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[81365] = {
 	max_hp = 92,
 	hp_growth = 3556,
@@ -51664,7 +49051,6 @@ _G.pg.base.aircraft_template[81365] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[81366] = {
 	max_hp = 100,
 	hp_growth = 3861,
@@ -51675,7 +49061,6 @@ _G.pg.base.aircraft_template[81366] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[81367] = {
 	max_hp = 108,
 	hp_growth = 4166,
@@ -51686,7 +49071,6 @@ _G.pg.base.aircraft_template[81367] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[81368] = {
 	max_hp = 116,
 	hp_growth = 4471,
@@ -51697,7 +49081,6 @@ _G.pg.base.aircraft_template[81368] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[81369] = {
 	max_hp = 124,
 	hp_growth = 4776,
@@ -51708,7 +49091,6 @@ _G.pg.base.aircraft_template[81369] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[81370] = {
 	max_hp = 132,
 	hp_growth = 5080,
@@ -51719,7 +49101,6 @@ _G.pg.base.aircraft_template[81370] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[81371] = {
 	max_hp = 140,
 	hp_growth = 5385,
@@ -51730,7 +49111,6 @@ _G.pg.base.aircraft_template[81371] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[81372] = {
 	max_hp = 148,
 	hp_growth = 5690,
@@ -51741,7 +49121,6 @@ _G.pg.base.aircraft_template[81372] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[81373] = {
 	max_hp = 156,
 	hp_growth = 5995,
@@ -51752,7 +49131,6 @@ _G.pg.base.aircraft_template[81373] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[81380] = {
 	attack_power = 2,
 	name = "F8F熊猫",
@@ -51828,7 +49206,6 @@ _G.pg.base.aircraft_template[81380] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81381] = {
 	max_hp = 55,
 	hp_growth = 2103,
@@ -51839,7 +49216,6 @@ _G.pg.base.aircraft_template[81381] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[81382] = {
 	max_hp = 62,
 	hp_growth = 2378,
@@ -51850,7 +49226,6 @@ _G.pg.base.aircraft_template[81382] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[81383] = {
 	max_hp = 69,
 	hp_growth = 2652,
@@ -51861,7 +49236,6 @@ _G.pg.base.aircraft_template[81383] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[81384] = {
 	max_hp = 76,
 	hp_growth = 2926,
@@ -51872,7 +49246,6 @@ _G.pg.base.aircraft_template[81384] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[81385] = {
 	max_hp = 83,
 	hp_growth = 3201,
@@ -51883,7 +49256,6 @@ _G.pg.base.aircraft_template[81385] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[81386] = {
 	max_hp = 90,
 	hp_growth = 3475,
@@ -51894,7 +49266,6 @@ _G.pg.base.aircraft_template[81386] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[81387] = {
 	max_hp = 97,
 	hp_growth = 3749,
@@ -51905,7 +49276,6 @@ _G.pg.base.aircraft_template[81387] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[81388] = {
 	max_hp = 105,
 	hp_growth = 4024,
@@ -51916,7 +49286,6 @@ _G.pg.base.aircraft_template[81388] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[81389] = {
 	max_hp = 112,
 	hp_growth = 4298,
@@ -51927,7 +49296,6 @@ _G.pg.base.aircraft_template[81389] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[81390] = {
 	max_hp = 119,
 	hp_growth = 4572,
@@ -51938,7 +49306,6 @@ _G.pg.base.aircraft_template[81390] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[81391] = {
 	max_hp = 126,
 	hp_growth = 4847,
@@ -51949,7 +49316,6 @@ _G.pg.base.aircraft_template[81391] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[81392] = {
 	max_hp = 133,
 	hp_growth = 5121,
@@ -51960,7 +49326,6 @@ _G.pg.base.aircraft_template[81392] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[81393] = {
 	max_hp = 140,
 	hp_growth = 5395,
@@ -51971,7 +49336,6 @@ _G.pg.base.aircraft_template[81393] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[81400] = {
 	attack_power = 2,
 	name = "XF5F天箭",
@@ -52043,7 +49407,6 @@ _G.pg.base.aircraft_template[81400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81401] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -52055,7 +49418,6 @@ _G.pg.base.aircraft_template[81401] = {
 		50741
 	}
 }
-
 _G.pg.base.aircraft_template[81402] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -52067,7 +49429,6 @@ _G.pg.base.aircraft_template[81402] = {
 		50742
 	}
 }
-
 _G.pg.base.aircraft_template[81403] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -52079,7 +49440,6 @@ _G.pg.base.aircraft_template[81403] = {
 		50743
 	}
 }
-
 _G.pg.base.aircraft_template[81404] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -52091,7 +49451,6 @@ _G.pg.base.aircraft_template[81404] = {
 		50744
 	}
 }
-
 _G.pg.base.aircraft_template[81405] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -52103,7 +49462,6 @@ _G.pg.base.aircraft_template[81405] = {
 		50745
 	}
 }
-
 _G.pg.base.aircraft_template[81406] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -52115,7 +49473,6 @@ _G.pg.base.aircraft_template[81406] = {
 		50746
 	}
 }
-
 _G.pg.base.aircraft_template[81407] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -52127,7 +49484,6 @@ _G.pg.base.aircraft_template[81407] = {
 		50747
 	}
 }
-
 _G.pg.base.aircraft_template[81408] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -52139,7 +49495,6 @@ _G.pg.base.aircraft_template[81408] = {
 		50748
 	}
 }
-
 _G.pg.base.aircraft_template[81409] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -52151,7 +49506,6 @@ _G.pg.base.aircraft_template[81409] = {
 		50749
 	}
 }
-
 _G.pg.base.aircraft_template[81410] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -52163,7 +49517,6 @@ _G.pg.base.aircraft_template[81410] = {
 		50750
 	}
 }
-
 _G.pg.base.aircraft_template[81411] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -52175,7 +49528,6 @@ _G.pg.base.aircraft_template[81411] = {
 		50751
 	}
 }
-
 _G.pg.base.aircraft_template[81420] = {
 	attack_power = 2,
 	name = "试作型XF5U飞碟",
@@ -52251,7 +49603,6 @@ _G.pg.base.aircraft_template[81420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[81421] = {
 	max_hp = 71,
 	hp_growth = 2726,
@@ -52262,7 +49613,6 @@ _G.pg.base.aircraft_template[81421] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[81422] = {
 	max_hp = 80,
 	hp_growth = 3082,
@@ -52273,7 +49623,6 @@ _G.pg.base.aircraft_template[81422] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[81423] = {
 	max_hp = 89,
 	hp_growth = 3438,
@@ -52284,7 +49633,6 @@ _G.pg.base.aircraft_template[81423] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[81424] = {
 	max_hp = 99,
 	hp_growth = 3793,
@@ -52295,7 +49643,6 @@ _G.pg.base.aircraft_template[81424] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[81425] = {
 	max_hp = 108,
 	hp_growth = 4149,
@@ -52306,7 +49653,6 @@ _G.pg.base.aircraft_template[81425] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[81426] = {
 	max_hp = 117,
 	hp_growth = 4505,
@@ -52317,7 +49663,6 @@ _G.pg.base.aircraft_template[81426] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[81427] = {
 	max_hp = 126,
 	hp_growth = 4860,
@@ -52328,7 +49673,6 @@ _G.pg.base.aircraft_template[81427] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[81428] = {
 	max_hp = 136,
 	hp_growth = 5216,
@@ -52339,7 +49683,6 @@ _G.pg.base.aircraft_template[81428] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[81429] = {
 	max_hp = 145,
 	hp_growth = 5571,
@@ -52350,7 +49693,6 @@ _G.pg.base.aircraft_template[81429] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[81430] = {
 	max_hp = 154,
 	hp_growth = 5927,
@@ -52361,7 +49703,6 @@ _G.pg.base.aircraft_template[81430] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[81431] = {
 	max_hp = 163,
 	hp_growth = 6283,
@@ -52372,7 +49713,6 @@ _G.pg.base.aircraft_template[81431] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[81432] = {
 	max_hp = 173,
 	hp_growth = 6638,
@@ -52383,7 +49723,6 @@ _G.pg.base.aircraft_template[81432] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[81433] = {
 	max_hp = 182,
 	hp_growth = 6994,
@@ -52394,7 +49733,6 @@ _G.pg.base.aircraft_template[81433] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[82000] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -52471,7 +49809,6 @@ _G.pg.base.aircraft_template[82000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82001] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -52483,7 +49820,6 @@ _G.pg.base.aircraft_template[82001] = {
 		50501
 	}
 }
-
 _G.pg.base.aircraft_template[82002] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -52495,7 +49831,6 @@ _G.pg.base.aircraft_template[82002] = {
 		50502
 	}
 }
-
 _G.pg.base.aircraft_template[82003] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -52507,7 +49842,6 @@ _G.pg.base.aircraft_template[82003] = {
 		50503
 	}
 }
-
 _G.pg.base.aircraft_template[82020] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -52584,7 +49918,6 @@ _G.pg.base.aircraft_template[82020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82021] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -52596,7 +49929,6 @@ _G.pg.base.aircraft_template[82021] = {
 		50521
 	}
 }
-
 _G.pg.base.aircraft_template[82022] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -52608,7 +49940,6 @@ _G.pg.base.aircraft_template[82022] = {
 		50522
 	}
 }
-
 _G.pg.base.aircraft_template[82023] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -52620,7 +49951,6 @@ _G.pg.base.aircraft_template[82023] = {
 		50523
 	}
 }
-
 _G.pg.base.aircraft_template[82024] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -52632,7 +49962,6 @@ _G.pg.base.aircraft_template[82024] = {
 		50524
 	}
 }
-
 _G.pg.base.aircraft_template[82025] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -52644,7 +49973,6 @@ _G.pg.base.aircraft_template[82025] = {
 		50525
 	}
 }
-
 _G.pg.base.aircraft_template[82026] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -52656,7 +49984,6 @@ _G.pg.base.aircraft_template[82026] = {
 		50526
 	}
 }
-
 _G.pg.base.aircraft_template[82040] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -52733,7 +50060,6 @@ _G.pg.base.aircraft_template[82040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82041] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -52745,7 +50071,6 @@ _G.pg.base.aircraft_template[82041] = {
 		50541
 	}
 }
-
 _G.pg.base.aircraft_template[82042] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -52757,7 +50082,6 @@ _G.pg.base.aircraft_template[82042] = {
 		50542
 	}
 }
-
 _G.pg.base.aircraft_template[82043] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -52769,7 +50093,6 @@ _G.pg.base.aircraft_template[82043] = {
 		50543
 	}
 }
-
 _G.pg.base.aircraft_template[82044] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -52781,7 +50104,6 @@ _G.pg.base.aircraft_template[82044] = {
 		50544
 	}
 }
-
 _G.pg.base.aircraft_template[82045] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -52793,7 +50115,6 @@ _G.pg.base.aircraft_template[82045] = {
 		50545
 	}
 }
-
 _G.pg.base.aircraft_template[82046] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -52805,7 +50126,6 @@ _G.pg.base.aircraft_template[82046] = {
 		50546
 	}
 }
-
 _G.pg.base.aircraft_template[82047] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -52817,7 +50137,6 @@ _G.pg.base.aircraft_template[82047] = {
 		50547
 	}
 }
-
 _G.pg.base.aircraft_template[82048] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -52829,7 +50148,6 @@ _G.pg.base.aircraft_template[82048] = {
 		50548
 	}
 }
-
 _G.pg.base.aircraft_template[82049] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -52841,7 +50159,6 @@ _G.pg.base.aircraft_template[82049] = {
 		50549
 	}
 }
-
 _G.pg.base.aircraft_template[82050] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -52853,7 +50170,6 @@ _G.pg.base.aircraft_template[82050] = {
 		50550
 	}
 }
-
 _G.pg.base.aircraft_template[82051] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -52865,7 +50181,6 @@ _G.pg.base.aircraft_template[82051] = {
 		50551
 	}
 }
-
 _G.pg.base.aircraft_template[82060] = {
 	attack_power = 2,
 	name = "海喷火FR.47",
@@ -52942,7 +50257,6 @@ _G.pg.base.aircraft_template[82060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82061] = {
 	max_hp = 49,
 	hp_growth = 1883,
@@ -52954,7 +50268,6 @@ _G.pg.base.aircraft_template[82061] = {
 		50561
 	}
 }
-
 _G.pg.base.aircraft_template[82062] = {
 	max_hp = 55,
 	hp_growth = 2128,
@@ -52966,7 +50279,6 @@ _G.pg.base.aircraft_template[82062] = {
 		50562
 	}
 }
-
 _G.pg.base.aircraft_template[82063] = {
 	max_hp = 62,
 	hp_growth = 2374,
@@ -52978,7 +50290,6 @@ _G.pg.base.aircraft_template[82063] = {
 		50563
 	}
 }
-
 _G.pg.base.aircraft_template[82064] = {
 	max_hp = 68,
 	hp_growth = 2619,
@@ -52990,7 +50301,6 @@ _G.pg.base.aircraft_template[82064] = {
 		50564
 	}
 }
-
 _G.pg.base.aircraft_template[82065] = {
 	max_hp = 74,
 	hp_growth = 2865,
@@ -53002,7 +50312,6 @@ _G.pg.base.aircraft_template[82065] = {
 		50565
 	}
 }
-
 _G.pg.base.aircraft_template[82066] = {
 	max_hp = 81,
 	hp_growth = 3110,
@@ -53014,7 +50323,6 @@ _G.pg.base.aircraft_template[82066] = {
 		50566
 	}
 }
-
 _G.pg.base.aircraft_template[82067] = {
 	max_hp = 87,
 	hp_growth = 3356,
@@ -53026,7 +50334,6 @@ _G.pg.base.aircraft_template[82067] = {
 		50567
 	}
 }
-
 _G.pg.base.aircraft_template[82068] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -53038,7 +50345,6 @@ _G.pg.base.aircraft_template[82068] = {
 		50568
 	}
 }
-
 _G.pg.base.aircraft_template[82069] = {
 	max_hp = 100,
 	hp_growth = 3847,
@@ -53050,7 +50356,6 @@ _G.pg.base.aircraft_template[82069] = {
 		50569
 	}
 }
-
 _G.pg.base.aircraft_template[82070] = {
 	max_hp = 106,
 	hp_growth = 4092,
@@ -53062,7 +50367,6 @@ _G.pg.base.aircraft_template[82070] = {
 		50570
 	}
 }
-
 _G.pg.base.aircraft_template[82071] = {
 	max_hp = 113,
 	hp_growth = 4338,
@@ -53074,7 +50378,6 @@ _G.pg.base.aircraft_template[82071] = {
 		50571
 	}
 }
-
 _G.pg.base.aircraft_template[82072] = {
 	max_hp = 119,
 	hp_growth = 4584,
@@ -53086,7 +50389,6 @@ _G.pg.base.aircraft_template[82072] = {
 		50572
 	}
 }
-
 _G.pg.base.aircraft_template[82073] = {
 	max_hp = 126,
 	hp_growth = 4829,
@@ -53098,7 +50400,6 @@ _G.pg.base.aircraft_template[82073] = {
 		50573
 	}
 }
-
 _G.pg.base.aircraft_template[82100] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -53174,7 +50475,6 @@ _G.pg.base.aircraft_template[82100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82101] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -53185,7 +50485,6 @@ _G.pg.base.aircraft_template[82101] = {
 		50601
 	}
 }
-
 _G.pg.base.aircraft_template[82102] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -53196,7 +50495,6 @@ _G.pg.base.aircraft_template[82102] = {
 		50602
 	}
 }
-
 _G.pg.base.aircraft_template[82103] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -53207,7 +50505,6 @@ _G.pg.base.aircraft_template[82103] = {
 		50603
 	}
 }
-
 _G.pg.base.aircraft_template[82104] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -53218,7 +50515,6 @@ _G.pg.base.aircraft_template[82104] = {
 		50604
 	}
 }
-
 _G.pg.base.aircraft_template[82105] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -53229,7 +50525,6 @@ _G.pg.base.aircraft_template[82105] = {
 		50605
 	}
 }
-
 _G.pg.base.aircraft_template[82106] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -53240,7 +50535,6 @@ _G.pg.base.aircraft_template[82106] = {
 		50606
 	}
 }
-
 _G.pg.base.aircraft_template[82120] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -53316,7 +50610,6 @@ _G.pg.base.aircraft_template[82120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82121] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -53327,7 +50620,6 @@ _G.pg.base.aircraft_template[82121] = {
 		50621
 	}
 }
-
 _G.pg.base.aircraft_template[82122] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -53338,7 +50630,6 @@ _G.pg.base.aircraft_template[82122] = {
 		50622
 	}
 }
-
 _G.pg.base.aircraft_template[82123] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -53349,7 +50640,6 @@ _G.pg.base.aircraft_template[82123] = {
 		50623
 	}
 }
-
 _G.pg.base.aircraft_template[82124] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -53360,7 +50650,6 @@ _G.pg.base.aircraft_template[82124] = {
 		50624
 	}
 }
-
 _G.pg.base.aircraft_template[82125] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -53371,7 +50660,6 @@ _G.pg.base.aircraft_template[82125] = {
 		50625
 	}
 }
-
 _G.pg.base.aircraft_template[82126] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -53382,7 +50670,6 @@ _G.pg.base.aircraft_template[82126] = {
 		50626
 	}
 }
-
 _G.pg.base.aircraft_template[82127] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -53393,7 +50680,6 @@ _G.pg.base.aircraft_template[82127] = {
 		50627
 	}
 }
-
 _G.pg.base.aircraft_template[82128] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -53404,7 +50690,6 @@ _G.pg.base.aircraft_template[82128] = {
 		50628
 	}
 }
-
 _G.pg.base.aircraft_template[82129] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -53415,7 +50700,6 @@ _G.pg.base.aircraft_template[82129] = {
 		50629
 	}
 }
-
 _G.pg.base.aircraft_template[82130] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -53426,7 +50710,6 @@ _G.pg.base.aircraft_template[82130] = {
 		50630
 	}
 }
-
 _G.pg.base.aircraft_template[82140] = {
 	attack_power = 2,
 	name = "海毒牙",
@@ -53502,7 +50785,6 @@ _G.pg.base.aircraft_template[82140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82141] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -53513,7 +50795,6 @@ _G.pg.base.aircraft_template[82141] = {
 		50641
 	}
 }
-
 _G.pg.base.aircraft_template[82142] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -53524,7 +50805,6 @@ _G.pg.base.aircraft_template[82142] = {
 		50642
 	}
 }
-
 _G.pg.base.aircraft_template[82143] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -53535,7 +50815,6 @@ _G.pg.base.aircraft_template[82143] = {
 		50643
 	}
 }
-
 _G.pg.base.aircraft_template[82144] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -53546,7 +50825,6 @@ _G.pg.base.aircraft_template[82144] = {
 		50644
 	}
 }
-
 _G.pg.base.aircraft_template[82145] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -53557,7 +50835,6 @@ _G.pg.base.aircraft_template[82145] = {
 		50645
 	}
 }
-
 _G.pg.base.aircraft_template[82146] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -53568,7 +50845,6 @@ _G.pg.base.aircraft_template[82146] = {
 		50646
 	}
 }
-
 _G.pg.base.aircraft_template[82147] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -53579,7 +50855,6 @@ _G.pg.base.aircraft_template[82147] = {
 		50647
 	}
 }
-
 _G.pg.base.aircraft_template[82148] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -53590,7 +50865,6 @@ _G.pg.base.aircraft_template[82148] = {
 		50648
 	}
 }
-
 _G.pg.base.aircraft_template[82149] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -53601,7 +50875,6 @@ _G.pg.base.aircraft_template[82149] = {
 		50649
 	}
 }
-
 _G.pg.base.aircraft_template[82150] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -53612,7 +50885,6 @@ _G.pg.base.aircraft_template[82150] = {
 		50650
 	}
 }
-
 _G.pg.base.aircraft_template[82151] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -53623,7 +50895,6 @@ _G.pg.base.aircraft_template[82151] = {
 		50651
 	}
 }
-
 _G.pg.base.aircraft_template[82152] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -53634,7 +50905,6 @@ _G.pg.base.aircraft_template[82152] = {
 		50652
 	}
 }
-
 _G.pg.base.aircraft_template[82153] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -53645,7 +50915,6 @@ _G.pg.base.aircraft_template[82153] = {
 		50653
 	}
 }
-
 _G.pg.base.aircraft_template[82200] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -53721,7 +50990,6 @@ _G.pg.base.aircraft_template[82200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82201] = {
 	max_hp = 32,
 	hp_growth = 1236,
@@ -53732,7 +51000,6 @@ _G.pg.base.aircraft_template[82201] = {
 		50101
 	}
 }
-
 _G.pg.base.aircraft_template[82202] = {
 	max_hp = 36,
 	hp_growth = 1398,
@@ -53743,7 +51010,6 @@ _G.pg.base.aircraft_template[82202] = {
 		50102
 	}
 }
-
 _G.pg.base.aircraft_template[82203] = {
 	max_hp = 41,
 	hp_growth = 1559,
@@ -53754,7 +51020,6 @@ _G.pg.base.aircraft_template[82203] = {
 		50103
 	}
 }
-
 _G.pg.base.aircraft_template[82220] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -53830,7 +51095,6 @@ _G.pg.base.aircraft_template[82220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82221] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -53841,7 +51105,6 @@ _G.pg.base.aircraft_template[82221] = {
 		50121
 	}
 }
-
 _G.pg.base.aircraft_template[82222] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -53852,7 +51115,6 @@ _G.pg.base.aircraft_template[82222] = {
 		50122
 	}
 }
-
 _G.pg.base.aircraft_template[82223] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -53863,7 +51125,6 @@ _G.pg.base.aircraft_template[82223] = {
 		50123
 	}
 }
-
 _G.pg.base.aircraft_template[82240] = {
 	attack_power = 2,
 	name = "海斗士",
@@ -53939,7 +51200,6 @@ _G.pg.base.aircraft_template[82240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82241] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -53950,7 +51210,6 @@ _G.pg.base.aircraft_template[82241] = {
 		50141
 	}
 }
-
 _G.pg.base.aircraft_template[82242] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -53961,7 +51220,6 @@ _G.pg.base.aircraft_template[82242] = {
 		50142
 	}
 }
-
 _G.pg.base.aircraft_template[82243] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -53972,7 +51230,6 @@ _G.pg.base.aircraft_template[82243] = {
 		50143
 	}
 }
-
 _G.pg.base.aircraft_template[82244] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -53983,7 +51240,6 @@ _G.pg.base.aircraft_template[82244] = {
 		50144
 	}
 }
-
 _G.pg.base.aircraft_template[82245] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -53994,7 +51250,6 @@ _G.pg.base.aircraft_template[82245] = {
 		50145
 	}
 }
-
 _G.pg.base.aircraft_template[82246] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -54005,7 +51260,6 @@ _G.pg.base.aircraft_template[82246] = {
 		50146
 	}
 }
-
 _G.pg.base.aircraft_template[82247] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -54016,7 +51270,6 @@ _G.pg.base.aircraft_template[82247] = {
 		50147
 	}
 }
-
 _G.pg.base.aircraft_template[82260] = {
 	attack_power = 2,
 	name = "海飓风",
@@ -54092,7 +51345,6 @@ _G.pg.base.aircraft_template[82260] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82261] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -54103,7 +51355,6 @@ _G.pg.base.aircraft_template[82261] = {
 		50161
 	}
 }
-
 _G.pg.base.aircraft_template[82262] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -54114,7 +51365,6 @@ _G.pg.base.aircraft_template[82262] = {
 		50162
 	}
 }
-
 _G.pg.base.aircraft_template[82263] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -54125,7 +51375,6 @@ _G.pg.base.aircraft_template[82263] = {
 		50163
 	}
 }
-
 _G.pg.base.aircraft_template[82264] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -54136,7 +51385,6 @@ _G.pg.base.aircraft_template[82264] = {
 		50164
 	}
 }
-
 _G.pg.base.aircraft_template[82265] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -54147,7 +51395,6 @@ _G.pg.base.aircraft_template[82265] = {
 		50165
 	}
 }
-
 _G.pg.base.aircraft_template[82266] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -54158,7 +51405,6 @@ _G.pg.base.aircraft_template[82266] = {
 		50166
 	}
 }
-
 _G.pg.base.aircraft_template[82267] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -54169,7 +51415,6 @@ _G.pg.base.aircraft_template[82267] = {
 		50167
 	}
 }
-
 _G.pg.base.aircraft_template[82300] = {
 	attack_power = 2,
 	name = "海怒",
@@ -54245,7 +51490,6 @@ _G.pg.base.aircraft_template[82300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82301] = {
 	max_hp = 49,
 	hp_growth = 1892,
@@ -54256,7 +51500,6 @@ _G.pg.base.aircraft_template[82301] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[82302] = {
 	max_hp = 56,
 	hp_growth = 2139,
@@ -54267,7 +51510,6 @@ _G.pg.base.aircraft_template[82302] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[82303] = {
 	max_hp = 62,
 	hp_growth = 2385,
@@ -54278,7 +51520,6 @@ _G.pg.base.aircraft_template[82303] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[82304] = {
 	max_hp = 68,
 	hp_growth = 2632,
@@ -54289,7 +51530,6 @@ _G.pg.base.aircraft_template[82304] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[82305] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -54300,7 +51540,6 @@ _G.pg.base.aircraft_template[82305] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[82306] = {
 	max_hp = 81,
 	hp_growth = 3126,
@@ -54311,7 +51550,6 @@ _G.pg.base.aircraft_template[82306] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[82307] = {
 	max_hp = 88,
 	hp_growth = 3372,
@@ -54322,7 +51560,6 @@ _G.pg.base.aircraft_template[82307] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[82308] = {
 	max_hp = 94,
 	hp_growth = 3619,
@@ -54333,7 +51570,6 @@ _G.pg.base.aircraft_template[82308] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[82309] = {
 	max_hp = 101,
 	hp_growth = 3866,
@@ -54344,7 +51580,6 @@ _G.pg.base.aircraft_template[82309] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[82310] = {
 	max_hp = 107,
 	hp_growth = 4113,
@@ -54355,7 +51590,6 @@ _G.pg.base.aircraft_template[82310] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[82311] = {
 	max_hp = 113,
 	hp_growth = 4359,
@@ -54366,7 +51600,6 @@ _G.pg.base.aircraft_template[82311] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[82312] = {
 	max_hp = 120,
 	hp_growth = 4606,
@@ -54377,7 +51610,6 @@ _G.pg.base.aircraft_template[82312] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[82313] = {
 	max_hp = 126,
 	hp_growth = 4853,
@@ -54388,7 +51620,6 @@ _G.pg.base.aircraft_template[82313] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[82320] = {
 	attack_power = 2,
 	name = "海大黄蜂",
@@ -54464,7 +51695,6 @@ _G.pg.base.aircraft_template[82320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82321] = {
 	max_hp = 57,
 	hp_growth = 2189,
@@ -54475,7 +51705,6 @@ _G.pg.base.aircraft_template[82321] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[82322] = {
 	max_hp = 64,
 	hp_growth = 2474,
@@ -54486,7 +51715,6 @@ _G.pg.base.aircraft_template[82322] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[82323] = {
 	max_hp = 72,
 	hp_growth = 2760,
@@ -54497,7 +51725,6 @@ _G.pg.base.aircraft_template[82323] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[82324] = {
 	max_hp = 79,
 	hp_growth = 3045,
@@ -54508,7 +51735,6 @@ _G.pg.base.aircraft_template[82324] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[82325] = {
 	max_hp = 87,
 	hp_growth = 3330,
@@ -54519,7 +51745,6 @@ _G.pg.base.aircraft_template[82325] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[82326] = {
 	max_hp = 94,
 	hp_growth = 3616,
@@ -54530,7 +51755,6 @@ _G.pg.base.aircraft_template[82326] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[82327] = {
 	max_hp = 101,
 	hp_growth = 3901,
@@ -54541,7 +51765,6 @@ _G.pg.base.aircraft_template[82327] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[82328] = {
 	max_hp = 109,
 	hp_growth = 4187,
@@ -54552,7 +51775,6 @@ _G.pg.base.aircraft_template[82328] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[82329] = {
 	max_hp = 116,
 	hp_growth = 4472,
@@ -54563,7 +51785,6 @@ _G.pg.base.aircraft_template[82329] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[82330] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -54574,7 +51795,6 @@ _G.pg.base.aircraft_template[82330] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[82331] = {
 	max_hp = 131,
 	hp_growth = 5043,
@@ -54585,7 +51805,6 @@ _G.pg.base.aircraft_template[82331] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[82332] = {
 	max_hp = 139,
 	hp_growth = 5329,
@@ -54596,7 +51815,6 @@ _G.pg.base.aircraft_template[82332] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[82333] = {
 	max_hp = 146,
 	hp_growth = 5614,
@@ -54607,7 +51825,6 @@ _G.pg.base.aircraft_template[82333] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[82980] = {
 	attack_power = 2,
 	name = "飞龙",
@@ -54683,7 +51900,6 @@ _G.pg.base.aircraft_template[82980] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[82981] = {
 	max_hp = 47,
 	hp_growth = 1818,
@@ -54694,7 +51910,6 @@ _G.pg.base.aircraft_template[82981] = {
 		50661
 	}
 }
-
 _G.pg.base.aircraft_template[82982] = {
 	max_hp = 53,
 	hp_growth = 2055,
@@ -54705,7 +51920,6 @@ _G.pg.base.aircraft_template[82982] = {
 		50662
 	}
 }
-
 _G.pg.base.aircraft_template[82983] = {
 	max_hp = 60,
 	hp_growth = 2292,
@@ -54716,7 +51930,6 @@ _G.pg.base.aircraft_template[82983] = {
 		50663
 	}
 }
-
 _G.pg.base.aircraft_template[82984] = {
 	max_hp = 66,
 	hp_growth = 2529,
@@ -54727,7 +51940,6 @@ _G.pg.base.aircraft_template[82984] = {
 		50664
 	}
 }
-
 _G.pg.base.aircraft_template[82985] = {
 	max_hp = 72,
 	hp_growth = 2766,
@@ -54738,7 +51950,6 @@ _G.pg.base.aircraft_template[82985] = {
 		50665
 	}
 }
-
 _G.pg.base.aircraft_template[82986] = {
 	max_hp = 78,
 	hp_growth = 3004,
@@ -54749,7 +51960,6 @@ _G.pg.base.aircraft_template[82986] = {
 		50666
 	}
 }
-
 _G.pg.base.aircraft_template[82987] = {
 	max_hp = 84,
 	hp_growth = 3241,
@@ -54760,7 +51970,6 @@ _G.pg.base.aircraft_template[82987] = {
 		50667
 	}
 }
-
 _G.pg.base.aircraft_template[82988] = {
 	max_hp = 90,
 	hp_growth = 3478,
@@ -54771,7 +51980,6 @@ _G.pg.base.aircraft_template[82988] = {
 		50668
 	}
 }
-
 _G.pg.base.aircraft_template[82989] = {
 	max_hp = 97,
 	hp_growth = 3715,
@@ -54782,7 +51990,6 @@ _G.pg.base.aircraft_template[82989] = {
 		50669
 	}
 }
-
 _G.pg.base.aircraft_template[82990] = {
 	max_hp = 103,
 	hp_growth = 3952,
@@ -54793,7 +52000,6 @@ _G.pg.base.aircraft_template[82990] = {
 		50670
 	}
 }
-
 _G.pg.base.aircraft_template[82991] = {
 	max_hp = 109,
 	hp_growth = 4189,
@@ -54804,7 +52010,6 @@ _G.pg.base.aircraft_template[82991] = {
 		50671
 	}
 }
-
 _G.pg.base.aircraft_template[82992] = {
 	max_hp = 115,
 	hp_growth = 4426,
@@ -54815,7 +52020,6 @@ _G.pg.base.aircraft_template[82992] = {
 		50672
 	}
 }
-
 _G.pg.base.aircraft_template[82993] = {
 	max_hp = 121,
 	hp_growth = 4663,
@@ -54826,7 +52030,6 @@ _G.pg.base.aircraft_template[82993] = {
 		50673
 	}
 }
-
 _G.pg.base.aircraft_template[83000] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -54902,7 +52105,6 @@ _G.pg.base.aircraft_template[83000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83001] = {
 	max_hp = 31,
 	hp_growth = 1175,
@@ -54913,7 +52115,6 @@ _G.pg.base.aircraft_template[83001] = {
 		50001
 	}
 }
-
 _G.pg.base.aircraft_template[83002] = {
 	max_hp = 35,
 	hp_growth = 1328,
@@ -54924,7 +52125,6 @@ _G.pg.base.aircraft_template[83002] = {
 		50002
 	}
 }
-
 _G.pg.base.aircraft_template[83003] = {
 	max_hp = 39,
 	hp_growth = 1481,
@@ -54935,7 +52135,6 @@ _G.pg.base.aircraft_template[83003] = {
 		50003
 	}
 }
-
 _G.pg.base.aircraft_template[83020] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -55011,7 +52210,6 @@ _G.pg.base.aircraft_template[83020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83021] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -55022,7 +52220,6 @@ _G.pg.base.aircraft_template[83021] = {
 		50021
 	}
 }
-
 _G.pg.base.aircraft_template[83022] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -55033,7 +52230,6 @@ _G.pg.base.aircraft_template[83022] = {
 		50022
 	}
 }
-
 _G.pg.base.aircraft_template[83023] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -55044,7 +52240,6 @@ _G.pg.base.aircraft_template[83023] = {
 		50023
 	}
 }
-
 _G.pg.base.aircraft_template[83040] = {
 	attack_power = 2,
 	name = "96式舰战",
@@ -55120,7 +52315,6 @@ _G.pg.base.aircraft_template[83040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83041] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -55131,7 +52325,6 @@ _G.pg.base.aircraft_template[83041] = {
 		50041
 	}
 }
-
 _G.pg.base.aircraft_template[83042] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -55142,7 +52335,6 @@ _G.pg.base.aircraft_template[83042] = {
 		50042
 	}
 }
-
 _G.pg.base.aircraft_template[83043] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -55153,7 +52345,6 @@ _G.pg.base.aircraft_template[83043] = {
 		50043
 	}
 }
-
 _G.pg.base.aircraft_template[83044] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -55164,7 +52355,6 @@ _G.pg.base.aircraft_template[83044] = {
 		50044
 	}
 }
-
 _G.pg.base.aircraft_template[83045] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -55175,7 +52365,6 @@ _G.pg.base.aircraft_template[83045] = {
 		50045
 	}
 }
-
 _G.pg.base.aircraft_template[83046] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -55186,7 +52375,6 @@ _G.pg.base.aircraft_template[83046] = {
 		50046
 	}
 }
-
 _G.pg.base.aircraft_template[83047] = {
 	max_hp = 68,
 	hp_growth = 2617,
@@ -55197,7 +52385,6 @@ _G.pg.base.aircraft_template[83047] = {
 		50047
 	}
 }
-
 _G.pg.base.aircraft_template[83100] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -55274,7 +52461,6 @@ _G.pg.base.aircraft_template[83100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83101] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -55286,7 +52472,6 @@ _G.pg.base.aircraft_template[83101] = {
 		50501
 	}
 }
-
 _G.pg.base.aircraft_template[83102] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -55298,7 +52483,6 @@ _G.pg.base.aircraft_template[83102] = {
 		50502
 	}
 }
-
 _G.pg.base.aircraft_template[83103] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -55310,7 +52494,6 @@ _G.pg.base.aircraft_template[83103] = {
 		50503
 	}
 }
-
 _G.pg.base.aircraft_template[83120] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -55387,7 +52570,6 @@ _G.pg.base.aircraft_template[83120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83121] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -55399,7 +52581,6 @@ _G.pg.base.aircraft_template[83121] = {
 		50521
 	}
 }
-
 _G.pg.base.aircraft_template[83122] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -55411,7 +52592,6 @@ _G.pg.base.aircraft_template[83122] = {
 		50522
 	}
 }
-
 _G.pg.base.aircraft_template[83123] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -55423,7 +52603,6 @@ _G.pg.base.aircraft_template[83123] = {
 		50523
 	}
 }
-
 _G.pg.base.aircraft_template[83124] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -55435,7 +52614,6 @@ _G.pg.base.aircraft_template[83124] = {
 		50524
 	}
 }
-
 _G.pg.base.aircraft_template[83125] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -55447,7 +52625,6 @@ _G.pg.base.aircraft_template[83125] = {
 		50525
 	}
 }
-
 _G.pg.base.aircraft_template[83126] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -55459,7 +52636,6 @@ _G.pg.base.aircraft_template[83126] = {
 		50526
 	}
 }
-
 _G.pg.base.aircraft_template[83140] = {
 	attack_power = 2,
 	name = "零战二一型",
@@ -55536,7 +52712,6 @@ _G.pg.base.aircraft_template[83140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83141] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -55548,7 +52723,6 @@ _G.pg.base.aircraft_template[83141] = {
 		50541
 	}
 }
-
 _G.pg.base.aircraft_template[83142] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -55560,7 +52734,6 @@ _G.pg.base.aircraft_template[83142] = {
 		50542
 	}
 }
-
 _G.pg.base.aircraft_template[83143] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -55572,7 +52745,6 @@ _G.pg.base.aircraft_template[83143] = {
 		50543
 	}
 }
-
 _G.pg.base.aircraft_template[83144] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -55584,7 +52756,6 @@ _G.pg.base.aircraft_template[83144] = {
 		50544
 	}
 }
-
 _G.pg.base.aircraft_template[83145] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -55596,7 +52767,6 @@ _G.pg.base.aircraft_template[83145] = {
 		50545
 	}
 }
-
 _G.pg.base.aircraft_template[83146] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -55608,7 +52778,6 @@ _G.pg.base.aircraft_template[83146] = {
 		50546
 	}
 }
-
 _G.pg.base.aircraft_template[83147] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -55620,7 +52789,6 @@ _G.pg.base.aircraft_template[83147] = {
 		50547
 	}
 }
-
 _G.pg.base.aircraft_template[83148] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -55632,7 +52800,6 @@ _G.pg.base.aircraft_template[83148] = {
 		50548
 	}
 }
-
 _G.pg.base.aircraft_template[83149] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -55644,7 +52811,6 @@ _G.pg.base.aircraft_template[83149] = {
 		50549
 	}
 }
-
 _G.pg.base.aircraft_template[83150] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -55656,7 +52822,6 @@ _G.pg.base.aircraft_template[83150] = {
 		50550
 	}
 }
-
 _G.pg.base.aircraft_template[83151] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -55668,7 +52833,6 @@ _G.pg.base.aircraft_template[83151] = {
 		50551
 	}
 }
-
 _G.pg.base.aircraft_template[83160] = {
 	attack_power = 2,
 	name = "零战三二型",
@@ -55745,7 +52909,6 @@ _G.pg.base.aircraft_template[83160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83161] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -55757,7 +52920,6 @@ _G.pg.base.aircraft_template[83161] = {
 		50561
 	}
 }
-
 _G.pg.base.aircraft_template[83162] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -55769,7 +52931,6 @@ _G.pg.base.aircraft_template[83162] = {
 		50562
 	}
 }
-
 _G.pg.base.aircraft_template[83163] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -55781,7 +52942,6 @@ _G.pg.base.aircraft_template[83163] = {
 		50563
 	}
 }
-
 _G.pg.base.aircraft_template[83164] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -55793,7 +52953,6 @@ _G.pg.base.aircraft_template[83164] = {
 		50564
 	}
 }
-
 _G.pg.base.aircraft_template[83165] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -55805,7 +52964,6 @@ _G.pg.base.aircraft_template[83165] = {
 		50565
 	}
 }
-
 _G.pg.base.aircraft_template[83166] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -55817,7 +52975,6 @@ _G.pg.base.aircraft_template[83166] = {
 		50566
 	}
 }
-
 _G.pg.base.aircraft_template[83167] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -55829,7 +52986,6 @@ _G.pg.base.aircraft_template[83167] = {
 		50567
 	}
 }
-
 _G.pg.base.aircraft_template[83168] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -55841,7 +52997,6 @@ _G.pg.base.aircraft_template[83168] = {
 		50568
 	}
 }
-
 _G.pg.base.aircraft_template[83169] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -55853,7 +53008,6 @@ _G.pg.base.aircraft_template[83169] = {
 		50569
 	}
 }
-
 _G.pg.base.aircraft_template[83170] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -55865,7 +53019,6 @@ _G.pg.base.aircraft_template[83170] = {
 		50570
 	}
 }
-
 _G.pg.base.aircraft_template[83171] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -55877,7 +53030,6 @@ _G.pg.base.aircraft_template[83171] = {
 		50571
 	}
 }
-
 _G.pg.base.aircraft_template[83200] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -55954,7 +53106,6 @@ _G.pg.base.aircraft_template[83200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83201] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -55966,7 +53117,6 @@ _G.pg.base.aircraft_template[83201] = {
 		50501
 	}
 }
-
 _G.pg.base.aircraft_template[83202] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -55978,7 +53128,6 @@ _G.pg.base.aircraft_template[83202] = {
 		50502
 	}
 }
-
 _G.pg.base.aircraft_template[83203] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -55990,7 +53139,6 @@ _G.pg.base.aircraft_template[83203] = {
 		50503
 	}
 }
-
 _G.pg.base.aircraft_template[83204] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -56002,7 +53150,6 @@ _G.pg.base.aircraft_template[83204] = {
 		50504
 	}
 }
-
 _G.pg.base.aircraft_template[83205] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -56014,7 +53161,6 @@ _G.pg.base.aircraft_template[83205] = {
 		50505
 	}
 }
-
 _G.pg.base.aircraft_template[83206] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -56026,7 +53172,6 @@ _G.pg.base.aircraft_template[83206] = {
 		50506
 	}
 }
-
 _G.pg.base.aircraft_template[83220] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -56103,7 +53248,6 @@ _G.pg.base.aircraft_template[83220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83221] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -56115,7 +53259,6 @@ _G.pg.base.aircraft_template[83221] = {
 		50521
 	}
 }
-
 _G.pg.base.aircraft_template[83222] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -56127,7 +53270,6 @@ _G.pg.base.aircraft_template[83222] = {
 		50522
 	}
 }
-
 _G.pg.base.aircraft_template[83223] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -56139,7 +53281,6 @@ _G.pg.base.aircraft_template[83223] = {
 		50523
 	}
 }
-
 _G.pg.base.aircraft_template[83224] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -56151,7 +53292,6 @@ _G.pg.base.aircraft_template[83224] = {
 		50524
 	}
 }
-
 _G.pg.base.aircraft_template[83225] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -56163,7 +53303,6 @@ _G.pg.base.aircraft_template[83225] = {
 		50525
 	}
 }
-
 _G.pg.base.aircraft_template[83226] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -56175,7 +53314,6 @@ _G.pg.base.aircraft_template[83226] = {
 		50526
 	}
 }
-
 _G.pg.base.aircraft_template[83227] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -56187,7 +53325,6 @@ _G.pg.base.aircraft_template[83227] = {
 		50527
 	}
 }
-
 _G.pg.base.aircraft_template[83228] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -56199,7 +53336,6 @@ _G.pg.base.aircraft_template[83228] = {
 		50528
 	}
 }
-
 _G.pg.base.aircraft_template[83229] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -56211,7 +53347,6 @@ _G.pg.base.aircraft_template[83229] = {
 		50529
 	}
 }
-
 _G.pg.base.aircraft_template[83230] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -56223,7 +53358,6 @@ _G.pg.base.aircraft_template[83230] = {
 		50530
 	}
 }
-
 _G.pg.base.aircraft_template[83240] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -56300,7 +53434,6 @@ _G.pg.base.aircraft_template[83240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83241] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -56312,7 +53445,6 @@ _G.pg.base.aircraft_template[83241] = {
 		50541
 	}
 }
-
 _G.pg.base.aircraft_template[83242] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -56324,7 +53456,6 @@ _G.pg.base.aircraft_template[83242] = {
 		50542
 	}
 }
-
 _G.pg.base.aircraft_template[83243] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -56336,7 +53467,6 @@ _G.pg.base.aircraft_template[83243] = {
 		50543
 	}
 }
-
 _G.pg.base.aircraft_template[83244] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -56348,7 +53478,6 @@ _G.pg.base.aircraft_template[83244] = {
 		50544
 	}
 }
-
 _G.pg.base.aircraft_template[83245] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -56360,7 +53489,6 @@ _G.pg.base.aircraft_template[83245] = {
 		50545
 	}
 }
-
 _G.pg.base.aircraft_template[83246] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -56372,7 +53500,6 @@ _G.pg.base.aircraft_template[83246] = {
 		50546
 	}
 }
-
 _G.pg.base.aircraft_template[83247] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -56384,7 +53511,6 @@ _G.pg.base.aircraft_template[83247] = {
 		50547
 	}
 }
-
 _G.pg.base.aircraft_template[83248] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -56396,7 +53522,6 @@ _G.pg.base.aircraft_template[83248] = {
 		50548
 	}
 }
-
 _G.pg.base.aircraft_template[83249] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -56408,7 +53533,6 @@ _G.pg.base.aircraft_template[83249] = {
 		50549
 	}
 }
-
 _G.pg.base.aircraft_template[83250] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -56420,7 +53544,6 @@ _G.pg.base.aircraft_template[83250] = {
 		50550
 	}
 }
-
 _G.pg.base.aircraft_template[83251] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -56432,7 +53555,6 @@ _G.pg.base.aircraft_template[83251] = {
 		50551
 	}
 }
-
 _G.pg.base.aircraft_template[83252] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -56444,7 +53566,6 @@ _G.pg.base.aircraft_template[83252] = {
 		50552
 	}
 }
-
 _G.pg.base.aircraft_template[83253] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -56456,7 +53577,6 @@ _G.pg.base.aircraft_template[83253] = {
 		50553
 	}
 }
-
 _G.pg.base.aircraft_template[83300] = {
 	attack_power = 2,
 	name = "烈风",
@@ -56532,7 +53652,6 @@ _G.pg.base.aircraft_template[83300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83301] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -56543,7 +53662,6 @@ _G.pg.base.aircraft_template[83301] = {
 		59501
 	}
 }
-
 _G.pg.base.aircraft_template[83302] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -56554,7 +53672,6 @@ _G.pg.base.aircraft_template[83302] = {
 		59502
 	}
 }
-
 _G.pg.base.aircraft_template[83303] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -56565,7 +53682,6 @@ _G.pg.base.aircraft_template[83303] = {
 		59503
 	}
 }
-
 _G.pg.base.aircraft_template[83304] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -56576,7 +53692,6 @@ _G.pg.base.aircraft_template[83304] = {
 		59504
 	}
 }
-
 _G.pg.base.aircraft_template[83305] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -56587,7 +53702,6 @@ _G.pg.base.aircraft_template[83305] = {
 		59505
 	}
 }
-
 _G.pg.base.aircraft_template[83306] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -56598,7 +53712,6 @@ _G.pg.base.aircraft_template[83306] = {
 		59506
 	}
 }
-
 _G.pg.base.aircraft_template[83320] = {
 	attack_power = 2,
 	name = "烈风",
@@ -56674,7 +53787,6 @@ _G.pg.base.aircraft_template[83320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83321] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -56685,7 +53797,6 @@ _G.pg.base.aircraft_template[83321] = {
 		59521
 	}
 }
-
 _G.pg.base.aircraft_template[83322] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -56696,7 +53807,6 @@ _G.pg.base.aircraft_template[83322] = {
 		59522
 	}
 }
-
 _G.pg.base.aircraft_template[83323] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -56707,7 +53817,6 @@ _G.pg.base.aircraft_template[83323] = {
 		59523
 	}
 }
-
 _G.pg.base.aircraft_template[83324] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -56718,7 +53827,6 @@ _G.pg.base.aircraft_template[83324] = {
 		59524
 	}
 }
-
 _G.pg.base.aircraft_template[83325] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -56729,7 +53837,6 @@ _G.pg.base.aircraft_template[83325] = {
 		59525
 	}
 }
-
 _G.pg.base.aircraft_template[83326] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -56740,7 +53847,6 @@ _G.pg.base.aircraft_template[83326] = {
 		59526
 	}
 }
-
 _G.pg.base.aircraft_template[83327] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -56751,7 +53857,6 @@ _G.pg.base.aircraft_template[83327] = {
 		59527
 	}
 }
-
 _G.pg.base.aircraft_template[83328] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -56762,7 +53867,6 @@ _G.pg.base.aircraft_template[83328] = {
 		59528
 	}
 }
-
 _G.pg.base.aircraft_template[83329] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -56773,7 +53877,6 @@ _G.pg.base.aircraft_template[83329] = {
 		59529
 	}
 }
-
 _G.pg.base.aircraft_template[83330] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -56784,7 +53887,6 @@ _G.pg.base.aircraft_template[83330] = {
 		59530
 	}
 }
-
 _G.pg.base.aircraft_template[83340] = {
 	attack_power = 2,
 	name = "烈风",
@@ -56860,7 +53962,6 @@ _G.pg.base.aircraft_template[83340] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83341] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -56871,7 +53972,6 @@ _G.pg.base.aircraft_template[83341] = {
 		59541
 	}
 }
-
 _G.pg.base.aircraft_template[83342] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -56882,7 +53982,6 @@ _G.pg.base.aircraft_template[83342] = {
 		59542
 	}
 }
-
 _G.pg.base.aircraft_template[83343] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -56893,7 +53992,6 @@ _G.pg.base.aircraft_template[83343] = {
 		59543
 	}
 }
-
 _G.pg.base.aircraft_template[83344] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -56904,7 +54002,6 @@ _G.pg.base.aircraft_template[83344] = {
 		59544
 	}
 }
-
 _G.pg.base.aircraft_template[83345] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -56915,7 +54012,6 @@ _G.pg.base.aircraft_template[83345] = {
 		59545
 	}
 }
-
 _G.pg.base.aircraft_template[83346] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -56926,7 +54022,6 @@ _G.pg.base.aircraft_template[83346] = {
 		59546
 	}
 }
-
 _G.pg.base.aircraft_template[83347] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -56937,7 +54032,6 @@ _G.pg.base.aircraft_template[83347] = {
 		59547
 	}
 }
-
 _G.pg.base.aircraft_template[83348] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -56948,7 +54042,6 @@ _G.pg.base.aircraft_template[83348] = {
 		59548
 	}
 }
-
 _G.pg.base.aircraft_template[83349] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -56959,7 +54052,6 @@ _G.pg.base.aircraft_template[83349] = {
 		59549
 	}
 }
-
 _G.pg.base.aircraft_template[83350] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -56970,7 +54062,6 @@ _G.pg.base.aircraft_template[83350] = {
 		59550
 	}
 }
-
 _G.pg.base.aircraft_template[83351] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -56981,7 +54072,6 @@ _G.pg.base.aircraft_template[83351] = {
 		59551
 	}
 }
-
 _G.pg.base.aircraft_template[83352] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -56992,7 +54082,6 @@ _G.pg.base.aircraft_template[83352] = {
 		59552
 	}
 }
-
 _G.pg.base.aircraft_template[83353] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -57003,7 +54092,6 @@ _G.pg.base.aircraft_template[83353] = {
 		59553
 	}
 }
-
 _G.pg.base.aircraft_template[83400] = {
 	attack_power = 2,
 	name = "紫电改二",
@@ -57080,7 +54168,6 @@ _G.pg.base.aircraft_template[83400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83401] = {
 	max_hp = 41,
 	hp_growth = 1586,
@@ -57092,7 +54179,6 @@ _G.pg.base.aircraft_template[83401] = {
 		50861
 	}
 }
-
 _G.pg.base.aircraft_template[83402] = {
 	max_hp = 47,
 	hp_growth = 1793,
@@ -57104,7 +54190,6 @@ _G.pg.base.aircraft_template[83402] = {
 		50862
 	}
 }
-
 _G.pg.base.aircraft_template[83403] = {
 	max_hp = 52,
 	hp_growth = 1999,
@@ -57116,7 +54201,6 @@ _G.pg.base.aircraft_template[83403] = {
 		50863
 	}
 }
-
 _G.pg.base.aircraft_template[83404] = {
 	max_hp = 57,
 	hp_growth = 2206,
@@ -57128,7 +54212,6 @@ _G.pg.base.aircraft_template[83404] = {
 		50864
 	}
 }
-
 _G.pg.base.aircraft_template[83405] = {
 	max_hp = 63,
 	hp_growth = 2413,
@@ -57140,7 +54223,6 @@ _G.pg.base.aircraft_template[83405] = {
 		50865
 	}
 }
-
 _G.pg.base.aircraft_template[83406] = {
 	max_hp = 68,
 	hp_growth = 2620,
@@ -57152,7 +54234,6 @@ _G.pg.base.aircraft_template[83406] = {
 		50866
 	}
 }
-
 _G.pg.base.aircraft_template[83407] = {
 	max_hp = 73,
 	hp_growth = 2827,
@@ -57164,7 +54245,6 @@ _G.pg.base.aircraft_template[83407] = {
 		50867
 	}
 }
-
 _G.pg.base.aircraft_template[83408] = {
 	max_hp = 79,
 	hp_growth = 3034,
@@ -57176,7 +54256,6 @@ _G.pg.base.aircraft_template[83408] = {
 		50868
 	}
 }
-
 _G.pg.base.aircraft_template[83409] = {
 	max_hp = 84,
 	hp_growth = 3241,
@@ -57188,7 +54267,6 @@ _G.pg.base.aircraft_template[83409] = {
 		50869
 	}
 }
-
 _G.pg.base.aircraft_template[83410] = {
 	max_hp = 90,
 	hp_growth = 3447,
@@ -57200,7 +54278,6 @@ _G.pg.base.aircraft_template[83410] = {
 		50870
 	}
 }
-
 _G.pg.base.aircraft_template[83411] = {
 	max_hp = 95,
 	hp_growth = 3654,
@@ -57212,7 +54289,6 @@ _G.pg.base.aircraft_template[83411] = {
 		50871
 	}
 }
-
 _G.pg.base.aircraft_template[83412] = {
 	max_hp = 100,
 	hp_growth = 3861,
@@ -57224,7 +54300,6 @@ _G.pg.base.aircraft_template[83412] = {
 		50872
 	}
 }
-
 _G.pg.base.aircraft_template[83413] = {
 	max_hp = 106,
 	hp_growth = 4068,
@@ -57236,7 +54311,6 @@ _G.pg.base.aircraft_template[83413] = {
 		50873
 	}
 }
-
 _G.pg.base.aircraft_template[83420] = {
 	attack_power = 2,
 	name = "二式水上战斗机",
@@ -57313,7 +54387,6 @@ _G.pg.base.aircraft_template[83420] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83421] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -57325,7 +54398,6 @@ _G.pg.base.aircraft_template[83421] = {
 		50541
 	}
 }
-
 _G.pg.base.aircraft_template[83422] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -57337,7 +54409,6 @@ _G.pg.base.aircraft_template[83422] = {
 		50542
 	}
 }
-
 _G.pg.base.aircraft_template[83423] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -57349,7 +54420,6 @@ _G.pg.base.aircraft_template[83423] = {
 		50543
 	}
 }
-
 _G.pg.base.aircraft_template[83424] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -57361,7 +54431,6 @@ _G.pg.base.aircraft_template[83424] = {
 		50544
 	}
 }
-
 _G.pg.base.aircraft_template[83425] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -57373,7 +54442,6 @@ _G.pg.base.aircraft_template[83425] = {
 		50545
 	}
 }
-
 _G.pg.base.aircraft_template[83426] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -57385,7 +54453,6 @@ _G.pg.base.aircraft_template[83426] = {
 		50546
 	}
 }
-
 _G.pg.base.aircraft_template[83427] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -57397,7 +54464,6 @@ _G.pg.base.aircraft_template[83427] = {
 		50547
 	}
 }
-
 _G.pg.base.aircraft_template[83428] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -57409,7 +54475,6 @@ _G.pg.base.aircraft_template[83428] = {
 		50548
 	}
 }
-
 _G.pg.base.aircraft_template[83429] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -57421,7 +54486,6 @@ _G.pg.base.aircraft_template[83429] = {
 		50549
 	}
 }
-
 _G.pg.base.aircraft_template[83430] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -57433,7 +54497,6 @@ _G.pg.base.aircraft_template[83430] = {
 		50550
 	}
 }
-
 _G.pg.base.aircraft_template[83431] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -57445,7 +54508,6 @@ _G.pg.base.aircraft_template[83431] = {
 		50551
 	}
 }
-
 _G.pg.base.aircraft_template[83440] = {
 	attack_power = 2,
 	name = "强风",
@@ -57522,7 +54584,6 @@ _G.pg.base.aircraft_template[83440] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83441] = {
 	max_hp = 43,
 	hp_growth = 1647,
@@ -57534,7 +54595,6 @@ _G.pg.base.aircraft_template[83441] = {
 		50561
 	}
 }
-
 _G.pg.base.aircraft_template[83442] = {
 	max_hp = 48,
 	hp_growth = 1862,
@@ -57546,7 +54606,6 @@ _G.pg.base.aircraft_template[83442] = {
 		50562
 	}
 }
-
 _G.pg.base.aircraft_template[83443] = {
 	max_hp = 54,
 	hp_growth = 2077,
@@ -57558,7 +54617,6 @@ _G.pg.base.aircraft_template[83443] = {
 		50563
 	}
 }
-
 _G.pg.base.aircraft_template[83444] = {
 	max_hp = 60,
 	hp_growth = 2292,
@@ -57570,7 +54628,6 @@ _G.pg.base.aircraft_template[83444] = {
 		50564
 	}
 }
-
 _G.pg.base.aircraft_template[83445] = {
 	max_hp = 65,
 	hp_growth = 2507,
@@ -57582,7 +54639,6 @@ _G.pg.base.aircraft_template[83445] = {
 		50565
 	}
 }
-
 _G.pg.base.aircraft_template[83446] = {
 	max_hp = 71,
 	hp_growth = 2722,
@@ -57594,7 +54650,6 @@ _G.pg.base.aircraft_template[83446] = {
 		50566
 	}
 }
-
 _G.pg.base.aircraft_template[83447] = {
 	max_hp = 76,
 	hp_growth = 2937,
@@ -57606,7 +54661,6 @@ _G.pg.base.aircraft_template[83447] = {
 		50567
 	}
 }
-
 _G.pg.base.aircraft_template[83448] = {
 	max_hp = 82,
 	hp_growth = 3152,
@@ -57618,7 +54672,6 @@ _G.pg.base.aircraft_template[83448] = {
 		50568
 	}
 }
-
 _G.pg.base.aircraft_template[83449] = {
 	max_hp = 88,
 	hp_growth = 3367,
@@ -57630,7 +54683,6 @@ _G.pg.base.aircraft_template[83449] = {
 		50569
 	}
 }
-
 _G.pg.base.aircraft_template[83450] = {
 	max_hp = 93,
 	hp_growth = 3581,
@@ -57642,7 +54694,6 @@ _G.pg.base.aircraft_template[83450] = {
 		50570
 	}
 }
-
 _G.pg.base.aircraft_template[83451] = {
 	max_hp = 99,
 	hp_growth = 3796,
@@ -57654,7 +54705,6 @@ _G.pg.base.aircraft_template[83451] = {
 		50571
 	}
 }
-
 _G.pg.base.aircraft_template[83460] = {
 	attack_power = 2,
 	name = "试作型紫电改四",
@@ -57731,7 +54781,6 @@ _G.pg.base.aircraft_template[83460] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[83461] = {
 	max_hp = 46,
 	hp_growth = 1762,
@@ -57743,7 +54792,6 @@ _G.pg.base.aircraft_template[83461] = {
 		50861
 	}
 }
-
 _G.pg.base.aircraft_template[83462] = {
 	max_hp = 52,
 	hp_growth = 1992,
@@ -57755,7 +54803,6 @@ _G.pg.base.aircraft_template[83462] = {
 		50862
 	}
 }
-
 _G.pg.base.aircraft_template[83463] = {
 	max_hp = 58,
 	hp_growth = 2222,
@@ -57767,7 +54814,6 @@ _G.pg.base.aircraft_template[83463] = {
 		50863
 	}
 }
-
 _G.pg.base.aircraft_template[83464] = {
 	max_hp = 64,
 	hp_growth = 2451,
@@ -57779,7 +54825,6 @@ _G.pg.base.aircraft_template[83464] = {
 		50864
 	}
 }
-
 _G.pg.base.aircraft_template[83465] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -57791,7 +54836,6 @@ _G.pg.base.aircraft_template[83465] = {
 		50865
 	}
 }
-
 _G.pg.base.aircraft_template[83466] = {
 	max_hp = 76,
 	hp_growth = 2911,
@@ -57803,7 +54847,6 @@ _G.pg.base.aircraft_template[83466] = {
 		50866
 	}
 }
-
 _G.pg.base.aircraft_template[83467] = {
 	max_hp = 82,
 	hp_growth = 3141,
@@ -57815,7 +54858,6 @@ _G.pg.base.aircraft_template[83467] = {
 		50867
 	}
 }
-
 _G.pg.base.aircraft_template[83468] = {
 	max_hp = 88,
 	hp_growth = 3371,
@@ -57827,7 +54869,6 @@ _G.pg.base.aircraft_template[83468] = {
 		50868
 	}
 }
-
 _G.pg.base.aircraft_template[83469] = {
 	max_hp = 94,
 	hp_growth = 3601,
@@ -57839,7 +54880,6 @@ _G.pg.base.aircraft_template[83469] = {
 		50869
 	}
 }
-
 _G.pg.base.aircraft_template[83470] = {
 	max_hp = 100,
 	hp_growth = 3830,
@@ -57851,7 +54891,6 @@ _G.pg.base.aircraft_template[83470] = {
 		50870
 	}
 }
-
 _G.pg.base.aircraft_template[83471] = {
 	max_hp = 106,
 	hp_growth = 4060,
@@ -57863,7 +54902,6 @@ _G.pg.base.aircraft_template[83471] = {
 		50871
 	}
 }
-
 _G.pg.base.aircraft_template[83472] = {
 	max_hp = 112,
 	hp_growth = 4290,
@@ -57875,7 +54913,6 @@ _G.pg.base.aircraft_template[83472] = {
 		50872
 	}
 }
-
 _G.pg.base.aircraft_template[83473] = {
 	max_hp = 118,
 	hp_growth = 4520,
@@ -57887,7 +54924,6 @@ _G.pg.base.aircraft_template[83473] = {
 		50873
 	}
 }
-
 _G.pg.base.aircraft_template[84000] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T1",
@@ -57964,7 +55000,6 @@ _G.pg.base.aircraft_template[84000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84001] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -57976,7 +55011,6 @@ _G.pg.base.aircraft_template[84001] = {
 		59401
 	}
 }
-
 _G.pg.base.aircraft_template[84002] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -57988,7 +55022,6 @@ _G.pg.base.aircraft_template[84002] = {
 		59402
 	}
 }
-
 _G.pg.base.aircraft_template[84003] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -58000,7 +55033,6 @@ _G.pg.base.aircraft_template[84003] = {
 		59403
 	}
 }
-
 _G.pg.base.aircraft_template[84020] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T2",
@@ -58077,7 +55109,6 @@ _G.pg.base.aircraft_template[84020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84021] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -58089,7 +55120,6 @@ _G.pg.base.aircraft_template[84021] = {
 		59421
 	}
 }
-
 _G.pg.base.aircraft_template[84022] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -58101,7 +55131,6 @@ _G.pg.base.aircraft_template[84022] = {
 		59422
 	}
 }
-
 _G.pg.base.aircraft_template[84023] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -58113,7 +55142,6 @@ _G.pg.base.aircraft_template[84023] = {
 		59423
 	}
 }
-
 _G.pg.base.aircraft_template[84024] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -58125,7 +55153,6 @@ _G.pg.base.aircraft_template[84024] = {
 		59424
 	}
 }
-
 _G.pg.base.aircraft_template[84025] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -58137,7 +55164,6 @@ _G.pg.base.aircraft_template[84025] = {
 		59425
 	}
 }
-
 _G.pg.base.aircraft_template[84026] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -58149,7 +55175,6 @@ _G.pg.base.aircraft_template[84026] = {
 		59426
 	}
 }
-
 _G.pg.base.aircraft_template[84040] = {
 	attack_power = 2,
 	name = "BF-109T舰载战斗机T3",
@@ -58226,7 +55251,6 @@ _G.pg.base.aircraft_template[84040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84041] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -58238,7 +55262,6 @@ _G.pg.base.aircraft_template[84041] = {
 		59441
 	}
 }
-
 _G.pg.base.aircraft_template[84042] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -58250,7 +55273,6 @@ _G.pg.base.aircraft_template[84042] = {
 		59442
 	}
 }
-
 _G.pg.base.aircraft_template[84043] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -58262,7 +55284,6 @@ _G.pg.base.aircraft_template[84043] = {
 		59443
 	}
 }
-
 _G.pg.base.aircraft_template[84044] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -58274,7 +55295,6 @@ _G.pg.base.aircraft_template[84044] = {
 		59444
 	}
 }
-
 _G.pg.base.aircraft_template[84045] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -58286,7 +55306,6 @@ _G.pg.base.aircraft_template[84045] = {
 		59445
 	}
 }
-
 _G.pg.base.aircraft_template[84046] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -58298,7 +55317,6 @@ _G.pg.base.aircraft_template[84046] = {
 		59446
 	}
 }
-
 _G.pg.base.aircraft_template[84047] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -58310,7 +55328,6 @@ _G.pg.base.aircraft_template[84047] = {
 		59447
 	}
 }
-
 _G.pg.base.aircraft_template[84048] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -58322,7 +55339,6 @@ _G.pg.base.aircraft_template[84048] = {
 		59448
 	}
 }
-
 _G.pg.base.aircraft_template[84049] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -58334,7 +55350,6 @@ _G.pg.base.aircraft_template[84049] = {
 		59449
 	}
 }
-
 _G.pg.base.aircraft_template[84050] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -58346,7 +55361,6 @@ _G.pg.base.aircraft_template[84050] = {
 		59450
 	}
 }
-
 _G.pg.base.aircraft_template[84051] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -58358,7 +55372,6 @@ _G.pg.base.aircraft_template[84051] = {
 		59451
 	}
 }
-
 _G.pg.base.aircraft_template[84060] = {
 	attack_power = 2,
 	name = "Ar-197舰载战斗机",
@@ -58435,7 +55448,6 @@ _G.pg.base.aircraft_template[84060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84061] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -58447,7 +55459,6 @@ _G.pg.base.aircraft_template[84061] = {
 		59441
 	}
 }
-
 _G.pg.base.aircraft_template[84062] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -58459,7 +55470,6 @@ _G.pg.base.aircraft_template[84062] = {
 		59442
 	}
 }
-
 _G.pg.base.aircraft_template[84063] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -58471,7 +55481,6 @@ _G.pg.base.aircraft_template[84063] = {
 		59443
 	}
 }
-
 _G.pg.base.aircraft_template[84064] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -58483,7 +55492,6 @@ _G.pg.base.aircraft_template[84064] = {
 		59444
 	}
 }
-
 _G.pg.base.aircraft_template[84065] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -58495,7 +55503,6 @@ _G.pg.base.aircraft_template[84065] = {
 		59445
 	}
 }
-
 _G.pg.base.aircraft_template[84066] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -58507,7 +55514,6 @@ _G.pg.base.aircraft_template[84066] = {
 		59446
 	}
 }
-
 _G.pg.base.aircraft_template[84067] = {
 	max_hp = 72,
 	hp_growth = 2755,
@@ -58519,7 +55525,6 @@ _G.pg.base.aircraft_template[84067] = {
 		59447
 	}
 }
-
 _G.pg.base.aircraft_template[84080] = {
 	attack_power = 2,
 	name = "试作型舰载FW-190 A-5",
@@ -58597,7 +55602,6 @@ _G.pg.base.aircraft_template[84080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84081] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -58610,7 +55614,6 @@ _G.pg.base.aircraft_template[84081] = {
 		59141
 	}
 }
-
 _G.pg.base.aircraft_template[84082] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -58623,7 +55626,6 @@ _G.pg.base.aircraft_template[84082] = {
 		59142
 	}
 }
-
 _G.pg.base.aircraft_template[84083] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -58636,7 +55638,6 @@ _G.pg.base.aircraft_template[84083] = {
 		59143
 	}
 }
-
 _G.pg.base.aircraft_template[84084] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -58649,7 +55650,6 @@ _G.pg.base.aircraft_template[84084] = {
 		59144
 	}
 }
-
 _G.pg.base.aircraft_template[84085] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -58662,7 +55662,6 @@ _G.pg.base.aircraft_template[84085] = {
 		59145
 	}
 }
-
 _G.pg.base.aircraft_template[84086] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -58675,7 +55674,6 @@ _G.pg.base.aircraft_template[84086] = {
 		59146
 	}
 }
-
 _G.pg.base.aircraft_template[84087] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -58688,7 +55686,6 @@ _G.pg.base.aircraft_template[84087] = {
 		59147
 	}
 }
-
 _G.pg.base.aircraft_template[84088] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -58701,7 +55698,6 @@ _G.pg.base.aircraft_template[84088] = {
 		59148
 	}
 }
-
 _G.pg.base.aircraft_template[84089] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -58714,7 +55710,6 @@ _G.pg.base.aircraft_template[84089] = {
 		59149
 	}
 }
-
 _G.pg.base.aircraft_template[84090] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -58727,7 +55722,6 @@ _G.pg.base.aircraft_template[84090] = {
 		59150
 	}
 }
-
 _G.pg.base.aircraft_template[84091] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -58740,7 +55734,6 @@ _G.pg.base.aircraft_template[84091] = {
 		59151
 	}
 }
-
 _G.pg.base.aircraft_template[84100] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T1",
@@ -58817,7 +55810,6 @@ _G.pg.base.aircraft_template[84100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84101] = {
 	max_hp = 40,
 	hp_growth = 1546,
@@ -58829,7 +55821,6 @@ _G.pg.base.aircraft_template[84101] = {
 		59201
 	}
 }
-
 _G.pg.base.aircraft_template[84102] = {
 	max_hp = 45,
 	hp_growth = 1747,
@@ -58841,7 +55832,6 @@ _G.pg.base.aircraft_template[84102] = {
 		59202
 	}
 }
-
 _G.pg.base.aircraft_template[84103] = {
 	max_hp = 51,
 	hp_growth = 1949,
@@ -58853,7 +55843,6 @@ _G.pg.base.aircraft_template[84103] = {
 		59203
 	}
 }
-
 _G.pg.base.aircraft_template[84104] = {
 	max_hp = 56,
 	hp_growth = 2150,
@@ -58865,7 +55854,6 @@ _G.pg.base.aircraft_template[84104] = {
 		59204
 	}
 }
-
 _G.pg.base.aircraft_template[84105] = {
 	max_hp = 61,
 	hp_growth = 2352,
@@ -58877,7 +55865,6 @@ _G.pg.base.aircraft_template[84105] = {
 		59205
 	}
 }
-
 _G.pg.base.aircraft_template[84106] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -58889,7 +55876,6 @@ _G.pg.base.aircraft_template[84106] = {
 		59206
 	}
 }
-
 _G.pg.base.aircraft_template[84120] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T2",
@@ -58966,7 +55952,6 @@ _G.pg.base.aircraft_template[84120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84121] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -58978,7 +55963,6 @@ _G.pg.base.aircraft_template[84121] = {
 		59221
 	}
 }
-
 _G.pg.base.aircraft_template[84122] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -58990,7 +55974,6 @@ _G.pg.base.aircraft_template[84122] = {
 		59222
 	}
 }
-
 _G.pg.base.aircraft_template[84123] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -59002,7 +55985,6 @@ _G.pg.base.aircraft_template[84123] = {
 		59223
 	}
 }
-
 _G.pg.base.aircraft_template[84124] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -59014,7 +55996,6 @@ _G.pg.base.aircraft_template[84124] = {
 		59224
 	}
 }
-
 _G.pg.base.aircraft_template[84125] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -59026,7 +56007,6 @@ _G.pg.base.aircraft_template[84125] = {
 		59225
 	}
 }
-
 _G.pg.base.aircraft_template[84126] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -59038,7 +56018,6 @@ _G.pg.base.aircraft_template[84126] = {
 		59226
 	}
 }
-
 _G.pg.base.aircraft_template[84127] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -59050,7 +56029,6 @@ _G.pg.base.aircraft_template[84127] = {
 		59227
 	}
 }
-
 _G.pg.base.aircraft_template[84128] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -59062,7 +56040,6 @@ _G.pg.base.aircraft_template[84128] = {
 		59228
 	}
 }
-
 _G.pg.base.aircraft_template[84129] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -59074,7 +56051,6 @@ _G.pg.base.aircraft_template[84129] = {
 		59229
 	}
 }
-
 _G.pg.base.aircraft_template[84130] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -59086,7 +56062,6 @@ _G.pg.base.aircraft_template[84130] = {
 		59230
 	}
 }
-
 _G.pg.base.aircraft_template[84140] = {
 	attack_power = 2,
 	name = "Me-155A舰载战斗机T3",
@@ -59163,7 +56138,6 @@ _G.pg.base.aircraft_template[84140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[84141] = {
 	max_hp = 48,
 	hp_growth = 1855,
@@ -59175,7 +56149,6 @@ _G.pg.base.aircraft_template[84141] = {
 		59241
 	}
 }
-
 _G.pg.base.aircraft_template[84142] = {
 	max_hp = 55,
 	hp_growth = 2097,
@@ -59187,7 +56160,6 @@ _G.pg.base.aircraft_template[84142] = {
 		59242
 	}
 }
-
 _G.pg.base.aircraft_template[84143] = {
 	max_hp = 61,
 	hp_growth = 2339,
@@ -59199,7 +56171,6 @@ _G.pg.base.aircraft_template[84143] = {
 		59243
 	}
 }
-
 _G.pg.base.aircraft_template[84144] = {
 	max_hp = 67,
 	hp_growth = 2580,
@@ -59211,7 +56182,6 @@ _G.pg.base.aircraft_template[84144] = {
 		59244
 	}
 }
-
 _G.pg.base.aircraft_template[84145] = {
 	max_hp = 73,
 	hp_growth = 2822,
@@ -59223,7 +56193,6 @@ _G.pg.base.aircraft_template[84145] = {
 		59245
 	}
 }
-
 _G.pg.base.aircraft_template[84146] = {
 	max_hp = 80,
 	hp_growth = 3064,
@@ -59235,7 +56204,6 @@ _G.pg.base.aircraft_template[84146] = {
 		59246
 	}
 }
-
 _G.pg.base.aircraft_template[84147] = {
 	max_hp = 86,
 	hp_growth = 3306,
@@ -59247,7 +56215,6 @@ _G.pg.base.aircraft_template[84147] = {
 		59247
 	}
 }
-
 _G.pg.base.aircraft_template[84148] = {
 	max_hp = 92,
 	hp_growth = 3548,
@@ -59259,7 +56226,6 @@ _G.pg.base.aircraft_template[84148] = {
 		59248
 	}
 }
-
 _G.pg.base.aircraft_template[84149] = {
 	max_hp = 99,
 	hp_growth = 3790,
@@ -59271,7 +56237,6 @@ _G.pg.base.aircraft_template[84149] = {
 		59249
 	}
 }
-
 _G.pg.base.aircraft_template[84150] = {
 	max_hp = 105,
 	hp_growth = 4032,
@@ -59283,7 +56248,6 @@ _G.pg.base.aircraft_template[84150] = {
 		59250
 	}
 }
-
 _G.pg.base.aircraft_template[84151] = {
 	max_hp = 111,
 	hp_growth = 4274,
@@ -59295,7 +56259,6 @@ _G.pg.base.aircraft_template[84151] = {
 		59251
 	}
 }
-
 _G.pg.base.aircraft_template[84152] = {
 	max_hp = 117,
 	hp_growth = 4516,
@@ -59307,7 +56270,6 @@ _G.pg.base.aircraft_template[84152] = {
 		59252
 	}
 }
-
 _G.pg.base.aircraft_template[84153] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -59319,7 +56281,6 @@ _G.pg.base.aircraft_template[84153] = {
 		59253
 	}
 }
-
 _G.pg.base.aircraft_template[85540] = {
 	attack_power = 2,
 	name = "试作舰载型Su-2",
@@ -59395,7 +56356,6 @@ _G.pg.base.aircraft_template[85540] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[85541] = {
 	max_hp = 57,
 	hp_growth = 2203,
@@ -59406,7 +56366,6 @@ _G.pg.base.aircraft_template[85541] = {
 		53061
 	}
 }
-
 _G.pg.base.aircraft_template[85542] = {
 	max_hp = 65,
 	hp_growth = 2491,
@@ -59417,7 +56376,6 @@ _G.pg.base.aircraft_template[85542] = {
 		53062
 	}
 }
-
 _G.pg.base.aircraft_template[85543] = {
 	max_hp = 72,
 	hp_growth = 2778,
@@ -59428,7 +56386,6 @@ _G.pg.base.aircraft_template[85543] = {
 		53063
 	}
 }
-
 _G.pg.base.aircraft_template[85544] = {
 	max_hp = 80,
 	hp_growth = 3066,
@@ -59439,7 +56396,6 @@ _G.pg.base.aircraft_template[85544] = {
 		53064
 	}
 }
-
 _G.pg.base.aircraft_template[85545] = {
 	max_hp = 87,
 	hp_growth = 3353,
@@ -59450,7 +56406,6 @@ _G.pg.base.aircraft_template[85545] = {
 		53065
 	}
 }
-
 _G.pg.base.aircraft_template[85546] = {
 	max_hp = 95,
 	hp_growth = 3640,
@@ -59461,7 +56416,6 @@ _G.pg.base.aircraft_template[85546] = {
 		53066
 	}
 }
-
 _G.pg.base.aircraft_template[85547] = {
 	max_hp = 102,
 	hp_growth = 3928,
@@ -59472,7 +56426,6 @@ _G.pg.base.aircraft_template[85547] = {
 		53067
 	}
 }
-
 _G.pg.base.aircraft_template[85548] = {
 	max_hp = 110,
 	hp_growth = 4215,
@@ -59483,7 +56436,6 @@ _G.pg.base.aircraft_template[85548] = {
 		53068
 	}
 }
-
 _G.pg.base.aircraft_template[85549] = {
 	max_hp = 117,
 	hp_growth = 4503,
@@ -59494,7 +56446,6 @@ _G.pg.base.aircraft_template[85549] = {
 		53069
 	}
 }
-
 _G.pg.base.aircraft_template[85550] = {
 	max_hp = 125,
 	hp_growth = 4790,
@@ -59505,7 +56456,6 @@ _G.pg.base.aircraft_template[85550] = {
 		53070
 	}
 }
-
 _G.pg.base.aircraft_template[85551] = {
 	max_hp = 132,
 	hp_growth = 5077,
@@ -59516,7 +56466,6 @@ _G.pg.base.aircraft_template[85551] = {
 		53071
 	}
 }
-
 _G.pg.base.aircraft_template[85552] = {
 	max_hp = 139,
 	hp_growth = 5365,
@@ -59527,7 +56476,6 @@ _G.pg.base.aircraft_template[85552] = {
 		53072
 	}
 }
-
 _G.pg.base.aircraft_template[85553] = {
 	max_hp = 147,
 	hp_growth = 5652,
@@ -59538,7 +56486,6 @@ _G.pg.base.aircraft_template[85553] = {
 		53073
 	}
 }
-
 _G.pg.base.aircraft_template[85560] = {
 	attack_power = 2,
 	name = "试作型VIT-2（VK107）",
@@ -59614,7 +56561,6 @@ _G.pg.base.aircraft_template[85560] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[85561] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -59625,7 +56571,6 @@ _G.pg.base.aircraft_template[85561] = {
 		51621
 	}
 }
-
 _G.pg.base.aircraft_template[85562] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -59636,7 +56581,6 @@ _G.pg.base.aircraft_template[85562] = {
 		51622
 	}
 }
-
 _G.pg.base.aircraft_template[85563] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -59647,7 +56591,6 @@ _G.pg.base.aircraft_template[85563] = {
 		51623
 	}
 }
-
 _G.pg.base.aircraft_template[85564] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -59658,7 +56601,6 @@ _G.pg.base.aircraft_template[85564] = {
 		51624
 	}
 }
-
 _G.pg.base.aircraft_template[85565] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -59669,7 +56611,6 @@ _G.pg.base.aircraft_template[85565] = {
 		51625
 	}
 }
-
 _G.pg.base.aircraft_template[85566] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -59680,7 +56621,6 @@ _G.pg.base.aircraft_template[85566] = {
 		51626
 	}
 }
-
 _G.pg.base.aircraft_template[85567] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -59691,7 +56631,6 @@ _G.pg.base.aircraft_template[85567] = {
 		51627
 	}
 }
-
 _G.pg.base.aircraft_template[85568] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -59702,7 +56641,6 @@ _G.pg.base.aircraft_template[85568] = {
 		51628
 	}
 }
-
 _G.pg.base.aircraft_template[85569] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -59713,7 +56651,6 @@ _G.pg.base.aircraft_template[85569] = {
 		51629
 	}
 }
-
 _G.pg.base.aircraft_template[85570] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -59724,7 +56661,6 @@ _G.pg.base.aircraft_template[85570] = {
 		51630
 	}
 }
-
 _G.pg.base.aircraft_template[85571] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -59735,7 +56671,6 @@ _G.pg.base.aircraft_template[85571] = {
 		51631
 	}
 }
-
 _G.pg.base.aircraft_template[85572] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -59746,7 +56681,6 @@ _G.pg.base.aircraft_template[85572] = {
 		51632
 	}
 }
-
 _G.pg.base.aircraft_template[85573] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -59757,7 +56691,6 @@ _G.pg.base.aircraft_template[85573] = {
 		51633
 	}
 }
-
 _G.pg.base.aircraft_template[86000] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T1",
@@ -59833,7 +56766,6 @@ _G.pg.base.aircraft_template[86000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86001] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -59844,7 +56776,6 @@ _G.pg.base.aircraft_template[86001] = {
 		50701
 	}
 }
-
 _G.pg.base.aircraft_template[86002] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -59855,7 +56786,6 @@ _G.pg.base.aircraft_template[86002] = {
 		50702
 	}
 }
-
 _G.pg.base.aircraft_template[86003] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -59866,7 +56796,6 @@ _G.pg.base.aircraft_template[86003] = {
 		50703
 	}
 }
-
 _G.pg.base.aircraft_template[86020] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T2",
@@ -59942,7 +56871,6 @@ _G.pg.base.aircraft_template[86020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86021] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -59953,7 +56881,6 @@ _G.pg.base.aircraft_template[86021] = {
 		50721
 	}
 }
-
 _G.pg.base.aircraft_template[86022] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -59964,7 +56891,6 @@ _G.pg.base.aircraft_template[86022] = {
 		50722
 	}
 }
-
 _G.pg.base.aircraft_template[86023] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -59975,7 +56901,6 @@ _G.pg.base.aircraft_template[86023] = {
 		50723
 	}
 }
-
 _G.pg.base.aircraft_template[86024] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -59986,7 +56911,6 @@ _G.pg.base.aircraft_template[86024] = {
 		50724
 	}
 }
-
 _G.pg.base.aircraft_template[86025] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -59997,7 +56921,6 @@ _G.pg.base.aircraft_template[86025] = {
 		50725
 	}
 }
-
 _G.pg.base.aircraft_template[86026] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -60008,7 +56931,6 @@ _G.pg.base.aircraft_template[86026] = {
 		50726
 	}
 }
-
 _G.pg.base.aircraft_template[86040] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T3",
@@ -60084,7 +57006,6 @@ _G.pg.base.aircraft_template[86040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86041] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -60095,7 +57016,6 @@ _G.pg.base.aircraft_template[86041] = {
 		50741
 	}
 }
-
 _G.pg.base.aircraft_template[86042] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -60106,7 +57026,6 @@ _G.pg.base.aircraft_template[86042] = {
 		50742
 	}
 }
-
 _G.pg.base.aircraft_template[86043] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -60117,7 +57036,6 @@ _G.pg.base.aircraft_template[86043] = {
 		50743
 	}
 }
-
 _G.pg.base.aircraft_template[86044] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -60128,7 +57046,6 @@ _G.pg.base.aircraft_template[86044] = {
 		50744
 	}
 }
-
 _G.pg.base.aircraft_template[86045] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -60139,7 +57056,6 @@ _G.pg.base.aircraft_template[86045] = {
 		50745
 	}
 }
-
 _G.pg.base.aircraft_template[86046] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -60150,7 +57066,6 @@ _G.pg.base.aircraft_template[86046] = {
 		50746
 	}
 }
-
 _G.pg.base.aircraft_template[86047] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -60161,7 +57076,6 @@ _G.pg.base.aircraft_template[86047] = {
 		50747
 	}
 }
-
 _G.pg.base.aircraft_template[86048] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -60172,7 +57086,6 @@ _G.pg.base.aircraft_template[86048] = {
 		50748
 	}
 }
-
 _G.pg.base.aircraft_template[86049] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -60183,7 +57096,6 @@ _G.pg.base.aircraft_template[86049] = {
 		50749
 	}
 }
-
 _G.pg.base.aircraft_template[86050] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -60194,7 +57106,6 @@ _G.pg.base.aircraft_template[86050] = {
 		50750
 	}
 }
-
 _G.pg.base.aircraft_template[86051] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -60205,7 +57116,6 @@ _G.pg.base.aircraft_template[86051] = {
 		50751
 	}
 }
-
 _G.pg.base.aircraft_template[86060] = {
 	attack_power = 2,
 	name = "Re.2001公羊T1",
@@ -60282,7 +57192,6 @@ _G.pg.base.aircraft_template[86060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86061] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -60294,7 +57203,6 @@ _G.pg.base.aircraft_template[86061] = {
 		50701
 	}
 }
-
 _G.pg.base.aircraft_template[86062] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -60306,7 +57214,6 @@ _G.pg.base.aircraft_template[86062] = {
 		50702
 	}
 }
-
 _G.pg.base.aircraft_template[86063] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -60318,7 +57225,6 @@ _G.pg.base.aircraft_template[86063] = {
 		50703
 	}
 }
-
 _G.pg.base.aircraft_template[86080] = {
 	attack_power = 2,
 	name = "Re.2001公羊T2",
@@ -60395,7 +57301,6 @@ _G.pg.base.aircraft_template[86080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86081] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -60407,7 +57312,6 @@ _G.pg.base.aircraft_template[86081] = {
 		50721
 	}
 }
-
 _G.pg.base.aircraft_template[86082] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -60419,7 +57323,6 @@ _G.pg.base.aircraft_template[86082] = {
 		50722
 	}
 }
-
 _G.pg.base.aircraft_template[86083] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -60431,7 +57334,6 @@ _G.pg.base.aircraft_template[86083] = {
 		50723
 	}
 }
-
 _G.pg.base.aircraft_template[86084] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -60443,7 +57345,6 @@ _G.pg.base.aircraft_template[86084] = {
 		50724
 	}
 }
-
 _G.pg.base.aircraft_template[86085] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -60455,7 +57356,6 @@ _G.pg.base.aircraft_template[86085] = {
 		50725
 	}
 }
-
 _G.pg.base.aircraft_template[86086] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -60467,7 +57367,6 @@ _G.pg.base.aircraft_template[86086] = {
 		50726
 	}
 }
-
 _G.pg.base.aircraft_template[86100] = {
 	attack_power = 2,
 	name = "Re.2001公羊T3",
@@ -60544,7 +57443,6 @@ _G.pg.base.aircraft_template[86100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86101] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -60556,7 +57454,6 @@ _G.pg.base.aircraft_template[86101] = {
 		50741
 	}
 }
-
 _G.pg.base.aircraft_template[86102] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -60568,7 +57465,6 @@ _G.pg.base.aircraft_template[86102] = {
 		50742
 	}
 }
-
 _G.pg.base.aircraft_template[86103] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -60580,7 +57476,6 @@ _G.pg.base.aircraft_template[86103] = {
 		50743
 	}
 }
-
 _G.pg.base.aircraft_template[86104] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -60592,7 +57487,6 @@ _G.pg.base.aircraft_template[86104] = {
 		50744
 	}
 }
-
 _G.pg.base.aircraft_template[86105] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -60604,7 +57498,6 @@ _G.pg.base.aircraft_template[86105] = {
 		50745
 	}
 }
-
 _G.pg.base.aircraft_template[86106] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -60616,7 +57509,6 @@ _G.pg.base.aircraft_template[86106] = {
 		50746
 	}
 }
-
 _G.pg.base.aircraft_template[86107] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -60628,7 +57520,6 @@ _G.pg.base.aircraft_template[86107] = {
 		50747
 	}
 }
-
 _G.pg.base.aircraft_template[86108] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -60640,7 +57531,6 @@ _G.pg.base.aircraft_template[86108] = {
 		50748
 	}
 }
-
 _G.pg.base.aircraft_template[86109] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -60652,7 +57542,6 @@ _G.pg.base.aircraft_template[86109] = {
 		50749
 	}
 }
-
 _G.pg.base.aircraft_template[86110] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -60664,7 +57553,6 @@ _G.pg.base.aircraft_template[86110] = {
 		50750
 	}
 }
-
 _G.pg.base.aircraft_template[86111] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -60676,7 +57564,6 @@ _G.pg.base.aircraft_template[86111] = {
 		50751
 	}
 }
-
 _G.pg.base.aircraft_template[86140] = {
 	attack_power = 2,
 	name = "D.790",
@@ -60753,7 +57640,6 @@ _G.pg.base.aircraft_template[86140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86141] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -60765,7 +57651,6 @@ _G.pg.base.aircraft_template[86141] = {
 		50001
 	}
 }
-
 _G.pg.base.aircraft_template[86142] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -60777,7 +57662,6 @@ _G.pg.base.aircraft_template[86142] = {
 		50002
 	}
 }
-
 _G.pg.base.aircraft_template[86143] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -60789,7 +57673,6 @@ _G.pg.base.aircraft_template[86143] = {
 		50003
 	}
 }
-
 _G.pg.base.aircraft_template[86144] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -60801,7 +57684,6 @@ _G.pg.base.aircraft_template[86144] = {
 		50004
 	}
 }
-
 _G.pg.base.aircraft_template[86145] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -60813,7 +57695,6 @@ _G.pg.base.aircraft_template[86145] = {
 		50005
 	}
 }
-
 _G.pg.base.aircraft_template[86146] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -60825,7 +57706,6 @@ _G.pg.base.aircraft_template[86146] = {
 		50006
 	}
 }
-
 _G.pg.base.aircraft_template[86147] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -60837,7 +57717,6 @@ _G.pg.base.aircraft_template[86147] = {
 		50007
 	}
 }
-
 _G.pg.base.aircraft_template[86148] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -60849,7 +57728,6 @@ _G.pg.base.aircraft_template[86148] = {
 		50008
 	}
 }
-
 _G.pg.base.aircraft_template[86149] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -60861,7 +57739,6 @@ _G.pg.base.aircraft_template[86149] = {
 		50009
 	}
 }
-
 _G.pg.base.aircraft_template[86150] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -60873,7 +57750,6 @@ _G.pg.base.aircraft_template[86150] = {
 		50010
 	}
 }
-
 _G.pg.base.aircraft_template[86151] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -60885,7 +57761,6 @@ _G.pg.base.aircraft_template[86151] = {
 		50011
 	}
 }
-
 _G.pg.base.aircraft_template[86160] = {
 	attack_power = 2,
 	name = "BR.810",
@@ -60962,7 +57837,6 @@ _G.pg.base.aircraft_template[86160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[86161] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -60974,7 +57848,6 @@ _G.pg.base.aircraft_template[86161] = {
 		50481
 	}
 }
-
 _G.pg.base.aircraft_template[86162] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -60986,7 +57859,6 @@ _G.pg.base.aircraft_template[86162] = {
 		50482
 	}
 }
-
 _G.pg.base.aircraft_template[86163] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -60998,7 +57870,6 @@ _G.pg.base.aircraft_template[86163] = {
 		50483
 	}
 }
-
 _G.pg.base.aircraft_template[86164] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -61010,7 +57881,6 @@ _G.pg.base.aircraft_template[86164] = {
 		50484
 	}
 }
-
 _G.pg.base.aircraft_template[86165] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -61022,7 +57892,6 @@ _G.pg.base.aircraft_template[86165] = {
 		50485
 	}
 }
-
 _G.pg.base.aircraft_template[86166] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -61034,7 +57903,6 @@ _G.pg.base.aircraft_template[86166] = {
 		50486
 	}
 }
-
 _G.pg.base.aircraft_template[86167] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -61046,7 +57914,6 @@ _G.pg.base.aircraft_template[86167] = {
 		50487
 	}
 }
-
 _G.pg.base.aircraft_template[86168] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -61058,7 +57925,6 @@ _G.pg.base.aircraft_template[86168] = {
 		50488
 	}
 }
-
 _G.pg.base.aircraft_template[86169] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -61070,7 +57936,6 @@ _G.pg.base.aircraft_template[86169] = {
 		50489
 	}
 }
-
 _G.pg.base.aircraft_template[86170] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -61082,7 +57947,6 @@ _G.pg.base.aircraft_template[86170] = {
 		50490
 	}
 }
-
 _G.pg.base.aircraft_template[86171] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -61094,7 +57958,6 @@ _G.pg.base.aircraft_template[86171] = {
 		50491
 	}
 }
-
 _G.pg.base.aircraft_template[86172] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -61106,7 +57969,6 @@ _G.pg.base.aircraft_template[86172] = {
 		50492
 	}
 }
-
 _G.pg.base.aircraft_template[86173] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -61118,7 +57980,6 @@ _G.pg.base.aircraft_template[86173] = {
 		50493
 	}
 }
-
 _G.pg.base.aircraft_template[88000] = {
 	attack_power = 2,
 	name = "GL.2舰载战斗机T0",
@@ -61194,7 +58055,6 @@ _G.pg.base.aircraft_template[88000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[88001] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -61205,7 +58065,6 @@ _G.pg.base.aircraft_template[88001] = {
 		50021
 	}
 }
-
 _G.pg.base.aircraft_template[88002] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -61216,7 +58075,6 @@ _G.pg.base.aircraft_template[88002] = {
 		50022
 	}
 }
-
 _G.pg.base.aircraft_template[88003] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -61227,7 +58085,6 @@ _G.pg.base.aircraft_template[88003] = {
 		50023
 	}
 }
-
 _G.pg.base.aircraft_template[88004] = {
 	max_hp = 50,
 	hp_growth = 1935,
@@ -61238,7 +58095,6 @@ _G.pg.base.aircraft_template[88004] = {
 		50024
 	}
 }
-
 _G.pg.base.aircraft_template[88005] = {
 	max_hp = 55,
 	hp_growth = 2117,
@@ -61249,7 +58105,6 @@ _G.pg.base.aircraft_template[88005] = {
 		50025
 	}
 }
-
 _G.pg.base.aircraft_template[88006] = {
 	max_hp = 60,
 	hp_growth = 2298,
@@ -61260,7 +58115,6 @@ _G.pg.base.aircraft_template[88006] = {
 		50026
 	}
 }
-
 _G.pg.base.aircraft_template[88007] = {
 	max_hp = 64,
 	hp_growth = 2480,
@@ -61271,7 +58125,6 @@ _G.pg.base.aircraft_template[88007] = {
 		50027
 	}
 }
-
 _G.pg.base.aircraft_template[90820] = {
 	attack_power = 2,
 	name = "GL.2舰载战斗机T0",
@@ -61347,7 +58200,6 @@ _G.pg.base.aircraft_template[90820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[90821] = {
 	max_hp = 36,
 	hp_growth = 1391,
@@ -61358,7 +58210,6 @@ _G.pg.base.aircraft_template[90821] = {
 		50021
 	}
 }
-
 _G.pg.base.aircraft_template[90822] = {
 	max_hp = 41,
 	hp_growth = 1572,
@@ -61369,7 +58220,6 @@ _G.pg.base.aircraft_template[90822] = {
 		50022
 	}
 }
-
 _G.pg.base.aircraft_template[90823] = {
 	max_hp = 46,
 	hp_growth = 1754,
@@ -61380,7 +58230,6 @@ _G.pg.base.aircraft_template[90823] = {
 		50023
 	}
 }
-
 _G.pg.base.aircraft_template[90824] = {
 	max_hp = 50,
 	hp_growth = 1935,
@@ -61391,7 +58240,6 @@ _G.pg.base.aircraft_template[90824] = {
 		50024
 	}
 }
-
 _G.pg.base.aircraft_template[90825] = {
 	max_hp = 55,
 	hp_growth = 2117,
@@ -61402,7 +58250,6 @@ _G.pg.base.aircraft_template[90825] = {
 		50025
 	}
 }
-
 _G.pg.base.aircraft_template[90826] = {
 	max_hp = 60,
 	hp_growth = 2298,
@@ -61413,7 +58260,6 @@ _G.pg.base.aircraft_template[90826] = {
 		50026
 	}
 }
-
 _G.pg.base.aircraft_template[90827] = {
 	max_hp = 64,
 	hp_growth = 2480,
@@ -61424,7 +58270,6 @@ _G.pg.base.aircraft_template[90827] = {
 		50027
 	}
 }
-
 _G.pg.base.aircraft_template[90840] = {
 	attack_power = 2,
 	name = "PL.7舰载鱼雷机T0",
@@ -61501,7 +58346,6 @@ _G.pg.base.aircraft_template[90840] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[90841] = {
 	max_hp = 40,
 	hp_growth = 1538,
@@ -61513,7 +58357,6 @@ _G.pg.base.aircraft_template[90841] = {
 		51561
 	}
 }
-
 _G.pg.base.aircraft_template[90842] = {
 	max_hp = 45,
 	hp_growth = 1739,
@@ -61525,7 +58368,6 @@ _G.pg.base.aircraft_template[90842] = {
 		51562
 	}
 }
-
 _G.pg.base.aircraft_template[90843] = {
 	max_hp = 50,
 	hp_growth = 1940,
@@ -61537,7 +58379,6 @@ _G.pg.base.aircraft_template[90843] = {
 		51563
 	}
 }
-
 _G.pg.base.aircraft_template[90844] = {
 	max_hp = 56,
 	hp_growth = 2140,
@@ -61549,7 +58390,6 @@ _G.pg.base.aircraft_template[90844] = {
 		51564
 	}
 }
-
 _G.pg.base.aircraft_template[90845] = {
 	max_hp = 61,
 	hp_growth = 2341,
@@ -61561,7 +58401,6 @@ _G.pg.base.aircraft_template[90845] = {
 		51565
 	}
 }
-
 _G.pg.base.aircraft_template[90846] = {
 	max_hp = 66,
 	hp_growth = 2541,
@@ -61573,7 +58412,6 @@ _G.pg.base.aircraft_template[90846] = {
 		51566
 	}
 }
-
 _G.pg.base.aircraft_template[90847] = {
 	max_hp = 71,
 	hp_growth = 2742,
@@ -61585,7 +58423,6 @@ _G.pg.base.aircraft_template[90847] = {
 		51567
 	}
 }
-
 _G.pg.base.aircraft_template[91180] = {
 	attack_power = 2,
 	name = "FBA 19",
@@ -61661,7 +58498,6 @@ _G.pg.base.aircraft_template[91180] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[91181] = {
 	max_hp = 29,
 	hp_growth = 1308,
@@ -61672,7 +58508,6 @@ _G.pg.base.aircraft_template[91181] = {
 		52201
 	}
 }
-
 _G.pg.base.aircraft_template[91182] = {
 	max_hp = 33,
 	hp_growth = 1478,
@@ -61683,7 +58518,6 @@ _G.pg.base.aircraft_template[91182] = {
 		52202
 	}
 }
-
 _G.pg.base.aircraft_template[91183] = {
 	max_hp = 38,
 	hp_growth = 1649,
@@ -61694,7 +58528,6 @@ _G.pg.base.aircraft_template[91183] = {
 		52203
 	}
 }
-
 _G.pg.base.aircraft_template[91184] = {
 	max_hp = 42,
 	hp_growth = 1819,
@@ -61705,7 +58538,6 @@ _G.pg.base.aircraft_template[91184] = {
 		52204
 	}
 }
-
 _G.pg.base.aircraft_template[91185] = {
 	max_hp = 47,
 	hp_growth = 1990,
@@ -61716,7 +58548,6 @@ _G.pg.base.aircraft_template[91185] = {
 		52205
 	}
 }
-
 _G.pg.base.aircraft_template[91186] = {
 	max_hp = 51,
 	hp_growth = 2160,
@@ -61727,7 +58558,6 @@ _G.pg.base.aircraft_template[91186] = {
 		52206
 	}
 }
-
 _G.pg.base.aircraft_template[91200] = {
 	attack_power = 2,
 	name = "FBA 19",
@@ -61803,7 +58633,6 @@ _G.pg.base.aircraft_template[91200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[91201] = {
 	max_hp = 32,
 	hp_growth = 1438,
@@ -61814,7 +58643,6 @@ _G.pg.base.aircraft_template[91201] = {
 		52221
 	}
 }
-
 _G.pg.base.aircraft_template[91202] = {
 	max_hp = 37,
 	hp_growth = 1626,
@@ -61825,7 +58653,6 @@ _G.pg.base.aircraft_template[91202] = {
 		52222
 	}
 }
-
 _G.pg.base.aircraft_template[91203] = {
 	max_hp = 42,
 	hp_growth = 1813,
@@ -61836,7 +58663,6 @@ _G.pg.base.aircraft_template[91203] = {
 		52223
 	}
 }
-
 _G.pg.base.aircraft_template[91204] = {
 	max_hp = 47,
 	hp_growth = 2001,
@@ -61847,7 +58673,6 @@ _G.pg.base.aircraft_template[91204] = {
 		52224
 	}
 }
-
 _G.pg.base.aircraft_template[91205] = {
 	max_hp = 52,
 	hp_growth = 2189,
@@ -61858,7 +58683,6 @@ _G.pg.base.aircraft_template[91205] = {
 		52225
 	}
 }
-
 _G.pg.base.aircraft_template[91206] = {
 	max_hp = 57,
 	hp_growth = 2376,
@@ -61869,7 +58693,6 @@ _G.pg.base.aircraft_template[91206] = {
 		52226
 	}
 }
-
 _G.pg.base.aircraft_template[91207] = {
 	max_hp = 62,
 	hp_growth = 2564,
@@ -61880,7 +58703,6 @@ _G.pg.base.aircraft_template[91207] = {
 		52227
 	}
 }
-
 _G.pg.base.aircraft_template[91208] = {
 	max_hp = 67,
 	hp_growth = 2751,
@@ -61891,7 +58713,6 @@ _G.pg.base.aircraft_template[91208] = {
 		52228
 	}
 }
-
 _G.pg.base.aircraft_template[91209] = {
 	max_hp = 71,
 	hp_growth = 2939,
@@ -61902,7 +58723,6 @@ _G.pg.base.aircraft_template[91209] = {
 		52229
 	}
 }
-
 _G.pg.base.aircraft_template[91210] = {
 	max_hp = 76,
 	hp_growth = 3127,
@@ -61913,7 +58733,6 @@ _G.pg.base.aircraft_template[91210] = {
 		52230
 	}
 }
-
 _G.pg.base.aircraft_template[91211] = {
 	max_hp = 81,
 	hp_growth = 3314,
@@ -61924,7 +58743,6 @@ _G.pg.base.aircraft_template[91211] = {
 		52231
 	}
 }
-
 _G.pg.base.aircraft_template[91220] = {
 	attack_power = 2,
 	name = "D.790",
@@ -62001,7 +58819,6 @@ _G.pg.base.aircraft_template[91220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[91221] = {
 	max_hp = 44,
 	hp_growth = 1700,
@@ -62013,7 +58830,6 @@ _G.pg.base.aircraft_template[91221] = {
 		50001
 	}
 }
-
 _G.pg.base.aircraft_template[91222] = {
 	max_hp = 50,
 	hp_growth = 1922,
@@ -62025,7 +58841,6 @@ _G.pg.base.aircraft_template[91222] = {
 		50002
 	}
 }
-
 _G.pg.base.aircraft_template[91223] = {
 	max_hp = 56,
 	hp_growth = 2144,
@@ -62037,7 +58852,6 @@ _G.pg.base.aircraft_template[91223] = {
 		50003
 	}
 }
-
 _G.pg.base.aircraft_template[91224] = {
 	max_hp = 62,
 	hp_growth = 2365,
@@ -62049,7 +58863,6 @@ _G.pg.base.aircraft_template[91224] = {
 		50004
 	}
 }
-
 _G.pg.base.aircraft_template[91225] = {
 	max_hp = 67,
 	hp_growth = 2587,
@@ -62061,7 +58874,6 @@ _G.pg.base.aircraft_template[91225] = {
 		50005
 	}
 }
-
 _G.pg.base.aircraft_template[91226] = {
 	max_hp = 73,
 	hp_growth = 2809,
@@ -62073,7 +58885,6 @@ _G.pg.base.aircraft_template[91226] = {
 		50006
 	}
 }
-
 _G.pg.base.aircraft_template[91227] = {
 	max_hp = 79,
 	hp_growth = 3031,
@@ -62085,7 +58896,6 @@ _G.pg.base.aircraft_template[91227] = {
 		50007
 	}
 }
-
 _G.pg.base.aircraft_template[91228] = {
 	max_hp = 85,
 	hp_growth = 3252,
@@ -62097,7 +58907,6 @@ _G.pg.base.aircraft_template[91228] = {
 		50008
 	}
 }
-
 _G.pg.base.aircraft_template[91229] = {
 	max_hp = 90,
 	hp_growth = 3474,
@@ -62109,7 +58918,6 @@ _G.pg.base.aircraft_template[91229] = {
 		50009
 	}
 }
-
 _G.pg.base.aircraft_template[91230] = {
 	max_hp = 96,
 	hp_growth = 3696,
@@ -62121,7 +58929,6 @@ _G.pg.base.aircraft_template[91230] = {
 		50010
 	}
 }
-
 _G.pg.base.aircraft_template[91231] = {
 	max_hp = 102,
 	hp_growth = 3918,
@@ -62133,7 +58940,6 @@ _G.pg.base.aircraft_template[91231] = {
 		50011
 	}
 }
-
 _G.pg.base.aircraft_template[91240] = {
 	attack_power = 2,
 	name = "BR.810",
@@ -62211,7 +59017,6 @@ _G.pg.base.aircraft_template[91240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[91241] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -62224,7 +59029,6 @@ _G.pg.base.aircraft_template[91241] = {
 		51601
 	}
 }
-
 _G.pg.base.aircraft_template[91242] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -62237,7 +59041,6 @@ _G.pg.base.aircraft_template[91242] = {
 		51602
 	}
 }
-
 _G.pg.base.aircraft_template[91243] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -62250,7 +59053,6 @@ _G.pg.base.aircraft_template[91243] = {
 		51603
 	}
 }
-
 _G.pg.base.aircraft_template[91244] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -62263,7 +59065,6 @@ _G.pg.base.aircraft_template[91244] = {
 		51604
 	}
 }
-
 _G.pg.base.aircraft_template[91245] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -62276,7 +59077,6 @@ _G.pg.base.aircraft_template[91245] = {
 		51605
 	}
 }
-
 _G.pg.base.aircraft_template[91246] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -62289,7 +59089,6 @@ _G.pg.base.aircraft_template[91246] = {
 		51606
 	}
 }
-
 _G.pg.base.aircraft_template[91247] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -62302,7 +59101,6 @@ _G.pg.base.aircraft_template[91247] = {
 		51607
 	}
 }
-
 _G.pg.base.aircraft_template[91248] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -62315,7 +59113,6 @@ _G.pg.base.aircraft_template[91248] = {
 		51608
 	}
 }
-
 _G.pg.base.aircraft_template[91249] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -62328,7 +59125,6 @@ _G.pg.base.aircraft_template[91249] = {
 		51609
 	}
 }
-
 _G.pg.base.aircraft_template[91250] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -62341,7 +59137,6 @@ _G.pg.base.aircraft_template[91250] = {
 		51610
 	}
 }
-
 _G.pg.base.aircraft_template[91251] = {
 	max_hp = 101,
 	hp_growth = 3867,
@@ -62354,7 +59149,6 @@ _G.pg.base.aircraft_template[91251] = {
 		51611
 	}
 }
-
 _G.pg.base.aircraft_template[91252] = {
 	max_hp = 106,
 	hp_growth = 4086,
@@ -62367,7 +59161,6 @@ _G.pg.base.aircraft_template[91252] = {
 		51612
 	}
 }
-
 _G.pg.base.aircraft_template[91253] = {
 	max_hp = 112,
 	hp_growth = 4305,
@@ -62380,7 +59173,6 @@ _G.pg.base.aircraft_template[91253] = {
 		51613
 	}
 }
-
 _G.pg.base.aircraft_template[95720] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T1",
@@ -62458,7 +59250,6 @@ _G.pg.base.aircraft_template[95720] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95721] = {
 	max_hp = 38,
 	hp_growth = 1461,
@@ -62471,7 +59262,6 @@ _G.pg.base.aircraft_template[95721] = {
 		52101
 	}
 }
-
 _G.pg.base.aircraft_template[95722] = {
 	max_hp = 43,
 	hp_growth = 1651,
@@ -62484,7 +59274,6 @@ _G.pg.base.aircraft_template[95722] = {
 		52102
 	}
 }
-
 _G.pg.base.aircraft_template[95723] = {
 	max_hp = 48,
 	hp_growth = 1842,
@@ -62497,7 +59286,6 @@ _G.pg.base.aircraft_template[95723] = {
 		52103
 	}
 }
-
 _G.pg.base.aircraft_template[95740] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T2",
@@ -62575,7 +59363,6 @@ _G.pg.base.aircraft_template[95740] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95741] = {
 	max_hp = 42,
 	hp_growth = 1623,
@@ -62588,7 +59375,6 @@ _G.pg.base.aircraft_template[95741] = {
 		52121
 	}
 }
-
 _G.pg.base.aircraft_template[95742] = {
 	max_hp = 48,
 	hp_growth = 1835,
@@ -62601,7 +59387,6 @@ _G.pg.base.aircraft_template[95742] = {
 		52122
 	}
 }
-
 _G.pg.base.aircraft_template[95743] = {
 	max_hp = 53,
 	hp_growth = 2046,
@@ -62614,7 +59399,6 @@ _G.pg.base.aircraft_template[95743] = {
 		52123
 	}
 }
-
 _G.pg.base.aircraft_template[95744] = {
 	max_hp = 59,
 	hp_growth = 2258,
@@ -62627,7 +59411,6 @@ _G.pg.base.aircraft_template[95744] = {
 		52124
 	}
 }
-
 _G.pg.base.aircraft_template[95745] = {
 	max_hp = 64,
 	hp_growth = 2470,
@@ -62640,7 +59423,6 @@ _G.pg.base.aircraft_template[95745] = {
 		52125
 	}
 }
-
 _G.pg.base.aircraft_template[95746] = {
 	max_hp = 70,
 	hp_growth = 2681,
@@ -62653,7 +59435,6 @@ _G.pg.base.aircraft_template[95746] = {
 		52126
 	}
 }
-
 _G.pg.base.aircraft_template[95760] = {
 	attack_power = 2,
 	name = "G.50箭式战斗机T3",
@@ -62731,7 +59512,6 @@ _G.pg.base.aircraft_template[95760] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95761] = {
 	max_hp = 46,
 	hp_growth = 1785,
@@ -62744,7 +59524,6 @@ _G.pg.base.aircraft_template[95761] = {
 		52141
 	}
 }
-
 _G.pg.base.aircraft_template[95762] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -62757,7 +59536,6 @@ _G.pg.base.aircraft_template[95762] = {
 		52142
 	}
 }
-
 _G.pg.base.aircraft_template[95763] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -62770,7 +59548,6 @@ _G.pg.base.aircraft_template[95763] = {
 		52143
 	}
 }
-
 _G.pg.base.aircraft_template[95764] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -62783,7 +59560,6 @@ _G.pg.base.aircraft_template[95764] = {
 		52144
 	}
 }
-
 _G.pg.base.aircraft_template[95765] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -62796,7 +59572,6 @@ _G.pg.base.aircraft_template[95765] = {
 		52145
 	}
 }
-
 _G.pg.base.aircraft_template[95766] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -62809,7 +59584,6 @@ _G.pg.base.aircraft_template[95766] = {
 		52146
 	}
 }
-
 _G.pg.base.aircraft_template[95767] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -62822,7 +59596,6 @@ _G.pg.base.aircraft_template[95767] = {
 		52147
 	}
 }
-
 _G.pg.base.aircraft_template[95768] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -62835,7 +59608,6 @@ _G.pg.base.aircraft_template[95768] = {
 		52148
 	}
 }
-
 _G.pg.base.aircraft_template[95769] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -62848,7 +59620,6 @@ _G.pg.base.aircraft_template[95769] = {
 		52149
 	}
 }
-
 _G.pg.base.aircraft_template[95770] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -62861,7 +59632,6 @@ _G.pg.base.aircraft_template[95770] = {
 		52150
 	}
 }
-
 _G.pg.base.aircraft_template[95771] = {
 	max_hp = 107,
 	hp_growth = 4114,
@@ -62874,7 +59644,6 @@ _G.pg.base.aircraft_template[95771] = {
 		52151
 	}
 }
-
 _G.pg.base.aircraft_template[95800] = {
 	attack_power = 2,
 	name = "Re.2001公羊T1",
@@ -62952,7 +59721,6 @@ _G.pg.base.aircraft_template[95800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95801] = {
 	max_hp = 34,
 	hp_growth = 1321,
@@ -62965,7 +59733,6 @@ _G.pg.base.aircraft_template[95801] = {
 		52201
 	}
 }
-
 _G.pg.base.aircraft_template[95802] = {
 	max_hp = 39,
 	hp_growth = 1494,
@@ -62978,7 +59745,6 @@ _G.pg.base.aircraft_template[95802] = {
 		52202
 	}
 }
-
 _G.pg.base.aircraft_template[95803] = {
 	max_hp = 43,
 	hp_growth = 1666,
@@ -62991,7 +59757,6 @@ _G.pg.base.aircraft_template[95803] = {
 		52203
 	}
 }
-
 _G.pg.base.aircraft_template[95820] = {
 	attack_power = 2,
 	name = "Re.2001公羊T2",
@@ -63069,7 +59834,6 @@ _G.pg.base.aircraft_template[95820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95821] = {
 	max_hp = 38,
 	hp_growth = 1468,
@@ -63082,7 +59846,6 @@ _G.pg.base.aircraft_template[95821] = {
 		52221
 	}
 }
-
 _G.pg.base.aircraft_template[95822] = {
 	max_hp = 43,
 	hp_growth = 1660,
@@ -63095,7 +59858,6 @@ _G.pg.base.aircraft_template[95822] = {
 		52222
 	}
 }
-
 _G.pg.base.aircraft_template[95823] = {
 	max_hp = 48,
 	hp_growth = 1851,
@@ -63108,7 +59870,6 @@ _G.pg.base.aircraft_template[95823] = {
 		52223
 	}
 }
-
 _G.pg.base.aircraft_template[95824] = {
 	max_hp = 53,
 	hp_growth = 2043,
@@ -63121,7 +59882,6 @@ _G.pg.base.aircraft_template[95824] = {
 		52224
 	}
 }
-
 _G.pg.base.aircraft_template[95825] = {
 	max_hp = 58,
 	hp_growth = 2234,
@@ -63134,7 +59894,6 @@ _G.pg.base.aircraft_template[95825] = {
 		52225
 	}
 }
-
 _G.pg.base.aircraft_template[95826] = {
 	max_hp = 63,
 	hp_growth = 2426,
@@ -63147,7 +59906,6 @@ _G.pg.base.aircraft_template[95826] = {
 		52226
 	}
 }
-
 _G.pg.base.aircraft_template[95840] = {
 	attack_power = 2,
 	name = "Re.2001公羊T3",
@@ -63225,7 +59983,6 @@ _G.pg.base.aircraft_template[95840] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[95841] = {
 	max_hp = 42,
 	hp_growth = 1615,
@@ -63238,7 +59995,6 @@ _G.pg.base.aircraft_template[95841] = {
 		52241
 	}
 }
-
 _G.pg.base.aircraft_template[95842] = {
 	max_hp = 47,
 	hp_growth = 1826,
@@ -63251,7 +60007,6 @@ _G.pg.base.aircraft_template[95842] = {
 		52242
 	}
 }
-
 _G.pg.base.aircraft_template[95843] = {
 	max_hp = 53,
 	hp_growth = 2036,
@@ -63264,7 +60019,6 @@ _G.pg.base.aircraft_template[95843] = {
 		52243
 	}
 }
-
 _G.pg.base.aircraft_template[95844] = {
 	max_hp = 58,
 	hp_growth = 2247,
@@ -63277,7 +60031,6 @@ _G.pg.base.aircraft_template[95844] = {
 		52244
 	}
 }
-
 _G.pg.base.aircraft_template[95845] = {
 	max_hp = 64,
 	hp_growth = 2458,
@@ -63290,7 +60043,6 @@ _G.pg.base.aircraft_template[95845] = {
 		52245
 	}
 }
-
 _G.pg.base.aircraft_template[95846] = {
 	max_hp = 69,
 	hp_growth = 2669,
@@ -63303,7 +60055,6 @@ _G.pg.base.aircraft_template[95846] = {
 		52246
 	}
 }
-
 _G.pg.base.aircraft_template[95847] = {
 	max_hp = 75,
 	hp_growth = 2879,
@@ -63316,7 +60067,6 @@ _G.pg.base.aircraft_template[95847] = {
 		52247
 	}
 }
-
 _G.pg.base.aircraft_template[95848] = {
 	max_hp = 80,
 	hp_growth = 3090,
@@ -63329,7 +60079,6 @@ _G.pg.base.aircraft_template[95848] = {
 		52248
 	}
 }
-
 _G.pg.base.aircraft_template[95849] = {
 	max_hp = 86,
 	hp_growth = 3301,
@@ -63342,7 +60091,6 @@ _G.pg.base.aircraft_template[95849] = {
 		52249
 	}
 }
-
 _G.pg.base.aircraft_template[95850] = {
 	max_hp = 91,
 	hp_growth = 3511,
@@ -63355,7 +60103,6 @@ _G.pg.base.aircraft_template[95850] = {
 		52250
 	}
 }
-
 _G.pg.base.aircraft_template[95851] = {
 	max_hp = 97,
 	hp_growth = 3722,
@@ -63368,7 +60115,6 @@ _G.pg.base.aircraft_template[95851] = {
 		52251
 	}
 }
-
 _G.pg.base.aircraft_template[100720] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机I（大世界通用飞机）",
@@ -63445,7 +60191,6 @@ _G.pg.base.aircraft_template[100720] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100721] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机II",
@@ -63522,7 +60267,6 @@ _G.pg.base.aircraft_template[100721] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100722] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机III",
@@ -63599,7 +60343,6 @@ _G.pg.base.aircraft_template[100722] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100723] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机IV",
@@ -63676,7 +60419,6 @@ _G.pg.base.aircraft_template[100723] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100724] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机V",
@@ -63753,7 +60495,6 @@ _G.pg.base.aircraft_template[100724] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100725] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机I",
@@ -63829,7 +60570,6 @@ _G.pg.base.aircraft_template[100725] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100726] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机II",
@@ -63905,7 +60645,6 @@ _G.pg.base.aircraft_template[100726] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100727] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机III",
@@ -63981,7 +60720,6 @@ _G.pg.base.aircraft_template[100727] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100728] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机IV",
@@ -64057,7 +60795,6 @@ _G.pg.base.aircraft_template[100728] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100729] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机V",
@@ -64133,7 +60870,6 @@ _G.pg.base.aircraft_template[100729] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100730] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机I",
@@ -64209,7 +60945,6 @@ _G.pg.base.aircraft_template[100730] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100731] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机II",
@@ -64285,7 +61020,6 @@ _G.pg.base.aircraft_template[100731] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100732] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机III",
@@ -64361,7 +61095,6 @@ _G.pg.base.aircraft_template[100732] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100733] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机IV",
@@ -64437,7 +61170,6 @@ _G.pg.base.aircraft_template[100733] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100734] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机V",
@@ -64513,7 +61245,6 @@ _G.pg.base.aircraft_template[100734] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100735] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机I",
@@ -64590,7 +61321,6 @@ _G.pg.base.aircraft_template[100735] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100736] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机II",
@@ -64667,7 +61397,6 @@ _G.pg.base.aircraft_template[100736] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100737] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机III",
@@ -64744,7 +61473,6 @@ _G.pg.base.aircraft_template[100737] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100738] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机IV",
@@ -64821,7 +61549,6 @@ _G.pg.base.aircraft_template[100738] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100739] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机V",
@@ -64898,7 +61625,6 @@ _G.pg.base.aircraft_template[100739] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100740] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机I",
@@ -64974,7 +61700,6 @@ _G.pg.base.aircraft_template[100740] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100741] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机II",
@@ -65050,7 +61775,6 @@ _G.pg.base.aircraft_template[100741] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100742] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机III",
@@ -65126,7 +61850,6 @@ _G.pg.base.aircraft_template[100742] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100743] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机IV",
@@ -65202,7 +61925,6 @@ _G.pg.base.aircraft_template[100743] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100744] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机V",
@@ -65278,7 +62000,6 @@ _G.pg.base.aircraft_template[100744] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100745] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机I",
@@ -65354,7 +62075,6 @@ _G.pg.base.aircraft_template[100745] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100746] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机II",
@@ -65430,7 +62150,6 @@ _G.pg.base.aircraft_template[100746] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100747] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机III",
@@ -65506,7 +62225,6 @@ _G.pg.base.aircraft_template[100747] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100748] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机IV",
@@ -65582,7 +62300,6 @@ _G.pg.base.aircraft_template[100748] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100749] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机V",
@@ -65658,7 +62375,6 @@ _G.pg.base.aircraft_template[100749] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100750] = {
 	attack_power = 2,
 	name = "日系舰载战斗机I",
@@ -65735,7 +62451,6 @@ _G.pg.base.aircraft_template[100750] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100751] = {
 	attack_power = 2,
 	name = "日系舰载战斗机II",
@@ -65812,7 +62527,6 @@ _G.pg.base.aircraft_template[100751] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100752] = {
 	attack_power = 2,
 	name = "日系舰载战斗机III",
@@ -65889,7 +62603,6 @@ _G.pg.base.aircraft_template[100752] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100753] = {
 	attack_power = 2,
 	name = "日系舰载战斗机IV",
@@ -65966,7 +62679,6 @@ _G.pg.base.aircraft_template[100753] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100754] = {
 	attack_power = 2,
 	name = "日系舰载战斗机V",
@@ -66043,7 +62755,6 @@ _G.pg.base.aircraft_template[100754] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100755] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机I",
@@ -66119,7 +62830,6 @@ _G.pg.base.aircraft_template[100755] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100756] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机II",
@@ -66195,7 +62905,6 @@ _G.pg.base.aircraft_template[100756] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100757] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机III",
@@ -66271,7 +62980,6 @@ _G.pg.base.aircraft_template[100757] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100758] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机IV",
@@ -66347,7 +63055,6 @@ _G.pg.base.aircraft_template[100758] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100759] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机V",
@@ -66423,7 +63130,6 @@ _G.pg.base.aircraft_template[100759] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100760] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机I",
@@ -66499,7 +63205,6 @@ _G.pg.base.aircraft_template[100760] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100761] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机II",
@@ -66575,7 +63280,6 @@ _G.pg.base.aircraft_template[100761] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100762] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机III",
@@ -66651,7 +63355,6 @@ _G.pg.base.aircraft_template[100762] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100763] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机IV",
@@ -66727,7 +63430,6 @@ _G.pg.base.aircraft_template[100763] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100764] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机V",
@@ -66803,7 +63505,6 @@ _G.pg.base.aircraft_template[100764] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100765] = {
 	attack_power = 2,
 	name = "德系舰载战斗机I",
@@ -66880,7 +63581,6 @@ _G.pg.base.aircraft_template[100765] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100766] = {
 	attack_power = 2,
 	name = "德系舰载战斗机II",
@@ -66957,7 +63657,6 @@ _G.pg.base.aircraft_template[100766] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100767] = {
 	attack_power = 2,
 	name = "德系舰载战斗机III",
@@ -67034,7 +63733,6 @@ _G.pg.base.aircraft_template[100767] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100768] = {
 	attack_power = 2,
 	name = "德系舰载战斗机IV",
@@ -67111,7 +63809,6 @@ _G.pg.base.aircraft_template[100768] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100769] = {
 	attack_power = 2,
 	name = "德系舰载战斗机V",
@@ -67188,7 +63885,6 @@ _G.pg.base.aircraft_template[100769] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100770] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机I",
@@ -67264,7 +63960,6 @@ _G.pg.base.aircraft_template[100770] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100771] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机II",
@@ -67340,7 +64035,6 @@ _G.pg.base.aircraft_template[100771] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100772] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机III",
@@ -67416,7 +64110,6 @@ _G.pg.base.aircraft_template[100772] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100773] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机IV",
@@ -67492,7 +64185,6 @@ _G.pg.base.aircraft_template[100773] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100774] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机V",
@@ -67568,7 +64260,6 @@ _G.pg.base.aircraft_template[100774] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100775] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机I",
@@ -67644,7 +64335,6 @@ _G.pg.base.aircraft_template[100775] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100776] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机II",
@@ -67720,7 +64410,6 @@ _G.pg.base.aircraft_template[100776] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100777] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机III",
@@ -67796,7 +64485,6 @@ _G.pg.base.aircraft_template[100777] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100778] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机IV",
@@ -67872,7 +64560,6 @@ _G.pg.base.aircraft_template[100778] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100779] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机V",
@@ -67948,7 +64635,6 @@ _G.pg.base.aircraft_template[100779] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100800] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机I",
@@ -68024,7 +64710,6 @@ _G.pg.base.aircraft_template[100800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100801] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机II",
@@ -68100,7 +64785,6 @@ _G.pg.base.aircraft_template[100801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100802] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机III",
@@ -68176,7 +64860,6 @@ _G.pg.base.aircraft_template[100802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100803] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机IV",
@@ -68252,7 +64935,6 @@ _G.pg.base.aircraft_template[100803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100804] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机V",
@@ -68328,7 +65010,6 @@ _G.pg.base.aircraft_template[100804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100805] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机I",
@@ -68404,7 +65085,6 @@ _G.pg.base.aircraft_template[100805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100806] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机II",
@@ -68480,7 +65160,6 @@ _G.pg.base.aircraft_template[100806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100807] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机III",
@@ -68556,7 +65235,6 @@ _G.pg.base.aircraft_template[100807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100808] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机IV",
@@ -68632,7 +65310,6 @@ _G.pg.base.aircraft_template[100808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100809] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机V",
@@ -68708,7 +65385,6 @@ _G.pg.base.aircraft_template[100809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100810] = {
 	attack_power = 2,
 	name = "日系空袭战斗机I",
@@ -68785,7 +65461,6 @@ _G.pg.base.aircraft_template[100810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100811] = {
 	attack_power = 2,
 	name = "日系空袭战斗机II",
@@ -68862,7 +65537,6 @@ _G.pg.base.aircraft_template[100811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100812] = {
 	attack_power = 2,
 	name = "日系空袭战斗机III",
@@ -68939,7 +65613,6 @@ _G.pg.base.aircraft_template[100812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100813] = {
 	attack_power = 2,
 	name = "日系空袭战斗机IV",
@@ -69016,7 +65689,6 @@ _G.pg.base.aircraft_template[100813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[100814] = {
 	attack_power = 2,
 	name = "日系空袭战斗机V",
@@ -69093,7 +65765,6 @@ _G.pg.base.aircraft_template[100814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160001] = {
 	attack_power = 2,
 	name = "阿尔比恩一技能海大黄蜂",
@@ -69169,7 +65840,6 @@ _G.pg.base.aircraft_template[160001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160002] = {
 	max_hp = 64,
 	hp_growth = 2474,
@@ -69180,7 +65850,6 @@ _G.pg.base.aircraft_template[160002] = {
 		160012
 	}
 }
-
 _G.pg.base.aircraft_template[160003] = {
 	max_hp = 72,
 	hp_growth = 2760,
@@ -69191,7 +65860,6 @@ _G.pg.base.aircraft_template[160003] = {
 		160013
 	}
 }
-
 _G.pg.base.aircraft_template[160004] = {
 	max_hp = 79,
 	hp_growth = 3045,
@@ -69202,7 +65870,6 @@ _G.pg.base.aircraft_template[160004] = {
 		160014
 	}
 }
-
 _G.pg.base.aircraft_template[160005] = {
 	max_hp = 87,
 	hp_growth = 3330,
@@ -69213,7 +65880,6 @@ _G.pg.base.aircraft_template[160005] = {
 		160015
 	}
 }
-
 _G.pg.base.aircraft_template[160006] = {
 	max_hp = 94,
 	hp_growth = 3616,
@@ -69224,7 +65890,6 @@ _G.pg.base.aircraft_template[160006] = {
 		160016
 	}
 }
-
 _G.pg.base.aircraft_template[160007] = {
 	max_hp = 101,
 	hp_growth = 3901,
@@ -69235,7 +65900,6 @@ _G.pg.base.aircraft_template[160007] = {
 		160017
 	}
 }
-
 _G.pg.base.aircraft_template[160008] = {
 	max_hp = 109,
 	hp_growth = 4187,
@@ -69246,7 +65910,6 @@ _G.pg.base.aircraft_template[160008] = {
 		160018
 	}
 }
-
 _G.pg.base.aircraft_template[160009] = {
 	max_hp = 116,
 	hp_growth = 4472,
@@ -69257,7 +65920,6 @@ _G.pg.base.aircraft_template[160009] = {
 		160019
 	}
 }
-
 _G.pg.base.aircraft_template[160010] = {
 	max_hp = 124,
 	hp_growth = 4758,
@@ -69268,7 +65930,6 @@ _G.pg.base.aircraft_template[160010] = {
 		160020
 	}
 }
-
 _G.pg.base.aircraft_template[160021] = {
 	attack_power = 2,
 	name = "阿尔比恩梭鱼1",
@@ -69345,7 +66006,6 @@ _G.pg.base.aircraft_template[160021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160022] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -69357,7 +66017,6 @@ _G.pg.base.aircraft_template[160022] = {
 		160062
 	}
 }
-
 _G.pg.base.aircraft_template[160023] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -69369,7 +66028,6 @@ _G.pg.base.aircraft_template[160023] = {
 		160063
 	}
 }
-
 _G.pg.base.aircraft_template[160024] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -69381,7 +66039,6 @@ _G.pg.base.aircraft_template[160024] = {
 		160064
 	}
 }
-
 _G.pg.base.aircraft_template[160025] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -69393,7 +66050,6 @@ _G.pg.base.aircraft_template[160025] = {
 		160065
 	}
 }
-
 _G.pg.base.aircraft_template[160026] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -69405,7 +66061,6 @@ _G.pg.base.aircraft_template[160026] = {
 		160066
 	}
 }
-
 _G.pg.base.aircraft_template[160027] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -69417,7 +66072,6 @@ _G.pg.base.aircraft_template[160027] = {
 		160067
 	}
 }
-
 _G.pg.base.aircraft_template[160028] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -69429,7 +66083,6 @@ _G.pg.base.aircraft_template[160028] = {
 		160068
 	}
 }
-
 _G.pg.base.aircraft_template[160029] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -69441,7 +66094,6 @@ _G.pg.base.aircraft_template[160029] = {
 		160069
 	}
 }
-
 _G.pg.base.aircraft_template[160030] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -69453,7 +66105,6 @@ _G.pg.base.aircraft_template[160030] = {
 		160070
 	}
 }
-
 _G.pg.base.aircraft_template[160041] = {
 	attack_power = 2,
 	name = "阿尔比恩梭鱼2",
@@ -69530,7 +66181,6 @@ _G.pg.base.aircraft_template[160041] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160042] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -69542,7 +66192,6 @@ _G.pg.base.aircraft_template[160042] = {
 		160062
 	}
 }
-
 _G.pg.base.aircraft_template[160043] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -69554,7 +66203,6 @@ _G.pg.base.aircraft_template[160043] = {
 		160063
 	}
 }
-
 _G.pg.base.aircraft_template[160044] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -69566,7 +66214,6 @@ _G.pg.base.aircraft_template[160044] = {
 		160064
 	}
 }
-
 _G.pg.base.aircraft_template[160045] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -69578,7 +66225,6 @@ _G.pg.base.aircraft_template[160045] = {
 		160065
 	}
 }
-
 _G.pg.base.aircraft_template[160046] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -69590,7 +66236,6 @@ _G.pg.base.aircraft_template[160046] = {
 		160066
 	}
 }
-
 _G.pg.base.aircraft_template[160047] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -69602,7 +66247,6 @@ _G.pg.base.aircraft_template[160047] = {
 		160067
 	}
 }
-
 _G.pg.base.aircraft_template[160048] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -69614,7 +66258,6 @@ _G.pg.base.aircraft_template[160048] = {
 		160068
 	}
 }
-
 _G.pg.base.aircraft_template[160049] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -69626,7 +66269,6 @@ _G.pg.base.aircraft_template[160049] = {
 		160069
 	}
 }
-
 _G.pg.base.aircraft_template[160050] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -69638,7 +66280,6 @@ _G.pg.base.aircraft_template[160050] = {
 		160070
 	}
 }
-
 _G.pg.base.aircraft_template[160351] = {
 	attack_power = 2,
 	name = "约克城Ⅱ一技能弹幕",
@@ -69715,7 +66356,6 @@ _G.pg.base.aircraft_template[160351] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160352] = {
 	max_hp = 62,
 	hp_growth = 2387,
@@ -69727,7 +66367,6 @@ _G.pg.base.aircraft_template[160352] = {
 		160372
 	}
 }
-
 _G.pg.base.aircraft_template[160353] = {
 	max_hp = 70,
 	hp_growth = 2698,
@@ -69739,7 +66378,6 @@ _G.pg.base.aircraft_template[160353] = {
 		160373
 	}
 }
-
 _G.pg.base.aircraft_template[160354] = {
 	max_hp = 78,
 	hp_growth = 3010,
@@ -69751,7 +66389,6 @@ _G.pg.base.aircraft_template[160354] = {
 		160374
 	}
 }
-
 _G.pg.base.aircraft_template[160355] = {
 	max_hp = 86,
 	hp_growth = 3321,
@@ -69763,7 +66400,6 @@ _G.pg.base.aircraft_template[160355] = {
 		160375
 	}
 }
-
 _G.pg.base.aircraft_template[160356] = {
 	max_hp = 94,
 	hp_growth = 3632,
@@ -69775,7 +66411,6 @@ _G.pg.base.aircraft_template[160356] = {
 		160376
 	}
 }
-
 _G.pg.base.aircraft_template[160357] = {
 	max_hp = 103,
 	hp_growth = 3944,
@@ -69787,7 +66422,6 @@ _G.pg.base.aircraft_template[160357] = {
 		160377
 	}
 }
-
 _G.pg.base.aircraft_template[160358] = {
 	max_hp = 111,
 	hp_growth = 4255,
@@ -69799,7 +66433,6 @@ _G.pg.base.aircraft_template[160358] = {
 		160378
 	}
 }
-
 _G.pg.base.aircraft_template[160359] = {
 	max_hp = 119,
 	hp_growth = 4566,
@@ -69811,7 +66444,6 @@ _G.pg.base.aircraft_template[160359] = {
 		160379
 	}
 }
-
 _G.pg.base.aircraft_template[160360] = {
 	max_hp = 127,
 	hp_growth = 4878,
@@ -69823,7 +66455,6 @@ _G.pg.base.aircraft_template[160360] = {
 		160380
 	}
 }
-
 _G.pg.base.aircraft_template[160401] = {
 	attack_power = 2,
 	name = "约克城Ⅱ三技能弹幕",
@@ -69900,7 +66531,6 @@ _G.pg.base.aircraft_template[160401] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160402] = {
 	max_hp = 52,
 	hp_growth = 2018,
@@ -69912,7 +66542,6 @@ _G.pg.base.aircraft_template[160402] = {
 		50522
 	}
 }
-
 _G.pg.base.aircraft_template[160403] = {
 	max_hp = 59,
 	hp_growth = 2251,
@@ -69924,7 +66553,6 @@ _G.pg.base.aircraft_template[160403] = {
 		50523
 	}
 }
-
 _G.pg.base.aircraft_template[160404] = {
 	max_hp = 65,
 	hp_growth = 2484,
@@ -69936,7 +66564,6 @@ _G.pg.base.aircraft_template[160404] = {
 		50524
 	}
 }
-
 _G.pg.base.aircraft_template[160405] = {
 	max_hp = 71,
 	hp_growth = 2717,
@@ -69948,7 +66575,6 @@ _G.pg.base.aircraft_template[160405] = {
 		50525
 	}
 }
-
 _G.pg.base.aircraft_template[160406] = {
 	max_hp = 77,
 	hp_growth = 2949,
@@ -69960,7 +66586,6 @@ _G.pg.base.aircraft_template[160406] = {
 		50526
 	}
 }
-
 _G.pg.base.aircraft_template[160407] = {
 	max_hp = 83,
 	hp_growth = 3182,
@@ -69972,7 +66597,6 @@ _G.pg.base.aircraft_template[160407] = {
 		50527
 	}
 }
-
 _G.pg.base.aircraft_template[160408] = {
 	max_hp = 89,
 	hp_growth = 3415,
@@ -69984,7 +66608,6 @@ _G.pg.base.aircraft_template[160408] = {
 		50528
 	}
 }
-
 _G.pg.base.aircraft_template[160409] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -69996,7 +66619,6 @@ _G.pg.base.aircraft_template[160409] = {
 		50529
 	}
 }
-
 _G.pg.base.aircraft_template[160410] = {
 	max_hp = 101,
 	hp_growth = 3881,
@@ -70008,7 +66630,6 @@ _G.pg.base.aircraft_template[160410] = {
 		50530
 	}
 }
-
 _G.pg.base.aircraft_template[160411] = {
 	attack_power = 2,
 	name = "大黄蜂II技能鱼雷机Lv1",
@@ -70084,7 +66705,6 @@ _G.pg.base.aircraft_template[160411] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160412] = {
 	id = 160412,
 	name = "大黄蜂II技能鱼雷机Lv1",
@@ -70096,7 +66716,6 @@ _G.pg.base.aircraft_template[160412] = {
 		160422
 	}
 }
-
 _G.pg.base.aircraft_template[160413] = {
 	id = 160413,
 	name = "大黄蜂II技能鱼雷机Lv2",
@@ -70108,7 +66727,6 @@ _G.pg.base.aircraft_template[160413] = {
 		160423
 	}
 }
-
 _G.pg.base.aircraft_template[160414] = {
 	id = 160414,
 	name = "大黄蜂II技能鱼雷机Lv3",
@@ -70120,7 +66738,6 @@ _G.pg.base.aircraft_template[160414] = {
 		160424
 	}
 }
-
 _G.pg.base.aircraft_template[160415] = {
 	id = 160415,
 	name = "大黄蜂II技能鱼雷机Lv4",
@@ -70132,7 +66749,6 @@ _G.pg.base.aircraft_template[160415] = {
 		160425
 	}
 }
-
 _G.pg.base.aircraft_template[160416] = {
 	id = 160416,
 	name = "大黄蜂II技能鱼雷机Lv5",
@@ -70144,7 +66760,6 @@ _G.pg.base.aircraft_template[160416] = {
 		160426
 	}
 }
-
 _G.pg.base.aircraft_template[160417] = {
 	id = 160417,
 	name = "大黄蜂II技能鱼雷机Lv6",
@@ -70156,7 +66771,6 @@ _G.pg.base.aircraft_template[160417] = {
 		160427
 	}
 }
-
 _G.pg.base.aircraft_template[160418] = {
 	id = 160418,
 	name = "大黄蜂II技能鱼雷机Lv7",
@@ -70168,7 +66782,6 @@ _G.pg.base.aircraft_template[160418] = {
 		160428
 	}
 }
-
 _G.pg.base.aircraft_template[160419] = {
 	id = 160419,
 	name = "大黄蜂II技能鱼雷机Lv8",
@@ -70180,7 +66793,6 @@ _G.pg.base.aircraft_template[160419] = {
 		160429
 	}
 }
-
 _G.pg.base.aircraft_template[160420] = {
 	id = 160420,
 	name = "大黄蜂II技能鱼雷机Lv9",
@@ -70192,7 +66804,6 @@ _G.pg.base.aircraft_template[160420] = {
 		160430
 	}
 }
-
 _G.pg.base.aircraft_template[160431] = {
 	attack_power = 2,
 	name = "大黄蜂IIF6F地狱猫（HVAR搭载型）",
@@ -70268,7 +66879,6 @@ _G.pg.base.aircraft_template[160431] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160432] = {
 	max_hp = 57,
 	hp_growth = 2201,
@@ -70279,7 +66889,6 @@ _G.pg.base.aircraft_template[160432] = {
 		160442
 	}
 }
-
 _G.pg.base.aircraft_template[160433] = {
 	max_hp = 64,
 	hp_growth = 2455,
@@ -70290,7 +66899,6 @@ _G.pg.base.aircraft_template[160433] = {
 		160443
 	}
 }
-
 _G.pg.base.aircraft_template[160434] = {
 	max_hp = 70,
 	hp_growth = 2710,
@@ -70301,7 +66909,6 @@ _G.pg.base.aircraft_template[160434] = {
 		160444
 	}
 }
-
 _G.pg.base.aircraft_template[160435] = {
 	max_hp = 77,
 	hp_growth = 2964,
@@ -70312,7 +66919,6 @@ _G.pg.base.aircraft_template[160435] = {
 		160445
 	}
 }
-
 _G.pg.base.aircraft_template[160436] = {
 	max_hp = 84,
 	hp_growth = 3218,
@@ -70323,7 +66929,6 @@ _G.pg.base.aircraft_template[160436] = {
 		160446
 	}
 }
-
 _G.pg.base.aircraft_template[160437] = {
 	max_hp = 90,
 	hp_growth = 3472,
@@ -70334,7 +66939,6 @@ _G.pg.base.aircraft_template[160437] = {
 		160447
 	}
 }
-
 _G.pg.base.aircraft_template[160438] = {
 	max_hp = 97,
 	hp_growth = 3726,
@@ -70345,7 +66949,6 @@ _G.pg.base.aircraft_template[160438] = {
 		160448
 	}
 }
-
 _G.pg.base.aircraft_template[160439] = {
 	max_hp = 103,
 	hp_growth = 3980,
@@ -70356,7 +66959,6 @@ _G.pg.base.aircraft_template[160439] = {
 		160449
 	}
 }
-
 _G.pg.base.aircraft_template[160440] = {
 	max_hp = 110,
 	hp_growth = 4234,
@@ -70367,7 +66969,6 @@ _G.pg.base.aircraft_template[160440] = {
 		160450
 	}
 }
-
 _G.pg.base.aircraft_template[160491] = {
 	attack_power = 2,
 	name = "华甲技能水上机弹幕Lv1",
@@ -70443,7 +67044,6 @@ _G.pg.base.aircraft_template[160491] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160492] = {
 	id = 160492,
 	name = "华甲技能水上机弹幕Lv2",
@@ -70455,7 +67055,6 @@ _G.pg.base.aircraft_template[160492] = {
 		160502
 	}
 }
-
 _G.pg.base.aircraft_template[160493] = {
 	id = 160493,
 	name = "华甲技能水上机弹幕Lv3",
@@ -70467,7 +67066,6 @@ _G.pg.base.aircraft_template[160493] = {
 		160503
 	}
 }
-
 _G.pg.base.aircraft_template[160494] = {
 	id = 160494,
 	name = "华甲技能水上机弹幕Lv4",
@@ -70479,7 +67077,6 @@ _G.pg.base.aircraft_template[160494] = {
 		160504
 	}
 }
-
 _G.pg.base.aircraft_template[160495] = {
 	id = 160495,
 	name = "华甲技能水上机弹幕Lv5",
@@ -70491,7 +67088,6 @@ _G.pg.base.aircraft_template[160495] = {
 		160505
 	}
 }
-
 _G.pg.base.aircraft_template[160496] = {
 	id = 160496,
 	name = "华甲技能水上机弹幕Lv6",
@@ -70503,7 +67099,6 @@ _G.pg.base.aircraft_template[160496] = {
 		160506
 	}
 }
-
 _G.pg.base.aircraft_template[160497] = {
 	id = 160497,
 	name = "华甲技能水上机弹幕Lv7",
@@ -70515,7 +67110,6 @@ _G.pg.base.aircraft_template[160497] = {
 		160507
 	}
 }
-
 _G.pg.base.aircraft_template[160498] = {
 	id = 160498,
 	name = "华甲技能水上机弹幕Lv8",
@@ -70527,7 +67121,6 @@ _G.pg.base.aircraft_template[160498] = {
 		160508
 	}
 }
-
 _G.pg.base.aircraft_template[160499] = {
 	id = 160499,
 	name = "华甲技能水上机弹幕Lv9",
@@ -70539,7 +67132,6 @@ _G.pg.base.aircraft_template[160499] = {
 		160509
 	}
 }
-
 _G.pg.base.aircraft_template[160500] = {
 	id = 160500,
 	name = "华甲技能水上机弹幕Lv10",
@@ -70551,7 +67143,6 @@ _G.pg.base.aircraft_template[160500] = {
 		160510
 	}
 }
-
 _G.pg.base.aircraft_template[160511] = {
 	attack_power = 2,
 	name = "忒修斯梭鱼1",
@@ -70627,7 +67218,6 @@ _G.pg.base.aircraft_template[160511] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160512] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -70638,7 +67228,6 @@ _G.pg.base.aircraft_template[160512] = {
 		160522
 	}
 }
-
 _G.pg.base.aircraft_template[160513] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -70649,7 +67238,6 @@ _G.pg.base.aircraft_template[160513] = {
 		160523
 	}
 }
-
 _G.pg.base.aircraft_template[160514] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -70660,7 +67248,6 @@ _G.pg.base.aircraft_template[160514] = {
 		160524
 	}
 }
-
 _G.pg.base.aircraft_template[160515] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -70671,7 +67258,6 @@ _G.pg.base.aircraft_template[160515] = {
 		160525
 	}
 }
-
 _G.pg.base.aircraft_template[160516] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -70682,7 +67268,6 @@ _G.pg.base.aircraft_template[160516] = {
 		160526
 	}
 }
-
 _G.pg.base.aircraft_template[160517] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -70693,7 +67278,6 @@ _G.pg.base.aircraft_template[160517] = {
 		160527
 	}
 }
-
 _G.pg.base.aircraft_template[160518] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -70704,7 +67288,6 @@ _G.pg.base.aircraft_template[160518] = {
 		160528
 	}
 }
-
 _G.pg.base.aircraft_template[160519] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -70715,7 +67298,6 @@ _G.pg.base.aircraft_template[160519] = {
 		160529
 	}
 }
-
 _G.pg.base.aircraft_template[160520] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -70726,7 +67308,6 @@ _G.pg.base.aircraft_template[160520] = {
 		160530
 	}
 }
-
 _G.pg.base.aircraft_template[160531] = {
 	attack_power = 2,
 	name = "忒修斯梭鱼2",
@@ -70802,7 +67383,6 @@ _G.pg.base.aircraft_template[160531] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160532] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -70813,7 +67393,6 @@ _G.pg.base.aircraft_template[160532] = {
 		160542
 	}
 }
-
 _G.pg.base.aircraft_template[160533] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -70824,7 +67403,6 @@ _G.pg.base.aircraft_template[160533] = {
 		160543
 	}
 }
-
 _G.pg.base.aircraft_template[160534] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -70835,7 +67413,6 @@ _G.pg.base.aircraft_template[160534] = {
 		160544
 	}
 }
-
 _G.pg.base.aircraft_template[160535] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -70846,7 +67423,6 @@ _G.pg.base.aircraft_template[160535] = {
 		160545
 	}
 }
-
 _G.pg.base.aircraft_template[160536] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -70857,7 +67433,6 @@ _G.pg.base.aircraft_template[160536] = {
 		160546
 	}
 }
-
 _G.pg.base.aircraft_template[160537] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -70868,7 +67443,6 @@ _G.pg.base.aircraft_template[160537] = {
 		160547
 	}
 }
-
 _G.pg.base.aircraft_template[160538] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -70879,7 +67453,6 @@ _G.pg.base.aircraft_template[160538] = {
 		160548
 	}
 }
-
 _G.pg.base.aircraft_template[160539] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -70890,7 +67463,6 @@ _G.pg.base.aircraft_template[160539] = {
 		160549
 	}
 }
-
 _G.pg.base.aircraft_template[160540] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -70901,7 +67473,6 @@ _G.pg.base.aircraft_template[160540] = {
 		160550
 	}
 }
-
 _G.pg.base.aircraft_template[160551] = {
 	attack_power = 2,
 	name = "忒修斯梭鱼3",
@@ -70977,7 +67548,6 @@ _G.pg.base.aircraft_template[160551] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160552] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -70988,7 +67558,6 @@ _G.pg.base.aircraft_template[160552] = {
 		160562
 	}
 }
-
 _G.pg.base.aircraft_template[160553] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -70999,7 +67568,6 @@ _G.pg.base.aircraft_template[160553] = {
 		160563
 	}
 }
-
 _G.pg.base.aircraft_template[160554] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -71010,7 +67578,6 @@ _G.pg.base.aircraft_template[160554] = {
 		160564
 	}
 }
-
 _G.pg.base.aircraft_template[160555] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -71021,7 +67588,6 @@ _G.pg.base.aircraft_template[160555] = {
 		160565
 	}
 }
-
 _G.pg.base.aircraft_template[160556] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -71032,7 +67598,6 @@ _G.pg.base.aircraft_template[160556] = {
 		160566
 	}
 }
-
 _G.pg.base.aircraft_template[160557] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -71043,7 +67608,6 @@ _G.pg.base.aircraft_template[160557] = {
 		160567
 	}
 }
-
 _G.pg.base.aircraft_template[160558] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -71054,7 +67618,6 @@ _G.pg.base.aircraft_template[160558] = {
 		160568
 	}
 }
-
 _G.pg.base.aircraft_template[160559] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -71065,7 +67628,6 @@ _G.pg.base.aircraft_template[160559] = {
 		160569
 	}
 }
-
 _G.pg.base.aircraft_template[160560] = {
 	max_hp = 95,
 	hp_growth = 3648,
@@ -71076,7 +67638,6 @@ _G.pg.base.aircraft_template[160560] = {
 		160570
 	}
 }
-
 _G.pg.base.aircraft_template[160581] = {
 	attack_power = 2,
 	name = "定安戊型水上机Lv1",
@@ -71152,7 +67713,6 @@ _G.pg.base.aircraft_template[160581] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160582] = {
 	id = 160582,
 	name = "定安戊型水上机Lv2",
@@ -71164,7 +67724,6 @@ _G.pg.base.aircraft_template[160582] = {
 		160592
 	}
 }
-
 _G.pg.base.aircraft_template[160583] = {
 	id = 160583,
 	name = "定安戊型水上机Lv3",
@@ -71176,7 +67735,6 @@ _G.pg.base.aircraft_template[160583] = {
 		160593
 	}
 }
-
 _G.pg.base.aircraft_template[160584] = {
 	id = 160584,
 	name = "定安戊型水上机Lv4",
@@ -71188,7 +67746,6 @@ _G.pg.base.aircraft_template[160584] = {
 		160594
 	}
 }
-
 _G.pg.base.aircraft_template[160585] = {
 	id = 160585,
 	name = "定安戊型水上机Lv5",
@@ -71200,7 +67757,6 @@ _G.pg.base.aircraft_template[160585] = {
 		160595
 	}
 }
-
 _G.pg.base.aircraft_template[160586] = {
 	id = 160586,
 	name = "定安戊型水上机Lv6",
@@ -71212,7 +67768,6 @@ _G.pg.base.aircraft_template[160586] = {
 		160596
 	}
 }
-
 _G.pg.base.aircraft_template[160587] = {
 	id = 160587,
 	name = "定安戊型水上机Lv7",
@@ -71224,7 +67779,6 @@ _G.pg.base.aircraft_template[160587] = {
 		160597
 	}
 }
-
 _G.pg.base.aircraft_template[160588] = {
 	id = 160588,
 	name = "定安戊型水上机Lv8",
@@ -71236,7 +67790,6 @@ _G.pg.base.aircraft_template[160588] = {
 		160598
 	}
 }
-
 _G.pg.base.aircraft_template[160589] = {
 	id = 160589,
 	name = "定安戊型水上机Lv9",
@@ -71248,7 +67801,6 @@ _G.pg.base.aircraft_template[160589] = {
 		160599
 	}
 }
-
 _G.pg.base.aircraft_template[160590] = {
 	id = 160590,
 	name = "定安戊型水上机Lv10",
@@ -71260,7 +67812,6 @@ _G.pg.base.aircraft_template[160590] = {
 		160600
 	}
 }
-
 _G.pg.base.aircraft_template[160651] = {
 	attack_power = 2,
 	name = "怨仇技能萤火虫Lv1",
@@ -71336,7 +67887,6 @@ _G.pg.base.aircraft_template[160651] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160652] = {
 	id = 160652,
 	name = "怨仇技能萤火虫Lv2",
@@ -71348,7 +67898,6 @@ _G.pg.base.aircraft_template[160652] = {
 		160662
 	}
 }
-
 _G.pg.base.aircraft_template[160653] = {
 	id = 160653,
 	name = "怨仇技能萤火虫Lv3",
@@ -71360,7 +67909,6 @@ _G.pg.base.aircraft_template[160653] = {
 		160663
 	}
 }
-
 _G.pg.base.aircraft_template[160654] = {
 	id = 160654,
 	name = "怨仇技能萤火虫Lv4",
@@ -71372,7 +67920,6 @@ _G.pg.base.aircraft_template[160654] = {
 		160664
 	}
 }
-
 _G.pg.base.aircraft_template[160655] = {
 	id = 160655,
 	name = "怨仇技能萤火虫Lv5",
@@ -71384,7 +67931,6 @@ _G.pg.base.aircraft_template[160655] = {
 		160665
 	}
 }
-
 _G.pg.base.aircraft_template[160656] = {
 	id = 160656,
 	name = "怨仇技能萤火虫Lv6",
@@ -71396,7 +67942,6 @@ _G.pg.base.aircraft_template[160656] = {
 		160666
 	}
 }
-
 _G.pg.base.aircraft_template[160657] = {
 	id = 160657,
 	name = "怨仇技能萤火虫Lv7",
@@ -71408,7 +67953,6 @@ _G.pg.base.aircraft_template[160657] = {
 		160667
 	}
 }
-
 _G.pg.base.aircraft_template[160658] = {
 	id = 160658,
 	name = "怨仇技能萤火虫Lv8",
@@ -71420,7 +67964,6 @@ _G.pg.base.aircraft_template[160658] = {
 		160668
 	}
 }
-
 _G.pg.base.aircraft_template[160659] = {
 	id = 160659,
 	name = "怨仇技能萤火虫Lv9",
@@ -71432,7 +67975,6 @@ _G.pg.base.aircraft_template[160659] = {
 		160669
 	}
 }
-
 _G.pg.base.aircraft_template[160660] = {
 	id = 160660,
 	name = "怨仇技能萤火虫Lv10",
@@ -71444,7 +67986,6 @@ _G.pg.base.aircraft_template[160660] = {
 		160670
 	}
 }
-
 _G.pg.base.aircraft_template[160671] = {
 	attack_power = 2,
 	name = "怨仇技能萤火虫Lv1",
@@ -71520,7 +68061,6 @@ _G.pg.base.aircraft_template[160671] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160672] = {
 	id = 160672,
 	name = "怨仇技能萤火虫Lv2",
@@ -71532,7 +68072,6 @@ _G.pg.base.aircraft_template[160672] = {
 		160662
 	}
 }
-
 _G.pg.base.aircraft_template[160673] = {
 	id = 160673,
 	name = "怨仇技能萤火虫Lv3",
@@ -71544,7 +68083,6 @@ _G.pg.base.aircraft_template[160673] = {
 		160663
 	}
 }
-
 _G.pg.base.aircraft_template[160674] = {
 	id = 160674,
 	name = "怨仇技能萤火虫Lv4",
@@ -71556,7 +68094,6 @@ _G.pg.base.aircraft_template[160674] = {
 		160664
 	}
 }
-
 _G.pg.base.aircraft_template[160675] = {
 	id = 160675,
 	name = "怨仇技能萤火虫Lv5",
@@ -71568,7 +68105,6 @@ _G.pg.base.aircraft_template[160675] = {
 		160665
 	}
 }
-
 _G.pg.base.aircraft_template[160676] = {
 	id = 160676,
 	name = "怨仇技能萤火虫Lv6",
@@ -71580,7 +68116,6 @@ _G.pg.base.aircraft_template[160676] = {
 		160666
 	}
 }
-
 _G.pg.base.aircraft_template[160677] = {
 	id = 160677,
 	name = "怨仇技能萤火虫Lv7",
@@ -71592,7 +68127,6 @@ _G.pg.base.aircraft_template[160677] = {
 		160667
 	}
 }
-
 _G.pg.base.aircraft_template[160678] = {
 	id = 160678,
 	name = "怨仇技能萤火虫Lv8",
@@ -71604,7 +68138,6 @@ _G.pg.base.aircraft_template[160678] = {
 		160668
 	}
 }
-
 _G.pg.base.aircraft_template[160679] = {
 	id = 160679,
 	name = "怨仇技能萤火虫Lv9",
@@ -71616,7 +68149,6 @@ _G.pg.base.aircraft_template[160679] = {
 		160669
 	}
 }
-
 _G.pg.base.aircraft_template[160680] = {
 	id = 160680,
 	name = "怨仇技能萤火虫Lv10",
@@ -71628,7 +68160,6 @@ _G.pg.base.aircraft_template[160680] = {
 		160670
 	}
 }
-
 _G.pg.base.aircraft_template[160711] = {
 	attack_power = 2,
 	name = "百眼巨人剑鱼弹幕Lv1",
@@ -71704,7 +68235,6 @@ _G.pg.base.aircraft_template[160711] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160712] = {
 	id = 160712,
 	name = "百眼巨人剑鱼弹幕Lv2",
@@ -71716,7 +68246,6 @@ _G.pg.base.aircraft_template[160712] = {
 		160722
 	}
 }
-
 _G.pg.base.aircraft_template[160713] = {
 	id = 160713,
 	name = "百眼巨人剑鱼弹幕Lv3",
@@ -71728,7 +68257,6 @@ _G.pg.base.aircraft_template[160713] = {
 		160723
 	}
 }
-
 _G.pg.base.aircraft_template[160714] = {
 	id = 160714,
 	name = "百眼巨人剑鱼弹幕Lv4",
@@ -71740,7 +68268,6 @@ _G.pg.base.aircraft_template[160714] = {
 		160724
 	}
 }
-
 _G.pg.base.aircraft_template[160715] = {
 	id = 160715,
 	name = "百眼巨人剑鱼弹幕Lv5",
@@ -71752,7 +68279,6 @@ _G.pg.base.aircraft_template[160715] = {
 		160725
 	}
 }
-
 _G.pg.base.aircraft_template[160716] = {
 	id = 160716,
 	name = "百眼巨人剑鱼弹幕Lv6",
@@ -71764,7 +68290,6 @@ _G.pg.base.aircraft_template[160716] = {
 		160726
 	}
 }
-
 _G.pg.base.aircraft_template[160717] = {
 	id = 160717,
 	name = "百眼巨人剑鱼弹幕Lv7",
@@ -71776,7 +68301,6 @@ _G.pg.base.aircraft_template[160717] = {
 		160727
 	}
 }
-
 _G.pg.base.aircraft_template[160718] = {
 	id = 160718,
 	name = "百眼巨人剑鱼弹幕Lv8",
@@ -71788,7 +68312,6 @@ _G.pg.base.aircraft_template[160718] = {
 		160728
 	}
 }
-
 _G.pg.base.aircraft_template[160719] = {
 	id = 160719,
 	name = "百眼巨人剑鱼弹幕Lv9",
@@ -71800,7 +68323,6 @@ _G.pg.base.aircraft_template[160719] = {
 		160729
 	}
 }
-
 _G.pg.base.aircraft_template[160720] = {
 	id = 160720,
 	name = "百眼巨人剑鱼弹幕Lv10",
@@ -71812,7 +68334,6 @@ _G.pg.base.aircraft_template[160720] = {
 		160730
 	}
 }
-
 _G.pg.base.aircraft_template[160731] = {
 	attack_power = 2,
 	name = "怨仇技能萤火虫Lv1",
@@ -71888,7 +68409,6 @@ _G.pg.base.aircraft_template[160731] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160732] = {
 	id = 160732,
 	name = "怨仇技能萤火虫Lv2",
@@ -71900,7 +68420,6 @@ _G.pg.base.aircraft_template[160732] = {
 		160662
 	}
 }
-
 _G.pg.base.aircraft_template[160733] = {
 	id = 160733,
 	name = "怨仇技能萤火虫Lv3",
@@ -71912,7 +68431,6 @@ _G.pg.base.aircraft_template[160733] = {
 		160663
 	}
 }
-
 _G.pg.base.aircraft_template[160734] = {
 	id = 160734,
 	name = "怨仇技能萤火虫Lv4",
@@ -71924,7 +68442,6 @@ _G.pg.base.aircraft_template[160734] = {
 		160664
 	}
 }
-
 _G.pg.base.aircraft_template[160735] = {
 	id = 160735,
 	name = "怨仇技能萤火虫Lv5",
@@ -71936,7 +68453,6 @@ _G.pg.base.aircraft_template[160735] = {
 		160665
 	}
 }
-
 _G.pg.base.aircraft_template[160736] = {
 	id = 160736,
 	name = "怨仇技能萤火虫Lv6",
@@ -71948,7 +68464,6 @@ _G.pg.base.aircraft_template[160736] = {
 		160666
 	}
 }
-
 _G.pg.base.aircraft_template[160737] = {
 	id = 160737,
 	name = "怨仇技能萤火虫Lv7",
@@ -71960,7 +68475,6 @@ _G.pg.base.aircraft_template[160737] = {
 		160667
 	}
 }
-
 _G.pg.base.aircraft_template[160738] = {
 	id = 160738,
 	name = "怨仇技能萤火虫Lv8",
@@ -71972,7 +68486,6 @@ _G.pg.base.aircraft_template[160738] = {
 		160668
 	}
 }
-
 _G.pg.base.aircraft_template[160739] = {
 	id = 160739,
 	name = "怨仇技能萤火虫Lv9",
@@ -71984,7 +68497,6 @@ _G.pg.base.aircraft_template[160739] = {
 		160669
 	}
 }
-
 _G.pg.base.aircraft_template[160740] = {
 	id = 160740,
 	name = "怨仇技能萤火虫Lv10",
@@ -71996,7 +68508,6 @@ _G.pg.base.aircraft_template[160740] = {
 		160670
 	}
 }
-
 _G.pg.base.aircraft_template[160831] = {
 	attack_power = 2,
 	name = "库尔斯克水上机Lv1",
@@ -72072,7 +68583,6 @@ _G.pg.base.aircraft_template[160831] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160832] = {
 	id = 160832,
 	name = "库尔斯克水上机Lv2",
@@ -72084,7 +68594,6 @@ _G.pg.base.aircraft_template[160832] = {
 		160842
 	}
 }
-
 _G.pg.base.aircraft_template[160833] = {
 	id = 160833,
 	name = "库尔斯克水上机Lv3",
@@ -72096,7 +68605,6 @@ _G.pg.base.aircraft_template[160833] = {
 		160843
 	}
 }
-
 _G.pg.base.aircraft_template[160834] = {
 	id = 160834,
 	name = "库尔斯克水上机Lv4",
@@ -72108,7 +68616,6 @@ _G.pg.base.aircraft_template[160834] = {
 		160844
 	}
 }
-
 _G.pg.base.aircraft_template[160835] = {
 	id = 160835,
 	name = "库尔斯克水上机Lv5",
@@ -72120,7 +68627,6 @@ _G.pg.base.aircraft_template[160835] = {
 		160845
 	}
 }
-
 _G.pg.base.aircraft_template[160836] = {
 	id = 160836,
 	name = "库尔斯克水上机Lv6",
@@ -72132,7 +68638,6 @@ _G.pg.base.aircraft_template[160836] = {
 		160846
 	}
 }
-
 _G.pg.base.aircraft_template[160837] = {
 	id = 160837,
 	name = "库尔斯克水上机Lv7",
@@ -72144,7 +68649,6 @@ _G.pg.base.aircraft_template[160837] = {
 		160847
 	}
 }
-
 _G.pg.base.aircraft_template[160838] = {
 	id = 160838,
 	name = "库尔斯克水上机Lv8",
@@ -72156,7 +68660,6 @@ _G.pg.base.aircraft_template[160838] = {
 		160848
 	}
 }
-
 _G.pg.base.aircraft_template[160839] = {
 	id = 160839,
 	name = "库尔斯克水上机Lv9",
@@ -72168,7 +68671,6 @@ _G.pg.base.aircraft_template[160839] = {
 		160849
 	}
 }
-
 _G.pg.base.aircraft_template[160840] = {
 	id = 160840,
 	name = "库尔斯克水上机Lv10",
@@ -72180,7 +68682,6 @@ _G.pg.base.aircraft_template[160840] = {
 		160850
 	}
 }
-
 _G.pg.base.aircraft_template[160971] = {
 	attack_power = 2,
 	name = "小可畏技能平行青花鱼Lv1",
@@ -72256,7 +68757,6 @@ _G.pg.base.aircraft_template[160971] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160972] = {
 	id = 160972,
 	name = "小可畏技能平行青花鱼Lv2",
@@ -72268,7 +68768,6 @@ _G.pg.base.aircraft_template[160972] = {
 		160982
 	}
 }
-
 _G.pg.base.aircraft_template[160973] = {
 	id = 160973,
 	name = "小可畏技能平行青花鱼Lv3",
@@ -72280,7 +68779,6 @@ _G.pg.base.aircraft_template[160973] = {
 		160983
 	}
 }
-
 _G.pg.base.aircraft_template[160974] = {
 	id = 160974,
 	name = "小可畏技能平行青花鱼Lv4",
@@ -72292,7 +68790,6 @@ _G.pg.base.aircraft_template[160974] = {
 		160984
 	}
 }
-
 _G.pg.base.aircraft_template[160975] = {
 	id = 160975,
 	name = "小可畏技能平行青花鱼Lv5",
@@ -72304,7 +68801,6 @@ _G.pg.base.aircraft_template[160975] = {
 		160985
 	}
 }
-
 _G.pg.base.aircraft_template[160976] = {
 	id = 160976,
 	name = "小可畏技能平行青花鱼Lv6",
@@ -72316,7 +68812,6 @@ _G.pg.base.aircraft_template[160976] = {
 		160986
 	}
 }
-
 _G.pg.base.aircraft_template[160977] = {
 	id = 160977,
 	name = "小可畏技能平行青花鱼Lv7",
@@ -72328,7 +68823,6 @@ _G.pg.base.aircraft_template[160977] = {
 		160987
 	}
 }
-
 _G.pg.base.aircraft_template[160978] = {
 	id = 160978,
 	name = "小可畏技能平行青花鱼Lv8",
@@ -72340,7 +68834,6 @@ _G.pg.base.aircraft_template[160978] = {
 		160988
 	}
 }
-
 _G.pg.base.aircraft_template[160979] = {
 	id = 160979,
 	name = "小可畏技能平行青花鱼Lv9",
@@ -72352,7 +68845,6 @@ _G.pg.base.aircraft_template[160979] = {
 		160989
 	}
 }
-
 _G.pg.base.aircraft_template[160980] = {
 	id = 160980,
 	name = "小可畏技能平行青花鱼Lv10",
@@ -72364,7 +68856,6 @@ _G.pg.base.aircraft_template[160980] = {
 		160990
 	}
 }
-
 _G.pg.base.aircraft_template[160991] = {
 	attack_power = 2,
 	name = "小可畏技能集束青花鱼Lv1",
@@ -72440,7 +68931,6 @@ _G.pg.base.aircraft_template[160991] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[160992] = {
 	id = 160992,
 	name = "小可畏技能集束青花鱼Lv2",
@@ -72452,7 +68942,6 @@ _G.pg.base.aircraft_template[160992] = {
 		161002
 	}
 }
-
 _G.pg.base.aircraft_template[160993] = {
 	id = 160993,
 	name = "小可畏技能集束青花鱼Lv3",
@@ -72464,7 +68953,6 @@ _G.pg.base.aircraft_template[160993] = {
 		161003
 	}
 }
-
 _G.pg.base.aircraft_template[160994] = {
 	id = 160994,
 	name = "小可畏技能集束青花鱼Lv4",
@@ -72476,7 +68964,6 @@ _G.pg.base.aircraft_template[160994] = {
 		161004
 	}
 }
-
 _G.pg.base.aircraft_template[160995] = {
 	id = 160995,
 	name = "小可畏技能集束青花鱼Lv5",
@@ -72488,7 +68975,6 @@ _G.pg.base.aircraft_template[160995] = {
 		161005
 	}
 }
-
 _G.pg.base.aircraft_template[160996] = {
 	id = 160996,
 	name = "小可畏技能集束青花鱼Lv6",
@@ -72500,7 +68986,6 @@ _G.pg.base.aircraft_template[160996] = {
 		161006
 	}
 }
-
 _G.pg.base.aircraft_template[160997] = {
 	id = 160997,
 	name = "小可畏技能集束青花鱼Lv7",
@@ -72512,7 +68997,6 @@ _G.pg.base.aircraft_template[160997] = {
 		161007
 	}
 }
-
 _G.pg.base.aircraft_template[160998] = {
 	id = 160998,
 	name = "小可畏技能集束青花鱼Lv8",
@@ -72524,7 +69008,6 @@ _G.pg.base.aircraft_template[160998] = {
 		161008
 	}
 }
-
 _G.pg.base.aircraft_template[160999] = {
 	id = 160999,
 	name = "小可畏技能集束青花鱼Lv9",
@@ -72536,7 +69019,6 @@ _G.pg.base.aircraft_template[160999] = {
 		161009
 	}
 }
-
 _G.pg.base.aircraft_template[161000] = {
 	id = 161000,
 	name = "小可畏技能集束青花鱼Lv10",
@@ -72548,7 +69030,6 @@ _G.pg.base.aircraft_template[161000] = {
 		161010
 	}
 }
-
 _G.pg.base.aircraft_template[161151] = {
 	attack_power = 2,
 	name = "小大凤技能鱼雷机Lv1",
@@ -72624,7 +69105,6 @@ _G.pg.base.aircraft_template[161151] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161152] = {
 	id = 161152,
 	name = "小大凤技能鱼雷机Lv2",
@@ -72636,7 +69116,6 @@ _G.pg.base.aircraft_template[161152] = {
 		161162
 	}
 }
-
 _G.pg.base.aircraft_template[161153] = {
 	id = 161153,
 	name = "小大凤技能鱼雷机Lv3",
@@ -72648,7 +69127,6 @@ _G.pg.base.aircraft_template[161153] = {
 		161163
 	}
 }
-
 _G.pg.base.aircraft_template[161154] = {
 	id = 161154,
 	name = "小大凤技能鱼雷机Lv4",
@@ -72660,7 +69138,6 @@ _G.pg.base.aircraft_template[161154] = {
 		161164
 	}
 }
-
 _G.pg.base.aircraft_template[161155] = {
 	id = 161155,
 	name = "小大凤技能鱼雷机Lv5",
@@ -72672,7 +69149,6 @@ _G.pg.base.aircraft_template[161155] = {
 		161165
 	}
 }
-
 _G.pg.base.aircraft_template[161156] = {
 	id = 161156,
 	name = "小大凤技能鱼雷机Lv6",
@@ -72684,7 +69160,6 @@ _G.pg.base.aircraft_template[161156] = {
 		161166
 	}
 }
-
 _G.pg.base.aircraft_template[161157] = {
 	id = 161157,
 	name = "小大凤技能鱼雷机Lv7",
@@ -72696,7 +69171,6 @@ _G.pg.base.aircraft_template[161157] = {
 		161167
 	}
 }
-
 _G.pg.base.aircraft_template[161158] = {
 	id = 161158,
 	name = "小大凤技能鱼雷机Lv8",
@@ -72708,7 +69182,6 @@ _G.pg.base.aircraft_template[161158] = {
 		161168
 	}
 }
-
 _G.pg.base.aircraft_template[161159] = {
 	id = 161159,
 	name = "小大凤技能鱼雷机Lv9",
@@ -72720,7 +69193,6 @@ _G.pg.base.aircraft_template[161159] = {
 		161169
 	}
 }
-
 _G.pg.base.aircraft_template[161160] = {
 	id = 161160,
 	name = "小大凤技能鱼雷机Lv10",
@@ -72732,7 +69204,6 @@ _G.pg.base.aircraft_template[161160] = {
 		161170
 	}
 }
-
 _G.pg.base.aircraft_template[161171] = {
 	attack_power = 2,
 	name = "小大凤技能烈风Lv1",
@@ -72809,7 +69280,6 @@ _G.pg.base.aircraft_template[161171] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161172] = {
 	id = 161172,
 	name = "小大凤技能烈风Lv2",
@@ -72822,7 +69292,6 @@ _G.pg.base.aircraft_template[161172] = {
 		161182
 	}
 }
-
 _G.pg.base.aircraft_template[161173] = {
 	id = 161173,
 	name = "小大凤技能烈风Lv3",
@@ -72835,7 +69304,6 @@ _G.pg.base.aircraft_template[161173] = {
 		161183
 	}
 }
-
 _G.pg.base.aircraft_template[161174] = {
 	id = 161174,
 	name = "小大凤技能烈风Lv4",
@@ -72848,7 +69316,6 @@ _G.pg.base.aircraft_template[161174] = {
 		161184
 	}
 }
-
 _G.pg.base.aircraft_template[161175] = {
 	id = 161175,
 	name = "小大凤技能烈风Lv5",
@@ -72861,7 +69328,6 @@ _G.pg.base.aircraft_template[161175] = {
 		161185
 	}
 }
-
 _G.pg.base.aircraft_template[161176] = {
 	id = 161176,
 	name = "小大凤技能烈风Lv6",
@@ -72874,7 +69340,6 @@ _G.pg.base.aircraft_template[161176] = {
 		161186
 	}
 }
-
 _G.pg.base.aircraft_template[161177] = {
 	id = 161177,
 	name = "小大凤技能烈风Lv7",
@@ -72887,7 +69352,6 @@ _G.pg.base.aircraft_template[161177] = {
 		161187
 	}
 }
-
 _G.pg.base.aircraft_template[161178] = {
 	id = 161178,
 	name = "小大凤技能烈风Lv8",
@@ -72900,7 +69364,6 @@ _G.pg.base.aircraft_template[161178] = {
 		161188
 	}
 }
-
 _G.pg.base.aircraft_template[161179] = {
 	id = 161179,
 	name = "小大凤技能烈风Lv9",
@@ -72913,7 +69376,6 @@ _G.pg.base.aircraft_template[161179] = {
 		161189
 	}
 }
-
 _G.pg.base.aircraft_template[161180] = {
 	id = 161180,
 	name = "小大凤技能烈风Lv10",
@@ -72926,7 +69388,6 @@ _G.pg.base.aircraft_template[161180] = {
 		161190
 	}
 }
-
 _G.pg.base.aircraft_template[161191] = {
 	attack_power = 2,
 	name = "小大凤技能彗星Lv1",
@@ -73003,7 +69464,6 @@ _G.pg.base.aircraft_template[161191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161192] = {
 	id = 161192,
 	name = "小大凤技能彗星Lv2",
@@ -73016,7 +69476,6 @@ _G.pg.base.aircraft_template[161192] = {
 		161202
 	}
 }
-
 _G.pg.base.aircraft_template[161193] = {
 	id = 161193,
 	name = "小大凤技能彗星Lv3",
@@ -73029,7 +69488,6 @@ _G.pg.base.aircraft_template[161193] = {
 		161203
 	}
 }
-
 _G.pg.base.aircraft_template[161194] = {
 	id = 161194,
 	name = "小大凤技能彗星Lv4",
@@ -73042,7 +69500,6 @@ _G.pg.base.aircraft_template[161194] = {
 		161204
 	}
 }
-
 _G.pg.base.aircraft_template[161195] = {
 	id = 161195,
 	name = "小大凤技能彗星Lv5",
@@ -73055,7 +69512,6 @@ _G.pg.base.aircraft_template[161195] = {
 		161205
 	}
 }
-
 _G.pg.base.aircraft_template[161196] = {
 	id = 161196,
 	name = "小大凤技能彗星Lv6",
@@ -73068,7 +69524,6 @@ _G.pg.base.aircraft_template[161196] = {
 		161206
 	}
 }
-
 _G.pg.base.aircraft_template[161197] = {
 	id = 161197,
 	name = "小大凤技能彗星Lv7",
@@ -73081,7 +69536,6 @@ _G.pg.base.aircraft_template[161197] = {
 		161207
 	}
 }
-
 _G.pg.base.aircraft_template[161198] = {
 	id = 161198,
 	name = "小大凤技能彗星Lv8",
@@ -73094,7 +69548,6 @@ _G.pg.base.aircraft_template[161198] = {
 		161208
 	}
 }
-
 _G.pg.base.aircraft_template[161199] = {
 	id = 161199,
 	name = "小大凤技能彗星Lv9",
@@ -73107,7 +69560,6 @@ _G.pg.base.aircraft_template[161199] = {
 		161209
 	}
 }
-
 _G.pg.base.aircraft_template[161200] = {
 	id = 161200,
 	name = "小大凤技能彗星Lv10",
@@ -73120,7 +69572,6 @@ _G.pg.base.aircraft_template[161200] = {
 		161210
 	}
 }
-
 _G.pg.base.aircraft_template[161231] = {
 	attack_power = 2,
 	name = "萨拉托加技能鱼雷机Lv1",
@@ -73196,7 +69647,6 @@ _G.pg.base.aircraft_template[161231] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161232] = {
 	id = 161232,
 	name = "萨拉托加技能鱼雷机Lv2",
@@ -73208,7 +69658,6 @@ _G.pg.base.aircraft_template[161232] = {
 		161252
 	}
 }
-
 _G.pg.base.aircraft_template[161233] = {
 	id = 161233,
 	name = "萨拉托加技能鱼雷机Lv3",
@@ -73220,7 +69669,6 @@ _G.pg.base.aircraft_template[161233] = {
 		161253
 	}
 }
-
 _G.pg.base.aircraft_template[161234] = {
 	id = 161234,
 	name = "萨拉托加技能鱼雷机Lv4",
@@ -73232,7 +69680,6 @@ _G.pg.base.aircraft_template[161234] = {
 		161254
 	}
 }
-
 _G.pg.base.aircraft_template[161235] = {
 	id = 161235,
 	name = "萨拉托加技能鱼雷机Lv5",
@@ -73244,7 +69691,6 @@ _G.pg.base.aircraft_template[161235] = {
 		161255
 	}
 }
-
 _G.pg.base.aircraft_template[161236] = {
 	id = 161236,
 	name = "萨拉托加技能鱼雷机Lv6",
@@ -73256,7 +69702,6 @@ _G.pg.base.aircraft_template[161236] = {
 		161256
 	}
 }
-
 _G.pg.base.aircraft_template[161237] = {
 	id = 161237,
 	name = "萨拉托加技能鱼雷机Lv7",
@@ -73268,7 +69713,6 @@ _G.pg.base.aircraft_template[161237] = {
 		161257
 	}
 }
-
 _G.pg.base.aircraft_template[161238] = {
 	id = 161238,
 	name = "萨拉托加技能鱼雷机Lv8",
@@ -73280,7 +69724,6 @@ _G.pg.base.aircraft_template[161238] = {
 		161258
 	}
 }
-
 _G.pg.base.aircraft_template[161239] = {
 	id = 161239,
 	name = "萨拉托加技能鱼雷机Lv9",
@@ -73292,7 +69735,6 @@ _G.pg.base.aircraft_template[161239] = {
 		161259
 	}
 }
-
 _G.pg.base.aircraft_template[161240] = {
 	id = 161240,
 	name = "萨拉托加技能鱼雷机Lv10",
@@ -73304,7 +69746,6 @@ _G.pg.base.aircraft_template[161240] = {
 		161260
 	}
 }
-
 _G.pg.base.aircraft_template[161241] = {
 	attack_power = 2,
 	name = "萨拉托加技能轰炸机Lv1",
@@ -73381,7 +69822,6 @@ _G.pg.base.aircraft_template[161241] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161242] = {
 	id = 161242,
 	name = "萨拉托加技能轰炸机Lv2",
@@ -73394,7 +69834,6 @@ _G.pg.base.aircraft_template[161242] = {
 		161272
 	}
 }
-
 _G.pg.base.aircraft_template[161243] = {
 	id = 161243,
 	name = "萨拉托加技能轰炸机Lv3",
@@ -73407,7 +69846,6 @@ _G.pg.base.aircraft_template[161243] = {
 		161273
 	}
 }
-
 _G.pg.base.aircraft_template[161244] = {
 	id = 161244,
 	name = "萨拉托加技能轰炸机Lv4",
@@ -73420,7 +69858,6 @@ _G.pg.base.aircraft_template[161244] = {
 		161274
 	}
 }
-
 _G.pg.base.aircraft_template[161245] = {
 	id = 161245,
 	name = "萨拉托加技能轰炸机Lv5",
@@ -73433,7 +69870,6 @@ _G.pg.base.aircraft_template[161245] = {
 		161275
 	}
 }
-
 _G.pg.base.aircraft_template[161246] = {
 	id = 161246,
 	name = "萨拉托加技能轰炸机Lv6",
@@ -73446,7 +69882,6 @@ _G.pg.base.aircraft_template[161246] = {
 		161276
 	}
 }
-
 _G.pg.base.aircraft_template[161247] = {
 	id = 161247,
 	name = "萨拉托加技能轰炸机Lv7",
@@ -73459,7 +69894,6 @@ _G.pg.base.aircraft_template[161247] = {
 		161277
 	}
 }
-
 _G.pg.base.aircraft_template[161248] = {
 	id = 161248,
 	name = "萨拉托加技能轰炸机Lv8",
@@ -73472,7 +69906,6 @@ _G.pg.base.aircraft_template[161248] = {
 		161278
 	}
 }
-
 _G.pg.base.aircraft_template[161249] = {
 	id = 161249,
 	name = "萨拉托加技能轰炸机Lv9",
@@ -73485,7 +69918,6 @@ _G.pg.base.aircraft_template[161249] = {
 		161279
 	}
 }
-
 _G.pg.base.aircraft_template[161250] = {
 	id = 161250,
 	name = "萨拉托加技能轰炸机Lv10",
@@ -73498,7 +69930,6 @@ _G.pg.base.aircraft_template[161250] = {
 		161280
 	}
 }
-
 _G.pg.base.aircraft_template[161391] = {
 	attack_power = 2,
 	name = "奇尔沙治熊猫战斗机Lv1",
@@ -73574,7 +70005,6 @@ _G.pg.base.aircraft_template[161391] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161392] = {
 	id = 161392,
 	name = "奇尔沙治熊猫战斗机Lv2",
@@ -73586,7 +70016,6 @@ _G.pg.base.aircraft_template[161392] = {
 		161402
 	}
 }
-
 _G.pg.base.aircraft_template[161393] = {
 	id = 161393,
 	name = "奇尔沙治熊猫战斗机Lv3",
@@ -73598,7 +70027,6 @@ _G.pg.base.aircraft_template[161393] = {
 		161403
 	}
 }
-
 _G.pg.base.aircraft_template[161394] = {
 	id = 161394,
 	name = "奇尔沙治熊猫战斗机Lv4",
@@ -73610,7 +70038,6 @@ _G.pg.base.aircraft_template[161394] = {
 		161404
 	}
 }
-
 _G.pg.base.aircraft_template[161395] = {
 	id = 161395,
 	name = "奇尔沙治熊猫战斗机Lv5",
@@ -73622,7 +70049,6 @@ _G.pg.base.aircraft_template[161395] = {
 		161405
 	}
 }
-
 _G.pg.base.aircraft_template[161396] = {
 	id = 161396,
 	name = "奇尔沙治熊猫战斗机Lv6",
@@ -73634,7 +70060,6 @@ _G.pg.base.aircraft_template[161396] = {
 		161406
 	}
 }
-
 _G.pg.base.aircraft_template[161397] = {
 	id = 161397,
 	name = "奇尔沙治熊猫战斗机Lv7",
@@ -73646,7 +70071,6 @@ _G.pg.base.aircraft_template[161397] = {
 		161407
 	}
 }
-
 _G.pg.base.aircraft_template[161398] = {
 	id = 161398,
 	name = "奇尔沙治熊猫战斗机Lv8",
@@ -73658,7 +70082,6 @@ _G.pg.base.aircraft_template[161398] = {
 		161408
 	}
 }
-
 _G.pg.base.aircraft_template[161399] = {
 	id = 161399,
 	name = "奇尔沙治熊猫战斗机Lv9",
@@ -73670,7 +70093,6 @@ _G.pg.base.aircraft_template[161399] = {
 		161409
 	}
 }
-
 _G.pg.base.aircraft_template[161400] = {
 	id = 161400,
 	name = "奇尔沙治熊猫战斗机Lv10",
@@ -73682,7 +70104,6 @@ _G.pg.base.aircraft_template[161400] = {
 		161410
 	}
 }
-
 _G.pg.base.aircraft_template[161571] = {
 	attack_power = 2,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73758,7 +70179,6 @@ _G.pg.base.aircraft_template[161571] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[161572] = {
 	id = 161572,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73770,7 +70190,6 @@ _G.pg.base.aircraft_template[161572] = {
 		161582
 	}
 }
-
 _G.pg.base.aircraft_template[161573] = {
 	id = 161573,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73782,7 +70201,6 @@ _G.pg.base.aircraft_template[161573] = {
 		161583
 	}
 }
-
 _G.pg.base.aircraft_template[161574] = {
 	id = 161574,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73794,7 +70212,6 @@ _G.pg.base.aircraft_template[161574] = {
 		161584
 	}
 }
-
 _G.pg.base.aircraft_template[161575] = {
 	id = 161575,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73806,7 +70223,6 @@ _G.pg.base.aircraft_template[161575] = {
 		161585
 	}
 }
-
 _G.pg.base.aircraft_template[161576] = {
 	id = 161576,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73818,7 +70234,6 @@ _G.pg.base.aircraft_template[161576] = {
 		161586
 	}
 }
-
 _G.pg.base.aircraft_template[161577] = {
 	id = 161577,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73830,7 +70245,6 @@ _G.pg.base.aircraft_template[161577] = {
 		161587
 	}
 }
-
 _G.pg.base.aircraft_template[161578] = {
 	id = 161578,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73842,7 +70256,6 @@ _G.pg.base.aircraft_template[161578] = {
 		161588
 	}
 }
-
 _G.pg.base.aircraft_template[161579] = {
 	id = 161579,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73854,7 +70267,6 @@ _G.pg.base.aircraft_template[161579] = {
 		161589
 	}
 }
-
 _G.pg.base.aircraft_template[161580] = {
 	id = 161580,
 	name = "白龙搭载彩云舰攻型 天运改 Lv1 ",
@@ -73866,7 +70278,6 @@ _G.pg.base.aircraft_template[161580] = {
 		161590
 	}
 }
-
 _G.pg.base.aircraft_template[162221] = {
 	attack_power = 2,
 	name = "貉-实例化-塞壬浮游炮-LV1",
@@ -73948,7 +70359,6 @@ _G.pg.base.aircraft_template[162221] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[162222] = {
 	id = 162222,
 	name = "貉-实例化-塞壬浮游炮-LV2",
@@ -73959,7 +70369,6 @@ _G.pg.base.aircraft_template[162222] = {
 		63412
 	}
 }
-
 _G.pg.base.aircraft_template[162223] = {
 	id = 162223,
 	name = "貉-实例化-塞壬浮游炮-LV3",
@@ -73970,7 +70379,6 @@ _G.pg.base.aircraft_template[162223] = {
 		63413
 	}
 }
-
 _G.pg.base.aircraft_template[162224] = {
 	id = 162224,
 	name = "貉-实例化-塞壬浮游炮-LV4",
@@ -73981,7 +70389,6 @@ _G.pg.base.aircraft_template[162224] = {
 		63414
 	}
 }
-
 _G.pg.base.aircraft_template[162225] = {
 	id = 162225,
 	name = "貉-实例化-塞壬浮游炮-LV5",
@@ -73992,7 +70399,6 @@ _G.pg.base.aircraft_template[162225] = {
 		63415
 	}
 }
-
 _G.pg.base.aircraft_template[162226] = {
 	id = 162226,
 	name = "貉-实例化-塞壬浮游炮-LV6",
@@ -74003,7 +70409,6 @@ _G.pg.base.aircraft_template[162226] = {
 		63416
 	}
 }
-
 _G.pg.base.aircraft_template[162227] = {
 	id = 162227,
 	name = "貉-实例化-塞壬浮游炮-LV7",
@@ -74014,7 +70419,6 @@ _G.pg.base.aircraft_template[162227] = {
 		63417
 	}
 }
-
 _G.pg.base.aircraft_template[162228] = {
 	id = 162228,
 	name = "貉-实例化-塞壬浮游炮-LV8",
@@ -74025,7 +70429,6 @@ _G.pg.base.aircraft_template[162228] = {
 		63418
 	}
 }
-
 _G.pg.base.aircraft_template[162229] = {
 	id = 162229,
 	name = "貉-实例化-塞壬浮游炮-LV9",
@@ -74036,7 +70439,6 @@ _G.pg.base.aircraft_template[162229] = {
 		63419
 	}
 }
-
 _G.pg.base.aircraft_template[162230] = {
 	id = 162230,
 	name = "貉-实例化-塞壬浮游炮-LV10",
@@ -74047,7 +70449,6 @@ _G.pg.base.aircraft_template[162230] = {
 		63420
 	}
 }
-
 _G.pg.base.aircraft_template[163041] = {
 	attack_power = 2,
 	name = "契卡洛夫技能轰炸机Lv1",
@@ -74123,7 +70524,6 @@ _G.pg.base.aircraft_template[163041] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163042] = {
 	id = 163042,
 	name = "契卡洛夫技能轰炸机Lv2",
@@ -74135,7 +70535,6 @@ _G.pg.base.aircraft_template[163042] = {
 		163052
 	}
 }
-
 _G.pg.base.aircraft_template[163043] = {
 	id = 163043,
 	name = "契卡洛夫技能轰炸机Lv3",
@@ -74147,7 +70546,6 @@ _G.pg.base.aircraft_template[163043] = {
 		163053
 	}
 }
-
 _G.pg.base.aircraft_template[163044] = {
 	id = 163044,
 	name = "契卡洛夫技能轰炸机Lv4",
@@ -74159,7 +70557,6 @@ _G.pg.base.aircraft_template[163044] = {
 		163054
 	}
 }
-
 _G.pg.base.aircraft_template[163045] = {
 	id = 163045,
 	name = "契卡洛夫技能轰炸机Lv5",
@@ -74171,7 +70568,6 @@ _G.pg.base.aircraft_template[163045] = {
 		163055
 	}
 }
-
 _G.pg.base.aircraft_template[163046] = {
 	id = 163046,
 	name = "契卡洛夫技能轰炸机Lv6",
@@ -74183,7 +70579,6 @@ _G.pg.base.aircraft_template[163046] = {
 		163056
 	}
 }
-
 _G.pg.base.aircraft_template[163047] = {
 	id = 163047,
 	name = "契卡洛夫技能轰炸机Lv7",
@@ -74195,7 +70590,6 @@ _G.pg.base.aircraft_template[163047] = {
 		163057
 	}
 }
-
 _G.pg.base.aircraft_template[163048] = {
 	id = 163048,
 	name = "契卡洛夫技能轰炸机Lv8",
@@ -74207,7 +70601,6 @@ _G.pg.base.aircraft_template[163048] = {
 		163058
 	}
 }
-
 _G.pg.base.aircraft_template[163049] = {
 	id = 163049,
 	name = "契卡洛夫技能轰炸机Lv9",
@@ -74219,7 +70612,6 @@ _G.pg.base.aircraft_template[163049] = {
 		163059
 	}
 }
-
 _G.pg.base.aircraft_template[163050] = {
 	id = 163050,
 	name = "契卡洛夫技能轰炸机Lv10",
@@ -74231,7 +70623,6 @@ _G.pg.base.aircraft_template[163050] = {
 		163060
 	}
 }
-
 _G.pg.base.aircraft_template[163061] = {
 	attack_power = 2,
 	name = "契卡洛夫技能鱼雷机",
@@ -74307,7 +70698,6 @@ _G.pg.base.aircraft_template[163061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163062] = {
 	max_hp = 44,
 	hp_growth = 1678,
@@ -74318,7 +70708,6 @@ _G.pg.base.aircraft_template[163062] = {
 		163072
 	}
 }
-
 _G.pg.base.aircraft_template[163063] = {
 	max_hp = 49,
 	hp_growth = 1897,
@@ -74329,7 +70718,6 @@ _G.pg.base.aircraft_template[163063] = {
 		163073
 	}
 }
-
 _G.pg.base.aircraft_template[163064] = {
 	max_hp = 55,
 	hp_growth = 2116,
@@ -74340,7 +70728,6 @@ _G.pg.base.aircraft_template[163064] = {
 		163074
 	}
 }
-
 _G.pg.base.aircraft_template[163065] = {
 	max_hp = 61,
 	hp_growth = 2335,
@@ -74351,7 +70738,6 @@ _G.pg.base.aircraft_template[163065] = {
 		163075
 	}
 }
-
 _G.pg.base.aircraft_template[163066] = {
 	max_hp = 66,
 	hp_growth = 2554,
@@ -74362,7 +70748,6 @@ _G.pg.base.aircraft_template[163066] = {
 		163076
 	}
 }
-
 _G.pg.base.aircraft_template[163067] = {
 	max_hp = 72,
 	hp_growth = 2772,
@@ -74373,7 +70758,6 @@ _G.pg.base.aircraft_template[163067] = {
 		163077
 	}
 }
-
 _G.pg.base.aircraft_template[163068] = {
 	max_hp = 78,
 	hp_growth = 2991,
@@ -74384,7 +70768,6 @@ _G.pg.base.aircraft_template[163068] = {
 		163078
 	}
 }
-
 _G.pg.base.aircraft_template[163069] = {
 	max_hp = 83,
 	hp_growth = 3210,
@@ -74395,7 +70778,6 @@ _G.pg.base.aircraft_template[163069] = {
 		163079
 	}
 }
-
 _G.pg.base.aircraft_template[163070] = {
 	max_hp = 89,
 	hp_growth = 3429,
@@ -74406,7 +70788,6 @@ _G.pg.base.aircraft_template[163070] = {
 		163080
 	}
 }
-
 _G.pg.base.aircraft_template[163081] = {
 	attack_power = 2,
 	name = "契卡洛夫技能轰炸机Lv1",
@@ -74482,7 +70863,6 @@ _G.pg.base.aircraft_template[163081] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163082] = {
 	id = 163082,
 	name = "契卡洛夫技能轰炸机Lv2",
@@ -74494,7 +70874,6 @@ _G.pg.base.aircraft_template[163082] = {
 		163092
 	}
 }
-
 _G.pg.base.aircraft_template[163083] = {
 	id = 163083,
 	name = "契卡洛夫技能轰炸机Lv3",
@@ -74506,7 +70885,6 @@ _G.pg.base.aircraft_template[163083] = {
 		163093
 	}
 }
-
 _G.pg.base.aircraft_template[163084] = {
 	id = 163084,
 	name = "契卡洛夫技能轰炸机Lv4",
@@ -74518,7 +70896,6 @@ _G.pg.base.aircraft_template[163084] = {
 		163094
 	}
 }
-
 _G.pg.base.aircraft_template[163085] = {
 	id = 163085,
 	name = "契卡洛夫技能轰炸机Lv5",
@@ -74530,7 +70907,6 @@ _G.pg.base.aircraft_template[163085] = {
 		163095
 	}
 }
-
 _G.pg.base.aircraft_template[163086] = {
 	id = 163086,
 	name = "契卡洛夫技能轰炸机Lv6",
@@ -74542,7 +70918,6 @@ _G.pg.base.aircraft_template[163086] = {
 		163096
 	}
 }
-
 _G.pg.base.aircraft_template[163087] = {
 	id = 163087,
 	name = "契卡洛夫技能轰炸机Lv7",
@@ -74554,7 +70929,6 @@ _G.pg.base.aircraft_template[163087] = {
 		163097
 	}
 }
-
 _G.pg.base.aircraft_template[163088] = {
 	id = 163088,
 	name = "契卡洛夫技能轰炸机Lv8",
@@ -74566,7 +70940,6 @@ _G.pg.base.aircraft_template[163088] = {
 		163098
 	}
 }
-
 _G.pg.base.aircraft_template[163089] = {
 	id = 163089,
 	name = "契卡洛夫技能轰炸机Lv9",
@@ -74578,7 +70951,6 @@ _G.pg.base.aircraft_template[163089] = {
 		163099
 	}
 }
-
 _G.pg.base.aircraft_template[163090] = {
 	id = 163090,
 	name = "契卡洛夫技能轰炸机Lv10",
@@ -74590,7 +70962,6 @@ _G.pg.base.aircraft_template[163090] = {
 		163100
 	}
 }
-
 _G.pg.base.aircraft_template[163231] = {
 	attack_power = 2,
 	name = "隐形平沼Lv1",
@@ -74666,7 +71037,6 @@ _G.pg.base.aircraft_template[163231] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163232] = {
 	id = 163232,
 	name = "隐形平沼Lv2",
@@ -74678,7 +71048,6 @@ _G.pg.base.aircraft_template[163232] = {
 		163252
 	}
 }
-
 _G.pg.base.aircraft_template[163233] = {
 	id = 163233,
 	name = "隐形平沼Lv3",
@@ -74690,7 +71059,6 @@ _G.pg.base.aircraft_template[163233] = {
 		163253
 	}
 }
-
 _G.pg.base.aircraft_template[163234] = {
 	id = 163234,
 	name = "隐形平沼Lv4",
@@ -74702,7 +71070,6 @@ _G.pg.base.aircraft_template[163234] = {
 		163254
 	}
 }
-
 _G.pg.base.aircraft_template[163235] = {
 	id = 163235,
 	name = "隐形平沼Lv5",
@@ -74714,7 +71081,6 @@ _G.pg.base.aircraft_template[163235] = {
 		163255
 	}
 }
-
 _G.pg.base.aircraft_template[163236] = {
 	id = 163236,
 	name = "隐形平沼Lv6",
@@ -74726,7 +71092,6 @@ _G.pg.base.aircraft_template[163236] = {
 		163256
 	}
 }
-
 _G.pg.base.aircraft_template[163237] = {
 	id = 163237,
 	name = "隐形平沼Lv7",
@@ -74738,7 +71103,6 @@ _G.pg.base.aircraft_template[163237] = {
 		163257
 	}
 }
-
 _G.pg.base.aircraft_template[163238] = {
 	id = 163238,
 	name = "隐形平沼Lv8",
@@ -74750,7 +71114,6 @@ _G.pg.base.aircraft_template[163238] = {
 		163258
 	}
 }
-
 _G.pg.base.aircraft_template[163239] = {
 	id = 163239,
 	name = "隐形平沼Lv9",
@@ -74762,7 +71125,6 @@ _G.pg.base.aircraft_template[163239] = {
 		163259
 	}
 }
-
 _G.pg.base.aircraft_template[163240] = {
 	id = 163240,
 	name = "隐形平沼Lv10",
@@ -74774,7 +71136,6 @@ _G.pg.base.aircraft_template[163240] = {
 		163260
 	}
 }
-
 _G.pg.base.aircraft_template[163271] = {
 	attack_power = 2,
 	name = "普林斯顿META技能鱼雷机Lv1",
@@ -74850,7 +71211,6 @@ _G.pg.base.aircraft_template[163271] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163272] = {
 	id = 163272,
 	name = "普林斯顿META技能鱼雷机Lv2",
@@ -74862,7 +71222,6 @@ _G.pg.base.aircraft_template[163272] = {
 		163282
 	}
 }
-
 _G.pg.base.aircraft_template[163273] = {
 	id = 163273,
 	name = "普林斯顿META技能鱼雷机Lv3",
@@ -74874,7 +71233,6 @@ _G.pg.base.aircraft_template[163273] = {
 		163283
 	}
 }
-
 _G.pg.base.aircraft_template[163274] = {
 	id = 163274,
 	name = "普林斯顿META技能鱼雷机Lv4",
@@ -74886,7 +71244,6 @@ _G.pg.base.aircraft_template[163274] = {
 		163284
 	}
 }
-
 _G.pg.base.aircraft_template[163275] = {
 	id = 163275,
 	name = "普林斯顿META技能鱼雷机Lv5",
@@ -74898,7 +71255,6 @@ _G.pg.base.aircraft_template[163275] = {
 		163285
 	}
 }
-
 _G.pg.base.aircraft_template[163276] = {
 	id = 163276,
 	name = "普林斯顿META技能鱼雷机Lv6",
@@ -74910,7 +71266,6 @@ _G.pg.base.aircraft_template[163276] = {
 		163286
 	}
 }
-
 _G.pg.base.aircraft_template[163277] = {
 	id = 163277,
 	name = "普林斯顿META技能鱼雷机Lv7",
@@ -74922,7 +71277,6 @@ _G.pg.base.aircraft_template[163277] = {
 		163287
 	}
 }
-
 _G.pg.base.aircraft_template[163278] = {
 	id = 163278,
 	name = "普林斯顿META技能鱼雷机Lv8",
@@ -74934,7 +71288,6 @@ _G.pg.base.aircraft_template[163278] = {
 		163288
 	}
 }
-
 _G.pg.base.aircraft_template[163279] = {
 	id = 163279,
 	name = "普林斯顿META技能鱼雷机Lv9",
@@ -74946,7 +71299,6 @@ _G.pg.base.aircraft_template[163279] = {
 		163289
 	}
 }
-
 _G.pg.base.aircraft_template[163280] = {
 	id = 163280,
 	name = "普林斯顿META技能鱼雷机Lv10",
@@ -74958,7 +71310,6 @@ _G.pg.base.aircraft_template[163280] = {
 		163290
 	}
 }
-
 _G.pg.base.aircraft_template[163311] = {
 	attack_power = 2,
 	name = "圣马丁圣洁轰炸lv1",
@@ -75035,7 +71386,6 @@ _G.pg.base.aircraft_template[163311] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163312] = {
 	id = 163312,
 	name = "圣马丁圣洁轰炸lv2",
@@ -75048,7 +71398,6 @@ _G.pg.base.aircraft_template[163312] = {
 		163332
 	}
 }
-
 _G.pg.base.aircraft_template[163313] = {
 	id = 163313,
 	name = "圣马丁圣洁轰炸lv3",
@@ -75061,7 +71410,6 @@ _G.pg.base.aircraft_template[163313] = {
 		163333
 	}
 }
-
 _G.pg.base.aircraft_template[163314] = {
 	id = 163314,
 	name = "圣马丁圣洁轰炸lv4",
@@ -75074,7 +71422,6 @@ _G.pg.base.aircraft_template[163314] = {
 		163334
 	}
 }
-
 _G.pg.base.aircraft_template[163315] = {
 	id = 163315,
 	name = "圣马丁圣洁轰炸lv5",
@@ -75087,7 +71434,6 @@ _G.pg.base.aircraft_template[163315] = {
 		163335
 	}
 }
-
 _G.pg.base.aircraft_template[163316] = {
 	id = 163316,
 	name = "圣马丁圣洁轰炸lv6",
@@ -75100,7 +71446,6 @@ _G.pg.base.aircraft_template[163316] = {
 		163336
 	}
 }
-
 _G.pg.base.aircraft_template[163317] = {
 	id = 163317,
 	name = "圣马丁圣洁轰炸lv7",
@@ -75113,7 +71458,6 @@ _G.pg.base.aircraft_template[163317] = {
 		163337
 	}
 }
-
 _G.pg.base.aircraft_template[163318] = {
 	id = 163318,
 	name = "圣马丁圣洁轰炸lv8",
@@ -75126,7 +71470,6 @@ _G.pg.base.aircraft_template[163318] = {
 		163338
 	}
 }
-
 _G.pg.base.aircraft_template[163319] = {
 	id = 163319,
 	name = "圣马丁圣洁轰炸lv9",
@@ -75139,7 +71482,6 @@ _G.pg.base.aircraft_template[163319] = {
 		163339
 	}
 }
-
 _G.pg.base.aircraft_template[163320] = {
 	id = 163320,
 	name = "圣马丁圣洁轰炸lv10",
@@ -75152,7 +71494,6 @@ _G.pg.base.aircraft_template[163320] = {
 		163340
 	}
 }
-
 _G.pg.base.aircraft_template[163381] = {
 	attack_power = 2,
 	name = "圣马丁圣洁轰炸 + lv1",
@@ -75229,7 +71570,6 @@ _G.pg.base.aircraft_template[163381] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163382] = {
 	id = 163382,
 	name = "圣马丁圣洁轰炸 + lv2",
@@ -75242,7 +71582,6 @@ _G.pg.base.aircraft_template[163382] = {
 		163402
 	}
 }
-
 _G.pg.base.aircraft_template[163383] = {
 	id = 163383,
 	name = "圣马丁圣洁轰炸 + lv3",
@@ -75255,7 +71594,6 @@ _G.pg.base.aircraft_template[163383] = {
 		163403
 	}
 }
-
 _G.pg.base.aircraft_template[163384] = {
 	id = 163384,
 	name = "圣马丁圣洁轰炸 + lv4",
@@ -75268,7 +71606,6 @@ _G.pg.base.aircraft_template[163384] = {
 		163404
 	}
 }
-
 _G.pg.base.aircraft_template[163385] = {
 	id = 163385,
 	name = "圣马丁圣洁轰炸 + lv5",
@@ -75281,7 +71618,6 @@ _G.pg.base.aircraft_template[163385] = {
 		163405
 	}
 }
-
 _G.pg.base.aircraft_template[163386] = {
 	id = 163386,
 	name = "圣马丁圣洁轰炸 + lv6",
@@ -75294,7 +71630,6 @@ _G.pg.base.aircraft_template[163386] = {
 		163406
 	}
 }
-
 _G.pg.base.aircraft_template[163387] = {
 	id = 163387,
 	name = "圣马丁圣洁轰炸 + lv7",
@@ -75307,7 +71642,6 @@ _G.pg.base.aircraft_template[163387] = {
 		163407
 	}
 }
-
 _G.pg.base.aircraft_template[163388] = {
 	id = 163388,
 	name = "圣马丁圣洁轰炸 + lv8",
@@ -75320,7 +71654,6 @@ _G.pg.base.aircraft_template[163388] = {
 		163408
 	}
 }
-
 _G.pg.base.aircraft_template[163389] = {
 	id = 163389,
 	name = "圣马丁圣洁轰炸 + lv9",
@@ -75333,7 +71666,6 @@ _G.pg.base.aircraft_template[163389] = {
 		163409
 	}
 }
-
 _G.pg.base.aircraft_template[163390] = {
 	id = 163390,
 	name = "圣马丁圣洁轰炸 + lv10",
@@ -75346,7 +71678,6 @@ _G.pg.base.aircraft_template[163390] = {
 		163410
 	}
 }
-
 _G.pg.base.aircraft_template[163861] = {
 	attack_power = 2,
 	name = "圣哈辛托-VT-51鱼雷机Lv1",
@@ -75423,7 +71754,6 @@ _G.pg.base.aircraft_template[163861] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163862] = {
 	id = 163862,
 	name = "圣哈辛托-VT-51鱼雷机Lv2",
@@ -75436,7 +71766,6 @@ _G.pg.base.aircraft_template[163862] = {
 		163872
 	}
 }
-
 _G.pg.base.aircraft_template[163863] = {
 	id = 163863,
 	name = "圣哈辛托-VT-51鱼雷机Lv3",
@@ -75449,7 +71778,6 @@ _G.pg.base.aircraft_template[163863] = {
 		163873
 	}
 }
-
 _G.pg.base.aircraft_template[163864] = {
 	id = 163864,
 	name = "圣哈辛托-VT-51鱼雷机Lv4",
@@ -75462,7 +71790,6 @@ _G.pg.base.aircraft_template[163864] = {
 		163874
 	}
 }
-
 _G.pg.base.aircraft_template[163865] = {
 	id = 163865,
 	name = "圣哈辛托-VT-51鱼雷机Lv5",
@@ -75475,7 +71802,6 @@ _G.pg.base.aircraft_template[163865] = {
 		163875
 	}
 }
-
 _G.pg.base.aircraft_template[163866] = {
 	id = 163866,
 	name = "圣哈辛托-VT-51鱼雷机Lv6",
@@ -75488,7 +71814,6 @@ _G.pg.base.aircraft_template[163866] = {
 		163876
 	}
 }
-
 _G.pg.base.aircraft_template[163867] = {
 	id = 163867,
 	name = "圣哈辛托-VT-51鱼雷机Lv7",
@@ -75501,7 +71826,6 @@ _G.pg.base.aircraft_template[163867] = {
 		163877
 	}
 }
-
 _G.pg.base.aircraft_template[163868] = {
 	id = 163868,
 	name = "圣哈辛托-VT-51鱼雷机Lv8",
@@ -75514,7 +71838,6 @@ _G.pg.base.aircraft_template[163868] = {
 		163878
 	}
 }
-
 _G.pg.base.aircraft_template[163869] = {
 	id = 163869,
 	name = "圣哈辛托-VT-51鱼雷机Lv9",
@@ -75527,7 +71850,6 @@ _G.pg.base.aircraft_template[163869] = {
 		163879
 	}
 }
-
 _G.pg.base.aircraft_template[163870] = {
 	id = 163870,
 	name = "圣哈辛托-VT-51鱼雷机Lv10",
@@ -75540,7 +71862,6 @@ _G.pg.base.aircraft_template[163870] = {
 		163880
 	}
 }
-
 _G.pg.base.aircraft_template[163881] = {
 	attack_power = 2,
 	name = "圣哈辛托-VT-51反潜机Lv1",
@@ -75617,7 +71938,6 @@ _G.pg.base.aircraft_template[163881] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163882] = {
 	id = 163882,
 	name = "圣哈辛托-VT-51反潜机Lv2",
@@ -75630,7 +71950,6 @@ _G.pg.base.aircraft_template[163882] = {
 		53382
 	}
 }
-
 _G.pg.base.aircraft_template[163883] = {
 	id = 163883,
 	name = "圣哈辛托-VT-51反潜机Lv3",
@@ -75643,7 +71962,6 @@ _G.pg.base.aircraft_template[163883] = {
 		53383
 	}
 }
-
 _G.pg.base.aircraft_template[163884] = {
 	id = 163884,
 	name = "圣哈辛托-VT-51反潜机Lv4",
@@ -75656,7 +71974,6 @@ _G.pg.base.aircraft_template[163884] = {
 		53384
 	}
 }
-
 _G.pg.base.aircraft_template[163885] = {
 	id = 163885,
 	name = "圣哈辛托-VT-51反潜机Lv5",
@@ -75669,7 +71986,6 @@ _G.pg.base.aircraft_template[163885] = {
 		53385
 	}
 }
-
 _G.pg.base.aircraft_template[163886] = {
 	id = 163886,
 	name = "圣哈辛托-VT-51反潜机Lv6",
@@ -75682,7 +71998,6 @@ _G.pg.base.aircraft_template[163886] = {
 		53386
 	}
 }
-
 _G.pg.base.aircraft_template[163887] = {
 	id = 163887,
 	name = "圣哈辛托-VT-51反潜机Lv7",
@@ -75695,7 +72010,6 @@ _G.pg.base.aircraft_template[163887] = {
 		53387
 	}
 }
-
 _G.pg.base.aircraft_template[163888] = {
 	id = 163888,
 	name = "圣哈辛托-VT-51反潜机Lv8",
@@ -75708,7 +72022,6 @@ _G.pg.base.aircraft_template[163888] = {
 		53388
 	}
 }
-
 _G.pg.base.aircraft_template[163889] = {
 	id = 163889,
 	name = "圣哈辛托-VT-51反潜机Lv9",
@@ -75721,7 +72034,6 @@ _G.pg.base.aircraft_template[163889] = {
 		53389
 	}
 }
-
 _G.pg.base.aircraft_template[163890] = {
 	id = 163890,
 	name = "圣哈辛托-VT-51反潜机Lv10",
@@ -75734,7 +72046,6 @@ _G.pg.base.aircraft_template[163890] = {
 		53390
 	}
 }
-
 _G.pg.base.aircraft_template[163961] = {
 	attack_power = 2,
 	name = "镇海改技能水上机Lv1",
@@ -75810,7 +72121,6 @@ _G.pg.base.aircraft_template[163961] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[163962] = {
 	id = 163962,
 	name = "镇海改技能水上机Lv2",
@@ -75822,7 +72132,6 @@ _G.pg.base.aircraft_template[163962] = {
 		163972
 	}
 }
-
 _G.pg.base.aircraft_template[163963] = {
 	id = 163963,
 	name = "镇海改技能水上机Lv3",
@@ -75834,7 +72143,6 @@ _G.pg.base.aircraft_template[163963] = {
 		163973
 	}
 }
-
 _G.pg.base.aircraft_template[163964] = {
 	id = 163964,
 	name = "镇海改技能水上机Lv4",
@@ -75846,7 +72154,6 @@ _G.pg.base.aircraft_template[163964] = {
 		163974
 	}
 }
-
 _G.pg.base.aircraft_template[163965] = {
 	id = 163965,
 	name = "镇海改技能水上机Lv5",
@@ -75858,7 +72165,6 @@ _G.pg.base.aircraft_template[163965] = {
 		163975
 	}
 }
-
 _G.pg.base.aircraft_template[163966] = {
 	id = 163966,
 	name = "镇海改技能水上机Lv6",
@@ -75870,7 +72176,6 @@ _G.pg.base.aircraft_template[163966] = {
 		163976
 	}
 }
-
 _G.pg.base.aircraft_template[163967] = {
 	id = 163967,
 	name = "镇海改技能水上机Lv7",
@@ -75882,7 +72187,6 @@ _G.pg.base.aircraft_template[163967] = {
 		163977
 	}
 }
-
 _G.pg.base.aircraft_template[163968] = {
 	id = 163968,
 	name = "镇海改技能水上机Lv8",
@@ -75894,7 +72198,6 @@ _G.pg.base.aircraft_template[163968] = {
 		163978
 	}
 }
-
 _G.pg.base.aircraft_template[163969] = {
 	id = 163969,
 	name = "镇海改技能水上机Lv9",
@@ -75906,7 +72209,6 @@ _G.pg.base.aircraft_template[163969] = {
 		163979
 	}
 }
-
 _G.pg.base.aircraft_template[163970] = {
 	id = 163970,
 	name = "镇海改技能水上机Lv10",
@@ -75918,7 +72220,6 @@ _G.pg.base.aircraft_template[163970] = {
 		163980
 	}
 }
-
 _G.pg.base.aircraft_template[164271] = {
 	attack_power = 2,
 	name = "可畏μ技能鱼雷机Lv1",
@@ -75994,7 +72295,6 @@ _G.pg.base.aircraft_template[164271] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[164272] = {
 	id = 164272,
 	name = "可畏μ技能鱼雷机Lv2",
@@ -76006,7 +72306,6 @@ _G.pg.base.aircraft_template[164272] = {
 		164282
 	}
 }
-
 _G.pg.base.aircraft_template[164273] = {
 	id = 164273,
 	name = "可畏μ技能鱼雷机Lv3",
@@ -76018,7 +72317,6 @@ _G.pg.base.aircraft_template[164273] = {
 		164283
 	}
 }
-
 _G.pg.base.aircraft_template[164274] = {
 	id = 164274,
 	name = "可畏μ技能鱼雷机Lv4",
@@ -76030,7 +72328,6 @@ _G.pg.base.aircraft_template[164274] = {
 		164284
 	}
 }
-
 _G.pg.base.aircraft_template[164275] = {
 	id = 164275,
 	name = "可畏μ技能鱼雷机Lv5",
@@ -76042,7 +72339,6 @@ _G.pg.base.aircraft_template[164275] = {
 		164285
 	}
 }
-
 _G.pg.base.aircraft_template[164276] = {
 	id = 164276,
 	name = "可畏μ技能鱼雷机Lv6",
@@ -76054,7 +72350,6 @@ _G.pg.base.aircraft_template[164276] = {
 		164286
 	}
 }
-
 _G.pg.base.aircraft_template[164277] = {
 	id = 164277,
 	name = "可畏μ技能鱼雷机Lv7",
@@ -76066,7 +72361,6 @@ _G.pg.base.aircraft_template[164277] = {
 		164287
 	}
 }
-
 _G.pg.base.aircraft_template[164278] = {
 	id = 164278,
 	name = "可畏μ技能鱼雷机Lv8",
@@ -76078,7 +72372,6 @@ _G.pg.base.aircraft_template[164278] = {
 		164288
 	}
 }
-
 _G.pg.base.aircraft_template[164279] = {
 	id = 164279,
 	name = "可畏μ技能鱼雷机Lv9",
@@ -76090,7 +72383,6 @@ _G.pg.base.aircraft_template[164279] = {
 		164289
 	}
 }
-
 _G.pg.base.aircraft_template[164280] = {
 	id = 164280,
 	name = "可畏μ技能鱼雷机Lv10",
@@ -76102,7 +72394,6 @@ _G.pg.base.aircraft_template[164280] = {
 		164290
 	}
 }
-
 _G.pg.base.aircraft_template[200101] = {
 	attack_power = 2,
 	name = "【大舰队米德维BOSS】执棋者 轰炸机",
@@ -76178,7 +72469,6 @@ _G.pg.base.aircraft_template[200101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[200102] = {
 	attack_power = 2,
 	name = "【大舰队米德维BOSS】执棋者 鱼雷机",
@@ -76254,7 +72544,6 @@ _G.pg.base.aircraft_template[200102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[200103] = {
 	attack_power = 2,
 	name = "【大舰队米德维BOSS】执棋者 浮游炮1",
@@ -76333,7 +72622,6 @@ _G.pg.base.aircraft_template[200103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[200104] = {
 	attack_power = 2,
 	name = "【大舰队米德维BOSS】执棋者 浮游炮2",
@@ -76412,7 +72700,6 @@ _G.pg.base.aircraft_template[200104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[200507] = {
 	attack_power = 2,
 	name = "【大舰队北方商路BOSS】测试者 浮游炮",
@@ -76492,7 +72779,6 @@ _G.pg.base.aircraft_template[200507] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201001] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】执棋者 轰炸机",
@@ -76568,7 +72854,6 @@ _G.pg.base.aircraft_template[201001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201002] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】执棋者 鱼雷机",
@@ -76644,7 +72929,6 @@ _G.pg.base.aircraft_template[201002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201003] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】执棋者 浮游炮1",
@@ -76723,7 +73007,6 @@ _G.pg.base.aircraft_template[201003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201004] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】执棋者 浮游炮2",
@@ -76802,7 +73085,6 @@ _G.pg.base.aircraft_template[201004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201101] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 第一波环绕浮游炮",
@@ -76880,7 +73162,6 @@ _G.pg.base.aircraft_template[201101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201102] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 第一波环绕浮游炮",
@@ -76958,7 +73239,6 @@ _G.pg.base.aircraft_template[201102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201110] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 第四波电饭锅终身浮游炮",
@@ -77037,7 +73317,6 @@ _G.pg.base.aircraft_template[201110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201111] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 第四波电饭锅终身浮游炮",
@@ -77116,7 +73395,6 @@ _G.pg.base.aircraft_template[201111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201114] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 轰炸机",
@@ -77192,7 +73470,6 @@ _G.pg.base.aircraft_template[201114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[201115] = {
 	attack_power = 2,
 	name = "【大舰队达古康纳尔BOSS】构建者 鱼雷机",
@@ -77268,7 +73545,6 @@ _G.pg.base.aircraft_template[201115] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300501] = {
 	attack_power = 2,
 	name = "【战术研修】【关卡飞机】空袭鱼雷机",
@@ -77344,7 +73620,6 @@ _G.pg.base.aircraft_template[300501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300502] = {
 	attack_power = 2,
 	name = "【战术研修】【关卡飞机】空袭JU87C",
@@ -77420,7 +73695,6 @@ _G.pg.base.aircraft_template[300502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300503] = {
 	attack_power = 2,
 	name = "【战术研修】【BOSS】萨拉托加-战斗机",
@@ -77497,7 +73771,6 @@ _G.pg.base.aircraft_template[300503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300504] = {
 	attack_power = 2,
 	name = "【战术研修】【BOSS】萨拉托加-鱼雷机",
@@ -77573,7 +73846,6 @@ _G.pg.base.aircraft_template[300504] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300505] = {
 	attack_power = 2,
 	name = "【战术研修】【BOSS】萨拉托加-轰炸机",
@@ -77649,7 +73921,6 @@ _G.pg.base.aircraft_template[300505] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300530] = {
 	attack_power = 2,
 	name = "【战术研修II】【关卡飞机】空袭鱼雷机",
@@ -77725,7 +73996,6 @@ _G.pg.base.aircraft_template[300530] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300531] = {
 	attack_power = 2,
 	name = "【战术研修II】【关卡飞机】空袭轰炸机",
@@ -77801,7 +74071,6 @@ _G.pg.base.aircraft_template[300531] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300543] = {
 	attack_power = 2,
 	name = "【战术研修II】【BOSS】飞龙-战斗机",
@@ -77878,7 +74147,6 @@ _G.pg.base.aircraft_template[300543] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300544] = {
 	attack_power = 2,
 	name = "【战术研修II】【BOSS】飞龙-鱼雷机",
@@ -77954,7 +74222,6 @@ _G.pg.base.aircraft_template[300544] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300545] = {
 	attack_power = 2,
 	name = "【战术研修II】【BOSS】飞龙-轰炸机",
@@ -78030,7 +74297,6 @@ _G.pg.base.aircraft_template[300545] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300560] = {
 	attack_power = 2,
 	name = "【战术研修II】【蛋船】航母「Queen」-战斗机",
@@ -78107,7 +74373,6 @@ _G.pg.base.aircraft_template[300560] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[300561] = {
 	attack_power = 2,
 	name = "【战术研修II】【蛋船】航母「Queen」-剑鱼(818中队)",
@@ -78183,7 +74448,6 @@ _G.pg.base.aircraft_template[300561] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311042] = {
 	attack_power = 2,
 	name = "空母·赤城-鱼雷机",
@@ -78259,7 +74523,6 @@ _G.pg.base.aircraft_template[311042] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311043] = {
 	attack_power = 2,
 	name = "空母·赤城-轰炸机",
@@ -78335,7 +74598,6 @@ _G.pg.base.aircraft_template[311043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311045] = {
 	attack_power = 2,
 	name = "空母·加贺-轰炸机",
@@ -78411,7 +74673,6 @@ _G.pg.base.aircraft_template[311045] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311046] = {
 	attack_power = 2,
 	name = "空母·加贺-鱼雷机",
@@ -78487,7 +74748,6 @@ _G.pg.base.aircraft_template[311046] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311048] = {
 	attack_power = 2,
 	name = "飞龙-鱼雷机",
@@ -78563,7 +74823,6 @@ _G.pg.base.aircraft_template[311048] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311049] = {
 	attack_power = 2,
 	name = "飞龙-轰炸机",
@@ -78639,7 +74898,6 @@ _G.pg.base.aircraft_template[311049] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311051] = {
 	attack_power = 2,
 	name = "苍龙-战斗机",
@@ -78716,7 +74974,6 @@ _G.pg.base.aircraft_template[311051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311052] = {
 	attack_power = 2,
 	name = "苍龙-鱼雷机",
@@ -78792,7 +75049,6 @@ _G.pg.base.aircraft_template[311052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311053] = {
 	attack_power = 2,
 	name = "苍龙-轰炸机",
@@ -78868,7 +75124,6 @@ _G.pg.base.aircraft_template[311053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311055] = {
 	attack_power = 2,
 	name = "翔鹤-轰炸机",
@@ -78944,7 +75199,6 @@ _G.pg.base.aircraft_template[311055] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311056] = {
 	attack_power = 2,
 	name = "翔鹤-鱼雷机",
@@ -79020,7 +75274,6 @@ _G.pg.base.aircraft_template[311056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311057] = {
 	attack_power = 2,
 	name = "翔鹤-战斗机",
@@ -79097,7 +75350,6 @@ _G.pg.base.aircraft_template[311057] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311059] = {
 	attack_power = 2,
 	name = "瑞鹤-轰炸机",
@@ -79173,7 +75425,6 @@ _G.pg.base.aircraft_template[311059] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311060] = {
 	attack_power = 2,
 	name = "瑞鹤-鱼雷机",
@@ -79249,7 +75500,6 @@ _G.pg.base.aircraft_template[311060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311061] = {
 	attack_power = 2,
 	name = "瑞鹤-战斗机",
@@ -79326,7 +75576,6 @@ _G.pg.base.aircraft_template[311061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311063] = {
 	attack_power = 2,
 	name = "大黄蜂-战斗机",
@@ -79403,7 +75652,6 @@ _G.pg.base.aircraft_template[311063] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311064] = {
 	attack_power = 2,
 	name = "大黄蜂-鱼雷机",
@@ -79479,7 +75727,6 @@ _G.pg.base.aircraft_template[311064] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311065] = {
 	attack_power = 2,
 	name = "大黄蜂-轰炸机",
@@ -79555,7 +75802,6 @@ _G.pg.base.aircraft_template[311065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311069] = {
 	attack_power = 2,
 	name = "第一章第一关大黄蜂boss专用战斗机T1",
@@ -79632,7 +75878,6 @@ _G.pg.base.aircraft_template[311069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311070] = {
 	attack_power = 2,
 	name = "第一章第一关大黄蜂boss专用鱼雷机T1",
@@ -79708,7 +75953,6 @@ _G.pg.base.aircraft_template[311070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311071] = {
 	attack_power = 2,
 	name = "第一章第一关大黄蜂boss专用轰炸机T1",
@@ -79784,7 +76028,6 @@ _G.pg.base.aircraft_template[311071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311082] = {
 	attack_power = 2,
 	name = "第一章第四关boss1武器3鱼雷机",
@@ -79860,7 +76103,6 @@ _G.pg.base.aircraft_template[311082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311083] = {
 	attack_power = 2,
 	name = "第一章第四关boss1武器4轰炸机",
@@ -79936,7 +76178,6 @@ _G.pg.base.aircraft_template[311083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311090] = {
 	attack_power = 2,
 	name = "第一章第四关boss赤城武器5战斗机",
@@ -80013,7 +76254,6 @@ _G.pg.base.aircraft_template[311090] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311087] = {
 	attack_power = 2,
 	name = "第一章第四关boss2武器3-轰炸机",
@@ -80089,7 +76329,6 @@ _G.pg.base.aircraft_template[311087] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311088] = {
 	attack_power = 2,
 	name = "第一章第四关boss2武器4-鱼雷机",
@@ -80165,7 +76404,6 @@ _G.pg.base.aircraft_template[311088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311091] = {
 	attack_power = 2,
 	name = "第一章第四关boss2加贺武器5战斗机",
@@ -80242,7 +76480,6 @@ _G.pg.base.aircraft_template[311091] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311092] = {
 	attack_power = 2,
 	name = "97舰攻（第1章空袭）",
@@ -80318,7 +76555,6 @@ _G.pg.base.aircraft_template[311092] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311093] = {
 	attack_power = 2,
 	name = "零战二一改（第1章空袭）",
@@ -80394,7 +76630,6 @@ _G.pg.base.aircraft_template[311093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311094] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第1章空袭）",
@@ -80470,7 +76705,6 @@ _G.pg.base.aircraft_template[311094] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[311095] = {
 	attack_power = 2,
 	name = "零战五二型（第1章空袭）",
@@ -80546,7 +76780,6 @@ _G.pg.base.aircraft_template[311095] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312027] = {
 	attack_power = 2,
 	name = "祥凤战斗机T1",
@@ -80623,7 +76856,6 @@ _G.pg.base.aircraft_template[312027] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312028] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机T1",
@@ -80699,7 +76931,6 @@ _G.pg.base.aircraft_template[312028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312029] = {
 	attack_power = 2,
 	name = "祥凤轰炸机T1",
@@ -80775,7 +77006,6 @@ _G.pg.base.aircraft_template[312029] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312031] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -80851,7 +77081,6 @@ _G.pg.base.aircraft_template[312031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312032] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -80927,7 +77156,6 @@ _G.pg.base.aircraft_template[312032] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312033] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -81004,7 +77232,6 @@ _G.pg.base.aircraft_template[312033] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312035] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -81080,7 +77307,6 @@ _G.pg.base.aircraft_template[312035] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312036] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -81156,7 +77382,6 @@ _G.pg.base.aircraft_template[312036] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312037] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -81233,7 +77458,6 @@ _G.pg.base.aircraft_template[312037] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312039] = {
 	attack_power = 2,
 	name = "空母・赤城鱼雷机T1",
@@ -81309,7 +77533,6 @@ _G.pg.base.aircraft_template[312039] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312040] = {
 	attack_power = 2,
 	name = "空母・赤城轰炸机T1",
@@ -81385,7 +77608,6 @@ _G.pg.base.aircraft_template[312040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312042] = {
 	attack_power = 2,
 	name = "空母・加贺轰炸机T1",
@@ -81461,7 +77683,6 @@ _G.pg.base.aircraft_template[312042] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312043] = {
 	attack_power = 2,
 	name = "空母・加贺鱼雷机T1",
@@ -81537,7 +77758,6 @@ _G.pg.base.aircraft_template[312043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312050] = {
 	attack_power = 2,
 	name = "第二章第二关boss轰炸机T1",
@@ -81613,7 +77833,6 @@ _G.pg.base.aircraft_template[312050] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312051] = {
 	attack_power = 2,
 	name = "第二章第二关boss鱼雷机T1",
@@ -81689,7 +77908,6 @@ _G.pg.base.aircraft_template[312051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312052] = {
 	attack_power = 2,
 	name = "第二章第二关boss战斗机T1",
@@ -81766,7 +77984,6 @@ _G.pg.base.aircraft_template[312052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312056] = {
 	attack_power = 2,
 	name = "第二章第三关战斗机T1",
@@ -81842,7 +78059,6 @@ _G.pg.base.aircraft_template[312056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312057] = {
 	attack_power = 2,
 	name = "第二章第三关鱼雷机T1",
@@ -81918,7 +78134,6 @@ _G.pg.base.aircraft_template[312057] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312058] = {
 	attack_power = 2,
 	name = "第二章第三关轰炸机T1",
@@ -81994,7 +78209,6 @@ _G.pg.base.aircraft_template[312058] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312062] = {
 	attack_power = 2,
 	name = "第二章第四关boss轰炸机T1",
@@ -82070,7 +78284,6 @@ _G.pg.base.aircraft_template[312062] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312063] = {
 	attack_power = 2,
 	name = "第二章第四关boss鱼雷机T1",
@@ -82146,7 +78359,6 @@ _G.pg.base.aircraft_template[312063] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312064] = {
 	attack_power = 2,
 	name = "第二章第四关boss战斗机T1",
@@ -82223,7 +78435,6 @@ _G.pg.base.aircraft_template[312064] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312065] = {
 	attack_power = 2,
 	name = "97舰攻（第2章空袭）",
@@ -82299,7 +78510,6 @@ _G.pg.base.aircraft_template[312065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312066] = {
 	attack_power = 2,
 	name = "零战二一改（第2章空袭）",
@@ -82375,7 +78585,6 @@ _G.pg.base.aircraft_template[312066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312067] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第2章空袭）",
@@ -82451,7 +78660,6 @@ _G.pg.base.aircraft_template[312067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[312068] = {
 	attack_power = 2,
 	name = "零战五二型（第2章空袭）",
@@ -82527,7 +78735,6 @@ _G.pg.base.aircraft_template[312068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313053] = {
 	attack_power = 2,
 	name = "祥凤战斗机T1",
@@ -82604,7 +78811,6 @@ _G.pg.base.aircraft_template[313053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313054] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机T1",
@@ -82680,7 +78886,6 @@ _G.pg.base.aircraft_template[313054] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313055] = {
 	attack_power = 2,
 	name = "祥凤轰炸机T1",
@@ -82756,7 +78961,6 @@ _G.pg.base.aircraft_template[313055] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313056] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -82832,7 +79036,6 @@ _G.pg.base.aircraft_template[313056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313058] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -82908,7 +79111,6 @@ _G.pg.base.aircraft_template[313058] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313059] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -82985,7 +79187,6 @@ _G.pg.base.aircraft_template[313059] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313060] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -83061,7 +79262,6 @@ _G.pg.base.aircraft_template[313060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313061] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -83137,7 +79337,6 @@ _G.pg.base.aircraft_template[313061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313063] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -83214,7 +79413,6 @@ _G.pg.base.aircraft_template[313063] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313065] = {
 	attack_power = 2,
 	name = "空母・赤城鱼雷机T1",
@@ -83290,7 +79488,6 @@ _G.pg.base.aircraft_template[313065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313066] = {
 	attack_power = 2,
 	name = "空母・赤城轰炸机T1",
@@ -83366,7 +79563,6 @@ _G.pg.base.aircraft_template[313066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313067] = {
 	attack_power = 2,
 	name = "空母・加贺鱼雷机T1",
@@ -83442,7 +79638,6 @@ _G.pg.base.aircraft_template[313067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313068] = {
 	attack_power = 2,
 	name = "空母・加贺轰炸机T1",
@@ -83518,7 +79713,6 @@ _G.pg.base.aircraft_template[313068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313078] = {
 	attack_power = 2,
 	name = "第三章第一关轰炸机T1",
@@ -83594,7 +79788,6 @@ _G.pg.base.aircraft_template[313078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313079] = {
 	attack_power = 2,
 	name = "第三章第一关鱼雷机T1",
@@ -83670,7 +79863,6 @@ _G.pg.base.aircraft_template[313079] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313082] = {
 	attack_power = 2,
 	name = "第三章第二关鱼雷机T1",
@@ -83746,7 +79938,6 @@ _G.pg.base.aircraft_template[313082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313083] = {
 	attack_power = 2,
 	name = "第三章第二关轰炸机T1",
@@ -83822,7 +80013,6 @@ _G.pg.base.aircraft_template[313083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313085] = {
 	attack_power = 2,
 	name = "第三章第三关鱼雷机T1",
@@ -83898,7 +80088,6 @@ _G.pg.base.aircraft_template[313085] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313086] = {
 	attack_power = 2,
 	name = "第三章第三关轰炸机T1",
@@ -83974,7 +80163,6 @@ _G.pg.base.aircraft_template[313086] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313088] = {
 	attack_power = 2,
 	name = "第三章第四关战斗机T1",
@@ -84051,7 +80239,6 @@ _G.pg.base.aircraft_template[313088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313089] = {
 	attack_power = 2,
 	name = "第三章第四关鱼雷机T1",
@@ -84127,7 +80314,6 @@ _G.pg.base.aircraft_template[313089] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313090] = {
 	attack_power = 2,
 	name = "第三章第四关轰炸机T1",
@@ -84203,7 +80389,6 @@ _G.pg.base.aircraft_template[313090] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313091] = {
 	attack_power = 2,
 	name = "97舰攻（第3章空袭）",
@@ -84279,7 +80464,6 @@ _G.pg.base.aircraft_template[313091] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313092] = {
 	attack_power = 2,
 	name = "零战二一改（第3章空袭）",
@@ -84355,7 +80539,6 @@ _G.pg.base.aircraft_template[313092] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313093] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第3章空袭）",
@@ -84431,7 +80614,6 @@ _G.pg.base.aircraft_template[313093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[313094] = {
 	attack_power = 2,
 	name = "零战五二型（第3章空袭）",
@@ -84507,7 +80689,6 @@ _G.pg.base.aircraft_template[313094] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314055] = {
 	attack_power = 2,
 	name = "龙骧轰炸机T1",
@@ -84583,7 +80764,6 @@ _G.pg.base.aircraft_template[314055] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314056] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机T1",
@@ -84659,7 +80839,6 @@ _G.pg.base.aircraft_template[314056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314057] = {
 	attack_power = 2,
 	name = "龙骧战斗机T1",
@@ -84736,7 +80915,6 @@ _G.pg.base.aircraft_template[314057] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314059] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -84812,7 +80990,6 @@ _G.pg.base.aircraft_template[314059] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314060] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -84888,7 +81065,6 @@ _G.pg.base.aircraft_template[314060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314061] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -84965,7 +81141,6 @@ _G.pg.base.aircraft_template[314061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314063] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -85041,7 +81216,6 @@ _G.pg.base.aircraft_template[314063] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314064] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -85117,7 +81291,6 @@ _G.pg.base.aircraft_template[314064] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314065] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -85194,7 +81367,6 @@ _G.pg.base.aircraft_template[314065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314075] = {
 	attack_power = 2,
 	name = "第4章第三关boss龙骧轰炸机T1",
@@ -85270,7 +81442,6 @@ _G.pg.base.aircraft_template[314075] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314076] = {
 	attack_power = 2,
 	name = "第4章第三关boss龙骧鱼雷机T1",
@@ -85346,7 +81517,6 @@ _G.pg.base.aircraft_template[314076] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314077] = {
 	attack_power = 2,
 	name = "第4章第三关boss龙骧战斗机T1",
@@ -85423,7 +81593,6 @@ _G.pg.base.aircraft_template[314077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314080] = {
 	attack_power = 2,
 	name = "第4章第4关boss翔鹤轰炸机T1",
@@ -85499,7 +81668,6 @@ _G.pg.base.aircraft_template[314080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314081] = {
 	attack_power = 2,
 	name = "第4章第4关boss翔鹤鱼雷机T1",
@@ -85575,7 +81743,6 @@ _G.pg.base.aircraft_template[314081] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314082] = {
 	attack_power = 2,
 	name = "第4章第4关boss翔鹤战斗机T1",
@@ -85652,7 +81819,6 @@ _G.pg.base.aircraft_template[314082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314083] = {
 	attack_power = 2,
 	name = "97舰攻（第4章空袭）",
@@ -85728,7 +81894,6 @@ _G.pg.base.aircraft_template[314083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314084] = {
 	attack_power = 2,
 	name = "零战二一改（第4章空袭）",
@@ -85804,7 +81969,6 @@ _G.pg.base.aircraft_template[314084] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314085] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第4章空袭）",
@@ -85880,7 +82044,6 @@ _G.pg.base.aircraft_template[314085] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[314086] = {
 	attack_power = 2,
 	name = "零战五二型（第4章空袭）",
@@ -85956,7 +82119,6 @@ _G.pg.base.aircraft_template[314086] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315065] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -86032,7 +82194,6 @@ _G.pg.base.aircraft_template[315065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315066] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -86108,7 +82269,6 @@ _G.pg.base.aircraft_template[315066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315067] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -86185,7 +82345,6 @@ _G.pg.base.aircraft_template[315067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315069] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -86261,7 +82420,6 @@ _G.pg.base.aircraft_template[315069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315070] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -86337,7 +82495,6 @@ _G.pg.base.aircraft_template[315070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315071] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -86414,7 +82571,6 @@ _G.pg.base.aircraft_template[315071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315082] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -86490,7 +82646,6 @@ _G.pg.base.aircraft_template[315082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315083] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -86566,7 +82721,6 @@ _G.pg.base.aircraft_template[315083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315084] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -86643,7 +82797,6 @@ _G.pg.base.aircraft_template[315084] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315087] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -86719,7 +82872,6 @@ _G.pg.base.aircraft_template[315087] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315088] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -86795,7 +82947,6 @@ _G.pg.base.aircraft_template[315088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315089] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -86872,7 +83023,6 @@ _G.pg.base.aircraft_template[315089] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315090] = {
 	attack_power = 2,
 	name = "97舰攻（第5章空袭）",
@@ -86948,7 +83098,6 @@ _G.pg.base.aircraft_template[315090] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315091] = {
 	attack_power = 2,
 	name = "零战二一改（第5章空袭）",
@@ -87024,7 +83173,6 @@ _G.pg.base.aircraft_template[315091] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315092] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第5章空袭）",
@@ -87100,7 +83248,6 @@ _G.pg.base.aircraft_template[315092] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[315093] = {
 	attack_power = 2,
 	name = "零战五二型（第5章空袭）",
@@ -87176,7 +83323,6 @@ _G.pg.base.aircraft_template[315093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316038] = {
 	attack_power = 2,
 	name = "空母・赤城鱼雷机T1",
@@ -87252,7 +83398,6 @@ _G.pg.base.aircraft_template[316038] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316039] = {
 	attack_power = 2,
 	name = "空母・赤城轰炸机T1",
@@ -87328,7 +83473,6 @@ _G.pg.base.aircraft_template[316039] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316042] = {
 	attack_power = 2,
 	name = "空母・加贺鱼雷机T1",
@@ -87404,7 +83548,6 @@ _G.pg.base.aircraft_template[316042] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316041] = {
 	attack_power = 2,
 	name = "空母・加贺轰炸机T1",
@@ -87480,7 +83623,6 @@ _G.pg.base.aircraft_template[316041] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316043] = {
 	attack_power = 2,
 	name = "97舰攻（第6章空袭）",
@@ -87556,7 +83698,6 @@ _G.pg.base.aircraft_template[316043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316044] = {
 	attack_power = 2,
 	name = "零战二一改（第6章空袭）",
@@ -87632,7 +83773,6 @@ _G.pg.base.aircraft_template[316044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316045] = {
 	attack_power = 2,
 	name = "99式舰爆绿（第6章空袭）",
@@ -87708,7 +83848,6 @@ _G.pg.base.aircraft_template[316045] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[316046] = {
 	attack_power = 2,
 	name = "零战五二型（第6章空袭）",
@@ -87784,7 +83923,6 @@ _G.pg.base.aircraft_template[316046] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318081] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机T1",
@@ -87860,7 +83998,6 @@ _G.pg.base.aircraft_template[318081] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318082] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机T1",
@@ -87936,7 +84073,6 @@ _G.pg.base.aircraft_template[318082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318083] = {
 	attack_power = 2,
 	name = "翔鹤战斗机T1",
@@ -88013,7 +84149,6 @@ _G.pg.base.aircraft_template[318083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318086] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机T1",
@@ -88089,7 +84224,6 @@ _G.pg.base.aircraft_template[318086] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318087] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机T1",
@@ -88165,7 +84299,6 @@ _G.pg.base.aircraft_template[318087] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[318088] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机T1",
@@ -88242,7 +84375,6 @@ _G.pg.base.aircraft_template[318088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319201] = {
 	attack_power = 2,
 	name = "第10章通用轰炸机",
@@ -88318,7 +84450,6 @@ _G.pg.base.aircraft_template[319201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319202] = {
 	attack_power = 2,
 	name = "第10章通用鱼雷机",
@@ -88394,7 +84525,6 @@ _G.pg.base.aircraft_template[319202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319203] = {
 	attack_power = 2,
 	name = "第10章通用战斗机",
@@ -88471,7 +84601,6 @@ _G.pg.base.aircraft_template[319203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319210] = {
 	attack_power = 2,
 	name = "第10章空袭 轰炸机",
@@ -88547,7 +84676,6 @@ _G.pg.base.aircraft_template[319210] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319220] = {
 	attack_power = 2,
 	name = "第10章空袭 鱼雷机",
@@ -88623,7 +84751,6 @@ _G.pg.base.aircraft_template[319220] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[319230] = {
 	attack_power = 2,
 	name = "第10章空袭 战斗机",
@@ -88700,7 +84827,6 @@ _G.pg.base.aircraft_template[319230] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320005] = {
 	attack_power = 2,
 	name = "第11章通用轰炸机",
@@ -88776,7 +84902,6 @@ _G.pg.base.aircraft_template[320005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320006] = {
 	attack_power = 2,
 	name = "第11章通用鱼雷机",
@@ -88852,7 +84977,6 @@ _G.pg.base.aircraft_template[320006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320007] = {
 	attack_power = 2,
 	name = "第11章通用战斗机",
@@ -88929,7 +85053,6 @@ _G.pg.base.aircraft_template[320007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320010] = {
 	attack_power = 2,
 	name = "第11章空袭 轰炸机",
@@ -89005,7 +85128,6 @@ _G.pg.base.aircraft_template[320010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320020] = {
 	attack_power = 2,
 	name = "第11章空袭 鱼雷机",
@@ -89081,7 +85203,6 @@ _G.pg.base.aircraft_template[320020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[320030] = {
 	attack_power = 2,
 	name = "第11章空袭 战斗机",
@@ -89158,7 +85279,6 @@ _G.pg.base.aircraft_template[320030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330005] = {
 	attack_power = 2,
 	name = "第12章通用轰炸机",
@@ -89234,7 +85354,6 @@ _G.pg.base.aircraft_template[330005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330006] = {
 	attack_power = 2,
 	name = "第12章通用鱼雷机",
@@ -89310,7 +85429,6 @@ _G.pg.base.aircraft_template[330006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330007] = {
 	attack_power = 2,
 	name = "第12章通用战斗机",
@@ -89387,7 +85505,6 @@ _G.pg.base.aircraft_template[330007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330010] = {
 	attack_power = 2,
 	name = "第12章空袭 轰炸机",
@@ -89463,7 +85580,6 @@ _G.pg.base.aircraft_template[330010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330020] = {
 	attack_power = 2,
 	name = "第12章空袭 鱼雷机",
@@ -89539,7 +85655,6 @@ _G.pg.base.aircraft_template[330020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330030] = {
 	attack_power = 2,
 	name = "第12章空袭 战斗机",
@@ -89616,7 +85731,6 @@ _G.pg.base.aircraft_template[330030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330403] = {
 	attack_power = 2,
 	name = "第12章飞鹰战斗机",
@@ -89693,7 +85807,6 @@ _G.pg.base.aircraft_template[330403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[330503] = {
 	attack_power = 2,
 	name = "第12章隼鹰轰炸机",
@@ -89769,7 +85882,6 @@ _G.pg.base.aircraft_template[330503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340005] = {
 	attack_power = 2,
 	name = "第13章通用轰炸机",
@@ -89845,7 +85957,6 @@ _G.pg.base.aircraft_template[340005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340006] = {
 	attack_power = 2,
 	name = "第13章通用鱼雷机",
@@ -89921,7 +86032,6 @@ _G.pg.base.aircraft_template[340006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340007] = {
 	attack_power = 2,
 	name = "第13章通用战斗机",
@@ -89998,7 +86108,6 @@ _G.pg.base.aircraft_template[340007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340010] = {
 	attack_power = 2,
 	name = "第13章空袭 轰炸机",
@@ -90074,7 +86183,6 @@ _G.pg.base.aircraft_template[340010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340020] = {
 	attack_power = 2,
 	name = "第13章空袭 鱼雷机",
@@ -90150,7 +86258,6 @@ _G.pg.base.aircraft_template[340020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340030] = {
 	attack_power = 2,
 	name = "第13章空袭 战斗机",
@@ -90227,7 +86334,6 @@ _G.pg.base.aircraft_template[340030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340113] = {
 	attack_power = 2,
 	name = "第13章翔鹤战斗机",
@@ -90304,7 +86410,6 @@ _G.pg.base.aircraft_template[340113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340114] = {
 	attack_power = 2,
 	name = "第13章翔鹤轰炸机",
@@ -90380,7 +86485,6 @@ _G.pg.base.aircraft_template[340114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340123] = {
 	attack_power = 2,
 	name = "第13章翔鹤战斗机",
@@ -90457,7 +86561,6 @@ _G.pg.base.aircraft_template[340123] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340124] = {
 	attack_power = 2,
 	name = "第13章翔鹤轰炸机",
@@ -90533,7 +86636,6 @@ _G.pg.base.aircraft_template[340124] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340133] = {
 	attack_power = 2,
 	name = "第13章瑞鹤战斗机",
@@ -90610,7 +86712,6 @@ _G.pg.base.aircraft_template[340133] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340134] = {
 	attack_power = 2,
 	name = "第13章瑞鹤轰炸机",
@@ -90686,7 +86787,6 @@ _G.pg.base.aircraft_template[340134] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340141] = {
 	attack_power = 2,
 	name = "第13章大凤地毯轰炸",
@@ -90762,7 +86862,6 @@ _G.pg.base.aircraft_template[340141] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340148] = {
 	attack_power = 2,
 	name = "第13章大凤战斗机",
@@ -90839,7 +86938,6 @@ _G.pg.base.aircraft_template[340148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340149] = {
 	attack_power = 2,
 	name = "第13章大凤轰炸机",
@@ -90915,7 +87013,6 @@ _G.pg.base.aircraft_template[340149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340301] = {
 	attack_power = 2,
 	name = "第13章道中地毯轰炸机",
@@ -90991,7 +87088,6 @@ _G.pg.base.aircraft_template[340301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340302] = {
 	attack_power = 2,
 	name = "第13章BOSS轰炸-瑞鹤用飞机",
@@ -91067,7 +87163,6 @@ _G.pg.base.aircraft_template[340302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340304] = {
 	attack_power = 2,
 	name = "第13章瑞鹤战斗机",
@@ -91143,7 +87238,6 @@ _G.pg.base.aircraft_template[340304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340305] = {
 	attack_power = 2,
 	name = "第13章大凤战斗机",
@@ -91219,7 +87313,6 @@ _G.pg.base.aircraft_template[340305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340306] = {
 	attack_power = 2,
 	name = "第13章指挥舰用飞机",
@@ -91295,7 +87388,6 @@ _G.pg.base.aircraft_template[340306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340308] = {
 	attack_power = 2,
 	name = "第13章指挥舰战斗机",
@@ -91371,7 +87463,6 @@ _G.pg.base.aircraft_template[340308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[340310] = {
 	attack_power = 2,
 	name = "第13章飞鹰&隼鹰战斗机",
@@ -91448,7 +87539,6 @@ _G.pg.base.aircraft_template[340310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350005] = {
 	attack_power = 2,
 	name = "第14章通用轰炸机",
@@ -91524,7 +87614,6 @@ _G.pg.base.aircraft_template[350005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350006] = {
 	attack_power = 2,
 	name = "第14章通用鱼雷机",
@@ -91600,7 +87689,6 @@ _G.pg.base.aircraft_template[350006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350007] = {
 	attack_power = 2,
 	name = "第14章通用战斗机",
@@ -91677,7 +87765,6 @@ _G.pg.base.aircraft_template[350007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350017] = {
 	attack_power = 2,
 	name = "第14章指挥舰 -战斗机",
@@ -91754,7 +87841,6 @@ _G.pg.base.aircraft_template[350017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350010] = {
 	attack_power = 2,
 	name = "第14章空袭 轰炸机",
@@ -91830,7 +87916,6 @@ _G.pg.base.aircraft_template[350010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350020] = {
 	attack_power = 2,
 	name = "第14章空袭 鱼雷机",
@@ -91906,7 +87991,6 @@ _G.pg.base.aircraft_template[350020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350030] = {
 	attack_power = 2,
 	name = "第14章空袭 战斗机",
@@ -91983,7 +88067,6 @@ _G.pg.base.aircraft_template[350030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350064] = {
 	attack_power = 2,
 	name = "第14章山城改 -战斗机",
@@ -92059,7 +88142,6 @@ _G.pg.base.aircraft_template[350064] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350070] = {
 	attack_power = 2,
 	name = "第14章扶桑改 -战斗机",
@@ -92135,7 +88217,6 @@ _G.pg.base.aircraft_template[350070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350105] = {
 	attack_power = 2,
 	name = "第14章-1BOSS山城改 -战斗机",
@@ -92211,7 +88292,6 @@ _G.pg.base.aircraft_template[350105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[350205] = {
 	attack_power = 2,
 	name = "第14章-2BOSS扶桑改 -战斗机",
@@ -92287,7 +88367,6 @@ _G.pg.base.aircraft_template[350205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340005] = {
 	attack_power = 2,
 	name = "【困难13章】通用轰炸机",
@@ -92363,7 +88442,6 @@ _G.pg.base.aircraft_template[1340005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340006] = {
 	attack_power = 2,
 	name = "【困难13章】通用鱼雷机",
@@ -92439,7 +88517,6 @@ _G.pg.base.aircraft_template[1340006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340007] = {
 	attack_power = 2,
 	name = "【困难13章】通用战斗机",
@@ -92516,7 +88593,6 @@ _G.pg.base.aircraft_template[1340007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340010] = {
 	attack_power = 2,
 	name = "【困难13章】空袭 轰炸机",
@@ -92592,7 +88668,6 @@ _G.pg.base.aircraft_template[1340010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340020] = {
 	attack_power = 2,
 	name = "【困难13章】空袭 鱼雷机",
@@ -92668,7 +88743,6 @@ _G.pg.base.aircraft_template[1340020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340030] = {
 	attack_power = 2,
 	name = "【困难13章】空袭 战斗机",
@@ -92745,7 +88819,6 @@ _G.pg.base.aircraft_template[1340030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340113] = {
 	attack_power = 2,
 	name = "【困难13章】翔鹤战斗机",
@@ -92822,7 +88895,6 @@ _G.pg.base.aircraft_template[1340113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340114] = {
 	attack_power = 2,
 	name = "【困难13章】翔鹤轰炸机",
@@ -92898,7 +88970,6 @@ _G.pg.base.aircraft_template[1340114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340123] = {
 	attack_power = 2,
 	name = "【困难13章】翔鹤战斗机",
@@ -92975,7 +89046,6 @@ _G.pg.base.aircraft_template[1340123] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340124] = {
 	attack_power = 2,
 	name = "【困难13章】翔鹤轰炸机",
@@ -93051,7 +89121,6 @@ _G.pg.base.aircraft_template[1340124] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340133] = {
 	attack_power = 2,
 	name = "【困难13章】瑞鹤战斗机",
@@ -93128,7 +89197,6 @@ _G.pg.base.aircraft_template[1340133] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340134] = {
 	attack_power = 2,
 	name = "【困难13章】瑞鹤轰炸机",
@@ -93204,7 +89272,6 @@ _G.pg.base.aircraft_template[1340134] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340141] = {
 	attack_power = 2,
 	name = "【困难13章】大凤地毯轰炸",
@@ -93280,7 +89347,6 @@ _G.pg.base.aircraft_template[1340141] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340148] = {
 	attack_power = 2,
 	name = "【困难13章】大凤战斗机",
@@ -93357,7 +89423,6 @@ _G.pg.base.aircraft_template[1340148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340149] = {
 	attack_power = 2,
 	name = "【困难13章】大凤轰炸机",
@@ -93433,7 +89498,6 @@ _G.pg.base.aircraft_template[1340149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340301] = {
 	attack_power = 2,
 	name = "【困难13章】道中地毯轰炸机",
@@ -93509,7 +89573,6 @@ _G.pg.base.aircraft_template[1340301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340302] = {
 	attack_power = 2,
 	name = "【困难13章】BOSS轰炸-瑞鹤用飞机",
@@ -93585,7 +89648,6 @@ _G.pg.base.aircraft_template[1340302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340304] = {
 	attack_power = 2,
 	name = "【困难13章】瑞鹤战斗机",
@@ -93661,7 +89723,6 @@ _G.pg.base.aircraft_template[1340304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340305] = {
 	attack_power = 2,
 	name = "【困难13章】大凤战斗机",
@@ -93737,7 +89798,6 @@ _G.pg.base.aircraft_template[1340305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340306] = {
 	attack_power = 2,
 	name = "【困难13章】指挥舰用飞机",
@@ -93813,7 +89873,6 @@ _G.pg.base.aircraft_template[1340306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340308] = {
 	attack_power = 2,
 	name = "【困难13章】指挥舰战斗机",
@@ -93889,7 +89948,6 @@ _G.pg.base.aircraft_template[1340308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1340310] = {
 	attack_power = 2,
 	name = "【困难13章】飞鹰&隼鹰战斗机",
@@ -93966,7 +90024,6 @@ _G.pg.base.aircraft_template[1340310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360001] = {
 	attack_power = 2,
 	name = "【主线15章】通用轰炸机",
@@ -94042,7 +90099,6 @@ _G.pg.base.aircraft_template[360001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360002] = {
 	attack_power = 2,
 	name = "【主线15章】通用鱼雷机",
@@ -94118,7 +90174,6 @@ _G.pg.base.aircraft_template[360002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360003] = {
 	attack_power = 2,
 	name = "【主线15章】通用战斗机",
@@ -94195,7 +90250,6 @@ _G.pg.base.aircraft_template[360003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360004] = {
 	attack_power = 2,
 	name = "【主线15章】道中地毯式轰炸机",
@@ -94271,7 +90325,6 @@ _G.pg.base.aircraft_template[360004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360016] = {
 	attack_power = 2,
 	name = "【主线15章】指挥舰 -轰炸机",
@@ -94347,7 +90400,6 @@ _G.pg.base.aircraft_template[360016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360018] = {
 	attack_power = 2,
 	name = "【主线15章】指挥舰 -战斗机",
@@ -94423,7 +90475,6 @@ _G.pg.base.aircraft_template[360018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360070] = {
 	attack_power = 2,
 	name = "【主线15章】航母人型-专用战斗机",
@@ -94500,7 +90551,6 @@ _G.pg.base.aircraft_template[360070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360076] = {
 	attack_power = 2,
 	name = "【主线15章】伊势改蛋船轰炸机",
@@ -94576,7 +90626,6 @@ _G.pg.base.aircraft_template[360076] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360077] = {
 	attack_power = 2,
 	name = "【主线15章】伊势改蛋船战斗机",
@@ -94653,7 +90702,6 @@ _G.pg.base.aircraft_template[360077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[360078] = {
 	attack_power = 2,
 	name = "【主线15章】敌方特殊空中支援轰炸机",
@@ -94729,7 +90777,6 @@ _G.pg.base.aircraft_template[360078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[361005] = {
 	attack_power = 2,
 	name = "【主线15-1】BOSS 千岁&千代田 战斗机",
@@ -94806,7 +90853,6 @@ _G.pg.base.aircraft_template[361005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[361006] = {
 	attack_power = 2,
 	name = "【主线15-1】BOSS 千岁&千代田 轰炸机",
@@ -94882,7 +90928,6 @@ _G.pg.base.aircraft_template[361006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[362006] = {
 	attack_power = 2,
 	name = "【主线15-2】BOSS 伊势改&日向改 战斗机",
@@ -94959,7 +91004,6 @@ _G.pg.base.aircraft_template[362006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[363003] = {
 	attack_power = 2,
 	name = "【主线15-3】BOSS 瑞凤一阶段 战斗机",
@@ -95036,7 +91080,6 @@ _G.pg.base.aircraft_template[363003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[363004] = {
 	attack_power = 2,
 	name = "【主线15-3】BOSS 瑞凤一阶段 轰炸机",
@@ -95112,7 +91155,6 @@ _G.pg.base.aircraft_template[363004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[363106] = {
 	attack_power = 2,
 	name = "【主线15-3】BOSS 瑞凤二阶段 战斗机",
@@ -95189,7 +91231,6 @@ _G.pg.base.aircraft_template[363106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[363107] = {
 	attack_power = 2,
 	name = "【主线15-3】BOSS 瑞凤二阶段 轰炸机",
@@ -95265,7 +91306,6 @@ _G.pg.base.aircraft_template[363107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[364003] = {
 	attack_power = 2,
 	name = "【主线15-4】BOSS 一阶段 瑞鹤 战斗机",
@@ -95342,7 +91382,6 @@ _G.pg.base.aircraft_template[364003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[364004] = {
 	attack_power = 2,
 	name = "【主线15-4】BOSS 一阶段 瑞鹤 轰炸机",
@@ -95418,7 +91457,6 @@ _G.pg.base.aircraft_template[364004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[364309] = {
 	attack_power = 2,
 	name = "【主线15-4】BOSS 三阶段 瑞鹤 战斗机",
@@ -95495,7 +91533,6 @@ _G.pg.base.aircraft_template[364309] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[364310] = {
 	attack_power = 2,
 	name = "【主线15-4】BOSS 三阶段 瑞鹤 轰炸机",
@@ -95571,7 +91608,6 @@ _G.pg.base.aircraft_template[364310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[364311] = {
 	attack_power = 2,
 	name = "【主线15-4】BOSS 三阶段 瑞鹤 试作舰载型天雷",
@@ -95649,7 +91685,6 @@ _G.pg.base.aircraft_template[364311] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470043] = {
 	attack_power = 2,
 	name = "【异色格A】【杂兵】塞壬航母蛋船轰炸机T1",
@@ -95725,7 +91760,6 @@ _G.pg.base.aircraft_template[470043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470044] = {
 	attack_power = 2,
 	name = "【异色格A】【杂兵】塞壬航母蛋船战斗机T1",
@@ -95802,7 +91836,6 @@ _G.pg.base.aircraft_template[470044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470173] = {
 	attack_power = 2,
 	name = "【异色格A】【人型】齐柏林鱼雷机T1",
@@ -95878,7 +91911,6 @@ _G.pg.base.aircraft_template[470173] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470174] = {
 	attack_power = 2,
 	name = "【异色格A】【人型】齐柏林使用BF109T",
@@ -95955,7 +91987,6 @@ _G.pg.base.aircraft_template[470174] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470175] = {
 	attack_power = 2,
 	name = "【异色格A】【人型】齐柏林使用JU87C",
@@ -96032,7 +92063,6 @@ _G.pg.base.aircraft_template[470175] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470176] = {
 	attack_power = 2,
 	name = "【异色格A】【人型】齐柏林使用Me155A",
@@ -96109,7 +92139,6 @@ _G.pg.base.aircraft_template[470176] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470901] = {
 	attack_power = 2,
 	name = "【异色格A】【空袭】轰炸机",
@@ -96185,7 +92214,6 @@ _G.pg.base.aircraft_template[470901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470902] = {
 	attack_power = 2,
 	name = "【异色格A】【空袭】鱼雷机",
@@ -96261,7 +92289,6 @@ _G.pg.base.aircraft_template[470902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[470903] = {
 	attack_power = 2,
 	name = "【异色格A】【空袭】战斗机",
@@ -96338,7 +92365,6 @@ _G.pg.base.aircraft_template[470903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471043] = {
 	attack_power = 2,
 	name = "【异色格B】【杂兵】塞壬航母蛋船轰炸机T1",
@@ -96414,7 +92440,6 @@ _G.pg.base.aircraft_template[471043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471044] = {
 	attack_power = 2,
 	name = "【异色格B】【杂兵】塞壬航母蛋船战斗机T1",
@@ -96491,7 +92516,6 @@ _G.pg.base.aircraft_template[471044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471173] = {
 	attack_power = 2,
 	name = "【异色格B】【人型】齐柏林鱼雷机T1",
@@ -96567,7 +92591,6 @@ _G.pg.base.aircraft_template[471173] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471174] = {
 	attack_power = 2,
 	name = "【异色格B】【人型】齐柏林BF109T",
@@ -96644,7 +92667,6 @@ _G.pg.base.aircraft_template[471174] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471175] = {
 	attack_power = 2,
 	name = "【异色格B】【人型】齐柏林JU87C",
@@ -96721,7 +92743,6 @@ _G.pg.base.aircraft_template[471175] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471176] = {
 	attack_power = 2,
 	name = "【异色格B】【人型】齐柏林Me155A",
@@ -96798,7 +92819,6 @@ _G.pg.base.aircraft_template[471176] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471304] = {
 	attack_power = 2,
 	name = "【异色格B】【BOSS】齐柏林BF109T",
@@ -96875,7 +92895,6 @@ _G.pg.base.aircraft_template[471304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471305] = {
 	attack_power = 2,
 	name = "【异色格B】【BOSS】齐柏林JU87C",
@@ -96952,7 +92971,6 @@ _G.pg.base.aircraft_template[471305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471306] = {
 	attack_power = 2,
 	name = "【异色格B】【BOSS】齐柏林Me155A",
@@ -97029,7 +93047,6 @@ _G.pg.base.aircraft_template[471306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471501] = {
 	attack_power = 2,
 	name = "【异色格B】【BOSS】魔鬼鱼浮游炮",
@@ -97108,7 +93125,6 @@ _G.pg.base.aircraft_template[471501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471901] = {
 	attack_power = 2,
 	name = "【异色格B】【空袭】轰炸机",
@@ -97184,7 +93200,6 @@ _G.pg.base.aircraft_template[471901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471902] = {
 	attack_power = 2,
 	name = "【异色格B】【空袭】鱼雷机",
@@ -97260,7 +93275,6 @@ _G.pg.base.aircraft_template[471902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[471903] = {
 	attack_power = 2,
 	name = "【异色格B】【空袭】战斗机",
@@ -97337,7 +93351,6 @@ _G.pg.base.aircraft_template[471903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472043] = {
 	attack_power = 2,
 	name = "【异色格C】【杂兵】塞壬航母蛋船轰炸机T1",
@@ -97413,7 +93426,6 @@ _G.pg.base.aircraft_template[472043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472044] = {
 	attack_power = 2,
 	name = "【异色格C】【杂兵】塞壬航母蛋船战斗机T1",
@@ -97490,7 +93502,6 @@ _G.pg.base.aircraft_template[472044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472173] = {
 	attack_power = 2,
 	name = "【异色格C】【人型】齐柏林鱼雷机T1",
@@ -97566,7 +93577,6 @@ _G.pg.base.aircraft_template[472173] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472174] = {
 	attack_power = 2,
 	name = "【异色格C】【人型】齐柏林使用BF109T",
@@ -97643,7 +93653,6 @@ _G.pg.base.aircraft_template[472174] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472175] = {
 	attack_power = 2,
 	name = "【异色格C】【人型】齐柏林使用JU87C",
@@ -97720,7 +93729,6 @@ _G.pg.base.aircraft_template[472175] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472176] = {
 	attack_power = 2,
 	name = "【异色格C】【人型】齐柏林使用Me155A",
@@ -97797,7 +93805,6 @@ _G.pg.base.aircraft_template[472176] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472901] = {
 	attack_power = 2,
 	name = "【异色格C】【空袭】轰炸机",
@@ -97873,7 +93880,6 @@ _G.pg.base.aircraft_template[472901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472902] = {
 	attack_power = 2,
 	name = "【异色格C】【空袭】鱼雷机",
@@ -97949,7 +93955,6 @@ _G.pg.base.aircraft_template[472902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[472903] = {
 	attack_power = 2,
 	name = "【异色格C】【空袭】战斗机",
@@ -98026,7 +94031,6 @@ _G.pg.base.aircraft_template[472903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473043] = {
 	attack_power = 2,
 	name = "【异色格D】【杂兵】塞壬航母蛋船轰炸机T1",
@@ -98102,7 +94106,6 @@ _G.pg.base.aircraft_template[473043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473044] = {
 	attack_power = 2,
 	name = "【异色格D】【杂兵】塞壬航母蛋船战斗机T1",
@@ -98179,7 +94182,6 @@ _G.pg.base.aircraft_template[473044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473173] = {
 	attack_power = 2,
 	name = "【异色格D】【人型】齐柏林鱼雷机T1",
@@ -98255,7 +94257,6 @@ _G.pg.base.aircraft_template[473173] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473174] = {
 	attack_power = 2,
 	name = "【异色格D】【人型】齐柏林BF109T",
@@ -98332,7 +94333,6 @@ _G.pg.base.aircraft_template[473174] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473175] = {
 	attack_power = 2,
 	name = "【异色格D】【人型】齐柏林JU87C",
@@ -98409,7 +94409,6 @@ _G.pg.base.aircraft_template[473175] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473176] = {
 	attack_power = 2,
 	name = "【异色格D】【人型】齐柏林Me155A",
@@ -98486,7 +94485,6 @@ _G.pg.base.aircraft_template[473176] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473304] = {
 	attack_power = 2,
 	name = "【异色格D】【BOSS】齐柏林BF109T",
@@ -98563,7 +94561,6 @@ _G.pg.base.aircraft_template[473304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473305] = {
 	attack_power = 2,
 	name = "【异色格D】【BOSS】齐柏林JU87C",
@@ -98640,7 +94637,6 @@ _G.pg.base.aircraft_template[473305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473306] = {
 	attack_power = 2,
 	name = "【异色格D】【BOSS】齐柏林Me155A",
@@ -98717,7 +94713,6 @@ _G.pg.base.aircraft_template[473306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473501] = {
 	attack_power = 2,
 	name = "【异色格D】【BOSS】魔鬼鱼浮游炮",
@@ -98797,7 +94792,6 @@ _G.pg.base.aircraft_template[473501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473901] = {
 	attack_power = 2,
 	name = "【异色格D】【空袭】轰炸机",
@@ -98873,7 +94867,6 @@ _G.pg.base.aircraft_template[473901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473902] = {
 	attack_power = 2,
 	name = "【异色格D】【空袭】鱼雷机",
@@ -98949,7 +94942,6 @@ _G.pg.base.aircraft_template[473902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[473903] = {
 	attack_power = 2,
 	name = "【异色格D】【空袭】战斗机",
@@ -99026,7 +95018,6 @@ _G.pg.base.aircraft_template[473903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480050] = {
 	attack_power = 2,
 	name = "七夕齐柏林鱼雷机T1 (飞机*2",
@@ -99102,7 +95093,6 @@ _G.pg.base.aircraft_template[480050] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480051] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用BF109T (飞机*1",
@@ -99179,7 +95169,6 @@ _G.pg.base.aircraft_template[480051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480052] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用JU87C (飞机*1",
@@ -99255,7 +95244,6 @@ _G.pg.base.aircraft_template[480052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480053] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用Me155A (飞机*2",
@@ -99332,7 +95320,6 @@ _G.pg.base.aircraft_template[480053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480106] = {
 	attack_power = 2,
 	name = "七夕boss赤城武器鱼雷机",
@@ -99408,7 +95395,6 @@ _G.pg.base.aircraft_template[480106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480107] = {
 	attack_power = 2,
 	name = "七夕boss赤城武器轰炸机",
@@ -99484,7 +95470,6 @@ _G.pg.base.aircraft_template[480107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480108] = {
 	attack_power = 2,
 	name = "七夕boss赤城武器战斗机",
@@ -99561,7 +95546,6 @@ _G.pg.base.aircraft_template[480108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480109] = {
 	attack_power = 2,
 	name = "七夕boss加贺武器鱼雷机",
@@ -99637,7 +95621,6 @@ _G.pg.base.aircraft_template[480109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480110] = {
 	attack_power = 2,
 	name = "七夕boss加贺武器轰炸机",
@@ -99713,7 +95696,6 @@ _G.pg.base.aircraft_template[480110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[480111] = {
 	attack_power = 2,
 	name = "七夕boss加贺武器战斗机",
@@ -99790,7 +95772,6 @@ _G.pg.base.aircraft_template[480111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490000] = {
 	attack_power = 2,
 	name = "江阴boss龙骧轰炸机",
@@ -99866,7 +95847,6 @@ _G.pg.base.aircraft_template[490000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490001] = {
 	attack_power = 2,
 	name = "江阴boss龙骧鱼雷机T1",
@@ -99942,7 +95922,6 @@ _G.pg.base.aircraft_template[490001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490002] = {
 	attack_power = 2,
 	name = "江阴boss龙骧战斗机T1",
@@ -100019,7 +95998,6 @@ _G.pg.base.aircraft_template[490002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490003] = {
 	attack_power = 2,
 	name = "江阴boss凤翔轰炸机T1",
@@ -100095,7 +96073,6 @@ _G.pg.base.aircraft_template[490003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490004] = {
 	attack_power = 2,
 	name = "江阴boss凤翔鱼雷机T1",
@@ -100171,7 +96148,6 @@ _G.pg.base.aircraft_template[490004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490005] = {
 	attack_power = 2,
 	name = "江阴boss凤翔战斗机T1",
@@ -100248,7 +96224,6 @@ _G.pg.base.aircraft_template[490005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490006] = {
 	attack_power = 2,
 	name = "江阴boss加贺-轰炸机",
@@ -100324,7 +96299,6 @@ _G.pg.base.aircraft_template[490006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490007] = {
 	attack_power = 2,
 	name = "江阴boss加贺鱼雷机",
@@ -100400,7 +96374,6 @@ _G.pg.base.aircraft_template[490007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490008] = {
 	attack_power = 2,
 	name = "江阴boss加贺战斗机",
@@ -100477,7 +96450,6 @@ _G.pg.base.aircraft_template[490008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490051] = {
 	attack_power = 2,
 	name = "江阴空袭  零战五二型",
@@ -100553,7 +96525,6 @@ _G.pg.base.aircraft_template[490051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490052] = {
 	attack_power = 2,
 	name = "江阴空袭  零战二一改",
@@ -100629,7 +96600,6 @@ _G.pg.base.aircraft_template[490052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490053] = {
 	attack_power = 2,
 	name = "江阴空袭  97舰攻",
@@ -100705,7 +96675,6 @@ _G.pg.base.aircraft_template[490053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[490054] = {
 	attack_power = 2,
 	name = "江阴空袭  99式舰爆绿",
@@ -100781,7 +96750,6 @@ _G.pg.base.aircraft_template[490054] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510001] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战五二型",
@@ -100857,7 +96825,6 @@ _G.pg.base.aircraft_template[510001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510002] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战二一改",
@@ -100933,7 +96900,6 @@ _G.pg.base.aircraft_template[510002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510003] = {
 	attack_power = 2,
 	name = "国庆活动空袭  97舰攻",
@@ -101009,7 +96975,6 @@ _G.pg.base.aircraft_template[510003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510004] = {
 	attack_power = 2,
 	name = "国庆活动空袭  99式舰爆绿",
@@ -101085,7 +97050,6 @@ _G.pg.base.aircraft_template[510004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510005] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战五二型",
@@ -101161,7 +97125,6 @@ _G.pg.base.aircraft_template[510005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510006] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战二一改",
@@ -101237,7 +97200,6 @@ _G.pg.base.aircraft_template[510006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510007] = {
 	attack_power = 2,
 	name = "国庆活动空袭  97舰攻",
@@ -101313,7 +97275,6 @@ _G.pg.base.aircraft_template[510007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510008] = {
 	attack_power = 2,
 	name = "国庆活动空袭  99式舰爆绿",
@@ -101389,7 +97350,6 @@ _G.pg.base.aircraft_template[510008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510009] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战五二型",
@@ -101465,7 +97425,6 @@ _G.pg.base.aircraft_template[510009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510010] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战二一改",
@@ -101541,7 +97500,6 @@ _G.pg.base.aircraft_template[510010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510011] = {
 	attack_power = 2,
 	name = "国庆活动空袭  97舰攻",
@@ -101617,7 +97575,6 @@ _G.pg.base.aircraft_template[510011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510012] = {
 	attack_power = 2,
 	name = "国庆活动空袭  99式舰爆绿",
@@ -101693,7 +97650,6 @@ _G.pg.base.aircraft_template[510012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510013] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战五二型",
@@ -101769,7 +97725,6 @@ _G.pg.base.aircraft_template[510013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510014] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战二一改",
@@ -101845,7 +97800,6 @@ _G.pg.base.aircraft_template[510014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510015] = {
 	attack_power = 2,
 	name = "国庆活动空袭  97舰攻",
@@ -101921,7 +97875,6 @@ _G.pg.base.aircraft_template[510015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510016] = {
 	attack_power = 2,
 	name = "国庆活动空袭  99式舰爆绿",
@@ -101997,7 +97950,6 @@ _G.pg.base.aircraft_template[510016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510017] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战五二型",
@@ -102073,7 +98025,6 @@ _G.pg.base.aircraft_template[510017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510018] = {
 	attack_power = 2,
 	name = "国庆活动空袭  零战二一改",
@@ -102149,7 +98100,6 @@ _G.pg.base.aircraft_template[510018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510019] = {
 	attack_power = 2,
 	name = "国庆活动空袭  97舰攻",
@@ -102225,7 +98175,6 @@ _G.pg.base.aircraft_template[510019] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510020] = {
 	attack_power = 2,
 	name = "国庆活动空袭  99式舰爆绿",
@@ -102301,7 +98250,6 @@ _G.pg.base.aircraft_template[510020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510138] = {
 	attack_power = 2,
 	name = "山城改BOSS水上机",
@@ -102377,7 +98325,6 @@ _G.pg.base.aircraft_template[510138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510800] = {
 	attack_power = 2,
 	name = "龙骧轰炸机",
@@ -102453,7 +98400,6 @@ _G.pg.base.aircraft_template[510800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510801] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机",
@@ -102529,7 +98475,6 @@ _G.pg.base.aircraft_template[510801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510802] = {
 	attack_power = 2,
 	name = "龙骧战斗机",
@@ -102606,7 +98551,6 @@ _G.pg.base.aircraft_template[510802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510803] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -102682,7 +98626,6 @@ _G.pg.base.aircraft_template[510803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510804] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -102758,7 +98701,6 @@ _G.pg.base.aircraft_template[510804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510805] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -102835,7 +98777,6 @@ _G.pg.base.aircraft_template[510805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510806] = {
 	attack_power = 2,
 	name = "祥凤轰炸机",
@@ -102911,7 +98852,6 @@ _G.pg.base.aircraft_template[510806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510807] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机",
@@ -102987,7 +98927,6 @@ _G.pg.base.aircraft_template[510807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510808] = {
 	attack_power = 2,
 	name = "祥凤战斗机",
@@ -103064,7 +99003,6 @@ _G.pg.base.aircraft_template[510808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510809] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -103140,7 +99078,6 @@ _G.pg.base.aircraft_template[510809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510810] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -103216,7 +99153,6 @@ _G.pg.base.aircraft_template[510810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510811] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -103293,7 +99229,6 @@ _G.pg.base.aircraft_template[510811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510812] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -103369,7 +99304,6 @@ _G.pg.base.aircraft_template[510812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510813] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -103445,7 +99379,6 @@ _G.pg.base.aircraft_template[510813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510814] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -103522,7 +99455,6 @@ _G.pg.base.aircraft_template[510814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510815] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -103598,7 +99530,6 @@ _G.pg.base.aircraft_template[510815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510816] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -103674,7 +99605,6 @@ _G.pg.base.aircraft_template[510816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510817] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -103751,7 +99681,6 @@ _G.pg.base.aircraft_template[510817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510818] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机",
@@ -103827,7 +99756,6 @@ _G.pg.base.aircraft_template[510818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510819] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机",
@@ -103903,7 +99831,6 @@ _G.pg.base.aircraft_template[510819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510820] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -103980,7 +99907,6 @@ _G.pg.base.aircraft_template[510820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510821] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机",
@@ -104056,7 +99982,6 @@ _G.pg.base.aircraft_template[510821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510822] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机",
@@ -104132,7 +100057,6 @@ _G.pg.base.aircraft_template[510822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[510823] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机",
@@ -104209,7 +100133,6 @@ _G.pg.base.aircraft_template[510823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511126] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -104285,7 +100208,6 @@ _G.pg.base.aircraft_template[511126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511128] = {
 	attack_power = 2,
 	name = "翔鹤浮游炮",
@@ -104364,7 +100286,6 @@ _G.pg.base.aircraft_template[511128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511132] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -104440,7 +100361,6 @@ _G.pg.base.aircraft_template[511132] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511134] = {
 	attack_power = 2,
 	name = "赤城浮游炮",
@@ -104519,7 +100439,6 @@ _G.pg.base.aircraft_template[511134] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511138] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -104595,7 +100514,6 @@ _G.pg.base.aircraft_template[511138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511140] = {
 	attack_power = 2,
 	name = "加贺浮游炮",
@@ -104674,7 +100592,6 @@ _G.pg.base.aircraft_template[511140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511144] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机 BOSS使用",
@@ -104750,7 +100667,6 @@ _G.pg.base.aircraft_template[511144] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511145] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机 BOSS使用",
@@ -104826,7 +100742,6 @@ _G.pg.base.aircraft_template[511145] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511146] = {
 	attack_power = 2,
 	name = "赤城轰炸机 BOSS使用",
@@ -104902,7 +100817,6 @@ _G.pg.base.aircraft_template[511146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511147] = {
 	attack_power = 2,
 	name = "赤城鱼雷机 BOSS使用",
@@ -104978,7 +100892,6 @@ _G.pg.base.aircraft_template[511147] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511148] = {
 	attack_power = 2,
 	name = "加贺轰炸机 BOSS使用",
@@ -105054,7 +100967,6 @@ _G.pg.base.aircraft_template[511148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511149] = {
 	attack_power = 2,
 	name = "加贺鱼雷机 BOSS使用",
@@ -105130,7 +101042,6 @@ _G.pg.base.aircraft_template[511149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511800] = {
 	attack_power = 2,
 	name = "龙骧轰炸机",
@@ -105206,7 +101117,6 @@ _G.pg.base.aircraft_template[511800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511801] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机",
@@ -105282,7 +101192,6 @@ _G.pg.base.aircraft_template[511801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511802] = {
 	attack_power = 2,
 	name = "龙骧战斗机",
@@ -105359,7 +101268,6 @@ _G.pg.base.aircraft_template[511802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511803] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -105435,7 +101343,6 @@ _G.pg.base.aircraft_template[511803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511804] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -105511,7 +101418,6 @@ _G.pg.base.aircraft_template[511804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511805] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -105588,7 +101494,6 @@ _G.pg.base.aircraft_template[511805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511806] = {
 	attack_power = 2,
 	name = "祥凤轰炸机",
@@ -105664,7 +101569,6 @@ _G.pg.base.aircraft_template[511806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511807] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机",
@@ -105740,7 +101644,6 @@ _G.pg.base.aircraft_template[511807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511808] = {
 	attack_power = 2,
 	name = "祥凤战斗机",
@@ -105817,7 +101720,6 @@ _G.pg.base.aircraft_template[511808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511809] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -105893,7 +101795,6 @@ _G.pg.base.aircraft_template[511809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511810] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -105969,7 +101870,6 @@ _G.pg.base.aircraft_template[511810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511811] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -106046,7 +101946,6 @@ _G.pg.base.aircraft_template[511811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511812] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -106122,7 +102021,6 @@ _G.pg.base.aircraft_template[511812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511813] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -106198,7 +102096,6 @@ _G.pg.base.aircraft_template[511813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511814] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -106275,7 +102172,6 @@ _G.pg.base.aircraft_template[511814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511815] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -106351,7 +102247,6 @@ _G.pg.base.aircraft_template[511815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511816] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -106427,7 +102322,6 @@ _G.pg.base.aircraft_template[511816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511817] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -106504,7 +102398,6 @@ _G.pg.base.aircraft_template[511817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511818] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机",
@@ -106580,7 +102473,6 @@ _G.pg.base.aircraft_template[511818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511819] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机",
@@ -106656,7 +102548,6 @@ _G.pg.base.aircraft_template[511819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511820] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -106733,7 +102624,6 @@ _G.pg.base.aircraft_template[511820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511821] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机",
@@ -106809,7 +102699,6 @@ _G.pg.base.aircraft_template[511821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511822] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机",
@@ -106885,7 +102774,6 @@ _G.pg.base.aircraft_template[511822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[511823] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机",
@@ -106962,7 +102850,6 @@ _G.pg.base.aircraft_template[511823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512138] = {
 	attack_power = 2,
 	name = "山城改BOSS水上机",
@@ -107038,7 +102925,6 @@ _G.pg.base.aircraft_template[512138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512800] = {
 	attack_power = 2,
 	name = "龙骧轰炸机",
@@ -107114,7 +103000,6 @@ _G.pg.base.aircraft_template[512800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512801] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机",
@@ -107190,7 +103075,6 @@ _G.pg.base.aircraft_template[512801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512802] = {
 	attack_power = 2,
 	name = "龙骧战斗机",
@@ -107267,7 +103151,6 @@ _G.pg.base.aircraft_template[512802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512803] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -107343,7 +103226,6 @@ _G.pg.base.aircraft_template[512803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512804] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -107419,7 +103301,6 @@ _G.pg.base.aircraft_template[512804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512805] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -107496,7 +103377,6 @@ _G.pg.base.aircraft_template[512805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512806] = {
 	attack_power = 2,
 	name = "祥凤轰炸机",
@@ -107572,7 +103452,6 @@ _G.pg.base.aircraft_template[512806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512807] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机",
@@ -107648,7 +103527,6 @@ _G.pg.base.aircraft_template[512807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512808] = {
 	attack_power = 2,
 	name = "祥凤战斗机",
@@ -107725,7 +103603,6 @@ _G.pg.base.aircraft_template[512808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512809] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -107801,7 +103678,6 @@ _G.pg.base.aircraft_template[512809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512810] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -107877,7 +103753,6 @@ _G.pg.base.aircraft_template[512810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512811] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -107954,7 +103829,6 @@ _G.pg.base.aircraft_template[512811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512812] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -108030,7 +103904,6 @@ _G.pg.base.aircraft_template[512812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512813] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -108106,7 +103979,6 @@ _G.pg.base.aircraft_template[512813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512814] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -108183,7 +104055,6 @@ _G.pg.base.aircraft_template[512814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512815] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -108259,7 +104130,6 @@ _G.pg.base.aircraft_template[512815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512816] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -108335,7 +104205,6 @@ _G.pg.base.aircraft_template[512816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512817] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -108412,7 +104281,6 @@ _G.pg.base.aircraft_template[512817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512818] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机",
@@ -108488,7 +104356,6 @@ _G.pg.base.aircraft_template[512818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512819] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机",
@@ -108564,7 +104431,6 @@ _G.pg.base.aircraft_template[512819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512820] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -108641,7 +104507,6 @@ _G.pg.base.aircraft_template[512820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512821] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机",
@@ -108717,7 +104582,6 @@ _G.pg.base.aircraft_template[512821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512822] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机",
@@ -108793,7 +104657,6 @@ _G.pg.base.aircraft_template[512822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[512823] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机",
@@ -108870,7 +104733,6 @@ _G.pg.base.aircraft_template[512823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513126] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -108946,7 +104808,6 @@ _G.pg.base.aircraft_template[513126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513128] = {
 	attack_power = 2,
 	name = "翔鹤浮游炮",
@@ -109025,7 +104886,6 @@ _G.pg.base.aircraft_template[513128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513132] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -109101,7 +104961,6 @@ _G.pg.base.aircraft_template[513132] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513134] = {
 	attack_power = 2,
 	name = "赤城浮游炮",
@@ -109180,7 +105039,6 @@ _G.pg.base.aircraft_template[513134] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513138] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -109256,7 +105114,6 @@ _G.pg.base.aircraft_template[513138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513140] = {
 	attack_power = 2,
 	name = "加贺浮游炮",
@@ -109335,7 +105192,6 @@ _G.pg.base.aircraft_template[513140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513144] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机 BOSS使用",
@@ -109411,7 +105267,6 @@ _G.pg.base.aircraft_template[513144] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513145] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机 BOSS使用",
@@ -109487,7 +105342,6 @@ _G.pg.base.aircraft_template[513145] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513146] = {
 	attack_power = 2,
 	name = "赤城轰炸机 BOSS使用",
@@ -109563,7 +105417,6 @@ _G.pg.base.aircraft_template[513146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513147] = {
 	attack_power = 2,
 	name = "赤城鱼雷机 BOSS使用",
@@ -109639,7 +105492,6 @@ _G.pg.base.aircraft_template[513147] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513148] = {
 	attack_power = 2,
 	name = "加贺轰炸机 BOSS使用",
@@ -109715,7 +105567,6 @@ _G.pg.base.aircraft_template[513148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513149] = {
 	attack_power = 2,
 	name = "加贺鱼雷机 BOSS使用",
@@ -109791,7 +105642,6 @@ _G.pg.base.aircraft_template[513149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513800] = {
 	attack_power = 2,
 	name = "龙骧轰炸机",
@@ -109867,7 +105717,6 @@ _G.pg.base.aircraft_template[513800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513801] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机",
@@ -109943,7 +105792,6 @@ _G.pg.base.aircraft_template[513801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513802] = {
 	attack_power = 2,
 	name = "龙骧战斗机",
@@ -110020,7 +105868,6 @@ _G.pg.base.aircraft_template[513802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513803] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -110096,7 +105943,6 @@ _G.pg.base.aircraft_template[513803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513804] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -110172,7 +106018,6 @@ _G.pg.base.aircraft_template[513804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513805] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -110249,7 +106094,6 @@ _G.pg.base.aircraft_template[513805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513806] = {
 	attack_power = 2,
 	name = "祥凤轰炸机",
@@ -110325,7 +106169,6 @@ _G.pg.base.aircraft_template[513806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513807] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机",
@@ -110401,7 +106244,6 @@ _G.pg.base.aircraft_template[513807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513808] = {
 	attack_power = 2,
 	name = "祥凤战斗机",
@@ -110478,7 +106320,6 @@ _G.pg.base.aircraft_template[513808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513809] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -110554,7 +106395,6 @@ _G.pg.base.aircraft_template[513809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513810] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -110630,7 +106470,6 @@ _G.pg.base.aircraft_template[513810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513811] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -110707,7 +106546,6 @@ _G.pg.base.aircraft_template[513811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513812] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -110783,7 +106621,6 @@ _G.pg.base.aircraft_template[513812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513813] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -110859,7 +106696,6 @@ _G.pg.base.aircraft_template[513813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513814] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -110936,7 +106772,6 @@ _G.pg.base.aircraft_template[513814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513815] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -111012,7 +106847,6 @@ _G.pg.base.aircraft_template[513815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513816] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -111088,7 +106922,6 @@ _G.pg.base.aircraft_template[513816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513817] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -111165,7 +106998,6 @@ _G.pg.base.aircraft_template[513817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513818] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机",
@@ -111241,7 +107073,6 @@ _G.pg.base.aircraft_template[513818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513819] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机",
@@ -111317,7 +107148,6 @@ _G.pg.base.aircraft_template[513819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513820] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -111394,7 +107224,6 @@ _G.pg.base.aircraft_template[513820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513821] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机",
@@ -111470,7 +107299,6 @@ _G.pg.base.aircraft_template[513821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513822] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机",
@@ -111546,7 +107374,6 @@ _G.pg.base.aircraft_template[513822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[513823] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机",
@@ -111623,7 +107450,6 @@ _G.pg.base.aircraft_template[513823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514132] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -111699,7 +107525,6 @@ _G.pg.base.aircraft_template[514132] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514138] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -111775,7 +107600,6 @@ _G.pg.base.aircraft_template[514138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514146] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -111851,7 +107675,6 @@ _G.pg.base.aircraft_template[514146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514147] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -111927,7 +107750,6 @@ _G.pg.base.aircraft_template[514147] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514148] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -112003,7 +107825,6 @@ _G.pg.base.aircraft_template[514148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514149] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -112079,7 +107900,6 @@ _G.pg.base.aircraft_template[514149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514800] = {
 	attack_power = 2,
 	name = "龙骧轰炸机",
@@ -112155,7 +107975,6 @@ _G.pg.base.aircraft_template[514800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514801] = {
 	attack_power = 2,
 	name = "龙骧鱼雷机",
@@ -112231,7 +108050,6 @@ _G.pg.base.aircraft_template[514801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514802] = {
 	attack_power = 2,
 	name = "龙骧战斗机",
@@ -112308,7 +108126,6 @@ _G.pg.base.aircraft_template[514802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514803] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -112384,7 +108201,6 @@ _G.pg.base.aircraft_template[514803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514804] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -112460,7 +108276,6 @@ _G.pg.base.aircraft_template[514804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514805] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -112537,7 +108352,6 @@ _G.pg.base.aircraft_template[514805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514806] = {
 	attack_power = 2,
 	name = "祥凤轰炸机",
@@ -112613,7 +108427,6 @@ _G.pg.base.aircraft_template[514806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514807] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机",
@@ -112689,7 +108502,6 @@ _G.pg.base.aircraft_template[514807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514808] = {
 	attack_power = 2,
 	name = "祥凤战斗机",
@@ -112766,7 +108578,6 @@ _G.pg.base.aircraft_template[514808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514809] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -112842,7 +108653,6 @@ _G.pg.base.aircraft_template[514809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514810] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -112918,7 +108728,6 @@ _G.pg.base.aircraft_template[514810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514811] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -112995,7 +108804,6 @@ _G.pg.base.aircraft_template[514811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514812] = {
 	attack_power = 2,
 	name = "赤城轰炸机",
@@ -113071,7 +108879,6 @@ _G.pg.base.aircraft_template[514812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514813] = {
 	attack_power = 2,
 	name = "赤城鱼雷机",
@@ -113147,7 +108954,6 @@ _G.pg.base.aircraft_template[514813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514814] = {
 	attack_power = 2,
 	name = "赤城战斗机",
@@ -113224,7 +109030,6 @@ _G.pg.base.aircraft_template[514814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514815] = {
 	attack_power = 2,
 	name = "加贺轰炸机",
@@ -113300,7 +109105,6 @@ _G.pg.base.aircraft_template[514815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514816] = {
 	attack_power = 2,
 	name = "加贺鱼雷机",
@@ -113376,7 +109180,6 @@ _G.pg.base.aircraft_template[514816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514817] = {
 	attack_power = 2,
 	name = "加贺战斗机",
@@ -113453,7 +109256,6 @@ _G.pg.base.aircraft_template[514817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514818] = {
 	attack_power = 2,
 	name = "翔鹤轰炸机",
@@ -113529,7 +109331,6 @@ _G.pg.base.aircraft_template[514818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514819] = {
 	attack_power = 2,
 	name = "翔鹤鱼雷机",
@@ -113605,7 +109406,6 @@ _G.pg.base.aircraft_template[514819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514820] = {
 	attack_power = 2,
 	name = "翔鹤战斗机",
@@ -113682,7 +109482,6 @@ _G.pg.base.aircraft_template[514820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514821] = {
 	attack_power = 2,
 	name = "瑞鹤轰炸机",
@@ -113758,7 +109557,6 @@ _G.pg.base.aircraft_template[514821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514822] = {
 	attack_power = 2,
 	name = "瑞鹤鱼雷机",
@@ -113834,7 +109632,6 @@ _G.pg.base.aircraft_template[514822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[514823] = {
 	attack_power = 2,
 	name = "瑞鹤战斗机",
@@ -113911,7 +109708,6 @@ _G.pg.base.aircraft_template[514823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520101] = {
 	attack_power = 2,
 	name = "七夕齐柏林鱼雷机T1 (飞机*2",
@@ -113987,7 +109783,6 @@ _G.pg.base.aircraft_template[520101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520102] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用BF109T (飞机*1",
@@ -114064,7 +109859,6 @@ _G.pg.base.aircraft_template[520102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520103] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用JU87C (飞机*1",
@@ -114140,7 +109934,6 @@ _G.pg.base.aircraft_template[520103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520104] = {
 	attack_power = 2,
 	name = "七夕齐柏林使用Me155A (飞机*2",
@@ -114217,7 +110010,6 @@ _G.pg.base.aircraft_template[520104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520105] = {
 	attack_power = 2,
 	name = "万圣节副本空袭BF109T",
@@ -114294,7 +110086,6 @@ _G.pg.base.aircraft_template[520105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520106] = {
 	attack_power = 2,
 	name = "万圣节副本空袭Me155A",
@@ -114371,7 +110162,6 @@ _G.pg.base.aircraft_template[520106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520107] = {
 	attack_power = 2,
 	name = "万圣节副本空袭qibolin",
@@ -114447,7 +110237,6 @@ _G.pg.base.aircraft_template[520107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[520108] = {
 	attack_power = 2,
 	name = "万圣节副本空袭JU87C",
@@ -114523,7 +110312,6 @@ _G.pg.base.aircraft_template[520108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531020] = {
 	attack_power = 2,
 	name = "塞壬CV 浮游炮机体",
@@ -114603,7 +110391,6 @@ _G.pg.base.aircraft_template[531020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531021] = {
 	attack_power = 2,
 	name = "塞壬CV 轰炸机T3",
@@ -114679,7 +110466,6 @@ _G.pg.base.aircraft_template[531021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531022] = {
 	attack_power = 2,
 	name = "塞壬CV 鱼雷机T3",
@@ -114755,7 +110541,6 @@ _G.pg.base.aircraft_template[531022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531023] = {
 	attack_power = 2,
 	name = "测试者β型 浮游炮机体",
@@ -114835,7 +110620,6 @@ _G.pg.base.aircraft_template[531023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531031] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -114911,7 +110695,6 @@ _G.pg.base.aircraft_template[531031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[531032] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -114988,7 +110771,6 @@ _G.pg.base.aircraft_template[531032] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532020] = {
 	attack_power = 2,
 	name = "塞壬CV 浮游炮机体",
@@ -115068,7 +110850,6 @@ _G.pg.base.aircraft_template[532020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532021] = {
 	attack_power = 2,
 	name = "塞壬CV 轰炸机T3",
@@ -115144,7 +110925,6 @@ _G.pg.base.aircraft_template[532021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532022] = {
 	attack_power = 2,
 	name = "塞壬CV 鱼雷机T3",
@@ -115220,7 +111000,6 @@ _G.pg.base.aircraft_template[532022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532023] = {
 	attack_power = 2,
 	name = "测试者β型 浮游炮机体",
@@ -115300,7 +111079,6 @@ _G.pg.base.aircraft_template[532023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532031] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -115376,7 +111154,6 @@ _G.pg.base.aircraft_template[532031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532032] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -115453,7 +111230,6 @@ _G.pg.base.aircraft_template[532032] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532512] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -115532,7 +111308,6 @@ _G.pg.base.aircraft_template[532512] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532513] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -115608,7 +111383,6 @@ _G.pg.base.aircraft_template[532513] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532514] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -115684,7 +111458,6 @@ _G.pg.base.aircraft_template[532514] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532518] = {
 	attack_power = 2,
 	name = "执棋者BOSS蓄力武器飞机群",
@@ -115758,7 +111531,6 @@ _G.pg.base.aircraft_template[532518] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532532] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -115837,7 +111609,6 @@ _G.pg.base.aircraft_template[532532] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532533] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -115913,7 +111684,6 @@ _G.pg.base.aircraft_template[532533] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532534] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -115989,7 +111759,6 @@ _G.pg.base.aircraft_template[532534] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[532538] = {
 	attack_power = 2,
 	name = "执棋者BOSS蓄力武器飞机群",
@@ -116063,7 +111832,6 @@ _G.pg.base.aircraft_template[532538] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533020] = {
 	attack_power = 2,
 	name = "塞壬CV 浮游炮机体",
@@ -116143,7 +111911,6 @@ _G.pg.base.aircraft_template[533020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533021] = {
 	attack_power = 2,
 	name = "塞壬CV 轰炸机T3",
@@ -116219,7 +111986,6 @@ _G.pg.base.aircraft_template[533021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533022] = {
 	attack_power = 2,
 	name = "塞壬CV 鱼雷机T3",
@@ -116295,7 +112061,6 @@ _G.pg.base.aircraft_template[533022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533023] = {
 	attack_power = 2,
 	name = "测试者β型 浮游炮机体",
@@ -116375,7 +112140,6 @@ _G.pg.base.aircraft_template[533023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533031] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -116451,7 +112215,6 @@ _G.pg.base.aircraft_template[533031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[533032] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -116528,7 +112291,6 @@ _G.pg.base.aircraft_template[533032] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534020] = {
 	attack_power = 2,
 	name = "塞壬CV 浮游炮机体",
@@ -116608,7 +112370,6 @@ _G.pg.base.aircraft_template[534020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534021] = {
 	attack_power = 2,
 	name = "塞壬CV 轰炸机T3",
@@ -116684,7 +112445,6 @@ _G.pg.base.aircraft_template[534021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534022] = {
 	attack_power = 2,
 	name = "塞壬CV 鱼雷机T3",
@@ -116760,7 +112520,6 @@ _G.pg.base.aircraft_template[534022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534023] = {
 	attack_power = 2,
 	name = "测试者β型 浮游炮机体",
@@ -116840,7 +112599,6 @@ _G.pg.base.aircraft_template[534023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534031] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -116916,7 +112674,6 @@ _G.pg.base.aircraft_template[534031] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534032] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -116993,7 +112750,6 @@ _G.pg.base.aircraft_template[534032] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534512] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -117072,7 +112828,6 @@ _G.pg.base.aircraft_template[534512] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534513] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -117148,7 +112903,6 @@ _G.pg.base.aircraft_template[534513] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534514] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -117224,7 +112978,6 @@ _G.pg.base.aircraft_template[534514] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534518] = {
 	attack_power = 2,
 	name = "执棋者BOSS蓄力武器飞机群",
@@ -117298,7 +113051,6 @@ _G.pg.base.aircraft_template[534518] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534532] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -117377,7 +113129,6 @@ _G.pg.base.aircraft_template[534532] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534533] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -117453,7 +113204,6 @@ _G.pg.base.aircraft_template[534533] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534534] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -117529,7 +113279,6 @@ _G.pg.base.aircraft_template[534534] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[534538] = {
 	attack_power = 2,
 	name = "执棋者BOSS蓄力武器飞机群",
@@ -117603,7 +113352,6 @@ _G.pg.base.aircraft_template[534538] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535300] = {
 	attack_power = 2,
 	name = "冬活空袭 轰炸机",
@@ -117679,7 +113427,6 @@ _G.pg.base.aircraft_template[535300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535301] = {
 	attack_power = 2,
 	name = "冬活空袭 鱼雷机",
@@ -117755,7 +113502,6 @@ _G.pg.base.aircraft_template[535301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535302] = {
 	attack_power = 2,
 	name = "冬活空袭 战斗机",
@@ -117832,7 +113578,6 @@ _G.pg.base.aircraft_template[535302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535303] = {
 	attack_power = 2,
 	name = "冬活空袭 轰炸机",
@@ -117908,7 +113653,6 @@ _G.pg.base.aircraft_template[535303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535304] = {
 	attack_power = 2,
 	name = "冬活空袭 鱼雷机",
@@ -117984,7 +113728,6 @@ _G.pg.base.aircraft_template[535304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535305] = {
 	attack_power = 2,
 	name = "冬活空袭 战斗机",
@@ -118061,7 +113804,6 @@ _G.pg.base.aircraft_template[535305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535401] = {
 	attack_power = 2,
 	name = "冬活空袭 轰炸机",
@@ -118137,7 +113879,6 @@ _G.pg.base.aircraft_template[535401] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535402] = {
 	attack_power = 2,
 	name = "冬活空袭 鱼雷机",
@@ -118213,7 +113954,6 @@ _G.pg.base.aircraft_template[535402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535403] = {
 	attack_power = 2,
 	name = "冬活空袭 战斗机",
@@ -118290,7 +114030,6 @@ _G.pg.base.aircraft_template[535403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535404] = {
 	attack_power = 2,
 	name = "冬活空袭 轰炸机",
@@ -118366,7 +114105,6 @@ _G.pg.base.aircraft_template[535404] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535405] = {
 	attack_power = 2,
 	name = "冬活空袭 鱼雷机",
@@ -118442,7 +114180,6 @@ _G.pg.base.aircraft_template[535405] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[535406] = {
 	attack_power = 2,
 	name = "冬活空袭 战斗机",
@@ -118519,7 +114256,6 @@ _G.pg.base.aircraft_template[535406] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[540009] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -118595,7 +114331,6 @@ _G.pg.base.aircraft_template[540009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[540010] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -118672,7 +114407,6 @@ _G.pg.base.aircraft_template[540010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550044] = {
 	attack_power = 2,
 	name = "贝露轰炸机",
@@ -118748,7 +114482,6 @@ _G.pg.base.aircraft_template[550044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550045] = {
 	attack_power = 2,
 	name = "贝露鱼雷机",
@@ -118824,7 +114557,6 @@ _G.pg.base.aircraft_template[550045] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550046] = {
 	attack_power = 2,
 	name = "贝露战斗机",
@@ -118901,7 +114633,6 @@ _G.pg.base.aircraft_template[550046] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550053] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -118977,7 +114708,6 @@ _G.pg.base.aircraft_template[550053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550054] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -119054,7 +114784,6 @@ _G.pg.base.aircraft_template[550054] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550100] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -119130,7 +114859,6 @@ _G.pg.base.aircraft_template[550100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550200] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -119206,7 +114934,6 @@ _G.pg.base.aircraft_template[550200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550300] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -119283,7 +115010,6 @@ _G.pg.base.aircraft_template[550300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550110] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -119359,7 +115085,6 @@ _G.pg.base.aircraft_template[550110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550210] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -119435,7 +115160,6 @@ _G.pg.base.aircraft_template[550210] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550310] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -119512,7 +115236,6 @@ _G.pg.base.aircraft_template[550310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550545] = {
 	attack_power = 2,
 	name = "翡绿之心轰炸机",
@@ -119588,7 +115311,6 @@ _G.pg.base.aircraft_template[550545] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550546] = {
 	attack_power = 2,
 	name = "翡绿之心鱼雷机",
@@ -119664,7 +115386,6 @@ _G.pg.base.aircraft_template[550546] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[550547] = {
 	attack_power = 2,
 	name = "翡绿之心战斗机",
@@ -119741,7 +115462,6 @@ _G.pg.base.aircraft_template[550547] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551044] = {
 	attack_power = 2,
 	name = "贝露轰炸机",
@@ -119817,7 +115537,6 @@ _G.pg.base.aircraft_template[551044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551045] = {
 	attack_power = 2,
 	name = "贝露鱼雷机",
@@ -119893,7 +115612,6 @@ _G.pg.base.aircraft_template[551045] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551046] = {
 	attack_power = 2,
 	name = "贝露战斗机",
@@ -119970,7 +115688,6 @@ _G.pg.base.aircraft_template[551046] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551545] = {
 	attack_power = 2,
 	name = "翡绿之心轰炸机",
@@ -120046,7 +115763,6 @@ _G.pg.base.aircraft_template[551545] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551546] = {
 	attack_power = 2,
 	name = "翡绿之心鱼雷机",
@@ -120122,7 +115838,6 @@ _G.pg.base.aircraft_template[551546] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[551547] = {
 	attack_power = 2,
 	name = "翡绿之心战斗机",
@@ -120199,7 +115914,6 @@ _G.pg.base.aircraft_template[551547] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[561003] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -120275,7 +115989,6 @@ _G.pg.base.aircraft_template[561003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[561004] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -120352,7 +116065,6 @@ _G.pg.base.aircraft_template[561004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[561601] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -120428,7 +116140,6 @@ _G.pg.base.aircraft_template[561601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[561602] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -120504,7 +116215,6 @@ _G.pg.base.aircraft_template[561602] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[561603] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -120581,7 +116291,6 @@ _G.pg.base.aircraft_template[561603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562003] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -120657,7 +116366,6 @@ _G.pg.base.aircraft_template[562003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562004] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -120734,7 +116442,6 @@ _G.pg.base.aircraft_template[562004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562333] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -120813,7 +116520,6 @@ _G.pg.base.aircraft_template[562333] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562334] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -120889,7 +116595,6 @@ _G.pg.base.aircraft_template[562334] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562335] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -120965,7 +116670,6 @@ _G.pg.base.aircraft_template[562335] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562523] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -121044,7 +116748,6 @@ _G.pg.base.aircraft_template[562523] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562524] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -121120,7 +116823,6 @@ _G.pg.base.aircraft_template[562524] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562525] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -121196,7 +116898,6 @@ _G.pg.base.aircraft_template[562525] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562601] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -121272,7 +116973,6 @@ _G.pg.base.aircraft_template[562601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562602] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -121348,7 +117048,6 @@ _G.pg.base.aircraft_template[562602] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[562603] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -121425,7 +117124,6 @@ _G.pg.base.aircraft_template[562603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[563003] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -121501,7 +117199,6 @@ _G.pg.base.aircraft_template[563003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[563004] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -121578,7 +117275,6 @@ _G.pg.base.aircraft_template[563004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[563601] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -121654,7 +117350,6 @@ _G.pg.base.aircraft_template[563601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[563602] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -121730,7 +117425,6 @@ _G.pg.base.aircraft_template[563602] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[563603] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -121807,7 +117501,6 @@ _G.pg.base.aircraft_template[563603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564003] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -121883,7 +117576,6 @@ _G.pg.base.aircraft_template[564003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564004] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -121960,7 +117652,6 @@ _G.pg.base.aircraft_template[564004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564333] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -122039,7 +117730,6 @@ _G.pg.base.aircraft_template[564333] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564334] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -122115,7 +117805,6 @@ _G.pg.base.aircraft_template[564334] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564335] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -122191,7 +117880,6 @@ _G.pg.base.aircraft_template[564335] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564523] = {
 	attack_power = 2,
 	name = "执棋者BOSS 浮游炮机体",
@@ -122270,7 +117958,6 @@ _G.pg.base.aircraft_template[564523] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564524] = {
 	attack_power = 2,
 	name = "执棋者BOSS 轰炸机T3",
@@ -122346,7 +118033,6 @@ _G.pg.base.aircraft_template[564524] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564525] = {
 	attack_power = 2,
 	name = "执棋者BOSS 鱼雷机T3",
@@ -122422,7 +118108,6 @@ _G.pg.base.aircraft_template[564525] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564601] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -122498,7 +118183,6 @@ _G.pg.base.aircraft_template[564601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564602] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -122574,7 +118258,6 @@ _G.pg.base.aircraft_template[564602] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[564603] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -122651,7 +118334,6 @@ _G.pg.base.aircraft_template[564603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565003] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -122727,7 +118409,6 @@ _G.pg.base.aircraft_template[565003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565004] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -122804,7 +118485,6 @@ _G.pg.base.aircraft_template[565004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565343] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -122883,7 +118563,6 @@ _G.pg.base.aircraft_template[565343] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565344] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -122959,7 +118638,6 @@ _G.pg.base.aircraft_template[565344] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565345] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -123035,7 +118713,6 @@ _G.pg.base.aircraft_template[565345] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565601] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -123111,7 +118788,6 @@ _G.pg.base.aircraft_template[565601] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565602] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -123187,7 +118863,6 @@ _G.pg.base.aircraft_template[565602] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[565603] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -123264,7 +118939,6 @@ _G.pg.base.aircraft_template[565603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[566003] = {
 	attack_power = 2,
 	name = "轰炸机",
@@ -123340,7 +119014,6 @@ _G.pg.base.aircraft_template[566003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[566004] = {
 	attack_power = 2,
 	name = "战斗机",
@@ -123417,7 +119090,6 @@ _G.pg.base.aircraft_template[566004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[566016] = {
 	attack_power = 2,
 	name = "赤城蓄力武器飞机群",
@@ -123491,7 +119163,6 @@ _G.pg.base.aircraft_template[566016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[566017] = {
 	attack_power = 2,
 	name = "加贺蓄力武器飞机群",
@@ -123565,7 +119236,6 @@ _G.pg.base.aircraft_template[566017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -123641,7 +119311,6 @@ _G.pg.base.aircraft_template[567901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -123717,7 +119386,6 @@ _G.pg.base.aircraft_template[567902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -123794,7 +119462,6 @@ _G.pg.base.aircraft_template[567903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -123870,7 +119537,6 @@ _G.pg.base.aircraft_template[567043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -123947,7 +119613,6 @@ _G.pg.base.aircraft_template[567044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567093] = {
 	attack_power = 2,
 	name = "凤翔轰炸机",
@@ -124023,7 +119688,6 @@ _G.pg.base.aircraft_template[567093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567094] = {
 	attack_power = 2,
 	name = "凤翔鱼雷机",
@@ -124099,7 +119763,6 @@ _G.pg.base.aircraft_template[567094] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567095] = {
 	attack_power = 2,
 	name = "凤翔战斗机",
@@ -124176,7 +119839,6 @@ _G.pg.base.aircraft_template[567095] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -124255,7 +119917,6 @@ _G.pg.base.aircraft_template[567153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -124331,7 +119992,6 @@ _G.pg.base.aircraft_template[567154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[567155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -124407,7 +120067,6 @@ _G.pg.base.aircraft_template[567155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -124483,7 +120142,6 @@ _G.pg.base.aircraft_template[568901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -124559,7 +120217,6 @@ _G.pg.base.aircraft_template[568902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -124636,7 +120293,6 @@ _G.pg.base.aircraft_template[568903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -124712,7 +120368,6 @@ _G.pg.base.aircraft_template[568043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -124789,7 +120444,6 @@ _G.pg.base.aircraft_template[568044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568103] = {
 	attack_power = 2,
 	name = "飞龙-鱼雷机",
@@ -124865,7 +120519,6 @@ _G.pg.base.aircraft_template[568103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568104] = {
 	attack_power = 2,
 	name = "飞龙-轰炸机",
@@ -124941,7 +120594,6 @@ _G.pg.base.aircraft_template[568104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568105] = {
 	attack_power = 2,
 	name = "飞龙-战斗机",
@@ -125018,7 +120670,6 @@ _G.pg.base.aircraft_template[568105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -125097,7 +120748,6 @@ _G.pg.base.aircraft_template[568153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -125173,7 +120823,6 @@ _G.pg.base.aircraft_template[568154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[568155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -125249,7 +120898,6 @@ _G.pg.base.aircraft_template[568155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -125325,7 +120973,6 @@ _G.pg.base.aircraft_template[569901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -125401,7 +121048,6 @@ _G.pg.base.aircraft_template[569902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -125478,7 +121124,6 @@ _G.pg.base.aircraft_template[569903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -125554,7 +121199,6 @@ _G.pg.base.aircraft_template[569043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -125631,7 +121275,6 @@ _G.pg.base.aircraft_template[569044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569103] = {
 	attack_power = 2,
 	name = "祥凤战斗机T1",
@@ -125708,7 +121351,6 @@ _G.pg.base.aircraft_template[569103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569104] = {
 	attack_power = 2,
 	name = "祥凤鱼雷机T1",
@@ -125784,7 +121426,6 @@ _G.pg.base.aircraft_template[569104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569105] = {
 	attack_power = 2,
 	name = "祥凤轰炸机T1",
@@ -125860,7 +121501,6 @@ _G.pg.base.aircraft_template[569105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -125939,7 +121579,6 @@ _G.pg.base.aircraft_template[569153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -126015,7 +121654,6 @@ _G.pg.base.aircraft_template[569154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[569155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -126091,7 +121729,6 @@ _G.pg.base.aircraft_template[569155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -126167,7 +121804,6 @@ _G.pg.base.aircraft_template[570901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -126243,7 +121879,6 @@ _G.pg.base.aircraft_template[570902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -126320,7 +121955,6 @@ _G.pg.base.aircraft_template[570903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -126396,7 +122030,6 @@ _G.pg.base.aircraft_template[570043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -126473,7 +122106,6 @@ _G.pg.base.aircraft_template[570044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570093] = {
 	attack_power = 2,
 	name = "苍龙轰炸机",
@@ -126549,7 +122181,6 @@ _G.pg.base.aircraft_template[570093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570094] = {
 	attack_power = 2,
 	name = "苍龙鱼雷机",
@@ -126625,7 +122256,6 @@ _G.pg.base.aircraft_template[570094] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570095] = {
 	attack_power = 2,
 	name = "苍龙战斗机",
@@ -126702,7 +122332,6 @@ _G.pg.base.aircraft_template[570095] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -126781,7 +122410,6 @@ _G.pg.base.aircraft_template[570153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -126857,7 +122485,6 @@ _G.pg.base.aircraft_template[570154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[570155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -126933,7 +122560,6 @@ _G.pg.base.aircraft_template[570155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -127009,7 +122635,6 @@ _G.pg.base.aircraft_template[590043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -127086,7 +122711,6 @@ _G.pg.base.aircraft_template[590044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590077] = {
 	attack_power = 2,
 	name = "执棋者人形 轰炸机T3",
@@ -127162,7 +122786,6 @@ _G.pg.base.aircraft_template[590077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590078] = {
 	attack_power = 2,
 	name = "执棋者人形 鱼雷机T3",
@@ -127238,7 +122861,6 @@ _G.pg.base.aircraft_template[590078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -127317,7 +122939,6 @@ _G.pg.base.aircraft_template[590153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -127393,7 +123014,6 @@ _G.pg.base.aircraft_template[590154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -127469,7 +123089,6 @@ _G.pg.base.aircraft_template[590155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -127545,7 +123164,6 @@ _G.pg.base.aircraft_template[590901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -127621,7 +123239,6 @@ _G.pg.base.aircraft_template[590902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[590903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -127698,7 +123315,6 @@ _G.pg.base.aircraft_template[590903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -127774,7 +123390,6 @@ _G.pg.base.aircraft_template[591043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -127851,7 +123466,6 @@ _G.pg.base.aircraft_template[591044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591077] = {
 	attack_power = 2,
 	name = "执棋者人形 轰炸机T3",
@@ -127927,7 +123541,6 @@ _G.pg.base.aircraft_template[591077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591078] = {
 	attack_power = 2,
 	name = "执棋者人形 鱼雷机T3",
@@ -128003,7 +123616,6 @@ _G.pg.base.aircraft_template[591078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -128082,7 +123694,6 @@ _G.pg.base.aircraft_template[591153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -128158,7 +123769,6 @@ _G.pg.base.aircraft_template[591154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -128234,7 +123844,6 @@ _G.pg.base.aircraft_template[591155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591301] = {
 	attack_power = 2,
 	name = "执棋者II 浮游炮机体",
@@ -128313,7 +123922,6 @@ _G.pg.base.aircraft_template[591301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591302] = {
 	attack_power = 2,
 	name = "执棋者II 轰炸机T3",
@@ -128389,7 +123997,6 @@ _G.pg.base.aircraft_template[591302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591303] = {
 	attack_power = 2,
 	name = "执棋者II 鱼雷机T3",
@@ -128465,7 +124072,6 @@ _G.pg.base.aircraft_template[591303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -128541,7 +124147,6 @@ _G.pg.base.aircraft_template[591901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -128617,7 +124222,6 @@ _G.pg.base.aircraft_template[591902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[591903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -128694,7 +124298,6 @@ _G.pg.base.aircraft_template[591903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -128770,7 +124373,6 @@ _G.pg.base.aircraft_template[592043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -128847,7 +124449,6 @@ _G.pg.base.aircraft_template[592044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592077] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T1",
@@ -128923,7 +124524,6 @@ _G.pg.base.aircraft_template[592077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592078] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T1",
@@ -128999,7 +124599,6 @@ _G.pg.base.aircraft_template[592078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -129078,7 +124677,6 @@ _G.pg.base.aircraft_template[592153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -129154,7 +124752,6 @@ _G.pg.base.aircraft_template[592154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -129230,7 +124827,6 @@ _G.pg.base.aircraft_template[592155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -129306,7 +124902,6 @@ _G.pg.base.aircraft_template[592901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -129382,7 +124977,6 @@ _G.pg.base.aircraft_template[592902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[592903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -129459,7 +125053,6 @@ _G.pg.base.aircraft_template[592903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593043] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船轰炸机T1 (飞机",
@@ -129535,7 +125128,6 @@ _G.pg.base.aircraft_template[593043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593044] = {
 	attack_power = 2,
 	name = "塞壬航母蛋船战斗机T1 (飞机",
@@ -129612,7 +125204,6 @@ _G.pg.base.aircraft_template[593044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593077] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -129688,7 +125279,6 @@ _G.pg.base.aircraft_template[593077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593078] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -129764,7 +125354,6 @@ _G.pg.base.aircraft_template[593078] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593153] = {
 	attack_power = 2,
 	name = "执棋者精英 浮游炮机体",
@@ -129843,7 +125432,6 @@ _G.pg.base.aircraft_template[593153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593154] = {
 	attack_power = 2,
 	name = "执棋者精英 轰炸机T3",
@@ -129919,7 +125507,6 @@ _G.pg.base.aircraft_template[593154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593155] = {
 	attack_power = 2,
 	name = "执棋者精英 鱼雷机T3",
@@ -129995,7 +125582,6 @@ _G.pg.base.aircraft_template[593155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593301] = {
 	attack_power = 2,
 	name = "执棋者II 浮游炮机体",
@@ -130074,7 +125660,6 @@ _G.pg.base.aircraft_template[593301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593302] = {
 	attack_power = 2,
 	name = "执棋者II 轰炸机T3",
@@ -130150,7 +125735,6 @@ _G.pg.base.aircraft_template[593302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593303] = {
 	attack_power = 2,
 	name = "执棋者II 鱼雷机T3",
@@ -130226,7 +125810,6 @@ _G.pg.base.aircraft_template[593303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593901] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -130302,7 +125885,6 @@ _G.pg.base.aircraft_template[593901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593902] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -130378,7 +125960,6 @@ _G.pg.base.aircraft_template[593902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[593903] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -130455,7 +126036,6 @@ _G.pg.base.aircraft_template[593903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604003] = {
 	attack_power = 2,
 	name = "【传颂联动SP1BOSS】芙米露露轰炸机",
@@ -130531,7 +126111,6 @@ _G.pg.base.aircraft_template[604003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604004] = {
 	attack_power = 2,
 	name = "【传颂联动SP1BOSS】芙米露露鱼雷机",
@@ -130607,7 +126186,6 @@ _G.pg.base.aircraft_template[604004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604023] = {
 	attack_power = 2,
 	name = "【传颂联动SP3BOSS】乌璐露轰炸机",
@@ -130683,7 +126261,6 @@ _G.pg.base.aircraft_template[604023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604024] = {
 	attack_power = 2,
 	name = "【传颂联动SP3BOSS】乌璐露鱼雷机",
@@ -130759,7 +126336,6 @@ _G.pg.base.aircraft_template[604024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604033] = {
 	attack_power = 2,
 	name = "【传颂联动SP3BOSS】萨拉娜轰炸机",
@@ -130835,7 +126411,6 @@ _G.pg.base.aircraft_template[604033] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604034] = {
 	attack_power = 2,
 	name = "【传颂联动SP3BOSS】萨拉娜鱼雷机",
@@ -130911,7 +126486,6 @@ _G.pg.base.aircraft_template[604034] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604040] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】测试者 浮游炮机体",
@@ -130990,7 +126564,6 @@ _G.pg.base.aircraft_template[604040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604053] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】芙米露露轰炸机",
@@ -131066,7 +126639,6 @@ _G.pg.base.aircraft_template[604053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604054] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】芙米露露鱼雷机",
@@ -131142,7 +126714,6 @@ _G.pg.base.aircraft_template[604054] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604083] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】乌璐露轰炸机",
@@ -131218,7 +126789,6 @@ _G.pg.base.aircraft_template[604083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604084] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】乌璐露鱼雷机",
@@ -131294,7 +126864,6 @@ _G.pg.base.aircraft_template[604084] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604093] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】萨拉娜轰炸机",
@@ -131370,7 +126939,6 @@ _G.pg.base.aircraft_template[604093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604094] = {
 	attack_power = 2,
 	name = "【传颂联动SP4BOSS】萨拉娜鱼雷机",
@@ -131446,7 +127014,6 @@ _G.pg.base.aircraft_template[604094] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604115] = {
 	attack_power = 2,
 	name = "【传颂联动SPEX】芙米露露轰炸机",
@@ -131522,7 +127089,6 @@ _G.pg.base.aircraft_template[604115] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[604116] = {
 	attack_power = 2,
 	name = "【传颂联动SPEX】芙米露露鱼雷机",
@@ -131598,7 +127164,6 @@ _G.pg.base.aircraft_template[604116] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[605037] = {
 	attack_power = 2,
 	name = "【龙骧活动SP3】Boss-龙骧日系舰载轰炸机IV",
@@ -131674,7 +127239,6 @@ _G.pg.base.aircraft_template[605037] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[605039] = {
 	attack_power = 2,
 	name = "【龙骧活动SP3】Boss-龙骧日系舰载鱼雷机IV",
@@ -131750,7 +127314,6 @@ _G.pg.base.aircraft_template[605039] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606040] = {
 	attack_power = 2,
 	name = "【天城活动B2】【BOSS】执棋者II 浮游炮机体(伤害中）",
@@ -131829,7 +127392,6 @@ _G.pg.base.aircraft_template[606040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606041] = {
 	attack_power = 2,
 	name = "【天城活动B2】【BOSS】执棋者II 轰炸机(伤害中）",
@@ -131905,7 +127467,6 @@ _G.pg.base.aircraft_template[606041] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606042] = {
 	attack_power = 2,
 	name = "【天城活动B2】【BOSS】执棋者II 鱼雷机(伤害中）",
@@ -131981,7 +127542,6 @@ _G.pg.base.aircraft_template[606042] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606100] = {
 	attack_power = 2,
 	name = "【天城活动D2】【BOSS】执棋者II 浮游炮机体(伤害中）",
@@ -132060,7 +127620,6 @@ _G.pg.base.aircraft_template[606100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606101] = {
 	attack_power = 2,
 	name = "【天城活动D2】【BOSS】执棋者II 轰炸机(伤害中）",
@@ -132136,7 +127695,6 @@ _G.pg.base.aircraft_template[606101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[606102] = {
 	attack_power = 2,
 	name = "【天城活动D2】【BOSS】执棋者II 鱼雷机(伤害中）",
@@ -132212,7 +127770,6 @@ _G.pg.base.aircraft_template[606102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607007] = {
 	attack_power = 2,
 	name = "世界boss专用战斗机T1",
@@ -132289,7 +127846,6 @@ _G.pg.base.aircraft_template[607007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607008] = {
 	attack_power = 2,
 	name = "世界boss专用鱼雷机T1",
@@ -132365,7 +127921,6 @@ _G.pg.base.aircraft_template[607008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607009] = {
 	attack_power = 2,
 	name = "世界boss专用轰炸机T1",
@@ -132441,7 +127996,6 @@ _G.pg.base.aircraft_template[607009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607027] = {
 	attack_power = 2,
 	name = "世界boss专用战斗机T1",
@@ -132518,7 +128072,6 @@ _G.pg.base.aircraft_template[607027] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607028] = {
 	attack_power = 2,
 	name = "世界boss专用鱼雷机T1",
@@ -132594,7 +128147,6 @@ _G.pg.base.aircraft_template[607028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607029] = {
 	attack_power = 2,
 	name = "世界boss专用轰炸机T1",
@@ -132670,7 +128222,6 @@ _G.pg.base.aircraft_template[607029] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607047] = {
 	attack_power = 2,
 	name = "世界boss专用战斗机T1",
@@ -132747,7 +128298,6 @@ _G.pg.base.aircraft_template[607047] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607048] = {
 	attack_power = 2,
 	name = "世界boss专用鱼雷机T1",
@@ -132823,7 +128373,6 @@ _G.pg.base.aircraft_template[607048] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607049] = {
 	attack_power = 2,
 	name = "世界boss专用轰炸机T1",
@@ -132899,7 +128448,6 @@ _G.pg.base.aircraft_template[607049] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607067] = {
 	attack_power = 2,
 	name = "世界boss专用战斗机T1",
@@ -132976,7 +128524,6 @@ _G.pg.base.aircraft_template[607067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607068] = {
 	attack_power = 2,
 	name = "世界boss专用鱼雷机T1",
@@ -133052,7 +128599,6 @@ _G.pg.base.aircraft_template[607068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607069] = {
 	attack_power = 2,
 	name = "世界boss专用轰炸机T1",
@@ -133128,7 +128674,6 @@ _G.pg.base.aircraft_template[607069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607087] = {
 	attack_power = 2,
 	name = "世界boss专用战斗机T1",
@@ -133205,7 +128750,6 @@ _G.pg.base.aircraft_template[607087] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607088] = {
 	attack_power = 2,
 	name = "世界boss专用鱼雷机T1",
@@ -133281,7 +128825,6 @@ _G.pg.base.aircraft_template[607088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[607089] = {
 	attack_power = 2,
 	name = "世界boss专用轰炸机T1",
@@ -133357,7 +128900,6 @@ _G.pg.base.aircraft_template[607089] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609010] = {
 	attack_power = 2,
 	name = "【绊爱联动】空袭 轰炸机",
@@ -133433,7 +128975,6 @@ _G.pg.base.aircraft_template[609010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609020] = {
 	attack_power = 2,
 	name = "【绊爱联动】空袭 鱼雷机",
@@ -133509,7 +129050,6 @@ _G.pg.base.aircraft_template[609020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609030] = {
 	attack_power = 2,
 	name = "【绊爱联动】空袭 战斗机",
@@ -133586,7 +129126,6 @@ _G.pg.base.aircraft_template[609030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609021] = {
 	attack_power = 2,
 	name = "【绊爱联动SP2】战斗机",
@@ -133663,7 +129202,6 @@ _G.pg.base.aircraft_template[609021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609022] = {
 	attack_power = 2,
 	name = "【绊爱联动SP2】轰炸机",
@@ -133739,7 +129277,6 @@ _G.pg.base.aircraft_template[609022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609051] = {
 	attack_power = 2,
 	name = "【绊爱联动SP5】战斗机",
@@ -133816,7 +129353,6 @@ _G.pg.base.aircraft_template[609051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609052] = {
 	attack_power = 2,
 	name = "【绊爱联动SP5】轰炸机",
@@ -133892,7 +129428,6 @@ _G.pg.base.aircraft_template[609052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609130] = {
 	attack_power = 2,
 	name = "【绊爱联动EX】战斗机",
@@ -133969,7 +129504,6 @@ _G.pg.base.aircraft_template[609130] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[609131] = {
 	attack_power = 2,
 	name = "【绊爱联动EX】轰炸机",
@@ -134045,7 +129579,6 @@ _G.pg.base.aircraft_template[609131] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610022] = {
 	attack_power = 2,
 	name = "【俾斯麦活动A2】战斗机",
@@ -134122,7 +129655,6 @@ _G.pg.base.aircraft_template[610022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610023] = {
 	attack_power = 2,
 	name = "【俾斯麦活动A2】鱼雷机",
@@ -134198,7 +129730,6 @@ _G.pg.base.aircraft_template[610023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610030] = {
 	attack_power = 2,
 	name = "【俾斯麦活动A3】鱼雷封锁",
@@ -134274,7 +129805,6 @@ _G.pg.base.aircraft_template[610030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610036] = {
 	attack_power = 2,
 	name = "【俾斯麦活动A3】战斗机",
@@ -134351,7 +129881,6 @@ _G.pg.base.aircraft_template[610036] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610037] = {
 	attack_power = 2,
 	name = "【俾斯麦活动A3】鱼雷机",
@@ -134427,7 +129956,6 @@ _G.pg.base.aircraft_template[610037] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610092] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C2】战斗机",
@@ -134504,7 +130032,6 @@ _G.pg.base.aircraft_template[610092] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610093] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C2】鱼雷机",
@@ -134580,7 +130107,6 @@ _G.pg.base.aircraft_template[610093] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610100] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C3】鱼雷封锁",
@@ -134656,7 +130182,6 @@ _G.pg.base.aircraft_template[610100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610106] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C3】战斗机",
@@ -134733,7 +130258,6 @@ _G.pg.base.aircraft_template[610106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610107] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C3】鱼雷机",
@@ -134809,7 +130333,6 @@ _G.pg.base.aircraft_template[610107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610065] = {
 	attack_power = 2,
 	name = "【俾斯麦活动B2】BOSS –测试者β型-浮游炮",
@@ -134889,7 +130412,6 @@ _G.pg.base.aircraft_template[610065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[610135] = {
 	attack_power = 2,
 	name = "【俾斯麦活动D2】BOSS –测试者β型-浮游炮",
@@ -134969,7 +130491,6 @@ _G.pg.base.aircraft_template[610135] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611056] = {
 	attack_power = 2,
 	name = "【新美系活动A3】BOSS –测试者β型-浮游炮",
@@ -135049,7 +130570,6 @@ _G.pg.base.aircraft_template[611056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611084] = {
 	attack_power = 2,
 	name = "【新美系活动B2】BOSS –大黄蜂 战斗机",
@@ -135126,7 +130646,6 @@ _G.pg.base.aircraft_template[611084] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611085] = {
 	attack_power = 2,
 	name = "【新美系活动B2】BOSS –大黄蜂 鱼雷机",
@@ -135202,7 +130721,6 @@ _G.pg.base.aircraft_template[611085] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611166] = {
 	attack_power = 2,
 	name = "【新美系活动C3】BOSS –测试者β型-浮游炮",
@@ -135282,7 +130800,6 @@ _G.pg.base.aircraft_template[611166] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611191] = {
 	attack_power = 2,
 	name = "【新美系活动D2】BOSS –大黄蜂 单颗投弹轰炸机",
@@ -135358,7 +130875,6 @@ _G.pg.base.aircraft_template[611191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611193] = {
 	attack_power = 2,
 	name = "【新美系活动D2】BOSS –大黄蜂 地毯轰炸飞机",
@@ -135434,7 +130950,6 @@ _G.pg.base.aircraft_template[611193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611198] = {
 	attack_power = 2,
 	name = "【新美系活动D2】BOSS –大黄蜂 战斗机",
@@ -135511,7 +131026,6 @@ _G.pg.base.aircraft_template[611198] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611199] = {
 	attack_power = 2,
 	name = "【新美系活动D2】BOSS –大黄蜂 鱼雷机",
@@ -135587,7 +131101,6 @@ _G.pg.base.aircraft_template[611199] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611311] = {
 	attack_power = 2,
 	name = "【美系前哨站】鱼雷封锁",
@@ -135663,7 +131176,6 @@ _G.pg.base.aircraft_template[611311] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611316] = {
 	attack_power = 2,
 	name = "【美系前哨站】战斗机",
@@ -135740,7 +131252,6 @@ _G.pg.base.aircraft_template[611316] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[611317] = {
 	attack_power = 2,
 	name = "【美系前哨站】鱼雷机",
@@ -135816,7 +131327,6 @@ _G.pg.base.aircraft_template[611317] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612051] = {
 	attack_power = 2,
 	name = "【意大利活动A3】BOSS-光辉 战斗机",
@@ -135893,7 +131403,6 @@ _G.pg.base.aircraft_template[612051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612052] = {
 	attack_power = 2,
 	name = "【意大利活动A3】BOSS-光辉 鱼雷机",
@@ -135969,7 +131478,6 @@ _G.pg.base.aircraft_template[612052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612060] = {
 	attack_power = 2,
 	name = "【意大利活动A3】BOSS-光辉 特殊鱼雷机",
@@ -136045,7 +131553,6 @@ _G.pg.base.aircraft_template[612060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612181] = {
 	attack_power = 2,
 	name = "【意大利活动C3】BOSS-光辉 战斗机",
@@ -136122,7 +131629,6 @@ _G.pg.base.aircraft_template[612181] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612182] = {
 	attack_power = 2,
 	name = "【意大利活动C3】BOSS-光辉 鱼雷机",
@@ -136198,7 +131704,6 @@ _G.pg.base.aircraft_template[612182] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[612190] = {
 	attack_power = 2,
 	name = "【意大利活动C3】BOSS-光辉 特殊鱼雷机",
@@ -136274,7 +131779,6 @@ _G.pg.base.aircraft_template[612190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[613011] = {
 	attack_power = 2,
 	name = "【世界BOSS普通】BOSS-大凤 地毯轰炸",
@@ -136350,7 +131854,6 @@ _G.pg.base.aircraft_template[613011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[613018] = {
 	attack_power = 2,
 	name = "【世界BOSS普通】BOSS-大凤 战斗机",
@@ -136427,7 +131930,6 @@ _G.pg.base.aircraft_template[613018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[613019] = {
 	attack_power = 2,
 	name = "【世界BOSS普通】BOSS-大凤 轰炸机",
@@ -136503,7 +132005,6 @@ _G.pg.base.aircraft_template[613019] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616077] = {
 	attack_power = 2,
 	name = "【hololive联动T3】BOSS-大神澪 特殊鱼雷封锁",
@@ -136579,7 +132080,6 @@ _G.pg.base.aircraft_template[616077] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616082] = {
 	attack_power = 2,
 	name = "【hololive联动T3】BOSS-大神澪 战斗机",
@@ -136656,7 +132156,6 @@ _G.pg.base.aircraft_template[616082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616083] = {
 	attack_power = 2,
 	name = "【hololive联动T3】BOSS-大神澪 鱼雷机",
@@ -136732,7 +132231,6 @@ _G.pg.base.aircraft_template[616083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616101] = {
 	attack_power = 2,
 	name = "【hololive联动TS4】BOSS-时乃空 战斗机",
@@ -136809,7 +132307,6 @@ _G.pg.base.aircraft_template[616101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616102] = {
 	attack_power = 2,
 	name = "【hololive联动TS4】BOSS-时乃空 鱼雷机",
@@ -136885,7 +132382,6 @@ _G.pg.base.aircraft_template[616102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616109] = {
 	attack_power = 2,
 	name = "【hololive联动TS4】BOSS-时乃空 地毯轰炸飞机",
@@ -136961,7 +132457,6 @@ _G.pg.base.aircraft_template[616109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616128] = {
 	attack_power = 2,
 	name = "【hololive联动T5】BOSS-紫咲诗音 战斗机",
@@ -137038,7 +132533,6 @@ _G.pg.base.aircraft_template[616128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616129] = {
 	attack_power = 2,
 	name = "【hololive联动T5】BOSS-紫咲诗音 轰炸机",
@@ -137114,7 +132608,6 @@ _G.pg.base.aircraft_template[616129] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616146] = {
 	attack_power = 2,
 	name = "【hololive联动TS5】BOSS-白上吹雪 轰炸机",
@@ -137190,7 +132683,6 @@ _G.pg.base.aircraft_template[616146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616157] = {
 	attack_power = 2,
 	name = "【hololive联动T6】BOSS-白上吹雪 轰炸机",
@@ -137266,7 +132758,6 @@ _G.pg.base.aircraft_template[616157] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616172] = {
 	attack_power = 2,
 	name = "【hololive联动SP】BOSS-紫咲诗音 战斗机",
@@ -137343,7 +132834,6 @@ _G.pg.base.aircraft_template[616172] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616173] = {
 	attack_power = 2,
 	name = "【hololive联动SP】BOSS-紫咲诗音 轰炸机",
@@ -137419,7 +132909,6 @@ _G.pg.base.aircraft_template[616173] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[616201] = {
 	attack_power = 2,
 	name = "【hololive联动EX】BOSS-白上吹雪 轰炸机",
@@ -137495,7 +132984,6 @@ _G.pg.base.aircraft_template[616201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617004] = {
 	attack_power = 2,
 	name = "【年底日系活动A1】BOSS-龙凤 战斗机",
@@ -137572,7 +133060,6 @@ _G.pg.base.aircraft_template[617004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617005] = {
 	attack_power = 2,
 	name = "【年底日系活动A1】BOSS-龙凤 轰炸机",
@@ -137648,7 +133135,6 @@ _G.pg.base.aircraft_template[617005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617085] = {
 	attack_power = 2,
 	name = "【年底日系活动C1】BOSS-龙凤 战斗机",
@@ -137725,7 +133211,6 @@ _G.pg.base.aircraft_template[617085] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617086] = {
 	attack_power = 2,
 	name = "【年底日系活动C1】BOSS-龙凤 轰炸机",
@@ -137801,7 +133286,6 @@ _G.pg.base.aircraft_template[617086] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617161] = {
 	attack_power = 2,
 	name = "【年底日系活动SP】BOSS-龙凤 地毯轰炸飞机",
@@ -137877,7 +133361,6 @@ _G.pg.base.aircraft_template[617161] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617168] = {
 	attack_power = 2,
 	name = "【年底日系活动SP】BOSS-龙凤 战斗机",
@@ -137954,7 +133437,6 @@ _G.pg.base.aircraft_template[617168] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[617169] = {
 	attack_power = 2,
 	name = "【年底日系活动SP】BOSS-龙凤 轰炸机",
@@ -138030,7 +133512,6 @@ _G.pg.base.aircraft_template[617169] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619107] = {
 	attack_power = 2,
 	name = "【2020毛系活动B2】塞壬执棋者III型 轰炸机",
@@ -138106,7 +133587,6 @@ _G.pg.base.aircraft_template[619107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619108] = {
 	attack_power = 2,
 	name = "【2020毛系活动B2】塞壬执棋者III型 鱼雷机",
@@ -138182,7 +133662,6 @@ _G.pg.base.aircraft_template[619108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619109] = {
 	attack_power = 2,
 	name = "【2020毛系活动B2】塞壬执棋者III型 浮游炮1",
@@ -138261,7 +133740,6 @@ _G.pg.base.aircraft_template[619109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619110] = {
 	attack_power = 2,
 	name = "【2020毛系活动B2】塞壬执棋者III型 浮游炮2",
@@ -138340,7 +133818,6 @@ _G.pg.base.aircraft_template[619110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619126] = {
 	attack_power = 2,
 	name = "【2020毛系活动B3】塞壬净化者II型 浮游炮（血厚一些）",
@@ -138419,7 +133896,6 @@ _G.pg.base.aircraft_template[619126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619307] = {
 	attack_power = 2,
 	name = "【2020毛系活动D2】塞壬执棋者III型 轰炸机",
@@ -138495,7 +133971,6 @@ _G.pg.base.aircraft_template[619307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619308] = {
 	attack_power = 2,
 	name = "【2020毛系活动D2】塞壬执棋者III型 鱼雷机",
@@ -138571,7 +134046,6 @@ _G.pg.base.aircraft_template[619308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619309] = {
 	attack_power = 2,
 	name = "【2020毛系活动D2】塞壬执棋者III型 浮游炮1",
@@ -138650,7 +134124,6 @@ _G.pg.base.aircraft_template[619309] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619310] = {
 	attack_power = 2,
 	name = "【2020毛系活动D2】塞壬执棋者III型 浮游炮2",
@@ -138729,7 +134202,6 @@ _G.pg.base.aircraft_template[619310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[619326] = {
 	attack_power = 2,
 	name = "【2020毛系活动D3】塞壬净化者II型 浮游炮（血厚一些）",
@@ -138808,7 +134280,6 @@ _G.pg.base.aircraft_template[619326] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620107] = {
 	attack_power = 2,
 	name = "【2020美系活动B2】塞壬执棋者III型 轰炸机",
@@ -138884,7 +134355,6 @@ _G.pg.base.aircraft_template[620107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620108] = {
 	attack_power = 2,
 	name = "【2020美系活动B2】塞壬执棋者III型 鱼雷机",
@@ -138960,7 +134430,6 @@ _G.pg.base.aircraft_template[620108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620109] = {
 	attack_power = 2,
 	name = "【2020美系活动B2】塞壬执棋者III型 浮游炮1",
@@ -139039,7 +134508,6 @@ _G.pg.base.aircraft_template[620109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620110] = {
 	attack_power = 2,
 	name = "【2020美系活动B2】塞壬执棋者III型 浮游炮2",
@@ -139118,7 +134586,6 @@ _G.pg.base.aircraft_template[620110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620118] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第一波浮游炮",
@@ -139197,7 +134664,6 @@ _G.pg.base.aircraft_template[620118] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620119] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第一波浮游炮",
@@ -139276,7 +134742,6 @@ _G.pg.base.aircraft_template[620119] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620120] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第一波浮游炮",
@@ -139355,7 +134820,6 @@ _G.pg.base.aircraft_template[620120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620121] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第一波浮游炮",
@@ -139434,7 +134898,6 @@ _G.pg.base.aircraft_template[620121] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620125] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第二波浮游炮",
@@ -139512,7 +134975,6 @@ _G.pg.base.aircraft_template[620125] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620126] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第二波浮游炮",
@@ -139590,7 +135052,6 @@ _G.pg.base.aircraft_template[620126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620127] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第二波浮游炮",
@@ -139668,7 +135129,6 @@ _G.pg.base.aircraft_template[620127] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620128] = {
 	attack_power = 2,
 	name = "【2020美系活动B3】塞壬构建者 第二波浮游炮",
@@ -139746,7 +135206,6 @@ _G.pg.base.aircraft_template[620128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620307] = {
 	attack_power = 2,
 	name = "【2020美系活动D2】塞壬执棋者III型 轰炸机",
@@ -139822,7 +135281,6 @@ _G.pg.base.aircraft_template[620307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620308] = {
 	attack_power = 2,
 	name = "【2020美系活动D2】塞壬执棋者III型 鱼雷机",
@@ -139898,7 +135356,6 @@ _G.pg.base.aircraft_template[620308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620309] = {
 	attack_power = 2,
 	name = "【2020美系活动D2】塞壬执棋者III型 浮游炮1",
@@ -139977,7 +135434,6 @@ _G.pg.base.aircraft_template[620309] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620310] = {
 	attack_power = 2,
 	name = "【2020美系活动D2】塞壬执棋者III型 浮游炮2",
@@ -140056,7 +135512,6 @@ _G.pg.base.aircraft_template[620310] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620318] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第一波浮游炮",
@@ -140135,7 +135590,6 @@ _G.pg.base.aircraft_template[620318] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620319] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第一波浮游炮",
@@ -140214,7 +135668,6 @@ _G.pg.base.aircraft_template[620319] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620320] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第一波浮游炮",
@@ -140293,7 +135746,6 @@ _G.pg.base.aircraft_template[620320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620321] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第一波浮游炮",
@@ -140372,7 +135824,6 @@ _G.pg.base.aircraft_template[620321] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620325] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第二波浮游炮",
@@ -140450,7 +135901,6 @@ _G.pg.base.aircraft_template[620325] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620326] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第二波浮游炮",
@@ -140528,7 +135978,6 @@ _G.pg.base.aircraft_template[620326] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620327] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第二波浮游炮",
@@ -140606,7 +136055,6 @@ _G.pg.base.aircraft_template[620327] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620328] = {
 	attack_power = 2,
 	name = "【2020美系活动D3】塞壬构建者 第二波浮游炮",
@@ -140684,7 +136132,6 @@ _G.pg.base.aircraft_template[620328] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620501] = {
 	attack_power = 2,
 	name = "【2020美系活动EX】塞壬构建者 第一波环绕浮游炮",
@@ -140762,7 +136209,6 @@ _G.pg.base.aircraft_template[620501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620502] = {
 	attack_power = 2,
 	name = "【2020美系活动EX】塞壬构建者 第一波环绕浮游炮",
@@ -140840,7 +136286,6 @@ _G.pg.base.aircraft_template[620502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620510] = {
 	attack_power = 2,
 	name = "【2020美系活动EX】塞壬构建者 第四波电饭锅终身浮游炮",
@@ -140919,7 +136364,6 @@ _G.pg.base.aircraft_template[620510] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[620511] = {
 	attack_power = 2,
 	name = "【2020美系活动EX】塞壬构建者 第四波电饭锅终身浮游炮",
@@ -140998,7 +136442,6 @@ _G.pg.base.aircraft_template[620511] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[630059] = {
 	attack_power = 2,
 	name = "【2022愚人节】金布里鱼雷机",
@@ -141074,7 +136517,6 @@ _G.pg.base.aircraft_template[630059] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[630060] = {
 	attack_power = 2,
 	name = "【2022愚人节】金布里轰炸机",
@@ -141150,7 +136592,6 @@ _G.pg.base.aircraft_template[630060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[630206] = {
 	attack_power = 2,
 	name = "【2022异世界勇者】带魔王 史莱姆浮游炮1",
@@ -141229,7 +136670,6 @@ _G.pg.base.aircraft_template[630206] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[630207] = {
 	attack_power = 2,
 	name = "【2022异世界勇者】带魔王 史莱姆浮游炮2",
@@ -141308,7 +136748,6 @@ _G.pg.base.aircraft_template[630207] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650010] = {
 	attack_power = 2,
 	name = "【2020法系活动A2】精英贝亚恩级量产型 战斗机",
@@ -141384,7 +136823,6 @@ _G.pg.base.aircraft_template[650010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650011] = {
 	attack_power = 2,
 	name = "【2020法系活动A2】精英贝亚恩级量产型 鱼雷机",
@@ -141460,7 +136898,6 @@ _G.pg.base.aircraft_template[650011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650012] = {
 	attack_power = 2,
 	name = "【2020法系活动A2】精英贝亚恩级量产型 轰炸机",
@@ -141536,7 +136973,6 @@ _G.pg.base.aircraft_template[650012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650210] = {
 	attack_power = 2,
 	name = "【2020法系活动C2】精英贝亚恩级量产型 战斗机",
@@ -141612,7 +137048,6 @@ _G.pg.base.aircraft_template[650210] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650211] = {
 	attack_power = 2,
 	name = "【2020法系活动C2】精英贝亚恩级量产型 鱼雷机",
@@ -141688,7 +137123,6 @@ _G.pg.base.aircraft_template[650211] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[650212] = {
 	attack_power = 2,
 	name = "【2020法系活动C2】精英贝亚恩级量产型 轰炸机",
@@ -141764,7 +137198,6 @@ _G.pg.base.aircraft_template[650212] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670012] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS E难度】 鱼雷机*5",
@@ -141840,7 +137273,6 @@ _G.pg.base.aircraft_template[670012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670013] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS E难度】 轰炸机*5",
@@ -141916,7 +137348,6 @@ _G.pg.base.aircraft_template[670013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670112] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS N难度】 鱼雷机*7",
@@ -141992,7 +137423,6 @@ _G.pg.base.aircraft_template[670112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670113] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS N难度】 轰炸机*7",
@@ -142068,7 +137498,6 @@ _G.pg.base.aircraft_template[670113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670114] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS N难度】 战斗机*5",
@@ -142145,7 +137574,6 @@ _G.pg.base.aircraft_template[670114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670212] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS H难度】 鱼雷机*10",
@@ -142221,7 +137649,6 @@ _G.pg.base.aircraft_template[670212] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670213] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS H难度】 轰炸机*10",
@@ -142297,7 +137724,6 @@ _G.pg.base.aircraft_template[670213] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670214] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS H难度】 战斗机*7",
@@ -142374,7 +137800,6 @@ _G.pg.base.aircraft_template[670214] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670312] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS EX难度】 鱼雷机*10",
@@ -142450,7 +137875,6 @@ _G.pg.base.aircraft_template[670312] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670313] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS EX难度】 轰炸机*7",
@@ -142526,7 +137950,6 @@ _G.pg.base.aircraft_template[670313] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[670314] = {
 	attack_power = 2,
 	name = "【2020埃塞克斯世界BOSS EX难度】 战斗机*7",
@@ -142603,7 +138026,6 @@ _G.pg.base.aircraft_template[670314] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[680146] = {
 	attack_power = 2,
 	name = "【2020英系活动B3】BOSS 清除者 第一波 环绕浮游炮",
@@ -142682,7 +138104,6 @@ _G.pg.base.aircraft_template[680146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[680147] = {
 	attack_power = 2,
 	name = "【2020英系活动B3】BOSS 清除者 第一波 环绕浮游炮",
@@ -142761,7 +138182,6 @@ _G.pg.base.aircraft_template[680147] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[680346] = {
 	attack_power = 2,
 	name = "【2020英系活动D3】BOSS 清除者 第一波 环绕浮游炮",
@@ -142840,7 +138260,6 @@ _G.pg.base.aircraft_template[680346] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[680347] = {
 	attack_power = 2,
 	name = "【2020英系活动D3】BOSS 清除者 第一波 环绕浮游炮",
@@ -142919,7 +138338,6 @@ _G.pg.base.aircraft_template[680347] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[690609] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T1】BOSS 测试者 第三波 浮游炮",
@@ -142998,7 +138416,6 @@ _G.pg.base.aircraft_template[690609] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[690610] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T1】BOSS 测试者 第三波 浮游炮",
@@ -143077,7 +138494,6 @@ _G.pg.base.aircraft_template[690610] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[691801] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T6】BOSS 测试者 一形态第一波 浮游炮",
@@ -143156,7 +138572,6 @@ _G.pg.base.aircraft_template[691801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[691802] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T6】BOSS 测试者 一形态第一波 浮游炮",
@@ -143235,7 +138650,6 @@ _G.pg.base.aircraft_template[691802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[691806] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -143313,7 +138727,6 @@ _G.pg.base.aircraft_template[691806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[691807] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -143391,7 +138804,6 @@ _G.pg.base.aircraft_template[691807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[691808] = {
 	attack_power = 2,
 	name = "【2020信浓活动普通T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -143469,7 +138881,6 @@ _G.pg.base.aircraft_template[691808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[692609] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T1】BOSS 测试者 第三波 浮游炮",
@@ -143548,7 +138959,6 @@ _G.pg.base.aircraft_template[692609] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[692610] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T1】BOSS 测试者 第三波 浮游炮",
@@ -143627,7 +139037,6 @@ _G.pg.base.aircraft_template[692610] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[693801] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T6】BOSS 测试者 一形态第一波 浮游炮",
@@ -143706,7 +139115,6 @@ _G.pg.base.aircraft_template[693801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[693802] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T6】BOSS 测试者 一形态第一波 浮游炮",
@@ -143785,7 +139193,6 @@ _G.pg.base.aircraft_template[693802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[693806] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -143863,7 +139270,6 @@ _G.pg.base.aircraft_template[693806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[693807] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -143941,7 +139347,6 @@ _G.pg.base.aircraft_template[693807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[693808] = {
 	attack_power = 2,
 	name = "【2020信浓活动困难T6】BOSS 测试者 一形态第二波 航母飞机海",
@@ -144019,7 +139424,6 @@ _G.pg.base.aircraft_template[693808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[695007] = {
 	attack_power = 2,
 	name = "【2020信浓活动EX】BOSS 信浓 第四波 大规模飞机",
@@ -144096,7 +139500,6 @@ _G.pg.base.aircraft_template[695007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[711021] = {
 	attack_power = 2,
 	name = "【2020普林斯顿SP2】BOSS 大凤 红色弹幕战斗机",
@@ -144172,7 +139575,6 @@ _G.pg.base.aircraft_template[711021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[711022] = {
 	attack_power = 2,
 	name = "【2020普林斯顿SP2】BOSS 大凤 地毯式轰炸机",
@@ -144248,7 +139650,6 @@ _G.pg.base.aircraft_template[711022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[712022] = {
 	attack_power = 2,
 	name = "【2020普林斯顿SP3】BOSS 通用战斗机",
@@ -144324,7 +139725,6 @@ _G.pg.base.aircraft_template[712022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[712023] = {
 	attack_power = 2,
 	name = "【2020普林斯顿SP3】BOSS 通用轰炸机",
@@ -144400,7 +139800,6 @@ _G.pg.base.aircraft_template[712023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[721102] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP2】BOSS 光辉 音符鱼雷机",
@@ -144476,7 +139875,6 @@ _G.pg.base.aircraft_template[721102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[721103] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP2】BOSS 光辉 音符轰炸机",
@@ -144552,7 +139950,6 @@ _G.pg.base.aircraft_template[721103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[721104] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP2】BOSS 光辉 音符战斗机",
@@ -144629,7 +140026,6 @@ _G.pg.base.aircraft_template[721104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[724110] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP5】BOSS 大凤 第四波 音符鱼雷机",
@@ -144705,7 +140101,6 @@ _G.pg.base.aircraft_template[724110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[724111] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP5】BOSS 大凤 第四波 音符轰炸机",
@@ -144781,7 +140176,6 @@ _G.pg.base.aircraft_template[724111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[724112] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期SP5】BOSS 大凤 第四波 音符战斗机",
@@ -144858,7 +140252,6 @@ _G.pg.base.aircraft_template[724112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729021] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符鱼雷机1",
@@ -144934,7 +140327,6 @@ _G.pg.base.aircraft_template[729021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729022] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符鱼雷机2",
@@ -145010,7 +140402,6 @@ _G.pg.base.aircraft_template[729022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729023] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符鱼雷机3",
@@ -145086,7 +140477,6 @@ _G.pg.base.aircraft_template[729023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729024] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符鱼雷机4",
@@ -145162,7 +140552,6 @@ _G.pg.base.aircraft_template[729024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729025] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符鱼雷机5",
@@ -145238,7 +140627,6 @@ _G.pg.base.aircraft_template[729025] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729026] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符轰炸机1",
@@ -145314,7 +140702,6 @@ _G.pg.base.aircraft_template[729026] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729027] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符轰炸机2",
@@ -145390,7 +140777,6 @@ _G.pg.base.aircraft_template[729027] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729028] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符轰炸机3",
@@ -145466,7 +140852,6 @@ _G.pg.base.aircraft_template[729028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729029] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符轰炸机4",
@@ -145542,7 +140927,6 @@ _G.pg.base.aircraft_template[729029] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[729030] = {
 	attack_power = 2,
 	name = "【2020偶像活动二期】光辉 音符轰炸机5",
@@ -145618,7 +141002,6 @@ _G.pg.base.aircraft_template[729030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[743104] = {
 	attack_power = 2,
 	name = "【DOA联动SP4】BOSS 女天狗 舰载战斗机V",
@@ -145695,7 +141078,6 @@ _G.pg.base.aircraft_template[743104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[743105] = {
 	attack_power = 2,
 	name = "【DOA联动SP4】BOSS 女天狗 舰载鱼雷机V",
@@ -145771,7 +141153,6 @@ _G.pg.base.aircraft_template[743105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[743106] = {
 	attack_power = 2,
 	name = "【DOA联动SP4】BOSS 女天狗 舰载轰炸机V",
@@ -145847,7 +141228,6 @@ _G.pg.base.aircraft_template[743106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[743116] = {
 	attack_power = 2,
 	name = "【DOA联动SP4】BOSS 女天狗 fever 轰炸机",
@@ -145923,7 +141303,6 @@ _G.pg.base.aircraft_template[743116] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[745003] = {
 	attack_power = 2,
 	name = "【DOA联动EX】BOSS 女天狗 第二波 飞机",
@@ -146002,7 +141381,6 @@ _G.pg.base.aircraft_template[745003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[745004] = {
 	attack_power = 2,
 	name = "【DOA联动EX】BOSS 女天狗 第二波 飞机",
@@ -146081,7 +141459,6 @@ _G.pg.base.aircraft_template[745004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[745005] = {
 	attack_power = 2,
 	name = "【DOA联动EX】BOSS 女天狗 第二波 飞机",
@@ -146160,7 +141537,6 @@ _G.pg.base.aircraft_template[745005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749001] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载战斗机I",
@@ -146237,7 +141613,6 @@ _G.pg.base.aircraft_template[749001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749002] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载战斗机II",
@@ -146314,7 +141689,6 @@ _G.pg.base.aircraft_template[749002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749003] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载战斗机III",
@@ -146391,7 +141765,6 @@ _G.pg.base.aircraft_template[749003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749004] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载战斗机IV",
@@ -146468,7 +141841,6 @@ _G.pg.base.aircraft_template[749004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749005] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载战斗机V",
@@ -146545,7 +141917,6 @@ _G.pg.base.aircraft_template[749005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749006] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载鱼雷机I",
@@ -146621,7 +141992,6 @@ _G.pg.base.aircraft_template[749006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749007] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载鱼雷机II",
@@ -146697,7 +142067,6 @@ _G.pg.base.aircraft_template[749007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749008] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载鱼雷机III",
@@ -146773,7 +142142,6 @@ _G.pg.base.aircraft_template[749008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749009] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载鱼雷机IV",
@@ -146849,7 +142217,6 @@ _G.pg.base.aircraft_template[749009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749010] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载鱼雷机V",
@@ -146925,7 +142292,6 @@ _G.pg.base.aircraft_template[749010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749011] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载轰炸机I",
@@ -147001,7 +142367,6 @@ _G.pg.base.aircraft_template[749011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749012] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载轰炸机II",
@@ -147077,7 +142442,6 @@ _G.pg.base.aircraft_template[749012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749013] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载轰炸机III",
@@ -147153,7 +142517,6 @@ _G.pg.base.aircraft_template[749013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749014] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载轰炸机IV",
@@ -147229,7 +142592,6 @@ _G.pg.base.aircraft_template[749014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[749015] = {
 	attack_power = 2,
 	name = "【DOA联动】舰载轰炸机V",
@@ -147305,7 +142667,6 @@ _G.pg.base.aircraft_template[749015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750000] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -147381,7 +142742,6 @@ _G.pg.base.aircraft_template[750000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750001] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -147457,7 +142817,6 @@ _G.pg.base.aircraft_template[750001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750002] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -147534,7 +142893,6 @@ _G.pg.base.aircraft_template[750002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750003] = {
 	attack_power = 2,
 	name = "齐柏林使用BF109T (飞机",
@@ -147611,7 +142969,6 @@ _G.pg.base.aircraft_template[750003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750004] = {
 	attack_power = 2,
 	name = "齐柏林使用JU87C (飞机",
@@ -147687,7 +143044,6 @@ _G.pg.base.aircraft_template[750004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750005] = {
 	attack_power = 2,
 	name = "齐柏林使用Me155A (飞机",
@@ -147764,7 +143120,6 @@ _G.pg.base.aircraft_template[750005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750006] = {
 	attack_power = 2,
 	name = "执棋者I型精英 浮游炮机",
@@ -147843,7 +143198,6 @@ _G.pg.base.aircraft_template[750006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750007] = {
 	attack_power = 2,
 	name = "执棋者I型精英 轰炸机",
@@ -147919,7 +143273,6 @@ _G.pg.base.aircraft_template[750007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750008] = {
 	attack_power = 2,
 	name = "执棋者I型精英 鱼雷机",
@@ -147995,7 +143348,6 @@ _G.pg.base.aircraft_template[750008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750010] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -148071,7 +143423,6 @@ _G.pg.base.aircraft_template[750010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750011] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -148147,7 +143498,6 @@ _G.pg.base.aircraft_template[750011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750012] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -148224,7 +143574,6 @@ _G.pg.base.aircraft_template[750012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750013] = {
 	attack_power = 2,
 	name = "齐柏林使用BF109T (飞机",
@@ -148301,7 +143650,6 @@ _G.pg.base.aircraft_template[750013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750014] = {
 	attack_power = 2,
 	name = "齐柏林使用JU87C (飞机",
@@ -148377,7 +143725,6 @@ _G.pg.base.aircraft_template[750014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750015] = {
 	attack_power = 2,
 	name = "齐柏林使用Me155A (飞机",
@@ -148454,7 +143801,6 @@ _G.pg.base.aircraft_template[750015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750016] = {
 	attack_power = 2,
 	name = "执棋者I型精英 浮游炮机",
@@ -148533,7 +143879,6 @@ _G.pg.base.aircraft_template[750016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750017] = {
 	attack_power = 2,
 	name = "执棋者I型精英 轰炸机",
@@ -148609,7 +143954,6 @@ _G.pg.base.aircraft_template[750017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750018] = {
 	attack_power = 2,
 	name = "执棋者I型精英 鱼雷机",
@@ -148685,7 +144029,6 @@ _G.pg.base.aircraft_template[750018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750020] = {
 	attack_power = 2,
 	name = "空袭-轰炸机",
@@ -148761,7 +144104,6 @@ _G.pg.base.aircraft_template[750020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750021] = {
 	attack_power = 2,
 	name = "空袭-鱼雷机",
@@ -148837,7 +144179,6 @@ _G.pg.base.aircraft_template[750021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750022] = {
 	attack_power = 2,
 	name = "空袭-战斗机",
@@ -148914,7 +144255,6 @@ _G.pg.base.aircraft_template[750022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750023] = {
 	attack_power = 2,
 	name = "齐柏林使用BF109T (飞机",
@@ -148991,7 +144331,6 @@ _G.pg.base.aircraft_template[750023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750024] = {
 	attack_power = 2,
 	name = "齐柏林使用JU87C (飞机",
@@ -149067,7 +144406,6 @@ _G.pg.base.aircraft_template[750024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750025] = {
 	attack_power = 2,
 	name = "齐柏林使用Me155A (飞机",
@@ -149144,7 +144482,6 @@ _G.pg.base.aircraft_template[750025] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750026] = {
 	attack_power = 2,
 	name = "执棋者I型精英 浮游炮机",
@@ -149223,7 +144560,6 @@ _G.pg.base.aircraft_template[750026] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750027] = {
 	attack_power = 2,
 	name = "执棋者I型精英 轰炸机",
@@ -149299,7 +144635,6 @@ _G.pg.base.aircraft_template[750027] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[750028] = {
 	attack_power = 2,
 	name = "执棋者I型精英 鱼雷机",
@@ -149375,7 +144710,6 @@ _G.pg.base.aircraft_template[750028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[760001] = {
 	attack_power = 2,
 	name = "【2020德系活动A1】塞壬执棋者I型 轰炸机",
@@ -149451,7 +144785,6 @@ _G.pg.base.aircraft_template[760001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[760002] = {
 	attack_power = 2,
 	name = "【2020德系活动A1】塞壬执棋者I型 浮游炮",
@@ -149530,7 +144863,6 @@ _G.pg.base.aircraft_template[760002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[760202] = {
 	attack_power = 2,
 	name = "【2020德系活动A3】BOSS 通用战斗机（自机狙）",
@@ -149606,7 +144938,6 @@ _G.pg.base.aircraft_template[760202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[760203] = {
 	attack_power = 2,
 	name = "【2020德系活动A3】BOSS 通用轰炸机",
@@ -149682,7 +145013,6 @@ _G.pg.base.aircraft_template[760203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[761112] = {
 	attack_power = 2,
 	name = "【2020德系活动B2】BOSS 五航战支援 战斗机",
@@ -149758,7 +145088,6 @@ _G.pg.base.aircraft_template[761112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[761113] = {
 	attack_power = 2,
 	name = "【2020德系活动B2】BOSS 五航战支援 鱼雷机",
@@ -149834,7 +145163,6 @@ _G.pg.base.aircraft_template[761113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[761114] = {
 	attack_power = 2,
 	name = "【2020德系活动B2】BOSS 五航战支援 轰炸机",
@@ -149910,7 +145238,6 @@ _G.pg.base.aircraft_template[761114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[761212] = {
 	attack_power = 2,
 	name = "【2020德系活动B3】塞壬构建者 第四波 浮游炮",
@@ -149988,7 +145315,6 @@ _G.pg.base.aircraft_template[761212] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[761213] = {
 	attack_power = 2,
 	name = "【2020德系活动B3】塞壬构建者 第四波 浮游炮",
@@ -150066,7 +145392,6 @@ _G.pg.base.aircraft_template[761213] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[762001] = {
 	attack_power = 2,
 	name = "【2020德系活动C1】塞壬执棋者I型 轰炸机",
@@ -150142,7 +145467,6 @@ _G.pg.base.aircraft_template[762001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[762002] = {
 	attack_power = 2,
 	name = "【2020德系活动C1】塞壬执棋者I型 浮游炮",
@@ -150221,7 +145545,6 @@ _G.pg.base.aircraft_template[762002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[762202] = {
 	attack_power = 2,
 	name = "【2020德系活动C3】BOSS 通用战斗机（自机狙）",
@@ -150297,7 +145620,6 @@ _G.pg.base.aircraft_template[762202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[762203] = {
 	attack_power = 2,
 	name = "【2020德系活动C3】BOSS 通用轰炸机",
@@ -150373,7 +145695,6 @@ _G.pg.base.aircraft_template[762203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[763112] = {
 	attack_power = 2,
 	name = "【2020德系活动D2】BOSS 五航战支援 战斗机",
@@ -150449,7 +145770,6 @@ _G.pg.base.aircraft_template[763112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[763113] = {
 	attack_power = 2,
 	name = "【2020德系活动D2】BOSS 五航战支援 鱼雷机",
@@ -150525,7 +145845,6 @@ _G.pg.base.aircraft_template[763113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[763114] = {
 	attack_power = 2,
 	name = "【2020德系活动D2】BOSS 五航战支援 轰炸机",
@@ -150601,7 +145920,6 @@ _G.pg.base.aircraft_template[763114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[763212] = {
 	attack_power = 2,
 	name = "【2020德系活动D3】塞壬构建者 第四波 浮游炮",
@@ -150679,7 +145997,6 @@ _G.pg.base.aircraft_template[763212] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[763213] = {
 	attack_power = 2,
 	name = "【2020德系活动D3】塞壬构建者 第四波 浮游炮",
@@ -150757,7 +146074,6 @@ _G.pg.base.aircraft_template[763213] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765001] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第一波 浮游炮",
@@ -150836,7 +146152,6 @@ _G.pg.base.aircraft_template[765001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765002] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第一波 浮游炮",
@@ -150915,7 +146230,6 @@ _G.pg.base.aircraft_template[765002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765010] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -150991,7 +146305,6 @@ _G.pg.base.aircraft_template[765010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765011] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -151067,7 +146380,6 @@ _G.pg.base.aircraft_template[765011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765012] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -151143,7 +146455,6 @@ _G.pg.base.aircraft_template[765012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765013] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -151219,7 +146530,6 @@ _G.pg.base.aircraft_template[765013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765014] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -151295,7 +146605,6 @@ _G.pg.base.aircraft_template[765014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[765015] = {
 	attack_power = 2,
 	name = "【2020德系活动EX】塞壬构建者 第三波 浮游炮",
@@ -151371,7 +146680,6 @@ _G.pg.base.aircraft_template[765015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769005] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机地毯轰炸LV1",
@@ -151447,7 +146755,6 @@ _G.pg.base.aircraft_template[769005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769006] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机地毯轰炸LV2",
@@ -151523,7 +146830,6 @@ _G.pg.base.aircraft_template[769006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769007] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机地毯轰炸LV3",
@@ -151599,7 +146905,6 @@ _G.pg.base.aircraft_template[769007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769008] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机地毯轰炸LV4",
@@ -151675,7 +146980,6 @@ _G.pg.base.aircraft_template[769008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769009] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机地毯轰炸LV5",
@@ -151751,7 +147055,6 @@ _G.pg.base.aircraft_template[769009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769010] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机（装饰用）LV1",
@@ -151825,7 +147128,6 @@ _G.pg.base.aircraft_template[769010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769011] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机（装饰用）LV2",
@@ -151899,7 +147201,6 @@ _G.pg.base.aircraft_template[769011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769012] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机（装饰用）LV3",
@@ -151973,7 +147274,6 @@ _G.pg.base.aircraft_template[769012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769013] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机（装饰用）LV4",
@@ -152047,7 +147347,6 @@ _G.pg.base.aircraft_template[769013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[769014] = {
 	attack_power = 2,
 	name = "【2020德系活动】我方支援飞机（装饰用）LV5",
@@ -152121,7 +147420,6 @@ _G.pg.base.aircraft_template[769014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[770201] = {
 	attack_power = 2,
 	name = "【2021毛系活动A3】塞壬执棋者II型 轰炸机",
@@ -152197,7 +147495,6 @@ _G.pg.base.aircraft_template[770201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[770202] = {
 	attack_power = 2,
 	name = "【2021毛系活动A3】塞壬执棋者II型 鱼雷机",
@@ -152273,7 +147570,6 @@ _G.pg.base.aircraft_template[770202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[770203] = {
 	attack_power = 2,
 	name = "【2021毛系活动A3】塞壬执棋者II型 浮游炮1",
@@ -152352,7 +147648,6 @@ _G.pg.base.aircraft_template[770203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[770204] = {
 	attack_power = 2,
 	name = "【2021毛系活动A3】塞壬执棋者II型 浮游炮2",
@@ -152431,7 +147726,6 @@ _G.pg.base.aircraft_template[770204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[772201] = {
 	attack_power = 2,
 	name = "【2021毛系活动C3】塞壬执棋者II型 轰炸机",
@@ -152507,7 +147801,6 @@ _G.pg.base.aircraft_template[772201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[772202] = {
 	attack_power = 2,
 	name = "【2021毛系活动C3】塞壬执棋者II型 鱼雷机",
@@ -152583,7 +147876,6 @@ _G.pg.base.aircraft_template[772202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[772203] = {
 	attack_power = 2,
 	name = "【2021毛系活动C3】塞壬执棋者II型 浮游炮1",
@@ -152662,7 +147954,6 @@ _G.pg.base.aircraft_template[772203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[772204] = {
 	attack_power = 2,
 	name = "【2021毛系活动C3】塞壬执棋者II型 浮游炮2",
@@ -152741,7 +148032,6 @@ _G.pg.base.aircraft_template[772204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[780201] = {
 	attack_power = 2,
 	name = "【2021意大利活动A3】塞壬执棋者II型 轰炸机",
@@ -152817,7 +148107,6 @@ _G.pg.base.aircraft_template[780201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[780202] = {
 	attack_power = 2,
 	name = "【2021意大利活动A3】塞壬执棋者II型 鱼雷机",
@@ -152893,7 +148182,6 @@ _G.pg.base.aircraft_template[780202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[780203] = {
 	attack_power = 2,
 	name = "【2021意大利活动A3】塞壬执棋者II型 浮游炮1",
@@ -152972,7 +148260,6 @@ _G.pg.base.aircraft_template[780203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[780204] = {
 	attack_power = 2,
 	name = "【2021意大利活动A3】塞壬执棋者II型 浮游炮2",
@@ -153051,7 +148338,6 @@ _G.pg.base.aircraft_template[780204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781002] = {
 	attack_power = 2,
 	name = "【2021意大利活动B1】BOSS 光辉 鱼雷机",
@@ -153127,7 +148413,6 @@ _G.pg.base.aircraft_template[781002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781003] = {
 	attack_power = 2,
 	name = "【2021意大利活动B1】BOSS 光辉 轰炸机",
@@ -153203,7 +148488,6 @@ _G.pg.base.aircraft_template[781003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781004] = {
 	attack_power = 2,
 	name = "【2021意大利活动B1】BOSS 光辉 战斗机",
@@ -153280,7 +148564,6 @@ _G.pg.base.aircraft_template[781004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781102] = {
 	attack_power = 2,
 	name = "【2021意大利活动B2】BOSS 光辉 鱼雷机",
@@ -153356,7 +148639,6 @@ _G.pg.base.aircraft_template[781102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781103] = {
 	attack_power = 2,
 	name = "【2021意大利活动B2】BOSS 光辉 轰炸机",
@@ -153432,7 +148714,6 @@ _G.pg.base.aircraft_template[781103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781104] = {
 	attack_power = 2,
 	name = "【2021意大利活动B2】BOSS 光辉 战斗机",
@@ -153509,7 +148790,6 @@ _G.pg.base.aircraft_template[781104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[781316] = {
 	id = 781316,
 	name = "【2021意大利活动B】塞壬航母R型轰炸机",
@@ -153518,7 +148798,6 @@ _G.pg.base.aircraft_template[781316] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[781317] = {
 	id = 781317,
 	name = "【2021意大利活动B】塞壬航母R型战斗机",
@@ -153527,7 +148806,6 @@ _G.pg.base.aircraft_template[781317] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[782201] = {
 	attack_power = 2,
 	name = "【2021意大利活动C3】塞壬执棋者II型 轰炸机",
@@ -153603,7 +148881,6 @@ _G.pg.base.aircraft_template[782201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[782202] = {
 	attack_power = 2,
 	name = "【2021意大利活动C3】塞壬执棋者II型 鱼雷机",
@@ -153679,7 +148956,6 @@ _G.pg.base.aircraft_template[782202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[782203] = {
 	attack_power = 2,
 	name = "【2021意大利活动C3】塞壬执棋者II型 浮游炮1",
@@ -153758,7 +149034,6 @@ _G.pg.base.aircraft_template[782203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[782204] = {
 	attack_power = 2,
 	name = "【2021意大利活动C3】塞壬执棋者II型 浮游炮2",
@@ -153837,7 +149112,6 @@ _G.pg.base.aircraft_template[782204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783002] = {
 	attack_power = 2,
 	name = "【2021意大利活动D1】BOSS 光辉 鱼雷机",
@@ -153913,7 +149187,6 @@ _G.pg.base.aircraft_template[783002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783003] = {
 	attack_power = 2,
 	name = "【2021意大利活动D1】BOSS 光辉 轰炸机",
@@ -153989,7 +149262,6 @@ _G.pg.base.aircraft_template[783003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783004] = {
 	attack_power = 2,
 	name = "【2021意大利活动D1】BOSS 光辉 战斗机",
@@ -154066,7 +149338,6 @@ _G.pg.base.aircraft_template[783004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783102] = {
 	attack_power = 2,
 	name = "【2021意大利活动D2】BOSS 光辉 鱼雷机",
@@ -154142,7 +149413,6 @@ _G.pg.base.aircraft_template[783102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783103] = {
 	attack_power = 2,
 	name = "【2021意大利活动D2】BOSS 光辉 轰炸机",
@@ -154218,7 +149488,6 @@ _G.pg.base.aircraft_template[783103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783104] = {
 	attack_power = 2,
 	name = "【2021意大利活动D2】BOSS 光辉 战斗机",
@@ -154295,7 +149564,6 @@ _G.pg.base.aircraft_template[783104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[783316] = {
 	id = 783316,
 	name = "【2021意大利活动D】塞壬航母R型轰炸机",
@@ -154304,7 +149572,6 @@ _G.pg.base.aircraft_template[783316] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[783317] = {
 	id = 783317,
 	name = "【2021意大利活动D】塞壬航母R型战斗机",
@@ -154313,7 +149580,6 @@ _G.pg.base.aircraft_template[783317] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[784316] = {
 	id = 784316,
 	name = "【2021意大利活动SP】塞壬航母R型轰炸机",
@@ -154322,7 +149588,6 @@ _G.pg.base.aircraft_template[784316] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[784317] = {
 	id = 784317,
 	name = "【2021意大利活动SP】塞壬航母R型战斗机",
@@ -154331,20 +149596,19 @@ _G.pg.base.aircraft_template[784317] = {
 	icon = "sairenfeiji_R",
 	spawn_brownian = 1
 }
-
 _G.pg.base.aircraft_template[789001] = {
 	attack_power = 2,
 	name = "【2021意大利活动】我方支援飞机B3",
 	type = 3,
 	accuracy = 23,
-	model_ID = "SM.79",
+	model_ID = "SM79",
 	ACC_growth = 0,
 	crash_DMG = 208,
 	dodge = 1,
 	funnel_behavior = "",
 	nationality = 6,
 	id = 789001,
-	icon = "SM.79",
+	icon = "SM79",
 	spawn_brownian = 1,
 	AP_growth = 2000,
 	dodge_limit = 0,
@@ -154408,20 +149672,19 @@ _G.pg.base.aircraft_template[789001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[789002] = {
 	attack_power = 2,
 	name = "【2021意大利活动】我方支援飞机DS",
 	type = 3,
 	accuracy = 23,
-	model_ID = "SM.79",
+	model_ID = "SM79",
 	ACC_growth = 0,
 	crash_DMG = 208,
 	dodge = 1,
 	funnel_behavior = "",
 	nationality = 6,
 	id = 789002,
-	icon = "SM.79",
+	icon = "SM79",
 	spawn_brownian = 1,
 	AP_growth = 2000,
 	dodge_limit = 0,
@@ -154485,20 +149748,19 @@ _G.pg.base.aircraft_template[789002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[789003] = {
 	attack_power = 2,
 	name = "【2021意大利活动】我方支援飞机SP",
 	type = 3,
 	accuracy = 23,
-	model_ID = "SM.79",
+	model_ID = "SM79",
 	ACC_growth = 0,
 	crash_DMG = 208,
 	dodge = 1,
 	funnel_behavior = "",
 	nationality = 6,
 	id = 789003,
-	icon = "SM.79",
+	icon = "SM79",
 	spawn_brownian = 1,
 	AP_growth = 2000,
 	dodge_limit = 0,
@@ -154562,7 +149824,6 @@ _G.pg.base.aircraft_template[789003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[790102] = {
 	attack_power = 2,
 	name = "【2021美系活动A2】BOSS 苍龙&飞龙 通用战斗机（自机狙）",
@@ -154638,7 +149899,6 @@ _G.pg.base.aircraft_template[790102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[790103] = {
 	attack_power = 2,
 	name = "【2021美系活动A2】BOSS 苍龙&飞龙 通用轰炸机（高爆）",
@@ -154714,7 +149974,6 @@ _G.pg.base.aircraft_template[790103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[790202] = {
 	attack_power = 2,
 	name = "【2021美系活动A3】BOSS 赤城&加贺 轰炸机",
@@ -154790,7 +150049,6 @@ _G.pg.base.aircraft_template[790202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[790203] = {
 	attack_power = 2,
 	name = "【2021美系活动A3】BOSS 赤城&加贺 鱼雷机",
@@ -154866,7 +150124,6 @@ _G.pg.base.aircraft_template[790203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791101] = {
 	attack_power = 2,
 	name = "【2021美系活动B2】塞壬执棋者I型 轰炸机",
@@ -154942,7 +150199,6 @@ _G.pg.base.aircraft_template[791101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791102] = {
 	attack_power = 2,
 	name = "【2021美系活动B2】塞壬执棋者I型 鱼雷机",
@@ -155018,7 +150274,6 @@ _G.pg.base.aircraft_template[791102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791103] = {
 	attack_power = 2,
 	name = "【2021美系活动B2】塞壬执棋者I型 浮游炮1",
@@ -155097,7 +150352,6 @@ _G.pg.base.aircraft_template[791103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791104] = {
 	attack_power = 2,
 	name = "【2021美系活动B2】塞壬执棋者I型 浮游炮2",
@@ -155176,7 +150430,6 @@ _G.pg.base.aircraft_template[791104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791206] = {
 	attack_power = 2,
 	name = "【2021美系活动B3】BOSS 苍龙·META 二阶段 余烬飞机",
@@ -155253,7 +150506,6 @@ _G.pg.base.aircraft_template[791206] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791218] = {
 	attack_power = 2,
 	name = "【2021美系活动B3】BOSS 苍龙·META 一阶段 第四波 轰炸机",
@@ -155329,7 +150581,6 @@ _G.pg.base.aircraft_template[791218] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[791219] = {
 	attack_power = 2,
 	name = "【2021美系活动B3】BOSS 苍龙·META 一阶段 第四波 战斗机",
@@ -155406,7 +150657,6 @@ _G.pg.base.aircraft_template[791219] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[792102] = {
 	attack_power = 2,
 	name = "【2021美系活动C2】BOSS 苍龙&飞龙 通用战斗机（自机狙）",
@@ -155482,7 +150732,6 @@ _G.pg.base.aircraft_template[792102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[792103] = {
 	attack_power = 2,
 	name = "【2021美系活动C2】BOSS 苍龙&飞龙 通用轰炸机（高爆）",
@@ -155558,7 +150807,6 @@ _G.pg.base.aircraft_template[792103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[792202] = {
 	attack_power = 2,
 	name = "【2021美系活动C3】BOSS 赤城&加贺 轰炸机",
@@ -155634,7 +150882,6 @@ _G.pg.base.aircraft_template[792202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[792203] = {
 	attack_power = 2,
 	name = "【2021美系活动C3】BOSS 赤城&加贺 鱼雷机",
@@ -155710,7 +150957,6 @@ _G.pg.base.aircraft_template[792203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793101] = {
 	attack_power = 2,
 	name = "【2021美系活动D2】塞壬执棋者I型 轰炸机",
@@ -155786,7 +151032,6 @@ _G.pg.base.aircraft_template[793101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793102] = {
 	attack_power = 2,
 	name = "【2021美系活动D2】塞壬执棋者I型 鱼雷机",
@@ -155862,7 +151107,6 @@ _G.pg.base.aircraft_template[793102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793103] = {
 	attack_power = 2,
 	name = "【2021美系活动D2】塞壬执棋者I型 浮游炮1",
@@ -155941,7 +151185,6 @@ _G.pg.base.aircraft_template[793103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793104] = {
 	attack_power = 2,
 	name = "【2021美系活动D2】塞壬执棋者I型 浮游炮2",
@@ -156020,7 +151263,6 @@ _G.pg.base.aircraft_template[793104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793206] = {
 	attack_power = 2,
 	name = "【2021美系活动D3】BOSS 苍龙·META 二阶段 余烬飞机",
@@ -156097,7 +151339,6 @@ _G.pg.base.aircraft_template[793206] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793218] = {
 	attack_power = 2,
 	name = "【2021美系活动D3】BOSS 苍龙·META 一阶段 第四波 轰炸机",
@@ -156173,7 +151414,6 @@ _G.pg.base.aircraft_template[793218] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[793219] = {
 	attack_power = 2,
 	name = "【2021美系活动D3】BOSS 苍龙·META 一阶段 第四波 战斗机",
@@ -156250,7 +151490,6 @@ _G.pg.base.aircraft_template[793219] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[794008] = {
 	attack_power = 2,
 	name = "【2021美系活动SP】BOSS 苍龙·META 第三波 飞机",
@@ -156327,7 +151566,6 @@ _G.pg.base.aircraft_template[794008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[795004] = {
 	attack_power = 2,
 	name = "【2021美系活动EX】BOSS 苍龙·META 第三波 飞机",
@@ -156404,7 +151642,6 @@ _G.pg.base.aircraft_template[795004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[800005] = {
 	attack_power = 2,
 	name = "三笠剧情战斗机",
@@ -156480,7 +151717,6 @@ _G.pg.base.aircraft_template[800005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[800006] = {
 	attack_power = 2,
 	name = "三笠剧情鱼雷机",
@@ -156556,7 +151792,6 @@ _G.pg.base.aircraft_template[800006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[800007] = {
 	attack_power = 2,
 	name = "三笠剧情轰炸机",
@@ -156632,7 +151867,6 @@ _G.pg.base.aircraft_template[800007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[800010] = {
 	attack_power = 2,
 	name = "魔鬼鱼浮游炮",
@@ -156711,7 +151945,6 @@ _G.pg.base.aircraft_template[800010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819001] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载战斗机I",
@@ -156788,7 +152021,6 @@ _G.pg.base.aircraft_template[819001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819002] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载战斗机II",
@@ -156865,7 +152097,6 @@ _G.pg.base.aircraft_template[819002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819003] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载战斗机III",
@@ -156942,7 +152173,6 @@ _G.pg.base.aircraft_template[819003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819004] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载战斗机IV",
@@ -157019,7 +152249,6 @@ _G.pg.base.aircraft_template[819004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819005] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载战斗机V",
@@ -157096,7 +152325,6 @@ _G.pg.base.aircraft_template[819005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819006] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载鱼雷机I",
@@ -157172,7 +152400,6 @@ _G.pg.base.aircraft_template[819006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819007] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载鱼雷机II",
@@ -157248,7 +152475,6 @@ _G.pg.base.aircraft_template[819007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819008] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载鱼雷机III",
@@ -157324,7 +152550,6 @@ _G.pg.base.aircraft_template[819008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819009] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载鱼雷机IV",
@@ -157400,7 +152625,6 @@ _G.pg.base.aircraft_template[819009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819010] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载鱼雷机V",
@@ -157476,7 +152700,6 @@ _G.pg.base.aircraft_template[819010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819011] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载轰炸机I",
@@ -157552,7 +152775,6 @@ _G.pg.base.aircraft_template[819011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819012] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载轰炸机II",
@@ -157628,7 +152850,6 @@ _G.pg.base.aircraft_template[819012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819013] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载轰炸机III",
@@ -157704,7 +152925,6 @@ _G.pg.base.aircraft_template[819013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819014] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载轰炸机IV",
@@ -157780,7 +153000,6 @@ _G.pg.base.aircraft_template[819014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819015] = {
 	attack_power = 2,
 	name = "【偶像大师联动】舰载轰炸机V",
@@ -157856,7 +153075,6 @@ _G.pg.base.aircraft_template[819015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819322] = {
 	attack_power = 2,
 	name = "【偶像大师联动SP3】BOSS 如月千早 战斗机",
@@ -157933,7 +153151,6 @@ _G.pg.base.aircraft_template[819322] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819323] = {
 	attack_power = 2,
 	name = "【偶像大师联动SP3】BOSS 如月千早 鱼雷机",
@@ -158009,7 +153226,6 @@ _G.pg.base.aircraft_template[819323] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819324] = {
 	attack_power = 2,
 	name = "【偶像大师联动SP3】BOSS 如月千早 轰炸机",
@@ -158085,7 +153301,6 @@ _G.pg.base.aircraft_template[819324] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819403] = {
 	attack_power = 2,
 	name = "【偶像大师联动SP4】精英人形 如月千早 主题战斗机",
@@ -158162,7 +153377,6 @@ _G.pg.base.aircraft_template[819403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819404] = {
 	attack_power = 2,
 	name = "【偶像大师联动SP4】精英人形 如月千早 主题鱼雷机",
@@ -158238,7 +153452,6 @@ _G.pg.base.aircraft_template[819404] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819503] = {
 	attack_power = 2,
 	name = "【偶像大师联动VSP】精英人形 如月千早 主题战斗机",
@@ -158315,7 +153528,6 @@ _G.pg.base.aircraft_template[819503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819504] = {
 	attack_power = 2,
 	name = "【偶像大师联动VSP】精英人形 如月千早 主题鱼雷机",
@@ -158391,7 +153603,6 @@ _G.pg.base.aircraft_template[819504] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819524] = {
 	attack_power = 2,
 	name = "【偶像大师联动VSP】BOSS 如月千早 战斗机",
@@ -158468,7 +153679,6 @@ _G.pg.base.aircraft_template[819524] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819525] = {
 	attack_power = 2,
 	name = "【偶像大师联动VSP】BOSS 如月千早 鱼雷机",
@@ -158544,7 +153754,6 @@ _G.pg.base.aircraft_template[819525] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819526] = {
 	attack_power = 2,
 	name = "【偶像大师联动VSP】BOSS 如月千早 轰炸机",
@@ -158620,7 +153829,6 @@ _G.pg.base.aircraft_template[819526] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[819608] = {
 	attack_power = 2,
 	name = "【偶像大师联动EX】BOSS 天海春香 地毯轰炸机",
@@ -158696,7 +153904,6 @@ _G.pg.base.aircraft_template[819608] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820211] = {
 	attack_power = 2,
 	name = "【2021岛风活动B2】BOSS 执棋者I型 轰炸机",
@@ -158772,7 +153979,6 @@ _G.pg.base.aircraft_template[820211] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820212] = {
 	attack_power = 2,
 	name = "【2021岛风活动B2】BOSS 执棋者I型 鱼雷机",
@@ -158848,7 +154054,6 @@ _G.pg.base.aircraft_template[820212] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820213] = {
 	attack_power = 2,
 	name = "【2021岛风活动B2】BOSS 执棋者I型 浮游炮1",
@@ -158927,7 +154132,6 @@ _G.pg.base.aircraft_template[820213] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820214] = {
 	attack_power = 2,
 	name = "【2021岛风活动B2】BOSS 执棋者I型 浮游炮2",
@@ -159006,7 +154210,6 @@ _G.pg.base.aircraft_template[820214] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820232] = {
 	attack_power = 2,
 	name = "【2021岛风活动B3】BOSS 白龙 天雷轰炸机",
@@ -159082,7 +154285,6 @@ _G.pg.base.aircraft_template[820232] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820233] = {
 	attack_power = 2,
 	name = "【2021岛风活动B3】BOSS 白龙 鱼雷机",
@@ -159158,7 +154360,6 @@ _G.pg.base.aircraft_template[820233] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820411] = {
 	attack_power = 2,
 	name = "【2021岛风活动D2】BOSS 执棋者I型 轰炸机",
@@ -159234,7 +154435,6 @@ _G.pg.base.aircraft_template[820411] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820412] = {
 	attack_power = 2,
 	name = "【2021岛风活动D2】BOSS 执棋者I型 鱼雷机",
@@ -159310,7 +154510,6 @@ _G.pg.base.aircraft_template[820412] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820413] = {
 	attack_power = 2,
 	name = "【2021岛风活动D2】BOSS 执棋者I型 浮游炮1",
@@ -159389,7 +154588,6 @@ _G.pg.base.aircraft_template[820413] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820414] = {
 	attack_power = 2,
 	name = "【2021岛风活动D2】BOSS 执棋者I型 浮游炮2",
@@ -159468,7 +154666,6 @@ _G.pg.base.aircraft_template[820414] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820432] = {
 	attack_power = 2,
 	name = "【2021岛风活动D3】BOSS 白龙 天雷轰炸机",
@@ -159544,7 +154741,6 @@ _G.pg.base.aircraft_template[820432] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820433] = {
 	attack_power = 2,
 	name = "【2021岛风活动D3】BOSS 白龙 鱼雷机",
@@ -159620,7 +154816,6 @@ _G.pg.base.aircraft_template[820433] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820603] = {
 	attack_power = 2,
 	name = "【2021岛风活动EX】BOSS 白龙 天雷轰炸机",
@@ -159696,7 +154891,6 @@ _G.pg.base.aircraft_template[820603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820614] = {
 	attack_power = 2,
 	name = "【2021岛风活动EX】BOSS 白龙 天雷轰炸机",
@@ -159772,7 +154966,6 @@ _G.pg.base.aircraft_template[820614] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820803] = {
 	attack_power = 2,
 	name = "【2021岛风活动EX2】BOSS 白龙 天雷轰炸机",
@@ -159848,7 +155041,6 @@ _G.pg.base.aircraft_template[820803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820814] = {
 	attack_power = 2,
 	name = "【2021岛风活动EX2】BOSS 白龙 天雷轰炸机",
@@ -159924,7 +155116,6 @@ _G.pg.base.aircraft_template[820814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820705] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】BOSS 白龙 天雷轰炸机",
@@ -160000,7 +155191,6 @@ _G.pg.base.aircraft_template[820705] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820706] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】BOSS 白龙 鱼雷机",
@@ -160076,7 +155266,6 @@ _G.pg.base.aircraft_template[820706] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820711] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】BOSS 白龙 特殊航空弹幕 天雷轰炸机",
@@ -160152,7 +155341,6 @@ _G.pg.base.aircraft_template[820711] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820712] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】BOSS 白龙 特殊航空弹幕 鱼雷机",
@@ -160228,7 +155416,6 @@ _G.pg.base.aircraft_template[820712] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820858] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】零战五二型（极速装填）",
@@ -160306,7 +155493,6 @@ _G.pg.base.aircraft_template[820858] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820859] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】彗星（极速装填）",
@@ -160384,7 +155570,6 @@ _G.pg.base.aircraft_template[820859] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[820860] = {
 	attack_power = 2,
 	name = "【2021岛风活动剧情】流星（极速装填）",
@@ -160462,7 +155647,6 @@ _G.pg.base.aircraft_template[820860] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840001] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】宝多六花支援武器-苍穹喷气飞机LV1",
@@ -160538,7 +155722,6 @@ _G.pg.base.aircraft_template[840001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840002] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】宝多六花支援武器-苍穹喷气飞机LV2",
@@ -160614,7 +155797,6 @@ _G.pg.base.aircraft_template[840002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840003] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】宝多六花支援武器-苍穹喷气飞机LV3",
@@ -160690,7 +155872,6 @@ _G.pg.base.aircraft_template[840003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840004] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】宝多六花支援武器-苍穹喷气飞机LV4",
@@ -160766,7 +155947,6 @@ _G.pg.base.aircraft_template[840004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840005] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】宝多六花支援武器-苍穹喷气飞机LV5",
@@ -160842,7 +156022,6 @@ _G.pg.base.aircraft_template[840005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840006] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】梦芽支援武器-戴拿飞翼LV1",
@@ -160918,7 +156097,6 @@ _G.pg.base.aircraft_template[840006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840007] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】梦芽支援武器-戴拿飞翼LV2",
@@ -160994,7 +156172,6 @@ _G.pg.base.aircraft_template[840007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840008] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】梦芽支援武器-戴拿飞翼LV3",
@@ -161070,7 +156247,6 @@ _G.pg.base.aircraft_template[840008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840009] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】梦芽支援武器-戴拿飞翼LV4",
@@ -161146,7 +156322,6 @@ _G.pg.base.aircraft_template[840009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840010] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】梦芽支援武器-戴拿飞翼LV5",
@@ -161222,7 +156397,6 @@ _G.pg.base.aircraft_template[840010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840011] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】千濑支援武器-煌翼炎龙LV1",
@@ -161298,7 +156472,6 @@ _G.pg.base.aircraft_template[840011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840012] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】千濑支援武器-煌翼炎龙LV2",
@@ -161374,7 +156547,6 @@ _G.pg.base.aircraft_template[840012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840013] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】千濑支援武器-煌翼炎龙LV3",
@@ -161450,7 +156622,6 @@ _G.pg.base.aircraft_template[840013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840014] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】千濑支援武器-煌翼炎龙LV4",
@@ -161526,7 +156697,6 @@ _G.pg.base.aircraft_template[840014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840015] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】千濑支援武器-煌翼炎龙LV5",
@@ -161602,7 +156772,6 @@ _G.pg.base.aircraft_template[840015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840050] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载战斗机I",
@@ -161679,7 +156848,6 @@ _G.pg.base.aircraft_template[840050] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840051] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载战斗机II",
@@ -161756,7 +156924,6 @@ _G.pg.base.aircraft_template[840051] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840052] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载战斗机III",
@@ -161833,7 +157000,6 @@ _G.pg.base.aircraft_template[840052] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840053] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载战斗机IV",
@@ -161910,7 +157076,6 @@ _G.pg.base.aircraft_template[840053] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840054] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载战斗机V",
@@ -161987,7 +157152,6 @@ _G.pg.base.aircraft_template[840054] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840055] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载鱼雷机I",
@@ -162063,7 +157227,6 @@ _G.pg.base.aircraft_template[840055] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840056] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载鱼雷机II",
@@ -162139,7 +157302,6 @@ _G.pg.base.aircraft_template[840056] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840057] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载鱼雷机III",
@@ -162215,7 +157377,6 @@ _G.pg.base.aircraft_template[840057] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840058] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载鱼雷机IV",
@@ -162291,7 +157452,6 @@ _G.pg.base.aircraft_template[840058] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840059] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载鱼雷机V",
@@ -162367,7 +157527,6 @@ _G.pg.base.aircraft_template[840059] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840060] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载轰炸机I",
@@ -162443,7 +157602,6 @@ _G.pg.base.aircraft_template[840060] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840061] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载轰炸机II",
@@ -162519,7 +157677,6 @@ _G.pg.base.aircraft_template[840061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840062] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载轰炸机III",
@@ -162595,7 +157752,6 @@ _G.pg.base.aircraft_template[840062] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840063] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载轰炸机IV",
@@ -162671,7 +157827,6 @@ _G.pg.base.aircraft_template[840063] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840064] = {
 	attack_power = 2,
 	name = "【2021古立特联动】舰载轰炸机V",
@@ -162747,7 +157902,6 @@ _G.pg.base.aircraft_template[840064] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840180] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 轰炸机T3 I",
@@ -162823,7 +157977,6 @@ _G.pg.base.aircraft_template[840180] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840181] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 轰炸机T3 II",
@@ -162899,7 +158052,6 @@ _G.pg.base.aircraft_template[840181] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840182] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 轰炸机T3 III",
@@ -162975,7 +158127,6 @@ _G.pg.base.aircraft_template[840182] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840183] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 轰炸机T3 IV",
@@ -163051,7 +158202,6 @@ _G.pg.base.aircraft_template[840183] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840184] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 轰炸机T3 V",
@@ -163127,7 +158277,6 @@ _G.pg.base.aircraft_template[840184] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840185] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 鱼雷机T3 I",
@@ -163203,7 +158352,6 @@ _G.pg.base.aircraft_template[840185] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840186] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 鱼雷机T3 II",
@@ -163279,7 +158427,6 @@ _G.pg.base.aircraft_template[840186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840187] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 鱼雷机T3 III",
@@ -163355,7 +158502,6 @@ _G.pg.base.aircraft_template[840187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840188] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 鱼雷机T3 IV",
@@ -163431,7 +158577,6 @@ _G.pg.base.aircraft_template[840188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840189] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动】执棋者I型 鱼雷机T3 V",
@@ -163507,7 +158652,6 @@ _G.pg.base.aircraft_template[840189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840317] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动T2】BOSS 机械怪兽 第五波 轰炸机",
@@ -163583,7 +158727,6 @@ _G.pg.base.aircraft_template[840317] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840337] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动T4】BOSS 机械怪兽 第五波 轰炸机",
@@ -163659,7 +158802,6 @@ _G.pg.base.aircraft_template[840337] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840339] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动T4】BOSS 机械怪兽 第五波 轰炸机",
@@ -163733,7 +158875,6 @@ _G.pg.base.aircraft_template[840339] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840347] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动SSSS.SP】BOSS 机械怪兽 第五波 轰炸机",
@@ -163809,7 +158950,6 @@ _G.pg.base.aircraft_template[840347] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840349] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动SSSS.SP】BOSS 机械怪兽 第五波 轰炸机",
@@ -163883,7 +159023,6 @@ _G.pg.base.aircraft_template[840349] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840404] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动EX】BOSS 机械怪兽 第三波 战斗机",
@@ -163959,7 +159098,6 @@ _G.pg.base.aircraft_template[840404] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[840405] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动EX】BOSS 机械怪兽 第三波 鱼雷机",
@@ -164035,7 +159173,6 @@ _G.pg.base.aircraft_template[840405] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[841004] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS1】BOSS 南梦芽 戴拿飞翼舰载机1",
@@ -164113,7 +159250,6 @@ _G.pg.base.aircraft_template[841004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[841005] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS1】BOSS 南梦芽 戴拿飞翼舰载机2",
@@ -164191,7 +159327,6 @@ _G.pg.base.aircraft_template[841005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[841006] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS1】BOSS 南梦芽 戴拿飞翼舰载机3",
@@ -164269,7 +159404,6 @@ _G.pg.base.aircraft_template[841006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[841007] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS1】BOSS 南梦芽 戴拿飞翼舰载机4",
@@ -164347,7 +159481,6 @@ _G.pg.base.aircraft_template[841007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[841008] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS1】BOSS 南梦芽 戴拿飞翼舰载机5",
@@ -164425,7 +159558,6 @@ _G.pg.base.aircraft_template[841008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[843010] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS3】BOSS 新条茜 Instance Abreaction 舰载机",
@@ -164501,7 +159633,6 @@ _G.pg.base.aircraft_template[843010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[843014] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS3】BOSS 新条茜 变身-舰载机（高频率）",
@@ -164577,7 +159708,6 @@ _G.pg.base.aircraft_template[843014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[845001] = {
 	attack_power = 2,
 	name = "【2021古立特联动活动TSS5】BOSS 第二代 战舰召唤",
@@ -164656,7 +159786,6 @@ _G.pg.base.aircraft_template[845001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871201] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 噩梦结晶-「执棋者」 轰炸机",
@@ -164732,7 +159861,6 @@ _G.pg.base.aircraft_template[871201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871202] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 噩梦结晶-「执棋者」 鱼雷机",
@@ -164809,7 +159937,6 @@ _G.pg.base.aircraft_template[871202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871203] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 噩梦结晶-「执棋者」 浮游炮1",
@@ -164888,7 +160015,6 @@ _G.pg.base.aircraft_template[871203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871204] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 噩梦结晶-「执棋者」 浮游炮2",
@@ -164967,7 +160093,6 @@ _G.pg.base.aircraft_template[871204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871305] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 喀琅施塔得 第二波 战斗机",
@@ -165044,7 +160169,6 @@ _G.pg.base.aircraft_template[871305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871306] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 喀琅施塔得 第二波 轰炸机",
@@ -165120,7 +160244,6 @@ _G.pg.base.aircraft_template[871306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871307] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 喀琅施塔得 第二波 地毯式轰炸机",
@@ -165197,7 +160320,6 @@ _G.pg.base.aircraft_template[871307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[871315] = {
 	attack_power = 2,
 	name = "【2022毛系活动B3】BOSS 喀琅施塔得 第三波 轰炸机",
@@ -165273,7 +160395,6 @@ _G.pg.base.aircraft_template[871315] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873201] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 噩梦结晶-「执棋者」 轰炸机",
@@ -165349,7 +160470,6 @@ _G.pg.base.aircraft_template[873201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873202] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 噩梦结晶-「执棋者」 鱼雷机",
@@ -165426,7 +160546,6 @@ _G.pg.base.aircraft_template[873202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873203] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 噩梦结晶-「执棋者」 浮游炮1",
@@ -165505,7 +160624,6 @@ _G.pg.base.aircraft_template[873203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873204] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 噩梦结晶-「执棋者」 浮游炮2",
@@ -165584,7 +160702,6 @@ _G.pg.base.aircraft_template[873204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873305] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 喀琅施塔得 第二波 战斗机",
@@ -165661,7 +160778,6 @@ _G.pg.base.aircraft_template[873305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873306] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 喀琅施塔得 第二波 轰炸机",
@@ -165737,7 +160853,6 @@ _G.pg.base.aircraft_template[873306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873307] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 喀琅施塔得 第二波 地毯式轰炸机",
@@ -165814,7 +160929,6 @@ _G.pg.base.aircraft_template[873307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[873315] = {
 	attack_power = 2,
 	name = "【2022毛系活动D3】BOSS 喀琅施塔得 第三波 轰炸机",
@@ -165890,7 +161004,6 @@ _G.pg.base.aircraft_template[873315] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[874105] = {
 	attack_power = 2,
 	name = "【2022毛系活动SP】BOSS 喀琅施塔得 第二波 战斗机",
@@ -165967,7 +161080,6 @@ _G.pg.base.aircraft_template[874105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[874106] = {
 	attack_power = 2,
 	name = "【2022毛系活动SP】BOSS 喀琅施塔得 第二波 轰炸机",
@@ -166043,7 +161155,6 @@ _G.pg.base.aircraft_template[874106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[874107] = {
 	attack_power = 2,
 	name = "【2022毛系活动SP】BOSS 喀琅施塔得 第二波 地毯式轰炸机",
@@ -166120,7 +161231,6 @@ _G.pg.base.aircraft_template[874107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[874115] = {
 	attack_power = 2,
 	name = "【2022毛系活动SP】BOSS 喀琅施塔得 第三波 轰炸机",
@@ -166196,7 +161306,6 @@ _G.pg.base.aircraft_template[874115] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875005] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 空袭反制 大范围随机轰炸机",
@@ -166272,7 +161381,6 @@ _G.pg.base.aircraft_template[875005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875008] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第三波 直线高速飞机",
@@ -166351,7 +161459,6 @@ _G.pg.base.aircraft_template[875008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875013] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 五方向飞机",
@@ -166429,7 +161536,6 @@ _G.pg.base.aircraft_template[875013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875014] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 五方向飞机",
@@ -166507,7 +161613,6 @@ _G.pg.base.aircraft_template[875014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875015] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 五方向飞机",
@@ -166585,7 +161690,6 @@ _G.pg.base.aircraft_template[875015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875016] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 五方向飞机",
@@ -166663,7 +161767,6 @@ _G.pg.base.aircraft_template[875016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875017] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 五方向飞机",
@@ -166741,7 +161844,6 @@ _G.pg.base.aircraft_template[875017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875018] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 四方向飞机",
@@ -166819,7 +161921,6 @@ _G.pg.base.aircraft_template[875018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875019] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 四方向飞机",
@@ -166897,7 +161998,6 @@ _G.pg.base.aircraft_template[875019] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875020] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 四方向飞机",
@@ -166975,7 +162075,6 @@ _G.pg.base.aircraft_template[875020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875021] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 第四波 四方向飞机",
@@ -167053,7 +162152,6 @@ _G.pg.base.aircraft_template[875021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[875026] = {
 	attack_power = 2,
 	name = "【2022毛系活动EX】BOSS 喀琅施塔得 大范围随机轰炸机",
@@ -167129,7 +162227,6 @@ _G.pg.base.aircraft_template[875026] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[882001] = {
 	attack_power = 2,
 	name = "【2022意大利SP活动SP3】塞壬执棋者II型 轰炸机",
@@ -167205,7 +162302,6 @@ _G.pg.base.aircraft_template[882001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[882002] = {
 	attack_power = 2,
 	name = "【2022意大利SP活动SP3】塞壬执棋者II型 鱼雷机",
@@ -167281,7 +162377,6 @@ _G.pg.base.aircraft_template[882002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[882003] = {
 	attack_power = 2,
 	name = "【2022意大利SP活动SP3】塞壬执棋者II型 浮游炮1",
@@ -167360,7 +162455,6 @@ _G.pg.base.aircraft_template[882003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[882004] = {
 	attack_power = 2,
 	name = "【2022意大利SP活动SP3】塞壬执棋者II型 浮游炮2",
@@ -167439,7 +162533,6 @@ _G.pg.base.aircraft_template[882004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891301] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动A3】塞壬执棋者II型 轰炸机",
@@ -167515,7 +162608,6 @@ _G.pg.base.aircraft_template[891301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891302] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动A3】塞壬执棋者II型 鱼雷机",
@@ -167591,7 +162683,6 @@ _G.pg.base.aircraft_template[891302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891303] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动A3】塞壬执棋者II型 浮游炮1",
@@ -167670,7 +162761,6 @@ _G.pg.base.aircraft_template[891303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891304] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动A3】塞壬执棋者II型 浮游炮2",
@@ -167749,7 +162839,6 @@ _G.pg.base.aircraft_template[891304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891503] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -167828,7 +162917,6 @@ _G.pg.base.aircraft_template[891503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891504] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -167907,7 +162995,6 @@ _G.pg.base.aircraft_template[891504] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891505] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -167986,7 +163073,6 @@ _G.pg.base.aircraft_template[891505] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891506] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -168065,7 +163151,6 @@ _G.pg.base.aircraft_template[891506] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891514] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -168143,7 +163228,6 @@ _G.pg.base.aircraft_template[891514] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891515] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -168221,7 +163305,6 @@ _G.pg.base.aircraft_template[891515] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891516] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -168299,7 +163382,6 @@ _G.pg.base.aircraft_template[891516] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891517] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -168377,7 +163459,6 @@ _G.pg.base.aircraft_template[891517] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891603] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型普通人形 浮游炮",
@@ -168456,7 +163537,6 @@ _G.pg.base.aircraft_template[891603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891604] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型普通人形 浮游炮",
@@ -168535,7 +163615,6 @@ _G.pg.base.aircraft_template[891604] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891610] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -168614,7 +163693,6 @@ _G.pg.base.aircraft_template[891610] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891611] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -168693,7 +163771,6 @@ _G.pg.base.aircraft_template[891611] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891612] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -168772,7 +163849,6 @@ _G.pg.base.aircraft_template[891612] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891613] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -168851,7 +163927,6 @@ _G.pg.base.aircraft_template[891613] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891617] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -168929,7 +164004,6 @@ _G.pg.base.aircraft_template[891617] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891618] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -169007,7 +164081,6 @@ _G.pg.base.aircraft_template[891618] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891619] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -169085,7 +164158,6 @@ _G.pg.base.aircraft_template[891619] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[891620] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动B3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -169163,7 +164235,6 @@ _G.pg.base.aircraft_template[891620] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892301] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动C3】塞壬执棋者II型 轰炸机",
@@ -169239,7 +164310,6 @@ _G.pg.base.aircraft_template[892301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892302] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动C3】塞壬执棋者II型 鱼雷机",
@@ -169315,7 +164385,6 @@ _G.pg.base.aircraft_template[892302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892303] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动C3】塞壬执棋者II型 浮游炮1",
@@ -169394,7 +164463,6 @@ _G.pg.base.aircraft_template[892303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892304] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动C3】塞壬执棋者II型 浮游炮2",
@@ -169473,7 +164541,6 @@ _G.pg.base.aircraft_template[892304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892503] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -169552,7 +164619,6 @@ _G.pg.base.aircraft_template[892503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892504] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -169631,7 +164697,6 @@ _G.pg.base.aircraft_template[892504] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892505] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -169710,7 +164775,6 @@ _G.pg.base.aircraft_template[892505] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892506] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第一波浮游炮",
@@ -169789,7 +164853,6 @@ _G.pg.base.aircraft_template[892506] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892514] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -169867,7 +164930,6 @@ _G.pg.base.aircraft_template[892514] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892515] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -169945,7 +165007,6 @@ _G.pg.base.aircraft_template[892515] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892516] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -170023,7 +165084,6 @@ _G.pg.base.aircraft_template[892516] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892517] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D2】BOSS 塞壬构建者μ型 第三波浮游炮",
@@ -170101,7 +165161,6 @@ _G.pg.base.aircraft_template[892517] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892603] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型普通人形 浮游炮",
@@ -170180,7 +165239,6 @@ _G.pg.base.aircraft_template[892603] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892604] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型普通人形 浮游炮",
@@ -170259,7 +165317,6 @@ _G.pg.base.aircraft_template[892604] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892610] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -170338,7 +165395,6 @@ _G.pg.base.aircraft_template[892610] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892611] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -170417,7 +165473,6 @@ _G.pg.base.aircraft_template[892611] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892612] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -170496,7 +165551,6 @@ _G.pg.base.aircraft_template[892612] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892613] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第一波浮游炮",
@@ -170575,7 +165629,6 @@ _G.pg.base.aircraft_template[892613] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892617] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -170653,7 +165706,6 @@ _G.pg.base.aircraft_template[892617] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892618] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -170731,7 +165783,6 @@ _G.pg.base.aircraft_template[892618] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892619] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -170809,7 +165860,6 @@ _G.pg.base.aircraft_template[892619] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892620] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动D3】塞壬构建者α型精英人形 第二波浮游炮",
@@ -170887,7 +165937,6 @@ _G.pg.base.aircraft_template[892620] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892901] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 日系支援飞机 战斗机",
@@ -170964,7 +166013,6 @@ _G.pg.base.aircraft_template[892901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892902] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 日系支援飞机 鱼雷机",
@@ -171040,7 +166088,6 @@ _G.pg.base.aircraft_template[892902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892903] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 日系支援飞机 轰炸机",
@@ -171116,7 +166163,6 @@ _G.pg.base.aircraft_template[892903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892908] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 美系支援飞机 战斗机",
@@ -171193,7 +166239,6 @@ _G.pg.base.aircraft_template[892908] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892909] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 美系支援飞机 鱼雷机",
@@ -171269,7 +166314,6 @@ _G.pg.base.aircraft_template[892909] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[892910] = {
 	attack_power = 2,
 	name = "【2022公海舰队活动】剧情战 美系支援飞机 轰炸机",
@@ -171345,7 +166389,6 @@ _G.pg.base.aircraft_template[892910] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893101] = {
 	attack_power = 2,
 	name = "【2022英系活动A2】BOSS 梦境塞壬执棋者 轰炸机",
@@ -171421,7 +166464,6 @@ _G.pg.base.aircraft_template[893101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893102] = {
 	attack_power = 2,
 	name = "【2022英系活动A2】BOSS 梦境塞壬执棋者 鱼雷机",
@@ -171498,7 +166540,6 @@ _G.pg.base.aircraft_template[893102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893103] = {
 	attack_power = 2,
 	name = "【2022英系活动A2】BOSS 梦境塞壬执棋者 浮游炮",
@@ -171577,7 +166618,6 @@ _G.pg.base.aircraft_template[893103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893401] = {
 	attack_power = 2,
 	name = "【2022英系活动B2】BOSS 精锐塞壬零型航母蛋船 战斗机",
@@ -171653,7 +166693,6 @@ _G.pg.base.aircraft_template[893401] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893402] = {
 	attack_power = 2,
 	name = "【2022英系活动B2】BOSS 精锐塞壬零型航母蛋船 鱼雷机",
@@ -171729,7 +166768,6 @@ _G.pg.base.aircraft_template[893402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[893403] = {
 	attack_power = 2,
 	name = "【2022英系活动B2】BOSS 精锐塞壬零型航母蛋船 轰炸机",
@@ -171805,7 +166843,6 @@ _G.pg.base.aircraft_template[893403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894101] = {
 	attack_power = 2,
 	name = "【2022英系活动C2】BOSS 梦境塞壬执棋者 轰炸机",
@@ -171881,7 +166918,6 @@ _G.pg.base.aircraft_template[894101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894102] = {
 	attack_power = 2,
 	name = "【2022英系活动C2】BOSS 梦境塞壬执棋者 鱼雷机",
@@ -171958,7 +166994,6 @@ _G.pg.base.aircraft_template[894102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894103] = {
 	attack_power = 2,
 	name = "【2022英系活动C2】BOSS 梦境塞壬执棋者 浮游炮",
@@ -172037,7 +167072,6 @@ _G.pg.base.aircraft_template[894103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894401] = {
 	attack_power = 2,
 	name = "【2022英系活动D2】BOSS 精锐塞壬零型航母蛋船 战斗机",
@@ -172113,7 +167147,6 @@ _G.pg.base.aircraft_template[894401] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894402] = {
 	attack_power = 2,
 	name = "【2022英系活动D2】BOSS 精锐塞壬零型航母蛋船 鱼雷机",
@@ -172189,7 +167222,6 @@ _G.pg.base.aircraft_template[894402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[894403] = {
 	attack_power = 2,
 	name = "【2022英系活动D2】BOSS 精锐塞壬零型航母蛋船 轰炸机",
@@ -172265,7 +167297,6 @@ _G.pg.base.aircraft_template[894403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898008] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞一形态 战斗机",
@@ -172341,7 +167372,6 @@ _G.pg.base.aircraft_template[898008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898009] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞一形态 轰炸机",
@@ -172417,7 +167447,6 @@ _G.pg.base.aircraft_template[898009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898014] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 3way飞机",
@@ -172495,7 +167524,6 @@ _G.pg.base.aircraft_template[898014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898015] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 3way飞机",
@@ -172573,7 +167601,6 @@ _G.pg.base.aircraft_template[898015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898018] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 3way飞机",
@@ -172651,7 +167678,6 @@ _G.pg.base.aircraft_template[898018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898021] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 战斗机",
@@ -172727,7 +167753,6 @@ _G.pg.base.aircraft_template[898021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898022] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 轰炸机",
@@ -172803,7 +167828,6 @@ _G.pg.base.aircraft_template[898022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[898023] = {
 	attack_power = 2,
 	name = "【2022法系共斗H】BOSS 霞飞二形态 鱼雷机",
@@ -172879,7 +167903,6 @@ _G.pg.base.aircraft_template[898023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899008] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞一形态 战斗机",
@@ -172955,7 +167978,6 @@ _G.pg.base.aircraft_template[899008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899009] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞一形态 轰炸机",
@@ -173031,7 +168053,6 @@ _G.pg.base.aircraft_template[899009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899014] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 5way飞机",
@@ -173109,7 +168130,6 @@ _G.pg.base.aircraft_template[899014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899015] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 5way飞机",
@@ -173187,7 +168207,6 @@ _G.pg.base.aircraft_template[899015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899016] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 5way飞机",
@@ -173265,7 +168284,6 @@ _G.pg.base.aircraft_template[899016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899017] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 5way飞机",
@@ -173343,7 +168361,6 @@ _G.pg.base.aircraft_template[899017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899018] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 5way飞机",
@@ -173421,7 +168438,6 @@ _G.pg.base.aircraft_template[899018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899021] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 战斗机",
@@ -173497,7 +168513,6 @@ _G.pg.base.aircraft_template[899021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899022] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 轰炸机",
@@ -173573,7 +168588,6 @@ _G.pg.base.aircraft_template[899022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[899023] = {
 	attack_power = 2,
 	name = "【2022法系共斗EX】BOSS 霞飞二形态 鱼雷机",
@@ -173649,7 +168663,6 @@ _G.pg.base.aircraft_template[899023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900001] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用战斗机 I",
@@ -173726,7 +168739,6 @@ _G.pg.base.aircraft_template[900001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900002] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用战斗机 II",
@@ -173803,7 +168815,6 @@ _G.pg.base.aircraft_template[900002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900003] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用战斗机 III",
@@ -173880,7 +168891,6 @@ _G.pg.base.aircraft_template[900003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900004] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用战斗机 IV",
@@ -173957,7 +168967,6 @@ _G.pg.base.aircraft_template[900004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900005] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用战斗机 V",
@@ -174034,7 +169043,6 @@ _G.pg.base.aircraft_template[900005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900006] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用轰炸机 I",
@@ -174110,7 +169118,6 @@ _G.pg.base.aircraft_template[900006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900007] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用轰炸机 II",
@@ -174186,7 +169193,6 @@ _G.pg.base.aircraft_template[900007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900008] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用轰炸机 III",
@@ -174262,7 +169268,6 @@ _G.pg.base.aircraft_template[900008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900009] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用轰炸机 IV",
@@ -174338,7 +169343,6 @@ _G.pg.base.aircraft_template[900009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900010] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用轰炸机 V",
@@ -174414,7 +169418,6 @@ _G.pg.base.aircraft_template[900010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900026] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用鱼雷机 I",
@@ -174490,7 +169493,6 @@ _G.pg.base.aircraft_template[900026] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900027] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用鱼雷机 II",
@@ -174566,7 +169568,6 @@ _G.pg.base.aircraft_template[900027] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900028] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用鱼雷机 III",
@@ -174642,7 +169643,6 @@ _G.pg.base.aircraft_template[900028] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900029] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用鱼雷机 IV",
@@ -174718,7 +169718,6 @@ _G.pg.base.aircraft_template[900029] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[900030] = {
 	attack_power = 2,
 	name = "【2022意大利活动】通用鱼雷机 V",
@@ -174794,7 +169793,6 @@ _G.pg.base.aircraft_template[900030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950157] = {
 	attack_power = 2,
 	name = "挑战关卡8战斗机T1",
@@ -174871,7 +169869,6 @@ _G.pg.base.aircraft_template[950157] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950158] = {
 	attack_power = 2,
 	name = "挑战关卡8鱼雷机T1",
@@ -174947,7 +169944,6 @@ _G.pg.base.aircraft_template[950158] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950159] = {
 	attack_power = 2,
 	name = "挑战关卡8地毯轰炸机T1",
@@ -175023,7 +170019,6 @@ _G.pg.base.aircraft_template[950159] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950201] = {
 	attack_power = 2,
 	name = "【挑战关卡12】赤城_轰炸机",
@@ -175099,7 +170094,6 @@ _G.pg.base.aircraft_template[950201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950202] = {
 	attack_power = 2,
 	name = "【挑战关卡12】赤城_鱼雷机",
@@ -175175,7 +170169,6 @@ _G.pg.base.aircraft_template[950202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950250] = {
 	attack_power = 2,
 	name = "【俾斯麦活动C3】鱼雷封锁",
@@ -175251,7 +170244,6 @@ _G.pg.base.aircraft_template[950250] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950241] = {
 	attack_power = 2,
 	name = "【挑战关卡15】皇家方舟_战斗机",
@@ -175328,7 +170320,6 @@ _G.pg.base.aircraft_template[950241] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950242] = {
 	attack_power = 2,
 	name = "【挑战关卡15】皇家方舟_轰炸机",
@@ -175404,7 +170395,6 @@ _G.pg.base.aircraft_template[950242] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950263] = {
 	attack_power = 2,
 	name = "轰炸机",
@@ -175480,7 +170470,6 @@ _G.pg.base.aircraft_template[950263] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950264] = {
 	attack_power = 2,
 	name = "战斗机",
@@ -175557,7 +170546,6 @@ _G.pg.base.aircraft_template[950264] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950276] = {
 	attack_power = 2,
 	name = "赤城蓄力武器飞机群",
@@ -175631,7 +170619,6 @@ _G.pg.base.aircraft_template[950276] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950277] = {
 	attack_power = 2,
 	name = "加贺蓄力武器飞机群",
@@ -175705,7 +170692,6 @@ _G.pg.base.aircraft_template[950277] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950382] = {
 	attack_power = 2,
 	name = "天秤座战斗机",
@@ -175782,7 +170768,6 @@ _G.pg.base.aircraft_template[950382] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950383] = {
 	attack_power = 2,
 	name = "天秤座鱼雷机",
@@ -175858,7 +170843,6 @@ _G.pg.base.aircraft_template[950383] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950384] = {
 	attack_power = 2,
 	name = "天秤座地毯轰炸机",
@@ -175934,7 +170918,6 @@ _G.pg.base.aircraft_template[950384] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950429] = {
 	attack_power = 2,
 	name = "【星座挑战】摩羯座_轰炸机",
@@ -176010,7 +170993,6 @@ _G.pg.base.aircraft_template[950429] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[950430] = {
 	attack_power = 2,
 	name = "【星座挑战】摩羯座_鱼雷机",
@@ -176086,7 +171068,6 @@ _G.pg.base.aircraft_template[950430] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960009] = {
 	attack_power = 2,
 	name = "【翻格子活动】铁血战斗机",
@@ -176162,7 +171143,6 @@ _G.pg.base.aircraft_template[960009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960010] = {
 	attack_power = 2,
 	name = "【翻格子活动】铁血轰炸机",
@@ -176238,7 +171218,6 @@ _G.pg.base.aircraft_template[960010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960011] = {
 	attack_power = 2,
 	name = "【翻格子活动】重樱战斗机",
@@ -176314,7 +171293,6 @@ _G.pg.base.aircraft_template[960011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960012] = {
 	attack_power = 2,
 	name = "【翻格子活动】重樱鱼雷机",
@@ -176390,7 +171368,6 @@ _G.pg.base.aircraft_template[960012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960013] = {
 	attack_power = 2,
 	name = "【翻格子活动】重樱轰炸机",
@@ -176466,7 +171443,6 @@ _G.pg.base.aircraft_template[960013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960014] = {
 	attack_power = 2,
 	name = "【翻格子活动】白鹰战斗机",
@@ -176542,7 +171518,6 @@ _G.pg.base.aircraft_template[960014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960015] = {
 	attack_power = 2,
 	name = "【翻格子活动】白鹰鱼雷机",
@@ -176618,7 +171593,6 @@ _G.pg.base.aircraft_template[960015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960016] = {
 	attack_power = 2,
 	name = "【翻格子活动】白鹰轰炸机",
@@ -176694,7 +171668,6 @@ _G.pg.base.aircraft_template[960016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960017] = {
 	attack_power = 2,
 	name = "【翻格子活动】皇家战斗机",
@@ -176770,7 +171743,6 @@ _G.pg.base.aircraft_template[960017] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960018] = {
 	attack_power = 2,
 	name = "【翻格子活动】皇家鱼雷机",
@@ -176846,7 +171818,6 @@ _G.pg.base.aircraft_template[960018] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960019] = {
 	attack_power = 2,
 	name = "【翻格子活动】皇家轰炸机",
@@ -176922,7 +171893,6 @@ _G.pg.base.aircraft_template[960019] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960020] = {
 	attack_power = 2,
 	name = "【翻格子活动】鸢尾战斗机",
@@ -176998,7 +171968,6 @@ _G.pg.base.aircraft_template[960020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960021] = {
 	attack_power = 2,
 	name = "【翻格子活动】鸢尾鱼雷机",
@@ -177074,7 +172043,6 @@ _G.pg.base.aircraft_template[960021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[960022] = {
 	attack_power = 2,
 	name = "【翻格子活动】鸢尾轰炸机",
@@ -177150,7 +172118,6 @@ _G.pg.base.aircraft_template[960022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30001] = {
 	attack_power = 2,
 	name = "F4F野猫",
@@ -177226,7 +172193,6 @@ _G.pg.base.aircraft_template[30001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30002] = {
 	attack_power = 2,
 	name = "F6F地狱猫",
@@ -177302,7 +172268,6 @@ _G.pg.base.aircraft_template[30002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30003] = {
 	attack_power = 2,
 	name = "SBD无畏",
@@ -177378,7 +172343,6 @@ _G.pg.base.aircraft_template[30003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30004] = {
 	attack_power = 2,
 	name = "海喷火",
@@ -177454,7 +172418,6 @@ _G.pg.base.aircraft_template[30004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30005] = {
 	attack_power = 2,
 	name = "剑鱼",
@@ -177530,7 +172493,6 @@ _G.pg.base.aircraft_template[30005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30006] = {
 	attack_power = 2,
 	name = "96式舰战（无资源）",
@@ -177606,7 +172568,6 @@ _G.pg.base.aircraft_template[30006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[30007] = {
 	attack_power = 2,
 	name = "零式战斗机（无资源）",
@@ -177682,7 +172643,6 @@ _G.pg.base.aircraft_template[30007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31100] = {
 	attack_power = 2,
 	name = "零战二一",
@@ -177758,7 +172718,6 @@ _G.pg.base.aircraft_template[31100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31101] = {
 	attack_power = 2,
 	name = "零战二一改",
@@ -177834,7 +172793,6 @@ _G.pg.base.aircraft_template[31101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31102] = {
 	attack_power = 2,
 	name = "零战五二型",
@@ -177910,7 +172868,6 @@ _G.pg.base.aircraft_template[31102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31200] = {
 	attack_power = 2,
 	name = "97舰攻",
@@ -177986,7 +172943,6 @@ _G.pg.base.aircraft_template[31200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31201] = {
 	attack_power = 2,
 	name = "1式陆攻",
@@ -178062,7 +173018,6 @@ _G.pg.base.aircraft_template[31201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31300] = {
 	attack_power = 2,
 	name = "99式舰爆绿",
@@ -178138,7 +173093,6 @@ _G.pg.base.aircraft_template[31300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[31301] = {
 	attack_power = 2,
 	name = "96式陆攻",
@@ -178214,7 +173168,6 @@ _G.pg.base.aircraft_template[31301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[32100] = {
 	attack_power = 2,
 	name = "夏活普通空袭BF109T",
@@ -178291,7 +173244,6 @@ _G.pg.base.aircraft_template[32100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[32101] = {
 	attack_power = 2,
 	name = "夏活普通空袭Me155A",
@@ -178368,7 +173320,6 @@ _G.pg.base.aircraft_template[32101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[32200] = {
 	attack_power = 2,
 	name = "夏活普通空袭qibolin",
@@ -178444,7 +173395,6 @@ _G.pg.base.aircraft_template[32200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[32300] = {
 	attack_power = 2,
 	name = "夏活普通空袭JU87C",
@@ -178520,7 +173470,6 @@ _G.pg.base.aircraft_template[32300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[33100] = {
 	attack_power = 2,
 	name = "夏活困难空袭BF109T",
@@ -178597,7 +173546,6 @@ _G.pg.base.aircraft_template[33100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[33101] = {
 	attack_power = 2,
 	name = "夏活困难空袭Me155A",
@@ -178674,7 +173622,6 @@ _G.pg.base.aircraft_template[33101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[33200] = {
 	attack_power = 2,
 	name = "夏活困难空袭qibolin",
@@ -178750,7 +173697,6 @@ _G.pg.base.aircraft_template[33200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[33300] = {
 	attack_power = 2,
 	name = "夏活困难空袭JU87C",
@@ -178826,7 +173772,6 @@ _G.pg.base.aircraft_template[33300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34001] = {
 	attack_power = 2,
 	name = "七夕活动F4F野猫",
@@ -178902,7 +173847,6 @@ _G.pg.base.aircraft_template[34001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34002] = {
 	attack_power = 2,
 	name = "七夕活动F6F地狱猫",
@@ -178978,7 +173922,6 @@ _G.pg.base.aircraft_template[34002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34003] = {
 	attack_power = 2,
 	name = "七夕活动SBD无畏",
@@ -179054,7 +173997,6 @@ _G.pg.base.aircraft_template[34003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34004] = {
 	attack_power = 2,
 	name = "七夕活动海喷火",
@@ -179130,7 +174072,6 @@ _G.pg.base.aircraft_template[34004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34005] = {
 	attack_power = 2,
 	name = "七夕活动剑鱼",
@@ -179206,7 +174147,6 @@ _G.pg.base.aircraft_template[34005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34006] = {
 	attack_power = 2,
 	name = "七夕活动零战二一",
@@ -179282,7 +174222,6 @@ _G.pg.base.aircraft_template[34006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34007] = {
 	attack_power = 2,
 	name = "七夕活动零战二一改",
@@ -179358,7 +174297,6 @@ _G.pg.base.aircraft_template[34007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34008] = {
 	attack_power = 2,
 	name = "七夕活动零战五二型",
@@ -179434,7 +174372,6 @@ _G.pg.base.aircraft_template[34008] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34009] = {
 	attack_power = 2,
 	name = "七夕活动97舰攻",
@@ -179510,7 +174447,6 @@ _G.pg.base.aircraft_template[34009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34010] = {
 	attack_power = 2,
 	name = "七夕活动1式陆攻",
@@ -179586,7 +174522,6 @@ _G.pg.base.aircraft_template[34010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34011] = {
 	attack_power = 2,
 	name = "七夕活动99式舰爆绿",
@@ -179662,7 +174597,6 @@ _G.pg.base.aircraft_template[34011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34012] = {
 	attack_power = 2,
 	name = "七夕活动96式陆攻",
@@ -179738,7 +174672,6 @@ _G.pg.base.aircraft_template[34012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34013] = {
 	attack_power = 2,
 	name = "七夕活动夏活普通空袭BF109T",
@@ -179815,7 +174748,6 @@ _G.pg.base.aircraft_template[34013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34014] = {
 	attack_power = 2,
 	name = "七夕活动夏活普通空袭Me155A",
@@ -179892,7 +174824,6 @@ _G.pg.base.aircraft_template[34014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34015] = {
 	attack_power = 2,
 	name = "七夕活动夏活普通空袭qibolin",
@@ -179968,7 +174899,6 @@ _G.pg.base.aircraft_template[34015] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[34016] = {
 	attack_power = 2,
 	name = "七夕活动夏活普通空袭JU87C",
@@ -180044,7 +174974,6 @@ _G.pg.base.aircraft_template[34016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000655] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 I",
@@ -180120,7 +175049,6 @@ _G.pg.base.aircraft_template[1000655] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000656] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 II",
@@ -180196,7 +175124,6 @@ _G.pg.base.aircraft_template[1000656] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000657] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 III",
@@ -180272,7 +175199,6 @@ _G.pg.base.aircraft_template[1000657] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000658] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 IV",
@@ -180348,7 +175274,6 @@ _G.pg.base.aircraft_template[1000658] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000659] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 V",
@@ -180424,7 +175349,6 @@ _G.pg.base.aircraft_template[1000659] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000660] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 I",
@@ -180501,7 +175425,6 @@ _G.pg.base.aircraft_template[1000660] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000661] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 II",
@@ -180578,7 +175501,6 @@ _G.pg.base.aircraft_template[1000661] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000662] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 III",
@@ -180655,7 +175577,6 @@ _G.pg.base.aircraft_template[1000662] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000663] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 IV",
@@ -180732,7 +175653,6 @@ _G.pg.base.aircraft_template[1000663] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000664] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 V",
@@ -180809,7 +175729,6 @@ _G.pg.base.aircraft_template[1000664] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000810] = {
 	attack_power = 2,
 	name = "【精英】执棋者 浮游炮机体 I",
@@ -180889,7 +175808,6 @@ _G.pg.base.aircraft_template[1000810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000811] = {
 	attack_power = 2,
 	name = "【精英】执棋者 浮游炮机体 II",
@@ -180969,7 +175887,6 @@ _G.pg.base.aircraft_template[1000811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000812] = {
 	attack_power = 2,
 	name = "【精英】执棋者 浮游炮机体 III",
@@ -181049,7 +175966,6 @@ _G.pg.base.aircraft_template[1000812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000813] = {
 	attack_power = 2,
 	name = "【精英】执棋者 浮游炮机体 IV",
@@ -181129,7 +176045,6 @@ _G.pg.base.aircraft_template[1000813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000814] = {
 	attack_power = 2,
 	name = "【精英】执棋者 浮游炮机体 V",
@@ -181209,7 +176124,6 @@ _G.pg.base.aircraft_template[1000814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000815] = {
 	attack_power = 2,
 	name = "【精英】执棋者 轰炸机T3 I",
@@ -181285,7 +176199,6 @@ _G.pg.base.aircraft_template[1000815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000816] = {
 	attack_power = 2,
 	name = "【精英】执棋者 轰炸机T3 II",
@@ -181361,7 +176274,6 @@ _G.pg.base.aircraft_template[1000816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000817] = {
 	attack_power = 2,
 	name = "【精英】执棋者 轰炸机T3 III",
@@ -181437,7 +176349,6 @@ _G.pg.base.aircraft_template[1000817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000818] = {
 	attack_power = 2,
 	name = "【精英】执棋者 轰炸机T3 IV",
@@ -181513,7 +176424,6 @@ _G.pg.base.aircraft_template[1000818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000819] = {
 	attack_power = 2,
 	name = "【精英】执棋者 轰炸机T3 V",
@@ -181589,7 +176499,6 @@ _G.pg.base.aircraft_template[1000819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000820] = {
 	attack_power = 2,
 	name = "【精英】执棋者 鱼雷机T3 I",
@@ -181665,7 +176574,6 @@ _G.pg.base.aircraft_template[1000820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000821] = {
 	attack_power = 2,
 	name = "【精英】执棋者 鱼雷机T3 II",
@@ -181741,7 +176649,6 @@ _G.pg.base.aircraft_template[1000821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000822] = {
 	attack_power = 2,
 	name = "【精英】执棋者 鱼雷机T3 III",
@@ -181817,7 +176724,6 @@ _G.pg.base.aircraft_template[1000822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000823] = {
 	attack_power = 2,
 	name = "【精英】执棋者 鱼雷机T3 IV",
@@ -181893,7 +176799,6 @@ _G.pg.base.aircraft_template[1000823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000824] = {
 	attack_power = 2,
 	name = "【精英】执棋者 鱼雷机T3 V",
@@ -181969,7 +176874,6 @@ _G.pg.base.aircraft_template[1000824] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000840] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 I",
@@ -182045,7 +176949,6 @@ _G.pg.base.aircraft_template[1000840] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000841] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 II",
@@ -182121,7 +177024,6 @@ _G.pg.base.aircraft_template[1000841] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000842] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 III",
@@ -182197,7 +177099,6 @@ _G.pg.base.aircraft_template[1000842] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000843] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 IV",
@@ -182273,7 +177174,6 @@ _G.pg.base.aircraft_template[1000843] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000844] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 V",
@@ -182349,7 +177249,6 @@ _G.pg.base.aircraft_template[1000844] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000845] = {
 	attack_power = 2,
 	name = "塞壬空袭-鱼雷机 I",
@@ -182425,7 +177324,6 @@ _G.pg.base.aircraft_template[1000845] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000846] = {
 	attack_power = 2,
 	name = "塞壬空袭-鱼雷机 II",
@@ -182501,7 +177399,6 @@ _G.pg.base.aircraft_template[1000846] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000847] = {
 	attack_power = 2,
 	name = "塞壬空袭-鱼雷机 III",
@@ -182577,7 +177474,6 @@ _G.pg.base.aircraft_template[1000847] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000848] = {
 	attack_power = 2,
 	name = "塞壬空袭-鱼雷机 IV",
@@ -182653,7 +177549,6 @@ _G.pg.base.aircraft_template[1000848] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000849] = {
 	attack_power = 2,
 	name = "塞壬空袭-鱼雷机 V",
@@ -182729,7 +177624,6 @@ _G.pg.base.aircraft_template[1000849] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000850] = {
 	attack_power = 2,
 	name = "塞壬空袭-战斗机 I",
@@ -182806,7 +177700,6 @@ _G.pg.base.aircraft_template[1000850] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000851] = {
 	attack_power = 2,
 	name = "塞壬空袭-战斗机 II",
@@ -182883,7 +177776,6 @@ _G.pg.base.aircraft_template[1000851] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000852] = {
 	attack_power = 2,
 	name = "塞壬空袭-战斗机 III",
@@ -182960,7 +177852,6 @@ _G.pg.base.aircraft_template[1000852] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000853] = {
 	attack_power = 2,
 	name = "塞壬空袭-战斗机 IV",
@@ -183037,7 +177928,6 @@ _G.pg.base.aircraft_template[1000853] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1000854] = {
 	attack_power = 2,
 	name = "塞壬空袭-战斗机 V",
@@ -183114,7 +178004,6 @@ _G.pg.base.aircraft_template[1000854] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001066] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型轰炸机T1 (飞机 I",
@@ -183190,7 +178079,6 @@ _G.pg.base.aircraft_template[1001066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001067] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型轰炸机T1 (飞机 II",
@@ -183266,7 +178154,6 @@ _G.pg.base.aircraft_template[1001067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001068] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型轰炸机T1 (飞机 III",
@@ -183342,7 +178229,6 @@ _G.pg.base.aircraft_template[1001068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001069] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型轰炸机T1 (飞机 IV",
@@ -183418,7 +178304,6 @@ _G.pg.base.aircraft_template[1001069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001070] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型轰炸机T1 (飞机 V",
@@ -183494,7 +178379,6 @@ _G.pg.base.aircraft_template[1001070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001071] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型战斗机T1 (飞机 I",
@@ -183571,7 +178455,6 @@ _G.pg.base.aircraft_template[1001071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001072] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型战斗机T1 (飞机 II",
@@ -183648,7 +178531,6 @@ _G.pg.base.aircraft_template[1001072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001073] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型战斗机T1 (飞机 III",
@@ -183725,7 +178607,6 @@ _G.pg.base.aircraft_template[1001073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001074] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型战斗机T1 (飞机 IV",
@@ -183802,7 +178683,6 @@ _G.pg.base.aircraft_template[1001074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001075] = {
 	attack_power = 2,
 	name = "量产型塞壬航母II型战斗机T1 (飞机 V",
@@ -183879,7 +178759,6 @@ _G.pg.base.aircraft_template[1001075] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001186] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 轰炸机T3 I",
@@ -183955,7 +178834,6 @@ _G.pg.base.aircraft_template[1001186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001187] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 轰炸机T3 II",
@@ -184031,7 +178909,6 @@ _G.pg.base.aircraft_template[1001187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001188] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 轰炸机T3 III",
@@ -184107,7 +178984,6 @@ _G.pg.base.aircraft_template[1001188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001189] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 轰炸机T3 IV",
@@ -184183,7 +179059,6 @@ _G.pg.base.aircraft_template[1001189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001190] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 轰炸机T3 V",
@@ -184259,7 +179134,6 @@ _G.pg.base.aircraft_template[1001190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001191] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 鱼雷机T3 I",
@@ -184335,7 +179209,6 @@ _G.pg.base.aircraft_template[1001191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001192] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 鱼雷机T3 II",
@@ -184411,7 +179284,6 @@ _G.pg.base.aircraft_template[1001192] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001193] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 鱼雷机T3 III",
@@ -184487,7 +179359,6 @@ _G.pg.base.aircraft_template[1001193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001194] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 鱼雷机T3 IV",
@@ -184563,7 +179434,6 @@ _G.pg.base.aircraft_template[1001194] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1001195] = {
 	attack_power = 2,
 	name = "【精英】执棋者II型 鱼雷机T3 V",
@@ -184639,7 +179509,6 @@ _G.pg.base.aircraft_template[1001195] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002066] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型轰炸机T1 (飞机 I",
@@ -184715,7 +179584,6 @@ _G.pg.base.aircraft_template[1002066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002067] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型轰炸机T1 (飞机 II",
@@ -184791,7 +179659,6 @@ _G.pg.base.aircraft_template[1002067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002068] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型轰炸机T1 (飞机 III",
@@ -184867,7 +179734,6 @@ _G.pg.base.aircraft_template[1002068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002069] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型轰炸机T1 (飞机 IV",
@@ -184943,7 +179809,6 @@ _G.pg.base.aircraft_template[1002069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002070] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型轰炸机T1 (飞机 V",
@@ -185019,7 +179884,6 @@ _G.pg.base.aircraft_template[1002070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002071] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型战斗机T1 (飞机 I",
@@ -185096,7 +179960,6 @@ _G.pg.base.aircraft_template[1002071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002072] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型战斗机T1 (飞机 II",
@@ -185173,7 +180036,6 @@ _G.pg.base.aircraft_template[1002072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002073] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型战斗机T1 (飞机 III",
@@ -185250,7 +180112,6 @@ _G.pg.base.aircraft_template[1002073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002074] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型战斗机T1 (飞机 IV",
@@ -185327,7 +180188,6 @@ _G.pg.base.aircraft_template[1002074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002075] = {
 	attack_power = 2,
 	name = "量产型塞壬航母III型战斗机T1 (飞机 V",
@@ -185404,7 +180264,6 @@ _G.pg.base.aircraft_template[1002075] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002186] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 轰炸机T3 I",
@@ -185480,7 +180339,6 @@ _G.pg.base.aircraft_template[1002186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002187] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 轰炸机T3 II",
@@ -185556,7 +180414,6 @@ _G.pg.base.aircraft_template[1002187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002188] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 轰炸机T3 III",
@@ -185632,7 +180489,6 @@ _G.pg.base.aircraft_template[1002188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002189] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 轰炸机T3 IV",
@@ -185708,7 +180564,6 @@ _G.pg.base.aircraft_template[1002189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002190] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 轰炸机T3 V",
@@ -185784,7 +180639,6 @@ _G.pg.base.aircraft_template[1002190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002191] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 鱼雷机T3 I",
@@ -185860,7 +180714,6 @@ _G.pg.base.aircraft_template[1002191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002192] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 鱼雷机T3 II",
@@ -185936,7 +180789,6 @@ _G.pg.base.aircraft_template[1002192] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002193] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 鱼雷机T3 III",
@@ -186012,7 +180864,6 @@ _G.pg.base.aircraft_template[1002193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002194] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 鱼雷机T3 IV",
@@ -186088,7 +180939,6 @@ _G.pg.base.aircraft_template[1002194] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1002195] = {
 	attack_power = 2,
 	name = "【精英】执棋者III型 鱼雷机T3 V",
@@ -186164,7 +181014,6 @@ _G.pg.base.aircraft_template[1002195] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003066] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母轰炸机T1 (飞机 I",
@@ -186240,7 +181089,6 @@ _G.pg.base.aircraft_template[1003066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003067] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母轰炸机T1 (飞机 II",
@@ -186316,7 +181164,6 @@ _G.pg.base.aircraft_template[1003067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003068] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母轰炸机T1 (飞机 III",
@@ -186392,7 +181239,6 @@ _G.pg.base.aircraft_template[1003068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003069] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母轰炸机T1 (飞机 IV",
@@ -186468,7 +181314,6 @@ _G.pg.base.aircraft_template[1003069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003070] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母轰炸机T1 (飞机 V",
@@ -186544,7 +181389,6 @@ _G.pg.base.aircraft_template[1003070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003071] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母战斗机T1 (飞机 I",
@@ -186621,7 +181465,6 @@ _G.pg.base.aircraft_template[1003071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003072] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母战斗机T1 (飞机 II",
@@ -186698,7 +181541,6 @@ _G.pg.base.aircraft_template[1003072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003073] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母战斗机T1 (飞机 III",
@@ -186775,7 +181617,6 @@ _G.pg.base.aircraft_template[1003073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003074] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母战斗机T1 (飞机 IV",
@@ -186852,7 +181693,6 @@ _G.pg.base.aircraft_template[1003074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003075] = {
 	attack_power = 2,
 	name = "【量产型】梦境航母战斗机T1 (飞机 V",
@@ -186929,7 +181769,6 @@ _G.pg.base.aircraft_template[1003075] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003186] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 轰炸机T3 I",
@@ -187005,7 +181844,6 @@ _G.pg.base.aircraft_template[1003186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003187] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 轰炸机T3 II",
@@ -187081,7 +181919,6 @@ _G.pg.base.aircraft_template[1003187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003188] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 轰炸机T3 III",
@@ -187157,7 +181994,6 @@ _G.pg.base.aircraft_template[1003188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003189] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 轰炸机T3 IV",
@@ -187233,7 +182069,6 @@ _G.pg.base.aircraft_template[1003189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003190] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 轰炸机T3 V",
@@ -187309,7 +182144,6 @@ _G.pg.base.aircraft_template[1003190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003191] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 鱼雷机T3 I",
@@ -187385,7 +182219,6 @@ _G.pg.base.aircraft_template[1003191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003192] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 鱼雷机T3 II",
@@ -187461,7 +182294,6 @@ _G.pg.base.aircraft_template[1003192] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003193] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 鱼雷机T3 III",
@@ -187537,7 +182369,6 @@ _G.pg.base.aircraft_template[1003193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003194] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 鱼雷机T3 IV",
@@ -187613,7 +182444,6 @@ _G.pg.base.aircraft_template[1003194] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003195] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 鱼雷机T3 V",
@@ -187689,7 +182519,6 @@ _G.pg.base.aircraft_template[1003195] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003286] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 浮游炮 I",
@@ -187768,7 +182597,6 @@ _G.pg.base.aircraft_template[1003286] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003287] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 浮游炮 II",
@@ -187847,7 +182675,6 @@ _G.pg.base.aircraft_template[1003287] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003288] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 浮游炮 III",
@@ -187926,7 +182753,6 @@ _G.pg.base.aircraft_template[1003288] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003289] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 浮游炮 IV",
@@ -188005,7 +182831,6 @@ _G.pg.base.aircraft_template[1003289] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1003290] = {
 	attack_power = 2,
 	name = "【精英】梦境执棋者 浮游炮 V",
@@ -188084,7 +182909,6 @@ _G.pg.base.aircraft_template[1003290] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004066] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型轰炸机T1 (飞机 I",
@@ -188160,7 +182984,6 @@ _G.pg.base.aircraft_template[1004066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004067] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型轰炸机T1 (飞机 II",
@@ -188236,7 +183059,6 @@ _G.pg.base.aircraft_template[1004067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004068] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型轰炸机T1 (飞机 III",
@@ -188312,7 +183134,6 @@ _G.pg.base.aircraft_template[1004068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004069] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型轰炸机T1 (飞机 IV",
@@ -188388,7 +183209,6 @@ _G.pg.base.aircraft_template[1004069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004070] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型轰炸机T1 (飞机 V",
@@ -188464,7 +183284,6 @@ _G.pg.base.aircraft_template[1004070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004071] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型战斗机T1 (飞机 I",
@@ -188541,7 +183360,6 @@ _G.pg.base.aircraft_template[1004071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004072] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型战斗机T1 (飞机 II",
@@ -188618,7 +183436,6 @@ _G.pg.base.aircraft_template[1004072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004073] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型战斗机T1 (飞机 III",
@@ -188695,7 +183512,6 @@ _G.pg.base.aircraft_template[1004073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004074] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型战斗机T1 (飞机 IV",
@@ -188772,7 +183588,6 @@ _G.pg.base.aircraft_template[1004074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004075] = {
 	attack_power = 2,
 	name = "量产型塞壬航母IV型战斗机T1 (飞机 V",
@@ -188849,7 +183664,6 @@ _G.pg.base.aircraft_template[1004075] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004186] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 轰炸机T3 I",
@@ -188925,7 +183739,6 @@ _G.pg.base.aircraft_template[1004186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004187] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 轰炸机T3 II",
@@ -189001,7 +183814,6 @@ _G.pg.base.aircraft_template[1004187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004188] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 轰炸机T3 III",
@@ -189077,7 +183889,6 @@ _G.pg.base.aircraft_template[1004188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004189] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 轰炸机T3 IV",
@@ -189153,7 +183964,6 @@ _G.pg.base.aircraft_template[1004189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004190] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 轰炸机T3 V",
@@ -189229,7 +184039,6 @@ _G.pg.base.aircraft_template[1004190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004191] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 鱼雷机T3 I",
@@ -189305,7 +184114,6 @@ _G.pg.base.aircraft_template[1004191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004192] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 鱼雷机T3 II",
@@ -189381,7 +184189,6 @@ _G.pg.base.aircraft_template[1004192] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004193] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 鱼雷机T3 III",
@@ -189457,7 +184264,6 @@ _G.pg.base.aircraft_template[1004193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004194] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 鱼雷机T3 IV",
@@ -189533,7 +184339,6 @@ _G.pg.base.aircraft_template[1004194] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1004195] = {
 	attack_power = 2,
 	name = "【精英】执棋者IV型 鱼雷机T3 V",
@@ -189609,7 +184414,6 @@ _G.pg.base.aircraft_template[1004195] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005655] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 I",
@@ -189685,7 +184489,6 @@ _G.pg.base.aircraft_template[1005655] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005656] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 II",
@@ -189761,7 +184564,6 @@ _G.pg.base.aircraft_template[1005656] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005657] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 III",
@@ -189837,7 +184639,6 @@ _G.pg.base.aircraft_template[1005657] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005658] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 IV",
@@ -189913,7 +184714,6 @@ _G.pg.base.aircraft_template[1005658] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005659] = {
 	attack_power = 2,
 	name = "量产型塞壬航母轰炸机T1 (飞机 V",
@@ -189989,7 +184789,6 @@ _G.pg.base.aircraft_template[1005659] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005660] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 I",
@@ -190066,7 +184865,6 @@ _G.pg.base.aircraft_template[1005660] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005661] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 II",
@@ -190143,7 +184941,6 @@ _G.pg.base.aircraft_template[1005661] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005662] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 III",
@@ -190220,7 +185017,6 @@ _G.pg.base.aircraft_template[1005662] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005663] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 IV",
@@ -190297,7 +185093,6 @@ _G.pg.base.aircraft_template[1005663] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1005664] = {
 	attack_power = 2,
 	name = "量产型塞壬航母战斗机T1 (飞机 V",
@@ -190374,7 +185169,6 @@ _G.pg.base.aircraft_template[1005664] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006010] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-中小型舰船悬浮无人机 I",
@@ -190453,7 +185247,6 @@ _G.pg.base.aircraft_template[1006010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006011] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-中小型舰船悬浮无人机 II",
@@ -190532,7 +185325,6 @@ _G.pg.base.aircraft_template[1006011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006012] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-中小型舰船悬浮无人机 III",
@@ -190611,7 +185403,6 @@ _G.pg.base.aircraft_template[1006012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006013] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-中小型舰船悬浮无人机 IV",
@@ -190690,7 +185481,6 @@ _G.pg.base.aircraft_template[1006013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006014] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-中小型舰船悬浮无人机 V",
@@ -190769,7 +185559,6 @@ _G.pg.base.aircraft_template[1006014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006035] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-大中型舰船悬浮无人机 I",
@@ -190850,7 +185639,6 @@ _G.pg.base.aircraft_template[1006035] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006036] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-大中型舰船悬浮无人机 II",
@@ -190931,7 +185719,6 @@ _G.pg.base.aircraft_template[1006036] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006037] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-大中型舰船悬浮无人机 III",
@@ -191012,7 +185799,6 @@ _G.pg.base.aircraft_template[1006037] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006038] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-大中型舰船悬浮无人机 IV",
@@ -191093,7 +185879,6 @@ _G.pg.base.aircraft_template[1006038] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006039] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-大中型舰船悬浮无人机 V",
@@ -191174,7 +185959,6 @@ _G.pg.base.aircraft_template[1006039] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006110] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-快速冲底自爆无人机 I",
@@ -191248,7 +186032,6 @@ _G.pg.base.aircraft_template[1006110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006111] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-快速冲底自爆无人机 II",
@@ -191322,7 +186105,6 @@ _G.pg.base.aircraft_template[1006111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006112] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-快速冲底自爆无人机 III",
@@ -191396,7 +186178,6 @@ _G.pg.base.aircraft_template[1006112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006113] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-快速冲底自爆无人机 IV",
@@ -191470,7 +186251,6 @@ _G.pg.base.aircraft_template[1006113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006114] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-快速冲底自爆无人机 V",
@@ -191544,7 +186324,6 @@ _G.pg.base.aircraft_template[1006114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006115] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-喷气式舰载机 I",
@@ -191621,7 +186400,6 @@ _G.pg.base.aircraft_template[1006115] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006116] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-喷气式舰载机 II",
@@ -191698,7 +186476,6 @@ _G.pg.base.aircraft_template[1006116] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006117] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-喷气式舰载机 III",
@@ -191775,7 +186552,6 @@ _G.pg.base.aircraft_template[1006117] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006118] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-喷气式舰载机 IV",
@@ -191852,7 +186628,6 @@ _G.pg.base.aircraft_template[1006118] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006119] = {
 	attack_power = 2,
 	name = "【量产型】大洋联邦-喷气式舰载机 V",
@@ -191929,7 +186704,6 @@ _G.pg.base.aircraft_template[1006119] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006200] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-大中型舰船悬浮无人机 I",
@@ -192010,7 +186784,6 @@ _G.pg.base.aircraft_template[1006200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006201] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-大中型舰船悬浮无人机 II",
@@ -192091,7 +186864,6 @@ _G.pg.base.aircraft_template[1006201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006202] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-大中型舰船悬浮无人机 III",
@@ -192172,7 +186944,6 @@ _G.pg.base.aircraft_template[1006202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006203] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-大中型舰船悬浮无人机 IV",
@@ -192253,7 +187024,6 @@ _G.pg.base.aircraft_template[1006203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006204] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-大中型舰船悬浮无人机 V",
@@ -192334,7 +187104,6 @@ _G.pg.base.aircraft_template[1006204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006235] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-快速冲底自爆无人机 I",
@@ -192408,7 +187177,6 @@ _G.pg.base.aircraft_template[1006235] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006236] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-快速冲底自爆无人机 II",
@@ -192482,7 +187250,6 @@ _G.pg.base.aircraft_template[1006236] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006237] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-快速冲底自爆无人机 III",
@@ -192556,7 +187323,6 @@ _G.pg.base.aircraft_template[1006237] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006238] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-快速冲底自爆无人机 IV",
@@ -192630,7 +187396,6 @@ _G.pg.base.aircraft_template[1006238] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006239] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-快速冲底自爆无人机 V",
@@ -192704,7 +187469,6 @@ _G.pg.base.aircraft_template[1006239] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006240] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-喷气式舰载机 I",
@@ -192781,7 +187545,6 @@ _G.pg.base.aircraft_template[1006240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006241] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-喷气式舰载机 II",
@@ -192858,7 +187621,6 @@ _G.pg.base.aircraft_template[1006241] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006242] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-喷气式舰载机 III",
@@ -192935,7 +187697,6 @@ _G.pg.base.aircraft_template[1006242] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006243] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-喷气式舰载机 IV",
@@ -193012,7 +187773,6 @@ _G.pg.base.aircraft_template[1006243] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1006244] = {
 	attack_power = 2,
 	name = "【精英】大洋联邦-喷气式舰载机 V",
@@ -193089,7 +187849,6 @@ _G.pg.base.aircraft_template[1006244] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007080] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母战斗机 Lv1",
@@ -193166,7 +187925,6 @@ _G.pg.base.aircraft_template[1007080] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007081] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母战斗机 Lv2",
@@ -193243,7 +188001,6 @@ _G.pg.base.aircraft_template[1007081] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007082] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母战斗机 Lv3",
@@ -193320,7 +188077,6 @@ _G.pg.base.aircraft_template[1007082] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007083] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母战斗机 Lv4",
@@ -193397,7 +188153,6 @@ _G.pg.base.aircraft_template[1007083] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007084] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母战斗机 Lv5",
@@ -193474,7 +188229,6 @@ _G.pg.base.aircraft_template[1007084] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007085] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母综合无人机 Lv1",
@@ -193551,7 +188305,6 @@ _G.pg.base.aircraft_template[1007085] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007086] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母综合无人机 Lv2",
@@ -193628,7 +188381,6 @@ _G.pg.base.aircraft_template[1007086] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007087] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母综合无人机 Lv3",
@@ -193705,7 +188457,6 @@ _G.pg.base.aircraft_template[1007087] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007088] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母综合无人机 Lv4",
@@ -193782,7 +188533,6 @@ _G.pg.base.aircraft_template[1007088] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007089] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-航母综合无人机 Lv5",
@@ -193859,7 +188609,6 @@ _G.pg.base.aircraft_template[1007089] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007135] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-维修中心无人机（源源不断）Lv1",
@@ -193939,7 +188688,6 @@ _G.pg.base.aircraft_template[1007135] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007136] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-维修中心无人机（源源不断）Lv2",
@@ -194019,7 +188767,6 @@ _G.pg.base.aircraft_template[1007136] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007137] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-维修中心无人机（源源不断）Lv3",
@@ -194099,7 +188846,6 @@ _G.pg.base.aircraft_template[1007137] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007138] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-维修中心无人机（源源不断）Lv4",
@@ -194179,7 +188925,6 @@ _G.pg.base.aircraft_template[1007138] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1007139] = {
 	attack_power = 2,
 	name = "【量产型】联合防卫部队-维修中心无人机（源源不断）Lv5",
@@ -194259,7 +189004,6 @@ _G.pg.base.aircraft_template[1007139] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100765] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机I（大世界通用飞机）",
@@ -194336,7 +189080,6 @@ _G.pg.base.aircraft_template[1100765] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100766] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机II",
@@ -194413,7 +189156,6 @@ _G.pg.base.aircraft_template[1100766] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100767] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机III",
@@ -194490,7 +189232,6 @@ _G.pg.base.aircraft_template[1100767] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100768] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机IV",
@@ -194567,7 +189308,6 @@ _G.pg.base.aircraft_template[1100768] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100769] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机V",
@@ -194644,7 +189384,6 @@ _G.pg.base.aircraft_template[1100769] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100770] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机I",
@@ -194720,7 +189459,6 @@ _G.pg.base.aircraft_template[1100770] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100771] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机II",
@@ -194796,7 +189534,6 @@ _G.pg.base.aircraft_template[1100771] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100772] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机III",
@@ -194872,7 +189609,6 @@ _G.pg.base.aircraft_template[1100772] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100773] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机IV",
@@ -194948,7 +189684,6 @@ _G.pg.base.aircraft_template[1100773] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100774] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机V",
@@ -195024,7 +189759,6 @@ _G.pg.base.aircraft_template[1100774] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100775] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机I",
@@ -195100,7 +189834,6 @@ _G.pg.base.aircraft_template[1100775] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100776] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机II",
@@ -195176,7 +189909,6 @@ _G.pg.base.aircraft_template[1100776] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100777] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机III",
@@ -195252,7 +189984,6 @@ _G.pg.base.aircraft_template[1100777] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100778] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机IV",
@@ -195328,7 +190059,6 @@ _G.pg.base.aircraft_template[1100778] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100779] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机V",
@@ -195404,7 +190134,6 @@ _G.pg.base.aircraft_template[1100779] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100780] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机I",
@@ -195481,7 +190210,6 @@ _G.pg.base.aircraft_template[1100780] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100781] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机II",
@@ -195558,7 +190286,6 @@ _G.pg.base.aircraft_template[1100781] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100782] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机III",
@@ -195635,7 +190362,6 @@ _G.pg.base.aircraft_template[1100782] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100783] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机IV",
@@ -195712,7 +190438,6 @@ _G.pg.base.aircraft_template[1100783] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100784] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机V",
@@ -195789,7 +190514,6 @@ _G.pg.base.aircraft_template[1100784] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100785] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机I",
@@ -195865,7 +190589,6 @@ _G.pg.base.aircraft_template[1100785] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100786] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机II",
@@ -195941,7 +190664,6 @@ _G.pg.base.aircraft_template[1100786] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100787] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机III",
@@ -196017,7 +190739,6 @@ _G.pg.base.aircraft_template[1100787] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100788] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机IV",
@@ -196093,7 +190814,6 @@ _G.pg.base.aircraft_template[1100788] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100789] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机V",
@@ -196169,7 +190889,6 @@ _G.pg.base.aircraft_template[1100789] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100790] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机I",
@@ -196245,7 +190964,6 @@ _G.pg.base.aircraft_template[1100790] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100791] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机II",
@@ -196321,7 +191039,6 @@ _G.pg.base.aircraft_template[1100791] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100792] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机III",
@@ -196397,7 +191114,6 @@ _G.pg.base.aircraft_template[1100792] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100793] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机IV",
@@ -196473,7 +191189,6 @@ _G.pg.base.aircraft_template[1100793] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100794] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机V",
@@ -196549,7 +191264,6 @@ _G.pg.base.aircraft_template[1100794] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100795] = {
 	attack_power = 2,
 	name = "日系舰载战斗机I",
@@ -196626,7 +191340,6 @@ _G.pg.base.aircraft_template[1100795] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100796] = {
 	attack_power = 2,
 	name = "日系舰载战斗机II",
@@ -196703,7 +191416,6 @@ _G.pg.base.aircraft_template[1100796] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100797] = {
 	attack_power = 2,
 	name = "日系舰载战斗机III",
@@ -196780,7 +191492,6 @@ _G.pg.base.aircraft_template[1100797] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100798] = {
 	attack_power = 2,
 	name = "日系舰载战斗机IV",
@@ -196857,7 +191568,6 @@ _G.pg.base.aircraft_template[1100798] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100799] = {
 	attack_power = 2,
 	name = "日系舰载战斗机V",
@@ -196934,7 +191644,6 @@ _G.pg.base.aircraft_template[1100799] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100800] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机I",
@@ -197010,7 +191719,6 @@ _G.pg.base.aircraft_template[1100800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100801] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机II",
@@ -197086,7 +191794,6 @@ _G.pg.base.aircraft_template[1100801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100802] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机III",
@@ -197162,7 +191869,6 @@ _G.pg.base.aircraft_template[1100802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100803] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机IV",
@@ -197238,7 +191944,6 @@ _G.pg.base.aircraft_template[1100803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100804] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机V",
@@ -197314,7 +192019,6 @@ _G.pg.base.aircraft_template[1100804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100805] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机I",
@@ -197390,7 +192094,6 @@ _G.pg.base.aircraft_template[1100805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100806] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机II",
@@ -197466,7 +192169,6 @@ _G.pg.base.aircraft_template[1100806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100807] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机III",
@@ -197542,7 +192244,6 @@ _G.pg.base.aircraft_template[1100807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100808] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机IV",
@@ -197618,7 +192319,6 @@ _G.pg.base.aircraft_template[1100808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100809] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机V",
@@ -197694,7 +192394,6 @@ _G.pg.base.aircraft_template[1100809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100810] = {
 	attack_power = 2,
 	name = "德系舰载战斗机I",
@@ -197771,7 +192470,6 @@ _G.pg.base.aircraft_template[1100810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100811] = {
 	attack_power = 2,
 	name = "德系舰载战斗机II",
@@ -197848,7 +192546,6 @@ _G.pg.base.aircraft_template[1100811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100812] = {
 	attack_power = 2,
 	name = "德系舰载战斗机III",
@@ -197925,7 +192622,6 @@ _G.pg.base.aircraft_template[1100812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100813] = {
 	attack_power = 2,
 	name = "德系舰载战斗机IV",
@@ -198002,7 +192698,6 @@ _G.pg.base.aircraft_template[1100813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100814] = {
 	attack_power = 2,
 	name = "德系舰载战斗机V",
@@ -198079,7 +192774,6 @@ _G.pg.base.aircraft_template[1100814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100815] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机I",
@@ -198155,7 +192849,6 @@ _G.pg.base.aircraft_template[1100815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100816] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机II",
@@ -198231,7 +192924,6 @@ _G.pg.base.aircraft_template[1100816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100817] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机III",
@@ -198307,7 +192999,6 @@ _G.pg.base.aircraft_template[1100817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100818] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机IV",
@@ -198383,7 +193074,6 @@ _G.pg.base.aircraft_template[1100818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100819] = {
 	attack_power = 2,
 	name = "德系舰载鱼雷机V",
@@ -198459,7 +193149,6 @@ _G.pg.base.aircraft_template[1100819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100820] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机I",
@@ -198535,7 +193224,6 @@ _G.pg.base.aircraft_template[1100820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100821] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机II",
@@ -198611,7 +193299,6 @@ _G.pg.base.aircraft_template[1100821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100822] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机III",
@@ -198687,7 +193374,6 @@ _G.pg.base.aircraft_template[1100822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100823] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机IV",
@@ -198763,7 +193449,6 @@ _G.pg.base.aircraft_template[1100823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100824] = {
 	attack_power = 2,
 	name = "德系舰载轰炸机V",
@@ -198839,7 +193524,6 @@ _G.pg.base.aircraft_template[1100824] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100830] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机I",
@@ -198915,7 +193599,6 @@ _G.pg.base.aircraft_template[1100830] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100831] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机II",
@@ -198991,7 +193674,6 @@ _G.pg.base.aircraft_template[1100831] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100832] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机III",
@@ -199067,7 +193749,6 @@ _G.pg.base.aircraft_template[1100832] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100833] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机IV",
@@ -199143,7 +193824,6 @@ _G.pg.base.aircraft_template[1100833] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100834] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机V",
@@ -199219,7 +193899,6 @@ _G.pg.base.aircraft_template[1100834] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100835] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机I",
@@ -199295,7 +193974,6 @@ _G.pg.base.aircraft_template[1100835] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100836] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机II",
@@ -199371,7 +194049,6 @@ _G.pg.base.aircraft_template[1100836] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100837] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机III",
@@ -199447,7 +194124,6 @@ _G.pg.base.aircraft_template[1100837] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100838] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机IV",
@@ -199523,7 +194199,6 @@ _G.pg.base.aircraft_template[1100838] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100839] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机V",
@@ -199599,7 +194274,6 @@ _G.pg.base.aircraft_template[1100839] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100840] = {
 	attack_power = 2,
 	name = "日系空袭战斗机I",
@@ -199676,7 +194350,6 @@ _G.pg.base.aircraft_template[1100840] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100841] = {
 	attack_power = 2,
 	name = "日系空袭战斗机II",
@@ -199753,7 +194426,6 @@ _G.pg.base.aircraft_template[1100841] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100842] = {
 	attack_power = 2,
 	name = "日系空袭战斗机III",
@@ -199830,7 +194502,6 @@ _G.pg.base.aircraft_template[1100842] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100843] = {
 	attack_power = 2,
 	name = "日系空袭战斗机IV",
@@ -199907,7 +194578,6 @@ _G.pg.base.aircraft_template[1100843] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100844] = {
 	attack_power = 2,
 	name = "日系空袭战斗机V",
@@ -199984,7 +194654,6 @@ _G.pg.base.aircraft_template[1100844] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100850] = {
 	attack_power = 2,
 	name = "日系舰载战斗机I",
@@ -200061,7 +194730,6 @@ _G.pg.base.aircraft_template[1100850] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100851] = {
 	attack_power = 2,
 	name = "日系舰载战斗机II",
@@ -200138,7 +194806,6 @@ _G.pg.base.aircraft_template[1100851] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100852] = {
 	attack_power = 2,
 	name = "日系舰载战斗机III",
@@ -200215,7 +194882,6 @@ _G.pg.base.aircraft_template[1100852] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100853] = {
 	attack_power = 2,
 	name = "日系舰载战斗机IV",
@@ -200292,7 +194958,6 @@ _G.pg.base.aircraft_template[1100853] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100854] = {
 	attack_power = 2,
 	name = "日系舰载战斗机V",
@@ -200369,7 +195034,6 @@ _G.pg.base.aircraft_template[1100854] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100855] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机I",
@@ -200445,7 +195109,6 @@ _G.pg.base.aircraft_template[1100855] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100856] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机II",
@@ -200521,7 +195184,6 @@ _G.pg.base.aircraft_template[1100856] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100857] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机III",
@@ -200597,7 +195259,6 @@ _G.pg.base.aircraft_template[1100857] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100858] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机IV",
@@ -200673,7 +195334,6 @@ _G.pg.base.aircraft_template[1100858] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100859] = {
 	attack_power = 2,
 	name = "日系舰载鱼雷机V",
@@ -200749,7 +195409,6 @@ _G.pg.base.aircraft_template[1100859] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100860] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机I",
@@ -200825,7 +195484,6 @@ _G.pg.base.aircraft_template[1100860] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100861] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机II",
@@ -200901,7 +195559,6 @@ _G.pg.base.aircraft_template[1100861] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100862] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机III",
@@ -200977,7 +195634,6 @@ _G.pg.base.aircraft_template[1100862] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100863] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机IV",
@@ -201053,7 +195709,6 @@ _G.pg.base.aircraft_template[1100863] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100864] = {
 	attack_power = 2,
 	name = "日系舰载轰炸机V",
@@ -201129,7 +195784,6 @@ _G.pg.base.aircraft_template[1100864] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100865] = {
 	attack_power = 2,
 	name = "英系空袭轰炸机I",
@@ -201205,7 +195859,6 @@ _G.pg.base.aircraft_template[1100865] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100866] = {
 	attack_power = 2,
 	name = "英系空袭轰炸机II",
@@ -201281,7 +195934,6 @@ _G.pg.base.aircraft_template[1100866] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100867] = {
 	attack_power = 2,
 	name = "英系空袭轰炸机III",
@@ -201357,7 +196009,6 @@ _G.pg.base.aircraft_template[1100867] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100868] = {
 	attack_power = 2,
 	name = "英系空袭轰炸机IV",
@@ -201433,7 +196084,6 @@ _G.pg.base.aircraft_template[1100868] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100869] = {
 	attack_power = 2,
 	name = "英系空袭轰炸机V",
@@ -201509,7 +196159,6 @@ _G.pg.base.aircraft_template[1100869] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100870] = {
 	attack_power = 2,
 	name = "英系空袭鱼雷机I",
@@ -201585,7 +196234,6 @@ _G.pg.base.aircraft_template[1100870] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100871] = {
 	attack_power = 2,
 	name = "英系空袭鱼雷机II",
@@ -201661,7 +196309,6 @@ _G.pg.base.aircraft_template[1100871] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100872] = {
 	attack_power = 2,
 	name = "英系空袭鱼雷机III",
@@ -201737,7 +196384,6 @@ _G.pg.base.aircraft_template[1100872] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100873] = {
 	attack_power = 2,
 	name = "英系空袭鱼雷机IV",
@@ -201813,7 +196459,6 @@ _G.pg.base.aircraft_template[1100873] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100874] = {
 	attack_power = 2,
 	name = "英系空袭鱼雷机V",
@@ -201889,7 +196534,6 @@ _G.pg.base.aircraft_template[1100874] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100875] = {
 	attack_power = 2,
 	name = "英系空袭战斗机I",
@@ -201966,7 +196610,6 @@ _G.pg.base.aircraft_template[1100875] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100876] = {
 	attack_power = 2,
 	name = "英系空袭战斗机II",
@@ -202043,7 +196686,6 @@ _G.pg.base.aircraft_template[1100876] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100877] = {
 	attack_power = 2,
 	name = "英系空袭战斗机III",
@@ -202120,7 +196762,6 @@ _G.pg.base.aircraft_template[1100877] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100878] = {
 	attack_power = 2,
 	name = "英系空袭战斗机IV",
@@ -202197,7 +196838,6 @@ _G.pg.base.aircraft_template[1100878] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100879] = {
 	attack_power = 2,
 	name = "英系空袭战斗机V",
@@ -202274,7 +196914,6 @@ _G.pg.base.aircraft_template[1100879] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100885] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机I",
@@ -202351,7 +196990,6 @@ _G.pg.base.aircraft_template[1100885] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100886] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机II",
@@ -202428,7 +197066,6 @@ _G.pg.base.aircraft_template[1100886] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100887] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机III",
@@ -202505,7 +197142,6 @@ _G.pg.base.aircraft_template[1100887] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100888] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机IV",
@@ -202582,7 +197218,6 @@ _G.pg.base.aircraft_template[1100888] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100889] = {
 	attack_power = 2,
 	name = "英系舰载-战斗机V",
@@ -202659,7 +197294,6 @@ _G.pg.base.aircraft_template[1100889] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100890] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机I",
@@ -202735,7 +197369,6 @@ _G.pg.base.aircraft_template[1100890] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100891] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机II",
@@ -202811,7 +197444,6 @@ _G.pg.base.aircraft_template[1100891] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100892] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机III",
@@ -202887,7 +197519,6 @@ _G.pg.base.aircraft_template[1100892] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100893] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机IV",
@@ -202963,7 +197594,6 @@ _G.pg.base.aircraft_template[1100893] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100894] = {
 	attack_power = 2,
 	name = "英系舰载-鱼雷机V",
@@ -203039,7 +197669,6 @@ _G.pg.base.aircraft_template[1100894] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100895] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机I",
@@ -203115,7 +197744,6 @@ _G.pg.base.aircraft_template[1100895] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100896] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机II",
@@ -203191,7 +197819,6 @@ _G.pg.base.aircraft_template[1100896] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100897] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机III",
@@ -203267,7 +197894,6 @@ _G.pg.base.aircraft_template[1100897] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100898] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机IV",
@@ -203343,7 +197969,6 @@ _G.pg.base.aircraft_template[1100898] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100899] = {
 	attack_power = 2,
 	name = "英系舰载-轰炸机V",
@@ -203419,7 +198044,6 @@ _G.pg.base.aircraft_template[1100899] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100900] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机I",
@@ -203496,7 +198120,6 @@ _G.pg.base.aircraft_template[1100900] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100901] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机II",
@@ -203573,7 +198196,6 @@ _G.pg.base.aircraft_template[1100901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100902] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机III",
@@ -203650,7 +198272,6 @@ _G.pg.base.aircraft_template[1100902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100903] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机IV",
@@ -203727,7 +198348,6 @@ _G.pg.base.aircraft_template[1100903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100904] = {
 	attack_power = 2,
 	name = "美系舰载-战斗机V",
@@ -203804,7 +198424,6 @@ _G.pg.base.aircraft_template[1100904] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100905] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机I",
@@ -203880,7 +198499,6 @@ _G.pg.base.aircraft_template[1100905] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100906] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机II",
@@ -203956,7 +198574,6 @@ _G.pg.base.aircraft_template[1100906] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100907] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机III",
@@ -204032,7 +198649,6 @@ _G.pg.base.aircraft_template[1100907] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100908] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机IV",
@@ -204108,7 +198724,6 @@ _G.pg.base.aircraft_template[1100908] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100909] = {
 	attack_power = 2,
 	name = "美系舰载-鱼雷机V",
@@ -204184,7 +198799,6 @@ _G.pg.base.aircraft_template[1100909] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100910] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机I",
@@ -204260,7 +198874,6 @@ _G.pg.base.aircraft_template[1100910] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100911] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机II",
@@ -204336,7 +198949,6 @@ _G.pg.base.aircraft_template[1100911] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100912] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机III",
@@ -204412,7 +199024,6 @@ _G.pg.base.aircraft_template[1100912] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100913] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机IV",
@@ -204488,7 +199099,6 @@ _G.pg.base.aircraft_template[1100913] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100914] = {
 	attack_power = 2,
 	name = "美系舰载-轰炸机V",
@@ -204564,7 +199174,6 @@ _G.pg.base.aircraft_template[1100914] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100925] = {
 	attack_power = 2,
 	name = "法系舰载-战斗机I",
@@ -204641,7 +199250,6 @@ _G.pg.base.aircraft_template[1100925] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100926] = {
 	attack_power = 2,
 	name = "法系舰载-战斗机II",
@@ -204718,7 +199326,6 @@ _G.pg.base.aircraft_template[1100926] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100927] = {
 	attack_power = 2,
 	name = "法系舰载-战斗机III",
@@ -204795,7 +199402,6 @@ _G.pg.base.aircraft_template[1100927] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100928] = {
 	attack_power = 2,
 	name = "法系舰载-战斗机IV",
@@ -204872,7 +199478,6 @@ _G.pg.base.aircraft_template[1100928] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100929] = {
 	attack_power = 2,
 	name = "法系舰载-战斗机V",
@@ -204949,7 +199554,6 @@ _G.pg.base.aircraft_template[1100929] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100930] = {
 	attack_power = 2,
 	name = "法系舰载-鱼雷机I",
@@ -205025,7 +199629,6 @@ _G.pg.base.aircraft_template[1100930] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100931] = {
 	attack_power = 2,
 	name = "法系舰载-鱼雷机II",
@@ -205101,7 +199704,6 @@ _G.pg.base.aircraft_template[1100931] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100932] = {
 	attack_power = 2,
 	name = "法系舰载-鱼雷机III",
@@ -205177,7 +199779,6 @@ _G.pg.base.aircraft_template[1100932] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100933] = {
 	attack_power = 2,
 	name = "法系舰载-鱼雷机IV",
@@ -205253,7 +199854,6 @@ _G.pg.base.aircraft_template[1100933] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100934] = {
 	attack_power = 2,
 	name = "法系舰载-鱼雷机V",
@@ -205329,7 +199929,6 @@ _G.pg.base.aircraft_template[1100934] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100935] = {
 	attack_power = 2,
 	name = "法系舰载-轰炸机I",
@@ -205405,7 +200004,6 @@ _G.pg.base.aircraft_template[1100935] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100936] = {
 	attack_power = 2,
 	name = "法系舰载-轰炸机II",
@@ -205481,7 +200079,6 @@ _G.pg.base.aircraft_template[1100936] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100937] = {
 	attack_power = 2,
 	name = "法系舰载-轰炸机III",
@@ -205557,7 +200154,6 @@ _G.pg.base.aircraft_template[1100937] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100938] = {
 	attack_power = 2,
 	name = "法系舰载-轰炸机IV",
@@ -205633,7 +200229,6 @@ _G.pg.base.aircraft_template[1100938] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100939] = {
 	attack_power = 2,
 	name = "法系舰载-轰炸机V",
@@ -205709,7 +200304,6 @@ _G.pg.base.aircraft_template[1100939] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100955] = {
 	attack_power = 2,
 	name = "德系舰载-战斗机I",
@@ -205786,7 +200380,6 @@ _G.pg.base.aircraft_template[1100955] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100956] = {
 	attack_power = 2,
 	name = "德系舰载-战斗机II",
@@ -205863,7 +200456,6 @@ _G.pg.base.aircraft_template[1100956] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100957] = {
 	attack_power = 2,
 	name = "德系舰载-战斗机III",
@@ -205940,7 +200532,6 @@ _G.pg.base.aircraft_template[1100957] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100958] = {
 	attack_power = 2,
 	name = "德系舰载-战斗机IV",
@@ -206017,7 +200608,6 @@ _G.pg.base.aircraft_template[1100958] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100959] = {
 	attack_power = 2,
 	name = "德系舰载-战斗机V",
@@ -206094,7 +200684,6 @@ _G.pg.base.aircraft_template[1100959] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100960] = {
 	attack_power = 2,
 	name = "德系舰载-鱼雷机I",
@@ -206170,7 +200759,6 @@ _G.pg.base.aircraft_template[1100960] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100961] = {
 	attack_power = 2,
 	name = "德系舰载-鱼雷机II",
@@ -206246,7 +200834,6 @@ _G.pg.base.aircraft_template[1100961] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100962] = {
 	attack_power = 2,
 	name = "德系舰载-鱼雷机III",
@@ -206322,7 +200909,6 @@ _G.pg.base.aircraft_template[1100962] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100963] = {
 	attack_power = 2,
 	name = "德系舰载-鱼雷机IV",
@@ -206398,7 +200984,6 @@ _G.pg.base.aircraft_template[1100963] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100964] = {
 	attack_power = 2,
 	name = "德系舰载-鱼雷机V",
@@ -206474,7 +201059,6 @@ _G.pg.base.aircraft_template[1100964] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100965] = {
 	attack_power = 2,
 	name = "德系舰载-轰炸机I",
@@ -206550,7 +201134,6 @@ _G.pg.base.aircraft_template[1100965] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100966] = {
 	attack_power = 2,
 	name = "德系舰载-轰炸机II",
@@ -206626,7 +201209,6 @@ _G.pg.base.aircraft_template[1100966] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100967] = {
 	attack_power = 2,
 	name = "德系舰载-轰炸机III",
@@ -206702,7 +201284,6 @@ _G.pg.base.aircraft_template[1100967] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100968] = {
 	attack_power = 2,
 	name = "德系舰载-轰炸机IV",
@@ -206778,7 +201359,6 @@ _G.pg.base.aircraft_template[1100968] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1100969] = {
 	attack_power = 2,
 	name = "德系舰载-轰炸机V",
@@ -206854,7 +201434,6 @@ _G.pg.base.aircraft_template[1100969] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101010] = {
 	attack_power = 2,
 	name = "德系陆航轰炸机I",
@@ -206930,7 +201509,6 @@ _G.pg.base.aircraft_template[1101010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101011] = {
 	attack_power = 2,
 	name = "德系陆航轰炸机II",
@@ -207006,7 +201584,6 @@ _G.pg.base.aircraft_template[1101011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101012] = {
 	attack_power = 2,
 	name = "德系陆航轰炸机III",
@@ -207082,7 +201659,6 @@ _G.pg.base.aircraft_template[1101012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101013] = {
 	attack_power = 2,
 	name = "德系陆航轰炸机IV",
@@ -207158,7 +201734,6 @@ _G.pg.base.aircraft_template[1101013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101014] = {
 	attack_power = 2,
 	name = "德系陆航轰炸机V",
@@ -207234,7 +201809,6 @@ _G.pg.base.aircraft_template[1101014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101020] = {
 	attack_power = 2,
 	name = "新日系舰载轰炸机——高爆弹药1",
@@ -207310,7 +201884,6 @@ _G.pg.base.aircraft_template[1101020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101021] = {
 	attack_power = 2,
 	name = "新日系舰载轰炸机——高爆弹药2",
@@ -207386,7 +201959,6 @@ _G.pg.base.aircraft_template[1101021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101022] = {
 	attack_power = 2,
 	name = "新日系舰载轰炸机——高爆弹药3",
@@ -207462,7 +202034,6 @@ _G.pg.base.aircraft_template[1101022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101023] = {
 	attack_power = 2,
 	name = "新日系舰载轰炸机——高爆弹药4",
@@ -207538,7 +202109,6 @@ _G.pg.base.aircraft_template[1101023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101024] = {
 	attack_power = 2,
 	name = "新日系舰载轰炸机——高爆弹药5",
@@ -207614,112 +202184,96 @@ _G.pg.base.aircraft_template[1101024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101125] = {
 	id = 1101125,
 	name = "【精英】Q版英系舰载战斗机1",
 	spawn_brownian = 1,
 	base = 1100885
 }
-
 _G.pg.base.aircraft_template[1101126] = {
 	id = 1101126,
 	name = "【精英】Q版英系舰载战斗机2",
 	spawn_brownian = 1,
 	base = 1100886
 }
-
 _G.pg.base.aircraft_template[1101127] = {
 	id = 1101127,
 	name = "【精英】Q版英系舰载战斗机3",
 	spawn_brownian = 1,
 	base = 1100887
 }
-
 _G.pg.base.aircraft_template[1101128] = {
 	id = 1101128,
 	name = "【精英】Q版英系舰载战斗机4",
 	spawn_brownian = 1,
 	base = 1100888
 }
-
 _G.pg.base.aircraft_template[1101129] = {
 	id = 1101129,
 	name = "【精英】Q版英系舰载战斗机5",
 	spawn_brownian = 1,
 	base = 1100889
 }
-
 _G.pg.base.aircraft_template[1101130] = {
 	id = 1101130,
 	name = "【精英】Q版英系舰载鱼雷机1",
 	spawn_brownian = 1,
 	base = 1100890
 }
-
 _G.pg.base.aircraft_template[1101131] = {
 	id = 1101131,
 	name = "【精英】Q版英系舰载鱼雷机2",
 	spawn_brownian = 1,
 	base = 1100891
 }
-
 _G.pg.base.aircraft_template[1101132] = {
 	id = 1101132,
 	name = "【精英】Q版英系舰载鱼雷机3",
 	spawn_brownian = 1,
 	base = 1100892
 }
-
 _G.pg.base.aircraft_template[1101133] = {
 	id = 1101133,
 	name = "【精英】Q版英系舰载鱼雷机4",
 	spawn_brownian = 1,
 	base = 1100893
 }
-
 _G.pg.base.aircraft_template[1101134] = {
 	id = 1101134,
 	name = "【精英】Q版英系舰载鱼雷机5",
 	spawn_brownian = 1,
 	base = 1100894
 }
-
 _G.pg.base.aircraft_template[1101135] = {
 	id = 1101135,
 	name = "【精英】Q版英系舰载轰炸机1",
 	spawn_brownian = 1,
 	base = 1100895
 }
-
 _G.pg.base.aircraft_template[1101136] = {
 	id = 1101136,
 	name = "【精英】Q版英系舰载轰炸机2",
 	spawn_brownian = 1,
 	base = 1100896
 }
-
 _G.pg.base.aircraft_template[1101137] = {
 	id = 1101137,
 	name = "【精英】Q版英系舰载轰炸机3",
 	spawn_brownian = 1,
 	base = 1100897
 }
-
 _G.pg.base.aircraft_template[1101138] = {
 	id = 1101138,
 	name = "【精英】Q版英系舰载轰炸机4",
 	spawn_brownian = 1,
 	base = 1100898
 }
-
 _G.pg.base.aircraft_template[1101139] = {
 	id = 1101139,
 	name = "【精英】Q版英系舰载轰炸机5",
 	spawn_brownian = 1,
 	base = 1100899
 }
-
 _G.pg.base.aircraft_template[1101140] = {
 	attack_power = 2,
 	name = "撒丁舰载战斗机I",
@@ -207796,7 +202350,6 @@ _G.pg.base.aircraft_template[1101140] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101141] = {
 	attack_power = 2,
 	name = "撒丁舰载战斗机II",
@@ -207873,7 +202426,6 @@ _G.pg.base.aircraft_template[1101141] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101142] = {
 	attack_power = 2,
 	name = "撒丁舰载战斗机III",
@@ -207950,7 +202502,6 @@ _G.pg.base.aircraft_template[1101142] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101143] = {
 	attack_power = 2,
 	name = "撒丁舰载战斗机IV",
@@ -208027,7 +202578,6 @@ _G.pg.base.aircraft_template[1101143] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101144] = {
 	attack_power = 2,
 	name = "撒丁舰载战斗机V",
@@ -208104,7 +202654,6 @@ _G.pg.base.aircraft_template[1101144] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101145] = {
 	attack_power = 2,
 	name = "撒丁舰载鱼雷机I",
@@ -208180,7 +202729,6 @@ _G.pg.base.aircraft_template[1101145] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101146] = {
 	attack_power = 2,
 	name = "撒丁舰载鱼雷机II",
@@ -208256,7 +202804,6 @@ _G.pg.base.aircraft_template[1101146] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101147] = {
 	attack_power = 2,
 	name = "撒丁舰载鱼雷机III",
@@ -208332,7 +202879,6 @@ _G.pg.base.aircraft_template[1101147] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101148] = {
 	attack_power = 2,
 	name = "撒丁舰载鱼雷机IV",
@@ -208408,7 +202954,6 @@ _G.pg.base.aircraft_template[1101148] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101149] = {
 	attack_power = 2,
 	name = "撒丁舰载鱼雷机V",
@@ -208484,7 +203029,6 @@ _G.pg.base.aircraft_template[1101149] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101150] = {
 	attack_power = 2,
 	name = "撒丁舰载轰炸机I",
@@ -208560,7 +203104,6 @@ _G.pg.base.aircraft_template[1101150] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101151] = {
 	attack_power = 2,
 	name = "撒丁舰载轰炸机II",
@@ -208636,7 +203179,6 @@ _G.pg.base.aircraft_template[1101151] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101152] = {
 	attack_power = 2,
 	name = "撒丁舰载轰炸机III",
@@ -208712,7 +203254,6 @@ _G.pg.base.aircraft_template[1101152] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101153] = {
 	attack_power = 2,
 	name = "撒丁舰载轰炸机IV",
@@ -208788,7 +203329,6 @@ _G.pg.base.aircraft_template[1101153] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101154] = {
 	attack_power = 2,
 	name = "撒丁舰载轰炸机V",
@@ -208864,7 +203404,6 @@ _G.pg.base.aircraft_template[1101154] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101160] = {
 	attack_power = 2,
 	name = "较快装填 新日系舰载轰炸机——高爆弹药1",
@@ -208940,7 +203479,6 @@ _G.pg.base.aircraft_template[1101160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101161] = {
 	attack_power = 2,
 	name = "较快装填 新日系舰载轰炸机——高爆弹药2",
@@ -209016,7 +203554,6 @@ _G.pg.base.aircraft_template[1101161] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101162] = {
 	attack_power = 2,
 	name = "较快装填 新日系舰载轰炸机——高爆弹药3",
@@ -209092,7 +203629,6 @@ _G.pg.base.aircraft_template[1101162] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101163] = {
 	attack_power = 2,
 	name = "较快装填 新日系舰载轰炸机——高爆弹药4",
@@ -209168,7 +203704,6 @@ _G.pg.base.aircraft_template[1101163] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[1101164] = {
 	attack_power = 2,
 	name = "较快装填 新日系舰载轰炸机——高爆弹药5",
@@ -209244,7 +203779,6 @@ _G.pg.base.aircraft_template[1101164] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2000402] = {
 	attack_power = 2,
 	name = "塞壬空袭-轰炸机 I",
@@ -209320,7 +203854,6 @@ _G.pg.base.aircraft_template[2000402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004020] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型1_浮游炮（狙击型）",
@@ -209399,7 +203932,6 @@ _G.pg.base.aircraft_template[2004020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004022] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型1_浮游炮（扩散型）",
@@ -209478,7 +204010,6 @@ _G.pg.base.aircraft_template[2004022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004030] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型1_战斗机",
@@ -209555,7 +204086,6 @@ _G.pg.base.aircraft_template[2004030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004120] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型2_浮游炮（狙击型）",
@@ -209634,7 +204164,6 @@ _G.pg.base.aircraft_template[2004120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004122] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型2_浮游炮（扩散型）",
@@ -209713,7 +204242,6 @@ _G.pg.base.aircraft_template[2004122] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004130] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型2_战斗机",
@@ -209790,7 +204318,6 @@ _G.pg.base.aircraft_template[2004130] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004230] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型3_万花筒p2浮游炮（轰炸型）",
@@ -209869,7 +204396,6 @@ _G.pg.base.aircraft_template[2004230] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004232] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型3_万花筒p2浮游炮（狙击型）",
@@ -209948,7 +204474,6 @@ _G.pg.base.aircraft_template[2004232] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004234] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型3_万花筒p2浮游炮（扩散型）",
@@ -210027,7 +204552,6 @@ _G.pg.base.aircraft_template[2004234] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2004236] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS执棋者III型3_战斗机",
@@ -210104,7 +204628,6 @@ _G.pg.base.aircraft_template[2004236] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2009010] = {
 	attack_power = 2,
 	name = "【大世界】据点BOSS执棋者III型_战斗机1",
@@ -210180,7 +204703,6 @@ _G.pg.base.aircraft_template[2009010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2009012] = {
 	attack_power = 2,
 	name = "【大世界】据点BOSS执棋者III型_战斗机2",
@@ -210256,7 +204778,6 @@ _G.pg.base.aircraft_template[2009012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2009014] = {
 	attack_power = 2,
 	name = "【大世界】据点BOSS执棋者III型_战斗机3",
@@ -210332,7 +204853,6 @@ _G.pg.base.aircraft_template[2009014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2009016] = {
 	attack_power = 2,
 	name = "【大世界】据点BOSS执棋者III型_浮游炮（轰炸型）",
@@ -210411,7 +204931,6 @@ _G.pg.base.aircraft_template[2009016] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2009400] = {
 	attack_power = 2,
 	name = "【大世界】据点BOSS执棋者III型_轰炸飞机",
@@ -210487,7 +205006,6 @@ _G.pg.base.aircraft_template[2009400] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2021900] = {
 	attack_power = 2,
 	name = "【大世界】通用航母精英固定_塞壬战斗机",
@@ -210563,7 +205081,6 @@ _G.pg.base.aircraft_template[2021900] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2022917] = {
 	attack_power = 2,
 	name = "【大世界】皇家航母精英专属_剑鱼（胜利）",
@@ -210639,7 +205156,6 @@ _G.pg.base.aircraft_template[2022917] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2022921] = {
 	attack_power = 2,
 	name = "【大世界】皇家航母精英专属_剑鱼（皇家方舟）",
@@ -210715,7 +205231,6 @@ _G.pg.base.aircraft_template[2022921] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2023930] = {
 	attack_power = 2,
 	name = "【大世界】重樱航母精英专属_彗星（大凤）",
@@ -210791,7 +205306,6 @@ _G.pg.base.aircraft_template[2023930] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2029902] = {
 	attack_power = 2,
 	name = "【大世界】通用航母精英（执棋者）_塞壬轰炸机",
@@ -210867,7 +205381,6 @@ _G.pg.base.aircraft_template[2029902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2029903] = {
 	attack_power = 2,
 	name = "【大世界】通用航母精英（执棋者）_塞壬鱼雷机",
@@ -210943,7 +205456,6 @@ _G.pg.base.aircraft_template[2029903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2030020] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟浮游炮",
@@ -211022,7 +205534,6 @@ _G.pg.base.aircraft_template[2030020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2030030] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟剑鱼oldtype",
@@ -211098,7 +205609,6 @@ _G.pg.base.aircraft_template[2030030] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2030320] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟浮游炮",
@@ -211177,7 +205687,6 @@ _G.pg.base.aircraft_template[2030320] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2031000] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙飞机1",
@@ -211253,7 +205762,6 @@ _G.pg.base.aircraft_template[2031000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2031010] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙飞机2",
@@ -211329,7 +205837,6 @@ _G.pg.base.aircraft_template[2031010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2031020] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙飞机3",
@@ -211405,7 +205912,6 @@ _G.pg.base.aircraft_template[2031020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2032010] = {
 	attack_power = 2,
 	name = "【大世界】第五章剧情_友方支援_航空支援飞机",
@@ -211482,7 +205988,6 @@ _G.pg.base.aircraft_template[2032010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2032100] = {
 	attack_power = 2,
 	name = "【大世界】第五章剧情_5-6剧情战_黑方舟支援飞机1",
@@ -211558,7 +206063,6 @@ _G.pg.base.aircraft_template[2032100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2032120] = {
 	attack_power = 2,
 	name = "【大世界】第五章剧情_5-6剧情战_企业支援飞机",
@@ -211634,7 +206138,6 @@ _G.pg.base.aircraft_template[2032120] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2032130] = {
 	attack_power = 2,
 	name = "【大世界】第五章剧情_5-6剧情战_黑飞龙支援飞机",
@@ -211710,7 +206213,6 @@ _G.pg.base.aircraft_template[2032130] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2032150] = {
 	attack_power = 2,
 	name = "【大世界】第五章剧情_5-6剧情战_黑方舟支援飞机1",
@@ -211786,7 +206288,6 @@ _G.pg.base.aircraft_template[2032150] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044100] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态1",
@@ -211864,7 +206365,6 @@ _G.pg.base.aircraft_template[2044100] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044101] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态2",
@@ -211942,7 +206442,6 @@ _G.pg.base.aircraft_template[2044101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044102] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态3",
@@ -212020,7 +206519,6 @@ _G.pg.base.aircraft_template[2044102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044103] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态4",
@@ -212098,7 +206596,6 @@ _G.pg.base.aircraft_template[2044103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044104] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态5",
@@ -212176,7 +206673,6 @@ _G.pg.base.aircraft_template[2044104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044105] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_环绕浮游炮形态6",
@@ -212254,7 +206750,6 @@ _G.pg.base.aircraft_template[2044105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044200] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_高速鱼雷机",
@@ -212331,7 +206826,6 @@ _G.pg.base.aircraft_template[2044200] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044300] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态1",
@@ -212409,7 +206903,6 @@ _G.pg.base.aircraft_template[2044300] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044301] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态2",
@@ -212487,7 +206980,6 @@ _G.pg.base.aircraft_template[2044301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044302] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态3",
@@ -212565,7 +207057,6 @@ _G.pg.base.aircraft_template[2044302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044303] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态4",
@@ -212643,7 +207134,6 @@ _G.pg.base.aircraft_template[2044303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044304] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态5",
@@ -212721,7 +207211,6 @@ _G.pg.base.aircraft_template[2044304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044305] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p3_前置浮游炮形态6",
@@ -212799,7 +207288,6 @@ _G.pg.base.aircraft_template[2044305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2044350] = {
 	attack_power = 2,
 	name = "【大世界】深渊BOSS航母_p2_高速鱼雷机",
@@ -212876,7 +207364,6 @@ _G.pg.base.aircraft_template[2044350] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2950000] = {
 	attack_power = 2,
 	name = "【大世界】皇家方舟浮游炮",
@@ -212955,7 +207442,6 @@ _G.pg.base.aircraft_template[2950000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2950002] = {
 	attack_power = 2,
 	name = "【大世界】皇家方舟浮游炮2",
@@ -213034,7 +207520,6 @@ _G.pg.base.aircraft_template[2950002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2950004] = {
 	attack_power = 2,
 	name = "【大世界】皇家方舟浮游炮3",
@@ -213113,7 +207598,6 @@ _G.pg.base.aircraft_template[2950004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200765] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-战斗机I",
@@ -213190,7 +207674,6 @@ _G.pg.base.aircraft_template[2200765] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200766] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-战斗机II",
@@ -213267,7 +207750,6 @@ _G.pg.base.aircraft_template[2200766] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200767] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-战斗机III",
@@ -213344,7 +207826,6 @@ _G.pg.base.aircraft_template[2200767] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200768] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-战斗机IV",
@@ -213421,7 +207902,6 @@ _G.pg.base.aircraft_template[2200768] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200769] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-战斗机V",
@@ -213498,7 +207978,6 @@ _G.pg.base.aircraft_template[2200769] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200770] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-鱼雷机I",
@@ -213574,7 +208053,6 @@ _G.pg.base.aircraft_template[2200770] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200771] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-鱼雷机II",
@@ -213650,7 +208128,6 @@ _G.pg.base.aircraft_template[2200771] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200772] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-鱼雷机III",
@@ -213726,7 +208203,6 @@ _G.pg.base.aircraft_template[2200772] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200773] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-鱼雷机IV",
@@ -213802,7 +208278,6 @@ _G.pg.base.aircraft_template[2200773] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200774] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-鱼雷机V",
@@ -213878,7 +208353,6 @@ _G.pg.base.aircraft_template[2200774] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200775] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-轰炸机I",
@@ -213954,7 +208428,6 @@ _G.pg.base.aircraft_template[2200775] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200776] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-轰炸机II",
@@ -214030,7 +208503,6 @@ _G.pg.base.aircraft_template[2200776] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200777] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-轰炸机III",
@@ -214106,7 +208578,6 @@ _G.pg.base.aircraft_template[2200777] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200778] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-轰炸机IV",
@@ -214182,7 +208653,6 @@ _G.pg.base.aircraft_template[2200778] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200779] = {
 	attack_power = 2,
 	name = "【大世界】美系舰载-轰炸机V",
@@ -214258,7 +208728,6 @@ _G.pg.base.aircraft_template[2200779] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200780] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-战斗机I",
@@ -214335,7 +208804,6 @@ _G.pg.base.aircraft_template[2200780] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200781] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-战斗机II",
@@ -214412,7 +208880,6 @@ _G.pg.base.aircraft_template[2200781] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200782] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-战斗机III",
@@ -214489,7 +208956,6 @@ _G.pg.base.aircraft_template[2200782] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200783] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-战斗机IV",
@@ -214566,7 +209032,6 @@ _G.pg.base.aircraft_template[2200783] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200784] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-战斗机V",
@@ -214643,7 +209108,6 @@ _G.pg.base.aircraft_template[2200784] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200785] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-鱼雷机I",
@@ -214719,7 +209183,6 @@ _G.pg.base.aircraft_template[2200785] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200786] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-鱼雷机II",
@@ -214795,7 +209258,6 @@ _G.pg.base.aircraft_template[2200786] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200787] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-鱼雷机III",
@@ -214871,7 +209333,6 @@ _G.pg.base.aircraft_template[2200787] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200788] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-鱼雷机IV",
@@ -214947,7 +209408,6 @@ _G.pg.base.aircraft_template[2200788] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200789] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-鱼雷机V",
@@ -215023,7 +209483,6 @@ _G.pg.base.aircraft_template[2200789] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200790] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-轰炸机I",
@@ -215099,7 +209558,6 @@ _G.pg.base.aircraft_template[2200790] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200791] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-轰炸机II",
@@ -215175,7 +209633,6 @@ _G.pg.base.aircraft_template[2200791] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200792] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-轰炸机III",
@@ -215251,7 +209708,6 @@ _G.pg.base.aircraft_template[2200792] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200793] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-轰炸机IV",
@@ -215327,7 +209783,6 @@ _G.pg.base.aircraft_template[2200793] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200794] = {
 	attack_power = 2,
 	name = "【大世界】英系舰载-轰炸机V",
@@ -215403,7 +209858,6 @@ _G.pg.base.aircraft_template[2200794] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200795] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载战斗机I",
@@ -215480,7 +209934,6 @@ _G.pg.base.aircraft_template[2200795] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200796] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载战斗机II",
@@ -215557,7 +210010,6 @@ _G.pg.base.aircraft_template[2200796] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200797] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载战斗机III",
@@ -215634,7 +210086,6 @@ _G.pg.base.aircraft_template[2200797] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200798] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载战斗机IV",
@@ -215711,7 +210162,6 @@ _G.pg.base.aircraft_template[2200798] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200799] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载战斗机V",
@@ -215788,7 +210238,6 @@ _G.pg.base.aircraft_template[2200799] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200800] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载鱼雷机I",
@@ -215864,7 +210313,6 @@ _G.pg.base.aircraft_template[2200800] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200801] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载鱼雷机II",
@@ -215940,7 +210388,6 @@ _G.pg.base.aircraft_template[2200801] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200802] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载鱼雷机III",
@@ -216016,7 +210463,6 @@ _G.pg.base.aircraft_template[2200802] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200803] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载鱼雷机IV",
@@ -216092,7 +210538,6 @@ _G.pg.base.aircraft_template[2200803] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200804] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载鱼雷机V",
@@ -216168,7 +210613,6 @@ _G.pg.base.aircraft_template[2200804] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200805] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载轰炸机I",
@@ -216244,7 +210688,6 @@ _G.pg.base.aircraft_template[2200805] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200806] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载轰炸机II",
@@ -216320,7 +210763,6 @@ _G.pg.base.aircraft_template[2200806] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200807] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载轰炸机III",
@@ -216396,7 +210838,6 @@ _G.pg.base.aircraft_template[2200807] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200808] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载轰炸机IV",
@@ -216472,7 +210913,6 @@ _G.pg.base.aircraft_template[2200808] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200809] = {
 	attack_power = 2,
 	name = "【大世界】日系舰载轰炸机V",
@@ -216548,7 +210988,6 @@ _G.pg.base.aircraft_template[2200809] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200810] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载战斗机I",
@@ -216625,7 +211064,6 @@ _G.pg.base.aircraft_template[2200810] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200811] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载战斗机II",
@@ -216702,7 +211140,6 @@ _G.pg.base.aircraft_template[2200811] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200812] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载战斗机III",
@@ -216779,7 +211216,6 @@ _G.pg.base.aircraft_template[2200812] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200813] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载战斗机IV",
@@ -216856,7 +211292,6 @@ _G.pg.base.aircraft_template[2200813] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200814] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载战斗机V",
@@ -216933,7 +211368,6 @@ _G.pg.base.aircraft_template[2200814] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200815] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载鱼雷机I",
@@ -217009,7 +211443,6 @@ _G.pg.base.aircraft_template[2200815] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200816] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载鱼雷机II",
@@ -217085,7 +211518,6 @@ _G.pg.base.aircraft_template[2200816] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200817] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载鱼雷机III",
@@ -217161,7 +211593,6 @@ _G.pg.base.aircraft_template[2200817] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200818] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载鱼雷机IV",
@@ -217237,7 +211668,6 @@ _G.pg.base.aircraft_template[2200818] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200819] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载鱼雷机V",
@@ -217313,7 +211743,6 @@ _G.pg.base.aircraft_template[2200819] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200820] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载轰炸机I",
@@ -217389,7 +211818,6 @@ _G.pg.base.aircraft_template[2200820] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200821] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载轰炸机II",
@@ -217465,7 +211893,6 @@ _G.pg.base.aircraft_template[2200821] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200822] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载轰炸机III",
@@ -217541,7 +211968,6 @@ _G.pg.base.aircraft_template[2200822] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200823] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载轰炸机IV",
@@ -217617,7 +212043,6 @@ _G.pg.base.aircraft_template[2200823] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200824] = {
 	attack_power = 2,
 	name = "【大世界】德系舰载轰炸机V",
@@ -217693,7 +212118,6 @@ _G.pg.base.aircraft_template[2200824] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200830] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机I",
@@ -217769,7 +212193,6 @@ _G.pg.base.aircraft_template[2200830] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200831] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机II",
@@ -217845,7 +212268,6 @@ _G.pg.base.aircraft_template[2200831] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200832] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机III",
@@ -217921,7 +212343,6 @@ _G.pg.base.aircraft_template[2200832] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200833] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机IV",
@@ -217997,7 +212418,6 @@ _G.pg.base.aircraft_template[2200833] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200834] = {
 	attack_power = 2,
 	name = "日系空袭轰炸机V",
@@ -218073,7 +212493,6 @@ _G.pg.base.aircraft_template[2200834] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200835] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机I",
@@ -218149,7 +212568,6 @@ _G.pg.base.aircraft_template[2200835] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200836] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机II",
@@ -218225,7 +212643,6 @@ _G.pg.base.aircraft_template[2200836] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200837] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机III",
@@ -218301,7 +212718,6 @@ _G.pg.base.aircraft_template[2200837] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200838] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机IV",
@@ -218377,7 +212793,6 @@ _G.pg.base.aircraft_template[2200838] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200839] = {
 	attack_power = 2,
 	name = "日系空袭鱼雷机V",
@@ -218453,7 +212868,6 @@ _G.pg.base.aircraft_template[2200839] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200840] = {
 	attack_power = 2,
 	name = "日系空袭战斗机I",
@@ -218530,7 +212944,6 @@ _G.pg.base.aircraft_template[2200840] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200841] = {
 	attack_power = 2,
 	name = "日系空袭战斗机II",
@@ -218607,7 +213020,6 @@ _G.pg.base.aircraft_template[2200841] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200842] = {
 	attack_power = 2,
 	name = "日系空袭战斗机III",
@@ -218684,7 +213096,6 @@ _G.pg.base.aircraft_template[2200842] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200843] = {
 	attack_power = 2,
 	name = "日系空袭战斗机IV",
@@ -218761,7 +213172,6 @@ _G.pg.base.aircraft_template[2200843] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200844] = {
 	attack_power = 2,
 	name = "日系空袭战斗机V",
@@ -218838,7 +213248,6 @@ _G.pg.base.aircraft_template[2200844] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200900] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬战斗机lv1",
@@ -218915,7 +213324,6 @@ _G.pg.base.aircraft_template[2200900] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200901] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬战斗机lv2",
@@ -218992,7 +213400,6 @@ _G.pg.base.aircraft_template[2200901] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200902] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬战斗机lv3",
@@ -219069,7 +213476,6 @@ _G.pg.base.aircraft_template[2200902] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200903] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬战斗机lv4",
@@ -219146,7 +213552,6 @@ _G.pg.base.aircraft_template[2200903] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200904] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬战斗机lv5",
@@ -219223,7 +213628,6 @@ _G.pg.base.aircraft_template[2200904] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200910] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬轰炸机lv1",
@@ -219299,7 +213703,6 @@ _G.pg.base.aircraft_template[2200910] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200911] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬轰炸机lv2",
@@ -219375,7 +213778,6 @@ _G.pg.base.aircraft_template[2200911] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200912] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬轰炸机lv3",
@@ -219451,7 +213853,6 @@ _G.pg.base.aircraft_template[2200912] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200913] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬轰炸机lv4",
@@ -219527,7 +213928,6 @@ _G.pg.base.aircraft_template[2200913] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200914] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬轰炸机lv5",
@@ -219603,7 +214003,6 @@ _G.pg.base.aircraft_template[2200914] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200920] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬鱼雷机lv1",
@@ -219679,7 +214078,6 @@ _G.pg.base.aircraft_template[2200920] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200921] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬鱼雷机lv2",
@@ -219755,7 +214153,6 @@ _G.pg.base.aircraft_template[2200921] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200922] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬鱼雷机lv3",
@@ -219831,7 +214228,6 @@ _G.pg.base.aircraft_template[2200922] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200923] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬鱼雷机lv4",
@@ -219907,7 +214303,6 @@ _G.pg.base.aircraft_template[2200923] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2200924] = {
 	attack_power = 2,
 	name = "【大世界】深渊宝图_塞壬鱼雷机lv5",
@@ -219983,7 +214378,6 @@ _G.pg.base.aircraft_template[2200924] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201000] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬战斗机lv1",
@@ -220060,7 +214454,6 @@ _G.pg.base.aircraft_template[2201000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201001] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬战斗机lv2",
@@ -220137,7 +214530,6 @@ _G.pg.base.aircraft_template[2201001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201002] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬战斗机lv3",
@@ -220214,7 +214606,6 @@ _G.pg.base.aircraft_template[2201002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201010] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬鱼雷机lv1",
@@ -220291,7 +214682,6 @@ _G.pg.base.aircraft_template[2201010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201011] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬鱼雷机lv2",
@@ -220368,7 +214758,6 @@ _G.pg.base.aircraft_template[2201011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2201012] = {
 	attack_power = 2,
 	name = "【大世界】仲裁机关_塞壬鱼雷机lv3",
@@ -220445,7 +214834,6 @@ _G.pg.base.aircraft_template[2201012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2962000] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p2_强力飞机lv1",
@@ -220521,7 +214909,6 @@ _G.pg.base.aircraft_template[2962000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2962001] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p2_强力飞机lv2",
@@ -220597,7 +214984,6 @@ _G.pg.base.aircraft_template[2962001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2962002] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p2_强力飞机lv3",
@@ -220673,7 +215059,6 @@ _G.pg.base.aircraft_template[2962002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2962003] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p2_强力飞机lv4",
@@ -220749,7 +215134,6 @@ _G.pg.base.aircraft_template[2962003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2962004] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p2_强力飞机lv5",
@@ -220825,7 +215209,6 @@ _G.pg.base.aircraft_template[2962004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2964000] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p4_强力飞机lv1",
@@ -220901,7 +215284,6 @@ _G.pg.base.aircraft_template[2964000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2964001] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p4_强力飞机lv2",
@@ -220977,7 +215359,6 @@ _G.pg.base.aircraft_template[2964001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2964002] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p4_强力飞机lv3",
@@ -221053,7 +215434,6 @@ _G.pg.base.aircraft_template[2964002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2964003] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p4_强力飞机lv4",
@@ -221129,7 +215509,6 @@ _G.pg.base.aircraft_template[2964003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2964004] = {
 	attack_power = 2,
 	name = "【大世界】黑飞龙_p4_强力飞机lv5",
@@ -221205,7 +215584,6 @@ _G.pg.base.aircraft_template[2964004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2965020] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟 第一波 飞机 LV1",
@@ -221282,7 +215660,6 @@ _G.pg.base.aircraft_template[2965020] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2965021] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟 第一波 飞机 LV2",
@@ -221359,7 +215736,6 @@ _G.pg.base.aircraft_template[2965021] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2965022] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟 第一波 飞机 LV3",
@@ -221436,7 +215812,6 @@ _G.pg.base.aircraft_template[2965022] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2965023] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟 第一波 飞机 LV4",
@@ -221513,7 +215888,6 @@ _G.pg.base.aircraft_template[2965023] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2965024] = {
 	attack_power = 2,
 	name = "【大世界】黑方舟 第一波 飞机 LV5",
@@ -221590,7 +215964,6 @@ _G.pg.base.aircraft_template[2965024] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966000] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机战斗机lv1",
@@ -221664,7 +216037,6 @@ _G.pg.base.aircraft_template[2966000] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966001] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机战斗机lv2",
@@ -221738,7 +216110,6 @@ _G.pg.base.aircraft_template[2966001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966002] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机战斗机lv3",
@@ -221812,7 +216183,6 @@ _G.pg.base.aircraft_template[2966002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966003] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机战斗机lv4",
@@ -221886,7 +216256,6 @@ _G.pg.base.aircraft_template[2966003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966004] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机战斗机lv5",
@@ -221960,7 +216329,6 @@ _G.pg.base.aircraft_template[2966004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966010] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机鱼雷机lv1",
@@ -222034,7 +216402,6 @@ _G.pg.base.aircraft_template[2966010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966011] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机鱼雷机lv2",
@@ -222108,7 +216475,6 @@ _G.pg.base.aircraft_template[2966011] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966012] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机鱼雷机lv3",
@@ -222182,7 +216548,6 @@ _G.pg.base.aircraft_template[2966012] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966013] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机鱼雷机lv4",
@@ -222256,7 +216621,6 @@ _G.pg.base.aircraft_template[2966013] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966014] = {
 	attack_power = 50,
 	name = "【大世界】黑飞龙通用飞机鱼雷机lv5",
@@ -222330,7 +216694,6 @@ _G.pg.base.aircraft_template[2966014] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966070] = {
 	attack_power = 2,
 	name = "【大世界】黑海伦娜 约克城支援 飞机 LV1",
@@ -222406,7 +216769,6 @@ _G.pg.base.aircraft_template[2966070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966071] = {
 	attack_power = 2,
 	name = "【大世界】黑海伦娜 约克城支援 飞机 LV2",
@@ -222482,7 +216844,6 @@ _G.pg.base.aircraft_template[2966071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966072] = {
 	attack_power = 2,
 	name = "【大世界】黑海伦娜 约克城支援 飞机 LV3",
@@ -222558,7 +216919,6 @@ _G.pg.base.aircraft_template[2966072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966073] = {
 	attack_power = 2,
 	name = "【大世界】黑海伦娜 约克城支援 飞机 LV4",
@@ -222634,7 +216994,6 @@ _G.pg.base.aircraft_template[2966073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2966074] = {
 	attack_power = 2,
 	name = "【大世界】黑海伦娜 约克城支援 飞机 LV5",
@@ -222710,7 +217069,6 @@ _G.pg.base.aircraft_template[2966074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2967040] = {
 	attack_power = 2,
 	name = "【大世界】黑苍龙 第二波 余烬飞机 LV1",
@@ -222787,7 +217145,6 @@ _G.pg.base.aircraft_template[2967040] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2967041] = {
 	attack_power = 2,
 	name = "【大世界】黑苍龙 第二波 余烬飞机 LV2",
@@ -222864,7 +217221,6 @@ _G.pg.base.aircraft_template[2967041] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2967042] = {
 	attack_power = 2,
 	name = "【大世界】黑苍龙 第二波 余烬飞机 LV3",
@@ -222941,7 +217297,6 @@ _G.pg.base.aircraft_template[2967042] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2967043] = {
 	attack_power = 2,
 	name = "【大世界】黑苍龙 第二波 余烬飞机 LV4",
@@ -223018,7 +217373,6 @@ _G.pg.base.aircraft_template[2967043] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[2967044] = {
 	attack_power = 2,
 	name = "【大世界】黑苍龙 第二波 余烬飞机 LV5",
@@ -223095,7 +217449,6 @@ _G.pg.base.aircraft_template[2967044] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001301] = {
 	attack_power = 2,
 	name = "【2022意大利活动A3】BOSS 塞壬执棋者II型 轰炸机",
@@ -223171,7 +217524,6 @@ _G.pg.base.aircraft_template[3001301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001302] = {
 	attack_power = 2,
 	name = "【2022意大利活动A3】BOSS 塞壬执棋者II型 鱼雷机",
@@ -223247,7 +217599,6 @@ _G.pg.base.aircraft_template[3001302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001303] = {
 	attack_power = 2,
 	name = "【2022意大利活动A3】BOSS 塞壬执棋者II型 浮游炮1",
@@ -223326,7 +217677,6 @@ _G.pg.base.aircraft_template[3001303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001304] = {
 	attack_power = 2,
 	name = "【2022意大利活动A3】BOSS 塞壬执棋者II型 浮游炮2",
@@ -223405,7 +217755,6 @@ _G.pg.base.aircraft_template[3001304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001502] = {
 	attack_power = 2,
 	name = "【2022意大利活动A2】BOSS 天后 战斗机",
@@ -223481,7 +217830,6 @@ _G.pg.base.aircraft_template[3001502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3001503] = {
 	attack_power = 2,
 	name = "【2022意大利活动A2】BOSS 天后 轰炸机",
@@ -223557,7 +217905,6 @@ _G.pg.base.aircraft_template[3001503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002203] = {
 	attack_power = 2,
 	name = "【2022意大利活动B2】BOSS 竞技神 第二波 战斗机",
@@ -223633,7 +217980,6 @@ _G.pg.base.aircraft_template[3002203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002204] = {
 	attack_power = 2,
 	name = "【2022意大利活动B2】BOSS 竞技神 第二波 轰炸机",
@@ -223709,7 +218055,6 @@ _G.pg.base.aircraft_template[3002204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002205] = {
 	attack_power = 2,
 	name = "【2022意大利活动B2】BOSS 竞技神 第二波 鱼雷机",
@@ -223785,7 +218130,6 @@ _G.pg.base.aircraft_template[3002205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002211] = {
 	attack_power = 2,
 	name = "【2022意大利活动B2】BOSS 竞技神 第三波 轰炸机",
@@ -223861,7 +218205,6 @@ _G.pg.base.aircraft_template[3002211] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002302] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 开幕鹰群",
@@ -223937,7 +218280,6 @@ _G.pg.base.aircraft_template[3002302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002307] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 上",
@@ -224015,7 +218357,6 @@ _G.pg.base.aircraft_template[3002307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002308] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 中",
@@ -224093,7 +218434,6 @@ _G.pg.base.aircraft_template[3002308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3002309] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 下",
@@ -224171,7 +218511,6 @@ _G.pg.base.aircraft_template[3002309] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3003301] = {
 	attack_power = 2,
 	name = "【2022意大利活动C3】BOSS 塞壬执棋者II型 轰炸机",
@@ -224247,7 +218586,6 @@ _G.pg.base.aircraft_template[3003301] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3003302] = {
 	attack_power = 2,
 	name = "【2022意大利活动C3】BOSS 塞壬执棋者II型 鱼雷机",
@@ -224323,7 +218661,6 @@ _G.pg.base.aircraft_template[3003302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3003303] = {
 	attack_power = 2,
 	name = "【2022意大利活动C3】BOSS 塞壬执棋者II型 浮游炮1",
@@ -224402,7 +218739,6 @@ _G.pg.base.aircraft_template[3003303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3003304] = {
 	attack_power = 2,
 	name = "【2022意大利活动C3】BOSS 塞壬执棋者II型 浮游炮2",
@@ -224481,7 +218817,6 @@ _G.pg.base.aircraft_template[3003304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3004502] = {
 	attack_power = 2,
 	name = "【2022意大利活动C2】BOSS 天后 战斗机",
@@ -224557,7 +218892,6 @@ _G.pg.base.aircraft_template[3004502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3004503] = {
 	attack_power = 2,
 	name = "【2022意大利活动C2】BOSS 天后 轰炸机",
@@ -224633,7 +218967,6 @@ _G.pg.base.aircraft_template[3004503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005203] = {
 	attack_power = 2,
 	name = "【2022意大利活动D2】BOSS 竞技神 第二波 战斗机",
@@ -224709,7 +219042,6 @@ _G.pg.base.aircraft_template[3005203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005204] = {
 	attack_power = 2,
 	name = "【2022意大利活动D2】BOSS 竞技神 第二波 轰炸机",
@@ -224785,7 +219117,6 @@ _G.pg.base.aircraft_template[3005204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005205] = {
 	attack_power = 2,
 	name = "【2022意大利活动D2】BOSS 竞技神 第二波 鱼雷机",
@@ -224861,7 +219192,6 @@ _G.pg.base.aircraft_template[3005205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005211] = {
 	attack_power = 2,
 	name = "【2022意大利活动D2】BOSS 竞技神 第三波 轰炸机",
@@ -224937,7 +219267,6 @@ _G.pg.base.aircraft_template[3005211] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005302] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 开幕鹰群",
@@ -225013,7 +219342,6 @@ _G.pg.base.aircraft_template[3005302] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005307] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 上",
@@ -225091,7 +219419,6 @@ _G.pg.base.aircraft_template[3005307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005308] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 中",
@@ -225169,7 +219496,6 @@ _G.pg.base.aircraft_template[3005308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005309] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 下",
@@ -225247,7 +219573,6 @@ _G.pg.base.aircraft_template[3005309] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005402] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 开幕鹰群",
@@ -225323,7 +219648,6 @@ _G.pg.base.aircraft_template[3005402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005407] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 上",
@@ -225401,7 +219725,6 @@ _G.pg.base.aircraft_template[3005407] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005408] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 中",
@@ -225479,7 +219802,6 @@ _G.pg.base.aircraft_template[3005408] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3005409] = {
 	attack_power = 2,
 	name = "【2022意大利活动B3】BOSS 罗马 高速鹰掠袭 下",
@@ -225557,7 +219879,6 @@ _G.pg.base.aircraft_template[3005409] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3011001] = {
 	attack_power = 2,
 	name = "【2022布吕歇尔活动SP2】BOSS 齐柏林 红色弹幕战斗机",
@@ -225633,7 +219954,6 @@ _G.pg.base.aircraft_template[3011001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3011002] = {
 	attack_power = 2,
 	name = "【2022布吕歇尔活动SP2】BOSS 齐柏林 地毯式轰炸机",
@@ -225709,7 +220029,6 @@ _G.pg.base.aircraft_template[3011002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3012003] = {
 	attack_power = 2,
 	name = "【2022布吕歇尔活动SP3】BOSS 彼得史特拉塞 特殊鱼雷机",
@@ -225785,7 +220104,6 @@ _G.pg.base.aircraft_template[3012003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3012004] = {
 	attack_power = 2,
 	name = "【2022布吕歇尔活动SP3】BOSS 彼得史特拉塞 特殊轰炸机",
@@ -225861,7 +220179,6 @@ _G.pg.base.aircraft_template[3012004] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3012005] = {
 	attack_power = 2,
 	name = "【2022布吕歇尔活动SP3】BOSS 彼得史特拉塞 常规战斗机",
@@ -225937,7 +220254,6 @@ _G.pg.base.aircraft_template[3012005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3020009] = {
 	attack_power = 2,
 	name = "【2022武藏活动A1】BOSS 测试者 第三波 浮游炮",
@@ -226016,7 +220332,6 @@ _G.pg.base.aircraft_template[3020009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3020010] = {
 	attack_power = 2,
 	name = "【2022武藏活动A1】BOSS 测试者 第三波 浮游炮",
@@ -226095,7 +220410,6 @@ _G.pg.base.aircraft_template[3020010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3020203] = {
 	attack_power = 2,
 	name = "【2022武藏活动A3】BOSS 清除者 第一波 浮游炮",
@@ -226174,7 +220488,6 @@ _G.pg.base.aircraft_template[3020203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3020210] = {
 	attack_power = 2,
 	name = "【2022武藏活动A3】BOSS 清除者 第三波 环绕浮游炮",
@@ -226253,7 +220566,6 @@ _G.pg.base.aircraft_template[3020210] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3022009] = {
 	attack_power = 2,
 	name = "【2022武藏活动C1】BOSS 测试者 第三波 浮游炮",
@@ -226332,7 +220644,6 @@ _G.pg.base.aircraft_template[3022009] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3022010] = {
 	attack_power = 2,
 	name = "【2022武藏活动C1】BOSS 测试者 第三波 浮游炮",
@@ -226411,7 +220722,6 @@ _G.pg.base.aircraft_template[3022010] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3022203] = {
 	attack_power = 2,
 	name = "【2022武藏活动C3】BOSS 清除者 第一波 浮游炮",
@@ -226490,7 +220800,6 @@ _G.pg.base.aircraft_template[3022203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3022210] = {
 	attack_power = 2,
 	name = "【2022武藏活动C3】BOSS 清除者 第三波 环绕浮游炮",
@@ -226569,7 +220878,6 @@ _G.pg.base.aircraft_template[3022210] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029206] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 H难度】BOSS 阿尔比恩 战斗机",
@@ -226645,7 +220953,6 @@ _G.pg.base.aircraft_template[3029206] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029207] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 H难度】BOSS 阿尔比恩 轰炸机",
@@ -226721,7 +221028,6 @@ _G.pg.base.aircraft_template[3029207] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029208] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 H难度】BOSS 阿尔比恩 鱼雷机",
@@ -226797,7 +221103,6 @@ _G.pg.base.aircraft_template[3029208] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029306] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 EX】BOSS 阿尔比恩 战斗机",
@@ -226873,7 +221178,6 @@ _G.pg.base.aircraft_template[3029306] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029307] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 EX】BOSS 阿尔比恩 轰炸机",
@@ -226949,7 +221253,6 @@ _G.pg.base.aircraft_template[3029307] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3029308] = {
 	attack_power = 2,
 	name = "【2022女仆共斗 EX】BOSS 阿尔比恩 鱼雷机",
@@ -227025,7 +221328,6 @@ _G.pg.base.aircraft_template[3029308] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3030315] = {
 	id = 3030315,
 	name = "【2022莱莎联动T1】航母蛋船轰炸机",
@@ -227036,7 +221338,6 @@ _G.pg.base.aircraft_template[3030315] = {
 		1003221
 	}
 }
-
 _G.pg.base.aircraft_template[3030316] = {
 	id = 3030316,
 	name = "【2022莱莎联动T1】航母蛋船战斗机",
@@ -227044,7 +221345,6 @@ _G.pg.base.aircraft_template[3030316] = {
 	model_ID = "sairenfeiji_lianjin",
 	icon = "sairenfeiji_lianjin"
 }
-
 _G.pg.base.aircraft_template[3030338] = {
 	id = 3030338,
 	name = "【2022莱莎联动T1】航母人形轰炸机",
@@ -227055,7 +221355,6 @@ _G.pg.base.aircraft_template[3030338] = {
 		1003221
 	}
 }
-
 _G.pg.base.aircraft_template[3030339] = {
 	id = 3030339,
 	name = "【2022莱莎联动T1】航母人形鱼雷机",
@@ -227066,7 +221365,6 @@ _G.pg.base.aircraft_template[3030339] = {
 		1002226
 	}
 }
-
 _G.pg.base.aircraft_template[3031315] = {
 	id = 3031315,
 	name = "【2022莱莎联动T2】航母蛋船轰炸机",
@@ -227077,7 +221375,6 @@ _G.pg.base.aircraft_template[3031315] = {
 		1003222
 	}
 }
-
 _G.pg.base.aircraft_template[3031316] = {
 	id = 3031316,
 	name = "【2022莱莎联动T2】航母蛋船战斗机",
@@ -227085,7 +221382,6 @@ _G.pg.base.aircraft_template[3031316] = {
 	model_ID = "sairenfeiji_lianjin",
 	icon = "sairenfeiji_lianjin"
 }
-
 _G.pg.base.aircraft_template[3031338] = {
 	id = 3031338,
 	name = "【2022莱莎联动T2】航母人形轰炸机",
@@ -227096,7 +221392,6 @@ _G.pg.base.aircraft_template[3031338] = {
 		1003222
 	}
 }
-
 _G.pg.base.aircraft_template[3031339] = {
 	id = 3031339,
 	name = "【2022莱莎联动T2】航母人形鱼雷机",
@@ -227107,7 +221402,6 @@ _G.pg.base.aircraft_template[3031339] = {
 		1002227
 	}
 }
-
 _G.pg.base.aircraft_template[3032315] = {
 	id = 3032315,
 	name = "【2022莱莎联动T3】航母蛋船轰炸机",
@@ -227118,7 +221412,6 @@ _G.pg.base.aircraft_template[3032315] = {
 		1003223
 	}
 }
-
 _G.pg.base.aircraft_template[3032316] = {
 	id = 3032316,
 	name = "【2022莱莎联动T3】航母蛋船战斗机",
@@ -227126,7 +221419,6 @@ _G.pg.base.aircraft_template[3032316] = {
 	model_ID = "sairenfeiji_lianjin",
 	icon = "sairenfeiji_lianjin"
 }
-
 _G.pg.base.aircraft_template[3032338] = {
 	id = 3032338,
 	name = "【2022莱莎联动T3】航母人形轰炸机",
@@ -227137,7 +221429,6 @@ _G.pg.base.aircraft_template[3032338] = {
 		1003223
 	}
 }
-
 _G.pg.base.aircraft_template[3032339] = {
 	id = 3032339,
 	name = "【2022莱莎联动T3】航母人形鱼雷机",
@@ -227148,7 +221439,6 @@ _G.pg.base.aircraft_template[3032339] = {
 		1002228
 	}
 }
-
 _G.pg.base.aircraft_template[3033315] = {
 	id = 3033315,
 	name = "【2022莱莎联动T4】航母蛋船轰炸机",
@@ -227159,7 +221449,6 @@ _G.pg.base.aircraft_template[3033315] = {
 		1003224
 	}
 }
-
 _G.pg.base.aircraft_template[3033316] = {
 	id = 3033316,
 	name = "【2022莱莎联动T4】航母蛋船战斗机",
@@ -227167,7 +221456,6 @@ _G.pg.base.aircraft_template[3033316] = {
 	model_ID = "sairenfeiji_lianjin",
 	icon = "sairenfeiji_lianjin"
 }
-
 _G.pg.base.aircraft_template[3033338] = {
 	id = 3033338,
 	name = "【2022莱莎联动T4】航母人形轰炸机",
@@ -227178,7 +221466,6 @@ _G.pg.base.aircraft_template[3033338] = {
 		1003224
 	}
 }
-
 _G.pg.base.aircraft_template[3033339] = {
 	id = 3033339,
 	name = "【2022莱莎联动T4】航母人形鱼雷机",
@@ -227189,7 +221476,6 @@ _G.pg.base.aircraft_template[3033339] = {
 		1002229
 	}
 }
-
 _G.pg.base.aircraft_template[3033346] = {
 	attack_power = 2,
 	name = "【2022莱莎联动T4】BOSS 古代遗迹执棋者 战斗机",
@@ -227266,7 +221552,6 @@ _G.pg.base.aircraft_template[3033346] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3033347] = {
 	attack_power = 2,
 	name = "【2022莱莎联动T4】BOSS 古代遗迹执棋者 轰炸机",
@@ -227342,7 +221627,6 @@ _G.pg.base.aircraft_template[3033347] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3033348] = {
 	attack_power = 2,
 	name = "【2022莱莎联动T4】BOSS 古代遗迹执棋者 鱼雷机",
@@ -227419,7 +221703,6 @@ _G.pg.base.aircraft_template[3033348] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3035315] = {
 	id = 3035315,
 	name = "【2022莱莎联动T5/ESP/TH1~5】航母蛋船轰炸机",
@@ -227430,7 +221713,6 @@ _G.pg.base.aircraft_template[3035315] = {
 		1003225
 	}
 }
-
 _G.pg.base.aircraft_template[3035316] = {
 	id = 3035316,
 	name = "【2022莱莎联动T5/ESP/TH1~5】航母蛋船战斗机",
@@ -227438,7 +221720,6 @@ _G.pg.base.aircraft_template[3035316] = {
 	model_ID = "sairenfeiji_lianjin",
 	icon = "sairenfeiji_lianjin"
 }
-
 _G.pg.base.aircraft_template[3035338] = {
 	id = 3035338,
 	name = "【2022莱莎联动T5/ESP/TH1~5】航母人形轰炸机",
@@ -227449,7 +221730,6 @@ _G.pg.base.aircraft_template[3035338] = {
 		1003225
 	}
 }
-
 _G.pg.base.aircraft_template[3035339] = {
 	id = 3035339,
 	name = "【2022莱莎联动T5/ESP/TH1~5】航母人形鱼雷机",
@@ -227460,7 +221740,6 @@ _G.pg.base.aircraft_template[3035339] = {
 		1002230
 	}
 }
-
 _G.pg.base.aircraft_template[3035346] = {
 	id = 3035346,
 	name = "【2022莱莎联动T5/ESP/TH1~5】精英航母人形特殊飞机",
@@ -227471,7 +221750,6 @@ _G.pg.base.aircraft_template[3035346] = {
 		3035347
 	}
 }
-
 _G.pg.base.aircraft_template[3037401] = {
 	attack_power = 2,
 	name = "【2022莱莎联动TH4】BOSS 古代遗迹执棋者 战斗机",
@@ -227548,7 +221826,6 @@ _G.pg.base.aircraft_template[3037401] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3037402] = {
 	attack_power = 2,
 	name = "【2022莱莎联动TH4】BOSS 古代遗迹执棋者 轰炸机",
@@ -227624,7 +221901,6 @@ _G.pg.base.aircraft_template[3037402] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3037403] = {
 	attack_power = 2,
 	name = "【2022莱莎联动TH4】BOSS 古代遗迹执棋者 鱼雷机",
@@ -227701,7 +221977,6 @@ _G.pg.base.aircraft_template[3037403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3040006] = {
 	attack_power = 2,
 	name = "【2022美系活动A1】BOSS 重型驱逐舰 悬浮无人机",
@@ -227782,7 +222057,6 @@ _G.pg.base.aircraft_template[3040006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3042006] = {
 	attack_power = 2,
 	name = "【2022美系活动C1】BOSS 重型驱逐舰 悬浮无人机",
@@ -227863,7 +222137,6 @@ _G.pg.base.aircraft_template[3042006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3049202] = {
 	attack_power = 2,
 	name = "【2023春节共斗N】BOSS 忒修斯 鱼雷机",
@@ -227939,7 +222212,6 @@ _G.pg.base.aircraft_template[3049202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3049203] = {
 	attack_power = 2,
 	name = "【2023春节共斗N】BOSS 忒修斯 轰炸机",
@@ -228015,7 +222287,6 @@ _G.pg.base.aircraft_template[3049203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3049204] = {
 	attack_power = 2,
 	name = "【2023春节共斗N】BOSS 忒修斯 战斗机",
@@ -228092,7 +222363,6 @@ _G.pg.base.aircraft_template[3049204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3051101] = {
 	attack_power = 2,
 	name = "【2023英系活动A2】BOSS 勒马尔 轰炸机",
@@ -228168,7 +222438,6 @@ _G.pg.base.aircraft_template[3051101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3051102] = {
 	attack_power = 2,
 	name = "【2023英系活动A2】BOSS 勒马尔 鱼雷机",
@@ -228244,7 +222513,6 @@ _G.pg.base.aircraft_template[3051102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3051103] = {
 	attack_power = 2,
 	name = "【2023英系活动A2】BOSS 勒马尔 浮游炮1",
@@ -228323,7 +222591,6 @@ _G.pg.base.aircraft_template[3051103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3051104] = {
 	attack_power = 2,
 	name = "【2023英系活动A2】BOSS 勒马尔 浮游炮2",
@@ -228402,7 +222669,6 @@ _G.pg.base.aircraft_template[3051104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3053101] = {
 	attack_power = 2,
 	name = "【2023英系活动C2】BOSS 勒马尔 轰炸机",
@@ -228478,7 +222744,6 @@ _G.pg.base.aircraft_template[3053101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3053102] = {
 	attack_power = 2,
 	name = "【2023英系活动C2】BOSS 勒马尔 鱼雷机",
@@ -228554,7 +222819,6 @@ _G.pg.base.aircraft_template[3053102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3053103] = {
 	attack_power = 2,
 	name = "【2023英系活动C2】BOSS 勒马尔 浮游炮1",
@@ -228633,7 +222897,6 @@ _G.pg.base.aircraft_template[3053103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3053104] = {
 	attack_power = 2,
 	name = "【2023英系活动C2】BOSS 勒马尔 浮游炮2",
@@ -228712,7 +222975,6 @@ _G.pg.base.aircraft_template[3053104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059361] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】BOSS 清除者γ型 第一波 环绕浮游炮",
@@ -228791,7 +223053,6 @@ _G.pg.base.aircraft_template[3059361] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059362] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】BOSS 清除者γ型 第一波 环绕浮游炮",
@@ -228870,7 +223131,6 @@ _G.pg.base.aircraft_template[3059362] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059371] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】BOSS 清除者γ型 第三波 战斗机",
@@ -228946,7 +223206,6 @@ _G.pg.base.aircraft_template[3059371] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059372] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】BOSS 清除者γ型 第三波 轰炸机",
@@ -229022,7 +223281,6 @@ _G.pg.base.aircraft_template[3059372] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059373] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】BOSS 清除者γ型 第三波 鱼雷机",
@@ -229098,7 +223356,6 @@ _G.pg.base.aircraft_template[3059373] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059481] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】BOSS 清除者μ型 第一波 环绕浮游炮",
@@ -229177,7 +223434,6 @@ _G.pg.base.aircraft_template[3059481] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059482] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】BOSS 清除者μ型 第一波 环绕浮游炮",
@@ -229256,7 +223512,6 @@ _G.pg.base.aircraft_template[3059482] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059493] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】BOSS 清除者μ型 第三波 战斗机",
@@ -229332,7 +223587,6 @@ _G.pg.base.aircraft_template[3059493] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059494] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】BOSS 清除者μ型 第三波 轰炸机",
@@ -229408,7 +223662,6 @@ _G.pg.base.aircraft_template[3059494] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059495] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】BOSS 清除者μ型 第三波 鱼雷机",
@@ -229484,7 +223737,6 @@ _G.pg.base.aircraft_template[3059495] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059501] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】敌方支援弹幕 战斗机",
@@ -229560,7 +223812,6 @@ _G.pg.base.aircraft_template[3059501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059502] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】敌方支援弹幕 轰炸机",
@@ -229636,7 +223887,6 @@ _G.pg.base.aircraft_template[3059502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059503] = {
 	attack_power = 2,
 	name = "【2023北联SP SP】敌方支援弹幕 鱼雷机",
@@ -229712,7 +223962,6 @@ _G.pg.base.aircraft_template[3059503] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059511] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】敌方支援弹幕 战斗机",
@@ -229788,7 +224037,6 @@ _G.pg.base.aircraft_template[3059511] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059512] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】敌方支援弹幕 轰炸机",
@@ -229864,7 +224112,6 @@ _G.pg.base.aircraft_template[3059512] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3059513] = {
 	attack_power = 2,
 	name = "【2023北联SP EX】敌方支援弹幕 鱼雷机",
@@ -229940,7 +224187,6 @@ _G.pg.base.aircraft_template[3059513] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3070007] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动A1A2】BOSS 迪洛伊 第四波 全屏白色羽毛 隐形飞机",
@@ -230016,7 +224262,6 @@ _G.pg.base.aircraft_template[3070007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3072007] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动C1C2】BOSS 迪洛伊 第四波 全屏白色羽毛 隐形飞机",
@@ -230092,7 +224337,6 @@ _G.pg.base.aircraft_template[3072007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3074007] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动SP】BOSS 审判机甲-支配 第二波 审判型舰载机",
@@ -230169,7 +224413,6 @@ _G.pg.base.aircraft_template[3074007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3071205] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动B3】BOSS 海洛芬特 大范围随机轰炸机",
@@ -230245,7 +224488,6 @@ _G.pg.base.aircraft_template[3071205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3073205] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动D3】BOSS 海洛芬特 大范围随机轰炸机",
@@ -230321,7 +224563,6 @@ _G.pg.base.aircraft_template[3073205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3075005] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动EX】BOSS 海洛芬特 大范围随机轰炸机",
@@ -230397,7 +224638,6 @@ _G.pg.base.aircraft_template[3075005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3075205] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动剧情战】BOSS 海洛芬特 大范围随机轰炸机",
@@ -230473,7 +224713,6 @@ _G.pg.base.aircraft_template[3075205] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3076070] = {
 	id = 3076070,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 轰炸机 Lv1",
@@ -230485,7 +224724,6 @@ _G.pg.base.aircraft_template[3076070] = {
 		3076080
 	}
 }
-
 _G.pg.base.aircraft_template[3076071] = {
 	id = 3076071,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 轰炸机 Lv2",
@@ -230497,7 +224735,6 @@ _G.pg.base.aircraft_template[3076071] = {
 		3076081
 	}
 }
-
 _G.pg.base.aircraft_template[3076072] = {
 	id = 3076072,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 轰炸机 Lv3",
@@ -230509,7 +224746,6 @@ _G.pg.base.aircraft_template[3076072] = {
 		3076082
 	}
 }
-
 _G.pg.base.aircraft_template[3076073] = {
 	id = 3076073,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 轰炸机 Lv4",
@@ -230521,7 +224757,6 @@ _G.pg.base.aircraft_template[3076073] = {
 		3076083
 	}
 }
-
 _G.pg.base.aircraft_template[3076074] = {
 	id = 3076074,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 轰炸机 Lv5",
@@ -230533,7 +224768,6 @@ _G.pg.base.aircraft_template[3076074] = {
 		3076084
 	}
 }
-
 _G.pg.base.aircraft_template[3076075] = {
 	id = 3076075,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 战斗机 Lv1",
@@ -230546,7 +224780,6 @@ _G.pg.base.aircraft_template[3076075] = {
 		1100750
 	}
 }
-
 _G.pg.base.aircraft_template[3076076] = {
 	id = 3076076,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 战斗机 Lv2",
@@ -230559,7 +224792,6 @@ _G.pg.base.aircraft_template[3076076] = {
 		1100751
 	}
 }
-
 _G.pg.base.aircraft_template[3076077] = {
 	id = 3076077,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 战斗机 Lv3",
@@ -230572,7 +224804,6 @@ _G.pg.base.aircraft_template[3076077] = {
 		1100752
 	}
 }
-
 _G.pg.base.aircraft_template[3076078] = {
 	id = 3076078,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 战斗机 Lv4",
@@ -230585,7 +224816,6 @@ _G.pg.base.aircraft_template[3076078] = {
 		1100753
 	}
 }
-
 _G.pg.base.aircraft_template[3076079] = {
 	id = 3076079,
 	name = "【2023克莱蒙梭活动】审判型航空母舰 战斗机 Lv5",
@@ -230598,7 +224828,6 @@ _G.pg.base.aircraft_template[3076079] = {
 		1100754
 	}
 }
-
 _G.pg.base.aircraft_template[3076270] = {
 	id = 3076270,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 轰炸机 Lv1",
@@ -230610,7 +224839,6 @@ _G.pg.base.aircraft_template[3076270] = {
 		3076280
 	}
 }
-
 _G.pg.base.aircraft_template[3076271] = {
 	id = 3076271,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 轰炸机 Lv2",
@@ -230622,7 +224850,6 @@ _G.pg.base.aircraft_template[3076271] = {
 		3076281
 	}
 }
-
 _G.pg.base.aircraft_template[3076272] = {
 	id = 3076272,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 轰炸机 Lv3",
@@ -230634,7 +224861,6 @@ _G.pg.base.aircraft_template[3076272] = {
 		3076282
 	}
 }
-
 _G.pg.base.aircraft_template[3076273] = {
 	id = 3076273,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 轰炸机 Lv4",
@@ -230646,7 +224872,6 @@ _G.pg.base.aircraft_template[3076273] = {
 		3076283
 	}
 }
-
 _G.pg.base.aircraft_template[3076274] = {
 	id = 3076274,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 轰炸机 Lv5",
@@ -230658,7 +224883,6 @@ _G.pg.base.aircraft_template[3076274] = {
 		3076284
 	}
 }
-
 _G.pg.base.aircraft_template[3076275] = {
 	id = 3076275,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 战斗机 Lv1",
@@ -230671,7 +224895,6 @@ _G.pg.base.aircraft_template[3076275] = {
 		1100750
 	}
 }
-
 _G.pg.base.aircraft_template[3076276] = {
 	id = 3076276,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 战斗机 Lv2",
@@ -230684,7 +224907,6 @@ _G.pg.base.aircraft_template[3076276] = {
 		1100751
 	}
 }
-
 _G.pg.base.aircraft_template[3076277] = {
 	id = 3076277,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 战斗机 Lv3",
@@ -230697,7 +224919,6 @@ _G.pg.base.aircraft_template[3076277] = {
 		1100752
 	}
 }
-
 _G.pg.base.aircraft_template[3076278] = {
 	id = 3076278,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 战斗机 Lv4",
@@ -230710,7 +224931,6 @@ _G.pg.base.aircraft_template[3076278] = {
 		1100753
 	}
 }
-
 _G.pg.base.aircraft_template[3076279] = {
 	id = 3076279,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航空母舰 战斗机 Lv5",
@@ -230723,7 +224943,6 @@ _G.pg.base.aircraft_template[3076279] = {
 		1100754
 	}
 }
-
 _G.pg.base.aircraft_template[3076485] = {
 	id = 3076485,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 轰炸机 Lv1",
@@ -230735,7 +224954,6 @@ _G.pg.base.aircraft_template[3076485] = {
 		3076280
 	}
 }
-
 _G.pg.base.aircraft_template[3076486] = {
 	id = 3076486,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 轰炸机 Lv2",
@@ -230747,7 +224965,6 @@ _G.pg.base.aircraft_template[3076486] = {
 		3076281
 	}
 }
-
 _G.pg.base.aircraft_template[3076487] = {
 	id = 3076487,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 轰炸机 Lv3",
@@ -230759,7 +224976,6 @@ _G.pg.base.aircraft_template[3076487] = {
 		3076282
 	}
 }
-
 _G.pg.base.aircraft_template[3076488] = {
 	id = 3076488,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 轰炸机 Lv4",
@@ -230771,7 +224987,6 @@ _G.pg.base.aircraft_template[3076488] = {
 		3076283
 	}
 }
-
 _G.pg.base.aircraft_template[3076489] = {
 	id = 3076489,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 轰炸机 Lv5",
@@ -230783,7 +224998,6 @@ _G.pg.base.aircraft_template[3076489] = {
 		3076284
 	}
 }
-
 _G.pg.base.aircraft_template[3076490] = {
 	id = 3076490,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 鱼雷机 Lv1",
@@ -230796,7 +225010,6 @@ _G.pg.base.aircraft_template[3076490] = {
 		1100750
 	}
 }
-
 _G.pg.base.aircraft_template[3076491] = {
 	id = 3076491,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 鱼雷机 Lv2",
@@ -230809,7 +225022,6 @@ _G.pg.base.aircraft_template[3076491] = {
 		1100751
 	}
 }
-
 _G.pg.base.aircraft_template[3076492] = {
 	id = 3076492,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 鱼雷机 Lv3",
@@ -230822,7 +225034,6 @@ _G.pg.base.aircraft_template[3076492] = {
 		1100752
 	}
 }
-
 _G.pg.base.aircraft_template[3076493] = {
 	id = 3076493,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 鱼雷机 Lv4",
@@ -230835,7 +225046,6 @@ _G.pg.base.aircraft_template[3076493] = {
 		1100753
 	}
 }
-
 _G.pg.base.aircraft_template[3076494] = {
 	id = 3076494,
 	name = "【2023克莱蒙梭活动】教皇侵蚀航母人形 鱼雷机 Lv5",
@@ -230848,7 +225058,6 @@ _G.pg.base.aircraft_template[3076494] = {
 		1100754
 	}
 }
-
 _G.pg.base.aircraft_template[3077101] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 战斗机",
@@ -230925,7 +225134,6 @@ _G.pg.base.aircraft_template[3077101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3077102] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 鱼雷机",
@@ -231001,7 +225209,6 @@ _G.pg.base.aircraft_template[3077102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3077103] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 轰炸机",
@@ -231077,7 +225284,6 @@ _G.pg.base.aircraft_template[3077103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3077106] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 战斗机",
@@ -231151,7 +225357,6 @@ _G.pg.base.aircraft_template[3077106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3077107] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 鱼雷机",
@@ -231225,7 +225430,6 @@ _G.pg.base.aircraft_template[3077107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3077108] = {
 	attack_power = 2,
 	name = "【2023克莱蒙梭活动】剧情战 美系支援飞机 轰炸机",
@@ -231301,7 +225505,6 @@ _G.pg.base.aircraft_template[3077108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3080005] = {
 	attack_power = 2,
 	name = "【2023云仙活动A1】BOSS 无形之息航母 战斗机",
@@ -231377,7 +225580,6 @@ _G.pg.base.aircraft_template[3080005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3080006] = {
 	attack_power = 2,
 	name = "【2023云仙活动A1】BOSS 无形之息航母 轰炸机",
@@ -231453,7 +225655,6 @@ _G.pg.base.aircraft_template[3080006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3082005] = {
 	attack_power = 2,
 	name = "【2023云仙活动C1】BOSS 无形之息航母 战斗机",
@@ -231529,7 +225730,6 @@ _G.pg.base.aircraft_template[3082005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3082006] = {
 	attack_power = 2,
 	name = "【2023云仙活动C1】BOSS 无形之息航母 轰炸机",
@@ -231605,7 +225805,6 @@ _G.pg.base.aircraft_template[3082006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086065] = {
 	type = 1,
 	name = "【2023云仙活动】无形之息 航母战斗机 Lv1",
@@ -231683,7 +225882,6 @@ _G.pg.base.aircraft_template[3086065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086066] = {
 	type = 1,
 	name = "【2023云仙活动】无形之息 航母战斗机 Lv2",
@@ -231761,7 +225959,6 @@ _G.pg.base.aircraft_template[3086066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086067] = {
 	type = 1,
 	name = "【2023云仙活动】无形之息 航母战斗机 Lv3",
@@ -231839,7 +226036,6 @@ _G.pg.base.aircraft_template[3086067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086068] = {
 	type = 1,
 	name = "【2023云仙活动】无形之息 航母战斗机 Lv4",
@@ -231917,7 +226113,6 @@ _G.pg.base.aircraft_template[3086068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086069] = {
 	type = 1,
 	name = "【2023云仙活动】无形之息 航母战斗机 Lv5",
@@ -231995,7 +226190,6 @@ _G.pg.base.aircraft_template[3086069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086070] = {
 	type = 3,
 	name = "【2023云仙活动】无形之息 航母轰炸机 Lv1",
@@ -232072,7 +226266,6 @@ _G.pg.base.aircraft_template[3086070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086071] = {
 	type = 3,
 	name = "【2023云仙活动】无形之息 航母轰炸机 Lv2",
@@ -232149,7 +226342,6 @@ _G.pg.base.aircraft_template[3086071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086072] = {
 	type = 3,
 	name = "【2023云仙活动】无形之息 航母轰炸机 Lv3",
@@ -232226,7 +226418,6 @@ _G.pg.base.aircraft_template[3086072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086073] = {
 	type = 3,
 	name = "【2023云仙活动】无形之息 航母轰炸机 Lv4",
@@ -232303,7 +226494,6 @@ _G.pg.base.aircraft_template[3086073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086074] = {
 	type = 3,
 	name = "【2023云仙活动】无形之息 航母轰炸机 Lv5",
@@ -232380,7 +226570,6 @@ _G.pg.base.aircraft_template[3086074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086105] = {
 	type = 1,
 	name = "【2023云仙活动】无形投影 道中人形战斗机 Lv1",
@@ -232458,7 +226647,6 @@ _G.pg.base.aircraft_template[3086105] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086106] = {
 	type = 1,
 	name = "【2023云仙活动】无形投影 道中人形战斗机 Lv2",
@@ -232536,7 +226724,6 @@ _G.pg.base.aircraft_template[3086106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086107] = {
 	type = 1,
 	name = "【2023云仙活动】无形投影 道中人形战斗机 Lv3",
@@ -232614,7 +226801,6 @@ _G.pg.base.aircraft_template[3086107] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086108] = {
 	type = 1,
 	name = "【2023云仙活动】无形投影 道中人形战斗机 Lv4",
@@ -232692,7 +226878,6 @@ _G.pg.base.aircraft_template[3086108] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086109] = {
 	type = 1,
 	name = "【2023云仙活动】无形投影 道中人形战斗机 Lv5",
@@ -232770,7 +226955,6 @@ _G.pg.base.aircraft_template[3086109] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086110] = {
 	type = 3,
 	name = "【2023云仙活动】无形投影 道中人形轰炸机 Lv1",
@@ -232847,7 +227031,6 @@ _G.pg.base.aircraft_template[3086110] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086111] = {
 	type = 3,
 	name = "【2023云仙活动】无形投影 道中人形轰炸机 Lv2",
@@ -232924,7 +227107,6 @@ _G.pg.base.aircraft_template[3086111] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086112] = {
 	type = 3,
 	name = "【2023云仙活动】无形投影 道中人形轰炸机 Lv3",
@@ -233001,7 +227183,6 @@ _G.pg.base.aircraft_template[3086112] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086113] = {
 	type = 3,
 	name = "【2023云仙活动】无形投影 道中人形轰炸机 Lv4",
@@ -233078,7 +227259,6 @@ _G.pg.base.aircraft_template[3086113] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3086114] = {
 	type = 3,
 	name = "【2023云仙活动】无形投影 道中人形轰炸机 Lv5",
@@ -233155,7 +227335,6 @@ _G.pg.base.aircraft_template[3086114] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3087325] = {
 	type = 1,
 	name = "【2023云仙活动D】精英蛋船 无形之息航母 战斗机",
@@ -233233,7 +227412,6 @@ _G.pg.base.aircraft_template[3087325] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3087326] = {
 	type = 3,
 	name = "【2023云仙活动D】精英蛋船 无形之息航母 轰炸机",
@@ -233310,7 +227488,6 @@ _G.pg.base.aircraft_template[3087326] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3093001] = {
 	attack_power = 2,
 	name = "【2023海盗活动T4】BOSS 执棋者I型 轰炸机",
@@ -233386,7 +227563,6 @@ _G.pg.base.aircraft_template[3093001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3093002] = {
 	attack_power = 2,
 	name = "【2023海盗活动T4】BOSS 执棋者I型 浮游炮1",
@@ -233465,7 +227641,6 @@ _G.pg.base.aircraft_template[3093002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3093003] = {
 	attack_power = 2,
 	name = "【2023海盗活动T4】BOSS 执棋者I型 浮游炮2",
@@ -233544,7 +227719,6 @@ _G.pg.base.aircraft_template[3093003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3103001] = {
 	attack_power = 2,
 	name = "【2023闪乱联动T4】BOSS 战忍机铠人形航母 轰炸机",
@@ -233620,7 +227794,6 @@ _G.pg.base.aircraft_template[3103001] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3103002] = {
 	attack_power = 2,
 	name = "【2023闪乱联动T4】BOSS 战忍机铠人形航母 浮游炮1",
@@ -233699,7 +227872,6 @@ _G.pg.base.aircraft_template[3103002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3103003] = {
 	attack_power = 2,
 	name = "【2023闪乱联动T4】BOSS 战忍机铠人形航母 浮游炮2",
@@ -233778,7 +227950,6 @@ _G.pg.base.aircraft_template[3103003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108303] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK3】BOSS 雪泉 战斗机",
@@ -233854,7 +228025,6 @@ _G.pg.base.aircraft_template[3108303] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108304] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK3】BOSS 雪泉 轰炸机",
@@ -233931,7 +228101,6 @@ _G.pg.base.aircraft_template[3108304] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108305] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK3】BOSS 雪泉 地毯式轰炸机",
@@ -234007,7 +228176,6 @@ _G.pg.base.aircraft_template[3108305] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108403] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK4】BOSS 紫 战斗机",
@@ -234083,7 +228251,6 @@ _G.pg.base.aircraft_template[3108403] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108404] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK4】BOSS 紫 轰炸机",
@@ -234159,7 +228326,6 @@ _G.pg.base.aircraft_template[3108404] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3108405] = {
 	attack_power = 2,
 	name = "【2023闪乱联动TSK4】BOSS 紫 鱼雷机",
@@ -234236,7 +228402,6 @@ _G.pg.base.aircraft_template[3108405] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109065] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv1",
@@ -234313,7 +228478,6 @@ _G.pg.base.aircraft_template[3109065] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109066] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv2",
@@ -234390,7 +228554,6 @@ _G.pg.base.aircraft_template[3109066] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109067] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv3",
@@ -234467,7 +228630,6 @@ _G.pg.base.aircraft_template[3109067] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109068] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv4",
@@ -234544,7 +228706,6 @@ _G.pg.base.aircraft_template[3109068] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109069] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv5",
@@ -234621,7 +228782,6 @@ _G.pg.base.aircraft_template[3109069] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109070] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv1",
@@ -234697,7 +228857,6 @@ _G.pg.base.aircraft_template[3109070] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109071] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv2",
@@ -234773,7 +228932,6 @@ _G.pg.base.aircraft_template[3109071] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109072] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv3",
@@ -234849,7 +229007,6 @@ _G.pg.base.aircraft_template[3109072] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109073] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv4",
@@ -234925,7 +229082,6 @@ _G.pg.base.aircraft_template[3109073] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109074] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv5",
@@ -235001,7 +229157,6 @@ _G.pg.base.aircraft_template[3109074] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109185] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 轰炸机Lv1",
@@ -235078,7 +229233,6 @@ _G.pg.base.aircraft_template[3109185] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109186] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 轰炸机Lv2",
@@ -235155,7 +229309,6 @@ _G.pg.base.aircraft_template[3109186] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109187] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 轰炸机Lv3",
@@ -235232,7 +229385,6 @@ _G.pg.base.aircraft_template[3109187] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109188] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 轰炸机Lv4",
@@ -235309,7 +229461,6 @@ _G.pg.base.aircraft_template[3109188] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109189] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 轰炸机Lv5",
@@ -235386,7 +229537,6 @@ _G.pg.base.aircraft_template[3109189] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109190] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 战斗机Lv1",
@@ -235462,7 +229612,6 @@ _G.pg.base.aircraft_template[3109190] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109191] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 战斗机Lv2",
@@ -235538,7 +229687,6 @@ _G.pg.base.aircraft_template[3109191] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109192] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 战斗机Lv3",
@@ -235614,7 +229762,6 @@ _G.pg.base.aircraft_template[3109192] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109193] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 战斗机Lv4",
@@ -235690,7 +229837,6 @@ _G.pg.base.aircraft_template[3109193] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109194] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍机铠人形航母 战斗机Lv5",
@@ -235766,7 +229912,6 @@ _G.pg.base.aircraft_template[3109194] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109240] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航母 精英 浮游炮Lv1",
@@ -235846,7 +229991,6 @@ _G.pg.base.aircraft_template[3109240] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109241] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航母 精英 浮游炮Lv2",
@@ -235926,7 +230070,6 @@ _G.pg.base.aircraft_template[3109241] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109242] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航母 精英 浮游炮Lv3",
@@ -236006,7 +230149,6 @@ _G.pg.base.aircraft_template[3109242] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109243] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航母 精英 浮游炮Lv4",
@@ -236086,7 +230228,6 @@ _G.pg.base.aircraft_template[3109243] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3109244] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航母 精英 浮游炮Lv5",
@@ -236166,7 +230307,6 @@ _G.pg.base.aircraft_template[3109244] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3110101] = {
 	attack_power = 2,
 	name = "【2023关岛活动A2】BOSS 梦境塞壬执棋者 轰炸机",
@@ -236242,7 +230382,6 @@ _G.pg.base.aircraft_template[3110101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3110102] = {
 	attack_power = 2,
 	name = "【2023关岛活动A2】BOSS 梦境塞壬执棋者 鱼雷机",
@@ -236319,7 +230458,6 @@ _G.pg.base.aircraft_template[3110102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3110103] = {
 	attack_power = 2,
 	name = "【2023关岛活动A2】BOSS 梦境塞壬执棋者 浮游炮1",
@@ -236398,7 +230536,6 @@ _G.pg.base.aircraft_template[3110103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3110104] = {
 	attack_power = 2,
 	name = "【2023关岛活动A2】BOSS 梦境塞壬执棋者 浮游炮2",
@@ -236477,7 +230614,6 @@ _G.pg.base.aircraft_template[3110104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3112101] = {
 	attack_power = 2,
 	name = "【2023关岛活动C2】BOSS 梦境塞壬执棋者 轰炸机",
@@ -236553,7 +230689,6 @@ _G.pg.base.aircraft_template[3112101] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3112102] = {
 	attack_power = 2,
 	name = "【2023关岛活动C2】BOSS 梦境塞壬执棋者 鱼雷机",
@@ -236630,7 +230765,6 @@ _G.pg.base.aircraft_template[3112102] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3112103] = {
 	attack_power = 2,
 	name = "【2023关岛活动C2】BOSS 梦境塞壬执棋者 浮游炮1",
@@ -236709,7 +230843,6 @@ _G.pg.base.aircraft_template[3112103] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3112104] = {
 	attack_power = 2,
 	name = "【2023关岛活动C2】BOSS 梦境塞壬执棋者 浮游炮2",
@@ -236788,7 +230921,6 @@ _G.pg.base.aircraft_template[3112104] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3111002] = {
 	attack_power = 2,
 	name = "【2023关岛活动B1】BOSS 卡拉布里亚之骄傲 第一波 舰载机1",
@@ -236865,7 +230997,6 @@ _G.pg.base.aircraft_template[3111002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3111003] = {
 	attack_power = 2,
 	name = "【2023关岛活动B1】BOSS 卡拉布里亚之骄傲 第一波 舰载机2",
@@ -236942,7 +231073,6 @@ _G.pg.base.aircraft_template[3111003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3113002] = {
 	attack_power = 2,
 	name = "【2023关岛活动D1】BOSS 卡拉布里亚之骄傲 第一波 舰载机1",
@@ -237019,7 +231149,6 @@ _G.pg.base.aircraft_template[3113002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3113003] = {
 	attack_power = 2,
 	name = "【2023关岛活动D1】BOSS 卡拉布里亚之骄傲 第一波 舰载机2",
@@ -237096,7 +231225,6 @@ _G.pg.base.aircraft_template[3113003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3114002] = {
 	attack_power = 2,
 	name = "【2023关岛活动SP】BOSS 卡拉布里亚之骄傲 第一波 舰载机1",
@@ -237173,7 +231301,6 @@ _G.pg.base.aircraft_template[3114002] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3114003] = {
 	attack_power = 2,
 	name = "【2023关岛活动SP】BOSS 卡拉布里亚之骄傲 第一波 舰载机2",
@@ -237250,7 +231377,6 @@ _G.pg.base.aircraft_template[3114003] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3119501] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 战斗机Lv1",
@@ -237326,7 +231452,6 @@ _G.pg.base.aircraft_template[3119501] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3119502] = {
 	attack_power = 2,
 	name = "【2023闪乱联动】战忍型航空母舰 轰炸机Lv1",
@@ -237402,7 +231527,6 @@ _G.pg.base.aircraft_template[3119502] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3120201] = {
 	attack_power = 2,
 	name = "【2024同盟活动A3】BOSS 执棋者III型 轰炸机",
@@ -237478,7 +231602,6 @@ _G.pg.base.aircraft_template[3120201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3120202] = {
 	attack_power = 2,
 	name = "【2024同盟活动A3】BOSS 执棋者III型 浮游炮1",
@@ -237557,7 +231680,6 @@ _G.pg.base.aircraft_template[3120202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3120203] = {
 	attack_power = 2,
 	name = "【2024同盟活动A3】BOSS 执棋者III型 浮游炮2",
@@ -237636,7 +231758,6 @@ _G.pg.base.aircraft_template[3120203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3121007] = {
 	attack_power = 2,
 	name = "【2024同盟活动B1】BOSS 迪洛伊 第四波 全屏白色羽毛 隐形飞机",
@@ -237712,7 +231833,6 @@ _G.pg.base.aircraft_template[3121007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3121061] = {
 	type = 1,
 	name = "【2024同盟活动B1】精英蛋船 教皇侵蚀航母 战斗机",
@@ -237790,7 +231910,6 @@ _G.pg.base.aircraft_template[3121061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3121062] = {
 	type = 3,
 	name = "【2024同盟活动B1】精英蛋船 教皇侵蚀航母 轰炸机",
@@ -237867,7 +231986,6 @@ _G.pg.base.aircraft_template[3121062] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3122201] = {
 	attack_power = 2,
 	name = "【2024同盟活动C3】BOSS 执棋者III型 轰炸机",
@@ -237943,7 +232061,6 @@ _G.pg.base.aircraft_template[3122201] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3122202] = {
 	attack_power = 2,
 	name = "【2024同盟活动C3】BOSS 执棋者III型 浮游炮1",
@@ -238022,7 +232139,6 @@ _G.pg.base.aircraft_template[3122202] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3122203] = {
 	attack_power = 2,
 	name = "【2024同盟活动C3】BOSS 执棋者III型 浮游炮2",
@@ -238101,7 +232217,6 @@ _G.pg.base.aircraft_template[3122203] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3123007] = {
 	attack_power = 2,
 	name = "【2024同盟活动D1】BOSS 迪洛伊 第四波 全屏白色羽毛 隐形飞机",
@@ -238177,7 +232292,6 @@ _G.pg.base.aircraft_template[3123007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3123061] = {
 	type = 1,
 	name = "【2024同盟活动D1】精英蛋船 教皇侵蚀航母 战斗机",
@@ -238255,7 +232369,6 @@ _G.pg.base.aircraft_template[3123061] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3123062] = {
 	type = 3,
 	name = "【2024同盟活动D1】精英蛋船 教皇侵蚀航母 轰炸机",
@@ -238332,7 +232445,6 @@ _G.pg.base.aircraft_template[3123062] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125116] = {
 	attack_power = 2,
 	name = "【2024同盟活动B】地图机制-跨队支援 无法回避的命运（战斗机）",
@@ -238409,7 +232521,6 @@ _G.pg.base.aircraft_template[3125116] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125117] = {
 	attack_power = 2,
 	name = "【2024同盟活动B】地图机制-跨队支援 无法回避的命运（鱼雷机）",
@@ -238486,7 +232597,6 @@ _G.pg.base.aircraft_template[3125117] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125118] = {
 	attack_power = 2,
 	name = "【2024同盟活动B】地图机制-跨队支援 无法回避的命运（轰炸机 萤火虫）",
@@ -238562,7 +232672,6 @@ _G.pg.base.aircraft_template[3125118] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125126] = {
 	attack_power = 2,
 	name = "【2024同盟活动D】地图机制-跨队支援 无法回避的命运（战斗机）",
@@ -238639,7 +232748,6 @@ _G.pg.base.aircraft_template[3125126] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125127] = {
 	attack_power = 2,
 	name = "【2024同盟活动D】地图机制-跨队支援 无法回避的命运（鱼雷机）",
@@ -238716,7 +232824,6 @@ _G.pg.base.aircraft_template[3125127] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125128] = {
 	attack_power = 2,
 	name = "【2024同盟活动D】地图机制-跨队支援 无法回避的命运（轰炸机 萤火虫）",
@@ -238792,7 +232899,6 @@ _G.pg.base.aircraft_template[3125128] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125131] = {
 	attack_power = 2,
 	name = "【2024同盟活动B】地图机制-实验型轰炸机",
@@ -238869,7 +232975,6 @@ _G.pg.base.aircraft_template[3125131] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3125134] = {
 	attack_power = 2,
 	name = "【2024同盟活动D】地图机制-实验型轰炸机",
@@ -238946,7 +233051,6 @@ _G.pg.base.aircraft_template[3125134] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3139080] = {
 	id = 3139080,
 	name = "【2024异世界冒险】魔法啾莱姆 轰炸机 Lv1",
@@ -238958,7 +233062,6 @@ _G.pg.base.aircraft_template[3139080] = {
 		3139090
 	}
 }
-
 _G.pg.base.aircraft_template[3139081] = {
 	id = 3139081,
 	name = "【2024异世界冒险】魔法啾莱姆 轰炸机 Lv2",
@@ -238970,7 +233073,6 @@ _G.pg.base.aircraft_template[3139081] = {
 		3139091
 	}
 }
-
 _G.pg.base.aircraft_template[3139082] = {
 	id = 3139082,
 	name = "【2024异世界冒险】魔法啾莱姆 轰炸机 Lv3",
@@ -238982,7 +233084,6 @@ _G.pg.base.aircraft_template[3139082] = {
 		3139092
 	}
 }
-
 _G.pg.base.aircraft_template[3139083] = {
 	id = 3139083,
 	name = "【2024异世界冒险】魔法啾莱姆 轰炸机 Lv4",
@@ -238994,7 +233095,6 @@ _G.pg.base.aircraft_template[3139083] = {
 		3139093
 	}
 }
-
 _G.pg.base.aircraft_template[3139084] = {
 	id = 3139084,
 	name = "【2024异世界冒险】魔法啾莱姆 轰炸机 Lv5",
@@ -239006,7 +233106,6 @@ _G.pg.base.aircraft_template[3139084] = {
 		3139094
 	}
 }
-
 _G.pg.base.aircraft_template[3139085] = {
 	id = 3139085,
 	name = "【2024异世界冒险】魔法啾莱姆 战斗机 Lv1",
@@ -239019,7 +233118,6 @@ _G.pg.base.aircraft_template[3139085] = {
 		1100750
 	}
 }
-
 _G.pg.base.aircraft_template[3139086] = {
 	id = 3139086,
 	name = "【2024异世界冒险】魔法啾莱姆 战斗机 Lv2",
@@ -239032,7 +233130,6 @@ _G.pg.base.aircraft_template[3139086] = {
 		1100751
 	}
 }
-
 _G.pg.base.aircraft_template[3139087] = {
 	id = 3139087,
 	name = "【2024异世界冒险】魔法啾莱姆 战斗机 Lv3",
@@ -239045,7 +233142,6 @@ _G.pg.base.aircraft_template[3139087] = {
 		1100752
 	}
 }
-
 _G.pg.base.aircraft_template[3139088] = {
 	id = 3139088,
 	name = "【2024异世界冒险】魔法啾莱姆 战斗机 Lv4",
@@ -239058,7 +233154,6 @@ _G.pg.base.aircraft_template[3139088] = {
 		1100753
 	}
 }
-
 _G.pg.base.aircraft_template[3139089] = {
 	id = 3139089,
 	name = "【2024异世界冒险】魔法啾莱姆 战斗机 Lv5",
@@ -239071,7 +233166,6 @@ _G.pg.base.aircraft_template[3139089] = {
 		1100754
 	}
 }
-
 _G.pg.base.aircraft_template[3139204] = {
 	attack_power = 2,
 	name = "【2024异世界冒险P1】BOSS 亚德（异世界） 幽灵法师飞机",
@@ -239147,7 +233241,6 @@ _G.pg.base.aircraft_template[3139204] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3139703] = {
 	attack_power = 2,
 	name = "【2024异世界冒险 剧情】利物浦 小天使飞机",
@@ -239224,7 +233317,6 @@ _G.pg.base.aircraft_template[3139703] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3139706] = {
 	attack_power = 2,
 	name = "【2024异世界冒险 剧情】独角兽 独角兽飞机",
@@ -239300,7 +233392,6 @@ _G.pg.base.aircraft_template[3139706] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3139724] = {
 	attack_power = 2,
 	name = "【2024异世界冒险 剧情】霞飞 隐形飞机",
@@ -239376,7 +233467,6 @@ _G.pg.base.aircraft_template[3139724] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148060] = {
 	id = 3148060,
 	name = "【偶像活动通用】量产型航空母舰(μ) 轰炸机 Lv1",
@@ -239388,7 +233478,6 @@ _G.pg.base.aircraft_template[3148060] = {
 		3148070
 	}
 }
-
 _G.pg.base.aircraft_template[3148061] = {
 	id = 3148061,
 	name = "【偶像活动通用】量产型航空母舰(μ) 轰炸机 Lv2",
@@ -239400,7 +233489,6 @@ _G.pg.base.aircraft_template[3148061] = {
 		3148071
 	}
 }
-
 _G.pg.base.aircraft_template[3148062] = {
 	id = 3148062,
 	name = "【偶像活动通用】量产型航空母舰(μ) 轰炸机 Lv3",
@@ -239412,7 +233500,6 @@ _G.pg.base.aircraft_template[3148062] = {
 		3148072
 	}
 }
-
 _G.pg.base.aircraft_template[3148063] = {
 	id = 3148063,
 	name = "【偶像活动通用】量产型航空母舰(μ) 轰炸机 Lv4",
@@ -239424,7 +233511,6 @@ _G.pg.base.aircraft_template[3148063] = {
 		3148073
 	}
 }
-
 _G.pg.base.aircraft_template[3148064] = {
 	id = 3148064,
 	name = "【偶像活动通用】量产型航空母舰(μ) 轰炸机 Lv5",
@@ -239436,7 +233522,6 @@ _G.pg.base.aircraft_template[3148064] = {
 		3148074
 	}
 }
-
 _G.pg.base.aircraft_template[3148065] = {
 	id = 3148065,
 	name = "【偶像活动通用】量产型航空母舰(μ) 战斗机 Lv1",
@@ -239449,7 +233534,6 @@ _G.pg.base.aircraft_template[3148065] = {
 		1100750
 	}
 }
-
 _G.pg.base.aircraft_template[3148066] = {
 	id = 3148066,
 	name = "【偶像活动通用】量产型航空母舰(μ) 战斗机 Lv2",
@@ -239462,7 +233546,6 @@ _G.pg.base.aircraft_template[3148066] = {
 		1100751
 	}
 }
-
 _G.pg.base.aircraft_template[3148067] = {
 	id = 3148067,
 	name = "【偶像活动通用】量产型航空母舰(μ) 战斗机 Lv3",
@@ -239475,7 +233558,6 @@ _G.pg.base.aircraft_template[3148067] = {
 		1100752
 	}
 }
-
 _G.pg.base.aircraft_template[3148068] = {
 	id = 3148068,
 	name = "【偶像活动通用】量产型航空母舰(μ) 战斗机 Lv4",
@@ -239488,7 +233570,6 @@ _G.pg.base.aircraft_template[3148068] = {
 		1100753
 	}
 }
-
 _G.pg.base.aircraft_template[3148069] = {
 	id = 3148069,
 	name = "【偶像活动通用】量产型航空母舰(μ) 战斗机 Lv5",
@@ -239501,7 +233582,6 @@ _G.pg.base.aircraft_template[3148069] = {
 		1100754
 	}
 }
-
 _G.pg.base.aircraft_template[3148155] = {
 	type = 2,
 	name = "【偶像活动通用】航母人形 鱼雷机 Lv1",
@@ -239578,7 +233658,6 @@ _G.pg.base.aircraft_template[3148155] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148156] = {
 	type = 2,
 	name = "【偶像活动通用】航母人形 鱼雷机 Lv2",
@@ -239655,7 +233734,6 @@ _G.pg.base.aircraft_template[3148156] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148157] = {
 	type = 2,
 	name = "【偶像活动通用】航母人形 鱼雷机 Lv3",
@@ -239732,7 +233810,6 @@ _G.pg.base.aircraft_template[3148157] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148158] = {
 	type = 2,
 	name = "【偶像活动通用】航母人形 鱼雷机 Lv4",
@@ -239809,7 +233886,6 @@ _G.pg.base.aircraft_template[3148158] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148159] = {
 	type = 2,
 	name = "【偶像活动通用】航母人形 鱼雷机 Lv5",
@@ -239886,7 +233962,6 @@ _G.pg.base.aircraft_template[3148159] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148160] = {
 	type = 3,
 	name = "【偶像活动通用】航母人形 轰炸机 Lv1",
@@ -239963,7 +234038,6 @@ _G.pg.base.aircraft_template[3148160] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148161] = {
 	type = 3,
 	name = "【偶像活动通用】航母人形 轰炸机 Lv2",
@@ -240040,7 +234114,6 @@ _G.pg.base.aircraft_template[3148161] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148162] = {
 	type = 3,
 	name = "【偶像活动通用】航母人形 轰炸机 Lv3",
@@ -240117,7 +234190,6 @@ _G.pg.base.aircraft_template[3148162] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148163] = {
 	type = 3,
 	name = "【偶像活动通用】航母人形 轰炸机 Lv4",
@@ -240194,7 +234266,6 @@ _G.pg.base.aircraft_template[3148163] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3148164] = {
 	type = 3,
 	name = "【偶像活动通用】航母人形 轰炸机 Lv5",
@@ -240271,7 +234342,6 @@ _G.pg.base.aircraft_template[3148164] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3141006] = {
 	attack_power = 2,
 	name = "【2024偶像三期SP2】BOSS 可畏(μ兵装)  轰炸机",
@@ -240347,7 +234417,6 @@ _G.pg.base.aircraft_template[3141006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3141007] = {
 	attack_power = 2,
 	name = "【2024偶像三期SP2】BOSS 可畏(μ兵装)  战斗机",
@@ -240423,7 +234492,6 @@ _G.pg.base.aircraft_template[3141007] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3145005] = {
 	attack_power = 2,
 	name = "【2024偶像三期μSP】BOSS 可畏(μ兵装)  轰炸机",
@@ -240499,7 +234567,6 @@ _G.pg.base.aircraft_template[3145005] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3145006] = {
 	attack_power = 2,
 	name = "【2024偶像三期μSP】BOSS 可畏(μ兵装)  战斗机",
@@ -240575,7 +234642,6 @@ _G.pg.base.aircraft_template[3145006] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3146106] = {
 	attack_power = 2,
 	name = "【2024偶像三期ISP2】BOSS 可畏(μ兵装)  轰炸机",
@@ -240651,7 +234717,6 @@ _G.pg.base.aircraft_template[3146106] = {
 		}
 	}
 }
-
 _G.pg.base.aircraft_template[3146107] = {
 	attack_power = 2,
 	name = "【2024偶像三期ISP2】BOSS 可畏(μ兵装)  战斗机",
@@ -240727,12 +234792,3 @@ _G.pg.base.aircraft_template[3146107] = {
 		}
 	}
 }
-
-if rawget(uv0[slot1], "base") ~= nil then
-	rawset(slot2, "base", nil)
-	setmetatable(slot2, {
-		__index = uv0[slot3]
-	})
-end
-
-return slot2

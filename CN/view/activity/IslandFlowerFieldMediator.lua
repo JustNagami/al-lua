@@ -1,48 +1,49 @@
-slot0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
-slot0.GET_FLOWER_AWARD = "IslandFlowerFieldMediator.GET_FLOWER_AWARD"
+﻿local var_0_0 = class("IslandFlowerFieldMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = getProxy(ActivityProxy)
-	slot2 = slot0.viewComponent
+var_0_0.GET_FLOWER_AWARD = "IslandFlowerFieldMediator.GET_FLOWER_AWARD"
 
-	slot2:setActivity(slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD))
-	slot0:bind(uv0.GET_FLOWER_AWARD, function (slot0, slot1)
-		uv0:sendNotification(GAME.ISLAND_FLOWER_GET, {
-			act_id = uv1.id,
-			isAuto = slot1
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD)
+
+	arg_1_0.viewComponent:setActivity(var_1_0)
+	arg_1_0:bind(var_0_0.GET_FLOWER_AWARD, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ISLAND_FLOWER_GET, {
+			act_id = var_1_0.id,
+			isAuto = arg_2_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		GAME.ISLAND_FLOWER_GET_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == GAME.ISLAND_FLOWER_GET_DONE then
-		if #slot3.awards > 0 then
-			if slot3.isAuto then
-				slot0:addSubLayers(Context.New({
+	if var_4_0 == GAME.ISLAND_FLOWER_GET_DONE then
+		if #var_4_1.awards > 0 then
+			if var_4_1.isAuto then
+				arg_4_0:addSubLayers(Context.New({
 					mediator = SixthAnniversaryIslandFlowerWindowMediator,
 					viewComponent = SixthAnniversaryIslandFlowerWindowLayer,
 					data = {
-						awards = slot3.awards,
-						name = pg.ship_data_statistics[slot0.contextData.shipConfigId].name
+						awards = var_4_1.awards,
+						name = pg.ship_data_statistics[arg_4_0.contextData.shipConfigId].name
 					}
 				}))
 			else
-				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+				arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.awards)
 			end
 		end
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED and slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD then
-		slot0.viewComponent:setActivity(slot3)
-		slot0.viewComponent:refreshDisplay()
+	elseif var_4_0 == ActivityProxy.ACTIVITY_UPDATED and var_4_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD then
+		arg_4_0.viewComponent:setActivity(var_4_1)
+		arg_4_0.viewComponent:refreshDisplay()
 	end
 end
 
-return slot0
+return var_0_0

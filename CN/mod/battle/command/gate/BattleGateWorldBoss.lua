@@ -1,165 +1,183 @@
-slot0 = class("BattleGateWorldBoss")
-ys.Battle.BattleGateWorldBoss = slot0
-slot0.__name = "BattleGateWorldBoss"
+﻿local var_0_0 = class("BattleGateWorldBoss")
 
-function slot0.Entrance(slot0, slot1)
+ys.Battle.BattleGateWorldBoss = var_0_0
+var_0_0.__name = "BattleGateWorldBoss"
+
+function var_0_0.Entrance(arg_1_0, arg_1_1)
 	if BeginStageCommand.DockOverload() then
 		return
 	end
 
-	slot2 = slot0.actId
-	slot3 = getProxy(PlayerProxy)
-	slot4 = getProxy(BayProxy)
-	slot5 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
-	slot6 = true
-	slot7 = {}
-	slot8 = 0
-	slot9 = 0
+	local var_1_0 = arg_1_0.actId
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = getProxy(BayProxy)
+	local var_1_3 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
+	local var_1_4 = true
+	local var_1_5 = {}
+	local var_1_6 = 0
+	local var_1_7 = 0
+	local var_1_8 = nowWorld()
+	local var_1_9 = var_1_8:GetBossProxy():GetFleet(arg_1_0.bossId)
+	local var_1_10 = var_1_9.ships
 
-	for slot17, slot18 in ipairs(nowWorld():GetBossProxy():GetFleet(slot0.bossId).ships) do
-		slot7[#slot7 + 1] = slot18
+	for iter_1_0, iter_1_1 in ipairs(var_1_10) do
+		var_1_5[#var_1_5 + 1] = iter_1_1
 	end
 
-	slot14 = slot4:getSortShipsByFleet(slot12)
-	slot15 = slot3:getData()
-	slot17 = slot10:GetBossProxy()
-	slot18 = slot17:GetBossById(slot0.bossId)
-	slot19 = slot18:GetStageID()
+	local var_1_11 = var_1_2:getSortShipsByFleet(var_1_9)
+	local var_1_12 = var_1_1:getData()
+	local var_1_13 = arg_1_0.bossId
+	local var_1_14 = var_1_8:GetBossProxy()
+	local var_1_15 = var_1_14:GetBossById(var_1_13)
+	local var_1_16 = var_1_15:GetStageID()
 
-	if slot17:IsSelfBoss(slot18) and slot18:GetSelfFightCnt() > 0 then
-		slot9 = slot18:GetOilConsume()
+	if var_1_14:IsSelfBoss(var_1_15) and var_1_15:GetSelfFightCnt() > 0 then
+		var_1_7 = var_1_15:GetOilConsume()
 	end
 
-	if slot6 and slot15.oil < slot9 then
+	if var_1_4 and var_1_7 > var_1_12.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(SYSTEM_WORLD_BOSS, slot7, {
-		slot16
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_17(arg_2_0)
+		if var_1_4 then
+			var_1_12:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_7
 			})
 		end
 
-		if uv3.enter_energy_cost > 0 then
-			slot1 = pg.gameset.battle_consume_energy.key_value
+		if var_1_3.enter_energy_cost > 0 then
+			local var_2_0 = pg.gameset.battle_consume_energy.key_value
 
-			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(slot1)
-				uv5:updateShip(slot6)
+			for iter_2_0, iter_2_1 in ipairs(var_1_11) do
+				iter_2_1:cosumeEnergy(var_2_0)
+				var_1_2:updateShip(iter_2_1)
 			end
 		end
 
-		if uv6:IsSelfBoss(uv7) then
-			uv7:IncreaseFightCnt()
+		if var_1_14:IsSelfBoss(var_1_15) then
+			var_1_15:IncreaseFightCnt()
 		else
-			if WorldBossConst._IsCurrBoss(uv7) then
-				uv6:reducePt()
+			if WorldBossConst._IsCurrBoss(var_1_15) then
+				var_1_14:reducePt()
 			end
 
-			uv6:LockCacheBoss(uv8)
+			var_1_14:LockCacheBoss(var_1_13)
 		end
 
-		slot1 = uv9
+		var_1_1:updatePlayer(var_1_12)
 
-		slot1:updatePlayer(uv1)
-		uv12:sendNotification(GAME.BEGIN_STAGE_DONE, {
+		local var_2_1 = {
 			prefabFleet = {},
-			bossId = uv8,
-			actId = uv10,
-			stageId = uv11,
+			bossId = var_1_13,
+			actId = var_1_0,
+			stageId = var_1_16,
 			system = SYSTEM_WORLD_BOSS,
-			token = slot0.key,
-			bossLevel = uv7:GetLevel(),
-			bossConfigId = uv7:GetConfigID()
-		})
-	end, function (slot0)
-		function slot1()
-			uv0:UnlockCacheBoss()
-			uv0:RemoveCacheBoss(uv1.id)
+			token = arg_2_0.key,
+			bossLevel = var_1_15:GetLevel(),
+			bossConfigId = var_1_15:GetConfigID()
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
+	end
+
+	local function var_1_18(arg_3_0)
+		local function var_3_0()
+			var_1_14:UnlockCacheBoss()
+			var_1_14:RemoveCacheBoss(var_1_15.id)
 			pg.m02:sendNotification(GAME.WORLD_BOSS_START_BATTLE_FIALED)
 		end
 
-		if slot0.result == 1 then
+		if arg_3_0.result == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			slot1()
-		elseif slot0.result == 3 then
+			var_3_0()
+		elseif arg_3_0.result == 3 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			slot1()
-		elseif slot0.result == 6 then
+			var_3_0()
+		elseif arg_3_0.result == 6 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_max_challenge_cnt"))
-			slot1()
-		elseif slot0.result == 20 then
+			var_3_0()
+		elseif arg_3_0.result == 20 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
-			slot1()
-		elseif slot0.result == 9997 then
+			var_3_0()
+		elseif arg_3_0.result == 9997 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_maintenance"))
-			slot1()
+			var_3_0()
 		else
-			uv2:RequestFailStandardProcess(slot0)
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			arg_1_1:RequestFailStandardProcess(arg_3_0)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
 		end
-	end)
+	end
+
+	BeginStageCommand.SendRequest(SYSTEM_WORLD_BOSS, var_1_5, {
+		var_1_13
+	}, var_1_17, var_1_18)
 end
 
-function slot0.Exit(slot0, slot1)
-	if slot1.CheaterVertify() then
+function var_0_0.Exit(arg_5_0, arg_5_1)
+	if arg_5_1.CheaterVertify() then
 		return
 	end
 
-	slot2 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
-	slot3 = slot0.statistics._battleScore
-	slot4 = {}
-	slot8 = slot1.GeneralPackage(slot0, getProxy(BayProxy):getSortShipsByFleet(nowWorld():GetBossProxy():GetFleet(slot0.bossId)))
-	slot9 = 0
-	slot10 = {}
+	local var_5_0 = pg.battle_cost_template[SYSTEM_WORLD_BOSS]
+	local var_5_1 = arg_5_0.statistics._battleScore
+	local var_5_2 = {}
+	local var_5_3 = nowWorld():GetBossProxy():GetFleet(arg_5_0.bossId)
+	local var_5_4 = getProxy(BayProxy):getSortShipsByFleet(var_5_3)
+	local var_5_5 = arg_5_1.GeneralPackage(arg_5_0, var_5_4)
+	local var_5_6 = 0
+	local var_5_7 = {}
 
-	for slot14, slot15 in ipairs(slot0.statistics._enemyInfoList) do
-		table.insert(slot10, {
-			enemy_id = slot15.id,
-			damage_taken = slot15.damage,
-			total_hp = slot15.totalHp
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.statistics._enemyInfoList) do
+		table.insert(var_5_7, {
+			enemy_id = iter_5_1.id,
+			damage_taken = iter_5_1.damage,
+			total_hp = iter_5_1.totalHp
 		})
 
-		if slot9 < slot15.damage then
-			slot9 = slot15.damage
+		if var_5_6 < iter_5_1.damage then
+			var_5_6 = iter_5_1.damage
 		end
 	end
 
-	slot8.enemy_info = slot10
+	var_5_5.enemy_info = var_5_7
 
-	slot1:SendRequest(slot8, function (slot0)
-		slot1, slot2 = uv0:GeneralLoot(slot0)
+	local function var_5_8(arg_6_0)
+		local var_6_0, var_6_1 = arg_5_1:GeneralLoot(arg_6_0)
 
-		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, accumulate)
+		arg_5_1.addShipsExp(arg_6_0.ship_exp_list, arg_5_0.statistics, accumulate)
 
-		slot4 = nowWorld():GetBossProxy()
-		slot5 = slot4:GetBossById(uv1.bossId)
+		local var_6_2 = nowWorld():GetBossProxy()
+		local var_6_3 = var_6_2:GetBossById(arg_5_0.bossId)
+		local var_6_4 = var_6_3:GetName()
 
-		slot4:ClearRank(slot5.id)
-		slot4:UpdateHighestDamage(uv2)
+		var_6_2:ClearRank(var_6_3.id)
+		var_6_2:UpdateHighestDamage(var_5_6)
 
-		uv1.statistics.mvpShipID = slot0.mvp
+		arg_5_0.statistics.mvpShipID = arg_6_0.mvp
 
-		uv0:sendNotification(GAME.FINISH_STAGE_DONE, {
+		local var_6_5 = {
 			system = SYSTEM_WORLD_BOSS,
-			statistics = uv1.statistics,
-			score = uv3,
-			drops = slot1,
+			statistics = arg_5_0.statistics,
+			score = var_5_1,
+			drops = var_6_0,
 			commanderExps = {},
-			result = slot0.result,
-			extraDrops = slot2,
-			bossId = uv1.bossId,
-			name = slot5:GetName()
-		})
-		slot4:UnlockCacheBoss()
-	end)
+			result = arg_6_0.result,
+			extraDrops = var_6_1,
+			bossId = arg_5_0.bossId,
+			name = var_6_4
+		}
+
+		arg_5_1:sendNotification(GAME.FINISH_STAGE_DONE, var_6_5)
+		var_6_2:UnlockCacheBoss()
+	end
+
+	arg_5_1:SendRequest(var_5_5, var_5_8)
 end
 
-return slot0
+return var_0_0

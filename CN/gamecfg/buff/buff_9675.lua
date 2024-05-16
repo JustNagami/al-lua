@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "14-顶盾冲锋",
 	time = 0,
@@ -46,10 +46,10 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(2, 1, 0)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}

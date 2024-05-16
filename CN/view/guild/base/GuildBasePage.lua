@@ -1,52 +1,56 @@
-slot0 = class("GuildBasePage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("GuildBasePage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
-	slot1, slot2 = slot0:getTargetUI()
+function var_0_0.getUIName(arg_1_0)
+	local var_1_0, var_1_1 = arg_1_0:getTargetUI()
+	local var_1_2 = getProxy(GuildProxy):getRawData()
 
-	if not getProxy(GuildProxy):getRawData() then
-		return slot0.uiname
+	if not var_1_2 then
+		return arg_1_0.uiname
 	end
 
-	if slot3:getFaction() == GuildConst.FACTION_TYPE_BLHX then
-		slot0.uiname = slot1
-	elseif slot4 == GuildConst.FACTION_TYPE_CSZZ then
-		slot0.uiname = slot2
+	local var_1_3 = var_1_2:getFaction()
+
+	if var_1_3 == GuildConst.FACTION_TYPE_BLHX then
+		arg_1_0.uiname = var_1_0
+	elseif var_1_3 == GuildConst.FACTION_TYPE_CSZZ then
+		arg_1_0.uiname = var_1_1
 	end
 
-	return slot0.uiname
+	return arg_1_0.uiname
 end
 
-function slot0.getTargetUI(slot0)
+function var_0_0.getTargetUI(arg_2_0)
 	assert(false)
 end
 
-function slot0.Destroy(slot0)
-	if slot0._state == uv0.STATES.DESTROY then
+function var_0_0.Destroy(arg_3_0)
+	if arg_3_0._state == var_0_0.STATES.DESTROY then
 		return
 	end
 
-	if not slot0:GetLoaded() then
-		slot0._state = uv0.STATES.DESTROY
+	if not arg_3_0:GetLoaded() then
+		arg_3_0._state = var_0_0.STATES.DESTROY
 
 		return
 	end
 
-	slot0._state = uv0.STATES.DESTROY
+	arg_3_0._state = var_0_0.STATES.DESTROY
 
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:OnDestroy()
-	slot0:disposeEvent()
-	slot0:cleanManagedTween()
+	pg.DelegateInfo.Dispose(arg_3_0)
+	arg_3_0:OnDestroy()
+	arg_3_0:disposeEvent()
+	arg_3_0:cleanManagedTween()
 
-	slot0._tf = nil
-	slot1 = PoolMgr.GetInstance()
-	slot2 = slot0.uiname
+	arg_3_0._tf = nil
 
-	if slot0._go ~= nil and slot2 then
-		slot1:ReturnUI(slot2, slot0._go)
+	local var_3_0 = PoolMgr.GetInstance()
+	local var_3_1 = arg_3_0.uiname
 
-		slot0._go = nil
+	if arg_3_0._go ~= nil and var_3_1 then
+		var_3_0:ReturnUI(var_3_1, arg_3_0._go)
+
+		arg_3_0._go = nil
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,56 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					19231
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.1
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.3
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				skill_id = 19230,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -478,57 +530,5 @@ return {
 	stack = 1,
 	id = 19232,
 	icon = 19230,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					19231
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.1
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "criDamage",
-				number = 0.3
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				skill_id = 19230,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

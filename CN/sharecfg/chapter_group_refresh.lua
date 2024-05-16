@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.chapter_group_refresh = {
 	[1404] = {
 		id = 1404,

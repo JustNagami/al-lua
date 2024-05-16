@@ -1,636 +1,639 @@
-slot0 = class("WorldPortLayer", import("..base.BaseUI"))
-slot0.Listeners = {
+﻿local var_0_0 = class("WorldPortLayer", import("..base.BaseUI"))
+
+var_0_0.Listeners = {
 	onUpdateGoods = "OnUpdateGoods",
 	onUpdateMoneyCount = "OnUpdateMoneyCount",
 	onUpdateTasks = "OnUpdateTasks",
 	onUpdateNGoods = "OnUpdateNGoods"
 }
-slot0.TitleName = {
+var_0_0.TitleName = {
 	"text_gangkou",
 	"text_operation",
 	"text_supply"
 }
-slot0.PageMain = 0
-slot0.PageTask = 1
-slot0.PageShop = 2
-slot0.PageDockyard = 3
-slot0.PageNShop = 4
-slot0.BlurPages = {
-	[slot0.PageTask] = true,
-	[slot0.PageShop] = true,
-	[slot0.PageNShop] = true
+var_0_0.PageMain = 0
+var_0_0.PageTask = 1
+var_0_0.PageShop = 2
+var_0_0.PageDockyard = 3
+var_0_0.PageNShop = 4
+var_0_0.BlurPages = {
+	[var_0_0.PageTask] = true,
+	[var_0_0.PageShop] = true,
+	[var_0_0.PageNShop] = true
 }
-slot0.optionsPath = {
+var_0_0.optionsPath = {
 	"blur_panel/adapt/top/title/option"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldPortUI"
 end
 
-function slot0.init(slot0)
-	for slot4, slot5 in pairs(uv0.Listeners) do
-		slot0[slot4] = function (...)
-			uv0[uv1](uv2, ...)
+function var_0_0.init(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(var_0_0.Listeners) do
+		arg_2_0[iter_2_0] = function(...)
+			var_0_0[iter_2_1](arg_2_0, ...)
 		end
 	end
 
-	slot0.rtBg = slot0:findTF("bg")
-	slot0.rtEnterIcon = slot0.rtBg:Find("enter_icon")
-	slot0.rtBgNShop = slot0._tf:Find("bg_2")
-	slot0.rtBlurPanel = slot0:findTF("blur_panel")
-	slot0.rtTasks = slot0.rtBlurPanel:Find("adapt/tasks")
-	slot0.rtShop = slot0.rtBlurPanel:Find("adapt/shop")
-	slot0.rtPainting = slot0.rtShop:Find("paint")
-	slot0.btnPainting = slot0.rtShop:Find("paint_touch")
+	arg_2_0.rtBg = arg_2_0:findTF("bg")
+	arg_2_0.rtEnterIcon = arg_2_0.rtBg:Find("enter_icon")
+	arg_2_0.rtBgNShop = arg_2_0._tf:Find("bg_2")
+	arg_2_0.rtBlurPanel = arg_2_0:findTF("blur_panel")
+	arg_2_0.rtTasks = arg_2_0.rtBlurPanel:Find("adapt/tasks")
+	arg_2_0.rtShop = arg_2_0.rtBlurPanel:Find("adapt/shop")
+	arg_2_0.rtPainting = arg_2_0.rtShop:Find("paint")
+	arg_2_0.btnPainting = arg_2_0.rtShop:Find("paint_touch")
 
-	setActive(slot0.btnPainting, false)
+	setActive(arg_2_0.btnPainting, false)
 
-	slot0.rtChat = slot0.rtShop:Find("chat")
+	arg_2_0.rtChat = arg_2_0.rtShop:Find("chat")
 
-	setActive(slot0.rtChat, false)
+	setActive(arg_2_0.rtChat, false)
 
-	slot0.rtNShop = slot0.rtBlurPanel:Find("adapt/new_shop")
-	slot0.containerPort = slot0.rtNShop:Find("frame/content/left")
-	slot1 = slot0.containerPort
-	slot0.tplPort = slot1:Find("port_tpl")
-	slot0.poolTplPort = {
-		slot0.tplPort
+	arg_2_0.rtNShop = arg_2_0.rtBlurPanel:Find("adapt/new_shop")
+	arg_2_0.containerPort = arg_2_0.rtNShop:Find("frame/content/left")
+	arg_2_0.tplPort = arg_2_0.containerPort:Find("port_tpl")
+	arg_2_0.poolTplPort = {
+		arg_2_0.tplPort
 	}
-	slot0.rtNGoodsContainer = slot0.rtNShop:Find("frame/content/right/page/view/content")
-	slot0.rtNShopRes = slot0.rtNShop:Find("frame/content/right/page/title/res")
-	slot1 = Drop.New({
+	arg_2_0.rtNGoodsContainer = arg_2_0.rtNShop:Find("frame/content/right/page/view/content")
+	arg_2_0.rtNShopRes = arg_2_0.rtNShop:Find("frame/content/right/page/title/res")
+
+	local var_2_0 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
 		id = WorldItem.PortMoneyId
 	})
 
-	GetImageSpriteFromAtlasAsync(slot1:getIcon(), "", slot0.rtNShopRes:Find("icon/Image"), false)
-	setText(slot0.rtNShopRes:Find("icon/name"), slot1:getName())
+	GetImageSpriteFromAtlasAsync(var_2_0:getIcon(), "", arg_2_0.rtNShopRes:Find("icon/Image"), false)
+	setText(arg_2_0.rtNShopRes:Find("icon/name"), var_2_0:getName())
 
-	slot0.rtTop = slot0.rtBlurPanel:Find("adapt/top")
-	slot0.btnBack = slot0.rtTop:Find("title/back_button")
-	slot0.rtTopTitle = slot0.rtTop:Find("title")
-	slot0.rtImageTitle = slot0.rtTopTitle:Find("print/title")
-	slot0.rtImageTitleTask = slot0.rtTopTitle:Find("print/title_task")
-	slot0.rtImageTitleShop = slot0.rtTopTitle:Find("print/title_shop")
-	slot0.rtTopLeft = slot0.rtTop:Find("left_stage")
-	slot0.rtTopRight = slot0.rtTop:Find("right_stage")
-	slot0.wsWorldInfo = WSWorldInfo.New()
-	slot0.wsWorldInfo.transform = slot0.rtTopRight:Find("display_panel/world_info")
+	arg_2_0.rtTop = arg_2_0.rtBlurPanel:Find("adapt/top")
+	arg_2_0.btnBack = arg_2_0.rtTop:Find("title/back_button")
+	arg_2_0.rtTopTitle = arg_2_0.rtTop:Find("title")
+	arg_2_0.rtImageTitle = arg_2_0.rtTopTitle:Find("print/title")
+	arg_2_0.rtImageTitleTask = arg_2_0.rtTopTitle:Find("print/title_task")
+	arg_2_0.rtImageTitleShop = arg_2_0.rtTopTitle:Find("print/title_shop")
+	arg_2_0.rtTopLeft = arg_2_0.rtTop:Find("left_stage")
+	arg_2_0.rtTopRight = arg_2_0.rtTop:Find("right_stage")
+	arg_2_0.wsWorldInfo = WSWorldInfo.New()
+	arg_2_0.wsWorldInfo.transform = arg_2_0.rtTopRight:Find("display_panel/world_info")
 
-	slot0.wsWorldInfo:Setup()
-	setText(slot0.rtTopRight:Find("display_panel/title/title"), i18n("world_map_title_tips"))
-	setText(slot0.rtTopRight:Find("display_panel/title/title_en"), i18n("world_map_title_tips_en"))
-	setText(slot0.wsWorldInfo.transform:Find("power/bg/Word"), i18n("world_total_power"))
-	setText(slot0.wsWorldInfo.transform:Find("explore/mileage/Text"), i18n("world_mileage"))
-	setText(slot0.wsWorldInfo.transform:Find("explore/pressing/Text"), i18n("world_pressing"))
+	arg_2_0.wsWorldInfo:Setup()
+	setText(arg_2_0.rtTopRight:Find("display_panel/title/title"), i18n("world_map_title_tips"))
+	setText(arg_2_0.rtTopRight:Find("display_panel/title/title_en"), i18n("world_map_title_tips_en"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("power/bg/Word"), i18n("world_total_power"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("explore/mileage/Text"), i18n("world_mileage"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("explore/pressing/Text"), i18n("world_pressing"))
 
-	slot0.rtTopBottom = slot0.rtTop:Find("bottom_stage")
-	slot0.btnOperation = slot0.rtTopBottom:Find("btn/operation")
-	slot0.btnSupply = slot0.rtTopBottom:Find("btn/supply")
-	slot0.btnDockyard = slot0.rtTopBottom:Find("btn/dockyard")
-	slot0.resPanel = WorldResource.New()
+	arg_2_0.rtTopBottom = arg_2_0.rtTop:Find("bottom_stage")
+	arg_2_0.btnOperation = arg_2_0.rtTopBottom:Find("btn/operation")
+	arg_2_0.btnSupply = arg_2_0.rtTopBottom:Find("btn/supply")
+	arg_2_0.btnDockyard = arg_2_0.rtTopBottom:Find("btn/dockyard")
+	arg_2_0.resPanel = WorldResource.New()
 
-	slot0.resPanel._tf:SetParent(slot0.rtTop:Find("title/resources"), false)
+	arg_2_0.resPanel._tf:SetParent(arg_2_0.rtTop:Find("title/resources"), false)
 
-	slot0.rtTaskWindow = slot0:findTF("task_window")
-	slot0.wsTasks = {}
-	slot0.wsGoods = {}
-	slot0.page = -1
-	slot0.dirtyFlags = {}
-	slot0.cdTF = slot0.rtShop:Find("timer_bg")
-	slot0.emptyTF = slot0.rtShop:Find("frame/scrollview/empty")
-	slot0.refreshBtn = slot0.rtShop:Find("refresh_btn")
+	arg_2_0.rtTaskWindow = arg_2_0:findTF("task_window")
+	arg_2_0.wsTasks = {}
+	arg_2_0.wsGoods = {}
+	arg_2_0.page = -1
+	arg_2_0.dirtyFlags = {}
+	arg_2_0.cdTF = arg_2_0.rtShop:Find("timer_bg")
+	arg_2_0.emptyTF = arg_2_0.rtShop:Find("frame/scrollview/empty")
+	arg_2_0.refreshBtn = arg_2_0.rtShop:Find("refresh_btn")
 
-	setActive(slot0.refreshBtn, false)
+	setActive(arg_2_0.refreshBtn, false)
 
-	slot0.glitchArtMaterial = slot0:findTF("resource/material1"):GetComponent(typeof(Image)).material
-	slot0.singleWindow = OriginShopSingleWindow.New(slot0._tf, slot0.event)
-	slot0.multiWindow = OriginShopMultiWindow.New(slot0._tf, slot0.event)
+	arg_2_0.glitchArtMaterial = arg_2_0:findTF("resource/material1"):GetComponent(typeof(Image)).material
+	arg_2_0.singleWindow = OriginShopSingleWindow.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.multiWindow = OriginShopMultiWindow.New(arg_2_0._tf, arg_2_0.event)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, {
-		groupName = slot0:getGroupNameFromData()
+function var_0_0.didEnter(arg_4_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf, {
+		groupName = arg_4_0:getGroupNameFromData()
 	})
-	onButton(slot0, slot0.btnBack, function ()
-		if uv0.isTweening then
+	onButton(arg_4_0, arg_4_0.btnBack, function()
+		if arg_4_0.isTweening then
 			return
 		end
 
-		if uv0.port:IsTempPort() or uv0.page == uv1.PageMain then
-			uv0:EaseOutUI(function ()
-				uv0:closeView()
+		if arg_4_0.port:IsTempPort() or arg_4_0.page == var_0_0.PageMain then
+			arg_4_0:EaseOutUI(function()
+				arg_4_0:closeView()
 			end)
 		else
-			uv0:SetPage(uv1.PageMain)
+			arg_4_0:SetPage(var_0_0.PageMain)
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnOperation, function ()
-		uv0:SetPage(uv1.PageTask)
+	onButton(arg_4_0, arg_4_0.btnOperation, function()
+		arg_4_0:SetPage(var_0_0.PageTask)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnSupply, function ()
+	onButton(arg_4_0, arg_4_0.btnSupply, function()
 		if nowWorld():UsePortNShop() then
-			uv0:SetPage(uv1.PageNShop)
+			arg_4_0:SetPage(var_0_0.PageNShop)
 		else
-			uv0:SetPage(uv1.PageShop)
+			arg_4_0:SetPage(var_0_0.PageShop)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnDockyard, function ()
-		uv0:emit(WorldPortMediator.OnOpenBay)
+	onButton(arg_4_0, arg_4_0.btnDockyard, function()
+		arg_4_0:emit(WorldPortMediator.OnOpenBay)
 	end, SFX_PANEL)
-	slot0:UpdatePainting(slot0:GetPaintingInfo())
-	slot0:UpdateTaskTip()
-	slot0:UpdateCDTip()
-	slot0:UpdateNShopTip()
+	arg_4_0:UpdatePainting(arg_4_0:GetPaintingInfo())
+	arg_4_0:UpdateTaskTip()
+	arg_4_0:UpdateCDTip()
+	arg_4_0:UpdateNShopTip()
 
-	if slot0.port:IsTempPort() then
-		slot0.contextData.page = WorldPortLayer.PageShop
-	elseif slot0.contextData.page == WorldPortLayer.PageDockyard then
-		slot0.contextData.page = nil
+	if arg_4_0.port:IsTempPort() then
+		arg_4_0.contextData.page = WorldPortLayer.PageShop
+	elseif arg_4_0.contextData.page == WorldPortLayer.PageDockyard then
+		arg_4_0.contextData.page = nil
 	end
 
-	slot0:SetPage(slot0.contextData.page or WorldPortLayer.PageMain)
-	slot0:EaseInUI()
+	arg_4_0:SetPage(arg_4_0.contextData.page or WorldPortLayer.PageMain)
+	arg_4_0:EaseInUI()
 end
 
-function slot0.onBackPressed(slot0)
-	triggerButton(slot0.btnBack)
+function var_0_0.onBackPressed(arg_10_0)
+	triggerButton(arg_10_0.btnBack)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
-	slot0:RecyclePainting(slot0.rtPainting)
-	slot0.singleWindow:Destroy()
-	slot0.multiWindow:Destroy()
+function var_0_0.willExit(arg_11_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf)
+	arg_11_0:RecyclePainting(arg_11_0.rtPainting)
+	arg_11_0.singleWindow:Destroy()
+	arg_11_0.multiWindow:Destroy()
 
-	slot0.contextData.isEnter = true
+	arg_11_0.contextData.isEnter = true
 
-	if uv0.BlurPages[slot0.page] then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0.rtBlurPanel, slot0._tf)
+	if var_0_0.BlurPages[arg_11_0.page] then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_11_0.rtBlurPanel, arg_11_0._tf)
 	end
 
-	slot0:CancelUITween()
-	slot0:DisposeTopUI()
-	slot0:DisposeTasks()
-	slot0:DisposeGoods()
-	slot0.atlas:RemoveListener(WorldAtlas.EventUpdateNGoodsCount, slot0.onUpdateNGoods)
+	arg_11_0:CancelUITween()
+	arg_11_0:DisposeTopUI()
+	arg_11_0:DisposeTasks()
+	arg_11_0:DisposeGoods()
+	arg_11_0.atlas:RemoveListener(WorldAtlas.EventUpdateNGoodsCount, arg_11_0.onUpdateNGoods)
 
-	slot0.atlas = nil
+	arg_11_0.atlas = nil
 
-	slot0.port:RemoveListener(WorldMapPort.EventUpdateTaskIds, slot0.onUpdateTasks)
-	slot0.port:RemoveListener(WorldMapPort.EventUpdateGoods, slot0.onUpdateGoods)
+	arg_11_0.port:RemoveListener(WorldMapPort.EventUpdateTaskIds, arg_11_0.onUpdateTasks)
+	arg_11_0.port:RemoveListener(WorldMapPort.EventUpdateGoods, arg_11_0.onUpdateGoods)
 
-	slot0.port = nil
+	arg_11_0.port = nil
 
-	slot0.resPanel:exit()
+	arg_11_0.resPanel:exit()
 
-	slot0.resPanel = nil
+	arg_11_0.resPanel = nil
 
-	slot0.refreshTimer:Stop()
+	arg_11_0.refreshTimer:Stop()
 
-	slot0.refreshTimer = nil
+	arg_11_0.refreshTimer = nil
 
-	slot0.inventory:RemoveListener(WorldInventoryProxy.EventUpdateItem, slot0.onUpdateMoneyCount)
+	arg_11_0.inventory:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg_11_0.onUpdateMoneyCount)
 
-	slot0.inventory = nil
+	arg_11_0.inventory = nil
 
-	slot0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, slot0.onUpdateTasks)
+	arg_11_0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, arg_11_0.onUpdateTasks)
 
-	slot0.taskProxy = nil
+	arg_11_0.taskProxy = nil
 
-	slot0.wsWorldInfo:Dispose()
+	arg_11_0.wsWorldInfo:Dispose()
 
-	slot0.wsWorldInfo = nil
+	arg_11_0.wsWorldInfo = nil
 end
 
-function slot0.GetPaintingInfo(slot0)
-	if slot0.port:IsTempPort() then
+function var_0_0.GetPaintingInfo(arg_12_0)
+	if arg_12_0.port:IsTempPort() then
 		return "mingshi", false
 	else
 		return "tbniang", true
 	end
 end
 
-function slot0.UpdatePainting(slot0, slot1, slot2)
-	slot0.paintingName = slot1
+function var_0_0.UpdatePainting(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0.paintingName = arg_13_1
 
-	setPaintingPrefab(slot0.rtPainting, slot1, "chuanwu")
+	setPaintingPrefab(arg_13_0.rtPainting, arg_13_1, "chuanwu")
 
-	if slot2 then
-		slot0:AddGlitchArtEffectForPating(slot0.rtPainting)
+	if arg_13_2 then
+		arg_13_0:AddGlitchArtEffectForPating(arg_13_0.rtPainting)
 	end
 end
 
-function slot0.AddGlitchArtEffectForPating(slot0, slot1)
-	for slot6 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
-		slot2[slot6].material = slot0.glitchArtMaterial
+function var_0_0.AddGlitchArtEffectForPating(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_1:GetComponentsInChildren(typeof(Image))
+
+	for iter_14_0 = 0, var_14_0.Length - 1 do
+		var_14_0[iter_14_0].material = arg_14_0.glitchArtMaterial
 	end
 end
 
-function slot0.RecyclePainting(slot0, slot1)
-	if slot1:Find("fitter").childCount > 0 then
-		for slot6 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
-			slot7 = slot2[slot6]
-			slot8 = Color.white
+function var_0_0.RecyclePainting(arg_15_0, arg_15_1)
+	if arg_15_1:Find("fitter").childCount > 0 then
+		local var_15_0 = arg_15_1:GetComponentsInChildren(typeof(Image))
 
-			if slot7.material ~= slot7.defaultGraphicMaterial then
-				slot7.material = slot7.defaultGraphicMaterial
+		for iter_15_0 = 0, var_15_0.Length - 1 do
+			local var_15_1 = var_15_0[iter_15_0]
+			local var_15_2 = Color.white
 
-				slot7.material:SetColor("_Color", slot8)
+			if var_15_1.material ~= var_15_1.defaultGraphicMaterial then
+				var_15_1.material = var_15_1.defaultGraphicMaterial
+
+				var_15_1.material:SetColor("_Color", var_15_2)
 			end
 		end
 
-		setGray(slot1, false, true)
+		setGray(arg_15_1, false, true)
 
-		slot3 = slot1:Find("fitter"):GetChild(0)
+		local var_15_3 = arg_15_1:Find("fitter"):GetChild(0)
 
-		retPaintingPrefab(slot1, slot3.name)
+		retPaintingPrefab(arg_15_1, var_15_3.name)
 
-		if slot3:Find("temp_mask") then
-			Destroy(slot4)
+		local var_15_4 = var_15_3:Find("temp_mask")
+
+		if var_15_4 then
+			Destroy(var_15_4)
 		end
 	end
 end
 
-function slot0.DisplayTopUI(slot0, slot1)
-	setActive(slot0.rtImageTitle, slot1 == uv0.PageMain)
-	setActive(slot0.rtImageTitleTask, slot1 == uv0.PageTask)
-	setActive(slot0.rtImageTitleShop, slot1 == uv0.PageShop or slot1 == uv0.PageNShop)
-	setActive(slot0.rtTopLeft, slot1 ~= uv0.PageNShop)
-	setActive(slot0.rtTopRight, slot1 == uv0.PageMain)
-	setActive(slot0.rtTopBottom, slot1 == uv0.PageMain)
-	setActive(slot0.rtBg, slot1 ~= uv0.PageNShop)
-	setActive(slot0.rtBgNShop, slot1 == uv0.PageNShop)
+function var_0_0.DisplayTopUI(arg_16_0, arg_16_1)
+	setActive(arg_16_0.rtImageTitle, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtImageTitleTask, arg_16_1 == var_0_0.PageTask)
+	setActive(arg_16_0.rtImageTitleShop, arg_16_1 == var_0_0.PageShop or arg_16_1 == var_0_0.PageNShop)
+	setActive(arg_16_0.rtTopLeft, arg_16_1 ~= var_0_0.PageNShop)
+	setActive(arg_16_0.rtTopRight, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtTopBottom, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtBg, arg_16_1 ~= var_0_0.PageNShop)
+	setActive(arg_16_0.rtBgNShop, arg_16_1 == var_0_0.PageNShop)
 end
 
-function slot0.DisposeTopUI(slot0)
-	slot0.wsPortLeft:Dispose()
+function var_0_0.DisposeTopUI(arg_17_0)
+	arg_17_0.wsPortLeft:Dispose()
 end
 
-function slot0.NewPortLeft(slot0)
-	slot1 = WSPortLeft.New()
-	slot1.transform = slot0.rtTopLeft
+function var_0_0.NewPortLeft(arg_18_0)
+	local var_18_0 = WSPortLeft.New()
 
-	slot1:Setup()
-	slot1:UpdateMap(nowWorld():GetActiveMap())
+	var_18_0.transform = arg_18_0.rtTopLeft
 
-	return slot1
+	var_18_0:Setup()
+	var_18_0:UpdateMap(nowWorld():GetActiveMap())
+
+	return var_18_0
 end
 
-function slot0.EnterPortAnim(slot0, slot1)
-	if slot0.rtEnterIcon:GetComponent(typeof(DftAniEvent)) then
-		slot2:SetTriggerEvent(function (slot0)
-			uv0()
+function var_0_0.EnterPortAnim(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0.rtEnterIcon:GetComponent(typeof(DftAniEvent))
+
+	if var_19_0 then
+		var_19_0:SetTriggerEvent(function(arg_20_0)
+			arg_19_1()
 		end)
-		slot2:SetEndEvent(function (slot0)
-			setActive(uv0.rtEnterIcon, false)
+		var_19_0:SetEndEvent(function(arg_21_0)
+			setActive(arg_19_0.rtEnterIcon, false)
 		end)
 	end
 
-	setActive(slot0.rtEnterIcon, true)
+	setActive(arg_19_0.rtEnterIcon, true)
 end
 
-function slot0.EaseInUI(slot0, slot1)
-	slot0.isTweening = true
-	slot2 = {}
+function var_0_0.EaseInUI(arg_22_0, arg_22_1)
+	arg_22_0.isTweening = true
 
-	slot0:CancelUITween()
+	local var_22_0 = {}
 
-	if #slot0.enterIcon > 0 and not slot0.contextData.isEnter then
-		table.insert(slot2, function (slot0)
-			setActive(uv0.rtTop, false)
+	arg_22_0:CancelUITween()
 
-			slot1 = uv0
+	if #arg_22_0.enterIcon > 0 and not arg_22_0.contextData.isEnter then
+		table.insert(var_22_0, function(arg_23_0)
+			setActive(arg_22_0.rtTop, false)
+			arg_22_0:EnterPortAnim(function()
+				setActive(arg_22_0.rtTop, true)
 
-			slot1:EnterPortAnim(function ()
-				setActive(uv0.rtTop, true)
-
-				return uv1()
+				return arg_23_0()
 			end)
 		end)
 	else
-		setActive(slot0.rtEnterIcon, false)
+		setActive(arg_22_0.rtEnterIcon, false)
 	end
 
-	seriesAsync(slot2, function ()
-		setAnchoredPosition(uv0.rtTopLeft, {
-			x = -uv0.rtTopLeft.rect.width
+	seriesAsync(var_22_0, function()
+		setAnchoredPosition(arg_22_0.rtTopLeft, {
+			x = -arg_22_0.rtTopLeft.rect.width
 		})
-		setAnchoredPosition(uv0.rtTopRight, {
-			x = uv0.rtTopRight.rect.width
+		setAnchoredPosition(arg_22_0.rtTopRight, {
+			x = arg_22_0.rtTopRight.rect.width
 		})
-		setAnchoredPosition(uv0.rtTopTitle, {
-			y = uv0.rtTopTitle.rect.height
+		setAnchoredPosition(arg_22_0.rtTopTitle, {
+			y = arg_22_0.rtTopTitle.rect.height
 		})
-		setAnchoredPosition(uv0.rtTopBottom, {
-			y = -uv0.rtTopRight.rect.height
+		setAnchoredPosition(arg_22_0.rtTopBottom, {
+			y = -arg_22_0.rtTopRight.rect.height
 		})
+		LeanTween.moveX(arg_22_0.rtTopLeft, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveX(arg_22_0.rtTopRight, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(arg_22_0.rtTopTitle, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(arg_22_0.rtTopBottom, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
+			arg_22_0.isTweening = false
 
-		slot0 = LeanTween.moveX(uv0.rtTopLeft, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveX(uv0.rtTopRight, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveY(uv0.rtTopTitle, 0, WorldConst.UIEaseDuration)
-
-		slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0 = LeanTween.moveY(uv0.rtTopBottom, 0, WorldConst.UIEaseDuration)
-		slot0 = slot0:setEase(LeanTweenType.easeOutSine)
-
-		slot0:setOnComplete(System.Action(function ()
-			uv0.isTweening = false
-
-			return existCall(uv1)
+			return existCall(arg_22_1)
 		end))
 	end)
 end
 
-function slot0.EaseOutUI(slot0, slot1)
-	slot0:CancelUITween()
+function var_0_0.EaseOutUI(arg_27_0, arg_27_1)
+	arg_27_0:CancelUITween()
+	LeanTween.moveX(arg_27_0.rtTopLeft, -arg_27_0.rtTopLeft.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveX(arg_27_0.rtTopRight, arg_27_0.rtTopRight.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(arg_27_0.rtTopTitle, arg_27_0.rtTopTitle.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(arg_27_0.rtTopBottom, -arg_27_0.rtTopRight.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
+		arg_27_0.isTweening = false
 
-	slot2 = LeanTween.moveX(slot0.rtTopLeft, -slot0.rtTopLeft.rect.width, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveX(slot0.rtTopRight, slot0.rtTopRight.rect.width, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveY(slot0.rtTopTitle, slot0.rtTopTitle.rect.height, WorldConst.UIEaseDuration)
-
-	slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2 = LeanTween.moveY(slot0.rtTopBottom, -slot0.rtTopRight.rect.height, WorldConst.UIEaseDuration)
-	slot2 = slot2:setEase(LeanTweenType.easeOutSine)
-
-	slot2:setOnComplete(System.Action(function ()
-		uv0.isTweening = false
-
-		return existCall(uv1)
+		return existCall(arg_27_1)
 	end))
 end
 
-function slot0.CancelUITween(slot0)
-	LeanTween.cancel(go(slot0.rtTopTitle))
-	LeanTween.cancel(go(slot0.rtTopLeft))
-	LeanTween.cancel(go(slot0.rtTopRight))
-	LeanTween.cancel(go(slot0.rtTopBottom))
+function var_0_0.CancelUITween(arg_29_0)
+	LeanTween.cancel(go(arg_29_0.rtTopTitle))
+	LeanTween.cancel(go(arg_29_0.rtTopLeft))
+	LeanTween.cancel(go(arg_29_0.rtTopRight))
+	LeanTween.cancel(go(arg_29_0.rtTopBottom))
 end
 
-function slot0.SetPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.SetPlayer(arg_30_0, arg_30_1)
+	arg_30_0.player = arg_30_1
 
-	slot0.resPanel:setPlayer(slot1)
+	arg_30_0.resPanel:setPlayer(arg_30_1)
 end
 
-function slot0.SetAtlas(slot0, slot1)
-	slot0.atlas = slot1
-	slot5 = slot0.onUpdateNGoods
+function var_0_0.SetAtlas(arg_31_0, arg_31_1)
+	arg_31_0.atlas = arg_31_1
 
-	slot0.atlas:AddListener(WorldAtlas.EventUpdateNGoodsCount, slot5)
+	arg_31_0.atlas:AddListener(WorldAtlas.EventUpdateNGoodsCount, arg_31_0.onUpdateNGoods)
 
-	slot0.nGoodsDic = {}
-	slot0.nGoodsPortDic = {}
+	arg_31_0.nGoodsDic = {}
+	arg_31_0.nGoodsPortDic = {}
 
-	for slot5, slot6 in pairs(slot1.nShopGoodsDic) do
-		slot0.nGoodsDic[slot5] = Goods.Create({
-			id = slot5,
-			count = slot6
+	for iter_31_0, iter_31_1 in pairs(arg_31_1.nShopGoodsDic) do
+		arg_31_0.nGoodsDic[iter_31_0] = Goods.Create({
+			id = iter_31_0,
+			count = iter_31_1
 		}, Goods.TYPE_WORLD_NSHOP)
-		slot0.nGoodsPortDic[slot7] = slot0.nGoodsPortDic[slot0.nGoodsDic[slot5]:getConfig("port_id")] or {}
 
-		table.insert(slot0.nGoodsPortDic[slot7], slot0.nGoodsDic[slot5])
+		local var_31_0 = arg_31_0.nGoodsDic[iter_31_0]:getConfig("port_id")
+
+		arg_31_0.nGoodsPortDic[var_31_0] = arg_31_0.nGoodsPortDic[var_31_0] or {}
+
+		table.insert(arg_31_0.nGoodsPortDic[var_31_0], arg_31_0.nGoodsDic[iter_31_0])
 	end
 
-	for slot5, slot6 in pairs(slot0.nGoodsPortDic) do
-		table.sort(slot6, CompareFuncs({
-			function (slot0)
-				return -slot0:getConfig("priority")
+	for iter_31_2, iter_31_3 in pairs(arg_31_0.nGoodsPortDic) do
+		table.sort(iter_31_3, CompareFuncs({
+			function(arg_32_0)
+				return -arg_32_0:getConfig("priority")
 			end,
-			function (slot0)
-				return slot0.id
+			function(arg_33_0)
+				return arg_33_0.id
 			end
 		}))
 	end
 end
 
-function slot0.SetPort(slot0, slot1)
-	slot0.port = slot1
+function var_0_0.SetPort(arg_34_0, arg_34_1)
+	local var_34_0 = nowWorld()
 
-	slot0.port:AddListener(WorldMapPort.EventUpdateTaskIds, slot0.onUpdateTasks)
-	slot0.port:AddListener(WorldMapPort.EventUpdateGoods, slot0.onUpdateGoods)
-	slot0:SetBg(slot0.port.id)
+	arg_34_0.port = arg_34_1
 
-	slot0.refreshTimer = Timer.New(function ()
-		if uv0.port:IsValid() then
-			uv0:UpdateRefreshTime(uv0.port.expiredTime - pg.TimeMgr.GetInstance():GetServerTime())
+	arg_34_0.port:AddListener(WorldMapPort.EventUpdateTaskIds, arg_34_0.onUpdateTasks)
+	arg_34_0.port:AddListener(WorldMapPort.EventUpdateGoods, arg_34_0.onUpdateGoods)
+	arg_34_0:SetBg(arg_34_0.port.id)
+
+	arg_34_0.refreshTimer = Timer.New(function()
+		if arg_34_0.port:IsValid() then
+			arg_34_0:UpdateRefreshTime(arg_34_0.port.expiredTime - pg.TimeMgr.GetInstance():GetServerTime())
 		else
-			uv0:emit(WorldPortMediator.OnReqPort, uv1:GetActiveMap().id)
+			arg_34_0:emit(WorldPortMediator.OnReqPort, var_34_0:GetActiveMap().id)
 		end
 	end, 1, -1)
 
-	slot0.refreshTimer:Start()
-	slot0.refreshTimer.func()
+	arg_34_0.refreshTimer:Start()
+	arg_34_0.refreshTimer.func()
 
-	slot3 = nowWorld():GetActiveMap():GetFleet()
-	slot0.wsPortLeft = slot0:NewPortLeft()
+	local var_34_1 = var_34_0:GetActiveMap():GetFleet()
 
-	setActive(slot0.btnOperation, slot0.port:GetRealm() == 0 or slot4 == slot2:GetRealm())
-	setActive(slot0.btnDockyard, slot4 == 0 or slot4 == slot2:GetRealm())
-	setActive(slot0.btnSupply, slot0.nGoodsPortDic[slot1.id])
-	setActive(slot0.resPanel._tf, slot2:IsSystemOpen(WorldConst.SystemResource))
+	arg_34_0.wsPortLeft = arg_34_0:NewPortLeft()
 
-	slot0.inventory = slot2:GetInventoryProxy()
+	local var_34_2 = arg_34_0.port:GetRealm()
 
-	slot0.inventory:AddListener(WorldInventoryProxy.EventUpdateItem, slot0.onUpdateMoneyCount)
-	slot0:OnUpdateMoneyCount()
+	setActive(arg_34_0.btnOperation, var_34_2 == 0 or var_34_2 == var_34_0:GetRealm())
+	setActive(arg_34_0.btnDockyard, var_34_2 == 0 or var_34_2 == var_34_0:GetRealm())
+	setActive(arg_34_0.btnSupply, arg_34_0.nGoodsPortDic[arg_34_1.id])
+	setActive(arg_34_0.resPanel._tf, var_34_0:IsSystemOpen(WorldConst.SystemResource))
 
-	slot0.taskProxy = slot2:GetTaskProxy()
+	arg_34_0.inventory = var_34_0:GetInventoryProxy()
 
-	slot0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, slot0.onUpdateTasks)
+	arg_34_0.inventory:AddListener(WorldInventoryProxy.EventUpdateItem, arg_34_0.onUpdateMoneyCount)
+	arg_34_0:OnUpdateMoneyCount()
+
+	arg_34_0.taskProxy = var_34_0:GetTaskProxy()
+
+	arg_34_0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, arg_34_0.onUpdateTasks)
 end
 
-function slot0.SetBg(slot0, slot1)
-	slot0.portBg = pg.world_port_data[slot1].port_bg
+function var_0_0.SetBg(arg_36_0, arg_36_1)
+	arg_36_0.portBg = pg.world_port_data[arg_36_1].port_bg
 
-	setImageAlpha(slot0.rtBg, #slot0.portBg > 0 and 1 or 0)
+	setImageAlpha(arg_36_0.rtBg, #arg_36_0.portBg > 0 and 1 or 0)
 
-	if #slot0.portBg > 0 then
-		GetImageSpriteFromAtlasAsync("world/port/" .. slot0.portBg, "", slot0.rtBg)
+	if #arg_36_0.portBg > 0 then
+		GetImageSpriteFromAtlasAsync("world/port/" .. arg_36_0.portBg, "", arg_36_0.rtBg)
 	end
 
-	slot0.enterIcon = pg.world_port_data[slot1].port_entrance_icon
+	arg_36_0.enterIcon = pg.world_port_data[arg_36_1].port_entrance_icon
 
-	setActive(slot0.rtEnterIcon, #slot0.enterIcon > 0)
+	setActive(arg_36_0.rtEnterIcon, #arg_36_0.enterIcon > 0)
 
-	if #slot0.enterIcon > 0 then
-		GetImageSpriteFromAtlasAsync("world/porttitle/" .. slot0.enterIcon, "", slot0.rtEnterIcon, false)
+	if #arg_36_0.enterIcon > 0 then
+		GetImageSpriteFromAtlasAsync("world/porttitle/" .. arg_36_0.enterIcon, "", arg_36_0.rtEnterIcon, false)
 	end
 
-	GetImageSpriteFromAtlasAsync("world/portword/" .. slot0.portBg, "", slot0.rtImageTitle, true)
-	GetImageSpriteFromAtlasAsync("world/portword/" .. slot0.portBg .. "_en", "", slot0.rtImageTitle:Find("Image"), true)
+	GetImageSpriteFromAtlasAsync("world/portword/" .. arg_36_0.portBg, "", arg_36_0.rtImageTitle, true)
+	GetImageSpriteFromAtlasAsync("world/portword/" .. arg_36_0.portBg .. "_en", "", arg_36_0.rtImageTitle:Find("Image"), true)
 end
 
-function slot0.OnUpdateTasks(slot0)
-	slot0:UpdateTaskTip()
-	slot0:SetPageDirty(uv0.PageTask)
+function var_0_0.OnUpdateTasks(arg_37_0)
+	arg_37_0:UpdateTaskTip()
+	arg_37_0:SetPageDirty(var_0_0.PageTask)
 
-	if slot0.page == uv0.PageTask then
-		slot0:UpdateTasks()
-	end
-end
-
-function slot0.OnUpdateGoods(slot0)
-	slot0:UpdateCDTip()
-	slot0:SetPageDirty(uv0.PageShop)
-
-	if slot0.page == uv0.PageShop then
-		slot0:UpdateGoods()
+	if arg_37_0.page == var_0_0.PageTask then
+		arg_37_0:UpdateTasks()
 	end
 end
 
-function slot0.OnUpdateNGoods(slot0, slot1, slot2, slot3, slot4)
-	if slot0.page == uv0.PageNShop then
-		slot5 = slot0.nGoodsDic[slot3]
-		slot5.buyCount = slot4
-		slot6 = slot0.rtNGoodsDic[slot3]
+function var_0_0.OnUpdateGoods(arg_38_0)
+	arg_38_0:UpdateCDTip()
+	arg_38_0:SetPageDirty(var_0_0.PageShop)
 
-		setText(slot6:Find("count_contain/count"), slot5:GetPurchasableCnt() .. "/" .. slot5:GetLimitGoodCount())
-		setActive(slot6:Find("mask"), not slot5:canPurchase())
-		setActive(slot6:Find("new"), false)
+	if arg_38_0.page == var_0_0.PageShop then
+		arg_38_0:UpdateGoods()
+	end
+end
+
+function var_0_0.OnUpdateNGoods(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4)
+	if arg_39_0.page == var_0_0.PageNShop then
+		local var_39_0 = arg_39_0.nGoodsDic[arg_39_3]
+
+		var_39_0.buyCount = arg_39_4
+
+		local var_39_1 = arg_39_0.rtNGoodsDic[arg_39_3]
+
+		setText(var_39_1:Find("count_contain/count"), var_39_0:GetPurchasableCnt() .. "/" .. var_39_0:GetLimitGoodCount())
+		setActive(var_39_1:Find("mask"), not var_39_0:canPurchase())
+		setActive(var_39_1:Find("new"), false)
 	else
-		slot0:SetPageDirty(uv0.PageNShop)
+		arg_39_0:SetPageDirty(var_0_0.PageNShop)
 	end
 end
 
-function slot0.SetPage(slot0, slot1)
-	if slot0.page ~= slot1 then
-		if uv0.BlurPages[slot0.page or 0] ~= uv0.BlurPages[slot1] then
-			if uv0.BlurPages[slot1] then
-				pg.UIMgr.GetInstance():BlurPanel(slot0.rtBlurPanel, false)
+function var_0_0.SetPage(arg_40_0, arg_40_1)
+	if arg_40_0.page ~= arg_40_1 then
+		if var_0_0.BlurPages[arg_40_0.page or 0] ~= var_0_0.BlurPages[arg_40_1] then
+			if var_0_0.BlurPages[arg_40_1] then
+				pg.UIMgr.GetInstance():BlurPanel(arg_40_0.rtBlurPanel, false)
 			else
-				pg.UIMgr.GetInstance():UnblurPanel(slot0.rtBlurPanel, slot0._tf)
+				pg.UIMgr.GetInstance():UnblurPanel(arg_40_0.rtBlurPanel, arg_40_0._tf)
 			end
 		end
 
-		if slot1 == uv0.PageShop and slot0.paintingName == "buzhihuo_shop" then
-			slot0:showRandomShipWord(pg.navalacademy_shoppingstreet_template[1].words_enter, true, "enter")
+		if arg_40_1 == var_0_0.PageShop and arg_40_0.paintingName == "buzhihuo_shop" then
+			arg_40_0:showRandomShipWord(pg.navalacademy_shoppingstreet_template[1].words_enter, true, "enter")
 		end
 
-		slot0.page = slot1
+		arg_40_0.page = arg_40_1
 
-		slot0:UpdatePage()
+		arg_40_0:UpdatePage()
 
-		slot0.contextData.page = slot1
+		arg_40_0.contextData.page = arg_40_1
 	end
 end
 
-function slot0.SetPageDirty(slot0, slot1)
-	slot0.dirtyFlags[slot1] = true
+function var_0_0.SetPageDirty(arg_41_0, arg_41_1)
+	arg_41_0.dirtyFlags[arg_41_1] = true
 end
 
-function slot0.IsPageDirty(slot0, slot1)
-	return slot0.dirtyFlags[slot1] == true or slot0.dirtyFlags[slot1] == nil
+function var_0_0.IsPageDirty(arg_42_0, arg_42_1)
+	return arg_42_0.dirtyFlags[arg_42_1] == true or arg_42_0.dirtyFlags[arg_42_1] == nil
 end
 
-function slot0.UpdatePage(slot0)
-	slot1 = slot0.page
+function var_0_0.UpdatePage(arg_43_0)
+	local var_43_0 = arg_43_0.page
 
-	slot0:DisplayTopUI(slot1)
-	setActive(slot0.rtTasks, slot1 == uv0.PageTask)
-	setActive(slot0.rtShop, slot1 == uv0.PageShop)
-	setActive(slot0.rtNShop, slot1 == uv0.PageNShop)
+	arg_43_0:DisplayTopUI(var_43_0)
+	setActive(arg_43_0.rtTasks, var_43_0 == var_0_0.PageTask)
+	setActive(arg_43_0.rtShop, var_43_0 == var_0_0.PageShop)
+	setActive(arg_43_0.rtNShop, var_43_0 == var_0_0.PageNShop)
 
-	if slot0:IsPageDirty(slot1) then
-		if slot1 == uv0.PageTask then
-			slot0:UpdateTasks()
-		elseif slot1 == uv0.PageShop then
-			slot0:UpdateGoods()
-		elseif slot1 == uv0.PageNShop then
-			slot0:UpdateNShopPorts()
+	if arg_43_0:IsPageDirty(var_43_0) then
+		if var_43_0 == var_0_0.PageTask then
+			arg_43_0:UpdateTasks()
+		elseif var_43_0 == var_0_0.PageShop then
+			arg_43_0:UpdateGoods()
+		elseif var_43_0 == var_0_0.PageNShop then
+			arg_43_0:UpdateNShopPorts()
 		end
 	end
 end
 
-function slot0.UpdateTasks(slot0)
-	slot0.dirtyFlags[uv0.PageTask] = false
-	slot1 = slot0.rtTasks:Find("frame/viewport/content")
-	slot3 = _.map(slot0.port.taskIds, function (slot0)
+function var_0_0.UpdateTasks(arg_44_0)
+	arg_44_0.dirtyFlags[var_0_0.PageTask] = false
+
+	local var_44_0 = arg_44_0.rtTasks:Find("frame/viewport/content")
+	local var_44_1 = var_44_0:GetChild(0)
+	local var_44_2 = _.map(arg_44_0.port.taskIds, function(arg_45_0)
 		return WorldTask.New({
-			id = slot0
+			id = arg_45_0
 		})
 	end)
 
-	table.sort(slot3, CompareFuncs(WorldTask.sortDic))
-	UIItemList.StaticAlign(slot1, slot1:GetChild(0), #slot3, function (slot0, slot1, slot2)
-		slot3 = slot1 + 1
+	table.sort(var_44_2, CompareFuncs(WorldTask.sortDic))
+	UIItemList.StaticAlign(var_44_0, var_44_1, #var_44_2, function(arg_46_0, arg_46_1, arg_46_2)
+		local var_46_0 = arg_46_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			uv1.wsTasks[slot3] = uv1.wsTasks[slot3] or WSPortTask.New(slot2)
-			slot5 = uv1.wsTasks[slot3]
+		if arg_46_0 == UIItemList.EventUpdate then
+			local var_46_1 = var_44_2[var_46_0]
 
-			slot5:Setup(uv0[slot3])
-			onButton(uv1, slot5.btnInactive, function ()
-				uv0:emit(WorldPortMediator.OnAccepetTask, uv1, uv0.port.id)
+			arg_44_0.wsTasks[var_46_0] = arg_44_0.wsTasks[var_46_0] or WSPortTask.New(arg_46_2)
+
+			local var_46_2 = arg_44_0.wsTasks[var_46_0]
+
+			var_46_2:Setup(var_46_1)
+			onButton(arg_44_0, var_46_2.btnInactive, function()
+				arg_44_0:emit(WorldPortMediator.OnAccepetTask, var_46_1, arg_44_0.port.id)
 			end, SFX_PANEL)
-			onButton(uv1, slot5.btnOnGoing, function ()
-				uv0:showTaskWindow(uv1)
+			onButton(arg_44_0, var_46_2.btnOnGoing, function()
+				arg_44_0:showTaskWindow(var_46_1)
 			end, SFX_PANEL)
-			onButton(uv1, slot5.btnFinished, function ()
-				uv0:emit(WorldPortMediator.OnSubmitTask, uv1)
+			onButton(arg_44_0, var_46_2.btnFinished, function()
+				arg_44_0:emit(WorldPortMediator.OnSubmitTask, var_46_1)
 			end, SFX_PANEL)
 
-			function slot5.onDrop(slot0)
-				uv0:emit(uv1.ON_DROP, slot0)
+			function var_46_2.onDrop(arg_50_0)
+				arg_44_0:emit(var_0_0.ON_DROP, arg_50_0)
 			end
 		end
 	end)
-	setActive(slot0.rtTasks:Find("frame/empty"), #slot3 == 0)
+
+	local var_44_3 = arg_44_0.rtTasks:Find("frame/empty")
+
+	setActive(var_44_3, #var_44_2 == 0)
 end
 
-function slot0.DisposeTasks(slot0)
-	_.each(slot0.wsTasks, function (slot0)
-		slot0:Dispose()
+function var_0_0.DisposeTasks(arg_51_0)
+	_.each(arg_51_0.wsTasks, function(arg_52_0)
+		arg_52_0:Dispose()
 	end)
 
-	slot0.wsTasks = {}
+	arg_51_0.wsTasks = {}
 end
 
-function slot0.UpdateGoods(slot0)
-	slot0.dirtyFlags[uv0.PageShop] = false
-	slot1 = slot0.rtShop
-	slot1 = slot1:Find("frame/scrollview/view")
-	slot3 = underscore.rest(slot0.port.goods, 1)
+function var_0_0.UpdateGoods(arg_53_0)
+	arg_53_0.dirtyFlags[var_0_0.PageShop] = false
 
-	table.sort(slot3, CompareFuncs({
-		function (slot0)
-			return -slot0.config.priority
+	local var_53_0 = arg_53_0.rtShop:Find("frame/scrollview/view")
+	local var_53_1 = var_53_0:GetChild(0)
+	local var_53_2 = underscore.rest(arg_53_0.port.goods, 1)
+
+	table.sort(var_53_2, CompareFuncs({
+		function(arg_54_0)
+			return -arg_54_0.config.priority
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_55_0)
+			return arg_55_0.id
 		end
 	}))
-	UIItemList.StaticAlign(slot1, slot1:GetChild(0), #slot3, function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	UIItemList.StaticAlign(var_53_0, var_53_1, #var_53_2, function(arg_56_0, arg_56_1, arg_56_2)
+		arg_56_1 = arg_56_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			uv1.wsGoods[slot1] = uv1.wsGoods[slot1] or WSPortGoods.New(slot2)
-			slot4 = uv1.wsGoods[slot1]
+		if arg_56_0 == UIItemList.EventUpdate then
+			local var_56_0 = var_53_2[arg_56_1]
 
-			slot4:Setup(uv0[slot1])
-			onButton(uv1, slot4.transform, function ()
-				if uv0.count > 0 then
+			arg_53_0.wsGoods[arg_56_1] = arg_53_0.wsGoods[arg_56_1] or WSPortGoods.New(arg_56_2)
+
+			local var_56_1 = arg_53_0.wsGoods[arg_56_1]
+
+			var_56_1:Setup(var_56_0)
+			onButton(arg_53_0, var_56_1.transform, function()
+				if var_56_0.count > 0 then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						yesText = "text_buy",
 						type = MSGBOX_TYPE_SINGLE_ITEM,
-						drop = uv0.item,
-						onYes = function ()
-							uv0:emit(WorldPortMediator.OnBuyGoods, uv1)
+						drop = var_56_0.item,
+						onYes = function()
+							arg_53_0:emit(WorldPortMediator.OnBuyGoods, var_56_0)
 						end
 					})
 				end
@@ -639,193 +642,206 @@ function slot0.UpdateGoods(slot0)
 	end)
 end
 
-function slot0.DisposeGoods(slot0)
-	_.each(slot0.wsGoods, function (slot0)
-		slot0:Dispose()
+function var_0_0.DisposeGoods(arg_59_0)
+	_.each(arg_59_0.wsGoods, function(arg_60_0)
+		arg_60_0:Dispose()
 	end)
 
-	slot0.wsGoods = {}
+	arg_59_0.wsGoods = {}
 end
 
-function slot0.UpdateNShopPorts(slot0)
-	slot0.dirtyFlags[uv0.PageNShop] = false
-	slot1 = underscore.keys(slot0.nGoodsPortDic)
+function var_0_0.UpdateNShopPorts(arg_61_0)
+	arg_61_0.dirtyFlags[var_0_0.PageNShop] = false
 
-	table.sort(slot1)
+	local var_61_0 = underscore.keys(arg_61_0.nGoodsPortDic)
 
-	for slot5, slot6 in ipairs(slot1) do
-		if not slot0.poolTplPort[slot5] then
-			table.insert(slot0.poolTplPort, cloneTplTo(slot0.tplPort, slot0.containerPort))
+	table.sort(var_61_0)
+
+	for iter_61_0, iter_61_1 in ipairs(var_61_0) do
+		if not arg_61_0.poolTplPort[iter_61_0] then
+			table.insert(arg_61_0.poolTplPort, cloneTplTo(arg_61_0.tplPort, arg_61_0.containerPort))
 		end
 
-		slot7 = slot0.poolTplPort[slot5]
+		local var_61_1 = arg_61_0.poolTplPort[iter_61_0]
 
-		setText(slot7:Find("Text"), pg.world_port_data[slot6].name)
-		setActive(slot7:Find("tip"), slot0.atlas.markPortDic.newGoods[slot6])
-		onToggle(slot0, slot7, function (slot0)
-			if slot0 then
-				if uv0.nShopPortId == uv1 then
+		setText(var_61_1:Find("Text"), pg.world_port_data[iter_61_1].name)
+		setActive(var_61_1:Find("tip"), arg_61_0.atlas.markPortDic.newGoods[iter_61_1])
+		onToggle(arg_61_0, var_61_1, function(arg_62_0)
+			if arg_62_0 then
+				if arg_61_0.nShopPortId == iter_61_1 then
 					return
 				end
 
-				setActive(uv2:Find("tip"), false)
-				uv0.atlas:UpdatePortMarkNShop(uv1, false)
-				uv0:UpdateNShopTip()
-				uv0:UpdateNShopGoods(uv1)
+				setActive(var_61_1:Find("tip"), false)
+				arg_61_0.atlas:UpdatePortMarkNShop(iter_61_1, false)
+				arg_61_0:UpdateNShopTip()
+				arg_61_0:UpdateNShopGoods(iter_61_1)
 			end
 		end, SFX_PANEL)
-		triggerToggle(slot7, slot6 == slot0.port.id)
+		triggerToggle(var_61_1, iter_61_1 == arg_61_0.port.id)
 	end
 end
 
-function slot0.UpdateNShopGoods(slot0, slot1)
-	slot0.nShopPortId = slot1
-	slot2 = slot0.atlas:GetPressingUnlockCount()
-	slot3 = slot0.atlas:GetPressingUnlockRecordCount(slot1)
-	slot4 = {}
+function var_0_0.UpdateNShopGoods(arg_63_0, arg_63_1)
+	arg_63_0.nShopPortId = arg_63_1
 
-	for slot8, slot9 in ipairs(slot0.nGoodsPortDic[slot1]) do
-		slot4[slot10] = slot4[slot9:getConfig("unlock_num")] or {}
+	local var_63_0 = arg_63_0.atlas:GetPressingUnlockCount()
+	local var_63_1 = arg_63_0.atlas:GetPressingUnlockRecordCount(arg_63_1)
+	local var_63_2 = {}
 
-		table.insert(slot4[slot10], slot9)
+	for iter_63_0, iter_63_1 in ipairs(arg_63_0.nGoodsPortDic[arg_63_1]) do
+		local var_63_3 = iter_63_1:getConfig("unlock_num")
+
+		var_63_2[var_63_3] = var_63_2[var_63_3] or {}
+
+		table.insert(var_63_2[var_63_3], iter_63_1)
 	end
 
-	slot0.rtNGoodsDic = {}
-	slot5 = underscore.keys(slot4)
+	arg_63_0.rtNGoodsDic = {}
 
-	table.sort(slot5)
-	UIItemList.StaticAlign(slot0.rtNGoodsContainer, slot0.rtNGoodsContainer:Find("group"), #slot5, function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	local var_63_4 = underscore.keys(var_63_2)
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1]
+	table.sort(var_63_4)
+	UIItemList.StaticAlign(arg_63_0.rtNGoodsContainer, arg_63_0.rtNGoodsContainer:Find("group"), #var_63_4, function(arg_64_0, arg_64_1, arg_64_2)
+		arg_64_1 = arg_64_1 + 1
 
-			setActive(slot2:Find("title"), slot1 > 1)
-			setText(slot2:Find("title/other/Text"), i18n("world_instruction_port_goods_locked"))
-			setText(slot2:Find("title/other/progress"), math.min(uv1, slot3) .. "/" .. slot3)
+		if arg_64_0 == UIItemList.EventUpdate then
+			local var_64_0 = var_63_4[arg_64_1]
 
-			slot4 = slot2:Find("container")
+			setActive(arg_64_2:Find("title"), arg_64_1 > 1)
+			setText(arg_64_2:Find("title/other/Text"), i18n("world_instruction_port_goods_locked"))
+			setText(arg_64_2:Find("title/other/progress"), math.min(var_63_0, var_64_0) .. "/" .. var_64_0)
 
-			UIItemList.StaticAlign(slot4, slot4:Find("item_tpl"), #uv2[slot3], function (slot0, slot1, slot2)
-				slot1 = slot1 + 1
+			local var_64_1 = arg_64_2:Find("container")
 
-				if slot0 == UIItemList.EventUpdate then
-					slot3 = uv0[uv1][slot1]
-					uv2.rtNGoodsDic[slot3.id] = slot2
-					slot4 = slot3:GetDropInfo()
+			UIItemList.StaticAlign(var_64_1, var_64_1:Find("item_tpl"), #var_63_2[var_64_0], function(arg_65_0, arg_65_1, arg_65_2)
+				arg_65_1 = arg_65_1 + 1
 
-					updateDrop(slot2:Find("IconTpl"), slot4)
-					setText(slot2:Find("name_mask/name"), shortenString(slot4:getConfig("name"), 6))
+				if arg_65_0 == UIItemList.EventUpdate then
+					local var_65_0 = var_63_2[var_64_0][arg_65_1]
 
-					slot5 = slot3:GetPriceInfo()
+					arg_63_0.rtNGoodsDic[var_65_0.id] = arg_65_2
 
-					GetImageSpriteFromAtlasAsync(slot5:getIcon(), "", slot2:Find("consume/contain/icon"), false)
-					setText(slot2:Find("consume/contain/Text"), slot5.count)
-					setText(slot2:Find("count_contain/count"), slot3:GetPurchasableCnt() .. "/" .. slot3:GetLimitGoodCount())
-					setText(slot2:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
-					setText(slot2:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
-					setActive(slot2:Find("mask"), not slot3:canPurchase())
-					setText(slot2:Find("lock/Image/Text"), i18n("word_sell_lock"))
-					setActive(slot2:Find("lock"), uv3 < uv1)
-					setActive(slot2:Find("new"), slot3.buyCount == 0 and uv4 < uv1 and uv1 <= uv3)
-					onButton(uv2, slot2, function ()
-						(uv0:GetLimitGoodCount() > 1 and uv1.multiWindow or uv1.singleWindow):ExecuteAction("Open", uv0, function (slot0, slot1)
-							uv0:emit(WorldPortMediator.OnBuyNShopGoods, slot0, slot1)
+					local var_65_1 = var_65_0:GetDropInfo()
+
+					updateDrop(arg_65_2:Find("IconTpl"), var_65_1)
+					setText(arg_65_2:Find("name_mask/name"), shortenString(var_65_1:getConfig("name"), 6))
+
+					local var_65_2 = var_65_0:GetPriceInfo()
+
+					GetImageSpriteFromAtlasAsync(var_65_2:getIcon(), "", arg_65_2:Find("consume/contain/icon"), false)
+					setText(arg_65_2:Find("consume/contain/Text"), var_65_2.count)
+					setText(arg_65_2:Find("count_contain/count"), var_65_0:GetPurchasableCnt() .. "/" .. var_65_0:GetLimitGoodCount())
+					setText(arg_65_2:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
+					setText(arg_65_2:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
+					setActive(arg_65_2:Find("mask"), not var_65_0:canPurchase())
+					setText(arg_65_2:Find("lock/Image/Text"), i18n("word_sell_lock"))
+					setActive(arg_65_2:Find("lock"), var_63_0 < var_64_0)
+					setActive(arg_65_2:Find("new"), var_65_0.buyCount == 0 and var_63_1 < var_64_0 and var_64_0 <= var_63_0)
+					onButton(arg_63_0, arg_65_2, function()
+						(var_65_0:GetLimitGoodCount() > 1 and arg_63_0.multiWindow or arg_63_0.singleWindow):ExecuteAction("Open", var_65_0, function(arg_67_0, arg_67_1)
+							arg_63_0:emit(WorldPortMediator.OnBuyNShopGoods, arg_67_0, arg_67_1)
 						end)
 					end, SFX_PANEL)
 				end
 			end)
 		end
 	end)
-	slot0.atlas:SetPressingUnlockRecordCount(slot1, slot2)
+	arg_63_0.atlas:SetPressingUnlockRecordCount(arg_63_1, var_63_0)
 end
 
-function slot0.OnUpdateMoneyCount(slot0, slot1, slot2, slot3)
-	if not slot1 or slot3.id == WorldItem.PortMoneyId then
-		slot4 = slot0.inventory:GetItemCount(WorldItem.PortMoneyId)
+function var_0_0.OnUpdateMoneyCount(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
+	if not arg_68_1 or arg_68_3.id == WorldItem.PortMoneyId then
+		local var_68_0 = arg_68_0.inventory:GetItemCount(WorldItem.PortMoneyId)
 
-		setText(slot0.rtShop:Find("quick_count/value"), slot4)
-		setText(slot0.rtNShopRes:Find("Text"), slot4)
+		setText(arg_68_0.rtShop:Find("quick_count/value"), var_68_0)
+		setText(arg_68_0.rtNShopRes:Find("Text"), var_68_0)
 	end
 end
 
-function slot0.UpdateRefreshTime(slot0, slot1)
-	setText(slot0.cdTF:Find("Text"), pg.TimeMgr.GetInstance():DescCDTime(slot1))
+function var_0_0.UpdateRefreshTime(arg_69_0, arg_69_1)
+	setText(arg_69_0.cdTF:Find("Text"), pg.TimeMgr.GetInstance():DescCDTime(arg_69_1))
 end
 
-function slot0.UpdateCDTip(slot0)
-	setActive(slot0.cdTF, #slot0.port.goods > 0 and not slot0.port:IsTempPort())
-	setActive(slot0.emptyTF, #slot0.port.goods == 0)
+function var_0_0.UpdateCDTip(arg_70_0)
+	setActive(arg_70_0.cdTF, #arg_70_0.port.goods > 0 and not arg_70_0.port:IsTempPort())
+	setActive(arg_70_0.emptyTF, #arg_70_0.port.goods == 0)
 
 	if not nowWorld():UsePortNShop() then
-		setActive(slot0.btnSupply:Find("new"), nowWorld():GetAtlas().markPortDic.goods[slot0.port.id])
+		setActive(arg_70_0.btnSupply:Find("new"), nowWorld():GetAtlas().markPortDic.goods[arg_70_0.port.id])
 	end
 end
 
-function slot0.UpdateTaskTip(slot0)
-	setActive(slot0.btnOperation:Find("new"), false)
+function var_0_0.UpdateTaskTip(arg_71_0)
+	setActive(arg_71_0.btnOperation:Find("new"), false)
 end
 
-function slot0.UpdateNShopTip(slot0)
+function var_0_0.UpdateNShopTip(arg_72_0)
 	if nowWorld():UsePortNShop() then
-		setActive(slot0.btnSupply:Find("new"), slot0.atlas:GetAnyPortMarkNShop())
+		setActive(arg_72_0.btnSupply:Find("new"), arg_72_0.atlas:GetAnyPortMarkNShop())
 	end
 end
 
-function slot0.showTaskWindow(slot0, slot1)
-	setActive(slot0.rtTaskWindow:Find("main_window/left_panel"):Find("bg"), slot1:IsSpecialType())
+function var_0_0.showTaskWindow(arg_73_0, arg_73_1)
+	local var_73_0 = arg_73_1.config.rare_task_icon
+	local var_73_1 = arg_73_0.rtTaskWindow:Find("main_window/left_panel")
 
-	if #slot1.config.rare_task_icon > 0 then
-		GetImageSpriteFromAtlasAsync("shipyardicon/" .. slot2, "", slot3:Find("card"), true)
+	setActive(var_73_1:Find("bg"), arg_73_1:IsSpecialType())
+
+	if #var_73_0 > 0 then
+		GetImageSpriteFromAtlasAsync("shipyardicon/" .. var_73_0, "", var_73_1:Find("card"), true)
 	else
-		GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", "nobody", slot3:Find("card"), true)
+		GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", "nobody", var_73_1:Find("card"), true)
 	end
 
-	slot4 = slot0.rtTaskWindow:Find("main_window/right_panel")
+	local var_73_2 = arg_73_0.rtTaskWindow:Find("main_window/right_panel")
 
-	setText(slot4:Find("title/Text"), slot1.config.name)
-	setText(slot4:Find("content/desc"), slot1.config.rare_task_text)
-	setText(slot4:Find("content/slider_progress/Text"), slot1:getProgress() .. "/" .. slot1:getMaxProgress())
-	setSlider(slot4:Find("content/slider"), 0, slot1:getMaxProgress(), slot1:getProgress())
+	setText(var_73_2:Find("title/Text"), arg_73_1.config.name)
+	setText(var_73_2:Find("content/desc"), arg_73_1.config.rare_task_text)
+	setText(var_73_2:Find("content/slider_progress/Text"), arg_73_1:getProgress() .. "/" .. arg_73_1:getMaxProgress())
+	setSlider(var_73_2:Find("content/slider"), 0, arg_73_1:getMaxProgress(), arg_73_1:getProgress())
 
-	slot5 = slot4:Find("content/item_tpl")
+	local var_73_3 = var_73_2:Find("content/item_tpl")
+	local var_73_4 = var_73_2:Find("content/award_bg/panel/content")
+	local var_73_5 = arg_73_1.config.show
 
-	removeAllChildren(slot4:Find("content/award_bg/panel/content"))
+	removeAllChildren(var_73_4)
 
-	for slot11, slot12 in ipairs(slot1.config.show) do
-		slot13 = cloneTplTo(slot5, slot6)
+	for iter_73_0, iter_73_1 in ipairs(var_73_5) do
+		local var_73_6 = cloneTplTo(var_73_3, var_73_4)
+		local var_73_7 = {
+			type = iter_73_1[1],
+			id = iter_73_1[2],
+			count = iter_73_1[3]
+		}
 
-		updateDrop(slot13, {
-			type = slot12[1],
-			id = slot12[2],
-			count = slot12[3]
-		})
-		onButton(slot0, slot13, function ()
-			uv0:emit(uv1.ON_DROP, uv2)
+		updateDrop(var_73_6, var_73_7)
+		onButton(arg_73_0, var_73_6, function()
+			arg_73_0:emit(var_0_0.ON_DROP, var_73_7)
 		end, SFX_PANEL)
-		setActive(slot13, true)
+		setActive(var_73_6, true)
 	end
 
-	setActive(slot5, false)
-	setActive(slot4:Find("content/award_bg/arror"), #slot7 > 3)
-	onButton(slot0, slot4:Find("btn_close"), function ()
-		uv0:hideTaskWindow()
+	setActive(var_73_3, false)
+	setActive(var_73_2:Find("content/award_bg/arror"), #var_73_5 > 3)
+	onButton(arg_73_0, var_73_2:Find("btn_close"), function()
+		arg_73_0:hideTaskWindow()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.rtTaskWindow:Find("bg"), function ()
-		uv0:hideTaskWindow()
+	onButton(arg_73_0, arg_73_0.rtTaskWindow:Find("bg"), function()
+		arg_73_0:hideTaskWindow()
 	end, SFX_CANCEL)
-	onButton(slot0, slot4:Find("btn_go"), function ()
-		uv0:hideTaskWindow()
-		uv0:emit(WorldPortMediator.OnTaskGoto, uv1.id)
+	onButton(arg_73_0, var_73_2:Find("btn_go"), function()
+		arg_73_0:hideTaskWindow()
+		arg_73_0:emit(WorldPortMediator.OnTaskGoto, arg_73_1.id)
 	end, SFX_PANEL)
-	setButtonEnabled(slot4:Find("btn_go"), slot1:GetFollowingAreaId() or slot1:GetFollowingEntrance())
-	setActive(slot0.rtTaskWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.rtTaskWindow, slot0._tf)
+	setButtonEnabled(var_73_2:Find("btn_go"), arg_73_1:GetFollowingAreaId() or arg_73_1:GetFollowingEntrance())
+	setActive(arg_73_0.rtTaskWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_73_0.rtTaskWindow, arg_73_0._tf)
 end
 
-function slot0.hideTaskWindow(slot0)
-	setActive(slot0.rtTaskWindow, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.rtTaskWindow, slot0._tf)
+function var_0_0.hideTaskWindow(arg_78_0)
+	setActive(arg_78_0.rtTaskWindow, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_78_0.rtTaskWindow, arg_78_0._tf)
 end
 
-return slot0
+return var_0_0

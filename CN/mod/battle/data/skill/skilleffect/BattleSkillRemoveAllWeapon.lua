@@ -1,21 +1,23 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSkillRemoveAllWeapon", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillRemoveAllWeapon = slot1
-slot1.__name = "BattleSkillRemoveAllWeapon"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1, lv)
+local var_0_0 = ys
+local var_0_1 = class("BattleSkillRemoveAllWeapon", var_0_0.Battle.BattleSkillEffect)
+
+var_0_0.Battle.BattleSkillRemoveAllWeapon = var_0_1
+var_0_1.__name = "BattleSkillRemoveAllWeapon"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, lv)
 end
 
-function slot1.DoDataEffect(slot0, slot1)
-	slot0:doRemove(slot1)
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1)
+	arg_2_0:doRemove(arg_2_1)
 end
 
-function slot1.DoDataEffectWithoutTarget(slot0, slot1)
-	slot0:doRemove(slot1)
+function var_0_1.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+	arg_3_0:doRemove(arg_3_1)
 end
 
-function slot1.doRemove(slot0, slot1)
-	slot1:RemoveAllAutoWeapon()
+function var_0_1.doRemove(arg_4_0, arg_4_1)
+	arg_4_1:RemoveAllAutoWeapon()
 end

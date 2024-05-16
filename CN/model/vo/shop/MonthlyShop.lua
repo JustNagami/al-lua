@@ -1,138 +1,140 @@
-slot0 = class("MonthlyShop", import(".BaseShop"))
+﻿local var_0_0 = class("MonthlyShop", import(".BaseShop"))
 
-function slot0.Ctor(slot0)
-	slot0.goods = {}
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.goods = {}
 end
 
-slot0.GoodsType = nil
+var_0_0.GoodsType = nil
 
-function slot0.IsSameKind(slot0, slot1)
-	return isa(slot1, MonthlyShop)
+function var_0_0.IsSameKind(arg_2_0, arg_2_1)
+	return isa(arg_2_1, MonthlyShop)
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	return slot0:getGoodsById(slot1)
+function var_0_0.GetCommodityById(arg_3_0, arg_3_1)
+	return arg_3_0:getGoodsById(arg_3_1)
 end
 
-function slot0.GetCommodities(slot0)
-	return slot0:getSortGoods()
+function var_0_0.GetCommodities(arg_4_0)
+	return arg_4_0:getSortGoods()
 end
 
-function slot0.isOpen(slot0)
-	if not slot0.id then
+function var_0_0.isOpen(arg_5_0)
+	if not arg_5_0.id then
 		return false
 	end
 
-	slot1 = false
+	local var_5_0 = false
 
-	if slot0:bindConfigTable()[slot0.id] then
-		slot3 = pg.TimeMgr.GetInstance()
-		slot1 = slot3:STimeDescS(slot3:GetServerTime(), "*t").month == slot0.id
+	if arg_5_0:bindConfigTable()[arg_5_0.id] then
+		local var_5_1 = pg.TimeMgr.GetInstance()
+
+		var_5_0 = var_5_1:STimeDescS(var_5_1:GetServerTime(), "*t").month == arg_5_0.id
 	end
 
-	return slot1
+	return var_5_0
 end
 
-function slot0.getRestDays(slot0)
-	if not slot0.id then
+function var_0_0.getRestDays(arg_6_0)
+	if not arg_6_0.id then
 		return 0
 	end
 
-	slot1 = pg.TimeMgr.GetInstance()
-	slot3 = Clone(slot1:STimeDescS(slot1:GetServerTime(), "*t"))
-	slot3.month = slot0.id
+	local var_6_0 = pg.TimeMgr.GetInstance()
+	local var_6_1 = var_6_0:STimeDescS(var_6_0:GetServerTime(), "*t")
+	local var_6_2 = Clone(var_6_1)
 
-	if slot3.month >= 12 then
-		slot3.month = 0
-		slot3.year = slot3.year + 1
+	var_6_2.month = arg_6_0.id
+
+	if var_6_2.month >= 12 then
+		var_6_2.month = 0
+		var_6_2.year = var_6_2.year + 1
 	end
 
-	slot3.month = slot3.month + 1
-	slot3.day = 0
+	var_6_2.month = var_6_2.month + 1
+	var_6_2.day = 0
 
-	return math.max(os.date("%d", os.time(slot3)) - slot2.day + 1, 1)
+	local var_6_3 = os.date("%d", os.time(var_6_2)) - var_6_1.day + 1
+
+	return (math.max(var_6_3, 1))
 end
 
-function slot0.GetRestTime(slot0)
-	if not slot0.id then
+function var_0_0.GetRestTime(arg_7_0)
+	if not arg_7_0.id then
 		return 0
 	end
 
-	slot1 = pg.TimeMgr.GetInstance()
-	slot3 = Clone(slot1:STimeDescS(slot1:GetServerTime(), "*t"))
-	slot3.month = slot0.id
+	local var_7_0 = pg.TimeMgr.GetInstance()
+	local var_7_1 = var_7_0:STimeDescS(var_7_0:GetServerTime(), "*t")
+	local var_7_2 = Clone(var_7_1)
 
-	if slot3.month >= 12 then
-		slot3.month = 0
-		slot3.year = slot3.year + 1
+	var_7_2.month = arg_7_0.id
+
+	if var_7_2.month >= 12 then
+		var_7_2.month = 0
+		var_7_2.year = var_7_2.year + 1
 	end
 
-	slot3.month = slot3.month + 1
-	slot3.day = 0
-	slot3.hour = 23
-	slot3.min = 59
-	slot3.sec = 59
-	slot3.isdst = false
+	var_7_2.month = var_7_2.month + 1
+	var_7_2.day = 0
+	var_7_2.hour = 23
+	var_7_2.min = 59
+	var_7_2.sec = 59
+	var_7_2.isdst = false
 
-	return math.max(os.time(slot3) - slot1:GetServerTime(), 0)
+	local var_7_3 = os.time(var_7_2) - var_7_0:GetServerTime()
+
+	return (math.max(var_7_3, 0))
 end
 
-function slot0.getSortGoods(slot0)
-	slot1 = {}
+function var_0_0.getSortGoods(arg_8_0)
+	local var_8_0 = {}
 
-	for slot5, slot6 in pairs(slot0.goods) do
-		table.insert(slot1, slot6)
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.goods) do
+		table.insert(var_8_0, iter_8_1)
 	end
 
-	function slot2(slot0)
-		return math.floor(slot0 * 0.1)
+	local function var_8_1(arg_9_0)
+		return math.floor(arg_9_0 * 0.1)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		slot2 = 100
-		slot3 = 1000
-		slot4 = slot0:getConfig("order") + slot0.id / 100000
-		slot5 = slot1:getConfig("order") + slot1.id / 100000
-		slot6 = getProxy(CollectionProxy)
+	table.sort(var_8_0, function(arg_10_0, arg_10_1)
+		local var_10_0 = 100
+		local var_10_1 = 1000
+		local var_10_2 = arg_10_0:getConfig("order") + arg_10_0.id / 100000
+		local var_10_3 = arg_10_1:getConfig("order") + arg_10_1.id / 100000
+		local var_10_4 = getProxy(CollectionProxy)
 
-		function slot8(slot0)
-			return not slot0:canPurchase()
+		local function var_10_5(arg_11_0)
+			local var_11_0 = arg_11_0:getConfig("commodity_id")
+
+			return arg_11_0:isSham() and arg_11_0:checkCommodityType(DROP_TYPE_SHIP) and var_10_4:getShipGroup(var_8_1(var_11_0))
 		end
 
-		if (function (slot0)
-			return slot0:isSham() and slot0:checkCommodityType(DROP_TYPE_SHIP) and uv0:getShipGroup(uv1(slot0:getConfig("commodity_id")))
-		end)(slot0) and not slot8(slot0) then
-			slot4 = slot4 + slot2
+		local function var_10_6(arg_12_0)
+			return not arg_12_0:canPurchase()
 		end
 
-		if slot7(slot1) and not slot8(slot1) then
-			slot5 = slot5 + slot2
-		end
+		var_10_2 = var_10_5(arg_10_0) and not var_10_6(arg_10_0) and var_10_2 + var_10_0 or var_10_2
+		var_10_3 = var_10_5(arg_10_1) and not var_10_6(arg_10_1) and var_10_3 + var_10_0 or var_10_3
+		var_10_2 = var_10_6(arg_10_0) and var_10_2 + var_10_1 or var_10_2
+		var_10_3 = var_10_6(arg_10_1) and var_10_3 + var_10_1 or var_10_3
 
-		if slot8(slot0) then
-			slot4 = slot4 + slot3
-		end
-
-		if slot8(slot1) then
-			slot5 = slot5 + slot3
-		end
-
-		return slot4 < slot5
+		return var_10_2 < var_10_3
 	end)
 
-	return slot1
+	return var_8_0
 end
 
-function slot0.getGoodsCfg(slot0, slot1)
-	return pg.activity_shop_template[slot1]
+function var_0_0.getGoodsCfg(arg_13_0, arg_13_1)
+	return pg.activity_shop_template[arg_13_1]
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	return slot0.goods[slot1]
+function var_0_0.getGoodsById(arg_14_0, arg_14_1)
+	return arg_14_0.goods[arg_14_1]
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_15_0)
 	return pg.month_shop_template
 end
 
-return slot0
+return var_0_0

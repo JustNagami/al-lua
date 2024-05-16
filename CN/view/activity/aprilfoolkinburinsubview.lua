@@ -1,7 +1,7 @@
-slot0 = class("AprilFoolKinBurinSubView", import(".AprilFoolSuperBurinSubView"))
+﻿local var_0_0 = class("AprilFoolKinBurinSubView", import(".AprilFoolSuperBurinSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "AprilFoolKinBurinSubView"
 end
 
-return slot0
+return var_0_0

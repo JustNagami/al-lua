@@ -1,29 +1,36 @@
-slot0 = class("WorldBossBattleQuitCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldBossBattleQuitCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not slot1:getBody().id then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().id
+
+	if not var_1_0 then
 		return
 	end
 
-	if nowWorld():GetBossProxy():GetBossById(slot3) and not slot5:IsSelfBoss(slot6) then
-		slot5:RemoveCacheBoss(slot3)
+	local var_1_1 = nowWorld():GetBossProxy()
+	local var_1_2 = var_1_1:GetBossById(var_1_0)
 
-		slot12 = slot6.lastTime
+	if var_1_2 and not var_1_1:IsSelfBoss(var_1_2) then
+		var_1_1:RemoveCacheBoss(var_1_0)
 
-		for slot12, slot13 in ipairs(getProxy(ChatProxy):GetMessagesByUniqueId(slot3 .. "_" .. slot12)) do
-			slot13.args.isDeath = true
+		local var_1_3 = getProxy(ChatProxy)
+		local var_1_4 = var_1_3:GetMessagesByUniqueId(var_1_0 .. "_" .. var_1_2.lastTime)
 
-			slot7:UpdateMsg(slot13)
+		for iter_1_0, iter_1_1 in ipairs(var_1_4) do
+			iter_1_1.args.isDeath = true
+
+			var_1_3:UpdateMsg(iter_1_1)
 		end
 
-		slot14 = slot6.lastTime
+		local var_1_5 = getProxy(GuildProxy)
+		local var_1_6 = var_1_5:GetMessagesByUniqueId(var_1_0 .. "_" .. var_1_2.lastTime)
 
-		for slot14, slot15 in ipairs(getProxy(GuildProxy):GetMessagesByUniqueId(slot3 .. "_" .. slot14)) do
-			slot15.args.isDeath = true
+		for iter_1_2, iter_1_3 in ipairs(var_1_6) do
+			iter_1_3.args.isDeath = true
 
-			slot9:UpdateMsg(slot15)
+			var_1_5:UpdateMsg(iter_1_3)
 		end
 	end
 end
 
-return slot0
+return var_0_0

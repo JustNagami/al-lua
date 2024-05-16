@@ -1,52 +1,58 @@
-slot0 = class("EquipCommanderToFleetCommande", pm.SimpleCommand)
+﻿local var_0_0 = class("EquipCommanderToFleetCommande", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.pos
-	slot5 = slot2.fleetId
-	slot6 = slot2.callback
-	slot7 = nil
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.commanderId
+	local var_1_2 = var_1_0.pos
+	local var_1_3 = var_1_0.fleetId
+	local var_1_4 = var_1_0.callback
+	local var_1_5
 
-	if slot2.commanderId ~= 0 and not getProxy(CommanderProxy):getCommanderById(slot3) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_not_exist"))
+	if var_1_1 ~= 0 then
+		var_1_5 = getProxy(CommanderProxy):getCommanderById(var_1_1)
 
-		return
+		if not var_1_5 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_not_exist"))
+
+			return
+		end
 	end
 
-	if not getProxy(FleetProxy):getFleetById(slot5) then
+	local var_1_6 = getProxy(FleetProxy)
+	local var_1_7 = var_1_6:getFleetById(var_1_3)
+
+	if not var_1_7 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_fleet_not_exist"))
 
 		return
 	end
 
-	if slot3 == 0 and not slot9:getCommanderByPos(slot4) then
-		if slot6 then
-			slot6()
+	if var_1_1 == 0 and not var_1_7:getCommanderByPos(var_1_2) then
+		if var_1_4 then
+			var_1_4()
 		end
 
 		return
 	end
 
-	slot10 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(25006, {
+		groupid = var_1_3,
+		pos = var_1_2,
+		commanderid = var_1_1
+	}, 25007, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_7:updateCommanderByPos(var_1_2, var_1_5)
+			var_1_6:updateFleet(var_1_7)
 
-	slot10:Send(25006, {
-		groupid = slot5,
-		pos = slot4,
-		commanderid = slot3
-	}, 25007, function (slot0)
-		if slot0.result == 0 then
-			uv0:updateCommanderByPos(uv1, uv2)
-			uv3:updateFleet(uv0)
-
-			if uv4 then
-				uv4(uv0)
+			if var_1_4 then
+				var_1_4(var_1_7)
 			end
 
-			uv5:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET_DONE)
+			arg_1_0:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_equip_to_fleet_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_equip_to_fleet_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

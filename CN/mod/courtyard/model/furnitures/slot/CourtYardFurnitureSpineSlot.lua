@@ -1,198 +1,224 @@
-slot0 = class("CourtYardFurnitureSpineSlot", import(".CourtYardFurnitureBaseSlot"))
-slot1 = 0
-slot2 = 1
-slot3 = 2
-slot4 = 3
+﻿local var_0_0 = class("CourtYardFurnitureSpineSlot", import(".CourtYardFurnitureBaseSlot"))
+local var_0_1 = 0
+local var_0_2 = 1
+local var_0_3 = 2
+local var_0_4 = 3
 
-function slot0.OnInit(slot0, slot1)
-	slot0.name = slot1[1][1]
-	slot0.defaultAction = slot1[1][2]
-	slot0.mask = slot1[2] and slot1[2][1]
+function var_0_0.OnInit(arg_1_0, arg_1_1)
+	arg_1_0.name = arg_1_1[1][1]
+	arg_1_0.defaultAction = arg_1_1[1][2]
+	arg_1_0.mask = arg_1_1[2] and arg_1_1[2][1]
 
-	if slot0.mask then
-		slot0.maskDefaultAction = slot1[2][2]
+	if arg_1_0.mask then
+		arg_1_0.maskDefaultAction = arg_1_1[2][2]
 	end
 
-	slot0.bodyMask = slot1[4] and #slot1[4] > 0 and {
-		offset = slot1[4][1] and Vector3(slot1[4][1][1], slot1[4][1][2], 0) or Vector3.zero,
-		size = slot1[4][2] and Vector3(slot1[4][2][1], slot1[4][2][2], 0) or Vector3.zero,
-		img = slot1[4][3]
+	arg_1_0.bodyMask = arg_1_1[4] and #arg_1_1[4] > 0 and {
+		offset = arg_1_1[4][1] and Vector3(arg_1_1[4][1][1], arg_1_1[4][1][2], 0) or Vector3.zero,
+		size = arg_1_1[4][2] and Vector3(arg_1_1[4][2][1], arg_1_1[4][2][2], 0) or Vector3.zero,
+		img = arg_1_1[4][3]
 	}
-	slot0.offset = slot1[5] and Vector3(slot1[5][1], slot1[5][2], 0) or Vector3.zero
-	slot0.scale = slot1[6] and Vector3(slot1[6][1], slot1[6][2], 0) or Vector3.one
-	slot0.substituteActions = {}
-	slot0.actions = {}
-	slot0.loop = false
-	slot0.vaild = tobool(slot1[3]) and tobool(slot1[3][3])
+	arg_1_0.offset = arg_1_1[5] and Vector3(arg_1_1[5][1], arg_1_1[5][2], 0) or Vector3.zero
+	arg_1_0.scale = arg_1_1[6] and Vector3(arg_1_1[6][1], arg_1_1[6][2], 0) or Vector3.one
+	arg_1_0.substituteActions = {}
+	arg_1_0.actions = {}
+	arg_1_0.loop = false
+	arg_1_0.vaild = tobool(arg_1_1[3]) and tobool(arg_1_1[3][3])
 
-	if slot0.vaild then
-		slot0.actions = slot1[3][2]
+	if arg_1_0.vaild then
+		arg_1_0.actions = arg_1_1[3][2]
 
-		if (slot1[3][3][2] or uv0) == true then
-			slot2 = uv1
+		local var_1_0 = arg_1_1[3][3][2] or var_0_1
+
+		if var_1_0 == true then
+			var_1_0 = var_0_2
 		end
 
-		if slot1[3][5] then
-			slot2 = uv2
+		if arg_1_1[3][5] then
+			var_1_0 = var_0_4
 		end
 
-		slot0.strategyType = slot2
-		slot0.updateStrategy = slot0:InitUpdateStrategy(slot2)
-		slot0.preheatAction = slot1[3][3][3]
-		slot0.tailAction = slot1[3][3][4]
-		slot0.loop = slot1[3][4][1] == 1
-		slot0.variedActions = slot1[3][5]
+		arg_1_0.strategyType = var_1_0
+		arg_1_0.updateStrategy = arg_1_0:InitUpdateStrategy(var_1_0)
+		arg_1_0.preheatAction = arg_1_1[3][3][3]
+		arg_1_0.tailAction = arg_1_1[3][3][4]
+		arg_1_0.loop = arg_1_1[3][4][1] == 1
+		arg_1_0.variedActions = arg_1_1[3][5]
 	end
 end
 
-function slot0.InitUpdateStrategy(slot0, slot1)
-	slot2 = nil
+function var_0_0.InitUpdateStrategy(arg_2_0, arg_2_1)
+	local var_2_0
 
-	return (slot1 ~= uv0 or CourtYardFollowInteraction.New(slot0)) and (slot1 ~= uv1 or CourtYardMonglineInteraction.New(slot0)) and (slot1 ~= uv2 or CourtYardVariedInteraction.New(slot0)) and CourtYardInteraction.New(slot0)
+	if arg_2_1 == var_0_2 then
+		var_2_0 = CourtYardFollowInteraction.New(arg_2_0)
+	elseif arg_2_1 == var_0_3 then
+		var_2_0 = CourtYardMonglineInteraction.New(arg_2_0)
+	elseif arg_2_1 == var_0_4 then
+		var_2_0 = CourtYardVariedInteraction.New(arg_2_0)
+	else
+		var_2_0 = CourtYardInteraction.New(arg_2_0)
+	end
+
+	return var_2_0
 end
 
-function slot0.SetAnimators(slot0, slot1)
-	slot3 = slot1[1][slot0.id] or slot2[1] or {}
-	slot4 = type(slot3) == "string" and {
-		slot3
-	} or slot3
+function var_0_0.SetAnimators(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1[1]
+	local var_3_1 = var_3_0[arg_3_0.id] or var_3_0[1] or {}
+	local var_3_2 = type(var_3_1) == "string" and {
+		var_3_1
+	} or var_3_1
 
-	for slot8, slot9 in ipairs(slot4) do
-		table.insert(slot0.animators, {
-			key = slot0.id .. "_" .. slot8,
-			value = slot9
+	for iter_3_0, iter_3_1 in ipairs(var_3_2) do
+		table.insert(arg_3_0.animators, {
+			key = arg_3_0.id .. "_" .. iter_3_0,
+			value = iter_3_1
 		})
 	end
 end
 
-function slot0.SetFollower(slot0, slot1)
-	slot0.follower = {
-		bone = slot1[1],
-		scale = Vector3(slot1[2], 1, 1)
+function var_0_0.SetFollower(arg_4_0, arg_4_1)
+	arg_4_0.follower = {
+		bone = arg_4_1[1],
+		scale = Vector3(arg_4_1[2], 1, 1)
 	}
 end
 
-function slot0.SetSubstitute(slot0, slot1)
-	slot0.substituteActions = _.map(slot1, function (slot0)
+function var_0_0.SetSubstitute(arg_5_0, arg_5_1)
+	arg_5_0.substituteActions = _.map(arg_5_1, function(arg_6_0)
 		return {
-			action = slot0[1],
-			match = slot0[2],
-			replace = slot0[3],
-			replace_mode = slot0[4],
-			math_mode = slot0[5]
+			action = arg_6_0[1],
+			match = arg_6_0[2],
+			replace = arg_6_0[3],
+			replace_mode = arg_6_0[4],
+			math_mode = arg_6_0[5]
 		}
 	end)
 end
 
-function slot0.GetSubstituteAction(slot0, slot1, slot2)
-	function slot3(slot0)
-		slot1 = uv0:GetUser()
+function var_0_0.GetSubstituteAction(arg_7_0, arg_7_1, arg_7_2)
+	local function var_7_0(arg_8_0)
+		local var_8_0 = arg_7_0:GetUser()
+		local var_8_1 = arg_8_0.math_mode == 1 and var_8_0:GetSkinID() or var_8_0:GetGroupID()
 
-		return table.contains(slot0.match, slot0.math_mode == 1 and slot1:GetSkinID() or slot1:GetGroupID()) and (slot0.replace_mode == 0 or slot0.replace_mode == uv1)
+		return table.contains(arg_8_0.match, var_8_1) and (arg_8_0.replace_mode == 0 or arg_8_0.replace_mode == arg_7_2)
 	end
 
-	return _.detect(slot0.substituteActions, function (slot0)
-		return slot0.action == uv0 and uv1(slot0)
-	end) and slot4.replace or slot1
+	local var_7_1 = _.detect(arg_7_0.substituteActions, function(arg_9_0)
+		return arg_9_0.action == arg_7_1 and var_7_0(arg_9_0)
+	end)
+
+	return var_7_1 and var_7_1.replace or arg_7_1
 end
 
-function slot0.GetUserSubstituteAction(slot0, slot1)
-	return slot0:GetSubstituteAction(slot1, 1)
+function var_0_0.GetUserSubstituteAction(arg_10_0, arg_10_1)
+	return arg_10_0:GetSubstituteAction(arg_10_1, 1)
 end
 
-function slot0.GetOwnerSubstituteAction(slot0, slot1)
-	return slot0:GetSubstituteAction(slot1, 2)
+function var_0_0.GetOwnerSubstituteAction(arg_11_0, arg_11_1)
+	return arg_11_0:GetSubstituteAction(arg_11_1, 2)
 end
 
-function slot0.IsEmpty(slot0)
-	return uv0.super.IsEmpty(slot0) and slot0.vaild
+function var_0_0.IsEmpty(arg_12_0)
+	return var_0_0.super.IsEmpty(arg_12_0) and arg_12_0.vaild
 end
 
-function slot0.GetScale(slot0)
-	if slot0.follower then
-		return slot0.follower.scale
+function var_0_0.GetScale(arg_13_0)
+	if arg_13_0.follower then
+		return arg_13_0.follower.scale
 	else
-		return slot0.scale
+		return arg_13_0.scale
 	end
 end
 
-function slot5(slot0)
-	slot1 = {}
-	slot2 = {}
-	slot3 = {}
-	slot4 = slot0.actions[1][2]
-	slot5 = slot0.actions[1][3]
+local function var_0_5(arg_14_0)
+	local var_14_0 = {}
+	local var_14_1 = {}
+	local var_14_2 = {}
+	local var_14_3 = arg_14_0.actions[1][2]
+	local var_14_4 = arg_14_0.actions[1][3]
 
-	for slot9, slot10 in ipairs(slot0.variedActions) do
-		table.insert(slot1, slot10[math.random(1, #slot10)])
-		table.insert(slot2, slot5)
-		table.insert(slot3, slot4)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.variedActions) do
+		local var_14_5 = iter_14_1[math.random(1, #iter_14_1)]
+
+		table.insert(var_14_0, var_14_5)
+		table.insert(var_14_1, var_14_4)
+		table.insert(var_14_2, var_14_3)
 	end
 
-	return slot1, slot2, slot3
+	return var_14_0, var_14_1, var_14_2
 end
 
-function slot6(slot0)
-	slot1 = {}
-	slot2 = {}
-	slot3 = {}
+local function var_0_6(arg_15_0)
+	local var_15_0 = {}
+	local var_15_1 = {}
+	local var_15_2 = {}
 
-	for slot7, slot8 in ipairs(slot0.actions) do
-		slot11 = type(slot8[1]) == "table" and slot9[math.random(1, #slot9)] or slot9
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.actions) do
+		local var_15_3 = iter_15_1[1]
+		local var_15_4 = iter_15_1[3]
+		local var_15_5 = type(var_15_3) == "table" and var_15_3[math.random(1, #var_15_3)] or var_15_3
+		local var_15_6 = arg_15_0:GetOwnerSubstituteAction(var_15_5)
 
-		table.insert(slot1, slot0:GetOwnerSubstituteAction(slot11))
-		table.insert(slot2, slot0:GetUserSubstituteAction(slot8[3] or slot11))
-		table.insert(slot3, tobool(slot8[2]))
+		table.insert(var_15_0, var_15_6)
+
+		local var_15_7 = arg_15_0:GetUserSubstituteAction(var_15_4 or var_15_5)
+
+		table.insert(var_15_1, var_15_7)
+		table.insert(var_15_2, tobool(iter_15_1[2]))
 	end
 
-	return slot1, slot2, slot3
+	return var_15_0, var_15_1, var_15_2
 end
 
-function slot0.GetActions(slot0)
-	slot1, slot2 = nil
+function var_0_0.GetActions(arg_16_0)
+	local var_16_0
+	local var_16_1
 
-	if slot0.preheatAction and type(slot0.preheatAction) == "string" then
-		slot1 = slot0.preheatAction
-	elseif slot0.preheatAction and type(slot0.preheatAction) == "table" then
-		slot2 = slot0.preheatAction[2]
-		slot1 = slot0.preheatAction[1]
+	if arg_16_0.preheatAction and type(arg_16_0.preheatAction) == "string" then
+		var_16_0 = arg_16_0.preheatAction
+	elseif arg_16_0.preheatAction and type(arg_16_0.preheatAction) == "table" then
+		var_16_0, var_16_1 = arg_16_0.preheatAction[1], arg_16_0.preheatAction[2]
 	end
 
-	slot3, slot4, slot5 = nil
+	local var_16_2
+	local var_16_3
+	local var_16_4
 
-	if slot0.strategyType == uv0 then
-		slot3, slot4, slot5 = uv1(slot0)
+	if arg_16_0.strategyType == var_0_4 then
+		var_16_2, var_16_3, var_16_4 = var_0_5(arg_16_0)
 	else
-		slot3, slot4, slot5 = uv2(slot0)
+		var_16_2, var_16_3, var_16_4 = var_0_6(arg_16_0)
 	end
 
-	return slot3, slot4, slot5, slot1, slot2, slot0.tailAction
+	return var_16_2, var_16_3, var_16_4, var_16_0, var_16_1, arg_16_0.tailAction
 end
 
-function slot0.OnAwake(slot0)
-	if #slot0.animators > 0 then
-		slot0.animatorIndex = math.random(1, #slot0.animators)
+function var_0_0.OnAwake(arg_17_0)
+	if #arg_17_0.animators > 0 then
+		arg_17_0.animatorIndex = math.random(1, #arg_17_0.animators)
 	end
 end
 
-function slot0.OnStart(slot0)
-	slot0.updateStrategy:Update(slot0.loop)
+function var_0_0.OnStart(arg_18_0)
+	arg_18_0.updateStrategy:Update(arg_18_0.loop)
 end
 
-function slot0.OnContinue(slot0, slot1)
-	slot0.updateStrategy:StepEnd(slot1)
+function var_0_0.OnContinue(arg_19_0, arg_19_1)
+	arg_19_0.updateStrategy:StepEnd(arg_19_1)
 end
 
-function slot0.Reset(slot0)
-	slot0.updateStrategy:Reset()
+function var_0_0.Reset(arg_20_0)
+	arg_20_0.updateStrategy:Reset()
 end
 
-function slot0.GetSpineDefaultAction(slot0)
-	return slot0.defaultAction
+function var_0_0.GetSpineDefaultAction(arg_21_0)
+	return arg_21_0.defaultAction
 end
 
-function slot0.GetSpineMaskDefaultAcation(slot0)
-	return slot0.maskDefaultAction
+function var_0_0.GetSpineMaskDefaultAcation(arg_22_0)
+	return arg_22_0.maskDefaultAction
 end
 
-return slot0
+return var_0_0

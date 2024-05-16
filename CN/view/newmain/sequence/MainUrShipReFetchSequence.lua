@@ -1,150 +1,166 @@
-slot0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
-slot0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
+﻿local var_0_0 = class("MainUrShipReFetchSequence", import("...base.ContextMediator"))
 
-function slot0.Ctor(slot0)
-	uv0.super.Ctor(slot0, BaseEventLogic.New())
-	pg.m02:registerMediator(slot0)
+var_0_0.ON_TIME_UP = "MainUrShipReFetchSequence:ON_TIME_UP"
+
+function var_0_0.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0, BaseEventLogic.New())
+	pg.m02:registerMediator(arg_1_0)
 end
 
-function slot0.Execute(slot0, slot1)
-	if #getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING) == 0 then
-		slot1()
+function var_0_0.Execute(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GRAFTING)
+
+	if #var_2_0 == 0 then
+		arg_2_1()
 
 		return
 	end
 
-	slot0:CheckUrShipAct(slot3, slot1)
+	arg_2_0:CheckUrShipAct(var_2_0, arg_2_1)
 end
 
-function slot1(slot0)
-	return getProxy(ActivityProxy):getActivityById(slot0) and not slot2:isEnd()
+local function var_0_1(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getActivityById(arg_3_0)
+
+	return var_3_0 and not var_3_0:isEnd()
 end
 
-function slot2(slot0)
-	return slot0 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or slot0 == ActivityConst.ACTIVITY_TYPE_BUILD or slot0 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+local function var_0_2(arg_4_0)
+	return arg_4_0 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg_4_0 == ActivityConst.ACTIVITY_TYPE_BUILD or arg_4_0 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-function slot3(slot0)
-	if not slot0 or slot0:isEnd() then
+local function var_0_3(arg_5_0)
+	if not arg_5_0 or arg_5_0:isEnd() then
 		return false
 	end
 
-	if uv0(slot0:getConfig("config_id")) then
+	local var_5_0 = arg_5_0:getConfig("config_id")
+
+	if var_0_1(var_5_0) then
 		return false
 	end
 
-	return pg.activity_template[slot1] and uv1(slot2.type)
+	local var_5_1 = pg.activity_template[var_5_0]
+
+	return var_5_1 and var_0_2(var_5_1.type)
 end
 
-function slot0.CheckUrShipAct(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.CheckUrShipAct(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = {}
 
-	for slot7, slot8 in pairs(slot1) do
-		if uv0(slot8) then
-			table.insert(slot3, function (slot0)
-				uv0:TryFetchUrShips(uv1, slot0)
+	for iter_6_0, iter_6_1 in pairs(arg_6_1) do
+		if var_0_3(iter_6_1) then
+			table.insert(var_6_0, function(arg_7_0)
+				arg_6_0:TryFetchUrShips(iter_6_1, arg_7_0)
 			end)
 		end
 	end
 
-	seriesAsync(slot3, slot2)
+	seriesAsync(var_6_0, arg_6_2)
 end
 
-function slot4(slot0)
-	if not getProxy(ActivityProxy):getActivityById(slot0) or slot2:isEnd() then
+local function var_0_4(arg_8_0)
+	local var_8_0 = getProxy(ActivityProxy):getActivityById(arg_8_0)
+
+	if not var_8_0 or var_8_0:isEnd() then
 		return false
 	end
 
-	slot4 = pg.ship_data_create_exchange[slot2:getConfig("config_id")]
-	slot6 = slot4.exchange_available_times
-	slot8 = slot2.data2
+	local var_8_1 = var_8_0:getConfig("config_id")
+	local var_8_2 = pg.ship_data_create_exchange[var_8_1]
+	local var_8_3 = var_8_2.exchange_request
+	local var_8_4 = var_8_2.exchange_available_times
+	local var_8_5 = var_8_0.data1
+	local var_8_6 = var_8_0.data2
+	local var_8_7 = math.min(var_8_4, var_8_6 + 1) * var_8_3
 
-	return slot8 < slot6 and math.min(slot6, slot8 + 1) * slot4.exchange_request <= slot2.data1
+	return var_8_6 < var_8_4 and var_8_7 <= var_8_5
 end
 
-function slot0.TryFetchUrShips(slot0, slot1, slot2)
-	function slot3()
-		uv0:TryFetchUrShips(uv1, uv2)
+function var_0_0.TryFetchUrShips(arg_9_0, arg_9_1, arg_9_2)
+	local function var_9_0()
+		arg_9_0:TryFetchUrShips(arg_9_1, arg_9_2)
 	end
 
-	if uv0(slot1.id) then
-		slot0:ShowFetchShipMsgbox(slot1.id, slot3)
+	if var_0_4(arg_9_1.id) then
+		arg_9_0:ShowFetchShipMsgbox(arg_9_1.id, var_9_0)
 	else
-		slot2()
+		arg_9_2()
 	end
 end
 
-function slot0.ShowFetchShipMsgbox(slot0, slot1, slot2)
-	slot0.callback = slot2
-	slot0.page = UrShipRefetchWindow.New(pg.UIMgr.GetInstance().UIMain)
+function var_0_0.ShowFetchShipMsgbox(arg_11_0, arg_11_1, arg_11_2)
+	arg_11_0.callback = arg_11_2
+	arg_11_0.page = UrShipRefetchWindow.New(pg.UIMgr.GetInstance().UIMain)
 
-	slot0.page:ExecuteAction("Show", slot1)
+	arg_11_0.page:ExecuteAction("Show", arg_11_1)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_12_0)
 	return {
 		GAME.GRAFTING_ACT_OP_DONE,
 		MainUrShipReFetchSequence.ON_TIME_UP
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1:getName()
+	local var_13_1 = arg_13_1:getBody()
 
-	if slot1:getName() == GAME.GRAFTING_ACT_OP_DONE and uv0(slot3.linkActType) then
-		if #slot3.awards > 0 then
-			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot0.callback)
+	if var_13_0 == GAME.GRAFTING_ACT_OP_DONE and var_0_2(var_13_1.linkActType) then
+		if #var_13_1.awards > 0 then
+			arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards, arg_13_0.callback)
 		else
-			slot0.callback()
+			arg_13_0.callback()
 		end
 
-		if slot0.page and slot0.page:GetLoaded() and slot0.page:isShowing() then
-			slot0.page:Hide()
+		if arg_13_0.page and arg_13_0.page:GetLoaded() and arg_13_0.page:isShowing() then
+			arg_13_0.page:Hide()
 		end
 
-		slot0.callback = nil
-	elseif slot2 == MainUrShipReFetchSequence.ON_TIME_UP then
-		if slot0.page and slot0.page:GetLoaded() and slot0.page:isShowing() then
-			slot0.page:Hide()
+		arg_13_0.callback = nil
+	elseif var_13_0 == MainUrShipReFetchSequence.ON_TIME_UP then
+		if arg_13_0.page and arg_13_0.page:GetLoaded() and arg_13_0.page:isShowing() then
+			arg_13_0.page:Hide()
 		end
 
-		if slot0.callback then
-			slot0.callback()
+		if arg_13_0.callback then
+			arg_13_0.callback()
 
-			slot0.callback = nil
+			arg_13_0.callback = nil
 		end
 	end
 end
 
-function slot0.Clear(slot0)
-	if slot0.page then
-		slot0.page:Destroy()
+function var_0_0.Clear(arg_14_0)
+	if arg_14_0.page then
+		arg_14_0.page:Destroy()
 
-		slot0.page = nil
+		arg_14_0.page = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	pg.m02:removeMediator(slot0.__cname)
-	slot0:Clear()
+function var_0_0.Dispose(arg_15_0)
+	pg.m02:removeMediator(arg_15_0.__cname)
+	arg_15_0:Clear()
 end
 
-function slot0.addSubLayers(slot0, slot1, slot2, slot3)
-	assert(isa(slot1, Context), "should be an instance of Context")
+function var_0_0.addSubLayers(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	assert(isa(arg_16_1, Context), "should be an instance of Context")
 
-	slot6 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
+	local var_16_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
 
-	if slot2 then
-		while slot6.parent do
-			slot6 = slot6.parent
+	if arg_16_2 then
+		while var_16_0.parent do
+			var_16_0 = var_16_0.parent
 		end
 	end
 
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
-		parentContext = slot6,
-		context = slot1,
-		callback = slot3
+		parentContext = var_16_0,
+		context = arg_16_1,
+		callback = arg_16_3
 	})
 end
 
-return slot0
+return var_0_0

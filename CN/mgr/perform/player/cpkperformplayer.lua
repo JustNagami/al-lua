@@ -1,130 +1,135 @@
-slot0 = class("CpkPerformPlayer", import(".BasePerformPlayer"))
+﻿local var_0_0 = class("CpkPerformPlayer", import(".BasePerformPlayer"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.bgTF = slot0:findTF("bg", slot0._tf)
-	slot0.nameTF = slot0:findTF("name", slot0.bgTF)
-	slot0.sliderTF = slot0:findTF("slider", slot0.bgTF)
-	slot0.cpkParentTF = slot0:findTF("cpk", slot0.bgTF)
-	slot0.cpkCoverTF = slot0:findTF("cpk_cover", slot0.bgTF)
-	slot0.frameRate = Application.targetFrameRate or 60
-	slot2 = pg.child_data[1]
-	slot0.maxStage = #slot2.stage
-	slot0.personalityIds = slot2.attr_2_list
+	arg_1_0.bgTF = arg_1_0:findTF("bg", arg_1_0._tf)
+	arg_1_0.nameTF = arg_1_0:findTF("name", arg_1_0.bgTF)
+	arg_1_0.sliderTF = arg_1_0:findTF("slider", arg_1_0.bgTF)
+	arg_1_0.cpkParentTF = arg_1_0:findTF("cpk", arg_1_0.bgTF)
+	arg_1_0.cpkCoverTF = arg_1_0:findTF("cpk_cover", arg_1_0.bgTF)
+	arg_1_0.frameRate = Application.targetFrameRate or 60
+
+	local var_1_0 = pg.child_data[1]
+
+	arg_1_0.maxStage = #var_1_0.stage
+	arg_1_0.personalityIds = var_1_0.attr_2_list
 end
 
-function slot0.getCpkName(slot0, slot1)
-	if getProxy(EducateProxy):GetCharData():GetStage() < slot0.maxStage then
-		return slot1[slot2]
-	elseif slot2 == slot0.maxStage then
-		return slot1[slot2][table.indexof(slot0.personalityIds, getProxy(EducateProxy):GetPersonalityId())]
+function var_0_0.getCpkName(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(EducateProxy):GetCharData():GetStage()
+
+	if var_2_0 < arg_2_0.maxStage then
+		return arg_2_1[var_2_0]
+	elseif var_2_0 == arg_2_0.maxStage then
+		local var_2_1 = getProxy(EducateProxy):GetPersonalityId()
+		local var_2_2 = table.indexof(arg_2_0.personalityIds, var_2_1)
+
+		return arg_2_1[var_2_0][var_2_2]
 	end
 
 	return ""
 end
 
-function slot0.Play(slot0, slot1, slot2, slot3)
-	slot0:Show()
+function var_0_0.Play(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_0:Show()
 
-	if slot3 then
-		setText(slot0.nameTF, slot3)
+	if arg_3_3 then
+		setText(arg_3_0.nameTF, arg_3_3)
 	end
 
-	setActive(slot0.bgTF, not IsNil(slot0.cpkTF))
+	setActive(arg_3_0.bgTF, not IsNil(arg_3_0.cpkTF))
 
-	slot5 = slot1.param[2] or 3
+	local var_3_0 = arg_3_0:getCpkName(arg_3_1.param[1]) or ""
+	local var_3_1 = arg_3_1.param[2] or 3
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("educateanim/" .. (slot0:getCpkName(slot1.param[1]) or ""))) then
-		slot7 = ResourceMgr.Inst
+	if PathMgr.FileExists(PathMgr.getAssetBundle("educateanim/" .. var_3_0)) then
+		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var_3_0, var_3_0, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
+			local var_4_0 = Object.Instantiate(arg_4_0, arg_3_0.cpkParentTF)
 
-		slot7:getAssetAsync("educateanim/" .. slot4, slot4, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			slot1 = Object.Instantiate(slot0, uv0.cpkParentTF)
+			setActive(arg_3_0.bgTF, true)
 
-			setActive(uv0.bgTF, true)
+			arg_3_0.player = var_4_0.transform:Find("usm"):GetComponent(typeof(CriManaCpkUI))
+			arg_3_0.time = var_3_1
 
-			slot3 = slot1.transform
-			slot3 = slot3:Find("usm")
-			uv0.player = slot3:GetComponent(typeof(CriManaCpkUI))
-			uv0.time = uv1
-			slot2 = uv0.cpkTF
-			uv0.cpkTF = slot1
-			slot3 = uv0.player
+			local var_4_1 = arg_3_0.cpkTF
 
-			slot3:SetPlayEndHandler(function ()
-				if uv0 then
-					uv0()
+			arg_3_0.cpkTF = var_4_0
+
+			arg_3_0.player:SetPlayEndHandler(function()
+				if arg_3_2 then
+					arg_3_2()
 				end
 
-				uv1:onCpkEnd()
+				arg_3_0:onCpkEnd()
 			end)
 
-			if uv0._anim then
-				uv0._anim:Play()
+			if arg_3_0._anim then
+				arg_3_0._anim:Play()
 			end
 
-			uv0.player.maxFrameDrop = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+MaxFrameDrop"), "Infinite", nil)
+			arg_3_0.player.maxFrameDrop = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+MaxFrameDrop"), "Infinite", nil)
 
-			uv0.player:PlayerManualUpdate()
-			uv0.player:PlayCpk()
-			uv0:onCpkStart(uv1)
+			arg_3_0.player:PlayerManualUpdate()
+			arg_3_0.player:PlayCpk()
+			arg_3_0:onCpkStart(var_3_1)
 
-			if not IsNil(slot2) then
-				Destroy(slot2)
+			if not IsNil(var_4_1) then
+				Destroy(var_4_1)
 			end
 		end), true, true)
-	elseif slot2 then
-		slot2()
+	elseif arg_3_2 then
+		arg_3_2()
 	end
 end
 
-function slot0.onCpkStart(slot0, slot1)
-	setSlider(slot0.sliderTF, 0, 1, 0)
+function var_0_0.onCpkStart(arg_6_0, arg_6_1)
+	setSlider(arg_6_0.sliderTF, 0, 1, 0)
 
-	slot0.playingTime = 0
-	slot0.timer = Timer.New(function ()
-		uv0.playingTime = uv0.playingTime + 1 / uv0.frameRate
+	arg_6_0.playingTime = 0
+	arg_6_0.timer = Timer.New(function()
+		arg_6_0.playingTime = arg_6_0.playingTime + 1 / arg_6_0.frameRate
 
-		setSlider(uv0.sliderTF, 0, 1, uv0.playingTime / uv1)
-	end, 1 / slot0.frameRate, -1)
+		setSlider(arg_6_0.sliderTF, 0, 1, arg_6_0.playingTime / arg_6_1)
+	end, 1 / arg_6_0.frameRate, -1)
 
-	slot0.timer:Start()
+	arg_6_0.timer:Start()
 end
 
-function slot0.onCpkEnd(slot0)
-	setSlider(slot0.sliderTF, 0, 1, 1)
+function var_0_0.onCpkEnd(arg_8_0)
+	setSlider(arg_8_0.sliderTF, 0, 1, 1)
 
-	if slot0.timer ~= nil then
-		slot0.timer:Stop()
+	if arg_8_0.timer ~= nil then
+		arg_8_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_8_0.timer = nil
 	end
 end
 
-function slot0.SetUIParam(slot0, slot1)
-	setAnchoredPosition(slot0.sliderTF, slot1.sliderPos)
-	setAnchoredPosition(slot0.cpkParentTF, slot1.cpkPos)
-	setAnchoredPosition(slot0.cpkCoverTF, slot1.cpkCoverPos)
+function var_0_0.SetUIParam(arg_9_0, arg_9_1)
+	setAnchoredPosition(arg_9_0.sliderTF, arg_9_1.sliderPos)
+	setAnchoredPosition(arg_9_0.cpkParentTF, arg_9_1.cpkPos)
+	setAnchoredPosition(arg_9_0.cpkCoverTF, arg_9_1.cpkCoverPos)
 
-	GetComponent(slot0.bgTF, typeof(Image)).enabled = slot1.showCpkBg
+	GetComponent(arg_9_0.bgTF, typeof(Image)).enabled = arg_9_1.showCpkBg
 end
 
-function slot0.Clear(slot0)
-	if not IsNil(slot0.cpkTF) then
-		Destroy(slot0.cpkTF)
+function var_0_0.Clear(arg_10_0)
+	if not IsNil(arg_10_0.cpkTF) then
+		Destroy(arg_10_0.cpkTF)
 	end
 
-	if slot0.timer ~= nil then
-		slot0.timer:Stop()
+	if arg_10_0.timer ~= nil then
+		arg_10_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_10_0.timer = nil
 	end
 
-	slot0.player = nil
+	arg_10_0.player = nil
 
-	setText(slot0.nameTF, "")
-	slot0:Hide()
+	setText(arg_10_0.nameTF, "")
+	arg_10_0:Hide()
 	gcAll()
 end
 
-return slot0
+return var_0_0

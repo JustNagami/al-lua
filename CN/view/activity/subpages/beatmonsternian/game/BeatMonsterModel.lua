@@ -1,97 +1,103 @@
-slot0 = class("BeatMonsterModel")
+﻿local var_0_0 = class("BeatMonsterModel")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.controller = slot1
-	slot0.fuShun = nil
-	slot0.mosterNian = nil
-	slot0.attackCnt = 0
-	slot0.actionStr = ""
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.controller = arg_1_1
+	arg_1_0.fuShun = nil
+	arg_1_0.mosterNian = nil
+	arg_1_0.attackCnt = 0
+	arg_1_0.actionStr = ""
 end
 
-function slot0.AddFuShun(slot0)
-	slot0.fuShun = {}
+function var_0_0.AddFuShun(arg_2_0)
+	arg_2_0.fuShun = {}
 end
 
-function slot0.AddMonsterNian(slot0, slot1, slot2)
-	slot0.mosterNian = {
-		hp = slot1,
-		maxHp = slot2
+function var_0_0.AddMonsterNian(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.mosterNian = {
+		hp = arg_3_1,
+		maxHp = arg_3_2
 	}
 end
 
-function slot0.UpdateMonsterHp(slot0, slot1)
-	slot0.mosterNian.hp = slot1
+function var_0_0.UpdateMonsterHp(arg_4_0, arg_4_1)
+	arg_4_0.mosterNian.hp = arg_4_1
 end
 
-function slot0.UpdateData(slot0, slot1)
-	slot0:UpdateMonsterHp(slot1.hp)
+function var_0_0.UpdateData(arg_5_0, arg_5_1)
+	arg_5_0:UpdateMonsterHp(arg_5_1.hp)
 
-	slot0.mosterNian.maxHp = slot1.maxHp
+	arg_5_0.mosterNian.maxHp = arg_5_1.maxHp
 
-	slot0:SetAttackCnt(slot1.leftCount)
+	arg_5_0:SetAttackCnt(arg_5_1.leftCount)
 end
 
-function slot0.SetAttackCnt(slot0, slot1)
-	slot0.attackCnt = slot1
+function var_0_0.SetAttackCnt(arg_6_0, arg_6_1)
+	arg_6_0.attackCnt = arg_6_1
 end
 
-function slot0.UpdateActionStr(slot0, slot1)
-	if not slot1 or slot1 == "" then
-		slot0.actionStr = ""
+function var_0_0.UpdateActionStr(arg_7_0, arg_7_1)
+	if not arg_7_1 or arg_7_1 == "" then
+		arg_7_0.actionStr = ""
 	else
-		slot0.actionStr = slot0.actionStr .. slot1
+		arg_7_0.actionStr = arg_7_0.actionStr .. arg_7_1
 	end
 end
 
-function slot0.SetStorys(slot0, slot1)
-	slot0.storys = slot1
+function var_0_0.SetStorys(arg_8_0, arg_8_1)
+	arg_8_0.storys = arg_8_1
 end
 
-function slot0.GetPlayableStory(slot0)
-	if not slot0.storys or type(slot1) ~= "table" then
+function var_0_0.GetPlayableStory(arg_9_0)
+	local var_9_0 = arg_9_0.storys
+
+	if not var_9_0 or type(var_9_0) ~= "table" then
 		return
 	end
 
-	slot2 = pg.NewStoryMgr.GetInstance()
+	local var_9_1 = pg.NewStoryMgr.GetInstance()
 
-	for slot6, slot7 in pairs(slot1) do
-		slot9 = slot7[2]
+	for iter_9_0, iter_9_1 in pairs(var_9_0) do
+		local var_9_2 = iter_9_1[1]
+		local var_9_3 = iter_9_1[2]
 
-		if slot0.mosterNian.hp <= slot7[1] and not slot2:IsPlayed(slot9) then
-			return slot9
+		if var_9_2 >= arg_9_0.mosterNian.hp and not var_9_1:IsPlayed(var_9_3) then
+			return var_9_3
 		end
 	end
 end
 
-function slot0.GetActionStr(slot0)
-	return slot0.actionStr
+function var_0_0.GetActionStr(arg_10_0)
+	return arg_10_0.actionStr
 end
 
-function slot0.IsMatchAction(slot0)
-	return BeatMonsterNianConst.MatchAction(slot0.actionStr)
+function var_0_0.IsMatchAction(arg_11_0)
+	return BeatMonsterNianConst.MatchAction(arg_11_0.actionStr)
 end
 
-function slot0.GetMatchAction(slot0)
-	return BeatMonsterNianConst.GetMatchAction(slot0.actionStr)
+function var_0_0.GetMatchAction(arg_12_0)
+	return BeatMonsterNianConst.GetMatchAction(arg_12_0.actionStr)
 end
 
-function slot0.GetMonsterAction(slot0)
-	return BeatMonsterNianConst.GetMonsterAction(slot0.actionStr)
+function var_0_0.GetMonsterAction(arg_13_0)
+	return BeatMonsterNianConst.GetMonsterAction(arg_13_0.actionStr)
 end
 
-function slot0.RandomDamage(slot0)
-	return math.max(slot0.mosterNian.hp - math.random(1, 2), 0)
+function var_0_0.RandomDamage(arg_14_0)
+	local var_14_0 = math.random(1, 2)
+
+	return math.max(arg_14_0.mosterNian.hp - var_14_0, 0)
 end
 
-function slot0.GetMonsterMaxHp(slot0)
-	return slot0.mosterNian.maxHp
+function var_0_0.GetMonsterMaxHp(arg_15_0)
+	return arg_15_0.mosterNian.maxHp
 end
 
-function slot0.GetAttackCount(slot0)
-	return slot0.attackCnt
+function var_0_0.GetAttackCount(arg_16_0)
+	return arg_16_0.attackCnt
 end
 
-function slot0.Dispose(slot0)
+function var_0_0.Dispose(arg_17_0)
+	return
 end
 
-return slot0
+return var_0_0

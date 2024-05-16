@@ -1,62 +1,69 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleEvent
-slot3 = slot0.Battle.BattleCardPuzzleEvent
-slot4 = slot0.Battle.BattleFormulas
-slot5 = slot0.Battle.BattleConst
-slot6 = slot0.Battle.BattleConfig
-slot7 = slot0.Battle.BattleAttr
-slot8 = slot0.Battle.BattleDataFunction
-slot9 = slot0.Battle.BattleAttr
-slot10 = class("BattleFleetCardPuzzleFleetBuffManager")
-slot0.Battle.BattleFleetCardPuzzleFleetBuffManager = slot10
-slot10.__name = "BattleFleetCardPuzzleFleetBuffManager"
+﻿ys = ys or {}
 
-function slot10.Ctor(slot0, slot1)
-	slot0._client = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleEvent
+local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
+local var_0_4 = var_0_0.Battle.BattleFormulas
+local var_0_5 = var_0_0.Battle.BattleConst
+local var_0_6 = var_0_0.Battle.BattleConfig
+local var_0_7 = var_0_0.Battle.BattleAttr
+local var_0_8 = var_0_0.Battle.BattleDataFunction
+local var_0_9 = var_0_0.Battle.BattleAttr
+local var_0_10 = class("BattleFleetCardPuzzleFleetBuffManager")
 
-	slot0:init()
+var_0_0.Battle.BattleFleetCardPuzzleFleetBuffManager = var_0_10
+var_0_10.__name = "BattleFleetCardPuzzleFleetBuffManager"
+
+function var_0_10.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._client = arg_1_1
+
+	arg_1_0:init()
 end
 
-function slot10.Trigger(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_10.Trigger(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = {}
 
-	for slot7, slot8 in pairs(slot0._buffList) do
-		if slot8:IsResponTo(slot1) then
-			table.insert(slot3, slot8)
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._buffList) do
+		if iter_2_1:IsResponTo(arg_2_1) then
+			table.insert(var_2_0, iter_2_1)
 		end
 	end
 
-	for slot7, slot8 in ipairs(slot3) do
-		slot8:onTrigger(slot1, slot2)
+	for iter_2_2, iter_2_3 in ipairs(var_2_0) do
+		iter_2_3:onTrigger(arg_2_1, arg_2_2)
 	end
 end
 
-function slot10.Update(slot0, slot1)
-	for slot6, slot7 in pairs(slot0._buffList) do
-		slot7:Update(slot1)
+function var_0_10.Update(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0._buffList
+
+	for iter_3_0, iter_3_1 in pairs(var_3_0) do
+		iter_3_1:Update(arg_3_1)
 	end
 end
 
-function slot10.AttachCardPuzzleBuff(slot0, slot1)
-	if slot0:GetCardPuzzleBuff(slot1:GetID()) then
-		slot3:Stack()
+function var_0_10.AttachCardPuzzleBuff(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:GetID()
+	local var_4_1 = arg_4_0:GetCardPuzzleBuff(var_4_0)
+
+	if var_4_1 then
+		var_4_1:Stack()
 	else
-		slot0._buffList[slot2] = slot1
+		arg_4_0._buffList[var_4_0] = arg_4_1
 
-		slot1:Attach(slot0._client)
+		arg_4_1:Attach(arg_4_0._client)
 	end
 end
 
-function slot10.GetCardPuzzleBuff(slot0, slot1)
-	return slot0._buffList[slot1]
+function var_0_10.GetCardPuzzleBuff(arg_5_0, arg_5_1)
+	return arg_5_0._buffList[arg_5_1]
 end
 
-function slot10.GetCardPuzzleBuffList(slot0)
-	return slot0._buffList
+function var_0_10.GetCardPuzzleBuffList(arg_6_0)
+	return arg_6_0._buffList
 end
 
-function slot10.init(slot0)
-	slot0._buffList = {}
+function var_0_10.init(arg_7_0)
+	arg_7_0._buffList = {}
 end

@@ -1,89 +1,102 @@
-slot0 = class("EscortShop", import(".BaseVO"))
+﻿local var_0_0 = class("EscortShop", import(".BaseVO"))
 
-function slot0.Ctor(slot0)
-	slot0.goods = {}
-	slot0.type = ShopArgs.ShopEscort
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.goods = {}
+	arg_1_0.type = ShopArgs.ShopEscort
 end
 
-function slot0.update(slot0, slot1, slot2)
-	slot0.id = slot1
-	slot0.configId = slot0.id
-	slot3 = {}
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.id = arg_2_1
+	arg_2_0.configId = arg_2_0.id
 
-	for slot7, slot8 in ipairs(slot2) do
-		slot3[slot8.shop_id] = slot8.count
+	local var_2_0 = {}
+
+	for iter_2_0, iter_2_1 in ipairs(arg_2_2) do
+		var_2_0[iter_2_1.shop_id] = iter_2_1.count
 	end
 
-	slot0.goods = {}
+	arg_2_0.goods = {}
 
-	if slot0.id and slot0.id > 0 then
-		slot7 = "goods"
+	if arg_2_0.id and arg_2_0.id > 0 then
+		for iter_2_2, iter_2_3 in ipairs(arg_2_0:getConfig("goods")) do
+			local var_2_1 = var_2_0[iter_2_3] or 0
 
-		for slot7, slot8 in ipairs(slot0:getConfig(slot7)) do
-			slot0.goods[slot8] = Goods.Create({
-				shop_id = slot8,
-				buy_count = slot3[slot8] or 0
+			arg_2_0.goods[iter_2_3] = Goods.Create({
+				shop_id = iter_2_3,
+				buy_count = var_2_1
 			}, Goods.TYPE_SHAM_BATTLE)
 		end
 	end
 end
 
-function slot0.isOpen(slot0)
-	slot1 = false
+function var_0_0.isOpen(arg_3_0)
+	local var_3_0 = false
+	local var_3_1 = arg_3_0:bindConfigTable()[arg_3_0.id]
 
-	if slot0:bindConfigTable()[slot0.id] then
-		slot3 = pg.TimeMgr.GetInstance()
+	if var_3_1 then
+		local var_3_2 = pg.TimeMgr.GetInstance()
+		local var_3_3 = var_3_2:STimeDescS(var_3_2:GetServerTime(), "*t")
 
-		if slot3:STimeDescS(slot3:GetServerTime(), "*t").month == slot0.id then
-			slot1 = slot2.time[1] <= slot4.day and slot4.day <= slot2.time[2]
+		if var_3_3.month == arg_3_0.id then
+			var_3_0 = var_3_3.day >= var_3_1.time[1] and var_3_3.day <= var_3_1.time[2]
 		end
 	end
 
-	return slot1
+	return var_3_0
 end
 
-function slot0.getRestDays(slot0)
-	slot1 = 0
+function var_0_0.getRestDays(arg_4_0)
+	local var_4_0 = 0
+	local var_4_1 = arg_4_0:bindConfigTable()[arg_4_0.id]
 
-	if slot0:bindConfigTable()[slot0.id] then
-		slot1 = slot2.time[2] - pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t").day + 1
+	if var_4_1 then
+		local var_4_2 = pg.TimeMgr.GetInstance()
+		local var_4_3 = pg.TimeMgr.GetInstance():STimeDescS(var_4_2:GetServerTime(), "*t")
+
+		var_4_0 = var_4_1.time[2] - var_4_3.day + 1
 	end
 
-	return math.max(slot1, 1)
+	return (math.max(var_4_0, 1))
 end
 
-function slot0.getSortGoods(slot0)
-	slot1 = {}
+function var_0_0.getSortGoods(arg_5_0)
+	local var_5_0 = {}
 
-	for slot5, slot6 in pairs(slot0.goods) do
-		table.insert(slot1, slot6)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.goods) do
+		table.insert(var_5_0, iter_5_1)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		if (slot0:canPurchase() and 1 or 0) == (slot1:canPurchase() and 1 or 0) then
-			if slot0:getConfig("order") == slot1:getConfig("order") then
-				return slot0.id < slot1.id
+	table.sort(var_5_0, function(arg_6_0, arg_6_1)
+		local var_6_0 = arg_6_0:canPurchase() and 1 or 0
+		local var_6_1 = arg_6_1:canPurchase() and 1 or 0
+
+		if var_6_0 == var_6_1 then
+			local var_6_2 = arg_6_0:getConfig("order")
+			local var_6_3 = arg_6_1:getConfig("order")
+
+			if var_6_2 == var_6_3 then
+				return arg_6_0.id < arg_6_1.id
 			else
-				return slot4 < slot5
+				return var_6_2 < var_6_3
 			end
 		else
-			return slot3 < slot2
+			return var_6_1 < var_6_0
 		end
 	end)
 
-	return slot1
+	return var_5_0
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_7_0)
 	return pg.escort_shop_template
 end
 
-function slot0.getGoodsCfg(slot0, slot1)
-	return pg.activity_shop_template[slot1]
+function var_0_0.getGoodsCfg(arg_8_0, arg_8_1)
+	return pg.activity_shop_template[arg_8_1]
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	return slot0.goods[slot1]
+function var_0_0.getGoodsById(arg_9_0, arg_9_1)
+	return arg_9_0.goods[arg_9_1]
 end
 
-return slot0
+return var_0_0

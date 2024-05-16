@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_110 = {}
-slot1 = slot0.word_template_110
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_110 = {}
+
+local var_0_1 = var_0_0.word_template_110
 
 function temp()
-	uv0["繰"] = {
+	var_0_1.繰 = {
 		this = {
 			this = true
 		}
@@ -14,14 +17,14 @@ end
 temp()
 
 function temp()
-	uv0["喬"] = {
-		["石"] = {
+	var_0_1.喬 = {
+		石 = {
 			this = true
 		},
-		["伊"] = {
+		伊 = {
 			this = true
 		},
-		["峰"] = {
+		峰 = {
 			this = true
 		}
 	}
@@ -30,24 +33,24 @@ end
 temp()
 
 function temp()
-	uv0["橋"] = {
-		["侵"] = {
-			["襲"] = {
-				["兵"] = {
+	var_0_1.橋 = {
+		侵 = {
+			襲 = {
+				兵 = {
 					this = true
 				}
 			}
 		},
-		["本"] = {
-			["杏"] = {
-				["子"] = {
+		本 = {
+			杏 = {
+				子 = {
 					this = true
 				}
 			}
 		},
-		["夲"] = {
-			["莕"] = {
-				["孒"] = {
+		夲 = {
+			莕 = {
+				孒 = {
 					this = true
 				}
 			}
@@ -58,7 +61,7 @@ end
 temp()
 
 function temp()
-	uv0["譙"] = {
+	var_0_1.譙 = {
 		this = {
 			this = true
 		}
@@ -68,7 +71,7 @@ end
 temp()
 
 function temp()
-	uv0["鞽"] = {
+	var_0_1.鞽 = {
 		this = {
 			this = true
 		}
@@ -78,7 +81,7 @@ end
 temp()
 
 function temp()
-	uv0["篋"] = {
+	var_0_1.篋 = {
 		this = {
 			this = true
 		}
@@ -88,22 +91,22 @@ end
 temp()
 
 function temp()
-	uv0["親"] = {
-		["美"] = {
+	var_0_1.親 = {
+		美 = {
 			this = true
 		},
-		["民"] = {
-			["黨"] = {
+		民 = {
+			黨 = {
 				this = true
 			}
 		},
-		["日"] = {
+		日 = {
 			this = true
 		},
-		["江"] = {
-			["系"] = {
-				["媒"] = {
-					["體"] = {
+		江 = {
+			系 = {
+				媒 = {
+					體 = {
 						this = true
 					}
 				}
@@ -115,9 +118,9 @@ end
 temp()
 
 function temp()
-	uv0["欽"] = {
-		["本"] = {
-			["立"] = {
+	var_0_1.欽 = {
+		本 = {
+			立 = {
 				this = true
 			}
 		}
@@ -127,16 +130,16 @@ end
 temp()
 
 function temp()
-	uv0["禽"] = {
-		["獸"] = {
+	var_0_1.禽 = {
+		獸 = {
 			this = true
 		},
-		["流"] = {
-			["感"] = {
+		流 = {
+			感 = {
 				this = true
 			}
 		},
-		["兽"] = {
+		兽 = {
 			this = true
 		}
 	}
@@ -145,7 +148,7 @@ end
 temp()
 
 function temp()
-	uv0["唚"] = {
+	var_0_1.唚 = {
 		this = {
 			this = true
 		}

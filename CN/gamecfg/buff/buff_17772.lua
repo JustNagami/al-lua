@@ -1,4 +1,50 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFoeDying"
+			},
+			arg_list = {
+				killer = "self",
+				target = "TargetSelf",
+				skill_id = 17771
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -487,51 +533,5 @@ return {
 	stack = 1,
 	id = 17772,
 	icon = 17770,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFoeDying"
-			},
-			arg_list = {
-				killer = "self",
-				target = "TargetSelf",
-				skill_id = 17771
-			}
-		}
-	}
+	last_effect = ""
 }

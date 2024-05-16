@@ -1,23 +1,23 @@
-slot0 = class("MinigameHallBuilding", import(".NavalAcademyBuilding"))
+﻿local var_0_0 = class("MinigameHallBuilding", import(".NavalAcademyBuilding"))
 
-function slot0.GetGameObjectName(slot0)
+function var_0_0.GetGameObjectName(arg_1_0)
 	return "minigamehall"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("school_title_xiaoyouxiting")
 end
 
-function slot0.OnInit(slot0)
-	setActive(slot0._tf, not LOCK_MINIGAME_HALL)
+function var_0_0.OnInit(arg_3_0)
+	setActive(arg_3_0._tf, not LOCK_MINIGAME_HALL)
 end
 
-function slot0.OnClick(slot0)
-	slot0:emit(NavalAcademyMediator.ON_OPEN_MINIGAMEHALL)
+function var_0_0.OnClick(arg_4_0)
+	arg_4_0:emit(NavalAcademyMediator.ON_OPEN_MINIGAMEHALL)
 end
 
-function slot0.IsTip(slot0)
+function var_0_0.IsTip(arg_5_0)
 	return false
 end
 
-return slot0
+return var_0_0

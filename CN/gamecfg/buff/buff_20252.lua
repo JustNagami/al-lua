@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发全弹发射-威奇塔II"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发全弹发射-威奇塔II",
-	stack = 1,
-	id = 20252,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 20250
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行8次攻击，触发全弹发射-威奇塔II"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发全弹发射-威奇塔II",
+	stack = 1,
+	id = 20252,
+	icon = 20200,
+	last_effect = ""
 }

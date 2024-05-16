@@ -1,191 +1,199 @@
-slot0 = class("LanternRiddlesView")
+﻿local var_0_0 = class("LanternRiddlesView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.controller = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.controller = arg_1_1
 
-	pg.DelegateInfo.New(slot0)
+	pg.DelegateInfo.New(arg_1_0)
 end
 
-function slot0.SetUI(slot0, slot1)
-	slot0._tf = slot1
-	slot0.questioneTFs = {}
+function var_0_0.SetUI(arg_2_0, arg_2_1)
+	arg_2_0._tf = arg_2_1
+	arg_2_0.questioneTFs = {}
 
-	for slot5, slot6 in ipairs(pg.activity_event_question.all) do
-		slot0.questioneTFs[slot6] = slot0:findTF("labels/label" .. slot5)
+	for iter_2_0, iter_2_1 in ipairs(pg.activity_event_question.all) do
+		local var_2_0 = arg_2_0:findTF("labels/label" .. iter_2_0)
+
+		arg_2_0.questioneTFs[iter_2_1] = var_2_0
 	end
 
-	slot0.mainPanel = slot0:findTF("main")
-	slot2 = slot0:findTF("time/Text")
-	slot0.day = slot2:GetComponent(typeof(Text))
-	slot2 = slot0:findTF("frame/time", slot0.mainPanel)
-	slot2:GetComponent(typeof(Text)).text = i18n("LanternRiddle_wait_time_tip")
+	arg_2_0.mainPanel = arg_2_0:findTF("main")
+	arg_2_0.day = arg_2_0:findTF("time/Text"):GetComponent(typeof(Text))
+	arg_2_0:findTF("frame/time", arg_2_0.mainPanel):GetComponent(typeof(Text)).text = i18n("LanternRiddle_wait_time_tip")
 
-	setActive(slot0.mainPanel, false)
-	onButton(slot0, slot0.mainPanel, function ()
-		uv0:HideMainPanel()
+	setActive(arg_2_0.mainPanel, false)
+	onButton(arg_2_0, arg_2_0.mainPanel, function()
+		arg_2_0:HideMainPanel()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("back"), function ()
-		uv0.controller:ExitGame()
+	onButton(arg_2_0, arg_2_0:findTF("back"), function()
+		arg_2_0.controller:ExitGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("back/help"), function ()
+	onButton(arg_2_0, arg_2_0:findTF("back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.lanternRiddles_gametip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("option"), function ()
-		uv0.controller:ExitGameAndGoHome()
+	onButton(arg_2_0, arg_2_0:findTF("option"), function()
+		arg_2_0.controller:ExitGameAndGoHome()
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateDay(slot0, slot1)
-	slot0.day.text = math.min(slot1, 7)
+function var_0_0.UpdateDay(arg_7_0, arg_7_1)
+	local var_7_0 = math.min(arg_7_1, 7)
+
+	arg_7_0.day.text = var_7_0
 end
 
-function slot0.InitLanternRiddles(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot0.questioneTFs[slot6.id]
-		slot8 = slot6.isUnlock
+function var_0_0.InitLanternRiddles(arg_8_0, arg_8_1)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		local var_8_0 = arg_8_0.questioneTFs[iter_8_1.id]
+		local var_8_1 = iter_8_1.isUnlock
 
-		onButton(slot0, slot7, function ()
-			if not uv0 then
+		onButton(arg_8_0, var_8_0, function()
+			if not var_8_1 then
 				return
 			end
 
-			uv1:ShowMainPanel(uv2)
+			arg_8_0:ShowMainPanel(iter_8_1)
 		end, SFX_PANEL)
-		setActive(slot7:Find("finish"), slot6.isFinish)
+		setActive(var_8_0:Find("finish"), iter_8_1.isFinish)
 
-		if LeanTween.isTweening(go(slot7)) then
-			LeanTween.cancel(go(slot7))
+		if LeanTween.isTweening(go(var_8_0)) then
+			LeanTween.cancel(go(var_8_0))
 		end
 
-		slot9 = slot7:Find("image")
+		local var_8_2 = var_8_0:Find("image")
 
-		if slot8 and not slot6.isFinish then
-			LeanTween.rotateZ(go(slot7), 10, 2):setLoopPingPong(0):setFrom(0)
+		if var_8_1 and not iter_8_1.isFinish then
+			LeanTween.rotateZ(go(var_8_0), 10, 2):setLoopPingPong(0):setFrom(0)
 		end
 
-		setActive(slot9, slot8)
+		setActive(var_8_2, var_8_1)
 	end
 end
 
-function slot0.RefreshLanterRiddles(slot0, slot1)
-	slot0:InitLanternRiddles(slot1)
+function var_0_0.RefreshLanterRiddles(arg_10_0, arg_10_1)
+	arg_10_0:InitLanternRiddles(arg_10_1)
 end
 
-function slot0.ShowMainPanel(slot0, slot1)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.mainPanel)
-	setActive(slot0.mainPanel, true)
-	setActive(slot0:findTF("frame/label_game", slot0.mainPanel), slot1.type == 2)
-	setActive(slot0:findTF("frame/label_his", slot0.mainPanel), slot1.type == 1)
-	setText(slot0:findTF("frame/Text", slot0.mainPanel), slot1.text)
-	slot0:UpdateMainPanelTime()
+function var_0_0.ShowMainPanel(arg_11_0, arg_11_1)
+	pg.UIMgr.GetInstance():BlurPanel(arg_11_0.mainPanel)
+	setActive(arg_11_0.mainPanel, true)
+	setActive(arg_11_0:findTF("frame/label_game", arg_11_0.mainPanel), arg_11_1.type == 2)
+	setActive(arg_11_0:findTF("frame/label_his", arg_11_0.mainPanel), arg_11_1.type == 1)
+	setText(arg_11_0:findTF("frame/Text", arg_11_0.mainPanel), arg_11_1.text)
+	arg_11_0:UpdateMainPanelTime()
 
-	slot2 = slot1.answers
-	slot3 = slot0:findTF("frame/answers", slot0.mainPanel)
-	slot4 = slot1.isFinish
+	local var_11_0 = arg_11_1.answers
+	local var_11_1 = arg_11_0:findTF("frame/answers", arg_11_0.mainPanel)
+	local var_11_2 = arg_11_1.isFinish
 
-	for slot8 = 1, 4 do
-		slot11 = slot3:GetChild(slot8 - 1)
+	for iter_11_0 = 1, 4 do
+		local var_11_3 = var_11_0[iter_11_0][1]
+		local var_11_4 = var_11_0[iter_11_0][2]
+		local var_11_5 = var_11_1:GetChild(iter_11_0 - 1)
 
-		setText(slot11:Find("Text"), slot2[slot8][1])
-		setActive(slot11:Find("right"), slot4 and slot8 == slot1.rightIndex)
-		setActive(slot11:Find("false"), slot2[slot8][2])
-		onButton(slot0, slot11, function ()
-			if uv0.isFinish then
+		setText(var_11_5:Find("Text"), var_11_3)
+		setActive(var_11_5:Find("right"), var_11_2 and iter_11_0 == arg_11_1.rightIndex)
+		setActive(var_11_5:Find("false"), var_11_4)
+		onButton(arg_11_0, var_11_5, function()
+			if arg_11_1.isFinish then
 				return
 			end
 
-			if uv1 then
+			if var_11_4 then
 				return
 			end
 
-			if pg.TimeMgr.GetInstance():GetServerTime() < uv2.controller:GetLockTime() then
+			if pg.TimeMgr.GetInstance():GetServerTime() < arg_11_0.controller:GetLockTime() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("lanternRiddles_wait_for_reanswer"))
 
 				return
 			end
 
-			uv2.controller:SelectAnswer(uv0.id, uv3)
+			arg_11_0.controller:SelectAnswer(arg_11_1.id, iter_11_0)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.UpdateMainPanelTime(slot0)
-	slot0:RemoveTimer()
+function var_0_0.UpdateMainPanelTime(arg_13_0)
+	arg_13_0:RemoveTimer()
 
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime() <= slot0.controller:GetLockTime()
+	local var_13_0 = pg.TimeMgr.GetInstance():GetServerTime() <= arg_13_0.controller:GetLockTime()
 
-	setActive(slot0:findTF("frame/time", slot0.mainPanel), slot2)
+	setActive(arg_13_0:findTF("frame/time", arg_13_0.mainPanel), var_13_0)
 
-	if slot2 then
-		slot0:AddTimer()
+	if var_13_0 then
+		arg_13_0:AddTimer()
 	end
 end
 
-function slot0.OnUpdateAnswer(slot0, slot1, slot2, slot3)
-	slot5 = slot0:findTF("frame/answers", slot0.mainPanel):GetChild(slot2 - 1)
+function var_0_0.OnUpdateAnswer(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	local var_14_0 = arg_14_0:findTF("frame/answers", arg_14_0.mainPanel):GetChild(arg_14_2 - 1)
 
-	setActive(slot5:Find("right"), slot3)
-	setActive(slot5:Find("false"), not slot3)
+	setActive(var_14_0:Find("right"), arg_14_3)
+	setActive(var_14_0:Find("false"), not arg_14_3)
 
-	if not slot3 then
-		slot0:UpdateMainPanelTime()
+	if not arg_14_3 then
+		arg_14_0:UpdateMainPanelTime()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("lanternRiddles_answer_is_wrong"))
 	else
 		pg.TipsMgr.GetInstance():ShowTips(i18n("lanternRiddles_answer_is_right"))
 
-		slot6 = slot0.questioneTFs[slot1.id]
+		local var_14_1 = arg_14_0.questioneTFs[arg_14_1.id]
 
-		setActive(slot6:Find("finish"), slot1.isFinish)
+		setActive(var_14_1:Find("finish"), arg_14_1.isFinish)
 
-		if LeanTween.isTweening(go(slot6)) then
-			LeanTween.cancel(go(slot6))
+		if LeanTween.isTweening(go(var_14_1)) then
+			LeanTween.cancel(go(var_14_1))
 		end
 	end
 end
 
-function slot0.HideMainPanel(slot0)
-	slot0:RemoveTimer()
-	setActive(slot0.mainPanel, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.mainPanel, slot0._tf)
+function var_0_0.HideMainPanel(arg_15_0)
+	arg_15_0:RemoveTimer()
+	setActive(arg_15_0.mainPanel, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_15_0.mainPanel, arg_15_0._tf)
 end
 
-function slot0.AddTimer(slot0)
-	slot1 = slot0.controller:GetLockTime()
-	slot2 = slot0:findTF("frame/time/Text", slot0.mainPanel):GetComponent(typeof(Text))
-	slot0.timer = Timer.New(function ()
-		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-			uv1:RemoveTimer()
-			setActive(uv1:findTF("frame/time", uv1.mainPanel), false)
+function var_0_0.AddTimer(arg_16_0)
+	local var_16_0 = arg_16_0.controller:GetLockTime()
+	local var_16_1 = arg_16_0:findTF("frame/time/Text", arg_16_0.mainPanel):GetComponent(typeof(Text))
+
+	arg_16_0.timer = Timer.New(function()
+		local var_17_0 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_17_1 = var_16_0 - var_17_0
+
+		if var_17_1 <= 0 then
+			arg_16_0:RemoveTimer()
+			setActive(arg_16_0:findTF("frame/time", arg_16_0.mainPanel), false)
 		else
-			uv2.text = pg.TimeMgr.GetInstance():DescCDTime(slot1)
+			var_16_1.text = pg.TimeMgr.GetInstance():DescCDTime(var_17_1)
 		end
 	end, 1, -1)
 
-	slot0.timer:Start()
-	slot0.timer.func()
+	arg_16_0.timer:Start()
+	arg_16_0.timer.func()
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_18_0)
+	if arg_18_0.timer then
+		arg_18_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_18_0.timer = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:RemoveTimer()
-	slot0:HideMainPanel()
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_19_0)
+	arg_19_0:RemoveTimer()
+	arg_19_0:HideMainPanel()
+	pg.DelegateInfo.Dispose(arg_19_0)
 end
 
-function slot0.findTF(slot0, slot1, slot2)
-	assert(slot0._tf, "transform should exist")
+function var_0_0.findTF(arg_20_0, arg_20_1, arg_20_2)
+	assert(arg_20_0._tf, "transform should exist")
 
-	return findTF(slot2 or slot0._tf, slot1)
+	return findTF(arg_20_2 or arg_20_0._tf, arg_20_1)
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,24 @@
-slot0 = class("DoaMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿local var_0_0 = class("DoaMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.charactorTf = slot0:findTF("charactor", slot0.bg)
+	arg_1_0.charactorTf = arg_1_0:findTF("charactor", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0:findTF("btnMiniGame", slot0.bg), function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.DOALINK_ISLAND)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0:findTF("btnMiniGame", arg_2_0.bg), function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.DOALINK_ISLAND)
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1 = math.random(1, 9)
+function var_0_0.OnUpdateFlush(arg_4_0)
+	local var_4_0 = math.random(1, 9)
 
-	for slot5 = 1, 9 do
-		setActive(findTF(slot0.charactorTf, "charactor" .. slot5), slot1 == slot5)
+	for iter_4_0 = 1, 9 do
+		setActive(findTF(arg_4_0.charactorTf, "charactor" .. iter_4_0), var_4_0 == iter_4_0)
 	end
 end
 
-return slot0
+return var_0_0

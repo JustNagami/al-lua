@@ -1,89 +1,86 @@
-slot0 = class("ShipProfileMediator", import("...base.ContextMediator"))
-slot0.CLICK_ROTATE_BTN = "ShipProfileMediator:CLICK_ROTATE_BTN"
-slot0.OPEN_CRYPTOLALIA = "ShipProfileMediator:OPEN_CRYPTOLALIA"
-slot0.OPEN_EQUIP_CODE_SHARE = "ShipProfileMediator.OPEN_EQUIP_CODE_SHARE"
+﻿local var_0_0 = class("ShipProfileMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = getProxy(CollectionProxy)
-	slot2 = getProxy(ShipSkinProxy)
-	slot0.showTrans = slot0.contextData.showTrans
-	slot0.groupId = slot0.contextData.groupId
-	slot4 = slot0.viewComponent
+var_0_0.CLICK_ROTATE_BTN = "ShipProfileMediator:CLICK_ROTATE_BTN"
+var_0_0.OPEN_CRYPTOLALIA = "ShipProfileMediator:OPEN_CRYPTOLALIA"
+var_0_0.OPEN_EQUIP_CODE_SHARE = "ShipProfileMediator.OPEN_EQUIP_CODE_SHARE"
 
-	slot4:setShipGroup(slot1:getShipGroup(slot0.groupId))
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(CollectionProxy)
+	local var_1_1 = getProxy(ShipSkinProxy)
 
-	slot4 = slot0.viewComponent
+	arg_1_0.showTrans = arg_1_0.contextData.showTrans
+	arg_1_0.groupId = arg_1_0.contextData.groupId
 
-	slot4:setShowTrans(slot0.showTrans)
+	local var_1_2 = var_1_0:getShipGroup(arg_1_0.groupId)
 
-	slot4 = slot0.viewComponent
-
-	slot4:setOwnedSkinList(slot2:getSkinList())
-	slot0:bind(uv0.OPEN_CRYPTOLALIA, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
-			groupId = slot1
+	arg_1_0.viewComponent:setShipGroup(var_1_2)
+	arg_1_0.viewComponent:setShowTrans(arg_1_0.showTrans)
+	arg_1_0.viewComponent:setOwnedSkinList(var_1_1:getSkinList())
+	arg_1_0:bind(var_0_0.OPEN_CRYPTOLALIA, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
+			groupId = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.CLICK_ROTATE_BTN, function (slot0, slot1, slot2, slot3)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.CLICK_ROTATE_BTN, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ShipRotateMediator,
 			viewComponent = ShipRotateLayer,
 			data = {
-				shipGroup = slot1,
-				showTrans = slot2,
-				skin = slot3
+				shipGroup = arg_3_1,
+				showTrans = arg_3_2,
+				skin = arg_3_3
 			},
-			onRemoved = function ()
-				setActive(uv0.viewComponent._tf, true)
+			onRemoved = function()
+				setActive(arg_1_0.viewComponent._tf, true)
 			end
 		}))
 	end)
-	slot0:bind(ShipProfileScene.SHOW_SKILL_INFO, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(ShipProfileScene.SHOW_SKILL_INFO, function(arg_5_0, arg_5_1, arg_5_2)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = SkillInfoLayer,
 			data = {
-				skillOnShip = slot2,
-				skillId = slot1
+				skillOnShip = arg_5_2,
+				skillId = arg_5_1
 			}
 		}))
 	end)
-	slot0:bind(ShipProfileScene.SHOW_EVALUATION, function (slot0, slot1, slot2)
-		if slot2 then
+	arg_1_0:bind(ShipProfileScene.SHOW_EVALUATION, function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("npc_evaluation_tip"))
 
 			return
 		end
 
-		uv0:sendNotification(GAME.FETCH_EVALUATION, slot1)
+		arg_1_0:sendNotification(GAME.FETCH_EVALUATION, arg_6_1)
 	end)
-	slot0:bind(ShipProfileScene.WEDDING_REVIEW, function (slot0, slot1)
-		uv0.viewComponent:onWeddingReview(true)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(ShipProfileScene.WEDDING_REVIEW, function(arg_7_0, arg_7_1)
+		arg_1_0.viewComponent:onWeddingReview(true)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ProposeMediator,
 			viewComponent = ProposeUI,
 			data = {
 				review = true,
-				group = slot1.group,
-				skinID = slot1.skinID,
-				finishCallback = function ()
-					uv0.viewComponent:onWeddingReview(false)
+				group = arg_7_1.group,
+				skinID = arg_7_1.skinID,
+				finishCallback = function()
+					arg_1_0.viewComponent:onWeddingReview(false)
 				end
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_EQUIP_CODE_SHARE, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_EQUIP_CODE_SHARE, function(arg_9_0, arg_9_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = EquipCodeShareMediator,
 			viewComponent = EquipCodeShareLayer,
 			data = {
-				shipGroupId = slot1
+				shipGroupId = arg_9_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_10_0)
 	return {
 		GAME.FETCH_EVALUATION_DONE,
 		CollectionProxy.GROUP_INFO_UPDATE,
@@ -91,26 +88,33 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1:getName()
+	local var_11_1 = arg_11_1:getBody()
 
-	if slot1:getName() == GAME.FETCH_EVALUATION_DONE then
-		slot0:addSubLayers(Context.New({
+	if var_11_0 == GAME.FETCH_EVALUATION_DONE then
+		arg_11_0:addSubLayers(Context.New({
 			mediator = ShipEvaluationMediator,
 			viewComponent = ShipEvaluationLayer,
 			data = {
-				groupId = slot3,
-				showTrans = slot0.showTrans
+				groupId = var_11_1,
+				showTrans = arg_11_0.showTrans
 			}
 		}))
-	elseif slot2 == CollectionProxy.GROUP_INFO_UPDATE then
-		if slot0.groupId == slot3 then
-			slot0.viewComponent:setShipGroup(getProxy(CollectionProxy):getShipGroup(slot4))
-			slot0.viewComponent:FlushHearts()
+	elseif var_11_0 == CollectionProxy.GROUP_INFO_UPDATE then
+		local var_11_2 = var_11_1
+
+		if arg_11_0.groupId == var_11_2 then
+			local var_11_3 = getProxy(CollectionProxy):getShipGroup(var_11_2)
+
+			arg_11_0.viewComponent:setShipGroup(var_11_3)
+			arg_11_0.viewComponent:FlushHearts()
 		end
-	elseif slot2 == ShipSkinProxy.SHIP_SKINS_UPDATE then
-		slot0.viewComponent:setOwnedSkinList(getProxy(ShipSkinProxy):getSkinList())
+	elseif var_11_0 == ShipSkinProxy.SHIP_SKINS_UPDATE then
+		local var_11_4 = getProxy(ShipSkinProxy)
+
+		arg_11_0.viewComponent:setOwnedSkinList(var_11_4:getSkinList())
 	end
 end
 
-return slot0
+return var_0_0

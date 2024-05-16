@@ -1,13 +1,17 @@
-slot0 = class("LoadSceneCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("LoadSceneCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot2.type = LOAD_TYPE_SCENE
-	slot2.prevContext = slot2.prevContext or getProxy(ContextProxy):getCurrentContext()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	SCENE.CheckPreloadData(slot2, function ()
-		uv0:sendNotification(GAME.LOAD_CONTEXT, uv1)
+	var_1_0.type = LOAD_TYPE_SCENE
+
+	if not var_1_0.isReload then
+		var_1_0.prevContext = var_1_0.prevContext or getProxy(ContextProxy):getCurrentContext()
+	end
+
+	SCENE.CheckPreloadData(var_1_0, function()
+		arg_1_0:sendNotification(GAME.LOAD_CONTEXT, var_1_0)
 	end)
 end
 
-return slot0
+return var_0_0

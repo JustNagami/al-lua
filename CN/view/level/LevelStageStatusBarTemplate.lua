@@ -1,33 +1,28 @@
-slot0 = class("LevelStageStatusBarTemplate", BaseSubPanel)
+﻿local var_0_0 = class("LevelStageStatusBarTemplate", BaseSubPanel)
 
-function slot0.OnInit(slot0)
-	slot0.anim = slot0._go:GetComponent(typeof(Animator))
-	slot0.animEvent = slot0._go:GetComponent(typeof(DftAniEvent))
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.anim = arg_1_0._go:GetComponent(typeof(Animator))
+	arg_1_0.animEvent = arg_1_0._go:GetComponent(typeof(DftAniEvent))
 end
 
-function slot0.OnShow(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:OverlayPanel(slot0._tf, {
+function var_0_0.OnShow(arg_2_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_2_0._tf, {
 		weight = LayerWeightConst.THIRD_LAYER,
 		groupName = LayerWeightConst.GROUP_LEVELUI
 	})
-
-	slot1 = slot0.animEvent
-
-	slot1:SetEndEvent(function ()
-		uv0:Hide()
+	arg_2_0.animEvent:SetEndEvent(function()
+		arg_2_0:Hide()
 	end)
 end
 
-function slot0.OnHide(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.OnHide(arg_4_0)
+	arg_4_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0._tf)
 end
 
-function slot0.PlayAnim(slot0)
-	slot0:Hide()
-	slot0:Show()
+function var_0_0.PlayAnim(arg_5_0)
+	arg_5_0:Hide()
+	arg_5_0:Show()
 end
 
-return slot0
+return var_0_0

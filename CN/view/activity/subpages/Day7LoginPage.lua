@@ -1,51 +1,51 @@
-slot0 = class("Day7LoginPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("Day7LoginPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.labelDay = slot0:findTF("days")
-	slot0.items = slot0:findTF("items")
-	slot0.item = slot0:findTF("item")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("bg")
+	arg_1_0.labelDay = arg_1_0:findTF("days")
+	arg_1_0.items = arg_1_0:findTF("items")
+	arg_1_0.item = arg_1_0:findTF("item")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.config = pg.activity_7_day_sign[slot0.activity:getConfig("config_id")]
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.config = pg.activity_7_day_sign[arg_2_0.activity:getConfig("config_id")]
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.item, false)
+function var_0_0.OnFirstFlush(arg_3_0)
+	setActive(arg_3_0.item, false)
 
-	for slot4 = 1, 7 do
-		slot5 = cloneTplTo(slot0.item, slot0.items)
-		slot7 = slot0.config.front_drops[slot4]
+	for iter_3_0 = 1, 7 do
+		local var_3_0 = cloneTplTo(arg_3_0.item, arg_3_0.items)
+		local var_3_1 = arg_3_0:findTF("item", var_3_0)
+		local var_3_2 = arg_3_0.config.front_drops[iter_3_0]
+		local var_3_3 = {
+			type = var_3_2[1],
+			id = var_3_2[2],
+			count = var_3_2[3]
+		}
 
-		updateDrop(slot0:findTF("item", slot5), {
-			type = slot7[1],
-			id = slot7[2],
-			count = slot7[3]
-		})
-		onButton(slot0, slot5, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		updateDrop(var_3_1, var_3_3)
+		onButton(arg_3_0, var_3_0, function()
+			arg_3_0:emit(BaseUI.ON_DROP, var_3_3)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot4 = slot0.labelDay
+function var_0_0.OnUpdateFlush(arg_5_0)
+	GetImageSpriteFromAtlasAsync("ui/activityuipage/day7_login_atlas", string.format("0%d", math.max(arg_5_0.activity.data1, 1)), arg_5_0.labelDay, true)
 
-	GetImageSpriteFromAtlasAsync("ui/activityuipage/day7_login_atlas", string.format("0%d", math.max(slot0.activity.data1, 1)), slot4, true)
+	for iter_5_0 = 1, 7 do
+		local var_5_0 = arg_5_0.items:GetChild(iter_5_0 - 1)
+		local var_5_1 = iter_5_0 <= arg_5_0.activity.data1
 
-	for slot4 = 1, 7 do
-		slot5 = slot0.items:GetChild(slot4 - 1)
-		slot6 = slot4 <= slot0.activity.data1
-
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/day7_login_atlas", string.format("day%d", slot4) .. (slot6 and "_sel" or ""), slot0:findTF("day", slot5), true)
-		setActive(slot0:findTF("got", slot5), slot6)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/day7_login_atlas", string.format("day%d", iter_5_0) .. (var_5_1 and "_sel" or ""), arg_5_0:findTF("day", var_5_0), true)
+		setActive(arg_5_0:findTF("got", var_5_0), var_5_1)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	clearImageSprite(slot0.bg)
-	removeAllChildren(slot0.items)
+function var_0_0.OnDestroy(arg_6_0)
+	clearImageSprite(arg_6_0.bg)
+	removeAllChildren(arg_6_0.items)
 end
 
-return slot0
+return var_0_0

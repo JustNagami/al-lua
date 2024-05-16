@@ -1,1 +1,1 @@
-return class("DexiV4FrameRePage", import(".TemplatePage.NewFrameTemplatePage"))
+﻿return (class("DexiV4FrameRePage", import(".TemplatePage.NewFrameTemplatePage")))

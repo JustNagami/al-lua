@@ -1,50 +1,49 @@
-slot0 = class("AcceptFriendRequestCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("AcceptFriendRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = getProxy(FriendProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(FriendProxy)
+	local var_1_2 = var_1_1:getFriendCount()
 
-	function slot5(slot0)
-		slot1 = pg.ConnectionMgr.GetInstance()
+	local function var_1_3(arg_2_0)
+		pg.ConnectionMgr.GetInstance():Send(50006, {
+			id = var_1_0
+		}, 50007, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				getProxy(NotificationProxy):removeRequest(var_1_0)
 
-		slot1:Send(50006, {
-			id = uv0
-		}, 50007, function (slot0)
-			if slot0.result == 0 then
-				getProxy(NotificationProxy):removeRequest(uv0)
-
-				if uv1 then
-					uv2:relieveBlackListById(uv0)
+				if arg_2_0 then
+					var_1_1:relieveBlackListById(var_1_0)
 				end
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("friend_add_ok"))
-				uv3:sendNotification(GAME.FRIEND_ACCEPT_REQUEST_DONE, uv0)
+				arg_1_0:sendNotification(GAME.FRIEND_ACCEPT_REQUEST_DONE, var_1_0)
 			else
-				if slot0.result == 6 then
+				if arg_3_0.result == 6 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("friend_max_count_1"))
 				end
 
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("friend_acceptFriendRequest", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("friend_acceptFriendRequest", arg_3_0.result))
 			end
 		end)
 	end
 
-	if slot3:getFriendCount() == MAX_FRIEND_COUNT then
+	if var_1_2 == MAX_FRIEND_COUNT then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("friend_max_count"))
 
 		return
 	end
 
-	if slot3:isInBlackList(slot2) then
+	if var_1_1:isInBlackList(var_1_0) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("friend_relieve_backlist_tip"),
-			onYes = function ()
-				uv0(true)
+			onYes = function()
+				var_1_3(true)
 			end
 		})
 	else
-		slot5(false)
+		var_1_3(false)
 	end
 end
 
-return slot0
+return var_0_0

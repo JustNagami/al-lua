@@ -1,48 +1,48 @@
-slot0 = class("HoloLivePage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("HoloLivePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.listbtn = slot0:findTF("list", slot0.bg)
-	slot0.btnFubuki = slot0:findTF("1", slot0.listbtn)
-	slot0.btnBattle = slot0:findTF("2", slot0.listbtn)
-	slot0.btnSora = slot0:findTF("3", slot0.listbtn)
-	slot0.btnShion = slot0:findTF("4", slot0.listbtn)
-	slot0.btnMio = slot0:findTF("5", slot0.listbtn)
-	slot0.btnAqua = slot0:findTF("6", slot0.listbtn)
-	slot0.btnAyame = slot0:findTF("7", slot0.listbtn)
-	slot0.btnMatsuri = slot0:findTF("8", slot0.listbtn)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.listbtn = arg_1_0:findTF("list", arg_1_0.bg)
+	arg_1_0.btnFubuki = arg_1_0:findTF("1", arg_1_0.listbtn)
+	arg_1_0.btnBattle = arg_1_0:findTF("2", arg_1_0.listbtn)
+	arg_1_0.btnSora = arg_1_0:findTF("3", arg_1_0.listbtn)
+	arg_1_0.btnShion = arg_1_0:findTF("4", arg_1_0.listbtn)
+	arg_1_0.btnMio = arg_1_0:findTF("5", arg_1_0.listbtn)
+	arg_1_0.btnAqua = arg_1_0:findTF("6", arg_1_0.listbtn)
+	arg_1_0.btnAyame = arg_1_0:findTF("7", arg_1_0.listbtn)
+	arg_1_0.btnMatsuri = arg_1_0:findTF("8", arg_1_0.listbtn)
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.btnFubuki, function ()
-		uv0:emit(ActivityMediator.BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.btnFubuki, function()
+		arg_2_0:emit(ActivityMediator.BATTLE_OPERA)
 	end)
-	onButton(slot0, slot0.btnBattle, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+	onButton(arg_2_0, arg_2_0.btnBattle, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	onButton(slot0, slot0.btnSora, function ()
-		uv0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_MORNING_ID)
+	onButton(arg_2_0, arg_2_0.btnSora, function()
+		arg_2_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_MORNING_ID)
 	end)
-	onButton(slot0, slot0.btnShion, function ()
-		uv0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_PT_ID)
+	onButton(arg_2_0, arg_2_0.btnShion, function()
+		arg_2_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_PT_ID)
 	end)
-	onButton(slot0, slot0.btnMio, function ()
-		uv0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_MIO_ID)
+	onButton(arg_2_0, arg_2_0.btnMio, function()
+		arg_2_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.HOLOLIVE_MIO_ID)
 	end)
-	onButton(slot0, slot0.btnAqua, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLOLIVE_LINKLINK_SELECT_SCENE)
+	onButton(arg_2_0, arg_2_0.btnAqua, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLOLIVE_LINKLINK_SELECT_SCENE)
 	end)
-	onButton(slot0, slot0.btnAyame, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLOLIVE_MEDAL)
+	onButton(arg_2_0, arg_2_0.btnAyame, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLOLIVE_MEDAL)
 	end)
-	onButton(slot0, slot0.btnMatsuri, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SHOP, {
+	onButton(arg_2_0, arg_2_0.btnMatsuri, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
 end
 
-return slot0
+return var_0_0

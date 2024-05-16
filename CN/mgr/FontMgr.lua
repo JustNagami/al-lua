@@ -1,14 +1,17 @@
-pg = pg or {}
-slot0 = pg
-slot0.FontMgr = singletonClass("FontMgr")
-slot1 = slot0.FontMgr
+﻿pg = pg or {}
 
-function slot0.FontMgr.Init(slot0, slot1)
+local var_0_0 = pg
+
+var_0_0.FontMgr = singletonClass("FontMgr")
+
+local var_0_1 = var_0_0.FontMgr
+
+function var_0_0.FontMgr.Init(arg_1_0, arg_1_1)
 	print("initializing font manager...")
 
-	slot2 = {}
+	local var_1_0 = {}
 
-	for slot6, slot7 in ipairs({
+	for iter_1_0, iter_1_1 in ipairs({
 		crifont = "crifont",
 		remfont = "remfont",
 		heiti = "zhunyuan",
@@ -26,18 +29,18 @@ function slot0.FontMgr.Init(slot0, slot1)
 		lvnumber = "lvnumber",
 		sourcehanserifcn = "sourcehanserifcn-bold_0"
 	}) do
-		table.insert(slot2, function (slot0)
-			ResourceMgr.Inst:getAssetAsync("font/treatfont", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				uv0.fonts[uv1] = slot0
+		table.insert(var_1_0, function(arg_2_0)
+			ResourceMgr.Inst:getAssetAsync("font/treatfont", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+				arg_1_0.fonts[iter_1_0] = arg_3_0
 
-				uv2()
+				arg_2_0()
 			end), false, false)
 		end)
 	end
 
-	slot0.fonts = {}
+	arg_1_0.fonts = {}
 
-	parallelAsync(slot2, function (slot0)
-		uv0(slot0)
+	parallelAsync(var_1_0, function(arg_4_0)
+		arg_1_1(arg_4_0)
 	end)
 end

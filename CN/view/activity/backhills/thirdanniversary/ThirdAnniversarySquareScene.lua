@@ -1,85 +1,91 @@
-slot0 = class("ThirdAnniversarySquareScene", import("..TemplateMV.BackHillTemplate"))
-slot0.UIName = "ThirdAnniversarySquareUI"
-slot0.HUB_ID = 9
-slot0.edge2area = {
+﻿local var_0_0 = class("ThirdAnniversarySquareScene", import("..TemplateMV.BackHillTemplate"))
+
+var_0_0.UIName = "ThirdAnniversarySquareUI"
+var_0_0.HUB_ID = 9
+var_0_0.edge2area = {
 	default = "_middle",
 	["3_4"] = "_bottom",
 	["4_5"] = "_bottom",
 	["7_7"] = "_front"
 }
-slot0.Buildings = {
+var_0_0.Buildings = {
 	"nvpukafeiting",
 	"xiaolongbaodian",
 	"zhajihanbaodian",
 	"heguozidian"
 }
 
-function slot0.init(slot0)
-	slot0.loader = AutoLoader.New()
-	slot0.top = slot0:findTF("top")
-	slot0._map = slot0:findTF("map")
+function var_0_0.init(arg_1_0)
+	arg_1_0.loader = AutoLoader.New()
+	arg_1_0.top = arg_1_0:findTF("top")
+	arg_1_0._map = arg_1_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["map_" .. go(slot5).name] = slot5
+	for iter_1_0 = 0, arg_1_0._map.childCount - 1 do
+		local var_1_0 = arg_1_0._map:GetChild(iter_1_0)
+		local var_1_1 = go(var_1_0).name
+
+		arg_1_0["map_" .. var_1_1] = var_1_0
 	end
 
-	slot0._upper = slot0:findTF("upper")
+	arg_1_0._upper = arg_1_0:findTF("upper")
 
-	for slot4 = 0, slot0._upper.childCount - 1 do
-		slot5 = slot0._upper:GetChild(slot4)
-		slot0["upper_" .. go(slot5).name] = slot5
+	for iter_1_1 = 0, arg_1_0._upper.childCount - 1 do
+		local var_1_2 = arg_1_0._upper:GetChild(iter_1_1)
+		local var_1_3 = go(var_1_2).name
+
+		arg_1_0["upper_" .. var_1_3] = var_1_2
 	end
 
-	slot0._front = slot0._map:Find("top")
-	slot0._middle = slot0._map:Find("middle")
-	slot1 = slot0._map
-	slot0._bottom = slot1:Find("bottom")
-	slot0.containers = {
-		slot0._front,
-		slot0._middle,
-		slot0._bottom
+	arg_1_0._front = arg_1_0._map:Find("top")
+	arg_1_0._middle = arg_1_0._map:Find("middle")
+	arg_1_0._bottom = arg_1_0._map:Find("bottom")
+	arg_1_0.containers = {
+		arg_1_0._front,
+		arg_1_0._middle,
+		arg_1_0._bottom
 	}
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.ThirdAnniversarySquareGraph"))
-	slot0.usableTxt = slot0.top:Find("usable_count/text"):GetComponent(typeof(Text))
-	slot0.materialTxt = slot0.top:Find("material/text"):GetComponent(typeof(Text))
+	arg_1_0._shipTpl = arg_1_0._map:Find("ship")
+	arg_1_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.ThirdAnniversarySquareGraph"))
+	arg_1_0.usableTxt = arg_1_0.top:Find("usable_count/text"):GetComponent(typeof(Text))
+	arg_1_0.materialTxt = arg_1_0.top:Find("material/text"):GetComponent(typeof(Text))
 
-	slot0:RegisterDataResponse()
+	arg_1_0:RegisterDataResponse()
 end
 
-function slot0.RegisterDataResponse(slot0)
-	slot0.Respones = ResponsableTree.CreateShell({})
+function var_0_0.RegisterDataResponse(arg_2_0)
+	arg_2_0.Respones = ResponsableTree.CreateShell({})
 
-	slot0.Respones:SetRawData("view", slot0)
+	arg_2_0.Respones:SetRawData("view", arg_2_0)
 
-	for slot5, slot6 in ipairs({
+	local var_2_0 = {
 		"xiaolongbaodian",
 		"heguozidian",
 		"nvpukafeiting",
 		"zhajihanbaodian"
-	}) do
-		slot7 = slot0.Respones
+	}
 
-		slot7:AddRawListener({
+	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+		arg_2_0.Respones:AddRawListener({
 			"view",
-			slot6
-		}, function (slot0, slot1)
-			if not slot1 then
+			iter_2_1
+		}, function(arg_3_0, arg_3_1)
+			if not arg_3_1 then
 				return
 			end
 
-			slot0.loader:GetSpriteQuiet("ui/thirdanniversarysquareui_atlas", uv0 .. slot1, slot0["map_" .. uv0])
+			arg_3_0.loader:GetSpriteQuiet("ui/thirdanniversarysquareui_atlas", iter_2_1 .. arg_3_1, arg_3_0["map_" .. iter_2_1])
 
-			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("level")) then
+			local var_3_0 = arg_3_0["upper_" .. iter_2_1]
+
+			if not var_3_0 or IsNil(var_3_0:Find("level")) then
 				return
 			end
 
-			setText(slot2:Find("level"), "LV." .. slot1)
+			setText(var_3_0:Find("level"), "LV." .. arg_3_1)
 		end)
 	end
 
-	for slot6, slot7 in ipairs({
+	local var_2_1 = {
 		"xiaolongbaodian",
 		"heguozidian",
 		"nvpukafeiting",
@@ -88,141 +94,140 @@ function slot0.RegisterDataResponse(slot0)
 		"huanzhuangshandian",
 		"shujvhuigu",
 		"xianshijianzao"
-	}) do
-		slot8 = slot0.Respones
+	}
 
-		slot8:AddRawListener({
+	for iter_2_2, iter_2_3 in ipairs(var_2_1) do
+		arg_2_0.Respones:AddRawListener({
 			"view",
-			slot7 .. "Tip"
-		}, function (slot0, slot1)
-			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("tip")) then
+			iter_2_3 .. "Tip"
+		}, function(arg_4_0, arg_4_1)
+			local var_4_0 = arg_4_0["upper_" .. iter_2_3]
+
+			if not var_4_0 or IsNil(var_4_0:Find("tip")) then
 				return
 			end
 
-			setActive(slot2:Find("tip"), slot1)
+			setActive(var_4_0:Find("tip"), arg_4_1)
 		end)
 	end
 
-	slot0.Respones.hubData = {}
-	slot3 = slot0.Respones
+	arg_2_0.Respones.hubData = {}
 
-	slot3:AddRawListener({
+	arg_2_0.Respones:AddRawListener({
 		"view",
 		"hubData"
-	}, function (slot0, slot1)
-		slot0.usableTxt.text = "X" .. slot1.count
+	}, function(arg_5_0, arg_5_1)
+		arg_5_0.usableTxt.text = "X" .. arg_5_1.count
 	end, {
 		strict = true
 	})
-
-	slot3 = slot0.Respones
-
-	slot3:AddRawListener({
+	arg_2_0.Respones:AddRawListener({
 		"view",
 		"materialCount"
-	}, function (slot0, slot1)
-		slot0.materialTxt.text = slot1
+	}, function(arg_6_0, arg_6_1)
+		arg_6_0.materialTxt.text = arg_6_1
 	end)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("top/return_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0:findTF("top/return_btn"), function()
+		arg_7_0:emit(var_0_0.ON_BACK)
 	end)
-
-	slot3 = slot0.top
-
-	onButton(slot0, slot3:Find("daka_count"), function ()
-		uv0:emit(ThirdAnniversarySquareMediator.ON_OPEN_TOWERCLIMBING_SIGNED)
+	onButton(arg_7_0, arg_7_0.top:Find("daka_count"), function()
+		arg_7_0:emit(ThirdAnniversarySquareMediator.ON_OPEN_TOWERCLIMBING_SIGNED)
 	end)
-	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_7_0, arg_7_0:findTF("top/return_main_btn"), function()
+		arg_7_0:emit(var_0_0.ON_HOME)
 	end)
-
-	slot5 = "top/help_btn"
-
-	function slot4()
+	onButton(arg_7_0, arg_7_0:findTF("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.qingdianguangchang_help.tip
 		})
-	end
+	end)
 
-	onButton(slot0, slot0:findTF(slot5), slot4)
-
-	for slot4, slot5 in pairs(slot0.Buildings) do
-		slot0:InitFacilityCross(slot0._map, slot0._upper, slot5, function ()
-			uv0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.Buildings) do
+		arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, iter_7_1, function()
+			arg_7_0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
 				mediator = BuildingUpgradeMediator,
 				viewComponent = BuildingUpgradeLayer,
 				data = {
-					buildingID = uv1
+					buildingID = iter_7_0
 				}
 			}))
 		end)
 	end
 
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "gangqvchenlieshi", function ()
+	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "gangqvchenlieshi", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 13)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "shujvhuigu", function ()
-		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SUMMARY)
+	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "shujvhuigu", function()
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SUMMARY)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "xianshijianzao", function ()
-		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.GETBOAT, {
+	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "xianshijianzao", function()
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "huanzhuangshandian", function ()
-		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
+	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "huanzhuangshandian", function()
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0.top, false)
 end
 
-function slot0.UpdateActivity(slot0, slot1)
-	slot0.activity = slot1
-	slot0.Respones.nvpukafeiting = slot1.data1KeyValueList[2][1] or 1
-	slot0.Respones.xiaolongbaodian = slot1.data1KeyValueList[2][2] or 1
-	slot0.Respones.zhajihanbaodian = slot1.data1KeyValueList[2][3] or 1
-	slot0.Respones.heguozidian = slot1.data1KeyValueList[2][4] or 1
-	slot0.Respones.materialCount = slot1.data1KeyValueList[1][next(slot1.data1KeyValueList[1])] or 0
+function var_0_0.UpdateActivity(arg_17_0, arg_17_1)
+	arg_17_0.activity = arg_17_1
+	arg_17_0.Respones.nvpukafeiting = arg_17_1.data1KeyValueList[2][1] or 1
+	arg_17_0.Respones.xiaolongbaodian = arg_17_1.data1KeyValueList[2][2] or 1
+	arg_17_0.Respones.zhajihanbaodian = arg_17_1.data1KeyValueList[2][3] or 1
+	arg_17_0.Respones.heguozidian = arg_17_1.data1KeyValueList[2][4] or 1
 
-	slot0:UpdateView()
+	local var_17_0 = next(arg_17_1.data1KeyValueList[1])
+
+	arg_17_0.Respones.materialCount = arg_17_1.data1KeyValueList[1][var_17_0] or 0
+
+	arg_17_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot0.Respones.nvpukafeitingTip = slot0:UpdateBuildingTip(slot0.activity, 1)
-	slot0.Respones.xiaolongbaodianTip = slot0:UpdateBuildingTip(slot0.activity, 2)
-	slot0.Respones.zhajihanbaodianTip = slot0:UpdateBuildingTip(slot0.activity, 3)
-	slot0.Respones.heguozidianTip = slot0:UpdateBuildingTip(slot0.activity, 4)
-	slot0.Respones.shujvhuiguTip = false
-	slot0.Respones.gangqvchenlieshiTip = getProxy(MiniGameProxy):GetHubByHubId(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME):getConfig("config_id")).count > 0
+function var_0_0.UpdateView(arg_18_0)
+	local var_18_0 = getProxy(ActivityProxy)
 
-	slot0:UpdateHubData(slot4)
+	arg_18_0.Respones.nvpukafeitingTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 1)
+	arg_18_0.Respones.xiaolongbaodianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 2)
+	arg_18_0.Respones.zhajihanbaodianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 3)
+	arg_18_0.Respones.heguozidianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 4)
+	arg_18_0.Respones.shujvhuiguTip = false
 
-	if not slot0.InitStudentBegin then
-		slot0:InitStudents(slot2.id, 2, 3)
+	local var_18_1 = var_18_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var_18_2 = getProxy(MiniGameProxy):GetHubByHubId(var_18_1:getConfig("config_id"))
 
-		slot0.InitStudentBegin = true
+	arg_18_0.Respones.gangqvchenlieshiTip = var_18_2.count > 0
+
+	arg_18_0:UpdateHubData(var_18_2)
+
+	if not arg_18_0.InitStudentBegin then
+		arg_18_0:InitStudents(var_18_1.id, 2, 3)
+
+		arg_18_0.InitStudentBegin = true
 	end
 end
 
-function slot0.UpdateHubData(slot0, slot1)
-	slot0.Respones.hubData.count = slot1.count
-	slot0.Respones.hubData.usedtime = slot1.usedtime
-	slot0.Respones.hubData.id = slot1.id
+function var_0_0.UpdateHubData(arg_19_0, arg_19_1)
+	arg_19_0.Respones.hubData.count = arg_19_1.count
+	arg_19_0.Respones.hubData.usedtime = arg_19_1.usedtime
+	arg_19_0.Respones.hubData.id = arg_19_1.id
 
-	slot0.Respones:PropertyChange("hubData")
+	arg_19_0.Respones:PropertyChange("hubData")
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
-	slot0:clearStudents()
+function var_0_0.willExit(arg_20_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_20_0.top, arg_20_0._tf)
+	arg_20_0:clearStudents()
 
-	slot0.Respones = nil
+	arg_20_0.Respones = nil
 
-	uv0.super.willExit(slot0)
+	var_0_0.super.willExit(arg_20_0)
 end
 
-return slot0
+return var_0_0

@@ -1,187 +1,197 @@
-slot0 = class("GuildEvent", import("...BaseVO"))
+﻿local var_0_0 = class("GuildEvent", import("...BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.active = false
-	slot0.startTime = 0
-	slot0.clueCount = 0
-	slot0.missions = {}
-	slot0.boss = nil
-	slot0.durTime = pg.guildset.operation_duration_time.key_value
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.active = false
+	arg_1_0.startTime = 0
+	arg_1_0.clueCount = 0
+	arg_1_0.missions = {}
+	arg_1_0.boss = nil
+	arg_1_0.durTime = pg.guildset.operation_duration_time.key_value
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.guild_operation_template
 end
 
-function slot0.GetConsume(slot0)
-	return slot0:getConfig("consume")
+function var_0_0.GetConsume(arg_3_0)
+	return arg_3_0:getConfig("consume")
 end
 
-function slot0.Active(slot0, slot1)
-	slot0:Deactivate()
+function var_0_0.Active(arg_4_0, arg_4_1)
+	arg_4_0:Deactivate()
 
-	slot0.startTime = slot1.start_time
-	slot0.endTime = slot0.durTime + slot0.startTime
-	slot0.clueCount = slot1.clue_count
-	slot0.joinCnt = slot1.join_times
-	slot0.isParticipant = slot1.is_participant
-	slot2 = {}
+	arg_4_0.startTime = arg_4_1.start_time
+	arg_4_0.endTime = arg_4_0.durTime + arg_4_0.startTime
+	arg_4_0.clueCount = arg_4_1.clue_count
+	arg_4_0.joinCnt = arg_4_1.join_times
+	arg_4_0.isParticipant = arg_4_1.is_participant
 
-	for slot6, slot7 in ipairs(slot1.perfs) do
-		slot2[slot7.event_id] = slot7.index
+	local var_4_0 = {}
+
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1.perfs) do
+		var_4_0[iter_4_1.event_id] = iter_4_1.index
 	end
 
-	slot3 = {}
+	local var_4_1 = {}
 
-	for slot7, slot8 in ipairs(slot1.formation_time) do
-		slot3[slot8.key] = slot8.value
+	for iter_4_2, iter_4_3 in ipairs(arg_4_1.formation_time) do
+		var_4_1[iter_4_3.key] = iter_4_3.value
 	end
 
-	slot4 = 0
+	local var_4_2 = 0
 
-	function slot5(slot0)
-		if uv0 < GuildMission.New(slot0):GetPosition() then
-			uv0 = slot2
+	local function var_4_3(arg_5_0)
+		local var_5_0 = GuildMission.New(arg_5_0)
+		local var_5_1 = var_5_0:GetPosition()
+
+		if var_5_1 > var_4_2 then
+			var_4_2 = var_5_1
 		end
 
-		if not uv1.missions[slot2] then
-			uv1.missions[slot2] = {}
+		if not arg_4_0.missions[var_5_1] then
+			arg_4_0.missions[var_5_1] = {}
 		end
 
-		if uv2[slot1.id] then
-			slot1:UpdateNodeAnimFlagIndex(uv2[slot1.id])
+		if var_4_0[var_5_0.id] then
+			var_5_0:UpdateNodeAnimFlagIndex(var_4_0[var_5_0.id])
 		end
 
-		if uv3[slot1.id] then
-			slot1:UpdateFormationTime(uv3[slot1.id])
+		if var_4_1[var_5_0.id] then
+			var_5_0:UpdateFormationTime(var_4_1[var_5_0.id])
 		end
 
-		table.insert(uv1.missions[slot2], slot1)
+		table.insert(arg_4_0.missions[var_5_1], var_5_0)
 	end
 
-	for slot9, slot10 in ipairs(slot1.base_events) do
-		slot5(slot10)
+	for iter_4_4, iter_4_5 in ipairs(arg_4_1.base_events) do
+		var_4_3(iter_4_5)
 	end
 
-	for slot9, slot10 in ipairs(slot1.completed_events) do
-		slot5(GuildMission.CompleteData2FullData(slot10))
+	for iter_4_6, iter_4_7 in ipairs(arg_4_1.completed_events) do
+		var_4_3(GuildMission.CompleteData2FullData(iter_4_7))
 	end
 
-	slot0.boss = GuildBossMission.New(slot4 + 1, slot1.daily_count, slot1.fleets)
+	arg_4_0.boss = GuildBossMission.New(var_4_2 + 1, arg_4_1.daily_count, arg_4_1.fleets)
 
-	if slot1.boss_event and slot1.boss_event.boss_id ~= 0 then
-		slot0.boss:Flush(slot1.boss_event)
+	if arg_4_1.boss_event and arg_4_1.boss_event.boss_id ~= 0 then
+		arg_4_0.boss:Flush(arg_4_1.boss_event)
 	end
 
-	slot0.active = true
+	arg_4_0.active = true
 end
 
-function slot0.IsParticipant(slot0)
-	return slot0.isParticipant > 0
+function var_0_0.IsParticipant(arg_6_0)
+	return arg_6_0.isParticipant > 0
 end
 
-function slot0.GetJoinCnt(slot0)
-	return slot0.joinCnt
+function var_0_0.GetJoinCnt(arg_7_0)
+	return arg_7_0.joinCnt
 end
 
-function slot0.IncreaseJoinCnt(slot0)
-	slot0.isParticipant = 1
+function var_0_0.IncreaseJoinCnt(arg_8_0)
+	arg_8_0.isParticipant = 1
 
-	if slot0.joinCnt < slot0:GetMaxJoinCnt() then
-		slot0.joinCnt = slot0.joinCnt + 1
+	if arg_8_0.joinCnt < arg_8_0:GetMaxJoinCnt() then
+		arg_8_0.joinCnt = arg_8_0.joinCnt + 1
 	else
 		getProxy(GuildProxy):getRawData():ReduceExtraBattleCnt(1)
 	end
 end
 
-function slot0.GetExtraJoinCnt(slot0)
+function var_0_0.GetExtraJoinCnt(arg_9_0)
 	return getProxy(GuildProxy):getRawData():GetExtraBattleCnt()
 end
 
-function slot0.IsLimitedJoin(slot0)
-	return not (slot0:GetJoinCnt() < slot0:GetMaxJoinCnt() or slot0:GetExtraJoinCnt() > 0)
+function var_0_0.IsLimitedJoin(arg_10_0)
+	local var_10_0 = arg_10_0:GetJoinCnt()
+	local var_10_1 = arg_10_0:GetMaxJoinCnt()
+	local var_10_2 = arg_10_0:GetExtraJoinCnt()
+
+	return not (var_10_0 < var_10_1 or var_10_2 > 0)
 end
 
-function slot0.GetMaxJoinCnt(slot0)
+function var_0_0.GetMaxJoinCnt(arg_11_0)
 	return pg.guildset.efficiency_param_times.key_value
 end
 
-function slot0.GetBossMission(slot0)
-	return slot0.boss
+function var_0_0.GetBossMission(arg_12_0)
+	return arg_12_0.boss
 end
 
-function slot0.GetMissions(slot0)
-	return slot0.missions
+function var_0_0.GetMissions(arg_13_0)
+	return arg_13_0.missions
 end
 
-function slot0.Deactivate(slot0)
-	slot0.startTime = 0
-	slot0.clueCount = 0
-	slot0.missions = {}
-	slot0.boss = nil
-	slot0.active = false
-	slot0.isParticipant = 0
+function var_0_0.Deactivate(arg_14_0)
+	arg_14_0.startTime = 0
+	arg_14_0.clueCount = 0
+	arg_14_0.missions = {}
+	arg_14_0.boss = nil
+	arg_14_0.active = false
+	arg_14_0.isParticipant = 0
 end
 
-function slot0.IsExpired(slot0)
-	return slot0.endTime <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.IsExpired(arg_15_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_15_0.endTime
 end
 
-function slot0.IsActive(slot0)
-	return slot0.active == true
+function var_0_0.IsActive(arg_16_0)
+	return arg_16_0.active == true
 end
 
-function slot0.GetDesc(slot0)
-	return slot0:getConfig("profile")
+function var_0_0.GetDesc(arg_17_0)
+	return arg_17_0:getConfig("profile")
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_18_0)
+	return arg_18_0:getConfig("name")
 end
 
-function slot0.GetScaleDesc(slot0)
-	return slot0:getConfig("scale")
+function var_0_0.GetScaleDesc(arg_19_0)
+	return arg_19_0:getConfig("scale")
 end
 
-function slot0.GetDisplayMission(slot0)
-	return slot0:getConfig("event_type_list")
+function var_0_0.GetDisplayMission(arg_20_0)
+	return arg_20_0:getConfig("event_type_list")
 end
 
-function slot0.GetDisplayAward(slot0)
-	return slot0:getConfig("award_display")
+function var_0_0.GetDisplayAward(arg_21_0)
+	return arg_21_0:getConfig("award_display")
 end
 
-function slot0.IsUnlock(slot0, slot1)
-	return slot0:getConfig("unlock_guild_level") <= slot1
+function var_0_0.IsUnlock(arg_22_0, arg_22_1)
+	return arg_22_1 >= arg_22_0:getConfig("unlock_guild_level")
 end
 
-function slot0.GetTheme(slot0)
-	return slot0:getConfig("theme")
+function var_0_0.GetTheme(arg_23_0)
+	return arg_23_0:getConfig("theme")
 end
 
-function slot0.GetJoinShips(slot0)
-	slot1 = {}
+function var_0_0.GetJoinShips(arg_24_0)
+	local var_24_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			if not slot11:IsFinish() then
-				for slot16, slot17 in ipairs(slot11:GetMyShips()) do
-					table.insert(slot1, slot17)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.missions) do
+		for iter_24_2, iter_24_3 in ipairs(iter_24_1) do
+			if not iter_24_3:IsFinish() then
+				local var_24_1 = iter_24_3:GetMyShips()
+
+				for iter_24_4, iter_24_5 in ipairs(var_24_1) do
+					table.insert(var_24_0, iter_24_5)
 				end
 			end
 		end
 	end
 
-	return slot1
+	return var_24_0
 end
 
-function slot0.GetMissionById(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			if slot11.id == slot1 then
-				return slot11
+function var_0_0.GetMissionById(arg_25_0, arg_25_1)
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.missions) do
+		for iter_25_2, iter_25_3 in ipairs(iter_25_1) do
+			if iter_25_3.id == arg_25_1 then
+				return iter_25_3
 			end
 		end
 	end
@@ -189,84 +199,89 @@ function slot0.GetMissionById(slot0, slot1)
 	assert(false)
 end
 
-function slot0.GetJoinShipCnt(slot0)
-	slot1 = 0
+function var_0_0.GetJoinShipCnt(arg_26_0)
+	local var_26_0 = 0
 
-	for slot5, slot6 in pairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			slot1 = slot1 + slot11:GetJoinCnt()
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.missions) do
+		for iter_26_2, iter_26_3 in ipairs(iter_26_1) do
+			var_26_0 = var_26_0 + iter_26_3:GetJoinCnt()
 		end
 	end
 
-	return slot1
+	return var_26_0
 end
 
-function slot0.GetBossShipIds(slot0)
-	slot1 = {}
+function var_0_0.GetBossShipIds(arg_27_0)
+	local var_27_0 = {}
 
-	if slot0.boss and slot0.boss:IsActive() then
-		for slot6, slot7 in ipairs(slot0.boss:GetMyShipIds()) do
-			table.insert(slot1, slot7)
+	if arg_27_0.boss and arg_27_0.boss:IsActive() then
+		local var_27_1 = arg_27_0.boss:GetMyShipIds()
+
+		for iter_27_0, iter_27_1 in ipairs(var_27_1) do
+			table.insert(var_27_0, iter_27_1)
 		end
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.GetMissionCnt(slot0)
-	slot1 = 0
+function var_0_0.GetMissionCnt(arg_28_0)
+	local var_28_0 = 0
 
-	for slot5, slot6 in pairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			slot1 = slot1 + 1
+	for iter_28_0, iter_28_1 in pairs(arg_28_0.missions) do
+		for iter_28_2, iter_28_3 in ipairs(iter_28_1) do
+			var_28_0 = var_28_0 + 1
 		end
 	end
 
-	return slot1
+	return var_28_0
 end
 
-function slot0.GetMainMissionCntAndFinishCnt(slot0)
-	slot1 = 0
-	slot2 = 0
+function var_0_0.GetMainMissionCntAndFinishCnt(arg_29_0)
+	local var_29_0 = 0
+	local var_29_1 = 0
 
-	for slot6, slot7 in pairs(slot0.missions) do
-		for slot11, slot12 in ipairs(slot7) do
-			if slot12:IsMain() then
-				slot1 = slot1 + 1
+	for iter_29_0, iter_29_1 in pairs(arg_29_0.missions) do
+		for iter_29_2, iter_29_3 in ipairs(iter_29_1) do
+			if iter_29_3:IsMain() then
+				var_29_0 = var_29_0 + 1
 			end
 
-			if slot12:IsMain() and slot12:IsFinish() then
-				slot2 = slot2 + 1
-			end
-		end
-	end
-
-	return slot1, slot2
-end
-
-function slot0.GetMissionFinishCnt(slot0)
-	slot1 = 0
-
-	for slot5, slot6 in pairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			if slot11:IsFinish() then
-				slot1 = slot1 + 1
+			if iter_29_3:IsMain() and iter_29_3:IsFinish() then
+				var_29_1 = var_29_1 + 1
 			end
 		end
 	end
 
-	return slot1
+	return var_29_0, var_29_1
 end
 
-function slot0.GetCanFormationMisstions(slot0)
-	function slot1(slot0)
-		if slot0:IsFinish() then
+function var_0_0.GetMissionFinishCnt(arg_30_0)
+	local var_30_0 = 0
+
+	for iter_30_0, iter_30_1 in pairs(arg_30_0.missions) do
+		for iter_30_2, iter_30_3 in ipairs(iter_30_1) do
+			if iter_30_3:IsFinish() then
+				var_30_0 = var_30_0 + 1
+			end
+		end
+	end
+
+	return var_30_0
+end
+
+function var_0_0.GetCanFormationMisstions(arg_31_0)
+	local function var_31_0(arg_32_0)
+		if arg_32_0:IsFinish() then
 			return false
 		end
 
-		if uv0.missions[slot0:GetPosition() - 1] then
-			for slot6, slot7 in pairs(slot2) do
-				if slot7:IsMain() and slot7:IsFinish() then
+		local var_32_0 = arg_32_0:GetPosition()
+		local var_32_1 = arg_31_0.missions[var_32_0 - 1]
+
+		if var_32_1 then
+			for iter_32_0, iter_32_1 in pairs(var_32_1) do
+				if iter_32_1:IsMain() and iter_32_1:IsFinish() then
 					return true
 				end
 			end
@@ -277,54 +292,58 @@ function slot0.GetCanFormationMisstions(slot0)
 		return false
 	end
 
-	slot2 = {}
+	local var_31_1 = {}
 
-	for slot6, slot7 in pairs(slot0.missions) do
-		for slot11, slot12 in ipairs(slot7) do
-			if slot1(slot12) and slot12:CanFormation() and not slot12:IsFinish() then
-				table.insert(slot2, slot12)
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.missions) do
+		for iter_31_2, iter_31_3 in ipairs(iter_31_1) do
+			if var_31_0(iter_31_3) and iter_31_3:CanFormation() and not iter_31_3:IsFinish() then
+				table.insert(var_31_1, iter_31_3)
 			end
 		end
 	end
 
-	return slot2
+	return var_31_1
 end
 
-function slot0.AnyMissionCanFormation(slot0)
-	return #slot0:GetCanFormationMisstions() > 0
+function var_0_0.AnyMissionCanFormation(arg_33_0)
+	return #arg_33_0:GetCanFormationMisstions() > 0
 end
 
-function slot0.AnyMissionFirstFleetCanFroamtion(slot0)
-	return _.detect(slot0:GetCanFormationMisstions(), function (slot0)
-		return slot0:FirstFleetCanFormation() or slot0:IsFinish() and not slot0:IsFinishedByServer()
-	end) ~= nil, slot2
+function var_0_0.AnyMissionFirstFleetCanFroamtion(arg_34_0)
+	local var_34_0 = arg_34_0:GetCanFormationMisstions()
+	local var_34_1 = _.detect(var_34_0, function(arg_35_0)
+		return arg_35_0:FirstFleetCanFormation() or arg_35_0:IsFinish() and not arg_35_0:IsFinishedByServer()
+	end)
+
+	return var_34_1 ~= nil, var_34_1
 end
 
-function slot0.GetUnlockMission(slot0)
-	slot1 = 0
+function var_0_0.GetUnlockMission(arg_36_0)
+	local var_36_0 = 0
 
-	for slot5, slot6 in pairs(slot0.missions) do
-		for slot10, slot11 in ipairs(slot6) do
-			if slot11:IsMain() and (slot11:IsFinishedByServer() or slot11:IsFinish()) then
-				slot1 = slot5
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.missions) do
+		for iter_36_2, iter_36_3 in ipairs(iter_36_1) do
+			if iter_36_3:IsMain() and (iter_36_3:IsFinishedByServer() or iter_36_3:IsFinish()) then
+				var_36_0 = iter_36_0
 			end
 		end
 	end
 
-	slot3 = ipairs
-	slot4 = slot0.missions[slot1 + 1] or {}
+	local var_36_1 = arg_36_0.missions[var_36_0 + 1]
 
-	for slot6, slot7 in slot3(slot4) do
-		if slot7:IsMain() then
-			return slot7
+	for iter_36_4, iter_36_5 in ipairs(var_36_1 or {}) do
+		if iter_36_5:IsMain() then
+			return iter_36_5
 		end
 	end
 
 	return nil
 end
 
-function slot0.GetLeftTime(slot0)
-	return slot0.endTime - pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.GetLeftTime(arg_37_0)
+	local var_37_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return arg_37_0.endTime - var_37_0
 end
 
-return slot0
+return var_0_0

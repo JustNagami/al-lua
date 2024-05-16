@@ -1,83 +1,89 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = class("BattleKizunaJammingView")
-slot0.Battle.BattleKizunaJammingView = slot2
-slot2.__name = "BattleKizunaJammingView"
-slot2.COUNT = 3
-slot2.EXPAND_DURATION = 5
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0._hitCount = 0
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = class("BattleKizunaJammingView")
+
+var_0_0.Battle.BattleKizunaJammingView = var_0_2
+var_0_2.__name = "BattleKizunaJammingView"
+var_0_2.COUNT = 3
+var_0_2.EXPAND_DURATION = 5
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0._hitCount = 0
 end
 
-function slot2.ConfigCallback(slot0, slot1)
-	slot0._callback = slot1
+function var_0_2.ConfigCallback(arg_2_0, arg_2_1)
+	arg_2_0._callback = arg_2_1
 
-	slot0:init()
+	arg_2_0:init()
 end
 
-function slot2.init(slot0)
-	slot0.eventTriggers = {}
-	slot0._blocker = slot0._tf:Find("KizunaAiBlocker")
-	slot1 = GetOrAddComponent(slot0._blocker, "EventTriggerListener")
-	slot0.eventTriggers[slot1] = true
+function var_0_2.init(arg_3_0)
+	arg_3_0.eventTriggers = {}
+	arg_3_0._blocker = arg_3_0._tf:Find("KizunaAiBlocker")
 
-	slot1:AddPointDownFunc(function ()
-		uv0._hitCount = uv0._hitCount + 1
+	local var_3_0 = GetOrAddComponent(arg_3_0._blocker, "EventTriggerListener")
 
-		if uv1.COUNT <= uv0._hitCount then
-			uv0:Eliminate(true)
+	arg_3_0.eventTriggers[var_3_0] = true
+
+	var_3_0:AddPointDownFunc(function()
+		arg_3_0._hitCount = arg_3_0._hitCount + 1
+
+		if arg_3_0._hitCount >= var_0_2.COUNT then
+			arg_3_0:Eliminate(true)
 		else
-			setActive(uv0._blocker:Find("normal"), false)
-			setActive(uv0._blocker:Find("hitted"), true)
-			LeanTween.cancel(go(uv0._blocker))
-			uv0:ClickEase()
+			setActive(arg_3_0._blocker:Find("normal"), false)
+			setActive(arg_3_0._blocker:Find("hitted"), true)
+			LeanTween.cancel(go(arg_3_0._blocker))
+			arg_3_0:ClickEase()
 		end
 	end)
-	slot1:AddPointUpFunc(function ()
-		if uv0._hitCount < uv1.COUNT then
-			setActive(uv0._blocker:Find("normal"), true)
-			setActive(uv0._blocker:Find("hitted"), false)
+	var_3_0:AddPointUpFunc(function()
+		if arg_3_0._hitCount < var_0_2.COUNT then
+			setActive(arg_3_0._blocker:Find("normal"), true)
+			setActive(arg_3_0._blocker:Find("hitted"), false)
 		end
 	end)
 end
 
-function slot2.Active(slot0)
-	LeanTween.scale(slot0._blocker, Vector3(1, 1, 0), (1 - slot0._blocker.localScale.x) * uv0.EXPAND_DURATION)
+function var_0_2.Active(arg_6_0)
+	local var_6_0 = (1 - arg_6_0._blocker.localScale.x) * var_0_2.EXPAND_DURATION
+
+	LeanTween.scale(arg_6_0._blocker, Vector3(1, 1, 0), var_6_0)
 end
 
-function slot2.Puase(slot0)
-	LeanTween.cancel(go(slot0._blocker))
+function var_0_2.Puase(arg_7_0)
+	LeanTween.cancel(go(arg_7_0._blocker))
 end
 
-function slot2.ClickEase(slot0)
-	slot2 = slot0._blocker.localScale.x - 0.05
+function var_0_2.ClickEase(arg_8_0)
+	local var_8_0 = arg_8_0._blocker.localScale.x - 0.05
 
-	LeanTween.scale(slot0._blocker, Vector3(slot2, slot2, 0), 0.03):setOnComplete(System.Action(function ()
-		uv0:Active()
+	LeanTween.scale(arg_8_0._blocker, Vector3(var_8_0, var_8_0, 0), 0.03):setOnComplete(System.Action(function()
+		arg_8_0:Active()
 	end))
 end
 
-function slot2.Eliminate(slot0, slot1)
-	LeanTween.cancel(go(slot0._blocker))
-	setActive(slot0._blocker:Find("normal"), not slot1)
-	setActive(slot0._blocker:Find("hitted"), slot1)
-	LeanTween.scale(slot0._blocker, Vector3(0, 0, 0), 0.1):setOnComplete(System.Action(function ()
-		uv0._callback()
+function var_0_2.Eliminate(arg_10_0, arg_10_1)
+	LeanTween.cancel(go(arg_10_0._blocker))
+	setActive(arg_10_0._blocker:Find("normal"), not arg_10_1)
+	setActive(arg_10_0._blocker:Find("hitted"), arg_10_1)
+	LeanTween.scale(arg_10_0._blocker, Vector3(0, 0, 0), 0.1):setOnComplete(System.Action(function()
+		arg_10_0._callback()
 	end))
 end
 
-function slot2.Dispose(slot0)
-	if slot0.eventTriggers then
-		for slot4, slot5 in pairs(slot0.eventTriggers) do
-			ClearEventTrigger(slot4)
+function var_0_2.Dispose(arg_12_0)
+	if arg_12_0.eventTriggers then
+		for iter_12_0, iter_12_1 in pairs(arg_12_0.eventTriggers) do
+			ClearEventTrigger(iter_12_0)
 		end
 
-		slot0.eventTriggers = nil
+		arg_12_0.eventTriggers = nil
 	end
 
-	LeanTween.cancel(go(slot0._blocker))
+	LeanTween.cancel(go(arg_12_0._blocker))
 end

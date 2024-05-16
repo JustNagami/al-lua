@@ -1,53 +1,63 @@
-slot0 = class("CourtYardWallGridAgent", import(".CourtYardGridAgent"))
+﻿local var_0_0 = class("CourtYardWallGridAgent", import(".CourtYardGridAgent"))
 
-function slot0.Reset(slot0, slot1)
-	table.clear(slot0.grids)
+function var_0_0.Reset(arg_1_0, arg_1_1)
+	table.clear(arg_1_0.grids)
 
-	for slot5 = 1, #slot1 do
-		if slot5 % 2 == 0 then
-			slot6 = slot0:GetPool():Dequeue()
+	for iter_1_0 = 1, #arg_1_1 do
+		if iter_1_0 % 2 == 0 then
+			local var_1_0 = arg_1_0:GetPool():Dequeue()
 
-			slot6.transform:SetParent(slot0.gridsTF)
+			var_1_0.transform:SetParent(arg_1_0.gridsTF)
 
-			slot6.transform.localScale = Vector3.one
+			var_1_0.transform.localScale = Vector3.one
 
-			table.insert(slot0.grids, slot6)
-			slot0:UpdatePositionAndColor(slot6, {
-				slot1[slot5 - 1],
-				slot1[slot5]
+			table.insert(arg_1_0.grids, var_1_0)
+			arg_1_0:UpdatePositionAndColor(var_1_0, {
+				arg_1_1[iter_1_0 - 1],
+				arg_1_1[iter_1_0]
 			})
 		end
 	end
 end
 
-function slot0.Flush(slot0, slot1)
-	for slot5 = 1, #slot1 do
-		if slot5 % 2 == 0 then
-			slot6 = slot0.grids[slot5 * 0.5]
+function var_0_0.Flush(arg_2_0, arg_2_1)
+	for iter_2_0 = 1, #arg_2_1 do
+		if iter_2_0 % 2 == 0 then
+			local var_2_0 = arg_2_0.grids[iter_2_0 * 0.5]
 
-			assert(slot6)
-			slot0:UpdatePositionAndColor(slot6, {
-				slot1[slot5 - 1],
-				slot1[slot5]
+			assert(var_2_0)
+			arg_2_0:UpdatePositionAndColor(var_2_0, {
+				arg_2_1[iter_2_0 - 1],
+				arg_2_1[iter_2_0]
 			})
 		end
 	end
 end
 
-function slot0.UpdatePositionAndColor(slot0, slot1, slot2)
-	table.sort(slot2, function (slot0, slot1)
-		return slot0.position.x + slot0.position.y < slot1.position.x + slot1.position.y
+function var_0_0.UpdatePositionAndColor(arg_3_0, arg_3_1, arg_3_2)
+	table.sort(arg_3_2, function(arg_4_0, arg_4_1)
+		return arg_4_0.position.x + arg_4_0.position.y < arg_4_1.position.x + arg_4_1.position.y
 	end)
 
-	slot1.transform.localPosition = CourtYardCalcUtil.Map2Local(slot2[1].position)
-	slot1:GetComponent(typeof(Image)).color = slot0:GetColor(_.all(slot2, function (slot0)
-		return slot0.flag == 1
-	end) and 1 or 2)
-	slot1.transform.localScale = slot3.position.y - slot3.position.x >= 1 and Vector3(-1, 1, 1) or Vector3(1, 1, 1)
+	local var_3_0 = arg_3_2[1]
+	local var_3_1 = CourtYardCalcUtil.Map2Local(var_3_0.position)
+
+	arg_3_1.transform.localPosition = var_3_1
+
+	local var_3_2 = _.all(arg_3_2, function(arg_5_0)
+		return arg_5_0.flag == 1
+	end)
+	local var_3_3 = arg_3_0:GetColor(var_3_2 and 1 or 2)
+
+	arg_3_1:GetComponent(typeof(Image)).color = var_3_3
+
+	local var_3_4 = var_3_0.position.y - var_3_0.position.x >= 1
+
+	arg_3_1.transform.localScale = var_3_4 and Vector3(-1, 1, 1) or Vector3(1, 1, 1)
 end
 
-function slot0.GetPool(slot0)
-	return slot0:GetView().poolMgr:GetWallGridPool()
+function var_0_0.GetPool(arg_6_0)
+	return arg_6_0:GetView().poolMgr:GetWallGridPool()
 end
 
-return slot0
+return var_0_0

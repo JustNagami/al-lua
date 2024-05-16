@@ -1,1 +1,1 @@
-return class("AmericanIIMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("AmericanIIMainPage", import(".TemplatePage.PreviewTemplatePage")))

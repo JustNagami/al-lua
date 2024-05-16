@@ -1,137 +1,146 @@
-slot0 = class("IslandNode", import(".BaseVO"))
+﻿local var_0_0 = class("IslandNode", import(".BaseVO"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.activity_map_event_list
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot1.id
-	slot0.eventId = slot1.event_id
-	slot0.isNew = slot1.is_new == 1
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.configId = arg_2_1.id
+	arg_2_0.eventId = arg_2_1.event_id
+	arg_2_0.isNew = arg_2_1.is_new == 1
 end
 
-function slot0.IsUnlock(slot0)
-	slot0.isUnlock = slot0.isUnlock or slot0:GetUnlock()
+function var_0_0.IsUnlock(arg_3_0)
+	arg_3_0.isUnlock = arg_3_0.isUnlock or arg_3_0:GetUnlock()
 
-	return slot0.isUnlock
+	return arg_3_0.isUnlock
 end
 
-function slot0.GetUnlock(slot0)
-	slot1 = getProxy(IslandProxy)
-	slot2 = slot0:getConfig("open_need")
-	slot4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2) and slot3:GetTotalBuildingLevel() or 0
-	slot5 = {}
+function var_0_0.GetUnlock(arg_4_0)
+	local var_4_0 = getProxy(IslandProxy)
+	local var_4_1 = arg_4_0:getConfig("open_need")
+	local var_4_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
+	local var_4_3 = var_4_2 and var_4_2:GetTotalBuildingLevel() or 0
+	local var_4_4 = {}
 
-	for slot9, slot10 in ipairs(getProxy(ActivityTaskProxy):getFinishTasks()) do
-		slot5[slot10:GetConfigID()] = true
+	for iter_4_0, iter_4_1 in ipairs(getProxy(ActivityTaskProxy):getFinishTasks()) do
+		var_4_4[iter_4_1:GetConfigID()] = true
 	end
 
-	return slot2[1] <= slot4 and underscore.all(slot2[2], function (slot0)
-		return uv0:GetNode(slot0):IsCompleted()
-	end) and underscore.all(slot0:getConfig("open_task"), function (slot0)
-		return uv0[slot0]
+	return var_4_3 >= var_4_1[1] and underscore.all(var_4_1[2], function(arg_5_0)
+		return var_4_0:GetNode(arg_5_0):IsCompleted()
+	end) and underscore.all(arg_4_0:getConfig("open_task"), function(arg_6_0)
+		return var_4_4[arg_6_0]
 	end)
 end
 
-function slot0.IsVisual(slot0)
-	return (slot0:getConfig("node_status") == 1 or not slot0:IsCompleted()) and slot0:IsUnlock() and not slot0:ChangeVisual()
+function var_0_0.IsVisual(arg_7_0)
+	return (arg_7_0:getConfig("node_status") == 1 or not arg_7_0:IsCompleted()) and arg_7_0:IsUnlock() and not arg_7_0:ChangeVisual()
 end
 
-function slot0.ChangeVisual(slot0)
-	return slot0:getConfig("node_change") ~= 0 and getProxy(IslandProxy):GetNode(slot1):IsUnlock()
+function var_0_0.ChangeVisual(arg_8_0)
+	local var_8_0 = arg_8_0:getConfig("node_change")
+
+	return var_8_0 ~= 0 and getProxy(IslandProxy):GetNode(var_8_0):IsUnlock()
 end
 
-function slot0.IsCompleted(slot0)
-	return slot0.eventId == 0
+function var_0_0.IsCompleted(arg_9_0)
+	return arg_9_0.eventId == 0
 end
 
-function slot0.IsNew(slot0)
-	return not slot0:IsTreasure() and slot0.isNew
+function var_0_0.IsNew(arg_10_0)
+	return not arg_10_0:IsTreasure() and arg_10_0.isNew
 end
 
-function slot0.IsMain(slot0)
-	return slot0:getConfig("type") == 1
+function var_0_0.IsMain(arg_11_0)
+	return arg_11_0:getConfig("type") == 1
 end
 
-function slot0.IsTreasure(slot0)
-	return slot0:getConfig("type") == 4
+function var_0_0.IsTreasure(arg_12_0)
+	return arg_12_0:getConfig("type") == 4
 end
 
-function slot0.IsRefresh(slot0)
-	return slot0:getConfig("refresh") == 1
+function var_0_0.IsRefresh(arg_13_0)
+	return arg_13_0:getConfig("refresh") == 1
 end
 
-function slot0.IsFlowerField(slot0)
-	return slot0:getConfig("type") == 5 and slot0:getConfig("params")[1] == "flowerfield"
+function var_0_0.IsFlowerField(arg_14_0)
+	return arg_14_0:getConfig("type") == 5 and arg_14_0:getConfig("params")[1] == "flowerfield"
 end
 
-function slot0.GetScale(slot0)
+function var_0_0.GetScale(arg_15_0)
 	return 0.8
 end
 
-function slot0.RedDotHint(slot0)
-	return switch(slot0:getConfig("type"), {
-		[4] = function ()
+function var_0_0.RedDotHint(arg_16_0)
+	return switch(arg_16_0:getConfig("type"), {
+		[4] = function()
 			return false
 		end,
-		[5] = function ()
-			uv0.markDic = uv0.markDic or {
-				minigame1 = function (...)
-					return getProxy(MiniGameProxy):GetHubByHubId(getProxy(ActivityProxy):getActivityById(ActivityConst.ISLAND_GAME_ID):getConfig("config_id")).count > 0
+		[5] = function()
+			var_0_0.markDic = var_0_0.markDic or {
+				minigame1 = function(...)
+					local var_19_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.ISLAND_GAME_ID):getConfig("config_id")
+
+					return getProxy(MiniGameProxy):GetHubByHubId(var_19_0).count > 0
 				end,
-				minigame2 = function (...)
-					return uv0.markDic.minigame1(...)
+				minigame2 = function(...)
+					return var_0_0.markDic.minigame1(...)
 				end,
-				minigame3 = function (...)
-					return uv0.markDic.minigame1(...)
+				minigame3 = function(...)
+					return var_0_0.markDic.minigame1(...)
 				end,
-				flowerfield = function ()
-					return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD))
+				flowerfield = function()
+					local var_22_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FLOWER_FIELD)
+
+					return Activity.IsActivityReady(var_22_0)
 				end,
-				hotspringtask = function ()
-					return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2))
+				hotspringtask = function()
+					local var_23_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+
+					return Activity.IsActivityReady(var_23_0)
 				end
 			}
 
-			return switch(uv1:getConfig("params")[1], uv0.markDic, function ()
+			return switch(arg_16_0:getConfig("params")[1], var_0_0.markDic, function()
 				return false
 			end)
 		end
-	}, function ()
-		return not uv0:IsCompleted()
+	}, function()
+		return not arg_16_0:IsCompleted()
 	end)
 end
 
-function slot0.GetEffectName(slot0)
-	return switch(slot0:getConfig("type"), {
-		[4] = function ()
+function var_0_0.GetEffectName(arg_26_0)
+	return switch(arg_26_0:getConfig("type"), {
+		[4] = function()
 			return "haidao_baoxiang"
 		end
-	}, function ()
+	}, function()
 		return ""
 	end)
 end
 
-function slot0.CanTrigger(slot0)
-	if slot0:getConfig("type") == 5 then
+function var_0_0.CanTrigger(arg_29_0)
+	if arg_29_0:getConfig("type") == 5 then
 		return true
 	else
-		return not slot0:IsCompleted()
+		return not arg_29_0:IsCompleted()
 	end
 end
 
-function slot0.CanToggleOn(slot0)
-	return switch(slot0:getConfig("type"), {
-		[4] = function ()
+function var_0_0.CanToggleOn(arg_30_0)
+	return switch(arg_30_0:getConfig("type"), {
+		[4] = function()
 			return false
 		end,
-		[5] = function ()
+		[5] = function()
 			return true
 		end
-	}, function ()
-		return not uv0:IsCompleted()
+	}, function()
+		return not arg_30_0:IsCompleted()
 	end)
 end
 
-return slot0
+return var_0_0

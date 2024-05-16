@@ -1,24 +1,23 @@
-slot0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
+﻿local var_0_0 = class("BeachPacketMediator", import("view.base.ContextMediator"))
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_1_0)
 	return {
 		ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1:getName()
+	local var_2_1 = arg_2_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS then
-		slot4 = slot0.viewComponent
-
-		slot4:playAni(function ()
-			uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, uv1.awards, uv1.callback)
+	if var_2_0 == ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS then
+		arg_2_0.viewComponent:playAni(function()
+			arg_2_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_2_1.awards, var_2_1.callback)
 		end)
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED and slot3.id == slot0.viewComponent.activityID then
-		slot0.viewComponent:onSubmitFinished()
+	elseif var_2_0 == ActivityProxy.ACTIVITY_UPDATED and var_2_1.id == arg_2_0.viewComponent.activityID then
+		arg_2_0.viewComponent:onSubmitFinished()
 	end
 end
 
-return slot0
+return var_0_0

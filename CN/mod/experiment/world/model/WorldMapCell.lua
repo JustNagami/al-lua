@@ -1,5 +1,6 @@
-slot0 = class("WorldMapCell", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WorldMapCell", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	terrainDir = "number",
 	discovered = "boolean",
 	attachments = "table",
@@ -15,88 +16,88 @@ slot0.Fields = {
 	terrainStrong = "number",
 	fogLight = "boolean"
 }
-slot0.EventAddAttachment = "WorldMapCell.EventAddAttachment"
-slot0.EventRemoveAttachment = "WorldMapCell.EventRemoveAttachment"
-slot0.EventUpdateInFov = "WorldMapCell.EventUpdateInFov"
-slot0.EventUpdateDiscovered = "WorldMapCell.EventUpdateDiscovered"
-slot0.EventUpdateFog = "WorldMapCell.EventUpdateFog"
-slot0.EventUpdateFogImage = "WorldMapCell.EventUpdateFogImage"
-slot0.EventUpdateTerrain = "WorldMapCell.EventUpdateTerrain"
+var_0_0.EventAddAttachment = "WorldMapCell.EventAddAttachment"
+var_0_0.EventRemoveAttachment = "WorldMapCell.EventRemoveAttachment"
+var_0_0.EventUpdateInFov = "WorldMapCell.EventUpdateInFov"
+var_0_0.EventUpdateDiscovered = "WorldMapCell.EventUpdateDiscovered"
+var_0_0.EventUpdateFog = "WorldMapCell.EventUpdateFog"
+var_0_0.EventUpdateFogImage = "WorldMapCell.EventUpdateFogImage"
+var_0_0.EventUpdateTerrain = "WorldMapCell.EventUpdateTerrain"
 
-function slot0.GetName(slot0, slot1)
-	return "cell_" .. slot0 .. "_" .. slot1
+function var_0_0.GetName(arg_1_0, arg_1_1)
+	return "cell_" .. arg_1_0 .. "_" .. arg_1_1
 end
 
-slot0.TerrainNone = 0
-slot0.TerrainStream = 1
-slot0.TerrainIce = 2
-slot0.TerrainWind = 3
-slot0.TerrainFog = 4
-slot0.TerrainFire = 5
-slot0.TerrainPoison = 6
+var_0_0.TerrainNone = 0
+var_0_0.TerrainStream = 1
+var_0_0.TerrainIce = 2
+var_0_0.TerrainWind = 3
+var_0_0.TerrainFog = 4
+var_0_0.TerrainFire = 5
+var_0_0.TerrainPoison = 6
 
-function slot0.Build(slot0)
-	slot0.attachments = {}
-	slot0.dir = 0
-	slot0.infov = 0
-	slot0.inLight = 0
-	slot0.fog = false
-	slot0.fogLight = false
-	slot0.fogSairen = false
+function var_0_0.Build(arg_2_0)
+	arg_2_0.attachments = {}
+	arg_2_0.dir = 0
+	arg_2_0.infov = 0
+	arg_2_0.inLight = 0
+	arg_2_0.fog = false
+	arg_2_0.fogLight = false
+	arg_2_0.fogSairen = false
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.row = slot1[1]
-	slot0.column = slot1[2]
-	slot0.walkable = slot1[3]
+function var_0_0.Setup(arg_3_0, arg_3_1)
+	arg_3_0.row = arg_3_1[1]
+	arg_3_0.column = arg_3_1[2]
+	arg_3_0.walkable = arg_3_1[3]
 end
 
-function slot0.Dispose(slot0)
-	WPool:ReturnArray(slot0.attachments)
-	slot0:Clear()
+function var_0_0.Dispose(arg_4_0)
+	WPool:ReturnArray(arg_4_0.attachments)
+	arg_4_0:Clear()
 end
 
-function slot0.AddAttachment(slot0, slot1)
-	assert(not _.any(slot0.attachments, function (slot0)
-		return slot0.row == uv0.row and slot0.column == uv0.column and slot0.type == uv0.type and slot0.id == uv0.id
+function var_0_0.AddAttachment(arg_5_0, arg_5_1)
+	assert(not _.any(arg_5_0.attachments, function(arg_6_0)
+		return arg_6_0.row == arg_5_1.row and arg_6_0.column == arg_5_1.column and arg_6_0.type == arg_5_1.type and arg_6_0.id == arg_5_1.id
 	end))
-	assert(slot1.row == slot0.row and slot1.column == slot0.column)
-	assert(WorldMapAttachment.SortOrder[slot1.type], slot1.type .. " : sort order not set.")
+	assert(arg_5_1.row == arg_5_0.row and arg_5_1.column == arg_5_0.column)
+	assert(WorldMapAttachment.SortOrder[arg_5_1.type], arg_5_1.type .. " : sort order not set.")
 
-	slot2 = WorldMapAttachment.SortOrder[slot1.type]
-	slot3 = #slot0.attachments + 1
+	local var_5_0 = WorldMapAttachment.SortOrder[arg_5_1.type]
+	local var_5_1 = #arg_5_0.attachments + 1
 
-	for slot7, slot8 in ipairs(slot0.attachments) do
-		if WorldMapAttachment.SortOrder[slot8.type] < slot2 then
-			slot3 = slot7
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.attachments) do
+		if var_5_0 > WorldMapAttachment.SortOrder[iter_5_1.type] then
+			var_5_1 = iter_5_0
 
 			break
 		end
 	end
 
-	table.insert(slot0.attachments, slot3, slot1)
-	slot0:DispatchEvent(uv0.EventAddAttachment, slot1)
+	table.insert(arg_5_0.attachments, var_5_1, arg_5_1)
+	arg_5_0:DispatchEvent(var_0_0.EventAddAttachment, arg_5_1)
 
-	if not slot0.discovered and slot1:ShouldMarkAsLurk() then
-		slot1:UpdateLurk(true)
+	if not arg_5_0.discovered and arg_5_1:ShouldMarkAsLurk() then
+		arg_5_1:UpdateLurk(true)
 	end
 end
 
-function slot0.RemoveAttachment(slot0, slot1)
-	if slot1 == nil or type(slot1) == "number" then
-		slot1 = slot1 or #slot0.attachments
+function var_0_0.RemoveAttachment(arg_7_0, arg_7_1)
+	if arg_7_1 == nil or type(arg_7_1) == "number" then
+		arg_7_1 = arg_7_1 or #arg_7_0.attachments
 
-		assert(slot1 >= 1 and slot1 <= #slot0.attachments)
+		assert(arg_7_1 >= 1 and arg_7_1 <= #arg_7_0.attachments)
 
-		slot2 = slot0.attachments[slot1]
+		local var_7_0 = arg_7_0.attachments[arg_7_1]
 
-		table.remove(slot0.attachments, slot1)
-		slot0:DispatchEvent(uv0.EventRemoveAttachment, slot2)
-		WPool:Return(slot2)
-	elseif slot1.class == WorldMapAttachment then
-		for slot5 = #slot0.attachments, 1, -1 do
-			if slot0.attachments[slot5] == slot1 then
-				slot0:RemoveAttachment(slot5)
+		table.remove(arg_7_0.attachments, arg_7_1)
+		arg_7_0:DispatchEvent(var_0_0.EventRemoveAttachment, var_7_0)
+		WPool:Return(var_7_0)
+	elseif arg_7_1.class == WorldMapAttachment then
+		for iter_7_0 = #arg_7_0.attachments, 1, -1 do
+			if arg_7_0.attachments[iter_7_0] == arg_7_1 then
+				arg_7_0:RemoveAttachment(iter_7_0)
 
 				break
 			end
@@ -104,302 +105,313 @@ function slot0.RemoveAttachment(slot0, slot1)
 	end
 end
 
-function slot0.ContainsAttachment(slot0, slot1)
-	return _.any(slot0.attachments, function (slot0)
-		return slot0 == uv0
+function var_0_0.ContainsAttachment(arg_8_0, arg_8_1)
+	return _.any(arg_8_0.attachments, function(arg_9_0)
+		return arg_9_0 == arg_8_1
 	end)
 end
 
-function slot0.GetInFOV(slot0)
-	if slot0.fog then
-		return slot0.fogLight
+function var_0_0.GetInFOV(arg_10_0)
+	if arg_10_0.fog then
+		return arg_10_0.fogLight
 	else
-		slot1 = slot0.infov > 0 or slot0.inLight > 0
-
-		return slot1
+		return arg_10_0.infov > 0 or arg_10_0.inLight > 0
 	end
 end
 
-function slot0.UpdateInFov(slot0, slot1)
+function var_0_0.UpdateInFov(arg_11_0, arg_11_1)
 	AfterCheck({
 		{
-			function ()
-				return uv0:GetInFOV()
+			function()
+				return arg_11_0:GetInFOV()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateInFov)
+			function()
+				arg_11_0:DispatchEvent(var_0_0.EventUpdateInFov)
 			end
 		}
-	}, function ()
-		uv0.infov = uv1
+	}, function()
+		arg_11_0.infov = arg_11_1
 	end)
 end
 
-function slot0.ChangeInLight(slot0, slot1)
+function var_0_0.ChangeInLight(arg_15_0, arg_15_1)
 	AfterCheck({
 		{
-			function ()
-				return uv0:GetInFOV()
+			function()
+				return arg_15_0:GetInFOV()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateInFov)
+			function()
+				arg_15_0:DispatchEvent(var_0_0.EventUpdateInFov)
 			end
 		}
-	}, function ()
-		uv0.inLight = uv0.inLight + (uv1 and 1 or -1)
+	}, function()
+		arg_15_0.inLight = arg_15_0.inLight + (arg_15_1 and 1 or -1)
 	end)
 end
 
-function slot0.InFog(slot0)
-	if slot0.fog then
-		return not slot0.fogLight
+function var_0_0.InFog(arg_19_0)
+	if arg_19_0.fog then
+		return not arg_19_0.fogLight
 	else
-		return slot0:GetTerrain() == uv0.TerrainFog
+		return arg_19_0:GetTerrain() == var_0_0.TerrainFog
 	end
 end
 
-function slot0.LookSairenFog(slot0)
-	return slot0.fogSairen or slot0:IsTerrainSairenFog()
+function var_0_0.LookSairenFog(arg_20_0)
+	return arg_20_0.fogSairen or arg_20_0:IsTerrainSairenFog()
 end
 
-function slot0.UpdateFog(slot0, slot1, slot2, slot3)
+function var_0_0.UpdateFog(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
 	AfterCheck({
 		{
-			function ()
-				return uv0:GetInFOV()
+			function()
+				return arg_21_0:GetInFOV()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateInFov)
+			function()
+				arg_21_0:DispatchEvent(var_0_0.EventUpdateInFov)
 			end
 		},
 		{
-			function ()
-				return uv0:InFog()
+			function()
+				return arg_21_0:InFog()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateFog)
+			function()
+				arg_21_0:DispatchEvent(var_0_0.EventUpdateFog)
 			end
 		},
 		{
-			function ()
-				return uv0:LookSairenFog()
+			function()
+				return arg_21_0:LookSairenFog()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateFogImage)
+			function()
+				arg_21_0:DispatchEvent(var_0_0.EventUpdateFogImage)
 			end
 		}
-	}, function ()
-		uv0.fog = defaultValue(uv1, uv0.fog)
-		uv0.fogLight = defaultValue(uv2, uv0.fogLight)
-		uv0.fogSairen = defaultValue(uv3, uv0.fogSairen)
+	}, function()
+		arg_21_0.fog = defaultValue(arg_21_1, arg_21_0.fog)
+		arg_21_0.fogLight = defaultValue(arg_21_2, arg_21_0.fogLight)
+		arg_21_0.fogSairen = defaultValue(arg_21_3, arg_21_0.fogSairen)
 	end)
 end
 
-function slot0.UpdateDiscovered(slot0, slot1)
-	if slot0.discovered ~= slot1 then
-		slot0.discovered = slot1
+function var_0_0.UpdateDiscovered(arg_29_0, arg_29_1)
+	if arg_29_0.discovered ~= arg_29_1 then
+		arg_29_0.discovered = arg_29_1
 
-		slot0:DispatchEvent(uv0.EventUpdateDiscovered)
+		arg_29_0:DispatchEvent(var_0_0.EventUpdateDiscovered)
 	end
 end
 
-function slot0.GetTerrain(slot0)
-	return slot0.terrain or uv0.TerrainNone
+function var_0_0.GetTerrain(arg_30_0)
+	return arg_30_0.terrain or var_0_0.TerrainNone
 end
 
-function slot0.UpdateTerrain(slot0, slot1, slot2, slot3)
+function var_0_0.UpdateTerrain(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
 	AfterCheck({
 		{
-			function ()
-				return uv0:InFog()
+			function()
+				return arg_31_0:InFog()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateFog)
+			function()
+				arg_31_0:DispatchEvent(var_0_0.EventUpdateFog)
 			end
 		},
 		{
-			function ()
-				return uv0:LookSairenFog()
+			function()
+				return arg_31_0:LookSairenFog()
 			end,
-			function ()
-				uv0:DispatchEvent(uv1.EventUpdateFogImage)
+			function()
+				arg_31_0:DispatchEvent(var_0_0.EventUpdateFogImage)
 			end
 		}
-	}, function ()
-		uv0.terrain = uv1
+	}, function()
+		arg_31_0.terrain = arg_31_1
 
-		if uv0.terrain == uv2.TerrainStream then
-			assert(uv3)
+		if arg_31_0.terrain == var_0_0.TerrainStream then
+			assert(arg_31_2)
 
-			uv0.terrainDir = uv3
-		elseif uv0.terrain == uv2.TerrainWind then
-			assert(uv3 and uv4)
+			arg_31_0.terrainDir = arg_31_2
+		elseif arg_31_0.terrain == var_0_0.TerrainWind then
+			assert(arg_31_2 and arg_31_3)
 
-			uv0.terrainDir = uv3
-			uv0.terrainStrong = uv4
-		elseif uv0.terrain == uv2.TerrainFog then
-			uv0.terrainStrong = uv4
-		elseif uv0.terrain == uv2.TerrainPoison then
-			uv0.terrainStrong = uv4
+			arg_31_0.terrainDir = arg_31_2
+			arg_31_0.terrainStrong = arg_31_3
+		elseif arg_31_0.terrain == var_0_0.TerrainFog then
+			arg_31_0.terrainStrong = arg_31_3
+		elseif arg_31_0.terrain == var_0_0.TerrainPoison then
+			arg_31_0.terrainStrong = arg_31_3
 		end
 
-		uv0:DispatchEvent(uv2.EventUpdateTerrain)
+		arg_31_0:DispatchEvent(var_0_0.EventUpdateTerrain)
 	end)
 end
 
-function slot0.GetAliveAttachments(slot0)
-	return _.filter(slot0.attachments, function (slot0)
-		return slot0:IsAlive()
+function var_0_0.GetAliveAttachments(arg_37_0)
+	return _.filter(arg_37_0.attachments, function(arg_38_0)
+		return arg_38_0:IsAlive()
 	end)
 end
 
-function slot0.GetAliveAttachment(slot0)
-	return _.detect(slot0.attachments, function (slot0)
-		return slot0:IsAlive()
+function var_0_0.GetAliveAttachment(arg_39_0)
+	return _.detect(arg_39_0.attachments, function(arg_40_0)
+		return arg_40_0:IsAlive()
 	end)
 end
 
-function slot0.GetDisplayAttachment(slot0)
-	return _.detect(slot0.attachments, function (slot0)
-		return slot0:IsAlive() and slot0:IsVisible()
+function var_0_0.GetDisplayAttachment(arg_41_0)
+	return _.detect(arg_41_0.attachments, function(arg_42_0)
+		return arg_42_0:IsAlive() and arg_42_0:IsVisible()
 	end)
 end
 
-function slot0.GetInterativeAttachment(slot0)
-	return _.detect(slot0.attachments, function (slot0)
-		return WorldMapAttachment.IsInteractiveType(slot0.type) and slot0:IsAlive() and slot0:IsVisible()
+function var_0_0.GetInterativeAttachment(arg_43_0)
+	return _.detect(arg_43_0.attachments, function(arg_44_0)
+		return WorldMapAttachment.IsInteractiveType(arg_44_0.type) and arg_44_0:IsAlive() and arg_44_0:IsVisible()
 	end)
 end
 
-function slot0.GetEventAttachment(slot0)
-	return _.detect(slot0.attachments, function (slot0)
-		return slot0:IsAlive() and slot0.type == WorldMapAttachment.TypeEvent
+function var_0_0.GetEventAttachment(arg_45_0)
+	return _.detect(arg_45_0.attachments, function(arg_46_0)
+		return arg_46_0:IsAlive() and arg_46_0.type == WorldMapAttachment.TypeEvent
 	end)
 end
 
-function slot0.GetCompassAttachment(slot0)
-	slot1 = {}
+function var_0_0.GetCompassAttachment(arg_47_0)
+	local var_47_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.attachments) do
-		table.insert(slot1, slot5)
+	for iter_47_0, iter_47_1 in ipairs(arg_47_0.attachments) do
+		table.insert(var_47_0, iter_47_0)
 	end
 
-	return _.detect(_.sort(slot1, function (slot0, slot1)
-		return (uv0.attachments[slot0].config.compass_index or 0) > (uv0.attachments[slot1].config.compass_index or 0)
-	end), function (slot0)
-		if uv0.attachments[slot0]:ShouldMarkAsLurk() then
-			return slot1:IsAlive() and slot1:IsVisible() and uv0.discovered
-		elseif slot1.type == WorldMapAttachment.TypeEvent then
-			return slot1:IsAlive() and slot1.config.visuality == 0
-		elseif slot1.type ~= WorldMapAttachment.TypeFleet and slot1.type ~= WorldMapAttachment.TypePort then
-			return slot1:IsAlive()
+	local var_47_1 = _.detect(_.sort(var_47_0, function(arg_48_0, arg_48_1)
+		return (arg_47_0.attachments[arg_48_0].config.compass_index or 0) > (arg_47_0.attachments[arg_48_1].config.compass_index or 0)
+	end), function(arg_49_0)
+		local var_49_0 = arg_47_0.attachments[arg_49_0]
+
+		if var_49_0:ShouldMarkAsLurk() then
+			return var_49_0:IsAlive() and var_49_0:IsVisible() and arg_47_0.discovered
+		elseif var_49_0.type == WorldMapAttachment.TypeEvent then
+			return var_49_0:IsAlive() and var_49_0.config.visuality == 0
+		elseif var_49_0.type ~= WorldMapAttachment.TypeFleet and var_49_0.type ~= WorldMapAttachment.TypePort then
+			return var_49_0:IsAlive()
 		end
-	end) and slot0.attachments[slot2]
+	end)
+
+	return var_47_1 and arg_47_0.attachments[var_47_1]
 end
 
-function slot0.FindAliveAttachment(slot0, slot1)
-	assert(slot1 ~= nil)
+function var_0_0.FindAliveAttachment(arg_50_0, arg_50_1)
+	assert(arg_50_1 ~= nil)
 
-	return _.detect(slot0.attachments, function (slot0)
-		return slot0:IsAlive() and slot0.type == uv0
+	return _.detect(arg_50_0.attachments, function(arg_51_0)
+		return arg_51_0:IsAlive() and arg_51_0.type == arg_50_1
 	end)
 end
 
-function slot0.IsTerrainSairenFog(slot0)
-	return slot0.terrain == uv0.TerrainFog and slot0.terrainStrong == 0
+function var_0_0.IsTerrainSairenFog(arg_52_0)
+	return arg_52_0.terrain == var_0_0.TerrainFog and arg_52_0.terrainStrong == 0
 end
 
-function slot0.CanLeave(slot0)
-	return slot0.walkable and slot0:GetTerrainObstacleConfig("leave") and underscore.all(slot0.attachments, function (slot0)
-		return not slot0:IsAlive() or slot0:CanLeave()
+function var_0_0.CanLeave(arg_53_0)
+	return arg_53_0.walkable and arg_53_0:GetTerrainObstacleConfig("leave") and underscore.all(arg_53_0.attachments, function(arg_54_0)
+		return not arg_54_0:IsAlive() or arg_54_0:CanLeave()
 	end)
 end
 
-function slot0.CanArrive(slot0)
-	return slot0.walkable and slot0:GetTerrainObstacleConfig("arrive") and underscore.all(slot0.attachments, function (slot0)
-		return not slot0:IsAlive() or slot0:CanArrive()
+function var_0_0.CanArrive(arg_55_0)
+	return arg_55_0.walkable and arg_55_0:GetTerrainObstacleConfig("arrive") and underscore.all(arg_55_0.attachments, function(arg_56_0)
+		return not arg_56_0:IsAlive() or arg_56_0:CanArrive()
 	end)
 end
 
-function slot0.CanPass(slot0)
-	return slot0.walkable and slot0:GetTerrainObstacleConfig("pass") and underscore.all(slot0.attachments, function (slot0)
-		return not slot0:IsAlive() or slot0:CanPass()
+function var_0_0.CanPass(arg_57_0)
+	return arg_57_0.walkable and arg_57_0:GetTerrainObstacleConfig("pass") and underscore.all(arg_57_0.attachments, function(arg_58_0)
+		return not arg_58_0:IsAlive() or arg_58_0:CanPass()
 	end)
 end
 
-function slot0.IsSign(slot0)
-	return _.any(slot0.attachments, function (slot0)
-		return slot0:IsAlive() and slot0:IsSign()
+function var_0_0.IsSign(arg_59_0)
+	return _.any(arg_59_0.attachments, function(arg_60_0)
+		return arg_60_0:IsAlive() and arg_60_0:IsSign()
 	end)
 end
 
-function slot0.ExistEnemy(slot0)
-	return tobool(slot0:GetStageEnemy())
+function var_0_0.ExistEnemy(arg_61_0)
+	return tobool(arg_61_0:GetStageEnemy())
 end
 
-function slot0.GetStageEnemy(slot0)
-	return _.detect(slot0.attachments, function (slot0)
-		return slot0:IsAlive() and WorldMapAttachment.IsEnemyType(slot0.type)
+function var_0_0.GetStageEnemy(arg_62_0)
+	return _.detect(arg_62_0.attachments, function(arg_63_0)
+		return arg_63_0:IsAlive() and WorldMapAttachment.IsEnemyType(arg_63_0.type)
 	end)
 end
 
-function slot0.GetDisplayQuad(slot0)
-	slot1 = nil
-	slot2 = slot0:GetDisplayAttachment()
+function var_0_0.GetDisplayQuad(arg_64_0)
+	local var_64_0
+	local var_64_1 = arg_64_0:GetDisplayAttachment()
 
-	if not slot0:InFog() and slot2 then
-		if slot2.type == WorldMapAttachment.TypeEvent then
-			if slot2.config.object_icon and #slot3 > 0 then
-				slot1 = slot3
+	if not arg_64_0:InFog() and var_64_1 then
+		if var_64_1.type == WorldMapAttachment.TypeEvent then
+			local var_64_2 = var_64_1.config.object_icon
+
+			if var_64_2 and #var_64_2 > 0 then
+				var_64_0 = var_64_2
 			end
-		elseif WorldMapAttachment.IsEnemyType(slot2.type) then
-			slot1 = {
+		elseif WorldMapAttachment.IsEnemyType(var_64_1.type) then
+			var_64_0 = {
 				"cell_red"
 			}
-		elseif slot2.type == WorldMapAttachment.TypePort or slot2.type == WorldMapAttachment.TypeBox then
-			slot1 = {
+		elseif var_64_1.type == WorldMapAttachment.TypePort or var_64_1.type == WorldMapAttachment.TypeBox then
+			var_64_0 = {
 				"cell_yellow"
 			}
 		end
 	end
 
-	return slot1
+	return var_64_0
 end
 
-function slot0.GetEmotion(slot0)
-	return slot0.terrain == uv0.TerrainPoison and WorldConst.PoisonEffect or nil
+function var_0_0.GetEmotion(arg_65_0)
+	return arg_65_0.terrain == var_0_0.TerrainPoison and WorldConst.PoisonEffect or nil
 end
 
-function slot0.GetScannerAttachment(slot0)
-	slot2, slot3 = nil
+function var_0_0.GetScannerAttachment(arg_66_0)
+	local var_66_0 = arg_66_0:GetAliveAttachments()
+	local var_66_1
+	local var_66_2
 
-	for slot7, slot8 in ipairs(slot0:GetAliveAttachments()) do
-		if slot8:IsScannerAttachment() and (not slot2 or slot3 < slot9) then
-			slot2 = slot8
-			slot3 = slot9
+	for iter_66_0, iter_66_1 in ipairs(var_66_0) do
+		local var_66_3 = iter_66_1:IsScannerAttachment()
+
+		if var_66_3 and (not var_66_1 or var_66_2 < var_66_3) then
+			var_66_1 = iter_66_1
+			var_66_2 = var_66_3
 		end
 	end
 
-	return slot2
+	return var_66_1
 end
 
-slot0.TerrainObstacleConfig = {
+var_0_0.TerrainObstacleConfig = {
 	SairenFog = 4,
-	[slot0.TerrainNone] = 7,
-	[slot0.TerrainStream] = 6,
-	[slot0.TerrainIce] = 6,
-	[slot0.TerrainWind] = 2,
-	[slot0.TerrainFog] = 6,
-	[slot0.TerrainFire] = 7,
-	[slot0.TerrainPoison] = 7
+	[var_0_0.TerrainNone] = 7,
+	[var_0_0.TerrainStream] = 6,
+	[var_0_0.TerrainIce] = 6,
+	[var_0_0.TerrainWind] = 2,
+	[var_0_0.TerrainFog] = 6,
+	[var_0_0.TerrainFire] = 7,
+	[var_0_0.TerrainPoison] = 7
 }
 
-function slot0.GetTerrainObstacleConfig(slot0, slot1)
-	return bit.band(uv0.TerrainObstacleConfig[slot0:IsTerrainSairenFog() and "SairenFog" or slot0:GetTerrain()], WorldConst.GetObstacleKey(slot1)) > 0
+function var_0_0.GetTerrainObstacleConfig(arg_67_0, arg_67_1)
+	local var_67_0 = arg_67_0:IsTerrainSairenFog() and "SairenFog" or arg_67_0:GetTerrain()
+	local var_67_1 = WorldConst.GetObstacleKey(arg_67_1)
+
+	return bit.band(var_0_0.TerrainObstacleConfig[var_67_0], var_67_1) > 0
 end
 
-function slot0.IsMovingTerrain(slot0)
-	return slot0 == uv0.TerrainStream or slot0 == uv0.TerrainIce or slot0 == uv0.TerrainWind
+function var_0_0.IsMovingTerrain(arg_68_0)
+	return arg_68_0 == var_0_0.TerrainStream or arg_68_0 == var_0_0.TerrainIce or arg_68_0 == var_0_0.TerrainWind
 end
 
-return slot0
+return var_0_0

@@ -1,26 +1,25 @@
-slot0 = class("GetSeasonInfoCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetSeasonInfoCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = pg.ConnectionMgr.GetInstance()
-
-	slot2:Send(18001, {
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(18001, {
 		type = 0
-	}, 18002, function (slot0)
-		slot1 = SeasonInfo.New(slot0)
+	}, 18002, function(arg_2_0)
+		local var_2_0 = SeasonInfo.New(arg_2_0)
+		local var_2_1 = getProxy(MilitaryExerciseProxy)
 
-		if getProxy(MilitaryExerciseProxy):getData() then
-			slot2:updateSeasonInfo(slot1)
+		if var_2_1:getData() then
+			var_2_1:updateSeasonInfo(var_2_0)
 		else
-			slot2:addSeasonInfo(slot1)
+			var_2_1:addSeasonInfo(var_2_0)
 		end
 
-		slot3 = getProxy(PlayerProxy)
-		slot4 = slot3:getData()
+		local var_2_2 = getProxy(PlayerProxy)
+		local var_2_3 = var_2_2:getData()
 
-		slot4:updateScoreAndRank(slot1.score, slot1.rank)
-		slot3:updatePlayer(slot4)
-		uv0:sendNotification(GAME.GET_SEASON_INFO_DONE, slot1)
+		var_2_3:updateScoreAndRank(var_2_0.score, var_2_0.rank)
+		var_2_2:updatePlayer(var_2_3)
+		arg_1_0:sendNotification(GAME.GET_SEASON_INFO_DONE, var_2_0)
 	end)
 end
 
-return slot0
+return var_0_0

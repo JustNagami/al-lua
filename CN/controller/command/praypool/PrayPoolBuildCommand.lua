@@ -1,21 +1,21 @@
-slot0 = class("PrayPoolBuildCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("PrayPoolBuildCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.shipIDList
-	slot5 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.pooltype
+	local var_1_2 = var_1_0.shipIDList
 
-	slot5:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
 		activity_id = ActivityConst.ACTIVITY_PRAY_POOL,
-		arg1 = slot2.pooltype,
-		arg2 = slot4[1],
-		arg3 = slot4[2],
+		arg1 = var_1_1,
+		arg2 = var_1_2[1],
+		arg3 = var_1_2[2],
 		arg_list = {}
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
 			getProxy(PrayProxy):updatePageState(PrayProxy.STAGE_BUILD_SUCCESS)
-			uv0:sendNotification(PrayPoolConst.BUILD_PRAY_POOL_SUCCESS, PrayProxy.STAGE_BUILD_SUCCESS)
+			arg_1_0:sendNotification(PrayPoolConst.BUILD_PRAY_POOL_SUCCESS, PrayProxy.STAGE_BUILD_SUCCESS)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("tip_pray_build_pool_success"))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("tip_pray_build_pool_fail"))
@@ -23,4 +23,4 @@ function slot0.execute(slot0, slot1)
 	end)
 end
 
-return slot0
+return var_0_0

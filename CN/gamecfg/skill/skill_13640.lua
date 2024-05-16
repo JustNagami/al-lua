@@ -1,4 +1,41 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.05
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				buff_id = 13642
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				buff_id = 13643
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -316,42 +353,5 @@ return {
 	id = 13640,
 	picture = "0",
 	castCV = "skill",
-	desc = "凉月回血",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.05
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				buff_id = 13642
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				buff_id = 13643
-			}
-		}
-	}
+	desc = "凉月回血"
 }

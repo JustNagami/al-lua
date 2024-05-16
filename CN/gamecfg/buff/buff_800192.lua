@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 3,
-	id = 800192,
-	icon = 800192,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -60,5 +40,25 @@ return {
 				countType = 800190
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 3,
+	id = 800192,
+	icon = 800192,
+	last_effect = ""
 }

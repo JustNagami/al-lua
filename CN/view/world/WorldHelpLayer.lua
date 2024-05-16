@@ -1,229 +1,220 @@
-slot0 = class("WorldHelpLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("WorldHelpLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldHelpUI"
 end
 
-function slot0.init(slot0)
-	slot1 = slot0._tf
-	slot0.rtTitle = slot1:Find("title")
-	slot1 = slot0.rtTitle
-	slot0.btnBack = slot1:Find("btn_back")
+function var_0_0.init(arg_2_0)
+	arg_2_0.rtTitle = arg_2_0._tf:Find("title")
+	arg_2_0.btnBack = arg_2_0.rtTitle:Find("btn_back")
 
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+	onButton(arg_2_0, arg_2_0.btnBack, function()
+		arg_2_0:closeView()
 	end, SFX_CANCEL)
 
-	slot2 = slot0.rtTitle
-	slot3 = slot0.rtTitle
-	slot0.groupList = UIItemList.New(slot2:Find("toggles"), slot3:Find("toggles/toggle"))
-	slot1 = slot0.groupList
+	arg_2_0.groupList = UIItemList.New(arg_2_0.rtTitle:Find("toggles"), arg_2_0.rtTitle:Find("toggles/toggle"))
 
-	slot1:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_2_0.groupList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		arg_4_1 = arg_4_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			setText(slot2:Find("Text"), pg.world_help_data[uv0.titles[slot1]].name)
-			onToggle(uv0, slot2, function (slot0)
-				if slot0 then
-					if uv0.curGroupId ~= uv1 then
-						uv0:toggleAnim(uv2, true)
-						uv0:setCurGroup(uv1)
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_2_0.titles[arg_4_1]
+
+			setText(arg_4_2:Find("Text"), pg.world_help_data[var_4_0].name)
+			onToggle(arg_2_0, arg_4_2, function(arg_5_0)
+				if arg_5_0 then
+					if arg_2_0.curGroupId ~= var_4_0 then
+						arg_2_0:toggleAnim(arg_4_2, true)
+						arg_2_0:setCurGroup(var_4_0)
 					end
 				else
-					uv0:toggleAnim(uv2, false)
+					arg_2_0:toggleAnim(arg_4_2, false)
 				end
 			end, SFX_PANEL)
 		end
 	end)
 
-	slot1 = slot0._tf
-	slot0.rtMain = slot1:Find("main")
-	slot1 = slot0.rtMain
-	slot0.rtScroll = slot1:Find("Scroll")
-	slot3 = slot0.rtMain
+	arg_2_0.rtMain = arg_2_0._tf:Find("main")
+	arg_2_0.rtScroll = arg_2_0.rtMain:Find("Scroll")
 
-	onButton(slot0, slot3:Find("left"), function ()
-		if LeanTween.isTweening(go(uv0.rtScroll)) then
+	onButton(arg_2_0, arg_2_0.rtMain:Find("left"), function()
+		if LeanTween.isTweening(go(arg_2_0.rtScroll)) then
 			return
 		end
 
-		if uv0.curPageIndex > 1 then
-			slot0 = {}
+		if arg_2_0.curPageIndex > 1 then
+			local var_6_0 = {}
 
-			table.insert(slot0, function (slot0)
-				uv0:pageAnim(false, slot0)
+			table.insert(var_6_0, function(arg_7_0)
+				arg_2_0:pageAnim(false, arg_7_0)
 			end)
-			table.insert(slot0, function (slot0)
-				uv0:setCurPage(uv0.curPageIndex - 1)
-				slot0()
+			table.insert(var_6_0, function(arg_8_0)
+				arg_2_0:setCurPage(arg_2_0.curPageIndex - 1)
+				arg_8_0()
 			end)
-			table.insert(slot0, function (slot0)
-				uv0:pageAnim(true, slot0)
+			table.insert(var_6_0, function(arg_9_0)
+				arg_2_0:pageAnim(true, arg_9_0)
 			end)
-			seriesAsync(slot0, function ()
+			seriesAsync(var_6_0, function()
+				return
 			end)
 		end
 	end)
-
-	slot3 = slot0.rtMain
-
-	onButton(slot0, slot3:Find("right"), function ()
-		if LeanTween.isTweening(go(uv0.rtScroll)) then
+	onButton(arg_2_0, arg_2_0.rtMain:Find("right"), function()
+		if LeanTween.isTweening(go(arg_2_0.rtScroll)) then
 			return
 		end
 
-		if uv0.curPageIndex < #uv0.pageList then
-			slot0 = {}
+		if arg_2_0.curPageIndex < #arg_2_0.pageList then
+			local var_11_0 = {}
 
-			table.insert(slot0, function (slot0)
-				uv0:pageAnim(false, slot0)
+			table.insert(var_11_0, function(arg_12_0)
+				arg_2_0:pageAnim(false, arg_12_0)
 			end)
-			table.insert(slot0, function (slot0)
-				uv0:setCurPage(uv0.curPageIndex + 1)
-				slot0()
+			table.insert(var_11_0, function(arg_13_0)
+				arg_2_0:setCurPage(arg_2_0.curPageIndex + 1)
+				arg_13_0()
 			end)
-			table.insert(slot0, function (slot0)
-				uv0:pageAnim(true, slot0)
+			table.insert(var_11_0, function(arg_14_0)
+				arg_2_0:pageAnim(true, arg_14_0)
 			end)
-			seriesAsync(slot0, function ()
+			seriesAsync(var_11_0, function()
+				return
 			end)
 		end
 	end)
 end
 
-function slot0.setCurGroup(slot0, slot1)
-	slot2 = {}
+function var_0_0.setCurGroup(arg_16_0, arg_16_1)
+	local var_16_0 = {}
 
-	if slot0.curGroupId then
-		table.insert(slot2, function (slot0)
-			uv0:pageAnim(false, slot0)
+	if arg_16_0.curGroupId then
+		table.insert(var_16_0, function(arg_17_0)
+			arg_16_0:pageAnim(false, arg_17_0)
 		end)
 	end
 
-	slot0.curGroupId = slot1
+	arg_16_0.curGroupId = arg_16_1
 
-	table.insert(slot2, function (slot0)
-		uv0.pageList = {}
-		slot2 = nowWorld():GetProgress()
+	table.insert(var_16_0, function(arg_18_0)
+		local var_18_0 = pg.world_help_data[arg_16_0.curGroupId]
 
-		for slot6, slot7 in ipairs(pg.world_help_data[uv0.curGroupId].stage_help) do
-			if slot7[1] <= slot2 then
-				table.insert(uv0.pageList, {
-					id = slot6,
-					path = slot7[2]
+		arg_16_0.pageList = {}
+
+		local var_18_1 = nowWorld():GetProgress()
+
+		for iter_18_0, iter_18_1 in ipairs(var_18_0.stage_help) do
+			if var_18_1 >= iter_18_1[1] then
+				table.insert(arg_16_0.pageList, {
+					id = iter_18_0,
+					path = iter_18_1[2]
 				})
 			end
 		end
 
-		if #uv0.pageList > 0 then
-			uv0:setCurPage(1)
+		if #arg_16_0.pageList > 0 then
+			arg_16_0:setCurPage(1)
 		end
 
-		slot0()
+		arg_18_0()
 	end)
-	seriesAsync(slot2, function ()
-		uv0:pageAnim(true)
+	seriesAsync(var_16_0, function()
+		arg_16_0:pageAnim(true)
 	end)
 end
 
-function slot0.setCurPage(slot0, slot1)
-	slot0.curPageIndex = slot1
-	slot3 = slot0.rtMain
+function var_0_0.setCurPage(arg_20_0, arg_20_1)
+	arg_20_0.curPageIndex = arg_20_1
 
-	setText(slot3:Find("page/Text"), slot0.curPageIndex .. "/" .. #slot0.pageList)
+	setText(arg_20_0.rtMain:Find("page/Text"), arg_20_0.curPageIndex .. "/" .. #arg_20_0.pageList)
 
-	slot2 = slot0.rtScroll
-	slot2 = slot2:Find("Card")
+	local var_20_0 = arg_20_0.rtScroll:Find("Card")
 
-	setImageAlpha(slot2:Find("Image"), 0)
-	GetSpriteFromAtlasAsync(slot0.pageList[slot1].path, "", function (slot0)
-		if uv0.curPageIndex == uv1 then
-			setImageSprite(uv2:Find("Image"), slot0)
-			setImageAlpha(uv2:Find("Image"), 1)
+	setImageAlpha(var_20_0:Find("Image"), 0)
+	GetSpriteFromAtlasAsync(arg_20_0.pageList[arg_20_1].path, "", function(arg_21_0)
+		if arg_20_0.curPageIndex == arg_20_1 then
+			setImageSprite(var_20_0:Find("Image"), arg_21_0)
+			setImageAlpha(var_20_0:Find("Image"), 1)
 		end
 	end)
 end
 
-function slot0.getPageIndex(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.pageList) do
-		if slot6.id == slot1 then
-			return slot5
+function var_0_0.getPageIndex(arg_22_0, arg_22_1)
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.pageList) do
+		if iter_22_1.id == arg_22_1 then
+			return iter_22_0
 		end
 	end
 
 	return 1
 end
 
-function slot0.pageAnim(slot0, slot1, slot2)
-	LeanTween.cancel(go(slot0.rtScroll))
+function var_0_0.pageAnim(arg_23_0, arg_23_1, arg_23_2)
+	LeanTween.cancel(go(arg_23_0.rtScroll))
 
-	slot3 = GetOrAddComponent(slot0.rtScroll, "CanvasGroup")
-	slot3.alpha = slot1 and 0 or 1
+	local var_23_0 = GetOrAddComponent(arg_23_0.rtScroll, "CanvasGroup")
 
-	LeanTween.alphaCanvas(slot3, slot1 and 1 or 0, 0.3):setOnComplete(System.Action(function ()
-		return existCall(uv0)
+	var_23_0.alpha = arg_23_1 and 0 or 1
+
+	LeanTween.alphaCanvas(var_23_0, arg_23_1 and 1 or 0, 0.3):setOnComplete(System.Action(function()
+		return existCall(arg_23_2)
 	end))
 end
 
-function slot0.toggleAnim(slot0, slot1, slot2)
-	LeanTween.cancel(slot1.gameObject)
+function var_0_0.toggleAnim(arg_25_0, arg_25_1, arg_25_2)
+	LeanTween.cancel(arg_25_1.gameObject)
 
-	slot3 = GetComponent(slot1, typeof(LayoutElement))
+	local var_25_0 = GetComponent(arg_25_1, typeof(LayoutElement))
 
-	if slot2 then
-		slot4 = LeanTween.value(slot1.gameObject, slot3.preferredWidth, 238, 0.15)
-		slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
-			uv0.preferredWidth = slot0
-		end))
-
-		slot4:setOnComplete(System.Action(function ()
-			setActive(uv0:Find("selected"), uv1)
+	if arg_25_2 then
+		LeanTween.value(arg_25_1.gameObject, var_25_0.preferredWidth, 238, 0.15):setOnUpdate(System.Action_float(function(arg_26_0)
+			var_25_0.preferredWidth = arg_26_0
+		end)):setOnComplete(System.Action(function()
+			setActive(arg_25_1:Find("selected"), arg_25_2)
 		end))
 	else
-		setActive(slot1:Find("selected"), slot2)
-
-		slot4 = LeanTween.value(slot1.gameObject, slot3.preferredWidth, 176, 0.15)
-
-		slot4:setOnUpdate(System.Action_float(function (slot0)
-			uv0.preferredWidth = slot0
+		setActive(arg_25_1:Find("selected"), arg_25_2)
+		LeanTween.value(arg_25_1.gameObject, var_25_0.preferredWidth, 176, 0.15):setOnUpdate(System.Action_float(function(arg_28_0)
+			var_25_0.preferredWidth = arg_28_0
 		end))
 	end
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+function var_0_0.didEnter(arg_29_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_29_0._tf)
 
-	slot1 = nil
-	slot0.titles = {}
-	slot2 = nowWorld():GetProgress()
+	local var_29_0
 
-	for slot6, slot7 in ipairs(pg.world_help_data.all) do
-		if pg.world_help_data[slot7].stage <= slot2 then
-			table.insert(slot0.titles, slot7)
+	arg_29_0.titles = {}
 
-			if slot0.contextData.titleId == slot7 then
-				slot1 = #slot0.titles
+	local var_29_1 = nowWorld():GetProgress()
+
+	for iter_29_0, iter_29_1 in ipairs(pg.world_help_data.all) do
+		if var_29_1 >= pg.world_help_data[iter_29_1].stage then
+			table.insert(arg_29_0.titles, iter_29_1)
+
+			if arg_29_0.contextData.titleId == iter_29_1 then
+				var_29_0 = #arg_29_0.titles
 			end
 		end
 	end
 
-	slot0.groupList:align(#slot0.titles)
-	setActive(slot0.rtScroll, #slot0.titles > 0)
+	arg_29_0.groupList:align(#arg_29_0.titles)
+	setActive(arg_29_0.rtScroll, #arg_29_0.titles > 0)
 
-	if #slot0.titles > 0 then
-		if slot1 then
-			triggerToggle(slot0.groupList.container:GetChild(slot1 - 1), true)
-			slot0:setCurPage(slot0:getPageIndex(slot0.contextData.pageId))
+	if #arg_29_0.titles > 0 then
+		if var_29_0 then
+			triggerToggle(arg_29_0.groupList.container:GetChild(var_29_0 - 1), true)
+			arg_29_0:setCurPage(arg_29_0:getPageIndex(arg_29_0.contextData.pageId))
 		else
-			triggerToggle(slot0.groupList.container:GetChild(0), true)
+			triggerToggle(arg_29_0.groupList.container:GetChild(0), true)
 		end
 	end
 end
 
-function slot0.willExit(slot0)
-	LeanTween.cancel(go(slot0.rtScroll))
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_30_0)
+	LeanTween.cancel(go(arg_30_0.rtScroll))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_30_0._tf)
 end
 
-return slot0
+return var_0_0

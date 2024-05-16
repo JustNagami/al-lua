@@ -1,4 +1,42 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1071
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 1070,
+				shipType = 4,
+				target = "TargetPlayerByType"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 1070,
+				shipType = 5,
+				target = "TargetPlayerByType"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 1070,
+				shipType = 13,
+				target = "TargetPlayerByType"
+			}
+		}
+	},
 	{
 		desc = "在队伍中(存活)时增加战巡、战列、重炮攻击造成的伤害5.0%，同技能效果不叠加",
 		addition = {
@@ -69,43 +107,5 @@ return {
 	stack = 1,
 	id = 1071,
 	icon = 1070,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1071
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 1070,
-				shipType = 4,
-				target = "TargetPlayerByType"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 1070,
-				shipType = 5,
-				target = "TargetPlayerByType"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 1070,
-				shipType = 13,
-				target = "TargetPlayerByType"
-			}
-		}
-	}
+	last_effect = ""
 }

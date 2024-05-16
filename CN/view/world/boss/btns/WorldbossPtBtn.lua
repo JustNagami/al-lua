@@ -1,35 +1,41 @@
-slot0 = class("WorldbossPtBtn")
+﻿local var_0_0 = class("WorldbossPtBtn")
 
-function slot0.Ctor(slot0, slot1)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.ptTF = slot1
-	slot0.pt = slot1:Find("Text"):GetComponent(typeof(Text))
-	slot0.ptRecoveTF = slot1:Find("time")
-	slot0.ptRecove = slot1:Find("time/Text"):GetComponent(typeof(Text))
+	arg_1_0.ptTF = arg_1_1
+	arg_1_0.pt = arg_1_1:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.ptRecoveTF = arg_1_1:Find("time")
+	arg_1_0.ptRecove = arg_1_1:Find("time/Text"):GetComponent(typeof(Text))
 
-	slot0:Init()
+	arg_1_0:Init()
 end
 
-function slot0.Init(slot0)
-	slot0.ptRecoveTFFlag = false
+function var_0_0.Init(arg_2_0)
+	arg_2_0.ptRecoveTFFlag = false
 
-	onButton(slot0, slot0.ptTF, function ()
-		uv0.ptRecoveTFFlag = not uv0.ptRecoveTFFlag
+	onButton(arg_2_0, arg_2_0.ptTF, function()
+		arg_2_0.ptRecoveTFFlag = not arg_2_0.ptRecoveTFFlag
 
-		setActive(uv0.ptRecoveTF, uv0.ptRecoveTFFlag)
+		setActive(arg_2_0.ptRecoveTF, arg_2_0.ptRecoveTFFlag)
 	end, SFX_PANEL)
-	setActive(slot0.ptRecoveTF, slot0.ptRecoveTFFlag)
-	slot0:Update()
+	setActive(arg_2_0.ptRecoveTF, arg_2_0.ptRecoveTFFlag)
+	arg_2_0:Update()
 end
 
-function slot0.Update(slot0)
-	slot0.pt.text = (nowWorld():GetBossProxy().pt or 0) .. "/" .. slot1:GetMaxPt()
-	slot0.ptRecove.text = i18n("world_boss_pt_recove_desc", pg.gameset.joint_boss_ap_recove_cnt_pre_day.key_value)
+function var_0_0.Update(arg_4_0)
+	local var_4_0 = nowWorld():GetBossProxy()
+	local var_4_1 = var_4_0.pt or 0
+
+	arg_4_0.pt.text = var_4_1 .. "/" .. var_4_0:GetMaxPt()
+
+	local var_4_2 = pg.gameset.joint_boss_ap_recove_cnt_pre_day.key_value
+
+	arg_4_0.ptRecove.text = i18n("world_boss_pt_recove_desc", var_4_2)
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_5_0)
+	pg.DelegateInfo.Dispose(arg_5_0)
 end
 
-return slot0
+return var_0_0

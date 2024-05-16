@@ -1,56 +1,60 @@
-slot0 = class("CastleMainMediator", import("..base.ContextMediator"))
-slot0.CASTLE_ACT_OP = "castle act op"
-slot0.ADD_ITEM = "add item"
-slot0.UPDATE_ACTIVITY = "update activity"
-slot0.CASTLE_FIRST_STORY_OP_DONE = "castle first story op done"
-slot0.ON_TASK_SUBMIT = "on task submit"
-slot0.UPDATE_GUIDE = "CastleMainMediator.UPDATE_GUIDE"
+﻿local var_0_0 = class("CastleMainMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.CASTLE_ACT_OP, function (slot0, slot1)
-		uv0:sendNotification(GAME.CASTLE_ACT_OP, slot1)
+var_0_0.CASTLE_ACT_OP = "castle act op"
+var_0_0.ADD_ITEM = "add item"
+var_0_0.UPDATE_ACTIVITY = "update activity"
+var_0_0.CASTLE_FIRST_STORY_OP_DONE = "castle first story op done"
+var_0_0.ON_TASK_SUBMIT = "on task submit"
+var_0_0.UPDATE_GUIDE = "CastleMainMediator.UPDATE_GUIDE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.CASTLE_ACT_OP, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.CASTLE_ACT_OP, arg_2_1)
 	end)
-	slot0:bind(uv0.ON_TASK_SUBMIT, function (slot0, slot1)
-		uv0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-			resultList = slot1
+	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+			resultList = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.ADD_ITEM, function (slot0, slot1)
+	arg_1_0:bind(var_0_0.ADD_ITEM, function(arg_4_0, arg_4_1)
+		return
 	end)
-	slot0:bind(uv0.UPDATE_ACTIVITY, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, {
+	arg_1_0:bind(var_0_0.UPDATE_ACTIVITY, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
-			activity_id = slot1.id
+			activity_id = arg_5_1.id
 		})
 	end)
-	slot0:bind(uv0.UPDATE_GUIDE, function (slot0, slot1)
-		uv0:sendNotification(GAME.STORY_UPDATE, {
-			storyId = slot1
+	arg_1_0:bind(var_0_0.UPDATE_GUIDE, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.STORY_UPDATE, {
+			storyId = arg_6_1
 		})
 	end)
 end
 
-function slot0.initNotificationHandleDic(slot0)
-	slot0.handleDic = {
-		[GAME.CASTLE_STORY_OP_DONE] = function (slot0, slot1)
-			slot0.viewComponent:StoryActEnd(slot1:getBody().number[1])
-		end,
-		[GAME.CASTLE_DICE_OP_DONE] = function (slot0, slot1)
-			slot2 = slot1:getBody()
+function var_0_0.initNotificationHandleDic(arg_7_0)
+	arg_7_0.handleDic = {
+		[GAME.CASTLE_STORY_OP_DONE] = function(arg_8_0, arg_8_1)
+			local var_8_0 = arg_8_1:getBody()
 
-			slot0.viewComponent:RollDice(slot2.number[1], slot2.number[2])
+			arg_8_0.viewComponent:StoryActEnd(var_8_0.number[1])
 		end,
-		[GAME.CASTLE_FIRST_STORY_OP_DONE] = function (slot0, slot1)
-			slot0.viewComponent:FirstStory()
-		end,
-		[GAME.SUBMIT_TASK_DONE] = function (slot0, slot1)
-			slot3 = slot0.viewComponent
+		[GAME.CASTLE_DICE_OP_DONE] = function(arg_9_0, arg_9_1)
+			local var_9_0 = arg_9_1:getBody()
 
-			slot3:emit(BaseUI.ON_ACHIEVE, slot1:getBody(), function ()
-				uv0.viewComponent:UpdateFlush()
+			arg_9_0.viewComponent:RollDice(var_9_0.number[1], var_9_0.number[2])
+		end,
+		[GAME.CASTLE_FIRST_STORY_OP_DONE] = function(arg_10_0, arg_10_1)
+			arg_10_0.viewComponent:FirstStory()
+		end,
+		[GAME.SUBMIT_TASK_DONE] = function(arg_11_0, arg_11_1)
+			local var_11_0 = arg_11_1:getBody()
+
+			arg_11_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_11_0, function()
+				arg_11_0.viewComponent:UpdateFlush()
 			end)
 		end
 	}
 end
 
-return slot0
+return var_0_0

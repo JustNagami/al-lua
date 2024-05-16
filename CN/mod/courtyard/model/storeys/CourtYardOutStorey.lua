@@ -1,7 +1,7 @@
-slot0 = class("CourtYardOutStorey", import(".CourtYardStorey"))
+﻿local var_0_0 = class("CourtYardOutStorey", import(".CourtYardStorey"))
 
-function slot0.CanAddFurniture(slot0, slot1)
-	return slot1.config.belong == 1
+function var_0_0.CanAddFurniture(arg_1_0, arg_1_1)
+	return arg_1_1.config.belong == 1
 end
 
-return slot0
+return var_0_0

@@ -1,150 +1,149 @@
-slot0 = class("AssignedItemPanel")
+﻿local var_0_0 = class("AssignedItemPanel")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0._go = slot1
-	slot0._tf = tf(slot1)
-	slot0.isInited = false
-	slot0.selectedVO = nil
-	slot0.count = 1
-	slot0.view = slot2
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0.isInited = false
+	arg_1_0.selectedVO = nil
+	arg_1_0.count = 1
+	arg_1_0.view = arg_1_2
 end
 
-function slot0.findTF(slot0, slot1)
-	return findTF(slot0._tf, slot1)
+function var_0_0.findTF(arg_2_0, arg_2_1)
+	return findTF(arg_2_0._tf, arg_2_1)
 end
 
-function slot0.show(slot0)
-	setActive(slot0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.show(arg_3_0)
+	setActive(arg_3_0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 end
 
-function slot0.hide(slot0)
-	setActive(slot0._tf, false)
+function var_0_0.hide(arg_4_0)
+	setActive(arg_4_0._tf, false)
 
-	slot0.selectedVO = nil
-	slot0.itemVO = nil
-	slot0.count = 1
+	arg_4_0.selectedVO = nil
+	arg_4_0.itemVO = nil
+	arg_4_0.count = 1
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.view._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf, arg_4_0.view._tf)
 
-	if slot0.selectedItem then
-		triggerToggle(slot0.selectedItem, false)
+	if arg_4_0.selectedItem then
+		triggerToggle(arg_4_0.selectedItem, false)
 	end
 
-	slot0.selectedItem = nil
+	arg_4_0.selectedItem = nil
 end
 
-function slot0.init(slot0)
-	slot0.isInited = true
-	slot0.ulist = UIItemList.New(slot0:findTF("got/bottom/scroll/list"), slot0:findTF("got/bottom/scroll/list/tpl"))
-	slot0.confirmBtn = slot0:findTF("calc/confirm")
-	slot0.rightArr = slot0:findTF("calc/value_bg/add")
-	slot0.leftArr = slot0:findTF("calc/value_bg/mius")
-	slot0.maxBtn = slot0:findTF("calc/max")
-	slot0.valueText = slot0:findTF("calc/value_bg/Text")
-	slot0.itemTF = slot0:findTF("item/bottom/item")
-	slot0.nameTF = slot0:findTF("item/bottom/name_bg/name")
-	slot0.descTF = slot0:findTF("item/bottom/desc")
+function var_0_0.init(arg_5_0)
+	arg_5_0.isInited = true
+	arg_5_0.ulist = UIItemList.New(arg_5_0:findTF("got/bottom/scroll/list"), arg_5_0:findTF("got/bottom/scroll/list/tpl"))
+	arg_5_0.confirmBtn = arg_5_0:findTF("calc/confirm")
+	arg_5_0.rightArr = arg_5_0:findTF("calc/value_bg/add")
+	arg_5_0.leftArr = arg_5_0:findTF("calc/value_bg/mius")
+	arg_5_0.maxBtn = arg_5_0:findTF("calc/max")
+	arg_5_0.valueText = arg_5_0:findTF("calc/value_bg/Text")
+	arg_5_0.itemTF = arg_5_0:findTF("item/bottom/item")
+	arg_5_0.nameTF = arg_5_0:findTF("item/bottom/name_bg/name")
+	arg_5_0.descTF = arg_5_0:findTF("item/bottom/desc")
 
-	onButton(slot0, slot0._tf, function ()
-		uv0:hide()
+	onButton(arg_5_0, arg_5_0._tf, function()
+		arg_5_0:hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.rightArr, function ()
-		if not uv0.itemVO then
+	onButton(arg_5_0, arg_5_0.rightArr, function()
+		if not arg_5_0.itemVO then
 			return
 		end
 
-		uv0.count = math.min(uv0.count + 1, uv0.itemVO.count)
+		arg_5_0.count = math.min(arg_5_0.count + 1, arg_5_0.itemVO.count)
 
-		uv0:updateValue()
+		arg_5_0:updateValue()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.leftArr, function ()
-		if not uv0.itemVO then
+	onButton(arg_5_0, arg_5_0.leftArr, function()
+		if not arg_5_0.itemVO then
 			return
 		end
 
-		uv0.count = math.max(uv0.count - 1, 1)
+		arg_5_0.count = math.max(arg_5_0.count - 1, 1)
 
-		uv0:updateValue()
+		arg_5_0:updateValue()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.maxBtn, function ()
-		if not uv0.itemVO then
+	onButton(arg_5_0, arg_5_0.maxBtn, function()
+		if not arg_5_0.itemVO then
 			return
 		end
 
-		uv0.count = uv0.itemVO.count
+		arg_5_0.count = arg_5_0.itemVO.count
 
-		uv0:updateValue()
+		arg_5_0:updateValue()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if not uv0.selectedVO or not uv0.itemVO or uv0.count <= 0 then
+	onButton(arg_5_0, arg_5_0.confirmBtn, function()
+		if not arg_5_0.selectedVO or not arg_5_0.itemVO or arg_5_0.count <= 0 then
 			return
 		end
 
-		uv0.view:emit(EquipmentMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, uv0.selectedVO)
-		uv0:hide()
+		arg_5_0.view:emit(EquipmentMediator.ON_USE_ITEM, arg_5_0.itemVO.id, arg_5_0.count, arg_5_0.selectedVO)
+		arg_5_0:hide()
 	end, SFX_PANEL)
 end
 
-function slot0.updateValue(slot0)
-	setText(slot0.valueText, slot0.count)
-
-	slot1 = slot0.ulist
-
-	slot1:each(function (slot0, slot1)
-		setText(slot1:Find("item/bg/icon_bg/count"), uv0.count)
+function var_0_0.updateValue(arg_11_0)
+	setText(arg_11_0.valueText, arg_11_0.count)
+	arg_11_0.ulist:each(function(arg_12_0, arg_12_1)
+		setText(arg_12_1:Find("item/bg/icon_bg/count"), arg_11_0.count)
 	end)
 end
 
-function slot0.update(slot0, slot1)
-	slot0.itemVO = slot1
+function var_0_0.update(arg_13_0, arg_13_1)
+	arg_13_0.itemVO = arg_13_1
 
-	if not slot0.isInited then
-		slot0:init()
+	if not arg_13_0.isInited then
+		arg_13_0:init()
 	end
 
-	slot0.selectedItem = nil
+	local var_13_0 = arg_13_1:getConfig("display_icon")
 
-	slot0.ulist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
-			slot4 = {
-				type = slot3[1],
-				id = slot3[2],
-				count = slot3[3]
+	arg_13_0.selectedItem = nil
+
+	arg_13_0.ulist:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = var_13_0[arg_14_1 + 1]
+			local var_14_1 = {
+				type = var_14_0[1],
+				id = var_14_0[2],
+				count = var_14_0[3]
 			}
 
-			updateDrop(slot2:Find("item/bg"), slot4)
+			updateDrop(arg_14_2:Find("item/bg"), var_14_1)
 
-			slot5 = slot2:Find("item/bg/icon_bg/count")
+			local var_14_2 = arg_14_2:Find("item/bg/icon_bg/count")
 
-			onToggle(uv1, slot2, function (slot0)
-				if slot0 then
-					uv0.selectedVO = uv1:getConfig("usage_arg")[uv2 + 1]
+			onToggle(arg_13_0, arg_14_2, function(arg_15_0)
+				if arg_15_0 then
+					arg_13_0.selectedVO = arg_13_1:getConfig("usage_arg")[arg_14_1 + 1]
 
-					setText(uv3, uv0.count * uv4[3])
+					setText(var_14_2, arg_13_0.count * var_14_0[3])
 
-					uv0.selectedItem = uv5
+					arg_13_0.selectedItem = arg_14_2
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), slot4:getConfig("name"))
+			setScrollText(arg_14_2:Find("name_bg/Text"), var_14_1:getConfig("name"))
 		end
 	end)
-	slot0.ulist:align(#slot1:getConfig("display_icon"))
-	slot0:updateValue()
-	updateDrop(slot0.itemTF:Find("bg"), {
+	arg_13_0.ulist:align(#var_13_0)
+	arg_13_0:updateValue()
+	updateDrop(arg_13_0.itemTF:Find("bg"), {
 		type = DROP_TYPE_ITEM,
-		id = slot1.id,
-		count = slot1.count
+		id = arg_13_1.id,
+		count = arg_13_1.count
 	})
-	setText(slot0.nameTF, slot1:getConfig("name"))
-	setText(slot0.descTF, slot1:getConfig("display"))
+	setText(arg_13_0.nameTF, arg_13_1:getConfig("name"))
+	setText(arg_13_0.descTF, arg_13_1:getConfig("display"))
 end
 
-function slot0.dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.dispose(arg_16_0)
+	pg.DelegateInfo.Dispose(arg_16_0)
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,20 @@
-slot0 = class("NewYearShrineBuffView", import(".ShrineBuffView"))
+﻿local var_0_0 = class("NewYearShrineBuffView", import(".ShrineBuffView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewYearShrineBuff"
 end
 
-function slot0.initUI(slot0)
-	uv0.super.initUI(slot0)
+function var_0_0.initUI(arg_2_0)
+	var_0_0.super.initUI(arg_2_0)
 
-	slot0.dft = GetComponent(slot0._tf, "DftAniEvent")
-	slot1 = slot0.dft
+	arg_2_0.dft = GetComponent(arg_2_0._tf, "DftAniEvent")
 
-	slot1:SetStartEvent(function ()
-		setButtonEnabled(uv0.backBtn, false)
+	arg_2_0.dft:SetStartEvent(function()
+		setButtonEnabled(arg_2_0.backBtn, false)
 	end)
-
-	slot1 = slot0.dft
-
-	slot1:SetEndEvent(function ()
-		setButtonEnabled(uv0.backBtn, true)
+	arg_2_0.dft:SetEndEvent(function()
+		setButtonEnabled(arg_2_0.backBtn, true)
 	end)
 end
 
-return slot0
+return var_0_0

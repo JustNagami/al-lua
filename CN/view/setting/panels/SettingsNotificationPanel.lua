@@ -1,80 +1,79 @@
-slot0 = class("SettingsNotificationPanel", import(".SettingsBasePanel"))
+﻿local var_0_0 = class("SettingsNotificationPanel", import(".SettingsBasePanel"))
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsNotifications"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("Settings_title_Notification")
 end
 
-function slot0.GetTitleEn(slot0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / ENABLE NOTIFICATIONS"
 end
 
-function slot0.OnInit(slot0)
-	slot2 = slot0._tf
-	slot3 = slot0._tf
-	slot0.uilist = UIItemList.New(slot2:Find("options"), slot3:Find("options/notify_tpl"))
-	slot1 = slot0.uilist
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.uilist = UIItemList.New(arg_4_0._tf:Find("options"), arg_4_0._tf:Find("options/notify_tpl"))
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateItem(slot1 + 1, slot2)
+	arg_4_0.uilist:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_4_0:UpdateItem(arg_5_1 + 1, arg_5_2)
 		end
 	end)
 end
 
-function slot0.UpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.list[slot1]
+function var_0_0.UpdateItem(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = arg_6_0.list[arg_6_1]
 
-	slot2:Find("mask/Text"):GetComponent("ScrollText"):SetText(slot3.title)
-	onButton(slot0, slot2:Find("mask/Text"), function ()
-		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, uv0)
+	arg_6_2:Find("mask/Text"):GetComponent("ScrollText"):SetText(var_6_0.title)
+	onButton(arg_6_0, arg_6_2:Find("mask/Text"), function()
+		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, var_6_0)
 	end, SFX_PANEL)
-	removeOnToggle(slot2:Find("on"))
+	removeOnToggle(arg_6_2:Find("on"))
 
-	if slot0:GetDefaultValue(slot3) then
-		triggerToggle(slot2:Find("on"), true)
+	if arg_6_0:GetDefaultValue(var_6_0) then
+		triggerToggle(arg_6_2:Find("on"), true)
 	else
-		triggerToggle(slot2:Find("off"), true)
+		triggerToggle(arg_6_2:Find("off"), true)
 	end
 
-	onToggle(slot0, slot2:Find("on"), function (slot0)
-		uv0:OnItemSwitch(uv1, slot0)
+	onToggle(arg_6_0, arg_6_2:Find("on"), function(arg_8_0)
+		arg_6_0:OnItemSwitch(var_6_0, arg_8_0)
 	end, SFX_UI_TAG, SFX_UI_CANCEL)
-	slot0:OnUpdateItem(slot3)
-	slot0:OnUpdateItemWithTr(slot3, slot2)
+	arg_6_0:OnUpdateItem(var_6_0)
+	arg_6_0:OnUpdateItemWithTr(var_6_0, arg_6_2)
 end
 
-function slot0.OnUpdateItem(slot0, slot1)
+function var_0_0.OnUpdateItem(arg_9_0, arg_9_1)
+	return
 end
 
-function slot0.OnUpdateItemWithTr(slot0, slot1, slot2)
+function var_0_0.OnUpdateItemWithTr(arg_10_0, arg_10_1, arg_10_2)
+	return
 end
 
-function slot0.OnItemSwitch(slot0, slot1, slot2)
-	pg.PushNotificationMgr.GetInstance():setSwitch(slot1.id, slot2)
+function var_0_0.OnItemSwitch(arg_11_0, arg_11_1, arg_11_2)
+	pg.PushNotificationMgr.GetInstance():setSwitch(arg_11_1.id, arg_11_2)
 end
 
-function slot0.GetDefaultValue(slot0, slot1)
-	return pg.PushNotificationMgr.GetInstance():isEnabled(slot1.id)
+function var_0_0.GetDefaultValue(arg_12_0, arg_12_1)
+	return pg.PushNotificationMgr.GetInstance():isEnabled(arg_12_1.id)
 end
 
-function slot0.GetList(slot0)
-	slot1 = {}
+function var_0_0.GetList(arg_13_0)
+	local var_13_0 = {}
 
-	for slot5, slot6 in ipairs(pg.push_data_template.all) do
-		table.insert(slot1, pg.push_data_template[slot6])
+	for iter_13_0, iter_13_1 in ipairs(pg.push_data_template.all) do
+		table.insert(var_13_0, pg.push_data_template[iter_13_1])
 	end
 
-	return slot1
+	return var_13_0
 end
 
-function slot0.OnUpdate(slot0)
-	slot0.list = slot0:GetList()
+function var_0_0.OnUpdate(arg_14_0)
+	arg_14_0.list = arg_14_0:GetList()
 
-	slot0.uilist:align(#slot0.list)
+	arg_14_0.uilist:align(#arg_14_0.list)
 end
 
-return slot0
+return var_0_0

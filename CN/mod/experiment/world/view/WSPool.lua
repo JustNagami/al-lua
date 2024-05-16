@@ -1,50 +1,66 @@
-slot0 = class("WSPool", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSPool", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	tplDic = "table",
 	pooltf = "userdata",
 	pools = "table"
 }
 
-function slot0.Setup(slot0, slot1)
-	slot0.pools = {}
-	slot0.pooltf = GameObject.Find("__Pool__").transform
-	slot0.tplDic = {}
+function var_0_0.Setup(arg_1_0, arg_1_1)
+	arg_1_0.pools = {}
+	arg_1_0.pooltf = GameObject.Find("__Pool__").transform
 
-	for slot6 = 0, GetComponent(slot1, "ItemList").prefabItem.Length - 1 do
-		slot0.tplDic[slot2[slot6].name] = slot2[slot6]
+	local var_1_0 = GetComponent(arg_1_1, "ItemList").prefabItem
+
+	arg_1_0.tplDic = {}
+
+	for iter_1_0 = 0, var_1_0.Length - 1 do
+		arg_1_0.tplDic[var_1_0[iter_1_0].name] = var_1_0[iter_1_0]
 	end
 
-	setActive(slot1, false)
+	setActive(arg_1_1, false)
 end
 
-function slot0.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0.pools) do
-		_.each(slot5, function (slot0)
-			Destroy(slot0)
+function var_0_0.Dispose(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(arg_2_0.pools) do
+		_.each(iter_2_1, function(arg_3_0)
+			Destroy(arg_3_0)
 		end)
 	end
 
-	slot0:Clear()
+	arg_2_0:Clear()
 end
 
-function slot0.Get(slot0, slot1)
-	if not slot0.pools[slot1] then
-		slot2[slot1] = {}
+function var_0_0.Get(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.pools
+	local var_4_1 = var_4_0[arg_4_1]
+
+	if not var_4_1 then
+		var_4_1 = {}
+		var_4_0[arg_4_1] = var_4_1
 	end
 
-	slot4 = nil
-	slot4 = (#slot3 <= 0 or table.remove(slot3, #slot3)) and Instantiate(slot0.tplDic[slot1])
+	local var_4_2
 
-	setActive(slot4, true)
-	tf(slot4):SetParent(slot0.pooltf, false)
+	if #var_4_1 > 0 then
+		var_4_2 = table.remove(var_4_1, #var_4_1)
+	else
+		var_4_2 = Instantiate(arg_4_0.tplDic[arg_4_1])
+	end
 
-	return slot4
+	setActive(var_4_2, true)
+	tf(var_4_2):SetParent(arg_4_0.pooltf, false)
+
+	return var_4_2
 end
 
-function slot0.Return(slot0, slot1, slot2)
-	setActive(slot2, false)
-	slot2.transform:SetParent(slot0.pooltf, false)
-	table.insert(slot0.pools[slot1], slot2)
+function var_0_0.Return(arg_5_0, arg_5_1, arg_5_2)
+	setActive(arg_5_2, false)
+	arg_5_2.transform:SetParent(arg_5_0.pooltf, false)
+
+	local var_5_0 = arg_5_0.pools[arg_5_1]
+
+	table.insert(var_5_0, arg_5_2)
 end
 
-return slot0
+return var_0_0

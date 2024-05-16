@@ -1,221 +1,229 @@
-slot0 = class("Instagram", import("..BaseVO"))
-slot0.TYPE_PLAYER_COMMENT = 1
-slot0.TYPE_NPC_COMMENT = 2
-slot1 = pg.activity_ins_language
+﻿local var_0_0 = class("Instagram", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
+var_0_0.TYPE_PLAYER_COMMENT = 1
+var_0_0.TYPE_NPC_COMMENT = 2
 
-	if slot0:getConfig("is_active") == 1 then
-		slot0:InitByServer(slot1)
+local var_0_1 = pg.activity_ins_language
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+
+	if arg_1_0:getConfig("is_active") == 1 then
+		arg_1_0:InitByServer(arg_1_1)
 	else
-		slot0:InitByConfig(slot1)
+		arg_1_0:InitByConfig(arg_1_1)
 	end
 
-	slot0.good = slot1.good
-	slot0.isLike = slot1.is_good == 1
-	slot0.isRead = slot1.is_read == 1
+	arg_1_0.good = arg_1_1.good
+	arg_1_0.isLike = arg_1_1.is_good == 1
+	arg_1_0.isRead = arg_1_1.is_read == 1
 end
 
-function slot0.InitByServer(slot0, slot1)
-	slot0.text = slot1.text
-	slot0.picture = slot1.picture
-	slot0.time = slot1.time
-	slot0.optionDiscuss = {}
-	slot0.discussList = {}
-	slot0.allReply = {}
+function var_0_0.InitByServer(arg_2_0, arg_2_1)
+	arg_2_0.text = arg_2_1.text
+	arg_2_0.picture = arg_2_1.picture
+	arg_2_0.time = arg_2_1.time
+	arg_2_0.optionDiscuss = {}
+	arg_2_0.discussList = {}
+	arg_2_0.allReply = {}
 
-	for slot5, slot6 in ipairs(slot1.npc_reply) do
-		slot7 = {}
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.npc_reply) do
+		local var_2_0 = {}
 
-		for slot11, slot12 in ipairs(slot6.npc_reply) do
-			table.insert(slot7, slot12)
+		for iter_2_2, iter_2_3 in ipairs(iter_2_1.npc_reply) do
+			table.insert(var_2_0, iter_2_3)
 		end
 
-		slot0.allReply[slot6.id] = {
-			id = slot6.id,
-			time = slot6.time,
-			text = slot6.text,
-			npc_reply = slot7
+		arg_2_0.allReply[iter_2_1.id] = {
+			id = iter_2_1.id,
+			time = iter_2_1.time,
+			text = iter_2_1.text,
+			npc_reply = var_2_0
 		}
 	end
 
-	for slot5, slot6 in ipairs(slot1.player_discuss) do
-		if slot6.text == "" then
-			for slot10, slot11 in ipairs(slot6.text_list) do
-				table.insert(slot0.optionDiscuss, 1, {
-					id = slot6.id,
-					index = slot10,
-					text = slot11
+	for iter_2_4, iter_2_5 in ipairs(arg_2_1.player_discuss) do
+		if iter_2_5.text == "" then
+			for iter_2_6, iter_2_7 in ipairs(iter_2_5.text_list) do
+				table.insert(arg_2_0.optionDiscuss, 1, {
+					id = iter_2_5.id,
+					index = iter_2_6,
+					text = iter_2_7
 				})
 			end
 		else
-			table.insert(slot0.discussList, InstagramPlayerComment.New(slot6, slot0, 1))
+			table.insert(arg_2_0.discussList, InstagramPlayerComment.New(iter_2_5, arg_2_0, 1))
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot1.npc_discuss) do
-		table.insert(slot0.discussList, InstagramNpcComment.New(slot6, slot0, 1))
+	for iter_2_8, iter_2_9 in ipairs(arg_2_1.npc_discuss) do
+		table.insert(arg_2_0.discussList, InstagramNpcComment.New(iter_2_9, arg_2_0, 1))
 	end
 end
 
-function slot0.InitByConfig(slot0, slot1)
-	slot2 = slot0:getConfig("message_persist")
+function var_0_0.InitByConfig(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0:getConfig("message_persist")
 
-	assert(uv0[slot2], slot2)
+	assert(var_0_1[var_3_0], var_3_0)
 
-	slot0.text = uv0[slot2].value
-	slot0.picture = slot0:getConfig("picture_persist")
-	slot6 = slot0
-	slot7 = "time_persist"
-	slot0.time = pg.TimeMgr.GetInstance():parseTimeFromConfig(slot0.getConfig(slot6, slot7))
-	slot0.optionDiscuss = {}
-	slot0.discussList = {}
-	slot0.allReply = getProxy(InstagramProxy):GetAllReply()
+	arg_3_0.text = var_0_1[var_3_0].value
+	arg_3_0.picture = arg_3_0:getConfig("picture_persist")
+	arg_3_0.time = pg.TimeMgr.GetInstance():parseTimeFromConfig(arg_3_0:getConfig("time_persist"))
+	arg_3_0.optionDiscuss = {}
+	arg_3_0.discussList = {}
+	arg_3_0.allReply = getProxy(InstagramProxy):GetAllReply()
 
-	for slot6, slot7 in ipairs(slot1.player_discuss) do
-		if slot7.text == "" then
-			for slot11, slot12 in ipairs(slot7.text_list) do
-				table.insert(slot0.optionDiscuss, 1, {
-					id = slot7.id,
-					index = slot11,
-					text = slot12
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1.player_discuss) do
+		if iter_3_1.text == "" then
+			for iter_3_2, iter_3_3 in ipairs(iter_3_1.text_list) do
+				table.insert(arg_3_0.optionDiscuss, 1, {
+					id = iter_3_1.id,
+					index = iter_3_2,
+					text = iter_3_3
 				})
 			end
 		else
-			table.insert(slot0.discussList, InstagramPlayerComment.New(slot7, slot0, 1))
+			table.insert(arg_3_0.discussList, InstagramPlayerComment.New(iter_3_1, arg_3_0, 1))
 		end
 	end
 
-	if type(slot0:getConfig("npc_discuss_persist")) == "table" then
-		for slot7, slot8 in ipairs(slot3) do
-			table.insert(slot0.discussList, InstagramNpcComment.New(slot0.allReply[slot8], slot0, 1))
+	local var_3_1 = arg_3_0:getConfig("npc_discuss_persist")
+
+	if type(var_3_1) == "table" then
+		for iter_3_4, iter_3_5 in ipairs(var_3_1) do
+			local var_3_2 = arg_3_0.allReply[iter_3_5]
+
+			table.insert(arg_3_0.discussList, InstagramNpcComment.New(var_3_2, arg_3_0, 1))
 		end
 	end
 end
 
-function slot0.GetLasterUpdateTime(slot0)
-	slot1 = {}
+function var_0_0.GetLasterUpdateTime(arg_4_0)
+	local var_4_0 = {}
 
-	for slot5, slot6 in pairs(slot0.discussList) do
-		table.insert(slot1, slot6:GetLasterUpdateTime())
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.discussList) do
+		local var_4_1 = iter_4_1:GetLasterUpdateTime()
+
+		table.insert(var_4_0, var_4_1)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		return slot1 < slot0
+	table.sort(var_4_0, function(arg_5_0, arg_5_1)
+		return arg_5_1 < arg_5_0
 	end)
 
-	return slot1[1] or 0
+	return var_4_0[1] or 0
 end
 
-function slot0.AnyCommentUnread(slot0)
-	return _.any(slot0.discussList, function (slot0)
-		return slot0:AnyReplyTimeOut()
+function var_0_0.AnyCommentUnread(arg_6_0)
+	return _.any(arg_6_0.discussList, function(arg_7_0)
+		return arg_7_0:AnyReplyTimeOut()
 	end)
 end
 
-function slot0.GetAllReply(slot0)
-	return slot0.allReply
+function var_0_0.GetAllReply(arg_8_0)
+	return arg_8_0.allReply
 end
 
-function slot0.IsReaded(slot0)
-	return slot0.isRead
+function var_0_0.IsReaded(arg_9_0)
+	return arg_9_0.isRead
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_10_0)
 	return pg.activity_ins_template
 end
 
-function slot0.GetIcon(slot0)
-	return slot0:getConfig("sculpture")
+function var_0_0.GetIcon(arg_11_0)
+	return arg_11_0:getConfig("sculpture")
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_12_0)
+	return arg_12_0:getConfig("name")
 end
 
-function slot0.GetSortIndex(slot0)
-	slot1 = slot0:bindConfigTable()
+function var_0_0.GetSortIndex(arg_13_0)
+	local var_13_0 = arg_13_0:bindConfigTable()
 
-	if slot1[slot1.all[1]].order then
-		return slot0:getConfig("order")
+	if var_13_0[var_13_0.all[1]].order then
+		return arg_13_0:getConfig("order")
 	else
 		return 0
 	end
 end
 
-function slot0.GetImage(slot0)
-	return slot0.picture
+function var_0_0.GetImage(arg_14_0)
+	return arg_14_0.picture
 end
 
-function slot0.GetContent(slot0)
-	return HXSet.hxLan(slot0.text)
+function var_0_0.GetContent(arg_15_0)
+	return HXSet.hxLan(arg_15_0.text)
 end
 
-function slot0.GetLikeCnt(slot0)
-	if slot0.good > 999 then
+function var_0_0.GetLikeCnt(arg_16_0)
+	if arg_16_0.good > 999 then
 		return "999+"
 	else
-		return slot0.good
+		return arg_16_0.good
 	end
 end
 
-function slot0.IsLiking(slot0)
-	return slot0.isLike
+function var_0_0.IsLiking(arg_17_0)
+	return arg_17_0.isLike
 end
 
-function slot0.UpdateIsLike(slot0)
-	slot0.isLike = 1
+function var_0_0.UpdateIsLike(arg_18_0)
+	arg_18_0.isLike = 1
 end
 
-function slot0.GetPushTime(slot0)
-	return InstagramTimeStamp(slot0.time)
+function var_0_0.GetPushTime(arg_19_0)
+	return InstagramTimeStamp(arg_19_0.time)
 end
 
-function slot0.GetCanDisplayComments(slot0)
-	slot1 = {}
-	slot2 = 0
+function var_0_0.GetCanDisplayComments(arg_20_0)
+	local var_20_0 = {}
+	local var_20_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.discussList) do
-		if not slot7:ShouldWaitForShow() then
-			table.insert(slot1, slot7)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.discussList) do
+		if not iter_20_1:ShouldWaitForShow() then
+			table.insert(var_20_0, iter_20_1)
 
-			slot2 = slot2 + 1
+			var_20_1 = var_20_1 + 1
 		end
 	end
 
-	return slot1, slot2
+	return var_20_0, var_20_1
 end
 
-function slot0.GetFastestRefreshTime(slot0)
-	slot1 = {}
+function var_0_0.GetFastestRefreshTime(arg_21_0)
+	local var_21_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.discussList) do
-		if slot6:GetFasterRefreshTime() then
-			table.insert(slot1, slot7)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.discussList) do
+		local var_21_1 = iter_21_1:GetFasterRefreshTime()
+
+		if var_21_1 then
+			table.insert(var_21_0, var_21_1)
 		end
 	end
 
-	if #slot1 > 0 then
-		table.sort(slot1, function (slot0, slot1)
-			return slot0 < slot1
+	if #var_21_0 > 0 then
+		table.sort(var_21_0, function(arg_22_0, arg_22_1)
+			return arg_22_0 < arg_22_1
 		end)
 
-		return slot1[1]
+		return var_21_0[1]
 	end
 end
 
-function slot0.GetOptionComment(slot0)
-	return slot0.optionDiscuss
+function var_0_0.GetOptionComment(arg_23_0)
+	return arg_23_0.optionDiscuss
 end
 
-function slot0.CanOpenComment(slot0)
-	return #slot0.optionDiscuss > 0
+function var_0_0.CanOpenComment(arg_24_0)
+	return #arg_24_0.optionDiscuss > 0
 end
 
-function slot0.ShouldShowTip(slot0)
-	return not slot0:IsReaded() or slot0:AnyCommentUnread()
+function var_0_0.ShouldShowTip(arg_25_0)
+	return not arg_25_0:IsReaded() or arg_25_0:AnyCommentUnread()
 end
 
-return slot0
+return var_0_0

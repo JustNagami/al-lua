@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.equip_data_code = {
 	WAVE = {
 		text = "/轮",

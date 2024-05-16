@@ -1,1 +1,1 @@
-return class("LindongMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("LindongMainPage", import(".TemplatePage.PreviewTemplatePage")))

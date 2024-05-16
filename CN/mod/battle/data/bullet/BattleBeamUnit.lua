@@ -1,124 +1,134 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleVariable
-slot3 = slot0.Battle.BattleConfig
-slot0.Battle.BattleBeamUnit = class("BattleBeamUnit")
-slot0.Battle.BattleBeamUnit.__name = "BattleBeamUnit"
-slot4 = slot0.Battle.BattleBeamUnit
-slot4.BEAM_STATE_READY = "ready"
-slot4.BEAM_STATE_ATTACK = "attack"
-slot4.BEAM_STATE_FINISH = "finish"
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0, slot1, slot2)
-	slot0._bulletID = slot1
-	slot0._beamInfoID = slot2
-	slot0._cldList = {}
-	slot0._beamState = uv0.BEAM_STATE_READY
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleVariable
+local var_0_3 = var_0_0.Battle.BattleConfig
+
+var_0_0.Battle.BattleBeamUnit = class("BattleBeamUnit")
+var_0_0.Battle.BattleBeamUnit.__name = "BattleBeamUnit"
+
+local var_0_4 = var_0_0.Battle.BattleBeamUnit
+
+var_0_4.BEAM_STATE_READY = "ready"
+var_0_4.BEAM_STATE_ATTACK = "attack"
+var_0_4.BEAM_STATE_FINISH = "finish"
+
+function var_0_4.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._bulletID = arg_1_1
+	arg_1_0._beamInfoID = arg_1_2
+	arg_1_0._cldList = {}
+	arg_1_0._beamState = var_0_4.BEAM_STATE_READY
 end
 
-function slot4.IsBeamActive(slot0)
-	return slot0._aoe:GetActiveFlag()
+function var_0_4.IsBeamActive(arg_2_0)
+	return arg_2_0._aoe:GetActiveFlag()
 end
 
-function slot4.ClearBeam(slot0)
-	slot0._beamState = uv0.BEAM_STATE_FINISH
-	slot0._aoe = nil
-	slot0._cldList = {}
-	slot0._nextDamageTime = nil
+function var_0_4.ClearBeam(arg_3_0)
+	arg_3_0._beamState = var_0_4.BEAM_STATE_FINISH
+	arg_3_0._aoe = nil
+	arg_3_0._cldList = {}
+	arg_3_0._nextDamageTime = nil
 end
 
-function slot4.SetAoeData(slot0, slot1)
-	slot0._aoe = slot1
-	slot0._beamTemp = uv0.GetBarrageTmpDataFromID(slot0._beamInfoID)
-	slot0._bulletTemp = uv0.GetBulletTmpDataFromID(slot0._bulletID)
-	slot0._angle = slot0._beamTemp.angle
+function var_0_4.SetAoeData(arg_4_0, arg_4_1)
+	arg_4_0._aoe = arg_4_1
+	arg_4_0._beamTemp = var_0_1.GetBarrageTmpDataFromID(arg_4_0._beamInfoID)
+	arg_4_0._bulletTemp = var_0_1.GetBulletTmpDataFromID(arg_4_0._bulletID)
+	arg_4_0._angle = arg_4_0._beamTemp.angle
 
-	slot0._aoe:SetAngle(slot0._angle + slot0._aimAngle)
+	arg_4_0._aoe:SetAngle(arg_4_0._angle + arg_4_0._aimAngle)
 
-	if slot0._bulletTemp.extra_param.diveFilter then
-		slot0._aoe:SetDiveFilter(slot2)
+	local var_4_0 = arg_4_0._bulletTemp.extra_param.diveFilter
+
+	if var_4_0 then
+		arg_4_0._aoe:SetDiveFilter(var_4_0)
 	end
 end
 
-function slot4.SetAimAngle(slot0, slot1)
-	slot0._aimAngle = slot1 or 0
+function var_0_4.SetAimAngle(arg_5_0, arg_5_1)
+	arg_5_0._aimAngle = arg_5_1 or 0
 end
 
-function slot4.SetAimPosition(slot0, slot1, slot2, slot3)
-	if slot3 == uv0.FOE_CODE then
-		slot0._aimAngle = math.rad2Deg * math.atan2(slot2.z - slot1.z, slot2.x - slot1.x)
-	elseif slot3 == uv0.FRIENDLY_CODE then
-		slot0._aimAngle = math.rad2Deg * math.atan2(slot1.z - slot2.z, slot1.x - slot2.x)
+function var_0_4.SetAimPosition(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	if arg_6_3 == var_0_3.FOE_CODE then
+		arg_6_0._aimAngle = math.rad2Deg * math.atan2(arg_6_2.z - arg_6_1.z, arg_6_2.x - arg_6_1.x)
+	elseif arg_6_3 == var_0_3.FRIENDLY_CODE then
+		arg_6_0._aimAngle = math.rad2Deg * math.atan2(arg_6_1.z - arg_6_2.z, arg_6_1.x - arg_6_2.x)
 	end
 end
 
-function slot4.getAngleRatio(slot0)
-	return uv0.GetSpeedRatio(slot0._aoe:GetTimeRationExemptKey(), slot0._aoe:GetIFF())
+function var_0_4.getAngleRatio(arg_7_0)
+	return var_0_2.GetSpeedRatio(arg_7_0._aoe:GetTimeRationExemptKey(), arg_7_0._aoe:GetIFF())
 end
 
-function slot4.GetAoeData(slot0)
-	return slot0._aoe
+function var_0_4.GetAoeData(arg_8_0)
+	return arg_8_0._aoe
 end
 
-function slot4.UpdateBeamPos(slot0, slot1)
-	slot0._aoe:SetPosition(Vector3(slot1.x + slot0._beamTemp.offset_x, 0, slot1.z + slot0._beamTemp.offset_z))
+function var_0_4.UpdateBeamPos(arg_9_0, arg_9_1)
+	arg_9_0._aoe:SetPosition(Vector3(arg_9_1.x + arg_9_0._beamTemp.offset_x, 0, arg_9_1.z + arg_9_0._beamTemp.offset_z))
 end
 
-function slot4.UpdateBeamAngle(slot0)
-	slot0._angle = slot0._angle + slot0._beamTemp.delta_angle * slot0:getAngleRatio()
+function var_0_4.UpdateBeamAngle(arg_10_0)
+	arg_10_0._angle = arg_10_0._angle + arg_10_0._beamTemp.delta_angle * arg_10_0:getAngleRatio()
 
-	slot0._aoe:SetAngle(slot0._angle + slot0._aimAngle)
+	arg_10_0._aoe:SetAngle(arg_10_0._angle + arg_10_0._aimAngle)
 end
 
-function slot4.AddCldUnit(slot0, slot1)
-	slot0._cldList[slot1:GetUniqueID()] = slot1
+function var_0_4.AddCldUnit(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1:GetUniqueID()
+
+	arg_11_0._cldList[var_11_0] = arg_11_1
 end
 
-function slot4.RemoveCldUnit(slot0, slot1)
-	slot0._cldList[slot1:GetUniqueID()] = nil
+function var_0_4.RemoveCldUnit(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1:GetUniqueID()
+
+	arg_12_0._cldList[var_12_0] = nil
 end
 
-function slot4.ChangeBeamState(slot0, slot1)
-	slot0._beamState = slot1
+function var_0_4.ChangeBeamState(arg_13_0, arg_13_1)
+	arg_13_0._beamState = arg_13_1
 end
 
-function slot4.GetBeamState(slot0)
-	return slot0._beamState
+function var_0_4.GetBeamState(arg_14_0)
+	return arg_14_0._beamState
 end
 
-function slot4.GetCldUnitList(slot0)
-	return slot0._cldList
+function var_0_4.GetCldUnitList(arg_15_0)
+	return arg_15_0._cldList
 end
 
-function slot4.BeginFocus(slot0)
-	slot0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot0._beamTemp.senior_delay
+function var_0_4.BeginFocus(arg_16_0)
+	arg_16_0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_16_0._beamTemp.senior_delay
 end
 
-function slot4.DealDamage(slot0)
-	slot0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot0._beamTemp.delta_delay
+function var_0_4.DealDamage(arg_17_0)
+	arg_17_0._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_17_0._beamTemp.delta_delay
 end
 
-function slot4.CanDealDamage(slot0)
-	return slot0._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_4.CanDealDamage(arg_18_0)
+	return arg_18_0._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function slot4.GetFXID(slot0)
-	return slot0._bulletTemp.hit_fx
+function var_0_4.GetFXID(arg_19_0)
+	return arg_19_0._bulletTemp.hit_fx
 end
 
-function slot4.GetSFXID(slot0)
-	return slot0._bulletTemp.hit_sfx
+function var_0_4.GetSFXID(arg_20_0)
+	return arg_20_0._bulletTemp.hit_sfx
 end
 
-function slot4.GetBulletID(slot0)
-	return slot0._bulletID
+function var_0_4.GetBulletID(arg_21_0)
+	return arg_21_0._bulletID
 end
 
-function slot4.GetBeamInfoID(slot0)
-	return slot0._beamInfoID
+function var_0_4.GetBeamInfoID(arg_22_0)
+	return arg_22_0._beamInfoID
 end
 
-function slot4.GetBeamExtraParam(slot0)
-	return slot0._bulletTemp.extra_param
+function var_0_4.GetBeamExtraParam(arg_23_0)
+	return arg_23_0._bulletTemp.extra_param
 end

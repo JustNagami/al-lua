@@ -1,153 +1,159 @@
-slot0 = class("CourtYardCanPutFurniture", import(".CourtYardFurniture"))
+﻿local var_0_0 = class("CourtYardCanPutFurniture", import(".CourtYardFurniture"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
-	slot0.childs = {}
-	slot0.placeableArea = CourtYardFurniturePlaceableArea.New(slot1, slot0, Vector4(35, 35, 0, 0))
+	arg_1_0.childs = {}
+	arg_1_0.placeableArea = CourtYardFurniturePlaceableArea.New(arg_1_1, arg_1_0, Vector4(35, 35, 0, 0))
 end
 
-function slot0.GetPlaceableArea(slot0)
-	return slot0.placeableArea
+function var_0_0.GetPlaceableArea(arg_2_0)
+	return arg_2_0.placeableArea
 end
 
-function slot0.GetChilds(slot0)
-	return slot0.childs
+function var_0_0.GetChilds(arg_3_0)
+	return arg_3_0.childs
 end
 
-function slot0.AnyNotRotateChilds(slot0)
-	if #slot0.childs > 0 then
-		return _.any(slot0.childs, function (slot0)
-			return isa(slot0, CourtYardFurniture) and slot0:DisableRotation()
+function var_0_0.AnyNotRotateChilds(arg_4_0)
+	if #arg_4_0.childs > 0 then
+		return _.any(arg_4_0.childs, function(arg_5_0)
+			return isa(arg_5_0, CourtYardFurniture) and arg_5_0:DisableRotation()
 		end)
 	end
 
 	return false
 end
 
-function slot0.GetCanputonPosition(slot0)
-	slot1 = slot0:GetPosition()
+function var_0_0.GetCanputonPosition(arg_6_0)
+	local var_6_0 = arg_6_0:GetPosition()
 
-	if slot0:GetDirection() == 1 then
-		return _.map(slot0.config.canputonGrid, function (slot0)
-			return Vector2(slot0[1], slot0[2]) + uv0
+	if arg_6_0:GetDirection() == 1 then
+		return _.map(arg_6_0.config.canputonGrid, function(arg_7_0)
+			return Vector2(arg_7_0[1], arg_7_0[2]) + var_6_0
 		end)
 	else
-		return _.map(slot0.config.canputonGrid, function (slot0)
-			return Vector2(slot0[2], slot0[1]) + uv0
+		return _.map(arg_6_0.config.canputonGrid, function(arg_8_0)
+			return Vector2(arg_8_0[2], arg_8_0[1]) + var_6_0
 		end)
 	end
 end
 
-function slot0.CanPutChildInPosition(slot0, slot1, slot2)
-	return table.contains(slot0:AllowDepthType(), slot1:GetDeathType()) and slot0:GetLevel() < slot1:GetLevel() and _.all(slot1:GetAreaByPosition(slot2), function (slot0)
-		return uv0.placeableArea:LegalPosition(slot0)
+function var_0_0.CanPutChildInPosition(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = arg_9_0:GetLevel() < arg_9_1:GetLevel()
+	local var_9_1 = arg_9_0:AllowDepthType()
+	local var_9_2 = table.contains(var_9_1, arg_9_1:GetDeathType())
+	local var_9_3 = arg_9_1:GetAreaByPosition(arg_9_2)
+
+	return var_9_2 and var_9_0 and _.all(var_9_3, function(arg_10_0)
+		return arg_9_0.placeableArea:LegalPosition(arg_10_0)
 	end)
 end
 
-function slot0.AllowDepthType(slot0)
+function var_0_0.AllowDepthType(arg_11_0)
 	return {
 		CourtYardConst.DEPTH_TYPE_MAT,
 		CourtYardConst.DEPTH_TYPE_FURNITURE
 	}
 end
 
-function slot0.AddChild(slot0, slot1)
-	slot0:SetDirty()
-	slot1:SetParent(slot0)
-	table.insert(slot0.childs, slot1)
-	slot0.placeableArea:AddItem(slot1)
-	slot1:SetPosition(slot1:GetPosition())
+function var_0_0.AddChild(arg_12_0, arg_12_1)
+	arg_12_0:SetDirty()
+	arg_12_1:SetParent(arg_12_0)
+	table.insert(arg_12_0.childs, arg_12_1)
+	arg_12_0.placeableArea:AddItem(arg_12_1)
+	arg_12_1:SetPosition(arg_12_1:GetPosition())
 end
 
-function slot0.RemoveChild(slot0, slot1)
-	slot0:SetDirty()
-	slot1:SetParent(nil)
-	table.removebyvalue(slot0.childs, slot1)
-	slot0.placeableArea:RemoveItem(slot1)
+function var_0_0.RemoveChild(arg_13_0, arg_13_1)
+	arg_13_0:SetDirty()
+	arg_13_1:SetParent(nil)
+	table.removebyvalue(arg_13_0.childs, arg_13_1)
+	arg_13_0.placeableArea:RemoveItem(arg_13_1)
 end
 
-function slot0.AreaWithInfo(slot0, slot1, slot2, slot3, slot4)
-	return slot0.placeableArea:AreaWithInfo(slot1, slot2, slot3, slot4)
+function var_0_0.AreaWithInfo(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
+	return arg_14_0.placeableArea:AreaWithInfo(arg_14_1, arg_14_2, arg_14_3, arg_14_4)
 end
 
-function slot0.SetPosition(slot0, slot1)
-	slot2 = slot0:GetPosition()
+function var_0_0.SetPosition(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_0:GetPosition()
 
-	uv0.super.SetPosition(slot0, slot1)
+	var_0_0.super.SetPosition(arg_15_0, arg_15_1)
 
-	slot3 = {}
+	local var_15_1 = {}
 
-	for slot7 = #slot0.childs, 1, -1 do
-		slot8 = slot0.childs[slot7]
+	for iter_15_0 = #arg_15_0.childs, 1, -1 do
+		local var_15_2 = arg_15_0.childs[iter_15_0]
+		local var_15_3 = var_15_2:GetPosition() - var_15_0
 
-		slot0:RemoveChild(slot8)
-		table.insert(slot3, {
-			slot8,
-			slot1 + slot8:GetPosition() - slot2
+		arg_15_0:RemoveChild(var_15_2)
+		table.insert(var_15_1, {
+			var_15_2,
+			arg_15_1 + var_15_3
 		})
 	end
 
-	for slot7, slot8 in ipairs(slot3) do
-		slot8[1]:SetPosition(slot8[2])
-		slot0:AddChild(slot8[1])
+	for iter_15_1, iter_15_2 in ipairs(var_15_1) do
+		iter_15_2[1]:SetPosition(iter_15_2[2])
+		arg_15_0:AddChild(iter_15_2[1])
 	end
 end
 
-function slot0.Rotate(slot0)
-	slot1 = slot0:GetPosition()
+function var_0_0.Rotate(arg_16_0)
+	local var_16_0 = arg_16_0:GetPosition()
 
-	uv0.super.Rotate(slot0)
+	var_0_0.super.Rotate(arg_16_0)
 
-	slot2 = slot0:GetPosition()
-	slot3 = {}
+	local var_16_1 = arg_16_0:GetPosition()
+	local var_16_2 = {}
 
-	for slot7 = #slot0.childs, 1, -1 do
-		slot8 = slot0.childs[slot7]
-		slot9 = slot8:GetPosition() - slot1
+	for iter_16_0 = #arg_16_0.childs, 1, -1 do
+		local var_16_3 = arg_16_0.childs[iter_16_0]
+		local var_16_4 = var_16_3:GetPosition() - var_16_0
 
-		slot0:RemoveChild(slot8)
-		table.insert(slot3, {
-			slot8,
-			slot2 + Vector2(slot9.y, slot9.x)
+		arg_16_0:RemoveChild(var_16_3)
+		table.insert(var_16_2, {
+			var_16_3,
+			var_16_1 + Vector2(var_16_4.y, var_16_4.x)
 		})
 	end
 
-	for slot7, slot8 in ipairs(slot3) do
-		slot8[1]:SetPosition(slot8[2])
-		slot8[1]:Rotate()
-		slot0:AddChild(slot8[1])
+	for iter_16_1, iter_16_2 in ipairs(var_16_2) do
+		iter_16_2[1]:SetPosition(iter_16_2[2])
+		iter_16_2[1]:Rotate()
+		arg_16_0:AddChild(iter_16_2[1])
 	end
 end
 
-function slot0.CanRotateChild(slot0, slot1)
-	slot2 = false
+function var_0_0.CanRotateChild(arg_17_0, arg_17_1)
+	local var_17_0 = false
 
-	slot0:RemoveChild(slot1)
+	arg_17_0:RemoveChild(arg_17_1)
 
-	if _.all(slot1:GetRotatePositions(), function (slot0)
-		return uv0.placeableArea:LegalPosition(slot0)
+	if _.all(arg_17_1:GetRotatePositions(), function(arg_18_0)
+		return arg_17_0.placeableArea:LegalPosition(arg_18_0)
 	end) then
-		slot2 = true
+		var_17_0 = true
 	end
 
-	slot0:AddChild(slot1)
+	arg_17_0:AddChild(arg_17_1)
 
-	return slot2
+	return var_17_0
 end
 
-function slot0.ToTable(slot0)
-	slot1 = uv0.super.ToTable(slot0)
-	slot2 = {}
-	slot3 = slot0:GetPosition()
+function var_0_0.ToTable(arg_19_0)
+	local var_19_0 = var_0_0.super.ToTable(arg_19_0)
+	local var_19_1 = {}
+	local var_19_2 = arg_19_0:GetPosition()
 
-	for slot7, slot8 in ipairs(slot0.childs) do
-		slot2[slot8.id] = slot8:GetPosition() - slot3
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.childs) do
+		var_19_1[iter_19_1.id] = iter_19_1:GetPosition() - var_19_2
 	end
 
-	slot1.child = slot2
+	var_19_0.child = var_19_1
 
-	return slot1
+	return var_19_0
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,27 @@
-slot0 = class("IdolMedalCollectionView3", import(".IdolMedalCollectionView2"))
+﻿local var_0_0 = class("IdolMedalCollectionView3", import(".IdolMedalCollectionView2"))
 
-function slot0.GetContainerPositions(slot0)
+function var_0_0.GetContainerPositions(arg_1_0)
 	return {
 		0,
 		100
 	}
 end
 
-function slot0.GetActivityID(slot0)
+function var_0_0.GetActivityID(arg_2_0)
 	return ActivityConst.MUSIC_FESTIVAL_MEDALCOLLECTION_3
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_3_0)
 	return "IdolMedalCollectionUI3"
 end
 
-function slot0.didEnter(slot0)
-	setActive(slot0:findTF("1", slot0.bg), math.random() >= 0.5)
-	setActive(slot0:findTF("2", slot0.bg), slot1 < 0.5)
-	uv0.super.didEnter(slot0)
-	onButton(slot0, slot0.helpBtn, function ()
+function var_0_0.didEnter(arg_4_0)
+	local var_4_0 = math.random()
+
+	setActive(arg_4_0:findTF("1", arg_4_0.bg), var_4_0 >= 0.5)
+	setActive(arg_4_0:findTF("2", arg_4_0.bg), var_4_0 < 0.5)
+	var_0_0.super.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.idol3rd_collection.tip
@@ -27,4 +29,8 @@ function slot0.didEnter(slot0)
 	end, SFX_PANEL)
 end
 
-return slot0
+function var_0_0.IsShowMainTip(arg_6_0)
+	return Activity.IsActivityReady(arg_6_0)
+end
+
+return var_0_0

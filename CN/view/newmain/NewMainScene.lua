@@ -1,300 +1,309 @@
-slot0 = class("NewMainScene", import("..base.BaseUI"))
-slot0.OPEN_LIVEAREA = "NewMainScene:OPEN_LIVEAREA"
-slot0.FOLD = "NewMainScene:FOLD"
-slot0.CHAT_STATE_CHANGE = "NewMainScene:CHAT_STATE_CHANGE"
-slot0.ON_CHANGE_SKIN = "NewMainScene:ON_CHANGE_SKIN"
-slot0.ON_BUFF_DESC = "NewMainScene:ON_BUFF_DESC"
-slot0.ON_SKIN_FREEUSAGE_DESC = "NewMainScene:ON_SKIN_FREEUSAGE_DESC"
-slot0.ENABLE_PAITING_MOVE = "NewMainScene:ENABLE_PAITING_MOVE"
-slot0.ON_ENTER_DONE = "NewMainScene:ON_ENTER_DONE"
-slot0.ON_REMOVE_LAYER = "NewMainScene:ON_REMOVE_LAYER"
-slot0.ON_PLAYER_UPDATE = "NewMainScene:ON_PLAYER_UPDATE"
-slot0.ON_CHAT_MSG_UPDATE = "NewMainScene:ON_CHAT_MSG_UPDATE"
-slot0.ON_STOP_PAITING_VOICE = "NewMainScene:ON_STOP_PAITING_VOICE"
-slot0.ON_ACT_BTN_UPDATE = "NewMainScene:ON_ACT_BTN_UPDATE"
-slot0.ON_ZERO_HOUR = "NewMainScene:ON_ZERO_HOUR"
-slot0.ON_BUFF_UPDATE = "NewMainScene:ON_BUFF_UPDATE"
+﻿local var_0_0 = class("NewMainScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.OPEN_LIVEAREA = "NewMainScene:OPEN_LIVEAREA"
+var_0_0.FOLD = "NewMainScene:FOLD"
+var_0_0.CHAT_STATE_CHANGE = "NewMainScene:CHAT_STATE_CHANGE"
+var_0_0.ON_CHANGE_SKIN = "NewMainScene:ON_CHANGE_SKIN"
+var_0_0.ON_BUFF_DESC = "NewMainScene:ON_BUFF_DESC"
+var_0_0.ON_SKIN_FREEUSAGE_DESC = "NewMainScene:ON_SKIN_FREEUSAGE_DESC"
+var_0_0.ENABLE_PAITING_MOVE = "NewMainScene:ENABLE_PAITING_MOVE"
+var_0_0.ON_ENTER_DONE = "NewMainScene:ON_ENTER_DONE"
+var_0_0.ON_REMOVE_LAYER = "NewMainScene:ON_REMOVE_LAYER"
+var_0_0.ON_PLAYER_UPDATE = "NewMainScene:ON_PLAYER_UPDATE"
+var_0_0.ON_CHAT_MSG_UPDATE = "NewMainScene:ON_CHAT_MSG_UPDATE"
+var_0_0.ON_STOP_PAITING_VOICE = "NewMainScene:ON_STOP_PAITING_VOICE"
+var_0_0.ON_ACT_BTN_UPDATE = "NewMainScene:ON_ACT_BTN_UPDATE"
+var_0_0.ON_ZERO_HOUR = "NewMainScene:ON_ZERO_HOUR"
+var_0_0.ON_BUFF_UPDATE = "NewMainScene:ON_BUFF_UPDATE"
+
+function var_0_0.getUIName(arg_1_0)
 	return "NewMainUI"
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_2_0)
 	return {
 		showType = PlayerResUI.TYPE_ALL,
-		anim = not slot0.resAnimFlag,
+		anim = not arg_2_0.resAnimFlag,
 		weight = LayerWeightConst.BASE_LAYER + 1
 	}
 end
 
-function slot0.needCache(slot0)
+function var_0_0.needCache(arg_3_0)
 	return true
 end
 
-function slot0.PlayBGM(slot0)
+function var_0_0.PlayBGM(arg_4_0)
+	return
 end
 
-function slot0.GetFlagShip(slot0)
-	return getProxy(PlayerProxy):getRawData():GetFlagShip()
+function var_0_0.GetFlagShip(arg_5_0)
+	return (getProxy(PlayerProxy):getRawData():GetFlagShip())
 end
 
-function slot0.PlayBgm(slot0, slot1)
-	slot2 = nil
+function var_0_0.PlayBgm(arg_6_0, arg_6_1)
+	local var_6_0
 
-	if slot1:IsBgmSkin() and getProxy(SettingsProxy):IsBGMEnable() then
-		slot2 = slot1:GetSkinBgm()
+	if arg_6_1:IsBgmSkin() and getProxy(SettingsProxy):IsBGMEnable() then
+		var_6_0 = arg_6_1:GetSkinBgm()
 	end
 
-	if not slot2 then
-		slot3, slot2 = MainBGView.GetBgAndBgm()
+	if not var_6_0 then
+		local var_6_1, var_6_2 = MainBGView.GetBgAndBgm()
+
+		var_6_0 = var_6_2
 	end
 
-	if slot2 or uv0.super.getBGM(slot0) then
-		pg.BgmMgr.GetInstance():Push(slot0.__cname, slot2)
+	var_6_0 = var_6_0 or var_0_0.super.getBGM(arg_6_0)
+
+	if var_6_0 then
+		pg.BgmMgr.GetInstance():Push(arg_6_0.__cname, var_6_0)
 	end
 end
 
-function slot0.ShowOrHideResUI(slot0, slot1)
-	if not slot0.isInit then
+function var_0_0.ShowOrHideResUI(arg_7_0, arg_7_1)
+	if not arg_7_0.isInit then
 		return
 	end
 
-	uv0.super.ShowOrHideResUI(slot0, slot1)
+	var_0_0.super.ShowOrHideResUI(arg_7_0, arg_7_1)
 end
 
-function slot0.init(slot0)
-	slot0:Register()
+function var_0_0.init(arg_8_0)
+	arg_8_0:Register()
 
-	slot0.mainCG = GetOrAddComponent(slot0:findTF("main"), typeof(CanvasGroup))
-	slot0.mainCG.alpha = 0
-	slot0.isInit = false
-	slot0.resAnimFlag = false
-	slot0.panels = {
-		MainTopPanel.New(slot0:findTF("main/frame/top"), slot0.event, slot0.contextData),
-		MainRightPanel.New(slot0:findTF("main/frame/right"), slot0.event, slot0.contextData),
-		MainLeftPanel.New(slot0:findTF("main/frame/left"), slot0.event, slot0.contextData),
-		MainBottomPanel.New(slot0:findTF("main/frame/bottom"), slot0.event, slot0.contextData)
+	arg_8_0.mainCG = GetOrAddComponent(arg_8_0:findTF("main"), typeof(CanvasGroup))
+	arg_8_0.mainCG.alpha = 0
+	arg_8_0.isInit = false
+	arg_8_0.resAnimFlag = false
+	arg_8_0.panels = {
+		MainTopPanel.New(arg_8_0:findTF("main/frame/top"), arg_8_0.event, arg_8_0.contextData),
+		MainRightPanel.New(arg_8_0:findTF("main/frame/right"), arg_8_0.event, arg_8_0.contextData),
+		MainLeftPanel.New(arg_8_0:findTF("main/frame/left"), arg_8_0.event, arg_8_0.contextData),
+		MainBottomPanel.New(arg_8_0:findTF("main/frame/bottom"), arg_8_0.event, arg_8_0.contextData)
 	}
-	pg.redDotHelper = MainReddotView.New(slot0._tf)
-	slot0.bgView = MainBGView.New(slot0:findTF("Sea/bg"))
-	slot0.iconView = MainIconView.New(slot0:findTF("main/frame/char"))
-	slot0.paintingView = MainPaintingView.New(slot0:findTF("paint"), slot0:findTF("paintBg"), slot0.event)
-	slot0.chatRoomView = MainChatRoomView.New(slot0:findTF("main/frame/chatPreview"), slot0.event)
-	slot0.bannerView = MainBannerView.New(slot0:findTF("main/frame/eventPanel"), slot0.event)
-	slot0.actBtnView = MainActivityBtnView.New(slot0:findTF("main/frame/linkBtns"), slot0.event)
-	slot0.buffView = MainBuffView.New(slot0:findTF("main/frame/buffs"), slot0.event)
-	slot0.effectView = MainEffectView.New(slot0:findTF("paint/effect"))
-	slot0.buffDescPage = MainBuffDescPage.New(slot0._tf, slot0.event)
-	slot0.skinExperiencePage = SkinExperienceDiplayPage.New(slot0._tf, slot0.event)
+	pg.redDotHelper = MainReddotView.New(arg_8_0._tf)
+	arg_8_0.bgView = MainBGView.New(arg_8_0:findTF("Sea/bg"))
+	arg_8_0.iconView = MainIconView.New(arg_8_0:findTF("main/frame/char"))
+	arg_8_0.paintingView = MainPaintingView.New(arg_8_0:findTF("paint"), arg_8_0:findTF("paintBg"), arg_8_0.event)
+	arg_8_0.chatRoomView = MainChatRoomView.New(arg_8_0:findTF("main/frame/chatPreview"), arg_8_0.event)
+	arg_8_0.bannerView = MainBannerView.New(arg_8_0:findTF("main/frame/eventPanel"), arg_8_0.event)
+	arg_8_0.actBtnView = MainActivityBtnView.New(arg_8_0:findTF("main/frame/linkBtns"), arg_8_0.event)
+	arg_8_0.buffView = MainBuffView.New(arg_8_0:findTF("main/frame/buffs"), arg_8_0.event)
+	arg_8_0.effectView = MainEffectView.New(arg_8_0:findTF("paint/effect"))
+	arg_8_0.buffDescPage = MainBuffDescPage.New(arg_8_0._tf, arg_8_0.event)
+	arg_8_0.skinExperiencePage = SkinExperienceDiplayPage.New(arg_8_0._tf, arg_8_0.event)
 
 	if USE_OLD_MAIN_LIVE_AREA_UI then
-		slot0.liveAreaPage = MainLiveAreaOldPage.New(slot0._tf, slot0.event)
+		arg_8_0.liveAreaPage = MainLiveAreaOldPage.New(arg_8_0._tf, arg_8_0.event)
 	else
-		slot0.liveAreaPage = MainLiveAreaPage.New(slot0._tf, slot0.event)
+		arg_8_0.liveAreaPage = MainLiveAreaPage.New(arg_8_0._tf, arg_8_0.event)
 	end
 
-	slot0.calibrationPage = MainCalibrationPage.New(slot0._tf, slot0.event)
-	slot0.sequenceView = MainSequenceView.New()
-	slot0.awakeSequenceView = MainAwakeSequenceView.New()
-	slot0.adpterView = MainAdpterView.New(slot0:findTF("main/top_bg"), slot0:findTF("main/bottom_bg"), slot0:findTF("main/bg/right"))
+	arg_8_0.calibrationPage = MainCalibrationPage.New(arg_8_0._tf, arg_8_0.event)
+	arg_8_0.sequenceView = MainSequenceView.New()
+	arg_8_0.awakeSequenceView = MainAwakeSequenceView.New()
+	arg_8_0.adpterView = MainAdpterView.New(arg_8_0:findTF("main/top_bg"), arg_8_0:findTF("main/bottom_bg"), arg_8_0:findTF("main/bg/right"))
 end
 
-function slot0.Register(slot0)
-	slot0:bind(uv0.FOLD, function (slot0, slot1)
-		uv0:FoldPanels(slot1)
+function var_0_0.Register(arg_9_0)
+	arg_9_0:bind(var_0_0.FOLD, function(arg_10_0, arg_10_1)
+		arg_9_0:FoldPanels(arg_10_1)
 	end)
-	slot0:bind(uv0.ON_CHANGE_SKIN, function (slot0)
-		uv0:SwitchToNextShip()
+	arg_9_0:bind(var_0_0.ON_CHANGE_SKIN, function(arg_11_0)
+		arg_9_0:SwitchToNextShip()
 	end)
 end
 
-function slot0.didEnter(slot0)
-	slot0.mainCG.blocksRaycasts = false
-	slot1 = nil
+function var_0_0.didEnter(arg_12_0)
+	arg_12_0.mainCG.blocksRaycasts = false
+
+	local var_12_0
 
 	seriesAsync({
-		function (slot0)
-			uv0.awakeSequenceView:Execute(slot0)
+		function(arg_13_0)
+			arg_12_0.awakeSequenceView:Execute(arg_13_0)
 		end,
-		function (slot0)
-			onNextTick(slot0)
+		function(arg_14_0)
+			onNextTick(arg_14_0)
 		end,
-		function (slot0)
-			uv0.isInit = true
-			uv1 = uv0:GetFlagShip()
+		function(arg_15_0)
+			arg_12_0.isInit = true
+			var_12_0 = arg_12_0:GetFlagShip()
 
-			uv0.bannerView:Init()
-			uv0.actBtnView:Init()
-			uv0:PlayEnterAnimation(slot0)
+			arg_12_0.bannerView:Init()
+			arg_12_0.actBtnView:Init()
+			arg_12_0:PlayEnterAnimation(arg_15_0)
 
-			uv0.resAnimFlag = true
+			arg_12_0.resAnimFlag = true
 		end,
-		function (slot0)
-			uv0.bgView:Init(uv1)
-			onNextTick(slot0)
+		function(arg_16_0)
+			arg_12_0.bgView:Init(var_12_0)
+			onNextTick(arg_16_0)
 		end,
-		function (slot0)
-			for slot4, slot5 in ipairs(uv0.panels) do
-				slot5:Init()
+		function(arg_17_0)
+			for iter_17_0, iter_17_1 in ipairs(arg_12_0.panels) do
+				iter_17_1:Init()
 			end
 
-			uv0:PlayBgm(uv1)
-			uv0.iconView:Init(uv1)
-			uv0.paintingView:Init(uv1)
-			uv0.effectView:Init(uv1)
-			uv0.chatRoomView:Init()
-			uv0.buffView:Init()
-			onNextTick(slot0)
+			arg_12_0:PlayBgm(var_12_0)
+			arg_12_0.iconView:Init(var_12_0)
+			arg_12_0.paintingView:Init(var_12_0)
+			arg_12_0.effectView:Init(var_12_0)
+			arg_12_0.chatRoomView:Init()
+			arg_12_0.buffView:Init()
+			onNextTick(arg_17_0)
 		end,
-		function (slot0)
-			uv0:BlurView()
-			uv0.sequenceView:Execute(slot0)
+		function(arg_18_0)
+			arg_12_0:BlurView()
+			arg_12_0.sequenceView:Execute(arg_18_0)
 		end
-	}, function ()
-		uv0:emit(uv1.ON_ENTER_DONE)
+	}, function()
+		arg_12_0:emit(var_0_0.ON_ENTER_DONE)
 
-		uv0.mainCG.blocksRaycasts = true
+		arg_12_0.mainCG.blocksRaycasts = true
 	end)
 end
 
-function slot0.PlayEnterAnimation(slot0, slot1)
-	slot0.adpterView:Init()
-	slot0:_FoldPanels(true, 0)
+function var_0_0.PlayEnterAnimation(arg_20_0, arg_20_1)
+	arg_20_0.adpterView:Init()
+	arg_20_0:_FoldPanels(true, 0)
 
-	slot0.mainCG.alpha = 1
+	arg_20_0.mainCG.alpha = 1
 
-	slot0:_FoldPanels(false, 0.5)
-	onDelayTick(slot1, 0.51)
+	arg_20_0:_FoldPanels(false, 0.5)
+	onDelayTick(arg_20_1, 0.51)
 end
 
-function slot0.BlurView(slot0)
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, slot0.mainCG.gameObject.transform, {
+function var_0_0.BlurView(arg_21_0)
+	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg_21_0.mainCG.gameObject.transform, {
 		pbList = {
-			slot0:findTF("main/frame/chatPreview"),
-			slot0:findTF("main/frame/eventPanel")
+			arg_21_0:findTF("main/frame/chatPreview"),
+			arg_21_0:findTF("main/frame/eventPanel")
 		},
 		weight = LayerWeightConst.BASE_LAYER + 1
 	})
-	slot0:ShowOrHideResUI(true)
+	arg_21_0:ShowOrHideResUI(true)
 end
 
-function slot0._FoldPanels(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(slot0.panels) do
-		slot7:Fold(slot1, slot2)
+function var_0_0._FoldPanels(arg_22_0, arg_22_1, arg_22_2)
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.panels) do
+		iter_22_1:Fold(arg_22_1, arg_22_2)
 	end
 
-	slot0.adpterView:Fold(slot1, slot2)
-	slot0.iconView:Fold(slot1, slot2)
-	slot0.chatRoomView:Fold(slot1, slot2)
-	slot0.bannerView:Fold(slot1, slot2)
-	slot0.actBtnView:Fold(slot1, slot2)
-	slot0.buffView:Fold(slot1, slot2)
+	arg_22_0.adpterView:Fold(arg_22_1, arg_22_2)
+	arg_22_0.iconView:Fold(arg_22_1, arg_22_2)
+	arg_22_0.chatRoomView:Fold(arg_22_1, arg_22_2)
+	arg_22_0.bannerView:Fold(arg_22_1, arg_22_2)
+	arg_22_0.actBtnView:Fold(arg_22_1, arg_22_2)
+	arg_22_0.buffView:Fold(arg_22_1, arg_22_2)
 end
 
-function slot0.FoldPanels(slot0, slot1)
-	if slot1 then
-		slot0.mainCG.blocksRaycasts = false
+function var_0_0.FoldPanels(arg_23_0, arg_23_1)
+	if arg_23_1 then
+		arg_23_0.mainCG.blocksRaycasts = false
 	else
-		Timer.New(function ()
-			if uv0.mainCG then
-				uv0.mainCG.blocksRaycasts = true
+		Timer.New(function()
+			if arg_23_0.mainCG then
+				arg_23_0.mainCG.blocksRaycasts = true
 			end
 		end, 0.5, 1):Start()
 	end
 
-	slot0:_FoldPanels(slot1, 0.5)
-	pg.playerResUI:Fold(slot1, 0.5)
-	slot0.paintingView:Fold(slot1, 0.5)
-	slot0.calibrationPage:ExecuteAction("ShowOrHide", slot1, slot0.iconView.ship)
+	arg_23_0:_FoldPanels(arg_23_1, 0.5)
+	pg.playerResUI:Fold(arg_23_1, 0.5)
+	arg_23_0.paintingView:Fold(arg_23_1, 0.5)
+	arg_23_0.calibrationPage:ExecuteAction("ShowOrHide", arg_23_1, arg_23_0.iconView.ship)
 end
 
-function slot0.SwitchToNextShip(slot0)
-	if slot0.paintingView:IsLoading() or slot0.iconView:IsLoading() or slot0.bgView:IsLoading() then
+function var_0_0.SwitchToNextShip(arg_25_0)
+	if arg_25_0.paintingView:IsLoading() or arg_25_0.iconView:IsLoading() or arg_25_0.bgView:IsLoading() then
 		return
 	end
 
-	if slot0.iconView.ship.skinId ~= getProxy(PlayerProxy):getRawData():GetNextFlagShip().skinId or slot0.iconView.ship.id ~= slot2.id then
-		slot0.bgView:Refresh(slot2)
-		slot0:PlayBgm(slot2)
-		slot0.iconView:Refresh(slot2)
-		slot0.paintingView:Refresh(slot2)
-		slot0.effectView:Refresh(slot2)
+	local var_25_0 = getProxy(PlayerProxy):getRawData():GetNextFlagShip()
+
+	if arg_25_0.iconView.ship.skinId ~= var_25_0.skinId or arg_25_0.iconView.ship.id ~= var_25_0.id then
+		arg_25_0.bgView:Refresh(var_25_0)
+		arg_25_0:PlayBgm(var_25_0)
+		arg_25_0.iconView:Refresh(var_25_0)
+		arg_25_0.paintingView:Refresh(var_25_0)
+		arg_25_0.effectView:Refresh(var_25_0)
 	end
 end
 
-function slot0.OnVisible(slot0)
-	slot0.mainCG.blocksRaycasts = false
+function var_0_0.OnVisible(arg_26_0)
+	arg_26_0.mainCG.blocksRaycasts = false
 
 	seriesAsync({
-		function (slot0)
-			uv0.awakeSequenceView:Execute(slot0)
+		function(arg_27_0)
+			arg_26_0.awakeSequenceView:Execute(arg_27_0)
 		end,
-		function (slot0)
-			for slot4, slot5 in ipairs(uv0.panels) do
-				slot5:Refresh()
+		function(arg_28_0)
+			for iter_28_0, iter_28_1 in ipairs(arg_26_0.panels) do
+				iter_28_1:Refresh()
 			end
 
-			slot1 = uv0:GetFlagShip()
+			local var_28_0 = arg_26_0:GetFlagShip()
 
-			uv0.bgView:Refresh(slot1)
-			uv0.iconView:Refresh(slot1)
-			uv0.paintingView:Refresh(slot1)
-			uv0.effectView:Refresh(slot1)
-			uv0.chatRoomView:Refresh()
-			uv0.buffView:Refresh()
-			uv0.actBtnView:Refresh()
-			uv0.bannerView:Refresh()
+			arg_26_0.bgView:Refresh(var_28_0)
+			arg_26_0.iconView:Refresh(var_28_0)
+			arg_26_0.paintingView:Refresh(var_28_0)
+			arg_26_0.effectView:Refresh(var_28_0)
+			arg_26_0.chatRoomView:Refresh()
+			arg_26_0.buffView:Refresh()
+			arg_26_0.actBtnView:Refresh()
+			arg_26_0.bannerView:Refresh()
 			pg.redDotHelper:Refresh()
-			uv0:PlayBgm(slot1)
-			slot0()
+			arg_26_0:PlayBgm(var_28_0)
+			arg_28_0()
 		end,
-		function (slot0)
-			uv0.sequenceView:Execute(slot0)
+		function(arg_29_0)
+			arg_26_0.sequenceView:Execute(arg_29_0)
 		end
-	}, function ()
-		uv0:emit(uv1.ON_ENTER_DONE)
+	}, function()
+		arg_26_0:emit(var_0_0.ON_ENTER_DONE)
 
-		uv0.mainCG.blocksRaycasts = true
+		arg_26_0.mainCG.blocksRaycasts = true
 	end)
-	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(slot0.mainCG.gameObject.transform, true)
+	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(arg_26_0.mainCG.gameObject.transform, true)
 end
 
-function slot0.OnDisVisible(slot0)
-	for slot4, slot5 in ipairs(slot0.panels) do
-		slot5:Disable()
+function var_0_0.OnDisVisible(arg_31_0)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_0.panels) do
+		iter_31_1:Disable()
 	end
 
-	slot0.iconView:Disable()
-	slot0.paintingView:Disable()
-	slot0.chatRoomView:Disable()
-	slot0.buffView:Disable()
-	slot0.actBtnView:Disable()
-	slot0.bannerView:Disable()
+	arg_31_0.iconView:Disable()
+	arg_31_0.paintingView:Disable()
+	arg_31_0.chatRoomView:Disable()
+	arg_31_0.buffView:Disable()
+	arg_31_0.actBtnView:Disable()
+	arg_31_0.bannerView:Disable()
 	pg.redDotHelper:Disable()
-	slot0.buffDescPage:Disable()
-	slot0.bgView:Disable()
-	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(slot0.mainCG.gameObject.transform, false)
-	slot0.sequenceView:Disable()
-	slot0.awakeSequenceView:Disable()
+	arg_31_0.buffDescPage:Disable()
+	arg_31_0.bgView:Disable()
+	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(arg_31_0.mainCG.gameObject.transform, false)
+	arg_31_0.sequenceView:Disable()
+	arg_31_0.awakeSequenceView:Disable()
 end
 
-function slot0.OnLogOut(slot0)
-	if slot0.calibrationPage and slot0.calibrationPage:GetLoaded() and slot0.calibrationPage:isShowing() then
-		triggerButton(slot0.calibrationPage.backBtn)
+function var_0_0.OnLogOut(arg_32_0)
+	if arg_32_0.calibrationPage and arg_32_0.calibrationPage:GetLoaded() and arg_32_0.calibrationPage:isShowing() then
+		triggerButton(arg_32_0.calibrationPage.backBtn)
 	end
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_33_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if slot0.liveAreaPage and slot0.liveAreaPage:GetLoaded() and slot0.liveAreaPage:isShowing() then
-		slot0.liveAreaPage:Hide()
+	if arg_33_0.liveAreaPage and arg_33_0.liveAreaPage:GetLoaded() and arg_33_0.liveAreaPage:isShowing() then
+		arg_33_0.liveAreaPage:Hide()
 
 		return
 	end
 
-	if slot0.calibrationPage and slot0.calibrationPage:GetLoaded() and slot0.calibrationPage:isShowing() then
-		triggerButton(slot0.calibrationPage._parentTf)
+	if arg_33_0.calibrationPage and arg_33_0.calibrationPage:GetLoaded() and arg_33_0.calibrationPage:isShowing() then
+		triggerButton(arg_33_0.calibrationPage._parentTf)
 
 		return
 	end
@@ -303,80 +312,78 @@ function slot0.onBackPressed(slot0)
 	pg.PushNotificationMgr.GetInstance():PushAll()
 end
 
-function slot0.willExit(slot0)
-	slot4 = slot0._tf
+function var_0_0.willExit(arg_34_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_34_0.mainCG.gameObject.transform, arg_34_0._tf)
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.mainCG.gameObject.transform, slot4)
-
-	for slot4, slot5 in ipairs(slot0.panels) do
-		slot5:Dispose()
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.panels) do
+		iter_34_1:Dispose()
 	end
 
-	slot0.panels = nil
+	arg_34_0.panels = nil
 
-	slot0.bgView:Dispose()
+	arg_34_0.bgView:Dispose()
 
-	slot0.bgView = nil
+	arg_34_0.bgView = nil
 
-	slot0.iconView:Dispose()
+	arg_34_0.iconView:Dispose()
 
-	slot0.iconView = nil
+	arg_34_0.iconView = nil
 
-	slot0.paintingView:Dispose()
+	arg_34_0.paintingView:Dispose()
 
-	slot0.paintingView = nil
+	arg_34_0.paintingView = nil
 
-	slot0.chatRoomView:Dispose()
+	arg_34_0.chatRoomView:Dispose()
 
-	slot0.chatRoomView = nil
+	arg_34_0.chatRoomView = nil
 
-	slot0.bannerView:Dispose()
+	arg_34_0.bannerView:Dispose()
 
-	slot0.bannerView = nil
+	arg_34_0.bannerView = nil
 
-	slot0.actBtnView:Dispose()
+	arg_34_0.actBtnView:Dispose()
 
-	slot0.actBtnView = nil
+	arg_34_0.actBtnView = nil
 
-	slot0.buffView:Dispose()
+	arg_34_0.buffView:Dispose()
 
-	slot0.buffView = nil
+	arg_34_0.buffView = nil
 
-	slot0.buffDescPage:Destroy()
+	arg_34_0.buffDescPage:Destroy()
 
-	slot0.buffDescPage = nil
+	arg_34_0.buffDescPage = nil
 
-	slot0.skinExperiencePage:Destroy()
+	arg_34_0.skinExperiencePage:Destroy()
 
-	slot0.skinExperiencePage = nil
+	arg_34_0.skinExperiencePage = nil
 
-	slot0.liveAreaPage:Destroy()
+	arg_34_0.liveAreaPage:Destroy()
 
-	slot0.liveAreaPage = nil
+	arg_34_0.liveAreaPage = nil
 
 	pg.redDotHelper:Dispose()
 
 	pg.redDotHelper = nil
 
-	slot0.calibrationPage:Destroy()
+	arg_34_0.calibrationPage:Destroy()
 
-	slot0.calibrationPage = nil
+	arg_34_0.calibrationPage = nil
 
-	slot0.sequenceView:Dispose()
+	arg_34_0.sequenceView:Dispose()
 
-	slot0.sequenceView = nil
+	arg_34_0.sequenceView = nil
 
-	slot0.awakeSequenceView:Dispose()
+	arg_34_0.awakeSequenceView:Dispose()
 
-	slot0.awakeSequenceView = nil
+	arg_34_0.awakeSequenceView = nil
 
-	slot0.effectView:Dispose()
+	arg_34_0.effectView:Dispose()
 
-	slot0.effectView = nil
+	arg_34_0.effectView = nil
 
-	slot0.adpterView:Dispose()
+	arg_34_0.adpterView:Dispose()
 
-	slot0.adpterView = nil
+	arg_34_0.adpterView = nil
 end
 
-return slot0
+return var_0_0

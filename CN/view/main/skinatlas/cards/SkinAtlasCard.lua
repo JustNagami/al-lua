@@ -1,72 +1,82 @@
-slot0 = class("SkinAtlasCard")
+﻿local var_0_0 = class("SkinAtlasCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0.usingTr = findTF(slot0._tf, "using")
-	slot0.unavailableTr = findTF(slot0._tf, "unavailable")
-	slot0.icon = findTF(slot0._tf, "mask/icon"):GetComponent(typeof(Image))
-	slot2 = findTF(slot0._tf, "name/Text")
-	slot0.name = slot2:GetComponent(typeof(Text))
-	slot0.tags = {
-		findTF(slot0._tf, "tags/icon")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.usingTr = findTF(arg_1_0._tf, "using")
+	arg_1_0.unavailableTr = findTF(arg_1_0._tf, "unavailable")
+	arg_1_0.icon = findTF(arg_1_0._tf, "mask/icon"):GetComponent(typeof(Image))
+	arg_1_0.name = findTF(arg_1_0._tf, "name/Text"):GetComponent(typeof(Text))
+	arg_1_0.tags = {
+		findTF(arg_1_0._tf, "tags/icon")
 	}
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.index = slot2
-	slot0.skin = slot1
+function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.index = arg_2_2
+	arg_2_0.skin = arg_2_1
 
-	LoadSpriteAtlasAsync("shipYardIcon/" .. slot1:getConfig("painting"), "", function (slot0)
-		if uv0.exited then
+	LoadSpriteAtlasAsync("shipYardIcon/" .. arg_2_1:getConfig("painting"), "", function(arg_3_0)
+		if arg_2_0.exited then
 			return
 		end
 
-		uv0.icon.sprite = slot0
+		arg_2_0.icon.sprite = arg_3_0
 	end)
 
-	slot4 = getProxy(BayProxy):findShipsByGroup(slot1:getConfig("ship_group"))
+	local var_2_0 = arg_2_1:getConfig("ship_group")
+	local var_2_1 = getProxy(BayProxy):findShipsByGroup(var_2_0)
+	local var_2_2 = _.any(var_2_1, function(arg_4_0)
+		return arg_4_0.skinId == arg_2_1.id
+	end)
 
-	setActive(slot0.usingTr, #slot4 > 0 and _.any(slot4, function (slot0)
-		return slot0.skinId == uv0.id
-	end))
-	setActive(slot0.unavailableTr, #slot4 == 0 or getProxy(CollectionProxy).shipGroups[slot3] == nil)
+	setActive(arg_2_0.usingTr, #var_2_1 > 0 and var_2_2)
 
-	slot0.name.text = shortenString(slot1:getConfig("name"), 7)
+	local var_2_3 = getProxy(CollectionProxy).shipGroups[var_2_0] == nil
 
-	slot0:FlushTags(slot1:getConfig("tag"))
+	setActive(arg_2_0.unavailableTr, #var_2_1 == 0 or var_2_3)
+
+	local var_2_4 = arg_2_1:getConfig("name")
+
+	arg_2_0.name.text = shortenString(var_2_4, 7)
+
+	arg_2_0:FlushTags(arg_2_1:getConfig("tag"))
 end
 
-function slot0.FlushTags(slot0, slot1)
-	slot2 = -10
-	slot3 = slot0.tags[1]
+function var_0_0.FlushTags(arg_5_0, arg_5_1)
+	local var_5_0 = -10
+	local var_5_1 = arg_5_0.tags[1]
 
-	for slot7 = #slot0.tags + 1, #slot1 do
-		slot0.tags[slot7] = Object.Instantiate(slot3, slot3.parent)
+	for iter_5_0 = #arg_5_0.tags + 1, #arg_5_1 do
+		local var_5_2 = Object.Instantiate(var_5_1, var_5_1.parent)
+
+		arg_5_0.tags[iter_5_0] = var_5_2
 	end
 
-	for slot7 = 1, #slot1 do
-		slot8 = slot0.tags[slot7]
+	for iter_5_1 = 1, #arg_5_1 do
+		local var_5_3 = arg_5_0.tags[iter_5_1]
 
-		setActive(slot8, true)
-		LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(slot1[slot7]), function (slot0)
-			if uv0.exited then
+		setActive(var_5_3, true)
+		LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(arg_5_1[iter_5_1]), function(arg_6_0)
+			if arg_5_0.exited then
 				return
 			end
 
-			uv1:GetComponent(typeof(Image)).sprite = slot0
+			var_5_3:GetComponent(typeof(Image)).sprite = arg_6_0
 		end)
 
-		slot8.localPosition = Vector3(slot8.localPosition.x, slot3.localPosition.y - (slot7 - 1) * (slot3.sizeDelta.x + slot2), 0)
+		local var_5_4 = var_5_1.localPosition.y - (iter_5_1 - 1) * (var_5_1.sizeDelta.x + var_5_0)
+
+		var_5_3.localPosition = Vector3(var_5_3.localPosition.x, var_5_4, 0)
 	end
 
-	for slot7 = #slot1 + 1, #slot0.tags do
-		setActive(slot0.tags[slot7], false)
+	for iter_5_2 = #arg_5_1 + 1, #arg_5_0.tags do
+		setActive(arg_5_0.tags[iter_5_2], false)
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0.exited = true
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0.exited = true
 end
 
-return slot0
+return var_0_0

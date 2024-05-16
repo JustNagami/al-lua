@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.chapter_status_effect = {
 	{
 		strategy = 90,

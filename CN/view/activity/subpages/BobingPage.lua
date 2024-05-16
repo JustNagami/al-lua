@@ -1,420 +1,443 @@
-slot0 = class("BobingPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("BobingPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
 	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
-		setActive(findTF(slot0._tf, "bobing"), true)
-		setActive(findTF(slot0._tf, "lottery"), false)
+		setActive(findTF(arg_1_0._tf, "bobing"), true)
+		setActive(findTF(arg_1_0._tf, "lottery"), false)
 	else
-		setActive(findTF(slot0._tf, "bobing"), false)
-		setActive(findTF(slot0._tf, "lottery"), true)
+		setActive(findTF(arg_1_0._tf, "bobing"), false)
+		setActive(findTF(arg_1_0._tf, "lottery"), true)
 	end
 
-	slot0:bind(ActivityMediator.ON_BOBING_RESULT, function (slot0, slot1, slot2)
+	arg_1_0:bind(ActivityMediator.ON_BOBING_RESULT, function(arg_2_0, arg_2_1, arg_2_2)
 		if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
-			slot3 = uv0
-
-			slot3:displayBBResult(slot1.awards, slot1.numbers, function ()
-				uv0.callback()
+			arg_1_0:displayBBResult(arg_2_1.awards, arg_2_1.numbers, function()
+				arg_2_1.callback()
 			end)
 		else
-			slot3 = uv0
-
-			slot3:displayLotteryAni(slot1.awards, slot1.numbers, function ()
-				uv0.callback()
+			arg_1_0:displayLotteryAni(arg_2_1.awards, arg_2_1.numbers, function()
+				arg_2_1.callback()
 			end)
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_5_0)
 	if PLATFORM_CODE == PLATFORM_CHT or PLATFORM_CODE == PLATFORM_CH then
-		slot0:bobingUpdate()
+		arg_5_0:bobingUpdate()
 	else
-		slot0:lotteryUpdate()
+		arg_5_0:lotteryUpdate()
 	end
 end
 
-function slot0.lotteryUpdate(slot0)
-	slot1 = slot0.activity
-	slot2 = findTF(slot0._tf, "lottery/layer")
+function var_0_0.lotteryUpdate(arg_6_0)
+	local var_6_0 = arg_6_0.activity
+	local var_6_1 = findTF(arg_6_0._tf, "lottery/layer")
+	local var_6_2 = arg_6_0.lotteryWrap
 
-	if not slot0.lotteryWrap then
-		slot0.lotteryWrap = {
-			btnLotteryBtn = findTF(slot2, "lottery_btn"),
-			phase = findTF(slot2, "phase"),
-			nums = findTF(slot2, "nums")
+	if not var_6_2 then
+		var_6_2 = {
+			btnLotteryBtn = findTF(var_6_1, "lottery_btn"),
+			phase = findTF(var_6_1, "phase"),
+			nums = findTF(var_6_1, "nums")
 		}
+		arg_6_0.lotteryWrap = var_6_2
 	end
 
-	if slot1:getConfig("config_id") <= slot1.data1 then
-		setActive(findTF(slot3.phase, "bg"), false)
-		setActive(findTF(slot3.phase, "Text"), false)
-		setActive(findTF(slot3.phase, "finish"), true)
+	local var_6_3 = var_6_0:getConfig("config_id")
+
+	if var_6_3 <= var_6_0.data1 then
+		setActive(findTF(var_6_2.phase, "bg"), false)
+		setActive(findTF(var_6_2.phase, "Text"), false)
+		setActive(findTF(var_6_2.phase, "finish"), true)
 	else
-		setActive(findTF(slot3.phase, "bg"), true)
-		setActive(findTF(slot3.phase, "Text"), true)
-		setText(findTF(slot3.phase, "Text"), setColorStr(slot1.data1, "FFD43F") .. "/" .. slot4)
-		setActive(findTF(slot3.phase, "finish"), false)
+		setActive(findTF(var_6_2.phase, "bg"), true)
+		setActive(findTF(var_6_2.phase, "Text"), true)
+		setText(findTF(var_6_2.phase, "Text"), setColorStr(var_6_0.data1, "FFD43F") .. "/" .. var_6_3)
+		setActive(findTF(var_6_2.phase, "finish"), false)
 	end
 
-	if slot1.data2 < 1 then
-		slot5 = LeanTween.alpha(slot3.btnLotteryBtn, 1, 1)
-
-		slot5:setLoopPingPong()
-		setActive(findTF(slot3.btnLotteryBtn, "mask"), false)
-		onButton(slot0, slot3.btnLotteryBtn, function ()
-			if uv0.activity.data2 < 1 then
-				uv0:emit(ActivityMediator.EVENT_OPERATION, {
+	if var_6_0.data2 < 1 then
+		LeanTween.alpha(var_6_2.btnLotteryBtn, 1, 1):setLoopPingPong()
+		setActive(findTF(var_6_2.btnLotteryBtn, "mask"), false)
+		onButton(arg_6_0, var_6_2.btnLotteryBtn, function()
+			if arg_6_0.activity.data2 < 1 then
+				arg_6_0:emit(ActivityMediator.EVENT_OPERATION, {
 					cmd = 1,
-					activity_id = uv0.activity.id
+					activity_id = arg_6_0.activity.id
 				})
-				uv0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
+				arg_6_0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
 			end
 		end, SFX_PANEL)
 	else
-		LeanTween.cancel(slot3.btnLotteryBtn.gameObject)
-		setActive(findTF(slot3.btnLotteryBtn, "mask"), true)
-		setActive(findTF(slot3.btnLotteryBtn, "mask/1"), slot0:getIndexByNumbers(slot1.data1_list) == 1)
-		setActive(findTF(slot3.btnLotteryBtn, "mask/2"), slot5 == 2)
-		setActive(findTF(slot3.btnLotteryBtn, "mask/3"), slot5 == 3)
-		onButton(slot0, slot3.btnLotteryBtn, function ()
-			if uv0.activity.data2 < 1 then
-				uv0:emit(ActivityMediator.EVENT_OPERATION, {
+		LeanTween.cancel(var_6_2.btnLotteryBtn.gameObject)
+		setActive(findTF(var_6_2.btnLotteryBtn, "mask"), true)
+
+		local var_6_4 = arg_6_0:getIndexByNumbers(var_6_0.data1_list)
+
+		setActive(findTF(var_6_2.btnLotteryBtn, "mask/1"), var_6_4 == 1)
+		setActive(findTF(var_6_2.btnLotteryBtn, "mask/2"), var_6_4 == 2)
+		setActive(findTF(var_6_2.btnLotteryBtn, "mask/3"), var_6_4 == 3)
+		onButton(arg_6_0, var_6_2.btnLotteryBtn, function()
+			if arg_6_0.activity.data2 < 1 then
+				arg_6_0:emit(ActivityMediator.EVENT_OPERATION, {
 					cmd = 1,
-					activity_id = uv0.activity.id
+					activity_id = arg_6_0.activity.id
 				})
-				uv0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
+				arg_6_0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
 			end
 		end, SFX_PANEL)
 	end
 
-	setText(findTF(slot3.nums, "text"), string.format("<color=#%s>%s</color> / %s", slot1.data2 == 0 and "FFD43F" or "d2d4db", 1 - slot1.data2, 1))
+	local var_6_5 = var_6_0.data2 == 0 and "FFD43F" or "d2d4db"
+
+	setText(findTF(var_6_2.nums, "text"), string.format("<color=#%s>%s</color> / %s", var_6_5, 1 - var_6_0.data2, 1))
 end
 
-function slot0.getIndexByNumbers(slot0, slot1)
-	slot3 = 3
+function var_0_0.getIndexByNumbers(arg_9_0, arg_9_1)
+	local var_9_0 = ActivityConst.BBRule(arg_9_1)
+	local var_9_1 = 3
 
-	if ActivityConst.BBRule(slot1) and slot2 >= 1 and slot2 <= 2 then
-		slot3 = 1
+	if var_9_0 and var_9_0 >= 1 and var_9_0 <= 2 then
+		var_9_1 = 1
 	end
 
-	if slot2 and slot2 >= 3 and slot2 <= 4 then
-		slot3 = 2
+	if var_9_0 and var_9_0 >= 3 and var_9_0 <= 4 then
+		var_9_1 = 2
 	end
 
-	return slot3
+	return var_9_1
 end
 
-function slot0.displayLotteryAni(slot0, slot1, slot2, slot3)
-	slot4 = slot0:getIndexByNumbers(slot2)
-	slot6 = slot0:findTF("omikuji_anim", findTF(slot0._tf, "lottery"))
-	slot6 = slot6:GetComponent(typeof(DftAniEvent))
+function var_0_0.displayLotteryAni(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	local var_10_0 = arg_10_0:getIndexByNumbers(arg_10_2)
+	local var_10_1 = findTF(arg_10_0._tf, "lottery")
+	local var_10_2 = arg_10_0:findTF("omikuji_anim", var_10_1):GetComponent(typeof(DftAniEvent))
 
-	slot6:SetEndEvent(function (slot0)
-		setActive(uv0.gameObject, false)
+	var_10_2:SetEndEvent(function(arg_11_0)
+		setActive(var_10_2.gameObject, false)
 
-		slot1 = uv1:findTF("omikuji_result", uv2)
+		local var_11_0 = arg_10_0:findTF("omikuji_result", var_10_1)
 
-		setActive(slot1, true)
+		setActive(var_11_0, true)
 
-		for slot6 = 1, uv1:findTF("title", slot1).childCount do
-			setActive(slot2:GetChild(slot6 - 1), slot6 == uv3)
+		local var_11_1 = arg_10_0:findTF("title", var_11_0)
+
+		for iter_11_0 = 1, var_11_1.childCount do
+			setActive(var_11_1:GetChild(iter_11_0 - 1), iter_11_0 == var_10_0)
 		end
 
-		setText(uv1:findTF("desc", slot1), i18n("draw_" .. ({
+		local var_11_2 = arg_10_0:findTF("desc", var_11_0)
+		local var_11_3 = {
 			"big",
 			"medium",
 			"little"
-		})[uv3] .. "_luck_" .. math.random(1, 3)))
-		setActive(uv1:findTF("award", slot1), false)
-		removeAllChildren(uv1:findTF("award_list", slot1))
+		}
+		local var_11_4 = i18n("draw_" .. var_11_3[var_10_0] .. "_luck_" .. math.random(1, 3))
 
-		if uv4 then
-			for slot11, slot12 in ipairs(uv4) do
-				slot13 = cloneTplTo(slot6, slot7)
+		setText(var_11_2, var_11_4)
 
-				updateDrop(slot13, {
-					type = slot12.type,
-					id = slot12.id,
-					count = slot12.count
-				})
-				onButton(uv1, slot13, function ()
-					uv0:emit(BaseUI.ON_DROP, uv1)
+		local var_11_5 = arg_10_0:findTF("award", var_11_0)
+		local var_11_6 = arg_10_0:findTF("award_list", var_11_0)
+
+		setActive(var_11_5, false)
+		removeAllChildren(var_11_6)
+
+		if arg_10_1 then
+			for iter_11_1, iter_11_2 in ipairs(arg_10_1) do
+				local var_11_7 = cloneTplTo(var_11_5, var_11_6)
+				local var_11_8 = {
+					type = iter_11_2.type,
+					id = iter_11_2.id,
+					count = iter_11_2.count
+				}
+
+				updateDrop(var_11_7, var_11_8)
+				onButton(arg_10_0, var_11_7, function()
+					arg_10_0:emit(BaseUI.ON_DROP, var_11_8)
 				end, SFX_PANEL)
 			end
 		end
 
-		slot8 = uv1
-
-		slot8:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
-		onButton(uv1, slot1, function ()
-			setActive(uv0, false)
-			uv1()
+		arg_10_0:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
+		onButton(arg_10_0, var_11_0, function()
+			setActive(var_11_0, false)
+			arg_10_3()
 		end)
 	end)
-	setActive(slot6.gameObject, true)
+	setActive(var_10_2.gameObject, true)
 end
 
-function slot0.bobingUpdate(slot0)
-	slot1 = slot0.activity
-	slot2 = findTF(slot0._tf, "bobing")
+function var_0_0.bobingUpdate(arg_14_0)
+	local var_14_0 = arg_14_0.activity
+	local var_14_1 = findTF(arg_14_0._tf, "bobing")
+	local var_14_2 = arg_14_0.bobingWrap
 
-	if not slot0.bobingWrap then
-		slot3 = {
-			bg = slot0:findTF("AD", slot0._tf),
-			progress = slot0:findTF("award/nums", slot2),
-			get = slot0:findTF("award/get", slot2),
-			nums = slot0:findTF("nums/text", slot2),
-			bowlDisable = slot0:findTF("bowl_disable", slot2),
-			bowlEnable = slot0:findTF("bowl_enable", slot2)
+	if not var_14_2 then
+		var_14_2 = {
+			bg = arg_14_0:findTF("AD", arg_14_0._tf),
+			progress = arg_14_0:findTF("award/nums", var_14_1),
+			get = arg_14_0:findTF("award/get", var_14_1),
+			nums = arg_14_0:findTF("nums/text", var_14_1),
+			bowlDisable = arg_14_0:findTF("bowl_disable", var_14_1),
+			bowlEnable = arg_14_0:findTF("bowl_enable", var_14_1)
 		}
-		slot3.bowlShine = slot0:findTF("bowl_shine", slot3.bowlEnable)
-		slot3.btnRule = slot0:findTF("btnRule", slot2)
-		slot3.layerRule = slot0:findTF("rule", slot2)
-		slot3.btnReturn = slot0:findTF("btnReturn", slot3.layerRule)
-		slot3.item = slot0:findTF("item", slot3.layerRule)
-		slot3.top = slot0:findTF("top", slot3.layerRule)
-		slot3.itemRow = slot0:findTF("row", slot3.layerRule)
-		slot3.itemColumn = slot0:findTF("column", slot3.layerRule)
+		var_14_2.bowlShine = arg_14_0:findTF("bowl_shine", var_14_2.bowlEnable)
+		var_14_2.btnRule = arg_14_0:findTF("btnRule", var_14_1)
+		var_14_2.layerRule = arg_14_0:findTF("rule", var_14_1)
+		var_14_2.btnReturn = arg_14_0:findTF("btnReturn", var_14_2.layerRule)
+		var_14_2.item = arg_14_0:findTF("item", var_14_2.layerRule)
+		var_14_2.top = arg_14_0:findTF("top", var_14_2.layerRule)
+		var_14_2.itemRow = arg_14_0:findTF("row", var_14_2.layerRule)
+		var_14_2.itemColumn = arg_14_0:findTF("column", var_14_2.layerRule)
 
-		setActive(slot3.layerRule, false)
-		setActive(slot3.item, false)
-		setActive(slot3.itemRow, false)
-		setActive(slot3.itemColumn, true)
+		setActive(var_14_2.layerRule, false)
+		setActive(var_14_2.item, false)
+		setActive(var_14_2.itemRow, false)
+		setActive(var_14_2.itemColumn, true)
 
-		slot4 = pg.gameset.bb_front_awards.description
-		slot7 = UIItemList.New(slot3.top, slot3.item)
+		local var_14_3 = pg.gameset.bb_front_awards.description
+		local var_14_4 = var_14_3[1]
+		local var_14_5 = _.slice(var_14_3, 2, #var_14_3 - 1)
+		local var_14_6 = UIItemList.New(var_14_2.top, var_14_2.item)
 
-		slot7:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				updateDrop(slot2, {
-					type = uv0[slot1 + 1][1],
-					id = uv0[slot1 + 1][2],
-					count = uv0[slot1 + 1][3]
-				})
-				onButton(uv1, slot2, function ()
-					uv0:emit(BaseUI.ON_DROP, uv1)
+		var_14_6:make(function(arg_15_0, arg_15_1, arg_15_2)
+			if arg_15_0 == UIItemList.EventUpdate then
+				local var_15_0 = {
+					type = var_14_4[arg_15_1 + 1][1],
+					id = var_14_4[arg_15_1 + 1][2],
+					count = var_14_4[arg_15_1 + 1][3]
+				}
+
+				updateDrop(arg_15_2, var_15_0)
+				onButton(arg_14_0, arg_15_2, function()
+					arg_14_0:emit(BaseUI.ON_DROP, var_15_0)
 				end, SFX_PANEL)
 			end
 		end)
-		slot7:align(#slot4[1])
+		var_14_6:align(#var_14_4)
 
-		slot8 = UIItemList.New(slot3.itemColumn, slot3.itemRow)
+		local var_14_7 = UIItemList.New(var_14_2.itemColumn, var_14_2.itemRow)
 
-		slot8:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				slot4 = UIItemList.New(slot2, uv1.item)
+		var_14_7:make(function(arg_17_0, arg_17_1, arg_17_2)
+			if arg_17_0 == UIItemList.EventUpdate then
+				local var_17_0 = var_14_5[arg_17_1 + 1]
+				local var_17_1 = UIItemList.New(arg_17_2, var_14_2.item)
 
-				slot4:make(function (slot0, slot1, slot2)
-					if slot0 == UIItemList.EventUpdate then
-						updateDrop(slot2, {
-							type = uv0[slot1 + 1][1],
-							id = uv0[slot1 + 1][2],
-							count = uv0[slot1 + 1][3]
-						})
-						onButton(uv1, slot2, function ()
-							uv0:emit(BaseUI.ON_DROP, uv1)
+				var_17_1:make(function(arg_18_0, arg_18_1, arg_18_2)
+					if arg_18_0 == UIItemList.EventUpdate then
+						local var_18_0 = {
+							type = var_17_0[arg_18_1 + 1][1],
+							id = var_17_0[arg_18_1 + 1][2],
+							count = var_17_0[arg_18_1 + 1][3]
+						}
+
+						updateDrop(arg_18_2, var_18_0)
+						onButton(arg_14_0, arg_18_2, function()
+							arg_14_0:emit(BaseUI.ON_DROP, var_18_0)
 						end, SFX_PANEL)
 					end
 				end)
-				slot4:align(#uv0[slot1 + 1])
+				var_17_1:align(#var_17_0)
 			end
 		end)
-		slot8:align(#_.slice(slot4, 2, #slot4 - 1))
-		onButton(slot0, slot3.btnRule, function ()
-			setActive(uv0.layerRule, true)
+		var_14_7:align(#var_14_5)
+		onButton(arg_14_0, var_14_2.btnRule, function()
+			setActive(var_14_2.layerRule, true)
 		end, SFX_PANEL)
-		onButton(slot0, slot3.btnReturn, function ()
-			setActive(uv0.layerRule, false)
+		onButton(arg_14_0, var_14_2.btnReturn, function()
+			setActive(var_14_2.layerRule, false)
 		end, SFX_CANCEL)
-		onButton(slot0, slot3.bowlEnable, function ()
-			slot0 = uv0
-
-			slot0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
-
-			slot0 = uv0
-
-			slot0:displayBBAnim(function ()
-				uv0:emit(ActivityMediator.EVENT_OPERATION, {
+		onButton(arg_14_0, var_14_2.bowlEnable, function()
+			arg_14_0:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
+			arg_14_0:displayBBAnim(function()
+				arg_14_0:emit(ActivityMediator.EVENT_OPERATION, {
 					cmd = 1,
-					activity_id = uv1.id
+					activity_id = var_14_0.id
 				})
 			end)
 		end, SFX_PANEL)
 
-		slot0.bobingWrap = slot3
+		arg_14_0.bobingWrap = var_14_2
 	end
 
-	setActive(slot3.layerRule, false)
-	setActive(slot3.get, slot1:getConfig("config_id") <= slot1.data1)
-	setActive(slot3.bowlDisable, slot1.data2 == 0)
-	setActive(slot3.bowlEnable, slot1.data2 > 0)
+	local var_14_8 = var_14_0:getConfig("config_id")
 
-	if slot1.data2 < 1 then
-		LeanTween.alpha(slot3.bowlShine, 1, 1):setLoopPingPong()
+	setActive(var_14_2.layerRule, false)
+	setActive(var_14_2.get, var_14_8 <= var_14_0.data1)
+	setActive(var_14_2.bowlDisable, var_14_0.data2 == 0)
+	setActive(var_14_2.bowlEnable, var_14_0.data2 > 0)
+
+	if var_14_0.data2 < 1 then
+		LeanTween.alpha(var_14_2.bowlShine, 1, 1):setLoopPingPong()
 	else
-		LeanTween.cancel(slot3.bowlShine.gameObject)
+		LeanTween.cancel(var_14_2.bowlShine.gameObject)
 	end
 
-	setText(slot3.progress, string.format("<color=#%s>%s</color> %s", "FFD43F", math.min(slot1.data1, slot4) .. "/", slot4))
-	setActive(slot3.progress, slot1.data1 < slot4)
-	setText(slot3.nums, string.format("<color=#%s>%s</color>", slot1.data2 == 0 and "FFD43F" or "d2d4db", slot1.data2))
+	setText(var_14_2.progress, string.format("<color=#%s>%s</color> %s", "FFD43F", math.min(var_14_0.data1, var_14_8) .. "/", var_14_8))
+
+	local var_14_9 = var_14_0.data2 == 0 and "FFD43F" or "d2d4db"
+
+	setActive(var_14_2.progress, var_14_8 > var_14_0.data1)
+	setText(var_14_2.nums, string.format("<color=#%s>%s</color>", var_14_9, var_14_0.data2))
 end
 
-function slot0.displayBBAnim(slot0, slot1)
-	slot2 = slot0:findTF("bobing/bb_anim")
-	slot3 = slot0:findTF("ship", slot2)
-	slot4 = slot0:findTF("bowl", slot2)
+function var_0_0.displayBBAnim(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0:findTF("bobing/bb_anim")
+	local var_24_1 = arg_24_0:findTF("ship", var_24_0)
+	local var_24_2 = arg_24_0:findTF("bowl", var_24_0)
 
-	if not slot0.animBowl then
-		slot0.animBowl = slot4:GetComponent(typeof(SpineAnimUI))
-		slot5 = slot0.animBowl
+	if not arg_24_0.animBowl then
+		arg_24_0.animBowl = var_24_2:GetComponent(typeof(SpineAnimUI))
 
-		slot5:SetAction("bobing", 0)
-
-		slot5 = slot0.animBowl
-
-		slot5:SetActionCallBack(function (slot0)
-			if slot0 == "finsih" then
-				setActive(uv0, false)
-				setActive(uv1, false)
-				uv2()
+		arg_24_0.animBowl:SetAction("bobing", 0)
+		arg_24_0.animBowl:SetActionCallBack(function(arg_25_0)
+			if arg_25_0 == "finsih" then
+				setActive(var_24_1, false)
+				setActive(var_24_2, false)
+				arg_24_1()
 			end
 		end)
 	end
 
-	function slot5()
-		setActive(uv0, true)
-		setActive(uv1, true)
-		uv2.model:GetComponent(typeof(SpineAnimUI)):SetAction("victory", 0)
+	local function var_24_3()
+		setActive(var_24_1, true)
+		setActive(var_24_2, true)
+		arg_24_0.model:GetComponent(typeof(SpineAnimUI)):SetAction("victory", 0)
 	end
 
-	if not slot0.model then
-		slot6 = getProxy(PlayerProxy)
-		slot8 = getProxy(BayProxy)
-		slot9 = slot8:getShipById(slot6:getRawData().character)
-		slot10 = PoolMgr.GetInstance()
+	if not arg_24_0.model then
+		local var_24_4 = getProxy(PlayerProxy):getRawData()
+		local var_24_5 = getProxy(BayProxy):getShipById(var_24_4.character)
 
-		slot10:GetSpineChar(slot9:getPrefab(), false, function (slot0)
-			uv0.model = slot0
-			uv0.model.transform.localScale = Vector3(0.5, 0.5, 1)
+		PoolMgr.GetInstance():GetSpineChar(var_24_5:getPrefab(), false, function(arg_27_0)
+			arg_24_0.model = arg_27_0
+			arg_24_0.model.transform.localScale = Vector3(0.5, 0.5, 1)
 
-			uv0.model.transform:SetParent(uv1, false)
-			uv2()
+			arg_24_0.model.transform:SetParent(var_24_1, false)
+			var_24_3()
 		end)
 	else
-		slot5()
+		var_24_3()
 	end
 
-	setActive(slot2, true)
+	setActive(var_24_0, true)
 end
 
-function slot0.displayBBResult(slot0, slot1, slot2, slot3)
-	slot0.animation = findTF(slot0._tf, "bobing")
+function var_0_0.displayBBResult(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
+	arg_28_0.animation = findTF(arg_28_0._tf, "bobing")
 
-	setActive(slot0:findTF("bb_anim", slot0.animation), false)
+	setActive(arg_28_0:findTF("bb_anim", arg_28_0.animation), false)
 
-	slot4 = slot0:findTF("bb_result", slot0.animation)
-	slot5 = slot0:findTF("numbers", slot4)
-	slot7 = slot0:findTF("rank", slot4)
-	slot8 = slot0:findTF("bgRank", slot4)
+	local var_28_0 = arg_28_0:findTF("bb_result", arg_28_0.animation)
+	local var_28_1 = arg_28_0:findTF("numbers", var_28_0)
+	local var_28_2 = arg_28_0:findTF("number", var_28_0)
+	local var_28_3 = arg_28_0:findTF("rank", var_28_0)
+	local var_28_4 = arg_28_0:findTF("bgRank", var_28_0)
 
-	setActive(slot0:findTF("number", slot4), false)
-	setActive(slot0:findTF("award", slot4), false)
-	removeAllChildren(slot0:findTF("award_list", slot4))
+	setActive(var_28_2, false)
 
-	if slot1 then
-		for slot14, slot15 in ipairs(slot1) do
-			slot16 = cloneTplTo(slot9, slot10)
+	local var_28_5 = arg_28_0:findTF("award", var_28_0)
+	local var_28_6 = arg_28_0:findTF("award_list", var_28_0)
 
-			updateDrop(slot16, {
-				type = slot15.type,
-				id = slot15.id,
-				count = slot15.count
-			})
-			onButton(slot0, slot16, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+	setActive(var_28_5, false)
+	removeAllChildren(var_28_6)
+
+	if arg_28_1 then
+		for iter_28_0, iter_28_1 in ipairs(arg_28_1) do
+			local var_28_7 = cloneTplTo(var_28_5, var_28_6)
+			local var_28_8 = {
+				type = iter_28_1.type,
+				id = iter_28_1.id,
+				count = iter_28_1.count
+			}
+
+			updateDrop(var_28_7, var_28_8)
+			onButton(arg_28_0, var_28_7, function()
+				arg_28_0:emit(BaseUI.ON_DROP, var_28_8)
 			end, SFX_PANEL)
 		end
 	end
 
-	slot11 = UIItemList.New(slot5, slot6)
+	local var_28_9 = UIItemList.New(var_28_1, var_28_2)
 
-	slot11:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:setSpriteTo("bobing/bb_icon/dice" .. uv1[slot1 + 1], slot2)
-			setImageAlpha(slot2, 0)
+	var_28_9:make(function(arg_30_0, arg_30_1, arg_30_2)
+		if arg_30_0 == UIItemList.EventUpdate then
+			arg_28_0:setSpriteTo("bobing/bb_icon/dice" .. arg_28_2[arg_30_1 + 1], arg_30_2)
+			setImageAlpha(arg_30_2, 0)
 		end
 	end)
-	slot11:align(#slot2)
-	setActive(slot7, ActivityConst.BBRule(slot2) < 7)
-	setActive(slot8, slot12 < 7)
+	var_28_9:align(#arg_28_2)
 
-	if slot12 < 7 then
-		slot0:setSpriteTo("bobing/bb_icon/rank" .. slot12, slot7)
-		setImageAlpha(slot7, 0)
+	local var_28_10 = ActivityConst.BBRule(arg_28_2)
+
+	setActive(var_28_3, var_28_10 < 7)
+	setActive(var_28_4, var_28_10 < 7)
+
+	if var_28_10 < 7 then
+		arg_28_0:setSpriteTo("bobing/bb_icon/rank" .. var_28_10, var_28_3)
+		setImageAlpha(var_28_3, 0)
 	end
 
-	slot13 = false
-	slot14 = LeanTween.value(go(slot5), 0, 1, 1)
-	slot14 = slot14:setOnUpdate(System.Action_float(function (slot0)
-		slot1 = uv0
-
-		slot1:each(function (slot0, slot1)
-			setImageAlpha(slot1, uv0)
+	local var_28_11 = false
+	local var_28_12 = LeanTween.value(go(var_28_1), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_31_0)
+		var_28_9:each(function(arg_32_0, arg_32_1)
+			setImageAlpha(arg_32_1, arg_31_0)
 		end)
 	end))
 
-	if slot12 == 7 then
-		slot14:setOnComplete(System.Action(function ()
-			uv0:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
+	if var_28_10 == 7 then
+		var_28_12:setOnComplete(System.Action(function()
+			arg_28_0:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
 
-			uv1 = true
+			var_28_11 = true
 		end))
 	else
-		LeanTween.value(go(slot7), 0, 1, 0.2):setDelay(1):setOnUpdate(System.Action_float(function (slot0)
-			setImageAlpha(uv0, slot0)
+		LeanTween.value(go(var_28_3), 0, 1, 0.2):setDelay(1):setOnUpdate(System.Action_float(function(arg_34_0)
+			setImageAlpha(var_28_3, arg_34_0)
 
-			uv0.localScale = Vector3.Lerp(Vector3(2, 2, 2), Vector3.one, slot0)
+			var_28_3.localScale = Vector3.Lerp(Vector3(2, 2, 2), Vector3.one, arg_34_0)
 		end))
 
-		slot15 = slot0:findTF("rank_p", slot4) or cloneTplTo(slot7, slot4, "rank_p")
+		local var_28_13 = arg_28_0:findTF("rank_p", var_28_0) or cloneTplTo(var_28_3, var_28_0, "rank_p")
 
-		slot0:setSpriteTo("bobing/bb_icon/rank" .. slot12, slot15)
-		slot0:setSpriteTo("bobing/bb_icon/rank" .. slot12, slot7)
-		LeanTween.value(go(slot15), 1, 0, 0.3):setDelay(1.5):setOnUpdate(System.Action_float(function (slot0)
-			setImageAlpha(uv0, slot0)
+		arg_28_0:setSpriteTo("bobing/bb_icon/rank" .. var_28_10, var_28_13)
+		arg_28_0:setSpriteTo("bobing/bb_icon/rank" .. var_28_10, var_28_3)
+		LeanTween.value(go(var_28_13), 1, 0, 0.3):setDelay(1.5):setOnUpdate(System.Action_float(function(arg_35_0)
+			setImageAlpha(var_28_13, arg_35_0)
 
-			uv0.localScale = Vector3.Lerp(Vector3(2, 2, 2), Vector3.one, slot0)
-		end)):setOnComplete(System.Action(function ()
-			uv0:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
+			var_28_13.localScale = Vector3.Lerp(Vector3(2, 2, 2), Vector3.one, arg_35_0)
+		end)):setOnComplete(System.Action(function()
+			arg_28_0:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
 
-			uv1 = true
+			var_28_11 = true
 		end))
 	end
 
-	setActive(slot4, true)
-	onButton(slot0, slot4, function ()
-		if uv0 then
-			setActive(uv1, false)
-			uv2()
+	setActive(var_28_0, true)
+	onButton(arg_28_0, var_28_0, function()
+		if var_28_11 then
+			setActive(var_28_0, false)
+			arg_28_3()
 		end
 	end)
 end
 
-function slot0.setSpriteTo(slot0, slot1, slot2, slot3)
-	slot2:GetComponent(typeof(Image)).sprite = slot0:findTF(slot1):GetComponent(typeof(Image)).sprite
+function var_0_0.setSpriteTo(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
+	local var_38_0 = arg_38_2:GetComponent(typeof(Image))
 
-	if slot3 then
-		slot4:SetNativeSize()
+	var_38_0.sprite = arg_38_0:findTF(arg_38_1):GetComponent(typeof(Image)).sprite
+
+	if arg_38_3 then
+		var_38_0:SetNativeSize()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.bobingWrap then
-		clearImageSprite(slot0.bobingWrap.bg)
-		LeanTween.cancel(slot0.bobingWrap.bowlShine.gameObject)
+function var_0_0.OnDestroy(arg_39_0)
+	if arg_39_0.bobingWrap then
+		clearImageSprite(arg_39_0.bobingWrap.bg)
+		LeanTween.cancel(arg_39_0.bobingWrap.bowlShine.gameObject)
 	end
 end
 
-return slot0
+return var_0_0

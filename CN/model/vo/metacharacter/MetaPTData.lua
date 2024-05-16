@@ -1,88 +1,95 @@
-slot0 = class("MetaPTData")
+﻿local var_0_0 = class("MetaPTData")
 
-function slot0.Ctor(slot0, slot1)
-	slot2 = slot1.group_id
-	slot0.groupID = slot2
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1.group_id
 
-	assert(pg.ship_strengthen_meta[slot2] ~= nil, "Null MetaShip Strengthen Data, ID:" .. slot2)
+	arg_1_0.groupID = var_1_0
 
-	slot0.targets = slot3.target
-	slot0.dropList = slot3.award_display
-	slot0.resId = slot3.itemid
-	slot0.count = 0
-	slot0.level = 0
-	slot0.curLevel = slot0.level + 1
+	local var_1_1 = pg.ship_strengthen_meta[var_1_0]
+
+	assert(var_1_1 ~= nil, "Null MetaShip Strengthen Data, ID:" .. var_1_0)
+
+	arg_1_0.targets = var_1_1.target
+	arg_1_0.dropList = var_1_1.award_display
+	arg_1_0.resId = var_1_1.itemid
+	arg_1_0.count = 0
+	arg_1_0.level = 0
+	arg_1_0.curLevel = arg_1_0.level + 1
 end
 
-function slot0.initFromServerData(slot0, slot1)
-	slot0.count = slot1.pt or 0
+function var_0_0.initFromServerData(arg_2_0, arg_2_1)
+	arg_2_0.count = arg_2_1.pt or 0
 
-	if #slot1.fetch_list > 0 then
-		slot3 = {}
+	local var_2_0 = arg_2_1.fetch_list
 
-		for slot7, slot8 in ipairs(slot2) do
-			table.insert(slot3, slot8)
+	if #var_2_0 > 0 then
+		local var_2_1 = {}
+
+		for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+			table.insert(var_2_1, iter_2_1)
 		end
 
-		table.sort(slot3)
+		table.sort(var_2_1)
 
-		for slot7, slot8 in ipairs(slot3) do
-			if slot8 == slot0.targets[slot7] then
-				slot0.level = slot7
+		for iter_2_2, iter_2_3 in ipairs(var_2_1) do
+			if iter_2_3 == arg_2_0.targets[iter_2_2] then
+				arg_2_0.level = iter_2_2
 			else
 				break
 			end
 		end
 	end
 
-	slot0.curLevel = math.min(slot0.level + 1, #slot0.targets)
+	arg_2_0.curLevel = math.min(arg_2_0.level + 1, #arg_2_0.targets)
 end
 
-function slot0.update(slot0, slot1)
-	slot0.count = slot1.pt or slot0.count
-	slot0.level = slot1.level or slot0.level
-	slot0.curLevel = slot0.level + 1
+function var_0_0.update(arg_3_0, arg_3_1)
+	arg_3_0.count = arg_3_1.pt or arg_3_0.count
+	arg_3_0.level = arg_3_1.level or arg_3_0.level
+	arg_3_0.curLevel = arg_3_0.level + 1
 end
 
-function slot0.updateLevel(slot0, slot1)
-	slot0.level = slot1
-	slot0.curLevel = math.min(slot0.level + 1, #slot0.targets)
+function var_0_0.updateLevel(arg_4_0, arg_4_1)
+	arg_4_0.level = arg_4_1
+	arg_4_0.curLevel = math.min(arg_4_0.level + 1, #arg_4_0.targets)
 end
 
-function slot0.addPT(slot0, slot1)
-	slot0.count = slot0.count + slot1
+function var_0_0.addPT(arg_5_0, arg_5_1)
+	arg_5_0.count = arg_5_0.count + arg_5_1
 end
 
-function slot0.GetResProgress(slot0)
-	slot1 = slot0.count
-	slot2 = slot0.targets[slot0.curLevel]
+function var_0_0.GetResProgress(arg_6_0)
+	local var_6_0 = arg_6_0.count
+	local var_6_1 = arg_6_0.targets[arg_6_0.curLevel]
+	local var_6_2 = var_6_0 / var_6_1
 
-	return slot1, slot2, slot1 / slot2
+	return var_6_0, var_6_1, var_6_2
 end
 
-function slot0.GetLevelProgress(slot0)
-	slot1 = slot0.curLevel
-	slot2 = #slot0.targets
+function var_0_0.GetLevelProgress(arg_7_0)
+	local var_7_0 = arg_7_0.curLevel
+	local var_7_1 = #arg_7_0.targets
+	local var_7_2 = var_7_0 / var_7_1
 
-	return slot1, slot2, slot1 / slot2
+	return var_7_0, var_7_1, var_7_2
 end
 
-function slot0.CanGetAward(slot0)
-	slot1, slot2, slot3 = slot0:GetResProgress()
+function var_0_0.CanGetAward(arg_8_0)
+	local var_8_0, var_8_1, var_8_2 = arg_8_0:GetResProgress()
 
-	return slot0:CanGetNextAward() and slot3 >= 1
+	return arg_8_0:CanGetNextAward() and var_8_2 >= 1
 end
 
-function slot0.CanGetNextAward(slot0)
-	return slot0.level < #slot0.targets
+function var_0_0.CanGetNextAward(arg_9_0)
+	return arg_9_0.level < #arg_9_0.targets
 end
 
-function slot0.GetTotalResRequire(slot0)
-	return slot0.targets[#slot0.targets]
+function var_0_0.GetTotalResRequire(arg_10_0)
+	return arg_10_0.targets[#arg_10_0.targets]
 end
 
-function slot0.IsMaxPt(slot0)
-	return slot0:GetTotalResRequire() <= slot0.count
+function var_0_0.IsMaxPt(arg_11_0)
+	return arg_11_0.count >= arg_11_0:GetTotalResRequire()
 end
 
-return slot0
+return var_0_0

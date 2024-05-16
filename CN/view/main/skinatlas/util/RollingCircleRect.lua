@@ -1,170 +1,191 @@
-slot0 = class("RollingCircleRect")
+﻿local var_0_0 = class("RollingCircleRect")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.childs = {}
-	slot0.tpl = slot1
-	slot0.parent = slot2
+	arg_1_0.childs = {}
+	arg_1_0.tpl = arg_1_1
+	arg_1_0.parent = arg_1_2
 
-	slot0:AddDragListener()
+	arg_1_0:AddDragListener()
 end
 
-function slot0.SetCallback(slot0, slot1, slot2, slot3)
-	slot0.binder = slot1
-	slot0.OnSelected = slot2
-	slot0.OnRelease = slot3
+function var_0_0.SetCallback(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_0.binder = arg_2_1
+	arg_2_0.OnSelected = arg_2_2
+	arg_2_0.OnRelease = arg_2_3
 end
 
-function slot0.AddItem(slot0, slot1)
-	slot2 = nil
+function var_0_0.AddItem(arg_3_0, arg_3_1)
+	local var_3_0
+	local var_3_1 = #arg_3_0.childs
 
-	if #slot0.childs <= 0 then
-		RollingCircleItem.New(slot0.tpl, slot3 + 1, slot1):Init()
+	if var_3_1 <= 0 then
+		var_3_0 = RollingCircleItem.New(arg_3_0.tpl, var_3_1 + 1, arg_3_1)
+
+		var_3_0:Init()
 	else
-		slot2 = RollingCircleItem.New(Object.Instantiate(slot0.tpl, slot0.tpl.parent), slot3 + 1, slot1)
-		slot5 = slot0.childs[#slot0.childs]
-		slot6 = slot0.childs[1]
+		local var_3_2 = Object.Instantiate(arg_3_0.tpl, arg_3_0.tpl.parent)
 
-		slot2:SetPrev(slot5)
-		slot2:SetNext(slot6)
-		slot6:SetPrev(slot2)
-		slot5:SetNext(slot2)
-		slot2:Init()
+		var_3_0 = RollingCircleItem.New(var_3_2, var_3_1 + 1, arg_3_1)
+
+		local var_3_3 = arg_3_0.childs[#arg_3_0.childs]
+		local var_3_4 = arg_3_0.childs[1]
+
+		var_3_0:SetPrev(var_3_3)
+		var_3_0:SetNext(var_3_4)
+		var_3_4:SetPrev(var_3_0)
+		var_3_3:SetNext(var_3_0)
+		var_3_0:Init()
 	end
 
-	table.insert(slot0.childs, slot2)
-	onButton(slot0, slot2._tr, function ()
-		uv0:ScrollToCenter(uv1)
+	table.insert(arg_3_0.childs, var_3_0)
+	onButton(arg_3_0, var_3_0._tr, function()
+		arg_3_0:ScrollToCenter(var_3_0)
 
-		if uv0.OnRelease then
-			uv0.OnRelease(uv0.binder, uv1)
+		if arg_3_0.OnRelease then
+			arg_3_0.OnRelease(arg_3_0.binder, var_3_0)
 		end
 	end, SFX_PANEL)
 
-	return slot2
+	return var_3_0
 end
 
-function slot0.ScrollTo(slot0, slot1)
+function var_0_0.ScrollTo(arg_5_0, arg_5_1)
 	Canvas.ForceUpdateCanvases()
 
-	if _.detect(slot0.childs, function (slot0)
-		return slot0:GetID() == uv0
-	end) then
-		triggerButton(slot2._tr)
+	local var_5_0 = _.detect(arg_5_0.childs, function(arg_6_0)
+		return arg_6_0:GetID() == arg_5_1
+	end)
+
+	if var_5_0 then
+		triggerButton(var_5_0._tr)
 	end
 end
 
-function slot0.AddDragListener(slot0)
-	uv0.AddVerticalDrag(slot0.parent, function (slot0)
-		uv0:Step(slot0 > 0 and -1 or 1)
-	end, function ()
-		slot0 = _.detect(uv0.childs, function (slot0)
-			return slot0:IsCenter(uv0:GetCenterIndex())
+function var_0_0.AddDragListener(arg_7_0)
+	local function var_7_0(arg_8_0)
+		local var_8_0 = arg_8_0 > 0 and -1 or 1
+
+		arg_7_0:Step(var_8_0)
+	end
+
+	local function var_7_1()
+		local var_9_0 = _.detect(arg_7_0.childs, function(arg_10_0)
+			return arg_10_0:IsCenter(arg_7_0:GetCenterIndex())
 		end)
 
-		if uv0.OnRelease then
-			uv0.OnRelease(uv0.binder, slot0)
+		if arg_7_0.OnRelease then
+			arg_7_0.OnRelease(arg_7_0.binder, var_9_0)
 		end
-	end)
+	end
+
+	var_0_0.AddVerticalDrag(arg_7_0.parent, var_7_0, var_7_1)
 end
 
-function slot0.GetCenterIndex(slot0)
-	return math.min(4, math.ceil(#slot0.childs / 2))
+function var_0_0.GetCenterIndex(arg_11_0)
+	local var_11_0 = #arg_11_0.childs
+	local var_11_1 = math.ceil(var_11_0 / 2)
+
+	return math.min(4, var_11_1)
 end
 
-function slot0.ScrollToCenter(slot0, slot1)
-	if slot0:GetCenterIndex() - slot1:GetIndex() == 0 then
+function var_0_0.ScrollToCenter(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_0:GetCenterIndex() - arg_12_1:GetIndex()
+
+	if var_12_0 == 0 then
 		return
 	end
 
-	slot0:Step(slot4)
+	arg_12_0:Step(var_12_0)
 end
 
-function slot0.Step(slot0, slot1)
-	slot2 = slot1 > 0 and "GoForward" or "GoBack"
-	slot4 = slot0:GetCenterIndex()
+function var_0_0.Step(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1 > 0 and "GoForward" or "GoBack"
+	local var_13_1 = math.abs(arg_13_1)
+	local var_13_2 = arg_13_0:GetCenterIndex()
 
-	for slot8 = 1, math.abs(slot1) do
-		for slot12, slot13 in ipairs(slot0.childs) do
-			slot13:Record()
+	for iter_13_0 = 1, var_13_1 do
+		for iter_13_1, iter_13_2 in ipairs(arg_13_0.childs) do
+			iter_13_2:Record()
 		end
 
-		slot9 = nil
+		local var_13_3
 
-		for slot13, slot14 in ipairs(slot0.childs) do
-			slot14:__slot2_None__()
+		for iter_13_3, iter_13_4 in ipairs(arg_13_0.childs) do
+			iter_13_4[var_13_0](iter_13_4)
 
-			if slot14:IsCenter(slot4) then
-				slot9 = slot14
+			if iter_13_4:IsCenter(var_13_2) then
+				var_13_3 = iter_13_4
 			end
 		end
 
-		if slot0.OnSelected then
-			slot0.OnSelected(slot0.binder, slot9)
+		if arg_13_0.OnSelected then
+			arg_13_0.OnSelected(arg_13_0.binder, var_13_3)
 		end
 	end
 end
 
-function slot0.AddVerticalDrag(slot0, slot1, slot2)
-	slot3 = GetOrAddComponent(slot0, "EventTriggerListener")
-	slot4 = 90
-	slot5 = nil
-	slot6 = 0
-	slot7 = 0
-	slot8 = 0
+function var_0_0.AddVerticalDrag(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = GetOrAddComponent(arg_14_0, "EventTriggerListener")
+	local var_14_1 = 90
+	local var_14_2
+	local var_14_3 = 0
+	local var_14_4 = 0
+	local var_14_5 = 0
 
-	slot3:AddBeginDragFunc(function (slot0, slot1)
-		uv0 = 0
-		uv1 = 0
-		uv2 = slot1.position
-		uv3 = uv2.y
+	var_14_0:AddBeginDragFunc(function(arg_15_0, arg_15_1)
+		var_14_3 = 0
+		var_14_4 = 0
+		var_14_2 = arg_15_1.position
+		var_14_5 = var_14_2.y
 	end)
-	slot3:AddDragFunc(function (slot0, slot1)
-		if slot1.position.y < uv0 and uv1 ~= 0 then
-			uv2 = slot1.position
-			uv1 = 0
-		elseif uv0 < slot1.position.y and uv3 ~= 0 then
-			uv2 = slot1.position
-			uv3 = 0
+	var_14_0:AddDragFunc(function(arg_16_0, arg_16_1)
+		if var_14_5 > arg_16_1.position.y and var_14_4 ~= 0 then
+			var_14_2 = arg_16_1.position
+			var_14_4 = 0
+		elseif var_14_5 < arg_16_1.position.y and var_14_3 ~= 0 then
+			var_14_2 = arg_16_1.position
+			var_14_3 = 0
 		end
 
-		slot3 = math.abs(math.floor((slot1.position.y - uv2.y) / uv4))
+		local var_16_0 = arg_16_1.position.y - var_14_2.y
+		local var_16_1 = math.abs(math.floor(var_16_0 / var_14_1))
 
-		if uv5 and uv3 < slot3 then
-			uv3 = slot3
+		if arg_14_1 and var_16_1 > var_14_3 then
+			var_14_3 = var_16_1
 
-			uv5(slot2)
+			arg_14_1(var_16_0)
 		end
 
-		if uv5 and slot3 < uv1 then
-			uv1 = slot3
+		if arg_14_1 and var_16_1 < var_14_4 then
+			var_14_4 = var_16_1
 
-			uv5(slot2)
+			arg_14_1(var_16_0)
 		end
 
-		uv0 = uv2.y
+		var_14_5 = var_14_2.y
 	end)
-	slot3:AddDragEndFunc(function (slot0, slot1)
-		if uv0 then
-			uv0()
+	var_14_0:AddDragEndFunc(function(arg_17_0, arg_17_1)
+		if arg_14_2 then
+			arg_14_2()
 		end
 	end)
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_18_0)
+	pg.DelegateInfo.Dispose(arg_18_0)
 
-	for slot4, slot5 in ipairs(slot0.childs) do
-		slot5:Dispose()
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.childs) do
+		iter_18_1:Dispose()
 	end
 
-	ClearEventTrigger(GetOrAddComponent(slot0.parent, "EventTriggerListener"))
+	ClearEventTrigger(GetOrAddComponent(arg_18_0.parent, "EventTriggerListener"))
 
-	slot0.binder = nil
-	slot0.OnSelected = nil
-	slot0.OnRelease = nil
-	slot0.childs = nil
+	arg_18_0.binder = nil
+	arg_18_0.OnSelected = nil
+	arg_18_0.OnRelease = nil
+	arg_18_0.childs = nil
 end
 
-return slot0
+return var_0_0

@@ -1,380 +1,439 @@
-slot0 = class("ShipSkinProxy", import(".NetProxy"))
-slot0.SHIP_SKINS_UPDATE = "ship skins update"
-slot0.SHIP_SKIN_EXPIRED = "ship skin expired"
-slot0.FORBIDDEN_TYPE_HIDE = 0
-slot0.FORBIDDEN_TYPE_SHOW = 1
+﻿local var_0_0 = class("ShipSkinProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.skins = {}
-	slot0.cacheSkins = {}
-	slot0.timers = {}
-	slot0.forbiddenSkinList = {}
+var_0_0.SHIP_SKINS_UPDATE = "ship skins update"
+var_0_0.SHIP_SKIN_EXPIRED = "ship skin expired"
+var_0_0.FORBIDDEN_TYPE_HIDE = 0
+var_0_0.FORBIDDEN_TYPE_SHOW = 1
 
-	slot0:on(12201, function (slot0)
-		_.each(slot0.skin_list, function (slot0)
-			slot1 = ShipSkin.New(slot0)
+function var_0_0.register(arg_1_0)
+	arg_1_0.skins = {}
+	arg_1_0.cacheSkins = {}
+	arg_1_0.timers = {}
+	arg_1_0.forbiddenSkinList = {}
 
-			uv0:addSkin(ShipSkin.New(slot0))
+	arg_1_0:on(12201, function(arg_2_0)
+		_.each(arg_2_0.skin_list, function(arg_3_0)
+			local var_3_0 = ShipSkin.New(arg_3_0)
+
+			arg_1_0:addSkin(ShipSkin.New(arg_3_0))
 		end)
-		_.each(slot0.forbidden_skin_list, function (slot0)
-			table.insert(uv0.forbiddenSkinList, {
-				id = slot0,
-				type = uv1.FORBIDDEN_TYPE_HIDE
+		_.each(arg_2_0.forbidden_skin_list, function(arg_4_0)
+			table.insert(arg_1_0.forbiddenSkinList, {
+				id = arg_4_0,
+				type = var_0_0.FORBIDDEN_TYPE_HIDE
 			})
 		end)
 
-		for slot4, slot5 in ipairs(slot0.forbidden_skin_type) do
-			uv0.forbiddenSkinList[slot4].type = slot5
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.forbidden_skin_type) do
+			arg_1_0.forbiddenSkinList[iter_2_0].type = iter_2_1
 		end
 	end)
 end
 
-function slot0.getOverDueSkins(slot0)
-	slot1 = {}
+function var_0_0.getOverDueSkins(arg_5_0)
+	local var_5_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.cacheSkins) do
-		table.insert(slot1, slot6)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.cacheSkins) do
+		table.insert(var_5_0, iter_5_1)
 	end
 
-	slot0.cacheSkins = {}
+	arg_5_0.cacheSkins = {}
 
-	return slot1
+	return var_5_0
 end
 
-function slot0.getRawData(slot0)
-	return slot0.skins
+function var_0_0.getRawData(arg_6_0)
+	return arg_6_0.skins
 end
 
-function slot0.getSkinList(slot0)
-	return _.map(_.values(slot0.skins), function (slot0)
-		return slot0.id
+function var_0_0.getSkinList(arg_7_0)
+	return _.map(_.values(arg_7_0.skins), function(arg_8_0)
+		return arg_8_0.id
 	end)
 end
 
-function slot0.addSkin(slot0, slot1)
-	assert(isa(slot1, ShipSkin), "skin should be an instance of ShipSkin")
+function var_0_0.addSkin(arg_9_0, arg_9_1)
+	assert(isa(arg_9_1, ShipSkin), "skin should be an instance of ShipSkin")
 
-	if slot0.prevNewSkin then
-		slot0.prevNewSkin:SetIsNew(false)
+	if arg_9_0.prevNewSkin then
+		arg_9_0.prevNewSkin:SetIsNew(false)
 	end
 
-	slot0.skins[slot1.id] = slot1
-	slot0.prevNewSkin = slot1
+	arg_9_0.skins[arg_9_1.id] = arg_9_1
+	arg_9_0.prevNewSkin = arg_9_1
 
-	slot0:addExpireTimer(slot1)
-	slot0.facade:sendNotification(uv0.SHIP_SKINS_UPDATE)
+	arg_9_0:addExpireTimer(arg_9_1)
+	arg_9_0.facade:sendNotification(var_0_0.SHIP_SKINS_UPDATE)
 end
 
-function slot0.getSkinById(slot0, slot1)
-	return slot0.skins[slot1]
+function var_0_0.getSkinById(arg_10_0, arg_10_1)
+	return arg_10_0.skins[arg_10_1]
 end
 
-function slot0.addExpireTimer(slot0, slot1)
-	slot0:removeExpireTimer(slot1.id)
+function var_0_0.addExpireTimer(arg_11_0, arg_11_1)
+	arg_11_0:removeExpireTimer(arg_11_1.id)
 
-	if not slot1:isExpireType() then
+	if not arg_11_1:isExpireType() then
 		return
 	end
 
-	function slot2()
-		table.insert(uv0.cacheSkins, uv1)
-		uv0:removeSkinById(uv1.id)
-		_.each(getProxy(BayProxy):getShips(), function (slot0)
-			if slot0.skinId == uv0.id then
-				slot0.skinId = slot0:getConfig("skin_id")
+	local function var_11_0()
+		table.insert(arg_11_0.cacheSkins, arg_11_1)
+		arg_11_0:removeSkinById(arg_11_1.id)
 
-				uv1:updateShip(slot0)
+		local var_12_0 = getProxy(BayProxy)
+		local var_12_1 = var_12_0:getShips()
+
+		_.each(var_12_1, function(arg_13_0)
+			if arg_13_0.skinId == arg_11_1.id then
+				arg_13_0.skinId = arg_13_0:getConfig("skin_id")
+
+				var_12_0:updateShip(arg_13_0)
 			end
 		end)
-		uv0:sendNotification(GAME.SHIP_SKIN_EXPIRED)
+		arg_11_0:sendNotification(GAME.SHIP_SKIN_EXPIRED)
 	end
 
-	if slot1:getExpireTime() - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-		slot2()
+	local var_11_1 = arg_11_1:getExpireTime() - pg.TimeMgr.GetInstance():GetServerTime()
+
+	if var_11_1 <= 0 then
+		var_11_0()
 	else
-		slot0.timers[slot1.id] = Timer.New(slot2, slot3, 1)
+		arg_11_0.timers[arg_11_1.id] = Timer.New(var_11_0, var_11_1, 1)
 
-		slot0.timers[slot1.id]:Start()
+		arg_11_0.timers[arg_11_1.id]:Start()
 	end
 end
 
-function slot0.removeExpireTimer(slot0, slot1)
-	if slot0.timers[slot1] then
-		slot0.timers[slot1]:Stop()
+function var_0_0.removeExpireTimer(arg_14_0, arg_14_1)
+	if arg_14_0.timers[arg_14_1] then
+		arg_14_0.timers[arg_14_1]:Stop()
 
-		slot0.timers[slot1] = nil
+		arg_14_0.timers[arg_14_1] = nil
 	end
 end
 
-function slot0.removeSkinById(slot0, slot1)
-	slot0.skins[slot1] = nil
+function var_0_0.removeSkinById(arg_15_0, arg_15_1)
+	arg_15_0.skins[arg_15_1] = nil
 
-	slot0:removeExpireTimer(slot1)
-	slot0.facade:sendNotification(uv0.SHIP_SKINS_UPDATE)
+	arg_15_0:removeExpireTimer(arg_15_1)
+	arg_15_0.facade:sendNotification(var_0_0.SHIP_SKINS_UPDATE)
 end
 
-function slot0.hasSkin(slot0, slot1)
-	return slot0.skins[slot1] ~= nil
+function var_0_0.hasSkin(arg_16_0, arg_16_1)
+	return arg_16_0.skins[arg_16_1] ~= nil
 end
 
-function slot0.hasNonLimitSkin(slot0, slot1)
-	return slot0.skins[slot1] ~= nil and not slot2:isExpireType()
+function var_0_0.hasNonLimitSkin(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_0.skins[arg_17_1]
+
+	return var_17_0 ~= nil and not var_17_0:isExpireType()
 end
 
-function slot0.hasOldNonLimitSkin(slot0, slot1)
-	return slot0.skins[slot1] and not slot2:HasNewFlag() and not slot2:isExpireType()
+function var_0_0.hasOldNonLimitSkin(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0.skins[arg_18_1]
+
+	return var_18_0 and not var_18_0:HasNewFlag() and not var_18_0:isExpireType()
 end
 
-function slot0.getSkinCountById(slot0, slot1)
-	return slot0:hasSkin(slot1) and 1 or 0
+function var_0_0.getSkinCountById(arg_19_0, arg_19_1)
+	return arg_19_0:hasSkin(arg_19_1) and 1 or 0
 end
 
-function slot0.InForbiddenSkinListAndHide(slot0, slot1)
-	return _.any(slot0.forbiddenSkinList, function (slot0)
-		return slot0.id == uv0 and slot0.type == uv1.FORBIDDEN_TYPE_HIDE
+function var_0_0.InForbiddenSkinListAndHide(arg_20_0, arg_20_1)
+	return _.any(arg_20_0.forbiddenSkinList, function(arg_21_0)
+		return arg_21_0.id == arg_20_1 and arg_21_0.type == var_0_0.FORBIDDEN_TYPE_HIDE
 	end)
 end
 
-function slot0.InForbiddenSkinListAndShow(slot0, slot1)
-	return _.any(slot0.forbiddenSkinList, function (slot0)
-		return slot0.id == uv0 and slot0.type == uv1.FORBIDDEN_TYPE_SHOW
+function var_0_0.InForbiddenSkinListAndShow(arg_22_0, arg_22_1)
+	return _.any(arg_22_0.forbiddenSkinList, function(arg_23_0)
+		return arg_23_0.id == arg_22_1 and arg_23_0.type == var_0_0.FORBIDDEN_TYPE_SHOW
 	end)
 end
 
-function slot0.InForbiddenSkinList(slot0, slot1)
-	return _.any(slot0.forbiddenSkinList, function (slot0)
-		return slot0.id == uv0
+function var_0_0.InForbiddenSkinList(arg_24_0, arg_24_1)
+	return _.any(arg_24_0.forbiddenSkinList, function(arg_25_0)
+		return arg_25_0.id == arg_24_1
 	end)
 end
 
-function slot0.remove(slot0)
-	for slot4, slot5 in pairs(slot0.timers) do
-		slot5:Stop()
+function var_0_0.remove(arg_26_0)
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.timers) do
+		iter_26_1:Stop()
 	end
 
-	slot0.timers = nil
+	arg_26_0.timers = nil
 end
 
-function slot0.GetAllSkins(slot0)
-	slot1 = {}
+function var_0_0.GetAllSkins(arg_27_0)
+	local var_27_0 = {}
 
-	function slot2(slot0)
-		slot0:updateBuyCount(getProxy(ShipSkinProxy):getSkinById(slot0:getSkinId()) and not slot2:isExpireType() and 1 or 0)
+	local function var_27_1(arg_28_0)
+		local var_28_0 = arg_28_0:getSkinId()
+		local var_28_1 = getProxy(ShipSkinProxy):getSkinById(var_28_0)
+		local var_28_2 = var_28_1 and not var_28_1:isExpireType() and 1 or 0
+
+		arg_28_0:updateBuyCount(var_28_2)
 	end
 
-	function slot3(slot0)
-		uv0(Goods.Create({
-			shop_id = slot0
-		}, Goods.TYPE_SKIN))
+	local function var_27_2(arg_29_0)
+		local var_29_0 = Goods.Create({
+			shop_id = arg_29_0
+		}, Goods.TYPE_SKIN)
 
-		slot2, slot3 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot0].time)
+		var_27_1(var_29_0)
 
-		if slot2 then
-			table.insert(uv1, slot1)
+		local var_29_1, var_29_2 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg_29_0].time)
+
+		if var_29_1 then
+			table.insert(var_27_0, var_29_0)
 		end
 	end
 
-	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
-		slot3(slot8)
+	for iter_27_0, iter_27_1 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
+		var_27_2(iter_27_1)
 	end
 
-	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
-		slot3(slot8)
+	for iter_27_2, iter_27_3 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
+		var_27_2(iter_27_3)
 	end
 
-	slot4 = getProxy(ActivityProxy)
+	local var_27_3 = getProxy(ActivityProxy)
+	local var_27_4 = pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]
 
-	for slot9, slot10 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
-		slot11 = pg.activity_shop_extra[slot10]
-		slot12 = slot4:getActivityById(slot11.activity)
+	for iter_27_4, iter_27_5 in ipairs(var_27_4) do
+		local var_27_5 = pg.activity_shop_extra[iter_27_5]
+		local var_27_6 = var_27_3:getActivityById(var_27_5.activity)
 
-		if slot11.activity == 0 and pg.TimeMgr.GetInstance():inTime(slot11.time) or slot12 and not slot12:isEnd() then
-			slot13 = Goods.Create({
-				shop_id = slot10
+		if var_27_5.activity == 0 and pg.TimeMgr.GetInstance():inTime(var_27_5.time) or var_27_6 and not var_27_6:isEnd() then
+			local var_27_7 = Goods.Create({
+				shop_id = iter_27_5
 			}, Goods.TYPE_ACTIVITY_EXTRA)
 
-			slot2(slot13)
-			table.insert(slot1, slot13)
+			var_27_1(var_27_7)
+			table.insert(var_27_0, var_27_7)
 		end
 	end
 
-	for slot10, slot11 in ipairs(pg.activity_shop_template.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
-		if slot4:getActivityById(pg.activity_shop_template[slot11].activity) and not slot13:isEnd() then
-			slot2(Goods.Create({
-				shop_id = slot11
-			}, Goods.TYPE_ACTIVITY))
+	local var_27_8 = pg.activity_shop_template.get_id_list_by_commodity_type[DROP_TYPE_SKIN]
 
-			if not _.any(slot1, function (slot0)
-				return slot0:getSkinId() == uv0:getSkinId()
+	for iter_27_6, iter_27_7 in ipairs(var_27_8) do
+		local var_27_9 = pg.activity_shop_template[iter_27_7]
+		local var_27_10 = var_27_3:getActivityById(var_27_9.activity)
+
+		if var_27_10 and not var_27_10:isEnd() then
+			local var_27_11 = Goods.Create({
+				shop_id = iter_27_7
+			}, Goods.TYPE_ACTIVITY)
+
+			var_27_1(var_27_11)
+
+			if not _.any(var_27_0, function(arg_30_0)
+				return arg_30_0:getSkinId() == var_27_11:getSkinId()
 			end) then
-				table.insert(slot1, slot14)
+				table.insert(var_27_0, var_27_11)
 			end
 		end
 	end
 
-	for slot10 = #slot1, 1, -1 do
-		if slot0:InForbiddenSkinList(slot1[slot10]:getSkinId()) or not slot0:InShowTime(slot11) then
-			table.remove(slot1, slot10)
+	for iter_27_8 = #var_27_0, 1, -1 do
+		local var_27_12 = var_27_0[iter_27_8]:getSkinId()
+
+		if arg_27_0:InForbiddenSkinList(var_27_12) or not arg_27_0:InShowTime(var_27_12) then
+			table.remove(var_27_0, iter_27_8)
 		end
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.GetShopShowingSkins(slot0)
-	slot1 = {}
+function var_0_0.GetShopShowingSkins(arg_31_0)
+	local var_31_0 = {}
 
-	function slot2(slot0)
-		slot0:updateBuyCount(getProxy(ShipSkinProxy):getSkinById(slot0:getSkinId()) and not slot2:isExpireType() and 1 or 0)
+	local function var_31_1(arg_32_0)
+		local var_32_0 = arg_32_0:getSkinId()
+		local var_32_1 = getProxy(ShipSkinProxy):getSkinById(var_32_0)
+		local var_32_2 = var_32_1 and not var_32_1:isExpireType() and 1 or 0
+
+		arg_32_0:updateBuyCount(var_32_2)
 	end
 
-	function slot3(slot0)
-		slot1 = Goods.Create({
-			shop_id = slot0
+	local function var_31_2(arg_33_0)
+		local var_33_0 = Goods.Create({
+			shop_id = arg_33_0
 		}, Goods.TYPE_SKIN)
 
-		uv0(slot1)
-		table.insert(uv1, slot1)
+		var_31_1(var_33_0)
+		table.insert(var_31_0, var_33_0)
 	end
 
-	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
-		slot3(slot8)
+	for iter_31_0, iter_31_1 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShop]) do
+		var_31_2(iter_31_1)
 	end
 
-	for slot7, slot8 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
-		slot3(slot8)
+	for iter_31_2, iter_31_3 in ipairs(pg.shop_template.get_id_list_by_genre[ShopArgs.SkinShopTimeLimit]) do
+		var_31_2(iter_31_3)
 	end
 
-	slot4 = getProxy(ActivityProxy)
+	local var_31_3 = getProxy(ActivityProxy)
+	local var_31_4 = pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]
 
-	for slot9, slot10 in ipairs(pg.activity_shop_extra.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
-		slot11 = Goods.Create({
-			shop_id = slot10
+	for iter_31_4, iter_31_5 in ipairs(var_31_4) do
+		local var_31_5 = Goods.Create({
+			shop_id = iter_31_5
 		}, Goods.TYPE_ACTIVITY_EXTRA)
 
-		slot2(slot11)
-		table.insert(slot1, slot11)
+		var_31_1(var_31_5)
+		table.insert(var_31_0, var_31_5)
 	end
 
-	for slot10, slot11 in ipairs(pg.activity_shop_template.get_id_list_by_commodity_type[DROP_TYPE_SKIN]) do
-		slot2(Goods.Create({
-			shop_id = slot11
-		}, Goods.TYPE_ACTIVITY))
+	local var_31_6 = pg.activity_shop_template.get_id_list_by_commodity_type[DROP_TYPE_SKIN]
 
-		if not _.any(slot1, function (slot0)
-			return slot0:getSkinId() == uv0:getSkinId()
+	for iter_31_6, iter_31_7 in ipairs(var_31_6) do
+		local var_31_7 = Goods.Create({
+			shop_id = iter_31_7
+		}, Goods.TYPE_ACTIVITY)
+
+		var_31_1(var_31_7)
+
+		if not _.any(var_31_0, function(arg_34_0)
+			return arg_34_0:getSkinId() == var_31_7:getSkinId()
 		end) then
-			table.insert(slot1, slot12)
+			table.insert(var_31_0, var_31_7)
 		end
 	end
 
-	return slot1
+	return var_31_0
 end
 
-function slot0.GetAllSkinForShip(slot0, slot1)
-	assert(isa(slot1, Ship), "ship should be an instance of Ship")
+function var_0_0.GetAllSkinForShip(arg_35_0, arg_35_1)
+	assert(isa(arg_35_1, Ship), "ship should be an instance of Ship")
 
-	for slot7 = #ShipGroup.getSkinList(slot1.groupId), 1, -1 do
-		if slot3[slot7].skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not slot0:hasSkin(slot8.id) then
-			table.remove(slot3, slot7)
-		elseif not slot0:InShowTime(slot8.id) then
-			table.remove(slot3, slot7)
+	local var_35_0 = arg_35_1.groupId
+	local var_35_1 = ShipGroup.getSkinList(var_35_0)
+
+	for iter_35_0 = #var_35_1, 1, -1 do
+		local var_35_2 = var_35_1[iter_35_0]
+
+		if var_35_2.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not arg_35_0:hasSkin(var_35_2.id) then
+			table.remove(var_35_1, iter_35_0)
+		elseif not arg_35_0:InShowTime(var_35_2.id) then
+			table.remove(var_35_1, iter_35_0)
 		end
 	end
 
-	if pg.ship_data_trans[slot2] and not slot1:isRemoulded() then
-		slot4 = ShipGroup.GetGroupConfig(slot2).trans_skin
+	if pg.ship_data_trans[var_35_0] and not arg_35_1:isRemoulded() then
+		local var_35_3 = ShipGroup.GetGroupConfig(var_35_0).trans_skin
 
-		for slot8 = #slot3, 1, -1 do
-			if slot3[slot8].id == slot4 then
-				table.remove(slot3, slot8)
+		for iter_35_1 = #var_35_1, 1, -1 do
+			if var_35_1[iter_35_1].id == var_35_3 then
+				table.remove(var_35_1, iter_35_1)
 
 				break
 			end
 		end
 	end
 
-	for slot7 = #slot3, 1, -1 do
-		if slot3[slot7].show_time and (type(slot8.show_time) == "string" and slot8.show_time == "stop" or type(slot8.show_time) == "table" and not pg.TimeMgr.GetInstance():inTime(slot8.show_time)) then
-			table.remove(slot3, slot7)
+	for iter_35_2 = #var_35_1, 1, -1 do
+		local var_35_4 = var_35_1[iter_35_2]
+
+		if var_35_4.show_time and (type(var_35_4.show_time) == "string" and var_35_4.show_time == "stop" or type(var_35_4.show_time) == "table" and not pg.TimeMgr.GetInstance():inTime(var_35_4.show_time)) then
+			table.remove(var_35_1, iter_35_2)
 		end
 
-		if slot8.no_showing == "1" then
-			table.remove(slot3, slot7)
-		elseif PLATFORM == PLATFORM_KR and pg.ship_skin_template[slot8.id].isHX == 1 then
-			table.remove(slot3, slot7)
+		if var_35_4.no_showing == "1" then
+			table.remove(var_35_1, iter_35_2)
+		elseif PLATFORM == PLATFORM_KR and pg.ship_skin_template[var_35_4.id].isHX == 1 then
+			table.remove(var_35_1, iter_35_2)
 		end
 	end
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		slot4 = pg.gameset.big_seven_old_skin_timestamp.key_value
+		local var_35_5 = pg.gameset.big_seven_old_skin_timestamp.key_value
 
-		for slot8 = #slot3, 1, -1 do
-			if slot3[slot8].skin_type == ShipSkin.SKIN_TYPE_OLD and slot4 < slot1.createTime then
-				table.remove(slot3, slot8)
+		for iter_35_3 = #var_35_1, 1, -1 do
+			if var_35_1[iter_35_3].skin_type == ShipSkin.SKIN_TYPE_OLD and var_35_5 < arg_35_1.createTime then
+				table.remove(var_35_1, iter_35_3)
 			end
 		end
 	end
 
-	if #slot0.forbiddenSkinList > 0 then
-		for slot7 = #slot3, 1, -1 do
-			if not slot0:hasSkin(slot3[slot7].id) and slot0:InForbiddenSkinListAndHide(slot8) then
-				table.remove(slot3, slot7)
+	if #arg_35_0.forbiddenSkinList > 0 then
+		for iter_35_4 = #var_35_1, 1, -1 do
+			local var_35_6 = var_35_1[iter_35_4].id
+
+			if not arg_35_0:hasSkin(var_35_6) and arg_35_0:InForbiddenSkinListAndHide(var_35_6) then
+				table.remove(var_35_1, iter_35_4)
 			end
 		end
 	end
 
-	return slot3
+	return var_35_1
 end
 
-function slot0.GetShareSkinsForShipGroup(slot0, slot1)
-	if not pg.ship_data_group[pg.ship_data_group.get_id_list_by_group_type[slot1][1]].share_group_id or #slot3.share_group_id <= 0 then
+function var_0_0.GetShareSkinsForShipGroup(arg_36_0, arg_36_1)
+	local var_36_0 = pg.ship_data_group.get_id_list_by_group_type[arg_36_1][1]
+	local var_36_1 = pg.ship_data_group[var_36_0]
+
+	if not var_36_1.share_group_id or #var_36_1.share_group_id <= 0 then
 		return {}
 	end
 
-	slot4 = {}
+	local var_36_2 = {}
 
-	for slot8, slot9 in ipairs(slot3.share_group_id) do
-		for slot14, slot15 in ipairs(pg.ship_skin_template.get_id_list_by_ship_group[slot9]) do
-			if ShipSkin.New({
-				id = slot15
-			}):CanShare() then
-				table.insert(slot4, slot16)
+	for iter_36_0, iter_36_1 in ipairs(var_36_1.share_group_id) do
+		local var_36_3 = pg.ship_skin_template.get_id_list_by_ship_group[iter_36_1]
+
+		for iter_36_2, iter_36_3 in ipairs(var_36_3) do
+			local var_36_4 = ShipSkin.New({
+				id = iter_36_3
+			})
+
+			if var_36_4:CanShare() then
+				table.insert(var_36_2, var_36_4)
 			end
 		end
 	end
 
-	return slot4
+	return var_36_2
 end
 
-function slot0.GetShareSkinsForShip(slot0, slot1)
-	return slot0:GetShareSkinsForShipGroup(slot1.groupId)
+function var_0_0.GetShareSkinsForShip(arg_37_0, arg_37_1)
+	local var_37_0 = arg_37_1.groupId
+
+	return arg_37_0:GetShareSkinsForShipGroup(var_37_0)
 end
 
-function slot0.GetAllSkinForARCamera(slot0, slot1)
-	for slot6 = #ShipGroup.getSkinList(slot1), 1, -1 do
-		if slot2[slot6].skin_type == ShipSkin.SKIN_TYPE_OLD then
-			table.remove(slot2, slot6)
+function var_0_0.GetAllSkinForARCamera(arg_38_0, arg_38_1)
+	local var_38_0 = ShipGroup.getSkinList(arg_38_1)
+
+	for iter_38_0 = #var_38_0, 1, -1 do
+		if var_38_0[iter_38_0].skin_type == ShipSkin.SKIN_TYPE_OLD then
+			table.remove(var_38_0, iter_38_0)
 		end
 	end
 
-	if ShipGroup.GetGroupConfig(slot1).trans_skin ~= 0 then
-		slot4 = false
+	local var_38_1 = ShipGroup.GetGroupConfig(arg_38_1).trans_skin
 
-		if getProxy(CollectionProxy):getShipGroup(slot1) then
-			for slot9, slot10 in ipairs(slot2) do
-				if slot10.skin_type == ShipSkin.SKIN_TYPE_REMAKE and slot5.trans then
-					slot4 = true
+	if var_38_1 ~= 0 then
+		local var_38_2 = false
+		local var_38_3 = getProxy(CollectionProxy):getShipGroup(arg_38_1)
+
+		if var_38_3 then
+			for iter_38_1, iter_38_2 in ipairs(var_38_0) do
+				if iter_38_2.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var_38_3.trans then
+					var_38_2 = true
 
 					break
 				end
 			end
 		end
 
-		if not slot4 then
-			for slot9 = #slot2, 1, -1 do
-				if slot2[slot9].id == slot3 then
-					table.remove(slot2, slot9)
+		if not var_38_2 then
+			for iter_38_3 = #var_38_0, 1, -1 do
+				if var_38_0[iter_38_3].id == var_38_1 then
+					table.remove(var_38_0, iter_38_3)
 
 					break
 				end
@@ -382,157 +441,192 @@ function slot0.GetAllSkinForARCamera(slot0, slot1)
 		end
 	end
 
-	for slot7 = #slot2, 1, -1 do
-		if slot2[slot7].skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not slot0:hasSkin(slot8.id) then
-			table.remove(slot2, slot7)
-		elseif slot8.no_showing == "1" then
-			table.remove(slot2, slot7)
-		elseif PLATFORM == PLATFORM_KR and pg.ship_skin_template[slot8.id].isHX == 1 then
-			table.remove(slot2, slot7)
-		elseif not slot0:InShowTime(slot8.id) then
-			table.remove(slot2, slot7)
+	for iter_38_4 = #var_38_0, 1, -1 do
+		local var_38_4 = var_38_0[iter_38_4]
+
+		if var_38_4.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not arg_38_0:hasSkin(var_38_4.id) then
+			table.remove(var_38_0, iter_38_4)
+		elseif var_38_4.no_showing == "1" then
+			table.remove(var_38_0, iter_38_4)
+		elseif PLATFORM == PLATFORM_KR and pg.ship_skin_template[var_38_4.id].isHX == 1 then
+			table.remove(var_38_0, iter_38_4)
+		elseif not arg_38_0:InShowTime(var_38_4.id) then
+			table.remove(var_38_0, iter_38_4)
 		end
 	end
 
-	if #slot0.forbiddenSkinList > 0 then
-		for slot7 = #slot2, 1, -1 do
-			if not slot0:hasSkin(slot2[slot7].id) and slot0:InForbiddenSkinListAndHide(slot8) then
-				table.remove(slot2, slot7)
+	if #arg_38_0.forbiddenSkinList > 0 then
+		for iter_38_5 = #var_38_0, 1, -1 do
+			local var_38_5 = var_38_0[iter_38_5].id
+
+			if not arg_38_0:hasSkin(var_38_5) and arg_38_0:InForbiddenSkinListAndHide(var_38_5) then
+				table.remove(var_38_0, iter_38_5)
 			end
 		end
 	end
 
-	return slot2
+	return var_38_0
 end
 
-function slot0.InShowTime(slot0, slot1)
-	if pg.ship_skin_template_column_time[slot1] and slot2.time ~= "" and type(slot2.time) == "table" and #slot2.time > 0 then
-		return pg.TimeMgr.GetInstance():passTime(slot2.time)
+function var_0_0.InShowTime(arg_39_0, arg_39_1)
+	local var_39_0 = pg.ship_skin_template_column_time[arg_39_1]
+
+	if var_39_0 and var_39_0.time ~= "" and type(var_39_0.time) == "table" and #var_39_0.time > 0 then
+		return pg.TimeMgr.GetInstance():passTime(var_39_0.time)
 	end
 
 	return true
 end
 
-function slot0.HasFashion(slot0, slot1)
-	if #slot0:GetShareSkinsForShip(slot1) > 0 then
+function var_0_0.HasFashion(arg_40_0, arg_40_1)
+	if #arg_40_0:GetShareSkinsForShip(arg_40_1) > 0 then
 		return true
 	end
 
-	if #slot0:GetAllSkinForShip(slot1) == 1 then
-		return PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot3[1].painting .. "_n"))
+	local var_40_0 = arg_40_0:GetAllSkinForShip(arg_40_1)
+
+	if #var_40_0 == 1 then
+		local var_40_1 = var_40_0[1]
+
+		return (PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_40_1.painting .. "_n")))
 	end
 
-	return #slot3 > 1
+	return #var_40_0 > 1
 end
 
-function slot0.GetEncoreSkins(slot0)
-	slot1 = getProxy(ActivityProxy)
+function var_0_0.GetEncoreSkins(arg_41_0)
+	local var_41_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
 
-	function slot2(slot0)
-		if slot0:getConfig("config_client") and slot1[1] and type(slot1[1]) == "table" then
-			return pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[1]) <= pg.TimeMgr.GetInstance():GetServerTime()
+	local function var_41_1(arg_42_0)
+		local var_42_0 = arg_42_0:getConfig("config_client")
+
+		if var_42_0 and var_42_0[1] and type(var_42_0[1]) == "table" then
+			return pg.TimeMgr.GetInstance():parseTimeFromConfig(var_42_0[1]) <= pg.TimeMgr.GetInstance():GetServerTime()
 		else
-			return slot0:isEnd()
+			return arg_42_0:isEnd()
 		end
 	end
 
-	for slot6, slot7 in ipairs(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)) do
-		if slot7:getDataConfig("type") == 5 and not slot2(slot7) then
-			return slot7:getConfig("config_data")
+	for iter_41_0, iter_41_1 in ipairs(var_41_0) do
+		if iter_41_1:getDataConfig("type") == 5 and not var_41_1(iter_41_1) then
+			return iter_41_1:getConfig("config_data")
 		end
 	end
 
 	return {}
 end
 
-function slot0.GetOwnSkins(slot0)
-	slot1 = {}
+function var_0_0.GetOwnSkins(arg_43_0)
+	local var_43_0 = {}
+	local var_43_1 = arg_43_0:getRawData()
 
-	for slot6, slot7 in pairs(slot0:getRawData()) do
-		table.insert(slot1, slot7)
+	for iter_43_0, iter_43_1 in pairs(var_43_1) do
+		table.insert(var_43_0, iter_43_1)
 	end
 
-	for slot7, slot8 in pairs(getProxy(CollectionProxy).shipGroups) do
-		if slot8.married == 1 and ShipGroup.getProposeSkin(slot8.id) then
-			table.insert(slot1, ShipSkin.New({
-				id = slot9.id
-			}))
+	local var_43_2 = getProxy(CollectionProxy).shipGroups
+
+	for iter_43_2, iter_43_3 in pairs(var_43_2) do
+		if iter_43_3.married == 1 then
+			local var_43_3 = ShipGroup.getProposeSkin(iter_43_3.id)
+
+			if var_43_3 then
+				table.insert(var_43_0, ShipSkin.New({
+					id = var_43_3.id
+				}))
+			end
 		end
 
-		if slot8.trans then
-			table.insert(slot1, ShipSkin.New({
-				id = pg.ship_data_trans[slot8.id].skin_id
+		if iter_43_3.trans then
+			local var_43_4 = pg.ship_data_trans[iter_43_3.id].skin_id
+
+			table.insert(var_43_0, ShipSkin.New({
+				id = var_43_4
 			}))
 		end
 	end
 
-	return slot1
+	return var_43_0
 end
 
-function slot0.GetOwnAndShareSkins(slot0)
-	slot2 = {}
+function var_0_0.GetOwnAndShareSkins(arg_44_0)
+	local var_44_0 = arg_44_0:GetOwnSkins()
+	local var_44_1 = {}
 
-	for slot6, slot7 in ipairs(slot0:GetOwnSkins()) do
-		slot2[slot7.id] = slot7
+	for iter_44_0, iter_44_1 in ipairs(var_44_0) do
+		var_44_1[iter_44_1.id] = iter_44_1
 	end
 
-	for slot7, slot8 in pairs(getProxy(CollectionProxy).shipGroups) do
-		if slot8.married == 1 then
-			for slot13, slot14 in ipairs(slot0:GetShareSkinsForShipGroup(slot8.id)) do
-				if not slot2[slot14.id] then
-					table.insert(slot1, slot14)
+	local var_44_2 = getProxy(CollectionProxy).shipGroups
+
+	for iter_44_2, iter_44_3 in pairs(var_44_2) do
+		if iter_44_3.married == 1 then
+			local var_44_3 = arg_44_0:GetShareSkinsForShipGroup(iter_44_3.id)
+
+			for iter_44_4, iter_44_5 in ipairs(var_44_3) do
+				if not var_44_1[iter_44_5.id] then
+					table.insert(var_44_0, iter_44_5)
 				end
 			end
 		end
 	end
 
-	return slot1
+	return var_44_0
 end
 
-function slot0.GetProbabilitySkins(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetProbabilitySkins(arg_45_0, arg_45_1)
+	local var_45_0 = {}
 
-	function slot3(slot0)
-		slot0:updateBuyCount(getProxy(ShipSkinProxy):getSkinById(slot0:getSkinId()) and not slot2:isExpireType() and 1 or 0)
+	local function var_45_1(arg_46_0)
+		local var_46_0 = arg_46_0:getSkinId()
+		local var_46_1 = getProxy(ShipSkinProxy):getSkinById(var_46_0)
+		local var_46_2 = var_46_1 and not var_46_1:isExpireType() and 1 or 0
+
+		arg_46_0:updateBuyCount(var_46_2)
 	end
 
-	function slot4(slot0)
-		uv0(Goods.Create({
-			shop_id = slot0
-		}, Goods.TYPE_SKIN))
+	local function var_45_2(arg_47_0)
+		local var_47_0 = Goods.Create({
+			shop_id = arg_47_0
+		}, Goods.TYPE_SKIN)
 
-		slot2, slot3 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot0].time)
+		var_45_1(var_47_0)
 
-		if slot2 then
-			table.insert(uv1, slot1)
+		local var_47_1, var_47_2 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg_47_0].time)
+
+		if var_47_1 then
+			table.insert(var_45_0, var_47_0)
 		end
 	end
 
-	slot6 = {}
+	local var_45_3 = getProxy(ShipSkinProxy):GetAllSkins()
+	local var_45_4 = {}
 
-	for slot10, slot11 in ipairs(getProxy(ShipSkinProxy):GetAllSkins()) do
-		if slot11:getConfig("genre") ~= ShopArgs.SkinShopTimeLimit then
-			slot6[slot11:getSkinId()] = slot11.id
+	for iter_45_0, iter_45_1 in ipairs(var_45_3) do
+		if iter_45_1:getConfig("genre") ~= ShopArgs.SkinShopTimeLimit then
+			var_45_4[iter_45_1:getSkinId()] = iter_45_1.id
 		end
 	end
 
-	for slot10, slot11 in ipairs(slot1) do
-		if slot6[slot11[1]] then
-			slot4(slot13)
+	for iter_45_2, iter_45_3 in ipairs(arg_45_1) do
+		local var_45_5 = var_45_4[iter_45_3[1]]
+
+		if var_45_5 then
+			var_45_2(var_45_5)
 		end
 	end
 
-	return slot2
+	return var_45_0
 end
 
-function slot0.GetSkinProbabilitys(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetSkinProbabilitys(arg_48_0, arg_48_1)
+	local var_48_0 = {}
 
-	for slot6, slot7 in ipairs(slot1) do
-		slot2[slot7[1]] = slot7[2]
+	for iter_48_0, iter_48_1 in ipairs(arg_48_1) do
+		var_48_0[iter_48_1[1]] = iter_48_1[2]
 	end
 
-	return slot2
+	return var_48_0
 end
 
-return slot0
+return var_0_0

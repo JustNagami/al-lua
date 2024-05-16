@@ -57,7 +57,6 @@ _G.pg.base.task_data_template[1] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[2] = {
 	name = "装备指引",
 	guild_coin_award = 0,
@@ -112,7 +111,6 @@ _G.pg.base.task_data_template[2] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3] = {
 	name = "改造指引",
 	guild_coin_award = 0,
@@ -157,7 +155,6 @@ _G.pg.base.task_data_template[3] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[4] = {
 	name = "第一章·近海演习",
 	guild_coin_award = 0,
@@ -218,7 +215,6 @@ _G.pg.base.task_data_template[4] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5] = {
 	name = "第一章·虎！虎！虎！",
 	guild_coin_award = 0,
@@ -274,7 +270,6 @@ _G.pg.base.task_data_template[5] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6] = {
 	name = "第一章·燃烧的军港",
 	guild_coin_award = 0,
@@ -330,7 +325,6 @@ _G.pg.base.task_data_template[6] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7] = {
 	name = "第一章·来自东方的舰队",
 	guild_coin_award = 0,
@@ -391,7 +385,6 @@ _G.pg.base.task_data_template[7] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[8] = {
 	name = "第二章·支援图拉吉岛",
 	guild_coin_award = 0,
@@ -447,7 +440,6 @@ _G.pg.base.task_data_template[8] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[9] = {
 	name = "第二章·乌云蔽日",
 	guild_coin_award = 0,
@@ -503,7 +495,6 @@ _G.pg.base.task_data_template[9] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10] = {
 	name = "第二章·珊瑚海的首秀",
 	guild_coin_award = 0,
@@ -559,7 +550,6 @@ _G.pg.base.task_data_template[10] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[11] = {
 	name = "第二章·救援约克城",
 	guild_coin_award = 0,
@@ -615,7 +605,6 @@ _G.pg.base.task_data_template[11] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[12] = {
 	name = "第三章·死斗！保卫中途岛",
 	guild_coin_award = 0,
@@ -671,7 +660,6 @@ _G.pg.base.task_data_template[12] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13] = {
 	name = "第三章·背水一战",
 	guild_coin_award = 0,
@@ -727,7 +715,6 @@ _G.pg.base.task_data_template[13] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[14] = {
 	name = "第三章·命运的五分钟",
 	guild_coin_award = 0,
@@ -783,7 +770,6 @@ _G.pg.base.task_data_template[14] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15] = {
 	name = "第三章·出击！中途岛反击",
 	guild_coin_award = 0,
@@ -839,7 +825,6 @@ _G.pg.base.task_data_template[15] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[16] = {
 	name = "第四章·午夜惊魂",
 	guild_coin_award = 0,
@@ -895,7 +880,6 @@ _G.pg.base.task_data_template[16] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[17] = {
 	name = "第四章·血色黎明",
 	guild_coin_award = 0,
@@ -951,7 +935,6 @@ _G.pg.base.task_data_template[17] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18] = {
 	name = "第四章·东所罗门遭遇战",
 	guild_coin_award = 0,
@@ -1007,7 +990,6 @@ _G.pg.base.task_data_template[18] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19] = {
 	name = "第四章·复仇之战",
 	guild_coin_award = 0,
@@ -1063,7 +1045,6 @@ _G.pg.base.task_data_template[19] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20] = {
 	name = "第五章·物资拦截战",
 	guild_coin_award = 0,
@@ -1119,7 +1100,6 @@ _G.pg.base.task_data_template[20] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[21] = {
 	name = "第五章·圣克鲁斯的天空",
 	guild_coin_award = 0,
@@ -1175,7 +1155,6 @@ _G.pg.base.task_data_template[21] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[22] = {
 	name = "第五章·大黄蜂的陨落",
 	guild_coin_award = 0,
@@ -1231,7 +1210,6 @@ _G.pg.base.task_data_template[22] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[23] = {
 	name = "第五章·撤离战区",
 	guild_coin_award = 0,
@@ -1287,7 +1265,6 @@ _G.pg.base.task_data_template[23] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[24] = {
 	name = "第六章·所罗门的噩梦",
 	guild_coin_award = 0,
@@ -1343,7 +1320,6 @@ _G.pg.base.task_data_template[24] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[25] = {
 	name = "第六章·夜战精英",
 	guild_coin_award = 0,
@@ -1399,7 +1375,6 @@ _G.pg.base.task_data_template[25] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[26] = {
 	name = "第六章·巨炮最后的荣耀",
 	guild_coin_award = 0,
@@ -1455,7 +1430,6 @@ _G.pg.base.task_data_template[26] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[27] = {
 	name = "第六章·所罗门的结局",
 	guild_coin_award = 0,
@@ -1511,7 +1485,6 @@ _G.pg.base.task_data_template[27] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[28] = {
 	name = "第七章·增援拦截",
 	guild_coin_award = 0,
@@ -1567,7 +1540,6 @@ _G.pg.base.task_data_template[28] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[29] = {
 	name = "第七章·短兵相接",
 	guild_coin_award = 0,
@@ -1623,7 +1595,6 @@ _G.pg.base.task_data_template[29] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[30] = {
 	name = "第七章·措手不及",
 	guild_coin_award = 0,
@@ -1679,7 +1650,6 @@ _G.pg.base.task_data_template[30] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31] = {
 	name = "第七章·预料外的混乱",
 	guild_coin_award = 0,
@@ -1735,7 +1705,6 @@ _G.pg.base.task_data_template[31] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[32] = {
 	name = "第八章·寒风",
 	guild_coin_award = 0,
@@ -1791,7 +1760,6 @@ _G.pg.base.task_data_template[32] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[33] = {
 	name = "第八章·北极圈的拂晓",
 	guild_coin_award = 0,
@@ -1847,7 +1815,6 @@ _G.pg.base.task_data_template[33] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[34] = {
 	name = "第八章·冰海怒涛",
 	guild_coin_award = 0,
@@ -1903,7 +1870,6 @@ _G.pg.base.task_data_template[34] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35] = {
 	name = "第八章·被遗忘的战场",
 	guild_coin_award = 0,
@@ -1959,7 +1925,6 @@ _G.pg.base.task_data_template[35] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[36] = {
 	name = "第九章·不详之夜",
 	guild_coin_award = 0,
@@ -2015,7 +1980,6 @@ _G.pg.base.task_data_template[36] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[37] = {
 	name = "第九章·拦截作战",
 	guild_coin_award = 0,
@@ -2071,7 +2035,6 @@ _G.pg.base.task_data_template[37] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[38] = {
 	name = "第九章·黑夜中的光芒",
 	guild_coin_award = 0,
@@ -2127,7 +2090,6 @@ _G.pg.base.task_data_template[38] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[39] = {
 	name = "第九章·海伦娜",
 	guild_coin_award = 0,
@@ -2183,7 +2145,6 @@ _G.pg.base.task_data_template[39] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[40] = {
 	name = "第十章·再次出击，再次！",
 	guild_coin_award = 0,
@@ -2239,7 +2200,6 @@ _G.pg.base.task_data_template[40] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[41] = {
 	name = "第十章·先发制人",
 	guild_coin_award = 0,
@@ -2295,7 +2255,6 @@ _G.pg.base.task_data_template[41] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42] = {
 	name = "第十章·乘胜追击",
 	guild_coin_award = 0,
@@ -2351,7 +2310,6 @@ _G.pg.base.task_data_template[42] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43] = {
 	name = "第十章·回马枪",
 	guild_coin_award = 0,
@@ -2407,7 +2365,6 @@ _G.pg.base.task_data_template[43] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[44] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -2463,7 +2420,6 @@ _G.pg.base.task_data_template[44] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[45] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -2519,7 +2475,6 @@ _G.pg.base.task_data_template[45] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[46] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -2575,7 +2530,6 @@ _G.pg.base.task_data_template[46] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[47] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -2631,7 +2585,6 @@ _G.pg.base.task_data_template[47] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[48] = {
 	name = "第十二章1图",
 	guild_coin_award = 0,
@@ -2687,7 +2640,6 @@ _G.pg.base.task_data_template[48] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[49] = {
 	name = "第十二章2图",
 	guild_coin_award = 0,
@@ -2743,7 +2695,6 @@ _G.pg.base.task_data_template[49] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[50] = {
 	name = "第十二章3图",
 	guild_coin_award = 0,
@@ -2799,7 +2750,6 @@ _G.pg.base.task_data_template[50] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51] = {
 	name = "第十二章4图",
 	guild_coin_award = 0,
@@ -2855,7 +2805,6 @@ _G.pg.base.task_data_template[51] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[52] = {
 	name = "第十三章1图",
 	guild_coin_award = 0,
@@ -2911,7 +2860,6 @@ _G.pg.base.task_data_template[52] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[53] = {
 	name = "第十三章2图",
 	guild_coin_award = 0,
@@ -2967,7 +2915,6 @@ _G.pg.base.task_data_template[53] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[54] = {
 	name = "第十三章3图",
 	guild_coin_award = 0,
@@ -3023,7 +2970,6 @@ _G.pg.base.task_data_template[54] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55] = {
 	name = "第十三章4图",
 	guild_coin_award = 0,
@@ -3079,7 +3025,6 @@ _G.pg.base.task_data_template[55] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[56] = {
 	name = "第十四章1图",
 	guild_coin_award = 0,
@@ -3135,7 +3080,6 @@ _G.pg.base.task_data_template[56] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[57] = {
 	name = "第十四章2图",
 	guild_coin_award = 0,
@@ -3191,7 +3135,6 @@ _G.pg.base.task_data_template[57] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[58] = {
 	name = "第十四章3图",
 	guild_coin_award = 0,
@@ -3247,7 +3190,6 @@ _G.pg.base.task_data_template[58] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[59] = {
 	name = "第十四章4图",
 	guild_coin_award = 0,
@@ -3303,7 +3245,6 @@ _G.pg.base.task_data_template[59] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[60] = {
 	name = "第十五章1图",
 	guild_coin_award = 0,
@@ -3359,7 +3300,6 @@ _G.pg.base.task_data_template[60] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[61] = {
 	name = "第十五章2图",
 	guild_coin_award = 0,
@@ -3415,7 +3355,6 @@ _G.pg.base.task_data_template[61] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[62] = {
 	name = "第十五章3图",
 	guild_coin_award = 0,
@@ -3471,7 +3410,6 @@ _G.pg.base.task_data_template[62] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[63] = {
 	name = "第十五章4图",
 	guild_coin_award = 0,
@@ -3527,7 +3465,6 @@ _G.pg.base.task_data_template[63] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1401] = {
 	name = "125级成就任务1",
 	guild_coin_award = 0,
@@ -3572,7 +3509,6 @@ _G.pg.base.task_data_template[1401] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1402] = {
 	name = "125级成就任务2",
 	guild_coin_award = 0,
@@ -3622,7 +3558,6 @@ _G.pg.base.task_data_template[1402] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1403] = {
 	name = "125级成就任务3",
 	guild_coin_award = 0,
@@ -3672,7 +3607,6 @@ _G.pg.base.task_data_template[1403] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1404] = {
 	name = "125级成就任务4",
 	guild_coin_award = 0,
@@ -3722,7 +3656,6 @@ _G.pg.base.task_data_template[1404] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1405] = {
 	name = "125级成就任务5",
 	guild_coin_award = 0,
@@ -3772,7 +3705,6 @@ _G.pg.base.task_data_template[1405] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1406] = {
 	name = "125级成就任务6",
 	guild_coin_award = 0,
@@ -3822,7 +3754,6 @@ _G.pg.base.task_data_template[1406] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[1407] = {
 	name = "125级成就任务7",
 	guild_coin_award = 0,
@@ -3872,7 +3803,6 @@ _G.pg.base.task_data_template[1407] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3000] = {
 	name = "好感度",
 	guild_coin_award = 0,
@@ -3912,7 +3842,6 @@ _G.pg.base.task_data_template[3000] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3001] = {
 	name = "第一章·近海演习",
 	guild_coin_award = 0,
@@ -3963,7 +3892,6 @@ _G.pg.base.task_data_template[3001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3002] = {
 	name = "第一章·虎！虎！虎！",
 	guild_coin_award = 0,
@@ -4014,7 +3942,6 @@ _G.pg.base.task_data_template[3002] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3003] = {
 	name = "第一章·燃烧的军港",
 	guild_coin_award = 0,
@@ -4065,7 +3992,6 @@ _G.pg.base.task_data_template[3003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3004] = {
 	name = "第一章·来自东方的舰队",
 	guild_coin_award = 0,
@@ -4116,7 +4042,6 @@ _G.pg.base.task_data_template[3004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3005] = {
 	name = "第二章·支援图拉吉岛",
 	guild_coin_award = 0,
@@ -4167,7 +4092,6 @@ _G.pg.base.task_data_template[3005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3006] = {
 	name = "第二章·乌云蔽日",
 	guild_coin_award = 0,
@@ -4218,7 +4142,6 @@ _G.pg.base.task_data_template[3006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3007] = {
 	name = "第二章·珊瑚海的首秀",
 	guild_coin_award = 0,
@@ -4269,7 +4192,6 @@ _G.pg.base.task_data_template[3007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3008] = {
 	name = "第二章·救援约克城",
 	guild_coin_award = 0,
@@ -4320,7 +4242,6 @@ _G.pg.base.task_data_template[3008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3009] = {
 	name = "第三章·死斗！保卫中途岛",
 	guild_coin_award = 0,
@@ -4371,7 +4292,6 @@ _G.pg.base.task_data_template[3009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3010] = {
 	name = "第三章·背水一战",
 	guild_coin_award = 0,
@@ -4422,7 +4342,6 @@ _G.pg.base.task_data_template[3010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3011] = {
 	name = "第三章·命运的五分钟",
 	guild_coin_award = 0,
@@ -4473,7 +4392,6 @@ _G.pg.base.task_data_template[3011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3012] = {
 	name = "第三章·出击！中途岛反击",
 	guild_coin_award = 0,
@@ -4524,7 +4442,6 @@ _G.pg.base.task_data_template[3012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3013] = {
 	name = "第四章·午夜惊魂",
 	guild_coin_award = 0,
@@ -4575,7 +4492,6 @@ _G.pg.base.task_data_template[3013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3014] = {
 	name = "第四章·血色黎明",
 	guild_coin_award = 0,
@@ -4626,7 +4542,6 @@ _G.pg.base.task_data_template[3014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3015] = {
 	name = "第四章·东所罗门遭遇战",
 	guild_coin_award = 0,
@@ -4677,7 +4592,6 @@ _G.pg.base.task_data_template[3015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3016] = {
 	name = "第四章·复仇之战",
 	guild_coin_award = 0,
@@ -4728,7 +4642,6 @@ _G.pg.base.task_data_template[3016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3017] = {
 	name = "第五章·物资拦截战",
 	guild_coin_award = 0,
@@ -4779,7 +4692,6 @@ _G.pg.base.task_data_template[3017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3018] = {
 	name = "第五章·圣克鲁斯的天空",
 	guild_coin_award = 0,
@@ -4830,7 +4742,6 @@ _G.pg.base.task_data_template[3018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3019] = {
 	name = "第五章·大黄蜂的陨落",
 	guild_coin_award = 0,
@@ -4881,7 +4792,6 @@ _G.pg.base.task_data_template[3019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3020] = {
 	name = "第五章·撤离战区",
 	guild_coin_award = 0,
@@ -4932,7 +4842,6 @@ _G.pg.base.task_data_template[3020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3021] = {
 	name = "第六章·所罗门的噩梦",
 	guild_coin_award = 0,
@@ -4983,7 +4892,6 @@ _G.pg.base.task_data_template[3021] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3022] = {
 	name = "第六章·夜战精英",
 	guild_coin_award = 0,
@@ -5034,7 +4942,6 @@ _G.pg.base.task_data_template[3022] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3023] = {
 	name = "第六章·巨炮最后的荣耀",
 	guild_coin_award = 0,
@@ -5085,7 +4992,6 @@ _G.pg.base.task_data_template[3023] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3024] = {
 	name = "第六章·所罗门的结局",
 	guild_coin_award = 0,
@@ -5136,7 +5042,6 @@ _G.pg.base.task_data_template[3024] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3025] = {
 	name = "第七章·增援拦截",
 	guild_coin_award = 0,
@@ -5187,7 +5092,6 @@ _G.pg.base.task_data_template[3025] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3026] = {
 	name = "第七章·短兵相接",
 	guild_coin_award = 0,
@@ -5238,7 +5142,6 @@ _G.pg.base.task_data_template[3026] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3027] = {
 	name = "第七章·措手不及",
 	guild_coin_award = 0,
@@ -5289,7 +5192,6 @@ _G.pg.base.task_data_template[3027] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3028] = {
 	name = "第七章·预料外的混乱",
 	guild_coin_award = 0,
@@ -5340,7 +5242,6 @@ _G.pg.base.task_data_template[3028] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3029] = {
 	name = "第八章·寒风",
 	guild_coin_award = 0,
@@ -5391,7 +5292,6 @@ _G.pg.base.task_data_template[3029] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3030] = {
 	name = "第八章·北极圈的拂晓",
 	guild_coin_award = 0,
@@ -5442,7 +5342,6 @@ _G.pg.base.task_data_template[3030] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3031] = {
 	name = "第八章·冰海怒涛",
 	guild_coin_award = 0,
@@ -5493,7 +5392,6 @@ _G.pg.base.task_data_template[3031] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3032] = {
 	name = "第八章·被遗忘的战场",
 	guild_coin_award = 0,
@@ -5544,7 +5442,6 @@ _G.pg.base.task_data_template[3032] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3033] = {
 	name = "第九章·不详之夜",
 	guild_coin_award = 0,
@@ -5595,7 +5492,6 @@ _G.pg.base.task_data_template[3033] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3034] = {
 	name = "第九章·拦截作战",
 	guild_coin_award = 0,
@@ -5646,7 +5542,6 @@ _G.pg.base.task_data_template[3034] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3035] = {
 	name = "第九章·黑夜中的光芒",
 	guild_coin_award = 0,
@@ -5697,7 +5592,6 @@ _G.pg.base.task_data_template[3035] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3036] = {
 	name = "第九章·海伦娜",
 	guild_coin_award = 0,
@@ -5748,7 +5642,6 @@ _G.pg.base.task_data_template[3036] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3037] = {
 	name = "第十章·再次出击，再次！",
 	guild_coin_award = 0,
@@ -5799,7 +5692,6 @@ _G.pg.base.task_data_template[3037] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3038] = {
 	name = "第十章·先发制人",
 	guild_coin_award = 0,
@@ -5850,7 +5742,6 @@ _G.pg.base.task_data_template[3038] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3039] = {
 	name = "第十章·乘胜追击",
 	guild_coin_award = 0,
@@ -5901,7 +5792,6 @@ _G.pg.base.task_data_template[3039] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3040] = {
 	name = "第十章·回马枪",
 	guild_coin_award = 0,
@@ -5952,7 +5842,6 @@ _G.pg.base.task_data_template[3040] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3041] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -6008,7 +5897,6 @@ _G.pg.base.task_data_template[3041] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3042] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -6064,7 +5952,6 @@ _G.pg.base.task_data_template[3042] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3043] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -6120,7 +6007,6 @@ _G.pg.base.task_data_template[3043] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3044] = {
 	name = "第十一章·未定义",
 	guild_coin_award = 0,
@@ -6176,7 +6062,6 @@ _G.pg.base.task_data_template[3044] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3045] = {
 	name = "第十二章1图",
 	guild_coin_award = 0,
@@ -6232,7 +6117,6 @@ _G.pg.base.task_data_template[3045] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3046] = {
 	name = "第十二章2图",
 	guild_coin_award = 0,
@@ -6288,7 +6172,6 @@ _G.pg.base.task_data_template[3046] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3047] = {
 	name = "第十二章3图",
 	guild_coin_award = 0,
@@ -6344,7 +6227,6 @@ _G.pg.base.task_data_template[3047] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3048] = {
 	name = "第十二章4图",
 	guild_coin_award = 0,
@@ -6400,7 +6282,6 @@ _G.pg.base.task_data_template[3048] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3049] = {
 	name = "第十三章1图",
 	guild_coin_award = 0,
@@ -6456,7 +6337,6 @@ _G.pg.base.task_data_template[3049] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3050] = {
 	name = "第十三章2图",
 	guild_coin_award = 0,
@@ -6512,7 +6392,6 @@ _G.pg.base.task_data_template[3050] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3051] = {
 	name = "第十三章3图",
 	guild_coin_award = 0,
@@ -6568,7 +6447,6 @@ _G.pg.base.task_data_template[3051] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3052] = {
 	name = "第十三章4图",
 	guild_coin_award = 0,
@@ -6624,7 +6502,6 @@ _G.pg.base.task_data_template[3052] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3053] = {
 	name = "第十四章1图",
 	guild_coin_award = 0,
@@ -6680,7 +6557,6 @@ _G.pg.base.task_data_template[3053] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3054] = {
 	name = "第十四章2图",
 	guild_coin_award = 0,
@@ -6736,7 +6612,6 @@ _G.pg.base.task_data_template[3054] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3055] = {
 	name = "第十四章3图",
 	guild_coin_award = 0,
@@ -6792,7 +6667,6 @@ _G.pg.base.task_data_template[3055] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3056] = {
 	name = "第十四章4图",
 	guild_coin_award = 0,
@@ -6848,7 +6722,6 @@ _G.pg.base.task_data_template[3056] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3057] = {
 	name = "第十五章1图",
 	guild_coin_award = 0,
@@ -6904,7 +6777,6 @@ _G.pg.base.task_data_template[3057] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3058] = {
 	name = "第十五章2图",
 	guild_coin_award = 0,
@@ -6960,7 +6832,6 @@ _G.pg.base.task_data_template[3058] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3059] = {
 	name = "第十五章3图",
 	guild_coin_award = 0,
@@ -7016,7 +6887,6 @@ _G.pg.base.task_data_template[3059] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[3060] = {
 	name = "第十五章4图",
 	guild_coin_award = 0,
@@ -7072,7 +6942,6 @@ _G.pg.base.task_data_template[3060] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5001] = {
 	name = "{namecode:98}的委托1",
 	guild_coin_award = 0,
@@ -7112,7 +6981,6 @@ _G.pg.base.task_data_template[5001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5002] = {
 	name = "{namecode:98}的委托2",
 	guild_coin_award = 0,
@@ -7157,7 +7025,6 @@ _G.pg.base.task_data_template[5002] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5003] = {
 	name = "{namecode:98}的委托3",
 	guild_coin_award = 0,
@@ -7197,7 +7064,6 @@ _G.pg.base.task_data_template[5003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5004] = {
 	name = "{namecode:98}的委托4",
 	guild_coin_award = 0,
@@ -7237,7 +7103,6 @@ _G.pg.base.task_data_template[5004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5005] = {
 	name = "{namecode:98}的委托5",
 	guild_coin_award = 0,
@@ -7277,7 +7142,6 @@ _G.pg.base.task_data_template[5005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5006] = {
 	name = "{namecode:98}的委托5-1",
 	guild_coin_award = 0,
@@ -7317,7 +7181,6 @@ _G.pg.base.task_data_template[5006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5007] = {
 	name = "{namecode:98}的委托6-1",
 	guild_coin_award = 0,
@@ -7369,7 +7232,6 @@ _G.pg.base.task_data_template[5007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5008] = {
 	name = "{namecode:98}的委托6-2",
 	guild_coin_award = 0,
@@ -7421,7 +7283,6 @@ _G.pg.base.task_data_template[5008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5009] = {
 	name = "{namecode:98}的委托6-3",
 	guild_coin_award = 0,
@@ -7468,7 +7329,6 @@ _G.pg.base.task_data_template[5009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5010] = {
 	name = "{namecode:98}的委托6-4",
 	guild_coin_award = 0,
@@ -7515,7 +7375,6 @@ _G.pg.base.task_data_template[5010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5011] = {
 	name = "{namecode:98}的委托7-1",
 	guild_coin_award = 0,
@@ -7555,7 +7414,6 @@ _G.pg.base.task_data_template[5011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5012] = {
 	name = "{namecode:98}的委托7-2",
 	guild_coin_award = 0,
@@ -7595,7 +7453,6 @@ _G.pg.base.task_data_template[5012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5013] = {
 	name = "{namecode:98}的委托8-1",
 	guild_coin_award = 0,
@@ -7641,7 +7498,6 @@ _G.pg.base.task_data_template[5013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5014] = {
 	name = "{namecode:98}的委托8-2",
 	guild_coin_award = 0,
@@ -7687,7 +7543,6 @@ _G.pg.base.task_data_template[5014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5015] = {
 	name = "{namecode:98}的委托8-3",
 	guild_coin_award = 0,
@@ -7737,7 +7592,6 @@ _G.pg.base.task_data_template[5015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5016] = {
 	name = "{namecode:98}的委托8-4",
 	guild_coin_award = 0,
@@ -7787,7 +7641,6 @@ _G.pg.base.task_data_template[5016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5017] = {
 	name = "{namecode:98}的委托8-5",
 	guild_coin_award = 0,
@@ -7837,7 +7690,6 @@ _G.pg.base.task_data_template[5017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5018] = {
 	name = "{namecode:98}的委托8-6",
 	guild_coin_award = 0,
@@ -7887,7 +7739,6 @@ _G.pg.base.task_data_template[5018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5019] = {
 	name = "{namecode:98}的委托9",
 	guild_coin_award = 0,
@@ -7927,7 +7778,6 @@ _G.pg.base.task_data_template[5019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5020] = {
 	name = "{namecode:98}的委托10",
 	guild_coin_award = 0,
@@ -7967,7 +7817,6 @@ _G.pg.base.task_data_template[5020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5031] = {
 	name = "休假中的偶遇",
 	guild_coin_award = 0,
@@ -8009,7 +7858,6 @@ _G.pg.base.task_data_template[5031] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5032] = {
 	name = "No more 运动！",
 	guild_coin_award = 0,
@@ -8051,7 +7899,6 @@ _G.pg.base.task_data_template[5032] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[5033] = {
 	name = "No more 锻炼！",
 	guild_coin_award = 0,
@@ -8091,7 +7938,6 @@ _G.pg.base.task_data_template[5033] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5034] = {
 	name = "正确的休假方式",
 	guild_coin_award = 0,
@@ -8131,7 +7977,6 @@ _G.pg.base.task_data_template[5034] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5035] = {
 	name = "吃我必杀技啦！",
 	guild_coin_award = 0,
@@ -8171,7 +8016,6 @@ _G.pg.base.task_data_template[5035] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5036] = {
 	name = "大·失·败",
 	guild_coin_award = 0,
@@ -8211,7 +8055,6 @@ _G.pg.base.task_data_template[5036] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5037] = {
 	name = "别了，梦想中的休假",
 	guild_coin_award = 0,
@@ -8251,7 +8094,6 @@ _G.pg.base.task_data_template[5037] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5038] = {
 	name = "干物三连！",
 	guild_coin_award = 0,
@@ -8291,7 +8133,6 @@ _G.pg.base.task_data_template[5038] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5041] = {
 	name = "突破第一阶段",
 	guild_coin_award = 0,
@@ -8331,7 +8172,6 @@ _G.pg.base.task_data_template[5041] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5042] = {
 	name = "突破第二阶段",
 	guild_coin_award = 0,
@@ -8371,7 +8211,6 @@ _G.pg.base.task_data_template[5042] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5043] = {
 	name = "突破第三阶段",
 	guild_coin_award = 0,
@@ -8411,7 +8250,6 @@ _G.pg.base.task_data_template[5043] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5044] = {
 	name = "突破第四阶段",
 	guild_coin_award = 0,
@@ -8451,7 +8289,6 @@ _G.pg.base.task_data_template[5044] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5051] = {
 	name = "{namecode:96}的早晨",
 	guild_coin_award = 0,
@@ -8493,7 +8330,6 @@ _G.pg.base.task_data_template[5051] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5052] = {
 	name = "{namecode:96}与小伙伴们",
 	guild_coin_award = 0,
@@ -8533,7 +8369,6 @@ _G.pg.base.task_data_template[5052] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5053] = {
 	name = "{namecode:96}与前辈们",
 	guild_coin_award = 0,
@@ -8573,7 +8408,6 @@ _G.pg.base.task_data_template[5053] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5054] = {
 	name = "{namecode:96}与大前辈",
 	guild_coin_award = 0,
@@ -8613,7 +8447,6 @@ _G.pg.base.task_data_template[5054] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5055] = {
 	name = "今天做饭我负责！",
 	guild_coin_award = 0,
@@ -8663,7 +8496,6 @@ _G.pg.base.task_data_template[5055] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5056] = {
 	name = "深夜的插曲",
 	guild_coin_award = 0,
@@ -8713,7 +8545,6 @@ _G.pg.base.task_data_template[5056] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5057] = {
 	name = "不屈之鹤",
 	guild_coin_award = 0,
@@ -8763,7 +8594,6 @@ _G.pg.base.task_data_template[5057] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5061] = {
 	name = "{namecode:22}大人登场",
 	guild_coin_award = 0,
@@ -8805,7 +8635,6 @@ _G.pg.base.task_data_template[5061] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5062] = {
 	name = "天才{namecode:22}大人",
 	guild_coin_award = 0,
@@ -8845,7 +8674,6 @@ _G.pg.base.task_data_template[5062] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5063] = {
 	name = "VS{namecode:17}！？",
 	guild_coin_award = 0,
@@ -8885,7 +8713,6 @@ _G.pg.base.task_data_template[5063] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5064] = {
 	name = "{namecode:22}粉丝团？",
 	guild_coin_award = 0,
@@ -8925,7 +8752,6 @@ _G.pg.base.task_data_template[5064] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5065] = {
 	name = "{namecode:22}和游乐园·上",
 	guild_coin_award = 0,
@@ -8975,7 +8801,6 @@ _G.pg.base.task_data_template[5065] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5066] = {
 	name = "{namecode:22}和游乐园·下",
 	guild_coin_award = 0,
@@ -9025,7 +8850,6 @@ _G.pg.base.task_data_template[5066] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5067] = {
 	name = "一如既往？的{namecode:22}大人",
 	guild_coin_award = 0,
@@ -9075,7 +8899,6 @@ _G.pg.base.task_data_template[5067] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5071] = {
 	name = "小小的午餐会 ",
 	guild_coin_award = 0,
@@ -9117,7 +8940,6 @@ _G.pg.base.task_data_template[5071] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5072] = {
 	name = "荣耀的意义 ",
 	guild_coin_award = 0,
@@ -9157,7 +8979,6 @@ _G.pg.base.task_data_template[5072] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5073] = {
 	name = "秘书舰的责任 ",
 	guild_coin_award = 0,
@@ -9197,7 +9018,6 @@ _G.pg.base.task_data_template[5073] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5074] = {
 	name = "是敌是友？ ",
 	guild_coin_award = 0,
@@ -9237,7 +9057,6 @@ _G.pg.base.task_data_template[5074] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5075] = {
 	name = "可爱的小猪仔 ",
 	guild_coin_award = 0,
@@ -9287,7 +9106,6 @@ _G.pg.base.task_data_template[5075] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5076] = {
 	name = "逞强和真心·上 ",
 	guild_coin_award = 0,
@@ -9337,7 +9155,6 @@ _G.pg.base.task_data_template[5076] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5077] = {
 	name = "逞强和真心·下 ",
 	guild_coin_award = 0,
@@ -9387,7 +9204,6 @@ _G.pg.base.task_data_template[5077] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5081] = {
 	name = "爱发脾气的秘书舰",
 	guild_coin_award = 0,
@@ -9429,7 +9245,6 @@ _G.pg.base.task_data_template[5081] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5082] = {
 	name = "不高兴的理由·上",
 	guild_coin_award = 0,
@@ -9469,7 +9284,6 @@ _G.pg.base.task_data_template[5082] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5083] = {
 	name = "不高兴的理由·中",
 	guild_coin_award = 0,
@@ -9509,7 +9323,6 @@ _G.pg.base.task_data_template[5083] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5084] = {
 	name = "不高兴的理由·下",
 	guild_coin_award = 0,
@@ -9549,7 +9362,6 @@ _G.pg.base.task_data_template[5084] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5085] = {
 	name = "哈曼和约克城",
 	guild_coin_award = 0,
@@ -9599,7 +9411,6 @@ _G.pg.base.task_data_template[5085] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5086] = {
 	name = "喂喂是海军部吗！？",
 	guild_coin_award = 0,
@@ -9649,7 +9460,6 @@ _G.pg.base.task_data_template[5086] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5087] = {
 	name = "坦率只有…一瞬间！",
 	guild_coin_award = 0,
@@ -9699,7 +9509,6 @@ _G.pg.base.task_data_template[5087] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5091] = {
 	name = "真红色的秘书舰",
 	guild_coin_award = 0,
@@ -9741,7 +9550,6 @@ _G.pg.base.task_data_template[5091] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5092] = {
 	name = "无双的传承",
 	guild_coin_award = 0,
@@ -9781,7 +9589,6 @@ _G.pg.base.task_data_template[5092] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5093] = {
 	name = "情敌与…例外？",
 	guild_coin_award = 0,
@@ -9821,7 +9628,6 @@ _G.pg.base.task_data_template[5093] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5094] = {
 	name = "友军与过去",
 	guild_coin_award = 0,
@@ -9861,7 +9667,6 @@ _G.pg.base.task_data_template[5094] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5095] = {
 	name = "细小的伤痕",
 	guild_coin_award = 0,
@@ -9911,7 +9716,6 @@ _G.pg.base.task_data_template[5095] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5096] = {
 	name = "黑暗之中的告白",
 	guild_coin_award = 0,
@@ -9961,7 +9765,6 @@ _G.pg.base.task_data_template[5096] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5097] = {
 	name = "命运之人",
 	guild_coin_award = 0,
@@ -10011,7 +9814,6 @@ _G.pg.base.task_data_template[5097] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5101] = {
 	name = "突然的邀请",
 	guild_coin_award = 0,
@@ -10053,7 +9855,6 @@ _G.pg.base.task_data_template[5101] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5102] = {
 	name = "骑士团结成！",
 	guild_coin_award = 0,
@@ -10093,7 +9894,6 @@ _G.pg.base.task_data_template[5102] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5103] = {
 	name = "赛前集训！",
 	guild_coin_award = 0,
@@ -10133,7 +9933,6 @@ _G.pg.base.task_data_template[5103] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5104] = {
 	name = "比赛开始！",
 	guild_coin_award = 0,
@@ -10173,7 +9972,6 @@ _G.pg.base.task_data_template[5104] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5105] = {
 	name = "强敌出场！？",
 	guild_coin_award = 0,
@@ -10223,7 +10021,6 @@ _G.pg.base.task_data_template[5105] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5106] = {
 	name = "奋发努力！",
 	guild_coin_award = 0,
@@ -10273,7 +10070,6 @@ _G.pg.base.task_data_template[5106] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5107] = {
 	name = "最棒的冠军奖励",
 	guild_coin_award = 0,
@@ -10323,7 +10119,6 @@ _G.pg.base.task_data_template[5107] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5111] = {
 	name = "明天的天气是……",
 	guild_coin_award = 0,
@@ -10365,7 +10160,6 @@ _G.pg.base.task_data_template[5111] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5112] = {
 	name = "高气压？低气压？",
 	guild_coin_award = 0,
@@ -10405,7 +10199,6 @@ _G.pg.base.task_data_template[5112] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5113] = {
 	name = "微风轻拂",
 	guild_coin_award = 0,
@@ -10445,7 +10238,6 @@ _G.pg.base.task_data_template[5113] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5114] = {
 	name = "低气压正在接近",
 	guild_coin_award = 0,
@@ -10485,7 +10277,6 @@ _G.pg.base.task_data_template[5114] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5115] = {
 	name = "阴，转——",
 	guild_coin_award = 0,
@@ -10535,7 +10326,6 @@ _G.pg.base.task_data_template[5115] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5116] = {
 	name = "躲雨",
 	guild_coin_award = 0,
@@ -10585,7 +10375,6 @@ _G.pg.base.task_data_template[5116] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5117] = {
 	name = "晴空万里",
 	guild_coin_award = 0,
@@ -10635,7 +10424,6 @@ _G.pg.base.task_data_template[5117] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5121] = {
 	name = "其名为光荣",
 	guild_coin_award = 0,
@@ -10677,7 +10465,6 @@ _G.pg.base.task_data_template[5121] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5122] = {
 	name = "演习海域上",
 	guild_coin_award = 0,
@@ -10717,7 +10504,6 @@ _G.pg.base.task_data_template[5122] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5123] = {
 	name = "女王事件Ⅰ",
 	guild_coin_award = 0,
@@ -10757,7 +10543,6 @@ _G.pg.base.task_data_template[5123] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5124] = {
 	name = "女王事件Ⅱ",
 	guild_coin_award = 0,
@@ -10797,7 +10582,6 @@ _G.pg.base.task_data_template[5124] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5125] = {
 	name = "和驱逐舰们一起",
 	guild_coin_award = 0,
@@ -10847,7 +10631,6 @@ _G.pg.base.task_data_template[5125] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5126] = {
 	name = "于她而言的荣光·上",
 	guild_coin_award = 0,
@@ -10897,7 +10680,6 @@ _G.pg.base.task_data_template[5126] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5127] = {
 	name = "于她而言的荣光·下",
 	guild_coin_award = 0,
@@ -10947,7 +10729,6 @@ _G.pg.base.task_data_template[5127] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5131] = {
 	name = "精彩瞬间！隔壁的小加加",
 	guild_coin_award = 0,
@@ -10989,7 +10770,6 @@ _G.pg.base.task_data_template[5131] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5132] = {
 	name = "小加加的工作",
 	guild_coin_award = 0,
@@ -11029,7 +10809,6 @@ _G.pg.base.task_data_template[5132] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5133] = {
 	name = "小加加的休息日",
 	guild_coin_award = 0,
@@ -11069,7 +10848,6 @@ _G.pg.base.task_data_template[5133] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5134] = {
 	name = "小加加和姐姐",
 	guild_coin_award = 0,
@@ -11109,7 +10887,6 @@ _G.pg.base.task_data_template[5134] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5135] = {
 	name = "取材秘辛系列・上",
 	guild_coin_award = 0,
@@ -11159,7 +10936,6 @@ _G.pg.base.task_data_template[5135] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5136] = {
 	name = "取材秘辛系列・下",
 	guild_coin_award = 0,
@@ -11209,7 +10985,6 @@ _G.pg.base.task_data_template[5136] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5137] = {
 	name = "最重要的宝物",
 	guild_coin_award = 0,
@@ -11259,7 +11034,6 @@ _G.pg.base.task_data_template[5137] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5141] = {
 	name = "约会的邀请",
 	guild_coin_award = 0,
@@ -11301,7 +11075,6 @@ _G.pg.base.task_data_template[5141] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5142] = {
 	name = "出发！",
 	guild_coin_award = 0,
@@ -11341,7 +11114,6 @@ _G.pg.base.task_data_template[5142] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5143] = {
 	name = "购物事件",
 	guild_coin_award = 0,
@@ -11381,7 +11153,6 @@ _G.pg.base.task_data_template[5143] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5144] = {
 	name = "休息时间，然后——",
 	guild_coin_award = 0,
@@ -11421,7 +11192,6 @@ _G.pg.base.task_data_template[5144] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5145] = {
 	name = "黑暗之中",
 	guild_coin_award = 0,
@@ -11471,7 +11241,6 @@ _G.pg.base.task_data_template[5145] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5146] = {
 	name = "夕阳下的礼物",
 	guild_coin_award = 0,
@@ -11521,7 +11290,6 @@ _G.pg.base.task_data_template[5146] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5147] = {
 	name = "勇往直前",
 	guild_coin_award = 0,
@@ -11571,7 +11339,6 @@ _G.pg.base.task_data_template[5147] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5151] = {
 	name = "初诞",
 	guild_coin_award = 0,
@@ -11613,7 +11380,6 @@ _G.pg.base.task_data_template[5151] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5152] = {
 	name = "轨迹",
 	guild_coin_award = 0,
@@ -11653,7 +11419,6 @@ _G.pg.base.task_data_template[5152] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5153] = {
 	name = "幕间Ⅰ",
 	guild_coin_award = 0,
@@ -11693,7 +11458,6 @@ _G.pg.base.task_data_template[5153] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5154] = {
 	name = "思考",
 	guild_coin_award = 0,
@@ -11733,7 +11497,6 @@ _G.pg.base.task_data_template[5154] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5155] = {
 	name = "幕间Ⅱ",
 	guild_coin_award = 0,
@@ -11783,7 +11546,6 @@ _G.pg.base.task_data_template[5155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5156] = {
 	name = "羁绊",
 	guild_coin_award = 0,
@@ -11833,7 +11595,6 @@ _G.pg.base.task_data_template[5156] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5157] = {
 	name = "纯白",
 	guild_coin_award = 0,
@@ -11883,7 +11644,6 @@ _G.pg.base.task_data_template[5157] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5171] = {
 	name = "皇家茶会的客人",
 	guild_coin_award = 0,
@@ -11925,7 +11685,6 @@ _G.pg.base.task_data_template[5171] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5172] = {
 	name = "努力的凯旋小姐",
 	guild_coin_award = 0,
@@ -11965,7 +11724,6 @@ _G.pg.base.task_data_template[5172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5173] = {
 	name = "出击的凯旋小姐",
 	guild_coin_award = 0,
@@ -12005,7 +11763,6 @@ _G.pg.base.task_data_template[5173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5174] = {
 	name = "失落的凯旋小姐",
 	guild_coin_award = 0,
@@ -12045,7 +11802,6 @@ _G.pg.base.task_data_template[5174] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5175] = {
 	name = "心声",
 	guild_coin_award = 0,
@@ -12095,7 +11851,6 @@ _G.pg.base.task_data_template[5175] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5176] = {
 	name = "“对立”的姐妹",
 	guild_coin_award = 0,
@@ -12145,7 +11900,6 @@ _G.pg.base.task_data_template[5176] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5177] = {
 	name = "自由鸢尾的凯旋",
 	guild_coin_award = 0,
@@ -12195,7 +11949,6 @@ _G.pg.base.task_data_template[5177] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5181] = {
 	name = "人见人爱的埃米尔",
 	guild_coin_award = 0,
@@ -12237,7 +11990,6 @@ _G.pg.base.task_data_template[5181] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5182] = {
 	name = "黄金的友谊？",
 	guild_coin_award = 0,
@@ -12277,7 +12029,6 @@ _G.pg.base.task_data_template[5182] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5183] = {
 	name = "意外的特长",
 	guild_coin_award = 0,
@@ -12317,7 +12068,6 @@ _G.pg.base.task_data_template[5183] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5184] = {
 	name = "“克制”的埃米尔",
 	guild_coin_award = 0,
@@ -12357,7 +12107,6 @@ _G.pg.base.task_data_template[5184] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5185] = {
 	name = "埃米尔的浪漫说·上",
 	guild_coin_award = 0,
@@ -12407,7 +12156,6 @@ _G.pg.base.task_data_template[5185] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5186] = {
 	name = "浪漫的约会？",
 	guild_coin_award = 0,
@@ -12457,7 +12205,6 @@ _G.pg.base.task_data_template[5186] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5187] = {
 	name = "埃米尔的浪漫说·下",
 	guild_coin_award = 0,
@@ -12507,7 +12254,6 @@ _G.pg.base.task_data_template[5187] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5191] = {
 	name = "清晨的絮库夫",
 	guild_coin_award = 0,
@@ -12549,7 +12295,6 @@ _G.pg.base.task_data_template[5191] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5192] = {
 	name = "上午的絮库夫",
 	guild_coin_award = 0,
@@ -12589,7 +12334,6 @@ _G.pg.base.task_data_template[5192] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5193] = {
 	name = "工作的絮库夫",
 	guild_coin_award = 0,
@@ -12629,7 +12373,6 @@ _G.pg.base.task_data_template[5193] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5194] = {
 	name = "午饭中的絮库夫",
 	guild_coin_award = 0,
@@ -12669,7 +12412,6 @@ _G.pg.base.task_data_template[5194] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5195] = {
 	name = "午后的絮库夫·上",
 	guild_coin_award = 0,
@@ -12719,7 +12461,6 @@ _G.pg.base.task_data_template[5195] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5196] = {
 	name = "午后的絮库夫·下",
 	guild_coin_award = 0,
@@ -12769,7 +12510,6 @@ _G.pg.base.task_data_template[5196] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5197] = {
 	name = "指挥官的絮库夫",
 	guild_coin_award = 0,
@@ -12819,7 +12559,6 @@ _G.pg.base.task_data_template[5197] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5201] = {
 	name = "秘书舰",
 	guild_coin_award = 0,
@@ -12861,7 +12600,6 @@ _G.pg.base.task_data_template[5201] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5202] = {
 	name = "任务",
 	guild_coin_award = 0,
@@ -12901,7 +12639,6 @@ _G.pg.base.task_data_template[5202] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5203] = {
 	name = "演习",
 	guild_coin_award = 0,
@@ -12941,7 +12678,6 @@ _G.pg.base.task_data_template[5203] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5204] = {
 	name = "出击",
 	guild_coin_award = 0,
@@ -12981,7 +12717,6 @@ _G.pg.base.task_data_template[5204] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5205] = {
 	name = "大家的秘书舰",
 	guild_coin_award = 0,
@@ -13031,7 +12766,6 @@ _G.pg.base.task_data_template[5205] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5206] = {
 	name = "北方女王的笑容",
 	guild_coin_award = 0,
@@ -13081,7 +12815,6 @@ _G.pg.base.task_data_template[5206] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5207] = {
 	name = "温度",
 	guild_coin_award = 0,
@@ -13131,7 +12864,6 @@ _G.pg.base.task_data_template[5207] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5211] = {
 	name = "尊敬的前辈",
 	guild_coin_award = 0,
@@ -13173,7 +12905,6 @@ _G.pg.base.task_data_template[5211] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5212] = {
 	name = "过于认真的半人马",
 	guild_coin_award = 0,
@@ -13213,7 +12944,6 @@ _G.pg.base.task_data_template[5212] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5213] = {
 	name = "何为尊敬",
 	guild_coin_award = 0,
@@ -13253,7 +12983,6 @@ _G.pg.base.task_data_template[5213] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5214] = {
 	name = "意外的发展",
 	guild_coin_award = 0,
@@ -13293,7 +13022,6 @@ _G.pg.base.task_data_template[5214] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5215] = {
 	name = "幻想的半人马",
 	guild_coin_award = 0,
@@ -13343,7 +13071,6 @@ _G.pg.base.task_data_template[5215] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5216] = {
 	name = "大家的后辈",
 	guild_coin_award = 0,
@@ -13393,7 +13120,6 @@ _G.pg.base.task_data_template[5216] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5217] = {
 	name = "真正的同伴",
 	guild_coin_award = 0,
@@ -13443,7 +13169,6 @@ _G.pg.base.task_data_template[5217] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5221] = {
 	name = "好心情的秘书舰 ",
 	guild_coin_award = 0,
@@ -13485,7 +13210,6 @@ _G.pg.base.task_data_template[5221] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5222] = {
 	name = "邀请函 ",
 	guild_coin_award = 0,
@@ -13525,7 +13249,6 @@ _G.pg.base.task_data_template[5222] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5223] = {
 	name = "缘由 ",
 	guild_coin_award = 0,
@@ -13565,7 +13288,6 @@ _G.pg.base.task_data_template[5223] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5224] = {
 	name = "准备 ",
 	guild_coin_award = 0,
@@ -13605,7 +13327,6 @@ _G.pg.base.task_data_template[5224] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5225] = {
 	name = "宴会·上 ",
 	guild_coin_award = 0,
@@ -13655,7 +13376,6 @@ _G.pg.base.task_data_template[5225] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5226] = {
 	name = "宴会·下 ",
 	guild_coin_award = 0,
@@ -13705,7 +13425,6 @@ _G.pg.base.task_data_template[5226] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5227] = {
 	name = "心声",
 	guild_coin_award = 0,
@@ -13755,7 +13474,6 @@ _G.pg.base.task_data_template[5227] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5231] = {
 	name = "开端 ",
 	guild_coin_award = 0,
@@ -13797,7 +13515,6 @@ _G.pg.base.task_data_template[5231] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5232] = {
 	name = "高贵 ",
 	guild_coin_award = 0,
@@ -13837,7 +13554,6 @@ _G.pg.base.task_data_template[5232] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5233] = {
 	name = "不协调音",
 	guild_coin_award = 0,
@@ -13877,7 +13593,6 @@ _G.pg.base.task_data_template[5233] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5234] = {
 	name = "失落 ",
 	guild_coin_award = 0,
@@ -13917,7 +13632,6 @@ _G.pg.base.task_data_template[5234] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5235] = {
 	name = "真相·上 ",
 	guild_coin_award = 0,
@@ -13967,7 +13681,6 @@ _G.pg.base.task_data_template[5235] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5236] = {
 	name = "真相·下 ",
 	guild_coin_award = 0,
@@ -14017,7 +13730,6 @@ _G.pg.base.task_data_template[5236] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5237] = {
 	name = "一如既往？ ",
 	guild_coin_award = 0,
@@ -14067,7 +13779,6 @@ _G.pg.base.task_data_template[5237] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5241] = {
 	name = "办公室的陷阱 ",
 	guild_coin_award = 0,
@@ -14109,7 +13820,6 @@ _G.pg.base.task_data_template[5241] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5242] = {
 	name = "潜水体操！ ",
 	guild_coin_award = 0,
@@ -14149,7 +13859,6 @@ _G.pg.base.task_data_template[5242] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5243] = {
 	name = "后宅的大青花鱼 ",
 	guild_coin_award = 0,
@@ -14189,7 +13898,6 @@ _G.pg.base.task_data_template[5243] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5244] = {
 	name = "和“恶魔”的契约 ",
 	guild_coin_award = 0,
@@ -14229,7 +13937,6 @@ _G.pg.base.task_data_template[5244] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5245] = {
 	name = "两人的海滩·上 ",
 	guild_coin_award = 0,
@@ -14279,7 +13986,6 @@ _G.pg.base.task_data_template[5245] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5246] = {
 	name = "两人的海滩·下 ",
 	guild_coin_award = 0,
@@ -14329,7 +14035,6 @@ _G.pg.base.task_data_template[5246] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5247] = {
 	name = "晚安，还有……早上好！ ",
 	guild_coin_award = 0,
@@ -14379,7 +14084,6 @@ _G.pg.base.task_data_template[5247] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5251] = {
 	name = "秘书舰的工作(?)·上",
 	guild_coin_award = 0,
@@ -14421,7 +14125,6 @@ _G.pg.base.task_data_template[5251] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5252] = {
 	name = "秘书舰的工作(?)·下",
 	guild_coin_award = 0,
@@ -14461,7 +14164,6 @@ _G.pg.base.task_data_template[5252] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5253] = {
 	name = "天敌(?)登场",
 	guild_coin_award = 0,
@@ -14501,7 +14203,6 @@ _G.pg.base.task_data_template[5253] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5254] = {
 	name = "同盟(?)结成",
 	guild_coin_award = 0,
@@ -14541,7 +14242,6 @@ _G.pg.base.task_data_template[5254] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5255] = {
 	name = "劲敌(?)相遇",
 	guild_coin_award = 0,
@@ -14591,7 +14291,6 @@ _G.pg.base.task_data_template[5255] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5256] = {
 	name = "{namecode:97}的消失(?)·上",
 	guild_coin_award = 0,
@@ -14641,7 +14340,6 @@ _G.pg.base.task_data_template[5256] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5257] = {
 	name = "{namecode:97}的消失(?)·下",
 	guild_coin_award = 0,
@@ -14691,7 +14389,6 @@ _G.pg.base.task_data_template[5257] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5261] = {
 	name = "严格的秘书舰",
 	guild_coin_award = 0,
@@ -14733,7 +14430,6 @@ _G.pg.base.task_data_template[5261] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5262] = {
 	name = "“后辈”们的偶遇",
 	guild_coin_award = 0,
@@ -14773,7 +14469,6 @@ _G.pg.base.task_data_template[5262] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5263] = {
 	name = "前辈",
 	guild_coin_award = 0,
@@ -14813,7 +14508,6 @@ _G.pg.base.task_data_template[5263] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5264] = {
 	name = "Essex vs Enterprize",
 	guild_coin_award = 0,
@@ -14853,7 +14547,6 @@ _G.pg.base.task_data_template[5264] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5265] = {
 	name = "心结·上",
 	guild_coin_award = 0,
@@ -14903,7 +14596,6 @@ _G.pg.base.task_data_template[5265] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5266] = {
 	name = "心结·下",
 	guild_coin_award = 0,
@@ -14953,7 +14645,6 @@ _G.pg.base.task_data_template[5266] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5267] = {
 	name = "与你一起的日常",
 	guild_coin_award = 0,
@@ -15003,7 +14694,6 @@ _G.pg.base.task_data_template[5267] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5271] = {
 	name = "迷路的忍者",
 	guild_coin_award = 0,
@@ -15045,7 +14735,6 @@ _G.pg.base.task_data_template[5271] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5272] = {
 	name = "忍者的“修炼”",
 	guild_coin_award = 0,
@@ -15085,7 +14774,6 @@ _G.pg.base.task_data_template[5272] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5273] = {
 	name = "第六驱逐队的日常·上",
 	guild_coin_award = 0,
@@ -15125,7 +14813,6 @@ _G.pg.base.task_data_template[5273] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5274] = {
 	name = "第六驱逐队的日常·下",
 	guild_coin_award = 0,
@@ -15165,7 +14852,6 @@ _G.pg.base.task_data_template[5274] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5275] = {
 	name = "突如其来的黑暗",
 	guild_coin_award = 0,
@@ -15215,7 +14901,6 @@ _G.pg.base.task_data_template[5275] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5276] = {
 	name = "黑暗之中",
 	guild_coin_award = 0,
@@ -15265,7 +14950,6 @@ _G.pg.base.task_data_template[5276] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5277] = {
 	name = "约定与等待",
 	guild_coin_award = 0,
@@ -15315,7 +14999,6 @@ _G.pg.base.task_data_template[5277] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5281] = {
 	name = "临时女仆长",
 	guild_coin_award = 0,
@@ -15357,7 +15040,6 @@ _G.pg.base.task_data_template[5281] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5282] = {
 	name = "完美和平静",
 	guild_coin_award = 0,
@@ -15397,7 +15079,6 @@ _G.pg.base.task_data_template[5282] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5283] = {
 	name = "午休时间",
 	guild_coin_award = 0,
@@ -15437,7 +15118,6 @@ _G.pg.base.task_data_template[5283] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5284] = {
 	name = "恶作剧时间？",
 	guild_coin_award = 0,
@@ -15477,7 +15157,6 @@ _G.pg.base.task_data_template[5284] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5285] = {
 	name = "外出日",
 	guild_coin_award = 0,
@@ -15527,7 +15206,6 @@ _G.pg.base.task_data_template[5285] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5286] = {
 	name = "黄昏的景色",
 	guild_coin_award = 0,
@@ -15577,7 +15255,6 @@ _G.pg.base.task_data_template[5286] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5287] = {
 	name = "愿望",
 	guild_coin_award = 0,
@@ -15627,7 +15304,6 @@ _G.pg.base.task_data_template[5287] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5291] = {
 	name = "爱生气的火奴鲁鲁？",
 	guild_coin_award = 0,
@@ -15669,7 +15345,6 @@ _G.pg.base.task_data_template[5291] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5292] = {
 	name = "火奴鲁鲁朋友很少？",
 	guild_coin_award = 0,
@@ -15709,7 +15384,6 @@ _G.pg.base.task_data_template[5292] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5293] = {
 	name = "火奴鲁鲁不好相处？",
 	guild_coin_award = 0,
@@ -15749,7 +15423,6 @@ _G.pg.base.task_data_template[5293] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5294] = {
 	name = "关心人的火奴鲁鲁",
 	guild_coin_award = 0,
@@ -15789,7 +15462,6 @@ _G.pg.base.task_data_template[5294] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5295] = {
 	name = "火奴鲁鲁的烦恼",
 	guild_coin_award = 0,
@@ -15839,7 +15511,6 @@ _G.pg.base.task_data_template[5295] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5296] = {
 	name = "火奴鲁鲁的约会·上",
 	guild_coin_award = 0,
@@ -15889,7 +15560,6 @@ _G.pg.base.task_data_template[5296] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5297] = {
 	name = "火奴鲁鲁的约会·下",
 	guild_coin_award = 0,
@@ -15939,7 +15609,6 @@ _G.pg.base.task_data_template[5297] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5301] = {
 	name = "兔兔星是什么？",
 	guild_coin_award = 0,
@@ -15981,7 +15650,6 @@ _G.pg.base.task_data_template[5301] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5302] = {
 	name = "兔兔星人特征——“兔兔”！",
 	guild_coin_award = 0,
@@ -16021,7 +15689,6 @@ _G.pg.base.task_data_template[5302] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5303] = {
 	name = "兔兔星人特征——“努力”！",
 	guild_coin_award = 0,
@@ -16061,7 +15728,6 @@ _G.pg.base.task_data_template[5303] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5304] = {
 	name = "兔兔星人特征——“偶像”？",
 	guild_coin_award = 0,
@@ -16101,7 +15767,6 @@ _G.pg.base.task_data_template[5304] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5305] = {
 	name = "兔兔星人特征——“爱心”！",
 	guild_coin_award = 0,
@@ -16151,7 +15816,6 @@ _G.pg.base.task_data_template[5305] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5306] = {
 	name = "兔兔星来客？！",
 	guild_coin_award = 0,
@@ -16201,7 +15865,6 @@ _G.pg.base.task_data_template[5306] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5307] = {
 	name = "真正的兔兔星人",
 	guild_coin_award = 0,
@@ -16251,7 +15914,6 @@ _G.pg.base.task_data_template[5307] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5311] = {
 	name = "冷静的{namecode:20}",
 	guild_coin_award = 0,
@@ -16293,7 +15955,6 @@ _G.pg.base.task_data_template[5311] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5312] = {
 	name = "看板娘的日常",
 	guild_coin_award = 0,
@@ -16333,7 +15994,6 @@ _G.pg.base.task_data_template[5312] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5313] = {
 	name = "看板娘与小伙伴们",
 	guild_coin_award = 0,
@@ -16373,7 +16033,6 @@ _G.pg.base.task_data_template[5313] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5314] = {
 	name = "店内交流？",
 	guild_coin_award = 0,
@@ -16413,7 +16072,6 @@ _G.pg.base.task_data_template[5314] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5315] = {
 	name = "看板娘的异状",
 	guild_coin_award = 0,
@@ -16463,7 +16121,6 @@ _G.pg.base.task_data_template[5315] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5316] = {
 	name = "看板娘的真心·上",
 	guild_coin_award = 0,
@@ -16513,7 +16170,6 @@ _G.pg.base.task_data_template[5316] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5317] = {
 	name = "看板娘的真心·下",
 	guild_coin_award = 0,
@@ -16563,7 +16219,6 @@ _G.pg.base.task_data_template[5317] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5321] = {
 	name = "甜系女孩？",
 	guild_coin_award = 0,
@@ -16605,7 +16260,6 @@ _G.pg.base.task_data_template[5321] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5322] = {
 	name = "Let's buffet！",
 	guild_coin_award = 0,
@@ -16645,7 +16299,6 @@ _G.pg.base.task_data_template[5322] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5323] = {
 	name = "演唱会",
 	guild_coin_award = 0,
@@ -16685,7 +16338,6 @@ _G.pg.base.task_data_template[5323] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5324] = {
 	name = "糖分互助联盟?",
 	guild_coin_award = 0,
@@ -16725,7 +16377,6 @@ _G.pg.base.task_data_template[5324] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5325] = {
 	name = "决心",
 	guild_coin_award = 0,
@@ -16775,7 +16426,6 @@ _G.pg.base.task_data_template[5325] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5326] = {
 	name = "甜品试吃专员？",
 	guild_coin_award = 0,
@@ -16825,7 +16475,6 @@ _G.pg.base.task_data_template[5326] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5327] = {
 	name = "来自康克德的糖分",
 	guild_coin_award = 0,
@@ -16875,7 +16524,6 @@ _G.pg.base.task_data_template[5327] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5331] = {
 	name = "登场！日出之国的轻航母",
 	guild_coin_award = 0,
@@ -16917,7 +16565,6 @@ _G.pg.base.task_data_template[5331] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5332] = {
 	name = "特训！拼尽全力即是重樱之约",
 	guild_coin_award = 0,
@@ -16957,7 +16604,6 @@ _G.pg.base.task_data_template[5332] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5333] = {
 	name = "专心！未达目标绝不停歇",
 	guild_coin_award = 0,
@@ -16997,7 +16643,6 @@ _G.pg.base.task_data_template[5333] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5334] = {
 	name = "危险！诱惑少女的谜之味觉",
 	guild_coin_award = 0,
@@ -17037,7 +16682,6 @@ _G.pg.base.task_data_template[5334] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5335] = {
 	name = "烦恼！到底最近怎么了……？",
 	guild_coin_award = 0,
@@ -17087,7 +16731,6 @@ _G.pg.base.task_data_template[5335] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5336] = {
 	name = "宿敌！？传说中的偶像究竟是？！",
 	guild_coin_award = 0,
@@ -17137,7 +16780,6 @@ _G.pg.base.task_data_template[5336] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5337] = {
 	name = "勇气！果然还是最喜欢指挥官了！",
 	guild_coin_award = 0,
@@ -17187,7 +16829,6 @@ _G.pg.base.task_data_template[5337] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5341] = {
 	name = "秘书舰{namecode:146}",
 	guild_coin_award = 0,
@@ -17229,7 +16870,6 @@ _G.pg.base.task_data_template[5341] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5342] = {
 	name = "喜欢女孩子？",
 	guild_coin_award = 0,
@@ -17269,7 +16909,6 @@ _G.pg.base.task_data_template[5342] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5343] = {
 	name = "奇妙的缘分",
 	guild_coin_award = 0,
@@ -17309,7 +16948,6 @@ _G.pg.base.task_data_template[5343] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5344] = {
 	name = "信赖的取材班",
 	guild_coin_award = 0,
@@ -17349,7 +16987,6 @@ _G.pg.base.task_data_template[5344] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5345] = {
 	name = "加班夜！",
 	guild_coin_award = 0,
@@ -17399,7 +17036,6 @@ _G.pg.base.task_data_template[5345] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5346] = {
 	name = "兽耳娘们的茶会",
 	guild_coin_award = 0,
@@ -17449,7 +17085,6 @@ _G.pg.base.task_data_template[5346] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5347] = {
 	name = "今后也请多多关照！",
 	guild_coin_award = 0,
@@ -17499,7 +17134,6 @@ _G.pg.base.task_data_template[5347] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5351] = {
 	name = "战斗吧，{namecode:144}！",
 	guild_coin_award = 0,
@@ -17541,7 +17175,6 @@ _G.pg.base.task_data_template[5351] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5352] = {
 	name = "工作吧，{namecode:144}！",
 	guild_coin_award = 0,
@@ -17581,7 +17214,6 @@ _G.pg.base.task_data_template[5352] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5353] = {
 	name = "挥剑吧，{namecode:144}！",
 	guild_coin_award = 0,
@@ -17621,7 +17253,6 @@ _G.pg.base.task_data_template[5353] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5354] = {
 	name = "{namecode:144}，为何而战？",
 	guild_coin_award = 0,
@@ -17661,7 +17292,6 @@ _G.pg.base.task_data_template[5354] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5355] = {
 	name = "慌乱的{namecode:144}",
 	guild_coin_award = 0,
@@ -17711,7 +17341,6 @@ _G.pg.base.task_data_template[5355] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5356] = {
 	name = "烦恼的{namecode:144}",
 	guild_coin_award = 0,
@@ -17761,7 +17390,6 @@ _G.pg.base.task_data_template[5356] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5357] = {
 	name = "约会吧，{namecode:144}！",
 	guild_coin_award = 0,
@@ -17811,7 +17439,6 @@ _G.pg.base.task_data_template[5357] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5361] = {
 	name = "自讨苦吃？",
 	guild_coin_award = 0,
@@ -17853,7 +17480,6 @@ _G.pg.base.task_data_template[5361] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5362] = {
 	name = "教教我，{namecode:93}老师！",
 	guild_coin_award = 0,
@@ -17893,7 +17519,6 @@ _G.pg.base.task_data_template[5362] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5363] = {
 	name = "朋友是什么？",
 	guild_coin_award = 0,
@@ -17933,7 +17558,6 @@ _G.pg.base.task_data_template[5363] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5364] = {
 	name = "不需要的东西……？",
 	guild_coin_award = 0,
@@ -17973,7 +17597,6 @@ _G.pg.base.task_data_template[5364] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5365] = {
 	name = "不变与变化（上）",
 	guild_coin_award = 0,
@@ -18023,7 +17646,6 @@ _G.pg.base.task_data_template[5365] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5366] = {
 	name = "不变与变化（中）",
 	guild_coin_award = 0,
@@ -18073,7 +17695,6 @@ _G.pg.base.task_data_template[5366] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5367] = {
 	name = "不变与变化（下）",
 	guild_coin_award = 0,
@@ -18123,7 +17744,6 @@ _G.pg.base.task_data_template[5367] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5371] = {
 	name = "害羞的黑猫",
 	guild_coin_award = 0,
@@ -18165,7 +17785,6 @@ _G.pg.base.task_data_template[5371] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5372] = {
 	name = "同伴的建议",
 	guild_coin_award = 0,
@@ -18205,7 +17824,6 @@ _G.pg.base.task_data_template[5372] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5373] = {
 	name = "{namecode:30}，勇敢一点！",
 	guild_coin_award = 0,
@@ -18245,7 +17863,6 @@ _G.pg.base.task_data_template[5373] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5374] = {
 	name = "秘书舰{namecode:30}，着任！",
 	guild_coin_award = 0,
@@ -18285,7 +17902,6 @@ _G.pg.base.task_data_template[5374] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5375] = {
 	name = "徒劳的努力？",
 	guild_coin_award = 0,
@@ -18335,7 +17951,6 @@ _G.pg.base.task_data_template[5375] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5376] = {
 	name = "改变与决心",
 	guild_coin_award = 0,
@@ -18385,7 +18000,6 @@ _G.pg.base.task_data_template[5376] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5377] = {
 	name = "秘书舰的日常",
 	guild_coin_award = 0,
@@ -18435,7 +18049,6 @@ _G.pg.base.task_data_template[5377] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5381] = {
 	name = "妹妹的日常",
 	guild_coin_award = 0,
@@ -18477,7 +18090,6 @@ _G.pg.base.task_data_template[5381] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5382] = {
 	name = "妹妹的忧郁",
 	guild_coin_award = 0,
@@ -18517,7 +18129,6 @@ _G.pg.base.task_data_template[5382] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5383] = {
 	name = "妹妹的想法",
 	guild_coin_award = 0,
@@ -18557,7 +18168,6 @@ _G.pg.base.task_data_template[5383] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5384] = {
 	name = "妹妹的失落",
 	guild_coin_award = 0,
@@ -18597,7 +18207,6 @@ _G.pg.base.task_data_template[5384] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5385] = {
 	name = "妹妹的决心",
 	guild_coin_award = 0,
@@ -18647,7 +18256,6 @@ _G.pg.base.task_data_template[5385] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5386] = {
 	name = "妹妹的努力",
 	guild_coin_award = 0,
@@ -18697,7 +18305,6 @@ _G.pg.base.task_data_template[5386] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5387] = {
 	name = "妹妹的笑容",
 	guild_coin_award = 0,
@@ -18747,7 +18354,6 @@ _G.pg.base.task_data_template[5387] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5391] = {
 	name = "女仆队，清扫中",
 	guild_coin_award = 0,
@@ -18789,7 +18395,6 @@ _G.pg.base.task_data_template[5391] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5392] = {
 	name = "一切为了“清扫”",
 	guild_coin_award = 0,
@@ -18829,7 +18434,6 @@ _G.pg.base.task_data_template[5392] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5393] = {
 	name = "女仆的兴趣",
 	guild_coin_award = 0,
@@ -18869,7 +18473,6 @@ _G.pg.base.task_data_template[5393] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5394] = {
 	name = "习惯成自然",
 	guild_coin_award = 0,
@@ -18909,7 +18512,6 @@ _G.pg.base.task_data_template[5394] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5395] = {
 	name = "休息日的约定",
 	guild_coin_award = 0,
@@ -18959,7 +18561,6 @@ _G.pg.base.task_data_template[5395] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5396] = {
 	name = "谢菲尔德的心意·上",
 	guild_coin_award = 0,
@@ -19009,7 +18610,6 @@ _G.pg.base.task_data_template[5396] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5397] = {
 	name = "谢菲尔德的心意·下",
 	guild_coin_award = 0,
@@ -19059,7 +18659,6 @@ _G.pg.base.task_data_template[5397] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5401] = {
 	name = "身为女仆……",
 	guild_coin_award = 0,
@@ -19101,7 +18700,6 @@ _G.pg.base.task_data_template[5401] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5402] = {
 	name = "陛下的最高指令",
 	guild_coin_award = 0,
@@ -19141,7 +18739,6 @@ _G.pg.base.task_data_template[5402] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5403] = {
 	name = "女仆队的支援",
 	guild_coin_award = 0,
@@ -19181,7 +18778,6 @@ _G.pg.base.task_data_template[5403] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5404] = {
 	name = "来自Big seven的建议",
 	guild_coin_award = 0,
@@ -19221,7 +18817,6 @@ _G.pg.base.task_data_template[5404] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5405] = {
 	name = "携手起舞",
 	guild_coin_award = 0,
@@ -19271,7 +18866,6 @@ _G.pg.base.task_data_template[5405] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5406] = {
 	name = "意外事件",
 	guild_coin_award = 0,
@@ -19321,7 +18915,6 @@ _G.pg.base.task_data_template[5406] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5407] = {
 	name = "星光闪耀于夜空",
 	guild_coin_award = 0,
@@ -19371,7 +18964,6 @@ _G.pg.base.task_data_template[5407] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5411] = {
 	name = "起床了，女王陛下！",
 	guild_coin_award = 0,
@@ -19413,7 +19005,6 @@ _G.pg.base.task_data_template[5411] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5412] = {
 	name = "舰队的工作",
 	guild_coin_award = 0,
@@ -19453,7 +19044,6 @@ _G.pg.base.task_data_template[5412] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5413] = {
 	name = "“老女士”的速度",
 	guild_coin_award = 0,
@@ -19493,7 +19083,6 @@ _G.pg.base.task_data_template[5413] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5414] = {
 	name = "演习过后……",
 	guild_coin_award = 0,
@@ -19533,7 +19122,6 @@ _G.pg.base.task_data_template[5414] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5415] = {
 	name = "些许的烦恼",
 	guild_coin_award = 0,
@@ -19583,7 +19171,6 @@ _G.pg.base.task_data_template[5415] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5416] = {
 	name = "女王陛下，您……？",
 	guild_coin_award = 0,
@@ -19633,7 +19220,6 @@ _G.pg.base.task_data_template[5416] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5417] = {
 	name = "守护之剑",
 	guild_coin_award = 0,
@@ -19683,7 +19269,6 @@ _G.pg.base.task_data_template[5417] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5421] = {
 	name = "回忆",
 	guild_coin_award = 0,
@@ -19725,7 +19310,6 @@ _G.pg.base.task_data_template[5421] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5422] = {
 	name = "同伴的烦恼",
 	guild_coin_award = 0,
@@ -19765,7 +19349,6 @@ _G.pg.base.task_data_template[5422] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5423] = {
 	name = "奇妙的“因缘”",
 	guild_coin_award = 0,
@@ -19805,7 +19388,6 @@ _G.pg.base.task_data_template[5423] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5424] = {
 	name = "战术准备·上",
 	guild_coin_award = 0,
@@ -19845,7 +19427,6 @@ _G.pg.base.task_data_template[5424] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5425] = {
 	name = "战术准备·下",
 	guild_coin_award = 0,
@@ -19895,7 +19476,6 @@ _G.pg.base.task_data_template[5425] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5426] = {
 	name = "战术与直觉的对抗",
 	guild_coin_award = 0,
@@ -19945,7 +19525,6 @@ _G.pg.base.task_data_template[5426] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5427] = {
 	name = "最后的战斗总结",
 	guild_coin_award = 0,
@@ -19995,7 +19574,6 @@ _G.pg.base.task_data_template[5427] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5441] = {
 	name = "愿望",
 	guild_coin_award = 0,
@@ -20037,7 +19615,6 @@ _G.pg.base.task_data_template[5441] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5442] = {
 	name = "偶遇",
 	guild_coin_award = 0,
@@ -20077,7 +19654,6 @@ _G.pg.base.task_data_template[5442] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5443] = {
 	name = "战友",
 	guild_coin_award = 0,
@@ -20117,7 +19693,6 @@ _G.pg.base.task_data_template[5443] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5444] = {
 	name = "同伴",
 	guild_coin_award = 0,
@@ -20157,7 +19732,6 @@ _G.pg.base.task_data_template[5444] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5445] = {
 	name = "孤独",
 	guild_coin_award = 0,
@@ -20207,7 +19781,6 @@ _G.pg.base.task_data_template[5445] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5446] = {
 	name = "重量",
 	guild_coin_award = 0,
@@ -20257,7 +19830,6 @@ _G.pg.base.task_data_template[5446] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5447] = {
 	name = "温暖",
 	guild_coin_award = 0,
@@ -20307,7 +19879,6 @@ _G.pg.base.task_data_template[5447] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5451] = {
 	name = "意外的救世主",
 	guild_coin_award = 0,
@@ -20349,7 +19920,6 @@ _G.pg.base.task_data_template[5451] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5452] = {
 	name = "所谓个性…",
 	guild_coin_award = 0,
@@ -20389,7 +19959,6 @@ _G.pg.base.task_data_template[5452] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5453] = {
 	name = "女王陛下",
 	guild_coin_award = 0,
@@ -20429,7 +19998,6 @@ _G.pg.base.task_data_template[5453] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5454] = {
 	name = "骑士长的指挥",
 	guild_coin_award = 0,
@@ -20469,7 +20037,6 @@ _G.pg.base.task_data_template[5454] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5455] = {
 	name = "领导者课程",
 	guild_coin_award = 0,
@@ -20519,7 +20086,6 @@ _G.pg.base.task_data_template[5455] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5456] = {
 	name = "今天的晚饭",
 	guild_coin_award = 0,
@@ -20569,7 +20135,6 @@ _G.pg.base.task_data_template[5456] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5457] = {
 	name = "心愿",
 	guild_coin_award = 0,
@@ -20619,7 +20184,6 @@ _G.pg.base.task_data_template[5457] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5461] = {
 	name = "早上好，指挥官！",
 	guild_coin_award = 0,
@@ -20661,7 +20225,6 @@ _G.pg.base.task_data_template[5461] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5462] = {
 	name = "指挥官很忙？",
 	guild_coin_award = 0,
@@ -20701,7 +20264,6 @@ _G.pg.base.task_data_template[5462] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5463] = {
 	name = "指挥官，找到你啦！",
 	guild_coin_award = 0,
@@ -20741,7 +20303,6 @@ _G.pg.base.task_data_template[5463] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5464] = {
 	name = "约好了？",
 	guild_coin_award = 0,
@@ -20781,7 +20342,6 @@ _G.pg.base.task_data_template[5464] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5465] = {
 	name = "多此一举？",
 	guild_coin_award = 0,
@@ -20831,7 +20391,6 @@ _G.pg.base.task_data_template[5465] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5466] = {
 	name = "骄傲的誓言",
 	guild_coin_award = 0,
@@ -20881,7 +20440,6 @@ _G.pg.base.task_data_template[5466] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5467] = {
 	name = "约定！",
 	guild_coin_award = 0,
@@ -20931,7 +20489,6 @@ _G.pg.base.task_data_template[5467] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5471] = {
 	name = "功劳！",
 	guild_coin_award = 0,
@@ -20973,7 +20530,6 @@ _G.pg.base.task_data_template[5471] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5472] = {
 	name = "正义！",
 	guild_coin_award = 0,
@@ -21013,7 +20569,6 @@ _G.pg.base.task_data_template[5472] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5473] = {
 	name = "突击！",
 	guild_coin_award = 0,
@@ -21053,7 +20608,6 @@ _G.pg.base.task_data_template[5473] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5474] = {
 	name = "意外！",
 	guild_coin_award = 0,
@@ -21093,7 +20647,6 @@ _G.pg.base.task_data_template[5474] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5475] = {
 	name = "故事！",
 	guild_coin_award = 0,
@@ -21143,7 +20696,6 @@ _G.pg.base.task_data_template[5475] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5476] = {
 	name = "成熟！",
 	guild_coin_award = 0,
@@ -21193,7 +20745,6 @@ _G.pg.base.task_data_template[5476] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5477] = {
 	name = "约会！",
 	guild_coin_award = 0,
@@ -21243,7 +20794,6 @@ _G.pg.base.task_data_template[5477] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5481] = {
 	name = "晨间问候（？）",
 	guild_coin_award = 0,
@@ -21285,7 +20835,6 @@ _G.pg.base.task_data_template[5481] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5482] = {
 	name = "体贴的姐姐？",
 	guild_coin_award = 0,
@@ -21325,7 +20874,6 @@ _G.pg.base.task_data_template[5482] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5483] = {
 	name = "被体贴的指挥官",
 	guild_coin_award = 0,
@@ -21365,7 +20913,6 @@ _G.pg.base.task_data_template[5483] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5484] = {
 	name = "午后闲聊",
 	guild_coin_award = 0,
@@ -21405,7 +20952,6 @@ _G.pg.base.task_data_template[5484] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5485] = {
 	name = "恶魔的耳语",
 	guild_coin_award = 0,
@@ -21455,7 +21001,6 @@ _G.pg.base.task_data_template[5485] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5486] = {
 	name = "指挥官受难日",
 	guild_coin_award = 0,
@@ -21505,7 +21050,6 @@ _G.pg.base.task_data_template[5486] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5487] = {
 	name = "夜空璀璨",
 	guild_coin_award = 0,
@@ -21555,7 +21099,6 @@ _G.pg.base.task_data_template[5487] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5491] = {
 	name = "胜利的曙光",
 	guild_coin_award = 0,
@@ -21597,7 +21140,6 @@ _G.pg.base.task_data_template[5491] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5492] = {
 	name = "思乡",
 	guild_coin_award = 0,
@@ -21637,7 +21179,6 @@ _G.pg.base.task_data_template[5492] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5493] = {
 	name = "特别的欢迎会",
 	guild_coin_award = 0,
@@ -21677,7 +21218,6 @@ _G.pg.base.task_data_template[5493] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5494] = {
 	name = "同为“老兵”",
 	guild_coin_award = 0,
@@ -21717,7 +21257,6 @@ _G.pg.base.task_data_template[5494] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5495] = {
 	name = "刹车带",
 	guild_coin_award = 0,
@@ -21767,7 +21306,6 @@ _G.pg.base.task_data_template[5495] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5496] = {
 	name = "真正的实力",
 	guild_coin_award = 0,
@@ -21817,7 +21355,6 @@ _G.pg.base.task_data_template[5496] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5497] = {
 	name = "总能见到曙光",
 	guild_coin_award = 0,
@@ -21867,7 +21404,6 @@ _G.pg.base.task_data_template[5497] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5501] = {
 	name = "指挥官闷闷不乐？",
 	guild_coin_award = 0,
@@ -21909,7 +21445,6 @@ _G.pg.base.task_data_template[5501] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5502] = {
 	name = "{namecode:162}会帮助你的！",
 	guild_coin_award = 0,
@@ -21949,7 +21484,6 @@ _G.pg.base.task_data_template[5502] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5503] = {
 	name = "{namecode:162}今天也很高兴！",
 	guild_coin_award = 0,
@@ -21989,7 +21523,6 @@ _G.pg.base.task_data_template[5503] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5504] = {
 	name = "其名为——指挥官开心计划！·上",
 	guild_coin_award = 0,
@@ -22029,7 +21562,6 @@ _G.pg.base.task_data_template[5504] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5505] = {
 	name = "其名为——指挥官开心计划！·下",
 	guild_coin_award = 0,
@@ -22079,7 +21611,6 @@ _G.pg.base.task_data_template[5505] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5506] = {
 	name = "不笑的指挥官",
 	guild_coin_award = 0,
@@ -22129,7 +21660,6 @@ _G.pg.base.task_data_template[5506] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5507] = {
 	name = "指挥官，笑起来了！",
 	guild_coin_award = 0,
@@ -22179,7 +21709,6 @@ _G.pg.base.task_data_template[5507] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5511] = {
 	name = "印第强化周开始！",
 	guild_coin_award = 0,
@@ -22221,7 +21750,6 @@ _G.pg.base.task_data_template[5511] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5512] = {
 	name = "坚不可摧！逼迫改推！",
 	guild_coin_award = 0,
@@ -22261,7 +21789,6 @@ _G.pg.base.task_data_template[5512] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5513] = {
 	name = "姐妹谈资喋喋不休",
 	guild_coin_award = 0,
@@ -22301,7 +21828,6 @@ _G.pg.base.task_data_template[5513] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5514] = {
 	name = "尴尬的关系",
 	guild_coin_award = 0,
@@ -22341,7 +21867,6 @@ _G.pg.base.task_data_template[5514] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5515] = {
 	name = "命运的出击",
 	guild_coin_award = 0,
@@ -22391,7 +21916,6 @@ _G.pg.base.task_data_template[5515] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5516] = {
 	name = "真正重要的事",
 	guild_coin_award = 0,
@@ -22441,7 +21965,6 @@ _G.pg.base.task_data_template[5516] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5517] = {
 	name = "向往的幸福",
 	guild_coin_award = 0,
@@ -22491,7 +22014,6 @@ _G.pg.base.task_data_template[5517] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5521] = {
 	name = "特别的场所",
 	guild_coin_award = 0,
@@ -22533,7 +22055,6 @@ _G.pg.base.task_data_template[5521] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5522] = {
 	name = "烦恼的谈心",
 	guild_coin_award = 0,
@@ -22573,7 +22094,6 @@ _G.pg.base.task_data_template[5522] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5523] = {
 	name = "意外事件",
 	guild_coin_award = 0,
@@ -22613,7 +22133,6 @@ _G.pg.base.task_data_template[5523] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5524] = {
 	name = "心跳的亲密接触",
 	guild_coin_award = 0,
@@ -22653,7 +22172,6 @@ _G.pg.base.task_data_template[5524] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5525] = {
 	name = "妹妹的一言",
 	guild_coin_award = 0,
@@ -22703,7 +22221,6 @@ _G.pg.base.task_data_template[5525] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5526] = {
 	name = "再次的牵手",
 	guild_coin_award = 0,
@@ -22753,7 +22270,6 @@ _G.pg.base.task_data_template[5526] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5527] = {
 	name = "两人的特别场所",
 	guild_coin_award = 0,
@@ -22803,7 +22319,6 @@ _G.pg.base.task_data_template[5527] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5531] = {
 	name = "开朗活泼的秘书舰",
 	guild_coin_award = 0,
@@ -22845,7 +22360,6 @@ _G.pg.base.task_data_template[5531] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5532] = {
 	name = "姐妹与指挥官",
 	guild_coin_award = 0,
@@ -22885,7 +22399,6 @@ _G.pg.base.task_data_template[5532] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5533] = {
 	name = "“敏锐”的朋友",
 	guild_coin_award = 0,
@@ -22925,7 +22438,6 @@ _G.pg.base.task_data_template[5533] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5534] = {
 	name = "踌躇的思考",
 	guild_coin_award = 0,
@@ -22965,7 +22477,6 @@ _G.pg.base.task_data_template[5534] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5535] = {
 	name = "擦肩而过",
 	guild_coin_award = 0,
@@ -23015,7 +22526,6 @@ _G.pg.base.task_data_template[5535] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5536] = {
 	name = "耀眼的笑容",
 	guild_coin_award = 0,
@@ -23065,7 +22575,6 @@ _G.pg.base.task_data_template[5536] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5537] = {
 	name = "选择的理由",
 	guild_coin_award = 0,
@@ -23115,7 +22624,6 @@ _G.pg.base.task_data_template[5537] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5541] = {
 	name = "比以往更加…",
 	guild_coin_award = 0,
@@ -23157,7 +22665,6 @@ _G.pg.base.task_data_template[5541] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5542] = {
 	name = "{namecode:425}想要冷静",
 	guild_coin_award = 0,
@@ -23197,7 +22704,6 @@ _G.pg.base.task_data_template[5542] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5543] = {
 	name = "线索之所在",
 	guild_coin_award = 0,
@@ -23237,7 +22743,6 @@ _G.pg.base.task_data_template[5543] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5544] = {
 	name = "临海的摩托之旅",
 	guild_coin_award = 0,
@@ -23277,7 +22782,6 @@ _G.pg.base.task_data_template[5544] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5545] = {
 	name = "作战会议(?)",
 	guild_coin_award = 0,
@@ -23327,7 +22831,6 @@ _G.pg.base.task_data_template[5545] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5546] = {
 	name = "勇气的冲锋",
 	guild_coin_award = 0,
@@ -23377,7 +22880,6 @@ _G.pg.base.task_data_template[5546] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5547] = {
 	name = "一生的约定",
 	guild_coin_award = 0,
@@ -23427,7 +22929,6 @@ _G.pg.base.task_data_template[5547] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5551] = {
 	name = "肯特选手，冲刺！",
 	guild_coin_award = 0,
@@ -23469,7 +22970,6 @@ _G.pg.base.task_data_template[5551] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5552] = {
 	name = "肯特选手毫无防备！ ",
 	guild_coin_award = 0,
@@ -23509,7 +23009,6 @@ _G.pg.base.task_data_template[5552] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5553] = {
 	name = "感激的心",
 	guild_coin_award = 0,
@@ -23549,7 +23048,6 @@ _G.pg.base.task_data_template[5553] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5554] = {
 	name = "意外遭遇！ ",
 	guild_coin_award = 0,
@@ -23589,7 +23087,6 @@ _G.pg.base.task_data_template[5554] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5555] = {
 	name = "肯特选手的秘密！",
 	guild_coin_award = 0,
@@ -23639,7 +23136,6 @@ _G.pg.base.task_data_template[5555] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5556] = {
 	name = "黑夜里的光！",
 	guild_coin_award = 0,
@@ -23689,7 +23185,6 @@ _G.pg.base.task_data_template[5556] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5557] = {
 	name = "永远在一起！",
 	guild_coin_award = 0,
@@ -23739,7 +23234,6 @@ _G.pg.base.task_data_template[5557] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5561] = {
 	name = "青空下的青春之声",
 	guild_coin_award = 0,
@@ -23781,7 +23275,6 @@ _G.pg.base.task_data_template[5561] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5562] = {
 	name = "未知的新发现",
 	guild_coin_award = 0,
@@ -23821,7 +23314,6 @@ _G.pg.base.task_data_template[5562] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5563] = {
 	name = "好奇心与蛋糕",
 	guild_coin_award = 0,
@@ -23861,7 +23353,6 @@ _G.pg.base.task_data_template[5563] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5564] = {
 	name = "入乡随俗？",
 	guild_coin_award = 0,
@@ -23901,7 +23392,6 @@ _G.pg.base.task_data_template[5564] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5565] = {
 	name = "异域的憧憬",
 	guild_coin_award = 0,
@@ -23951,7 +23441,6 @@ _G.pg.base.task_data_template[5565] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5566] = {
 	name = "并不优雅的尝试？",
 	guild_coin_award = 0,
@@ -24001,7 +23490,6 @@ _G.pg.base.task_data_template[5566] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5567] = {
 	name = "兴趣与好奇心",
 	guild_coin_award = 0,
@@ -24051,7 +23539,6 @@ _G.pg.base.task_data_template[5567] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5571] = {
 	name = "一如既往的早晨",
 	guild_coin_award = 0,
@@ -24093,7 +23580,6 @@ _G.pg.base.task_data_template[5571] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5572] = {
 	name = "才不是那种关系呢",
 	guild_coin_award = 0,
@@ -24133,7 +23619,6 @@ _G.pg.base.task_data_template[5572] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5573] = {
 	name = "谁是鸳鸯啦！",
 	guild_coin_award = 0,
@@ -24173,7 +23658,6 @@ _G.pg.base.task_data_template[5573] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5574] = {
 	name = "脸靠得太近了！",
 	guild_coin_award = 0,
@@ -24213,7 +23697,6 @@ _G.pg.base.task_data_template[5574] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5575] = {
 	name = "是格拉斯哥呀",
 	guild_coin_award = 0,
@@ -24263,7 +23746,6 @@ _G.pg.base.task_data_template[5575] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5576] = {
 	name = "你依然会……喜欢我吗？",
 	guild_coin_award = 0,
@@ -24313,7 +23795,6 @@ _G.pg.base.task_data_template[5576] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5577] = {
 	name = "甜蜜的妄想",
 	guild_coin_award = 0,
@@ -24363,7 +23844,6 @@ _G.pg.base.task_data_template[5577] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5581] = {
 	name = "不速之客？",
 	guild_coin_award = 0,
@@ -24405,7 +23885,6 @@ _G.pg.base.task_data_template[5581] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5582] = {
 	name = "瞄准目标",
 	guild_coin_award = 0,
@@ -24445,7 +23924,6 @@ _G.pg.base.task_data_template[5582] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5583] = {
 	name = "Welcome to 港区！",
 	guild_coin_award = 0,
@@ -24485,7 +23963,6 @@ _G.pg.base.task_data_template[5583] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5584] = {
 	name = "加深了解",
 	guild_coin_award = 0,
@@ -24525,7 +24002,6 @@ _G.pg.base.task_data_template[5584] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5585] = {
 	name = "朦胧之中",
 	guild_coin_award = 0,
@@ -24575,7 +24051,6 @@ _G.pg.base.task_data_template[5585] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5586] = {
 	name = "清朗的早晨",
 	guild_coin_award = 0,
@@ -24625,7 +24100,6 @@ _G.pg.base.task_data_template[5586] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5587] = {
 	name = "在指挥室",
 	guild_coin_award = 0,
@@ -24675,7 +24149,6 @@ _G.pg.base.task_data_template[5587] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5591] = {
 	name = "接受委托！",
 	guild_coin_award = 0,
@@ -24717,7 +24190,6 @@ _G.pg.base.task_data_template[5591] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5592] = {
 	name = "第一个任务，第一支团队",
 	guild_coin_award = 0,
@@ -24757,7 +24229,6 @@ _G.pg.base.task_data_template[5592] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5593] = {
 	name = "骑士也需要建议",
 	guild_coin_award = 0,
@@ -24797,7 +24268,6 @@ _G.pg.base.task_data_template[5593] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5594] = {
 	name = "骑士姐妹",
 	guild_coin_award = 0,
@@ -24837,7 +24307,6 @@ _G.pg.base.task_data_template[5594] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5595] = {
 	name = "来自对手的委托",
 	guild_coin_award = 0,
@@ -24887,7 +24356,6 @@ _G.pg.base.task_data_template[5595] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5596] = {
 	name = "比赛开始！",
 	guild_coin_award = 0,
@@ -24937,7 +24405,6 @@ _G.pg.base.task_data_template[5596] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5597] = {
 	name = "直白的誓言",
 	guild_coin_award = 0,
@@ -24987,7 +24454,6 @@ _G.pg.base.task_data_template[5597] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5601] = {
 	name = "凝视的力量",
 	guild_coin_award = 0,
@@ -25029,7 +24495,6 @@ _G.pg.base.task_data_template[5601] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5602] = {
 	name = "买椟还珠？",
 	guild_coin_award = 0,
@@ -25069,7 +24534,6 @@ _G.pg.base.task_data_template[5602] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5603] = {
 	name = "关于兴趣",
 	guild_coin_award = 0,
@@ -25109,7 +24573,6 @@ _G.pg.base.task_data_template[5603] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5604] = {
 	name = "橱窗反射的约会",
 	guild_coin_award = 0,
@@ -25149,7 +24612,6 @@ _G.pg.base.task_data_template[5604] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5605] = {
 	name = "夕阳下的晚餐",
 	guild_coin_award = 0,
@@ -25199,7 +24661,6 @@ _G.pg.base.task_data_template[5605] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5606] = {
 	name = "奖励与回报",
 	guild_coin_award = 0,
@@ -25249,7 +24710,6 @@ _G.pg.base.task_data_template[5606] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5607] = {
 	name = "真正想要的礼物",
 	guild_coin_award = 0,
@@ -25299,7 +24759,6 @@ _G.pg.base.task_data_template[5607] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5611] = {
 	name = "暴风雨后的第二天",
 	guild_coin_award = 0,
@@ -25341,7 +24800,6 @@ _G.pg.base.task_data_template[5611] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5612] = {
 	name = "如果是为了{namecode:79}姐姐",
 	guild_coin_award = 0,
@@ -25381,7 +24839,6 @@ _G.pg.base.task_data_template[5612] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5613] = {
 	name = "打扫开始！",
 	guild_coin_award = 0,
@@ -25421,7 +24878,6 @@ _G.pg.base.task_data_template[5613] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5614] = {
 	name = "注意绿色",
 	guild_coin_award = 0,
@@ -25461,7 +24917,6 @@ _G.pg.base.task_data_template[5614] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5615] = {
 	name = "爱操心的理由",
 	guild_coin_award = 0,
@@ -25511,7 +24966,6 @@ _G.pg.base.task_data_template[5615] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5616] = {
 	name = "门内的危险",
 	guild_coin_award = 0,
@@ -25561,7 +25015,6 @@ _G.pg.base.task_data_template[5616] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5617] = {
 	name = "爱照顾人的理由",
 	guild_coin_award = 0,
@@ -25611,7 +25064,6 @@ _G.pg.base.task_data_template[5617] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5621] = {
 	name = "帮帮我！指挥官！",
 	guild_coin_award = 0,
@@ -25653,7 +25105,6 @@ _G.pg.base.task_data_template[5621] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5622] = {
 	name = "学习优雅的课程",
 	guild_coin_award = 0,
@@ -25693,7 +25144,6 @@ _G.pg.base.task_data_template[5622] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5623] = {
 	name = "关于协作的课程",
 	guild_coin_award = 0,
@@ -25733,7 +25183,6 @@ _G.pg.base.task_data_template[5623] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5624] = {
 	name = "演习与战斗训练",
 	guild_coin_award = 0,
@@ -25773,7 +25222,6 @@ _G.pg.base.task_data_template[5624] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5625] = {
 	name = "再挑战",
 	guild_coin_award = 0,
@@ -25823,7 +25271,6 @@ _G.pg.base.task_data_template[5625] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5626] = {
 	name = "缺少的东西",
 	guild_coin_award = 0,
@@ -25873,7 +25320,6 @@ _G.pg.base.task_data_template[5626] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5627] = {
 	name = "天鹰的指挥官大人",
 	guild_coin_award = 0,
@@ -25923,7 +25369,6 @@ _G.pg.base.task_data_template[5627] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5631] = {
 	name = "海浪的声音",
 	guild_coin_award = 0,
@@ -25965,7 +25410,6 @@ _G.pg.base.task_data_template[5631] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5632] = {
 	name = "安静的访客",
 	guild_coin_award = 0,
@@ -26005,7 +25449,6 @@ _G.pg.base.task_data_template[5632] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5633] = {
 	name = "礼物",
 	guild_coin_award = 0,
@@ -26045,7 +25488,6 @@ _G.pg.base.task_data_template[5633] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5634] = {
 	name = "聒噪的访客",
 	guild_coin_award = 0,
@@ -26085,7 +25527,6 @@ _G.pg.base.task_data_template[5634] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5635] = {
 	name = "无法保持冷静的地方",
 	guild_coin_award = 0,
@@ -26135,7 +25576,6 @@ _G.pg.base.task_data_template[5635] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5636] = {
 	name = "独狼",
 	guild_coin_award = 0,
@@ -26185,7 +25625,6 @@ _G.pg.base.task_data_template[5636] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5637] = {
 	name = "就算不说出口……",
 	guild_coin_award = 0,
@@ -26235,7 +25674,6 @@ _G.pg.base.task_data_template[5637] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5641] = {
 	name = "对你很期待哦！",
 	guild_coin_award = 0,
@@ -26277,7 +25715,6 @@ _G.pg.base.task_data_template[5641] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5642] = {
 	name = "别看穿我啊！",
 	guild_coin_award = 0,
@@ -26317,7 +25754,6 @@ _G.pg.base.task_data_template[5642] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5643] = {
 	name = "别问我！",
 	guild_coin_award = 0,
@@ -26357,7 +25793,6 @@ _G.pg.base.task_data_template[5643] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5644] = {
 	name = "这个话题到此为止！",
 	guild_coin_award = 0,
@@ -26397,7 +25832,6 @@ _G.pg.base.task_data_template[5644] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5645] = {
 	name = "给我点反应啊！",
 	guild_coin_award = 0,
@@ -26447,7 +25881,6 @@ _G.pg.base.task_data_template[5645] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5646] = {
 	name = "想说的只有一件事",
 	guild_coin_award = 0,
@@ -26497,7 +25930,6 @@ _G.pg.base.task_data_template[5646] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5647] = {
 	name = "我对你永远保持期待！",
 	guild_coin_award = 0,
@@ -26547,7 +25979,6 @@ _G.pg.base.task_data_template[5647] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5651] = {
 	name = "美人鱼？",
 	guild_coin_award = 0,
@@ -26589,7 +26020,6 @@ _G.pg.base.task_data_template[5651] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5652] = {
 	name = "新任秘书舰{namecode:197}",
 	guild_coin_award = 0,
@@ -26629,7 +26059,6 @@ _G.pg.base.task_data_template[5652] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5653] = {
 	name = "赌约",
 	guild_coin_award = 0,
@@ -26669,7 +26098,6 @@ _G.pg.base.task_data_template[5653] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5654] = {
 	name = "信心动摇？",
 	guild_coin_award = 0,
@@ -26709,7 +26137,6 @@ _G.pg.base.task_data_template[5654] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5655] = {
 	name = "看不见的笑容",
 	guild_coin_award = 0,
@@ -26759,7 +26186,6 @@ _G.pg.base.task_data_template[5655] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5656] = {
 	name = "履行赌约之时",
 	guild_coin_award = 0,
@@ -26809,7 +26235,6 @@ _G.pg.base.task_data_template[5656] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5657] = {
 	name = "黑糖味的喜悦",
 	guild_coin_award = 0,
@@ -26859,7 +26284,6 @@ _G.pg.base.task_data_template[5657] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5661] = {
 	name = "所寻找的物品是？",
 	guild_coin_award = 0,
@@ -26901,7 +26325,6 @@ _G.pg.base.task_data_template[5661] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5662] = {
 	name = "甜美的购物时光",
 	guild_coin_award = 0,
@@ -26941,7 +26364,6 @@ _G.pg.base.task_data_template[5662] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5663] = {
 	name = "不擅长发邮件？",
 	guild_coin_award = 0,
@@ -26981,7 +26403,6 @@ _G.pg.base.task_data_template[5663] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5664] = {
 	name = "约定",
 	guild_coin_award = 0,
@@ -27021,7 +26442,6 @@ _G.pg.base.task_data_template[5664] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5665] = {
 	name = "保持笑容吧",
 	guild_coin_award = 0,
@@ -27071,7 +26491,6 @@ _G.pg.base.task_data_template[5665] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5666] = {
 	name = "失意之雨",
 	guild_coin_award = 0,
@@ -27121,7 +26540,6 @@ _G.pg.base.task_data_template[5666] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5667] = {
 	name = "小小的幸福",
 	guild_coin_award = 0,
@@ -27171,7 +26589,6 @@ _G.pg.base.task_data_template[5667] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5671] = {
 	name = "非常事态？！",
 	guild_coin_award = 0,
@@ -27213,7 +26630,6 @@ _G.pg.base.task_data_template[5671] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5672] = {
 	name = "实力差距",
 	guild_coin_award = 0,
@@ -27253,7 +26669,6 @@ _G.pg.base.task_data_template[5672] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5673] = {
 	name = "却非恶鬼",
 	guild_coin_award = 0,
@@ -27293,7 +26708,6 @@ _G.pg.base.task_data_template[5673] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5674] = {
 	name = "独一无二的东西",
 	guild_coin_award = 0,
@@ -27333,7 +26747,6 @@ _G.pg.base.task_data_template[5674] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5675] = {
 	name = "挺身而出",
 	guild_coin_award = 0,
@@ -27383,7 +26796,6 @@ _G.pg.base.task_data_template[5675] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5676] = {
 	name = "扑克脸",
 	guild_coin_award = 0,
@@ -27433,7 +26845,6 @@ _G.pg.base.task_data_template[5676] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5677] = {
 	name = "出其不意的一击",
 	guild_coin_award = 0,
@@ -27483,7 +26894,6 @@ _G.pg.base.task_data_template[5677] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5681] = {
 	name = "风风火火",
 	guild_coin_award = 0,
@@ -27525,7 +26935,6 @@ _G.pg.base.task_data_template[5681] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5682] = {
 	name = "不爱说话的朋友",
 	guild_coin_award = 0,
@@ -27565,7 +26974,6 @@ _G.pg.base.task_data_template[5682] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5683] = {
 	name = "关于姐姐",
 	guild_coin_award = 0,
@@ -27605,7 +27013,6 @@ _G.pg.base.task_data_template[5683] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5684] = {
 	name = "对决",
 	guild_coin_award = 0,
@@ -27645,7 +27052,6 @@ _G.pg.base.task_data_template[5684] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5685] = {
 	name = "企业的妹妹",
 	guild_coin_award = 0,
@@ -27695,7 +27101,6 @@ _G.pg.base.task_data_template[5685] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5686] = {
 	name = "我是大黄蜂！",
 	guild_coin_award = 0,
@@ -27745,7 +27150,6 @@ _G.pg.base.task_data_template[5686] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5687] = {
 	name = "所以说，我喜欢你！",
 	guild_coin_award = 0,
@@ -27795,7 +27199,6 @@ _G.pg.base.task_data_template[5687] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5691] = {
 	name = "交叠的指尖",
 	guild_coin_award = 0,
@@ -27837,7 +27240,6 @@ _G.pg.base.task_data_template[5691] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5692] = {
 	name = "约定太多啦",
 	guild_coin_award = 0,
@@ -27877,7 +27279,6 @@ _G.pg.base.task_data_template[5692] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5693] = {
 	name = "认真的另一面",
 	guild_coin_award = 0,
@@ -27917,7 +27318,6 @@ _G.pg.base.task_data_template[5693] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5694] = {
 	name = "难以言表",
 	guild_coin_award = 0,
@@ -27957,7 +27357,6 @@ _G.pg.base.task_data_template[5694] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5695] = {
 	name = "友人的忠告",
 	guild_coin_award = 0,
@@ -28007,7 +27406,6 @@ _G.pg.base.task_data_template[5695] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5696] = {
 	name = "情愫日长",
 	guild_coin_award = 0,
@@ -28057,7 +27455,6 @@ _G.pg.base.task_data_template[5696] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5697] = {
 	name = "浪漫的预感",
 	guild_coin_award = 0,
@@ -28107,7 +27504,6 @@ _G.pg.base.task_data_template[5697] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5701] = {
 	name = "猜猜我是谁",
 	guild_coin_award = 0,
@@ -28149,7 +27545,6 @@ _G.pg.base.task_data_template[5701] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5702] = {
 	name = "好，茄子☆",
 	guild_coin_award = 0,
@@ -28189,7 +27584,6 @@ _G.pg.base.task_data_template[5702] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5703] = {
 	name = "发起攻势吧！",
 	guild_coin_award = 0,
@@ -28229,7 +27623,6 @@ _G.pg.base.task_data_template[5703] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5704] = {
 	name = "甜蜜的关系",
 	guild_coin_award = 0,
@@ -28269,7 +27662,6 @@ _G.pg.base.task_data_template[5704] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5705] = {
 	name = "开玩笑的",
 	guild_coin_award = 0,
@@ -28319,7 +27711,6 @@ _G.pg.base.task_data_template[5705] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5706] = {
 	name = "夕阳下的真心话",
 	guild_coin_award = 0,
@@ -28369,7 +27760,6 @@ _G.pg.base.task_data_template[5706] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5707] = {
 	name = "向着新的早晨",
 	guild_coin_award = 0,
@@ -28419,7 +27809,6 @@ _G.pg.base.task_data_template[5707] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5711] = {
 	name = "最速剧情高潮传说",
 	guild_coin_award = 0,
@@ -28461,7 +27850,6 @@ _G.pg.base.task_data_template[5711] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5712] = {
 	name = "莽撞也要适可而止",
 	guild_coin_award = 0,
@@ -28501,7 +27889,6 @@ _G.pg.base.task_data_template[5712] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5713] = {
 	name = "从「风筝」开始的联系",
 	guild_coin_award = 0,
@@ -28541,7 +27928,6 @@ _G.pg.base.task_data_template[5713] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5714] = {
 	name = "港区海洋博物馆",
 	guild_coin_award = 0,
@@ -28581,7 +27967,6 @@ _G.pg.base.task_data_template[5714] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5715] = {
 	name = "不可思议的兔子",
 	guild_coin_award = 0,
@@ -28631,7 +28016,6 @@ _G.pg.base.task_data_template[5715] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5716] = {
 	name = "日新月异",
 	guild_coin_award = 0,
@@ -28681,7 +28065,6 @@ _G.pg.base.task_data_template[5716] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5717] = {
 	name = "我为人人",
 	guild_coin_award = 0,
@@ -28731,7 +28114,6 @@ _G.pg.base.task_data_template[5717] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5721] = {
 	name = "没有舰历的女孩",
 	guild_coin_award = 0,
@@ -28773,7 +28155,6 @@ _G.pg.base.task_data_template[5721] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5722] = {
 	name = "{namecode:175}的本意",
 	guild_coin_award = 0,
@@ -28813,7 +28194,6 @@ _G.pg.base.task_data_template[5722] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5723] = {
 	name = "想要低调可不容易",
 	guild_coin_award = 0,
@@ -28853,7 +28233,6 @@ _G.pg.base.task_data_template[5723] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5724] = {
 	name = "{namecode:80}型意味着什么",
 	guild_coin_award = 0,
@@ -28893,7 +28272,6 @@ _G.pg.base.task_data_template[5724] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5725] = {
 	name = "保护自己的盾",
 	guild_coin_award = 0,
@@ -28943,7 +28321,6 @@ _G.pg.base.task_data_template[5725] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5726] = {
 	name = "无法袒露的弱点",
 	guild_coin_award = 0,
@@ -28993,7 +28370,6 @@ _G.pg.base.task_data_template[5726] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5727] = {
 	name = "最强的盾",
 	guild_coin_award = 0,
@@ -29043,7 +28419,6 @@ _G.pg.base.task_data_template[5727] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5731] = {
 	name = "不苟言笑的她",
 	guild_coin_award = 0,
@@ -29085,7 +28460,6 @@ _G.pg.base.task_data_template[5731] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5732] = {
 	name = "铁血宿舍的骚动",
 	guild_coin_award = 0,
@@ -29125,7 +28499,6 @@ _G.pg.base.task_data_template[5732] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5733] = {
 	name = "sing for me",
 	guild_coin_award = 0,
@@ -29165,7 +28538,6 @@ _G.pg.base.task_data_template[5733] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5734] = {
 	name = "毒",
 	guild_coin_award = 0,
@@ -29205,7 +28577,6 @@ _G.pg.base.task_data_template[5734] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5735] = {
 	name = "工作，工作，然后……",
 	guild_coin_award = 0,
@@ -29255,7 +28626,6 @@ _G.pg.base.task_data_template[5735] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5736] = {
 	name = "sing for you",
 	guild_coin_award = 0,
@@ -29305,7 +28675,6 @@ _G.pg.base.task_data_template[5736] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5737] = {
 	name = "真实的她",
 	guild_coin_award = 0,
@@ -29355,7 +28724,6 @@ _G.pg.base.task_data_template[5737] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5741] = {
 	name = "极地的爱斯基摩人？",
 	guild_coin_award = 0,
@@ -29397,7 +28765,6 @@ _G.pg.base.task_data_template[5741] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5742] = {
 	name = "来自太空的兔兔星雪糕",
 	guild_coin_award = 0,
@@ -29437,7 +28804,6 @@ _G.pg.base.task_data_template[5742] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5743] = {
 	name = "准备工作其一",
 	guild_coin_award = 0,
@@ -29477,7 +28843,6 @@ _G.pg.base.task_data_template[5743] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5744] = {
 	name = "准备工作其二",
 	guild_coin_award = 0,
@@ -29517,7 +28882,6 @@ _G.pg.base.task_data_template[5744] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5745] = {
 	name = "宣传也很重要！",
 	guild_coin_award = 0,
@@ -29567,7 +28931,6 @@ _G.pg.base.task_data_template[5745] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5746] = {
 	name = "夏日雪世界",
 	guild_coin_award = 0,
@@ -29617,7 +28980,6 @@ _G.pg.base.task_data_template[5746] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5747] = {
 	name = "爱斯基摩人的快乐",
 	guild_coin_award = 0,
@@ -29667,7 +29029,6 @@ _G.pg.base.task_data_template[5747] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5751] = {
 	name = "为什么秘书舰是我？",
 	guild_coin_award = 0,
@@ -29709,7 +29070,6 @@ _G.pg.base.task_data_template[5751] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5752] = {
 	name = "失落和笑容",
 	guild_coin_award = 0,
@@ -29749,7 +29109,6 @@ _G.pg.base.task_data_template[5752] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5753] = {
 	name = "叹息的午后",
 	guild_coin_award = 0,
@@ -29789,7 +29148,6 @@ _G.pg.base.task_data_template[5753] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5754] = {
 	name = "冒冒失失也要向前看",
 	guild_coin_award = 0,
@@ -29829,7 +29187,6 @@ _G.pg.base.task_data_template[5754] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5755] = {
 	name = "意想不到的邀请",
 	guild_coin_award = 0,
@@ -29879,7 +29236,6 @@ _G.pg.base.task_data_template[5755] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5756] = {
 	name = "同甘共苦的二人",
 	guild_coin_award = 0,
@@ -29929,7 +29285,6 @@ _G.pg.base.task_data_template[5756] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5757] = {
 	name = "她的价值，大家都知道",
 	guild_coin_award = 0,
@@ -29979,7 +29334,6 @@ _G.pg.base.task_data_template[5757] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5761] = {
 	name = "蓝色麦芽糖",
 	guild_coin_award = 0,
@@ -30021,7 +29375,6 @@ _G.pg.base.task_data_template[5761] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5762] = {
 	name = "风暴来临",
 	guild_coin_award = 0,
@@ -30061,7 +29414,6 @@ _G.pg.base.task_data_template[5762] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5763] = {
 	name = "摇曳的灯火·上",
 	guild_coin_award = 0,
@@ -30101,7 +29453,6 @@ _G.pg.base.task_data_template[5763] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5764] = {
 	name = "摇曳的灯火·下",
 	guild_coin_award = 0,
@@ -30141,7 +29492,6 @@ _G.pg.base.task_data_template[5764] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5765] = {
 	name = "暴风雨Sonata：第一乐章",
 	guild_coin_award = 0,
@@ -30191,7 +29541,6 @@ _G.pg.base.task_data_template[5765] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5766] = {
 	name = "暴风雨Sonata：第二乐章",
 	guild_coin_award = 0,
@@ -30241,7 +29590,6 @@ _G.pg.base.task_data_template[5766] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5767] = {
 	name = "暴风雨Sonata：尾章",
 	guild_coin_award = 0,
@@ -30291,7 +29639,6 @@ _G.pg.base.task_data_template[5767] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5771] = {
 	name = "西南风想当秘书舰",
 	guild_coin_award = 0,
@@ -30333,7 +29680,6 @@ _G.pg.base.task_data_template[5771] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5772] = {
 	name = "失误连连的秘书舰",
 	guild_coin_award = 0,
@@ -30373,7 +29719,6 @@ _G.pg.base.task_data_template[5772] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5773] = {
 	name = "逐渐成长的秘书舰",
 	guild_coin_award = 0,
@@ -30413,7 +29758,6 @@ _G.pg.base.task_data_template[5773] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5774] = {
 	name = "西南风与伙伴们",
 	guild_coin_award = 0,
@@ -30453,7 +29797,6 @@ _G.pg.base.task_data_template[5774] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5775] = {
 	name = "交友对象的选择",
 	guild_coin_award = 0,
@@ -30503,7 +29846,6 @@ _G.pg.base.task_data_template[5775] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5776] = {
 	name = "西南风的真实目的",
 	guild_coin_award = 0,
@@ -30553,7 +29895,6 @@ _G.pg.base.task_data_template[5776] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5777] = {
 	name = "西南风继续前行",
 	guild_coin_award = 0,
@@ -30603,7 +29944,6 @@ _G.pg.base.task_data_template[5777] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5781] = {
 	name = "冷淡的秘书舰",
 	guild_coin_award = 0,
@@ -30645,7 +29985,6 @@ _G.pg.base.task_data_template[5781] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5782] = {
 	name = "细心的秘书舰",
 	guild_coin_award = 0,
@@ -30685,7 +30024,6 @@ _G.pg.base.task_data_template[5782] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5783] = {
 	name = "小伤口",
 	guild_coin_award = 0,
@@ -30725,7 +30063,6 @@ _G.pg.base.task_data_template[5783] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5784] = {
 	name = "贾维斯与雅努斯",
 	guild_coin_award = 0,
@@ -30765,7 +30102,6 @@ _G.pg.base.task_data_template[5784] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5785] = {
 	name = "观看演习",
 	guild_coin_award = 0,
@@ -30815,7 +30151,6 @@ _G.pg.base.task_data_template[5785] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5786] = {
 	name = "被隐藏的真心",
 	guild_coin_award = 0,
@@ -30865,7 +30200,6 @@ _G.pg.base.task_data_template[5786] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5787] = {
 	name = "听你说喜欢",
 	guild_coin_award = 0,
@@ -30915,7 +30249,6 @@ _G.pg.base.task_data_template[5787] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5791] = {
 	name = "某个阳光明媚的午后",
 	guild_coin_award = 0,
@@ -30957,7 +30290,6 @@ _G.pg.base.task_data_template[5791] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5792] = {
 	name = "为了健康作息",
 	guild_coin_award = 0,
@@ -30997,7 +30329,6 @@ _G.pg.base.task_data_template[5792] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5793] = {
 	name = "秘书舰的第一天",
 	guild_coin_award = 0,
@@ -31037,7 +30368,6 @@ _G.pg.base.task_data_template[5793] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5794] = {
 	name = "秘书舰的自主原则",
 	guild_coin_award = 0,
@@ -31077,7 +30407,6 @@ _G.pg.base.task_data_template[5794] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5795] = {
 	name = "关于奖励的话题",
 	guild_coin_award = 0,
@@ -31127,7 +30456,6 @@ _G.pg.base.task_data_template[5795] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5796] = {
 	name = "薰衣草的香气",
 	guild_coin_award = 0,
@@ -31177,7 +30505,6 @@ _G.pg.base.task_data_template[5796] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5797] = {
 	name = "直到落日的尽头",
 	guild_coin_award = 0,
@@ -31227,7 +30554,6 @@ _G.pg.base.task_data_template[5797] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5801] = {
 	name = "关于准点下班之事",
 	guild_coin_award = 0,
@@ -31269,7 +30595,6 @@ _G.pg.base.task_data_template[5801] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5802] = {
 	name = "牛仔与手枪",
 	guild_coin_award = 0,
@@ -31309,7 +30634,6 @@ _G.pg.base.task_data_template[5802] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5803] = {
 	name = "旅行准备",
 	guild_coin_award = 0,
@@ -31349,7 +30673,6 @@ _G.pg.base.task_data_template[5803] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5804] = {
 	name = "骑马同行",
 	guild_coin_award = 0,
@@ -31389,7 +30712,6 @@ _G.pg.base.task_data_template[5804] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5805] = {
 	name = "运动之后是休息",
 	guild_coin_award = 0,
@@ -31439,7 +30761,6 @@ _G.pg.base.task_data_template[5805] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5806] = {
 	name = "荒野落日",
 	guild_coin_award = 0,
@@ -31489,7 +30810,6 @@ _G.pg.base.task_data_template[5806] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5807] = {
 	name = "变为传奇的旅途",
 	guild_coin_award = 0,
@@ -31539,7 +30859,6 @@ _G.pg.base.task_data_template[5807] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5811] = {
 	name = "来自{namecode:29}的赠礼",
 	guild_coin_award = 0,
@@ -31581,7 +30900,6 @@ _G.pg.base.task_data_template[5811] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5812] = {
 	name = "与鲜花簇拥之下",
 	guild_coin_award = 0,
@@ -31621,7 +30939,6 @@ _G.pg.base.task_data_template[5812] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5813] = {
 	name = "内心隐藏的情愫",
 	guild_coin_award = 0,
@@ -31661,7 +30978,6 @@ _G.pg.base.task_data_template[5813] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5814] = {
 	name = "少女真实的心",
 	guild_coin_award = 0,
@@ -31701,7 +31017,6 @@ _G.pg.base.task_data_template[5814] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5815] = {
 	name = "挥之不去的思念",
 	guild_coin_award = 0,
@@ -31751,7 +31066,6 @@ _G.pg.base.task_data_template[5815] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5816] = {
 	name = "幸福将要来临",
 	guild_coin_award = 0,
@@ -31801,7 +31115,6 @@ _G.pg.base.task_data_template[5816] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5817] = {
 	name = "珍惜眼前的幸福",
 	guild_coin_award = 0,
@@ -31851,7 +31164,6 @@ _G.pg.base.task_data_template[5817] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5821] = {
 	name = "情书",
 	guild_coin_award = 0,
@@ -31893,7 +31205,6 @@ _G.pg.base.task_data_template[5821] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5822] = {
 	name = "无法被打湿的爱意",
 	guild_coin_award = 0,
@@ -31933,7 +31244,6 @@ _G.pg.base.task_data_template[5822] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5823] = {
 	name = "比阳光更绚烂的热情",
 	guild_coin_award = 0,
@@ -31973,7 +31283,6 @@ _G.pg.base.task_data_template[5823] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5824] = {
 	name = "比港区更远的地方",
 	guild_coin_award = 0,
@@ -32013,7 +31322,6 @@ _G.pg.base.task_data_template[5824] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5825] = {
 	name = "落雪与拥抱",
 	guild_coin_award = 0,
@@ -32063,7 +31371,6 @@ _G.pg.base.task_data_template[5825] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5826] = {
 	name = "闪烁于星光之下",
 	guild_coin_award = 0,
@@ -32113,7 +31420,6 @@ _G.pg.base.task_data_template[5826] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5827] = {
 	name = "新的一天，新的约会",
 	guild_coin_award = 0,
@@ -32163,7 +31469,6 @@ _G.pg.base.task_data_template[5827] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5831] = {
 	name = "活跃的独家新闻记者！ ",
 	guild_coin_award = 0,
@@ -32205,7 +31510,6 @@ _G.pg.base.task_data_template[5831] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5832] = {
 	name = "记者间的明争暗斗 ",
 	guild_coin_award = 0,
@@ -32245,7 +31549,6 @@ _G.pg.base.task_data_template[5832] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5833] = {
 	name = "灵光一现？ ",
 	guild_coin_award = 0,
@@ -32285,7 +31588,6 @@ _G.pg.base.task_data_template[5833] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5834] = {
 	name = "爆点新闻发掘计划 ",
 	guild_coin_award = 0,
@@ -32325,7 +31627,6 @@ _G.pg.base.task_data_template[5834] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5835] = {
 	name = "变装与舞会 ",
 	guild_coin_award = 0,
@@ -32375,7 +31676,6 @@ _G.pg.base.task_data_template[5835] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5836] = {
 	name = "素材整备行动！ ",
 	guild_coin_award = 0,
@@ -32425,7 +31725,6 @@ _G.pg.base.task_data_template[5836] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5837] = {
 	name = "意料之外的头版头条 ",
 	guild_coin_award = 0,
@@ -32475,7 +31774,6 @@ _G.pg.base.task_data_template[5837] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5841] = {
 	name = "申请表",
 	guild_coin_award = 0,
@@ -32517,7 +31815,6 @@ _G.pg.base.task_data_template[5841] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5842] = {
 	name = "委托",
 	guild_coin_award = 0,
@@ -32557,7 +31854,6 @@ _G.pg.base.task_data_template[5842] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5843] = {
 	name = "工作室",
 	guild_coin_award = 0,
@@ -32597,7 +31893,6 @@ _G.pg.base.task_data_template[5843] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5844] = {
 	name = "意外惊喜",
 	guild_coin_award = 0,
@@ -32637,7 +31932,6 @@ _G.pg.base.task_data_template[5844] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5845] = {
 	name = "相比效率…",
 	guild_coin_award = 0,
@@ -32687,7 +31981,6 @@ _G.pg.base.task_data_template[5845] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5846] = {
 	name = "眼中的光",
 	guild_coin_award = 0,
@@ -32737,7 +32030,6 @@ _G.pg.base.task_data_template[5846] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5847] = {
 	name = "她的勋章",
 	guild_coin_award = 0,
@@ -32787,7 +32079,6 @@ _G.pg.base.task_data_template[5847] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5851] = {
 	name = "与众不同的清晨",
 	guild_coin_award = 0,
@@ -32829,7 +32120,6 @@ _G.pg.base.task_data_template[5851] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5852] = {
 	name = "西雅图的奇思妙想",
 	guild_coin_award = 0,
@@ -32869,7 +32159,6 @@ _G.pg.base.task_data_template[5852] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5853] = {
 	name = "氛围是派对的基础！",
 	guild_coin_award = 0,
@@ -32909,7 +32198,6 @@ _G.pg.base.task_data_template[5853] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5854] = {
 	name = "食物是派对的关键！",
 	guild_coin_award = 0,
@@ -32949,7 +32237,6 @@ _G.pg.base.task_data_template[5854] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5855] = {
 	name = "惊喜是派对的灵魂！",
 	guild_coin_award = 0,
@@ -32999,7 +32286,6 @@ _G.pg.base.task_data_template[5855] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5856] = {
 	name = "热闹的“环球”派对",
 	guild_coin_award = 0,
@@ -33049,7 +32335,6 @@ _G.pg.base.task_data_template[5856] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5857] = {
 	name = "当一切成为日常",
 	guild_coin_award = 0,
@@ -33099,7 +32384,6 @@ _G.pg.base.task_data_template[5857] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5861] = {
 	name = "没干劲的少女？",
 	guild_coin_award = 0,
@@ -33141,7 +32425,6 @@ _G.pg.base.task_data_template[5861] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5862] = {
 	name = "不被人注意的角落",
 	guild_coin_award = 0,
@@ -33181,7 +32464,6 @@ _G.pg.base.task_data_template[5862] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5863] = {
 	name = "落日后的闲游",
 	guild_coin_award = 0,
@@ -33221,7 +32503,6 @@ _G.pg.base.task_data_template[5863] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5864] = {
 	name = "蘑菇料理宴？",
 	guild_coin_award = 0,
@@ -33261,7 +32542,6 @@ _G.pg.base.task_data_template[5864] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5865] = {
 	name = "她的心意？",
 	guild_coin_award = 0,
@@ -33311,7 +32591,6 @@ _G.pg.base.task_data_template[5865] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5866] = {
 	name = "意料之外的关怀",
 	guild_coin_award = 0,
@@ -33361,7 +32640,6 @@ _G.pg.base.task_data_template[5866] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5867] = {
 	name = "心底渐起的温暖",
 	guild_coin_award = 0,
@@ -33411,7 +32689,6 @@ _G.pg.base.task_data_template[5867] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5871] = {
 	name = "今日的恶作剧是……",
 	guild_coin_award = 0,
@@ -33453,7 +32730,6 @@ _G.pg.base.task_data_template[5871] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5872] = {
 	name = "下午茶的烦恼相谈",
 	guild_coin_award = 0,
@@ -33493,7 +32769,6 @@ _G.pg.base.task_data_template[5872] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5873] = {
 	name = "数学、哲学、心理学",
 	guild_coin_award = 0,
@@ -33533,7 +32808,6 @@ _G.pg.base.task_data_template[5873] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5874] = {
 	name = "柴米油盐的生活之诗",
 	guild_coin_award = 0,
@@ -33573,7 +32847,6 @@ _G.pg.base.task_data_template[5874] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5875] = {
 	name = "大家的想法",
 	guild_coin_award = 0,
@@ -33623,7 +32896,6 @@ _G.pg.base.task_data_template[5875] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5876] = {
 	name = "真正的心意",
 	guild_coin_award = 0,
@@ -33673,7 +32945,6 @@ _G.pg.base.task_data_template[5876] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5877] = {
 	name = "献给碧海的诗歌",
 	guild_coin_award = 0,
@@ -33723,7 +32994,6 @@ _G.pg.base.task_data_template[5877] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5881] = {
 	name = "繁忙的日常",
 	guild_coin_award = 0,
@@ -33765,7 +33035,6 @@ _G.pg.base.task_data_template[5881] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5882] = {
 	name = "偷懒计划开始！",
 	guild_coin_award = 0,
@@ -33805,7 +33074,6 @@ _G.pg.base.task_data_template[5882] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5883] = {
 	name = "一起来偷懒吧！",
 	guild_coin_award = 0,
@@ -33845,7 +33113,6 @@ _G.pg.base.task_data_template[5883] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5884] = {
 	name = "在意的人与事",
 	guild_coin_award = 0,
@@ -33885,7 +33152,6 @@ _G.pg.base.task_data_template[5884] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5885] = {
 	name = "突如其来的忙碌",
 	guild_coin_award = 0,
@@ -33935,7 +33201,6 @@ _G.pg.base.task_data_template[5885] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5886] = {
 	name = "补偿的时间",
 	guild_coin_award = 0,
@@ -33985,7 +33250,6 @@ _G.pg.base.task_data_template[5886] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5887] = {
 	name = "亚德是“好孩子”哦？",
 	guild_coin_award = 0,
@@ -34035,7 +33299,6 @@ _G.pg.base.task_data_template[5887] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5888] = {
 	name = "桑德菈不对劲？",
 	guild_coin_award = 0,
@@ -34075,7 +33338,6 @@ _G.pg.base.task_data_template[5888] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5889] = {
 	name = "桑德菈式逻辑",
 	guild_coin_award = 0,
@@ -34115,7 +33377,6 @@ _G.pg.base.task_data_template[5889] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5890] = {
 	name = "桑德菈的朋友们",
 	guild_coin_award = 0,
@@ -34155,7 +33416,6 @@ _G.pg.base.task_data_template[5890] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5891] = {
 	name = "桑德菈的想法",
 	guild_coin_award = 0,
@@ -34195,7 +33455,6 @@ _G.pg.base.task_data_template[5891] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5892] = {
 	name = "辽阔的草原辽阔的心",
 	guild_coin_award = 0,
@@ -34245,7 +33504,6 @@ _G.pg.base.task_data_template[5892] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5893] = {
 	name = "桑德菈向前冲",
 	guild_coin_award = 0,
@@ -34295,7 +33553,6 @@ _G.pg.base.task_data_template[5893] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5894] = {
 	name = "不一样的桑德菈",
 	guild_coin_award = 0,
@@ -34345,7 +33602,6 @@ _G.pg.base.task_data_template[5894] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5901] = {
 	name = "灵感之泉",
 	guild_coin_award = 0,
@@ -34387,7 +33643,6 @@ _G.pg.base.task_data_template[5901] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5902] = {
 	name = "协助发明的发明",
 	guild_coin_award = 0,
@@ -34427,7 +33682,6 @@ _G.pg.base.task_data_template[5902] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5903] = {
 	name = "寻找灵感的假日",
 	guild_coin_award = 0,
@@ -34467,7 +33721,6 @@ _G.pg.base.task_data_template[5903] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5904] = {
 	name = "天才的意料之外",
 	guild_coin_award = 0,
@@ -34507,7 +33760,6 @@ _G.pg.base.task_data_template[5904] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5905] = {
 	name = "天才的实验",
 	guild_coin_award = 0,
@@ -34557,7 +33809,6 @@ _G.pg.base.task_data_template[5905] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5906] = {
 	name = "失败发明展",
 	guild_coin_award = 0,
@@ -34607,7 +33858,6 @@ _G.pg.base.task_data_template[5906] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5907] = {
 	name = "最甜蜜的发明",
 	guild_coin_award = 0,
@@ -34657,7 +33907,6 @@ _G.pg.base.task_data_template[5907] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5911] = {
 	name = "望远镜少女",
 	guild_coin_award = 0,
@@ -34699,7 +33948,6 @@ _G.pg.base.task_data_template[5911] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5912] = {
 	name = "不错的风景",
 	guild_coin_award = 0,
@@ -34739,7 +33987,6 @@ _G.pg.base.task_data_template[5912] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5913] = {
 	name = "近处、无法对焦",
 	guild_coin_award = 0,
@@ -34779,7 +34026,6 @@ _G.pg.base.task_data_template[5913] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5914] = {
 	name = "远处、看不见了",
 	guild_coin_award = 0,
@@ -34819,7 +34065,6 @@ _G.pg.base.task_data_template[5914] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5915] = {
 	name = "观察、近近的",
 	guild_coin_award = 0,
@@ -34869,7 +34114,6 @@ _G.pg.base.task_data_template[5915] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5916] = {
 	name = "人气专栏作家",
 	guild_coin_award = 0,
@@ -34919,7 +34163,6 @@ _G.pg.base.task_data_template[5916] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5917] = {
 	name = "景色真美",
 	guild_coin_award = 0,
@@ -34969,7 +34212,6 @@ _G.pg.base.task_data_template[5917] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5921] = {
 	name = "守护之刃的另一面",
 	guild_coin_award = 0,
@@ -35011,7 +34253,6 @@ _G.pg.base.task_data_template[5921] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5922] = {
 	name = "工作需奖励",
 	guild_coin_award = 0,
@@ -35051,7 +34292,6 @@ _G.pg.base.task_data_template[5922] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5923] = {
 	name = "偷懒需借口",
 	guild_coin_award = 0,
@@ -35091,7 +34331,6 @@ _G.pg.base.task_data_template[5923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5924] = {
 	name = "环境需改造",
 	guild_coin_award = 0,
@@ -35131,7 +34370,6 @@ _G.pg.base.task_data_template[5924] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5925] = {
 	name = "疲劳需舒缓",
 	guild_coin_award = 0,
@@ -35181,7 +34419,6 @@ _G.pg.base.task_data_template[5925] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5926] = {
 	name = "恩情需偿还",
 	guild_coin_award = 0,
@@ -35231,7 +34468,6 @@ _G.pg.base.task_data_template[5926] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5927] = {
 	name = "守护之刃的愿望",
 	guild_coin_award = 0,
@@ -35281,7 +34517,6 @@ _G.pg.base.task_data_template[5927] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5931] = {
 	name = "干练、成熟且高效",
 	guild_coin_award = 0,
@@ -35326,7 +34561,6 @@ _G.pg.base.task_data_template[5931] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5932] = {
 	name = "温柔、周密又贴心",
 	guild_coin_award = 0,
@@ -35369,7 +34603,6 @@ _G.pg.base.task_data_template[5932] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5933] = {
 	name = "意外的胜负心",
 	guild_coin_award = 0,
@@ -35412,7 +34645,6 @@ _G.pg.base.task_data_template[5933] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5934] = {
 	name = "张弛有度",
 	guild_coin_award = 0,
@@ -35455,7 +34687,6 @@ _G.pg.base.task_data_template[5934] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5935] = {
 	name = "如侦探般敏锐",
 	guild_coin_award = 0,
@@ -35508,7 +34739,6 @@ _G.pg.base.task_data_template[5935] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5936] = {
 	name = "如猎人般智慧",
 	guild_coin_award = 0,
@@ -35561,7 +34791,6 @@ _G.pg.base.task_data_template[5936] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5937] = {
 	name = "纯白之网",
 	guild_coin_award = 0,
@@ -35614,7 +34843,6 @@ _G.pg.base.task_data_template[5937] = {
 		55
 	}
 }
-
 _G.pg.base.task_data_template[5941] = {
 	name = "可以完全托付的秘书舰",
 	guild_coin_award = 0,
@@ -35659,7 +34887,6 @@ _G.pg.base.task_data_template[5941] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5942] = {
 	name = "在此处签字！",
 	guild_coin_award = 0,
@@ -35702,7 +34929,6 @@ _G.pg.base.task_data_template[5942] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5943] = {
 	name = "巨额预算！",
 	guild_coin_award = 0,
@@ -35745,7 +34971,6 @@ _G.pg.base.task_data_template[5943] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5944] = {
 	name = "为什么是图书馆？",
 	guild_coin_award = 0,
@@ -35788,7 +35013,6 @@ _G.pg.base.task_data_template[5944] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5945] = {
 	name = "不是孤身一人！",
 	guild_coin_award = 0,
@@ -35841,7 +35065,6 @@ _G.pg.base.task_data_template[5945] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5946] = {
 	name = "多管齐下！",
 	guild_coin_award = 0,
@@ -35894,7 +35117,6 @@ _G.pg.base.task_data_template[5946] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5947] = {
 	name = "帽子可不是玩具！",
 	guild_coin_award = 0,
@@ -35947,7 +35169,6 @@ _G.pg.base.task_data_template[5947] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5951] = {
 	name = "身兼数职的秘书舰",
 	guild_coin_award = 0,
@@ -35992,7 +35213,6 @@ _G.pg.base.task_data_template[5951] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5952] = {
 	name = "工作力为0的秘书舰",
 	guild_coin_award = 0,
@@ -36035,7 +35255,6 @@ _G.pg.base.task_data_template[5952] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5953] = {
 	name = "新闻采访中的秘书舰",
 	guild_coin_award = 0,
@@ -36078,7 +35297,6 @@ _G.pg.base.task_data_template[5953] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5954] = {
 	name = "表里音轨",
 	guild_coin_award = 0,
@@ -36121,7 +35339,6 @@ _G.pg.base.task_data_template[5954] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5955] = {
 	name = "暗中行事",
 	guild_coin_award = 0,
@@ -36174,7 +35391,6 @@ _G.pg.base.task_data_template[5955] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5956] = {
 	name = "休息日与约会日",
 	guild_coin_award = 0,
@@ -36227,7 +35443,6 @@ _G.pg.base.task_data_template[5956] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5957] = {
 	name = "两倍的真实",
 	guild_coin_award = 0,
@@ -36280,7 +35495,6 @@ _G.pg.base.task_data_template[5957] = {
 		87
 	}
 }
-
 _G.pg.base.task_data_template[5961] = {
 	name = "指挥室的密道在哪里！",
 	guild_coin_award = 0,
@@ -36322,7 +35536,6 @@ _G.pg.base.task_data_template[5961] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5962] = {
 	name = "秘书舰的一日成果！",
 	guild_coin_award = 0,
@@ -36362,7 +35575,6 @@ _G.pg.base.task_data_template[5962] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5963] = {
 	name = "废弃工厂的不可思议！",
 	guild_coin_award = 0,
@@ -36402,7 +35614,6 @@ _G.pg.base.task_data_template[5963] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5964] = {
 	name = "有“鬼”出没！",
 	guild_coin_award = 0,
@@ -36442,7 +35653,6 @@ _G.pg.base.task_data_template[5964] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5965] = {
 	name = "不可思议的真相！",
 	guild_coin_award = 0,
@@ -36492,7 +35702,6 @@ _G.pg.base.task_data_template[5965] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5966] = {
 	name = "只有你知道的秘密~上",
 	guild_coin_award = 0,
@@ -36542,7 +35751,6 @@ _G.pg.base.task_data_template[5966] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5967] = {
 	name = "只有你知道的秘密~下",
 	guild_coin_award = 0,
@@ -36592,7 +35800,6 @@ _G.pg.base.task_data_template[5967] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5971] = {
 	name = "茶与咖啡",
 	guild_coin_award = 0,
@@ -36634,7 +35841,6 @@ _G.pg.base.task_data_template[5971] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5972] = {
 	name = "“请指教”",
 	guild_coin_award = 0,
@@ -36674,7 +35880,6 @@ _G.pg.base.task_data_template[5972] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5973] = {
 	name = "特训",
 	guild_coin_award = 0,
@@ -36714,7 +35919,6 @@ _G.pg.base.task_data_template[5973] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5974] = {
 	name = "“棋之四艺”其一",
 	guild_coin_award = 0,
@@ -36754,7 +35958,6 @@ _G.pg.base.task_data_template[5974] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5975] = {
 	name = "“棋之四艺”其二",
 	guild_coin_award = 0,
@@ -36804,7 +36007,6 @@ _G.pg.base.task_data_template[5975] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5976] = {
 	name = "“棋之四艺”其三",
 	guild_coin_award = 0,
@@ -36854,7 +36056,6 @@ _G.pg.base.task_data_template[5976] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5977] = {
 	name = "“棋之四艺”其四",
 	guild_coin_award = 0,
@@ -36904,7 +36105,6 @@ _G.pg.base.task_data_template[5977] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5981] = {
 	name = "优秀秘书舰",
 	guild_coin_award = 0,
@@ -36946,7 +36146,6 @@ _G.pg.base.task_data_template[5981] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5982] = {
 	name = "消除疲劳的秘诀是美食？",
 	guild_coin_award = 0,
@@ -36986,7 +36185,6 @@ _G.pg.base.task_data_template[5982] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5983] = {
 	name = "通宵大战！",
 	guild_coin_award = 0,
@@ -37026,7 +36224,6 @@ _G.pg.base.task_data_template[5983] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5984] = {
 	name = "唤醒睡美人的方式",
 	guild_coin_award = 0,
@@ -37066,7 +36263,6 @@ _G.pg.base.task_data_template[5984] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5985] = {
 	name = "消除疲劳的秘诀是休假？",
 	guild_coin_award = 0,
@@ -37116,7 +36312,6 @@ _G.pg.base.task_data_template[5985] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5986] = {
 	name = "消除疲劳的秘诀是约会？",
 	guild_coin_award = 0,
@@ -37166,7 +36361,6 @@ _G.pg.base.task_data_template[5986] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5987] = {
 	name = "消除疲劳的秘诀是指挥官！",
 	guild_coin_award = 0,
@@ -37216,7 +36410,6 @@ _G.pg.base.task_data_template[5987] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5991] = {
 	name = "被遗忘的约定",
 	guild_coin_award = 0,
@@ -37258,7 +36451,6 @@ _G.pg.base.task_data_template[5991] = {
 		"BACKYARD"
 	}
 }
-
 _G.pg.base.task_data_template[5992] = {
 	name = "“赎罪”的祈祷",
 	guild_coin_award = 0,
@@ -37298,7 +36490,6 @@ _G.pg.base.task_data_template[5992] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5993] = {
 	name = "娃娃机的“试炼”",
 	guild_coin_award = 0,
@@ -37338,7 +36529,6 @@ _G.pg.base.task_data_template[5993] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5994] = {
 	name = "“约定”的真相",
 	guild_coin_award = 0,
@@ -37378,7 +36568,6 @@ _G.pg.base.task_data_template[5994] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5995] = {
 	name = "天使与飞鸟",
 	guild_coin_award = 0,
@@ -37428,7 +36617,6 @@ _G.pg.base.task_data_template[5995] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5996] = {
 	name = "月光下的她",
 	guild_coin_award = 0,
@@ -37478,7 +36666,6 @@ _G.pg.base.task_data_template[5996] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[5997] = {
 	name = "甜蜜之后",
 	guild_coin_award = 0,
@@ -37528,7 +36715,6 @@ _G.pg.base.task_data_template[5997] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6001] = {
 	name = "困难·近海演习",
 	guild_coin_award = 0,
@@ -37574,7 +36760,6 @@ _G.pg.base.task_data_template[6001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6002] = {
 	name = "困难·虎！虎！虎！",
 	guild_coin_award = 0,
@@ -37620,7 +36805,6 @@ _G.pg.base.task_data_template[6002] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6003] = {
 	name = "困难·燃烧的军港",
 	guild_coin_award = 0,
@@ -37666,7 +36850,6 @@ _G.pg.base.task_data_template[6003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6004] = {
 	name = "困难·来自东方的舰队",
 	guild_coin_award = 0,
@@ -37712,7 +36895,6 @@ _G.pg.base.task_data_template[6004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6005] = {
 	name = "困难·支援图拉吉岛",
 	guild_coin_award = 0,
@@ -37758,7 +36940,6 @@ _G.pg.base.task_data_template[6005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6006] = {
 	name = "困难·乌云蔽日",
 	guild_coin_award = 0,
@@ -37804,7 +36985,6 @@ _G.pg.base.task_data_template[6006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6007] = {
 	name = "困难·珊瑚海的首秀",
 	guild_coin_award = 0,
@@ -37850,7 +37030,6 @@ _G.pg.base.task_data_template[6007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6008] = {
 	name = "困难·救援约克城",
 	guild_coin_award = 0,
@@ -37896,7 +37075,6 @@ _G.pg.base.task_data_template[6008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6009] = {
 	name = "困难·死斗！保卫中途岛",
 	guild_coin_award = 0,
@@ -37942,7 +37120,6 @@ _G.pg.base.task_data_template[6009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6010] = {
 	name = "困难·背水一战",
 	guild_coin_award = 0,
@@ -37988,7 +37165,6 @@ _G.pg.base.task_data_template[6010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6011] = {
 	name = "困难·命运的五分钟",
 	guild_coin_award = 0,
@@ -38034,7 +37210,6 @@ _G.pg.base.task_data_template[6011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6012] = {
 	name = "困难·出击！中途岛反击",
 	guild_coin_award = 0,
@@ -38080,7 +37255,6 @@ _G.pg.base.task_data_template[6012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6013] = {
 	name = "困难·午夜惊魂",
 	guild_coin_award = 0,
@@ -38126,7 +37300,6 @@ _G.pg.base.task_data_template[6013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6014] = {
 	name = "困难·血色黎明",
 	guild_coin_award = 0,
@@ -38172,7 +37345,6 @@ _G.pg.base.task_data_template[6014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6015] = {
 	name = "困难·东所罗门遭遇战",
 	guild_coin_award = 0,
@@ -38218,7 +37390,6 @@ _G.pg.base.task_data_template[6015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6016] = {
 	name = "困难·复仇之战",
 	guild_coin_award = 0,
@@ -38264,7 +37435,6 @@ _G.pg.base.task_data_template[6016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6017] = {
 	name = "困难·物资拦截战",
 	guild_coin_award = 0,
@@ -38310,7 +37480,6 @@ _G.pg.base.task_data_template[6017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6018] = {
 	name = "困难·圣克鲁斯的天空",
 	guild_coin_award = 0,
@@ -38356,7 +37525,6 @@ _G.pg.base.task_data_template[6018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6019] = {
 	name = "困难·大黄蜂的陨落",
 	guild_coin_award = 0,
@@ -38402,7 +37570,6 @@ _G.pg.base.task_data_template[6019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6020] = {
 	name = "困难·撤离战区",
 	guild_coin_award = 0,
@@ -38448,7 +37615,6 @@ _G.pg.base.task_data_template[6020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6021] = {
 	name = "困难·所罗门的噩梦",
 	guild_coin_award = 0,
@@ -38494,7 +37660,6 @@ _G.pg.base.task_data_template[6021] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6022] = {
 	name = "困难·夜战精英",
 	guild_coin_award = 0,
@@ -38540,7 +37705,6 @@ _G.pg.base.task_data_template[6022] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6023] = {
 	name = "困难·巨炮最后的荣耀",
 	guild_coin_award = 0,
@@ -38586,7 +37750,6 @@ _G.pg.base.task_data_template[6023] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6024] = {
 	name = "困难·所罗门的结局",
 	guild_coin_award = 0,
@@ -38632,7 +37795,6 @@ _G.pg.base.task_data_template[6024] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6025] = {
 	name = "困难·增援拦截",
 	guild_coin_award = 0,
@@ -38683,7 +37845,6 @@ _G.pg.base.task_data_template[6025] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6026] = {
 	name = "困难·短兵相接",
 	guild_coin_award = 0,
@@ -38734,7 +37895,6 @@ _G.pg.base.task_data_template[6026] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6027] = {
 	name = "困难·措手不及",
 	guild_coin_award = 0,
@@ -38785,7 +37945,6 @@ _G.pg.base.task_data_template[6027] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6028] = {
 	name = "困难·预料外的混乱",
 	guild_coin_award = 0,
@@ -38836,7 +37995,6 @@ _G.pg.base.task_data_template[6028] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6029] = {
 	name = "困难·寒风",
 	guild_coin_award = 0,
@@ -38887,7 +38045,6 @@ _G.pg.base.task_data_template[6029] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6030] = {
 	name = "困难·北极圈的拂晓",
 	guild_coin_award = 0,
@@ -38938,7 +38095,6 @@ _G.pg.base.task_data_template[6030] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6031] = {
 	name = "困难·冰海怒涛",
 	guild_coin_award = 0,
@@ -38989,7 +38145,6 @@ _G.pg.base.task_data_template[6031] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6032] = {
 	name = "困难·被遗忘的战场",
 	guild_coin_award = 0,
@@ -39040,7 +38195,6 @@ _G.pg.base.task_data_template[6032] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6033] = {
 	name = "困难·不祥之夜",
 	guild_coin_award = 0,
@@ -39091,7 +38245,6 @@ _G.pg.base.task_data_template[6033] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6034] = {
 	name = "困难·拦截作战",
 	guild_coin_award = 0,
@@ -39142,7 +38295,6 @@ _G.pg.base.task_data_template[6034] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6035] = {
 	name = "困难·黑夜中的光芒",
 	guild_coin_award = 0,
@@ -39193,7 +38345,6 @@ _G.pg.base.task_data_template[6035] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6036] = {
 	name = "困难·海伦娜",
 	guild_coin_award = 0,
@@ -39244,7 +38395,6 @@ _G.pg.base.task_data_template[6036] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6037] = {
 	name = "困难·再次出击，再次！",
 	guild_coin_award = 0,
@@ -39295,7 +38445,6 @@ _G.pg.base.task_data_template[6037] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6038] = {
 	name = "困难·先发制人",
 	guild_coin_award = 0,
@@ -39346,7 +38495,6 @@ _G.pg.base.task_data_template[6038] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6039] = {
 	name = "困难·乘胜追击",
 	guild_coin_award = 0,
@@ -39397,7 +38545,6 @@ _G.pg.base.task_data_template[6039] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6040] = {
 	name = "困难·回马枪",
 	guild_coin_award = 0,
@@ -39448,7 +38595,6 @@ _G.pg.base.task_data_template[6040] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6041] = {
 	name = "困难·拂晓登陆！",
 	guild_coin_award = 0,
@@ -39499,7 +38645,6 @@ _G.pg.base.task_data_template[6041] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6042] = {
 	name = "困难·暴风雨之夜",
 	guild_coin_award = 0,
@@ -39550,7 +38695,6 @@ _G.pg.base.task_data_template[6042] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6043] = {
 	name = "困难·所罗门四骑士",
 	guild_coin_award = 0,
@@ -39601,7 +38745,6 @@ _G.pg.base.task_data_template[6043] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6044] = {
 	name = "困难·撕裂黑夜！",
 	guild_coin_award = 0,
@@ -39652,7 +38795,6 @@ _G.pg.base.task_data_template[6044] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6045] = {
 	name = "困难·先声夺人",
 	guild_coin_award = 0,
@@ -39703,7 +38845,6 @@ _G.pg.base.task_data_template[6045] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6046] = {
 	name = "困难·鲁莽的后果",
 	guild_coin_award = 0,
@@ -39754,7 +38895,6 @@ _G.pg.base.task_data_template[6046] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6047] = {
 	name = "困难·空中对决",
 	guild_coin_award = 0,
@@ -39805,7 +38945,6 @@ _G.pg.base.task_data_template[6047] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6048] = {
 	name = "困难·TF58，翱翔于天际",
 	guild_coin_award = 0,
@@ -39856,7 +38995,6 @@ _G.pg.base.task_data_template[6048] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6049] = {
 	name = "困难·激战的长空",
 	guild_coin_award = 0,
@@ -39907,7 +39045,6 @@ _G.pg.base.task_data_template[6049] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6050] = {
 	name = "困难·羽栖之鹤",
 	guild_coin_award = 0,
@@ -39958,7 +39095,6 @@ _G.pg.base.task_data_template[6050] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6051] = {
 	name = "困难·奋起之鹤",
 	guild_coin_award = 0,
@@ -40009,7 +39145,6 @@ _G.pg.base.task_data_template[6051] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[6052] = {
 	name = "困难·起舞之凤",
 	guild_coin_award = 0,
@@ -40060,7 +39195,6 @@ _G.pg.base.task_data_template[6052] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7201] = {
 	name = "击退敌军舰队",
 	guild_coin_award = 0,
@@ -40112,7 +39246,6 @@ _G.pg.base.task_data_template[7201] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[7202] = {
 	name = "扩充战力",
 	guild_coin_award = 0,
@@ -40162,7 +39295,6 @@ _G.pg.base.task_data_template[7202] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7203] = {
 	name = "后宅补给",
 	guild_coin_award = 0,
@@ -40212,7 +39344,6 @@ _G.pg.base.task_data_template[7203] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7204] = {
 	name = "每日挑战",
 	guild_coin_award = 0,
@@ -40262,7 +39393,6 @@ _G.pg.base.task_data_template[7204] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7205] = {
 	name = "每日困难",
 	guild_coin_award = 0,
@@ -40312,7 +39442,6 @@ _G.pg.base.task_data_template[7205] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7206] = {
 	name = "大舰队捐赠",
 	guild_coin_award = 0,
@@ -40357,7 +39486,6 @@ _G.pg.base.task_data_template[7206] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7207] = {
 	name = "军事委托",
 	guild_coin_award = 0,
@@ -40407,7 +39535,6 @@ _G.pg.base.task_data_template[7207] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7208] = {
 	name = "舰队演习",
 	guild_coin_award = 0,
@@ -40457,7 +39584,6 @@ _G.pg.base.task_data_template[7208] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7209] = {
 	name = "完成科研委托",
 	guild_coin_award = 0,
@@ -40502,7 +39628,6 @@ _G.pg.base.task_data_template[7209] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7210] = {
 	name = "大世界战斗一次",
 	guild_coin_award = 0,
@@ -40547,7 +39672,6 @@ _G.pg.base.task_data_template[7210] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7301] = {
 	name = "军事委托-奖励任务",
 	guild_coin_award = 0,
@@ -40597,7 +39721,6 @@ _G.pg.base.task_data_template[7301] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7302] = {
 	name = "指挥喵训练-奖励任务",
 	guild_coin_award = 0,
@@ -40647,7 +39770,6 @@ _G.pg.base.task_data_template[7302] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7303] = {
 	name = "后宅补给-奖励任务",
 	guild_coin_award = 0,
@@ -40697,7 +39819,6 @@ _G.pg.base.task_data_template[7303] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7304] = {
 	name = "战术训练-奖励任务",
 	guild_coin_award = 0,
@@ -40747,7 +39868,6 @@ _G.pg.base.task_data_template[7304] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7305] = {
 	name = "大世界战斗一次-奖励任务",
 	guild_coin_award = 0,
@@ -40797,7 +39917,6 @@ _G.pg.base.task_data_template[7305] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7306] = {
 	name = "舰船强化-奖励任务",
 	guild_coin_award = 0,
@@ -40847,7 +39966,6 @@ _G.pg.base.task_data_template[7306] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7307] = {
 	name = "强化装备-奖励任务",
 	guild_coin_award = 0,
@@ -40897,7 +40015,6 @@ _G.pg.base.task_data_template[7307] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7308] = {
 	name = "完成科研委托-奖励任务",
 	guild_coin_award = 0,
@@ -40947,7 +40064,6 @@ _G.pg.base.task_data_template[7308] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7309] = {
 	name = "后宅互动",
 	guild_coin_award = 0,
@@ -40997,7 +40113,6 @@ _G.pg.base.task_data_template[7309] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[7310] = {
 	name = "主界面互动",
 	guild_coin_award = 0,
@@ -41047,7 +40162,6 @@ _G.pg.base.task_data_template[7310] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10003] = {
 	name = "SP1·不详的疑云",
 	guild_coin_award = 0,
@@ -41093,7 +40207,6 @@ _G.pg.base.task_data_template[10003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10004] = {
 	name = "SP2·大舰巨炮的反击",
 	guild_coin_award = 0,
@@ -41139,7 +40252,6 @@ _G.pg.base.task_data_template[10004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10005] = {
 	name = "SP3·Z舰队的覆灭",
 	guild_coin_award = 0,
@@ -41185,7 +40297,6 @@ _G.pg.base.task_data_template[10005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10155] = {
 	name = "限时 兵装训练任务1",
 	guild_coin_award = 0,
@@ -41238,7 +40349,6 @@ _G.pg.base.task_data_template[10155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10156] = {
 	name = "限时 兵装训练任务2",
 	guild_coin_award = 0,
@@ -41291,7 +40401,6 @@ _G.pg.base.task_data_template[10156] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10157] = {
 	name = "限时 兵装训练任务3",
 	guild_coin_award = 0,
@@ -41349,7 +40458,6 @@ _G.pg.base.task_data_template[10157] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10158] = {
 	name = "限时 兵装训练任务4",
 	guild_coin_award = 0,
@@ -41407,7 +40515,6 @@ _G.pg.base.task_data_template[10158] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10159] = {
 	name = "限时 兵装训练任务5",
 	guild_coin_award = 0,
@@ -41465,7 +40572,6 @@ _G.pg.base.task_data_template[10159] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10160] = {
 	name = "限时 兵装训练任务1",
 	guild_coin_award = 0,
@@ -41518,7 +40624,6 @@ _G.pg.base.task_data_template[10160] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10161] = {
 	name = "限时 兵装训练任务2",
 	guild_coin_award = 0,
@@ -41571,7 +40676,6 @@ _G.pg.base.task_data_template[10161] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10162] = {
 	name = "限时 兵装训练任务3",
 	guild_coin_award = 0,
@@ -41629,7 +40733,6 @@ _G.pg.base.task_data_template[10162] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10163] = {
 	name = "限时 兵装训练任务4",
 	guild_coin_award = 0,
@@ -41687,7 +40790,6 @@ _G.pg.base.task_data_template[10163] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10164] = {
 	name = "限时 兵装训练任务5",
 	guild_coin_award = 0,
@@ -41745,7 +40847,6 @@ _G.pg.base.task_data_template[10164] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10165] = {
 	name = "限时 兵装训练任务1",
 	guild_coin_award = 0,
@@ -41798,7 +40899,6 @@ _G.pg.base.task_data_template[10165] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10166] = {
 	name = "限时 兵装训练任务2",
 	guild_coin_award = 0,
@@ -41851,7 +40951,6 @@ _G.pg.base.task_data_template[10166] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10167] = {
 	name = "限时 兵装训练任务3",
 	guild_coin_award = 0,
@@ -41909,7 +41008,6 @@ _G.pg.base.task_data_template[10167] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10168] = {
 	name = "限时 兵装训练任务4",
 	guild_coin_award = 0,
@@ -41967,7 +41065,6 @@ _G.pg.base.task_data_template[10168] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10169] = {
 	name = "限时 兵装训练任务5",
 	guild_coin_award = 0,
@@ -42025,7 +41122,6 @@ _G.pg.base.task_data_template[10169] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10170] = {
 	name = "限时 兵装训练任务1",
 	guild_coin_award = 0,
@@ -42078,7 +41174,6 @@ _G.pg.base.task_data_template[10170] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10171] = {
 	name = "限时 兵装训练任务2",
 	guild_coin_award = 0,
@@ -42131,7 +41226,6 @@ _G.pg.base.task_data_template[10171] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10172] = {
 	name = "限时 兵装训练任务3",
 	guild_coin_award = 0,
@@ -42189,7 +41283,6 @@ _G.pg.base.task_data_template[10172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10173] = {
 	name = "限时 兵装训练任务4",
 	guild_coin_award = 0,
@@ -42247,7 +41340,6 @@ _G.pg.base.task_data_template[10173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10174] = {
 	name = "限时 兵装训练任务5",
 	guild_coin_award = 0,
@@ -42305,7 +41397,6 @@ _G.pg.base.task_data_template[10174] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[10302] = {
 	name = "通关3-4赠送伊58",
 	guild_coin_award = 0,
@@ -42361,7 +41452,6 @@ _G.pg.base.task_data_template[10302] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13816] = {
 	name = "回流lv<35日常1",
 	guild_coin_award = 0,
@@ -42403,7 +41493,6 @@ _G.pg.base.task_data_template[13816] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13817] = {
 	name = "回流lv<35日常2",
 	guild_coin_award = 0,
@@ -42445,7 +41534,6 @@ _G.pg.base.task_data_template[13817] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13818] = {
 	name = "回流lv<35日常3",
 	guild_coin_award = 0,
@@ -42485,7 +41573,6 @@ _G.pg.base.task_data_template[13818] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13819] = {
 	name = "回流lv<35日常4",
 	guild_coin_award = 0,
@@ -42525,7 +41612,6 @@ _G.pg.base.task_data_template[13819] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13820] = {
 	name = "回流lv<35日常5",
 	guild_coin_award = 0,
@@ -42565,7 +41651,6 @@ _G.pg.base.task_data_template[13820] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13821] = {
 	name = "回流lv<35日常6",
 	guild_coin_award = 0,
@@ -42605,7 +41690,6 @@ _G.pg.base.task_data_template[13821] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13822] = {
 	name = "回流lv<35日常7",
 	guild_coin_award = 0,
@@ -42645,7 +41729,6 @@ _G.pg.base.task_data_template[13822] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13823] = {
 	name = "回流lv<35日常8",
 	guild_coin_award = 0,
@@ -42685,7 +41768,6 @@ _G.pg.base.task_data_template[13823] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13824] = {
 	name = "回流lv<35日常9",
 	guild_coin_award = 0,
@@ -42725,7 +41807,6 @@ _G.pg.base.task_data_template[13824] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13825] = {
 	name = "回流lv<50日常1",
 	guild_coin_award = 0,
@@ -42767,7 +41848,6 @@ _G.pg.base.task_data_template[13825] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13826] = {
 	name = "回流lv<50日常2",
 	guild_coin_award = 0,
@@ -42809,7 +41889,6 @@ _G.pg.base.task_data_template[13826] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13827] = {
 	name = "回流lv<50日常3",
 	guild_coin_award = 0,
@@ -42849,7 +41928,6 @@ _G.pg.base.task_data_template[13827] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13828] = {
 	name = "回流lv<50日常4",
 	guild_coin_award = 0,
@@ -42889,7 +41967,6 @@ _G.pg.base.task_data_template[13828] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13829] = {
 	name = "回流lv<50日常5",
 	guild_coin_award = 0,
@@ -42929,7 +42006,6 @@ _G.pg.base.task_data_template[13829] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13830] = {
 	name = "回流lv<50日常6",
 	guild_coin_award = 0,
@@ -42969,7 +42045,6 @@ _G.pg.base.task_data_template[13830] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13831] = {
 	name = "回流lv<50日常7",
 	guild_coin_award = 0,
@@ -43009,7 +42084,6 @@ _G.pg.base.task_data_template[13831] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13832] = {
 	name = "回流lv<50日常8",
 	guild_coin_award = 0,
@@ -43049,7 +42123,6 @@ _G.pg.base.task_data_template[13832] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13833] = {
 	name = "回流lv<50日常9",
 	guild_coin_award = 0,
@@ -43089,7 +42162,6 @@ _G.pg.base.task_data_template[13833] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13834] = {
 	name = "回流lv<70日常1",
 	guild_coin_award = 0,
@@ -43131,7 +42203,6 @@ _G.pg.base.task_data_template[13834] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13835] = {
 	name = "回流lv<70日常2",
 	guild_coin_award = 0,
@@ -43173,7 +42244,6 @@ _G.pg.base.task_data_template[13835] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13836] = {
 	name = "回流lv<70日常3",
 	guild_coin_award = 0,
@@ -43213,7 +42283,6 @@ _G.pg.base.task_data_template[13836] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13837] = {
 	name = "回流lv<70日常4",
 	guild_coin_award = 0,
@@ -43253,7 +42322,6 @@ _G.pg.base.task_data_template[13837] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13838] = {
 	name = "回流lv<70日常5",
 	guild_coin_award = 0,
@@ -43293,7 +42361,6 @@ _G.pg.base.task_data_template[13838] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13839] = {
 	name = "回流lv<70日常6",
 	guild_coin_award = 0,
@@ -43333,7 +42400,6 @@ _G.pg.base.task_data_template[13839] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13840] = {
 	name = "回流lv<70日常7",
 	guild_coin_award = 0,
@@ -43373,7 +42439,6 @@ _G.pg.base.task_data_template[13840] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13841] = {
 	name = "回流lv<70日常8",
 	guild_coin_award = 0,
@@ -43413,7 +42478,6 @@ _G.pg.base.task_data_template[13841] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13842] = {
 	name = "回流lv<70日常9",
 	guild_coin_award = 0,
@@ -43453,7 +42517,6 @@ _G.pg.base.task_data_template[13842] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13843] = {
 	name = "回流lv>70日常1",
 	guild_coin_award = 0,
@@ -43495,7 +42558,6 @@ _G.pg.base.task_data_template[13843] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13844] = {
 	name = "回流lv>70日常2",
 	guild_coin_award = 0,
@@ -43537,7 +42599,6 @@ _G.pg.base.task_data_template[13844] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13845] = {
 	name = "回流lv>70日常3",
 	guild_coin_award = 0,
@@ -43577,7 +42638,6 @@ _G.pg.base.task_data_template[13845] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13846] = {
 	name = "回流lv>70日常4",
 	guild_coin_award = 0,
@@ -43617,7 +42677,6 @@ _G.pg.base.task_data_template[13846] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13847] = {
 	name = "回流lv>70日常5",
 	guild_coin_award = 0,
@@ -43657,7 +42716,6 @@ _G.pg.base.task_data_template[13847] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13848] = {
 	name = "回流lv>70日常6",
 	guild_coin_award = 0,
@@ -43697,7 +42755,6 @@ _G.pg.base.task_data_template[13848] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13849] = {
 	name = "回流lv>70日常7",
 	guild_coin_award = 0,
@@ -43737,7 +42794,6 @@ _G.pg.base.task_data_template[13849] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13850] = {
 	name = "回流lv>70日常8",
 	guild_coin_award = 0,
@@ -43777,7 +42833,6 @@ _G.pg.base.task_data_template[13850] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13851] = {
 	name = "回流lv>70日常9",
 	guild_coin_award = 0,
@@ -43817,7 +42872,6 @@ _G.pg.base.task_data_template[13851] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13852] = {
 	name = "回流点数活动1",
 	guild_coin_award = 0,
@@ -43857,7 +42911,6 @@ _G.pg.base.task_data_template[13852] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13853] = {
 	name = "回流点数活动2",
 	guild_coin_award = 0,
@@ -43897,7 +42950,6 @@ _G.pg.base.task_data_template[13853] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13854] = {
 	name = "回流点数活动3",
 	guild_coin_award = 0,
@@ -43937,7 +42989,6 @@ _G.pg.base.task_data_template[13854] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13855] = {
 	name = "回流点数活动4",
 	guild_coin_award = 0,
@@ -43979,7 +43030,6 @@ _G.pg.base.task_data_template[13855] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[13856] = {
 	name = "回流点数活动5",
 	guild_coin_award = 0,
@@ -44019,7 +43069,6 @@ _G.pg.base.task_data_template[13856] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13857] = {
 	name = "回流点数活动6",
 	guild_coin_award = 0,
@@ -44059,7 +43108,6 @@ _G.pg.base.task_data_template[13857] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13858] = {
 	name = "回流点数活动7",
 	guild_coin_award = 0,
@@ -44099,7 +43147,6 @@ _G.pg.base.task_data_template[13858] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13859] = {
 	name = "回流点数活动8",
 	guild_coin_award = 0,
@@ -44139,7 +43186,6 @@ _G.pg.base.task_data_template[13859] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13861] = {
 	name = "拉新1阶段1",
 	guild_coin_award = 0,
@@ -44183,7 +43229,6 @@ _G.pg.base.task_data_template[13861] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13862] = {
 	name = "拉新1阶段2",
 	guild_coin_award = 0,
@@ -44227,7 +43272,6 @@ _G.pg.base.task_data_template[13862] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13863] = {
 	name = "拉新1阶段3",
 	guild_coin_award = 0,
@@ -44271,7 +43315,6 @@ _G.pg.base.task_data_template[13863] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13864] = {
 	name = "拉新1阶段4",
 	guild_coin_award = 0,
@@ -44315,7 +43358,6 @@ _G.pg.base.task_data_template[13864] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13865] = {
 	name = "拉新1阶段5",
 	guild_coin_award = 0,
@@ -44359,7 +43401,6 @@ _G.pg.base.task_data_template[13865] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13866] = {
 	name = "拉新1阶段6",
 	guild_coin_award = 0,
@@ -44403,7 +43444,6 @@ _G.pg.base.task_data_template[13866] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13867] = {
 	name = "拉新1阶段7",
 	guild_coin_award = 0,
@@ -44447,7 +43487,6 @@ _G.pg.base.task_data_template[13867] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13868] = {
 	name = "拉新1阶段8",
 	guild_coin_award = 0,
@@ -44487,7 +43526,6 @@ _G.pg.base.task_data_template[13868] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13869] = {
 	name = "拉新1阶段9",
 	guild_coin_award = 0,
@@ -44539,7 +43577,6 @@ _G.pg.base.task_data_template[13869] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13870] = {
 	name = "拉新1阶段10",
 	guild_coin_award = 0,
@@ -44579,7 +43616,6 @@ _G.pg.base.task_data_template[13870] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13871] = {
 	name = "拉新1阶段11",
 	guild_coin_award = 0,
@@ -44619,7 +43655,6 @@ _G.pg.base.task_data_template[13871] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13872] = {
 	name = "拉新1阶段12",
 	guild_coin_award = 0,
@@ -44659,7 +43694,6 @@ _G.pg.base.task_data_template[13872] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13873] = {
 	name = "拉新1阶段13",
 	guild_coin_award = 0,
@@ -44705,7 +43739,6 @@ _G.pg.base.task_data_template[13873] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13874] = {
 	name = "拉新2阶段1",
 	guild_coin_award = 0,
@@ -44749,7 +43782,6 @@ _G.pg.base.task_data_template[13874] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13875] = {
 	name = "拉新2阶段2",
 	guild_coin_award = 0,
@@ -44793,7 +43825,6 @@ _G.pg.base.task_data_template[13875] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13876] = {
 	name = "拉新2阶段3",
 	guild_coin_award = 0,
@@ -44837,7 +43868,6 @@ _G.pg.base.task_data_template[13876] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13877] = {
 	name = "拉新2阶段4",
 	guild_coin_award = 0,
@@ -44881,7 +43911,6 @@ _G.pg.base.task_data_template[13877] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13878] = {
 	name = "拉新2阶段5",
 	guild_coin_award = 0,
@@ -44923,7 +43952,6 @@ _G.pg.base.task_data_template[13878] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13879] = {
 	name = "拉新2阶段6",
 	guild_coin_award = 0,
@@ -44965,7 +43993,6 @@ _G.pg.base.task_data_template[13879] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13880] = {
 	name = "拉新2阶段7",
 	guild_coin_award = 0,
@@ -45007,7 +44034,6 @@ _G.pg.base.task_data_template[13880] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13881] = {
 	name = "拉新2阶段8",
 	guild_coin_award = 0,
@@ -45049,7 +44075,6 @@ _G.pg.base.task_data_template[13881] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13882] = {
 	name = "拉新2阶段9",
 	guild_coin_award = 0,
@@ -45093,7 +44118,6 @@ _G.pg.base.task_data_template[13882] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13883] = {
 	name = "拉新2阶段10",
 	guild_coin_award = 0,
@@ -45154,7 +44178,6 @@ _G.pg.base.task_data_template[13883] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13884] = {
 	name = "拉新2阶段11",
 	guild_coin_award = 0,
@@ -45215,7 +44238,6 @@ _G.pg.base.task_data_template[13884] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13885] = {
 	name = "拉新2阶段12",
 	guild_coin_award = 0,
@@ -45255,7 +44277,6 @@ _G.pg.base.task_data_template[13885] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13886] = {
 	name = "拉新2阶段13",
 	guild_coin_award = 0,
@@ -45295,7 +44316,6 @@ _G.pg.base.task_data_template[13886] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13887] = {
 	name = "拉新2阶段14",
 	guild_coin_award = 0,
@@ -45337,7 +44357,6 @@ _G.pg.base.task_data_template[13887] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13888] = {
 	name = "拉新2阶段15",
 	guild_coin_award = 0,
@@ -45380,7 +44399,6 @@ _G.pg.base.task_data_template[13888] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13889] = {
 	name = "拉新2阶段16",
 	guild_coin_award = 0,
@@ -45472,7 +44490,6 @@ _G.pg.base.task_data_template[13889] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13890] = {
 	name = "拉新2阶段17",
 	guild_coin_award = 0,
@@ -45564,7 +44581,6 @@ _G.pg.base.task_data_template[13890] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13891] = {
 	name = "拉新2阶段18",
 	guild_coin_award = 0,
@@ -45648,7 +44664,6 @@ _G.pg.base.task_data_template[13891] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13892] = {
 	name = "拉新2阶段19",
 	guild_coin_award = 0,
@@ -45688,7 +44703,6 @@ _G.pg.base.task_data_template[13892] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13893] = {
 	name = "拉新2阶段20",
 	guild_coin_award = 0,
@@ -45728,7 +44742,6 @@ _G.pg.base.task_data_template[13893] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13894] = {
 	name = "拉新2阶段21",
 	guild_coin_award = 0,
@@ -45768,7 +44781,6 @@ _G.pg.base.task_data_template[13894] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13895] = {
 	name = "拉新2阶段22",
 	guild_coin_award = 0,
@@ -45814,7 +44826,6 @@ _G.pg.base.task_data_template[13895] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13896] = {
 	name = "拉新3阶段1",
 	guild_coin_award = 0,
@@ -45858,7 +44869,6 @@ _G.pg.base.task_data_template[13896] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13897] = {
 	name = "拉新3阶段2",
 	guild_coin_award = 0,
@@ -45902,7 +44912,6 @@ _G.pg.base.task_data_template[13897] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13898] = {
 	name = "拉新3阶段3",
 	guild_coin_award = 0,
@@ -45946,7 +44955,6 @@ _G.pg.base.task_data_template[13898] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13899] = {
 	name = "拉新3阶段4",
 	guild_coin_award = 0,
@@ -45990,7 +44998,6 @@ _G.pg.base.task_data_template[13899] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13900] = {
 	name = "拉新3阶段5",
 	guild_coin_award = 0,
@@ -46034,7 +45041,6 @@ _G.pg.base.task_data_template[13900] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13901] = {
 	name = "拉新3阶段6",
 	guild_coin_award = 0,
@@ -46078,7 +45084,6 @@ _G.pg.base.task_data_template[13901] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13902] = {
 	name = "拉新3阶段7",
 	guild_coin_award = 0,
@@ -46122,7 +45127,6 @@ _G.pg.base.task_data_template[13902] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13903] = {
 	name = "拉新3阶段8",
 	guild_coin_award = 0,
@@ -46166,7 +45170,6 @@ _G.pg.base.task_data_template[13903] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13904] = {
 	name = "拉新3阶段9",
 	guild_coin_award = 0,
@@ -46210,7 +45213,6 @@ _G.pg.base.task_data_template[13904] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13905] = {
 	name = "拉新3阶段10",
 	guild_coin_award = 0,
@@ -46254,7 +45256,6 @@ _G.pg.base.task_data_template[13905] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13906] = {
 	name = "拉新3阶段11",
 	guild_coin_award = 0,
@@ -46298,7 +45299,6 @@ _G.pg.base.task_data_template[13906] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13907] = {
 	name = "拉新3阶段12",
 	guild_coin_award = 0,
@@ -46340,7 +45340,6 @@ _G.pg.base.task_data_template[13907] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13908] = {
 	name = "拉新3阶段13",
 	guild_coin_award = 0,
@@ -46382,7 +45381,6 @@ _G.pg.base.task_data_template[13908] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13909] = {
 	name = "拉新3阶段14",
 	guild_coin_award = 0,
@@ -46424,7 +45422,6 @@ _G.pg.base.task_data_template[13909] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13910] = {
 	name = "拉新3阶段15",
 	guild_coin_award = 0,
@@ -46466,7 +45463,6 @@ _G.pg.base.task_data_template[13910] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13911] = {
 	name = "拉新3阶段16",
 	guild_coin_award = 0,
@@ -46508,7 +45504,6 @@ _G.pg.base.task_data_template[13911] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13912] = {
 	name = "拉新3阶段17",
 	guild_coin_award = 0,
@@ -46550,7 +45545,6 @@ _G.pg.base.task_data_template[13912] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13913] = {
 	name = "拉新3阶段18",
 	guild_coin_award = 0,
@@ -46592,7 +45586,6 @@ _G.pg.base.task_data_template[13913] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13914] = {
 	name = "拉新3阶段19",
 	guild_coin_award = 0,
@@ -46634,7 +45627,6 @@ _G.pg.base.task_data_template[13914] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13915] = {
 	name = "拉新3阶段20",
 	guild_coin_award = 0,
@@ -46676,7 +45668,6 @@ _G.pg.base.task_data_template[13915] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13916] = {
 	name = "拉新3阶段21",
 	guild_coin_award = 0,
@@ -46718,7 +45709,6 @@ _G.pg.base.task_data_template[13916] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13917] = {
 	name = "拉新3阶段22",
 	guild_coin_award = 0,
@@ -46760,7 +45750,6 @@ _G.pg.base.task_data_template[13917] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13918] = {
 	name = "拉新3阶段23",
 	guild_coin_award = 0,
@@ -46802,7 +45791,6 @@ _G.pg.base.task_data_template[13918] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13919] = {
 	name = "拉新3阶段24",
 	guild_coin_award = 0,
@@ -46842,7 +45830,6 @@ _G.pg.base.task_data_template[13919] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13920] = {
 	name = "拉新3阶段25",
 	guild_coin_award = 0,
@@ -46882,7 +45869,6 @@ _G.pg.base.task_data_template[13920] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13921] = {
 	name = "拉新3阶段26",
 	guild_coin_award = 0,
@@ -46922,7 +45908,6 @@ _G.pg.base.task_data_template[13921] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13922] = {
 	name = "拉新3阶段27",
 	guild_coin_award = 0,
@@ -46962,7 +45947,6 @@ _G.pg.base.task_data_template[13922] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13923] = {
 	name = "拉新3阶段28",
 	guild_coin_award = 0,
@@ -47005,7 +45989,6 @@ _G.pg.base.task_data_template[13923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13924] = {
 	name = "拉新3阶段29",
 	guild_coin_award = 0,
@@ -47049,7 +46032,6 @@ _G.pg.base.task_data_template[13924] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13925] = {
 	name = "拉新3阶段30",
 	guild_coin_award = 0,
@@ -47092,7 +46074,6 @@ _G.pg.base.task_data_template[13925] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13926] = {
 	name = "拉新3阶段31",
 	guild_coin_award = 0,
@@ -47135,7 +46116,6 @@ _G.pg.base.task_data_template[13926] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13927] = {
 	name = "拉新3阶段32",
 	guild_coin_award = 0,
@@ -47208,7 +46188,6 @@ _G.pg.base.task_data_template[13927] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13928] = {
 	name = "拉新3阶段33",
 	guild_coin_award = 0,
@@ -47248,7 +46227,6 @@ _G.pg.base.task_data_template[13928] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13929] = {
 	name = "拉新3阶段34",
 	guild_coin_award = 0,
@@ -47288,7 +46266,6 @@ _G.pg.base.task_data_template[13929] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[13930] = {
 	name = "拉新3阶段35",
 	guild_coin_award = 0,
@@ -47363,7 +46340,6 @@ _G.pg.base.task_data_template[13930] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15953] = {
 	name = "一次性UR布里任务1造船",
 	guild_coin_award = 0,
@@ -47403,7 +46379,6 @@ _G.pg.base.task_data_template[15953] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15954] = {
 	name = "一次性UR布里任务2猫箱",
 	guild_coin_award = 0,
@@ -47443,7 +46418,6 @@ _G.pg.base.task_data_template[15954] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15955] = {
 	name = "一次性UR布里任务3演习",
 	guild_coin_award = 0,
@@ -47483,7 +46457,6 @@ _G.pg.base.task_data_template[15955] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15956] = {
 	name = "一次性UR布里任务4委托",
 	guild_coin_award = 0,
@@ -47523,7 +46496,6 @@ _G.pg.base.task_data_template[15956] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15957] = {
 	name = "一次性UR布里任务5科研",
 	guild_coin_award = 0,
@@ -47563,7 +46535,6 @@ _G.pg.base.task_data_template[15957] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15958] = {
 	name = "一次性UR布里任务6商船",
 	guild_coin_award = 0,
@@ -47616,7 +46587,6 @@ _G.pg.base.task_data_template[15958] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15959] = {
 	name = "一次性UR布里任务8海域",
 	guild_coin_award = 0,
@@ -47663,7 +46633,6 @@ _G.pg.base.task_data_template[15959] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15960] = {
 	name = "一次性UR布里任务9斩首",
 	guild_coin_award = 0,
@@ -47710,7 +46679,6 @@ _G.pg.base.task_data_template[15960] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15961] = {
 	name = "一次性UR布里任务7困难",
 	guild_coin_award = 0,
@@ -47750,7 +46718,6 @@ _G.pg.base.task_data_template[15961] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15962] = {
 	name = "一次性UR布里任务10主线6-4",
 	guild_coin_award = 0,
@@ -47796,7 +46763,6 @@ _G.pg.base.task_data_template[15962] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15963] = {
 	name = "一次性UR布里任务11船等级驱逐",
 	guild_coin_award = 0,
@@ -47840,7 +46806,6 @@ _G.pg.base.task_data_template[15963] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15964] = {
 	name = "一次性UR布里任务12船等级巡洋",
 	guild_coin_award = 0,
@@ -47884,7 +46849,6 @@ _G.pg.base.task_data_template[15964] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15965] = {
 	name = "一次性UR布里任务13船等级航母",
 	guild_coin_award = 0,
@@ -47927,7 +46891,6 @@ _G.pg.base.task_data_template[15965] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15966] = {
 	name = "一次性UR布里任务14船等级战列",
 	guild_coin_award = 0,
@@ -47970,7 +46933,6 @@ _G.pg.base.task_data_template[15966] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15967] = {
 	name = "一次性UR布里任务15布里出击",
 	guild_coin_award = 0,
@@ -48013,7 +46975,6 @@ _G.pg.base.task_data_template[15967] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[15968] = {
 	name = "一次性UR布里任务16总任务",
 	guild_coin_award = 0,
@@ -48069,7 +47030,6 @@ _G.pg.base.task_data_template[15968] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[16058] = {
 	name = "917通关任意等级破交作战送反潜装备（永久）",
 	guild_coin_award = 0,
@@ -48116,7 +47076,6 @@ _G.pg.base.task_data_template[16058] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[16491] = {
 	name = "愚人节特殊关卡",
 	guild_coin_award = 0,
@@ -48156,7 +47115,6 @@ _G.pg.base.task_data_template[16491] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18890] = {
 	name = "『古立特复刻』通关EX",
 	guild_coin_award = 0,
@@ -48202,7 +47160,6 @@ _G.pg.base.task_data_template[18890] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18891] = {
 	name = "海天皮肤活动1",
 	guild_coin_award = 0,
@@ -48244,7 +47201,6 @@ _G.pg.base.task_data_template[18891] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18892] = {
 	name = "海天皮肤活动2",
 	guild_coin_award = 0,
@@ -48284,7 +47240,6 @@ _G.pg.base.task_data_template[18892] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18893] = {
 	name = "海天皮肤活动3",
 	guild_coin_award = 0,
@@ -48324,7 +47279,6 @@ _G.pg.base.task_data_template[18893] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18894] = {
 	name = "海天皮肤活动4",
 	guild_coin_award = 0,
@@ -48364,7 +47318,6 @@ _G.pg.base.task_data_template[18894] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18895] = {
 	name = "海天皮肤活动5",
 	guild_coin_award = 0,
@@ -48404,7 +47357,6 @@ _G.pg.base.task_data_template[18895] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18896] = {
 	name = "海天皮肤活动6",
 	guild_coin_award = 0,
@@ -48444,7 +47396,6 @@ _G.pg.base.task_data_template[18896] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18897] = {
 	name = "海天皮肤活动7",
 	guild_coin_award = 0,
@@ -48484,7 +47435,6 @@ _G.pg.base.task_data_template[18897] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18898] = {
 	name = "海天皮肤活动8",
 	guild_coin_award = 0,
@@ -48524,7 +47474,6 @@ _G.pg.base.task_data_template[18898] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18899] = {
 	name = "海天皮肤活动9",
 	guild_coin_award = 0,
@@ -48564,7 +47513,6 @@ _G.pg.base.task_data_template[18899] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18900] = {
 	name = "海天皮肤活动10",
 	guild_coin_award = 0,
@@ -48604,7 +47552,6 @@ _G.pg.base.task_data_template[18900] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18901] = {
 	name = "海天皮肤活动11",
 	guild_coin_award = 0,
@@ -48644,7 +47591,6 @@ _G.pg.base.task_data_template[18901] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18902] = {
 	name = "海天皮肤活动12",
 	guild_coin_award = 0,
@@ -48684,7 +47630,6 @@ _G.pg.base.task_data_template[18902] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18903] = {
 	name = "丘比特皮肤填色累计耗油1",
 	guild_coin_award = 0,
@@ -48736,7 +47681,6 @@ _G.pg.base.task_data_template[18903] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18904] = {
 	name = "丘比特皮肤填色累计耗油2",
 	guild_coin_award = 0,
@@ -48788,7 +47732,6 @@ _G.pg.base.task_data_template[18904] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18905] = {
 	name = "丘比特皮肤填色累计耗油3",
 	guild_coin_award = 0,
@@ -48840,7 +47783,6 @@ _G.pg.base.task_data_template[18905] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18906] = {
 	name = "丘比特皮肤填色累计耗油4",
 	guild_coin_award = 0,
@@ -48892,7 +47834,6 @@ _G.pg.base.task_data_template[18906] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18907] = {
 	name = "丘比特皮肤填色累计耗油5",
 	guild_coin_award = 0,
@@ -48944,7 +47885,6 @@ _G.pg.base.task_data_template[18907] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18908] = {
 	name = "丘比特皮肤填色累计耗油6",
 	guild_coin_award = 0,
@@ -48996,7 +47936,6 @@ _G.pg.base.task_data_template[18908] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18909] = {
 	name = "丘比特皮肤填色累计耗油7",
 	guild_coin_award = 0,
@@ -49048,7 +47987,6 @@ _G.pg.base.task_data_template[18909] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18910] = {
 	name = "丘比特皮肤填色累计耗油8",
 	guild_coin_award = 0,
@@ -49100,7 +48038,6 @@ _G.pg.base.task_data_template[18910] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18911] = {
 	name = "丘比特皮肤填色累计耗油9",
 	guild_coin_award = 0,
@@ -49152,7 +48089,6 @@ _G.pg.base.task_data_template[18911] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18912] = {
 	name = "丘比特皮肤填色累计耗油10",
 	guild_coin_award = 0,
@@ -49204,7 +48140,6 @@ _G.pg.base.task_data_template[18912] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18913] = {
 	name = "丘比特皮肤填色累计耗油11",
 	guild_coin_award = 0,
@@ -49256,7 +48191,6 @@ _G.pg.base.task_data_template[18913] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18914] = {
 	name = "丘比特皮肤填色累计耗油12",
 	guild_coin_award = 0,
@@ -49308,7 +48242,6 @@ _G.pg.base.task_data_template[18914] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18915] = {
 	name = "丘比特皮肤填色累计耗油13",
 	guild_coin_award = 0,
@@ -49360,7 +48293,6 @@ _G.pg.base.task_data_template[18915] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18916] = {
 	name = "丘比特皮肤填色累计耗油14",
 	guild_coin_award = 0,
@@ -49412,7 +48344,6 @@ _G.pg.base.task_data_template[18916] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18917] = {
 	name = "丘比特皮肤填色累计耗油15",
 	guild_coin_award = 0,
@@ -49464,7 +48395,6 @@ _G.pg.base.task_data_template[18917] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18918] = {
 	name = "丘比特皮肤填色累计耗油16",
 	guild_coin_award = 0,
@@ -49516,7 +48446,6 @@ _G.pg.base.task_data_template[18918] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18919] = {
 	name = "丘比特皮肤填色累计耗油17",
 	guild_coin_award = 0,
@@ -49568,7 +48497,6 @@ _G.pg.base.task_data_template[18919] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18920] = {
 	name = "丘比特皮肤填色累计耗油18",
 	guild_coin_award = 0,
@@ -49620,7 +48548,6 @@ _G.pg.base.task_data_template[18920] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18921] = {
 	name = "『新泽西复刻』-日常建造",
 	guild_coin_award = 0,
@@ -49660,7 +48587,6 @@ _G.pg.base.task_data_template[18921] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18922] = {
 	name = "『新泽西复刻』-日常出击",
 	guild_coin_award = 0,
@@ -49707,7 +48633,6 @@ _G.pg.base.task_data_template[18922] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18923] = {
 	name = "『新泽西复刻』-日常困难本",
 	guild_coin_award = 0,
@@ -49747,7 +48672,6 @@ _G.pg.base.task_data_template[18923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18924] = {
 	name = "『新泽西复刻』A1/C1通关一次",
 	guild_coin_award = 0,
@@ -49810,7 +48734,6 @@ _G.pg.base.task_data_template[18924] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18925] = {
 	name = "『新泽西复刻』A2/C2通关一次",
 	guild_coin_award = 0,
@@ -49873,7 +48796,6 @@ _G.pg.base.task_data_template[18925] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18926] = {
 	name = "『新泽西复刻』A3/C3通关一次",
 	guild_coin_award = 0,
@@ -49936,7 +48858,6 @@ _G.pg.base.task_data_template[18926] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18927] = {
 	name = "『新泽西复刻』B1/D1通关一次",
 	guild_coin_award = 0,
@@ -49999,7 +48920,6 @@ _G.pg.base.task_data_template[18927] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18928] = {
 	name = "『新泽西复刻』B2/D2通关一次",
 	guild_coin_award = 0,
@@ -50062,7 +48982,6 @@ _G.pg.base.task_data_template[18928] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18929] = {
 	name = "『新泽西复刻』B3/D3通关一次",
 	guild_coin_award = 0,
@@ -50125,7 +49044,6 @@ _G.pg.base.task_data_template[18929] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18930] = {
 	name = "『新泽西复刻』通关SP",
 	guild_coin_award = 0,
@@ -50181,7 +49099,6 @@ _G.pg.base.task_data_template[18930] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18931] = {
 	name = "『新泽西复刻』通关EX",
 	guild_coin_award = 0,
@@ -50227,7 +49144,6 @@ _G.pg.base.task_data_template[18931] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18932] = {
 	name = "『新泽西复刻』通关D3",
 	guild_coin_award = 0,
@@ -50273,7 +49189,6 @@ _G.pg.base.task_data_template[18932] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18933] = {
 	name = "『新泽西复刻』A1/C1的3星",
 	guild_coin_award = 0,
@@ -50321,7 +49236,6 @@ _G.pg.base.task_data_template[18933] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18934] = {
 	name = "『新泽西复刻』A2/C2的3星",
 	guild_coin_award = 0,
@@ -50369,7 +49283,6 @@ _G.pg.base.task_data_template[18934] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18935] = {
 	name = "『新泽西复刻』A3/C3的3星",
 	guild_coin_award = 0,
@@ -50417,7 +49330,6 @@ _G.pg.base.task_data_template[18935] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18936] = {
 	name = "『新泽西复刻』B1/D1的3星",
 	guild_coin_award = 0,
@@ -50465,7 +49377,6 @@ _G.pg.base.task_data_template[18936] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18937] = {
 	name = "『新泽西复刻』B2/D2的3星",
 	guild_coin_award = 0,
@@ -50513,7 +49424,6 @@ _G.pg.base.task_data_template[18937] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18938] = {
 	name = "『新泽西复刻』B3/D3的3星",
 	guild_coin_award = 0,
@@ -50561,7 +49471,6 @@ _G.pg.base.task_data_template[18938] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18939] = {
 	name = "『新泽西复刻』外观装备箱保底",
 	guild_coin_award = 0,
@@ -50601,7 +49510,6 @@ _G.pg.base.task_data_template[18939] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18940] = {
 	name = "『新泽西复刻』-日常活动关卡",
 	guild_coin_award = 0,
@@ -50666,7 +49574,6 @@ _G.pg.base.task_data_template[18940] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18941] = {
 	name = "『新泽西复刻』前哨战任务1",
 	guild_coin_award = 0,
@@ -50713,7 +49620,6 @@ _G.pg.base.task_data_template[18941] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18942] = {
 	name = "『新泽西复刻』前哨战任务2",
 	guild_coin_award = 0,
@@ -50753,7 +49659,6 @@ _G.pg.base.task_data_template[18942] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18943] = {
 	name = "『新泽西复刻』前哨战任务3",
 	guild_coin_award = 0,
@@ -50795,7 +49700,6 @@ _G.pg.base.task_data_template[18943] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18944] = {
 	name = "『新泽西复刻』前哨战任务4",
 	guild_coin_award = 0,
@@ -50835,7 +49739,6 @@ _G.pg.base.task_data_template[18944] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18945] = {
 	name = "『新泽西复刻』前哨战任务5",
 	guild_coin_award = 0,
@@ -50880,7 +49783,6 @@ _G.pg.base.task_data_template[18945] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18946] = {
 	name = "『新泽西复刻』前哨战任务6",
 	guild_coin_award = 0,
@@ -50920,7 +49822,6 @@ _G.pg.base.task_data_template[18946] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18947] = {
 	name = "『新泽西复刻』前哨战任务7",
 	guild_coin_award = 0,
@@ -50960,7 +49861,6 @@ _G.pg.base.task_data_template[18947] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18948] = {
 	name = "『新泽西复刻』前哨战任务8",
 	guild_coin_award = 0,
@@ -51000,7 +49900,6 @@ _G.pg.base.task_data_template[18948] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18949] = {
 	name = "『新泽西复刻』前哨战任务9",
 	guild_coin_award = 0,
@@ -51045,7 +49944,6 @@ _G.pg.base.task_data_template[18949] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18950] = {
 	name = "『新泽西复刻』前哨战任务10",
 	guild_coin_award = 0,
@@ -51085,7 +49983,6 @@ _G.pg.base.task_data_template[18950] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18951] = {
 	name = "『新泽西复刻』前哨战任务11",
 	guild_coin_award = 0,
@@ -51127,7 +50024,6 @@ _G.pg.base.task_data_template[18951] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18952] = {
 	name = "『新泽西复刻』前哨战任务12",
 	guild_coin_award = 0,
@@ -51167,7 +50063,6 @@ _G.pg.base.task_data_template[18952] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18953] = {
 	name = "『新泽西复刻』前哨战任务13",
 	guild_coin_award = 0,
@@ -51212,7 +50107,6 @@ _G.pg.base.task_data_template[18953] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18954] = {
 	name = "『新泽西复刻』前哨战任务14",
 	guild_coin_award = 0,
@@ -51254,7 +50148,6 @@ _G.pg.base.task_data_template[18954] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18955] = {
 	name = "『新泽西复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -51294,7 +50187,6 @@ _G.pg.base.task_data_template[18955] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18956] = {
 	name = "『戈里齐亚共斗』挑战券任务1",
 	guild_coin_award = 0,
@@ -51334,7 +50226,6 @@ _G.pg.base.task_data_template[18956] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18957] = {
 	name = "『戈里齐亚共斗』挑战券任务2",
 	guild_coin_award = 0,
@@ -51374,7 +50265,6 @@ _G.pg.base.task_data_template[18957] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18958] = {
 	name = "『戈里齐亚共斗』挑战券任务3",
 	guild_coin_award = 0,
@@ -51414,7 +50304,6 @@ _G.pg.base.task_data_template[18958] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18959] = {
 	name = "『戈里齐亚共斗』挑战券任务4",
 	guild_coin_award = 0,
@@ -51462,7 +50351,6 @@ _G.pg.base.task_data_template[18959] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[18960] = {
 	name = "『戈里齐亚共斗』挑战券任务5",
 	guild_coin_award = 0,
@@ -51510,7 +50398,6 @@ _G.pg.base.task_data_template[18960] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[18961] = {
 	name = "『戈里齐亚共斗』外观装备箱保底",
 	guild_coin_award = 0,
@@ -51550,7 +50437,6 @@ _G.pg.base.task_data_template[18961] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18962] = {
 	name = "『戈里齐亚共斗』通关挑战关卡",
 	guild_coin_award = 0,
@@ -51592,7 +50478,6 @@ _G.pg.base.task_data_template[18962] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[18963] = {
 	name = "『戈里齐亚共斗』皮肤剧情签到活动1",
 	guild_coin_award = 0,
@@ -51632,7 +50517,6 @@ _G.pg.base.task_data_template[18963] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18964] = {
 	name = "『戈里齐亚共斗』皮肤剧情签到活动2",
 	guild_coin_award = 0,
@@ -51672,7 +50556,6 @@ _G.pg.base.task_data_template[18964] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18965] = {
 	name = "『戈里齐亚共斗』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -51712,7 +50595,6 @@ _G.pg.base.task_data_template[18965] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18966] = {
 	name = "『戈里齐亚共斗』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -51752,7 +50634,6 @@ _G.pg.base.task_data_template[18966] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18967] = {
 	name = "『古立特复刻』日常建造",
 	guild_coin_award = 0,
@@ -51792,7 +50673,6 @@ _G.pg.base.task_data_template[18967] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18968] = {
 	name = "『古立特复刻』日常出击",
 	guild_coin_award = 0,
@@ -51834,7 +50714,6 @@ _G.pg.base.task_data_template[18968] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[18969] = {
 	name = "『古立特复刻』日常困难本",
 	guild_coin_award = 0,
@@ -51874,7 +50753,6 @@ _G.pg.base.task_data_template[18969] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18970] = {
 	name = "『古立特复刻』通关T1",
 	guild_coin_award = 0,
@@ -51930,7 +50808,6 @@ _G.pg.base.task_data_template[18970] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18971] = {
 	name = "『古立特复刻』通关T2",
 	guild_coin_award = 0,
@@ -51986,7 +50863,6 @@ _G.pg.base.task_data_template[18971] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18972] = {
 	name = "『古立特复刻』通关T3",
 	guild_coin_award = 0,
@@ -52042,7 +50918,6 @@ _G.pg.base.task_data_template[18972] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18973] = {
 	name = "『古立特复刻』通关T4",
 	guild_coin_award = 0,
@@ -52098,7 +50973,6 @@ _G.pg.base.task_data_template[18973] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18974] = {
 	name = "『古立特复刻』通关SSSS.SP",
 	guild_coin_award = 0,
@@ -52154,7 +51028,6 @@ _G.pg.base.task_data_template[18974] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18975] = {
 	name = "『古立特复刻』SP1三星",
 	guild_coin_award = 0,
@@ -52205,7 +51078,6 @@ _G.pg.base.task_data_template[18975] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18976] = {
 	name = "『古立特复刻』SP2三星",
 	guild_coin_award = 0,
@@ -52256,7 +51128,6 @@ _G.pg.base.task_data_template[18976] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18977] = {
 	name = "『古立特复刻』SP3三星",
 	guild_coin_award = 0,
@@ -52307,7 +51178,6 @@ _G.pg.base.task_data_template[18977] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18978] = {
 	name = "『古立特复刻』SP4三星",
 	guild_coin_award = 0,
@@ -52358,7 +51228,6 @@ _G.pg.base.task_data_template[18978] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18979] = {
 	name = "『古立特复刻』进行30次建造",
 	guild_coin_award = 0,
@@ -52398,7 +51267,6 @@ _G.pg.base.task_data_template[18979] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18980] = {
 	name = "『古立特复刻』累计PT15000点",
 	guild_coin_award = 0,
@@ -52438,7 +51306,6 @@ _G.pg.base.task_data_template[18980] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18981] = {
 	name = "『古立特复刻』在任意支援下获得60次胜利",
 	guild_coin_award = 0,
@@ -52489,7 +51356,6 @@ _G.pg.base.task_data_template[18981] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18982] = {
 	name = "『古立特复刻』获得装备「煌翼炎龙」+10",
 	guild_coin_award = 0,
@@ -52534,7 +51400,6 @@ _G.pg.base.task_data_template[18982] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18983] = {
 	name = "『古立特复刻』获得塞壬情报I至XI",
 	guild_coin_award = 0,
@@ -52586,7 +51451,6 @@ _G.pg.base.task_data_template[18983] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18984] = {
 	name = "『古立特复刻』完成环游之旅第5圈",
 	guild_coin_award = 0,
@@ -52628,7 +51492,6 @@ _G.pg.base.task_data_template[18984] = {
 		"SSSS_ACADEMY"
 	}
 }
-
 _G.pg.base.task_data_template[18985] = {
 	name = "『古立特复刻』完成激战对决第7场",
 	guild_coin_award = 0,
@@ -52670,7 +51533,6 @@ _G.pg.base.task_data_template[18985] = {
 		"SSSS_ACADEMY"
 	}
 }
-
 _G.pg.base.task_data_template[18986] = {
 	name = "『古立特复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -52710,7 +51572,6 @@ _G.pg.base.task_data_template[18986] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18987] = {
 	name = "『古立特复刻』外观装备箱保底",
 	guild_coin_award = 0,
@@ -52750,7 +51611,6 @@ _G.pg.base.task_data_template[18987] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18988] = {
 	name = "『古立特复刻』通关任务10次",
 	guild_coin_award = 0,
@@ -52801,7 +51661,6 @@ _G.pg.base.task_data_template[18988] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18989] = {
 	name = "『古立特复刻』通关任务20次",
 	guild_coin_award = 0,
@@ -52852,7 +51711,6 @@ _G.pg.base.task_data_template[18989] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18990] = {
 	name = "『古立特复刻』通关任务30次",
 	guild_coin_award = 0,
@@ -52903,7 +51761,6 @@ _G.pg.base.task_data_template[18990] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18991] = {
 	name = "『古立特复刻』通关任务45次",
 	guild_coin_award = 0,
@@ -52954,7 +51811,6 @@ _G.pg.base.task_data_template[18991] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18992] = {
 	name = "『古立特复刻』通关任务60次",
 	guild_coin_award = 0,
@@ -53005,7 +51861,6 @@ _G.pg.base.task_data_template[18992] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18993] = {
 	name = "『古立特复刻』通关TSS1",
 	guild_coin_award = 0,
@@ -53056,7 +51911,6 @@ _G.pg.base.task_data_template[18993] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18994] = {
 	name = "『古立特复刻』通关TSS2",
 	guild_coin_award = 0,
@@ -53107,7 +51961,6 @@ _G.pg.base.task_data_template[18994] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18995] = {
 	name = "『古立特复刻』通关TSS3",
 	guild_coin_award = 0,
@@ -53158,7 +52011,6 @@ _G.pg.base.task_data_template[18995] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18996] = {
 	name = "『古立特复刻』通关TSS4",
 	guild_coin_award = 0,
@@ -53209,7 +52061,6 @@ _G.pg.base.task_data_template[18996] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18997] = {
 	name = "『古立特复刻』通关TSS5",
 	guild_coin_award = 0,
@@ -53260,7 +52111,6 @@ _G.pg.base.task_data_template[18997] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18998] = {
 	name = "【马赛曲SP】通关SP1",
 	guild_coin_award = 0,
@@ -53311,7 +52161,6 @@ _G.pg.base.task_data_template[18998] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[18999] = {
 	name = "【马赛曲SP】通关SP2",
 	guild_coin_award = 0,
@@ -53362,7 +52211,6 @@ _G.pg.base.task_data_template[18999] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19000] = {
 	name = "【马赛曲SP】通关SP3",
 	guild_coin_award = 0,
@@ -53413,7 +52261,6 @@ _G.pg.base.task_data_template[19000] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19001] = {
 	name = "【马赛曲SP】SP1三星",
 	guild_coin_award = 0,
@@ -53464,7 +52311,6 @@ _G.pg.base.task_data_template[19001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19002] = {
 	name = "【马赛曲SP】SP1三星",
 	guild_coin_award = 0,
@@ -53515,7 +52361,6 @@ _G.pg.base.task_data_template[19002] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19003] = {
 	name = "【马赛曲SP】SP1三星",
 	guild_coin_award = 0,
@@ -53566,7 +52411,6 @@ _G.pg.base.task_data_template[19003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19004] = {
 	name = "牙买加皮肤任务复刻1",
 	guild_coin_award = 0,
@@ -53606,7 +52450,6 @@ _G.pg.base.task_data_template[19004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19005] = {
 	name = "牙买加皮肤任务复刻2",
 	guild_coin_award = 0,
@@ -53646,7 +52489,6 @@ _G.pg.base.task_data_template[19005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19006] = {
 	name = "牙买加皮肤任务复刻3",
 	guild_coin_award = 0,
@@ -53686,7 +52528,6 @@ _G.pg.base.task_data_template[19006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19007] = {
 	name = "牙买加皮肤任务复刻4",
 	guild_coin_award = 0,
@@ -53726,7 +52567,6 @@ _G.pg.base.task_data_template[19007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19008] = {
 	name = "牙买加皮肤任务复刻5",
 	guild_coin_award = 0,
@@ -53766,7 +52606,6 @@ _G.pg.base.task_data_template[19008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19009] = {
 	name = "牙买加皮肤任务复刻6",
 	guild_coin_award = 0,
@@ -53806,7 +52645,6 @@ _G.pg.base.task_data_template[19009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19010] = {
 	name = "牙买加皮肤任务复刻7",
 	guild_coin_award = 0,
@@ -53846,7 +52684,6 @@ _G.pg.base.task_data_template[19010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19011] = {
 	name = "『23美服周年』前哨战七日任务1",
 	guild_coin_award = 0,
@@ -53888,7 +52725,6 @@ _G.pg.base.task_data_template[19011] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19012] = {
 	name = "『23美服周年』前哨战七日任务2",
 	guild_coin_award = 0,
@@ -53928,7 +52764,6 @@ _G.pg.base.task_data_template[19012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19013] = {
 	name = "『23美服周年』前哨战七日任务3",
 	guild_coin_award = 0,
@@ -53968,7 +52803,6 @@ _G.pg.base.task_data_template[19013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19014] = {
 	name = "『23美服周年』前哨战七日任务4",
 	guild_coin_award = 0,
@@ -54008,7 +52842,6 @@ _G.pg.base.task_data_template[19014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19015] = {
 	name = "『23美服周年』前哨战七日任务5",
 	guild_coin_award = 0,
@@ -54048,7 +52881,6 @@ _G.pg.base.task_data_template[19015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19016] = {
 	name = "『23美服周年』前哨战七日任务6",
 	guild_coin_award = 0,
@@ -54088,7 +52920,6 @@ _G.pg.base.task_data_template[19016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19017] = {
 	name = "『23美服周年』前哨战七日任务7",
 	guild_coin_award = 0,
@@ -54128,7 +52959,6 @@ _G.pg.base.task_data_template[19017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19018] = {
 	name = "『23美服周年』前哨战七日任务8",
 	guild_coin_award = 0,
@@ -54168,7 +52998,6 @@ _G.pg.base.task_data_template[19018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19019] = {
 	name = "『23美服周年』前哨战七日任务9",
 	guild_coin_award = 0,
@@ -54208,7 +53037,6 @@ _G.pg.base.task_data_template[19019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19020] = {
 	name = "『23美服周年』前哨战七日任务10",
 	guild_coin_award = 0,
@@ -54248,7 +53076,6 @@ _G.pg.base.task_data_template[19020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19021] = {
 	name = "『23美服周年』前哨战七日任务11",
 	guild_coin_award = 0,
@@ -54288,7 +53115,6 @@ _G.pg.base.task_data_template[19021] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19022] = {
 	name = "『23美服周年』前哨战七日任务12",
 	guild_coin_award = 0,
@@ -54328,7 +53154,6 @@ _G.pg.base.task_data_template[19022] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19023] = {
 	name = "『23美服周年』前哨战七日任务13",
 	guild_coin_award = 0,
@@ -54368,7 +53193,6 @@ _G.pg.base.task_data_template[19023] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19024] = {
 	name = "『23美服周年』前哨战七日任务14",
 	guild_coin_award = 0,
@@ -54410,7 +53234,6 @@ _G.pg.base.task_data_template[19024] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19100] = {
 	name = "『克莱蒙梭』皮肤剧情签到活动1",
 	guild_coin_award = 0,
@@ -54450,7 +53273,6 @@ _G.pg.base.task_data_template[19100] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19101] = {
 	name = "『克莱蒙梭』皮肤剧情签到活动2",
 	guild_coin_award = 0,
@@ -54490,7 +53312,6 @@ _G.pg.base.task_data_template[19101] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19102] = {
 	name = "『克莱蒙梭』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -54530,7 +53351,6 @@ _G.pg.base.task_data_template[19102] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19103] = {
 	name = "『克莱蒙梭』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -54570,7 +53390,6 @@ _G.pg.base.task_data_template[19103] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19104] = {
 	name = "送基辅皮肤活动1",
 	guild_coin_award = 0,
@@ -54612,7 +53431,6 @@ _G.pg.base.task_data_template[19104] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19105] = {
 	name = "送基辅皮肤活动2",
 	guild_coin_award = 0,
@@ -54652,7 +53470,6 @@ _G.pg.base.task_data_template[19105] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19106] = {
 	name = "送基辅皮肤活动3",
 	guild_coin_award = 0,
@@ -54692,7 +53509,6 @@ _G.pg.base.task_data_template[19106] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19107] = {
 	name = "送基辅皮肤活动4",
 	guild_coin_award = 0,
@@ -54732,7 +53548,6 @@ _G.pg.base.task_data_template[19107] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19108] = {
 	name = "送基辅皮肤活动5",
 	guild_coin_award = 0,
@@ -54772,7 +53587,6 @@ _G.pg.base.task_data_template[19108] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19109] = {
 	name = "送基辅皮肤活动6",
 	guild_coin_award = 0,
@@ -54812,7 +53626,6 @@ _G.pg.base.task_data_template[19109] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19110] = {
 	name = "送基辅皮肤活动7",
 	guild_coin_award = 0,
@@ -54852,7 +53665,6 @@ _G.pg.base.task_data_template[19110] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19111] = {
 	name = "送基辅皮肤活动8",
 	guild_coin_award = 0,
@@ -54892,7 +53704,6 @@ _G.pg.base.task_data_template[19111] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19112] = {
 	name = "送基辅皮肤活动9",
 	guild_coin_award = 0,
@@ -54932,7 +53743,6 @@ _G.pg.base.task_data_template[19112] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19113] = {
 	name = "送基辅皮肤活动10",
 	guild_coin_award = 0,
@@ -54972,7 +53782,6 @@ _G.pg.base.task_data_template[19113] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19114] = {
 	name = "送基辅皮肤活动11",
 	guild_coin_award = 0,
@@ -55012,7 +53821,6 @@ _G.pg.base.task_data_template[19114] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19115] = {
 	name = "送基辅皮肤活动12",
 	guild_coin_award = 0,
@@ -55052,7 +53860,6 @@ _G.pg.base.task_data_template[19115] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19116] = {
 	name = "送基辅皮肤活动13",
 	guild_coin_award = 0,
@@ -55092,7 +53899,6 @@ _G.pg.base.task_data_template[19116] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19117] = {
 	name = "送基辅皮肤活动14",
 	guild_coin_award = 0,
@@ -55134,7 +53940,6 @@ _G.pg.base.task_data_template[19117] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19120] = {
 	name = "宴会打卡",
 	guild_coin_award = 0,
@@ -55174,7 +53979,6 @@ _G.pg.base.task_data_template[19120] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19121] = {
 	name = "宴会招待",
 	guild_coin_award = 0,
@@ -55214,7 +54018,6 @@ _G.pg.base.task_data_template[19121] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19122] = {
 	name = "特别邀约",
 	guild_coin_award = 0,
@@ -55254,7 +54057,6 @@ _G.pg.base.task_data_template[19122] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19123] = {
 	name = "特别邀约",
 	guild_coin_award = 0,
@@ -55294,7 +54096,6 @@ _G.pg.base.task_data_template[19123] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19124] = {
 	name = "特别邀约",
 	guild_coin_award = 0,
@@ -55334,7 +54135,6 @@ _G.pg.base.task_data_template[19124] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19125] = {
 	name = "特别邀约",
 	guild_coin_award = 0,
@@ -55374,7 +54174,6 @@ _G.pg.base.task_data_template[19125] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19126] = {
 	name = "宴会纪念",
 	guild_coin_award = 0,
@@ -55414,7 +54213,6 @@ _G.pg.base.task_data_template[19126] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19127] = {
 	name = "宴会纪念",
 	guild_coin_award = 0,
@@ -55454,7 +54252,6 @@ _G.pg.base.task_data_template[19127] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19128] = {
 	name = "宴会纪念",
 	guild_coin_award = 0,
@@ -55494,7 +54291,6 @@ _G.pg.base.task_data_template[19128] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19129] = {
 	name = "宴会纪念",
 	guild_coin_award = 0,
@@ -55539,7 +54335,6 @@ _G.pg.base.task_data_template[19129] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19130] = {
 	name = "城堡游戏",
 	guild_coin_award = 0,
@@ -55579,7 +54374,6 @@ _G.pg.base.task_data_template[19130] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19131] = {
 	name = "城堡游戏",
 	guild_coin_award = 0,
@@ -55619,7 +54413,6 @@ _G.pg.base.task_data_template[19131] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19132] = {
 	name = "城堡游戏",
 	guild_coin_award = 0,
@@ -55659,7 +54452,6 @@ _G.pg.base.task_data_template[19132] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19133] = {
 	name = "城堡游戏",
 	guild_coin_award = 0,
@@ -55699,7 +54491,6 @@ _G.pg.base.task_data_template[19133] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19134] = {
 	name = "油料消耗",
 	guild_coin_award = 0,
@@ -55739,7 +54530,6 @@ _G.pg.base.task_data_template[19134] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19135] = {
 	name = "油料消耗",
 	guild_coin_award = 0,
@@ -55779,7 +54569,6 @@ _G.pg.base.task_data_template[19135] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19136] = {
 	name = "油料消耗",
 	guild_coin_award = 0,
@@ -55819,7 +54608,6 @@ _G.pg.base.task_data_template[19136] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19137] = {
 	name = "油料消耗",
 	guild_coin_award = 0,
@@ -55859,7 +54647,6 @@ _G.pg.base.task_data_template[19137] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19138] = {
 	name = "『克莱蒙梭』-日常建造",
 	guild_coin_award = 0,
@@ -55899,7 +54686,6 @@ _G.pg.base.task_data_template[19138] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19139] = {
 	name = "『克莱蒙梭』-日常出击",
 	guild_coin_award = 0,
@@ -55941,7 +54727,6 @@ _G.pg.base.task_data_template[19139] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19140] = {
 	name = "『克莱蒙梭』-日常困难本",
 	guild_coin_award = 0,
@@ -55981,7 +54766,6 @@ _G.pg.base.task_data_template[19140] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19141] = {
 	name = "『克莱蒙梭』通关A1/C1",
 	guild_coin_award = 0,
@@ -56039,7 +54823,6 @@ _G.pg.base.task_data_template[19141] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19142] = {
 	name = "『克莱蒙梭』通关A2/C2",
 	guild_coin_award = 0,
@@ -56097,7 +54880,6 @@ _G.pg.base.task_data_template[19142] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19143] = {
 	name = "『克莱蒙梭』通关A3/C3",
 	guild_coin_award = 0,
@@ -56155,7 +54937,6 @@ _G.pg.base.task_data_template[19143] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19144] = {
 	name = "『克莱蒙梭』通关B1/D1",
 	guild_coin_award = 0,
@@ -56213,7 +54994,6 @@ _G.pg.base.task_data_template[19144] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19145] = {
 	name = "『克莱蒙梭』通关B2/D2",
 	guild_coin_award = 0,
@@ -56271,7 +55051,6 @@ _G.pg.base.task_data_template[19145] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19146] = {
 	name = "『克莱蒙梭』通关B3/D3",
 	guild_coin_award = 0,
@@ -56329,7 +55108,6 @@ _G.pg.base.task_data_template[19146] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19147] = {
 	name = "『克莱蒙梭』通关SP",
 	guild_coin_award = 0,
@@ -56380,7 +55158,6 @@ _G.pg.base.task_data_template[19147] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19148] = {
 	name = "『克莱蒙梭』通关EX",
 	guild_coin_award = 0,
@@ -56426,7 +55203,6 @@ _G.pg.base.task_data_template[19148] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19149] = {
 	name = "『克莱蒙梭』通关D3",
 	guild_coin_award = 0,
@@ -56472,7 +55248,6 @@ _G.pg.base.task_data_template[19149] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19150] = {
 	name = "『克莱蒙梭』A1/C1的3星",
 	guild_coin_award = 0,
@@ -56520,7 +55295,6 @@ _G.pg.base.task_data_template[19150] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19151] = {
 	name = "『克莱蒙梭』A2/C2的3星",
 	guild_coin_award = 0,
@@ -56568,7 +55342,6 @@ _G.pg.base.task_data_template[19151] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19152] = {
 	name = "『克莱蒙梭』A3/C3的3星",
 	guild_coin_award = 0,
@@ -56616,7 +55389,6 @@ _G.pg.base.task_data_template[19152] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19153] = {
 	name = "『克莱蒙梭』B1/D1的3星",
 	guild_coin_award = 0,
@@ -56664,7 +55436,6 @@ _G.pg.base.task_data_template[19153] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19154] = {
 	name = "『克莱蒙梭』B2/D2的3星",
 	guild_coin_award = 0,
@@ -56712,7 +55483,6 @@ _G.pg.base.task_data_template[19154] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19155] = {
 	name = "『克莱蒙梭』B3/D3的3星",
 	guild_coin_award = 0,
@@ -56760,7 +55530,6 @@ _G.pg.base.task_data_template[19155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19156] = {
 	name = "『克莱蒙梭』外观装备箱保底",
 	guild_coin_award = 0,
@@ -56805,7 +55574,6 @@ _G.pg.base.task_data_template[19156] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19157] = {
 	name = "『五十铃运动会复刻』七日任务1",
 	guild_coin_award = 0,
@@ -56847,7 +55615,6 @@ _G.pg.base.task_data_template[19157] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19158] = {
 	name = "『五十铃运动会复刻』七日任务1",
 	guild_coin_award = 0,
@@ -56887,7 +55654,6 @@ _G.pg.base.task_data_template[19158] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19159] = {
 	name = "『五十铃运动会复刻』七日任务2",
 	guild_coin_award = 0,
@@ -56927,7 +55693,6 @@ _G.pg.base.task_data_template[19159] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19160] = {
 	name = "『五十铃运动会复刻』七日任务2",
 	guild_coin_award = 0,
@@ -56967,7 +55732,6 @@ _G.pg.base.task_data_template[19160] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19161] = {
 	name = "『五十铃运动会复刻』七日任务3",
 	guild_coin_award = 0,
@@ -57007,7 +55771,6 @@ _G.pg.base.task_data_template[19161] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19162] = {
 	name = "『五十铃运动会复刻』七日任务3",
 	guild_coin_award = 0,
@@ -57047,7 +55810,6 @@ _G.pg.base.task_data_template[19162] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19163] = {
 	name = "『五十铃运动会复刻』七日任务4",
 	guild_coin_award = 0,
@@ -57087,7 +55849,6 @@ _G.pg.base.task_data_template[19163] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19164] = {
 	name = "『五十铃运动会复刻』七日任务4",
 	guild_coin_award = 0,
@@ -57127,7 +55888,6 @@ _G.pg.base.task_data_template[19164] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19165] = {
 	name = "『五十铃运动会复刻』七日任务5",
 	guild_coin_award = 0,
@@ -57167,7 +55927,6 @@ _G.pg.base.task_data_template[19165] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19166] = {
 	name = "『五十铃运动会复刻』七日任务5",
 	guild_coin_award = 0,
@@ -57207,7 +55966,6 @@ _G.pg.base.task_data_template[19166] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19167] = {
 	name = "『五十铃运动会复刻』七日任务6",
 	guild_coin_award = 0,
@@ -57247,7 +56005,6 @@ _G.pg.base.task_data_template[19167] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19168] = {
 	name = "『五十铃运动会复刻』七日任务6",
 	guild_coin_award = 0,
@@ -57287,7 +56044,6 @@ _G.pg.base.task_data_template[19168] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19169] = {
 	name = "『五十铃运动会复刻』七日任务7",
 	guild_coin_award = 0,
@@ -57327,7 +56083,6 @@ _G.pg.base.task_data_template[19169] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19170] = {
 	name = "『五十铃运动会复刻』七日任务7",
 	guild_coin_award = 0,
@@ -57369,7 +56124,6 @@ _G.pg.base.task_data_template[19170] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19171] = {
 	name = "『日服六周年』前哨战七日任务1",
 	guild_coin_award = 0,
@@ -57411,7 +56165,6 @@ _G.pg.base.task_data_template[19171] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19172] = {
 	name = "『日服六周年』前哨战七日任务2",
 	guild_coin_award = 0,
@@ -57451,7 +56204,6 @@ _G.pg.base.task_data_template[19172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19173] = {
 	name = "『日服六周年』前哨战七日任务3",
 	guild_coin_award = 0,
@@ -57491,7 +56243,6 @@ _G.pg.base.task_data_template[19173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19174] = {
 	name = "『日服六周年』前哨战七日任务4",
 	guild_coin_award = 0,
@@ -57531,7 +56282,6 @@ _G.pg.base.task_data_template[19174] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19175] = {
 	name = "『日服六周年』前哨战七日任务5",
 	guild_coin_award = 0,
@@ -57571,7 +56321,6 @@ _G.pg.base.task_data_template[19175] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19176] = {
 	name = "『日服六周年』前哨战七日任务6",
 	guild_coin_award = 0,
@@ -57611,7 +56360,6 @@ _G.pg.base.task_data_template[19176] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19177] = {
 	name = "『日服六周年』前哨战七日任务7",
 	guild_coin_award = 0,
@@ -57651,7 +56399,6 @@ _G.pg.base.task_data_template[19177] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19178] = {
 	name = "『日服六周年』前哨战七日任务8",
 	guild_coin_award = 0,
@@ -57691,7 +56438,6 @@ _G.pg.base.task_data_template[19178] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19179] = {
 	name = "『日服六周年』前哨战七日任务9",
 	guild_coin_award = 0,
@@ -57731,7 +56477,6 @@ _G.pg.base.task_data_template[19179] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19180] = {
 	name = "『日服六周年』前哨战七日任务10",
 	guild_coin_award = 0,
@@ -57771,7 +56516,6 @@ _G.pg.base.task_data_template[19180] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19181] = {
 	name = "『日服六周年』前哨战七日任务11",
 	guild_coin_award = 0,
@@ -57811,7 +56555,6 @@ _G.pg.base.task_data_template[19181] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19182] = {
 	name = "『日服六周年』前哨战七日任务12",
 	guild_coin_award = 0,
@@ -57851,7 +56594,6 @@ _G.pg.base.task_data_template[19182] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19183] = {
 	name = "『日服六周年』前哨战七日任务13",
 	guild_coin_award = 0,
@@ -57891,7 +56633,6 @@ _G.pg.base.task_data_template[19183] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19184] = {
 	name = "『日服六周年』前哨战七日任务14",
 	guild_coin_award = 0,
@@ -57933,7 +56674,6 @@ _G.pg.base.task_data_template[19184] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19185] = {
 	name = "『云仙活动』-日常建造",
 	guild_coin_award = 0,
@@ -57973,7 +56713,6 @@ _G.pg.base.task_data_template[19185] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19186] = {
 	name = "『云仙活动』-日常出击",
 	guild_coin_award = 0,
@@ -58015,7 +56754,6 @@ _G.pg.base.task_data_template[19186] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19187] = {
 	name = "『云仙活动』-日常困难本",
 	guild_coin_award = 0,
@@ -58055,7 +56793,6 @@ _G.pg.base.task_data_template[19187] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19188] = {
 	name = "『云仙活动』通关A1/C1",
 	guild_coin_award = 0,
@@ -58113,7 +56850,6 @@ _G.pg.base.task_data_template[19188] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19189] = {
 	name = "『云仙活动』通关A2/C2",
 	guild_coin_award = 0,
@@ -58171,7 +56907,6 @@ _G.pg.base.task_data_template[19189] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19190] = {
 	name = "『云仙活动』通关A3/C3",
 	guild_coin_award = 0,
@@ -58229,7 +56964,6 @@ _G.pg.base.task_data_template[19190] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19191] = {
 	name = "『云仙活动』通关B1/D1",
 	guild_coin_award = 0,
@@ -58287,7 +57021,6 @@ _G.pg.base.task_data_template[19191] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19192] = {
 	name = "『云仙活动』通关B2/D2",
 	guild_coin_award = 0,
@@ -58345,7 +57078,6 @@ _G.pg.base.task_data_template[19192] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19193] = {
 	name = "『云仙活动』通关B3/D3",
 	guild_coin_award = 0,
@@ -58403,7 +57135,6 @@ _G.pg.base.task_data_template[19193] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19194] = {
 	name = "『云仙活动』通关SP",
 	guild_coin_award = 0,
@@ -58454,7 +57185,6 @@ _G.pg.base.task_data_template[19194] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19195] = {
 	name = "『云仙活动』通关EX",
 	guild_coin_award = 0,
@@ -58500,7 +57230,6 @@ _G.pg.base.task_data_template[19195] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19196] = {
 	name = "『云仙活动』通关D3",
 	guild_coin_award = 0,
@@ -58546,7 +57275,6 @@ _G.pg.base.task_data_template[19196] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19197] = {
 	name = "『云仙活动』A1/C1的3星",
 	guild_coin_award = 0,
@@ -58594,7 +57322,6 @@ _G.pg.base.task_data_template[19197] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19198] = {
 	name = "『云仙活动』A2/C2的3星",
 	guild_coin_award = 0,
@@ -58642,7 +57369,6 @@ _G.pg.base.task_data_template[19198] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19199] = {
 	name = "『云仙活动』A3/C3的3星",
 	guild_coin_award = 0,
@@ -58690,7 +57416,6 @@ _G.pg.base.task_data_template[19199] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19200] = {
 	name = "『云仙活动』B1/D1的3星",
 	guild_coin_award = 0,
@@ -58738,7 +57463,6 @@ _G.pg.base.task_data_template[19200] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19201] = {
 	name = "『云仙活动』B2/D2的3星",
 	guild_coin_award = 0,
@@ -58786,7 +57510,6 @@ _G.pg.base.task_data_template[19201] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19202] = {
 	name = "『云仙活动』B3/D3的3星",
 	guild_coin_award = 0,
@@ -58834,7 +57557,6 @@ _G.pg.base.task_data_template[19202] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19203] = {
 	name = "『云仙活动』外观装备箱保底",
 	guild_coin_award = 0,
@@ -58879,7 +57601,6 @@ _G.pg.base.task_data_template[19203] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19204] = {
 	name = "『云仙活动』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -58919,7 +57640,6 @@ _G.pg.base.task_data_template[19204] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19205] = {
 	name = "『日服六周年第一弹』皮肤剧情签到活动1",
 	guild_coin_award = 0,
@@ -58959,7 +57679,6 @@ _G.pg.base.task_data_template[19205] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19206] = {
 	name = "『日服六周年第一弹』皮肤剧情签到活动2",
 	guild_coin_award = 0,
@@ -58999,7 +57718,6 @@ _G.pg.base.task_data_template[19206] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19207] = {
 	name = "『日服六周年第一弹』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -59039,7 +57757,6 @@ _G.pg.base.task_data_template[19207] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19208] = {
 	name = "『日服六周年第一弹』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -59079,7 +57796,6 @@ _G.pg.base.task_data_template[19208] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19209] = {
 	name = "『日服六周年小游戏』初月任务1",
 	guild_coin_award = 0,
@@ -59119,7 +57835,6 @@ _G.pg.base.task_data_template[19209] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19210] = {
 	name = "『日服六周年小游戏』初月任务2",
 	guild_coin_award = 0,
@@ -59159,7 +57874,6 @@ _G.pg.base.task_data_template[19210] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19211] = {
 	name = "『日服六周年小游戏』初月任务3",
 	guild_coin_award = 0,
@@ -59199,7 +57913,6 @@ _G.pg.base.task_data_template[19211] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19212] = {
 	name = "『日服六周年小游戏』初月任务4",
 	guild_coin_award = 0,
@@ -59239,7 +57952,6 @@ _G.pg.base.task_data_template[19212] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19213] = {
 	name = "『日服六周年小游戏』初月任务5",
 	guild_coin_award = 0,
@@ -59279,7 +57991,6 @@ _G.pg.base.task_data_template[19213] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19214] = {
 	name = "『日服六周年小游戏』初月任务6",
 	guild_coin_award = 0,
@@ -59319,7 +58030,6 @@ _G.pg.base.task_data_template[19214] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19215] = {
 	name = "『日服六周年小游戏』初月任务7",
 	guild_coin_award = 0,
@@ -59359,7 +58069,6 @@ _G.pg.base.task_data_template[19215] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19216] = {
 	name = "『日服六周年小游戏』初月任务8",
 	guild_coin_award = 0,
@@ -59399,7 +58108,6 @@ _G.pg.base.task_data_template[19216] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19217] = {
 	name = "『日服六周年小游戏』初月任务9",
 	guild_coin_award = 0,
@@ -59439,7 +58147,6 @@ _G.pg.base.task_data_template[19217] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19218] = {
 	name = "『日服六周年小游戏』初月任务10",
 	guild_coin_award = 0,
@@ -59479,7 +58186,6 @@ _G.pg.base.task_data_template[19218] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19219] = {
 	name = "『日服六周年小游戏』信浓任务1",
 	guild_coin_award = 0,
@@ -59519,7 +58225,6 @@ _G.pg.base.task_data_template[19219] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19220] = {
 	name = "『日服六周年小游戏』信浓任务2",
 	guild_coin_award = 0,
@@ -59559,7 +58264,6 @@ _G.pg.base.task_data_template[19220] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19221] = {
 	name = "『日服六周年小游戏』信浓任务3",
 	guild_coin_award = 0,
@@ -59599,7 +58303,6 @@ _G.pg.base.task_data_template[19221] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19222] = {
 	name = "『日服六周年小游戏』信浓任务4",
 	guild_coin_award = 0,
@@ -59639,7 +58342,6 @@ _G.pg.base.task_data_template[19222] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19223] = {
 	name = "『日服六周年小游戏』信浓任务5",
 	guild_coin_award = 0,
@@ -59679,7 +58381,6 @@ _G.pg.base.task_data_template[19223] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19224] = {
 	name = "『日服六周年小游戏』信浓任务6",
 	guild_coin_award = 0,
@@ -59719,7 +58420,6 @@ _G.pg.base.task_data_template[19224] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19225] = {
 	name = "『日服六周年小游戏』信浓任务7",
 	guild_coin_award = 0,
@@ -59759,7 +58459,6 @@ _G.pg.base.task_data_template[19225] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19226] = {
 	name = "『日服六周年小游戏』信浓任务8",
 	guild_coin_award = 0,
@@ -59799,7 +58498,6 @@ _G.pg.base.task_data_template[19226] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19227] = {
 	name = "『日服六周年小游戏』信浓任务9",
 	guild_coin_award = 0,
@@ -59839,7 +58537,6 @@ _G.pg.base.task_data_template[19227] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19228] = {
 	name = "『日服六周年小游戏』信浓任务10",
 	guild_coin_award = 0,
@@ -59879,7 +58576,6 @@ _G.pg.base.task_data_template[19228] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19229] = {
 	name = "『日服六周年小游戏』由良任务1",
 	guild_coin_award = 0,
@@ -59919,7 +58615,6 @@ _G.pg.base.task_data_template[19229] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19230] = {
 	name = "『日服六周年小游戏』由良任务2",
 	guild_coin_award = 0,
@@ -59959,7 +58654,6 @@ _G.pg.base.task_data_template[19230] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19231] = {
 	name = "『日服六周年小游戏』由良任务3",
 	guild_coin_award = 0,
@@ -59999,7 +58693,6 @@ _G.pg.base.task_data_template[19231] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19232] = {
 	name = "『日服六周年小游戏』由良任务4",
 	guild_coin_award = 0,
@@ -60039,7 +58732,6 @@ _G.pg.base.task_data_template[19232] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19233] = {
 	name = "『日服六周年小游戏』由良任务5",
 	guild_coin_award = 0,
@@ -60079,7 +58771,6 @@ _G.pg.base.task_data_template[19233] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19234] = {
 	name = "『日服六周年小游戏』由良任务6",
 	guild_coin_award = 0,
@@ -60119,7 +58810,6 @@ _G.pg.base.task_data_template[19234] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19235] = {
 	name = "『日服六周年小游戏』由良任务7",
 	guild_coin_award = 0,
@@ -60159,7 +58849,6 @@ _G.pg.base.task_data_template[19235] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19236] = {
 	name = "『日服六周年小游戏』由良任务8",
 	guild_coin_award = 0,
@@ -60199,7 +58888,6 @@ _G.pg.base.task_data_template[19236] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19237] = {
 	name = "『日服六周年小游戏』由良任务9",
 	guild_coin_award = 0,
@@ -60239,7 +58927,6 @@ _G.pg.base.task_data_template[19237] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19238] = {
 	name = "『日服六周年小游戏』由良任务10",
 	guild_coin_award = 0,
@@ -60279,7 +58966,6 @@ _G.pg.base.task_data_template[19238] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19239] = {
 	name = "『日服六周年小游戏』岛风任务1",
 	guild_coin_award = 0,
@@ -60319,7 +59005,6 @@ _G.pg.base.task_data_template[19239] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19240] = {
 	name = "『日服六周年小游戏』岛风任务2",
 	guild_coin_award = 0,
@@ -60359,7 +59044,6 @@ _G.pg.base.task_data_template[19240] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19241] = {
 	name = "『日服六周年小游戏』岛风任务3",
 	guild_coin_award = 0,
@@ -60399,7 +59083,6 @@ _G.pg.base.task_data_template[19241] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19242] = {
 	name = "『日服六周年小游戏』岛风任务4",
 	guild_coin_award = 0,
@@ -60439,7 +59122,6 @@ _G.pg.base.task_data_template[19242] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19243] = {
 	name = "『日服六周年小游戏』岛风任务5",
 	guild_coin_award = 0,
@@ -60479,7 +59161,6 @@ _G.pg.base.task_data_template[19243] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19244] = {
 	name = "『日服六周年小游戏』岛风任务6",
 	guild_coin_award = 0,
@@ -60519,7 +59200,6 @@ _G.pg.base.task_data_template[19244] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19245] = {
 	name = "『日服六周年小游戏』岛风任务7",
 	guild_coin_award = 0,
@@ -60559,7 +59239,6 @@ _G.pg.base.task_data_template[19245] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19246] = {
 	name = "『日服六周年小游戏』岛风任务8",
 	guild_coin_award = 0,
@@ -60599,7 +59278,6 @@ _G.pg.base.task_data_template[19246] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19247] = {
 	name = "『日服六周年小游戏』岛风任务9",
 	guild_coin_award = 0,
@@ -60639,7 +59317,6 @@ _G.pg.base.task_data_template[19247] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19248] = {
 	name = "『日服六周年小游戏』岛风任务10",
 	guild_coin_award = 0,
@@ -60679,7 +59356,6 @@ _G.pg.base.task_data_template[19248] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19249] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60721,7 +59397,6 @@ _G.pg.base.task_data_template[19249] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19250] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60761,7 +59436,6 @@ _G.pg.base.task_data_template[19250] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19251] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60803,7 +59477,6 @@ _G.pg.base.task_data_template[19251] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19252] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60843,7 +59516,6 @@ _G.pg.base.task_data_template[19252] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19253] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60883,7 +59555,6 @@ _G.pg.base.task_data_template[19253] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19254] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60925,7 +59596,6 @@ _G.pg.base.task_data_template[19254] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19255] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -60965,7 +59635,6 @@ _G.pg.base.task_data_template[19255] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19256] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -61007,7 +59676,6 @@ _G.pg.base.task_data_template[19256] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19257] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -61047,7 +59715,6 @@ _G.pg.base.task_data_template[19257] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19258] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -61087,7 +59754,6 @@ _G.pg.base.task_data_template[19258] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19259] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -61129,7 +59795,6 @@ _G.pg.base.task_data_template[19259] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19260] = {
 	name = "召集者任务可获得PT：35",
 	guild_coin_award = 0,
@@ -61169,7 +59834,6 @@ _G.pg.base.task_data_template[19260] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19261] = {
 	name = "召集者任务可获得PT：40",
 	guild_coin_award = 0,
@@ -61211,7 +59875,6 @@ _G.pg.base.task_data_template[19261] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19262] = {
 	name = "召集者任务可获得PT：40",
 	guild_coin_award = 0,
@@ -61251,7 +59914,6 @@ _G.pg.base.task_data_template[19262] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19263] = {
 	name = "邀请者可获得PT：30",
 	guild_coin_award = 0,
@@ -61291,7 +59953,6 @@ _G.pg.base.task_data_template[19263] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19264] = {
 	name = "邀请者可获得PT：30",
 	guild_coin_award = 0,
@@ -61333,7 +59994,6 @@ _G.pg.base.task_data_template[19264] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19265] = {
 	name = "邀请者可获得PT：30",
 	guild_coin_award = 0,
@@ -61373,7 +60033,6 @@ _G.pg.base.task_data_template[19265] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19266] = {
 	name = "邀请者可获得PT：30",
 	guild_coin_award = 0,
@@ -61415,7 +60074,6 @@ _G.pg.base.task_data_template[19266] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19267] = {
 	name = "邀请者可获得PT：25",
 	guild_coin_award = 0,
@@ -61455,7 +60113,6 @@ _G.pg.base.task_data_template[19267] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19268] = {
 	name = "邀请者可获得PT：25",
 	guild_coin_award = 0,
@@ -61497,7 +60154,6 @@ _G.pg.base.task_data_template[19268] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19269] = {
 	name = "邀请者可获得PT：25",
 	guild_coin_award = 0,
@@ -61537,7 +60193,6 @@ _G.pg.base.task_data_template[19269] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19270] = {
 	name = "邀请者可获得PT：25",
 	guild_coin_award = 0,
@@ -61579,7 +60234,6 @@ _G.pg.base.task_data_template[19270] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19271] = {
 	name = "邀请者可获得PT：20",
 	guild_coin_award = 0,
@@ -61619,7 +60273,6 @@ _G.pg.base.task_data_template[19271] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19272] = {
 	name = "邀请者可获得PT：20",
 	guild_coin_award = 0,
@@ -61661,7 +60314,6 @@ _G.pg.base.task_data_template[19272] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19273] = {
 	name = "邀请者可获得PT：20",
 	guild_coin_award = 0,
@@ -61701,7 +60353,6 @@ _G.pg.base.task_data_template[19273] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19274] = {
 	name = "邀请者可获得PT：20",
 	guild_coin_award = 0,
@@ -61743,7 +60394,6 @@ _G.pg.base.task_data_template[19274] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19275] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61783,7 +60433,6 @@ _G.pg.base.task_data_template[19275] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19276] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61825,7 +60474,6 @@ _G.pg.base.task_data_template[19276] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19277] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61865,7 +60513,6 @@ _G.pg.base.task_data_template[19277] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19278] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61907,7 +60554,6 @@ _G.pg.base.task_data_template[19278] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19279] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61947,7 +60593,6 @@ _G.pg.base.task_data_template[19279] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19280] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -61989,7 +60634,6 @@ _G.pg.base.task_data_template[19280] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19281] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -62029,7 +60673,6 @@ _G.pg.base.task_data_template[19281] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19282] = {
 	name = "邀请者可获得PT：15",
 	guild_coin_award = 0,
@@ -62071,7 +60714,6 @@ _G.pg.base.task_data_template[19282] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19283] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62111,7 +60753,6 @@ _G.pg.base.task_data_template[19283] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19284] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62153,7 +60794,6 @@ _G.pg.base.task_data_template[19284] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19285] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62193,7 +60833,6 @@ _G.pg.base.task_data_template[19285] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19286] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62235,7 +60874,6 @@ _G.pg.base.task_data_template[19286] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19287] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62275,7 +60913,6 @@ _G.pg.base.task_data_template[19287] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19288] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62317,7 +60954,6 @@ _G.pg.base.task_data_template[19288] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19289] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62357,7 +60993,6 @@ _G.pg.base.task_data_template[19289] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19290] = {
 	name = "邀请者可获得PT：10",
 	guild_coin_award = 0,
@@ -62399,7 +61034,6 @@ _G.pg.base.task_data_template[19290] = {
 		"HARD_MAP"
 	}
 }
-
 _G.pg.base.task_data_template[19291] = {
 	name = "『云仙活动』通关任务10次",
 	guild_coin_award = 0,
@@ -62453,7 +61087,6 @@ _G.pg.base.task_data_template[19291] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19292] = {
 	name = "『云仙活动』通关任务30次",
 	guild_coin_award = 0,
@@ -62507,7 +61140,6 @@ _G.pg.base.task_data_template[19292] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19293] = {
 	name = "『云仙活动』通关任务60次",
 	guild_coin_award = 0,
@@ -62561,7 +61193,6 @@ _G.pg.base.task_data_template[19293] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19294] = {
 	name = "『日服六周年第二弹』皮肤剧情签到活动1",
 	guild_coin_award = 0,
@@ -62601,7 +61232,6 @@ _G.pg.base.task_data_template[19294] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19295] = {
 	name = "『日服六周年第二弹』皮肤剧情签到活动2",
 	guild_coin_award = 0,
@@ -62641,7 +61271,6 @@ _G.pg.base.task_data_template[19295] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19296] = {
 	name = "『日服六周年第二弹』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -62681,7 +61310,6 @@ _G.pg.base.task_data_template[19296] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19297] = {
 	name = "『日服六周年第二弹』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -62721,7 +61349,6 @@ _G.pg.base.task_data_template[19297] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19298] = {
 	name = "送标枪皮肤活动1",
 	guild_coin_award = 0,
@@ -62763,7 +61390,6 @@ _G.pg.base.task_data_template[19298] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19299] = {
 	name = "送标枪皮肤活动2",
 	guild_coin_award = 0,
@@ -62803,7 +61429,6 @@ _G.pg.base.task_data_template[19299] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19300] = {
 	name = "送标枪皮肤活动3",
 	guild_coin_award = 0,
@@ -62843,7 +61468,6 @@ _G.pg.base.task_data_template[19300] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19301] = {
 	name = "送标枪皮肤活动4",
 	guild_coin_award = 0,
@@ -62883,7 +61507,6 @@ _G.pg.base.task_data_template[19301] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19302] = {
 	name = "送标枪皮肤活动5",
 	guild_coin_award = 0,
@@ -62923,7 +61546,6 @@ _G.pg.base.task_data_template[19302] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19303] = {
 	name = "送标枪皮肤活动6",
 	guild_coin_award = 0,
@@ -62963,7 +61585,6 @@ _G.pg.base.task_data_template[19303] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19304] = {
 	name = "送标枪皮肤活动7",
 	guild_coin_award = 0,
@@ -63003,7 +61624,6 @@ _G.pg.base.task_data_template[19304] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19305] = {
 	name = "送标枪皮肤活动8",
 	guild_coin_award = 0,
@@ -63043,7 +61663,6 @@ _G.pg.base.task_data_template[19305] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19306] = {
 	name = "送标枪皮肤活动9",
 	guild_coin_award = 0,
@@ -63083,7 +61702,6 @@ _G.pg.base.task_data_template[19306] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19307] = {
 	name = "送标枪皮肤活动10",
 	guild_coin_award = 0,
@@ -63123,7 +61741,6 @@ _G.pg.base.task_data_template[19307] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19308] = {
 	name = "送标枪皮肤活动11",
 	guild_coin_award = 0,
@@ -63163,7 +61780,6 @@ _G.pg.base.task_data_template[19308] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19309] = {
 	name = "送标枪皮肤活动12",
 	guild_coin_award = 0,
@@ -63203,7 +61819,6 @@ _G.pg.base.task_data_template[19309] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19310] = {
 	name = "送标枪皮肤活动13",
 	guild_coin_award = 0,
@@ -63243,7 +61858,6 @@ _G.pg.base.task_data_template[19310] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19311] = {
 	name = "送标枪皮肤活动14",
 	guild_coin_award = 0,
@@ -63285,7 +61899,6 @@ _G.pg.base.task_data_template[19311] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19312] = {
 	name = "『日服六周年第三弹』皮肤剧情签到活动1",
 	guild_coin_award = 0,
@@ -63325,7 +61938,6 @@ _G.pg.base.task_data_template[19312] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19313] = {
 	name = "『日服六周年第三弹』皮肤剧情签到活动2",
 	guild_coin_award = 0,
@@ -63365,7 +61977,6 @@ _G.pg.base.task_data_template[19313] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19314] = {
 	name = "『日服六周年第三弹』皮肤剧情签到活动3",
 	guild_coin_award = 0,
@@ -63405,7 +62016,6 @@ _G.pg.base.task_data_template[19314] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19315] = {
 	name = "『日服六周年第三弹』皮肤剧情签到活动4",
 	guild_coin_award = 0,
@@ -63445,7 +62055,6 @@ _G.pg.base.task_data_template[19315] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19316] = {
 	name = "『日服六周年第三弹』皮肤剧情签到活动5",
 	guild_coin_award = 0,
@@ -63485,7 +62094,6 @@ _G.pg.base.task_data_template[19316] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19317] = {
 	name = "内华达礼服活动复刻1",
 	guild_coin_award = 0,
@@ -63527,7 +62135,6 @@ _G.pg.base.task_data_template[19317] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19318] = {
 	name = "内华达礼服活动复刻2",
 	guild_coin_award = 0,
@@ -63567,7 +62174,6 @@ _G.pg.base.task_data_template[19318] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19319] = {
 	name = "内华达礼服活动复刻3",
 	guild_coin_award = 0,
@@ -63607,7 +62213,6 @@ _G.pg.base.task_data_template[19319] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19320] = {
 	name = "内华达礼服活动复刻4",
 	guild_coin_award = 0,
@@ -63647,7 +62252,6 @@ _G.pg.base.task_data_template[19320] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19321] = {
 	name = "内华达礼服活动复刻5",
 	guild_coin_award = 0,
@@ -63687,7 +62291,6 @@ _G.pg.base.task_data_template[19321] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19322] = {
 	name = "内华达礼服活动复刻6",
 	guild_coin_award = 0,
@@ -63727,7 +62330,6 @@ _G.pg.base.task_data_template[19322] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19323] = {
 	name = "内华达礼服活动复刻7",
 	guild_coin_award = 0,
@@ -63767,7 +62369,6 @@ _G.pg.base.task_data_template[19323] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19324] = {
 	name = "内华达礼服活动复刻8",
 	guild_coin_award = 0,
@@ -63807,7 +62408,6 @@ _G.pg.base.task_data_template[19324] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19325] = {
 	name = "内华达礼服活动复刻9",
 	guild_coin_award = 0,
@@ -63847,7 +62447,6 @@ _G.pg.base.task_data_template[19325] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19326] = {
 	name = "内华达礼服活动复刻10",
 	guild_coin_award = 0,
@@ -63887,7 +62486,6 @@ _G.pg.base.task_data_template[19326] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19327] = {
 	name = "内华达礼服活动复刻11",
 	guild_coin_award = 0,
@@ -63927,7 +62525,6 @@ _G.pg.base.task_data_template[19327] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19328] = {
 	name = "内华达礼服活动复刻12",
 	guild_coin_award = 0,
@@ -63967,7 +62564,6 @@ _G.pg.base.task_data_template[19328] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19329] = {
 	name = "内华达礼服活动复刻13",
 	guild_coin_award = 0,
@@ -64007,7 +62603,6 @@ _G.pg.base.task_data_template[19329] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19330] = {
 	name = "内华达礼服活动复刻14",
 	guild_coin_award = 0,
@@ -64049,7 +62644,6 @@ _G.pg.base.task_data_template[19330] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19331] = {
 	name = "『海盗版本』前哨战七日任务1",
 	guild_coin_award = 0,
@@ -64091,7 +62685,6 @@ _G.pg.base.task_data_template[19331] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19332] = {
 	name = "『海盗版本』前哨战七日任务2",
 	guild_coin_award = 0,
@@ -64131,7 +62724,6 @@ _G.pg.base.task_data_template[19332] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19333] = {
 	name = "『海盗版本』前哨战七日任务3",
 	guild_coin_award = 0,
@@ -64171,7 +62763,6 @@ _G.pg.base.task_data_template[19333] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19334] = {
 	name = "『海盗版本』前哨战七日任务4",
 	guild_coin_award = 0,
@@ -64211,7 +62802,6 @@ _G.pg.base.task_data_template[19334] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19335] = {
 	name = "『海盗版本』前哨战七日任务5",
 	guild_coin_award = 0,
@@ -64251,7 +62841,6 @@ _G.pg.base.task_data_template[19335] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19336] = {
 	name = "『海盗版本』前哨战七日任务6",
 	guild_coin_award = 0,
@@ -64291,7 +62880,6 @@ _G.pg.base.task_data_template[19336] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19337] = {
 	name = "『海盗版本』前哨战七日任务7",
 	guild_coin_award = 0,
@@ -64331,7 +62919,6 @@ _G.pg.base.task_data_template[19337] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19338] = {
 	name = "『海盗版本』前哨战七日任务8",
 	guild_coin_award = 0,
@@ -64371,7 +62958,6 @@ _G.pg.base.task_data_template[19338] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19339] = {
 	name = "『海盗版本』前哨战七日任务9",
 	guild_coin_award = 0,
@@ -64411,7 +62997,6 @@ _G.pg.base.task_data_template[19339] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19340] = {
 	name = "『海盗版本』前哨战七日任务10",
 	guild_coin_award = 0,
@@ -64451,7 +63036,6 @@ _G.pg.base.task_data_template[19340] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19341] = {
 	name = "『海盗版本』前哨战七日任务11",
 	guild_coin_award = 0,
@@ -64491,7 +63075,6 @@ _G.pg.base.task_data_template[19341] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19342] = {
 	name = "『海盗版本』前哨战七日任务12",
 	guild_coin_award = 0,
@@ -64531,7 +63114,6 @@ _G.pg.base.task_data_template[19342] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19343] = {
 	name = "『海盗版本』前哨战七日任务13",
 	guild_coin_award = 0,
@@ -64571,7 +63153,6 @@ _G.pg.base.task_data_template[19343] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19344] = {
 	name = "『海盗版本』前哨战七日任务14",
 	guild_coin_award = 0,
@@ -64613,7 +63194,6 @@ _G.pg.base.task_data_template[19344] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19350] = {
 	name = "『海盗活动』登陆送皮肤体验券",
 	guild_coin_award = 0,
@@ -64653,7 +63233,6 @@ _G.pg.base.task_data_template[19350] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19361] = {
 	name = "『海盗版本』古堡活动累计杀敌1",
 	guild_coin_award = 0,
@@ -64693,7 +63272,6 @@ _G.pg.base.task_data_template[19361] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19362] = {
 	name = "『海盗版本』古堡活动累计杀敌2",
 	guild_coin_award = 0,
@@ -64733,7 +63311,6 @@ _G.pg.base.task_data_template[19362] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19363] = {
 	name = "『海盗版本』古堡活动累计杀敌3",
 	guild_coin_award = 0,
@@ -64773,7 +63350,6 @@ _G.pg.base.task_data_template[19363] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19364] = {
 	name = "『海盗版本』古堡活动累计杀敌4",
 	guild_coin_award = 0,
@@ -64813,7 +63389,6 @@ _G.pg.base.task_data_template[19364] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19365] = {
 	name = "『海盗版本』古堡活动累计杀敌5",
 	guild_coin_award = 0,
@@ -64853,7 +63428,6 @@ _G.pg.base.task_data_template[19365] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19366] = {
 	name = "『海盗版本』古堡活动累计杀敌6",
 	guild_coin_award = 0,
@@ -64893,7 +63467,6 @@ _G.pg.base.task_data_template[19366] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19367] = {
 	name = "『海盗版本』古堡活动累计杀敌7",
 	guild_coin_award = 0,
@@ -64933,7 +63506,6 @@ _G.pg.base.task_data_template[19367] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19368] = {
 	name = "『海盗版本』古堡活动观看剧情1",
 	guild_coin_award = 0,
@@ -64977,7 +63549,6 @@ _G.pg.base.task_data_template[19368] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19369] = {
 	name = "『海盗版本』古堡活动观看剧情2",
 	guild_coin_award = 0,
@@ -65021,7 +63592,6 @@ _G.pg.base.task_data_template[19369] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19370] = {
 	name = "『海盗版本』古堡活动观看剧情3",
 	guild_coin_award = 0,
@@ -65065,7 +63635,6 @@ _G.pg.base.task_data_template[19370] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19371] = {
 	name = "『海盗版本』古堡活动观看剧情4",
 	guild_coin_award = 0,
@@ -65109,7 +63678,6 @@ _G.pg.base.task_data_template[19371] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19372] = {
 	name = "『海盗版本』古堡活动观看剧情5",
 	guild_coin_award = 0,
@@ -65153,7 +63721,6 @@ _G.pg.base.task_data_template[19372] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19373] = {
 	name = "『海盗版本』古堡活动观看剧情6",
 	guild_coin_award = 0,
@@ -65197,7 +63764,6 @@ _G.pg.base.task_data_template[19373] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19374] = {
 	name = "『海盗版本』古堡活动观看剧情7",
 	guild_coin_award = 0,
@@ -65241,7 +63807,6 @@ _G.pg.base.task_data_template[19374] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19375] = {
 	name = "『海盗版本』古堡活动观看剧情8",
 	guild_coin_award = 0,
@@ -65285,7 +63850,6 @@ _G.pg.base.task_data_template[19375] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19376] = {
 	name = "『海盗版本』外观装备箱保底",
 	guild_coin_award = 0,
@@ -65330,7 +63894,6 @@ _G.pg.base.task_data_template[19376] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19377] = {
 	name = "『海盗版本』-日常建造",
 	guild_coin_award = 0,
@@ -65370,7 +63933,6 @@ _G.pg.base.task_data_template[19377] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19378] = {
 	name = "『海盗版本』-日常出击",
 	guild_coin_award = 0,
@@ -65412,7 +63974,6 @@ _G.pg.base.task_data_template[19378] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19379] = {
 	name = "『海盗版本』-日常困难本",
 	guild_coin_award = 0,
@@ -65452,7 +64013,6 @@ _G.pg.base.task_data_template[19379] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19380] = {
 	name = "『海盗版本』-通关T1",
 	guild_coin_award = 0,
@@ -65507,7 +64067,6 @@ _G.pg.base.task_data_template[19380] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19381] = {
 	name = "『海盗版本』-通关T2",
 	guild_coin_award = 0,
@@ -65562,7 +64121,6 @@ _G.pg.base.task_data_template[19381] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19382] = {
 	name = "『海盗版本』-通关T3",
 	guild_coin_award = 0,
@@ -65617,7 +64175,6 @@ _G.pg.base.task_data_template[19382] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19383] = {
 	name = "『海盗版本』-通关T4",
 	guild_coin_award = 0,
@@ -65672,7 +64229,6 @@ _G.pg.base.task_data_template[19383] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19384] = {
 	name = "『海盗版本』-通关T5",
 	guild_coin_award = 0,
@@ -65727,7 +64283,6 @@ _G.pg.base.task_data_template[19384] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19385] = {
 	name = "『海盗版本』-通关T6",
 	guild_coin_award = 0,
@@ -65782,7 +64337,6 @@ _G.pg.base.task_data_template[19385] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19386] = {
 	name = "『海盗版本』通关SP",
 	guild_coin_award = 0,
@@ -65833,7 +64387,6 @@ _G.pg.base.task_data_template[19386] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19387] = {
 	name = "『海盗版本』通关EX",
 	guild_coin_award = 0,
@@ -65879,7 +64432,6 @@ _G.pg.base.task_data_template[19387] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19388] = {
 	name = "『海盗版本』-T1的3星",
 	guild_coin_award = 0,
@@ -65924,7 +64476,6 @@ _G.pg.base.task_data_template[19388] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19389] = {
 	name = "『海盗版本』-T2的3星",
 	guild_coin_award = 0,
@@ -65969,7 +64520,6 @@ _G.pg.base.task_data_template[19389] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19390] = {
 	name = "『海盗版本』-T3的3星",
 	guild_coin_award = 0,
@@ -66014,7 +64564,6 @@ _G.pg.base.task_data_template[19390] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19391] = {
 	name = "『海盗版本』-T4的3星",
 	guild_coin_award = 0,
@@ -66059,7 +64608,6 @@ _G.pg.base.task_data_template[19391] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19392] = {
 	name = "『海盗版本』-T5的3星",
 	guild_coin_award = 0,
@@ -66104,7 +64652,6 @@ _G.pg.base.task_data_template[19392] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19393] = {
 	name = "『海盗版本』-T6的3星",
 	guild_coin_award = 0,
@@ -66149,7 +64696,6 @@ _G.pg.base.task_data_template[19393] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19394] = {
 	name = "『海盗版本』-三星通关T4",
 	guild_coin_award = 0,
@@ -66194,7 +64740,6 @@ _G.pg.base.task_data_template[19394] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19395] = {
 	name = "『海盗版本』-三星通关T5",
 	guild_coin_award = 0,
@@ -66239,7 +64784,6 @@ _G.pg.base.task_data_template[19395] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19396] = {
 	name = "『海盗版本』-三星通关T6",
 	guild_coin_award = 0,
@@ -66284,7 +64828,6 @@ _G.pg.base.task_data_template[19396] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19397] = {
 	name = "『海盗版本』通关SP",
 	guild_coin_award = 0,
@@ -66330,7 +64873,6 @@ _G.pg.base.task_data_template[19397] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19398] = {
 	name = "『海盗版本』完成啾啾船厂第7场",
 	guild_coin_award = 0,
@@ -66372,7 +64914,6 @@ _G.pg.base.task_data_template[19398] = {
 		"HARBOR_BACKHILL"
 	}
 }
-
 _G.pg.base.task_data_template[19399] = {
 	name = "『海盗版本』累计PT15000点",
 	guild_coin_award = 0,
@@ -66417,7 +64958,6 @@ _G.pg.base.task_data_template[19399] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19400] = {
 	name = "『海盗版本』完成六个悬赏以获得大佬章",
 	guild_coin_award = 0,
@@ -66464,7 +65004,6 @@ _G.pg.base.task_data_template[19400] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19401] = {
 	name = "『海盗版本』通关任务10次",
 	guild_coin_award = 0,
@@ -66512,7 +65051,6 @@ _G.pg.base.task_data_template[19401] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19402] = {
 	name = "『海盗版本』通关任务30次",
 	guild_coin_award = 0,
@@ -66560,7 +65098,6 @@ _G.pg.base.task_data_template[19402] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19403] = {
 	name = "『海盗版本』通关任务60次",
 	guild_coin_award = 0,
@@ -66608,7 +65145,6 @@ _G.pg.base.task_data_template[19403] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19404] = {
 	name = "『岛风复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -66648,7 +65184,6 @@ _G.pg.base.task_data_template[19404] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19405] = {
 	name = "『岛风复刻』通关EX",
 	guild_coin_award = 0,
@@ -66694,7 +65229,6 @@ _G.pg.base.task_data_template[19405] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19406] = {
 	name = "『岛风复刻』-日常建造",
 	guild_coin_award = 0,
@@ -66734,7 +65268,6 @@ _G.pg.base.task_data_template[19406] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19407] = {
 	name = "『岛风复刻』-日常出击",
 	guild_coin_award = 0,
@@ -66781,7 +65314,6 @@ _G.pg.base.task_data_template[19407] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19408] = {
 	name = "『岛风复刻』-日常困难本",
 	guild_coin_award = 0,
@@ -66821,7 +65353,6 @@ _G.pg.base.task_data_template[19408] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19409] = {
 	name = "『岛风复刻』通关A1/C1",
 	guild_coin_award = 0,
@@ -66884,7 +65415,6 @@ _G.pg.base.task_data_template[19409] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19410] = {
 	name = "『岛风复刻』通关A2/C2",
 	guild_coin_award = 0,
@@ -66947,7 +65477,6 @@ _G.pg.base.task_data_template[19410] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19411] = {
 	name = "『岛风复刻』通关A3/C3",
 	guild_coin_award = 0,
@@ -67010,7 +65539,6 @@ _G.pg.base.task_data_template[19411] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19412] = {
 	name = "『岛风复刻』通关B1/D1",
 	guild_coin_award = 0,
@@ -67073,7 +65601,6 @@ _G.pg.base.task_data_template[19412] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19413] = {
 	name = "『岛风复刻』通关B2/D2",
 	guild_coin_award = 0,
@@ -67136,7 +65663,6 @@ _G.pg.base.task_data_template[19413] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19414] = {
 	name = "『岛风复刻』通关B3/D3",
 	guild_coin_award = 0,
@@ -67199,7 +65725,6 @@ _G.pg.base.task_data_template[19414] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19415] = {
 	name = "『岛风复刻』通关SP",
 	guild_coin_award = 0,
@@ -67255,7 +65780,6 @@ _G.pg.base.task_data_template[19415] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19416] = {
 	name = "『岛风复刻』通关D3",
 	guild_coin_award = 0,
@@ -67301,7 +65825,6 @@ _G.pg.base.task_data_template[19416] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19417] = {
 	name = "『岛风复刻』A1/C1的3星",
 	guild_coin_award = 0,
@@ -67349,7 +65872,6 @@ _G.pg.base.task_data_template[19417] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19418] = {
 	name = "『岛风复刻』A2/C2的3星",
 	guild_coin_award = 0,
@@ -67397,7 +65919,6 @@ _G.pg.base.task_data_template[19418] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19419] = {
 	name = "『岛风复刻』A3/C3的3星",
 	guild_coin_award = 0,
@@ -67445,7 +65966,6 @@ _G.pg.base.task_data_template[19419] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19420] = {
 	name = "『岛风复刻』B1/D1的3星",
 	guild_coin_award = 0,
@@ -67493,7 +66013,6 @@ _G.pg.base.task_data_template[19420] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19421] = {
 	name = "『岛风复刻』B2/D2的3星",
 	guild_coin_award = 0,
@@ -67541,7 +66060,6 @@ _G.pg.base.task_data_template[19421] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19422] = {
 	name = "『岛风复刻』B3/D3的3星",
 	guild_coin_award = 0,
@@ -67589,7 +66107,6 @@ _G.pg.base.task_data_template[19422] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19424] = {
 	name = "『岛风复刻』-日常活动关卡",
 	guild_coin_award = 0,
@@ -67654,7 +66171,6 @@ _G.pg.base.task_data_template[19424] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19431] = {
 	name = "黑五登陆奖励1",
 	guild_coin_award = 0,
@@ -67694,7 +66210,6 @@ _G.pg.base.task_data_template[19431] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19432] = {
 	name = "黑五登陆奖励2",
 	guild_coin_award = 0,
@@ -67734,7 +66249,6 @@ _G.pg.base.task_data_template[19432] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19433] = {
 	name = "黑五登陆奖励3",
 	guild_coin_award = 0,
@@ -67774,7 +66288,6 @@ _G.pg.base.task_data_template[19433] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19449] = {
 	name = "『闪乱联动』通关EX",
 	guild_coin_award = 0,
@@ -67820,7 +66333,6 @@ _G.pg.base.task_data_template[19449] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19450] = {
 	name = "『闪乱联动』忍者任务板飞鸟1",
 	guild_coin_award = 0,
@@ -67872,7 +66384,6 @@ _G.pg.base.task_data_template[19450] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19451] = {
 	name = "『闪乱联动』忍者任务板飞鸟2",
 	guild_coin_award = 0,
@@ -68010,7 +66521,6 @@ _G.pg.base.task_data_template[19451] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19452] = {
 	name = "『闪乱联动』忍者任务板斑鸠1",
 	guild_coin_award = 0,
@@ -68062,7 +66572,6 @@ _G.pg.base.task_data_template[19452] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19453] = {
 	name = "『闪乱联动』忍者任务板斑鸠2",
 	guild_coin_award = 0,
@@ -68200,7 +66709,6 @@ _G.pg.base.task_data_template[19453] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19454] = {
 	name = "『闪乱联动』忍者任务板焰1",
 	guild_coin_award = 0,
@@ -68252,7 +66760,6 @@ _G.pg.base.task_data_template[19454] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19455] = {
 	name = "『闪乱联动』忍者任务板焰2",
 	guild_coin_award = 0,
@@ -68574,7 +67081,6 @@ _G.pg.base.task_data_template[19455] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19456] = {
 	name = "『闪乱联动』忍者任务板雪泉1",
 	guild_coin_award = 0,
@@ -68626,7 +67132,6 @@ _G.pg.base.task_data_template[19456] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19457] = {
 	name = "『闪乱联动』忍者任务板雪泉2",
 	guild_coin_award = 0,
@@ -68856,7 +67361,6 @@ _G.pg.base.task_data_template[19457] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19458] = {
 	name = "『闪乱联动』忍者任务板雪不归1",
 	guild_coin_award = 0,
@@ -68908,7 +67412,6 @@ _G.pg.base.task_data_template[19458] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19459] = {
 	name = "『闪乱联动』忍者任务板雪不归2",
 	guild_coin_award = 0,
@@ -69230,7 +67733,6 @@ _G.pg.base.task_data_template[19459] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19460] = {
 	name = "『闪乱联动』忍者任务板紫1",
 	guild_coin_award = 0,
@@ -69282,7 +67784,6 @@ _G.pg.base.task_data_template[19460] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19461] = {
 	name = "『闪乱联动』忍者任务板紫2",
 	guild_coin_award = 0,
@@ -69512,7 +68013,6 @@ _G.pg.base.task_data_template[19461] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19462] = {
 	name = "『闪乱联动』忍者任务板夕烧1",
 	guild_coin_award = 0,
@@ -69564,7 +68064,6 @@ _G.pg.base.task_data_template[19462] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19463] = {
 	name = "『闪乱联动』忍者任务板夕烧2",
 	guild_coin_award = 0,
@@ -69702,7 +68201,6 @@ _G.pg.base.task_data_template[19463] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19464] = {
 	name = "『闪乱联动』外观装备箱保底",
 	guild_coin_award = 0,
@@ -69747,7 +68245,6 @@ _G.pg.base.task_data_template[19464] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19465] = {
 	name = "『闪乱联动』-日常建造",
 	guild_coin_award = 0,
@@ -69787,7 +68284,6 @@ _G.pg.base.task_data_template[19465] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19466] = {
 	name = "『闪乱联动』-日常出击",
 	guild_coin_award = 0,
@@ -69829,7 +68325,6 @@ _G.pg.base.task_data_template[19466] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19467] = {
 	name = "『闪乱联动』-日常困难本",
 	guild_coin_award = 0,
@@ -69869,7 +68364,6 @@ _G.pg.base.task_data_template[19467] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19469] = {
 	name = "攻略「T1-被囚禁的公主」",
 	guild_coin_award = 0,
@@ -69931,7 +68425,6 @@ _G.pg.base.task_data_template[19469] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19470] = {
 	name = "攻略「T2-混战」",
 	guild_coin_award = 0,
@@ -69994,7 +68487,6 @@ _G.pg.base.task_data_template[19470] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19471] = {
 	name = "攻略「T3-世界的起源」",
 	guild_coin_award = 0,
@@ -70057,7 +68549,6 @@ _G.pg.base.task_data_template[19471] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19472] = {
 	name = "攻略「T4-目标，风云城」",
 	guild_coin_award = 0,
@@ -70120,7 +68611,6 @@ _G.pg.base.task_data_template[19472] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19473] = {
 	name = "攻略「T5-战忍机铠武装」",
 	guild_coin_award = 0,
@@ -70188,7 +68678,6 @@ _G.pg.base.task_data_template[19473] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19474] = {
 	name = "攻略「SP-闪乱缤纷大作战」",
 	guild_coin_award = 0,
@@ -70247,7 +68736,6 @@ _G.pg.base.task_data_template[19474] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19475] = {
 	name = "苍闪缭乱风云城·一",
 	guild_coin_award = 0,
@@ -70307,7 +68795,6 @@ _G.pg.base.task_data_template[19475] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19476] = {
 	name = "苍闪缭乱风云城·二",
 	guild_coin_award = 0,
@@ -70372,7 +68859,6 @@ _G.pg.base.task_data_template[19476] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19477] = {
 	name = "苍闪缭乱风云城·三",
 	guild_coin_award = 0,
@@ -70437,7 +68923,6 @@ _G.pg.base.task_data_template[19477] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19478] = {
 	name = "舰船修行（飞鸟）·一",
 	guild_coin_award = 0,
@@ -70485,7 +68970,6 @@ _G.pg.base.task_data_template[19478] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19479] = {
 	name = "舰船修行（飞鸟）·二",
 	guild_coin_award = 0,
@@ -70533,7 +69017,6 @@ _G.pg.base.task_data_template[19479] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19480] = {
 	name = "舰船修行（飞鸟）·三",
 	guild_coin_award = 0,
@@ -70581,7 +69064,6 @@ _G.pg.base.task_data_template[19480] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19481] = {
 	name = "完全攻略「T1-被囚禁的公主」",
 	guild_coin_award = 0,
@@ -70638,7 +69120,6 @@ _G.pg.base.task_data_template[19481] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19482] = {
 	name = "完全攻略「T2-混战」",
 	guild_coin_award = 0,
@@ -70696,7 +69177,6 @@ _G.pg.base.task_data_template[19482] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19483] = {
 	name = "完全攻略「T3-世界的起源」",
 	guild_coin_award = 0,
@@ -70754,7 +69234,6 @@ _G.pg.base.task_data_template[19483] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19484] = {
 	name = "完全攻略「T4-目标，风云城」",
 	guild_coin_award = 0,
@@ -70812,7 +69291,6 @@ _G.pg.base.task_data_template[19484] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19485] = {
 	name = "完全攻略「T5-战忍机铠武装」",
 	guild_coin_award = 0,
@@ -70870,7 +69348,6 @@ _G.pg.base.task_data_template[19485] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19486] = {
 	name = "夺取地脉机关·一",
 	guild_coin_award = 0,
@@ -70932,7 +69409,6 @@ _G.pg.base.task_data_template[19486] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19487] = {
 	name = "夺取地脉机关·二",
 	guild_coin_award = 0,
@@ -70999,7 +69475,6 @@ _G.pg.base.task_data_template[19487] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19488] = {
 	name = "夺取地脉机关·三",
 	guild_coin_award = 0,
@@ -71061,7 +69536,6 @@ _G.pg.base.task_data_template[19488] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19489] = {
 	name = "舰船修行（雪泉）·一",
 	guild_coin_award = 0,
@@ -71109,7 +69583,6 @@ _G.pg.base.task_data_template[19489] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19490] = {
 	name = "舰船修行（雪泉）·二",
 	guild_coin_award = 0,
@@ -71157,7 +69630,6 @@ _G.pg.base.task_data_template[19490] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19491] = {
 	name = "舰船修行（雪泉）·三",
 	guild_coin_award = 0,
@@ -71205,7 +69677,6 @@ _G.pg.base.task_data_template[19491] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19492] = {
 	name = "讨伐「实验型战忍机铠武装」·一",
 	guild_coin_award = 0,
@@ -71257,7 +69728,6 @@ _G.pg.base.task_data_template[19492] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19493] = {
 	name = "讨伐「实验型战忍机铠武装」·二",
 	guild_coin_award = 0,
@@ -71310,7 +69780,6 @@ _G.pg.base.task_data_template[19493] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19494] = {
 	name = "讨伐「实验型战忍机铠武装」·三",
 	guild_coin_award = 0,
@@ -71363,7 +69832,6 @@ _G.pg.base.task_data_template[19494] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19495] = {
 	name = "讨伐「实验型战忍机铠武装」·四",
 	guild_coin_award = 0,
@@ -71416,7 +69884,6 @@ _G.pg.base.task_data_template[19495] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19496] = {
 	name = "讨伐「实验型战忍机铠武装」·五",
 	guild_coin_award = 0,
@@ -71474,7 +69941,6 @@ _G.pg.base.task_data_template[19496] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19497] = {
 	name = "忍术模拟-「半藏」",
 	guild_coin_award = 0,
@@ -71538,7 +70004,6 @@ _G.pg.base.task_data_template[19497] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19498] = {
 	name = "忍术模拟-「红莲」",
 	guild_coin_award = 0,
@@ -71602,7 +70067,6 @@ _G.pg.base.task_data_template[19498] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19499] = {
 	name = "忍术模拟-「月闪」",
 	guild_coin_award = 0,
@@ -71666,7 +70130,6 @@ _G.pg.base.task_data_template[19499] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19500] = {
 	name = "忍术模拟-「蛇女」",
 	guild_coin_award = 0,
@@ -71730,7 +70193,6 @@ _G.pg.base.task_data_template[19500] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19501] = {
 	name = "忍术模拟-「远野」",
 	guild_coin_award = 0,
@@ -71794,7 +70256,6 @@ _G.pg.base.task_data_template[19501] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19502] = {
 	name = "舰船修行（雪不归）·一",
 	guild_coin_award = 0,
@@ -71842,7 +70303,6 @@ _G.pg.base.task_data_template[19502] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19503] = {
 	name = "舰船修行（雪不归）·二",
 	guild_coin_award = 0,
@@ -71890,7 +70350,6 @@ _G.pg.base.task_data_template[19503] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19504] = {
 	name = "舰船修行（雪不归）·三",
 	guild_coin_award = 0,
@@ -71938,7 +70397,6 @@ _G.pg.base.task_data_template[19504] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19505] = {
 	name = "讨伐「战忍型量产型」·一",
 	guild_coin_award = 0,
@@ -72033,7 +70491,6 @@ _G.pg.base.task_data_template[19505] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19506] = {
 	name = "讨伐「战忍型量产型」·二",
 	guild_coin_award = 0,
@@ -72129,7 +70586,6 @@ _G.pg.base.task_data_template[19506] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19507] = {
 	name = "讨伐「战忍型量产型」·三",
 	guild_coin_award = 0,
@@ -72225,7 +70681,6 @@ _G.pg.base.task_data_template[19507] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19508] = {
 	name = "讨伐「战忍型量产型」·四",
 	guild_coin_award = 0,
@@ -72321,7 +70776,6 @@ _G.pg.base.task_data_template[19508] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19509] = {
 	name = "讨伐「战忍型量产型」·五",
 	guild_coin_award = 0,
@@ -72422,7 +70876,6 @@ _G.pg.base.task_data_template[19509] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19510] = {
 	name = "舰船修行（斑鸠）·一",
 	guild_coin_award = 0,
@@ -72470,7 +70923,6 @@ _G.pg.base.task_data_template[19510] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19511] = {
 	name = "舰船修行（斑鸠）·二",
 	guild_coin_award = 0,
@@ -72518,7 +70970,6 @@ _G.pg.base.task_data_template[19511] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19512] = {
 	name = "舰船修行（斑鸠）·三",
 	guild_coin_award = 0,
@@ -72566,7 +71017,6 @@ _G.pg.base.task_data_template[19512] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19513] = {
 	name = "讨伐「战忍机铠」·一",
 	guild_coin_award = 0,
@@ -72638,7 +71088,6 @@ _G.pg.base.task_data_template[19513] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19514] = {
 	name = "讨伐「战忍机铠」·二",
 	guild_coin_award = 0,
@@ -72711,7 +71160,6 @@ _G.pg.base.task_data_template[19514] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19515] = {
 	name = "讨伐「战忍机铠」·三",
 	guild_coin_award = 0,
@@ -72784,7 +71232,6 @@ _G.pg.base.task_data_template[19515] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19516] = {
 	name = "讨伐「战忍机铠」·四",
 	guild_coin_award = 0,
@@ -72857,7 +71304,6 @@ _G.pg.base.task_data_template[19516] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19517] = {
 	name = "讨伐「战忍机铠」·五",
 	guild_coin_award = 0,
@@ -72935,7 +71381,6 @@ _G.pg.base.task_data_template[19517] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19518] = {
 	name = "舰船修行（焰）·一",
 	guild_coin_award = 0,
@@ -72983,7 +71428,6 @@ _G.pg.base.task_data_template[19518] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19519] = {
 	name = "舰船修行（焰）·二",
 	guild_coin_award = 0,
@@ -73031,7 +71475,6 @@ _G.pg.base.task_data_template[19519] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19520] = {
 	name = "舰船修行（焰）·三",
 	guild_coin_award = 0,
@@ -73079,7 +71522,6 @@ _G.pg.base.task_data_template[19520] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19521] = {
 	name = "「苍闪忍法帖」·一",
 	guild_coin_award = 0,
@@ -73131,7 +71573,6 @@ _G.pg.base.task_data_template[19521] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19522] = {
 	name = "「苍闪忍法帖」·二",
 	guild_coin_award = 0,
@@ -73184,7 +71625,6 @@ _G.pg.base.task_data_template[19522] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19523] = {
 	name = "「苍闪忍法帖」·三",
 	guild_coin_award = 0,
@@ -73237,7 +71677,6 @@ _G.pg.base.task_data_template[19523] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19524] = {
 	name = "「苍闪忍法帖」·四",
 	guild_coin_award = 0,
@@ -73295,7 +71734,6 @@ _G.pg.base.task_data_template[19524] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19525] = {
 	name = "「苍闪忍法帖」·五",
 	guild_coin_award = 0,
@@ -73348,7 +71786,6 @@ _G.pg.base.task_data_template[19525] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19526] = {
 	name = "舰船修行（紫）·一",
 	guild_coin_award = 0,
@@ -73396,7 +71833,6 @@ _G.pg.base.task_data_template[19526] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19527] = {
 	name = "舰船修行（紫）·二",
 	guild_coin_award = 0,
@@ -73444,7 +71880,6 @@ _G.pg.base.task_data_template[19527] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19528] = {
 	name = "舰船修行（紫）·三",
 	guild_coin_award = 0,
@@ -73492,7 +71927,6 @@ _G.pg.base.task_data_template[19528] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19529] = {
 	name = "港区日常事务·一",
 	guild_coin_award = 0,
@@ -73539,7 +71973,6 @@ _G.pg.base.task_data_template[19529] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19530] = {
 	name = "港区日常事务·二",
 	guild_coin_award = 0,
@@ -73587,7 +72020,6 @@ _G.pg.base.task_data_template[19530] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19531] = {
 	name = "港区日常事务·三",
 	guild_coin_award = 0,
@@ -73635,7 +72067,6 @@ _G.pg.base.task_data_template[19531] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19532] = {
 	name = "港区日常事务·四",
 	guild_coin_award = 0,
@@ -73683,7 +72114,6 @@ _G.pg.base.task_data_template[19532] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19533] = {
 	name = "港区日常事务·五",
 	guild_coin_award = 0,
@@ -73736,7 +72166,6 @@ _G.pg.base.task_data_template[19533] = {
 		special = true
 	}
 }
-
 _G.pg.base.task_data_template[19534] = {
 	name = "舰船修行（夕烧）·一",
 	guild_coin_award = 0,
@@ -73784,7 +72213,6 @@ _G.pg.base.task_data_template[19534] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19535] = {
 	name = "舰船修行（夕烧）·二",
 	guild_coin_award = 0,
@@ -73832,7 +72260,6 @@ _G.pg.base.task_data_template[19535] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19536] = {
 	name = "舰船修行（夕烧）·三",
 	guild_coin_award = 0,
@@ -73880,7 +72307,6 @@ _G.pg.base.task_data_template[19536] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[19537] = {
 	name = "『美系前哨站』前哨战七日任务1",
 	guild_coin_award = 0,
@@ -73922,7 +72348,6 @@ _G.pg.base.task_data_template[19537] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19538] = {
 	name = "『美系前哨站』前哨战七日任务2",
 	guild_coin_award = 0,
@@ -73962,7 +72387,6 @@ _G.pg.base.task_data_template[19538] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19539] = {
 	name = "『美系前哨站』前哨战七日任务3",
 	guild_coin_award = 0,
@@ -74002,7 +72426,6 @@ _G.pg.base.task_data_template[19539] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19540] = {
 	name = "『美系前哨站』前哨战七日任务4",
 	guild_coin_award = 0,
@@ -74042,7 +72465,6 @@ _G.pg.base.task_data_template[19540] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19541] = {
 	name = "『美系前哨站』前哨战七日任务5",
 	guild_coin_award = 0,
@@ -74082,7 +72504,6 @@ _G.pg.base.task_data_template[19541] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19542] = {
 	name = "『美系前哨站』前哨战七日任务6",
 	guild_coin_award = 0,
@@ -74122,7 +72543,6 @@ _G.pg.base.task_data_template[19542] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19543] = {
 	name = "『美系前哨站』前哨战七日任务7",
 	guild_coin_award = 0,
@@ -74162,7 +72582,6 @@ _G.pg.base.task_data_template[19543] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19544] = {
 	name = "『美系前哨站』前哨战七日任务8",
 	guild_coin_award = 0,
@@ -74202,7 +72621,6 @@ _G.pg.base.task_data_template[19544] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19545] = {
 	name = "『美系前哨站』前哨战七日任务9",
 	guild_coin_award = 0,
@@ -74242,7 +72660,6 @@ _G.pg.base.task_data_template[19545] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19546] = {
 	name = "『美系前哨站』前哨战七日任务10",
 	guild_coin_award = 0,
@@ -74282,7 +72699,6 @@ _G.pg.base.task_data_template[19546] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19547] = {
 	name = "『美系前哨站』前哨战七日任务11",
 	guild_coin_award = 0,
@@ -74322,7 +72738,6 @@ _G.pg.base.task_data_template[19547] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19548] = {
 	name = "『美系前哨站』前哨战七日任务12",
 	guild_coin_award = 0,
@@ -74362,7 +72777,6 @@ _G.pg.base.task_data_template[19548] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19549] = {
 	name = "『美系前哨站』前哨战七日任务13",
 	guild_coin_award = 0,
@@ -74402,7 +72816,6 @@ _G.pg.base.task_data_template[19549] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19550] = {
 	name = "『美系前哨站』前哨战七日任务14",
 	guild_coin_award = 0,
@@ -74444,7 +72857,6 @@ _G.pg.base.task_data_template[19550] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19600] = {
 	name = "『2024新年』双任务活动送皮肤1",
 	guild_coin_award = 0,
@@ -74486,7 +72898,6 @@ _G.pg.base.task_data_template[19600] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19601] = {
 	name = "『2024新年』双任务活动送皮肤2",
 	guild_coin_award = 0,
@@ -74526,7 +72937,6 @@ _G.pg.base.task_data_template[19601] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19602] = {
 	name = "『2024新年』双任务活动送皮肤3",
 	guild_coin_award = 0,
@@ -74566,7 +72976,6 @@ _G.pg.base.task_data_template[19602] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19603] = {
 	name = "『2024新年』双任务活动送皮肤4",
 	guild_coin_award = 0,
@@ -74606,7 +73015,6 @@ _G.pg.base.task_data_template[19603] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19604] = {
 	name = "『2024新年』双任务活动送皮肤5",
 	guild_coin_award = 0,
@@ -74646,7 +73054,6 @@ _G.pg.base.task_data_template[19604] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19605] = {
 	name = "『2024新年』双任务活动送皮肤6",
 	guild_coin_award = 0,
@@ -74686,7 +73093,6 @@ _G.pg.base.task_data_template[19605] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19606] = {
 	name = "『2024新年』双任务活动送皮肤7",
 	guild_coin_award = 0,
@@ -74726,7 +73132,6 @@ _G.pg.base.task_data_template[19606] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19607] = {
 	name = "『2024新年』双任务活动送皮肤8",
 	guild_coin_award = 0,
@@ -74766,7 +73171,6 @@ _G.pg.base.task_data_template[19607] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19608] = {
 	name = "『2024新年』双任务活动送皮肤9",
 	guild_coin_award = 0,
@@ -74806,7 +73210,6 @@ _G.pg.base.task_data_template[19608] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19609] = {
 	name = "『2024新年』双任务活动送皮肤10",
 	guild_coin_award = 0,
@@ -74846,7 +73249,6 @@ _G.pg.base.task_data_template[19609] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19610] = {
 	name = "『2024新年』双任务活动送皮肤11",
 	guild_coin_award = 0,
@@ -74886,7 +73288,6 @@ _G.pg.base.task_data_template[19610] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19611] = {
 	name = "『2024新年』双任务活动送皮肤12",
 	guild_coin_award = 0,
@@ -74926,7 +73327,6 @@ _G.pg.base.task_data_template[19611] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19612] = {
 	name = "『2024新年』双任务活动送皮肤13",
 	guild_coin_award = 0,
@@ -74966,7 +73366,6 @@ _G.pg.base.task_data_template[19612] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19613] = {
 	name = "『2024新年』双任务活动送皮肤14",
 	guild_coin_award = 0,
@@ -75008,7 +73407,6 @@ _G.pg.base.task_data_template[19613] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19614] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹1",
 	guild_coin_award = 0,
@@ -75048,7 +73446,6 @@ _G.pg.base.task_data_template[19614] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19615] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹2",
 	guild_coin_award = 0,
@@ -75088,7 +73485,6 @@ _G.pg.base.task_data_template[19615] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19616] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹3",
 	guild_coin_award = 0,
@@ -75128,7 +73524,6 @@ _G.pg.base.task_data_template[19616] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19617] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹4",
 	guild_coin_award = 0,
@@ -75168,7 +73563,6 @@ _G.pg.base.task_data_template[19617] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19618] = {
 	name = "『关岛活动』-日常建造",
 	guild_coin_award = 0,
@@ -75208,7 +73602,6 @@ _G.pg.base.task_data_template[19618] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19619] = {
 	name = "『关岛活动』-日常出击",
 	guild_coin_award = 0,
@@ -75250,7 +73643,6 @@ _G.pg.base.task_data_template[19619] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19620] = {
 	name = "『关岛活动』-日常困难本",
 	guild_coin_award = 0,
@@ -75290,7 +73682,6 @@ _G.pg.base.task_data_template[19620] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19621] = {
 	name = "『关岛活动』通关A1/C1",
 	guild_coin_award = 0,
@@ -75348,7 +73739,6 @@ _G.pg.base.task_data_template[19621] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19622] = {
 	name = "『关岛活动』通关A2/C2",
 	guild_coin_award = 0,
@@ -75406,7 +73796,6 @@ _G.pg.base.task_data_template[19622] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19623] = {
 	name = "『关岛活动』通关A3/C3",
 	guild_coin_award = 0,
@@ -75464,7 +73853,6 @@ _G.pg.base.task_data_template[19623] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19624] = {
 	name = "『关岛活动』通关B1/D1",
 	guild_coin_award = 0,
@@ -75522,7 +73910,6 @@ _G.pg.base.task_data_template[19624] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19625] = {
 	name = "『关岛活动』通关B2/D2",
 	guild_coin_award = 0,
@@ -75580,7 +73967,6 @@ _G.pg.base.task_data_template[19625] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19626] = {
 	name = "『关岛活动』通关B3/D3",
 	guild_coin_award = 0,
@@ -75638,7 +74024,6 @@ _G.pg.base.task_data_template[19626] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19627] = {
 	name = "『关岛活动』通关SP",
 	guild_coin_award = 0,
@@ -75694,7 +74079,6 @@ _G.pg.base.task_data_template[19627] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19628] = {
 	name = "『关岛活动』通关EX",
 	guild_coin_award = 0,
@@ -75740,7 +74124,6 @@ _G.pg.base.task_data_template[19628] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19629] = {
 	name = "『关岛活动』通关D3",
 	guild_coin_award = 0,
@@ -75786,7 +74169,6 @@ _G.pg.base.task_data_template[19629] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19630] = {
 	name = "『关岛活动』A1/C1的3星",
 	guild_coin_award = 0,
@@ -75834,7 +74216,6 @@ _G.pg.base.task_data_template[19630] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19631] = {
 	name = "『关岛活动』A2/C2的3星",
 	guild_coin_award = 0,
@@ -75882,7 +74263,6 @@ _G.pg.base.task_data_template[19631] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19632] = {
 	name = "『关岛活动』A3/C3的3星",
 	guild_coin_award = 0,
@@ -75930,7 +74310,6 @@ _G.pg.base.task_data_template[19632] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19633] = {
 	name = "『关岛活动』B1/D1的3星",
 	guild_coin_award = 0,
@@ -75978,7 +74357,6 @@ _G.pg.base.task_data_template[19633] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19634] = {
 	name = "『关岛活动』B2/D2的3星",
 	guild_coin_award = 0,
@@ -76026,7 +74404,6 @@ _G.pg.base.task_data_template[19634] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19635] = {
 	name = "『关岛活动』B3/D3的3星",
 	guild_coin_award = 0,
@@ -76074,7 +74451,6 @@ _G.pg.base.task_data_template[19635] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19636] = {
 	name = "『关岛活动』外观装备箱保底",
 	guild_coin_award = 0,
@@ -76119,7 +74495,6 @@ _G.pg.base.task_data_template[19636] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19637] = {
 	name = "『关岛活动』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -76159,7 +74534,6 @@ _G.pg.base.task_data_template[19637] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19638] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76219,7 +74593,6 @@ _G.pg.base.task_data_template[19638] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19639] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76259,7 +74632,6 @@ _G.pg.base.task_data_template[19639] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19640] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76299,7 +74671,6 @@ _G.pg.base.task_data_template[19640] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19641] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76339,7 +74710,6 @@ _G.pg.base.task_data_template[19641] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19642] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76379,7 +74749,6 @@ _G.pg.base.task_data_template[19642] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19643] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76419,7 +74788,6 @@ _G.pg.base.task_data_template[19643] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19644] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76459,7 +74827,6 @@ _G.pg.base.task_data_template[19644] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19645] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76499,7 +74866,6 @@ _G.pg.base.task_data_template[19645] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19646] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76539,7 +74905,6 @@ _G.pg.base.task_data_template[19646] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19647] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76579,7 +74944,6 @@ _G.pg.base.task_data_template[19647] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19648] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76619,7 +74983,6 @@ _G.pg.base.task_data_template[19648] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19649] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76659,7 +75022,6 @@ _G.pg.base.task_data_template[19649] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19650] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76699,7 +75061,6 @@ _G.pg.base.task_data_template[19650] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19651] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76739,7 +75100,6 @@ _G.pg.base.task_data_template[19651] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19652] = {
 	name = "进阶PT每日随机任务",
 	guild_coin_award = 0,
@@ -76779,7 +75139,6 @@ _G.pg.base.task_data_template[19652] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19653] = {
 	name = "进阶PT挑战任务-关岛",
 	guild_coin_award = 0,
@@ -76832,7 +75191,6 @@ _G.pg.base.task_data_template[19653] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19654] = {
 	name = "进阶PT挑战任务-星座",
 	guild_coin_award = 0,
@@ -76885,7 +75243,6 @@ _G.pg.base.task_data_template[19654] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19655] = {
 	name = "进阶PT挑战任务-松鲷",
 	guild_coin_award = 0,
@@ -76938,7 +75295,6 @@ _G.pg.base.task_data_template[19655] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19656] = {
 	name = "进阶PT挑战任务-圣哈辛托",
 	guild_coin_award = 0,
@@ -76991,7 +75347,6 @@ _G.pg.base.task_data_template[19656] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19657] = {
 	name = "进阶PT挑战任务-路易斯维尔",
 	guild_coin_award = 0,
@@ -77044,7 +75399,6 @@ _G.pg.base.task_data_template[19657] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19658] = {
 	name = "『关岛活动』通关任务10次",
 	guild_coin_award = 0,
@@ -77098,7 +75452,6 @@ _G.pg.base.task_data_template[19658] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19659] = {
 	name = "『关岛活动』通关任务30次",
 	guild_coin_award = 0,
@@ -77152,7 +75505,6 @@ _G.pg.base.task_data_template[19659] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19660] = {
 	name = "『关岛活动』通关任务60次",
 	guild_coin_award = 0,
@@ -77206,7 +75558,6 @@ _G.pg.base.task_data_template[19660] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19661] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹1",
 	guild_coin_award = 0,
@@ -77246,7 +75597,6 @@ _G.pg.base.task_data_template[19661] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19662] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹2",
 	guild_coin_award = 0,
@@ -77286,7 +75636,6 @@ _G.pg.base.task_data_template[19662] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19663] = {
 	name = "『2024新年』皮肤剧情签到活动第一弹3",
 	guild_coin_award = 0,
@@ -77326,7 +75675,6 @@ _G.pg.base.task_data_template[19663] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19664] = {
 	name = "登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -77366,7 +75714,6 @@ _G.pg.base.task_data_template[19664] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19665] = {
 	name = "『胡滕复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -77406,7 +75753,6 @@ _G.pg.base.task_data_template[19665] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19666] = {
 	name = "『胡滕复刻』通关EX",
 	guild_coin_award = 0,
@@ -77452,7 +75798,6 @@ _G.pg.base.task_data_template[19666] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19667] = {
 	name = "『胡滕复刻』-日常建造",
 	guild_coin_award = 0,
@@ -77492,7 +75837,6 @@ _G.pg.base.task_data_template[19667] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19668] = {
 	name = "『胡滕复刻』-日常出击",
 	guild_coin_award = 0,
@@ -77539,7 +75883,6 @@ _G.pg.base.task_data_template[19668] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19669] = {
 	name = "『胡滕复刻』-日常困难本",
 	guild_coin_award = 0,
@@ -77579,7 +75922,6 @@ _G.pg.base.task_data_template[19669] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19670] = {
 	name = "『胡滕复刻』通关A1/C1",
 	guild_coin_award = 0,
@@ -77642,7 +75984,6 @@ _G.pg.base.task_data_template[19670] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19671] = {
 	name = "『胡滕复刻』通关A2/C2",
 	guild_coin_award = 0,
@@ -77705,7 +76046,6 @@ _G.pg.base.task_data_template[19671] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19672] = {
 	name = "『胡滕复刻』通关A3/C3",
 	guild_coin_award = 0,
@@ -77768,7 +76108,6 @@ _G.pg.base.task_data_template[19672] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19673] = {
 	name = "『胡滕复刻』通关B1/D1",
 	guild_coin_award = 0,
@@ -77831,7 +76170,6 @@ _G.pg.base.task_data_template[19673] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19674] = {
 	name = "『胡滕复刻』通关B2/D2",
 	guild_coin_award = 0,
@@ -77894,7 +76232,6 @@ _G.pg.base.task_data_template[19674] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19675] = {
 	name = "『胡滕复刻』通关B3/D3",
 	guild_coin_award = 0,
@@ -77957,7 +76294,6 @@ _G.pg.base.task_data_template[19675] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19676] = {
 	name = "『胡滕复刻』通关SP",
 	guild_coin_award = 0,
@@ -78013,7 +76349,6 @@ _G.pg.base.task_data_template[19676] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19677] = {
 	name = "『胡滕复刻』通关D3",
 	guild_coin_award = 0,
@@ -78059,7 +76394,6 @@ _G.pg.base.task_data_template[19677] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19678] = {
 	name = "『胡滕复刻』A1/C1的3星",
 	guild_coin_award = 0,
@@ -78107,7 +76441,6 @@ _G.pg.base.task_data_template[19678] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19679] = {
 	name = "『胡滕复刻』A2/C2的3星",
 	guild_coin_award = 0,
@@ -78155,7 +76488,6 @@ _G.pg.base.task_data_template[19679] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19680] = {
 	name = "『胡滕复刻』A3/C3的3星",
 	guild_coin_award = 0,
@@ -78203,7 +76535,6 @@ _G.pg.base.task_data_template[19680] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19681] = {
 	name = "『胡滕复刻』B1/D1的3星",
 	guild_coin_award = 0,
@@ -78251,7 +76582,6 @@ _G.pg.base.task_data_template[19681] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19682] = {
 	name = "『胡滕复刻』B2/D2的3星",
 	guild_coin_award = 0,
@@ -78299,7 +76629,6 @@ _G.pg.base.task_data_template[19682] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19683] = {
 	name = "『胡滕复刻』B3/D3的3星",
 	guild_coin_award = 0,
@@ -78347,7 +76676,6 @@ _G.pg.base.task_data_template[19683] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19685] = {
 	name = "『胡滕复刻』-日常活动关卡",
 	guild_coin_award = 0,
@@ -78414,7 +76742,6 @@ _G.pg.base.task_data_template[19685] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19686] = {
 	name = "『寰昌共斗』挑战券任务1",
 	guild_coin_award = 0,
@@ -78454,7 +76781,6 @@ _G.pg.base.task_data_template[19686] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19687] = {
 	name = "『寰昌共斗』挑战券任务2",
 	guild_coin_award = 0,
@@ -78494,7 +76820,6 @@ _G.pg.base.task_data_template[19687] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19688] = {
 	name = "『寰昌共斗』挑战券任务3",
 	guild_coin_award = 0,
@@ -78534,7 +76859,6 @@ _G.pg.base.task_data_template[19688] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19689] = {
 	name = "『寰昌共斗』挑战券任务4",
 	guild_coin_award = 0,
@@ -78582,7 +76906,6 @@ _G.pg.base.task_data_template[19689] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[19690] = {
 	name = "『寰昌共斗』挑战券任务5",
 	guild_coin_award = 0,
@@ -78630,7 +76953,6 @@ _G.pg.base.task_data_template[19690] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[19691] = {
 	name = "『寰昌共斗』外观装备箱保底",
 	guild_coin_award = 0,
@@ -78670,7 +76992,6 @@ _G.pg.base.task_data_template[19691] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19692] = {
 	name = "『寰昌共斗』通关挑战关卡",
 	guild_coin_award = 0,
@@ -78712,7 +77033,6 @@ _G.pg.base.task_data_template[19692] = {
 		"ACT_BOSS_BATTLE"
 	}
 }
-
 _G.pg.base.task_data_template[19693] = {
 	name = "『2024春节』皮肤剧情签到活动第一弹1",
 	guild_coin_award = 0,
@@ -78752,7 +77072,6 @@ _G.pg.base.task_data_template[19693] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19694] = {
 	name = "『2024春节』皮肤剧情签到活动第一弹2",
 	guild_coin_award = 0,
@@ -78792,7 +77111,6 @@ _G.pg.base.task_data_template[19694] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19695] = {
 	name = "『2024春节』皮肤剧情签到活动第一弹3",
 	guild_coin_award = 0,
@@ -78832,7 +77150,6 @@ _G.pg.base.task_data_template[19695] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19696] = {
 	name = "『2024春节』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -78872,7 +77189,6 @@ _G.pg.base.task_data_template[19696] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19697] = {
 	name = "『2024春节』绘图日记耗油1",
 	guild_coin_award = 0,
@@ -78924,7 +77240,6 @@ _G.pg.base.task_data_template[19697] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19698] = {
 	name = "『2024春节』绘图日记耗油2",
 	guild_coin_award = 0,
@@ -78976,7 +77291,6 @@ _G.pg.base.task_data_template[19698] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19699] = {
 	name = "『2024春节』绘图日记耗油3",
 	guild_coin_award = 0,
@@ -79028,7 +77342,6 @@ _G.pg.base.task_data_template[19699] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19700] = {
 	name = "『2024春节』绘图日记耗油4",
 	guild_coin_award = 0,
@@ -79080,7 +77393,6 @@ _G.pg.base.task_data_template[19700] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19701] = {
 	name = "『2024春节』绘图日记耗油5",
 	guild_coin_award = 0,
@@ -79132,7 +77444,6 @@ _G.pg.base.task_data_template[19701] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19702] = {
 	name = "『2024春节』绘图日记耗油6",
 	guild_coin_award = 0,
@@ -79184,7 +77495,6 @@ _G.pg.base.task_data_template[19702] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19703] = {
 	name = "『2024春节』绘图日记耗油7",
 	guild_coin_award = 0,
@@ -79236,7 +77546,6 @@ _G.pg.base.task_data_template[19703] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19704] = {
 	name = "『2024春节』绘图日记耗油8",
 	guild_coin_award = 0,
@@ -79288,7 +77597,6 @@ _G.pg.base.task_data_template[19704] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19705] = {
 	name = "『2024春节』绘图日记耗油9",
 	guild_coin_award = 0,
@@ -79340,7 +77648,6 @@ _G.pg.base.task_data_template[19705] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19706] = {
 	name = "『2024春节』绘图日记耗油10",
 	guild_coin_award = 0,
@@ -79392,7 +77699,6 @@ _G.pg.base.task_data_template[19706] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19707] = {
 	name = "『2024春节』绘图日记耗油11",
 	guild_coin_award = 0,
@@ -79444,7 +77750,6 @@ _G.pg.base.task_data_template[19707] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19708] = {
 	name = "『2024春节』绘图日记耗油12",
 	guild_coin_award = 0,
@@ -79496,7 +77801,6 @@ _G.pg.base.task_data_template[19708] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19709] = {
 	name = "『2024春节』绘图日记耗油13",
 	guild_coin_award = 0,
@@ -79548,7 +77852,6 @@ _G.pg.base.task_data_template[19709] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19710] = {
 	name = "『2024春节』绘图日记耗油14",
 	guild_coin_award = 0,
@@ -79600,7 +77903,6 @@ _G.pg.base.task_data_template[19710] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19711] = {
 	name = "『2024春节』绘图日记耗油15",
 	guild_coin_award = 0,
@@ -79652,7 +77954,6 @@ _G.pg.base.task_data_template[19711] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19712] = {
 	name = "『2024春节』绘图日记耗油16",
 	guild_coin_award = 0,
@@ -79704,7 +78005,6 @@ _G.pg.base.task_data_template[19712] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19713] = {
 	name = "『2024春节』绘图日记耗油17",
 	guild_coin_award = 0,
@@ -79756,7 +78056,6 @@ _G.pg.base.task_data_template[19713] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19714] = {
 	name = "『2024春节』绘图日记耗油18",
 	guild_coin_award = 0,
@@ -79808,7 +78107,6 @@ _G.pg.base.task_data_template[19714] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19715] = {
 	name = "『2024春节』七日任务送太原改造道具1",
 	guild_coin_award = 0,
@@ -79850,7 +78148,6 @@ _G.pg.base.task_data_template[19715] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19716] = {
 	name = "『2024春节』七日任务送太原改造道具2",
 	guild_coin_award = 0,
@@ -79890,7 +78187,6 @@ _G.pg.base.task_data_template[19716] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19717] = {
 	name = "『2024春节』七日任务送太原改造道具3",
 	guild_coin_award = 0,
@@ -79930,7 +78226,6 @@ _G.pg.base.task_data_template[19717] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19718] = {
 	name = "『2024春节』七日任务送太原改造道具4",
 	guild_coin_award = 0,
@@ -79970,7 +78265,6 @@ _G.pg.base.task_data_template[19718] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19719] = {
 	name = "『2024春节』七日任务送太原改造道具5",
 	guild_coin_award = 0,
@@ -80010,7 +78304,6 @@ _G.pg.base.task_data_template[19719] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19720] = {
 	name = "『2024春节』七日任务送太原改造道具6",
 	guild_coin_award = 0,
@@ -80050,7 +78343,6 @@ _G.pg.base.task_data_template[19720] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19721] = {
 	name = "『2024春节』七日任务送太原改造道具7",
 	guild_coin_award = 0,
@@ -80090,7 +78382,6 @@ _G.pg.base.task_data_template[19721] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19722] = {
 	name = "『2024春节』七日任务送太原改造道具8",
 	guild_coin_award = 0,
@@ -80130,7 +78421,6 @@ _G.pg.base.task_data_template[19722] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19723] = {
 	name = "『2024春节』七日任务送太原改造道具9",
 	guild_coin_award = 0,
@@ -80170,7 +78460,6 @@ _G.pg.base.task_data_template[19723] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19724] = {
 	name = "『2024春节』七日任务送太原改造道具10",
 	guild_coin_award = 0,
@@ -80210,7 +78499,6 @@ _G.pg.base.task_data_template[19724] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19725] = {
 	name = "『2024春节』七日任务送太原改造道具11",
 	guild_coin_award = 0,
@@ -80250,7 +78538,6 @@ _G.pg.base.task_data_template[19725] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19726] = {
 	name = "『2024春节』七日任务送太原改造道具12",
 	guild_coin_award = 0,
@@ -80290,7 +78577,6 @@ _G.pg.base.task_data_template[19726] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19727] = {
 	name = "『2024春节』七日任务送太原改造道具13",
 	guild_coin_award = 0,
@@ -80330,7 +78616,6 @@ _G.pg.base.task_data_template[19727] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19728] = {
 	name = "『2024春节』七日任务送太原改造道具14",
 	guild_coin_award = 0,
@@ -80372,7 +78657,6 @@ _G.pg.base.task_data_template[19728] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19729] = {
 	name = "2024春节贺年卡建造任务1",
 	guild_coin_award = 0,
@@ -80412,7 +78696,6 @@ _G.pg.base.task_data_template[19729] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19730] = {
 	name = "2024春节贺年卡建造任务2",
 	guild_coin_award = 0,
@@ -80452,7 +78735,6 @@ _G.pg.base.task_data_template[19730] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19731] = {
 	name = "2024春节贺年卡建造任务3",
 	guild_coin_award = 0,
@@ -80492,7 +78774,6 @@ _G.pg.base.task_data_template[19731] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19732] = {
 	name = "2024春节贺年卡建造任务4",
 	guild_coin_award = 0,
@@ -80532,7 +78813,6 @@ _G.pg.base.task_data_template[19732] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19733] = {
 	name = "2024春节贺年卡建造任务5",
 	guild_coin_award = 0,
@@ -80572,7 +78852,6 @@ _G.pg.base.task_data_template[19733] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19734] = {
 	name = "2024春节贺年卡出击任务1",
 	guild_coin_award = 0,
@@ -80614,7 +78893,6 @@ _G.pg.base.task_data_template[19734] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19735] = {
 	name = "2024春节贺年卡出击任务2",
 	guild_coin_award = 0,
@@ -80656,7 +78934,6 @@ _G.pg.base.task_data_template[19735] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19736] = {
 	name = "2024春节贺年卡出击任务3",
 	guild_coin_award = 0,
@@ -80698,7 +78975,6 @@ _G.pg.base.task_data_template[19736] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19737] = {
 	name = "2024春节贺年卡出击任务4",
 	guild_coin_award = 0,
@@ -80740,7 +79016,6 @@ _G.pg.base.task_data_template[19737] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19738] = {
 	name = "2024春节贺年卡出击任务5",
 	guild_coin_award = 0,
@@ -80782,7 +79057,6 @@ _G.pg.base.task_data_template[19738] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19739] = {
 	name = "2024春节贺年卡出击任务6",
 	guild_coin_award = 0,
@@ -80824,7 +79098,6 @@ _G.pg.base.task_data_template[19739] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19740] = {
 	name = "2024春节贺年卡出击任务7",
 	guild_coin_award = 0,
@@ -80866,7 +79139,6 @@ _G.pg.base.task_data_template[19740] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19741] = {
 	name = "2024春节贺年卡出击任务8",
 	guild_coin_award = 0,
@@ -80908,7 +79180,6 @@ _G.pg.base.task_data_template[19741] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19742] = {
 	name = "2024春节贺年卡出击任务9",
 	guild_coin_award = 0,
@@ -80950,7 +79221,6 @@ _G.pg.base.task_data_template[19742] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19743] = {
 	name = "2024春节贺年卡出击任务10",
 	guild_coin_award = 0,
@@ -80992,7 +79262,6 @@ _G.pg.base.task_data_template[19743] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19744] = {
 	name = "2024春节贺年卡委托任务1",
 	guild_coin_award = 0,
@@ -81032,7 +79301,6 @@ _G.pg.base.task_data_template[19744] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19745] = {
 	name = "2024春节贺年卡委托任务2",
 	guild_coin_award = 0,
@@ -81072,7 +79340,6 @@ _G.pg.base.task_data_template[19745] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19746] = {
 	name = "2024春节贺年卡委托任务3",
 	guild_coin_award = 0,
@@ -81112,7 +79379,6 @@ _G.pg.base.task_data_template[19746] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19747] = {
 	name = "2024春节贺年卡委托任务4",
 	guild_coin_award = 0,
@@ -81152,7 +79418,6 @@ _G.pg.base.task_data_template[19747] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19748] = {
 	name = "2024春节贺年卡委托任务5",
 	guild_coin_award = 0,
@@ -81192,7 +79457,6 @@ _G.pg.base.task_data_template[19748] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19749] = {
 	name = "2024春节贺年卡石油任务1",
 	guild_coin_award = 0,
@@ -81234,7 +79498,6 @@ _G.pg.base.task_data_template[19749] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19750] = {
 	name = "2024春节贺年卡石油任务2",
 	guild_coin_award = 0,
@@ -81276,7 +79539,6 @@ _G.pg.base.task_data_template[19750] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19751] = {
 	name = "2024春节贺年卡石油任务3",
 	guild_coin_award = 0,
@@ -81318,7 +79580,6 @@ _G.pg.base.task_data_template[19751] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19752] = {
 	name = "2024春节贺年卡石油任务4",
 	guild_coin_award = 0,
@@ -81360,7 +79621,6 @@ _G.pg.base.task_data_template[19752] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19753] = {
 	name = "2024春节贺年卡石油任务5",
 	guild_coin_award = 0,
@@ -81402,7 +79662,6 @@ _G.pg.base.task_data_template[19753] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19754] = {
 	name = "2024春节贺年卡石油任务6",
 	guild_coin_award = 0,
@@ -81444,7 +79703,6 @@ _G.pg.base.task_data_template[19754] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19755] = {
 	name = "『2024春节』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -81484,7 +79742,6 @@ _G.pg.base.task_data_template[19755] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19770] = {
 	name = "『2024春节』皮肤剧情签到活动第二弹1",
 	guild_coin_award = 0,
@@ -81524,7 +79781,6 @@ _G.pg.base.task_data_template[19770] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19771] = {
 	name = "『2024春节』皮肤剧情签到活动第二弹2",
 	guild_coin_award = 0,
@@ -81564,7 +79820,6 @@ _G.pg.base.task_data_template[19771] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19772] = {
 	name = "『2024春节』皮肤剧情签到活动第二弹3",
 	guild_coin_award = 0,
@@ -81604,7 +79859,6 @@ _G.pg.base.task_data_template[19772] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19787] = {
 	name = "『毛系前哨站』前哨战七日任务1",
 	guild_coin_award = 0,
@@ -81646,7 +79900,6 @@ _G.pg.base.task_data_template[19787] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19788] = {
 	name = "『毛系前哨站』前哨战七日任务2",
 	guild_coin_award = 0,
@@ -81686,7 +79939,6 @@ _G.pg.base.task_data_template[19788] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19789] = {
 	name = "『毛系前哨站』前哨战七日任务3",
 	guild_coin_award = 0,
@@ -81726,7 +79978,6 @@ _G.pg.base.task_data_template[19789] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19790] = {
 	name = "『毛系前哨站』前哨战七日任务4",
 	guild_coin_award = 0,
@@ -81766,7 +80017,6 @@ _G.pg.base.task_data_template[19790] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19791] = {
 	name = "『毛系前哨站』前哨战七日任务5",
 	guild_coin_award = 0,
@@ -81806,7 +80056,6 @@ _G.pg.base.task_data_template[19791] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19792] = {
 	name = "『毛系前哨站』前哨战七日任务6",
 	guild_coin_award = 0,
@@ -81846,7 +80095,6 @@ _G.pg.base.task_data_template[19792] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19793] = {
 	name = "『毛系前哨站』前哨战七日任务7",
 	guild_coin_award = 0,
@@ -81886,7 +80134,6 @@ _G.pg.base.task_data_template[19793] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19794] = {
 	name = "『毛系前哨站』前哨战七日任务8",
 	guild_coin_award = 0,
@@ -81926,7 +80173,6 @@ _G.pg.base.task_data_template[19794] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19795] = {
 	name = "『毛系前哨站』前哨战七日任务9",
 	guild_coin_award = 0,
@@ -81966,7 +80212,6 @@ _G.pg.base.task_data_template[19795] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19796] = {
 	name = "『毛系前哨站』前哨战七日任务10",
 	guild_coin_award = 0,
@@ -82006,7 +80251,6 @@ _G.pg.base.task_data_template[19796] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19797] = {
 	name = "『毛系前哨站』前哨战七日任务11",
 	guild_coin_award = 0,
@@ -82046,7 +80290,6 @@ _G.pg.base.task_data_template[19797] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19798] = {
 	name = "『毛系前哨站』前哨战七日任务12",
 	guild_coin_award = 0,
@@ -82086,7 +80329,6 @@ _G.pg.base.task_data_template[19798] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19799] = {
 	name = "『毛系前哨站』前哨战七日任务13",
 	guild_coin_award = 0,
@@ -82126,7 +80368,6 @@ _G.pg.base.task_data_template[19799] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19800] = {
 	name = "『毛系前哨站』前哨战七日任务14",
 	guild_coin_award = 0,
@@ -82168,7 +80409,6 @@ _G.pg.base.task_data_template[19800] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19801] = {
 	name = "『苏维埃同盟活动』-日常建造",
 	guild_coin_award = 0,
@@ -82208,7 +80448,6 @@ _G.pg.base.task_data_template[19801] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19802] = {
 	name = "『苏维埃同盟活动』-日常出击",
 	guild_coin_award = 0,
@@ -82250,7 +80489,6 @@ _G.pg.base.task_data_template[19802] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19803] = {
 	name = "『苏维埃同盟活动』-日常困难本",
 	guild_coin_award = 0,
@@ -82290,7 +80528,6 @@ _G.pg.base.task_data_template[19803] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19804] = {
 	name = "『苏维埃同盟活动』通关A1/C1",
 	guild_coin_award = 0,
@@ -82348,7 +80585,6 @@ _G.pg.base.task_data_template[19804] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19805] = {
 	name = "『苏维埃同盟活动』通关A2/C2",
 	guild_coin_award = 0,
@@ -82406,7 +80642,6 @@ _G.pg.base.task_data_template[19805] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19806] = {
 	name = "『苏维埃同盟活动』通关A3/C3",
 	guild_coin_award = 0,
@@ -82464,7 +80699,6 @@ _G.pg.base.task_data_template[19806] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19807] = {
 	name = "『苏维埃同盟活动』通关B1/D1",
 	guild_coin_award = 0,
@@ -82522,7 +80756,6 @@ _G.pg.base.task_data_template[19807] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19808] = {
 	name = "『苏维埃同盟活动』通关B2/D2",
 	guild_coin_award = 0,
@@ -82580,7 +80813,6 @@ _G.pg.base.task_data_template[19808] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19809] = {
 	name = "『苏维埃同盟活动』通关B3/D3",
 	guild_coin_award = 0,
@@ -82638,7 +80870,6 @@ _G.pg.base.task_data_template[19809] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19810] = {
 	name = "『苏维埃同盟活动』通关SP",
 	guild_coin_award = 0,
@@ -82689,7 +80920,6 @@ _G.pg.base.task_data_template[19810] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19811] = {
 	name = "『苏维埃同盟活动』通关EX",
 	guild_coin_award = 0,
@@ -82735,7 +80965,6 @@ _G.pg.base.task_data_template[19811] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19812] = {
 	name = "『苏维埃同盟活动』通关D3",
 	guild_coin_award = 0,
@@ -82781,7 +81010,6 @@ _G.pg.base.task_data_template[19812] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19813] = {
 	name = "『苏维埃同盟活动』A1/C1的3星",
 	guild_coin_award = 0,
@@ -82829,7 +81057,6 @@ _G.pg.base.task_data_template[19813] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19814] = {
 	name = "『苏维埃同盟活动』A2/C2的3星",
 	guild_coin_award = 0,
@@ -82877,7 +81104,6 @@ _G.pg.base.task_data_template[19814] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19815] = {
 	name = "『苏维埃同盟活动』A3/C3的3星",
 	guild_coin_award = 0,
@@ -82925,7 +81151,6 @@ _G.pg.base.task_data_template[19815] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19816] = {
 	name = "『苏维埃同盟活动』B1/D1的3星",
 	guild_coin_award = 0,
@@ -82973,7 +81198,6 @@ _G.pg.base.task_data_template[19816] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19817] = {
 	name = "『苏维埃同盟活动』B2/D2的3星",
 	guild_coin_award = 0,
@@ -83021,7 +81245,6 @@ _G.pg.base.task_data_template[19817] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19818] = {
 	name = "『苏维埃同盟活动』B3/D3的3星",
 	guild_coin_award = 0,
@@ -83069,7 +81292,6 @@ _G.pg.base.task_data_template[19818] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19819] = {
 	name = "『苏维埃同盟活动』通关任务10次",
 	guild_coin_award = 0,
@@ -83123,7 +81345,6 @@ _G.pg.base.task_data_template[19819] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19820] = {
 	name = "『苏维埃同盟活动』通关任务30次",
 	guild_coin_award = 0,
@@ -83177,7 +81398,6 @@ _G.pg.base.task_data_template[19820] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19821] = {
 	name = "『苏维埃同盟活动』通关任务60次",
 	guild_coin_award = 0,
@@ -83231,7 +81451,6 @@ _G.pg.base.task_data_template[19821] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19822] = {
 	name = "『苏维埃同盟活动』外观装备箱保底",
 	guild_coin_award = 0,
@@ -83276,7 +81495,6 @@ _G.pg.base.task_data_template[19822] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19823] = {
 	name = "『苏维埃同盟活动』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -83316,7 +81534,6 @@ _G.pg.base.task_data_template[19823] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19824] = {
 	name = "『虚像构筑之塔复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -83356,7 +81573,6 @@ _G.pg.base.task_data_template[19824] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19825] = {
 	name = "『虚像构筑之塔复刻』日常建造",
 	guild_coin_award = 0,
@@ -83396,7 +81612,6 @@ _G.pg.base.task_data_template[19825] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19826] = {
 	name = "『虚像构筑之塔复刻』日常出击",
 	guild_coin_award = 0,
@@ -83443,7 +81658,6 @@ _G.pg.base.task_data_template[19826] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19827] = {
 	name = "『虚像构筑之塔复刻』日常困难本",
 	guild_coin_award = 0,
@@ -83483,7 +81697,6 @@ _G.pg.base.task_data_template[19827] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19828] = {
 	name = "『虚像构筑之塔复刻』日常活动关卡",
 	guild_coin_award = 0,
@@ -83540,7 +81753,6 @@ _G.pg.base.task_data_template[19828] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19829] = {
 	name = "『虚像构筑之塔复刻』通关SP1",
 	guild_coin_award = 0,
@@ -83602,7 +81814,6 @@ _G.pg.base.task_data_template[19829] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19830] = {
 	name = "『虚像构筑之塔复刻』通关SP2",
 	guild_coin_award = 0,
@@ -83664,7 +81875,6 @@ _G.pg.base.task_data_template[19830] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19831] = {
 	name = "『虚像构筑之塔复刻』通关SP3",
 	guild_coin_award = 0,
@@ -83726,7 +81936,6 @@ _G.pg.base.task_data_template[19831] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19832] = {
 	name = "『虚像构筑之塔复刻』通关SP4",
 	guild_coin_award = 0,
@@ -83788,7 +81997,6 @@ _G.pg.base.task_data_template[19832] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19833] = {
 	name = "『虚像构筑之塔复刻』通关ESP",
 	guild_coin_award = 0,
@@ -83845,7 +82053,6 @@ _G.pg.base.task_data_template[19833] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19834] = {
 	name = "『虚像构筑之塔复刻』SP1三星",
 	guild_coin_award = 0,
@@ -83891,7 +82098,6 @@ _G.pg.base.task_data_template[19834] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19835] = {
 	name = "『虚像构筑之塔复刻』SP2三星",
 	guild_coin_award = 0,
@@ -83937,7 +82143,6 @@ _G.pg.base.task_data_template[19835] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19836] = {
 	name = "『虚像构筑之塔复刻』SP3三星",
 	guild_coin_award = 0,
@@ -83983,7 +82188,6 @@ _G.pg.base.task_data_template[19836] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19837] = {
 	name = "『虚像构筑之塔复刻』SP4三星",
 	guild_coin_award = 0,
@@ -84029,7 +82233,6 @@ _G.pg.base.task_data_template[19837] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19838] = {
 	name = "『虚像构筑之塔复刻』通关EX",
 	guild_coin_award = 0,
@@ -84075,7 +82278,6 @@ _G.pg.base.task_data_template[19838] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19839] = {
 	name = "『勇者活动』-日常出击",
 	guild_coin_award = 0,
@@ -84117,7 +82319,6 @@ _G.pg.base.task_data_template[19839] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19840] = {
 	name = "『勇者活动』-日常委托",
 	guild_coin_award = 0,
@@ -84157,7 +82358,6 @@ _G.pg.base.task_data_template[19840] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19841] = {
 	name = "『勇者活动』-日常挑战",
 	guild_coin_award = 0,
@@ -84197,7 +82397,6 @@ _G.pg.base.task_data_template[19841] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19842] = {
 	name = "『勇者活动』-日常科研",
 	guild_coin_award = 0,
@@ -84237,7 +82436,6 @@ _G.pg.base.task_data_template[19842] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19843] = {
 	name = "『勇者活动』-总出击1",
 	guild_coin_award = 0,
@@ -84279,7 +82477,6 @@ _G.pg.base.task_data_template[19843] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19844] = {
 	name = "『勇者活动』-总出击2",
 	guild_coin_award = 0,
@@ -84321,7 +82518,6 @@ _G.pg.base.task_data_template[19844] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19845] = {
 	name = "『勇者活动』-总出击3",
 	guild_coin_award = 0,
@@ -84363,7 +82559,6 @@ _G.pg.base.task_data_template[19845] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19846] = {
 	name = "『勇者活动』-总出击4",
 	guild_coin_award = 0,
@@ -84405,7 +82600,6 @@ _G.pg.base.task_data_template[19846] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19847] = {
 	name = "『勇者活动』-总委托1",
 	guild_coin_award = 0,
@@ -84445,7 +82639,6 @@ _G.pg.base.task_data_template[19847] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19848] = {
 	name = "『勇者活动』-总委托2",
 	guild_coin_award = 0,
@@ -84485,7 +82678,6 @@ _G.pg.base.task_data_template[19848] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19849] = {
 	name = "『勇者活动』-总委托3",
 	guild_coin_award = 0,
@@ -84525,7 +82717,6 @@ _G.pg.base.task_data_template[19849] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19850] = {
 	name = "『勇者活动』-总委托4",
 	guild_coin_award = 0,
@@ -84565,7 +82756,6 @@ _G.pg.base.task_data_template[19850] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19851] = {
 	name = "『勇者活动』-消耗石油1",
 	guild_coin_award = 0,
@@ -84605,7 +82795,6 @@ _G.pg.base.task_data_template[19851] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19852] = {
 	name = "『勇者活动』-消耗石油2",
 	guild_coin_award = 0,
@@ -84645,7 +82834,6 @@ _G.pg.base.task_data_template[19852] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19853] = {
 	name = "『勇者活动』-消耗石油3",
 	guild_coin_award = 0,
@@ -84685,7 +82873,6 @@ _G.pg.base.task_data_template[19853] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19854] = {
 	name = "『勇者活动』-消耗石油4",
 	guild_coin_award = 0,
@@ -84725,7 +82912,6 @@ _G.pg.base.task_data_template[19854] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19855] = {
 	name = "『异世界』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -84765,7 +82951,6 @@ _G.pg.base.task_data_template[19855] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19856] = {
 	name = "『异世界』通关SP1",
 	guild_coin_award = 0,
@@ -84820,7 +83005,6 @@ _G.pg.base.task_data_template[19856] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19857] = {
 	name = "『异世界』通关SP2",
 	guild_coin_award = 0,
@@ -84875,7 +83059,6 @@ _G.pg.base.task_data_template[19857] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19858] = {
 	name = "『异世界』通关SP3",
 	guild_coin_award = 0,
@@ -84930,7 +83113,6 @@ _G.pg.base.task_data_template[19858] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19859] = {
 	name = "『异世界』通关SP",
 	guild_coin_award = 0,
@@ -84985,7 +83167,6 @@ _G.pg.base.task_data_template[19859] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19860] = {
 	name = "『异世界』通关SP5",
 	guild_coin_award = 0,
@@ -85040,7 +83221,6 @@ _G.pg.base.task_data_template[19860] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19861] = {
 	name = "『异世界』累计通关20次",
 	guild_coin_award = 0,
@@ -85091,7 +83271,6 @@ _G.pg.base.task_data_template[19861] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19862] = {
 	name = "『异世界』累计通关50次",
 	guild_coin_award = 0,
@@ -85142,7 +83321,6 @@ _G.pg.base.task_data_template[19862] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19863] = {
 	name = "『异世界』累计通关80次",
 	guild_coin_award = 0,
@@ -85193,7 +83371,6 @@ _G.pg.base.task_data_template[19863] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19864] = {
 	name = "『异世界』完成9次每日随机委托",
 	guild_coin_award = 0,
@@ -85253,7 +83430,6 @@ _G.pg.base.task_data_template[19864] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19865] = {
 	name = "『异世界』完成15次每日随机委托",
 	guild_coin_award = 0,
@@ -85313,7 +83489,6 @@ _G.pg.base.task_data_template[19865] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19866] = {
 	name = "『异世界』完成21次每日随机委托",
 	guild_coin_award = 0,
@@ -85373,7 +83548,6 @@ _G.pg.base.task_data_template[19866] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19867] = {
 	name = "『异世界』通关奖励",
 	guild_coin_award = 0,
@@ -85428,7 +83602,6 @@ _G.pg.base.task_data_template[19867] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19882] = {
 	name = "『异世界』冒险终端累计PT计数",
 	guild_coin_award = 0,
@@ -85473,7 +83646,6 @@ _G.pg.base.task_data_template[19882] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19883] = {
 	name = "『异世界』冒险终端魔王城计数",
 	guild_coin_award = 0,
@@ -85518,7 +83690,6 @@ _G.pg.base.task_data_template[19883] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19884] = {
 	name = "『异世界』冒险终端巨炎龙计数",
 	guild_coin_award = 0,
@@ -85563,7 +83734,6 @@ _G.pg.base.task_data_template[19884] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19885] = {
 	name = "『异世界』冒险终端任务完成计数",
 	guild_coin_award = 0,
@@ -85623,7 +83793,6 @@ _G.pg.base.task_data_template[19885] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19886] = {
 	name = "『异世界』冒险终端杀敌计数",
 	guild_coin_award = 0,
@@ -85674,7 +83843,6 @@ _G.pg.base.task_data_template[19886] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19887] = {
 	name = "『异世界』冒险终端守护神计数",
 	guild_coin_award = 0,
@@ -85719,7 +83887,6 @@ _G.pg.base.task_data_template[19887] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19888] = {
 	name = "『异世界』日常通关",
 	guild_coin_award = 0,
@@ -85775,7 +83942,6 @@ _G.pg.base.task_data_template[19888] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19889] = {
 	name = "『异世界』外观装备箱保底",
 	guild_coin_award = 0,
@@ -85820,7 +83986,6 @@ _G.pg.base.task_data_template[19889] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19890] = {
 	name = "『异世界』日常无限完成任务",
 	guild_coin_award = 0,
@@ -85871,7 +84036,6 @@ _G.pg.base.task_data_template[19890] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19900] = {
 	name = "『喀琅施塔得复刻』-日常建造",
 	guild_coin_award = 0,
@@ -85911,7 +84075,6 @@ _G.pg.base.task_data_template[19900] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19901] = {
 	name = "『喀琅施塔得复刻』-日常出击",
 	guild_coin_award = 0,
@@ -85958,7 +84121,6 @@ _G.pg.base.task_data_template[19901] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19902] = {
 	name = "『喀琅施塔得复刻』-日常困难本",
 	guild_coin_award = 0,
@@ -85998,7 +84160,6 @@ _G.pg.base.task_data_template[19902] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19903] = {
 	name = "『喀琅施塔得复刻』-日常活动关卡",
 	guild_coin_award = 0,
@@ -86063,7 +84224,6 @@ _G.pg.base.task_data_template[19903] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19904] = {
 	name = "『喀琅施塔得复刻』通关A1/C1",
 	guild_coin_award = 0,
@@ -86126,7 +84286,6 @@ _G.pg.base.task_data_template[19904] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19905] = {
 	name = "『喀琅施塔得复刻』通关A2/C2",
 	guild_coin_award = 0,
@@ -86189,7 +84348,6 @@ _G.pg.base.task_data_template[19905] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19906] = {
 	name = "『喀琅施塔得复刻』通关A3/C3",
 	guild_coin_award = 0,
@@ -86252,7 +84410,6 @@ _G.pg.base.task_data_template[19906] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19907] = {
 	name = "『喀琅施塔得复刻』通关B1/D1",
 	guild_coin_award = 0,
@@ -86315,7 +84472,6 @@ _G.pg.base.task_data_template[19907] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19908] = {
 	name = "『喀琅施塔得复刻』通关B2/D2",
 	guild_coin_award = 0,
@@ -86378,7 +84534,6 @@ _G.pg.base.task_data_template[19908] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19909] = {
 	name = "『喀琅施塔得复刻』通关B3/D3",
 	guild_coin_award = 0,
@@ -86441,7 +84596,6 @@ _G.pg.base.task_data_template[19909] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19910] = {
 	name = "『喀琅施塔得复刻』通关SP",
 	guild_coin_award = 0,
@@ -86497,7 +84651,6 @@ _G.pg.base.task_data_template[19910] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19911] = {
 	name = "『喀琅施塔得复刻』通关D3",
 	guild_coin_award = 0,
@@ -86543,7 +84696,6 @@ _G.pg.base.task_data_template[19911] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19912] = {
 	name = "『喀琅施塔得复刻』通关EX",
 	guild_coin_award = 0,
@@ -86589,7 +84741,6 @@ _G.pg.base.task_data_template[19912] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19913] = {
 	name = "『喀琅施塔得复刻』A1/C1的3星",
 	guild_coin_award = 0,
@@ -86637,7 +84788,6 @@ _G.pg.base.task_data_template[19913] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19914] = {
 	name = "『喀琅施塔得复刻』A2/C2的3星",
 	guild_coin_award = 0,
@@ -86685,7 +84835,6 @@ _G.pg.base.task_data_template[19914] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19915] = {
 	name = "『喀琅施塔得复刻』A3/C3的3星",
 	guild_coin_award = 0,
@@ -86733,7 +84882,6 @@ _G.pg.base.task_data_template[19915] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19916] = {
 	name = "『喀琅施塔得复刻』B1/D1的3星",
 	guild_coin_award = 0,
@@ -86781,7 +84929,6 @@ _G.pg.base.task_data_template[19916] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19917] = {
 	name = "『喀琅施塔得复刻』B2/D2的3星",
 	guild_coin_award = 0,
@@ -86829,7 +84976,6 @@ _G.pg.base.task_data_template[19917] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19918] = {
 	name = "『喀琅施塔得复刻』B3/D3的3星",
 	guild_coin_award = 0,
@@ -86877,7 +85023,6 @@ _G.pg.base.task_data_template[19918] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19919] = {
 	name = "『喀琅施塔得复刻』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -86917,7 +85062,6 @@ _G.pg.base.task_data_template[19919] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19920] = {
 	name = "『2023人气投票』武器外观1",
 	guild_coin_award = 0,
@@ -86957,7 +85101,6 @@ _G.pg.base.task_data_template[19920] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19921] = {
 	name = "『2023人气投票』武器外观2",
 	guild_coin_award = 0,
@@ -86997,7 +85140,6 @@ _G.pg.base.task_data_template[19921] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19922] = {
 	name = "『2023人气投票』武器外观3",
 	guild_coin_award = 0,
@@ -87037,7 +85179,6 @@ _G.pg.base.task_data_template[19922] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19923] = {
 	name = "小柴郡复刻npc临时加入",
 	guild_coin_award = 0,
@@ -87077,7 +85218,6 @@ _G.pg.base.task_data_template[19923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19924] = {
 	name = "小柴郡复刻通常任务1",
 	guild_coin_award = 0,
@@ -87119,7 +85259,6 @@ _G.pg.base.task_data_template[19924] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19925] = {
 	name = "小柴郡复刻通常任务2",
 	guild_coin_award = 0,
@@ -87161,7 +85300,6 @@ _G.pg.base.task_data_template[19925] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19926] = {
 	name = "小柴郡复刻通常任务3",
 	guild_coin_award = 0,
@@ -87203,7 +85341,6 @@ _G.pg.base.task_data_template[19926] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19927] = {
 	name = "小柴郡复刻通常任务4",
 	guild_coin_award = 0,
@@ -87245,7 +85382,6 @@ _G.pg.base.task_data_template[19927] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19928] = {
 	name = "小柴郡复刻通常任务5",
 	guild_coin_award = 0,
@@ -87287,7 +85423,6 @@ _G.pg.base.task_data_template[19928] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19929] = {
 	name = "小柴郡复刻通常任务6",
 	guild_coin_award = 0,
@@ -87329,7 +85464,6 @@ _G.pg.base.task_data_template[19929] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19930] = {
 	name = "小柴郡复刻通常任务7",
 	guild_coin_award = 0,
@@ -87371,7 +85505,6 @@ _G.pg.base.task_data_template[19930] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19931] = {
 	name = "小柴郡复刻通常任务8",
 	guild_coin_award = 0,
@@ -87413,7 +85546,6 @@ _G.pg.base.task_data_template[19931] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19932] = {
 	name = "小柴郡复刻通常任务9",
 	guild_coin_award = 0,
@@ -87455,7 +85587,6 @@ _G.pg.base.task_data_template[19932] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19933] = {
 	name = "小柴郡复刻通常任务10",
 	guild_coin_award = 0,
@@ -87497,7 +85628,6 @@ _G.pg.base.task_data_template[19933] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19934] = {
 	name = "小柴郡复刻通常任务11",
 	guild_coin_award = 0,
@@ -87539,7 +85669,6 @@ _G.pg.base.task_data_template[19934] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19935] = {
 	name = "小柴郡复刻通常任务12",
 	guild_coin_award = 0,
@@ -87581,7 +85710,6 @@ _G.pg.base.task_data_template[19935] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19936] = {
 	name = "小柴郡复刻通常任务13",
 	guild_coin_award = 0,
@@ -87623,7 +85751,6 @@ _G.pg.base.task_data_template[19936] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19937] = {
 	name = "小柴郡复刻通常任务14",
 	guild_coin_award = 0,
@@ -87665,7 +85792,6 @@ _G.pg.base.task_data_template[19937] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19938] = {
 	name = "小柴郡复刻通常任务15",
 	guild_coin_award = 0,
@@ -87707,7 +85833,6 @@ _G.pg.base.task_data_template[19938] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19939] = {
 	name = "小柴郡复刻通常任务16",
 	guild_coin_award = 0,
@@ -87749,7 +85874,6 @@ _G.pg.base.task_data_template[19939] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19940] = {
 	name = "小柴郡复刻通常任务17",
 	guild_coin_award = 0,
@@ -87791,7 +85915,6 @@ _G.pg.base.task_data_template[19940] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19941] = {
 	name = "小柴郡复刻通常任务18",
 	guild_coin_award = 0,
@@ -87833,7 +85956,6 @@ _G.pg.base.task_data_template[19941] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19942] = {
 	name = "小柴郡复刻通常任务19",
 	guild_coin_award = 0,
@@ -87875,7 +85997,6 @@ _G.pg.base.task_data_template[19942] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19943] = {
 	name = "小柴郡复刻通常任务20",
 	guild_coin_award = 0,
@@ -87917,7 +86038,6 @@ _G.pg.base.task_data_template[19943] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19944] = {
 	name = "小柴郡复刻通常任务21",
 	guild_coin_award = 0,
@@ -87962,7 +86082,6 @@ _G.pg.base.task_data_template[19944] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19945] = {
 	name = "小柴郡复刻通常任务22",
 	guild_coin_award = 0,
@@ -88007,7 +86126,6 @@ _G.pg.base.task_data_template[19945] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19946] = {
 	name = "小柴郡复刻通常任务23",
 	guild_coin_award = 0,
@@ -88052,7 +86170,6 @@ _G.pg.base.task_data_template[19946] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19947] = {
 	name = "小柴郡复刻通常任务24",
 	guild_coin_award = 0,
@@ -88097,7 +86214,6 @@ _G.pg.base.task_data_template[19947] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19948] = {
 	name = "小柴郡复刻通常任务25",
 	guild_coin_award = 0,
@@ -88142,7 +86258,6 @@ _G.pg.base.task_data_template[19948] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19949] = {
 	name = "小柴郡复刻通常任务26",
 	guild_coin_award = 0,
@@ -88187,7 +86302,6 @@ _G.pg.base.task_data_template[19949] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19950] = {
 	name = "小柴郡复刻通常任务27",
 	guild_coin_award = 0,
@@ -88232,7 +86346,6 @@ _G.pg.base.task_data_template[19950] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19951] = {
 	name = "小柴郡复刻通常任务28",
 	guild_coin_award = 0,
@@ -88277,7 +86390,6 @@ _G.pg.base.task_data_template[19951] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19952] = {
 	name = "小柴郡复刻通常任务29",
 	guild_coin_award = 0,
@@ -88322,7 +86434,6 @@ _G.pg.base.task_data_template[19952] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19953] = {
 	name = "小柴郡复刻通常任务30",
 	guild_coin_award = 0,
@@ -88367,7 +86478,6 @@ _G.pg.base.task_data_template[19953] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19954] = {
 	name = "小柴郡复刻通常任务31",
 	guild_coin_award = 0,
@@ -88412,7 +86522,6 @@ _G.pg.base.task_data_template[19954] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19955] = {
 	name = "小柴郡复刻每日任务1",
 	guild_coin_award = 0,
@@ -88454,7 +86563,6 @@ _G.pg.base.task_data_template[19955] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19956] = {
 	name = "小柴郡复刻每日任务2",
 	guild_coin_award = 0,
@@ -88496,7 +86604,6 @@ _G.pg.base.task_data_template[19956] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19967] = {
 	name = "『彼岸花开暗香来』七日任务1",
 	guild_coin_award = 0,
@@ -88538,7 +86645,6 @@ _G.pg.base.task_data_template[19967] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19968] = {
 	name = "『彼岸花开暗香来』七日任务2",
 	guild_coin_award = 0,
@@ -88578,7 +86684,6 @@ _G.pg.base.task_data_template[19968] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19969] = {
 	name = "『彼岸花开暗香来』七日任务3",
 	guild_coin_award = 0,
@@ -88618,7 +86723,6 @@ _G.pg.base.task_data_template[19969] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19970] = {
 	name = "『彼岸花开暗香来』七日任务4",
 	guild_coin_award = 0,
@@ -88658,7 +86762,6 @@ _G.pg.base.task_data_template[19970] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19971] = {
 	name = "『彼岸花开暗香来』七日任务5",
 	guild_coin_award = 0,
@@ -88698,7 +86801,6 @@ _G.pg.base.task_data_template[19971] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19972] = {
 	name = "『彼岸花开暗香来』七日任务6",
 	guild_coin_award = 0,
@@ -88738,7 +86840,6 @@ _G.pg.base.task_data_template[19972] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19973] = {
 	name = "『彼岸花开暗香来』七日任务7",
 	guild_coin_award = 0,
@@ -88778,7 +86879,6 @@ _G.pg.base.task_data_template[19973] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19974] = {
 	name = "『彼岸花开暗香来』七日任务8",
 	guild_coin_award = 0,
@@ -88818,7 +86918,6 @@ _G.pg.base.task_data_template[19974] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19975] = {
 	name = "『彼岸花开暗香来』七日任务9",
 	guild_coin_award = 0,
@@ -88858,7 +86957,6 @@ _G.pg.base.task_data_template[19975] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19976] = {
 	name = "『彼岸花开暗香来』七日任务10",
 	guild_coin_award = 0,
@@ -88898,7 +86996,6 @@ _G.pg.base.task_data_template[19976] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19977] = {
 	name = "『彼岸花开暗香来』七日任务11",
 	guild_coin_award = 0,
@@ -88938,7 +87035,6 @@ _G.pg.base.task_data_template[19977] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19978] = {
 	name = "『彼岸花开暗香来』七日任务12",
 	guild_coin_award = 0,
@@ -88978,7 +87074,6 @@ _G.pg.base.task_data_template[19978] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19979] = {
 	name = "『彼岸花开暗香来』七日任务13",
 	guild_coin_award = 0,
@@ -89018,7 +87113,6 @@ _G.pg.base.task_data_template[19979] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19980] = {
 	name = "『彼岸花开暗香来』七日任务14",
 	guild_coin_award = 0,
@@ -89060,7 +87154,6 @@ _G.pg.base.task_data_template[19980] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19981] = {
 	name = "『偶像V3』日常建造",
 	guild_coin_award = 0,
@@ -89100,7 +87193,6 @@ _G.pg.base.task_data_template[19981] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19982] = {
 	name = "『偶像V3』日常出击",
 	guild_coin_award = 0,
@@ -89142,7 +87234,6 @@ _G.pg.base.task_data_template[19982] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[19983] = {
 	name = "『偶像V3』日常困难本",
 	guild_coin_award = 0,
@@ -89182,7 +87273,6 @@ _G.pg.base.task_data_template[19983] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19984] = {
 	name = "『偶像V3』通关SP1",
 	guild_coin_award = 0,
@@ -89238,7 +87328,6 @@ _G.pg.base.task_data_template[19984] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19985] = {
 	name = "『偶像V3』通关SP2",
 	guild_coin_award = 0,
@@ -89294,7 +87383,6 @@ _G.pg.base.task_data_template[19985] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19986] = {
 	name = "『偶像V3』通关SP3",
 	guild_coin_award = 0,
@@ -89350,7 +87438,6 @@ _G.pg.base.task_data_template[19986] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19987] = {
 	name = "『偶像V3』通关SP4",
 	guild_coin_award = 0,
@@ -89406,7 +87493,6 @@ _G.pg.base.task_data_template[19987] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19988] = {
 	name = "『偶像V3』通关SP5",
 	guild_coin_award = 0,
@@ -89462,7 +87548,6 @@ _G.pg.base.task_data_template[19988] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19989] = {
 	name = "『偶像V3』通关μSP",
 	guild_coin_award = 0,
@@ -89518,7 +87603,6 @@ _G.pg.base.task_data_template[19989] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19990] = {
 	name = "『偶像V3』通关EX",
 	guild_coin_award = 0,
@@ -89564,7 +87648,6 @@ _G.pg.base.task_data_template[19990] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19991] = {
 	name = "『偶像V3』SP1三星",
 	guild_coin_award = 0,
@@ -89620,7 +87703,6 @@ _G.pg.base.task_data_template[19991] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19992] = {
 	name = "『偶像V3』SP2三星",
 	guild_coin_award = 0,
@@ -89676,7 +87758,6 @@ _G.pg.base.task_data_template[19992] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19993] = {
 	name = "『偶像V3』SP3三星",
 	guild_coin_award = 0,
@@ -89732,7 +87813,6 @@ _G.pg.base.task_data_template[19993] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19994] = {
 	name = "『偶像V3』SP4三星",
 	guild_coin_award = 0,
@@ -89788,7 +87868,6 @@ _G.pg.base.task_data_template[19994] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19995] = {
 	name = "『偶像V3』SP5三星",
 	guild_coin_award = 0,
@@ -89844,7 +87923,6 @@ _G.pg.base.task_data_template[19995] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19996] = {
 	name = "『偶像V3』登录送皮肤体验券活动",
 	guild_coin_award = 0,
@@ -89884,7 +87962,6 @@ _G.pg.base.task_data_template[19996] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19997] = {
 	name = "『偶像V3』外观装备箱保底",
 	guild_coin_award = 0,
@@ -89929,7 +88006,6 @@ _G.pg.base.task_data_template[19997] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19998] = {
 	name = "『偶像V3』皮肤剧情签到活动第一弹1",
 	guild_coin_award = 0,
@@ -89969,7 +88045,6 @@ _G.pg.base.task_data_template[19998] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[19999] = {
 	name = "『偶像V3』皮肤剧情签到活动第一弹2",
 	guild_coin_award = 0,
@@ -90009,7 +88084,6 @@ _G.pg.base.task_data_template[19999] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20000] = {
 	name = "『偶像V3』皮肤剧情签到活动第一弹3",
 	guild_coin_award = 0,
@@ -90049,7 +88123,6 @@ _G.pg.base.task_data_template[20000] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20001] = {
 	name = "『偶像V3』累计通关10次SP5",
 	guild_coin_award = 0,
@@ -90057,7 +88130,7 @@ _G.pg.base.task_data_template[20001] = {
 	type = 6,
 	desc = "累计通关10次SP5",
 	count_inherit = 0,
-	sub_type = 21,
+	sub_type = 1020,
 	target_id_2 = "",
 	story_icon = "",
 	is_head = 1,
@@ -90091,7 +88164,6 @@ _G.pg.base.task_data_template[20001] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20002] = {
 	name = "『偶像V3』累计通关20次SP5",
 	guild_coin_award = 0,
@@ -90099,7 +88171,7 @@ _G.pg.base.task_data_template[20002] = {
 	type = 6,
 	desc = "累计通关20次SP5",
 	count_inherit = 0,
-	sub_type = 21,
+	sub_type = 1020,
 	target_id_2 = "",
 	story_icon = "",
 	is_head = 1,
@@ -90133,7 +88205,6 @@ _G.pg.base.task_data_template[20002] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20003] = {
 	name = "『偶像V3』累计通关30次SP5",
 	guild_coin_award = 0,
@@ -90141,7 +88212,7 @@ _G.pg.base.task_data_template[20003] = {
 	type = 6,
 	desc = "累计通关30次SP5",
 	count_inherit = 0,
-	sub_type = 21,
+	sub_type = 1020,
 	target_id_2 = "",
 	story_icon = "",
 	is_head = 1,
@@ -90175,7 +88246,6 @@ _G.pg.base.task_data_template[20003] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20004] = {
 	name = "『偶像V3』累计PT达到3500",
 	guild_coin_award = 0,
@@ -90217,7 +88287,6 @@ _G.pg.base.task_data_template[20004] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20005] = {
 	name = "『偶像V3』累计PT达到7500",
 	guild_coin_award = 0,
@@ -90259,7 +88328,6 @@ _G.pg.base.task_data_template[20005] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20006] = {
 	name = "『偶像V3』累计PT达到10500",
 	guild_coin_award = 0,
@@ -90301,7 +88369,6 @@ _G.pg.base.task_data_template[20006] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[20007] = {
 	name = "小信浓npc临时加入",
 	guild_coin_award = 0,
@@ -90341,7 +88408,6 @@ _G.pg.base.task_data_template[20007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20009] = {
 	name = "『偶像V3』通关任务10次",
 	guild_coin_award = 0,
@@ -90388,7 +88454,6 @@ _G.pg.base.task_data_template[20009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20010] = {
 	name = "『偶像V3』通关任务30次",
 	guild_coin_award = 0,
@@ -90435,7 +88500,6 @@ _G.pg.base.task_data_template[20010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20011] = {
 	name = "『偶像V3』通关任务60次",
 	guild_coin_award = 0,
@@ -90482,7 +88546,6 @@ _G.pg.base.task_data_template[20011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[20012] = {
 	name = "『偶像V3』通关ISP1",
 	guild_coin_award = 0,
@@ -90536,7 +88599,6 @@ _G.pg.base.task_data_template[20012] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[20013] = {
 	name = "『偶像V3』通关ISP2",
 	guild_coin_award = 0,
@@ -90590,7 +88652,6 @@ _G.pg.base.task_data_template[20013] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[20014] = {
 	name = "『偶像V3』通关ISP3",
 	guild_coin_award = 0,
@@ -90644,7 +88705,6 @@ _G.pg.base.task_data_template[20014] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[20015] = {
 	name = "『偶像V3』通关ISP4",
 	guild_coin_award = 0,
@@ -90698,7 +88758,6 @@ _G.pg.base.task_data_template[20015] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[20016] = {
 	name = "『偶像V3』通关ISP5",
 	guild_coin_award = 0,
@@ -90752,7 +88811,6 @@ _G.pg.base.task_data_template[20016] = {
 		special = false
 	}
 }
-
 _G.pg.base.task_data_template[20017] = {
 	name = "『偶像V3』通关ISP6",
 	guild_coin_award = 0,
@@ -90806,7 +88864,45 @@ _G.pg.base.task_data_template[20017] = {
 		special = false
 	}
 }
-
+_G.pg.base.task_data_template[20018] = {
+	name = "小斯佩npc临时加入",
+	guild_coin_award = 0,
+	award = 902170,
+	type = 6,
+	desc = "不该看到",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20018,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			403131,
+			1
+		}
+	}
+}
 _G.pg.base.task_data_template[31017] = {
 	name = "殿堂奖励第一名",
 	guild_coin_award = 0,
@@ -90846,7 +88942,6 @@ _G.pg.base.task_data_template[31017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31018] = {
 	name = "殿堂奖励第二名",
 	guild_coin_award = 0,
@@ -90886,7 +88981,6 @@ _G.pg.base.task_data_template[31018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31019] = {
 	name = "殿堂奖励第三名",
 	guild_coin_award = 0,
@@ -90926,7 +89020,6 @@ _G.pg.base.task_data_template[31019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31042] = {
 	name = "殿堂奖励第一名 2021",
 	guild_coin_award = 0,
@@ -90966,7 +89059,6 @@ _G.pg.base.task_data_template[31042] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31043] = {
 	name = "殿堂奖励第二名 2021",
 	guild_coin_award = 0,
@@ -91006,7 +89098,6 @@ _G.pg.base.task_data_template[31043] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31044] = {
 	name = "殿堂奖励第三名 2021",
 	guild_coin_award = 0,
@@ -91046,7 +89137,6 @@ _G.pg.base.task_data_template[31044] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31045] = {
 	name = "殿堂奖励第一名 2023",
 	guild_coin_award = 0,
@@ -91086,7 +89176,6 @@ _G.pg.base.task_data_template[31045] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31046] = {
 	name = "殿堂奖励第二名 2023",
 	guild_coin_award = 0,
@@ -91126,7 +89215,6 @@ _G.pg.base.task_data_template[31046] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[31047] = {
 	name = "殿堂奖励第三名 2023",
 	guild_coin_award = 0,
@@ -91166,7 +89254,6 @@ _G.pg.base.task_data_template[31047] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35000] = {
 	name = "【常驻活动】季夏(?)攻势1",
 	guild_coin_award = 0,
@@ -91206,7 +89293,6 @@ _G.pg.base.task_data_template[35000] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35001] = {
 	name = "【常驻活动】季夏(?)攻势2",
 	guild_coin_award = 0,
@@ -91246,7 +89332,6 @@ _G.pg.base.task_data_template[35001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35002] = {
 	name = "【常驻活动】季夏(?)攻势3",
 	guild_coin_award = 0,
@@ -91288,7 +89373,6 @@ _G.pg.base.task_data_template[35002] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35003] = {
 	name = "【常驻活动】季夏(?)攻势4",
 	guild_coin_award = 0,
@@ -91328,7 +89412,6 @@ _G.pg.base.task_data_template[35003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35004] = {
 	name = "【常驻活动】季夏(?)攻势5",
 	guild_coin_award = 0,
@@ -91368,7 +89451,6 @@ _G.pg.base.task_data_template[35004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35005] = {
 	name = "【常驻活动】季夏(?)攻势6",
 	guild_coin_award = 0,
@@ -91408,7 +89490,6 @@ _G.pg.base.task_data_template[35005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35006] = {
 	name = "【常驻活动】季夏(?)攻势7",
 	guild_coin_award = 0,
@@ -91448,7 +89529,6 @@ _G.pg.base.task_data_template[35006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35007] = {
 	name = "【常驻活动】克雷文啦啦队1",
 	guild_coin_award = 0,
@@ -91490,7 +89570,6 @@ _G.pg.base.task_data_template[35007] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35008] = {
 	name = "【常驻活动】克雷文啦啦队2",
 	guild_coin_award = 0,
@@ -91530,7 +89609,6 @@ _G.pg.base.task_data_template[35008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35009] = {
 	name = "【常驻活动】克雷文啦啦队3",
 	guild_coin_award = 0,
@@ -91570,7 +89648,6 @@ _G.pg.base.task_data_template[35009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35010] = {
 	name = "【常驻活动】克雷文啦啦队4",
 	guild_coin_award = 0,
@@ -91610,7 +89687,6 @@ _G.pg.base.task_data_template[35010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35011] = {
 	name = "【常驻活动】克雷文啦啦队5",
 	guild_coin_award = 0,
@@ -91650,7 +89726,6 @@ _G.pg.base.task_data_template[35011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35012] = {
 	name = "【常驻活动】克雷文啦啦队6",
 	guild_coin_award = 0,
@@ -91690,7 +89765,6 @@ _G.pg.base.task_data_template[35012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35013] = {
 	name = "【常驻活动】克雷文啦啦队7",
 	guild_coin_award = 0,
@@ -91730,7 +89804,6 @@ _G.pg.base.task_data_template[35013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35014] = {
 	name = "【常驻活动】克雷文啦啦队8",
 	guild_coin_award = 0,
@@ -91770,7 +89843,6 @@ _G.pg.base.task_data_template[35014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35015] = {
 	name = "【常驻活动】克雷文啦啦队9",
 	guild_coin_award = 0,
@@ -91810,7 +89882,6 @@ _G.pg.base.task_data_template[35015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35016] = {
 	name = "【常驻活动】克雷文啦啦队10",
 	guild_coin_award = 0,
@@ -91850,7 +89921,6 @@ _G.pg.base.task_data_template[35016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35017] = {
 	name = "【常驻活动】克雷文啦啦队11",
 	guild_coin_award = 0,
@@ -91890,7 +89960,6 @@ _G.pg.base.task_data_template[35017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35018] = {
 	name = "【常驻活动】克雷文啦啦队12",
 	guild_coin_award = 0,
@@ -91930,7 +89999,6 @@ _G.pg.base.task_data_template[35018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35019] = {
 	name = "【常驻活动】克雷文啦啦队13",
 	guild_coin_award = 0,
@@ -91972,7 +90040,6 @@ _G.pg.base.task_data_template[35019] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35020] = {
 	name = "【常驻活动】克雷文啦啦队14",
 	guild_coin_award = 0,
@@ -92012,7 +90079,6 @@ _G.pg.base.task_data_template[35020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35021] = {
 	name = "【常驻活动】克雷文啦啦队15",
 	guild_coin_award = 0,
@@ -92054,7 +90120,6 @@ _G.pg.base.task_data_template[35021] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35022] = {
 	name = "【常驻活动】克雷文啦啦队16",
 	guild_coin_award = 0,
@@ -92094,7 +90159,6 @@ _G.pg.base.task_data_template[35022] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35023] = {
 	name = "【常驻活动】克雷文啦啦队17",
 	guild_coin_award = 0,
@@ -92134,7 +90198,6 @@ _G.pg.base.task_data_template[35023] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35024] = {
 	name = "【常驻活动】克雷文啦啦队18",
 	guild_coin_award = 0,
@@ -92174,7 +90237,6 @@ _G.pg.base.task_data_template[35024] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35025] = {
 	name = "【常驻活动】克雷文啦啦队19",
 	guild_coin_award = 0,
@@ -92214,7 +90276,6 @@ _G.pg.base.task_data_template[35025] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35026] = {
 	name = "【常驻活动】克雷文啦啦队20",
 	guild_coin_award = 0,
@@ -92254,7 +90315,6 @@ _G.pg.base.task_data_template[35026] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35027] = {
 	name = "【常驻活动】吸血鬼登录1",
 	guild_coin_award = 0,
@@ -92296,7 +90356,6 @@ _G.pg.base.task_data_template[35027] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35028] = {
 	name = "【常驻活动】吸血鬼登录2",
 	guild_coin_award = 0,
@@ -92338,7 +90397,6 @@ _G.pg.base.task_data_template[35028] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35029] = {
 	name = "【常驻活动】吸血鬼登录3",
 	guild_coin_award = 0,
@@ -92380,7 +90438,6 @@ _G.pg.base.task_data_template[35029] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35030] = {
 	name = "【常驻活动】吸血鬼登录4",
 	guild_coin_award = 0,
@@ -92422,7 +90479,6 @@ _G.pg.base.task_data_template[35030] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35031] = {
 	name = "【常驻活动】吸血鬼登录5",
 	guild_coin_award = 0,
@@ -92464,7 +90520,6 @@ _G.pg.base.task_data_template[35031] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35032] = {
 	name = "【常驻活动】吸血鬼登录6",
 	guild_coin_award = 0,
@@ -92506,7 +90561,6 @@ _G.pg.base.task_data_template[35032] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35033] = {
 	name = "【常驻活动】吸血鬼登录7",
 	guild_coin_award = 0,
@@ -92548,7 +90602,6 @@ _G.pg.base.task_data_template[35033] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35034] = {
 	name = "【常驻活动】小天鹅皮肤任务1",
 	guild_coin_award = 0,
@@ -92590,7 +90643,6 @@ _G.pg.base.task_data_template[35034] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35035] = {
 	name = "【常驻活动】小天鹅皮肤任务2",
 	guild_coin_award = 0,
@@ -92630,7 +90682,6 @@ _G.pg.base.task_data_template[35035] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35036] = {
 	name = "【常驻活动】小天鹅皮肤任务3",
 	guild_coin_award = 0,
@@ -92670,7 +90721,6 @@ _G.pg.base.task_data_template[35036] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35037] = {
 	name = "【常驻活动】小天鹅皮肤任务4",
 	guild_coin_award = 0,
@@ -92710,7 +90760,6 @@ _G.pg.base.task_data_template[35037] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35038] = {
 	name = "【常驻活动】小天鹅皮肤任务5",
 	guild_coin_award = 0,
@@ -92750,7 +90799,6 @@ _G.pg.base.task_data_template[35038] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35039] = {
 	name = "【常驻活动】小天鹅皮肤任务6",
 	guild_coin_award = 0,
@@ -92790,7 +90838,6 @@ _G.pg.base.task_data_template[35039] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35040] = {
 	name = "【常驻活动】小天鹅皮肤任务7",
 	guild_coin_award = 0,
@@ -92830,7 +90877,6 @@ _G.pg.base.task_data_template[35040] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35041] = {
 	name = "【常驻活动】小天鹅皮肤任务8",
 	guild_coin_award = 0,
@@ -92870,7 +90916,6 @@ _G.pg.base.task_data_template[35041] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35042] = {
 	name = "【常驻活动】小天鹅皮肤任务9",
 	guild_coin_award = 0,
@@ -92910,7 +90955,6 @@ _G.pg.base.task_data_template[35042] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35043] = {
 	name = "【常驻活动】小天鹅皮肤任务10",
 	guild_coin_award = 0,
@@ -92950,7 +90994,6 @@ _G.pg.base.task_data_template[35043] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35044] = {
 	name = "【常驻活动】小天鹅皮肤任务11",
 	guild_coin_award = 0,
@@ -92990,7 +91033,6 @@ _G.pg.base.task_data_template[35044] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35045] = {
 	name = "【常驻活动】小天鹅皮肤任务12",
 	guild_coin_award = 0,
@@ -93030,7 +91072,6 @@ _G.pg.base.task_data_template[35045] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35046] = {
 	name = "【常驻活动】小天鹅皮肤任务13",
 	guild_coin_award = 0,
@@ -93072,7 +91113,6 @@ _G.pg.base.task_data_template[35046] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35047] = {
 	name = "【常驻活动】小天鹅皮肤任务14",
 	guild_coin_award = 0,
@@ -93112,7 +91152,6 @@ _G.pg.base.task_data_template[35047] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35048] = {
 	name = "【常驻活动】小天鹅皮肤任务15",
 	guild_coin_award = 0,
@@ -93154,7 +91193,6 @@ _G.pg.base.task_data_template[35048] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35049] = {
 	name = "【常驻活动】小天鹅皮肤任务16",
 	guild_coin_award = 0,
@@ -93194,7 +91232,6 @@ _G.pg.base.task_data_template[35049] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35050] = {
 	name = "【常驻活动】小天鹅皮肤任务17",
 	guild_coin_award = 0,
@@ -93234,7 +91271,6 @@ _G.pg.base.task_data_template[35050] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35051] = {
 	name = "【常驻活动】小天鹅皮肤任务18",
 	guild_coin_award = 0,
@@ -93274,7 +91310,6 @@ _G.pg.base.task_data_template[35051] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35052] = {
 	name = "【常驻活动】小天鹅皮肤任务19",
 	guild_coin_award = 0,
@@ -93314,7 +91349,6 @@ _G.pg.base.task_data_template[35052] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35053] = {
 	name = "【常驻活动】小天鹅皮肤任务20",
 	guild_coin_award = 0,
@@ -93354,7 +91388,6 @@ _G.pg.base.task_data_template[35053] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35054] = {
 	name = "【常驻活动】送大潮礼服活动任务1",
 	guild_coin_award = 0,
@@ -93396,7 +91429,6 @@ _G.pg.base.task_data_template[35054] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35055] = {
 	name = "【常驻活动】送大潮礼服活动任务1",
 	guild_coin_award = 0,
@@ -93436,7 +91468,6 @@ _G.pg.base.task_data_template[35055] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35056] = {
 	name = "【常驻活动】送大潮礼服活动任务2",
 	guild_coin_award = 0,
@@ -93476,7 +91507,6 @@ _G.pg.base.task_data_template[35056] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35057] = {
 	name = "【常驻活动】送大潮礼服活动任务2",
 	guild_coin_award = 0,
@@ -93516,7 +91546,6 @@ _G.pg.base.task_data_template[35057] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35058] = {
 	name = "【常驻活动】送大潮礼服活动任务3",
 	guild_coin_award = 0,
@@ -93556,7 +91585,6 @@ _G.pg.base.task_data_template[35058] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35059] = {
 	name = "【常驻活动】送大潮礼服活动任务3",
 	guild_coin_award = 0,
@@ -93596,7 +91624,6 @@ _G.pg.base.task_data_template[35059] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35060] = {
 	name = "【常驻活动】送大潮礼服活动任务4",
 	guild_coin_award = 0,
@@ -93636,7 +91663,6 @@ _G.pg.base.task_data_template[35060] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35061] = {
 	name = "【常驻活动】送大潮礼服活动任务4",
 	guild_coin_award = 0,
@@ -93676,7 +91702,6 @@ _G.pg.base.task_data_template[35061] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35062] = {
 	name = "【常驻活动】送大潮礼服活动任务5",
 	guild_coin_award = 0,
@@ -93716,7 +91741,6 @@ _G.pg.base.task_data_template[35062] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35063] = {
 	name = "【常驻活动】送大潮礼服活动任务5",
 	guild_coin_award = 0,
@@ -93756,7 +91780,6 @@ _G.pg.base.task_data_template[35063] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35064] = {
 	name = "【常驻活动】送大潮礼服活动任务6",
 	guild_coin_award = 0,
@@ -93796,7 +91819,6 @@ _G.pg.base.task_data_template[35064] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35065] = {
 	name = "【常驻活动】送大潮礼服活动任务6",
 	guild_coin_award = 0,
@@ -93836,7 +91858,6 @@ _G.pg.base.task_data_template[35065] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35066] = {
 	name = "【常驻活动】送大潮礼服活动任务7",
 	guild_coin_award = 0,
@@ -93878,7 +91899,6 @@ _G.pg.base.task_data_template[35066] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35067] = {
 	name = "【常驻活动】送大潮礼服活动任务7",
 	guild_coin_award = 0,
@@ -93918,7 +91938,6 @@ _G.pg.base.task_data_template[35067] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35068] = {
 	name = "【常驻活动】山城礼服皮肤任务1",
 	guild_coin_award = 0,
@@ -93960,7 +91979,6 @@ _G.pg.base.task_data_template[35068] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35069] = {
 	name = "【常驻活动】山城礼服皮肤任务2",
 	guild_coin_award = 0,
@@ -94000,7 +92018,6 @@ _G.pg.base.task_data_template[35069] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35070] = {
 	name = "【常驻活动】山城礼服皮肤任务3",
 	guild_coin_award = 0,
@@ -94040,7 +92057,6 @@ _G.pg.base.task_data_template[35070] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35071] = {
 	name = "【常驻活动】山城礼服皮肤任务4",
 	guild_coin_award = 0,
@@ -94080,7 +92096,6 @@ _G.pg.base.task_data_template[35071] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35072] = {
 	name = "【常驻活动】山城礼服皮肤任务5",
 	guild_coin_award = 0,
@@ -94120,7 +92135,6 @@ _G.pg.base.task_data_template[35072] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35073] = {
 	name = "【常驻活动】山城礼服皮肤任务6",
 	guild_coin_award = 0,
@@ -94160,7 +92174,6 @@ _G.pg.base.task_data_template[35073] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35074] = {
 	name = "【常驻活动】山城礼服皮肤任务7",
 	guild_coin_award = 0,
@@ -94200,7 +92213,6 @@ _G.pg.base.task_data_template[35074] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35075] = {
 	name = "【常驻活动】山城礼服皮肤任务8",
 	guild_coin_award = 0,
@@ -94240,7 +92252,6 @@ _G.pg.base.task_data_template[35075] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35076] = {
 	name = "【常驻活动】山城礼服皮肤任务9",
 	guild_coin_award = 0,
@@ -94280,7 +92291,6 @@ _G.pg.base.task_data_template[35076] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35077] = {
 	name = "【常驻活动】山城礼服皮肤任务10",
 	guild_coin_award = 0,
@@ -94320,7 +92330,6 @@ _G.pg.base.task_data_template[35077] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35078] = {
 	name = "【常驻活动】山城礼服皮肤任务11",
 	guild_coin_award = 0,
@@ -94360,7 +92369,6 @@ _G.pg.base.task_data_template[35078] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35079] = {
 	name = "【常驻活动】山城礼服皮肤任务12",
 	guild_coin_award = 0,
@@ -94400,7 +92408,6 @@ _G.pg.base.task_data_template[35079] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35080] = {
 	name = "【常驻活动】山城礼服皮肤任务13",
 	guild_coin_award = 0,
@@ -94442,7 +92449,6 @@ _G.pg.base.task_data_template[35080] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35081] = {
 	name = "【常驻活动】山城礼服皮肤任务14",
 	guild_coin_award = 0,
@@ -94482,7 +92488,6 @@ _G.pg.base.task_data_template[35081] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35082] = {
 	name = "【常驻活动】若叶圣诞皮肤1",
 	guild_coin_award = 0,
@@ -94524,7 +92529,6 @@ _G.pg.base.task_data_template[35082] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35083] = {
 	name = "【常驻活动】若叶圣诞皮肤2",
 	guild_coin_award = 0,
@@ -94564,7 +92568,6 @@ _G.pg.base.task_data_template[35083] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35084] = {
 	name = "【常驻活动】若叶圣诞皮肤3",
 	guild_coin_award = 0,
@@ -94604,7 +92607,6 @@ _G.pg.base.task_data_template[35084] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35085] = {
 	name = "【常驻活动】若叶圣诞皮肤4",
 	guild_coin_award = 0,
@@ -94644,7 +92646,6 @@ _G.pg.base.task_data_template[35085] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35086] = {
 	name = "【常驻活动】若叶圣诞皮肤5",
 	guild_coin_award = 0,
@@ -94684,7 +92685,6 @@ _G.pg.base.task_data_template[35086] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35087] = {
 	name = "【常驻活动】若叶圣诞皮肤6",
 	guild_coin_award = 0,
@@ -94724,7 +92724,6 @@ _G.pg.base.task_data_template[35087] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35088] = {
 	name = "【常驻活动】若叶圣诞皮肤7",
 	guild_coin_award = 0,
@@ -94764,7 +92763,6 @@ _G.pg.base.task_data_template[35088] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35089] = {
 	name = "【常驻活动】若叶圣诞皮肤8",
 	guild_coin_award = 0,
@@ -94804,7 +92802,6 @@ _G.pg.base.task_data_template[35089] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35090] = {
 	name = "【常驻活动】若叶圣诞皮肤9",
 	guild_coin_award = 0,
@@ -94844,7 +92841,6 @@ _G.pg.base.task_data_template[35090] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35091] = {
 	name = "【常驻活动】若叶圣诞皮肤10",
 	guild_coin_award = 0,
@@ -94884,7 +92880,6 @@ _G.pg.base.task_data_template[35091] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35092] = {
 	name = "【常驻活动】若叶圣诞皮肤11",
 	guild_coin_award = 0,
@@ -94924,7 +92919,6 @@ _G.pg.base.task_data_template[35092] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35093] = {
 	name = "【常驻活动】若叶圣诞皮肤12",
 	guild_coin_award = 0,
@@ -94964,7 +92958,6 @@ _G.pg.base.task_data_template[35093] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35094] = {
 	name = "【常驻活动】若叶圣诞皮肤13",
 	guild_coin_award = 0,
@@ -95004,7 +92997,6 @@ _G.pg.base.task_data_template[35094] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35095] = {
 	name = "【常驻活动】若叶圣诞皮肤14",
 	guild_coin_award = 0,
@@ -95046,7 +93038,6 @@ _G.pg.base.task_data_template[35095] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35096] = {
 	name = "【常驻活动】大潮圣诞皮肤1",
 	guild_coin_award = 0,
@@ -95088,7 +93079,6 @@ _G.pg.base.task_data_template[35096] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35097] = {
 	name = "【常驻活动】大潮圣诞皮肤2",
 	guild_coin_award = 0,
@@ -95128,7 +93118,6 @@ _G.pg.base.task_data_template[35097] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35098] = {
 	name = "【常驻活动】大潮圣诞皮肤3",
 	guild_coin_award = 0,
@@ -95168,7 +93157,6 @@ _G.pg.base.task_data_template[35098] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35099] = {
 	name = "【常驻活动】大潮圣诞皮肤4",
 	guild_coin_award = 0,
@@ -95208,7 +93196,6 @@ _G.pg.base.task_data_template[35099] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35100] = {
 	name = "【常驻活动】大潮圣诞皮肤5",
 	guild_coin_award = 0,
@@ -95248,7 +93235,6 @@ _G.pg.base.task_data_template[35100] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35101] = {
 	name = "【常驻活动】大潮圣诞皮肤6",
 	guild_coin_award = 0,
@@ -95288,7 +93274,6 @@ _G.pg.base.task_data_template[35101] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35102] = {
 	name = "【常驻活动】大潮圣诞皮肤7",
 	guild_coin_award = 0,
@@ -95328,7 +93313,6 @@ _G.pg.base.task_data_template[35102] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35103] = {
 	name = "【常驻活动】大潮圣诞皮肤8",
 	guild_coin_award = 0,
@@ -95368,7 +93352,6 @@ _G.pg.base.task_data_template[35103] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35104] = {
 	name = "【常驻活动】大潮圣诞皮肤9",
 	guild_coin_award = 0,
@@ -95408,7 +93391,6 @@ _G.pg.base.task_data_template[35104] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35105] = {
 	name = "【常驻活动】大潮圣诞皮肤10",
 	guild_coin_award = 0,
@@ -95448,7 +93430,6 @@ _G.pg.base.task_data_template[35105] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35106] = {
 	name = "【常驻活动】大潮圣诞皮肤11",
 	guild_coin_award = 0,
@@ -95488,7 +93469,6 @@ _G.pg.base.task_data_template[35106] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35107] = {
 	name = "【常驻活动】大潮圣诞皮肤12",
 	guild_coin_award = 0,
@@ -95530,7 +93510,6 @@ _G.pg.base.task_data_template[35107] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35108] = {
 	name = "【常驻活动】大潮圣诞皮肤13",
 	guild_coin_award = 0,
@@ -95572,7 +93551,6 @@ _G.pg.base.task_data_template[35108] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35109] = {
 	name = "【常驻活动】大潮圣诞皮肤14",
 	guild_coin_award = 0,
@@ -95612,7 +93590,6 @@ _G.pg.base.task_data_template[35109] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35110] = {
 	name = "【常驻活动】格里德利圣诞皮肤1",
 	guild_coin_award = 0,
@@ -95652,7 +93629,6 @@ _G.pg.base.task_data_template[35110] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35111] = {
 	name = "【常驻活动】格里德利圣诞皮肤2",
 	guild_coin_award = 0,
@@ -95692,7 +93668,6 @@ _G.pg.base.task_data_template[35111] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35112] = {
 	name = "【常驻活动】格里德利圣诞皮肤3",
 	guild_coin_award = 0,
@@ -95734,7 +93709,6 @@ _G.pg.base.task_data_template[35112] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35113] = {
 	name = "【常驻活动】格里德利圣诞皮肤4",
 	guild_coin_award = 0,
@@ -95774,7 +93748,6 @@ _G.pg.base.task_data_template[35113] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35114] = {
 	name = "【常驻活动】格里德利圣诞皮肤5",
 	guild_coin_award = 0,
@@ -95814,7 +93787,6 @@ _G.pg.base.task_data_template[35114] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35115] = {
 	name = "【常驻活动】格里德利圣诞皮肤6",
 	guild_coin_award = 0,
@@ -95854,7 +93826,6 @@ _G.pg.base.task_data_template[35115] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35116] = {
 	name = "【常驻活动】格里德利圣诞皮肤7",
 	guild_coin_award = 0,
@@ -95894,7 +93865,6 @@ _G.pg.base.task_data_template[35116] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35117] = {
 	name = "【常驻活动】格里德利圣诞皮肤8",
 	guild_coin_award = 0,
@@ -95934,7 +93904,6 @@ _G.pg.base.task_data_template[35117] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35118] = {
 	name = "【常驻活动】标枪漫画九日任务1",
 	guild_coin_award = 0,
@@ -95976,7 +93945,6 @@ _G.pg.base.task_data_template[35118] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35119] = {
 	name = "【常驻活动】标枪漫画九日任务2",
 	guild_coin_award = 0,
@@ -96016,7 +93984,6 @@ _G.pg.base.task_data_template[35119] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35120] = {
 	name = "【常驻活动】标枪漫画九日任务3",
 	guild_coin_award = 0,
@@ -96056,7 +94023,6 @@ _G.pg.base.task_data_template[35120] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35121] = {
 	name = "【常驻活动】标枪漫画九日任务4",
 	guild_coin_award = 0,
@@ -96096,7 +94062,6 @@ _G.pg.base.task_data_template[35121] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35122] = {
 	name = "【常驻活动】标枪漫画九日任务5",
 	guild_coin_award = 0,
@@ -96136,7 +94101,6 @@ _G.pg.base.task_data_template[35122] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35123] = {
 	name = "【常驻活动】标枪漫画九日任务6",
 	guild_coin_award = 0,
@@ -96176,7 +94140,6 @@ _G.pg.base.task_data_template[35123] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35124] = {
 	name = "【常驻活动】标枪漫画九日任务7",
 	guild_coin_award = 0,
@@ -96216,7 +94179,6 @@ _G.pg.base.task_data_template[35124] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35125] = {
 	name = "【常驻活动】标枪漫画九日任务8",
 	guild_coin_award = 0,
@@ -96256,7 +94218,6 @@ _G.pg.base.task_data_template[35125] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35126] = {
 	name = "【常驻活动】标枪漫画九日任务9",
 	guild_coin_award = 0,
@@ -96296,7 +94257,6 @@ _G.pg.base.task_data_template[35126] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35127] = {
 	name = "【常驻活动】标枪漫画九日任务10",
 	guild_coin_award = 0,
@@ -96336,7 +94296,6 @@ _G.pg.base.task_data_template[35127] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35128] = {
 	name = "【常驻活动】标枪漫画九日任务11",
 	guild_coin_award = 0,
@@ -96376,7 +94335,6 @@ _G.pg.base.task_data_template[35128] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35129] = {
 	name = "【常驻活动】标枪漫画九日任务12",
 	guild_coin_award = 0,
@@ -96416,7 +94374,6 @@ _G.pg.base.task_data_template[35129] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35130] = {
 	name = "【常驻活动】标枪漫画九日任务13",
 	guild_coin_award = 0,
@@ -96456,7 +94413,6 @@ _G.pg.base.task_data_template[35130] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35131] = {
 	name = "【常驻活动】标枪漫画九日任务14",
 	guild_coin_award = 0,
@@ -96498,7 +94454,6 @@ _G.pg.base.task_data_template[35131] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35132] = {
 	name = "【常驻活动】标枪漫画九日任务15",
 	guild_coin_award = 0,
@@ -96540,7 +94495,6 @@ _G.pg.base.task_data_template[35132] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35133] = {
 	name = "【常驻活动】标枪漫画九日任务16",
 	guild_coin_award = 0,
@@ -96580,7 +94534,6 @@ _G.pg.base.task_data_template[35133] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35134] = {
 	name = "【常驻活动】标枪漫画九日任务17",
 	guild_coin_award = 0,
@@ -96620,7 +94573,6 @@ _G.pg.base.task_data_template[35134] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35135] = {
 	name = "【常驻活动】标枪漫画九日任务18",
 	guild_coin_award = 0,
@@ -96660,7 +94612,6 @@ _G.pg.base.task_data_template[35135] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35136] = {
 	name = "【常驻活动】u73皮肤-九日任务1",
 	guild_coin_award = 0,
@@ -96702,7 +94653,6 @@ _G.pg.base.task_data_template[35136] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35137] = {
 	name = "【常驻活动】u73皮肤-九日任务2",
 	guild_coin_award = 0,
@@ -96742,7 +94692,6 @@ _G.pg.base.task_data_template[35137] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35138] = {
 	name = "【常驻活动】u73皮肤-九日任务3",
 	guild_coin_award = 0,
@@ -96782,7 +94731,6 @@ _G.pg.base.task_data_template[35138] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35139] = {
 	name = "【常驻活动】u73皮肤-九日任务4",
 	guild_coin_award = 0,
@@ -96822,7 +94770,6 @@ _G.pg.base.task_data_template[35139] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35140] = {
 	name = "【常驻活动】u73皮肤-九日任务5",
 	guild_coin_award = 0,
@@ -96862,7 +94809,6 @@ _G.pg.base.task_data_template[35140] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35141] = {
 	name = "【常驻活动】u73皮肤-九日任务6",
 	guild_coin_award = 0,
@@ -96902,7 +94848,6 @@ _G.pg.base.task_data_template[35141] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35142] = {
 	name = "【常驻活动】u73皮肤-九日任务7",
 	guild_coin_award = 0,
@@ -96942,7 +94887,6 @@ _G.pg.base.task_data_template[35142] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35143] = {
 	name = "【常驻活动】u73皮肤-九日任务8",
 	guild_coin_award = 0,
@@ -96982,7 +94926,6 @@ _G.pg.base.task_data_template[35143] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35144] = {
 	name = "【常驻活动】u73皮肤-九日任务9",
 	guild_coin_award = 0,
@@ -97022,7 +94965,6 @@ _G.pg.base.task_data_template[35144] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35145] = {
 	name = "【常驻活动】u73皮肤-九日任务10",
 	guild_coin_award = 0,
@@ -97062,7 +95004,6 @@ _G.pg.base.task_data_template[35145] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35146] = {
 	name = "【常驻活动】u73皮肤-九日任务11",
 	guild_coin_award = 0,
@@ -97102,7 +95043,6 @@ _G.pg.base.task_data_template[35146] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35147] = {
 	name = "【常驻活动】u73皮肤-九日任务12",
 	guild_coin_award = 0,
@@ -97142,7 +95082,6 @@ _G.pg.base.task_data_template[35147] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35148] = {
 	name = "【常驻活动】u73皮肤-九日任务13",
 	guild_coin_award = 0,
@@ -97182,7 +95121,6 @@ _G.pg.base.task_data_template[35148] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35149] = {
 	name = "【常驻活动】u73皮肤-九日任务14",
 	guild_coin_award = 0,
@@ -97224,7 +95162,6 @@ _G.pg.base.task_data_template[35149] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35150] = {
 	name = "【常驻活动】u73皮肤-九日任务15",
 	guild_coin_award = 0,
@@ -97264,7 +95201,6 @@ _G.pg.base.task_data_template[35150] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35151] = {
 	name = "【常驻活动】u73皮肤-九日任务16",
 	guild_coin_award = 0,
@@ -97304,7 +95240,6 @@ _G.pg.base.task_data_template[35151] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35152] = {
 	name = "【常驻活动】u73皮肤-九日任务17",
 	guild_coin_award = 0,
@@ -97344,7 +95279,6 @@ _G.pg.base.task_data_template[35152] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35153] = {
 	name = "【常驻活动】u73皮肤-九日任务18",
 	guild_coin_award = 0,
@@ -97384,7 +95318,6 @@ _G.pg.base.task_data_template[35153] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35154] = {
 	name = "【常驻活动】棘鳍礼服活动1",
 	guild_coin_award = 0,
@@ -97426,7 +95359,6 @@ _G.pg.base.task_data_template[35154] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35155] = {
 	name = "【常驻活动】棘鳍礼服活动1",
 	guild_coin_award = 0,
@@ -97466,7 +95398,6 @@ _G.pg.base.task_data_template[35155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35156] = {
 	name = "【常驻活动】棘鳍礼服活动2",
 	guild_coin_award = 0,
@@ -97506,7 +95437,6 @@ _G.pg.base.task_data_template[35156] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35157] = {
 	name = "【常驻活动】棘鳍礼服活动2",
 	guild_coin_award = 0,
@@ -97546,7 +95476,6 @@ _G.pg.base.task_data_template[35157] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35158] = {
 	name = "【常驻活动】棘鳍礼服活动3",
 	guild_coin_award = 0,
@@ -97586,7 +95515,6 @@ _G.pg.base.task_data_template[35158] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35159] = {
 	name = "【常驻活动】棘鳍礼服活动3",
 	guild_coin_award = 0,
@@ -97626,7 +95554,6 @@ _G.pg.base.task_data_template[35159] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35160] = {
 	name = "【常驻活动】棘鳍礼服活动4",
 	guild_coin_award = 0,
@@ -97666,7 +95593,6 @@ _G.pg.base.task_data_template[35160] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35161] = {
 	name = "【常驻活动】棘鳍礼服活动4",
 	guild_coin_award = 0,
@@ -97706,7 +95632,6 @@ _G.pg.base.task_data_template[35161] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35162] = {
 	name = "【常驻活动】棘鳍礼服活动5",
 	guild_coin_award = 0,
@@ -97746,7 +95671,6 @@ _G.pg.base.task_data_template[35162] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35163] = {
 	name = "【常驻活动】棘鳍礼服活动5",
 	guild_coin_award = 0,
@@ -97786,7 +95710,6 @@ _G.pg.base.task_data_template[35163] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35164] = {
 	name = "【常驻活动】棘鳍礼服活动6",
 	guild_coin_award = 0,
@@ -97826,7 +95749,6 @@ _G.pg.base.task_data_template[35164] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35165] = {
 	name = "【常驻活动】棘鳍礼服活动6",
 	guild_coin_award = 0,
@@ -97866,7 +95788,6 @@ _G.pg.base.task_data_template[35165] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35166] = {
 	name = "【常驻活动】棘鳍礼服活动7",
 	guild_coin_award = 0,
@@ -97906,7 +95827,6 @@ _G.pg.base.task_data_template[35166] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35167] = {
 	name = "【常驻活动】棘鳍礼服活动7",
 	guild_coin_award = 0,
@@ -97948,7 +95868,6 @@ _G.pg.base.task_data_template[35167] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35168] = {
 	name = "【常驻活动】吹雪偶像皮肤活动1",
 	guild_coin_award = 0,
@@ -97990,7 +95909,6 @@ _G.pg.base.task_data_template[35168] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35169] = {
 	name = "【常驻活动】吹雪偶像皮肤活动1",
 	guild_coin_award = 0,
@@ -98030,7 +95948,6 @@ _G.pg.base.task_data_template[35169] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35170] = {
 	name = "【常驻活动】吹雪偶像皮肤活动2",
 	guild_coin_award = 0,
@@ -98070,7 +95987,6 @@ _G.pg.base.task_data_template[35170] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35171] = {
 	name = "【常驻活动】吹雪偶像皮肤活动2",
 	guild_coin_award = 0,
@@ -98110,7 +96026,6 @@ _G.pg.base.task_data_template[35171] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35172] = {
 	name = "【常驻活动】吹雪偶像皮肤活动3",
 	guild_coin_award = 0,
@@ -98150,7 +96065,6 @@ _G.pg.base.task_data_template[35172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35173] = {
 	name = "【常驻活动】吹雪偶像皮肤活动3",
 	guild_coin_award = 0,
@@ -98190,7 +96104,6 @@ _G.pg.base.task_data_template[35173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35174] = {
 	name = "【常驻活动】吹雪偶像皮肤活动4",
 	guild_coin_award = 0,
@@ -98230,7 +96143,6 @@ _G.pg.base.task_data_template[35174] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35175] = {
 	name = "【常驻活动】吹雪偶像皮肤活动4",
 	guild_coin_award = 0,
@@ -98270,7 +96182,6 @@ _G.pg.base.task_data_template[35175] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35176] = {
 	name = "【常驻活动】吹雪偶像皮肤活动5",
 	guild_coin_award = 0,
@@ -98310,7 +96221,6 @@ _G.pg.base.task_data_template[35176] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35177] = {
 	name = "【常驻活动】吹雪偶像皮肤活动5",
 	guild_coin_award = 0,
@@ -98350,7 +96260,6 @@ _G.pg.base.task_data_template[35177] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35178] = {
 	name = "【常驻活动】吹雪偶像皮肤活动6",
 	guild_coin_award = 0,
@@ -98390,7 +96299,6 @@ _G.pg.base.task_data_template[35178] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35179] = {
 	name = "【常驻活动】吹雪偶像皮肤活动6",
 	guild_coin_award = 0,
@@ -98430,7 +96338,6 @@ _G.pg.base.task_data_template[35179] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35180] = {
 	name = "【常驻活动】吹雪偶像皮肤活动7",
 	guild_coin_award = 0,
@@ -98470,7 +96377,6 @@ _G.pg.base.task_data_template[35180] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35181] = {
 	name = "【常驻活动】吹雪偶像皮肤活动7",
 	guild_coin_award = 0,
@@ -98512,7 +96418,6 @@ _G.pg.base.task_data_template[35181] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35182] = {
 	name = "【常驻活动】贝利万圣节皮肤1",
 	guild_coin_award = 0,
@@ -98554,7 +96459,6 @@ _G.pg.base.task_data_template[35182] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35183] = {
 	name = "【常驻活动】贝利万圣节皮肤1",
 	guild_coin_award = 0,
@@ -98594,7 +96498,6 @@ _G.pg.base.task_data_template[35183] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35184] = {
 	name = "【常驻活动】贝利万圣节皮肤2",
 	guild_coin_award = 0,
@@ -98634,7 +96537,6 @@ _G.pg.base.task_data_template[35184] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35185] = {
 	name = "【常驻活动】贝利万圣节皮肤2",
 	guild_coin_award = 0,
@@ -98674,7 +96576,6 @@ _G.pg.base.task_data_template[35185] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35186] = {
 	name = "【常驻活动】贝利万圣节皮肤3",
 	guild_coin_award = 0,
@@ -98714,7 +96615,6 @@ _G.pg.base.task_data_template[35186] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35187] = {
 	name = "【常驻活动】贝利万圣节皮肤3",
 	guild_coin_award = 0,
@@ -98754,7 +96654,6 @@ _G.pg.base.task_data_template[35187] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35188] = {
 	name = "【常驻活动】贝利万圣节皮肤4",
 	guild_coin_award = 0,
@@ -98794,7 +96693,6 @@ _G.pg.base.task_data_template[35188] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35189] = {
 	name = "【常驻活动】贝利万圣节皮肤4",
 	guild_coin_award = 0,
@@ -98834,7 +96732,6 @@ _G.pg.base.task_data_template[35189] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35190] = {
 	name = "【常驻活动】贝利万圣节皮肤5",
 	guild_coin_award = 0,
@@ -98874,7 +96771,6 @@ _G.pg.base.task_data_template[35190] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35191] = {
 	name = "【常驻活动】贝利万圣节皮肤5",
 	guild_coin_award = 0,
@@ -98914,7 +96810,6 @@ _G.pg.base.task_data_template[35191] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35192] = {
 	name = "【常驻活动】贝利万圣节皮肤6",
 	guild_coin_award = 0,
@@ -98954,7 +96849,6 @@ _G.pg.base.task_data_template[35192] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35193] = {
 	name = "【常驻活动】贝利万圣节皮肤6",
 	guild_coin_award = 0,
@@ -98996,7 +96890,6 @@ _G.pg.base.task_data_template[35193] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35194] = {
 	name = "【常驻活动】贝利万圣节皮肤7",
 	guild_coin_award = 0,
@@ -99038,7 +96931,6 @@ _G.pg.base.task_data_template[35194] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35195] = {
 	name = "【常驻活动】贝利万圣节皮肤7",
 	guild_coin_award = 0,
@@ -99078,7 +96970,6 @@ _G.pg.base.task_data_template[35195] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35196] = {
 	name = "【常驻活动】z23教师皮肤活动1",
 	guild_coin_award = 0,
@@ -99120,7 +97011,6 @@ _G.pg.base.task_data_template[35196] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35197] = {
 	name = "【常驻活动】z23教师皮肤活动2",
 	guild_coin_award = 0,
@@ -99160,7 +97050,6 @@ _G.pg.base.task_data_template[35197] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35198] = {
 	name = "【常驻活动】z23教师皮肤活动3",
 	guild_coin_award = 0,
@@ -99200,7 +97089,6 @@ _G.pg.base.task_data_template[35198] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35199] = {
 	name = "【常驻活动】z23教师皮肤活动4",
 	guild_coin_award = 0,
@@ -99240,7 +97128,6 @@ _G.pg.base.task_data_template[35199] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35200] = {
 	name = "【常驻活动】z23教师皮肤活动5",
 	guild_coin_award = 0,
@@ -99280,7 +97167,6 @@ _G.pg.base.task_data_template[35200] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35201] = {
 	name = "【常驻活动】z23教师皮肤活动6",
 	guild_coin_award = 0,
@@ -99320,7 +97206,6 @@ _G.pg.base.task_data_template[35201] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35202] = {
 	name = "【常驻活动】z23教师皮肤活动7",
 	guild_coin_award = 0,
@@ -99360,7 +97245,6 @@ _G.pg.base.task_data_template[35202] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35203] = {
 	name = "【常驻活动】z23教师皮肤活动8",
 	guild_coin_award = 0,
@@ -99400,7 +97284,6 @@ _G.pg.base.task_data_template[35203] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35204] = {
 	name = "【常驻活动】z23教师皮肤活动9",
 	guild_coin_award = 0,
@@ -99440,7 +97323,6 @@ _G.pg.base.task_data_template[35204] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35205] = {
 	name = "【常驻活动】z23教师皮肤活动10",
 	guild_coin_award = 0,
@@ -99480,7 +97362,6 @@ _G.pg.base.task_data_template[35205] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35206] = {
 	name = "【常驻活动】z23教师皮肤活动11",
 	guild_coin_award = 0,
@@ -99520,7 +97401,6 @@ _G.pg.base.task_data_template[35206] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35207] = {
 	name = "【常驻活动】z23教师皮肤活动12",
 	guild_coin_award = 0,
@@ -99560,7 +97440,6 @@ _G.pg.base.task_data_template[35207] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35208] = {
 	name = "【常驻活动】z23教师皮肤活动13",
 	guild_coin_award = 0,
@@ -99602,7 +97481,6 @@ _G.pg.base.task_data_template[35208] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35209] = {
 	name = "【常驻活动】z23教师皮肤活动14",
 	guild_coin_award = 0,
@@ -99642,7 +97520,6 @@ _G.pg.base.task_data_template[35209] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35210] = {
 	name = "【常驻活动】z23教师皮肤活动15",
 	guild_coin_award = 0,
@@ -99684,7 +97561,6 @@ _G.pg.base.task_data_template[35210] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35211] = {
 	name = "【常驻活动】z23教师皮肤活动16",
 	guild_coin_award = 0,
@@ -99724,7 +97600,6 @@ _G.pg.base.task_data_template[35211] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35212] = {
 	name = "【常驻活动】z23教师皮肤活动17",
 	guild_coin_award = 0,
@@ -99764,7 +97639,6 @@ _G.pg.base.task_data_template[35212] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35213] = {
 	name = "【常驻活动】z23教师皮肤活动18",
 	guild_coin_award = 0,
@@ -99804,7 +97678,6 @@ _G.pg.base.task_data_template[35213] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35214] = {
 	name = "【常驻活动】z23教师皮肤活动19",
 	guild_coin_award = 0,
@@ -99844,7 +97717,6 @@ _G.pg.base.task_data_template[35214] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35215] = {
 	name = "【常驻活动】z23教师皮肤活动20",
 	guild_coin_award = 0,
@@ -99884,7 +97756,6 @@ _G.pg.base.task_data_template[35215] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35216] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -99926,7 +97797,6 @@ _G.pg.base.task_data_template[35216] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35217] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -99966,7 +97836,6 @@ _G.pg.base.task_data_template[35217] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35218] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -100006,7 +97875,6 @@ _G.pg.base.task_data_template[35218] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35219] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -100046,7 +97914,6 @@ _G.pg.base.task_data_template[35219] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35220] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -100086,7 +97953,6 @@ _G.pg.base.task_data_template[35220] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35221] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -100126,7 +97992,6 @@ _G.pg.base.task_data_template[35221] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35222] = {
 	name = "【常驻活动】啾啾巧克力工坊",
 	guild_coin_award = 0,
@@ -100168,7 +98033,6 @@ _G.pg.base.task_data_template[35222] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35223] = {
 	name = "【常驻活动】伊56校服七日任务1",
 	guild_coin_award = 0,
@@ -100210,7 +98074,6 @@ _G.pg.base.task_data_template[35223] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35224] = {
 	name = "【常驻活动】伊56校服七日任务2",
 	guild_coin_award = 0,
@@ -100250,7 +98113,6 @@ _G.pg.base.task_data_template[35224] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35225] = {
 	name = "【常驻活动】伊56校服七日任务3",
 	guild_coin_award = 0,
@@ -100290,7 +98152,6 @@ _G.pg.base.task_data_template[35225] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35226] = {
 	name = "【常驻活动】伊56校服七日任务4",
 	guild_coin_award = 0,
@@ -100330,7 +98191,6 @@ _G.pg.base.task_data_template[35226] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35227] = {
 	name = "【常驻活动】伊56校服七日任务5",
 	guild_coin_award = 0,
@@ -100370,7 +98230,6 @@ _G.pg.base.task_data_template[35227] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35228] = {
 	name = "【常驻活动】伊56校服七日任务6",
 	guild_coin_award = 0,
@@ -100410,7 +98269,6 @@ _G.pg.base.task_data_template[35228] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35229] = {
 	name = "【常驻活动】伊56校服七日任务7",
 	guild_coin_award = 0,
@@ -100450,7 +98308,6 @@ _G.pg.base.task_data_template[35229] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35230] = {
 	name = "【常驻活动】伊56校服七日任务8",
 	guild_coin_award = 0,
@@ -100490,7 +98347,6 @@ _G.pg.base.task_data_template[35230] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35231] = {
 	name = "【常驻活动】伊56校服七日任务9",
 	guild_coin_award = 0,
@@ -100530,7 +98386,6 @@ _G.pg.base.task_data_template[35231] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35232] = {
 	name = "【常驻活动】伊56校服七日任务10",
 	guild_coin_award = 0,
@@ -100570,7 +98425,6 @@ _G.pg.base.task_data_template[35232] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35233] = {
 	name = "【常驻活动】伊56校服七日任务11",
 	guild_coin_award = 0,
@@ -100610,7 +98464,6 @@ _G.pg.base.task_data_template[35233] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35234] = {
 	name = "【常驻活动】伊56校服七日任务12",
 	guild_coin_award = 0,
@@ -100650,7 +98503,6 @@ _G.pg.base.task_data_template[35234] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35235] = {
 	name = "【常驻活动】伊56校服七日任务13",
 	guild_coin_award = 0,
@@ -100690,7 +98542,6 @@ _G.pg.base.task_data_template[35235] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35236] = {
 	name = "【常驻活动】伊56校服七日任务14",
 	guild_coin_award = 0,
@@ -100732,7 +98583,6 @@ _G.pg.base.task_data_template[35236] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35237] = {
 	name = "【常驻活动】META商店一次性任务1",
 	guild_coin_award = 0,
@@ -100774,7 +98624,6 @@ _G.pg.base.task_data_template[35237] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35238] = {
 	name = "【常驻活动】META商店一次性任务2",
 	guild_coin_award = 0,
@@ -100816,7 +98665,6 @@ _G.pg.base.task_data_template[35238] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35239] = {
 	name = "【常驻活动】META商店一次性任务3",
 	guild_coin_award = 0,
@@ -100858,7 +98706,6 @@ _G.pg.base.task_data_template[35239] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35240] = {
 	name = "【常驻活动】META商店一次性任务4",
 	guild_coin_award = 0,
@@ -100900,7 +98747,6 @@ _G.pg.base.task_data_template[35240] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35241] = {
 	name = "【常驻活动】META商店一次性任务5",
 	guild_coin_award = 0,
@@ -100942,7 +98788,6 @@ _G.pg.base.task_data_template[35241] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35242] = {
 	name = "【常驻活动】META商店一次性任务6",
 	guild_coin_award = 0,
@@ -100984,7 +98829,6 @@ _G.pg.base.task_data_template[35242] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35243] = {
 	name = "【常驻活动】META商店一次性任务7",
 	guild_coin_award = 0,
@@ -101026,7 +98870,6 @@ _G.pg.base.task_data_template[35243] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35244] = {
 	name = "【常驻活动】满潮礼服活动1",
 	guild_coin_award = 0,
@@ -101068,7 +98911,6 @@ _G.pg.base.task_data_template[35244] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35245] = {
 	name = "【常驻活动】满潮礼服活动2",
 	guild_coin_award = 0,
@@ -101108,7 +98950,6 @@ _G.pg.base.task_data_template[35245] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35246] = {
 	name = "【常驻活动】满潮礼服活动3",
 	guild_coin_award = 0,
@@ -101148,7 +98989,6 @@ _G.pg.base.task_data_template[35246] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35247] = {
 	name = "【常驻活动】满潮礼服活动4",
 	guild_coin_award = 0,
@@ -101188,7 +99028,6 @@ _G.pg.base.task_data_template[35247] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35248] = {
 	name = "【常驻活动】满潮礼服活动5",
 	guild_coin_award = 0,
@@ -101228,7 +99067,6 @@ _G.pg.base.task_data_template[35248] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35249] = {
 	name = "【常驻活动】满潮礼服活动6",
 	guild_coin_award = 0,
@@ -101268,7 +99106,6 @@ _G.pg.base.task_data_template[35249] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35250] = {
 	name = "【常驻活动】满潮礼服活动7",
 	guild_coin_award = 0,
@@ -101308,7 +99145,6 @@ _G.pg.base.task_data_template[35250] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35251] = {
 	name = "【常驻活动】满潮礼服活动8",
 	guild_coin_award = 0,
@@ -101348,7 +99184,6 @@ _G.pg.base.task_data_template[35251] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35252] = {
 	name = "【常驻活动】满潮礼服活动9",
 	guild_coin_award = 0,
@@ -101388,7 +99223,6 @@ _G.pg.base.task_data_template[35252] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35253] = {
 	name = "【常驻活动】满潮礼服活动10",
 	guild_coin_award = 0,
@@ -101428,7 +99262,6 @@ _G.pg.base.task_data_template[35253] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35254] = {
 	name = "【常驻活动】满潮礼服活动11",
 	guild_coin_award = 0,
@@ -101468,7 +99301,6 @@ _G.pg.base.task_data_template[35254] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35255] = {
 	name = "【常驻活动】满潮礼服活动12",
 	guild_coin_award = 0,
@@ -101508,7 +99340,6 @@ _G.pg.base.task_data_template[35255] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35256] = {
 	name = "【常驻活动】满潮礼服活动13",
 	guild_coin_award = 0,
@@ -101548,7 +99379,6 @@ _G.pg.base.task_data_template[35256] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35257] = {
 	name = "【常驻活动】满潮礼服活动14",
 	guild_coin_award = 0,
@@ -101590,7 +99420,6 @@ _G.pg.base.task_data_template[35257] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35258] = {
 	name = "【常驻活动】长良礼服活动1",
 	guild_coin_award = 0,
@@ -101632,7 +99461,6 @@ _G.pg.base.task_data_template[35258] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[35259] = {
 	name = "【常驻活动】长良礼服活动2",
 	guild_coin_award = 0,
@@ -101672,7 +99500,6 @@ _G.pg.base.task_data_template[35259] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35260] = {
 	name = "【常驻活动】长良礼服活动3",
 	guild_coin_award = 0,
@@ -101712,7 +99539,6 @@ _G.pg.base.task_data_template[35260] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35261] = {
 	name = "【常驻活动】长良礼服活动4",
 	guild_coin_award = 0,
@@ -101752,7 +99578,6 @@ _G.pg.base.task_data_template[35261] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35262] = {
 	name = "【常驻活动】长良礼服活动5",
 	guild_coin_award = 0,
@@ -101792,7 +99617,6 @@ _G.pg.base.task_data_template[35262] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35263] = {
 	name = "【常驻活动】长良礼服活动6",
 	guild_coin_award = 0,
@@ -101832,7 +99656,6 @@ _G.pg.base.task_data_template[35263] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35264] = {
 	name = "【常驻活动】长良礼服活动7",
 	guild_coin_award = 0,
@@ -101872,7 +99695,6 @@ _G.pg.base.task_data_template[35264] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35265] = {
 	name = "【常驻活动】长良礼服活动8",
 	guild_coin_award = 0,
@@ -101912,7 +99734,6 @@ _G.pg.base.task_data_template[35265] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35266] = {
 	name = "【常驻活动】长良礼服活动9",
 	guild_coin_award = 0,
@@ -101952,7 +99773,6 @@ _G.pg.base.task_data_template[35266] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35267] = {
 	name = "【常驻活动】长良礼服活动10",
 	guild_coin_award = 0,
@@ -101992,7 +99812,6 @@ _G.pg.base.task_data_template[35267] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35268] = {
 	name = "【常驻活动】长良礼服活动11",
 	guild_coin_award = 0,
@@ -102032,7 +99851,6 @@ _G.pg.base.task_data_template[35268] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35269] = {
 	name = "【常驻活动】长良礼服活动12",
 	guild_coin_award = 0,
@@ -102072,7 +99890,6 @@ _G.pg.base.task_data_template[35269] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35270] = {
 	name = "【常驻活动】长良礼服活动13",
 	guild_coin_award = 0,
@@ -102112,7 +99929,6 @@ _G.pg.base.task_data_template[35270] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[35271] = {
 	name = "【常驻活动】长良礼服活动14",
 	guild_coin_award = 0,
@@ -102154,7 +99970,6 @@ _G.pg.base.task_data_template[35271] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42318] = {
 	name = "十一期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -102196,7 +100011,6 @@ _G.pg.base.task_data_template[42318] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42319] = {
 	name = "十一期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -102236,7 +100050,6 @@ _G.pg.base.task_data_template[42319] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42320] = {
 	name = "十一期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -102276,7 +100089,6 @@ _G.pg.base.task_data_template[42320] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42321] = {
 	name = "十一期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -102316,7 +100128,6 @@ _G.pg.base.task_data_template[42321] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42322] = {
 	name = "十一期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -102361,7 +100172,6 @@ _G.pg.base.task_data_template[42322] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42323] = {
 	name = "十一期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -102401,7 +100211,6 @@ _G.pg.base.task_data_template[42323] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42324] = {
 	name = "十一期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -102448,7 +100257,6 @@ _G.pg.base.task_data_template[42324] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42325] = {
 	name = "十一期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -102490,7 +100298,6 @@ _G.pg.base.task_data_template[42325] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42326] = {
 	name = "十一期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -102530,7 +100337,6 @@ _G.pg.base.task_data_template[42326] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42327] = {
 	name = "十一期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -102570,7 +100376,6 @@ _G.pg.base.task_data_template[42327] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42328] = {
 	name = "十一期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -102610,7 +100415,6 @@ _G.pg.base.task_data_template[42328] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42329] = {
 	name = "十一期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -102652,7 +100456,6 @@ _G.pg.base.task_data_template[42329] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42330] = {
 	name = "十一期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -102692,7 +100495,6 @@ _G.pg.base.task_data_template[42330] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42331] = {
 	name = "十一期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -102739,7 +100541,6 @@ _G.pg.base.task_data_template[42331] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42332] = {
 	name = "十一期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -102781,7 +100582,6 @@ _G.pg.base.task_data_template[42332] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42333] = {
 	name = "十一期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -102821,7 +100621,6 @@ _G.pg.base.task_data_template[42333] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42334] = {
 	name = "十一期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -102861,7 +100660,6 @@ _G.pg.base.task_data_template[42334] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42335] = {
 	name = "十一期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -102901,7 +100699,6 @@ _G.pg.base.task_data_template[42335] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42336] = {
 	name = "十一期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -102941,7 +100738,6 @@ _G.pg.base.task_data_template[42336] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42337] = {
 	name = "十一期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -102981,7 +100777,6 @@ _G.pg.base.task_data_template[42337] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42338] = {
 	name = "十一期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -103028,7 +100823,6 @@ _G.pg.base.task_data_template[42338] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42339] = {
 	name = "十一期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -103068,7 +100862,6 @@ _G.pg.base.task_data_template[42339] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42340] = {
 	name = "十一期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -103108,7 +100901,6 @@ _G.pg.base.task_data_template[42340] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42341] = {
 	name = "十一期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -103148,7 +100940,6 @@ _G.pg.base.task_data_template[42341] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42342] = {
 	name = "十一期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -103188,7 +100979,6 @@ _G.pg.base.task_data_template[42342] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42343] = {
 	name = "十一期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -103228,7 +101018,6 @@ _G.pg.base.task_data_template[42343] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42344] = {
 	name = "十一期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -103270,7 +101059,6 @@ _G.pg.base.task_data_template[42344] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42345] = {
 	name = "十一期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -103317,7 +101105,6 @@ _G.pg.base.task_data_template[42345] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42346] = {
 	name = "十一期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -103357,7 +101144,6 @@ _G.pg.base.task_data_template[42346] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42347] = {
 	name = "十一期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -103402,7 +101188,6 @@ _G.pg.base.task_data_template[42347] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42348] = {
 	name = "十一期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -103442,7 +101227,6 @@ _G.pg.base.task_data_template[42348] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42349] = {
 	name = "十一期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -103484,7 +101268,6 @@ _G.pg.base.task_data_template[42349] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42350] = {
 	name = "十一期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -103524,7 +101307,6 @@ _G.pg.base.task_data_template[42350] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42351] = {
 	name = "十一期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -103564,7 +101346,6 @@ _G.pg.base.task_data_template[42351] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42352] = {
 	name = "十一期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -103611,7 +101392,6 @@ _G.pg.base.task_data_template[42352] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42353] = {
 	name = "十一期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -103651,7 +101431,6 @@ _G.pg.base.task_data_template[42353] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42354] = {
 	name = "十一期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -103693,7 +101472,6 @@ _G.pg.base.task_data_template[42354] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42355] = {
 	name = "十一期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -103733,7 +101511,6 @@ _G.pg.base.task_data_template[42355] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42356] = {
 	name = "十一期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -103775,7 +101552,6 @@ _G.pg.base.task_data_template[42356] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42357] = {
 	name = "十一期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -103815,7 +101591,6 @@ _G.pg.base.task_data_template[42357] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42358] = {
 	name = "十一期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -103855,7 +101630,6 @@ _G.pg.base.task_data_template[42358] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42359] = {
 	name = "十一期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -103902,7 +101676,6 @@ _G.pg.base.task_data_template[42359] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42360] = {
 	name = "十一期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -103942,7 +101715,6 @@ _G.pg.base.task_data_template[42360] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42361] = {
 	name = "十一期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -103982,7 +101754,6 @@ _G.pg.base.task_data_template[42361] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42362] = {
 	name = "十一期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -104022,7 +101793,6 @@ _G.pg.base.task_data_template[42362] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42363] = {
 	name = "十一期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -104064,7 +101834,6 @@ _G.pg.base.task_data_template[42363] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42364] = {
 	name = "十一期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -104104,7 +101873,6 @@ _G.pg.base.task_data_template[42364] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42365] = {
 	name = "十一期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -104144,7 +101912,6 @@ _G.pg.base.task_data_template[42365] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42366] = {
 	name = "十一期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -104191,7 +101958,6 @@ _G.pg.base.task_data_template[42366] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42367] = {
 	name = "十一期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -104231,7 +101997,6 @@ _G.pg.base.task_data_template[42367] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42368] = {
 	name = "十一期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -104271,7 +102036,6 @@ _G.pg.base.task_data_template[42368] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42369] = {
 	name = "十一期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -104313,7 +102077,6 @@ _G.pg.base.task_data_template[42369] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42370] = {
 	name = "十一期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -104353,7 +102116,6 @@ _G.pg.base.task_data_template[42370] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42371] = {
 	name = "十一期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -104393,7 +102155,6 @@ _G.pg.base.task_data_template[42371] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42372] = {
 	name = "十一期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -104433,7 +102194,6 @@ _G.pg.base.task_data_template[42372] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42373] = {
 	name = "十一期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -104480,7 +102240,6 @@ _G.pg.base.task_data_template[42373] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42374] = {
 	name = "十一期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -104522,7 +102281,6 @@ _G.pg.base.task_data_template[42374] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42375] = {
 	name = "十一期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -104564,7 +102322,6 @@ _G.pg.base.task_data_template[42375] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42376] = {
 	name = "十一期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -104606,7 +102363,6 @@ _G.pg.base.task_data_template[42376] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42377] = {
 	name = "十一期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -104648,7 +102404,6 @@ _G.pg.base.task_data_template[42377] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42378] = {
 	name = "十一期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -104690,7 +102445,6 @@ _G.pg.base.task_data_template[42378] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42379] = {
 	name = "十一期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -104732,7 +102486,6 @@ _G.pg.base.task_data_template[42379] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42380] = {
 	name = "十一期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -104774,7 +102527,6 @@ _G.pg.base.task_data_template[42380] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42381] = {
 	name = "十一期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -104816,7 +102568,6 @@ _G.pg.base.task_data_template[42381] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42382] = {
 	name = "十一期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -104858,7 +102609,6 @@ _G.pg.base.task_data_template[42382] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42383] = {
 	name = "十一期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -104898,7 +102648,6 @@ _G.pg.base.task_data_template[42383] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42384] = {
 	name = "十一期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -104938,7 +102687,6 @@ _G.pg.base.task_data_template[42384] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42385] = {
 	name = "十一期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -104978,7 +102726,6 @@ _G.pg.base.task_data_template[42385] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42386] = {
 	name = "十一期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -105018,7 +102765,6 @@ _G.pg.base.task_data_template[42386] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42387] = {
 	name = "十一期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -105058,7 +102804,6 @@ _G.pg.base.task_data_template[42387] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42388] = {
 	name = "十一期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -105098,7 +102843,6 @@ _G.pg.base.task_data_template[42388] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42389] = {
 	name = "十一期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -105138,7 +102882,6 @@ _G.pg.base.task_data_template[42389] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42390] = {
 	name = "十一期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -105178,7 +102921,6 @@ _G.pg.base.task_data_template[42390] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42391] = {
 	name = "十一期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -105218,7 +102960,6 @@ _G.pg.base.task_data_template[42391] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42392] = {
 	name = "十一期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -105258,7 +102999,6 @@ _G.pg.base.task_data_template[42392] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42393] = {
 	name = "十一期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -105298,7 +103038,6 @@ _G.pg.base.task_data_template[42393] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42394] = {
 	name = "十一期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -105338,7 +103077,6 @@ _G.pg.base.task_data_template[42394] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42395] = {
 	name = "十一期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -105378,7 +103116,6 @@ _G.pg.base.task_data_template[42395] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42396] = {
 	name = "十一期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -105418,7 +103155,6 @@ _G.pg.base.task_data_template[42396] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42397] = {
 	name = "十一期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -105458,7 +103194,6 @@ _G.pg.base.task_data_template[42397] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42398] = {
 	name = "十一期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -105498,7 +103233,6 @@ _G.pg.base.task_data_template[42398] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42399] = {
 	name = "十一期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -105538,7 +103272,6 @@ _G.pg.base.task_data_template[42399] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42400] = {
 	name = "十一期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -105578,7 +103311,6 @@ _G.pg.base.task_data_template[42400] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42401] = {
 	name = "十一期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -105620,7 +103352,6 @@ _G.pg.base.task_data_template[42401] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42402] = {
 	name = "十一期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -105662,7 +103393,6 @@ _G.pg.base.task_data_template[42402] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42403] = {
 	name = "十一期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -105704,7 +103434,6 @@ _G.pg.base.task_data_template[42403] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42404] = {
 	name = "十一期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -105746,7 +103475,6 @@ _G.pg.base.task_data_template[42404] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42405] = {
 	name = "十一期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -105788,7 +103516,6 @@ _G.pg.base.task_data_template[42405] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42406] = {
 	name = "十一期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -105830,7 +103557,6 @@ _G.pg.base.task_data_template[42406] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42407] = {
 	name = "十一期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -105872,7 +103598,6 @@ _G.pg.base.task_data_template[42407] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42408] = {
 	name = "十一期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -105914,7 +103639,6 @@ _G.pg.base.task_data_template[42408] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42409] = {
 	name = "十一期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -105956,7 +103680,6 @@ _G.pg.base.task_data_template[42409] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42410] = {
 	name = "十一期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -105998,7 +103721,6 @@ _G.pg.base.task_data_template[42410] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42411] = {
 	name = "十一期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -106038,7 +103760,6 @@ _G.pg.base.task_data_template[42411] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42412] = {
 	name = "十一期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -106078,7 +103799,6 @@ _G.pg.base.task_data_template[42412] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42413] = {
 	name = "十一期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -106118,7 +103838,6 @@ _G.pg.base.task_data_template[42413] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42414] = {
 	name = "十一期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -106158,7 +103877,6 @@ _G.pg.base.task_data_template[42414] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42415] = {
 	name = "十一期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -106198,7 +103916,6 @@ _G.pg.base.task_data_template[42415] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42416] = {
 	name = "十一期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -106238,7 +103955,6 @@ _G.pg.base.task_data_template[42416] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42417] = {
 	name = "十一期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -106278,7 +103994,6 @@ _G.pg.base.task_data_template[42417] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42418] = {
 	name = "十一期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -106318,7 +104033,6 @@ _G.pg.base.task_data_template[42418] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42518] = {
 	name = "十二期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -106360,7 +104074,6 @@ _G.pg.base.task_data_template[42518] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42519] = {
 	name = "十二期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -106400,7 +104113,6 @@ _G.pg.base.task_data_template[42519] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42520] = {
 	name = "十二期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -106440,7 +104152,6 @@ _G.pg.base.task_data_template[42520] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42521] = {
 	name = "十二期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -106480,7 +104191,6 @@ _G.pg.base.task_data_template[42521] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42522] = {
 	name = "十二期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -106525,7 +104235,6 @@ _G.pg.base.task_data_template[42522] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42523] = {
 	name = "十二期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -106565,7 +104274,6 @@ _G.pg.base.task_data_template[42523] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42524] = {
 	name = "十二期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -106612,7 +104320,6 @@ _G.pg.base.task_data_template[42524] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42525] = {
 	name = "十二期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -106654,7 +104361,6 @@ _G.pg.base.task_data_template[42525] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42526] = {
 	name = "十二期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -106694,7 +104400,6 @@ _G.pg.base.task_data_template[42526] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42527] = {
 	name = "十二期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -106734,7 +104439,6 @@ _G.pg.base.task_data_template[42527] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42528] = {
 	name = "十二期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -106774,7 +104478,6 @@ _G.pg.base.task_data_template[42528] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42529] = {
 	name = "十二期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -106816,7 +104519,6 @@ _G.pg.base.task_data_template[42529] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42530] = {
 	name = "十二期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -106856,7 +104558,6 @@ _G.pg.base.task_data_template[42530] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42531] = {
 	name = "十二期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -106903,7 +104604,6 @@ _G.pg.base.task_data_template[42531] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42532] = {
 	name = "十二期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -106945,7 +104645,6 @@ _G.pg.base.task_data_template[42532] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42533] = {
 	name = "十二期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -106985,7 +104684,6 @@ _G.pg.base.task_data_template[42533] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42534] = {
 	name = "十二期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -107025,7 +104723,6 @@ _G.pg.base.task_data_template[42534] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42535] = {
 	name = "十二期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -107065,7 +104762,6 @@ _G.pg.base.task_data_template[42535] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42536] = {
 	name = "十二期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -107105,7 +104801,6 @@ _G.pg.base.task_data_template[42536] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42537] = {
 	name = "十二期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -107145,7 +104840,6 @@ _G.pg.base.task_data_template[42537] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42538] = {
 	name = "十二期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -107192,7 +104886,6 @@ _G.pg.base.task_data_template[42538] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42539] = {
 	name = "十二期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -107232,7 +104925,6 @@ _G.pg.base.task_data_template[42539] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42540] = {
 	name = "十二期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -107272,7 +104964,6 @@ _G.pg.base.task_data_template[42540] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42541] = {
 	name = "十二期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -107312,7 +105003,6 @@ _G.pg.base.task_data_template[42541] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42542] = {
 	name = "十二期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -107352,7 +105042,6 @@ _G.pg.base.task_data_template[42542] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42543] = {
 	name = "十二期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -107392,7 +105081,6 @@ _G.pg.base.task_data_template[42543] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42544] = {
 	name = "十二期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -107434,7 +105122,6 @@ _G.pg.base.task_data_template[42544] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42545] = {
 	name = "十二期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -107481,7 +105168,6 @@ _G.pg.base.task_data_template[42545] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42546] = {
 	name = "十二期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -107521,7 +105207,6 @@ _G.pg.base.task_data_template[42546] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42547] = {
 	name = "十二期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -107566,7 +105251,6 @@ _G.pg.base.task_data_template[42547] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42548] = {
 	name = "十二期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -107606,7 +105290,6 @@ _G.pg.base.task_data_template[42548] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42549] = {
 	name = "十二期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -107648,7 +105331,6 @@ _G.pg.base.task_data_template[42549] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42550] = {
 	name = "十二期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -107688,7 +105370,6 @@ _G.pg.base.task_data_template[42550] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42551] = {
 	name = "十二期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -107728,7 +105409,6 @@ _G.pg.base.task_data_template[42551] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42552] = {
 	name = "十二期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -107775,7 +105455,6 @@ _G.pg.base.task_data_template[42552] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42553] = {
 	name = "十二期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -107815,7 +105494,6 @@ _G.pg.base.task_data_template[42553] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42554] = {
 	name = "十二期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -107857,7 +105535,6 @@ _G.pg.base.task_data_template[42554] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42555] = {
 	name = "十二期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -107897,7 +105574,6 @@ _G.pg.base.task_data_template[42555] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42556] = {
 	name = "十二期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -107939,7 +105615,6 @@ _G.pg.base.task_data_template[42556] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42557] = {
 	name = "十二期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -107979,7 +105654,6 @@ _G.pg.base.task_data_template[42557] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42558] = {
 	name = "十二期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -108019,7 +105693,6 @@ _G.pg.base.task_data_template[42558] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42559] = {
 	name = "十二期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -108066,7 +105739,6 @@ _G.pg.base.task_data_template[42559] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42560] = {
 	name = "十二期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -108106,7 +105778,6 @@ _G.pg.base.task_data_template[42560] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42561] = {
 	name = "十二期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -108146,7 +105817,6 @@ _G.pg.base.task_data_template[42561] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42562] = {
 	name = "十二期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -108186,7 +105856,6 @@ _G.pg.base.task_data_template[42562] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42563] = {
 	name = "十二期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -108228,7 +105897,6 @@ _G.pg.base.task_data_template[42563] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42564] = {
 	name = "十二期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -108268,7 +105936,6 @@ _G.pg.base.task_data_template[42564] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42565] = {
 	name = "十二期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -108308,7 +105975,6 @@ _G.pg.base.task_data_template[42565] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42566] = {
 	name = "十二期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -108355,7 +106021,6 @@ _G.pg.base.task_data_template[42566] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42567] = {
 	name = "十二期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -108395,7 +106060,6 @@ _G.pg.base.task_data_template[42567] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42568] = {
 	name = "十二期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -108435,7 +106099,6 @@ _G.pg.base.task_data_template[42568] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42569] = {
 	name = "十二期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -108477,7 +106140,6 @@ _G.pg.base.task_data_template[42569] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42570] = {
 	name = "十二期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -108517,7 +106179,6 @@ _G.pg.base.task_data_template[42570] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42571] = {
 	name = "十二期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -108557,7 +106218,6 @@ _G.pg.base.task_data_template[42571] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42572] = {
 	name = "十二期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -108597,7 +106257,6 @@ _G.pg.base.task_data_template[42572] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42573] = {
 	name = "十二期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -108644,7 +106303,6 @@ _G.pg.base.task_data_template[42573] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42574] = {
 	name = "十二期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -108686,7 +106344,6 @@ _G.pg.base.task_data_template[42574] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42575] = {
 	name = "十二期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -108728,7 +106385,6 @@ _G.pg.base.task_data_template[42575] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42576] = {
 	name = "十二期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -108770,7 +106426,6 @@ _G.pg.base.task_data_template[42576] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42577] = {
 	name = "十二期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -108812,7 +106467,6 @@ _G.pg.base.task_data_template[42577] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42578] = {
 	name = "十二期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -108854,7 +106508,6 @@ _G.pg.base.task_data_template[42578] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42579] = {
 	name = "十二期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -108896,7 +106549,6 @@ _G.pg.base.task_data_template[42579] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42580] = {
 	name = "十二期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -108938,7 +106590,6 @@ _G.pg.base.task_data_template[42580] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42581] = {
 	name = "十二期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -108980,7 +106631,6 @@ _G.pg.base.task_data_template[42581] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42582] = {
 	name = "十二期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -109022,7 +106672,6 @@ _G.pg.base.task_data_template[42582] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42583] = {
 	name = "十二期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -109062,7 +106711,6 @@ _G.pg.base.task_data_template[42583] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42584] = {
 	name = "十二期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -109102,7 +106750,6 @@ _G.pg.base.task_data_template[42584] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42585] = {
 	name = "十二期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -109142,7 +106789,6 @@ _G.pg.base.task_data_template[42585] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42586] = {
 	name = "十二期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -109182,7 +106828,6 @@ _G.pg.base.task_data_template[42586] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42587] = {
 	name = "十二期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -109222,7 +106867,6 @@ _G.pg.base.task_data_template[42587] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42588] = {
 	name = "十二期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -109262,7 +106906,6 @@ _G.pg.base.task_data_template[42588] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42589] = {
 	name = "十二期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -109302,7 +106945,6 @@ _G.pg.base.task_data_template[42589] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42590] = {
 	name = "十二期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -109342,7 +106984,6 @@ _G.pg.base.task_data_template[42590] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42591] = {
 	name = "十二期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -109382,7 +107023,6 @@ _G.pg.base.task_data_template[42591] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42592] = {
 	name = "十二期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -109422,7 +107062,6 @@ _G.pg.base.task_data_template[42592] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42593] = {
 	name = "十二期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -109462,7 +107101,6 @@ _G.pg.base.task_data_template[42593] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42594] = {
 	name = "十二期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -109502,7 +107140,6 @@ _G.pg.base.task_data_template[42594] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42595] = {
 	name = "十二期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -109542,7 +107179,6 @@ _G.pg.base.task_data_template[42595] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42596] = {
 	name = "十二期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -109582,7 +107218,6 @@ _G.pg.base.task_data_template[42596] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42597] = {
 	name = "十二期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -109622,7 +107257,6 @@ _G.pg.base.task_data_template[42597] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42598] = {
 	name = "十二期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -109662,7 +107296,6 @@ _G.pg.base.task_data_template[42598] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42599] = {
 	name = "十二期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -109702,7 +107335,6 @@ _G.pg.base.task_data_template[42599] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42600] = {
 	name = "十二期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -109742,7 +107374,6 @@ _G.pg.base.task_data_template[42600] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42601] = {
 	name = "十二期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -109784,7 +107415,6 @@ _G.pg.base.task_data_template[42601] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42602] = {
 	name = "十二期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -109826,7 +107456,6 @@ _G.pg.base.task_data_template[42602] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42603] = {
 	name = "十二期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -109868,7 +107497,6 @@ _G.pg.base.task_data_template[42603] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42604] = {
 	name = "十二期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -109910,7 +107538,6 @@ _G.pg.base.task_data_template[42604] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42605] = {
 	name = "十二期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -109952,7 +107579,6 @@ _G.pg.base.task_data_template[42605] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42606] = {
 	name = "十二期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -109994,7 +107620,6 @@ _G.pg.base.task_data_template[42606] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42607] = {
 	name = "十二期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -110036,7 +107661,6 @@ _G.pg.base.task_data_template[42607] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42608] = {
 	name = "十二期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -110078,7 +107702,6 @@ _G.pg.base.task_data_template[42608] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42609] = {
 	name = "十二期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -110120,7 +107743,6 @@ _G.pg.base.task_data_template[42609] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42610] = {
 	name = "十二期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -110162,7 +107784,6 @@ _G.pg.base.task_data_template[42610] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42611] = {
 	name = "十二期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -110202,7 +107823,6 @@ _G.pg.base.task_data_template[42611] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42612] = {
 	name = "十二期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -110242,7 +107862,6 @@ _G.pg.base.task_data_template[42612] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42613] = {
 	name = "十二期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -110282,7 +107901,6 @@ _G.pg.base.task_data_template[42613] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42614] = {
 	name = "十二期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -110322,7 +107940,6 @@ _G.pg.base.task_data_template[42614] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42615] = {
 	name = "十二期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -110362,7 +107979,6 @@ _G.pg.base.task_data_template[42615] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42616] = {
 	name = "十二期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -110402,7 +108018,6 @@ _G.pg.base.task_data_template[42616] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42617] = {
 	name = "十二期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -110442,7 +108057,6 @@ _G.pg.base.task_data_template[42617] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42618] = {
 	name = "十二期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -110482,7 +108096,6 @@ _G.pg.base.task_data_template[42618] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42718] = {
 	name = "十三期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -110524,7 +108137,6 @@ _G.pg.base.task_data_template[42718] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42719] = {
 	name = "十三期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -110564,7 +108176,6 @@ _G.pg.base.task_data_template[42719] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42720] = {
 	name = "十三期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -110604,7 +108215,6 @@ _G.pg.base.task_data_template[42720] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42721] = {
 	name = "十三期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -110644,7 +108254,6 @@ _G.pg.base.task_data_template[42721] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42722] = {
 	name = "十三期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -110689,7 +108298,6 @@ _G.pg.base.task_data_template[42722] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42723] = {
 	name = "十三期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -110729,7 +108337,6 @@ _G.pg.base.task_data_template[42723] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42724] = {
 	name = "十三期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -110776,7 +108383,6 @@ _G.pg.base.task_data_template[42724] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42725] = {
 	name = "十三期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -110818,7 +108424,6 @@ _G.pg.base.task_data_template[42725] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42726] = {
 	name = "十三期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -110858,7 +108463,6 @@ _G.pg.base.task_data_template[42726] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42727] = {
 	name = "十三期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -110898,7 +108502,6 @@ _G.pg.base.task_data_template[42727] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42728] = {
 	name = "十三期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -110938,7 +108541,6 @@ _G.pg.base.task_data_template[42728] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42729] = {
 	name = "十三期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -110980,7 +108582,6 @@ _G.pg.base.task_data_template[42729] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42730] = {
 	name = "十三期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -111020,7 +108621,6 @@ _G.pg.base.task_data_template[42730] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42731] = {
 	name = "十三期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -111067,7 +108667,6 @@ _G.pg.base.task_data_template[42731] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42732] = {
 	name = "十三期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -111109,7 +108708,6 @@ _G.pg.base.task_data_template[42732] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42733] = {
 	name = "十三期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -111149,7 +108747,6 @@ _G.pg.base.task_data_template[42733] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42734] = {
 	name = "十三期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -111189,7 +108786,6 @@ _G.pg.base.task_data_template[42734] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42735] = {
 	name = "十三期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -111229,7 +108825,6 @@ _G.pg.base.task_data_template[42735] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42736] = {
 	name = "十三期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -111269,7 +108864,6 @@ _G.pg.base.task_data_template[42736] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42737] = {
 	name = "十三期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -111309,7 +108903,6 @@ _G.pg.base.task_data_template[42737] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42738] = {
 	name = "十三期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -111356,7 +108949,6 @@ _G.pg.base.task_data_template[42738] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42739] = {
 	name = "十三期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -111396,7 +108988,6 @@ _G.pg.base.task_data_template[42739] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42740] = {
 	name = "十三期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -111436,7 +109027,6 @@ _G.pg.base.task_data_template[42740] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42741] = {
 	name = "十三期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -111476,7 +109066,6 @@ _G.pg.base.task_data_template[42741] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42742] = {
 	name = "十三期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -111516,7 +109105,6 @@ _G.pg.base.task_data_template[42742] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42743] = {
 	name = "十三期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -111556,7 +109144,6 @@ _G.pg.base.task_data_template[42743] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42744] = {
 	name = "十三期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -111598,7 +109185,6 @@ _G.pg.base.task_data_template[42744] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42745] = {
 	name = "十三期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -111645,7 +109231,6 @@ _G.pg.base.task_data_template[42745] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42746] = {
 	name = "十三期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -111685,7 +109270,6 @@ _G.pg.base.task_data_template[42746] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42747] = {
 	name = "十三期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -111730,7 +109314,6 @@ _G.pg.base.task_data_template[42747] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42748] = {
 	name = "十三期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -111770,7 +109353,6 @@ _G.pg.base.task_data_template[42748] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42749] = {
 	name = "十三期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -111812,7 +109394,6 @@ _G.pg.base.task_data_template[42749] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42750] = {
 	name = "十三期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -111852,7 +109433,6 @@ _G.pg.base.task_data_template[42750] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42751] = {
 	name = "十三期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -111892,7 +109472,6 @@ _G.pg.base.task_data_template[42751] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42752] = {
 	name = "十三期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -111939,7 +109518,6 @@ _G.pg.base.task_data_template[42752] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42753] = {
 	name = "十三期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -111979,7 +109557,6 @@ _G.pg.base.task_data_template[42753] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42754] = {
 	name = "十三期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -112021,7 +109598,6 @@ _G.pg.base.task_data_template[42754] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42755] = {
 	name = "十三期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -112061,7 +109637,6 @@ _G.pg.base.task_data_template[42755] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42756] = {
 	name = "十三期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -112103,7 +109678,6 @@ _G.pg.base.task_data_template[42756] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42757] = {
 	name = "十三期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -112143,7 +109717,6 @@ _G.pg.base.task_data_template[42757] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42758] = {
 	name = "十三期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -112183,7 +109756,6 @@ _G.pg.base.task_data_template[42758] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42759] = {
 	name = "十三期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -112230,7 +109802,6 @@ _G.pg.base.task_data_template[42759] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42760] = {
 	name = "十三期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -112270,7 +109841,6 @@ _G.pg.base.task_data_template[42760] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42761] = {
 	name = "十三期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -112310,7 +109880,6 @@ _G.pg.base.task_data_template[42761] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42762] = {
 	name = "十三期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -112350,7 +109919,6 @@ _G.pg.base.task_data_template[42762] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42763] = {
 	name = "十三期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -112392,7 +109960,6 @@ _G.pg.base.task_data_template[42763] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42764] = {
 	name = "十三期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -112432,7 +109999,6 @@ _G.pg.base.task_data_template[42764] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42765] = {
 	name = "十三期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -112472,7 +110038,6 @@ _G.pg.base.task_data_template[42765] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42766] = {
 	name = "十三期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -112519,7 +110084,6 @@ _G.pg.base.task_data_template[42766] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42767] = {
 	name = "十三期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -112559,7 +110123,6 @@ _G.pg.base.task_data_template[42767] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42768] = {
 	name = "十三期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -112599,7 +110162,6 @@ _G.pg.base.task_data_template[42768] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42769] = {
 	name = "十三期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -112641,7 +110203,6 @@ _G.pg.base.task_data_template[42769] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42770] = {
 	name = "十三期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -112681,7 +110242,6 @@ _G.pg.base.task_data_template[42770] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42771] = {
 	name = "十三期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -112721,7 +110281,6 @@ _G.pg.base.task_data_template[42771] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42772] = {
 	name = "十三期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -112761,7 +110320,6 @@ _G.pg.base.task_data_template[42772] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42773] = {
 	name = "十三期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -112808,7 +110366,6 @@ _G.pg.base.task_data_template[42773] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42774] = {
 	name = "十三期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -112850,7 +110407,6 @@ _G.pg.base.task_data_template[42774] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42775] = {
 	name = "十三期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -112892,7 +110448,6 @@ _G.pg.base.task_data_template[42775] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42776] = {
 	name = "十三期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -112934,7 +110489,6 @@ _G.pg.base.task_data_template[42776] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42777] = {
 	name = "十三期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -112976,7 +110530,6 @@ _G.pg.base.task_data_template[42777] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42778] = {
 	name = "十三期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -113018,7 +110571,6 @@ _G.pg.base.task_data_template[42778] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42779] = {
 	name = "十三期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -113060,7 +110612,6 @@ _G.pg.base.task_data_template[42779] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42780] = {
 	name = "十三期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -113102,7 +110653,6 @@ _G.pg.base.task_data_template[42780] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42781] = {
 	name = "十三期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -113144,7 +110694,6 @@ _G.pg.base.task_data_template[42781] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42782] = {
 	name = "十三期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -113186,7 +110735,6 @@ _G.pg.base.task_data_template[42782] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42783] = {
 	name = "十三期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -113226,7 +110774,6 @@ _G.pg.base.task_data_template[42783] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42784] = {
 	name = "十三期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -113266,7 +110813,6 @@ _G.pg.base.task_data_template[42784] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42785] = {
 	name = "十三期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -113306,7 +110852,6 @@ _G.pg.base.task_data_template[42785] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42786] = {
 	name = "十三期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -113346,7 +110891,6 @@ _G.pg.base.task_data_template[42786] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42787] = {
 	name = "十三期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -113386,7 +110930,6 @@ _G.pg.base.task_data_template[42787] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42788] = {
 	name = "十三期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -113426,7 +110969,6 @@ _G.pg.base.task_data_template[42788] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42789] = {
 	name = "十三期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -113466,7 +111008,6 @@ _G.pg.base.task_data_template[42789] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42790] = {
 	name = "十三期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -113506,7 +111047,6 @@ _G.pg.base.task_data_template[42790] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42791] = {
 	name = "十三期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -113546,7 +111086,6 @@ _G.pg.base.task_data_template[42791] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42792] = {
 	name = "十三期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -113586,7 +111125,6 @@ _G.pg.base.task_data_template[42792] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42793] = {
 	name = "十三期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -113626,7 +111164,6 @@ _G.pg.base.task_data_template[42793] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42794] = {
 	name = "十三期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -113666,7 +111203,6 @@ _G.pg.base.task_data_template[42794] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42795] = {
 	name = "十三期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -113706,7 +111242,6 @@ _G.pg.base.task_data_template[42795] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42796] = {
 	name = "十三期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -113746,7 +111281,6 @@ _G.pg.base.task_data_template[42796] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42797] = {
 	name = "十三期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -113786,7 +111320,6 @@ _G.pg.base.task_data_template[42797] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42798] = {
 	name = "十三期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -113826,7 +111359,6 @@ _G.pg.base.task_data_template[42798] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42799] = {
 	name = "十三期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -113866,7 +111398,6 @@ _G.pg.base.task_data_template[42799] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42800] = {
 	name = "十三期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -113906,7 +111437,6 @@ _G.pg.base.task_data_template[42800] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42801] = {
 	name = "十三期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -113948,7 +111478,6 @@ _G.pg.base.task_data_template[42801] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42802] = {
 	name = "十三期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -113990,7 +111519,6 @@ _G.pg.base.task_data_template[42802] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42803] = {
 	name = "十三期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -114032,7 +111560,6 @@ _G.pg.base.task_data_template[42803] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42804] = {
 	name = "十三期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -114074,7 +111601,6 @@ _G.pg.base.task_data_template[42804] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42805] = {
 	name = "十三期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -114116,7 +111642,6 @@ _G.pg.base.task_data_template[42805] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42806] = {
 	name = "十三期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -114158,7 +111683,6 @@ _G.pg.base.task_data_template[42806] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42807] = {
 	name = "十三期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -114200,7 +111724,6 @@ _G.pg.base.task_data_template[42807] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42808] = {
 	name = "十三期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -114242,7 +111765,6 @@ _G.pg.base.task_data_template[42808] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42809] = {
 	name = "十三期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -114284,7 +111806,6 @@ _G.pg.base.task_data_template[42809] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42810] = {
 	name = "十三期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -114326,7 +111847,6 @@ _G.pg.base.task_data_template[42810] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42811] = {
 	name = "十三期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -114366,7 +111886,6 @@ _G.pg.base.task_data_template[42811] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42812] = {
 	name = "十三期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -114406,7 +111925,6 @@ _G.pg.base.task_data_template[42812] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42813] = {
 	name = "十三期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -114446,7 +111964,6 @@ _G.pg.base.task_data_template[42813] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42814] = {
 	name = "十三期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -114486,7 +112003,6 @@ _G.pg.base.task_data_template[42814] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42815] = {
 	name = "十三期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -114526,7 +112042,6 @@ _G.pg.base.task_data_template[42815] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42816] = {
 	name = "十三期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -114566,7 +112081,6 @@ _G.pg.base.task_data_template[42816] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42817] = {
 	name = "十三期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -114606,7 +112120,6 @@ _G.pg.base.task_data_template[42817] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42818] = {
 	name = "十三期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -114646,7 +112159,6 @@ _G.pg.base.task_data_template[42818] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42918] = {
 	name = "十四期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -114688,7 +112200,6 @@ _G.pg.base.task_data_template[42918] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42919] = {
 	name = "十四期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -114728,7 +112239,6 @@ _G.pg.base.task_data_template[42919] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42920] = {
 	name = "十四期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -114768,7 +112278,6 @@ _G.pg.base.task_data_template[42920] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42921] = {
 	name = "十四期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -114808,7 +112317,6 @@ _G.pg.base.task_data_template[42921] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42922] = {
 	name = "十四期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -114853,7 +112361,6 @@ _G.pg.base.task_data_template[42922] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42923] = {
 	name = "十四期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -114893,7 +112400,6 @@ _G.pg.base.task_data_template[42923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42924] = {
 	name = "十四期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -114940,7 +112446,6 @@ _G.pg.base.task_data_template[42924] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42925] = {
 	name = "十四期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -114982,7 +112487,6 @@ _G.pg.base.task_data_template[42925] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42926] = {
 	name = "十四期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -115022,7 +112526,6 @@ _G.pg.base.task_data_template[42926] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42927] = {
 	name = "十四期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -115062,7 +112565,6 @@ _G.pg.base.task_data_template[42927] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42928] = {
 	name = "十四期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -115102,7 +112604,6 @@ _G.pg.base.task_data_template[42928] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42929] = {
 	name = "十四期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -115144,7 +112645,6 @@ _G.pg.base.task_data_template[42929] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42930] = {
 	name = "十四期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -115184,7 +112684,6 @@ _G.pg.base.task_data_template[42930] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42931] = {
 	name = "十四期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -115231,7 +112730,6 @@ _G.pg.base.task_data_template[42931] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42932] = {
 	name = "十四期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -115273,7 +112771,6 @@ _G.pg.base.task_data_template[42932] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42933] = {
 	name = "十四期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -115313,7 +112810,6 @@ _G.pg.base.task_data_template[42933] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42934] = {
 	name = "十四期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -115353,7 +112849,6 @@ _G.pg.base.task_data_template[42934] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42935] = {
 	name = "十四期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -115393,7 +112888,6 @@ _G.pg.base.task_data_template[42935] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42936] = {
 	name = "十四期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -115433,7 +112927,6 @@ _G.pg.base.task_data_template[42936] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42937] = {
 	name = "十四期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -115473,7 +112966,6 @@ _G.pg.base.task_data_template[42937] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42938] = {
 	name = "十四期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -115520,7 +113012,6 @@ _G.pg.base.task_data_template[42938] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42939] = {
 	name = "十四期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -115560,7 +113051,6 @@ _G.pg.base.task_data_template[42939] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42940] = {
 	name = "十四期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -115600,7 +113090,6 @@ _G.pg.base.task_data_template[42940] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42941] = {
 	name = "十四期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -115640,7 +113129,6 @@ _G.pg.base.task_data_template[42941] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42942] = {
 	name = "十四期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -115680,7 +113168,6 @@ _G.pg.base.task_data_template[42942] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42943] = {
 	name = "十四期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -115720,7 +113207,6 @@ _G.pg.base.task_data_template[42943] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42944] = {
 	name = "十四期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -115762,7 +113248,6 @@ _G.pg.base.task_data_template[42944] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42945] = {
 	name = "十四期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -115809,7 +113294,6 @@ _G.pg.base.task_data_template[42945] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42946] = {
 	name = "十四期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -115849,7 +113333,6 @@ _G.pg.base.task_data_template[42946] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42947] = {
 	name = "十四期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -115894,7 +113377,6 @@ _G.pg.base.task_data_template[42947] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42948] = {
 	name = "十四期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -115934,7 +113416,6 @@ _G.pg.base.task_data_template[42948] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42949] = {
 	name = "十四期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -115976,7 +113457,6 @@ _G.pg.base.task_data_template[42949] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42950] = {
 	name = "十四期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -116016,7 +113496,6 @@ _G.pg.base.task_data_template[42950] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42951] = {
 	name = "十四期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -116056,7 +113535,6 @@ _G.pg.base.task_data_template[42951] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42952] = {
 	name = "十四期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -116103,7 +113581,6 @@ _G.pg.base.task_data_template[42952] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42953] = {
 	name = "十四期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -116143,7 +113620,6 @@ _G.pg.base.task_data_template[42953] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42954] = {
 	name = "十四期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -116185,7 +113661,6 @@ _G.pg.base.task_data_template[42954] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[42955] = {
 	name = "十四期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -116225,7 +113700,6 @@ _G.pg.base.task_data_template[42955] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42956] = {
 	name = "十四期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -116267,7 +113741,6 @@ _G.pg.base.task_data_template[42956] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42957] = {
 	name = "十四期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -116307,7 +113780,6 @@ _G.pg.base.task_data_template[42957] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42958] = {
 	name = "十四期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -116347,7 +113819,6 @@ _G.pg.base.task_data_template[42958] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42959] = {
 	name = "十四期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -116394,7 +113865,6 @@ _G.pg.base.task_data_template[42959] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42960] = {
 	name = "十四期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -116434,7 +113904,6 @@ _G.pg.base.task_data_template[42960] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42961] = {
 	name = "十四期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -116474,7 +113943,6 @@ _G.pg.base.task_data_template[42961] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42962] = {
 	name = "十四期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -116514,7 +113982,6 @@ _G.pg.base.task_data_template[42962] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42963] = {
 	name = "十四期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -116556,7 +114023,6 @@ _G.pg.base.task_data_template[42963] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[42964] = {
 	name = "十四期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -116596,7 +114062,6 @@ _G.pg.base.task_data_template[42964] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42965] = {
 	name = "十四期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -116636,7 +114101,6 @@ _G.pg.base.task_data_template[42965] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42966] = {
 	name = "十四期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -116683,7 +114147,6 @@ _G.pg.base.task_data_template[42966] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42967] = {
 	name = "十四期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -116723,7 +114186,6 @@ _G.pg.base.task_data_template[42967] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42968] = {
 	name = "十四期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -116763,7 +114225,6 @@ _G.pg.base.task_data_template[42968] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42969] = {
 	name = "十四期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -116805,7 +114266,6 @@ _G.pg.base.task_data_template[42969] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42970] = {
 	name = "十四期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -116845,7 +114305,6 @@ _G.pg.base.task_data_template[42970] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42971] = {
 	name = "十四期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -116885,7 +114344,6 @@ _G.pg.base.task_data_template[42971] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42972] = {
 	name = "十四期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -116925,7 +114383,6 @@ _G.pg.base.task_data_template[42972] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42973] = {
 	name = "十四期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -116972,7 +114429,6 @@ _G.pg.base.task_data_template[42973] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42974] = {
 	name = "十四期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -117014,7 +114470,6 @@ _G.pg.base.task_data_template[42974] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42975] = {
 	name = "十四期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -117056,7 +114511,6 @@ _G.pg.base.task_data_template[42975] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42976] = {
 	name = "十四期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -117098,7 +114552,6 @@ _G.pg.base.task_data_template[42976] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42977] = {
 	name = "十四期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -117140,7 +114593,6 @@ _G.pg.base.task_data_template[42977] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42978] = {
 	name = "十四期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -117182,7 +114634,6 @@ _G.pg.base.task_data_template[42978] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42979] = {
 	name = "十四期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -117224,7 +114675,6 @@ _G.pg.base.task_data_template[42979] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42980] = {
 	name = "十四期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -117266,7 +114716,6 @@ _G.pg.base.task_data_template[42980] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42981] = {
 	name = "十四期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -117308,7 +114757,6 @@ _G.pg.base.task_data_template[42981] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42982] = {
 	name = "十四期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -117350,7 +114798,6 @@ _G.pg.base.task_data_template[42982] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[42983] = {
 	name = "十四期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -117390,7 +114837,6 @@ _G.pg.base.task_data_template[42983] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42984] = {
 	name = "十四期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -117430,7 +114876,6 @@ _G.pg.base.task_data_template[42984] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42985] = {
 	name = "十四期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -117470,7 +114915,6 @@ _G.pg.base.task_data_template[42985] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42986] = {
 	name = "十四期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -117510,7 +114954,6 @@ _G.pg.base.task_data_template[42986] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42987] = {
 	name = "十四期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -117550,7 +114993,6 @@ _G.pg.base.task_data_template[42987] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42988] = {
 	name = "十四期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -117590,7 +115032,6 @@ _G.pg.base.task_data_template[42988] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42989] = {
 	name = "十四期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -117630,7 +115071,6 @@ _G.pg.base.task_data_template[42989] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42990] = {
 	name = "十四期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -117670,7 +115110,6 @@ _G.pg.base.task_data_template[42990] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42991] = {
 	name = "十四期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -117710,7 +115149,6 @@ _G.pg.base.task_data_template[42991] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42992] = {
 	name = "十四期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -117750,7 +115188,6 @@ _G.pg.base.task_data_template[42992] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42993] = {
 	name = "十四期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -117790,7 +115227,6 @@ _G.pg.base.task_data_template[42993] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42994] = {
 	name = "十四期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -117830,7 +115266,6 @@ _G.pg.base.task_data_template[42994] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42995] = {
 	name = "十四期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -117870,7 +115305,6 @@ _G.pg.base.task_data_template[42995] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42996] = {
 	name = "十四期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -117910,7 +115344,6 @@ _G.pg.base.task_data_template[42996] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42997] = {
 	name = "十四期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -117950,7 +115383,6 @@ _G.pg.base.task_data_template[42997] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42998] = {
 	name = "十四期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -117990,7 +115422,6 @@ _G.pg.base.task_data_template[42998] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[42999] = {
 	name = "十四期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -118030,7 +115461,6 @@ _G.pg.base.task_data_template[42999] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43000] = {
 	name = "十四期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -118070,7 +115500,6 @@ _G.pg.base.task_data_template[43000] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43001] = {
 	name = "十四期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -118112,7 +115541,6 @@ _G.pg.base.task_data_template[43001] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43002] = {
 	name = "十四期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -118154,7 +115582,6 @@ _G.pg.base.task_data_template[43002] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43003] = {
 	name = "十四期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -118196,7 +115623,6 @@ _G.pg.base.task_data_template[43003] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43004] = {
 	name = "十四期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -118238,7 +115664,6 @@ _G.pg.base.task_data_template[43004] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43005] = {
 	name = "十四期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -118280,7 +115705,6 @@ _G.pg.base.task_data_template[43005] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43006] = {
 	name = "十四期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -118322,7 +115746,6 @@ _G.pg.base.task_data_template[43006] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43007] = {
 	name = "十四期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -118364,7 +115787,6 @@ _G.pg.base.task_data_template[43007] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43008] = {
 	name = "十四期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -118406,7 +115828,6 @@ _G.pg.base.task_data_template[43008] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43009] = {
 	name = "十四期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -118448,7 +115869,6 @@ _G.pg.base.task_data_template[43009] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43010] = {
 	name = "十四期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -118490,7 +115910,6 @@ _G.pg.base.task_data_template[43010] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43011] = {
 	name = "十四期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -118530,7 +115949,6 @@ _G.pg.base.task_data_template[43011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43012] = {
 	name = "十四期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -118570,7 +115988,6 @@ _G.pg.base.task_data_template[43012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43013] = {
 	name = "十四期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -118610,7 +116027,6 @@ _G.pg.base.task_data_template[43013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43014] = {
 	name = "十四期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -118650,7 +116066,6 @@ _G.pg.base.task_data_template[43014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43015] = {
 	name = "十四期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -118690,7 +116105,6 @@ _G.pg.base.task_data_template[43015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43016] = {
 	name = "十四期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -118730,7 +116144,6 @@ _G.pg.base.task_data_template[43016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43017] = {
 	name = "十四期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -118770,7 +116183,6 @@ _G.pg.base.task_data_template[43017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43018] = {
 	name = "十四期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -118810,7 +116222,6 @@ _G.pg.base.task_data_template[43018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43118] = {
 	name = "十五期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -118852,7 +116263,6 @@ _G.pg.base.task_data_template[43118] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43119] = {
 	name = "十五期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -118892,7 +116302,6 @@ _G.pg.base.task_data_template[43119] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43120] = {
 	name = "十五期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -118932,7 +116341,6 @@ _G.pg.base.task_data_template[43120] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43121] = {
 	name = "十五期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -118972,7 +116380,6 @@ _G.pg.base.task_data_template[43121] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43122] = {
 	name = "十五期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -119017,7 +116424,6 @@ _G.pg.base.task_data_template[43122] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43123] = {
 	name = "十五期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -119057,7 +116463,6 @@ _G.pg.base.task_data_template[43123] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43124] = {
 	name = "十五期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -119104,7 +116509,6 @@ _G.pg.base.task_data_template[43124] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43125] = {
 	name = "十五期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -119146,7 +116550,6 @@ _G.pg.base.task_data_template[43125] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43126] = {
 	name = "十五期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -119186,7 +116589,6 @@ _G.pg.base.task_data_template[43126] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43127] = {
 	name = "十五期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -119226,7 +116628,6 @@ _G.pg.base.task_data_template[43127] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43128] = {
 	name = "十五期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -119266,7 +116667,6 @@ _G.pg.base.task_data_template[43128] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43129] = {
 	name = "十五期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -119308,7 +116708,6 @@ _G.pg.base.task_data_template[43129] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[43130] = {
 	name = "十五期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -119348,7 +116747,6 @@ _G.pg.base.task_data_template[43130] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43131] = {
 	name = "十五期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -119395,7 +116793,6 @@ _G.pg.base.task_data_template[43131] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43132] = {
 	name = "十五期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -119437,7 +116834,6 @@ _G.pg.base.task_data_template[43132] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43133] = {
 	name = "十五期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -119477,7 +116873,6 @@ _G.pg.base.task_data_template[43133] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43134] = {
 	name = "十五期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -119517,7 +116912,6 @@ _G.pg.base.task_data_template[43134] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43135] = {
 	name = "十五期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -119557,7 +116951,6 @@ _G.pg.base.task_data_template[43135] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43136] = {
 	name = "十五期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -119597,7 +116990,6 @@ _G.pg.base.task_data_template[43136] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43137] = {
 	name = "十五期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -119637,7 +117029,6 @@ _G.pg.base.task_data_template[43137] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43138] = {
 	name = "十五期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -119684,7 +117075,6 @@ _G.pg.base.task_data_template[43138] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43139] = {
 	name = "十五期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -119724,7 +117114,6 @@ _G.pg.base.task_data_template[43139] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43140] = {
 	name = "十五期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -119764,7 +117153,6 @@ _G.pg.base.task_data_template[43140] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43141] = {
 	name = "十五期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -119804,7 +117192,6 @@ _G.pg.base.task_data_template[43141] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43142] = {
 	name = "十五期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -119844,7 +117231,6 @@ _G.pg.base.task_data_template[43142] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43143] = {
 	name = "十五期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -119884,7 +117270,6 @@ _G.pg.base.task_data_template[43143] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43144] = {
 	name = "十五期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -119926,7 +117311,6 @@ _G.pg.base.task_data_template[43144] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43145] = {
 	name = "十五期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -119973,7 +117357,6 @@ _G.pg.base.task_data_template[43145] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43146] = {
 	name = "十五期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -120013,7 +117396,6 @@ _G.pg.base.task_data_template[43146] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43147] = {
 	name = "十五期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -120058,7 +117440,6 @@ _G.pg.base.task_data_template[43147] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43148] = {
 	name = "十五期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -120098,7 +117479,6 @@ _G.pg.base.task_data_template[43148] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43149] = {
 	name = "十五期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -120140,7 +117520,6 @@ _G.pg.base.task_data_template[43149] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43150] = {
 	name = "十五期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -120180,7 +117559,6 @@ _G.pg.base.task_data_template[43150] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43151] = {
 	name = "十五期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -120220,7 +117598,6 @@ _G.pg.base.task_data_template[43151] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43152] = {
 	name = "十五期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -120267,7 +117644,6 @@ _G.pg.base.task_data_template[43152] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43153] = {
 	name = "十五期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -120307,7 +117683,6 @@ _G.pg.base.task_data_template[43153] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43154] = {
 	name = "十五期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -120349,7 +117724,6 @@ _G.pg.base.task_data_template[43154] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[43155] = {
 	name = "十五期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -120389,7 +117763,6 @@ _G.pg.base.task_data_template[43155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43156] = {
 	name = "十五期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -120431,7 +117804,6 @@ _G.pg.base.task_data_template[43156] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43157] = {
 	name = "十五期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -120471,7 +117843,6 @@ _G.pg.base.task_data_template[43157] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43158] = {
 	name = "十五期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -120511,7 +117882,6 @@ _G.pg.base.task_data_template[43158] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43159] = {
 	name = "十五期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -120558,7 +117928,6 @@ _G.pg.base.task_data_template[43159] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43160] = {
 	name = "十五期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -120598,7 +117967,6 @@ _G.pg.base.task_data_template[43160] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43161] = {
 	name = "十五期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -120638,7 +118006,6 @@ _G.pg.base.task_data_template[43161] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43162] = {
 	name = "十五期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -120678,7 +118045,6 @@ _G.pg.base.task_data_template[43162] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43163] = {
 	name = "十五期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -120720,7 +118086,6 @@ _G.pg.base.task_data_template[43163] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43164] = {
 	name = "十五期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -120760,7 +118125,6 @@ _G.pg.base.task_data_template[43164] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43165] = {
 	name = "十五期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -120800,7 +118164,6 @@ _G.pg.base.task_data_template[43165] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43166] = {
 	name = "十五期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -120847,7 +118210,6 @@ _G.pg.base.task_data_template[43166] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43167] = {
 	name = "十五期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -120887,7 +118249,6 @@ _G.pg.base.task_data_template[43167] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43168] = {
 	name = "十五期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -120927,7 +118288,6 @@ _G.pg.base.task_data_template[43168] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43169] = {
 	name = "十五期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -120969,7 +118329,6 @@ _G.pg.base.task_data_template[43169] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43170] = {
 	name = "十五期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -121009,7 +118368,6 @@ _G.pg.base.task_data_template[43170] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43171] = {
 	name = "十五期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -121049,7 +118407,6 @@ _G.pg.base.task_data_template[43171] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43172] = {
 	name = "十五期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -121089,7 +118446,6 @@ _G.pg.base.task_data_template[43172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43173] = {
 	name = "十五期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -121136,7 +118492,6 @@ _G.pg.base.task_data_template[43173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43174] = {
 	name = "十五期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -121178,7 +118533,6 @@ _G.pg.base.task_data_template[43174] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43175] = {
 	name = "十五期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -121220,7 +118574,6 @@ _G.pg.base.task_data_template[43175] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43176] = {
 	name = "十五期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -121262,7 +118615,6 @@ _G.pg.base.task_data_template[43176] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43177] = {
 	name = "十五期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -121304,7 +118656,6 @@ _G.pg.base.task_data_template[43177] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43178] = {
 	name = "十五期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -121346,7 +118697,6 @@ _G.pg.base.task_data_template[43178] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43179] = {
 	name = "十五期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -121388,7 +118738,6 @@ _G.pg.base.task_data_template[43179] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43180] = {
 	name = "十五期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -121430,7 +118779,6 @@ _G.pg.base.task_data_template[43180] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43181] = {
 	name = "十五期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -121472,7 +118820,6 @@ _G.pg.base.task_data_template[43181] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43182] = {
 	name = "十五期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -121514,7 +118861,6 @@ _G.pg.base.task_data_template[43182] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43183] = {
 	name = "十五期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -121554,7 +118900,6 @@ _G.pg.base.task_data_template[43183] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43184] = {
 	name = "十五期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -121594,7 +118939,6 @@ _G.pg.base.task_data_template[43184] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43185] = {
 	name = "十五期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -121634,7 +118978,6 @@ _G.pg.base.task_data_template[43185] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43186] = {
 	name = "十五期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -121674,7 +119017,6 @@ _G.pg.base.task_data_template[43186] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43187] = {
 	name = "十五期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -121714,7 +119056,6 @@ _G.pg.base.task_data_template[43187] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43188] = {
 	name = "十五期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -121754,7 +119095,6 @@ _G.pg.base.task_data_template[43188] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43189] = {
 	name = "十五期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -121794,7 +119134,6 @@ _G.pg.base.task_data_template[43189] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43190] = {
 	name = "十五期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -121834,7 +119173,6 @@ _G.pg.base.task_data_template[43190] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43191] = {
 	name = "十五期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -121874,7 +119212,6 @@ _G.pg.base.task_data_template[43191] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43192] = {
 	name = "十五期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -121914,7 +119251,6 @@ _G.pg.base.task_data_template[43192] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43193] = {
 	name = "十五期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -121954,7 +119290,6 @@ _G.pg.base.task_data_template[43193] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43194] = {
 	name = "十五期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -121994,7 +119329,6 @@ _G.pg.base.task_data_template[43194] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43195] = {
 	name = "十五期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -122034,7 +119368,6 @@ _G.pg.base.task_data_template[43195] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43196] = {
 	name = "十五期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -122074,7 +119407,6 @@ _G.pg.base.task_data_template[43196] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43197] = {
 	name = "十五期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -122114,7 +119446,6 @@ _G.pg.base.task_data_template[43197] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43198] = {
 	name = "十五期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -122154,7 +119485,6 @@ _G.pg.base.task_data_template[43198] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43199] = {
 	name = "十五期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -122194,7 +119524,6 @@ _G.pg.base.task_data_template[43199] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43200] = {
 	name = "十五期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -122234,7 +119563,6 @@ _G.pg.base.task_data_template[43200] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43201] = {
 	name = "十五期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -122276,7 +119604,6 @@ _G.pg.base.task_data_template[43201] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43202] = {
 	name = "十五期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -122318,7 +119645,6 @@ _G.pg.base.task_data_template[43202] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43203] = {
 	name = "十五期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -122360,7 +119686,6 @@ _G.pg.base.task_data_template[43203] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43204] = {
 	name = "十五期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -122402,7 +119727,6 @@ _G.pg.base.task_data_template[43204] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43205] = {
 	name = "十五期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -122444,7 +119768,6 @@ _G.pg.base.task_data_template[43205] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43206] = {
 	name = "十五期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -122486,7 +119809,6 @@ _G.pg.base.task_data_template[43206] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43207] = {
 	name = "十五期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -122528,7 +119850,6 @@ _G.pg.base.task_data_template[43207] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43208] = {
 	name = "十五期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -122570,7 +119891,6 @@ _G.pg.base.task_data_template[43208] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43209] = {
 	name = "十五期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -122612,7 +119932,6 @@ _G.pg.base.task_data_template[43209] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43210] = {
 	name = "十五期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -122654,7 +119973,6 @@ _G.pg.base.task_data_template[43210] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43211] = {
 	name = "十五期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -122694,7 +120012,6 @@ _G.pg.base.task_data_template[43211] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43212] = {
 	name = "十五期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -122734,7 +120051,6 @@ _G.pg.base.task_data_template[43212] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43213] = {
 	name = "十五期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -122774,7 +120090,6 @@ _G.pg.base.task_data_template[43213] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43214] = {
 	name = "十五期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -122814,7 +120129,6 @@ _G.pg.base.task_data_template[43214] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43215] = {
 	name = "十五期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -122854,7 +120168,6 @@ _G.pg.base.task_data_template[43215] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43216] = {
 	name = "十五期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -122894,7 +120207,6 @@ _G.pg.base.task_data_template[43216] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43217] = {
 	name = "十五期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -122934,7 +120246,6 @@ _G.pg.base.task_data_template[43217] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43218] = {
 	name = "十五期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -122974,7 +120285,6 @@ _G.pg.base.task_data_template[43218] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43318] = {
 	name = "十六期·【通行证第一周】任务1",
 	guild_coin_award = 0,
@@ -123016,7 +120326,6 @@ _G.pg.base.task_data_template[43318] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43319] = {
 	name = "十六期·【通行证第一周】任务2",
 	guild_coin_award = 0,
@@ -123056,7 +120365,6 @@ _G.pg.base.task_data_template[43319] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43320] = {
 	name = "十六期·【通行证第一周】任务3",
 	guild_coin_award = 0,
@@ -123096,7 +120404,6 @@ _G.pg.base.task_data_template[43320] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43321] = {
 	name = "十六期·【通行证第一周】任务4",
 	guild_coin_award = 0,
@@ -123136,7 +120443,6 @@ _G.pg.base.task_data_template[43321] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43322] = {
 	name = "十六期·【通行证第一周】任务5",
 	guild_coin_award = 0,
@@ -123181,7 +120487,6 @@ _G.pg.base.task_data_template[43322] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43323] = {
 	name = "十六期·【通行证第一周】任务6",
 	guild_coin_award = 0,
@@ -123221,7 +120526,6 @@ _G.pg.base.task_data_template[43323] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43324] = {
 	name = "十六期·【通行证第一周】任务7",
 	guild_coin_award = 0,
@@ -123268,7 +120572,6 @@ _G.pg.base.task_data_template[43324] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43325] = {
 	name = "十六期·【通行证第二周】任务1",
 	guild_coin_award = 0,
@@ -123310,7 +120613,6 @@ _G.pg.base.task_data_template[43325] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43326] = {
 	name = "十六期·【通行证第二周】任务2",
 	guild_coin_award = 0,
@@ -123350,7 +120652,6 @@ _G.pg.base.task_data_template[43326] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43327] = {
 	name = "十六期·【通行证第二周】任务3",
 	guild_coin_award = 0,
@@ -123390,7 +120691,6 @@ _G.pg.base.task_data_template[43327] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43328] = {
 	name = "十六期·【通行证第二周】任务4",
 	guild_coin_award = 0,
@@ -123430,7 +120730,6 @@ _G.pg.base.task_data_template[43328] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43329] = {
 	name = "十六期·【通行证第二周】任务5",
 	guild_coin_award = 0,
@@ -123472,7 +120771,6 @@ _G.pg.base.task_data_template[43329] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[43330] = {
 	name = "十六期·【通行证第二周】任务6",
 	guild_coin_award = 0,
@@ -123512,7 +120810,6 @@ _G.pg.base.task_data_template[43330] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43331] = {
 	name = "十六期·【通行证第二周】任务7",
 	guild_coin_award = 0,
@@ -123559,7 +120856,6 @@ _G.pg.base.task_data_template[43331] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43332] = {
 	name = "十六期·【通行证第三周】任务1",
 	guild_coin_award = 0,
@@ -123601,7 +120897,6 @@ _G.pg.base.task_data_template[43332] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43333] = {
 	name = "十六期·【通行证第三周】任务2",
 	guild_coin_award = 0,
@@ -123641,7 +120936,6 @@ _G.pg.base.task_data_template[43333] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43334] = {
 	name = "十六期·【通行证第三周】任务3",
 	guild_coin_award = 0,
@@ -123681,7 +120975,6 @@ _G.pg.base.task_data_template[43334] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43335] = {
 	name = "十六期·【通行证第三周】任务4",
 	guild_coin_award = 0,
@@ -123721,7 +121014,6 @@ _G.pg.base.task_data_template[43335] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43336] = {
 	name = "十六期·【通行证第三周】任务5",
 	guild_coin_award = 0,
@@ -123761,7 +121053,6 @@ _G.pg.base.task_data_template[43336] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43337] = {
 	name = "十六期·【通行证第三周】任务6",
 	guild_coin_award = 0,
@@ -123801,7 +121092,6 @@ _G.pg.base.task_data_template[43337] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43338] = {
 	name = "十六期·【通行证第三周】任务7",
 	guild_coin_award = 0,
@@ -123848,7 +121138,6 @@ _G.pg.base.task_data_template[43338] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43339] = {
 	name = "十六期·【通行证第四周】任务1",
 	guild_coin_award = 0,
@@ -123888,7 +121177,6 @@ _G.pg.base.task_data_template[43339] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43340] = {
 	name = "十六期·【通行证第四周】任务2",
 	guild_coin_award = 0,
@@ -123928,7 +121216,6 @@ _G.pg.base.task_data_template[43340] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43341] = {
 	name = "十六期·【通行证第四周】任务3",
 	guild_coin_award = 0,
@@ -123968,7 +121255,6 @@ _G.pg.base.task_data_template[43341] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43342] = {
 	name = "十六期·【通行证第四周】任务4",
 	guild_coin_award = 0,
@@ -124008,7 +121294,6 @@ _G.pg.base.task_data_template[43342] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43343] = {
 	name = "十六期·【通行证第四周】任务5",
 	guild_coin_award = 0,
@@ -124048,7 +121333,6 @@ _G.pg.base.task_data_template[43343] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43344] = {
 	name = "十六期·【通行证第四周】任务6",
 	guild_coin_award = 0,
@@ -124090,7 +121374,6 @@ _G.pg.base.task_data_template[43344] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43345] = {
 	name = "十六期·【通行证第四周】任务7",
 	guild_coin_award = 0,
@@ -124137,7 +121420,6 @@ _G.pg.base.task_data_template[43345] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43346] = {
 	name = "十六期·【通行证第五周】任务1",
 	guild_coin_award = 0,
@@ -124177,7 +121459,6 @@ _G.pg.base.task_data_template[43346] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43347] = {
 	name = "十六期·【通行证第五周】任务2",
 	guild_coin_award = 0,
@@ -124222,7 +121503,6 @@ _G.pg.base.task_data_template[43347] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43348] = {
 	name = "十六期·【通行证第五周】任务3",
 	guild_coin_award = 0,
@@ -124262,7 +121542,6 @@ _G.pg.base.task_data_template[43348] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43349] = {
 	name = "十六期·【通行证第五周】任务4",
 	guild_coin_award = 0,
@@ -124304,7 +121583,6 @@ _G.pg.base.task_data_template[43349] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43350] = {
 	name = "十六期·【通行证第五周】任务5",
 	guild_coin_award = 0,
@@ -124344,7 +121622,6 @@ _G.pg.base.task_data_template[43350] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43351] = {
 	name = "十六期·【通行证第五周】任务6",
 	guild_coin_award = 0,
@@ -124384,7 +121661,6 @@ _G.pg.base.task_data_template[43351] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43352] = {
 	name = "十六期·【通行证第五周】任务7",
 	guild_coin_award = 0,
@@ -124431,7 +121707,6 @@ _G.pg.base.task_data_template[43352] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43353] = {
 	name = "十六期·【通行证第六周】任务1",
 	guild_coin_award = 0,
@@ -124471,7 +121746,6 @@ _G.pg.base.task_data_template[43353] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43354] = {
 	name = "十六期·【通行证第六周】任务2",
 	guild_coin_award = 0,
@@ -124513,7 +121787,6 @@ _G.pg.base.task_data_template[43354] = {
 		"GETBOAT"
 	}
 }
-
 _G.pg.base.task_data_template[43355] = {
 	name = "十六期·【通行证第六周】任务3",
 	guild_coin_award = 0,
@@ -124553,7 +121826,6 @@ _G.pg.base.task_data_template[43355] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43356] = {
 	name = "十六期·【通行证第六周】任务4",
 	guild_coin_award = 0,
@@ -124595,7 +121867,6 @@ _G.pg.base.task_data_template[43356] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43357] = {
 	name = "十六期·【通行证第六周】任务5",
 	guild_coin_award = 0,
@@ -124635,7 +121906,6 @@ _G.pg.base.task_data_template[43357] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43358] = {
 	name = "十六期·【通行证第六周】任务6",
 	guild_coin_award = 0,
@@ -124675,7 +121945,6 @@ _G.pg.base.task_data_template[43358] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43359] = {
 	name = "十六期·【通行证第六周】任务7",
 	guild_coin_award = 0,
@@ -124722,7 +121991,6 @@ _G.pg.base.task_data_template[43359] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43360] = {
 	name = "十六期·【通行证第七周】任务1",
 	guild_coin_award = 0,
@@ -124762,7 +122030,6 @@ _G.pg.base.task_data_template[43360] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43361] = {
 	name = "十六期·【通行证第七周】任务2",
 	guild_coin_award = 0,
@@ -124802,7 +122069,6 @@ _G.pg.base.task_data_template[43361] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43362] = {
 	name = "十六期·【通行证第七周】任务3",
 	guild_coin_award = 0,
@@ -124842,7 +122108,6 @@ _G.pg.base.task_data_template[43362] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43363] = {
 	name = "十六期·【通行证第七周】任务4",
 	guild_coin_award = 0,
@@ -124884,7 +122149,6 @@ _G.pg.base.task_data_template[43363] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43364] = {
 	name = "十六期·【通行证第七周】任务5",
 	guild_coin_award = 0,
@@ -124924,7 +122188,6 @@ _G.pg.base.task_data_template[43364] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43365] = {
 	name = "十六期·【通行证第七周】任务6",
 	guild_coin_award = 0,
@@ -124964,7 +122227,6 @@ _G.pg.base.task_data_template[43365] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43366] = {
 	name = "十六期·【通行证第七周】任务7",
 	guild_coin_award = 0,
@@ -125011,7 +122273,6 @@ _G.pg.base.task_data_template[43366] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43367] = {
 	name = "十六期·【通行证第八周】任务1",
 	guild_coin_award = 0,
@@ -125051,7 +122312,6 @@ _G.pg.base.task_data_template[43367] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43368] = {
 	name = "十六期·【通行证第八周】任务2",
 	guild_coin_award = 0,
@@ -125091,7 +122351,6 @@ _G.pg.base.task_data_template[43368] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43369] = {
 	name = "十六期·【通行证第八周】任务3",
 	guild_coin_award = 0,
@@ -125133,7 +122392,6 @@ _G.pg.base.task_data_template[43369] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43370] = {
 	name = "十六期·【通行证第八周】任务4",
 	guild_coin_award = 0,
@@ -125173,7 +122431,6 @@ _G.pg.base.task_data_template[43370] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43371] = {
 	name = "十六期·【通行证第八周】任务5",
 	guild_coin_award = 0,
@@ -125213,7 +122470,6 @@ _G.pg.base.task_data_template[43371] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43372] = {
 	name = "十六期·【通行证第八周】任务6",
 	guild_coin_award = 0,
@@ -125253,7 +122509,6 @@ _G.pg.base.task_data_template[43372] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43373] = {
 	name = "十六期·【通行证第八周】任务7",
 	guild_coin_award = 0,
@@ -125300,7 +122555,6 @@ _G.pg.base.task_data_template[43373] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43374] = {
 	name = "十六期·【通行证SP】累计周任务PT1",
 	guild_coin_award = 0,
@@ -125342,7 +122596,6 @@ _G.pg.base.task_data_template[43374] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43375] = {
 	name = "十六期·【通行证SP】累计周任务PT2",
 	guild_coin_award = 0,
@@ -125384,7 +122637,6 @@ _G.pg.base.task_data_template[43375] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43376] = {
 	name = "十六期·【通行证SP】累计周任务PT3",
 	guild_coin_award = 0,
@@ -125426,7 +122678,6 @@ _G.pg.base.task_data_template[43376] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43377] = {
 	name = "十六期·【通行证SP】累计周任务PT4",
 	guild_coin_award = 0,
@@ -125468,7 +122719,6 @@ _G.pg.base.task_data_template[43377] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43378] = {
 	name = "十六期·【通行证SP】累计周任务PT5",
 	guild_coin_award = 0,
@@ -125510,7 +122760,6 @@ _G.pg.base.task_data_template[43378] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43379] = {
 	name = "十六期·【通行证SP】累计周任务PT6",
 	guild_coin_award = 0,
@@ -125552,7 +122801,6 @@ _G.pg.base.task_data_template[43379] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43380] = {
 	name = "十六期·【通行证SP】累计周任务PT7",
 	guild_coin_award = 0,
@@ -125594,7 +122842,6 @@ _G.pg.base.task_data_template[43380] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43381] = {
 	name = "十六期·【通行证SP】累计周任务PT8",
 	guild_coin_award = 0,
@@ -125636,7 +122883,6 @@ _G.pg.base.task_data_template[43381] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43382] = {
 	name = "十六期·【通行证SP】累计周任务PT9",
 	guild_coin_award = 0,
@@ -125678,7 +122924,6 @@ _G.pg.base.task_data_template[43382] = {
 		"TASK"
 	}
 }
-
 _G.pg.base.task_data_template[43383] = {
 	name = "十六期·【通行证SP】累计建造1",
 	guild_coin_award = 0,
@@ -125718,7 +122963,6 @@ _G.pg.base.task_data_template[43383] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43384] = {
 	name = "十六期·【通行证SP】累计建造2",
 	guild_coin_award = 0,
@@ -125758,7 +123002,6 @@ _G.pg.base.task_data_template[43384] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43385] = {
 	name = "十六期·【通行证SP】累计建造3",
 	guild_coin_award = 0,
@@ -125798,7 +123041,6 @@ _G.pg.base.task_data_template[43385] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43386] = {
 	name = "十六期·【通行证SP】累计建造4",
 	guild_coin_award = 0,
@@ -125838,7 +123080,6 @@ _G.pg.base.task_data_template[43386] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43387] = {
 	name = "十六期·【通行证SP】累计建造5",
 	guild_coin_award = 0,
@@ -125878,7 +123119,6 @@ _G.pg.base.task_data_template[43387] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43388] = {
 	name = "十六期·【通行证SP】累计建造6",
 	guild_coin_award = 0,
@@ -125918,7 +123158,6 @@ _G.pg.base.task_data_template[43388] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43389] = {
 	name = "十六期·【通行证SP】累计建造7",
 	guild_coin_award = 0,
@@ -125958,7 +123197,6 @@ _G.pg.base.task_data_template[43389] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43390] = {
 	name = "十六期·【通行证SP】累计建造8",
 	guild_coin_award = 0,
@@ -125998,7 +123236,6 @@ _G.pg.base.task_data_template[43390] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43391] = {
 	name = "十六期·【通行证SP】累计消耗石油1",
 	guild_coin_award = 0,
@@ -126038,7 +123275,6 @@ _G.pg.base.task_data_template[43391] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43392] = {
 	name = "十六期·【通行证SP】累计消耗石油2",
 	guild_coin_award = 0,
@@ -126078,7 +123314,6 @@ _G.pg.base.task_data_template[43392] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43393] = {
 	name = "十六期·【通行证SP】累计消耗石油3",
 	guild_coin_award = 0,
@@ -126118,7 +123353,6 @@ _G.pg.base.task_data_template[43393] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43394] = {
 	name = "十六期·【通行证SP】累计消耗石油4",
 	guild_coin_award = 0,
@@ -126158,7 +123392,6 @@ _G.pg.base.task_data_template[43394] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43395] = {
 	name = "十六期·【通行证SP】累计消耗石油5",
 	guild_coin_award = 0,
@@ -126198,7 +123431,6 @@ _G.pg.base.task_data_template[43395] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43396] = {
 	name = "十六期·【通行证SP】累计消耗石油6",
 	guild_coin_award = 0,
@@ -126238,7 +123470,6 @@ _G.pg.base.task_data_template[43396] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43397] = {
 	name = "十六期·【通行证SP】累计消耗石油7",
 	guild_coin_award = 0,
@@ -126278,7 +123509,6 @@ _G.pg.base.task_data_template[43397] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43398] = {
 	name = "十六期·【通行证SP】累计消耗石油8",
 	guild_coin_award = 0,
@@ -126318,7 +123548,6 @@ _G.pg.base.task_data_template[43398] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43399] = {
 	name = "十六期·【通行证SP】累计消耗石油9",
 	guild_coin_award = 0,
@@ -126358,7 +123587,6 @@ _G.pg.base.task_data_template[43399] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43400] = {
 	name = "十六期·【通行证SP】累计消耗石油10",
 	guild_coin_award = 0,
@@ -126398,7 +123626,6 @@ _G.pg.base.task_data_template[43400] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43401] = {
 	name = "十六期·【通行证SP】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -126440,7 +123667,6 @@ _G.pg.base.task_data_template[43401] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43402] = {
 	name = "十六期·【通行证SP】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -126482,7 +123708,6 @@ _G.pg.base.task_data_template[43402] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43403] = {
 	name = "十六期·【通行证SP】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -126524,7 +123749,6 @@ _G.pg.base.task_data_template[43403] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43404] = {
 	name = "十六期·【通行证SP】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -126566,7 +123790,6 @@ _G.pg.base.task_data_template[43404] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43405] = {
 	name = "十六期·【通行证SP】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -126608,7 +123831,6 @@ _G.pg.base.task_data_template[43405] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43406] = {
 	name = "十六期·【通行证SP】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -126650,7 +123872,6 @@ _G.pg.base.task_data_template[43406] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43407] = {
 	name = "十六期·【通行证SP】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -126692,7 +123913,6 @@ _G.pg.base.task_data_template[43407] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43408] = {
 	name = "十六期·【通行证SP】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -126734,7 +123954,6 @@ _G.pg.base.task_data_template[43408] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43409] = {
 	name = "十六期·【通行证SP】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -126776,7 +123995,6 @@ _G.pg.base.task_data_template[43409] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43410] = {
 	name = "十六期·【通行证SP】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -126818,7 +124036,6 @@ _G.pg.base.task_data_template[43410] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[43411] = {
 	name = "十六期·【通行证SP】累计登陆1",
 	guild_coin_award = 0,
@@ -126858,7 +124075,6 @@ _G.pg.base.task_data_template[43411] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43412] = {
 	name = "十六期·【通行证SP】累计登陆2",
 	guild_coin_award = 0,
@@ -126898,7 +124114,6 @@ _G.pg.base.task_data_template[43412] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43413] = {
 	name = "十六期·【通行证SP】累计登陆3",
 	guild_coin_award = 0,
@@ -126938,7 +124153,6 @@ _G.pg.base.task_data_template[43413] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43414] = {
 	name = "十六期·【通行证SP】累计登陆4",
 	guild_coin_award = 0,
@@ -126978,7 +124192,6 @@ _G.pg.base.task_data_template[43414] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43415] = {
 	name = "十六期·【通行证SP】累计登陆5",
 	guild_coin_award = 0,
@@ -127018,7 +124231,6 @@ _G.pg.base.task_data_template[43415] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43416] = {
 	name = "十六期·【通行证SP】累计登陆6",
 	guild_coin_award = 0,
@@ -127058,7 +124270,6 @@ _G.pg.base.task_data_template[43416] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43417] = {
 	name = "十六期·【通行证SP】累计登陆7",
 	guild_coin_award = 0,
@@ -127098,7 +124309,6 @@ _G.pg.base.task_data_template[43417] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[43418] = {
 	name = "十六期·【通行证SP】累计登陆8",
 	guild_coin_award = 0,
@@ -127138,7 +124348,6 @@ _G.pg.base.task_data_template[43418] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51101] = {
 	name = "科研1期测试经验追赶1",
 	guild_coin_award = 0,
@@ -127178,7 +124387,6 @@ _G.pg.base.task_data_template[51101] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51102] = {
 	name = "科研1期测试经验追赶2",
 	guild_coin_award = 0,
@@ -127218,7 +124426,6 @@ _G.pg.base.task_data_template[51102] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51103] = {
 	name = "科研1期测试经验追赶3",
 	guild_coin_award = 0,
@@ -127258,7 +124465,6 @@ _G.pg.base.task_data_template[51103] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51104] = {
 	name = "科研1期测试经验追赶4",
 	guild_coin_award = 0,
@@ -127298,7 +124504,6 @@ _G.pg.base.task_data_template[51104] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51105] = {
 	name = "科研1期测试经验追赶5",
 	guild_coin_award = 0,
@@ -127338,7 +124543,6 @@ _G.pg.base.task_data_template[51105] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51106] = {
 	name = "科研1期测试经验追赶6",
 	guild_coin_award = 0,
@@ -127378,7 +124582,6 @@ _G.pg.base.task_data_template[51106] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51107] = {
 	name = "科研1期测试经验追赶7",
 	guild_coin_award = 0,
@@ -127418,7 +124621,6 @@ _G.pg.base.task_data_template[51107] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51108] = {
 	name = "科研1期测试经验追赶8",
 	guild_coin_award = 0,
@@ -127458,7 +124660,6 @@ _G.pg.base.task_data_template[51108] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51109] = {
 	name = "科研1期测试经验追赶9",
 	guild_coin_award = 0,
@@ -127498,7 +124699,6 @@ _G.pg.base.task_data_template[51109] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51110] = {
 	name = "科研1期测试经验追赶10",
 	guild_coin_award = 0,
@@ -127538,7 +124738,6 @@ _G.pg.base.task_data_template[51110] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51111] = {
 	name = "科研1期测试经验追赶11",
 	guild_coin_award = 0,
@@ -127578,7 +124777,6 @@ _G.pg.base.task_data_template[51111] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51112] = {
 	name = "科研1期测试经验追赶12",
 	guild_coin_award = 0,
@@ -127618,7 +124816,6 @@ _G.pg.base.task_data_template[51112] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51113] = {
 	name = "科研1期测试经验追赶13",
 	guild_coin_award = 0,
@@ -127658,7 +124855,6 @@ _G.pg.base.task_data_template[51113] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51114] = {
 	name = "科研1期测试经验追赶14",
 	guild_coin_award = 0,
@@ -127698,7 +124894,6 @@ _G.pg.base.task_data_template[51114] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51115] = {
 	name = "科研1期测试经验追赶15",
 	guild_coin_award = 0,
@@ -127738,7 +124933,6 @@ _G.pg.base.task_data_template[51115] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51116] = {
 	name = "科研1期测试经验追赶16",
 	guild_coin_award = 0,
@@ -127778,7 +124972,6 @@ _G.pg.base.task_data_template[51116] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51117] = {
 	name = "科研1期测试经验追赶17",
 	guild_coin_award = 0,
@@ -127824,7 +125017,6 @@ _G.pg.base.task_data_template[51117] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51118] = {
 	name = "科研1期测试经验追赶18",
 	guild_coin_award = 0,
@@ -127870,7 +125062,6 @@ _G.pg.base.task_data_template[51118] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51119] = {
 	name = "科研1期测试经验追赶19",
 	guild_coin_award = 0,
@@ -127916,7 +125107,6 @@ _G.pg.base.task_data_template[51119] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51120] = {
 	name = "科研1期测试经验追赶20",
 	guild_coin_award = 0,
@@ -127965,7 +125155,6 @@ _G.pg.base.task_data_template[51120] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[51121] = {
 	name = "科研2期测试经验追赶1",
 	guild_coin_award = 0,
@@ -128005,7 +125194,6 @@ _G.pg.base.task_data_template[51121] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51122] = {
 	name = "科研2期测试经验追赶2",
 	guild_coin_award = 0,
@@ -128045,7 +125233,6 @@ _G.pg.base.task_data_template[51122] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51123] = {
 	name = "科研2期测试经验追赶3",
 	guild_coin_award = 0,
@@ -128085,7 +125272,6 @@ _G.pg.base.task_data_template[51123] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51124] = {
 	name = "科研2期测试经验追赶4",
 	guild_coin_award = 0,
@@ -128125,7 +125311,6 @@ _G.pg.base.task_data_template[51124] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51125] = {
 	name = "科研2期测试经验追赶5",
 	guild_coin_award = 0,
@@ -128165,7 +125350,6 @@ _G.pg.base.task_data_template[51125] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51126] = {
 	name = "科研2期测试经验追赶6",
 	guild_coin_award = 0,
@@ -128205,7 +125389,6 @@ _G.pg.base.task_data_template[51126] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51127] = {
 	name = "科研2期测试经验追赶7",
 	guild_coin_award = 0,
@@ -128245,7 +125428,6 @@ _G.pg.base.task_data_template[51127] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51128] = {
 	name = "科研2期测试经验追赶8",
 	guild_coin_award = 0,
@@ -128285,7 +125467,6 @@ _G.pg.base.task_data_template[51128] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51129] = {
 	name = "科研2期测试经验追赶9",
 	guild_coin_award = 0,
@@ -128325,7 +125506,6 @@ _G.pg.base.task_data_template[51129] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51130] = {
 	name = "科研2期测试经验追赶10",
 	guild_coin_award = 0,
@@ -128365,7 +125545,6 @@ _G.pg.base.task_data_template[51130] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51131] = {
 	name = "科研2期测试经验追赶11",
 	guild_coin_award = 0,
@@ -128405,7 +125584,6 @@ _G.pg.base.task_data_template[51131] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51132] = {
 	name = "科研2期测试经验追赶12",
 	guild_coin_award = 0,
@@ -128445,7 +125623,6 @@ _G.pg.base.task_data_template[51132] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51133] = {
 	name = "科研2期测试经验追赶13",
 	guild_coin_award = 0,
@@ -128485,7 +125662,6 @@ _G.pg.base.task_data_template[51133] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51134] = {
 	name = "科研2期测试经验追赶14",
 	guild_coin_award = 0,
@@ -128525,7 +125701,6 @@ _G.pg.base.task_data_template[51134] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51135] = {
 	name = "科研2期测试经验追赶15",
 	guild_coin_award = 0,
@@ -128565,7 +125740,6 @@ _G.pg.base.task_data_template[51135] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51136] = {
 	name = "科研2期测试经验追赶16",
 	guild_coin_award = 0,
@@ -128605,7 +125779,6 @@ _G.pg.base.task_data_template[51136] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51137] = {
 	name = "科研2期测试经验追赶17",
 	guild_coin_award = 0,
@@ -128651,7 +125824,6 @@ _G.pg.base.task_data_template[51137] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51138] = {
 	name = "科研2期测试经验追赶18",
 	guild_coin_award = 0,
@@ -128697,7 +125869,6 @@ _G.pg.base.task_data_template[51138] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51139] = {
 	name = "科研2期测试经验追赶19",
 	guild_coin_award = 0,
@@ -128743,7 +125914,6 @@ _G.pg.base.task_data_template[51139] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51140] = {
 	name = "科研2期测试经验追赶20",
 	guild_coin_award = 0,
@@ -128792,7 +125962,6 @@ _G.pg.base.task_data_template[51140] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[51141] = {
 	name = "科研3期测试经验追赶1",
 	guild_coin_award = 0,
@@ -128832,7 +126001,6 @@ _G.pg.base.task_data_template[51141] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51142] = {
 	name = "科研3期测试经验追赶2",
 	guild_coin_award = 0,
@@ -128872,7 +126040,6 @@ _G.pg.base.task_data_template[51142] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51143] = {
 	name = "科研3期测试经验追赶3",
 	guild_coin_award = 0,
@@ -128912,7 +126079,6 @@ _G.pg.base.task_data_template[51143] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51144] = {
 	name = "科研3期测试经验追赶4",
 	guild_coin_award = 0,
@@ -128952,7 +126118,6 @@ _G.pg.base.task_data_template[51144] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51145] = {
 	name = "科研3期测试经验追赶5",
 	guild_coin_award = 0,
@@ -128992,7 +126157,6 @@ _G.pg.base.task_data_template[51145] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51146] = {
 	name = "科研3期测试经验追赶6",
 	guild_coin_award = 0,
@@ -129032,7 +126196,6 @@ _G.pg.base.task_data_template[51146] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51147] = {
 	name = "科研3期测试经验追赶7",
 	guild_coin_award = 0,
@@ -129072,7 +126235,6 @@ _G.pg.base.task_data_template[51147] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51148] = {
 	name = "科研3期测试经验追赶8",
 	guild_coin_award = 0,
@@ -129112,7 +126274,6 @@ _G.pg.base.task_data_template[51148] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51149] = {
 	name = "科研3期测试经验追赶9",
 	guild_coin_award = 0,
@@ -129152,7 +126313,6 @@ _G.pg.base.task_data_template[51149] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51150] = {
 	name = "科研3期测试经验追赶10",
 	guild_coin_award = 0,
@@ -129192,7 +126352,6 @@ _G.pg.base.task_data_template[51150] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51151] = {
 	name = "科研3期测试经验追赶11",
 	guild_coin_award = 0,
@@ -129232,7 +126391,6 @@ _G.pg.base.task_data_template[51151] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51152] = {
 	name = "科研3期测试经验追赶12",
 	guild_coin_award = 0,
@@ -129272,7 +126430,6 @@ _G.pg.base.task_data_template[51152] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51153] = {
 	name = "科研3期测试经验追赶13",
 	guild_coin_award = 0,
@@ -129312,7 +126469,6 @@ _G.pg.base.task_data_template[51153] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51154] = {
 	name = "科研3期测试经验追赶14",
 	guild_coin_award = 0,
@@ -129352,7 +126508,6 @@ _G.pg.base.task_data_template[51154] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51155] = {
 	name = "科研3期测试经验追赶15",
 	guild_coin_award = 0,
@@ -129392,7 +126547,6 @@ _G.pg.base.task_data_template[51155] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51156] = {
 	name = "科研3期测试经验追赶16",
 	guild_coin_award = 0,
@@ -129432,7 +126586,6 @@ _G.pg.base.task_data_template[51156] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51157] = {
 	name = "科研3期测试经验追赶17",
 	guild_coin_award = 0,
@@ -129478,7 +126631,6 @@ _G.pg.base.task_data_template[51157] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51158] = {
 	name = "科研3期测试经验追赶18",
 	guild_coin_award = 0,
@@ -129524,7 +126676,6 @@ _G.pg.base.task_data_template[51158] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51159] = {
 	name = "科研3期测试经验追赶19",
 	guild_coin_award = 0,
@@ -129570,7 +126721,6 @@ _G.pg.base.task_data_template[51159] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51160] = {
 	name = "科研3期测试经验追赶20",
 	guild_coin_award = 0,
@@ -129618,7 +126768,6 @@ _G.pg.base.task_data_template[51160] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[51161] = {
 	name = "科研4期测试经验追赶1",
 	guild_coin_award = 0,
@@ -129658,7 +126807,6 @@ _G.pg.base.task_data_template[51161] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51162] = {
 	name = "科研4期测试经验追赶2",
 	guild_coin_award = 0,
@@ -129698,7 +126846,6 @@ _G.pg.base.task_data_template[51162] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51163] = {
 	name = "科研4期测试经验追赶3",
 	guild_coin_award = 0,
@@ -129738,7 +126885,6 @@ _G.pg.base.task_data_template[51163] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51164] = {
 	name = "科研4期测试经验追赶4",
 	guild_coin_award = 0,
@@ -129778,7 +126924,6 @@ _G.pg.base.task_data_template[51164] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51165] = {
 	name = "科研4期测试经验追赶5",
 	guild_coin_award = 0,
@@ -129818,7 +126963,6 @@ _G.pg.base.task_data_template[51165] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51166] = {
 	name = "科研4期测试经验追赶6",
 	guild_coin_award = 0,
@@ -129858,7 +127002,6 @@ _G.pg.base.task_data_template[51166] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51167] = {
 	name = "科研4期测试经验追赶7",
 	guild_coin_award = 0,
@@ -129898,7 +127041,6 @@ _G.pg.base.task_data_template[51167] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51168] = {
 	name = "科研4期测试经验追赶8",
 	guild_coin_award = 0,
@@ -129938,7 +127080,6 @@ _G.pg.base.task_data_template[51168] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51169] = {
 	name = "科研4期测试经验追赶9",
 	guild_coin_award = 0,
@@ -129978,7 +127119,6 @@ _G.pg.base.task_data_template[51169] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51170] = {
 	name = "科研4期测试经验追赶10",
 	guild_coin_award = 0,
@@ -130018,7 +127158,6 @@ _G.pg.base.task_data_template[51170] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51171] = {
 	name = "科研4期测试经验追赶11",
 	guild_coin_award = 0,
@@ -130058,7 +127197,6 @@ _G.pg.base.task_data_template[51171] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51172] = {
 	name = "科研4期测试经验追赶12",
 	guild_coin_award = 0,
@@ -130098,7 +127236,6 @@ _G.pg.base.task_data_template[51172] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51173] = {
 	name = "科研4期测试经验追赶13",
 	guild_coin_award = 0,
@@ -130138,7 +127275,6 @@ _G.pg.base.task_data_template[51173] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51174] = {
 	name = "科研4期测试经验追赶14",
 	guild_coin_award = 0,
@@ -130178,7 +127314,6 @@ _G.pg.base.task_data_template[51174] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51175] = {
 	name = "科研4期测试经验追赶15",
 	guild_coin_award = 0,
@@ -130218,7 +127353,6 @@ _G.pg.base.task_data_template[51175] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51176] = {
 	name = "科研4期测试经验追赶16",
 	guild_coin_award = 0,
@@ -130258,7 +127392,6 @@ _G.pg.base.task_data_template[51176] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51177] = {
 	name = "科研4期测试经验追赶17",
 	guild_coin_award = 0,
@@ -130304,7 +127437,6 @@ _G.pg.base.task_data_template[51177] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51178] = {
 	name = "科研4期测试经验追赶18",
 	guild_coin_award = 0,
@@ -130350,7 +127482,6 @@ _G.pg.base.task_data_template[51178] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51179] = {
 	name = "科研4期测试经验追赶19",
 	guild_coin_award = 0,
@@ -130396,7 +127527,6 @@ _G.pg.base.task_data_template[51179] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51180] = {
 	name = "科研4期测试经验追赶20",
 	guild_coin_award = 0,
@@ -130444,7 +127574,6 @@ _G.pg.base.task_data_template[51180] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[51181] = {
 	name = "科研5期测试经验追赶1",
 	guild_coin_award = 1,
@@ -130484,7 +127613,6 @@ _G.pg.base.task_data_template[51181] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51182] = {
 	name = "科研5期测试经验追赶2",
 	guild_coin_award = 2,
@@ -130524,7 +127652,6 @@ _G.pg.base.task_data_template[51182] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51183] = {
 	name = "科研5期测试经验追赶3",
 	guild_coin_award = 3,
@@ -130564,7 +127691,6 @@ _G.pg.base.task_data_template[51183] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51184] = {
 	name = "科研5期测试经验追赶4",
 	guild_coin_award = 4,
@@ -130604,7 +127730,6 @@ _G.pg.base.task_data_template[51184] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51185] = {
 	name = "科研5期测试经验追赶5",
 	guild_coin_award = 5,
@@ -130644,7 +127769,6 @@ _G.pg.base.task_data_template[51185] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51186] = {
 	name = "科研5期测试经验追赶6",
 	guild_coin_award = 6,
@@ -130684,7 +127808,6 @@ _G.pg.base.task_data_template[51186] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51187] = {
 	name = "科研5期测试经验追赶7",
 	guild_coin_award = 7,
@@ -130724,7 +127847,6 @@ _G.pg.base.task_data_template[51187] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51188] = {
 	name = "科研5期测试经验追赶8",
 	guild_coin_award = 8,
@@ -130764,7 +127886,6 @@ _G.pg.base.task_data_template[51188] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51189] = {
 	name = "科研5期测试经验追赶9",
 	guild_coin_award = 9,
@@ -130804,7 +127925,6 @@ _G.pg.base.task_data_template[51189] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51190] = {
 	name = "科研5期测试经验追赶10",
 	guild_coin_award = 10,
@@ -130844,7 +127964,6 @@ _G.pg.base.task_data_template[51190] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51191] = {
 	name = "科研5期测试经验追赶11",
 	guild_coin_award = 11,
@@ -130884,7 +128003,6 @@ _G.pg.base.task_data_template[51191] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51192] = {
 	name = "科研5期测试经验追赶12",
 	guild_coin_award = 12,
@@ -130924,7 +128042,6 @@ _G.pg.base.task_data_template[51192] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51193] = {
 	name = "科研5期测试经验追赶13",
 	guild_coin_award = 13,
@@ -130964,7 +128081,6 @@ _G.pg.base.task_data_template[51193] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51194] = {
 	name = "科研5期测试经验追赶14",
 	guild_coin_award = 14,
@@ -131004,7 +128120,6 @@ _G.pg.base.task_data_template[51194] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51195] = {
 	name = "科研5期测试经验追赶15",
 	guild_coin_award = 15,
@@ -131044,7 +128159,6 @@ _G.pg.base.task_data_template[51195] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51196] = {
 	name = "科研5期测试经验追赶16",
 	guild_coin_award = 16,
@@ -131084,7 +128198,6 @@ _G.pg.base.task_data_template[51196] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51197] = {
 	name = "科研5期测试经验追赶17",
 	guild_coin_award = 17,
@@ -131130,7 +128243,6 @@ _G.pg.base.task_data_template[51197] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51198] = {
 	name = "科研5期测试经验追赶18",
 	guild_coin_award = 18,
@@ -131176,7 +128288,6 @@ _G.pg.base.task_data_template[51198] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51199] = {
 	name = "科研5期测试经验追赶19",
 	guild_coin_award = 19,
@@ -131222,7 +128333,6 @@ _G.pg.base.task_data_template[51199] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[51200] = {
 	name = "科研5期测试经验追赶20",
 	guild_coin_award = 20,
@@ -131270,7 +128380,6 @@ _G.pg.base.task_data_template[51200] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[52001] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131304,7 +128413,6 @@ _G.pg.base.task_data_template[52001] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52002] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131338,7 +128446,6 @@ _G.pg.base.task_data_template[52002] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52003] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131372,7 +128479,6 @@ _G.pg.base.task_data_template[52003] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52004] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131406,7 +128512,6 @@ _G.pg.base.task_data_template[52004] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52005] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131440,7 +128545,6 @@ _G.pg.base.task_data_template[52005] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52006] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131474,7 +128578,6 @@ _G.pg.base.task_data_template[52006] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52007] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131508,7 +128611,6 @@ _G.pg.base.task_data_template[52007] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52008] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131542,7 +128644,6 @@ _G.pg.base.task_data_template[52008] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52009] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131576,7 +128677,6 @@ _G.pg.base.task_data_template[52009] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52010] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131610,7 +128710,6 @@ _G.pg.base.task_data_template[52010] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52011] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131644,7 +128743,6 @@ _G.pg.base.task_data_template[52011] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52021] = {
 	name = "科研委托任务",
 	guild_coin_award = 0,
@@ -131678,7 +128776,6 @@ _G.pg.base.task_data_template[52021] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52022] = {
 	name = "科研委托任务",
 	guild_coin_award = 0,
@@ -131712,7 +128809,6 @@ _G.pg.base.task_data_template[52022] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52023] = {
 	name = "科研委托任务",
 	guild_coin_award = 0,
@@ -131746,7 +128842,6 @@ _G.pg.base.task_data_template[52023] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52031] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131780,7 +128875,6 @@ _G.pg.base.task_data_template[52031] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[52032] = {
 	name = "数据收集任务",
 	guild_coin_award = 0,
@@ -131814,7 +128908,6 @@ _G.pg.base.task_data_template[52032] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[55701] = {
 	name = "【2023年4月新服】【每日】任务1",
 	guild_coin_award = 0,
@@ -131856,7 +128949,6 @@ _G.pg.base.task_data_template[55701] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55702] = {
 	name = "【2023年4月新服】【每日】任务2",
 	guild_coin_award = 0,
@@ -131896,7 +128988,6 @@ _G.pg.base.task_data_template[55702] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55703] = {
 	name = "【2023年4月新服】【每日】任务3",
 	guild_coin_award = 0,
@@ -131936,7 +129027,6 @@ _G.pg.base.task_data_template[55703] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55704] = {
 	name = "【2023年4月新服】【每日】任务4",
 	guild_coin_award = 0,
@@ -131976,7 +129066,6 @@ _G.pg.base.task_data_template[55704] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55705] = {
 	name = "【2023年4月新服】【每日】任务5",
 	guild_coin_award = 0,
@@ -132016,7 +129105,6 @@ _G.pg.base.task_data_template[55705] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55706] = {
 	name = "【2023年4月新服】【每日】任务6",
 	guild_coin_award = 0,
@@ -132056,7 +129144,6 @@ _G.pg.base.task_data_template[55706] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55707] = {
 	name = "【2023年4月新服】【每日】任务7",
 	guild_coin_award = 0,
@@ -132096,7 +129183,6 @@ _G.pg.base.task_data_template[55707] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55708] = {
 	name = "【2023年4月新服】通关1-4",
 	guild_coin_award = 0,
@@ -132142,7 +129228,6 @@ _G.pg.base.task_data_template[55708] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55709] = {
 	name = "【2023年4月新服】通关2-2",
 	guild_coin_award = 0,
@@ -132188,7 +129273,6 @@ _G.pg.base.task_data_template[55709] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55710] = {
 	name = "【2023年4月新服】通关2-4",
 	guild_coin_award = 0,
@@ -132234,7 +129318,6 @@ _G.pg.base.task_data_template[55710] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55711] = {
 	name = "【2023年4月新服】通关3-2",
 	guild_coin_award = 0,
@@ -132280,7 +129363,6 @@ _G.pg.base.task_data_template[55711] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55712] = {
 	name = "【2023年4月新服】通关3-4",
 	guild_coin_award = 0,
@@ -132326,7 +129408,6 @@ _G.pg.base.task_data_template[55712] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55713] = {
 	name = "【2023年4月新服】通关4-2",
 	guild_coin_award = 0,
@@ -132372,7 +129453,6 @@ _G.pg.base.task_data_template[55713] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55714] = {
 	name = "【2023年4月新服】通关4-4",
 	guild_coin_award = 0,
@@ -132418,7 +129498,6 @@ _G.pg.base.task_data_template[55714] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55715] = {
 	name = "【2023年4月新服】通关5-2",
 	guild_coin_award = 0,
@@ -132464,7 +129543,6 @@ _G.pg.base.task_data_template[55715] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55716] = {
 	name = "【2023年4月新服】通关5-4",
 	guild_coin_award = 0,
@@ -132510,7 +129588,6 @@ _G.pg.base.task_data_template[55716] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55717] = {
 	name = "【2023年4月新服】通关6-2",
 	guild_coin_award = 0,
@@ -132556,7 +129633,6 @@ _G.pg.base.task_data_template[55717] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55718] = {
 	name = "【2023年4月新服】通关6-4",
 	guild_coin_award = 0,
@@ -132602,7 +129678,6 @@ _G.pg.base.task_data_template[55718] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55719] = {
 	name = "【2023年4月新服】通关7-2",
 	guild_coin_award = 0,
@@ -132648,7 +129723,6 @@ _G.pg.base.task_data_template[55719] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55720] = {
 	name = "【2023年4月新服】通关7-4",
 	guild_coin_award = 0,
@@ -132694,7 +129768,6 @@ _G.pg.base.task_data_template[55720] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55721] = {
 	name = "【2023年4月新服】通关8-2",
 	guild_coin_award = 0,
@@ -132740,7 +129813,6 @@ _G.pg.base.task_data_template[55721] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55722] = {
 	name = "【2023年4月新服】通关8-4",
 	guild_coin_award = 0,
@@ -132786,7 +129858,6 @@ _G.pg.base.task_data_template[55722] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55723] = {
 	name = "【2023年4月新服】通关9-2",
 	guild_coin_award = 0,
@@ -132832,7 +129903,6 @@ _G.pg.base.task_data_template[55723] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55724] = {
 	name = "【2023年4月新服】通关9-4",
 	guild_coin_award = 0,
@@ -132878,7 +129948,6 @@ _G.pg.base.task_data_template[55724] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55725] = {
 	name = "【2023年4月新服】通关10-2",
 	guild_coin_award = 0,
@@ -132924,7 +129993,6 @@ _G.pg.base.task_data_template[55725] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55726] = {
 	name = "【2023年4月新服】通关10-4",
 	guild_coin_award = 0,
@@ -132970,7 +130038,6 @@ _G.pg.base.task_data_template[55726] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55727] = {
 	name = "【2023年4月新服】通关11-2",
 	guild_coin_award = 0,
@@ -133016,7 +130083,6 @@ _G.pg.base.task_data_template[55727] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55728] = {
 	name = "【2023年4月新服】通关11-4",
 	guild_coin_award = 0,
@@ -133062,7 +130128,6 @@ _G.pg.base.task_data_template[55728] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55729] = {
 	name = "【2023年4月新服】大舰队商店兑换角色",
 	guild_coin_award = 0,
@@ -133102,7 +130167,6 @@ _G.pg.base.task_data_template[55729] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55730] = {
 	name = "【2023年4月新服】军事演习1",
 	guild_coin_award = 0,
@@ -133142,7 +130206,6 @@ _G.pg.base.task_data_template[55730] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55731] = {
 	name = "【2023年4月新服】军事演习2",
 	guild_coin_award = 0,
@@ -133182,7 +130245,6 @@ _G.pg.base.task_data_template[55731] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55732] = {
 	name = "【2023年4月新服】军事演习3",
 	guild_coin_award = 0,
@@ -133222,7 +130284,6 @@ _G.pg.base.task_data_template[55732] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55733] = {
 	name = "【2023年4月新服】军事演习4",
 	guild_coin_award = 0,
@@ -133262,7 +130323,6 @@ _G.pg.base.task_data_template[55733] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55734] = {
 	name = "【2023年4月新服】军事演习5",
 	guild_coin_award = 0,
@@ -133302,7 +130362,6 @@ _G.pg.base.task_data_template[55734] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55735] = {
 	name = "【2023年4月新服】军事演习6",
 	guild_coin_award = 0,
@@ -133342,7 +130401,6 @@ _G.pg.base.task_data_template[55735] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55736] = {
 	name = "【2023年4月新服】军事演习7",
 	guild_coin_award = 0,
@@ -133382,7 +130440,6 @@ _G.pg.base.task_data_template[55736] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55737] = {
 	name = "【2023年4月新服】军事演习8",
 	guild_coin_award = 0,
@@ -133422,7 +130479,6 @@ _G.pg.base.task_data_template[55737] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55738] = {
 	name = "【2023年4月新服】军事演习9",
 	guild_coin_award = 0,
@@ -133462,7 +130518,6 @@ _G.pg.base.task_data_template[55738] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55739] = {
 	name = "【2023年4月新服】军事演习10",
 	guild_coin_award = 0,
@@ -133502,7 +130557,6 @@ _G.pg.base.task_data_template[55739] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55740] = {
 	name = "【2023年4月新服】军事演习11",
 	guild_coin_award = 0,
@@ -133542,7 +130596,6 @@ _G.pg.base.task_data_template[55740] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55741] = {
 	name = "【2023年4月新服】军事演习12",
 	guild_coin_award = 0,
@@ -133582,7 +130635,6 @@ _G.pg.base.task_data_template[55741] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55742] = {
 	name = "【2023年4月新服】军事演习13",
 	guild_coin_award = 0,
@@ -133622,7 +130674,6 @@ _G.pg.base.task_data_template[55742] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55743] = {
 	name = "【2023年4月新服】军事演习14",
 	guild_coin_award = 0,
@@ -133662,7 +130713,6 @@ _G.pg.base.task_data_template[55743] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55744] = {
 	name = "【2023年4月新服】军事演习15",
 	guild_coin_award = 0,
@@ -133702,7 +130752,6 @@ _G.pg.base.task_data_template[55744] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55745] = {
 	name = "【2023年4月新服】军事演习16",
 	guild_coin_award = 0,
@@ -133742,7 +130791,6 @@ _G.pg.base.task_data_template[55745] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55746] = {
 	name = "【2023年4月新服】军事演习17",
 	guild_coin_award = 0,
@@ -133782,7 +130830,6 @@ _G.pg.base.task_data_template[55746] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55747] = {
 	name = "【2023年4月新服】军事演习18",
 	guild_coin_award = 0,
@@ -133822,7 +130869,6 @@ _G.pg.base.task_data_template[55747] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55748] = {
 	name = "【2023年4月新服】军事演习19",
 	guild_coin_award = 0,
@@ -133862,7 +130908,6 @@ _G.pg.base.task_data_template[55748] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55749] = {
 	name = "【2023年4月新服】军事演习20",
 	guild_coin_award = 0,
@@ -133902,7 +130947,6 @@ _G.pg.base.task_data_template[55749] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55750] = {
 	name = "【2023年4月新服】获得胜利1",
 	guild_coin_award = 0,
@@ -133944,7 +130988,6 @@ _G.pg.base.task_data_template[55750] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55751] = {
 	name = "【2023年4月新服】获得胜利2",
 	guild_coin_award = 0,
@@ -133986,7 +131029,6 @@ _G.pg.base.task_data_template[55751] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55752] = {
 	name = "【2023年4月新服】获得胜利3",
 	guild_coin_award = 0,
@@ -134028,7 +131070,6 @@ _G.pg.base.task_data_template[55752] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55753] = {
 	name = "【2023年4月新服】获得胜利4",
 	guild_coin_award = 0,
@@ -134070,7 +131111,6 @@ _G.pg.base.task_data_template[55753] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55754] = {
 	name = "【2023年4月新服】获得胜利5",
 	guild_coin_award = 0,
@@ -134112,7 +131152,6 @@ _G.pg.base.task_data_template[55754] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55755] = {
 	name = "【2023年4月新服】获得胜利6",
 	guild_coin_award = 0,
@@ -134154,7 +131193,6 @@ _G.pg.base.task_data_template[55755] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55756] = {
 	name = "【2023年4月新服】获得胜利7",
 	guild_coin_award = 0,
@@ -134196,7 +131234,6 @@ _G.pg.base.task_data_template[55756] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55757] = {
 	name = "【2023年4月新服】获得胜利8",
 	guild_coin_award = 0,
@@ -134238,7 +131275,6 @@ _G.pg.base.task_data_template[55757] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55758] = {
 	name = "【2023年4月新服】获得胜利9",
 	guild_coin_award = 0,
@@ -134280,7 +131316,6 @@ _G.pg.base.task_data_template[55758] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55759] = {
 	name = "【2023年4月新服】获得胜利10",
 	guild_coin_award = 0,
@@ -134322,7 +131357,6 @@ _G.pg.base.task_data_template[55759] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55760] = {
 	name = "【2023年4月新服】获得胜利11",
 	guild_coin_award = 0,
@@ -134364,7 +131398,6 @@ _G.pg.base.task_data_template[55760] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55761] = {
 	name = "【2023年4月新服】获得胜利12",
 	guild_coin_award = 0,
@@ -134406,7 +131439,6 @@ _G.pg.base.task_data_template[55761] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55762] = {
 	name = "【2023年4月新服】获得胜利13",
 	guild_coin_award = 0,
@@ -134448,7 +131480,6 @@ _G.pg.base.task_data_template[55762] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55763] = {
 	name = "【2023年4月新服】获得胜利14",
 	guild_coin_award = 0,
@@ -134490,7 +131521,6 @@ _G.pg.base.task_data_template[55763] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55764] = {
 	name = "【2023年4月新服】获得胜利15",
 	guild_coin_award = 0,
@@ -134532,7 +131562,6 @@ _G.pg.base.task_data_template[55764] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55765] = {
 	name = "【2023年4月新服】获得胜利16",
 	guild_coin_award = 0,
@@ -134574,7 +131603,6 @@ _G.pg.base.task_data_template[55765] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55766] = {
 	name = "【2023年4月新服】获得胜利17",
 	guild_coin_award = 0,
@@ -134616,7 +131644,6 @@ _G.pg.base.task_data_template[55766] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55767] = {
 	name = "【2023年4月新服】获得胜利18",
 	guild_coin_award = 0,
@@ -134658,7 +131685,6 @@ _G.pg.base.task_data_template[55767] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55768] = {
 	name = "【2023年4月新服】获得胜利19",
 	guild_coin_award = 0,
@@ -134700,7 +131726,6 @@ _G.pg.base.task_data_template[55768] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55769] = {
 	name = "【2023年4月新服】获得胜利20",
 	guild_coin_award = 0,
@@ -134742,7 +131767,6 @@ _G.pg.base.task_data_template[55769] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55770] = {
 	name = "【2023年4月新服】击沉敌人1",
 	guild_coin_award = 0,
@@ -134782,7 +131806,6 @@ _G.pg.base.task_data_template[55770] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55771] = {
 	name = "【2023年4月新服】击沉敌人2",
 	guild_coin_award = 0,
@@ -134822,7 +131845,6 @@ _G.pg.base.task_data_template[55771] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55772] = {
 	name = "【2023年4月新服】击沉敌人3",
 	guild_coin_award = 0,
@@ -134862,7 +131884,6 @@ _G.pg.base.task_data_template[55772] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55773] = {
 	name = "【2023年4月新服】击沉敌人4",
 	guild_coin_award = 0,
@@ -134902,7 +131923,6 @@ _G.pg.base.task_data_template[55773] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55774] = {
 	name = "【2023年4月新服】击沉敌人5",
 	guild_coin_award = 0,
@@ -134942,7 +131962,6 @@ _G.pg.base.task_data_template[55774] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55775] = {
 	name = "【2023年4月新服】击沉敌人6",
 	guild_coin_award = 0,
@@ -134982,7 +132001,6 @@ _G.pg.base.task_data_template[55775] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55776] = {
 	name = "【2023年4月新服】击沉敌人7",
 	guild_coin_award = 0,
@@ -135022,7 +132040,6 @@ _G.pg.base.task_data_template[55776] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55777] = {
 	name = "【2023年4月新服】击沉敌人8",
 	guild_coin_award = 0,
@@ -135062,7 +132079,6 @@ _G.pg.base.task_data_template[55777] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55778] = {
 	name = "【2023年4月新服】击沉敌人9",
 	guild_coin_award = 0,
@@ -135102,7 +132118,6 @@ _G.pg.base.task_data_template[55778] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55779] = {
 	name = "【2023年4月新服】击沉敌人10",
 	guild_coin_award = 0,
@@ -135142,7 +132157,6 @@ _G.pg.base.task_data_template[55779] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55780] = {
 	name = "【2023年4月新服】击沉敌人11",
 	guild_coin_award = 0,
@@ -135182,7 +132196,6 @@ _G.pg.base.task_data_template[55780] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55781] = {
 	name = "【2023年4月新服】击沉敌人12",
 	guild_coin_award = 0,
@@ -135222,7 +132235,6 @@ _G.pg.base.task_data_template[55781] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55782] = {
 	name = "【2023年4月新服】击沉敌人13",
 	guild_coin_award = 0,
@@ -135262,7 +132274,6 @@ _G.pg.base.task_data_template[55782] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55783] = {
 	name = "【2023年4月新服】击沉敌人14",
 	guild_coin_award = 0,
@@ -135302,7 +132313,6 @@ _G.pg.base.task_data_template[55783] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55784] = {
 	name = "【2023年4月新服】击沉敌人15",
 	guild_coin_award = 0,
@@ -135342,7 +132352,6 @@ _G.pg.base.task_data_template[55784] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55785] = {
 	name = "【2023年4月新服】击沉敌人16",
 	guild_coin_award = 0,
@@ -135382,7 +132391,6 @@ _G.pg.base.task_data_template[55785] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55786] = {
 	name = "【2023年4月新服】击沉敌人17",
 	guild_coin_award = 0,
@@ -135422,7 +132430,6 @@ _G.pg.base.task_data_template[55786] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55787] = {
 	name = "【2023年4月新服】击沉敌人18",
 	guild_coin_award = 0,
@@ -135462,7 +132469,6 @@ _G.pg.base.task_data_template[55787] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55788] = {
 	name = "【2023年4月新服】击沉敌人19",
 	guild_coin_award = 0,
@@ -135502,7 +132508,6 @@ _G.pg.base.task_data_template[55788] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55789] = {
 	name = "【2023年4月新服】击沉敌人20",
 	guild_coin_award = 0,
@@ -135542,7 +132547,6 @@ _G.pg.base.task_data_template[55789] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55790] = {
 	name = "【2023年4月新服】技能战术训练1",
 	guild_coin_award = 0,
@@ -135582,7 +132586,6 @@ _G.pg.base.task_data_template[55790] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55791] = {
 	name = "【2023年4月新服】技能战术训练2",
 	guild_coin_award = 0,
@@ -135622,7 +132625,6 @@ _G.pg.base.task_data_template[55791] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55792] = {
 	name = "【2023年4月新服】技能战术训练3",
 	guild_coin_award = 0,
@@ -135662,7 +132664,6 @@ _G.pg.base.task_data_template[55792] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55793] = {
 	name = "【2023年4月新服】技能战术训练4",
 	guild_coin_award = 0,
@@ -135702,7 +132703,6 @@ _G.pg.base.task_data_template[55793] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55794] = {
 	name = "【2023年4月新服】技能战术训练5",
 	guild_coin_award = 0,
@@ -135742,7 +132742,6 @@ _G.pg.base.task_data_template[55794] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55795] = {
 	name = "【2023年4月新服】技能战术训练6",
 	guild_coin_award = 0,
@@ -135782,7 +132781,6 @@ _G.pg.base.task_data_template[55795] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55796] = {
 	name = "【2023年4月新服】技能战术训练7",
 	guild_coin_award = 0,
@@ -135822,7 +132820,6 @@ _G.pg.base.task_data_template[55796] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55797] = {
 	name = "【2023年4月新服】技能战术训练8",
 	guild_coin_award = 0,
@@ -135862,7 +132859,6 @@ _G.pg.base.task_data_template[55797] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55798] = {
 	name = "【2023年4月新服】技能战术训练9",
 	guild_coin_award = 0,
@@ -135902,7 +132898,6 @@ _G.pg.base.task_data_template[55798] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55799] = {
 	name = "【2023年4月新服】技能战术训练10",
 	guild_coin_award = 0,
@@ -135942,7 +132937,6 @@ _G.pg.base.task_data_template[55799] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55800] = {
 	name = "【2023年4月新服】技能战术训练11",
 	guild_coin_award = 0,
@@ -135982,7 +132976,6 @@ _G.pg.base.task_data_template[55800] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55801] = {
 	name = "【2023年4月新服】技能战术训练12",
 	guild_coin_award = 0,
@@ -136022,7 +133015,6 @@ _G.pg.base.task_data_template[55801] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55802] = {
 	name = "【2023年4月新服】技能战术训练13",
 	guild_coin_award = 0,
@@ -136062,7 +133054,6 @@ _G.pg.base.task_data_template[55802] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55803] = {
 	name = "【2023年4月新服】技能战术训练14",
 	guild_coin_award = 0,
@@ -136102,7 +133093,6 @@ _G.pg.base.task_data_template[55803] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55804] = {
 	name = "【2023年4月新服】技能战术训练15",
 	guild_coin_award = 0,
@@ -136142,7 +133132,6 @@ _G.pg.base.task_data_template[55804] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55805] = {
 	name = "【2023年4月新服】技能战术训练16",
 	guild_coin_award = 0,
@@ -136182,7 +133171,6 @@ _G.pg.base.task_data_template[55805] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55806] = {
 	name = "【2023年4月新服】技能战术训练17",
 	guild_coin_award = 0,
@@ -136222,7 +133210,6 @@ _G.pg.base.task_data_template[55806] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55807] = {
 	name = "【2023年4月新服】技能战术训练18",
 	guild_coin_award = 0,
@@ -136262,7 +133249,6 @@ _G.pg.base.task_data_template[55807] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55808] = {
 	name = "【2023年4月新服】技能战术训练19",
 	guild_coin_award = 0,
@@ -136302,7 +133288,6 @@ _G.pg.base.task_data_template[55808] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55809] = {
 	name = "【2023年4月新服】技能战术训练20",
 	guild_coin_award = 0,
@@ -136342,7 +133327,6 @@ _G.pg.base.task_data_template[55809] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55810] = {
 	name = "【2023年4月新服】建造舰船1",
 	guild_coin_award = 0,
@@ -136382,7 +133366,6 @@ _G.pg.base.task_data_template[55810] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55811] = {
 	name = "【2023年4月新服】建造舰船2",
 	guild_coin_award = 0,
@@ -136422,7 +133405,6 @@ _G.pg.base.task_data_template[55811] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55812] = {
 	name = "【2023年4月新服】建造舰船3",
 	guild_coin_award = 0,
@@ -136462,7 +133444,6 @@ _G.pg.base.task_data_template[55812] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55813] = {
 	name = "【2023年4月新服】建造舰船4",
 	guild_coin_award = 0,
@@ -136502,7 +133483,6 @@ _G.pg.base.task_data_template[55813] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55814] = {
 	name = "【2023年4月新服】建造舰船5",
 	guild_coin_award = 0,
@@ -136542,7 +133522,6 @@ _G.pg.base.task_data_template[55814] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55815] = {
 	name = "【2023年4月新服】建造舰船6",
 	guild_coin_award = 0,
@@ -136582,7 +133561,6 @@ _G.pg.base.task_data_template[55815] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55816] = {
 	name = "【2023年4月新服】建造舰船7",
 	guild_coin_award = 0,
@@ -136622,7 +133600,6 @@ _G.pg.base.task_data_template[55816] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55817] = {
 	name = "【2023年4月新服】建造舰船8",
 	guild_coin_award = 0,
@@ -136662,7 +133639,6 @@ _G.pg.base.task_data_template[55817] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55818] = {
 	name = "【2023年4月新服】建造舰船9",
 	guild_coin_award = 0,
@@ -136702,7 +133678,6 @@ _G.pg.base.task_data_template[55818] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55819] = {
 	name = "【2023年4月新服】建造舰船10",
 	guild_coin_award = 0,
@@ -136742,7 +133717,6 @@ _G.pg.base.task_data_template[55819] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55820] = {
 	name = "【2023年4月新服】100级舰船数量1",
 	guild_coin_award = 0,
@@ -136787,7 +133761,6 @@ _G.pg.base.task_data_template[55820] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55821] = {
 	name = "【2023年4月新服】100级舰船数量2",
 	guild_coin_award = 0,
@@ -136832,7 +133805,6 @@ _G.pg.base.task_data_template[55821] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55822] = {
 	name = "【2023年4月新服】100级舰船数量3",
 	guild_coin_award = 0,
@@ -136877,7 +133849,6 @@ _G.pg.base.task_data_template[55822] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55823] = {
 	name = "【2023年4月新服】100级舰船数量4",
 	guild_coin_award = 0,
@@ -136922,7 +133893,6 @@ _G.pg.base.task_data_template[55823] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55824] = {
 	name = "【2023年4月新服】100级舰船数量5",
 	guild_coin_award = 0,
@@ -136967,7 +133937,6 @@ _G.pg.base.task_data_template[55824] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55825] = {
 	name = "【2023年4月新服】100级舰船数量6",
 	guild_coin_award = 0,
@@ -137012,7 +133981,6 @@ _G.pg.base.task_data_template[55825] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55826] = {
 	name = "【2023年4月新服】100级舰船数量7",
 	guild_coin_award = 0,
@@ -137057,7 +134025,6 @@ _G.pg.base.task_data_template[55826] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55827] = {
 	name = "【2023年4月新服】100级舰船数量8",
 	guild_coin_award = 0,
@@ -137102,7 +134069,6 @@ _G.pg.base.task_data_template[55827] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55828] = {
 	name = "【2023年4月新服】100级舰船数量9",
 	guild_coin_award = 0,
@@ -137147,7 +134113,6 @@ _G.pg.base.task_data_template[55828] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55829] = {
 	name = "【2023年4月新服】100级舰船数量10",
 	guild_coin_award = 0,
@@ -137192,7 +134157,6 @@ _G.pg.base.task_data_template[55829] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55830] = {
 	name = "【2023年4月新服】训练指挥喵1",
 	guild_coin_award = 0,
@@ -137232,7 +134196,6 @@ _G.pg.base.task_data_template[55830] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55831] = {
 	name = "【2023年4月新服】训练指挥喵2",
 	guild_coin_award = 0,
@@ -137272,7 +134235,6 @@ _G.pg.base.task_data_template[55831] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55832] = {
 	name = "【2023年4月新服】训练指挥喵3",
 	guild_coin_award = 0,
@@ -137312,7 +134274,6 @@ _G.pg.base.task_data_template[55832] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55833] = {
 	name = "【2023年4月新服】训练指挥喵4",
 	guild_coin_award = 0,
@@ -137352,7 +134313,6 @@ _G.pg.base.task_data_template[55833] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55834] = {
 	name = "【2023年4月新服】训练指挥喵5",
 	guild_coin_award = 0,
@@ -137392,7 +134352,6 @@ _G.pg.base.task_data_template[55834] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55835] = {
 	name = "【2023年4月新服】训练指挥喵6",
 	guild_coin_award = 0,
@@ -137432,7 +134391,6 @@ _G.pg.base.task_data_template[55835] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55836] = {
 	name = "【2023年4月新服】训练指挥喵7",
 	guild_coin_award = 0,
@@ -137472,7 +134430,6 @@ _G.pg.base.task_data_template[55836] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55837] = {
 	name = "【2023年4月新服】训练指挥喵8",
 	guild_coin_award = 0,
@@ -137512,7 +134469,6 @@ _G.pg.base.task_data_template[55837] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55838] = {
 	name = "【2023年4月新服】训练指挥喵9",
 	guild_coin_award = 0,
@@ -137552,7 +134508,6 @@ _G.pg.base.task_data_template[55838] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55839] = {
 	name = "【2023年4月新服】训练指挥喵10",
 	guild_coin_award = 0,
@@ -137592,7 +134547,6 @@ _G.pg.base.task_data_template[55839] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55840] = {
 	name = "【2023年4月新服】通关主线困难1",
 	guild_coin_award = 0,
@@ -137632,7 +134586,6 @@ _G.pg.base.task_data_template[55840] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55841] = {
 	name = "【2023年4月新服】通关主线困难2",
 	guild_coin_award = 0,
@@ -137672,7 +134625,6 @@ _G.pg.base.task_data_template[55841] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55842] = {
 	name = "【2023年4月新服】通关主线困难3",
 	guild_coin_award = 0,
@@ -137712,7 +134664,6 @@ _G.pg.base.task_data_template[55842] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55843] = {
 	name = "【2023年4月新服】通关主线困难4",
 	guild_coin_award = 0,
@@ -137752,7 +134703,6 @@ _G.pg.base.task_data_template[55843] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55844] = {
 	name = "【2023年4月新服】通关主线困难5",
 	guild_coin_award = 0,
@@ -137792,7 +134742,6 @@ _G.pg.base.task_data_template[55844] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55845] = {
 	name = "【2023年4月新服】通关主线困难6",
 	guild_coin_award = 0,
@@ -137832,7 +134781,6 @@ _G.pg.base.task_data_template[55845] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55846] = {
 	name = "【2023年4月新服】通关主线困难7",
 	guild_coin_award = 0,
@@ -137872,7 +134820,6 @@ _G.pg.base.task_data_template[55846] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55847] = {
 	name = "【2023年4月新服】通关主线困难8",
 	guild_coin_award = 0,
@@ -137912,7 +134859,6 @@ _G.pg.base.task_data_template[55847] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55848] = {
 	name = "【2023年4月新服】通关主线困难9",
 	guild_coin_award = 0,
@@ -137952,7 +134898,6 @@ _G.pg.base.task_data_template[55848] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55849] = {
 	name = "【2023年4月新服】通关主线困难10",
 	guild_coin_award = 0,
@@ -137992,7 +134937,6 @@ _G.pg.base.task_data_template[55849] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55850] = {
 	name = "【2023年4月新服】【每日】任务1",
 	guild_coin_award = 0,
@@ -138034,7 +134978,6 @@ _G.pg.base.task_data_template[55850] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55851] = {
 	name = "【2023年4月新服】【每日】任务2",
 	guild_coin_award = 0,
@@ -138074,7 +135017,6 @@ _G.pg.base.task_data_template[55851] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55852] = {
 	name = "【2023年4月新服】【每日】任务3",
 	guild_coin_award = 0,
@@ -138114,7 +135056,6 @@ _G.pg.base.task_data_template[55852] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55853] = {
 	name = "【2023年4月新服】【每日】任务4",
 	guild_coin_award = 0,
@@ -138154,7 +135095,6 @@ _G.pg.base.task_data_template[55853] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55854] = {
 	name = "【2023年4月新服】【每日】任务5",
 	guild_coin_award = 0,
@@ -138194,7 +135134,6 @@ _G.pg.base.task_data_template[55854] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55855] = {
 	name = "【2023年4月新服】【每日】任务6",
 	guild_coin_award = 0,
@@ -138234,7 +135173,6 @@ _G.pg.base.task_data_template[55855] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55856] = {
 	name = "【2023年4月新服】【每日】任务7",
 	guild_coin_award = 0,
@@ -138274,7 +135212,6 @@ _G.pg.base.task_data_template[55856] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55857] = {
 	name = "【2023年4月新服】通关1-4",
 	guild_coin_award = 0,
@@ -138320,7 +135257,6 @@ _G.pg.base.task_data_template[55857] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55858] = {
 	name = "【2023年4月新服】通关2-2",
 	guild_coin_award = 0,
@@ -138366,7 +135302,6 @@ _G.pg.base.task_data_template[55858] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55859] = {
 	name = "【2023年4月新服】通关2-4",
 	guild_coin_award = 0,
@@ -138412,7 +135347,6 @@ _G.pg.base.task_data_template[55859] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55860] = {
 	name = "【2023年4月新服】通关3-2",
 	guild_coin_award = 0,
@@ -138458,7 +135392,6 @@ _G.pg.base.task_data_template[55860] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55861] = {
 	name = "【2023年4月新服】通关3-4",
 	guild_coin_award = 0,
@@ -138504,7 +135437,6 @@ _G.pg.base.task_data_template[55861] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55862] = {
 	name = "【2023年4月新服】通关4-2",
 	guild_coin_award = 0,
@@ -138550,7 +135482,6 @@ _G.pg.base.task_data_template[55862] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55863] = {
 	name = "【2023年4月新服】通关4-4",
 	guild_coin_award = 0,
@@ -138596,7 +135527,6 @@ _G.pg.base.task_data_template[55863] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55864] = {
 	name = "【2023年4月新服】通关5-2",
 	guild_coin_award = 0,
@@ -138642,7 +135572,6 @@ _G.pg.base.task_data_template[55864] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55865] = {
 	name = "【2023年4月新服】通关5-4",
 	guild_coin_award = 0,
@@ -138688,7 +135617,6 @@ _G.pg.base.task_data_template[55865] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55866] = {
 	name = "【2023年4月新服】通关6-2",
 	guild_coin_award = 0,
@@ -138734,7 +135662,6 @@ _G.pg.base.task_data_template[55866] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55867] = {
 	name = "【2023年4月新服】通关6-4",
 	guild_coin_award = 0,
@@ -138780,7 +135707,6 @@ _G.pg.base.task_data_template[55867] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55868] = {
 	name = "【2023年4月新服】通关7-2",
 	guild_coin_award = 0,
@@ -138826,7 +135752,6 @@ _G.pg.base.task_data_template[55868] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55869] = {
 	name = "【2023年4月新服】通关7-4",
 	guild_coin_award = 0,
@@ -138872,7 +135797,6 @@ _G.pg.base.task_data_template[55869] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55870] = {
 	name = "【2023年4月新服】通关8-2",
 	guild_coin_award = 0,
@@ -138918,7 +135842,6 @@ _G.pg.base.task_data_template[55870] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55871] = {
 	name = "【2023年4月新服】通关8-4",
 	guild_coin_award = 0,
@@ -138964,7 +135887,6 @@ _G.pg.base.task_data_template[55871] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55872] = {
 	name = "【2023年4月新服】通关9-2",
 	guild_coin_award = 0,
@@ -139010,7 +135932,6 @@ _G.pg.base.task_data_template[55872] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55873] = {
 	name = "【2023年4月新服】通关9-4",
 	guild_coin_award = 0,
@@ -139056,7 +135977,6 @@ _G.pg.base.task_data_template[55873] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55874] = {
 	name = "【2023年4月新服】通关10-2",
 	guild_coin_award = 0,
@@ -139102,7 +136022,6 @@ _G.pg.base.task_data_template[55874] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55875] = {
 	name = "【2023年4月新服】通关10-4",
 	guild_coin_award = 0,
@@ -139148,7 +136067,6 @@ _G.pg.base.task_data_template[55875] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55876] = {
 	name = "【2023年4月新服】通关11-2",
 	guild_coin_award = 0,
@@ -139194,7 +136112,6 @@ _G.pg.base.task_data_template[55876] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55877] = {
 	name = "【2023年4月新服】通关11-4",
 	guild_coin_award = 0,
@@ -139240,7 +136157,6 @@ _G.pg.base.task_data_template[55877] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55878] = {
 	name = "【2023年4月新服】大舰队商店兑换角色",
 	guild_coin_award = 0,
@@ -139280,7 +136196,6 @@ _G.pg.base.task_data_template[55878] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55879] = {
 	name = "【2023年4月新服】军事演习1",
 	guild_coin_award = 0,
@@ -139320,7 +136235,6 @@ _G.pg.base.task_data_template[55879] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55880] = {
 	name = "【2023年4月新服】军事演习2",
 	guild_coin_award = 0,
@@ -139360,7 +136274,6 @@ _G.pg.base.task_data_template[55880] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55881] = {
 	name = "【2023年4月新服】军事演习3",
 	guild_coin_award = 0,
@@ -139400,7 +136313,6 @@ _G.pg.base.task_data_template[55881] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55882] = {
 	name = "【2023年4月新服】军事演习4",
 	guild_coin_award = 0,
@@ -139440,7 +136352,6 @@ _G.pg.base.task_data_template[55882] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55883] = {
 	name = "【2023年4月新服】军事演习5",
 	guild_coin_award = 0,
@@ -139480,7 +136391,6 @@ _G.pg.base.task_data_template[55883] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55884] = {
 	name = "【2023年4月新服】军事演习6",
 	guild_coin_award = 0,
@@ -139520,7 +136430,6 @@ _G.pg.base.task_data_template[55884] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55885] = {
 	name = "【2023年4月新服】军事演习7",
 	guild_coin_award = 0,
@@ -139560,7 +136469,6 @@ _G.pg.base.task_data_template[55885] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55886] = {
 	name = "【2023年4月新服】军事演习8",
 	guild_coin_award = 0,
@@ -139600,7 +136508,6 @@ _G.pg.base.task_data_template[55886] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55887] = {
 	name = "【2023年4月新服】军事演习9",
 	guild_coin_award = 0,
@@ -139640,7 +136547,6 @@ _G.pg.base.task_data_template[55887] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55888] = {
 	name = "【2023年4月新服】军事演习10",
 	guild_coin_award = 0,
@@ -139680,7 +136586,6 @@ _G.pg.base.task_data_template[55888] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55889] = {
 	name = "【2023年4月新服】军事演习11",
 	guild_coin_award = 0,
@@ -139720,7 +136625,6 @@ _G.pg.base.task_data_template[55889] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55890] = {
 	name = "【2023年4月新服】军事演习12",
 	guild_coin_award = 0,
@@ -139760,7 +136664,6 @@ _G.pg.base.task_data_template[55890] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55891] = {
 	name = "【2023年4月新服】军事演习13",
 	guild_coin_award = 0,
@@ -139800,7 +136703,6 @@ _G.pg.base.task_data_template[55891] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55892] = {
 	name = "【2023年4月新服】军事演习14",
 	guild_coin_award = 0,
@@ -139840,7 +136742,6 @@ _G.pg.base.task_data_template[55892] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55893] = {
 	name = "【2023年4月新服】军事演习15",
 	guild_coin_award = 0,
@@ -139880,7 +136781,6 @@ _G.pg.base.task_data_template[55893] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55894] = {
 	name = "【2023年4月新服】军事演习16",
 	guild_coin_award = 0,
@@ -139920,7 +136820,6 @@ _G.pg.base.task_data_template[55894] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55895] = {
 	name = "【2023年4月新服】军事演习17",
 	guild_coin_award = 0,
@@ -139960,7 +136859,6 @@ _G.pg.base.task_data_template[55895] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55896] = {
 	name = "【2023年4月新服】军事演习18",
 	guild_coin_award = 0,
@@ -140000,7 +136898,6 @@ _G.pg.base.task_data_template[55896] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55897] = {
 	name = "【2023年4月新服】军事演习19",
 	guild_coin_award = 0,
@@ -140040,7 +136937,6 @@ _G.pg.base.task_data_template[55897] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55898] = {
 	name = "【2023年4月新服】军事演习20",
 	guild_coin_award = 0,
@@ -140080,7 +136976,6 @@ _G.pg.base.task_data_template[55898] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55899] = {
 	name = "【2023年4月新服】获得胜利1",
 	guild_coin_award = 0,
@@ -140122,7 +137017,6 @@ _G.pg.base.task_data_template[55899] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55900] = {
 	name = "【2023年4月新服】获得胜利2",
 	guild_coin_award = 0,
@@ -140164,7 +137058,6 @@ _G.pg.base.task_data_template[55900] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55901] = {
 	name = "【2023年4月新服】获得胜利3",
 	guild_coin_award = 0,
@@ -140206,7 +137099,6 @@ _G.pg.base.task_data_template[55901] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55902] = {
 	name = "【2023年4月新服】获得胜利4",
 	guild_coin_award = 0,
@@ -140248,7 +137140,6 @@ _G.pg.base.task_data_template[55902] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55903] = {
 	name = "【2023年4月新服】获得胜利5",
 	guild_coin_award = 0,
@@ -140290,7 +137181,6 @@ _G.pg.base.task_data_template[55903] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55904] = {
 	name = "【2023年4月新服】获得胜利6",
 	guild_coin_award = 0,
@@ -140332,7 +137222,6 @@ _G.pg.base.task_data_template[55904] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55905] = {
 	name = "【2023年4月新服】获得胜利7",
 	guild_coin_award = 0,
@@ -140374,7 +137263,6 @@ _G.pg.base.task_data_template[55905] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55906] = {
 	name = "【2023年4月新服】获得胜利8",
 	guild_coin_award = 0,
@@ -140416,7 +137304,6 @@ _G.pg.base.task_data_template[55906] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55907] = {
 	name = "【2023年4月新服】获得胜利9",
 	guild_coin_award = 0,
@@ -140458,7 +137345,6 @@ _G.pg.base.task_data_template[55907] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55908] = {
 	name = "【2023年4月新服】获得胜利10",
 	guild_coin_award = 0,
@@ -140500,7 +137386,6 @@ _G.pg.base.task_data_template[55908] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55909] = {
 	name = "【2023年4月新服】获得胜利11",
 	guild_coin_award = 0,
@@ -140542,7 +137427,6 @@ _G.pg.base.task_data_template[55909] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55910] = {
 	name = "【2023年4月新服】获得胜利12",
 	guild_coin_award = 0,
@@ -140584,7 +137468,6 @@ _G.pg.base.task_data_template[55910] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55911] = {
 	name = "【2023年4月新服】获得胜利13",
 	guild_coin_award = 0,
@@ -140626,7 +137509,6 @@ _G.pg.base.task_data_template[55911] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55912] = {
 	name = "【2023年4月新服】获得胜利14",
 	guild_coin_award = 0,
@@ -140668,7 +137550,6 @@ _G.pg.base.task_data_template[55912] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55913] = {
 	name = "【2023年4月新服】获得胜利15",
 	guild_coin_award = 0,
@@ -140710,7 +137591,6 @@ _G.pg.base.task_data_template[55913] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55914] = {
 	name = "【2023年4月新服】获得胜利16",
 	guild_coin_award = 0,
@@ -140752,7 +137632,6 @@ _G.pg.base.task_data_template[55914] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55915] = {
 	name = "【2023年4月新服】获得胜利17",
 	guild_coin_award = 0,
@@ -140794,7 +137673,6 @@ _G.pg.base.task_data_template[55915] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55916] = {
 	name = "【2023年4月新服】获得胜利18",
 	guild_coin_award = 0,
@@ -140836,7 +137714,6 @@ _G.pg.base.task_data_template[55916] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55917] = {
 	name = "【2023年4月新服】获得胜利19",
 	guild_coin_award = 0,
@@ -140878,7 +137755,6 @@ _G.pg.base.task_data_template[55917] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55918] = {
 	name = "【2023年4月新服】获得胜利20",
 	guild_coin_award = 0,
@@ -140920,7 +137796,6 @@ _G.pg.base.task_data_template[55918] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[55919] = {
 	name = "【2023年4月新服】击沉敌人1",
 	guild_coin_award = 0,
@@ -140960,7 +137835,6 @@ _G.pg.base.task_data_template[55919] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55920] = {
 	name = "【2023年4月新服】击沉敌人2",
 	guild_coin_award = 0,
@@ -141000,7 +137874,6 @@ _G.pg.base.task_data_template[55920] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55921] = {
 	name = "【2023年4月新服】击沉敌人3",
 	guild_coin_award = 0,
@@ -141040,7 +137913,6 @@ _G.pg.base.task_data_template[55921] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55922] = {
 	name = "【2023年4月新服】击沉敌人4",
 	guild_coin_award = 0,
@@ -141080,7 +137952,6 @@ _G.pg.base.task_data_template[55922] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55923] = {
 	name = "【2023年4月新服】击沉敌人5",
 	guild_coin_award = 0,
@@ -141120,7 +137991,6 @@ _G.pg.base.task_data_template[55923] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55924] = {
 	name = "【2023年4月新服】击沉敌人6",
 	guild_coin_award = 0,
@@ -141160,7 +138030,6 @@ _G.pg.base.task_data_template[55924] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55925] = {
 	name = "【2023年4月新服】击沉敌人7",
 	guild_coin_award = 0,
@@ -141200,7 +138069,6 @@ _G.pg.base.task_data_template[55925] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55926] = {
 	name = "【2023年4月新服】击沉敌人8",
 	guild_coin_award = 0,
@@ -141240,7 +138108,6 @@ _G.pg.base.task_data_template[55926] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55927] = {
 	name = "【2023年4月新服】击沉敌人9",
 	guild_coin_award = 0,
@@ -141280,7 +138147,6 @@ _G.pg.base.task_data_template[55927] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55928] = {
 	name = "【2023年4月新服】击沉敌人10",
 	guild_coin_award = 0,
@@ -141320,7 +138186,6 @@ _G.pg.base.task_data_template[55928] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55929] = {
 	name = "【2023年4月新服】击沉敌人11",
 	guild_coin_award = 0,
@@ -141360,7 +138225,6 @@ _G.pg.base.task_data_template[55929] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55930] = {
 	name = "【2023年4月新服】击沉敌人12",
 	guild_coin_award = 0,
@@ -141400,7 +138264,6 @@ _G.pg.base.task_data_template[55930] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55931] = {
 	name = "【2023年4月新服】击沉敌人13",
 	guild_coin_award = 0,
@@ -141440,7 +138303,6 @@ _G.pg.base.task_data_template[55931] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55932] = {
 	name = "【2023年4月新服】击沉敌人14",
 	guild_coin_award = 0,
@@ -141480,7 +138342,6 @@ _G.pg.base.task_data_template[55932] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55933] = {
 	name = "【2023年4月新服】击沉敌人15",
 	guild_coin_award = 0,
@@ -141520,7 +138381,6 @@ _G.pg.base.task_data_template[55933] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55934] = {
 	name = "【2023年4月新服】击沉敌人16",
 	guild_coin_award = 0,
@@ -141560,7 +138420,6 @@ _G.pg.base.task_data_template[55934] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55935] = {
 	name = "【2023年4月新服】击沉敌人17",
 	guild_coin_award = 0,
@@ -141600,7 +138459,6 @@ _G.pg.base.task_data_template[55935] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55936] = {
 	name = "【2023年4月新服】击沉敌人18",
 	guild_coin_award = 0,
@@ -141640,7 +138498,6 @@ _G.pg.base.task_data_template[55936] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55937] = {
 	name = "【2023年4月新服】击沉敌人19",
 	guild_coin_award = 0,
@@ -141680,7 +138537,6 @@ _G.pg.base.task_data_template[55937] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55938] = {
 	name = "【2023年4月新服】击沉敌人20",
 	guild_coin_award = 0,
@@ -141720,7 +138576,6 @@ _G.pg.base.task_data_template[55938] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55939] = {
 	name = "【2023年4月新服】技能战术训练1",
 	guild_coin_award = 0,
@@ -141760,7 +138615,6 @@ _G.pg.base.task_data_template[55939] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55940] = {
 	name = "【2023年4月新服】技能战术训练2",
 	guild_coin_award = 0,
@@ -141800,7 +138654,6 @@ _G.pg.base.task_data_template[55940] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55941] = {
 	name = "【2023年4月新服】技能战术训练3",
 	guild_coin_award = 0,
@@ -141840,7 +138693,6 @@ _G.pg.base.task_data_template[55941] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55942] = {
 	name = "【2023年4月新服】技能战术训练4",
 	guild_coin_award = 0,
@@ -141880,7 +138732,6 @@ _G.pg.base.task_data_template[55942] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55943] = {
 	name = "【2023年4月新服】技能战术训练5",
 	guild_coin_award = 0,
@@ -141920,7 +138771,6 @@ _G.pg.base.task_data_template[55943] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55944] = {
 	name = "【2023年4月新服】技能战术训练6",
 	guild_coin_award = 0,
@@ -141960,7 +138810,6 @@ _G.pg.base.task_data_template[55944] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55945] = {
 	name = "【2023年4月新服】技能战术训练7",
 	guild_coin_award = 0,
@@ -142000,7 +138849,6 @@ _G.pg.base.task_data_template[55945] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55946] = {
 	name = "【2023年4月新服】技能战术训练8",
 	guild_coin_award = 0,
@@ -142040,7 +138888,6 @@ _G.pg.base.task_data_template[55946] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55947] = {
 	name = "【2023年4月新服】技能战术训练9",
 	guild_coin_award = 0,
@@ -142080,7 +138927,6 @@ _G.pg.base.task_data_template[55947] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55948] = {
 	name = "【2023年4月新服】技能战术训练10",
 	guild_coin_award = 0,
@@ -142120,7 +138966,6 @@ _G.pg.base.task_data_template[55948] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55949] = {
 	name = "【2023年4月新服】技能战术训练11",
 	guild_coin_award = 0,
@@ -142160,7 +139005,6 @@ _G.pg.base.task_data_template[55949] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55950] = {
 	name = "【2023年4月新服】技能战术训练12",
 	guild_coin_award = 0,
@@ -142200,7 +139044,6 @@ _G.pg.base.task_data_template[55950] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55951] = {
 	name = "【2023年4月新服】技能战术训练13",
 	guild_coin_award = 0,
@@ -142240,7 +139083,6 @@ _G.pg.base.task_data_template[55951] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55952] = {
 	name = "【2023年4月新服】技能战术训练14",
 	guild_coin_award = 0,
@@ -142280,7 +139122,6 @@ _G.pg.base.task_data_template[55952] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55953] = {
 	name = "【2023年4月新服】技能战术训练15",
 	guild_coin_award = 0,
@@ -142320,7 +139161,6 @@ _G.pg.base.task_data_template[55953] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55954] = {
 	name = "【2023年4月新服】技能战术训练16",
 	guild_coin_award = 0,
@@ -142360,7 +139200,6 @@ _G.pg.base.task_data_template[55954] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55955] = {
 	name = "【2023年4月新服】技能战术训练17",
 	guild_coin_award = 0,
@@ -142400,7 +139239,6 @@ _G.pg.base.task_data_template[55955] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55956] = {
 	name = "【2023年4月新服】技能战术训练18",
 	guild_coin_award = 0,
@@ -142440,7 +139278,6 @@ _G.pg.base.task_data_template[55956] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55957] = {
 	name = "【2023年4月新服】技能战术训练19",
 	guild_coin_award = 0,
@@ -142480,7 +139317,6 @@ _G.pg.base.task_data_template[55957] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55958] = {
 	name = "【2023年4月新服】技能战术训练20",
 	guild_coin_award = 0,
@@ -142520,7 +139356,6 @@ _G.pg.base.task_data_template[55958] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55959] = {
 	name = "【2023年4月新服】建造舰船1",
 	guild_coin_award = 0,
@@ -142560,7 +139395,6 @@ _G.pg.base.task_data_template[55959] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55960] = {
 	name = "【2023年4月新服】建造舰船2",
 	guild_coin_award = 0,
@@ -142600,7 +139434,6 @@ _G.pg.base.task_data_template[55960] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55961] = {
 	name = "【2023年4月新服】建造舰船3",
 	guild_coin_award = 0,
@@ -142640,7 +139473,6 @@ _G.pg.base.task_data_template[55961] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55962] = {
 	name = "【2023年4月新服】建造舰船4",
 	guild_coin_award = 0,
@@ -142680,7 +139512,6 @@ _G.pg.base.task_data_template[55962] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55963] = {
 	name = "【2023年4月新服】建造舰船5",
 	guild_coin_award = 0,
@@ -142720,7 +139551,6 @@ _G.pg.base.task_data_template[55963] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55964] = {
 	name = "【2023年4月新服】建造舰船6",
 	guild_coin_award = 0,
@@ -142760,7 +139590,6 @@ _G.pg.base.task_data_template[55964] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55965] = {
 	name = "【2023年4月新服】建造舰船7",
 	guild_coin_award = 0,
@@ -142800,7 +139629,6 @@ _G.pg.base.task_data_template[55965] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55966] = {
 	name = "【2023年4月新服】建造舰船8",
 	guild_coin_award = 0,
@@ -142840,7 +139668,6 @@ _G.pg.base.task_data_template[55966] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55967] = {
 	name = "【2023年4月新服】建造舰船9",
 	guild_coin_award = 0,
@@ -142880,7 +139707,6 @@ _G.pg.base.task_data_template[55967] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55968] = {
 	name = "【2023年4月新服】建造舰船10",
 	guild_coin_award = 0,
@@ -142920,7 +139746,6 @@ _G.pg.base.task_data_template[55968] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55969] = {
 	name = "【2023年4月新服】100级舰船数量1",
 	guild_coin_award = 0,
@@ -142965,7 +139790,6 @@ _G.pg.base.task_data_template[55969] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55970] = {
 	name = "【2023年4月新服】100级舰船数量2",
 	guild_coin_award = 0,
@@ -143010,7 +139834,6 @@ _G.pg.base.task_data_template[55970] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55971] = {
 	name = "【2023年4月新服】100级舰船数量3",
 	guild_coin_award = 0,
@@ -143055,7 +139878,6 @@ _G.pg.base.task_data_template[55971] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55972] = {
 	name = "【2023年4月新服】100级舰船数量4",
 	guild_coin_award = 0,
@@ -143100,7 +139922,6 @@ _G.pg.base.task_data_template[55972] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55973] = {
 	name = "【2023年4月新服】100级舰船数量5",
 	guild_coin_award = 0,
@@ -143145,7 +139966,6 @@ _G.pg.base.task_data_template[55973] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55974] = {
 	name = "【2023年4月新服】100级舰船数量6",
 	guild_coin_award = 0,
@@ -143190,7 +140010,6 @@ _G.pg.base.task_data_template[55974] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55975] = {
 	name = "【2023年4月新服】100级舰船数量7",
 	guild_coin_award = 0,
@@ -143235,7 +140054,6 @@ _G.pg.base.task_data_template[55975] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55976] = {
 	name = "【2023年4月新服】100级舰船数量8",
 	guild_coin_award = 0,
@@ -143280,7 +140098,6 @@ _G.pg.base.task_data_template[55976] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55977] = {
 	name = "【2023年4月新服】100级舰船数量9",
 	guild_coin_award = 0,
@@ -143325,7 +140142,6 @@ _G.pg.base.task_data_template[55977] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55978] = {
 	name = "【2023年4月新服】100级舰船数量10",
 	guild_coin_award = 0,
@@ -143370,7 +140186,6 @@ _G.pg.base.task_data_template[55978] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55979] = {
 	name = "【2023年4月新服】训练指挥喵1",
 	guild_coin_award = 0,
@@ -143410,7 +140225,6 @@ _G.pg.base.task_data_template[55979] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55980] = {
 	name = "【2023年4月新服】训练指挥喵2",
 	guild_coin_award = 0,
@@ -143450,7 +140264,6 @@ _G.pg.base.task_data_template[55980] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55981] = {
 	name = "【2023年4月新服】训练指挥喵3",
 	guild_coin_award = 0,
@@ -143490,7 +140303,6 @@ _G.pg.base.task_data_template[55981] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55982] = {
 	name = "【2023年4月新服】训练指挥喵4",
 	guild_coin_award = 0,
@@ -143530,7 +140342,6 @@ _G.pg.base.task_data_template[55982] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55983] = {
 	name = "【2023年4月新服】训练指挥喵5",
 	guild_coin_award = 0,
@@ -143570,7 +140381,6 @@ _G.pg.base.task_data_template[55983] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55984] = {
 	name = "【2023年4月新服】训练指挥喵6",
 	guild_coin_award = 0,
@@ -143610,7 +140420,6 @@ _G.pg.base.task_data_template[55984] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55985] = {
 	name = "【2023年4月新服】训练指挥喵7",
 	guild_coin_award = 0,
@@ -143650,7 +140459,6 @@ _G.pg.base.task_data_template[55985] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55986] = {
 	name = "【2023年4月新服】训练指挥喵8",
 	guild_coin_award = 0,
@@ -143690,7 +140498,6 @@ _G.pg.base.task_data_template[55986] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55987] = {
 	name = "【2023年4月新服】训练指挥喵9",
 	guild_coin_award = 0,
@@ -143730,7 +140537,6 @@ _G.pg.base.task_data_template[55987] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55988] = {
 	name = "【2023年4月新服】训练指挥喵10",
 	guild_coin_award = 0,
@@ -143770,7 +140576,6 @@ _G.pg.base.task_data_template[55988] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55989] = {
 	name = "【2023年4月新服】通关主线困难1",
 	guild_coin_award = 0,
@@ -143810,7 +140615,6 @@ _G.pg.base.task_data_template[55989] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55990] = {
 	name = "【2023年4月新服】通关主线困难2",
 	guild_coin_award = 0,
@@ -143850,7 +140654,6 @@ _G.pg.base.task_data_template[55990] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55991] = {
 	name = "【2023年4月新服】通关主线困难3",
 	guild_coin_award = 0,
@@ -143890,7 +140693,6 @@ _G.pg.base.task_data_template[55991] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55992] = {
 	name = "【2023年4月新服】通关主线困难4",
 	guild_coin_award = 0,
@@ -143930,7 +140732,6 @@ _G.pg.base.task_data_template[55992] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55993] = {
 	name = "【2023年4月新服】通关主线困难5",
 	guild_coin_award = 0,
@@ -143970,7 +140771,6 @@ _G.pg.base.task_data_template[55993] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55994] = {
 	name = "【2023年4月新服】通关主线困难6",
 	guild_coin_award = 0,
@@ -144010,7 +140810,6 @@ _G.pg.base.task_data_template[55994] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55995] = {
 	name = "【2023年4月新服】通关主线困难7",
 	guild_coin_award = 0,
@@ -144050,7 +140849,6 @@ _G.pg.base.task_data_template[55995] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55996] = {
 	name = "【2023年4月新服】通关主线困难8",
 	guild_coin_award = 0,
@@ -144090,7 +140888,6 @@ _G.pg.base.task_data_template[55996] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55997] = {
 	name = "【2023年4月新服】通关主线困难9",
 	guild_coin_award = 0,
@@ -144130,7 +140927,6 @@ _G.pg.base.task_data_template[55997] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[55998] = {
 	name = "【2023年4月新服】通关主线困难10",
 	guild_coin_award = 0,
@@ -144170,7 +140966,6 @@ _G.pg.base.task_data_template[55998] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[56011] = {
 	name = "【新回流任务第一天】任务1",
 	guild_coin_award = 0,
@@ -144204,7 +140999,6 @@ _G.pg.base.task_data_template[56011] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56012] = {
 	name = "【新回流任务第一天】任务2",
 	guild_coin_award = 0,
@@ -144238,7 +141032,6 @@ _G.pg.base.task_data_template[56012] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56013] = {
 	name = "【新回流任务第一天】任务3",
 	guild_coin_award = 0,
@@ -144272,7 +141065,6 @@ _G.pg.base.task_data_template[56013] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56021] = {
 	name = "【新回流任务第二天】任务1",
 	guild_coin_award = 0,
@@ -144311,7 +141103,6 @@ _G.pg.base.task_data_template[56021] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[56022] = {
 	name = "【新回流任务第二天】任务2",
 	guild_coin_award = 0,
@@ -144348,7 +141139,6 @@ _G.pg.base.task_data_template[56022] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56023] = {
 	name = "【新回流任务第二天】任务3",
 	guild_coin_award = 0,
@@ -144382,7 +141172,6 @@ _G.pg.base.task_data_template[56023] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56031] = {
 	name = "【新回流任务第三天】任务1",
 	guild_coin_award = 0,
@@ -144416,7 +141205,6 @@ _G.pg.base.task_data_template[56031] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56032] = {
 	name = "【新回流任务第三天】任务2",
 	guild_coin_award = 0,
@@ -144450,7 +141238,6 @@ _G.pg.base.task_data_template[56032] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56033] = {
 	name = "【新回流任务第三天】任务3",
 	guild_coin_award = 0,
@@ -144484,7 +141271,6 @@ _G.pg.base.task_data_template[56033] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56041] = {
 	name = "【新回流任务第四天】任务1",
 	guild_coin_award = 0,
@@ -144518,7 +141304,6 @@ _G.pg.base.task_data_template[56041] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56042] = {
 	name = "【新回流任务第四天】任务2",
 	guild_coin_award = 0,
@@ -144552,7 +141337,6 @@ _G.pg.base.task_data_template[56042] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56043] = {
 	name = "【新回流任务第四天】任务3",
 	guild_coin_award = 0,
@@ -144586,7 +141370,6 @@ _G.pg.base.task_data_template[56043] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56051] = {
 	name = "【新回流任务第五天】任务1",
 	guild_coin_award = 0,
@@ -144630,7 +141413,6 @@ _G.pg.base.task_data_template[56051] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[56052] = {
 	name = "【新回流任务第五天】任务2",
 	guild_coin_award = 0,
@@ -144664,7 +141446,6 @@ _G.pg.base.task_data_template[56052] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56053] = {
 	name = "【新回流任务第五天】任务3",
 	guild_coin_award = 0,
@@ -144698,7 +141479,6 @@ _G.pg.base.task_data_template[56053] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56061] = {
 	name = "【新回流任务第六天】任务1",
 	guild_coin_award = 0,
@@ -144732,7 +141512,6 @@ _G.pg.base.task_data_template[56061] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56062] = {
 	name = "【新回流任务第六天】任务2",
 	guild_coin_award = 0,
@@ -144766,7 +141545,6 @@ _G.pg.base.task_data_template[56062] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56063] = {
 	name = "【新回流任务第六天】任务3",
 	guild_coin_award = 0,
@@ -144800,7 +141578,6 @@ _G.pg.base.task_data_template[56063] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56071] = {
 	name = "【新回流任务第七天】任务1",
 	guild_coin_award = 0,
@@ -144834,7 +141611,6 @@ _G.pg.base.task_data_template[56071] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56072] = {
 	name = "【新回流任务第七天】任务2",
 	guild_coin_award = 0,
@@ -144870,7 +141646,6 @@ _G.pg.base.task_data_template[56072] = {
 		"SELTECHNOLOGY"
 	}
 }
-
 _G.pg.base.task_data_template[56073] = {
 	name = "【新回流任务第七天】任务3",
 	guild_coin_award = 0,
@@ -144904,7 +141679,6 @@ _G.pg.base.task_data_template[56073] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56081] = {
 	name = "【新回流任务第八天】任务1",
 	guild_coin_award = 0,
@@ -144940,7 +141714,6 @@ _G.pg.base.task_data_template[56081] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[56082] = {
 	name = "【新回流任务第八天】任务2",
 	guild_coin_award = 0,
@@ -144976,7 +141749,6 @@ _G.pg.base.task_data_template[56082] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[56083] = {
 	name = "【新回流任务第八天】任务3",
 	guild_coin_award = 0,
@@ -145010,7 +141782,6 @@ _G.pg.base.task_data_template[56083] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56091] = {
 	name = "【新回流任务第九天】任务1",
 	guild_coin_award = 0,
@@ -145049,7 +141820,6 @@ _G.pg.base.task_data_template[56091] = {
 		"SPWEAPON_STOREHOUSE"
 	}
 }
-
 _G.pg.base.task_data_template[56092] = {
 	name = "【新回流任务第九天】任务2",
 	guild_coin_award = 0,
@@ -145085,7 +141855,6 @@ _G.pg.base.task_data_template[56092] = {
 		"SPWEAPON_STOREHOUSE"
 	}
 }
-
 _G.pg.base.task_data_template[56093] = {
 	name = "【新回流任务第九天】任务3",
 	guild_coin_award = 0,
@@ -145124,7 +141893,6 @@ _G.pg.base.task_data_template[56093] = {
 		"SPWEAPON_STOREHOUSE"
 	}
 }
-
 _G.pg.base.task_data_template[56101] = {
 	name = "【新回流任务第十天】任务1",
 	guild_coin_award = 0,
@@ -145158,7 +141926,6 @@ _G.pg.base.task_data_template[56101] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[56102] = {
 	name = "【新回流任务第十天】任务2",
 	guild_coin_award = 0,
@@ -145194,7 +141961,6 @@ _G.pg.base.task_data_template[56102] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[56103] = {
 	name = "【新回流任务第十天】任务3",
 	guild_coin_award = 0,
@@ -145230,7 +141996,6 @@ _G.pg.base.task_data_template[56103] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[60011] = {
 	name = "海王星开启研发前置任务",
 	guild_coin_award = 0,
@@ -145289,7 +142054,6 @@ _G.pg.base.task_data_template[60011] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60012] = {
 	name = "皇家先锋技术测试I ",
 	guild_coin_award = 0,
@@ -145348,7 +142112,6 @@ _G.pg.base.task_data_template[60012] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60013] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -145382,7 +142145,6 @@ _G.pg.base.task_data_template[60013] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60014] = {
 	name = "巡洋技术突破I ",
 	guild_coin_award = 0,
@@ -145416,7 +142178,6 @@ _G.pg.base.task_data_template[60014] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60015] = {
 	name = "皇家先锋技术测试II ",
 	guild_coin_award = 0,
@@ -145481,7 +142242,6 @@ _G.pg.base.task_data_template[60015] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60016] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -145521,7 +142281,6 @@ _G.pg.base.task_data_template[60016] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60017] = {
 	name = "巡洋技术突破II ",
 	guild_coin_award = 0,
@@ -145555,7 +142314,6 @@ _G.pg.base.task_data_template[60017] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60018] = {
 	name = "海王星舰体塑造I",
 	guild_coin_award = 0,
@@ -145589,7 +142347,6 @@ _G.pg.base.task_data_template[60018] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60019] = {
 	name = "海王星舰体塑造II",
 	guild_coin_award = 0,
@@ -145623,7 +142380,6 @@ _G.pg.base.task_data_template[60019] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60021] = {
 	name = "君主开启研发前置任务",
 	guild_coin_award = 0,
@@ -145694,7 +142450,6 @@ _G.pg.base.task_data_template[60021] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60022] = {
 	name = "皇家主力技术测试I ",
 	guild_coin_award = 0,
@@ -145765,7 +142520,6 @@ _G.pg.base.task_data_template[60022] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60023] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -145799,7 +142553,6 @@ _G.pg.base.task_data_template[60023] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60024] = {
 	name = "战列技术突破I ",
 	guild_coin_award = 0,
@@ -145833,7 +142586,6 @@ _G.pg.base.task_data_template[60024] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60025] = {
 	name = "皇家主力技术测试II ",
 	guild_coin_award = 0,
@@ -145910,7 +142662,6 @@ _G.pg.base.task_data_template[60025] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60026] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -145950,7 +142701,6 @@ _G.pg.base.task_data_template[60026] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60027] = {
 	name = "战列技术突破II ",
 	guild_coin_award = 0,
@@ -145984,7 +142734,6 @@ _G.pg.base.task_data_template[60027] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60028] = {
 	name = "君主舰体塑造I",
 	guild_coin_award = 0,
@@ -146018,7 +142767,6 @@ _G.pg.base.task_data_template[60028] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60029] = {
 	name = "君主舰体塑造II",
 	guild_coin_award = 0,
@@ -146052,7 +142800,6 @@ _G.pg.base.task_data_template[60029] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60031] = {
 	name = "伊吹开启研发前置任务",
 	guild_coin_award = 0,
@@ -146111,7 +142858,6 @@ _G.pg.base.task_data_template[60031] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60032] = {
 	name = "重樱先锋技术测试I ",
 	guild_coin_award = 0,
@@ -146170,7 +142916,6 @@ _G.pg.base.task_data_template[60032] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60033] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -146204,7 +142949,6 @@ _G.pg.base.task_data_template[60033] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60034] = {
 	name = "巡洋技术突破I ",
 	guild_coin_award = 0,
@@ -146238,7 +142982,6 @@ _G.pg.base.task_data_template[60034] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60035] = {
 	name = "重樱先锋技术测试II ",
 	guild_coin_award = 0,
@@ -146303,7 +143046,6 @@ _G.pg.base.task_data_template[60035] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60036] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -146343,7 +143085,6 @@ _G.pg.base.task_data_template[60036] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60037] = {
 	name = "巡洋技术突破II ",
 	guild_coin_award = 0,
@@ -146377,7 +143118,6 @@ _G.pg.base.task_data_template[60037] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60038] = {
 	name = "峦的舰体塑造I",
 	guild_coin_award = 0,
@@ -146411,7 +143151,6 @@ _G.pg.base.task_data_template[60038] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60039] = {
 	name = "峦的舰体塑造II",
 	guild_coin_award = 0,
@@ -146445,7 +143184,6 @@ _G.pg.base.task_data_template[60039] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60041] = {
 	name = "出云开启研发前置任务",
 	guild_coin_award = 0,
@@ -146516,7 +143254,6 @@ _G.pg.base.task_data_template[60041] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60042] = {
 	name = "重樱主力技术测试I ",
 	guild_coin_award = 0,
@@ -146587,7 +143324,6 @@ _G.pg.base.task_data_template[60042] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60043] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -146621,7 +143357,6 @@ _G.pg.base.task_data_template[60043] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60044] = {
 	name = "战列技术突破I ",
 	guild_coin_award = 0,
@@ -146655,7 +143390,6 @@ _G.pg.base.task_data_template[60044] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60045] = {
 	name = "重樱主力技术测试II ",
 	guild_coin_award = 0,
@@ -146732,7 +143466,6 @@ _G.pg.base.task_data_template[60045] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60046] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -146772,7 +143505,6 @@ _G.pg.base.task_data_template[60046] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60047] = {
 	name = "战列技术突破II ",
 	guild_coin_award = 0,
@@ -146806,7 +143538,6 @@ _G.pg.base.task_data_template[60047] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60048] = {
 	name = "侌的舰体塑造I",
 	guild_coin_award = 0,
@@ -146840,7 +143571,6 @@ _G.pg.base.task_data_template[60048] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60049] = {
 	name = "侌的舰体塑造II",
 	guild_coin_award = 0,
@@ -146874,7 +143604,6 @@ _G.pg.base.task_data_template[60049] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60051] = {
 	name = "罗恩开启研发前置任务",
 	guild_coin_award = 0,
@@ -146933,7 +143662,6 @@ _G.pg.base.task_data_template[60051] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60052] = {
 	name = "铁血先锋技术测试I ",
 	guild_coin_award = 0,
@@ -146992,7 +143720,6 @@ _G.pg.base.task_data_template[60052] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60053] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -147026,7 +143753,6 @@ _G.pg.base.task_data_template[60053] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60054] = {
 	name = "巡洋技术突破I ",
 	guild_coin_award = 0,
@@ -147060,7 +143786,6 @@ _G.pg.base.task_data_template[60054] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60055] = {
 	name = "铁血先锋技术测试II ",
 	guild_coin_award = 0,
@@ -147125,7 +143850,6 @@ _G.pg.base.task_data_template[60055] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60056] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -147165,7 +143889,6 @@ _G.pg.base.task_data_template[60056] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60057] = {
 	name = "巡洋技术突破II ",
 	guild_coin_award = 0,
@@ -147199,7 +143922,6 @@ _G.pg.base.task_data_template[60057] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60058] = {
 	name = "{namecode:439}舰体塑造I",
 	guild_coin_award = 0,
@@ -147233,7 +143955,6 @@ _G.pg.base.task_data_template[60058] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60059] = {
 	name = "{namecode:439}舰体塑造II",
 	guild_coin_award = 0,
@@ -147267,7 +143988,6 @@ _G.pg.base.task_data_template[60059] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60061] = {
 	name = "路易九世开启研发前置任务",
 	guild_coin_award = 0,
@@ -147326,7 +144046,6 @@ _G.pg.base.task_data_template[60061] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60062] = {
 	name = "白鹰先锋技术测试I ",
 	guild_coin_award = 0,
@@ -147385,7 +144104,6 @@ _G.pg.base.task_data_template[60062] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60063] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -147419,7 +144137,6 @@ _G.pg.base.task_data_template[60063] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60064] = {
 	name = "巡洋技术突破I ",
 	guild_coin_award = 0,
@@ -147453,7 +144170,6 @@ _G.pg.base.task_data_template[60064] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60065] = {
 	name = "白鹰先锋技术测试II ",
 	guild_coin_award = 0,
@@ -147518,7 +144234,6 @@ _G.pg.base.task_data_template[60065] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60066] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -147558,7 +144273,6 @@ _G.pg.base.task_data_template[60066] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60067] = {
 	name = "巡洋技术突破II ",
 	guild_coin_award = 0,
@@ -147592,7 +144306,6 @@ _G.pg.base.task_data_template[60067] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60068] = {
 	name = "路易九世舰体塑造I",
 	guild_coin_award = 0,
@@ -147626,7 +144339,6 @@ _G.pg.base.task_data_template[60068] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60069] = {
 	name = "路易九世舰体塑造II",
 	guild_coin_award = 0,
@@ -147660,7 +144372,6 @@ _G.pg.base.task_data_template[60069] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60071] = {
 	name = "西雅图开启研发前置任务",
 	guild_coin_award = 0,
@@ -147694,7 +144405,6 @@ _G.pg.base.task_data_template[60071] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60072] = {
 	name = "白鹰先锋技术测试I ",
 	guild_coin_award = 0,
@@ -147753,7 +144463,6 @@ _G.pg.base.task_data_template[60072] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60073] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -147787,7 +144496,6 @@ _G.pg.base.task_data_template[60073] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60074] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -147821,7 +144529,6 @@ _G.pg.base.task_data_template[60074] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60075] = {
 	name = "白鹰先锋技术测试II ",
 	guild_coin_award = 0,
@@ -147886,7 +144593,6 @@ _G.pg.base.task_data_template[60075] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60076] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -147926,7 +144632,6 @@ _G.pg.base.task_data_template[60076] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60077] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -147960,7 +144665,6 @@ _G.pg.base.task_data_template[60077] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60078] = {
 	name = "西雅图舰体塑造I",
 	guild_coin_award = 0,
@@ -147994,7 +144698,6 @@ _G.pg.base.task_data_template[60078] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60079] = {
 	name = "西雅图舰体塑造II",
 	guild_coin_award = 0,
@@ -148028,7 +144731,6 @@ _G.pg.base.task_data_template[60079] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60081] = {
 	name = "佐治亚开启研发前置任务",
 	guild_coin_award = 0,
@@ -148062,7 +144764,6 @@ _G.pg.base.task_data_template[60081] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60082] = {
 	name = "白鹰主力技术测试I ",
 	guild_coin_award = 0,
@@ -148133,7 +144834,6 @@ _G.pg.base.task_data_template[60082] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60083] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -148167,7 +144867,6 @@ _G.pg.base.task_data_template[60083] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60084] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -148201,7 +144900,6 @@ _G.pg.base.task_data_template[60084] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60085] = {
 	name = "白鹰主力技术测试II ",
 	guild_coin_award = 0,
@@ -148278,7 +144976,6 @@ _G.pg.base.task_data_template[60085] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60086] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -148318,7 +145015,6 @@ _G.pg.base.task_data_template[60086] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60087] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -148352,7 +145048,6 @@ _G.pg.base.task_data_template[60087] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60088] = {
 	name = "佐治亚舰体塑造I",
 	guild_coin_award = 0,
@@ -148386,7 +145081,6 @@ _G.pg.base.task_data_template[60088] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60089] = {
 	name = "佐治亚舰体塑造II",
 	guild_coin_award = 0,
@@ -148420,7 +145114,6 @@ _G.pg.base.task_data_template[60089] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60091] = {
 	name = "苝开启研发前置任务",
 	guild_coin_award = 0,
@@ -148454,7 +145147,6 @@ _G.pg.base.task_data_template[60091] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60092] = {
 	name = "重樱先锋技术测试I ",
 	guild_coin_award = 0,
@@ -148513,7 +145205,6 @@ _G.pg.base.task_data_template[60092] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60093] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -148547,7 +145238,6 @@ _G.pg.base.task_data_template[60093] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60094] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -148581,7 +145271,6 @@ _G.pg.base.task_data_template[60094] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60095] = {
 	name = "重樱先锋技术测试II ",
 	guild_coin_award = 0,
@@ -148646,7 +145335,6 @@ _G.pg.base.task_data_template[60095] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60096] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -148686,7 +145374,6 @@ _G.pg.base.task_data_template[60096] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60097] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -148720,7 +145407,6 @@ _G.pg.base.task_data_template[60097] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60098] = {
 	name = "苝舰体塑造I",
 	guild_coin_award = 0,
@@ -148754,7 +145440,6 @@ _G.pg.base.task_data_template[60098] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60099] = {
 	name = "苝舰体塑造II",
 	guild_coin_award = 0,
@@ -148788,7 +145473,6 @@ _G.pg.base.task_data_template[60099] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60101] = {
 	name = "猉开启研发前置任务",
 	guild_coin_award = 0,
@@ -148822,7 +145506,6 @@ _G.pg.base.task_data_template[60101] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60102] = {
 	name = "重樱主力技术测试I ",
 	guild_coin_award = 0,
@@ -148893,7 +145576,6 @@ _G.pg.base.task_data_template[60102] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60103] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -148927,7 +145609,6 @@ _G.pg.base.task_data_template[60103] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60104] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -148961,7 +145642,6 @@ _G.pg.base.task_data_template[60104] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60105] = {
 	name = "重樱先锋技术测试II ",
 	guild_coin_award = 0,
@@ -149026,7 +145706,6 @@ _G.pg.base.task_data_template[60105] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60106] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -149066,7 +145745,6 @@ _G.pg.base.task_data_template[60106] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60107] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -149100,7 +145778,6 @@ _G.pg.base.task_data_template[60107] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60108] = {
 	name = "猉舰体塑造I",
 	guild_coin_award = 0,
@@ -149134,7 +145811,6 @@ _G.pg.base.task_data_template[60108] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60109] = {
 	name = "猉舰体塑造II",
 	guild_coin_award = 0,
@@ -149168,7 +145844,6 @@ _G.pg.base.task_data_template[60109] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60111] = {
 	name = "腓特烈大帝开启研发前置任务",
 	guild_coin_award = 0,
@@ -149202,7 +145877,6 @@ _G.pg.base.task_data_template[60111] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60112] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -149273,7 +145947,6 @@ _G.pg.base.task_data_template[60112] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60113] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -149307,7 +145980,6 @@ _G.pg.base.task_data_template[60113] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60114] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -149341,7 +146013,6 @@ _G.pg.base.task_data_template[60114] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60115] = {
 	name = "铁血主力技术测试II ",
 	guild_coin_award = 0,
@@ -149418,7 +146089,6 @@ _G.pg.base.task_data_template[60115] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60116] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -149458,7 +146128,6 @@ _G.pg.base.task_data_template[60116] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60117] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -149492,7 +146161,6 @@ _G.pg.base.task_data_template[60117] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60118] = {
 	name = "{namecode:440}舰体塑造I",
 	guild_coin_award = 0,
@@ -149526,7 +146194,6 @@ _G.pg.base.task_data_template[60118] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60119] = {
 	name = "{namecode:440}舰体塑造II",
 	guild_coin_award = 0,
@@ -149560,7 +146227,6 @@ _G.pg.base.task_data_template[60119] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60120] = {
 	name = "加斯科涅开启研发前置任务1",
 	guild_coin_award = 0,
@@ -149594,7 +146260,6 @@ _G.pg.base.task_data_template[60120] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60121] = {
 	name = "加斯科涅开启研发前置任务2",
 	guild_coin_award = 0,
@@ -149628,7 +146293,6 @@ _G.pg.base.task_data_template[60121] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60122] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -149771,7 +146435,6 @@ _G.pg.base.task_data_template[60122] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60123] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -149805,7 +146468,6 @@ _G.pg.base.task_data_template[60123] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60124] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -149839,7 +146501,6 @@ _G.pg.base.task_data_template[60124] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60125] = {
 	name = "铁血主力技术测试II ",
 	guild_coin_award = 0,
@@ -149988,7 +146649,6 @@ _G.pg.base.task_data_template[60125] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60126] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -150028,7 +146688,6 @@ _G.pg.base.task_data_template[60126] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60127] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -150062,7 +146721,6 @@ _G.pg.base.task_data_template[60127] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60128] = {
 	name = "加斯科涅舰体塑造I",
 	guild_coin_award = 0,
@@ -150096,7 +146754,6 @@ _G.pg.base.task_data_template[60128] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60129] = {
 	name = "加斯科涅舰体塑造II",
 	guild_coin_award = 0,
@@ -150130,7 +146787,6 @@ _G.pg.base.task_data_template[60129] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60131] = {
 	name = "柴郡开启研发前置任务",
 	guild_coin_award = 0,
@@ -150164,7 +146820,6 @@ _G.pg.base.task_data_template[60131] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60132] = {
 	name = "皇家先锋技术测试I ",
 	guild_coin_award = 0,
@@ -150223,7 +146878,6 @@ _G.pg.base.task_data_template[60132] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60133] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -150257,7 +146911,6 @@ _G.pg.base.task_data_template[60133] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60134] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -150291,7 +146944,6 @@ _G.pg.base.task_data_template[60134] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60135] = {
 	name = "皇家先锋技术测试II ",
 	guild_coin_award = 0,
@@ -150356,7 +147008,6 @@ _G.pg.base.task_data_template[60135] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60136] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -150396,7 +147047,6 @@ _G.pg.base.task_data_template[60136] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60137] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -150430,7 +147080,6 @@ _G.pg.base.task_data_template[60137] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60138] = {
 	name = "柴郡舰体塑造I",
 	guild_coin_award = 0,
@@ -150464,7 +147113,6 @@ _G.pg.base.task_data_template[60138] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60139] = {
 	name = "柴郡舰体塑造II",
 	guild_coin_award = 0,
@@ -150498,7 +147146,6 @@ _G.pg.base.task_data_template[60139] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60141] = {
 	name = "德雷克开启研发前置任务",
 	guild_coin_award = 0,
@@ -150532,7 +147179,6 @@ _G.pg.base.task_data_template[60141] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60142] = {
 	name = "皇家先锋技术测试I ",
 	guild_coin_award = 0,
@@ -150591,7 +147237,6 @@ _G.pg.base.task_data_template[60142] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60143] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -150625,7 +147270,6 @@ _G.pg.base.task_data_template[60143] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60144] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -150659,7 +147303,6 @@ _G.pg.base.task_data_template[60144] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60145] = {
 	name = "皇家先锋技术测试II ",
 	guild_coin_award = 0,
@@ -150724,7 +147367,6 @@ _G.pg.base.task_data_template[60145] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60146] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -150764,7 +147406,6 @@ _G.pg.base.task_data_template[60146] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60147] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -150798,7 +147439,6 @@ _G.pg.base.task_data_template[60147] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60148] = {
 	name = "德雷克舰体塑造I",
 	guild_coin_award = 0,
@@ -150832,7 +147472,6 @@ _G.pg.base.task_data_template[60148] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60149] = {
 	name = "德雷克舰体塑造II",
 	guild_coin_award = 0,
@@ -150866,7 +147505,6 @@ _G.pg.base.task_data_template[60149] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60151] = {
 	name = "美因茨开启研发前置任务",
 	guild_coin_award = 0,
@@ -150900,7 +147538,6 @@ _G.pg.base.task_data_template[60151] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60152] = {
 	name = "铁血先锋技术测试I ",
 	guild_coin_award = 0,
@@ -150959,7 +147596,6 @@ _G.pg.base.task_data_template[60152] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60153] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -150993,7 +147629,6 @@ _G.pg.base.task_data_template[60153] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60154] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -151027,7 +147662,6 @@ _G.pg.base.task_data_template[60154] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60155] = {
 	name = "铁血先锋技术测试II ",
 	guild_coin_award = 0,
@@ -151092,7 +147726,6 @@ _G.pg.base.task_data_template[60155] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60156] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -151132,7 +147765,6 @@ _G.pg.base.task_data_template[60156] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60157] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -151166,7 +147798,6 @@ _G.pg.base.task_data_template[60157] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60158] = {
 	name = "{namecode:479}舰体塑造I",
 	guild_coin_award = 0,
@@ -151200,7 +147831,6 @@ _G.pg.base.task_data_template[60158] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60159] = {
 	name = "{namecode:479}舰体塑造II",
 	guild_coin_award = 0,
@@ -151234,7 +147864,6 @@ _G.pg.base.task_data_template[60159] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60161] = {
 	name = "奥丁开启研发前置任务",
 	guild_coin_award = 0,
@@ -151268,7 +147897,6 @@ _G.pg.base.task_data_template[60161] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60162] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -151339,7 +147967,6 @@ _G.pg.base.task_data_template[60162] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60163] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -151373,7 +148000,6 @@ _G.pg.base.task_data_template[60163] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60164] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -151407,7 +148033,6 @@ _G.pg.base.task_data_template[60164] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60165] = {
 	name = "铁血主力技术测试II ",
 	guild_coin_award = 0,
@@ -151484,7 +148109,6 @@ _G.pg.base.task_data_template[60165] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60166] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -151524,7 +148148,6 @@ _G.pg.base.task_data_template[60166] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60167] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -151558,7 +148181,6 @@ _G.pg.base.task_data_template[60167] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60168] = {
 	name = "{namecode:486}舰体塑造I",
 	guild_coin_award = 0,
@@ -151592,7 +148214,6 @@ _G.pg.base.task_data_template[60168] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60169] = {
 	name = "{namecode:486}舰体塑造II",
 	guild_coin_award = 0,
@@ -151626,7 +148247,6 @@ _G.pg.base.task_data_template[60169] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60170] = {
 	name = "香槟开启研发前置任务",
 	guild_coin_award = 0,
@@ -151660,7 +148280,6 @@ _G.pg.base.task_data_template[60170] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60171] = {
 	name = "香槟开启研发前置任务",
 	guild_coin_award = 0,
@@ -151694,7 +148313,6 @@ _G.pg.base.task_data_template[60171] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60172] = {
 	name = "白鹰主力技术测试I ",
 	guild_coin_award = 0,
@@ -151837,7 +148455,6 @@ _G.pg.base.task_data_template[60172] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60173] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -151871,7 +148488,6 @@ _G.pg.base.task_data_template[60173] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60174] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -151905,7 +148521,6 @@ _G.pg.base.task_data_template[60174] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60175] = {
 	name = "白鹰主力技术测试II ",
 	guild_coin_award = 0,
@@ -152054,7 +148669,6 @@ _G.pg.base.task_data_template[60175] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60176] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -152094,7 +148708,6 @@ _G.pg.base.task_data_template[60176] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60177] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -152128,7 +148741,6 @@ _G.pg.base.task_data_template[60177] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60178] = {
 	name = "香槟舰体塑造I",
 	guild_coin_award = 0,
@@ -152162,7 +148774,6 @@ _G.pg.base.task_data_template[60178] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60179] = {
 	name = "香槟舰体塑造II",
 	guild_coin_award = 0,
@@ -152196,7 +148807,6 @@ _G.pg.base.task_data_template[60179] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60181] = {
 	name = "安克雷奇开启研发前置任务",
 	guild_coin_award = 0,
@@ -152230,7 +148840,6 @@ _G.pg.base.task_data_template[60181] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60182] = {
 	name = "白鹰先锋技术测试I ",
 	guild_coin_award = 0,
@@ -152289,7 +148898,6 @@ _G.pg.base.task_data_template[60182] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60183] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -152323,7 +148931,6 @@ _G.pg.base.task_data_template[60183] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60184] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -152357,7 +148964,6 @@ _G.pg.base.task_data_template[60184] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60185] = {
 	name = "白鹰先锋技术测试II ",
 	guild_coin_award = 0,
@@ -152422,7 +149028,6 @@ _G.pg.base.task_data_template[60185] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60186] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -152462,7 +149067,6 @@ _G.pg.base.task_data_template[60186] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60187] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -152496,7 +149100,6 @@ _G.pg.base.task_data_template[60187] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60188] = {
 	name = "安克雷奇舰体塑造I",
 	guild_coin_award = 0,
@@ -152530,7 +149133,6 @@ _G.pg.base.task_data_template[60188] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60189] = {
 	name = "安克雷奇舰体塑造II",
 	guild_coin_award = 0,
@@ -152564,7 +149166,6 @@ _G.pg.base.task_data_template[60189] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60191] = {
 	name = "鹫开启研发前置任务",
 	guild_coin_award = 0,
@@ -152598,7 +149199,6 @@ _G.pg.base.task_data_template[60191] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60192] = {
 	name = "重樱主力技术测试I ",
 	guild_coin_award = 0,
@@ -152669,7 +149269,6 @@ _G.pg.base.task_data_template[60192] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60193] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -152703,7 +149302,6 @@ _G.pg.base.task_data_template[60193] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60194] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -152737,7 +149335,6 @@ _G.pg.base.task_data_template[60194] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60195] = {
 	name = "重樱主力技术测试II ",
 	guild_coin_award = 0,
@@ -152814,7 +149411,6 @@ _G.pg.base.task_data_template[60195] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60196] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -152854,7 +149450,6 @@ _G.pg.base.task_data_template[60196] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60197] = {
 	name = "主力技术突破II",
 	guild_coin_award = 0,
@@ -152888,7 +149483,6 @@ _G.pg.base.task_data_template[60197] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60198] = {
 	name = "鹫舰体塑造I",
 	guild_coin_award = 0,
@@ -152922,7 +149516,6 @@ _G.pg.base.task_data_template[60198] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60199] = {
 	name = "鹫舰体塑造II",
 	guild_coin_award = 0,
@@ -152956,7 +149549,6 @@ _G.pg.base.task_data_template[60199] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60201] = {
 	name = "埃吉尔开启研发前置任务",
 	guild_coin_award = 0,
@@ -152990,7 +149582,6 @@ _G.pg.base.task_data_template[60201] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60202] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -153061,7 +149652,6 @@ _G.pg.base.task_data_template[60202] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60203] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -153095,7 +149685,6 @@ _G.pg.base.task_data_template[60203] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60204] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -153129,7 +149718,6 @@ _G.pg.base.task_data_template[60204] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60205] = {
 	name = "铁血先锋技术测试II ",
 	guild_coin_award = 0,
@@ -153194,7 +149782,6 @@ _G.pg.base.task_data_template[60205] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60206] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -153234,7 +149821,6 @@ _G.pg.base.task_data_template[60206] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60207] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -153268,7 +149854,6 @@ _G.pg.base.task_data_template[60207] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60208] = {
 	name = "{namecode:480}舰体塑造I",
 	guild_coin_award = 0,
@@ -153302,7 +149887,6 @@ _G.pg.base.task_data_template[60208] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60209] = {
 	name = "{namecode:480}舰体塑造II",
 	guild_coin_award = 0,
@@ -153336,7 +149920,6 @@ _G.pg.base.task_data_template[60209] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60211] = {
 	name = "奥古斯特·冯·帕塞瓦尔开启研发前置任务",
 	guild_coin_award = 0,
@@ -153370,7 +149953,6 @@ _G.pg.base.task_data_template[60211] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60212] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -153441,7 +150023,6 @@ _G.pg.base.task_data_template[60212] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60213] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -153475,7 +150056,6 @@ _G.pg.base.task_data_template[60213] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60214] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -153509,7 +150089,6 @@ _G.pg.base.task_data_template[60214] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60215] = {
 	name = "铁血主力技术测试II ",
 	guild_coin_award = 0,
@@ -153586,7 +150165,6 @@ _G.pg.base.task_data_template[60215] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60216] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -153626,7 +150204,6 @@ _G.pg.base.task_data_template[60216] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60217] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -153660,7 +150237,6 @@ _G.pg.base.task_data_template[60217] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60218] = {
 	name = "{namecode:481}舰体塑造I",
 	guild_coin_award = 0,
@@ -153694,7 +150270,6 @@ _G.pg.base.task_data_template[60218] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60219] = {
 	name = "{namecode:481}舰体塑造II",
 	guild_coin_award = 0,
@@ -153728,7 +150303,6 @@ _G.pg.base.task_data_template[60219] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60220] = {
 	name = "马可波罗开启研发前置任务",
 	guild_coin_award = 0,
@@ -153762,7 +150336,6 @@ _G.pg.base.task_data_template[60220] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60221] = {
 	name = "马可波罗开启研发前置任务",
 	guild_coin_award = 0,
@@ -153796,7 +150369,6 @@ _G.pg.base.task_data_template[60221] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60222] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -153903,7 +150475,6 @@ _G.pg.base.task_data_template[60222] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60223] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -153937,7 +150508,6 @@ _G.pg.base.task_data_template[60223] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60224] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -153971,7 +150541,6 @@ _G.pg.base.task_data_template[60224] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60225] = {
 	name = "皇家主力技术测试II ",
 	guild_coin_award = 0,
@@ -154084,7 +150653,6 @@ _G.pg.base.task_data_template[60225] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60226] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -154124,7 +150692,6 @@ _G.pg.base.task_data_template[60226] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60227] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -154158,7 +150725,6 @@ _G.pg.base.task_data_template[60227] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60228] = {
 	name = "马可波罗舰体塑造I",
 	guild_coin_award = 0,
@@ -154192,7 +150758,6 @@ _G.pg.base.task_data_template[60228] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60229] = {
 	name = "马可波罗舰体塑造II",
 	guild_coin_award = 0,
@@ -154226,7 +150791,6 @@ _G.pg.base.task_data_template[60229] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60231] = {
 	name = "普利茅斯开启研发前置任务",
 	guild_coin_award = 0,
@@ -154260,7 +150824,6 @@ _G.pg.base.task_data_template[60231] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60232] = {
 	name = "皇家先锋技术测试I ",
 	guild_coin_award = 0,
@@ -154319,7 +150882,6 @@ _G.pg.base.task_data_template[60232] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60233] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -154353,7 +150915,6 @@ _G.pg.base.task_data_template[60233] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60234] = {
 	name = "巡洋技术突破I ",
 	guild_coin_award = 0,
@@ -154387,7 +150948,6 @@ _G.pg.base.task_data_template[60234] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60235] = {
 	name = "皇家先锋技术测试II ",
 	guild_coin_award = 0,
@@ -154452,7 +151012,6 @@ _G.pg.base.task_data_template[60235] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60236] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -154492,7 +151051,6 @@ _G.pg.base.task_data_template[60236] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60237] = {
 	name = "巡洋技术突破II ",
 	guild_coin_award = 0,
@@ -154526,7 +151084,6 @@ _G.pg.base.task_data_template[60237] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60238] = {
 	name = "普利茅斯舰体塑造I",
 	guild_coin_award = 0,
@@ -154560,7 +151117,6 @@ _G.pg.base.task_data_template[60238] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60239] = {
 	name = "普利茅斯舰体塑造II",
 	guild_coin_award = 0,
@@ -154594,7 +151150,6 @@ _G.pg.base.task_data_template[60239] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60241] = {
 	name = "鲁普雷希特亲王开启研发前置任务",
 	guild_coin_award = 0,
@@ -154628,7 +151183,6 @@ _G.pg.base.task_data_template[60241] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60242] = {
 	name = "铁血主力技术测试I ",
 	guild_coin_award = 0,
@@ -154699,7 +151253,6 @@ _G.pg.base.task_data_template[60242] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60243] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -154733,7 +151286,6 @@ _G.pg.base.task_data_template[60243] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60244] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -154767,7 +151319,6 @@ _G.pg.base.task_data_template[60244] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60245] = {
 	name = "铁血主力技术测试II ",
 	guild_coin_award = 0,
@@ -154844,7 +151395,6 @@ _G.pg.base.task_data_template[60245] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60246] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -154884,7 +151434,6 @@ _G.pg.base.task_data_template[60246] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60247] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -154918,7 +151467,6 @@ _G.pg.base.task_data_template[60247] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60248] = {
 	name = "{namecode:484}舰体塑造I",
 	guild_coin_award = 0,
@@ -154952,7 +151500,6 @@ _G.pg.base.task_data_template[60248] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60249] = {
 	name = "{namecode:484}舰体塑造II",
 	guild_coin_award = 0,
@@ -154986,7 +151533,6 @@ _G.pg.base.task_data_template[60249] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60251] = {
 	name = "滨江开启研发前置任务",
 	guild_coin_award = 0,
@@ -155020,7 +151566,6 @@ _G.pg.base.task_data_template[60251] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60252] = {
 	name = "东煌先锋技术测试I",
 	guild_coin_award = 0,
@@ -155079,7 +151624,6 @@ _G.pg.base.task_data_template[60252] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60253] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -155113,7 +151657,6 @@ _G.pg.base.task_data_template[60253] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60254] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -155147,7 +151690,6 @@ _G.pg.base.task_data_template[60254] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60255] = {
 	name = "东煌先锋技术测试II ",
 	guild_coin_award = 0,
@@ -155212,7 +151754,6 @@ _G.pg.base.task_data_template[60255] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60256] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -155252,7 +151793,6 @@ _G.pg.base.task_data_template[60256] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60257] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -155286,7 +151826,6 @@ _G.pg.base.task_data_template[60257] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60258] = {
 	name = "滨江舰体塑造I",
 	guild_coin_award = 0,
@@ -155320,7 +151859,6 @@ _G.pg.base.task_data_template[60258] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60259] = {
 	name = "滨江舰体塑造II",
 	guild_coin_award = 0,
@@ -155354,7 +151892,6 @@ _G.pg.base.task_data_template[60259] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60260] = {
 	name = "契卡洛夫开启研发前置任务1",
 	guild_coin_award = 0,
@@ -155388,7 +151925,6 @@ _G.pg.base.task_data_template[60260] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60261] = {
 	name = "契卡洛夫开启研发前置任务2",
 	guild_coin_award = 0,
@@ -155422,7 +151958,6 @@ _G.pg.base.task_data_template[60261] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60262] = {
 	name = "撒丁主力技术测试I ",
 	guild_coin_award = 0,
@@ -155529,7 +152064,6 @@ _G.pg.base.task_data_template[60262] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60263] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -155563,7 +152097,6 @@ _G.pg.base.task_data_template[60263] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60264] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -155597,7 +152130,6 @@ _G.pg.base.task_data_template[60264] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60265] = {
 	name = "白鹰主力技术测试II ",
 	guild_coin_award = 0,
@@ -155710,7 +152242,6 @@ _G.pg.base.task_data_template[60265] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60266] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -155750,7 +152281,6 @@ _G.pg.base.task_data_template[60266] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60267] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -155784,7 +152314,6 @@ _G.pg.base.task_data_template[60267] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60268] = {
 	name = "契卡洛夫舰体塑造I",
 	guild_coin_award = 0,
@@ -155818,7 +152347,6 @@ _G.pg.base.task_data_template[60268] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60269] = {
 	name = "契卡洛夫舰体塑造II",
 	guild_coin_award = 0,
@@ -155852,7 +152380,6 @@ _G.pg.base.task_data_template[60269] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60271] = {
 	name = "布雷斯特开启研发前置任务",
 	guild_coin_award = 0,
@@ -155886,7 +152413,6 @@ _G.pg.base.task_data_template[60271] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60272] = {
 	name = "鸢尾主力技术测试I ",
 	guild_coin_award = 0,
@@ -155993,7 +152519,6 @@ _G.pg.base.task_data_template[60272] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60273] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -156027,7 +152552,6 @@ _G.pg.base.task_data_template[60273] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60274] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -156061,7 +152585,6 @@ _G.pg.base.task_data_template[60274] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60275] = {
 	name = "鸢尾先锋技术测试II ",
 	guild_coin_award = 0,
@@ -156150,7 +152673,6 @@ _G.pg.base.task_data_template[60275] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60276] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -156190,7 +152712,6 @@ _G.pg.base.task_data_template[60276] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60277] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -156224,7 +152745,6 @@ _G.pg.base.task_data_template[60277] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60278] = {
 	name = "布雷斯特舰体塑造I",
 	guild_coin_award = 0,
@@ -156258,7 +152778,6 @@ _G.pg.base.task_data_template[60278] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60279] = {
 	name = "布雷斯特舰体塑造II",
 	guild_coin_award = 0,
@@ -156292,7 +152811,6 @@ _G.pg.base.task_data_template[60279] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60281] = {
 	name = "奇尔沙治开启研发前置任务",
 	guild_coin_award = 0,
@@ -156326,7 +152844,6 @@ _G.pg.base.task_data_template[60281] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60282] = {
 	name = "白鹰主力技术测试I ",
 	guild_coin_award = 0,
@@ -156397,7 +152914,6 @@ _G.pg.base.task_data_template[60282] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60283] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -156431,7 +152947,6 @@ _G.pg.base.task_data_template[60283] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60284] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -156465,7 +152980,6 @@ _G.pg.base.task_data_template[60284] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60285] = {
 	name = "白鹰主力技术测试II ",
 	guild_coin_award = 0,
@@ -156542,7 +153056,6 @@ _G.pg.base.task_data_template[60285] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60286] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -156582,7 +153095,6 @@ _G.pg.base.task_data_template[60286] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60287] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -156616,7 +153128,6 @@ _G.pg.base.task_data_template[60287] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60288] = {
 	name = "奇尔沙治舰体塑造I",
 	guild_coin_award = 0,
@@ -156650,7 +153161,6 @@ _G.pg.base.task_data_template[60288] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60289] = {
 	name = "奇尔沙治舰体塑造II",
 	guild_coin_award = 0,
@@ -156684,7 +153194,6 @@ _G.pg.base.task_data_template[60289] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60291] = {
 	name = "四万十开启研发前置任务",
 	guild_coin_award = 0,
@@ -156718,7 +153227,6 @@ _G.pg.base.task_data_template[60291] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60292] = {
 	name = "重樱先锋技术测试I",
 	guild_coin_award = 0,
@@ -156777,7 +153285,6 @@ _G.pg.base.task_data_template[60292] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60293] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -156811,7 +153318,6 @@ _G.pg.base.task_data_template[60293] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60294] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -156845,7 +153351,6 @@ _G.pg.base.task_data_template[60294] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60295] = {
 	name = "重樱先锋技术测试II ",
 	guild_coin_award = 0,
@@ -156910,7 +153415,6 @@ _G.pg.base.task_data_template[60295] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60296] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -156950,7 +153454,6 @@ _G.pg.base.task_data_template[60296] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60297] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -156984,7 +153487,6 @@ _G.pg.base.task_data_template[60297] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60298] = {
 	name = "{namecode:292}舰体塑造I",
 	guild_coin_award = 0,
@@ -157018,7 +153520,6 @@ _G.pg.base.task_data_template[60298] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60299] = {
 	name = "{namecode:292}舰体塑造II",
 	guild_coin_award = 0,
@@ -157052,7 +153553,6 @@ _G.pg.base.task_data_template[60299] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60301] = {
 	name = "{namecode:518}开启研发前置任务",
 	guild_coin_award = 0,
@@ -157086,7 +153586,6 @@ _G.pg.base.task_data_template[60301] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60302] = {
 	name = "铁血先锋技术测试I ",
 	guild_coin_award = 0,
@@ -157145,7 +153644,6 @@ _G.pg.base.task_data_template[60302] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60303] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -157179,7 +153677,6 @@ _G.pg.base.task_data_template[60303] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60304] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -157213,7 +153710,6 @@ _G.pg.base.task_data_template[60304] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60305] = {
 	name = "铁血先锋技术测试II ",
 	guild_coin_award = 0,
@@ -157278,7 +153774,6 @@ _G.pg.base.task_data_template[60305] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60306] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -157318,7 +153813,6 @@ _G.pg.base.task_data_template[60306] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60307] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -157352,7 +153846,6 @@ _G.pg.base.task_data_template[60307] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60308] = {
 	name = "{namecode:518}舰体塑造I",
 	guild_coin_award = 0,
@@ -157386,7 +153879,6 @@ _G.pg.base.task_data_template[60308] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60309] = {
 	name = "{namecode:518}舰体塑造II",
 	guild_coin_award = 0,
@@ -157420,7 +153912,6 @@ _G.pg.base.task_data_template[60309] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60311] = {
 	name = "{namecode:521}开启研发前置任务",
 	guild_coin_award = 0,
@@ -157454,7 +153945,6 @@ _G.pg.base.task_data_template[60311] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60312] = {
 	name = "铁血先锋技术测试I ",
 	guild_coin_award = 0,
@@ -157513,7 +154003,6 @@ _G.pg.base.task_data_template[60312] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60313] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -157547,7 +154036,6 @@ _G.pg.base.task_data_template[60313] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60314] = {
 	name = "先锋技术突破I ",
 	guild_coin_award = 0,
@@ -157581,7 +154069,6 @@ _G.pg.base.task_data_template[60314] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60315] = {
 	name = "铁血先锋技术测试II ",
 	guild_coin_award = 0,
@@ -157646,7 +154133,6 @@ _G.pg.base.task_data_template[60315] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60316] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -157686,7 +154172,6 @@ _G.pg.base.task_data_template[60316] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60317] = {
 	name = "先锋技术突破II ",
 	guild_coin_award = 0,
@@ -157720,7 +154205,6 @@ _G.pg.base.task_data_template[60317] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60318] = {
 	name = "{namecode:521}舰体塑造I",
 	guild_coin_award = 0,
@@ -157754,7 +154238,6 @@ _G.pg.base.task_data_template[60318] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60319] = {
 	name = "{namecode:521}舰体塑造II",
 	guild_coin_award = 0,
@@ -157788,7 +154271,6 @@ _G.pg.base.task_data_template[60319] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60320] = {
 	name = "弗兰德尔开启研发前置任务1",
 	guild_coin_award = 0,
@@ -157822,7 +154304,6 @@ _G.pg.base.task_data_template[60320] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60321] = {
 	name = "弗兰德尔开启研发前置任务2",
 	guild_coin_award = 0,
@@ -157856,7 +154337,6 @@ _G.pg.base.task_data_template[60321] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60322] = {
 	name = "鸢尾主力技术测试I ",
 	guild_coin_award = 0,
@@ -157963,7 +154443,6 @@ _G.pg.base.task_data_template[60322] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60323] = {
 	name = "大型技术理论I ",
 	guild_coin_award = 0,
@@ -157997,7 +154476,6 @@ _G.pg.base.task_data_template[60323] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60324] = {
 	name = "主力技术突破I ",
 	guild_coin_award = 0,
@@ -158031,7 +154509,6 @@ _G.pg.base.task_data_template[60324] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60325] = {
 	name = "鸢尾主力技术测试II ",
 	guild_coin_award = 0,
@@ -158144,7 +154621,6 @@ _G.pg.base.task_data_template[60325] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60326] = {
 	name = "大型技术理论II ",
 	guild_coin_award = 0,
@@ -158184,7 +154660,6 @@ _G.pg.base.task_data_template[60326] = {
 	},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60327] = {
 	name = "主力技术突破II ",
 	guild_coin_award = 0,
@@ -158218,7 +154693,6 @@ _G.pg.base.task_data_template[60327] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60328] = {
 	name = "弗兰德尔舰体塑造I",
 	guild_coin_award = 0,
@@ -158252,7 +154726,6 @@ _G.pg.base.task_data_template[60328] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[60329] = {
 	name = "弗兰德尔舰体塑造II",
 	guild_coin_award = 0,
@@ -158286,7 +154759,6 @@ _G.pg.base.task_data_template[60329] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70001] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158320,7 +154792,6 @@ _G.pg.base.task_data_template[70001] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70002] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158354,7 +154825,6 @@ _G.pg.base.task_data_template[70002] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70003] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158388,7 +154858,6 @@ _G.pg.base.task_data_template[70003] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70011] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158424,7 +154893,6 @@ _G.pg.base.task_data_template[70011] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[70012] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158460,7 +154928,6 @@ _G.pg.base.task_data_template[70012] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[70013] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158496,7 +154963,6 @@ _G.pg.base.task_data_template[70013] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[70021] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158530,7 +154996,6 @@ _G.pg.base.task_data_template[70021] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70022] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158564,7 +155029,6 @@ _G.pg.base.task_data_template[70022] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70023] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158598,7 +155062,6 @@ _G.pg.base.task_data_template[70023] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70031] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158632,7 +155095,6 @@ _G.pg.base.task_data_template[70031] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70032] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158666,7 +155128,6 @@ _G.pg.base.task_data_template[70032] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[70033] = {
 	name = "大舰队个人任务",
 	guild_coin_award = 0,
@@ -158700,7 +155161,6 @@ _G.pg.base.task_data_template[70033] = {
 	open_need = {},
 	award_display = {}
 }
-
 _G.pg.base.task_data_template[90001] = {
 	name = "【人气投票第4期】累计完成军事委托1",
 	guild_coin_award = 0,
@@ -158740,7 +155200,6 @@ _G.pg.base.task_data_template[90001] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90002] = {
 	name = "【人气投票第4期】累计完成军事委托2",
 	guild_coin_award = 0,
@@ -158780,7 +155239,6 @@ _G.pg.base.task_data_template[90002] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90003] = {
 	name = "【人气投票第4期】累计完成军事委托3",
 	guild_coin_award = 0,
@@ -158820,7 +155278,6 @@ _G.pg.base.task_data_template[90003] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90004] = {
 	name = "【人气投票第4期】累计完成军事委托4",
 	guild_coin_award = 0,
@@ -158860,7 +155317,6 @@ _G.pg.base.task_data_template[90004] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90005] = {
 	name = "【人气投票第4期】累计完成军事委托5",
 	guild_coin_award = 0,
@@ -158900,7 +155356,6 @@ _G.pg.base.task_data_template[90005] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90006] = {
 	name = "【人气投票第4期】累计完成军事委托6",
 	guild_coin_award = 0,
@@ -158940,7 +155395,6 @@ _G.pg.base.task_data_template[90006] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90007] = {
 	name = "【人气投票第4期】累计完成军事委托7",
 	guild_coin_award = 0,
@@ -158980,7 +155434,6 @@ _G.pg.base.task_data_template[90007] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90008] = {
 	name = "【人气投票第4期】累计完成军事委托8",
 	guild_coin_award = 0,
@@ -159020,7 +155473,6 @@ _G.pg.base.task_data_template[90008] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90009] = {
 	name = "【人气投票第4期】累计完成军事委托9",
 	guild_coin_award = 0,
@@ -159060,7 +155512,6 @@ _G.pg.base.task_data_template[90009] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90010] = {
 	name = "【人气投票第4期】累计完成军事委托10",
 	guild_coin_award = 0,
@@ -159100,7 +155551,6 @@ _G.pg.base.task_data_template[90010] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90011] = {
 	name = "【人气投票第4期】累计完成军事委托11",
 	guild_coin_award = 0,
@@ -159140,7 +155590,6 @@ _G.pg.base.task_data_template[90011] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90012] = {
 	name = "【人气投票第4期】累计完成军事委托12",
 	guild_coin_award = 0,
@@ -159180,7 +155629,6 @@ _G.pg.base.task_data_template[90012] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90013] = {
 	name = "【人气投票第4期】累计完成军事委托13",
 	guild_coin_award = 0,
@@ -159220,7 +155668,6 @@ _G.pg.base.task_data_template[90013] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90014] = {
 	name = "【人气投票第4期】累计完成军事委托14",
 	guild_coin_award = 0,
@@ -159260,7 +155707,6 @@ _G.pg.base.task_data_template[90014] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90015] = {
 	name = "【人气投票第4期】累计完成军事委托15",
 	guild_coin_award = 0,
@@ -159300,7 +155746,6 @@ _G.pg.base.task_data_template[90015] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90016] = {
 	name = "【人气投票第4期】累计消耗石油1",
 	guild_coin_award = 0,
@@ -159340,7 +155785,6 @@ _G.pg.base.task_data_template[90016] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90017] = {
 	name = "【人气投票第4期】累计消耗石油2",
 	guild_coin_award = 0,
@@ -159380,7 +155824,6 @@ _G.pg.base.task_data_template[90017] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90018] = {
 	name = "【人气投票第4期】累计消耗石油3",
 	guild_coin_award = 0,
@@ -159420,7 +155863,6 @@ _G.pg.base.task_data_template[90018] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90019] = {
 	name = "【人气投票第4期】累计消耗石油4",
 	guild_coin_award = 0,
@@ -159460,7 +155902,6 @@ _G.pg.base.task_data_template[90019] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90020] = {
 	name = "【人气投票第4期】累计消耗石油5",
 	guild_coin_award = 0,
@@ -159500,7 +155941,6 @@ _G.pg.base.task_data_template[90020] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90021] = {
 	name = "【人气投票第4期】累计消耗石油6",
 	guild_coin_award = 0,
@@ -159540,7 +155980,6 @@ _G.pg.base.task_data_template[90021] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90022] = {
 	name = "【人气投票第4期】累计消耗石油7",
 	guild_coin_award = 0,
@@ -159580,7 +156019,6 @@ _G.pg.base.task_data_template[90022] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90023] = {
 	name = "【人气投票第4期】累计消耗石油8",
 	guild_coin_award = 0,
@@ -159620,7 +156058,6 @@ _G.pg.base.task_data_template[90023] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90024] = {
 	name = "【人气投票第4期】累计消耗石油9",
 	guild_coin_award = 0,
@@ -159660,7 +156097,6 @@ _G.pg.base.task_data_template[90024] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90025] = {
 	name = "【人气投票第4期】累计消耗石油10",
 	guild_coin_award = 0,
@@ -159700,7 +156136,6 @@ _G.pg.base.task_data_template[90025] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90026] = {
 	name = "【人气投票第4期】累计消耗石油11",
 	guild_coin_award = 0,
@@ -159740,7 +156175,6 @@ _G.pg.base.task_data_template[90026] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90027] = {
 	name = "【人气投票第4期】累计消耗石油12",
 	guild_coin_award = 0,
@@ -159780,7 +156214,6 @@ _G.pg.base.task_data_template[90027] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90028] = {
 	name = "【人气投票第4期】累计消耗石油13",
 	guild_coin_award = 0,
@@ -159820,7 +156253,6 @@ _G.pg.base.task_data_template[90028] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90029] = {
 	name = "【人气投票第4期】累计消耗石油14",
 	guild_coin_award = 0,
@@ -159860,7 +156292,6 @@ _G.pg.base.task_data_template[90029] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90030] = {
 	name = "【人气投票第4期】累计消耗石油15",
 	guild_coin_award = 0,
@@ -159900,7 +156331,6 @@ _G.pg.base.task_data_template[90030] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90031] = {
 	name = "【人气投票第4期】累计获取舰船经验1",
 	guild_coin_award = 0,
@@ -159942,7 +156372,6 @@ _G.pg.base.task_data_template[90031] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90032] = {
 	name = "【人气投票第4期】累计获取舰船经验2",
 	guild_coin_award = 0,
@@ -159984,7 +156413,6 @@ _G.pg.base.task_data_template[90032] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90033] = {
 	name = "【人气投票第4期】累计获取舰船经验3",
 	guild_coin_award = 0,
@@ -160026,7 +156454,6 @@ _G.pg.base.task_data_template[90033] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90034] = {
 	name = "【人气投票第4期】累计获取舰船经验4",
 	guild_coin_award = 0,
@@ -160068,7 +156495,6 @@ _G.pg.base.task_data_template[90034] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90035] = {
 	name = "【人气投票第4期】累计获取舰船经验5",
 	guild_coin_award = 0,
@@ -160110,7 +156536,6 @@ _G.pg.base.task_data_template[90035] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90036] = {
 	name = "【人气投票第4期】累计获取舰船经验6",
 	guild_coin_award = 0,
@@ -160152,7 +156577,6 @@ _G.pg.base.task_data_template[90036] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90037] = {
 	name = "【人气投票第4期】累计获取舰船经验7",
 	guild_coin_award = 0,
@@ -160194,7 +156618,6 @@ _G.pg.base.task_data_template[90037] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90038] = {
 	name = "【人气投票第4期】累计获取舰船经验8",
 	guild_coin_award = 0,
@@ -160236,7 +156659,6 @@ _G.pg.base.task_data_template[90038] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90039] = {
 	name = "【人气投票第4期】累计获取舰船经验9",
 	guild_coin_award = 0,
@@ -160278,7 +156700,6 @@ _G.pg.base.task_data_template[90039] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90040] = {
 	name = "【人气投票第4期】累计获取舰船经验10",
 	guild_coin_award = 0,
@@ -160320,7 +156741,6 @@ _G.pg.base.task_data_template[90040] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90041] = {
 	name = "【人气投票第4期】累计获取舰船经验11",
 	guild_coin_award = 0,
@@ -160362,7 +156782,6 @@ _G.pg.base.task_data_template[90041] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90042] = {
 	name = "【人气投票第4期】累计获取舰船经验12",
 	guild_coin_award = 0,
@@ -160404,7 +156823,6 @@ _G.pg.base.task_data_template[90042] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90043] = {
 	name = "【人气投票第4期】累计获取舰船经验13",
 	guild_coin_award = 0,
@@ -160446,7 +156864,6 @@ _G.pg.base.task_data_template[90043] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90044] = {
 	name = "【人气投票第4期】累计获取舰船经验14",
 	guild_coin_award = 0,
@@ -160488,7 +156905,6 @@ _G.pg.base.task_data_template[90044] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90045] = {
 	name = "【人气投票第4期】累计获取舰船经验15",
 	guild_coin_award = 0,
@@ -160530,7 +156946,6 @@ _G.pg.base.task_data_template[90045] = {
 		"LEVEL"
 	}
 }
-
 _G.pg.base.task_data_template[90046] = {
 	name = "【人气投票第4期】累计战术训练1",
 	guild_coin_award = 0,
@@ -160570,7 +156985,6 @@ _G.pg.base.task_data_template[90046] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90047] = {
 	name = "【人气投票第4期】累计战术训练2",
 	guild_coin_award = 0,
@@ -160610,7 +157024,6 @@ _G.pg.base.task_data_template[90047] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90048] = {
 	name = "【人气投票第4期】累计战术训练3",
 	guild_coin_award = 0,
@@ -160650,7 +157063,6 @@ _G.pg.base.task_data_template[90048] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90049] = {
 	name = "【人气投票第4期】累计战术训练4",
 	guild_coin_award = 0,
@@ -160690,7 +157102,6 @@ _G.pg.base.task_data_template[90049] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90050] = {
 	name = "【人气投票第4期】累计战术训练5",
 	guild_coin_award = 0,
@@ -160730,7 +157141,6 @@ _G.pg.base.task_data_template[90050] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90051] = {
 	name = "【人气投票第4期】累计战术训练6",
 	guild_coin_award = 0,
@@ -160770,7 +157180,6 @@ _G.pg.base.task_data_template[90051] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90052] = {
 	name = "【人气投票第4期】累计战术训练7",
 	guild_coin_award = 0,
@@ -160810,7 +157219,6 @@ _G.pg.base.task_data_template[90052] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90053] = {
 	name = "【人气投票第4期】累计战术训练8",
 	guild_coin_award = 0,
@@ -160850,7 +157258,6 @@ _G.pg.base.task_data_template[90053] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90054] = {
 	name = "【人气投票第4期】累计战术训练9",
 	guild_coin_award = 0,
@@ -160890,7 +157297,6 @@ _G.pg.base.task_data_template[90054] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90055] = {
 	name = "【人气投票第4期】累计战术训练10",
 	guild_coin_award = 0,
@@ -160930,7 +157336,6 @@ _G.pg.base.task_data_template[90055] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90056] = {
 	name = "【人气投票第4期】累计战术训练11",
 	guild_coin_award = 0,
@@ -160970,7 +157375,6 @@ _G.pg.base.task_data_template[90056] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90057] = {
 	name = "【人气投票第4期】累计战术训练12",
 	guild_coin_award = 0,
@@ -161010,7 +157414,6 @@ _G.pg.base.task_data_template[90057] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90058] = {
 	name = "【人气投票第4期】累计战术训练13",
 	guild_coin_award = 0,
@@ -161050,7 +157453,6 @@ _G.pg.base.task_data_template[90058] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90059] = {
 	name = "【人气投票第4期】累计战术训练14",
 	guild_coin_award = 0,
@@ -161090,7 +157492,6 @@ _G.pg.base.task_data_template[90059] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90060] = {
 	name = "【人气投票第4期】累计战术训练15",
 	guild_coin_award = 0,
@@ -161130,7 +157531,6 @@ _G.pg.base.task_data_template[90060] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90061] = {
 	name = "【人气投票第4期】累计舰船强化1",
 	guild_coin_award = 0,
@@ -161170,7 +157570,6 @@ _G.pg.base.task_data_template[90061] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90062] = {
 	name = "【人气投票第4期】累计舰船强化2",
 	guild_coin_award = 0,
@@ -161210,7 +157609,6 @@ _G.pg.base.task_data_template[90062] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90063] = {
 	name = "【人气投票第4期】累计舰船强化3",
 	guild_coin_award = 0,
@@ -161250,7 +157648,6 @@ _G.pg.base.task_data_template[90063] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90064] = {
 	name = "【人气投票第4期】累计舰船强化4",
 	guild_coin_award = 0,
@@ -161290,7 +157687,6 @@ _G.pg.base.task_data_template[90064] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90065] = {
 	name = "【人气投票第4期】累计舰船强化5",
 	guild_coin_award = 0,
@@ -161330,7 +157726,6 @@ _G.pg.base.task_data_template[90065] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90066] = {
 	name = "【人气投票第4期】累计强化装备1",
 	guild_coin_award = 0,
@@ -161370,7 +157765,6 @@ _G.pg.base.task_data_template[90066] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90067] = {
 	name = "【人气投票第4期】累计强化装备2",
 	guild_coin_award = 0,
@@ -161410,7 +157804,6 @@ _G.pg.base.task_data_template[90067] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90068] = {
 	name = "【人气投票第4期】累计强化装备3",
 	guild_coin_award = 0,
@@ -161450,7 +157843,6 @@ _G.pg.base.task_data_template[90068] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90069] = {
 	name = "【人气投票第4期】累计强化装备4",
 	guild_coin_award = 0,
@@ -161490,7 +157882,6 @@ _G.pg.base.task_data_template[90069] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90070] = {
 	name = "【人气投票第4期】累计强化装备5",
 	guild_coin_award = 0,
@@ -161530,7 +157921,6 @@ _G.pg.base.task_data_template[90070] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90071] = {
 	name = "【人气投票第4期】累计后宅补充食物1",
 	guild_coin_award = 0,
@@ -161570,7 +157960,6 @@ _G.pg.base.task_data_template[90071] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90072] = {
 	name = "【人气投票第4期】累计后宅补充食物2",
 	guild_coin_award = 0,
@@ -161610,7 +157999,6 @@ _G.pg.base.task_data_template[90072] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90073] = {
 	name = "【人气投票第4期】累计后宅补充食物3",
 	guild_coin_award = 0,
@@ -161650,7 +158038,6 @@ _G.pg.base.task_data_template[90073] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90074] = {
 	name = "【人气投票第4期】累计后宅补充食物4",
 	guild_coin_award = 0,
@@ -161690,7 +158077,6 @@ _G.pg.base.task_data_template[90074] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90075] = {
 	name = "【人气投票第4期】累计后宅补充食物5",
 	guild_coin_award = 0,
@@ -161730,7 +158116,6 @@ _G.pg.base.task_data_template[90075] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90105] = {
 	name = "【人气投票第4期】趣味投票1登陆送投票券",
 	guild_coin_award = 0,
@@ -161770,7 +158155,6 @@ _G.pg.base.task_data_template[90105] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90106] = {
 	name = "【人气投票第4期】趣味投票2登陆送投票券",
 	guild_coin_award = 0,
@@ -161810,7 +158194,6 @@ _G.pg.base.task_data_template[90106] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90107] = {
 	name = "【人气投票第4期】趣味投票3登陆送投票券",
 	guild_coin_award = 0,
@@ -161850,7 +158233,6 @@ _G.pg.base.task_data_template[90107] = {
 		}
 	}
 }
-
 _G.pg.base.task_data_template[90108] = {
 	name = "【人气投票第4期】纪念家具赠送",
 	guild_coin_award = 0,
@@ -161887,6 +158269,311 @@ _G.pg.base.task_data_template[90108] = {
 			5,
 			269,
 			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500001] = {
+	name = "枯竭的灵感",
+	guild_coin_award = 0,
+	award = 500001,
+	type = 5,
+	desc = "提交3个《鱼雷天妇罗》",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500002",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "HAITIAN1",
+	id = 500001,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500002] = {
+	name = "露营的准备",
+	guild_coin_award = 0,
+	award = 500002,
+	type = 5,
+	desc = "强化任意角色10次",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500003",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500002,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500003] = {
+	name = "出发！取材之旅！",
+	guild_coin_award = 0,
+	award = 500003,
+	type = 5,
+	desc = "海天上阵出击(关卡)胜利20次",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500004",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50207",
+	scene = "",
+	id = 500003,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500004] = {
+	name = "小小插曲",
+	guild_coin_award = 0,
+	award = 500004,
+	type = 5,
+	desc = "累计消耗石油500",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500005",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500004,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500005] = {
+	name = "未知的景色",
+	guild_coin_award = 0,
+	award = 500005,
+	type = 5,
+	desc = "海天好感度达到100",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500006",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50207",
+	scene = "",
+	id = 500005,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			16002,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500006] = {
+	name = "与她的距离",
+	guild_coin_award = 0,
+	award = 500006,
+	type = 5,
+	desc = "海天突破至满星",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500007",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50207",
+	scene = "",
+	id = 500006,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18012,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500007] = {
+	name = "灵感的源泉",
+	guild_coin_award = 0,
+	award = 500007,
+	type = 5,
+	desc = "海天等级达到100",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "haitian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAITIAN7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50207",
+	scene = "",
+	id = 500007,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18012,
+			2
 		}
 	}
 }

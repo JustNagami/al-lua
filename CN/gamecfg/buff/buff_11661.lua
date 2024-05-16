@@ -1,4 +1,27 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffFixDamage",
+			trigger = {
+				"onBeforeTakeDamage"
+			},
+			arg_list = {
+				value = 1,
+				rant = 450,
+				target = "TargetSelf",
+				damageAttr = {
+					4
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -188,28 +211,5 @@ return {
 	stack = 1,
 	id = 11661,
 	icon = 11660,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffFixDamage",
-			trigger = {
-				"onBeforeTakeDamage"
-			},
-			arg_list = {
-				value = 1,
-				rant = 450,
-				target = "TargetSelf",
-				damageAttr = {
-					4
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

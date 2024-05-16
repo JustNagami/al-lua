@@ -1,17 +1,17 @@
-slot0 = class("FourHourCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FourHourCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2, slot3 = pcall(slot0.mainHandler, slot0)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0, var_1_1 = pcall(arg_1_0.mainHandler, arg_1_0)
 
-	if not slot2 then
+	if not var_1_0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("four_hour_command_error"))
-		error(slot3)
+		error(var_1_1)
 	end
 end
 
-function slot0.mainHandler(slot0, slot1)
+function var_0_0.mainHandler(arg_2_0, arg_2_1)
 	getProxy(TechnologyProxy):resetPursuingTimes()
-	slot0:sendNotification(GAME.FOUR_HOUR_OP_DONE)
+	arg_2_0:sendNotification(GAME.FOUR_HOUR_OP_DONE)
 end
 
-return slot0
+return var_0_0

@@ -1,112 +1,117 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffAddBulletAttr = class("BattleBuffAddBulletAttr", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffAddBulletAttr.__name = "BattleBuffAddBulletAttr"
-slot1 = slot0.Battle.BattleBuffAddBulletAttr
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffAddBulletAttr = class("BattleBuffAddBulletAttr", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffAddBulletAttr.__name = "BattleBuffAddBulletAttr"
+
+local var_0_1 = var_0_0.Battle.BattleBuffAddBulletAttr
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._attr = slot0._tempData.arg_list.attr
-	slot0._number = slot0._tempData.arg_list.number
-	slot0._rate = slot0._tempData.arg_list.rate or 10000
-	slot0._bulletID = slot0._tempData.arg_list.bulletID
-	slot0._weaponIndexList = slot0._tempData.arg_list.index
-	slot0._numberBase = slot0._number
-	slot0._displacementConvert = slot0._tempData.arg_list.displacement_convert
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._attr = arg_2_0._tempData.arg_list.attr
+	arg_2_0._number = arg_2_0._tempData.arg_list.number
+	arg_2_0._rate = arg_2_0._tempData.arg_list.rate or 10000
+	arg_2_0._bulletID = arg_2_0._tempData.arg_list.bulletID
+	arg_2_0._weaponIndexList = arg_2_0._tempData.arg_list.index
+	arg_2_0._numberBase = arg_2_0._number
+	arg_2_0._displacementConvert = arg_2_0._tempData.arg_list.displacement_convert
 end
 
-function slot1.onStack(slot0, slot1, slot2)
-	slot0._number = slot0._numberBase * slot2._stack
+function var_0_1.onStack(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0._number = arg_3_0._numberBase * arg_3_2._stack
 end
 
-function slot1.onBulletCreate(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onBulletCreate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	if not arg_4_0:equipIndexRequire(arg_4_3.equipIndex) then
 		return
 	end
 
-	slot0:calcBulletAttr(slot3)
+	arg_4_0:calcBulletAttr(arg_4_3)
 end
 
-function slot1.onInternalBulletCreate(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onInternalBulletCreate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if not arg_5_0:equipIndexRequire(arg_5_3.equipIndex) then
 		return
 	end
 
-	slot0:calcBulletAttr(slot3)
+	arg_5_0:calcBulletAttr(arg_5_3)
 end
 
-function slot1.onManualBulletCreate(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onManualBulletCreate(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	if not arg_6_0:equipIndexRequire(arg_6_3.equipIndex) then
 		return
 	end
 
-	slot0:calcBulletAttr(slot3)
+	arg_6_0:calcBulletAttr(arg_6_3)
 end
 
-function slot1.onBulletCollide(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onBulletCollide(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	if not arg_7_0:equipIndexRequire(arg_7_3.equipIndex) then
 		return
 	end
 
-	slot0:displacementConvert(slot3)
-	slot0:calcBulletAttr(slot3)
+	arg_7_0:displacementConvert(arg_7_3)
+	arg_7_0:calcBulletAttr(arg_7_3)
 end
 
-function slot1.onBombBulletBang(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onBombBulletBang(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	if not arg_8_0:equipIndexRequire(arg_8_3.equipIndex) then
 		return
 	end
 
-	slot0:displacementConvert(slot3)
-	slot0:calcBulletAttr(slot3)
+	arg_8_0:displacementConvert(arg_8_3)
+	arg_8_0:calcBulletAttr(arg_8_3)
 end
 
-function slot1.onTorpedoBulletBang(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_1.onTorpedoBulletBang(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	if not arg_9_0:equipIndexRequire(arg_9_3.equipIndex) then
 		return
 	end
 
-	slot0:displacementConvert(slot3)
-	slot0:calcBulletAttr(slot3)
+	arg_9_0:displacementConvert(arg_9_3)
+	arg_9_0:calcBulletAttr(arg_9_3)
 end
 
-function slot1.displacementConvert(slot0, slot1)
-	slot3 = slot1._bullet:GetCurrentDistance()
-	slot4 = slot0._displacementConvert.base
-	slot6 = slot0._displacementConvert.max
+function var_0_1.displacementConvert(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1._bullet:GetCurrentDistance()
+	local var_10_1 = arg_10_0._displacementConvert.base
+	local var_10_2 = arg_10_0._displacementConvert.rate
+	local var_10_3 = arg_10_0._displacementConvert.max
 
-	if slot0._displacementConvert.rate > 0 then
-		slot0._number = math.min(math.max(slot3 - slot4, 0) * slot5, slot6)
-	elseif slot5 < 0 then
-		slot0._number = math.min(math.max(0, slot6 + (slot3 - slot4) * slot5), slot6)
-	elseif slot5 == 0 then
-		slot0._number = 0
+	if var_10_2 > 0 then
+		arg_10_0._number = math.min(math.max(var_10_0 - var_10_1, 0) * var_10_2, var_10_3)
+	elseif var_10_2 < 0 then
+		arg_10_0._number = math.min(math.max(0, var_10_3 + (var_10_0 - var_10_1) * var_10_2), var_10_3)
+	elseif var_10_2 == 0 then
+		arg_10_0._number = 0
 	end
 end
 
-function slot1.calcBulletAttr(slot0, slot1)
-	if uv0.Battle.BattleFormulas.IsHappen(slot0._rate) then
-		slot3 = slot1._bullet:GetWeapon():GetEquipmentIndex()
-		slot4 = false
+function var_0_1.calcBulletAttr(arg_11_0, arg_11_1)
+	if var_0_0.Battle.BattleFormulas.IsHappen(arg_11_0._rate) then
+		local var_11_0 = arg_11_1._bullet
+		local var_11_1 = var_11_0:GetWeapon():GetEquipmentIndex()
+		local var_11_2 = false
 
-		if not slot0._weaponIndexList then
-			slot4 = true
-		elseif #slot0._weaponIndexList == 0 and slot3 == nil then
-			slot4 = true
-		elseif table.contains(slot0._weaponIndexList, slot3) then
-			slot4 = true
+		if not arg_11_0._weaponIndexList then
+			var_11_2 = true
+		elseif #arg_11_0._weaponIndexList == 0 and var_11_1 == nil then
+			var_11_2 = true
+		elseif table.contains(arg_11_0._weaponIndexList, var_11_1) then
+			var_11_2 = true
 		end
 
-		if slot4 then
-			if slot0._bulletID then
-				if slot2:GetTemplate().id == slot0._bulletID then
-					uv0.Battle.BattleAttr.Increase(slot2, slot0._attr, slot0._number)
+		if var_11_2 then
+			if arg_11_0._bulletID then
+				if var_11_0:GetTemplate().id == arg_11_0._bulletID then
+					var_0_0.Battle.BattleAttr.Increase(var_11_0, arg_11_0._attr, arg_11_0._number)
 				end
 			else
-				uv0.Battle.BattleAttr.Increase(slot2, slot0._attr, slot0._number)
+				var_0_0.Battle.BattleAttr.Increase(var_11_0, arg_11_0._attr, arg_11_0._number)
 			end
 		end
 	end

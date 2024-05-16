@@ -1,14 +1,17 @@
-slot0 = class("CourtYardAgent")
+﻿local var_0_0 = class("CourtYardAgent")
 
-function slot0.Ctor(slot0, slot1)
-	setmetatable(slot0, {
-		__index = function (slot0, slot1)
-			return rawget(slot0, "class")[slot1] and slot2[slot1] or uv0[slot1]
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	setmetatable(arg_1_0, {
+		__index = function(arg_2_0, arg_2_1)
+			local var_2_0 = rawget(arg_2_0, "class")
+
+			return var_2_0[arg_2_1] and var_2_0[arg_2_1] or arg_1_1[arg_2_1]
 		end
 	})
 end
 
-function slot0.Dispose(slot0)
+function var_0_0.Dispose(arg_3_0)
+	return
 end
 
-return slot0
+return var_0_0

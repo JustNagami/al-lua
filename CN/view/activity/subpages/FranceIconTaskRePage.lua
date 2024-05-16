@@ -1,142 +1,134 @@
-slot0 = class("FranceIconTaskRePage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("FranceIconTaskRePage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.slider = slot0:findTF("slider", slot0.bg)
-	slot0.step = slot0:findTF("step", slot0.bg)
-	slot0.progress = slot0:findTF("progress", slot0.bg)
-	slot0.displayBtn = slot0:findTF("display_btn", slot0.bg)
-	slot0.awardTF = slot0:findTF("award", slot0.bg)
-	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
-	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.slider = arg_1_0:findTF("slider", arg_1_0.bg)
+	arg_1_0.step = arg_1_0:findTF("step", arg_1_0.bg)
+	arg_1_0.progress = arg_1_0:findTF("progress", arg_1_0.bg)
+	arg_1_0.displayBtn = arg_1_0:findTF("display_btn", arg_1_0.bg)
+	arg_1_0.awardTF = arg_1_0:findTF("award", arg_1_0.bg)
+	arg_1_0.battleBtn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	setActive(slot0.displayBtn, false)
-	setActive(slot0.awardTF, false)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.displayBtn, false)
+	setActive(arg_2_0.awardTF, false)
+	onButton(arg_2_0, arg_2_0.battleBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end, SFX_PANEL)
 
-	slot0.step = slot0:findTF("AD/switcher/phase2/Image/step")
-	slot0.progress = slot0:findTF("AD/switcher/phase2/Image/progress")
-	slot0.switchBtn = slot0:findTF("AD/switcher/switch_btn")
-	slot0.bar = slot0:findTF("AD/switcher/phase2/Image/barContent/bar")
-	slot0.phases = {
-		slot0:findTF("AD/switcher/phase1"),
-		slot0:findTF("AD/switcher/phase2")
+	arg_2_0.step = arg_2_0:findTF("AD/switcher/phase2/Image/step")
+	arg_2_0.progress = arg_2_0:findTF("AD/switcher/phase2/Image/progress")
+	arg_2_0.switchBtn = arg_2_0:findTF("AD/switcher/switch_btn")
+	arg_2_0.bar = arg_2_0:findTF("AD/switcher/phase2/Image/barContent/bar")
+	arg_2_0.phases = {
+		arg_2_0:findTF("AD/switcher/phase1"),
+		arg_2_0:findTF("AD/switcher/phase2")
 	}
-	slot0.inPhase2 = false
+	arg_2_0.inPhase2 = false
 
-	onToggle(slot0, slot0.switchBtn, function (slot0)
-		if uv0.isSwitching then
+	onToggle(arg_2_0, arg_2_0.switchBtn, function(arg_4_0)
+		if arg_2_0.isSwitching then
 			return
 		end
 
-		uv0.inPhase2 = slot0
+		arg_2_0.inPhase2 = arg_4_0
 
-		uv0:Switch(slot0)
+		arg_2_0:Switch(arg_4_0)
 	end, SFX_PANEL)
 
-	slot1 = pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].start_time
-	slot0.inTime = pg.TimeMgr.GetInstance():GetServerTime() - pg.TimeMgr.GetInstance():Table2ServerTime({
-		year = slot1[1][1],
-		month = slot1[1][2],
-		day = slot1[1][3],
-		hour = slot1[2][1],
-		min = slot1[2][2],
-		sec = slot1[2][3]
-	}) > 0
+	local var_2_0 = pg.activity_event_avatarframe[arg_2_0.activity:getConfig("config_id")].start_time
+	local var_2_1 = pg.TimeMgr.GetInstance():Table2ServerTime({
+		year = var_2_0[1][1],
+		month = var_2_0[1][2],
+		day = var_2_0[1][3],
+		hour = var_2_0[2][1],
+		min = var_2_0[2][2],
+		sec = var_2_0[2][3]
+	})
 
-	setActive(slot0.battleBtn, isActive(slot0.battleBtn) and slot0.inTime)
+	arg_2_0.inTime = pg.TimeMgr.GetInstance():GetServerTime() - var_2_1 > 0
 
-	if slot0.inTime then
-		triggerToggle(slot0.switchBtn, true)
+	setActive(arg_2_0.battleBtn, isActive(arg_2_0.battleBtn) and arg_2_0.inTime)
+
+	if arg_2_0.inTime then
+		triggerToggle(arg_2_0.switchBtn, true)
 	end
 end
 
-function slot0.Switch(slot0, slot1)
-	slot0.isSwitching = true
-	slot2 = GetOrAddComponent(slot0.phases[1], typeof(CanvasGroup))
-	slot5 = slot0.phases[2]
+function var_0_0.Switch(arg_5_0, arg_5_1)
+	arg_5_0.isSwitching = true
 
-	slot5:SetAsLastSibling()
+	local var_5_0 = GetOrAddComponent(arg_5_0.phases[1], typeof(CanvasGroup))
+	local var_5_1 = arg_5_0.phases[1].localPosition
+	local var_5_2 = arg_5_0.phases[2].localPosition
 
-	slot6 = slot0.phases[1]
-
-	setActive(slot6:Find("Image"), false)
-
-	slot5 = LeanTween.moveLocal(go(slot0.phases[1]), slot0.phases[2].localPosition, 0.4)
-
-	slot5:setOnComplete(System.Action(function ()
-		setActive(uv0.phases[1]:Find("label"), true)
+	arg_5_0.phases[2]:SetAsLastSibling()
+	setActive(arg_5_0.phases[1]:Find("Image"), false)
+	LeanTween.moveLocal(go(arg_5_0.phases[1]), var_5_2, 0.4):setOnComplete(System.Action(function()
+		setActive(arg_5_0.phases[1]:Find("label"), true)
 	end))
-
-	slot5 = LeanTween.value(go(slot0.phases[1]), 0, 1, 0.4)
-
-	slot5:setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(arg_5_0.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_7_0)
+		var_5_0.alpha = arg_7_0
 	end))
+	setActive(arg_5_0.phases[2]:Find("Image"), true)
 
-	slot6 = slot0.phases[2]
+	local var_5_3 = GetOrAddComponent(arg_5_0.phases[2], typeof(CanvasGroup))
 
-	setActive(slot6:Find("Image"), true)
-
-	slot5 = GetOrAddComponent(slot0.phases[2], typeof(CanvasGroup))
-	slot6 = LeanTween.value(go(slot0.phases[2]), 0, 1, 0.4)
-
-	slot6:setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(arg_5_0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_8_0)
+		var_5_3.alpha = arg_8_0
 	end))
-
-	slot7 = slot0.phases[2]
-
-	setActive(slot7:Find("label"), false)
-
-	slot6 = LeanTween.moveLocal(go(slot0.phases[2]), slot0.phases[1].localPosition, 0.4)
-
-	slot6:setOnComplete(System.Action(function ()
-		uv0.isSwitching = nil
-		uv0.phases[2] = uv0.phases[1]
-		uv0.phases[1] = uv0.phases[2]
+	setActive(arg_5_0.phases[2]:Find("label"), false)
+	LeanTween.moveLocal(go(arg_5_0.phases[2]), var_5_1, 0.4):setOnComplete(System.Action(function()
+		arg_5_0.isSwitching = nil
+		arg_5_0.phases[1], arg_5_0.phases[2] = arg_5_0.phases[2], arg_5_0.phases[1]
 	end))
-	slot0:UpdateAwardGot()
-	onButton(slot0, slot0.getBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_OPERATION, {
+	arg_5_0:UpdateAwardGot()
+	onButton(arg_5_0, arg_5_0.getBtn, function()
+		arg_5_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.activity.id
+			activity_id = arg_5_0.activity.id
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateAwardGot(slot0)
-	setActive(slot0:findTF("AD/switcher/phase2/got"), slot0.activity.data2 >= 1)
+function var_0_0.UpdateAwardGot(arg_11_0)
+	local var_11_0 = arg_11_0.activity.data2 >= 1
+	local var_11_1 = arg_11_0:findTF("AD/switcher/phase2/got")
+
+	setActive(var_11_1, var_11_0)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1 = slot0.activity
+function var_0_0.OnUpdateFlush(arg_12_0)
+	local var_12_0 = arg_12_0.activity
 
-	setActive(slot0.battleBtn, isActive(slot0.battleBtn) and slot0.inTime)
-	slot0:UpdateAwardGot()
+	setActive(arg_12_0.battleBtn, isActive(arg_12_0.battleBtn) and arg_12_0.inTime)
+	arg_12_0:UpdateAwardGot()
 
-	if pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].target < slot0.activity.data1 then
-		slot2 = slot3
+	local var_12_1 = arg_12_0.activity.data1
+	local var_12_2 = pg.activity_event_avatarframe[arg_12_0.activity:getConfig("config_id")].target
+
+	if var_12_2 < var_12_1 then
+		var_12_1 = var_12_2
 	end
 
-	setText(slot0.step, slot2 / slot3 >= 1 and setColorStr(slot2, "#487CFFFF") or slot2)
-	setText(slot0.progress, "/" .. slot3)
-	setFillAmount(slot0.bar, slot2 / slot3)
+	local var_12_3 = var_12_1 / var_12_2
 
-	slot5 = slot3 <= slot2
-	slot6 = slot0.activity.data2 >= 1
+	setText(arg_12_0.step, var_12_3 >= 1 and setColorStr(var_12_1, "#487CFFFF") or var_12_1)
+	setText(arg_12_0.progress, "/" .. var_12_2)
+	setFillAmount(arg_12_0.bar, var_12_1 / var_12_2)
 
-	setActive(slot0.battleBtn, not slot6 and not slot5 and slot0.inTime)
-	setActive(slot0.getBtn, slot5 and not slot6)
-	setActive(slot0.gotBtn, slot6)
+	local var_12_4 = var_12_2 <= var_12_1
+	local var_12_5 = arg_12_0.activity.data2 >= 1
+
+	setActive(arg_12_0.battleBtn, not var_12_5 and not var_12_4 and arg_12_0.inTime)
+	setActive(arg_12_0.getBtn, var_12_4 and not var_12_5)
+	setActive(arg_12_0.gotBtn, var_12_5)
 end
 
-return slot0
+return var_0_0

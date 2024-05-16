@@ -1,18 +1,18 @@
-slot0 = class("PlayerVitaeDockyardScene", import("view.ship.DockyardScene"))
+﻿local var_0_0 = class("PlayerVitaeDockyardScene", import("view.ship.DockyardScene"))
 
-function slot0.SortShips(slot0, slot1)
-	slot3 = getProxy(PlayerProxy):getRawData().characters
-	slot4 = {}
-	slot5 = #slot3 + 1
+function var_0_0.SortShips(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(PlayerProxy):getRawData().characters
+	local var_1_1 = {}
+	local var_1_2 = #var_1_0 + 1
 
-	for slot9, slot10 in ipairs(slot3) do
-		slot4[slot10] = slot5 - slot9
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+		var_1_1[iter_1_1] = var_1_2 - iter_1_0
 	end
 
-	table.insert(slot1, function (slot0)
-		return -(uv0[slot0.id] or 0)
+	table.insert(arg_1_1, function(arg_2_0)
+		return -(var_1_1[arg_2_0.id] or 0)
 	end)
-	table.sort(slot0.shipVOs, CompareFuncs(slot1))
+	table.sort(arg_1_0.shipVOs, CompareFuncs(arg_1_1))
 end
 
-return slot0
+return var_0_0

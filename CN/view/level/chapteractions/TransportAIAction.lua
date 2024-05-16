@@ -1,88 +1,101 @@
-slot0 = class("TransportAIAction")
+﻿local var_0_0 = class("TransportAIAction")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.line = {
-		row = slot1.ai_pos.row,
-		column = slot1.ai_pos.column
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.line = {
+		row = arg_1_1.ai_pos.row,
+		column = arg_1_1.ai_pos.column
 	}
-	slot0.movePath = _.map(slot1.move_path, function (slot0)
+	arg_1_0.movePath = _.map(arg_1_1.move_path, function(arg_2_0)
 		return {
-			row = slot0.row,
-			column = slot0.column
+			row = arg_2_0.row,
+			column = arg_2_0.column
 		}
 	end)
-	slot0.hp = _.detect(slot1.map_update, function (slot0)
-		return slot0.item_type == ChapterConst.AttachTransport
-	end) and slot2.item_data
+
+	local var_1_0 = _.detect(arg_1_1.map_update, function(arg_3_0)
+		return arg_3_0.item_type == ChapterConst.AttachTransport
+	end)
+
+	arg_1_0.hp = var_1_0 and var_1_0.item_data
 end
 
-function slot0.applyTo(slot0, slot1, slot2)
-	if slot1:getFleet(FleetType.Transport, slot0.line.row, slot0.line.column) then
-		return slot0:applyToFleet(slot1, slot3, slot2)
+function var_0_0.applyTo(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_1:getFleet(FleetType.Transport, arg_4_0.line.row, arg_4_0.line.column)
+
+	if var_4_0 then
+		return arg_4_0:applyToFleet(arg_4_1, var_4_0, arg_4_2)
 	end
 
-	return false, "can not find any transport at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
+	return false, "can not find any transport at: [" .. arg_4_0.line.row .. ", " .. arg_4_0.line.column .. "]"
 end
 
-function slot0.applyToFleet(slot0, slot1, slot2, slot3)
-	slot4 = 0
+function var_0_0.applyToFleet(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	local var_5_0 = 0
 
-	if not slot2:isValid() then
-		return false, "fleet " .. slot2.id .. " is invalid."
+	if not arg_5_2:isValid() then
+		return false, "fleet " .. arg_5_2.id .. " is invalid."
 	end
 
-	slot5 = 0
+	local var_5_1 = 0
 
-	if #slot0.movePath > 0 then
-		if _.any(slot0.movePath, function (slot0)
-			return not uv0:getChapterCell(slot0.row, slot0.column) or not slot1:IsWalkable()
+	if #arg_5_0.movePath > 0 then
+		if _.any(arg_5_0.movePath, function(arg_6_0)
+			local var_6_0 = arg_5_1:getChapterCell(arg_6_0.row, arg_6_0.column)
+
+			return not var_6_0 or not var_6_0:IsWalkable()
 		end) then
 			return false, "invalide move path"
 		end
 
-		if not slot3 then
-			slot6 = slot0.movePath[#slot0.movePath]
-			slot2.line = {
-				row = slot6.row,
-				column = slot6.column
+		if not arg_5_3 then
+			local var_5_2 = arg_5_0.movePath[#arg_5_0.movePath]
+
+			arg_5_2.line = {
+				row = var_5_2.row,
+				column = var_5_2.column
 			}
-			slot5 = bit.bor(slot5, ChapterConst.DirtyFleet, ChapterConst.DirtyAttachment, ChapterConst.DirtyChampionPosition)
+			var_5_1 = bit.bor(var_5_1, ChapterConst.DirtyFleet, ChapterConst.DirtyAttachment, ChapterConst.DirtyChampionPosition)
 		end
 	end
 
-	if slot0.hp and not slot3 then
-		slot2:setRestHp(slot0.hp)
+	if arg_5_0.hp and not arg_5_3 then
+		arg_5_2:setRestHp(arg_5_0.hp)
 
-		slot5 = bit.bor(slot5, ChapterConst.DirtyFleet)
+		var_5_1 = bit.bor(var_5_1, ChapterConst.DirtyFleet)
 
-		if slot1:getChapterCell(slot2.line.row, slot2.line.column) and slot6.attachment == ChapterConst.AttachBox and slot6.flag ~= ChapterConst.CellFlagDisabled and pg.box_data_template[slot6.attachmentId].type == ChapterConst.BoxTorpedo then
-			slot6.flag = ChapterConst.CellFlagDisabled
+		local var_5_3 = arg_5_1:getChapterCell(arg_5_2.line.row, arg_5_2.line.column)
 
-			slot1:clearChapterCell(slot6.row, slot6.column)
+		if var_5_3 and var_5_3.attachment == ChapterConst.AttachBox and var_5_3.flag ~= ChapterConst.CellFlagDisabled and pg.box_data_template[var_5_3.attachmentId].type == ChapterConst.BoxTorpedo then
+			var_5_3.flag = ChapterConst.CellFlagDisabled
 
-			slot5 = bit.bor(slot5, ChapterConst.DirtyAttachment)
+			arg_5_1:clearChapterCell(var_5_3.row, var_5_3.column)
+
+			var_5_1 = bit.bor(var_5_1, ChapterConst.DirtyAttachment)
 		end
 	end
 
-	return true, slot5
+	return true, var_5_1
 end
 
-function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
-	if slot1:getFleetIndex(FleetType.Transport, slot0.line.row, slot0.line.column) then
-		if #slot0.movePath > 0 then
-			slot2.viewComponent.grid:moveTransport(slot4, slot0.movePath, Clone(slot0.movePath), slot3)
-		else
-			slot5 = slot1.fleets[slot4]
+function var_0_0.PlayAIAction(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	local var_7_0 = arg_7_1:getFleetIndex(FleetType.Transport, arg_7_0.line.row, arg_7_0.line.column)
 
-			if slot1:getChapterCell(slot5.line.row, slot5.line.column) and slot6.attachment == ChapterConst.AttachBox and slot6.flag ~= ChapterConst.CellFlagDisabled and pg.box_data_template[slot6.attachmentId].type == ChapterConst.BoxTorpedo then
-				slot2.viewComponent:doPlayTorpedo(slot3)
+	if var_7_0 then
+		if #arg_7_0.movePath > 0 then
+			arg_7_2.viewComponent.grid:moveTransport(var_7_0, arg_7_0.movePath, Clone(arg_7_0.movePath), arg_7_3)
+		else
+			local var_7_1 = arg_7_1.fleets[var_7_0]
+			local var_7_2 = arg_7_1:getChapterCell(var_7_1.line.row, var_7_1.line.column)
+
+			if var_7_2 and var_7_2.attachment == ChapterConst.AttachBox and var_7_2.flag ~= ChapterConst.CellFlagDisabled and pg.box_data_template[var_7_2.attachmentId].type == ChapterConst.BoxTorpedo then
+				arg_7_2.viewComponent:doPlayTorpedo(arg_7_3)
 
 				return
 			end
 
-			slot3()
+			arg_7_3()
 		end
 	end
 end
 
-return slot0
+return var_0_0

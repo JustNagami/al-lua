@@ -1,1 +1,1 @@
-return class("FranceRestartOilPage", import(".TemplatePage.PtTemplatePage"))
+﻿return (class("FranceRestartOilPage", import(".TemplatePage.PtTemplatePage")))

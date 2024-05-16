@@ -1,211 +1,230 @@
-slot0 = class("CourtYardStorey", import("..map.CourtYardPlaceableArea"))
+﻿local var_0_0 = class("CourtYardStorey", import("..map.CourtYardPlaceableArea"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
-	uv0.super.Ctor(slot0, slot1, slot4)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_4)
 
-	slot0.id = slot2
-	slot0.style = slot3
-	slot0.level = 1
-	slot0.furnitures = {}
-	slot0.ships = {}
-	slot0.canEidt = false
-	slot0.recoder = CourtYardStoreyRecorder.New(slot0)
-	slot0.composeChecker = CourtYardStoreyComposeChecker.New(slot0)
+	arg_1_0.id = arg_1_2
+	arg_1_0.style = arg_1_3
+	arg_1_0.level = 1
+	arg_1_0.furnitures = {}
+	arg_1_0.ships = {}
+	arg_1_0.canEidt = false
+	arg_1_0.recoder = CourtYardStoreyRecorder.New(arg_1_0)
+	arg_1_0.composeChecker = CourtYardStoreyComposeChecker.New(arg_1_0)
 end
 
-function slot0.GetStyle(slot0)
-	return slot0.style
+function var_0_0.GetStyle(arg_2_0)
+	return arg_2_0.style
 end
 
-function slot0.SetLevel(slot0, slot1)
-	slot0.level = slot1
-	slot3 = CourtYardConst.MAX_STOREY_LEVEL * CourtYardConst.OPEN_AREA_PRE_LEVEL - (slot0.level - 1) * CourtYardConst.OPEN_AREA_PRE_LEVEL
+function var_0_0.SetLevel(arg_3_0, arg_3_1)
+	arg_3_0.level = arg_3_1
 
-	slot0:UpdateMinRange(Vector2(slot3, slot3))
-	slot0:DispatchEvent(CourtYardEvent.UPDATE_STOREY, slot1)
+	local var_3_0 = CourtYardConst.MAX_STOREY_LEVEL * CourtYardConst.OPEN_AREA_PRE_LEVEL - (arg_3_0.level - 1) * CourtYardConst.OPEN_AREA_PRE_LEVEL
+
+	arg_3_0:UpdateMinRange(Vector2(var_3_0, var_3_0))
+	arg_3_0:DispatchEvent(CourtYardEvent.UPDATE_STOREY, arg_3_1)
 end
 
-function slot0.LevelUp(slot0)
-	slot0:SetLevel(slot0.level + 1)
-	slot0:DispatchEvent(CourtYardEvent.UPDATE_FLOORPAPER, slot0.floorPaper)
-	slot0:DispatchEvent(CourtYardEvent.UPDATE_WALLPAPER, slot0.wallPaper)
+function var_0_0.LevelUp(arg_4_0)
+	local var_4_0 = arg_4_0.level + 1
+
+	arg_4_0:SetLevel(var_4_0)
+	arg_4_0:DispatchEvent(CourtYardEvent.UPDATE_FLOORPAPER, arg_4_0.floorPaper)
+	arg_4_0:DispatchEvent(CourtYardEvent.UPDATE_WALLPAPER, arg_4_0.wallPaper)
 end
 
-function slot0.SetWallPaper(slot0, slot1)
-	slot0.wallPaper = slot1
+function var_0_0.SetWallPaper(arg_5_0, arg_5_1)
+	arg_5_0.wallPaper = arg_5_1
 
-	slot0:DispatchEvent(CourtYardEvent.UPDATE_WALLPAPER, slot1)
-	slot0.composeChecker:Check()
+	arg_5_0:DispatchEvent(CourtYardEvent.UPDATE_WALLPAPER, arg_5_1)
+	arg_5_0.composeChecker:Check()
 end
 
-function slot0.SetFloorPaper(slot0, slot1)
-	slot0.floorPaper = slot1
+function var_0_0.SetFloorPaper(arg_6_0, arg_6_1)
+	arg_6_0.floorPaper = arg_6_1
 
-	slot0:DispatchEvent(CourtYardEvent.UPDATE_FLOORPAPER, slot1)
-	slot0.composeChecker:Check()
+	arg_6_0:DispatchEvent(CourtYardEvent.UPDATE_FLOORPAPER, arg_6_1)
+	arg_6_0.composeChecker:Check()
 end
 
-function slot0.GetWallPaper(slot0)
-	return slot0.wallPaper
+function var_0_0.GetWallPaper(arg_7_0)
+	return arg_7_0.wallPaper
 end
 
-function slot0.GetFloorPaper(slot0)
-	return slot0.floorPaper
+function var_0_0.GetFloorPaper(arg_8_0)
+	return arg_8_0.floorPaper
 end
 
-function slot0.GetFurnitures(slot0)
-	return slot0.furnitures
+function var_0_0.GetFurnitures(arg_9_0)
+	return arg_9_0.furnitures
 end
 
-function slot0.GetAllFurniture(slot0)
-	slot1 = {}
+function var_0_0.GetAllFurniture(arg_10_0)
+	local var_10_0 = {}
 
-	for slot5, slot6 in pairs(slot0.furnitures) do
-		slot1[slot6.id] = slot6
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.furnitures) do
+		var_10_0[iter_10_1.id] = iter_10_1
 	end
 
-	if slot0.floorPaper then
-		slot1[slot0.floorPaper.id] = slot0.floorPaper
+	if arg_10_0.floorPaper then
+		var_10_0[arg_10_0.floorPaper.id] = arg_10_0.floorPaper
 	end
 
-	if slot0.wallPaper then
-		slot1[slot0.wallPaper.id] = slot0.wallPaper
+	if arg_10_0.wallPaper then
+		var_10_0[arg_10_0.wallPaper.id] = arg_10_0.wallPaper
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.GetShips(slot0)
-	return slot0.ships
+function var_0_0.GetShips(arg_11_0)
+	return arg_11_0.ships
 end
 
-function slot0.GetShip(slot0, slot1)
-	return slot0.ships[slot1]
+function var_0_0.GetShip(arg_12_0, arg_12_1)
+	return arg_12_0.ships[arg_12_1]
 end
 
-function slot0.GetFurniture(slot0, slot1)
-	return slot0.furnitures[slot1]
+function var_0_0.GetFurniture(arg_13_0, arg_13_1)
+	return arg_13_0.furnitures[arg_13_1]
 end
 
-function slot0.CanAddFurniture(slot0, slot1)
+function var_0_0.CanAddFurniture(arg_14_0, arg_14_1)
 	return true
 end
 
-function slot0.AddFurniture(slot0, slot1, slot2)
-	slot0.furnitures[slot1.id] = slot1
+function var_0_0.AddFurniture(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_0.furnitures[arg_15_1.id] = arg_15_1
 
-	slot0:DispatchEvent(CourtYardEvent.CREATE_ITEM, slot1, slot2)
-	slot0:AddItem(slot1)
-	slot0.composeChecker:Check()
+	arg_15_0:DispatchEvent(CourtYardEvent.CREATE_ITEM, arg_15_1, arg_15_2)
+	arg_15_0:AddItem(arg_15_1)
+	arg_15_0.composeChecker:Check()
 
-	if slot1:CanTouch() and slot1:TriggerTouchDefault() then
-		slot0:ClickFurniture(slot1.id)
+	if arg_15_1:CanTouch() and arg_15_1:TriggerTouchDefault() then
+		arg_15_0:ClickFurniture(arg_15_1.id)
 	end
 end
 
-function slot0.AddPaper(slot0, slot1)
-	if slot1:GetType() == Furniture.TYPE_WALLPAPER then
-		slot0:SetWallPaper(slot1)
-	elseif slot2 == Furniture.TYPE_FLOORPAPER then
-		slot0:SetFloorPaper(slot1)
+function var_0_0.AddPaper(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_1:GetType()
+
+	if var_16_0 == Furniture.TYPE_WALLPAPER then
+		arg_16_0:SetWallPaper(arg_16_1)
+	elseif var_16_0 == Furniture.TYPE_FLOORPAPER then
+		arg_16_0:SetFloorPaper(arg_16_1)
 	end
 end
 
-function slot0.AddChildFurniture(slot0, slot1, slot2)
-	slot0.furnitures[slot1.id] = slot1
+function var_0_0.AddChildFurniture(arg_17_0, arg_17_1, arg_17_2)
+	arg_17_0.furnitures[arg_17_1.id] = arg_17_1
 
-	slot0:DispatchEvent(CourtYardEvent.CREATE_ITEM, slot1)
+	arg_17_0:DispatchEvent(CourtYardEvent.CREATE_ITEM, arg_17_1)
 
-	slot3 = slot0.furnitures[slot2]
+	local var_17_0 = arg_17_0.furnitures[arg_17_2]
 
-	slot0:DispatchEvent(CourtYardEvent.CHILD_ITEM, slot1, slot3)
-	slot3:AddChild(slot1)
+	arg_17_0:DispatchEvent(CourtYardEvent.CHILD_ITEM, arg_17_1, var_17_0)
+	var_17_0:AddChild(arg_17_1)
 end
 
-function slot0.Update(slot0)
-	slot0:CheckShipState()
-	slot0:CheckFurnitureState()
+function var_0_0.Update(arg_18_0)
+	arg_18_0:CheckShipState()
+	arg_18_0:CheckFurnitureState()
 end
 
-function slot0.AddShip(slot0, slot1)
-	slot1:ChangeState(CourtYardShip.STATE_IDLE)
+function var_0_0.AddShip(arg_19_0, arg_19_1)
+	arg_19_1:ChangeState(CourtYardShip.STATE_IDLE)
 
-	slot0.ships[slot1.id] = slot1
+	arg_19_0.ships[arg_19_1.id] = arg_19_1
 
-	slot0:DispatchEvent(CourtYardEvent.CREATE_ITEM, slot1)
-	slot0:AddItem(slot1)
+	arg_19_0:DispatchEvent(CourtYardEvent.CREATE_ITEM, arg_19_1)
+	arg_19_0:AddItem(arg_19_1)
 end
 
-function slot0.GetPlaceableArea(slot0, slot1)
-	return slot1:HasParent() and slot1:GetParent():GetPlaceableArea() or slot0
+function var_0_0.GetPlaceableArea(arg_20_0, arg_20_1)
+	return arg_20_1:HasParent() and arg_20_1:GetParent():GetPlaceableArea() or arg_20_0
 end
 
-function slot0.RemoveShip(slot0, slot1)
-	slot0:GetPlaceableArea(slot1):RemoveItem(slot1)
-	slot0.ships[slot1.id]:Dispose()
+function var_0_0.RemoveShip(arg_21_0, arg_21_1)
+	arg_21_0:GetPlaceableArea(arg_21_1):RemoveItem(arg_21_1)
+	arg_21_0.ships[arg_21_1.id]:Dispose()
 
-	slot0.ships[slot1.id] = nil
+	arg_21_0.ships[arg_21_1.id] = nil
 
-	slot0:DispatchEvent(CourtYardEvent.DETORY_ITEM, slot1)
+	arg_21_0:DispatchEvent(CourtYardEvent.DETORY_ITEM, arg_21_1)
 end
 
-function slot0.ExitShip(slot0, slot1)
-	if slot0.ships[slot1] then
-		slot0:RemoveShip(slot2)
+function var_0_0.ExitShip(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0.ships[arg_22_1]
+
+	if var_22_0 then
+		arg_22_0:RemoveShip(var_22_0)
 	end
 end
 
-function slot0.CheckShipState(slot0)
-	for slot4, slot5 in pairs(slot0:GetShips()) do
-		if slot5:GetState() == CourtYardShip.STATE_MOVE then
-			slot0:ReadyMoveShip(slot5.id)
-		elseif slot6 == CourtYardShip.STATE_MOVING_HALF then
-			slot0:MoveShipToNextPosition(slot5.id)
+function var_0_0.CheckShipState(arg_23_0)
+	for iter_23_0, iter_23_1 in pairs(arg_23_0:GetShips()) do
+		local var_23_0 = iter_23_1:GetState()
+
+		if var_23_0 == CourtYardShip.STATE_MOVE then
+			arg_23_0:ReadyMoveShip(iter_23_1.id)
+		elseif var_23_0 == CourtYardShip.STATE_MOVING_HALF then
+			arg_23_0:MoveShipToNextPosition(iter_23_1.id)
 		end
 	end
 end
 
-function slot0.ReadyMoveShip(slot0, slot1)
-	slot2 = slot0.ships[slot1]
-	slot3 = false
-	slot4 = false
-	slot5 = false
+function var_0_0.ReadyMoveShip(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0.ships[arg_24_1]
+	local var_24_1 = false
+	local var_24_2 = false
+	local var_24_3 = false
 
 	if CourtYardCalcUtil.HalfProbability() then
-		if slot2:HasParent() and slot2:GetParent():IsType(Furniture.TYPE_ARCH) then
-			slot3 = slot0:ShipExitArch(slot2)
-		elseif not slot0:ShipEnterArch(slot2) then
-			slot5 = slot0:ShipAddFollower(slot2)
+		if var_24_0:HasParent() and var_24_0:GetParent():IsType(Furniture.TYPE_ARCH) then
+			var_24_1 = arg_24_0:ShipExitArch(var_24_0)
+		else
+			var_24_2 = arg_24_0:ShipEnterArch(var_24_0)
+
+			if not var_24_2 then
+				var_24_3 = arg_24_0:ShipAddFollower(var_24_0)
+			end
 		end
 	end
 
-	if not slot3 and not slot4 and not slot5 then
-		slot0:RandomNextShipPosition(slot1)
+	if not var_24_1 and not var_24_2 and not var_24_3 then
+		arg_24_0:RandomNextShipPosition(arg_24_1)
 	end
 end
 
-function slot0.ShipAddFollower(slot0, slot1)
-	slot2 = slot0:GetFurnituresByType(Furniture.TYPE_FOLLOWER)
+function var_0_0.ShipAddFollower(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0:GetFurnituresByType(Furniture.TYPE_FOLLOWER)
 
-	function slot3(slot0)
-		return _.detect(uv0, function (slot0)
-			return _.any(slot0:GetArea(), function (slot0)
-				return slot0 == uv0
+	local function var_25_1(arg_26_0)
+		return _.detect(var_25_0, function(arg_27_0)
+			local var_27_0 = arg_27_0:GetArea()
+
+			return _.any(var_27_0, function(arg_28_0)
+				return arg_28_0 == arg_26_0
 			end)
 		end)
 	end
 
-	function slot4()
-		if uv0:GetInterActionData() ~= nil then
-			slot0:Stop()
+	local function var_25_2()
+		local var_29_0 = arg_25_1:GetInterActionData()
+
+		if var_29_0 ~= nil then
+			var_29_0:Stop()
 		end
 	end
 
-	for slot8, slot9 in ipairs(slot1:GetAroundPositions()) do
-		if slot3(slot9) and slot10:CanFollower(slot1) then
-			slot4()
-			slot0:RemoveItemAndRefresh(slot10)
-			slot10:GetInteractionSlot():Occupy(slot10, slot1, slot0)
+	for iter_25_0, iter_25_1 in ipairs(arg_25_1:GetAroundPositions()) do
+		local var_25_3 = var_25_1(iter_25_1)
+
+		if var_25_3 and var_25_3:CanFollower(arg_25_1) then
+			var_25_2()
+			arg_25_0:RemoveItemAndRefresh(var_25_3)
+			var_25_3:GetInteractionSlot():Occupy(var_25_3, arg_25_1, arg_25_0)
 
 			return true
 		end
@@ -214,16 +233,18 @@ function slot0.ShipAddFollower(slot0, slot1)
 	return false
 end
 
-function slot0.ShipExitArch(slot0, slot1)
-	if slot0:GetNextPositionForMove(slot1) then
-		slot3 = slot1:GetParent()
+function var_0_0.ShipExitArch(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_0:GetNextPositionForMove(arg_30_1)
 
-		slot3:RemoveChild(slot1)
-		slot0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, slot1, slot3)
-		slot0:DispatchEvent(CourtYardEvent.EXIT_ARCH, slot1, slot3)
-		slot0:LockPosition(slot2)
-		slot1:UnClear(true)
-		slot1:Move(slot2)
+	if var_30_0 then
+		local var_30_1 = arg_30_1:GetParent()
+
+		var_30_1:RemoveChild(arg_30_1)
+		arg_30_0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, arg_30_1, var_30_1)
+		arg_30_0:DispatchEvent(CourtYardEvent.EXIT_ARCH, arg_30_1, var_30_1)
+		arg_30_0:LockPosition(var_30_0)
+		arg_30_1:UnClear(true)
+		arg_30_1:Move(var_30_0)
 
 		return true
 	end
@@ -231,18 +252,20 @@ function slot0.ShipExitArch(slot0, slot1)
 	return false
 end
 
-function slot0.ShipEnterArch(slot0, slot1)
-	function slot2(slot0, slot1)
-		uv0:RemoveItem(uv1)
-		uv0:DispatchEvent(CourtYardEvent.CHILD_ITEM, uv1, slot0)
-		uv0:DispatchEvent(CourtYardEvent.ENTER_ARCH, uv1, slot0)
-		slot0:AddChild(uv1)
-		uv1:Move(slot1)
+function var_0_0.ShipEnterArch(arg_31_0, arg_31_1)
+	local function var_31_0(arg_32_0, arg_32_1)
+		arg_31_0:RemoveItem(arg_31_1)
+		arg_31_0:DispatchEvent(CourtYardEvent.CHILD_ITEM, arg_31_1, arg_32_0)
+		arg_31_0:DispatchEvent(CourtYardEvent.ENTER_ARCH, arg_31_1, arg_32_0)
+		arg_32_0:AddChild(arg_31_1)
+		arg_31_1:Move(arg_32_1)
 	end
 
-	for slot6, slot7 in ipairs(slot1:GetAroundPositions()) do
-		if slot0:GetParentForItem(slot1, slot7) and slot8:IsType(Furniture.TYPE_ARCH) then
-			slot2(slot8, slot7)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_1:GetAroundPositions()) do
+		local var_31_1 = arg_31_0:GetParentForItem(arg_31_1, iter_31_1)
+
+		if var_31_1 and var_31_1:IsType(Furniture.TYPE_ARCH) then
+			var_31_0(var_31_1, iter_31_1)
 
 			return true
 		end
@@ -251,784 +274,884 @@ function slot0.ShipEnterArch(slot0, slot1)
 	return false
 end
 
-function slot0.RandomNextShipPosition(slot0, slot1)
-	slot2 = slot0.ships[slot1]
+function var_0_0.RandomNextShipPosition(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_0.ships[arg_33_1]
+	local var_33_1 = arg_33_0:GetPlaceableArea(var_33_0)
+	local var_33_2 = var_33_1:GetNextPositionForMove(var_33_0)
 
-	if not slot0:GetPlaceableArea(slot2):GetNextPositionForMove(slot2) then
-		slot2:ChangeState(CourtYardShip.STATE_IDLE)
+	if not var_33_2 then
+		var_33_0:ChangeState(CourtYardShip.STATE_IDLE)
 
 		return
 	end
 
-	slot3:LockPosition(slot4)
-	slot2:Move(slot4)
+	var_33_1:LockPosition(var_33_2)
+	var_33_0:Move(var_33_2)
 end
 
-function slot0.MoveShipToNextPosition(slot0, slot1)
-	slot2 = slot0.ships[slot1]
-	slot4 = slot2:GetMarkPosition()
+function var_0_0.MoveShipToNextPosition(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_0.ships[arg_34_1]
+	local var_34_1 = arg_34_0:GetPlaceableArea(var_34_0)
+	local var_34_2 = var_34_0:GetMarkPosition()
 
-	slot0:GetPlaceableArea(slot2):_ClearLockPosition(slot2)
+	var_34_1:_ClearLockPosition(var_34_0)
 
-	if slot2:IsUnClear() then
-		slot2:UnClear(false)
+	if var_34_0:IsUnClear() then
+		var_34_0:UnClear(false)
 	else
-		slot3:RemoveItem(slot2)
+		var_34_1:RemoveItem(var_34_0)
 	end
 
-	slot2:SetPosition(slot4)
-	slot3:AddItem(slot2)
-	slot2:ChangeState(CourtYardShip.STATE_MOVING_ONE)
+	var_34_0:SetPosition(var_34_2)
+	var_34_1:AddItem(var_34_0)
+	var_34_0:ChangeState(CourtYardShip.STATE_MOVING_ONE)
 end
 
-function slot0.DragShip(slot0, slot1)
-	slot2 = slot0.ships[slot1]
+function var_0_0.DragShip(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_0.ships[arg_35_1]
 
-	slot0:GetPlaceableArea(slot2):_ClearLockPosition(slot2)
+	arg_35_0:GetPlaceableArea(var_35_0):_ClearLockPosition(var_35_0)
 
-	slot4 = slot2:GetPosition()
+	local var_35_1 = var_35_0:GetPosition()
+	local var_35_2 = var_35_0:GetInterActionData()
 
-	if slot2:GetInterActionData() ~= nil or slot2:GetState() == CourtYardShip.STATE_INTERACT then
-		if isa(slot5, CourtYardFollowerSlot) then
-			slot0:RemoveItem(slot2)
+	if var_35_2 ~= nil or var_35_0:GetState() == CourtYardShip.STATE_INTERACT then
+		if isa(var_35_2, CourtYardFollowerSlot) then
+			arg_35_0:RemoveItem(var_35_0)
 		end
 
-		slot5:Stop()
-	elseif slot2:HasParent() then
-		slot6 = slot2:GetParent()
+		var_35_2:Stop()
+	elseif var_35_0:HasParent() then
+		local var_35_3 = var_35_0:GetParent()
 
-		slot6:RemoveChild(slot2)
-		slot2:ChangeState(CourtYardShip.STATE_IDLE)
-		slot0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, slot2, slot6)
+		var_35_3:RemoveChild(var_35_0)
+		var_35_0:ChangeState(CourtYardShip.STATE_IDLE)
+		arg_35_0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, var_35_0, var_35_3)
 	else
-		slot0:RemoveItem(slot2)
+		arg_35_0:RemoveItem(var_35_0)
 	end
 
-	slot2:ChangeState(CourtYardShip.STATE_DRAG)
-	slot2:UpdateOpFlag(true)
-	slot0:DispatchEvent(CourtYardEvent.SELETED_ITEM, slot2, slot0:AreaWithInfo(slot2, slot4, slot2:GetOffset()))
-	slot0:DispatchEvent(CourtYardEvent.DRAG_ITEM, slot2)
+	var_35_0:ChangeState(CourtYardShip.STATE_DRAG)
+
+	local var_35_4 = arg_35_0:AreaWithInfo(var_35_0, var_35_1, var_35_0:GetOffset())
+
+	var_35_0:UpdateOpFlag(true)
+	arg_35_0:DispatchEvent(CourtYardEvent.SELETED_ITEM, var_35_0, var_35_4)
+	arg_35_0:DispatchEvent(CourtYardEvent.DRAG_ITEM, var_35_0)
 end
 
-function slot0.DragingShip(slot0, slot1, slot2)
-	if not slot0.ships[slot1]:GetOpFlag() then
+function var_0_0.DragingShip(arg_36_0, arg_36_1, arg_36_2)
+	local var_36_0 = arg_36_0.ships[arg_36_1]
+
+	if not var_36_0:GetOpFlag() then
 		return
 	end
 
-	slot6 = slot0:GetParentForItem(slot3, slot2) and slot4:RawGetOffset() or slot3:GetOffset()
+	local var_36_1 = arg_36_0:GetParentForItem(var_36_0, arg_36_2)
+	local var_36_2 = arg_36_0:GetInterActionFurniture(var_36_0, arg_36_2)
+	local var_36_3 = var_36_1 and var_36_1:RawGetOffset() or var_36_0:GetOffset()
+	local var_36_4 = arg_36_0:AreaWithInfo(var_36_0, arg_36_2, var_36_3, var_36_2 or var_36_1)
 
-	slot0:DispatchEvent(CourtYardEvent.DRAGING_ITEM, slot3, slot0:AreaWithInfo(slot3, slot2, slot6, slot0:GetInterActionFurniture(slot3, slot2) or slot4), slot2, slot6)
+	arg_36_0:DispatchEvent(CourtYardEvent.DRAGING_ITEM, var_36_0, var_36_4, arg_36_2, var_36_3)
 end
 
-function slot0.DragShipEnd(slot0, slot1, slot2)
-	if not slot0.ships[slot1]:GetOpFlag() then
+function var_0_0.DragShipEnd(arg_37_0, arg_37_1, arg_37_2)
+	local var_37_0 = arg_37_0.ships[arg_37_1]
+
+	if not var_37_0:GetOpFlag() then
 		return
 	end
 
-	slot5 = slot0:GetInterActionFurniture(slot3, slot2)
-	slot6 = slot0:GetParentForItem(slot3, slot2)
-	slot7 = nil
+	local var_37_1 = arg_37_0:LegalPosition(arg_37_2, var_37_0)
+	local var_37_2 = arg_37_0:GetInterActionFurniture(var_37_0, arg_37_2)
+	local var_37_3 = arg_37_0:GetParentForItem(var_37_0, arg_37_2)
+	local var_37_4
 
-	if not slot0:LegalPosition(slot2, slot3) and slot5 then
-		if isa(slot5, CourtYardFollowerFurniture) then
-			slot0:RemoveItemAndRefresh(slot5)
-			slot0:ResetShip(slot3, slot2)
-			slot3:ChangeState(CourtYardShip.STATE_MOVE)
+	if not var_37_1 and var_37_2 then
+		if isa(var_37_2, CourtYardFollowerFurniture) then
+			arg_37_0:RemoveItemAndRefresh(var_37_2)
+			arg_37_0:ResetShip(var_37_0, arg_37_2)
+			var_37_0:ChangeState(CourtYardShip.STATE_MOVE)
 		end
 
-		slot5:GetInteractionSlot():Occupy(slot5, slot3, slot0)
-	elseif not slot4 and slot6 then
-		slot3:SetPosition(slot2)
-		slot0:DispatchEvent(CourtYardEvent.CHILD_ITEM, slot3, slot6)
-		slot6:AddChild(slot3)
-		slot3:ChangeState(CourtYardShip.STATE_IDLE)
+		var_37_2:GetInteractionSlot():Occupy(var_37_2, var_37_0, arg_37_0)
+	elseif not var_37_1 and var_37_3 then
+		var_37_0:SetPosition(arg_37_2)
+		arg_37_0:DispatchEvent(CourtYardEvent.CHILD_ITEM, var_37_0, var_37_3)
+		var_37_3:AddChild(var_37_0)
+		var_37_0:ChangeState(CourtYardShip.STATE_IDLE)
 
-		slot7 = slot6:AreaWithInfo(slot3, slot2, slot6:RawGetOffset(), true)
+		var_37_4 = var_37_3:AreaWithInfo(var_37_0, arg_37_2, var_37_3:RawGetOffset(), true)
 	else
-		slot8 = slot4 and slot2 or slot3:GetPosition()
+		local var_37_5 = var_37_1 and arg_37_2 or var_37_0:GetPosition()
 
-		slot0:ResetShip(slot3, slot8)
+		arg_37_0:ResetShip(var_37_0, var_37_5)
 
-		slot7 = slot0:AreaWithInfo(slot3, slot8, slot3:GetOffset(), true)
+		var_37_4 = arg_37_0:AreaWithInfo(var_37_0, var_37_5, var_37_0:GetOffset(), true)
 	end
 
-	slot3:UpdateOpFlag(false)
-	slot0:DispatchEvent(CourtYardEvent.DRAG_ITEM_END, slot7)
-	slot0:DispatchEvent(CourtYardEvent.UNSELETED_ITEM, slot3)
+	var_37_0:UpdateOpFlag(false)
+	arg_37_0:DispatchEvent(CourtYardEvent.DRAG_ITEM_END, var_37_4)
+	arg_37_0:DispatchEvent(CourtYardEvent.UNSELETED_ITEM, var_37_0)
 end
 
-function slot0.GetInterActionFurniture(slot0, slot1, slot2)
-	for slot6, slot7 in pairs(slot0.furnitures) do
-		if slot7:CanInterAction(slot1) and slot7:IsOverlap(slot2) then
-			return slot7
+function var_0_0.GetInterActionFurniture(arg_38_0, arg_38_1, arg_38_2)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.furnitures) do
+		if iter_38_1:CanInterAction(arg_38_1) and iter_38_1:IsOverlap(arg_38_2) then
+			return iter_38_1
 		end
 	end
 
 	return nil
 end
 
-function slot0.TouchShip(slot0, slot1)
-	slot2 = slot0.ships[slot1]
+function var_0_0.TouchShip(arg_39_0, arg_39_1)
+	local var_39_0 = arg_39_0.ships[arg_39_1]
 
-	slot0:GetPlaceableArea(slot2):_ClearLockPosition(slot2)
-	slot2:ChangeState(CourtYardShip.STATE_TOUCH)
+	arg_39_0:GetPlaceableArea(var_39_0):_ClearLockPosition(var_39_0)
+	var_39_0:ChangeState(CourtYardShip.STATE_TOUCH)
 end
 
-function slot0.UpdateShipIntimacy(slot0, slot1, slot2)
-	if not slot0.ships[slot1] then
+function var_0_0.UpdateShipIntimacy(arg_40_0, arg_40_1, arg_40_2)
+	local var_40_0 = arg_40_0.ships[arg_40_1]
+
+	if not var_40_0 then
 		return
 	end
 
-	slot3:ChangeInimacy(slot2)
+	var_40_0:ChangeInimacy(arg_40_2)
 end
 
-function slot0.UpdateShipCoin(slot0, slot1, slot2)
-	if not slot0.ships[slot1] then
+function var_0_0.UpdateShipCoin(arg_41_0, arg_41_1, arg_41_2)
+	local var_41_0 = arg_41_0.ships[arg_41_1]
+
+	if not var_41_0 then
 		return
 	end
 
-	slot3:ChangeCoin(slot2)
+	var_41_0:ChangeCoin(arg_41_2)
 end
 
-function slot0.ClearShipIntimacy(slot0, slot1, slot2)
-	if not slot0.ships[slot1] then
+function var_0_0.ClearShipIntimacy(arg_42_0, arg_42_1, arg_42_2)
+	local var_42_0 = arg_42_0.ships[arg_42_1]
+
+	if not var_42_0 then
 		return
 	end
 
-	slot0:GetPlaceableArea(slot3):_ClearLockPosition(slot3)
-	slot3:ClearInimacy(slot2)
+	arg_42_0:GetPlaceableArea(var_42_0):_ClearLockPosition(var_42_0)
+	var_42_0:ClearInimacy(arg_42_2)
 end
 
-function slot0.ClearShipCoin(slot0, slot1)
-	if not slot0.ships[slot1] then
+function var_0_0.ClearShipCoin(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_0.ships[arg_43_1]
+
+	if not var_43_0 then
 		return
 	end
 
-	slot0:GetPlaceableArea(slot2):_ClearLockPosition(slot2)
-	slot2:ClearCoin(value)
+	arg_43_0:GetPlaceableArea(var_43_0):_ClearLockPosition(var_43_0)
+	var_43_0:ClearCoin(value)
 end
 
-function slot0.AddShipExp(slot0, slot1, slot2)
-	if not slot0.ships[slot1] then
+function var_0_0.AddShipExp(arg_44_0, arg_44_1, arg_44_2)
+	local var_44_0 = arg_44_0.ships[arg_44_1]
+
+	if not var_44_0 then
 		return
 	end
 
-	slot3:AddExp(slot2)
+	var_44_0:AddExp(arg_44_2)
 end
 
-function slot0.ShipAnimtionFinish(slot0, slot1, slot2)
-	slot3 = slot0.ships[slot1]
+function var_0_0.ShipAnimtionFinish(arg_45_0, arg_45_1, arg_45_2)
+	local var_45_0 = arg_45_0.ships[arg_45_1]
 
-	if slot2 == CourtYardShip.STATE_TOUCH or slot2 == CourtYardShip.STATE_GETAWARD then
-		slot3:ChangeState(CourtYardShip.STATE_IDLE)
-	elseif slot2 == CourtYardShip.STATE_INTERACT and slot3:GetInterActionData() then
-		slot4:Continue(slot3)
-	end
-end
+	if arg_45_2 == CourtYardShip.STATE_TOUCH or arg_45_2 == CourtYardShip.STATE_GETAWARD then
+		var_45_0:ChangeState(CourtYardShip.STATE_IDLE)
+	elseif arg_45_2 == CourtYardShip.STATE_INTERACT then
+		local var_45_1 = var_45_0:GetInterActionData()
 
-function slot0.ResetShip(slot0, slot1, slot2)
-	function slot3(slot0, slot1)
-		slot0:SetPosition(slot1)
-		slot0:ChangeState(CourtYardShip.STATE_IDLE)
-		uv0:AddItem(slot0)
-	end
-
-	if slot0:LegalPosition(slot2, slot1) then
-		slot3(slot1, slot2)
-	elseif slot0:GetRandomPosition(slot1) then
-		slot3(slot1, slot4)
-	else
-		slot0:RemoveShip(slot1)
-		slot0:GetHost():SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, slot1.id)
-	end
-end
-
-function slot0.SelectFurniture(slot0, slot1)
-	if not slot0.canEidt then
-		return
-	end
-
-	if slot0.furnitures[slot1]:GetOpFlag() then
-		return
-	end
-
-	if _.detect(_.values(slot0.furnitures), function (slot0)
-		return slot0:GetOpFlag()
-	end) then
-		slot0:UnSelectFurniture(slot3.id)
-	end
-
-	slot2:UpdateOpFlag(true)
-	slot0:DispatchEvent(CourtYardEvent.SELETED_ITEM, slot2, slot0:AreaWithInfo(slot2, slot2:GetPosition(), slot2:GetOffset(), true))
-end
-
-function slot0.ClickFurniture(slot0, slot1)
-	if slot0.furnitures[slot1]:HasDescription() then
-		slot0:DispatchEvent(CourtYardEvent.SHOW_FURNITURE_DESC, slot2)
-	elseif slot2:CanTouch() then
-		if slot2:GetTouchBg() then
-			slot0:CheckFurnitureTouchBG(slot2)
+		if var_45_1 then
+			var_45_1:Continue(var_45_0)
 		end
+	end
+end
 
-		if not slot2:IsTouchState() then
-			slot2:ChangeState(CourtYardFurniture.STATE_TOUCH)
-			slot0:DispatchEvent(CourtYardEvent.ON_TOUCH_ITEM, slot2)
+function var_0_0.ResetShip(arg_46_0, arg_46_1, arg_46_2)
+	local function var_46_0(arg_47_0, arg_47_1)
+		arg_47_0:SetPosition(arg_47_1)
+		arg_47_0:ChangeState(CourtYardShip.STATE_IDLE)
+		arg_46_0:AddItem(arg_47_0)
+	end
+
+	if arg_46_0:LegalPosition(arg_46_2, arg_46_1) then
+		var_46_0(arg_46_1, arg_46_2)
+	else
+		local var_46_1 = arg_46_0:GetRandomPosition(arg_46_1)
+
+		if var_46_1 then
+			var_46_0(arg_46_1, var_46_1)
 		else
-			slot2:ChangeState(CourtYardFurniture.STATE_IDLE)
-			slot0:DispatchEvent(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, slot2)
+			arg_46_0:RemoveShip(arg_46_1)
+			arg_46_0:GetHost():SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, arg_46_1.id)
 		end
 	end
 end
 
-function slot0.CheckFurnitureTouchBG(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.furnitures) do
-		if slot6.id ~= slot1.id and slot6:IsTouchState() and slot6:GetTouchBg() then
-			slot6:ChangeState(CourtYardFurniture.STATE_IDLE)
-			slot0:DispatchEvent(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, slot6)
-		end
-	end
-end
-
-function slot0.PlayMusicalInstruments(slot0, slot1)
-	slot0:MuteAll()
-	slot0:DispatchEvent(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, slot0.furnitures[slot1])
-end
-
-function slot0.StopPlayMusicalInstruments(slot0, slot1)
-	slot0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, slot0.furnitures[slot1])
-end
-
-function slot0.PlayFurnitureVoice(slot0, slot1)
-	if #_.select(slot0.furnitures[slot1].musicDatas, function (slot0)
-		return slot0.voiceType == 1
-	end) > 0 then
-		slot4 = slot3[math.random(1, #slot3)]
-
-		slot0:DispatchEvent(CourtYardEvent.ON_ITEM_PLAY_MUSIC, slot4.voice, slot4.voiceType)
-	end
-end
-
-function slot0.PlayFurnitureBg(slot0, slot1)
-	slot2 = slot0.furnitures[slot1]
-
-	if slot0:StopPrevFurnitureVoice() and slot3.id == slot2.id then
+function var_0_0.SelectFurniture(arg_48_0, arg_48_1)
+	if not arg_48_0.canEidt then
 		return
 	end
 
-	slot2:ChangeState(CourtYardFurniture.STATE_PLAY_MUSIC)
+	local var_48_0 = arg_48_0.furnitures[arg_48_1]
 
-	if slot2:GetMusicData() then
-		slot0:DispatchEvent(CourtYardEvent.ON_ITEM_PLAY_MUSIC, slot4.voice, slot4.voiceType)
-	end
-end
-
-function slot0.MuteAll(slot0)
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		if slot5:GetMusicData() then
-			slot7 = slot5:GetMusicData()
-
-			slot0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, slot7.voice, slot7.voiceType)
-			slot5:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
-		end
-	end
-
-	slot0:DispatchEvent(CourtYardEvent.FURNITURE_MUTE_ALL)
-end
-
-function slot0.StopPrevFurnitureVoice(slot0)
-	slot1 = nil
-
-	for slot5, slot6 in pairs(slot0.furnitures) do
-		if slot6:GetMusicData() and slot7.voiceType == 2 then
-			slot1 = slot6
-		end
-	end
-
-	if slot1 then
-		slot2 = slot1:GetMusicData()
-
-		slot0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, slot2.voice, slot2.voiceType)
-		slot1:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
-	end
-
-	return slot1
-end
-
-function slot0.FurnitureAnimtionFinish(slot0, slot1, slot2)
-	slot3 = slot0.furnitures[slot1]
-
-	if slot2 == CourtYardFurniture.STATE_TOUCH then
-		slot3:ChangeState(CourtYardFurniture.STATE_IDLE)
-	elseif slot2 == CourtYardFurniture.STATE_INTERACT then
-		_.each(slot3:GetUsingSlots(), function (slot0)
-			slot0:Continue(uv0)
-		end)
-	elseif slot2 == CourtYardFurniture.STATE_TOUCH_PREPARE then
-		slot3:_ChangeState(CourtYardFurniture.STATE_TOUCH)
-	end
-end
-
-function slot0.BeginDragFurniture(slot0, slot1)
-	if not slot0.canEidt then
+	if var_48_0:GetOpFlag() then
 		return
 	end
 
-	if not slot0.furnitures[slot1]:GetOpFlag() then
-		return
-	end
-
-	slot2:ChangeState(CourtYardFurniture.STATE_DRAG)
-
-	if slot2:HasParent() then
-		slot3 = slot2:GetParent()
-
-		slot3:RemoveChild(slot2)
-		slot0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, slot2, slot3)
-	else
-		slot0:RemoveItem(slot2)
-		slot0:DispatchEvent(CourtYardEvent.DRAG_ITEM, slot2)
-	end
-end
-
-function slot0.DragingFurniture(slot0, slot1, slot2)
-	if not slot0.canEidt then
-		return
-	end
-
-	if not slot0.furnitures[slot1]:GetOpFlag() then
-		return
-	end
-
-	if isa(slot3, CourtYardWallFurniture) then
-		slot2 = slot3:NormalizePosition(slot2, slot0.minSizeX)
-	end
-
-	slot5 = slot0:GetParentForItem(slot3, slot2) and slot4:RawGetOffset() or slot3:GetOffset()
-
-	slot0:DispatchEvent(CourtYardEvent.DRAGING_ITEM, slot3, slot4 and slot4:AreaWithInfo(slot3, slot2, slot5) or slot0:AreaWithInfo(slot3, slot2, slot5), slot2, slot5)
-end
-
-function slot0.GetParentForItem(slot0, slot1, slot2)
-	slot3 = _.select(_.values(slot0.furnitures), function (slot0)
-		return isa(slot0, CourtYardCanPutFurniture) and slot0:CanPutChildInPosition(uv0, uv1)
+	local var_48_1 = _.detect(_.values(arg_48_0.furnitures), function(arg_49_0)
+		return arg_49_0:GetOpFlag()
 	end)
 
-	table.sort(slot3, function (slot0, slot1)
-		return (slot0.parent and 1 or 0) > (slot1.parent and 1 or 0)
+	if var_48_1 then
+		arg_48_0:UnSelectFurniture(var_48_1.id)
+	end
+
+	local var_48_2 = var_48_0:GetPosition()
+	local var_48_3 = arg_48_0:AreaWithInfo(var_48_0, var_48_2, var_48_0:GetOffset(), true)
+
+	var_48_0:UpdateOpFlag(true)
+	arg_48_0:DispatchEvent(CourtYardEvent.SELETED_ITEM, var_48_0, var_48_3)
+end
+
+function var_0_0.ClickFurniture(arg_50_0, arg_50_1)
+	local var_50_0 = arg_50_0.furnitures[arg_50_1]
+
+	if var_50_0:HasDescription() then
+		arg_50_0:DispatchEvent(CourtYardEvent.SHOW_FURNITURE_DESC, var_50_0)
+	elseif var_50_0:CanTouch() then
+		if var_50_0:GetTouchBg() then
+			arg_50_0:CheckFurnitureTouchBG(var_50_0)
+		end
+
+		if not var_50_0:IsTouchState() then
+			var_50_0:ChangeState(CourtYardFurniture.STATE_TOUCH)
+			arg_50_0:DispatchEvent(CourtYardEvent.ON_TOUCH_ITEM, var_50_0)
+		else
+			var_50_0:ChangeState(CourtYardFurniture.STATE_IDLE)
+			arg_50_0:DispatchEvent(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, var_50_0)
+		end
+	end
+end
+
+function var_0_0.CheckFurnitureTouchBG(arg_51_0, arg_51_1)
+	for iter_51_0, iter_51_1 in pairs(arg_51_0.furnitures) do
+		if iter_51_1.id ~= arg_51_1.id and iter_51_1:IsTouchState() and iter_51_1:GetTouchBg() then
+			iter_51_1:ChangeState(CourtYardFurniture.STATE_IDLE)
+			arg_51_0:DispatchEvent(CourtYardEvent.ON_CANCEL_TOUCH_ITEM, iter_51_1)
+		end
+	end
+end
+
+function var_0_0.PlayMusicalInstruments(arg_52_0, arg_52_1)
+	local var_52_0 = arg_52_0.furnitures[arg_52_1]
+
+	arg_52_0:MuteAll()
+	arg_52_0:DispatchEvent(CourtYardEvent.FURNITURE_PLAY_MUSICALINSTRUMENTS, var_52_0)
+end
+
+function var_0_0.StopPlayMusicalInstruments(arg_53_0, arg_53_1)
+	local var_53_0 = arg_53_0.furnitures[arg_53_1]
+
+	arg_53_0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_PLAY_MUSICALINSTRUMENTS, var_53_0)
+end
+
+function var_0_0.PlayFurnitureVoice(arg_54_0, arg_54_1)
+	local var_54_0 = arg_54_0.furnitures[arg_54_1]
+	local var_54_1 = _.select(var_54_0.musicDatas, function(arg_55_0)
+		return arg_55_0.voiceType == 1
 	end)
 
-	return slot3[1]
+	if #var_54_1 > 0 then
+		local var_54_2 = var_54_1[math.random(1, #var_54_1)]
+
+		arg_54_0:DispatchEvent(CourtYardEvent.ON_ITEM_PLAY_MUSIC, var_54_2.voice, var_54_2.voiceType)
+	end
 end
 
-function slot0.DragFurnitureEnd(slot0, slot1, slot2)
-	if not slot0.canEidt then
+function var_0_0.PlayFurnitureBg(arg_56_0, arg_56_1)
+	local var_56_0 = arg_56_0.furnitures[arg_56_1]
+	local var_56_1 = arg_56_0:StopPrevFurnitureVoice()
+
+	if var_56_1 and var_56_1.id == var_56_0.id then
 		return
 	end
 
-	if not slot0.furnitures[slot1]:GetOpFlag() then
-		return
-	end
+	var_56_0:ChangeState(CourtYardFurniture.STATE_PLAY_MUSIC)
 
-	slot3:ChangeState(CourtYardFurniture.STATE_IDLE)
+	local var_56_2 = var_56_0:GetMusicData()
 
-	if isa(slot3, CourtYardWallFurniture) then
-		slot2 = slot3:NormalizePosition(slot2, slot0.minSizeX)
-	end
-
-	if not slot0:VerifyDragPositionForFurniture(slot3, slot2) then
-		slot0:RemoveFurniture(slot1)
-		slot0:DispatchEvent(CourtYardEvent.REMOVE_ILLEGALITY_ITEM)
-
-		return
-	end
-
-	if isa(slot3, CourtYardWallFurniture) then
-		slot3:UpdatePosition(slot4)
-	else
-		slot3:SetPosition(slot4)
-	end
-
-	slot6 = nil
-
-	if slot0:GetParentForItem(slot3, slot4) then
-		slot0:DispatchEvent(CourtYardEvent.CHILD_ITEM, slot3, slot5)
-		slot5:AddChild(slot3)
-
-		slot6 = slot5:AreaWithInfo(slot3, slot4, slot5:RawGetOffset(), true)
-	else
-		slot0:AddItem(slot3)
-
-		slot6 = slot0:AreaWithInfo(slot3, slot4, slot3:GetOffset(), true)
-	end
-
-	slot0:DispatchEvent(CourtYardEvent.DRAG_ITEM_END, slot3, slot6)
-end
-
-function slot0.IsLegalAreaForFurniture(slot0, slot1, slot2)
-	return _.all(slot1:GetAreaByPosition(slot2), function (slot0)
-		return uv0:LegalPosition(slot0, uv1)
-	end) or slot0:GetParentForItem(slot1, slot2) ~= nil
-end
-
-function slot0.VerifyDragPositionForFurniture(slot0, slot1, slot2)
-	slot3 = nil
-
-	if slot0:IsLegalAreaForFurniture(slot1, slot2) then
-		slot3 = slot2
-	else
-		if slot1:GetPosition() and isa(slot1, CourtYardWallFurniture) then
-			slot1:UpdatePosition(slot4)
-		end
-
-		if slot4 and slot0:IsLegalAreaForFurniture(slot1, slot4) then
-			slot3 = slot4
-		else
-			if slot4 and isa(slot1, CourtYardWallFurniture) then
-				slot1:UpdatePosition(slot2)
-			end
-
-			slot3 = slot0:GetEmptyArea(slot1)
-		end
-	end
-
-	return slot3
-end
-
-function slot0.UnSelectFurniture(slot0, slot1)
-	if not slot0.furnitures[slot1]:GetOpFlag() then
-		return
-	end
-
-	slot2:UpdateOpFlag(false)
-	slot0:DispatchEvent(CourtYardEvent.UNSELETED_ITEM, slot2)
-end
-
-function slot0.RotateFurniture(slot0, slot1)
-	if slot0.furnitures[slot1]:DisableRotation() then
-		slot0:DispatchEvent(CourtYardEvent.DISABLE_ROTATE_ITEM)
-	elseif not slot0:CanRotateItem(slot2) then
-		slot0:DispatchEvent(CourtYardEvent.ROTATE_ITEM_FAILED)
-	else
-		if not slot2:HasParent() then
-			slot0:RemoveItem(slot2)
-		end
-
-		slot2:Rotate()
-
-		slot4 = slot0:AreaWithInfo(slot2, slot2:GetPosition(), slot2:GetOffset())
-
-		if not slot3 then
-			slot0:AddItem(slot2)
-		end
-
-		slot0:DispatchEvent(CourtYardEvent.ROTATE_ITEM, slot2, slot4)
+	if var_56_2 then
+		arg_56_0:DispatchEvent(CourtYardEvent.ON_ITEM_PLAY_MUSIC, var_56_2.voice, var_56_2.voiceType)
 	end
 end
 
-function slot0.RemoveFurniture(slot0, slot1)
-	if slot0.furnitures[slot1]:HasParent() then
-		slot2:GetParent():RemoveChild(slot2)
+function var_0_0.MuteAll(arg_57_0)
+	for iter_57_0, iter_57_1 in pairs(arg_57_0.furnitures) do
+		if iter_57_1:GetMusicData() then
+			local var_57_0 = iter_57_1:GetMusicData()
+
+			arg_57_0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, var_57_0.voice, var_57_0.voiceType)
+			iter_57_1:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
+		end
 	end
 
-	slot4 = slot2.childs or {}
-
-	for slot8 = #slot4, 1, -1 do
-		slot0:RemoveFurniture(slot4[slot8].id)
-	end
-
-	if not slot3 then
-		slot0:RemoveItem(slot2)
-	end
-
-	if slot2:GetMusicData() then
-		slot0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, slot5.voice, slot5.voiceType)
-		slot2:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
-	end
-
-	slot0:UnSelectFurniture(slot1)
-	slot0.furnitures[slot1]:Dispose()
-
-	slot0.furnitures[slot1] = nil
-
-	slot0:DispatchEvent(CourtYardEvent.DETORY_ITEM, slot2)
-	slot0.composeChecker:Check()
+	arg_57_0:DispatchEvent(CourtYardEvent.FURNITURE_MUTE_ALL)
 end
 
-function slot0.RemoveAllFurniture(slot0)
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		if not slot5:HasParent() then
-			slot0:RemoveFurniture(slot5.id)
+function var_0_0.StopPrevFurnitureVoice(arg_58_0)
+	local var_58_0
+
+	for iter_58_0, iter_58_1 in pairs(arg_58_0.furnitures) do
+		local var_58_1 = iter_58_1:GetMusicData()
+
+		if var_58_1 and var_58_1.voiceType == 2 then
+			var_58_0 = iter_58_1
 		end
 	end
 
-	slot0:SetWallPaper(nil)
-	slot0:SetFloorPaper(nil)
+	if var_58_0 then
+		local var_58_2 = var_58_0:GetMusicData()
+
+		arg_58_0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, var_58_2.voice, var_58_2.voiceType)
+		var_58_0:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
+	end
+
+	return var_58_0
 end
 
-function slot0.RemovePaper(slot0, slot1)
-	if slot0:GetWallPaper() and slot2.id == slot1 then
-		slot0:SetWallPaper(nil)
-	end
+function var_0_0.FurnitureAnimtionFinish(arg_59_0, arg_59_1, arg_59_2)
+	local var_59_0 = arg_59_0.furnitures[arg_59_1]
 
-	if slot0:GetFloorPaper() and slot3.id == slot1 then
-		slot0:SetFloorPaper(nil)
-	end
-end
+	if arg_59_2 == CourtYardFurniture.STATE_TOUCH then
+		var_59_0:ChangeState(CourtYardFurniture.STATE_IDLE)
+	elseif arg_59_2 == CourtYardFurniture.STATE_INTERACT then
+		local var_59_1 = var_59_0:GetUsingSlots()
 
-function slot0.CheckFurnitureState(slot0)
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		if slot5:IsType(Furniture.TYPE_MOVEABLE) and slot5:IsReadyMove() then
-			slot0:ReadyMoveFurniture(slot5.id)
-		end
-	end
-end
-
-function slot0.ReadyMoveFurniture(slot0, slot1)
-	if not slot0:GetNextPositionForMove(slot0.furnitures[slot1]) then
-		slot2:Rest()
-
-		return
-	end
-
-	if slot2:IsDifferentDirection(slot3) and slot0:CanRotateItem(slot2) then
-		slot0:RotateFurniture(slot1)
-	end
-
-	slot2:Move(slot3)
-	slot0:RemoveItem(slot2)
-	slot2:SetPosition(slot3)
-	slot0:AddItemAndRefresh(slot2)
-end
-
-function slot0.GetFurnituresByType(slot0, slot1)
-	slot2 = {}
-
-	for slot6, slot7 in pairs(slot0.furnitures) do
-		if slot7:IsType(slot1) then
-			table.insert(slot2, slot7)
-		end
-	end
-
-	return slot2
-end
-
-function slot0.EnterEditMode(slot0)
-	slot0.canEidt = true
-
-	for slot4, slot5 in pairs(slot0.ships) do
-		if slot5:GetState() == CourtYardShip.STATE_DRAG then
-			slot0:DragShipEnd(slot5.id, Vector2(-1, -1))
-		end
-
-		slot0:GetPlaceableArea(slot5):_ClearLockPosition(slot5)
-
-		if slot5:HasParent() then
-			slot7 = slot5:GetParent()
-
-			slot7:RemoveChild(slot5)
-			slot0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, slot5, slot7)
-		else
-			slot0:RemoveItem(slot5)
-		end
-
-		slot5:ChangeState(CourtYardShip.STATE_STOP)
-	end
-
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		if slot5:IsType(Furniture.TYPE_TRANSPORT) and slot5:IsUsing() then
-			slot5:Stop()
-		end
-
-		if slot5:IsType(Furniture.TYPE_FOLLOWER) and slot5:IsUsing() then
-			slot5:Stop()
-		end
-
-		if slot5:IsType(Furniture.TYPE_MOVEABLE) and slot5:IsMoving() then
-			slot5:Stop()
-		end
-
-		if slot5:IsTouchState() then
-			slot0:ClickFurniture(slot5.id)
-		end
-	end
-
-	slot0.recoder:BeginCheckChange()
-	slot0:DispatchEvent(CourtYardEvent.ENTER_EDIT_MODE)
-end
-
-function slot0.ExitEditMode(slot0)
-	for slot4, slot5 in pairs(slot0.ships) do
-		if slot5:ShouldResetPosition() then
-			slot0:ResetShip(slot5, slot5:GetPosition())
-		end
-	end
-
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		if slot5:IsType(Furniture.TYPE_MOVEABLE) and slot5:IsStop() then
-			slot5:ReStart()
-
-			if slot5:CanTouch() then
-				slot0:ClickFurniture(slot5.id)
-			end
-		end
-	end
-
-	if _.detect(_.values(slot0.furnitures), function (slot0)
-		return slot0:GetOpFlag()
-	end) then
-		slot0:UnSelectFurniture(slot1.id)
-	end
-
-	slot0.canEidt = false
-
-	slot0.recoder:EndCheckChange()
-	slot0:DispatchEvent(CourtYardEvent.EXIT_EDIT_MODE)
-end
-
-function slot0.InEidtMode(slot0)
-	return slot0.canEidt
-end
-
-function slot0.StopAllDragState(slot0)
-	function slot1()
-		for slot3, slot4 in pairs(uv0.ships) do
-			if slot4:GetState() == CourtYardShip.STATE_DRAG then
-				uv0:DragShipEnd(slot4.id, Vector2(-1, -1))
-			end
-		end
-	end
-
-	function slot2()
-		for slot3, slot4 in pairs(uv0.furnitures) do
-			if slot4:IsDragingState() then
-				uv0:DragFurnitureEnd(slot4.id, Vector2(-1, -1))
-				uv0:UnSelectFurniture(slot4.id)
-			end
-		end
-	end
-
-	if not slot0:InEidtMode() then
-		slot1()
-	else
-		slot2()
-	end
-end
-
-function slot0.StartInteraction(slot0, slot1)
-	slot2 = slot1:GetUser()
-
-	if isa(slot1:GetOwner(), CourtYardFurniture) and slot3:GetInterActionBgm() then
-		for slot7, slot8 in pairs(slot0.furnitures) do
-			if slot8:IsPlayMusicState() then
-				slot8:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
-			end
-		end
-	end
-
-	slot0:DispatchEvent(CourtYardEvent.ITEM_INTERACTION, slot2, slot3, slot1)
-end
-
-function slot0.WillClearInteraction(slot0, slot1, slot2)
-	slot0:DispatchEvent(CourtYardEvent.CLEAR_ITEM_INTERACTION, slot1:GetUser(), slot1:GetOwner(), slot1)
-end
-
-function slot0.ClearInteraction(slot0, slot1, slot2)
-	slot4 = slot1:GetOwner()
-
-	if isa(slot1:GetUser(), CourtYardFollowerFurniture) then
-		slot0:ClearInteractionForFollower(slot3, slot4, slot1, slot2)
-	elseif not slot2 then
-		if isa(slot4, CourtYardTransportFurniture) then
-			slot0:ClearInteractionForTransPort(slot3, slot4, slot1)
-		else
-			slot0:ResetShip(slot3, slot3:GetPosition())
-		end
-	end
-end
-
-function slot0.ClearInteractionForFollower(slot0, slot1, slot2, slot3, slot4)
-	if not slot0:GetAroundEmptyArea(slot1, slot2:GetPosition()) then
-		slot0:DispatchEvent(CourtYardEvent.REMOVE_ILLEGALITY_ITEM)
-		slot0:RemoveFurniture(slot1.id)
-
-		return
-	end
-
-	slot1:SetPosition(slot5)
-	slot0:AddItemAndRefresh(slot1)
-end
-
-function slot0.ClearInteractionForTransPort(slot0, slot1, slot2, slot3)
-	if slot3:IsFirstTime() then
-		slot6 = _.select(slot0:GetFurnituresByType(Furniture.TYPE_TRANSPORT), function (slot0)
-			return slot0.id ~= uv0.id
+		_.each(var_59_1, function(arg_60_0)
+			arg_60_0:Continue(var_59_0)
 		end)
+	elseif arg_59_2 == CourtYardFurniture.STATE_TOUCH_PREPARE then
+		var_59_0:_ChangeState(CourtYardFurniture.STATE_TOUCH)
+	end
+end
 
-		if slot6[math.random(1, #slot6)] and slot7:CanInterAction(slot1) then
-			slot7:GetInteractionSlot():Link(slot7, slot1, slot0)
+function var_0_0.BeginDragFurniture(arg_61_0, arg_61_1)
+	if not arg_61_0.canEidt then
+		return
+	end
+
+	local var_61_0 = arg_61_0.furnitures[arg_61_1]
+
+	if not var_61_0:GetOpFlag() then
+		return
+	end
+
+	var_61_0:ChangeState(CourtYardFurniture.STATE_DRAG)
+
+	if var_61_0:HasParent() then
+		local var_61_1 = var_61_0:GetParent()
+
+		var_61_1:RemoveChild(var_61_0)
+		arg_61_0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, var_61_0, var_61_1)
+	else
+		arg_61_0:RemoveItem(var_61_0)
+		arg_61_0:DispatchEvent(CourtYardEvent.DRAG_ITEM, var_61_0)
+	end
+end
+
+function var_0_0.DragingFurniture(arg_62_0, arg_62_1, arg_62_2)
+	if not arg_62_0.canEidt then
+		return
+	end
+
+	local var_62_0 = arg_62_0.furnitures[arg_62_1]
+
+	if not var_62_0:GetOpFlag() then
+		return
+	end
+
+	if isa(var_62_0, CourtYardWallFurniture) then
+		arg_62_2 = var_62_0:NormalizePosition(arg_62_2, arg_62_0.minSizeX)
+	end
+
+	local var_62_1 = arg_62_0:GetParentForItem(var_62_0, arg_62_2)
+	local var_62_2 = var_62_1 and var_62_1:RawGetOffset() or var_62_0:GetOffset()
+	local var_62_3 = var_62_1 and var_62_1:AreaWithInfo(var_62_0, arg_62_2, var_62_2) or arg_62_0:AreaWithInfo(var_62_0, arg_62_2, var_62_2)
+
+	arg_62_0:DispatchEvent(CourtYardEvent.DRAGING_ITEM, var_62_0, var_62_3, arg_62_2, var_62_2)
+end
+
+function var_0_0.GetParentForItem(arg_63_0, arg_63_1, arg_63_2)
+	local var_63_0 = _.select(_.values(arg_63_0.furnitures), function(arg_64_0)
+		return isa(arg_64_0, CourtYardCanPutFurniture) and arg_64_0:CanPutChildInPosition(arg_63_1, arg_63_2)
+	end)
+
+	table.sort(var_63_0, function(arg_65_0, arg_65_1)
+		return (arg_65_0.parent and 1 or 0) > (arg_65_1.parent and 1 or 0)
+	end)
+
+	return var_63_0[1]
+end
+
+function var_0_0.DragFurnitureEnd(arg_66_0, arg_66_1, arg_66_2)
+	if not arg_66_0.canEidt then
+		return
+	end
+
+	local var_66_0 = arg_66_0.furnitures[arg_66_1]
+
+	if not var_66_0:GetOpFlag() then
+		return
+	end
+
+	var_66_0:ChangeState(CourtYardFurniture.STATE_IDLE)
+
+	if isa(var_66_0, CourtYardWallFurniture) then
+		arg_66_2 = var_66_0:NormalizePosition(arg_66_2, arg_66_0.minSizeX)
+	end
+
+	local var_66_1 = arg_66_0:VerifyDragPositionForFurniture(var_66_0, arg_66_2)
+
+	if not var_66_1 then
+		arg_66_0:RemoveFurniture(arg_66_1)
+		arg_66_0:DispatchEvent(CourtYardEvent.REMOVE_ILLEGALITY_ITEM)
+
+		return
+	end
+
+	if isa(var_66_0, CourtYardWallFurniture) then
+		var_66_0:UpdatePosition(var_66_1)
+	else
+		var_66_0:SetPosition(var_66_1)
+	end
+
+	local var_66_2 = arg_66_0:GetParentForItem(var_66_0, var_66_1)
+	local var_66_3
+
+	if var_66_2 then
+		arg_66_0:DispatchEvent(CourtYardEvent.CHILD_ITEM, var_66_0, var_66_2)
+		var_66_2:AddChild(var_66_0)
+
+		var_66_3 = var_66_2:AreaWithInfo(var_66_0, var_66_1, var_66_2:RawGetOffset(), true)
+	else
+		arg_66_0:AddItem(var_66_0)
+
+		var_66_3 = arg_66_0:AreaWithInfo(var_66_0, var_66_1, var_66_0:GetOffset(), true)
+	end
+
+	arg_66_0:DispatchEvent(CourtYardEvent.DRAG_ITEM_END, var_66_0, var_66_3)
+end
+
+function var_0_0.IsLegalAreaForFurniture(arg_67_0, arg_67_1, arg_67_2)
+	return _.all(arg_67_1:GetAreaByPosition(arg_67_2), function(arg_68_0)
+		return arg_67_0:LegalPosition(arg_68_0, arg_67_1)
+	end) or arg_67_0:GetParentForItem(arg_67_1, arg_67_2) ~= nil
+end
+
+function var_0_0.VerifyDragPositionForFurniture(arg_69_0, arg_69_1, arg_69_2)
+	local var_69_0
+
+	if arg_69_0:IsLegalAreaForFurniture(arg_69_1, arg_69_2) then
+		var_69_0 = arg_69_2
+	else
+		local var_69_1 = arg_69_1:GetPosition()
+
+		if var_69_1 and isa(arg_69_1, CourtYardWallFurniture) then
+			arg_69_1:UpdatePosition(var_69_1)
+		end
+
+		if var_69_1 and arg_69_0:IsLegalAreaForFurniture(arg_69_1, var_69_1) then
+			var_69_0 = var_69_1
 		else
-			slot0:ResetShip(slot1, slot0:GetRandomPosition(slot1))
+			if var_69_1 and isa(arg_69_1, CourtYardWallFurniture) then
+				arg_69_1:UpdatePosition(arg_69_2)
+			end
+
+			var_69_0 = arg_69_0:GetEmptyArea(arg_69_1)
+		end
+	end
+
+	return var_69_0
+end
+
+function var_0_0.UnSelectFurniture(arg_70_0, arg_70_1)
+	local var_70_0 = arg_70_0.furnitures[arg_70_1]
+
+	if not var_70_0:GetOpFlag() then
+		return
+	end
+
+	var_70_0:UpdateOpFlag(false)
+	arg_70_0:DispatchEvent(CourtYardEvent.UNSELETED_ITEM, var_70_0)
+end
+
+function var_0_0.RotateFurniture(arg_71_0, arg_71_1)
+	local var_71_0 = arg_71_0.furnitures[arg_71_1]
+
+	if var_71_0:DisableRotation() then
+		arg_71_0:DispatchEvent(CourtYardEvent.DISABLE_ROTATE_ITEM)
+	elseif not arg_71_0:CanRotateItem(var_71_0) then
+		arg_71_0:DispatchEvent(CourtYardEvent.ROTATE_ITEM_FAILED)
+	else
+		local var_71_1 = var_71_0:HasParent()
+
+		if not var_71_1 then
+			arg_71_0:RemoveItem(var_71_0)
+		end
+
+		var_71_0:Rotate()
+
+		local var_71_2 = arg_71_0:AreaWithInfo(var_71_0, var_71_0:GetPosition(), var_71_0:GetOffset())
+
+		if not var_71_1 then
+			arg_71_0:AddItem(var_71_0)
+		end
+
+		arg_71_0:DispatchEvent(CourtYardEvent.ROTATE_ITEM, var_71_0, var_71_2)
+	end
+end
+
+function var_0_0.RemoveFurniture(arg_72_0, arg_72_1)
+	local var_72_0 = arg_72_0.furnitures[arg_72_1]
+	local var_72_1 = var_72_0:HasParent()
+
+	if var_72_1 then
+		var_72_0:GetParent():RemoveChild(var_72_0)
+	end
+
+	local var_72_2 = var_72_0.childs or {}
+
+	for iter_72_0 = #var_72_2, 1, -1 do
+		arg_72_0:RemoveFurniture(var_72_2[iter_72_0].id)
+	end
+
+	if not var_72_1 then
+		arg_72_0:RemoveItem(var_72_0)
+	end
+
+	local var_72_3 = var_72_0:GetMusicData()
+
+	if var_72_3 then
+		arg_72_0:DispatchEvent(CourtYardEvent.ON_ITEM_STOP_MUSIC, var_72_3.voice, var_72_3.voiceType)
+		var_72_0:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
+	end
+
+	arg_72_0:UnSelectFurniture(arg_72_1)
+	arg_72_0.furnitures[arg_72_1]:Dispose()
+
+	arg_72_0.furnitures[arg_72_1] = nil
+
+	arg_72_0:DispatchEvent(CourtYardEvent.DETORY_ITEM, var_72_0)
+	arg_72_0.composeChecker:Check()
+end
+
+function var_0_0.RemoveAllFurniture(arg_73_0)
+	for iter_73_0, iter_73_1 in pairs(arg_73_0.furnitures) do
+		if not iter_73_1:HasParent() then
+			arg_73_0:RemoveFurniture(iter_73_1.id)
+		end
+	end
+
+	arg_73_0:SetWallPaper(nil)
+	arg_73_0:SetFloorPaper(nil)
+end
+
+function var_0_0.RemovePaper(arg_74_0, arg_74_1)
+	local var_74_0 = arg_74_0:GetWallPaper()
+
+	if var_74_0 and var_74_0.id == arg_74_1 then
+		arg_74_0:SetWallPaper(nil)
+	end
+
+	local var_74_1 = arg_74_0:GetFloorPaper()
+
+	if var_74_1 and var_74_1.id == arg_74_1 then
+		arg_74_0:SetFloorPaper(nil)
+	end
+end
+
+function var_0_0.CheckFurnitureState(arg_75_0)
+	for iter_75_0, iter_75_1 in pairs(arg_75_0.furnitures) do
+		if iter_75_1:IsType(Furniture.TYPE_MOVEABLE) and iter_75_1:IsReadyMove() then
+			arg_75_0:ReadyMoveFurniture(iter_75_1.id)
+		end
+	end
+end
+
+function var_0_0.ReadyMoveFurniture(arg_76_0, arg_76_1)
+	local var_76_0 = arg_76_0.furnitures[arg_76_1]
+	local var_76_1 = arg_76_0:GetNextPositionForMove(var_76_0)
+
+	if not var_76_1 then
+		var_76_0:Rest()
+
+		return
+	end
+
+	if var_76_0:IsDifferentDirection(var_76_1) and arg_76_0:CanRotateItem(var_76_0) then
+		arg_76_0:RotateFurniture(arg_76_1)
+	end
+
+	var_76_0:Move(var_76_1)
+	arg_76_0:RemoveItem(var_76_0)
+	var_76_0:SetPosition(var_76_1)
+	arg_76_0:AddItemAndRefresh(var_76_0)
+end
+
+function var_0_0.GetFurnituresByType(arg_77_0, arg_77_1)
+	local var_77_0 = {}
+
+	for iter_77_0, iter_77_1 in pairs(arg_77_0.furnitures) do
+		if iter_77_1:IsType(arg_77_1) then
+			table.insert(var_77_0, iter_77_1)
+		end
+	end
+
+	return var_77_0
+end
+
+function var_0_0.EnterEditMode(arg_78_0)
+	arg_78_0.canEidt = true
+
+	for iter_78_0, iter_78_1 in pairs(arg_78_0.ships) do
+		if iter_78_1:GetState() == CourtYardShip.STATE_DRAG then
+			arg_78_0:DragShipEnd(iter_78_1.id, Vector2(-1, -1))
+		end
+
+		arg_78_0:GetPlaceableArea(iter_78_1):_ClearLockPosition(iter_78_1)
+
+		if iter_78_1:HasParent() then
+			local var_78_0 = iter_78_1:GetParent()
+
+			var_78_0:RemoveChild(iter_78_1)
+			arg_78_0:DispatchEvent(CourtYardEvent.UN_CHILD_ITEM, iter_78_1, var_78_0)
+		else
+			arg_78_0:RemoveItem(iter_78_1)
+		end
+
+		iter_78_1:ChangeState(CourtYardShip.STATE_STOP)
+	end
+
+	for iter_78_2, iter_78_3 in pairs(arg_78_0.furnitures) do
+		if iter_78_3:IsType(Furniture.TYPE_TRANSPORT) and iter_78_3:IsUsing() then
+			iter_78_3:Stop()
+		end
+
+		if iter_78_3:IsType(Furniture.TYPE_FOLLOWER) and iter_78_3:IsUsing() then
+			iter_78_3:Stop()
+		end
+
+		if iter_78_3:IsType(Furniture.TYPE_MOVEABLE) and iter_78_3:IsMoving() then
+			iter_78_3:Stop()
+		end
+
+		if iter_78_3:IsTouchState() then
+			arg_78_0:ClickFurniture(iter_78_3.id)
+		end
+	end
+
+	arg_78_0.recoder:BeginCheckChange()
+	arg_78_0:DispatchEvent(CourtYardEvent.ENTER_EDIT_MODE)
+end
+
+function var_0_0.ExitEditMode(arg_79_0)
+	for iter_79_0, iter_79_1 in pairs(arg_79_0.ships) do
+		if iter_79_1:ShouldResetPosition() then
+			local var_79_0 = iter_79_1:GetPosition()
+
+			arg_79_0:ResetShip(iter_79_1, var_79_0)
+		end
+	end
+
+	for iter_79_2, iter_79_3 in pairs(arg_79_0.furnitures) do
+		if iter_79_3:IsType(Furniture.TYPE_MOVEABLE) and iter_79_3:IsStop() then
+			iter_79_3:ReStart()
+
+			if iter_79_3:CanTouch() then
+				arg_79_0:ClickFurniture(iter_79_3.id)
+			end
+		end
+	end
+
+	local var_79_1 = _.detect(_.values(arg_79_0.furnitures), function(arg_80_0)
+		return arg_80_0:GetOpFlag()
+	end)
+
+	if var_79_1 then
+		arg_79_0:UnSelectFurniture(var_79_1.id)
+	end
+
+	arg_79_0.canEidt = false
+
+	arg_79_0.recoder:EndCheckChange()
+	arg_79_0:DispatchEvent(CourtYardEvent.EXIT_EDIT_MODE)
+end
+
+function var_0_0.InEidtMode(arg_81_0)
+	return arg_81_0.canEidt
+end
+
+function var_0_0.StopAllDragState(arg_82_0)
+	local function var_82_0()
+		for iter_83_0, iter_83_1 in pairs(arg_82_0.ships) do
+			if iter_83_1:GetState() == CourtYardShip.STATE_DRAG then
+				arg_82_0:DragShipEnd(iter_83_1.id, Vector2(-1, -1))
+			end
+		end
+	end
+
+	local function var_82_1()
+		for iter_84_0, iter_84_1 in pairs(arg_82_0.furnitures) do
+			if iter_84_1:IsDragingState() then
+				arg_82_0:DragFurnitureEnd(iter_84_1.id, Vector2(-1, -1))
+				arg_82_0:UnSelectFurniture(iter_84_1.id)
+			end
+		end
+	end
+
+	if not arg_82_0:InEidtMode() then
+		var_82_0()
+	else
+		var_82_1()
+	end
+end
+
+function var_0_0.StartInteraction(arg_85_0, arg_85_1)
+	local var_85_0 = arg_85_1:GetUser()
+	local var_85_1 = arg_85_1:GetOwner()
+
+	if isa(var_85_1, CourtYardFurniture) and var_85_1:GetInterActionBgm() then
+		for iter_85_0, iter_85_1 in pairs(arg_85_0.furnitures) do
+			if iter_85_1:IsPlayMusicState() then
+				iter_85_1:ChangeState(CourtYardFurniture.STATE_STOP_MUSIC)
+			end
+		end
+	end
+
+	arg_85_0:DispatchEvent(CourtYardEvent.ITEM_INTERACTION, var_85_0, var_85_1, arg_85_1)
+end
+
+function var_0_0.WillClearInteraction(arg_86_0, arg_86_1, arg_86_2)
+	local var_86_0 = arg_86_1:GetUser()
+	local var_86_1 = arg_86_1:GetOwner()
+
+	arg_86_0:DispatchEvent(CourtYardEvent.CLEAR_ITEM_INTERACTION, var_86_0, var_86_1, arg_86_1)
+end
+
+function var_0_0.ClearInteraction(arg_87_0, arg_87_1, arg_87_2)
+	local var_87_0 = arg_87_1:GetUser()
+	local var_87_1 = arg_87_1:GetOwner()
+
+	if isa(var_87_0, CourtYardFollowerFurniture) then
+		arg_87_0:ClearInteractionForFollower(var_87_0, var_87_1, arg_87_1, arg_87_2)
+	elseif not arg_87_2 then
+		if isa(var_87_1, CourtYardTransportFurniture) then
+			arg_87_0:ClearInteractionForTransPort(var_87_0, var_87_1, arg_87_1)
+		else
+			arg_87_0:ResetShip(var_87_0, var_87_0:GetPosition())
+		end
+	end
+end
+
+function var_0_0.ClearInteractionForFollower(arg_88_0, arg_88_1, arg_88_2, arg_88_3, arg_88_4)
+	local var_88_0 = arg_88_0:GetAroundEmptyArea(arg_88_1, arg_88_2:GetPosition())
+
+	if not var_88_0 then
+		arg_88_0:DispatchEvent(CourtYardEvent.REMOVE_ILLEGALITY_ITEM)
+		arg_88_0:RemoveFurniture(arg_88_1.id)
+
+		return
+	end
+
+	arg_88_1:SetPosition(var_88_0)
+	arg_88_0:AddItemAndRefresh(arg_88_1)
+end
+
+function var_0_0.ClearInteractionForTransPort(arg_89_0, arg_89_1, arg_89_2, arg_89_3)
+	if arg_89_3:IsFirstTime() then
+		local var_89_0 = arg_89_0:GetFurnituresByType(Furniture.TYPE_TRANSPORT)
+		local var_89_1 = _.select(var_89_0, function(arg_90_0)
+			return arg_90_0.id ~= arg_89_2.id
+		end)
+		local var_89_2 = var_89_1[math.random(1, #var_89_1)]
+
+		if var_89_2 and var_89_2:CanInterAction(arg_89_1) then
+			var_89_2:GetInteractionSlot():Link(var_89_2, arg_89_1, arg_89_0)
+		else
+			arg_89_0:ResetShip(arg_89_1, arg_89_0:GetRandomPosition(arg_89_1))
 		end
 	else
-		slot0:ResetShip(slot1, slot0:GetAroundEmptyPosition(slot2))
+		arg_89_0:ResetShip(arg_89_1, arg_89_0:GetAroundEmptyPosition(arg_89_2))
 	end
 end
 
-function slot0.LegalPosition(slot0, slot1, slot2)
-	return uv0.super.LegalPosition(slot0, slot1, slot2) and slot2:InActivityRange(slot1)
+function var_0_0.LegalPosition(arg_91_0, arg_91_1, arg_91_2)
+	return var_0_0.super.LegalPosition(arg_91_0, arg_91_1, arg_91_2) and arg_91_2:InActivityRange(arg_91_1)
 end
 
-function slot0.GetLevel(slot0)
-	return slot0.level
+function var_0_0.GetLevel(arg_92_0)
+	return arg_92_0.level
 end
 
-function slot0.Dispose(slot0)
-	uv0.super.Dispose(slot0)
-	slot0.recoder:Dispose()
+function var_0_0.Dispose(arg_93_0)
+	var_0_0.super.Dispose(arg_93_0)
+	arg_93_0.recoder:Dispose()
 
-	slot0.recoder = nil
+	arg_93_0.recoder = nil
 
-	slot0.composeChecker:Dispose()
+	arg_93_0.composeChecker:Dispose()
 
-	slot0.composeChecker = nil
+	arg_93_0.composeChecker = nil
 
-	for slot4, slot5 in pairs(slot0.ships) do
-		slot5:Dispose()
+	for iter_93_0, iter_93_1 in pairs(arg_93_0.ships) do
+		iter_93_1:Dispose()
 	end
 
-	for slot4, slot5 in pairs(slot0.furnitures) do
-		slot5:Dispose()
+	for iter_93_2, iter_93_3 in pairs(arg_93_0.furnitures) do
+		iter_93_3:Dispose()
 	end
 
-	slot0.ships = nil
-	slot0.furnitures = nil
+	arg_93_0.ships = nil
+	arg_93_0.furnitures = nil
 end
 
-function slot0.GetDirty(slot0)
-	return slot0.recoder:TakeSample()
+function var_0_0.GetDirty(arg_94_0)
+	return arg_94_0.recoder:TakeSample()
 end
 
-function slot0.ToTable(slot0)
-	slot1 = {}
+function var_0_0.ToTable(arg_95_0)
+	local var_95_0 = {}
 
-	function slot2(slot0)
-		slot0.floor = uv0.id
-		uv1[slot0.id] = slot0
+	local function var_95_1(arg_96_0)
+		arg_96_0.floor = arg_95_0.id
+		var_95_0[arg_96_0.id] = arg_96_0
 	end
 
-	for slot6, slot7 in pairs(slot0.furnitures) do
-		slot2(slot7:ToTable())
+	for iter_95_0, iter_95_1 in pairs(arg_95_0.furnitures) do
+		var_95_1(iter_95_1:ToTable())
 	end
 
-	if slot0.wallPaper then
-		slot2(slot0.wallPaper:ToTable())
+	if arg_95_0.wallPaper then
+		var_95_1(arg_95_0.wallPaper:ToTable())
 	end
 
-	if slot0.floorPaper then
-		slot2(slot0.floorPaper:ToTable())
+	if arg_95_0.floorPaper then
+		var_95_1(arg_95_0.floorPaper:ToTable())
 	end
 
-	return slot1
+	return var_95_0
 end
 
-return slot0
+return var_0_0

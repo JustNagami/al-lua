@@ -1,66 +1,59 @@
-slot0 = class("Match3Page", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("Match3Page", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.item = slot0:findTF("item", slot0.bg)
-	slot0.items = slot0:findTF("items", slot0.bg)
-	slot0.goBtn = slot0:findTF("go", slot0.bg)
-	slot0.itemList = UIItemList.New(slot0.items, slot0.item)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.bg)
+	arg_1_0.goBtn = arg_1_0:findTF("go", arg_1_0.bg)
+	arg_1_0.itemList = UIItemList.New(arg_1_0.items, arg_1_0.item)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.drop = slot0.activity:getConfig("config_client").drop
-	slot0.id = slot0.activity:getConfig("config_client").gameId
-	slot0.day = #slot0.drop
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.drop = arg_2_0.activity:getConfig("config_client").drop
+	arg_2_0.id = arg_2_0.activity:getConfig("config_client").gameId
+	arg_2_0.day = #arg_2_0.drop
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.item, false)
+function var_0_0.OnFirstFlush(arg_3_0)
+	setActive(arg_3_0.item, false)
 
-	slot1 = getProxy(MiniGameProxy)
-	slot4 = slot0.activity
-	slot2 = slot1:GetHubByHubId(slot4:getConfig("config_id"))
+	local var_3_0 = getProxy(MiniGameProxy):GetHubByHubId(arg_3_0.activity:getConfig("config_id"))
 
-	setActive(slot0.item, false)
+	setActive(arg_3_0.item, false)
+	arg_3_0.itemList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventInit then
+			local var_4_0 = arg_3_0:findTF("item", arg_4_2)
+			local var_4_1 = arg_3_0.drop[arg_4_1 + 1]
+			local var_4_2 = {
+				type = var_4_1[1],
+				id = var_4_1[2],
+				count = var_4_1[3]
+			}
 
-	slot3 = slot0.itemList
-
-	slot3:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot3 = uv0
-			slot4 = uv0.drop[slot1 + 1]
-
-			updateDrop(slot3:findTF("item", slot2), {
-				type = slot4[1],
-				id = slot4[2],
-				count = slot4[3]
-			})
-			onButton(uv0, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_4_0, var_4_2)
+			onButton(arg_3_0, arg_4_2, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_4_2)
 			end, SFX_PANEL)
+		elseif arg_4_0 == UIItemList.EventUpdate then
+			local var_4_3 = arg_3_0:findTF("got", arg_4_2)
+			local var_4_4 = arg_3_0:findTF("mask", arg_4_2)
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			setActive(uv0:findTF("got", slot2), slot1 < uv1.usedtime)
-			setActive(uv0:findTF("mask", slot2), slot1 >= uv1.usedtime + uv1.count)
+			setActive(var_4_3, arg_4_1 < var_3_0.usedtime)
+			setActive(var_4_4, arg_4_1 >= var_3_0.usedtime + var_3_0.count)
 		end
 	end)
-
-	slot3 = slot0.itemList
-
-	slot3:align(slot0.day)
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.id)
+	arg_3_0.itemList:align(arg_3_0.day)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, arg_3_0.id)
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.itemList:align(slot0.day)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	arg_7_0.itemList:align(arg_7_0.day)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

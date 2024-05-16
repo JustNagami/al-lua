@@ -1,18 +1,18 @@
-slot0 = class("EffectBullet", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var_0_0 = class("EffectBullet", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function slot0.GetBaseOrder(slot0)
-	if slot0.mark == "N" then
-		return uv0.super.GetBaseOrder(slot0)
+function var_0_0.GetBaseOrder(arg_1_0)
+	if arg_1_0.mark == "N" then
+		return var_0_0.super.GetBaseOrder(arg_1_0)
 	else
 		return 500
 	end
 end
 
-function slot0.InTimeRiver(slot0)
+function var_0_0.InTimeRiver(arg_2_0)
 	return true
 end
 
-slot1 = {
+local var_0_1 = {
 	S = {
 		0,
 		1
@@ -31,63 +31,67 @@ slot1 = {
 	}
 }
 
-function slot0.InitUI(slot0, slot1)
-	slot0.mark = slot1.mark
+function var_0_0.InitUI(arg_3_0, arg_3_1)
+	arg_3_0.mark = arg_3_1.mark
 
-	slot0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Bullet_" .. slot0.mark)
+	arg_3_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Bullet_" .. arg_3_0.mark)
 
-	slot0.dir = NewPos(unpack(uv0[slot0.mark]))
+	arg_3_0.dir = NewPos(unpack(var_0_1[arg_3_0.mark]))
 end
 
-function slot0.GetSpeedDis(slot0)
+function var_0_0.GetSpeedDis(arg_4_0)
 	return 2
 end
 
-function slot0.TimeUpdate(slot0, slot1)
-	if not slot0.responder:InRange(slot0.realPos + slot0.dir * slot0:GetSpeedDis() * slot1) then
-		slot0:Destroy()
+function var_0_0.TimeUpdate(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0.dir * arg_5_0:GetSpeedDis() * arg_5_1
+
+	if not arg_5_0.responder:InRange(arg_5_0.realPos + var_5_0) then
+		arg_5_0:Destroy()
 
 		return
 	end
 
-	slot0:MoveUpdate(slot2)
-	slot0:TimeTrigger(slot1)
+	arg_5_0:MoveUpdate(var_5_0)
+	arg_5_0:TimeTrigger(arg_5_1)
 end
 
-function slot0.MoveUpdate(slot0, slot1)
-	if slot1.x == 0 and slot1.y == 0 then
-		return slot1
+function var_0_0.MoveUpdate(arg_6_0, arg_6_1)
+	if arg_6_1.x == 0 and arg_6_1.y == 0 then
+		return arg_6_1
 	end
 
-	slot0.realPos = slot0.realPos + slot1
+	arg_6_0.realPos = arg_6_0.realPos + arg_6_1
 
-	slot0:UpdatePosition()
+	arg_6_0:UpdatePosition()
 
-	if math.abs((slot0.realPos - slot0.pos + slot1).x) >= 0.5 or math.abs(slot2.y) >= 0.5 then
-		slot2.x = math.abs(slot2.x) < 0.5 and 0 or slot2.x < 0 and -1 or 1
-		slot2.y = math.abs(slot2.y) < 0.5 and 0 or slot2.y < 0 and -1 or 1
+	local var_6_0 = arg_6_0.realPos - arg_6_0.pos + arg_6_1
 
-		slot0:UpdatePos(slot0.pos + slot2)
+	if math.abs(var_6_0.x) >= 0.5 or math.abs(var_6_0.y) >= 0.5 then
+		var_6_0.x = math.abs(var_6_0.x) < 0.5 and 0 or var_6_0.x < 0 and -1 or 1
+		var_6_0.y = math.abs(var_6_0.y) < 0.5 and 0 or var_6_0.y < 0 and -1 or 1
+
+		arg_6_0:UpdatePos(arg_6_0.pos + var_6_0)
 	end
 end
 
-function slot0.UpdatePos(slot0, slot1)
-	slot0.responder:UpdatePos(slot0, slot1)
-	uv0.super.UpdatePos(slot0, slot1)
+function var_0_0.UpdatePos(arg_7_0, arg_7_1)
+	arg_7_0.responder:UpdatePos(arg_7_0, arg_7_1)
+	var_0_0.super.UpdatePos(arg_7_0, arg_7_1)
 end
 
-function slot0.TimeTrigger(slot0, slot1)
-	if slot0.responder:CollideRyza(slot0) then
-		slot0:Calling("hit", {
+function var_0_0.TimeTrigger(arg_8_0, arg_8_1)
+	if arg_8_0.responder:CollideRyza(arg_8_0) then
+		arg_8_0:Calling("hit", {
 			1,
-			slot0.realPos
+			arg_8_0.realPos
 		}, MoveRyza)
-		slot0:Destroy()
+		arg_8_0:Destroy()
 	end
 end
 
-function slot0.GetCollideRange(slot0)
-	slot1 = {
+function var_0_0.GetCollideRange(arg_9_0)
+	local var_9_0 = {
 		{
 			-0.1875,
 			0.1875
@@ -98,23 +102,23 @@ function slot0.GetCollideRange(slot0)
 		}
 	}
 
-	if slot0.dir.x < 0 then
-		slot1[1] = {
+	if arg_9_0.dir.x < 0 then
+		var_9_0[1] = {
 			-0.5,
 			0.25
 		}
-	elseif slot0.dir.x > 0 then
-		slot1[1] = {
+	elseif arg_9_0.dir.x > 0 then
+		var_9_0[1] = {
 			-0.25,
 			0.5
 		}
-	elseif slot0.dir.y < 0 then
-		slot1[2] = {
+	elseif arg_9_0.dir.y < 0 then
+		var_9_0[2] = {
 			-0.5,
 			0.25
 		}
-	elseif slot0.dir.y > 0 then
-		slot1[1] = {
+	elseif arg_9_0.dir.y > 0 then
+		var_9_0[1] = {
 			-0.25,
 			0.5
 		}
@@ -123,8 +127,8 @@ function slot0.GetCollideRange(slot0)
 	end
 
 	return {
-		slot1
+		var_9_0
 	}
 end
 
-return slot0
+return var_0_0

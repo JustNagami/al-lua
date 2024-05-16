@@ -1,58 +1,60 @@
-slot0 = class("RepairPanel", import("..base.BasePanel"))
+﻿local var_0_0 = class("RepairPanel", import("..base.BasePanel"))
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
 
-	slot0.desc = slot0:findTF("window/desc")
-	slot0.descFree = slot0:findTF("window/text_free")
-	slot0.descCharge = slot0:findTF("window/text_charge")
-	slot0.free = slot0:findTF("window/text_free/time")
-	slot0.charge = slot0:findTF("window/text_charge/time")
-	slot0.diamond = slot0:findTF("window/diamond")
-	slot0.cost = findTF(slot0.diamond, "cost")
-	slot0.cancel = slot0:findTF("window/actions/cancel_button")
-	slot0.confirm = slot0:findTF("window/actions/use_button")
-	slot0.back = slot0:findTF("top/btnBack")
-	slot0.onConfirm = nil
-	slot0.onCancel = nil
+	arg_1_0.desc = arg_1_0:findTF("window/desc")
+	arg_1_0.descFree = arg_1_0:findTF("window/text_free")
+	arg_1_0.descCharge = arg_1_0:findTF("window/text_charge")
+	arg_1_0.free = arg_1_0:findTF("window/text_free/time")
+	arg_1_0.charge = arg_1_0:findTF("window/text_charge/time")
+	arg_1_0.diamond = arg_1_0:findTF("window/diamond")
+	arg_1_0.cost = findTF(arg_1_0.diamond, "cost")
+	arg_1_0.cancel = arg_1_0:findTF("window/actions/cancel_button")
+	arg_1_0.confirm = arg_1_0:findTF("window/actions/use_button")
+	arg_1_0.back = arg_1_0:findTF("top/btnBack")
+	arg_1_0.onConfirm = nil
+	arg_1_0.onCancel = nil
 end
 
-function slot0.set(slot0, slot1, slot2, slot3, slot4)
-	slot0.repairTimes = slot1
-	slot0.freeTimes = slot2
-	slot0.chargeTimes = slot3
-	slot0.chargeDiamond = slot4
-	slot5 = slot0.freeTimes - math.min(slot0.repairTimes, slot0.freeTimes)
+function var_0_0.set(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	arg_2_0.repairTimes = arg_2_1
+	arg_2_0.freeTimes = arg_2_2
+	arg_2_0.chargeTimes = arg_2_3
+	arg_2_0.chargeDiamond = arg_2_4
 
-	setText(slot0.free, slot5 .. "/" .. slot0.freeTimes)
-	setText(slot0.charge, slot0.chargeTimes - (slot0.repairTimes - (slot0.freeTimes - slot5)) .. "/" .. slot0.chargeTimes)
-	setText(slot0.cost, slot0.chargeDiamond)
-	setActive(slot0.descFree, slot5 > 0)
-	setActive(slot0.descCharge, slot5 <= 0)
-	setText(slot0.desc, i18n("battle_repair_special_tip"))
-	setText(slot0.descFree, i18n("battle_repair_normal_name"))
-	setText(slot0.descCharge, i18n("battle_repair_special_name"))
+	local var_2_0 = arg_2_0.freeTimes - math.min(arg_2_0.repairTimes, arg_2_0.freeTimes)
+	local var_2_1 = arg_2_0.chargeTimes - (arg_2_0.repairTimes - (arg_2_0.freeTimes - var_2_0))
 
-	slot7 = slot0.repairTimes < slot0.freeTimes + slot0.chargeTimes
+	setText(arg_2_0.free, var_2_0 .. "/" .. arg_2_0.freeTimes)
+	setText(arg_2_0.charge, var_2_1 .. "/" .. arg_2_0.chargeTimes)
+	setText(arg_2_0.cost, arg_2_0.chargeDiamond)
+	setActive(arg_2_0.descFree, var_2_0 > 0)
+	setActive(arg_2_0.descCharge, var_2_0 <= 0)
+	setText(arg_2_0.desc, i18n("battle_repair_special_tip"))
+	setText(arg_2_0.descFree, i18n("battle_repair_normal_name"))
+	setText(arg_2_0.descCharge, i18n("battle_repair_special_name"))
 
-	setActive(slot0.diamond, slot7 and slot0.freeTimes <= slot0.repairTimes)
-	setButtonEnabled(slot0.confirm, slot7)
-	setGray(slot0.confirm, not slot7, true)
-	onButton(slot0, slot0.back, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	local var_2_2 = arg_2_0.repairTimes < arg_2_0.freeTimes + arg_2_0.chargeTimes
+
+	setActive(arg_2_0.diamond, var_2_2 and arg_2_0.repairTimes >= arg_2_0.freeTimes)
+	setButtonEnabled(arg_2_0.confirm, var_2_2)
+	setGray(arg_2_0.confirm, not var_2_2, true)
+	onButton(arg_2_0, arg_2_0.back, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.cancel, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0.cancel, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.confirm, function ()
-		if uv0.onConfirm then
-			uv0.onConfirm()
+	onButton(arg_2_0, arg_2_0.confirm, function()
+		if arg_2_0.onConfirm then
+			arg_2_0.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end
 
-return slot0
+return var_0_0

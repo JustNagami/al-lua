@@ -1,61 +1,65 @@
-slot0 = class("NewBattleResultUtil")
+﻿local var_0_0 = class("NewBattleResultUtil")
 
-function slot0.Score2Grade(slot0, slot1)
-	slot2 = {
+function var_0_0.Score2Grade(arg_1_0, arg_1_1)
+	local var_1_0 = {
 		"d",
 		"c",
 		"b",
 		"a",
 		"s"
 	}
-	slot3, slot4, slot5 = nil
+	local var_1_1
+	local var_1_2
+	local var_1_3
 
-	if slot0 > 0 then
-		slot5 = slot2[slot0 + 1]
-		slot3 = "battlescore/battle_score_" .. slot5 .. "/letter_" .. slot5
-		slot4 = "battlescore/battle_score_" .. slot5 .. "/label_" .. slot5
+	if arg_1_0 > 0 then
+		var_1_3 = var_1_0[arg_1_0 + 1]
+		var_1_1 = "battlescore/battle_score_" .. var_1_3 .. "/letter_" .. var_1_3
+		var_1_2 = "battlescore/battle_score_" .. var_1_3 .. "/label_" .. var_1_3
 	else
-		slot6 = nil
+		local var_1_4
 
-		if slot1 == ys.Battle.BattleConst.DEAD_FLAG then
-			slot5 = slot2[2]
-			slot6 = "flag_destroy"
+		if arg_1_1 == ys.Battle.BattleConst.DEAD_FLAG then
+			var_1_3 = var_1_0[2]
+			var_1_4 = "flag_destroy"
 		else
-			slot5 = slot2[1]
+			var_1_3 = var_1_0[1]
 		end
 
-		slot3 = "battlescore/battle_score_" .. slot5 .. "/letter_" .. slot5
-		slot4 = "battlescore/battle_score_" .. slot5 .. "/label_" .. (slot6 or slot5)
+		var_1_1 = "battlescore/battle_score_" .. var_1_3 .. "/letter_" .. var_1_3
+		var_1_2 = "battlescore/battle_score_" .. var_1_3 .. "/label_" .. (var_1_4 or var_1_3)
 	end
 
-	return slot3, slot4
+	return var_1_1, var_1_2
 end
 
-function slot0.Score2Bg(slot0)
-	return slot0 > 1 and "Victory" or "Failed"
+function var_0_0.Score2Bg(arg_2_0)
+	return arg_2_0 > 1 and "Victory" or "Failed"
 end
 
-function slot0.GetChapterName(slot0)
-	return pg.expedition_data_template[slot0.stageId] and slot1.name or ""
+function var_0_0.GetChapterName(arg_3_0)
+	local var_3_0 = pg.expedition_data_template[arg_3_0.stageId]
+
+	return var_3_0 and var_3_0.name or ""
 end
 
-function slot1(slot0, slot1)
-	if slot0 == 1 or slot0 == 4 or slot0 == 8 then
-		return slot1.score > 1
-	elseif slot0 == 2 or slot0 == 3 then
-		return not slot1.statistics._deadUnit
-	elseif slot0 == 6 then
-		return slot1.statistics._boss_destruct < 1
-	elseif slot0 == 5 then
-		return not slot1.statistics._badTime
-	elseif slot0 == 7 then
+local function var_0_1(arg_4_0, arg_4_1)
+	if arg_4_0 == 1 or arg_4_0 == 4 or arg_4_0 == 8 then
+		return arg_4_1.score > 1
+	elseif arg_4_0 == 2 or arg_4_0 == 3 then
+		return not arg_4_1.statistics._deadUnit
+	elseif arg_4_0 == 6 then
+		return arg_4_1.statistics._boss_destruct < 1
+	elseif arg_4_0 == 5 then
+		return not arg_4_1.statistics._badTime
+	elseif arg_4_0 == 7 then
 		return true
 	end
 
 	return nil
 end
 
-function slot2(slot0)
+local function var_0_2(arg_5_0)
 	return ({
 		"battle_result_victory",
 		"battle_result_undefeated",
@@ -65,53 +69,57 @@ function slot2(slot0)
 		"battle_result_boss_destruct",
 		"battle_preCombatLayer_damage_before_end",
 		"battle_result_defeat_all_enemys"
-	})[slot0]
+	})[arg_5_0]
 end
 
-function slot0.ColorObjective(slot0)
-	slot1, slot2 = nil
+function var_0_0.ColorObjective(arg_6_0)
+	local var_6_0
+	local var_6_1
+	local var_6_2
 
-	if slot0 == nil then
-		slot1 = "check_mark"
-		slot2 = "#FFFFFFFF"
-	elseif slot0 == true then
-		slot1 = "jiesuan_bg22"
-		slot2 = "#FFFFFFFF"
+	if arg_6_0 == nil then
+		var_6_0 = "check_mark"
+		var_6_2 = "#FFFFFFFF"
+	elseif arg_6_0 == true then
+		var_6_0 = "jiesuan_bg22"
+		var_6_2 = "#FFFFFFFF"
 	else
-		slot1 = "jiesuan_bg23"
-		slot2 = "#FFFFFF80"
+		var_6_0 = "jiesuan_bg23"
+		var_6_2 = "#FFFFFF80"
 	end
 
-	return slot1, slot2
+	return var_6_0, var_6_2
 end
 
-function slot0.GetObjectives(slot0)
-	slot1 = {}
-	slot2 = pg.expedition_data_template[slot0.stageId]
+function var_0_0.GetObjectives(arg_7_0)
+	local var_7_0 = {}
+	local var_7_1 = pg.expedition_data_template[arg_7_0.stageId]
 
-	function slot3(slot0)
-		if not slot0 or type(slot0) ~= "table" then
+	local function var_7_2(arg_8_0)
+		if not arg_8_0 or type(arg_8_0) ~= "table" then
 			return
 		end
 
-		slot3, slot4 = uv3.ColorObjective(uv1(slot0[1], uv2))
+		local var_8_0 = i18n(var_0_2(arg_8_0[1]), arg_8_0[2])
+		local var_8_1 = var_0_1(arg_8_0[1], arg_7_0)
+		local var_8_2, var_8_3 = var_0_0.ColorObjective(var_8_1)
 
-		table.insert(uv4, {
-			text = setColorStr(i18n(uv0(slot0[1]), slot0[2]), slot4),
-			icon = slot3
+		table.insert(var_7_0, {
+			text = setColorStr(var_8_0, var_8_3),
+			icon = var_8_2
 		})
 	end
 
-	for slot7 = 1, 3 do
-		slot3(slot2["objective_" .. slot7])
+	for iter_7_0 = 1, 3 do
+		var_7_2(var_7_1["objective_" .. iter_7_0])
 	end
 
-	return slot1
+	return var_7_0
 end
 
-function slot0.IsOpBonus(slot0)
-	for slot4, slot5 in ipairs(slot0) do
-		if pg.benefit_buff_template[slot5].benefit_type == Chapter.OPERATION_BUFF_TYPE_EXP then
+function var_0_0.IsOpBonus(arg_9_0)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0) do
+		if pg.benefit_buff_template[iter_9_1].benefit_type == Chapter.OPERATION_BUFF_TYPE_EXP then
 			return true
 		end
 	end
@@ -119,27 +127,29 @@ function slot0.IsOpBonus(slot0)
 	return false
 end
 
-function slot0.GetPlayerExpOffset(slot0, slot1)
-	slot2 = slot0
-	slot3 = slot2.level
-	slot4 = slot1.level
-	slot5 = slot1.exp - slot2.exp
+function var_0_0.GetPlayerExpOffset(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0
+	local var_10_1 = var_10_0.level
+	local var_10_2 = arg_10_1.level
+	local var_10_3 = arg_10_1.exp - var_10_0.exp
 
-	while slot3 < slot4 do
-		slot5 = slot5 + pg.user_level[slot3].exp
-		slot3 = slot3 + 1
+	while var_10_1 < var_10_2 do
+		var_10_3 = var_10_3 + pg.user_level[var_10_1].exp
+		var_10_1 = var_10_1 + 1
 	end
 
-	if slot3 == pg.user_level[#pg.user_level].level then
-		slot5 = 0
+	if var_10_1 == pg.user_level[#pg.user_level].level then
+		var_10_3 = 0
 	end
 
-	return slot5
+	return var_10_3
 end
 
-function slot0.HasSubShip(slot0)
-	for slot4, slot5 in ipairs(slot0) do
-		if table.contains(TeamType.SubShipType, ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot5.configId).type) then
+function var_0_0.HasSubShip(arg_11_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0) do
+		local var_11_0 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter_11_1.configId).type
+
+		if table.contains(TeamType.SubShipType, var_11_0) then
 			return true
 		end
 	end
@@ -147,9 +157,11 @@ function slot0.HasSubShip(slot0)
 	return false
 end
 
-function slot0.HasSurfaceShip(slot0)
-	for slot4, slot5 in ipairs(slot0) do
-		if not table.contains(TeamType.SubShipType, ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot5.configId).type) then
+function var_0_0.HasSurfaceShip(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0) do
+		local var_12_0 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter_12_1.configId).type
+
+		if not table.contains(TeamType.SubShipType, var_12_0) then
 			return true
 		end
 	end
@@ -157,109 +169,116 @@ function slot0.HasSurfaceShip(slot0)
 	return false
 end
 
-function slot0.SeparateSurfaceAndSubShips(slot0)
-	slot1 = {}
-	slot2 = {}
+function var_0_0.SeparateSurfaceAndSubShips(arg_13_0)
+	local var_13_0 = {}
+	local var_13_1 = {}
 
-	for slot6, slot7 in ipairs(slot0) do
-		if table.contains(TeamType.SubShipType, ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot7.configId).type) then
-			table.insert(slot2, slot7)
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0) do
+		local var_13_2 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter_13_1.configId).type
+
+		if table.contains(TeamType.SubShipType, var_13_2) then
+			table.insert(var_13_1, iter_13_1)
 		else
-			table.insert(slot1, slot7)
+			table.insert(var_13_0, iter_13_1)
 		end
 	end
 
-	return slot1, slot2
+	return var_13_0, var_13_1
 end
 
-function slot0.SeparateMvpShip(slot0, slot1, slot2)
-	if not slot1 or slot1 == 0 then
-		slot1 = slot2
+function var_0_0.SeparateMvpShip(arg_14_0, arg_14_1, arg_14_2)
+	if not arg_14_1 or arg_14_1 == 0 then
+		arg_14_1 = arg_14_2
 	end
 
-	slot3 = nil
-	slot4 = {}
-	slot5 = {}
-	slot6 = {}
+	local var_14_0
+	local var_14_1 = {}
+	local var_14_2 = {}
+	local var_14_3 = {}
 
-	for slot10, slot11 in ipairs(slot0) do
-		if slot11.id ~= slot1 then
-			if TeamType.GetTeamFromShipType(ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(slot11.configId).type) == TeamType.Vanguard then
-				table.insert(slot4, slot11)
-			elseif slot13 == TeamType.Main then
-				table.insert(slot5, slot11)
-			elseif slot13 == TeamType.Submarine then
-				table.insert(slot6, slot11)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0) do
+		if iter_14_1.id ~= arg_14_1 then
+			local var_14_4 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter_14_1.configId).type
+			local var_14_5 = TeamType.GetTeamFromShipType(var_14_4)
+
+			if var_14_5 == TeamType.Vanguard then
+				table.insert(var_14_1, iter_14_1)
+			elseif var_14_5 == TeamType.Main then
+				table.insert(var_14_2, iter_14_1)
+			elseif var_14_5 == TeamType.Submarine then
+				table.insert(var_14_3, iter_14_1)
 			end
 		else
-			slot3 = slot11
+			var_14_0 = iter_14_1
 		end
 	end
 
-	return slot4, slot5, slot6, slot3
+	return var_14_1, var_14_2, var_14_3, var_14_0
 end
 
-function slot0.SpecialInsertItem(slot0, slot1, slot2, slot3, slot4)
-	for slot8, slot9 in ipairs(slot1) do
-		table.insert(slot0, slot9)
+function var_0_0.SpecialInsertItem(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
+		table.insert(arg_15_0, iter_15_1)
 	end
 
-	for slot8, slot9 in ipairs(slot2) do
-		table.insert(slot0, slot9)
+	for iter_15_2, iter_15_3 in ipairs(arg_15_2) do
+		table.insert(arg_15_0, iter_15_3)
 	end
 
-	for slot8, slot9 in ipairs(slot3) do
-		table.insert(slot0, slot9)
+	for iter_15_4, iter_15_5 in ipairs(arg_15_3) do
+		table.insert(arg_15_0, iter_15_5)
 	end
 
-	table.insert(slot0, #slot0, slot4)
+	table.insert(arg_15_0, #arg_15_0, arg_15_4)
 end
 
-function slot0.GetShipExpOffset(slot0, slot1)
-	assert(slot1, slot0:getConfig("name"))
+function var_0_0.GetShipExpOffset(arg_16_0, arg_16_1)
+	assert(arg_16_1, arg_16_0:getConfig("name"))
 
-	if slot0.level < slot1.level then
-		slot2 = slot0:getConfig("rarity")
-		slot3 = 0
+	if arg_16_0.level < arg_16_1.level then
+		local var_16_0 = arg_16_0:getConfig("rarity")
+		local var_16_1 = 0
 
-		for slot7 = slot0.level, slot1.level - 1 do
-			slot3 = slot3 + getExpByRarityFromLv1(slot2, slot7)
+		for iter_16_0 = arg_16_0.level, arg_16_1.level - 1 do
+			var_16_1 = var_16_1 + getExpByRarityFromLv1(var_16_0, iter_16_0)
 		end
 
-		return slot3 + slot1:getExp() - slot0:getExp()
+		return var_16_1 + arg_16_1:getExp() - arg_16_0:getExp()
 	else
-		return math.ceil(slot1:getExp() - slot0:getExp())
+		return math.ceil(arg_16_1:getExp() - arg_16_0:getExp())
 	end
 end
 
-function slot0.GetSeasonScoreOffset(slot0, slot1)
-	return slot1.score - slot0.score
+function var_0_0.GetSeasonScoreOffset(arg_17_0, arg_17_1)
+	return arg_17_1.score - arg_17_0.score
 end
 
-function slot0.GetMaxOutput(slot0, slot1)
-	slot2 = 0
+function var_0_0.GetMaxOutput(arg_18_0, arg_18_1)
+	local var_18_0 = 0
 
-	if slot1.mvpShipID == -1 then
-		for slot6, slot7 in ipairs(slot0) do
-			slot2 = math.max((slot1[slot7.id] or {}).output or 0, slot2)
+	if arg_18_1.mvpShipID == -1 then
+		for iter_18_0, iter_18_1 in ipairs(arg_18_0) do
+			local var_18_1 = arg_18_1[iter_18_1.id] or {}
+
+			var_18_0 = math.max(var_18_1.output or 0, var_18_0)
 		end
-	elseif slot1.mvpShipID and slot1.mvpShipID ~= 0 then
-		slot2 = (slot1[slot1.mvpShipID] or {}).output or 0
+	elseif arg_18_1.mvpShipID and arg_18_1.mvpShipID ~= 0 then
+		var_18_0 = (arg_18_1[arg_18_1.mvpShipID] or {}).output or 0
 	end
 
-	return slot2
+	return var_18_0
 end
 
-function slot0.RemoveNonStatisticShips(slot0, slot1)
-	slot2 = {}
+function var_0_0.RemoveNonStatisticShips(arg_19_0, arg_19_1)
+	local var_19_0 = {}
 
-	for slot6, slot7 in ipairs(slot0) do
-		if slot1[slot7.id] then
-			table.insert(slot2, slot7)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0) do
+		if arg_19_1[iter_19_1.id] then
+			table.insert(var_19_0, iter_19_1)
 		end
 	end
 
-	return slot2
+	return var_19_0
 end
 
-return slot0
+return var_0_0

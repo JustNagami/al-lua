@@ -1,194 +1,219 @@
-slot0 = class("ColoringProxy", import(".NetProxy"))
+﻿local var_0_0 = class("ColoringProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.colorGroups = {}
-	slot0.colorItems = {}
+function var_0_0.register(arg_1_0)
+	arg_1_0.colorGroups = {}
+	arg_1_0.colorItems = {}
 end
 
-function slot0.netUpdateData(slot0, slot1)
-	slot0.startTime = slot1.start_time
-	slot2 = {}
+function var_0_0.netUpdateData(arg_2_0, arg_2_1)
+	arg_2_0.startTime = arg_2_1.start_time
 
-	_.each(slot1.award_list, function (slot0)
-		uv0[slot0.id] = _.map(slot0.award_list, function (slot0)
+	local var_2_0 = {}
+
+	_.each(arg_2_1.award_list, function(arg_3_0)
+		var_2_0[arg_3_0.id] = _.map(arg_3_0.award_list, function(arg_4_0)
 			return {
-				type = slot0.type,
-				id = slot0.id,
-				count = slot0.number
+				type = arg_4_0.type,
+				id = arg_4_0.id,
+				count = arg_4_0.number
 			}
 		end)
 	end)
 
-	slot3 = {}
+	local var_2_1 = {}
+	local var_2_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
 
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) and not slot5:isEnd() then
-		slot3 = slot5:getConfig("config_data")
+	if var_2_2 and not var_2_2:isEnd() then
+		var_2_1 = var_2_2:getConfig("config_data")
 	end
 
-	slot0.colorGroups = {}
+	arg_2_0.colorGroups = {}
 
-	_.each(slot3, function (slot0)
-		slot2 = slot0[2]
+	_.each(var_2_1, function(arg_5_0)
+		local var_5_0 = arg_5_0[1]
+		local var_5_1 = arg_5_0[2]
+		local var_5_2 = ColorGroup.New(var_5_0)
 
-		if ColorGroup.New(slot0[1]):canBeCustomised() and COLORING_ACTIVITY_CUSTOMIZED_BANNED then
+		if var_5_2:canBeCustomised() and COLORING_ACTIVITY_CUSTOMIZED_BANNED then
 			return
 		end
 
-		slot3:setHasAward(slot2 > 0)
+		var_5_2:setHasAward(var_5_1 > 0)
 
-		if slot1 == uv0.id then
-			_.each(uv0.cell_list, function (slot0)
-				uv0:setFill(slot0.row, slot0.column, slot0.color)
+		if var_5_0 == arg_2_1.id then
+			_.each(arg_2_1.cell_list, function(arg_6_0)
+				var_5_2:setFill(arg_6_0.row, arg_6_0.column, arg_6_0.color)
 			end)
 		end
 
-		slot3:setDrops(uv1[slot1] or {})
+		local var_5_3 = var_2_0[var_5_0] or {}
 
-		if slot2 > 0 and #slot4 > 0 then
-			slot3:setState(ColorGroup.StateAchieved)
-		elseif slot1 < uv0.id or slot3:isAllFill() then
-			slot3:setState(ColorGroup.StateFinish)
+		var_5_2:setDrops(var_5_3)
+
+		if var_5_1 > 0 and #var_5_3 > 0 then
+			var_5_2:setState(ColorGroup.StateAchieved)
+		elseif var_5_0 < arg_2_1.id or var_5_2:isAllFill() then
+			var_5_2:setState(ColorGroup.StateFinish)
 		end
 
-		table.insert(uv2.colorGroups, slot3)
+		table.insert(arg_2_0.colorGroups, var_5_2)
 	end)
 
-	slot6 = 0
+	local var_2_3 = 0
 
-	for slot10 = #slot0.colorGroups, 1, -1 do
-		if slot0.colorGroups[slot10]:getState() == ColorGroup.StateFinish or slot11 == ColorGroup.StateAchieved then
-			slot6 = slot10
+	for iter_2_0 = #arg_2_0.colorGroups, 1, -1 do
+		local var_2_4 = arg_2_0.colorGroups[iter_2_0]:getState()
+
+		if var_2_4 == ColorGroup.StateFinish or var_2_4 == ColorGroup.StateAchieved then
+			var_2_3 = iter_2_0
 
 			break
 		end
 	end
 
-	for slot10 = slot6 - 1, 1, -1 do
-		if not slot0.colorGroups[slot10]:getState() then
-			slot11:setState(ColorGroup.StateFinish)
+	for iter_2_1 = var_2_3 - 1, 1, -1 do
+		local var_2_5 = arg_2_0.colorGroups[iter_2_1]
+
+		if not var_2_5:getState() then
+			var_2_5:setState(ColorGroup.StateFinish)
 		end
 	end
 
-	if slot6 + 1 <= #slot0.colorGroups then
-		slot0.colorGroups[slot6 + 1]:setState(slot6 == 0 and ColorGroup.StateColoring or ColorGroup.StateLock)
+	if var_2_3 + 1 <= #arg_2_0.colorGroups then
+		arg_2_0.colorGroups[var_2_3 + 1]:setState(var_2_3 == 0 and ColorGroup.StateColoring or ColorGroup.StateLock)
 	end
 
-	for slot10 = slot6 + 2, #slot0.colorGroups do
-		if not slot0.colorGroups[slot10]:getState() then
-			slot11:setState(ColorGroup.StateLock)
+	for iter_2_2 = var_2_3 + 2, #arg_2_0.colorGroups do
+		local var_2_6 = arg_2_0.colorGroups[iter_2_2]
+
+		if not var_2_6:getState() then
+			var_2_6:setState(ColorGroup.StateLock)
 		end
 	end
 
-	slot0:checkState()
+	arg_2_0:checkState()
 
-	slot0.colorItems = {}
+	arg_2_0.colorItems = {}
 
-	for slot10, slot11 in ipairs(slot1.color_list) do
-		slot0.colorItems[slot11.id] = slot11.number
+	for iter_2_3, iter_2_4 in ipairs(arg_2_1.color_list) do
+		arg_2_0.colorItems[iter_2_4.id] = iter_2_4.number
 	end
 end
 
-function slot0.getColorItems(slot0)
-	return slot0.colorItems
+function var_0_0.getColorItems(arg_7_0)
+	return arg_7_0.colorItems
 end
 
-function slot0.getColorGroups(slot0)
-	return slot0.colorGroups
+function var_0_0.getColorGroups(arg_8_0)
+	return arg_8_0.colorGroups
 end
 
-function slot0.getColorGroup(slot0, slot1)
-	return _.detect(slot0.colorGroups, function (slot0)
-		return slot0.id == uv0
+function var_0_0.getColorGroup(arg_9_0, arg_9_1)
+	return _.detect(arg_9_0.colorGroups, function(arg_10_0)
+		return arg_10_0.id == arg_9_1
 	end)
 end
 
-function slot0.checkState(slot0)
-	slot1 = false
+function var_0_0.checkState(arg_11_0)
+	local var_11_0 = false
+	local var_11_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
 
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) and not slot3:isEnd() then
-		slot4 = pg.TimeMgr.GetInstance()
-		slot9 = slot4
-		slot5 = slot4:DiffDay(slot0.startTime, slot4.GetServerTime(slot9)) + 1
+	if var_11_1 and not var_11_1:isEnd() then
+		local var_11_2 = pg.TimeMgr.GetInstance()
+		local var_11_3 = var_11_2:DiffDay(arg_11_0.startTime, var_11_2:GetServerTime()) + 1
 
-		for slot9, slot10 in ipairs(slot0.colorGroups) do
-			if slot10:getState() == ColorGroup.StateColoring and slot10:isAllFill() then
-				slot10:setState(ColorGroup.StateFinish)
+		for iter_11_0, iter_11_1 in ipairs(arg_11_0.colorGroups) do
+			if iter_11_1:getState() == ColorGroup.StateColoring and iter_11_1:isAllFill() then
+				iter_11_1:setState(ColorGroup.StateFinish)
 
-				slot1 = true
+				var_11_0 = true
 
 				break
-			elseif slot9 < slot5 and slot10:getState() == ColorGroup.StateAchieved and slot0.colorGroups[slot9 + 1] and slot11:getState() == ColorGroup.StateLock then
-				slot11:setState(ColorGroup.StateColoring)
+			elseif iter_11_0 < var_11_3 and iter_11_1:getState() == ColorGroup.StateAchieved then
+				local var_11_4 = arg_11_0.colorGroups[iter_11_0 + 1]
 
-				slot1 = true
+				if var_11_4 and var_11_4:getState() == ColorGroup.StateLock then
+					var_11_4:setState(ColorGroup.StateColoring)
+
+					var_11_0 = true
+
+					break
+				end
+			end
+		end
+	end
+
+	return var_11_0
+end
+
+function var_0_0.CheckTodayTip(arg_12_0)
+	local var_12_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
+
+	if var_12_0 and not var_12_0:isEnd() and arg_12_0.startTime then
+		local var_12_1 = pg.TimeMgr.GetInstance()
+		local var_12_2 = math.min(var_12_1:DiffDay(arg_12_0.startTime, var_12_1:GetServerTime()) + 1, #arg_12_0.colorGroups)
+		local var_12_3 = arg_12_0:GetViewedPage()
+
+		for iter_12_0, iter_12_1 in ipairs(arg_12_0.colorGroups) do
+			if var_12_2 < iter_12_0 then
+				break
+			end
+
+			if iter_12_1:getState() == ColorGroup.StateLock then
+				break
+			end
+
+			if iter_12_1:getState() ~= ColorGroup.StateAchieved and not iter_12_1:canBeCustomised() then
+				if var_12_3 < iter_12_0 then
+					return true
+				end
+
+				if iter_12_1:getState() == ColorGroup.StateFinish or iter_12_1:HasEnoughItem2FillAll(arg_12_0:getColorItems()) then
+					return true
+				end
 
 				break
 			end
 		end
 	end
-
-	return slot1
 end
 
-function slot0.CheckTodayTip(slot0)
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) and not slot2:isEnd() and slot0.startTime then
-		slot3 = pg.TimeMgr.GetInstance()
-		slot9 = slot3
-		slot4 = math.min(slot3:DiffDay(slot0.startTime, slot3.GetServerTime(slot9)) + 1, #slot0.colorGroups)
-		slot5 = slot0:GetViewedPage()
-
-		for slot9, slot10 in ipairs(slot0.colorGroups) do
-			if slot4 < slot9 then
-				break
-			end
-
-			if slot10:getState() == ColorGroup.StateLock then
-				break
-			end
-
-			if slot10:getState() ~= ColorGroup.StateAchieved and not slot10:canBeCustomised() then
-				if slot5 < slot9 then
-					return true
-				end
-
-				if slot10:getState() == ColorGroup.StateFinish or slot10:HasEnoughItem2FillAll(slot0:getColorItems()) then
-					return true
-				end
-
-				break
-			end
-		end
-	end
-end
-
-function slot0.IsALLAchieve(slot0)
-	if #slot0.colorGroups == 0 then
+function var_0_0.IsALLAchieve(arg_13_0)
+	if #arg_13_0.colorGroups == 0 then
 		return false
 	end
 
-	return _.all(slot0.colorGroups, function (slot0)
-		return slot0:canBeCustomised() or slot0:getState() == ColorGroup.StateAchieved
+	return _.all(arg_13_0.colorGroups, function(arg_14_0)
+		return arg_14_0:canBeCustomised() or arg_14_0:getState() == ColorGroup.StateAchieved
 	end)
 end
 
-function slot0.GetViewedPage(slot0)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) or slot1:isEnd() then
+function var_0_0.GetViewedPage(arg_15_0)
+	local var_15_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
+
+	if not var_15_0 or var_15_0:isEnd() then
 		return 0
 	end
 
-	return PlayerPrefs.GetInt("pixelDraw_maxPage_" .. slot1.id .. "_" .. getProxy(PlayerProxy):getRawData().id, 0)
+	local var_15_1 = getProxy(PlayerProxy):getRawData()
+
+	return PlayerPrefs.GetInt("pixelDraw_maxPage_" .. var_15_0.id .. "_" .. var_15_1.id, 0)
 end
 
-function slot0.SetViewedPage(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) or slot2:isEnd() then
+function var_0_0.SetViewedPage(arg_16_0, arg_16_1)
+	local var_16_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
+
+	if not var_16_0 or var_16_0:isEnd() then
 		return
 	end
 
-	if slot1 <= slot0:GetViewedPage() then
+	if arg_16_1 <= arg_16_0:GetViewedPage() then
 		return
 	end
 
-	return PlayerPrefs.SetInt("pixelDraw_maxPage_" .. slot2.id .. "_" .. getProxy(PlayerProxy):getRawData().id, slot1)
+	local var_16_1 = getProxy(PlayerProxy):getRawData()
+
+	return PlayerPrefs.SetInt("pixelDraw_maxPage_" .. var_16_0.id .. "_" .. var_16_1.id, arg_16_1)
 end
 
-return slot0
+return var_0_0

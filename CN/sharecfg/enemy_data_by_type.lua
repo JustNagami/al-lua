@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.enemy_data_by_type = {
 	{
 		type_name = "驱逐",

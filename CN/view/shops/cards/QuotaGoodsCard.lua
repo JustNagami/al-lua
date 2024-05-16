@@ -1,66 +1,81 @@
-slot0 = class("QuotaGoodsCard", import(".BaseGoodsCard"))
+﻿local var_0_0 = class("QuotaGoodsCard", import(".BaseGoodsCard"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.go = slot1
-	slot0.tr = tf(slot1)
-	slot0.itemTF = findTF(slot0.tr, "item")
-	slot0.nameTxt = findTF(slot0.tr, "item/name_mask/name")
-	slot0.resIconTF = findTF(slot0.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	slot0.mask = slot0.tr:Find("mask")
-	slot0.countTF = findTF(slot0.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	slot0.discountTF = findTF(slot0.tr, "item/discount")
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = tf(arg_1_1)
+	arg_1_0.itemTF = findTF(arg_1_0.tr, "item")
+	arg_1_0.nameTxt = findTF(arg_1_0.tr, "item/name_mask/name")
+	arg_1_0.resIconTF = findTF(arg_1_0.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
+	arg_1_0.mask = arg_1_0.tr:Find("mask")
+	arg_1_0.countTF = findTF(arg_1_0.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
+	arg_1_0.discountTF = findTF(arg_1_0.tr, "item/discount")
 
-	setActive(slot0.discountTF, false)
+	setActive(arg_1_0.discountTF, false)
 
-	slot0.limitCountTF = findTF(slot0.tr, "item/count_contain/count"):GetComponent(typeof(Text))
-	slot0.limitCountLabelTF = findTF(slot0.tr, "item/count_contain/label"):GetComponent(typeof(Text))
-	slot0.limitCountLabelTF.text = i18n("quota_shop_owned")
-	slot0.limitTag = slot0.tr:Find("mask/tag/limit_tag")
+	arg_1_0.limitCountTF = findTF(arg_1_0.tr, "item/count_contain/count"):GetComponent(typeof(Text))
+	arg_1_0.limitCountLabelTF = findTF(arg_1_0.tr, "item/count_contain/label"):GetComponent(typeof(Text))
+	arg_1_0.limitCountLabelTF.text = i18n("quota_shop_owned")
+	arg_1_0.limitTag = arg_1_0.tr:Find("mask/tag/limit_tag")
 end
 
-function slot0.update(slot0, slot1, slot2, slot3, slot4)
-	slot0.goodsVO = slot1
-	slot5 = slot0.goodsVO:canPurchase()
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	arg_2_0.goodsVO = arg_2_1
 
-	setActive(slot0.mask, not slot5)
-	setActive(slot0.limitTag, not slot5)
-	onButton(slot0, slot0.mask, function ()
+	local var_2_0 = arg_2_0.goodsVO:canPurchase()
+
+	setActive(arg_2_0.mask, not var_2_0)
+	setActive(arg_2_0.limitTag, not var_2_0)
+	onButton(arg_2_0, arg_2_0.mask, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("quota_shop_limit_error"))
 	end, SFX_PANEL)
 
-	slot6 = slot1:getConfig("commodity_type")
+	local var_2_1 = arg_2_1:getConfig("commodity_type")
+	local var_2_2 = arg_2_1:getConfig("commodity_id")
+	local var_2_3 = Drop.New({
+		type = var_2_1,
+		id = var_2_2,
+		count = arg_2_1:getConfig("num")
+	})
 
-	updateDrop(slot0.itemTF, Drop.New({
-		type = slot6,
-		id = slot1:getConfig("commodity_id"),
-		count = slot1:getConfig("num")
-	}))
+	updateDrop(arg_2_0.itemTF, var_2_3)
 
-	slot9 = ""
-	slot0.countTF.text = slot1:getConfig("resource_num")
+	local var_2_4 = ""
 
-	if string.match(slot6 == DROP_TYPE_SKIN and (pg.ship_skin_template[slot7].name or "??") or slot8:getConfig("name") or "??", "(%d+)") then
-		setText(slot0.nameTxt, shortenString(slot9, 5))
+	if var_2_1 == DROP_TYPE_SKIN then
+		var_2_4 = pg.ship_skin_template[var_2_2].name or "??"
 	else
-		setText(slot0.nameTxt, shortenString(slot9, 6))
+		var_2_4 = var_2_3:getConfig("name") or "??"
 	end
 
-	slot0.resIconTF.sprite = GetSpriteFromAtlas(Drop.New({
-		type = slot1:getConfig("resource_category"),
-		id = slot1:getConfig("resource_type")
-	}):getIcon(), "")
-	slot11 = slot1:GetLimitGoodCount()
-	slot0.limitCountTF.text = slot11 - slot1:GetPurchasableCnt() .. "/" .. slot11
+	arg_2_0.countTF.text = arg_2_1:getConfig("resource_num")
+
+	if string.match(var_2_4, "(%d+)") then
+		setText(arg_2_0.nameTxt, shortenString(var_2_4, 5))
+	else
+		setText(arg_2_0.nameTxt, shortenString(var_2_4, 6))
+	end
+
+	local var_2_5 = Drop.New({
+		type = arg_2_1:getConfig("resource_category"),
+		id = arg_2_1:getConfig("resource_type")
+	}):getIcon()
+
+	arg_2_0.resIconTF.sprite = GetSpriteFromAtlas(var_2_5, "")
+
+	local var_2_6 = arg_2_1:GetLimitGoodCount()
+	local var_2_7 = arg_2_1:GetPurchasableCnt()
+
+	arg_2_0.limitCountTF.text = var_2_6 - var_2_7 .. "/" .. var_2_6
 end
 
-function slot0.setAsLastSibling(slot0)
-	slot0.tr:SetAsLastSibling()
+function var_0_0.setAsLastSibling(arg_4_0)
+	arg_4_0.tr:SetAsLastSibling()
 end
 
-function slot0.OnDispose(slot0)
-	slot0.goodsVO = nil
+function var_0_0.OnDispose(arg_5_0)
+	arg_5_0.goodsVO = nil
 end
 
-return slot0
+return var_0_0

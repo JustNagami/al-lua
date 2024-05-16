@@ -1,45 +1,46 @@
-slot0 = class("WorldConst")
-slot0.Debug = false
+﻿local var_0_0 = class("WorldConst")
 
-function slot0.Print(...)
-	if uv0.Debug then
+var_0_0.Debug = false
+
+function var_0_0.Print(...)
+	if var_0_0.Debug then
 		warning(...)
 	end
 end
 
-function slot0.DebugPrintAttachmentCell(slot0, slot1)
-	if not uv0.Debug then
+function var_0_0.DebugPrintAttachmentCell(arg_2_0, arg_2_1)
+	if not var_0_0.Debug then
 		return
 	end
 
-	warning(slot0)
+	warning(arg_2_0)
 
-	for slot5, slot6 in pairs(slot1) do
-		warning(slot5, #slot6.attachmentList)
+	for iter_2_0, iter_2_1 in pairs(arg_2_1) do
+		warning(iter_2_0, #iter_2_1.attachmentList)
 
-		for slot10, slot11 in ipairs(slot6.attachmentList) do
-			warning(slot11:DebugPrint())
+		for iter_2_2, iter_2_3 in ipairs(iter_2_1.attachmentList) do
+			warning(iter_2_3:DebugPrint())
 		end
 	end
 end
 
-slot0.DefaultAtlas = 1
+var_0_0.DefaultAtlas = 1
 
-function slot0.GetProgressAtlas(slot0)
-	return uv0.DefaultAtlas
+function var_0_0.GetProgressAtlas(arg_3_0)
+	return var_0_0.DefaultAtlas
 end
 
-slot0.MaxRow = 30
-slot0.MaxColumn = 30
-slot0.LineCross = 2
-slot0.ActionIdle = "normal"
-slot0.ActionMove = "move"
-slot0.ActionDrag = "tuozhuai"
-slot0.ActionYun = "yun"
-slot0.ActionVanish = "vanish"
-slot0.ActionAppear = "appear"
-slot0.AutoFightLoopCountLimit = 25
-slot0.EnemySize = {
+var_0_0.MaxRow = 30
+var_0_0.MaxColumn = 30
+var_0_0.LineCross = 2
+var_0_0.ActionIdle = "normal"
+var_0_0.ActionMove = "move"
+var_0_0.ActionDrag = "tuozhuai"
+var_0_0.ActionYun = "yun"
+var_0_0.ActionVanish = "vanish"
+var_0_0.ActionAppear = "appear"
+var_0_0.AutoFightLoopCountLimit = 25
+var_0_0.EnemySize = {
 	1,
 	2,
 	3,
@@ -53,11 +54,11 @@ slot0.EnemySize = {
 	2,
 	3,
 	3,
-	[99.0] = 99
+	[99] = 99
 }
-slot0.ResourceID = 3002
-slot0.SwitchPlainingItemId = 120
-slot0.ReqName = {
+var_0_0.ResourceID = 3002
+var_0_0.SwitchPlainingItemId = 120
+var_0_0.ReqName = {
 	"OpReqMoveFleet",
 	"OpReqBox",
 	nil,
@@ -87,179 +88,185 @@ slot0.ReqName = {
 	"OpReqEnterPort",
 	"OpReqCatSalvage",
 	"OpReqSwitchFleet",
-	[99.0] = "OpReqSkipBattle"
+	[99] = "OpReqSkipBattle"
 }
 
-for slot4, slot5 in pairs(slot0.ReqName) do
-	slot0[slot5] = slot4
+for iter_0_0, iter_0_1 in pairs(var_0_0.ReqName) do
+	var_0_0[iter_0_1] = iter_0_0
 end
 
-slot0.OpActionFleetMove = -100
-slot0.OpActionAttachmentMove = -101
-slot0.OpActionAttachmentAnim = -102
-slot0.OpActionNextRound = -103
-slot0.OpActionEventOp = -104
-slot0.OpActionMoveStep = -105
-slot0.OpActionUpdate = -106
-slot0.OpActionFleetAnim = -107
-slot0.OpActionEventEffect = -108
-slot0.OpActionTaskGoto = -109
-slot0.OpActionCameraMove = -110
-slot0.OpActionTrapGravityAnim = -111
-slot0.RoundPlayer = 0
-slot0.RoundElse = 1
-slot0.DirNone = 0
-slot0.DirUp = 1
-slot0.DirRight = 2
-slot0.DirDown = 3
-slot0.DirLeft = 4
+var_0_0.OpActionFleetMove = -100
+var_0_0.OpActionAttachmentMove = -101
+var_0_0.OpActionAttachmentAnim = -102
+var_0_0.OpActionNextRound = -103
+var_0_0.OpActionEventOp = -104
+var_0_0.OpActionMoveStep = -105
+var_0_0.OpActionUpdate = -106
+var_0_0.OpActionFleetAnim = -107
+var_0_0.OpActionEventEffect = -108
+var_0_0.OpActionTaskGoto = -109
+var_0_0.OpActionCameraMove = -110
+var_0_0.OpActionTrapGravityAnim = -111
+var_0_0.RoundPlayer = 0
+var_0_0.RoundElse = 1
+var_0_0.DirNone = 0
+var_0_0.DirUp = 1
+var_0_0.DirRight = 2
+var_0_0.DirDown = 3
+var_0_0.DirLeft = 4
 
-function slot0.DirToLine(slot0)
-	if slot0 == uv0.DirNone then
+function var_0_0.DirToLine(arg_4_0)
+	if arg_4_0 == var_0_0.DirNone then
 		return {
 			row = 0,
 			column = 0
 		}
-	elseif slot0 == uv0.DirUp then
+	elseif arg_4_0 == var_0_0.DirUp then
 		return {
 			row = -1,
 			column = 0
 		}
-	elseif slot0 == uv0.DirRight then
+	elseif arg_4_0 == var_0_0.DirRight then
 		return {
 			row = 0,
 			column = 1
 		}
-	elseif slot0 == uv0.DirDown then
+	elseif arg_4_0 == var_0_0.DirDown then
 		return {
 			row = 1,
 			column = 0
 		}
-	elseif slot0 == uv0.DirLeft then
+	elseif arg_4_0 == var_0_0.DirLeft then
 		return {
 			row = 0,
 			column = -1
 		}
 	else
-		assert(false, "without this dir " .. slot0)
+		assert(false, "without this dir " .. arg_4_0)
 	end
 end
 
-slot0.DefaultMapOffset = Vector3(0, -1000, -1000)
+var_0_0.DefaultMapOffset = Vector3(0, -1000, -1000)
 
-function slot0.InFOVRange(slot0, slot1, slot2, slot3, slot4)
-	slot4 = slot4 or uv0.GetFOVRadius()
+function var_0_0.InFOVRange(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	arg_5_4 = arg_5_4 or var_0_0.GetFOVRadius()
 
-	return (slot0 - slot2) * (slot0 - slot2) + (slot1 - slot3) * (slot1 - slot3) <= slot4 * slot4
+	return (arg_5_0 - arg_5_2) * (arg_5_0 - arg_5_2) + (arg_5_1 - arg_5_3) * (arg_5_1 - arg_5_3) <= arg_5_4 * arg_5_4
 end
 
-function slot0.GetFOVRadius()
+function var_0_0.GetFOVRadius()
 	return pg.gameset.world_move_initial_view.key_value
 end
 
-function slot0.IsRookieMap(slot0)
-	return _.any(pg.gameset.world_guide_map_list.description, function (slot0)
-		return uv0 == slot0
+function var_0_0.IsRookieMap(arg_7_0)
+	return _.any(pg.gameset.world_guide_map_list.description, function(arg_8_0)
+		return arg_7_0 == arg_8_0
 	end)
 end
 
-function slot0.GetRealmRookieId(slot0)
-	assert(slot0 and slot0 > 0)
+function var_0_0.GetRealmRookieId(arg_9_0)
+	assert(arg_9_0 and arg_9_0 > 0)
 
-	return unpack(pg.gameset.world_default_entrance.description[slot0])
+	return unpack(pg.gameset.world_default_entrance.description[arg_9_0])
 end
 
-function slot0.ParseConfigDir(slot0, slot1)
-	if slot0 == -1 then
+function var_0_0.ParseConfigDir(arg_10_0, arg_10_1)
+	if arg_10_0 == -1 then
 		return WorldConst.DirUp
-	elseif slot0 == 1 then
+	elseif arg_10_0 == 1 then
 		return WorldConst.DirDown
-	elseif slot1 == -1 then
+	elseif arg_10_1 == -1 then
 		return WorldConst.DirLeft
-	elseif slot1 == 1 then
+	elseif arg_10_1 == 1 then
 		return WorldConst.DirRight
 	end
 
 	assert(false)
 end
 
-function slot0.Pos2FogRes(slot0, slot1)
-	return "miwu0" .. slot0 % 3 * 3 + slot1 % 3 + 1
+function var_0_0.Pos2FogRes(arg_11_0, arg_11_1)
+	arg_11_0 = arg_11_0 % 3
+	arg_11_1 = arg_11_1 % 3
+
+	return "miwu0" .. arg_11_0 * 3 + arg_11_1 + 1
 end
 
-slot0.TerrainStreamRes = {
+var_0_0.TerrainStreamRes = {
 	"yangliu_shang",
 	"yangliu_you",
 	"yangliu_xia",
 	"yangliu_zuo"
 }
-slot0.TerrainWindRes = {
+var_0_0.TerrainWindRes = {
 	"longjuanfeng_shang",
 	"longjuanfeng_you",
 	"longjuanfeng_xia",
 	"longjuanfeng_zuo"
 }
-slot0.TerrainPoisonRes = {
+var_0_0.TerrainPoisonRes = {
 	"poison01",
 	"poison02"
 }
 
-function slot0.GetTerrainEffectRes(slot0, slot1, slot2)
-	if slot0 == WorldMapCell.TerrainStream then
-		slot3 = uv0.TerrainStreamRes[slot1]
+function var_0_0.GetTerrainEffectRes(arg_12_0, arg_12_1, arg_12_2)
+	if arg_12_0 == WorldMapCell.TerrainStream then
+		local var_12_0 = var_0_0.TerrainStreamRes[arg_12_1]
 
-		return "world/object/" .. slot3, slot3
-	elseif slot0 == WorldMapCell.TerrainWind then
-		slot3 = uv0.TerrainWindRes[slot1]
+		return "world/object/" .. var_12_0, var_12_0
+	elseif arg_12_0 == WorldMapCell.TerrainWind then
+		local var_12_1 = var_0_0.TerrainWindRes[arg_12_1]
 
-		return "world/object/" .. slot3, slot3
-	elseif slot0 == WorldMapCell.TerrainIce then
+		return "world/object/" .. var_12_1, var_12_1
+	elseif arg_12_0 == WorldMapCell.TerrainIce then
 		return "world/object/ice", "ice"
-	elseif slot0 == WorldMapCell.TerrainPoison then
-		slot3 = uv0.TerrainPoisonRes[slot2]
+	elseif arg_12_0 == WorldMapCell.TerrainPoison then
+		local var_12_2 = var_0_0.TerrainPoisonRes[arg_12_2]
 
-		return "world/object/" .. slot3, slot3
+		return "world/object/" .. var_12_2, var_12_2
 	end
 
 	assert(false)
 end
 
-function slot0.GetWindEffect()
+function var_0_0.GetWindEffect()
 	return "world/object/longjuanfeng", "longjuanfeng"
 end
 
-function slot0.GetBuffEffect(slot0)
-	return "ui/" .. slot0, slot0
+function var_0_0.GetBuffEffect(arg_14_0)
+	return "ui/" .. arg_14_0, arg_14_0
 end
 
-slot0.PoisonEffect = "san_low"
+var_0_0.PoisonEffect = "san_low"
 
-function slot0.ArrayEffectOrder(slot0, slot1)
-	slot2 = {}
+function var_0_0.ArrayEffectOrder(arg_15_0, arg_15_1)
+	local var_15_0 = {}
+	local var_15_1 = arg_15_0:GetComponentsInChildren(typeof(Renderer), true)
 
-	for slot7 = 0, slot0:GetComponentsInChildren(typeof(Renderer), true).Length - 1 do
-		table.insert(slot2, slot3[slot7])
+	for iter_15_0 = 0, var_15_1.Length - 1 do
+		table.insert(var_15_0, var_15_1[iter_15_0])
 	end
 
-	for slot8 = 0, slot0:GetComponentsInChildren(typeof(Canvas), true).Length - 1 do
-		table.insert(slot2, slot4[slot8])
+	local var_15_2 = arg_15_0:GetComponentsInChildren(typeof(Canvas), true)
+
+	for iter_15_1 = 0, var_15_2.Length - 1 do
+		table.insert(var_15_0, var_15_2[iter_15_1])
 	end
 
-	for slot8, slot9 in ipairs(slot2) do
-		slot9.sortingOrder = slot9.sortingOrder + slot1
+	for iter_15_2, iter_15_3 in ipairs(var_15_0) do
+		iter_15_3.sortingOrder = iter_15_3.sortingOrder + arg_15_1
 	end
 end
 
-slot0.Flag16Max = 65535
-slot0.LOEffectA = 1
-slot0.LOQuad = 1000
-slot0.LOEffectB = 1001
-slot0.LOItem = 2000
-slot0.LOEffectC = 2001
-slot0.LOCell = 3000
-slot0.LOFleet = 3001
-slot0.LOTop = 4000
-slot0.WindScale = {
+var_0_0.Flag16Max = 65535
+var_0_0.LOEffectA = 1
+var_0_0.LOQuad = 1000
+var_0_0.LOEffectB = 1001
+var_0_0.LOItem = 2000
+var_0_0.LOEffectC = 2001
+var_0_0.LOCell = 3000
+var_0_0.LOFleet = 3001
+var_0_0.LOTop = 4000
+var_0_0.WindScale = {
 	0.5,
 	0.5,
 	0.75,
@@ -267,280 +274,292 @@ slot0.WindScale = {
 	1
 }
 
-function slot0.GetWindScale(slot0)
-	slot1 = slot0 and uv0.WindScale[slot0] or 1
+function var_0_0.GetWindScale(arg_16_0)
+	local var_16_0 = arg_16_0 and var_0_0.WindScale[arg_16_0] or 1
 
-	return Vector3(slot1, slot1, slot1)
+	return Vector3(var_16_0, var_16_0, var_16_0)
 end
 
-slot0.BaseMoveDuration = 0.35
+var_0_0.BaseMoveDuration = 0.35
 
-function slot0.GetTerrainMoveStepDuration(slot0)
-	uv0.MoveStepDuration = uv0.MoveStepDuration or {
-		[WorldMapCell.TerrainNone] = uv0.BaseMoveDuration,
-		[WorldMapCell.TerrainWind] = uv0.BaseMoveDuration / 2,
-		[WorldMapCell.TerrainStream] = uv0.BaseMoveDuration / 2,
-		[WorldMapCell.TerrainIce] = uv0.BaseMoveDuration / 2,
-		[WorldMapCell.TerrainFog] = uv0.BaseMoveDuration,
-		[WorldMapCell.TerrainFire] = uv0.BaseMoveDuration,
-		[WorldMapCell.TerrainPoison] = uv0.BaseMoveDuration
+function var_0_0.GetTerrainMoveStepDuration(arg_17_0)
+	var_0_0.MoveStepDuration = var_0_0.MoveStepDuration or {
+		[WorldMapCell.TerrainNone] = var_0_0.BaseMoveDuration,
+		[WorldMapCell.TerrainWind] = var_0_0.BaseMoveDuration / 2,
+		[WorldMapCell.TerrainStream] = var_0_0.BaseMoveDuration / 2,
+		[WorldMapCell.TerrainIce] = var_0_0.BaseMoveDuration / 2,
+		[WorldMapCell.TerrainFog] = var_0_0.BaseMoveDuration,
+		[WorldMapCell.TerrainFire] = var_0_0.BaseMoveDuration,
+		[WorldMapCell.TerrainPoison] = var_0_0.BaseMoveDuration
 	}
 
-	return uv0.MoveStepDuration[slot0]
+	return var_0_0.MoveStepDuration[arg_17_0]
 end
 
-slot0.UIEaseDuration = 0.5
-slot0.UIEaseFasterDuration = 0.3
-slot0.ModelSpine = 1
-slot0.ModelPrefab = 2
-slot0.ResBoxPrefab = "boxprefab/"
-slot0.ResChapterPrefab = "chapter/"
-slot0.DirType1 = 1
-slot0.DirType2 = 2
-slot0.DirType4 = 4
+var_0_0.UIEaseDuration = 0.5
+var_0_0.UIEaseFasterDuration = 0.3
+var_0_0.ModelSpine = 1
+var_0_0.ModelPrefab = 2
+var_0_0.ResBoxPrefab = "boxprefab/"
+var_0_0.ResChapterPrefab = "chapter/"
+var_0_0.DirType1 = 1
+var_0_0.DirType2 = 2
+var_0_0.DirType4 = 4
 
-function slot0.CalcModelPosition(slot0, slot1)
-	return Vector3((slot0.config.area_pos[1] - slot1.x / 2) / PIXEL_PER_UNIT, 0, (slot0.config.area_pos[2] - slot1.y / 2) / PIXEL_PER_UNIT)
+function var_0_0.CalcModelPosition(arg_18_0, arg_18_1)
+	return Vector3((arg_18_0.config.area_pos[1] - arg_18_1.x / 2) / PIXEL_PER_UNIT, 0, (arg_18_0.config.area_pos[2] - arg_18_1.y / 2) / PIXEL_PER_UNIT)
 end
 
-slot0.BrokenBuffId = pg.gameset.world_death_buff.key_value
-slot0.MoveLimitBuffId = pg.gameset.world_move_buff_desc.key_value
-slot0.DamageBuffList = pg.gameset.world_buff_morale.description
+var_0_0.BrokenBuffId = pg.gameset.world_death_buff.key_value
+var_0_0.MoveLimitBuffId = pg.gameset.world_move_buff_desc.key_value
+var_0_0.DamageBuffList = pg.gameset.world_buff_morale.description
 
-function slot0.ExtendPropertiesRatesFromBuffList(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		assert(slot6.class == WorldBuff)
+function var_0_0.ExtendPropertiesRatesFromBuffList(arg_19_0, arg_19_1)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_1) do
+		assert(iter_19_1.class == WorldBuff)
 
-		if slot6:IsValid() then
-			for slot10, slot11 in ipairs(slot6.config.buff_attr) do
-				assert(slot6.config.percent[slot10] == 1)
+		if iter_19_1:IsValid() then
+			for iter_19_2, iter_19_3 in ipairs(iter_19_1.config.buff_attr) do
+				assert(iter_19_1.config.percent[iter_19_2] == 1)
 
-				slot0[slot11] = defaultValue(slot0[slot11], 1) * (10000 + slot6.config.buff_effect[slot10] * slot6:GetFloor()) / 10000
+				arg_19_0[iter_19_3] = defaultValue(arg_19_0[iter_19_3], 1) * (10000 + iter_19_1.config.buff_effect[iter_19_2] * iter_19_1:GetFloor()) / 10000
 			end
 		end
 	end
 end
 
-function slot0.AppendPropertiesFromBuffList(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(slot2) do
-		assert(slot7.class == WorldBuff)
+function var_0_0.AppendPropertiesFromBuffList(arg_20_0, arg_20_1, arg_20_2)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_2) do
+		assert(iter_20_1.class == WorldBuff)
 
-		if slot7:IsValid() then
-			for slot11, slot12 in ipairs(slot7.config.buff_attr) do
-				if slot7.config.percent[slot11] == 1 then
-					slot1[slot12] = defaultValue(slot1[slot12], 0) + slot7.config.buff_effect[slot11] * slot7:GetFloor()
+		if iter_20_1:IsValid() then
+			for iter_20_2, iter_20_3 in ipairs(iter_20_1.config.buff_attr) do
+				if iter_20_1.config.percent[iter_20_2] == 1 then
+					arg_20_1[iter_20_3] = defaultValue(arg_20_1[iter_20_3], 0) + iter_20_1.config.buff_effect[iter_20_2] * iter_20_1:GetFloor()
 				else
-					slot0[slot12] = defaultValue(slot0[slot12], 0) + slot7.config.buff_effect[slot11] * slot7:GetFloor()
+					arg_20_0[iter_20_3] = defaultValue(arg_20_0[iter_20_3], 0) + iter_20_1.config.buff_effect[iter_20_2] * iter_20_1:GetFloor()
 				end
 			end
 		end
 	end
 
-	for slot6, slot7 in pairs(slot1) do
-		slot1[slot6] = 1 + slot7 / 10000
+	for iter_20_4, iter_20_5 in pairs(arg_20_1) do
+		arg_20_1[iter_20_4] = 1 + iter_20_5 / 10000
 	end
 end
 
-slot0.TaskTypeSubmitItem = 2
-slot0.TaskTypeArrivePort = 6
-slot0.TaskTypeFleetExpansion = 7
-slot0.TaskTypePressingMap = 12
-slot0.FleetRedeploy = 1
-slot0.FleetExpansion = 2
-slot0.QuadBlinkDuration = 1
-slot0.QuadSpriteWhite = "cell_white"
-slot0.TransportDisplayNormal = 0
-slot0.TransportDisplayGuideEnable = 1
-slot0.TransportDisplayGuideDanger = 2
-slot0.TransportDisplayGuideForbid = 3
+var_0_0.TaskTypeSubmitItem = 2
+var_0_0.TaskTypeArrivePort = 6
+var_0_0.TaskTypeFleetExpansion = 7
+var_0_0.TaskTypePressingMap = 12
+var_0_0.FleetRedeploy = 1
+var_0_0.FleetExpansion = 2
+var_0_0.QuadBlinkDuration = 1
+var_0_0.QuadSpriteWhite = "cell_white"
+var_0_0.TransportDisplayNormal = 0
+var_0_0.TransportDisplayGuideEnable = 1
+var_0_0.TransportDisplayGuideDanger = 2
+var_0_0.TransportDisplayGuideForbid = 3
 
-function slot0.CalcRelativeRectPos(slot0, slot1, slot2, slot3)
-	slot4 = slot2.x + slot1.width / 2
-	slot5 = slot2.x + slot2.width - slot1.width / 2
-	slot6 = slot2.y + slot1.height / 2
-	slot7 = slot2.y + slot2.height - slot1.height / 2
+function var_0_0.CalcRelativeRectPos(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
+	local var_21_0 = arg_21_2.x + arg_21_1.width / 2
+	local var_21_1 = arg_21_2.x + arg_21_2.width - arg_21_1.width / 2
+	local var_21_2 = arg_21_2.y + arg_21_1.height / 2
+	local var_21_3 = arg_21_2.y + arg_21_2.height - arg_21_1.height / 2
 
-	function slot8(slot0)
-		return uv0 <= slot0.x and slot0.x <= uv1 and uv2 <= slot0.y and slot0.y <= uv3
+	local function var_21_4(arg_22_0)
+		return arg_22_0.x >= var_21_0 and arg_22_0.x <= var_21_1 and arg_22_0.y >= var_21_2 and arg_22_0.y <= var_21_3
 	end
 
-	slot10 = Quaternion.Euler(0, 0, 10)
+	local var_21_5 = 10
+	local var_21_6 = Quaternion.Euler(0, 0, var_21_5)
 
-	for slot14 = slot3, 0, -50 do
-		slot15 = Vector3(slot14, 0, 0)
+	for iter_21_0 = arg_21_3, 0, -50 do
+		local var_21_7 = Vector3(iter_21_0, 0, 0)
 
-		for slot19 = 360 / slot9, 1, -1 do
-			if slot8(slot0 + slot10 * slot15) then
-				return slot0 + slot15
+		for iter_21_1 = 360 / var_21_5, 1, -1 do
+			var_21_7 = var_21_6 * var_21_7
+
+			if var_21_4(arg_21_0 + var_21_7) then
+				return arg_21_0 + var_21_7
 			end
 		end
 	end
 
 	return _.min({
-		Vector2(slot4, slot6),
-		Vector2(slot4, slot7),
-		Vector2(slot5, slot7),
-		Vector2(slot5, slot6)
-	}, function (slot0)
-		return Vector2.Distance(slot0, uv0)
+		Vector2(var_21_0, var_21_2),
+		Vector2(var_21_0, var_21_3),
+		Vector2(var_21_1, var_21_3),
+		Vector2(var_21_1, var_21_2)
+	}, function(arg_23_0)
+		return Vector2.Distance(arg_23_0, arg_21_0)
 	end)
 end
 
-function slot0.GetMapIconState(slot0)
-	if slot0 == 1 then
+function var_0_0.GetMapIconState(arg_24_0)
+	if arg_24_0 == 1 then
 		return "normal"
-	elseif slot0 == 2 then
+	elseif arg_24_0 == 2 then
 		return "danger"
-	elseif slot0 == 3 then
+	elseif arg_24_0 == 3 then
 		return "danger"
 	else
-		assert(false, "config error:" .. slot0)
+		assert(false, "config error:" .. arg_24_0)
 	end
 end
 
-function slot0.HasDangerConfirm(slot0)
-	if slot0 == 1 then
+function var_0_0.HasDangerConfirm(arg_25_0)
+	if arg_25_0 == 1 then
 		return false
-	elseif slot0 == 2 then
+	elseif arg_25_0 == 2 then
 		return false
-	elseif slot0 == 3 then
+	elseif arg_25_0 == 3 then
 		return true
 	else
-		assert(false, "config error:" .. slot0)
+		assert(false, "config error:" .. arg_25_0)
 	end
 end
 
-slot0.SystemCompass = 1
-slot0.SystemMemo = 2
-slot0.SystemInventory = 3
-slot0.SystemWorldBoss = 4
-slot0.SystemCollection = 5
-slot0.SystemSubmarine = 6
-slot0.SystemFleetDetail = 7
-slot0.SystemWorldInfo = 8
-slot0.SystemRedeploy = 9
-slot0.SystemScanner = 10
-slot0.SystemResource = 11
-slot0.SystemOutMap = 12
-slot0.SystemOrderRedeploy = slot0.SystemRedeploy
-slot0.SystemOrderMaintenance = 13
-slot0.SystemOrderFOV = 15
-slot0.SystemOrderSubmarine = slot0.SystemSubmarine
-slot0.SystemResetCountDown = 16
-slot0.SystemResetExchange = 17
-slot0.SystemResetShop = 18
-slot0.SystemAutoFight_1 = 19
-slot0.SystemAutoFight_2 = 20
-slot0.SystemAutoSwitch = 21
-slot0.SystemDailyTask = 22
+var_0_0.SystemCompass = 1
+var_0_0.SystemMemo = 2
+var_0_0.SystemInventory = 3
+var_0_0.SystemWorldBoss = 4
+var_0_0.SystemCollection = 5
+var_0_0.SystemSubmarine = 6
+var_0_0.SystemFleetDetail = 7
+var_0_0.SystemWorldInfo = 8
+var_0_0.SystemRedeploy = 9
+var_0_0.SystemScanner = 10
+var_0_0.SystemResource = 11
+var_0_0.SystemOutMap = 12
+var_0_0.SystemOrderRedeploy = var_0_0.SystemRedeploy
+var_0_0.SystemOrderMaintenance = 13
+var_0_0.SystemOrderFOV = 15
+var_0_0.SystemOrderSubmarine = var_0_0.SystemSubmarine
+var_0_0.SystemResetCountDown = 16
+var_0_0.SystemResetExchange = 17
+var_0_0.SystemResetShop = 18
+var_0_0.SystemAutoFight_1 = 19
+var_0_0.SystemAutoFight_2 = 20
+var_0_0.SystemAutoSwitch = 21
+var_0_0.SystemDailyTask = 22
 
-function slot0.BuildHelpTips(slot0)
-	slot1 = i18n("world_stage_help")
-	slot3 = 1
+function var_0_0.BuildHelpTips(arg_26_0)
+	local var_26_0 = i18n("world_stage_help")
+	local var_26_1 = pg.gameset.world_stage_help.description
+	local var_26_2 = 1
 
-	for slot7, slot8 in ipairs(pg.gameset.world_stage_help.description) do
-		if slot8[1] <= slot0 then
-			table.insert(slot1, slot3, {
+	for iter_26_0, iter_26_1 in ipairs(var_26_1) do
+		if arg_26_0 >= iter_26_1[1] then
+			table.insert(var_26_0, var_26_2, {
 				icon = {
 					path = "",
-					atlas = slot8[2]
+					atlas = iter_26_1[2]
 				}
 			})
 
-			slot3 = slot3 + 1
+			var_26_2 = var_26_2 + 1
 		end
 	end
 
-	return slot1
+	return var_26_0
 end
 
-slot0.AnimRadar = "RadarEffectUI"
+var_0_0.AnimRadar = "RadarEffectUI"
 
-function slot0.FindStageTemplates(slot0)
-	slot1 = {}
+function var_0_0.FindStageTemplates(arg_27_0)
+	local var_27_0 = {}
 
-	for slot5, slot6 in ipairs(pg.world_stage_template.all) do
-		if pg.world_stage_template[slot6].stage_key == slot0 then
-			table.insert(slot1, slot7)
+	for iter_27_0, iter_27_1 in ipairs(pg.world_stage_template.all) do
+		local var_27_1 = pg.world_stage_template[iter_27_1]
+
+		if var_27_1.stage_key == arg_27_0 then
+			table.insert(var_27_0, var_27_1)
 		end
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.GetRookieBattleLoseStory()
+function var_0_0.GetRookieBattleLoseStory()
 	return pg.gameset.world_story_special_2.description[1]
 end
 
-slot0.FOVMapSight = 1
-slot0.FOVEventEffect = 2
-slot0.GuideEnemyEnd = false
+var_0_0.FOVMapSight = 1
+var_0_0.FOVEventEffect = 2
+var_0_0.GuideEnemyEnd = false
 
-function slot0.IsWorldGuideEnemyId(slot0)
-	if uv0.GuideEnemyEnd then
+function var_0_0.IsWorldGuideEnemyId(arg_29_0)
+	if var_0_0.GuideEnemyEnd then
 		return false
 	end
 
-	return table.contains(pg.gameset.world_guide_enemy_id.description, slot0)
+	local var_29_0 = pg.gameset.world_guide_enemy_id.description
+
+	return table.contains(var_29_0, arg_29_0)
 end
 
-function slot0.WorldLevelCorrect(slot0, slot1)
-	for slot5, slot6 in ipairs(pg.gameset.world_expedition_level.description) do
-		for slot10, slot11 in ipairs(slot6[1]) do
-			if slot1 == slot11 then
-				slot0 = slot0 + slot6[2]
+function var_0_0.WorldLevelCorrect(arg_30_0, arg_30_1)
+	for iter_30_0, iter_30_1 in ipairs(pg.gameset.world_expedition_level.description) do
+		for iter_30_2, iter_30_3 in ipairs(iter_30_1[1]) do
+			if arg_30_1 == iter_30_3 then
+				arg_30_0 = arg_30_0 + iter_30_1[2]
 			end
 		end
 	end
 
-	return math.max(slot0, 1)
+	return math.max(arg_30_0, 1)
 end
 
-function slot0.GetAreaFocusPos(slot0)
-	slot1 = pg.world_regions_data[slot0].regions_pos
+function var_0_0.GetAreaFocusPos(arg_31_0)
+	local var_31_0 = pg.world_regions_data[arg_31_0].regions_pos
 
-	return Vector2(slot1[1], slot1[2])
+	return Vector2(var_31_0[1], var_31_0[2])
 end
 
-function slot0.GetTransportBlockEvent()
-	if not uv0.blockEventDic then
-		uv0.blockEventDic = {}
+function var_0_0.GetTransportBlockEvent()
+	if not var_0_0.blockEventDic then
+		var_0_0.blockEventDic = {}
 
-		for slot3, slot4 in ipairs(pg.gameset.world_movelimit_event.description) do
-			uv0.blockEventDic[slot4] = true
+		for iter_32_0, iter_32_1 in ipairs(pg.gameset.world_movelimit_event.description) do
+			var_0_0.blockEventDic[iter_32_1] = true
 		end
 	end
 
-	return uv0.blockEventDic
+	return var_0_0.blockEventDic
 end
 
-function slot0.GetTransportStoryEvent()
-	if not uv0.blockStoryDic then
-		uv0.blockStoryDic = {}
+function var_0_0.GetTransportStoryEvent()
+	if not var_0_0.blockStoryDic then
+		var_0_0.blockStoryDic = {}
 
-		for slot3, slot4 in ipairs(pg.gameset.world_transfer_eventlist.description) do
-			uv0.blockStoryDic[slot4] = true
+		for iter_33_0, iter_33_1 in ipairs(pg.gameset.world_transfer_eventlist.description) do
+			var_0_0.blockStoryDic[iter_33_1] = true
 		end
 	end
 
-	return uv0.blockStoryDic
+	return var_0_0.blockStoryDic
 end
 
-function slot0.IsWorldHelpNew(slot0, slot1)
-	if slot1 then
-		PlayerPrefs.SetInt("world_help_progress", slot0)
+function var_0_0.IsWorldHelpNew(arg_34_0, arg_34_1)
+	if arg_34_1 then
+		PlayerPrefs.SetInt("world_help_progress", arg_34_0)
 		PlayerPrefs.Save()
 
 		return false
 	else
-		if slot0 > (PlayerPrefs.HasKey("world_help_progress") and PlayerPrefs.GetInt("world_help_progress") or 0) then
-			for slot6, slot7 in ipairs(pg.world_help_data.all) do
-				if pg.world_help_data[slot7].stage <= slot0 then
-					if slot2 < slot8.stage then
+		local var_34_0 = PlayerPrefs.HasKey("world_help_progress") and PlayerPrefs.GetInt("world_help_progress") or 0
+
+		if var_34_0 < arg_34_0 then
+			for iter_34_0, iter_34_1 in ipairs(pg.world_help_data.all) do
+				local var_34_1 = pg.world_help_data[iter_34_1]
+
+				if arg_34_0 >= var_34_1.stage then
+					if var_34_0 < var_34_1.stage then
 						return true
 					else
-						for slot12, slot13 in ipairs(slot8.stage_help) do
-							if slot2 < slot13[1] and slot13[1] <= slot0 then
+						for iter_34_2, iter_34_3 in ipairs(var_34_1.stage_help) do
+							if var_34_0 < iter_34_3[1] and arg_34_0 >= iter_34_3[1] then
 								return true
 							end
 						end
@@ -553,98 +572,98 @@ function slot0.IsWorldHelpNew(slot0, slot1)
 	end
 end
 
-function slot0.ParsingBuffs(slot0)
-	_.each(slot0, function (slot0)
-		slot1 = WorldBuff.New()
+function var_0_0.ParsingBuffs(arg_35_0)
+	local var_35_0 = {}
 
-		slot1:Setup({
-			id = slot0.id,
-			floor = slot0.stack,
-			round = slot0.round,
-			step = slot0.step
+	_.each(arg_35_0, function(arg_36_0)
+		local var_36_0 = WorldBuff.New()
+
+		var_36_0:Setup({
+			id = arg_36_0.id,
+			floor = arg_36_0.stack,
+			round = arg_36_0.round,
+			step = arg_36_0.step
 		})
 
-		uv0[slot1.id] = slot1
+		var_35_0[var_36_0.id] = var_36_0
 	end)
 
-	return {}
+	return var_35_0
 end
 
-function slot0.CompareBuffs(slot0, slot1)
-	slot3 = {}
-	slot4 = _.extend({}, slot1)
+function var_0_0.CompareBuffs(arg_37_0, arg_37_1)
+	local var_37_0 = _.extend({}, arg_37_0)
+	local var_37_1 = {}
+	local var_37_2 = _.extend({}, arg_37_1)
 
-	for slot8, slot9 in pairs(_.extend({}, slot0)) do
-		if slot4[slot8] then
-			slot3[slot8] = slot2[slot8]
-			slot2[slot8] = nil
-			slot4[slot8] = nil
+	for iter_37_0, iter_37_1 in pairs(var_37_0) do
+		if var_37_2[iter_37_0] then
+			var_37_1[iter_37_0] = var_37_0[iter_37_0]
+			var_37_0[iter_37_0] = nil
+			var_37_2[iter_37_0] = nil
 		end
 	end
 
 	return {
-		remove = slot2,
-		continue = slot3,
-		add = slot4
+		remove = var_37_0,
+		continue = var_37_1,
+		add = var_37_2
 	}
 end
 
-function slot0.FetchWorldShip(slot0)
-	slot1 = nowWorld():GetShip(slot0)
+function var_0_0.FetchWorldShip(arg_38_0)
+	local var_38_0 = nowWorld():GetShip(arg_38_0)
 
-	assert(slot1, "world ship not exist: " .. slot0)
+	assert(var_38_0, "world ship not exist: " .. arg_38_0)
 
-	return slot1
+	return var_38_0
 end
 
-function slot0.FetchShipVO(slot0)
-	slot2 = getProxy(BayProxy):getShipById(slot0)
+function var_0_0.FetchShipVO(arg_39_0)
+	local var_39_0 = getProxy(BayProxy):getShipById(arg_39_0)
 
-	assert(slot2, "ship not exist: " .. slot0)
+	assert(var_39_0, "ship not exist: " .. arg_39_0)
 
-	return slot2
+	return var_39_0
 end
 
-function slot0.FetchRawShipVO(slot0)
-	slot2 = getProxy(BayProxy):getRawData()[slot0]
+function var_0_0.FetchRawShipVO(arg_40_0)
+	local var_40_0 = getProxy(BayProxy):getRawData()[arg_40_0]
 
-	assert(slot2, "ship not exist: " .. slot0)
+	assert(var_40_0, "ship not exist: " .. arg_40_0)
 
-	return slot2
+	return var_40_0
 end
 
-function slot0.ReqWorldCheck(slot0)
-	slot1 = {}
+function var_0_0.ReqWorldCheck(arg_41_0)
+	local var_41_0 = {}
 
 	if nowWorld().type == World.TypeBase then
-		table.insert(slot1, function (slot0)
-			slot1 = pg.ConnectionMgr.GetInstance()
-
-			slot1:Send(33000, {
+		table.insert(var_41_0, function(arg_42_0)
+			pg.ConnectionMgr.GetInstance():Send(33000, {
 				type = 0
-			}, 33001, function (slot0)
-				slot1 = getProxy(WorldProxy)
+			}, 33001, function(arg_43_0)
+				local var_43_0 = getProxy(WorldProxy)
 
-				slot1:BuildWorld(World.TypeFull)
-				slot1:NetFullUpdate(slot0)
-				uv0()
+				var_43_0:BuildWorld(World.TypeFull)
+				var_43_0:NetFullUpdate(arg_43_0)
+				arg_42_0()
 			end)
 		end)
 	end
 
-	seriesAsync(slot1, slot0)
+	seriesAsync(var_41_0, arg_41_0)
 end
 
-function slot0.ReqWorldForServer()
-	slot0 = pg.ConnectionMgr.GetInstance()
-
-	slot0:Send(33000, {
+function var_0_0.ReqWorldForServer()
+	pg.ConnectionMgr.GetInstance():Send(33000, {
 		type = 1
-	}, 33001, function (slot0)
+	}, 33001, function(arg_45_0)
+		return
 	end)
 end
 
-slot0.ObstacleConfig = {
+var_0_0.ObstacleConfig = {
 	[0] = 2,
 	3,
 	7,
@@ -654,48 +673,46 @@ slot0.ObstacleConfig = {
 	4,
 	5
 }
-slot0.ObstacleType = {
+var_0_0.ObstacleType = {
 	"leave",
 	"arrive",
 	"pass"
 }
 
-function slot0.GetObstacleKey(slot0)
-	return bit.lshift(1, #uv0.ObstacleType - table.indexof(uv0.ObstacleType, slot0))
+function var_0_0.GetObstacleKey(arg_46_0)
+	return bit.lshift(1, #var_0_0.ObstacleType - table.indexof(var_0_0.ObstacleType, arg_46_0))
 end
 
-function slot0.GetObstacleConfig(slot0, slot1)
-	return bit.band(uv0.ObstacleConfig[slot0], uv0.GetObstacleKey(slot1)) > 0
+function var_0_0.GetObstacleConfig(arg_47_0, arg_47_1)
+	local var_47_0 = var_0_0.GetObstacleKey(arg_47_1)
+
+	return bit.band(var_0_0.ObstacleConfig[arg_47_0], var_47_0) > 0
 end
 
-function slot0.RangeCheck(slot0, slot1, slot2)
-	for slot6 = slot0.row - slot1, slot0.row + slot1 do
-		for slot10 = slot0.column - slot1, slot0.column + slot1 do
-			if uv0.InFOVRange(slot0.row, slot0.column, slot6, slot10, slot1) then
-				slot2(slot6, slot10)
+function var_0_0.RangeCheck(arg_48_0, arg_48_1, arg_48_2)
+	for iter_48_0 = arg_48_0.row - arg_48_1, arg_48_0.row + arg_48_1 do
+		for iter_48_1 = arg_48_0.column - arg_48_1, arg_48_0.column + arg_48_1 do
+			if var_0_0.InFOVRange(arg_48_0.row, arg_48_0.column, iter_48_0, iter_48_1, arg_48_1) then
+				arg_48_2(iter_48_0, iter_48_1)
 			end
 		end
 	end
 end
 
-function slot0.CheckWorldStorySkip(slot0)
-	return table.contains(pg.gameset.world_quickmode_skiplua.description, slot0) and getProxy(SettingsProxy):GetWorldFlag("story_tips") and pg.NewStoryMgr.GetInstance():IsPlayed(slot0)
+function var_0_0.CheckWorldStorySkip(arg_49_0)
+	return table.contains(pg.gameset.world_quickmode_skiplua.description, arg_49_0) and getProxy(SettingsProxy):GetWorldFlag("story_tips") and pg.NewStoryMgr.GetInstance():IsPlayed(arg_49_0)
 end
 
-function slot0.GetNShopTimeStamp()
-	if not uv0.nShopTimestamp then
-		slot1, slot2, slot3 = unpack(getGameset("world_newshop_date")[2])
-		uv0.nShopTimestamp = pg.TimeMgr.GetInstance():Table2ServerTime({
-			day = slot3,
-			month = slot2,
-			year = slot1,
-			sec = 0,
-			min = 0,
-			hour = 0
-		})
+function var_0_0.GetNShopTimeStamp()
+	if not var_0_0.nShopTimestamp then
+		local var_50_0 = {}
+
+		var_50_0.year, var_50_0.month, var_50_0.day = unpack(getGameset("world_newshop_date")[2])
+		var_50_0.hour, var_50_0.min, var_50_0.sec = 0, 0, 0
+		var_0_0.nShopTimestamp = pg.TimeMgr.GetInstance():Table2ServerTime(var_50_0)
 	end
 
-	return uv0.nShopTimestamp
+	return var_0_0.nShopTimestamp
 end
 
-return slot0
+return var_0_0

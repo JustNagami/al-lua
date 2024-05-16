@@ -1,69 +1,69 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleAttr
-slot3 = slot0.Battle.BattleConst
-slot4 = class("BattleBuffDamageConvert", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffDamageConvert = slot4
-slot4.__name = "BattleBuffDamageConvert"
-slot4.ATTR_PRE = {
-	[slot3.WeaponDamageAttr.CANNON] = "injureRatioByCannon",
-	[slot3.WeaponDamageAttr.TORPEDO] = "injureRatioByBulletTorpedo",
-	[slot3.WeaponDamageAttr.AIR] = "injureRatioByAir"
+﻿ys = ys or {}
+
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleAttr
+local var_0_3 = var_0_0.Battle.BattleConst
+local var_0_4 = class("BattleBuffDamageConvert", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffDamageConvert = var_0_4
+var_0_4.__name = "BattleBuffDamageConvert"
+var_0_4.ATTR_PRE = {
+	[var_0_3.WeaponDamageAttr.CANNON] = "injureRatioByCannon",
+	[var_0_3.WeaponDamageAttr.TORPEDO] = "injureRatioByBulletTorpedo",
+	[var_0_3.WeaponDamageAttr.AIR] = "injureRatioByAir"
 }
 
-function slot4.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_4.Ctor(arg_1_0, arg_1_1)
+	var_0_4.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot4.SetArgs(slot0, slot1, slot2)
-	slot3 = slot0._tempData.arg_list
-	slot0._convert = slot3.convert_rate
-	slot0._duration = slot3.duration
-	slot0._buffSkinID = slot3.buff_skin_id
-	slot0._attrTable = {}
+function var_0_4.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	arg_2_0._convert = var_2_0.convert_rate
+	arg_2_0._duration = var_2_0.duration
+	arg_2_0._buffSkinID = var_2_0.buff_skin_id
+	arg_2_0._attrTable = {}
 end
 
-function slot4.onTakeDamage(slot0, slot1, slot2, slot3)
-	if slot3.damageAttr then
-		slot0._attrTable[slot4] = (slot0._attrTable[slot4] or 0) + slot3.damage
+function var_0_4.onTakeDamage(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = arg_3_3.damageAttr
+
+	if var_3_0 then
+		local var_3_1 = (arg_3_0._attrTable[var_3_0] or 0) + arg_3_3.damage
+
+		arg_3_0._attrTable[var_3_0] = var_3_1
 	end
 end
 
-function slot4.onRemove(slot0, slot1, slot2)
-	slot3 = 0
-	slot4 = nil
+function var_0_4.onRemove(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = 0
+	local var_4_1
 
-	for slot8, slot9 in pairs(slot0._attrTable) do
-		if slot3 <= slot9 then
-			slot3 = slot9
-			slot4 = slot8
+	for iter_4_0, iter_4_1 in pairs(arg_4_0._attrTable) do
+		if var_4_0 <= iter_4_1 then
+			var_4_0 = iter_4_1
+			var_4_1 = iter_4_0
 		end
 	end
 
-	if not slot4 then
+	if not var_4_1 then
 		return
 	end
 
-	slot6 = uv0.generateBuff(slot0._buffSkinID, slot0._duration, uv0.ATTR_PRE[slot4], slot3 * slot0._convert)
+	local var_4_2 = var_0_4.ATTR_PRE[var_4_1]
+	local var_4_3 = var_0_4.generateBuff(arg_4_0._buffSkinID, arg_4_0._duration, var_4_2, var_4_0 * arg_4_0._convert)
+	local var_4_4 = var_0_0.Battle.BattleBuffSelfModifyUnit.New(var_4_3.id, 1, arg_4_1, var_4_3)
 
-	slot1:AddBuff(uv1.Battle.BattleBuffSelfModifyUnit.New(slot6.id, 1, slot1, slot6))
+	arg_4_1:AddBuff(var_4_4)
 end
 
-function slot4.generateBuff(slot0, slot1, slot2, slot3)
+function var_0_4.generateBuff(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	return {
-		{
-			time = slot1
-		},
-		name = "代码生成buff",
-		init_effect = "jinengchufablue",
-		stack = 1,
-		picture = "",
-		last_effect = "",
-		desc = "代码生成buff-指定属性减伤",
-		id = slot0,
-		icon = slot0,
-		time = slot1,
+		id = arg_5_0,
+		icon = arg_5_0,
+		time = arg_5_1,
 		blink = {
 			0,
 			0.7,
@@ -79,11 +79,20 @@ function slot4.generateBuff(slot0, slot1, slot2, slot3)
 					"onRemove"
 				},
 				arg_list = {
-					attr = slot2,
-					number = slot3,
-					group = slot0
+					attr = arg_5_2,
+					number = arg_5_3,
+					group = arg_5_0
 				}
 			}
-		}
+		},
+		{
+			time = arg_5_1
+		},
+		name = "代码生成buff",
+		init_effect = "jinengchufablue",
+		stack = 1,
+		picture = "",
+		last_effect = "",
+		desc = "代码生成buff-指定属性减伤"
 	}
 end

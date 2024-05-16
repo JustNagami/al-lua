@@ -1,61 +1,65 @@
-slot0 = class("MonthCardSetLayer", import("..base.BaseUI"))
-slot0.PIECES = 100
+﻿local var_0_0 = class("MonthCardSetLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.PIECES = 100
+
+function var_0_0.getUIName(arg_1_0)
 	return "MonthCardSetUI"
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_2_0, arg_2_1)
+	arg_2_0.player = arg_2_1
 end
 
-function slot0.setRatio(slot0, slot1)
-	slot0.ratio = math.clamp(slot1, 0, uv0.PIECES)
+function var_0_0.setRatio(arg_3_0, arg_3_1)
+	arg_3_0.ratio = math.clamp(arg_3_1, 0, var_0_0.PIECES)
 end
 
-function slot0.init(slot0)
-	slot0.name = slot0:findTF("window/bg/name")
-	slot0.desc = slot0:findTF("window/bg/desc")
-	slot0.oil = slot0:findTF("window/black/oil/icon_bg/count")
-	slot0.gold = slot0:findTF("window/black/gold/icon_bg/count")
-	slot0.slider = slot0:findTF("window/black/slider")
-	slot0.rate = slot0:findTF("window/black/misc/rate")
-	slot0.confirm = slot0:findTF("window/confirm")
-	slot0.cancel = slot0:findTF("window/cancel")
+function var_0_0.init(arg_4_0)
+	arg_4_0.name = arg_4_0:findTF("window/bg/name")
+	arg_4_0.desc = arg_4_0:findTF("window/bg/desc")
+	arg_4_0.oil = arg_4_0:findTF("window/black/oil/icon_bg/count")
+	arg_4_0.gold = arg_4_0:findTF("window/black/gold/icon_bg/count")
+	arg_4_0.slider = arg_4_0:findTF("window/black/slider")
+	arg_4_0.rate = arg_4_0:findTF("window/black/misc/rate")
+	arg_4_0.confirm = arg_4_0:findTF("window/confirm")
+	arg_4_0.cancel = arg_4_0:findTF("window/cancel")
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0._tf, function()
+		arg_5_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.cancel, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_5_0, arg_5_0.cancel, function()
+		arg_5_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.confirm, function ()
-		uv0:emit(MonthCardSetMediator.ON_SET_RATIO, uv0.ratio)
+	onButton(arg_5_0, arg_5_0.confirm, function()
+		arg_5_0:emit(MonthCardSetMediator.ON_SET_RATIO, arg_5_0.ratio)
 	end, SFX_CANCEL)
-	onSlider(slot0, slot0.slider, function (slot0)
-		uv0:setRatio(slot0)
-		uv0:updateRatioView()
+	onSlider(arg_5_0, arg_5_0.slider, function(arg_9_0)
+		arg_5_0:setRatio(arg_9_0)
+		arg_5_0:updateRatioView()
 	end)
-	slot0:updateView()
-	slot0:updateRatioView()
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	arg_5_0:updateView()
+	arg_5_0:updateRatioView()
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
 end
 
-function slot0.updateView(slot0)
-	setText(slot0.name, string.format("贸易许可证（剩余%s天）", math.floor((slot0.player:getCardById(VipCard.MONTH):getLeftDate() - pg.TimeMgr.GetInstance():GetServerTime()) / 86400)))
-	setText(slot0.rate, "1 : 5")
+function var_0_0.updateView(arg_10_0)
+	local var_10_0 = arg_10_0.player:getCardById(VipCard.MONTH)
+	local var_10_1 = math.floor((var_10_0:getLeftDate() - pg.TimeMgr.GetInstance():GetServerTime()) / 86400)
+
+	setText(arg_10_0.name, string.format("贸易许可证（剩余%s天）", var_10_1))
+	setText(arg_10_0.rate, "1 : 5")
 end
 
-function slot0.updateRatioView(slot0)
-	setSlider(slot0.slider, 0, uv0.PIECES, slot0.ratio)
-	setText(slot0.oil, 400 * slot0.ratio / uv0.PIECES)
-	setText(slot0.gold, 2000 * (uv0.PIECES - slot0.ratio) / uv0.PIECES)
+function var_0_0.updateRatioView(arg_11_0)
+	setSlider(arg_11_0.slider, 0, var_0_0.PIECES, arg_11_0.ratio)
+	setText(arg_11_0.oil, 400 * arg_11_0.ratio / var_0_0.PIECES)
+	setText(arg_11_0.gold, 2000 * (var_0_0.PIECES - arg_11_0.ratio) / var_0_0.PIECES)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_12_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_12_0._tf)
 end
 
-return slot0
+return var_0_0

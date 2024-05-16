@@ -1,252 +1,289 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.CipherGroupMgr = singletonClass("CipherGroupMgr")
-slot0 = pg.CipherGroupMgr
-slot0.GroupName = "CIPHER"
 
-function slot0.Ctor(slot0)
-	slot0.group = GroupHelper.GetGroupMgrByName(uv0.GroupName)
-	slot0.downloadList = {}
-	slot0.finishCount = 0
-	slot0.curIndex = 0
+local var_0_0 = pg.CipherGroupMgr
+
+var_0_0.GroupName = "CIPHER"
+
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.group = GroupHelper.GetGroupMgrByName(var_0_0.GroupName)
+	arg_1_0.downloadList = {}
+	arg_1_0.finishCount = 0
+	arg_1_0.curIndex = 0
 end
 
-function slot0.GetCurFilePath(slot0)
-	return slot0.downloadList[slot0.curIndex]
+function var_0_0.GetCurFilePath(arg_2_0)
+	return arg_2_0.downloadList[arg_2_0.curIndex]
 end
 
-function slot0.GetCurFileState(slot0)
-	return slot0.group:CheckF(slot0:GetCurFilePath())
+function var_0_0.GetCurFileState(arg_3_0)
+	local var_3_0 = arg_3_0:GetCurFilePath()
+
+	return arg_3_0.group:CheckF(var_3_0)
 end
 
-function slot0.GetValidFileList(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetValidFileList(arg_4_0, arg_4_1)
+	local var_4_0 = {}
 
-	if GroupHelper.IsGroupWaitToUpdate(uv0.GroupName) then
-		for slot6, slot7 in ipairs(slot1) do
-			slot7 = string.lower(slot7)
-			slot8 = GroupHelper.VerifyFile(uv0.GroupName, slot7)
+	if GroupHelper.IsGroupWaitToUpdate(var_0_0.GroupName) then
+		for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
+			iter_4_1 = string.lower(iter_4_1)
 
-			warning(slot7 .. " " .. tostring(slot8))
+			local var_4_1 = GroupHelper.VerifyFile(var_0_0.GroupName, iter_4_1)
 
-			if slot8 then
-				table.insert(slot2, slot7)
+			warning(iter_4_1 .. " " .. tostring(var_4_1))
+
+			if var_4_1 then
+				table.insert(var_4_0, iter_4_1)
 			end
 		end
 	end
 
-	return slot2
+	return var_4_0
 end
 
-function slot0.StartWithFileList(slot0, slot1)
-	if #slot0:GetValidFileList(slot1) > 0 then
-		slot0:Clear()
+function var_0_0.StartWithFileList(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0:GetValidFileList(arg_5_1)
 
-		slot0.downloadList = slot2
-		slot0.curIndex = 1
+	if #var_5_0 > 0 then
+		arg_5_0:Clear()
 
-		slot0:updateWithIndex(1)
-		slot0:createUpdateTimer()
+		arg_5_0.downloadList = var_5_0
+		arg_5_0.curIndex = 1
+
+		arg_5_0:updateWithIndex(1)
+		arg_5_0:createUpdateTimer()
 	end
 end
 
-function slot0.AddFileList(slot0, slot1)
-	if #slot0:GetValidFileList(slot1) > 0 then
-		for slot6, slot7 in ipairs(slot2) do
-			table.insert(slot0.downloadList, slot7)
+function var_0_0.AddFileList(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_0:GetValidFileList(arg_6_1)
+
+	if #var_6_0 > 0 then
+		for iter_6_0, iter_6_1 in ipairs(var_6_0) do
+			table.insert(arg_6_0.downloadList, iter_6_1)
 		end
 	end
 end
 
-function slot0.SetCallBack(slot0, slot1)
-	slot0.progressCB = slot1.progressCB
-	slot0.allFinishCB = slot1.allFinishCB
-	slot0.singleFinshCB = slot1.singleFinshCB
-	slot0.errorCB = slot1.errorCB
+function var_0_0.SetCallBack(arg_7_0, arg_7_1)
+	arg_7_0.progressCB = arg_7_1.progressCB
+	arg_7_0.allFinishCB = arg_7_1.allFinishCB
+	arg_7_0.singleFinshCB = arg_7_1.singleFinshCB
+	arg_7_0.errorCB = arg_7_1.errorCB
 end
 
-function slot0.IsAnyFileInProgress(slot0)
-	return slot0.curIndex > 0 and slot0.curIndex <= #slot0.downloadList
+function var_0_0.IsAnyFileInProgress(arg_8_0)
+	return arg_8_0.curIndex > 0 and arg_8_0.curIndex <= #arg_8_0.downloadList
 end
 
-function slot0.DelFile(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = PathMgr.getAssetBundle(slot6)
+function var_0_0.DelFile(arg_9_0, arg_9_1)
+	local var_9_0 = #arg_9_1
+	local var_9_1 = System.Array.CreateInstance(typeof(System.String), var_9_0)
 
-		warning("full file path:" .. slot7)
+	for iter_9_0 = 0, var_9_0 - 1 do
+		var_9_1[iter_9_0] = arg_9_1[iter_9_0 + 1]
+	end
 
-		if PathMgr.FileExists(slot7) then
-			System.IO.File.Delete(slot7)
-			warning("del file path:" .. slot7)
+	arg_9_0.group:DelFile(var_9_1)
+end
+
+function var_0_0.DelFile_Old(arg_10_0, arg_10_1)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_1) do
+		local var_10_0 = PathMgr.getAssetBundle(iter_10_1)
+
+		warning("full file path:" .. var_10_0)
+
+		if PathMgr.FileExists(var_10_0) then
+			System.IO.File.Delete(var_10_0)
+			warning("del file path:" .. var_10_0)
 		end
 	end
 
-	slot0.group:ClearStreamWriter()
+	arg_10_0.group:ClearStreamWriter()
 
-	function slot2(slot0)
-		slot1 = false
+	local function var_10_1(arg_11_0)
+		local var_11_0 = false
 
-		for slot5, slot6 in ipairs(uv0) do
-			if string.sub(slot0, 1, #slot6) == slot6 then
-				slot1 = true
+		for iter_11_0, iter_11_1 in ipairs(arg_10_1) do
+			if string.sub(arg_11_0, 1, #iter_11_1) == iter_11_1 then
+				var_11_0 = true
 
 				break
 			end
 		end
 
-		return slot1
+		return var_11_0
 	end
 
-	slot3 = {}
-	slot4 = slot0.group.cachedHashPath
+	local var_10_2 = {}
+	local var_10_3 = arg_10_0.group.cachedHashPath
 
-	warning("hash path:" .. slot4)
+	warning("hash path:" .. var_10_3)
 
-	if PathMgr.FileExists(slot4) then
-		slot7 = {}
+	if PathMgr.FileExists(var_10_3) then
+		local var_10_4 = PathMgr.ReadAllLines(var_10_3)
+		local var_10_5 = var_10_4.Length
+		local var_10_6 = {}
 
-		for slot11 = 0, PathMgr.ReadAllLines(slot4).Length - 1 do
-			if not slot2(slot5[slot11]) then
-				warning("add origin hash:" .. slot12)
-				table.insert(slot7, slot12)
+		for iter_10_2 = 0, var_10_5 - 1 do
+			local var_10_7 = var_10_4[iter_10_2]
+
+			if not var_10_1(var_10_7) then
+				warning("add origin hash:" .. var_10_7)
+				table.insert(var_10_6, var_10_7)
 			else
-				warning("find del hash:" .. slot12)
+				warning("find del hash:" .. var_10_7)
 
-				slot14 = System.Array.CreateInstance(typeof(System.String), 3)
-				slot15 = string.split(slot12, ",")
+				local var_10_8 = var_10_7
+				local var_10_9 = System.Array.CreateInstance(typeof(System.String), 3)
+				local var_10_10 = string.split(var_10_8, ",")
 
-				for slot19 = 0, 2 do
-					slot20 = slot15[slot19 + 1]
+				for iter_10_3 = 0, 2 do
+					local var_10_11 = var_10_10[iter_10_3 + 1]
 
-					warning("add info:" .. slot20)
+					warning("add info:" .. var_10_11)
 
-					slot14[slot19] = slot20
+					var_10_9[iter_10_3] = var_10_11
 				end
 
-				table.insert(slot3, slot14)
+				table.insert(var_10_2, var_10_9)
 			end
 		end
 
-		slot8 = #slot7
+		local var_10_12 = #var_10_6
 
-		warning("new hash count:" .. slot8)
+		warning("new hash count:" .. var_10_12)
 
-		if slot8 < slot6 then
-			if GroupHelper.IsGroupVerLastest(uv0.GroupName) then
-				slot9 = Application.persistentDataPath .. "/" .. slot0.group.localVersionFile
+		if var_10_12 < var_10_5 then
+			if GroupHelper.IsGroupVerLastest(var_0_0.GroupName) then
+				local var_10_13 = Application.persistentDataPath .. "/" .. arg_10_0.group.localVersionFile
 
-				System.IO.File.WriteAllText(slot9, "0.0.1")
-				warning("ver write:" .. slot9)
+				System.IO.File.WriteAllText(var_10_13, "0.0.1")
+				warning("ver write:" .. var_10_13)
 			end
 
-			slot9 = System.Array.CreateInstance(typeof(System.String), slot8)
+			local var_10_14 = System.Array.CreateInstance(typeof(System.String), var_10_12)
 
-			for slot13, slot14 in ipairs(slot7) do
-				slot9[slot13 - 1] = slot14
+			for iter_10_4, iter_10_5 in ipairs(var_10_6) do
+				var_10_14[iter_10_4 - 1] = iter_10_5
 			end
 
-			System.IO.File.WriteAllLines(slot4, slot9)
-			warning("hash write:" .. slot4)
+			System.IO.File.WriteAllLines(var_10_3, var_10_14)
+			warning("hash write:" .. var_10_3)
 		end
 	end
 
-	if slot0.group.toUpdate then
-		for slot8, slot9 in ipairs(slot3) do
-			slot10 = slot9[0]
+	if arg_10_0.group.toUpdate then
+		for iter_10_6, iter_10_7 in ipairs(var_10_2) do
+			local var_10_15 = iter_10_7[0]
 
-			warning("re add info:" .. slot10)
-			slot0.group.toUpdate:Add(slot9)
-			slot0.group:UpdateFileDownloadStates(slot10, DownloadState.CheckToUpdate)
+			warning("re add info:" .. var_10_15)
+			arg_10_0.group.toUpdate:Add(iter_10_7)
+			arg_10_0.group:UpdateFileDownloadStates(var_10_15, DownloadState.CheckToUpdate)
 		end
 
-		if slot0.group.state == DownloadState.UpdateSuccess then
-			slot0.group.state = DownloadState.CheckToUpdate
+		if arg_10_0.group.state == DownloadState.UpdateSuccess then
+			arg_10_0.group.state = DownloadState.CheckToUpdate
 		end
 	else
-		slot0.group.state = DownloadState.None
+		arg_10_0.group.state = DownloadState.None
 
-		slot0.group:CheckD()
+		arg_10_0.group:CheckD()
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0:clearTimer()
+function var_0_0.Clear(arg_12_0)
+	arg_12_0:clearTimer()
 
-	slot0.downloadList = {}
-	slot0.finishCount = 0
-	slot0.curIndex = 0
+	arg_12_0.downloadList = {}
+	arg_12_0.finishCount = 0
+	arg_12_0.curIndex = 0
 end
 
-function slot0.isCipherExist(slot0, slot1)
-	return (slot0.group:CheckF(slot1) == DownloadState.None or slot2 == DownloadState.UpdateSuccess) and PathMgr.FileExists(PathMgr.getAssetBundle(slot1))
+function var_0_0.isCipherExist(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.group:CheckF(arg_13_1)
+	local var_13_1 = var_13_0 == DownloadState.None or var_13_0 == DownloadState.UpdateSuccess
+	local var_13_2 = PathMgr.getAssetBundle(arg_13_1)
+	local var_13_3 = PathMgr.FileExists(var_13_2)
+
+	return var_13_1 and var_13_3
 end
 
-function slot0.Repair(slot0)
+function var_0_0.Repair(arg_14_0)
+	local var_14_0 = {
+		text = i18n("msgbox_repair"),
+		onCallback = function()
+			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-cipher.csv") then
+				arg_14_0.group:StartVerifyForLua()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
+			end
+		end
+	}
+
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideYes = true,
 		content = i18n("resource_verify_warn"),
 		custom = {
-			{
-				text = i18n("msgbox_repair"),
-				onCallback = function ()
-					if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-cipher.csv") then
-						uv0.group:StartVerifyForLua()
-					else
-						pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
-					end
-				end
-			}
+			var_14_0
 		}
 	})
 end
 
-function slot0.clearTimer(slot0)
-	if slot0.frameTimer then
-		slot0.frameTimer:Stop()
+function var_0_0.clearTimer(arg_16_0)
+	if arg_16_0.frameTimer then
+		arg_16_0.frameTimer:Stop()
 
-		slot0.frameTimer = nil
+		arg_16_0.frameTimer = nil
 	end
 end
 
-function slot0.updateWithIndex(slot0, slot1)
-	if slot1 > #slot0.downloadList then
-		if slot0.allFinishCB then
-			slot0.allFinishCB()
+function var_0_0.updateWithIndex(arg_17_0, arg_17_1)
+	if arg_17_1 > #arg_17_0.downloadList then
+		if arg_17_0.allFinishCB then
+			arg_17_0.allFinishCB()
 		end
 
-		slot0:Clear()
+		arg_17_0:Clear()
 
 		return
 	end
 
-	slot0.group:UpdateF(slot0:GetCurFilePath())
+	local var_17_0 = arg_17_0:GetCurFilePath()
+
+	arg_17_0.group:UpdateF(var_17_0)
 end
 
-function slot0.onUpdateD(slot0)
-	if slot0.group:CheckF(slot0:GetCurFilePath()) == DownloadState.UpdateSuccess then
-		slot0.finishCount = slot0.finishCount + 1
+function var_0_0.onUpdateD(arg_18_0)
+	local var_18_0 = arg_18_0:GetCurFilePath()
+	local var_18_1 = arg_18_0.group:CheckF(var_18_0)
 
-		if slot0.singleFinshCB then
-			slot0.singleFinshCB(slot1, slot0.finishCount, #slot0.downloadList)
+	if var_18_1 == DownloadState.UpdateSuccess then
+		arg_18_0.finishCount = arg_18_0.finishCount + 1
+
+		if arg_18_0.singleFinshCB then
+			arg_18_0.singleFinshCB(var_18_0, arg_18_0.finishCount, #arg_18_0.downloadList)
 		end
 
-		slot0.curIndex = slot0.curIndex + 1
+		arg_18_0.curIndex = arg_18_0.curIndex + 1
 
-		slot0:updateWithIndex(slot0.curIndex)
-	elseif slot2 == DownloadState.UpdateFailure then
-		if slot0.errorCB then
-			slot0.errorCB(slot1)
+		arg_18_0:updateWithIndex(arg_18_0.curIndex)
+	elseif var_18_1 == DownloadState.UpdateFailure then
+		if arg_18_0.errorCB then
+			arg_18_0.errorCB(var_18_0)
 		end
 
-		slot0:clearTimer()
-	elseif slot2 == DownloadState.Updating and slot0.progressCB then
-		slot0.progressCB(slot1, slot0.group:GetWebReqProgress())
+		arg_18_0:clearTimer()
+	elseif var_18_1 == DownloadState.Updating and arg_18_0.progressCB then
+		arg_18_0.progressCB(var_18_0, arg_18_0.group:GetWebReqProgress())
 	end
 end
 
-function slot0.createUpdateTimer(slot0)
-	slot0.frameTimer = FrameTimer.New(function ()
-		uv0:onUpdateD()
+function var_0_0.createUpdateTimer(arg_19_0)
+	arg_19_0.frameTimer = FrameTimer.New(function()
+		arg_19_0:onUpdateD()
 	end, 1, -1)
 
-	slot0.frameTimer:Start()
+	arg_19_0.frameTimer:Start()
 end

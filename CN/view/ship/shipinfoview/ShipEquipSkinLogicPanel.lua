@@ -1,205 +1,256 @@
-slot0 = class("ShipEquipSkinLogicPanel", import("...base.BasePanel"))
-slot1 = 0.2
+﻿local var_0_0 = class("ShipEquipSkinLogicPanel", import("...base.BasePanel"))
+local var_0_1 = 0.2
 
-function slot0.init(slot0)
-	slot0.equipmentTFs = {
-		slot0:findTF("equipment_r/skin/equipment_r1"),
-		slot0:findTF("equipment_r/skin/equipment_r2"),
-		slot0:findTF("equipment_r/skin/equipment_r3"),
-		slot0:findTF("equipment_l/skin/equipment_l1"),
-		slot0:findTF("equipment_l/skin/equipment_l2")
+function var_0_0.init(arg_1_0)
+	arg_1_0.equipmentTFs = {
+		arg_1_0:findTF("equipment_r/skin/equipment_r1"),
+		arg_1_0:findTF("equipment_r/skin/equipment_r2"),
+		arg_1_0:findTF("equipment_r/skin/equipment_r3"),
+		arg_1_0:findTF("equipment_l/skin/equipment_l1"),
+		arg_1_0:findTF("equipment_l/skin/equipment_l2")
 	}
-	slot0.equipmentNormalTFs = {
-		slot0:findTF("equipment_r/equipment/equipment_r1"),
-		slot0:findTF("equipment_r/equipment/equipment_r2"),
-		slot0:findTF("equipment_r/equipment/equipment_r3"),
-		slot0:findTF("equipment_l/equipment/equipment_l1"),
-		slot0:findTF("equipment_l/equipment/equipment_l2")
+	arg_1_0.equipmentNormalTFs = {
+		arg_1_0:findTF("equipment_r/equipment/equipment_r1"),
+		arg_1_0:findTF("equipment_r/equipment/equipment_r2"),
+		arg_1_0:findTF("equipment_r/equipment/equipment_r3"),
+		arg_1_0:findTF("equipment_l/equipment/equipment_l1"),
+		arg_1_0:findTF("equipment_l/equipment/equipment_l2")
 	}
-	slot0.spweaponNormalTF = slot0:findTF("equipment_b/equipment")
-	slot0.equipmentR = slot0:findTF("equipment_r/equipment")
-	slot0.equipmentL = slot0:findTF("equipment_l/equipment")
-	slot0.skinR = slot0:findTF("equipment_r/skin")
-	slot0.skinL = slot0:findTF("equipment_l/skin")
-	slot4 = slot0.equipmentTFs[1]
-	slot0.infoPanel = slot0:findTF("info", slot4)
-	slot0.inSkinPage = true
+	arg_1_0.spweaponNormalTF = arg_1_0:findTF("equipment_b/equipment")
+	arg_1_0.equipmentR = arg_1_0:findTF("equipment_r/equipment")
+	arg_1_0.equipmentL = arg_1_0:findTF("equipment_l/equipment")
+	arg_1_0.skinR = arg_1_0:findTF("equipment_r/skin")
+	arg_1_0.skinL = arg_1_0:findTF("equipment_l/skin")
+	arg_1_0.infoPanel = arg_1_0:findTF("info", arg_1_0.equipmentTFs[1])
+	arg_1_0.inSkinPage = true
 
-	for slot4 = 1, 3 do
-		setText(findTF(slot0.skinR, "equipment_r" .. slot4 .. "/info/equip/info/unMatch/txt"), i18n("equipskin_typewrong"))
-		setText(findTF(slot0.skinR, "equipment_r" .. slot4 .. "/info/equip/info/unMatch/forbid_en"), i18n("equipskin_typewrong_en"))
-		setText(findTF(slot0.skinR, "equipment_r" .. slot4 .. "/info/equip/add/Text"), i18n("equipskin_add"))
-		setText(findTF(slot0.skinR, "equipment_r" .. slot4 .. "/info/forbid"), i18n("equipskin_none"))
+	for iter_1_0 = 1, 3 do
+		local var_1_0 = findTF(arg_1_0.skinR, "equipment_r" .. iter_1_0 .. "/info/equip/info/unMatch/txt")
+
+		setText(var_1_0, i18n("equipskin_typewrong"))
+
+		local var_1_1 = findTF(arg_1_0.skinR, "equipment_r" .. iter_1_0 .. "/info/equip/info/unMatch/forbid_en")
+
+		setText(var_1_1, i18n("equipskin_typewrong_en"))
+
+		local var_1_2 = findTF(arg_1_0.skinR, "equipment_r" .. iter_1_0 .. "/info/equip/add/Text")
+
+		setText(var_1_2, i18n("equipskin_add"))
+
+		local var_1_3 = findTF(arg_1_0.skinR, "equipment_r" .. iter_1_0 .. "/info/forbid")
+
+		setText(var_1_3, i18n("equipskin_none"))
 	end
 
-	for slot4 = 1, 2 do
-		if IsNil(slot0.equipmentTFs[3 + slot4]:Find("info")) then
-			slot6 = cloneTplTo(slot0.infoPanel, slot5, "info")
+	for iter_1_1 = 1, 2 do
+		local var_1_4 = arg_1_0.equipmentTFs[3 + iter_1_1]
+		local var_1_5 = var_1_4:Find("info")
+
+		if IsNil(var_1_5) then
+			local var_1_6 = cloneTplTo(arg_1_0.infoPanel, var_1_4, "info")
 		end
 
-		setActive(findTF(slot0.skinL, "equipment_l" .. slot4 .. "/forbid"), false)
-		setText(findTF(slot0.skinL, "equipment_l" .. slot4 .. "/info/equip/info/unMatch/txt"), i18n("equipskin_typewrong"))
-		setText(findTF(slot0.skinL, "equipment_l" .. slot4 .. "/info/equip/info/unMatch/forbid_en"), i18n("equipskin_typewrong_en"))
-		setText(findTF(slot0.skinL, "equipment_l" .. slot4 .. "/info/equip/add/Text"), i18n("equipskin_add"))
-		setText(findTF(slot0.skinL, "equipment_l" .. slot4 .. "/info/forbid"), i18n("equipskin_none"))
+		local var_1_7 = findTF(arg_1_0.skinL, "equipment_l" .. iter_1_1 .. "/forbid")
+
+		setActive(var_1_7, false)
+
+		local var_1_8 = findTF(arg_1_0.skinL, "equipment_l" .. iter_1_1 .. "/info/equip/info/unMatch/txt")
+
+		setText(var_1_8, i18n("equipskin_typewrong"))
+
+		local var_1_9 = findTF(arg_1_0.skinL, "equipment_l" .. iter_1_1 .. "/info/equip/info/unMatch/forbid_en")
+
+		setText(var_1_9, i18n("equipskin_typewrong_en"))
+
+		local var_1_10 = findTF(arg_1_0.skinL, "equipment_l" .. iter_1_1 .. "/info/equip/add/Text")
+
+		setText(var_1_10, i18n("equipskin_add"))
+
+		local var_1_11 = findTF(arg_1_0.skinL, "equipment_l" .. iter_1_1 .. "/info/forbid")
+
+		setText(var_1_11, i18n("equipskin_none"))
 	end
 
-	for slot4 = 1, #slot0.equipmentNormalTFs do
-		setText(findTF(slot0.equipmentNormalTFs[slot4], "empty/tip"), i18n("equip_add"))
+	for iter_1_2 = 1, #arg_1_0.equipmentNormalTFs do
+		local var_1_12 = findTF(arg_1_0.equipmentNormalTFs[iter_1_2], "empty/tip")
+
+		setText(var_1_12, i18n("equip_add"))
 	end
 
-	setText(findTF(slot0.spweaponNormalTF, "empty/tip"), i18n("equip_add"))
+	local var_1_13 = findTF(arg_1_0.spweaponNormalTF, "empty/tip")
+
+	setText(var_1_13, i18n("equip_add"))
 end
 
-function slot0.setLabelResource(slot0, slot1)
-	slot0.resource = slot1
+function var_0_0.setLabelResource(arg_2_0, arg_2_1)
+	arg_2_0.resource = arg_2_1
 end
 
-function slot0.doSwitchAnim(slot0, slot1)
-	if slot0:isTweening() then
+function var_0_0.doSwitchAnim(arg_3_0, arg_3_1)
+	if arg_3_0:isTweening() then
 		return
 	end
 
-	slot0.inSkinPage = slot1
+	arg_3_0.inSkinPage = arg_3_1
 
-	slot0:doAnim(slot0.equipmentR, slot0.skinR)
-	slot0:doAnim(slot0.equipmentL, slot0.skinL)
+	arg_3_0:doAnim(arg_3_0.equipmentR, arg_3_0.skinR)
+	arg_3_0:doAnim(arg_3_0.equipmentL, arg_3_0.skinL)
 end
 
-function slot0.isTweening(slot0)
-	if LeanTween.isTweening(go(slot0.equipmentR)) or LeanTween.isTweening(go(slot0.skinR)) or LeanTween.isTweening(go(slot0.equipmentL)) or LeanTween.isTweening(go(slot0.skinL)) then
+function var_0_0.isTweening(arg_4_0)
+	if LeanTween.isTweening(go(arg_4_0.equipmentR)) or LeanTween.isTweening(go(arg_4_0.skinR)) or LeanTween.isTweening(go(arg_4_0.equipmentL)) or LeanTween.isTweening(go(arg_4_0.skinL)) then
 		return true
 	end
 
 	return false
 end
 
-function slot0.doAnim(slot0, slot1, slot2)
-	slot5 = slot1:GetComponent(typeof(CanvasGroup))
-	slot6 = slot2:GetComponent(typeof(CanvasGroup))
+function var_0_0.doAnim(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_2.localPosition
+	local var_5_1 = arg_5_1.localPosition
+	local var_5_2 = arg_5_1:GetComponent(typeof(CanvasGroup))
+	local var_5_3 = arg_5_2:GetComponent(typeof(CanvasGroup))
 
-	LeanTween.moveLocal(go(slot1), slot2.localPosition, uv0)
-	LeanTween.moveLocal(go(slot2), slot1.localPosition, uv0)
+	LeanTween.moveLocal(go(arg_5_1), var_5_0, var_0_1)
+	LeanTween.moveLocal(go(arg_5_2), var_5_1, var_0_1)
 
-	slot7 = 0.8
-	slot8 = 1
+	local var_5_4 = 0.8
+	local var_5_5 = 1
 
-	if not slot0.inSkinPage then
-		slot8 = 0.8
-		slot7 = 1
+	if not arg_5_0.inSkinPage then
+		var_5_4, var_5_5 = 1, 0.8
 	end
 
-	LeanTween.value(go(slot1), slot7, slot8, uv0):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(arg_5_1), var_5_4, var_5_5, var_0_1):setOnUpdate(System.Action_float(function(arg_6_0)
+		var_5_2.alpha = arg_6_0
 	end))
-	LeanTween.value(go(slot2), slot8, slot7, uv0):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(arg_5_2), var_5_5, var_5_4, var_0_1):setOnUpdate(System.Action_float(function(arg_7_0)
+		var_5_3.alpha = arg_7_0
 	end))
 
-	slot6.blocksRaycasts = not slot0.inSkinPage
-	slot5.blocksRaycasts = slot0.inSkinPage
+	var_5_3.blocksRaycasts = not arg_5_0.inSkinPage
+	var_5_2.blocksRaycasts = arg_5_0.inSkinPage
 
-	(not slot0.inSkinPage and slot2 or slot1):SetAsLastSibling()
+	;(not arg_5_0.inSkinPage and arg_5_2 or arg_5_1):SetAsLastSibling()
 end
 
-function slot0.updateAll(slot0, slot1)
-	if slot1 then
-		for slot5, slot6 in ipairs(slot0.equipmentTFs) do
-			if not not table.contains(ShipEquipView.UNLOCK_EQUIPMENT_SKIN_POS, slot5) then
-				slot0:updateEquipmentTF(slot1, slot5)
+function var_0_0.updateAll(arg_8_0, arg_8_1)
+	if arg_8_1 then
+		for iter_8_0, iter_8_1 in ipairs(arg_8_0.equipmentTFs) do
+			if not not table.contains(ShipEquipView.UNLOCK_EQUIPMENT_SKIN_POS, iter_8_0) then
+				arg_8_0:updateEquipmentTF(arg_8_1, iter_8_0)
 			end
 
-			if slot0:findTF("shadow", slot6) then
-				setActive(slot8, slot0.inSkinPage)
+			local var_8_0 = arg_8_0:findTF("shadow", iter_8_1)
+
+			if var_8_0 then
+				setActive(var_8_0, arg_8_0.inSkinPage)
 			end
 		end
 
-		for slot5, slot6 in ipairs(slot0.equipmentNormalTFs) do
-			if slot0:findTF("shadow", slot6) then
-				setActive(slot7, not slot0.inSkinPage)
+		for iter_8_2, iter_8_3 in ipairs(arg_8_0.equipmentNormalTFs) do
+			local var_8_1 = arg_8_0:findTF("shadow", iter_8_3)
+
+			if var_8_1 then
+				setActive(var_8_1, not arg_8_0.inSkinPage)
 			end
 		end
 	end
 end
 
-function slot0.updateEquipmentTF(slot0, slot1, slot2)
-	slot0.shipVO = slot1
+function var_0_0.updateEquipmentTF(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0.shipVO = arg_9_1
 
-	if slot1 then
-		slot3 = slot0.equipmentTFs[slot2]
+	if arg_9_1 then
+		local var_9_0 = arg_9_0.equipmentTFs[arg_9_2]
 
-		removeOnButton(slot3)
+		removeOnButton(var_9_0)
 
-		slot4 = slot1:getEquip(slot2)
-		slot5 = slot1:getEquipSkin(slot2)
+		local var_9_1 = arg_9_1:getEquip(arg_9_2)
+		local var_9_2 = arg_9_1:getEquipSkin(arg_9_2)
+		local var_9_3 = var_9_0:Find("info")
 
-		if IsNil(slot3:Find("info")) then
-			slot6 = cloneTplTo(slot0.infoPanel, slot3, "info")
+		if IsNil(var_9_3) then
+			var_9_3 = cloneTplTo(arg_9_0.infoPanel, var_9_0, "info")
 		end
 
-		slot0:findTF("panel_title/type", slot3):GetComponent(typeof(Text)).text = EquipType.LabelToName(EquipType.Types2Title(slot2, slot0.shipVO.configId))
+		local var_9_4 = arg_9_0:findTF("panel_title/type", var_9_0)
+		local var_9_5 = EquipType.Types2Title(arg_9_2, arg_9_0.shipVO.configId)
+		local var_9_6 = EquipType.LabelToName(var_9_5)
 
-		setActive(slot3:Find("unequip"), false)
+		var_9_4:GetComponent(typeof(Text)).text = var_9_6
 
-		slot10 = slot1:getCanEquipSkin(slot2)
+		setActive(var_9_0:Find("unequip"), false)
 
-		setActive(slot6:Find("forbid"), not slot10)
-		setActive(slot6:Find("equip"), slot10)
+		local var_9_7 = arg_9_1:getCanEquipSkin(arg_9_2)
 
-		if slot10 then
-			slot0:updateEquipmentPanel(slot11, slot2)
+		setActive(var_9_3:Find("forbid"), not var_9_7)
+
+		local var_9_8 = var_9_3:Find("equip")
+
+		setActive(var_9_8, var_9_7)
+
+		if var_9_7 then
+			arg_9_0:updateEquipmentPanel(var_9_8, arg_9_2)
 		end
 	end
 end
 
-function slot0.updateEquipmentPanel(slot0, slot1, slot2)
-	if not slot0.shipVO:getCanEquipSkin(slot2) then
+function var_0_0.updateEquipmentPanel(arg_10_0, arg_10_1, arg_10_2)
+	if not arg_10_0.shipVO:getCanEquipSkin(arg_10_2) then
 		return
 	end
 
-	slot4 = slot0.shipVO:getEquipSkin(slot2) ~= 0
-	slot5 = slot0.shipVO:getEquip(slot2)
-	slot7 = false
+	local var_10_0 = arg_10_0.shipVO:getEquipSkin(arg_10_2) ~= 0
+	local var_10_1 = arg_10_0.shipVO:getEquip(arg_10_2)
+	local var_10_2 = arg_10_0.shipVO:getEquipSkin(arg_10_2)
+	local var_10_3 = false
 
-	if slot0.shipVO:getEquipSkin(slot2) ~= 0 then
-		if slot5 then
-			if not table.contains(pg.equip_skin_template[slot6].equip_type, slot5:getType()) then
-				slot7 = true
+	if var_10_2 ~= 0 then
+		if var_10_1 then
+			local var_10_4 = var_10_1:getType()
+			local var_10_5 = pg.equip_skin_template[var_10_2].equip_type
+
+			if not table.contains(var_10_5, var_10_4) then
+				var_10_3 = true
 			end
 		else
-			slot7 = true
+			var_10_3 = true
 		end
 	end
 
-	slot9 = slot1:Find("info")
+	local var_10_6 = arg_10_1:Find("add")
+	local var_10_7 = arg_10_1:Find("info")
+	local var_10_8 = var_10_7:Find("unMatch")
+	local var_10_9 = var_10_7:Find("desc")
 
-	setActive(slot9, slot4)
-	setActive(slot1:Find("add"), not slot4)
-	setActive(slot9:Find("unMatch"), slot7)
-	setActive(slot9:Find("desc"), not slot7)
+	setActive(var_10_7, var_10_0)
+	setActive(var_10_6, not var_10_0)
+	setActive(var_10_8, var_10_3)
+	setActive(var_10_9, not var_10_3)
 
-	if slot4 then
-		slot0:updateSkinInfo(slot9, slot6)
-		onButton(slot0, slot0.equipmentTFs[slot2], function ()
-			uv0:emit(ShipMainMediator.ON_SELECT_EQUIPMENT_SKIN, uv1)
+	if var_10_0 then
+		arg_10_0:updateSkinInfo(var_10_7, var_10_2)
+		onButton(arg_10_0, arg_10_0.equipmentTFs[arg_10_2], function()
+			arg_10_0:emit(ShipMainMediator.ON_SELECT_EQUIPMENT_SKIN, arg_10_2)
 		end, SFX_PANEL)
 	else
-		onButton(slot0, slot8:Find("icon"), function ()
-			uv0:emit(ShipMainMediator.ON_SELECT_EQUIPMENT_SKIN, uv1)
+		onButton(arg_10_0, var_10_6:Find("icon"), function()
+			arg_10_0:emit(ShipMainMediator.ON_SELECT_EQUIPMENT_SKIN, arg_10_2)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateSkinInfo(slot0, slot1, slot2)
-	slot3 = pg.equip_skin_template[slot2]
+function var_0_0.updateSkinInfo(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = pg.equip_skin_template[arg_13_2]
 
-	assert(slot3, "miss config equip_skin_template >>" .. slot2)
-	setText(slot1:Find("desc"), slot3.desc)
-	setText(slot1:Find("cont/name_mask/name"), shortenString(slot3.name, 10))
-	updateDrop(slot1:Find("IconTpl"), {
+	assert(var_13_0, "miss config equip_skin_template >>" .. arg_13_2)
+	setText(arg_13_1:Find("desc"), var_13_0.desc)
+	setText(arg_13_1:Find("cont/name_mask/name"), shortenString(var_13_0.name, 10))
+	updateDrop(arg_13_1:Find("IconTpl"), {
 		type = DROP_TYPE_EQUIPMENT_SKIN,
-		id = slot2
+		id = arg_13_2
 	})
 end
 
-return slot0
+return var_0_0

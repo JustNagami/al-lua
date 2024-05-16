@@ -1,70 +1,76 @@
-slot0 = class("CollectionGetAwardCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("CollectionGetAwardCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = false
-	slot6 = 0
-	slot7 = getProxy(PlayerProxy):getData()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.index
+	local var_1_3 = false
+	local var_1_4 = 0
+	local var_1_5 = getProxy(PlayerProxy):getData()
+	local var_1_6 = pg.storeup_data_template[var_1_1].award_display[var_1_2]
 
-	if pg.storeup_data_template[slot2.id].award_display[slot2.index] and slot8[1] == DROP_TYPE_RESOURCE then
-		slot6 = slot8[2]
-		slot5 = true
+	if var_1_6 and var_1_6[1] == DROP_TYPE_RESOURCE then
+		var_1_4 = var_1_6[2]
+		var_1_3 = true
 	end
 
-	if slot5 and slot6 == 1 and slot7:GoldMax(1) then
+	if var_1_3 and var_1_4 == 1 and var_1_5:GoldMax(1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_collect"))
 
 		return
 	end
 
-	if slot5 and slot6 == 2 and slot7:OilMax(1) then
+	if var_1_3 and var_1_4 == 2 and var_1_5:OilMax(1) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_collect"))
 
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(17005, {
+		id = var_1_1,
+		award_index = var_1_2
+	}, 17006, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(CollectionProxy):updateAward(var_1_1, var_1_2)
 
-	slot9:Send(17005, {
-		id = slot3,
-		award_index = slot4
-	}, 17006, function (slot0)
-		if slot0.result == 0 then
-			getProxy(CollectionProxy):updateAward(uv0, uv1)
+			local var_2_0 = pg.storeup_data_template[var_1_1].award_display[var_1_2]
 
-			if pg.storeup_data_template[uv0].award_display[uv1][1] == DROP_TYPE_RESOURCE then
-				slot4 = getProxy(PlayerProxy)
-				slot5 = slot4:getData()
+			if var_2_0[1] == DROP_TYPE_RESOURCE then
+				local var_2_1 = getProxy(PlayerProxy)
+				local var_2_2 = var_2_1:getData()
 
-				slot5:addResources({
-					[id2res(slot3[2])] = slot3[3]
+				var_2_2:addResources({
+					[id2res(var_2_0[2])] = var_2_0[3]
 				})
-				slot4:updatePlayer(slot5)
-			elseif slot3[1] == DROP_TYPE_ITEM then
-				getProxy(BagProxy):addItemById(slot3[2], slot3[3])
-			elseif slot3[1] == DROP_TYPE_EQUIP then
-				getProxy(EquipmentProxy):addEquipmentById(slot3[2], slot3[3])
-			elseif slot3[1] == DROP_TYPE_SHIP then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("collection_award_ship", pg.ship_data_statistics[slot3[2]].name))
-			elseif slot3[1] == DROP_TYPE_FURNITURE then
-				getProxy(DormProxy):AddFurniture(Furniture.New({
+				var_2_1:updatePlayer(var_2_2)
+			elseif var_2_0[1] == DROP_TYPE_ITEM then
+				getProxy(BagProxy):addItemById(var_2_0[2], var_2_0[3])
+			elseif var_2_0[1] == DROP_TYPE_EQUIP then
+				getProxy(EquipmentProxy):addEquipmentById(var_2_0[2], var_2_0[3])
+			elseif var_2_0[1] == DROP_TYPE_SHIP then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("collection_award_ship", pg.ship_data_statistics[var_2_0[2]].name))
+			elseif var_2_0[1] == DROP_TYPE_FURNITURE then
+				local var_2_3 = getProxy(DormProxy)
+				local var_2_4 = Furniture.New({
 					count = 1,
-					id = slot3[2]
-				}))
+					id = var_2_0[2]
+				})
+
+				var_2_3:AddFurniture(var_2_4)
 			end
 
-			slot4 = {}
+			local var_2_5 = {}
 
-			table.insert(slot4, Drop.Create(slot3))
-			uv2:sendNotification(GAME.COLLECT_GET_AWARD_DONE, {
-				id = uv0,
-				items = slot4
+			table.insert(var_2_5, Drop.Create(var_2_0))
+			arg_1_0:sendNotification(GAME.COLLECT_GET_AWARD_DONE, {
+				id = var_1_1,
+				items = var_2_5
 			})
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_takeOk"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("collection_getResource_error", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("collection_getResource_error", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

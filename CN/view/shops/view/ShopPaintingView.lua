@@ -1,206 +1,212 @@
-slot0 = class("ShopPaintingView")
+﻿local var_0_0 = class("ShopPaintingView")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._painting = slot1
-	slot0._paintingInitPos = slot0._painting.anchoredPosition
-	slot0._paintingOffsetMin = Vector2(slot0._painting.offsetMin.x, slot0._painting.offsetMin.y)
-	slot0._paintingOffsetMax = Vector2(slot0._painting.offsetMax.x, slot0._painting.offsetMax.y)
-	slot0.touch = slot0._painting:Find("paint_touch")
-	slot0.chat = slot2
-	slot0.chatText = slot0.chat:Find("Text")
-	slot0.name = nil
-	slot0.chatting = false
-	slot0.chatTrOffset = Vector3(118, -276, 0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._painting = arg_1_1
+	arg_1_0._paintingInitPos = arg_1_0._painting.anchoredPosition
+	arg_1_0._paintingOffsetMin = Vector2(arg_1_0._painting.offsetMin.x, arg_1_0._painting.offsetMin.y)
+	arg_1_0._paintingOffsetMax = Vector2(arg_1_0._painting.offsetMax.x, arg_1_0._painting.offsetMax.y)
+	arg_1_0.touch = arg_1_0._painting:Find("paint_touch")
+	arg_1_0.chat = arg_1_2
+	arg_1_0.chatText = arg_1_0.chat:Find("Text")
+	arg_1_0.name = nil
+	arg_1_0.chatting = false
+	arg_1_0.chatTrOffset = Vector3(118, -276, 0)
 end
 
-function slot0.InitChatPosition(slot0)
-	slot3 = slot0.chat.parent:InverseTransformPoint(slot0._painting.parent:TransformPoint(slot0._painting.localPosition + slot0.chatTrOffset))
-	slot0.chat.localPosition = Vector3(slot3.x, slot3.y, 0)
+function var_0_0.InitChatPosition(arg_2_0)
+	local var_2_0 = arg_2_0._painting.localPosition + arg_2_0.chatTrOffset
+	local var_2_1 = arg_2_0._painting.parent:TransformPoint(var_2_0)
+	local var_2_2 = arg_2_0.chat.parent:InverseTransformPoint(var_2_1)
+
+	arg_2_0.chat.localPosition = Vector3(var_2_2.x, var_2_2.y, 0)
 end
 
-function slot0.Init(slot0, slot1, slot2, slot3, slot4)
-	if not slot0.isInitChatPosition then
-		slot0.isInitChatPosition = true
+function var_0_0.Init(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	if not arg_3_0.isInitChatPosition then
+		arg_3_0.isInitChatPosition = true
 
-		slot0:InitChatPosition()
+		arg_3_0:InitChatPosition()
 	end
 
-	slot0:UnLoad()
+	arg_3_0:UnLoad()
 
-	slot0.name = slot1
+	arg_3_0.name = arg_3_1
 
-	if slot2 and slot0.secretaryTf then
-		slot0._painting.anchoredPosition = slot0.secretaryTf.anchoredPosition
-		slot0._painting.offsetMin = slot0.secretaryTf.offsetMin
-		slot0._painting.offsetMax = slot0.secretaryTf.offsetMax
+	if arg_3_2 and arg_3_0.secretaryTf then
+		arg_3_0._painting.anchoredPosition = arg_3_0.secretaryTf.anchoredPosition
+		arg_3_0._painting.offsetMin = arg_3_0.secretaryTf.offsetMin
+		arg_3_0._painting.offsetMax = arg_3_0.secretaryTf.offsetMax
 	else
-		slot0._painting.anchoredPosition = slot0._paintingInitPos
-		slot0._painting.offsetMin = slot0._paintingOffsetMin
-		slot0._painting.offsetMax = slot0._paintingOffsetMax
+		arg_3_0._painting.anchoredPosition = arg_3_0._paintingInitPos
+		arg_3_0._painting.offsetMin = arg_3_0._paintingOffsetMin
+		arg_3_0._painting.offsetMax = arg_3_0._paintingOffsetMax
 	end
 
-	slot0:Load(slot3, slot4)
+	arg_3_0:Load(arg_3_3, arg_3_4)
 end
 
-function slot0.Load(slot0, slot1, slot2)
-	slot3 = nil
-	slot3 = (slot0.name ~= "mingshi_live2d" or ShopMingShiPainting.New(slot0._painting)) and ShopMeshPainting.New(slot0._painting)
-	slot0.iShopPainting = slot3
+function var_0_0.Load(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0
 
-	slot3:Load(slot0.name, slot1, slot2)
+	if arg_4_0.name == "mingshi_live2d" then
+		var_4_0 = ShopMingShiPainting.New(arg_4_0._painting)
+	else
+		var_4_0 = ShopMeshPainting.New(arg_4_0._painting)
+	end
+
+	arg_4_0.iShopPainting = var_4_0
+
+	var_4_0:Load(arg_4_0.name, arg_4_1, arg_4_2)
 end
 
-function slot0.setSecretaryPos(slot0, slot1)
-	if slot1 then
-		slot0.secretaryTf = slot1
+function var_0_0.setSecretaryPos(arg_5_0, arg_5_1)
+	if arg_5_1 then
+		arg_5_0.secretaryTf = arg_5_1
 	end
 end
 
-function slot0.Chat(slot0, slot1, slot2, slot3, slot4)
-	slot5 = 1
+function var_0_0.Chat(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+	local var_6_0 = 1
 
-	if type(slot1) == "table" then
-		slot1 = slot1[math.random(1, #slot1)]
+	if type(arg_6_1) == "table" then
+		var_6_0 = math.random(1, #arg_6_1)
+		arg_6_1 = arg_6_1[var_6_0]
 	end
 
-	if type(slot2) == "table" then
-		slot2 = slot2[slot5]
+	if type(arg_6_2) == "table" then
+		arg_6_2 = arg_6_2[var_6_0]
 	end
 
-	if type(slot3) == "table" then
-		slot3 = slot3[slot5]
+	if type(arg_6_3) == "table" then
+		arg_6_3 = arg_6_3[var_6_0]
 	end
 
-	function slot6()
-		if uv0 then
-			uv1:ShowShipWord(uv0)
+	local function var_6_1()
+		if arg_6_1 then
+			arg_6_0:ShowShipWord(arg_6_1)
 		end
 
-		if uv2 and uv1.iShopPainting then
-			uv1.iShopPainting:Action(uv2)
+		if arg_6_3 and arg_6_0.iShopPainting then
+			arg_6_0.iShopPainting:Action(arg_6_3)
 		end
 	end
 
-	if not slot0.chatting or slot4 then
-		slot0:StopChat()
+	if not arg_6_0.chatting or arg_6_4 then
+		arg_6_0:StopChat()
 
-		if slot2 then
-			slot0:PlayCV(slot2, function (slot0)
-				if slot0 then
-					uv0._cueInfo = slot0.cueInfo
+		if arg_6_2 then
+			arg_6_0:PlayCV(arg_6_2, function(arg_8_0)
+				if arg_8_0 then
+					arg_6_0._cueInfo = arg_8_0.cueInfo
 				end
 
-				uv1()
+				var_6_1()
 			end)
 		else
-			slot6()
+			var_6_1()
 		end
 	end
 end
 
-function slot0.ShowShipWord(slot0, slot1)
-	slot0.chatting = true
+function var_0_0.ShowShipWord(arg_9_0, arg_9_1)
+	arg_9_0.chatting = true
 
-	if LeanTween.isTweening(go(slot0.chat)) then
-		LeanTween.cancel(go(slot0.chat))
+	if LeanTween.isTweening(go(arg_9_0.chat)) then
+		LeanTween.cancel(go(arg_9_0.chat))
 	end
 
-	slot2 = 0.3
-	slot3 = 3
+	local var_9_0 = 0.3
+	local var_9_1 = 3
 
-	if slot0._cueInfo and slot3 < long2int(slot0._cueInfo.length) / 1000 then
-		slot3 = slot4
+	if arg_9_0._cueInfo then
+		local var_9_2 = long2int(arg_9_0._cueInfo.length) / 1000
+
+		if var_9_1 < var_9_2 then
+			var_9_1 = var_9_2
+		end
 	end
 
-	setActive(slot0.chat, true)
-	setText(slot0.chatText, slot1)
-
-	slot4 = LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), slot2)
-	slot4 = slot4:setFrom(Vector3.New(0, 0, 0))
-	slot4 = slot4:setEase(LeanTweenType.easeOutBack)
-
-	slot4:setOnComplete(System.Action(function ()
-		if IsNil(uv0.chat) then
+	setActive(arg_9_0.chat, true)
+	setText(arg_9_0.chatText, arg_9_1)
+	LeanTween.scale(arg_9_0.chat.gameObject, Vector3.New(1, 1, 1), var_9_0):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+		if IsNil(arg_9_0.chat) then
 			return
 		end
 
-		slot0 = LeanTween.scale(uv0.chat.gameObject, Vector3.New(0, 0, 1), uv1)
-		slot0 = slot0:setFrom(Vector3.New(1, 1, 1))
-		slot0 = slot0:setEase(LeanTweenType.easeInBack)
-		slot0 = slot0:setDelay(uv2)
-
-		slot0:setOnComplete(System.Action(function ()
-			if IsNil(uv0.chat) then
+		LeanTween.scale(arg_9_0.chat.gameObject, Vector3.New(0, 0, 1), var_9_0):setFrom(Vector3.New(1, 1, 1)):setEase(LeanTweenType.easeInBack):setDelay(var_9_1):setOnComplete(System.Action(function()
+			if IsNil(arg_9_0.chat) then
 				return
 			end
 
-			uv0:StopChat()
+			arg_9_0:StopChat()
 		end))
 	end))
 end
 
-function slot0.StopChat(slot0)
-	slot0.chatting = nil
+function var_0_0.StopChat(arg_12_0)
+	arg_12_0.chatting = nil
 
-	if LeanTween.isTweening(go(slot0.chat)) then
-		LeanTween.cancel(go(slot0.chat))
+	if LeanTween.isTweening(go(arg_12_0.chat)) then
+		LeanTween.cancel(go(arg_12_0.chat))
 	end
 
-	setActive(slot0.chat, false)
-	slot0:StopCV()
+	setActive(arg_12_0.chat, false)
+	arg_12_0:StopCV()
 end
 
-function slot1(slot0, slot1)
-	slot2, slot3 = nil
+local function var_0_1(arg_13_0, arg_13_1)
+	local var_13_0
+	local var_13_1
 
-	if string.find(slot1, "/") then
-		slot4 = string.split(slot1, "/")
-		slot2 = slot4[1]
-		slot3 = slot4[2]
-	elseif slot0.name == "mingshi_live2d" then
-		slot2 = "cv-chargeShop"
-		slot3 = slot1
-	elseif string.find(slot1, "ryza_shop") then
-		slot2 = "cv-1090002"
-		slot3 = slot1
+	if string.find(arg_13_1, "/") then
+		local var_13_2 = string.split(arg_13_1, "/")
+
+		var_13_0 = var_13_2[1]
+		var_13_1 = var_13_2[2]
+	elseif arg_13_0.name == "mingshi_live2d" then
+		var_13_0 = "cv-chargeShop"
+		var_13_1 = arg_13_1
+	elseif string.find(arg_13_1, "ryza_shop") then
+		var_13_0 = "cv-1090002"
+		var_13_1 = arg_13_1
 	else
-		slot2 = "cv-shop"
-		slot3 = slot1
+		var_13_0 = "cv-shop"
+		var_13_1 = arg_13_1
 	end
 
-	return slot2, slot3
+	return var_13_0, var_13_1
 end
 
-function slot0.PlayCV(slot0, slot1, slot2)
-	slot3, slot4 = uv0(slot0, slot1)
+function var_0_0.PlayCV(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0, var_14_1 = var_0_1(arg_14_0, arg_14_1)
 
-	slot0:StopCV()
-	pg.CriMgr.GetInstance():PlayCV_V3(slot3, slot4, slot2)
+	arg_14_0:StopCV()
+	pg.CriMgr.GetInstance():PlayCV_V3(var_14_0, var_14_1, arg_14_2)
 
-	slot0._currentVoice = slot3
+	arg_14_0._currentVoice = var_14_0
 end
 
-function slot0.StopCV(slot0)
-	if slot0._currentVoice then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0._currentVoice)
+function var_0_0.StopCV(arg_15_0)
+	if arg_15_0._currentVoice then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg_15_0._currentVoice)
 	end
 
-	slot0._currentVoice = nil
-	slot0._cueInfo = nil
+	arg_15_0._currentVoice = nil
+	arg_15_0._cueInfo = nil
 end
 
-function slot0.UnLoad(slot0)
-	if slot0.iShopPainting and slot0.name then
-		slot0.iShopPainting:UnLoad(slot0.name)
+function var_0_0.UnLoad(arg_16_0)
+	if arg_16_0.iShopPainting and arg_16_0.name then
+		arg_16_0.iShopPainting:UnLoad(arg_16_0.name)
 
-		slot0.name = nil
-		slot0.iShopPainting = nil
+		arg_16_0.name = nil
+		arg_16_0.iShopPainting = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:UnLoad()
-	slot0:StopCV()
+function var_0_0.Dispose(arg_17_0)
+	arg_17_0:UnLoad()
+	arg_17_0:StopCV()
 end
 
-return slot0
+return var_0_0

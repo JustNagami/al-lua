@@ -1,25 +1,29 @@
-slot0 = class("NavTacticsDockyardShipItem", import("view.ship.DockyardShipItem"))
+﻿local var_0_0 = class("NavTacticsDockyardShipItem", import("view.ship.DockyardShipItem"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot1, slot2, slot3)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 
-	slot0.empty = findTF(slot0.tr, "empty")
-	slot0.recentTr = findTF(slot0.tr, "recent")
+	arg_1_0.empty = findTF(arg_1_0.tr, "empty")
+	arg_1_0.recentTr = findTF(arg_1_0.tr, "recent")
 
-	setText(slot0.recentTr:Find("Text"), i18n("tactics_recent_ship_label"))
+	setText(arg_1_0.recentTr:Find("Text"), i18n("tactics_recent_ship_label"))
 end
 
-function slot0.flush(slot0)
-	uv0.super.flush(slot0)
-	setActive(slot0.empty, not tobool(slot0.shipVO))
-	setActive(slot0.quit, false)
-	setActive(slot0.recentTr, false)
-	setActive(slot0.iconStatus, false)
+function var_0_0.flush(arg_2_0)
+	var_0_0.super.flush(arg_2_0)
+
+	local var_2_0 = arg_2_0.shipVO
+	local var_2_1 = tobool(var_2_0)
+
+	setActive(arg_2_0.empty, not var_2_1)
+	setActive(arg_2_0.quit, false)
+	setActive(arg_2_0.recentTr, false)
+	setActive(arg_2_0.iconStatus, false)
 end
 
-function slot0.clear(slot0)
-	uv0.super.clear(slot0)
-	setActive(slot0.recentTr, false)
+function var_0_0.clear(arg_3_0)
+	var_0_0.super.clear(arg_3_0)
+	setActive(arg_3_0.recentTr, false)
 end
 
-return slot0
+return var_0_0

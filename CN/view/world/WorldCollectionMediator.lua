@@ -1,47 +1,47 @@
-slot0 = class("WorldCollectionMediator", import("..base.ContextMediator"))
-slot0.ON_ACHIEVE_STAR = "WorldCollectionMediator.ON_ACHIEVE_STAR"
-slot0.ON_ACHIEVE_OVERVIEW = "WorldCollectionMediator.ON_ACHIEVE_OVERVIEW"
-slot0.ON_MAP = "WorldCollectionMediator.ON_MAP"
+﻿local var_0_0 = class("WorldCollectionMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_ACHIEVE_STAR, function (slot0, slot1)
-		uv0:sendNotification(GAME.WORLD_ACHIEVE, {
-			list = slot1
+var_0_0.ON_ACHIEVE_STAR = "WorldCollectionMediator.ON_ACHIEVE_STAR"
+var_0_0.ON_ACHIEVE_OVERVIEW = "WorldCollectionMediator.ON_ACHIEVE_OVERVIEW"
+var_0_0.ON_MAP = "WorldCollectionMediator.ON_MAP"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_ACHIEVE_STAR, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.WORLD_ACHIEVE, {
+			list = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_ACHIEVE_OVERVIEW, function (slot0)
-		uv0:sendNotification(WorldMediator.OnOpenMarkMap, {
+	arg_1_0:bind(var_0_0.ON_ACHIEVE_OVERVIEW, function(arg_3_0)
+		arg_1_0:sendNotification(WorldMediator.OnOpenMarkMap, {
 			mode = "Achievement"
 		})
 	end)
-	slot0:bind(uv0.ON_MAP, function (slot0, slot1)
-		uv0:sendNotification(uv1.ON_MAP, {
-			entrance = slot1,
+	arg_1_0:bind(var_0_0.ON_MAP, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(var_0_0.ON_MAP, {
+			entrance = arg_4_1,
 			mapTypes = {
 				"complete_chapter",
 				"base_chapter"
 			}
 		})
 	end)
-	slot0.viewComponent:SetAchievementList(nowWorld():GetAtlas():GetAchEntranceList())
+	arg_1_0.viewComponent:SetAchievementList(nowWorld():GetAtlas():GetAchEntranceList())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		GAME.WORLD_ACHIEVE_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == GAME.WORLD_ACHIEVE_DONE then
-		slot4 = slot0.viewComponent
-
-		slot4:emit(BaseUI.ON_ACHIEVE, slot3.drops, function ()
-			uv0.viewComponent:flushAchieveUpdate(uv1.list)
+	if var_6_0 == GAME.WORLD_ACHIEVE_DONE then
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.drops, function()
+			arg_6_0.viewComponent:flushAchieveUpdate(var_6_1.list)
 		end)
 	end
 end
 
-return slot0
+return var_0_0

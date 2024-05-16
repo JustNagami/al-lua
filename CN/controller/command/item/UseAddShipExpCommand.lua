@@ -1,50 +1,50 @@
-slot0 = class("UseAddShipExpCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("UseAddShipExpCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.id
-	slot4 = {}
-	slot5 = 0
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = {}
+	local var_1_3 = 0
 
-	for slot9, slot10 in pairs(slot2.items) do
-		if slot10 > 0 then
-			table.insert(slot4, {
-				id = slot9,
-				num = slot10
+	for iter_1_0, iter_1_1 in pairs(var_1_0.items) do
+		if iter_1_1 > 0 then
+			table.insert(var_1_2, {
+				id = iter_1_0,
+				num = iter_1_1
 			})
 
-			slot5 = slot5 + tonumber(Item.getConfigData(slot9).usage_arg) * slot10
+			local var_1_4 = Item.getConfigData(iter_1_0).usage_arg
+
+			var_1_3 = var_1_3 + tonumber(var_1_4) * iter_1_1
 		end
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(22011, {
+		ship_id = var_1_1,
+		books = var_1_2
+	}, 22012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(BayProxy)
+			local var_2_1 = var_2_0:getShipById(var_1_1)
 
-	slot6:Send(22011, {
-		ship_id = slot3,
-		books = slot4
-	}, 22012, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(BayProxy)
-			slot2 = slot1:getShipById(uv0)
+			var_2_1:addExp(var_1_3)
+			var_2_0:updateShip(var_2_1)
 
-			slot2:addExp(uv1)
-			slot1:updateShip(slot2)
+			local var_2_2 = getProxy(BagProxy)
 
-			slot3 = getProxy(BagProxy)
-
-			for slot7, slot8 in pairs(uv2.items) do
-				if slot8 > 0 then
-					slot3:removeItemById(slot7, slot8)
+			for iter_2_0, iter_2_1 in pairs(var_1_0.items) do
+				if iter_2_1 > 0 then
+					var_2_2:removeItemById(iter_2_0, iter_2_1)
 				end
 			end
 
-			uv3:sendNotification(GAME.USE_ADD_SHIPEXP_ITEM_DONE, {
-				id = uv0
+			arg_1_0:sendNotification(GAME.USE_ADD_SHIPEXP_ITEM_DONE, {
+				id = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

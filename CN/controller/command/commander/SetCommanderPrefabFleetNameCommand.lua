@@ -1,12 +1,15 @@
-slot0 = class("SetCommanderPrefabFleetNameCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SetCommanderPrefabFleetNameCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = slot2.onFailed
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.name
+	local var_1_3 = var_1_0.onFailed
+	local var_1_4 = getProxy(CommanderProxy):getPrefabFleetById(var_1_1)
 
-	if getProxy(CommanderProxy):getPrefabFleetById(slot2.id):getName() == slot2.name or slot4 == "" then
-		if slot5 then
-			slot5()
+	if var_1_4:getName() == var_1_2 or var_1_2 == "" then
+		if var_1_3 then
+			var_1_3()
 		end
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("login_newPlayerScene_name_tooShort"))
@@ -14,49 +17,47 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot7, slot8 = slot6:canRename()
+	local var_1_5, var_1_6 = var_1_4:canRename()
 
-	if not slot7 then
-		pg.TipsMgr.GetInstance():ShowTips(slot8)
+	if not var_1_5 then
+		pg.TipsMgr.GetInstance():ShowTips(var_1_6)
 
-		if slot5 then
-			slot5()
+		if var_1_3 then
+			var_1_3()
 		end
 
 		return
 	end
 
-	if not nameValidityCheck(slot4, 0, 12, {
+	if not nameValidityCheck(var_1_2, 0, 12, {
 		"spece_illegal_tip",
 		"login_newPlayerScene_name_tooShort",
 		"login_newPlayerScene_name_tooLong",
 		"playerinfo_mask_word"
 	}) then
-		if slot5 then
-			slot5()
+		if var_1_3 then
+			var_1_3()
 		end
 
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
-
-	slot9:Send(25024, {
-		id = slot3,
-		name = slot4
-	}, 25025, function (slot0)
-		if slot0.result == 0 then
-			getProxy(CommanderProxy):updatePrefabFleetName(uv0, uv1)
-			uv2:sendNotification(GAME.SET_COMMANDER_PREFAB_NAME_DONE)
+	pg.ConnectionMgr.GetInstance():Send(25024, {
+		id = var_1_1,
+		name = var_1_2
+	}, 25025, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(CommanderProxy):updatePrefabFleetName(var_1_1, var_1_2)
+			arg_1_0:sendNotification(GAME.SET_COMMANDER_PREFAB_NAME_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_prefab_rename_success"))
 		else
-			if uv3 then
-				uv3()
+			if var_1_3 then
+				var_1_3()
 			end
 
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result])
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result])
 		end
 	end)
 end
 
-return slot0
+return var_0_0

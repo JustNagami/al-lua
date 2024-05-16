@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "WEIJIAOXIAOSIPEIBOJUE2",
 	mode = 2,
 	fadeOut = 1.5,
@@ -286,9 +286,8 @@ return {
 			paintingNoise = true,
 			side = 2,
 			bgName = "bg_unnamearea_1",
-			expression = 0,
-			dir = 1,
 			actor = 102200,
+			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "这次一定要抓到幕后黑手！",
 			painting = {

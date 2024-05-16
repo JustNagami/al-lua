@@ -1,90 +1,111 @@
-slot0 = class("Summary", import(".BaseVO"))
+﻿local var_0_0 = class("Summary", import(".BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.name = getProxy(PlayerProxy):getData().name
-	slot0.registerTime = pg.TimeMgr.GetInstance():STimeDescC(slot1.register_date, "%Y.%m.%d")
-	slot0.days = math.max(math.ceil((getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY):getStartTime() - slot1.register_date) / 86400), 0) + 1
-	slot0.serverName = getProxy(ServerProxy):getRawData()[getProxy(UserProxy):getRawData() and slot5.server or 0] and slot6.name or ""
-	slot8 = pg.chapter_template[math.max(slot1.chapter_id, 101)]
-	slot0.chapterName = slot8.chapter_name .. " " .. slot8.name
-	slot0.guildName = slot1.guild_name
-	slot0.proposeCount = slot1.marry_number
-	slot0.medalCount = slot1.medal_number
-	slot0.furnitureCount = slot1.furniture_number
-	slot0.furnitureWorth = slot1.furniture_worth
-	slot0.flagShipId = slot1.character_id
-	slot0.firstLadyId = slot1.first_lady_id
-	slot0.isProPose = slot0.proposeCount > 0
-	slot0.firstProposeName = ""
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	local var_1_0 = pg.TimeMgr.GetInstance()
 
-	if slot0.firstLadyId > 0 then
-		slot0.firstProposeName = Ship.New({
-			configId = slot0.firstLadyId
+	arg_1_0.name = getProxy(PlayerProxy):getData().name
+	arg_1_0.registerTime = var_1_0:STimeDescC(arg_1_1.register_date, "%Y.%m.%d")
+
+	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY):getStartTime()
+
+	arg_1_0.days = math.max(math.ceil((var_1_1 - arg_1_1.register_date) / 86400), 0) + 1
+
+	local var_1_2 = getProxy(UserProxy):getRawData()
+	local var_1_3 = getProxy(ServerProxy):getRawData()[var_1_2 and var_1_2.server or 0]
+
+	arg_1_0.serverName = var_1_3 and var_1_3.name or ""
+
+	local var_1_4 = math.max(arg_1_1.chapter_id, 101)
+	local var_1_5 = pg.chapter_template[var_1_4]
+
+	arg_1_0.chapterName = var_1_5.chapter_name .. " " .. var_1_5.name
+	arg_1_0.guildName = arg_1_1.guild_name
+	arg_1_0.proposeCount = arg_1_1.marry_number
+	arg_1_0.medalCount = arg_1_1.medal_number
+	arg_1_0.furnitureCount = arg_1_1.furniture_number
+	arg_1_0.furnitureWorth = arg_1_1.furniture_worth
+	arg_1_0.flagShipId = arg_1_1.character_id
+	arg_1_0.firstLadyId = arg_1_1.first_lady_id
+	arg_1_0.isProPose = arg_1_0.proposeCount > 0
+	arg_1_0.firstProposeName = ""
+
+	if arg_1_0.firstLadyId > 0 then
+		arg_1_0.firstProposeName = Ship.New({
+			configId = arg_1_0.firstLadyId
 		}):getConfig("name")
 	end
 
-	if slot1.first_lady_name ~= "" then
-		slot0.firstProposeName = slot1.first_lady_name
+	if arg_1_1.first_lady_name ~= "" then
+		arg_1_0.firstProposeName = arg_1_1.first_lady_name
 	end
 
-	slot0.proposeTime = math.ceil((slot4 - slot1.first_lady_time) / 86400) + 1
-	slot0.firstLadyTime = slot2:STimeDescC(slot1.first_lady_time, "%Y-%m-%d %H:%M")
-	slot0.unMarryShipId = 100001
-	slot9 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
-	slot0.furnitures = {}
+	arg_1_0.proposeTime = math.ceil((var_1_1 - arg_1_1.first_lady_time) / 86400) + 1
+	arg_1_0.firstLadyTime = var_1_0:STimeDescC(arg_1_1.first_lady_time, "%Y-%m-%d %H:%M")
+	arg_1_0.unMarryShipId = 100001
 
-	for slot13, slot14 in pairs(getProxy(DormProxy):getRawData().furnitures) do
-		slot0.furnitures[slot14.id] = slot14
+	local var_1_6 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+
+	arg_1_0.furnitures = {}
+
+	for iter_1_0, iter_1_1 in pairs(getProxy(DormProxy):getRawData().furnitures) do
+		arg_1_0.furnitures[iter_1_1.id] = iter_1_1
 	end
 
-	slot0.medalList = underscore.filter(slot9:getConfig("config_data"), function (slot0)
-		return tobool(uv0.furnitures[slot0])
+	arg_1_0.medalList = underscore.filter(var_1_6:getConfig("config_data"), function(arg_2_0)
+		return tobool(arg_1_0.furnitures[arg_2_0])
 	end)
-	slot10 = getProxy(AttireProxy)
-	slot0.iconFrameList = underscore.filter(slot9:getConfig("config_client")[1], function (slot0)
-		return uv0:getAttireFrame(AttireConst.TYPE_ICON_FRAME, slot0[1]):isOwned()
-	end)
-	slot0.worldProgressTask = slot1.world_max_task
-	slot15 = slot9
-	slot16 = "config_client"
-	slot0.collectionNum = string.format("%0.1f", slot1.collect_num / slot9.getConfig(slot15, slot16)[2] * 100)
-	slot0.powerRaw = math.floor(slot1.combat^0.667)
-	slot0.totalShipNum = slot1.ship_num_total
-	slot0.topShipNum = slot1.ship_num_120
-	slot0.bestShipNum = slot1.ship_num_125
-	slot0.maxIntimacyNum = slot1.love200_num
-	slot0.skinNum = slot1.skin_num
-	slot0.skinShipNum = slot1.skin_ship_num
-	slot0.skinId = 0
-	slot11 = {}
 
-	for slot15, slot16 in ipairs(getProxy(ShipSkinProxy):GetShopShowingSkins()) do
-		if slot16.buyCount > 0 then
-			slot11[slot16:getSkinId()] = true
+	local var_1_7 = getProxy(AttireProxy)
+
+	arg_1_0.iconFrameList = underscore.filter(var_1_6:getConfig("config_client")[1], function(arg_3_0)
+		return var_1_7:getAttireFrame(AttireConst.TYPE_ICON_FRAME, arg_3_0[1]):isOwned()
+	end)
+	arg_1_0.worldProgressTask = arg_1_1.world_max_task
+	arg_1_0.collectionNum = string.format("%0.1f", arg_1_1.collect_num / var_1_6:getConfig("config_client")[2] * 100)
+	arg_1_0.powerRaw = math.floor(arg_1_1.combat^0.667)
+	arg_1_0.totalShipNum = arg_1_1.ship_num_total
+	arg_1_0.topShipNum = arg_1_1.ship_num_120
+	arg_1_0.bestShipNum = arg_1_1.ship_num_125
+	arg_1_0.maxIntimacyNum = arg_1_1.love200_num
+	arg_1_0.skinNum = arg_1_1.skin_num
+	arg_1_0.skinShipNum = arg_1_1.skin_ship_num
+	arg_1_0.skinId = 0
+
+	local var_1_8 = {}
+
+	for iter_1_2, iter_1_3 in ipairs(getProxy(ShipSkinProxy):GetShopShowingSkins()) do
+		if iter_1_3.buyCount > 0 then
+			var_1_8[iter_1_3:getSkinId()] = true
 		end
 	end
 
-	slot12 = getProxy(BayProxy)
+	local var_1_9 = getProxy(BayProxy)
 
-	for slot16, slot17 in ipairs(getProxy(PlayerProxy):getRawData().characters) do
-		if slot12:getShipById(slot17) and slot11[slot18.skinId] then
-			slot0.skinId = slot18.skinId
+	for iter_1_4, iter_1_5 in ipairs(getProxy(PlayerProxy):getRawData().characters) do
+		local var_1_10 = var_1_9:getShipById(iter_1_5)
+
+		if var_1_10 and var_1_8[var_1_10.skinId] then
+			arg_1_0.skinId = var_1_10.skinId
 
 			break
 		end
 	end
 
-	if slot0.skinId == 0 and #underscore.keys(slot11) > 0 then
-		slot0.skinId = slot13[math.max(1, math.ceil(math.random() * #slot13))]
+	if arg_1_0.skinId == 0 then
+		local var_1_11 = underscore.keys(var_1_8)
+
+		if #var_1_11 > 0 then
+			arg_1_0.skinId = var_1_11[math.max(1, math.ceil(math.random() * #var_1_11))]
+		end
 	end
 end
 
-function slot0.hasGuild(slot0)
-	return slot0.guildName and slot0.guildName ~= ""
+function var_0_0.hasGuild(arg_4_0)
+	return arg_4_0.guildName and arg_4_0.guildName ~= ""
 end
 
-function slot0.hasMedal(slot0)
-	return slot0.medalCount > 0
+function var_0_0.hasMedal(arg_5_0)
+	return arg_5_0.medalCount > 0
 end
 
-return slot0
+return var_0_0

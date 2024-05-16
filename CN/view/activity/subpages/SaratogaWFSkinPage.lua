@@ -1,36 +1,36 @@
-slot0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("SaratogaWFSkinPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.displayBtn, function ()
-		uv0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = uv0.ptData.type,
-			dropList = uv0.ptData.dropList,
-			targets = uv0.ptData.targets,
-			level = uv0.ptData.level,
-			count = uv0.ptData.count,
-			resId = uv0.ptData.resId
+function var_0_0.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.displayBtn, function()
+		arg_1_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = arg_1_0.ptData.type,
+			dropList = arg_1_0.ptData.dropList,
+			targets = arg_1_0.ptData.targets,
+			level = arg_1_0.ptData.level,
+			count = arg_1_0.ptData.count,
+			resId = arg_1_0.ptData.resId
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
+		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_1_0, arg_1_0.getBtn, function()
+		local var_4_0, var_4_1 = arg_1_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_1_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1
+			activity_id = arg_1_0.ptData:GetId(),
+			arg1 = var_4_1
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	var_0_0.super.OnUpdateFlush(arg_5_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
+	local var_5_0, var_5_1, var_5_2 = arg_5_0.ptData:GetResProgress()
 
-	setText(slot0.progress, setColorStr(slot1, "#F294B8FF") .. "/" .. slot2)
+	setText(arg_5_0.progress, setColorStr(var_5_0, "#F294B8FF") .. "/" .. var_5_1)
 end
 
-return slot0
+return var_0_0

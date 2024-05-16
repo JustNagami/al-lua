@@ -1,14 +1,14 @@
-slot0 = class("ColoringFetchCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ColoringFetchCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().activityId
 
-	slot4:Send(26008, {
-		act_id = slot1:getBody().activityId
-	}, 26001, function (slot0)
-		getProxy(ColoringProxy):netUpdateData(slot0)
-		uv0:sendNotification(GAME.COLORING_FETCH_DONE)
+	pg.ConnectionMgr.GetInstance():Send(26008, {
+		act_id = var_1_0
+	}, 26001, function(arg_2_0)
+		getProxy(ColoringProxy):netUpdateData(arg_2_0)
+		arg_1_0:sendNotification(GAME.COLORING_FETCH_DONE)
 	end)
 end
 
-return slot0
+return var_0_0

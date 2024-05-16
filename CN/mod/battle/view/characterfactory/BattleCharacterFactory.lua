@@ -1,208 +1,253 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = singletonClass("BattleCharacterFactory")
-slot0.Battle.BattleCharacterFactory = slot2
-slot2.__name = "BattleCharacterFactory"
-slot2.HP_BAR_NAME = ""
-slot2.POPUP_NAME = "popup"
-slot2.TAG_NAME = "ChargeAreaContainer/LockTag"
-slot2.MOVE_WAVE_FX_POS = Vector3(0, -2.3, -1.5)
-slot2.MOVE_WAVE_FX_NAME = "movewave"
-slot2.SMOKE_FX_NAME = "smoke"
-slot2.BOMB_FX_NAME = "Bomb"
-slot2.DANCHUAN_MOVE_WAVE_FX_NAME = "danchuanlanghuazhong2"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = singletonClass("BattleCharacterFactory")
+
+var_0_0.Battle.BattleCharacterFactory = var_0_2
+var_0_2.__name = "BattleCharacterFactory"
+var_0_2.HP_BAR_NAME = ""
+var_0_2.POPUP_NAME = "popup"
+var_0_2.TAG_NAME = "ChargeAreaContainer/LockTag"
+var_0_2.MOVE_WAVE_FX_POS = Vector3(0, -2.3, -1.5)
+var_0_2.MOVE_WAVE_FX_NAME = "movewave"
+var_0_2.SMOKE_FX_NAME = "smoke"
+var_0_2.BOMB_FX_NAME = "Bomb"
+var_0_2.DANCHUAN_MOVE_WAVE_FX_NAME = "danchuanlanghuazhong2"
+
+function var_0_2.Ctor(arg_1_0)
+	return
 end
 
-function slot2.CreateCharacter(slot0, slot1)
-	slot3 = slot0:MakeCharacter()
+function var_0_2.CreateCharacter(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1.unit
+	local var_2_1 = arg_2_0:MakeCharacter()
 
-	slot3:SetFactory(slot0)
-	slot3:SetUnitData(slot1.unit)
-	slot0:MakeModel(slot3)
+	var_2_1:SetFactory(arg_2_0)
+	var_2_1:SetUnitData(var_2_0)
+	arg_2_0:MakeModel(var_2_1)
 
-	return slot3
+	return var_2_1
 end
 
-function slot2.GetSceneMediator(slot0)
-	return uv0.Battle.BattleState.GetInstance():GetMediatorByName(uv0.Battle.BattleSceneMediator.__name)
+function var_0_2.GetSceneMediator(arg_3_0)
+	return var_0_0.Battle.BattleState.GetInstance():GetMediatorByName(var_0_0.Battle.BattleSceneMediator.__name)
 end
 
-function slot2.GetFXPool(slot0)
-	return uv0.Battle.BattleFXPool.GetInstance()
+function var_0_2.GetFXPool(arg_4_0)
+	return var_0_0.Battle.BattleFXPool.GetInstance()
 end
 
-function slot2.GetCharacterPool(slot0)
-	return uv0.Battle.BattleResourceManager.GetInstance()
+function var_0_2.GetCharacterPool(arg_5_0)
+	return var_0_0.Battle.BattleResourceManager.GetInstance()
 end
 
-function slot2.GetHPBarPool(slot0)
-	return uv0.Battle.BattleHPBarManager.GetInstance()
+function var_0_2.GetHPBarPool(arg_6_0)
+	return var_0_0.Battle.BattleHPBarManager.GetInstance()
 end
 
-function slot2.GetDivingFilterColor(slot0)
-	slot2 = uv0.Battle.BattleDataFunction.GetDivingFilter(uv0.Battle.BattleDataProxy.GetInstance()._mapId)
+function var_0_2.GetDivingFilterColor(arg_7_0)
+	local var_7_0 = var_0_0.Battle.BattleDataProxy.GetInstance()._mapId
+	local var_7_1 = var_0_0.Battle.BattleDataFunction.GetDivingFilter(var_7_0)
 
-	return Color.New(slot2.r, slot2.g, slot2.b, slot2.a)
+	return (Color.New(var_7_1.r, var_7_1.g, var_7_1.b, var_7_1.a))
 end
 
-function slot2.GetFXContainerPool(slot0)
-	return uv0.Battle.BattleCharacterFXContainersPool.GetInstance()
+function var_0_2.GetFXContainerPool(arg_8_0)
+	return var_0_0.Battle.BattleCharacterFXContainersPool.GetInstance()
 end
 
-function slot2.MakeCharacter(slot0)
+function var_0_2.MakeCharacter(arg_9_0)
 	return nil
 end
 
-function slot2.MakeModel(slot0, slot1)
+function var_0_2.MakeModel(arg_10_0, arg_10_1)
 	return nil
 end
 
-function slot2.MakeBloodBar(slot0, slot1)
+function var_0_2.MakeBloodBar(arg_11_0, arg_11_1)
 	return nil
 end
 
-function slot2.MakeAimBiasBar(slot0)
+function var_0_2.MakeAimBiasBar(arg_12_0)
 	return nil
 end
 
-function slot2.SetHPBarWidth(slot0, slot1, slot2, slot3)
-	slot5 = slot1:GetUnitData():GetTemplate().hp_bar[1]
-	slot6 = slot2.transform
-	slot6.sizeDelta = Vector2(slot5, slot6.rect.height)
-	slot8.sizeDelta = Vector2(slot5 + slot3 or 0, slot6:Find("blood").transform.rect.height)
+function var_0_2.SetHPBarWidth(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = arg_13_1:GetUnitData():GetTemplate().hp_bar[1]
+	local var_13_1 = arg_13_2.transform
+	local var_13_2 = var_13_1.rect.height
+
+	var_13_1.sizeDelta = Vector2(var_13_0, var_13_2)
+
+	local var_13_3 = var_13_1:Find("blood").transform
+	local var_13_4 = var_13_3.rect.height
+
+	var_13_3.sizeDelta = Vector2(var_13_0 + arg_13_3 or 0, var_13_4)
 end
 
-function slot2.MakeUIComponentContainer(slot0, slot1)
-	slot1:AddUIComponentContainer()
+function var_0_2.MakeUIComponentContainer(arg_14_0, arg_14_1)
+	arg_14_1:AddUIComponentContainer()
 end
 
-function slot2.MakeFXContainer(slot0, slot1)
-	slot2 = slot1:GetTf()
-	slot4 = slot0:GetFXPool():PopCharacterAttachPoint().transform
+function var_0_2.MakeFXContainer(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1:GetTf()
+	local var_15_1 = arg_15_0:GetFXPool():PopCharacterAttachPoint()
+	local var_15_2 = var_15_1.transform
 
-	SetActive(slot4, true)
-	slot4:SetParent(slot2, false)
+	SetActive(var_15_2, true)
+	var_15_2:SetParent(var_15_0, false)
 
-	slot4.localPosition = Vector3.zero
-	slot5 = slot2.localEulerAngles
-	slot4.localEulerAngles = Vector3(slot5.x * -1, slot5.y, slot5.z)
-	slot6 = slot1:GetUnitData():GetTemplate().fx_container
-	slot7 = {}
+	var_15_2.localPosition = Vector3.zero
 
-	for slot11, slot12 in ipairs(uv0.Battle.BattleConst.FXContainerIndex) do
-		slot13 = slot6[slot11]
-		slot7[slot11] = Vector3(slot13[1], slot13[2], slot13[3])
+	local var_15_3 = var_15_0.localEulerAngles
+
+	var_15_2.localEulerAngles = Vector3(var_15_3.x * -1, var_15_3.y, var_15_3.z)
+
+	local var_15_4 = arg_15_1:GetUnitData():GetTemplate().fx_container
+	local var_15_5 = {}
+
+	for iter_15_0, iter_15_1 in ipairs(var_0_0.Battle.BattleConst.FXContainerIndex) do
+		local var_15_6 = var_15_4[iter_15_0]
+
+		var_15_5[iter_15_0] = Vector3(var_15_6[1], var_15_6[2], var_15_6[3])
 	end
 
-	slot1:AddFXOffsets(slot3, slot7)
+	arg_15_1:AddFXOffsets(var_15_1, var_15_5)
 end
 
-function slot2.MakeShadow(slot0)
+function var_0_2.MakeShadow(arg_16_0)
 	return nil
 end
 
-function slot2.MakeSmokeFX(slot0, slot1)
-	slot3 = {}
+function var_0_2.MakeSmokeFX(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_1:GetUnitData():GetTemplate().smoke
+	local var_17_1 = {}
 
-	for slot7, slot8 in ipairs(slot1:GetUnitData():GetTemplate().smoke) do
-		slot10 = {}
+	for iter_17_0, iter_17_1 in ipairs(var_17_0) do
+		local var_17_2 = iter_17_1[2]
+		local var_17_3 = {}
 
-		for slot14, slot15 in ipairs(slot8[2]) do
-			slot10[{
-				unInitialize = true,
-				resID = slot15[1],
-				pos = Vector3(slot15[2][1], slot15[2][2], slot15[2][3])
-			}] = false
+		for iter_17_2, iter_17_3 in ipairs(var_17_2) do
+			local var_17_4 = {}
+
+			var_17_4.unInitialize = true
+			var_17_4.resID = iter_17_3[1]
+			var_17_4.pos = Vector3(iter_17_3[2][1], iter_17_3[2][2], iter_17_3[2][3])
+			var_17_3[var_17_4] = false
 		end
 
-		slot3[slot7] = {
+		var_17_1[iter_17_0] = {
 			active = false,
-			rate = slot8[1] / 100,
-			smokes = slot10
+			rate = iter_17_1[1] / 100,
+			smokes = var_17_3
 		}
 	end
 
-	slot1:AddSmokeFXs(slot3)
+	arg_17_1:AddSmokeFXs(var_17_1)
 end
 
-function slot2.MakeWaveFX(slot0, slot1)
-	slot1:AddWaveFX(slot0.MOVE_WAVE_FX_NAME)
+function var_0_2.MakeWaveFX(arg_18_0, arg_18_1)
+	arg_18_1:AddWaveFX(arg_18_0.MOVE_WAVE_FX_NAME)
 end
 
-function slot2.MakePopNumPool(slot0, slot1)
-	slot1:AddPopNumPool(slot0:GetSceneMediator():GetPopNumPool())
+function var_0_2.MakePopNumPool(arg_19_0, arg_19_1)
+	arg_19_1:AddPopNumPool(arg_19_0:GetSceneMediator():GetPopNumPool())
 end
 
-function slot2.MakeTag(slot0, slot1)
-	return uv0.Battle.BattleLockTag.New(slot0:GetSceneMediator():InstantiateCharacterComponent(slot0.TAG_NAME), slot1)
+function var_0_2.MakeTag(arg_20_0, arg_20_1)
+	return (var_0_0.Battle.BattleLockTag.New(arg_20_0:GetSceneMediator():InstantiateCharacterComponent(arg_20_0.TAG_NAME), arg_20_1))
 end
 
-function slot2.MakePopup(slot0)
-	return slot0:GetSceneMediator():InstantiateCharacterComponent(slot0.POPUP_NAME)
+function var_0_2.MakePopup(arg_21_0)
+	return (arg_21_0:GetSceneMediator():InstantiateCharacterComponent(arg_21_0.POPUP_NAME))
 end
 
-function slot2.MakeArrowBar(slot0, slot1)
-	slot1:AddArrowBar(slot0:GetSceneMediator():InstantiateCharacterComponent(slot0.ARROW_BAR_NAME))
-	slot1:UpdateArrowBarPostition()
+function var_0_2.MakeArrowBar(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0:GetSceneMediator()
+
+	arg_22_1:AddArrowBar(var_22_0:InstantiateCharacterComponent(arg_22_0.ARROW_BAR_NAME))
+	arg_22_1:UpdateArrowBarPostition()
 end
 
-function slot2.MakeCastClock(slot0, slot1)
-	slot1:AddCastClock(slot0:GetSceneMediator():InstantiateCharacterComponent("CastClockContainer/castClock"))
+function var_0_2.MakeCastClock(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0:GetSceneMediator()
+
+	arg_23_1:AddCastClock(var_23_0:InstantiateCharacterComponent("CastClockContainer/castClock"))
 end
 
-function slot2.MakeBuffClock(slot0, slot1)
-	slot1:AddBuffClock(slot0:GetSceneMediator():InstantiateCharacterComponent("CastClockContainer/buffClock"))
+function var_0_2.MakeBuffClock(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0:GetSceneMediator()
+
+	arg_24_1:AddBuffClock(var_24_0:InstantiateCharacterComponent("CastClockContainer/buffClock"))
 end
 
-function slot2.MakeBarrierClock(slot0, slot1)
-	slot1:AddBarrierClock(slot0:GetSceneMediator():InstantiateCharacterComponent("CastClockContainer/shieldClock"))
+function var_0_2.MakeBarrierClock(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0:GetSceneMediator()
+
+	arg_25_1:AddBarrierClock(var_25_0:InstantiateCharacterComponent("CastClockContainer/shieldClock"))
 end
 
-function slot2.MakeVigilantBar(slot0, slot1)
-	slot1:AddVigilantBar(slot0:GetSceneMediator():InstantiateCharacterComponent("AntiSubVigilantContainer/antiSubMeter"))
-	slot1:UpdateVigilantBarPosition()
+function var_0_2.MakeVigilantBar(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_0:GetSceneMediator()
+
+	arg_26_1:AddVigilantBar(var_26_0:InstantiateCharacterComponent("AntiSubVigilantContainer/antiSubMeter"))
+	arg_26_1:UpdateVigilantBarPosition()
 end
 
-function slot2.MakeCloakBar(slot0, slot1)
-	slot1:AddCloakBar(slot0:GetSceneMediator():InstantiateCharacterComponent("CloakContainer/cloakMeter"))
-	slot1:UpdateCloakBarPosition()
+function var_0_2.MakeCloakBar(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0:GetSceneMediator()
+
+	arg_27_1:AddCloakBar(var_27_0:InstantiateCharacterComponent("CloakContainer/cloakMeter"))
+	arg_27_1:UpdateCloakBarPosition()
 end
 
-function slot2.MakeSkinOrbit(slot0, slot1)
-	if slot1:GetUnitData():GetSkinAttachmentInfo() then
-		for slot7, slot8 in ipairs(slot3) do
-			slot9 = uv0.Battle.BattleDataFunction.GetEquipSkinDataFromID(slot8)
+function var_0_2.MakeSkinOrbit(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1:GetUnitData():GetSkinAttachmentInfo()
 
-			slot1:AddOrbit(uv0.Battle.BattleResourceManager.GetInstance():InstOrbit(slot9.orbit_combat), slot9)
+	if var_28_0 then
+		for iter_28_0, iter_28_1 in ipairs(var_28_0) do
+			local var_28_1 = var_0_0.Battle.BattleDataFunction.GetEquipSkinDataFromID(iter_28_1)
+			local var_28_2 = var_0_0.Battle.BattleResourceManager.GetInstance():InstOrbit(var_28_1.orbit_combat)
+
+			arg_28_1:AddOrbit(var_28_2, var_28_1)
 		end
 	end
 end
 
-function slot2.RemoveCharacter(slot0, slot1, slot2)
-	if slot1:GetUnitData():GetTemplate().nationality and table.contains(uv0.SWEET_DEATH_NATIONALITY, slot3) then
-		-- Nothing
-	elseif not slot2 or slot2 == uv1.Battle.BattleConst.UnitDeathReason.KILLED then
-		slot5, slot6 = slot0:GetFXPool():GetFX(slot1:GetUnitData():GetDeadFX() or slot0.BOMB_FX_NAME)
+function var_0_2.RemoveCharacter(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0 = arg_29_1:GetUnitData():GetTemplate().nationality
 
-		pg.EffectMgr.GetInstance():PlayBattleEffect(slot5, slot6:Add(slot1:GetPosition()), true)
+	if var_29_0 and table.contains(var_0_1.SWEET_DEATH_NATIONALITY, var_29_0) then
+		-- block empty
+	elseif arg_29_2 and arg_29_2 ~= var_0_0.Battle.BattleConst.UnitDeathReason.KILLED then
+		-- block empty
+	else
+		local var_29_1 = arg_29_1:GetUnitData():GetDeadFX()
+		local var_29_2, var_29_3 = arg_29_0:GetFXPool():GetFX(var_29_1 or arg_29_0.BOMB_FX_NAME)
+
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_29_2, var_29_3:Add(arg_29_1:GetPosition()), true)
 	end
 
-	slot1:Dispose()
-	slot0:GetFXPool():PushCharacterAttachPoint(slot1:GetAttachPoint())
+	arg_29_1:Dispose()
+	arg_29_0:GetFXPool():PushCharacterAttachPoint(arg_29_1:GetAttachPoint())
 end
 
-function slot2.SwitchCharacterSpine(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_2.SwitchCharacterSpine(arg_30_0, arg_30_1, arg_30_2)
+	local var_30_0
 
-	function slot4(slot0)
-		uv0:SwitchModel(slot0, uv1)
-		uv0:CameraOrthogonal(uv2.Battle.BattleCameraUtil.GetInstance():GetCamera())
+	if arg_30_2 then
+		var_30_0 = var_0_0.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(arg_30_2).prefab
+	else
+		var_30_0 = arg_30_1:GetModleID()
 	end
 
-	slot0:GetCharacterPool():InstCharacter((not slot2 or uv0.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(slot2).prefab) and slot1:GetModleID(), function (slot0)
-		uv0(slot0)
+	local function var_30_1(arg_31_0)
+		arg_30_1:SwitchModel(arg_31_0, arg_30_2)
+		arg_30_1:CameraOrthogonal(var_0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+	end
+
+	arg_30_0:GetCharacterPool():InstCharacter(var_30_0, function(arg_32_0)
+		var_30_1(arg_32_0)
 	end)
 end

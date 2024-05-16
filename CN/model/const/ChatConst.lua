@@ -1,79 +1,80 @@
-slot0 = class("ChatConst")
-slot0.CODE_BANED = 100
-slot0.CODE_ACTOBSS_MSG_WORD = 1000
-slot0.ChannelAll = 1
-slot0.ChannelWorld = 2
-slot0.ChannelPublic = 3
-slot0.ChannelFriend = 4
-slot0.ChannelGuild = 5
-slot0.ChannelWorldBoss = 6
-slot0.SendChannels = {
-	slot0.ChannelWorld,
-	slot0.ChannelGuild
+﻿local var_0_0 = class("ChatConst")
+
+var_0_0.CODE_BANED = 100
+var_0_0.CODE_ACTOBSS_MSG_WORD = 1000
+var_0_0.ChannelAll = 1
+var_0_0.ChannelWorld = 2
+var_0_0.ChannelPublic = 3
+var_0_0.ChannelFriend = 4
+var_0_0.ChannelGuild = 5
+var_0_0.ChannelWorldBoss = 6
+var_0_0.SendChannels = {
+	var_0_0.ChannelWorld,
+	var_0_0.ChannelGuild
 }
-slot0.RecvChannels = {
-	slot0.ChannelAll,
-	slot0.ChannelWorld,
-	slot0.ChannelPublic,
-	slot0.ChannelFriend,
-	slot0.ChannelGuild,
-	slot0.ChannelWorldBoss
+var_0_0.RecvChannels = {
+	var_0_0.ChannelAll,
+	var_0_0.ChannelWorld,
+	var_0_0.ChannelPublic,
+	var_0_0.ChannelFriend,
+	var_0_0.ChannelGuild,
+	var_0_0.ChannelWorldBoss
 }
 
-function slot0.GetChannelName(slot0)
-	return i18n("channel_name_" .. slot0)
+function var_0_0.GetChannelName(arg_1_0)
+	return i18n("channel_name_" .. arg_1_0)
 end
 
-function slot0.GetChannelSprite(slot0)
-	if slot0 == uv0.ChannelWorld then
+function var_0_0.GetChannelSprite(arg_2_0)
+	if arg_2_0 == var_0_0.ChannelWorld then
 		return "world"
-	elseif slot0 == uv0.ChannelPublic then
+	elseif arg_2_0 == var_0_0.ChannelPublic then
 		return "public"
-	elseif slot0 == uv0.ChannelFriend then
+	elseif arg_2_0 == var_0_0.ChannelFriend then
 		return "friend"
-	elseif slot0 == uv0.ChannelGuild then
+	elseif arg_2_0 == var_0_0.ChannelGuild then
 		return "guild"
-	elseif slot0 == uv0.ChannelAll then
+	elseif arg_2_0 == var_0_0.ChannelAll then
 		return "total"
-	elseif slot0 == uv0.ChannelWorldBoss then
+	elseif arg_2_0 == var_0_0.ChannelWorldBoss then
 		return "worldboss"
 	end
 
 	assert(false)
 end
 
-slot0.EmojiCommon = 0
-slot0.EmojiDefault = 1
-slot0.EmojiAnimate = 2
-slot0.EmojiPixel = 3
-slot0.EmojiIcon = 4
-slot0.EmojiTypes = {
-	slot0.EmojiCommon,
-	slot0.EmojiDefault,
-	slot0.EmojiAnimate,
-	slot0.EmojiPixel,
-	slot0.EmojiIcon
+var_0_0.EmojiCommon = 0
+var_0_0.EmojiDefault = 1
+var_0_0.EmojiAnimate = 2
+var_0_0.EmojiPixel = 3
+var_0_0.EmojiIcon = 4
+var_0_0.EmojiTypes = {
+	var_0_0.EmojiCommon,
+	var_0_0.EmojiDefault,
+	var_0_0.EmojiAnimate,
+	var_0_0.EmojiPixel,
+	var_0_0.EmojiIcon
 }
 
-function slot0.GetEmojiSprite(slot0)
-	if slot0 == uv0.EmojiCommon then
+function var_0_0.GetEmojiSprite(arg_3_0)
+	if arg_3_0 == var_0_0.EmojiCommon then
 		return "tab_casual"
-	elseif slot0 == uv0.EmojiDefault then
+	elseif arg_3_0 == var_0_0.EmojiDefault then
 		return "tab_default"
-	elseif slot0 == uv0.EmojiAnimate then
+	elseif arg_3_0 == var_0_0.EmojiAnimate then
 		return "tab_motive"
-	elseif slot0 == uv0.EmojiPixel then
+	elseif arg_3_0 == var_0_0.EmojiPixel then
 		return "tab_pixel"
 	end
 
 	assert(false)
 end
 
-slot0.EmojiCode = "{777#code#777}"
-slot0.EmojiCodeMatch = "{777#(%d+)#777}"
-slot0.EmojiIconCode = "#code#"
-slot0.EmojiIconCodeMatch = "#(%d+)#"
-slot0.EMOJI_SAVE_TAG = "emoji_regular_used_"
-slot0.EMOJI_ICON_SAVE_TAG = "emoji_icon_regular_used_"
+var_0_0.EmojiCode = "{777#code#777}"
+var_0_0.EmojiCodeMatch = "{777#(%d+)#777}"
+var_0_0.EmojiIconCode = "#code#"
+var_0_0.EmojiIconCodeMatch = "#(%d+)#"
+var_0_0.EMOJI_SAVE_TAG = "emoji_regular_used_"
+var_0_0.EMOJI_ICON_SAVE_TAG = "emoji_icon_regular_used_"
 
-return slot0
+return var_0_0

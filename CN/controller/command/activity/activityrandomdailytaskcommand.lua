@@ -1,30 +1,33 @@
-slot0 = class("ActivityRandomDailyTaskCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ActivityRandomDailyTaskCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityById(slot1:getBody().activity_id) or slot3:isEnd() then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
+
+	if not var_1_1 or var_1_1:isEnd() then
 		return
 	end
 
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(11202, {
-		activity_id = slot2.activity_id,
-		cmd = slot2.cmd,
-		arg1 = slot2.arg1,
-		arg2 = slot2.arg2,
+	pg.ConnectionMgr.GetInstance():Send(11202, {
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.arg1,
+		arg2 = var_1_0.arg2,
 		arg_list = {},
-		kvargs1 = slot2.kvargs1
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			if uv0.cmd == ActivityConst.RANDOM_DAILY_TASK_OP_RANDOM then
-				uv1.data1 = pg.TimeMgr.GetInstance():GetServerTime()
+		kvargs1 = var_1_0.kvargs1
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			if var_1_0.cmd == ActivityConst.RANDOM_DAILY_TASK_OP_RANDOM then
+				local var_2_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-				getProxy(ActivityProxy):updateActivity(uv1)
+				var_1_1.data1 = var_2_0
+
+				getProxy(ActivityProxy):updateActivity(var_1_1)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

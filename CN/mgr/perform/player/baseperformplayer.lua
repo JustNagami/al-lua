@@ -1,33 +1,33 @@
-slot0 = class("BasePerformPlayer")
+﻿local var_0_0 = class("BasePerformPlayer")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0._anim = slot0._tf:GetComponent(typeof(Animation))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0._anim = arg_1_0._tf:GetComponent(typeof(Animation))
 
-	slot0:Hide()
+	arg_1_0:Hide()
 end
 
-function slot0.Play(slot0, slot1, slot2)
+function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2)
 	assert(nil, "Play方法必须由子类实现")
 end
 
-function slot0.Show(slot0)
-	setActive(slot0._go, true)
+function var_0_0.Show(arg_3_0)
+	setActive(arg_3_0._go, true)
 end
 
-function slot0.Hide(slot0)
-	setActive(slot0._go, false)
+function var_0_0.Hide(arg_4_0)
+	setActive(arg_4_0._go, false)
 end
 
-function slot0.Clear(slot0)
+function var_0_0.Clear(arg_5_0)
 	assert(nil, "Clear方法必须由子类实现")
 end
 
-function slot0.findTF(slot0, slot1, slot2)
-	assert(slot0._tf, "transform should exist")
+function var_0_0.findTF(arg_6_0, arg_6_1, arg_6_2)
+	assert(arg_6_0._tf, "transform should exist")
 
-	return findTF(slot2 or slot0._tf, slot1)
+	return findTF(arg_6_2 or arg_6_0._tf, arg_6_1)
 end
 
-return slot0
+return var_0_0

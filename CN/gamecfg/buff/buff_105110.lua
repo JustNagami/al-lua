@@ -1,4 +1,43 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				time = 20,
+				skill_id = 105110
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 105111,
+				target = "TargetSelf",
+				time = 20,
+				quota = 1
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 1,
+				index = {
+					-1
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -418,44 +457,5 @@ return {
 	stack = 1,
 	id = 105110,
 	icon = 105110,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				time = 20,
-				skill_id = 105110
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 105111,
-				target = "TargetSelf",
-				time = 20,
-				quota = 1
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 1,
-				index = {
-					-1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

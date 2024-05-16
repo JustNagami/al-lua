@@ -1,92 +1,92 @@
-slot0 = class("CommanderPaintingUtil")
+﻿local var_0_0 = class("CommanderPaintingUtil")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.rect = slot1.parent.rect
-	slot2 = slot1.parent.parent:Find("background")
-	slot0._tf = slot1
-	slot0.zoomDelegate = GetOrAddComponent(slot1, "MultiTouchZoom")
-	slot0.dragDelegate = GetOrAddComponent(slot1, "EventTriggerListener")
-	slot0.initPosition = slot0._tf.localPosition
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.rect = arg_1_1.parent.rect
+
+	local var_1_0 = arg_1_1.parent.parent:Find("background")
+
+	arg_1_0._tf = arg_1_1
+	arg_1_0.zoomDelegate = GetOrAddComponent(arg_1_1, "MultiTouchZoom")
+	arg_1_0.dragDelegate = GetOrAddComponent(arg_1_1, "EventTriggerListener")
+	arg_1_0.initPosition = arg_1_0._tf.localPosition
 end
 
-function slot0.Fold(slot0)
-	slot0.zoomDelegate:SetZoomTarget(slot0._tf)
+function var_0_0.Fold(arg_2_0)
+	arg_2_0.zoomDelegate:SetZoomTarget(arg_2_0._tf)
 
-	slot0.zoomDelegate.enabled = true
-	slot0.dragDelegate.enabled = true
+	arg_2_0.zoomDelegate.enabled = true
+	arg_2_0.dragDelegate.enabled = true
 
-	LeanTween.move(rtf(slot0._tf), Vector3.zero, 0.5)
+	LeanTween.move(rtf(arg_2_0._tf), Vector3.zero, 0.5)
 
-	if slot0._tf:Find("fitter"):GetChild(0) then
-		slot1:GetComponent(typeof(Image)).raycastTarget = true
+	local var_2_0 = arg_2_0._tf:Find("fitter"):GetChild(0)
+
+	if var_2_0 then
+		var_2_0:GetComponent(typeof(Image)).raycastTarget = true
 	end
 
-	slot2 = slot0._tf
-	slot3 = slot2.anchoredPosition.x
-	slot4 = slot2.anchoredPosition.y
-	slot7 = slot0.rect.width / UnityEngine.Screen.width
-	slot8 = slot0.rect.height / UnityEngine.Screen.height
-	slot9 = slot2.rect.width / 2
-	slot10 = slot2.rect.height / 2
-	slot11, slot12 = nil
-	slot13 = true
-	slot14 = false
-	slot15 = slot0.dragDelegate
+	local var_2_1 = arg_2_0._tf
+	local var_2_2 = var_2_1.anchoredPosition.x
+	local var_2_3 = var_2_1.anchoredPosition.y
+	local var_2_4 = var_2_1.rect.width
+	local var_2_5 = var_2_1.rect.height
+	local var_2_6 = arg_2_0.rect.width / UnityEngine.Screen.width
+	local var_2_7 = arg_2_0.rect.height / UnityEngine.Screen.height
+	local var_2_8 = var_2_4 / 2
+	local var_2_9 = var_2_5 / 2
+	local var_2_10
+	local var_2_11
+	local var_2_12 = true
+	local var_2_13 = false
 
-	slot15:AddPointDownFunc(function (slot0)
+	arg_2_0.dragDelegate:AddPointDownFunc(function(arg_3_0)
 		if Input.touchCount == 1 or IsUnityEditor then
-			uv0 = true
-			uv1 = true
+			var_2_13 = true
+			var_2_12 = true
 		elseif Input.touchCount >= 2 then
-			uv1 = false
-			uv0 = false
+			var_2_12 = false
+			var_2_13 = false
 		end
 	end)
-
-	slot15 = slot0.dragDelegate
-
-	slot15:AddPointUpFunc(function (slot0)
+	arg_2_0.dragDelegate:AddPointUpFunc(function(arg_4_0)
 		if Input.touchCount <= 2 then
-			uv0 = true
+			var_2_12 = true
 		end
 	end)
-
-	slot15 = slot0.dragDelegate
-
-	slot15:AddBeginDragFunc(function (slot0, slot1)
-		uv0 = false
-		uv1 = slot1.position.x * uv2 - uv3 - uv4.localPosition.x
-		uv5 = slot1.position.y * uv6 - uv7 - uv4.localPosition.y
+	arg_2_0.dragDelegate:AddBeginDragFunc(function(arg_5_0, arg_5_1)
+		var_2_13 = false
+		var_2_10 = arg_5_1.position.x * var_2_6 - var_2_8 - var_2_1.localPosition.x
+		var_2_11 = arg_5_1.position.y * var_2_7 - var_2_9 - var_2_1.localPosition.y
 	end)
+	arg_2_0.dragDelegate:AddDragFunc(function(arg_6_0, arg_6_1)
+		if var_2_12 then
+			local var_6_0 = arg_2_0._tf.localPosition
 
-	slot15 = slot0.dragDelegate
-
-	slot15:AddDragFunc(function (slot0, slot1)
-		if uv0 then
-			slot2 = uv1._tf.localPosition
-			uv1._tf.localPosition = Vector3(slot1.position.x * uv2 - uv3 - uv4, slot1.position.y * uv5 - uv6 - uv7, -22)
+			arg_2_0._tf.localPosition = Vector3(arg_6_1.position.x * var_2_6 - var_2_8 - var_2_10, arg_6_1.position.y * var_2_7 - var_2_9 - var_2_11, -22)
 		end
 	end)
 end
 
-function slot0.UnFold(slot0)
-	LeanTween.move(rtf(slot0._tf), slot0.initPosition, 0.5)
+function var_0_0.UnFold(arg_7_0)
+	LeanTween.move(rtf(arg_7_0._tf), arg_7_0.initPosition, 0.5)
 
-	slot0.zoomDelegate.enabled = false
-	slot0.dragDelegate.enabled = false
+	arg_7_0.zoomDelegate.enabled = false
+	arg_7_0.dragDelegate.enabled = false
 
-	slot0.dragDelegate:AddPointDownFunc(nil)
-	slot0.dragDelegate:AddPointUpFunc(nil)
-	slot0.dragDelegate:AddBeginDragFunc(nil)
-	slot0.dragDelegate:AddDragFunc(nil)
+	arg_7_0.dragDelegate:AddPointDownFunc(nil)
+	arg_7_0.dragDelegate:AddPointUpFunc(nil)
+	arg_7_0.dragDelegate:AddBeginDragFunc(nil)
+	arg_7_0.dragDelegate:AddDragFunc(nil)
 
-	if slot0._tf:Find("fitter"):GetChild(0) then
-		slot1:GetComponent(typeof(Image)).raycastTarget = false
+	local var_7_0 = arg_7_0._tf:Find("fitter"):GetChild(0)
+
+	if var_7_0 then
+		var_7_0:GetComponent(typeof(Image)).raycastTarget = false
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:UnFold()
+function var_0_0.Dispose(arg_8_0)
+	arg_8_0:UnFold()
 end
 
-return slot0
+return var_0_0

@@ -1,61 +1,58 @@
-slot0 = class("WSMapResource", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSMapResource", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	map = "table",
 	rtDarkFog = "userdata",
 	rtSairenFog = "userdata"
 }
 
-function slot0.Setup(slot0, slot1)
-	slot0.map = slot1
+function var_0_0.Setup(arg_1_0, arg_1_1)
+	arg_1_0.map = arg_1_1
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_2_0)
+	arg_2_0:Clear()
 end
 
-function slot0.Load(slot0, slot1)
-	slot2 = {}
-	slot3 = slot0.map
+function var_0_0.Load(arg_3_0, arg_3_1)
+	local var_3_0 = {}
+	local var_3_1 = arg_3_0.map
 
-	table.insert(slot2, function (slot0)
-		slot1 = PoolMgr.GetInstance()
+	table.insert(var_3_0, function(arg_4_0)
+		PoolMgr.GetInstance():GetUI("darkfog", true, function(arg_5_0)
+			setParent(arg_5_0, GameObject.Find("__Pool__").transform)
 
-		slot1:GetUI("darkfog", true, function (slot0)
-			setParent(slot0, GameObject.Find("__Pool__").transform)
+			arg_3_0.rtDarkFog = arg_5_0.transform
 
-			uv0.rtDarkFog = slot0.transform
-
-			setActive(uv0.rtDarkFog, false)
-			uv1()
+			setActive(arg_3_0.rtDarkFog, false)
+			arg_4_0()
 		end)
 	end)
-	table.insert(slot2, function (slot0)
-		slot1 = PoolMgr.GetInstance()
+	table.insert(var_3_0, function(arg_6_0)
+		PoolMgr.GetInstance():GetUI("sairenfog", true, function(arg_7_0)
+			setParent(arg_7_0, GameObject.Find("__Pool__").transform)
 
-		slot1:GetUI("sairenfog", true, function (slot0)
-			setParent(slot0, GameObject.Find("__Pool__").transform)
+			arg_3_0.rtSairenFog = arg_7_0.transform
 
-			uv0.rtSairenFog = slot0.transform
-
-			setActive(uv0.rtSairenFog, false)
-			uv1()
+			setActive(arg_3_0.rtSairenFog, false)
+			arg_6_0()
 		end)
 	end)
-	seriesAsync(slot2, slot1)
+	seriesAsync(var_3_0, arg_3_1)
 end
 
-function slot0.Unload(slot0)
-	if slot0.rtDarkFog then
-		PoolMgr.GetInstance():ReturnUI("darkfog", slot0.rtDarkFog.gameObject)
+function var_0_0.Unload(arg_8_0)
+	if arg_8_0.rtDarkFog then
+		PoolMgr.GetInstance():ReturnUI("darkfog", arg_8_0.rtDarkFog.gameObject)
 
-		slot0.rtDarkFog = nil
+		arg_8_0.rtDarkFog = nil
 	end
 
-	if slot0.rtSairenFog then
-		PoolMgr.GetInstance():ReturnUI("darkfog", slot0.rtSairenFog.gameObject)
+	if arg_8_0.rtSairenFog then
+		PoolMgr.GetInstance():ReturnUI("darkfog", arg_8_0.rtSairenFog.gameObject)
 
-		slot0.rtSairenFog = nil
+		arg_8_0.rtSairenFog = nil
 	end
 end
 
-return slot0
+return var_0_0

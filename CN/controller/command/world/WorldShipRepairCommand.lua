@@ -1,35 +1,36 @@
-slot0 = class("WorldShipRepairCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldShipRepairCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.shipIds
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shipIds
+	local var_1_2 = var_1_0.totalCost
+	local var_1_3 = nowWorld()
+	local var_1_4 = var_1_3:GetInventoryProxy()
 
-	if nowWorld():GetInventoryProxy():GetItemCount(WorldItem.MoneyId) < slot2.totalCost then
+	if var_1_2 > var_1_4:GetItemCount(WorldItem.MoneyId) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
-	slot8 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(33407, {
+		ship_list = var_1_1
+	}, 33408, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			_.each(var_1_1, function(arg_3_0)
+				local var_3_0 = var_1_3:GetShip(arg_3_0)
 
-	slot8:Send(33407, {
-		ship_list = slot3
-	}, 33408, function (slot0)
-		if slot0.result == 0 then
-			_.each(uv0, function (slot0)
-				slot1 = uv0:GetShip(slot0)
-
-				assert(slot1, "ship not exist: " .. slot0)
-				slot1:Repair()
+				assert(var_3_0, "ship not exist: " .. arg_3_0)
+				var_3_0:Repair()
 			end)
-			uv2:RemoveItem(WorldItem.MoneyId, uv3)
-			uv4:sendNotification(GAME.WORLD_SHIP_REPAIR_DONE, {
-				shipIds = uv0
+			var_1_4:RemoveItem(WorldItem.MoneyId, var_1_2)
+			arg_1_0:sendNotification(GAME.WORLD_SHIP_REPAIR_DONE, {
+				shipIds = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_ship_repair_err_", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_ship_repair_err_", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

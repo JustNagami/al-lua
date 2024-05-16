@@ -1,532 +1,646 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleFormulas
-slot0.Battle.BattleDataFunction = slot0.Battle.BattleDataFunction or {}
-slot3 = slot0.Battle.BattleDataFunction
-slot4 = pg.puzzle_card_template
-slot5 = pg.puzzle_ship_template
-slot6 = pg.puzzle_combat_template
-slot7 = pg.puzzle_card_affix
+﻿ys = ys or {}
 
-function slot3.GetDungeonTmpDataByID(slot0)
-	return require("GameCfg.dungeon." .. slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleFormulas
+
+var_0_0.Battle.BattleDataFunction = var_0_0.Battle.BattleDataFunction or {}
+
+local var_0_3 = var_0_0.Battle.BattleDataFunction
+local var_0_4 = pg.puzzle_card_template
+local var_0_5 = pg.puzzle_ship_template
+local var_0_6 = pg.puzzle_combat_template
+local var_0_7 = pg.puzzle_card_affix
+
+function var_0_3.GetDungeonTmpDataByID(arg_1_0)
+	return require("GameCfg.dungeon." .. arg_1_0)
 end
 
-function slot3.ClearDungeonCfg(slot0)
-	package.loaded["GameCfg.dungeon." .. slot0] = nil
+function var_0_3.ClearDungeonCfg(arg_2_0)
+	package.loaded["GameCfg.dungeon." .. arg_2_0] = nil
 end
 
-function slot3.GetSkillTemplate(slot0, slot1)
-	slot4 = pg.ConvertedSkill["skill_" .. slot0][slot1 or 1] or slot3[0]
-	slot4.name = getSkillName(slot0)
+function var_0_3.GetSkillTemplate(arg_3_0, arg_3_1)
+	arg_3_1 = arg_3_1 or 1
 
-	return slot4
+	local var_3_0 = "skill_" .. arg_3_0
+	local var_3_1 = pg.ConvertedSkill[var_3_0]
+	local var_3_2 = var_3_1[arg_3_1] or var_3_1[0]
+
+	var_3_2.name = getSkillName(arg_3_0)
+
+	return var_3_2
 end
 
-function slot3.ConvertSkillTemplate()
+function var_0_3.ConvertSkillTemplate()
 	pg.ConvertedSkill = {}
 
 	setmetatable(pg.ConvertedSkill, {
-		__index = function (slot0, slot1)
-			slot2 = slot1
+		__index = function(arg_5_0, arg_5_1)
+			local var_5_0 = arg_5_1
+			local var_5_1 = pg.skillCfg[arg_5_1]
 
-			if pg.skillCfg[slot1] then
-				slot4 = {}
-				slot5 = {}
+			if var_5_1 then
+				local var_5_2 = {}
+				local var_5_3 = {}
 
-				for slot9, slot10 in pairs(slot3) do
-					slot5[slot9] = Clone(slot10)
+				for iter_5_0, iter_5_1 in pairs(var_5_1) do
+					var_5_3[iter_5_0] = Clone(iter_5_1)
 				end
 
-				slot4[0] = slot5
+				var_5_2[0] = var_5_3
 
-				for slot9, slot10 in ipairs(slot3) do
-					slot11 = Clone(slot5)
+				for iter_5_2, iter_5_3 in ipairs(var_5_1) do
+					local var_5_4 = Clone(var_5_3)
 
-					for slot15, slot16 in pairs(slot10) do
-						slot11[slot15] = slot16
+					for iter_5_4, iter_5_5 in pairs(iter_5_3) do
+						var_5_4[iter_5_4] = iter_5_5
 					end
 
-					slot4[slot9] = slot11
+					var_5_2[iter_5_2] = var_5_4
 				end
 
-				pg.ConvertedSkill[slot2] = slot4
+				pg.ConvertedSkill[var_5_0] = var_5_2
 
-				return slot4
+				return var_5_2
 			end
 		end
 	})
 end
 
-function slot3.GetBuffTemplate(slot0, slot1)
-	return pg.ConvertedBuff["buff_" .. slot0][slot1 or 1] or slot3[0]
+function var_0_3.GetBuffTemplate(arg_6_0, arg_6_1)
+	arg_6_1 = arg_6_1 or 1
+
+	local var_6_0 = "buff_" .. arg_6_0
+	local var_6_1 = pg.ConvertedBuff[var_6_0]
+
+	return var_6_1[arg_6_1] or var_6_1[0]
 end
 
-function slot3.ConvertBuffTemplate()
+function var_0_3.ConvertBuffTemplate()
 	pg.ConvertedBuff = {}
 
 	setmetatable(pg.ConvertedBuff, {
-		__index = function (slot0, slot1)
-			slot2 = slot1
+		__index = function(arg_8_0, arg_8_1)
+			local var_8_0 = arg_8_1
+			local var_8_1 = pg.buffCfg[arg_8_1]
 
-			if pg.buffCfg[slot1] then
-				slot4 = {}
-				slot5 = {}
+			if var_8_1 then
+				local var_8_2 = {}
+				local var_8_3 = {}
 
-				for slot9, slot10 in pairs(slot3) do
-					slot5[slot9] = Clone(slot10)
+				for iter_8_0, iter_8_1 in pairs(var_8_1) do
+					var_8_3[iter_8_0] = Clone(iter_8_1)
 				end
 
-				slot4[0] = slot5
+				var_8_2[0] = var_8_3
 
-				for slot9, slot10 in ipairs(slot3) do
-					slot11 = Clone(slot5)
+				for iter_8_2, iter_8_3 in ipairs(var_8_1) do
+					local var_8_4 = Clone(var_8_3)
 
-					for slot15, slot16 in pairs(slot10) do
-						slot11[slot15] = slot16
+					for iter_8_4, iter_8_5 in pairs(iter_8_3) do
+						var_8_4[iter_8_4] = iter_8_5
 					end
 
-					slot4[slot9] = slot11
+					var_8_2[iter_8_2] = var_8_4
 				end
 
-				pg.ConvertedBuff[slot2] = slot4
+				pg.ConvertedBuff[var_8_0] = var_8_2
 
-				return slot4
+				return var_8_2
 			end
 		end
 	})
 end
 
-function slot3.GetBuffBulletRes(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {}
-	slot6 = {}
-	slot1 = slot1 or {}
-	slot7 = uv0.GetPlayerShipModelFromID(slot0)
+function var_0_3.GetBuffBulletRes(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local var_9_0 = {}
+	local var_9_1 = {}
 
-	function slot8(slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			slot6 = nil
-			slot6 = (not uv0[slot5] or uv0[slot5].level) and 1
+	arg_9_1 = arg_9_1 or {}
 
-			if uv1 then
-				slot5 = uv1:RemapSkillId(slot5) or slot5
+	local var_9_2 = var_0_3.GetPlayerShipModelFromID(arg_9_0)
+
+	local function var_9_3(arg_10_0)
+		for iter_10_0, iter_10_1 in ipairs(arg_10_0) do
+			local var_10_0
+
+			if arg_9_1[iter_10_1] then
+				var_10_0 = arg_9_1[iter_10_1].level
+			else
+				var_10_0 = 1
 			end
 
-			slot12 = uv5
+			iter_10_1 = arg_9_4 and arg_9_4:RemapSkillId(iter_10_1) or iter_10_1
 
-			for slot12, slot13 in ipairs(uv2.GetResFromBuff(uv2.SkillTranform(uv3, slot5), slot6, uv4, slot12)) do
-				uv6[#uv6 + 1] = slot13
+			local var_10_1 = var_0_3.SkillTranform(arg_9_2, iter_10_1)
+			local var_10_2 = var_0_3.GetResFromBuff(var_10_1, var_10_0, var_9_1, arg_9_3)
+
+			for iter_10_2, iter_10_3 in ipairs(var_10_2) do
+				var_9_0[#var_9_0 + 1] = iter_10_3
 			end
 		end
 	end
 
-	slot8(slot7.buff_list)
-	slot8(slot7.hide_buff_list)
+	var_9_3(var_9_2.buff_list)
+	var_9_3(var_9_2.hide_buff_list)
 
-	for slot13, slot14 in ipairs(slot7.airassist_time) do
-		slot19 = slot3
+	local var_9_4 = var_9_2.airassist_time
 
-		for slot19, slot20 in ipairs(uv0.GetResFromSkill(slot14, 1, nil, slot19)) do
-			slot5[#slot5 + 1] = slot20
+	for iter_9_0, iter_9_1 in ipairs(var_9_4) do
+		local var_9_5 = var_0_3.GetResFromSkill(iter_9_1, 1, nil, arg_9_3)
+
+		for iter_9_2, iter_9_3 in ipairs(var_9_5) do
+			var_9_0[#var_9_0 + 1] = iter_9_3
 		end
 	end
 
-	if uv0.GetShipTransformDataTemplate(slot0) and slot10.skill_id ~= 0 and pg.transform_data_template[slot10.skill_id].skill_id ~= 0 then
-		slot12 = nil
-		slot12 = (not slot1[pg.transform_data_template[slot10.skill_id].skill_id] or slot1[slot11].level) and 1
-		slot17 = slot3
+	local var_9_6 = var_0_3.GetShipTransformDataTemplate(arg_9_0)
 
-		for slot17, slot18 in ipairs(uv0.GetResFromBuff(slot11, slot12, slot6, slot17)) do
-			slot5[#slot5 + 1] = slot18
+	if var_9_6 and var_9_6.skill_id ~= 0 and pg.transform_data_template[var_9_6.skill_id].skill_id ~= 0 then
+		local var_9_7 = pg.transform_data_template[var_9_6.skill_id].skill_id
+		local var_9_8
+
+		if arg_9_1[var_9_7] then
+			var_9_8 = arg_9_1[var_9_7].level
+		else
+			var_9_8 = 1
+		end
+
+		local var_9_9 = var_0_3.GetResFromBuff(var_9_7, var_9_8, var_9_1, arg_9_3)
+
+		for iter_9_4, iter_9_5 in ipairs(var_9_9) do
+			var_9_0[#var_9_0 + 1] = iter_9_5
 		end
 	end
 
-	if uv0.GetShipMetaFromDataTemplate(slot0) then
-		slot8(slot7.buff_list_display)
+	if var_0_3.GetShipMetaFromDataTemplate(arg_9_0) then
+		var_9_3(var_9_2.buff_list_display)
 	end
 
-	return slot5
+	return var_9_0
 end
 
-function slot3.getWeaponResource(slot0, slot1)
-	for slot6, slot7 in ipairs(uv0.Battle.BattleResourceManager.GetWeaponResource(slot0)) do
-		slot1[#slot1 + 1] = slot7
+function var_0_3.getWeaponResource(arg_11_0, arg_11_1)
+	local var_11_0 = var_0_0.Battle.BattleResourceManager.GetWeaponResource(arg_11_0)
+
+	for iter_11_0, iter_11_1 in ipairs(var_11_0) do
+		arg_11_1[#arg_11_1 + 1] = iter_11_1
 	end
 end
 
-function slot3.GetResFromBuff(slot0, slot1, slot2, slot3)
-	slot4 = {}
+function var_0_3.GetResFromBuff(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	local var_12_0 = {}
+	local var_12_1 = arg_12_0 .. "_" .. arg_12_1
 
-	if slot2[slot0 .. "_" .. slot1] then
-		return slot4
+	if arg_12_2[var_12_1] then
+		return var_12_0
 	else
-		slot2[slot5] = true
+		arg_12_2[var_12_1] = true
 	end
 
-	if uv0.GetBuffTemplate(slot0, slot1).init_effect and slot6.init_effect ~= "" then
-		slot7 = slot6.init_effect
+	local var_12_2 = var_0_3.GetBuffTemplate(arg_12_0, arg_12_1)
 
-		if slot6.skin_adapt then
-			slot7 = uv0.SkinAdaptFXID(slot7, slot3)
+	if var_12_2.init_effect and var_12_2.init_effect ~= "" then
+		local var_12_3 = var_12_2.init_effect
+
+		if var_12_2.skin_adapt then
+			var_12_3 = var_0_3.SkinAdaptFXID(var_12_3, arg_12_3)
 		end
 
-		slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetFXPath(slot7)
+		var_12_0[#var_12_0 + 1] = var_0_0.Battle.BattleResourceManager.GetFXPath(var_12_3)
 	end
 
-	if slot6.last_effect and slot6.last_effect ~= "" then
-		slot7 = type(slot6.last_effect) == "table" and slot6.last_effect or {
-			slot6.last_effect
+	if var_12_2.last_effect and var_12_2.last_effect ~= "" then
+		local var_12_4 = type(var_12_2.last_effect) == "table" and var_12_2.last_effect or {
+			var_12_2.last_effect
 		}
 
-		for slot11, slot12 in ipairs(slot7) do
-			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetFXPath(slot12)
+		for iter_12_0, iter_12_1 in ipairs(var_12_4) do
+			var_12_0[#var_12_0 + 1] = var_0_0.Battle.BattleResourceManager.GetFXPath(iter_12_1)
 		end
 	end
 
-	for slot10, slot11 in ipairs(slot6.effect_list) do
-		if slot11.arg_list.skill_id ~= nil then
-			slot17 = slot3
+	for iter_12_2, iter_12_3 in ipairs(var_12_2.effect_list) do
+		local var_12_5 = iter_12_3.arg_list.skill_id
 
-			for slot17, slot18 in ipairs(uv0.GetResFromSkill(slot12, slot1, slot2, slot17)) do
-				slot4[#slot4 + 1] = slot18
+		if var_12_5 ~= nil then
+			local var_12_6 = var_0_3.GetResFromSkill(var_12_5, arg_12_1, arg_12_2, arg_12_3)
+
+			for iter_12_4, iter_12_5 in ipairs(var_12_6) do
+				var_12_0[#var_12_0 + 1] = iter_12_5
 			end
 		end
 
-		if slot11.arg_list.skill_id_list ~= nil then
-			for slot17, slot18 in ipairs(slot13) do
-				slot23 = slot3
+		local var_12_7 = iter_12_3.arg_list.skill_id_list
 
-				for slot23, slot24 in ipairs(uv0.GetResFromSkill(slot18, slot1, slot2, slot23)) do
-					slot4[#slot4 + 1] = slot24
+		if var_12_7 ~= nil then
+			for iter_12_6, iter_12_7 in ipairs(var_12_7) do
+				local var_12_8 = var_0_3.GetResFromSkill(iter_12_7, arg_12_1, arg_12_2, arg_12_3)
+
+				for iter_12_8, iter_12_9 in ipairs(var_12_8) do
+					var_12_0[#var_12_0 + 1] = iter_12_9
 				end
 			end
 		end
 
-		if slot11.arg_list.damage_attr_list ~= nil then
-			for slot18, slot19 in pairs(slot14) do
-				slot24 = slot3
+		local var_12_9 = iter_12_3.arg_list.damage_attr_list
 
-				for slot24, slot25 in ipairs(uv0.GetResFromSkill(slot19, slot1, slot2, slot24)) do
-					slot4[#slot4 + 1] = slot25
+		if var_12_9 ~= nil then
+			for iter_12_10, iter_12_11 in pairs(var_12_9) do
+				local var_12_10 = var_0_3.GetResFromSkill(iter_12_11, arg_12_1, arg_12_2, arg_12_3)
+
+				for iter_12_12, iter_12_13 in ipairs(var_12_10) do
+					var_12_0[#var_12_0 + 1] = iter_12_13
 				end
 			end
 		end
 
-		if slot11.arg_list.bullet_id then
-			for slot20, slot21 in ipairs(uv1.Battle.BattleResourceManager.GetBulletResource(slot15)) do
-				slot4[#slot4 + 1] = slot21
+		local var_12_11 = iter_12_3.arg_list.bullet_id
+
+		if var_12_11 then
+			local var_12_12 = var_0_0.Battle.BattleResourceManager.GetBulletResource(var_12_11)
+
+			for iter_12_14, iter_12_15 in ipairs(var_12_12) do
+				var_12_0[#var_12_0 + 1] = iter_12_15
 			end
 		end
 
-		if slot11.arg_list.weapon_id then
-			uv0.getWeaponResource(slot16, slot4)
+		local var_12_13 = iter_12_3.arg_list.weapon_id
+
+		if var_12_13 then
+			var_0_3.getWeaponResource(var_12_13, var_12_0)
 		end
 
-		if slot11.arg_list.skin_id then
-			for slot22, slot23 in ipairs(uv1.Battle.BattleResourceManager.GetEquipSkinBulletRes(slot17)) do
-				slot4[#slot4 + 1] = slot23
+		local var_12_14 = iter_12_3.arg_list.skin_id
+
+		if var_12_14 then
+			local var_12_15 = var_0_0.Battle.BattleResourceManager.GetEquipSkinBulletRes(var_12_14)
+
+			for iter_12_16, iter_12_17 in ipairs(var_12_15) do
+				var_12_0[#var_12_0 + 1] = iter_12_17
 			end
 		end
 
-		if slot11.arg_list.ship_skin_id then
-			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetCharacterPath(uv0.GetPlayerShipSkinDataFromID(slot18).prefab)
+		local var_12_16 = iter_12_3.arg_list.ship_skin_id
+
+		if var_12_16 then
+			local var_12_17 = var_0_3.GetPlayerShipSkinDataFromID(var_12_16)
+
+			var_12_0[#var_12_0 + 1] = var_0_0.Battle.BattleResourceManager.GetCharacterPath(var_12_17.prefab)
 		end
 
-		if slot11.arg_list.buff_id then
-			slot24 = slot3
+		local var_12_18 = iter_12_3.arg_list.buff_id
 
-			for slot24, slot25 in ipairs(uv0.GetResFromBuff(slot19, slot1, slot2, slot24)) do
-				if type(slot25) == "string" then
-					slot4[#slot4 + 1] = slot25
-				elseif type(slot25) == "table" then
-					for slot29, slot30 in ipairs(slot25) do
-						slot4[#slot4 + 1] = slot30
+		if var_12_18 then
+			local var_12_19 = var_0_3.GetResFromBuff(var_12_18, arg_12_1, arg_12_2, arg_12_3)
+
+			for iter_12_18, iter_12_19 in ipairs(var_12_19) do
+				if type(iter_12_19) == "string" then
+					var_12_0[#var_12_0 + 1] = iter_12_19
+				elseif type(iter_12_19) == "table" then
+					for iter_12_20, iter_12_21 in ipairs(iter_12_19) do
+						var_12_0[#var_12_0 + 1] = iter_12_21
 					end
 				end
 			end
 		end
 
-		if slot11.arg_list.buff_skin_id then
-			slot25 = slot3
+		local var_12_20 = iter_12_3.arg_list.buff_skin_id
 
-			for slot25, slot26 in ipairs(uv0.GetResFromBuff(slot20, slot1, slot2, slot25)) do
-				if type(slot26) == "string" then
-					slot4[#slot4 + 1] = slot26
-				elseif type(slot26) == "table" then
-					for slot30, slot31 in ipairs(slot26) do
-						slot4[#slot4 + 1] = slot31
+		if var_12_20 then
+			local var_12_21 = var_0_3.GetResFromBuff(var_12_20, arg_12_1, arg_12_2, arg_12_3)
+
+			for iter_12_22, iter_12_23 in ipairs(var_12_21) do
+				if type(iter_12_23) == "string" then
+					var_12_0[#var_12_0 + 1] = iter_12_23
+				elseif type(iter_12_23) == "table" then
+					for iter_12_24, iter_12_25 in ipairs(iter_12_23) do
+						var_12_0[#var_12_0 + 1] = iter_12_25
 					end
 				end
 			end
 		end
 
-		if slot11.arg_list.effect then
-			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetFXPath(slot21)
+		local var_12_22 = iter_12_3.arg_list.effect
+
+		if var_12_22 then
+			var_12_0[#var_12_0 + 1] = var_0_0.Battle.BattleResourceManager.GetFXPath(var_12_22)
 		end
 	end
 
-	return slot4
+	return var_12_0
 end
 
-function slot3.GetBuffListRes(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = {}
+function var_0_3.GetBuffListRes(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = {}
+	local var_13_1 = {}
 
-	for slot8, slot9 in ipairs(slot0) do
-		slot15 = slot9.level
-		slot16 = slot4
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0) do
+		local var_13_2 = iter_13_1.id
+		local var_13_3 = iter_13_1.level
 
-		for slot15, slot16 in ipairs(uv0.GetResFromBuff(slot9.id, slot15, slot16, slot2)) do
-			slot3[#slot3 + 1] = slot16
+		for iter_13_2, iter_13_3 in ipairs(var_0_3.GetResFromBuff(var_13_2, var_13_3, var_13_1, arg_13_2)) do
+			var_13_0[#var_13_0 + 1] = iter_13_3
 		end
 	end
 
-	return slot3
+	return var_13_0
 end
 
-function slot3.GetResFromSkill(slot0, slot1, slot2, slot3)
-	slot4 = {}
+function var_0_3.GetResFromSkill(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	arg_14_1 = arg_14_1 or 1
 
-	function slot6(slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			if slot5.type == uv0.Battle.BattleSkillGridmanFloat.__name then
-				table.insert(uv1, "UI/combatgridmanskillfloat")
+	local var_14_0 = {}
+	local var_14_1 = var_0_3.GetSkillTemplate(arg_14_0, arg_14_1)
+
+	local function var_14_2(arg_15_0)
+		for iter_15_0, iter_15_1 in ipairs(arg_15_0) do
+			if iter_15_1.type == var_0_0.Battle.BattleSkillGridmanFloat.__name then
+				table.insert(var_14_0, "UI/combatgridmanskillfloat")
 			end
 
-			if slot5.type == uv0.Battle.BattleSkillFusion.__name then
-				slot6 = slot5.arg_list
+			if iter_15_1.type == var_0_0.Battle.BattleSkillFusion.__name then
+				local var_15_0 = iter_15_1.arg_list
+				local var_15_1 = var_0_0.Battle.BattleResourceManager.GetShipResource(var_15_0.fusion_id, var_15_0.ship_skin_id)
 
-				for slot11, slot12 in ipairs(uv0.Battle.BattleResourceManager.GetShipResource(slot6.fusion_id, slot6.ship_skin_id)) do
-					table.insert(uv1, slot12)
+				for iter_15_2, iter_15_3 in ipairs(var_15_1) do
+					table.insert(var_14_0, iter_15_3)
 				end
 
-				for slot12, slot13 in ipairs(slot6.weapon_id_list) do
-					uv2.getWeaponResource(slot13, uv1)
+				local var_15_2 = var_15_0.weapon_id_list
+
+				for iter_15_4, iter_15_5 in ipairs(var_15_2) do
+					var_0_3.getWeaponResource(iter_15_5, var_14_0)
 				end
 
-				for slot13, slot14 in ipairs(slot6.buff_list) do
-					for slot19, slot20 in ipairs(uv2.GetResFromBuff(slot14, uv3, uv4)) do
-						uv1[#uv1 + 1] = slot20
+				local var_15_3 = var_15_0.buff_list
+
+				for iter_15_6, iter_15_7 in ipairs(var_15_3) do
+					local var_15_4 = var_0_3.GetResFromBuff(iter_15_7, arg_14_1, arg_14_2)
+
+					for iter_15_8, iter_15_9 in ipairs(var_15_4) do
+						var_14_0[#var_14_0 + 1] = iter_15_9
 					end
 				end
 			end
 
-			if slot5.arg_list.weapon_id ~= nil then
-				uv2.getWeaponResource(slot6, uv1)
+			local var_15_5 = iter_15_1.arg_list.weapon_id
+
+			if var_15_5 ~= nil then
+				var_0_3.getWeaponResource(var_15_5, var_14_0)
 			end
 
-			if slot5.arg_list.buff_id then
-				for slot12, slot13 in ipairs(uv2.GetResFromBuff(slot7, uv3, uv4)) do
-					uv1[#uv1 + 1] = slot13
+			local var_15_6 = iter_15_1.arg_list.buff_id
+
+			if var_15_6 then
+				local var_15_7 = var_0_3.GetResFromBuff(var_15_6, arg_14_1, arg_14_2)
+
+				for iter_15_10, iter_15_11 in ipairs(var_15_7) do
+					var_14_0[#var_14_0 + 1] = iter_15_11
 				end
 			end
 
-			if slot5.arg_list.damage_buff_id then
-				slot9 = slot5.arg_list.damage_buff_lv or 1
+			local var_15_8 = iter_15_1.arg_list.damage_buff_id
 
-				for slot14, slot15 in ipairs(uv2.GetResFromBuff(slot8, slot9, uv4)) do
-					uv1[#uv1 + 1] = slot15
+			if var_15_8 then
+				local var_15_9 = iter_15_1.arg_list.damage_buff_lv or 1
+				local var_15_10 = var_0_3.GetResFromBuff(var_15_8, var_15_9, arg_14_2)
+
+				for iter_15_12, iter_15_13 in ipairs(var_15_10) do
+					var_14_0[#var_14_0 + 1] = iter_15_13
 				end
 			end
 
-			if slot5.arg_list.effect then
-				uv1[#uv1 + 1] = uv0.Battle.BattleResourceManager.GetFXPath(slot9)
+			local var_15_11 = iter_15_1.arg_list.effect
+
+			if var_15_11 then
+				var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetFXPath(var_15_11)
 			end
 
-			if slot5.arg_list.finale_effect then
-				uv1[#uv1 + 1] = uv0.Battle.BattleResourceManager.GetFXPath(slot10)
+			local var_15_12 = iter_15_1.arg_list.finale_effect
+
+			if var_15_12 then
+				var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetFXPath(var_15_12)
 			end
 
-			if slot5.arg_list.spawnData then
-				for slot16, slot17 in ipairs(uv0.Battle.BattleResourceManager.GetMonsterRes(slot11)) do
-					uv1[#uv1 + 1] = slot17
+			local var_15_13 = iter_15_1.arg_list.spawnData
+
+			if var_15_13 then
+				local var_15_14 = var_0_0.Battle.BattleResourceManager.GetMonsterRes(var_15_13)
+
+				for iter_15_14, iter_15_15 in ipairs(var_15_14) do
+					var_14_0[#var_14_0 + 1] = iter_15_15
 				end
 			end
 		end
 	end
 
-	if type(uv0.GetSkillTemplate(slot0, slot1 or 1).painting) == "string" then
-		slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetHrzIcon(slot5.painting)
+	if type(var_14_1.painting) == "string" then
+		var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetHrzIcon(var_14_1.painting)
 	end
 
-	if type(slot5.castCV) == "table" then
-		uv1.Battle.BattleResourceManager.GetInstance():AddPreloadCV(slot5.castCV.skinID)
+	if type(var_14_1.castCV) == "table" then
+		var_0_0.Battle.BattleResourceManager.GetInstance():AddPreloadCV(var_14_1.castCV.skinID)
 	end
 
-	if slot5.focus_duration then
-		if slot5.cutin_cover then
-			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetInstance().GetPaintingPath(slot5.cutin_cover)
-		elseif slot3 then
-			slot4[#slot4 + 1] = uv1.Battle.BattleResourceManager.GetInstance().GetPaintingPath(uv0.GetPlayerShipSkinDataFromID(slot3).painting)
+	if var_14_1.focus_duration then
+		if var_14_1.cutin_cover then
+			var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetInstance().GetPaintingPath(var_14_1.cutin_cover)
+		elseif arg_14_3 then
+			local var_14_3 = var_0_3.GetPlayerShipSkinDataFromID(arg_14_3).painting
+
+			var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetInstance().GetPaintingPath(var_14_3)
 		end
 	end
 
-	slot6(slot5.effect_list)
+	var_14_2(var_14_1.effect_list)
 
-	for slot10, slot11 in ipairs(slot5) do
-		slot6(slot11.effect_list)
+	for iter_14_0, iter_14_1 in ipairs(var_14_1) do
+		var_14_2(iter_14_1.effect_list)
 	end
 
-	return slot4
+	return var_14_0
 end
 
-function slot3.GetShipSkillTriggerCount(slot0, slot1)
-	slot3 = 0 + (function (slot0)
-		slot1 = 0
+function var_0_3.GetShipSkillTriggerCount(arg_16_0, arg_16_1)
+	local function var_16_0(arg_17_0)
+		local var_17_0 = 0
 
-		for slot5, slot6 in pairs(slot0) do
-			for slot12, slot13 in ipairs(uv0.GetBuffTemplate(slot6.id).effect_list) do
-				for slot18, slot19 in ipairs(slot13.trigger) do
-					if table.contains(uv1, slot19) then
-						slot1 = slot1 + 1
+		for iter_17_0, iter_17_1 in pairs(arg_17_0) do
+			local var_17_1 = var_0_3.GetBuffTemplate(iter_17_1.id).effect_list
+
+			for iter_17_2, iter_17_3 in ipairs(var_17_1) do
+				local var_17_2 = iter_17_3.trigger
+
+				for iter_17_4, iter_17_5 in ipairs(var_17_2) do
+					if table.contains(arg_16_1, iter_17_5) then
+						var_17_0 = var_17_0 + 1
 					end
 				end
 			end
 		end
 
-		return slot1
-	end)(slot0.skills or {})
-	slot6 = {}
+		return var_17_0
+	end
 
-	for slot10, slot11 in ipairs(uv0.GetEquipSkill(slot0.equipment)) do
-		table.insert(slot6, {
-			id = slot11
+	local var_16_1 = 0
+	local var_16_2 = arg_16_0.skills or {}
+	local var_16_3 = var_16_1 + var_16_0(var_16_2)
+	local var_16_4 = var_0_3.GetEquipSkill(arg_16_0.equipment)
+	local var_16_5 = {}
+
+	for iter_16_0, iter_16_1 in ipairs(var_16_4) do
+		table.insert(var_16_5, {
+			id = iter_16_1
 		})
 	end
 
-	return slot3 + slot2(slot6)
+	return var_16_3 + var_16_0(var_16_5)
 end
 
-function slot3.GetSongList(slot0)
-	slot1 = {
+function var_0_3.GetSongList(arg_18_0)
+	local var_18_0 = {
 		initList = {},
 		otherList = {}
 	}
 
-	for slot5, slot6 in pairs(slot0) do
-		for slot11, slot12 in ipairs(uv0.GetBuffTemplate(slot5, 1).effect_list) do
-			if slot12.type == uv1.Battle.BattleBuffDiva.__name then
-				if table.contains(slot12.trigger, "onInitGame") then
-					for slot16, slot17 in ipairs(slot12.arg_list.bgm_list) do
-						slot1.initList[slot17] = true
+	for iter_18_0, iter_18_1 in pairs(arg_18_0) do
+		local var_18_1 = var_0_3.GetBuffTemplate(iter_18_0, 1)
+
+		for iter_18_2, iter_18_3 in ipairs(var_18_1.effect_list) do
+			if iter_18_3.type == var_0_0.Battle.BattleBuffDiva.__name then
+				if table.contains(iter_18_3.trigger, "onInitGame") then
+					for iter_18_4, iter_18_5 in ipairs(iter_18_3.arg_list.bgm_list) do
+						var_18_0.initList[iter_18_5] = true
 					end
 				end
 
-				if not table.contains(slot12.trigger, "onInitGame") or #slot12.trigger > 1 then
-					for slot16, slot17 in ipairs(slot12.arg_list.bgm_list) do
-						slot1.otherList[slot17] = true
+				if not table.contains(iter_18_3.trigger, "onInitGame") or #iter_18_3.trigger > 1 then
+					for iter_18_6, iter_18_7 in ipairs(iter_18_3.arg_list.bgm_list) do
+						var_18_0.otherList[iter_18_7] = true
 					end
 				end
 			end
 		end
 	end
 
-	return slot1
+	return var_18_0
 end
 
-function slot3.GetCardRes(slot0)
-	slot1 = {}
+function var_0_3.GetCardRes(arg_19_0)
+	local var_19_0 = {}
+	local var_19_1 = var_0_0.Battle.BattleCardPuzzleCard.GetCardEffectConfig(arg_19_0)
 
-	for slot6, slot7 in ipairs(uv0.Battle.BattleCardPuzzleCard.GetCardEffectConfig(slot0).effect_list) do
-		for slot12, slot13 in ipairs(uv1.GetCardFXRes(slot7)) do
-			table.insert(slot1, slot13)
+	for iter_19_0, iter_19_1 in ipairs(var_19_1.effect_list) do
+		local var_19_2 = var_0_3.GetCardFXRes(iter_19_1)
+
+		for iter_19_2, iter_19_3 in ipairs(var_19_2) do
+			table.insert(var_19_0, iter_19_3)
 		end
 	end
 
-	for slot6, slot7 in pairs(slot2.effect_list) do
-		for slot12, slot13 in ipairs(uv1.GetCardFXRes(slot7)) do
-			table.insert(slot1, slot13)
+	for iter_19_4, iter_19_5 in pairs(var_19_1.effect_list) do
+		local var_19_3 = var_0_3.GetCardFXRes(iter_19_5)
+
+		for iter_19_6, iter_19_7 in ipairs(var_19_3) do
+			table.insert(var_19_0, iter_19_7)
 		end
 	end
 
-	return slot1
+	return var_19_0
 end
 
-function slot3.GetCardFXRes(slot0)
-	slot1 = {}
+function var_0_3.GetCardFXRes(arg_20_0)
+	local var_20_0 = {}
 
-	for slot5, slot6 in ipairs(slot0) do
-		if slot6.type == "BattleCardPuzzleSkillCreateCard" then
-			for slot11, slot12 in ipairs(uv0.GetCardRes(slot6.arg_list.card_id)) do
-				table.insert(slot1, slot12)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0) do
+		if iter_20_1.type == "BattleCardPuzzleSkillCreateCard" then
+			local var_20_1 = var_0_3.GetCardRes(iter_20_1.arg_list.card_id)
+
+			for iter_20_2, iter_20_3 in ipairs(var_20_1) do
+				table.insert(var_20_0, iter_20_3)
 			end
-		elseif slot6.type == "BattleCardPuzzleSkillFire" then
-			for slot11, slot12 in ipairs(uv1.Battle.BattleResourceManager.GetWeaponResource(slot6.arg_list.weapon_id)) do
-				table.insert(slot1, slot12)
+		elseif iter_20_1.type == "BattleCardPuzzleSkillFire" then
+			local var_20_2 = var_0_0.Battle.BattleResourceManager.GetWeaponResource(iter_20_1.arg_list.weapon_id)
+
+			for iter_20_4, iter_20_5 in ipairs(var_20_2) do
+				table.insert(var_20_0, iter_20_5)
 			end
-		elseif slot6.type == "BattleCardPuzzleSkillAddBuff" then
-			for slot11, slot12 in ipairs(uv0.GetResFromBuff(slot6.arg_list.buff_id, 1, {})) do
-				table.insert(slot1, slot12)
+		elseif iter_20_1.type == "BattleCardPuzzleSkillAddBuff" then
+			local var_20_3 = var_0_3.GetResFromBuff(iter_20_1.arg_list.buff_id, 1, {})
+
+			for iter_20_6, iter_20_7 in ipairs(var_20_3) do
+				table.insert(var_20_0, iter_20_7)
 			end
 		end
 	end
 
-	return slot1
+	return var_20_0
 end
 
-function slot3.NeedSkillPainting(slot0)
-	slot1 = false
+function var_0_3.NeedSkillPainting(arg_21_0)
+	local var_21_0 = false
 
-	if uv0.GetSkillTemplate(slot0).focus_duration then
-		slot1 = true
+	if var_0_3.GetSkillTemplate(arg_21_0).focus_duration then
+		var_21_0 = true
 	end
 
-	return slot1
+	return var_21_0
 end
 
-function slot3.SkinAdaptFXID(slot0, slot1)
-	return slot0 .. "_" .. slot1
+function var_0_3.SkinAdaptFXID(arg_22_0, arg_22_1)
+	return arg_22_0 .. "_" .. arg_22_1
 end
 
-function slot3.GetFleetReload(slot0)
-	return uv0.GetFleetReload(slot0)
+function var_0_3.GetFleetReload(arg_23_0)
+	return var_0_2.GetFleetReload(arg_23_0)
 end
 
-function slot3.GetFleetTorpedoPower(slot0)
-	return uv0.GetFleetTorpedoPower(slot0)
+function var_0_3.GetFleetTorpedoPower(arg_24_0)
+	return var_0_2.GetFleetTorpedoPower(arg_24_0)
 end
 
-function slot3.SortFleetList(slot0, slot1)
-	slot2 = {}
+function var_0_3.SortFleetList(arg_25_0, arg_25_1)
+	local var_25_0 = {}
 
-	for slot6, slot7 in ipairs(slot0) do
-		slot2[#slot2 + 1] = slot1[slot7]
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0) do
+		var_25_0[#var_25_0 + 1] = arg_25_1[iter_25_1]
 
-		slot2[slot6]:SetFormationIndex(slot6)
+		var_25_0[iter_25_0]:SetFormationIndex(iter_25_0)
 	end
 
-	return slot2
+	return var_25_0
 end
 
-function slot3.GetLimitAttributeRange(slot0, slot1)
-	if pg.battle_attribute_range[slot0] then
-		return math.clamp(slot1, pg.battle_attribute_range[slot0].min / 10000, pg.battle_attribute_range[slot0].max / 10000)
+function var_0_3.GetLimitAttributeRange(arg_26_0, arg_26_1)
+	if pg.battle_attribute_range[arg_26_0] then
+		return math.clamp(arg_26_1, pg.battle_attribute_range[arg_26_0].min / 10000, pg.battle_attribute_range[arg_26_0].max / 10000)
 	end
 
-	return slot1
+	return arg_26_1
 end
 
-function slot3.GetPuzzleCardDataTemplate(slot0)
-	assert(uv0[slot0] ~= nil, ">>puzzle_card_template<< 找不到卡牌配置：" .. slot0)
+function var_0_3.GetPuzzleCardDataTemplate(arg_27_0)
+	assert(var_0_4[arg_27_0] ~= nil, ">>puzzle_card_template<< 找不到卡牌配置：" .. arg_27_0)
 
-	return uv0[slot0]
+	return var_0_4[arg_27_0]
 end
 
-function slot3.GetPuzzleShipDataTemplate(slot0)
-	assert(uv0[slot0] ~= nil, ">>puzzle_ship_template<< 找不到卡牌舰船配置：" .. slot0)
+function var_0_3.GetPuzzleShipDataTemplate(arg_28_0)
+	assert(var_0_5[arg_28_0] ~= nil, ">>puzzle_ship_template<< 找不到卡牌舰船配置：" .. arg_28_0)
 
-	return uv0[slot0]
+	return var_0_5[arg_28_0]
 end
 
-function slot3.GetPuzzleDungeonTemplate(slot0)
-	assert(uv0[slot0] ~= nil, ">>puzzle_combat_template<< 找不到卡牌关卡配置：" .. slot0)
+function var_0_3.GetPuzzleDungeonTemplate(arg_29_0)
+	assert(var_0_6[arg_29_0] ~= nil, ">>puzzle_combat_template<< 找不到卡牌关卡配置：" .. arg_29_0)
 
-	return uv0[slot0]
+	return var_0_6[arg_29_0]
 end
 
-function slot3.GetPuzzleCardAffixDataTemplate(slot0)
-	assert(uv0[slot0] ~= nil, ">>puzzle_card_affix<< 找不到卡牌关卡配置：" .. slot0)
+function var_0_3.GetPuzzleCardAffixDataTemplate(arg_30_0)
+	assert(var_0_7[arg_30_0] ~= nil, ">>puzzle_card_affix<< 找不到卡牌关卡配置：" .. arg_30_0)
 
-	return uv0[slot0]
+	return var_0_7[arg_30_0]
 end

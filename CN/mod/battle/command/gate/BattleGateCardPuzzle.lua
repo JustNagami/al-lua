@@ -1,58 +1,66 @@
-slot0 = class("BattleGateCardPuzzle")
-ys.Battle.BattleGateCardPuzzle = slot0
-slot0.__name = "BattleGateCardPuzzle"
+﻿local var_0_0 = class("BattleGateCardPuzzle")
 
-function slot0.Entrance(slot0, slot1)
-	slot3 = ys.Battle.BattleDataFunction.GetPuzzleDungeonTemplate(slot0.combatID)
-	slot4 = slot3.dungeon_id
-	slot5 = {
+ys.Battle.BattleGateCardPuzzle = var_0_0
+var_0_0.__name = "BattleGateCardPuzzle"
+
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.combatID
+	local var_1_1 = ys.Battle.BattleDataFunction.GetPuzzleDungeonTemplate(var_1_0)
+	local var_1_2 = var_1_1.dungeon_id
+	local var_1_3 = {
 		CardPuzzleShip.New({
-			configId = slot3.scout_id
+			configId = var_1_1.scout_id
 		}),
 		CardPuzzleShip.New({
-			configId = slot3.main_id
+			configId = var_1_1.main_id
 		})
 	}
-	slot6 = slot3.deck
-	slot7 = {}
+	local var_1_4 = var_1_1.deck
+	local var_1_5 = {}
 
-	for slot11, slot12 in ipairs(slot3.relic) do
-		table.insert(slot7, CardPuzzleGift.New({
-			configId = slot12
+	for iter_1_0, iter_1_1 in ipairs(var_1_1.relic) do
+		table.insert(var_1_5, CardPuzzleGift.New({
+			configId = iter_1_1
 		}))
 	end
 
-	(function (slot0)
-		uv5:sendNotification(GAME.BEGIN_STAGE_DONE, {
+	;(function(arg_2_0)
+		local var_2_0 = {
 			hp = 1,
-			cardPuzzleFleet = uv0,
+			cardPuzzleFleet = var_1_3,
 			prefabFleet = {},
-			cards = uv1,
-			relics = uv2,
-			stageId = uv3,
+			cards = var_1_4,
+			relics = var_1_5,
+			stageId = var_1_2,
 			system = SYSTEM_CARDPUZZLE,
-			puzzleCombatID = uv4
-		})
+			puzzleCombatID = var_1_0
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_0)
 	end)()
 end
 
-function slot0.Exit(slot0, slot1)
-	slot2 = slot0.statistics._battleScore
+function var_0_0.Exit(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0.statistics._battleScore
 
-	print(slot2)
+	print(var_3_0)
 
-	if ys.Battle.BattleConst.BattleScore.S <= slot2 then
-		slot1:sendNotification(GAME.ACT_CARD_PUZZLE, {
+	if var_3_0 >= ys.Battle.BattleConst.BattleScore.S then
+		local var_3_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CARD_PUZZLE)
+
+		arg_3_1:sendNotification(GAME.ACT_CARD_PUZZLE, {
 			cmd = 1,
-			activity_id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CARD_PUZZLE) and slot3.id,
-			arg1 = slot0.puzzleCombatID
+			activity_id = var_3_1 and var_3_1.id,
+			arg1 = arg_3_0.puzzleCombatID
 		})
 	end
 
-	slot1:sendNotification(GAME.FINISH_STAGE_DONE, {
+	local var_3_2 = {
 		system = SYSTEM_CARDPUZZLE,
-		score = slot2
-	})
+		score = var_3_0
+	}
+
+	arg_3_1:sendNotification(GAME.FINISH_STAGE_DONE, var_3_2)
 end
 
-return slot0
+return var_0_0

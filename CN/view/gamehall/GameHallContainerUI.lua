@@ -1,20 +1,21 @@
-slot0 = class("GameHallContainerUI")
-slot1 = 4
-slot2 = Vector3(0.7, 0.7, 0.7)
-slot3 = "mingshi"
-slot4 = 0.1
-slot5 = 100
-slot6 = 4
-slot7, slot8 = nil
-slot9 = 3256
-slot10 = 1920
-slot11 = {
+﻿local var_0_0 = class("GameHallContainerUI")
+local var_0_1 = 4
+local var_0_2 = Vector3(0.7, 0.7, 0.7)
+local var_0_3 = "mingshi"
+local var_0_4 = 0.1
+local var_0_5 = 100
+local var_0_6 = 4
+local var_0_7
+local var_0_8
+local var_0_9 = 3256
+local var_0_10 = 1920
+local var_0_11 = {
 	{
 		"item3",
 		"item3/spine"
 	}
 }
-slot12 = {
+local var_0_12 = {
 	{
 		bound = "item1/spine/bound",
 		pos = "item1/spine/pos",
@@ -52,191 +53,205 @@ slot12 = {
 	}
 }
 
-function slot0.Ctor(slot0, slot1)
-	uv2 = {
-		uv0 - uv1 + pg.UIMgr.GetInstance().uiCamera.gameObject.transform:Find("Canvas").sizeDelta.x - uv0,
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	local var_1_0 = pg.UIMgr.GetInstance().uiCamera.gameObject.transform:Find("Canvas").sizeDelta.x - var_0_10
+	local var_1_1 = var_0_10 - var_0_9 + var_1_0
+
+	var_0_7 = {
+		var_1_1,
 		0
 	}
-	uv3 = {
+	var_0_8 = {
 		0,
 		0
 	}
-	slot0.container = slot1
-	slot0.content = findTF(slot0.container, "content")
-	slot0.pos = findTF(slot0.content, "pos")
-	slot0.boundContainer = findTF(slot0.content, "bound")
-	slot0.charContentEvents = {}
-	slot0.charContentCollider = {}
-	slot0.items = {}
+	arg_1_0.container = arg_1_1
+	arg_1_0.content = findTF(arg_1_0.container, "content")
+	arg_1_0.pos = findTF(arg_1_0.content, "pos")
+	arg_1_0.boundContainer = findTF(arg_1_0.content, "bound")
+	arg_1_0.charContentEvents = {}
+	arg_1_0.charContentCollider = {}
+	arg_1_0.items = {}
 
-	for slot8 = 0, slot0.pos.childCount - 1 do
-		table.insert(slot0.items, slot0.pos:GetChild(slot8))
+	for iter_1_0 = 0, arg_1_0.pos.childCount - 1 do
+		table.insert(arg_1_0.items, arg_1_0.pos:GetChild(iter_1_0))
 	end
 
-	slot0.sitItems = {}
+	arg_1_0.sitItems = {}
 
-	for slot8 = 1, #uv4 do
-		slot9 = uv4[slot8]
+	for iter_1_1 = 1, #var_0_12 do
+		local var_1_2 = var_0_12[iter_1_1]
+		local var_1_3 = findTF(arg_1_0.pos, var_1_2.pos)
+		local var_1_4 = GetComponent(findTF(arg_1_0.pos, var_1_2.spine), typeof(SpineAnimUI))
 
-		print(slot9.bound)
+		print(var_1_2.bound)
 
-		slot12 = GetComponent(findTF(slot0.pos, slot9.bound), typeof(BoxCollider2D))
+		local var_1_5 = GetComponent(findTF(arg_1_0.pos, var_1_2.bound), typeof(BoxCollider2D))
+		local var_1_6 = arg_1_0.pos:InverseTransformPoint(var_1_5.bounds.min)
+		local var_1_7 = arg_1_0.pos:InverseTransformPoint(var_1_5.bounds.max)
 
-		table.insert(slot0.sitItems, {
+		table.insert(arg_1_0.sitItems, {
 			sit = false,
-			pos = findTF(slot0.pos, slot9.pos),
-			min = slot0.pos:InverseTransformPoint(slot12.bounds.min),
-			max = slot0.pos:InverseTransformPoint(slot12.bounds.max),
-			anim = GetComponent(findTF(slot0.pos, slot9.spine), typeof(SpineAnimUI))
+			pos = var_1_3,
+			min = var_1_6,
+			max = var_1_7,
+			anim = var_1_4
 		})
 	end
 
-	slot7 = {}
+	local var_1_8 = getProxy(BayProxy):getShips()
+	local var_1_9 = {}
 
-	for slot11 = 1, #getProxy(BayProxy):getShips() do
-		if not table.contains(slot7, slot6[slot11].name) then
-			table.insert(slot7, slot6[slot11]:getPrefab())
+	for iter_1_2 = 1, #var_1_8 do
+		if not table.contains(var_1_9, var_1_8[iter_1_2].name) then
+			table.insert(var_1_9, var_1_8[iter_1_2]:getPrefab())
 		end
 	end
 
-	if uv5 > #slot7 then
-		uv5 = #slot7
+	if var_0_1 > #var_1_9 then
+		var_0_1 = #var_1_9
 	end
 
-	slot0.chars = {}
+	arg_1_0.chars = {}
 
-	for slot11 = 1, uv5 do
-		slot12 = slot11
-		slot14 = PoolMgr.GetInstance()
+	for iter_1_3 = 1, var_0_1 do
+		local var_1_10 = iter_1_3
+		local var_1_11 = table.remove(var_1_9, math.random(1, #var_1_9))
 
-		slot14:GetSpineChar(table.remove(slot7, math.random(1, #slot7)), true, function (slot0)
-			slot1 = tf(slot0):GetComponent(typeof(SpineAnimUI))
+		PoolMgr.GetInstance():GetSpineChar(var_1_11, true, function(arg_2_0)
+			local var_2_0 = tf(arg_2_0):GetComponent(typeof(SpineAnimUI))
 
-			slot1:SetAction("stand2", 0)
-			setParent(tf(slot0), uv0.pos)
-			setLocalScale(slot0, uv1)
+			var_2_0:SetAction("stand2", 0)
+			setParent(tf(arg_2_0), arg_1_0.pos)
+			setLocalScale(arg_2_0, var_0_2)
 
-			slot3 = GetComponent(findTF(uv0.boundContainer, tostring(uv2)), typeof(BoxCollider2D))
-			slot4 = uv0.pos:InverseTransformPoint(slot3.bounds.min)
-			slot5 = uv0.pos:InverseTransformPoint(slot3.bounds.max)
-			tf(slot0).anchoredPosition = uv0:getTargetPos(slot4, slot5)
+			local var_2_1 = findTF(arg_1_0.boundContainer, tostring(var_1_10))
+			local var_2_2 = GetComponent(var_2_1, typeof(BoxCollider2D))
+			local var_2_3 = arg_1_0.pos:InverseTransformPoint(var_2_2.bounds.min)
+			local var_2_4 = arg_1_0.pos:InverseTransformPoint(var_2_2.bounds.max)
 
-			table.insert(uv0.chars, {
-				tf = tf(slot0),
-				anim = slot1,
+			tf(arg_2_0).anchoredPosition = arg_1_0:getTargetPos(var_2_3, var_2_4)
+
+			table.insert(arg_1_0.chars, {
+				tf = tf(arg_2_0),
+				anim = var_2_0,
 				vel = Vector2(0, 0),
 				bound = {
-					slot4.x,
-					slot4.y,
-					slot5.x,
-					slot5.y
+					var_2_3.x,
+					var_2_3.y,
+					var_2_4.x,
+					var_2_4.y
 				},
-				min = slot4,
-				max = slot5,
-				pos = tf(slot0).anchoredPosition,
-				curScale = tf(slot0).localScale
+				min = var_2_3,
+				max = var_2_4,
+				pos = tf(arg_2_0).anchoredPosition,
+				curScale = tf(arg_2_0).localScale
 			})
-			table.insert(uv0.items, tf(slot0))
+			table.insert(arg_1_0.items, tf(arg_2_0))
 		end)
 	end
 
-	slot0.bataiTf = findTF(slot0.pos, "batai")
-	slot0.coinChar = nil
-	slot8 = PoolMgr.GetInstance()
+	arg_1_0.bataiTf = findTF(arg_1_0.pos, "batai")
+	arg_1_0.coinChar = nil
 
-	function slot12(slot0)
-		uv0.coinChar = tf(slot0)
+	PoolMgr.GetInstance():GetSpineChar(var_0_3, true, function(arg_3_0)
+		arg_1_0.coinChar = tf(arg_3_0)
 
-		tf(slot0):GetComponent(typeof(SpineAnimUI)):SetAction("stand2", 0)
-		setParent(tf(slot0), findTF(uv0.bataiTf, "char"))
-		setLocalScale(slot0, uv1)
-	end
-
-	slot8:GetSpineChar(uv7, true, slot12)
-
-	slot0.content.anchoredPosition = Vector2(0, 0)
-	slot8 = GetOrAddComponent(slot0.content, typeof(EventTriggerListener))
-	slot0.velocityXSmoothing = Vector2(0, 0)
-	slot0.offsetPosition = slot0.content.anchoredPosition
-
-	slot8:AddBeginDragFunc(function (slot0, slot1)
-		uv0.prevPosition = slot1.position
-		uv0.scenePosition = uv0.content.anchoredPosition
-		uv0.velocityXSmoothing = Vector2(0, 0)
-		uv0.offsetPosition = uv0.content.anchoredPosition
-	end)
-	slot8:AddDragFunc(function (slot0, slot1)
-		uv0.offsetPosition.x = slot1.position.x - uv0.prevPosition.x + uv0.scenePosition.x
-		uv0.offsetPosition.y = slot1.position.y - uv0.prevPosition.y + uv0.scenePosition.y
-		uv0.offsetPosition.x = uv1[2] < uv0.offsetPosition.x and uv1[2] or uv0.offsetPosition.x
-		uv0.offsetPosition.x = uv0.offsetPosition.x < uv1[1] and uv1[1] or uv0.offsetPosition.x
-		uv0.offsetPosition.y = uv2[2] < uv0.offsetPosition.y and uv2[2] or uv0.offsetPosition.y
-		uv0.offsetPosition.y = uv0.offsetPosition.y < uv2[1] and uv2[1] or uv0.offsetPosition.y
-	end)
-	slot8:AddDragEndFunc(function (slot0, slot1)
+		tf(arg_3_0):GetComponent(typeof(SpineAnimUI)):SetAction("stand2", 0)
+		setParent(tf(arg_3_0), findTF(arg_1_0.bataiTf, "char"))
+		setLocalScale(arg_3_0, var_0_2)
 	end)
 
-	slot0.clickItems = {}
+	arg_1_0.content.anchoredPosition = Vector2(0, 0)
 
-	for slot12 = 1, #uv8 do
-		slot13 = findTF(slot0.pos, uv8[slot12][1])
+	local var_1_12 = GetOrAddComponent(arg_1_0.content, typeof(EventTriggerListener))
 
-		table.insert(slot0.clickItems, {
+	arg_1_0.velocityXSmoothing = Vector2(0, 0)
+	arg_1_0.offsetPosition = arg_1_0.content.anchoredPosition
+
+	var_1_12:AddBeginDragFunc(function(arg_4_0, arg_4_1)
+		arg_1_0.prevPosition = arg_4_1.position
+		arg_1_0.scenePosition = arg_1_0.content.anchoredPosition
+		arg_1_0.velocityXSmoothing = Vector2(0, 0)
+		arg_1_0.offsetPosition = arg_1_0.content.anchoredPosition
+	end)
+	var_1_12:AddDragFunc(function(arg_5_0, arg_5_1)
+		arg_1_0.offsetPosition.x = arg_5_1.position.x - arg_1_0.prevPosition.x + arg_1_0.scenePosition.x
+		arg_1_0.offsetPosition.y = arg_5_1.position.y - arg_1_0.prevPosition.y + arg_1_0.scenePosition.y
+		arg_1_0.offsetPosition.x = arg_1_0.offsetPosition.x > var_0_7[2] and var_0_7[2] or arg_1_0.offsetPosition.x
+		arg_1_0.offsetPosition.x = arg_1_0.offsetPosition.x < var_0_7[1] and var_0_7[1] or arg_1_0.offsetPosition.x
+		arg_1_0.offsetPosition.y = arg_1_0.offsetPosition.y > var_0_8[2] and var_0_8[2] or arg_1_0.offsetPosition.y
+		arg_1_0.offsetPosition.y = arg_1_0.offsetPosition.y < var_0_8[1] and var_0_8[1] or arg_1_0.offsetPosition.y
+	end)
+	var_1_12:AddDragEndFunc(function(arg_6_0, arg_6_1)
+		return
+	end)
+
+	arg_1_0.clickItems = {}
+
+	for iter_1_4 = 1, #var_0_11 do
+		local var_1_13 = findTF(arg_1_0.pos, var_0_11[iter_1_4][1])
+		local var_1_14 = GetComponent(findTF(arg_1_0.pos, var_0_11[iter_1_4][2]), typeof(SpineAnimUI))
+
+		table.insert(arg_1_0.clickItems, {
 			time = 0,
-			tf = slot13,
-			anim = GetComponent(findTF(slot0.pos, uv8[slot12][2]), typeof(SpineAnimUI))
+			tf = var_1_13,
+			anim = var_1_14
 		})
-		onButton(slot0._event, slot13, function ()
-			if uv0:checkClickTime(uv1) then
-				uv0:setAnimAction(uv1, "action", 1, "normal")
+		onButton(arg_1_0._event, var_1_13, function()
+			if arg_1_0:checkClickTime(var_1_14) then
+				arg_1_0:setAnimAction(var_1_14, "action", 1, "normal")
 			end
 		end)
 	end
 end
 
-function slot0.setCharSit(slot0, slot1, slot2)
-	if slot1.sitFlag or slot2.sitFlag then
+function var_0_0.setCharSit(arg_8_0, arg_8_1, arg_8_2)
+	if arg_8_1.sitFlag or arg_8_2.sitFlag then
 		return
 	end
 
-	slot3 = slot1.tf
+	local var_8_0 = arg_8_1.tf
+	local var_8_1 = arg_8_1.anim
+	local var_8_2 = arg_8_2.pos
+	local var_8_3 = arg_8_2.anim
 
-	slot0:setAnimAction(slot1.anim, "sit", 0, nil)
-	slot0:setAnimAction(slot2.anim, "sit", 0, nil)
+	arg_8_0:setAnimAction(var_8_1, "sit", 0, nil)
+	arg_8_0:setAnimAction(var_8_3, "sit", 0, nil)
 
-	slot1.curAction = "sit"
-	slot2.curAction = "sit"
-	slot1.target = nil
-	slot1.sitItem = slot2
-	slot1.sitFlag = true
-	slot1.time = math.random(10, 20)
-	slot1.tf.localScale = uv0
-	slot1.vel = Vector2(0, 0)
-	slot2.sitFlag = true
+	arg_8_1.curAction = "sit"
+	arg_8_2.curAction = "sit"
+	arg_8_1.target = nil
+	arg_8_1.sitItem = arg_8_2
+	arg_8_1.sitFlag = true
+	arg_8_1.time = math.random(10, 20)
+	arg_8_1.tf.localScale = var_0_2
+	arg_8_1.vel = Vector2(0, 0)
+	arg_8_2.sitFlag = true
 
-	setParent(slot1.tf, slot2.pos)
+	setParent(arg_8_1.tf, var_8_2)
 
-	slot1.tf.anchoredPosition = Vector2(0, 0)
+	arg_8_1.tf.anchoredPosition = Vector2(0, 0)
 end
 
-function slot0.stopCharSit(slot0, slot1)
-	slot1.sitItem.sitFlag = false
+function var_0_0.stopCharSit(arg_9_0, arg_9_1)
+	arg_9_1.sitItem.sitFlag = false
 
-	slot0:setAnimAction(slot1.anim, "walk", 0, nil)
-	slot0:setAnimAction(slot1.sitItem.anim, "normal", 0, nil)
+	arg_9_0:setAnimAction(arg_9_1.anim, "walk", 0, nil)
+	arg_9_0:setAnimAction(arg_9_1.sitItem.anim, "normal", 0, nil)
 
-	slot1.sitItem = nil
-	slot1.sitFlag = false
+	arg_9_1.sitItem = nil
+	arg_9_1.sitFlag = false
 
-	setParent(slot1.tf, slot0.pos)
+	setParent(arg_9_1.tf, arg_9_0.pos)
 
-	slot1.tf.anchoredPosition = slot1.pos
+	arg_9_1.tf.anchoredPosition = arg_9_1.pos
 end
 
-function slot0.checkClickTime(slot0, slot1)
-	for slot5 = 1, #slot0.clickItems do
-		if slot0.clickItems[slot5].anim == slot1 and (slot0.clickItems[slot5].time == 0 or slot0.clickItems[slot5].time < Time.realtimeSinceStartup) then
-			slot0.clickItems[slot5].time = Time.realtimeSinceStartup + 2
+function var_0_0.checkClickTime(arg_10_0, arg_10_1)
+	for iter_10_0 = 1, #arg_10_0.clickItems do
+		if arg_10_0.clickItems[iter_10_0].anim == arg_10_1 and (arg_10_0.clickItems[iter_10_0].time == 0 or Time.realtimeSinceStartup > arg_10_0.clickItems[iter_10_0].time) then
+			arg_10_0.clickItems[iter_10_0].time = Time.realtimeSinceStartup + 2
 
 			return true
 		end
@@ -245,142 +260,152 @@ function slot0.checkClickTime(slot0, slot1)
 	return false
 end
 
-function slot0.step(slot0)
-	slot4 = slot0.offsetPosition
-	slot0.content.anchoredPosition, slot0.velocityXSmoothing = Vector2.SmoothDamp(slot0.content.anchoredPosition, slot4, slot0.velocityXSmoothing, uv0)
+function var_0_0.step(arg_11_0)
+	arg_11_0.content.anchoredPosition, arg_11_0.velocityXSmoothing = Vector2.SmoothDamp(arg_11_0.content.anchoredPosition, arg_11_0.offsetPosition, arg_11_0.velocityXSmoothing, var_0_4)
 
-	for slot4 = 1, #slot0.chars do
-		slot5 = slot0.chars[slot4]
-		slot7 = slot5.pos
+	for iter_11_0 = 1, #arg_11_0.chars do
+		local var_11_0 = arg_11_0.chars[iter_11_0]
+		local var_11_1 = var_11_0.time
+		local var_11_2 = var_11_0.pos
 
-		if not slot5.time or slot6 <= 0 then
-			if slot5.sitFlag then
-				slot0:stopCharSit(slot5)
+		if not var_11_1 or var_11_1 <= 0 then
+			if var_11_0.sitFlag then
+				arg_11_0:stopCharSit(var_11_0)
 			elseif math.random(1, 10) > 5 then
-				slot8 = slot0:getTargetPos(slot5.min, slot5.max)
-				slot5.target = slot8
-				slot5.vel = slot0:getVel(slot7, slot8)
+				local var_11_3 = arg_11_0:getTargetPos(var_11_0.min, var_11_0.max)
+
+				var_11_0.vel, var_11_0.target = arg_11_0:getVel(var_11_2, var_11_3), var_11_3
 			end
 
-			slot5.time = math.random(1, uv1)
+			var_11_0.time = math.random(1, var_0_6)
 		end
 
-		if slot5.target and not slot5.sitFlag then
-			if ({
-				slot5.vel.x * uv2 * Time.deltaTime,
-				slot5.vel.y * uv2 * Time.deltaTime
-			})[1] ~= 0 then
-				slot5.pos.x = slot5.pos.x + slot8[1]
+		if var_11_0.target and not var_11_0.sitFlag then
+			local var_11_4 = {
+				var_11_0.vel.x * var_0_5 * Time.deltaTime,
+				var_11_0.vel.y * var_0_5 * Time.deltaTime
+			}
+
+			if var_11_4[1] ~= 0 then
+				var_11_0.pos.x = var_11_0.pos.x + var_11_4[1]
 			end
 
-			if slot8[2] ~= 0 then
-				slot5.pos.y = slot5.pos.y + slot8[2]
+			if var_11_4[2] ~= 0 then
+				var_11_0.pos.y = var_11_0.pos.y + var_11_4[2]
 			end
 
-			if slot5.pos.x < slot5.bound[1] then
-				slot5.pos.x = slot9[1]
-				slot5.vel.x = 0
+			local var_11_5 = var_11_0.bound
+
+			if var_11_0.pos.x < var_11_5[1] then
+				var_11_0.pos.x = var_11_5[1]
+				var_11_0.vel.x = 0
 			end
 
-			if slot9[3] < slot5.pos.x then
-				slot5.pos.x = slot9[3]
-				slot5.vel.x = 0
+			if var_11_0.pos.x > var_11_5[3] then
+				var_11_0.pos.x = var_11_5[3]
+				var_11_0.vel.x = 0
 			end
 
-			if slot5.pos.y < slot9[2] then
-				slot5.pos.y = slot9[2]
-				slot5.vel.y = 0
+			if var_11_0.pos.y < var_11_5[2] then
+				var_11_0.pos.y = var_11_5[2]
+				var_11_0.vel.y = 0
 			end
 
-			if slot9[4] < slot5.pos.y then
-				slot5.pos.y = slot9[4]
-				slot5.vel.y = 0
+			if var_11_0.pos.y > var_11_5[4] then
+				var_11_0.pos.y = var_11_5[4]
+				var_11_0.vel.y = 0
 			end
 
-			slot5.tf.anchoredPosition = slot5.pos
-			slot10 = slot5.target
+			var_11_0.tf.anchoredPosition = var_11_0.pos
 
-			if math.abs(slot5.target.x - slot5.pos.x) < 10 then
-				slot5.vel.x = 0
+			local var_11_6 = var_11_0.target
+
+			if math.abs(var_11_0.target.x - var_11_0.pos.x) < 10 then
+				var_11_0.vel.x = 0
 			end
 
-			if math.abs(slot5.target.y - slot5.pos.y) < 10 then
-				slot5.vel.y = 0
+			if math.abs(var_11_0.target.y - var_11_0.pos.y) < 10 then
+				var_11_0.vel.y = 0
 			end
 		end
 
-		slot8 = true
-		slot9 = slot5.sitFlag
+		local var_11_7 = true
+		local var_11_8 = var_11_0.sitFlag
 
-		if slot5.vel.x == 0 and slot5.vel.y == 0 then
-			slot5.time = slot5.time - Time.deltaTime
-			slot8 = false
+		if var_11_0.vel.x == 0 and var_11_0.vel.y == 0 then
+			var_11_0.time = var_11_0.time - Time.deltaTime
+			var_11_7 = false
 		end
 
-		if not slot8 and slot5.target then
-			slot5.target = nil
+		if not var_11_7 and var_11_0.target then
+			var_11_0.target = nil
 		end
 
-		if not slot5.sitFlag and not slot8 then
-			slot5.ableSit = true
+		if not var_11_0.sitFlag and not var_11_7 then
+			var_11_0.ableSit = true
 		end
 
-		if slot8 then
-			if slot5.curAction ~= "walk" then
-				slot5.curAction = "walk"
+		if var_11_7 then
+			if var_11_0.curAction ~= "walk" then
+				var_11_0.curAction = "walk"
 
-				slot5.anim:SetAction("walk", 0)
+				var_11_0.anim:SetAction("walk", 0)
 			end
-		elseif slot9 then
-			if slot5.curAction ~= "sit" then
-				slot5.curAction = "sit"
+		elseif var_11_8 then
+			if var_11_0.curAction ~= "sit" then
+				var_11_0.curAction = "sit"
 
-				slot5.anim:SetAction("sit", 0)
+				var_11_0.anim:SetAction("sit", 0)
 			end
-		elseif slot5.curAction ~= "stand2" then
-			slot5.curAction = "stand2"
+		elseif var_11_0.curAction ~= "stand2" then
+			var_11_0.curAction = "stand2"
 
-			slot5.anim:SetAction("stand2", 0)
+			var_11_0.anim:SetAction("stand2", 0)
 		end
 
-		if slot5.vel.x ~= 0 and slot5.curScale.x ~= (slot5.vel.x > 0 and 1 or -1) then
-			slot5.curScale.x = slot10 * uv3.x
-			slot5.tf.localScale = slot5.curScale
+		if var_11_0.vel.x ~= 0 then
+			local var_11_9 = var_11_0.vel.x > 0 and 1 or -1
+
+			if var_11_0.curScale.x ~= var_11_9 then
+				var_11_0.curScale.x = var_11_9 * var_0_2.x
+				var_11_0.tf.localScale = var_11_0.curScale
+			end
 		end
 
-		if slot8 then
-			slot0:checkCharSit(slot5)
+		if var_11_7 then
+			arg_11_0:checkCharSit(var_11_0)
 		end
 	end
 
-	table.sort(slot0.items, function (slot0, slot1)
-		if slot0.anchoredPosition.y < slot1.anchoredPosition.y then
+	table.sort(arg_11_0.items, function(arg_12_0, arg_12_1)
+		if arg_12_0.anchoredPosition.y < arg_12_1.anchoredPosition.y then
 			return true
 		end
 	end)
 
-	for slot4, slot5 in ipairs(slot0.items) do
-		slot5:SetAsFirstSibling()
+	for iter_11_1, iter_11_2 in ipairs(arg_11_0.items) do
+		iter_11_2:SetAsFirstSibling()
 	end
 end
 
-function slot0.checkCharSit(slot0, slot1)
-	if not slot1.ableSit then
+function var_0_0.checkCharSit(arg_13_0, arg_13_1)
+	if not arg_13_1.ableSit then
 		return
 	end
 
-	slot2 = slot1.pos
+	local var_13_0 = arg_13_1.pos
 
-	for slot6 = 1, #slot0.sitItems do
-		slot7 = slot0.sitItems[slot6]
-		slot9 = slot7.max
+	for iter_13_0 = 1, #arg_13_0.sitItems do
+		local var_13_1 = arg_13_0.sitItems[iter_13_0]
+		local var_13_2 = var_13_1.min
+		local var_13_3 = var_13_1.max
 
-		if slot7.min.x < slot2.x and slot2.x < slot9.x and slot8.y < slot2.y and slot2.y < slot9.y then
+		if var_13_0.x > var_13_2.x and var_13_0.x < var_13_3.x and var_13_0.y > var_13_2.y and var_13_0.y < var_13_3.y then
 			if math.random(1, 10) > 7 then
 				print("角色想坐下")
-				slot0:setCharSit(slot1, slot7)
+				arg_13_0:setCharSit(arg_13_1, var_13_1)
 			else
-				slot1.ableSit = false
+				arg_13_1.ableSit = false
 
 				print("角色不想坐下")
 			end
@@ -388,29 +413,36 @@ function slot0.checkCharSit(slot0, slot1)
 	end
 end
 
-function slot0.getVel(slot0, slot1, slot2)
-	slot3 = math.atan(math.abs(slot2.y - slot1.y) / math.abs(slot2.x - slot1.x))
+function var_0_0.getVel(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = math.atan(math.abs(arg_14_2.y - arg_14_1.y) / math.abs(arg_14_2.x - arg_14_1.x))
+	local var_14_1 = arg_14_2.x > arg_14_1.x and 1 or -1
+	local var_14_2 = arg_14_2.y > arg_14_1.y and 1 or -1
+	local var_14_3 = math.cos(var_14_0) * var_14_1
+	local var_14_4 = math.sin(var_14_0) * var_14_2
 
-	return Vector2(math.cos(slot3) * (slot1.x < slot2.x and 1 or -1), math.sin(slot3) * (slot1.y < slot2.y and 1 or -1))
+	return Vector2(var_14_3, var_14_4)
 end
 
-function slot0.setAnimAction(slot0, slot1, slot2, slot3, slot4)
-	slot1:SetActionCallBack(nil)
-	slot1:SetAction(slot2, 0)
-	slot1:SetActionCallBack(function (slot0)
-		if slot0 == "finish" and uv0 == 1 then
-			uv1:SetActionCallBack(nil)
-			uv1:SetAction(uv2, 0)
+function var_0_0.setAnimAction(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
+	arg_15_1:SetActionCallBack(nil)
+	arg_15_1:SetAction(arg_15_2, 0)
+	arg_15_1:SetActionCallBack(function(arg_16_0)
+		if arg_16_0 == "finish" and arg_15_3 == 1 then
+			arg_15_1:SetActionCallBack(nil)
+			arg_15_1:SetAction(arg_15_4, 0)
 		end
 	end)
 end
 
-function slot0.getTargetPos(slot0, slot1, slot2)
-	return Vector2(slot1.x + math.random(1, tonumber(slot2.x) - tonumber(slot1.x)), slot1.y + math.random(1, tonumber(slot2.y) - tonumber(slot1.y)))
+function var_0_0.getTargetPos(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = tonumber(arg_17_2.x) - tonumber(arg_17_1.x)
+	local var_17_1 = tonumber(arg_17_2.y) - tonumber(arg_17_1.y)
+
+	return Vector2(arg_17_1.x + math.random(1, var_17_0), arg_17_1.y + math.random(1, var_17_1))
 end
 
-function slot0.isPointInMatrix(slot0, slot1, slot2, slot3, slot4, slot5)
-	return slot0:getCross(slot1, slot2, slot5) * slot0:getCross(slot3, slot4, slot5) >= 0 and slot0:getCross(slot2, slot3, slot5) * slot0:getCross(slot4, slot1, slot5) >= 0
+function var_0_0.isPointInMatrix(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4, arg_18_5)
+	return arg_18_0:getCross(arg_18_1, arg_18_2, arg_18_5) * arg_18_0:getCross(arg_18_3, arg_18_4, arg_18_5) >= 0 and arg_18_0:getCross(arg_18_2, arg_18_3, arg_18_5) * arg_18_0:getCross(arg_18_4, arg_18_1, arg_18_5) >= 0
 end
 
-return slot0
+return var_0_0

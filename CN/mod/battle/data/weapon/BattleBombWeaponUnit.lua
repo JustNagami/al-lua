@@ -1,160 +1,185 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = class("BattleBombWeaponUnit", slot0.Battle.BattleWeaponUnit)
-slot0.Battle.BattleBombWeaponUnit = slot2
-slot2.__name = "BattleBombWeaponUnit"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = class("BattleBombWeaponUnit", var_0_0.Battle.BattleWeaponUnit)
 
-	slot0._alertCache = {}
-	slot0._cacheList = {}
+var_0_0.Battle.BattleBombWeaponUnit = var_0_2
+var_0_2.__name = "BattleBombWeaponUnit"
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
+
+	arg_1_0._alertCache = {}
+	arg_1_0._cacheList = {}
 end
 
-function slot2.Clear(slot0)
-	if slot0._alertTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._alertTimer)
+function var_0_2.Clear(arg_2_0)
+	if arg_2_0._alertTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_2_0._alertTimer)
 	end
 
-	slot0._alertTimer = nil
+	arg_2_0._alertTimer = nil
 
-	for slot4, slot5 in pairs(slot0._cacheList) do
-		slot5:Destroy()
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._cacheList) do
+		iter_2_1:Destroy()
 	end
 
-	uv0._cacheList = nil
+	var_0_2._cacheList = nil
 
-	uv0.super.Clear(slot0)
+	var_0_2.super.Clear(arg_2_0)
 end
 
-function slot2.HostOnEnemy(slot0)
-	uv0.super.HostOnEnemy(slot0)
+function var_0_2.HostOnEnemy(arg_3_0)
+	var_0_2.super.HostOnEnemy(arg_3_0)
 
-	if slot0._preCastInfo.alertTime ~= nil then
-		slot0._showPrecastAlert = true
-		slot2 = pg.TimeMgr.GetInstance()
-		slot0._alertTimer = slot2:AddBattleTimer("", -1, slot0._preCastInfo.alertTime or 3, function ()
-			uv0._alertTimer:Stop()
-			uv0:Fire()
-		end, true, true)
+	if arg_3_0._preCastInfo.alertTime ~= nil then
+		arg_3_0._showPrecastAlert = true
+
+		local function var_3_0()
+			arg_3_0._alertTimer:Stop()
+			arg_3_0:Fire()
+		end
+
+		arg_3_0._alertTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, arg_3_0._preCastInfo.alertTime or 3, var_3_0, true, true)
 	end
 end
 
-function slot2.Update(slot0, slot1)
-	slot0:UpdateReload()
+function var_0_2.Update(arg_5_0, arg_5_1)
+	arg_5_0:UpdateReload()
 
-	if slot0._currentState == slot0.STATE_READY then
-		slot0:updateMovementInfo()
+	if arg_5_0._currentState == arg_5_0.STATE_READY then
+		arg_5_0:updateMovementInfo()
 
-		if slot0:Tracking() then
-			if slot0._showPrecastAlert then
-				slot0:PreCast(slot2)
+		local var_5_0 = arg_5_0:Tracking()
+
+		if var_5_0 then
+			if arg_5_0._showPrecastAlert then
+				arg_5_0:PreCast(var_5_0)
 			else
-				slot0._currentState = slot0.STATE_PRECAST_FINISH
+				arg_5_0._currentState = arg_5_0.STATE_PRECAST_FINISH
 			end
 		end
 	end
 
-	if slot0._currentState == slot0.STATE_PRECAST_FINISH then
-		slot0:updateMovementInfo()
+	if arg_5_0._currentState == arg_5_0.STATE_PRECAST_FINISH then
+		arg_5_0:updateMovementInfo()
 
-		slot2 = slot0:Tracking()
-		slot3 = slot0:GetDirection()
-		slot4 = slot0:GetAttackAngle()
+		local var_5_1 = arg_5_0:Tracking()
+		local var_5_2 = arg_5_0:GetDirection()
+		local var_5_3 = arg_5_0:GetAttackAngle()
 
-		for slot8, slot9 in ipairs(slot0._majorEmitterList) do
-			slot9:Ready()
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0._majorEmitterList) do
+			iter_5_1:Ready()
 		end
 
-		for slot8, slot9 in ipairs(slot0._majorEmitterList) do
-			slot9:Fire(slot2, slot3, slot4)
+		for iter_5_2, iter_5_3 in ipairs(arg_5_0._majorEmitterList) do
+			iter_5_3:Fire(var_5_1, var_5_2, var_5_3)
 		end
 
-		uv0.super.Fire(slot0, slot2)
+		var_0_2.super.Fire(arg_5_0, var_5_1)
 	end
 end
 
-function slot2.PreCast(slot0, slot1)
-	slot0:cacheBulletID()
+function var_0_2.PreCast(arg_6_0, arg_6_1)
+	arg_6_0:cacheBulletID()
 
-	for slot5, slot6 in ipairs(slot0._majorEmitterList) do
-		slot6:Ready()
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0._majorEmitterList) do
+		iter_6_1:Ready()
 	end
 
-	for slot5, slot6 in ipairs(slot0._majorEmitterList) do
-		slot6:Fire(slot1, slot0:GetDirection(), slot0:GetAttackAngle())
+	for iter_6_2, iter_6_3 in ipairs(arg_6_0._majorEmitterList) do
+		iter_6_3:Fire(arg_6_1, arg_6_0:GetDirection(), arg_6_0:GetAttackAngle())
 	end
 
-	uv0.super.PreCast(slot0)
-	slot0._alertTimer:Start()
+	var_0_2.super.PreCast(arg_6_0)
+	arg_6_0._alertTimer:Start()
 end
 
-function slot2.AddPreCastTimer(slot0)
-	slot0._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponPrecastTimer", 0, slot0._preCastInfo.time, function ()
-		uv0._currentState = uv0.STATE_OVER_HEAT
+function var_0_2.AddPreCastTimer(arg_7_0)
+	local function var_7_0()
+		arg_7_0._currentState = arg_7_0.STATE_OVER_HEAT
 
-		uv0:RemovePrecastTimer()
-		uv0._host:SetWeaponPreCastBound(false)
-		uv0:DispatchEvent(uv1.Event.New(uv1.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, uv0._preCastInfo))
-	end, true)
+		arg_7_0:RemovePrecastTimer()
+
+		local var_8_0 = arg_7_0._preCastInfo
+		local var_8_1 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var_8_0)
+
+		arg_7_0._host:SetWeaponPreCastBound(false)
+		arg_7_0:DispatchEvent(var_8_1)
+	end
+
+	arg_7_0._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponPrecastTimer", 0, arg_7_0._preCastInfo.time, var_7_0, true)
 end
 
-function slot2.createMajorEmitter(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = {}
-	slot7 = nil
-	slot9 = nil
-	slot9 = uv0.Battle.BattleBulletEmitter.New(function ()
-		uv0:DispatchBulletEvent(table.remove(uv1, 1))
-	end, function ()
-		for slot3, slot4 in ipairs(uv0._cacheList) do
-			if slot4:GetState() ~= slot4.STATE_STOP then
+function var_0_2.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
+	local var_9_0 = {}
+	local var_9_1
+
+	local function var_9_2()
+		arg_9_0:DispatchBulletEvent(table.remove(var_9_0, 1))
+	end
+
+	local var_9_3
+
+	local function var_9_4()
+		for iter_11_0, iter_11_1 in ipairs(arg_9_0._cacheList) do
+			if iter_11_1:GetState() ~= iter_11_1.STATE_STOP then
 				return
 			end
 		end
 
-		uv0:EnterCoolDown()
-	end, slot1)
-	slot0._cacheList[slot9] = slot9
+		arg_9_0:EnterCoolDown()
+	end
 
-	uv1.super.createMajorEmitter(slot0, slot1, slot2, nil, function (slot0, slot1, slot2, slot3, slot4)
-		slot6 = uv0:Spawn(uv0._emitBulletIDList[uv1], slot4)
+	local var_9_5 = var_0_0.Battle.BattleBulletEmitter.New(var_9_2, var_9_4, arg_9_1)
 
-		slot6:SetOffsetPriority(slot3)
-		slot6:SetShiftInfo(slot0, slot1)
+	arg_9_0._cacheList[var_9_5] = var_9_5
 
-		if uv0._tmpData.aim_type == uv2.Battle.BattleConst.WeaponAimType.AIM and slot4 ~= nil then
-			slot6:SetRotateInfo(slot4:GetBeenAimedPosition(), uv0:GetBaseAngle(), slot2)
+	local function var_9_6(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+		local var_12_0 = arg_9_0._emitBulletIDList[arg_9_2]
+		local var_12_1 = arg_9_0:Spawn(var_12_0, arg_12_4)
+
+		var_12_1:SetOffsetPriority(arg_12_3)
+		var_12_1:SetShiftInfo(arg_12_0, arg_12_1)
+
+		if arg_9_0._tmpData.aim_type == var_0_0.Battle.BattleConst.WeaponAimType.AIM and arg_12_4 ~= nil then
+			var_12_1:SetRotateInfo(arg_12_4:GetBeenAimedPosition(), arg_9_0:GetBaseAngle(), arg_12_2)
 		else
-			slot6:SetRotateInfo(nil, uv0:GetBaseAngle(), slot2)
+			var_12_1:SetRotateInfo(nil, arg_9_0:GetBaseAngle(), arg_12_2)
 		end
 
-		table.insert(uv3, slot6)
-		uv0:showBombAlert(slot6)
-	end, function ()
-	end)
-end
-
-function slot2.DoAttack(slot0)
-	slot0:TriggerBuffOnSteday()
-
-	for slot4, slot5 in pairs(slot0._cacheList) do
-		slot5:Ready()
+		table.insert(var_9_0, var_12_1)
+		arg_9_0:showBombAlert(var_12_1)
 	end
 
-	for slot4, slot5 in pairs(slot0._cacheList) do
-		slot5:Fire(nil, slot0:GetDirection())
+	local function var_9_7()
+		return
 	end
 
-	uv0.Battle.PlayBattleSFX(slot0._tmpData.fire_sfx)
-	slot0:TriggerBuffOnFire()
-	slot0:CheckAndShake()
+	var_0_2.super.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, nil, var_9_6, var_9_7)
 end
 
-function slot2.showBombAlert(slot0, slot1)
-	slot1:SetExist(false)
+function var_0_2.DoAttack(arg_14_0)
+	arg_14_0:TriggerBuffOnSteday()
 
-	if slot1:GetTemplate().alert_fx ~= "" then
-		uv0.Battle.BattleBombBulletFactory.CreateBulletAlert(slot1)
+	for iter_14_0, iter_14_1 in pairs(arg_14_0._cacheList) do
+		iter_14_1:Ready()
+	end
+
+	for iter_14_2, iter_14_3 in pairs(arg_14_0._cacheList) do
+		iter_14_3:Fire(nil, arg_14_0:GetDirection())
+	end
+
+	var_0_0.Battle.PlayBattleSFX(arg_14_0._tmpData.fire_sfx)
+	arg_14_0:TriggerBuffOnFire()
+	arg_14_0:CheckAndShake()
+end
+
+function var_0_2.showBombAlert(arg_15_0, arg_15_1)
+	arg_15_1:SetExist(false)
+
+	if arg_15_1:GetTemplate().alert_fx ~= "" then
+		var_0_0.Battle.BattleBombBulletFactory.CreateBulletAlert(arg_15_1)
 	end
 end

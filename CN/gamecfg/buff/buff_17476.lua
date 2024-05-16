@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 8,
-	color = "",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17476,
-	icon = 17470,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffHP",
@@ -41,5 +20,26 @@ return {
 				number = -1000
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 8,
+	color = "",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17476,
+	icon = 17470,
+	last_effect = ""
 }

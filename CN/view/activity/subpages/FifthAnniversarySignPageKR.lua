@@ -1,1 +1,1 @@
-return class("FifthAnniversarySignPageKR", import(".FourthAnniversarySignPageKR"))
+﻿return (class("FifthAnniversarySignPageKR", import(".FourthAnniversarySignPageKR")))

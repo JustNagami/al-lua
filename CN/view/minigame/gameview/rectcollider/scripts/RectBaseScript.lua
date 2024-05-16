@@ -1,82 +1,86 @@
-slot0 = class("RectBaseScript")
+﻿local var_0_0 = class("RectBaseScript")
 
-function slot0.Ctor(slot0)
-	slot0._weight = 1
-	slot0._loop = false
-	slot0._active = false
-	slot0._scriptTime = 0
-	slot0._overrideAble = false
-	slot0._lateActive = false
-	slot0._name = ""
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0._weight = 1
+	arg_1_0._loop = false
+	arg_1_0._active = false
+	arg_1_0._scriptTime = 0
+	arg_1_0._overrideAble = false
+	arg_1_0._lateActive = false
+	arg_1_0._name = ""
 end
 
-function slot0.init(slot0)
+function var_0_0.init(arg_2_0)
+	return
 end
 
-function slot0.setData(slot0, slot1, slot2, slot3)
-	slot0._collisionInfo = slot1
-	slot0._keyInfo = slot2
-	slot0._event = slot3
+function var_0_0.setData(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_0._collisionInfo = arg_3_1
+	arg_3_0._keyInfo = arg_3_2
+	arg_3_0._event = arg_3_3
 
-	slot0:onInit()
+	arg_3_0:onInit()
 end
 
-function slot0.step(slot0)
-	slot0:onStep()
+function var_0_0.step(arg_4_0)
+	arg_4_0:onStep()
 
-	slot0._triggerKey = nil
-	slot0._triggerStatus = nil
+	arg_4_0._triggerKey = nil
+	arg_4_0._triggerStatus = nil
 end
 
-function slot0.addScriptApply(slot0)
-	slot0._collisionInfo:removeScript()
-	slot0._collisionInfo:setScript(slot0, slot0._weight, slot0._scriptTime, slot0._overrideAble)
+function var_0_0.addScriptApply(arg_5_0)
+	arg_5_0._collisionInfo:removeScript()
+	arg_5_0._collisionInfo:setScript(arg_5_0, arg_5_0._weight, arg_5_0._scriptTime, arg_5_0._overrideAble)
 end
 
-function slot0.checkScirptApply(slot0)
-	if not slot0._collisionInfo.script then
-		slot0:addScriptApply()
+function var_0_0.checkScirptApply(arg_6_0)
+	if not arg_6_0._collisionInfo.script then
+		arg_6_0:addScriptApply()
 
 		return true
-	elseif slot0._collisionInfo.script ~= slot0 and slot0._collisionInfo.scriptOverrideAble and slot0._collisionInfo.scriptWeight <= slot0._weight then
-		slot0:addScriptApply()
+	elseif arg_6_0._collisionInfo.script ~= arg_6_0 and arg_6_0._collisionInfo.scriptOverrideAble and arg_6_0._collisionInfo.scriptWeight <= arg_6_0._weight then
+		arg_6_0:addScriptApply()
 
 		return true
 	end
 
-	print("当前脚本 " .. slot0._collisionInfo.script._name .. " 中，无法执行" .. slot0._name)
+	print("当前脚本 " .. arg_6_0._collisionInfo.script._name .. " 中，无法执行" .. arg_6_0._name)
 
 	return false
 end
 
-function slot0.onStep(slot0)
+function var_0_0.onStep(arg_7_0)
+	return
 end
 
-function slot0.lateStep(slot0)
-	slot0._lateActive = slot0._active
+function var_0_0.lateStep(arg_8_0)
+	arg_8_0._lateActive = arg_8_0._active
 
-	slot0:onLateStep()
+	arg_8_0:onLateStep()
 end
 
-function slot0.onLateStep(slot0)
+function var_0_0.onLateStep(arg_9_0)
+	return
 end
 
-function slot0.active(slot0, slot1)
-	slot0._active = slot1
+function var_0_0.active(arg_10_0, arg_10_1)
+	arg_10_0._active = arg_10_1
 end
 
-function slot0.onActive(slot0)
+function var_0_0.onActive(arg_11_0)
+	return
 end
 
-function slot0.keyTrigger(slot0, slot1, slot2)
-	slot0._triggerKey = slot1
-	slot0._triggerStatus = slot2
+function var_0_0.keyTrigger(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0._triggerKey = arg_12_1
+	arg_12_0._triggerStatus = arg_12_2
 
-	slot0:onTrigger(slot1, slot2)
+	arg_12_0:onTrigger(arg_12_1, arg_12_2)
 end
 
-function slot0.getWeight(slot0)
-	return slot0._weight
+function var_0_0.getWeight(arg_13_0)
+	return arg_13_0._weight
 end
 
-return slot0
+return var_0_0

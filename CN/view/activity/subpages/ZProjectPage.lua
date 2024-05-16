@@ -1,20 +1,20 @@
-slot0 = class("ZProjectPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿local var_0_0 = class("ZProjectPage", import(".TemplatePage.PreviewTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.awardTF = slot0:findTF("AD/award")
+	arg_1_0.awardTF = arg_1_0:findTF("AD/award")
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
 
-	slot1 = slot0.activity
+	local var_2_0 = arg_2_0.activity:getConfig("config_client").drop
 
-	updateDrop(slot0.awardTF, slot1:getConfig("config_client").drop)
-	onButton(slot0, slot0.awardTF, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	updateDrop(arg_2_0.awardTF, var_2_0)
+	onButton(arg_2_0, arg_2_0.awardTF, function()
+		arg_2_0:emit(BaseUI.ON_DROP, var_2_0)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

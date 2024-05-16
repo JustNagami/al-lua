@@ -1,30 +1,31 @@
-slot0 = class("MiniGameRequestCommand", pm.SimpleCommand)
-slot0.REQUEST_HUB_DATA = 1
+﻿local var_0_0 = class("MiniGameRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
-	slot5 = pg.ConnectionMgr.GetInstance()
+var_0_0.REQUEST_HUB_DATA = 1
 
-	slot5:Send(26101, {
-		type = slot2.type
-	}, 26102, function (slot0)
-		slot1 = getProxy(MiniGameProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type
+	local var_1_2 = var_1_0.callback
 
-		for slot5, slot6 in ipairs(slot0.hubs) do
-			slot1:UpdataHubData(slot6)
+	pg.ConnectionMgr.GetInstance():Send(26101, {
+		type = var_1_1
+	}, 26102, function(arg_2_0)
+		local var_2_0 = getProxy(MiniGameProxy)
+
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.hubs) do
+			var_2_0:UpdataHubData(iter_2_1)
 		end
 
-		if uv0 then
-			uv0()
+		if var_1_2 then
+			var_1_2()
 		end
 
-		slot2 = getProxy(MiniGameProxy)
+		local var_2_1 = getProxy(MiniGameProxy)
 
-		for slot6, slot7 in ipairs(pg.mini_game.all) do
-			slot2:RequestInitData(slot7, true)
+		for iter_2_2, iter_2_3 in ipairs(pg.mini_game.all) do
+			var_2_1:RequestInitData(iter_2_3, true)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBulletHitBefore"
+			},
+			arg_list = {
+				rant = 2000,
+				skill_id = 17160,
+				target = "TargetSelf",
+				time = 15
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -169,19 +183,5 @@ return {
 	stack = 1,
 	id = 17162,
 	icon = 17160,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBulletHitBefore"
-			},
-			arg_list = {
-				rant = 2000,
-				skill_id = 17160,
-				target = "TargetSelf",
-				time = 15
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,38 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 911
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetPlayerVanguardFleet",
+				"TargetShipTag"
+			},
+			arg_list = {
+				buff_id = 15884,
+				ship_tag_list = {
+					"aerfuleiduo"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -285,39 +319,5 @@ return {
 	painting = 0,
 	id = 15882,
 	picture = "0",
-	desc = "烟雾弹",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 911
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetPlayerVanguardFleet",
-				"TargetShipTag"
-			},
-			arg_list = {
-				buff_id = 15884,
-				ship_tag_list = {
-					"aerfuleiduo"
-				}
-			}
-		}
-	}
+	desc = "烟雾弹"
 }

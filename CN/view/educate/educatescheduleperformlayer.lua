@@ -1,209 +1,205 @@
-slot0 = class("EducateSchedulePerformLayer", import(".base.EducateBaseUI"))
-slot1 = {
+﻿local var_0_0 = class("EducateSchedulePerformLayer", import(".base.EducateBaseUI"))
+local var_0_1 = {
 	"FFFFFF",
 	"79D3FE",
 	"818183"
 }
-slot2 = {
+local var_0_2 = {
 	"39BFFF",
 	"39BFFF",
 	"2D2E2F"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateSchedulePerformUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
 end
 
-function slot0.initData(slot0)
-	slot1 = getProxy(EducateProxy)
-	slot1 = slot1:GetCharData()
-	slot0.planCnt = slot1:GetNextWeekPlanCnt()
-	slot0.curDay = 1
-	slot0.curIndex = 1
-	slot0.events = slot0.contextData.events
-	slot0.drops = {}
-	slot0.isSkip = slot0.contextData.skip
+function var_0_0.initData(arg_3_0)
+	arg_3_0.planCnt = getProxy(EducateProxy):GetCharData():GetNextWeekPlanCnt()
+	arg_3_0.curDay = 1
+	arg_3_0.curIndex = 1
+	arg_3_0.events = arg_3_0.contextData.events
+	arg_3_0.drops = {}
+	arg_3_0.isSkip = arg_3_0.contextData.skip
 
-	underscore.each(slot0.contextData.plan_results, function (slot0)
-		if not uv0.drops[slot0.day] then
-			uv0.drops[slot0.day] = {}
+	underscore.each(arg_3_0.contextData.plan_results, function(arg_4_0)
+		if not arg_3_0.drops[arg_4_0.day] then
+			arg_3_0.drops[arg_4_0.day] = {}
 		end
 
-		uv0.drops[slot0.day][slot0.index] = {
-			plan_drops = slot0.plan_drops,
-			event_drops = slot0.event_drops,
-			spec_event_drops = slot0.spec_event_drops
+		arg_3_0.drops[arg_4_0.day][arg_4_0.index] = {
+			plan_drops = arg_4_0.plan_drops,
+			event_drops = arg_4_0.event_drops,
+			spec_event_drops = arg_4_0.spec_event_drops
 		}
 	end)
 
-	slot0.showGrids = slot0.contextData.gridData
-	slot0.showEventIds = {}
+	arg_3_0.showGrids = arg_3_0.contextData.gridData
+	arg_3_0.showEventIds = {}
 
-	underscore.each(slot0.events, function (slot0)
-		if not uv0.showEventIds[slot0.day] then
-			uv0.showEventIds[slot0.day] = {}
+	underscore.each(arg_3_0.events, function(arg_5_0)
+		if not arg_3_0.showEventIds[arg_5_0.day] then
+			arg_3_0.showEventIds[arg_5_0.day] = {}
 		end
 
-		uv0.showEventIds[slot0.day][slot0.index] = slot0.value[1].event_id
+		arg_3_0.showEventIds[arg_5_0.day][arg_5_0.index] = arg_5_0.value[1].event_id
 	end)
 end
 
-function slot0.findUI(slot0)
-	slot0.windowsTF = slot0:findTF("anim_root/window")
-	slot0.leftTF = slot0:findTF("left", slot0.windowsTF)
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.windowsTF = arg_6_0:findTF("anim_root/window")
+	arg_6_0.leftTF = arg_6_0:findTF("left", arg_6_0.windowsTF)
 
-	setText(slot0:findTF("title/Text", slot0.leftTF), i18n("child_plan_perform_title"))
+	setText(arg_6_0:findTF("title/Text", arg_6_0.leftTF), i18n("child_plan_perform_title"))
 
-	slot0.dayUIList = UIItemList.New(slot0:findTF("content", slot0.leftTF), slot0:findTF("content/day_tpl", slot0.leftTF))
-	slot0.rightTF = slot0:findTF("right", slot0.windowsTF)
-	slot0.planNameTF = slot0:findTF("name", slot0.rightTF)
+	arg_6_0.dayUIList = UIItemList.New(arg_6_0:findTF("content", arg_6_0.leftTF), arg_6_0:findTF("content/day_tpl", arg_6_0.leftTF))
+	arg_6_0.rightTF = arg_6_0:findTF("right", arg_6_0.windowsTF)
+	arg_6_0.planNameTF = arg_6_0:findTF("name", arg_6_0.rightTF)
 end
 
-function slot0.didEnter(slot0)
-	slot1 = pg.UIMgr.GetInstance()
-
-	slot1:OverlayPanel(slot0._tf, {
-		groupName = slot0:getGroupNameFromData(),
-		weight = slot0:getWeightFromData() + 1
+function var_0_0.didEnter(arg_7_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0._tf, {
+		groupName = arg_7_0:getGroupNameFromData(),
+		weight = arg_7_0:getWeightFromData() + 1
 	})
-
-	slot1 = pg.PerformMgr.GetInstance()
-
-	slot1:SetParamForUI(slot0.__cname)
-	slot0:initDayList()
-	slot0:playWeek(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	pg.PerformMgr.GetInstance():SetParamForUI(arg_7_0.__cname)
+	arg_7_0:initDayList()
+	arg_7_0:playWeek(function()
+		arg_7_0:emit(var_0_0.ON_CLOSE)
 	end)
 end
 
-function slot0.initDayList(slot0)
-	slot0.dayUIList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot3 = slot1 + 1
-			slot2.name = slot3
-			slot7 = slot3
+function var_0_0.initDayList(arg_9_0)
+	arg_9_0.dayUIList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventInit then
+			local var_10_0 = arg_10_1 + 1
 
-			setText(uv0:findTF("Text", slot2), EducateHelper.GetWeekStrByNumber(slot7))
+			arg_10_2.name = var_10_0
 
-			for slot7 = 1, 3 do
-				setActive(uv0:findTF("phase" .. slot7, slot2), slot7 == uv0.planCnt)
+			setText(arg_9_0:findTF("Text", arg_10_2), EducateHelper.GetWeekStrByNumber(var_10_0))
+
+			for iter_10_0 = 1, 3 do
+				local var_10_1 = arg_9_0:findTF("phase" .. iter_10_0, arg_10_2)
+
+				setActive(var_10_1, iter_10_0 == arg_9_0.planCnt)
 			end
-		elseif slot0 == UIItemList.EventUpdate then
-			setActive(uv0:findTF("selected", slot2), uv0.curDay == slot1 + 1)
+		elseif arg_10_0 == UIItemList.EventUpdate then
+			local var_10_2 = arg_10_1 + 1
 
-			slot4 = uv0:findTF("Text", slot2)
-			slot5 = "FFFFFF"
-			slot6 = "FFFFFF"
+			setActive(arg_9_0:findTF("selected", arg_10_2), arg_9_0.curDay == var_10_2)
 
-			if slot3 < uv0.curDay then
-				slot5 = uv1[1]
-				slot6 = uv2[1]
-			elseif uv0.curDay == slot3 then
-				slot5 = uv1[2]
-				slot6 = uv2[3]
+			local var_10_3 = arg_9_0:findTF("Text", arg_10_2)
+			local var_10_4 = "FFFFFF"
+			local var_10_5 = "FFFFFF"
+
+			if var_10_2 < arg_9_0.curDay then
+				var_10_4 = var_0_1[1]
+				var_10_5 = var_0_2[1]
+			elseif arg_9_0.curDay == var_10_2 then
+				var_10_4 = var_0_1[2]
+				var_10_5 = var_0_2[3]
 			else
-				slot5 = uv1[3]
-				slot6 = uv2[3]
+				var_10_4 = var_0_1[3]
+				var_10_5 = var_0_2[3]
 			end
 
-			setTextColor(slot4, Color.NewHex(slot5))
+			setTextColor(var_10_3, Color.NewHex(var_10_4))
 
-			for slot11 = 1, uv0:findTF("phase" .. uv0.planCnt, slot2).childCount do
-				slot12 = slot6
+			local var_10_6 = arg_9_0:findTF("phase" .. arg_9_0.planCnt, arg_10_2)
 
-				if uv0.curDay == slot3 and slot11 <= uv0.curIndex then
-					slot12 = uv2[2]
+			for iter_10_1 = 1, var_10_6.childCount do
+				local var_10_7 = var_10_5
+
+				if arg_9_0.curDay == var_10_2 and iter_10_1 <= arg_9_0.curIndex then
+					var_10_7 = var_0_2[2]
 				end
 
-				setImageColor(slot7:GetChild(slot11 - 1), Color.NewHex(slot12))
+				setImageColor(var_10_6:GetChild(iter_10_1 - 1), Color.NewHex(var_10_7))
 			end
 		end
 	end)
-	slot0:updateLeft()
+	arg_9_0:updateLeft()
 end
 
-function slot0.updateLeft(slot0)
-	slot0.dayUIList:align(6)
+function var_0_0.updateLeft(arg_11_0)
+	arg_11_0.dayUIList:align(6)
 end
 
-function slot0.playWeek(slot0, slot1)
-	slot0.curDay = 1
-	slot0.curIndex = 1
+function var_0_0.playWeek(arg_12_0, arg_12_1)
+	arg_12_0.curDay = 1
+	arg_12_0.curIndex = 1
 
-	slot0:emit(EducateSchedulePerformMediator.WEEKDAY_UPDATE, slot0.curDay)
+	arg_12_0:emit(EducateSchedulePerformMediator.WEEKDAY_UPDATE, arg_12_0.curDay)
 
-	slot2 = {}
+	local var_12_0 = {}
 
-	for slot6 = 1, 6 do
-		for slot10 = 1, 3 do
-			slot11 = slot0.drops[slot6][slot10] or {}
-			slot12 = slot0.showEventIds[slot6] and slot0.showEventIds[slot6][slot10] and slot0.showEventIds[slot6][slot10] ~= 0
+	for iter_12_0 = 1, 6 do
+		for iter_12_1 = 1, 3 do
+			local var_12_1 = arg_12_0.drops[iter_12_0][iter_12_1] or {}
+			local var_12_2 = arg_12_0.showEventIds[iter_12_0] and arg_12_0.showEventIds[iter_12_0][iter_12_1] and arg_12_0.showEventIds[iter_12_0][iter_12_1] ~= 0
 
-			if slot0.showGrids[slot6] and slot0.showGrids[slot6][slot10] then
-				slot13 = slot0.showGrids[slot6][slot10]
+			if arg_12_0.showGrids[iter_12_0] and arg_12_0.showGrids[iter_12_0][iter_12_1] then
+				local var_12_3 = arg_12_0.showGrids[iter_12_0][iter_12_1]
 
-				table.insert(slot2, function (slot0)
-					uv0.curDay = uv1
-					uv0.curIndex = uv2
+				table.insert(var_12_0, function(arg_13_0)
+					arg_12_0.curDay = iter_12_0
+					arg_12_0.curIndex = iter_12_1
 
-					uv0:emit(EducateSchedulePerformMediator.WEEKDAY_UPDATE, uv0.curDay)
-					uv0:updateLeft()
-					setText(uv0.planNameTF, uv3:GetName())
+					arg_12_0:emit(EducateSchedulePerformMediator.WEEKDAY_UPDATE, arg_12_0.curDay)
+					arg_12_0:updateLeft()
+					setText(arg_12_0.planNameTF, var_12_3:GetName())
 
-					slot1 = uv3:IsPlan() and uv4.plan_drops or uv4.spec_event_drops
+					local var_13_0 = var_12_3:IsPlan() and var_12_1.plan_drops or var_12_1.spec_event_drops
 
-					if uv0.isSkip then
-						if not uv3:IsPlan() or uv5 then
-							pg.PerformMgr.GetInstance():PlayGroupNoHide(uv3:GetPerformance(), slot0, slot1 or {})
+					if arg_12_0.isSkip then
+						if not var_12_3:IsPlan() or var_12_2 then
+							pg.PerformMgr.GetInstance():PlayGroupNoHide(var_12_3:GetPerformance(), arg_13_0, var_13_0 or {})
 						else
-							slot0()
+							arg_13_0()
 						end
 					else
-						pg.PerformMgr.GetInstance():PlayGroupNoHide(uv3:GetPerformance(), slot0, slot1 or {})
+						pg.PerformMgr.GetInstance():PlayGroupNoHide(var_12_3:GetPerformance(), arg_13_0, var_13_0 or {})
 					end
 				end)
 			end
 
-			if slot12 then
-				slot13 = slot0.showEventIds[slot6][slot10]
+			if var_12_2 then
+				local var_12_4 = arg_12_0.showEventIds[iter_12_0][iter_12_1]
 
-				table.insert(slot2, function (slot0)
-					pg.PerformMgr.GetInstance():PlayGroupNoHide(pg.child_event[uv0].performance, slot0, uv1.event_drops or {})
+				table.insert(var_12_0, function(arg_14_0)
+					pg.PerformMgr.GetInstance():PlayGroupNoHide(pg.child_event[var_12_4].performance, arg_14_0, var_12_1.event_drops or {})
 				end)
 			end
 		end
 	end
 
-	slot3 = pg.PerformMgr.GetInstance()
-
-	slot3:Show()
-	seriesAsync(slot2, function ()
-		slot0 = pg.PerformMgr.GetInstance()
-
-		slot0:Hide()
-		onNextTick(function ()
-			if uv0 then
-				uv0()
+	pg.PerformMgr.GetInstance():Show()
+	seriesAsync(var_12_0, function()
+		pg.PerformMgr.GetInstance():Hide()
+		onNextTick(function()
+			if arg_12_1 then
+				arg_12_1()
 			end
 		end)
 	end)
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_17_0)
+	return
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_18_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_18_0._tf)
 	pg.PerformMgr.GetInstance():SetParamForUI("Default")
 
-	if slot0.contextData.onExit then
-		slot0.contextData.onExit()
+	if arg_18_0.contextData.onExit then
+		arg_18_0.contextData.onExit()
 	end
 end
 
-return slot0
+return var_0_0

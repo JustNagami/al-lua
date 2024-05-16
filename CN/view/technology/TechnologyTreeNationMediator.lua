@@ -1,20 +1,20 @@
-slot0 = class("TechnologyTreeNationMediator", import("..base.ContextMediator"))
+﻿local var_0_0 = class("TechnologyTreeNationMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(TechnologyConst.CLICK_UP_TEC_BTN, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.START_CAMP_TEC, {
-			tecID = slot1,
-			levelID = slot2
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(TechnologyConst.CLICK_UP_TEC_BTN, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.START_CAMP_TEC, {
+			tecID = arg_2_1,
+			levelID = arg_2_2
 		})
 	end)
-	slot0:bind(TechnologyConst.FINISH_UP_TEC, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.FINISH_CAMP_TEC, {
-			tecID = slot1,
-			levelID = slot2
+	arg_1_0:bind(TechnologyConst.FINISH_UP_TEC, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.FINISH_CAMP_TEC, {
+			tecID = arg_3_1,
+			levelID = arg_3_2
 		})
 	end)
-	slot0:bind(TechnologyConst.OPEN_ALL_BUFF_DETAIL, function ()
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(TechnologyConst.OPEN_ALL_BUFF_DETAIL, function()
+		arg_1_0:addSubLayers(Context.New({
 			mediator = AllBuffDetailMediator,
 			viewComponent = AllBuffDetailLayer,
 			data = {}
@@ -22,7 +22,7 @@ function slot0.register(slot0)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		TechnologyConst.START_TEC_BTN_SUCCESS,
 		TechnologyConst.FINISH_TEC_SUCCESS,
@@ -32,28 +32,33 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == TechnologyConst.START_TEC_BTN_SUCCESS then
-		slot0.viewComponent:updateTecListData()
-		slot0.viewComponent:updateTecItem(slot3)
-	elseif slot2 == TechnologyConst.FINISH_TEC_SUCCESS then
-		slot0.viewComponent:updateTecListData()
-		slot0.viewComponent:updateTecItem(slot3)
-	elseif slot2 == TechnologyConst.CLOSE_TECHNOLOGY_NATION_LAYER_NOTIFICATION then
-		slot0.viewComponent:closeMyself()
-	elseif slot2 == TechnologyConst.GOT_TEC_CAMP_AWARD then
-		slot6 = slot3.tecID
+	if var_6_0 == TechnologyConst.START_TEC_BTN_SUCCESS then
+		arg_6_0.viewComponent:updateTecListData()
+		arg_6_0.viewComponent:updateTecItem(var_6_1)
+	elseif var_6_0 == TechnologyConst.FINISH_TEC_SUCCESS then
+		arg_6_0.viewComponent:updateTecListData()
+		arg_6_0.viewComponent:updateTecItem(var_6_1)
+	elseif var_6_0 == TechnologyConst.CLOSE_TECHNOLOGY_NATION_LAYER_NOTIFICATION then
+		arg_6_0.viewComponent:closeMyself()
+	elseif var_6_0 == TechnologyConst.GOT_TEC_CAMP_AWARD then
+		local var_6_2 = var_6_1.awardList
+		local var_6_3 = var_6_1.groupID
+		local var_6_4 = var_6_1.tecID
 
-		slot0.viewComponent:updateTecItem(slot3.groupID)
-		slot0.viewComponent:updateOneStepBtn()
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awardList)
-	elseif slot2 == TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP then
-		slot0.viewComponent:updateTecItemList()
-		slot0.viewComponent:updateOneStepBtn()
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awardList)
+		arg_6_0.viewComponent:updateTecItem(var_6_3)
+		arg_6_0.viewComponent:updateOneStepBtn()
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_2)
+	elseif var_6_0 == TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP then
+		local var_6_5 = var_6_1.awardList
+
+		arg_6_0.viewComponent:updateTecItemList()
+		arg_6_0.viewComponent:updateOneStepBtn()
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_5)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,51 +1,53 @@
-slot0 = class("SearchFriendCommand", pm.SimpleCommand)
-slot0.SEARCH_TYPE_LIST = 1
-slot0.SEARCH_TYPE_RESUME = 2
-slot0.SEARCH_TYPE_FRIEND = 3
+﻿local var_0_0 = class("SearchFriendCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = nil
-	slot5 = tonumber(slot2.keyword and string.gsub(slot4, "^%s*(.-)%s*$", "%1")) and 0 or 1
+var_0_0.SEARCH_TYPE_LIST = 1
+var_0_0.SEARCH_TYPE_RESUME = 2
+var_0_0.SEARCH_TYPE_FRIEND = 3
 
-	if slot2.type == uv0.SEARCH_TYPE_LIST then
-		slot6 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type
+	local var_1_2 = var_1_0.keyword
 
-		slot6:Send(50014, {
+	var_1_2 = var_1_2 and string.gsub(var_1_2, "^%s*(.-)%s*$", "%1")
+
+	local var_1_3
+	local var_1_4 = tonumber(var_1_2) and 0 or 1
+
+	if var_1_1 == var_0_0.SEARCH_TYPE_LIST then
+		pg.ConnectionMgr.GetInstance():Send(50014, {
 			type = 0
-		}, 50015, function (slot0)
-			slot1 = {}
+		}, 50015, function(arg_2_0)
+			local var_2_0 = {}
 
-			for slot5, slot6 in ipairs(slot0.player_list) do
-				table.insert(slot1, Friend.New(slot6))
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.player_list) do
+				table.insert(var_2_0, Friend.New(iter_2_1))
 			end
 
-			uv0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
-				type = uv1,
-				list = slot1
+			arg_1_0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
+				type = var_1_1,
+				list = var_2_0
 			})
 		end)
-	elseif slot3 == uv0.SEARCH_TYPE_RESUME or slot3 == uv0.SEARCH_TYPE_FRIEND then
-		slot6 = pg.ConnectionMgr.GetInstance()
+	elseif var_1_1 == var_0_0.SEARCH_TYPE_RESUME or var_1_1 == var_0_0.SEARCH_TYPE_FRIEND then
+		pg.ConnectionMgr.GetInstance():Send(50001, {
+			type = var_1_4,
+			keyword = tostring(var_1_2)
+		}, 50002, function(arg_3_0)
+			local var_3_0 = {}
 
-		slot6:Send(50001, {
-			type = slot5,
-			keyword = tostring(slot4)
-		}, 50002, function (slot0)
-			slot1 = {}
-
-			if slot0.result == 0 then
-				table.insert(slot1, Friend.New(slot0.player))
+			if arg_3_0.result == 0 then
+				table.insert(var_3_0, Friend.New(arg_3_0.player))
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_noPlayer"))
 			end
 
-			uv0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
-				type = uv1,
-				list = slot1
+			arg_1_0:sendNotification(GAME.FRIEND_SEARCH_DONE, {
+				type = var_1_1,
+				list = var_3_0
 			})
 		end)
 	end
 end
 
-return slot0
+return var_0_0

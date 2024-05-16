@@ -1,82 +1,86 @@
-slot0 = class("CurlingGameView", import("..BaseMiniGameView"))
-slot1 = "event:/ui/ddldaoshu2"
-slot2 = "event:/ui/taosheng"
-slot3 = "event:/ui/minigame_hitcake"
-slot4 = "event:/ui/zhengque"
-slot5 = "event:/ui/shibai"
-slot6 = 1
-slot7 = 2
-slot8 = 3
-slot9 = {
+﻿local var_0_0 = class("CurlingGameView", import("..BaseMiniGameView"))
+local var_0_1 = "event:/ui/ddldaoshu2"
+local var_0_2 = "event:/ui/taosheng"
+local var_0_3 = "event:/ui/minigame_hitcake"
+local var_0_4 = "event:/ui/zhengque"
+local var_0_5 = "event:/ui/shibai"
+local var_0_6 = 1
+local var_0_7 = 2
+local var_0_8 = 3
+local var_0_9 = {
 	20,
 	40,
 	60
 }
-slot10 = 4
-slot11 = Vector2(-720, 0)
-slot12 = {
+local var_0_10 = 4
+local var_0_11 = Vector2(-720, 0)
+local var_0_12 = {
 	-250,
 	250
 }
-slot13 = Vector2(-250, -42)
-slot14 = {
+local var_0_13 = Vector2(-250, -42)
+local var_0_14 = {
 	1,
 	10,
 	30
 }
-slot15 = 0.2
-slot16 = false
-slot17 = {
+local var_0_15 = 0.2
+local var_0_16 = false
+local var_0_17 = {
 	walker = 0.1,
 	miner = 0.2,
 	wall = 0,
 	oil = 0.2,
 	cube = 0.2
 }
-slot18 = {
+local var_0_18 = {
 	walker = 2,
 	miner = 2,
 	wall = 0,
 	oil = 2,
 	cube = 2
 }
-slot19 = {
+local var_0_19 = {
 	0.5,
 	5,
 	10
 }
-slot20 = {
+local var_0_20 = {
 	0.5,
 	5,
 	10
 }
-slot21 = Vector2(400, -600)
-slot22 = Vector2(400, 500)
-slot27 = Vector2(617, -108)
-slot28 = 0.7
-slot29 = {
+local var_0_21 = Vector2(400, -600)
+local var_0_22 = Vector2(400, 500)
+local var_0_23 = 1
+local var_0_24 = 2
+local var_0_25 = 3
+local var_0_26 = 4
+local var_0_27 = Vector2(617, -108)
+local var_0_28 = 0.7
+local var_0_29 = {
 	111,
 	222,
 	333
 }
-slot30 = {
+local var_0_30 = {
 	3000,
 	2000,
 	1000
 }
-slot31 = 1
-slot32 = 2
-slot33 = 3
-slot34 = 4
-slot35 = {
+local var_0_31 = 1
+local var_0_32 = 2
+local var_0_33 = 3
+local var_0_34 = 4
+local var_0_35 = {
 	walker = 900,
 	miner = 300,
 	wall = 100,
 	oil = 300,
 	cube = 300
 }
-slot36 = 1
-slot37 = {
+local var_0_36 = 1
+local var_0_37 = {
 	oil = {
 		{
 			appear = 0.8,
@@ -110,998 +114,1072 @@ slot37 = {
 	walker = {
 		appear = 1,
 		path = {
-			1,
-			2,
-			3,
-			4
+			var_0_23,
+			var_0_24,
+			var_0_25,
+			var_0_26
 		}
 	}
 }
-slot38 = {
+local var_0_38 = {
 	cube = 3.5,
 	miner = 3.5,
 	walker = 4.5,
 	oil = 3.5
 }
-slot39 = true
-slot40 = "event_push"
-slot41 = "event_speed"
-slot42 = "event_hit"
-slot43 = "event_result"
-slot44 = "event_next"
-slot45 = "event_game_pause"
-slot46 = "event_game_resume"
-slot47 = "event_add_score"
+local var_0_39 = true
+local var_0_40 = "event_push"
+local var_0_41 = "event_speed"
+local var_0_42 = "event_hit"
+local var_0_43 = "event_result"
+local var_0_44 = "event_next"
+local var_0_45 = "event_game_pause"
+local var_0_46 = "event_game_resume"
+local var_0_47 = "event_add_score"
 
-function slot48(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.powerTF = findTF(slot0._tf, "power")
-			slot0.powerSlider = GetComponent(slot0.powerTF, typeof(Slider))
+local function var_0_48(arg_1_0, arg_1_1)
+	local var_1_0 = {
+		Ctor = function(arg_2_0)
+			arg_2_0._tf = arg_1_0
+			arg_2_0._event = arg_1_1
+			arg_2_0.powerTF = findTF(arg_2_0._tf, "power")
+			arg_2_0.powerSlider = GetComponent(arg_2_0.powerTF, typeof(Slider))
 
-			slot0:InitPowerSlider()
+			arg_2_0:InitPowerSlider()
 
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0.aniDft = GetComponent(slot0._tf, typeof(DftAniEvent))
+			arg_2_0.animator = GetComponent(arg_2_0._tf, typeof(Animator))
+			arg_2_0.aniDft = GetComponent(arg_2_0._tf, typeof(DftAniEvent))
 
-			slot0.aniDft:SetTriggerEvent(function ()
-				uv0:Push()
+			arg_2_0.aniDft:SetTriggerEvent(function()
+				arg_2_0:Push()
 			end)
 
-			slot0.dragTrigger = GetOrAddComponent(slot0._tf, "EventTriggerListener")
+			arg_2_0.dragTrigger = GetOrAddComponent(arg_2_0._tf, "EventTriggerListener")
 
-			slot0.dragTrigger:AddPointDownFunc(function (slot0, slot1)
-				if not uv0.canClick then
+			arg_2_0.dragTrigger:AddPointDownFunc(function(arg_4_0, arg_4_1)
+				if not arg_2_0.canClick then
 					return
 				end
 
-				uv0.canClick = false
-				uv0.charging = true
-				uv0.originScreenY = slot1.position.y
-				uv0.originY = uv0._tf.anchoredPosition.y
+				arg_2_0.canClick = false
+				arg_2_0.charging = true
+				arg_2_0.originScreenY = arg_4_1.position.y
+				arg_2_0.originY = arg_2_0._tf.anchoredPosition.y
 
-				uv0:Charge()
+				arg_2_0:Charge()
 			end)
-			slot0.dragTrigger:AddDragFunc(function (slot0, slot1)
-				if not uv0.charging then
+			arg_2_0.dragTrigger:AddDragFunc(function(arg_5_0, arg_5_1)
+				if not arg_2_0.charging then
 					return
 				end
 
-				slot3 = uv1[1] <= slot1.position.y - uv0.originScreenY + uv0.originY and slot3 or uv1[1]
+				local var_5_0 = arg_5_1.position.y - arg_2_0.originScreenY + arg_2_0.originY
 
-				setLocalPosition(uv0._tf, Vector2(uv0._tf.anchoredPosition.x, slot3 <= uv1[2] and slot3 or uv1[2]))
+				var_5_0 = var_5_0 >= var_0_12[1] and var_5_0 or var_0_12[1]
+				var_5_0 = var_5_0 <= var_0_12[2] and var_5_0 or var_0_12[2]
+
+				setLocalPosition(arg_2_0._tf, Vector2(arg_2_0._tf.anchoredPosition.x, var_5_0))
 			end)
-			slot0.dragTrigger:AddPointUpFunc(function (slot0, slot1)
-				if not uv0.charging then
+			arg_2_0.dragTrigger:AddPointUpFunc(function(arg_6_0, arg_6_1)
+				if not arg_2_0.charging then
 					return
 				end
 
-				uv0.charging = false
+				arg_2_0.charging = false
 
-				uv0.animator:SetInteger("Throw", uv0.phase)
-				uv0.animator:SetInteger("Charge", 0)
+				arg_2_0.animator:SetInteger("Throw", arg_2_0.phase)
+				arg_2_0.animator:SetInteger("Charge", 0)
 			end)
-			slot0._event:bind(uv3, function (slot0, slot1, slot2)
-				uv0.animator:SetInteger("Result", slot1.result)
+			arg_2_0._event:bind(var_0_43, function(arg_7_0, arg_7_1, arg_7_2)
+				arg_2_0.animator:SetInteger("Result", arg_7_1.result)
 			end)
-			slot0._event:bind(uv4, function (slot0, slot1, slot2)
-				uv0:Reset()
-				uv0:Start()
+			arg_2_0._event:bind(var_0_44, function(arg_8_0, arg_8_1, arg_8_2)
+				arg_2_0:Reset()
+				arg_2_0:Start()
 			end)
-			slot0:Reset()
+			arg_2_0:Reset()
 		end,
-		Start = function (slot0)
-			slot0.canClick = true
+		Start = function(arg_9_0)
+			arg_9_0.canClick = true
 		end,
-		Reset = function (slot0)
-			setActive(slot0.powerTF, false)
-			setLocalPosition(slot0._tf, uv0)
-			slot0.animator:SetInteger("Charge", 0)
-			slot0.animator:SetInteger("Throw", 0)
-			slot0.animator:SetInteger("Result", 0)
-			slot0.animator:Play("WaitA")
+		Reset = function(arg_10_0)
+			setActive(arg_10_0.powerTF, false)
+			setLocalPosition(arg_10_0._tf, var_0_11)
+			arg_10_0.animator:SetInteger("Charge", 0)
+			arg_10_0.animator:SetInteger("Throw", 0)
+			arg_10_0.animator:SetInteger("Result", 0)
+			arg_10_0.animator:Play("WaitA")
 
-			slot0.power = 0
-			slot0.phase = 0
-			slot0.charging = false
-			slot0.canClick = false
-			slot0.powerSlider.value = 0
+			arg_10_0.power = 0
+			arg_10_0.phase = 0
+			arg_10_0.charging = false
+			arg_10_0.canClick = false
+			arg_10_0.powerSlider.value = 0
 		end,
-		InitPowerSlider = function (slot0)
-			slot1 = 24
-			slot2 = 162
-			findTF(slot0.powerTF, "progress/green").sizeDelta = Vector2(uv0[1] / uv0[3] * slot2, slot1)
-			findTF(slot0.powerTF, "progress/green/yellow").sizeDelta = Vector2((uv0[2] - uv0[1]) / uv0[3] * slot2, slot1)
-			findTF(slot0.powerTF, "progress/green/yellow/red").sizeDelta = Vector2((uv0[3] - uv0[2]) / uv0[3] * slot2, slot1)
+		InitPowerSlider = function(arg_11_0)
+			local var_11_0 = 24
+			local var_11_1 = 162
+			local var_11_2 = var_0_9[1] / var_0_9[3] * var_11_1
+
+			findTF(arg_11_0.powerTF, "progress/green").sizeDelta = Vector2(var_11_2, var_11_0)
+
+			local var_11_3 = (var_0_9[2] - var_0_9[1]) / var_0_9[3] * var_11_1
+
+			findTF(arg_11_0.powerTF, "progress/green/yellow").sizeDelta = Vector2(var_11_3, var_11_0)
+
+			local var_11_4 = (var_0_9[3] - var_0_9[2]) / var_0_9[3] * var_11_1
+
+			findTF(arg_11_0.powerTF, "progress/green/yellow/red").sizeDelta = Vector2(var_11_4, var_11_0)
 		end,
-		Charge = function (slot0)
-			setActive(slot0.powerTF, true)
-			setActive(findTF(slot0.powerTF, "binghu_huoyan"), false)
+		Charge = function(arg_12_0)
+			setActive(arg_12_0.powerTF, true)
+			setActive(findTF(arg_12_0.powerTF, "binghu_huoyan"), false)
 
-			slot0.phase = uv0
+			arg_12_0.phase = var_0_6
 
-			slot0.animator:SetInteger("Charge", slot0.phase)
-			LeanTween.value(go(slot0._tf), slot0.power, uv1[3], uv2):setOnUpdate(System.Action_float(function (slot0)
-				uv0.power = slot0
-				uv0.powerSlider.value = uv0.power / uv1[3]
+			arg_12_0.animator:SetInteger("Charge", arg_12_0.phase)
+			LeanTween.value(go(arg_12_0._tf), arg_12_0.power, var_0_9[3], var_0_10):setOnUpdate(System.Action_float(function(arg_13_0)
+				arg_12_0.power = arg_13_0
+				arg_12_0.powerSlider.value = arg_12_0.power / var_0_9[3]
 
-				if uv0.phase == uv2 and uv1[1] <= uv0.power then
-					uv0.phase = uv3
+				if arg_12_0.phase == var_0_6 and arg_12_0.power >= var_0_9[1] then
+					arg_12_0.phase = var_0_7
 
-					uv0.animator:SetInteger("Charge", uv0.phase)
-				elseif uv0.phase == uv3 and uv1[2] <= uv0.power then
-					uv0.phase = uv4
+					arg_12_0.animator:SetInteger("Charge", arg_12_0.phase)
+				elseif arg_12_0.phase == var_0_7 and arg_12_0.power >= var_0_9[2] then
+					arg_12_0.phase = var_0_8
 
-					uv0.animator:SetInteger("Charge", uv0.phase)
-					setActive(findTF(uv0.powerTF, "binghu_huoyan"), true)
+					arg_12_0.animator:SetInteger("Charge", arg_12_0.phase)
+					setActive(findTF(arg_12_0.powerTF, "binghu_huoyan"), true)
 				end
 
-				if not uv0.charging then
-					LeanTween.cancel(go(uv0._tf))
+				if not arg_12_0.charging then
+					LeanTween.cancel(go(arg_12_0._tf))
 				end
 			end))
 		end,
-		Push = function (slot0)
-			slot0._event:emit(uv0, {
-				power = slot0.power
+		Push = function(arg_14_0)
+			arg_14_0._event:emit(var_0_40, {
+				power = arg_14_0.power
 			})
-			setActive(slot0.powerTF, false)
+			setActive(arg_14_0.powerTF, false)
 		end
 	}
 
-	slot2:Ctor()
+	var_1_0:Ctor()
 
-	return slot2
+	return var_1_0
 end
 
-function slot49(slot0, slot1, slot2)
-	slot3 = {
-		Ctor = function (slot0)
-			slot0.tpls = uv0
-			slot0._event = uv1
-			slot0.player = uv2
-			slot0.scene = slot0.player.parent
+local function var_0_49(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = {
+		Ctor = function(arg_16_0)
+			arg_16_0.tpls = arg_15_0
+			arg_16_0._event = arg_15_2
+			arg_16_0.player = arg_15_1
+			arg_16_0.scene = arg_16_0.player.parent
 
-			slot0._event:bind(uv3, function (slot0, slot1, slot2)
-				if uv0.isPush then
+			arg_16_0._event:bind(var_0_40, function(arg_17_0, arg_17_1, arg_17_2)
+				if arg_16_0.isPush then
 					return
 				end
 
-				uv0:Push(slot1.power)
+				arg_16_0:Push(arg_17_1.power)
 			end)
-			slot0._event:bind(uv4, function (slot0, slot1, slot2)
-				uv0:Reset()
-				uv0:Start()
+			arg_16_0._event:bind(var_0_44, function(arg_18_0, arg_18_1, arg_18_2)
+				arg_16_0:Reset()
+				arg_16_0:Start()
 			end)
-			slot0._event:bind(uv5, function (slot0, slot1, slot2)
-				uv0:Pause()
+			arg_16_0._event:bind(var_0_45, function(arg_19_0, arg_19_1, arg_19_2)
+				arg_16_0:Pause()
 			end)
-			slot0._event:bind(uv6, function (slot0, slot1, slot2)
-				uv0:Resume()
+			arg_16_0._event:bind(var_0_46, function(arg_20_0, arg_20_1, arg_20_2)
+				arg_16_0:Resume()
 			end)
-			slot0:Reset()
+			arg_16_0:Reset()
 		end,
-		Start = function (slot0)
+		Start = function(arg_21_0)
+			return
 		end,
-		RandomRole = function (slot0)
-			if slot0._tf then
-				slot0._tf:SetParent(slot0.tpls, false)
-				setActive(slot0._tf, false)
+		RandomRole = function(arg_22_0)
+			if arg_22_0._tf then
+				arg_22_0._tf:SetParent(arg_22_0.tpls, false)
+				setActive(arg_22_0._tf, false)
 			end
 
-			slot0._tf = slot0.tpls:GetChild(math.random(1, 4) - 1)
+			local var_22_0 = math.random(1, 4)
 
-			setActive(slot0._tf, true)
+			arg_22_0._tf = arg_22_0.tpls:GetChild(var_22_0 - 1)
 
-			slot0.speedTF = findTF(slot0._tf, "speed")
+			setActive(arg_22_0._tf, true)
 
-			setActive(slot0.speedTF, uv0)
+			arg_22_0.speedTF = findTF(arg_22_0._tf, "speed")
 
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0.rigbody = GetComponent(slot0._tf, "Rigidbody2D")
-			slot0.rigbody.velocity = Vector2.zero
-			slot0.phyItem = GetComponent(slot0._tf, "Physics2DItem")
+			setActive(arg_22_0.speedTF, var_0_16)
 
-			slot0.phyItem.CollisionEnter:RemoveAllListeners()
-			slot0.phyItem.CollisionEnter:AddListener(function (slot0)
-				uv0:OnCollision(slot0)
+			arg_22_0.animator = GetComponent(arg_22_0._tf, typeof(Animator))
+			arg_22_0.rigbody = GetComponent(arg_22_0._tf, "Rigidbody2D")
+			arg_22_0.rigbody.velocity = Vector2.zero
+			arg_22_0.phyItem = GetComponent(arg_22_0._tf, "Physics2DItem")
+
+			arg_22_0.phyItem.CollisionEnter:RemoveAllListeners()
+			arg_22_0.phyItem.CollisionEnter:AddListener(function(arg_23_0)
+				arg_22_0:OnCollision(arg_23_0)
 			end)
 		end,
-		Reset = function (slot0)
-			slot0:RandomRole()
+		Reset = function(arg_24_0)
+			arg_24_0:RandomRole()
 
-			slot0.rigbody.velocity = Vector2.zero
+			arg_24_0.rigbody.velocity = Vector2.zero
 
-			slot0._tf:SetParent(findTF(slot0.player, "chargePos"), false)
-			setText(slot0.speedTF, 0)
-			setLocalPosition(slot0._tf, Vector2.zero)
-			setLocalScale(slot0._tf, Vector2.one)
-			slot0.animator:Play("Neutral")
-			slot0.animator:SetBool("Stop", false)
-			slot0.animator:SetInteger("Result", 0)
-			slot0.animator:SetInteger("SpeedPhase", 0)
+			arg_24_0._tf:SetParent(findTF(arg_24_0.player, "chargePos"), false)
+			setText(arg_24_0.speedTF, 0)
+			setLocalPosition(arg_24_0._tf, Vector2.zero)
+			setLocalScale(arg_24_0._tf, Vector2.one)
+			arg_24_0.animator:Play("Neutral")
+			arg_24_0.animator:SetBool("Stop", false)
+			arg_24_0.animator:SetInteger("Result", 0)
+			arg_24_0.animator:SetInteger("SpeedPhase", 0)
 
-			slot0.isPush = false
-			slot0.isStop = true
-			slot0.phase = 0
+			arg_24_0.isPush = false
+			arg_24_0.isStop = true
+			arg_24_0.phase = 0
 		end,
-		Step = function (slot0)
-			if uv0 then
-				setText(slot0.speedTF, slot0.rigbody.velocity:Magnitude())
+		Step = function(arg_25_0)
+			if var_0_16 then
+				setText(arg_25_0.speedTF, arg_25_0.rigbody.velocity:Magnitude())
 			end
 
-			if not slot0.isPush or slot0.isStop then
+			if not arg_25_0.isPush or arg_25_0.isStop then
 				return
 			end
 
-			slot1 = slot0:GetSpeed()
+			local var_25_0 = arg_25_0:GetSpeed()
 
-			slot0._event:emit(uv1, {
-				speed = slot1
+			arg_25_0._event:emit(var_0_41, {
+				speed = var_25_0
 			})
 
-			if uv2[1] < slot1 then
-				slot0.animator:SetInteger("SpeedPhase", 1)
-			elseif uv2[2] < slot1 then
-				slot0.animator:SetInteger("SpeedPhase", 2)
-			elseif uv2[3] < slot1 then
-				slot0.animator:SetInteger("SpeedPhase", 3)
+			if var_25_0 > var_0_14[1] then
+				arg_25_0.animator:SetInteger("SpeedPhase", 1)
+			elseif var_25_0 > var_0_14[2] then
+				arg_25_0.animator:SetInteger("SpeedPhase", 2)
+			elseif var_25_0 > var_0_14[3] then
+				arg_25_0.animator:SetInteger("SpeedPhase", 3)
 			end
 
-			if slot1 < uv3 then
-				slot0.animator:SetBool("Stop", true)
+			if var_25_0 < var_0_15 then
+				arg_25_0.animator:SetBool("Stop", true)
 
-				slot0.isStop = true
+				arg_25_0.isStop = true
 
-				slot0:Result()
+				arg_25_0:Result()
 			end
 		end,
-		Push = function (slot0, slot1)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+		Push = function(arg_26_0, arg_26_1)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
 
-			slot0.isPush = true
-			slot0.isStop = false
+			arg_26_0.isPush = true
+			arg_26_0.isStop = false
 
-			slot0._tf:SetParent(slot0.scene, true)
+			arg_26_0._tf:SetParent(arg_26_0.scene, true)
 
-			slot0.rigbody.velocity = Vector2(uv1.x - slot0._tf.anchoredPosition.x, uv1.y - slot0._tf.anchoredPosition.y):Normalize():Mul(slot1)
+			local var_26_0 = Vector2(var_0_13.x - arg_26_0._tf.anchoredPosition.x, var_0_13.y - arg_26_0._tf.anchoredPosition.y)
 
-			slot0:Slip()
+			arg_26_0.rigbody.velocity = var_26_0:Normalize():Mul(arg_26_1)
+
+			arg_26_0:Slip()
 		end,
-		Slip = function (slot0)
-			slot0.animator:SetBool("Stop", false)
+		Slip = function(arg_27_0)
+			arg_27_0.animator:SetBool("Stop", false)
 
-			slot0.isStop = false
+			arg_27_0.isStop = false
 		end,
-		OnCollision = function (slot0, slot1)
-			slot0.animator:SetTrigger("Hit")
-			slot0._event:emit(uv0)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
+		OnCollision = function(arg_28_0, arg_28_1)
+			arg_28_0.animator:SetTrigger("Hit")
+			arg_28_0._event:emit(var_0_42)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_3)
 
-			slot3 = 0
-			slot4 = Vector2(1, 0)
-			slot5 = Vector2(slot0.rigbody.velocity.x, slot0.rigbody.velocity.y)
+			local var_28_0 = arg_28_1.collider.gameObject.name
+			local var_28_1 = 0
+			local var_28_2 = Vector2(1, 0)
+			local var_28_3 = Vector2(arg_28_0.rigbody.velocity.x, arg_28_0.rigbody.velocity.y)
 
-			if slot1.collider.gameObject.name == "wall" then
-				slot5:Mul(uv2.wall)
+			if var_28_0 == "wall" then
+				var_28_3:Mul(var_0_17.wall)
 
-				slot3 = uv3.wall
+				var_28_1 = var_0_35.wall
 
-				slot4:Mul(uv4.wall)
-			elseif slot2 == "oil" then
-				slot5:Mul(uv2.oil)
+				var_28_2:Mul(var_0_18.wall)
+			elseif var_28_0 == "oil" then
+				var_28_3:Mul(var_0_17.oil)
 
-				slot3 = uv3.oil
+				var_28_1 = var_0_35.oil
 
-				slot4:Mul(uv4.oil)
-			elseif slot2 == "cube" then
-				slot5:Mul(uv2.cube)
+				var_28_2:Mul(var_0_18.oil)
+			elseif var_28_0 == "cube" then
+				var_28_3:Mul(var_0_17.cube)
 
-				slot3 = uv3.cube
+				var_28_1 = var_0_35.cube
 
-				slot4:Mul(uv4.cube)
-			elseif slot2 == "miner" then
-				slot5:Mul(uv2.miner)
+				var_28_2:Mul(var_0_18.cube)
+			elseif var_28_0 == "miner" then
+				var_28_3:Mul(var_0_17.miner)
 
-				slot3 = uv3.miner
+				var_28_1 = var_0_35.miner
 
-				slot4:Mul(uv4.miner)
-			elseif slot2 == "walker" then
-				slot5:Mul(uv2.walker)
+				var_28_2:Mul(var_0_18.miner)
+			elseif var_28_0 == "walker" then
+				var_28_3:Mul(var_0_17.walker)
 
-				slot3 = uv3.walker
+				var_28_1 = var_0_35.walker
 
-				slot4:Mul(uv4.walker)
+				var_28_2:Mul(var_0_18.walker)
 			end
 
-			slot0.rigbody.velocity = slot0.rigbody.velocity:Sub(slot5)
-			slot0.rigbody.velocity = slot0.rigbody.velocity:Add(slot4)
+			arg_28_0.rigbody.velocity = arg_28_0.rigbody.velocity:Sub(var_28_3)
+			arg_28_0.rigbody.velocity = arg_28_0.rigbody.velocity:Add(var_28_2)
 
-			slot0._event:emit(uv5, {
-				score = slot3,
-				pos = slot0._tf.anchoredPosition
+			local var_28_4 = arg_28_0._tf.anchoredPosition
+
+			arg_28_0._event:emit(var_0_47, {
+				score = var_28_1,
+				pos = var_28_4
 			})
 		end,
-		Result = function (slot0)
-			slot3 = 0
-			slot3 = Vector2.Distance(uv1, Vector2(slot0._tf.anchoredPosition.x, slot0._tf.anchoredPosition.y / uv0)) <= uv2[1] and 1 or slot2 <= uv2[2] and 2 or slot2 <= uv2[3] and 3 or 4
+		Result = function(arg_29_0)
+			local var_29_0 = Vector2(arg_29_0._tf.anchoredPosition.x, arg_29_0._tf.anchoredPosition.y / var_0_28)
+			local var_29_1 = Vector2.Distance(var_0_27, var_29_0)
+			local var_29_2 = 0
+			local var_29_3 = var_29_1 <= var_0_29[1] and 1 or var_29_1 <= var_0_29[2] and 2 or var_29_1 <= var_0_29[3] and 3 or 4
 
-			slot0.animator:SetInteger("Result", slot3)
-			slot0._event:emit(uv3, {
-				result = slot3
+			arg_29_0.animator:SetInteger("Result", var_29_3)
+			arg_29_0._event:emit(var_0_43, {
+				result = var_29_3
 			})
 
-			if slot3 == 0 or slot3 == 4 then
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv4)
+			if var_29_3 == 0 or var_29_3 == 4 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_5)
 			else
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv5)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_4)
 			end
 		end,
-		Pause = function (slot0)
-			slot0.speedRecord = slot0.rigbody.velocity
-			slot0.rigbody.velocity = Vector2.zero
-			slot0.animator.speed = 0
+		Pause = function(arg_30_0)
+			arg_30_0.speedRecord = arg_30_0.rigbody.velocity
+			arg_30_0.rigbody.velocity = Vector2.zero
+			arg_30_0.animator.speed = 0
 		end,
-		Resume = function (slot0)
-			slot0.rigbody.velocity = slot0.speedRecord
-			slot0.animator.speed = 1
+		Resume = function(arg_31_0)
+			arg_31_0.rigbody.velocity = arg_31_0.speedRecord
+			arg_31_0.animator.speed = 1
 		end,
-		GetSpeed = function (slot0)
-			return slot0.rigbody.velocity:Magnitude()
+		GetSpeed = function(arg_32_0)
+			return arg_32_0.rigbody.velocity:Magnitude()
 		end
 	}
 
-	slot3:Ctor()
+	var_15_0:Ctor()
 
-	return slot3
+	return var_15_0
 end
 
-function slot50(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
+local function var_0_50(arg_33_0, arg_33_1)
+	local var_33_0 = {
+		Ctor = function(arg_34_0)
+			arg_34_0._tf = arg_33_0
+			arg_34_0._event = arg_33_1
+			arg_34_0.animator = GetComponent(arg_34_0._tf, typeof(Animator))
 
-			slot0._event:bind(uv2, function (slot0, slot1, slot2)
-				uv0:TurnLeft()
+			arg_34_0._event:bind(var_0_40, function(arg_35_0, arg_35_1, arg_35_2)
+				arg_34_0:TurnLeft()
 			end)
-			slot0._event:bind(uv3, function (slot0, slot1, slot2)
-				uv0:Hit()
+			arg_34_0._event:bind(var_0_42, function(arg_36_0, arg_36_1, arg_36_2)
+				arg_34_0:Hit()
 			end)
-			slot0._event:bind(uv4, function (slot0, slot1, slot2)
-				uv0:Result(slot1.result)
+			arg_34_0._event:bind(var_0_43, function(arg_37_0, arg_37_1, arg_37_2)
+				arg_34_0:Result(arg_37_1.result)
 			end)
-			slot0._event:bind(uv5, function (slot0, slot1, slot2)
-				uv0:Reset()
-				uv0:Start()
+			arg_34_0._event:bind(var_0_44, function(arg_38_0, arg_38_1, arg_38_2)
+				arg_34_0:Reset()
+				arg_34_0:Start()
 			end)
 		end,
-		Start = function (slot0)
+		Start = function(arg_39_0)
+			return
 		end,
-		Reset = function (slot0)
-			slot0.animator:SetInteger("Result", 0)
-			slot0.animator:Play("WaitA")
+		Reset = function(arg_40_0)
+			arg_40_0.animator:SetInteger("Result", 0)
+			arg_40_0.animator:Play("WaitA")
 		end,
-		TurnLeft = function (slot0)
-			slot0.animator:SetTrigger("TurnLeft")
+		TurnLeft = function(arg_41_0)
+			arg_41_0.animator:SetTrigger("TurnLeft")
 		end,
-		Result = function (slot0, slot1)
-			slot0.animator:SetInteger("Result", slot1)
+		Result = function(arg_42_0, arg_42_1)
+			arg_42_0.animator:SetInteger("Result", arg_42_1)
 		end,
-		Hit = function (slot0)
-			slot0.animator:SetTrigger("Hit")
+		Hit = function(arg_43_0)
+			arg_43_0.animator:SetTrigger("Hit")
 		end
 	}
 
-	slot2:Ctor()
+	var_33_0:Ctor()
 
-	return slot2
+	return var_33_0
 end
 
-function slot51(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
+local function var_0_51(arg_44_0, arg_44_1)
+	local var_44_0 = {
+		Ctor = function(arg_45_0)
+			arg_45_0._tf = arg_44_0
+			arg_45_0._event = arg_44_1
+			arg_45_0.animator = GetComponent(arg_45_0._tf, typeof(Animator))
 
-			slot0._event:bind(uv2, function (slot0, slot1, slot2)
-				uv0:NextRound()
+			arg_45_0._event:bind(var_0_44, function(arg_46_0, arg_46_1, arg_46_2)
+				arg_45_0:NextRound()
 			end)
-			slot0:Reset()
+			arg_45_0:Reset()
 		end,
-		Start = function (slot0)
-			slot0:NextRound()
+		Start = function(arg_47_0)
+			arg_47_0:NextRound()
 		end,
-		Reset = function (slot0)
-			slot0.animator:SetInteger("Round", 0)
-			slot0.animator:Play("IdleA")
+		Reset = function(arg_48_0)
+			arg_48_0.animator:SetInteger("Round", 0)
+			arg_48_0.animator:Play("IdleA")
 
-			slot0.roundNum = 1
+			arg_48_0.roundNum = 1
 		end,
-		NextRound = function (slot0)
-			slot0.animator:SetInteger("Round", slot0.roundNum)
+		NextRound = function(arg_49_0)
+			arg_49_0.animator:SetInteger("Round", arg_49_0.roundNum)
 
-			if slot0.roundNum == 3 then
-				slot0.roundNum = 1
+			if arg_49_0.roundNum == 3 then
+				arg_49_0.roundNum = 1
 			else
-				slot0.roundNum = slot0.roundNum + 1
+				arg_49_0.roundNum = arg_49_0.roundNum + 1
 			end
 		end
 	}
 
-	slot2:Ctor()
+	var_44_0:Ctor()
 
-	return slot2
+	return var_44_0
 end
 
-function slot52(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.config = uv2.miner
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0.phyItem = GetComponent(slot0._tf, "Physics2DItem")
+local function var_0_52(arg_50_0, arg_50_1)
+	local var_50_0 = {
+		Ctor = function(arg_51_0)
+			arg_51_0._tf = arg_50_0
+			arg_51_0._event = arg_50_1
+			arg_51_0.config = var_0_37.miner
+			arg_51_0.animator = GetComponent(arg_51_0._tf, typeof(Animator))
+			arg_51_0.phyItem = GetComponent(arg_51_0._tf, "Physics2DItem")
 
-			slot0.phyItem.CollisionEnter:AddListener(function (slot0)
-				uv0:OnCollision()
+			arg_51_0.phyItem.CollisionEnter:AddListener(function(arg_52_0)
+				arg_51_0:OnCollision()
 			end)
 
-			slot0.phyGrazeItem = GetComponent(findTF(slot0._tf, "GrazeCollider"), "Physics2DItem")
+			arg_51_0.phyGrazeItem = GetComponent(findTF(arg_51_0._tf, "GrazeCollider"), "Physics2DItem")
 
-			slot0.phyGrazeItem.TriggerEnter:AddListener(function (slot0)
-				uv0:OnGrazeTrigger(slot0)
+			arg_51_0.phyGrazeItem.TriggerEnter:AddListener(function(arg_53_0)
+				arg_51_0:OnGrazeTrigger(arg_53_0)
 			end)
-			slot0._event:bind(uv3, function (slot0, slot1, slot2)
-				uv0.hitSpeed = slot1.speed
+			arg_51_0._event:bind(var_0_41, function(arg_54_0, arg_54_1, arg_54_2)
+				arg_51_0.hitSpeed = arg_54_1.speed
 			end)
-			slot0:Reset()
+			arg_51_0:Reset()
 		end,
-		Start = function (slot0)
+		Start = function(arg_55_0)
+			return
 		end,
-		Reset = function (slot0)
-			slot0.isClash = false
-			slot0.hitSpeed = 0
+		Reset = function(arg_56_0)
+			arg_56_0.isClash = false
+			arg_56_0.hitSpeed = 0
 		end,
-		OnCollision = function (slot0)
-			slot0.isClash = true
-			slot1 = 0
+		OnCollision = function(arg_57_0)
+			arg_57_0.isClash = true
 
-			if uv0[3] < slot0.hitSpeed then
-				slot1 = 3
-			elseif uv0[2] < slot0.hitSpeed then
-				slot1 = 2
-			elseif uv0[1] < slot0.hitSpeed then
-				slot1 = 1
+			local var_57_0 = 0
+
+			if arg_57_0.hitSpeed > var_0_19[3] then
+				var_57_0 = 3
+			elseif arg_57_0.hitSpeed > var_0_19[2] then
+				var_57_0 = 2
+			elseif arg_57_0.hitSpeed > var_0_19[1] then
+				var_57_0 = 1
 			end
 
-			slot0.animator:SetInteger("Speed", slot1)
-			slot0.animator:SetTrigger("Clash")
+			arg_57_0.animator:SetInteger("Speed", var_57_0)
+			arg_57_0.animator:SetTrigger("Clash")
 		end,
-		OnGrazeTrigger = function (slot0, slot1)
-			if slot1.gameObject.name ~= "Ayanami" then
+		OnGrazeTrigger = function(arg_58_0, arg_58_1)
+			if arg_58_1.gameObject.name ~= "Ayanami" then
 				return
 			end
 
-			onDelayTick(function ()
-				if uv0.isClash then
+			onDelayTick(function()
+				if arg_58_0.isClash then
 					return
 				end
 
-				uv0.animator:SetTrigger("Graze")
+				arg_58_0.animator:SetTrigger("Graze")
 			end, 0.3)
 		end
 	}
 
-	slot2:Ctor()
+	var_50_0:Ctor()
 
-	return slot2
+	return var_50_0
 end
 
-function slot53(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.config = uv2.walker
-			slot0.obstacleTF = slot0._tf.parent
-			slot0.bgFrontTF = findTF(slot0.obstacleTF.parent.parent, "bg_front")
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0.rigbody = GetComponent(slot0._tf, "Rigidbody2D")
-			slot0.phyItem = GetComponent(slot0._tf, "Physics2DItem")
+local function var_0_53(arg_60_0, arg_60_1)
+	local var_60_0 = {}
+	local var_60_1 = 1000
 
-			slot0.phyItem.CollisionEnter:AddListener(function (slot0)
-				uv0:OnCollision(slot0)
-			end)
-			slot0._event:bind(uv3, function (slot0, slot1, slot2)
-				uv0.hitSpeed = slot1.speed
-			end)
-			slot0._event:bind(uv4, function (slot0, slot1, slot2)
-				uv0:Pause()
-			end)
-			slot0._event:bind(uv5, function (slot0, slot1, slot2)
-				uv0:Resume()
-			end)
-		end,
-		SetPath = function (slot0, slot1)
-			slot0.pathType = slot1
-		end,
-		Start = function (slot0)
-			slot0:WalkPath()
-		end,
-		Reset = function (slot0)
-			setActive(slot0._tf, false)
-			setLocalPosition(slot0._tf, Vector2(-1400, 0))
+	function var_60_0.Ctor(arg_61_0)
+		arg_61_0._tf = arg_60_0
+		arg_61_0._event = arg_60_1
+		arg_61_0.config = var_0_37.walker
+		arg_61_0.obstacleTF = arg_61_0._tf.parent
+		arg_61_0.bgFrontTF = findTF(arg_61_0.obstacleTF.parent.parent, "bg_front")
+		arg_61_0.animator = GetComponent(arg_61_0._tf, typeof(Animator))
+		arg_61_0.rigbody = GetComponent(arg_61_0._tf, "Rigidbody2D")
+		arg_61_0.phyItem = GetComponent(arg_61_0._tf, "Physics2DItem")
 
-			slot0.rigbody.velocity = Vector2.zero
-			slot0.isJumpDown = false
-			slot0.isJumpUp = false
-			slot0.isForwardNorth = false
-			slot0.isForwardSouth = false
-			slot0.hitSpeed = 0
-			slot0.pathType = 0
-		end,
-		OnCollision = function (slot0, slot1)
-			slot0.animator:SetTrigger("Clash")
+		arg_61_0.phyItem.CollisionEnter:AddListener(function(arg_62_0)
+			arg_61_0:OnCollision(arg_62_0)
+		end)
+		arg_61_0._event:bind(var_0_41, function(arg_63_0, arg_63_1, arg_63_2)
+			arg_61_0.hitSpeed = arg_63_1.speed
+		end)
+		arg_61_0._event:bind(var_0_45, function(arg_64_0, arg_64_1, arg_64_2)
+			arg_61_0:Pause()
+		end)
+		arg_61_0._event:bind(var_0_46, function(arg_65_0, arg_65_1, arg_65_2)
+			arg_61_0:Resume()
+		end)
+	end
 
-			slot2 = 0
+	function var_60_0.SetPath(arg_66_0, arg_66_1)
+		arg_66_0.pathType = arg_66_1
+	end
 
-			if uv0[3] < slot0.hitSpeed then
-				slot2 = 3
-			elseif uv0[2] < slot0.hitSpeed then
-				slot2 = 2
-			elseif uv0[1] < slot0.hitSpeed then
-				slot2 = 1
-			end
+	function var_60_0.Start(arg_67_0)
+		arg_67_0:WalkPath()
+	end
 
-			slot0.animator:SetInteger("Speed", slot2)
+	function var_60_0.Reset(arg_68_0)
+		setActive(arg_68_0._tf, false)
+		setLocalPosition(arg_68_0._tf, Vector2(-1400, 0))
 
-			slot0.rigbody.velocity = Vector2.zero
-		end,
-		WalkPath = function (slot0)
-			if slot0.pathType == uv0 or slot0.pathType == uv1 then
-				setLocalPosition(slot0._tf, uv2)
-				slot0._tf:SetParent(slot0.bgFrontTF, false)
+		arg_68_0.rigbody.velocity = Vector2.zero
+		arg_68_0.isJumpDown = false
+		arg_68_0.isJumpUp = false
+		arg_68_0.isForwardNorth = false
+		arg_68_0.isForwardSouth = false
+		arg_68_0.hitSpeed = 0
+		arg_68_0.pathType = 0
+	end
 
-				slot0.isForwardNorth = true
+	function var_60_0.OnCollision(arg_69_0, arg_69_1)
+		arg_69_0.animator:SetTrigger("Clash")
 
-				slot0.animator:SetBool("IsNorth", true)
-				slot0:WalkNorth()
-			elseif slot0.pathType == uv3 or slot0.pathType == uv4 then
-				setLocalPosition(slot0._tf, uv5)
-				slot0._tf:SetParent(slot0.obstacleTF, false)
+		local var_69_0 = 0
 
-				slot0.isForwardSouth = true
-
-				slot0.animator:SetBool("IsSouth", true)
-				slot0:WalkSouth()
-			end
-		end,
-		WalkNorth = function (slot0)
-			slot0.animator:SetTrigger("WalkN")
-
-			slot0.rigbody.velocity = Vector2(0, 1.5)
-		end,
-		JumpNorth = function (slot0)
-			slot0.animator:SetTrigger("JumpN")
-
-			if slot0.isJumpUp then
-				slot0:WalkNorth()
-			elseif slot0.pathType == uv0 then
-				slot0:WalkNorthwest()
-			else
-				slot0:WalkNorth()
-			end
-		end,
-		WalkNorthwest = function (slot0)
-			slot0.animator:SetTrigger("WalkNW")
-
-			slot0.rigbody.velocity = Vector2(-1.5, 1.5)
-		end,
-		WalkSouth = function (slot0)
-			slot0.animator:SetTrigger("WalkS")
-
-			slot0.rigbody.velocity = Vector2(0, -1.5)
-		end,
-		JumpSouth = function (slot0)
-			slot0.animator:SetTrigger("JumpS")
-
-			if slot0.isJumpDown then
-				slot0:WalkSouth()
-			elseif slot0.pathType == uv0 then
-				slot0:WalkSouthwest()
-			else
-				slot0:WalkSouth()
-			end
-		end,
-		WalkSouthwest = function (slot0)
-			slot0.animator:SetTrigger("WalkSW")
-
-			slot0.rigbody.velocity = Vector2(-1.5, -1.5)
-		end,
-		Step = function (slot0)
-			if uv0 < slot0._tf.anchoredPosition.y or slot1 < -uv0 then
-				slot0.rigbody.velocity = Vector2.zero
-
-				return
-			end
-
-			if slot0.isForwardNorth then
-				if not slot0.isJumpDown and slot1 >= -470 then
-					slot0.isJumpDown = true
-
-					slot0:JumpNorth()
-					onDelayTick(function ()
-						uv0._tf:SetParent(uv0.obstacleTF, false)
-					end, 0.3)
-				end
-
-				if not slot0.isJumpUp and slot1 >= 310 then
-					slot0.isJumpUp = true
-
-					slot0:JumpNorth()
-				end
-			end
-
-			if slot0.isForwardSouth then
-				if not slot0.isJumpUp and slot1 <= 370 then
-					slot0.isJumpUp = true
-
-					slot0:JumpSouth()
-				end
-
-				if not slot0.isJumpDown and slot1 <= -420 then
-					slot0.isJumpDown = true
-
-					slot0:JumpSouth()
-					onDelayTick(function ()
-						uv0._tf:SetParent(uv0.bgFrontTF, false)
-					end, 0.3)
-				end
-			end
-		end,
-		Pause = function (slot0)
-			slot0.speedRecord = slot0.rigbody.velocity
-			slot0.rigbody.velocity = Vector2.zero
-			slot0.animator.speed = 0
-		end,
-		Resume = function (slot0)
-			slot0.rigbody.velocity = slot0.speedRecord
-			slot0.animator.speed = 1
+		if arg_69_0.hitSpeed > var_0_20[3] then
+			var_69_0 = 3
+		elseif arg_69_0.hitSpeed > var_0_20[2] then
+			var_69_0 = 2
+		elseif arg_69_0.hitSpeed > var_0_20[1] then
+			var_69_0 = 1
 		end
-	}
-	slot3 = 1000
 
-	slot2:Ctor()
+		arg_69_0.animator:SetInteger("Speed", var_69_0)
 
-	return slot2
+		arg_69_0.rigbody.velocity = Vector2.zero
+	end
+
+	function var_60_0.WalkPath(arg_70_0)
+		if arg_70_0.pathType == var_0_25 or arg_70_0.pathType == var_0_26 then
+			setLocalPosition(arg_70_0._tf, var_0_21)
+			arg_70_0._tf:SetParent(arg_70_0.bgFrontTF, false)
+
+			arg_70_0.isForwardNorth = true
+
+			arg_70_0.animator:SetBool("IsNorth", true)
+			arg_70_0:WalkNorth()
+		elseif arg_70_0.pathType == var_0_23 or arg_70_0.pathType == var_0_24 then
+			setLocalPosition(arg_70_0._tf, var_0_22)
+			arg_70_0._tf:SetParent(arg_70_0.obstacleTF, false)
+
+			arg_70_0.isForwardSouth = true
+
+			arg_70_0.animator:SetBool("IsSouth", true)
+			arg_70_0:WalkSouth()
+		end
+	end
+
+	function var_60_0.WalkNorth(arg_71_0)
+		arg_71_0.animator:SetTrigger("WalkN")
+
+		arg_71_0.rigbody.velocity = Vector2(0, 1.5)
+	end
+
+	function var_60_0.JumpNorth(arg_72_0)
+		arg_72_0.animator:SetTrigger("JumpN")
+
+		if arg_72_0.isJumpUp then
+			arg_72_0:WalkNorth()
+		elseif arg_72_0.pathType == var_0_26 then
+			arg_72_0:WalkNorthwest()
+		else
+			arg_72_0:WalkNorth()
+		end
+	end
+
+	function var_60_0.WalkNorthwest(arg_73_0)
+		arg_73_0.animator:SetTrigger("WalkNW")
+
+		arg_73_0.rigbody.velocity = Vector2(-1.5, 1.5)
+	end
+
+	function var_60_0.WalkSouth(arg_74_0)
+		arg_74_0.animator:SetTrigger("WalkS")
+
+		arg_74_0.rigbody.velocity = Vector2(0, -1.5)
+	end
+
+	function var_60_0.JumpSouth(arg_75_0)
+		arg_75_0.animator:SetTrigger("JumpS")
+
+		if arg_75_0.isJumpDown then
+			arg_75_0:WalkSouth()
+		elseif arg_75_0.pathType == var_0_24 then
+			arg_75_0:WalkSouthwest()
+		else
+			arg_75_0:WalkSouth()
+		end
+	end
+
+	function var_60_0.WalkSouthwest(arg_76_0)
+		arg_76_0.animator:SetTrigger("WalkSW")
+
+		arg_76_0.rigbody.velocity = Vector2(-1.5, -1.5)
+	end
+
+	function var_60_0.Step(arg_77_0)
+		local var_77_0 = arg_77_0._tf.anchoredPosition.y
+
+		if var_77_0 > var_60_1 or var_77_0 < -var_60_1 then
+			arg_77_0.rigbody.velocity = Vector2.zero
+
+			return
+		end
+
+		if arg_77_0.isForwardNorth then
+			if not arg_77_0.isJumpDown and var_77_0 >= -470 then
+				arg_77_0.isJumpDown = true
+
+				arg_77_0:JumpNorth()
+				onDelayTick(function()
+					arg_77_0._tf:SetParent(arg_77_0.obstacleTF, false)
+				end, 0.3)
+			end
+
+			if not arg_77_0.isJumpUp and var_77_0 >= 310 then
+				arg_77_0.isJumpUp = true
+
+				arg_77_0:JumpNorth()
+			end
+		end
+
+		if arg_77_0.isForwardSouth then
+			if not arg_77_0.isJumpUp and var_77_0 <= 370 then
+				arg_77_0.isJumpUp = true
+
+				arg_77_0:JumpSouth()
+			end
+
+			if not arg_77_0.isJumpDown and var_77_0 <= -420 then
+				arg_77_0.isJumpDown = true
+
+				arg_77_0:JumpSouth()
+				onDelayTick(function()
+					arg_77_0._tf:SetParent(arg_77_0.bgFrontTF, false)
+				end, 0.3)
+			end
+		end
+	end
+
+	function var_60_0.Pause(arg_80_0)
+		arg_80_0.speedRecord = arg_80_0.rigbody.velocity
+		arg_80_0.rigbody.velocity = Vector2.zero
+		arg_80_0.animator.speed = 0
+	end
+
+	function var_60_0.Resume(arg_81_0)
+		arg_81_0.rigbody.velocity = arg_81_0.speedRecord
+		arg_81_0.animator.speed = 1
+	end
+
+	var_60_0:Ctor()
+
+	return var_60_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_82_0)
 	return "CurlingGameUI"
 end
 
-function slot0.didEnter(slot0)
-	slot0:initEvent()
-	slot0:initData()
-	slot0:initUI()
-	slot0:initGameUI()
-	slot0:initController()
-	slot0:updateMainUI()
-	slot0:openMainUI()
-	slot0:AutoFitScreen()
+function var_0_0.didEnter(arg_83_0)
+	arg_83_0:initEvent()
+	arg_83_0:initData()
+	arg_83_0:initUI()
+	arg_83_0:initGameUI()
+	arg_83_0:initController()
+	arg_83_0:updateMainUI()
+	arg_83_0:openMainUI()
+	arg_83_0:AutoFitScreen()
 end
 
-function slot0.AutoFitScreen(slot0)
-	slot6 = nil
-	slot6 = (1.7777777777777777 > Screen.width / Screen.height or math.clamp(1080 * slot1 / 2331, 1, 2)) and math.clamp(1920 / slot1 / slot0:findTF("bg_back").rect.height, 1, 2)
+function var_0_0.AutoFitScreen(arg_84_0)
+	local var_84_0 = Screen.width / Screen.height
+	local var_84_1 = 1.7777777777777777
+	local var_84_2 = arg_84_0:findTF("bg_back")
+	local var_84_3 = 2331
+	local var_84_4 = var_84_2.rect.height
+	local var_84_5
 
-	setLocalScale(slot0._tf, {
-		x = slot6,
-		y = slot6,
-		z = slot6
+	if var_84_1 <= var_84_0 then
+		local var_84_6 = 1080 * var_84_0
+
+		var_84_5 = math.clamp(var_84_6 / var_84_3, 1, 2)
+	else
+		local var_84_7 = 1920 / var_84_0
+
+		var_84_5 = math.clamp(var_84_7 / var_84_4, 1, 2)
+	end
+
+	setLocalScale(arg_84_0._tf, {
+		x = var_84_5,
+		y = var_84_5,
+		z = var_84_5
 	})
 end
 
-function slot0.initEvent(slot0)
-	slot0:bind(uv0, function (slot0, slot1, slot2)
-		if slot1.result ~= uv0 then
-			uv1:addScore(uv2[slot1.result])
+function var_0_0.initEvent(arg_85_0)
+	arg_85_0:bind(var_0_43, function(arg_86_0, arg_86_1, arg_86_2)
+		if arg_86_1.result ~= var_0_34 then
+			arg_85_0:addScore(var_0_30[arg_86_1.result])
 		end
 
-		slot3 = uv1
-
-		slot3:obsFadeOut()
-		onDelayTick(function ()
-			uv0:nextRoundGame()
-		end, uv3)
+		arg_85_0:obsFadeOut()
+		onDelayTick(function()
+			arg_85_0:nextRoundGame()
+		end, var_0_36)
 	end)
-	slot0:bind(uv4, function (slot0, slot1, slot2)
-		if slot1.score and slot1.score ~= 0 then
-			uv0:addScore(slot1.score, slot1.pos)
+	arg_85_0:bind(var_0_47, function(arg_88_0, arg_88_1, arg_88_2)
+		if arg_88_1.score and arg_88_1.score ~= 0 then
+			arg_85_0:addScore(arg_88_1.score, arg_88_1.pos)
 		end
 	end)
 end
 
-function slot0.initData(slot0)
-	if (Application.targetFrameRate or 60) > 60 then
-		slot1 = 60
+function var_0_0.initData(arg_89_0)
+	local var_89_0 = Application.targetFrameRate or 60
+
+	if var_89_0 > 60 then
+		var_89_0 = 60
 	end
 
 	if not Physics2D.autoSimulation then
-		slot0.needManualSimulate = true
+		arg_89_0.needManualSimulate = true
 	end
 
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
+	arg_89_0.timer = Timer.New(function()
+		arg_89_0:onTimer()
 
-		if uv0.needManualSimulate then
-			Physics2D.Simulate(1 / uv1)
+		if arg_89_0.needManualSimulate then
+			Physics2D.Simulate(1 / var_89_0)
 		end
-	end, 1 / slot1, -1)
+	end, 1 / var_89_0, -1)
 end
 
-function slot0.initUI(slot0)
-	slot0.clickMask = slot0:findTF("ui/click_mask")
-	slot0.mainUI = slot0:findTF("ui/main_ui")
-	slot0.listScrollRect = GetComponent(findTF(slot0.mainUI, "item_list"), typeof(ScrollRect))
+function var_0_0.initUI(arg_91_0)
+	arg_91_0.clickMask = arg_91_0:findTF("ui/click_mask")
+	arg_91_0.mainUI = arg_91_0:findTF("ui/main_ui")
+	arg_91_0.listScrollRect = GetComponent(findTF(arg_91_0.mainUI, "item_list"), typeof(ScrollRect))
 
-	onButton(slot0, slot0:findTF("skin_btn", slot0.mainUI), function ()
+	onButton(arg_91_0, arg_91_0:findTF("skin_btn", arg_91_0.mainUI), function()
+		local var_92_0 = pg.mini_game[arg_91_0:GetMGData().id].simple_config_data.skin_shop_id
+
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP, {
-			skinId = pg.mini_game[uv0:GetMGData().id].simple_config_data.skin_shop_id
+			skinId = var_92_0
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("return_btn", slot0.mainUI), function ()
-		uv0:emit(uv1.ON_BACK_PRESSED)
+	onButton(arg_91_0, arg_91_0:findTF("return_btn", arg_91_0.mainUI), function()
+		arg_91_0:emit(var_0_0.ON_BACK_PRESSED)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("help_btn", slot0.mainUI), function ()
+	onButton(arg_91_0, arg_91_0:findTF("help_btn", arg_91_0.mainUI), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.CurlingGame_tips1.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("start_btn", slot0.mainUI), function ()
-		uv0:readyStart()
+	onButton(arg_91_0, arg_91_0:findTF("start_btn", arg_91_0.mainUI), function()
+		arg_91_0:readyStart()
 	end, SFX_PANEL)
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_91_0.totalTimes = arg_91_0:getGameTotalTime()
 
-	scrollTo(slot0.listScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
-	onButton(slot0, slot0:findTF("right_panel/arrows_up", slot0.mainUI), function ()
-		if uv0.listScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
-			slot0 = 1
+	local var_91_0 = arg_91_0:getGameUsedTimes() - 4 < 0 and 0 or arg_91_0:getGameUsedTimes() - 4
+
+	scrollTo(arg_91_0.listScrollRect, 0, 1 - var_91_0 / (arg_91_0.totalTimes - 4))
+	onButton(arg_91_0, arg_91_0:findTF("right_panel/arrows_up", arg_91_0.mainUI), function()
+		local var_96_0 = arg_91_0.listScrollRect.normalizedPosition.y + 1 / (arg_91_0.totalTimes - 4)
+
+		if var_96_0 > 1 then
+			var_96_0 = 1
 		end
 
-		scrollTo(uv0.listScrollRect, 0, slot0)
+		scrollTo(arg_91_0.listScrollRect, 0, var_96_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("right_panel/arrows_down", slot0.mainUI), function ()
-		if uv0.listScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
-			slot0 = 0
+	onButton(arg_91_0, arg_91_0:findTF("right_panel/arrows_down", arg_91_0.mainUI), function()
+		local var_97_0 = arg_91_0.listScrollRect.normalizedPosition.y - 1 / (arg_91_0.totalTimes - 4)
+
+		if var_97_0 < 0 then
+			var_97_0 = 0
 		end
 
-		scrollTo(uv0.listScrollRect, 0, slot0)
+		scrollTo(arg_91_0.listScrollRect, 0, var_97_0)
 	end, SFX_PANEL)
 
-	slot2 = slot0:findTF("item_tpl", slot0.mainUI)
-	slot0.itemList = {}
+	local var_91_1 = arg_91_0:findTF("item_tpl", arg_91_0.mainUI)
 
-	for slot7 = 1, #pg.mini_game[slot0:GetMGData().id].simple_config_data.drop do
-		slot8 = tf(instantiate(slot2))
-		slot8.name = "item_" .. slot7
+	arg_91_0.itemList = {}
 
-		setParent(slot8, slot0:findTF("item_list/Viewport/Content", slot0.mainUI))
-		GetSpriteFromAtlasAsync("ui/minigameui/curlinggameui_atlas", "text_" .. slot7, function (slot0)
-			setImageSprite(uv0:findTF("bg/text", uv1), slot0, true)
+	local var_91_2 = pg.mini_game[arg_91_0:GetMGData().id].simple_config_data.drop
+
+	for iter_91_0 = 1, #var_91_2 do
+		local var_91_3 = tf(instantiate(var_91_1))
+
+		var_91_3.name = "item_" .. iter_91_0
+
+		setParent(var_91_3, arg_91_0:findTF("item_list/Viewport/Content", arg_91_0.mainUI))
+
+		local var_91_4 = iter_91_0
+
+		GetSpriteFromAtlasAsync("ui/minigameui/curlinggameui_atlas", "text_" .. var_91_4, function(arg_98_0)
+			setImageSprite(arg_91_0:findTF("bg/text", var_91_3), arg_98_0, true)
 		end)
-		setActive(slot8, true)
-		table.insert(slot0.itemList, slot8)
+		setActive(var_91_3, true)
+		table.insert(arg_91_0.itemList, var_91_3)
 
-		slot10 = slot0:findTF("award", slot8)
+		local var_91_5 = arg_91_0:findTF("award", var_91_3)
+		local var_91_6 = {
+			type = var_91_2[iter_91_0][1],
+			id = var_91_2[iter_91_0][2],
+			count = var_91_2[iter_91_0][3]
+		}
 
-		updateDrop(slot10, {
-			type = slot3[slot7][1],
-			id = slot3[slot7][2],
-			count = slot3[slot7][3]
-		})
-		onButton(slot0, slot10, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		updateDrop(var_91_5, var_91_6)
+		onButton(arg_91_0, var_91_5, function()
+			arg_91_0:emit(BaseUI.ON_DROP, var_91_6)
 		end, SFX_PANEL)
 	end
 
-	slot0.countUI = slot0:findTF("ui/count_ui")
-	slot0.countAnimator = GetComponent(slot0:findTF("count", slot0.countUI), typeof(Animator))
-	slot0.countDft = GetOrAddComponent(slot0:findTF("count", slot0.countUI), typeof(DftAniEvent))
-	slot4 = slot0.countDft
+	arg_91_0.countUI = arg_91_0:findTF("ui/count_ui")
+	arg_91_0.countAnimator = GetComponent(arg_91_0:findTF("count", arg_91_0.countUI), typeof(Animator))
+	arg_91_0.countDft = GetOrAddComponent(arg_91_0:findTF("count", arg_91_0.countUI), typeof(DftAniEvent))
 
-	slot4:SetTriggerEvent(function ()
+	arg_91_0.countDft:SetTriggerEvent(function()
+		return
+	end)
+	arg_91_0.countDft:SetEndEvent(function()
+		setActive(arg_91_0.countUI, false)
+		arg_91_0:startGame()
 	end)
 
-	slot4 = slot0.countDft
+	arg_91_0.pauseUI = arg_91_0:findTF("ui/pause_ui")
 
-	slot4:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:startGame()
-	end)
-
-	slot0.pauseUI = slot0:findTF("ui/pause_ui")
-
-	onButton(slot0, slot0:findTF("ad/panel/sure_btn", slot0.pauseUI), function ()
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_91_0, arg_91_0:findTF("ad/panel/sure_btn", arg_91_0.pauseUI), function()
+		setActive(arg_91_0.pauseUI, false)
+		arg_91_0:resumeGame()
 	end, SFX_PANEL)
 
-	slot0.returnUI = slot0:findTF("ui/return_ui")
+	arg_91_0.returnUI = arg_91_0:findTF("ui/return_ui")
 
-	onButton(slot0, slot0:findTF("ad/panel/sure_btn", slot0.returnUI), function ()
-		setActive(uv0.returnUI, false)
-		uv0:resumeGame()
-		uv0:endGame()
+	onButton(arg_91_0, arg_91_0:findTF("ad/panel/sure_btn", arg_91_0.returnUI), function()
+		setActive(arg_91_0.returnUI, false)
+		arg_91_0:resumeGame()
+		arg_91_0:endGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("ad/panel/cancel_btn", slot0.returnUI), function ()
-		setActive(uv0.returnUI, false)
-		uv0:resumeGame()
-	end, SFX_PANEL)
-
-	slot0.endUI = slot0:findTF("ui/end_ui")
-
-	onButton(slot0, slot0:findTF("ad/panel/end_btn", slot0.endUI), function ()
-		setActive(uv0.endUI, false)
-		uv0:openMainUI()
+	onButton(arg_91_0, arg_91_0:findTF("ad/panel/cancel_btn", arg_91_0.returnUI), function()
+		setActive(arg_91_0.returnUI, false)
+		arg_91_0:resumeGame()
 	end, SFX_PANEL)
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	arg_91_0.endUI = arg_91_0:findTF("ui/end_ui")
+
+	onButton(arg_91_0, arg_91_0:findTF("ad/panel/end_btn", arg_91_0.endUI), function()
+		setActive(arg_91_0.endUI, false)
+		arg_91_0:openMainUI()
+	end, SFX_PANEL)
+
+	if not arg_91_0.handle then
+		arg_91_0.handle = UpdateBeat:CreateListener(arg_91_0.Update, arg_91_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_91_0.handle)
 end
 
-function slot0.initGameUI(slot0)
-	slot0.gameUI = slot0:findTF("ui/game_ui")
-	slot0.roundTF = slot0:findTF("score_panel/round_text", slot0.gameUI)
-	slot0.scoreTF = slot0:findTF("score_panel/score_text", slot0.gameUI)
+function var_0_0.initGameUI(arg_106_0)
+	arg_106_0.gameUI = arg_106_0:findTF("ui/game_ui")
+	arg_106_0.roundTF = arg_106_0:findTF("score_panel/round_text", arg_106_0.gameUI)
+	arg_106_0.scoreTF = arg_106_0:findTF("score_panel/score_text", arg_106_0.gameUI)
 
-	onButton(slot0, slot0:findTF("pause_btn", slot0.gameUI), function ()
-		uv0:pauseGame()
-		setActive(uv0.pauseUI, true)
+	onButton(arg_106_0, arg_106_0:findTF("pause_btn", arg_106_0.gameUI), function()
+		arg_106_0:pauseGame()
+		setActive(arg_106_0.pauseUI, true)
 	end)
-	onButton(slot0, slot0:findTF("return_btn", slot0.gameUI), function ()
-		uv0:pauseGame()
-		setActive(uv0.returnUI, true)
+	onButton(arg_106_0, arg_106_0:findTF("return_btn", arg_106_0.gameUI), function()
+		arg_106_0:pauseGame()
+		setActive(arg_106_0.returnUI, true)
 	end)
 
-	slot0.scoreGroup = slot0:findTF("score_group", slot0.gameUI)
+	arg_106_0.scoreGroup = arg_106_0:findTF("score_group", arg_106_0.gameUI)
 
-	setActive(slot0:findTF("bg_front/wall"), uv0)
+	setActive(arg_106_0:findTF("bg_front/wall"), var_0_39)
 end
 
-function slot0.initController(slot0)
-	slot0.scene = slot0:findTF("scene")
-	slot0.gridTF = slot0:findTF("ui/grid")
-	slot0.player = uv0(slot0:findTF("player", slot0.scene), slot0)
-	slot0.phy = slot0:findTF("Ayanami_phy", slot0.scene)
-	slot0.drawDot = slot0:findTF("draw_dot", slot0.scene)
-	slot0.curlingTpls = slot0:findTF("curling_Tpl", slot0.scene)
-	slot0.curling = uv1(slot0.curlingTpls, slot0.player._tf, slot0)
-	slot0.ofunya = uv2(slot0:findTF("bg_back/07_Ofunya"), slot0)
-	slot0.manjuu = uv3(slot0:findTF("bg_back/08_Manjuu"), slot0)
-	slot0.walker = uv4(slot0:findTF("obstacle/walker", slot0.scene), slot0)
-	slot0.obsTF = slot0:findTF("scene/obstacle")
-	slot0.obsCanvas = GetComponent(slot0.obsTF, typeof(CanvasGroup))
-	slot0.obsTpl = slot0:findTF("scene/obstacle_Tpl")
-	slot0.minerGroups = slot0:findTF("miner_groups", slot0.obsTF)
-	slot0.oilGroups = slot0:findTF("oil_groups", slot0.obsTF)
-	slot0.cubeGroups = slot0:findTF("cube_groups", slot0.obsTF)
+function var_0_0.initController(arg_109_0)
+	arg_109_0.scene = arg_109_0:findTF("scene")
+	arg_109_0.gridTF = arg_109_0:findTF("ui/grid")
+	arg_109_0.player = var_0_48(arg_109_0:findTF("player", arg_109_0.scene), arg_109_0)
+	arg_109_0.phy = arg_109_0:findTF("Ayanami_phy", arg_109_0.scene)
+	arg_109_0.drawDot = arg_109_0:findTF("draw_dot", arg_109_0.scene)
+	arg_109_0.curlingTpls = arg_109_0:findTF("curling_Tpl", arg_109_0.scene)
+	arg_109_0.curling = var_0_49(arg_109_0.curlingTpls, arg_109_0.player._tf, arg_109_0)
+	arg_109_0.ofunya = var_0_50(arg_109_0:findTF("bg_back/07_Ofunya"), arg_109_0)
+	arg_109_0.manjuu = var_0_51(arg_109_0:findTF("bg_back/08_Manjuu"), arg_109_0)
+	arg_109_0.walker = var_0_53(arg_109_0:findTF("obstacle/walker", arg_109_0.scene), arg_109_0)
+	arg_109_0.obsTF = arg_109_0:findTF("scene/obstacle")
+	arg_109_0.obsCanvas = GetComponent(arg_109_0.obsTF, typeof(CanvasGroup))
+	arg_109_0.obsTpl = arg_109_0:findTF("scene/obstacle_Tpl")
+	arg_109_0.minerGroups = arg_109_0:findTF("miner_groups", arg_109_0.obsTF)
+	arg_109_0.oilGroups = arg_109_0:findTF("oil_groups", arg_109_0.obsTF)
+	arg_109_0.cubeGroups = arg_109_0:findTF("cube_groups", arg_109_0.obsTF)
 end
 
-function slot0.updateMainUI(slot0)
-	slot1 = slot0:getGameUsedTimes()
-	slot2 = slot0:getGameTimes()
+function var_0_0.updateMainUI(arg_110_0)
+	local var_110_0 = arg_110_0:getGameUsedTimes()
+	local var_110_1 = arg_110_0:getGameTimes()
 
-	for slot6 = 1, #slot0.itemList do
-		setActive(slot0:findTF("lock", slot0.itemList[slot6]), false)
-		setActive(slot0:findTF("finish", slot0.itemList[slot6]), false)
+	for iter_110_0 = 1, #arg_110_0.itemList do
+		setActive(arg_110_0:findTF("lock", arg_110_0.itemList[iter_110_0]), false)
+		setActive(arg_110_0:findTF("finish", arg_110_0.itemList[iter_110_0]), false)
 
-		if slot6 <= slot1 then
-			setActive(slot0:findTF("finish", slot0.itemList[slot6]), true)
-		elseif slot6 == slot1 + 1 and slot2 >= 1 then
-			-- Nothing
-		elseif slot1 >= slot6 or slot6 > slot1 + slot2 then
-			setActive(slot0:findTF("award", slot0.itemList[slot6]), false)
-			setActive(slot0:findTF("lock", slot0.itemList[slot6]), true)
+		if iter_110_0 <= var_110_0 then
+			setActive(arg_110_0:findTF("finish", arg_110_0.itemList[iter_110_0]), true)
+		elseif iter_110_0 == var_110_0 + 1 and var_110_1 >= 1 then
+			-- block empty
+		elseif var_110_0 < iter_110_0 and iter_110_0 <= var_110_0 + var_110_1 then
+			-- block empty
+		else
+			setActive(arg_110_0:findTF("award", arg_110_0.itemList[iter_110_0]), false)
+			setActive(arg_110_0:findTF("lock", arg_110_0.itemList[iter_110_0]), true)
 		end
 	end
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_110_0.totalTimes = arg_110_0:getGameTotalTime()
 
-	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
-		slot4 = 1
+	local var_110_2 = 1 - (arg_110_0:getGameUsedTimes() - 3 < 0 and 0 or arg_110_0:getGameUsedTimes() - 3) / (arg_110_0.totalTimes - 4)
+
+	if var_110_2 > 1 then
+		var_110_2 = 1
 	end
 
-	scrollTo(slot0.listScrollRect, 0, slot4)
-	slot0:checkGet()
+	scrollTo(arg_110_0.listScrollRect, 0, var_110_2)
+	arg_110_0:checkGet()
 end
 
-function slot0.checkGet(slot0)
-	if slot0:getUltimate() == 0 then
-		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
+function var_0_0.checkGet(arg_111_0)
+	if arg_111_0:getUltimate() == 0 then
+		if arg_111_0:getGameTotalTime() > arg_111_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0:GetMGHubData().id,
+			hubid = arg_111_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function slot0.openMainUI(slot0)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.mainUI, true)
-	slot0:updateMainUI()
+function var_0_0.openMainUI(arg_112_0)
+	setActive(arg_112_0.gameUI, false)
+	setActive(arg_112_0.mainUI, true)
+	arg_112_0:updateMainUI()
 end
 
-function slot0.readyStart(slot0)
-	setActive(slot0.mainUI, false)
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-	slot0:resetGame()
+function var_0_0.readyStart(arg_113_0)
+	setActive(arg_113_0.mainUI, false)
+	setActive(arg_113_0.countUI, true)
+	arg_113_0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1)
+	arg_113_0:resetGame()
 end
 
-function slot0.resetGame(slot0)
-	slot0.gameStartFlag = false
-	slot0.gamePause = false
-	slot0.gameEndFlag = false
-	slot0.scoreNum = 0
-	slot0.roundNum = 1
+function var_0_0.resetGame(arg_114_0)
+	arg_114_0.gameStartFlag = false
+	arg_114_0.gamePause = false
+	arg_114_0.gameEndFlag = false
+	arg_114_0.scoreNum = 0
+	arg_114_0.roundNum = 1
 
-	slot0.player:Reset()
-	slot0.curling:Reset()
-	slot0.ofunya:Reset()
-	slot0.manjuu:Reset()
-	slot0.walker:Reset()
+	arg_114_0.player:Reset()
+	arg_114_0.curling:Reset()
+	arg_114_0.ofunya:Reset()
+	arg_114_0.manjuu:Reset()
+	arg_114_0.walker:Reset()
 end
 
-function slot0.startGame(slot0)
-	setActive(slot0.gameUI, true)
-	slot0:CoordinateGrid(slot0.gridTF)
+function var_0_0.startGame(arg_115_0)
+	setActive(arg_115_0.gameUI, true)
+	arg_115_0:CoordinateGrid(arg_115_0.gridTF)
 
-	slot0.gameStartFlag = true
+	arg_115_0.gameStartFlag = true
 
-	slot0.player:Start()
-	slot0.curling:Start()
-	slot0.ofunya:Start()
-	slot0.manjuu:Start()
-	slot0:staticObsStart()
-	slot0:updateGameUI()
-	slot0:timerStart()
+	arg_115_0.player:Start()
+	arg_115_0.curling:Start()
+	arg_115_0.ofunya:Start()
+	arg_115_0.manjuu:Start()
+	arg_115_0:staticObsStart()
+	arg_115_0:updateGameUI()
+	arg_115_0:timerStart()
 end
 
-function slot0.staticObsStart(slot0)
-	setActive(slot0.obsTF, true)
+function var_0_0.staticObsStart(arg_116_0)
+	setActive(arg_116_0.obsTF, true)
 
-	slot0.obsCanvas.alpha = 1
+	arg_116_0.obsCanvas.alpha = 1
 
-	slot0.walker:Reset()
+	arg_116_0.walker:Reset()
 
-	if math.random() <= uv0.walker.appear then
-		setActive(slot0.walker._tf, true)
-		setLocalScale(slot0.walker._tf, Vector2(uv1.walker, uv1.walker))
+	local var_116_0 = math.random()
+	local var_116_1 = var_0_37.walker
 
-		slot3 = slot2.path[math.random(1, #slot2.path)]
+	if var_116_0 <= var_116_1.appear then
+		setActive(arg_116_0.walker._tf, true)
+		setLocalScale(arg_116_0.walker._tf, Vector2(var_0_38.walker, var_0_38.walker))
 
-		slot0.walker:SetPath(slot3)
+		local var_116_2 = var_116_1.path[math.random(1, #var_116_1.path)]
 
-		slot4 = {}
+		arg_116_0.walker:SetPath(var_116_2)
 
-		if slot3 == uv2 then
-			slot4 = {
+		local var_116_3 = {}
+
+		if var_116_2 == var_0_26 then
+			var_116_3 = {
 				8,
 				11,
 				12,
@@ -1111,8 +1189,8 @@ function slot0.staticObsStart(slot0)
 				17,
 				21
 			}
-		elseif slot3 == uv3 then
-			slot4 = {
+		elseif var_116_2 == var_0_24 then
+			var_116_3 = {
 				5,
 				9,
 				10,
@@ -1124,9 +1202,9 @@ function slot0.staticObsStart(slot0)
 			}
 		end
 
-		function slot5(slot0)
-			for slot4, slot5 in ipairs(uv0) do
-				if slot0 == slot5 then
+		local function var_116_4(arg_117_0)
+			for iter_117_0, iter_117_1 in ipairs(var_116_3) do
+				if arg_117_0 == iter_117_1 then
 					return true
 				end
 			end
@@ -1134,279 +1212,292 @@ function slot0.staticObsStart(slot0)
 			return false
 		end
 
-		slot6 = {}
+		local var_116_5 = {}
 
-		for slot10, slot11 in ipairs(slot0.grids) do
-			if not slot5(slot10) then
-				table.insert(slot6, slot11)
+		for iter_116_0, iter_116_1 in ipairs(arg_116_0.grids) do
+			if not var_116_4(iter_116_0) then
+				table.insert(var_116_5, iter_116_1)
 			end
 		end
 
-		slot0.grids = slot6
+		arg_116_0.grids = var_116_5
 
-		slot0.walker:Start()
+		arg_116_0.walker:Start()
 	end
 
-	removeAllChildren(slot0.oilGroups)
+	removeAllChildren(arg_116_0.oilGroups)
 
-	for slot6, slot7 in ipairs(uv0.oil) do
-		if math.random() <= slot7.appear then
-			for slot12 = 1, slot7.num do
-				slot13 = cloneTplTo(slot0:findTF("oil_Tpl", slot0.obsTpl), slot0.oilGroups, "oil")
+	for iter_116_2, iter_116_3 in ipairs(var_0_37.oil) do
+		if math.random() <= iter_116_3.appear then
+			for iter_116_4 = 1, iter_116_3.num do
+				local var_116_6 = cloneTplTo(arg_116_0:findTF("oil_Tpl", arg_116_0.obsTpl), arg_116_0.oilGroups, "oil")
 
-				setActive(slot13, true)
+				setActive(var_116_6, true)
 
-				slot14 = math.random(1, #slot0.grids)
+				local var_116_7 = math.random(1, #arg_116_0.grids)
 
-				setLocalPosition(slot13, Vector2(slot0.grids[slot14].x, slot0.grids[slot14].y))
-				setLocalScale(slot13, Vector2(uv1.oil, uv1.oil))
-				table.remove(slot0.grids, slot14)
-			end
-		end
-	end
-
-	removeAllChildren(slot0.cubeGroups)
-
-	for slot6, slot7 in ipairs(uv0.cube) do
-		if math.random() <= slot7.appear then
-			for slot12 = 1, slot7.num do
-				slot13 = cloneTplTo(slot0:findTF("cube_Tpl", slot0.obsTpl), slot0.cubeGroups, "cube")
-
-				setActive(slot13, true)
-
-				slot14 = math.random(1, #slot0.grids)
-
-				setLocalPosition(slot13, Vector2(slot0.grids[slot14].x, slot0.grids[slot14].y))
-				setLocalScale(slot13, Vector2(uv1.cube, uv1.cube))
-				table.remove(slot0.grids, slot14)
+				setLocalPosition(var_116_6, Vector2(arg_116_0.grids[var_116_7].x, arg_116_0.grids[var_116_7].y))
+				setLocalScale(var_116_6, Vector2(var_0_38.oil, var_0_38.oil))
+				table.remove(arg_116_0.grids, var_116_7)
 			end
 		end
 	end
 
-	removeAllChildren(slot0.minerGroups)
+	removeAllChildren(arg_116_0.cubeGroups)
 
-	slot0.minerControls = {}
+	for iter_116_5, iter_116_6 in ipairs(var_0_37.cube) do
+		if math.random() <= iter_116_6.appear then
+			for iter_116_7 = 1, iter_116_6.num do
+				local var_116_8 = cloneTplTo(arg_116_0:findTF("cube_Tpl", arg_116_0.obsTpl), arg_116_0.cubeGroups, "cube")
 
-	for slot6, slot7 in ipairs(uv0.miner) do
-		if math.random() <= slot7.appear then
-			for slot12 = 1, slot7.num do
-				slot13 = cloneTplTo(slot0:findTF("miner_Tpl", slot0.obsTpl), slot0.minerGroups, "miner")
+				setActive(var_116_8, true)
 
-				setActive(slot13, true)
-				table.insert(slot0.minerControls, uv4(slot13, slot0))
+				local var_116_9 = math.random(1, #arg_116_0.grids)
 
-				slot15 = math.random(1, #slot0.grids)
+				setLocalPosition(var_116_8, Vector2(arg_116_0.grids[var_116_9].x, arg_116_0.grids[var_116_9].y))
+				setLocalScale(var_116_8, Vector2(var_0_38.cube, var_0_38.cube))
+				table.remove(arg_116_0.grids, var_116_9)
+			end
+		end
+	end
 
-				setLocalPosition(slot13, Vector2(slot0.grids[slot15].x, slot0.grids[slot15].y))
-				setLocalScale(slot13, Vector2(uv1.miner, uv1.miner))
-				table.remove(slot0.grids, slot15)
+	removeAllChildren(arg_116_0.minerGroups)
+
+	arg_116_0.minerControls = {}
+
+	for iter_116_8, iter_116_9 in ipairs(var_0_37.miner) do
+		if math.random() <= iter_116_9.appear then
+			for iter_116_10 = 1, iter_116_9.num do
+				local var_116_10 = cloneTplTo(arg_116_0:findTF("miner_Tpl", arg_116_0.obsTpl), arg_116_0.minerGroups, "miner")
+
+				setActive(var_116_10, true)
+
+				local var_116_11 = var_0_52(var_116_10, arg_116_0)
+
+				table.insert(arg_116_0.minerControls, var_116_11)
+
+				local var_116_12 = math.random(1, #arg_116_0.grids)
+
+				setLocalPosition(var_116_10, Vector2(arg_116_0.grids[var_116_12].x, arg_116_0.grids[var_116_12].y))
+				setLocalScale(var_116_10, Vector2(var_0_38.miner, var_0_38.miner))
+				table.remove(arg_116_0.grids, var_116_12)
 			end
 		end
 	end
 end
 
-function slot0.obsFadeOut(slot0)
-	slot1 = slot0:managedTween(LeanTween.value, function ()
-		setActive(uv0.obsTF, false)
-	end, go(slot0.obsTF), 1, 0, 0.5)
-
-	slot1:setOnUpdate(System.Action_float(function (slot0)
-		uv0.obsCanvas.alpha = slot0
+function var_0_0.obsFadeOut(arg_118_0)
+	arg_118_0:managedTween(LeanTween.value, function()
+		setActive(arg_118_0.obsTF, false)
+	end, go(arg_118_0.obsTF), 1, 0, 0.5):setOnUpdate(System.Action_float(function(arg_120_0)
+		arg_118_0.obsCanvas.alpha = arg_120_0
 	end))
 end
 
-function slot0.Update(slot0)
-	slot0:AddDebugInput()
+function var_0_0.Update(arg_121_0)
+	arg_121_0:AddDebugInput()
 end
 
-function slot0.AddDebugInput(slot0)
-	if slot0.gamePause or slot0.gameEndFlag then
+function var_0_0.AddDebugInput(arg_122_0)
+	if arg_122_0.gamePause or arg_122_0.gameEndFlag then
 		return
 	end
 
 	if IsUnityEditor then
-		-- Nothing
+		-- block empty
 	end
 end
 
-function slot0.changeSpeed(slot0, slot1)
+function var_0_0.changeSpeed(arg_123_0, arg_123_1)
+	return
 end
 
-function slot0.onTimer(slot0)
-	slot0.curling:Step()
-	slot0.walker:Step()
-	slot0:updateGameUI()
+function var_0_0.onTimer(arg_124_0)
+	arg_124_0.curling:Step()
+	arg_124_0.walker:Step()
+	arg_124_0:updateGameUI()
 end
 
-function slot0.timerStart(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.timerStart(arg_125_0)
+	if not arg_125_0.timer.running then
+		arg_125_0.timer:Start()
 	end
 end
 
-function slot0.timerStop(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.timerStop(arg_126_0)
+	if arg_126_0.timer.running then
+		arg_126_0.timer:Stop()
 	end
 end
 
-function slot0.updateGameUI(slot0)
-	setText(slot0.scoreTF, slot0.scoreNum)
-	setText(slot0.roundTF, "Round " .. slot0.roundNum)
+function var_0_0.updateGameUI(arg_127_0)
+	setText(arg_127_0.scoreTF, arg_127_0.scoreNum)
+	setText(arg_127_0.roundTF, "Round " .. arg_127_0.roundNum)
 end
 
-function slot0.addScore(slot0, slot1, slot2)
-	slot3 = cloneTplTo(slot0:findTF("score_tf", slot0.gameUI), slot0.scoreGroup)
+function var_0_0.addScore(arg_128_0, arg_128_1, arg_128_2)
+	local var_128_0 = cloneTplTo(arg_128_0:findTF("score_tf", arg_128_0.gameUI), arg_128_0.scoreGroup)
 
-	if slot2 then
-		setLocalPosition(slot3, slot2)
+	if arg_128_2 then
+		setLocalPosition(var_128_0, arg_128_2)
 	else
-		setLocalPosition(slot3, Vector2(432, 144))
+		setLocalPosition(var_128_0, Vector2(432, 144))
 	end
 
-	setActive(slot3, false)
-	setActive(slot3, true)
-	setText(slot3, "+" .. slot1)
+	setActive(var_128_0, false)
+	setActive(var_128_0, true)
+	setText(var_128_0, "+" .. arg_128_1)
 
-	slot0.scoreNum = slot0.scoreNum + slot1
+	arg_128_0.scoreNum = arg_128_0.scoreNum + arg_128_1
 end
 
-function slot0.pauseGame(slot0)
-	slot0.gamePause = true
+function var_0_0.pauseGame(arg_129_0)
+	arg_129_0.gamePause = true
 
-	slot0:timerStop()
-	slot0:changeSpeed(0)
-	slot0:pauseManagedTween()
-	slot0:emit(uv0)
+	arg_129_0:timerStop()
+	arg_129_0:changeSpeed(0)
+	arg_129_0:pauseManagedTween()
+	arg_129_0:emit(var_0_45)
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gamePause = false
+function var_0_0.resumeGame(arg_130_0)
+	arg_130_0.gamePause = false
 
-	slot0:changeSpeed(1)
-	slot0:timerStart()
-	slot0:resumeManagedTween()
-	slot0:emit(uv0)
+	arg_130_0:changeSpeed(1)
+	arg_130_0:timerStart()
+	arg_130_0:resumeManagedTween()
+	arg_130_0:emit(var_0_46)
 end
 
-function slot0.nextRoundGame(slot0)
-	removeAllChildren(slot0.scoreGroup)
+function var_0_0.nextRoundGame(arg_131_0)
+	removeAllChildren(arg_131_0.scoreGroup)
 
-	if slot0.roundNum == 3 then
-		slot0:endGame()
+	if arg_131_0.roundNum == 3 then
+		arg_131_0:endGame()
 	else
-		slot0.roundNum = slot0.roundNum + 1
+		arg_131_0.roundNum = arg_131_0.roundNum + 1
 
-		slot0:CoordinateGrid(slot0.gridTF)
-		slot0:staticObsStart()
-		slot0:emit(uv0)
+		arg_131_0:CoordinateGrid(arg_131_0.gridTF)
+		arg_131_0:staticObsStart()
+		arg_131_0:emit(var_0_44)
 	end
 end
 
-function slot0.endGame(slot0)
-	if slot0.gameEndFlag then
+function var_0_0.endGame(arg_132_0)
+	if arg_132_0.gameEndFlag then
 		return
 	end
 
-	slot0:timerStop()
+	arg_132_0:timerStop()
 
-	slot0.gameEndFlag = true
+	arg_132_0.gameEndFlag = true
 
-	setActive(slot0.clickMask, true)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0.gameEndFlag = false
-		uv0.gameStartFlag = false
+	setActive(arg_132_0.clickMask, true)
+	arg_132_0:managedTween(LeanTween.delayedCall, function()
+		arg_132_0.gameEndFlag = false
+		arg_132_0.gameStartFlag = false
 
-		setActive(uv0.clickMask, false)
-		uv0:showEndUI()
+		setActive(arg_132_0.clickMask, false)
+		arg_132_0:showEndUI()
 	end, 0.1, nil)
 end
 
-function slot0.showEndUI(slot0)
-	setActive(slot0.endUI, true)
+function var_0_0.showEndUI(arg_134_0)
+	setActive(arg_134_0.endUI, true)
 
-	slot2 = slot0.scoreNum
-	slot3 = slot0:GetMGData():GetRuntimeData("elements") and #slot1 > 0 and slot1[1] or 0
+	local var_134_0 = arg_134_0:GetMGData():GetRuntimeData("elements")
+	local var_134_1 = arg_134_0.scoreNum
+	local var_134_2 = var_134_0 and #var_134_0 > 0 and var_134_0[1] or 0
 
-	setActive(slot0:findTF("ad/panel/cur_score/new", slot0.endUI), slot3 < slot2)
+	setActive(arg_134_0:findTF("ad/panel/cur_score/new", arg_134_0.endUI), var_134_2 < var_134_1)
 
-	if slot3 <= slot2 then
-		slot0:StoreDataToServer({
-			slot2
+	if var_134_2 <= var_134_1 then
+		var_134_2 = var_134_1
+
+		arg_134_0:StoreDataToServer({
+			var_134_2
 		})
 	end
 
-	setText(slot0:findTF("ad/panel/highest_score", slot0.endUI), slot3)
-	setText(slot0:findTF("ad/panel/cur_score", slot0.endUI), slot2)
+	local var_134_3 = arg_134_0:findTF("ad/panel/highest_score", arg_134_0.endUI)
+	local var_134_4 = arg_134_0:findTF("ad/panel/cur_score", arg_134_0.endUI)
 
-	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
-		slot0:SendSuccess(0)
+	setText(var_134_3, var_134_2)
+	setText(var_134_4, var_134_1)
+
+	if arg_134_0:getGameTimes() and arg_134_0:getGameTimes() > 0 then
+		arg_134_0:SendSuccess(0)
 	end
 end
 
-function slot0.CoordinateGrid(slot0, slot1)
-	slot2 = Vector2(150, 150)
-	slot3 = slot1.rect.width
-	slot4 = slot1.rect.height
-	slot5 = Vector2(slot1.anchoredPosition.x - slot3 / 2, slot1.anchoredPosition.y - slot4 / 2)
-	slot7 = slot4 % slot2.y / (math.modf(slot4 / slot2.y) + 1)
-	slot8 = math.modf(slot3 / slot2.x)
-	slot9 = slot3 % slot2.x / (slot8 + 1)
-	slot0.grids = {}
+function var_0_0.CoordinateGrid(arg_135_0, arg_135_1)
+	local var_135_0 = Vector2(150, 150)
+	local var_135_1 = arg_135_1.rect.width
+	local var_135_2 = arg_135_1.rect.height
+	local var_135_3 = Vector2(arg_135_1.anchoredPosition.x - var_135_1 / 2, arg_135_1.anchoredPosition.y - var_135_2 / 2)
+	local var_135_4 = math.modf(var_135_2 / var_135_0.y)
+	local var_135_5 = var_135_2 % var_135_0.y / (var_135_4 + 1)
+	local var_135_6 = math.modf(var_135_1 / var_135_0.x)
+	local var_135_7 = var_135_1 % var_135_0.x / (var_135_6 + 1)
 
-	for slot13 = 1, slot8 do
-		for slot17 = 1, slot6 do
-			table.insert(slot0.grids, Vector2(slot5.x + slot13 * (slot9 + slot2.x) - slot2.x / 2, slot5.y + slot17 * (slot7 + slot2.y) - slot2.y / 2))
+	arg_135_0.grids = {}
+
+	for iter_135_0 = 1, var_135_6 do
+		for iter_135_1 = 1, var_135_4 do
+			local var_135_8 = var_135_3.x + iter_135_0 * (var_135_7 + var_135_0.x) - var_135_0.x / 2
+			local var_135_9 = var_135_3.y + iter_135_1 * (var_135_5 + var_135_0.y) - var_135_0.y / 2
+
+			table.insert(arg_135_0.grids, Vector2(var_135_8, var_135_9))
 		end
 	end
 end
 
-function slot0.getGameTimes(slot0)
-	return slot0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_136_0)
+	return arg_136_0:GetMGHubData().count
 end
 
-function slot0.getGameUsedTimes(slot0)
-	return slot0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_137_0)
+	return arg_137_0:GetMGHubData().usedtime
 end
 
-function slot0.getUltimate(slot0)
-	return slot0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_138_0)
+	return arg_138_0:GetMGHubData().ultimate
 end
 
-function slot0.getGameTotalTime(slot0)
-	return slot0:GetMGHubData():getConfig("reward_need")
+function var_0_0.getGameTotalTime(arg_139_0)
+	return (arg_139_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.gameStartFlag then
-		slot0:emit(uv0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_140_0)
+	if not arg_140_0.gameStartFlag then
+		arg_140_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if slot0.gameEndFlag then
+		if arg_140_0.gameEndFlag then
 			return
 		end
 
-		if isActive(slot0.pauseUI) then
-			setActive(slot0.pauseUI, false)
+		if isActive(arg_140_0.pauseUI) then
+			setActive(arg_140_0.pauseUI, false)
 		end
 
-		slot0:pauseGame()
-		setActive(slot0.returnUI, true)
+		arg_140_0:pauseGame()
+		setActive(arg_140_0.returnUI, true)
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.willExit(arg_141_0)
+	if arg_141_0.handle then
+		UpdateBeat:RemoveListener(arg_141_0.handle)
 	end
 
-	slot0:cleanManagedTween()
+	arg_141_0:cleanManagedTween()
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_141_0.timer and arg_141_0.timer.running then
+		arg_141_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	slot0.timer = nil
+	arg_141_0.timer = nil
 end
 
-return slot0
+return var_0_0

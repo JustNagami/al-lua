@@ -1,23 +1,24 @@
-slot0 = class("WorldAllocateMediator", import("..base.ContextMediator"))
+﻿local var_0_0 = class("WorldAllocateMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.viewComponent:setItem(slot0.contextData.itemVO)
-	slot0.viewComponent:setFleets(slot0.contextData.fleetList)
-	slot0.viewComponent:setConfirmCallback(slot0.contextData.confirmCallback)
+function var_0_0.register(arg_1_0)
+	arg_1_0.viewComponent:setItem(arg_1_0.contextData.itemVO)
+	arg_1_0.viewComponent:setFleets(arg_1_0.contextData.fleetList)
+	arg_1_0.viewComponent:setConfirmCallback(arg_1_0.contextData.confirmCallback)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {
 		GAME.WORLD_ITEM_USE_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getName()
+	local var_3_1 = arg_3_1:getBody()
 
-	if slot1:getName() == GAME.WORLD_ITEM_USE_DONE then
-		slot0.viewComponent:flush(slot3.item)
+	if var_3_0 == GAME.WORLD_ITEM_USE_DONE then
+		arg_3_0.viewComponent:flush(var_3_1.item)
 	end
 end
 
-return slot0
+return var_0_0

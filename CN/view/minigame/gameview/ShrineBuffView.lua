@@ -1,46 +1,47 @@
-slot0 = class("ShrineBuffView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ShrineBuffView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShrineBuff"
 end
 
-function slot0.OnInit(slot0)
-	slot0:Show()
-	slot0:initData()
-	slot0:initUI()
-	slot0:updateView()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:Show()
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:updateView()
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.contextData.onClose()
+function var_0_0.OnDestroy(arg_3_0)
+	arg_3_0.contextData.onClose()
 
-	slot0.lockBackPress = false
+	arg_3_0.lockBackPress = false
 end
 
-function slot0.initData(slot0)
-	slot0.lockBackPress = true
+function var_0_0.initData(arg_4_0)
+	arg_4_0.lockBackPress = true
 end
 
-function slot0.initUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.backBtn = slot0:findTF("BackBtn")
-	slot0.buffListTF = slot0:findTF("Main/BuffList")
+function var_0_0.initUI(arg_5_0)
+	arg_5_0.bg = arg_5_0:findTF("BG")
+	arg_5_0.backBtn = arg_5_0:findTF("BackBtn")
+	arg_5_0.buffListTF = arg_5_0:findTF("Main/BuffList")
 
-	for slot4 = 1, 3 do
-		slot5 = slot0.buffListTF
+	for iter_5_0 = 1, 3 do
+		local var_5_0 = arg_5_0.buffListTF:GetChild(iter_5_0 - 1)
 
-		onButton(slot0, slot5:GetChild(slot4 - 1), function ()
-			uv0.contextData.onSelect(uv1)
-			uv0:Destroy()
+		onButton(arg_5_0, var_5_0, function()
+			arg_5_0.contextData.onSelect(iter_5_0)
+			arg_5_0:Destroy()
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:Destroy()
+	onButton(arg_5_0, arg_5_0.backBtn, function()
+		arg_5_0:Destroy()
 	end, SFX_CANCEL)
 end
 
-function slot0.updateView(slot0)
+function var_0_0.updateView(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

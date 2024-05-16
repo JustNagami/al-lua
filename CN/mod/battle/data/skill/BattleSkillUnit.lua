@@ -1,143 +1,160 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleVariable
-slot0.Battle.BattleSkillUnit = class("BattleSkillUnit")
-slot0.Battle.BattleSkillUnit.__name = "BattleSkillUnit"
-slot3 = slot0.Battle.BattleSkillUnit
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1, slot2)
-	slot0._id = slot1
-	slot0._level = slot2
-	slot0._tempData = uv0.Battle.BattleDataFunction.GetSkillTemplate(slot1, slot2)
-	slot0._cd = slot0._tempData.cd
-	slot0._effectList = {}
-	slot0._lastEffectTarget = {}
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleVariable
 
-	for slot6, slot7 in ipairs(slot0._tempData.effect_list) do
-		slot0._effectList[slot6] = uv0.Battle[slot7.type].New(slot7, slot2)
+var_0_0.Battle.BattleSkillUnit = class("BattleSkillUnit")
+var_0_0.Battle.BattleSkillUnit.__name = "BattleSkillUnit"
+
+local var_0_3 = var_0_0.Battle.BattleSkillUnit
+
+function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._id = arg_1_1
+	arg_1_0._level = arg_1_2
+	arg_1_0._tempData = var_0_0.Battle.BattleDataFunction.GetSkillTemplate(arg_1_1, arg_1_2)
+	arg_1_0._cd = arg_1_0._tempData.cd
+	arg_1_0._effectList = {}
+	arg_1_0._lastEffectTarget = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0._tempData.effect_list) do
+		local var_1_0 = iter_1_1.type
+
+		arg_1_0._effectList[iter_1_0] = var_0_0.Battle[var_1_0].New(iter_1_1, arg_1_2)
 	end
 
-	slot0._finaleEffectCount = 0
-	slot0._dataProxy = uv0.Battle.BattleDataProxy.GetInstance()
+	arg_1_0._finaleEffectCount = 0
+	arg_1_0._dataProxy = var_0_0.Battle.BattleDataProxy.GetInstance()
 end
 
-function slot3.GenerateSpell(slot0, slot1, slot2, slot3)
-	slot4 = uv0.Battle.BattleSkillUnit.New(slot0, slot1)
-	slot4._attachData = slot3
+function var_0_3.GenerateSpell(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = var_0_0.Battle.BattleSkillUnit.New(arg_2_0, arg_2_1)
 
-	return slot4
+	var_2_0._attachData = arg_2_3
+
+	return var_2_0
 end
 
-function slot3.GetSkillEffectList(slot0)
-	return slot0._effectList
+function var_0_3.GetSkillEffectList(arg_3_0)
+	return arg_3_0._effectList
 end
 
-function slot3.Cast(slot0, slot1, slot2)
-	slot3 = uv0.Battle.BattleState.GetInstance()
+function var_0_3.Cast(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = var_0_0.Battle.BattleState.GetInstance()
 
-	if slot0._tempData.focus_duration then
-		slot1:DispatchCutIn(slot0._tempData)
+	if arg_4_0._tempData.focus_duration then
+		arg_4_1:DispatchCutIn(arg_4_0._tempData)
 	end
 
-	if slot0._tempData.painting == 1 then
-		if slot2 then
-			slot1:DispatchSkillFloat(slot2:getSkills()[1]:getConfig("name"), slot2:getPainting())
+	if arg_4_0._tempData.painting == 1 then
+		if arg_4_2 then
+			arg_4_1:DispatchSkillFloat(arg_4_2:getSkills()[1]:getConfig("name"), arg_4_2:getPainting())
 		else
-			slot1:DispatchSkillFloat(slot0._tempData.name)
+			arg_4_1:DispatchSkillFloat(arg_4_0._tempData.name)
 		end
-	elseif type(slot0._tempData.painting) == "string" then
-		slot1:DispatchSkillFloat(slot0._tempData.name, nil, slot0._tempData.painting)
+	elseif type(arg_4_0._tempData.painting) == "string" then
+		arg_4_1:DispatchSkillFloat(arg_4_0._tempData.name, nil, arg_4_0._tempData.painting)
 	end
 
-	if type(slot0._tempData.castCV) == "string" then
-		slot1:DispatchVoice(slot0._tempData.castCV)
-	elseif slot4 == "table" then
-		slot5, slot6, slot7 = ShipWordHelper.GetWordAndCV(slot0._tempData.castCV.skinID, slot0._tempData.castCV.key)
+	local var_4_1 = type(arg_4_0._tempData.castCV)
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot6)
+	if var_4_1 == "string" then
+		arg_4_1:DispatchVoice(arg_4_0._tempData.castCV)
+	elseif var_4_1 == "table" then
+		local var_4_2, var_4_3, var_4_4 = ShipWordHelper.GetWordAndCV(arg_4_0._tempData.castCV.skinID, arg_4_0._tempData.castCV.key)
+
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_4_3)
 	end
 
-	if slot0._tempData.sfx then
-		uv0.Battle.PlayBattleSFX(slot0._tempData.sfx)
+	if arg_4_0._tempData.sfx then
+		var_0_0.Battle.PlayBattleSFX(arg_4_0._tempData.sfx)
 	end
 
-	slot5 = slot0._attachData
+	local var_4_5 = arg_4_0._attachData
 
-	for slot9, slot10 in ipairs(slot0._effectList) do
-		slot0._lastEffectTarget = slot10:GetTarget(slot1, slot0)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._effectList) do
+		local var_4_6 = iter_4_1:GetTarget(arg_4_1, arg_4_0)
 
-		slot10:SetCommander(slot2)
+		arg_4_0._lastEffectTarget = var_4_6
 
-		if slot10:IsFinaleEffect() then
-			slot0._finaleEffectCount = slot0._finaleEffectCount + 1
+		iter_4_1:SetCommander(arg_4_2)
 
-			slot10:SetFinaleCallback(function ()
-				uv0:callbackCount(uv1)
-			end)
+		if iter_4_1:IsFinaleEffect() then
+			arg_4_0._finaleEffectCount = arg_4_0._finaleEffectCount + 1
+
+			local function var_4_7()
+				arg_4_0:callbackCount(arg_4_1)
+			end
+
+			iter_4_1:SetFinaleCallback(var_4_7)
 		end
 
-		slot10:Effect(slot1, slot11, slot5)
+		iter_4_1:Effect(arg_4_1, var_4_6, var_4_5)
 	end
 
-	if slot0._tempData.aniEffect and slot6 ~= "" then
-		slot1:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.ADD_EFFECT, {
-			effect = slot6.effect,
-			time = slot6.time,
-			offset = slot6.offset,
-			posFun = slot6.posFun
-		}))
+	local var_4_8 = arg_4_0._tempData.aniEffect
+
+	if var_4_8 and var_4_8 ~= "" then
+		local var_4_9 = {
+			effect = var_4_8.effect,
+			time = var_4_8.time,
+			offset = var_4_8.offset,
+			posFun = var_4_8.posFun
+		}
+
+		arg_4_1:DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.ADD_EFFECT, var_4_9))
 	end
 
-	if slot0._tempData.action then
-		slot1:StateChange(uv0.Battle.UnitState.STATE_SKILL_START)
-	end
-end
-
-function slot3.SetTarget(slot0, slot1)
-	slot0._lastEffectTarget = slot1
-end
-
-function slot3.Interrupt(slot0)
-	for slot4, slot5 in ipairs(slot0._effectList) do
-		slot5:Interrupt()
+	if arg_4_0._tempData.action then
+		arg_4_1:StateChange(var_0_0.Battle.UnitState.STATE_SKILL_START)
 	end
 end
 
-function slot3.Clear(slot0)
-	for slot4, slot5 in ipairs(slot0._effectList) do
-		slot5:Clear()
+function var_0_3.SetTarget(arg_6_0, arg_6_1)
+	arg_6_0._lastEffectTarget = arg_6_1
+end
+
+function var_0_3.Interrupt(arg_7_0)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0._effectList) do
+		iter_7_1:Interrupt()
 	end
 end
 
-function slot3.callbackCount(slot0, slot1)
-	slot0._finaleEffectCount = slot0._finaleEffectCount - 1
-
-	if slot0._finaleEffectCount == 0 and slot0._tempData.action then
-		slot1:StateChange(uv0.Battle.UnitState.STATE_SKILL_END)
+function var_0_3.Clear(arg_8_0)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0._effectList) do
+		iter_8_1:Clear()
 	end
 end
 
-function slot3.GetDamageSum(slot0)
-	slot1 = 0
+function var_0_3.callbackCount(arg_9_0, arg_9_1)
+	arg_9_0._finaleEffectCount = arg_9_0._finaleEffectCount - 1
 
-	for slot5, slot6 in ipairs(slot0._effectList) do
-		slot1 = slot6:GetDamageSum() + slot1
+	if arg_9_0._finaleEffectCount == 0 and arg_9_0._tempData.action then
+		arg_9_1:StateChange(var_0_0.Battle.UnitState.STATE_SKILL_END)
 	end
-
-	return slot1
 end
 
-function slot3.IsFireSkill(slot0, slot1)
-	slot2 = false
+function var_0_3.GetDamageSum(arg_10_0)
+	local var_10_0 = 0
 
-	for slot7, slot8 in ipairs(uv0.Battle.BattleDataFunction.GetSkillTemplate(slot0, slot1).effect_list) do
-		if slot8.type == uv0.Battle.BattleSkillFire.__name or slot8.type == uv0.Battle.BattleSkillFireSupport.__name then
-			slot2 = true
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0._effectList) do
+		var_10_0 = iter_10_1:GetDamageSum() + var_10_0
+	end
+
+	return var_10_0
+end
+
+function var_0_3.IsFireSkill(arg_11_0, arg_11_1)
+	local var_11_0 = false
+	local var_11_1 = var_0_0.Battle.BattleDataFunction.GetSkillTemplate(arg_11_0, arg_11_1)
+
+	for iter_11_0, iter_11_1 in ipairs(var_11_1.effect_list) do
+		if iter_11_1.type == var_0_0.Battle.BattleSkillFire.__name or iter_11_1.type == var_0_0.Battle.BattleSkillFireSupport.__name then
+			var_11_0 = true
 
 			break
 		end
 	end
 
-	return slot2
+	return var_11_0
 end

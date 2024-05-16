@@ -1,168 +1,172 @@
-slot0 = class("CardPuzzleShip", BaseVO)
+﻿local var_0_0 = class("CardPuzzleShip", BaseVO)
 
-function slot0.getShipArmor(slot0)
-	return slot0:getConfig("armor")
+function var_0_0.getShipArmor(arg_1_0)
+	return arg_1_0:getConfig("armor")
 end
 
-function slot0.getShipArmorName(slot0)
-	return ArmorType.Type2Name(slot0:getShipArmor())
+function var_0_0.getShipArmorName(arg_2_0)
+	local var_2_0 = arg_2_0:getShipArmor()
+
+	return ArmorType.Type2Name(var_2_0)
 end
 
-function slot0.getGroupId(slot0)
-	return pg.ship_data_template[slot0.configId].group_type
+function var_0_0.getGroupId(arg_3_0)
+	return pg.ship_data_template[arg_3_0.configId].group_type
 end
 
-function slot0.getGroupIdByConfigId(slot0)
-	return math.floor(slot0 / 10)
+function var_0_0.getGroupIdByConfigId(arg_4_0)
+	return math.floor(arg_4_0 / 10)
 end
 
-function slot0.getShipType(slot0)
-	return pg.ship_data_statistics[slot0.configId].type
+function var_0_0.getShipType(arg_5_0)
+	return pg.ship_data_statistics[arg_5_0.configId].type
 end
 
-function slot0.getNation(slot0)
+function var_0_0.getNation(arg_6_0)
 	assert(false)
 end
 
-function slot0.getPaintingName(slot0)
-	slot1 = pg.ship_data_statistics[slot0].skin_id
-	slot2 = pg.ship_skin_template[slot1]
+function var_0_0.getPaintingName(arg_7_0)
+	local var_7_0 = pg.ship_data_statistics[arg_7_0].skin_id
+	local var_7_1 = pg.ship_skin_template[var_7_0]
 
-	assert(slot2, "ship_skin_template not exist: " .. slot0 .. " " .. slot1)
+	assert(var_7_1, "ship_skin_template not exist: " .. arg_7_0 .. " " .. var_7_0)
 
-	return slot2.painting
+	return var_7_1.painting
 end
 
-function slot0.getName(slot0)
-	return pg.ship_data_statistics[slot0.configId].name
+function var_0_0.getName(arg_8_0)
+	return pg.ship_data_statistics[arg_8_0.configId].name
 end
 
-function slot0.getShipName(slot0)
-	return pg.ship_data_statistics[slot0].name
+function var_0_0.getShipName(arg_9_0)
+	return pg.ship_data_statistics[arg_9_0].name
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.configId = slot1.template_id or slot1.configId
-	slot0.level = slot1.level
-	slot0.exp = slot1.exp
+function var_0_0.Ctor(arg_10_0, arg_10_1)
+	arg_10_0.configId = arg_10_1.template_id or arg_10_1.configId
+	arg_10_0.level = arg_10_1.level
+	arg_10_0.exp = arg_10_1.exp
 
-	if slot1.name and slot1.name ~= "" then
-		slot0.name = slot1.name
+	if arg_10_1.name and arg_10_1.name ~= "" then
+		arg_10_0.name = arg_10_1.name
 	else
-		assert(pg.ship_data_statistics[slot0.configId], "必须存在配置" .. slot0.configId)
+		assert(pg.ship_data_statistics[arg_10_0.configId], "必须存在配置" .. arg_10_0.configId)
 
-		slot0.name = pg.ship_data_statistics[slot0.configId].name
+		arg_10_0.name = pg.ship_data_statistics[arg_10_0.configId].name
 	end
 
-	slot0.equipmentSkins = {}
-	slot0.equipments = {}
+	arg_10_0.equipmentSkins = {}
+	arg_10_0.equipments = {}
 
-	if slot1.equip_info_list then
-		slot2 = ipairs
-		slot3 = slot1.equip_info_list or {}
-
-		for slot5, slot6 in slot2(slot3) do
-			slot0.equipments[slot5] = slot6.id > 0 and Equipment.New({
+	if arg_10_1.equip_info_list then
+		for iter_10_0, iter_10_1 in ipairs(arg_10_1.equip_info_list or {}) do
+			arg_10_0.equipments[iter_10_0] = iter_10_1.id > 0 and Equipment.New({
 				count = 1,
-				id = slot6.id,
-				config_id = slot6.id,
-				skinId = slot6.skinId
+				id = iter_10_1.id,
+				config_id = iter_10_1.id,
+				skinId = iter_10_1.skinId
 			}) or false
-			slot0.equipmentSkins[slot5] = slot6.skinId > 0 and slot6.skinId or 0
+			arg_10_0.equipmentSkins[iter_10_0] = iter_10_1.skinId > 0 and iter_10_1.skinId or 0
 
-			slot0:reletiveEquipSkin(slot5)
+			arg_10_0:reletiveEquipSkin(iter_10_0)
 		end
 	end
 
-	slot0.skills = {}
-	slot2 = ipairs
-	slot3 = slot1.skill_id_list or {}
+	arg_10_0.skills = {}
 
-	for slot5, slot6 in slot2(slot3) do
-		slot0:updateSkill(slot6)
+	for iter_10_2, iter_10_3 in ipairs(arg_10_1.skill_id_list or {}) do
+		arg_10_0:updateSkill(iter_10_3)
 	end
 
-	slot0.star = slot0:getConfig("rarity")
-	slot0.transforms = {}
+	arg_10_0.star = arg_10_0:getConfig("rarity")
+	arg_10_0.transforms = {}
 
 	if not HXSet.isHxSkin() then
-		slot0.skinId = slot1.skin_id or 0
+		arg_10_0.skinId = arg_10_1.skin_id or 0
 	else
-		slot0.skinId = 0
+		arg_10_0.skinId = 0
 	end
 
-	if slot0.skinId == 0 then
-		slot0.skinId = slot0:getConfig("skin_id")
+	if arg_10_0.skinId == 0 then
+		arg_10_0.skinId = arg_10_0:getConfig("skin_id")
 	end
 end
 
-function slot0.getActiveEquipments(slot0)
-	for slot5 = #Clone(slot0.equipments), 1, -1 do
-		if slot1[slot5] then
-			for slot10 = 1, slot5 - 1 do
-				if slot1[slot10] and slot6:getConfig("equip_limit") ~= 0 and slot11:getConfig("equip_limit") == slot6:getConfig("equip_limit") then
-					slot1[slot5] = false
+function var_0_0.getActiveEquipments(arg_11_0)
+	local var_11_0 = Clone(arg_11_0.equipments)
+
+	for iter_11_0 = #var_11_0, 1, -1 do
+		local var_11_1 = var_11_0[iter_11_0]
+
+		if var_11_1 then
+			for iter_11_1 = 1, iter_11_0 - 1 do
+				local var_11_2 = var_11_0[iter_11_1]
+
+				if var_11_2 and var_11_1:getConfig("equip_limit") ~= 0 and var_11_2:getConfig("equip_limit") == var_11_1:getConfig("equip_limit") then
+					var_11_0[iter_11_0] = false
 				end
 			end
 		end
 	end
 
-	return slot1
+	return var_11_0
 end
 
-function slot0.getAllEquipments(slot0)
-	return slot0.equipments
+function var_0_0.getAllEquipments(arg_12_0)
+	return arg_12_0.equipments
 end
 
-function slot0.updateSkinId(slot0, slot1)
-	slot0.skinId = slot1
+function var_0_0.updateSkinId(arg_13_0, arg_13_1)
+	arg_13_0.skinId = arg_13_1
 end
 
-function slot0.getPrefab(slot0)
-	slot1 = slot0.skinId
-	slot2 = pg.ship_skin_template[slot1]
+function var_0_0.getPrefab(arg_14_0)
+	local var_14_0 = arg_14_0.skinId
+	local var_14_1 = pg.ship_skin_template[var_14_0]
 
-	assert(slot2, "ship_skin_template not exist: " .. slot0.configId .. " " .. slot1)
+	assert(var_14_1, "ship_skin_template not exist: " .. arg_14_0.configId .. " " .. var_14_0)
 
-	return slot2.prefab
+	return var_14_1.prefab
 end
 
-function slot0.getPainting(slot0)
-	slot1 = pg.ship_skin_template[slot0.skinId]
+function var_0_0.getPainting(arg_15_0)
+	local var_15_0 = pg.ship_skin_template[arg_15_0.skinId]
 
-	assert(slot1, "ship_skin_template not exist: " .. slot0.configId .. " " .. slot0.skinId)
+	assert(var_15_0, "ship_skin_template not exist: " .. arg_15_0.configId .. " " .. arg_15_0.skinId)
 
-	return slot1.painting
+	return var_15_0.painting
 end
 
-function slot0.GetSkinConfig(slot0)
-	slot1 = pg.ship_skin_template[slot0.skinId]
+function var_0_0.GetSkinConfig(arg_16_0)
+	local var_16_0 = pg.ship_skin_template[arg_16_0.skinId]
 
-	assert(slot1, "ship_skin_template not exist: " .. slot0.configId .. " " .. slot0.skinId)
+	assert(var_16_0, "ship_skin_template not exist: " .. arg_16_0.configId .. " " .. arg_16_0.skinId)
 
-	return slot1
+	return var_16_0
 end
 
-function slot0.updateEquip(slot0, slot1, slot2)
-	assert(slot2 == nil or slot2.count == 1)
+function var_0_0.updateEquip(arg_17_0, arg_17_1, arg_17_2)
+	assert(arg_17_2 == nil or arg_17_2.count == 1)
 
-	slot3 = slot0.equipments[slot1]
-	slot0.equipments[slot1] = slot2 and Clone(slot2) or false
+	local var_17_0 = arg_17_0.equipments[arg_17_1]
+
+	arg_17_0.equipments[arg_17_1] = arg_17_2 and Clone(arg_17_2) or false
 end
 
-function slot0.getEquip(slot0, slot1)
-	return Clone(slot0.equipments[slot1])
+function var_0_0.getEquip(arg_18_0, arg_18_1)
+	return Clone(arg_18_0.equipments[arg_18_1])
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_19_0)
 	return pg.puzzle_ship_template
 end
 
-function slot0.isAvaiable(slot0)
+function var_0_0.isAvaiable(arg_20_0)
 	return true
 end
 
-slot0.PROPERTIES = {
+var_0_0.PROPERTIES = {
 	AttributeType.Durability,
 	AttributeType.Cannon,
 	AttributeType.Torpedo,
@@ -176,7 +180,7 @@ slot0.PROPERTIES = {
 	AttributeType.Dodge,
 	AttributeType.Luck
 }
-slot0.DIVE_PROPERTIES = {
+var_0_0.DIVE_PROPERTIES = {
 	AttributeType.OxyMax,
 	AttributeType.OxyCost,
 	AttributeType.OxyRecovery,
@@ -184,231 +188,251 @@ slot0.DIVE_PROPERTIES = {
 	AttributeType.OxyAttackDuration,
 	AttributeType.OxyRaidDistance
 }
-slot0.SONAR_PROPERTIES = {
+var_0_0.SONAR_PROPERTIES = {
 	AttributeType.SonarRange
 }
 
-function slot0.getShipProperties(slot0)
-	return slot0:getBaseProperties()
+function var_0_0.getShipProperties(arg_21_0)
+	return (arg_21_0:getBaseProperties())
 end
 
-function slot0.getBaseProperties(slot0)
-	assert(slot0:getConfigTable(), "配置表没有这艘船" .. slot0.configId)
+function var_0_0.getBaseProperties(arg_22_0)
+	local var_22_0 = arg_22_0:getConfigTable()
 
-	slot2 = {}
+	assert(var_22_0, "配置表没有这艘船" .. arg_22_0.configId)
 
-	for slot6, slot7 in ipairs(uv0.PROPERTIES) do
-		slot2[slot7] = slot1[slot7]
+	local var_22_1 = {}
+
+	for iter_22_0, iter_22_1 in ipairs(var_0_0.PROPERTIES) do
+		var_22_1[iter_22_1] = var_22_0[iter_22_1]
 	end
 
-	for slot6, slot7 in ipairs(uv0.DIVE_PROPERTIES) do
-		slot2[slot7] = 0
+	for iter_22_2, iter_22_3 in ipairs(var_0_0.DIVE_PROPERTIES) do
+		var_22_1[iter_22_3] = 0
 	end
 
-	for slot6, slot7 in ipairs(uv0.SONAR_PROPERTIES) do
-		slot2[slot7] = 0
+	for iter_22_4, iter_22_5 in ipairs(var_0_0.SONAR_PROPERTIES) do
+		var_22_1[iter_22_5] = 0
 	end
 
-	return slot2
+	return var_22_1
 end
 
-function slot0.getGiftProperties(slot0, slot1)
-	slot2 = {}
+function var_0_0.getGiftProperties(arg_23_0, arg_23_1)
+	local var_23_0 = {}
 
-	for slot6, slot7 in ipairs(uv0.PROPERTIES) do
-		slot2[slot7] = 0
+	for iter_23_0, iter_23_1 in ipairs(var_0_0.PROPERTIES) do
+		var_23_0[iter_23_1] = 0
 	end
 
-	for slot6, slot7 in ipairs(uv0.DIVE_PROPERTIES) do
-		slot2[slot7] = 0
+	for iter_23_2, iter_23_3 in ipairs(var_0_0.DIVE_PROPERTIES) do
+		var_23_0[iter_23_3] = 0
 	end
 
-	for slot6, slot7 in ipairs(uv0.SONAR_PROPERTIES) do
-		slot2[slot7] = 0
+	for iter_23_4, iter_23_5 in ipairs(var_0_0.SONAR_PROPERTIES) do
+		var_23_0[iter_23_5] = 0
 	end
 
-	for slot6, slot7 in ipairs(slot1) do
-		if slot7 then
-			for slot12, slot13 in ipairs(slot7:GetAttributeBonus(slot0)) do
-				if slot13 and slot2[slot13.type] then
-					slot2[slot13.type] = slot2[slot13.type] + slot13.value
+	for iter_23_6, iter_23_7 in ipairs(arg_23_1) do
+		if iter_23_7 then
+			local var_23_1 = iter_23_7:GetAttributeBonus(arg_23_0)
+
+			for iter_23_8, iter_23_9 in ipairs(var_23_1) do
+				if iter_23_9 and var_23_0[iter_23_9.type] then
+					var_23_0[iter_23_9.type] = var_23_0[iter_23_9.type] + iter_23_9.value
 				end
 			end
 		end
 	end
 
-	return slot2
+	return var_23_0
 end
 
-function slot0.getProperties(slot0, slot1)
-	slot2 = slot0:getShipProperties()
-	slot3 = slot0:getGiftProperties(slot1)
+function var_0_0.getProperties(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0:getShipProperties()
+	local var_24_1 = arg_24_0:getGiftProperties(arg_24_1)
 
-	for slot7, slot8 in ipairs(uv0.PROPERTIES) do
-		if slot8 == AttributeType.Speed then
-			slot2[slot8] = slot2[slot8] + slot3[slot8]
+	for iter_24_0, iter_24_1 in ipairs(var_0_0.PROPERTIES) do
+		if iter_24_1 == AttributeType.Speed then
+			var_24_0[iter_24_1] = var_24_0[iter_24_1] + var_24_1[iter_24_1]
 		else
-			slot2[slot8] = calcFloor(slot2[slot8] + slot3[slot8])
+			var_24_0[iter_24_1] = calcFloor(var_24_0[iter_24_1] + var_24_1[iter_24_1])
 		end
 	end
 
-	for slot7, slot8 in ipairs(uv0.DIVE_PROPERTIES) do
-		slot2[slot8] = slot2[slot8] + slot3[slot8]
+	for iter_24_2, iter_24_3 in ipairs(var_0_0.DIVE_PROPERTIES) do
+		var_24_0[iter_24_3] = var_24_0[iter_24_3] + var_24_1[iter_24_3]
 	end
 
-	for slot7, slot8 in ipairs(uv0.SONAR_PROPERTIES) do
-		slot2[slot8] = slot2[slot8] + slot3[slot8]
+	for iter_24_4, iter_24_5 in ipairs(var_0_0.SONAR_PROPERTIES) do
+		var_24_0[iter_24_5] = var_24_0[iter_24_5] + var_24_1[iter_24_5]
 	end
 
-	return slot2
+	return var_24_0
 end
 
-function slot0.getTriggerSkills(slot0)
-	_.each(slot0:getSkillEffects(), function (slot0)
-		if slot0.type == "AddBuff" and slot0.arg_list and slot0.arg_list.buff_id then
-			slot1 = slot0.arg_list.buff_id
-			uv0[slot1] = {
-				id = slot1,
-				level = slot0.level
+function var_0_0.getTriggerSkills(arg_25_0)
+	local var_25_0 = {}
+	local var_25_1 = arg_25_0:getSkillEffects()
+
+	_.each(var_25_1, function(arg_26_0)
+		if arg_26_0.type == "AddBuff" and arg_26_0.arg_list and arg_26_0.arg_list.buff_id then
+			local var_26_0 = arg_26_0.arg_list.buff_id
+
+			var_25_0[var_26_0] = {
+				id = var_26_0,
+				level = arg_26_0.level
 			}
 		end
 	end)
 
-	return {}
+	return var_25_0
 end
 
-function slot0.GetEquipmentSkills(slot0)
-	slot1 = {}
+function var_0_0.GetEquipmentSkills(arg_27_0)
+	local var_27_0 = {}
+	local var_27_1 = arg_27_0:getActiveEquipments()
 
-	for slot6, slot7 in ipairs(slot0:getActiveEquipments()) do
-		if slot7 and slot7:getConfig("skill_id")[1] then
-			slot1[slot8] = {
-				level = 1,
-				id = slot8
-			}
+	for iter_27_0, iter_27_1 in ipairs(var_27_1) do
+		if iter_27_1 then
+			local var_27_2 = iter_27_1:getConfig("skill_id")[1]
+
+			if var_27_2 then
+				var_27_0[var_27_2] = {
+					level = 1,
+					id = var_27_2
+				}
+			end
 		end
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.getAllSkills(slot0)
-	slot1 = Clone(slot0.skills)
+function var_0_0.getAllSkills(arg_28_0)
+	local var_28_0 = Clone(arg_28_0.skills)
 
-	for slot5, slot6 in pairs(slot0:GetEquipmentSkills()) do
-		slot1[slot5] = slot6
+	for iter_28_0, iter_28_1 in pairs(arg_28_0:GetEquipmentSkills()) do
+		var_28_0[iter_28_0] = iter_28_1
 	end
 
-	for slot5, slot6 in pairs(slot0:getTriggerSkills()) do
-		slot1[slot5] = slot6
+	for iter_28_2, iter_28_3 in pairs(arg_28_0:getTriggerSkills()) do
+		var_28_0[iter_28_2] = iter_28_3
 	end
 
-	return slot1
+	return var_28_0
 end
 
-function slot0.getRarity(slot0)
+function var_0_0.getRarity(arg_29_0)
 	assert(false)
 end
 
-function slot0.getExchangePrice(slot0)
+function var_0_0.getExchangePrice(arg_30_0)
 	assert(false)
 end
 
-function slot0.upgrade(slot0)
+function var_0_0.upgrade(arg_31_0)
 	assert(false)
 end
 
-function slot0.getTeamType(slot0)
-	return TeamType.GetTeamFromShipType(slot0:getShipType())
+function var_0_0.getTeamType(arg_32_0)
+	return TeamType.GetTeamFromShipType(arg_32_0:getShipType())
 end
 
-function slot0.getMaxConfigId(slot0)
-	slot1 = pg.ship_data_template
-	slot2 = nil
+function var_0_0.getMaxConfigId(arg_33_0)
+	local var_33_0 = pg.ship_data_template
+	local var_33_1
 
-	for slot6 = 4, 1, -1 do
-		if slot1[tonumber(slot0.groupId .. slot6)] then
-			slot2 = slot7
+	for iter_33_0 = 4, 1, -1 do
+		local var_33_2 = tonumber(arg_33_0.groupId .. iter_33_0)
+
+		if var_33_0[var_33_2] then
+			var_33_1 = var_33_2
 
 			break
 		end
 	end
 
-	return slot2
+	return var_33_1
 end
 
-function slot0.fateSkillChange(slot0, slot1)
-	if not slot0.skillChangeList then
-		slot0.skillChangeList = slot0:isBluePrintShip() and slot0:getBluePrint():getChangeSkillList() or {}
+function var_0_0.fateSkillChange(arg_34_0, arg_34_1)
+	if not arg_34_0.skillChangeList then
+		arg_34_0.skillChangeList = arg_34_0:isBluePrintShip() and arg_34_0:getBluePrint():getChangeSkillList() or {}
 	end
 
-	for slot5, slot6 in ipairs(slot0.skillChangeList) do
-		if slot6[1] == slot1 and slot0.skills[slot6[2]] then
-			return slot6[2]
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.skillChangeList) do
+		if iter_34_1[1] == arg_34_1 and arg_34_0.skills[iter_34_1[2]] then
+			return iter_34_1[2]
 		end
 	end
 
-	return slot1
+	return arg_34_1
 end
 
-function slot0.getSkillList(slot0)
-	slot1 = pg.ship_data_template[slot0.configId]
-	slot2 = Clone(slot1.buff_list_display)
-	slot3 = Clone(slot1.buff_list)
-	slot5 = 0
+function var_0_0.getSkillList(arg_35_0)
+	local var_35_0 = pg.ship_data_template[arg_35_0.configId]
+	local var_35_1 = Clone(var_35_0.buff_list_display)
+	local var_35_2 = Clone(var_35_0.buff_list)
+	local var_35_3 = pg.ship_data_trans[arg_35_0.groupId]
+	local var_35_4 = 0
 
-	if pg.ship_data_trans[slot0.groupId] and slot4.skill_id ~= 0 then
-		slot6 = slot4.skill_id
-		slot7 = pg.transform_data_template[slot6]
+	if var_35_3 and var_35_3.skill_id ~= 0 then
+		local var_35_5 = var_35_3.skill_id
+		local var_35_6 = pg.transform_data_template[var_35_5]
 
-		if slot0.transforms[slot6] and slot7.skill_id ~= 0 then
-			table.insert(slot3, slot7.skill_id)
+		if arg_35_0.transforms[var_35_5] and var_35_6.skill_id ~= 0 then
+			table.insert(var_35_2, var_35_6.skill_id)
 		end
 	end
 
-	slot6 = {}
+	local var_35_7 = {}
 
-	for slot10, slot11 in ipairs(slot2) do
-		for slot15, slot16 in ipairs(slot3) do
-			if slot11 == slot16 then
-				table.insert(slot6, slot0:fateSkillChange(slot11))
+	for iter_35_0, iter_35_1 in ipairs(var_35_1) do
+		for iter_35_2, iter_35_3 in ipairs(var_35_2) do
+			if iter_35_1 == iter_35_3 then
+				table.insert(var_35_7, arg_35_0:fateSkillChange(iter_35_1))
 			end
 		end
 	end
 
-	return slot6
+	return var_35_7
 end
 
-function slot0.getDisplaySkillIds(slot0)
-	return _.map(pg.ship_data_template[slot0.configId].buff_list_display, function (slot0)
-		return uv0:fateSkillChange(slot0)
+function var_0_0.getDisplaySkillIds(arg_36_0)
+	return _.map(pg.ship_data_template[arg_36_0.configId].buff_list_display, function(arg_37_0)
+		return arg_36_0:fateSkillChange(arg_37_0)
 	end)
 end
 
-function slot0.getSkillIndex(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0:getSkillList()) do
-		if slot1 == slot7 then
-			return slot6
+function var_0_0.getSkillIndex(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0:getSkillList()
+
+	for iter_38_0, iter_38_1 in ipairs(var_38_0) do
+		if arg_38_1 == iter_38_1 then
+			return iter_38_0
 		end
 	end
 end
 
-function slot0.IsBgmSkin(slot0)
-	return table.contains(slot0:GetSkinConfig().tag, ShipSkin.WITH_BGM)
+function var_0_0.IsBgmSkin(arg_39_0)
+	local var_39_0 = arg_39_0:GetSkinConfig()
+
+	return table.contains(var_39_0.tag, ShipSkin.WITH_BGM)
 end
 
-function slot0.GetSkinBgm(slot0)
-	if slot0:IsBgmSkin() then
-		return slot0:GetSkinConfig().bgm
+function var_0_0.GetSkinBgm(arg_40_0)
+	if arg_40_0:IsBgmSkin() then
+		return arg_40_0:GetSkinConfig().bgm
 	end
 end
 
-function slot0.GetConfigId(slot0)
-	return slot0.configId
+function var_0_0.GetConfigId(arg_41_0)
+	return arg_41_0.configId
 end
 
-function slot0.GetDefaultCards(slot0)
-	return slot0:getConfig("default_card")
+function var_0_0.GetDefaultCards(arg_42_0)
+	return arg_42_0:getConfig("default_card")
 end
 
-return slot0
+return var_0_0

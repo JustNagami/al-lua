@@ -1,55 +1,57 @@
-slot0 = class("TechnologyProxy", import(".NetProxy"))
-slot0.TECHNOLOGY_UPDATED = "TechnologyProxy:TECHNOLOGY_UPDATED"
-slot0.BLUEPRINT_ADDED = "TechnologyProxy:BLUEPRINT_ADDED"
-slot0.BLUEPRINT_UPDATED = "TechnologyProxy:BLUEPRINT_UPDATED"
-slot0.REFRESH_UPDATED = "TechnologyProxy:REFRESH_UPDATED"
+﻿local var_0_0 = class("TechnologyProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.tendency = {}
+var_0_0.TECHNOLOGY_UPDATED = "TechnologyProxy:TECHNOLOGY_UPDATED"
+var_0_0.BLUEPRINT_ADDED = "TechnologyProxy:BLUEPRINT_ADDED"
+var_0_0.BLUEPRINT_UPDATED = "TechnologyProxy:BLUEPRINT_UPDATED"
+var_0_0.REFRESH_UPDATED = "TechnologyProxy:REFRESH_UPDATED"
 
-	slot0:on(63000, function (slot0)
-		uv0:updateTechnologys(slot0.refresh_list)
+function var_0_0.register(arg_1_0)
+	arg_1_0.tendency = {}
 
-		uv0.refreshTechnologysFlag = slot0.refresh_flag
+	arg_1_0:on(63000, function(arg_2_0)
+		arg_1_0:updateTechnologys(arg_2_0.refresh_list)
 
-		uv0:updateTecCatchup(slot0.catchup)
-		uv0:updateTechnologyQueue(slot0.queue)
+		arg_1_0.refreshTechnologysFlag = arg_2_0.refresh_flag
+
+		arg_1_0:updateTecCatchup(arg_2_0.catchup)
+		arg_1_0:updateTechnologyQueue(arg_2_0.queue)
 	end)
 
-	slot0.bluePrintData = {}
-	slot0.item2blueprint = {}
-	slot0.maxConfigVersion = 0
+	arg_1_0.bluePrintData = {}
+	arg_1_0.item2blueprint = {}
+	arg_1_0.maxConfigVersion = 0
 
-	_.each(pg.ship_data_blueprint.all, function (slot0)
-		slot1 = ShipBluePrint.New({
-			id = slot0
+	_.each(pg.ship_data_blueprint.all, function(arg_3_0)
+		local var_3_0 = ShipBluePrint.New({
+			id = arg_3_0
 		})
-		uv0.maxConfigVersion = math.max(uv0.maxConfigVersion, slot1:getConfig("blueprint_version"))
-		uv0.bluePrintData[slot1.id] = slot1
-		uv0.item2blueprint[slot1:getItemId()] = slot1.id
-	end)
-	slot0:on(63100, function (slot0)
-		for slot4, slot5 in ipairs(slot0.blueprint_list) do
-			slot6 = uv0.bluePrintData[slot5.id]
 
-			assert(slot6, "miss config ship_data_blueprint>>>>>>>>" .. slot5.id)
-			slot6:updateInfo(slot5)
+		arg_1_0.maxConfigVersion = math.max(arg_1_0.maxConfigVersion, var_3_0:getConfig("blueprint_version"))
+		arg_1_0.bluePrintData[var_3_0.id] = var_3_0
+		arg_1_0.item2blueprint[var_3_0:getItemId()] = var_3_0.id
+	end)
+	arg_1_0:on(63100, function(arg_4_0)
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0.blueprint_list) do
+			local var_4_0 = arg_1_0.bluePrintData[iter_4_1.id]
+
+			assert(var_4_0, "miss config ship_data_blueprint>>>>>>>>" .. iter_4_1.id)
+			var_4_0:updateInfo(iter_4_1)
 		end
 
-		uv0.coldTime = slot0.cold_time or 0
-		uv0.pursuingTimes = slot0.daily_catchup_strengthen or 0
-		uv0.pursuingTimesUR = slot0.daily_catchup_strengthen_ur or 0
+		arg_1_0.coldTime = arg_4_0.cold_time or 0
+		arg_1_0.pursuingTimes = arg_4_0.daily_catchup_strengthen or 0
+		arg_1_0.pursuingTimesUR = arg_4_0.daily_catchup_strengthen_ur or 0
 	end)
 end
 
-function slot0.setVersion(slot0, slot1)
-	PlayerPrefs.SetInt("technology_version", slot1)
+function var_0_0.setVersion(arg_5_0, arg_5_1)
+	PlayerPrefs.SetInt("technology_version", arg_5_1)
 	PlayerPrefs.Save()
 end
 
-function slot0.getVersion(slot0)
+function var_0_0.getVersion(arg_6_0)
 	if not PlayerPrefs.HasKey("technology_version") then
-		slot0:setVersion(1)
+		arg_6_0:setVersion(1)
 
 		return 1
 	else
@@ -57,394 +59,395 @@ function slot0.getVersion(slot0)
 	end
 end
 
-function slot0.getConfigMaxVersion(slot0)
-	return slot0.maxConfigVersion
+function var_0_0.getConfigMaxVersion(arg_7_0)
+	return arg_7_0.maxConfigVersion
 end
 
-function slot0.setTendency(slot0, slot1, slot2)
-	slot0.tendency[slot1] = slot2
+function var_0_0.setTendency(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0.tendency[arg_8_1] = arg_8_2
 end
 
-function slot0.getTendency(slot0, slot1)
-	return slot0.tendency[slot1]
+function var_0_0.getTendency(arg_9_0, arg_9_1)
+	return arg_9_0.tendency[arg_9_1]
 end
 
-function slot0.updateBlueprintStates(slot0)
-	slot1 = pairs
-	slot2 = slot0.bluePrintData or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		slot5:updateState()
+function var_0_0.updateBlueprintStates(arg_10_0)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.bluePrintData or {}) do
+		iter_10_1:updateState()
 	end
 end
 
-function slot0.getColdTime(slot0)
-	return slot0.coldTime
+function var_0_0.getColdTime(arg_11_0)
+	return arg_11_0.coldTime
 end
 
-function slot0.updateColdTime(slot0)
-	slot0.coldTime = pg.TimeMgr.GetInstance():GetServerTime() + 86400
+function var_0_0.updateColdTime(arg_12_0)
+	arg_12_0.coldTime = pg.TimeMgr.GetInstance():GetServerTime() + 86400
 end
 
-function slot0.updateRefreshFlag(slot0, slot1)
-	slot0.refreshTechnologysFlag = slot1
+function var_0_0.updateRefreshFlag(arg_13_0, arg_13_1)
+	arg_13_0.refreshTechnologysFlag = arg_13_1
 
-	slot0:sendNotification(uv0.REFRESH_UPDATED, slot0.refreshTechnologysFlag)
+	arg_13_0:sendNotification(var_0_0.REFRESH_UPDATED, arg_13_0.refreshTechnologysFlag)
 end
 
-function slot0.updateTechnologys(slot0, slot1)
-	slot0.data = {}
+function var_0_0.updateTechnologys(arg_14_0, arg_14_1)
+	arg_14_0.data = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.tendency[slot6.id] = slot6.target
+	for iter_14_0, iter_14_1 in ipairs(arg_14_1) do
+		arg_14_0.tendency[iter_14_1.id] = iter_14_1.target
 
-		for slot10, slot11 in ipairs(slot6.technologys) do
-			slot0.data[slot11.id] = Technology.New({
-				id = slot11.id,
-				time = slot11.time,
-				pool_id = slot6.id
+		for iter_14_2, iter_14_3 in ipairs(iter_14_1.technologys) do
+			arg_14_0.data[iter_14_3.id] = Technology.New({
+				id = iter_14_3.id,
+				time = iter_14_3.time,
+				pool_id = iter_14_1.id
 			})
 		end
 	end
 end
 
-function slot0.updateTecCatchup(slot0, slot1)
-	slot0.curCatchupTecID = slot1.version
-	slot0.curCatchupGroupID = slot1.target
-	slot0.catchupData = {}
+function var_0_0.updateTecCatchup(arg_15_0, arg_15_1)
+	arg_15_0.curCatchupTecID = arg_15_1.version
+	arg_15_0.curCatchupGroupID = arg_15_1.target
+	arg_15_0.catchupData = {}
 
-	for slot5, slot6 in ipairs(slot1.pursuings) do
-		slot7 = TechnologyCatchup.New(slot6)
-		slot0.catchupData[slot7.id] = slot7
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1.pursuings) do
+		local var_15_0 = TechnologyCatchup.New(iter_15_1)
+
+		arg_15_0.catchupData[var_15_0.id] = var_15_0
 	end
 
-	slot0.curCatchupPrintsNum = slot0:getCurCatchNum()
+	arg_15_0.curCatchupPrintsNum = arg_15_0:getCurCatchNum()
 
-	print("初始下发的科研追赶信息", slot0.curCatchupTecID, slot0.curCatchupGroupID, slot0.curCatchupPrintsNum)
+	print("初始下发的科研追赶信息", arg_15_0.curCatchupTecID, arg_15_0.curCatchupGroupID, arg_15_0.curCatchupPrintsNum)
 end
 
-function slot0.updateTechnologyQueue(slot0, slot1)
-	slot0.queue = {}
+function var_0_0.updateTechnologyQueue(arg_16_0, arg_16_1)
+	arg_16_0.queue = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		table.insert(slot0.queue, Technology.New({
+	for iter_16_0, iter_16_1 in ipairs(arg_16_1) do
+		table.insert(arg_16_0.queue, Technology.New({
 			queue = true,
-			id = slot6.id,
-			time = slot6.time
+			id = iter_16_1.id,
+			time = iter_16_1.time
 		}))
 	end
 
-	table.sort(slot0.queue, function (slot0, slot1)
-		return slot0.time < slot1.time
+	table.sort(arg_16_0.queue, function(arg_17_0, arg_17_1)
+		return arg_17_0.time < arg_17_1.time
 	end)
 end
 
-function slot0.moveTechnologyToQueue(slot0, slot1)
-	slot2 = slot0.data[slot1]
-	slot2.inQueue = true
+function var_0_0.moveTechnologyToQueue(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0.data[arg_18_1]
 
-	table.insert(slot0.queue, slot2)
+	var_18_0.inQueue = true
 
-	slot0.data[slot1] = nil
+	table.insert(arg_18_0.queue, var_18_0)
+
+	arg_18_0.data[arg_18_1] = nil
 end
 
-function slot0.removeFirstQueueTechnology(slot0)
-	assert(#slot0.queue > 0)
-	table.remove(slot0.queue, 1)
+function var_0_0.removeFirstQueueTechnology(arg_19_0)
+	assert(#arg_19_0.queue > 0)
+	table.remove(arg_19_0.queue, 1)
 end
 
-function slot0.getActivateTechnology(slot0)
-	slot1 = pairs
-	slot2 = slot0.data or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		if slot5:isActivate() then
-			return Clone(slot5)
+function var_0_0.getActivateTechnology(arg_20_0)
+	for iter_20_0, iter_20_1 in pairs(arg_20_0.data or {}) do
+		if iter_20_1:isActivate() then
+			return Clone(iter_20_1)
 		end
 	end
 end
 
-function slot0.getTechnologyById(slot0, slot1)
-	assert(slot0.data[slot1], "technology should exist>>" .. slot1)
+function var_0_0.getTechnologyById(arg_21_0, arg_21_1)
+	assert(arg_21_0.data[arg_21_1], "technology should exist>>" .. arg_21_1)
 
-	return slot0.data[slot1]:clone()
+	return arg_21_0.data[arg_21_1]:clone()
 end
 
-function slot0.updateTechnology(slot0, slot1)
-	assert(slot0.data[slot1.id], "technology should exist>>" .. slot1.id)
-	assert(isa(slot1, Technology), "technology should be instance of Technology")
+function var_0_0.updateTechnology(arg_22_0, arg_22_1)
+	assert(arg_22_0.data[arg_22_1.id], "technology should exist>>" .. arg_22_1.id)
+	assert(isa(arg_22_1, Technology), "technology should be instance of Technology")
 
-	slot0.data[slot1.id] = slot1
+	arg_22_0.data[arg_22_1.id] = arg_22_1
 
-	slot0:sendNotification(uv0.TECHNOLOGY_UPDATED, slot1:clone())
+	arg_22_0:sendNotification(var_0_0.TECHNOLOGY_UPDATED, arg_22_1:clone())
 end
 
-function slot0.getTechnologys(slot0)
-	return underscore.values(slot0.data)
+function var_0_0.getTechnologys(arg_23_0)
+	return underscore.values(arg_23_0.data)
 end
 
-function slot0.getPlanningTechnologys(slot0)
-	return table.mergeArray(slot0.queue, {
-		slot0:getActivateTechnology()
+function var_0_0.getPlanningTechnologys(arg_24_0)
+	return table.mergeArray(arg_24_0.queue, {
+		arg_24_0:getActivateTechnology()
 	})
 end
 
-function slot0.getBluePrints(slot0)
-	return Clone(slot0.bluePrintData)
+function var_0_0.getBluePrints(arg_25_0)
+	return Clone(arg_25_0.bluePrintData)
 end
 
-function slot0.getBluePrintById(slot0, slot1)
-	return Clone(slot0.bluePrintData[slot1])
+function var_0_0.getBluePrintById(arg_26_0, arg_26_1)
+	return Clone(arg_26_0.bluePrintData[arg_26_1])
 end
 
-function slot0.getRawBluePrintById(slot0, slot1)
-	return slot0.bluePrintData[slot1]
+function var_0_0.getRawBluePrintById(arg_27_0, arg_27_1)
+	return arg_27_0.bluePrintData[arg_27_1]
 end
 
-function slot0.addBluePrint(slot0, slot1)
-	assert(isa(slot1, ShipBluePrint), "bluePrint should be instance of ShipBluePrint")
-	assert(slot0.bluePrintData[slot1.id] == nil, "use function updateBluePrint instead")
+function var_0_0.addBluePrint(arg_28_0, arg_28_1)
+	assert(isa(arg_28_1, ShipBluePrint), "bluePrint should be instance of ShipBluePrint")
+	assert(arg_28_0.bluePrintData[arg_28_1.id] == nil, "use function updateBluePrint instead")
 
-	slot0.bluePrintData[slot1.id] = slot1
+	arg_28_0.bluePrintData[arg_28_1.id] = arg_28_1
 
-	slot0:sendNotification(uv0.BLUEPRINT_ADDED, slot1:clone())
+	arg_28_0:sendNotification(var_0_0.BLUEPRINT_ADDED, arg_28_1:clone())
 end
 
-function slot0.updateBluePrint(slot0, slot1)
-	assert(isa(slot1, ShipBluePrint), "bluePrint should be instance of ShipBluePrint")
-	assert(slot0.bluePrintData[slot1.id], "use function addBluePrint instead")
+function var_0_0.updateBluePrint(arg_29_0, arg_29_1)
+	assert(isa(arg_29_1, ShipBluePrint), "bluePrint should be instance of ShipBluePrint")
+	assert(arg_29_0.bluePrintData[arg_29_1.id], "use function addBluePrint instead")
 
-	slot0.bluePrintData[slot1.id] = slot1
+	arg_29_0.bluePrintData[arg_29_1.id] = arg_29_1
 
-	slot0:sendNotification(uv0.BLUEPRINT_UPDATED, slot1:clone())
+	arg_29_0:sendNotification(var_0_0.BLUEPRINT_UPDATED, arg_29_1:clone())
 end
 
-function slot0.getBuildingBluePrint(slot0)
-	for slot4, slot5 in pairs(slot0.bluePrintData) do
-		if slot5:isDeving() or slot5:isFinished() then
-			return slot5
+function var_0_0.getBuildingBluePrint(arg_30_0)
+	for iter_30_0, iter_30_1 in pairs(arg_30_0.bluePrintData) do
+		if iter_30_1:isDeving() or iter_30_1:isFinished() then
+			return iter_30_1
 		end
 	end
 end
 
-function slot0.GetBlueprint4Item(slot0, slot1)
-	return slot0.item2blueprint[slot1]
+function var_0_0.GetBlueprint4Item(arg_31_0, arg_31_1)
+	return arg_31_0.item2blueprint[arg_31_1]
 end
 
-function slot0.getCatchupData(slot0, slot1)
-	if not slot0.catchupData[slot1] then
-		slot0.catchupData[slot1] = TechnologyCatchup.New({
-			version = slot1
+function var_0_0.getCatchupData(arg_32_0, arg_32_1)
+	if not arg_32_0.catchupData[arg_32_1] then
+		local var_32_0 = TechnologyCatchup.New({
+			version = arg_32_1
 		})
+
+		arg_32_0.catchupData[arg_32_1] = var_32_0
 	end
 
-	return slot0.catchupData[slot1]
+	return arg_32_0.catchupData[arg_32_1]
 end
 
-function slot0.updateCatchupData(slot0, slot1, slot2, slot3)
-	slot0.catchupData[slot1]:addTargetNum(slot2, slot3)
+function var_0_0.updateCatchupData(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
+	arg_33_0.catchupData[arg_33_1]:addTargetNum(arg_33_2, arg_33_3)
 end
 
-function slot0.getCurCatchNum(slot0)
-	if slot0.curCatchupTecID ~= 0 and slot0.curCatchupGroupID ~= 0 then
-		return slot0.catchupData[slot0.curCatchupTecID]:getTargetNum(slot0.curCatchupGroupID)
+function var_0_0.getCurCatchNum(arg_34_0)
+	if arg_34_0.curCatchupTecID ~= 0 and arg_34_0.curCatchupGroupID ~= 0 then
+		return arg_34_0.catchupData[arg_34_0.curCatchupTecID]:getTargetNum(arg_34_0.curCatchupGroupID)
 	else
 		return 0
 	end
 end
 
-function slot0.getCatchupState(slot0, slot1)
-	if not slot0.catchupData[slot1] then
+function var_0_0.getCatchupState(arg_35_0, arg_35_1)
+	if not arg_35_0.catchupData[arg_35_1] then
 		return TechnologyCatchup.STATE_UNSELECT
 	end
 
-	return slot0.catchupData[slot1]:getState()
+	return arg_35_0.catchupData[arg_35_1]:getState()
 end
 
-function slot0.updateCatchupStates(slot0)
-	for slot4, slot5 in pairs(slot0.catchupData) do
-		slot5:updateState()
+function var_0_0.updateCatchupStates(arg_36_0)
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.catchupData) do
+		iter_36_1:updateState()
 	end
 end
 
-function slot0.isOpenTargetCatchup(slot0)
+function var_0_0.isOpenTargetCatchup(arg_37_0)
 	return pg.technology_catchup_template ~= nil and #pg.technology_catchup_template.all > 0
 end
 
-function slot0.getNewestCatchupTecID(slot0)
+function var_0_0.getNewestCatchupTecID(arg_38_0)
 	return math.max(unpack(pg.technology_catchup_template.all))
 end
 
-function slot0.isOnCatchup(slot0)
-	return slot0.curCatchupTecID ~= 0 and slot0.curCatchupGroupID ~= 0
+function var_0_0.isOnCatchup(arg_39_0)
+	return arg_39_0.curCatchupTecID ~= 0 and arg_39_0.curCatchupGroupID ~= 0
 end
 
-function slot0.getBluePrintVOByGroupID(slot0, slot1)
-	return slot0.bluePrintData[slot1]
+function var_0_0.getBluePrintVOByGroupID(arg_40_0, arg_40_1)
+	return arg_40_0.bluePrintData[arg_40_1]
 end
 
-function slot0.getCurCatchupTecInfo(slot0)
+function var_0_0.getCurCatchupTecInfo(arg_41_0)
 	return {
-		tecID = slot0.curCatchupTecID,
-		groupID = slot0.curCatchupGroupID,
-		printNum = slot0.curCatchupPrintsNum
+		tecID = arg_41_0.curCatchupTecID,
+		groupID = arg_41_0.curCatchupGroupID,
+		printNum = arg_41_0.curCatchupPrintsNum
 	}
 end
 
-function slot0.setCurCatchupTecInfo(slot0, slot1, slot2)
-	slot0.curCatchupTecID = slot1
-	slot0.curCatchupGroupID = slot2
-	slot0.curCatchupPrintsNum = slot0:getCurCatchNum()
+function var_0_0.setCurCatchupTecInfo(arg_42_0, arg_42_1, arg_42_2)
+	arg_42_0.curCatchupTecID = arg_42_1
+	arg_42_0.curCatchupGroupID = arg_42_2
+	arg_42_0.curCatchupPrintsNum = arg_42_0:getCurCatchNum()
 
-	slot0:updateCatchupStates()
-	print("设置后的科研追赶信息", slot0.curCatchupTecID, slot0.curCatchupGroupID, slot0.curCatchupPrintsNum)
+	arg_42_0:updateCatchupStates()
+	print("设置后的科研追赶信息", arg_42_0.curCatchupTecID, arg_42_0.curCatchupGroupID, arg_42_0.curCatchupPrintsNum)
 end
 
-function slot0.addCatupPrintsNum(slot0, slot1)
-	slot0:updateCatchupData(slot0.curCatchupTecID, slot0.curCatchupGroupID, slot1)
+function var_0_0.addCatupPrintsNum(arg_43_0, arg_43_1)
+	arg_43_0:updateCatchupData(arg_43_0.curCatchupTecID, arg_43_0.curCatchupGroupID, arg_43_1)
 
-	slot0.curCatchupPrintsNum = slot0:getCurCatchNum()
+	arg_43_0.curCatchupPrintsNum = arg_43_0:getCurCatchNum()
 
-	print("增加科研图纸", slot1, slot0.curCatchupPrintsNum)
+	print("增加科研图纸", arg_43_1, arg_43_0.curCatchupPrintsNum)
 end
 
-function slot0.IsShowTip(slot0)
-	slot3, slot4 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "TechnologyMediator")
+function var_0_0.IsShowTip(arg_44_0)
+	local var_44_0 = SelectTechnologyMediator.onTechnologyNotify()
+	local var_44_1 = SelectTechnologyMediator.onBlueprintNotify()
+	local var_44_2, var_44_3 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "TechnologyMediator")
 
-	return OPEN_TEC_TREE_SYSTEM and getProxy(TechnologyNationProxy):getShowRedPointTag() or (SelectTechnologyMediator.onBlueprintNotify() or SelectTechnologyMediator.onTechnologyNotify()) and slot3
+	return OPEN_TEC_TREE_SYSTEM and getProxy(TechnologyNationProxy):getShowRedPointTag() or (var_44_1 or var_44_0) and var_44_2
 end
 
-function slot0.addPursuingTimes(slot0, slot1, slot2)
-	if slot2 then
-		slot0.pursuingTimesUR = slot0.pursuingTimesUR + slot1
+function var_0_0.addPursuingTimes(arg_45_0, arg_45_1, arg_45_2)
+	if arg_45_2 then
+		arg_45_0.pursuingTimesUR = arg_45_0.pursuingTimesUR + arg_45_1
 	else
-		slot0.pursuingTimes = slot0.pursuingTimes + slot1
+		arg_45_0.pursuingTimes = arg_45_0.pursuingTimes + arg_45_1
 	end
 end
 
-function slot0.resetPursuingTimes(slot0)
-	slot0.pursuingTimes = 0
-	slot0.pursuingTimesUR = 0
+function var_0_0.resetPursuingTimes(arg_46_0)
+	arg_46_0.pursuingTimes = 0
+	arg_46_0.pursuingTimesUR = 0
 
-	slot0:sendNotification(GAME.PURSUING_RESET_DONE)
+	arg_46_0:sendNotification(GAME.PURSUING_RESET_DONE)
 end
 
-function slot0.getPursuingTimes(slot0, slot1)
-	if slot1 then
-		return slot0.pursuingTimesUR
+function var_0_0.getPursuingTimes(arg_47_0, arg_47_1)
+	if arg_47_1 then
+		return arg_47_0.pursuingTimesUR
 	else
-		return slot0.pursuingTimes
+		return arg_47_0.pursuingTimes
 	end
 end
 
-function slot0.calcMaxPursuingCount(slot0, slot1)
-	slot2 = pg.gameset[slot1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
-	slot3 = getProxy(PlayerProxy):getRawData():getResource(PlayerConst.ResGold)
-	slot4 = 0
+function var_0_0.calcMaxPursuingCount(arg_48_0, arg_48_1)
+	local var_48_0 = pg.gameset[arg_48_1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
+	local var_48_1 = getProxy(PlayerProxy):getRawData():getResource(PlayerConst.ResGold)
+	local var_48_2 = 0
 
-	function slot5(slot0)
-		slot1 = #uv0
+	local function var_48_3(arg_49_0)
+		local var_49_0 = #var_48_0
 
-		while slot0 < uv0[slot1][1] do
-			slot1 = slot1 - 1
+		while arg_49_0 < var_48_0[var_49_0][1] do
+			var_49_0 = var_49_0 - 1
 		end
 
-		return uv0[slot1][2]
+		return var_48_0[var_49_0][2]
 	end
 
-	slot6 = nil
-	slot10 = slot1
+	local var_48_4
 
-	for slot10 = slot0:getPursuingTimes(slot1.isRarityUR(slot10)) + 1, slot2[#slot2][1] - 1 do
-		if slot3 < slot1:getPursuingPrice(slot5(slot10)) then
-			return slot4
+	for iter_48_0 = arg_48_0:getPursuingTimes(arg_48_1:isRarityUR()) + 1, var_48_0[#var_48_0][1] - 1 do
+		local var_48_5 = arg_48_1:getPursuingPrice(var_48_3(iter_48_0))
+
+		if var_48_1 < var_48_5 then
+			return var_48_2
 		else
-			slot3 = slot3 - slot6
-			slot4 = slot4 + 1
+			var_48_1 = var_48_1 - var_48_5
+			var_48_2 = var_48_2 + 1
 		end
 	end
 
-	return slot4 + math.floor(slot3 / slot1:getPursuingPrice())
+	return var_48_2 + math.floor(var_48_1 / arg_48_1:getPursuingPrice())
 end
 
-function slot0.calcPursuingCost(slot0, slot1, slot2)
-	slot3 = pg.gameset[slot1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
-	slot4 = 0
+function var_0_0.calcPursuingCost(arg_50_0, arg_50_1, arg_50_2)
+	local var_50_0 = pg.gameset[arg_50_1:isRarityUR() and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr"].description
+	local var_50_1 = 0
 
-	function slot5(slot0)
-		slot1 = #uv0
+	local function var_50_2(arg_51_0)
+		local var_51_0 = #var_50_0
 
-		while slot0 < uv0[slot1][1] do
-			slot1 = slot1 - 1
+		while arg_51_0 < var_50_0[var_51_0][1] do
+			var_51_0 = var_51_0 - 1
 		end
 
-		return uv0[slot1][2]
+		return var_50_0[var_51_0][2]
 	end
 
-	slot6 = nil
-	slot10 = slot1
+	local var_50_3
 
-	for slot10 = slot0:getPursuingTimes(slot1.isRarityUR(slot10)) + 1, slot3[#slot3][1] - 1 do
-		slot6 = slot1:getPursuingPrice(slot5(slot10))
+	for iter_50_0 = arg_50_0:getPursuingTimes(arg_50_1:isRarityUR()) + 1, var_50_0[#var_50_0][1] - 1 do
+		local var_50_4 = arg_50_1:getPursuingPrice(var_50_2(iter_50_0))
 
-		if slot2 == 0 then
-			return slot4
+		if arg_50_2 == 0 then
+			return var_50_1
 		else
-			slot4 = slot4 + slot6
-			slot2 = slot2 - 1
+			var_50_1 = var_50_1 + var_50_4
+			arg_50_2 = arg_50_2 - 1
 		end
 	end
 
-	return slot4 + slot2 * slot1:getPursuingPrice()
+	return var_50_1 + arg_50_2 * arg_50_1:getPursuingPrice()
 end
 
-function slot0.getPursuingDiscount(slot0, slot1)
-	slot3 = #getGameset(slot1 and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr")[2]
+function var_0_0.getPursuingDiscount(arg_52_0, arg_52_1)
+	local var_52_0 = getGameset(arg_52_1 and "blueprint_pursue_discount_ur" or "blueprint_pursue_discount_ssr")[2]
+	local var_52_1 = #var_52_0
 
-	while slot0 < slot2[slot3][1] do
-		slot3 = slot3 - 1
+	while arg_52_0 < var_52_0[var_52_1][1] do
+		var_52_1 = var_52_1 - 1
 	end
 
-	return slot2[slot3][2]
+	return var_52_0[var_52_1][2]
 end
 
-function slot0.getItemCanUnlockBluePrint(slot0, slot1)
-	if not slot0.unlockItemDic then
-		slot0.unlockItemDic = {}
+function var_0_0.getItemCanUnlockBluePrint(arg_53_0, arg_53_1)
+	if not arg_53_0.unlockItemDic then
+		arg_53_0.unlockItemDic = {}
 
-		for slot5, slot6 in ipairs(pg.ship_data_blueprint.all) do
-			slot11 = "gain_item_id"
+		for iter_53_0, iter_53_1 in ipairs(pg.ship_data_blueprint.all) do
+			local var_53_0 = arg_53_0.bluePrintData[iter_53_1]
 
-			for slot11, slot12 in ipairs(slot0.bluePrintData[slot6]:getConfig(slot11)) do
-				slot0.unlockItemDic[slot12] = slot0.unlockItemDic[slot12] or {}
+			for iter_53_2, iter_53_3 in ipairs(var_53_0:getConfig("gain_item_id")) do
+				arg_53_0.unlockItemDic[iter_53_3] = arg_53_0.unlockItemDic[iter_53_3] or {}
 
-				table.insert(slot0.unlockItemDic[slot12], slot6)
+				table.insert(arg_53_0.unlockItemDic[iter_53_3], iter_53_1)
 			end
 		end
 	end
 
-	return slot0.unlockItemDic[slot1]
+	return arg_53_0.unlockItemDic[arg_53_1]
 end
 
-function slot0.CheckPursuingCostTip(slot0, slot1)
-	if uv0.getPursuingDiscount(slot0.pursuingTimes + 1, false) > 0 and uv0.getPursuingDiscount(slot0.pursuingTimesUR + 1, true) > 0 then
+function var_0_0.CheckPursuingCostTip(arg_54_0, arg_54_1)
+	if var_0_0.getPursuingDiscount(arg_54_0.pursuingTimes + 1, false) > 0 and var_0_0.getPursuingDiscount(arg_54_0.pursuingTimesUR + 1, true) > 0 then
 		return false
 	end
 
-	slot2 = {}
+	local var_54_0 = {}
 
-	if slot1 then
-		for slot6, slot7 in ipairs(slot1) do
-			slot2[slot7] = true
+	if arg_54_1 then
+		for iter_54_0, iter_54_1 in ipairs(arg_54_1) do
+			var_54_0[iter_54_1] = true
 		end
 	else
-		for slot6 = 1, slot0.maxConfigVersion do
-			slot2[slot6] = true
+		for iter_54_2 = 1, arg_54_0.maxConfigVersion do
+			var_54_0[iter_54_2] = true
 		end
 	end
 
-	for slot6, slot7 in pairs(slot0.bluePrintData) do
-		if slot2[slot7:getConfig("blueprint_version")] and slot7:isPursuingCostTip() then
+	for iter_54_3, iter_54_4 in pairs(arg_54_0.bluePrintData) do
+		if var_54_0[iter_54_4:getConfig("blueprint_version")] and iter_54_4:isPursuingCostTip() then
 			return true
 		end
 	end
@@ -452,4 +455,4 @@ function slot0.CheckPursuingCostTip(slot0, slot1)
 	return false
 end
 
-return slot0
+return var_0_0

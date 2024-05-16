@@ -1,95 +1,97 @@
-slot0 = class("SettingsResUpdatePanel", import(".SettingsBasePanel"))
+﻿local var_0_0 = class("SettingsResUpdatePanel", import(".SettingsBasePanel"))
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsResUpdate"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("Settings_title_resUpdate")
 end
 
-function slot0.GetTitleEn(slot0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / DOWNLOAD"
 end
 
-function slot0.OnInit(slot0)
-	slot0.tpl = slot0._tf:Find("Tpl")
-	slot0.containerTF = slot0._tf:Find("list")
-	slot0.iconTF = slot0._tf:Find("Icon")
-	slot2 = not GroupMainHelper.IsVerSameWithServer()
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.tpl = arg_4_0._tf:Find("Tpl")
+	arg_4_0.containerTF = arg_4_0._tf:Find("list")
+	arg_4_0.iconTF = arg_4_0._tf:Find("Icon")
 
-	setActive(slot0._tf:Find("MainGroup"), slot2)
+	local var_4_0 = arg_4_0._tf:Find("MainGroup")
+	local var_4_1 = not GroupMainHelper.IsVerSameWithServer()
 
-	if slot2 then
-		slot0.mainGroupBtn = SettingsMainGroupBtn.New(slot1)
+	setActive(var_4_0, var_4_1)
+
+	if var_4_1 then
+		arg_4_0.mainGroupBtn = SettingsMainGroupBtn.New(var_4_0)
 	end
 
-	slot0.soundBtn = SettingsSoundBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("CV"))
+	arg_4_0.soundBtn = SettingsSoundBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("CV"))
 	})
-	slot0.live2dBtn = SettingsLive2DBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("L2D"))
+	arg_4_0.live2dBtn = SettingsLive2DBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("L2D"))
 	})
-	slot0.galleryBtn = SettingsGalleryBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("GALLERY_PIC"))
+	arg_4_0.galleryBtn = SettingsGalleryBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("GALLERY_PIC"))
 	})
-	slot0.musicBtn = SettingsMusicBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("GALLERY_BGM"))
+	arg_4_0.musicBtn = SettingsMusicBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("GALLERY_BGM"))
 	})
-	slot0.mangaBtn = SettingsMangaBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("MANGA"))
+	arg_4_0.mangaBtn = SettingsMangaBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("MANGA"))
 	})
-	slot0.repairBtn = SettingsResRepairBtn.New({
-		tpl = slot0.tpl,
-		container = slot0.containerTF,
-		iconSP = getImageSprite(slot0.iconTF:Find("REPAIR"))
+	arg_4_0.repairBtn = SettingsResRepairBtn.New({
+		tpl = arg_4_0.tpl,
+		container = arg_4_0.containerTF,
+		iconSP = getImageSprite(arg_4_0.iconTF:Find("REPAIR"))
 	})
 end
 
-function slot0.Dispose(slot0)
-	uv0.super.Dispose(slot0)
+function var_0_0.Dispose(arg_5_0)
+	var_0_0.super.Dispose(arg_5_0)
 
-	if slot0:IsLoaded() then
-		slot0.repairBtn:Dispose()
+	if arg_5_0:IsLoaded() then
+		arg_5_0.repairBtn:Dispose()
 
-		slot0.repairBtn = nil
+		arg_5_0.repairBtn = nil
 
-		slot0.live2dBtn:Dispose()
+		arg_5_0.live2dBtn:Dispose()
 
-		slot0.live2dBtn = nil
+		arg_5_0.live2dBtn = nil
 
-		slot0.galleryBtn:Dispose()
+		arg_5_0.galleryBtn:Dispose()
 
-		slot0.galleryBtn = nil
+		arg_5_0.galleryBtn = nil
 
-		slot0.soundBtn:Dispose()
+		arg_5_0.soundBtn:Dispose()
 
-		slot0.soundBtn = nil
+		arg_5_0.soundBtn = nil
 
-		slot0.musicBtn:Dispose()
+		arg_5_0.musicBtn:Dispose()
 
-		slot0.musicBtn = nil
+		arg_5_0.musicBtn = nil
 
-		slot0.mangaBtn:Dispose()
+		arg_5_0.mangaBtn:Dispose()
 
-		slot0.mangaBtn = nil
+		arg_5_0.mangaBtn = nil
 
-		if slot0.mainGroupBtn then
-			slot0.mainGroupBtn:Dispose()
+		if arg_5_0.mainGroupBtn then
+			arg_5_0.mainGroupBtn:Dispose()
 
-			slot0.mainGroupBtn = nil
+			arg_5_0.mainGroupBtn = nil
 		end
 	end
 end
 
-return slot0
+return var_0_0

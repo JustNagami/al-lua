@@ -1,58 +1,67 @@
-slot0 = class("NewServerShopMultiWindow", import("..msgbox.ShopMultiWindow"))
+﻿local var_0_0 = class("NewServerShopMultiWindow", import("..msgbox.ShopMultiWindow"))
 
-function slot0.InitWindow(slot0, slot1, slot2)
-	slot3 = {
-		id = slot1:getConfig("goods")[1],
-		type = slot1:getConfig("type"),
-		count = slot1:getConfig("num")
+function var_0_0.InitWindow(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = {
+		id = arg_1_1:getConfig("goods")[1],
+		type = arg_1_1:getConfig("type"),
+		count = arg_1_1:getConfig("num")
 	}
-	slot4, slot5, slot6 = slot1:CheckTimeLimit()
+	local var_1_1, var_1_2, var_1_3 = arg_1_1:CheckTimeLimit()
 
-	setActive(slot0.timeLimitTF, slot4)
+	setActive(arg_1_0.timeLimitTF, var_1_1)
 
-	if slot4 and slot5 then
-		setText(slot0:findTF("Text", slot0.timeLimitTF), i18n("eventshop_time_hint", pg.TimeMgr.GetInstance():STimeDescC(getProxy(ActivityProxy):getActivityById(Item.getConfigData(slot3.id).link_id).stopTime, "%m.%d")))
+	if var_1_1 and var_1_2 then
+		local var_1_4 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var_1_0.id).link_id)
+		local var_1_5 = pg.TimeMgr.GetInstance():STimeDescC(var_1_4.stopTime, "%m.%d")
+
+		setText(arg_1_0:findTF("Text", arg_1_0.timeLimitTF), i18n("eventshop_time_hint", var_1_5))
 	end
 
-	slot8 = math.max(math.floor(Drop.New({
-		type = slot1:getConfig("resource_category"),
-		id = slot1:getConfig("resource_type")
-	}):getOwnedCount() / slot1:getConfig("resource_num")), 1)
+	local var_1_6 = Drop.New({
+		type = arg_1_1:getConfig("resource_category"),
+		id = arg_1_1:getConfig("resource_type")
+	}):getOwnedCount()
+	local var_1_7 = math.max(math.floor(var_1_6 / arg_1_1:getConfig("resource_num")), 1)
 
-	if slot1:getConfig("goods_purchase_limit") ~= 0 then
-		slot8 = math.min(slot8, math.max(0, slot1:GetPurchasableCnt()))
+	if arg_1_1:getConfig("goods_purchase_limit") ~= 0 then
+		local var_1_8 = arg_1_1:GetPurchasableCnt()
+
+		var_1_7 = math.min(var_1_7, math.max(0, var_1_8))
 	end
 
-	(function (slot0)
-		slot0 = math.min(math.max(slot0, 1), uv0)
-		uv1.countTF.text = slot0
-		uv1.curCount = slot0
-		uv1.itemCountTF.text = slot0 * uv2:getConfig("num")
-	end)(1)
-	updateDrop(slot0.topItem:Find("left/IconTpl"), slot3)
-	UpdateOwnDisplay(slot0.ownerTF, slot3)
-	RegisterDetailButton(slot0, slot0.detailTF, slot3)
+	local function var_1_9(arg_2_0)
+		arg_2_0 = math.max(arg_2_0, 1)
+		arg_2_0 = math.min(arg_2_0, var_1_7)
+		arg_1_0.countTF.text = arg_2_0
+		arg_1_0.curCount = arg_2_0
+		arg_1_0.itemCountTF.text = arg_2_0 * arg_1_1:getConfig("num")
+	end
 
-	slot0.nameTF.text = slot3:getConfig("name")
-	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
+	var_1_9(1)
+	updateDrop(arg_1_0.topItem:Find("left/IconTpl"), var_1_0)
+	UpdateOwnDisplay(arg_1_0.ownerTF, var_1_0)
+	RegisterDetailButton(arg_1_0, arg_1_0.detailTF, var_1_0)
 
-	updateDrop(slot0.bottomItem, slot3)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0 then
-			uv0(uv1, uv2.curCount, uv3:getConfig("name"))
+	arg_1_0.nameTF.text = var_1_0:getConfig("name")
+	arg_1_0.descTF.text = var_1_0.desc or var_1_0:getConfig("desc")
+
+	updateDrop(arg_1_0.bottomItem, var_1_0)
+	onButton(arg_1_0, arg_1_0.confirmBtn, function()
+		if arg_1_2 then
+			arg_1_2(arg_1_1, arg_1_0.curCount, var_1_0:getConfig("name"))
 		end
 
-		uv2:Close()
+		arg_1_0:Close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.leftBtn, function ()
-		uv0(uv1.curCount - 1)
+	onButton(arg_1_0, arg_1_0.leftBtn, function()
+		var_1_9(arg_1_0.curCount - 1)
 	end)
-	onButton(slot0, slot0.rightBtn, function ()
-		uv0(uv1.curCount + 1)
+	onButton(arg_1_0, arg_1_0.rightBtn, function()
+		var_1_9(arg_1_0.curCount + 1)
 	end)
-	onButton(slot0, slot0.maxBtn, function ()
-		uv0(uv1)
+	onButton(arg_1_0, arg_1_0.maxBtn, function()
+		var_1_9(var_1_7)
 	end)
 end
 
-return slot0
+return var_0_0

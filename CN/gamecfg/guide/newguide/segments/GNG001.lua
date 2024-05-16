@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"攻坚队可以协助大舰队成员进行首领战",
 	"让我们试着派遣一名角色前往攻坚队吧！",
 	"点击此处编辑攻坚队",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = slot0[1]
+				text = var_0_0[1]
 			}
 		},
 		{
@@ -25,7 +25,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -35,7 +35,7 @@ return {
 				mode = 2,
 				posY = -223,
 				posX = 495.2,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/GuildEmptyUI(Clone)/GuildEventPage(Clone)/formation_btn",
@@ -58,7 +58,7 @@ return {
 				mode = 2,
 				posY = 267.65,
 				posX = 17.53,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/GuildEventFormationUI(Clone)/frame/ship1",

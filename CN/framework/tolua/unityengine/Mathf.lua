@@ -1,216 +1,253 @@
-slot0 = math
-slot1 = slot0.floor
-slot2 = slot0.abs
-slot3 = Mathf
-slot3.Deg2Rad = slot0.rad(1)
-slot3.Epsilon = 1.4013e-45
-slot3.Infinity = slot0.huge
-slot3.NegativeInfinity = -slot0.huge
-slot3.PI = slot0.pi
-slot3.Rad2Deg = slot0.deg(1)
-slot3.Abs = slot0.abs
-slot3.Acos = slot0.acos
-slot3.Asin = slot0.asin
-slot3.Atan = slot0.atan
-slot3.Atan2 = slot0.atan2
-slot3.Ceil = slot0.ceil
-slot3.Cos = slot0.cos
-slot3.Exp = slot0.exp
-slot3.Floor = slot0.floor
-slot3.Log = slot0.log
-slot3.Log10 = slot0.log10
-slot3.Max = slot0.max
-slot3.Min = slot0.min
-slot3.Pow = slot0.pow
-slot3.Sin = slot0.sin
-slot3.Sqrt = slot0.sqrt
-slot3.Tan = slot0.tan
-slot3.Deg = slot0.deg
-slot3.Rad = slot0.rad
-slot3.Random = slot0.random
+﻿local var_0_0 = math
+local var_0_1 = var_0_0.floor
+local var_0_2 = var_0_0.abs
+local var_0_3 = Mathf
 
-function slot3.Approximately(slot0, slot1)
-	return uv0(slot1 - slot0) < uv1.max(1e-06 * uv1.max(uv0(slot0), uv0(slot1)), 1.121039e-44)
+var_0_3.Deg2Rad = var_0_0.rad(1)
+var_0_3.Epsilon = 1.4013e-45
+var_0_3.Infinity = var_0_0.huge
+var_0_3.NegativeInfinity = -var_0_0.huge
+var_0_3.PI = var_0_0.pi
+var_0_3.Rad2Deg = var_0_0.deg(1)
+var_0_3.Abs = var_0_0.abs
+var_0_3.Acos = var_0_0.acos
+var_0_3.Asin = var_0_0.asin
+var_0_3.Atan = var_0_0.atan
+var_0_3.Atan2 = var_0_0.atan2
+var_0_3.Ceil = var_0_0.ceil
+var_0_3.Cos = var_0_0.cos
+var_0_3.Exp = var_0_0.exp
+var_0_3.Floor = var_0_0.floor
+var_0_3.Log = var_0_0.log
+var_0_3.Log10 = var_0_0.log10
+var_0_3.Max = var_0_0.max
+var_0_3.Min = var_0_0.min
+var_0_3.Pow = var_0_0.pow
+var_0_3.Sin = var_0_0.sin
+var_0_3.Sqrt = var_0_0.sqrt
+var_0_3.Tan = var_0_0.tan
+var_0_3.Deg = var_0_0.deg
+var_0_3.Rad = var_0_0.rad
+var_0_3.Random = var_0_0.random
+
+function var_0_3.Approximately(arg_1_0, arg_1_1)
+	return var_0_2(arg_1_1 - arg_1_0) < var_0_0.max(1e-06 * var_0_0.max(var_0_2(arg_1_0), var_0_2(arg_1_1)), 1.121039e-44)
 end
 
-function slot3.Clamp(slot0, slot1, slot2)
-	if slot0 < slot1 then
-		slot0 = slot1
-	elseif slot2 < slot0 then
-		slot0 = slot2
+function var_0_3.Clamp(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_0 < arg_2_1 then
+		arg_2_0 = arg_2_1
+	elseif arg_2_2 < arg_2_0 then
+		arg_2_0 = arg_2_2
 	end
 
-	return slot0
+	return arg_2_0
 end
 
-function slot3.Clamp01(slot0)
-	if slot0 < 0 then
+function var_0_3.Clamp01(arg_3_0)
+	if arg_3_0 < 0 then
 		return 0
-	elseif slot0 > 1 then
+	elseif arg_3_0 > 1 then
 		return 1
 	end
 
-	return slot0
+	return arg_3_0
 end
 
-function slot3.DeltaAngle(slot0, slot1)
-	if uv0.Repeat(slot1 - slot0, 360) > 180 then
-		slot2 = slot2 - 360
+function var_0_3.DeltaAngle(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_3.Repeat(arg_4_1 - arg_4_0, 360)
+
+	if var_4_0 > 180 then
+		var_4_0 = var_4_0 - 360
 	end
 
-	return slot2
+	return var_4_0
 end
 
-function slot3.Gamma(slot0, slot1, slot2)
-	slot3 = false
+function var_0_3.Gamma(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = false
 
-	if slot0 < 0 then
-		slot3 = true
+	if arg_5_0 < 0 then
+		var_5_0 = true
 	end
 
-	if slot1 < uv0(slot0) then
-		return not slot3 and slot4 or -slot4
+	local var_5_1 = var_0_2(arg_5_0)
+
+	if arg_5_1 < var_5_1 then
+		return not var_5_0 and var_5_1 or -var_5_1
 	end
 
-	slot5 = uv1.pow(slot4 / slot1, slot2) * slot1
+	local var_5_2 = var_0_0.pow(var_5_1 / arg_5_1, arg_5_2) * arg_5_1
 
-	return not slot3 and slot5 or -slot5
+	return not var_5_0 and var_5_2 or -var_5_2
 end
 
-function slot3.InverseLerp(slot0, slot1, slot2)
-	if slot0 < slot1 then
-		if slot2 < slot0 then
+function var_0_3.InverseLerp(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_0 < arg_6_1 then
+		if arg_6_2 < arg_6_0 then
 			return 0
 		end
 
-		if slot1 < slot2 then
+		if arg_6_1 < arg_6_2 then
 			return 1
 		end
 
-		return (slot2 - slot0) / (slot1 - slot0)
+		arg_6_2 = arg_6_2 - arg_6_0
+		arg_6_2 = arg_6_2 / (arg_6_1 - arg_6_0)
+
+		return arg_6_2
 	end
 
-	if slot0 <= slot1 then
+	if arg_6_0 <= arg_6_1 then
 		return 0
 	end
 
-	if slot2 < slot1 then
+	if arg_6_2 < arg_6_1 then
 		return 1
 	end
 
-	if slot0 < slot2 then
+	if arg_6_0 < arg_6_2 then
 		return 0
 	end
 
-	return 1 - (slot2 - slot1) / (slot0 - slot1)
+	return 1 - (arg_6_2 - arg_6_1) / (arg_6_0 - arg_6_1)
 end
 
-function slot3.Lerp(slot0, slot1, slot2)
-	return slot0 + (slot1 - slot0) * uv0.Clamp01(slot2)
+function var_0_3.Lerp(arg_7_0, arg_7_1, arg_7_2)
+	return arg_7_0 + (arg_7_1 - arg_7_0) * var_0_3.Clamp01(arg_7_2)
 end
 
-function slot3.LerpAngle(slot0, slot1, slot2)
-	if uv0.Repeat(slot1 - slot0, 360) > 180 then
-		slot3 = slot3 - 360
+function var_0_3.LerpAngle(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = var_0_3.Repeat(arg_8_1 - arg_8_0, 360)
+
+	if var_8_0 > 180 then
+		var_8_0 = var_8_0 - 360
 	end
 
-	return slot0 + slot3 * uv0.Clamp01(slot2)
+	return arg_8_0 + var_8_0 * var_0_3.Clamp01(arg_8_2)
 end
 
-function slot3.LerpUnclamped(slot0, slot1, slot2)
-	return slot0 + (slot1 - slot0) * slot2
+function var_0_3.LerpUnclamped(arg_9_0, arg_9_1, arg_9_2)
+	return arg_9_0 + (arg_9_1 - arg_9_0) * arg_9_2
 end
 
-function slot3.MoveTowards(slot0, slot1, slot2)
-	if uv0(slot1 - slot0) <= slot2 then
-		return slot1
+function var_0_3.MoveTowards(arg_10_0, arg_10_1, arg_10_2)
+	if arg_10_2 >= var_0_2(arg_10_1 - arg_10_0) then
+		return arg_10_1
 	end
 
-	return slot0 + uv1.Sign(slot1 - slot0) * slot2
+	return arg_10_0 + var_0_3.Sign(arg_10_1 - arg_10_0) * arg_10_2
 end
 
-function slot3.MoveTowardsAngle(slot0, slot1, slot2)
-	return uv0.MoveTowards(slot0, slot0 + uv0.DeltaAngle(slot0, slot1), slot2)
+function var_0_3.MoveTowardsAngle(arg_11_0, arg_11_1, arg_11_2)
+	arg_11_1 = arg_11_0 + var_0_3.DeltaAngle(arg_11_0, arg_11_1)
+
+	return var_0_3.MoveTowards(arg_11_0, arg_11_1, arg_11_2)
 end
 
-function slot3.PingPong(slot0, slot1)
-	return slot1 - uv1(uv0.Repeat(slot0, slot1 * 2) - slot1)
+function var_0_3.PingPong(arg_12_0, arg_12_1)
+	arg_12_0 = var_0_3.Repeat(arg_12_0, arg_12_1 * 2)
+
+	return arg_12_1 - var_0_2(arg_12_0 - arg_12_1)
 end
 
-function slot3.Repeat(slot0, slot1)
-	return slot0 - uv0(slot0 / slot1) * slot1
+function var_0_3.Repeat(arg_13_0, arg_13_1)
+	return arg_13_0 - var_0_1(arg_13_0 / arg_13_1) * arg_13_1
 end
 
-function slot3.Round(slot0)
-	return uv0(slot0 + 0.5)
+function var_0_3.Round(arg_14_0)
+	return var_0_1(arg_14_0 + 0.5)
 end
 
-function slot3.Sign(slot0)
-	return slot0 > 0 and 1 or slot0 < 0 and -1 or 0
+function var_0_3.Sign(arg_15_0)
+	arg_15_0 = arg_15_0 > 0 and 1 or arg_15_0 < 0 and -1 or 0
+
+	return arg_15_0
 end
 
-function slot3.SmoothDamp(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot5 = slot5 or Time.deltaTime
-	slot3 = uv0.Max(0.0001, slot3)
-	slot6 = 2 / slot3
-	slot7 = slot6 * slot5
-	slot8 = 1 / (1 + slot7 + 0.48 * slot7 * slot7 + 0.235 * slot7 * slot7 * slot7)
-	slot11 = (slot4 or uv0.Infinity) * slot3
-	slot9 = uv0.Clamp(slot0 - slot1, -slot11, slot11)
-	slot12 = (slot2 + slot6 * slot9) * slot5
-	slot2 = (slot2 - slot6 * slot12) * slot8
+function var_0_3.SmoothDamp(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5)
+	arg_16_4 = arg_16_4 or var_0_3.Infinity
+	arg_16_5 = arg_16_5 or Time.deltaTime
+	arg_16_3 = var_0_3.Max(0.0001, arg_16_3)
 
-	if slot0 < slot1 == (slot10 < slot0 - slot9 + (slot9 + slot12) * slot8) then
-		slot2 = (slot10 - slot10) / slot5
+	local var_16_0 = 2 / arg_16_3
+	local var_16_1 = var_16_0 * arg_16_5
+	local var_16_2 = 1 / (1 + var_16_1 + 0.48 * var_16_1 * var_16_1 + 0.235 * var_16_1 * var_16_1 * var_16_1)
+	local var_16_3 = arg_16_0 - arg_16_1
+	local var_16_4 = arg_16_1
+	local var_16_5 = arg_16_4 * arg_16_3
+	local var_16_6 = var_0_3.Clamp(var_16_3, -var_16_5, var_16_5)
+
+	arg_16_1 = arg_16_0 - var_16_6
+
+	local var_16_7 = (arg_16_2 + var_16_0 * var_16_6) * arg_16_5
+
+	arg_16_2 = (arg_16_2 - var_16_0 * var_16_7) * var_16_2
+
+	local var_16_8 = arg_16_1 + (var_16_6 + var_16_7) * var_16_2
+
+	if arg_16_0 < var_16_4 == (var_16_4 < var_16_8) then
+		var_16_8 = var_16_4
+		arg_16_2 = (var_16_8 - var_16_4) / arg_16_5
 	end
 
-	return slot13, slot2
+	return var_16_8, arg_16_2
 end
 
-function slot3.SmoothDampAngle(slot0, slot1, slot2, slot3, slot4, slot5)
-	return uv0.SmoothDamp(slot0, slot0 + uv0.DeltaAngle(slot0, slot1), slot2, slot3, slot4 or uv0.Infinity, slot5 or Time.deltaTime)
+function var_0_3.SmoothDampAngle(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4, arg_17_5)
+	arg_17_5 = arg_17_5 or Time.deltaTime
+	arg_17_4 = arg_17_4 or var_0_3.Infinity
+	arg_17_1 = arg_17_0 + var_0_3.DeltaAngle(arg_17_0, arg_17_1)
+
+	return var_0_3.SmoothDamp(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4, arg_17_5)
 end
 
-function slot3.SmoothStep(slot0, slot1, slot2)
-	slot2 = uv0.Clamp01(slot2)
-	slot2 = -2 * slot2 * slot2 * slot2 + 3 * slot2 * slot2
+function var_0_3.SmoothStep(arg_18_0, arg_18_1, arg_18_2)
+	arg_18_2 = var_0_3.Clamp01(arg_18_2)
+	arg_18_2 = -2 * arg_18_2 * arg_18_2 * arg_18_2 + 3 * arg_18_2 * arg_18_2
 
-	return slot1 * slot2 + slot0 * (1 - slot2)
+	return arg_18_1 * arg_18_2 + arg_18_0 * (1 - arg_18_2)
 end
 
-function slot3.HorizontalAngle(slot0)
-	return uv0.deg(uv0.atan2(slot0.x, slot0.z))
+function var_0_3.HorizontalAngle(arg_19_0)
+	return var_0_0.deg(var_0_0.atan2(arg_19_0.x, arg_19_0.z))
 end
 
-function slot3.IsNan(slot0)
-	return slot0 ~= slot0
+function var_0_3.IsNan(arg_20_0)
+	return arg_20_0 ~= arg_20_0
 end
 
-function slot3.MultiRandom(slot0, slot1)
-	slot2 = {}
-	slot3 = {}
+function var_0_3.MultiRandom(arg_21_0, arg_21_1)
+	local var_21_0 = {}
+	local var_21_1 = {}
 
-	for slot7, slot8 in ipairs(slot0) do
-		table.insert(slot3, slot7)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0) do
+		table.insert(var_21_1, iter_21_0)
 	end
 
-	slot1 = uv0.min(#slot0, slot1)
+	arg_21_1 = var_0_0.min(#arg_21_0, arg_21_1)
 
-	while slot1 > 0 do
-		table.insert(slot2, slot0[table.remove(slot3, uv0.random(#slot3))])
+	while arg_21_1 > 0 do
+		local var_21_2 = var_0_0.random(#var_21_1)
+		local var_21_3 = table.remove(var_21_1, var_21_2)
 
-		slot1 = slot1 - 1
+		table.insert(var_21_0, arg_21_0[var_21_3])
+
+		arg_21_1 = arg_21_1 - 1
 	end
 
-	return slot2
+	return var_21_0
 end
 
-function slot3.RandomFloat(slot0, slot1, slot2)
-	slot2 = slot2 or 10000
+function var_0_3.RandomFloat(arg_22_0, arg_22_1, arg_22_2)
+	arg_22_1 = arg_22_1 or 0
+	arg_22_2 = arg_22_2 or 10000
+	arg_22_1 = arg_22_1 * arg_22_2
+	arg_22_0 = arg_22_0 * arg_22_2
 
-	return uv0.random((slot1 or 0) * slot2, slot0 * slot2) / slot2
+	return var_0_0.random(arg_22_1, arg_22_0) / arg_22_2
 end
 
-UnityEngine.Mathf = slot3
+UnityEngine.Mathf = var_0_3
 
-return slot3
+return var_0_3

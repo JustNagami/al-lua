@@ -1,153 +1,170 @@
-slot0 = class("UserChallengeInfo", import(".BaseVO"))
+﻿local var_0_0 = class("UserChallengeInfo", import(".BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0:UpdateChallengeInfo(slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0:UpdateChallengeInfo(arg_1_1)
 end
 
-function slot0.UpdateChallengeInfo(slot0, slot1)
-	slot0._score = slot1.current_score
-	slot0._level = slot1.level
-	slot0._mode = slot1.mode
-	slot0._resetflag = slot1.issl
-	slot0._seasonIndex = slot1.season_id
-	slot0._dungeonIDList = {}
+function var_0_0.UpdateChallengeInfo(arg_2_0, arg_2_1)
+	arg_2_0._score = arg_2_1.current_score
+	arg_2_0._level = arg_2_1.level
+	arg_2_0._mode = arg_2_1.mode
+	arg_2_0._resetflag = arg_2_1.issl
+	arg_2_0._seasonIndex = arg_2_1.season_id
+	arg_2_0._dungeonIDList = {}
 
-	for slot5, slot6 in ipairs(slot1.dungeon_id_list) do
-		table.insert(slot0._dungeonIDList, slot6)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.dungeon_id_list) do
+		table.insert(arg_2_0._dungeonIDList, iter_2_1)
 	end
 
-	slot0._activityIndex = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE):getConfig("config_id")
+	arg_2_0._activityIndex = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE):getConfig("config_id")
 
-	if slot0._mode == ChallengeProxy.MODE_INFINITE then
-		slot0:setInfiniteDungeonIDListByLevel()
+	if arg_2_0._mode == ChallengeProxy.MODE_INFINITE then
+		arg_2_0:setInfiniteDungeonIDListByLevel()
 	end
 
-	slot0._fleetList = {}
+	arg_2_0._fleetList = {}
 
-	for slot7, slot8 in ipairs(slot1.groupinc_list) do
-		slot0:updateChallengeFleet(slot8)
+	for iter_2_2, iter_2_3 in ipairs(arg_2_1.groupinc_list) do
+		arg_2_0:updateChallengeFleet(iter_2_3)
 	end
 
-	slot0._buffList = {}
+	arg_2_0._buffList = {}
 
-	for slot7, slot8 in ipairs(slot1.buff_list) do
-		table.insert(slot0._buffList, slot8)
+	for iter_2_4, iter_2_5 in ipairs(arg_2_1.buff_list) do
+		table.insert(arg_2_0._buffList, iter_2_5)
 	end
 
-	slot0._lastScore = 0
+	arg_2_0._lastScore = 0
 end
 
-function slot0.updateChallengeFleet(slot0, slot1)
-	if Challenge2Fleet.New(slot1):isSubmarineFleet() then
-		slot0._submarineFleet = slot2
+function var_0_0.updateChallengeFleet(arg_3_0, arg_3_1)
+	local var_3_0 = Challenge2Fleet.New(arg_3_1)
+
+	if var_3_0:isSubmarineFleet() then
+		arg_3_0._submarineFleet = var_3_0
 	else
-		slot0._fleet = slot2
+		arg_3_0._fleet = var_3_0
 	end
 end
 
-function slot0.updateCombatScore(slot0, slot1)
-	slot0._lastScore = slot1
-	slot0._score = slot0._score + slot1
+function var_0_0.updateCombatScore(arg_4_0, arg_4_1)
+	arg_4_0._lastScore = arg_4_1
+	arg_4_0._score = arg_4_0._score + arg_4_1
 end
 
-function slot0.updateLevelForward(slot0)
-	slot0._level = slot0._level + 1
+function var_0_0.updateLevelForward(arg_5_0)
+	arg_5_0._level = arg_5_0._level + 1
 end
 
-function slot0.updateShipHP(slot0, slot1, slot2)
-	if not (slot0._fleet:updateShipsHP(slot1, slot2) or slot0._submarineFleet:updateShipsHP(slot1, slot2)) then
+function var_0_0.updateShipHP(arg_6_0, arg_6_1, arg_6_2)
+	if not (arg_6_0._fleet:updateShipsHP(arg_6_1, arg_6_2) or arg_6_0._submarineFleet:updateShipsHP(arg_6_1, arg_6_2)) then
 		assert(false, "challenge unit not exist")
 	end
 end
 
-function slot0.getRegularFleet(slot0)
-	return slot0._fleet
+function var_0_0.getRegularFleet(arg_7_0)
+	return arg_7_0._fleet
 end
 
-function slot0.getSubmarineFleet(slot0)
-	return slot0._submarineFleet
+function var_0_0.getSubmarineFleet(arg_8_0)
+	return arg_8_0._submarineFleet
 end
 
-function slot0.getShipUIDList(slot0)
-	slot1 = {}
+function var_0_0.getShipUIDList(arg_9_0)
+	local var_9_0 = {}
+	local var_9_1 = arg_9_0._fleet:getShips(false)
 
-	for slot6, slot7 in ipairs(slot0._fleet:getShips(false)) do
-		table.insert(slot1, slot7.id)
+	for iter_9_0, iter_9_1 in ipairs(var_9_1) do
+		table.insert(var_9_0, iter_9_1.id)
 	end
 
-	for slot6, slot7 in ipairs(slot0._submarineFleet:getShips(false)) do
-		table.insert(slot1, slot7.id)
+	local var_9_2 = arg_9_0._submarineFleet:getShips(false)
+
+	for iter_9_2, iter_9_3 in ipairs(var_9_2) do
+		table.insert(var_9_0, iter_9_3.id)
 	end
 
-	return slot1
+	return var_9_0
 end
 
-function slot0.getLevel(slot0)
-	return slot0._level
+function var_0_0.getLevel(arg_10_0)
+	return arg_10_0._level
 end
 
-function slot0.getRound(slot0)
-	return math.ceil(slot0._level / #slot0._dungeonIDList)
+function var_0_0.getRound(arg_11_0)
+	return math.ceil(arg_11_0._level / #arg_11_0._dungeonIDList)
 end
 
-function slot0.getMode(slot0)
-	return slot0._mode
+function var_0_0.getMode(arg_12_0)
+	return arg_12_0._mode
 end
 
-function slot0.getDungeonIDList(slot0)
-	return Clone(slot0._dungeonIDList)
+function var_0_0.getDungeonIDList(arg_13_0)
+	return Clone(arg_13_0._dungeonIDList)
 end
 
-function slot0.getSeasonID(slot0)
-	return slot0._seasonIndex
+function var_0_0.getSeasonID(arg_14_0)
+	return arg_14_0._seasonIndex
 end
 
-function slot0.getResetFlag(slot0)
-	return slot0._resetflag
+function var_0_0.getResetFlag(arg_15_0)
+	return arg_15_0._resetflag
 end
 
-function slot0.getScore(slot0)
-	return slot0._score
+function var_0_0.getScore(arg_16_0)
+	return arg_16_0._score
 end
 
-function slot0.getLastScore(slot0)
-	return slot0._lastScore
+function var_0_0.getLastScore(arg_17_0)
+	return arg_17_0._lastScore
 end
 
-function slot0.getActivityIndex(slot0)
-	return slot0._activityIndex
+function var_0_0.getActivityIndex(arg_18_0)
+	return arg_18_0._activityIndex
 end
 
-function slot0.getNextExpedition(slot0)
-	if slot0._level % ChallengeConst.BOSS_NUM == 0 then
-		slot1 = ChallengeConst.BOSS_NUM
+function var_0_0.getNextExpedition(arg_19_0)
+	local var_19_0 = arg_19_0._level % ChallengeConst.BOSS_NUM
+
+	if var_19_0 == 0 then
+		var_19_0 = ChallengeConst.BOSS_NUM
 	end
 
-	return pg.expedition_challenge_template[slot0._dungeonIDList[slot1]]
+	local var_19_1 = arg_19_0._dungeonIDList[var_19_0]
+
+	return pg.expedition_challenge_template[var_19_1]
 end
 
-function slot0.setInfiniteDungeonIDListByLevel(slot0)
-	if (math.modf((slot0._level - 1) / ChallengeConst.BOSS_NUM) + 1) % #pg.activity_event_challenge[slot0._activityIndex].infinite_stage[slot0._seasonIndex] == 0 then
-		slot4 = slot3
+function var_0_0.setInfiniteDungeonIDListByLevel(arg_20_0)
+	local var_20_0 = arg_20_0._level - 1
+	local var_20_1 = math.modf(var_20_0 / ChallengeConst.BOSS_NUM) + 1
+	local var_20_2 = #pg.activity_event_challenge[arg_20_0._activityIndex].infinite_stage[arg_20_0._seasonIndex]
+	local var_20_3 = var_20_1 % var_20_2
+
+	if var_20_3 == 0 then
+		var_20_3 = var_20_2
 	end
 
-	slot0._dungeonIDList = pg.activity_event_challenge[slot0._activityIndex].infinite_stage[slot0._seasonIndex][slot4]
+	arg_20_0._dungeonIDList = pg.activity_event_challenge[arg_20_0._activityIndex].infinite_stage[arg_20_0._seasonIndex][var_20_3]
 end
 
-function slot0.getNextInfiniteDungeonIDList(slot0)
-	return pg.activity_event_challenge[slot0._activityIndex].infinite_stage[slot0._seasonIndex][(math.modf((slot0._level - 1) / ChallengeConst.BOSS_NUM) + 1) % #pg.activity_event_challenge[slot0._activityIndex].infinite_stage[slot0._seasonIndex] + 1]
+function var_0_0.getNextInfiniteDungeonIDList(arg_21_0)
+	local var_21_0 = arg_21_0._level - 1
+	local var_21_1 = (math.modf(var_21_0 / ChallengeConst.BOSS_NUM) + 1) % #pg.activity_event_challenge[arg_21_0._activityIndex].infinite_stage[arg_21_0._seasonIndex] + 1
+
+	return pg.activity_event_challenge[arg_21_0._activityIndex].infinite_stage[arg_21_0._seasonIndex][var_21_1]
 end
 
-function slot0.getNextStageID(slot0)
-	return slot0:getNextExpedition().dungeon_id
+function var_0_0.getNextStageID(arg_22_0)
+	return arg_22_0:getNextExpedition().dungeon_id
 end
 
-function slot0.IsFinish(slot0)
-	if slot0._level % #slot0._dungeonIDList == 0 then
+function var_0_0.IsFinish(arg_23_0)
+	if arg_23_0._level % #arg_23_0._dungeonIDList == 0 then
 		return true
 	else
 		return false
 	end
 end
 
-return slot0
+return var_0_0

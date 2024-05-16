@@ -1,241 +1,254 @@
-ys = ys or {}
-slot0 = ys.Battle.BattleVariable
-slot1 = class("MoveComponent")
-ys.Battle.MoveComponent = slot1
-slot2 = ys.Battle.BattleConst
-slot3 = ys.Battle.BattleFormulas
-slot1._pos = Vector3.zero
-slot1._isForceMove = false
-slot1._staticState = false
-slot1._speed = Vector3.zero
-slot1._additiveSpeedList = {}
-slot1._additiveSpeed = Vector3.zero
-slot1._corpsLimitSpeed = 0
-slot1._leftCorpsBound = 0
-slot1._rightCorpsBound = 0
-slot1._immuneAreaLimit = false
-slot1._immuneMaxAreaLimit = false
-slot1._leftBorder = 0
-slot1._rightBorder = 0
-slot1._upBorder = 0
-slot1._downBorder = 0
-slot1._IFF = 0
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
+local var_0_0 = ys.Battle.BattleVariable
+local var_0_1 = class("MoveComponent")
+
+ys.Battle.MoveComponent = var_0_1
+
+local var_0_2 = ys.Battle.BattleConst
+local var_0_3 = ys.Battle.BattleFormulas
+
+var_0_1._pos = Vector3.zero
+var_0_1._isForceMove = false
+var_0_1._staticState = false
+var_0_1._speed = Vector3.zero
+var_0_1._additiveSpeedList = {}
+var_0_1._additiveSpeed = Vector3.zero
+var_0_1._corpsLimitSpeed = 0
+var_0_1._leftCorpsBound = 0
+var_0_1._rightCorpsBound = 0
+var_0_1._immuneAreaLimit = false
+var_0_1._immuneMaxAreaLimit = false
+var_0_1._leftBorder = 0
+var_0_1._rightBorder = 0
+var_0_1._upBorder = 0
+var_0_1._downBorder = 0
+var_0_1._IFF = 0
+
+function var_0_1.Ctor(arg_1_0)
+	return
 end
 
-function slot1.GetPos(slot0)
-	return slot0._pos
+function var_0_1.GetPos(arg_2_0)
+	return arg_2_0._pos
 end
 
-function slot1.SetPos(slot0, slot1)
-	slot0._pos = slot1
+function var_0_1.SetPos(arg_3_0, arg_3_1)
+	arg_3_0._pos = arg_3_1
 end
 
-function slot1.Update(slot0)
-	slot0._speed = slot0:GetFinalSpeed()
+function var_0_1.Update(arg_4_0)
+	arg_4_0._speed = arg_4_0:GetFinalSpeed()
 end
 
-function slot1.FixSpeed(slot0, slot1)
-	assert(slot1.FixSpeed ~= nil and type(slot1.FixSpeed) == "function", " MoveComponent.FixSpeed 速度修正出错")
-	slot1:FixSpeed(slot0._speed)
+function var_0_1.FixSpeed(arg_5_0, arg_5_1)
+	assert(arg_5_1.FixSpeed ~= nil and type(arg_5_1.FixSpeed) == "function", " MoveComponent.FixSpeed 速度修正出错")
+	arg_5_1:FixSpeed(arg_5_0._speed)
 end
 
-function slot1.Move(slot0, slot1)
-	slot1 = slot1 or 1
-	slot0._pos.x = slot0._pos.x + slot0._speed.x * slot1
-	slot0._pos.y = slot0._pos.y + slot0._speed.y * slot1
-	slot0._pos.z = slot0._pos.z + slot0._speed.z * slot1
+function var_0_1.Move(arg_6_0, arg_6_1)
+	arg_6_1 = arg_6_1 or 1
+	arg_6_0._pos.x = arg_6_0._pos.x + arg_6_0._speed.x * arg_6_1
+	arg_6_0._pos.y = arg_6_0._pos.y + arg_6_0._speed.y * arg_6_1
+	arg_6_0._pos.z = arg_6_0._pos.z + arg_6_0._speed.z * arg_6_1
 end
 
-function slot1.GetSpeed(slot0)
-	return slot0._speed
+function var_0_1.GetSpeed(arg_7_0)
+	return arg_7_0._speed
 end
 
-function slot1.SetCorpsArea(slot0, slot1, slot2)
-	slot0._leftCorpsBound = slot1
-	slot0._rightCorpsBound = slot2
+function var_0_1.SetCorpsArea(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0._leftCorpsBound = arg_8_1
+	arg_8_0._rightCorpsBound = arg_8_2
 end
 
-function slot1.SetBorder(slot0, slot1, slot2, slot3, slot4)
-	slot0._leftBorder = slot1
-	slot0._rightBorder = slot2
-	slot0._upBorder = slot3
-	slot0._downBorder = slot4
+function var_0_1.SetBorder(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	arg_9_0._leftBorder = arg_9_1
+	arg_9_0._rightBorder = arg_9_2
+	arg_9_0._upBorder = arg_9_3
+	arg_9_0._downBorder = arg_9_4
 end
 
-function slot1.GetFinalSpeed(slot0)
-	slot1 = slot0:getInitialSpeed()
+function var_0_1.GetFinalSpeed(arg_10_0)
+	local var_10_0 = arg_10_0:getInitialSpeed()
 
-	if not slot0._unstoppable then
-		slot1 = slot0:AdditiveForce(slot1)
+	if not arg_10_0._unstoppable then
+		var_10_0 = arg_10_0:AdditiveForce(var_10_0)
 	end
 
-	return slot0:BorderLimit(slot1)
+	return (arg_10_0:BorderLimit(var_10_0))
 end
 
-function slot1.CorpsAreaLimit(slot0, slot1)
-	if slot0._immuneAreaLimit then
-		return slot1
+function var_0_1.CorpsAreaLimit(arg_11_0, arg_11_1)
+	if arg_11_0._immuneAreaLimit then
+		return arg_11_1
 	end
 
-	slot3 = slot0._corpsLimitSpeed
+	local var_11_0 = arg_11_0._pos.x
+	local var_11_1 = arg_11_0._corpsLimitSpeed
 
-	if slot0._pos.x < slot0._leftCorpsBound then
-		slot3 = math.max(slot3, 0.1)
+	if var_11_0 < arg_11_0._leftCorpsBound then
+		var_11_1 = math.max(var_11_1, 0.1)
 
-		if slot1.x < 0 then
-			slot3 = math.min(10, slot3 * 1.04)
+		if arg_11_1.x < 0 then
+			var_11_1 = math.min(10, var_11_1 * 1.04)
 		end
-	elseif slot0._rightCorpsBound < slot2 then
-		slot3 = math.min(slot3, -0.1)
+	elseif var_11_0 > arg_11_0._rightCorpsBound then
+		var_11_1 = math.min(var_11_1, -0.1)
 
-		if slot1.x > 0 then
-			slot3 = math.max(-10, slot3 * 1.04)
+		if arg_11_1.x > 0 then
+			var_11_1 = math.max(-10, var_11_1 * 1.04)
 		end
 	else
-		slot3 = slot3 < 0.1 and slot3 > -0.1 and 0 or slot3 * 0.8
+		var_11_1 = var_11_1 < 0.1 and var_11_1 > -0.1 and 0 or var_11_1 * 0.8
 	end
 
-	slot0._corpsLimitSpeed = slot3
-	slot1.x = slot1.x + slot0._corpsLimitSpeed
+	arg_11_0._corpsLimitSpeed = var_11_1
+	arg_11_1.x = arg_11_1.x + arg_11_0._corpsLimitSpeed
 
-	return slot1
+	return arg_11_1
 end
 
-function slot1.BorderLimit(slot0, slot1)
-	if slot0._immuneMaxAreaLimit then
-		return slot1
+function var_0_1.BorderLimit(arg_12_0, arg_12_1)
+	if arg_12_0._immuneMaxAreaLimit then
+		return arg_12_1
 	end
 
-	slot2 = slot0._pos
+	local var_12_0 = arg_12_0._pos
 
-	if slot1.x < 0 and slot2.x <= slot0._leftBorder or slot1.x > 0 and slot0._rightBorder <= slot2.x then
-		slot1.x = 0
+	if arg_12_1.x < 0 and var_12_0.x <= arg_12_0._leftBorder or arg_12_1.x > 0 and var_12_0.x >= arg_12_0._rightBorder then
+		arg_12_1.x = 0
 	end
 
-	if slot1.z < 0 and slot2.z <= slot0._downBorder or slot1.z > 0 and slot0._upBorder <= slot2.z then
-		slot1.z = 0
+	if arg_12_1.z < 0 and var_12_0.z <= arg_12_0._downBorder or arg_12_1.z > 0 and var_12_0.z >= arg_12_0._upBorder then
+		arg_12_1.z = 0
 	end
 
-	return slot1
+	return arg_12_1
 end
 
-function slot1.ImmuneAreaLimit(slot0, slot1)
-	slot0._immuneAreaLimit = slot1
+function var_0_1.ImmuneAreaLimit(arg_13_0, arg_13_1)
+	arg_13_0._immuneAreaLimit = arg_13_1
 end
 
-function slot1.ImmuneMaxAreaLimit(slot0, slot1)
-	slot0._immuneMaxAreaLimit = slot1
+function var_0_1.ImmuneMaxAreaLimit(arg_14_0, arg_14_1)
+	arg_14_0._immuneMaxAreaLimit = arg_14_1
 end
 
-function slot1.getInitialSpeed(slot0)
-	if slot0._isForceMove and not slot0._unstoppable then
-		slot0:UpdateForceMove()
+function var_0_1.getInitialSpeed(arg_15_0)
+	if arg_15_0._isForceMove and not arg_15_0._unstoppable then
+		local var_15_0 = arg_15_0._forceSpeed
 
-		return slot0._forceSpeed
+		arg_15_0:UpdateForceMove()
+
+		return var_15_0
 	end
 
-	if slot0._moveProcess then
-		return slot0._moveProcess()
+	if arg_15_0._moveProcess then
+		return arg_15_0._moveProcess()
 	end
 
-	if slot0._staticState then
+	if arg_15_0._staticState then
 		return Vector3.zero
 	end
 
-	if slot0._manuallyMove then
-		return slot0:CorpsAreaLimit(slot0._manuallyMove())
+	if arg_15_0._manuallyMove then
+		return arg_15_0:CorpsAreaLimit(arg_15_0._manuallyMove())
 	end
 
-	assert(slot0._autoMoveAi ~= nil, "角色缺少默认移动的ai")
+	assert(arg_15_0._autoMoveAi ~= nil, "角色缺少默认移动的ai")
 
-	return slot0._autoMoveAi()
+	return arg_15_0._autoMoveAi()
 end
 
-function slot1.SetForceMove(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0._isForceMove = true
-	slot1 = slot1.normalized
-	slot0._forceSpeed = slot1 * slot2
-	slot0._forceReduce = slot1 * slot3
-	slot0._forceLastTime = slot4
-	slot0._decayValve = slot5 or 0
+function var_0_1.SetForceMove(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5)
+	arg_16_0._isForceMove = true
+	arg_16_1 = arg_16_1.normalized
+	arg_16_0._forceSpeed = arg_16_1 * arg_16_2
+	arg_16_0._forceReduce = arg_16_1 * arg_16_3
+	arg_16_0._forceLastTime = arg_16_4
+	arg_16_0._decayValve = arg_16_5 or 0
 end
 
-function slot1.UpdateForceMove(slot0)
-	if slot0._forceLastTime <= 0 then
-		slot0:ClearForceMove()
+function var_0_1.UpdateForceMove(arg_17_0)
+	local var_17_0 = arg_17_0._forceLastTime
+
+	if var_17_0 <= 0 then
+		arg_17_0:ClearForceMove()
 
 		return
 	end
 
-	slot0._forceLastTime = slot1 - 1
+	arg_17_0._forceLastTime = var_17_0 - 1
 
-	if slot1 < slot0._decayValve then
-		slot0._forceSpeed:Sub(slot0._forceReduce)
+	if var_17_0 < arg_17_0._decayValve then
+		arg_17_0._forceSpeed:Sub(arg_17_0._forceReduce)
 	end
 end
 
-function slot1.ClearForceMove(slot0)
-	slot0._isForceMove = false
-	slot0._forceSpeed = nil
-	slot0._forceReduce = nil
-	slot0._forceLastTime = nil
+function var_0_1.ClearForceMove(arg_18_0)
+	arg_18_0._isForceMove = false
+	arg_18_0._forceSpeed = nil
+	arg_18_0._forceReduce = nil
+	arg_18_0._forceLastTime = nil
 end
 
-function slot1.SetMoveProcess(slot0, slot1)
-	slot0._moveProcess = slot1
+function var_0_1.SetMoveProcess(arg_19_0, arg_19_1)
+	arg_19_0._moveProcess = arg_19_1
 end
 
-function slot1.SetStaticState(slot0, slot1)
-	slot0._staticState = slot1
+function var_0_1.SetStaticState(arg_20_0, arg_20_1)
+	arg_20_0._staticState = arg_20_1
 end
 
-function slot1.SetAutoMoveAI(slot0, slot1, slot2)
-	function slot0._autoMoveAi()
-		return uv0:GetDirection():Mul(uv1:GetAttrByName("velocity"))
+function var_0_1.SetAutoMoveAI(arg_21_0, arg_21_1, arg_21_2)
+	function arg_21_0._autoMoveAi()
+		return arg_21_1:GetDirection():Mul(arg_21_2:GetAttrByName("velocity"))
 	end
 end
 
-function slot1.SetFormationCtrlInfo(slot0, slot1)
-	function slot0._manuallyMove()
-		return uv0:UpdateFleetInfo(uv1)
+function var_0_1.SetFormationCtrlInfo(arg_23_0, arg_23_1)
+	function arg_23_0._manuallyMove()
+		return arg_23_0:UpdateFleetInfo(arg_23_1)
 	end
 end
 
-function slot1.CancelFormationCtrl(slot0)
-	slot0._manuallyMove = nil
+function var_0_1.CancelFormationCtrl(arg_25_0)
+	arg_25_0._manuallyMove = nil
 end
 
-function slot1.SetMotionVO(slot0, slot1)
-	slot0._fleetMotionVO = slot1
+function var_0_1.SetMotionVO(arg_26_0, arg_26_1)
+	arg_26_0._fleetMotionVO = arg_26_1
 end
 
-function slot1.UpdateFleetInfo(slot0, slot1)
-	slot3 = slot0._fleetMotionVO:GetSpeed()
+function var_0_1.UpdateFleetInfo(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0._fleetMotionVO
+	local var_27_1 = var_27_0:GetSpeed()
 
-	if slot1:EqualZero() then
-		return slot3
+	if arg_27_1:EqualZero() then
+		return var_27_1
 	end
 
-	return (slot2:GetDirAngle() * slot1):Add(slot2:GetPos()):Sub(slot0._pos):Div(25):Add(slot3)
+	local var_27_2 = var_27_0:GetPos()
+
+	return (var_27_0:GetDirAngle() * arg_27_1):Add(var_27_2):Sub(arg_27_0._pos):Div(25):Add(var_27_1)
 end
 
-function slot1.AdditiveForce(slot0, slot1)
-	slot1.x = slot1.x + slot0._additiveSpeed.x
-	slot1.z = slot1.z + slot0._additiveSpeed.z
+function var_0_1.AdditiveForce(arg_28_0, arg_28_1)
+	arg_28_1.x = arg_28_1.x + arg_28_0._additiveSpeed.x
+	arg_28_1.z = arg_28_1.z + arg_28_0._additiveSpeed.z
 
-	return slot1
+	return arg_28_1
 end
 
-function slot1.UpdateAdditiveSpeed(slot0, slot1)
-	slot0._additiveSpeed = slot1
+function var_0_1.UpdateAdditiveSpeed(arg_29_0, arg_29_1)
+	arg_29_0._additiveSpeed = arg_29_1
 end
 
-function slot1.RemoveAdditiveSpeed(slot0)
-	slot0._additiveSpeed = Vector3.zero
+function var_0_1.RemoveAdditiveSpeed(arg_30_0)
+	arg_30_0._additiveSpeed = Vector3.zero
 end
 
-function slot1.ActiveUnstoppable(slot0, slot1)
-	slot0._unstoppable = slot1
+function var_0_1.ActiveUnstoppable(arg_31_0, arg_31_1)
+	arg_31_0._unstoppable = arg_31_1
 end

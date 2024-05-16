@@ -1,288 +1,330 @@
-slot0 = class("TechnologyTreeSetAttrLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("TechnologyTreeSetAttrLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "TechnologyTreeSetAttrUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:initUITips()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:initUITips()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
-		weight = slot0:getWeightFromData()
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
+		weight = arg_3_0:getWeightFromData()
 	})
-	slot0:updateTypeList()
-	triggerToggle(slot0.typeContainer:GetChild(0), true)
+	arg_3_0:updateTypeList()
+	triggerToggle(arg_3_0.typeContainer:GetChild(0), true)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
-	slot0.resLoader:Clear()
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
+	arg_4_0.resLoader:Clear()
 end
 
-function slot0.onBackPressed(slot0)
-	triggerButton(slot0.closeBtn)
+function var_0_0.onBackPressed(arg_5_0)
+	triggerButton(arg_5_0.closeBtn)
 end
 
-function slot0.initData(slot0)
-	slot0.tecNationProxy = getProxy(TechnologyNationProxy)
-	slot0.cacheAdditionMap = {}
-	slot0.curAdditionMap = slot0.tecNationProxy:getSetableAttrAddition()
-	slot0.maxAdditionMap = nil
-	slot0.typeOrderList = nil
-	slot0.typeAttrOrderListTable = nil
-	slot0.maxAdditionMap, slot0.typeOrderList, slot0.typeAttrOrderListTable = slot0.tecNationProxy:getTecBuff()
-	slot0.typeOrderList = ShipType.FilterOverQuZhuType(slot0.typeOrderList)
-	slot0.resLoader = AutoLoader.New()
-	slot0.curType = 0
-	slot0.typeToggleTable = {}
-	slot0.typeAttrTFTable = {}
+function var_0_0.initData(arg_6_0)
+	arg_6_0.tecNationProxy = getProxy(TechnologyNationProxy)
+	arg_6_0.cacheAdditionMap = {}
+	arg_6_0.curAdditionMap = arg_6_0.tecNationProxy:getSetableAttrAddition()
+	arg_6_0.maxAdditionMap = nil
+	arg_6_0.typeOrderList = nil
+	arg_6_0.typeAttrOrderListTable = nil
+	arg_6_0.maxAdditionMap, arg_6_0.typeOrderList, arg_6_0.typeAttrOrderListTable = arg_6_0.tecNationProxy:getTecBuff()
+	arg_6_0.typeOrderList = ShipType.FilterOverQuZhuType(arg_6_0.typeOrderList)
+	arg_6_0.resLoader = AutoLoader.New()
+	arg_6_0.curType = 0
+	arg_6_0.typeToggleTable = {}
+	arg_6_0.typeAttrTFTable = {}
 end
 
-function slot0.initUITips(slot0)
-	setText(slot0:findTF("Adapt/Content/ResetBtn/Text"), i18n("attrset_reset"))
-	setText(slot0:findTF("Adapt/Content/SaveBtn/Text"), i18n("attrset_save"))
+function var_0_0.initUITips(arg_7_0)
+	local var_7_0 = arg_7_0:findTF("Adapt/Content/ResetBtn/Text")
+	local var_7_1 = arg_7_0:findTF("Adapt/Content/SaveBtn/Text")
+
+	setText(var_7_0, i18n("attrset_reset"))
+	setText(var_7_1, i18n("attrset_save"))
 end
 
-function slot0.findUI(slot0)
-	slot0.typeTpl = slot0:findTF("TypeTpl")
-	slot0.attrTpl = slot0:findTF("AttrTpl")
-	slot0.backBGTF = slot0:findTF("Adapt/BackBG")
-	slot1 = slot0:findTF("Adapt/Content")
-	slot0.closeBtn = slot0:findTF("CloseBtn", slot1)
-	slot0.arrowTF = slot0:findTF("Arrow", slot1)
-	slot0.typeContainer = slot0:findTF("TypeScrollView/Content", slot1)
-	slot0.attrContainer = slot0:findTF("AttrPanel", slot1)
-	slot0.resetBtn = slot0:findTF("ResetBtn", slot1)
-	slot0.saveBtn = slot0:findTF("SaveBtn", slot1)
-	slot0.typeUIItemList = UIItemList.New(slot0.typeContainer, slot0.typeTpl)
-	slot0.attrUIItemList = UIItemList.New(slot0.attrContainer, slot0.attrTpl)
+function var_0_0.findUI(arg_8_0)
+	arg_8_0.typeTpl = arg_8_0:findTF("TypeTpl")
+	arg_8_0.attrTpl = arg_8_0:findTF("AttrTpl")
+	arg_8_0.backBGTF = arg_8_0:findTF("Adapt/BackBG")
+
+	local var_8_0 = arg_8_0:findTF("Adapt/Content")
+
+	arg_8_0.closeBtn = arg_8_0:findTF("CloseBtn", var_8_0)
+	arg_8_0.arrowTF = arg_8_0:findTF("Arrow", var_8_0)
+	arg_8_0.typeContainer = arg_8_0:findTF("TypeScrollView/Content", var_8_0)
+	arg_8_0.attrContainer = arg_8_0:findTF("AttrPanel", var_8_0)
+	arg_8_0.resetBtn = arg_8_0:findTF("ResetBtn", var_8_0)
+	arg_8_0.saveBtn = arg_8_0:findTF("SaveBtn", var_8_0)
+	arg_8_0.typeUIItemList = UIItemList.New(arg_8_0.typeContainer, arg_8_0.typeTpl)
+	arg_8_0.attrUIItemList = UIItemList.New(arg_8_0.attrContainer, arg_8_0.attrTpl)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.closeBtn, function ()
-		if uv0:isChanged() then
-			slot3 = uv0
+function var_0_0.addListener(arg_9_0)
+	onButton(arg_9_0, arg_9_0.closeBtn, function()
+		if arg_9_0:isChanged() then
+			local function var_10_0()
+				return
+			end
 
-			slot3:openSaveBox(function ()
-				slot0 = uv0
+			local function var_10_1()
+				arg_9_0:closeView()
+			end
 
-				slot0:save(function ()
-					uv0:closeView()
+			local function var_10_2()
+				arg_9_0:save(function()
+					arg_9_0:closeView()
 				end)
-			end, function ()
-				uv0:closeView()
-			end, function ()
-			end)
+			end
+
+			arg_9_0:openSaveBox(var_10_2, var_10_1, var_10_0)
 		else
-			uv0:closeView()
+			arg_9_0:closeView()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.backBGTF, function ()
-		if uv0:isChanged() then
-			slot3 = uv0
+	onButton(arg_9_0, arg_9_0.backBGTF, function()
+		if arg_9_0:isChanged() then
+			local function var_15_0()
+				return
+			end
 
-			slot3:openSaveBox(function ()
-				slot0 = uv0
+			local function var_15_1()
+				arg_9_0:closeView()
+			end
 
-				slot0:save(function ()
-					uv0:closeView()
+			local function var_15_2()
+				arg_9_0:save(function()
+					arg_9_0:closeView()
 				end)
-			end, function ()
-				uv0:closeView()
-			end, function ()
-			end)
+			end
+
+			arg_9_0:openSaveBox(var_15_2, var_15_1, var_15_0)
 		else
-			uv0:closeView()
+			arg_9_0:closeView()
 		end
 	end, SFX_CANCEL)
+	arg_9_0.typeUIItemList:make(function(arg_20_0, arg_20_1, arg_20_2)
+		if arg_20_0 == UIItemList.EventUpdate then
+			arg_20_1 = arg_20_1 + 1
 
-	slot1 = slot0.typeUIItemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTypeTF(slot1 + 1, slot2)
+			arg_9_0:updateTypeTF(arg_20_1, arg_20_2)
 		end
 	end)
+	arg_9_0.attrUIItemList:make(function(arg_21_0, arg_21_1, arg_21_2)
+		if arg_21_0 == UIItemList.EventUpdate then
+			arg_21_1 = arg_21_1 + 1
 
-	slot1 = slot0.attrUIItemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateAttrTF(slot1 + 1, slot2)
+			arg_9_0:updateAttrTF(arg_21_1, arg_21_2)
 		end
 	end)
-	onButton(slot0, slot0.resetBtn, function ()
-		for slot3, slot4 in ipairs(uv0.typeAttrOrderListTable[uv0.curType]) do
-			slot5 = uv0.maxAdditionMap[uv0.curType][slot4]
+	onButton(arg_9_0, arg_9_0.resetBtn, function()
+		for iter_22_0, iter_22_1 in ipairs(arg_9_0.typeAttrOrderListTable[arg_9_0.curType]) do
+			local var_22_0 = arg_9_0.maxAdditionMap[arg_9_0.curType][iter_22_1]
 
-			uv0:setAttrValue(uv0.curType, slot4, slot5)
-			uv0:setAttrTFValue(uv0.typeAttrTFTable[uv0.curType][slot4], slot5)
+			arg_9_0:setAttrValue(arg_9_0.curType, iter_22_1, var_22_0)
+			arg_9_0:setAttrTFValue(arg_9_0.typeAttrTFTable[arg_9_0.curType][iter_22_1], var_22_0)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.saveBtn, function ()
-		if uv0:isChanged() then
-			slot1 = uv0
+	onButton(arg_9_0, arg_9_0.saveBtn, function()
+		if arg_9_0:isChanged() then
+			local function var_23_0()
+				arg_9_0:clearCacheMap()
 
-			slot1:save(function ()
-				uv0:clearCacheMap()
+				arg_9_0.curAdditionMap = arg_9_0.tecNationProxy:getSetableAttrAddition()
+			end
 
-				uv0.curAdditionMap = uv0.tecNationProxy:getSetableAttrAddition()
-			end)
+			arg_9_0:save(var_23_0)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.updateTypeTF(slot0, slot1, slot2)
-	slot6 = slot0.typeOrderList[slot1]
-	slot7 = ShipType.Type2Name(slot6)
+function var_0_0.updateTypeTF(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = arg_25_0:findTF("TypeNameUnSelect", arg_25_2)
+	local var_25_1 = arg_25_0:findTF("TypeNameSelected", arg_25_2)
+	local var_25_2 = arg_25_0:findTF("TypeImg", arg_25_2)
+	local var_25_3 = arg_25_0.typeOrderList[arg_25_1]
+	local var_25_4 = ShipType.Type2Name(var_25_3)
 
-	setText(slot0:findTF("TypeNameUnSelect", slot2), slot7)
-	setText(slot0:findTF("TypeNameSelected", slot2), slot7)
+	setText(var_25_0, var_25_4)
+	setText(var_25_1, var_25_4)
+	arg_25_0.resLoader:GetSprite("ShipType", "buffitem_tec_" .. var_25_3, var_25_2, false)
+	onToggle(arg_25_0, arg_25_2, function(arg_26_0)
+		if arg_26_0 and arg_25_0.curType ~= var_25_3 then
+			if arg_25_0:isChanged() then
+				local function var_26_0()
+					triggerToggle(arg_25_0.typeToggleTable[arg_25_0.curType], true)
+				end
 
-	slot8 = slot0.resLoader
+				local function var_26_1()
+					arg_25_0:clearCacheMap()
 
-	slot8:GetSprite("ShipType", "buffitem_tec_" .. slot6, slot0:findTF("TypeImg", slot2), false)
-	onToggle(slot0, slot2, function (slot0)
-		if slot0 and uv0.curType ~= uv1 then
-			if uv0:isChanged() then
-				slot4 = uv0
+					arg_25_0.curType = var_25_3
 
-				slot4:openSaveBox(function ()
-					slot0 = uv0
+					arg_25_0:updateAttrList(arg_25_0.curType)
+				end
 
-					slot0:save(function ()
-						uv0:clearCacheMap()
+				local function var_26_2()
+					arg_25_0:save(function()
+						arg_25_0:clearCacheMap()
 
-						uv0.curAdditionMap = uv0.tecNationProxy:getSetableAttrAddition()
-						uv0.curType = uv1
+						arg_25_0.curAdditionMap = arg_25_0.tecNationProxy:getSetableAttrAddition()
+						arg_25_0.curType = var_25_3
 
-						uv0:updateAttrList(uv0.curType)
+						arg_25_0:updateAttrList(arg_25_0.curType)
 					end)
-				end, function ()
-					uv0:clearCacheMap()
+				end
 
-					uv0.curType = uv1
-
-					uv0:updateAttrList(uv0.curType)
-				end, function ()
-					triggerToggle(uv0.typeToggleTable[uv0.curType], true)
-				end)
+				arg_25_0:openSaveBox(var_26_2, var_26_1, var_26_0)
 			else
-				uv0:clearCacheMap()
+				arg_25_0:clearCacheMap()
 
-				uv0.curType = uv1
+				arg_25_0.curType = var_25_3
 
-				uv0:updateAttrList(uv0.curType)
+				arg_25_0:updateAttrList(arg_25_0.curType)
 			end
 		end
 	end, SFX_PANEL)
 
-	slot0.typeToggleTable[slot6] = slot2
+	arg_25_0.typeToggleTable[var_25_3] = arg_25_2
 end
 
-function slot0.updateTypeList(slot0)
-	slot0.typeUIItemList:align(#slot0.typeOrderList)
+function var_0_0.updateTypeList(arg_31_0)
+	arg_31_0.typeUIItemList:align(#arg_31_0.typeOrderList)
 end
 
-function slot0.updateAttrTF(slot0, slot1, slot2)
-	slot6 = slot0:findTF("Attr/InputField", slot2)
-	slot12 = slot0.typeAttrOrderListTable[slot0.curType][slot1]
+function var_0_0.updateAttrTF(arg_32_0, arg_32_1, arg_32_2)
+	local var_32_0 = arg_32_0:findTF("AttrName", arg_32_2)
+	local var_32_1 = arg_32_0:findTF("Attr/Value/CurValue", arg_32_2)
+	local var_32_2 = arg_32_0:findTF("Attr/Value/MaxValue", arg_32_2)
+	local var_32_3 = arg_32_0:findTF("Attr/InputField", arg_32_2)
+	local var_32_4 = arg_32_0:findTF("Buttons/MinusBtn", arg_32_2)
+	local var_32_5 = arg_32_0:findTF("Buttons/MaxBtn", arg_32_2)
+	local var_32_6 = arg_32_0:findTF("Buttons/AddBtn", arg_32_2)
+	local var_32_7 = arg_32_0:findTF("Attr/InputField", arg_32_2)
+	local var_32_8 = arg_32_0.typeAttrOrderListTable[arg_32_0.curType][arg_32_1]
+	local var_32_9 = AttributeType.Type2Name(pg.attribute_info_by_type[var_32_8].name)
+	local var_32_10 = arg_32_0.maxAdditionMap[arg_32_0.curType][var_32_8]
+	local var_32_11 = arg_32_0:getAddValueForShow(arg_32_0.curType, var_32_8)
 
-	setText(slot0:findTF("AttrName", slot2), AttributeType.Type2Name(pg.attribute_info_by_type[slot12].name))
-	setText(slot0:findTF("Attr/Value/CurValue", slot2), slot0:getAddValueForShow(slot0.curType, slot12))
-	setText(slot0:findTF("Attr/Value/MaxValue", slot2), slot0.maxAdditionMap[slot0.curType][slot12])
-	onButton(slot0, slot0:findTF("Buttons/MinusBtn", slot2), function ()
-		if uv0:getAddValueForShow(uv0.curType, uv1) > 0 then
-			slot0 = slot0 - 1
+	setText(var_32_0, var_32_9)
+	setText(var_32_1, var_32_11)
+	setText(var_32_2, var_32_10)
+	onButton(arg_32_0, var_32_4, function()
+		local var_33_0 = arg_32_0:getAddValueForShow(arg_32_0.curType, var_32_8)
 
-			uv0:setAttrValue(uv0.curType, uv1, slot0)
-			setText(uv2, slot0)
+		if var_33_0 > 0 then
+			local var_33_1 = var_33_0 - 1
+
+			arg_32_0:setAttrValue(arg_32_0.curType, var_32_8, var_33_1)
+			setText(var_32_1, var_33_1)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("Buttons/AddBtn", slot2), function ()
-		if uv0:getAddValueForShow(uv0.curType, uv1) < uv2 then
-			slot0 = slot0 + 1
+	onButton(arg_32_0, var_32_6, function()
+		local var_34_0 = arg_32_0:getAddValueForShow(arg_32_0.curType, var_32_8)
 
-			uv0:setAttrValue(uv0.curType, uv1, slot0)
-			setText(uv3, slot0)
+		if var_34_0 < var_32_10 then
+			local var_34_1 = var_34_0 + 1
+
+			arg_32_0:setAttrValue(arg_32_0.curType, var_32_8, var_34_1)
+			setText(var_32_1, var_34_1)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("Buttons/MaxBtn", slot2), function ()
-		slot0 = uv0:getAddValueForShow(uv0.curType, uv1)
-		slot0 = uv2
+	onButton(arg_32_0, var_32_5, function()
+		local var_35_0 = arg_32_0:getAddValueForShow(arg_32_0.curType, var_32_8)
+		local var_35_1 = var_32_10
 
-		uv0:setAttrValue(uv0.curType, uv1, slot0)
-		setText(uv3, slot0)
+		arg_32_0:setAttrValue(arg_32_0.curType, var_32_8, var_35_1)
+		setText(var_32_1, var_35_1)
 	end, SFX_PANEL)
-	onInputEndEdit(slot0, slot0:findTF("Attr/InputField", slot2), function (slot0)
-		if tonumber(slot0) and (slot1 >= 0 or nil) and (math.floor(slot1) == slot1 and slot2 or nil) then
-			slot1 = math.min(slot1, uv0)
+	onInputEndEdit(arg_32_0, var_32_7, function(arg_36_0)
+		local var_36_0 = tonumber(arg_36_0)
 
-			uv1:setAttrValue(uv1.curType, uv2, slot1)
-			setText(uv3, slot1)
-		elseif not slot1 then
+		if var_36_0 then
+			if var_36_0 < 0 then
+				var_36_0 = nil
+			else
+				local var_36_1 = math.floor(var_36_0)
+
+				if var_36_1 == var_36_0 then
+					var_36_0 = var_36_1
+				else
+					var_36_0 = nil
+				end
+			end
+		end
+
+		if var_36_0 then
+			var_36_0 = math.min(var_36_0, var_32_10)
+
+			arg_32_0:setAttrValue(arg_32_0.curType, var_32_8, var_36_0)
+			setText(var_32_1, var_36_0)
+		elseif not var_36_0 then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("attrset_input_ill"))
 		end
 
-		setInputText(uv4, "")
+		setInputText(var_32_7, "")
 	end)
 
-	slot0.typeAttrTFTable[slot0.curType][slot12] = slot2
+	arg_32_0.typeAttrTFTable[arg_32_0.curType][var_32_8] = arg_32_2
 end
 
-function slot0.updateAttrList(slot0, slot1)
-	slot0.typeAttrTFTable = {
-		[slot1] = {}
-	}
+function var_0_0.updateAttrList(arg_37_0, arg_37_1)
+	arg_37_0.typeAttrTFTable = {}
+	arg_37_0.typeAttrTFTable[arg_37_1] = {}
 
-	slot0.attrUIItemList:align(#slot0.typeAttrOrderListTable[slot1])
+	arg_37_0.attrUIItemList:align(#arg_37_0.typeAttrOrderListTable[arg_37_1])
 end
 
-function slot0.setAttrTFValue(slot0, slot1, slot2)
-	setText(slot0:findTF("Attr/Value/CurValue", slot1), slot2)
+function var_0_0.setAttrTFValue(arg_38_0, arg_38_1, arg_38_2)
+	local var_38_0 = arg_38_0:findTF("Attr/Value/CurValue", arg_38_1)
+
+	setText(var_38_0, arg_38_2)
 end
 
-function slot0.openSaveBox(slot0, slot1, slot2, slot3)
+function var_0_0.openSaveBox(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("attrset_ask_save"),
-		onYes = slot1,
-		onNo = slot2,
-		onClose = slot3,
+		onYes = arg_39_1,
+		onNo = arg_39_2,
+		onClose = arg_39_3,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function slot0.getAddValueForShow(slot0, slot1, slot2)
-	if slot0.cacheAdditionMap[slot1] and slot0.cacheAdditionMap[slot1][slot2] then
-		return slot0.cacheAdditionMap[slot1][slot2]
-	elseif slot0.curAdditionMap[slot0.curType] and slot0.curAdditionMap[slot0.curType][slot2] then
-		return slot0.curAdditionMap[slot1][slot2]
+function var_0_0.getAddValueForShow(arg_40_0, arg_40_1, arg_40_2)
+	if arg_40_0.cacheAdditionMap[arg_40_1] and arg_40_0.cacheAdditionMap[arg_40_1][arg_40_2] then
+		return arg_40_0.cacheAdditionMap[arg_40_1][arg_40_2]
+	elseif arg_40_0.curAdditionMap[arg_40_0.curType] and arg_40_0.curAdditionMap[arg_40_0.curType][arg_40_2] then
+		return arg_40_0.curAdditionMap[arg_40_1][arg_40_2]
 	else
-		return slot0.maxAdditionMap[slot1][slot2]
+		return arg_40_0.maxAdditionMap[arg_40_1][arg_40_2]
 	end
 end
 
-function slot0.setAttrValue(slot0, slot1, slot2, slot3)
-	if not slot0.cacheAdditionMap[slot1] then
-		slot0.cacheAdditionMap[slot1] = {}
+function var_0_0.setAttrValue(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
+	if not arg_41_0.cacheAdditionMap[arg_41_1] then
+		arg_41_0.cacheAdditionMap[arg_41_1] = {}
 	end
 
-	slot0.cacheAdditionMap[slot1][slot2] = slot3
+	arg_41_0.cacheAdditionMap[arg_41_1][arg_41_2] = arg_41_3
 end
 
-function slot0.clearCacheMap(slot0)
-	slot0.cacheAdditionMap = {}
+function var_0_0.clearCacheMap(arg_42_0)
+	arg_42_0.cacheAdditionMap = {}
 end
 
-function slot0.isChanged(slot0)
-	for slot4, slot5 in pairs(slot0.cacheAdditionMap) do
-		for slot9, slot10 in pairs(slot5) do
-			if slot10 ~= slot0.tecNationProxy:getSetableAttrAdditionValueByTypeAttr(slot4, slot9) then
+function var_0_0.isChanged(arg_43_0)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.cacheAdditionMap) do
+		for iter_43_2, iter_43_3 in pairs(iter_43_1) do
+			if iter_43_3 ~= arg_43_0.tecNationProxy:getSetableAttrAdditionValueByTypeAttr(iter_43_0, iter_43_2) then
 				return true
 			end
 		end
@@ -291,93 +333,97 @@ function slot0.isChanged(slot0)
 	return false
 end
 
-function slot0.save(slot0, slot1)
-	slot2 = {}
+function var_0_0.save(arg_44_0, arg_44_1)
+	local var_44_0 = {}
 
-	for slot6, slot7 in pairs(slot0.curAdditionMap) do
-		if not slot2[slot6] then
-			slot2[slot6] = {}
+	for iter_44_0, iter_44_1 in pairs(arg_44_0.curAdditionMap) do
+		if not var_44_0[iter_44_0] then
+			var_44_0[iter_44_0] = {}
 		end
 
-		for slot11, slot12 in pairs(slot7) do
-			slot2[slot6][slot11] = slot12
-		end
-	end
-
-	for slot6, slot7 in pairs(slot0.cacheAdditionMap) do
-		if not slot2[slot6] then
-			slot2[slot6] = {}
-		end
-
-		for slot11, slot12 in pairs(slot7) do
-			slot2[slot6][slot11] = slot12
+		for iter_44_2, iter_44_3 in pairs(iter_44_1) do
+			var_44_0[iter_44_0][iter_44_2] = iter_44_3
 		end
 	end
 
-	slot3 = {}
+	for iter_44_4, iter_44_5 in pairs(arg_44_0.cacheAdditionMap) do
+		if not var_44_0[iter_44_4] then
+			var_44_0[iter_44_4] = {}
+		end
 
-	for slot7, slot8 in pairs(slot2) do
-		for slot12, slot13 in pairs(slot8) do
-			if slot13 ~= slot0.maxAdditionMap[slot7][slot12] then
-				table.insert(slot3, {
-					ship_type = slot7,
-					attr_type = slot12,
-					set_value = slot13
-				})
+		for iter_44_6, iter_44_7 in pairs(iter_44_5) do
+			var_44_0[iter_44_4][iter_44_6] = iter_44_7
+		end
+	end
+
+	local var_44_1 = {}
+
+	for iter_44_8, iter_44_9 in pairs(var_44_0) do
+		for iter_44_10, iter_44_11 in pairs(iter_44_9) do
+			if iter_44_11 ~= arg_44_0.maxAdditionMap[iter_44_8][iter_44_10] then
+				local var_44_2 = {
+					ship_type = iter_44_8,
+					attr_type = iter_44_10,
+					set_value = iter_44_11
+				}
+
+				table.insert(var_44_1, var_44_2)
 			end
 		end
 	end
 
 	pg.m02:sendNotification(GAME.SET_TEC_ATTR_ADDITION, {
-		sendList = slot3,
-		onSuccess = slot1
+		sendList = var_44_1,
+		onSuccess = arg_44_1
 	})
 end
 
-function slot0.reset(slot0)
-	slot1 = {}
+function var_0_0.reset(arg_45_0)
+	local var_45_0 = {}
 
-	for slot5, slot6 in pairs(slot0.curAdditionMap) do
-		if slot5 ~= slot0.curType then
-			if not slot1[slot5] then
-				slot1[slot5] = {}
+	for iter_45_0, iter_45_1 in pairs(arg_45_0.curAdditionMap) do
+		if iter_45_0 ~= arg_45_0.curType then
+			if not var_45_0[iter_45_0] then
+				var_45_0[iter_45_0] = {}
 			end
 
-			for slot10, slot11 in pairs(slot6) do
-				slot1[slot5][slot10] = slot11
-			end
-		end
-	end
-
-	for slot5, slot6 in pairs(slot0.cacheAdditionMap) do
-		if slot5 ~= slot0.curType then
-			if not slot1[slot5] then
-				slot1[slot5] = {}
-			end
-
-			for slot10, slot11 in pairs(slot6) do
-				slot1[slot5][slot10] = slot11
+			for iter_45_2, iter_45_3 in pairs(iter_45_1) do
+				var_45_0[iter_45_0][iter_45_2] = iter_45_3
 			end
 		end
 	end
 
-	slot2 = {}
+	for iter_45_4, iter_45_5 in pairs(arg_45_0.cacheAdditionMap) do
+		if iter_45_4 ~= arg_45_0.curType then
+			if not var_45_0[iter_45_4] then
+				var_45_0[iter_45_4] = {}
+			end
 
-	for slot6, slot7 in pairs(slot1) do
-		for slot11, slot12 in pairs(slot7) do
-			if slot12 ~= slot0.maxAdditionMap[slot6][slot11] then
-				table.insert(slot2, {
-					ship_type = slot6,
-					attr_type = slot11,
-					set_value = slot12
-				})
+			for iter_45_6, iter_45_7 in pairs(iter_45_5) do
+				var_45_0[iter_45_4][iter_45_6] = iter_45_7
+			end
+		end
+	end
+
+	local var_45_1 = {}
+
+	for iter_45_8, iter_45_9 in pairs(var_45_0) do
+		for iter_45_10, iter_45_11 in pairs(iter_45_9) do
+			if iter_45_11 ~= arg_45_0.maxAdditionMap[iter_45_8][iter_45_10] then
+				local var_45_2 = {
+					ship_type = iter_45_8,
+					attr_type = iter_45_10,
+					set_value = iter_45_11
+				}
+
+				table.insert(var_45_1, var_45_2)
 			end
 		end
 	end
 
 	pg.m02:sendNotification(GAME.SET_TEC_ATTR_ADDITION, {
-		sendList = slot2
+		sendList = var_45_1
 	})
 end
 
-return slot0
+return var_0_0

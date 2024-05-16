@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.roll_attr = {
 	{
 		ID = 1,

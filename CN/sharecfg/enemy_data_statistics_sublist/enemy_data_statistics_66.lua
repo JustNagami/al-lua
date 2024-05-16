@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.enemy_data_statistics_66 = {
 	[104012] = {
 		cannon = 135,

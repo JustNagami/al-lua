@@ -1,445 +1,509 @@
-slot0 = class("StoryStep")
+﻿local var_0_0 = class("StoryStep")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.flashout = slot1.flashout
-	slot0.flashin = slot1.flashin
-	slot0.bgName = slot1.bgName
-	slot0.bgShadow = slot1.bgShadow
-	slot0.blackBg = slot1.blackBg
-	slot0.blackFg = slot1.blackFg or 0
-	slot0.bgGlitchArt = slot1.bgNoise
-	slot0.oldPhoto = slot1.oldPhoto
-	slot0.bgm = slot1.bgm
-	slot0.bgmDelay = slot1.bgmDelay or 0
-	slot0.bgmVolume = slot1.bgmVolume or -1
-	slot0.stopbgm = slot1.stopbgm
-	slot0.effects = slot1.effects or {}
-	slot0.blink = slot1.flash
-	slot0.blinkWithColor = slot1.flashN
-	slot0.soundeffect = slot1.soundeffect
-	slot0.seDelay = slot1.seDelay or 0
-	slot0.voice = slot1.voice
-	slot0.voiceDelay = slot1.voiceDelay or 0
-	slot0.stopVoice = defaultValue(slot1.stopVoice, false)
-	slot0.movableNode = slot1.movableNode
-	slot0.options = slot1.options
-	slot0.important = slot1.important
-	slot0.branchCode = slot1.optionFlag
-	slot0.recallOption = slot1.recallOption
-	slot0.nextScriptName = slot1.jumpto
-	slot0.eventDelay = slot1.eventDelay or 0
-	slot0.bgColor = slot1.bgColor or {
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.flashout = arg_1_1.flashout
+	arg_1_0.flashin = arg_1_1.flashin
+	arg_1_0.bgName = arg_1_1.bgName
+	arg_1_0.bgShadow = arg_1_1.bgShadow
+	arg_1_0.blackBg = arg_1_1.blackBg
+	arg_1_0.blackFg = arg_1_1.blackFg or 0
+	arg_1_0.bgGlitchArt = arg_1_1.bgNoise
+	arg_1_0.oldPhoto = arg_1_1.oldPhoto
+	arg_1_0.bgm = arg_1_1.bgm
+	arg_1_0.bgmDelay = arg_1_1.bgmDelay or 0
+	arg_1_0.bgmVolume = arg_1_1.bgmVolume or -1
+	arg_1_0.stopbgm = arg_1_1.stopbgm
+	arg_1_0.effects = arg_1_1.effects or {}
+	arg_1_0.blink = arg_1_1.flash
+	arg_1_0.blinkWithColor = arg_1_1.flashN
+	arg_1_0.soundeffect = arg_1_1.soundeffect
+	arg_1_0.seDelay = arg_1_1.seDelay or 0
+	arg_1_0.voice = arg_1_1.voice
+	arg_1_0.voiceDelay = arg_1_1.voiceDelay or 0
+	arg_1_0.stopVoice = defaultValue(arg_1_1.stopVoice, false)
+	arg_1_0.movableNode = arg_1_1.movableNode
+	arg_1_0.options = arg_1_1.options
+	arg_1_0.important = arg_1_1.important
+	arg_1_0.branchCode = arg_1_1.optionFlag
+	arg_1_0.recallOption = arg_1_1.recallOption
+	arg_1_0.nextScriptName = arg_1_1.jumpto
+	arg_1_0.eventDelay = arg_1_1.eventDelay or 0
+	arg_1_0.bgColor = arg_1_1.bgColor or {
 		0,
 		0,
 		0
 	}
-	slot0.location = slot1.location
-	slot0.icon = slot1.icon
-	slot0.autoShowOption = defaultValue(slot1.autoShowOption, false)
-	slot0.selectedBranchCode = 0
-	slot0.id = 0
-	slot0.placeholderType = 0
-	slot0.defaultTb = slot1.defaultTb
+	arg_1_0.location = arg_1_1.location
+	arg_1_0.icon = arg_1_1.icon
+	arg_1_0.autoShowOption = defaultValue(arg_1_1.autoShowOption, false)
+	arg_1_0.dispatcher = arg_1_1.dispatcher
+	arg_1_0.selectedBranchCode = 0
+	arg_1_0.id = 0
+	arg_1_0.placeholderType = 0
+	arg_1_0.defaultTb = arg_1_1.defaultTb
 end
 
-function slot0.SetDefaultTb(slot0, slot1)
-	if not slot0.defaultTb or slot0.defaultTb <= 0 then
-		slot0.defaultTb = slot1
+function var_0_0.SetDefaultTb(arg_2_0, arg_2_1)
+	if not arg_2_0.defaultTb or arg_2_0.defaultTb <= 0 then
+		arg_2_0.defaultTb = arg_2_1
 	end
 end
 
-function slot0.SetPlaceholderType(slot0, slot1)
-	slot0.placeholderType = slot1
+function var_0_0.SetPlaceholderType(arg_3_0, arg_3_1)
+	arg_3_0.placeholderType = arg_3_1
 end
 
-function slot0.ShouldReplacePlayer(slot0)
-	return bit.band(slot0.placeholderType, Story.PLAYER) > 0
+function var_0_0.ShouldReplacePlayer(arg_4_0)
+	return bit.band(arg_4_0.placeholderType, Story.PLAYER) > 0
 end
 
-function slot0.ShouldReplaceTb(slot0)
-	return bit.band(slot0.placeholderType, Story.TB) > 0
+function var_0_0.ShouldReplaceTb(arg_5_0)
+	return bit.band(arg_5_0.placeholderType, Story.TB) > 0
 end
 
-function slot0.ReplacePlayerName(slot0, slot1)
+function var_0_0.ReplacePlayerName(arg_6_0, arg_6_1)
 	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
-		return slot1
+		return arg_6_1
 	end
 
-	return string.gsub(slot1, "{playername}", getProxy(PlayerProxy):getRawData():GetName())
+	local var_6_0 = getProxy(PlayerProxy):getRawData():GetName()
+
+	arg_6_1 = string.gsub(arg_6_1, "{playername}", var_6_0)
+
+	return arg_6_1
 end
 
-function slot0.ReplaceTbName(slot0, slot1)
+function var_0_0.ReplaceTbName(arg_7_0, arg_7_1)
 	if pg.NewStoryMgr.GetInstance():IsReView() then
-		return string.gsub(slot1, "{tb}", i18n("child_story_name"))
+		return string.gsub(arg_7_1, "{tb}", i18n("child_story_name"))
 	end
 
 	if not getProxy(EducateProxy) then
-		return slot1
+		return arg_7_1
 	end
 
-	slot2, slot3 = getProxy(EducateProxy):GetStoryInfo()
+	local var_7_0, var_7_1 = getProxy(EducateProxy):GetStoryInfo()
 
-	return string.gsub(slot1, "{tb}", slot3)
+	arg_7_1 = string.gsub(arg_7_1, "{tb}", var_7_1)
+
+	return arg_7_1
 end
 
-function slot0.ExistIcon(slot0)
-	return slot0.icon ~= nil
+function var_0_0.ExistDispatcher(arg_8_0)
+	return arg_8_0.dispatcher ~= nil
 end
 
-function slot0.GetIconData(slot0)
-	return slot0.icon
+function var_0_0.GetDispatcher(arg_9_0)
+	return arg_9_0.dispatcher
 end
 
-function slot0.SetId(slot0, slot1)
-	slot0.id = slot1
+function var_0_0.IsRecallDispatcher(arg_10_0)
+	if not arg_10_0:ExistDispatcher() then
+		return false
+	end
+
+	local var_10_0 = arg_10_0:GetDispatcher()
+
+	return var_10_0.callbackData ~= nil and var_10_0.callbackData.name ~= nil
 end
 
-function slot0.GetId(slot0)
-	return slot0.id
+function var_0_0.GetDispatcherRecallName(arg_11_0)
+	if not arg_11_0:IsRecallDispatcher() then
+		return nil
+	end
+
+	return arg_11_0:GetDispatcher().callbackData.name
 end
 
-function slot0.AutoShowOption(slot0)
-	slot0.autoShowOption = true
+function var_0_0.ShouldHideUI(arg_12_0)
+	if not arg_12_0:IsRecallDispatcher() then
+		return false
+	end
+
+	return arg_12_0:GetDispatcher().callbackData.hideUI == true
 end
 
-function slot0.SkipEventForOption(slot0)
-	return slot0:ExistOption() and slot0.autoShowOption
+function var_0_0.ExistIcon(arg_13_0)
+	return arg_13_0.icon ~= nil
 end
 
-function slot0.IsRecallOption(slot0)
-	if slot0:ExistOption() and slot0:GetOptionCnt() > 1 and slot0.recallOption then
+function var_0_0.GetIconData(arg_14_0)
+	return arg_14_0.icon
+end
+
+function var_0_0.SetId(arg_15_0, arg_15_1)
+	arg_15_0.id = arg_15_1
+end
+
+function var_0_0.GetId(arg_16_0)
+	return arg_16_0.id
+end
+
+function var_0_0.AutoShowOption(arg_17_0)
+	arg_17_0.autoShowOption = true
+end
+
+function var_0_0.SkipEventForOption(arg_18_0)
+	return arg_18_0:ExistOption() and arg_18_0.autoShowOption
+end
+
+function var_0_0.IsRecallOption(arg_19_0)
+	if arg_19_0:ExistOption() and arg_19_0:GetOptionCnt() > 1 and arg_19_0.recallOption then
 		return true
 	end
 
 	return false
 end
 
-function slot0.SetBranchCode(slot0, slot1)
-	slot0.selectedBranchCode = slot1
+function var_0_0.SetBranchCode(arg_20_0, arg_20_1)
+	arg_20_0.selectedBranchCode = arg_20_1
 end
 
-function slot0.GetSelectedBranchCode(slot0)
-	return slot0.selectedBranchCode
+function var_0_0.GetSelectedBranchCode(arg_21_0)
+	return arg_21_0.selectedBranchCode
 end
 
-function slot0.ExistLocation(slot0)
-	return slot0.location ~= nil
+function var_0_0.ExistLocation(arg_22_0)
+	return arg_22_0.location ~= nil
 end
 
-function slot0.GetLocation(slot0)
+function var_0_0.GetLocation(arg_23_0)
 	return {
-		text = slot0.location[1] or "",
-		time = slot0.location[2] or 999
+		text = arg_23_0.location[1] or "",
+		time = arg_23_0.location[2] or 999
 	}
 end
 
-function slot0.ExistMovableNode(slot0)
-	return slot0.movableNode ~= nil and type(slot0.movableNode) == "table" and #slot0.movableNode > 0
+function var_0_0.ExistMovableNode(arg_24_0)
+	return arg_24_0.movableNode ~= nil and type(arg_24_0.movableNode) == "table" and #arg_24_0.movableNode > 0
 end
 
-function slot0.GetPathByString(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = pg.NewStoryMgr.GetInstance():GetRectSize()
-	slot5 = Vector3(-slot4.x * 0.5, slot4.y * 0.5, 0)
-	slot6 = Vector3(slot4.x * 0.5, slot4.y * 0.5, 0)
-	slot7 = Vector3(-slot4.x * 0.5, -slot4.y * 0.5, 0)
-	slot8 = Vector3(slot4.x * 0.5, -slot4.y * 0.5, 0)
-	slot9 = slot2 or 200
+function var_0_0.GetPathByString(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = {}
+	local var_25_1 = pg.NewStoryMgr.GetInstance():GetRectSize()
+	local var_25_2 = Vector3(-var_25_1.x * 0.5, var_25_1.y * 0.5, 0)
+	local var_25_3 = Vector3(var_25_1.x * 0.5, var_25_1.y * 0.5, 0)
+	local var_25_4 = Vector3(-var_25_1.x * 0.5, -var_25_1.y * 0.5, 0)
+	local var_25_5 = Vector3(var_25_1.x * 0.5, -var_25_1.y * 0.5, 0)
+	local var_25_6 = arg_25_2 or 200
 
-	if slot1 == "LTLB" then
-		slot10 = Vector3(slot9, 0, 0)
-		slot3 = {
-			slot5 + slot10,
-			slot7 + slot10
+	if arg_25_1 == "LTLB" then
+		local var_25_7 = Vector3(var_25_6, 0, 0)
+
+		var_25_0 = {
+			var_25_2 + var_25_7,
+			var_25_4 + var_25_7
 		}
-	elseif slot1 == "LBLT" then
-		slot10 = Vector3(slot9, 0, 0)
-		slot3 = {
-			slot7 + slot10,
-			slot5 + slot10
+	elseif arg_25_1 == "LBLT" then
+		local var_25_8 = Vector3(var_25_6, 0, 0)
+
+		var_25_0 = {
+			var_25_4 + var_25_8,
+			var_25_2 + var_25_8
 		}
-	elseif slot1 == "LTRT" then
-		slot10 = Vector3(0, -slot9, 0)
-		slot3 = {
-			slot5 + slot10,
-			slot6 + slot10
+	elseif arg_25_1 == "LTRT" then
+		local var_25_9 = Vector3(0, -var_25_6, 0)
+
+		var_25_0 = {
+			var_25_2 + var_25_9,
+			var_25_3 + var_25_9
 		}
-	elseif slot1 == "RTLT" then
-		slot10 = Vector3(0, -slot9, 0)
-		slot3 = {
-			slot6 + slot10,
-			slot5 + slot10
+	elseif arg_25_1 == "RTLT" then
+		local var_25_10 = Vector3(0, -var_25_6, 0)
+
+		var_25_0 = {
+			var_25_3 + var_25_10,
+			var_25_2 + var_25_10
 		}
-	elseif slot1 == "RTRB" then
-		slot10 = Vector3(slot9, 0, 0)
-		slot3 = {
-			slot6 + slot10,
-			slot8 + slot10
+	elseif arg_25_1 == "RTRB" then
+		local var_25_11 = Vector3(var_25_6, 0, 0)
+
+		var_25_0 = {
+			var_25_3 + var_25_11,
+			var_25_5 + var_25_11
 		}
-	elseif slot1 == "RBRT" then
-		slot10 = Vector3(slot9, 0, 0)
-		slot3 = {
-			slot8 + slot10,
-			slot6 + slot10
+	elseif arg_25_1 == "RBRT" then
+		local var_25_12 = Vector3(var_25_6, 0, 0)
+
+		var_25_0 = {
+			var_25_5 + var_25_12,
+			var_25_3 + var_25_12
 		}
-	elseif slot1 == "LBRB" then
-		slot10 = Vector3(0, -(slot2 or 0), 0)
-		slot3 = {
-			slot7 + slot10,
-			slot8 + slot10
+	elseif arg_25_1 == "LBRB" then
+		local var_25_13 = Vector3(0, -(arg_25_2 or 0), 0)
+
+		var_25_0 = {
+			var_25_4 + var_25_13,
+			var_25_5 + var_25_13
 		}
-	elseif slot1 == "RBLB" then
-		slot10 = Vector3(0, -(slot2 or 0), 0)
-		slot3 = {
-			slot8 + slot10,
-			slot7 + slot10
+	elseif arg_25_1 == "RBLB" then
+		local var_25_14 = Vector3(0, -(arg_25_2 or 0), 0)
+
+		var_25_0 = {
+			var_25_5 + var_25_14,
+			var_25_4 + var_25_14
 		}
 	end
 
-	return slot3
+	return var_25_0
 end
 
-function slot0.GenMoveNode(slot0, slot1)
-	slot2 = {}
+function var_0_0.GenMoveNode(arg_26_0, arg_26_1)
+	local var_26_0 = {}
 
-	if type(slot1.path) == "table" then
-		for slot6, slot7 in ipairs(slot1.path) do
-			table.insert(slot2, Vector3(slot7[1], slot7[2], 0))
+	if type(arg_26_1.path) == "table" then
+		for iter_26_0, iter_26_1 in ipairs(arg_26_1.path) do
+			table.insert(var_26_0, Vector3(iter_26_1[1], iter_26_1[2], 0))
 		end
+	elseif type(arg_26_1.path) == "string" then
+		var_26_0 = arg_26_0:GetPathByString(arg_26_1.path, arg_26_1.offset)
 	else
-		slot2 = (type(slot1.path) ~= "string" or slot0:GetPathByString(slot1.path, slot1.offset)) and slot0:GetPathByString("LTRT")
+		var_26_0 = arg_26_0:GetPathByString("LTRT")
 	end
 
-	slot3 = type(slot1.spine) == "table" or slot1.spine == true
-	slot4 = nil
+	local var_26_1 = type(arg_26_1.spine) == "table" or arg_26_1.spine == true
+	local var_26_2
 
-	if slot1.spine == true then
-		slot4 = {
+	if arg_26_1.spine == true then
+		var_26_2 = {
 			action = "walk",
 			scale = 0.5
 		}
-	elseif slot3 then
-		slot4 = {
-			action = slot1.spine.action or "walk",
-			scale = slot1.spine.scale or 0.5
+	elseif var_26_1 then
+		var_26_2 = {
+			action = arg_26_1.spine.action or "walk",
+			scale = arg_26_1.spine.scale or 0.5
 		}
 	end
 
 	return {
-		name = slot1.name,
-		isSpine = slot3,
-		spineData = slot4,
-		path = slot2,
-		time = slot1.time,
-		delay = slot1.delay or 0,
-		easeType = slot1.easeType or LeanTweenType.linear
+		name = arg_26_1.name,
+		isSpine = var_26_1,
+		spineData = var_26_2,
+		path = var_26_0,
+		time = arg_26_1.time,
+		delay = arg_26_1.delay or 0,
+		easeType = arg_26_1.easeType or LeanTweenType.linear
 	}
 end
 
-function slot0.GetMovableNode(slot0)
-	if not slot0:ExistMovableNode() then
+function var_0_0.GetMovableNode(arg_27_0)
+	if not arg_27_0:ExistMovableNode() then
 		return {}
 	end
 
-	slot1 = {}
-	slot2 = pairs
-	slot3 = slot0.movableNode or {}
+	local var_27_0 = {}
 
-	for slot5, slot6 in slot2(slot3) do
-		table.insert(slot1, slot0:GenMoveNode(slot6))
+	for iter_27_0, iter_27_1 in pairs(arg_27_0.movableNode or {}) do
+		local var_27_1 = arg_27_0:GenMoveNode(iter_27_1)
+
+		table.insert(var_27_0, var_27_1)
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.OldPhotoEffect(slot0)
-	return slot0.oldPhoto
+function var_0_0.OldPhotoEffect(arg_28_0)
+	return arg_28_0.oldPhoto
 end
 
-function slot0.ShouldBgGlitchArt(slot0)
-	return slot0.bgGlitchArt
+function var_0_0.ShouldBgGlitchArt(arg_29_0)
+	return arg_29_0.bgGlitchArt
 end
 
-function slot0.IsSameBranch(slot0, slot1)
-	return not slot0.branchCode or slot0.branchCode == slot1
+function var_0_0.IsSameBranch(arg_30_0, arg_30_1)
+	return not arg_30_0.branchCode or arg_30_0.branchCode == arg_30_1
 end
 
-function slot0.GetMode(slot0)
+function var_0_0.GetMode(arg_31_0)
 	assert(false, "should override this function")
 end
 
-function slot0.GetFlashoutData(slot0)
-	if slot0.flashout then
-		return slot0.flashout.alpha[1], slot0.flashout.alpha[2], slot0.flashout.dur, slot0.flashout.black
+function var_0_0.GetFlashoutData(arg_32_0)
+	if arg_32_0.flashout then
+		local var_32_0 = arg_32_0.flashout.alpha[1]
+		local var_32_1 = arg_32_0.flashout.alpha[2]
+		local var_32_2 = arg_32_0.flashout.dur
+		local var_32_3 = arg_32_0.flashout.black
+
+		return var_32_0, var_32_1, var_32_2, var_32_3
 	end
 end
 
-function slot0.GetFlashinData(slot0)
-	if slot0.flashin then
-		return slot0.flashin.alpha[1], slot0.flashin.alpha[2], slot0.flashin.dur, slot0.flashin.black, slot0.flashin.delay
+function var_0_0.GetFlashinData(arg_33_0)
+	if arg_33_0.flashin then
+		local var_33_0 = arg_33_0.flashin.alpha[1]
+		local var_33_1 = arg_33_0.flashin.alpha[2]
+		local var_33_2 = arg_33_0.flashin.dur
+		local var_33_3 = arg_33_0.flashin.black
+		local var_33_4 = arg_33_0.flashin.delay
+
+		return var_33_0, var_33_1, var_33_2, var_33_3, var_33_4
 	end
 end
 
-function slot0.GetBgColor(slot0)
-	return Color.New(slot0.bgColor[1] or 0, slot0.bgColor[2] or 0, slot0.bgColor[3] or 0)
+function var_0_0.GetBgColor(arg_34_0)
+	return Color.New(arg_34_0.bgColor[1] or 0, arg_34_0.bgColor[2] or 0, arg_34_0.bgColor[3] or 0)
 end
 
-function slot0.IsBlackBg(slot0)
-	return slot0.blackBg
+function var_0_0.IsBlackBg(arg_35_0)
+	return arg_35_0.blackBg
 end
 
-function slot0.GetBgName(slot0)
-	return slot0.bgName
+function var_0_0.GetBgName(arg_36_0)
+	return arg_36_0.bgName
 end
 
-function slot0.GetBgShadow(slot0)
-	return slot0.bgShadow
+function var_0_0.GetBgShadow(arg_37_0)
+	return arg_37_0.bgShadow
 end
 
-function slot0.IsDialogueMode(slot0)
-	return slot0:GetMode() == Story.MODE_DIALOGUE
+function var_0_0.IsDialogueMode(arg_38_0)
+	return arg_38_0:GetMode() == Story.MODE_DIALOGUE
 end
 
-function slot0.GetBgmData(slot0)
-	return slot0.bgm, slot0.bgmDelay, slot0.bgmVolume
+function var_0_0.GetBgmData(arg_39_0)
+	return arg_39_0.bgm, arg_39_0.bgmDelay, arg_39_0.bgmVolume
 end
 
-function slot0.ShoulePlayBgm(slot0)
-	return slot0.bgm ~= nil
+function var_0_0.ShoulePlayBgm(arg_40_0)
+	return arg_40_0.bgm ~= nil
 end
 
-function slot0.ShouldStopBgm(slot0)
-	return slot0.stopbgm
+function var_0_0.ShouldStopBgm(arg_41_0)
+	return arg_41_0.stopbgm
 end
 
-function slot0.GetEffects(slot0)
-	return slot0.effects
+function var_0_0.GetEffects(arg_42_0)
+	return arg_42_0.effects
 end
 
-function slot0.ShouldBlink(slot0)
-	return slot0.blink ~= nil
+function var_0_0.ShouldBlink(arg_43_0)
+	return arg_43_0.blink ~= nil
 end
 
-function slot0.GetBlinkData(slot0)
-	return slot0.blink
+function var_0_0.GetBlinkData(arg_44_0)
+	return arg_44_0.blink
 end
 
-function slot0.ShouldBlinkWithColor(slot0)
-	return slot0.blinkWithColor ~= nil
+function var_0_0.ShouldBlinkWithColor(arg_45_0)
+	return arg_45_0.blinkWithColor ~= nil
 end
 
-function slot0.GetBlinkWithColorData(slot0)
-	return slot0.blinkWithColor
+function var_0_0.GetBlinkWithColorData(arg_46_0)
+	return arg_46_0.blinkWithColor
 end
 
-function slot0.ShouldPlaySoundEffect(slot0)
-	return slot0.soundeffect ~= nil
+function var_0_0.ShouldPlaySoundEffect(arg_47_0)
+	return arg_47_0.soundeffect ~= nil
 end
 
-function slot0.GetSoundeffect(slot0)
-	return slot0.soundeffect, slot0.seDelay
+function var_0_0.GetSoundeffect(arg_48_0)
+	return arg_48_0.soundeffect, arg_48_0.seDelay
 end
 
-function slot0.ShouldPlayVoice(slot0)
-	return slot0.voice ~= nil
+function var_0_0.ShouldPlayVoice(arg_49_0)
+	return arg_49_0.voice ~= nil
 end
 
-function slot0.ShouldStopVoice(slot0)
-	return slot0.stopVoice
+function var_0_0.ShouldStopVoice(arg_50_0)
+	return arg_50_0.stopVoice
 end
 
-function slot0.GetVoice(slot0)
-	return slot0.voice, slot0.voiceDelay
+function var_0_0.GetVoice(arg_51_0)
+	return arg_51_0.voice, arg_51_0.voiceDelay
 end
 
-function slot0.ExistOption(slot0)
-	return slot0.options ~= nil and #slot0.options > 0
+function var_0_0.ExistOption(arg_52_0)
+	return arg_52_0.options ~= nil and #arg_52_0.options > 0
 end
 
-function slot0.GetOptionCnt(slot0)
-	if slot0:ExistOption() then
-		return #slot0.options
+function var_0_0.GetOptionCnt(arg_53_0)
+	if arg_53_0:ExistOption() then
+		return #arg_53_0.options
 	else
 		return 0
 	end
 end
 
-function slot0.SetOptionSelCodes(slot0, slot1)
-	slot0.optionSelCode = slot1
+function var_0_0.SetOptionSelCodes(arg_54_0, arg_54_1)
+	arg_54_0.optionSelCode = arg_54_1
 end
 
-function slot0.IsBlackFrontGround(slot0)
-	return slot0.blackFg > 0, Mathf.Clamp01(slot0.blackFg)
+function var_0_0.IsBlackFrontGround(arg_55_0)
+	return arg_55_0.blackFg > 0, Mathf.Clamp01(arg_55_0.blackFg)
 end
 
-function slot0.GetOptionIndexByAutoSel(slot0)
-	slot1 = 0
-	slot2 = 0
+function var_0_0.GetOptionIndexByAutoSel(arg_56_0)
+	local var_56_0 = 0
+	local var_56_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.options) do
-		if slot0.optionSelCode and slot7.flag == slot0.optionSelCode then
-			slot1 = slot6
+	for iter_56_0, iter_56_1 in ipairs(arg_56_0.options) do
+		if arg_56_0.optionSelCode and iter_56_1.flag == arg_56_0.optionSelCode then
+			var_56_0 = iter_56_0
 
 			break
 		end
 
-		if slot7.autochoice and slot7.autochoice == 1 then
-			slot2 = slot6
+		if iter_56_1.autochoice and iter_56_1.autochoice == 1 then
+			var_56_1 = iter_56_0
 		end
 	end
 
-	if slot1 > 0 then
-		return slot1
+	if var_56_0 > 0 then
+		return var_56_0
 	end
 
-	if slot2 > 0 then
-		return slot2
+	if var_56_1 > 0 then
+		return var_56_1
 	end
 
 	return nil
 end
 
-function slot0.IsImport(slot0)
-	return slot0.important
+function var_0_0.IsImport(arg_57_0)
+	return arg_57_0.important
 end
 
-function slot0.GetOptions(slot0)
-	return _.map(slot0.options or {}, function (slot0)
-		slot1 = slot0.content
+function var_0_0.GetOptions(arg_58_0)
+	return _.map(arg_58_0.options or {}, function(arg_59_0)
+		local var_59_0 = arg_59_0.content
 
-		if uv0:ShouldReplacePlayer() then
-			slot1 = uv0:ReplacePlayerName(slot1)
+		if arg_58_0:ShouldReplacePlayer() then
+			var_59_0 = arg_58_0:ReplacePlayerName(var_59_0)
 		end
 
-		if uv0:ShouldReplaceTb() then
-			slot1 = uv0:ReplaceTbName(slot1)
+		if arg_58_0:ShouldReplaceTb() then
+			var_59_0 = arg_58_0:ReplaceTbName(var_59_0)
 		end
+
+		local var_59_1 = HXSet.hxLan(var_59_0)
 
 		return {
-			HXSet.hxLan(slot1),
-			slot0.flag
+			var_59_1,
+			arg_59_0.flag
 		}
 	end)
 end
 
-function slot0.ShouldJumpToNextScript(slot0)
-	return slot0.nextScriptName ~= nil
+function var_0_0.ShouldJumpToNextScript(arg_60_0)
+	return arg_60_0.nextScriptName ~= nil
 end
 
-function slot0.GetNextScriptName(slot0)
-	return slot0.nextScriptName
+function var_0_0.GetNextScriptName(arg_61_0)
+	return arg_61_0.nextScriptName
 end
 
-function slot0.ShouldDelayEvent(slot0)
-	return slot0.eventDelay and slot0.eventDelay > 0
+function var_0_0.ShouldDelayEvent(arg_62_0)
+	return arg_62_0.eventDelay and arg_62_0.eventDelay > 0
 end
 
-function slot0.GetEventDelayTime(slot0)
-	return slot0.eventDelay
+function var_0_0.GetEventDelayTime(arg_63_0)
+	return arg_63_0.eventDelay
 end
 
-function slot0.GetUsingPaintingNames(slot0)
+function var_0_0.GetUsingPaintingNames(arg_64_0)
 	return {}
 end
 
-return slot0
+return var_0_0

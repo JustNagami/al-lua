@@ -1,59 +1,65 @@
-slot0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var_0_0 = class("NewGuildResultGradePage", import("..NewBattleResultGradePage"))
 
-function slot0.LoadBG(slot0, slot1)
-	slot3 = ResourceMgr.Inst
+function var_0_0.LoadBG(arg_1_0, arg_1_1)
+	local var_1_0 = "Victory"
 
-	slot3:getAssetAsync("BattleResultItems/" .. "Victory", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_1_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_2_0)
+		if arg_1_0.exited or IsNil(arg_2_0) then
+			if arg_1_1 then
+				arg_1_1()
 			end
 
 			return
 		end
 
-		Object.Instantiate(slot0, uv0.bgTr).transform:SetAsFirstSibling()
+		Object.Instantiate(arg_2_0, arg_1_0.bgTr).transform:SetAsFirstSibling()
 
-		if uv1 then
-			uv1()
+		if arg_1_1 then
+			arg_1_1()
 		end
 	end), false, false)
 end
 
-function slot0.LoadGrade(slot0, slot1)
-	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, true)
+function var_0_0.LoadGrade(arg_3_0, arg_3_1)
+	local var_3_0 = "battlescore/grade_label_clear"
 
-	if slot1 then
-		slot1()
+	LoadImageSpriteAsync(var_3_0, arg_3_0.gradeTxt, true)
+
+	if arg_3_1 then
+		arg_3_1()
 	end
 end
 
-function slot0.GetContributionPoint(slot0)
-	slot1 = 0
-	slot2 = pg.guildset.guild_damage_resource.key_value
+function var_0_0.GetContributionPoint(arg_4_0)
+	local var_4_0 = 0
+	local var_4_1 = pg.guildset.guild_damage_resource.key_value
 
-	for slot6, slot7 in ipairs(slot0.contextData.drops) do
-		if slot7.configId == slot2 then
-			slot1 = slot7.count
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.contextData.drops) do
+		if iter_4_1.configId == var_4_1 then
+			var_4_0 = iter_4_1.count
 		end
 	end
 
-	return slot1
+	return var_4_0
 end
 
-function slot0.GetGetObjectives(slot0)
-	slot1 = {}
+function var_0_0.GetGetObjectives(arg_5_0)
+	local var_5_0 = {}
+	local var_5_1 = i18n("battle_result_total_damage")
 
-	table.insert(slot1, {
-		text = setColorStr(i18n("battle_result_total_damage"), "#FFFFFFFF"),
-		value = setColorStr(slot0.contextData.statistics.specificDamage, COLOR_BLUE)
-	})
-	table.insert(slot1, {
-		text = setColorStr(i18n("battle_result_contribution"), "#FFFFFFFF"),
-		value = setColorStr(slot0:GetContributionPoint(), COLOR_YELLOW)
+	table.insert(var_5_0, {
+		text = setColorStr(var_5_1, "#FFFFFFFF"),
+		value = setColorStr(arg_5_0.contextData.statistics.specificDamage, COLOR_BLUE)
 	})
 
-	return slot1
+	local var_5_2 = i18n("battle_result_contribution")
+
+	table.insert(var_5_0, {
+		text = setColorStr(var_5_2, "#FFFFFFFF"),
+		value = setColorStr(arg_5_0:GetContributionPoint(), COLOR_YELLOW)
+	})
+
+	return var_5_0
 end
 
-return slot0
+return var_0_0

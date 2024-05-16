@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "鱼雷防御盾",
-	name = "鱼雷防御盾",
-	init_effect = "",
-	time = 20,
-	color = "red",
-	picture = "",
-	desc = "鱼雷防御盾",
-	stack = 1,
-	id = 13281,
-	icon = 13280,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			id = 1,
@@ -46,13 +25,34 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(3, -1.8, 0.5)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "鱼雷防御盾",
+	name = "鱼雷防御盾",
+	init_effect = "",
+	time = 20,
+	color = "red",
+	picture = "",
+	desc = "鱼雷防御盾",
+	stack = 1,
+	id = 13281,
+	icon = 13280,
+	last_effect = ""
 }

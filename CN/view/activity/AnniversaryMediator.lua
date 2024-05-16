@@ -1,56 +1,67 @@
-slot0 = class("AnniversaryMediator", import("..base.ContextMediator"))
-slot0.ON_SUBMIT_TASK = "AnniversaryMediator:ON_SUBMIT_TASK"
-slot0.TO_TASK = "AnniversaryMediator:TO_TASK"
+﻿local var_0_0 = class("AnniversaryMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.TO_TASK, function (slot0, slot1)
-		uv0:sendNotification(GAME.TASK_GO, {
-			taskVO = slot1
+var_0_0.ON_SUBMIT_TASK = "AnniversaryMediator:ON_SUBMIT_TASK"
+var_0_0.TO_TASK = "AnniversaryMediator:TO_TASK"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.TO_TASK, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
+			taskVO = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_SUBMIT_TASK, function (slot0, slot1)
-		uv0:sendNotification(GAME.SUBMIT_TASK, slot1)
+	arg_1_0:bind(var_0_0.ON_SUBMIT_TASK, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_3_1)
 	end)
 
-	slot2 = getProxy(ActivityProxy):getActivityById(ActivityConst.ANNIVERSARY_TASK_LIST_ID)
+	local var_1_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.ANNIVERSARY_TASK_LIST_ID)
 
-	slot0.viewComponent:setActivity(slot2)
-	slot0:acceptTask(slot2)
-	slot0.viewComponent:setTaskList(slot0:getTaskByIds())
+	arg_1_0.viewComponent:setActivity(var_1_0)
+	arg_1_0:acceptTask(var_1_0)
+
+	local var_1_1 = arg_1_0:getTaskByIds()
+
+	arg_1_0.viewComponent:setTaskList(var_1_1)
 end
 
-function slot0.acceptTask(slot0, slot1)
-	slot2 = getProxy(TaskProxy)
-	slot4 = pg.TimeMgr.GetInstance()
-	slot5 = math.clamp(slot4:DiffDay(slot1.data1, slot4:GetServerTime()) + 1, 1, #slot1:getConfig("config_data"))
+function var_0_0.acceptTask(arg_4_0, arg_4_1)
+	local var_4_0 = getProxy(TaskProxy)
+	local var_4_1 = arg_4_1:getConfig("config_data")
+	local var_4_2 = pg.TimeMgr.GetInstance()
+	local var_4_3 = var_4_2:DiffDay(arg_4_1.data1, var_4_2:GetServerTime()) + 1
+	local var_4_4 = math.clamp(var_4_3, 1, #var_4_1)
+	local var_4_5 = arg_4_1.data3
 
-	if slot1.data3 == 0 or slot6 < slot5 and _.all(_.flatten({
-		slot3[slot6]
-	}), function (slot0)
-		return uv0:getFinishTaskById(slot0) ~= nil
+	if var_4_5 == 0 or var_4_5 < var_4_4 and _.all(_.flatten({
+		var_4_1[var_4_5]
+	}), function(arg_5_0)
+		return var_4_0:getFinishTaskById(arg_5_0) ~= nil
 	end) then
-		slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
+		arg_4_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = slot1.id
+			activity_id = arg_4_1.id
 		})
 	end
 end
 
-function slot0.getTaskByIds(slot0)
-	slot1 = {}
+function var_0_0.getTaskByIds(arg_6_0)
+	local var_6_0 = {}
+	local var_6_1 = getProxy(TaskProxy)
+	local var_6_2 = var_6_1:getData()
 
-	for slot7, slot8 in pairs(getProxy(TaskProxy):getData()) do
-		slot1[slot8.id] = slot8
+	for iter_6_0, iter_6_1 in pairs(var_6_2) do
+		var_6_0[iter_6_1.id] = iter_6_1
 	end
 
-	for slot8, slot9 in pairs(slot2.finishData) do
-		slot1[slot9.id] = slot9
+	local var_6_3 = var_6_1.finishData
+
+	for iter_6_2, iter_6_3 in pairs(var_6_3) do
+		var_6_0[iter_6_3.id] = iter_6_3
 	end
 
-	return slot1
+	return var_6_0
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
@@ -61,26 +72,29 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
 
-	if slot1:getName() == TaskProxy.TASK_ADDED or slot2 == TaskProxy.TASK_UPDATED or slot2 == TaskProxy.TASK_REMOVED or slot2 == TaskProxy.TASK_FINISH then
-		slot0.viewComponent:setTaskList(slot0:getTaskByIds())
-	elseif slot2 == GAME.SUBMIT_TASK_DONE then
-		slot5 = getProxy(ActivityProxy):getActivityById(ActivityConst.ANNIVERSARY_TASK_LIST_ID)
+	if var_8_0 == TaskProxy.TASK_ADDED or var_8_0 == TaskProxy.TASK_UPDATED or var_8_0 == TaskProxy.TASK_REMOVED or var_8_0 == TaskProxy.TASK_FINISH then
+		local var_8_2 = arg_8_0:getTaskByIds()
 
-		if slot0.viewComponent.dateIndex and slot0.viewComponent.dateIndex == slot5.data3 then
-			slot0.viewComponent:updateTaskGroupDesc(slot5.data3)
+		arg_8_0.viewComponent:setTaskList(var_8_2)
+	elseif var_8_0 == GAME.SUBMIT_TASK_DONE then
+		local var_8_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.ANNIVERSARY_TASK_LIST_ID)
+
+		if arg_8_0.viewComponent.dateIndex and arg_8_0.viewComponent.dateIndex == var_8_3.data3 then
+			arg_8_0.viewComponent:updateTaskGroupDesc(var_8_3.data3)
 		end
 
-		slot0.viewComponent:updateBottomTaskGroup(slot5.data3)
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3)
-		slot0:acceptTask(slot5)
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED and slot3.id == ActivityConst.ANNIVERSARY_TASK_LIST_ID then
-		slot0.viewComponent:setActivity(slot3)
-		slot0.viewComponent:updateTaskGroups()
-		slot0.viewComponent:moveToTaskGroup(slot0.viewComponent.date, nil, true)
+		arg_8_0.viewComponent:updateBottomTaskGroup(var_8_3.data3)
+		arg_8_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_8_1)
+		arg_8_0:acceptTask(var_8_3)
+	elseif var_8_0 == ActivityProxy.ACTIVITY_UPDATED and var_8_1.id == ActivityConst.ANNIVERSARY_TASK_LIST_ID then
+		arg_8_0.viewComponent:setActivity(var_8_1)
+		arg_8_0.viewComponent:updateTaskGroups()
+		arg_8_0.viewComponent:moveToTaskGroup(arg_8_0.viewComponent.date, nil, true)
 	end
 end
 
-return slot0
+return var_0_0

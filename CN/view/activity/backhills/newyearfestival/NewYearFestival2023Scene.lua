@@ -1,139 +1,151 @@
-slot0 = class("NewYearFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
-slot0.edge2area = {
+﻿local var_0_0 = class("NewYearFestival2023Scene", import("..TemplateMV.BackHillTemplate"))
+
+var_0_0.edge2area = {
 	default = "map_middle",
 	["4_4"] = "map_bottom"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewYearFestival2023UI"
 end
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("Top")
-	slot0._map = slot0:findTF("map")
+function var_0_0.init(arg_2_0)
+	arg_2_0.top = arg_2_0:findTF("Top")
+	arg_2_0._map = arg_2_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["map_" .. go(slot5).name] = slot5
+	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
+		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
+		local var_2_1 = go(var_2_0).name
+
+		arg_2_0["map_" .. var_2_1] = var_2_0
 	end
 
-	slot1 = slot0._map
-	slot0._shipTpl = slot1:Find("ship")
-	slot0.containers = {
-		slot0.map_middle
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0.containers = {
+		arg_2_0.map_middle
 	}
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestival2023Graph"))
-	slot0._upper = slot0:findTF("upper")
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestival2023Graph"))
+	arg_2_0._upper = arg_2_0:findTF("upper")
 
-	for slot4 = 0, slot0._upper.childCount - 1 do
-		slot5 = slot0._upper:GetChild(slot4)
-		slot0["upper_" .. go(slot5).name] = slot5
+	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
+		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
+		local var_2_3 = go(var_2_2).name
+
+		arg_2_0["upper_" .. var_2_3] = var_2_2
 	end
 
-	slot0.tipTfs = _.map(_.range(slot0._upper.childCount), function (slot0)
-		slot1 = uv0._upper:GetChild(slot0 - 1)
+	arg_2_0.tipTfs = _.map(_.range(arg_2_0._upper.childCount), function(arg_3_0)
+		local var_3_0 = arg_2_0._upper:GetChild(arg_3_0 - 1)
 
 		return {
-			name = slot1.name,
-			trans = slot1:Find("Tip")
+			name = var_3_0.name,
+			trans = var_3_0:Find("Tip")
 		}
 	end)
 
-	pg.ViewUtils.SetSortingOrder(slot0._map:GetChild(slot0._map.childCount - 1), 1)
+	pg.ViewUtils.SetSortingOrder(arg_2_0._map:GetChild(arg_2_0._map.childCount - 1), 1)
 
-	slot0.loader = AutoLoader.New()
+	arg_2_0.loader = AutoLoader.New()
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.top:Find("Back"), function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.top:Find("Back"), function()
+		arg_4_0:emit(var_0_0.ON_BACK)
 	end)
-	onButton(slot0, slot0.top:Find("Home"), function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_4_0, arg_4_0.top:Find("Home"), function()
+		arg_4_0:emit(var_0_0.ON_HOME)
 	end)
-	onButton(slot0, slot0.top:Find("Help"), function ()
+	onButton(arg_4_0, arg_4_0.top:Find("Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.resorts_help.tip
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "hotspring", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.HOTSPRING)
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "hotspring", function()
+		arg_4_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.HOTSPRING)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "duihuanwu", function ()
-		slot0 = Context.New()
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "duihuanwu", function()
+		local var_9_0 = Context.New()
 
-		SCENE.SetSceneInfo(slot0, SCENE.HOTSPRING_SHOP)
-		uv0:emit(BackHillMediatorTemplate.GO_SUBLAYER, slot0)
+		SCENE.SetSceneInfo(var_9_0, SCENE.HOTSPRING_SHOP)
+		arg_4_0:emit(BackHillMediatorTemplate.GO_SUBLAYER, var_9_0)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "firework", function ()
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "firework", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 44)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "shrine", function ()
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "shrine", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 45)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "fudai", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.HOTSPRING_REDPACKET)
+	arg_4_0:InitFacilityCross(arg_4_0._map, arg_4_0._upper, "fudai", function()
+		arg_4_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.HOTSPRING_REDPACKET)
 	end)
-	slot0:BindItemBuildShip()
-	slot0:BindItemSkinShop()
-	slot0:InitStudents(ActivityConst.MINIGAME_FIREWORK_VS_SAIREN, 3, 4)
-	slot0:UpdateView()
+	arg_4_0:BindItemBuildShip()
+	arg_4_0:BindItemSkinShop()
+	arg_4_0:InitStudents(ActivityConst.MINIGAME_FIREWORK_VS_SAIREN, 3, 4)
+	arg_4_0:UpdateView()
 end
 
-function slot0.UpdateActivity(slot0, slot1)
-	slot0:UpdateView()
+function var_0_0.UpdateActivity(arg_13_0, arg_13_1)
+	arg_13_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	_.each(slot0.tipTfs, function (slot0)
-		setActive(slot0.trans, tobool(switch(slot0.name, {
-			fudai = function ()
+function var_0_0.UpdateView(arg_14_0)
+	_.each(arg_14_0.tipTfs, function(arg_15_0)
+		local var_15_0 = switch(arg_15_0.name, {
+			fudai = function()
 				return BeachPacketLayer.isShowRedPoint()
 			end,
-			hotspring = function ()
-				return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING))
+			hotspring = function()
+				local var_17_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
+
+				return Activity.IsActivityReady(var_17_0)
 			end,
-			shrine = function ()
+			shrine = function()
 				return Shrine2023View.IsNeedShowTipWithoutActivityFinalReward()
 			end,
-			duihuanwu = function ()
+			duihuanwu = function()
 				return AmusementParkShopPage.GetActivityShopTip()
 			end,
-			firework = function ()
+			firework = function()
 				return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_FIREWORK_VS_SAIREN)
 			end
-		}, function ()
+		}, function()
 			return false
-		end)))
+		end)
+
+		setActive(arg_15_0.trans, tobool(var_15_0))
 	end)
 end
 
-function slot0.IsShowMainTip(slot0)
-	return _.any(_.values({
-		fudai = function ()
+function var_0_0.IsShowMainTip(arg_22_0)
+	local var_22_0 = {
+		fudai = function()
 			return BeachPacketLayer.isShowRedPoint()
 		end,
-		hotspring = function ()
-			return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING))
+		hotspring = function()
+			local var_24_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
+
+			return Activity.IsActivityReady(var_24_0)
 		end,
-		shrine = function ()
+		shrine = function()
 			return Shrine2023View.IsNeedShowTipWithoutActivityFinalReward()
 		end,
-		duihuanwu = function ()
+		duihuanwu = function()
 			return AmusementParkShopPage.GetActivityShopTip()
 		end,
-		firework = function ()
+		firework = function()
 			return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_FIREWORK_VS_SAIREN)
 		end
-	}), function (slot0)
-		return slot0()
+	}
+
+	return _.any(_.values(var_22_0), function(arg_28_0)
+		return arg_28_0()
 	end)
 end
 
-function slot0.willExit(slot0)
-	slot0:clearStudents()
-	uv0.super.willExit(slot0)
+function var_0_0.willExit(arg_29_0)
+	arg_29_0:clearStudents()
+	var_0_0.super.willExit(arg_29_0)
 end
 
-return slot0
+return var_0_0

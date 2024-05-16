@@ -1,357 +1,380 @@
-slot0 = class("LinkLinkScene", import("..base.BaseUI"))
-slot0.MAX_ROW = 6
-slot0.MAX_COLUMN = 11
-slot0.COUNT_DOWN = 3
-slot0.RESET_CD = 5
-slot0.GAME_STATE_BEGIN = 0
-slot0.GAME_STATE_GAMING = 1
-slot0.GAME_STATE_END = 2
-slot0.CARD_STATE_NORMAL = 0
-slot0.CARD_STATE_LINKED = 1
-slot0.CARD_STATE_BLANK = 2
+﻿local var_0_0 = class("LinkLinkScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.MAX_ROW = 6
+var_0_0.MAX_COLUMN = 11
+var_0_0.COUNT_DOWN = 3
+var_0_0.RESET_CD = 5
+var_0_0.GAME_STATE_BEGIN = 0
+var_0_0.GAME_STATE_GAMING = 1
+var_0_0.GAME_STATE_END = 2
+var_0_0.CARD_STATE_NORMAL = 0
+var_0_0.CARD_STATE_LINKED = 1
+var_0_0.CARD_STATE_BLANK = 2
+
+function var_0_0.getUIName(arg_1_0)
 	return "LinkLinkUI"
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("BackBtn")
-	slot0.helpBtn = slot0:findTF("top/help_btn")
-	slot0.resetBtn = slot0:findTF("info/reset_button")
-	slot0.awardTxt = slot0:findTF("info/award_txt")
-	slot0.timeTxt = slot0:findTF("info/time_txt")
-	slot0.bestTxt = slot0:findTF("info/best_txt")
-	slot0.layout = slot0:findTF("card_con/layout")
-	slot0.item = slot0.layout:Find("card")
-	slot0.bottom = slot0:findTF("card_con/bottom")
-	slot0.line = slot0.bottom:Find("card")
-	slot0.result = slot0:findTF("result")
-	slot0.countDown = slot0:findTF("count_down")
-	slot0.resource = slot0:findTF("resource")
-	slot0.bestTitleText = slot0:findTF("info/BestTitle")
-	slot0.curTitleText = slot0:findTF("info/CurTitle")
+function var_0_0.init(arg_2_0)
+	arg_2_0.backBtn = arg_2_0:findTF("BackBtn")
+	arg_2_0.helpBtn = arg_2_0:findTF("top/help_btn")
+	arg_2_0.resetBtn = arg_2_0:findTF("info/reset_button")
+	arg_2_0.awardTxt = arg_2_0:findTF("info/award_txt")
+	arg_2_0.timeTxt = arg_2_0:findTF("info/time_txt")
+	arg_2_0.bestTxt = arg_2_0:findTF("info/best_txt")
+	arg_2_0.layout = arg_2_0:findTF("card_con/layout")
+	arg_2_0.item = arg_2_0.layout:Find("card")
+	arg_2_0.bottom = arg_2_0:findTF("card_con/bottom")
+	arg_2_0.line = arg_2_0.bottom:Find("card")
+	arg_2_0.result = arg_2_0:findTF("result")
+	arg_2_0.countDown = arg_2_0:findTF("count_down")
+	arg_2_0.resource = arg_2_0:findTF("resource")
+	arg_2_0.bestTitleText = arg_2_0:findTF("info/BestTitle")
+	arg_2_0.curTitleText = arg_2_0:findTF("info/CurTitle")
 
-	setText(slot0.bestTitleText, i18n("LinkLinkGame_BestTime"))
-	setText(slot0.curTitleText, i18n("LinkLinkGame_CurTime"))
+	setText(arg_2_0.bestTitleText, i18n("LinkLinkGame_BestTime"))
+	setText(arg_2_0.curTitleText, i18n("LinkLinkGame_CurTime"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	slot0:SetState(uv0.GAME_STATE_BEGIN)
+	arg_3_0:SetState(var_0_0.GAME_STATE_BEGIN)
 end
 
-function slot0.willExit(slot0)
-	slot0:HideResult()
-	LeanTween.cancel(go(slot0.countDown))
+function var_0_0.willExit(arg_5_0)
+	arg_5_0:HideResult()
+	LeanTween.cancel(go(arg_5_0.countDown))
 
-	for slot4 = 0, slot0.layout.childCount - 1 do
-		LeanTween.cancel(go(slot0.layout:GetChild(slot4)))
+	for iter_5_0 = 0, arg_5_0.layout.childCount - 1 do
+		LeanTween.cancel(go(arg_5_0.layout:GetChild(iter_5_0)))
 	end
 
-	if slot0.countTimer then
-		slot0.countTimer:Stop()
+	if arg_5_0.countTimer then
+		arg_5_0.countTimer:Stop()
 
-		slot0.countTimer = nil
+		arg_5_0.countTimer = nil
 	end
 end
 
-function slot0.SetPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.SetPlayer(arg_6_0, arg_6_1)
+	arg_6_0.player = arg_6_1
 end
 
-function slot0.SetActivity(slot0, slot1)
-	slot0.activity = slot1
-	slot0.activityAchieved = slot1.data1
-	slot0.activityProgress = slot1.data2
-	slot0.activityStartTime = slot1.data3
-	slot0.activityBestRecord = slot1.data4
-	slot3 = pg.TimeMgr.GetInstance()
-	slot0.activityRestTimes = slot3:DiffDay(slot0.activityStartTime, slot3:GetServerTime()) + 1 - slot0.activityProgress
-	slot0.activityRestTimes = math.clamp(slot0.activityRestTimes, 0, #slot0.activity:getConfig("config_client")[3] - slot0.activityProgress)
+function var_0_0.SetActivity(arg_7_0, arg_7_1)
+	arg_7_0.activity = arg_7_1
+	arg_7_0.activityAchieved = arg_7_1.data1
+	arg_7_0.activityProgress = arg_7_1.data2
+	arg_7_0.activityStartTime = arg_7_1.data3
+	arg_7_0.activityBestRecord = arg_7_1.data4
 
-	setText(slot0.awardTxt, slot0.activityRestTimes > 0 and slot2[slot0.activityProgress + 1] or 0)
-	setText(slot0.bestTxt, slot0:FormatRecordTime(slot0.activityBestRecord))
+	local var_7_0 = arg_7_0.activity:getConfig("config_client")[3]
+	local var_7_1 = pg.TimeMgr.GetInstance()
+
+	arg_7_0.activityRestTimes = var_7_1:DiffDay(arg_7_0.activityStartTime, var_7_1:GetServerTime()) + 1 - arg_7_0.activityProgress
+	arg_7_0.activityRestTimes = math.clamp(arg_7_0.activityRestTimes, 0, #var_7_0 - arg_7_0.activityProgress)
+
+	setText(arg_7_0.awardTxt, arg_7_0.activityRestTimes > 0 and var_7_0[arg_7_0.activityProgress + 1] or 0)
+	setText(arg_7_0.bestTxt, arg_7_0:FormatRecordTime(arg_7_0.activityBestRecord))
 end
 
-function slot0.SetState(slot0, slot1)
-	if slot0.state ~= slot1 then
-		slot0.state = slot1
+function var_0_0.SetState(arg_8_0, arg_8_1)
+	if arg_8_0.state ~= arg_8_1 then
+		arg_8_0.state = arg_8_1
 
-		if slot1 == uv0.GAME_STATE_BEGIN then
-			slot0:GameBegin()
-		elseif slot1 == uv0.GAME_STATE_GAMING then
-			slot0:GameLoop()
-		elseif slot1 == uv0.GAME_STATE_END then
-			slot0:GameEnd()
+		if arg_8_1 == var_0_0.GAME_STATE_BEGIN then
+			arg_8_0:GameBegin()
+		elseif arg_8_1 == var_0_0.GAME_STATE_GAMING then
+			arg_8_0:GameLoop()
+		elseif arg_8_1 == var_0_0.GAME_STATE_END then
+			arg_8_0:GameEnd()
 		end
 	end
 end
 
-function slot0.GameBegin(slot0)
-	slot0.cards = {}
-	slot1 = {}
+function var_0_0.GameBegin(arg_9_0)
+	arg_9_0.cards = {}
 
-	for slot5 = 0, 17 do
-		table.insert(slot1, slot5)
-		table.insert(slot1, slot5)
+	local var_9_0 = {}
+
+	for iter_9_0 = 0, 17 do
+		table.insert(var_9_0, iter_9_0)
+		table.insert(var_9_0, iter_9_0)
 	end
 
-	slot2 = 0
+	local var_9_1 = 0
 
-	while #slot1 > 0 do
-		slot3 = math.clamp(math.floor(math.random() * #slot1 + 1), 1, #slot1)
-		slot5 = slot2 % (uv0.MAX_COLUMN - 2) + 1
-		slot0.cards[slot4] = slot0.cards[math.floor(slot2 / (uv0.MAX_COLUMN - 2)) + 1] or {}
-		slot0.cards[slot4][slot5] = {
-			row = slot4,
-			column = slot5,
-			id = slot1[slot3],
-			state = uv0.CARD_STATE_NORMAL
+	while #var_9_0 > 0 do
+		local var_9_2 = math.clamp(math.floor(math.random() * #var_9_0 + 1), 1, #var_9_0)
+		local var_9_3 = math.floor(var_9_1 / (var_0_0.MAX_COLUMN - 2)) + 1
+		local var_9_4 = var_9_1 % (var_0_0.MAX_COLUMN - 2) + 1
+
+		arg_9_0.cards[var_9_3] = arg_9_0.cards[var_9_3] or {}
+		arg_9_0.cards[var_9_3][var_9_4] = {
+			row = var_9_3,
+			column = var_9_4,
+			id = var_9_0[var_9_2],
+			state = var_0_0.CARD_STATE_NORMAL
 		}
 
-		table.remove(slot1, slot3)
+		table.remove(var_9_0, var_9_2)
 
-		slot2 = slot2 + 1
+		var_9_1 = var_9_1 + 1
 	end
 
-	for slot6 = 0, uv0.MAX_ROW - 1 do
-		for slot10 = 0, uv0.MAX_COLUMN - 1 do
-			slot0.cards[slot6] = slot0.cards[slot6] or {}
-			slot0.cards[slot6][slot10] = slot0.cards[slot6][slot10] or {
-				row = slot6,
-				column = slot10,
-				state = uv0.CARD_STATE_BLANK
+	for iter_9_1 = 0, var_0_0.MAX_ROW - 1 do
+		for iter_9_2 = 0, var_0_0.MAX_COLUMN - 1 do
+			arg_9_0.cards[iter_9_1] = arg_9_0.cards[iter_9_1] or {}
+			arg_9_0.cards[iter_9_1][iter_9_2] = arg_9_0.cards[iter_9_1][iter_9_2] or {
+				row = iter_9_1,
+				column = iter_9_2,
+				state = var_0_0.CARD_STATE_BLANK
 			}
 		end
 	end
 
-	slot0.list = UIItemList.New(slot0.layout, slot0.item)
+	arg_9_0.list = UIItemList.New(arg_9_0.layout, arg_9_0.item)
 
-	slot0.list:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = math.floor(slot1 / uv0.MAX_COLUMN)
-			slot4 = slot1 % uv0.MAX_COLUMN
-			slot2.name = slot3 .. "_" .. slot4
-			slot2.localScale = Vector3.one
+	arg_9_0.list:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			local var_10_0 = math.floor(arg_10_1 / var_0_0.MAX_COLUMN)
+			local var_10_1 = arg_10_1 % var_0_0.MAX_COLUMN
+			local var_10_2 = arg_9_0.cards[var_10_0][var_10_1]
 
-			setActive(slot2:Find("display"), uv1.cards[slot3][slot4].state == uv0.CARD_STATE_NORMAL)
+			arg_10_2.name = var_10_0 .. "_" .. var_10_1
+			arg_10_2.localScale = Vector3.one
 
-			if slot5.state == uv0.CARD_STATE_NORMAL then
-				setImageSprite(slot2:Find("display/icon"), getImageSprite(uv1.resource:GetChild(slot5.id)))
-				setActive(slot2:Find("display/selected"), false)
+			setActive(arg_10_2:Find("display"), var_10_2.state == var_0_0.CARD_STATE_NORMAL)
+
+			if var_10_2.state == var_0_0.CARD_STATE_NORMAL then
+				local var_10_3 = getImageSprite(arg_9_0.resource:GetChild(var_10_2.id))
+
+				setImageSprite(arg_10_2:Find("display/icon"), var_10_3)
+				setActive(arg_10_2:Find("display/selected"), false)
 			end
 		end
 	end)
-	slot0.list:align(uv0.MAX_ROW * uv0.MAX_COLUMN)
+	arg_9_0.list:align(var_0_0.MAX_ROW * var_0_0.MAX_COLUMN)
 
-	slot0.llist = UIItemList.New(slot0.bottom, slot0.line)
+	arg_9_0.llist = UIItemList.New(arg_9_0.bottom, arg_9_0.line)
 
-	slot0.llist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			for slot7 = 0, slot2:Find("lines").childCount - 1 do
-				setActive(slot3:GetChild(slot7), false)
+	arg_9_0.llist:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			local var_11_0 = arg_11_2:Find("lines")
+
+			for iter_11_0 = 0, var_11_0.childCount - 1 do
+				setActive(var_11_0:GetChild(iter_11_0), false)
 			end
 		end
 	end)
+	arg_9_0.llist:align(var_0_0.MAX_ROW * var_0_0.MAX_COLUMN)
+	setActive(arg_9_0.countDown, true)
 
-	slot6 = uv0.MAX_COLUMN
-
-	slot0.llist:align(uv0.MAX_ROW * slot6)
-	setActive(slot0.countDown, true)
-
-	for slot6 = 0, slot0.countDown.childCount - 1 do
-		setActive(slot0.countDown:GetChild(slot6), false)
+	for iter_9_3 = 0, arg_9_0.countDown.childCount - 1 do
+		setActive(arg_9_0.countDown:GetChild(iter_9_3), false)
 	end
 
-	slot4 = slot0.countDown:GetChild(0)
+	local var_9_5 = 0
+	local var_9_6 = arg_9_0.countDown:GetChild(var_9_5)
 
-	setActive(slot4, true)
-	setImageAlpha(slot4, 0)
-	LeanTween.value(go(slot0.countDown), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
-		slot0 = math.min(slot0 / 0.3, 1)
+	setActive(var_9_6, true)
+	setImageAlpha(var_9_6, 0)
+	LeanTween.value(go(arg_9_0.countDown), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_12_0)
+		arg_12_0 = math.min(arg_12_0 / 0.3, 1)
 
-		setImageAlpha(uv0, slot0)
-		setLocalScale(uv0, {
-			x = (1 - slot0) * 2 + 1,
-			y = (1 - slot0) * 2 + 1
+		setImageAlpha(var_9_6, arg_12_0)
+		setLocalScale(var_9_6, {
+			x = (1 - arg_12_0) * 2 + 1,
+			y = (1 - arg_12_0) * 2 + 1
 		})
-	end)):setOnComplete(System.Action(function ()
-		setActive(uv0, false)
+	end)):setOnComplete(System.Action(function()
+		setActive(var_9_6, false)
 
-		uv1 = uv1 + 1
+		var_9_5 = var_9_5 + 1
 
-		if uv1 < uv2.countDown.childCount then
-			uv0 = uv2.countDown:GetChild(uv1)
+		if var_9_5 < arg_9_0.countDown.childCount then
+			var_9_6 = arg_9_0.countDown:GetChild(var_9_5)
 
-			setActive(uv0, true)
-			setImageAlpha(uv0, 0)
+			setActive(var_9_6, true)
+			setImageAlpha(var_9_6, 0)
 		else
-			setActive(uv2.countDown, false)
-			uv2:SetState(uv3.GAME_STATE_GAMING)
+			setActive(arg_9_0.countDown, false)
+			arg_9_0:SetState(var_0_0.GAME_STATE_GAMING)
 		end
 	end)):setRepeat(4):setLoopType(LeanTweenType.punch):setOnCompleteOnRepeat(true):setEase(LeanTweenType.easeOutSine)
 end
 
-function slot0.GameLoop(slot0)
-	function slot1(slot0)
-		slot1 = 0
-		slot2 = 0
+function var_0_0.GameLoop(arg_14_0)
+	local function var_14_0(arg_15_0)
+		local var_15_0 = 0
+		local var_15_1 = 0
 
-		for slot6 = 1, #slot0 - 1 do
-			slot7 = slot0[slot6]
-			slot8 = slot0[slot6 + 1]
-			slot9 = slot8.row - slot7.row
-			slot10 = slot8.column - slot7.column
+		for iter_15_0 = 1, #arg_15_0 - 1 do
+			local var_15_2 = arg_15_0[iter_15_0]
+			local var_15_3 = arg_15_0[iter_15_0 + 1]
+			local var_15_4 = var_15_3.row - var_15_2.row
+			local var_15_5 = var_15_3.column - var_15_2.column
+			local var_15_6 = arg_14_0.bottom:GetChild(var_15_2.row * var_0_0.MAX_COLUMN + var_15_2.column):Find("lines")
 
-			for slot15 = 0, uv0.bottom:GetChild(slot7.row * uv1.MAX_COLUMN + slot7.column):Find("lines").childCount - 1 do
-				setActive(slot11:GetChild(slot15), false)
+			for iter_15_1 = 0, var_15_6.childCount - 1 do
+				setActive(var_15_6:GetChild(iter_15_1), false)
 			end
 
-			if slot9 ~= 0 then
-				setActive(slot11:Find("y" .. slot9), true)
-			elseif slot10 ~= 0 then
-				setActive(slot11:Find("x" .. slot10), true)
+			if var_15_4 ~= 0 then
+				setActive(var_15_6:Find("y" .. var_15_4), true)
+			elseif var_15_5 ~= 0 then
+				setActive(var_15_6:Find("x" .. var_15_5), true)
 			end
 
-			if slot9 ~= slot1 and slot10 ~= slot2 then
-				slot12 = 0
-				slot13 = slot11:Find("joint")
+			if var_15_4 ~= var_15_0 and var_15_5 ~= var_15_1 then
+				local var_15_7 = 0
+				local var_15_8 = (var_15_4 == -1 and var_15_1 == 1 or var_15_0 == 1 and var_15_5 == -1) and 0 or (var_15_5 == -1 and var_15_0 == -1 or var_15_4 == 1 and var_15_1 == 1) and 90 or (var_15_4 == 1 and var_15_1 == -1 or var_15_0 == -1 and var_15_5 == 1) and 180 or 270
+				local var_15_9 = var_15_6:Find("joint")
 
-				setActive(slot13, true)
+				setActive(var_15_9, true)
 
-				slot13.localEulerAngles = Vector3(0, 0, (slot9 == -1 and slot2 == 1 or slot1 == 1 and slot10 == -1) and 0 or (slot10 == -1 and slot1 == -1 or slot9 == 1 and slot2 == 1) and 90 or (slot9 == 1 and slot2 == -1 or slot1 == -1 and slot10 == 1) and 180 or 270)
-			elseif slot1 == 0 and slot9 ~= 0 or slot1 ~= 0 and slot9 == slot1 then
-				slot12 = slot11:Find("cross")
+				var_15_9.localEulerAngles = Vector3(0, 0, var_15_8)
+			elseif var_15_0 == 0 and var_15_4 ~= 0 or var_15_0 ~= 0 and var_15_4 == var_15_0 then
+				local var_15_10 = var_15_6:Find("cross")
 
-				setActive(slot12, true)
+				setActive(var_15_10, true)
 
-				slot12.localEulerAngles = Vector3(0, 0, 90)
-			elseif slot2 == 0 and slot10 ~= 0 or slot2 ~= 0 and slot10 == slot2 then
-				slot12 = slot11:Find("cross")
+				var_15_10.localEulerAngles = Vector3(0, 0, 90)
+			elseif var_15_1 == 0 and var_15_5 ~= 0 or var_15_1 ~= 0 and var_15_5 == var_15_1 then
+				local var_15_11 = var_15_6:Find("cross")
 
-				setActive(slot12, true)
+				setActive(var_15_11, true)
 
-				slot12.localEulerAngles = Vector3(0, 0, 0)
+				var_15_11.localEulerAngles = Vector3(0, 0, 0)
 			end
 
-			slot2 = slot10
-			slot1 = slot9
+			var_15_0, var_15_1 = var_15_4, var_15_5
 		end
 	end
 
-	function slot2(slot0)
-		for slot4 = 1, #slot0 - 1 do
-			slot5 = slot0[slot4]
+	local function var_14_1(arg_16_0)
+		for iter_16_0 = 1, #arg_16_0 - 1 do
+			local var_16_0 = arg_16_0[iter_16_0]
+			local var_16_1 = var_16_0.row * var_0_0.MAX_COLUMN + var_16_0.column
+			local var_16_2 = arg_14_0.bottom:GetChild(var_16_1):Find("lines")
 
-			for slot11 = 0, uv1.bottom:GetChild(slot5.row * uv0.MAX_COLUMN + slot5.column):Find("lines").childCount - 1 do
-				setActive(slot7:GetChild(slot11), false)
+			for iter_16_1 = 0, var_16_2.childCount - 1 do
+				setActive(var_16_2:GetChild(iter_16_1), false)
 			end
 		end
 	end
 
-	slot3, slot4, slot5 = nil
-	slot6 = slot0.list
+	local var_14_2
+	local var_14_3
+	local var_14_4
 
-	slot6:each(function (slot0, slot1)
-		onButton(uv0, slot1:Find("display/icon"), function ()
-			if uv2.cards[math.floor(uv0 / uv1.MAX_COLUMN)][uv0 % uv1.MAX_COLUMN].state ~= uv1.CARD_STATE_NORMAL then
+	arg_14_0.list:each(function(arg_17_0, arg_17_1)
+		onButton(arg_14_0, arg_17_1:Find("display/icon"), function()
+			local var_18_0 = math.floor(arg_17_0 / var_0_0.MAX_COLUMN)
+			local var_18_1 = arg_17_0 % var_0_0.MAX_COLUMN
+			local var_18_2 = arg_14_0.cards[var_18_0][var_18_1]
+
+			if var_18_2.state ~= var_0_0.CARD_STATE_NORMAL then
 				return
-			elseif not uv3 then
-				uv3 = slot2
-				uv4 = uv5
+			elseif not var_14_2 then
+				var_14_2 = var_18_2
+				var_14_3 = arg_17_1
 
-				setActive(uv5:Find("display/selected"), true)
-			elseif uv6 then
+				setActive(arg_17_1:Find("display/selected"), true)
+			elseif var_14_4 then
 				return
-			elseif uv3 == slot2 then
-				setActive(uv5:Find("display/selected"), false)
+			elseif var_14_2 == var_18_2 then
+				setActive(arg_17_1:Find("display/selected"), false)
 
-				uv4 = nil
-				uv3 = nil
-			elseif uv3.id ~= slot2.id then
-				setActive(uv4:Find("display/selected"), false)
+				var_14_3 = nil
+				var_14_2 = nil
+			elseif var_14_2.id ~= var_18_2.id then
+				setActive(var_14_3:Find("display/selected"), false)
 
-				uv4 = nil
-				uv3 = nil
-			elseif not uv2:LinkLink(uv3, slot2) then
-				setActive(uv4:Find("display/selected"), false)
-
-				uv4 = nil
-				uv3 = nil
+				var_14_3 = nil
+				var_14_2 = nil
 			else
-				slot2.state = uv1.CARD_STATE_LINKED
-				uv3.state = uv1.CARD_STATE_LINKED
-				slot5 = uv5
+				local var_18_3 = arg_14_0:LinkLink(var_14_2, var_18_2)
 
-				setActive(slot5:Find("display/selected"), true)
-				uv7(slot3)
+				if not var_18_3 then
+					setActive(var_14_3:Find("display/selected"), false)
 
-				uv6 = true
-				slot5 = uv4
-				slot10 = 0.3
-				slot6 = LeanTween.value(go(uv5), 1, 0.15, slot10)
-				slot6 = slot6:setEase(LeanTweenType.easeInBack)
-				slot6 = slot6:setOnUpdate(System.Action_float(function (slot0)
-					uv0.localScale = Vector3(slot0, slot0, 1)
-					uv1.localScale = Vector3(slot0, slot0, 1)
-				end))
+					var_14_3 = nil
+					var_14_2 = nil
+				else
+					var_18_2.state = var_0_0.CARD_STATE_LINKED
+					var_14_2.state = var_0_0.CARD_STATE_LINKED
 
-				slot6:setOnComplete(System.Action(function ()
-					uv0(uv1)
-					setActive(uv2:Find("display"), false)
-					setActive(uv3:Find("display"), false)
+					setActive(arg_17_1:Find("display/selected"), true)
+					var_14_0(var_18_3)
 
-					uv4 = false
-				end))
+					var_14_4 = true
 
-				uv4 = nil
-				uv3 = nil
-				slot6 = true
+					local var_18_4 = arg_17_1
+					local var_18_5 = var_14_3
 
-				for slot10 = 0, uv1.MAX_ROW - 1 do
-					for slot14 = 0, uv1.MAX_COLUMN - 1 do
-						if uv2.cards[slot10][slot14].state == uv1.CARD_STATE_NORMAL then
-							slot6 = false
+					LeanTween.value(go(var_18_4), 1, 0.15, 0.3):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function(arg_19_0)
+						var_18_4.localScale = Vector3(arg_19_0, arg_19_0, 1)
+						var_18_5.localScale = Vector3(arg_19_0, arg_19_0, 1)
+					end)):setOnComplete(System.Action(function()
+						var_14_1(var_18_3)
+						setActive(var_18_4:Find("display"), false)
+						setActive(var_18_5:Find("display"), false)
 
-							break
+						var_14_4 = false
+					end))
+
+					var_14_3 = nil
+					var_14_2 = nil
+
+					local var_18_6 = true
+
+					for iter_18_0 = 0, var_0_0.MAX_ROW - 1 do
+						for iter_18_1 = 0, var_0_0.MAX_COLUMN - 1 do
+							if arg_14_0.cards[iter_18_0][iter_18_1].state == var_0_0.CARD_STATE_NORMAL then
+								var_18_6 = false
+
+								break
+							end
 						end
 					end
-				end
 
-				if slot6 then
-					uv2:SetState(uv1.GAME_STATE_END)
+					if var_18_6 then
+						arg_14_0:SetState(var_0_0.GAME_STATE_END)
+					end
 				end
 			end
 		end, SFX_PANEL)
 	end)
 
 	if IsUnityEditor and AUTO_LINKLINK then
-		setActive(slot0.helpBtn, true)
-		onButton(slot0, slot0.helpBtn, function ()
-			uv0 = nil
-			uv1 = nil
+		setActive(arg_14_0.helpBtn, true)
+		onButton(arg_14_0, arg_14_0.helpBtn, function()
+			var_14_2 = nil
+			var_14_3 = nil
 
-			for slot3 = 0, uv2.MAX_ROW - 1 do
-				for slot7 = 0, uv2.MAX_COLUMN - 1 do
-					slot8 = uv3.cards[slot3][slot7]
-					slot10 = uv3.layout:GetChild(slot8.row * uv2.MAX_COLUMN + slot8.column)
+			for iter_21_0 = 0, var_0_0.MAX_ROW - 1 do
+				for iter_21_1 = 0, var_0_0.MAX_COLUMN - 1 do
+					local var_21_0 = arg_14_0.cards[iter_21_0][iter_21_1]
+					local var_21_1 = var_21_0.row * var_0_0.MAX_COLUMN + var_21_0.column
+					local var_21_2 = arg_14_0.layout:GetChild(var_21_1)
 
-					if slot8.state == uv2.CARD_STATE_NORMAL then
-						for slot14 = 0, uv2.MAX_ROW - 1 do
-							for slot18 = 0, uv2.MAX_COLUMN - 1 do
-								if slot3 ~= slot14 or slot7 ~= slot18 then
-									slot19 = uv3.cards[slot14][slot18]
-									slot21 = uv3.layout:GetChild(slot19.row * uv2.MAX_COLUMN + slot19.column)
+					if var_21_0.state == var_0_0.CARD_STATE_NORMAL then
+						for iter_21_2 = 0, var_0_0.MAX_ROW - 1 do
+							for iter_21_3 = 0, var_0_0.MAX_COLUMN - 1 do
+								if iter_21_0 ~= iter_21_2 or iter_21_1 ~= iter_21_3 then
+									local var_21_3 = arg_14_0.cards[iter_21_2][iter_21_3]
+									local var_21_4 = var_21_3.row * var_0_0.MAX_COLUMN + var_21_3.column
+									local var_21_5 = arg_14_0.layout:GetChild(var_21_4)
 
-									if slot8.id == slot19.id then
-										triggerButton(slot10:Find("display/icon"))
-										triggerButton(slot21:Find("display/icon"))
+									if var_21_0.id == var_21_3.id then
+										triggerButton(var_21_2:Find("display/icon"))
+										triggerButton(var_21_5:Find("display/icon"))
 
-										if uv4 then
-											Timer.New(function ()
-												triggerButton(uv0.helpBtn)
+										if var_14_4 then
+											Timer.New(function()
+												triggerButton(arg_14_0.helpBtn)
 											end, 0.4, 1):Start()
 
 											return
@@ -366,279 +389,324 @@ function slot0.GameLoop(slot0)
 		end)
 	end
 
-	slot6 = 0
+	local var_14_5 = 0
 
-	onButton(slot0, slot0.resetBtn, function ()
-		if uv0.state ~= uv1.GAME_STATE_GAMING then
+	onButton(arg_14_0, arg_14_0.resetBtn, function()
+		if arg_14_0.state ~= var_0_0.GAME_STATE_GAMING then
 			return
-		elseif Time.realtimeSinceStartup - uv2 < uv1.RESET_CD then
+		elseif Time.realtimeSinceStartup - var_14_5 < var_0_0.RESET_CD then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_wait"))
 		else
-			if uv3 then
-				setActive(uv4:Find("display/selected"), false)
+			if var_14_2 then
+				setActive(var_14_3:Find("display/selected"), false)
 
-				uv4 = nil
-				uv3 = nil
+				var_14_3 = nil
+				var_14_2 = nil
 			end
 
-			slot0 = {}
-			slot1 = {}
+			local var_23_0 = {}
+			local var_23_1 = {}
 
-			for slot5 = 0, uv1.MAX_ROW - 1 do
-				for slot9 = 0, uv1.MAX_COLUMN - 1 do
-					if uv0.cards[slot5][slot9].state == uv1.CARD_STATE_NORMAL then
-						table.insert(slot0, {
-							row = slot5,
-							column = slot9
+			for iter_23_0 = 0, var_0_0.MAX_ROW - 1 do
+				for iter_23_1 = 0, var_0_0.MAX_COLUMN - 1 do
+					local var_23_2 = arg_14_0.cards[iter_23_0][iter_23_1]
+
+					if var_23_2.state == var_0_0.CARD_STATE_NORMAL then
+						table.insert(var_23_0, {
+							row = iter_23_0,
+							column = iter_23_1
 						})
-						table.insert(slot1, slot10.id)
+						table.insert(var_23_1, var_23_2.id)
 					end
 				end
 			end
 
-			slot2 = 1
+			local var_23_3 = 1
 
-			while #slot1 > 0 do
-				slot3 = math.clamp(math.floor(math.random() * #slot1 + 1), 1, #slot1)
-				uv0.cards[slot0[slot2].row][slot0[slot2].column].id = slot1[slot3]
+			while #var_23_1 > 0 do
+				local var_23_4 = math.clamp(math.floor(math.random() * #var_23_1 + 1), 1, #var_23_1)
 
-				table.remove(slot1, slot3)
+				arg_14_0.cards[var_23_0[var_23_3].row][var_23_0[var_23_3].column].id = var_23_1[var_23_4]
 
-				slot2 = slot2 + 1
+				table.remove(var_23_1, var_23_4)
+
+				var_23_3 = var_23_3 + 1
 			end
 
-			uv0.list:each(function (slot0, slot1)
-				if uv1.cards[math.floor(slot0 / uv0.MAX_COLUMN)][slot0 % uv0.MAX_COLUMN].state == uv0.CARD_STATE_NORMAL then
-					setImageSprite(slot1:Find("display/icon"), getImageSprite(uv1.resource:GetChild(slot4.id)))
+			arg_14_0.list:each(function(arg_24_0, arg_24_1)
+				local var_24_0 = math.floor(arg_24_0 / var_0_0.MAX_COLUMN)
+				local var_24_1 = arg_24_0 % var_0_0.MAX_COLUMN
+				local var_24_2 = arg_14_0.cards[var_24_0][var_24_1]
+
+				if var_24_2.state == var_0_0.CARD_STATE_NORMAL then
+					local var_24_3 = getImageSprite(arg_14_0.resource:GetChild(var_24_2.id))
+
+					setImageSprite(arg_24_1:Find("display/icon"), var_24_3)
 				end
 			end)
 
-			uv2 = Time.realtimeSinceStartup
+			var_14_5 = Time.realtimeSinceStartup
 		end
 	end, SFX_PANEL)
 
-	slot0.startTime = Time.realtimeSinceStartup
-	slot0.countTimer = Timer.New(function ()
-		setText(uv0.timeTxt, uv0:FormatRecordTime(math.floor((Time.realtimeSinceStartup - uv0.startTime) * 1000)))
+	arg_14_0.startTime = Time.realtimeSinceStartup
+	arg_14_0.countTimer = Timer.New(function()
+		local var_25_0 = math.floor((Time.realtimeSinceStartup - arg_14_0.startTime) * 1000)
+
+		setText(arg_14_0.timeTxt, arg_14_0:FormatRecordTime(var_25_0))
 	end, 0.033, -1)
 
-	slot0.countTimer:Start()
-	slot0.countTimer.func()
+	arg_14_0.countTimer:Start()
+	arg_14_0.countTimer.func()
 end
 
-function slot0.GameEnd(slot0)
-	slot0.countTimer:Stop()
+function var_0_0.GameEnd(arg_26_0)
+	arg_26_0.countTimer:Stop()
 
-	slot0.countTimer = nil
-	slot0.lastRecord = math.floor((Time.realtimeSinceStartup - slot0.startTime) * 1000)
+	arg_26_0.countTimer = nil
+	arg_26_0.lastRecord = math.floor((Time.realtimeSinceStartup - arg_26_0.startTime) * 1000)
 
-	if slot0.activityRestTimes > 0 or slot0.lastRecord < slot0.activityBestRecord then
-		slot0:emit(LinkLinkMediator.EVENT_OPERATION, {
+	if arg_26_0.activityRestTimes > 0 or arg_26_0.lastRecord < arg_26_0.activityBestRecord then
+		local var_26_0 = arg_26_0.activityProgress + (arg_26_0.activityRestTimes > 0 and 1 or 0)
+
+		arg_26_0:emit(LinkLinkMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = slot0.activity.id,
-			arg1 = slot0.activityProgress + (slot0.activityRestTimes > 0 and 1 or 0),
-			arg2 = slot0.lastRecord
+			activity_id = arg_26_0.activity.id,
+			arg1 = var_26_0,
+			arg2 = arg_26_0.lastRecord
 		})
 	else
-		slot0:DisplayResult(slot0.activity)
+		arg_26_0:DisplayResult(arg_26_0.activity)
 	end
 end
 
-function slot0.DisplayResult(slot0, slot1)
-	setActive(slot0.result, true)
-	setActive(slot0.result:Find("bg"):Find("pic_new_record"), slot1.data4 < slot0.activityBestRecord)
-	setActive(slot2:Find("pic_win"), slot0.activityBestRecord <= slot1.data4)
-	setText(slot2:Find("time_txt"), slot0:FormatRecordTime(slot0.lastRecord))
-	setText(slot2:Find("award_txt"), slot0.activityProgress < slot1.data2 and slot1:getConfig("config_client")[3][slot1.data2] or 0)
-	onButton(slot0, slot2:Find("button"), function ()
-		uv0:HideResult()
-		uv0:SetActivity(uv1)
-		uv0:SetState(uv2.GAME_STATE_BEGIN)
+function var_0_0.DisplayResult(arg_27_0, arg_27_1)
+	setActive(arg_27_0.result, true)
+
+	local var_27_0 = arg_27_0.result:Find("bg")
+
+	setActive(var_27_0:Find("pic_new_record"), arg_27_1.data4 < arg_27_0.activityBestRecord)
+	setActive(var_27_0:Find("pic_win"), arg_27_1.data4 >= arg_27_0.activityBestRecord)
+	setText(var_27_0:Find("time_txt"), arg_27_0:FormatRecordTime(arg_27_0.lastRecord))
+
+	local var_27_1 = arg_27_1:getConfig("config_client")[3]
+
+	setText(var_27_0:Find("award_txt"), arg_27_1.data2 > arg_27_0.activityProgress and var_27_1[arg_27_1.data2] or 0)
+	onButton(arg_27_0, var_27_0:Find("button"), function()
+		arg_27_0:HideResult()
+		arg_27_0:SetActivity(arg_27_1)
+		arg_27_0:SetState(var_0_0.GAME_STATE_BEGIN)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.result, function ()
-		triggerButton(uv0.backBtn)
+	onButton(arg_27_0, arg_27_0.result, function()
+		triggerButton(arg_27_0.backBtn)
 	end, SFX_CANCEL)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.result)
+	pg.UIMgr.GetInstance():BlurPanel(arg_27_0.result)
 end
 
-function slot0.HideResult(slot0)
-	if isActive(slot0.result) then
-		setActive(slot0.result, false)
-		pg.UIMgr.GetInstance():UnblurPanel(slot0.result, slot0._tf)
+function var_0_0.HideResult(arg_30_0)
+	if isActive(arg_30_0.result) then
+		setActive(arg_30_0.result, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_30_0.result, arg_30_0._tf)
 	end
 end
 
-function slot0.FormatRecordTime(slot0, slot1)
-	return (math.floor(slot1 / 60000) >= 10 and slot2 or "0" .. slot2) .. "'" .. (math.floor(slot1 % 60000 / 1000) >= 10 and slot3 or "0" .. slot3) .. "'" .. (math.floor(slot1 % 1000 / 10) >= 10 and slot4 or "0" .. slot4)
+function var_0_0.FormatRecordTime(arg_31_0, arg_31_1)
+	local var_31_0 = math.floor(arg_31_1 / 60000)
+
+	var_31_0 = var_31_0 >= 10 and var_31_0 or "0" .. var_31_0
+
+	local var_31_1 = math.floor(arg_31_1 % 60000 / 1000)
+
+	var_31_1 = var_31_1 >= 10 and var_31_1 or "0" .. var_31_1
+
+	local var_31_2 = math.floor(arg_31_1 % 1000 / 10)
+
+	var_31_2 = var_31_2 >= 10 and var_31_2 or "0" .. var_31_2
+
+	return var_31_0 .. "'" .. var_31_1 .. "'" .. var_31_2
 end
 
-function slot0.LinkLink(slot0, slot1, slot2)
-	assert(slot1.row ~= slot2.row or slot1.column ~= slot2.column)
-	assert(slot1.id == slot2.id)
+function var_0_0.LinkLink(arg_32_0, arg_32_1, arg_32_2)
+	assert(arg_32_1.row ~= arg_32_2.row or arg_32_1.column ~= arg_32_2.column)
+	assert(arg_32_1.id == arg_32_2.id)
 
-	slot3 = {
-		row = slot1.row,
-		column = slot1.column
+	local var_32_0 = {
+		row = arg_32_1.row,
+		column = arg_32_1.column
 	}
-	slot4 = {
-		row = slot2.row,
-		column = slot2.column
+	local var_32_1 = {
+		row = arg_32_2.row,
+		column = arg_32_2.column
 	}
+	local var_32_2 = {}
+	local var_32_3 = {}
 
-	table.insert({}, slot3)
-	table.insert({}, slot3)
+	table.insert(var_32_2, var_32_0)
+	table.insert(var_32_3, var_32_0)
 
-	for slot10 = 1, 3 do
-		if slot0:IterateByOneSnap(slot4, slot1.id, slot5, slot6) then
-			slot12 = {
-				slot11
+	for iter_32_0 = 1, 3 do
+		local var_32_4 = arg_32_0:IterateByOneSnap(var_32_1, arg_32_1.id, var_32_2, var_32_3)
+
+		if var_32_4 then
+			local var_32_5 = {
+				var_32_4
 			}
 
-			while slot11 and slot11.from do
-				if slot11.row ~= slot11.from.row then
-					slot13 = slot11.from.row < slot11.row and -1 or 1
+			while var_32_4 and var_32_4.from do
+				if var_32_4.row ~= var_32_4.from.row then
+					local var_32_6 = var_32_4.row > var_32_4.from.row and -1 or 1
 
-					for slot17 = slot11.row + slot13, slot11.from.row, slot13 do
-						table.insert(slot12, {
-							row = slot17,
-							column = slot11.column
+					for iter_32_1 = var_32_4.row + var_32_6, var_32_4.from.row, var_32_6 do
+						table.insert(var_32_5, {
+							row = iter_32_1,
+							column = var_32_4.column
 						})
 					end
-				elseif slot11.from.column ~= slot11.column then
-					slot13 = slot11.from.column < slot11.column and -1 or 1
+				elseif var_32_4.from.column ~= var_32_4.column then
+					local var_32_7 = var_32_4.column > var_32_4.from.column and -1 or 1
 
-					for slot17 = slot11.column + slot13, slot11.from.column, slot13 do
-						table.insert(slot12, {
-							row = slot11.row,
-							column = slot17
+					for iter_32_2 = var_32_4.column + var_32_7, var_32_4.from.column, var_32_7 do
+						table.insert(var_32_5, {
+							row = var_32_4.row,
+							column = iter_32_2
 						})
 					end
 				else
 					assert(false)
 				end
 
-				slot11 = slot11.from
+				var_32_4 = var_32_4.from
 			end
 
-			return slot12
+			return var_32_5
 		end
 	end
 end
 
-function slot0.IterateByOneSnap(slot0, slot1, slot2, slot3, slot4)
-	for slot8 = 1, #slot3 do
-		slot13 = slot4
+function var_0_0.IterateByOneSnap(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
+	for iter_33_0 = 1, #arg_33_3 do
+		local var_33_0 = arg_33_0:FindDirectLinkPoint(arg_33_2, arg_33_3[iter_33_0], arg_33_4)
 
-		for slot13, slot14 in ipairs(slot0:FindDirectLinkPoint(slot2, slot3[slot8], slot13)) do
-			if slot14.row == slot1.row and slot14.column == slot1.column then
-				return slot14
+		for iter_33_1, iter_33_2 in ipairs(var_33_0) do
+			if iter_33_2.row == arg_33_1.row and iter_33_2.column == arg_33_1.column then
+				return iter_33_2
 			end
 
-			table.insert(slot3, slot14)
+			table.insert(arg_33_3, iter_33_2)
 		end
 	end
 
-	_.each(slot3, function (slot0)
-		uv0[slot0.row .. "_" .. slot0.column] = true
+	_.each(arg_33_3, function(arg_34_0)
+		arg_33_4[arg_34_0.row .. "_" .. arg_34_0.column] = true
 	end)
 end
 
-function slot0.FindDirectLinkPoint(slot0, slot1, slot2, slot3)
-	slot4 = {}
+function var_0_0.FindDirectLinkPoint(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
+	local var_35_0 = {}
 
-	for slot8 = slot2.row - 1, 0, -1 do
-		slot9 = slot8 .. "_" .. slot2.column
+	for iter_35_0 = arg_35_2.row - 1, 0, -1 do
+		local var_35_1 = iter_35_0 .. "_" .. arg_35_2.column
+		local var_35_2 = arg_35_0.cards[iter_35_0][arg_35_2.column]
 
-		if slot0.cards[slot8][slot2.column].state == uv0.CARD_STATE_NORMAL and slot10.id ~= slot1 or slot3[slot9] then
+		if var_35_2.state == var_0_0.CARD_STATE_NORMAL and var_35_2.id ~= arg_35_1 or arg_35_3[var_35_1] then
 			break
 		end
 
-		table.insert(slot4, {
-			row = slot8,
-			column = slot2.column,
-			from = slot2
+		table.insert(var_35_0, {
+			row = iter_35_0,
+			column = arg_35_2.column,
+			from = arg_35_2
 		})
 	end
 
-	for slot8 = slot2.row + 1, uv0.MAX_ROW - 1 do
-		slot9 = slot8 .. "_" .. slot2.column
+	for iter_35_1 = arg_35_2.row + 1, var_0_0.MAX_ROW - 1 do
+		local var_35_3 = iter_35_1 .. "_" .. arg_35_2.column
+		local var_35_4 = arg_35_0.cards[iter_35_1][arg_35_2.column]
 
-		if slot0.cards[slot8][slot2.column].state == uv0.CARD_STATE_NORMAL and slot10.id ~= slot1 or slot3[slot9] then
+		if var_35_4.state == var_0_0.CARD_STATE_NORMAL and var_35_4.id ~= arg_35_1 or arg_35_3[var_35_3] then
 			break
 		end
 
-		table.insert(slot4, {
-			row = slot8,
-			column = slot2.column,
-			from = slot2
+		table.insert(var_35_0, {
+			row = iter_35_1,
+			column = arg_35_2.column,
+			from = arg_35_2
 		})
 	end
 
-	for slot8 = slot2.column - 1, 0, -1 do
-		slot9 = slot2.row .. "_" .. slot8
+	for iter_35_2 = arg_35_2.column - 1, 0, -1 do
+		local var_35_5 = arg_35_2.row .. "_" .. iter_35_2
+		local var_35_6 = arg_35_0.cards[arg_35_2.row][iter_35_2]
 
-		if slot0.cards[slot2.row][slot8].state == uv0.CARD_STATE_NORMAL and slot10.id ~= slot1 or slot3[slot9] then
+		if var_35_6.state == var_0_0.CARD_STATE_NORMAL and var_35_6.id ~= arg_35_1 or arg_35_3[var_35_5] then
 			break
 		end
 
-		table.insert(slot4, {
-			row = slot2.row,
-			column = slot8,
-			from = slot2
+		table.insert(var_35_0, {
+			row = arg_35_2.row,
+			column = iter_35_2,
+			from = arg_35_2
 		})
 	end
 
-	for slot8 = slot2.column + 1, uv0.MAX_COLUMN - 1 do
-		slot9 = slot2.row .. "_" .. slot8
+	for iter_35_3 = arg_35_2.column + 1, var_0_0.MAX_COLUMN - 1 do
+		local var_35_7 = arg_35_2.row .. "_" .. iter_35_3
+		local var_35_8 = arg_35_0.cards[arg_35_2.row][iter_35_3]
 
-		if slot0.cards[slot2.row][slot8].state == uv0.CARD_STATE_NORMAL and slot10.id ~= slot1 or slot3[slot9] then
+		if var_35_8.state == var_0_0.CARD_STATE_NORMAL and var_35_8.id ~= arg_35_1 or arg_35_3[var_35_7] then
 			break
 		end
 
-		table.insert(slot4, {
-			row = slot2.row,
-			column = slot8,
-			from = slot2
+		table.insert(var_35_0, {
+			row = arg_35_2.row,
+			column = iter_35_3,
+			from = arg_35_2
 		})
 	end
 
-	return slot4
+	return var_35_0
 end
 
-function slot0.LinkLink1(slot0, slot1, slot2)
-	assert(slot1.row ~= slot2.row or slot1.column ~= slot2.column)
-	assert(slot1.id == slot2.id)
+function var_0_0.LinkLink1(arg_36_0, arg_36_1, arg_36_2)
+	assert(arg_36_1.row ~= arg_36_2.row or arg_36_1.column ~= arg_36_2.column)
+	assert(arg_36_1.id == arg_36_2.id)
 
-	slot3 = nil
-	slot4 = {
-		[slot1.row .. "_" .. slot1.column] = {
+	local var_36_0
+	local var_36_1 = {
+		[arg_36_1.row .. "_" .. arg_36_1.column] = {
 			rdir = 0,
 			cdir = 0,
 			snap = 0,
-			row = slot1.row,
-			column = slot1.column,
+			row = arg_36_1.row,
+			column = arg_36_1.column,
 			path = {}
 		}
 	}
-	slot6 = {
-		row = slot2.row,
-		column = slot2.column
+	local var_36_2 = {
+		row = arg_36_1.row,
+		column = arg_36_1.column
 	}
-	slot7 = {
-		{
-			row = slot1.row,
-			column = slot1.column
-		}
+	local var_36_3 = {
+		row = arg_36_2.row,
+		column = arg_36_2.column
 	}
-	slot8 = {}
+	local var_36_4 = {
+		var_36_2
+	}
+	local var_36_5 = {}
 
-	while #slot7 > 0 do
-		if table.remove(slot7, 1).row == slot6.row and slot9.column == slot6.column then
-			return slot4[slot9.row .. "_" .. slot9.column].path
+	while #var_36_4 > 0 do
+		local var_36_6 = table.remove(var_36_4, 1)
+
+		if var_36_6.row == var_36_3.row and var_36_6.column == var_36_3.column then
+			var_36_0 = var_36_1[var_36_6.row .. "_" .. var_36_6.column].path
+
+			break
 		end
 
-		table.insert(slot8, slot9)
-		_.each({
+		table.insert(var_36_5, var_36_6)
+
+		local var_36_7 = {
 			{
 				row = 1,
 				column = 0
@@ -655,55 +723,63 @@ function slot0.LinkLink1(slot0, slot1, slot2)
 				row = 0,
 				column = -1
 			}
-		}, function (slot0)
-			slot0.row = uv0.row + slot0.row
-			slot0.column = uv0.column + slot0.column
-			slot2 = uv3.cards[slot0.row] and uv3.cards[slot0.row][slot0.column] or nil
+		}
 
-			if not (_.any(uv1, function (slot0)
-				return slot0.row == uv0.row and slot0.column == uv0.column
-			end) or _.any(uv2, function (slot0)
-				return slot0.row == uv0.row and slot0.column == uv0.column
-			end)) and (not slot2 or slot2.state == uv4.CARD_STATE_LINKED or slot2.state == uv4.CARD_STATE_BLANK or slot2.id == uv5.id) and slot0.row >= 0 and slot0.row < uv4.MAX_ROW and slot0.column >= 0 and slot0.column < uv4.MAX_COLUMN then
-				slot3 = uv6[uv0.row .. "_" .. uv0.column]
-				slot4 = slot3.snap
-				slot5 = slot0.row - uv0.row
-				slot6 = slot0.column - uv0.column
+		_.each(var_36_7, function(arg_37_0)
+			arg_37_0.row = var_36_6.row + arg_37_0.row
+			arg_37_0.column = var_36_6.column + arg_37_0.column
 
-				if slot3.rdir ~= 0 and slot3.rdir ~= slot5 or slot3.cdir ~= 0 and slot3.cdir ~= slot6 then
-					slot4 = slot4 + 1
+			local var_37_0 = _.any(var_36_4, function(arg_38_0)
+				return arg_38_0.row == arg_37_0.row and arg_38_0.column == arg_37_0.column
+			end) or _.any(var_36_5, function(arg_39_0)
+				return arg_39_0.row == arg_37_0.row and arg_39_0.column == arg_37_0.column
+			end)
+			local var_37_1 = arg_36_0.cards[arg_37_0.row] and arg_36_0.cards[arg_37_0.row][arg_37_0.column] or nil
+
+			if not var_37_0 and (not var_37_1 or var_37_1.state == var_0_0.CARD_STATE_LINKED or var_37_1.state == var_0_0.CARD_STATE_BLANK or var_37_1.id == arg_36_1.id) and arg_37_0.row >= 0 and arg_37_0.row < var_0_0.MAX_ROW and arg_37_0.column >= 0 and arg_37_0.column < var_0_0.MAX_COLUMN then
+				local var_37_2 = var_36_1[var_36_6.row .. "_" .. var_36_6.column]
+				local var_37_3 = var_37_2.snap
+				local var_37_4 = arg_37_0.row - var_36_6.row
+				local var_37_5 = arg_37_0.column - var_36_6.column
+
+				if var_37_2.rdir ~= 0 and var_37_2.rdir ~= var_37_4 or var_37_2.cdir ~= 0 and var_37_2.cdir ~= var_37_5 then
+					var_37_3 = var_37_3 + 1
 				end
 
-				if slot4 <= 2 then
-					slot7 = Clone(slot3.path)
+				if var_37_3 <= 2 then
+					local var_37_6 = Clone(var_37_2.path)
 
-					table.insert(slot7, slot0)
+					table.insert(var_37_6, arg_37_0)
 
-					uv6[slot0.row .. "_" .. slot0.column] = {
-						row = slot0.row,
-						column = slot0.column,
-						snap = slot4,
-						rdir = slot5,
-						cdir = slot6,
-						path = slot7
+					var_36_1[arg_37_0.row .. "_" .. arg_37_0.column] = {
+						row = arg_37_0.row,
+						column = arg_37_0.column,
+						snap = var_37_3,
+						rdir = var_37_4,
+						cdir = var_37_5,
+						path = var_37_6
 					}
-					slot8 = 0
 
-					for slot12 = #uv1, 1, -1 do
-						slot13 = uv1[slot12]
+					local var_37_7 = 0
 
-						if uv6[slot13.row .. "_" .. slot13.column].snap < slot4 or slot4 == slot14.snap and #slot7 > #slot14.path then
-							slot8 = slot12
+					for iter_37_0 = #var_36_4, 1, -1 do
+						local var_37_8 = var_36_4[iter_37_0]
+						local var_37_9 = var_36_1[var_37_8.row .. "_" .. var_37_8.column]
+
+						if var_37_3 > var_37_9.snap or var_37_3 == var_37_9.snap and #var_37_6 > #var_37_9.path then
+							var_37_7 = iter_37_0
 
 							break
 						end
 					end
 
-					table.insert(uv1, slot8 + 1, slot0)
+					table.insert(var_36_4, var_37_7 + 1, arg_37_0)
 				end
 			end
 		end)
 	end
+
+	return var_36_0
 end
 
-return slot0
+return var_0_0

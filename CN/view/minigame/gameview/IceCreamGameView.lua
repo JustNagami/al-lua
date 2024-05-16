@@ -1,9 +1,9 @@
-slot0 = class("IceCreamGameView", import("..BaseMiniGameView"))
-slot1 = "EVENT_ICE_FINISH"
-slot2 = "EVENT_UPDATE_WAIT_TIME"
-slot3 = 0.05
-slot4 = 2
-slot5 = {
+﻿local var_0_0 = class("IceCreamGameView", import("..BaseMiniGameView"))
+local var_0_1 = "EVENT_ICE_FINISH"
+local var_0_2 = "EVENT_UPDATE_WAIT_TIME"
+local var_0_3 = 0.05
+local var_0_4 = 2
+local var_0_5 = {
 	{
 		6,
 		10
@@ -17,23 +17,23 @@ slot5 = {
 		14
 	}
 }
-slot6 = 60
-slot7 = {
+local var_0_6 = 60
+local var_0_7 = {
 	750,
 	250,
 	300
 }
-slot8 = {
+local var_0_8 = {
 	200,
 	100
 }
-slot9 = {
+local var_0_9 = {
 	100,
 	50,
 	20
 }
-slot10 = 20
-slot11 = {
+local var_0_10 = 20
+local var_0_11 = {
 	point_boost = 100,
 	wait_time_boost = 2,
 	bullet_time = {
@@ -43,7 +43,7 @@ slot11 = {
 		5
 	}
 }
-slot12 = {
+local var_0_12 = {
 	{
 		1
 	},
@@ -57,7 +57,7 @@ slot12 = {
 		2
 	}
 }
-slot13 = {
+local var_0_13 = {
 	{
 		1
 	},
@@ -69,313 +69,321 @@ slot13 = {
 		3
 	}
 }
-slot14 = {
+local var_0_14 = {
 	"A",
 	"B",
 	"C",
 	"D"
 }
-slot15 = {
+local var_0_15 = {
 	"H",
 	"J",
 	"K",
 	"I"
 }
-slot16 = nil
+local var_0_16
 
-function slot17(slot0)
-	if uv0 then
-		uv0:Pause(not slot0)
-	elseif slot0 then
-		slot1 = pg.CriMgr.GetInstance()
+local function var_0_17(arg_1_0)
+	if var_0_16 then
+		var_0_16:Pause(not arg_1_0)
+	elseif arg_1_0 then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_topping", function(arg_2_0)
+			assert(arg_2_0)
 
-		slot1:PlaySoundEffect_V3("ui-icecream_topping", function (slot0)
-			assert(slot0)
-
-			uv0 = slot0.playback
+			var_0_16 = arg_2_0.playback
 		end)
 	end
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_3_0)
 	return "IceCreamGameUI"
 end
 
-function slot0.initTimer(slot0)
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
-	end, uv0, -1)
+function var_0_0.initTimer(arg_4_0)
+	arg_4_0.timer = Timer.New(function()
+		arg_4_0:onTimer()
+	end, var_0_3, -1)
 end
 
-function slot0.didEnter(slot0)
-	slot0:initTimer()
-	slot0:initUI()
-	slot0:initGameUI()
-	slot0:openMainUI()
+function var_0_0.didEnter(arg_6_0)
+	arg_6_0:initTimer()
+	arg_6_0:initUI()
+	arg_6_0:initGameUI()
+	arg_6_0:openMainUI()
 end
 
-function slot0.initUI(slot0)
-	slot0.clickMask = slot0:findTF("ui/click_mask")
-	slot0.rtResource = slot0._tf:Find("Resource")
-	slot0.mainUI = slot0:findTF("ui/main_ui")
-	slot0.listScrollRect = GetComponent(slot0.mainUI:Find("right_panel/item_list/content"), typeof(ScrollRect))
+function var_0_0.initUI(arg_7_0)
+	arg_7_0.clickMask = arg_7_0:findTF("ui/click_mask")
+	arg_7_0.rtResource = arg_7_0._tf:Find("Resource")
+	arg_7_0.mainUI = arg_7_0:findTF("ui/main_ui")
+	arg_7_0.listScrollRect = GetComponent(arg_7_0.mainUI:Find("right_panel/item_list/content"), typeof(ScrollRect))
 
-	onButton(slot0, slot0.mainUI:Find("btn_back"), function ()
-		uv0:emit(uv1.ON_BACK_PRESSED)
+	onButton(arg_7_0, arg_7_0.mainUI:Find("btn_back"), function()
+		arg_7_0:emit(var_0_0.ON_BACK_PRESSED)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.mainUI:Find("bg/btn_help"), function ()
+	onButton(arg_7_0, arg_7_0.mainUI:Find("bg/btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.icecreamgame_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.mainUI:Find("bg/btn_start"), function ()
-		uv0:readyStart()
+	onButton(arg_7_0, arg_7_0.mainUI:Find("bg/btn_start"), function()
+		arg_7_0:readyStart()
 	end, SFX_PANEL)
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_7_0.totalTimes = arg_7_0:getGameTotalTime()
 
-	scrollTo(slot0.listScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
-	onButton(slot0, slot0:findTF("right_panel/arrows_up", slot0.mainUI), function ()
-		if uv0.listScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
-			slot0 = 1
+	local var_7_0 = arg_7_0:getGameUsedTimes() - 4 < 0 and 0 or arg_7_0:getGameUsedTimes() - 4
+
+	scrollTo(arg_7_0.listScrollRect, 0, 1 - var_7_0 / (arg_7_0.totalTimes - 4))
+	onButton(arg_7_0, arg_7_0:findTF("right_panel/arrows_up", arg_7_0.mainUI), function()
+		local var_11_0 = arg_7_0.listScrollRect.normalizedPosition.y + 1 / (arg_7_0.totalTimes - 4)
+
+		if var_11_0 > 1 then
+			var_11_0 = 1
 		end
 
-		scrollTo(uv0.listScrollRect, 0, slot0)
+		scrollTo(arg_7_0.listScrollRect, 0, var_11_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("right_panel/arrows_down", slot0.mainUI), function ()
-		if uv0.listScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
-			slot0 = 0
+	onButton(arg_7_0, arg_7_0:findTF("right_panel/arrows_down", arg_7_0.mainUI), function()
+		local var_12_0 = arg_7_0.listScrollRect.normalizedPosition.y - 1 / (arg_7_0.totalTimes - 4)
+
+		if var_12_0 < 0 then
+			var_12_0 = 0
 		end
 
-		scrollTo(uv0.listScrollRect, 0, slot0)
+		scrollTo(arg_7_0.listScrollRect, 0, var_12_0)
 	end, SFX_PANEL)
 
-	slot3 = slot0.mainUI:Find("right_panel/item_list/content")
-	slot0.itemList = UIItemList.New(slot3, slot3:GetChild(0))
+	local var_7_1 = pg.mini_game[arg_7_0:GetMGData().id].simple_config_data.drop_ids
+	local var_7_2 = arg_7_0.mainUI:Find("right_panel/item_list/content")
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_7_0.itemList = UIItemList.New(var_7_2, var_7_2:GetChild(0))
 
-		if slot0 == UIItemList.EventUpdate then
-			slot2.name = slot1
+	arg_7_0.itemList:make(function(arg_13_0, arg_13_1, arg_13_2)
+		arg_13_1 = arg_13_1 + 1
 
-			GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "day_" .. slot1, slot2:Find("text"))
+		if arg_13_0 == UIItemList.EventUpdate then
+			arg_13_2.name = arg_13_1
 
-			slot3 = slot2:Find("IconTpl")
-			slot5, slot6, slot7 = unpack(uv0[slot1])
+			GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "day_" .. arg_13_1, arg_13_2:Find("text"))
 
-			updateDrop(slot3, {
-				count = slot7,
-				id = slot6,
-				type = slot5
-			})
-			onButton(uv1, slot3, function ()
-				uv0:emit(uv1.ON_DROP, uv2)
+			local var_13_0 = arg_13_2:Find("IconTpl")
+			local var_13_1 = {}
+
+			var_13_1.type, var_13_1.id, var_13_1.count = unpack(var_7_1[arg_13_1])
+
+			updateDrop(var_13_0, var_13_1)
+			onButton(arg_7_0, var_13_0, function()
+				arg_7_0:emit(var_0_0.ON_DROP, var_13_1)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.itemList:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop_ids)
+	arg_7_0.itemList:align(#var_7_1)
 
-	slot0.countUI = slot0:findTF("ui/count_ui")
-	slot0.countAnimator = GetComponent(slot0:findTF("count", slot0.countUI), typeof(Animator))
-	slot0.countDft = GetOrAddComponent(slot0:findTF("count", slot0.countUI), typeof(DftAniEvent))
+	arg_7_0.countUI = arg_7_0:findTF("ui/count_ui")
+	arg_7_0.countAnimator = GetComponent(arg_7_0:findTF("count", arg_7_0.countUI), typeof(Animator))
+	arg_7_0.countDft = GetOrAddComponent(arg_7_0:findTF("count", arg_7_0.countUI), typeof(DftAniEvent))
 
-	slot0.countDft:SetTriggerEvent(function ()
+	arg_7_0.countDft:SetTriggerEvent(function()
+		return
 	end)
-	slot0.countDft:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:startGame()
+	arg_7_0.countDft:SetEndEvent(function()
+		setActive(arg_7_0.countUI, false)
+		arg_7_0:startGame()
 	end)
 
-	slot0.pauseUI = slot0:findTF("ui/pause_ui")
+	arg_7_0.pauseUI = arg_7_0:findTF("ui/pause_ui")
 
-	onButton(slot0, slot0:findTF("panel/btn_confirm", slot0.pauseUI), function ()
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0.pauseUI, uv0._tf:Find("ui"))
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_7_0, arg_7_0:findTF("panel/btn_confirm", arg_7_0.pauseUI), function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0.pauseUI, arg_7_0._tf:Find("ui"))
+		setActive(arg_7_0.pauseUI, false)
+		arg_7_0:resumeGame()
 	end, SFX_PANEL)
 
-	slot0.returnUI = slot0:findTF("ui/return_ui")
+	arg_7_0.returnUI = arg_7_0:findTF("ui/return_ui")
 
-	onButton(slot0, slot0:findTF("panel/btn_confirm", slot0.returnUI), function ()
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0.returnUI, uv0._tf:Find("ui"))
-		setActive(uv0.returnUI, false)
-		uv0:resumeGame()
-		uv0:endGame()
+	onButton(arg_7_0, arg_7_0:findTF("panel/btn_confirm", arg_7_0.returnUI), function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0.returnUI, arg_7_0._tf:Find("ui"))
+		setActive(arg_7_0.returnUI, false)
+		arg_7_0:resumeGame()
+		arg_7_0:endGame()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("panel/btn_cancel", slot0.returnUI), function ()
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0.returnUI, uv0._tf:Find("ui"))
-		setActive(uv0.returnUI, false)
-		uv0:resumeGame()
-	end, SFX_PANEL)
-
-	slot0.endUI = slot0:findTF("ui/end_ui")
-
-	onButton(slot0, slot0:findTF("panel/btn_finish", slot0.endUI), function ()
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0.endUI, uv0._tf:Find("ui"))
-		setActive(uv0.endUI, false)
-		uv0:openMainUI()
+	onButton(arg_7_0, arg_7_0:findTF("panel/btn_cancel", arg_7_0.returnUI), function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0.returnUI, arg_7_0._tf:Find("ui"))
+		setActive(arg_7_0.returnUI, false)
+		arg_7_0:resumeGame()
 	end, SFX_PANEL)
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	arg_7_0.endUI = arg_7_0:findTF("ui/end_ui")
+
+	onButton(arg_7_0, arg_7_0:findTF("panel/btn_finish", arg_7_0.endUI), function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0.endUI, arg_7_0._tf:Find("ui"))
+		setActive(arg_7_0.endUI, false)
+		arg_7_0:openMainUI()
+	end, SFX_PANEL)
+
+	if not arg_7_0.handle then
+		arg_7_0.handle = UpdateBeat:CreateListener(arg_7_0.Update, arg_7_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_7_0.handle)
 end
 
-function slot0.Update(slot0)
+function var_0_0.Update(arg_21_0)
+	return
 end
 
-function slot0.initGameUI(slot0)
-	slot0.gameUI = slot0:findTF("ui/game_ui")
-	slot0.timeTF = slot0.gameUI:Find("Score/time/Text")
-	slot0.scoreTF = slot0.gameUI:Find("Score/point/Text")
-	slot0.addScoreTF = slot0.gameUI:Find("Score/add_score")
+function var_0_0.initGameUI(arg_22_0)
+	arg_22_0.gameUI = arg_22_0:findTF("ui/game_ui")
+	arg_22_0.timeTF = arg_22_0.gameUI:Find("Score/time/Text")
+	arg_22_0.scoreTF = arg_22_0.gameUI:Find("Score/point/Text")
+	arg_22_0.addScoreTF = arg_22_0.gameUI:Find("Score/add_score")
 
-	onButton(slot0, slot0.gameUI:Find("Button/btn_pause"), function ()
-		uv0:pauseGame()
-		pg.UIMgr.GetInstance():OverlayPanel(uv0.pauseUI)
-		setActive(uv0.pauseUI, true)
+	onButton(arg_22_0, arg_22_0.gameUI:Find("Button/btn_pause"), function()
+		arg_22_0:pauseGame()
+		pg.UIMgr.GetInstance():OverlayPanel(arg_22_0.pauseUI)
+		setActive(arg_22_0.pauseUI, true)
+	end)
+	onButton(arg_22_0, arg_22_0.gameUI:Find("Button/btn_back"), function()
+		arg_22_0:pauseGame()
+		pg.UIMgr.GetInstance():OverlayPanel(arg_22_0.returnUI)
+		setActive(arg_22_0.returnUI, true)
 	end)
 
-	function slot4()
-		uv0:pauseGame()
-		pg.UIMgr.GetInstance():OverlayPanel(uv0.returnUI)
-		setActive(uv0.returnUI, true)
-	end
+	arg_22_0.rtWalk = arg_22_0.gameUI:Find("Walk")
+	arg_22_0.rtMake = arg_22_0.gameUI:Find("Make")
+	arg_22_0.rtTime = arg_22_0.gameUI:Find("Time")
+	arg_22_0.rtButton = arg_22_0.gameUI:Find("Button")
 
-	onButton(slot0, slot0.gameUI:Find("Button/btn_back"), slot4)
-
-	slot0.rtWalk = slot0.gameUI:Find("Walk")
-	slot0.rtMake = slot0.gameUI:Find("Make")
-	slot0.rtTime = slot0.gameUI:Find("Time")
-	slot0.rtButton = slot0.gameUI:Find("Button")
-
-	for slot4 = 1, 4 do
-		slot7 = slot0.rtButton
-
-		onButton(slot0, slot7:Find("L" .. slot4), function ()
-			if not uv0.iceBuild or uv0.iceBuild.isLeftLock then
+	for iter_22_0 = 1, 4 do
+		onButton(arg_22_0, arg_22_0.rtButton:Find("L" .. iter_22_0), function()
+			if not arg_22_0.iceBuild or arg_22_0.iceBuild.isLeftLock then
 				return
 			end
 
-			if #uv0.iceBuild._info[1] == #uv0.targetList[uv0.targetIndex]._info[1] then
+			local var_25_0 = arg_22_0.targetList[arg_22_0.targetIndex]._info
+
+			if #arg_22_0.iceBuild._info[1] == #var_25_0[1] then
 				return
 			end
 
-			uv0.iceBuild:MakeBall(uv1)
+			arg_22_0.iceBuild:MakeBall(iter_22_0)
 		end)
-
-		slot7 = slot0.rtButton
-
-		onButton(slot0, slot7:Find("R" .. slot4), function ()
-			if not uv0.iceBuild or uv0.iceBuild.isRightLock then
+		onButton(arg_22_0, arg_22_0.rtButton:Find("R" .. iter_22_0), function()
+			if not arg_22_0.iceBuild or arg_22_0.iceBuild.isRightLock then
 				return
 			end
 
-			if #uv0.iceBuild._info[2] == #uv0.targetList[uv0.targetIndex]._info[2] then
+			local var_26_0 = arg_22_0.targetList[arg_22_0.targetIndex]._info
+
+			if #arg_22_0.iceBuild._info[2] == #var_26_0[2] then
 				return
 			end
 
-			if not uv0.iceBuild._info[1][uv1[#slot0[1]][#uv0.iceBuild._info[2] + 1]] then
-				uv0.iceBuild:MakeMissTopping(uv2)
+			if not arg_22_0.iceBuild._info[1][var_0_13[#var_26_0[1]][#arg_22_0.iceBuild._info[2] + 1]] then
+				arg_22_0.iceBuild:MakeMissTopping(iter_22_0)
 			else
-				uv0.iceBuild:MakeTopping(uv2)
+				arg_22_0.iceBuild:MakeTopping(iter_22_0)
 			end
 		end)
 	end
 
-	slot0:bind(uv1, function (slot0, ...)
-		uv0:ResultTarget(...)
+	arg_22_0:bind(var_0_1, function(arg_27_0, ...)
+		arg_22_0:ResultTarget(...)
 	end)
-	slot0:bind(uv2, function (slot0, slot1, ...)
-		eachChild(uv0.rtTime, function (slot0)
-			setActive(slot0, slot0.name == uv0)
+	arg_22_0:bind(var_0_2, function(arg_28_0, arg_28_1, ...)
+		eachChild(arg_22_0.rtTime, function(arg_29_0)
+			setActive(arg_29_0, arg_29_0.name == arg_28_1)
 		end)
-		setSlider(uv0.rtTime:Find(slot1), ...)
+		setSlider(arg_22_0.rtTime:Find(arg_28_1), ...)
 	end)
 end
 
-function slot0.updateMainUI(slot0)
-	slot1 = slot0:getGameUsedTimes()
-	slot2 = slot0:getGameTimes()
+function var_0_0.updateMainUI(arg_30_0)
+	local var_30_0 = arg_30_0:getGameUsedTimes()
+	local var_30_1 = arg_30_0:getGameTimes()
+	local var_30_2 = arg_30_0.itemList.container
+	local var_30_3 = var_30_2.childCount
 
-	for slot8 = 1, slot0.itemList.container.childCount do
-		slot9 = {
+	for iter_30_0 = 1, var_30_3 do
+		local var_30_4 = {
 			award = true
 		}
 
-		if slot8 <= slot1 then
-			slot9.finish = true
-		elseif slot8 == slot1 + 1 and slot2 >= 1 then
-			-- Nothing
-		elseif slot1 >= slot8 or slot8 > slot1 + slot2 then
-			slot9.lock = true
-			slot9.award = false
+		if iter_30_0 <= var_30_0 then
+			var_30_4.finish = true
+		elseif iter_30_0 == var_30_0 + 1 and var_30_1 >= 1 then
+			-- block empty
+		elseif var_30_0 < iter_30_0 and iter_30_0 <= var_30_0 + var_30_1 then
+			-- block empty
+		else
+			var_30_4.lock = true
+			var_30_4.award = false
 		end
 
-		slot10 = slot3:GetChild(slot8 - 1)
+		local var_30_5 = var_30_2:GetChild(iter_30_0 - 1)
 
-		setActive(slot10:Find("finish"), slot9.finish)
-		setActive(slot10:Find("lock"), slot9.lock)
-		setActive(slot10:Find("IconTpl"), slot9.award)
+		setActive(var_30_5:Find("finish"), var_30_4.finish)
+		setActive(var_30_5:Find("lock"), var_30_4.lock)
+		setActive(var_30_5:Find("IconTpl"), var_30_4.award)
 	end
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_30_0.totalTimes = arg_30_0:getGameTotalTime()
 
-	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
-		slot6 = 1
+	local var_30_6 = 1 - (arg_30_0:getGameUsedTimes() - 3 < 0 and 0 or arg_30_0:getGameUsedTimes() - 3) / (arg_30_0.totalTimes - 4)
+
+	if var_30_6 > 1 then
+		var_30_6 = 1
 	end
 
-	scrollTo(slot0.listScrollRect, 0, slot6)
-	slot0:checkGet()
+	scrollTo(arg_30_0.listScrollRect, 0, var_30_6)
+	arg_30_0:checkGet()
 end
 
-function slot0.checkGet(slot0)
-	if slot0:getUltimate() == 0 then
-		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
+function var_0_0.checkGet(arg_31_0)
+	if arg_31_0:getUltimate() == 0 then
+		if arg_31_0:getGameTotalTime() > arg_31_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0:GetMGHubData().id,
+			hubid = arg_31_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function slot0.openMainUI(slot0)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.mainUI, true)
-	slot0:updateMainUI()
+function var_0_0.openMainUI(arg_32_0)
+	setActive(arg_32_0.gameUI, false)
+	setActive(arg_32_0.mainUI, true)
+	arg_32_0:updateMainUI()
 end
 
-function slot0.readyStart(slot0)
-	setActive(slot0.mainUI, false)
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("count")
+function var_0_0.readyStart(arg_33_0)
+	setActive(arg_33_0.mainUI, false)
+	setActive(arg_33_0.countUI, true)
+	arg_33_0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/ddldaoshu2")
-	slot0:resetGame()
+	arg_33_0:resetGame()
 end
 
-function slot0.resetGame(slot0)
-	slot0.gameStartFlag = false
-	slot0.gamePause = false
-	slot0.gameEndFlag = false
-	slot0.scoreNum = 0
-	slot0.lastTime = uv0
-	slot0.targetNameList = {}
-	slot0.targetList = {}
-	slot0.iceBuild = nil
-	slot0.countList = {
+function var_0_0.resetGame(arg_34_0)
+	arg_34_0.gameStartFlag = false
+	arg_34_0.gamePause = false
+	arg_34_0.gameEndFlag = false
+	arg_34_0.scoreNum = 0
+	arg_34_0.lastTime = var_0_6
+	arg_34_0.targetNameList = {}
+	arg_34_0.targetList = {}
+	arg_34_0.iceBuild = nil
+	arg_34_0.countList = {
 		0,
 		0,
 		0
 	}
-	slot0.effectTrigger = {
+	arg_34_0.effectTrigger = {
 		bullet_time = {
 			waitTime = 0,
 			doingTime = 0
@@ -386,104 +394,108 @@ function slot0.resetGame(slot0)
 		point_boost = {}
 	}
 
-	eachChild(slot0.rtResource:Find("Character"), function (slot0)
-		table.insert(uv0.targetNameList, slot0.name)
+	eachChild(arg_34_0.rtResource:Find("Character"), function(arg_35_0)
+		table.insert(arg_34_0.targetNameList, arg_35_0.name)
 	end)
-	removeAllChildren(slot0.rtWalk)
-	setActive(slot0.gameUI:Find("BulletTimeMask"), false)
-	setActive(slot0.rtMake, false)
-	setActive(slot0.rtTime, false)
-	setText(slot0.scoreTF, slot0.scoreNum)
-	setActive(slot0.addScoreTF, false)
-	slot0:setAnimatorSpeed(slot0._tf, 1)
+	removeAllChildren(arg_34_0.rtWalk)
+	setActive(arg_34_0.gameUI:Find("BulletTimeMask"), false)
+	setActive(arg_34_0.rtMake, false)
+	setActive(arg_34_0.rtTime, false)
+	setText(arg_34_0.scoreTF, arg_34_0.scoreNum)
+	setActive(arg_34_0.addScoreTF, false)
+	arg_34_0:setAnimatorSpeed(arg_34_0._tf, 1)
 end
 
-function slot18(slot0, slot1, slot2, slot3)
-	slot4 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0._info = uv2
-			slot0.time = uv3
-			slot0.pointBoost = 100
-			slot0.result = nil
-			slot1 = #uv2[1] < 3 and "Cone" or "Bowl"
+local function var_0_18(arg_36_0, arg_36_1, arg_36_2, arg_36_3)
+	local var_36_0 = {}
 
-			for slot5, slot6 in ipairs({
-				"IceCream",
-				"Bubble",
-				"BadCream"
-			}) do
-				eachChild(uv0:Find(slot6), function (slot0)
-					setActive(slot0, slot0.name == uv0)
-				end)
-			end
+	local function var_36_1(arg_37_0, arg_37_1)
+		for iter_37_0 = math.max(#arg_37_1[1], 2), 1, -1 do
+			setActive(arg_37_0:Find(iter_37_0), arg_37_1[1][iter_37_0])
 
-			uv4(uv0:Find("Bubble/" .. slot1), uv2)
-			GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/bubble_" .. #uv2[1] .. ".png", uv0:Find("Bubble"), true)
-			setActive(uv0:Find("Bubble/Boost"), false)
+			if arg_37_1[1][iter_37_0] then
+				local var_37_0 = arg_37_0:Find(iter_37_0)
 
-			slot0.animator = GetComponent(slot0._tf, typeof(Animator))
+				GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/" .. var_0_14[arg_37_1[1][iter_37_0]] .. ".png", var_37_0:Find("Scoop"), true)
 
-			slot0._tf:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
-				uv0.isLeave = true
-			end)
-		end,
-		Result = function (slot0, slot1, slot2)
-			slot0.result = slot1
-			slot3 = #slot2[1] < 3 and "Cone" or "Bowl"
+				local var_37_1 = arg_37_1[2][var_0_12[#arg_37_1[1]][iter_37_0]]
 
-			if slot1 == 0 then
-				slot0.animator:Play("Bad")
-			elseif slot1 == 1 then
-				uv0(slot0._tf:Find("IceCream/" .. slot3), slot2)
-				slot0.animator:Play("Hmm")
-			elseif slot1 >= 2 then
-				uv0(slot0._tf:Find("IceCream/" .. slot3), slot2)
-				slot0.animator:Play("Great")
-			else
-				assert(false)
-			end
-		end
-	}
+				setActive(var_37_0:Find("Topping"), var_37_1)
 
-	function slot5(slot0, slot1)
-		for slot5 = math.max(#slot1[1], 2), 1, -1 do
-			setActive(slot0:Find(slot5), slot1[1][slot5])
-
-			if slot1[1][slot5] then
-				slot6 = slot0:Find(slot5)
-
-				GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/" .. uv0[slot1[1][slot5]] .. ".png", slot6:Find("Scoop"), true)
-
-				slot7 = slot1[2][uv1[#slot1[1]][slot5]]
-
-				setActive(slot6:Find("Topping"), slot7)
-
-				if slot7 then
-					GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/" .. uv2[slot7] .. ".png", slot6:Find("Topping"), true)
+				if var_37_1 then
+					GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/" .. var_0_15[var_37_1] .. ".png", var_37_0:Find("Topping"), true)
 				end
 			end
 		end
 	end
 
-	slot4:Ctor()
+	function var_36_0.Ctor(arg_38_0)
+		arg_38_0._tf = arg_36_0
+		arg_38_0._event = arg_36_1
+		arg_38_0._info = arg_36_2
+		arg_38_0.time = arg_36_3
+		arg_38_0.pointBoost = 100
+		arg_38_0.result = nil
 
-	return slot4
+		local var_38_0 = #arg_36_2[1] < 3 and "Cone" or "Bowl"
+
+		for iter_38_0, iter_38_1 in ipairs({
+			"IceCream",
+			"Bubble",
+			"BadCream"
+		}) do
+			eachChild(arg_36_0:Find(iter_38_1), function(arg_39_0)
+				setActive(arg_39_0, arg_39_0.name == var_38_0)
+			end)
+		end
+
+		var_36_1(arg_36_0:Find("Bubble/" .. var_38_0), arg_36_2)
+		GetImageSpriteFromAtlasAsync("ui/minigameui/icecreamgameui_atlas", "Assets/ArtResource/UI/MiniGameUI/IceCreamGameUI/ICE_S/bubble_" .. #arg_36_2[1] .. ".png", arg_36_0:Find("Bubble"), true)
+		setActive(arg_36_0:Find("Bubble/Boost"), false)
+
+		arg_38_0.animator = GetComponent(arg_38_0._tf, typeof(Animator))
+
+		arg_38_0._tf:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function()
+			arg_38_0.isLeave = true
+		end)
+	end
+
+	function var_36_0.Result(arg_41_0, arg_41_1, arg_41_2)
+		arg_41_0.result = arg_41_1
+
+		local var_41_0 = #arg_41_2[1] < 3 and "Cone" or "Bowl"
+
+		if arg_41_1 == 0 then
+			arg_41_0.animator:Play("Bad")
+		elseif arg_41_1 == 1 then
+			var_36_1(arg_41_0._tf:Find("IceCream/" .. var_41_0), arg_41_2)
+			arg_41_0.animator:Play("Hmm")
+		elseif arg_41_1 >= 2 then
+			var_36_1(arg_41_0._tf:Find("IceCream/" .. var_41_0), arg_41_2)
+			arg_41_0.animator:Play("Great")
+		else
+			assert(false)
+		end
+	end
+
+	var_36_0:Ctor()
+
+	return var_36_0
 end
 
-function slot0.CreateTarget(slot0, slot1)
-	slot2 = table.remove(slot0.targetNameList, math.random(#slot0.targetNameList))
+function var_0_0.CreateTarget(arg_42_0, arg_42_1)
+	local var_42_0 = table.remove(arg_42_0.targetNameList, math.random(#arg_42_0.targetNameList))
+	local var_42_1 = cloneTplTo(arg_42_0.rtResource:Find("Character/" .. var_42_0), arg_42_0.rtWalk, var_42_0)
 
-	setAnchoredPosition(cloneTplTo(slot0.rtResource:Find("Character/" .. slot2), slot0.rtWalk, slot2), {
-		x = slot1 or -uv0[1]
+	setAnchoredPosition(var_42_1, {
+		x = arg_42_1 or -var_0_7[1]
 	})
 
-	slot4 = {
+	local var_42_2 = {
 		{},
 		{}
 	}
-	slot5 = slot2 == "Agir" and {
+	local var_42_3 = var_42_0 == "Agir" and {
 		1,
 		2
 	} or {
@@ -492,134 +504,153 @@ function slot0.CreateTarget(slot0, slot1)
 		3
 	}
 
-	if #slot0.targetList > 0 then
-		table.removebyvalue(slot5, #slot0.targetList[#slot0.targetList]._info[1])
+	if #arg_42_0.targetList > 0 then
+		table.removebyvalue(var_42_3, #arg_42_0.targetList[#arg_42_0.targetList]._info[1])
 	end
 
-	for slot9 = slot5[math.random(#slot5)], 1, -1 do
-		table.insert(slot4[1], math.random(4))
+	for iter_42_0 = var_42_3[math.random(#var_42_3)], 1, -1 do
+		table.insert(var_42_2[1], math.random(4))
 	end
 
-	slot6 = {
+	local var_42_4 = {
 		1,
 		2,
 		3,
 		4
 	}
 
-	for slot10 = math.max(1, #slot4[1] - 1), 1, -1 do
-		table.insert(slot4[2], table.remove(slot6, math.random(#slot6)))
+	for iter_42_1 = math.max(1, #var_42_2[1] - 1), 1, -1 do
+		table.insert(var_42_2[2], table.remove(var_42_4, math.random(#var_42_4)))
 	end
 
-	slot0.countList[#slot4[1]] = slot0.countList[#slot4[1]] + 1
+	local var_42_5 = math.clamp(var_0_5[#var_42_2[1]][2] - arg_42_0.countList[#var_42_2[1]], unpack(var_0_5[#var_42_2[1]]))
 
-	table.insert(slot0.targetList, uv2(slot3, slot0, slot4, math.clamp(uv1[#slot4[1]][2] - slot0.countList[#slot4[1]], unpack(uv1[#slot4[1]]))))
+	arg_42_0.countList[#var_42_2[1]] = arg_42_0.countList[#var_42_2[1]] + 1
+
+	table.insert(arg_42_0.targetList, var_0_18(var_42_1, arg_42_0, var_42_2, var_42_5))
 end
 
-function slot0.RemoveTarget(slot0)
-	assert(#slot0.targetList > 0)
+function var_0_0.RemoveTarget(arg_43_0)
+	assert(#arg_43_0.targetList > 0)
 
-	slot1 = table.remove(slot0.targetList, 1)
-	slot0.targetIndex = slot0.targetIndex - 1
+	local var_43_0 = table.remove(arg_43_0.targetList, 1)
 
-	table.insert(slot0.targetNameList, slot1._tf.name)
-	Destroy(slot1._tf)
+	arg_43_0.targetIndex = arg_43_0.targetIndex - 1
+
+	table.insert(arg_43_0.targetNameList, var_43_0._tf.name)
+	Destroy(var_43_0._tf)
 end
 
-function slot0.ResultTarget(slot0, slot1, slot2, ...)
-	assert(#slot0.targetList > 0)
-	slot0:addScore(math.ceil(slot1 * slot0.targetList[slot0.targetIndex].pointBoost / 100), slot2)
-	slot0.targetList[slot0.targetIndex]:Result(slot2, ...)
-	slot0:TriggerSpecialEffect(slot2, ...)
+function var_0_0.ResultTarget(arg_44_0, arg_44_1, arg_44_2, ...)
+	assert(#arg_44_0.targetList > 0)
 
-	slot0.targetIndex = slot0.targetIndex + 1
-	slot0.iceBuild = nil
+	arg_44_1 = math.ceil(arg_44_1 * arg_44_0.targetList[arg_44_0.targetIndex].pointBoost / 100)
 
-	onNextTick(function ()
-		setActive(uv0.rtMake, false)
-		setActive(uv0.rtTime, false)
+	arg_44_0:addScore(arg_44_1, arg_44_2)
+	arg_44_0.targetList[arg_44_0.targetIndex]:Result(arg_44_2, ...)
+	arg_44_0:TriggerSpecialEffect(arg_44_2, ...)
+
+	arg_44_0.targetIndex = arg_44_0.targetIndex + 1
+	arg_44_0.iceBuild = nil
+
+	onNextTick(function()
+		setActive(arg_44_0.rtMake, false)
+		setActive(arg_44_0.rtTime, false)
 	end)
 
-	if slot0.effectTrigger.bullet_time.doingTime > 0 then
-		slot3.doingTime = 0
+	local var_44_0 = arg_44_0.effectTrigger.bullet_time
 
-		slot0:setAnimatorSpeed(slot0._tf, 1)
-		setActive(slot0.gameUI:Find("BulletTimeMask"), false)
+	if var_44_0.doingTime > 0 then
+		var_44_0.doingTime = 0
+
+		arg_44_0:setAnimatorSpeed(arg_44_0._tf, 1)
+		setActive(arg_44_0.gameUI:Find("BulletTimeMask"), false)
 	end
 end
 
-function slot0.TriggerSpecialEffect(slot0, slot1, slot2)
-	if slot1 == 3 then
-		slot3 = slot0.targetList[slot0.targetIndex + 1]
-		slot4 = slot0.effectTrigger.bullet_time
+function var_0_0.TriggerSpecialEffect(arg_46_0, arg_46_1, arg_46_2)
+	if arg_46_1 == 3 then
+		local var_46_0 = arg_46_0.targetList[arg_46_0.targetIndex + 1]
+		local var_46_1 = arg_46_0.effectTrigger.bullet_time
 
-		if #slot0.targetList[slot0.targetIndex]._info[1] == 3 and slot4.waitTime <= 0 and math.random() < uv0.bullet_time[3] then
-			slot3.timeBoost = true
+		if #arg_46_0.targetList[arg_46_0.targetIndex]._info[1] == 3 and var_46_1.waitTime <= 0 and math.random() < var_0_11.bullet_time[3] then
+			var_46_0.timeBoost = true
 		end
 
-		slot5 = slot0.effectTrigger.wait_time_boost
-		slot5.count = slot5.count + 1
+		local var_46_2 = arg_46_0.effectTrigger.wait_time_boost
 
-		if slot5.count == 2 then
-			slot5.count = 0
-			slot3.time = slot3.time + uv0.wait_time_boost
-			slot3.isWaitTimeBoost = true
+		var_46_2.count = var_46_2.count + 1
+
+		if var_46_2.count == 2 then
+			var_46_2.count = 0
+			var_46_0.time = var_46_0.time + var_0_11.wait_time_boost
+			var_46_0.isWaitTimeBoost = true
 		end
 
-		if slot0.effectTrigger.point_boost[slot0.targetList[slot0.targetIndex]._tf.name] == "finish" then
-			-- Nothing
-		elseif slot6[slot7] == "count" then
-			slot3.pointBoost = slot3.pointBoost + uv0.point_boost
+		local var_46_3 = arg_46_0.effectTrigger.point_boost
+		local var_46_4 = arg_46_0.targetList[arg_46_0.targetIndex]._tf.name
 
-			setActive(slot3._tf:Find("Bubble/Boost"), true)
+		if var_46_3[var_46_4] == "finish" then
+			-- block empty
+		elseif var_46_3[var_46_4] == "count" then
+			var_46_0.pointBoost = var_46_0.pointBoost + var_0_11.point_boost
 
-			slot6[slot7] = "finish"
+			setActive(var_46_0._tf:Find("Bubble/Boost"), true)
+
+			var_46_3[var_46_4] = "finish"
 		else
-			slot6[slot7] = "count"
+			var_46_3[var_46_4] = "count"
 		end
-	elseif slot0.effectTrigger.point_boost[slot0.targetList[slot0.targetIndex]._tf.name] ~= "finish" then
-		slot3[slot4] = nil
+	else
+		local var_46_5 = arg_46_0.effectTrigger.point_boost
+		local var_46_6 = arg_46_0.targetList[arg_46_0.targetIndex]._tf.name
+
+		if var_46_5[var_46_6] == "finish" then
+			-- block empty
+		else
+			var_46_5[var_46_6] = nil
+		end
 	end
 end
 
-function slot19(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0._info = {
+local function var_0_19(arg_47_0, arg_47_1, arg_47_2, arg_47_3, arg_47_4)
+	local var_47_0 = {
+		Ctor = function(arg_48_0)
+			arg_48_0._tf = arg_47_0
+			arg_48_0._event = arg_47_1
+			arg_48_0._info = {
 				{},
 				{}
 			}
-			slot0.isLeftLock = false
-			slot0.isRightLock = false
-			slot0.missToppingMark = {}
-			slot0.waitTime = uv2
-			slot0.isWaitTimeBoost = uv3
+			arg_48_0.isLeftLock = false
+			arg_48_0.isRightLock = false
+			arg_48_0.missToppingMark = {}
+			arg_48_0.waitTime = arg_47_3
+			arg_48_0.isWaitTimeBoost = arg_47_4
 
-			slot0:Reset()
-			slot0:NextDeal()
+			arg_48_0:Reset()
+			arg_48_0:NextDeal()
 		end,
-		NextDeal = function (slot0)
-			if slot0.isLeftLock or slot0.isRightLock then
+		NextDeal = function(arg_49_0)
+			if arg_49_0.isLeftLock or arg_49_0.isRightLock then
 				return
 			end
 
-			if #slot0._info[1] < #uv0[1] then
-				slot0:ReadyBall()
-			elseif #slot0._info[2] < #uv0[2] then
-				slot0:ReadyTopping()
+			if #arg_49_0._info[1] < #arg_47_2[1] then
+				arg_49_0:ReadyBall()
+			elseif #arg_49_0._info[2] < #arg_47_2[2] then
+				arg_49_0:ReadyTopping()
 			else
-				slot0:Result()
+				arg_49_0:Result()
 			end
 		end,
-		Result = function (slot0, slot1)
-			slot0.isResulted = true
+		Result = function(arg_50_0, arg_50_1)
+			arg_50_0.isResulted = true
 
-			uv0(false)
+			var_0_17(false)
 
-			slot2 = 0
-			slot3 = {
+			local var_50_0 = 0
+			local var_50_1 = {
 				{
 					0,
 					0,
@@ -634,302 +665,318 @@ function slot19(slot0, slot1, slot2, slot3, slot4)
 				}
 			}
 
-			function slot4(slot0, slot1, slot2)
-				slot0[slot1] = slot0[slot1] + slot2
+			local function var_50_2(arg_51_0, arg_51_1, arg_51_2)
+				local var_51_0 = arg_51_0[arg_51_1]
 
-				return math.abs(slot0[slot1]) - math.abs(slot0[slot1])
+				arg_51_0[arg_51_1] = arg_51_0[arg_51_1] + arg_51_2
+
+				return math.abs(arg_51_0[arg_51_1]) - math.abs(var_51_0)
 			end
 
-			for slot8, slot9 in ipairs(slot0._info) do
-				for slot13, slot14 in ipairs(slot9) do
-					if slot4(slot3[slot8], uv1[slot8][slot13], -1) < 0 then
-						slot2 = slot2 + uv2[slot8]
+			for iter_50_0, iter_50_1 in ipairs(arg_50_0._info) do
+				for iter_50_2, iter_50_3 in ipairs(iter_50_1) do
+					if var_50_2(var_50_1[iter_50_0], arg_47_2[iter_50_0][iter_50_2], -1) < 0 then
+						var_50_0 = var_50_0 + var_0_9[iter_50_0]
 					end
 
-					if slot4(slot3[slot8], slot14, 1) < 0 then
-						slot2 = slot2 + uv2[slot8]
+					if var_50_2(var_50_1[iter_50_0], iter_50_3, 1) < 0 then
+						var_50_0 = var_50_0 + var_0_9[iter_50_0]
 					end
 
-					if uv1[slot8][slot13] == slot14 and (slot8 == 1 or not slot0.missToppingMark[slot13]) then
-						slot2 = slot2 + uv2[3]
+					if arg_47_2[iter_50_0][iter_50_2] == iter_50_3 and (iter_50_0 == 1 or not arg_50_0.missToppingMark[iter_50_2]) then
+						var_50_0 = var_50_0 + var_0_9[3]
 					end
 				end
 			end
 
-			if slot1 then
-				slot0.result = slot1
-			elseif slot2 == #slot0._info[1] * uv2[1] + #slot0._info[2] * uv2[2] + (#slot0._info[1] + #slot0._info[2]) * uv2[3] then
-				slot0.result = 3
-			elseif table.equal(slot0._info, uv1) then
-				slot0.result = 2
-			elseif slot2 >= slot5 / 2 then
-				slot0.result = 1
+			if arg_50_1 then
+				arg_50_0.result = arg_50_1
 			else
-				slot0.result = 0
+				local var_50_3 = #arg_50_0._info[1] * var_0_9[1] + #arg_50_0._info[2] * var_0_9[2] + (#arg_50_0._info[1] + #arg_50_0._info[2]) * var_0_9[3]
+
+				if var_50_0 == var_50_3 then
+					arg_50_0.result = 3
+				elseif table.equal(arg_50_0._info, arg_47_2) then
+					arg_50_0.result = 2
+				elseif var_50_0 >= var_50_3 / 2 then
+					arg_50_0.result = 1
+				else
+					arg_50_0.result = 0
+				end
 			end
 
-			slot5 = slot0._tf:GetComponent(typeof(Animator))
+			local var_50_4 = arg_50_0._tf:GetComponent(typeof(Animator))
 
-			if slot0.result == 3 then
-				slot0.point = slot2 * (1 + uv3 / 100 + slot0.waitTime / uv4)
+			if arg_50_0.result == 3 then
+				arg_50_0.point = var_50_0 * (1 + var_0_10 / 100 + arg_50_0.waitTime / arg_47_3)
 
-				slot5:Play("Perfect")
+				var_50_4:Play("Perfect")
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_great")
-			elseif slot0.result == 2 then
-				slot0.point = slot2 * (1 + slot0.waitTime / uv4)
+			elseif arg_50_0.result == 2 then
+				arg_50_0.point = var_50_0 * (1 + arg_50_0.waitTime / arg_47_3)
 
-				slot5:Play("Pass")
-			elseif slot0.result == 1 then
-				slot0.point = slot2 * (1 + slot0.waitTime / uv4)
+				var_50_4:Play("Pass")
+			elseif arg_50_0.result == 1 then
+				arg_50_0.point = var_50_0 * (1 + arg_50_0.waitTime / arg_47_3)
 
-				slot5:Play("Pass")
-			elseif slot0.result == 0 then
-				slot0.point = 0
+				var_50_4:Play("Pass")
+			elseif arg_50_0.result == 0 then
+				arg_50_0.point = 0
 
-				slot5:Play("Fail")
+				var_50_4:Play("Fail")
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_fail")
 			else
 				assert(false)
 			end
 		end,
-		CountDown = function (slot0, slot1, slot2)
-			if slot0.isResulted then
+		CountDown = function(arg_52_0, arg_52_1, arg_52_2)
+			if arg_52_0.isResulted then
 				return
 			end
 
-			if slot0.waitTime > 0 then
-				slot0.waitTime = slot0.waitTime - slot1
+			if arg_52_0.waitTime > 0 then
+				arg_52_0.waitTime = arg_52_0.waitTime - arg_52_1
 
-				slot0._event:emit(uv0, slot2, 0, uv1, slot0.waitTime)
+				arg_52_0._event:emit(var_0_2, arg_52_2, 0, arg_47_3, arg_52_0.waitTime)
 			else
-				slot0.waitTime = 0
+				arg_52_0.waitTime = 0
 
-				slot0:Result(0)
+				arg_52_0:Result(0)
 			end
 
-			if not slot0.missTime then
+			if not arg_52_0.missTime then
 				return
 			end
 
-			if slot0.missTime > 0 then
-				slot0.missTime = slot0.missTime - uv2
+			if arg_52_0.missTime > 0 then
+				arg_52_0.missTime = arg_52_0.missTime - var_0_3
 			else
-				slot0.missTime = nil
+				arg_52_0.missTime = nil
 
-				slot0:FailMissTopping()
+				arg_52_0:FailMissTopping()
 			end
 		end,
-		Reset = function (slot0)
-			slot0._tf:GetComponent("DftAniEvent"):SetEndEvent(function ()
-				onNextTick(function ()
-					setActive(uv0._tf, false)
+		Reset = function(arg_53_0)
+			arg_53_0._tf:GetComponent("DftAniEvent"):SetEndEvent(function()
+				onNextTick(function()
+					setActive(arg_53_0._tf, false)
 				end)
-				uv0._event:emit(uv1, uv0.point, uv0.result, uv0._info)
+				arg_53_0._event:emit(var_0_1, arg_53_0.point, arg_53_0.result, arg_53_0._info)
 			end)
-			slot0._tf:GetComponent("DftAniEvent"):SetTriggerEvent(function ()
-				slot0 = uv0._tf.name == "Cone" and 2 or 3
-
-				for slot3 = slot0, 1, -1 do
-					setActive(uv0._tf:Find(slot3), false)
+			arg_53_0._tf:GetComponent("DftAniEvent"):SetTriggerEvent(function()
+				for iter_56_0 = arg_53_0._tf.name == "Cone" and 2 or 3, 1, -1 do
+					setActive(arg_53_0._tf:Find(iter_56_0), false)
 				end
 
-				setActive(uv0._tf:Find("Back"), false)
+				setActive(arg_53_0._tf:Find("Back"), false)
 
-				if uv0._tf.name == "Bowl" then
-					setActive(uv0._tf:Find("Front"), false)
+				if arg_53_0._tf.name == "Bowl" then
+					setActive(arg_53_0._tf:Find("Front"), false)
 				end
 			end)
-			setActive(slot0._tf:Find("Back"), true)
+			setActive(arg_53_0._tf:Find("Back"), true)
 
-			if slot0._tf.name == "Bowl" then
-				setActive(slot0._tf:Find("Front"), true)
+			if arg_53_0._tf.name == "Bowl" then
+				setActive(arg_53_0._tf:Find("Front"), true)
 			end
 
-			slot1 = slot0._tf.name == "Cone" and 2 or 3
+			for iter_53_0 = arg_53_0._tf.name == "Cone" and 2 or 3, 1, -1 do
+				local var_53_0 = arg_53_0._tf:Find(iter_53_0)
 
-			for slot4 = slot1, 1, -1 do
-				setActive(slot0._tf:Find(slot4), slot4 <= #uv1[1])
+				setActive(var_53_0, iter_53_0 <= #arg_47_2[1])
 
-				if slot4 <= #uv1[1] then
-					eachChild(slot5, function (slot0)
-						setActive(slot0, false)
+				if iter_53_0 <= #arg_47_2[1] then
+					eachChild(var_53_0, function(arg_57_0)
+						setActive(arg_57_0, false)
 					end)
-					slot5:Find("Scoop"):GetComponent("DftAniEvent"):SetEndEvent(function ()
-						uv0.isLeftLock = false
+					var_53_0:Find("Scoop"):GetComponent("DftAniEvent"):SetEndEvent(function()
+						arg_53_0.isLeftLock = false
 
-						if uv0.successLeftLight then
-							uv0.successLeftLight = false
+						if arg_53_0.successLeftLight then
+							arg_53_0.successLeftLight = false
 
-							setAnchoredPosition(uv1:Find("Good"), {
+							setAnchoredPosition(var_53_0:Find("Good"), {
 								x = 0,
 								y = -10
 							})
-							setActive(uv1:Find("Good"), false)
-							setActive(uv1:Find("Good"), true)
+							setActive(var_53_0:Find("Good"), false)
+							setActive(var_53_0:Find("Good"), true)
 						end
 
-						uv0:NextDeal()
+						arg_53_0:NextDeal()
 					end)
-					slot5:Find("Topping"):GetComponent("DftAniEvent"):SetEndEvent(function ()
-						uv0.isRightLock = false
+					var_53_0:Find("Topping"):GetComponent("DftAniEvent"):SetEndEvent(function()
+						arg_53_0.isRightLock = false
 
-						if uv0.successRightLight then
-							uv0.successRightLight = false
+						if arg_53_0.successRightLight then
+							arg_53_0.successRightLight = false
 
-							setAnchoredPosition(uv1:Find("Good"), {
+							setAnchoredPosition(var_53_0:Find("Good"), {
 								x = 10,
 								y = 6
 							})
-							setActive(uv1:Find("Good"), false)
-							setActive(uv1:Find("Good"), true)
+							setActive(var_53_0:Find("Good"), false)
+							setActive(var_53_0:Find("Good"), true)
 						end
 
-						uv0:NextDeal()
+						arg_53_0:NextDeal()
 					end)
 				end
 			end
 		end,
-		ReadyBall = function (slot0)
-			setActive(slot0._tf:Find(#slot0._info[1] + 1):Find("Scoop_Next"), true)
+		ReadyBall = function(arg_60_0)
+			local var_60_0 = arg_60_0._tf:Find(#arg_60_0._info[1] + 1)
+
+			setActive(var_60_0:Find("Scoop_Next"), true)
 		end,
-		MakeBall = function (slot0, slot1)
-			slot0.isLeftLock = true
-			slot2 = slot0._tf:Find(#slot0._info[1] + 1)
+		MakeBall = function(arg_61_0, arg_61_1)
+			arg_61_0.isLeftLock = true
 
-			setActive(slot2:Find("Scoop_Next"), false)
-			setActive(slot2:Find("Scoop"), true)
-			slot2:Find("Scoop"):GetComponent(typeof(Animator)):Play("Scoop_" .. uv0[slot1])
-			table.insert(slot0._info[1], slot1)
+			local var_61_0 = arg_61_0._tf:Find(#arg_61_0._info[1] + 1)
 
-			slot0.successLeftLight = slot0._info[1][#slot0._info[1]] == uv1[1][#slot0._info[1]]
+			setActive(var_61_0:Find("Scoop_Next"), false)
+			setActive(var_61_0:Find("Scoop"), true)
+			var_61_0:Find("Scoop"):GetComponent(typeof(Animator)):Play("Scoop_" .. var_0_14[arg_61_1])
+			table.insert(arg_61_0._info[1], arg_61_1)
 
-			if slot0.temporaryKey and uv2[#uv1[1]][#slot0._info[2] + 1] == #slot0._info[1] then
-				slot0:SafeMissTopping()
+			arg_61_0.successLeftLight = arg_61_0._info[1][#arg_61_0._info[1]] == arg_47_2[1][#arg_61_0._info[1]]
+
+			if arg_61_0.temporaryKey and var_0_13[#arg_47_2[1]][#arg_61_0._info[2] + 1] == #arg_61_0._info[1] then
+				arg_61_0:SafeMissTopping()
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_flavour")
 		end,
-		ReadyTopping = function (slot0)
-			setActive(slot0._tf:Find(uv0[#uv1[1]][#slot0._info[2] + 1]):Find("Topping_Next"), true)
+		ReadyTopping = function(arg_62_0)
+			local var_62_0 = arg_62_0._tf:Find(var_0_13[#arg_47_2[1]][#arg_62_0._info[2] + 1])
+
+			setActive(var_62_0:Find("Topping_Next"), true)
 		end,
-		MakeTopping = function (slot0, slot1)
-			slot0.isRightLock = true
-			slot2 = slot0._tf:Find(uv0[#uv1[1]][#slot0._info[2] + 1])
+		MakeTopping = function(arg_63_0, arg_63_1)
+			arg_63_0.isRightLock = true
 
-			setActive(slot2:Find("Topping_Next"), false)
-			setActive(slot2:Find("Topping"), true)
-			slot2:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_" .. uv2[slot1])
-			table.insert(slot0._info[2], slot1)
+			local var_63_0 = arg_63_0._tf:Find(var_0_13[#arg_47_2[1]][#arg_63_0._info[2] + 1])
 
-			slot0.successRightLight = slot0._info[2][#slot0._info[2]] == uv1[2][#slot0._info[2]]
+			setActive(var_63_0:Find("Topping_Next"), false)
+			setActive(var_63_0:Find("Topping"), true)
+			var_63_0:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_" .. var_0_15[arg_63_1])
+			table.insert(arg_63_0._info[2], arg_63_1)
+
+			arg_63_0.successRightLight = arg_63_0._info[2][#arg_63_0._info[2]] == arg_47_2[2][#arg_63_0._info[2]]
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_mixer")
 		end,
-		MakeMissTopping = function (slot0, slot1)
-			slot0.isRightLock = true
-			slot0.temporaryKey = slot1
-			slot0.missTime = uv0 * (uv1[#uv2[1]][#slot0._info[2] + 1] - #slot0._info[1])
+		MakeMissTopping = function(arg_64_0, arg_64_1)
+			arg_64_0.isRightLock = true
+			arg_64_0.temporaryKey = arg_64_1
+			arg_64_0.missTime = var_0_4 * (var_0_13[#arg_47_2[1]][#arg_64_0._info[2] + 1] - #arg_64_0._info[1])
 
-			uv3(true)
+			var_0_17(true)
 
-			slot2 = slot0._tf:Find(uv1[#uv2[1]][#slot0._info[2] + 1])
+			local var_64_0 = arg_64_0._tf:Find(var_0_13[#arg_47_2[1]][#arg_64_0._info[2] + 1])
 
-			setActive(slot2:Find("Topping_Next"), false)
-			setActive(slot2:Find("Topping"), true)
-			slot2:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_pre_" .. uv4[slot1])
+			setActive(var_64_0:Find("Topping_Next"), false)
+			setActive(var_64_0:Find("Topping"), true)
+			var_64_0:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_pre_" .. var_0_15[arg_64_1])
 		end,
-		FailMissTopping = function (slot0)
-			slot0.isRightLock = true
-			slot0.temporaryKey = nil
-			slot0.missTime = nil
+		FailMissTopping = function(arg_65_0)
+			arg_65_0.isRightLock = true
 
-			uv0(false)
+			local var_65_0 = arg_65_0.temporaryKey
 
-			slot2 = slot0._tf:Find(uv1[#uv2[1]][#slot0._info[2] + 1])
+			arg_65_0.temporaryKey = nil
+			arg_65_0.missTime = nil
 
-			setActive(slot2:Find("Topping_Next"), false)
-			setActive(slot2:Find("Topping"), true)
-			slot2:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_Err_" .. uv3[slot0.temporaryKey])
+			var_0_17(false)
+
+			local var_65_1 = arg_65_0._tf:Find(var_0_13[#arg_47_2[1]][#arg_65_0._info[2] + 1])
+
+			setActive(var_65_1:Find("Topping_Next"), false)
+			setActive(var_65_1:Find("Topping"), true)
+			var_65_1:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_Err_" .. var_0_15[var_65_0])
 		end,
-		SafeMissTopping = function (slot0)
-			slot0.isRightLock = true
-			slot1 = slot0.temporaryKey
-			slot0.temporaryKey = nil
-			slot0.missTime = nil
+		SafeMissTopping = function(arg_66_0)
+			arg_66_0.isRightLock = true
 
-			uv0(false)
+			local var_66_0 = arg_66_0.temporaryKey
 
-			slot2 = slot0._tf:Find(uv1[#uv2[1]][#slot0._info[2] + 1])
+			arg_66_0.temporaryKey = nil
+			arg_66_0.missTime = nil
 
-			setActive(slot2:Find("Topping_Next"), false)
-			setActive(slot2:Find("Topping"), true)
-			slot2:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_safe_" .. uv3[slot1])
-			table.insert(slot0._info[2], slot1)
+			var_0_17(false)
 
-			slot0.successRightLight = slot0._info[2][#slot0._info[2]] == uv2[2][#slot0._info[2]]
-			slot0.missToppingMark[#slot0._info[2]] = true
+			local var_66_1 = arg_66_0._tf:Find(var_0_13[#arg_47_2[1]][#arg_66_0._info[2] + 1])
+
+			setActive(var_66_1:Find("Topping_Next"), false)
+			setActive(var_66_1:Find("Topping"), true)
+			var_66_1:Find("Topping"):GetComponent(typeof(Animator)):Play("Topping_safe_" .. var_0_15[var_66_0])
+			table.insert(arg_66_0._info[2], var_66_0)
+
+			arg_66_0.successRightLight = arg_66_0._info[2][#arg_66_0._info[2]] == arg_47_2[2][#arg_66_0._info[2]]
+			arg_66_0.missToppingMark[#arg_66_0._info[2]] = true
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-icecream_mixer")
 		end
 	}
 
-	slot5:Ctor()
+	var_47_0:Ctor()
 
-	return slot5
+	return var_47_0
 end
 
-function slot0.DoIceCream(slot0)
-	setActive(slot0.rtTime, true)
-	setActive(slot0.rtMake, true)
+function var_0_0.DoIceCream(arg_67_0)
+	setActive(arg_67_0.rtTime, true)
+	setActive(arg_67_0.rtMake, true)
 
-	slot2 = #slot0.targetList[slot0.targetIndex]._info[1] < 3 and "Cone" or "Bowl"
+	local var_67_0 = arg_67_0.targetList[arg_67_0.targetIndex]
+	local var_67_1 = #var_67_0._info[1] < 3 and "Cone" or "Bowl"
 
-	eachChild(slot0.rtMake, function (slot0)
-		setActive(slot0, slot0.name == uv0)
+	eachChild(arg_67_0.rtMake, function(arg_68_0)
+		setActive(arg_68_0, arg_68_0.name == var_67_1)
 	end)
 
-	slot3 = slot0.rtMake:Find(slot2)
-	slot4 = slot2 == "Cone" and 2 or 3
+	local var_67_2 = arg_67_0.rtMake:Find(var_67_1)
 
-	for slot7 = slot4, 1, -1 do
-		setActive(slot3:Find(slot7), false)
+	for iter_67_0 = var_67_1 == "Cone" and 2 or 3, 1, -1 do
+		setActive(var_67_2:Find(iter_67_0), false)
 	end
 
-	slot0.iceBuild = uv0(slot3, slot0, slot1._info, slot1.time, slot1.isWaitTimeBoost)
+	arg_67_0.iceBuild = var_0_19(var_67_2, arg_67_0, var_67_0._info, var_67_0.time, var_67_0.isWaitTimeBoost)
 
-	if slot1.timeBoost then
-		slot4 = slot0.effectTrigger.bullet_time
-		slot4.doingTime = uv1.bullet_time[2]
-		slot4.waitTime = uv1.bullet_time[4]
+	if var_67_0.timeBoost then
+		local var_67_3 = arg_67_0.effectTrigger.bullet_time
 
-		slot0:setAnimatorSpeed(slot0._tf, 0.5)
-		slot0:setAnimatorSpeed(slot0.rtMake, 1)
-		setActive(slot0.gameUI:Find("BulletTimeMask"), true)
+		var_67_3.doingTime = var_0_11.bullet_time[2]
+		var_67_3.waitTime = var_0_11.bullet_time[4]
+
+		arg_67_0:setAnimatorSpeed(arg_67_0._tf, 0.5)
+		arg_67_0:setAnimatorSpeed(arg_67_0.rtMake, 1)
+		setActive(arg_67_0.gameUI:Find("BulletTimeMask"), true)
 	end
 end
 
-function slot0.startGame(slot0)
-	setActive(slot0.gameUI, true)
+function var_0_0.startGame(arg_69_0)
+	setActive(arg_69_0.gameUI, true)
 
-	slot0.gameStartFlag = true
+	arg_69_0.gameStartFlag = true
 
-	slot0:CreateTarget(-uv0[1] / 3)
+	arg_69_0:CreateTarget(-var_0_7[1] / 3)
 
-	slot0.targetIndex = 1
+	arg_69_0.targetIndex = 1
 
-	slot0:RandomBG()
-	slot0:timerStart()
+	arg_69_0:RandomBG()
+	arg_69_0:timerStart()
 end
 
-function slot0.RandomBG(slot0)
-	slot0.poolBG = slot0.poolBG or {
+function var_0_0.RandomBG(arg_70_0)
+	arg_70_0.poolBG = arg_70_0.poolBG or {
 		GroupD = {
 			1
 		}
 	}
 
-	if not slot0.poolBG.GroupAB or #slot0.poolBG.GroupAB == 0 then
-		slot0.poolBG.GroupAB = {
+	if not arg_70_0.poolBG.GroupAB or #arg_70_0.poolBG.GroupAB == 0 then
+		arg_70_0.poolBG.GroupAB = {
 			1,
 			2,
 			3,
@@ -939,8 +986,8 @@ function slot0.RandomBG(slot0)
 		}
 	end
 
-	if not slot0.poolBG["GroupC/Other"] or #slot0.poolBG["GroupC/Other"] == 0 then
-		slot0.poolBG["GroupC/Other"] = {
+	if not arg_70_0.poolBG["GroupC/Other"] or #arg_70_0.poolBG["GroupC/Other"] == 0 then
+		arg_70_0.poolBG["GroupC/Other"] = {
 			1,
 			2,
 			3,
@@ -948,314 +995,332 @@ function slot0.RandomBG(slot0)
 		}
 	end
 
-	slot0.poolBG["GroupC/Manjuu"] = {
+	arg_70_0.poolBG["GroupC/Manjuu"] = {
 		1,
 		2,
 		3
 	}
 
-	for slot4, slot5 in pairs(slot0.poolBG) do
-		slot6 = {}
-		slot7 = slot4 == "GroupC/Manjuu" and 2 or 1
+	for iter_70_0, iter_70_1 in pairs(arg_70_0.poolBG) do
+		local var_70_0 = {}
 
-		for slot10 = slot7, 1, -1 do
-			if slot4 == "GroupD" then
-				slot6[slot5[1]] = true
-				slot5[1] = 3 - slot5[1]
+		for iter_70_2 = iter_70_0 == "GroupC/Manjuu" and 2 or 1, 1, -1 do
+			if iter_70_0 == "GroupD" then
+				var_70_0[iter_70_1[1]] = true
+				iter_70_1[1] = 3 - iter_70_1[1]
 			else
-				slot6[table.remove(slot5, math.random(#slot5))] = true
+				var_70_0[table.remove(iter_70_1, math.random(#iter_70_1))] = true
 			end
 		end
 
-		for slot11 = slot0.gameUI:Find("BG/" .. slot4).childCount, 1, -1 do
-			setActive(slot7:GetChild(slot11 - 1), slot6[slot11])
+		local var_70_1 = arg_70_0.gameUI:Find("BG/" .. iter_70_0)
+
+		for iter_70_3 = var_70_1.childCount, 1, -1 do
+			setActive(var_70_1:GetChild(iter_70_3 - 1), var_70_0[iter_70_3])
 		end
 	end
 end
 
-function slot0.getIntervalTime(slot0)
-	if slot0.effectTrigger.bullet_time.doingTime > 0 then
-		return uv0 * uv1.bullet_time[1]
+function var_0_0.getIntervalTime(arg_71_0)
+	if arg_71_0.effectTrigger.bullet_time.doingTime > 0 then
+		return var_0_3 * var_0_11.bullet_time[1]
 	else
-		return uv0
+		return var_0_3
 	end
 end
 
-function slot0.onTimer(slot0)
-	if slot0.effectTrigger.bullet_time.doingTime > 0 then
-		slot1.doingTime = slot1.doingTime - uv0
+function var_0_0.onTimer(arg_72_0)
+	local var_72_0 = arg_72_0.effectTrigger.bullet_time
 
-		if slot1.doingTime <= 0 then
-			slot0:setAnimatorSpeed(slot0._tf, 1)
-			setActive(slot0.gameUI:Find("BulletTimeMask"), false)
+	if var_72_0.doingTime > 0 then
+		var_72_0.doingTime = var_72_0.doingTime - var_0_3
+
+		if var_72_0.doingTime <= 0 then
+			arg_72_0:setAnimatorSpeed(arg_72_0._tf, 1)
+			setActive(arg_72_0.gameUI:Find("BulletTimeMask"), false)
 		end
-	elseif slot1.waitTime > 0 then
-		slot1.waitTime = slot1.waitTime - uv0
+	elseif var_72_0.waitTime > 0 then
+		var_72_0.waitTime = var_72_0.waitTime - var_0_3
 	end
 
-	slot0.lastTime = slot0.lastTime - slot0:getIntervalTime()
+	arg_72_0.lastTime = arg_72_0.lastTime - arg_72_0:getIntervalTime()
 
-	slot0:updateWalker()
+	arg_72_0:updateWalker()
 
-	if slot0.lastTime <= 0 then
-		slot0:endGame()
+	if arg_72_0.lastTime <= 0 then
+		arg_72_0:endGame()
 	else
-		setText(slot0.timeTF, math.floor(slot0.lastTime))
+		setText(arg_72_0.timeTF, math.floor(arg_72_0.lastTime))
 
-		if not slot0.iceBuild and slot0.targetList[slot0.targetIndex]._tf.anchoredPosition.x > 0 then
-			slot0:DoIceCream()
+		if not arg_72_0.iceBuild and arg_72_0.targetList[arg_72_0.targetIndex]._tf.anchoredPosition.x > 0 then
+			arg_72_0:DoIceCream()
 		end
 
-		if #slot0.targetList == slot0.targetIndex then
-			slot0:CreateTarget()
+		if #arg_72_0.targetList == arg_72_0.targetIndex then
+			arg_72_0:CreateTarget()
 		end
 	end
 
-	if slot0.iceBuild then
-		slot2 = nil
+	if arg_72_0.iceBuild then
+		local var_72_1
+		local var_72_2 = var_72_0.doingTime > 0 and "frozen" or arg_72_0.iceBuild.isWaitTimeBoost and "extend" or "base"
 
-		slot0.iceBuild:CountDown(slot0:getIntervalTime(), slot1.doingTime > 0 and "frozen" or slot0.iceBuild.isWaitTimeBoost and "extend" or "base")
+		arg_72_0.iceBuild:CountDown(arg_72_0:getIntervalTime(), var_72_2)
 	end
 end
 
-function slot0.updateWalker(slot0)
-	for slot4 = #slot0.targetList, 1, -1 do
-		slot5 = slot0.targetList[slot4]
-		slot7 = slot5._tf:GetComponent(typeof(Animator)):GetCurrentAnimatorStateInfo(0)
+function var_0_0.updateWalker(arg_73_0)
+	for iter_73_0 = #arg_73_0.targetList, 1, -1 do
+		local var_73_0 = arg_73_0.targetList[iter_73_0]
+		local var_73_1 = var_73_0._tf:GetComponent(typeof(Animator))
+		local var_73_2 = var_73_1:GetCurrentAnimatorStateInfo(0)
 
-		if slot5.result then
-			if slot5.isLeave then
-				setAnchoredPosition(slot5._tf, {
-					x = slot5._tf.anchoredPosition.x + slot0:getIntervalTime() * uv0[1]
+		if var_73_0.result then
+			if var_73_0.isLeave then
+				setAnchoredPosition(var_73_0._tf, {
+					x = var_73_0._tf.anchoredPosition.x + arg_73_0:getIntervalTime() * var_0_8[1]
 				})
 
-				if uv1[1] < slot5._tf.anchoredPosition.x then
-					slot0:RemoveTarget()
+				if var_73_0._tf.anchoredPosition.x > var_0_7[1] then
+					arg_73_0:RemoveTarget()
 				end
 			end
 		else
-			slot8 = uv1[3]
+			local var_73_3 = var_0_7[3]
 
-			if slot4 > 1 then
-				slot8 = math.min(slot8, slot0.targetList[slot4 - 1]._tf.anchoredPosition.x)
+			if iter_73_0 > 1 then
+				var_73_3 = math.min(var_73_3, arg_73_0.targetList[iter_73_0 - 1]._tf.anchoredPosition.x)
 			end
 
-			if slot8 - slot5._tf.anchoredPosition.x < uv1[3] then
-				if not slot5.state or slot5.state ~= "Stand" then
-					slot5.state = "Stand"
+			local var_73_4 = var_73_3 - var_73_0._tf.anchoredPosition.x
 
-					slot6:Play("Stand")
+			if var_73_4 < var_0_7[3] then
+				if not var_73_0.state or var_73_0.state ~= "Stand" then
+					var_73_0.state = "Stand"
+
+					var_73_1:Play("Stand")
 				end
-			elseif slot8 < uv1[2] then
-				setAnchoredPosition(slot5._tf, {
-					x = slot5._tf.anchoredPosition.x + slot0:getIntervalTime() * uv0[2]
+			elseif var_73_4 < var_0_7[2] then
+				setAnchoredPosition(var_73_0._tf, {
+					x = var_73_0._tf.anchoredPosition.x + arg_73_0:getIntervalTime() * var_0_8[2]
 				})
 
-				if not slot5.state or slot5.state ~= "Walk" then
-					slot5.state = "Walk"
+				if not var_73_0.state or var_73_0.state ~= "Walk" then
+					var_73_0.state = "Walk"
 
-					slot6:Play("Walk")
+					var_73_1:Play("Walk")
 				end
 			else
-				setAnchoredPosition(slot5._tf, {
-					x = slot5._tf.anchoredPosition.x + slot0:getIntervalTime() * uv0[1]
+				setAnchoredPosition(var_73_0._tf, {
+					x = var_73_0._tf.anchoredPosition.x + arg_73_0:getIntervalTime() * var_0_8[1]
 				})
 
-				if not slot5.state or slot5.state ~= "Run" then
-					slot5.state = "Run"
+				if not var_73_0.state or var_73_0.state ~= "Run" then
+					var_73_0.state = "Run"
 
-					slot6:Play("Run")
+					var_73_1:Play("Run")
 				end
 			end
 		end
 	end
 end
 
-function slot0.setAnimatorSpeed(slot0, slot1, slot2)
-	for slot7 = 0, slot1:GetComponentsInChildren(typeof(Animator), true).Length - 1 do
-		slot3[slot7].speed = slot2
+function var_0_0.setAnimatorSpeed(arg_74_0, arg_74_1, arg_74_2)
+	local var_74_0 = arg_74_1:GetComponentsInChildren(typeof(Animator), true)
+
+	for iter_74_0 = 0, var_74_0.Length - 1 do
+		var_74_0[iter_74_0].speed = arg_74_2
 	end
 end
 
-function slot0.timerStart(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.timerStart(arg_75_0)
+	if not arg_75_0.timer.running then
+		arg_75_0.timer:Start()
 	end
 
-	if slot0.effectTrigger.bullet_time.doingTime > 0 then
-		slot0:setAnimatorSpeed(slot0._tf, 0.5)
-		slot0:setAnimatorSpeed(slot0.rtMake, 1)
+	if arg_75_0.effectTrigger.bullet_time.doingTime > 0 then
+		arg_75_0:setAnimatorSpeed(arg_75_0._tf, 0.5)
+		arg_75_0:setAnimatorSpeed(arg_75_0.rtMake, 1)
 	else
-		slot0:setAnimatorSpeed(slot0._tf, 1)
+		arg_75_0:setAnimatorSpeed(arg_75_0._tf, 1)
 	end
 
-	if slot0.iceBuild and slot0.iceBuild.missTime then
-		uv0(true)
-	end
-end
-
-function slot0.timerStop(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
-	end
-
-	slot0:setAnimatorSpeed(slot0._tf, 0)
-
-	if slot0.iceBuild and slot0.iceBuild.missTime then
-		uv0(false)
+	if arg_75_0.iceBuild and arg_75_0.iceBuild.missTime then
+		var_0_17(true)
 	end
 end
 
-function slot0.addScore(slot0, slot1, slot2)
-	slot0.scoreNum = slot0.scoreNum + slot1
+function var_0_0.timerStop(arg_76_0)
+	if arg_76_0.timer.running then
+		arg_76_0.timer:Stop()
+	end
 
-	setText(slot0.scoreTF, slot0.scoreNum)
-	setActive(slot0.addScoreTF, false)
-	setActive(slot0.addScoreTF, true)
-	setText(slot0.addScoreTF:Find("score_tf"), "+" .. slot1)
+	arg_76_0:setAnimatorSpeed(arg_76_0._tf, 0)
 
-	if slot2 == 0 then
-		setTextColor(slot3, Color.NewHex("ED666DFF"))
-	elseif slot2 == 1 then
-		setTextColor(slot3, Color.NewHex("FAB149FF"))
-	elseif slot2 == 2 then
-		setTextColor(slot3, Color.NewHex("C6CC15FF"))
-	elseif slot2 == 3 then
-		setTextColor(slot3, Color.NewHex("80BF1CFF"))
+	if arg_76_0.iceBuild and arg_76_0.iceBuild.missTime then
+		var_0_17(false)
+	end
+end
+
+function var_0_0.addScore(arg_77_0, arg_77_1, arg_77_2)
+	arg_77_0.scoreNum = arg_77_0.scoreNum + arg_77_1
+
+	setText(arg_77_0.scoreTF, arg_77_0.scoreNum)
+	setActive(arg_77_0.addScoreTF, false)
+	setActive(arg_77_0.addScoreTF, true)
+
+	local var_77_0 = arg_77_0.addScoreTF:Find("score_tf")
+
+	setText(var_77_0, "+" .. arg_77_1)
+
+	if arg_77_2 == 0 then
+		setTextColor(var_77_0, Color.NewHex("ED666DFF"))
+	elseif arg_77_2 == 1 then
+		setTextColor(var_77_0, Color.NewHex("FAB149FF"))
+	elseif arg_77_2 == 2 then
+		setTextColor(var_77_0, Color.NewHex("C6CC15FF"))
+	elseif arg_77_2 == 3 then
+		setTextColor(var_77_0, Color.NewHex("80BF1CFF"))
 	else
 		assert(false)
 	end
 end
 
-function slot0.pauseGame(slot0)
-	slot0.gamePause = true
+function var_0_0.pauseGame(arg_78_0)
+	arg_78_0.gamePause = true
 
-	slot0:timerStop()
-	slot0:pauseManagedTween()
+	arg_78_0:timerStop()
+	arg_78_0:pauseManagedTween()
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gamePause = false
+function var_0_0.resumeGame(arg_79_0)
+	arg_79_0.gamePause = false
 
-	slot0:timerStart()
-	slot0:resumeManagedTween()
+	arg_79_0:timerStart()
+	arg_79_0:resumeManagedTween()
 end
 
-function slot0.endGame(slot0)
-	if slot0.gameEndFlag then
+function var_0_0.endGame(arg_80_0)
+	if arg_80_0.gameEndFlag then
 		return
 	end
 
-	slot0:timerStop()
+	arg_80_0:timerStop()
 
-	slot0.gameEndFlag = true
+	arg_80_0.gameEndFlag = true
 
-	setActive(slot0.clickMask, true)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0.gameEndFlag = false
-		uv0.gameStartFlag = false
+	setActive(arg_80_0.clickMask, true)
+	arg_80_0:managedTween(LeanTween.delayedCall, function()
+		arg_80_0.gameEndFlag = false
+		arg_80_0.gameStartFlag = false
 
-		setActive(uv0.clickMask, false)
-		uv0:showEndUI()
+		setActive(arg_80_0.clickMask, false)
+		arg_80_0:showEndUI()
 	end, 0.1, nil)
 end
 
-function slot0.showEndUI(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.endUI)
-	setActive(slot0.endUI, true)
+function var_0_0.showEndUI(arg_82_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_82_0.endUI)
+	setActive(arg_82_0.endUI, true)
 
-	slot2 = slot0.scoreNum
-	slot3 = slot0:GetMGData():GetRuntimeData("elements") and #slot1 > 0 and slot1[1] or 0
+	local var_82_0 = arg_82_0:GetMGData():GetRuntimeData("elements")
+	local var_82_1 = arg_82_0.scoreNum
+	local var_82_2 = var_82_0 and #var_82_0 > 0 and var_82_0[1] or 0
 
-	setActive(slot0:findTF("panel/now/Text/new", slot0.endUI), slot3 < slot2)
+	setActive(arg_82_0:findTF("panel/now/Text/new", arg_82_0.endUI), var_82_2 < var_82_1)
 
-	if slot3 <= slot2 then
-		slot0:StoreDataToServer({
-			slot2
+	if var_82_2 <= var_82_1 then
+		var_82_2 = var_82_1
+
+		arg_82_0:StoreDataToServer({
+			var_82_2
 		})
 	end
 
-	setText(slot0:findTF("panel/max/Text", slot0.endUI), slot3)
-	setText(slot0:findTF("panel/now/Text", slot0.endUI), slot2)
+	local var_82_3 = arg_82_0:findTF("panel/max/Text", arg_82_0.endUI)
+	local var_82_4 = arg_82_0:findTF("panel/now/Text", arg_82_0.endUI)
 
-	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
-		slot0:SendSuccess(0)
+	setText(var_82_3, var_82_2)
+	setText(var_82_4, var_82_1)
+
+	if arg_82_0:getGameTimes() and arg_82_0:getGameTimes() > 0 then
+		arg_82_0:SendSuccess(0)
 	end
 end
 
-function slot0.getGameTimes(slot0)
-	return slot0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_83_0)
+	return arg_83_0:GetMGHubData().count
 end
 
-function slot0.getGameUsedTimes(slot0)
-	return slot0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_84_0)
+	return arg_84_0:GetMGHubData().usedtime
 end
 
-function slot0.getUltimate(slot0)
-	return slot0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_85_0)
+	return arg_85_0:GetMGHubData().ultimate
 end
 
-function slot0.getGameTotalTime(slot0)
-	return slot0:GetMGHubData():getConfig("reward_need")
+function var_0_0.getGameTotalTime(arg_86_0)
+	return (arg_86_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function slot0.OnApplicationPaused(slot0, slot1)
-	if slot1 and not slot0.gameEndFlag and slot0.gameStartFlag and not slot0.gamePause then
-		slot0:pauseGame()
-		pg.UIMgr.GetInstance():OverlayPanel(slot0.pauseUI)
-		setActive(slot0.pauseUI, true)
+function var_0_0.OnApplicationPaused(arg_87_0, arg_87_1)
+	if arg_87_1 and not arg_87_0.gameEndFlag and arg_87_0.gameStartFlag and not arg_87_0.gamePause then
+		arg_87_0:pauseGame()
+		pg.UIMgr.GetInstance():OverlayPanel(arg_87_0.pauseUI)
+		setActive(arg_87_0.pauseUI, true)
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.gameEndFlag then
+function var_0_0.onBackPressed(arg_88_0)
+	if arg_88_0.gameEndFlag then
 		return
 	end
 
-	if isActive(slot0.pauseUI) then
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0.pauseUI, slot0._tf:Find("ui"))
-		setActive(slot0.pauseUI, false)
-		slot0:resumeGame()
-
-		return
-	end
-
-	if isActive(slot0.returnUI) then
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0.returnUI, slot0._tf:Find("ui"))
-		setActive(slot0.returnUI, false)
-		slot0:resumeGame()
+	if isActive(arg_88_0.pauseUI) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_88_0.pauseUI, arg_88_0._tf:Find("ui"))
+		setActive(arg_88_0.pauseUI, false)
+		arg_88_0:resumeGame()
 
 		return
 	end
 
-	if isActive(slot0.endUI) then
-		return
-	end
-
-	if slot0.gameStartFlag then
-		slot0:pauseGame()
-		pg.UIMgr.GetInstance():OverlayPanel(slot0.pauseUI)
-		setActive(slot0.pauseUI, true)
+	if isActive(arg_88_0.returnUI) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_88_0.returnUI, arg_88_0._tf:Find("ui"))
+		setActive(arg_88_0.returnUI, false)
+		arg_88_0:resumeGame()
 
 		return
 	end
 
-	slot0:emit(uv0.ON_BACK_PRESSED)
+	if isActive(arg_88_0.endUI) then
+		return
+	end
+
+	if arg_88_0.gameStartFlag then
+		arg_88_0:pauseGame()
+		pg.UIMgr.GetInstance():OverlayPanel(arg_88_0.pauseUI)
+		setActive(arg_88_0.pauseUI, true)
+
+		return
+	end
+
+	arg_88_0:emit(var_0_0.ON_BACK_PRESSED)
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.willExit(arg_89_0)
+	if arg_89_0.handle then
+		UpdateBeat:RemoveListener(arg_89_0.handle)
 	end
 
-	slot0:cleanManagedTween()
+	arg_89_0:cleanManagedTween()
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_89_0.timer and arg_89_0.timer.running then
+		arg_89_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	slot0.timer = nil
+	arg_89_0.timer = nil
 end
 
-return slot0
+return var_0_0

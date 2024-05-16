@@ -1,90 +1,98 @@
-slot0 = class("NewShipMediator", import("..base.ContextMediator"))
-slot0.ON_LOCK = "NewShipMediator:ON_LOCK"
-slot0.ON_EXIT = "NewShipMediator:ON_EXIT"
-slot0.ON_SKILLINFO = "NewShipMediator:ON_SKILLINFO"
-slot0.ON_EVALIATION = "NewShipMediator:ON_EVALIATION"
-slot0.ON_SKIP_BATCH = "NewShipMediator:ON_SKIP_BATCH"
+﻿local var_0_0 = class("NewShipMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = slot0.contextData.ship
-	slot0.fromRemould = slot0.contextData.fromRemould
+var_0_0.ON_LOCK = "NewShipMediator:ON_LOCK"
+var_0_0.ON_EXIT = "NewShipMediator:ON_EXIT"
+var_0_0.ON_SKILLINFO = "NewShipMediator:ON_SKILLINFO"
+var_0_0.ON_EVALIATION = "NewShipMediator:ON_EVALIATION"
+var_0_0.ON_SKIP_BATCH = "NewShipMediator:ON_SKIP_BATCH"
 
-	assert(slot1, "必须存在船")
+function var_0_0.register(arg_1_0)
+	local var_1_0 = arg_1_0.contextData.ship
 
-	slot0.showTrans = slot1:isRemoulded()
+	arg_1_0.fromRemould = arg_1_0.contextData.fromRemould
 
-	slot0.viewComponent:setShip(slot1)
-	slot0:bind(uv0.ON_EXIT, function (slot0, slot1, slot2)
-		uv0:sendNotification(uv0.contextData.onExit or GAME.REMOVE_LAYERS, {
-			context = getProxy(ContextProxy):getCurrentContext():getContextByMediator(uv0.class)
+	assert(var_1_0, "必须存在船")
+
+	arg_1_0.showTrans = var_1_0:isRemoulded()
+
+	arg_1_0.viewComponent:setShip(var_1_0)
+	arg_1_0:bind(var_0_0.ON_EXIT, function(arg_2_0, arg_2_1, arg_2_2)
+		local var_2_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_1_0.class)
+
+		arg_1_0:sendNotification(arg_1_0.contextData.onExit or GAME.REMOVE_LAYERS, {
+			context = var_2_0
 		})
 	end)
-	slot0:bind(uv0.ON_SKIP_BATCH, function (slot0, slot1, slot2)
+	arg_1_0:bind(var_0_0.ON_SKIP_BATCH, function(arg_3_0, arg_3_1, arg_3_2)
 		getProxy(BuildShipProxy):setSkipBatchBuildFlag(true)
-		uv0:sendNotification(uv0.contextData.onExit or GAME.REMOVE_LAYERS, {
-			context = getProxy(ContextProxy):getCurrentContext():getContextByMediator(uv0.class)
+
+		local var_3_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_1_0.class)
+
+		arg_1_0:sendNotification(arg_1_0.contextData.onExit or GAME.REMOVE_LAYERS, {
+			context = var_3_0
 		})
 	end)
-	slot0:bind(uv0.ON_LOCK, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.UPDATE_LOCK, {
-			ship_id_list = slot1,
-			is_locked = slot2
+	arg_1_0:bind(var_0_0.ON_LOCK, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.UPDATE_LOCK, {
+			ship_id_list = arg_4_1,
+			is_locked = arg_4_2
 		})
 	end)
-	slot0:bind(uv0.ON_SKILLINFO, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_SKILLINFO, function(arg_5_0, arg_5_1, arg_5_2)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = SkillInfoLayer,
 			data = {
 				fromNewShip = true,
-				skillOnShip = slot2,
-				skillId = slot1,
-				LayerWeightMgr_weight = uv0.viewComponent:getWeightFromData()
+				skillOnShip = arg_5_2,
+				skillId = arg_5_1,
+				LayerWeightMgr_weight = arg_1_0.viewComponent:getWeightFromData()
 			}
 		}))
 	end)
-	slot0:bind(uv0.ON_EVALIATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.FETCH_EVALUATION, slot1)
+	arg_1_0:bind(var_0_0.ON_EVALIATION, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.FETCH_EVALUATION, arg_6_1)
 	end)
 
-	slot3 = getProxy(PlayerProxy):getData()
+	local var_1_1 = getProxy(PlayerProxy):getData()
 
-	if slot1:getRarity() >= 4 and not slot3:GetCommonFlag(GAME_RESTOREVIEW_ALREADY) then
+	if var_1_0:getRarity() >= 4 and not var_1_1:GetCommonFlag(GAME_RESTOREVIEW_ALREADY) then
 		pg.SdkMgr.GetInstance():StoreReview()
-		slot0:sendNotification(GAME.COMMON_FLAG, {
+		arg_1_0:sendNotification(GAME.COMMON_FLAG, {
 			flagID = GAME_RESTOREVIEW_ALREADY
 		})
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		GAME.UPDATE_LOCK_DONE,
 		GAME.FETCH_EVALUATION_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
 
-	if slot1:getName() == GAME.UPDATE_LOCK_DONE then
-		slot0.viewComponent:UpdateLockButton(slot3:GetLockState())
-		slot0.viewComponent:updateShip(slot3)
-	elseif slot2 == GAME.FETCH_EVALUATION_DONE then
-		if slot0.fromRemould then
+	if var_8_0 == GAME.UPDATE_LOCK_DONE then
+		arg_8_0.viewComponent:UpdateLockButton(var_8_1:GetLockState())
+		arg_8_0.viewComponent:updateShip(var_8_1)
+	elseif var_8_0 == GAME.FETCH_EVALUATION_DONE then
+		if arg_8_0.fromRemould then
 			return
 		end
 
-		slot0:addSubLayers(Context.New({
+		arg_8_0:addSubLayers(Context.New({
 			mediator = ShipEvaluationMediator,
 			viewComponent = ShipEvaluationLayer,
 			data = {
-				groupId = slot3,
-				showTrans = slot0.showTrans,
-				LayerWeightMgr_weight = slot0.viewComponent:getWeightFromData()
+				groupId = var_8_1,
+				showTrans = arg_8_0.showTrans,
+				LayerWeightMgr_weight = arg_8_0.viewComponent:getWeightFromData()
 			}
 		}))
 	end
 end
 
-return slot0
+return var_0_0

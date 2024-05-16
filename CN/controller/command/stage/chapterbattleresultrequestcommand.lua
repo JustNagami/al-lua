@@ -1,14 +1,15 @@
-slot0 = class("ChapterBattleResultRequestCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ChapterBattleResultRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = (slot1.body or {}).isSkipBattle
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1.body or {}
+	local var_1_1 = var_1_0.isSkipBattle
 
 	pg.ConnectionMgr.GetInstance():Send(13106, {
 		arg = 0
-	}, 13105, function (slot0)
-		getProxy(ChapterProxy):OnBattleFinished(slot0, uv0)
-		existCall(uv1.callback)
+	}, 13105, function(arg_2_0)
+		getProxy(ChapterProxy):OnBattleFinished(arg_2_0, var_1_1)
+		existCall(var_1_0.callback)
 	end)
 end
 
-return slot0
+return var_0_0

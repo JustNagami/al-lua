@@ -1,4 +1,4 @@
-return {
+﻿return {
 	time = 0,
 	name = "boss mio",
 	init_effect = "jinengchufablue",

@@ -1,65 +1,65 @@
-slot0 = class("ResourceFieldAttr")
+﻿local var_0_0 = class("ResourceFieldAttr")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.name = slot2
-	slot0.config = slot1
-	slot0.attrName = slot3
-	slot0.level = 0
-	slot0.nextLevel = 0
-	slot0.value = 0
-	slot0.nextValue = 0
-	slot0.maxValue = 0
-	slot0.addition = 0
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.name = arg_1_2
+	arg_1_0.config = arg_1_1
+	arg_1_0.attrName = arg_1_3
+	arg_1_0.level = 0
+	arg_1_0.nextLevel = 0
+	arg_1_0.value = 0
+	arg_1_0.nextValue = 0
+	arg_1_0.maxValue = 0
+	arg_1_0.addition = 0
 end
 
-function slot0.Update(slot0, slot1)
-	if slot1 == slot0.level then
+function var_0_0.Update(arg_2_0, arg_2_1)
+	if arg_2_1 == arg_2_0.level then
 		return
 	end
 
-	slot0.level = slot1
-	slot0.nextLevel = math.min(slot1 + 1, #slot0.config)
+	arg_2_0.level = arg_2_1
+	arg_2_0.nextLevel = math.min(arg_2_1 + 1, #arg_2_0.config)
 
-	slot0:ReCalcValue()
+	arg_2_0:ReCalcValue()
 end
 
-function slot0.ReCalcValue(slot0)
-	slot0.value = slot0.config[slot0.level][slot0.attrName]
-	slot0.nextValue = slot0.config[slot0.nextLevel][slot0.attrName]
-	slot0.maxValue = slot0.config[#slot0.config][slot0.attrName]
-	slot0.addition = slot0.nextValue - slot0.value
+function var_0_0.ReCalcValue(arg_3_0)
+	arg_3_0.value = arg_3_0.config[arg_3_0.level][arg_3_0.attrName]
+	arg_3_0.nextValue = arg_3_0.config[arg_3_0.nextLevel][arg_3_0.attrName]
+	arg_3_0.maxValue = arg_3_0.config[#arg_3_0.config][arg_3_0.attrName]
+	arg_3_0.addition = arg_3_0.nextValue - arg_3_0.value
 end
 
-function slot0.GetName(slot0)
-	return slot0.name
+function var_0_0.GetName(arg_4_0)
+	return arg_4_0.name
 end
 
-function slot0.IsMaxLevel(slot0)
-	return slot0.level == slot0.nextLevel
+function var_0_0.IsMaxLevel(arg_5_0)
+	return arg_5_0.level == arg_5_0.nextLevel
 end
 
-function slot0.GetValue(slot0)
-	return slot0.value
+function var_0_0.GetValue(arg_6_0)
+	return arg_6_0.value
 end
 
-function slot0.GetNextValue(slot0)
-	return slot0.nextValue
+function var_0_0.GetNextValue(arg_7_0)
+	return arg_7_0.nextValue
 end
 
-function slot0.GetMaxValue(slot0)
-	return slot0.maxValue
+function var_0_0.GetMaxValue(arg_8_0)
+	return arg_8_0.maxValue
 end
 
-function slot0.GetAddition(slot0)
-	return slot0.addition
+function var_0_0.GetAddition(arg_9_0)
+	return arg_9_0.addition
 end
 
-function slot0.GetAdditionDesc(slot0)
-	return slot0.addition
+function var_0_0.GetAdditionDesc(arg_10_0)
+	return arg_10_0.addition
 end
 
-function slot0.GetProgressDesc(slot0)
-	return slot0.value .. "/" .. slot0.maxValue
+function var_0_0.GetProgressDesc(arg_11_0)
+	return arg_11_0.value .. "/" .. arg_11_0.maxValue
 end
 
-return slot0
+return var_0_0

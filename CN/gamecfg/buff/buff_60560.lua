@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "",
 	time = 0,
@@ -17,8 +17,8 @@ return {
 			},
 			arg_list = {
 				bgm_list = {
-					"song11",
-					"song12"
+					"song-Alizarin-full",
+					"song-Cyanidin-full"
 				}
 			}
 		}

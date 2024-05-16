@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "HAIDAOSUIJI9-3",
 	mode = 2,
 	fadeOut = 1.5,

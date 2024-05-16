@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.item_usage_invitation = {
 	[101] = {
 		id = 101,

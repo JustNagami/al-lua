@@ -1,9 +1,14 @@
-ys = ys or {}
-slot1 = class("BattleMap")
-ys.Battle.BattleMap = slot1
-slot1.__name = "BattleMap"
-slot2 = pg.map_data
-slot1.LAYERS = {
+﻿ys = ys or {}
+
+local var_0_0 = ys
+local var_0_1 = class("BattleMap")
+
+var_0_0.Battle.BattleMap = var_0_1
+var_0_1.__name = "BattleMap"
+
+local var_0_2 = pg.map_data
+
+var_0_1.LAYERS = {
 	"close",
 	"mid",
 	"long",
@@ -11,160 +16,183 @@ slot1.LAYERS = {
 	"sea"
 }
 
-function slot1.Ctor(slot0, slot1)
-	slot0._go = GameObject.New("scenes")
-	slot0.mapLayerCtrls = {}
-	slot0.seaAnimList = {}
-	slot6 = slot1
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = GameObject.New("scenes")
+	arg_1_0.mapLayerCtrls = {}
+	arg_1_0.seaAnimList = {}
 
-	assert(pg.map_data[slot1], "找不到地图: " .. slot6)
+	local var_1_0 = pg.map_data[arg_1_1]
 
-	for slot6, slot7 in ipairs(uv0.LAYERS) do
-		setParent(GameObject.New(slot7 .. "Layer"), slot0._go, false)
+	assert(var_1_0, "找不到地图: " .. arg_1_1)
 
-		if slot7 ~= "sky" then
-			slot9 = GetOrAddComponent(slot8, "MapLayerCtrl")
-			slot9.leftBorder = slot2.range_left
-			slot9.rightBorder = slot2.range_right
-			slot9.speedToLeft = slot2[slot7 .. "_speed"] or 0
-			slot9.speedScaler = 1
+	for iter_1_0, iter_1_1 in ipairs(var_0_1.LAYERS) do
+		local var_1_1 = GameObject.New(iter_1_1 .. "Layer")
 
-			table.insert(slot0.mapLayerCtrls, slot9)
+		setParent(var_1_1, arg_1_0._go, false)
+
+		if iter_1_1 ~= "sky" then
+			local var_1_2 = GetOrAddComponent(var_1_1, "MapLayerCtrl")
+
+			var_1_2.leftBorder = var_1_0.range_left
+			var_1_2.rightBorder = var_1_0.range_right
+			var_1_2.speedToLeft = var_1_0[iter_1_1 .. "_speed"] or 0
+			var_1_2.speedScaler = 1
+
+			table.insert(arg_1_0.mapLayerCtrls, var_1_2)
 		end
 
-		slot10 = string.split(slot2[slot7 .. "_pos"], ";")
-		slot11 = string.split(slot2[slot7 .. "_scale"], ";")
+		local var_1_3 = arg_1_0.GetMapResNames(arg_1_1, iter_1_1)
+		local var_1_4 = string.split(var_1_0[iter_1_1 .. "_pos"], ";")
+		local var_1_5 = string.split(var_1_0[iter_1_1 .. "_scale"], ";")
 
-		for slot15, slot16 in ipairs(slot0.GetMapResNames(slot1, slot7)) do
-			slot17 = uv1.Battle.BattleResourceManager.GetInstance():InstMap(slot16)
-			tf(slot17).localScale = string2vector3(slot11[slot15])
+		for iter_1_2, iter_1_3 in ipairs(var_1_3) do
+			local var_1_6 = var_0_0.Battle.BattleResourceManager.GetInstance():InstMap(iter_1_3)
 
-			setParent(slot17, slot8, false)
+			tf(var_1_6).localScale = string2vector3(var_1_5[iter_1_2])
 
-			tf(slot17).localPosition = string2vector3(slot10[slot15])
+			setParent(var_1_6, var_1_1, false)
 
-			if slot17:GetComponent(typeof(SeaAnim)) then
-				table.insert(slot0.seaAnimList, slot18)
+			tf(var_1_6).localPosition = string2vector3(var_1_4[iter_1_2])
+
+			local var_1_7 = var_1_6:GetComponent(typeof(SeaAnim))
+
+			if var_1_7 then
+				table.insert(arg_1_0.seaAnimList, var_1_7)
 			end
 
-			if slot17:GetComponent(typeof(Renderer)) then
-				slot19.sortingOrder = -1500
+			local var_1_8 = var_1_6:GetComponent(typeof(Renderer))
+
+			if var_1_8 then
+				var_1_8.sortingOrder = -1500
 			end
 		end
 
-		if slot7 == "sea" then
-			slot0._buffer = slot8.transform:Find("gelidai(Clone)")
+		if iter_1_1 == "sea" then
+			arg_1_0._buffer = var_1_1.transform:Find("gelidai(Clone)")
 
-			if slot0._buffer then
-				slot0._bufferRenderer = slot0._buffer:GetComponent("SpriteRenderer")
-				slot0._bufferRenderer.color = Color.New(1, 1, 1, 0)
-				slot0._bufferRenderer.sortingOrder = -1500
+			if arg_1_0._buffer then
+				arg_1_0._bufferRenderer = arg_1_0._buffer:GetComponent("SpriteRenderer")
+				arg_1_0._bufferRenderer.color = Color.New(1, 1, 1, 0)
+				arg_1_0._bufferRenderer.sortingOrder = -1500
 			end
 		end
 	end
 
-	slot0:UpdateSpeedScaler()
+	arg_1_0:UpdateSpeedScaler()
 
-	return slot0._go
+	return arg_1_0._go
 end
 
-function slot1.ShiftSurface(slot0, slot1, slot2, slot3, slot4)
-	if slot0._shiftTimer then
+function var_0_1.ShiftSurface(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	if arg_2_0._shiftTimer then
 		return
 	end
 
-	slot5 = slot1
-	slot6 = nil
+	local var_2_0 = arg_2_1
+	local var_2_1
 
-	if slot2 < slot1 then
-		slot6 = -1
-	elseif slot1 < slot2 then
-		slot6 = 1
+	if arg_2_2 < arg_2_1 then
+		var_2_1 = -1
+	elseif arg_2_1 < arg_2_2 then
+		var_2_1 = 1
 	else
 		return
 	end
 
-	slot0._shiftTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, slot3, function ()
-		if (uv0 - uv1) * uv2 > 0 then
-			uv3.Battle.BattleVariable.AppendMapFactor("seaSurfaceShift", uv1)
-			uv4:updateSeaSpeed()
-			uv4:UpdateSpeedScaler()
+	local function var_2_2()
+		if (arg_2_2 - var_2_0) * var_2_1 > 0 then
+			var_0_0.Battle.BattleVariable.AppendMapFactor("seaSurfaceShift", var_2_0)
+			arg_2_0:updateSeaSpeed()
+			arg_2_0:UpdateSpeedScaler()
 
-			uv1 = uv1 + uv2
+			var_2_0 = var_2_0 + var_2_1
 		else
-			pg.TimeMgr.GetInstance():RemoveBattleTimer(uv4._shiftTimer)
+			pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_2_0._shiftTimer)
 
-			uv4._shiftTimer = nil
+			arg_2_0._shiftTimer = nil
 
-			if uv5 then
-				uv5()
+			if arg_2_4 then
+				arg_2_4()
 			end
 		end
-	end, true)
-end
-
-function slot1.UpdateSpeedScaler(slot0)
-	slot0:setSpeedScaler(uv0.Battle.BattleVariable.MapSpeedRatio)
-end
-
-function slot1.UpdateBufferAlpha(slot0, slot1)
-	slot0._bufferRenderer.color = Color.New(1, 1, 1, slot1 * 0.1)
-end
-
-function slot1.SetExposeLine(slot0, slot1, slot2, slot3)
-	function instantiateLine(slot0, slot1)
-		slot2 = uv0.Battle.BattleResourceManager.GetInstance():InstMap(slot1)
-
-		setParent(slot2, uv1._go.transform:Find("seaLayer"), false)
-
-		slot4 = slot2:GetComponent("SpriteRenderer")
-		slot5 = slot4.bounds.extents.max
-		slot4.sortingOrder = -1501
-		slot6 = tf(slot2).localScale
-		tf(slot2).localScale = Vector3.New(uv2 * slot6.x, slot6.y, slot6.z)
-		slot7 = tf(slot2).localPosition
-		tf(slot2).localPosition = Vector3.New(slot0 - slot4.bounds.extents.x * uv2, slot7.y, slot7.z)
 	end
 
-	instantiateLine(slot2, "visionLine")
-
-	if slot3 then
-		instantiateLine(slot3, "exposeLine")
-	end
+	arg_2_0._shiftTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, arg_2_3, var_2_2, true)
 end
 
-function slot1.setSpeedScaler(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.mapLayerCtrls) do
-		slot6.speedScaler = slot1
-	end
+function var_0_1.UpdateSpeedScaler(arg_4_0)
+	arg_4_0:setSpeedScaler(var_0_0.Battle.BattleVariable.MapSpeedRatio)
 end
 
-function slot1.updateSeaSpeed(slot0)
-	slot1 = uv0.Battle.BattleVariable.MapSpeedRatio
+function var_0_1.UpdateBufferAlpha(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1 * 0.1
 
-	for slot5, slot6 in ipairs(slot0.seaAnimList) do
-		slot6:AdjustAnimSpeed(slot1)
+	arg_5_0._bufferRenderer.color = Color.New(1, 1, 1, var_5_0)
+end
+
+function var_0_1.SetExposeLine(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	function instantiateLine(arg_7_0, arg_7_1)
+		local var_7_0 = var_0_0.Battle.BattleResourceManager.GetInstance():InstMap(arg_7_1)
+		local var_7_1 = arg_6_0._go.transform:Find("seaLayer")
+
+		setParent(var_7_0, var_7_1, false)
+
+		local var_7_2 = var_7_0:GetComponent("SpriteRenderer")
+		local var_7_3 = var_7_2.bounds.extents.max
+
+		var_7_2.sortingOrder = -1501
+
+		local var_7_4 = tf(var_7_0).localScale
+
+		tf(var_7_0).localScale = Vector3.New(arg_6_1 * var_7_4.x, var_7_4.y, var_7_4.z)
+
+		local var_7_5 = tf(var_7_0).localPosition
+		local var_7_6 = var_7_2.bounds.extents.x * arg_6_1
+
+		tf(var_7_0).localPosition = Vector3.New(arg_7_0 - var_7_6, var_7_5.y, var_7_5.z)
+	end
+
+	instantiateLine(arg_6_2, "visionLine")
+
+	if arg_6_3 then
+		instantiateLine(arg_6_3, "exposeLine")
 	end
 end
 
-function slot1.Dispose(slot0)
-	if slot0._shiftTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._shiftTimer)
-	end
-
-	if slot0._go then
-		Object.Destroy(slot0._go)
-
-		slot0._go = nil
-		slot0._buffer = nil
-		slot0._bufferRenderer = nil
+function var_0_1.setSpeedScaler(arg_8_0, arg_8_1)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.mapLayerCtrls) do
+		iter_8_1.speedScaler = arg_8_1
 	end
 end
 
-function slot1.GetMapResNames(slot0, slot1)
-	return string.split(pg.map_data[slot0][slot1 .. "_shot"], ";")
+function var_0_1.updateSeaSpeed(arg_9_0)
+	local var_9_0 = var_0_0.Battle.BattleVariable.MapSpeedRatio
+
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.seaAnimList) do
+		iter_9_1:AdjustAnimSpeed(var_9_0)
+	end
 end
 
-function slot1.setActive(slot0, slot1)
-	SetActive(slot0._go, slot1)
+function var_0_1.Dispose(arg_10_0)
+	if arg_10_0._shiftTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_10_0._shiftTimer)
+	end
+
+	if arg_10_0._go then
+		Object.Destroy(arg_10_0._go)
+
+		arg_10_0._go = nil
+		arg_10_0._buffer = nil
+		arg_10_0._bufferRenderer = nil
+	end
+end
+
+function var_0_1.GetMapResNames(arg_11_0, arg_11_1)
+	local var_11_0 = pg.map_data[arg_11_0]
+
+	return string.split(var_11_0[arg_11_1 .. "_shot"], ";")
+end
+
+function var_0_1.setActive(arg_12_0, arg_12_1)
+	SetActive(arg_12_0._go, arg_12_1)
 end

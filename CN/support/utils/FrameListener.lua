@@ -1,63 +1,68 @@
-FrameListener = class("FrameListener")
-slot0 = FrameListener
+﻿FrameListener = class("FrameListener")
 
-function slot0.Ctor(slot0)
-	slot0.jobs = {}
+local var_0_0 = FrameListener
+
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.jobs = {}
 end
 
-function slot0.UnShift(slot0, ...)
-	for slot5 = #{
+function var_0_0.UnShift(arg_2_0, ...)
+	local var_2_0 = {
 		...
-	}, 1, -1 do
-		table.insert(slot0.jobs, 1, slot1[slot5])
+	}
+
+	for iter_2_0 = #var_2_0, 1, -1 do
+		table.insert(arg_2_0.jobs, 1, var_2_0[iter_2_0])
 	end
 
-	slot0:TryStart()
+	arg_2_0:TryStart()
 end
 
-function slot0.Push(slot0, ...)
-	for slot5 = 1, #{
+function var_0_0.Push(arg_3_0, ...)
+	local var_3_0 = {
 		...
-	} do
-		table.insert(slot0.jobs, slot1[slot5])
+	}
+
+	for iter_3_0 = 1, #var_3_0 do
+		table.insert(arg_3_0.jobs, var_3_0[iter_3_0])
 	end
 
-	slot0:TryStart()
+	arg_3_0:TryStart()
 end
 
-function slot0.Remove(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.jobs) do
-		if slot6 == slot1 then
-			table.remove(slot0.jobs, slot5)
-			slot0:TryStop()
+function var_0_0.Remove(arg_4_0, arg_4_1)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.jobs) do
+		if iter_4_1 == arg_4_1 then
+			table.remove(arg_4_0.jobs, iter_4_0)
+			arg_4_0:TryStop()
 
 			break
 		end
 	end
 end
 
-function slot0.TryStart(slot0)
-	if not slot0.running and #slot0.jobs > 0 then
-		slot0.running = true
+function var_0_0.TryStart(arg_5_0)
+	if not arg_5_0.running and #arg_5_0.jobs > 0 then
+		arg_5_0.running = true
 
-		UpdateBeat:Add(slot0.Update, slot0)
+		UpdateBeat:Add(arg_5_0.Update, arg_5_0)
 	end
 end
 
-function slot0.TryStop(slot0)
-	if slot0.running and #slot0.jobs == 0 then
-		UpdateBeat:Remove(slot0.Update, slot0)
+function var_0_0.TryStop(arg_6_0)
+	if arg_6_0.running and #arg_6_0.jobs == 0 then
+		UpdateBeat:Remove(arg_6_0.Update, arg_6_0)
 
-		slot0.running = false
+		arg_6_0.running = false
 	end
 end
 
-function slot0.Update(slot0)
-	if #slot0.jobs == 0 then
-		slot0:TryStop()
+function var_0_0.Update(arg_7_0)
+	if #arg_7_0.jobs == 0 then
+		arg_7_0:TryStop()
 	else
-		table.remove(slot0.jobs, 1)()
+		table.remove(arg_7_0.jobs, 1)()
 	end
 end
 
-return slot0
+return var_0_0

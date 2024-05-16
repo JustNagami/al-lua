@@ -1,38 +1,46 @@
-slot0 = class("GuildGetReportsCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GuildGetReportsCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
+	local var_1_1 = getProxy(GuildProxy)
 
-	if not getProxy(GuildProxy):ShouldRequestReport() then
-		slot5 = slot4:GetReports()
+	if not var_1_1:ShouldRequestReport() then
+		local var_1_2 = var_1_1:GetReports()
 
-		if slot3 then
-			slot3(slot5)
+		if var_1_0 then
+			var_1_0(var_1_2)
 		end
 
 		return
 	end
 
-	slot5 = getProxy(GuildProxy)
-	slot6 = pg.ConnectionMgr.GetInstance()
+	local var_1_3 = getProxy(GuildProxy):GetMaxReportId()
 
-	slot6:Send(61017, {
-		index = slot5:GetMaxReportId()
-	}, 61018, function (slot0)
-		slot1 = {}
+	pg.ConnectionMgr.GetInstance():Send(61017, {
+		index = var_1_3
+	}, 61018, function(arg_2_0)
+		local var_2_0 = {}
 
-		for slot5, slot6 in ipairs(slot0.reports) do
-			slot7 = nil
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.reports) do
+			local var_2_1
 
-			uv0:AddReport((slot6.event_type ~= GuildConst.REPORT_TYPE_BOSS or GuildBossReport.New(slot6)) and GuildReport.New(slot6))
+			if iter_2_1.event_type == GuildConst.REPORT_TYPE_BOSS then
+				var_2_1 = GuildBossReport.New(iter_2_1)
+			else
+				var_2_1 = GuildReport.New(iter_2_1)
+			end
+
+			var_1_1:AddReport(var_2_1)
 		end
 
-		if uv1 then
-			uv1(uv0:GetReports())
+		if var_1_0 then
+			local var_2_2 = var_1_1:GetReports()
+
+			var_1_0(var_2_2)
 		end
 
-		uv2:sendNotification(GAME.GET_GUILD_REPORT_DONE)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT_DONE)
 	end)
 end
 
-return slot0
+return var_0_0

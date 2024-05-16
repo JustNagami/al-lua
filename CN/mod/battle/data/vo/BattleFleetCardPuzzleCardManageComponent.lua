@@ -1,103 +1,111 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleEvent
-slot3 = slot0.Battle.BattleCardPuzzleEvent
-slot4 = slot0.Battle.BattleFormulas
-slot5 = slot0.Battle.BattleConst
-slot6 = slot0.Battle.BattleConfig
-slot7 = slot0.Battle.BattleAttr
-slot8 = slot0.Battle.BattleDataFunction
-slot9 = slot0.Battle.BattleAttr
-slot10 = class("BattleFleetCardPuzzleCardManageComponent")
-slot0.Battle.BattleFleetCardPuzzleCardManageComponent = slot10
-slot10.__name = "BattleFleetCardPuzzleCardManageComponent"
-slot10.FUNC_NAME_SHUFFLE = "Shuffle"
-slot10.FUNC_NAME_POP = "Pop"
-slot10.FUNC_NAME_ADD = "Add"
-slot10.FUNC_NAME_BOTTOM = "Bottom"
-slot10.FUNC_NAME_REMOVE = "Remove"
-slot10.FUNC_NAME_SEARCH = "Search"
-slot10.FUNC_NAME_SORT = "Sort"
-slot10.FUNC_NAME_GET_LENGTH = "GetLength"
-slot10.SEARCH_BY_ID = "ID"
-slot10.SEARCH_BY_LABEL = "LABEL"
-slot10.SEARCH_BY_TYPE = "TYPE"
+﻿ys = ys or {}
 
-function slot10.AttachCardManager(slot0)
-	assert(slot0.GetCardList ~= nil, "该类>>" .. slot0.__name .. "<<使用card puzzle卡牌管理组件需要支持接口>>GetCardList<<，并返回所有的卡牌列表")
-	assert(slot0.DispatchEvent ~= nil, "该类>>" .. slot0.__name .. "<<使用card puzzle卡牌管理组件需要事件派发组件")
-	uv0.New(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleEvent
+local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
+local var_0_4 = var_0_0.Battle.BattleFormulas
+local var_0_5 = var_0_0.Battle.BattleConst
+local var_0_6 = var_0_0.Battle.BattleConfig
+local var_0_7 = var_0_0.Battle.BattleAttr
+local var_0_8 = var_0_0.Battle.BattleDataFunction
+local var_0_9 = var_0_0.Battle.BattleAttr
+local var_0_10 = class("BattleFleetCardPuzzleCardManageComponent")
+
+var_0_0.Battle.BattleFleetCardPuzzleCardManageComponent = var_0_10
+var_0_10.__name = "BattleFleetCardPuzzleCardManageComponent"
+var_0_10.FUNC_NAME_SHUFFLE = "Shuffle"
+var_0_10.FUNC_NAME_POP = "Pop"
+var_0_10.FUNC_NAME_ADD = "Add"
+var_0_10.FUNC_NAME_BOTTOM = "Bottom"
+var_0_10.FUNC_NAME_REMOVE = "Remove"
+var_0_10.FUNC_NAME_SEARCH = "Search"
+var_0_10.FUNC_NAME_SORT = "Sort"
+var_0_10.FUNC_NAME_GET_LENGTH = "GetLength"
+var_0_10.SEARCH_BY_ID = "ID"
+var_0_10.SEARCH_BY_LABEL = "LABEL"
+var_0_10.SEARCH_BY_TYPE = "TYPE"
+
+function var_0_10.AttachCardManager(arg_1_0)
+	assert(arg_1_0.GetCardList ~= nil, "该类>>" .. arg_1_0.__name .. "<<使用card puzzle卡牌管理组件需要支持接口>>GetCardList<<，并返回所有的卡牌列表")
+	assert(arg_1_0.DispatchEvent ~= nil, "该类>>" .. arg_1_0.__name .. "<<使用card puzzle卡牌管理组件需要事件派发组件")
+	var_0_10.New(arg_1_0)
 end
 
-function slot10.DetachCardManager(slot0)
-	if slot0._cardManager_ == nil then
+function var_0_10.DetachCardManager(arg_2_0)
+	if arg_2_0._cardManager_ == nil then
 		return
 	end
 
-	slot0._cardManager_:_destroy_()
+	arg_2_0._cardManager_:_destroy_()
 
-	slot0._cardManager_ = nil
+	arg_2_0._cardManager_ = nil
 end
 
-function slot10.Ctor(slot0, slot1)
-	slot0._target_ = slot1
+function var_0_10.Ctor(arg_3_0, arg_3_1)
+	arg_3_0._target_ = arg_3_1
 
-	slot0:_init_()
+	arg_3_0:_init_()
 end
 
-function slot10._init_(slot0)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_SHUFFLE, uv0._shuffle_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_POP, uv0._pop_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_ADD, uv0._add_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_BOTTOM, uv0._bottom_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_REMOVE, uv0._remove_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_SEARCH, uv0._search_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_SORT, uv0._sort_)
-	slot0:_overrideAttachFunc(uv0.FUNC_NAME_GET_LENGTH, uv0._getLength_)
+function var_0_10._init_(arg_4_0)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_SHUFFLE, var_0_10._shuffle_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_POP, var_0_10._pop_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_ADD, var_0_10._add_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_BOTTOM, var_0_10._bottom_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_REMOVE, var_0_10._remove_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_SEARCH, var_0_10._search_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_SORT, var_0_10._sort_)
+	arg_4_0:_overrideAttachFunc(var_0_10.FUNC_NAME_GET_LENGTH, var_0_10._getLength_)
 end
 
-function slot10._overrideAttachFunc(slot0, slot1, slot2)
-	if slot0._target_[slot1] ~= nil then
-		slot3 = slot0._target_[slot1]
+function var_0_10._overrideAttachFunc(arg_5_0, arg_5_1, arg_5_2)
+	if arg_5_0._target_[arg_5_1] ~= nil then
+		local var_5_0 = arg_5_0._target_[arg_5_1]
 
-		slot0._target_[slot1] = function (...)
-			uv0(...)
-			uv1(...)
+		local function var_5_1(...)
+			var_5_0(...)
+			arg_5_2(...)
 		end
 
-		return
+		arg_5_0._target_[arg_5_1] = var_5_1
+	else
+		arg_5_0._target_[arg_5_1] = arg_5_2
 	end
-
-	slot0._target_[slot1] = slot2
 end
 
-function slot10._destroy_(slot0)
-	slot0._target_ = nil
+function var_0_10._destroy_(arg_7_0)
+	arg_7_0._target_ = nil
 end
 
-function slot10._add_(slot0, slot1)
-	table.insert(slot0:GetCardList(), slot1)
-	slot1:SetCurrentPile(slot0:GetIndexID())
-	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_CARDS, {
-		type = uv2.FUNC_NAME_ADD
+function var_0_10._add_(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0:GetCardList()
+
+	table.insert(var_8_0, arg_8_1)
+	arg_8_1:SetCurrentPile(arg_8_0:GetIndexID())
+	arg_8_0:DispatchEvent(var_0_0.Event.New(var_0_3.UPDATE_CARDS, {
+		type = var_0_10.FUNC_NAME_ADD
 	}))
 end
 
-function slot10._bottom_(slot0, slot1)
-	table.insert(slot0:GetCardList(), 1, slot1)
-	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_CARDS, {
-		type = uv2.FUNC_NAME_BOTTOM
+function var_0_10._bottom_(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0:GetCardList()
+
+	table.insert(var_9_0, 1, arg_9_1)
+	arg_9_0:DispatchEvent(var_0_0.Event.New(var_0_3.UPDATE_CARDS, {
+		type = var_0_10.FUNC_NAME_BOTTOM
 	}))
 end
 
-function slot10._remove_(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0:GetCardList()) do
-		if slot1 == slot7 then
-			slot1:SetFromPile(slot0:GetIndexID())
-			table.remove(slot2, slot6)
-			slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_CARDS, {
-				type = uv2.FUNC_NAME_REMOVE
+function var_0_10._remove_(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0:GetCardList()
+
+	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+		if arg_10_1 == iter_10_1 then
+			arg_10_1:SetFromPile(arg_10_0:GetIndexID())
+			table.remove(var_10_0, iter_10_0)
+			arg_10_0:DispatchEvent(var_0_0.Event.New(var_0_3.UPDATE_CARDS, {
+				type = var_0_10.FUNC_NAME_REMOVE
 			}))
 
 			return
@@ -105,70 +113,72 @@ function slot10._remove_(slot0, slot1)
 	end
 end
 
-function slot10._shuffle_(slot0)
-	slot1 = slot0:GetCardList()
-	slot2 = slot0:GetLength()
+function var_0_10._shuffle_(arg_11_0)
+	local var_11_0 = arg_11_0:GetCardList()
+	local var_11_1 = arg_11_0:GetLength()
 
-	while slot2 > 0 do
-		slot3 = math.random(slot2)
-		slot1[slot3] = slot1[slot2]
-		slot1[slot2] = slot1[slot3]
-		slot2 = slot2 - 1
+	while var_11_1 > 0 do
+		local var_11_2 = math.random(var_11_1)
+
+		var_11_0[var_11_1], var_11_0[var_11_2] = var_11_0[var_11_2], var_11_0[var_11_1]
+		var_11_1 = var_11_1 - 1
 	end
 
-	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_CARDS, {
-		type = uv2.FUNC_NAME_SHUFFLE
+	arg_11_0:DispatchEvent(var_0_0.Event.New(var_0_3.UPDATE_CARDS, {
+		type = var_0_10.FUNC_NAME_SHUFFLE
 	}))
 end
 
-function slot10._pop_(slot0)
-	slot1 = slot0:GetCardList()
-	slot2 = table.remove(slot1, #slot1)
+function var_0_10._pop_(arg_12_0)
+	local var_12_0 = arg_12_0:GetCardList()
+	local var_12_1 = table.remove(var_12_0, #var_12_0)
 
-	slot2:SetFromPile(slot0:GetIndexID())
+	var_12_1:SetFromPile(arg_12_0:GetIndexID())
 
-	return slot2, slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_CARDS, {
-		type = uv2.FUNC_NAME_POP
+	return var_12_1, arg_12_0:DispatchEvent(var_0_0.Event.New(var_0_3.UPDATE_CARDS, {
+		type = var_0_10.FUNC_NAME_POP
 	}))
 end
 
-function slot10._sort_(slot0, slot1)
+function var_0_10._sort_(arg_13_0, arg_13_1)
+	return
 end
 
-function slot10._search_(slot0, slot1)
-	slot2 = {}
-	slot3 = slot0:GetCardList()
-	slot4 = slot1.value
+function var_0_10._search_(arg_14_0, arg_14_1)
+	local var_14_0 = {}
+	local var_14_1 = arg_14_0:GetCardList()
+	local var_14_2 = arg_14_1.value
+	local var_14_3 = arg_14_1.type
 
-	if slot1.type == uv0.SEARCH_BY_ID then
-		for slot9, slot10 in ipairs(slot3) do
-			if table.contains(slot4, slot10:GetCardID()) then
-				table.insert(slot2, slot10)
+	if var_14_3 == var_0_10.SEARCH_BY_ID then
+		for iter_14_0, iter_14_1 in ipairs(var_14_1) do
+			if table.contains(var_14_2, iter_14_1:GetCardID()) then
+				table.insert(var_14_0, iter_14_1)
 			end
 		end
-	elseif slot5 == uv0.SEARCH_BY_LABEL then
-		for slot9, slot10 in ipairs(slot3) do
-			if slot10:LabelContain(slot4) then
-				table.insert(slot2, slot10)
+	elseif var_14_3 == var_0_10.SEARCH_BY_LABEL then
+		for iter_14_2, iter_14_3 in ipairs(var_14_1) do
+			if iter_14_3:LabelContain(var_14_2) then
+				table.insert(var_14_0, iter_14_3)
 			end
 		end
-	elseif slot5 == uv0.SEARCH_BY_TYPE then
-		for slot9, slot10 in ipairs(slot3) do
-			if slot10:GetType() == slot4 then
-				table.insert(slot2, slot10)
+	elseif var_14_3 == var_0_10.SEARCH_BY_TYPE then
+		for iter_14_4, iter_14_5 in ipairs(var_14_1) do
+			if iter_14_5:GetType() == var_14_2 then
+				table.insert(var_14_0, iter_14_5)
 			end
 		end
 	end
 
-	if slot1.total == true then
-		return slot2
+	if arg_14_1.total == true then
+		return var_14_0
 	else
 		return {
-			slot2[math.random(#slot2)]
+			var_14_0[math.random(#var_14_0)]
 		}
 	end
 end
 
-function slot10._getLength_(slot0)
-	return #slot0:GetCardList()
+function var_0_10._getLength_(arg_15_0)
+	return #arg_15_0:GetCardList()
 end

@@ -1,415 +1,457 @@
-slot0 = _G
-slot1 = require("table")
-slot2 = require("string")
-slot3 = require("math")
-slot4 = require("socket")
-slot5 = require("socket.url")
-slot6 = require("socket.tp")
-slot7 = require("ltn12")
-slot4.ftp = {}
-slot8 = slot4.ftp
-slot8.TIMEOUT = 60
-slot9 = 21
-slot8.USER = "ftp"
-slot8.PASSWORD = "anonymous@anonymous.org"
-slot10 = {
+﻿local var_0_0 = _G
+local var_0_1 = require("table")
+local var_0_2 = require("string")
+local var_0_3 = require("math")
+local var_0_4 = require("socket")
+local var_0_5 = require("socket.url")
+local var_0_6 = require("socket.tp")
+local var_0_7 = require("ltn12")
+
+var_0_4.ftp = {}
+
+local var_0_8 = var_0_4.ftp
+
+var_0_8.TIMEOUT = 60
+
+local var_0_9 = 21
+
+var_0_8.USER = "ftp"
+var_0_8.PASSWORD = "anonymous@anonymous.org"
+
+local var_0_10 = {
 	__index = {}
 }
 
-function slot8.open(slot0, slot1, slot2)
-	slot4 = uv4.setmetatable({
-		tp = uv0.try(uv1.connect(slot0, slot1 or uv2, uv3.TIMEOUT, slot2))
-	}, uv5)
-	slot4.try = uv0.newtry(function ()
-		uv0:close()
+function var_0_8.open(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = var_0_4.try(var_0_6.connect(arg_1_0, arg_1_1 or var_0_9, var_0_8.TIMEOUT, arg_1_2))
+	local var_1_1 = var_0_0.setmetatable({
+		tp = var_1_0
+	}, var_0_10)
+
+	var_1_1.try = var_0_4.newtry(function()
+		var_1_1:close()
 	end)
 
-	return slot4
+	return var_1_1
 end
 
-function slot10.__index.portconnect(slot0)
-	slot0.try(slot0.server:settimeout(uv0.TIMEOUT))
+function var_0_10.__index.portconnect(arg_3_0)
+	arg_3_0.try(arg_3_0.server:settimeout(var_0_8.TIMEOUT))
 
-	slot0.data = slot0.try(slot0.server:accept())
+	arg_3_0.data = arg_3_0.try(arg_3_0.server:accept())
 
-	slot0.try(slot0.data:settimeout(uv0.TIMEOUT))
+	arg_3_0.try(arg_3_0.data:settimeout(var_0_8.TIMEOUT))
 end
 
-function slot10.__index.pasvconnect(slot0)
-	slot0.data = slot0.try(uv0.tcp())
+function var_0_10.__index.pasvconnect(arg_4_0)
+	arg_4_0.data = arg_4_0.try(var_0_4.tcp())
 
-	slot0.try(slot0.data:settimeout(uv1.TIMEOUT))
-	slot0.try(slot0.data:connect(slot0.pasvt.address, slot0.pasvt.port))
+	arg_4_0.try(arg_4_0.data:settimeout(var_0_8.TIMEOUT))
+	arg_4_0.try(arg_4_0.data:connect(arg_4_0.pasvt.address, arg_4_0.pasvt.port))
 end
 
-function slot10.__index.login(slot0, slot1, slot2)
-	slot0.try(slot0.tp:command("user", slot1 or uv0.USER))
+function var_0_10.__index.login(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0.try(arg_5_0.tp:command("user", arg_5_1 or var_0_8.USER))
 
-	slot3, slot4 = slot0.try(slot0.tp:check({
+	local var_5_0, var_5_1 = arg_5_0.try(arg_5_0.tp:check({
 		"2..",
 		331
 	}))
 
-	if slot3 == 331 then
-		slot0.try(slot0.tp:command("pass", slot2 or uv0.PASSWORD))
-		slot0.try(slot0.tp:check("2.."))
+	if var_5_0 == 331 then
+		arg_5_0.try(arg_5_0.tp:command("pass", arg_5_2 or var_0_8.PASSWORD))
+		arg_5_0.try(arg_5_0.tp:check("2.."))
 	end
 
 	return 1
 end
 
-function slot10.__index.pasv(slot0)
-	slot0.try(slot0.tp:command("pasv"))
+function var_0_10.__index.pasv(arg_6_0)
+	arg_6_0.try(arg_6_0.tp:command("pasv"))
 
-	slot1, slot2 = slot0.try(slot0.tp:check("2.."))
-	slot4, slot5, slot6, slot7, slot8, slot9 = uv0.skip(2, uv1.find(slot2, "(%d+)%D(%d+)%D(%d+)%D(%d+)%D(%d+)%D(%d+)"))
+	local var_6_0, var_6_1 = arg_6_0.try(arg_6_0.tp:check("2.."))
+	local var_6_2 = "(%d+)%D(%d+)%D(%d+)%D(%d+)%D(%d+)%D(%d+)"
+	local var_6_3, var_6_4, var_6_5, var_6_6, var_6_7, var_6_8 = var_0_4.skip(2, var_0_2.find(var_6_1, var_6_2))
 
-	slot0.try(slot4 and slot5 and slot6 and slot7 and slot8 and slot9, slot2)
+	arg_6_0.try(var_6_3 and var_6_4 and var_6_5 and var_6_6 and var_6_7 and var_6_8, var_6_1)
 
-	slot0.pasvt = {
-		address = uv1.format("%d.%d.%d.%d", slot4, slot5, slot6, slot7),
-		port = slot8 * 256 + slot9
+	arg_6_0.pasvt = {
+		address = var_0_2.format("%d.%d.%d.%d", var_6_3, var_6_4, var_6_5, var_6_6),
+		port = var_6_7 * 256 + var_6_8
 	}
 
-	if slot0.server then
-		slot0.server:close()
+	if arg_6_0.server then
+		arg_6_0.server:close()
 
-		slot0.server = nil
+		arg_6_0.server = nil
 	end
 
-	return slot0.pasvt.address, slot0.pasvt.port
+	return arg_6_0.pasvt.address, arg_6_0.pasvt.port
 end
 
-function slot10.__index.epsv(slot0)
-	slot0.try(slot0.tp:command("epsv"))
+function var_0_10.__index.epsv(arg_7_0)
+	arg_7_0.try(arg_7_0.tp:command("epsv"))
 
-	slot1, slot2 = slot0.try(slot0.tp:check("229"))
-	slot4, slot5, slot6, slot7 = uv0.match(slot2, "%((.)(.-)%1(.-)%1(.-)%1%)")
+	local var_7_0, var_7_1 = arg_7_0.try(arg_7_0.tp:check("229"))
+	local var_7_2 = "%((.)(.-)%1(.-)%1(.-)%1%)"
+	local var_7_3, var_7_4, var_7_5, var_7_6 = var_0_2.match(var_7_1, var_7_2)
 
-	slot0.try(slot7, "invalid epsv response")
+	arg_7_0.try(var_7_6, "invalid epsv response")
 
-	slot0.pasvt = {
-		address = slot0.tp:getpeername(),
-		port = slot7
+	arg_7_0.pasvt = {
+		address = arg_7_0.tp:getpeername(),
+		port = var_7_6
 	}
 
-	if slot0.server then
-		slot0.server:close()
+	if arg_7_0.server then
+		arg_7_0.server:close()
 
-		slot0.server = nil
+		arg_7_0.server = nil
 	end
 
-	return slot0.pasvt.address, slot0.pasvt.port
+	return arg_7_0.pasvt.address, arg_7_0.pasvt.port
 end
 
-function slot10.__index.port(slot0, slot1, slot2)
-	slot0.pasvt = nil
+function var_0_10.__index.port(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0.pasvt = nil
 
-	if not slot1 then
-		slot3, slot2 = slot0.try(slot0.tp:getsockname())
-		slot0.server = slot0.try(uv0.bind(slot3, 0))
-		slot1, slot2 = slot0.try(slot0.server:getsockname())
+	if not arg_8_1 then
+		arg_8_1, arg_8_2 = arg_8_0.try(arg_8_0.tp:getsockname())
+		arg_8_0.server = arg_8_0.try(var_0_4.bind(arg_8_1, 0))
+		arg_8_1, arg_8_2 = arg_8_0.try(arg_8_0.server:getsockname())
 
-		slot0.try(slot0.server:settimeout(uv1.TIMEOUT))
+		arg_8_0.try(arg_8_0.server:settimeout(var_0_8.TIMEOUT))
 	end
 
-	slot3 = slot2 % 256
+	local var_8_0 = arg_8_2 % 256
+	local var_8_1 = (arg_8_2 - var_8_0) / 256
+	local var_8_2 = var_0_2.gsub(var_0_2.format("%s,%d,%d", arg_8_1, var_8_1, var_8_0), "%.", ",")
 
-	slot0.try(slot0.tp:command("port", uv2.gsub(uv2.format("%s,%d,%d", slot1, (slot2 - slot3) / 256, slot3), "%.", ",")))
-	slot0.try(slot0.tp:check("2.."))
+	arg_8_0.try(arg_8_0.tp:command("port", var_8_2))
+	arg_8_0.try(arg_8_0.tp:check("2.."))
 
 	return 1
 end
 
-function slot10.__index.eprt(slot0, slot1, slot2, slot3)
-	slot0.pasvt = nil
+function var_0_10.__index.eprt(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	arg_9_0.pasvt = nil
 
-	if not slot2 then
-		slot4, slot3 = slot0.try(slot0.tp:getsockname())
-		slot0.server = slot0.try(uv0.bind(slot4, 0))
-		slot2, slot3 = slot0.try(slot0.server:getsockname())
+	if not arg_9_2 then
+		arg_9_2, arg_9_3 = arg_9_0.try(arg_9_0.tp:getsockname())
+		arg_9_0.server = arg_9_0.try(var_0_4.bind(arg_9_2, 0))
+		arg_9_2, arg_9_3 = arg_9_0.try(arg_9_0.server:getsockname())
 
-		slot0.try(slot0.server:settimeout(uv1.TIMEOUT))
+		arg_9_0.try(arg_9_0.server:settimeout(var_0_8.TIMEOUT))
 	end
 
-	slot0.try(slot0.tp:command("eprt", uv2.format("|%s|%s|%d|", slot1, slot2, slot3)))
-	slot0.try(slot0.tp:check("2.."))
+	local var_9_0 = var_0_2.format("|%s|%s|%d|", arg_9_1, arg_9_2, arg_9_3)
+
+	arg_9_0.try(arg_9_0.tp:command("eprt", var_9_0))
+	arg_9_0.try(arg_9_0.tp:check("2.."))
 
 	return 1
 end
 
-function slot10.__index.send(slot0, slot1)
-	slot0.try(slot0.pasvt or slot0.server, "need port or pasv first")
+function var_0_10.__index.send(arg_10_0, arg_10_1)
+	arg_10_0.try(arg_10_0.pasvt or arg_10_0.server, "need port or pasv first")
 
-	if slot0.pasvt then
-		slot0:pasvconnect()
+	if arg_10_0.pasvt then
+		arg_10_0:pasvconnect()
 	end
 
-	if (slot1.argument or uv0.unescape(uv1.gsub(slot1.path or "", "^[/\\]", ""))) == "" then
-		slot2 = nil
+	local var_10_0 = arg_10_1.argument or var_0_5.unescape(var_0_2.gsub(arg_10_1.path or "", "^[/\\]", ""))
+
+	if var_10_0 == "" then
+		var_10_0 = nil
 	end
 
-	slot0.try(slot0.tp:command(slot1.command or "stor", slot2))
+	local var_10_1 = arg_10_1.command or "stor"
 
-	slot4, slot5 = slot0.try(slot0.tp:check({
+	arg_10_0.try(arg_10_0.tp:command(var_10_1, var_10_0))
+
+	local var_10_2, var_10_3 = arg_10_0.try(arg_10_0.tp:check({
 		"2..",
 		"1.."
 	}))
 
-	if not slot0.pasvt then
-		slot0:portconnect()
+	if not arg_10_0.pasvt then
+		arg_10_0:portconnect()
 	end
 
-	slot6 = slot1.step or uv2.pump.step
-	slot7 = {
-		slot0.tp
+	local var_10_4 = arg_10_1.step or var_0_7.pump.step
+	local var_10_5 = {
+		arg_10_0.tp
 	}
 
-	slot0.try(uv2.pump.all(slot1.source, uv3.sink("close-when-done", slot0.data), function (slot0, slot1)
-		if uv0.select(uv1, nil, 0)[uv2] then
-			uv3 = uv4.try(uv4.tp:check("2.."))
+	local function var_10_6(arg_11_0, arg_11_1)
+		if var_0_4.select(var_10_5, nil, 0)[var_0_6] then
+			var_10_2 = arg_10_0.try(arg_10_0.tp:check("2.."))
 		end
 
-		return uv5(slot0, slot1)
-	end))
-
-	if uv1.find(slot4, "1..") then
-		slot0.try(slot0.tp:check("2.."))
+		return var_10_4(arg_11_0, arg_11_1)
 	end
 
-	slot0.data:close()
+	local var_10_7 = var_0_4.sink("close-when-done", arg_10_0.data)
 
-	slot0.data = nil
+	arg_10_0.try(var_0_7.pump.all(arg_10_1.source, var_10_7, var_10_6))
 
-	return uv3.skip(1, slot0.data:getstats())
+	if var_0_2.find(var_10_2, "1..") then
+		arg_10_0.try(arg_10_0.tp:check("2.."))
+	end
+
+	arg_10_0.data:close()
+
+	local var_10_8 = var_0_4.skip(1, arg_10_0.data:getstats())
+
+	arg_10_0.data = nil
+
+	return var_10_8
 end
 
-function slot10.__index.receive(slot0, slot1)
-	slot0.try(slot0.pasvt or slot0.server, "need port or pasv first")
+function var_0_10.__index.receive(arg_12_0, arg_12_1)
+	arg_12_0.try(arg_12_0.pasvt or arg_12_0.server, "need port or pasv first")
 
-	if slot0.pasvt then
-		slot0:pasvconnect()
+	if arg_12_0.pasvt then
+		arg_12_0:pasvconnect()
 	end
 
-	if (slot1.argument or uv0.unescape(uv1.gsub(slot1.path or "", "^[/\\]", ""))) == "" then
-		slot2 = nil
+	local var_12_0 = arg_12_1.argument or var_0_5.unescape(var_0_2.gsub(arg_12_1.path or "", "^[/\\]", ""))
+
+	if var_12_0 == "" then
+		var_12_0 = nil
 	end
 
-	slot0.try(slot0.tp:command(slot1.command or "retr", slot2))
+	local var_12_1 = arg_12_1.command or "retr"
 
-	slot4, slot5 = slot0.try(slot0.tp:check({
+	arg_12_0.try(arg_12_0.tp:command(var_12_1, var_12_0))
+
+	local var_12_2, var_12_3 = arg_12_0.try(arg_12_0.tp:check({
 		"1..",
 		"2.."
 	}))
 
-	if slot4 >= 200 and slot4 <= 299 then
-		slot1.sink(slot5)
+	if var_12_2 >= 200 and var_12_2 <= 299 then
+		arg_12_1.sink(var_12_3)
 
 		return 1
 	end
 
-	if not slot0.pasvt then
-		slot0:portconnect()
+	if not arg_12_0.pasvt then
+		arg_12_0:portconnect()
 	end
 
-	slot0.try(uv3.pump.all(uv2.source("until-closed", slot0.data), slot1.sink, slot1.step or uv3.pump.step))
+	local var_12_4 = var_0_4.source("until-closed", arg_12_0.data)
+	local var_12_5 = arg_12_1.step or var_0_7.pump.step
 
-	if uv1.find(slot4, "1..") then
-		slot0.try(slot0.tp:check("2.."))
+	arg_12_0.try(var_0_7.pump.all(var_12_4, arg_12_1.sink, var_12_5))
+
+	if var_0_2.find(var_12_2, "1..") then
+		arg_12_0.try(arg_12_0.tp:check("2.."))
 	end
 
-	slot0.data:close()
+	arg_12_0.data:close()
 
-	slot0.data = nil
-
-	return 1
-end
-
-function slot10.__index.cwd(slot0, slot1)
-	slot0.try(slot0.tp:command("cwd", slot1))
-	slot0.try(slot0.tp:check(250))
+	arg_12_0.data = nil
 
 	return 1
 end
 
-function slot10.__index.type(slot0, slot1)
-	slot0.try(slot0.tp:command("type", slot1))
-	slot0.try(slot0.tp:check(200))
+function var_0_10.__index.cwd(arg_13_0, arg_13_1)
+	arg_13_0.try(arg_13_0.tp:command("cwd", arg_13_1))
+	arg_13_0.try(arg_13_0.tp:check(250))
 
 	return 1
 end
 
-function slot10.__index.greet(slot0)
-	if uv0.find(slot0.try(slot0.tp:check({
+function var_0_10.__index.type(arg_14_0, arg_14_1)
+	arg_14_0.try(arg_14_0.tp:command("type", arg_14_1))
+	arg_14_0.try(arg_14_0.tp:check(200))
+
+	return 1
+end
+
+function var_0_10.__index.greet(arg_15_0)
+	local var_15_0 = arg_15_0.try(arg_15_0.tp:check({
 		"1..",
 		"2.."
-	})), "1..") then
-		slot0.try(slot0.tp:check("2.."))
+	}))
+
+	if var_0_2.find(var_15_0, "1..") then
+		arg_15_0.try(arg_15_0.tp:check("2.."))
 	end
 
 	return 1
 end
 
-function slot10.__index.quit(slot0)
-	slot0.try(slot0.tp:command("quit"))
-	slot0.try(slot0.tp:check("2.."))
+function var_0_10.__index.quit(arg_16_0)
+	arg_16_0.try(arg_16_0.tp:command("quit"))
+	arg_16_0.try(arg_16_0.tp:check("2.."))
 
 	return 1
 end
 
-function slot10.__index.close(slot0)
-	if slot0.data then
-		slot0.data:close()
+function var_0_10.__index.close(arg_17_0)
+	if arg_17_0.data then
+		arg_17_0.data:close()
 	end
 
-	if slot0.server then
-		slot0.server:close()
+	if arg_17_0.server then
+		arg_17_0.server:close()
 	end
 
-	return slot0.tp:close()
+	return arg_17_0.tp:close()
 end
 
-function slot11(slot0)
-	if slot0.url then
-		slot1 = uv0.parse(slot0.url)
+local function var_0_11(arg_18_0)
+	if arg_18_0.url then
+		local var_18_0 = var_0_5.parse(arg_18_0.url)
 
-		for slot5, slot6 in uv1.pairs(slot0) do
-			slot1[slot5] = slot6
+		for iter_18_0, iter_18_1 in var_0_0.pairs(arg_18_0) do
+			var_18_0[iter_18_0] = iter_18_1
 		end
 
-		return slot1
+		return var_18_0
 	else
-		return slot0
+		return arg_18_0
 	end
 end
 
-function slot12(slot0)
-	slot0 = uv0(slot0)
+local function var_0_12(arg_19_0)
+	arg_19_0 = var_0_11(arg_19_0)
 
-	uv1.try(slot0.host, "missing hostname")
+	var_0_4.try(arg_19_0.host, "missing hostname")
 
-	slot1 = uv2.open(slot0.host, slot0.port, slot0.create)
+	local var_19_0 = var_0_8.open(arg_19_0.host, arg_19_0.port, arg_19_0.create)
 
-	slot1:greet()
-	slot1:login(slot0.user, slot0.password)
+	var_19_0:greet()
+	var_19_0:login(arg_19_0.user, arg_19_0.password)
 
-	if slot0.type then
-		slot1:type(slot0.type)
+	if arg_19_0.type then
+		var_19_0:type(arg_19_0.type)
 	end
 
-	slot1:epsv()
-	slot1:quit()
-	slot1:close()
+	var_19_0:epsv()
 
-	return slot1:send(slot0)
+	local var_19_1 = var_19_0:send(arg_19_0)
+
+	var_19_0:quit()
+	var_19_0:close()
+
+	return var_19_1
 end
 
-slot13 = {
+local var_0_13 = {
 	path = "/",
 	scheme = "ftp"
 }
 
-function slot8.genericform(slot0)
-	uv0.try(uv0.try(uv1.parse(slot0, uv2)).scheme == "ftp", "wrong scheme '" .. slot1.scheme .. "'")
-	uv0.try(slot1.host, "missing hostname")
+local function var_0_14(arg_20_0)
+	local var_20_0 = var_0_4.try(var_0_5.parse(arg_20_0, var_0_13))
 
-	slot2 = "^type=(.)$"
+	var_0_4.try(var_20_0.scheme == "ftp", "wrong scheme '" .. var_20_0.scheme .. "'")
+	var_0_4.try(var_20_0.host, "missing hostname")
 
-	if slot1.params then
-		slot1.type = uv0.skip(2, uv3.find(slot1.params, slot2))
+	local var_20_1 = "^type=(.)$"
 
-		uv0.try(slot1.type == "a" or slot1.type == "i", "invalid type '" .. slot1.type .. "'")
+	if var_20_0.params then
+		var_20_0.type = var_0_4.skip(2, var_0_2.find(var_20_0.params, var_20_1))
+
+		var_0_4.try(var_20_0.type == "a" or var_20_0.type == "i", "invalid type '" .. var_20_0.type .. "'")
 	end
 
-	return slot1
+	return var_20_0
 end
 
-function slot15(slot0, slot1)
-	slot2 = uv0(slot0)
-	slot2.source = uv1.source.string(slot1)
+var_0_8.genericform = var_0_14
 
-	return uv2(slot2)
+local function var_0_15(arg_21_0, arg_21_1)
+	local var_21_0 = var_0_14(arg_21_0)
+
+	var_21_0.source = var_0_7.source.string(arg_21_1)
+
+	return var_0_12(var_21_0)
 end
 
-slot8.put = slot4.protect(function (slot0, slot1)
-	if uv0.type(slot0) == "string" then
-		return uv1(slot0, slot1)
+var_0_8.put = var_0_4.protect(function(arg_22_0, arg_22_1)
+	if var_0_0.type(arg_22_0) == "string" then
+		return var_0_15(arg_22_0, arg_22_1)
 	else
-		return uv2(slot0)
+		return var_0_12(arg_22_0)
 	end
 end)
 
-function slot16(slot0)
-	slot0 = uv0(slot0)
+local function var_0_16(arg_23_0)
+	arg_23_0 = var_0_11(arg_23_0)
 
-	uv1.try(slot0.host, "missing hostname")
+	var_0_4.try(arg_23_0.host, "missing hostname")
 
-	slot1 = uv2.open(slot0.host, slot0.port, slot0.create)
+	local var_23_0 = var_0_8.open(arg_23_0.host, arg_23_0.port, arg_23_0.create)
 
-	slot1:greet()
-	slot1:login(slot0.user, slot0.password)
+	var_23_0:greet()
+	var_23_0:login(arg_23_0.user, arg_23_0.password)
 
-	if slot0.type then
-		slot1:type(slot0.type)
+	if arg_23_0.type then
+		var_23_0:type(arg_23_0.type)
 	end
 
-	slot1:epsv()
-	slot1:receive(slot0)
-	slot1:quit()
+	var_23_0:epsv()
+	var_23_0:receive(arg_23_0)
+	var_23_0:quit()
 
-	return slot1:close()
+	return var_23_0:close()
 end
 
-function slot17(slot0)
-	slot1 = uv0(slot0)
-	slot2 = {}
-	slot1.sink = uv1.sink.table(slot2)
+local function var_0_17(arg_24_0)
+	local var_24_0 = var_0_14(arg_24_0)
+	local var_24_1 = {}
 
-	uv2(slot1)
+	var_24_0.sink = var_0_7.sink.table(var_24_1)
 
-	return uv3.concat(slot2)
+	var_0_16(var_24_0)
+
+	return var_0_1.concat(var_24_1)
 end
 
-slot8.command = slot4.protect(function (slot0)
-	slot0 = uv0(slot0)
+var_0_8.command = var_0_4.protect(function(arg_25_0)
+	arg_25_0 = var_0_11(arg_25_0)
 
-	uv1.try(slot0.host, "missing hostname")
-	uv1.try(slot0.command, "missing command")
+	var_0_4.try(arg_25_0.host, "missing hostname")
+	var_0_4.try(arg_25_0.command, "missing command")
 
-	slot1 = uv2.open(slot0.host, slot0.port, slot0.create)
+	local var_25_0 = var_0_8.open(arg_25_0.host, arg_25_0.port, arg_25_0.create)
 
-	slot1:greet()
-	slot1:login(slot0.user, slot0.password)
+	var_25_0:greet()
+	var_25_0:login(arg_25_0.user, arg_25_0.password)
 
-	if type(slot0.command) == "table" then
-		slot2 = slot0.argument or {}
-		slot3 = slot0.check or {}
+	if type(arg_25_0.command) == "table" then
+		local var_25_1 = arg_25_0.argument or {}
+		local var_25_2 = arg_25_0.check or {}
 
-		for slot7, slot8 in ipairs(slot0.command) do
-			slot1.try(slot1.tp:command(slot8, slot2[slot7]))
+		for iter_25_0, iter_25_1 in ipairs(arg_25_0.command) do
+			var_25_0.try(var_25_0.tp:command(iter_25_1, var_25_1[iter_25_0]))
 
-			if slot3[slot7] then
-				slot1.try(slot1.tp:check(slot3[slot7]))
+			if var_25_2[iter_25_0] then
+				var_25_0.try(var_25_0.tp:check(var_25_2[iter_25_0]))
 			end
 		end
 	else
-		slot1.try(slot1.tp:command(slot0.command, slot0.argument))
+		var_25_0.try(var_25_0.tp:command(arg_25_0.command, arg_25_0.argument))
 
-		if slot0.check then
-			slot1.try(slot1.tp:check(slot0.check))
+		if arg_25_0.check then
+			var_25_0.try(var_25_0.tp:check(arg_25_0.check))
 		end
 	end
 
-	slot1:quit()
+	var_25_0:quit()
 
-	return slot1:close()
+	return var_25_0:close()
 end)
-slot8.get = slot4.protect(function (slot0)
-	if uv0.type(slot0) == "string" then
-		return uv1(slot0)
+var_0_8.get = var_0_4.protect(function(arg_26_0)
+	if var_0_0.type(arg_26_0) == "string" then
+		return var_0_17(arg_26_0)
 	else
-		return uv2(slot0)
+		return var_0_16(arg_26_0)
 	end
 end)
 
-return slot8
+return var_0_8

@@ -1,89 +1,93 @@
-slot0 = class("VoteMediator", import("..base.ContextMediator"))
-slot0.ON_VOTE = "VoteMediator:ON_VOTE"
-slot0.ON_FILTER = "VoteMediator:ON_FILTER"
-slot0.ON_SCHEDULE = "VoteMediator:ON_SCHEDULE"
-slot0.OPEN_EXCHANGE = "VoteMediator:OPEN_EXCHANGE"
+﻿local var_0_0 = class("VoteMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_VOTE, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.ON_NEW_VOTE, {
-			voteId = slot1,
-			gid = slot2,
-			count = slot3
+var_0_0.ON_VOTE = "VoteMediator:ON_VOTE"
+var_0_0.ON_FILTER = "VoteMediator:ON_FILTER"
+var_0_0.ON_SCHEDULE = "VoteMediator:ON_SCHEDULE"
+var_0_0.OPEN_EXCHANGE = "VoteMediator:OPEN_EXCHANGE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_VOTE, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+		arg_1_0:sendNotification(GAME.ON_NEW_VOTE, {
+			voteId = arg_2_1,
+			gid = arg_2_2,
+			count = arg_2_3
 		})
 	end)
-	slot0:bind(uv0.ON_FILTER, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_FILTER, function(arg_3_0, arg_3_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_3_1
 		}))
 	end)
-	slot0:bind(uv0.ON_SCHEDULE, function ()
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_SCHEDULE, function()
+		arg_1_0:addSubLayers(Context.New({
 			mediator = VoteScheduleMediator,
 			viewComponent = VoteScheduleScene
 		}))
 	end)
-	slot0:bind(uv0.OPEN_EXCHANGE, function ()
-		if not getProxy(VoteProxy):GetOpeningNonFunVoteGroup() then
+	arg_1_0:bind(var_0_0.OPEN_EXCHANGE, function()
+		local var_5_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+
+		if not var_5_0 then
 			return
 		end
 
-		uv0:addSubLayers(Context.New({
+		arg_1_0:addSubLayers(Context.New({
 			mediator = VoteExchangeMediator,
 			viewComponent = VoteExchangeScene,
 			data = {
-				voteGroup = slot0
+				voteGroup = var_5_0
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_6_0)
 	return {
 		GAME.ON_NEW_VOTE_DONE,
 		GAME.ACT_NEW_PT_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-	if slot1:getName() == GAME.ON_NEW_VOTE_DONE then
-		slot0.viewComponent:updateMainview(false)
+	if var_7_0 == GAME.ON_NEW_VOTE_DONE then
+		arg_7_0.viewComponent:updateMainview(false)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("vote_success"))
-		slot0:DisplayAwards(slot3.awards)
-	elseif slot2 == GAME.ACT_NEW_PT_DONE then
-		slot0:DisplayAwards(slot3.awards)
+		arg_7_0:DisplayAwards(var_7_1.awards)
+	elseif var_7_0 == GAME.ACT_NEW_PT_DONE then
+		arg_7_0:DisplayAwards(var_7_1.awards)
 	end
 end
 
-function slot0.DisplayAwards(slot0, slot1)
-	slot2 = nil
+function var_0_0.DisplayAwards(arg_8_0, arg_8_1)
+	local var_8_0
 
-	function slot2()
-		if #uv0.cache <= 0 then
+	local function var_8_1()
+		if #arg_8_0.cache <= 0 then
 			return
 		end
 
-		slot1 = uv0.viewComponent
+		local var_9_0 = arg_8_0.cache[1]
 
-		slot1:emit(BaseUI.ON_ACHIEVE, uv0.cache[1], function ()
-			table.remove(uv0.cache, 1)
-			uv1()
+		arg_8_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_0, function()
+			table.remove(arg_8_0.cache, 1)
+			var_8_1()
 		end)
 	end
 
-	if not slot0.cache then
-		slot0.cache = {}
+	if not arg_8_0.cache then
+		arg_8_0.cache = {}
 	end
 
-	table.insert(slot0.cache, slot1)
+	table.insert(arg_8_0.cache, arg_8_1)
 
-	if #slot0.cache == 1 then
-		slot2()
+	if #arg_8_0.cache == 1 then
+		var_8_1()
 	end
 end
 
-return slot0
+return var_0_0

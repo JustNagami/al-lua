@@ -1,35 +1,39 @@
-slot1 = class("Mediator", import("..observer.Notifier"))
+﻿local var_0_0 = import("..observer.Notifier")
+local var_0_1 = class("Mediator", var_0_0)
 
-function slot1.Ctor(slot0, slot1, slot2)
-	slot0.mediatorName = slot1 or slot0.__cname or uv0.NAME
-	slot0.viewComponent = slot2
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.mediatorName = arg_1_1 or arg_1_0.__cname or var_0_1.NAME
+	arg_1_0.viewComponent = arg_1_2
 end
 
-slot1.NAME = "Mediator"
+var_0_1.NAME = "Mediator"
 
-function slot1.getMediatorName(slot0)
-	return slot0.mediatorName
+function var_0_1.getMediatorName(arg_2_0)
+	return arg_2_0.mediatorName
 end
 
-function slot1.setViewComponent(slot0, slot1)
-	slot0.viewComponent = slot1
+function var_0_1.setViewComponent(arg_3_0, arg_3_1)
+	arg_3_0.viewComponent = arg_3_1
 end
 
-function slot1.getViewComponent(slot0)
-	return slot0.viewComponent
+function var_0_1.getViewComponent(arg_4_0)
+	return arg_4_0.viewComponent
 end
 
-function slot1.listNotificationInterests(slot0)
+function var_0_1.listNotificationInterests(arg_5_0)
 	return {}
 end
 
-function slot1.handleNotification(slot0, slot1)
+function var_0_1.handleNotification(arg_6_0, arg_6_1)
+	return
 end
 
-function slot1.onRegister(slot0)
+function var_0_1.onRegister(arg_7_0)
+	return
 end
 
-function slot1.onRemove(slot0)
+function var_0_1.onRemove(arg_8_0)
+	return
 end
 
-return slot1
+return var_0_1

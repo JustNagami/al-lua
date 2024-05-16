@@ -1,125 +1,150 @@
-slot0 = class("NewNavalTacticsUnlockSlotPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("NewNavalTacticsUnlockSlotPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewNavalTacticsUnlockSlotPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.contentTxt = slot0:findTF("content/Text"):GetComponent(typeof(Text))
-	slot0.discountDateTxt = slot0:findTF("content/discountDate"):GetComponent(typeof(Text))
-	slot0.discountTxt = slot0:findTF("content/discountInfo/Text"):GetComponent(typeof(Text))
-	slot0.confirmBtn = slot0:findTF("content/confirm_btn")
-	slot0.cancelBtn = slot0:findTF("content/cancel_btn")
-	slot0.closeBtn = slot0:findTF("content/btnBack")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.contentTxt = arg_2_0:findTF("content/Text"):GetComponent(typeof(Text))
+	arg_2_0.discountDateTxt = arg_2_0:findTF("content/discountDate"):GetComponent(typeof(Text))
+	arg_2_0.discountTxt = arg_2_0:findTF("content/discountInfo/Text"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0:findTF("content/confirm_btn")
+	arg_2_0.cancelBtn = arg_2_0:findTF("content/cancel_btn")
+	arg_2_0.closeBtn = arg_2_0:findTF("content/btnBack")
 
-	setText(slot0.confirmBtn:Find("pic"), i18n("word_ok"))
-	setText(slot0.cancelBtn:Find("pic"), i18n("word_cancel"))
+	setText(arg_2_0.confirmBtn:Find("pic"), i18n("word_ok"))
+	setText(arg_2_0.cancelBtn:Find("pic"), i18n("word_cancel"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0.callback then
-			uv0.callback()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		if arg_3_0.callback then
+			arg_3_0.callback()
 		end
 
-		uv0:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_8_0, arg_8_1, arg_8_2)
+	var_0_0.super.Show(arg_8_0)
 
-	slot0.callback = slot2
-	slot3 = CommonCommodity.New({
-		id = slot1
+	arg_8_0.callback = arg_8_2
+
+	local var_8_0 = CommonCommodity.New({
+		id = arg_8_1
 	}, Goods.TYPE_SHOPSTREET)
 
-	slot0:Flush(slot3)
+	arg_8_0:Flush(var_8_0)
 
-	slot0.commodity = slot3
+	arg_8_0.commodity = var_8_0
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0:RemoveTimer()
+function var_0_0.Flush(arg_9_0, arg_9_1)
+	arg_9_0:RemoveTimer()
 
-	if slot1:isDisCount() then
-		slot0:UpdateDiscountView(slot1)
+	local var_9_0 = arg_9_1:isDisCount()
+
+	if var_9_0 then
+		arg_9_0:UpdateDiscountView(arg_9_1)
 	else
-		slot0.contentTxt.text = i18n("open_skill_pos", slot1:GetPrice())
+		local var_9_1 = arg_9_1:GetPrice()
+
+		arg_9_0.contentTxt.text = i18n("open_skill_pos", var_9_1)
 	end
 
-	setActive(slot0.discountDateTxt.gameObject, slot2)
-	setActive(slot0.discountTxt.gameObject.transform.parent, slot2)
+	setActive(arg_9_0.discountDateTxt.gameObject, var_9_0)
+	setActive(arg_9_0.discountTxt.gameObject.transform.parent, var_9_0)
 end
 
-function slot0.UpdateDiscountView(slot0, slot1)
-	slot2, slot3 = slot1:GetPrice()
+function var_0_0.UpdateDiscountView(arg_10_0, arg_10_1)
+	local var_10_0, var_10_1 = arg_10_1:GetPrice()
+	local var_10_2 = arg_10_1:GetDiscountEndTime()
 
-	slot0:AddTimer(slot1:GetDiscountEndTime())
+	arg_10_0:AddTimer(var_10_2)
 
-	slot0.discountTxt.text = slot3 .. "%"
-	slot0.contentTxt.text = i18n("open_skill_pos_discount", slot1:getConfig("resource_num"), slot2)
+	arg_10_0.discountTxt.text = var_10_1 .. "%"
 
-	onNextTick(function ()
-		slot0 = uv0.contentTxt.gameObject.transform
+	local var_10_3 = arg_10_1:getConfig("resource_num")
 
-		if not IsNil(slot0:GetChild(slot0.childCount - 1)) then
-			setAnchoredPosition(slot1, {
-				y = slot1.anchoredPosition.y + 15
+	arg_10_0.contentTxt.text = i18n("open_skill_pos_discount", var_10_3, var_10_0)
+
+	onNextTick(function()
+		local var_11_0 = arg_10_0.contentTxt.gameObject.transform
+		local var_11_1 = var_11_0:GetChild(var_11_0.childCount - 1)
+
+		if not IsNil(var_11_1) then
+			setAnchoredPosition(var_11_1, {
+				y = var_11_1.anchoredPosition.y + 15
 			})
 		end
 	end)
 end
 
-function slot0.AddTimer(slot0, slot1)
-	slot0.timer = Timer.New(function ()
-		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-			uv1.discountDateTxt.text = ""
+function var_0_0.AddTimer(arg_12_0, arg_12_1)
+	arg_12_0.timer = Timer.New(function()
+		local var_13_0 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_13_1 = arg_12_1 - var_13_0
 
-			uv1:Flush(uv1.commodity)
-		elseif i18n("discount_time", uv1:WarpDateTip(slot1) .. i18n("word_date")) ~= uv1.str then
-			uv1.discountDateTxt.text = slot2
-			uv1.str = slot2
+		if var_13_1 <= 0 then
+			arg_12_0.discountDateTxt.text = ""
+
+			arg_12_0:Flush(arg_12_0.commodity)
+		else
+			local var_13_2 = i18n("discount_time", arg_12_0:WarpDateTip(var_13_1) .. i18n("word_date"))
+
+			if var_13_2 ~= arg_12_0.str then
+				arg_12_0.discountDateTxt.text = var_13_2
+				arg_12_0.str = var_13_2
+			end
 		end
 	end, 1, -1)
 
-	slot0.timer:Start()
-	slot0.timer.func()
+	arg_12_0.timer:Start()
+	arg_12_0.timer.func()
 end
 
-function slot0.WarpDateTip(slot0, slot1)
-	slot2 = ""
+function var_0_0.WarpDateTip(arg_14_0, arg_14_1)
+	local var_14_0 = ""
 
-	return (slot1 < 86400 or math.floor(slot1 / 86400)) and (slot1 < 3600 or math.floor(slot1 / 3600)) and math.floor(slot1 / 60)
+	if arg_14_1 >= 86400 then
+		var_14_0 = math.floor(arg_14_1 / 86400)
+	elseif arg_14_1 >= 3600 then
+		var_14_0 = math.floor(arg_14_1 / 3600)
+	else
+		var_14_0 = math.floor(arg_14_1 / 60)
+	end
+
+	return var_14_0
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_15_0)
+	if arg_15_0.timer then
+		arg_15_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_15_0.timer = nil
 	end
 end
 
-function slot0.Hide(slot0)
-	slot0:RemoveTimer()
-	uv0.super.Hide(slot0)
+function var_0_0.Hide(arg_16_0)
+	arg_16_0:RemoveTimer()
+	var_0_0.super.Hide(arg_16_0)
 
-	slot0.callback = nil
-	slot0.commodity = nil
+	arg_16_0.callback = nil
+	arg_16_0.commodity = nil
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_17_0)
+	arg_17_0:Hide()
 end
 
-return slot0
+return var_0_0

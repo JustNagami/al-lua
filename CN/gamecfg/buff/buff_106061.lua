@@ -1,4 +1,56 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "loadSpeed",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onStack"
+			},
+			arg_list = {
+				countTarget = 3,
+				countType = 106061
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				buff_id = 106062,
+				quota = 1,
+				countType = 106061
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -478,57 +530,5 @@ return {
 	stack = 3,
 	id = 106061,
 	icon = 106060,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "loadSpeed",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onStack"
-			},
-			arg_list = {
-				countTarget = 3,
-				countType = 106061
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				buff_id = 106062,
-				quota = 1,
-				countType = 106061
-			}
-		}
-	}
+	last_effect = ""
 }

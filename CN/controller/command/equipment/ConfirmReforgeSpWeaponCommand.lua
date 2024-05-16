@@ -1,35 +1,42 @@
-slot0 = class("ConfirmReforgeSpWeaponCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ConfirmReforgeSpWeaponCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.uid or 0
+	local var_1_2 = var_1_0.shipId or 0
+	local var_1_3 = var_1_0.op
+
 	pg.ConnectionMgr.GetInstance():Send(14207, {
-		ship_id = slot2.shipId or 0,
-		spweapon_id = slot1:getBody().uid or 0,
-		cmd = slot2.op
-	}, 14208, function (slot0)
-		if slot0.result == 0 then
-			slot1, slot2 = EquipmentProxy.StaticGetSpWeapon(uv0, uv1)
+		ship_id = var_1_2,
+		spweapon_id = var_1_1,
+		cmd = var_1_3
+	}, 14208, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0, var_2_1 = EquipmentProxy.StaticGetSpWeapon(var_1_2, var_1_1)
 
-			if uv2 == SpWeapon.CONFIRM_OP_EXCHANGE then
-				slot1:SetBaseAttributes(slot1:GetAttributeOptions())
+			if var_1_3 == SpWeapon.CONFIRM_OP_EXCHANGE then
+				local var_2_2 = var_2_0:GetAttributeOptions()
+
+				var_2_0:SetBaseAttributes(var_2_2)
 			end
 
-			slot1:SetAttributeOptions({
+			var_2_0:SetAttributeOptions({
 				0,
 				0
 			})
 
-			if slot2 then
-				slot2:UpdateSpWeapon(slot1)
-				getProxy(BayProxy):updateShip(slot2)
+			if var_2_1 then
+				var_2_1:UpdateSpWeapon(var_2_0)
+				getProxy(BayProxy):updateShip(var_2_1)
 			else
-				getProxy(EquipmentProxy):AddSpWeapon(slot1)
+				getProxy(EquipmentProxy):AddSpWeapon(var_2_0)
 			end
 
-			uv3:sendNotification(GAME.CONFIRM_REFORGE_SPWEAPON_DONE, slot1)
+			arg_1_0:sendNotification(GAME.CONFIRM_REFORGE_SPWEAPON_DONE, var_2_0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("common", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("common", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

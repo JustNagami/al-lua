@@ -1,23 +1,23 @@
-slot0 = class("NewYearGreetingPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("NewYearGreetingPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.awardGotTag = slot0:findTF("award_got", slot0.bg)
+	arg_1_0.awardGotTag = arg_1_0:findTF("award_got", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.battleBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setActive(slot0.awardGotTag, not slot0.ptData:CanGetNextAward())
+function var_0_0.OnUpdateFlush(arg_4_0)
+	var_0_0.super.OnUpdateFlush(arg_4_0)
+	setActive(arg_4_0.awardGotTag, not arg_4_0.ptData:CanGetNextAward())
 end
 
-return slot0
+return var_0_0

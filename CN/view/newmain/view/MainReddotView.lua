@@ -1,89 +1,89 @@
-slot0 = class("MainReddotView")
+﻿local var_0_0 = class("MainReddotView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = tf(slot1)
-	slot0.listener = {}
-	slot0.redDotMgr = pg.RedDotMgr.GetInstance()
-	slot0.nodes = {
-		RedDotNode.New(slot0._tf:Find("main/frame/bottom/taskButton/tip"), {
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0.listener = {}
+	arg_1_0.redDotMgr = pg.RedDotMgr.GetInstance()
+	arg_1_0.nodes = {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/bottom/taskButton/tip"), {
 			pg.RedDotMgr.TYPES.TASK
 		}),
-		MailRedDotNode.New(slot0._tf:Find("main/frame/right/mailButton")),
-		RedDotNode.New(slot0._tf:Find("main/frame/bottom/buildButton/tip"), {
+		MailRedDotNode.New(arg_1_0._tf:Find("main/frame/right/mailButton")),
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/bottom/buildButton/tip"), {
 			pg.RedDotMgr.TYPES.BUILD
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/bottom/guildButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/bottom/guildButton/tip"), {
 			pg.RedDotMgr.TYPES.GUILD
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/top/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/top/tip"), {
 			pg.RedDotMgr.TYPES.ATTIRE
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/right/memoryButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/right/memoryButton/tip"), {
 			pg.RedDotMgr.TYPES.MEMORY_REVIEW
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/right/collectionButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/right/collectionButton/tip"), {
 			pg.RedDotMgr.TYPES.COLLECTION
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/right/friendButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/right/friendButton/tip"), {
 			pg.RedDotMgr.TYPES.FRIEND
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/left/commissionButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/left/commissionButton/tip"), {
 			pg.RedDotMgr.TYPES.COMMISSION
 		}),
-		SettingsRedDotNode.New(slot0._tf:Find("main/frame/right/settingButton/tip"), {
+		SettingsRedDotNode.New(arg_1_0._tf:Find("main/frame/right/settingButton/tip"), {
 			pg.RedDotMgr.TYPES.SETTTING
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/right/noticeButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/right/noticeButton/tip"), {
 			pg.RedDotMgr.TYPES.SERVER
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/bottom/technologyButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/bottom/technologyButton/tip"), {
 			pg.RedDotMgr.TYPES.BLUEPRINT
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/right/combatBtn/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/right/combatBtn/tip"), {
 			pg.RedDotMgr.TYPES.EVENT
 		}),
-		RedDotNode.New(slot0._tf:Find("main/frame/bottom/liveButton/tip"), {
+		RedDotNode.New(arg_1_0._tf:Find("main/frame/bottom/liveButton/tip"), {
 			pg.RedDotMgr.TYPES.COURTYARD,
 			pg.RedDotMgr.TYPES.SCHOOL,
 			pg.RedDotMgr.TYPES.COMMANDER
 		})
 	}
 
-	slot0.redDotMgr:RegisterRedDotNodes(slot0.nodes)
+	arg_1_0.redDotMgr:RegisterRedDotNodes(arg_1_0.nodes)
 end
 
-function slot0.AddNode(slot0, slot1)
-	table.insert(slot0.nodes, slot1)
-	slot0.redDotMgr:RegisterRedDotNode(slot1)
-	slot1:RefreshSelf()
+function var_0_0.AddNode(arg_2_0, arg_2_1)
+	table.insert(arg_2_0.nodes, arg_2_1)
+	arg_2_0.redDotMgr:RegisterRedDotNode(arg_2_1)
+	arg_2_1:RefreshSelf()
 end
 
-function slot0.RemoveNode(slot0, slot1)
-	table.removebyvalue(slot0.nodes, slot1)
-	slot0.redDotMgr:UnRegisterRedDotNode(slot1)
+function var_0_0.RemoveNode(arg_3_0, arg_3_1)
+	table.removebyvalue(arg_3_0.nodes, arg_3_1)
+	arg_3_0.redDotMgr:UnRegisterRedDotNode(arg_3_1)
 end
 
-function slot0.Refresh(slot0)
-	for slot4, slot5 in ipairs(slot0.nodes) do
-		if slot5.Resume then
-			slot5:Resume()
+function var_0_0.Refresh(arg_4_0)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.nodes) do
+		if iter_4_1.Resume then
+			iter_4_1:Resume()
 		end
 	end
 
-	slot0.redDotMgr:_NotifyAll()
+	arg_4_0.redDotMgr:_NotifyAll()
 end
 
-function slot0.Disable(slot0)
-	for slot4, slot5 in ipairs(slot0.nodes) do
-		if slot5.Puase then
-			slot5:Puase()
+function var_0_0.Disable(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.nodes) do
+		if iter_5_1.Puase then
+			iter_5_1:Puase()
 		end
 	end
 end
 
-function slot0.GetNotifyType(slot0)
-	if not slot0.listener or #slot0.listener == 0 then
-		slot0.listener = {
+function var_0_0.GetNotifyType(arg_6_0)
+	if not arg_6_0.listener or #arg_6_0.listener == 0 then
+		arg_6_0.listener = {
 			[pg.RedDotMgr.TYPES.ATTIRE] = {
 				GAME.EDUCATE_GET_ENDINGS_DONE
 			},
@@ -139,23 +139,23 @@ function slot0.GetNotifyType(slot0)
 		}
 	end
 
-	return slot0.listener
+	return arg_6_0.listener
 end
 
-function slot0.Notify(slot0, slot1)
-	for slot5, slot6 in pairs(slot0:GetNotifyType()) do
-		for slot10, slot11 in ipairs(slot6) do
-			if slot11 == slot1 then
-				slot0.redDotMgr:NotifyAll(slot5)
+function var_0_0.Notify(arg_7_0, arg_7_1)
+	for iter_7_0, iter_7_1 in pairs(arg_7_0:GetNotifyType()) do
+		for iter_7_2, iter_7_3 in ipairs(iter_7_1) do
+			if iter_7_3 == arg_7_1 then
+				arg_7_0.redDotMgr:NotifyAll(iter_7_0)
 			end
 		end
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0.redDotMgr:UnRegisterRedDotNodes(slot0.nodes)
+function var_0_0.Dispose(arg_8_0)
+	arg_8_0.redDotMgr:UnRegisterRedDotNodes(arg_8_0.nodes)
 
-	slot0.listener = nil
+	arg_8_0.listener = nil
 end
 
-return slot0
+return var_0_0

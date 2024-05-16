@@ -1,68 +1,67 @@
-slot0 = class("GalleryFullScreenLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("GalleryFullScreenLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GalleryViewUI"
 end
 
-function slot0.init(slot0)
-	slot0:findUI()
-	slot0:initData()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:findUI()
+	arg_2_0:initData()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
-	slot0:updatePicImg()
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf)
+	arg_3_0:updatePicImg()
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0._tf)
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.isShowing then
-		slot0:closeView()
+function var_0_0.onBackPressed(arg_5_0)
+	if not arg_5_0.isShowing then
+		arg_5_0:closeView()
 	end
 end
 
-function slot0.findUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.picImg = slot0:findTF("Pic")
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.bg = arg_6_0:findTF("BG")
+	arg_6_0.picImg = arg_6_0:findTF("Pic")
 end
 
-function slot0.initData(slot0)
-	slot0.picID = slot0.contextData.picID
+function var_0_0.initData(arg_7_0)
+	arg_7_0.picID = arg_7_0.contextData.picID
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.bg, function ()
-		if not uv0.isShowing then
-			uv0:closeView()
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.bg, function()
+		if not arg_8_0.isShowing then
+			arg_8_0:closeView()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.picImg, function ()
-		if not uv0.isShowing then
-			uv0:closeView()
+	onButton(arg_8_0, arg_8_0.picImg, function()
+		if not arg_8_0.isShowing then
+			arg_8_0:closeView()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.updatePicImg(slot0)
-	slot2 = pg.gallery_config[slot0.picID].illustration
+function var_0_0.updatePicImg(arg_11_0)
+	local var_11_0 = pg.gallery_config[arg_11_0.picID].illustration
+	local var_11_1 = GalleryConst.PIC_PATH_PREFIX .. var_11_0
 
-	setImageSprite(slot0.picImg, LoadSprite(GalleryConst.PIC_PATH_PREFIX .. slot2, slot2))
+	setImageSprite(arg_11_0.picImg, LoadSprite(var_11_1, var_11_0))
 
-	slot0.isShowing = true
-	slot4 = LeanTween.value(go(slot0.picImg), 0, 1, 0.3)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
-		setImageAlpha(uv0.picImg, slot0)
-	end))
+	arg_11_0.isShowing = true
 
-	slot4:setOnComplete(System.Action(function ()
-		uv0.isShowing = false
+	LeanTween.value(go(arg_11_0.picImg), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg_12_0)
+		setImageAlpha(arg_11_0.picImg, arg_12_0)
+	end)):setOnComplete(System.Action(function()
+		arg_11_0.isShowing = false
 
-		setImageAlpha(uv0.picImg, 1)
+		setImageAlpha(arg_11_0.picImg, 1)
 	end))
 end
 
-return slot0
+return var_0_0

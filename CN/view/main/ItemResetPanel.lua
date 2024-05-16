@@ -1,104 +1,98 @@
-slot0 = class("ItemResetPanel")
-slot0.SINGLE = 1
-slot0.BATCH = 2
-slot0.INFO = 3
-slot0.SEE = 4
+﻿local var_0_0 = class("ItemResetPanel")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	pg.DelegateInfo.New(slot0)
+var_0_0.SINGLE = 1
+var_0_0.BATCH = 2
+var_0_0.INFO = 3
+var_0_0.SEE = 4
 
-	slot0._parent = slot2
-	slot0._go = slot1
-	slot0._tf = tf(slot1)
-	slot5 = slot0._tf
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	onButton(slot0, slot5:Find("bg"), function ()
-		uv0:Close()
+	arg_1_0._parent = arg_1_2
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = tf(arg_1_1)
+
+	onButton(arg_1_0, arg_1_0._tf:Find("bg"), function()
+		arg_1_0:Close()
 	end, SFX_PANEL)
-	setActive(slot0._go, false)
+	setActive(arg_1_0._go, false)
 
-	slot3 = slot0._tf
-	slot0.backBtn = slot3:Find("window/top/btnBack")
+	arg_1_0.backBtn = arg_1_0._tf:Find("window/top/btnBack")
 
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:Close()
+	onButton(arg_1_0, arg_1_0.backBtn, function()
+		arg_1_0:Close()
 	end, SFX_PANEL)
 
-	slot3 = slot0._tf
-	slot0.infoPanel = slot3:Find("window/panel/info")
-	slot3 = slot0._tf
-	slot0.fromListPanel = slot3:Find("window/panel/list")
-	slot4 = slot0.fromListPanel
-	slot5 = slot0.fromListPanel
-	slot0.fromItemList = UIItemList.New(slot4:Find("view/content"), slot5:Find("view/content/item"))
-	slot3 = slot0.fromItemList
+	arg_1_0.infoPanel = arg_1_0._tf:Find("window/panel/info")
+	arg_1_0.fromListPanel = arg_1_0._tf:Find("window/panel/list")
+	arg_1_0.fromItemList = UIItemList.New(arg_1_0.fromListPanel:Find("view/content"), arg_1_0.fromListPanel:Find("view/content/item"))
 
-	slot3:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_1_0.fromItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		arg_4_1 = arg_4_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.infoList[slot1]
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_1_0.infoList[arg_4_1]
 
-			setActive(slot2:Find("from"), slot3)
-			setActive(slot2:Find("nothing"), not slot3)
+			setActive(arg_4_2:Find("from"), var_4_0)
+			setActive(arg_4_2:Find("nothing"), not var_4_0)
 
-			if slot3 then
-				setText(slot2:Find("from/Text"), pg.world_item_data_origin[slot3].origin_text)
+			if var_4_0 then
+				setText(arg_4_2:Find("from/Text"), pg.world_item_data_origin[var_4_0].origin_text)
 			end
 		end
 	end)
 end
 
-function slot0.Open(slot0, slot1)
-	slot0.itemVO = WorldItem.New(slot1)
+function var_0_0.Open(arg_5_0, arg_5_1)
+	arg_5_0.itemVO = WorldItem.New(arg_5_1)
 
-	slot0:Update(slot0.itemVO)
-	setActive(slot0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	arg_5_0:Update(arg_5_0.itemVO)
+	setActive(arg_5_0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
 end
 
-function slot0.Close(slot0)
-	slot0.itemVO = nil
+function var_0_0.Close(arg_6_0)
+	arg_6_0.itemVO = nil
 
-	setActive(slot0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parent)
+	setActive(arg_6_0._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_6_0._tf, arg_6_0._parent)
 end
 
-function slot0.Update(slot0, slot1)
-	slot2 = Drop.New({
-		type = slot1.type,
-		id = slot1.id,
-		count = slot1.count
+function var_0_0.Update(arg_7_0, arg_7_1)
+	local var_7_0 = Drop.New({
+		type = arg_7_1.type,
+		id = arg_7_1.id,
+		count = arg_7_1.count
 	})
-	slot3 = nil
+	local var_7_1
 
-	if slot1:getConfig("item_transform_item_type") > 0 then
-		slot2.count = slot1:getConfig("item_transform_num")
-		slot3 = Drop.New({
-			type = slot1:getConfig("item_transform_item_type"),
-			id = slot1:getConfig("item_transform_item_id"),
-			count = slot1:getConfig("item_transform_item_number")
+	if arg_7_1:getConfig("item_transform_item_type") > 0 then
+		var_7_0.count = arg_7_1:getConfig("item_transform_num")
+		var_7_1 = Drop.New({
+			type = arg_7_1:getConfig("item_transform_item_type"),
+			id = arg_7_1:getConfig("item_transform_item_id"),
+			count = arg_7_1:getConfig("item_transform_item_number")
 		})
 	end
 
-	setText(slot0.infoPanel:Find("top_text"), i18n("world_item_recycle_" .. (slot3 and 1 or 2)))
-	setText(slot0.infoPanel:Find("bottom_text"), i18n("world_item_origin"))
-	updateDrop(slot0.infoPanel:Find("before"), slot2)
-	updateDrop(slot0.infoPanel:Find("after"), defaultValue(slot3, slot2))
-	setActive(slot0.infoPanel:Find("after/destroy_mask"), not slot3)
+	setText(arg_7_0.infoPanel:Find("top_text"), i18n("world_item_recycle_" .. (var_7_1 and 1 or 2)))
+	setText(arg_7_0.infoPanel:Find("bottom_text"), i18n("world_item_origin"))
+	updateDrop(arg_7_0.infoPanel:Find("before"), var_7_0)
+	updateDrop(arg_7_0.infoPanel:Find("after"), defaultValue(var_7_1, var_7_0))
+	setActive(arg_7_0.infoPanel:Find("after/destroy_mask"), not var_7_1)
 
-	slot0.infoList = slot1:getConfig("item_origin")
+	arg_7_0.infoList = arg_7_1:getConfig("item_origin")
 
-	if #slot0.infoList == 0 then
-		table.insert(slot0.infoList, 1)
+	if #arg_7_0.infoList == 0 then
+		table.insert(arg_7_0.infoList, 1)
 	end
 
-	slot0.fromItemList:align(math.max(#slot0.infoList, 3))
+	arg_7_0.fromItemList:align(math.max(#arg_7_0.infoList, 3))
 end
 
-function slot0.Dispose(slot0)
-	slot0:Close()
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_8_0)
+	arg_8_0:Close()
+	pg.DelegateInfo.Dispose(arg_8_0)
 end
 
-return slot0
+return var_0_0

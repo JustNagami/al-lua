@@ -1,156 +1,167 @@
-slot0 = class("SkinMagazinePage3", import("...base.BaseActivityPage"))
-slot0.EXPAND_WIDTH = 839
-slot0.CLOSE_WIDTH = 146
-slot0.DURATION_PARAMETER = 1500
-slot0.TIP_KEY = "SkinMagazinePage2_tip"
+﻿local var_0_0 = class("SkinMagazinePage3", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.items = slot0._tf:Find("AD/items")
-	slot0.countTf = slot0._tf:Find("AD/task/count")
-	slot0.awardTf = slot0._tf:Find("AD/task/IconTpl")
+var_0_0.EXPAND_WIDTH = 839
+var_0_0.CLOSE_WIDTH = 146
+var_0_0.DURATION_PARAMETER = 1500
+var_0_0.TIP_KEY = "SkinMagazinePage2_tip"
+
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.items = arg_1_0._tf:Find("AD/items")
+	arg_1_0.countTf = arg_1_0._tf:Find("AD/task/count")
+	arg_1_0.awardTf = arg_1_0._tf:Find("AD/task/IconTpl")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskList = slot0.activity:getConfig("config_data")
-	slot0.totalCnt = #slot0.taskList
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.taskProxy = getProxy(TaskProxy)
+	arg_2_0.taskList = arg_2_0.activity:getConfig("config_data")
+	arg_2_0.totalCnt = #arg_2_0.taskList
 end
 
-function slot0.RefreshData(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot0.unlockCnt = (slot1:DiffDay(slot0.activity:getStartTime(), slot1:GetServerTime()) + 1) * slot0.activity:getConfig("config_id")
-	slot0.unlockCnt = math.min(slot0.unlockCnt, slot0.totalCnt)
-	slot0.remainCnt = slot0.totalCnt <= slot0.usedCnt and 0 or slot0.unlockCnt - slot0.usedCnt
+function var_0_0.RefreshData(arg_3_0)
+	local var_3_0 = pg.TimeMgr.GetInstance()
+
+	arg_3_0.unlockCnt = (var_3_0:DiffDay(arg_3_0.activity:getStartTime(), var_3_0:GetServerTime()) + 1) * arg_3_0.activity:getConfig("config_id")
+	arg_3_0.unlockCnt = math.min(arg_3_0.unlockCnt, arg_3_0.totalCnt)
+	arg_3_0.remainCnt = arg_3_0.usedCnt >= arg_3_0.totalCnt and 0 or arg_3_0.unlockCnt - arg_3_0.usedCnt
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.usedCnt = slot0.activity:getData1()
+function var_0_0.OnFirstFlush(arg_4_0)
+	arg_4_0.usedCnt = arg_4_0.activity:getData1()
 
-	slot0:RefreshData()
+	arg_4_0:RefreshData()
+	setText(arg_4_0.awardTf:Find("get/tip/Text"), i18n(var_0_0.TIP_KEY))
 
-	slot4 = uv0.TIP_KEY
+	arg_4_0.index = #arg_4_0.taskList
 
-	setText(slot0.awardTf:Find("get/tip/Text"), i18n(slot4))
-
-	slot0.index = #slot0.taskList
-
-	for slot4 = 1, #slot0.taskList do
-		if not slot0.taskProxy:getTaskVO(slot0.taskList[slot4]):isReceive() then
-			slot0.index = slot4
+	for iter_4_0 = 1, #arg_4_0.taskList do
+		if not arg_4_0.taskProxy:getTaskVO(arg_4_0.taskList[iter_4_0]):isReceive() then
+			arg_4_0.index = iter_4_0
 
 			break
 		end
 	end
 
-	for slot4 = 1, slot0.items.childCount do
-		slot0.items:GetChild(slot4 - 1):GetComponent(typeof(LayoutElement)).preferredWidth = slot4 == slot0.index and uv0.EXPAND_WIDTH or uv0.CLOSE_WIDTH
+	for iter_4_1 = 1, arg_4_0.items.childCount do
+		local var_4_0 = arg_4_0.items:GetChild(iter_4_1 - 1)
 
-		setImageAlpha(slot5:Find("close"), slot4 == slot0.index and 0 or 1)
-		onButton(slot0, slot5, function ()
-			uv0:SelectItem(uv1)
+		var_4_0:GetComponent(typeof(LayoutElement)).preferredWidth = iter_4_1 == arg_4_0.index and var_0_0.EXPAND_WIDTH or var_0_0.CLOSE_WIDTH
+
+		setImageAlpha(var_4_0:Find("close"), iter_4_1 == arg_4_0.index and 0 or 1)
+		onButton(arg_4_0, var_4_0, function()
+			arg_4_0:SelectItem(iter_4_1)
 		end, SFX_PANEL)
 	end
 
-	slot0:UpdateDrop()
+	arg_4_0:UpdateDrop()
 
-	if slot0.activity:getConfig("config_client").firstStory then
-		playStory(slot1)
+	local var_4_1 = arg_4_0.activity:getConfig("config_client").firstStory
+
+	if var_4_1 then
+		playStory(var_4_1)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1 = 0
-	slot2 = {}
+function var_0_0.OnUpdateFlush(arg_6_0)
+	local var_6_0 = 0
+	local var_6_1 = {}
 
-	for slot6, slot7 in ipairs(slot0.taskList) do
-		slot2[slot7] = tobool(slot0.taskProxy:getFinishTaskById(slot7))
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.taskList) do
+		var_6_1[iter_6_1] = tobool(arg_6_0.taskProxy:getFinishTaskById(iter_6_1))
 
-		if slot2[slot7] then
-			slot1 = slot1 + 1
+		if var_6_1[iter_6_1] then
+			var_6_0 = var_6_0 + 1
 		end
 
-		setActive(slot0.items:GetChild(slot6 - 1):Find("got"), slot2[slot7])
+		setActive(arg_6_0.items:GetChild(iter_6_0 - 1):Find("got"), var_6_1[iter_6_1])
 	end
 
-	if slot0.usedCnt ~= slot1 then
-		slot0.usedCnt = slot1
-		slot3 = slot0.activity
-		slot3.data1 = slot0.usedCnt
+	if arg_6_0.usedCnt ~= var_6_0 then
+		arg_6_0.usedCnt = var_6_0
 
-		getProxy(ActivityProxy):updateActivity(slot3)
+		local var_6_2 = arg_6_0.activity
+
+		var_6_2.data1 = arg_6_0.usedCnt
+
+		getProxy(ActivityProxy):updateActivity(var_6_2)
 	end
 
-	slot0:RefreshData()
-	setText(slot0.countTf, slot0.remainCnt)
-	setActive(slot0.awardTf:Find("got"), slot2[slot0.taskList[slot0.index]])
-	setActive(slot0.awardTf:Find("get"), slot0.remainCnt > 0 and not slot3)
+	arg_6_0:RefreshData()
+	setText(arg_6_0.countTf, arg_6_0.remainCnt)
 
-	slot4 = slot0.activity:getConfig("config_client").story
+	local var_6_3 = var_6_1[arg_6_0.taskList[arg_6_0.index]]
 
-	for slot8, slot9 in ipairs(slot0.taskList) do
-		if slot0.taskProxy:getFinishTaskById(slot9) and checkExist(slot4, {
-			slot8
+	setActive(arg_6_0.awardTf:Find("got"), var_6_3)
+	setActive(arg_6_0.awardTf:Find("get"), arg_6_0.remainCnt > 0 and not var_6_3)
+
+	local var_6_4 = arg_6_0.activity:getConfig("config_client").story
+
+	for iter_6_2, iter_6_3 in ipairs(arg_6_0.taskList) do
+		if arg_6_0.taskProxy:getFinishTaskById(iter_6_3) and checkExist(var_6_4, {
+			iter_6_2
 		}, {
 			1
 		}) then
-			playStory(slot4[slot8][1])
+			playStory(var_6_4[iter_6_2][1])
 		end
 	end
 end
 
-function slot0.SelectItem(slot0, slot1)
-	if slot0.index == slot1 then
+function var_0_0.SelectItem(arg_7_0, arg_7_1)
+	if arg_7_0.index == arg_7_1 then
 		return
 	end
 
-	slot0.index = slot1
-	slot2 = ipairs
-	slot3 = slot0.LTList or {}
+	arg_7_0.index = arg_7_1
 
-	for slot5, slot6 in slot2(slot3) do
-		LeanTween.cancel(slot6)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.LTList or {}) do
+		LeanTween.cancel(iter_7_1)
 	end
 
-	slot0.LTList = {}
+	arg_7_0.LTList = {}
 
-	for slot5 = 1, slot0.items.childCount do
-		if slot0.items:GetChild(slot5 - 1):GetComponent(typeof(LayoutElement)).preferredWidth ~= (slot5 == slot1 and uv0.EXPAND_WIDTH or uv0.CLOSE_WIDTH) then
-			table.insert(slot0.LTList, LeanTween.value(go(slot6), slot8, slot9, math.abs(slot9 - slot8) / uv0.DURATION_PARAMETER):setEase(LeanTweenType.easeOutSine):setOnUpdate(System.Action_float(function (slot0)
-				uv0.preferredWidth = slot0
+	for iter_7_2 = 1, arg_7_0.items.childCount do
+		local var_7_0 = arg_7_0.items:GetChild(iter_7_2 - 1)
+		local var_7_1 = var_7_0:GetComponent(typeof(LayoutElement))
+		local var_7_2 = var_7_1.preferredWidth
+		local var_7_3 = iter_7_2 == arg_7_1 and var_0_0.EXPAND_WIDTH or var_0_0.CLOSE_WIDTH
+
+		if var_7_2 ~= var_7_3 then
+			local var_7_4 = math.abs(var_7_3 - var_7_2) / var_0_0.DURATION_PARAMETER
+
+			table.insert(arg_7_0.LTList, LeanTween.value(go(var_7_0), var_7_2, var_7_3, var_7_4):setEase(LeanTweenType.easeOutSine):setOnUpdate(System.Action_float(function(arg_8_0)
+				var_7_1.preferredWidth = arg_8_0
 			end)).uniqueId)
-			table.insert(slot0.LTList, LeanTween.alpha(slot6:Find("close"), slot5 == slot1 and 0 or 1, slot10):setEase(LeanTweenType.easeOutSine).uniqueId)
+			table.insert(arg_7_0.LTList, LeanTween.alpha(var_7_0:Find("close"), iter_7_2 == arg_7_1 and 0 or 1, var_7_4):setEase(LeanTweenType.easeOutSine).uniqueId)
 		end
 	end
 
-	slot0:UpdateDrop()
+	arg_7_0:UpdateDrop()
 end
 
-function slot0.UpdateDrop(slot0)
-	slot1 = slot0.taskProxy:getTaskVO(slot0.taskList[slot0.index])
-	slot3, slot4, slot5 = unpack(slot1:getConfig("award_display")[1])
+function var_0_0.UpdateDrop(arg_9_0)
+	local var_9_0 = arg_9_0.taskProxy:getTaskVO(arg_9_0.taskList[arg_9_0.index])
+	local var_9_1 = {}
 
-	updateDrop(slot0.awardTf, {
-		count = slot5,
-		id = slot4,
-		type = slot3
-	})
-	onButton(slot0, slot0.awardTf:Find("get"), function ()
-		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+	var_9_1.type, var_9_1.id, var_9_1.count = unpack(var_9_0:getConfig("award_display")[1])
+
+	updateDrop(arg_9_0.awardTf, var_9_1)
+	onButton(arg_9_0, arg_9_0.awardTf:Find("get"), function()
+		arg_9_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_9_0)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.awardTf, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	onButton(arg_9_0, arg_9_0.awardTf, function()
+		arg_9_0:emit(BaseUI.ON_DROP, var_9_1)
 	end)
-	setActive(slot0.awardTf:Find("got"), slot1:isReceive())
-	setActive(slot0.awardTf:Find("get"), slot0.remainCnt > 0 and not slot3)
+
+	local var_9_2 = var_9_0:isReceive()
+
+	setActive(arg_9_0.awardTf:Find("got"), var_9_2)
+	setActive(arg_9_0.awardTf:Find("get"), arg_9_0.remainCnt > 0 and not var_9_2)
 end
 
-function slot0.OnDestroy(slot0)
-	slot1 = ipairs
-	slot2 = slot0.LTList or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		LeanTween.cancel(slot5)
+function var_0_0.OnDestroy(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.LTList or {}) do
+		LeanTween.cancel(iter_12_1)
 	end
 end
 
-return slot0
+return var_0_0

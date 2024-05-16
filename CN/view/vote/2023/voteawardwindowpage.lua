@@ -1,128 +1,137 @@
-slot0 = class("VoteAwardWindowPage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("VoteAwardWindowPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "VoteAwardWindowUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.currToggle = slot0:findTF("frame/toggle/curr")
-	slot0.accToggle = slot0:findTF("frame/toggle/acc")
-	slot0.ptWindow = VoteAwardPtWindow.New(slot0._tf, slot0)
-	slot0.closeBtn = slot0._tf:Find("frame/close")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.currToggle = arg_2_0:findTF("frame/toggle/curr")
+	arg_2_0.accToggle = arg_2_0:findTF("frame/toggle/acc")
+	arg_2_0.ptWindow = VoteAwardPtWindow.New(arg_2_0._tf, arg_2_0)
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
 
-	setText(slot0:findTF("frame/title/Text"), i18n("vote_lable_window_title"))
-	setText(slot0:findTF("frame/panel/list/tpl/award1/mask/Text"), i18n("vote_lable_rearch"))
-	setText(slot0:findTF("frame/panel/list/tpl/award/mask/Text"), i18n("vote_lable_rearch"))
+	setText(arg_2_0:findTF("frame/title/Text"), i18n("vote_lable_window_title"))
+	setText(arg_2_0:findTF("frame/panel/list/tpl/award1/mask/Text"), i18n("vote_lable_rearch"))
+	setText(arg_2_0:findTF("frame/panel/list/tpl/award/mask/Text"), i18n("vote_lable_rearch"))
 end
 
-function slot0.OnInit(slot0)
-	onToggle(slot0, slot0.currToggle, function (slot0)
-		slot1 = uv0.currPtData
+function var_0_0.OnInit(arg_3_0)
+	onToggle(arg_3_0, arg_3_0.currToggle, function(arg_4_0)
+		local var_4_0 = arg_3_0.currPtData
 
-		if slot0 and slot1 then
-			uv0.ptWindow:Show({
+		if arg_4_0 and var_4_0 then
+			arg_3_0.ptWindow:Show({
 				type = VoteAwardPtWindow.TYPE_CURR,
-				dropList = slot1.dropList,
-				targets = slot1.targets,
-				level = slot1.level,
-				count = slot1.count
+				dropList = var_4_0.dropList,
+				targets = var_4_0.targets,
+				level = var_4_0.level,
+				count = var_4_0.count
 			})
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.accToggle, function (slot0)
-		slot1 = uv0.accPtData
+	onToggle(arg_3_0, arg_3_0.accToggle, function(arg_5_0)
+		local var_5_0 = arg_3_0.accPtData
 
-		if slot0 and slot1 then
-			uv0.ptWindow:Show({
+		if arg_5_0 and var_5_0 then
+			arg_3_0.ptWindow:Show({
 				type = VoteAwardPtWindow.TYPE_ACC,
-				dropList = slot1.dropList,
-				targets = slot1.targets,
-				level = slot1.level,
-				count = slot1.count
+				dropList = var_5_0.dropList,
+				targets = var_5_0.targets,
+				level = var_5_0.level,
+				count = var_5_0.count
 			})
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_8_0)
+	var_0_0.super.Show(arg_8_0)
 
-	slot0.currPtData = slot0:GenCurrPtData()
-	slot0.accPtData = slot0:GenAccPtData()
-	slot1 = slot0.currPtData ~= nil and #slot0.currPtData.targets > 0
+	arg_8_0.currPtData = arg_8_0:GenCurrPtData()
+	arg_8_0.accPtData = arg_8_0:GenAccPtData()
 
-	setActive(slot0.currToggle, slot1)
+	local var_8_0 = arg_8_0.currPtData ~= nil and #arg_8_0.currPtData.targets > 0
 
-	if slot1 then
-		triggerToggle(slot0.currToggle, true)
+	setActive(arg_8_0.currToggle, var_8_0)
+
+	if var_8_0 then
+		triggerToggle(arg_8_0.currToggle, true)
 	else
-		triggerToggle(slot0.accToggle, true)
+		triggerToggle(arg_8_0.accToggle, true)
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_9_0)
+	var_0_0.super.Hide(arg_9_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf, arg_9_0._parentTf)
 end
 
-function slot0.GenCurrPtData(slot0)
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VOTE) and not slot1:isEnd() then
-		slot4 = {}
-		slot5 = {}
+function var_0_0.GenCurrPtData(arg_10_0)
+	local var_10_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VOTE)
 
-		for slot9, slot10 in ipairs(pg.activity_vote[slot1:getConfig("config_id")].period_reward) do
-			table.insert(slot5, slot10[1])
+	if var_10_0 and not var_10_0:isEnd() then
+		local var_10_1 = var_10_0:getConfig("config_id")
+		local var_10_2 = pg.activity_vote[var_10_1]
+		local var_10_3 = {}
+		local var_10_4 = {}
+
+		for iter_10_0, iter_10_1 in ipairs(var_10_2.period_reward) do
+			table.insert(var_10_4, iter_10_1[1])
 		end
 
-		for slot9, slot10 in ipairs(slot3.period_reward_display) do
-			table.insert(slot4, slot10)
+		for iter_10_2, iter_10_3 in ipairs(var_10_2.period_reward_display) do
+			table.insert(var_10_3, iter_10_3)
 		end
 
-		slot6 = slot1.data2
-		slot7 = 0
+		local var_10_5 = var_10_0.data2
+		local var_10_6 = 0
 
-		for slot11, slot12 in pairs(slot5) do
-			if slot12 <= slot6 then
-				slot7 = slot11
+		for iter_10_4, iter_10_5 in pairs(var_10_4) do
+			if iter_10_5 <= var_10_5 then
+				var_10_6 = iter_10_4
 			end
 		end
 
 		return {
 			type = VoteAwardPtWindow.TYPE_CURR,
-			dropList = slot4,
-			targets = slot5,
-			level = slot7,
-			count = slot6
+			dropList = var_10_3,
+			targets = var_10_4,
+			level = var_10_6,
+			count = var_10_5
 		}
 	end
 end
 
-function slot0.GenAccPtData(slot0)
-	slot1 = nil
+function var_0_0.GenAccPtData(arg_11_0)
+	local var_11_0
+	local var_11_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
 
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID) and not slot2:isEnd() then
-		slot1 = ActivityPtData.New(getProxy(ActivityProxy):getActivityById(slot2:getConfig("config_client")[1]))
+	if var_11_1 and not var_11_1:isEnd() then
+		local var_11_2 = var_11_1:getConfig("config_client")[1]
+		local var_11_3 = getProxy(ActivityProxy):getActivityById(var_11_2)
+
+		var_11_0 = ActivityPtData.New(var_11_3)
 	end
 
-	return slot1
+	return var_11_0
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0:isShowing() then
-		slot0:Hide()
+function var_0_0.OnDestroy(arg_12_0)
+	if arg_12_0:isShowing() then
+		arg_12_0:Hide()
 	end
 
-	if slot0.ptWindow then
-		slot0.ptWindow = nil
+	if arg_12_0.ptWindow then
+		arg_12_0.ptWindow = nil
 	end
 end
 
-return slot0
+return var_0_0

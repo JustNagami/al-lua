@@ -1,183 +1,192 @@
-ys = ys or {}
-slot0 = ys
-slot2 = slot0.Battle.BattleConst.ActionName
-slot0.Battle.AntiSubState = class("AntiSubState")
-slot0.Battle.AntiSubState.__name = "AntiSubState"
-slot3 = slot0.Battle.AntiSubState
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._client = slot1
-	slot0._calmState = uv0.Battle.CalmAntiSubState.New()
-	slot0._suspiciousState = uv0.Battle.SuspiciousAntiSubState.New()
-	slot0._vigilantState = uv0.Battle.VigilantAntiSubState.New()
-	slot0._engageState = uv0.Battle.EngageAntiSubState.New()
-	slot0._currentState = slot0._calmState
-	slot0._vigilantValue = 0
-	slot0._vigilantDecayTimeStamp = nil
-	slot0._decayFlag = false
-	slot0._engageRage = false
-	slot0._lastSonarDected = false
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst.ActionName
+
+var_0_0.Battle.AntiSubState = class("AntiSubState")
+var_0_0.Battle.AntiSubState.__name = "AntiSubState"
+
+local var_0_2 = var_0_0.Battle.AntiSubState
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._client = arg_1_1
+	arg_1_0._calmState = var_0_0.Battle.CalmAntiSubState.New()
+	arg_1_0._suspiciousState = var_0_0.Battle.SuspiciousAntiSubState.New()
+	arg_1_0._vigilantState = var_0_0.Battle.VigilantAntiSubState.New()
+	arg_1_0._engageState = var_0_0.Battle.EngageAntiSubState.New()
+	arg_1_0._currentState = arg_1_0._calmState
+	arg_1_0._vigilantValue = 0
+	arg_1_0._vigilantDecayTimeStamp = nil
+	arg_1_0._decayFlag = false
+	arg_1_0._engageRage = false
+	arg_1_0._lastSonarDected = false
 end
 
-function slot3.Update(slot0, slot1, slot2)
-	if slot2 > 0 and slot0:checkDecayRage() then
-		slot0:OnEngageState()
+function var_0_2.Update(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_2 > 0 and arg_2_0:checkDecayRage() then
+		arg_2_0:OnEngageState()
 	end
 
-	if slot1 + slot2 > 0 then
-		slot0:resetVigilantDecay()
+	if arg_2_1 + arg_2_2 > 0 then
+		arg_2_0:resetVigilantDecay()
 	end
 
-	slot3 = pg.TimeMgr.GetInstance():GetCombatTime()
+	local var_2_0 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if slot0._vigilantDecayTimeStamp then
-		slot0:updateVigilantDecay(slot3)
-	elseif slot0._currentState:CanDecay() and slot1 + slot2 == 0 then
-		slot0._vigilantDecayTimeStamp = slot3
+	if arg_2_0._vigilantDecayTimeStamp then
+		arg_2_0:updateVigilantDecay(var_2_0)
+	elseif arg_2_0._currentState:CanDecay() and arg_2_1 + arg_2_2 == 0 then
+		arg_2_0._vigilantDecayTimeStamp = var_2_0
 	end
 
-	slot4 = slot0._currentState:GetMeterSpeed()
+	local var_2_1 = arg_2_0._currentState:GetMeterSpeed()
 
-	if slot0._decayFlag then
-		slot4 = math.min(0, slot4)
+	if arg_2_0._decayFlag then
+		var_2_1 = math.min(0, var_2_1)
 	end
 
-	slot0._vigilantValue = math.clamp(slot0._vigilantValue + slot4, 0, 100)
+	arg_2_0._vigilantValue = math.clamp(arg_2_0._vigilantValue + var_2_1, 0, 100)
 
-	if slot0._vigilantValue >= 100 and slot0._currentState ~= slot0._engageState then
-		slot0:OnEngageState()
-	end
-end
-
-function slot3.updateVigilantDecay(slot0, slot1)
-	if slot0._currentState:DecayDuration() <= slot1 - slot0._vigilantDecayTimeStamp then
-		slot0._vigilantValue = slot0._vigilantValue - 0.01
-
-		slot0._currentState:ToPreLevel(slot0)
-
-		slot0._decayFlag = true
+	if arg_2_0._vigilantValue >= 100 and arg_2_0._currentState ~= arg_2_0._engageState then
+		arg_2_0:OnEngageState()
 	end
 end
 
-function slot3.resetVigilantDecay(slot0)
-	slot0._vigilantDecayTimeStamp = nil
-	slot0._decayFlag = false
-end
+function var_0_2.updateVigilantDecay(arg_3_0, arg_3_1)
+	if arg_3_1 - arg_3_0._vigilantDecayTimeStamp >= arg_3_0._currentState:DecayDuration() then
+		arg_3_0._vigilantValue = arg_3_0._vigilantValue - 0.01
 
-function slot3.checkDecayRage(slot0)
-	return slot0._vigilantDecayTimeStamp and slot0._engageRage
-end
+		arg_3_0._currentState:ToPreLevel(arg_3_0)
 
-function slot3.HateChain(slot0)
-	slot0:resetVigilantDecay()
-	slot0._currentState:OnHateChain(slot0)
-end
-
-function slot3.InitCheck(slot0, slot1)
-	if slot1 > 0 then
-		slot0:SubmarineFloat()
+		arg_3_0._decayFlag = true
 	end
 end
 
-function slot3.MineExplode(slot0)
-	if slot0:checkDecayRage() then
-		slot0:OnEngageState()
+function var_0_2.resetVigilantDecay(arg_4_0)
+	arg_4_0._vigilantDecayTimeStamp = nil
+	arg_4_0._decayFlag = false
+end
+
+function var_0_2.checkDecayRage(arg_5_0)
+	return arg_5_0._vigilantDecayTimeStamp and arg_5_0._engageRage
+end
+
+function var_0_2.HateChain(arg_6_0)
+	arg_6_0:resetVigilantDecay()
+	arg_6_0._currentState:OnHateChain(arg_6_0)
+end
+
+function var_0_2.InitCheck(arg_7_0, arg_7_1)
+	if arg_7_1 > 0 then
+		arg_7_0:SubmarineFloat()
+	end
+end
+
+function var_0_2.MineExplode(arg_8_0)
+	if arg_8_0:checkDecayRage() then
+		arg_8_0:OnEngageState()
 
 		return
 	end
 
-	slot0:resetVigilantDecay()
-	slot0._currentState:OnMineExplode(slot0)
+	arg_8_0:resetVigilantDecay()
+	arg_8_0._currentState:OnMineExplode(arg_8_0)
 end
 
-function slot3.SubmarineFloat(slot0)
-	if slot0:checkDecayRage() then
-		slot0:OnEngageState()
+function var_0_2.SubmarineFloat(arg_9_0)
+	if arg_9_0:checkDecayRage() then
+		arg_9_0:OnEngageState()
 
 		return
 	end
 
-	slot0:resetVigilantDecay()
-	slot0._currentState:OnSubmarinFloat(slot0)
+	arg_9_0:resetVigilantDecay()
+	arg_9_0._currentState:OnSubmarinFloat(arg_9_0)
 end
 
-function slot3.VigilantAreaEngage(slot0)
-	slot0:resetVigilantDecay()
-	slot0._currentState:OnVigilantEngage(slot0)
+function var_0_2.VigilantAreaEngage(arg_10_0)
+	arg_10_0:resetVigilantDecay()
+	arg_10_0._currentState:OnVigilantEngage(arg_10_0)
 end
 
-function slot3.SonarDetect(slot0, slot1)
-	slot0:DispatchSonarCheck()
+function var_0_2.SonarDetect(arg_11_0, arg_11_1)
+	arg_11_0:DispatchSonarCheck()
 
-	slot2 = slot1 > 0
+	local var_11_0 = arg_11_1 > 0
 
-	if slot0._lastSonarDected and slot2 then
-		slot0:OnEngageState()
-	elseif slot2 then
-		slot0:OnVigilantState()
+	if arg_11_0._lastSonarDected and var_11_0 then
+		arg_11_0:OnEngageState()
+	elseif var_11_0 then
+		arg_11_0:OnVigilantState()
 	end
 
-	slot0._lastSonarDected = slot2
+	arg_11_0._lastSonarDected = var_11_0
 end
 
-function slot3.OnCalmState(slot0)
-	slot0:resetVigilantDecay()
+function var_0_2.OnCalmState(arg_12_0)
+	arg_12_0:resetVigilantDecay()
 
-	slot0._currentState = slot0._calmState
-	slot0._engageRage = false
+	arg_12_0._currentState = arg_12_0._calmState
+	arg_12_0._engageRage = false
 
-	slot0:DispatchStateChange()
+	arg_12_0:DispatchStateChange()
 end
 
-function slot3.OnSuspiciousState(slot0)
-	slot0:resetVigilantDecay()
+function var_0_2.OnSuspiciousState(arg_13_0)
+	arg_13_0:resetVigilantDecay()
 
-	slot0._currentState = slot0._suspiciousState
+	arg_13_0._currentState = arg_13_0._suspiciousState
 
-	slot0:DispatchStateChange()
+	arg_13_0:DispatchStateChange()
 end
 
-function slot3.OnVigilantState(slot0)
-	slot0:resetVigilantDecay()
+function var_0_2.OnVigilantState(arg_14_0)
+	arg_14_0:resetVigilantDecay()
 
-	slot0._currentState = slot0._vigilantState
+	arg_14_0._currentState = arg_14_0._vigilantState
 
-	slot0:DispatchStateChange()
+	arg_14_0:DispatchStateChange()
 end
 
-function slot3.OnEngageState(slot0, slot1)
-	slot0:resetVigilantDecay()
+function var_0_2.OnEngageState(arg_15_0, arg_15_1)
+	arg_15_0:resetVigilantDecay()
 
-	slot0._currentState = slot0._engageState
-	slot0._engageRage = true
+	arg_15_0._currentState = arg_15_0._engageState
+	arg_15_0._engageRage = true
 
-	slot0:DispatchStateChange()
+	arg_15_0:DispatchStateChange()
 
-	if not slot1 then
-		slot0:DispatchHateChain()
+	if not arg_15_1 then
+		arg_15_0:DispatchHateChain()
 	end
 end
 
-function slot3.IsWeaponUseable(slot0)
-	return #slot0._currentState:GetWeaponUseable() > 0
+function var_0_2.IsWeaponUseable(arg_16_0)
+	return #arg_16_0._currentState:GetWeaponUseable() > 0
 end
 
-function slot3.GetVigilantRate(slot0)
-	return slot0._vigilantValue * 0.01
+function var_0_2.GetVigilantRate(arg_17_0)
+	return arg_17_0._vigilantValue * 0.01
 end
 
-function slot3.DispatchStateChange(slot0)
-	slot0._client:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.CHANGE_ANTI_SUB_VIGILANCE))
+function var_0_2.DispatchStateChange(arg_18_0)
+	local var_18_0 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.CHANGE_ANTI_SUB_VIGILANCE)
+
+	arg_18_0._client:DispatchEvent(var_18_0)
 end
 
-function slot3.DispatchSonarCheck(slot0)
-	slot0._client:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.ANTI_SUB_VIGILANCE_SONAR_CHECK))
+function var_0_2.DispatchSonarCheck(arg_19_0)
+	local var_19_0 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.ANTI_SUB_VIGILANCE_SONAR_CHECK)
+
+	arg_19_0._client:DispatchEvent(var_19_0)
 end
 
-function slot3.DispatchHateChain(slot0)
-	slot0._client:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.ANTI_SUB_VIGILANCE_HATE_CHAIN))
+function var_0_2.DispatchHateChain(arg_20_0)
+	local var_20_0 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.ANTI_SUB_VIGILANCE_HATE_CHAIN)
+
+	arg_20_0._client:DispatchEvent(var_20_0)
 end
 
-function slot3.GetVigilantMark(slot0)
-	return slot0._currentState:GetWarnMark()
+function var_0_2.GetVigilantMark(arg_21_0)
+	return arg_21_0._currentState:GetWarnMark()
 end

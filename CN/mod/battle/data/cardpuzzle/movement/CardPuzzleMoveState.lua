@@ -1,88 +1,96 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleFormulas
-slot2 = slot0.Battle.BattleConfig
-slot0.Battle.CardPuzzleMoveState = class("CardPuzzleMoveState")
-slot3 = slot0.Battle.CardPuzzleMoveState
-slot3.__name = "CardPuzzleMoveState"
-slot3.STATE_MOVE = "STATE_MOVE"
-slot3.STATE_STAY = "STATE_STAY"
-slot3.STATE_RANDOM = "STATE_RANDOM"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._fleet = slot1
-	slot0._fleetMotion = slot1:GetMotion()
-	slot0._moveToState = uv0.Battle.CardPuzzleMoveToState.New()
-	slot0._stayState = uv0.Battle.CardPuzzleStayState.New()
-	slot0._RandomState = uv0.Battle.CardPuzzleRandomState.New()
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleFormulas
+local var_0_2 = var_0_0.Battle.BattleConfig
 
-	slot0:OnStayState()
+var_0_0.Battle.CardPuzzleMoveState = class("CardPuzzleMoveState")
+
+local var_0_3 = var_0_0.Battle.CardPuzzleMoveState
+
+var_0_3.__name = "CardPuzzleMoveState"
+var_0_3.STATE_MOVE = "STATE_MOVE"
+var_0_3.STATE_STAY = "STATE_STAY"
+var_0_3.STATE_RANDOM = "STATE_RANDOM"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._fleet = arg_1_1
+	arg_1_0._fleetMotion = arg_1_1:GetMotion()
+	arg_1_0._moveToState = var_0_0.Battle.CardPuzzleMoveToState.New()
+	arg_1_0._stayState = var_0_0.Battle.CardPuzzleStayState.New()
+	arg_1_0._RandomState = var_0_0.Battle.CardPuzzleRandomState.New()
+
+	arg_1_0:OnStayState()
 end
 
-function slot3.SetReferencePoint(slot0, slot1)
-	slot0._currentReferencePoint = slot1
+function var_0_3.SetReferencePoint(arg_2_0, arg_2_1)
+	arg_2_0._currentReferencePoint = arg_2_1
 end
 
-function slot3.ChangeState(slot0, slot1)
-	slot0._currentState[uv0.Battle.CardPuzzleIMoveState.ADD_STATE_TABLE[slot1]](slot0._currentState, slot0)
+function var_0_3.ChangeState(arg_3_0, arg_3_1)
+	local var_3_0 = var_0_0.Battle.CardPuzzleIMoveState.ADD_STATE_TABLE[arg_3_1]
+
+	arg_3_0._currentState[var_3_0](arg_3_0._currentState, arg_3_0)
 end
 
-function slot3.Update(slot0)
-	slot0._currentState:Update()
+function var_0_3.Update(arg_4_0)
+	arg_4_0._currentState:Update()
 
-	if slot0._currentState:IsFinish(slot0) then
-		if slot0._currentState == slot0._moveToState then
-			slot0._callback()
+	if arg_4_0._currentState:IsFinish(arg_4_0) then
+		if arg_4_0._currentState == arg_4_0._moveToState then
+			arg_4_0._callback()
 
-			slot0._callback = nil
+			arg_4_0._callback = nil
 		end
 
-		slot0:ChangeState(slot0._currentState:NextState())
+		local var_4_0 = arg_4_0._currentState:NextState()
+
+		arg_4_0:ChangeState(var_4_0)
 	end
 end
 
-function slot3.FinishCallback(slot0, slot1)
-	slot0._callback = slot1
+function var_0_3.FinishCallback(arg_5_0, arg_5_1)
+	arg_5_0._callback = arg_5_1
 end
 
-function slot3.GetFleetPosition(slot0)
-	return slot0._fleetMotion:GetPos()
+function var_0_3.GetFleetPosition(arg_6_0)
+	return arg_6_0._fleetMotion:GetPos()
 end
 
-function slot3.GetDistance(slot0)
-	return slot0._currentReferencePoint - slot0:GetFleetPosition()
+function var_0_3.GetDistance(arg_7_0)
+	return arg_7_0._currentReferencePoint - arg_7_0:GetFleetPosition()
 end
 
-function slot3.GetDirection(slot0)
-	slot1, slot2 = slot0._currentState:GetOutput(slot0)
+function var_0_3.GetDirection(arg_8_0)
+	local var_8_0, var_8_1 = arg_8_0._currentState:GetOutput(arg_8_0)
 
-	return slot1, slot2
+	return var_8_0, var_8_1
 end
 
-function slot3.GetStateChangeTimeStamp(slot0)
-	return slot0._stateChangeTimeStamp
+function var_0_3.GetStateChangeTimeStamp(arg_9_0)
+	return arg_9_0._stateChangeTimeStamp
 end
 
-function slot3.OnMoveToState(slot0)
-	slot0._currentState = slot0._moveToState
+function var_0_3.OnMoveToState(arg_10_0)
+	arg_10_0._currentState = arg_10_0._moveToState
 
-	slot0:HandleStateChange()
+	arg_10_0:HandleStateChange()
 end
 
-function slot3.OnRandomState(slot0)
-	slot0._currentState = slot0._RandomState
+function var_0_3.OnRandomState(arg_11_0)
+	arg_11_0._currentState = arg_11_0._RandomState
 
-	slot0:HandleStateChange()
+	arg_11_0:HandleStateChange()
 end
 
-function slot3.OnStayState(slot0)
-	slot0._currentState = slot0._stayState
+function var_0_3.OnStayState(arg_12_0)
+	arg_12_0._currentState = arg_12_0._stayState
 
-	slot0:HandleStateChange()
+	arg_12_0:HandleStateChange()
 end
 
-function slot3.HandleStateChange(slot0)
-	slot0._stateChangeTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_3.HandleStateChange(arg_13_0)
+	arg_13_0._stateChangeTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	slot0._currentState:IntputReferencePoint(slot0._currentReferencePoint or slot0:GetFleetPosition())
+	arg_13_0._currentState:IntputReferencePoint(arg_13_0._currentReferencePoint or arg_13_0:GetFleetPosition())
 end

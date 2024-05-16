@@ -1,4 +1,6 @@
-slot0 = rawget
+﻿local var_0_0 = rawget
+local var_0_1 = setmetatable
+
 RaycastBits = {
 	ALL = 31,
 	Collider = 1,
@@ -7,72 +9,82 @@ RaycastBits = {
 	Normal = 2,
 	Rigidbody = 8
 }
-slot2 = RaycastBits
-slot3 = {}
-slot4 = tolua.initget(slot3)
 
-function slot3.__index(slot0, slot1)
-	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
-		return slot2(slot0)
-	end
+local var_0_2 = RaycastBits
+local var_0_3 = {}
+local var_0_4 = tolua.initget(var_0_3)
 
-	return slot2
-end
+function var_0_3.__index(arg_1_0, arg_1_1)
+	local var_1_0 = var_0_0(var_0_3, arg_1_1)
 
-function slot3.New(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = {
-		collider = slot0,
-		distance = slot1,
-		normal = slot2,
-		point = slot3,
-		rigidbody = slot4,
-		transform = slot5
-	}
+	if var_1_0 == nil then
+		var_1_0 = var_0_0(var_0_4, arg_1_1)
 
-	uv0(slot6, uv1)
-
-	return slot6
-end
-
-function slot3.Init(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0.collider = slot1
-	slot0.distance = slot2
-	slot0.normal = slot3
-	slot0.point = slot4
-	slot0.rigidbody = slot5
-	slot0.transform = slot6
-end
-
-function slot3.Get(slot0)
-	return slot0.collider, slot0.distance, slot0.normal, slot0.point, slot0.rigidbody, slot0.transform
-end
-
-function slot3.Destroy(slot0)
-	slot0.collider = nil
-	slot0.rigidbody = nil
-	slot0.transform = nil
-end
-
-function slot3.GetMask(...)
-	slot1 = 0
-
-	for slot5 = 1, #{
-		...
-	} do
-		if (uv0[slot0[slot5]] or 0) ~= 0 then
-			slot1 = slot1 + slot6
+		if var_1_0 ~= nil then
+			return var_1_0(arg_1_0)
 		end
 	end
 
-	if slot1 == 0 then
-		slot1 = uv0.all
-	end
-
-	return slot1
+	return var_1_0
 end
 
-UnityEngine.RaycastHit = slot3
+function var_0_3.New(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
+	local var_2_0 = {
+		collider = arg_2_0,
+		distance = arg_2_1,
+		normal = arg_2_2,
+		point = arg_2_3,
+		rigidbody = arg_2_4,
+		transform = arg_2_5
+	}
 
-setmetatable(slot3, slot3)
+	var_0_1(var_2_0, var_0_3)
 
-return slot3
+	return var_2_0
+end
+
+function var_0_3.Init(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5, arg_3_6)
+	arg_3_0.collider = arg_3_1
+	arg_3_0.distance = arg_3_2
+	arg_3_0.normal = arg_3_3
+	arg_3_0.point = arg_3_4
+	arg_3_0.rigidbody = arg_3_5
+	arg_3_0.transform = arg_3_6
+end
+
+function var_0_3.Get(arg_4_0)
+	return arg_4_0.collider, arg_4_0.distance, arg_4_0.normal, arg_4_0.point, arg_4_0.rigidbody, arg_4_0.transform
+end
+
+function var_0_3.Destroy(arg_5_0)
+	arg_5_0.collider = nil
+	arg_5_0.rigidbody = nil
+	arg_5_0.transform = nil
+end
+
+function var_0_3.GetMask(...)
+	local var_6_0 = {
+		...
+	}
+	local var_6_1 = 0
+
+	for iter_6_0 = 1, #var_6_0 do
+		local var_6_2 = var_0_2[var_6_0[iter_6_0]] or 0
+
+		if var_6_2 ~= 0 then
+			var_6_1 = var_6_1 + var_6_2
+		end
+	end
+
+	if var_6_1 == 0 then
+		var_6_1 = var_0_2.all
+	end
+
+	return var_6_1
+end
+
+UnityEngine.RaycastHit = var_0_3
+
+var_0_1(var_0_3, var_0_3)
+
+return var_0_3

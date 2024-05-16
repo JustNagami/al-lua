@@ -1,29 +1,31 @@
-slot0 = class("HololiveMedalCollectionView", import("view.base.BaseUI"))
+﻿local var_0_0 = class("HololiveMedalCollectionView", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "HololiveMedalCollectionUI"
 end
 
-function slot0.init(slot0)
-	slot0:InitData()
-	slot0:FindUI()
-	slot0:AddListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:InitData()
+	arg_2_0:FindUI()
+	arg_2_0:AddListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:UpdateView()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:UpdateView()
 end
 
-function slot0.InitData(slot0)
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.actMedal = getProxy(ActivityProxy):getActivityById(ActivityConst.HOLOLIVE_MEDAL_COLLECTION)
-	slot0.allIDList = slot0.actMedal:getConfig("config_data")
-	slot0.taskGroup = pg.activity_template[ActivityConst.HOLOLIVE_MEDAL_COLLECTION_TASK].config_data
-	slot0.activatableIDList = slot0.actMedal.data1_list
-	slot0.activeIDList = slot0.actMedal.data2_list
+function var_0_0.InitData(arg_4_0)
+	local var_4_0 = getProxy(ActivityProxy)
+
+	arg_4_0.taskProxy = getProxy(TaskProxy)
+	arg_4_0.actMedal = var_4_0:getActivityById(ActivityConst.HOLOLIVE_MEDAL_COLLECTION)
+	arg_4_0.allIDList = arg_4_0.actMedal:getConfig("config_data")
+	arg_4_0.taskGroup = pg.activity_template[ActivityConst.HOLOLIVE_MEDAL_COLLECTION_TASK].config_data
+	arg_4_0.activatableIDList = arg_4_0.actMedal.data1_list
+	arg_4_0.activeIDList = arg_4_0.actMedal.data2_list
 end
 
-slot1 = {
+local var_0_1 = {
 	"mio",
 	"fubuki",
 	"matsuri",
@@ -34,7 +36,7 @@ slot1 = {
 	"purer",
 	"tnt"
 }
-slot2 = {
+local var_0_2 = {
 	1,
 	2,
 	3,
@@ -46,73 +48,77 @@ slot2 = {
 	5
 }
 
-function slot0.FindUI(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.top = slot0:findTF("top")
-	slot0.backBtn = slot0:findTF("back", slot0.top)
-	slot0.helpBtn = slot0:findTF("help", slot0.top)
-	slot0.progressText = slot0:findTF("middle/board/progress")
-	slot0.taskScroll = slot0:findTF("middle/board/Scroll View")
-	slot0.taskScrollBar = slot0:findTF("middle/board/Scrollbar")
-	slot0.taskListItems = CustomIndexLayer.Clone2Full(slot0.taskScroll:Find("Content"), #slot0.taskGroup)
-	slot0.medalListItems = CustomIndexLayer.Clone2Full(slot0:findTF("middle/console/grid"), 9)
-	slot4 = Image
-	slot0.medalImg = slot0:findTF("middle/console/slot"):GetComponent(typeof(slot4))
-	slot0.medalGet = slot0:findTF("middle/console/get")
-	slot0.medalGot = slot0:findTF("middle/console/got")
+function var_0_0.FindUI(arg_5_0)
+	arg_5_0.bg = arg_5_0:findTF("bg")
+	arg_5_0.top = arg_5_0:findTF("top")
+	arg_5_0.backBtn = arg_5_0:findTF("back", arg_5_0.top)
+	arg_5_0.helpBtn = arg_5_0:findTF("help", arg_5_0.top)
+	arg_5_0.progressText = arg_5_0:findTF("middle/board/progress")
+	arg_5_0.taskScroll = arg_5_0:findTF("middle/board/Scroll View")
+	arg_5_0.taskScrollBar = arg_5_0:findTF("middle/board/Scrollbar")
+	arg_5_0.taskListItems = CustomIndexLayer.Clone2Full(arg_5_0.taskScroll:Find("Content"), #arg_5_0.taskGroup)
+	arg_5_0.medalListItems = CustomIndexLayer.Clone2Full(arg_5_0:findTF("middle/console/grid"), 9)
+	arg_5_0.medalImg = arg_5_0:findTF("middle/console/slot"):GetComponent(typeof(Image))
+	arg_5_0.medalGet = arg_5_0:findTF("middle/console/get")
+	arg_5_0.medalGot = arg_5_0:findTF("middle/console/got")
 
-	for slot4 = 1, #slot0.taskGroup do
-		slot5 = LoadSprite("ui/HololiveMedalCollectionUI_atlas", uv0[slot4])
-		slot6 = slot0.taskListItems[slot4]:Find("icon"):GetComponent(typeof(Image))
-		slot6.sprite = slot5
-		slot6.enabled = true
-		slot6 = slot0.medalListItems[uv1[slot4]]:Find("icon"):GetComponent(typeof(Image))
-		slot6.sprite = slot5
-		slot6.enabled = true
+	for iter_5_0 = 1, #arg_5_0.taskGroup do
+		local var_5_0 = LoadSprite("ui/HololiveMedalCollectionUI_atlas", var_0_1[iter_5_0])
+		local var_5_1 = arg_5_0.taskListItems[iter_5_0]:Find("icon"):GetComponent(typeof(Image))
+
+		var_5_1.sprite = var_5_0
+		var_5_1.enabled = true
+
+		local var_5_2 = arg_5_0.medalListItems[var_0_2[iter_5_0]]:Find("icon"):GetComponent(typeof(Image))
+
+		var_5_2.sprite = var_5_0
+		var_5_2.enabled = true
 	end
 
-	slot0.materialGray = LoadAny("ui/HololiveMedalCollectionUI_atlas", "gray.mat")
+	arg_5_0.materialGray = LoadAny("ui/HololiveMedalCollectionUI_atlas", "gray.mat")
 end
 
-function slot0.AddListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+function var_0_0.AddListener(arg_6_0)
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.hololive_dalaozhang.tip
 		})
 	end, SFX_PANEL)
 
-	slot1 = slot0:findTF("middle/board/arrow")
+	local var_6_0 = arg_6_0:findTF("middle/board/arrow")
 
-	onScroll(slot0, slot0.taskScroll, function (slot0)
-		setActive(uv0, slot0.y > 0.001)
+	onScroll(arg_6_0, arg_6_0.taskScroll, function(arg_9_0)
+		setActive(var_6_0, arg_9_0.y > 0.001)
 	end)
-	onButton(slot0, slot0.medalGet, function ()
-		uv0:GetFinal()
+	onButton(arg_6_0, arg_6_0.medalGet, function()
+		arg_6_0:GetFinal()
 	end, SFX_PANEL)
 end
 
-function slot0.DataSetting(slot0)
-	if #slot0.activatableIDList > 0 then
-		slot1 = 1
-		slot2 = nil
+function var_0_0.DataSetting(arg_11_0)
+	if #arg_11_0.activatableIDList > 0 then
+		local var_11_0 = 1
+		local var_11_1
 
-		while #slot0.activatableIDList >= 1 do
-			if not table.contains(slot0.activeIDList, slot0.activatableIDList[slot1]) then
-				slot2 = slot3
+		while #arg_11_0.activatableIDList >= 1 do
+			local var_11_2 = arg_11_0.activatableIDList[var_11_0]
+
+			if not table.contains(arg_11_0.activeIDList, var_11_2) then
+				var_11_1 = var_11_2
 
 				break
 			end
 
-			slot1 = slot1 + 1
+			var_11_0 = var_11_0 + 1
 		end
 
-		if slot2 then
+		if var_11_1 then
 			pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
-				id = slot2,
+				id = var_11_1,
 				actId = ActivityConst.HOLOLIVE_MEDAL_COLLECTION
 			})
 
@@ -121,71 +127,87 @@ function slot0.DataSetting(slot0)
 	end
 end
 
-function slot0.UpdateView(slot0)
-	slot0:InitData()
+function var_0_0.UpdateView(arg_12_0)
+	arg_12_0:InitData()
 
-	if slot0:DataSetting() then
+	if arg_12_0:DataSetting() then
 		return
 	end
 
-	slot1 = #slot0.activeIDList == #slot0.allIDList and slot0.actMedal.data1 ~= 1
-	slot2 = slot0.actMedal.data1 == 1
-	slot3 = 0
+	local var_12_0 = #arg_12_0.activeIDList == #arg_12_0.allIDList and arg_12_0.actMedal.data1 ~= 1
+	local var_12_1 = arg_12_0.actMedal.data1 == 1
+	local var_12_2 = 0
 
-	for slot7 = 1, #slot0.taskGroup do
-		slot8 = slot0.taskListItems[slot7]
-		slot11 = slot0:findTF("btn_go", slot8)
-		slot12 = slot0:findTF("btn_get", slot8)
-		slot13 = slot0:findTF("btn_got", slot8)
-		slot14 = table.contains(slot0.activeIDList, slot0.allIDList[slot7])
-		slot15 = nil
-		slot16 = 0
+	for iter_12_0 = 1, #arg_12_0.taskGroup do
+		local var_12_3 = arg_12_0.taskListItems[iter_12_0]
+		local var_12_4 = arg_12_0.taskGroup[iter_12_0]
+		local var_12_5 = arg_12_0.taskProxy:getTaskVO(var_12_4)
+		local var_12_6 = arg_12_0:findTF("btn_go", var_12_3)
+		local var_12_7 = arg_12_0:findTF("btn_get", var_12_3)
+		local var_12_8 = arg_12_0:findTF("btn_got", var_12_3)
+		local var_12_9 = table.contains(arg_12_0.activeIDList, arg_12_0.allIDList[iter_12_0])
+		local var_12_10
+		local var_12_11 = 0
 
-		if slot0.taskProxy:getTaskVO(slot0.taskGroup[slot7]) then
-			setText(slot0:findTF("desc", slot8), string.gsub(string.gsub(slot10:getConfig("desc"), "$1", slot10:getProgress()), "$2", slot10:getConfig("target_num")))
+		if var_12_5 then
+			local var_12_12 = var_12_5:getProgress()
+			local var_12_13 = var_12_5:getConfig("target_num")
+			local var_12_14 = var_12_5:getConfig("desc")
+			local var_12_15 = string.gsub(var_12_14, "$1", var_12_12)
+			local var_12_16 = string.gsub(var_12_15, "$2", var_12_13)
 
-			slot15 = slot10:getTaskStatus() == 2 and slot0.materialGray or nil
+			setText(arg_12_0:findTF("desc", var_12_3), var_12_16)
 
-			onButton(slot0, slot11, function ()
-				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
+			var_12_11 = var_12_5:getTaskStatus()
+			var_12_10 = var_12_11 == 2 and arg_12_0.materialGray or nil
+
+			onButton(arg_12_0, var_12_6, function()
+				arg_12_0:emit(ActivityMediator.ON_TASK_GO, var_12_5)
 			end, SFX_PANEL)
-			onButton(slot0, slot12, function ()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+			onButton(arg_12_0, var_12_7, function()
+				arg_12_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_12_5)
 			end, SFX_PANEL)
 		else
-			slot17 = pg.task_data_template[slot9].target_num
+			local var_12_17 = pg.task_data_template[var_12_4].target_num
+			local var_12_18 = var_12_9 and var_12_17 or 0
+			local var_12_19 = pg.task_data_template[var_12_4].desc
+			local var_12_20 = string.gsub(var_12_19, "$1", var_12_18)
+			local var_12_21 = string.gsub(var_12_20, "$2", var_12_17)
 
-			setText(slot0:findTF("desc", slot8), string.gsub(string.gsub(pg.task_data_template[slot9].desc, "$1", slot14 and slot17 or 0), "$2", slot17))
+			setText(arg_12_0:findTF("desc", var_12_3), var_12_21)
 
-			slot16 = slot14 and 2 or 0
-			slot15 = slot0.materialGray
+			var_12_11 = var_12_9 and 2 or 0
+			var_12_10 = arg_12_0.materialGray
 
-			onButton(slot0, slot11, function ()
+			onButton(arg_12_0, var_12_6, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			end, SFX_PANEL)
 		end
 
-		setActive(slot11, slot16 == 0)
-		setActive(slot12, slot16 == 1)
-		setActive(slot13, slot16 == 2)
+		setActive(var_12_6, var_12_11 == 0)
+		setActive(var_12_7, var_12_11 == 1)
+		setActive(var_12_8, var_12_11 == 2)
 
-		slot8:GetComponent(typeof(Image)).material = slot15
-		slot8:Find("icon"):GetComponent(typeof(Image)).material = slot15
-		slot0.medalListItems[uv0[slot7]]:Find("icon"):GetComponent(typeof(Image)).enabled = slot14
-		slot18.material = slot2 and slot0.materialGray or nil
-		slot3 = slot3 + (slot16 == 2 and 1 or 0)
+		var_12_3:GetComponent(typeof(Image)).material = var_12_10
+		var_12_3:Find("icon"):GetComponent(typeof(Image)).material = var_12_10
+
+		local var_12_22 = arg_12_0.medalListItems[var_0_2[iter_12_0]]:Find("icon"):GetComponent(typeof(Image))
+
+		var_12_22.enabled = var_12_9
+		var_12_22.material = var_12_1 and arg_12_0.materialGray or nil
+		var_12_2 = var_12_2 + (var_12_11 == 2 and 1 or 0)
 	end
 
-	setText(slot0.progressText, slot3 .. "/9")
+	setText(arg_12_0.progressText, var_12_2 .. "/9")
 
-	slot0.medalImg.material = not slot1 and not slot2 and slot0.materialGray
+	arg_12_0.medalImg.material = not var_12_0 and not var_12_1 and arg_12_0.materialGray
 
-	setActive(slot0.medalGet, slot1)
-	setActive(slot0.medalGot, slot2)
+	setActive(arg_12_0.medalGet, var_12_0)
+	setActive(arg_12_0.medalGot, var_12_1)
 end
 
-function slot0.GetFinal(slot0)
-	if #slot0.activeIDList == #slot0.allIDList and slot0.actMedal.data1 ~= 1 then
+function var_0_0.GetFinal(arg_16_0)
+	if #arg_16_0.activeIDList == #arg_16_0.allIDList and arg_16_0.actMedal.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
 			activity_id = ActivityConst.HOLOLIVE_MEDAL_COLLECTION
@@ -193,38 +215,46 @@ function slot0.GetFinal(slot0)
 	end
 end
 
-function slot0.PlayStory(slot0, slot1)
-	if slot0.actMedal:getConfig("config_client").story then
-		pg.NewStoryMgr.GetInstance():Play(slot2, slot1)
+function var_0_0.PlayStory(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_0.actMedal:getConfig("config_client").story
+
+	if var_17_0 then
+		pg.NewStoryMgr.GetInstance():Play(var_17_0, arg_17_1)
 	else
-		slot1()
+		arg_17_1()
 	end
 end
 
-function slot0.IsTip()
-	slot1 = getProxy(TaskProxy)
+function var_0_0.IsTip()
+	local var_18_0 = getProxy(ActivityProxy)
+	local var_18_1 = getProxy(TaskProxy)
+	local var_18_2 = var_18_0:getActivityById(ActivityConst.HOLOLIVE_MEDAL_COLLECTION)
 
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.HOLOLIVE_MEDAL_COLLECTION) and not slot2:isEnd() then
-		slot3 = slot2:getConfig("config_data")
-		slot5 = slot2.data1_list
-		slot6 = slot2.data2_list
+	if var_18_2 and not var_18_2:isEnd() then
+		local var_18_3 = var_18_2:getConfig("config_data")
+		local var_18_4 = pg.activity_template[ActivityConst.HOLOLIVE_MEDAL_COLLECTION_TASK].config_data
+		local var_18_5 = var_18_2.data1_list
+		local var_18_6 = var_18_2.data2_list
 
-		for slot10, slot11 in ipairs(pg.activity_template[ActivityConst.HOLOLIVE_MEDAL_COLLECTION_TASK].config_data) do
-			if slot1:getTaskVO(slot4[slot10]) and slot13:getTaskStatus() == 1 then
+		for iter_18_0, iter_18_1 in ipairs(var_18_4) do
+			local var_18_7 = var_18_4[iter_18_0]
+			local var_18_8 = var_18_1:getTaskVO(var_18_7)
+
+			if var_18_8 and var_18_8:getTaskStatus() == 1 then
 				return true
 			end
 		end
 
-		for slot10, slot11 in ipairs(slot5) do
-			if not table.contains(slot6, slot11) then
+		for iter_18_2, iter_18_3 in ipairs(var_18_5) do
+			if not table.contains(var_18_6, iter_18_3) then
 				return true
 			end
 		end
 
-		if #slot6 == #slot3 and slot2.data1 ~= 1 then
+		if #var_18_6 == #var_18_3 and var_18_2.data1 ~= 1 then
 			return true
 		end
 	end
 end
 
-return slot0
+return var_0_0

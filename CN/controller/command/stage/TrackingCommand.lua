@@ -1,415 +1,438 @@
-slot0 = class("TrackingCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TrackingCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.chapterId
-	slot4 = slot2.fleetIds
-	slot5 = slot2.operationItem or 0
-	slot6 = slot2.loopFlag or 0
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.chapterId
+	local var_1_2 = var_1_0.fleetIds
+	local var_1_3 = var_1_0.operationItem or 0
+	local var_1_4 = var_1_0.loopFlag or 0
+	local var_1_5 = var_1_0.duties
 
-	if not slot2.duties or slot6 == 0 then
-		slot7 = {}
+	if not var_1_5 or var_1_4 == 0 then
+		var_1_5 = {}
 	end
 
-	slot8 = {}
+	local var_1_6 = {}
 
-	for slot12, slot13 in ipairs(slot7) do
-		table.insert(slot8, {
-			key = slot12,
-			value = slot13
+	for iter_1_0, iter_1_1 in ipairs(var_1_5) do
+		table.insert(var_1_6, {
+			key = iter_1_0,
+			value = iter_1_1
 		})
 	end
 
-	slot9 = getProxy(ChapterProxy)
-	slot10 = slot9:getChapterById(slot3)
-	slot10.loopFlag = slot6
-	slot11 = slot9:getMapById(slot10:getConfig("map"))
-	slot12 = slot9:GetContinuousData(SYSTEM_SCENARIO)
+	local var_1_7 = getProxy(ChapterProxy)
+	local var_1_8 = var_1_7:getChapterById(var_1_1)
+
+	var_1_8.loopFlag = var_1_4
+
+	local var_1_9 = var_1_7:getMapById(var_1_8:getConfig("map"))
+	local var_1_10 = var_1_7:GetContinuousData(SYSTEM_SCENARIO)
 
 	seriesAsync({
-		function (slot0)
-			if uv0:isRemaster() and uv1.remasterTickets <= 0 then
+		function(arg_2_0)
+			if var_1_9:isRemaster() and var_1_7.remasterTickets <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_remaster_tickets_not_enough"))
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			if uv0:isActivity() and not uv0:isRemaster() and not uv3:inActTime() then
+			if var_1_9:isActivity() and not var_1_9:isRemaster() and not var_1_8:inActTime() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_close"))
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			if uv3:isTriesLimit() and not uv3:enoughTimes2Start() then
-				if uv3:IsSpChapter() then
+			if var_1_8:isTriesLimit() and not var_1_8:enoughTimes2Start() then
+				if var_1_8:IsSpChapter() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("sp_no_quota"))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_elite_no_quota"))
 				end
 
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			slot1 = getProxy(DailyLevelProxy)
+			local var_2_0 = getProxy(DailyLevelProxy)
 
-			if uv0:getMapType() == Map.ELITE and not slot1:IsEliteEnabled() then
+			if var_1_9:getMapType() == Map.ELITE and not var_2_0:IsEliteEnabled() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_elite_no_quota"))
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			if uv3.active then
+			if var_1_8.active then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_strategying"))
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			if uv0:isEscort() and uv1:getMaxEscortChallengeTimes() <= uv1.escortChallengeTimes then
+			if var_1_9:isEscort() and var_1_7.escortChallengeTimes >= var_1_7:getMaxEscortChallengeTimes() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("escort_less_count_to_combat"))
-				uv2:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv3
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			slot0()
+			arg_2_0()
 		end,
-		function (slot0)
-			if uv0:getConfig("type") ~= Chapter.CustomFleet then
-				slot0()
+		function(arg_3_0)
+			if var_1_8:getConfig("type") ~= Chapter.CustomFleet then
+				arg_3_0()
 
 				return
 			end
 
-			slot1, slot2 = uv0:IsEliteFleetLegal()
+			local var_3_0, var_3_1 = var_1_8:IsEliteFleetLegal()
 
-			if not slot1 then
-				pg.TipsMgr.GetInstance():ShowTips(slot2)
-				uv1:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv0
+			if not var_3_0 then
+				pg.TipsMgr.GetInstance():ShowTips(var_3_1)
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			if slot2 then
+			if var_3_1 then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					modal = true,
-					content = i18n("elite_fleet_confirm", Fleet.DEFAULT_NAME[slot2]),
-					onYes = slot0
+					content = i18n("elite_fleet_confirm", Fleet.DEFAULT_NAME[var_3_1]),
+					onYes = arg_3_0
 				})
 
 				return
 			end
 
-			slot0()
+			arg_3_0()
 		end,
-		function (slot0)
+		function(arg_4_0)
+			local var_4_0 = var_1_8:getConfig("oil") * var_0_0.CalculateSpItemMoreCostRate(var_1_3)
+
 			if not getProxy(PlayerProxy):getRawData():isEnough({
-				oil = uv0:getConfig("oil") * uv1.CalculateSpItemMoreCostRate(uv2)
+				oil = var_4_0
 			}) then
-				if not ItemTipPanel.ShowOilBuyTip(slot1) then
+				if not ItemTipPanel.ShowOilBuyTip(var_4_0) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 				end
 
-				uv3:sendNotification(GAME.TRACKING_ERROR, {
-					chapter = uv0
+				arg_1_0:sendNotification(GAME.TRACKING_ERROR, {
+					chapter = var_1_8
 				})
 
 				return
 			end
 
-			slot0()
+			arg_4_0()
 		end,
-		function (slot0)
-			if uv0:getConfig("type") ~= Chapter.SelectFleet then
-				slot0()
+		function(arg_5_0)
+			if var_1_8:getConfig("type") ~= Chapter.SelectFleet then
+				arg_5_0()
 
 				return
 			end
 
-			slot1 = false
-			slot2 = ""
+			local var_5_0 = false
+			local var_5_1 = ""
 
-			for slot6, slot7 in ipairs(uv1) do
-				slot8, slot2 = getProxy(FleetProxy):getFleetById(slot7):GetEnergyStatus()
+			for iter_5_0, iter_5_1 in ipairs(var_1_2) do
+				var_5_0, var_5_1 = getProxy(FleetProxy):getFleetById(iter_5_1):GetEnergyStatus()
 
-				if slot8 then
+				if var_5_0 then
 					break
 				end
 			end
 
-			if slot1 then
+			if var_5_0 then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = slot2,
-					onYes = slot0
+					content = var_5_1,
+					onYes = arg_5_0
 				})
 
 				return
 			end
 
-			slot0()
+			arg_5_0()
 		end,
-		function (slot0)
-			if uv0:isRemaster() and PlayerPrefs.GetString("remaster_tip") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") and (not uv1 or uv1:IsFirstBattle()) then
+		function(arg_6_0)
+			if var_1_9:isRemaster() and PlayerPrefs.GetString("remaster_tip") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") and (not var_1_10 or var_1_10:IsFirstBattle()) then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					showStopRemind = true,
 					content = i18n("levelScene_activate_remaster"),
-					onYes = function ()
+					onYes = function()
 						if pg.MsgboxMgr.GetInstance().stopRemindToggle.isOn then
 							PlayerPrefs.SetString("remaster_tip", pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
 						end
 
-						uv0()
+						arg_6_0()
 					end
 				})
 
 				return
 			end
 
-			slot0()
+			arg_6_0()
 		end,
-		function (slot0)
-			slot2 = uv0:getConfig("enter_story_limit")
+		function(arg_8_0)
+			local var_8_0 = var_1_8:getConfig("enter_story")
+			local var_8_1 = var_1_8:getConfig("enter_story_limit")
 
-			if uv0:getConfig("enter_story") and slot1 ~= "" and uv1:isCrossStoryLimit(slot2) and not uv2:isRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
-				if tonumber(slot1) and slot4 > 0 then
-					uv1:sendNotification(GAME.BEGIN_STAGE, {
+			if var_8_0 and var_8_0 ~= "" and arg_1_0:isCrossStoryLimit(var_8_1) and not var_1_9:isRemaster() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_8_0) then
+				local var_8_2 = tonumber(var_8_0)
+
+				if var_8_2 and var_8_2 > 0 then
+					arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
 						system = SYSTEM_PERFORM,
-						stageId = slot4,
-						exitCallback = slot0
+						stageId = var_8_2,
+						exitCallback = arg_8_0
 					})
 
 					return
 				else
-					slot5 = ChapterOpCommand.PlayChapterStory
-					slot6 = slot1
-					slot7 = slot0
-					slot8 = uv0:isLoop() and PlayerPrefs.GetInt("chapter_autofight_flag_" .. uv0.id, 1) == 1
-
-					slot5(slot6, slot7, slot8)
+					ChapterOpCommand.PlayChapterStory(var_8_0, arg_8_0, var_1_8:isLoop() and PlayerPrefs.GetInt("chapter_autofight_flag_" .. var_1_8.id, 1) == 1)
 
 					return
 				end
 			end
 
-			slot0()
+			arg_8_0()
 		end,
-		function (slot0)
-			if uv0 then
-				slot1 = uv0:GetRestBattleTime()
-				slot2 = {
+		function(arg_9_0)
+			if var_1_10 then
+				local var_9_0 = var_1_10:GetRestBattleTime()
+				local var_9_1 = {
 					1,
 					1,
 					2
 				}
 
-				if uv1:isRemaster() then
-					table.insert(slot2, 1)
+				if var_1_9:isRemaster() then
+					table.insert(var_9_1, 1)
 				end
 
-				if _.reduce(slot2, -1, function (slot0, slot1)
-					return slot0 + slot1
-				end) < slot1 then
-					uv2:sendNotification(15300, {
+				if var_9_0 > _.reduce(var_9_1, -1, function(arg_10_0, arg_10_1)
+					return arg_10_0 + arg_10_1
+				end) then
+					arg_1_0:sendNotification(15300, {
 						type = 2,
-						ver_str = string.format("tracking Chapter %d by CO times %d", uv3.id, slot1)
+						ver_str = string.format("tracking Chapter %d by CO times %d", var_1_8.id, var_9_0)
 					})
 				end
 			end
 
-			slot0()
+			arg_9_0()
 		end,
-		function (slot0)
-			slot1 = uv0:getConfig("map")
-			slot3 = uv0:getEliteFleetCommanders()
-			slot4 = {}
+		function(arg_11_0)
+			local var_11_0 = var_1_8:getConfig("map")
+			local var_11_1 = var_1_8:getEliteFleetList()
+			local var_11_2 = var_1_8:getEliteFleetCommanders()
+			local var_11_3 = {}
 
-			for slot8, slot9 in ipairs(uv0:getEliteFleetList()) do
-				if uv0:singleEliteFleetVertify(slot8) then
-					slot10 = {}
-					slot11 = {}
-					slot12 = {}
+			for iter_11_0, iter_11_1 in ipairs(var_11_1) do
+				if var_1_8:singleEliteFleetVertify(iter_11_0) then
+					local var_11_4 = {}
+					local var_11_5 = {}
+					local var_11_6 = {}
 
-					for slot16, slot17 in ipairs(slot9) do
-						slot11[#slot11 + 1] = slot17
+					for iter_11_2, iter_11_3 in ipairs(iter_11_1) do
+						var_11_5[#var_11_5 + 1] = iter_11_3
 					end
 
-					for slot17, slot18 in pairs(slot3[slot8]) do
-						table.insert(slot12, {
-							pos = slot17,
-							id = slot18
+					local var_11_7 = var_11_2[iter_11_0]
+
+					for iter_11_4, iter_11_5 in pairs(var_11_7) do
+						table.insert(var_11_6, {
+							pos = iter_11_4,
+							id = iter_11_5
 						})
 					end
 
-					slot10.map_id = slot1
-					slot10.main_id = slot11
-					slot10.commanders = slot12
-					slot4[#slot4 + 1] = slot10
+					var_11_4.map_id = var_11_0
+					var_11_4.main_id = var_11_5
+					var_11_4.commanders = var_11_6
+					var_11_3[#var_11_3 + 1] = var_11_4
 				else
-					slot4[#slot4 + 1] = {
+					var_11_3[#var_11_3 + 1] = {
 						main_id = {},
 						commanders = {}
 					}
 				end
 			end
 
-			slot6 = {}
-			slot7 = {}
+			local var_11_8 = var_1_8:getSupportFleet()
+			local var_11_9 = {}
+			local var_11_10 = {}
 
-			for slot11, slot12 in ipairs(uv0:getSupportFleet()) do
-				slot7[#slot7 + 1] = slot12
+			for iter_11_6, iter_11_7 in ipairs(var_11_8) do
+				var_11_10[#var_11_10 + 1] = iter_11_7
 			end
 
-			slot6.map_id = slot1
-			slot6.main_id = slot7
-			slot6.commanders = {}
-			slot4[#slot4 + 1] = slot6
-			uv1.chapterId = uv2
-			uv1.fleetIds = uv3
-			uv1.fleetDatas = slot4
-			uv1.loopFlag = uv4
-			uv1.operationItem = uv5
-			uv1.dutiesKeyValue = uv6
-			uv1.autoFightFlag = uv7.autoFightFlag
+			var_11_9.map_id = var_11_0
+			var_11_9.main_id = var_11_10
+			var_11_9.commanders = {}
+			var_11_3[#var_11_3 + 1] = var_11_9
+			arg_1_0.chapterId = var_1_1
+			arg_1_0.fleetIds = var_1_2
+			arg_1_0.fleetDatas = var_11_3
+			arg_1_0.loopFlag = var_1_4
+			arg_1_0.operationItem = var_1_3
+			arg_1_0.dutiesKeyValue = var_1_6
+			arg_1_0.autoFightFlag = var_1_0.autoFightFlag
 
-			uv1:sendProto()
+			arg_1_0:sendProto()
 		end
 	})
 end
 
-function slot0.sendProto(slot0)
-	slot7 = slot0.autoFightFlag
-	slot8 = pg.ConnectionMgr.GetInstance()
+function var_0_0.sendProto(arg_12_0)
+	local var_12_0 = arg_12_0.chapterId
+	local var_12_1 = arg_12_0.fleetIds
+	local var_12_2 = arg_12_0.fleetDatas
+	local var_12_3 = arg_12_0.operationItem
+	local var_12_4 = arg_12_0.loopFlag
+	local var_12_5 = arg_12_0.dutiesKeyValue
+	local var_12_6 = arg_12_0.autoFightFlag
 
-	slot8:Send(13101, {
-		id = slot0.chapterId,
-		group_id_list = slot0.fleetIds,
-		elite_fleet_list = slot0.fleetDatas,
-		operation_item = slot0.operationItem,
-		loop_flag = slot0.loopFlag,
-		fleet_duties = slot0.dutiesKeyValue
-	}, 13102, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(ChapterProxy)
-			slot2 = slot1:getChapterById(uv0)
-			slot3 = slot1:getMapById(slot2:getConfig("map"))
-			slot4 = getProxy(PlayerProxy)
-			slot5 = slot4:getData()
+	pg.ConnectionMgr.GetInstance():Send(13101, {
+		id = var_12_0,
+		group_id_list = var_12_1,
+		elite_fleet_list = var_12_2,
+		operation_item = var_12_3,
+		loop_flag = var_12_4,
+		fleet_duties = var_12_5
+	}, 13102, function(arg_13_0)
+		if arg_13_0.result == 0 then
+			local var_13_0 = getProxy(ChapterProxy)
+			local var_13_1 = var_13_0:getChapterById(var_12_0)
+			local var_13_2 = var_13_0:getMapById(var_13_1:getConfig("map"))
+			local var_13_3 = getProxy(PlayerProxy)
+			local var_13_4 = var_13_3:getData()
 
-			slot2:update(slot0.current_chapter)
-			slot5:consume({
-				oil = slot2:getConfig("oil") * slot2:GetExtraCostRate()
+			var_13_1:update(arg_13_0.current_chapter)
+
+			local var_13_5 = var_13_1:getConfig("oil")
+
+			var_13_4:consume({
+				oil = var_13_5 * var_13_1:GetExtraCostRate()
 			})
-			slot4:updatePlayer(slot5)
+			var_13_3:updatePlayer(var_13_4)
 
-			if uv1 ~= 0 then
-				getProxy(BagProxy):removeItemById(uv1, 1)
+			if var_12_3 ~= 0 then
+				getProxy(BagProxy):removeItemById(var_12_3, 1)
 			end
 
-			for slot10, slot11 in pairs(slot2.cells) do
-				if ChapterConst.NeedMarkAsLurk(slot11) then
-					slot11.trait = ChapterConst.TraitLurk
+			for iter_13_0, iter_13_1 in pairs(var_13_1.cells) do
+				if ChapterConst.NeedMarkAsLurk(iter_13_1) then
+					iter_13_1.trait = ChapterConst.TraitLurk
 				end
 			end
 
-			for slot10, slot11 in ipairs(slot2.champions) do
-				slot11.trait = ChapterConst.TraitLurk
+			for iter_13_2, iter_13_3 in ipairs(var_13_1.champions) do
+				iter_13_3.trait = ChapterConst.TraitLurk
 			end
 
-			slot1:updateChapter(slot2)
+			var_13_0:updateChapter(var_13_1)
 
-			if slot3:isEscort() then
-				slot1.escortChallengeTimes = slot1.escortChallengeTimes + 1
+			if var_13_2:isEscort() then
+				var_13_0.escortChallengeTimes = var_13_0.escortChallengeTimes + 1
 			end
 
-			if slot3:isRemaster() then
-				slot1.remasterTickets = slot1.remasterTickets - 1
+			if var_13_2:isRemaster() then
+				var_13_0.remasterTickets = var_13_0.remasterTickets - 1
 			end
 
-			if slot1:GetContinuousData(SYSTEM_SCENARIO) then
-				slot7:TryActivate()
+			local var_13_6 = var_13_0:GetContinuousData(SYSTEM_SCENARIO)
+
+			if var_13_6 then
+				var_13_6:TryActivate()
 			end
 
-			uv2:sendNotification(GAME.TRACKING_DONE, slot2)
-			getProxy(ChapterProxy):updateExtraFlag(slot2, slot2.extraFlagList, {}, true)
+			arg_12_0:sendNotification(GAME.TRACKING_DONE, var_13_1)
+			getProxy(ChapterProxy):updateExtraFlag(var_13_1, var_13_1.extraFlagList, {}, true)
 
-			if uv3 ~= 0 and uv4 then
-				getProxy(ChapterProxy):SetChapterAutoFlag(uv0, true)
+			if var_12_4 ~= 0 and var_12_6 then
+				getProxy(ChapterProxy):SetChapterAutoFlag(var_12_0, true)
 			end
 
 			return
 		end
 
-		if slot0.result == 1 then
+		if arg_13_0.result == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_retry"))
-			uv2:sendNotification(GAME.CHAPTER_OP, {
+			arg_12_0:sendNotification(GAME.CHAPTER_OP, {
 				type = ChapterConst.OpRetreat
 			})
-		elseif slot0.result == 3010 then
+		elseif arg_13_0.result == 3010 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_3001"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("levelScene_tracking_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("levelScene_tracking_erro", arg_13_0.result))
 		end
 
-		uv2:sendNotification(GAME.TRACKING_ERROR, {
-			chapter = getProxy(ChapterProxy):getChapterById(uv0)
+		local var_13_7 = getProxy(ChapterProxy):getChapterById(var_12_0)
+
+		arg_12_0:sendNotification(GAME.TRACKING_ERROR, {
+			chapter = var_13_7
 		})
 	end)
 end
 
-function slot0.isCrossStoryLimit(slot0, slot1)
-	slot2 = true
+function var_0_0.isCrossStoryLimit(arg_14_0, arg_14_1)
+	local var_14_0 = true
 
-	if slot1 ~= "" and #slot1 > 0 then
-		slot2 = _.all(slot1, function (slot0)
-			if slot0[1] == 1 then
-				return getProxy(TaskProxy):getTaskById(slot0[2]) and not slot2:isFinish()
+	if arg_14_1 ~= "" and #arg_14_1 > 0 then
+		var_14_0 = _.all(arg_14_1, function(arg_15_0)
+			if arg_15_0[1] == 1 then
+				local var_15_0 = getProxy(TaskProxy):getTaskById(arg_15_0[2])
+
+				return var_15_0 and not var_15_0:isFinish()
 			end
 
 			return false
 		end)
 	end
 
-	return slot2
+	return var_14_0
 end
 
-function slot0.CalculateSpItemMoreCostRate(slot0)
-	slot1 = 1
+function var_0_0.CalculateSpItemMoreCostRate(arg_16_0)
+	local var_16_0 = 1
 
-	if not slot0 or slot0 == 0 then
-		return slot1
+	if not arg_16_0 or arg_16_0 == 0 then
+		return var_16_0
 	end
 
-	slot7 = 2
-	slot8 = -2
+	local var_16_1 = Item.getConfigData(arg_16_0).usage_arg
+	local var_16_2 = _.map(string.split(string.sub(var_16_1, 2, -2), ","), function(arg_17_0)
+		return tonumber(arg_17_0)
+	end)
 
-	for slot7, slot8 in ipairs(_.map(string.split(string.sub(Item.getConfigData(slot0).usage_arg, slot7, slot8), ","), function (slot0)
-		return tonumber(slot0)
-	end)) do
-		if pg.benefit_buff_template[slot7] and slot9.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
-			slot1 = slot1 + tonumber(slot9.benefit_effect) * 0.01
+	for iter_16_0, iter_16_1 in ipairs(var_16_2) do
+		local var_16_3 = pg.benefit_buff_template[iter_16_0]
+
+		if var_16_3 and var_16_3.benefit_type == Chapter.OPERATION_BUFF_TYPE_COST then
+			var_16_0 = var_16_0 + tonumber(var_16_3.benefit_effect) * 0.01
 		end
 	end
 
-	return math.max(1, slot1)
+	return (math.max(1, var_16_0))
 end
 
-return slot0
+return var_0_0

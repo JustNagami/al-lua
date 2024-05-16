@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "与宁海同在一个舰队时，炮击性能提高15.0%(满级35.0%)",
-	name = "姐妹同心 +",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "与宁海同在一个舰队时，炮击性能提高$1",
-	stack = 1,
-	id = 1010490,
-	icon = 10490,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -85,5 +64,26 @@ return {
 				buff_id = 1010491
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "与宁海同在一个舰队时，炮击性能提高15.0%(满级35.0%)",
+	name = "姐妹同心 +",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "与宁海同在一个舰队时，炮击性能提高$1",
+	stack = 1,
+	id = 1010490,
+	icon = 10490,
+	last_effect = ""
 }

@@ -1,328 +1,349 @@
-slot0 = class("ChargeScene", import("..base.BaseUI"))
+﻿local var_0_0 = class("ChargeScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackChargeUI"
 end
 
-function slot0.init(slot0)
+function var_0_0.init(arg_2_0)
+	return
 end
 
-function slot0.didEnter(slot0)
-	slot0.diamondPanel = findTF(slot0._tf, "frame/viewContainer/diamondPanel")
-	slot0.blurPanel = slot0:findTF("blur_panel")
-	slot0.detail = slot0:findTF("detail", slot0.blurPanel)
-	slot0.damondItems = {}
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.diamondPanel = findTF(arg_3_0._tf, "frame/viewContainer/diamondPanel")
+	arg_3_0.blurPanel = arg_3_0:findTF("blur_panel")
+	arg_3_0.detail = arg_3_0:findTF("detail", arg_3_0.blurPanel)
+	arg_3_0.damondItems = {}
 
-	setText(findTF(slot0._tf, "frame/viewContainer/leftPanel/desc"), i18n("Supplement_pay2"))
-	setText(findTF(slot0._tf, "tip"), i18n("Supplement_pay5"))
-	slot0:initDamonds()
-	slot0:refundUpdate()
+	setText(findTF(arg_3_0._tf, "frame/viewContainer/leftPanel/desc"), i18n("Supplement_pay2"))
+	setText(findTF(arg_3_0._tf, "tip"), i18n("Supplement_pay5"))
+	arg_3_0:initDamonds()
+	arg_3_0:refundUpdate()
 end
 
-function slot0.refundUpdate(slot0)
-	slot0:updateDamondsData()
-	slot0:sortDamondItems()
+function var_0_0.refundUpdate(arg_4_0)
+	arg_4_0:updateDamondsData()
+	arg_4_0:sortDamondItems()
 
-	if #slot0.tempDamondVOs <= 0 then
+	if #arg_4_0.tempDamondVOs <= 0 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
 			content = i18n("Supplement_pay3"),
-			onYes = function ()
+			onYes = function()
 				Application.Quit()
 			end
 		})
 	end
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_6_0, arg_6_1)
+	arg_6_0.player = arg_6_1
 end
 
-function slot0.setChargedList(slot0, slot1)
-	slot0.chargedList = slot1
+function var_0_0.setChargedList(arg_7_0, arg_7_1)
+	arg_7_0.chargedList = arg_7_1
 end
 
-function slot0.initDamonds(slot0)
-	slot0.diamondUIItemList = slot0:initDiamondList(slot0.diamondPanel)
+function var_0_0.initDamonds(arg_8_0)
+	arg_8_0.diamondUIItemList = arg_8_0:initDiamondList(arg_8_0.diamondPanel)
 end
 
-function slot0.confirm(slot0, slot1)
-	if not slot1 then
+function var_0_0.confirm(arg_9_0, arg_9_1)
+	if not arg_9_1 then
 		return
 	end
 
-	slot0:emit(BackChargeMediator.CHARGE, slot1.id)
+	arg_9_0:emit(BackChargeMediator.CHARGE, arg_9_1.id)
 end
 
-function slot0.initDiamondList(slot0, slot1)
-	function slot4(slot0)
-		slot1 = BackChargeDiamondCard.New(slot0, uv0)
+function var_0_0.initDiamondList(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0:findTF("content", arg_10_1)
+	local var_10_1 = arg_10_0:findTF("ItemTpl", arg_10_1)
 
-		onButton(uv0, slot1.tr, function ()
-			uv0:confirm(uv1.goods)
+	local function var_10_2(arg_11_0)
+		local var_11_0 = BackChargeDiamondCard.New(arg_11_0, arg_10_0)
+
+		onButton(arg_10_0, var_11_0.tr, function()
+			arg_10_0:confirm(var_11_0.goods)
 		end, SFX_PANEL)
 
-		uv0.damondItems[slot0] = slot1
+		arg_10_0.damondItems[arg_11_0] = var_11_0
 	end
 
-	function slot5(slot0, slot1)
-		if not uv0.damondItems[slot1] then
-			uv1(slot1)
+	local function var_10_3(arg_13_0, arg_13_1)
+		local var_13_0 = arg_10_0.damondItems[arg_13_1]
 
-			slot2 = uv0.damondItems[slot1]
+		if not var_13_0 then
+			var_10_2(arg_13_1)
+
+			var_13_0 = arg_10_0.damondItems[arg_13_1]
 		end
 
-		if uv0.tempDamondVOs[slot0 + 1] then
-			slot2:update(slot3, uv0.player, uv0.firstChargeIds)
+		local var_13_1 = arg_10_0.tempDamondVOs[arg_13_0 + 1]
+
+		if var_13_1 then
+			var_13_0:update(var_13_1, arg_10_0.player, arg_10_0.firstChargeIds)
 		end
 	end
 
-	slot6 = UIItemList.New(slot0:findTF("content", slot1), slot0:findTF("ItemTpl", slot1))
+	local var_10_4 = UIItemList.New(var_10_0, var_10_1)
 
-	slot6:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			uv0(go(slot2))
-		elseif slot0 == UIItemList.EventUpdate then
-			uv1(slot1, go(slot2))
+	var_10_4:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventInit then
+			var_10_2(go(arg_14_2))
+		elseif arg_14_0 == UIItemList.EventUpdate then
+			var_10_3(arg_14_1, go(arg_14_2))
 		end
 	end)
 
-	return slot6
+	return var_10_4
 end
 
-function slot0.updateDamondsData(slot0)
-	slot1 = pg.pay_data_display
-	slot0.damondItemVOs = {}
-	slot7 = getProxy(ServerProxy):getLastServer(getProxy(UserProxy):getData().uid)
-	slot6 = getProxy(PlayerProxy):getRefundInfo() or {}
+function var_0_0.updateDamondsData(arg_15_0)
+	local var_15_0 = pg.pay_data_display
 
-	for slot11 = 1, #slot6 do
-		slot12 = Goods.Create({
-			shop_id = slot6[slot11].shopId
+	arg_15_0.damondItemVOs = {}
+
+	local var_15_1 = getProxy(UserProxy):getData()
+	local var_15_2 = getProxy(ServerProxy)
+	local var_15_3 = getProxy(PlayerProxy):getRefundInfo()
+	local var_15_4 = var_15_2:getLastServer(var_15_1.uid)
+
+	var_15_3 = var_15_3 or {}
+
+	for iter_15_0 = 1, #var_15_3 do
+		local var_15_5 = Goods.Create({
+			shop_id = var_15_3[iter_15_0].shopId
 		}, Goods.TYPE_CHARGE)
-		slot12.buyTime = slot6[slot11].buyTime
-		slot12.refundTime = slot6[slot11].refundTime
 
-		table.insert(slot0.damondItemVOs, slot12)
+		var_15_5.buyTime = var_15_3[iter_15_0].buyTime
+		var_15_5.refundTime = var_15_3[iter_15_0].refundTime
+
+		table.insert(arg_15_0.damondItemVOs, var_15_5)
 	end
 end
 
-function slot0.sortDamondItems(slot0)
-	if slot0.damondItemVOs == nil then
+function var_0_0.sortDamondItems(arg_16_0)
+	if arg_16_0.damondItemVOs == nil then
 		return
 	end
 
-	slot0.tempDamondVOs = {}
+	arg_16_0.tempDamondVOs = {}
 
-	for slot4, slot5 in ipairs(slot0.damondItemVOs) do
-		if slot5:isChargeType() then
-			slot5:updateBuyCount(slot0:getBuyCount(slot0.chargedList, slot5.id))
-			table.insert(slot0.tempDamondVOs, slot5)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.damondItemVOs) do
+		if iter_16_1:isChargeType() then
+			iter_16_1:updateBuyCount(arg_16_0:getBuyCount(arg_16_0.chargedList, iter_16_1.id))
+			table.insert(arg_16_0.tempDamondVOs, iter_16_1)
 		end
 	end
 
-	table.sort(slot0.tempDamondVOs, function (slot0, slot1)
-		slot3 = not table.contains(uv0.firstChargeIds, slot0.id) and slot0:firstPayDouble() and 1 or 0
-		slot5 = not table.contains(uv0.firstChargeIds, slot1.id) and slot1:firstPayDouble() and 1 or 0
-		slot8 = nil
+	table.sort(arg_16_0.tempDamondVOs, function(arg_17_0, arg_17_1)
+		local var_17_0 = not table.contains(arg_16_0.firstChargeIds, arg_17_0.id) and arg_17_0:firstPayDouble() and 1 or 0
+		local var_17_1 = not table.contains(arg_16_0.firstChargeIds, arg_17_1.id) and arg_17_1:firstPayDouble() and 1 or 0
+		local var_17_2 = 0
+		local var_17_3 = 0
+		local var_17_4
 
-		if 0 ~= 0 then
-			return slot6 < slot7
+		if var_17_2 ~= var_17_3 then
+			return var_17_2 < var_17_3
 		end
 
-		slot9 = slot0:getConfig("tag") == 2 and 1 or 0
-		slot10 = slot1:getConfig("tag") == 2 and 1 or 0
+		local var_17_5 = arg_17_0:getConfig("tag") == 2 and 1 or 0
+		local var_17_6 = arg_17_1:getConfig("tag") == 2 and 1 or 0
 
-		if slot3 == slot5 and slot9 == slot10 then
-			return slot0.id < slot1.id
+		if var_17_0 == var_17_1 and var_17_5 == var_17_6 then
+			return arg_17_0.id < arg_17_1.id
 		else
-			slot11 = slot5 < slot3 or slot3 == slot5 and slot10 < slot9
-
-			return slot11
+			return var_17_1 < var_17_0 or var_17_0 == var_17_1 and var_17_6 < var_17_5
 		end
 	end)
 
-	if page == uv0.TYPE_DIAMOND then
-		slot0.diamondUIItemList:align(#slot0.tempDamondVOs)
-	elseif page == uv0.TYPE_GIFT then
-		slot0.giftRect:SetTotalCount(#slot0.tempDamondVOs, slot0.giftRect.value)
+	if page == var_0_0.TYPE_DIAMOND then
+		arg_16_0.diamondUIItemList:align(#arg_16_0.tempDamondVOs)
+	elseif page == var_0_0.TYPE_GIFT then
+		arg_16_0.giftRect:SetTotalCount(#arg_16_0.tempDamondVOs, arg_16_0.giftRect.value)
 	end
 end
 
-function slot0.getBuyCount(slot0, slot1, slot2)
-	if not slot1 then
+function var_0_0.getBuyCount(arg_18_0, arg_18_1, arg_18_2)
+	if not arg_18_1 then
 		return 0
 	end
 
-	return slot1[slot2] and slot3.buyCount or 0
+	local var_18_0 = arg_18_1[arg_18_2]
+
+	return var_18_0 and var_18_0.buyCount or 0
 end
 
-function slot0.showItemDetail(slot0, slot1)
-	slot2 = slot1.icon
-	slot3 = slot1.name and slot1.name or ""
-	slot4 = slot1.tipBonus or ""
-	slot5 = slot1.bonusItem
-	slot6 = slot1.tipExtra and slot1.tipExtra or ""
-	slot7 = slot1.extraItems and slot1.extraItems or {}
-	slot8 = slot1.price and slot1.price or 0
-	slot9 = slot1.isChargeType
-	slot10 = slot1.isMonthCard
-	slot11 = slot1.tagType
-	slot12 = slot1.normalTip
+function var_0_0.showItemDetail(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_1.icon
+	local var_19_1 = arg_19_1.name and arg_19_1.name or ""
+	local var_19_2 = arg_19_1.tipBonus or ""
+	local var_19_3 = arg_19_1.bonusItem
+	local var_19_4 = arg_19_1.tipExtra and arg_19_1.tipExtra or ""
+	local var_19_5 = arg_19_1.extraItems and arg_19_1.extraItems or {}
+	local var_19_6 = arg_19_1.price and arg_19_1.price or 0
+	local var_19_7 = arg_19_1.isChargeType
+	local var_19_8 = arg_19_1.isMonthCard
+	local var_19_9 = arg_19_1.tagType
+	local var_19_10 = arg_19_1.normalTip
 
-	setActive(slot0:findTF("window2", slot0.detail), slot12)
-	setActive(slot0:findTF("window", slot0.detail), not slot12)
-	slot0:bindDetailTF(slot12 and slot0:findTF("window2", slot0.detail) or slot0:findTF("window", slot0.detail))
+	setActive(arg_19_0:findTF("window2", arg_19_0.detail), var_19_10)
+	setActive(arg_19_0:findTF("window", arg_19_0.detail), not var_19_10)
+	arg_19_0:bindDetailTF(var_19_10 and arg_19_0:findTF("window2", arg_19_0.detail) or arg_19_0:findTF("window", arg_19_0.detail))
 
-	if slot0.detailNormalTip then
-		setActive(slot0.detailNormalTip, slot12)
+	if arg_19_0.detailNormalTip then
+		setActive(arg_19_0.detailNormalTip, var_19_10)
 	end
 
-	if slot0.detailContain then
-		setActive(slot0.detailContain, not slot12)
+	if arg_19_0.detailContain then
+		setActive(arg_19_0.detailContain, not var_19_10)
 	end
 
-	if slot12 then
-		if slot0.detailNormalTip:GetComponent("Text") then
-			setText(slot0.detailNormalTip, slot12)
+	if var_19_10 then
+		if arg_19_0.detailNormalTip:GetComponent("Text") then
+			setText(arg_19_0.detailNormalTip, var_19_10)
 		else
-			setButtonText(slot0.detailNormalTip, slot12)
+			setButtonText(arg_19_0.detailNormalTip, var_19_10)
 		end
 	end
 
-	setActive(slot0.detailTag, slot11 > 0)
+	setActive(arg_19_0.detailTag, var_19_9 > 0)
 
-	if slot11 > 0 then
-		for slot16, slot17 in ipairs(slot0.detailTags) do
-			setActive(slot17, slot16 == slot11)
+	if var_19_9 > 0 then
+		for iter_19_0, iter_19_1 in ipairs(arg_19_0.detailTags) do
+			setActive(iter_19_1, iter_19_0 == var_19_9)
 		end
 	end
 
-	slot0.detailIconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
+	arg_19_0.detailIconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
-	LoadSpriteAsync(slot2, function (slot0)
-		if slot0 then
-			uv0.detailIconTF.sprite = slot0
+	LoadSpriteAsync(var_19_0, function(arg_20_0)
+		if arg_20_0 then
+			arg_19_0.detailIconTF.sprite = arg_20_0
 		end
 	end)
-	setText(slot0.detailName, slot3)
-	setActive(slot0.detailRmb, slot9)
-	setActive(slot0.detailGem, not slot9)
-	setText(slot0.detailPrice, slot8)
+	setText(arg_19_0.detailName, var_19_1)
+	setActive(arg_19_0.detailRmb, var_19_7)
+	setActive(arg_19_0.detailGem, not var_19_7)
+	setText(arg_19_0.detailPrice, var_19_6)
 
-	if slot0.detailDescExtra ~= nil then
-		setActive(slot0.detailDescExtra, slot1.descExtra and slot1.descExtra ~= "")
-		setText(slot0.detailDescExtra, slot1.descExtra or "")
+	if arg_19_0.detailDescExtra ~= nil then
+		setActive(arg_19_0.detailDescExtra, arg_19_1.descExtra and arg_19_1.descExtra ~= "")
+		setText(arg_19_0.detailDescExtra, arg_19_1.descExtra or "")
 	end
 
-	if slot0.detailContain then
-		SetActive(slot0.normal, slot10)
+	if arg_19_0.detailContain then
+		SetActive(arg_19_0.normal, var_19_8)
 
-		if slot10 then
-			updateDrop(slot0.detailItem, slot5)
-			onButton(slot0, slot0.detailItem, function ()
-				uv0:emit(uv1.ON_DROP, uv2)
+		if var_19_8 then
+			updateDrop(arg_19_0.detailItem, var_19_3)
+			onButton(arg_19_0, arg_19_0.detailItem, function()
+				arg_19_0:emit(var_0_0.ON_DROP, var_19_3)
 			end, SFX_PANEL)
 
-			slot13, slot14 = contentWrap(slot5:getConfig("name"), 10, 2)
+			local var_19_11, var_19_12 = contentWrap(var_19_3:getConfig("name"), 10, 2)
 
-			if slot13 then
-				slot14 = slot14 .. "..."
+			if var_19_11 then
+				var_19_12 = var_19_12 .. "..."
 			end
 
-			setText(slot0.detailItem:Find("name"), slot14)
-			setText(slot0.detailTip, slot4)
+			setText(arg_19_0.detailItem:Find("name"), var_19_12)
+			setText(arg_19_0.detailTip, var_19_2)
 		end
 
-		setText(slot0.detailTip2, slot6)
+		setText(arg_19_0.detailTip2, var_19_4)
 
-		for slot16 = #slot7, slot0.detailItemList.childCount - 1 do
-			Destroy(slot0.detailItemList:GetChild(slot16))
+		for iter_19_2 = #var_19_5, arg_19_0.detailItemList.childCount - 1 do
+			Destroy(arg_19_0.detailItemList:GetChild(iter_19_2))
 		end
 
-		for slot16 = slot0.detailItemList.childCount, #slot7 - 1 do
-			cloneTplTo(slot0.detailItem, slot0.detailItemList)
+		for iter_19_3 = arg_19_0.detailItemList.childCount, #var_19_5 - 1 do
+			cloneTplTo(arg_19_0.detailItem, arg_19_0.detailItemList)
 		end
 
-		for slot16 = 1, #slot7 do
-			updateDrop(slot0.detailItemList:GetChild(slot16 - 1), slot7[slot16])
+		for iter_19_4 = 1, #var_19_5 do
+			local var_19_13 = arg_19_0.detailItemList:GetChild(iter_19_4 - 1)
 
-			slot18, slot19 = contentWrap(slot7[slot16]:getConfig("name"), 8, 2)
+			updateDrop(var_19_13, var_19_5[iter_19_4])
 
-			if slot18 then
-				slot19 = slot19 .. "..."
+			local var_19_14, var_19_15 = contentWrap(var_19_5[iter_19_4]:getConfig("name"), 8, 2)
+
+			if var_19_14 then
+				var_19_15 = var_19_15 .. "..."
 			end
 
-			setText(slot17:Find("name"), slot19)
-			onButton(slot0, slot17, function ()
+			setText(var_19_13:Find("name"), var_19_15)
+			onButton(arg_19_0, var_19_13, function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					hideNo = true,
 					type = MSGBOX_TYPE_SINGLE_ITEM,
-					drop = uv0[uv1]
+					drop = var_19_5[iter_19_4]
 				})
 			end, SFX_PANEL)
 		end
 	end
 
-	onButton(slot0, slot0:findTF("back_sign", slot0.detail), function ()
-		SetActive(uv0.detail, false)
-		uv0:revertDetailBlur()
+	onButton(arg_19_0, arg_19_0:findTF("back_sign", arg_19_0.detail), function()
+		SetActive(arg_19_0.detail, false)
+		arg_19_0:revertDetailBlur()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("button_container/button_cancel", slot0.detailWindow), function ()
-		SetActive(uv0.detail, false)
-		uv0:revertDetailBlur()
+	onButton(arg_19_0, arg_19_0:findTF("button_container/button_cancel", arg_19_0.detailWindow), function()
+		SetActive(arg_19_0.detail, false)
+		arg_19_0:revertDetailBlur()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("button_container/button_ok", slot0.detailWindow), slot1.onYes or function ()
+	onButton(arg_19_0, arg_19_0:findTF("button_container/button_ok", arg_19_0.detailWindow), arg_19_1.onYes or function()
+		return
 	end, SFX_PANEL)
-	setActive(slot0.detail, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.blurPanel)
+	setActive(arg_19_0.detail, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_19_0.blurPanel)
 end
 
-function slot0.bindDetailTF(slot0, slot1)
-	slot0.detailWindow = slot1
-	slot0.detailName = slot0:findTF("goods/name", slot0.detailWindow)
-	slot0.detailIcon = slot0:findTF("goods/icon", slot0.detailWindow)
-	slot0.detailIconTF = slot0.detailIcon:GetComponent(typeof(Image))
-	slot0.detailRmb = slot0:findTF("prince_bg/contain/icon_rmb", slot0.detailWindow)
-	slot0.detailGem = slot0:findTF("prince_bg/contain/icon_gem", slot0.detailWindow)
-	slot0.detailPrice = slot0:findTF("prince_bg/contain/Text", slot0.detailWindow)
-	slot0.detailTag = slot0:findTF("goods/tag", slot0.detailWindow)
-	slot0.detailTags = {}
+function var_0_0.bindDetailTF(arg_26_0, arg_26_1)
+	arg_26_0.detailWindow = arg_26_1
+	arg_26_0.detailName = arg_26_0:findTF("goods/name", arg_26_0.detailWindow)
+	arg_26_0.detailIcon = arg_26_0:findTF("goods/icon", arg_26_0.detailWindow)
+	arg_26_0.detailIconTF = arg_26_0.detailIcon:GetComponent(typeof(Image))
+	arg_26_0.detailRmb = arg_26_0:findTF("prince_bg/contain/icon_rmb", arg_26_0.detailWindow)
+	arg_26_0.detailGem = arg_26_0:findTF("prince_bg/contain/icon_gem", arg_26_0.detailWindow)
+	arg_26_0.detailPrice = arg_26_0:findTF("prince_bg/contain/Text", arg_26_0.detailWindow)
+	arg_26_0.detailTag = arg_26_0:findTF("goods/tag", arg_26_0.detailWindow)
+	arg_26_0.detailTags = {}
 
-	table.insert(slot0.detailTags, slot0:findTF("hot", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("new", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("advice", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("double", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("discount", slot0.detailTag))
+	table.insert(arg_26_0.detailTags, arg_26_0:findTF("hot", arg_26_0.detailTag))
+	table.insert(arg_26_0.detailTags, arg_26_0:findTF("new", arg_26_0.detailTag))
+	table.insert(arg_26_0.detailTags, arg_26_0:findTF("advice", arg_26_0.detailTag))
+	table.insert(arg_26_0.detailTags, arg_26_0:findTF("double", arg_26_0.detailTag))
+	table.insert(arg_26_0.detailTags, arg_26_0:findTF("discount", arg_26_0.detailTag))
 
-	slot0.detailTagDoubleTF = slot0:findTF("double", slot0.detailTag)
-	slot0.detailTagAdviceTF = slot0:findTF("advice", slot0.detailTag)
-	slot0.detailContain = slot0:findTF("container", slot0.detailWindow)
+	arg_26_0.detailTagDoubleTF = arg_26_0:findTF("double", arg_26_0.detailTag)
+	arg_26_0.detailTagAdviceTF = arg_26_0:findTF("advice", arg_26_0.detailTag)
+	arg_26_0.detailContain = arg_26_0:findTF("container", arg_26_0.detailWindow)
 
-	if slot0.detailContain then
-		slot0.extra = slot0:findTF("container/items", slot0.detailWindow)
-		slot0.detailTip2 = slot0:findTF("Text", slot0.extra)
-		slot0.detailItemList = slot0:findTF("scrollview/list", slot0.extra)
-		slot0.normal = slot0:findTF("container/normal_items", slot0.detailWindow)
-		slot0.detailTip = slot0:findTF("Text", slot0.normal)
-		slot0.detailItem = slot0:findTF("item_tpl", slot0.normal)
-		slot0.detailDescExtra = slot0:findTF("container/Text", slot0.detailWindow)
+	if arg_26_0.detailContain then
+		arg_26_0.extra = arg_26_0:findTF("container/items", arg_26_0.detailWindow)
+		arg_26_0.detailTip2 = arg_26_0:findTF("Text", arg_26_0.extra)
+		arg_26_0.detailItemList = arg_26_0:findTF("scrollview/list", arg_26_0.extra)
+		arg_26_0.normal = arg_26_0:findTF("container/normal_items", arg_26_0.detailWindow)
+		arg_26_0.detailTip = arg_26_0:findTF("Text", arg_26_0.normal)
+		arg_26_0.detailItem = arg_26_0:findTF("item_tpl", arg_26_0.normal)
+		arg_26_0.detailDescExtra = arg_26_0:findTF("container/Text", arg_26_0.detailWindow)
 	end
 
-	slot0.detailNormalTip = slot0:findTF("NormalTips", slot0.detailWindow)
+	arg_26_0.detailNormalTip = arg_26_0:findTF("NormalTips", arg_26_0.detailWindow)
 end
 
-function slot0.revertDetailBlur(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.blurPanel, slot0._tf)
+function var_0_0.revertDetailBlur(arg_27_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_27_0.blurPanel, arg_27_0._tf)
 end
 
-function slot0.willExit(slot0)
-	slot0:revertDetailBlur()
+function var_0_0.willExit(arg_28_0)
+	arg_28_0:revertDetailBlur()
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_29_0)
+	return
 end
 
-return slot0
+return var_0_0

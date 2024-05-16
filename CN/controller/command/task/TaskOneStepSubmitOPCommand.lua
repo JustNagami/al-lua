@@ -1,40 +1,42 @@
-slot0 = class("TaskOneStepSubmitOPCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TaskOneStepSubmitOPCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if #slot1:getBody().resultList > 0 then
-		slot4 = {}
-		slot5 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().resultList
 
-		for slot9, slot10 in ipairs(slot3) do
-			if slot10.isWeekTask then
-				table.insert(slot5, slot10.id)
+	if #var_1_0 > 0 then
+		local var_1_1 = {}
+		local var_1_2 = {}
+
+		for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+			if iter_1_1.isWeekTask then
+				table.insert(var_1_2, iter_1_1.id)
 			else
-				table.insert(slot4, slot10)
+				table.insert(var_1_1, iter_1_1)
 			end
 		end
 
-		slot6 = {}
+		local var_1_3 = {}
 
 		seriesAsync({
-			function (slot0)
-				if #uv0 > 0 then
+			function(arg_2_0)
+				if #var_1_1 > 0 then
 					pg.m02:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-						resultList = uv1,
-						callback = slot0
+						resultList = var_1_0,
+						callback = arg_2_0
 					})
 				else
-					slot0()
+					arg_2_0()
 				end
 			end,
-			function (slot0)
-				if #uv0 > 0 then
-					uv1:emit(TaskMediator.ON_BATCH_SUBMIT_WEEK_TASK, uv0, slot0)
+			function(arg_3_0)
+				if #var_1_2 > 0 then
+					arg_1_0:emit(TaskMediator.ON_BATCH_SUBMIT_WEEK_TASK, var_1_2, arg_3_0)
 				else
-					slot0()
+					arg_3_0()
 				end
 			end
 		})
 	end
 end
 
-return slot0
+return var_0_0

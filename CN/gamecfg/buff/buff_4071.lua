@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 4072,
+				time = 20,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "每隔20秒，有15.0%的概率发动，自体完全回避所有攻击，持续6秒",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 4071,
 	icon = 4070,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 4072,
-				time = 20,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

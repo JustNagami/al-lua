@@ -1,109 +1,117 @@
-slot0 = class("GuildReport", import("...BaseVO"))
-slot0.SCORE_TYPE_S = 1
-slot0.SCORE_TYPE_A = 2
-slot0.SCORE_TYPE_B = 3
+﻿local var_0_0 = class("GuildReport", import("...BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.eventId = slot1.event_id
-	slot0.configId = slot0.eventId
-	slot0.score = slot1.score
-	slot0.state = GuildConst.REPORT_STATE_LOCK
-	slot0.nodeAwards = {}
-	slot2 = {}
+var_0_0.SCORE_TYPE_S = 1
+var_0_0.SCORE_TYPE_A = 2
+var_0_0.SCORE_TYPE_B = 3
 
-	for slot6, slot7 in ipairs(slot1.nodes) do
-		slot8 = nil
-		slot9 = Clone(pg.guild_event_node[slot7.id])
-		slot8 = (slot7.status ~= 1 or slot9.success_award) and slot9.fail_award
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.eventId = arg_1_1.event_id
+	arg_1_0.configId = arg_1_0.eventId
+	arg_1_0.score = arg_1_1.score
+	arg_1_0.state = GuildConst.REPORT_STATE_LOCK
+	arg_1_0.nodeAwards = {}
 
-		for slot13, slot14 in ipairs(slot8) do
-			if not slot2[slot14[2]] then
-				slot2[slot14[2]] = slot14
+	local var_1_0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.nodes) do
+		local var_1_1
+		local var_1_2 = Clone(pg.guild_event_node[iter_1_1.id])
+
+		if iter_1_1.status == 1 then
+			var_1_1 = var_1_2.success_award
+		else
+			var_1_1 = var_1_2.fail_award
+		end
+
+		for iter_1_2, iter_1_3 in ipairs(var_1_1) do
+			if not var_1_0[iter_1_3[2]] then
+				var_1_0[iter_1_3[2]] = iter_1_3
 			else
-				slot2[slot14[2]][3] = slot2[slot14[2]][3] + slot14[3]
+				var_1_0[iter_1_3[2]][3] = var_1_0[iter_1_3[2]][3] + iter_1_3[3]
 			end
 		end
 	end
 
-	for slot6, slot7 in pairs(slot2) do
-		table.insert(slot0.nodeAwards, slot7)
+	for iter_1_4, iter_1_5 in pairs(var_1_0) do
+		table.insert(arg_1_0.nodeAwards, iter_1_5)
 	end
 
-	slot0:SetStatus(slot1.status)
+	arg_1_0:SetStatus(arg_1_1.status)
 end
 
-function slot0.SetStatus(slot0, slot1)
-	slot0.state = slot1
+function var_0_0.SetStatus(arg_2_0, arg_2_1)
+	arg_2_0.state = arg_2_1
 end
 
-function slot0.IsBoss(slot0)
+function var_0_0.IsBoss(arg_3_0)
 	return false
 end
 
-function slot0.IsLock(slot0)
-	return slot0.state == GuildConst.REPORT_STATE_LOCK
+function var_0_0.IsLock(arg_4_0)
+	return arg_4_0.state == GuildConst.REPORT_STATE_LOCK
 end
 
-function slot0.IsUnlock(slot0)
-	return GuildConst.REPORT_STATE_LOCK < slot0.state
+function var_0_0.IsUnlock(arg_5_0)
+	return arg_5_0.state > GuildConst.REPORT_STATE_LOCK
 end
 
-function slot0.CanSubmit(slot0)
-	return slot0.state == GuildConst.REPORT_STATE_UNlOCK
+function var_0_0.CanSubmit(arg_6_0)
+	return arg_6_0.state == GuildConst.REPORT_STATE_UNlOCK
 end
 
-function slot0.IsSubmited(slot0)
-	return slot0.state == GuildConst.REPORT_STATE_SUBMITED
+function var_0_0.IsSubmited(arg_7_0)
+	return arg_7_0.state == GuildConst.REPORT_STATE_SUBMITED
 end
 
-function slot0.Submit(slot0)
-	if slot0:CanSubmit() then
-		slot0.state = GuildConst.REPORT_STATE_SUBMITED
+function var_0_0.Submit(arg_8_0)
+	if arg_8_0:CanSubmit() then
+		arg_8_0.state = GuildConst.REPORT_STATE_SUBMITED
 	end
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_9_0)
 	return pg.guild_base_event
 end
 
-function slot0.GetReportDesc(slot0)
-	return slot0:getConfig("report")[slot0.score]
+function var_0_0.GetReportDesc(arg_10_0)
+	return arg_10_0:getConfig("report")[arg_10_0.score]
 end
 
-function slot0.IsPerfectFinish(slot0)
-	return slot0.score == uv0.SCORE_TYPE_S
+function var_0_0.IsPerfectFinish(arg_11_0)
+	return arg_11_0.score == var_0_0.SCORE_TYPE_S
 end
 
-function slot0.GetSelfDrop(slot0)
-	if slot0.score == uv0.SCORE_TYPE_S then
-		return slot0:getConfig("award_list_report")
+function var_0_0.GetSelfDrop(arg_12_0)
+	if arg_12_0.score == var_0_0.SCORE_TYPE_S then
+		return arg_12_0:getConfig("award_list_report")
 	else
 		return {}
 	end
 end
 
-function slot0.GetNodeDrop(slot0)
-	return slot0.nodeAwards
+function var_0_0.GetNodeDrop(arg_13_0)
+	return arg_13_0.nodeAwards
 end
 
-function slot0.GetDrop(slot0)
-	slot1 = {}
-	slot3 = slot0:GetNodeDrop()
+function var_0_0.GetDrop(arg_14_0)
+	local var_14_0 = {}
+	local var_14_1 = arg_14_0:GetSelfDrop()
+	local var_14_2 = arg_14_0:GetNodeDrop()
 
-	for slot7, slot8 in ipairs(slot0:GetSelfDrop()) do
-		table.insert(slot1, slot8)
+	for iter_14_0, iter_14_1 in ipairs(var_14_1) do
+		table.insert(var_14_0, iter_14_1)
 	end
 
-	for slot7, slot8 in ipairs(slot3) do
-		table.insert(slot1, slot8)
+	for iter_14_2, iter_14_3 in ipairs(var_14_2) do
+		table.insert(var_14_0, iter_14_3)
 	end
 
-	return slot1, #slot2
+	return var_14_0, #var_14_1
 end
 
-function slot0.GetType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.GetType(arg_15_0)
+	return arg_15_0:getConfig("type")
 end
 
-return slot0
+return var_0_0

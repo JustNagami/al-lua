@@ -1,40 +1,40 @@
-slot0 = class("ChapterChampionNormal", import(".LevelCellData"))
+﻿local var_0_0 = class("ChapterChampionNormal", import(".LevelCellData"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.row = slot1.pos.row
-	slot0.column = slot1.pos.column
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.attachmentId = slot0.id
-	slot0.attachment = slot1.attachment
-	slot0.flag = slot1.flag
-	slot0.data = slot1.data
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.row = arg_1_1.pos.row
+	arg_1_0.column = arg_1_1.pos.column
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.attachmentId = arg_1_0.id
+	arg_1_0.attachment = arg_1_1.attachment
+	arg_1_0.flag = arg_1_1.flag
+	arg_1_0.data = arg_1_1.data
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.expedition_data_template
 end
 
-function slot0.getPrefab(slot0)
-	return slot0:getConfig("icon")
+function var_0_0.getPrefab(arg_3_0)
+	return arg_3_0:getConfig("icon")
 end
 
-function slot0.getFleetType(slot0)
+function var_0_0.getFleetType(arg_4_0)
 	return FleetType.Normal
 end
 
-function slot0.getPoolType(slot0)
-	return slot0:getConfig("icon_type") == 1 and ChapterConst.TemplateEnemy or ChapterConst.TemplateChampion
+function var_0_0.getPoolType(arg_5_0)
+	return arg_5_0:getConfig("icon_type") == 1 and ChapterConst.TemplateEnemy or ChapterConst.TemplateChampion
 end
 
-function slot0.getScale(slot0)
-	return slot0:getConfig("scale")
+function var_0_0.getScale(arg_6_0)
+	return arg_6_0:getConfig("scale")
 end
 
-function slot0.inAlertRange(slot0, slot1, slot2)
-	return _.any(slot0:getConfig("alert_range"), function (slot0)
-		return slot0[1] + uv0.row == uv1 and slot0[2] + uv0.column == uv2
+function var_0_0.inAlertRange(arg_7_0, arg_7_1, arg_7_2)
+	return _.any(arg_7_0:getConfig("alert_range"), function(arg_8_0)
+		return arg_8_0[1] + arg_7_0.row == arg_7_1 and arg_8_0[2] + arg_7_0.column == arg_7_2
 	end)
 end
 
-return slot0
+return var_0_0

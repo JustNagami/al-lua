@@ -1,22 +1,23 @@
-slot0 = class("MiniGameShopFlushCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MiniGameShopFlushCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
 
 	pg.ConnectionMgr.GetInstance():Send(26154, {
 		type = 0
-	}, 26155, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(ShopsProxy):getMiniShop()
+	}, 26155, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ShopsProxy):getMiniShop()
 
-			slot1:setNextTime(slot0.next_flash_time[1])
-			getProxy(ShopsProxy):setMiniShop(slot1)
+			var_2_0:setNextTime(arg_2_0.next_flash_time[1])
+			getProxy(ShopsProxy):setMiniShop(var_2_0)
 		end
 
-		if uv0 then
-			uv0(slot0.result == 0)
+		if var_1_1 then
+			var_1_1(arg_2_0.result == 0)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

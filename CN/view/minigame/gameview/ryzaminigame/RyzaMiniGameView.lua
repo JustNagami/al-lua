@@ -1,139 +1,155 @@
-slot0 = class("RyzaMiniGameView", import("view.miniGame.BaseMiniGameView"))
-slot0.EVENT_CREATE = "RyzaMiniGameView.EVENT_CREATE"
-slot0.EVENT_DESTROY = "RyzaMiniGameView.EVENT_DESTROY"
-slot0.EVENT_FINISH = "RyzaMiniGameView.EVENT_FINISH"
-slot0.EVENT_WINDOW_FOCUS = "RyzaMiniGameView.EVENT_WINDOW_FOCUS"
-slot0.EVENT_STATUS_SYNC = "RyzaMiniGameView.EVENT_STATUS_SYNC"
-slot0.EVENT_UPDATE_HIDE = "RyzaMiniGameView.EVENT_UPDATE_HIDE"
+﻿local var_0_0 = class("RyzaMiniGameView", import("view.miniGame.BaseMiniGameView"))
 
-function slot0.getUIName(slot0)
+var_0_0.EVENT_CREATE = "RyzaMiniGameView.EVENT_CREATE"
+var_0_0.EVENT_DESTROY = "RyzaMiniGameView.EVENT_DESTROY"
+var_0_0.EVENT_FINISH = "RyzaMiniGameView.EVENT_FINISH"
+var_0_0.EVENT_WINDOW_FOCUS = "RyzaMiniGameView.EVENT_WINDOW_FOCUS"
+var_0_0.EVENT_STATUS_SYNC = "RyzaMiniGameView.EVENT_STATUS_SYNC"
+var_0_0.EVENT_UPDATE_HIDE = "RyzaMiniGameView.EVENT_UPDATE_HIDE"
+
+function var_0_0.getUIName(arg_1_0)
 	return "RyzaMiniGameUI"
 end
 
-function slot0.didEnter(slot0)
-	slot0:initTimer()
-	slot0:initUI()
-	slot0:initGameUI()
-	onNextTick(function ()
-		uv0:openUI("main")
+function var_0_0.didEnter(arg_2_0)
+	arg_2_0:initTimer()
+	arg_2_0:initUI()
+	arg_2_0:initGameUI()
+	onNextTick(function()
+		arg_2_0:openUI("main")
 	end)
 end
 
-function slot1(slot0, slot1)
-	for slot6 = 0, slot0:GetComponentsInChildren(typeof(Animator), true).Length - 1 do
-		slot2[slot6].speed = slot1
+local function var_0_1(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0:GetComponentsInChildren(typeof(Animator), true)
+
+	for iter_4_0 = 0, var_4_0.Length - 1 do
+		var_4_0[iter_4_0].speed = arg_4_1
 	end
 end
 
-function slot0.openUI(slot0, slot1)
-	if slot0.status then
-		setActive(slot0.rtTitlePage:Find(slot0.status), false)
+function var_0_0.openUI(arg_5_0, arg_5_1)
+	if arg_5_0.status then
+		setActive(arg_5_0.rtTitlePage:Find(arg_5_0.status), false)
 	end
 
-	if slot1 then
-		setActive(slot0.rtTitlePage:Find(slot1), true)
+	if arg_5_1 then
+		setActive(arg_5_0.rtTitlePage:Find(arg_5_1), true)
 	end
 
-	slot0.status = slot1
+	arg_5_0.status = arg_5_1
 
-	switch(slot1, {
-		main = function ()
-			uv0:updateMainUI()
+	switch(arg_5_1, {
+		main = function()
+			arg_5_0:updateMainUI()
 		end,
-		pause = function ()
-			uv0:pauseGame()
+		pause = function()
+			arg_5_0:pauseGame()
 		end,
-		exit = function ()
-			uv0:pauseGame()
+		exit = function()
+			arg_5_0:pauseGame()
 		end,
-		result = function ()
-			slot1 = uv0.scoreNum
-			slot2 = uv0:GetMGData():GetRuntimeData("elements") and #slot0 > 0 and slot0[1] or 0
+		result = function()
+			local var_9_0 = arg_5_0:GetMGData():GetRuntimeData("elements")
+			local var_9_1 = arg_5_0.scoreNum
+			local var_9_2 = var_9_0 and #var_9_0 > 0 and var_9_0[1] or 0
+			local var_9_3 = arg_5_0.rtTitlePage:Find("result")
 
-			setActive(uv0.rtTitlePage:Find("result"):Find("window/now/new"), slot2 < slot1)
+			setActive(var_9_3:Find("window/now/new"), var_9_2 < var_9_1)
 
-			if slot2 <= slot1 then
-				uv0:StoreDataToServer({
-					slot1
+			if var_9_2 <= var_9_1 then
+				var_9_2 = var_9_1
+
+				arg_5_0:StoreDataToServer({
+					var_9_2
 				})
 			end
 
-			setText(slot3:Find("window/high/Text"), slot2)
-			setText(slot3:Find("window/now/Text"), slot1)
+			setText(var_9_3:Find("window/high/Text"), var_9_2)
+			setText(var_9_3:Find("window/now/Text"), var_9_1)
 
-			if uv0.stageIndex == uv0:GetMGHubData().usedtime + 1 and slot4.count > 0 then
-				uv0:SendSuccess(0)
+			local var_9_4 = arg_5_0:GetMGHubData()
+
+			if arg_5_0.stageIndex == var_9_4.usedtime + 1 and var_9_4.count > 0 then
+				arg_5_0:SendSuccess(0)
 			end
 		end
 	})
 end
 
-function slot0.updateMainUI(slot0)
-	slot1 = slot0:GetMGHubData()
-	slot3 = slot1.usedtime
-	slot5 = slot3 == slot1:getConfig("reward_need") and 8 or math.min(slot1.usedtime + 1, slot3 + slot1.count)
+function var_0_0.updateMainUI(arg_10_0)
+	local var_10_0 = arg_10_0:GetMGHubData()
+	local var_10_1 = var_10_0:getConfig("reward_need")
+	local var_10_2 = var_10_0.usedtime
+	local var_10_3 = var_10_2 + var_10_0.count
+	local var_10_4 = var_10_2 == var_10_1 and 8 or math.min(var_10_0.usedtime + 1, var_10_3)
+	local var_10_5 = arg_10_0.itemList.container
+	local var_10_6 = var_10_5.childCount
 
-	for slot11 = 1, slot0.itemList.container.childCount do
-		slot12 = {}
+	for iter_10_0 = 1, var_10_6 do
+		local var_10_7 = {}
 
-		if slot11 <= slot3 then
-			slot12.finish = true
-		elseif slot11 <= slot4 then
-			-- Nothing
-		elseif slot3 == slot2 then
-			slot12.finish = false
-			slot12.lock = false
+		if iter_10_0 <= var_10_2 then
+			var_10_7.finish = true
+		elseif iter_10_0 <= var_10_3 then
+			-- block empty
+		elseif var_10_2 == var_10_1 then
+			var_10_7.finish = false
+			var_10_7.lock = false
 		else
-			slot12.lock = true
+			var_10_7.lock = true
 		end
 
-		slot13 = slot6:GetChild(slot11 - 1)
+		local var_10_8 = var_10_5:GetChild(iter_10_0 - 1)
 
-		setActive(slot13:Find("finish"), slot12.finish)
-		setActive(slot13:Find("lock"), slot12.lock)
-		setToggleEnabled(slot13, slot11 <= slot5)
-		triggerToggle(slot13, slot11 == slot5)
+		setActive(var_10_8:Find("finish"), var_10_7.finish)
+		setActive(var_10_8:Find("lock"), var_10_7.lock)
+		setToggleEnabled(var_10_8, iter_10_0 <= var_10_4)
+		triggerToggle(var_10_8, iter_10_0 == var_10_4)
 	end
 
-	slot9 = slot6.rect.height
-	slot10 = slot6:GetComponent(typeof(ScrollRect)).viewport.rect.height
+	local var_10_9 = var_10_5:GetChild(0).anchoredPosition.y - var_10_5:GetChild(var_10_4 - 1).anchoredPosition.y
+	local var_10_10 = var_10_5.rect.height
+	local var_10_11 = var_10_5:GetComponent(typeof(ScrollRect)).viewport.rect.height
+	local var_10_12 = math.clamp(var_10_9, 0, var_10_10 - var_10_11) / (var_10_10 - var_10_11)
 
-	scrollTo(slot6, nil, 1 - math.clamp(slot6:GetChild(0).anchoredPosition.y - slot6:GetChild(slot5 - 1).anchoredPosition.y, 0, slot9 - slot10) / (slot9 - slot10))
-	setActive(slot0.rtTitlePage:Find("main/tip/Image"), slot3 == slot2)
-	slot0:checkGet()
+	scrollTo(var_10_5, nil, 1 - var_10_12)
+	setActive(arg_10_0.rtTitlePage:Find("main/tip/Image"), var_10_2 == var_10_1)
+	arg_10_0:checkGet()
 
-	if slot3 == 1 and slot5 == 2 then
-		scrollTo(slot6, nil, 1)
+	if var_10_2 == 1 and var_10_4 == 2 then
+		scrollTo(var_10_5, nil, 1)
 		pg.NewGuideMgr.GetInstance():Play("Ryza_MiniGame")
 	elseif PlayerPrefs.GetInt("ryza_minigame_help", 0) == 0 then
-		triggerButton(slot0.rtTitlePage:Find("main/btn_rule"))
+		triggerButton(arg_10_0.rtTitlePage:Find("main/btn_rule"))
 	end
 end
 
-function slot0.checkGet(slot0)
-	if slot0:GetMGHubData().ultimate == 0 then
-		if slot1.usedtime < slot1:getConfig("reward_need") then
+function var_0_0.checkGet(arg_11_0)
+	local var_11_0 = arg_11_0:GetMGHubData()
+
+	if var_11_0.ultimate == 0 then
+		if var_11_0.usedtime < var_11_0:getConfig("reward_need") then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot1.id,
+			hubid = var_11_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function slot0.initUI(slot0)
-	slot1 = slot0._tf
-	slot0.rtTitlePage = slot1:Find("TitlePage")
-	slot1 = slot0.rtTitlePage
-	slot1 = slot1:Find("main")
+function var_0_0.initUI(arg_12_0)
+	arg_12_0.rtTitlePage = arg_12_0._tf:Find("TitlePage")
 
-	onButton(slot0, slot1:Find("btn_back"), function ()
-		uv0:closeView()
+	local var_12_0 = arg_12_0.rtTitlePage:Find("main")
+
+	onButton(arg_12_0, var_12_0:Find("btn_back"), function()
+		arg_12_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot1:Find("btn_rule"), function ()
+	onButton(arg_12_0, var_12_0:Find("btn_rule"), function()
 		PlayerPrefs.SetInt("ryza_minigame_help", 1)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
@@ -141,483 +157,469 @@ function slot0.initUI(slot0)
 		})
 	end, SFX_PANEL)
 
-	slot2 = slot0:GetMGData()
-	slot2 = slot2:GetSimpleValue("story")
+	local var_12_1 = arg_12_0:GetMGData():GetSimpleValue("story")
 
-	onButton(slot0, slot1:Find("btn_start"), function ()
-		slot0 = {}
-
-		if checkExist(uv0, {
-			uv1.stageIndex
+	onButton(arg_12_0, var_12_0:Find("btn_start"), function()
+		local var_15_0 = {}
+		local var_15_1 = checkExist(var_12_1, {
+			arg_12_0.stageIndex
 		}, {
 			1
-		}) then
-			table.insert(slot0, function (slot0)
-				pg.NewStoryMgr.GetInstance():Play(uv0, slot0)
+		})
+
+		if var_15_1 then
+			table.insert(var_15_0, function(arg_16_0)
+				pg.NewStoryMgr.GetInstance():Play(var_15_1, arg_16_0)
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			uv0:readyStart()
+		seriesAsync(var_15_0, function()
+			arg_12_0:readyStart()
 		end)
 	end, SFX_CONFIRM)
 
-	slot0.stageIndex = 0
-	slot4 = slot1:Find("side_panel/award/content")
-	slot0.itemList = UIItemList.New(slot4, slot4:GetChild(0))
-	slot5 = slot0.itemList
+	arg_12_0.stageIndex = 0
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	local var_12_2 = pg.mini_game[arg_12_0:GetMGData().id].simple_config_data.drop_ids
+	local var_12_3 = var_12_0:Find("side_panel/award/content")
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot2:Find("IconTpl")
-			slot5, slot6, slot7 = unpack(uv0[slot1])
+	arg_12_0.itemList = UIItemList.New(var_12_3, var_12_3:GetChild(0))
 
-			updateDrop(slot3, {
-				count = slot7,
-				id = slot6,
-				type = slot5
-			})
-			onButton(uv1, slot3, function ()
-				uv0:emit(uv1.ON_DROP, uv2)
+	arg_12_0.itemList:make(function(arg_18_0, arg_18_1, arg_18_2)
+		arg_18_1 = arg_18_1 + 1
+
+		if arg_18_0 == UIItemList.EventUpdate then
+			local var_18_0 = arg_18_2:Find("IconTpl")
+			local var_18_1 = {}
+
+			var_18_1.type, var_18_1.id, var_18_1.count = unpack(var_12_2[arg_18_1])
+
+			updateDrop(var_18_0, var_18_1)
+			onButton(arg_12_0, var_18_0, function()
+				arg_12_0:emit(var_0_0.ON_DROP, var_18_1)
 			end, SFX_PANEL)
-			onToggle(uv1, slot2, function (slot0)
-				if slot0 then
-					uv0.stageIndex = uv1
+			onToggle(arg_12_0, arg_18_2, function(arg_20_0)
+				if arg_20_0 then
+					arg_12_0.stageIndex = arg_18_1
 				end
 			end)
 		end
 	end)
+	arg_12_0.itemList:align(#var_12_2)
 
-	slot5 = slot0.itemList
+	local var_12_4 = arg_12_0:GetMGHubData():getConfig("reward_need")
 
-	slot5:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop_ids)
-
-	slot5 = slot0:GetMGHubData()
-	slot6 = slot5:getConfig("reward_need")
-
-	setActive(slot4:GetChild(slot6), true)
-	onToggle(slot0, slot4:GetChild(slot6), function (slot0)
-		if slot0 then
-			uv0.stageIndex = 0
+	setActive(var_12_3:GetChild(var_12_4), true)
+	onToggle(arg_12_0, var_12_3:GetChild(var_12_4), function(arg_21_0)
+		if arg_21_0 then
+			arg_12_0.stageIndex = 0
 		end
 	end)
-
-	slot7 = slot0.rtTitlePage
-	slot7 = slot7:Find("countdown")
-	slot8 = slot7:Find("bg/Image")
-	slot8 = slot8:GetComponent(typeof(DftAniEvent))
-
-	slot8:SetEndEvent(function ()
-		uv0:openUI()
-		uv0:startGame()
+	arg_12_0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_12_0:openUI()
+		arg_12_0:startGame()
 	end)
 
-	slot8 = slot0.rtTitlePage
-	slot8 = slot8:Find("pause")
+	local var_12_5 = arg_12_0.rtTitlePage:Find("pause")
 
-	onButton(slot0, slot8:Find("window/btn_confirm"), function ()
-		uv0:openUI()
-		uv0:resumeGame()
+	onButton(arg_12_0, var_12_5:Find("window/btn_confirm"), function()
+		arg_12_0:openUI()
+		arg_12_0:resumeGame()
 	end, SFX_CONFIRM)
 
-	slot9 = slot0.rtTitlePage
-	slot9 = slot9:Find("exit")
+	local var_12_6 = arg_12_0.rtTitlePage:Find("exit")
 
-	onButton(slot0, slot9:Find("window/btn_cancel"), function ()
-		uv0:openUI()
-		uv0:resumeGame()
+	onButton(arg_12_0, var_12_6:Find("window/btn_cancel"), function()
+		arg_12_0:openUI()
+		arg_12_0:resumeGame()
 	end, SFX_CANCEL)
-	onButton(slot0, slot9:Find("window/btn_confirm"), function ()
-		uv0:openUI()
-		uv0:resumeGame()
-		uv0:endGame()
+	onButton(arg_12_0, var_12_6:Find("window/btn_confirm"), function()
+		arg_12_0:openUI()
+		arg_12_0:resumeGame()
+		arg_12_0:endGame()
 	end, SFX_CONFIRM)
 
-	slot10 = slot0.rtTitlePage
-	slot10 = slot10:Find("result")
+	local var_12_7 = arg_12_0.rtTitlePage:Find("result")
 
-	onButton(slot0, slot10:Find("window/btn_finish"), function ()
-		setActive(uv0._tf:Find("Viewport"), false)
-		uv0:openUI("main")
+	onButton(arg_12_0, var_12_7:Find("window/btn_finish"), function()
+		setActive(arg_12_0._tf:Find("Viewport"), false)
+		arg_12_0:openUI("main")
 		pg.CriMgr.GetInstance():PlayBGM("ryza-5")
 	end, SFX_CONFIRM)
 end
 
-function slot0.initGameUI(slot0)
-	slot0.uiMgr = pg.UIMgr.GetInstance()
-	slot1 = slot0._tf
-	slot0.rtResource = slot1:Find("Resource")
-	slot1 = slot0._tf
-	slot0.rtMain = slot1:Find("Viewport/MainContent")
-	slot1 = slot0.rtMain
-	slot0.rtPlane = slot1:Find("plane")
-	slot0.sprites = {}
+function var_0_0.initGameUI(arg_27_0)
+	arg_27_0.uiMgr = pg.UIMgr.GetInstance()
+	arg_27_0.rtResource = arg_27_0._tf:Find("Resource")
+	arg_27_0.rtMain = arg_27_0._tf:Find("Viewport/MainContent")
+	arg_27_0.rtPlane = arg_27_0.rtMain:Find("plane")
+	arg_27_0.sprites = {}
 
-	eachChild(slot0.rtPlane, function (slot0)
-		uv0.sprites[slot0.name] = getImageSprite(slot0)
+	eachChild(arg_27_0.rtPlane, function(arg_28_0)
+		arg_27_0.sprites[arg_28_0.name] = getImageSprite(arg_28_0)
 	end)
 
-	slot1 = slot0._tf
-	slot0.rtController = slot1:Find("Controller")
-	slot1 = slot0.rtController
-	slot0.rtJoyStick = slot1:Find("bottom/handle_stick")
-	slot3 = slot0.rtController
+	arg_27_0.rtController = arg_27_0._tf:Find("Controller")
+	arg_27_0.rtJoyStick = arg_27_0.rtController:Find("bottom/handle_stick")
 
-	onButton(slot0, slot3:Find("bottom/btn_bomb"), function ()
-		uv0.responder:RyzaBomb()
+	onButton(arg_27_0, arg_27_0.rtController:Find("bottom/btn_bomb"), function()
+		arg_27_0.responder:RyzaBomb()
 	end)
 
-	slot1 = slot0.rtController
-	slot0.rtScore = slot1:Find("top/title/SCORE/Text")
-	slot1 = slot0.rtController
-	slot0.rtTime = slot1:Find("top/title/TIME/Text")
-	slot3 = slot0.rtController
+	arg_27_0.rtScore = arg_27_0.rtController:Find("top/title/SCORE/Text")
+	arg_27_0.rtTime = arg_27_0.rtController:Find("top/title/TIME/Text")
 
-	onButton(slot0, slot3:Find("top/btn_back"), function ()
-		uv0:openUI("exit")
+	onButton(arg_27_0, arg_27_0.rtController:Find("top/btn_back"), function()
+		arg_27_0:openUI("exit")
+	end, SFX_PANEL)
+	onButton(arg_27_0, arg_27_0.rtController:Find("top/btn_pause"), function()
+		arg_27_0:openUI("pause")
 	end, SFX_PANEL)
 
-	slot3 = slot0.rtController
+	arg_27_0.rtStatus = arg_27_0.rtController:Find("bottom/status")
+	arg_27_0.rtRyzaHP = arg_27_0.rtController:Find("top/title/HP/heart")
+	arg_27_0.rtControllerUI = arg_27_0.rtController:Find("UI")
 
-	onButton(slot0, slot3:Find("top/btn_pause"), function ()
-		uv0:openUI("pause")
-	end, SFX_PANEL)
+	eachChild(arg_27_0.rtControllerUI, function(arg_32_0)
+		arg_27_0["tplUI" .. arg_32_0.name] = arg_32_0
 
-	slot1 = slot0.rtController
-	slot0.rtStatus = slot1:Find("bottom/status")
-	slot1 = slot0.rtController
-	slot0.rtRyzaHP = slot1:Find("top/title/HP/heart")
-	slot1 = slot0.rtController
-	slot0.rtControllerUI = slot1:Find("UI")
-
-	eachChild(slot0.rtControllerUI, function (slot0)
-		uv0["tplUI" .. slot0.name] = slot0
-
-		setActive(slot0, false)
+		setActive(arg_32_0, false)
 	end)
 
-	slot0.responder = Responder.New(slot0)
+	arg_27_0.responder = Responder.New(arg_27_0)
 
-	slot0:bind(uv0.EVENT_CREATE, function (slot0, ...)
-		uv0:CreateReactor(...)
+	arg_27_0:bind(var_0_0.EVENT_CREATE, function(arg_33_0, ...)
+		arg_27_0:CreateReactor(...)
 	end)
-	slot0:bind(uv0.EVENT_DESTROY, function (slot0, ...)
-		uv0:DestroyReactor(...)
+	arg_27_0:bind(var_0_0.EVENT_DESTROY, function(arg_34_0, ...)
+		arg_27_0:DestroyReactor(...)
 	end)
-	slot0:bind(uv0.EVENT_FINISH, function (slot0, slot1)
-		uv0:endGame(slot1)
+	arg_27_0:bind(var_0_0.EVENT_FINISH, function(arg_35_0, arg_35_1)
+		arg_27_0:endGame(arg_35_1)
 	end)
-	slot0:bind(uv0.EVENT_WINDOW_FOCUS, function (slot0, slot1)
-		setAnchoredPosition(uv0.rtMain, {
-			x = math.clamp(-slot1.x, -uv0.buffer.x, uv0.buffer.x),
-			y = math.clamp(-slot1.y, -uv0.buffer.y - 48, uv0.buffer.y - 48)
+	arg_27_0:bind(var_0_0.EVENT_WINDOW_FOCUS, function(arg_36_0, arg_36_1)
+		setAnchoredPosition(arg_27_0.rtMain, {
+			x = math.clamp(-arg_36_1.x, -arg_27_0.buffer.x, arg_27_0.buffer.x),
+			y = math.clamp(-arg_36_1.y, -arg_27_0.buffer.y - 48, arg_27_0.buffer.y - 48)
 		})
 	end)
-	slot0:bind(uv0.EVENT_STATUS_SYNC, function (slot0, ...)
-		uv0:updateControllerStatus(...)
-		uv0:popRyzaUI(...)
+	arg_27_0:bind(var_0_0.EVENT_STATUS_SYNC, function(arg_37_0, ...)
+		arg_27_0:updateControllerStatus(...)
+		arg_27_0:popRyzaUI(...)
 	end)
-	slot0:bind(uv0.EVENT_UPDATE_HIDE, function (slot0, slot1, slot2)
-		if isa(slot1, MoveEnemy) then
-			GetOrAddComponent(uv0.reactorUIs[slot1], typeof(CanvasGroup)).alpha = slot2 and 0 or 1
+	arg_27_0:bind(var_0_0.EVENT_UPDATE_HIDE, function(arg_38_0, arg_38_1, arg_38_2)
+		if isa(arg_38_1, MoveEnemy) then
+			GetOrAddComponent(arg_27_0.reactorUIs[arg_38_1], typeof(CanvasGroup)).alpha = arg_38_2 and 0 or 1
 		end
 	end)
 end
 
-function slot0.initTimer(slot0)
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
+function var_0_0.initTimer(arg_39_0)
+	arg_39_0.timer = Timer.New(function()
+		arg_39_0:onTimer()
 	end, RyzaMiniGameConfig.TIME_INTERVAL, -1)
 end
 
-function slot0.readyStart(slot0)
-	slot0:resetGame()
-	setActive(slot0._tf:Find("Viewport"), true)
-	uv0(slot0.rtMain, 1)
-	slot0:initConfig()
-	slot0:buildMap()
-	slot0:initController()
-	slot0:openUI("countdown")
+function var_0_0.readyStart(arg_41_0)
+	arg_41_0:resetGame()
+	setActive(arg_41_0._tf:Find("Viewport"), true)
+	var_0_1(arg_41_0.rtMain, 1)
+	arg_41_0:initConfig()
+	arg_41_0:buildMap()
+	arg_41_0:initController()
+	arg_41_0:openUI("countdown")
 end
 
-function slot0.startGame(slot0)
+function var_0_0.startGame(arg_42_0)
 	pg.CriMgr.GetInstance():PlayBGM("ryza-az-battle")
 
-	slot0.gameStartFlag = true
+	arg_42_0.gameStartFlag = true
 
-	slot0:startTimer()
+	arg_42_0:startTimer()
 end
 
-function slot0.endGame(slot0, slot1)
-	if slot1 then
-		slot0.scoreNum = slot0.scoreNum + RyzaMiniGameConfig.GetPassGamePoint(slot0.countTime)
+function var_0_0.endGame(arg_43_0, arg_43_1)
+	if arg_43_1 then
+		arg_43_0.scoreNum = arg_43_0.scoreNum + RyzaMiniGameConfig.GetPassGamePoint(arg_43_0.countTime)
 
-		setText(slot0.rtScore, slot0.scoreNum)
+		setText(arg_43_0.rtScore, arg_43_0.scoreNum)
 	end
 
-	slot0.gameEndFlag = true
+	arg_43_0.gameEndFlag = true
 
-	slot0:stopTimer()
-	slot0:openUI("result")
+	arg_43_0:stopTimer()
+	arg_43_0:openUI("result")
 end
 
-function slot0.pauseGame(slot0)
-	slot0.gamePause = true
+function var_0_0.pauseGame(arg_44_0)
+	arg_44_0.gamePause = true
 
-	slot0:stopTimer()
-	slot0:pauseManagedTween()
+	arg_44_0:stopTimer()
+	arg_44_0:pauseManagedTween()
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gamePause = false
+function var_0_0.resumeGame(arg_45_0)
+	arg_45_0.gamePause = false
 
-	slot0:startTimer()
-	slot0:resumeManagedTween()
+	arg_45_0:startTimer()
+	arg_45_0:resumeManagedTween()
 end
 
-function slot0.resetGame(slot0)
-	slot0.gameStartFlag = false
-	slot0.gamePause = false
-	slot0.gameEndFlag = false
-	slot0.scoreNum = 0
-	slot0.countTime = 0
+function var_0_0.resetGame(arg_46_0)
+	arg_46_0.gameStartFlag = false
+	arg_46_0.gamePause = false
+	arg_46_0.gameEndFlag = false
+	arg_46_0.scoreNum = 0
+	arg_46_0.countTime = 0
 
-	slot0.responder:reset()
+	arg_46_0.responder:reset()
 
-	if slot0.reactorUIs then
-		for slot4, slot5 in pairs(slot0.reactorUIs) do
-			Destroy(slot5)
+	if arg_46_0.reactorUIs then
+		for iter_46_0, iter_46_1 in pairs(arg_46_0.reactorUIs) do
+			Destroy(iter_46_1)
 		end
 	end
 
-	slot0.reactorUIs = {}
+	arg_46_0.reactorUIs = {}
 end
 
-function slot0.initConfig(slot0)
-	slot2 = 0
-	slot3 = underscore.rest(RyzaMiniGameConfig.ENEMY_TYPE_LIST, 1)
-	slot4 = {}
-	slot5 = pg.MiniGameTileMgr.GetInstance():getDataLayers("BoomGame", "BoomLevel_" .. (slot0.stageIndex == 0 and math.random(7) or slot0.stageIndex))
-	slot0.config = {
-		mapSize = NewPos(slot5[1].width, slot5[1].height),
-		reactorList = {}
-	}
+function var_0_0.initConfig(arg_47_0)
+	local var_47_0 = arg_47_0.stageIndex == 0 and math.random(7) or arg_47_0.stageIndex
+	local var_47_1 = 0
+	local var_47_2 = underscore.rest(RyzaMiniGameConfig.ENEMY_TYPE_LIST, 1)
+	local var_47_3 = {}
+	local var_47_4 = pg.MiniGameTileMgr.GetInstance():getDataLayers("BoomGame", "BoomLevel_" .. var_47_0)
 
-	for slot9, slot10 in ipairs(slot5) do
-		for slot14, slot15 in ipairs(slot10.layer) do
-			if slot15.item then
-				slot16 = {
-					name = slot15.item
+	arg_47_0.config = {}
+	arg_47_0.config.mapSize = NewPos(var_47_4[1].width, var_47_4[1].height)
+	arg_47_0.config.reactorList = {}
+
+	for iter_47_0, iter_47_1 in ipairs(var_47_4) do
+		for iter_47_2, iter_47_3 in ipairs(iter_47_1.layer) do
+			if iter_47_3.item then
+				local var_47_5 = {
+					name = iter_47_3.item
 				}
 
-				if slot0.stageIndex == 0 and isa(RyzaMiniGameConfig.CreateInfo(slot16.name), TargetMove) then
-					if slot16.name ~= "Ryza" then
-						if string.find(slot3[math.random(#slot3)], "BOSS_") then
-							slot16.name = table.remove(slot3, slot17)
+				if arg_47_0.stageIndex == 0 and isa(RyzaMiniGameConfig.CreateInfo(var_47_5.name), TargetMove) then
+					if var_47_5.name == "Ryza" then
+						-- block empty
+					else
+						local var_47_6 = math.random(#var_47_2)
 
-							if slot2 + 1 == RyzaMiniGameConfig.FREE_MAP_BOSS_LIMIT[slot1] then
-								while string.find(slot3[#slot3], "BOSS_") do
-									table.remove(slot3)
+						if string.find(var_47_2[var_47_6], "BOSS_") then
+							var_47_5.name = table.remove(var_47_2, var_47_6)
+							var_47_1 = var_47_1 + 1
+
+							if var_47_1 == RyzaMiniGameConfig.FREE_MAP_BOSS_LIMIT[var_47_0] then
+								while string.find(var_47_2[#var_47_2], "BOSS_") do
+									table.remove(var_47_2)
 								end
 							end
 						else
-							slot16.name = slot3[slot17]
+							var_47_5.name = var_47_2[var_47_6]
 						end
 
-						table.insert(slot4, #slot0.config.reactorList + 1)
+						table.insert(var_47_3, #arg_47_0.config.reactorList + 1)
 					end
-				elseif slot15.prop then
-					for slot20, slot21 in pairs(slot15.prop) do
-						slot16[slot20] = slot21
+				elseif iter_47_3.prop then
+					for iter_47_4, iter_47_5 in pairs(iter_47_3.prop) do
+						var_47_5[iter_47_4] = iter_47_5
 					end
 				end
 
-				slot16.pos = {
-					(slot15.index - 1) % slot0.config.mapSize.x,
-					math.floor((slot15.index - 1) / slot0.config.mapSize.x)
+				var_47_5.pos = {
+					(iter_47_3.index - 1) % arg_47_0.config.mapSize.x,
+					math.floor((iter_47_3.index - 1) / arg_47_0.config.mapSize.x)
 				}
 
-				table.insert(slot0.config.reactorList, slot16)
+				table.insert(arg_47_0.config.reactorList, var_47_5)
 			end
 		end
 	end
 
-	if slot0.stageIndex == 0 and slot2 == 0 then
-		slot6 = math.random(#slot4)
-		slot7 = slot0.config.reactorList[slot6]
-		slot0.config.reactorList[slot6] = {
-			name = "BOSS_" .. slot7.name,
-			pos = slot7.pos
+	if arg_47_0.stageIndex == 0 and var_47_1 == 0 then
+		local var_47_7 = math.random(#var_47_3)
+		local var_47_8 = arg_47_0.config.reactorList[var_47_7]
+
+		arg_47_0.config.reactorList[var_47_7] = {
+			name = "BOSS_" .. var_47_8.name,
+			pos = var_47_8.pos
 		}
 	end
 end
 
-function slot0.buildMap(slot0)
-	setSizeDelta(slot0.rtMain, slot0.config.mapSize * 32)
-	eachChild(slot0.rtMain:Find("bg/NW"), function (slot0)
-		setActive(slot0, slot0.name == tostring(math.floor((uv0.stageIndex - 1) % 8 / 2) + 1))
+function var_0_0.buildMap(arg_48_0)
+	setSizeDelta(arg_48_0.rtMain, arg_48_0.config.mapSize * 32)
+	eachChild(arg_48_0.rtMain:Find("bg/NW"), function(arg_49_0)
+		setActive(arg_49_0, arg_49_0.name == tostring(math.floor((arg_48_0.stageIndex - 1) % 8 / 2) + 1))
 	end)
 
-	slot1 = slot0._tf:Find("Viewport").rect
-	slot2 = slot0.rtMain.rect
-	slot0.buffer = NewPos(math.max(slot2.width + 256 - slot1.width, 0), math.max(slot2.height + 160 - slot1.height, 0)) * 0.5
-	slot3 = Time.realtimeSinceStartup
-	slot6 = UIItemList.New(slot0.rtPlane, slot0.rtPlane:GetChild(0))
+	local var_48_0 = arg_48_0._tf:Find("Viewport").rect
+	local var_48_1 = arg_48_0.rtMain.rect
 
-	slot6:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot2.name = slot1 % uv0 .. "_" .. math.floor(slot1 / uv0)
+	arg_48_0.buffer = NewPos(math.max(var_48_1.width + 256 - var_48_0.width, 0), math.max(var_48_1.height + 160 - var_48_0.height, 0)) * 0.5
+
+	local var_48_2 = Time.realtimeSinceStartup
+	local var_48_3 = arg_48_0.config.mapSize.x
+	local var_48_4 = arg_48_0.config.mapSize.y
+	local var_48_5 = UIItemList.New(arg_48_0.rtPlane, arg_48_0.rtPlane:GetChild(0))
+
+	var_48_5:make(function(arg_50_0, arg_50_1, arg_50_2)
+		if arg_50_0 == UIItemList.EventUpdate then
+			local var_50_0 = arg_50_1 % var_48_4
+			local var_50_1 = math.floor(arg_50_1 / var_48_4)
+
+			arg_50_2.name = var_50_0 .. "_" .. var_50_1
 
 			if math.random() < RyzaMiniGameConfig.GRASS_CHAGNE_RATE then
-				setImageAlpha(slot2, 1)
-				setImageSprite(slot2, uv1.sprites["Grass_" .. 3 + math.random(3)])
+				setImageAlpha(arg_50_2, 1)
+
+				local var_50_2 = "Grass_" .. 3 + math.random(3)
+
+				setImageSprite(arg_50_2, arg_48_0.sprites[var_50_2])
 			else
-				setImageAlpha(slot2, 0)
+				setImageAlpha(arg_50_2, 0)
 			end
 		end
 	end)
-	slot6:align(slot0.config.mapSize.x * slot0.config.mapSize.y)
+	var_48_5:align(var_48_3 * var_48_4)
+	arg_48_0:soilMapPartition(Vector2.zero, arg_48_0.config.mapSize)
 
-	slot10 = slot0.config.mapSize
-
-	slot0:soilMapPartition(Vector2.zero, slot10)
-
-	for slot10, slot11 in ipairs(slot0.config.reactorList) do
-		slot0:CreateReactor(slot11)
+	for iter_48_0, iter_48_1 in ipairs(arg_48_0.config.reactorList) do
+		arg_48_0:CreateReactor(iter_48_1)
 	end
 end
 
-function slot0.initController(slot0)
-	setText(slot0.rtScore, slot0.scoreNum)
-	setText(slot0.rtTime, string.format("%02d:%02d", math.floor(slot0.countTime / 60), math.floor(slot0.countTime % 60)))
+function var_0_0.initController(arg_51_0)
+	setText(arg_51_0.rtScore, arg_51_0.scoreNum)
+	setText(arg_51_0.rtTime, string.format("%02d:%02d", math.floor(arg_51_0.countTime / 60), math.floor(arg_51_0.countTime % 60)))
 
-	slot1 = slot0.responder.reactorRyza
+	local var_51_0 = arg_51_0.responder.reactorRyza
 
-	slot0:updateControllerStatus(slot1, "hp", {
-		num = slot1.hp
+	arg_51_0:updateControllerStatus(var_51_0, "hp", {
+		num = var_51_0.hp
 	})
-	slot0:updateControllerStatus(slot1, "bomb", {
-		num = slot1.bomb
+	arg_51_0:updateControllerStatus(var_51_0, "bomb", {
+		num = var_51_0.bomb
 	})
-	slot0:updateControllerStatus(slot1, "power", {
-		num = slot1.power
+	arg_51_0:updateControllerStatus(var_51_0, "power", {
+		num = var_51_0.power
 	})
-	slot0:updateControllerStatus(slot1, "speed", {
-		num = slot1.speed
+	arg_51_0:updateControllerStatus(var_51_0, "speed", {
+		num = var_51_0.speed
 	})
 end
 
-function slot0.updateControllerStatus(slot0, slot1, slot2, slot3)
-	slot4 = slot0.reactorUIs[slot1]
+function var_0_0.updateControllerStatus(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
+	local var_52_0 = arg_52_0.reactorUIs[arg_52_1]
 
-	if isa(slot1, MoveRyza) then
-		if slot2 == "hp" then
-			eachChild(slot0.rtRyzaHP, function (slot0)
-				setActive(slot0:Find("active"), tonumber(slot0.name) <= uv0.num)
+	if isa(arg_52_1, MoveRyza) then
+		if arg_52_2 == "hp" then
+			eachChild(arg_52_0.rtRyzaHP, function(arg_53_0)
+				setActive(arg_53_0:Find("active"), tonumber(arg_53_0.name) <= arg_52_3.num)
 			end)
 		else
-			slot6 = slot0.rtStatus
-
-			eachChild(slot6:Find(string.upper(slot2) .. "/bit"), function (slot0)
-				setActive(slot0, tonumber(slot0.name) <= uv0.num)
+			eachChild(arg_52_0.rtStatus:Find(string.upper(arg_52_2) .. "/bit"), function(arg_54_0)
+				setActive(arg_54_0, tonumber(arg_54_0.name) <= arg_52_3.num)
 			end)
 		end
-	elseif isa(slot1, MoveEnemy) then
-		setSlider(slot4:Find("hp"), 0, slot3.max, slot3.num)
+	elseif isa(arg_52_1, MoveEnemy) then
+		setSlider(var_52_0:Find("hp"), 0, arg_52_3.max, arg_52_3.num)
 	end
 end
 
-function slot0.popRyzaUI(slot0, slot1, slot2, slot3)
-	if isa(slot1, MoveRyza) then
-		slot4 = slot0.reactorUIs[slot1]
+function var_0_0.popRyzaUI(arg_55_0, arg_55_1, arg_55_2, arg_55_3)
+	if isa(arg_55_1, MoveRyza) then
+		local var_55_0 = arg_55_0.reactorUIs[arg_55_1]
 
-		if slot2 == "hp" then
-			slot5 = slot4:Find("pop/hp_" .. (slot3.delta > 0 and "up" or "down"))
+		if arg_55_2 == "hp" then
+			local var_55_1 = var_55_0:Find("pop/hp_" .. (arg_55_3.delta > 0 and "up" or "down"))
 
-			for slot9 = 1, 2 do
-				setActive(slot5:Find(slot9), slot9 * slot9 == slot3.delta * slot3.delta)
+			for iter_55_0 = 1, 2 do
+				setActive(var_55_1:Find(iter_55_0), iter_55_0 * iter_55_0 == arg_55_3.delta * arg_55_3.delta)
 			end
 
-			setActive(slot5, false)
-			setActive(slot5, true)
+			setActive(var_55_1, false)
+			setActive(var_55_1, true)
 		else
-			slot5 = slot4:Find("pop/" .. slot2 .. "_up")
+			local var_55_2 = var_55_0:Find("pop/" .. arg_55_2 .. "_up")
 
-			setActive(slot5, false)
-			setActive(slot5, true)
+			setActive(var_55_2, false)
+			setActive(var_55_2, true)
 		end
 	end
 end
 
-function slot0.CreateReactor(slot0, slot1)
-	slot2, slot3, slot4 = RyzaMiniGameConfig.CreateInfo(slot1.name)
+function var_0_0.CreateReactor(arg_56_0, arg_56_1)
+	local var_56_0, var_56_1, var_56_2 = RyzaMiniGameConfig.CreateInfo(arg_56_1.name)
 
-	if not slot2 then
-		warning(slot1.name)
+	if not var_56_0 then
+		warning(arg_56_1.name)
 
 		return
 	end
 
-	if isa(slot2.New(slot1, cloneTplTo(slot0.rtResource:Find(slot3), slot0.rtMain:Find(slot4)), slot0.responder), MoveRyza) then
-		slot0.reactorUIs[slot5] = cloneTplTo(slot0.tplUIRyza, slot0.rtControllerUI)
-		slot7 = slot0.reactorUIs[slot5]
+	local var_56_3 = var_56_0.New(arg_56_1, cloneTplTo(arg_56_0.rtResource:Find(var_56_1), arg_56_0.rtMain:Find(var_56_2)), arg_56_0.responder)
 
-		eachChild(slot7:Find("pop"), function (slot0)
-			slot1 = slot0:GetComponent(typeof(DftAniEvent))
+	if isa(var_56_3, MoveRyza) then
+		arg_56_0.reactorUIs[var_56_3] = cloneTplTo(arg_56_0.tplUIRyza, arg_56_0.rtControllerUI)
 
-			slot1:SetEndEvent(function ()
-				setActive(uv0, false)
+		eachChild(arg_56_0.reactorUIs[var_56_3]:Find("pop"), function(arg_57_0)
+			arg_57_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+				setActive(arg_57_0, false)
 			end)
 		end)
 
-		slot0.reactorUIs[slot5].position = slot5._tf.position
-	elseif isa(slot5, MoveEnemy) then
-		slot0.reactorUIs[slot5] = cloneTplTo(slot0.tplUIEnemy, slot0.rtControllerUI)
+		arg_56_0.reactorUIs[var_56_3].position = var_56_3._tf.position
+	elseif isa(var_56_3, MoveEnemy) then
+		arg_56_0.reactorUIs[var_56_3] = cloneTplTo(arg_56_0.tplUIEnemy, arg_56_0.rtControllerUI)
 
-		setAnchoredPosition(slot0.reactorUIs[slot5]:Find("hp"), {
-			y = slot5:GetUIHeight()
+		setAnchoredPosition(arg_56_0.reactorUIs[var_56_3]:Find("hp"), {
+			y = var_56_3:GetUIHeight()
 		})
 
-		slot0.reactorUIs[slot5].position = slot5._tf.position
+		arg_56_0.reactorUIs[var_56_3].position = var_56_3._tf.position
 	end
 end
 
-function slot0.DestroyReactor(slot0, slot1, slot2)
-	if slot0.reactorUIs[slot1] then
-		Destroy(slot0.reactorUIs[slot1])
+function var_0_0.DestroyReactor(arg_59_0, arg_59_1, arg_59_2)
+	if arg_59_0.reactorUIs[arg_59_1] then
+		Destroy(arg_59_0.reactorUIs[arg_59_1])
 
-		slot0.reactorUIs[slot1] = nil
+		arg_59_0.reactorUIs[arg_59_1] = nil
 	end
 
-	slot0.scoreNum = slot0.scoreNum + slot2
+	arg_59_0.scoreNum = arg_59_0.scoreNum + arg_59_2
 
-	setText(slot0.rtScore, slot0.scoreNum)
+	setText(arg_59_0.rtScore, arg_59_0.scoreNum)
 end
 
-function slot0.soilMapPartition(slot0, slot1, slot2)
-	slot3 = RyzaMiniGameConfig.SOIL_RANDOM_CONFIG
+function var_0_0.soilMapPartition(arg_60_0, arg_60_1, arg_60_2)
+	local var_60_0 = RyzaMiniGameConfig.SOIL_RANDOM_CONFIG
+	local var_60_1 = math.floor(math.min(arg_60_2.x, arg_60_2.y) * (var_60_0.size_rate[1] + math.random() * (var_60_0.size_rate[2] - var_60_0.size_rate[1])))
 
-	if math.floor(math.min(slot2.x, slot2.y) * (slot3.size_rate[1] + math.random() * (slot3.size_rate[2] - slot3.size_rate[1]))) < 2 then
+	if var_60_1 < 2 then
 		return
 	end
 
-	slot0:dealSoilMap(NewPos(slot1.x + (math.random(4) % 4 % 2 > 0 and slot2.x - slot4 or 0), slot1.y + (slot5 > 1 and slot2.y - slot4 or 0)), slot4)
+	local var_60_2 = math.random(4) % 4
 
-	slot6 = slot4 + math.ceil((slot2.x - slot4) * slot3.spacer_rate)
-	slot7 = slot4 + math.ceil((slot2.y - slot4) * slot3.spacer_rate)
+	arg_60_0:dealSoilMap(NewPos(arg_60_1.x + (var_60_2 % 2 > 0 and arg_60_2.x - var_60_1 or 0), arg_60_1.y + (var_60_2 > 1 and arg_60_2.y - var_60_1 or 0)), var_60_1)
 
-	if slot2.y < slot2.x then
-		slot0:soilMapPartition(NewPos(slot1.x + (slot5 % 2 > 0 and 0 or slot6), slot1.y), NewPos(slot2.x - slot6, slot2.y))
-		slot0:soilMapPartition(NewPos(slot1.x + (slot5 % 2 > 0 and slot2.x - slot4 or 0), slot1.y + (slot5 > 1 and 0 or slot7)), NewPos(slot4, slot2.y - slot7))
+	local var_60_3 = var_60_1 + math.ceil((arg_60_2.x - var_60_1) * var_60_0.spacer_rate)
+	local var_60_4 = var_60_1 + math.ceil((arg_60_2.y - var_60_1) * var_60_0.spacer_rate)
+
+	if arg_60_2.x > arg_60_2.y then
+		arg_60_0:soilMapPartition(NewPos(arg_60_1.x + (var_60_2 % 2 > 0 and 0 or var_60_3), arg_60_1.y), NewPos(arg_60_2.x - var_60_3, arg_60_2.y))
+		arg_60_0:soilMapPartition(NewPos(arg_60_1.x + (var_60_2 % 2 > 0 and arg_60_2.x - var_60_1 or 0), arg_60_1.y + (var_60_2 > 1 and 0 or var_60_4)), NewPos(var_60_1, arg_60_2.y - var_60_4))
 	else
-		slot0:soilMapPartition(NewPos(slot1.x + (slot5 % 2 > 0 and 0 or slot6), slot1.y + (slot5 > 1 and slot2.y - slot4 or 0)), NewPos(slot2.x - slot6, slot4))
-		slot0:soilMapPartition(NewPos(slot1.x, slot1.y + (slot5 > 1 and 0 or slot7)), NewPos(slot2.x, slot2.y - slot7))
+		arg_60_0:soilMapPartition(NewPos(arg_60_1.x + (var_60_2 % 2 > 0 and 0 or var_60_3), arg_60_1.y + (var_60_2 > 1 and arg_60_2.y - var_60_1 or 0)), NewPos(arg_60_2.x - var_60_3, var_60_1))
+		arg_60_0:soilMapPartition(NewPos(arg_60_1.x, arg_60_1.y + (var_60_2 > 1 and 0 or var_60_4)), NewPos(arg_60_2.x, arg_60_2.y - var_60_4))
 	end
 end
 
-slot2 = {
+local var_0_2 = {
 	{
 		0,
 		1
@@ -635,7 +637,7 @@ slot2 = {
 		0
 	}
 }
-slot3 = {
+local var_0_3 = {
 	{
 		0,
 		1
@@ -670,41 +672,45 @@ slot3 = {
 	}
 }
 
-function slot0.dealSoilMap(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.dealSoilMap(arg_61_0, arg_61_1, arg_61_2)
+	local var_61_0 = {}
 
-	for slot7 = 0, 3 do
-		table.insert(slot3, slot1 + NewPos(slot7 % 2 > 0 and slot2 - 1 or 0, slot7 > 1 and slot2 - 1 or 0))
+	for iter_61_0 = 0, 3 do
+		table.insert(var_61_0, arg_61_1 + NewPos(iter_61_0 % 2 > 0 and arg_61_2 - 1 or 0, iter_61_0 > 1 and arg_61_2 - 1 or 0))
 	end
 
-	function slot4(slot0)
-		if slot0.x < uv0.x or slot0.y < uv0.y or slot0.x >= uv0.x + uv1 or slot0.y >= uv0.y + uv1 then
+	local function var_61_1(arg_62_0)
+		if arg_62_0.x < arg_61_1.x or arg_62_0.y < arg_61_1.y or arg_62_0.x >= arg_61_1.x + arg_61_2 or arg_62_0.y >= arg_61_1.y + arg_61_2 then
 			return false
 		else
 			return true
 		end
 	end
 
-	slot5 = {}
+	local var_61_2 = {}
 
-	function slot6(slot0)
-		slot1 = 0
-		slot2 = 1
+	local function var_61_3(arg_63_0)
+		local var_63_0 = 0
+		local var_63_1 = 1
 
-		for slot6, slot7 in ipairs(uv0) do
-			if uv1(slot0 + NewPos(unpack(slot7))) and defaultValue(uv2[slot8.x .. "_" .. slot8.y], true) then
-				slot1 = slot1 + slot2
+		for iter_63_0, iter_63_1 in ipairs(var_0_3) do
+			local var_63_2 = arg_63_0 + NewPos(unpack(iter_63_1))
+
+			if var_61_1(var_63_2) and defaultValue(var_61_2[var_63_2.x .. "_" .. var_63_2.y], true) then
+				var_63_0 = var_63_0 + var_63_1
 			end
 
-			slot2 = slot2 + slot2
+			var_63_1 = var_63_1 + var_63_1
 		end
 
-		return slot1
+		return var_63_0
 	end
 
-	function slot7(slot0)
-		for slot4, slot5 in ipairs(uv0) do
-			if uv1(slot0 + NewPos(unpack(slot5))) and defaultValue(uv2[slot6.x .. "_" .. slot6.y], true) and not RyzaMiniGameConfig.SOIL_SPRITES_DIC[uv3(slot6)] then
+	local function var_61_4(arg_64_0)
+		for iter_64_0, iter_64_1 in ipairs(var_0_3) do
+			local var_64_0 = arg_64_0 + NewPos(unpack(iter_64_1))
+
+			if var_61_1(var_64_0) and defaultValue(var_61_2[var_64_0.x .. "_" .. var_64_0.y], true) and not RyzaMiniGameConfig.SOIL_SPRITES_DIC[var_61_3(var_64_0)] then
 				return false
 			end
 		end
@@ -712,122 +718,130 @@ function slot0.dealSoilMap(slot0, slot1, slot2)
 		return true
 	end
 
-	slot8 = 0
-	slot9 = RyzaMiniGameConfig.SOIL_RANDOM_CONFIG.cancel_rate
-	slot10 = nil
-	slot11 = 0
+	local var_61_5 = 0
+	local var_61_6 = RyzaMiniGameConfig.SOIL_RANDOM_CONFIG.cancel_rate
+	local var_61_7
+	local var_61_8 = 0
 
-	while slot11 < #slot3 do
-		slot10 = slot3[slot11 + 1]
-		slot5[slot10.x .. "_" .. slot10.y] = false
+	while var_61_8 < #var_61_0 do
+		var_61_8 = var_61_8 + 1
 
-		if math.random() < slot9[1] + slot9[2] * (1 - slot8 / slot2 / slot2) * (1 - slot8 / slot2 / slot2) and slot7(slot10) then
-			slot8 = slot8 + 1
+		local var_61_9 = var_61_0[var_61_8]
+
+		var_61_2[var_61_9.x .. "_" .. var_61_9.y] = false
+
+		if math.random() < var_61_6[1] + var_61_6[2] * (1 - var_61_5 / arg_61_2 / arg_61_2) * (1 - var_61_5 / arg_61_2 / arg_61_2) and var_61_4(var_61_9) then
+			var_61_5 = var_61_5 + 1
 		else
-			slot5[slot10.x .. "_" .. slot10.y] = true
+			var_61_2[var_61_9.x .. "_" .. var_61_9.y] = true
 		end
 
-		for slot15, slot16 in ipairs(uv1) do
-			if slot4(slot10 + NewPos(unpack(slot16))) and slot5[slot17.x .. "_" .. slot17.y] == nil then
-				table.insert(slot3, slot17)
+		for iter_61_1, iter_61_2 in ipairs(var_0_2) do
+			local var_61_10 = var_61_9 + NewPos(unpack(iter_61_2))
+
+			if var_61_1(var_61_10) and var_61_2[var_61_10.x .. "_" .. var_61_10.y] == nil then
+				table.insert(var_61_0, var_61_10)
 			end
 		end
 	end
 
-	slot12 = slot0.config.mapSize.x
-	slot13 = slot0.config.mapSize.y
+	local var_61_11 = arg_61_0.config.mapSize.x
+	local var_61_12 = arg_61_0.config.mapSize.y
 
-	for slot17 = slot1.x, slot1.x + slot2 - 1 do
-		for slot21 = slot1.y, slot1.y + slot2 - 1 do
-			if defaultValue(slot5[slot17 .. "_" .. slot21], true) then
-				slot22 = RyzaMiniGameConfig.SOIL_SPRITES_DIC[slot6(NewPos(slot17, slot21))]
+	for iter_61_3 = arg_61_1.x, arg_61_1.x + arg_61_2 - 1 do
+		for iter_61_4 = arg_61_1.y, arg_61_1.y + arg_61_2 - 1 do
+			if defaultValue(var_61_2[iter_61_3 .. "_" .. iter_61_4], true) then
+				local var_61_13 = RyzaMiniGameConfig.SOIL_SPRITES_DIC[var_61_3(NewPos(iter_61_3, iter_61_4))]
 
-				assert(slot22)
+				assert(var_61_13)
 
-				slot23 = slot0.rtPlane:GetChild(slot21 * slot12 + slot17)
+				local var_61_14 = arg_61_0.rtPlane:GetChild(iter_61_4 * var_61_11 + iter_61_3)
 
-				setImageAlpha(slot23, 1)
-				setImageSprite(slot23, slot0.sprites[slot22])
+				setImageAlpha(var_61_14, 1)
+				setImageSprite(var_61_14, arg_61_0.sprites[var_61_13])
 			end
 		end
 	end
 end
 
-function slot0.startTimer(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.startTimer(arg_65_0)
+	if not arg_65_0.timer.running then
+		arg_65_0.timer:Start()
 	end
 
-	slot0.uiMgr:AttachStickOb(slot0.rtJoyStick)
-	uv0(slot0.rtMain, 1)
+	arg_65_0.uiMgr:AttachStickOb(arg_65_0.rtJoyStick)
+	var_0_1(arg_65_0.rtMain, 1)
 end
 
-function slot0.stopTimer(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.stopTimer(arg_66_0)
+	if arg_66_0.timer.running then
+		arg_66_0.timer:Stop()
 	end
 
-	slot0.uiMgr:ClearStick()
-	uv0(slot0.rtMain, 0)
+	arg_66_0.uiMgr:ClearStick()
+	var_0_1(arg_66_0.rtMain, 0)
 end
 
-function slot0.onTimer(slot0)
-	slot0.countTime = slot0.countTime + RyzaMiniGameConfig.TIME_INTERVAL
-	slot4 = "%02d:%02d"
-	slot5 = math.floor(slot0.countTime / 60)
+function var_0_0.onTimer(arg_67_0)
+	arg_67_0.countTime = arg_67_0.countTime + RyzaMiniGameConfig.TIME_INTERVAL
 
-	setText(slot0.rtTime, string.format(slot4, slot5, math.floor(slot0.countTime % 60)))
-	slot0.responder:TimeFlow(RyzaMiniGameConfig.TIME_INTERVAL)
+	setText(arg_67_0.rtTime, string.format("%02d:%02d", math.floor(arg_67_0.countTime / 60), math.floor(arg_67_0.countTime % 60)))
+	arg_67_0.responder:TimeFlow(RyzaMiniGameConfig.TIME_INTERVAL)
 
-	for slot4, slot5 in pairs(slot0.reactorUIs) do
-		slot5.position = slot4._tf.position
+	for iter_67_0, iter_67_1 in pairs(arg_67_0.reactorUIs) do
+		iter_67_1.position = iter_67_0._tf.position
 	end
 
-	if slot0.responder:GetJoyStick().x ~= 0 or slot1.y ~= 0 then
-		slot2 = slot0.reactorUIs[slot0.responder.reactorRyza]:Find("dir")
+	local var_67_0 = arg_67_0.responder:GetJoyStick()
 
-		if slot1.x == 0 then
-			setLocalEulerAngles(slot2, {
-				z = slot1.y > 0 and 270 or 90
+	if var_67_0.x ~= 0 or var_67_0.y ~= 0 then
+		local var_67_1 = arg_67_0.reactorUIs[arg_67_0.responder.reactorRyza]:Find("dir")
+
+		if var_67_0.x == 0 then
+			setLocalEulerAngles(var_67_1, {
+				z = var_67_0.y > 0 and 270 or 90
 			})
 		else
-			setLocalEulerAngles(slot2, {
-				z = math.atan2(-slot1.y, slot1.x) / math.pi * 180
+			setLocalEulerAngles(var_67_1, {
+				z = math.atan2(-var_67_0.y, var_67_0.x) / math.pi * 180
 			})
 		end
 	end
 end
 
-function slot0.OnApplicationPaused(slot0, slot1)
-	if slot1 then
-		-- Nothing
+function var_0_0.OnApplicationPaused(arg_68_0, arg_68_1)
+	if arg_68_1 then
+		-- block empty
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	switch(slot0.status, {
-		main = function ()
-			uv0.super.onBackPressed(uv1)
+function var_0_0.onBackPressed(arg_69_0)
+	switch(arg_69_0.status, {
+		main = function()
+			var_0_0.super.onBackPressed(arg_69_0)
 		end,
-		countdown = function ()
+		countdown = function()
+			return
 		end,
-		pause = function ()
-			uv0:openUI()
-			uv0:resumeGame()
+		pause = function()
+			arg_69_0:openUI()
+			arg_69_0:resumeGame()
 		end,
-		exit = function ()
-			uv0:openUI()
-			uv0:resumeGame()
+		exit = function()
+			arg_69_0:openUI()
+			arg_69_0:resumeGame()
 		end,
-		result = function ()
+		result = function()
+			return
 		end
-	}, function ()
-		assert(uv0.gameStartFlag)
-		uv0:openUI("pause")
+	}, function()
+		assert(arg_69_0.gameStartFlag)
+		arg_69_0:openUI("pause")
 	end)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_76_0)
+	return
 end
 
-return slot0
+return var_0_0

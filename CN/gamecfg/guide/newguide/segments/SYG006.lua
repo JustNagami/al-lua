@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"司令部对于指挥官在之前战斗中的表现十分赞赏，所以特批开放了第二舰队的编制权限，快跟着我来吧！",
 	"前往编队界面编组第二舰队。点击确认直接前往编队界面",
 	"点击右侧按钮，切换到第二舰队。指引点击右侧按钮",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			}
 		},
 		{
@@ -27,7 +27,7 @@ return {
 				posY = 0,
 				dir = -1,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -37,7 +37,7 @@ return {
 				mode = 2,
 				posY = 87,
 				posX = 228.09,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				hideAnimtor = true,
@@ -59,7 +59,7 @@ return {
 				mode = 2,
 				posY = 121.8,
 				posX = 0,
-				text = slot0[4]
+				text = var_0_0[4]
 			}
 		},
 		{
@@ -69,7 +69,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[5]
+				text = var_0_0[5]
 			}
 		}
 	}

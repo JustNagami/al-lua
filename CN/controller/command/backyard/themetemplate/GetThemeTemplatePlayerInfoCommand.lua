@@ -1,58 +1,57 @@
-slot0 = class("GetThemeTemplatePlayerInfoCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetThemeTemplatePlayerInfoCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.templateId
-	slot5 = slot2.userId
-	slot6 = slot2.callback
-	slot7 = getProxy(DormProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type
+	local var_1_2 = var_1_0.templateId
+	local var_1_3 = var_1_0.userId
+	local var_1_4 = var_1_0.callback
+	local var_1_5 = getProxy(DormProxy)
 
-	if slot2.type == BackYardConst.THEME_TEMPLATE_TYPE_SHOP or slot3 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		function slot8(slot0)
-			slot1 = CourtYardThemeOwner.New(slot0.player)
+	if var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP or var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		local function var_1_6(arg_2_0)
+			local var_2_0 = CourtYardThemeOwner.New(arg_2_0.player)
+			local var_2_1 = var_1_5:GetShopThemeTemplateById(var_1_2)
 
-			if uv0:GetShopThemeTemplateById(uv1) then
-				slot2:SetPlayerInfo(slot1)
-				uv0:UpdateShopThemeTemplate(slot2)
+			if var_2_1 then
+				var_2_1:SetPlayerInfo(var_2_0)
+				var_1_5:UpdateShopThemeTemplate(var_2_1)
 			end
 
-			if uv0:GetCollectionThemeTemplateById(uv1) then
-				slot3:SetPlayerInfo(slot1)
-				uv0:UpdateCollectionThemeTemplate(slot3)
+			local var_2_2 = var_1_5:GetCollectionThemeTemplateById(var_1_2)
+
+			if var_2_2 then
+				var_2_2:SetPlayerInfo(var_2_0)
+				var_1_5:UpdateCollectionThemeTemplate(var_2_2)
 			end
 
-			if uv2 then
-				uv2(slot1)
+			if var_1_4 then
+				var_1_4(var_2_0)
 			end
 		end
 
-		slot9 = pg.ConnectionMgr.GetInstance()
-
-		slot9:Send(50113, {
-			user_id = slot5
-		}, 50114, function (slot0)
-			if slot0.result == 0 then
-				uv0(slot0)
+		pg.ConnectionMgr.GetInstance():Send(50113, {
+			user_id = var_1_3
+		}, 50114, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				var_1_6(arg_3_0)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
 			end
 		end)
+	elseif var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		local var_1_7 = getProxy(PlayerProxy):getData()
+		local var_1_8 = var_1_5:GetCustomThemeTemplateById(var_1_2)
 
-		return
-	end
-
-	if slot3 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		slot8 = getProxy(PlayerProxy):getData()
-
-		if slot7:GetCustomThemeTemplateById(slot4) then
-			slot9:SetPlayerInfo(slot8)
-			slot7:UpdateCustomThemeTemplate(slot9)
+		if var_1_8 then
+			var_1_8:SetPlayerInfo(var_1_7)
+			var_1_5:UpdateCustomThemeTemplate(var_1_8)
 		end
 
-		if slot6 then
-			slot6(slot8)
+		if var_1_4 then
+			var_1_4(var_1_7)
 		end
 	end
 end
 
-return slot0
+return var_0_0

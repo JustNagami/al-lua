@@ -1,15 +1,16 @@
-slot0 = class("LinkLinkMediator", import("..base.ContextMediator"))
-slot0.EVENT_OPERATION = "event operation"
+﻿local var_0_0 = class("LinkLinkMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.EVENT_OPERATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+var_0_0.EVENT_OPERATION = "event operation"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.EVENT_OPERATION, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_2_1)
 	end)
-	slot0:SetActivityData()
-	slot0:SetPlayerData()
+	arg_1_0:SetActivityData()
+	arg_1_0:SetPlayerData()
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		PlayerProxy.UPDATED,
@@ -18,24 +19,33 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:SetPlayer(slot3)
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
-	elseif slot2 == ActivityProxy.ACTIVITY_OPERATION_DONE and getProxy(ActivityProxy):getActivityById(slot3):getConfig("type") == ActivityConst.ACTIVITY_TYPE_LINK_LINK then
-		slot0.viewComponent:DisplayResult(slot5)
+	if var_4_0 == PlayerProxy.UPDATED then
+		arg_4_0.viewComponent:SetPlayer(var_4_1)
+	elseif var_4_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.awards, var_4_1.callback)
+	elseif var_4_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		local var_4_2 = getProxy(ActivityProxy):getActivityById(var_4_1)
+
+		if var_4_2:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LINK_LINK then
+			arg_4_0.viewComponent:DisplayResult(var_4_2)
+		end
 	end
 end
 
-function slot0.SetPlayerData(slot0)
-	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
+function var_0_0.SetPlayerData(arg_5_0)
+	local var_5_0 = getProxy(PlayerProxy):getRawData()
+
+	arg_5_0.viewComponent:SetPlayer(var_5_0)
 end
 
-function slot0.SetActivityData(slot0)
-	slot0.viewComponent:SetActivity(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_LINK))
+function var_0_0.SetActivityData(arg_6_0)
+	local var_6_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_LINK)
+
+	arg_6_0.viewComponent:SetActivity(var_6_0)
 end
 
-return slot0
+return var_0_0

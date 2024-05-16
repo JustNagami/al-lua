@@ -1,20 +1,22 @@
-slot0 = class("Spring23AnniversaryPage", import("...base.BaseActivityPage"))
-slot1 = 42
-slot2 = {}
-slot3 = 3.5
-slot4 = 1
-slot5 = 6
-slot6 = SCENE.NEWYEAR_BACKHILL_2023
-slot7 = "spring23a"
+﻿local var_0_0 = class("Spring23AnniversaryPage", import("...base.BaseActivityPage"))
+local var_0_1 = 42
+local var_0_2 = {}
+local var_0_3 = 3.5
+local var_0_4 = 1
+local var_0_5 = 6
+local var_0_6 = SCENE.NEWYEAR_BACKHILL_2023
+local var_0_7 = "spring23a"
 
-function slot0.OnInit(slot0)
-	slot0.hideIndex = {}
-	slot0.scrollAble = false
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.hideIndex = {}
+	arg_1_0.scrollAble = false
 
-	setActive(findTF(slot0._tf, "BtnList"), false)
+	local var_1_0 = findTF(arg_1_0._tf, "BtnList")
+
+	setActive(var_1_0, false)
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		uv0 = {
+		var_0_2 = {
 			1,
 			2,
 			3,
@@ -33,7 +35,7 @@ function slot0.OnInit(slot0)
 			16
 		}
 	elseif PLATFORM_CODE == PLATFORM_CHT then
-		uv0 = {
+		var_0_2 = {
 			1,
 			2,
 			3,
@@ -52,7 +54,7 @@ function slot0.OnInit(slot0)
 			16
 		}
 	else
-		uv0 = {
+		var_0_2 = {
 			1,
 			2,
 			3,
@@ -73,231 +75,241 @@ function slot0.OnInit(slot0)
 	end
 
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_CHT then
-		slot0.hideIndex = {}
-		slot0.scrollAble = true
-		slot1.anchoredPosition = Vector2(-11, -20)
-		slot1.sizeDelta = Vector2(1437, 90)
+		arg_1_0.hideIndex = {}
+		arg_1_0.scrollAble = true
+		var_1_0.anchoredPosition = Vector2(-11, -20)
+		var_1_0.sizeDelta = Vector2(1437, 90)
 	elseif PLATFORM_CODE == PLATFORM_US then
-		slot0.hideIndex = {}
-		slot0.scrollAble = false
-		slot1.anchoredPosition = Vector2(678, -20)
-		slot1.sizeDelta = Vector2(1186, 90)
+		arg_1_0.hideIndex = {}
+		arg_1_0.scrollAble = false
+		var_1_0.anchoredPosition = Vector2(678, -20)
+		var_1_0.sizeDelta = Vector2(1186, 90)
 	else
-		slot0.hideIndex = {}
-		slot0.scrollAble = false
-		slot1.anchoredPosition = Vector2(115, -20)
-		slot1.sizeDelta = Vector2(1186, 90)
+		arg_1_0.hideIndex = {}
+		arg_1_0.scrollAble = false
+		var_1_0.anchoredPosition = Vector2(115, -20)
+		var_1_0.sizeDelta = Vector2(1186, 90)
 	end
 
-	slot0:findUI()
+	arg_1_0:findUI()
 end
 
-function slot0.findUI(slot0)
-	slot0.paintBackTF = slot0:findTF("Paints/PaintBack")
-	slot0.paintFrontTF = slot0:findTF("Paints/PaintFront")
-	slot0.skinShopBtn = slot0:findTF("BtnShop")
-	slot0.btnGo = slot0:findTF("BtnGo")
-	slot0.btnContainer = slot0:findTF("BtnList/Viewport/Content")
-	slot0.btnList1 = {}
+function var_0_0.findUI(arg_2_0)
+	arg_2_0.paintBackTF = arg_2_0:findTF("Paints/PaintBack")
+	arg_2_0.paintFrontTF = arg_2_0:findTF("Paints/PaintFront")
+	arg_2_0.skinShopBtn = arg_2_0:findTF("BtnShop")
+	arg_2_0.btnGo = arg_2_0:findTF("BtnGo")
+	arg_2_0.btnContainer = arg_2_0:findTF("BtnList/Viewport/Content")
 
-	for slot5 = 0, slot0.btnContainer.childCount / 3 - 1 do
-		slot0.btnList1[slot5 + 1] = slot0.btnContainer:GetChild(slot5)
+	local var_2_0 = arg_2_0.btnContainer.childCount / 3
+
+	arg_2_0.btnList1 = {}
+
+	for iter_2_0 = 0, var_2_0 - 1 do
+		arg_2_0.btnList1[iter_2_0 + 1] = arg_2_0.btnContainer:GetChild(iter_2_0)
 	end
 
-	slot0.btnList2 = {}
+	arg_2_0.btnList2 = {}
 
-	for slot5 = slot1, 2 * slot1 - 1 do
-		slot0.btnList2[#slot0.btnList2 + 1] = slot0.btnContainer:GetChild(slot5)
+	for iter_2_1 = var_2_0, 2 * var_2_0 - 1 do
+		arg_2_0.btnList2[#arg_2_0.btnList2 + 1] = arg_2_0.btnContainer:GetChild(iter_2_1)
 	end
 
-	slot0.btnList3 = {}
+	arg_2_0.btnList3 = {}
 
-	for slot5 = slot1 * 2, 3 * slot1 - 1 do
-		slot0.btnList3[#slot0.btnList3 + 1] = slot0.btnContainer:GetChild(slot5)
+	for iter_2_2 = var_2_0 * 2, 3 * var_2_0 - 1 do
+		arg_2_0.btnList3[#arg_2_0.btnList3 + 1] = arg_2_0.btnContainer:GetChild(iter_2_2)
 	end
 
-	for slot5 = 1, slot1 * 3 do
-		if table.contains(slot0.hideIndex, (slot5 - 1) % uv0 + 1) or not slot0.scrollAble and uv0 < slot5 then
-			setActive(slot0.btnContainer:GetChild(slot5 - 1), false)
+	for iter_2_3 = 1, var_2_0 * 3 do
+		if table.contains(arg_2_0.hideIndex, (iter_2_3 - 1) % var_0_5 + 1) or not arg_2_0.scrollAble and iter_2_3 > var_0_5 then
+			setActive(arg_2_0.btnContainer:GetChild(iter_2_3 - 1), false)
 		end
 	end
 
-	slot0.gridLayoutGroupCom = GetComponent(slot0.btnContainer, "GridLayoutGroup")
+	arg_2_0.gridLayoutGroupCom = GetComponent(arg_2_0.btnContainer, "GridLayoutGroup")
 end
 
-function slot0.initData(slot0)
-	slot0.displayDatas = slot0.activity:getConfig("config_client").display_link
-	slot1 = {}
+function var_0_0.initData(arg_3_0)
+	arg_3_0.displayDatas = arg_3_0.activity:getConfig("config_client").display_link
 
-	if slot0.displayDatas and #slot0.displayDatas then
-		for slot5 = 1, #slot0.displayDatas do
-			slot6 = slot0.displayDatas[slot5]
-			slot7 = slot6[1]
+	local var_3_0 = {}
 
-			if slot6[2] and slot8 ~= 0 then
-				slot10, slot11 = pg.TimeMgr.GetInstance():inTime(pg.shop_template[slot8].time)
+	if arg_3_0.displayDatas and #arg_3_0.displayDatas then
+		for iter_3_0 = 1, #arg_3_0.displayDatas do
+			local var_3_1 = arg_3_0.displayDatas[iter_3_0]
+			local var_3_2 = var_3_1[1]
+			local var_3_3 = var_3_1[2]
 
-				if not slot10 then
-					table.insert(slot1, slot7)
+			if var_3_3 and var_3_3 ~= 0 then
+				local var_3_4 = pg.shop_template[var_3_3].time
+				local var_3_5, var_3_6 = pg.TimeMgr.GetInstance():inTime(var_3_4)
+
+				if not var_3_5 then
+					table.insert(var_3_0, var_3_2)
 				end
 			end
 		end
 	end
 
-	if slot1 and #slot1 > 0 then
-		for slot5 = #uv0, 1, -1 do
-			if table.contains(slot1, uv0[slot5]) then
-				table.remove(uv0, slot5)
+	if var_3_0 and #var_3_0 > 0 then
+		for iter_3_1 = #var_0_2, 1, -1 do
+			local var_3_7 = var_0_2[iter_3_1]
+
+			if table.contains(var_3_0, var_3_7) then
+				table.remove(var_0_2, iter_3_1)
 			end
 		end
 	end
 
-	slot0.paintCount = #uv0
-	slot0.curPaintIndex = math.random(1, #uv0)
-	slot0.paintSwitchTime = uv1
-	slot0.paintStaticTime = uv2
-	slot0.paintStaticCountValue = 0
-	slot0.paintPathPrefix = "clutter/"
-	slot0.paintNamePrefix = uv3
-	slot0.btnCount = slot0.btnContainer.childCount / 3
-	slot0.btnSpeed = 50
-	slot0.btnSizeX = slot0.gridLayoutGroupCom.cellSize.x
-	slot0.btnMarginX = slot0.gridLayoutGroupCom.spacing.x
-	slot0.moveLength = (slot0.btnCount - #slot0.hideIndex) * (slot0.btnSizeX + slot0.btnMarginX)
-	slot0.startAnchoredPosX = slot0.btnContainer.anchoredPosition.x
+	arg_3_0.paintCount = #var_0_2
+	arg_3_0.curPaintIndex = math.random(1, #var_0_2)
+	arg_3_0.paintSwitchTime = var_0_4
+	arg_3_0.paintStaticTime = var_0_3
+	arg_3_0.paintStaticCountValue = 0
+	arg_3_0.paintPathPrefix = "clutter/"
+	arg_3_0.paintNamePrefix = var_0_7
+	arg_3_0.btnCount = arg_3_0.btnContainer.childCount / 3
+	arg_3_0.btnSpeed = 50
+	arg_3_0.btnSizeX = arg_3_0.gridLayoutGroupCom.cellSize.x
+	arg_3_0.btnMarginX = arg_3_0.gridLayoutGroupCom.spacing.x
+	arg_3_0.moveLength = (arg_3_0.btnCount - #arg_3_0.hideIndex) * (arg_3_0.btnSizeX + arg_3_0.btnMarginX)
+	arg_3_0.startAnchoredPosX = arg_3_0.btnContainer.anchoredPosition.x
 end
 
-function slot0.switchNextPaint(slot0)
-	slot1 = slot0.frameTimer
+function var_0_0.switchNextPaint(arg_4_0)
+	arg_4_0.frameTimer:Stop()
 
-	slot1:Stop()
+	local var_4_0 = arg_4_0.curPaintIndex % arg_4_0.paintCount + 1
+	local var_4_1 = arg_4_0.paintNamePrefix .. var_0_2[var_4_0]
+	local var_4_2 = arg_4_0.paintPathPrefix .. var_4_1
 
-	slot3 = slot0.paintNamePrefix .. uv0[slot0.curPaintIndex % slot0.paintCount + 1]
+	setImageSprite(arg_4_0.paintBackTF, LoadSprite(var_4_2, var_4_1))
+	LeanTween.value(go(arg_4_0.paintFrontTF), 1, 0, arg_4_0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg_5_0)
+		setImageAlpha(arg_4_0.paintFrontTF, arg_5_0)
+		setImageAlpha(arg_4_0.paintBackTF, 1 - arg_5_0)
+	end)):setOnComplete(System.Action(function()
+		setImageFromImage(arg_4_0.paintFrontTF, arg_4_0.paintBackTF)
+		setImageAlpha(arg_4_0.paintFrontTF, 1)
+		setImageAlpha(arg_4_0.paintBackTF, 0)
 
-	setImageSprite(slot0.paintBackTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+		arg_4_0.curPaintIndex = var_4_0
 
-	slot5 = LeanTween.value(go(slot0.paintFrontTF), 1, 0, slot0.paintSwitchTime)
-	slot5 = slot5:setOnUpdate(System.Action_float(function (slot0)
-		setImageAlpha(uv0.paintFrontTF, slot0)
-		setImageAlpha(uv0.paintBackTF, 1 - slot0)
-	end))
-
-	slot5:setOnComplete(System.Action(function ()
-		setImageFromImage(uv0.paintFrontTF, uv0.paintBackTF)
-		setImageAlpha(uv0.paintFrontTF, 1)
-		setImageAlpha(uv0.paintBackTF, 0)
-
-		uv0.curPaintIndex = uv1
-
-		uv0.frameTimer:Start()
+		arg_4_0.frameTimer:Start()
 	end))
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:initData()
-	onButton(slot0, slot0.skinShopBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+function var_0_0.OnFirstFlush(arg_7_0)
+	arg_7_0:initData()
+	onButton(arg_7_0, arg_7_0.skinShopBtn, function()
+		arg_7_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end)
-	onButton(slot0, slot0.btnGo, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SPRING_FESTIVAL_BACKHILL_2023)
+	onButton(arg_7_0, arg_7_0.btnGo, function()
+		arg_7_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SPRING_FESTIVAL_BACKHILL_2023)
 	end)
-	slot0:initPaint()
-	slot0:initBtnList(slot0.btnList1)
-	slot0:initBtnList(slot0.btnList2)
-	slot0:initBtnList(slot0.btnList3)
-	slot0:initTimer()
+	arg_7_0:initPaint()
+	arg_7_0:initBtnList(arg_7_0.btnList1)
+	arg_7_0:initBtnList(arg_7_0.btnList2)
+	arg_7_0:initBtnList(arg_7_0.btnList3)
+	arg_7_0:initTimer()
 end
 
-function slot0.initPaint(slot0)
-	slot2 = (slot0.curPaintIndex - 1) % slot0.paintCount + 1
-	slot3 = slot0.paintNamePrefix .. uv0[slot2]
+function var_0_0.initPaint(arg_10_0)
+	local var_10_0 = (arg_10_0.curPaintIndex - 1) % arg_10_0.paintCount + 1
+	local var_10_1 = arg_10_0.paintNamePrefix .. var_0_2[var_10_0]
+	local var_10_2 = arg_10_0.paintPathPrefix .. var_10_1
 
-	setImageSprite(slot0.paintFrontTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+	setImageSprite(arg_10_0.paintFrontTF, LoadSprite(var_10_2, var_10_1))
 
-	slot3 = slot0.paintNamePrefix .. uv0[slot2]
+	local var_10_3 = arg_10_0.paintNamePrefix .. var_0_2[var_10_0]
+	local var_10_4 = arg_10_0.paintPathPrefix .. var_10_3
 
-	setImageSprite(slot0.paintBackTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+	setImageSprite(arg_10_0.paintBackTF, LoadSprite(var_10_4, var_10_3))
 end
 
-function slot0.initBtnList(slot0, slot1)
-	for slot5 = 1, #slot1 do
-		slot0:initBtnEvent(slot1[slot5], slot5)
+function var_0_0.initBtnList(arg_11_0, arg_11_1)
+	for iter_11_0 = 1, #arg_11_1 do
+		arg_11_0:initBtnEvent(arg_11_1[iter_11_0], iter_11_0)
 	end
 end
 
-function slot0.initBtnEvent(slot0, slot1, slot2)
-	if slot2 == 1 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.GO_PRAY_POOL)
+function var_0_0.initBtnEvent(arg_12_0, arg_12_1, arg_12_2)
+	if arg_12_2 == 1 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.GO_PRAY_POOL)
 		end, SFX_PANEL)
-	elseif slot2 == 2 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID5)
+	elseif arg_12_2 == 2 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID5)
 		end, SFX_PANEL)
-	elseif slot2 == 3 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, uv1)
+	elseif arg_12_2 == 3 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.EVENT_GO_SCENE, var_0_6)
 		end, SFX_PANEL)
-	elseif slot2 == 4 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.GO_MINI_GAME, uv1)
+	elseif arg_12_2 == 4 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.GO_MINI_GAME, var_0_1)
 		end, SFX_PANEL)
-	elseif slot2 == 5 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
+	elseif arg_12_2 == 5 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
 		end, SFX_PANEL)
-	elseif slot2 == 6 then
-		onButton(slot0, slot1, function ()
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+	elseif arg_12_2 == 6 then
+		onButton(arg_12_0, arg_12_1, function()
+			arg_12_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.initTimer(slot0)
-	slot0.paintStaticCountValue = 0
-	slot0.frameTimer = Timer.New(function ()
-		uv0.paintStaticCountValue = uv0.paintStaticCountValue + uv1
+function var_0_0.initTimer(arg_19_0)
+	local var_19_0 = 0.016666666666666666
 
-		if uv0.paintStaticTime <= uv0.paintStaticCountValue then
-			uv0.paintStaticCountValue = 0
+	arg_19_0.paintStaticCountValue = 0
+	arg_19_0.frameTimer = Timer.New(function()
+		arg_19_0.paintStaticCountValue = arg_19_0.paintStaticCountValue + var_19_0
 
-			uv0:switchNextPaint()
+		if arg_19_0.paintStaticCountValue >= arg_19_0.paintStaticTime then
+			arg_19_0.paintStaticCountValue = 0
+
+			arg_19_0:switchNextPaint()
 		end
-	end, 0.016666666666666666, -1, false)
+	end, var_19_0, -1, false)
 
-	slot0.frameTimer:Start()
+	arg_19_0.frameTimer:Start()
 
-	if slot0.scrollAble then
-		slot0.frameTimer2 = Timer.New(function ()
-			if uv0.moveLength <= uv0.startAnchoredPosX - (uv0.btnContainer.anchoredPosition.x - uv0.btnSpeed * uv1) then
-				slot0 = uv0.btnContainer.anchoredPosition.x + uv0.moveLength
+	if arg_19_0.scrollAble then
+		arg_19_0.frameTimer2 = Timer.New(function()
+			local var_21_0 = arg_19_0.btnContainer.anchoredPosition.x - arg_19_0.btnSpeed * var_19_0
+
+			if arg_19_0.startAnchoredPosX - var_21_0 >= arg_19_0.moveLength then
+				var_21_0 = arg_19_0.btnContainer.anchoredPosition.x + arg_19_0.moveLength
 			end
 
-			uv0.btnContainer.anchoredPosition = Vector3(slot0, 0, 0)
-		end, slot1, -1, false)
+			arg_19_0.btnContainer.anchoredPosition = Vector3(var_21_0, 0, 0)
+		end, var_19_0, -1, false)
 
-		slot0.frameTimer2:Start()
+		arg_19_0.frameTimer2:Start()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if LeanTween.isTweening(go(slot0.paintFrontTF)) then
-		LeanTween.cancel(go(slot0.paintFrontTF))
+function var_0_0.OnDestroy(arg_22_0)
+	if LeanTween.isTweening(go(arg_22_0.paintFrontTF)) then
+		LeanTween.cancel(go(arg_22_0.paintFrontTF))
 	end
 
-	if slot0.frameTimer then
-		slot0.frameTimer:Stop()
+	if arg_22_0.frameTimer then
+		arg_22_0.frameTimer:Stop()
 
-		slot0.frameTimer = nil
+		arg_22_0.frameTimer = nil
 	end
 
-	if slot0.frameTimer2 then
-		slot0.frameTimer2:Stop()
+	if arg_22_0.frameTimer2 then
+		arg_22_0.frameTimer2:Stop()
 
-		slot0.frameTimer2 = nil
+		arg_22_0.frameTimer2 = nil
 	end
 end
 
-return slot0
+return var_0_0

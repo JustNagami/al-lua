@@ -1,26 +1,32 @@
-slot0 = class("MainSublayerSequence")
+﻿local var_0_0 = class("MainSublayerSequence")
 
-function slot0.Execute(slot0, slot1)
-	if slot0:GetContextData() and slot2.subContext then
-		slot2.subContext.onRemoved = slot1
+function var_0_0.Execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0:GetContextData()
 
-		slot0:AddSubLayers(slot2.subContext)
+	if var_1_0 and var_1_0.subContext then
+		var_1_0.subContext.onRemoved = arg_1_1
 
-		slot2.subContext = nil
+		arg_1_0:AddSubLayers(var_1_0.subContext)
+
+		var_1_0.subContext = nil
 	else
-		slot1()
+		arg_1_1()
 	end
 end
 
-function slot0.GetContextData(slot0)
-	return getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator) and slot3.data
+function var_0_0.GetContextData(arg_2_0)
+	local var_2_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
+
+	return var_2_0 and var_2_0.data
 end
 
-function slot0.AddSubLayers(slot0, slot1)
+function var_0_0.AddSubLayers(arg_3_0, arg_3_1)
+	local var_3_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator)
+
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
-		parentContext = getProxy(ContextProxy):getCurrentContext():getContextByMediator(NewMainMediator),
-		context = slot1
+		parentContext = var_3_0,
+		context = arg_3_1
 	})
 end
 
-return slot0
+return var_0_0

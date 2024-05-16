@@ -1,66 +1,77 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffAntiSubVigilance", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffAntiSubVigilance = slot1
-slot1.__name = "BattleBuffAntiSubVigilance"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffAntiSubVigilance", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffAntiSubVigilance = var_0_1
+var_0_1.__name = "BattleBuffAntiSubVigilance"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot3 = slot0._tempData.arg_list
-	slot0._vigilantRange = slot3.vigilanceRange
-	slot0._sonarRange = slot3.sonarRange
-	slot0._sonarFrequency = slot3.sonarFrequency
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	arg_2_0._vigilantRange = var_2_0.vigilanceRange
+	arg_2_0._sonarRange = var_2_0.sonarRange
+	arg_2_0._sonarFrequency = var_2_0.sonarFrequency
 end
 
-function slot1.onAttach(slot0, slot1)
-	slot0._vigilantUnit = slot1
-	slot0._vigilantState = slot1:InitAntiSubState(slot0._sonarRange, slot0._sonarFrequency)
+function var_0_1.onAttach(arg_3_0, arg_3_1)
+	arg_3_0._vigilantUnit = arg_3_1
+	arg_3_0._vigilantState = arg_3_1:InitAntiSubState(arg_3_0._sonarRange, arg_3_0._sonarFrequency)
 
-	slot0._vigilantState:InitCheck(#slot0:getTargetList(slot0._vigilantUnit, "TargetHarmNearest", {
+	local var_3_0 = arg_3_0:getTargetList(arg_3_0._vigilantUnit, "TargetHarmNearest", {
 		range = 200
-	}))
+	})
 
-	slot0._sonarCheckTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+	arg_3_0._vigilantState:InitCheck(#var_3_0)
+
+	arg_3_0._sonarCheckTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function slot1.onUpdate(slot0)
-	if #slot0:getTargetList(slot0._vigilantUnit, "TargetHarmNearest", {
-		range = slot0._vigilantRange
+function var_0_1.onUpdate(arg_4_0)
+	if #arg_4_0:getTargetList(arg_4_0._vigilantUnit, "TargetHarmNearest", {
+		range = arg_4_0._vigilantRange
 	}) > 0 then
-		slot0._vigilantState:VigilantAreaEngage()
+		arg_4_0._vigilantState:VigilantAreaEngage()
 	end
 
-	slot0._vigilantState:Update(#slot0:getTargetList(slot0._vigilantUnit, "TargetHarmNearest", {
+	local var_4_0 = #arg_4_0:getTargetList(arg_4_0._vigilantUnit, "TargetHarmNearest", {
 		range = 200
-	}), #slot0:getTargetList(slot0._vigilantUnit, {
+	})
+	local var_4_1 = #arg_4_0:getTargetList(arg_4_0._vigilantUnit, {
 		"TargetAllFoe",
 		"TargetHarmNearest",
 		"TargetDiveState"
 	}, {
-		range = slot0._sonarRange
-	}))
+		range = arg_4_0._sonarRange
+	})
 
-	if slot0._sonarFrequency <= pg.TimeMgr.GetInstance():GetCombatTime() - slot0._sonarCheckTimeStamp then
-		slot0._vigilantState:SonarDetect(slot3)
+	arg_4_0._vigilantState:Update(var_4_0, var_4_1)
 
-		slot0._sonarCheckTimeStamp = slot4
+	local var_4_2 = pg.TimeMgr.GetInstance():GetCombatTime()
+
+	if var_4_2 - arg_4_0._sonarCheckTimeStamp >= arg_4_0._sonarFrequency then
+		arg_4_0._vigilantState:SonarDetect(var_4_1)
+
+		arg_4_0._sonarCheckTimeStamp = var_4_2
 	end
 end
 
-function slot1.onAntiSubHateChain(slot0)
-	slot0._vigilantState:HateChain()
+function var_0_1.onAntiSubHateChain(arg_5_0)
+	arg_5_0._vigilantState:HateChain()
 end
 
-function slot1.onFriendlyShipDying(slot0, slot1, slot2, slot3)
-	slot0._vigilantState:MineExplode()
+function var_0_1.onFriendlyShipDying(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	arg_6_0._vigilantState:MineExplode()
 end
 
-function slot1.onSubmarinFreeDive(slot0, slot1, slot2, slot3)
+function var_0_1.onSubmarinFreeDive(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	return
 end
 
-function slot1.onSubmarinFreeFloat(slot0, slot1, slot2, slot3)
-	slot0._vigilantState:SubmarineFloat()
+function var_0_1.onSubmarinFreeFloat(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	arg_8_0._vigilantState:SubmarineFloat()
 end

@@ -1,26 +1,26 @@
-slot0 = class("FinishCampTecCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FinishCampTecCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.levelID
-	slot5 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.tecID
+	local var_1_2 = var_1_0.levelID
 
-	slot5:Send(64003, {
-		tech_group_id = slot2.tecID
-	}, 64004, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(TechnologyNationProxy)
+	pg.ConnectionMgr.GetInstance():Send(64003, {
+		tech_group_id = var_1_1
+	}, 64004, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(TechnologyNationProxy)
 
-			slot1:updateTecItem(uv0, uv1, 0, 0)
-			slot1:setTimer()
-			slot1:calculateTecBuff()
-			uv2:sendNotification(TechnologyConst.FINISH_TEC_SUCCESS, uv0)
-			slot1:refreshRedPoint()
-			uv2:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
+			var_2_0:updateTecItem(var_1_1, var_1_2, 0, 0)
+			var_2_0:setTimer()
+			var_2_0:calculateTecBuff()
+			arg_1_0:sendNotification(TechnologyConst.FINISH_TEC_SUCCESS, var_1_1)
+			var_2_0:refreshRedPoint()
+			arg_1_0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

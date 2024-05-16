@@ -1,163 +1,200 @@
-slot0 = class("SixthAnniversaryJPDarkScene", import("view.base.BaseUI"))
-slot0.STATUS_LOCK = 1
-slot0.STATUS_FOG = 2
-slot0.STATUS_STORY = 3
-slot0.STATUS_NOROMAL = 4
-slot0.ARROW_ANIM_DELTA = 20
-slot0.ARROW_ANIM_TIME = 0.5
+﻿local var_0_0 = class("SixthAnniversaryJPDarkScene", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.STATUS_LOCK = 1
+var_0_0.STATUS_FOG = 2
+var_0_0.STATUS_STORY = 3
+var_0_0.STATUS_NOROMAL = 4
+var_0_0.ARROW_ANIM_DELTA = 20
+var_0_0.ARROW_ANIM_TIME = 0.5
+
+function var_0_0.getUIName(arg_1_0)
 	return "SixthAnniversaryJPDarkUI"
 end
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
 
-	slot0.top = slot0:findTF("top")
-	slot0._bg = slot0:findTF("BG")
-	slot0.countText = slot0:findTF("top/Count/Text")
-	slot4 = "jp6th_lihoushan_pt1"
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0._bg = arg_2_0:findTF("BG")
+	arg_2_0.countText = arg_2_0:findTF("top/Count/Text")
 
-	setText(slot0:findTF("top/Count/explain"), i18n(slot4))
+	setText(arg_2_0:findTF("top/Count/explain"), i18n("jp6th_lihoushan_pt1"))
 
-	slot0.levelcontainer = slot0:findTF("upper")
-	slot0.player = getProxy(PlayerProxy):getRawData()
-	slot0.activityID = ActivityConst.MINIGAME_ZUMA
-	slot0.config = pg.activity_template[slot0.activityID]
-	slot0.arrowPosYList = {}
+	arg_2_0.levelcontainer = arg_2_0:findTF("upper")
+	arg_2_0.player = getProxy(PlayerProxy):getRawData()
+	arg_2_0.activityID = ActivityConst.MINIGAME_ZUMA
+	arg_2_0.config = pg.activity_template[arg_2_0.activityID]
+	arg_2_0.arrowPosYList = {}
 
-	for slot4 = 1, 7 do
-		slot0.arrowPosYList[slot4] = slot0:findTF("arrow", slot0:findTF(tostring(slot4), slot0.levelcontainer)).localPosition.y
+	for iter_2_0 = 1, 7 do
+		local var_2_0 = arg_2_0:findTF(tostring(iter_2_0), arg_2_0.levelcontainer)
+
+		arg_2_0.arrowPosYList[iter_2_0] = arg_2_0:findTF("arrow", var_2_0).localPosition.y
 	end
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("top/Back"), function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0:findTF("top/Back"), function()
+		arg_3_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("top/Home"), function ()
-		uv0:quickExitFunc()
+	onButton(arg_3_0, arg_3_0:findTF("top/Home"), function()
+		arg_3_0:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("top/Help"), function ()
+	onButton(arg_3_0, arg_3_0:findTF("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.jp6th_lihoushan_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("top/Shop"), function ()
-		uv0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.ZUMA_PT_SHOP)
+	onButton(arg_3_0, arg_3_0:findTF("top/Shop"), function()
+		arg_3_0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.ZUMA_PT_SHOP)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("top/Task"), function ()
-		uv0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.LAUNCH_BALL_TASK)
+	onButton(arg_3_0, arg_3_0:findTF("top/Task"), function()
+		arg_3_0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.LAUNCH_BALL_TASK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("BG/door"), function ()
+	onButton(arg_3_0, arg_3_0:findTF("BG/door"), function()
 		pg.SceneAnimMgr.GetInstance():SixthAnniversaryJPCoverGoScene(SCENE.SIXTH_ANNIVERSARY_JP)
 	end, SFX_PANEL)
-	slot0:UpdateView()
-	pg.NewStoryMgr.GetInstance():Play(slot0.config.config_client.lihoushanstory)
+	arg_3_0:UpdateView()
+
+	local var_3_0 = arg_3_0.config.config_client.lihoushanstory
+
+	pg.NewStoryMgr.GetInstance():Play(var_3_0)
 end
 
-function slot0.UpdateView(slot0)
-	slot0:UpdateLevels()
-	slot0:UpdateCount()
-	slot0:UpdateTaskTip()
+function var_0_0.UpdateView(arg_10_0)
+	arg_10_0:UpdateLevels()
+	arg_10_0:UpdateCount()
+	arg_10_0:UpdateTaskTip()
 end
 
-function slot0.UpdateLevels(slot0)
-	slot0.unlockCnt = LaunchBallActivityMgr.GetActivityDay(slot0.activityID)
-	slot0.finishCnt = LaunchBallActivityMgr.GetRoundCount(slot0.activityID)
-	slot0.maxCnt = LaunchBallActivityMgr.GetRoundCountMax(slot0.activityID)
-	slot0.curIndex = slot0.finishCnt < slot0.maxCnt and slot0.finishCnt + 1 or -1
+function var_0_0.UpdateLevels(arg_11_0)
+	arg_11_0.unlockCnt = LaunchBallActivityMgr.GetActivityDay(arg_11_0.activityID)
+	arg_11_0.finishCnt = LaunchBallActivityMgr.GetRoundCount(arg_11_0.activityID)
+	arg_11_0.maxCnt = LaunchBallActivityMgr.GetRoundCountMax(arg_11_0.activityID)
+	arg_11_0.curIndex = arg_11_0.finishCnt < arg_11_0.maxCnt and arg_11_0.finishCnt + 1 or -1
 
-	for slot4 = 1, 7 do
-		slot0:UpdateLevelByStatus(slot0:findTF(tostring(slot4), slot0.levelcontainer), slot0:GetLevelStatus(slot4))
+	for iter_11_0 = 1, 7 do
+		local var_11_0 = arg_11_0:findTF(tostring(iter_11_0), arg_11_0.levelcontainer)
+		local var_11_1 = arg_11_0:GetLevelStatus(iter_11_0)
+
+		arg_11_0:UpdateLevelByStatus(var_11_0, var_11_1)
 	end
 
-	for slot4 = 1, 3 do
-		setActive(slot0:findTF("role" .. slot4, slot0.levelcontainer), LaunchBallActivityMgr.CheckZhuanShuAble(slot0.activityID, slot4) and not LaunchBallActivityMgr.IsFinishZhuanShu(slot0.activityID, slot4))
-		onButton(slot0, slot5, function ()
-			pg.NewStoryMgr.GetInstance():Play(uv0.config.config_client.roleStory[uv1], function ()
-				LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_zhuanshu, uv0)
+	for iter_11_1 = 1, 3 do
+		local var_11_2 = arg_11_0:findTF("role" .. iter_11_1, arg_11_0.levelcontainer)
+		local var_11_3 = LaunchBallActivityMgr.CheckZhuanShuAble(arg_11_0.activityID, iter_11_1)
+		local var_11_4 = LaunchBallActivityMgr.IsFinishZhuanShu(arg_11_0.activityID, iter_11_1)
+
+		setActive(var_11_2, var_11_3 and not var_11_4)
+		onButton(arg_11_0, var_11_2, function()
+			local var_12_0 = arg_11_0.config.config_client.roleStory[iter_11_1]
+
+			pg.NewStoryMgr.GetInstance():Play(var_12_0, function()
+				LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_zhuanshu, iter_11_1)
 			end)
 		end, SFX_PANEL)
 	end
 
-	slot1 = slot0:findTF("endless", slot0.levelcontainer)
+	local var_11_5 = arg_11_0:findTF("endless", arg_11_0.levelcontainer)
+	local var_11_6 = arg_11_0.finishCnt >= arg_11_0.maxCnt
 
-	setActive(slot1, slot0.maxCnt <= slot0.finishCnt)
-	onButton(slot0, slot1, function ()
+	setActive(var_11_5, var_11_6)
+	onButton(arg_11_0, var_11_5, function()
 		LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_wuxian, 1)
 	end, SFX_PANEL)
 end
 
-function slot0.GetLevelStatus(slot0, slot1)
-	slot2 = uv0.STATUS_NOROMAL
+function var_0_0.GetLevelStatus(arg_15_0, arg_15_1)
+	local var_15_0 = var_0_0.STATUS_NOROMAL
 
-	return (slot1 > slot0.finishCnt or uv0.STATUS_NOROMAL) and (slot1 ~= slot0.curIndex or (slot1 > slot0.unlockCnt or (not pg.NewStoryMgr.GetInstance():IsPlayed(slot0.config.config_client.zumaStory[slot1]) or uv0.STATUS_NOROMAL) and uv0.STATUS_STORY) and uv0.STATUS_LOCK) and uv0.STATUS_FOG
+	if arg_15_1 <= arg_15_0.finishCnt then
+		var_15_0 = var_0_0.STATUS_NOROMAL
+	elseif arg_15_1 == arg_15_0.curIndex then
+		if arg_15_1 <= arg_15_0.unlockCnt then
+			local var_15_1 = arg_15_0.config.config_client.zumaStory[arg_15_1]
+
+			if pg.NewStoryMgr.GetInstance():IsPlayed(var_15_1) then
+				var_15_0 = var_0_0.STATUS_NOROMAL
+			else
+				var_15_0 = var_0_0.STATUS_STORY
+			end
+		else
+			var_15_0 = var_0_0.STATUS_LOCK
+		end
+	else
+		var_15_0 = var_0_0.STATUS_FOG
+	end
+
+	return var_15_0
 end
 
-function slot0.UpdateLevelByStatus(slot0, slot1, slot2)
-	if slot2 == uv0.STATUS_LOCK then
-		setActive(slot0:findTF("lock", slot1), true)
-		setActive(slot0:findTF("title/lock", slot1), true)
-		setActive(slot0:findTF("fog", slot1), false)
-		setActive(slot0:findTF("tag", slot1), false)
-		onButton(slot0, slot1, function ()
+function var_0_0.UpdateLevelByStatus(arg_16_0, arg_16_1, arg_16_2)
+	if arg_16_2 == var_0_0.STATUS_LOCK then
+		setActive(arg_16_0:findTF("lock", arg_16_1), true)
+		setActive(arg_16_0:findTF("title/lock", arg_16_1), true)
+		setActive(arg_16_0:findTF("fog", arg_16_1), false)
+		setActive(arg_16_0:findTF("tag", arg_16_1), false)
+		onButton(arg_16_0, arg_16_1, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("jp6th_lihoushan_time"))
 		end, SFX_PANEL)
-	elseif slot2 == uv0.STATUS_FOG then
-		setActive(slot0:findTF("lock", slot1), false)
-		setActive(slot0:findTF("title/lock", slot1), false)
-		setActive(slot0:findTF("fog", slot1), true)
-		setActive(slot0:findTF("tag", slot1), false)
-		onButton(slot0, slot1, function ()
+	elseif arg_16_2 == var_0_0.STATUS_FOG then
+		setActive(arg_16_0:findTF("lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("title/lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("fog", arg_16_1), true)
+		setActive(arg_16_0:findTF("tag", arg_16_1), false)
+		onButton(arg_16_0, arg_16_1, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("jp6th_lihoushan_order"))
 		end, SFX_PANEL)
-	elseif slot2 == uv0.STATUS_STORY then
-		setActive(slot0:findTF("lock", slot1), false)
-		setActive(slot0:findTF("title/lock", slot1), false)
-		setActive(slot0:findTF("fog", slot1), false)
-		setActive(slot0:findTF("tag", slot1), false)
-		onButton(slot0, slot1, function ()
-			slot1 = pg.NewStoryMgr.GetInstance()
+	elseif arg_16_2 == var_0_0.STATUS_STORY then
+		setActive(arg_16_0:findTF("lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("title/lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("fog", arg_16_1), false)
+		setActive(arg_16_0:findTF("tag", arg_16_1), false)
+		onButton(arg_16_0, arg_16_1, function()
+			local var_19_0 = arg_16_0.config.config_client.zumaStory[tonumber(arg_16_1.name)]
 
-			slot1:Play(uv0.config.config_client.zumaStory[tonumber(uv1.name)], function ()
-				uv0:UpdateLevels()
+			pg.NewStoryMgr.GetInstance():Play(var_19_0, function()
+				arg_16_0:UpdateLevels()
 			end)
 		end, SFX_PANEL)
-	elseif slot2 == uv0.STATUS_NOROMAL then
-		setActive(slot0:findTF("lock", slot1), false)
-		setActive(slot0:findTF("title/lock", slot1), false)
-		setActive(slot0:findTF("fog", slot1), false)
-		setActive(slot0:findTF("tag", slot1), true)
-		onButton(slot0, slot1, function ()
-			LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_juqing, tonumber(uv0.name))
+	elseif arg_16_2 == var_0_0.STATUS_NOROMAL then
+		setActive(arg_16_0:findTF("lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("title/lock", arg_16_1), false)
+		setActive(arg_16_0:findTF("fog", arg_16_1), false)
+		setActive(arg_16_0:findTF("tag", arg_16_1), true)
+		onButton(arg_16_0, arg_16_1, function()
+			LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_juqing, tonumber(arg_16_1.name))
 		end, SFX_PANEL)
 	end
 
-	LeanTween.cancel(slot0:findTF("arrow", slot1).gameObject)
+	local var_16_0 = arg_16_0:findTF("arrow", arg_16_1)
 
-	if tonumber(slot1.name) == slot0.curIndex then
-		setLocalPosition(slot3, {
-			y = slot0.arrowPosYList[slot4]
+	LeanTween.cancel(var_16_0.gameObject)
+
+	local var_16_1 = tonumber(arg_16_1.name)
+
+	if var_16_1 == arg_16_0.curIndex then
+		setLocalPosition(var_16_0, {
+			y = arg_16_0.arrowPosYList[var_16_1]
 		})
-		setActive(slot3, true)
-		LeanTween.moveY(slot3, slot0.arrowPosYList[slot4] + uv0.ARROW_ANIM_DELTA, uv0.ARROW_ANIM_TIME):setLoopPingPong()
+		setActive(var_16_0, true)
+		LeanTween.moveY(var_16_0, arg_16_0.arrowPosYList[var_16_1] + var_0_0.ARROW_ANIM_DELTA, var_0_0.ARROW_ANIM_TIME):setLoopPingPong()
 	else
-		setActive(slot3, false)
+		setActive(var_16_0, false)
 	end
 end
 
-function slot0.UpdateCount(slot0)
-	setText(slot0.countText, LaunchBallActivityMgr.GetRemainCount(slot0.activityID))
+function var_0_0.UpdateCount(arg_22_0)
+	setText(arg_22_0.countText, LaunchBallActivityMgr.GetRemainCount(arg_22_0.activityID))
 end
 
-function slot0.UpdateTaskTip(slot0)
-	setActive(slot0:findTF("Task/Tip", slot0.top), LaunchBallTaskMgr.GetRedTip())
+function var_0_0.UpdateTaskTip(arg_23_0)
+	setActive(arg_23_0:findTF("Task/Tip", arg_23_0.top), LaunchBallTaskMgr.GetRedTip())
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.SIXTH_ANNIVERSARY_JP)
+function var_0_0.onBackPressed(arg_24_0)
+	arg_24_0:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.SIXTH_ANNIVERSARY_JP)
 end
 
-return slot0
+return var_0_0

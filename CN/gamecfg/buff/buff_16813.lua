@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_duoliyabiaoji",
+				number = 0.015
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -149,24 +168,5 @@ return {
 	stack = 1,
 	id = 16813,
 	icon = 16813,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_duoliyabiaoji",
-				number = 0.015
-			}
-		}
-	}
+	last_effect = ""
 }

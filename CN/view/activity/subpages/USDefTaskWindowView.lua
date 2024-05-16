@@ -1,86 +1,106 @@
-slot0 = class("USDefTaskWindowView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("USDefTaskWindowView", import("...base.BaseSubView"))
 
-function slot0.Load(slot0)
-	slot0._tf = findTF(slot0._parentTf, "USDefTaskWindow")
-	slot0._go = go(slot0._tf)
+function var_0_0.Load(arg_1_0)
+	arg_1_0._tf = findTF(arg_1_0._parentTf, "USDefTaskWindow")
+	arg_1_0._go = go(arg_1_0._tf)
 
-	pg.DelegateInfo.New(slot0)
-	slot0:OnInit()
+	pg.DelegateInfo.New(arg_1_0)
+	arg_1_0:OnInit()
 end
 
-function slot0.Destroy(slot0)
-	slot0:Hide()
+function var_0_0.Destroy(arg_2_0)
+	arg_2_0:Hide()
 end
 
-function slot0.OnInit(slot0)
-	slot0:initData()
-	slot0:initUI()
-	slot0:updateProgress()
-	slot0:updateTaskList()
-	slot0:Show()
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0:initData()
+	arg_3_0:initUI()
+	arg_3_0:updateProgress()
+	arg_3_0:updateTaskList()
+	arg_3_0:Show()
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_4_0)
+	return
 end
 
-function slot0.initData(slot0)
-	slot0.taskIDList = Clone(pg.task_data_template[slot0.contextData:getConfig("config_client")[1]].target_id)
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskVOList = {}
+function var_0_0.initData(arg_5_0)
+	local var_5_0 = arg_5_0.contextData:getConfig("config_client")[1]
 
-	for slot5, slot6 in ipairs(slot0.taskIDList) do
-		table.insert(slot0.taskVOList, slot0.taskProxy:getTaskVO(slot6))
+	arg_5_0.taskIDList = Clone(pg.task_data_template[var_5_0].target_id)
+	arg_5_0.taskProxy = getProxy(TaskProxy)
+	arg_5_0.taskVOList = {}
+
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.taskIDList) do
+		local var_5_1 = arg_5_0.taskProxy:getTaskVO(iter_5_1)
+
+		table.insert(arg_5_0.taskVOList, var_5_1)
 	end
 end
 
-function slot0.initUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.curNumTextTF = slot0:findTF("ProgressPanel/CurNumText")
-	slot0.totalNumText = slot0:findTF("ProgressPanel/TotalNumText")
-	slot0.taskTpl = slot0:findTF("TaskTpl")
-	slot0.taskContainer = slot0:findTF("TaskList/Viewport/Content")
-	slot0.taskList = UIItemList.New(slot0.taskContainer, slot0.taskTpl)
+function var_0_0.initUI(arg_6_0)
+	arg_6_0.bg = arg_6_0:findTF("BG")
+	arg_6_0.curNumTextTF = arg_6_0:findTF("ProgressPanel/CurNumText")
+	arg_6_0.totalNumText = arg_6_0:findTF("ProgressPanel/TotalNumText")
+	arg_6_0.taskTpl = arg_6_0:findTF("TaskTpl")
+	arg_6_0.taskContainer = arg_6_0:findTF("TaskList/Viewport/Content")
+	arg_6_0.taskList = UIItemList.New(arg_6_0.taskContainer, arg_6_0.taskTpl)
 
-	onButton(slot0, slot0.bg, function ()
-		uv0:Destroy()
+	onButton(arg_6_0, arg_6_0.bg, function()
+		arg_6_0:Destroy()
 	end, SFX_CANCEL)
 end
 
-function slot0.updateProgress(slot0)
-	slot1 = #slot0.taskIDList
-	slot2 = 0
+function var_0_0.updateProgress(arg_8_0)
+	local var_8_0 = #arg_8_0.taskIDList
+	local var_8_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.taskVOList) do
-		if slot7:getTaskStatus() >= 1 then
-			slot2 = slot2 + 1
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.taskVOList) do
+		if iter_8_1:getTaskStatus() >= 1 then
+			var_8_1 = var_8_1 + 1
 		end
 	end
 
-	setText(slot0.curNumTextTF, string.format("%2d", slot2))
-	setText(slot0.totalNumText, string.format("%2d", slot1))
+	setText(arg_8_0.curNumTextTF, string.format("%2d", var_8_1))
+	setText(arg_8_0.totalNumText, string.format("%2d", var_8_0))
 end
 
-function slot0.updateTaskList(slot0)
-	slot0.taskList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot1 = slot1 + 1
-			slot3 = uv0.taskVOList[slot1]
-			slot7 = uv0:findTF("ItemBG/Icon", slot2)
-			slot8 = uv0:findTF("ItemBG/Finished", slot2)
+function var_0_0.updateTaskList(arg_9_0)
+	arg_9_0.taskList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			arg_10_1 = arg_10_1 + 1
 
-			setText(uv0:findTF("IndexText", slot2), string.format("%02d", slot1))
-			setText(uv0:findTF("TaskIndexText", slot2), "TASK-" .. string.format("%02d", slot1))
-			setText(uv0:findTF("DescText", slot2), slot3:getConfig("desc"))
+			local var_10_0 = arg_9_0.taskVOList[arg_10_1]
+			local var_10_1 = arg_9_0:findTF("IndexText", arg_10_2)
+			local var_10_2 = arg_9_0:findTF("TaskIndexText", arg_10_2)
+			local var_10_3 = arg_9_0:findTF("DescText", arg_10_2)
+			local var_10_4 = arg_9_0:findTF("ItemBG/Icon", arg_10_2)
+			local var_10_5 = arg_9_0:findTF("ItemBG/Finished", arg_10_2)
 
-			if not pg.ship_data_statistics[tonumber(slot3:getConfig("target_id"))] then
-				slot10 = 205054
+			setText(var_10_1, string.format("%02d", arg_10_1))
+			setText(var_10_2, "TASK-" .. string.format("%02d", arg_10_1))
+
+			local var_10_6 = var_10_0:getConfig("desc")
+
+			setText(var_10_3, var_10_6)
+
+			local var_10_7 = tonumber(var_10_0:getConfig("target_id"))
+
+			if not pg.ship_data_statistics[var_10_7] then
+				var_10_7 = 205054
 			end
 
-			LoadImageSpriteAsync("SquareIcon/" .. pg.ship_skin_template[pg.ship_data_statistics[slot10].skin_id].painting, slot7)
-			setActive(slot8, slot3:getTaskStatus() >= 1)
+			local var_10_8 = pg.ship_data_statistics[var_10_7].skin_id
+			local var_10_9 = pg.ship_skin_template[var_10_8].painting
+
+			LoadImageSpriteAsync("SquareIcon/" .. var_10_9, var_10_4)
+
+			local var_10_10 = var_10_0:getTaskStatus()
+
+			setActive(var_10_5, var_10_10 >= 1)
 		end
 	end)
-	slot0.taskList:align(#slot0.taskIDList)
+	arg_9_0.taskList:align(#arg_9_0.taskIDList)
 end
 
-return slot0
+return var_0_0

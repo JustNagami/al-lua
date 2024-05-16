@@ -1,403 +1,420 @@
-slot0 = class("TowerClimbingMap")
+﻿local var_0_0 = class("TowerClimbingMap")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1.gameView
-	slot0.view = slot1
-	slot0.map = slot2
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1.gameView
+	arg_1_0.view = arg_1_1
+	arg_1_0.map = arg_1_2
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.blocks = {}
-	slot0.groundContainer = slot0._tf:Find("game")
-	slot0.blockPlayCon = slot0.groundContainer:Find("block_play_con")
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.blocks = {}
+	arg_2_0.groundContainer = arg_2_0._tf:Find("game")
+	arg_2_0.blockPlayCon = arg_2_0.groundContainer:Find("block_play_con")
 
-	setAnchoredPosition(slot0.blockPlayCon, {
+	setAnchoredPosition(arg_2_0.blockPlayCon, {
 		x = 0,
 		y = 0
 	})
 
-	slot2 = slot0.blockPlayCon
-	slot0.blockContainer = slot2:Find("blocks")
-	slot0.hearts = {
-		slot0._tf:Find("prints/score/hearts/1"),
-		slot0._tf:Find("prints/score/hearts/2"),
-		slot0._tf:Find("prints/score/hearts/3")
+	arg_2_0.blockContainer = arg_2_0.blockPlayCon:Find("blocks")
+	arg_2_0.hearts = {
+		arg_2_0._tf:Find("prints/score/hearts/1"),
+		arg_2_0._tf:Find("prints/score/hearts/2"),
+		arg_2_0._tf:Find("prints/score/hearts/3")
 	}
-	slot0.score = slot0._tf:Find("prints/score/Text"):GetComponent(typeof(Text))
-	slot0.heartProgress = slot0._tf:Find("prints/score/progress")
-	slot0.heartProgressTxt = slot0._tf:Find("prints/score/progress/Text"):GetComponent(typeof(Text))
-	slot0.bg = TowerClimbBgMgr.New(slot0._tf:Find("bgs"))
+	arg_2_0.score = arg_2_0._tf:Find("prints/score/Text"):GetComponent(typeof(Text))
+	arg_2_0.heartProgress = arg_2_0._tf:Find("prints/score/progress")
+	arg_2_0.heartProgressTxt = arg_2_0._tf:Find("prints/score/progress/Text"):GetComponent(typeof(Text))
+	arg_2_0.bg = TowerClimbBgMgr.New(arg_2_0._tf:Find("bgs"))
 
-	slot0.bg:Init(slot0.map.id, slot1)
+	arg_2_0.bg:Init(arg_2_0.map.id, arg_2_1)
 
-	slot0.npc = slot0._tf:Find("prints/npc")
+	arg_2_0.npc = arg_2_0._tf:Find("prints/npc")
 
-	slot0:LoadEffect(slot0.map.id)
+	arg_2_0:LoadEffect(arg_2_0.map.id)
 
-	slot0.tip = slot0._tf:Find("prints/tip")
+	arg_2_0.tip = arg_2_0._tf:Find("prints/tip")
 
-	setActive(slot0.tip, false)
+	setActive(arg_2_0.tip, false)
 
-	slot0.timers = {}
+	arg_2_0.timers = {}
 end
 
-function slot0.LoadEffect(slot0, slot1)
-	if TowerClimbingGameSettings.MAPID2EFFECT[slot1] then
-		for slot6, slot7 in ipairs(slot2) do
-			slot0:LoadSingleEffect(slot7[1], slot7[2])
+function var_0_0.LoadEffect(arg_3_0, arg_3_1)
+	local var_3_0 = TowerClimbingGameSettings.MAPID2EFFECT[arg_3_1]
+
+	if var_3_0 then
+		for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+			local var_3_1 = iter_3_1[1]
+			local var_3_2 = iter_3_1[2]
+
+			arg_3_0:LoadSingleEffect(var_3_1, var_3_2)
 		end
 	end
 end
 
-function slot0.LoadSingleEffect(slot0, slot1, slot2, slot3)
-	slot4 = PoolMgr.GetInstance()
-
-	slot4:GetUI(slot1, true, function (slot0)
-		if not uv0.groundContainer then
-			PoolMgr.GetInstance():ReturnUI(uv1, slot0)
+function var_0_0.LoadSingleEffect(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	PoolMgr.GetInstance():GetUI(arg_4_1, true, function(arg_5_0)
+		if not arg_4_0.groundContainer then
+			PoolMgr.GetInstance():ReturnUI(arg_4_1, arg_5_0)
 		else
-			slot0.name = uv1
+			arg_5_0.name = arg_4_1
 
-			SetParent(slot0, uv0.groundContainer)
+			SetParent(arg_5_0, arg_4_0.groundContainer)
 
-			slot0.transform.anchoredPosition3D = Vector3(uv2[1], uv2[2], -200)
+			arg_5_0.transform.anchoredPosition3D = Vector3(arg_4_2[1], arg_4_2[2], -200)
 
-			setActive(slot0, true)
+			setActive(arg_5_0, true)
 
-			if uv3 then
-				uv3(slot0)
+			if arg_4_3 then
+				arg_4_3(arg_5_0)
 			end
 		end
 	end)
 end
 
-function slot0.ReturnEffect(slot0, slot1)
-	if TowerClimbingGameSettings.MAPID2EFFECT[slot1] then
-		for slot6, slot7 in ipairs(slot2) do
-			if slot0.groundContainer:Find(slot7[1]) then
-				PoolMgr.GetInstance():ReturnUI(slot8, slot9.gameObject)
+function var_0_0.ReturnEffect(arg_6_0, arg_6_1)
+	local var_6_0 = TowerClimbingGameSettings.MAPID2EFFECT[arg_6_1]
+
+	if var_6_0 then
+		for iter_6_0, iter_6_1 in ipairs(var_6_0) do
+			local var_6_1 = iter_6_1[1]
+			local var_6_2 = arg_6_0.groundContainer:Find(var_6_1)
+
+			if var_6_2 then
+				PoolMgr.GetInstance():ReturnUI(var_6_1, var_6_2.gameObject)
 			end
 		end
 	end
 end
 
-function slot0.OnReachAwardScore(slot0)
+function var_0_0.OnReachAwardScore(arg_7_0)
 	if LOCK_TOWERCLIMBING_AWARD then
 		return
 	end
 
-	if slot0.tipTimer then
-		slot0.tipTimer:Stop()
+	if arg_7_0.tipTimer then
+		arg_7_0.tipTimer:Stop()
 
-		slot0.tipTimer = nil
+		arg_7_0.tipTimer = nil
 	end
 
-	setActive(slot0.tip, true)
+	setActive(arg_7_0.tip, true)
 
-	slot0.tipTimer = Timer.New(function ()
-		setActive(uv0.tip, false)
-		uv0.tipTimer:Stop()
+	arg_7_0.tipTimer = Timer.New(function()
+		setActive(arg_7_0.tip, false)
+		arg_7_0.tipTimer:Stop()
 
-		uv0.tipTimer = nil
+		arg_7_0.tipTimer = nil
 	end, 3, 1)
-	slot1 = slot0.tipTimer
 
-	slot1:Start()
+	arg_7_0.tipTimer:Start()
 
-	slot1 = slot0.groundContainer
-	slot1 = slot1:InverseTransformPoint(slot0.npc.position)
-	slot2 = slot0.groundContainer
-	slot2 = slot2:InverseTransformPoint(slot0.player._tf.position)
+	local var_7_0 = arg_7_0.groundContainer:InverseTransformPoint(arg_7_0.npc.position)
+	local var_7_1 = arg_7_0.groundContainer:InverseTransformPoint(arg_7_0.player._tf.position)
 
-	function slot3()
-		function slot0()
-			setActive(uv0.awardEffect1, true)
+	local function var_7_2()
+		local function var_9_0()
+			setActive(arg_7_0.awardEffect1, true)
 
-			uv0.awardTimer = Timer.New(function ()
-				setActive(uv0.awardEffect1, false)
+			arg_7_0.awardTimer = Timer.New(function()
+				setActive(arg_7_0.awardEffect1, false)
 			end, 2, 1)
 
-			uv0.awardTimer:Start()
+			arg_7_0.awardTimer:Start()
 		end
 
-		if not uv0.awardEffect1 then
-			slot2 = uv0
+		if not arg_7_0.awardEffect1 then
+			local var_9_1 = {
+				var_7_0.x,
+				var_7_0.y
+			}
 
-			slot2:LoadSingleEffect(TowerClimbingGameSettings.AWARDEFFECT1, {
-				uv1.x,
-				uv1.y
-			}, function (slot0)
-				uv0.awardEffect1 = slot0
+			arg_7_0:LoadSingleEffect(TowerClimbingGameSettings.AWARDEFFECT1, var_9_1, function(arg_12_0)
+				arg_7_0.awardEffect1 = arg_12_0
 
-				uv1()
+				var_9_0()
 			end)
 		else
-			slot0()
+			var_9_0()
 		end
 	end
 
-	function slot4()
-		slot0 = Vector3(uv0.x, uv1.y + 200, -200)
-		slot1 = {}
+	local function var_7_3()
+		local var_13_0 = Vector3(var_7_0.x, var_7_1.y + 200, -200)
+		local var_13_1 = {}
 
-		table.insert(slot1, Vector3(uv1.x, uv1.y, -200))
-		table.insert(slot1, slot0)
-		table.insert(slot1, slot0)
-		table.insert(slot1, Vector3(uv0.x, uv0.y, -200))
+		table.insert(var_13_1, Vector3(var_7_1.x, var_7_1.y, -200))
+		table.insert(var_13_1, var_13_0)
+		table.insert(var_13_1, var_13_0)
+		table.insert(var_13_1, Vector3(var_7_0.x, var_7_0.y, -200))
 
-		uv2.awardEffect.transform.localPosition = Vector3(uv1.x, uv1.y, -200)
+		arg_7_0.awardEffect.transform.localPosition = Vector3(var_7_1.x, var_7_1.y, -200)
 
-		setActive(uv2.awardEffect, true)
-
-		slot2 = LeanTween.moveLocal(uv2.awardEffect, slot1, 1)
-
-		slot2:setOnComplete(System.Action(function ()
-			setActive(uv0.awardEffect, false)
-			uv1()
+		setActive(arg_7_0.awardEffect, true)
+		LeanTween.moveLocal(arg_7_0.awardEffect, var_13_1, 1):setOnComplete(System.Action(function()
+			setActive(arg_7_0.awardEffect, false)
+			var_7_2()
 		end))
 	end
 
-	if not slot0.awardEffect then
-		slot0:LoadSingleEffect(TowerClimbingGameSettings.AWARDEFFECT, {
-			slot2.x,
-			slot2.y
-		}, function (slot0)
-			uv0.awardEffect = slot0
+	if not arg_7_0.awardEffect then
+		local var_7_4 = {
+			var_7_1.x,
+			var_7_1.y
+		}
 
-			uv1()
+		arg_7_0:LoadSingleEffect(TowerClimbingGameSettings.AWARDEFFECT, var_7_4, function(arg_15_0)
+			arg_7_0.awardEffect = arg_15_0
+
+			var_7_3()
 		end)
 	else
-		slot4()
+		var_7_3()
 	end
 end
 
-function slot0.GetFirstBlock(slot0)
-	return slot0.blocks[1]
+function var_0_0.GetFirstBlock(arg_16_0)
+	return arg_16_0.blocks[1]
 end
 
-function slot0.GetHitBlock(slot0, slot1)
-	if _.detect(slot0.blocks, function (slot0)
-		return slot0.go == uv0
-	end) then
-		return slot2
+function var_0_0.GetHitBlock(arg_17_0, arg_17_1)
+	local var_17_0 = _.detect(arg_17_0.blocks, function(arg_18_0)
+		return arg_18_0.go == arg_17_1
+	end)
+
+	if var_17_0 then
+		return var_17_0
 	end
 end
 
-function slot0.OnCreateGround(slot0, slot1, slot2)
-	slot0.ground = slot1
+function var_0_0.OnCreateGround(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0.ground = arg_19_1
 
-	TowerClimbingResMgr.GetGround(slot1.name, function (slot0)
-		uv0.groundGo = slot0
-		slot0.name = "manjuu"
+	TowerClimbingResMgr.GetGround(arg_19_1.name, function(arg_20_0)
+		arg_19_0.groundGo = arg_20_0
+		arg_20_0.name = "manjuu"
 
-		SetParent(slot0.transform, uv0.groundContainer)
+		SetParent(arg_20_0.transform, arg_19_0.groundContainer)
 
-		slot0.transform.anchoredPosition = uv1.position
+		arg_20_0.transform.anchoredPosition = arg_19_1.position
 
-		setActive(slot0, true)
-		slot0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
-		setText(uv0.groundGo.transform:Find("Text"), "")
-		uv2()
+		setActive(arg_20_0, true)
+		arg_20_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		setText(arg_19_0.groundGo.transform:Find("Text"), "")
+		arg_19_2()
 	end)
 end
 
-function slot0.TranslateBlockPosition(slot0, slot1)
-	return slot0.blockContainer:InverseTransformVector(slot0.groundContainer:TransformVector(slot1))
+function var_0_0.TranslateBlockPosition(arg_21_0, arg_21_1)
+	return arg_21_0.blockContainer:InverseTransformVector(arg_21_0.groundContainer:TransformVector(arg_21_1))
 end
 
-function slot0.OnCreateBlock(slot0, slot1, slot2)
-	TowerClimbingResMgr.GetBlock(slot1.type, function (slot0)
-		SetParent(slot0, uv0.blockContainer)
+function var_0_0.OnCreateBlock(arg_22_0, arg_22_1, arg_22_2)
+	TowerClimbingResMgr.GetBlock(arg_22_1.type, function(arg_23_0)
+		SetParent(arg_23_0, arg_22_0.blockContainer)
 
-		slot0.transform.anchoredPosition = uv0:TranslateBlockPosition(uv1.position)
-		slot0.name = TowerClimbingGameSettings.BLOCK_NAME
+		arg_23_0.transform.anchoredPosition = arg_22_0:TranslateBlockPosition(arg_22_1.position)
+		arg_23_0.name = TowerClimbingGameSettings.BLOCK_NAME
 
-		setActive(slot0, true)
+		setActive(arg_23_0, true)
 
-		slot2 = {}
+		local var_23_0 = arg_23_0:GetComponentsInChildren(typeof(UnityEngine.Collider2D))
+		local var_23_1 = {}
 
-		for slot6 = 1, slot0:GetComponentsInChildren(typeof(UnityEngine.Collider2D)).Length do
-			table.insert(slot2, slot1[slot6 - 1])
+		for iter_23_0 = 1, var_23_0.Length do
+			table.insert(var_23_1, var_23_0[iter_23_0 - 1])
 		end
 
-		table.insert(uv0.blocks, {
-			go = slot0,
-			block = uv1,
-			colliders = slot2
+		table.insert(arg_22_0.blocks, {
+			go = arg_23_0,
+			block = arg_22_1,
+			colliders = var_23_1
 		})
-		uv0:OnActiveBlock(uv1)
+		arg_22_0:OnActiveBlock(arg_22_1)
 
-		slot5 = math.random(TowerClimbingGameSettings.FIRE_TIME[1], TowerClimbingGameSettings.FIRE_TIME[2])
+		local var_23_2 = TowerClimbingGameSettings.FIRE_TIME[1]
+		local var_23_3 = TowerClimbingGameSettings.FIRE_TIME[2]
+		local var_23_4 = math.random(var_23_2, var_23_3)
+		local var_23_5 = arg_23_0.transform:Find("firer")
 
-		if slot0.transform:Find("firer") then
-			slot7 = slot6:GetComponent(typeof(Animation))
-			uv0.timers[uv1.level] = Timer.New(function ()
-				uv0:Play("action")
-			end, slot5, -1)
+		if var_23_5 then
+			local var_23_6 = var_23_5:GetComponent(typeof(Animation))
 
-			uv0.timers[uv1.level]:Start()
+			arg_22_0.timers[arg_22_1.level] = Timer.New(function()
+				var_23_6:Play("action")
+			end, var_23_4, -1)
+
+			arg_22_0.timers[arg_22_1.level]:Start()
 		end
 
-		uv2()
+		arg_22_2()
 	end)
 end
 
-function slot0.OnActiveBlock(slot0, slot1)
-	for slot6, slot7 in ipairs(_.detect(slot0.blocks, function (slot0)
-		return slot0.block.level == uv0.level
-	end).colliders) do
-		slot7.enabled = slot1.isActive
+function var_0_0.OnActiveBlock(arg_25_0, arg_25_1)
+	local var_25_0 = _.detect(arg_25_0.blocks, function(arg_26_0)
+		return arg_26_0.block.level == arg_25_1.level
+	end)
+
+	for iter_25_0, iter_25_1 in ipairs(var_25_0.colliders) do
+		iter_25_1.enabled = arg_25_1.isActive
 	end
 end
 
-function slot0.SinkHandler(slot0, slot1, slot2)
-	LeanTween.value(slot0.blockPlayCon.gameObject, slot0.blockPlayCon.anchoredPosition.y, slot0.blockPlayCon.anchoredPosition.y - slot1, 0.2):setOnUpdate(System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.blockPlayCon, {
-			y = slot0
+function var_0_0.SinkHandler(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_0.blockPlayCon.anchoredPosition.y
+	local var_27_1 = arg_27_0.blockPlayCon.anchoredPosition.y - arg_27_1
+
+	LeanTween.value(arg_27_0.blockPlayCon.gameObject, var_27_0, var_27_1, 0.2):setOnUpdate(System.Action_float(function(arg_28_0)
+		setAnchoredPosition(arg_27_0.blockPlayCon, {
+			y = arg_28_0
 		})
-	end)):setEase(LeanTweenType.easeOutQuad):setOnComplete(System.Action(slot2))
+	end)):setEase(LeanTweenType.easeOutQuad):setOnComplete(System.Action(arg_27_2))
 end
 
-function slot0.OnBlockDestory(slot0, slot1)
-	if slot0.timers[slot1] then
-		slot0.timers[slot1]:Stop()
+function var_0_0.OnBlockDestory(arg_29_0, arg_29_1)
+	if arg_29_0.timers[arg_29_1] then
+		arg_29_0.timers[arg_29_1]:Stop()
 
-		slot0.timers[slot1] = nil
+		arg_29_0.timers[arg_29_1] = nil
 	end
 
-	slot2 = _.detect(slot0.blocks, function (slot0)
-		return slot0.block.level == uv0
+	local var_29_0 = _.detect(arg_29_0.blocks, function(arg_30_0)
+		return arg_30_0.block.level == arg_29_1
 	end)
 
-	TowerClimbingResMgr.ReturnBlock(slot2.block.type, slot2.go)
+	TowerClimbingResMgr.ReturnBlock(var_29_0.block.type, var_29_0.go)
 end
 
-function slot0.OnSink(slot0, slot1, slot2)
-	slot0.bg:DoMove(slot1, slot2)
-	slot2()
+function var_0_0.OnSink(arg_31_0, arg_31_1, arg_31_2)
+	arg_31_0.bg:DoMove(arg_31_1, arg_31_2)
+	arg_31_2()
 end
 
-function slot0.OnPlayerLifeUpdate(slot0, slot1)
-	triggerToggle(slot0.hearts[3], slot1 >= 3)
-	triggerToggle(slot0.hearts[2], slot1 >= 2)
-	triggerToggle(slot0.hearts[1], slot1 >= 1)
+function var_0_0.OnPlayerLifeUpdate(arg_32_0, arg_32_1)
+	triggerToggle(arg_32_0.hearts[3], arg_32_1 >= 3)
+	triggerToggle(arg_32_0.hearts[2], arg_32_1 >= 2)
+	triggerToggle(arg_32_0.hearts[1], arg_32_1 >= 1)
 
-	slot0.heartProgressTxt.text = slot1 .. "/" .. 3
+	arg_32_0.heartProgressTxt.text = arg_32_1 .. "/" .. 3
 
-	setFillAmount(slot0.heartProgress, slot1 / 3)
+	setFillAmount(arg_32_0.heartProgress, arg_32_1 / 3)
 end
 
-function slot0.OnScoreUpdate(slot0, slot1)
-	slot0.score.text = slot1
+function var_0_0.OnScoreUpdate(arg_33_0, arg_33_1)
+	arg_33_0.score.text = arg_33_1
 end
 
-function slot0.OnCreatePlayer(slot0, slot1, slot2)
-	slot0.player = TowerClimbingPlayer.New(slot0, slot1)
+function var_0_0.OnCreatePlayer(arg_34_0, arg_34_1, arg_34_2)
+	arg_34_0.player = TowerClimbingPlayer.New(arg_34_0, arg_34_1)
 
-	slot0.player:Init(slot2)
+	arg_34_0.player:Init(arg_34_2)
 end
 
-function slot0.OnEnableStab(slot0, slot1, slot2)
-	slot3 = _.detect(slot0.blocks, function (slot0)
-		return slot0.block.level == uv0.level
+function var_0_0.OnEnableStab(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = _.detect(arg_35_0.blocks, function(arg_36_0)
+		return arg_36_0.block.level == arg_35_1.level
 	end)
 
-	assert(slot3)
+	assert(var_35_0)
 
-	slot4 = slot3.go:GetComponent(typeof(UnityEngine.Collider2D))
+	local var_35_1 = var_35_0.go:GetComponent(typeof(UnityEngine.Collider2D))
 
-	for slot8, slot9 in ipairs(slot3.colliders) do
-		if slot9 ~= slot4 then
-			slot9.enabled = slot2
+	for iter_35_0, iter_35_1 in ipairs(var_35_0.colliders) do
+		if iter_35_1 ~= var_35_1 then
+			iter_35_1.enabled = arg_35_2
 		end
 	end
 end
 
-function slot0.OnEnableGround(slot0, slot1)
-	slot0.groundGo:GetComponent(typeof(UnityEngine.Collider2D)).enabled = slot1
+function var_0_0.OnEnableGround(arg_37_0, arg_37_1)
+	arg_37_0.groundGo:GetComponent(typeof(UnityEngine.Collider2D)).enabled = arg_37_1
 end
 
-function slot0.GetPlayer(slot0)
-	return slot0.player
+function var_0_0.GetPlayer(arg_38_0)
+	return arg_38_0.player
 end
 
-function slot0.SendEvent(slot0, slot1, ...)
-	slot0.view.controller:__slot1_None__(unpack({
+function var_0_0.SendEvent(arg_39_0, arg_39_1, ...)
+	local var_39_0 = arg_39_0.view.controller
+
+	var_39_0[arg_39_1](var_39_0, unpack({
 		...
 	}))
 end
 
-function slot0.OnGroundRuning(slot0)
-	slot0.groundGo:GetComponent("SpineAnimUI"):SetAction("up", 0)
+function var_0_0.OnGroundRuning(arg_40_0)
+	arg_40_0.groundGo:GetComponent("SpineAnimUI"):SetAction("up", 0)
 end
 
-function slot0.OnGroundPositionChange(slot0, slot1)
-	setAnchoredPosition(slot0.groundGo.transform, slot1)
+function var_0_0.OnGroundPositionChange(arg_41_0, arg_41_1)
+	setAnchoredPosition(arg_41_0.groundGo.transform, arg_41_1)
 end
 
-function slot0.OnGroundSleepTimeChange(slot0, slot1)
-	if math.ceil(slot1) > 0 then
-		setText(slot0.groundGo.transform:Find("Text"), slot2)
+function var_0_0.OnGroundSleepTimeChange(arg_42_0, arg_42_1)
+	local var_42_0 = math.ceil(arg_42_1)
+
+	if var_42_0 > 0 then
+		setText(arg_42_0.groundGo.transform:Find("Text"), var_42_0)
 	else
-		setText(slot0.groundGo.transform:Find("Text"), "")
+		setText(arg_42_0.groundGo.transform:Find("Text"), "")
 	end
 end
 
-function slot0.Dispose(slot0)
-	if slot0.awardTimer then
-		slot0.awardTimer:Stop()
+function var_0_0.Dispose(arg_43_0)
+	if arg_43_0.awardTimer then
+		arg_43_0.awardTimer:Stop()
 
-		slot0.awardTimer = nil
+		arg_43_0.awardTimer = nil
 	end
 
-	slot0.bg:Clear()
-	slot0:ReturnEffect(slot0.map.id)
+	arg_43_0.bg:Clear()
+	arg_43_0:ReturnEffect(arg_43_0.map.id)
 
-	if slot0.awardEffect then
-		PoolMgr.GetInstance():ReturnUI(slot0.awardEffect.name, slot0.awardEffect)
+	if arg_43_0.awardEffect then
+		PoolMgr.GetInstance():ReturnUI(arg_43_0.awardEffect.name, arg_43_0.awardEffect)
 
-		slot0.awardEffect = nil
+		arg_43_0.awardEffect = nil
 	end
 
-	if slot0.awardEffect1 then
-		PoolMgr.GetInstance():ReturnUI(slot0.awardEffect1.name, slot0.awardEffect1)
+	if arg_43_0.awardEffect1 then
+		PoolMgr.GetInstance():ReturnUI(arg_43_0.awardEffect1.name, arg_43_0.awardEffect1)
 
-		slot0.awardEffect1 = nil
+		arg_43_0.awardEffect1 = nil
 	end
 
-	if slot0.tipTimer then
-		slot0.tipTimer:Stop()
+	if arg_43_0.tipTimer then
+		arg_43_0.tipTimer:Stop()
 	end
 
-	slot0.tipTimer = nil
-	slot1 = pairs
-	slot2 = slot0.timers or {}
+	arg_43_0.tipTimer = nil
 
-	for slot4, slot5 in slot1(slot2) do
-		slot5:Stop()
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.timers or {}) do
+		iter_43_1:Stop()
 	end
 
-	slot0.timers = nil
+	arg_43_0.timers = nil
 
-	if slot0.player then
-		slot0.player:Dispose()
+	if arg_43_0.player then
+		arg_43_0.player:Dispose()
 
-		slot0.player = nil
+		arg_43_0.player = nil
 	end
 
-	if slot0.ground and not IsNil(slot0.groundGo) then
-		TowerClimbingResMgr.ReturnGround(slot0.ground.name, slot0.groundGo)
+	if arg_43_0.ground and not IsNil(arg_43_0.groundGo) then
+		TowerClimbingResMgr.ReturnGround(arg_43_0.ground.name, arg_43_0.groundGo)
 	end
 
-	if slot0.blocks then
-		for slot4, slot5 in ipairs(slot0.blocks) do
-			if not IsNil(slot5.go) then
-				TowerClimbingResMgr.ReturnBlock(slot5.block.type, slot5.go)
+	if arg_43_0.blocks then
+		for iter_43_2, iter_43_3 in ipairs(arg_43_0.blocks) do
+			if not IsNil(iter_43_3.go) then
+				TowerClimbingResMgr.ReturnBlock(iter_43_3.block.type, iter_43_3.go)
 			end
 		end
 
-		slot0.blocks = nil
+		arg_43_0.blocks = nil
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,5 +1,6 @@
-slot0 = class("EducatePlanProxy")
-slot0.INDEX2BG = {
+﻿local var_0_0 = class("EducatePlanProxy")
+
+var_0_0.INDEX2BG = {
 	{
 		"empty_blue",
 		"plan_name_blue"
@@ -14,95 +15,100 @@ slot0.INDEX2BG = {
 	}
 }
 
-function slot0.Ctor(slot0)
-	slot0.allPlans = {}
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.allPlans = {}
 
-	for slot5, slot6 in ipairs(pg.child_plan.all) do
-		table.insert(slot0.allPlans, EducatePlan.New(slot6))
+	local var_1_0 = pg.child_plan.all
+
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+		table.insert(arg_1_0.allPlans, EducatePlan.New(iter_1_1))
 	end
 
-	slot0.gridColorCfg = pg.child_data[1].plan_color
+	arg_1_0.gridColorCfg = pg.child_data[1].plan_color
 end
 
-function slot0.GetCfgPlans(slot0)
-	return slot0.allPlans
+function var_0_0.GetCfgPlans(arg_2_0)
+	return arg_2_0.allPlans
 end
 
-function slot0.SetUp(slot0, slot1)
-	slot0:initHistory(slot1.history or {})
+function var_0_0.SetUp(arg_3_0, arg_3_1)
+	arg_3_0:initHistory(arg_3_1.history or {})
 
-	slot0.selectedPlans = slot1.selectedPlans or {}
+	arg_3_0.selectedPlans = arg_3_1.selectedPlans or {}
 
-	if #slot0.selectedPlans > 0 then
-		slot0:initGridData()
+	if #arg_3_0.selectedPlans > 0 then
+		arg_3_0:initGridData()
 	else
-		slot0.gridData = {}
+		arg_3_0.gridData = {}
 	end
 
-	slot0.playerId = getProxy(PlayerProxy):getRawData().id
+	arg_3_0.playerId = getProxy(PlayerProxy):getRawData().id
 end
 
-function slot0.GetGridBgName(slot0, slot1, slot2)
-	underscore.each(slot0.gridColorCfg, function (slot0)
-		underscore.each(slot0[1], function (slot0)
-			if slot0[1] == uv0 and slot0[2] == uv1 then
-				uv2 = uv3[2]
+function var_0_0.GetGridBgName(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = 1
+
+	underscore.each(arg_4_0.gridColorCfg, function(arg_5_0)
+		underscore.each(arg_5_0[1], function(arg_6_0)
+			if arg_6_0[1] == arg_4_1 and arg_6_0[2] == arg_4_2 then
+				var_4_0 = arg_5_0[2]
 
 				return
 			end
 		end)
 	end)
 
-	return uv0.INDEX2BG[1]
+	return var_0_0.INDEX2BG[var_4_0]
 end
 
-function slot0.initHistory(slot0, slot1)
-	slot0.history = {}
+function var_0_0.initHistory(arg_7_0, arg_7_1)
+	arg_7_0.history = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.history[slot6.plan_id] = slot6.count
+	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
+		arg_7_0.history[iter_7_1.plan_id] = iter_7_1.count
 	end
 end
 
-function slot0.UpdateHistory(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.gridData) do
-		for slot10, slot11 in pairs(slot6) do
-			if slot11:IsPlan() then
-				if not slot0.history[slot11.id] then
-					slot0.history[slot11.id] = 0
+function var_0_0.UpdateHistory(arg_8_0, arg_8_1)
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.gridData) do
+		for iter_8_2, iter_8_3 in pairs(iter_8_1) do
+			if iter_8_3:IsPlan() then
+				if not arg_8_0.history[iter_8_3.id] then
+					arg_8_0.history[iter_8_3.id] = 0
 				end
 
-				slot0.history[slot11.id] = slot0.history[slot11.id] + 1
+				arg_8_0.history[iter_8_3.id] = arg_8_0.history[iter_8_3.id] + 1
 			end
 		end
 	end
 end
 
-function slot0.GetHistoryCntById(slot0, slot1)
-	return slot0.history[slot1] or 0
+function var_0_0.GetHistoryCntById(arg_9_0, arg_9_1)
+	return arg_9_0.history[arg_9_1] or 0
 end
 
-function slot0.initGridData(slot0)
-	slot0.gridData = {}
+function var_0_0.initGridData(arg_10_0)
+	arg_10_0.gridData = {}
 
-	for slot4, slot5 in ipairs(slot0.selectedPlans) do
-		if not slot0.gridData[slot5.day] then
-			slot0.gridData[slot5.day] = {}
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.selectedPlans) do
+		if not arg_10_0.gridData[iter_10_1.day] then
+			arg_10_0.gridData[iter_10_1.day] = {}
 		end
 
-		if slot5.value[1] then
-			slot7 = slot5.value[1].plan_id
+		if iter_10_1.value[1] then
+			local var_10_0 = iter_10_1.value[1].spec_event_id
+			local var_10_1 = iter_10_1.value[1].plan_id
 
-			if slot5.value[1].spec_event_id and slot6 ~= 0 then
-				getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(slot6)
+			if var_10_0 and var_10_0 ~= 0 then
+				getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(var_10_0)
 
-				slot0.gridData[slot5.day][slot5.index] = EducateGrid.New({
-					id = slot6,
+				arg_10_0.gridData[iter_10_1.day][iter_10_1.index] = EducateGrid.New({
+					id = var_10_0,
 					type = EducateGrid.TYPE_EVENT
 				})
-			elseif slot7 and slot7 ~= 0 then
-				slot0.gridData[slot5.day][slot5.index] = EducateGrid.New({
-					id = slot7,
+			elseif var_10_1 and var_10_1 ~= 0 then
+				arg_10_0.gridData[iter_10_1.day][iter_10_1.index] = EducateGrid.New({
+					id = var_10_1,
 					type = EducateGrid.TYPE_PLAN
 				})
 			end
@@ -110,77 +116,79 @@ function slot0.initGridData(slot0)
 	end
 end
 
-function slot0.SetGridData(slot0, slot1)
-	slot0.selectedPlans = slot1
+function var_0_0.SetGridData(arg_11_0, arg_11_1)
+	arg_11_0.selectedPlans = arg_11_1
 
-	slot0:initGridData()
+	arg_11_0:initGridData()
 end
 
-function slot0.GetGridData(slot0)
-	return slot0.gridData
+function var_0_0.GetGridData(arg_12_0)
+	return arg_12_0.gridData
 end
 
-function slot0.GetCost(slot0)
-	slot1 = 0
-	slot2 = 0
+function var_0_0.GetCost(arg_13_0)
+	local var_13_0 = 0
+	local var_13_1 = 0
 
-	for slot6, slot7 in pairs(slot0.gridData) do
-		for slot11, slot12 in pairs(slot7) do
-			if slot12:IsPlan() then
-				slot13, slot14 = slot12.data:GetCost()
-				slot1 = slot1 + slot13
-				slot2 = slot2 + slot14
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.gridData) do
+		for iter_13_2, iter_13_3 in pairs(iter_13_1) do
+			if iter_13_3:IsPlan() then
+				local var_13_2, var_13_3 = iter_13_3.data:GetCost()
+
+				var_13_0 = var_13_0 + var_13_2
+				var_13_1 = var_13_1 + var_13_3
 			end
 		end
 	end
 
-	return slot1, slot2
+	return var_13_0, var_13_1
 end
 
-function slot0.CheckExcute(slot0)
-	return #slot0.selectedPlans > 0
+function var_0_0.CheckExcute(arg_14_0)
+	return #arg_14_0.selectedPlans > 0
 end
 
-function slot0.GetShowPlans(slot0, slot1, slot2, slot3)
-	return underscore.select(slot0.allPlans, function (slot0)
-		return slot0:IsShow(uv0, uv1, uv2) and slot0:IsMatchPre(uv3:GetHistoryCntById(slot0:getConfig("pre")[1]))
+function var_0_0.GetShowPlans(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
+	return underscore.select(arg_15_0.allPlans, function(arg_16_0)
+		local var_16_0 = arg_16_0:getConfig("pre")[1]
+
+		return arg_16_0:IsShow(arg_15_1, arg_15_2, arg_15_3) and arg_16_0:IsMatchPre(arg_15_0:GetHistoryCntById(var_16_0))
 	end)
 end
 
-function slot0.ClearLocalPlansData(slot0)
-	slot1 = getProxy(EducateProxy):GetCharData():GetNextWeekPlanCnt()
+function var_0_0.ClearLocalPlansData(arg_17_0)
+	local var_17_0 = getProxy(EducateProxy):GetCharData():GetNextWeekPlanCnt()
 
-	for slot5 = 1, 6 do
-		for slot9 = 1, 3 do
-			PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. slot0.playerId .. "_" .. slot5 .. "_" .. slot9, 0 .. "_" .. (slot9 <= slot1 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK))
+	for iter_17_0 = 1, 6 do
+		for iter_17_1 = 1, 3 do
+			local var_17_1 = iter_17_1 <= var_17_0 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK
+			local var_17_2 = 0 .. "_" .. var_17_1
+
+			PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. arg_17_0.playerId .. "_" .. iter_17_0 .. "_" .. iter_17_1, var_17_2)
 		end
 	end
 end
 
-function slot0.GetRecommendPlan(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot8 = slot0:GetShowPlans(slot3:GetNextWeekStage(), slot1, slot2)
-	slot9 = slot3.money - slot4
-	slot10 = slot3.mood - slot5
+function var_0_0.GetRecommendPlan(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4, arg_18_5, arg_18_6, arg_18_7)
+	local var_18_0 = arg_18_0:GetShowPlans(arg_18_3:GetNextWeekStage(), arg_18_1, arg_18_2)
+	local var_18_1 = arg_18_3.money - arg_18_4
+	local var_18_2 = arg_18_3.mood - arg_18_5
 
-	for slot14, slot15 in ipairs(slot7) do
-		slot19 = {
-			function (slot0)
-				return -slot0:GetAttrResultValue(uv0)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_7) do
+		table.sort(var_18_0, CompareFuncs({
+			function(arg_19_0)
+				return -arg_19_0:GetAttrResultValue(iter_18_1)
 			end,
-			slot20
-		}
+			function(arg_20_0)
+				return arg_20_0.id
+			end
+		}))
 
-		function slot20(slot0)
-			return slot0.id
-		end
+		for iter_18_2, iter_18_3 in ipairs(var_18_0) do
+			local var_18_3, var_18_4, var_18_5 = iter_18_3:GetCost()
 
-		table.sort(slot8, CompareFuncs(slot19))
-
-		for slot19, slot20 in ipairs(slot8) do
-			slot21, slot22, slot23 = slot20:GetCost()
-
-			if slot21 <= slot9 and slot22 <= slot10 and slot23 <= slot6 and slot20:IsMatchAttr(slot3) and slot20:IsMatchPre(slot0:GetHistoryCntById(slot20.id)) then
-				return slot20
+			if var_18_3 <= var_18_1 and var_18_4 <= var_18_2 and var_18_5 <= arg_18_6 and iter_18_3:IsMatchAttr(arg_18_3) and iter_18_3:IsMatchPre(arg_18_0:GetHistoryCntById(iter_18_3.id)) then
+				return iter_18_3
 			end
 		end
 	end
@@ -188,41 +196,42 @@ function slot0.GetRecommendPlan(slot0, slot1, slot2, slot3, slot4, slot5, slot6,
 	return nil
 end
 
-function slot0.OnExecutePlanDone(slot0)
-	slot0.selectedPlans = {}
+function var_0_0.OnExecutePlanDone(arg_21_0)
+	arg_21_0.selectedPlans = {}
 end
 
-function slot0.OnNewWeek(slot0)
+function var_0_0.OnNewWeek(arg_22_0)
+	return
 end
 
-function slot0.GridData2ProtData(slot0)
-	slot1 = {}
+function var_0_0.GridData2ProtData(arg_23_0)
+	local var_23_0 = {}
 
-	for slot5, slot6 in pairs(slot0) do
-		for slot10, slot11 in pairs(slot6) do
-			if slot11:IsPlan() then
-				table.insert(slot1, {
-					day = slot5,
-					index = slot10,
+	for iter_23_0, iter_23_1 in pairs(arg_23_0) do
+		for iter_23_2, iter_23_3 in pairs(iter_23_1) do
+			if iter_23_3:IsPlan() then
+				table.insert(var_23_0, {
+					day = iter_23_0,
+					index = iter_23_2,
 					value = {
 						{
 							event_id = 0,
 							spec_event_id = 0,
-							plan_id = slot11.id
+							plan_id = iter_23_3.id
 						}
 					}
 				})
 			end
 
-			if slot11:IsEvent() then
-				table.insert(slot1, {
-					day = slot5,
-					index = slot10,
+			if iter_23_3:IsEvent() then
+				table.insert(var_23_0, {
+					day = iter_23_0,
+					index = iter_23_2,
 					value = {
 						{
 							event_id = 0,
 							plan_id = 0,
-							spec_event_id = slot11.id
+							spec_event_id = iter_23_3.id
 						}
 					}
 				})
@@ -230,7 +239,7 @@ function slot0.GridData2ProtData(slot0)
 		end
 	end
 
-	return slot1
+	return var_23_0
 end
 
-return slot0
+return var_0_0

@@ -1,31 +1,31 @@
-slot0 = class("GridGameView", import("..BaseMiniGameView"))
-slot1 = "battle-boss-4"
-slot2 = "event:/ui/ddldaoshu2"
-slot3 = "event:/ui/niujiao"
-slot4 = "event:/ui/taosheng"
-slot5 = 70
-slot6 = "mini_game_time"
-slot7 = "mini_game_score"
-slot8 = "mini_game_leave"
-slot9 = "mini_game_pause"
-slot10 = "mini_game_cur_score"
-slot11 = "mini_game_high_score"
-slot12 = "event grid combo"
-slot13 = "event grid trigger"
-slot14 = "event move role"
-slot15 = "event add score"
-slot16 = "event role special"
-slot17 = "event special end"
-slot18 = "event camera in"
-slot19 = "event camedra out"
-slot20 = "event ignore time"
-slot21 = {
+﻿local var_0_0 = class("GridGameView", import("..BaseMiniGameView"))
+local var_0_1 = "battle-boss-4"
+local var_0_2 = "event:/ui/ddldaoshu2"
+local var_0_3 = "event:/ui/niujiao"
+local var_0_4 = "event:/ui/taosheng"
+local var_0_5 = 70
+local var_0_6 = "mini_game_time"
+local var_0_7 = "mini_game_score"
+local var_0_8 = "mini_game_leave"
+local var_0_9 = "mini_game_pause"
+local var_0_10 = "mini_game_cur_score"
+local var_0_11 = "mini_game_high_score"
+local var_0_12 = "event grid combo"
+local var_0_13 = "event grid trigger"
+local var_0_14 = "event move role"
+local var_0_15 = "event add score"
+local var_0_16 = "event role special"
+local var_0_17 = "event special end"
+local var_0_18 = "event camera in"
+local var_0_19 = "event camedra out"
+local var_0_20 = "event ignore time"
+local var_0_21 = {
 	power_grid = 0,
 	grid_index = 0,
 	special_time = false,
 	special_complete = false
 }
-slot22 = {
+local var_0_22 = {
 	{
 		index = 1,
 		name = "red",
@@ -42,26 +42,26 @@ slot22 = {
 		max = 800
 	}
 }
-slot23 = 0.2
-slot24 = 50
-slot25 = 3
-slot26 = 150
-slot27 = 500
-slot28 = 300
-slot29 = 50
-slot30 = 4000
-slot31 = 1
-slot32 = 3
-slot33 = {
+local var_0_23 = 0.2
+local var_0_24 = 50
+local var_0_25 = 3
+local var_0_26 = 150
+local var_0_27 = 500
+local var_0_28 = 300
+local var_0_29 = 50
+local var_0_30 = 4000
+local var_0_31 = 1
+local var_0_32 = 3
+local var_0_33 = {
 	1,
 	2
 }
-slot34 = {
+local var_0_34 = {
 	1,
 	2,
 	3
 }
-slot35 = {
+local var_0_35 = {
 	{
 		1,
 		3
@@ -91,15 +91,15 @@ slot35 = {
 		2
 	}
 }
-slot36 = Vector2(0, 0)
-slot37 = 0.07
-slot38 = 0.3
-slot39 = 0.5
-slot40 = 5
-slot41 = "sound start"
-slot42 = "sound trigger"
-slot43 = "sound end"
-slot44 = {
+local var_0_36 = Vector2(0, 0)
+local var_0_37 = 0.07
+local var_0_38 = 0.3
+local var_0_39 = 0.5
+local var_0_40 = 5
+local var_0_41 = "sound start"
+local var_0_42 = "sound trigger"
+local var_0_43 = "sound end"
+local var_0_44 = {
 	c_Skill_1 = "c_Skill_1",
 	n_Neutral = "n_Neutral",
 	n_Combine = "n_Combine",
@@ -116,10 +116,10 @@ slot44 = {
 	n_DMG = "n_DMG",
 	c_MoveR = "c_MoveR"
 }
-slot45 = {
+local var_0_45 = {
 	n_Move_R = {
 		time = 0,
-		anim_name = slot44.n_MoveR,
+		anim_name = var_0_44.n_MoveR,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -129,7 +129,7 @@ slot45 = {
 	n_Atk = {
 		time = 0,
 		sound_trigger = "taosheng",
-		anim_name = slot44.n_Atk,
+		anim_name = var_0_44.n_Atk,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -139,7 +139,7 @@ slot45 = {
 	},
 	n_Move_L = {
 		time = 0,
-		anim_name = slot44.n_MoveL,
+		anim_name = var_0_44.n_MoveL,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -149,12 +149,12 @@ slot45 = {
 	n_Skill_1 = {
 		time = 0,
 		sound_trigger = "jiguang",
-		anim_name = slot44.n_Skill_1
+		anim_name = var_0_44.n_Skill_1
 	},
 	n_Skill_2 = {
 		time = 0,
 		sound_trigger = "guangjian",
-		anim_name = slot44.n_Skill_2,
+		anim_name = var_0_44.n_Skill_2,
 		over_offset = Vector3(0, 0),
 		move = {
 			time = 0.2,
@@ -166,17 +166,17 @@ slot45 = {
 	n_Skill_3 = {
 		time = 0,
 		sound_trigger = "baozha1",
-		anim_name = slot44.n_Skill_3
+		anim_name = var_0_44.n_Skill_3
 	},
 	n_Combine = {
 		sound_start = "bianshen",
 		time = 0,
 		camera = true,
-		anim_name = slot44.n_Combine
+		anim_name = var_0_44.n_Combine
 	},
 	n_DMG = {
 		time = 0,
-		anim_name = slot44.n_DMG,
+		anim_name = var_0_44.n_DMG,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -186,11 +186,11 @@ slot45 = {
 	},
 	n_DMG_S = {
 		time = 0,
-		anim_name = slot44.n_DMG
+		anim_name = var_0_44.n_DMG
 	},
 	n_DMG_Back_R = {
 		time = 0,
-		anim_name = slot44.n_MoveR,
+		anim_name = var_0_44.n_MoveR,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -199,12 +199,12 @@ slot45 = {
 	},
 	n_Neutral = {
 		time = 0,
-		anim_name = slot44.n_Neutral
+		anim_name = var_0_44.n_Neutral
 	},
 	c_Atk = {
 		time = 0,
 		sound_trigger = "taosheng",
-		anim_name = slot44.c_Atk,
+		anim_name = var_0_44.c_Atk,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -216,11 +216,11 @@ slot45 = {
 		sound_trigger = "baozha2",
 		time = 0,
 		camera = true,
-		anim_name = slot44.c_Skill_1
+		anim_name = var_0_44.c_Skill_1
 	},
 	c_Dmg = {
 		time = 0,
-		anim_name = slot44.c_Dmg,
+		anim_name = var_0_44.c_Dmg,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -230,11 +230,11 @@ slot45 = {
 	},
 	c_Dmg_S = {
 		time = 0,
-		anim_name = slot44.c_Dmg
+		anim_name = var_0_44.c_Dmg
 	},
 	c_MoveL = {
 		time = 0,
-		anim_name = slot44.c_MoveL,
+		anim_name = var_0_44.c_MoveL,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -243,7 +243,7 @@ slot45 = {
 	},
 	c_MoveR = {
 		time = 0,
-		anim_name = slot44.c_MoveR,
+		anim_name = var_0_44.c_MoveR,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -252,7 +252,7 @@ slot45 = {
 	},
 	c_DMG_Back_R = {
 		time = 0,
-		anim_name = slot44.c_MoveR,
+		anim_name = var_0_44.c_MoveR,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -261,10 +261,234 @@ slot45 = {
 	},
 	c_Neutral = {
 		time = 0,
-		anim_name = slot44.c_Neutral
+		anim_name = var_0_44.c_Neutral
 	}
 }
-slot47 = {
+local var_0_46 = {
+	{
+		special_time = false,
+		name = "normalAtk",
+		power_index = 0,
+		atk_index = 1,
+		score = {
+			100,
+			100
+		},
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.n_Atk,
+			var_0_45.n_Move_L
+		}
+	},
+	{
+		special_time = false,
+		name = "skill1",
+		power_index = 1,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			1
+		},
+		actions = {
+			var_0_45.n_Skill_1
+		}
+	},
+	{
+		special_time = false,
+		name = "skill2",
+		power_index = 2,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			2
+		},
+		actions = {
+			var_0_45.n_Skill_2,
+			var_0_45.n_Move_L
+		}
+	},
+	{
+		special_time = false,
+		name = "skill3",
+		power_index = 3,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			3
+		},
+		actions = {
+			var_0_45.n_Skill_3
+		}
+	},
+	{
+		dmg_index = 2,
+		name = "DMG",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.n_DMG,
+			var_0_45.n_DMG_Back_R
+		}
+	},
+	{
+		dmg_index = 1,
+		name = "DMGS",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.n_DMG_S
+		}
+	},
+	{
+		special_end = true,
+		name = "special_end",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.n_DMG_Back_R
+		}
+	},
+	{
+		power_index = 0,
+		name = "Combine",
+		special_trigger = true,
+		anim_bool = "special",
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.n_Combine
+		}
+	},
+	{
+		special_time = true,
+		name = "AtkS",
+		power_index = 0,
+		atk_index = 1,
+		score = {
+			300,
+			300
+		},
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.c_Atk,
+			var_0_45.c_MoveL
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 1,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			1
+		},
+		actions = {
+			var_0_45.c_Skill_1
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 2,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			2
+		},
+		actions = {
+			var_0_45.c_Skill_1
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 3,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			3
+		},
+		actions = {
+			var_0_45.c_Skill_1
+		}
+	},
+	{
+		dmg_index = 2,
+		name = "cDmg",
+		power_index = 0,
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.c_Dmg,
+			var_0_45.c_DMG_Back_R
+		}
+	},
+	{
+		dmg_index = 1,
+		name = "cDmgS",
+		power_index = 0,
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_45.c_Dmg_S
+		}
+	}
+}
+local var_0_47 = {
 	c_Skill_1 = "c_Skill_1",
 	n_Neutral = "n_Neutral",
 	n_Combine = "n_Combine",
@@ -281,10 +505,10 @@ slot47 = {
 	n_DMG = "n_DMG",
 	c_MoveR = "c_MoveR"
 }
-slot48 = {
+local var_0_48 = {
 	n_Move_R = {
 		time = 0,
-		anim_name = slot47.n_MoveR,
+		anim_name = var_0_47.n_MoveR,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -294,7 +518,7 @@ slot48 = {
 	n_Atk = {
 		time = 0,
 		sound_trigger = "taosheng",
-		anim_name = slot47.n_Atk,
+		anim_name = var_0_47.n_Atk,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -304,7 +528,7 @@ slot48 = {
 	},
 	n_Move_L = {
 		time = 0,
-		anim_name = slot47.n_MoveL,
+		anim_name = var_0_47.n_MoveL,
 		move = {
 			time = 0.4,
 			start = Vector2(0, 0),
@@ -315,7 +539,7 @@ slot48 = {
 	n_Skill_1 = {
 		time = 0,
 		sound_trigger = "baozha1",
-		anim_name = slot47.n_Skill_1,
+		anim_name = var_0_47.n_Skill_1,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -325,12 +549,12 @@ slot48 = {
 	n_Skill_2 = {
 		time = 0,
 		sound_trigger = "baozha2",
-		anim_name = slot47.n_Skill_2
+		anim_name = var_0_47.n_Skill_2
 	},
 	n_Skill_3 = {
 		time = 0,
 		sound_trigger = "baozha2",
-		anim_name = slot47.n_Skill_3,
+		anim_name = var_0_47.n_Skill_3,
 		over_offset = Vector3(247, 2),
 		move = {
 			time = 0.2,
@@ -343,11 +567,11 @@ slot48 = {
 		sound_start = "bianshen",
 		time = 0,
 		camera = true,
-		anim_name = slot47.n_Combine
+		anim_name = var_0_47.n_Combine
 	},
 	n_DMG = {
 		time = 0,
-		anim_name = slot47.n_DMG,
+		anim_name = var_0_47.n_DMG,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -357,11 +581,11 @@ slot48 = {
 	},
 	n_DMG_S = {
 		time = 0,
-		anim_name = slot47.n_DMG
+		anim_name = var_0_47.n_DMG
 	},
 	n_DMG_Back_R = {
 		time = 0,
-		anim_name = slot47.n_MoveR,
+		anim_name = var_0_47.n_MoveR,
 		move = {
 			time = 0.2,
 			start = Vector2(0, 0),
@@ -370,12 +594,12 @@ slot48 = {
 	},
 	n_Neutral = {
 		time = 0,
-		anim_name = slot47.n_Neutral
+		anim_name = var_0_47.n_Neutral
 	},
 	c_Atk = {
 		time = 0,
 		sound_trigger = "taosheng",
-		anim_name = slot47.c_Atk,
+		anim_name = var_0_47.c_Atk,
 		move = {
 			time = 0.4,
 			start = Vector2(0, 0),
@@ -387,11 +611,11 @@ slot48 = {
 		sound_trigger = "baozha2",
 		time = 0,
 		camera = true,
-		anim_name = slot47.c_Skill_1
+		anim_name = var_0_47.c_Skill_1
 	},
 	c_Dmg = {
 		time = 0,
-		anim_name = slot47.c_Dmg,
+		anim_name = var_0_47.c_Dmg,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -401,11 +625,11 @@ slot48 = {
 	},
 	c_Dmg_S = {
 		time = 0,
-		anim_name = slot47.c_Dmg
+		anim_name = var_0_47.c_Dmg
 	},
 	c_MoveL = {
 		time = 0,
-		anim_name = slot47.c_MoveL,
+		anim_name = var_0_47.c_MoveL,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -415,7 +639,7 @@ slot48 = {
 	},
 	c_MoveR = {
 		time = 0,
-		anim_name = slot47.c_MoveR,
+		anim_name = var_0_47.c_MoveR,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -425,7 +649,7 @@ slot48 = {
 	},
 	c_DMG_Back_R = {
 		time = 0,
-		anim_name = slot47.c_MoveR,
+		anim_name = var_0_47.c_MoveR,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -435,10 +659,236 @@ slot48 = {
 	},
 	c_Neutral = {
 		time = 0,
-		anim_name = slot47.c_Neutral
+		anim_name = var_0_47.c_Neutral
 	}
 }
-slot50 = {
+local var_0_49 = {
+	{
+		special_time = false,
+		name = "normalAtk",
+		power_index = 0,
+		atk_index = 1,
+		score = {
+			100,
+			100
+		},
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.n_Atk,
+			var_0_48.n_Move_L
+		}
+	},
+	{
+		special_time = false,
+		name = "skill1",
+		power_index = 1,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			1
+		},
+		actions = {
+			var_0_48.n_Move_R,
+			var_0_48.n_Skill_1,
+			var_0_48.n_Move_L
+		}
+	},
+	{
+		special_time = false,
+		name = "skill2",
+		power_index = 2,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			2
+		},
+		actions = {
+			var_0_48.n_Skill_2
+		}
+	},
+	{
+		special_time = false,
+		name = "skill3",
+		power_index = 3,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			3
+		},
+		actions = {
+			var_0_48.n_Skill_3,
+			var_0_48.n_Move_L
+		}
+	},
+	{
+		dmg_index = 2,
+		name = "n_DMG",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.n_DMG,
+			var_0_48.n_DMG_Back_R
+		}
+	},
+	{
+		dmg_index = 1,
+		name = "n_DMGS",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.n_DMG_S
+		}
+	},
+	{
+		special_end = true,
+		name = "special_end",
+		power_index = 0,
+		special_time = false,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.n_DMG_Back_R
+		}
+	},
+	{
+		power_index = 0,
+		name = "Combine",
+		special_trigger = true,
+		anim_bool = "special",
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.n_Combine
+		}
+	},
+	{
+		special_time = true,
+		name = "AtkS",
+		power_index = 0,
+		atk_index = 1,
+		score = {
+			200,
+			200
+		},
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.c_Atk,
+			var_0_48.c_MoveL
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 1,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			1
+		},
+		actions = {
+			var_0_48.c_Skill_1
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 2,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			2
+		},
+		actions = {
+			var_0_48.c_Skill_1
+		}
+	},
+	{
+		special_time = true,
+		name = "Skill1S",
+		power_index = 3,
+		atk_index = 2,
+		score = {
+			1000,
+			1000
+		},
+		grid_index = {
+			3
+		},
+		actions = {
+			var_0_48.c_Skill_1
+		}
+	},
+	{
+		dmg_index = 2,
+		name = "c_Dmg",
+		power_index = 0,
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.c_Dmg,
+			var_0_48.c_DMG_Back_R
+		}
+	},
+	{
+		dmg_index = 1,
+		name = "c_DmgS",
+		power_index = 0,
+		special_time = true,
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_48.c_Dmg_S
+		}
+	}
+}
+local var_0_50 = {
 	Neutral = "Neutral",
 	Skill_1 = "skill_1",
 	Skill_2 = "skill_2",
@@ -447,10 +897,10 @@ slot50 = {
 	DMG = "DMG",
 	MoveR = "MoveR"
 }
-slot51 = {
+local var_0_51 = {
 	Move_R = {
 		time = 0,
-		anim_name = slot50.MoveR,
+		anim_name = var_0_50.MoveR,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -461,7 +911,7 @@ slot51 = {
 	Atk = {
 		time = 0,
 		sound_trigger = "taosheng",
-		anim_name = slot50.Atk,
+		anim_name = var_0_50.Atk,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -471,7 +921,7 @@ slot51 = {
 	},
 	Move_L = {
 		time = 0,
-		anim_name = slot50.MoveL,
+		anim_name = var_0_50.MoveL,
 		move = {
 			time = 0.4,
 			distance = Vector3(0, 0, 0),
@@ -481,17 +931,17 @@ slot51 = {
 	Skill_1 = {
 		time = 0,
 		sound_trigger = "jiguang",
-		anim_name = slot50.Skill_1
+		anim_name = var_0_50.Skill_1
 	},
 	Skill_2 = {
 		time = 0,
 		sound_trigger = "baozha2",
-		anim_name = slot50.Skill_2,
+		anim_name = var_0_50.Skill_2,
 		over_offset = Vector2(115, 0)
 	},
 	DMG = {
 		time = 0,
-		anim_name = slot50.DMG,
+		anim_name = var_0_50.DMG,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -501,7 +951,7 @@ slot51 = {
 	},
 	DMG_Back_R = {
 		time = 0,
-		anim_name = slot50.MoveR,
+		anim_name = var_0_50.MoveR,
 		move = {
 			time = 0.3,
 			start = Vector2(0, 0),
@@ -511,886 +961,116 @@ slot51 = {
 	},
 	DMG_S = {
 		time = 0,
-		anim_name = slot50.DMG
+		anim_name = var_0_50.DMG
 	},
 	Neutral = {
 		time = 0,
-		anim_name = slot50.Neutral
+		anim_name = var_0_50.Neutral
 	}
 }
-slot53 = {
+local var_0_52 = {
+	{
+		special_time = false,
+		name = "normalAtk",
+		power_index = 0,
+		atk_index = 1,
+		score = {
+			100,
+			100
+		},
+		grid_index = {
+			1,
+			2,
+			3
+		},
+		actions = {
+			var_0_51.Atk,
+			var_0_51.Move_L
+		}
+	},
+	{
+		special_time = false,
+		name = "skill1",
+		power_index = 1,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			1
+		},
+		actions = {
+			var_0_51.Skill_1
+		}
+	},
+	{
+		special_time = false,
+		name = "skill2",
+		power_index = 2,
+		atk_index = 2,
+		score = {
+			500,
+			500
+		},
+		grid_index = {
+			2,
+			3
+		},
+		actions = {
+			var_0_51.Move_R,
+			var_0_51.Skill_2,
+			var_0_51.Move_L
+		}
+	},
+	{
+		dmg_index = 2,
+		name = "DMG",
+		special_time = false,
+		actions = {
+			var_0_51.DMG,
+			var_0_51.DMG_Back_R
+		}
+	},
+	{
+		dmg_index = 1,
+		name = "DMG_Stand",
+		special_time = false,
+		actions = {
+			var_0_51.DMG_S
+		}
+	}
+}
+local var_0_53 = {
 	{
 		index = 1,
 		name = "role1",
-		skill = {
-			{
-				special_time = false,
-				name = "normalAtk",
-				power_index = 0,
-				atk_index = 1,
-				score = {
-					100,
-					100
-				},
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.n_Atk,
-					slot45.n_Move_L
-				}
-			},
-			{
-				special_time = false,
-				name = "skill1",
-				power_index = 1,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					1
-				},
-				actions = {
-					slot45.n_Skill_1
-				}
-			},
-			{
-				special_time = false,
-				name = "skill2",
-				power_index = 2,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					2
-				},
-				actions = {
-					slot45.n_Skill_2,
-					slot45.n_Move_L
-				}
-			},
-			{
-				special_time = false,
-				name = "skill3",
-				power_index = 3,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					3
-				},
-				actions = {
-					slot45.n_Skill_3
-				}
-			},
-			{
-				dmg_index = 2,
-				name = "DMG",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.n_DMG,
-					slot45.n_DMG_Back_R
-				}
-			},
-			{
-				dmg_index = 1,
-				name = "DMGS",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.n_DMG_S
-				}
-			},
-			{
-				special_end = true,
-				name = "special_end",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.n_DMG_Back_R
-				}
-			},
-			{
-				power_index = 0,
-				name = "Combine",
-				special_trigger = true,
-				anim_bool = "special",
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.n_Combine
-				}
-			},
-			{
-				special_time = true,
-				name = "AtkS",
-				power_index = 0,
-				atk_index = 1,
-				score = {
-					300,
-					300
-				},
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.c_Atk,
-					slot45.c_MoveL
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 1,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					1
-				},
-				actions = {
-					slot45.c_Skill_1
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 2,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					2
-				},
-				actions = {
-					slot45.c_Skill_1
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 3,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					3
-				},
-				actions = {
-					slot45.c_Skill_1
-				}
-			},
-			{
-				dmg_index = 2,
-				name = "cDmg",
-				power_index = 0,
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.c_Dmg,
-					slot45.c_DMG_Back_R
-				}
-			},
-			{
-				dmg_index = 1,
-				name = "cDmgS",
-				power_index = 0,
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot45.c_Dmg_S
-				}
-			}
-		},
-		actions = slot45
+		skill = var_0_46,
+		actions = var_0_45
 	},
 	{
 		index = 2,
 		name = "role2",
-		skill = {
-			{
-				special_time = false,
-				name = "normalAtk",
-				power_index = 0,
-				atk_index = 1,
-				score = {
-					100,
-					100
-				},
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.n_Atk,
-					slot48.n_Move_L
-				}
-			},
-			{
-				special_time = false,
-				name = "skill1",
-				power_index = 1,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					1
-				},
-				actions = {
-					slot48.n_Move_R,
-					slot48.n_Skill_1,
-					slot48.n_Move_L
-				}
-			},
-			{
-				special_time = false,
-				name = "skill2",
-				power_index = 2,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					2
-				},
-				actions = {
-					slot48.n_Skill_2
-				}
-			},
-			{
-				special_time = false,
-				name = "skill3",
-				power_index = 3,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					3
-				},
-				actions = {
-					slot48.n_Skill_3,
-					slot48.n_Move_L
-				}
-			},
-			{
-				dmg_index = 2,
-				name = "n_DMG",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.n_DMG,
-					slot48.n_DMG_Back_R
-				}
-			},
-			{
-				dmg_index = 1,
-				name = "n_DMGS",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.n_DMG_S
-				}
-			},
-			{
-				special_end = true,
-				name = "special_end",
-				power_index = 0,
-				special_time = false,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.n_DMG_Back_R
-				}
-			},
-			{
-				power_index = 0,
-				name = "Combine",
-				special_trigger = true,
-				anim_bool = "special",
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.n_Combine
-				}
-			},
-			{
-				special_time = true,
-				name = "AtkS",
-				power_index = 0,
-				atk_index = 1,
-				score = {
-					200,
-					200
-				},
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.c_Atk,
-					slot48.c_MoveL
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 1,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					1
-				},
-				actions = {
-					slot48.c_Skill_1
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 2,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					2
-				},
-				actions = {
-					slot48.c_Skill_1
-				}
-			},
-			{
-				special_time = true,
-				name = "Skill1S",
-				power_index = 3,
-				atk_index = 2,
-				score = {
-					1000,
-					1000
-				},
-				grid_index = {
-					3
-				},
-				actions = {
-					slot48.c_Skill_1
-				}
-			},
-			{
-				dmg_index = 2,
-				name = "c_Dmg",
-				power_index = 0,
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.c_Dmg,
-					slot48.c_DMG_Back_R
-				}
-			},
-			{
-				dmg_index = 1,
-				name = "c_DmgS",
-				power_index = 0,
-				special_time = true,
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot48.c_Dmg_S
-				}
-			}
-		},
-		actions = slot48
+		skill = var_0_49,
+		actions = var_0_48
 	},
 	{
 		index = 3,
 		name = "enemy1",
-		skill = {
-			{
-				special_time = false,
-				name = "normalAtk",
-				power_index = 0,
-				atk_index = 1,
-				score = {
-					100,
-					100
-				},
-				grid_index = {
-					1,
-					2,
-					3
-				},
-				actions = {
-					slot51.Atk,
-					slot51.Move_L
-				}
-			},
-			{
-				special_time = false,
-				name = "skill1",
-				power_index = 1,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					1
-				},
-				actions = {
-					slot51.Skill_1
-				}
-			},
-			{
-				special_time = false,
-				name = "skill2",
-				power_index = 2,
-				atk_index = 2,
-				score = {
-					500,
-					500
-				},
-				grid_index = {
-					2,
-					3
-				},
-				actions = {
-					slot51.Move_R,
-					slot51.Skill_2,
-					slot51.Move_L
-				}
-			},
-			{
-				dmg_index = 2,
-				name = "DMG",
-				special_time = false,
-				actions = {
-					slot51.DMG,
-					slot51.DMG_Back_R
-				}
-			},
-			{
-				dmg_index = 1,
-				name = "DMG_Stand",
-				special_time = false,
-				actions = {
-					slot51.DMG_S
-				}
-			}
-		},
-		actions = slot51
+		skill = var_0_52,
+		actions = var_0_51
 	}
 }
 
-function slot54(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0._boxTf = uv0
-			slot0._event = uv1
-			slot0._gridEffect = findTF(slot0._boxTf, "effectGrid")
-			slot0._content = findTF(slot0._boxTf, "viewport/content")
-			slot0.tplGrid = findTF(uv0, "tplGrid")
-
-			setActive(slot0.tplGrid, false)
-
-			slot0.grids = {}
-			slot0.effects = {}
-			slot0.combo = 0
-
-			for slot4 = 1, uv2 do
-				slot5 = tf(instantiate(slot0._gridEffect))
-
-				setParent(slot5, slot0._content)
-				setActive(slot5, false)
-
-				slot5.anchoredPosition = Vector2(uv3.x * slot4 - uv3.x / 2, uv3.y / 2)
-
-				table.insert(slot0.effects, slot5)
-			end
-		end,
-		start = function (slot0)
-			slot0.nextCheck = false
-
-			slot0:initGrids(false)
-
-			for slot4 = 1, #slot0.effects do
-				setActive(slot0.effects[slot4], false)
-			end
-		end,
-		step = function (slot0)
-			if slot0.takeAwayTime and slot0.takeAwayTime > 0 then
-				slot0.takeAwayTime = slot0.takeAwayTime - Time.deltaTime
-
-				return
-			end
-
-			slot0.gridCreateIndex = 1
-			slot1 = false
-
-			for slot5 = 1, #slot0.grids do
-				slot7 = slot5
-
-				if not slot0.grids[slot5].checkAble then
-					slot1 = slot1 or true
-
-					if (slot5 - 1) * uv0.x < slot6.tf.anchoredPosition.x then
-						slot6.tf.anchoredPosition = Vector2(slot6.tf.anchoredPosition.x - slot6.speed * Time.deltaTime, 0)
-
-						if slot6.speed < uv1 then
-							slot6.speed = slot6.speed + uv2
-						end
-					end
-
-					if slot6.tf.anchoredPosition.x <= slot8 then
-						slot6.speed = 0
-						slot6.checkAble = true
-
-						if slot6.tf.anchoredPosition.x < slot8 then
-							slot6.tf.anchoredPosition = Vector2(slot8, 0)
-						end
-					end
-				end
-
-				if not slot6.eventAble then
-					GetComponent(slot6.tf, typeof(EventTriggerListener)):AddPointDownFunc(function ()
-						if uv0.nextCheck == false then
-							slot0, slot1 = uv0:triggerDownGrid(uv1)
-
-							if #slot0 >= 2 then
-								uv0.nextCheck = true
-
-								uv0:takeAwayGrid(slot0)
-								uv0:insertGrids()
-								uv0._event:emit(uv2, {
-									series = #slot0,
-									combo = uv0.combo,
-									index = slot1
-								})
-
-								uv0.combo = uv0.combo + 1
-							else
-								uv0.nextCheck = true
-
-								uv0:takeAwayGrid({
-									uv1
-								})
-								uv0:insertGrids()
-							end
-						end
-					end)
-
-					slot6.eventAble = true
-				end
-			end
-
-			if not slot1 and slot0.nextCheck then
-				if #slot0:getSeriesGrids() > 0 then
-					slot3 = {}
-
-					for slot7 = 1, #slot2 do
-						slot9 = slot2[slot7].gridIndex
-
-						for slot13 = 1, #slot2[slot7].series do
-							table.insert(slot3, slot8[slot13])
-						end
-
-						slot0._event:emit(uv3, {
-							series = #slot8,
-							combo = slot0.combo,
-							index = slot9
-						})
-					end
-
-					slot0:clearGridSeriesAble()
-					slot0:takeAwayGrid(slot3)
-					slot0:insertGrids()
-
-					slot0.nextCheck = true
-					slot0.combo = slot0.combo + 1
-				else
-					slot0.nextCheck = false
-
-					if not uv4.special_time then
-						slot0.combo = 0
-					end
-				end
-			end
-		end,
-		clear = function (slot0)
-			for slot4 = 1, #slot0.grids do
-				if slot0.grids[slot4].tf then
-					destroy(slot0.grids[slot4].tf)
-				end
-			end
-
-			slot0.grids = {}
-			slot0.gridCreateIndex = 1
-		end,
-		clearGridSeriesAble = function (slot0)
-			for slot4 = 1, #slot0.grids do
-				if slot0.grids[slot4].seriesAble then
-					slot0.grids[slot4].seriesAble = false
-				end
-			end
-		end,
-		getSeriesGrids = function (slot0)
-			slot1 = {}
-			slot2 = nil
-			slot3 = {}
-
-			for slot7 = 1, #slot0.grids do
-				slot8 = slot0.grids[slot7]
-
-				if not slot2 then
-					slot2 = slot8.index
-
-					table.insert(slot3, slot7)
-				elseif slot2 == slot8.index then
-					table.insert(slot3, slot7)
-
-					if #slot3 >= 3 and slot7 == #slot0.grids and slot0:checkSeriesAble(slot3) then
-						table.insert(slot1, {
-							series = slot3,
-							gridIndex = slot2
-						})
-					end
-				elseif slot2 ~= slot8.index then
-					if #slot3 >= 3 and slot0:checkSeriesAble(slot3) then
-						table.insert(slot1, {
-							series = slot3,
-							gridIndex = slot2
-						})
-					end
-
-					slot2 = slot8.index
-
-					table.insert({}, slot7)
-				end
-			end
-
-			return slot1
-		end,
-		checkSeriesAble = function (slot0, slot1)
-			for slot5 = 1, #slot1 do
-				if slot0.grids[slot1[slot5]].seriesAble then
-					return true
-				end
-			end
-
-			return false
-		end,
-		insertGrids = function (slot0)
-			for slot5 = 1, uv0 - #slot0.grids do
-				table.insert(slot0.grids, slot0:createGridData())
-			end
-
-			if slot0:checkGridsSeries() then
-				slot0:instiateGrids(true)
-			else
-				slot0:initGrids(true)
-			end
-
-			slot0:changeAbleGrids()
-		end,
-		changeAbleGrids = function (slot0)
-			for slot4 = 1, #slot0.grids do
-				slot0.grids[slot4].checkAble = false
-				slot0.grids[slot4].eventAble = false
-				slot0.grids[slot4].speed = uv0
-			end
-		end,
-		takeAwayGrid = function (slot0, slot1)
-			table.sort(slot1, function (slot0, slot1)
-				return slot0 <= slot1
-			end)
-
-			slot0.takeAwayTime = uv0
-			slot2 = {}
-
-			if slot1[1] - 1 > 0 then
-				slot0.grids[slot1[1] - 1].seriesAble = true
-			end
-
-			slot6 = "xiaochu"
-
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. slot6)
-
-			for slot6 = #slot1, 1, -1 do
-				table.insert(slot2, table.remove(slot0.grids, slot1[slot6]))
-				setActive(slot0.effects[slot1[slot6]], false)
-				setActive(slot0.effects[slot1[slot6]], true)
-			end
-
-			for slot6 = 1, #slot2 do
-				destroy(slot2[slot6].tf)
-
-				slot2[slot6] = 0
-			end
-
-			slot2 = {}
-		end,
-		triggerDownGrid = function (slot0, slot1)
-			slot3 = {
-				slot1
-			}
-
-			if not slot0.grids[slot1] then
-				return slot3, 0
-			end
-
-			for slot7 = slot1 - 1, 1, -1 do
-				if slot2.index == slot0.grids[slot7].index then
-					table.insert(slot3, slot7)
-				else
-					break
-				end
-			end
-
-			for slot7 = slot1 + 1, #slot0.grids do
-				if slot2.index == slot0.grids[slot7].index then
-					table.insert(slot3, slot7)
-				else
-					break
-				end
-			end
-
-			table.sort(slot3, function (slot0, slot1)
-				return slot0 <= slot1
-			end)
-
-			return slot3, slot2.index
-		end,
-		initGrids = function (slot0, slot1)
-			slot0:clear()
-
-			for slot5 = 1, uv0 do
-				table.insert(slot0.grids, slot0:createGridData())
-			end
-
-			if slot0:checkGridsSeries() then
-				slot0:instiateGrids(slot1)
-			else
-				slot0:initGrids(slot1)
-			end
-
-			slot0.nextCheck = false
-		end,
-		instiateGrids = function (slot0, slot1)
-			for slot5 = 1, #slot0.grids do
-				if not slot0.grids[slot5].tf then
-					slot7 = tf(instantiate(slot0.tplGrid))
-
-					SetParent(slot7, slot0._content)
-					setActive(slot7, true)
-					setActive(findTF(slot7, slot6.name), true)
-
-					slot8 = nil
-					slot7.anchoredPosition = Vector2(slot1 and (uv0 + slot0.gridCreateIndex - 1) * uv1.x or (slot0.gridCreateIndex - 1) * uv1.x, 0)
-					slot0.gridCreateIndex = slot0.gridCreateIndex + 1
-					slot6.tf = slot7
-				end
-			end
-		end,
-		createGridData = function (slot0, slot1)
-			slot2 = nil
-			slot2 = (not slot1 or Clone(uv0[slot1])) and Clone(uv0[math.random(1, #uv0)])
-
-			return {
-				eventAble = false,
-				checkAble = false,
-				speed = uv1,
-				index = slot2.index,
-				name = slot2.name
-			}
-		end,
-		checkGridsSeries = function (slot0)
-			return true
-		end
-	}
-	slot3 = 12
-	slot4 = 0.3
-	slot5 = Vector2(138, 150)
-	slot6 = 2500
-	slot7 = 0
-	slot8 = 100
-	slot9 = {
+local function var_0_54(arg_1_0, arg_1_1)
+	local var_1_0 = {}
+	local var_1_1 = 12
+	local var_1_2 = 0.3
+	local var_1_3 = Vector2(138, 150)
+	local var_1_4 = 2500
+	local var_1_5 = 0
+	local var_1_6 = 100
+	local var_1_7 = {
 		{
 			index = 1,
 			name = "red"
@@ -1405,327 +1085,555 @@ function slot54(slot0, slot1)
 		}
 	}
 
-	slot2:ctor()
+	function var_1_0.ctor(arg_2_0)
+		arg_2_0._boxTf = arg_1_0
+		arg_2_0._event = arg_1_1
+		arg_2_0._gridEffect = findTF(arg_2_0._boxTf, "effectGrid")
+		arg_2_0._content = findTF(arg_2_0._boxTf, "viewport/content")
+		arg_2_0.tplGrid = findTF(arg_1_0, "tplGrid")
 
-	return slot2
+		setActive(arg_2_0.tplGrid, false)
+
+		arg_2_0.grids = {}
+		arg_2_0.effects = {}
+		arg_2_0.combo = 0
+
+		for iter_2_0 = 1, var_1_1 do
+			local var_2_0 = tf(instantiate(arg_2_0._gridEffect))
+
+			setParent(var_2_0, arg_2_0._content)
+			setActive(var_2_0, false)
+
+			var_2_0.anchoredPosition = Vector2(var_1_3.x * iter_2_0 - var_1_3.x / 2, var_1_3.y / 2)
+
+			table.insert(arg_2_0.effects, var_2_0)
+		end
+	end
+
+	function var_1_0.start(arg_3_0)
+		arg_3_0.nextCheck = false
+
+		arg_3_0:initGrids(false)
+
+		for iter_3_0 = 1, #arg_3_0.effects do
+			setActive(arg_3_0.effects[iter_3_0], false)
+		end
+	end
+
+	function var_1_0.step(arg_4_0)
+		if arg_4_0.takeAwayTime and arg_4_0.takeAwayTime > 0 then
+			arg_4_0.takeAwayTime = arg_4_0.takeAwayTime - Time.deltaTime
+
+			return
+		end
+
+		arg_4_0.gridCreateIndex = 1
+
+		local var_4_0 = false
+
+		for iter_4_0 = 1, #arg_4_0.grids do
+			local var_4_1 = arg_4_0.grids[iter_4_0]
+			local var_4_2 = iter_4_0
+
+			if not var_4_1.checkAble then
+				var_4_0 = var_4_0 or true
+
+				local var_4_3 = (iter_4_0 - 1) * var_1_3.x
+
+				if var_4_3 < var_4_1.tf.anchoredPosition.x then
+					var_4_1.tf.anchoredPosition = Vector2(var_4_1.tf.anchoredPosition.x - var_4_1.speed * Time.deltaTime, 0)
+
+					if var_4_1.speed < var_1_4 then
+						var_4_1.speed = var_4_1.speed + var_1_6
+					end
+				end
+
+				if var_4_3 >= var_4_1.tf.anchoredPosition.x then
+					var_4_1.speed = 0
+					var_4_1.checkAble = true
+
+					if var_4_3 > var_4_1.tf.anchoredPosition.x then
+						var_4_1.tf.anchoredPosition = Vector2(var_4_3, 0)
+					end
+				end
+			end
+
+			if not var_4_1.eventAble then
+				GetComponent(var_4_1.tf, typeof(EventTriggerListener)):AddPointDownFunc(function()
+					if arg_4_0.nextCheck == false then
+						local var_5_0, var_5_1 = arg_4_0:triggerDownGrid(var_4_2)
+
+						if #var_5_0 >= 2 then
+							arg_4_0.nextCheck = true
+
+							arg_4_0:takeAwayGrid(var_5_0)
+							arg_4_0:insertGrids()
+							arg_4_0._event:emit(var_0_12, {
+								series = #var_5_0,
+								combo = arg_4_0.combo,
+								index = var_5_1
+							})
+
+							arg_4_0.combo = arg_4_0.combo + 1
+						else
+							arg_4_0.nextCheck = true
+
+							arg_4_0:takeAwayGrid({
+								var_4_2
+							})
+							arg_4_0:insertGrids()
+						end
+					end
+				end)
+
+				var_4_1.eventAble = true
+			end
+		end
+
+		if not var_4_0 and arg_4_0.nextCheck then
+			local var_4_4 = arg_4_0:getSeriesGrids()
+
+			if #var_4_4 > 0 then
+				local var_4_5 = {}
+
+				for iter_4_1 = 1, #var_4_4 do
+					local var_4_6 = var_4_4[iter_4_1].series
+					local var_4_7 = var_4_4[iter_4_1].gridIndex
+
+					for iter_4_2 = 1, #var_4_6 do
+						table.insert(var_4_5, var_4_6[iter_4_2])
+					end
+
+					arg_4_0._event:emit(var_0_12, {
+						series = #var_4_6,
+						combo = arg_4_0.combo,
+						index = var_4_7
+					})
+				end
+
+				arg_4_0:clearGridSeriesAble()
+				arg_4_0:takeAwayGrid(var_4_5)
+				arg_4_0:insertGrids()
+
+				arg_4_0.nextCheck = true
+				arg_4_0.combo = arg_4_0.combo + 1
+			else
+				arg_4_0.nextCheck = false
+
+				if not var_0_21.special_time then
+					arg_4_0.combo = 0
+				end
+			end
+		end
+	end
+
+	function var_1_0.clear(arg_6_0)
+		for iter_6_0 = 1, #arg_6_0.grids do
+			if arg_6_0.grids[iter_6_0].tf then
+				destroy(arg_6_0.grids[iter_6_0].tf)
+			end
+		end
+
+		arg_6_0.grids = {}
+		arg_6_0.gridCreateIndex = 1
+	end
+
+	function var_1_0.clearGridSeriesAble(arg_7_0)
+		for iter_7_0 = 1, #arg_7_0.grids do
+			if arg_7_0.grids[iter_7_0].seriesAble then
+				arg_7_0.grids[iter_7_0].seriesAble = false
+			end
+		end
+	end
+
+	function var_1_0.getSeriesGrids(arg_8_0)
+		local var_8_0 = {}
+		local var_8_1
+		local var_8_2 = {}
+
+		for iter_8_0 = 1, #arg_8_0.grids do
+			local var_8_3 = arg_8_0.grids[iter_8_0]
+
+			if not var_8_1 then
+				var_8_1 = var_8_3.index
+
+				table.insert(var_8_2, iter_8_0)
+			elseif var_8_1 == var_8_3.index then
+				table.insert(var_8_2, iter_8_0)
+
+				if #var_8_2 >= 3 and iter_8_0 == #arg_8_0.grids and arg_8_0:checkSeriesAble(var_8_2) then
+					table.insert(var_8_0, {
+						series = var_8_2,
+						gridIndex = var_8_1
+					})
+				end
+			elseif var_8_1 ~= var_8_3.index then
+				if #var_8_2 >= 3 and arg_8_0:checkSeriesAble(var_8_2) then
+					table.insert(var_8_0, {
+						series = var_8_2,
+						gridIndex = var_8_1
+					})
+				end
+
+				var_8_2 = {}
+				var_8_1 = var_8_3.index
+
+				table.insert(var_8_2, iter_8_0)
+			end
+		end
+
+		return var_8_0
+	end
+
+	function var_1_0.checkSeriesAble(arg_9_0, arg_9_1)
+		for iter_9_0 = 1, #arg_9_1 do
+			if arg_9_0.grids[arg_9_1[iter_9_0]].seriesAble then
+				return true
+			end
+		end
+
+		return false
+	end
+
+	function var_1_0.insertGrids(arg_10_0)
+		local var_10_0 = var_1_1 - #arg_10_0.grids
+
+		for iter_10_0 = 1, var_10_0 do
+			local var_10_1 = arg_10_0:createGridData()
+
+			table.insert(arg_10_0.grids, var_10_1)
+		end
+
+		if arg_10_0:checkGridsSeries() then
+			arg_10_0:instiateGrids(true)
+		else
+			arg_10_0:initGrids(true)
+		end
+
+		arg_10_0:changeAbleGrids()
+	end
+
+	function var_1_0.changeAbleGrids(arg_11_0)
+		for iter_11_0 = 1, #arg_11_0.grids do
+			arg_11_0.grids[iter_11_0].checkAble = false
+			arg_11_0.grids[iter_11_0].eventAble = false
+			arg_11_0.grids[iter_11_0].speed = var_1_5
+		end
+	end
+
+	function var_1_0.takeAwayGrid(arg_12_0, arg_12_1)
+		table.sort(arg_12_1, function(arg_13_0, arg_13_1)
+			return arg_13_0 <= arg_13_1
+		end)
+
+		arg_12_0.takeAwayTime = var_1_2
+
+		local var_12_0 = {}
+
+		if arg_12_1[1] - 1 > 0 then
+			arg_12_0.grids[arg_12_1[1] - 1].seriesAble = true
+		end
+
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. "xiaochu")
+
+		for iter_12_0 = #arg_12_1, 1, -1 do
+			table.insert(var_12_0, table.remove(arg_12_0.grids, arg_12_1[iter_12_0]))
+			setActive(arg_12_0.effects[arg_12_1[iter_12_0]], false)
+			setActive(arg_12_0.effects[arg_12_1[iter_12_0]], true)
+		end
+
+		for iter_12_1 = 1, #var_12_0 do
+			destroy(var_12_0[iter_12_1].tf)
+
+			var_12_0[iter_12_1] = 0
+		end
+
+		local var_12_1 = {}
+	end
+
+	function var_1_0.triggerDownGrid(arg_14_0, arg_14_1)
+		local var_14_0 = arg_14_0.grids[arg_14_1]
+		local var_14_1 = {
+			arg_14_1
+		}
+
+		if not var_14_0 then
+			return var_14_1, 0
+		end
+
+		for iter_14_0 = arg_14_1 - 1, 1, -1 do
+			local var_14_2 = arg_14_0.grids[iter_14_0]
+
+			if var_14_0.index == var_14_2.index then
+				table.insert(var_14_1, iter_14_0)
+			else
+				break
+			end
+		end
+
+		for iter_14_1 = arg_14_1 + 1, #arg_14_0.grids do
+			local var_14_3 = arg_14_0.grids[iter_14_1]
+
+			if var_14_0.index == var_14_3.index then
+				table.insert(var_14_1, iter_14_1)
+			else
+				break
+			end
+		end
+
+		table.sort(var_14_1, function(arg_15_0, arg_15_1)
+			return arg_15_0 <= arg_15_1
+		end)
+
+		return var_14_1, var_14_0.index
+	end
+
+	function var_1_0.initGrids(arg_16_0, arg_16_1)
+		arg_16_0:clear()
+
+		for iter_16_0 = 1, var_1_1 do
+			local var_16_0 = arg_16_0:createGridData()
+
+			table.insert(arg_16_0.grids, var_16_0)
+		end
+
+		if arg_16_0:checkGridsSeries() then
+			arg_16_0:instiateGrids(arg_16_1)
+		else
+			arg_16_0:initGrids(arg_16_1)
+		end
+
+		arg_16_0.nextCheck = false
+	end
+
+	function var_1_0.instiateGrids(arg_17_0, arg_17_1)
+		for iter_17_0 = 1, #arg_17_0.grids do
+			local var_17_0 = arg_17_0.grids[iter_17_0]
+
+			if not var_17_0.tf then
+				local var_17_1 = tf(instantiate(arg_17_0.tplGrid))
+
+				SetParent(var_17_1, arg_17_0._content)
+				setActive(var_17_1, true)
+				setActive(findTF(var_17_1, var_17_0.name), true)
+
+				local var_17_2
+
+				if arg_17_1 then
+					var_17_2 = (var_1_1 + arg_17_0.gridCreateIndex - 1) * var_1_3.x
+				else
+					var_17_2 = (arg_17_0.gridCreateIndex - 1) * var_1_3.x
+				end
+
+				var_17_1.anchoredPosition = Vector2(var_17_2, 0)
+				arg_17_0.gridCreateIndex = arg_17_0.gridCreateIndex + 1
+				var_17_0.tf = var_17_1
+			end
+		end
+	end
+
+	function var_1_0.createGridData(arg_18_0, arg_18_1)
+		local var_18_0
+
+		if arg_18_1 then
+			var_18_0 = Clone(var_1_7[arg_18_1])
+		else
+			var_18_0 = Clone(var_1_7[math.random(1, #var_1_7)])
+		end
+
+		local var_18_1 = var_18_0.index
+		local var_18_2 = var_18_0.name
+
+		return {
+			eventAble = false,
+			checkAble = false,
+			speed = var_1_5,
+			index = var_18_1,
+			name = var_18_2
+		}
+	end
+
+	function var_1_0.checkGridsSeries(arg_19_0)
+		return true
+	end
+
+	var_1_0:ctor()
+
+	return var_1_0
 end
 
-slot55 = false
+local var_0_55 = false
 
-function slot56(slot0, slot1, slot2)
-	slot3 = {
-		ctor = function (slot0)
-			slot0._specialTf = uv0
-			slot0._successTf = uv1
-			slot0._effectSuccess = findTF(slot0._successTf, "effectSuccess")
-			slot0._event = uv2
+local function var_0_56(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = {
+		ctor = function(arg_21_0)
+			arg_21_0._specialTf = arg_20_0
+			arg_21_0._successTf = arg_20_1
+			arg_21_0._effectSuccess = findTF(arg_21_0._successTf, "effectSuccess")
+			arg_21_0._event = arg_20_2
 
-			function slot4(slot0, slot1, slot2)
-				uv0:addPowerAmount(slot1.index, uv0:getPowerAmount(slot1.series, slot1.combo))
-			end
+			arg_21_0._event:bind(var_0_12, function(arg_22_0, arg_22_1, arg_22_2)
+				local var_22_0 = arg_22_1.series
+				local var_22_1 = arg_22_1.combo
+				local var_22_2 = arg_22_1.index
 
-			slot0._event:bind(uv3, slot4)
+				arg_21_0:addPowerAmount(var_22_2, arg_21_0:getPowerAmount(var_22_0, var_22_1))
+			end)
 
-			slot0.powers = {}
+			arg_21_0.powers = {}
 
-			for slot4 = 1, #uv4 do
-				table.insert(slot0.powers, {
+			for iter_21_0 = 1, #var_0_22 do
+				local var_21_0 = findTF(arg_21_0._specialTf, var_0_22[iter_21_0].name)
+				local var_21_1 = var_0_22[iter_21_0].index
+				local var_21_2 = var_0_22[iter_21_0].max
+				local var_21_3 = var_0_22[iter_21_0].cur
+				local var_21_4 = {
 					active = false,
-					tf = findTF(slot0._specialTf, uv4[slot4].name),
-					index = uv4[slot4].index,
-					max = uv4[slot4].max,
-					cur = uv4[slot4].cur
-				})
+					tf = var_21_0,
+					index = var_21_1,
+					max = var_21_2,
+					cur = var_21_3
+				}
+
+				table.insert(arg_21_0.powers, var_21_4)
 			end
 
-			slot0.success = {
+			arg_21_0.success = {
 				cur = 0,
-				slider = GetComponent(findTF(slot0._successTf, "box"), typeof(Slider)),
-				max = uv5
+				slider = GetComponent(findTF(arg_21_0._successTf, "box"), typeof(Slider)),
+				max = var_0_30
 			}
 		end,
-		start = function (slot0)
-			for slot4 = 1, #slot0.powers do
-				slot5 = slot0.powers[slot4]
-				slot5.cur = 0
-				slot5.active = false
+		start = function(arg_23_0)
+			for iter_23_0 = 1, #arg_23_0.powers do
+				local var_23_0 = arg_23_0.powers[iter_23_0]
+
+				var_23_0.cur = 0
+				var_23_0.active = false
 			end
 
-			slot0.success.cur = 0
-			slot0.success.active = false
+			arg_23_0.success.cur = 0
+			arg_23_0.success.active = false
 
-			setActive(slot0._effectSuccess, false)
-			slot0:resetSpecialData()
-			slot0:step()
+			setActive(arg_23_0._effectSuccess, false)
+			arg_23_0:resetSpecialData()
+			arg_23_0:step()
 		end,
-		step = function (slot0)
-			for slot4 = 1, #slot0.powers do
-				if slot0.powers[slot4].active and slot5.cur > 0 then
-					slot5.cur = slot5.cur - uv0 * Time.deltaTime
+		step = function(arg_24_0)
+			for iter_24_0 = 1, #arg_24_0.powers do
+				local var_24_0 = arg_24_0.powers[iter_24_0]
 
-					if slot5.cur <= 0 then
-						slot5.active = false
-						slot5.cur = 0
+				if var_24_0.active and var_24_0.cur > 0 then
+					var_24_0.cur = var_24_0.cur - var_0_27 * Time.deltaTime
+
+					if var_24_0.cur <= 0 then
+						var_24_0.active = false
+						var_24_0.cur = 0
 					end
 				end
 
-				GetComponent(slot5.tf, typeof(Slider)).value = slot5.cur > 0 and slot5.cur / slot5.max or 0
+				GetComponent(var_24_0.tf, typeof(Slider)).value = var_24_0.cur > 0 and var_24_0.cur / var_24_0.max or 0
 			end
 
-			if slot0.success.active and slot0.success.cur > 0 and uv1.special_complete then
-				slot0.success.cur = slot0.success.cur - uv2 * Time.deltaTime
+			if arg_24_0.success.active and arg_24_0.success.cur > 0 and var_0_21.special_complete then
+				arg_24_0.success.cur = arg_24_0.success.cur - var_0_28 * Time.deltaTime
 
-				if slot0.success.cur <= 0 then
-					slot0.success.active = false
-					slot0.success.cur = 0
+				if arg_24_0.success.cur <= 0 then
+					arg_24_0.success.active = false
+					arg_24_0.success.cur = 0
 
-					slot0._event:emit(uv3)
+					arg_24_0._event:emit(var_0_17)
 				end
 			end
 
-			if slot0.success.max <= slot0.success.cur or slot0.success.active then
-				setActive(slot0._effectSuccess, true)
+			if arg_24_0.success.cur >= arg_24_0.success.max or arg_24_0.success.active then
+				setActive(arg_24_0._effectSuccess, true)
 			else
-				setActive(slot0._effectSuccess, false)
+				setActive(arg_24_0._effectSuccess, false)
 			end
 
-			slot0.success.slider.value = slot0.success.cur > 0 and slot0.success.cur / slot0.success.max or 0
-			uv1.special_time = slot0.success.active
-			uv1.grid_index = 0
+			arg_24_0.success.slider.value = arg_24_0.success.cur > 0 and arg_24_0.success.cur / arg_24_0.success.max or 0
+			var_0_21.special_time = arg_24_0.success.active
+			var_0_21.grid_index = 0
 		end,
-		clear = function (slot0)
+		clear = function(arg_25_0)
+			return
 		end,
-		updateSpecialData = function (slot0, slot1)
-			uv0.special_time = slot0.success.active
-			uv0.grid_index = slot1
-			uv0.power_grid = 0
+		updateSpecialData = function(arg_26_0, arg_26_1)
+			var_0_21.special_time = arg_26_0.success.active
+			var_0_21.grid_index = arg_26_1
+			var_0_21.power_grid = 0
 
-			for slot5 = 1, #slot0.powers do
-				if slot0.powers[slot5].index == slot1 and slot0.powers[slot5].cur == slot0.powers[slot5].max then
-					uv0.power_grid = slot0.powers[slot5].index
+			for iter_26_0 = 1, #arg_26_0.powers do
+				if arg_26_0.powers[iter_26_0].index == arg_26_1 and arg_26_0.powers[iter_26_0].cur == arg_26_0.powers[iter_26_0].max then
+					var_0_21.power_grid = arg_26_0.powers[iter_26_0].index
 				end
 			end
 
-			slot0._event:emit(uv1)
+			arg_26_0._event:emit(var_0_13)
 		end,
-		resetSpecialData = function (slot0)
-			uv0.special_complete = false
+		resetSpecialData = function(arg_27_0)
+			var_0_21.special_complete = false
 		end,
-		addPowerAmount = function (slot0, slot1, slot2)
-			slot3 = slot0:getPowerByIndex(slot1)
+		addPowerAmount = function(arg_28_0, arg_28_1, arg_28_2)
+			local var_28_0 = arg_28_0:getPowerByIndex(arg_28_1)
 
-			if slot0.success and not slot0.success.active then
-				slot0.success.cur = slot0.success.cur + slot2
+			if arg_28_0.success and not arg_28_0.success.active then
+				arg_28_0.success.cur = arg_28_0.success.cur + arg_28_2
 
-				if slot0.success.max <= slot0.success.cur then
-					slot0.success.cur = slot0.success.max
+				if arg_28_0.success.cur >= arg_28_0.success.max then
+					arg_28_0.success.cur = arg_28_0.success.max
 
-					if not isActive(slot0._effectSuccess) then
-						setActive(slot0._effectSuccess, true)
+					if not isActive(arg_28_0._effectSuccess) then
+						setActive(arg_28_0._effectSuccess, true)
 					end
 
-					slot0.success.active = true
-					uv0.special_complete = false
+					arg_28_0.success.active = true
+					var_0_21.special_complete = false
 
-					slot0._event:emit(uv1)
+					arg_28_0._event:emit(var_0_16)
 				end
 			end
 
-			if slot3 and not slot3.active then
-				slot3.cur = slot3.cur + slot2
+			if var_28_0 and not var_28_0.active then
+				var_28_0.cur = var_28_0.cur + arg_28_2
 
-				if slot3.max <= slot3.cur then
-					slot3.cur = slot3.max
-					slot3.active = true
+				if var_28_0.cur >= var_28_0.max then
+					var_28_0.cur = var_28_0.max
+					var_28_0.active = true
 				end
 			end
 
-			if slot2 > 0 then
-				slot0:updateSpecialData(slot1)
+			if arg_28_2 > 0 then
+				arg_28_0:updateSpecialData(arg_28_1)
 			end
 		end,
-		getPowerByIndex = function (slot0, slot1)
-			for slot5 = 1, #slot0.powers do
-				if slot0.powers[slot5].index == slot1 then
-					return slot0.powers[slot5]
+		getPowerByIndex = function(arg_29_0, arg_29_1)
+			for iter_29_0 = 1, #arg_29_0.powers do
+				if arg_29_0.powers[iter_29_0].index == arg_29_1 then
+					return arg_29_0.powers[iter_29_0]
 				end
 			end
 
 			return nil
 		end,
-		getPowerAmount = function (slot0, slot1, slot2)
-			if slot1 <= 2 then
-				return uv0
+		getPowerAmount = function(arg_30_0, arg_30_1, arg_30_2)
+			if arg_30_1 <= 2 then
+				return var_0_29
 			end
 
-			return (uv1 + (slot1 - uv2) * uv3) * (1 + slot2 * uv4)
+			return (var_0_26 + (arg_30_1 - var_0_25) * var_0_24) * (1 + arg_30_2 * var_0_23)
 		end
 	}
 
-	slot3:ctor()
+	var_20_0:ctor()
 
-	return slot3
+	return var_20_0
 end
 
-function slot57(slot0, slot1, slot2)
-	slot3 = {
-		ctor = function (slot0)
-			slot0._sceneTf = uv0
-			slot0._event = uv1
-			slot0.bgs = {}
-			slot0._gameTf = uv2
-			slot0._box = findTF(slot0._gameTf, "box")
-			slot0._specialPower = findTF(slot0._gameTf, "specialPower")
-			slot0._successPower = findTF(slot0._gameTf, "successPower")
-			slot0._top = findTF(slot0._gameTf, "top")
-
-			for slot4 = 1, #uv3 do
-				slot5 = uv3[slot4]
-
-				table.insert(slot0.bgs, {
-					tf = findTF(slot0._sceneTf, uv3[slot4].source),
-					rate = uv3[slot4].rate
-				})
-			end
-
-			slot0._bgBackCanvas = GetComponent(findTF(slot0._sceneTf, "scene_background"), typeof(CanvasGroup))
-			slot0._bgFrontCanvas = GetComponent(findTF(slot0._sceneTf, "scene_front"), typeof(CanvasGroup))
-			slot0._bgBeamCanvas = GetComponent(findTF(slot0._sceneTf, "scene/bgBeam"), typeof(CanvasGroup))
-
-			slot0._event:bind(uv4, function (slot0, slot1, slot2)
-				slot3 = slot1[1]
-				slot4 = slot1[2] and -1 or 1
-				slot5 = slot1[3]
-
-				if not uv0.inCamera then
-					uv0:setTargetFllow(Vector2(slot4 * slot3.x / 10, slot4 * slot3.y / 10), slot5)
-				end
-			end)
-			slot0._event:bind(uv5, function (slot0, slot1, slot2)
-				uv0.inCamera = true
-
-				uv0:setTargetFllow(Vector2(550, 100))
-				uv0:setBeam(false)
-			end)
-			slot0._event:bind(uv6, function (slot0, slot1, slot2)
-				uv0:setTargetFllow(Vector2(0, 0), function ()
-				end, true)
-				uv0:setBeam(true)
-
-				uv0.inCamera = false
-			end)
-		end,
-		start = function (slot0)
-			slot0.targetVec = Vector2(uv0.x, uv0.y)
-			slot0.currentVec = Vector2(uv0.x, uv0.y)
-
-			for slot4 = 1, #slot0.bgs do
-				slot6 = slot0.bgs[slot4].rate
-				slot0.bgs[slot4].tf.anchoredPosition = Vector2(slot0.currentVec.x * slot6, slot0.currentVec.y * slot6)
-			end
-
-			slot0._bgBackCanvas.alpha = 1
-			slot0._bgFrontCanvas.alpha = 1
-			slot0._bgBeamCanvas.alpha = 0
-
-			setActive(slot0._box, true)
-			setActive(slot0._specialPower, true)
-			setActive(slot0._successPower, true)
-			setActive(slot0._top, true)
-		end,
-		clear = function (slot0)
-			if LeanTween.isTweening(go(slot0._sceneTf)) then
-				LeanTween.cancel(go(slot0._sceneTf), false)
-			end
-		end,
-		step = function (slot0)
-			slot1 = 0
-			slot2 = 0
-
-			if slot0.targetVec.x ~= slot0.currentVec.x then
-				if math.abs((slot0.targetVec.x - slot0.currentVec.x) * uv0) < uv1 then
-					slot1 = uv1 * math.sign(slot1)
-				end
-
-				slot0.currentVec.x = slot0.currentVec.x + slot1
-
-				if math.abs(slot0.currentVec.x - slot0.targetVec.x) <= uv1 then
-					slot0.currentVec.x = slot0.targetVec.x
-				end
-			end
-
-			if slot0.targetVec.y ~= slot0.currentVec.y then
-				if math.abs((slot0.targetVec.y - slot0.currentVec.y) * uv0) < uv1 then
-					slot2 = uv1 * math.sign(slot2)
-				end
-
-				slot0.currentVec.y = slot0.currentVec.y + slot2
-
-				if math.abs(slot0.currentVec.y - slot0.targetVec.y) <= uv1 then
-					slot0.currentVec.y = slot0.targetVec.y
-				end
-			end
-
-			if slot1 ~= 0 or slot2 ~= 0 then
-				slot0:moveTo(slot0.currentVec)
-			end
-		end,
-		moveTo = function (slot0, slot1)
-			for slot5 = 1, #slot0.bgs do
-				slot7 = slot0.bgs[slot5].rate
-				slot0.bgs[slot5].tf.anchoredPosition = Vector2(slot1.x * slot7, slot1.y * slot7)
-			end
-		end,
-		setTargetFllow = function (slot0, slot1, slot2, slot3)
-			if not slot3 then
-				slot0.targetVec = slot1
-				slot0.moveCallback = slot2
-			else
-				slot0.currentVec = slot1
-				slot0.targetVec = slot1
-
-				slot0:moveTo(slot1)
-
-				if slot2 then
-					slot2()
-				end
-			end
-		end,
-		setBeam = function (slot0, slot1, slot2)
-			if LeanTween.isTweening(go(slot0._sceneTf)) then
-				LeanTween.cancel(go(slot0._sceneTf), false)
-			end
-
-			if slot1 then
-				setActive(slot0._box, true)
-				setActive(slot0._specialPower, true)
-				setActive(slot0._successPower, true)
-				setActive(slot0._top, true)
-			else
-				setActive(slot0._box, false)
-				setActive(slot0._specialPower, false)
-				setActive(slot0._successPower, false)
-				setActive(slot0._top, false)
-			end
-
-			LeanTween.value(go(slot0._sceneTf), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
-				if uv0 then
-					uv1._bgBackCanvas.alpha = slot0
-					uv1._bgFrontCanvas.alpha = slot0
-					uv1._bgBeamCanvas.alpha = 1 - slot0
-				else
-					uv1._bgBackCanvas.alpha = 1 - slot0
-					uv1._bgFrontCanvas.alpha = 1 - slot0
-					uv1._bgBeamCanvas.alpha = slot0
-				end
-			end)):setOnComplete(System.Action(function ()
-				if uv0 then
-					uv0()
-				end
-			end))
-		end
-	}
-	slot4 = {
+local function var_0_57(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = {}
+	local var_31_1 = {
 		{
 			rate = 0.05,
 			source = "scene_background/bg01"
@@ -1752,109 +1660,281 @@ function slot57(slot0, slot1, slot2)
 		}
 	}
 
-	slot3:ctor()
+	function var_31_0.ctor(arg_32_0)
+		arg_32_0._sceneTf = arg_31_0
+		arg_32_0._event = arg_31_2
+		arg_32_0.bgs = {}
+		arg_32_0._gameTf = arg_31_1
+		arg_32_0._box = findTF(arg_32_0._gameTf, "box")
+		arg_32_0._specialPower = findTF(arg_32_0._gameTf, "specialPower")
+		arg_32_0._successPower = findTF(arg_32_0._gameTf, "successPower")
+		arg_32_0._top = findTF(arg_32_0._gameTf, "top")
 
-	return slot3
+		for iter_32_0 = 1, #var_31_1 do
+			local var_32_0 = var_31_1[iter_32_0]
+			local var_32_1 = findTF(arg_32_0._sceneTf, var_31_1[iter_32_0].source)
+			local var_32_2 = var_31_1[iter_32_0].rate
+
+			table.insert(arg_32_0.bgs, {
+				tf = var_32_1,
+				rate = var_32_2
+			})
+		end
+
+		arg_32_0._bgBackCanvas = GetComponent(findTF(arg_32_0._sceneTf, "scene_background"), typeof(CanvasGroup))
+		arg_32_0._bgFrontCanvas = GetComponent(findTF(arg_32_0._sceneTf, "scene_front"), typeof(CanvasGroup))
+		arg_32_0._bgBeamCanvas = GetComponent(findTF(arg_32_0._sceneTf, "scene/bgBeam"), typeof(CanvasGroup))
+
+		arg_32_0._event:bind(var_0_14, function(arg_33_0, arg_33_1, arg_33_2)
+			local var_33_0 = arg_33_1[1]
+			local var_33_1 = arg_33_1[2] and -1 or 1
+			local var_33_2 = arg_33_1[3]
+
+			if not arg_32_0.inCamera then
+				arg_32_0:setTargetFllow(Vector2(var_33_1 * var_33_0.x / 10, var_33_1 * var_33_0.y / 10), var_33_2)
+			end
+		end)
+		arg_32_0._event:bind(var_0_18, function(arg_34_0, arg_34_1, arg_34_2)
+			arg_32_0.inCamera = true
+
+			arg_32_0:setTargetFllow(Vector2(550, 100))
+			arg_32_0:setBeam(false)
+		end)
+		arg_32_0._event:bind(var_0_19, function(arg_35_0, arg_35_1, arg_35_2)
+			arg_32_0:setTargetFllow(Vector2(0, 0), function()
+				return
+			end, true)
+			arg_32_0:setBeam(true)
+
+			arg_32_0.inCamera = false
+		end)
+	end
+
+	function var_31_0.start(arg_37_0)
+		arg_37_0.targetVec = Vector2(var_0_36.x, var_0_36.y)
+		arg_37_0.currentVec = Vector2(var_0_36.x, var_0_36.y)
+
+		for iter_37_0 = 1, #arg_37_0.bgs do
+			local var_37_0 = arg_37_0.bgs[iter_37_0].tf
+			local var_37_1 = arg_37_0.bgs[iter_37_0].rate
+
+			var_37_0.anchoredPosition = Vector2(arg_37_0.currentVec.x * var_37_1, arg_37_0.currentVec.y * var_37_1)
+		end
+
+		arg_37_0._bgBackCanvas.alpha = 1
+		arg_37_0._bgFrontCanvas.alpha = 1
+		arg_37_0._bgBeamCanvas.alpha = 0
+
+		setActive(arg_37_0._box, true)
+		setActive(arg_37_0._specialPower, true)
+		setActive(arg_37_0._successPower, true)
+		setActive(arg_37_0._top, true)
+	end
+
+	function var_31_0.clear(arg_38_0)
+		if LeanTween.isTweening(go(arg_38_0._sceneTf)) then
+			LeanTween.cancel(go(arg_38_0._sceneTf), false)
+		end
+	end
+
+	function var_31_0.step(arg_39_0)
+		local var_39_0 = 0
+		local var_39_1 = 0
+
+		if arg_39_0.targetVec.x ~= arg_39_0.currentVec.x then
+			var_39_0 = (arg_39_0.targetVec.x - arg_39_0.currentVec.x) * var_0_37
+
+			if math.abs(var_39_0) < var_0_38 then
+				var_39_0 = var_0_38 * math.sign(var_39_0)
+			end
+
+			arg_39_0.currentVec.x = arg_39_0.currentVec.x + var_39_0
+
+			if math.abs(arg_39_0.currentVec.x - arg_39_0.targetVec.x) <= var_0_38 then
+				arg_39_0.currentVec.x = arg_39_0.targetVec.x
+			end
+		end
+
+		if arg_39_0.targetVec.y ~= arg_39_0.currentVec.y then
+			var_39_1 = (arg_39_0.targetVec.y - arg_39_0.currentVec.y) * var_0_37
+
+			if math.abs(var_39_1) < var_0_38 then
+				var_39_1 = var_0_38 * math.sign(var_39_1)
+			end
+
+			arg_39_0.currentVec.y = arg_39_0.currentVec.y + var_39_1
+
+			if math.abs(arg_39_0.currentVec.y - arg_39_0.targetVec.y) <= var_0_38 then
+				arg_39_0.currentVec.y = arg_39_0.targetVec.y
+			end
+		end
+
+		if var_39_0 ~= 0 or var_39_1 ~= 0 then
+			arg_39_0:moveTo(arg_39_0.currentVec)
+		end
+	end
+
+	function var_31_0.moveTo(arg_40_0, arg_40_1)
+		for iter_40_0 = 1, #arg_40_0.bgs do
+			local var_40_0 = arg_40_0.bgs[iter_40_0].tf
+			local var_40_1 = arg_40_0.bgs[iter_40_0].rate
+
+			var_40_0.anchoredPosition = Vector2(arg_40_1.x * var_40_1, arg_40_1.y * var_40_1)
+		end
+	end
+
+	function var_31_0.setTargetFllow(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
+		if not arg_41_3 then
+			arg_41_0.targetVec = arg_41_1
+			arg_41_0.moveCallback = arg_41_2
+		else
+			arg_41_0.currentVec = arg_41_1
+			arg_41_0.targetVec = arg_41_1
+
+			arg_41_0:moveTo(arg_41_1)
+
+			if arg_41_2 then
+				arg_41_2()
+			end
+		end
+	end
+
+	function var_31_0.setBeam(arg_42_0, arg_42_1, arg_42_2)
+		if LeanTween.isTweening(go(arg_42_0._sceneTf)) then
+			LeanTween.cancel(go(arg_42_0._sceneTf), false)
+		end
+
+		if arg_42_1 then
+			setActive(arg_42_0._box, true)
+			setActive(arg_42_0._specialPower, true)
+			setActive(arg_42_0._successPower, true)
+			setActive(arg_42_0._top, true)
+		else
+			setActive(arg_42_0._box, false)
+			setActive(arg_42_0._specialPower, false)
+			setActive(arg_42_0._successPower, false)
+			setActive(arg_42_0._top, false)
+		end
+
+		LeanTween.value(go(arg_42_0._sceneTf), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_43_0)
+			if arg_42_1 then
+				arg_42_0._bgBackCanvas.alpha = arg_43_0
+				arg_42_0._bgFrontCanvas.alpha = arg_43_0
+				arg_42_0._bgBeamCanvas.alpha = 1 - arg_43_0
+			else
+				arg_42_0._bgBackCanvas.alpha = 1 - arg_43_0
+				arg_42_0._bgFrontCanvas.alpha = 1 - arg_43_0
+				arg_42_0._bgBeamCanvas.alpha = arg_43_0
+			end
+		end)):setOnComplete(System.Action(function()
+			if arg_42_2 then
+				arg_42_2()
+			end
+		end))
+	end
+
+	var_31_0:ctor()
+
+	return var_31_0
 end
 
-function slot58(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0._scene = uv0
-			slot0._tpl = findTF(slot0._scene, "tpl")
-			slot0._leftRolePos = findTF(slot0._scene, "rolePos/leftRole")
-			slot0._rightRolePos = findTF(slot0._scene, "rolePos/rightRole")
-			slot0._event = uv1
+local function var_0_58(arg_45_0, arg_45_1)
+	local var_45_0 = {
+		ctor = function(arg_46_0)
+			arg_46_0._scene = arg_45_0
+			arg_46_0._tpl = findTF(arg_46_0._scene, "tpl")
+			arg_46_0._leftRolePos = findTF(arg_46_0._scene, "rolePos/leftRole")
+			arg_46_0._rightRolePos = findTF(arg_46_0._scene, "rolePos/rightRole")
+			arg_46_0._event = arg_45_1
 
-			slot0._event:bind(uv2, function ()
-				uv0:onGridTrigger()
+			arg_46_0._event:bind(var_0_13, function()
+				arg_46_0:onGridTrigger()
 			end)
-			slot0._event:bind(uv3, function ()
-				uv0:onRoleSpecial()
+			arg_46_0._event:bind(var_0_16, function()
+				arg_46_0:onRoleSpecial()
 			end)
-			slot0._event:bind(uv4, function ()
-				uv0:onRoleSpecialEnd()
+			arg_46_0._event:bind(var_0_17, function()
+				arg_46_0:onRoleSpecialEnd()
 			end)
 		end,
-		start = function (slot0)
-			if slot0.leftRole then
-				destroy(slot0.leftRole.tf)
+		start = function(arg_50_0)
+			if arg_50_0.leftRole then
+				destroy(arg_50_0.leftRole.tf)
 
-				slot0.leftRole = nil
+				arg_50_0.leftRole = nil
 			end
 
-			if slot0.rightRole then
-				destroy(slot0.rightRole.tf)
+			if arg_50_0.rightRole then
+				destroy(arg_50_0.rightRole.tf)
 
-				slot0.rightRole = nil
+				arg_50_0.rightRole = nil
 			end
 
-			slot0.leftRole = slot0:createRole(uv0, true, slot0._leftRolePos)
-			slot0.rightRole = slot0:createRole(uv1, false, slot0._rightRolePos)
-			slot0.leftRole.targetRole = slot0.rightRole
-			slot0.rightRole.targetRole = slot0.leftRole
+			arg_50_0.leftRole = arg_50_0:createRole(var_0_31, true, arg_50_0._leftRolePos)
+			arg_50_0.rightRole = arg_50_0:createRole(var_0_32, false, arg_50_0._rightRolePos)
+			arg_50_0.leftRole.targetRole = arg_50_0.rightRole
+			arg_50_0.rightRole.targetRole = arg_50_0.leftRole
 
-			slot0.leftRole.animator:SetTrigger("idle")
-			slot0.leftRole.animator:SetBool("special", false)
-			slot0.rightRole.animator:SetTrigger("idle")
-			slot0.rightRole.animator:SetBool("special", false)
+			arg_50_0.leftRole.animator:SetTrigger("idle")
+			arg_50_0.leftRole.animator:SetBool("special", false)
+			arg_50_0.rightRole.animator:SetTrigger("idle")
+			arg_50_0.rightRole.animator:SetBool("special", false)
 
-			slot0.leftRole.specialBody = false
-			slot0.rightRole.specialBody = false
-			slot0.leftRole.anchoredPosition = Vector2(0, 0)
-			slot0.rightRole.anchoredPosition = Vector2(0, 0)
-			slot0.leftRole.specialTime = false
-			slot0.rightRole.specialTime = false
-			slot0.playingDatas = {
-				[slot0.leftRole.name] = {
-					role = slot0.leftRole
-				}
+			arg_50_0.leftRole.specialBody = false
+			arg_50_0.rightRole.specialBody = false
+			arg_50_0.leftRole.anchoredPosition = Vector2(0, 0)
+			arg_50_0.rightRole.anchoredPosition = Vector2(0, 0)
+			arg_50_0.leftRole.specialTime = false
+			arg_50_0.rightRole.specialTime = false
+			arg_50_0.playingDatas = {}
+			arg_50_0.playingDatas[arg_50_0.leftRole.name] = {
+				role = arg_50_0.leftRole
 			}
-			slot0.playingDatas[slot0.leftRole.name].skillDatas = {}
-			slot0.playingDatas[slot0.rightRole.name] = {
-				role = slot0.rightRole,
-				skillDatas = {}
+			arg_50_0.playingDatas[arg_50_0.leftRole.name].skillDatas = {}
+			arg_50_0.playingDatas[arg_50_0.rightRole.name] = {
+				role = arg_50_0.rightRole
 			}
-			slot0.skillDeltaTime = 0
-			slot0.emptySkillTime = math.random(1, 2)
-			slot0.addScore = {
+			arg_50_0.playingDatas[arg_50_0.rightRole.name].skillDatas = {}
+			arg_50_0.skillDeltaTime = 0
+			arg_50_0.emptySkillTime = math.random(1, 2)
+			arg_50_0.addScore = {
 				0,
 				0
 			}
 
-			slot0._event:emit(uv2, {
+			arg_50_0._event:emit(var_0_14, {
 				Vector2(0, 0),
 				false
 			})
 		end,
-		step = function (slot0)
-			slot0:checkSkillDeltaTime()
-			slot0:checkEmptySkillTime()
+		step = function(arg_51_0)
+			arg_51_0:checkSkillDeltaTime()
+			arg_51_0:checkEmptySkillTime()
 		end,
-		checkSkillDeltaTime = function (slot0)
-			if slot0.skillDeltaTime and slot0.skillDeltaTime <= 0 then
-				slot0.skillDeltaTime = uv0
+		checkSkillDeltaTime = function(arg_52_0)
+			if arg_52_0.skillDeltaTime and arg_52_0.skillDeltaTime <= 0 then
+				arg_52_0.skillDeltaTime = var_0_39
 			end
 
-			slot0.skillDeltaTime = slot0.skillDeltaTime - Time.deltaTime
+			arg_52_0.skillDeltaTime = arg_52_0.skillDeltaTime - Time.deltaTime
 
-			if slot0.skillDeltaTime <= 0 then
-				slot1 = false
+			if arg_52_0.skillDeltaTime <= 0 then
+				local var_52_0 = false
 
-				for slot5, slot6 in pairs(slot0.playingDatas) do
-					if slot6.inPlaying then
-						slot1 = true
+				for iter_52_0, iter_52_1 in pairs(arg_52_0.playingDatas) do
+					if iter_52_1.inPlaying then
+						var_52_0 = true
 					end
 				end
 
-				if not slot1 then
-					for slot5, slot6 in pairs(slot0.playingDatas) do
-						if #slot6.skillDatas > 0 then
-							if slot6.role == slot0.leftRole then
+				if not var_52_0 then
+					for iter_52_2, iter_52_3 in pairs(arg_52_0.playingDatas) do
+						if #iter_52_3.skillDatas > 0 then
+							if iter_52_3.role == arg_52_0.leftRole then
 								print("开始执行角色攻击")
 							end
 
-							slot0:applySkillData(slot6)
+							arg_52_0:applySkillData(iter_52_3)
 
 							break
 						end
@@ -1862,181 +1942,203 @@ function slot58(slot0, slot1)
 				end
 			end
 
-			uv1 = false
+			var_0_55 = false
 
-			for slot4, slot5 in pairs(slot0.playingDatas) do
-				if slot5.inPlaying then
-					uv1 = true
+			for iter_52_4, iter_52_5 in pairs(arg_52_0.playingDatas) do
+				if iter_52_5.inPlaying then
+					var_0_55 = true
 				end
 			end
 		end,
-		checkEmptySkillTime = function (slot0)
-			if slot0.emptySkillTime and slot0.emptySkillTime <= 0 then
-				slot0.emptySkillTime = uv0
+		checkEmptySkillTime = function(arg_53_0)
+			if arg_53_0.emptySkillTime and arg_53_0.emptySkillTime <= 0 then
+				arg_53_0.emptySkillTime = var_0_40
 			end
 
-			slot0.emptySkillTime = slot0.emptySkillTime - Time.deltaTime
+			arg_53_0.emptySkillTime = arg_53_0.emptySkillTime - Time.deltaTime
 
-			if slot0.emptySkillTime <= 0 then
-				slot1 = false
+			if arg_53_0.emptySkillTime <= 0 then
+				local var_53_0 = false
 
-				for slot5, slot6 in pairs(slot0.playingDatas) do
-					if slot6.inPlaying then
-						slot1 = true
+				for iter_53_0, iter_53_1 in pairs(arg_53_0.playingDatas) do
+					if iter_53_1.inPlaying then
+						var_53_0 = true
 					end
 				end
 
-				if not slot1 and slot0:getRoleEmptySkill(slot0.rightRole) then
-					slot0:addRolePlaying(slot0.rightRole, slot2)
+				if not var_53_0 then
+					local var_53_1 = arg_53_0:getRoleEmptySkill(arg_53_0.rightRole)
+
+					if var_53_1 then
+						arg_53_0:addRolePlaying(arg_53_0.rightRole, var_53_1)
+					end
 				end
 			end
 		end,
-		getRoleEmptySkill = function (slot0, slot1)
-			slot2 = {}
+		getRoleEmptySkill = function(arg_54_0, arg_54_1)
+			local var_54_0 = {}
 
-			for slot6 = 1, #slot1.skill do
-				if tobool(slot1.skill[slot6].special_time) == slot1.specialBody and slot7.atk_index then
-					table.insert(slot2, slot7)
+			for iter_54_0 = 1, #arg_54_1.skill do
+				local var_54_1 = arg_54_1.skill[iter_54_0]
+
+				if tobool(var_54_1.special_time) == arg_54_1.specialBody and var_54_1.atk_index then
+					table.insert(var_54_0, var_54_1)
 				end
 			end
 
-			if #slot2 > 0 then
-				return Clone(slot2[math.random(1, #slot2)])
+			if #var_54_0 > 0 then
+				return Clone(var_54_0[math.random(1, #var_54_0)])
 			end
 
 			return nil
 		end,
-		onRoleSpecial = function (slot0)
-			slot0.leftRole.specialTime = true
+		onRoleSpecial = function(arg_55_0)
+			arg_55_0.leftRole.specialTime = true
 
-			for slot4 = 1, #slot0.leftRole.skill do
-				if slot0.leftRole.skill[slot4].special_trigger then
-					slot0:addRolePlaying(slot0.leftRole, Clone(slot5))
+			for iter_55_0 = 1, #arg_55_0.leftRole.skill do
+				local var_55_0 = arg_55_0.leftRole.skill[iter_55_0]
+
+				if var_55_0.special_trigger then
+					arg_55_0:addRolePlaying(arg_55_0.leftRole, Clone(var_55_0))
 				end
 			end
 		end,
-		onRoleSpecialEnd = function (slot0)
-			slot0.leftRole.specialTime = false
+		onRoleSpecialEnd = function(arg_56_0)
+			arg_56_0.leftRole.specialTime = false
 
-			for slot4 = 1, #slot0.leftRole.skill do
-				if not slot0.leftRole.skill[slot4].special_trigger and slot5.special_end then
-					slot0:addRolePlaying(slot0.leftRole, Clone(slot5))
+			for iter_56_0 = 1, #arg_56_0.leftRole.skill do
+				local var_56_0 = arg_56_0.leftRole.skill[iter_56_0]
+
+				if not var_56_0.special_trigger and var_56_0.special_end then
+					arg_56_0:addRolePlaying(arg_56_0.leftRole, Clone(var_56_0))
 				end
 			end
 		end,
-		clear = function (slot0)
-			if LeanTween.isTweening(go(slot0._leftRolePos)) then
-				LeanTween.cancel(go(slot0._leftRolePos))
+		clear = function(arg_57_0)
+			if LeanTween.isTweening(go(arg_57_0._leftRolePos)) then
+				LeanTween.cancel(go(arg_57_0._leftRolePos))
 			end
 
-			if LeanTween.isTweening(go(slot0._rightRolePos)) then
-				LeanTween.cancel(go(slot0._rightRolePos))
+			if LeanTween.isTweening(go(arg_57_0._rightRolePos)) then
+				LeanTween.cancel(go(arg_57_0._rightRolePos))
 			end
 
-			if LeanTween.isTweening(go(slot0.rightRole.tf)) then
-				LeanTween.cancel(go(slot0.rightRole.tf))
+			if LeanTween.isTweening(go(arg_57_0.rightRole.tf)) then
+				LeanTween.cancel(go(arg_57_0.rightRole.tf))
 			end
 
-			if LeanTween.isTweening(go(slot0.leftRole.tf)) then
-				LeanTween.cancel(go(slot0.leftRole.tf))
+			if LeanTween.isTweening(go(arg_57_0.leftRole.tf)) then
+				LeanTween.cancel(go(arg_57_0.leftRole.tf))
 			end
 		end,
-		onGridTrigger = function (slot0)
-			slot1 = uv0.grid_index
-			slot2 = uv0.power_grid
-			slot3 = uv0.special_time
+		onGridTrigger = function(arg_58_0)
+			local var_58_0 = var_0_21.grid_index
+			local var_58_1 = var_0_21.power_grid
+			local var_58_2 = var_0_21.special_time
 
-			for slot7 = 1, #slot0.leftRole.skill do
-				if tobool(slot0.leftRole.skill[slot7].special_time) == tobool(slot0.leftRole.specialTime) and slot8.power_index == slot2 and table.contains(slot8.grid_index, slot1) and slot8.atk_index then
-					slot0:addRolePlaying(slot0.leftRole, Clone(slot8))
+			for iter_58_0 = 1, #arg_58_0.leftRole.skill do
+				local var_58_3 = arg_58_0.leftRole.skill[iter_58_0]
+
+				if tobool(var_58_3.special_time) == tobool(arg_58_0.leftRole.specialTime) and var_58_3.power_index == var_58_1 and table.contains(var_58_3.grid_index, var_58_0) and var_58_3.atk_index then
+					arg_58_0:addRolePlaying(arg_58_0.leftRole, Clone(var_58_3))
 				end
 			end
 		end,
-		createRole = function (slot0, slot1, slot2, slot3)
-			if not slot0:getRoleData(slot1) then
+		createRole = function(arg_59_0, arg_59_1, arg_59_2, arg_59_3)
+			local var_59_0 = arg_59_0:getRoleData(arg_59_1)
+
+			if not var_59_0 then
 				return nil
 			end
 
-			slot6 = tf(instantiate(findTF(slot0._tpl, slot4.name)))
+			local var_59_1 = {}
+			local var_59_2 = tf(instantiate(findTF(arg_59_0._tpl, var_59_0.name)))
 
-			SetParent(slot6, slot3)
+			SetParent(var_59_2, arg_59_3)
 
-			slot6.anchoredPosition = Vector2(0, 0)
-			slot6.localScale = Vector3(1, 1, 1)
+			var_59_2.anchoredPosition = Vector2(0, 0)
+			var_59_2.localScale = Vector3(1, 1, 1)
 
-			setActive(slot6, true)
+			setActive(var_59_2, true)
 
-			slot7 = findTF(slot6, "body")
-			slot8 = findTF(slot7, "anim")
-			slot10 = GetComponent(slot8, typeof(DftAniEvent))
+			local var_59_3 = findTF(var_59_2, "body")
+			local var_59_4 = findTF(var_59_3, "anim")
+			local var_59_5 = GetComponent(var_59_4, typeof(Animator))
+			local var_59_6 = GetComponent(var_59_4, typeof(DftAniEvent))
 
-			slot10:SetStartEvent(function ()
-				if uv0.startCallback then
-					uv0.startCallback()
+			var_59_6:SetStartEvent(function()
+				if var_59_1.startCallback then
+					var_59_1.startCallback()
 				end
 			end)
-			slot10:SetTriggerEvent(function ()
-				if uv0.triggerCallback then
-					uv0.triggerCallback()
+			var_59_6:SetTriggerEvent(function()
+				if var_59_1.triggerCallback then
+					var_59_1.triggerCallback()
 				end
 			end)
-			slot10:SetEndEvent(function ()
-				if uv0.endCallback then
-					uv0.endCallback()
+			var_59_6:SetEndEvent(function()
+				if var_59_1.endCallback then
+					var_59_1.endCallback()
 				end
 			end)
 
-			return {
-				name = slot4.name,
-				tf = slot6,
-				canvasGroup = GetComponent(slot6, typeof(CanvasGroup)),
-				body = slot7,
-				animTf = slot8,
-				animator = GetComponent(slot8, typeof(Animator)),
-				dftEvent = slot10,
-				startCallback = nil,
-				triggerCallback = nil,
-				endCallback = nil,
-				skill = slot4.skill,
-				name = slot4.name,
-				index = slot4.index,
-				actions = slot4.actions
-			}
+			var_59_1.name = var_59_0.name
+			var_59_1.tf = var_59_2
+			var_59_1.canvasGroup = GetComponent(var_59_2, typeof(CanvasGroup))
+			var_59_1.body = var_59_3
+			var_59_1.animTf = var_59_4
+			var_59_1.animator = var_59_5
+			var_59_1.dftEvent = var_59_6
+			var_59_1.startCallback = nil
+			var_59_1.triggerCallback = nil
+			var_59_1.endCallback = nil
+			var_59_1.skill = var_59_0.skill
+			var_59_1.name = var_59_0.name
+			var_59_1.index = var_59_0.index
+			var_59_1.actions = var_59_0.actions
+
+			return var_59_1
 		end,
-		getRoleData = function (slot0, slot1)
-			for slot5 = 1, #uv0 do
-				if uv0[slot5].index == slot1 then
-					return Clone(uv0[slot5])
+		getRoleData = function(arg_63_0, arg_63_1)
+			for iter_63_0 = 1, #var_0_53 do
+				if var_0_53[iter_63_0].index == arg_63_1 then
+					return Clone(var_0_53[iter_63_0])
 				end
 			end
 
 			return nil
 		end,
-		setDftHandle = function (slot0, slot1, slot2, slot3, slot4)
-			slot1.startCallback = slot2
-			slot1.triggerCallback = slot3
-			slot1.endCallback = slot4
+		setDftHandle = function(arg_64_0, arg_64_1, arg_64_2, arg_64_3, arg_64_4)
+			arg_64_1.startCallback = arg_64_2
+			arg_64_1.triggerCallback = arg_64_3
+			arg_64_1.endCallback = arg_64_4
 		end,
-		playAnimation = function (slot0, slot1, slot2)
-			print(slot1.name .. " 执行动画 ：" .. slot2 .. "  active:" .. tostring(slot1.animator.isActiveAndEnabled) .. tostring(Time.GetTimestamp()))
-			slot1.animator:Play("emptyAnimation", -1, 0)
-			slot1.animator:Play(slot2, -1, 0)
+		playAnimation = function(arg_65_0, arg_65_1, arg_65_2)
+			print(arg_65_1.name .. " 执行动画 ：" .. arg_65_2 .. "  active:" .. tostring(arg_65_1.animator.isActiveAndEnabled) .. tostring(Time.GetTimestamp()))
+			arg_65_1.animator:Play("emptyAnimation", -1, 0)
+			arg_65_1.animator:Play(arg_65_2, -1, 0)
 		end,
-		addRolePlaying = function (slot0, slot1, slot2, slot3)
-			for slot7, slot8 in pairs(slot0.playingDatas) do
-				if slot7 == slot1.name then
-					if slot3 then
-						slot0:applySkillData(slot8, slot2)
+		addRolePlaying = function(arg_66_0, arg_66_1, arg_66_2, arg_66_3)
+			for iter_66_0, iter_66_1 in pairs(arg_66_0.playingDatas) do
+				if iter_66_0 == arg_66_1.name then
+					if arg_66_3 then
+						arg_66_0:applySkillData(iter_66_1, arg_66_2)
 					else
-						table.insert(slot8.skillDatas, slot2)
+						table.insert(iter_66_1.skillDatas, arg_66_2)
 
-						if slot2.power_index > 0 and slot2.atk_index > 1 or slot2.special_trigger then
-							for slot12 = #slot8.skillDatas - 1, 1, -1 do
-								if slot8.skillDatas[slot12].power_index == 0 and slot13.atk_index == 1 and table.remove(slot8.skillDatas, slot12).score then
-									slot0.addScore = {
-										slot0.addScore[1] + slot14.score[1],
-										slot0.addScore[2] + slot14.score[2]
-									}
+						if arg_66_2.power_index > 0 and arg_66_2.atk_index > 1 or arg_66_2.special_trigger then
+							for iter_66_2 = #iter_66_1.skillDatas - 1, 1, -1 do
+								local var_66_0 = iter_66_1.skillDatas[iter_66_2]
+
+								if var_66_0.power_index == 0 and var_66_0.atk_index == 1 then
+									local var_66_1 = table.remove(iter_66_1.skillDatas, iter_66_2)
+
+									if var_66_1.score then
+										arg_66_0.addScore = {
+											arg_66_0.addScore[1] + var_66_1.score[1],
+											arg_66_0.addScore[2] + var_66_1.score[2]
+										}
+									end
 								end
 							end
 						end
@@ -2044,151 +2146,175 @@ function slot58(slot0, slot1)
 				end
 			end
 		end,
-		applySkillData = function (slot0, slot1, slot2)
-			slot1.inPlaying = true
-			slot3 = slot1.role
-			slot4 = slot2 or table.remove(slot1.skillDatas, 1)
-			slot1.currentSkill = slot4
-			slot1.actions = slot4.actions
+		applySkillData = function(arg_67_0, arg_67_1, arg_67_2)
+			arg_67_1.inPlaying = true
 
-			if slot4.anim_bool then
-				slot3.animator:SetBool(slot5, true)
+			local var_67_0 = arg_67_1.role
+			local var_67_1 = arg_67_2 or table.remove(arg_67_1.skillDatas, 1)
+
+			arg_67_1.currentSkill = var_67_1
+			arg_67_1.actions = var_67_1.actions
+
+			local var_67_2 = var_67_1.anim_bool
+
+			if var_67_2 then
+				var_67_0.animator:SetBool(var_67_2, true)
 			end
 
-			if slot3 == slot0.leftRole and not slot4.dmg_index then
-				slot0._leftRolePos:SetSiblingIndex(1)
-			elseif slot3 == slot0.rightRole and not slot4.dmg_index then
-				slot0._rightRolePos:SetSiblingIndex(1)
+			if var_67_0 == arg_67_0.leftRole and not var_67_1.dmg_index then
+				arg_67_0._leftRolePos:SetSiblingIndex(1)
+			elseif var_67_0 == arg_67_0.rightRole and not var_67_1.dmg_index then
+				arg_67_0._rightRolePos:SetSiblingIndex(1)
 			end
 
-			if slot4.special_end then
-				slot1.role.specialBody = false
-			elseif slot4.special_trigger then
-				slot1.role.specialBody = true
+			if var_67_1.special_end then
+				arg_67_1.role.specialBody = false
+			elseif var_67_1.special_trigger then
+				arg_67_1.role.specialBody = true
 			end
 
-			slot1.actionIndex = 1
+			arg_67_1.actionIndex = 1
 
-			slot0:checkAction(slot1, function ()
-				uv0.inPlaying = false
+			arg_67_0:checkAction(arg_67_1, function()
+				arg_67_1.inPlaying = false
 
-				print(uv0.role.name .. "动画播放完毕")
+				print(arg_67_1.role.name .. "动画播放完毕")
 			end)
 		end,
-		checkAction = function (slot0, slot1, slot2)
-			if slot1.actions and slot1.actionIndex <= #slot1.actions then
-				print("准备执行" .. slot1.actions[slot1.actionIndex].anim_name .. "上一个动作:" .. tostring(slot1.playingAction and slot1.playingAction.anim_name))
+		checkAction = function(arg_69_0, arg_69_1, arg_69_2)
+			if arg_69_1.actions and arg_69_1.actionIndex <= #arg_69_1.actions then
+				print("准备执行" .. arg_69_1.actions[arg_69_1.actionIndex].anim_name .. "上一个动作:" .. tostring(arg_69_1.playingAction and arg_69_1.playingAction.anim_name))
 
-				slot1.playingAction = slot1.actions[slot1.actionIndex]
-				slot1.actionIndex = slot1.actionIndex + 1
-				slot3 = slot1.playingAction.anim_name
-				slot4 = slot1.playingAction.time
-				slot5 = slot1.playingAction.move
-				slot6 = slot1.playingAction.over_offset
-				slot7 = slot1.playingAction.camera
-				slot8 = slot1.playingAction.sound_start
-				slot9 = slot1.playingAction.sound_trigger
-				slot10 = slot1.playingAction.sound_end
-				slot12 = slot1.currentSkill.special_time
-				slot13 = slot1.currentSkill.atk_index
+				arg_69_1.playingAction = arg_69_1.actions[arg_69_1.actionIndex]
+				arg_69_1.actionIndex = arg_69_1.actionIndex + 1
 
-				if slot1.currentSkill.special_trigger or slot12 and slot13 and slot13 >= 2 then
-					slot0._event:emit(uv0, true)
+				local var_69_0 = arg_69_1.playingAction.anim_name
+				local var_69_1 = arg_69_1.playingAction.time
+				local var_69_2 = arg_69_1.playingAction.move
+				local var_69_3 = arg_69_1.playingAction.over_offset
+				local var_69_4 = arg_69_1.playingAction.camera
+				local var_69_5 = arg_69_1.playingAction.sound_start
+				local var_69_6 = arg_69_1.playingAction.sound_trigger
+				local var_69_7 = arg_69_1.playingAction.sound_end
+				local var_69_8 = arg_69_1.currentSkill.special_trigger
+				local var_69_9 = arg_69_1.currentSkill.special_time
+				local var_69_10 = arg_69_1.currentSkill.atk_index
+
+				if var_69_8 or var_69_9 and var_69_10 and var_69_10 >= 2 then
+					arg_69_0._event:emit(var_0_20, true)
 				end
 
-				if not slot4 or slot4 <= 0 then
-					slot0:setDftHandle(slot1.role, function ()
-						if uv0 then
-							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv0)
+				if var_69_1 and var_69_1 > 0 then
+					-- block empty
+				else
+					local function var_69_11()
+						if var_69_5 then
+							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. var_69_5)
 						end
 
-						if uv1 then
-							uv2:moveRole(uv3.role, uv1)
+						if var_69_2 then
+							arg_69_0:moveRole(arg_69_1.role, var_69_2)
 						end
 
-						if uv4 then
-							uv3.role.targetRole.canvasGroup.alpha = 0
+						if var_69_4 then
+							arg_69_1.role.targetRole.canvasGroup.alpha = 0
 
-							uv2._event:emit(uv5)
+							arg_69_0._event:emit(var_0_18)
 						end
-					end, function ()
-						if uv0 then
-							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv0)
+					end
+
+					local function var_69_12()
+						if var_69_6 then
+							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. var_69_6)
 						end
 
-						if uv1 then
-							uv1 = false
-							uv2.role.targetRole.canvasGroup.alpha = 1
+						if var_69_4 then
+							var_69_4 = false
+							arg_69_1.role.targetRole.canvasGroup.alpha = 1
 
-							uv3._event:emit(uv4)
-						elseif uv2.currentSkill.atk_index then
-							if uv3:getRoleDmgData(uv2.role.targetRole, slot0) then
-								uv3:addRolePlaying(uv2.role.targetRole, Clone(slot1), true)
+							arg_69_0._event:emit(var_0_19)
+						else
+							local var_71_0 = arg_69_1.currentSkill.atk_index
+
+							if var_71_0 then
+								local var_71_1 = arg_69_0:getRoleDmgData(arg_69_1.role.targetRole, var_71_0)
+
+								if var_71_1 then
+									arg_69_0:addRolePlaying(arg_69_1.role.targetRole, Clone(var_71_1), true)
+								end
+
+								local var_71_2 = arg_69_1.currentSkill.score
+
+								if var_71_2 and arg_69_1.role == arg_69_0.leftRole then
+									arg_69_0._event:emit(var_0_15, math.random(var_71_2[1] + arg_69_0.addScore[1], var_71_2[2] + arg_69_0.addScore[2]))
+
+									arg_69_0.addScore = {
+										0,
+										0
+									}
+								end
 							end
-
-							if uv2.currentSkill.score and uv2.role == uv3.leftRole then
-								uv3._event:emit(uv5, math.random(slot2[1] + uv3.addScore[1], slot2[2] + uv3.addScore[2]))
-
-								uv3.addScore = {
-									0,
-									0
-								}
-							end
 						end
-					end, function ()
-						if uv0 then
-							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv0)
+					end
+
+					local function var_69_13()
+						if var_69_7 then
+							pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. var_69_7)
 						end
 
-						if LeanTween.isTweening(go(uv1.role.tf)) then
-							LeanTween.cancel(go(uv1.role.tf))
+						if LeanTween.isTweening(go(arg_69_1.role.tf)) then
+							LeanTween.cancel(go(arg_69_1.role.tf))
 						end
 
-						uv2._event:emit(uv3, false)
+						arg_69_0._event:emit(var_0_20, false)
 
-						if uv4 then
-							uv1.role.tf.anchoredPosition = Vector2(uv1.role.tf.anchoredPosition.x + uv4.x, uv1.role.tf.anchoredPosition.y + uv4.y)
+						if var_69_3 then
+							arg_69_1.role.tf.anchoredPosition = Vector2(arg_69_1.role.tf.anchoredPosition.x + var_69_3.x, arg_69_1.role.tf.anchoredPosition.y + var_69_3.y)
 						end
 
-						if uv1.currentSkill.special_trigger and uv5.special_time and not uv5.special_complete then
-							uv5.special_complete = true
+						if arg_69_1.currentSkill.special_trigger and var_0_21.special_time and not var_0_21.special_complete then
+							var_0_21.special_complete = true
 						end
 
-						uv1.playingAction = nil
+						arg_69_1.playingAction = nil
 
-						uv2:setDftHandle(uv1.role, nil, , )
-						print(uv1.role.name .. "执行 " .. uv6 .. "结束")
-						uv2:checkAction(uv1, uv7)
-					end)
-					slot0:playAnimation(slot1.role, slot3)
+						arg_69_0:setDftHandle(arg_69_1.role, nil, nil, nil)
+						print(arg_69_1.role.name .. "执行 " .. var_69_0 .. "结束")
+						arg_69_0:checkAction(arg_69_1, arg_69_2)
+					end
+
+					arg_69_0:setDftHandle(arg_69_1.role, var_69_11, var_69_12, var_69_13)
+					arg_69_0:playAnimation(arg_69_1.role, var_69_0)
+				end
+			else
+				if arg_69_1.role == arg_69_0.leftRole then
+					print(arg_69_1.role.name .. "队列结束")
 				end
 
-				return
-			end
-
-			if slot1.role == slot0.leftRole then
-				print(slot1.role.name .. "队列结束")
-			end
-
-			if slot2 then
-				slot2()
+				if arg_69_2 then
+					arg_69_2()
+				end
 			end
 		end,
-		moveRole = function (slot0, slot1, slot2)
-			if LeanTween.isTweening(go(slot1.tf)) then
-				LeanTween.cancel(go(slot1.tf))
+		moveRole = function(arg_73_0, arg_73_1, arg_73_2)
+			if LeanTween.isTweening(go(arg_73_1.tf)) then
+				LeanTween.cancel(go(arg_73_1.tf))
 			end
 
-			slot0._event:emit(uv0, {
-				slot2.distance,
-				slot1 == slot0.leftRole
+			arg_73_0._event:emit(var_0_14, {
+				arg_73_2.distance,
+				arg_73_1 == arg_73_0.leftRole
 			})
-			LeanTween.move(slot1.tf, Vector3(slot2.distance.x, slot2.distance.y, 0), slot2.time):setEase(slot2.ease or LeanTweenType.linear)
+			LeanTween.move(arg_73_1.tf, Vector3(arg_73_2.distance.x, arg_73_2.distance.y, 0), arg_73_2.time):setEase(arg_73_2.ease or LeanTweenType.linear)
 		end,
-		getRoleDmgData = function (slot0, slot1, slot2)
-			for slot7 = 1, #slot1.skill do
-				if slot3[slot7].dmg_index == slot2 and slot8.special_time == tobool(slot1.specialBody) then
-					return slot8
+		getRoleDmgData = function(arg_74_0, arg_74_1, arg_74_2)
+			local var_74_0 = arg_74_1.skill
+
+			for iter_74_0 = 1, #var_74_0 do
+				local var_74_1 = var_74_0[iter_74_0]
+
+				if var_74_1.dmg_index == arg_74_2 and var_74_1.special_time == tobool(arg_74_1.specialBody) then
+					return var_74_1
 				end
 			end
 
@@ -2196,594 +2322,643 @@ function slot58(slot0, slot1)
 		end
 	}
 
-	slot2:ctor()
+	var_45_0:ctor()
 
-	return slot2
+	return var_45_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_75_0)
 	return "GridGameUI"
 end
 
-function slot0.didEnter(slot0)
-	slot0:initEvent()
-	slot0:initData()
-	slot0:initUI()
-	slot0:initGameUI()
-	slot0:initController()
-	slot0:updateMenuUI()
-	slot0:openMenuUI()
+function var_0_0.didEnter(arg_76_0)
+	arg_76_0:initEvent()
+	arg_76_0:initData()
+	arg_76_0:initUI()
+	arg_76_0:initGameUI()
+	arg_76_0:initController()
+	arg_76_0:updateMenuUI()
+	arg_76_0:openMenuUI()
 end
 
-function slot0.initEvent(slot0)
-	slot0:bind(uv0, function (slot0, slot1, slot2)
-		uv0:addScore(slot1)
+function var_0_0.initEvent(arg_77_0)
+	arg_77_0:bind(var_0_15, function(arg_78_0, arg_78_1, arg_78_2)
+		arg_77_0:addScore(arg_78_1)
 	end)
-	slot0:bind(uv1, function (slot0, slot1, slot2)
-		uv0.ignoreTime = slot1
+	arg_77_0:bind(var_0_20, function(arg_79_0, arg_79_1, arg_79_2)
+		arg_77_0.ignoreTime = arg_79_1
 	end)
 end
 
-function slot0.onEventHandle(slot0, slot1)
+function var_0_0.onEventHandle(arg_80_0, arg_80_1)
+	return
 end
 
-function slot0.initData(slot0)
-	if (Application.targetFrameRate or 60) > 60 then
-		slot1 = 60
+function var_0_0.initData(arg_81_0)
+	local var_81_0 = Application.targetFrameRate or 60
+
+	if var_81_0 > 60 then
+		var_81_0 = 60
 	end
 
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
-	end, 1 / slot1, -1)
+	arg_81_0.timer = Timer.New(function()
+		arg_81_0:onTimer()
+	end, 1 / var_81_0, -1)
 end
 
-function slot0.initUI(slot0)
-	slot0.backSceneTf = findTF(slot0._tf, "scene_background")
-	slot0.sceneTf = findTF(slot0._tf, "scene")
-	slot0.clickMask = findTF(slot0._tf, "clickMask")
+function var_0_0.initUI(arg_83_0)
+	arg_83_0.backSceneTf = findTF(arg_83_0._tf, "scene_background")
+	arg_83_0.sceneTf = findTF(arg_83_0._tf, "scene")
+	arg_83_0.clickMask = findTF(arg_83_0._tf, "clickMask")
 
-	setText(findTF(slot0._tf, "ui/gameUI/top/time"), i18n("mini_game_time"))
-	setText(findTF(slot0._tf, "ui/gameUI/top/scoreDesc"), i18n("mini_game_score"))
-	setText(findTF(slot0._tf, "pop/LeaveUI/ad/desc"), i18n("mini_game_leave"))
-	setText(findTF(slot0._tf, "pop/pauseUI/ad/desc"), i18n("mini_game_pause"))
-	setText(findTF(slot0._tf, "pop/SettleMentUI/ad/currentTextDesc"), i18n("mini_game_cur_score"))
-	setText(findTF(slot0._tf, "pop/SettleMentUI/ad/highTextDesc"), i18n("mini_game_high_score"))
+	setText(findTF(arg_83_0._tf, "ui/gameUI/top/time"), i18n("mini_game_time"))
+	setText(findTF(arg_83_0._tf, "ui/gameUI/top/scoreDesc"), i18n("mini_game_score"))
+	setText(findTF(arg_83_0._tf, "pop/LeaveUI/ad/desc"), i18n("mini_game_leave"))
+	setText(findTF(arg_83_0._tf, "pop/pauseUI/ad/desc"), i18n("mini_game_pause"))
+	setText(findTF(arg_83_0._tf, "pop/SettleMentUI/ad/currentTextDesc"), i18n("mini_game_cur_score"))
+	setText(findTF(arg_83_0._tf, "pop/SettleMentUI/ad/highTextDesc"), i18n("mini_game_high_score"))
 
-	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
-	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
-	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
-	slot1 = slot0.countDft
+	arg_83_0.countUI = findTF(arg_83_0._tf, "pop/CountUI")
+	arg_83_0.countAnimator = GetComponent(findTF(arg_83_0.countUI, "count"), typeof(Animator))
+	arg_83_0.countDft = GetOrAddComponent(findTF(arg_83_0.countUI, "count"), typeof(DftAniEvent))
 
-	slot1:SetTriggerEvent(function ()
+	arg_83_0.countDft:SetTriggerEvent(function()
+		return
+	end)
+	arg_83_0.countDft:SetEndEvent(function()
+		setActive(arg_83_0.countUI, false)
+		arg_83_0:gameStart()
 	end)
 
-	slot1 = slot0.countDft
+	arg_83_0.leaveUI = findTF(arg_83_0._tf, "pop/LeaveUI")
 
-	slot1:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:gameStart()
-	end)
-
-	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
-
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnOk"), function ()
-		uv0:resumeGame()
-		uv0:onGameOver()
+	onButton(arg_83_0, findTF(arg_83_0.leaveUI, "ad/btnOk"), function()
+		arg_83_0:resumeGame()
+		arg_83_0:onGameOver()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
-		uv0:resumeGame()
+	onButton(arg_83_0, findTF(arg_83_0.leaveUI, "ad/btnCancel"), function()
+		arg_83_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
+	arg_83_0.pauseUI = findTF(arg_83_0._tf, "pop/pauseUI")
 
-	onButton(slot0, findTF(slot0.pauseUI, "ad/btnOk"), function ()
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_83_0, findTF(arg_83_0.pauseUI, "ad/btnOk"), function()
+		setActive(arg_83_0.pauseUI, false)
+		arg_83_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
+	arg_83_0.settlementUI = findTF(arg_83_0._tf, "pop/SettleMentUI")
 
-	function slot4()
-		setActive(uv0.settlementUI, false)
-		uv0:openMenuUI()
-	end
+	onButton(arg_83_0, findTF(arg_83_0.settlementUI, "ad/btnOver"), function()
+		setActive(arg_83_0.settlementUI, false)
+		arg_83_0:openMenuUI()
+	end, SFX_CANCEL)
 
-	onButton(slot0, findTF(slot0.settlementUI, "ad/btnOver"), slot4, SFX_CANCEL)
+	arg_83_0.selectedUI = findTF(arg_83_0._tf, "pop/selectedUI")
+	arg_83_0.leftSelectRole = {}
 
-	slot0.selectedUI = findTF(slot0._tf, "pop/selectedUI")
-	slot0.leftSelectRole = {}
+	for iter_83_0 = 1, #var_0_33 do
+		local var_83_0 = findTF(arg_83_0.selectedUI, "ad/leftRole/role" .. var_0_33[iter_83_0])
+		local var_83_1 = var_0_33[iter_83_0]
 
-	for slot4 = 1, #uv0 do
-		slot5 = findTF(slot0.selectedUI, "ad/leftRole/role" .. uv0[slot4])
-
-		onButton(slot0, slot5, function ()
-			if uv0 == uv1 then
-				uv0 = uv2
+		onButton(arg_83_0, var_83_0, function()
+			if var_0_32 == var_83_1 then
+				var_0_32 = var_0_31
 			end
 
-			uv2 = uv1
+			var_0_31 = var_83_1
 
-			uv3:updateSelectedUI()
+			arg_83_0:updateSelectedUI()
 		end, SFX_CONFIRM)
-		table.insert(slot0.leftSelectRole, {
-			id = uv0[slot4],
-			tf = slot5
+		table.insert(arg_83_0.leftSelectRole, {
+			id = var_83_1,
+			tf = var_83_0
 		})
 	end
 
-	function slot4()
-		setActive(uv0.selectedUI, false)
-	end
+	onButton(arg_83_0, findTF(arg_83_0.selectedUI, "close"), function()
+		setActive(arg_83_0.selectedUI, false)
+	end, SFX_CANCEL)
 
-	onButton(slot0, findTF(slot0.selectedUI, "close"), slot4, SFX_CANCEL)
+	arg_83_0.rightSelectRole = {}
 
-	slot0.rightSelectRole = {}
+	for iter_83_1 = 1, #var_0_34 do
+		local var_83_2 = findTF(arg_83_0.selectedUI, "ad/rightRole/role" .. var_0_34[iter_83_1])
+		local var_83_3 = var_0_34[iter_83_1]
 
-	for slot4 = 1, #uv3 do
-		slot5 = findTF(slot0.selectedUI, "ad/rightRole/role" .. uv3[slot4])
+		onButton(arg_83_0, var_83_2, function()
+			if var_0_31 == var_83_3 then
+				var_0_31 = var_0_32
 
-		onButton(slot0, slot5, function ()
-			if uv0 == uv1 then
-				uv0 = uv2
-
-				if not table.contains(uv3, uv0) then
-					for slot3, slot4 in ipairs(uv3) do
-						if slot4 ~= uv1 then
-							uv0 = slot4
+				if not table.contains(var_0_33, var_0_31) then
+					for iter_92_0, iter_92_1 in ipairs(var_0_33) do
+						if iter_92_1 ~= var_83_3 then
+							var_0_31 = iter_92_1
 						end
 					end
 				end
 			end
 
-			uv2 = uv1
+			var_0_32 = var_83_3
 
-			uv4:updateSelectedUI()
+			arg_83_0:updateSelectedUI()
 		end, SFX_CONFIRM)
-		table.insert(slot0.rightSelectRole, {
-			id = uv3[slot4],
-			tf = slot5
+		table.insert(arg_83_0.rightSelectRole, {
+			id = var_83_3,
+			tf = var_83_2
 		})
 	end
 
-	onButton(slot0, findTF(slot0.selectedUI, "ad/btnOk"), function ()
-		setActive(uv0.selectedUI, false)
-		setActive(uv0.menuUI, false)
-		uv0:readyStart()
+	onButton(arg_83_0, findTF(arg_83_0.selectedUI, "ad/btnOk"), function()
+		setActive(arg_83_0.selectedUI, false)
+		setActive(arg_83_0.menuUI, false)
+		arg_83_0:readyStart()
 	end, SFX_CONFIRM)
-	setActive(slot0.selectedUI, false)
+	setActive(arg_83_0.selectedUI, false)
 
-	slot0.menuUI = findTF(slot0._tf, "pop/menuUI")
-	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_83_0.menuUI = findTF(arg_83_0._tf, "pop/menuUI")
+	arg_83_0.battleScrollRect = GetComponent(findTF(arg_83_0.menuUI, "battList"), typeof(ScrollRect))
+	arg_83_0.totalTimes = arg_83_0:getGameTotalTime()
 
-	scrollTo(slot0.battleScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
-	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
-			slot0 = 1
+	local var_83_4 = arg_83_0:getGameUsedTimes() - 4 < 0 and 0 or arg_83_0:getGameUsedTimes() - 4
+
+	scrollTo(arg_83_0.battleScrollRect, 0, 1 - var_83_4 / (arg_83_0.totalTimes - 4))
+	onButton(arg_83_0, findTF(arg_83_0.menuUI, "rightPanelBg/arrowUp"), function()
+		local var_94_0 = arg_83_0.battleScrollRect.normalizedPosition.y + 1 / (arg_83_0.totalTimes - 4)
+
+		if var_94_0 > 1 then
+			var_94_0 = 1
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_83_0.battleScrollRect, 0, var_94_0)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
-			slot0 = 0
+	onButton(arg_83_0, findTF(arg_83_0.menuUI, "rightPanelBg/arrowDown"), function()
+		local var_95_0 = arg_83_0.battleScrollRect.normalizedPosition.y - 1 / (arg_83_0.totalTimes - 4)
+
+		if var_95_0 < 0 then
+			var_95_0 = 0
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_83_0.battleScrollRect, 0, var_95_0)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnBack"), function ()
-		uv0:closeView()
+	onButton(arg_83_0, findTF(arg_83_0.menuUI, "btnBack"), function()
+		arg_83_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnRule"), function ()
+	onButton(arg_83_0, findTF(arg_83_0.menuUI, "btnRule"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.ssss_game_tip.tip
 		})
 	end, SFX_CONFIRM)
-	onButton(slot0, findTF(slot0.menuUI, "btnStart"), function ()
-		slot1 = uv0:getGameTimes() or 0
+	onButton(arg_83_0, findTF(arg_83_0.menuUI, "btnStart"), function()
+		local var_98_0 = arg_83_0:getGameUsedTimes() or 0
+		local var_98_1 = arg_83_0:getGameTimes() or 0
 
-		if (uv0:getGameUsedTimes() or 0) >= #uv1 and uv0.selectedUI then
-			uv0:updateSelectedUI()
-			setActive(uv0.selectedUI, true)
+		if var_98_0 >= #var_0_35 and arg_83_0.selectedUI then
+			arg_83_0:updateSelectedUI()
+			setActive(arg_83_0.selectedUI, true)
 		else
-			slot2 = nil
+			local var_98_2
+			local var_98_3 = var_98_0 == 0 and 1 or var_98_1 > 0 and var_98_0 + 1 or var_98_0
 
-			if (slot0 == 0 and 1 or slot1 > 0 and slot0 + 1 or slot0) > #uv1 then
-				slot2 = #uv1
+			if var_98_3 > #var_0_35 then
+				var_98_3 = #var_0_35
 			end
 
-			slot3 = uv1[slot2]
-			uv2 = slot3[1]
-			uv3 = slot3[2]
+			local var_98_4 = var_0_35[var_98_3]
 
-			setActive(uv0.menuUI, false)
-			uv0:readyStart()
+			var_0_31 = var_98_4[1]
+			var_0_32 = var_98_4[2]
+
+			setActive(arg_83_0.menuUI, false)
+			arg_83_0:readyStart()
 		end
 	end, SFX_CONFIRM)
 
-	slot2 = findTF(slot0.menuUI, "tplBattleItem")
-	slot0.battleItems = {}
-	slot0.dropItems = {}
+	local var_83_5 = findTF(arg_83_0.menuUI, "tplBattleItem")
 
-	for slot6 = 1, 7 do
-		slot7 = tf(instantiate(slot2))
-		slot7.name = "battleItem_" .. slot6
+	arg_83_0.battleItems = {}
+	arg_83_0.dropItems = {}
 
-		setParent(slot7, findTF(slot0.menuUI, "battList/Viewport/Content"))
-		GetSpriteFromAtlasAsync("ui/gridgameui_atlas", "battleDesc" .. slot6, function (slot0)
-			setImageSprite(findTF(uv0, "state_open/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_clear/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_current/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_closed/buttomDesc"), slot0, true)
+	for iter_83_2 = 1, 7 do
+		local var_83_6 = tf(instantiate(var_83_5))
+
+		var_83_6.name = "battleItem_" .. iter_83_2
+
+		setParent(var_83_6, findTF(arg_83_0.menuUI, "battList/Viewport/Content"))
+
+		local var_83_7 = iter_83_2
+
+		GetSpriteFromAtlasAsync("ui/gridgameui_atlas", "battleDesc" .. var_83_7, function(arg_99_0)
+			setImageSprite(findTF(var_83_6, "state_open/buttomDesc"), arg_99_0, true)
+			setImageSprite(findTF(var_83_6, "state_clear/buttomDesc"), arg_99_0, true)
+			setImageSprite(findTF(var_83_6, "state_current/buttomDesc"), arg_99_0, true)
+			setImageSprite(findTF(var_83_6, "state_closed/buttomDesc"), arg_99_0, true)
 		end)
-		setActive(slot7, true)
-		table.insert(slot0.battleItems, slot7)
+		setActive(var_83_6, true)
+		table.insert(arg_83_0.battleItems, var_83_6)
 	end
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	if not arg_83_0.handle then
+		arg_83_0.handle = UpdateBeat:CreateListener(arg_83_0.Update, arg_83_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_83_0.handle)
 end
 
-function slot0.initGameUI(slot0)
-	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
+function var_0_0.initGameUI(arg_100_0)
+	arg_100_0.gameUI = findTF(arg_100_0._tf, "ui/gameUI")
 
-	onButton(slot0, findTF(slot0.gameUI, "topRight/btnStop"), function ()
-		uv0:stopGame()
-		setActive(uv0.pauseUI, true)
+	onButton(arg_100_0, findTF(arg_100_0.gameUI, "topRight/btnStop"), function()
+		arg_100_0:stopGame()
+		setActive(arg_100_0.pauseUI, true)
 	end)
-	onButton(slot0, findTF(slot0.gameUI, "btnLeave"), function ()
-		uv0:stopGame()
-		setActive(uv0.leaveUI, true)
+	onButton(arg_100_0, findTF(arg_100_0.gameUI, "btnLeave"), function()
+		arg_100_0:stopGame()
+		setActive(arg_100_0.leaveUI, true)
 	end)
 
-	slot0.gameTimeS = findTF(slot0.gameUI, "top/time/s")
-	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
-	slot0.scoreAnimTf = findTF(slot0._tf, "sceneContainer/scene_front/scoreAnim")
-	slot0.scoreAnimTextTf = findTF(slot0._tf, "sceneContainer/scene_front/scoreAnim/text")
+	arg_100_0.gameTimeS = findTF(arg_100_0.gameUI, "top/time/s")
+	arg_100_0.scoreTf = findTF(arg_100_0.gameUI, "top/score")
+	arg_100_0.scoreAnimTf = findTF(arg_100_0._tf, "sceneContainer/scene_front/scoreAnim")
+	arg_100_0.scoreAnimTextTf = findTF(arg_100_0._tf, "sceneContainer/scene_front/scoreAnim/text")
 
-	setActive(slot0.scoreAnimTf, false)
+	setActive(arg_100_0.scoreAnimTf, false)
 end
 
-function slot0.initController(slot0)
-	slot0.boxController = uv0(findTF(slot0.gameUI, "box"), slot0)
-	slot0.specialController = uv1(findTF(slot0.gameUI, "specialPower"), findTF(slot0.gameUI, "successPower"), slot0)
-	slot0.bgController = uv2(findTF(slot0._tf, "sceneContainer"), slot0.gameUI, slot0)
-	slot0.roleController = uv3(findTF(slot0._tf, "sceneContainer/scene"), slot0)
+function var_0_0.initController(arg_103_0)
+	local var_103_0 = findTF(arg_103_0.gameUI, "box")
+
+	arg_103_0.boxController = var_0_54(var_103_0, arg_103_0)
+
+	local var_103_1 = findTF(arg_103_0.gameUI, "specialPower")
+	local var_103_2 = findTF(arg_103_0.gameUI, "successPower")
+
+	arg_103_0.specialController = var_0_56(var_103_1, var_103_2, arg_103_0)
+
+	local var_103_3 = findTF(arg_103_0._tf, "sceneContainer")
+
+	arg_103_0.bgController = var_0_57(var_103_3, arg_103_0.gameUI, arg_103_0)
+
+	local var_103_4 = findTF(arg_103_0._tf, "sceneContainer/scene")
+
+	arg_103_0.roleController = var_0_58(var_103_4, arg_103_0)
 end
 
-function slot0.Update(slot0)
-	slot0:AddDebugInput()
+function var_0_0.Update(arg_104_0)
+	arg_104_0:AddDebugInput()
 end
 
-function slot0.AddDebugInput(slot0)
-	if slot0.gameStop or slot0.settlementFlag then
+function var_0_0.AddDebugInput(arg_105_0)
+	if arg_105_0.gameStop or arg_105_0.settlementFlag then
 		return
 	end
 
 	if IsUnityEditor then
-		-- Nothing
+		-- block empty
 	end
 end
 
-function slot0.updateSelectedUI(slot0)
-	for slot4 = 1, #slot0.leftSelectRole do
-		if uv0 == slot0.leftSelectRole[slot4].id then
-			setActive(findTF(slot5.tf, "selected"), true)
-			setActive(findTF(slot5.tf, "unSelected"), false)
+function var_0_0.updateSelectedUI(arg_106_0)
+	for iter_106_0 = 1, #arg_106_0.leftSelectRole do
+		local var_106_0 = arg_106_0.leftSelectRole[iter_106_0]
+
+		if var_0_31 == var_106_0.id then
+			setActive(findTF(var_106_0.tf, "selected"), true)
+			setActive(findTF(var_106_0.tf, "unSelected"), false)
 		else
-			setActive(findTF(slot5.tf, "selected"), false)
-			setActive(findTF(slot5.tf, "unSelected"), true)
+			setActive(findTF(var_106_0.tf, "selected"), false)
+			setActive(findTF(var_106_0.tf, "unSelected"), true)
 		end
 	end
 
-	for slot4 = 1, #slot0.rightSelectRole do
-		if uv1 == slot0.rightSelectRole[slot4].id then
-			setActive(findTF(slot5.tf, "selected"), true)
-			setActive(findTF(slot5.tf, "unSelected"), false)
+	for iter_106_1 = 1, #arg_106_0.rightSelectRole do
+		local var_106_1 = arg_106_0.rightSelectRole[iter_106_1]
+
+		if var_0_32 == var_106_1.id then
+			setActive(findTF(var_106_1.tf, "selected"), true)
+			setActive(findTF(var_106_1.tf, "unSelected"), false)
 		else
-			setActive(findTF(slot5.tf, "selected"), false)
-			setActive(findTF(slot5.tf, "unSelected"), true)
+			setActive(findTF(var_106_1.tf, "selected"), false)
+			setActive(findTF(var_106_1.tf, "unSelected"), true)
 		end
 	end
 end
 
-function slot0.updateMenuUI(slot0)
-	if slot0:getGameUsedTimes() and slot1 >= 7 then
-		setActive(findTF(slot0.menuUI, "btnStart/free"), true)
+function var_0_0.updateMenuUI(arg_107_0)
+	local var_107_0 = arg_107_0:getGameUsedTimes()
+
+	if var_107_0 and var_107_0 >= 7 then
+		setActive(findTF(arg_107_0.menuUI, "btnStart/free"), true)
 	else
-		setActive(findTF(slot0.menuUI, "btnStart/free"), false)
+		setActive(findTF(arg_107_0.menuUI, "btnStart/free"), false)
 	end
 
-	slot2 = slot0:getGameTimes()
+	local var_107_1 = arg_107_0:getGameTimes()
 
-	for slot6 = 1, #slot0.battleItems do
-		setActive(findTF(slot0.battleItems[slot6], "state_open"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_closed"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_clear"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_current"), false)
+	for iter_107_0 = 1, #arg_107_0.battleItems do
+		setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_open"), false)
+		setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_closed"), false)
+		setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_clear"), false)
+		setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_current"), false)
 
-		if slot6 <= slot1 then
-			setActive(findTF(slot0.battleItems[slot6], "state_clear"), true)
-		elseif slot6 == slot1 + 1 and slot2 >= 1 then
-			setActive(findTF(slot0.battleItems[slot6], "state_current"), true)
-		elseif slot1 < slot6 and slot6 <= slot1 + slot2 then
-			setActive(findTF(slot0.battleItems[slot6], "state_open"), true)
+		if iter_107_0 <= var_107_0 then
+			setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_clear"), true)
+		elseif iter_107_0 == var_107_0 + 1 and var_107_1 >= 1 then
+			setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_current"), true)
+		elseif var_107_0 < iter_107_0 and iter_107_0 <= var_107_0 + var_107_1 then
+			setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_open"), true)
 		else
-			setActive(findTF(slot0.battleItems[slot6], "state_closed"), true)
+			setActive(findTF(arg_107_0.battleItems[iter_107_0], "state_closed"), true)
 		end
 	end
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_107_0.totalTimes = arg_107_0:getGameTotalTime()
 
-	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
-		slot4 = 1
+	local var_107_2 = 1 - (arg_107_0:getGameUsedTimes() - 3 < 0 and 0 or arg_107_0:getGameUsedTimes() - 3) / (arg_107_0.totalTimes - 4)
+
+	if var_107_2 > 1 then
+		var_107_2 = 1
 	end
 
-	scrollTo(slot0.battleScrollRect, 0, slot4)
-	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot2 > 0)
-	slot0:CheckGet()
+	scrollTo(arg_107_0.battleScrollRect, 0, var_107_2)
+	setActive(findTF(arg_107_0.menuUI, "btnStart/tip"), var_107_1 > 0)
+	arg_107_0:CheckGet()
 end
 
-function slot0.CheckGet(slot0)
-	setActive(findTF(slot0.menuUI, "got"), false)
+function var_0_0.CheckGet(arg_108_0)
+	setActive(findTF(arg_108_0.menuUI, "got"), false)
 
-	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
-		setActive(findTF(slot0.menuUI, "got"), true)
+	if arg_108_0:getUltimate() and arg_108_0:getUltimate() ~= 0 then
+		setActive(findTF(arg_108_0.menuUI, "got"), true)
 	end
 
-	if slot0:getUltimate() == 0 then
-		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
+	if arg_108_0:getUltimate() == 0 then
+		if arg_108_0:getGameTotalTime() > arg_108_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0:GetMGHubData().id,
+			hubid = arg_108_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(slot0.menuUI, "got"), true)
+		setActive(findTF(arg_108_0.menuUI, "got"), true)
 	end
 end
 
-function slot0.openMenuUI(slot0)
-	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), false)
-	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), false)
-	setActive(findTF(slot0._tf, "sceneContainer/scene"), false)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.menuUI, true)
-	setActive(slot0.selectedUI, false)
-	slot0:updateMenuUI()
+function var_0_0.openMenuUI(arg_109_0)
+	setActive(findTF(arg_109_0._tf, "sceneContainer/scene_front"), false)
+	setActive(findTF(arg_109_0._tf, "sceneContainer/scene_background"), false)
+	setActive(findTF(arg_109_0._tf, "sceneContainer/scene"), false)
+	setActive(arg_109_0.gameUI, false)
+	setActive(arg_109_0.menuUI, true)
+	setActive(arg_109_0.selectedUI, false)
+	arg_109_0:updateMenuUI()
 
-	if slot0.bgm ~= (slot0:getBGM() or (not pg.CriMgr.GetInstance():IsDefaultBGM() or pg.voice_bgm.NewMainScene.default_bgm) and pg.voice_bgm.NewMainScene.bgm) then
-		slot0.bgm = slot1
+	local var_109_0 = arg_109_0:getBGM()
 
-		pg.BgmMgr.GetInstance():Push(slot0.__cname, slot1)
+	if not var_109_0 then
+		if pg.CriMgr.GetInstance():IsDefaultBGM() then
+			var_109_0 = pg.voice_bgm.NewMainScene.default_bgm
+		else
+			var_109_0 = pg.voice_bgm.NewMainScene.bgm
+		end
+	end
+
+	if arg_109_0.bgm ~= var_109_0 then
+		arg_109_0.bgm = var_109_0
+
+		pg.BgmMgr.GetInstance():Push(arg_109_0.__cname, var_109_0)
 	end
 end
 
-function slot0.clearUI(slot0)
-	setActive(slot0.sceneTf, false)
-	setActive(slot0.settlementUI, false)
-	setActive(slot0.countUI, false)
-	setActive(slot0.menuUI, false)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.selectedUI, false)
+function var_0_0.clearUI(arg_110_0)
+	setActive(arg_110_0.sceneTf, false)
+	setActive(arg_110_0.settlementUI, false)
+	setActive(arg_110_0.countUI, false)
+	setActive(arg_110_0.menuUI, false)
+	setActive(arg_110_0.gameUI, false)
+	setActive(arg_110_0.selectedUI, false)
 end
 
-function slot0.readyStart(slot0)
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+function var_0_0.readyStart(arg_111_0)
+	setActive(arg_111_0.countUI, true)
+	arg_111_0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
 
-	if uv1 and slot0.bgm ~= uv1 then
-		slot0.bgm = uv1
+	if var_0_1 and arg_111_0.bgm ~= var_0_1 then
+		arg_111_0.bgm = var_0_1
 
-		pg.BgmMgr.GetInstance():Push(slot0.__cname, uv1)
+		pg.BgmMgr.GetInstance():Push(arg_111_0.__cname, var_0_1)
 	end
 end
 
-function slot0.gameStart(slot0)
-	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), true)
-	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), true)
-	setActive(findTF(slot0._tf, "sceneContainer/scene"), true)
-	setActive(slot0.scoreAnimTf, false)
-	setActive(slot0.gameUI, true)
+function var_0_0.gameStart(arg_112_0)
+	setActive(findTF(arg_112_0._tf, "sceneContainer/scene_front"), true)
+	setActive(findTF(arg_112_0._tf, "sceneContainer/scene_background"), true)
+	setActive(findTF(arg_112_0._tf, "sceneContainer/scene"), true)
+	setActive(arg_112_0.scoreAnimTf, false)
+	setActive(arg_112_0.gameUI, true)
 
-	slot0.gameStartFlag = true
-	slot0.scoreNum = 0
-	slot0.playerPosIndex = 2
-	slot0.gameStepTime = 0
-	slot0.gameTime = uv0
-	slot0.ignoreTime = false
+	arg_112_0.gameStartFlag = true
+	arg_112_0.scoreNum = 0
+	arg_112_0.playerPosIndex = 2
+	arg_112_0.gameStepTime = 0
+	arg_112_0.gameTime = var_0_5
+	arg_112_0.ignoreTime = false
 
-	slot0.boxController:start()
-	slot0.specialController:start()
-	slot0.bgController:start()
-	slot0.roleController:start()
-	slot0:updateGameUI()
-	slot0:timerStart()
+	arg_112_0.boxController:start()
+	arg_112_0.specialController:start()
+	arg_112_0.bgController:start()
+	arg_112_0.roleController:start()
+	arg_112_0:updateGameUI()
+	arg_112_0:timerStart()
 end
 
-function slot0.getGameTimes(slot0)
-	return slot0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_113_0)
+	return arg_113_0:GetMGHubData().count
 end
 
-function slot0.getGameUsedTimes(slot0)
-	return slot0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_114_0)
+	return arg_114_0:GetMGHubData().usedtime
 end
 
-function slot0.getUltimate(slot0)
-	return slot0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_115_0)
+	return arg_115_0:GetMGHubData().ultimate
 end
 
-function slot0.getGameTotalTime(slot0)
-	return slot0:GetMGHubData():getConfig("reward_need")
+function var_0_0.getGameTotalTime(arg_116_0)
+	return (arg_116_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function slot0.changeSpeed(slot0, slot1)
+function var_0_0.changeSpeed(arg_117_0, arg_117_1)
+	return
 end
 
-function slot0.onTimer(slot0)
-	slot0:gameStep()
+function var_0_0.onTimer(arg_118_0)
+	arg_118_0:gameStep()
 end
 
-function slot0.gameStep(slot0)
-	if not slot0.ignoreTime then
-		slot0.gameTime = slot0.gameTime - Time.deltaTime
+function var_0_0.gameStep(arg_119_0)
+	if not arg_119_0.ignoreTime then
+		arg_119_0.gameTime = arg_119_0.gameTime - Time.deltaTime
 
-		if slot0.gameTime < 0 then
-			slot0.gameTime = 0
+		if arg_119_0.gameTime < 0 then
+			arg_119_0.gameTime = 0
 		end
 
-		slot0.gameStepTime = slot0.gameStepTime + Time.deltaTime
+		arg_119_0.gameStepTime = arg_119_0.gameStepTime + Time.deltaTime
 	end
 
-	slot0.boxController:step()
-	slot0.specialController:step()
-	slot0.bgController:step()
-	slot0.roleController:step()
-	slot0:updateGameUI()
+	arg_119_0.boxController:step()
+	arg_119_0.specialController:step()
+	arg_119_0.bgController:step()
+	arg_119_0.roleController:step()
+	arg_119_0:updateGameUI()
 
-	if slot0.gameTime <= 0 then
-		slot0:onGameOver()
+	if arg_119_0.gameTime <= 0 then
+		arg_119_0:onGameOver()
 
 		return
 	end
 end
 
-function slot0.timerStart(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.timerStart(arg_120_0)
+	if not arg_120_0.timer.running then
+		arg_120_0.timer:Start()
 	end
 end
 
-function slot0.timerStop(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.timerStop(arg_121_0)
+	if arg_121_0.timer.running then
+		arg_121_0.timer:Stop()
 	end
 end
 
-function slot0.updateGameUI(slot0)
-	setText(slot0.scoreTf, slot0.scoreNum)
-	setText(slot0.gameTimeS, math.ceil(slot0.gameTime))
+function var_0_0.updateGameUI(arg_122_0)
+	setText(arg_122_0.scoreTf, arg_122_0.scoreNum)
+	setText(arg_122_0.gameTimeS, math.ceil(arg_122_0.gameTime))
 end
 
-function slot0.addScore(slot0, slot1)
-	setActive(slot0.scoreAnimTf, false)
-	setActive(slot0.scoreAnimTf, true)
-	setText(slot0.scoreAnimTextTf, "+" .. tostring(slot1))
+function var_0_0.addScore(arg_123_0, arg_123_1)
+	setActive(arg_123_0.scoreAnimTf, false)
+	setActive(arg_123_0.scoreAnimTf, true)
+	setText(arg_123_0.scoreAnimTextTf, "+" .. tostring(arg_123_1))
 
-	slot0.scoreNum = slot0.scoreNum + slot1
+	arg_123_0.scoreNum = arg_123_0.scoreNum + arg_123_1
 
-	if slot0.scoreNum < 0 then
-		slot0.scoreNum = 0
+	if arg_123_0.scoreNum < 0 then
+		arg_123_0.scoreNum = 0
 	end
 end
 
-function slot0.onGameOver(slot0)
-	if slot0.settlementFlag then
+function var_0_0.onGameOver(arg_124_0)
+	if arg_124_0.settlementFlag then
 		return
 	end
 
-	slot0:timerStop()
+	arg_124_0:timerStop()
 
-	slot0.settlementFlag = true
+	arg_124_0.settlementFlag = true
 
-	setActive(slot0.clickMask, true)
+	setActive(arg_124_0.clickMask, true)
 
-	if slot0.roleController then
-		slot0.roleController:clear()
+	if arg_124_0.roleController then
+		arg_124_0.roleController:clear()
 	end
 
-	if slot0.bgController then
-		slot0.bgController:clear()
+	if arg_124_0.bgController then
+		arg_124_0.bgController:clear()
 	end
 
-	LeanTween.delayedCall(go(slot0._tf), 0.1, System.Action(function ()
-		uv0.settlementFlag = false
-		uv0.gameStartFlag = false
+	LeanTween.delayedCall(go(arg_124_0._tf), 0.1, System.Action(function()
+		arg_124_0.settlementFlag = false
+		arg_124_0.gameStartFlag = false
 
-		setActive(uv0.clickMask, false)
-		uv0:showSettlement()
+		setActive(arg_124_0.clickMask, false)
+		arg_124_0:showSettlement()
 	end))
 end
 
-function slot0.showSettlement(slot0)
-	setActive(slot0.settlementUI, true)
-	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var_0_0.showSettlement(arg_126_0)
+	setActive(arg_126_0.settlementUI, true)
+	GetComponent(findTF(arg_126_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	slot3 = slot0.scoreNum
-	slot4 = slot0:GetMGData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0
+	local var_126_0 = arg_126_0:GetMGData():GetRuntimeData("elements")
+	local var_126_1 = arg_126_0.scoreNum
+	local var_126_2 = var_126_0 and #var_126_0 > 0 and var_126_0[1] or 0
 
-	setActive(findTF(slot0.settlementUI, "ad/new"), slot4 < slot3)
+	setActive(findTF(arg_126_0.settlementUI, "ad/new"), var_126_2 < var_126_1)
 
-	if slot4 <= slot3 then
-		slot0:StoreDataToServer({
-			slot3
+	if var_126_2 <= var_126_1 then
+		var_126_2 = var_126_1
+
+		arg_126_0:StoreDataToServer({
+			var_126_2
 		})
 	end
 
-	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
-	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
+	local var_126_3 = findTF(arg_126_0.settlementUI, "ad/highText")
+	local var_126_4 = findTF(arg_126_0.settlementUI, "ad/currentText")
 
-	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
-		slot0.sendSuccessFlag = true
+	setText(var_126_3, var_126_2)
+	setText(var_126_4, var_126_1)
 
-		slot0:SendSuccess(0)
+	if arg_126_0:getGameTimes() and arg_126_0:getGameTimes() > 0 then
+		arg_126_0.sendSuccessFlag = true
+
+		arg_126_0:SendSuccess(0)
 	end
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gameStop = false
+function var_0_0.resumeGame(arg_127_0)
+	arg_127_0.gameStop = false
 
-	setActive(slot0.leaveUI, false)
-	slot0:changeSpeed(1)
-	slot0:timerStart()
+	setActive(arg_127_0.leaveUI, false)
+	arg_127_0:changeSpeed(1)
+	arg_127_0:timerStart()
 end
 
-function slot0.stopGame(slot0)
-	slot0.gameStop = true
+function var_0_0.stopGame(arg_128_0)
+	arg_128_0.gameStop = true
 
-	slot0:timerStop()
-	slot0:changeSpeed(0)
+	arg_128_0:timerStop()
+	arg_128_0:changeSpeed(0)
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.gameStartFlag then
-		slot0:emit(uv0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_129_0)
+	if not arg_129_0.gameStartFlag then
+		arg_129_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if slot0.settlementFlag then
+		if arg_129_0.settlementFlag then
 			return
 		end
 
-		if isActive(slot0.pauseUI) then
-			setActive(slot0.pauseUI, false)
+		if isActive(arg_129_0.pauseUI) then
+			setActive(arg_129_0.pauseUI, false)
 		end
 
-		slot0:stopGame()
-		setActive(slot0.leaveUI, true)
+		arg_129_0:stopGame()
+		setActive(arg_129_0.leaveUI, true)
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.willExit(arg_130_0)
+	if arg_130_0.handle then
+		UpdateBeat:RemoveListener(arg_130_0.handle)
 	end
 
-	if slot0._tf and LeanTween.isTweening(go(slot0._tf)) then
-		LeanTween.cancel(go(slot0._tf))
+	if arg_130_0._tf and LeanTween.isTweening(go(arg_130_0._tf)) then
+		LeanTween.cancel(go(arg_130_0._tf))
 	end
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_130_0.timer and arg_130_0.timer.running then
+		arg_130_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	slot0.timer = nil
+	arg_130_0.timer = nil
 end
 
-return slot0
+return var_0_0

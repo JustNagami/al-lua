@@ -1,164 +1,175 @@
-slot0 = class("CustomDropdown", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("CustomDropdown", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "IndexDropdownUI"
 end
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
-	uv0.super.Ctor(slot0, slot1, slot2, slot3)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
+	var_0_0.super.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
-	slot0.tag = slot4
-	slot0.virtualBtn = slot5
-	slot0.virtualBtnTitle = findTF(slot0.virtualBtn, "Image")
-	slot0.virtualBtnDropdownSign = findTF(slot0.virtualBtn, "dropdown")
-	slot0.setting = slot0.contextData.customPanels[slot0.tag]
-	slot0.mode = slot0.setting.mode or CustomIndexLayer.Mode.OR
-	slot0.options = slot0.setting.options
-	slot0.names = slot0.setting.names
+	arg_2_0.tag = arg_2_4
+	arg_2_0.virtualBtn = arg_2_5
+	arg_2_0.virtualBtnTitle = findTF(arg_2_0.virtualBtn, "Image")
+	arg_2_0.virtualBtnDropdownSign = findTF(arg_2_0.virtualBtn, "dropdown")
+	arg_2_0.setting = arg_2_0.contextData.customPanels[arg_2_0.tag]
+	arg_2_0.mode = arg_2_0.setting.mode or CustomIndexLayer.Mode.OR
+	arg_2_0.options = arg_2_0.setting.options
+	arg_2_0.names = arg_2_0.setting.names
 
-	slot0:UpdateVirtualBtn()
+	arg_2_0:UpdateVirtualBtn()
 end
 
-function slot0.UpdateVirtualBtn(slot0)
-	slot0.contextData.indexDatas[slot0.tag] = slot0.contextData.indexDatas[slot0.tag] or slot0.options[1]
-	slot0.preIndex = table.indexof(slot0.options, slot0.contextData.indexDatas[slot0.tag])
+function var_0_0.UpdateVirtualBtn(arg_3_0)
+	arg_3_0.contextData.indexDatas[arg_3_0.tag] = arg_3_0.contextData.indexDatas[arg_3_0.tag] or arg_3_0.options[1]
+	arg_3_0.preIndex = table.indexof(arg_3_0.options, arg_3_0.contextData.indexDatas[arg_3_0.tag])
 
-	setText(slot0.virtualBtnTitle, i18n(slot0.names[slot0.preIndex]))
+	setText(arg_3_0.virtualBtnTitle, i18n(arg_3_0.names[arg_3_0.preIndex]))
 end
 
-function slot0.OnInit(slot0)
-	slot0.btnTpl = slot0:findTF("resource/tpl")
-	slot0.btnList = {}
-	slot0.greySprite = slot0:findTF("resource/grey"):GetComponent(typeof(Image)).sprite
-	slot0.yellowSprite = slot0:findTF("resource/yellow"):GetComponent(typeof(Image)).sprite
-	slot0.mainBtn = tf(instantiate(slot0.btnTpl))
-	slot0.mainTitle = slot0:findTF("Image", slot0.mainBtn)
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.btnTpl = arg_4_0:findTF("resource/tpl")
+	arg_4_0.btnList = {}
+	arg_4_0.greySprite = arg_4_0:findTF("resource/grey"):GetComponent(typeof(Image)).sprite
+	arg_4_0.yellowSprite = arg_4_0:findTF("resource/yellow"):GetComponent(typeof(Image)).sprite
+	arg_4_0.mainBtn = tf(instantiate(arg_4_0.btnTpl))
+	arg_4_0.mainTitle = arg_4_0:findTF("Image", arg_4_0.mainBtn)
 
-	setImageSprite(slot0.mainBtn, slot0.yellowSprite)
-	setParent(slot0.mainBtn, slot0._tf)
-	setActive(slot0.mainBtn, true)
+	setImageSprite(arg_4_0.mainBtn, arg_4_0.yellowSprite)
+	setParent(arg_4_0.mainBtn, arg_4_0._tf)
+	setActive(arg_4_0.mainBtn, true)
 
-	slot0:findTF("dropdown", slot0.mainBtn).localEulerAngles = Vector3.New(0, 0, 0)
+	arg_4_0:findTF("dropdown", arg_4_0.mainBtn).localEulerAngles = Vector3.New(0, 0, 0)
 
-	onButton(slot0, slot0.mainBtn, function ()
-		uv0:Hide()
-	end)
-	onButton(slot0, slot0:findTF("mask", slot0._tf), function ()
-		uv0:Hide()
+	onButton(arg_4_0, arg_4_0.mainBtn, function()
+		arg_4_0:Hide()
 	end)
 
-	slot0.attrs = slot0:findTF("Attrs", slot0._tf)
-	slot2 = GetComponent(slot0.attrs, typeof(GridLayoutGroup))
+	local var_4_0 = arg_4_0:findTF("mask", arg_4_0._tf)
 
-	if #slot0.options > 6 then
-		slot2.constraintCount = 2
+	onButton(arg_4_0, var_4_0, function()
+		arg_4_0:Hide()
+	end)
+
+	arg_4_0.attrs = arg_4_0:findTF("Attrs", arg_4_0._tf)
+
+	local var_4_1 = GetComponent(arg_4_0.attrs, typeof(GridLayoutGroup))
+
+	if #arg_4_0.options > 6 then
+		var_4_1.constraintCount = 2
 	else
-		slot2.constraintCount = 1
+		var_4_1.constraintCount = 1
 	end
 
-	for slot6 = 1, #slot0.options do
-		slot7 = slot0.options[slot6]
+	for iter_4_0 = 1, #arg_4_0.options do
+		local var_4_2 = arg_4_0.options[iter_4_0]
 
-		if slot6 ~= 1 then
-			slot8 = tf(instantiate(slot0.btnTpl))
-			go(slot8).name = i18n(slot0.names[slot6])
+		if iter_4_0 == 1 then
+			-- block empty
+		else
+			local var_4_3 = tf(instantiate(arg_4_0.btnTpl))
+			local var_4_4 = arg_4_0:findTF("Image", var_4_3)
 
-			setActive(slot8, true)
-			setActive(slot0:findTF("dropdown", slot8), false)
-			setText(slot0:findTF("Image", slot8), i18n(slot0.names[slot6]))
-			setParent(slot8, slot0.attrs)
-			onButton(slot0, slot8, function ()
-				uv0:UpdateData(uv1)
-				uv0:UpdateBtnState()
+			go(var_4_3).name = i18n(arg_4_0.names[iter_4_0])
+
+			setActive(var_4_3, true)
+			setActive(arg_4_0:findTF("dropdown", var_4_3), false)
+			setText(var_4_4, i18n(arg_4_0.names[iter_4_0]))
+			setParent(var_4_3, arg_4_0.attrs)
+			onButton(arg_4_0, var_4_3, function()
+				arg_4_0:UpdateData(iter_4_0)
+				arg_4_0:UpdateBtnState()
 			end, SFX_UI_TAG)
-			table.insert(slot0.btnList, slot8)
+			table.insert(arg_4_0.btnList, var_4_3)
 		end
 	end
 
-	slot0:SelectLast()
+	arg_4_0:SelectLast()
 end
 
-function slot0.SelectLast(slot0)
-	slot0:UpdateBtnState()
+function var_0_0.SelectLast(arg_8_0)
+	arg_8_0:UpdateBtnState()
 end
 
-function slot0.UpdateData(slot0, slot1)
-	slot3 = bit.band(slot0.contextData.indexDatas[slot0.tag], slot0.options[slot1]) > 0
+function var_0_0.UpdateData(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0.contextData.indexDatas[arg_9_0.tag]
+	local var_9_1 = bit.band(var_9_0, arg_9_0.options[arg_9_1]) > 0
 
-	if slot0.mode == CustomIndexLayer.Mode.AND then
-		if slot3 then
-			slot0.contextData.indexDatas[slot0.tag] = slot2 - slot0.options[slot1]
+	if arg_9_0.mode == CustomIndexLayer.Mode.AND then
+		if var_9_1 then
+			arg_9_0.contextData.indexDatas[arg_9_0.tag] = var_9_0 - arg_9_0.options[arg_9_1]
 		else
-			slot0.contextData.indexDatas[slot0.tag] = bit.bxor(slot2, slot0.options[slot1])
+			arg_9_0.contextData.indexDatas[arg_9_0.tag] = bit.bxor(var_9_0, arg_9_0.options[arg_9_1])
 		end
-	elseif slot0.mode == CustomIndexLayer.Mode.OR then
-		if slot2 ~= slot0.options[1] and slot3 then
-			slot0.contextData.indexDatas[slot0.tag] = slot2 - slot0.options[slot1]
+	elseif arg_9_0.mode == CustomIndexLayer.Mode.OR then
+		if var_9_0 ~= arg_9_0.options[1] and var_9_1 then
+			arg_9_0.contextData.indexDatas[arg_9_0.tag] = var_9_0 - arg_9_0.options[arg_9_1]
 		else
-			slot0.contextData.indexDatas[slot0.tag] = slot0.options[slot1]
+			arg_9_0.contextData.indexDatas[arg_9_0.tag] = arg_9_0.options[arg_9_1]
 		end
 
-		if slot0.contextData.indexDatas[slot0.tag] == 0 then
-			slot0.contextData.indexDatas[slot0.tag] = slot0.options[1]
+		if arg_9_0.contextData.indexDatas[arg_9_0.tag] == 0 then
+			arg_9_0.contextData.indexDatas[arg_9_0.tag] = arg_9_0.options[1]
 		end
 	end
 end
 
-function slot0.UpdateBtnState(slot0)
-	function slot1(slot0)
-		setText(uv0.mainTitle, i18n(uv0.names[slot0]))
-		setText(uv0.virtualBtnTitle, i18n(uv0.names[slot0]))
+function var_0_0.UpdateBtnState(arg_10_0)
+	local function var_10_0(arg_11_0)
+		setText(arg_10_0.mainTitle, i18n(arg_10_0.names[arg_11_0]))
+		setText(arg_10_0.virtualBtnTitle, i18n(arg_10_0.names[arg_11_0]))
 	end
 
-	if slot0.mode == CustomIndexLayer.Mode.AND then
-		if slot0.contextData.indexDatas[slot0.tag] == slot0.options[1] then
-			for slot5, slot6 in ipairs(slot0.btnList) do
-				setImageSprite(slot6, slot0.greySprite)
+	if arg_10_0.mode == CustomIndexLayer.Mode.AND then
+		if arg_10_0.contextData.indexDatas[arg_10_0.tag] == arg_10_0.options[1] then
+			for iter_10_0, iter_10_1 in ipairs(arg_10_0.btnList) do
+				setImageSprite(iter_10_1, arg_10_0.greySprite)
 			end
 		else
-			for slot5, slot6 in ipairs(slot0.btnList) do
-				setImageSprite(slot6, bit.band(slot0.contextData.indexDatas[slot0.tag], slot0.options[slot5 + 1]) > 0 and slot0.yellowSprite or slot0.greySprite)
-			end
-		end
+			for iter_10_2, iter_10_3 in ipairs(arg_10_0.btnList) do
+				local var_10_1 = bit.band(arg_10_0.contextData.indexDatas[arg_10_0.tag], arg_10_0.options[iter_10_2 + 1]) > 0
 
-		slot1(1)
-	elseif slot0.mode == CustomIndexLayer.Mode.OR then
-		slot2 = false
-
-		for slot6, slot7 in ipairs(slot0.btnList) do
-			slot8 = slot0.options[slot6 + 1] == slot0.contextData.indexDatas[slot0.tag]
-
-			setImageSprite(slot7, slot8 and slot0.yellowSprite or slot0.greySprite)
-
-			if slot8 then
-				slot2 = true
-
-				slot1(slot6 + 1)
+				setImageSprite(iter_10_3, var_10_1 and arg_10_0.yellowSprite or arg_10_0.greySprite)
 			end
 		end
 
-		if not slot2 then
-			slot1(1)
+		var_10_0(1)
+	elseif arg_10_0.mode == CustomIndexLayer.Mode.OR then
+		local var_10_2 = false
+
+		for iter_10_4, iter_10_5 in ipairs(arg_10_0.btnList) do
+			local var_10_3 = arg_10_0.options[iter_10_4 + 1] == arg_10_0.contextData.indexDatas[arg_10_0.tag]
+
+			setImageSprite(iter_10_5, var_10_3 and arg_10_0.yellowSprite or arg_10_0.greySprite)
+
+			if var_10_3 then
+				var_10_2 = true
+
+				var_10_0(iter_10_4 + 1)
+			end
+		end
+
+		if not var_10_2 then
+			var_10_0(1)
 		end
 	end
 end
 
-function slot0.Show(slot0, slot1)
-	slot0.attrs.localPosition = slot1
-	slot0.mainBtn.anchoredPosition = slot0.attrs.anchoredPosition
-	slot0.attrs.anchoredPosition = slot0.attrs.anchoredPosition + Vector2.New(0, -45)
+function var_0_0.Show(arg_12_0, arg_12_1)
+	arg_12_0.attrs.localPosition = arg_12_1
+	arg_12_0.mainBtn.anchoredPosition = arg_12_0.attrs.anchoredPosition
+	arg_12_0.attrs.anchoredPosition = arg_12_0.attrs.anchoredPosition + Vector2.New(0, -45)
 
-	setActive(slot0._tf, true)
-	setActive(slot0.virtualBtnDropdownSign, false)
+	setActive(arg_12_0._tf, true)
+	setActive(arg_12_0.virtualBtnDropdownSign, false)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	setActive(slot0.virtualBtnDropdownSign, true)
+function var_0_0.Hide(arg_13_0)
+	var_0_0.super.Hide(arg_13_0)
+	setActive(arg_13_0.virtualBtnDropdownSign, true)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.btnList = nil
+function var_0_0.OnDestroy(arg_14_0)
+	arg_14_0.btnList = nil
 end
 
-return slot0
+return var_0_0

@@ -1,37 +1,40 @@
-slot0 = class("ActivityBossPtData", import(".ActivityPtData"))
+﻿local var_0_0 = class("ActivityBossPtData", import(".ActivityPtData"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot2 = slot1:getDataConfig("link_id")
-	slot4 = getProxy(ActivityProxy):getActivityById(slot2):getConfig("config_id")
-	slot5 = pg.activity_event_worldboss[slot4]
+	local var_1_0 = arg_1_1:getDataConfig("link_id")
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0):getConfig("config_id")
+	local var_1_2 = pg.activity_event_worldboss[var_1_1]
 
-	assert(slot5, "miss activity_event_worldboss config, ID: " .. slot4)
+	assert(var_1_2, "miss activity_event_worldboss config, ID: " .. var_1_1)
 
-	slot0.linkID = slot2
-	slot0.progress_target = slot5.reward_pt
+	arg_1_0.linkID = var_1_0
+	arg_1_0.progress_target = var_1_2.reward_pt
 end
 
-function slot0.GetBossProgress(slot0)
-	slot1 = slot0:getTargetLevel()
-	slot3 = 0
+function var_0_0.GetBossProgress(arg_2_0)
+	local var_2_0 = arg_2_0:getTargetLevel()
+	local var_2_1 = getProxy(ActivityProxy):getActivityById(arg_2_0.linkID)
+	local var_2_2 = 0
 
-	if getProxy(ActivityProxy):getActivityById(slot0.linkID) and not slot2:isEnd() then
-		slot3 = slot2:GetBossHP() or 0
+	if var_2_1 and not var_2_1:isEnd() then
+		var_2_2 = var_2_1:GetBossHP() or 0
 	end
 
-	return slot3, slot0.progress_target[slot1]
+	return var_2_2, arg_2_0.progress_target[var_2_0]
 end
 
-function slot0.CanGetAward(slot0)
-	slot2, slot3 = slot0:GetBossProgress()
+function var_0_0.CanGetAward(arg_3_0)
+	local function var_3_0()
+		local var_4_0, var_4_1, var_4_2 = arg_3_0:GetResProgress()
 
-	return slot0:CanGetNextAward() and (function ()
-		slot0, slot1, slot2 = uv0:GetResProgress()
+		return var_4_2 >= 1
+	end
 
-		return slot2 >= 1
-	end)() and slot2 <= slot3
+	local var_3_1, var_3_2 = arg_3_0:GetBossProgress()
+
+	return arg_3_0:CanGetNextAward() and var_3_0() and var_3_1 <= var_3_2
 end
 
-return slot0
+return var_0_0

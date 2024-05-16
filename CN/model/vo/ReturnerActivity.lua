@@ -1,48 +1,52 @@
-slot0 = class("ReturnerActivity", import(".Activity"))
-slot0.TYPE_INVITER = 1
-slot0.TYPE_RETURNER = 2
+﻿local var_0_0 = class("ReturnerActivity", import(".Activity"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.TYPE_INVITER = 1
+var_0_0.TYPE_RETURNER = 2
 
-	slot0.roleType = slot0.data1
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0.roleType = arg_1_0.data1
 end
 
-function slot0.IsPush(slot0)
-	return slot0.data2_list[1] == 1
+function var_0_0.IsPush(arg_2_0)
+	return arg_2_0.data2_list[1] == 1
 end
 
-function slot0.IsInviter(slot0)
-	return slot0.roleType == uv0.TYPE_INVITER
+function var_0_0.IsInviter(arg_3_0)
+	return arg_3_0.roleType == var_0_0.TYPE_INVITER
 end
 
-function slot0.IsReturner(slot0)
-	return slot0.roleType == uv0.TYPE_RETURNER
+function var_0_0.IsReturner(arg_4_0)
+	return arg_4_0.roleType == var_0_0.TYPE_RETURNER
 end
 
-function slot0.ShouldAcceptTasks(slot0)
-	if slot0:IsInviter() then
-		return slot0:ShouldAcceptTasksIfInviter()
-	elseif slot0:IsReturner() then
-		return slot0:ShouldAcceptTasksIfReturner()
+function var_0_0.ShouldAcceptTasks(arg_5_0)
+	if arg_5_0:IsInviter() then
+		return arg_5_0:ShouldAcceptTasksIfInviter()
+	elseif arg_5_0:IsReturner() then
+		return arg_5_0:ShouldAcceptTasksIfReturner()
 	end
 end
 
-function slot0.ShouldAcceptTasksIfInviter(slot0)
-	if slot0:IsPush() then
-		slot2 = slot0:getDayIndex()
-		slot3 = getProxy(TaskProxy)
-		slot4 = 0
+function var_0_0.ShouldAcceptTasksIfInviter(arg_6_0)
+	if arg_6_0:IsPush() then
+		local var_6_0 = arg_6_0:getDataConfigTable("tasklist")
+		local var_6_1 = arg_6_0:getDayIndex()
+		local var_6_2 = getProxy(TaskProxy)
+		local var_6_3 = 0
 
-		for slot8 = #slot0:getDataConfigTable("tasklist"), 1, -1 do
-			if slot0:GetTask(slot1[slot8]) then
-				slot4 = slot8
+		for iter_6_0 = #var_6_0, 1, -1 do
+			if arg_6_0:GetTask(var_6_0[iter_6_0]) then
+				var_6_3 = iter_6_0
 
 				break
 			end
 		end
 
-		if (not slot0:GetTask(slot1[slot4]) or slot5:isReceive()) and slot4 < slot2 and (slot4 ~= #slot1 or not slot5 or not slot5:isReceive()) then
+		local var_6_4 = arg_6_0:GetTask(var_6_0[var_6_3])
+
+		if (not var_6_4 or var_6_4:isReceive()) and var_6_3 < var_6_1 and (var_6_3 ~= #var_6_0 or not var_6_4 or not var_6_4:isReceive()) then
 			return true
 		end
 	end
@@ -50,39 +54,48 @@ function slot0.ShouldAcceptTasksIfInviter(slot0)
 	return false
 end
 
-function slot0.GetTask(slot0, slot1)
-	return getProxy(TaskProxy):getTaskById(slot1) or slot2:getFinishTaskById(slot1)
+function var_0_0.GetTask(arg_7_0, arg_7_1)
+	local var_7_0 = getProxy(TaskProxy)
+
+	return var_7_0:getTaskById(arg_7_1) or var_7_0:getFinishTaskById(arg_7_1)
 end
 
-function slot0.ShouldAcceptTasksIfReturner(slot0)
-	slot1 = slot0.data4
+function var_0_0.ShouldAcceptTasksIfReturner(arg_8_0)
+	local var_8_0 = arg_8_0.data4
 
-	if slot0.data2 == 0 then
+	if arg_8_0.data2 == 0 then
 		return false
 	end
 
-	if slot1 == 0 then
+	if var_8_0 == 0 then
 		return true
 	end
 
-	slot3 = slot0:getDataConfigTable("task_list")
-	slot4 = getProxy(TaskProxy)
+	local var_8_1 = arg_8_0:getDataConfigTable("task_list")
+	local var_8_2 = getProxy(TaskProxy)
+	local var_8_3 = _.all(var_8_1[var_8_0], function(arg_9_0)
+		return var_8_2:getFinishTaskById(arg_9_0) ~= nil
+	end)
+	local var_8_4 = _.all(var_8_1[var_8_0], function(arg_10_0)
+		return var_8_2:getTaskById(arg_10_0) == nil and var_8_2:getFinishTaskById(arg_10_0) == nil
+	end)
+	local var_8_5 = var_8_0 == #var_8_1
 
-	return _.all(slot3[slot1], function (slot0)
-		return uv0:getTaskById(slot0) == nil and uv0:getFinishTaskById(slot0) == nil
-	end) or _.all(slot3[slot1], function (slot0)
-		return uv0:getFinishTaskById(slot0) ~= nil
-	end) and not (slot1 == #slot3) and (function ()
-		return uv1 < pg.TimeMgr.GetInstance():DiffDay(uv0:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	end)()
+	local function var_8_6()
+		local var_11_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+		return pg.TimeMgr.GetInstance():DiffDay(arg_8_0:getStartTime(), var_11_0) + 1 > var_8_0
+	end
+
+	return var_8_4 or var_8_3 and not var_8_5 and var_8_6()
 end
 
-function slot0.getDataConfigTable(slot0, slot1)
-	if slot0:IsInviter() then
-		return pg.activity_template_headhunting[slot0.id][slot1]
-	elseif slot0:IsReturner() then
-		return pg.activity_template_returnner[slot0.id][slot1]
+function var_0_0.getDataConfigTable(arg_12_0, arg_12_1)
+	if arg_12_0:IsInviter() then
+		return pg.activity_template_headhunting[arg_12_0.id][arg_12_1]
+	elseif arg_12_0:IsReturner() then
+		return pg.activity_template_returnner[arg_12_0.id][arg_12_1]
 	end
 end
 
-return slot0
+return var_0_0

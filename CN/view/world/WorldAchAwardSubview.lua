@@ -1,82 +1,83 @@
-slot0 = class("WorldAchAwardSubview", import("view.base.BaseSubView"))
-slot0.ShowDrop = "WorldAchAwardSubview.ShowDrop"
+﻿local var_0_0 = class("WorldAchAwardSubview", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.ShowDrop = "WorldAchAwardSubview.ShowDrop"
+
+function var_0_0.getUIName(arg_1_0)
 	return "WorldAchAwardSubview"
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_2_0)
+	return
 end
 
-function slot0.OnInit(slot0)
-	slot1 = slot0._tf
-	slot0.textTitle = slot1:Find("title/Text")
-	slot1 = slot0._tf
-	slot0.btnBG = slot1:Find("bg")
-	slot1 = slot0._tf
-	slot0.itemContent = slot1:Find("award_list/content")
-	slot3 = slot0.itemContent
-	slot0.itemList = UIItemList.New(slot0.itemContent, slot3:Find("item"))
-	slot1 = slot0.itemList
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.textTitle = arg_3_0._tf:Find("title/Text")
+	arg_3_0.btnBG = arg_3_0._tf:Find("bg")
+	arg_3_0.itemContent = arg_3_0._tf:Find("award_list/content")
+	arg_3_0.itemList = UIItemList.New(arg_3_0.itemContent, arg_3_0.itemContent:Find("item"))
 
-	slot1:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_3_0.itemList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		arg_4_1 = arg_4_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.awards[slot1]
-			slot4 = not uv0.nextStar or slot3.star < uv0.nextStar
-			slot5 = uv0.nextStar and slot3.star == uv0.nextStar
-			slot6 = uv0.nextStar and uv0.nextStar < slot3.star
-			slot7 = slot2:Find("award")
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_3_0.awards[arg_4_1]
+			local var_4_1 = not arg_3_0.nextStar or var_4_0.star < arg_3_0.nextStar
+			local var_4_2 = arg_3_0.nextStar and var_4_0.star == arg_3_0.nextStar
+			local var_4_3 = arg_3_0.nextStar and var_4_0.star > arg_3_0.nextStar
+			local var_4_4 = arg_4_2:Find("award")
 
-			setActive(slot7, true)
-			setActive(slot2:Find("lock_award"), false)
-			updateDrop(slot7, slot3.drop)
-			setGray(slot7:Find("icon_bg"), slot4 or slot6)
-			onButton(uv0, slot7, function ()
-				uv0:emit(uv1.ShowDrop, uv2.drop)
+			setActive(var_4_4, true)
+			setActive(arg_4_2:Find("lock_award"), false)
+			updateDrop(var_4_4, var_4_0.drop)
+			setGray(var_4_4:Find("icon_bg"), var_4_1 or var_4_3)
+			onButton(arg_3_0, var_4_4, function()
+				arg_3_0:emit(var_0_0.ShowDrop, var_4_0.drop)
 			end, SFX_PANEL)
-			setText(slot2:Find("star/count"), slot3.star)
-			setActive(slot2:Find("star/bg_on"), slot5)
-			setActive(slot2:Find("star/bg_off"), not slot5)
-			setActive(slot2:Find("star/lock"), slot6)
-			setActive(slot2:Find("ready_mark"), slot5 and not slot4 and not uv0.hasAward)
-			setActive(slot2:Find("get_mark"), slot5 and uv0.hasAward)
-			setActive(slot2:Find("got_mark"), slot4)
-			setActive(slot2:Find("lock_mark"), slot6)
-			setActive(slot2:Find("mark/on"), slot4)
-			setActive(slot2:Find("mark/off"), not slot4)
+			setText(arg_4_2:Find("star/count"), var_4_0.star)
+			setActive(arg_4_2:Find("star/bg_on"), var_4_2)
+			setActive(arg_4_2:Find("star/bg_off"), not var_4_2)
+			setActive(arg_4_2:Find("star/lock"), var_4_3)
+			setActive(arg_4_2:Find("ready_mark"), var_4_2 and not var_4_1 and not arg_3_0.hasAward)
+			setActive(arg_4_2:Find("get_mark"), var_4_2 and arg_3_0.hasAward)
+			setActive(arg_4_2:Find("got_mark"), var_4_1)
+			setActive(arg_4_2:Find("lock_mark"), var_4_3)
+			setActive(arg_4_2:Find("mark/on"), var_4_1)
+			setActive(arg_4_2:Find("mark/off"), not var_4_1)
 		end
 	end)
-	onButton(slot0, slot0.btnBG, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.btnBG, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_7_0)
+	return
 end
 
-function slot0.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	setActive(slot0._tf, true)
+function var_0_0.Show(arg_8_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf)
+	setActive(arg_8_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_9_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf, arg_9_0._parentTf)
+	setActive(arg_9_0._tf, false)
 end
 
-function slot0.isShowing(slot0)
-	return slot0._tf and isActive(slot0._tf)
+function var_0_0.isShowing(arg_10_0)
+	return arg_10_0._tf and isActive(arg_10_0._tf)
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.awards = slot1:GetAchievementAwards()
-	slot0.hasAward, slot3 = nowWorld():AnyUnachievedAchievement(slot1)
-	slot0.nextStar = slot3 and slot3.star or nil
+function var_0_0.Setup(arg_11_0, arg_11_1)
+	arg_11_0.awards = arg_11_1:GetAchievementAwards()
 
-	slot0.itemList:align(#slot0.awards)
-	setText(slot0._tf:Find("title/Text"), slot1:GetBaseMap():GetName())
+	local var_11_0, var_11_1 = nowWorld():AnyUnachievedAchievement(arg_11_1)
+
+	arg_11_0.hasAward = var_11_0
+	arg_11_0.nextStar = var_11_1 and var_11_1.star or nil
+
+	arg_11_0.itemList:align(#arg_11_0.awards)
+	setText(arg_11_0._tf:Find("title/Text"), arg_11_1:GetBaseMap():GetName())
 end
 
-return slot0
+return var_0_0

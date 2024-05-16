@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "GONGMINGDEPASSION9",
 	mode = 2,
 	fadeOut = 1.5,
@@ -280,7 +280,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "但是也没什么关系哦，原原本本呈现自己的最鲜活的状态，或许才是Live中最重要的~",
+			say = "但是也没什么关系哦，原原本本呈现自己最鲜活的状态，或许才是Live中最重要的~",
 			painting = {
 				alpha = 0.3,
 				time = 1

@@ -1,26 +1,26 @@
-return {
+﻿return {
 	SORT_TAG = {
 		{
 			spr = "sort_login",
 			tag = i18n("word_default"),
-			func = function (slot0, slot1)
-				table.sort(slot0, function (slot0, slot1)
-					if slot0.unreadCount == slot1.unreadCount then
-						if slot0.online == slot1.online then
-							if slot0.preOnLineTime == slot1.preOnLineTime then
-								return slot0.id < slot1.id
-							elseif uv0 then
-								return slot0.preOnLineTime < slot1.preOnLineTime
+			func = function(arg_1_0, arg_1_1)
+				table.sort(arg_1_0, function(arg_2_0, arg_2_1)
+					if arg_2_0.unreadCount == arg_2_1.unreadCount then
+						if arg_2_0.online == arg_2_1.online then
+							if arg_2_0.preOnLineTime == arg_2_1.preOnLineTime then
+								return arg_2_0.id < arg_2_1.id
+							elseif arg_1_1 then
+								return arg_2_0.preOnLineTime < arg_2_1.preOnLineTime
 							else
-								return slot1.preOnLineTime < slot0.preOnLineTime
+								return arg_2_0.preOnLineTime > arg_2_1.preOnLineTime
 							end
-						elseif uv0 then
-							return slot0.online < slot1.online
+						elseif arg_1_1 then
+							return arg_2_0.online < arg_2_1.online
 						else
-							return slot1.online < slot0.online
+							return arg_2_0.online > arg_2_1.online
 						end
 					else
-						return slot1.unreadCount < slot0.unreadCount
+						return arg_2_0.unreadCount > arg_2_1.unreadCount
 					end
 				end)
 			end
@@ -28,22 +28,22 @@ return {
 		{
 			spr = "sort_star",
 			tag = i18n("word_star"),
-			func = function (slot0, slot1)
-				slot2 = pg.ship_data_statistics
+			func = function(arg_3_0, arg_3_1)
+				local var_3_0 = pg.ship_data_statistics
 
-				table.sort(slot0, function (slot0, slot1)
-					if uv0[slot0.icon].star == uv0[slot1.icon].star then
-						if slot0.level == slot1.level then
-							return slot0.id < slot1.id
-						elseif uv1 then
-							return slot0.level < slot1.level
+				table.sort(arg_3_0, function(arg_4_0, arg_4_1)
+					if var_3_0[arg_4_0.icon].star == var_3_0[arg_4_1.icon].star then
+						if arg_4_0.level == arg_4_1.level then
+							return arg_4_0.id < arg_4_1.id
+						elseif arg_3_1 then
+							return arg_4_0.level < arg_4_1.level
 						else
-							return slot1.level < slot0.level
+							return arg_4_0.level > arg_4_1.level
 						end
-					elseif uv1 then
-						return uv0[slot0.icon].star < uv0[slot1.icon].star
+					elseif arg_3_1 then
+						return var_3_0[arg_4_0.icon].star < var_3_0[arg_4_1.icon].star
 					else
-						return uv0[slot1.icon].star < uv0[slot0.icon].star
+						return var_3_0[arg_4_0.icon].star > var_3_0[arg_4_1.icon].star
 					end
 				end)
 			end
@@ -51,14 +51,14 @@ return {
 		{
 			spr = "sort_lv",
 			tag = i18n("word_level"),
-			func = function (slot0, slot1)
-				table.sort(slot0, function (slot0, slot1)
-					if slot0.level == slot1.level then
-						return slot0.id < slot1.id
-					elseif uv0 then
-						return slot0.level < slot1.level
+			func = function(arg_5_0, arg_5_1)
+				table.sort(arg_5_0, function(arg_6_0, arg_6_1)
+					if arg_6_0.level == arg_6_1.level then
+						return arg_6_0.id < arg_6_1.id
+					elseif arg_5_1 then
+						return arg_6_0.level < arg_6_1.level
 					else
-						return slot1.level < slot0.level
+						return arg_6_0.level > arg_6_1.level
 					end
 				end)
 			end

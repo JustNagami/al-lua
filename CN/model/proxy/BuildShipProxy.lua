@@ -1,336 +1,348 @@
-slot0 = class("BuildShipProxy", import(".NetProxy"))
-slot0.ADDED = "BuildShipProxy ADDED"
-slot0.TIMEUP = "BuildShipProxy TIMEUP"
-slot0.UPDATED = "BuildShipProxy UPDATED"
-slot0.REMOVED = "BuildShipProxy REMOVED"
-slot0.DRAW_COUNT_UPDATE = "BuildShipProxy DRAW_COUNT_UPDATE"
-slot0.REGULAR_BUILD_POOL_COUNT_UPDATE = "BuildShipProxy.REGULAR_BUILD_POOL_COUNT_UPDATE"
+﻿local var_0_0 = class("BuildShipProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0:on(12024, function (slot0)
-		uv0.data = {}
-		uv0.workCount = slot0.worklist_count
-		uv0.drawCount1 = slot0.draw_count_1
-		uv0.drawCount10 = slot0.draw_count_10
+var_0_0.ADDED = "BuildShipProxy ADDED"
+var_0_0.TIMEUP = "BuildShipProxy TIMEUP"
+var_0_0.UPDATED = "BuildShipProxy UPDATED"
+var_0_0.REMOVED = "BuildShipProxy REMOVED"
+var_0_0.DRAW_COUNT_UPDATE = "BuildShipProxy DRAW_COUNT_UPDATE"
+var_0_0.REGULAR_BUILD_POOL_COUNT_UPDATE = "BuildShipProxy.REGULAR_BUILD_POOL_COUNT_UPDATE"
 
-		for slot4, slot5 in ipairs(slot0.worklist_list) do
-			slot6 = BuildShip.New(slot5)
+function var_0_0.register(arg_1_0)
+	arg_1_0:on(12024, function(arg_2_0)
+		arg_1_0.data = {}
+		arg_1_0.workCount = arg_2_0.worklist_count
+		arg_1_0.drawCount1 = arg_2_0.draw_count_1
+		arg_1_0.drawCount10 = arg_2_0.draw_count_10
 
-			slot6:setId(slot4)
-			table.insert(uv0.data, slot6)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.worklist_list) do
+			local var_2_0 = BuildShip.New(iter_2_1)
+
+			var_2_0:setId(iter_2_0)
+			table.insert(arg_1_0.data, var_2_0)
 		end
 
-		uv0:setBuildShipState()
+		arg_1_0:setBuildShipState()
 
-		uv0.regularExchangeCount = slot0.exchange_count
+		arg_1_0.regularExchangeCount = arg_2_0.exchange_count
 	end)
 end
 
-function slot0.GetPools(slot0)
-	slot1 = {}
-	slot6 = {
+function var_0_0.GetPools(arg_3_0)
+	local var_3_0 = {}
+	local var_3_1 = getProxy(ActivityProxy)
+
+	for iter_3_0, iter_3_1 in ipairs(var_3_1:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
-		slot7
-	}
-	slot7 = ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+		ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+	})) do
+		local var_3_2 = {}
 
-	for slot6, slot7 in ipairs(getProxy(ActivityProxy):getActivitiesByTypes(slot6)) do
-		slot8 = {}
-
-		table.insert(slot8, function (slot0)
-			if uv0 and not uv0:isEnd() then
-				slot0()
+		table.insert(var_3_2, function(arg_4_0)
+			if iter_3_1 and not iter_3_1:isEnd() then
+				arg_4_0()
 			end
 		end)
-		table.insert(slot8, function (slot0)
-			slot1 = pg.ship_data_create_exchange[uv0.id] or {}
+		table.insert(var_3_2, function(arg_5_0)
+			local var_5_0 = pg.ship_data_create_exchange[iter_3_1.id] or {}
 
-			if uv0:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD or uv0.data2 < (slot1.exchange_available_times or 0) then
-				slot0()
+			if iter_3_1:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD or iter_3_1.data2 < (var_5_0.exchange_available_times or 0) then
+				arg_5_0()
 			end
 		end)
-		seriesAsync(slot8, function ()
-			table.insert(uv0, BuildShipActivityPool.New({
-				activityId = uv1.id,
-				id = uv1:getConfig("config_id"),
+		seriesAsync(var_3_2, function()
+			table.insert(var_3_0, BuildShipActivityPool.New({
+				activityId = iter_3_1.id,
+				id = iter_3_1:getConfig("config_id"),
 				mark = BuildShipPool.BUILD_POOL_MARK_NEW
 			}))
 		end)
 	end
 
-	table.insert(slot1, BuildShipPool.New({
+	table.insert(var_3_0, BuildShipPool.New({
 		id = 2,
 		mark = BuildShipPool.BUILD_POOL_MARK_LIGHT
 	}))
-	table.insert(slot1, BuildShipPool.New({
+	table.insert(var_3_0, BuildShipPool.New({
 		id = 3,
 		mark = BuildShipPool.BUILD_POOL_MARK_HEAVY
 	}))
-	table.insert(slot1, BuildShipPool.New({
+	table.insert(var_3_0, BuildShipPool.New({
 		id = 1,
 		mark = BuildShipPool.BUILD_POOL_MARK_SPECIAL
 	}))
 
-	return slot1
+	return var_3_0
 end
 
-function slot0.GetPoolsWithoutNewServer(slot0)
-	return _.select(slot0:GetPools(), function (slot0)
-		return not (slot0:IsActivity() and slot0:IsNewServerBuild())
+function var_0_0.GetPoolsWithoutNewServer(arg_7_0)
+	local var_7_0 = arg_7_0:GetPools()
+
+	return _.select(var_7_0, function(arg_8_0)
+		return not (arg_8_0:IsActivity() and arg_8_0:IsNewServerBuild())
 	end)
 end
 
-function slot0.setBuildShipState(slot0)
-	slot0:removeBuildTimer()
+function var_0_0.setBuildShipState(arg_9_0)
+	arg_9_0:removeBuildTimer()
 
-	slot0.buildIndex = 0
-	slot0.buildTimers = {}
-	slot1 = 0
-	slot2 = ipairs
-	slot3 = slot0.data or {}
+	arg_9_0.buildIndex = 0
+	arg_9_0.buildTimers = {}
 
-	for slot5, slot6 in slot2(slot3) do
-		if slot1 == slot0:getMaxWorkCount() then
+	local var_9_0 = 0
+
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.data or {}) do
+		if var_9_0 == arg_9_0:getMaxWorkCount() then
 			break
 		end
 
-		if not slot6:isFinish() then
-			slot0.buildIndex = slot5
-			slot1 = slot1 + 1
+		if not iter_9_1:isFinish() then
+			arg_9_0.buildIndex = iter_9_0
+			var_9_0 = var_9_0 + 1
 
-			slot0:addBuildTimer()
+			arg_9_0:addBuildTimer()
 		end
 
-		slot6.state = slot6:isFinish() and BuildShip.FINISH or BuildShip.ACTIVE
+		iter_9_1.state = iter_9_1:isFinish() and BuildShip.FINISH or BuildShip.ACTIVE
 	end
 end
 
-function slot0.getNextBuildShip(slot0)
-	slot1 = nil
+function var_0_0.getNextBuildShip(arg_10_0)
+	local var_10_0
+	local var_10_1 = arg_10_0.data[arg_10_0.buildIndex + 1]
 
-	if slot0.data[slot0.buildIndex + 1] and slot2.state == BuildShip.INACTIVE then
-		slot0.buildIndex = slot0.buildIndex + 1
-		slot1 = slot2
+	if var_10_1 and var_10_1.state == BuildShip.INACTIVE then
+		arg_10_0.buildIndex = arg_10_0.buildIndex + 1
+		var_10_0 = var_10_1
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.activeNextBuild(slot0)
-	if slot0:getNextBuildShip() then
-		slot1:active()
-		slot0:updateBuildShip(slot0.buildIndex, slot1)
-		slot0:addBuildTimer()
+function var_0_0.activeNextBuild(arg_11_0)
+	local var_11_0 = arg_11_0:getNextBuildShip()
+
+	if var_11_0 then
+		var_11_0:active()
+		arg_11_0:updateBuildShip(arg_11_0.buildIndex, var_11_0)
+		arg_11_0:addBuildTimer()
 	end
 end
 
-function slot0.addBuildTimer(slot0)
-	if slot0.buildTimers[slot0.buildIndex] then
-		slot0.buildTimers[slot1]:Stop()
+function var_0_0.addBuildTimer(arg_12_0)
+	local var_12_0 = arg_12_0.buildIndex
 
-		slot0.buildTimers[slot1] = nil
+	if arg_12_0.buildTimers[var_12_0] then
+		arg_12_0.buildTimers[var_12_0]:Stop()
+
+		arg_12_0.buildTimers[var_12_0] = nil
 	end
 
-	function slot2()
-		uv0:activeNextBuild()
-		uv0.data[uv1]:finish()
-		uv0.data[uv1]:display("- build finish -")
-		uv0:updateBuildShip(uv1, uv0.data[uv1])
+	local function var_12_1()
+		arg_12_0:activeNextBuild()
+		arg_12_0.data[var_12_0]:finish()
+		arg_12_0.data[var_12_0]:display("- build finish -")
+		arg_12_0:updateBuildShip(var_12_0, arg_12_0.data[var_12_0])
 	end
 
-	if slot0.data[slot1].finishTime - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
-		slot0.buildTimers[slot1] = Timer.New(function ()
-			uv0.buildTimers[uv1]:Stop()
+	local var_12_2 = arg_12_0.data[var_12_0].finishTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-			uv0.buildTimers[uv1] = nil
+	if var_12_2 > 0 then
+		arg_12_0.buildTimers[var_12_0] = Timer.New(function()
+			arg_12_0.buildTimers[var_12_0]:Stop()
 
-			uv2()
-		end, slot3, 1)
+			arg_12_0.buildTimers[var_12_0] = nil
 
-		slot0.buildTimers[slot1]:Start()
+			var_12_1()
+		end, var_12_2, 1)
+
+		arg_12_0.buildTimers[var_12_0]:Start()
 	else
-		slot2()
+		var_12_1()
 	end
 end
 
-function slot0.getMaxWorkCount(slot0)
-	return slot0.workCount
+function var_0_0.getMaxWorkCount(arg_15_0)
+	return arg_15_0.workCount
 end
 
-function slot0.getBuildShipCount(slot0)
-	return table.getCount(slot0.data)
+function var_0_0.getBuildShipCount(arg_16_0)
+	return table.getCount(arg_16_0.data)
 end
 
-function slot0.removeBuildTimer(slot0)
-	slot1 = pairs
-	slot2 = slot0.buildTimers or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		slot5:Stop()
+function var_0_0.removeBuildTimer(arg_17_0)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.buildTimers or {}) do
+		iter_17_1:Stop()
 	end
 
-	slot0.buildTimers = nil
+	arg_17_0.buildTimers = nil
 end
 
-function slot0.remove(slot0)
-	slot0:removeBuildTimer()
+function var_0_0.remove(arg_18_0)
+	arg_18_0:removeBuildTimer()
 
-	if slot0.exchangeItemTimer then
-		slot0.exchangeItemTimer:Stop()
+	if arg_18_0.exchangeItemTimer then
+		arg_18_0.exchangeItemTimer:Stop()
 
-		slot0.exchangeItemTimer = nil
+		arg_18_0.exchangeItemTimer = nil
 	end
 end
 
-function slot0.getBuildShip(slot0, slot1)
-	return Clone(slot0.data[slot1])
+function var_0_0.getBuildShip(arg_19_0, arg_19_1)
+	return Clone(arg_19_0.data[arg_19_1])
 end
 
-function slot0.getFinishCount(slot0)
-	slot1 = 0
+function var_0_0.getFinishCount(arg_20_0)
+	local var_20_0 = 0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6.state == BuildShip.FINISH then
-			slot1 = slot1 + 1
+	for iter_20_0, iter_20_1 in pairs(arg_20_0.data) do
+		if iter_20_1.state == BuildShip.FINISH then
+			var_20_0 = var_20_0 + 1
 		end
 	end
 
-	return slot1
+	return var_20_0
 end
 
-function slot0.getNeedFinishCount(slot0)
-	return table.getCount(slot0.data) - slot0:getFinishCount()
+function var_0_0.getNeedFinishCount(arg_21_0)
+	return table.getCount(arg_21_0.data) - arg_21_0:getFinishCount()
 end
 
-function slot0.getActiveCount(slot0)
-	slot1 = 0
+function var_0_0.getActiveCount(arg_22_0)
+	local var_22_0 = 0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6.state == BuildShip.ACTIVE then
-			slot1 = slot1 + 1
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.data) do
+		if iter_22_1.state == BuildShip.ACTIVE then
+			var_22_0 = var_22_0 + 1
 		end
 	end
 
-	return slot1
+	return var_22_0
 end
 
-function slot0.getFinishedIndex(slot0)
-	for slot4, slot5 in ipairs(slot0.data) do
-		if slot5.state == BuildShip.FINISH then
-			return slot4
+function var_0_0.getFinishedIndex(arg_23_0)
+	for iter_23_0, iter_23_1 in ipairs(arg_23_0.data) do
+		if iter_23_1.state == BuildShip.FINISH then
+			return iter_23_0
 		end
 	end
 end
 
-function slot0.canBuildShip(slot0, slot1)
-	slot2 = slot0:getActiveCount()
+function var_0_0.canBuildShip(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0:getActiveCount()
+	local var_24_1 = pg.ship_data_create_material[arg_24_1]
+	local var_24_2 = getProxy(BagProxy):getItemById(var_24_1.use_item)
 
-	if getProxy(BagProxy):getItemById(pg.ship_data_create_material[slot1].use_item) and slot3.number_1 <= slot5.count then
-		return slot3.use_gold <= getProxy(PlayerProxy):getData().gold and slot2 == 0
+	if var_24_2 and var_24_2.count >= var_24_1.number_1 then
+		return getProxy(PlayerProxy):getData().gold >= var_24_1.use_gold and var_24_0 == 0
 	end
 end
 
-function slot0.getActiveOrFinishedCount(slot0)
-	slot1 = 0
+function var_0_0.getActiveOrFinishedCount(arg_25_0)
+	local var_25_0 = 0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6.state == BuildShip.ACTIVE or slot6.state == BuildShip.FINISH then
-			slot1 = slot1 + 1
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.data) do
+		if iter_25_1.state == BuildShip.ACTIVE or iter_25_1.state == BuildShip.FINISH then
+			var_25_0 = var_25_0 + 1
 		end
 	end
 
-	return slot1
+	return var_25_0
 end
 
-function slot0.getDrawCount(slot0)
+function var_0_0.getDrawCount(arg_26_0)
 	return {
-		drawCount1 = slot0.drawCount1,
-		drawCount10 = slot0.drawCount10
+		drawCount1 = arg_26_0.drawCount1,
+		drawCount10 = arg_26_0.drawCount10
 	}
 end
 
-function slot0.increaseDrawCount(slot0, slot1)
-	if slot1 == 1 then
-		slot0.drawCount1 = slot0.drawCount1 + 1
-	elseif slot1 == 10 then
-		slot0.drawCount10 = slot0.drawCount10 + 1
+function var_0_0.increaseDrawCount(arg_27_0, arg_27_1)
+	if arg_27_1 == 1 then
+		arg_27_0.drawCount1 = arg_27_0.drawCount1 + 1
+	elseif arg_27_1 == 10 then
+		arg_27_0.drawCount10 = arg_27_0.drawCount10 + 1
 	end
 
-	slot0:sendNotification(uv0.DRAW_COUNT_UPDATE, slot0:getDrawCount())
+	arg_27_0:sendNotification(var_0_0.DRAW_COUNT_UPDATE, arg_27_0:getDrawCount())
 end
 
-function slot0.addBuildShip(slot0, slot1)
-	assert(isa(slot1, BuildShip), "should be an instance of BuildShip")
-	table.insert(slot0.data, slot1)
+function var_0_0.addBuildShip(arg_28_0, arg_28_1)
+	assert(isa(arg_28_1, BuildShip), "should be an instance of BuildShip")
+	table.insert(arg_28_0.data, arg_28_1)
 
-	if slot0:getActiveCount() < slot0:getMaxWorkCount() then
-		slot1:setState(BuildShip.ACTIVE)
+	local var_28_0 = arg_28_0:getActiveCount()
+	local var_28_1 = arg_28_0:getMaxWorkCount()
 
-		slot0.buildIndex = #slot0.data
+	if var_28_0 < var_28_1 then
+		arg_28_1:setState(BuildShip.ACTIVE)
 
-		slot0:addBuildTimer()
-	elseif slot2 == slot3 then
-		slot1:setState(BuildShip.INACTIVE)
+		arg_28_0.buildIndex = #arg_28_0.data
+
+		arg_28_0:addBuildTimer()
+	elseif var_28_0 == var_28_1 then
+		arg_28_1:setState(BuildShip.INACTIVE)
 	else
 		assert(false, "激活的建船数量大于最大数量")
 	end
 
-	slot0:sendNotification(uv0.ADDED, slot1:clone())
+	arg_28_0:sendNotification(var_0_0.ADDED, arg_28_1:clone())
 end
 
-function slot0.finishBuildShip(slot0, slot1)
-	if slot0.buildTimers[slot1] then
-		slot0.buildTimers[slot1].func()
+function var_0_0.finishBuildShip(arg_29_0, arg_29_1)
+	if arg_29_0.buildTimers[arg_29_1] then
+		arg_29_0.buildTimers[arg_29_1].func()
 	end
 end
 
-function slot0.updateBuildShip(slot0, slot1, slot2)
-	assert(isa(slot2, BuildShip), "should be an instance of BuildShip")
+function var_0_0.updateBuildShip(arg_30_0, arg_30_1, arg_30_2)
+	assert(isa(arg_30_2, BuildShip), "should be an instance of BuildShip")
 
-	slot0.data[slot1] = slot2:clone()
+	arg_30_0.data[arg_30_1] = arg_30_2:clone()
 
-	slot0:sendNotification(uv0.UPDATED, {
-		index = slot1,
-		buildShip = slot2:clone()
+	arg_30_0:sendNotification(var_0_0.UPDATED, {
+		index = arg_30_1,
+		buildShip = arg_30_2:clone()
 	})
 end
 
-function slot0.removeBuildShipByIndex(slot0, slot1)
-	assert(slot0.data[slot1]:clone() ~= nil, "buildShip should exist")
+function var_0_0.removeBuildShipByIndex(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_0.data[arg_31_1]:clone()
 
-	slot0.lastPoolType = slot0.data[slot1].type
+	assert(var_31_0 ~= nil, "buildShip should exist")
 
-	table.remove(slot0.data, slot1)
-	slot0:sendNotification(uv0.REMOVED, {
-		index = slot1,
-		buildShip = slot2
+	arg_31_0.lastPoolType = arg_31_0.data[arg_31_1].type
+
+	table.remove(arg_31_0.data, arg_31_1)
+	arg_31_0:sendNotification(var_0_0.REMOVED, {
+		index = arg_31_1,
+		buildShip = var_31_0
 	})
 end
 
-function slot0.getSkipBatchBuildFlag(slot0)
-	return slot0.skipBatchFlag or false
+function var_0_0.getSkipBatchBuildFlag(arg_32_0)
+	return arg_32_0.skipBatchFlag or false
 end
 
-function slot0.setSkipBatchBuildFlag(slot0, slot1)
-	slot0.skipBatchFlag = slot1
+function var_0_0.setSkipBatchBuildFlag(arg_33_0, arg_33_1)
+	arg_33_0.skipBatchFlag = arg_33_1
 end
 
-function slot0.getLastBuildShipPoolType(slot0)
-	return slot0.lastPoolType or 0
+function var_0_0.getLastBuildShipPoolType(arg_34_0)
+	return arg_34_0.lastPoolType or 0
 end
 
-function slot0.getSupportShipCost(slot0)
+function var_0_0.getSupportShipCost(arg_35_0)
 	return pg.gameset.supports_config.description[1]
 end
 
-function slot0.changeRegularExchangeCount(slot0, slot1)
-	slot0.regularExchangeCount = math.clamp(slot0.regularExchangeCount + slot1, 0, pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_request)
+function var_0_0.changeRegularExchangeCount(arg_36_0, arg_36_1)
+	arg_36_0.regularExchangeCount = math.clamp(arg_36_0.regularExchangeCount + arg_36_1, 0, pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_request)
 
-	slot0:sendNotification(uv0.REGULAR_BUILD_POOL_COUNT_UPDATE)
+	arg_36_0:sendNotification(var_0_0.REGULAR_BUILD_POOL_COUNT_UPDATE)
 end
 
-function slot0.getRegularExchangeCount(slot0)
-	return slot0.regularExchangeCount
+function var_0_0.getRegularExchangeCount(arg_37_0)
+	return arg_37_0.regularExchangeCount
 end
 
-return slot0
+return var_0_0

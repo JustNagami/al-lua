@@ -1,36 +1,35 @@
-slot0 = class("GetDormThemeListCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetDormThemeListCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = 0
-	slot4 = nil
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = 0
+	local var_1_2
 
-	if slot1:getBody() and type(slot2) == "table" then
-		slot4 = slot2.callback
+	if var_1_0 and type(var_1_0) == "table" then
+		var_1_2 = var_1_0.callback
 	else
-		slot3 = slot2 or 0
+		var_1_1 = var_1_0 or 0
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(19018, {
+		id = var_1_1
+	}, 19019, function(arg_2_0)
+		local var_2_0 = getProxy(DormProxy)
 
-	slot5:Send(19018, {
-		id = slot3
-	}, 19019, function (slot0)
-		slot1 = getProxy(DormProxy)
-
-		if uv0 == 0 then
-			slot1:initThemes(slot0.theme_list or {})
+		if var_1_1 == 0 then
+			var_2_0:initThemes(arg_2_0.theme_list or {})
 		else
-			for slot5, slot6 in ipairs(slot0.theme_list) do
-				slot1:updateTheme(slot6)
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.theme_list) do
+				var_2_0:updateTheme(iter_2_1)
 			end
 		end
 
-		uv1:sendNotification(GAME.GET_DORMTHEME_DONE)
+		arg_1_0:sendNotification(GAME.GET_DORMTHEME_DONE)
 
-		if uv2 then
-			uv2()
+		if var_1_2 then
+			var_1_2()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

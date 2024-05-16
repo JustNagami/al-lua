@@ -1,369 +1,374 @@
-slot0 = class("EducateSiteDetailPanel", import("...base.BaseSubView"))
+﻿local var_0_0 = class("EducateSiteDetailPanel", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateSiteDetailUI"
 end
 
-function slot0.OnInit(slot0)
-	setActive(slot0._tf, false)
+function var_0_0.OnInit(arg_2_0)
+	setActive(arg_2_0._tf, false)
 
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg_2_0.anim = arg_2_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_2_0.animEvent = arg_2_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		setActive(uv0._tf, false)
+	arg_2_0.animEvent:SetEndEvent(function()
+		setActive(arg_2_0._tf, false)
 
-		if uv0.contextData.onExit then
-			uv0.contextData.onExit()
+		if arg_2_0.contextData.onExit then
+			arg_2_0.contextData.onExit()
 		end
 	end)
 
-	slot0.windowTF = slot0:findTF("anim_root/window")
-	slot0.closeBtn = slot0:findTF("close_btn", slot0.windowTF)
-	slot0.nameTF = slot0:findTF("name_bg/name", slot0.windowTF)
-	slot0.picTF = slot0:findTF("pic", slot0.windowTF)
-	slot0.descTF = slot0:findTF("desc", slot0.windowTF)
-	slot0.optionsTF = slot0:findTF("options/content", slot0.windowTF)
-	slot0.optionTpl = slot0:findTF("option_tpl", slot0.windowTF)
+	arg_2_0.windowTF = arg_2_0:findTF("anim_root/window")
+	arg_2_0.closeBtn = arg_2_0:findTF("close_btn", arg_2_0.windowTF)
+	arg_2_0.nameTF = arg_2_0:findTF("name_bg/name", arg_2_0.windowTF)
+	arg_2_0.picTF = arg_2_0:findTF("pic", arg_2_0.windowTF)
+	arg_2_0.descTF = arg_2_0:findTF("desc", arg_2_0.windowTF)
+	arg_2_0.optionsTF = arg_2_0:findTF("options/content", arg_2_0.windowTF)
+	arg_2_0.optionTpl = arg_2_0:findTF("option_tpl", arg_2_0.windowTF)
 
-	setText(slot0:findTF("limit/Text", slot0.optionTpl), i18n("child_option_limit"))
-	setText(slot0:findTF("type_2/awards/polaroid/Text", slot0.optionTpl), i18n("child_random_polaroid_drop"))
-	setActive(slot0.optionTpl, false)
+	setText(arg_2_0:findTF("limit/Text", arg_2_0.optionTpl), i18n("child_option_limit"))
+	setText(arg_2_0:findTF("type_2/awards/polaroid/Text", arg_2_0.optionTpl), i18n("child_random_polaroid_drop"))
+	setActive(arg_2_0.optionTpl, false)
 
-	slot0.optionUIList = UIItemList.New(slot0.optionsTF, slot0.optionTpl)
-	slot0.performTF = slot0:findTF("anim_root/perform")
-	slot0.performName = slot0:findTF("name", slot0.performTF)
+	arg_2_0.optionUIList = UIItemList.New(arg_2_0.optionsTF, arg_2_0.optionTpl)
+	arg_2_0.performTF = arg_2_0:findTF("anim_root/perform")
+	arg_2_0.performName = arg_2_0:findTF("name", arg_2_0.performTF)
 
-	slot0:addListener()
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+	arg_2_0:addListener()
+	pg.UIMgr.GetInstance():OverlayPanel(arg_2_0._tf, {
 		groupName = LayerWeightConst.GROUP_EDUCATE,
 		weight = LayerWeightConst.BASE_LAYER - 2
 	})
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0:findTF("anim_root/bg"), function ()
-		uv0:onClose()
+function var_0_0.addListener(arg_4_0)
+	onButton(arg_4_0, arg_4_0:findTF("anim_root/bg"), function()
+		arg_4_0:onClose()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:onClose()
+	onButton(arg_4_0, arg_4_0.closeBtn, function()
+		arg_4_0:onClose()
 	end, SFX_PANEL)
-
-	slot1 = slot0.optionUIList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateOptionItem(slot1, slot2)
+	arg_4_0.optionUIList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_4_0:updateOptionItem(arg_7_1, arg_7_2)
 		end
 	end)
 
-	slot0.optionIds = {}
+	arg_4_0.optionIds = {}
 end
 
-function slot0.checkSpecEvent(slot0, slot1, slot2)
-	if #getProxy(EducateProxy):GetEventProxy():GetSiteSpecEvents(slot1) > 0 then
-		slot0:emit(EducateMapMediator.ON_SPECIAL_EVENT_TRIGGER, {
-			siteId = slot1,
-			id = slot3[1].id,
-			callback = slot2
+function var_0_0.checkSpecEvent(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = getProxy(EducateProxy):GetEventProxy():GetSiteSpecEvents(arg_8_1)
+
+	if #var_8_0 > 0 then
+		arg_8_0:emit(EducateMapMediator.ON_SPECIAL_EVENT_TRIGGER, {
+			siteId = arg_8_1,
+			id = var_8_0[1].id,
+			callback = arg_8_2
 		})
 	else
-		slot2()
+		arg_8_2()
 	end
 end
 
-function slot0.showSpecEvent(slot0, slot1, slot2, slot3, slot4)
-	slot6 = EducateHelper.GetDialogueShowDrops(slot3)
-	slot7 = EducateHelper.GetCommonShowDrops(slot3)
+function var_0_0.showSpecEvent(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local var_9_0 = pg.child_event_special[arg_9_2].performance
+	local var_9_1 = EducateHelper.GetDialogueShowDrops(arg_9_3)
+	local var_9_2 = EducateHelper.GetCommonShowDrops(arg_9_3)
 
-	function slot8()
-		if #uv0 > 0 then
-			uv1:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
-				items = uv0,
-				removeFunc = function ()
-					uv0:checkSpecEvent(uv1, uv2)
+	local function var_9_3()
+		if #var_9_2 > 0 then
+			arg_9_0:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
+				items = var_9_2,
+				removeFunc = function()
+					arg_9_0:checkSpecEvent(arg_9_1, arg_9_4)
 				end
 			})
 		else
-			uv1:checkSpecEvent(uv2, uv3)
+			arg_9_0:checkSpecEvent(arg_9_1, arg_9_4)
 		end
 
-		setActive(uv1.performTF, false)
+		setActive(arg_9_0.performTF, false)
 	end
 
-	if #pg.child_event_special[slot2].performance > 0 then
-		setActive(slot0.performTF, true)
-		pg.PerformMgr.GetInstance():PlayGroup(slot5, slot8, slot6)
-	elseif slot8 then
-		slot8()
+	if #var_9_0 > 0 then
+		setActive(arg_9_0.performTF, true)
+		pg.PerformMgr.GetInstance():PlayGroup(var_9_0, var_9_3, var_9_1)
+	elseif var_9_3 then
+		var_9_3()
 	end
 end
 
-function slot0.showSiteDetailById(slot0, slot1)
-	if slot0.siteId == slot1 then
+function var_0_0.showSiteDetailById(arg_12_0, arg_12_1)
+	if arg_12_0.siteId == arg_12_1 then
 		return
 	end
 
-	slot0.siteId = slot1
-	slot0.config = pg.child_site[slot0.siteId]
+	arg_12_0.siteId = arg_12_1
+	arg_12_0.config = pg.child_site[arg_12_0.siteId]
 
-	slot0:checkSpecEvent(slot0.siteId, function ()
-		uv0:showDetailPanel()
+	arg_12_0:checkSpecEvent(arg_12_0.siteId, function()
+		arg_12_0:showDetailPanel()
 	end)
 end
 
-function slot0.addTaskProgress(slot0)
-	slot2 = {}
-	slot3 = {}
-	slot4 = {}
+function var_0_0.addTaskProgress(arg_14_0)
+	local var_14_0 = getProxy(EducateProxy):GetTaskProxy():GetSiteEnterAddTasks(arg_14_0.siteId)
+	local var_14_1 = {}
+	local var_14_2 = {}
+	local var_14_3 = {}
 
-	for slot8, slot9 in ipairs(getProxy(EducateProxy):GetTaskProxy():GetSiteEnterAddTasks(slot0.siteId)) do
-		if slot9:IsMind() then
-			table.insert(slot2, {
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		if iter_14_1:IsMind() then
+			table.insert(var_14_1, {
 				progress = 1,
-				task_id = slot9.id
+				task_id = iter_14_1.id
 			})
 		end
 
-		if slot9:IsTarget() then
-			table.insert(slot3, {
+		if iter_14_1:IsTarget() then
+			table.insert(var_14_2, {
 				progress = 1,
-				task_id = slot9.id
+				task_id = iter_14_1.id
 			})
 		end
 
-		if slot9:IsMain() then
-			table.insert(slot4, {
+		if iter_14_1:IsMain() then
+			table.insert(var_14_3, {
 				progress = 1,
-				task_id = slot9.id
+				task_id = iter_14_1.id
 			})
 		end
 	end
 
-	if #slot2 > 0 then
-		slot0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
+	if #var_14_1 > 0 then
+		arg_14_0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_MIND,
-			progresses = slot2
+			progresses = var_14_1
 		})
 	end
 
-	if #slot3 > 0 then
-		slot0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
+	if #var_14_2 > 0 then
+		arg_14_0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_TARGET,
-			progresses = slot3
+			progresses = var_14_2
 		})
 	end
 
-	if #slot4 > 0 then
-		slot0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
+	if #var_14_3 > 0 then
+		arg_14_0:emit(EducateMapMediator.ON_ADD_TASK_PROGRESS, {
 			system = EducateTask.STSTEM_TYPE_MAIN,
-			progresses = slot4
+			progresses = var_14_3
 		})
 	end
 end
 
-function slot1(slot0, slot1, slot2)
-	if slot1[2] == -1 then
-		LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "res_-1", findTF(slot0, "Image"), true)
-		setText(findTF(slot0, "Text"), i18n("child_random_ops_drop"))
+local function var_0_1(arg_15_0, arg_15_1, arg_15_2)
+	if arg_15_1[2] == -1 then
+		LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "res_-1", findTF(arg_15_0, "Image"), true)
+		setText(findTF(arg_15_0, "Text"), i18n("child_random_ops_drop"))
 	else
-		slot3 = ""
-		slot4 = ""
+		local var_15_0 = ""
+		local var_15_1 = ""
 
-		if slot1[1] == EducateConst.DROP_TYPE_ATTR then
-			slot3 = "attr_"
-			slot4 = pg.child_attr[slot1[2]].name
-		elseif slot1[1] == EducateConst.DROP_TYPE_RES then
-			slot3 = "res_"
-			slot4 = pg.child_resource[slot1[2]].name
+		if arg_15_1[1] == EducateConst.DROP_TYPE_ATTR then
+			var_15_0 = "attr_"
+			var_15_1 = pg.child_attr[arg_15_1[2]].name
+		elseif arg_15_1[1] == EducateConst.DROP_TYPE_RES then
+			var_15_0 = "res_"
+			var_15_1 = pg.child_resource[arg_15_1[2]].name
 		end
 
-		LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", slot3 .. slot1[2], findTF(slot0, "Image"), true)
-		setText(findTF(slot0, "Text"), slot4 .. "+" .. slot1[3])
+		LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", var_15_0 .. arg_15_1[2], findTF(arg_15_0, "Image"), true)
+		setText(findTF(arg_15_0, "Text"), var_15_1 .. "+" .. arg_15_1[3])
 	end
 end
 
-function slot2(slot0, slot1)
-	slot2 = ""
+local function var_0_2(arg_16_0, arg_16_1)
+	local var_16_0 = ""
 
-	if slot1[1] == EducateConst.DROP_TYPE_ATTR then
-		slot2 = "attr_"
-	elseif slot1[1] == EducateConst.DROP_TYPE_RES then
-		slot2 = "res_"
+	if arg_16_1[1] == EducateConst.DROP_TYPE_ATTR then
+		var_16_0 = "attr_"
+	elseif arg_16_1[1] == EducateConst.DROP_TYPE_RES then
+		var_16_0 = "res_"
 	end
 
-	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", slot2 .. slot1[2], findTF(slot0, "Image"), true)
-	setText(findTF(slot0, "Text"), "-" .. slot1[3])
+	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", var_16_0 .. arg_16_1[2], findTF(arg_16_0, "Image"), true)
+	setText(findTF(arg_16_0, "Text"), "-" .. arg_16_1[3])
 end
 
-function slot0.updateOptionItem(slot0, slot1, slot2)
-	GetOrAddComponent(slot2, "CanvasGroup").alpha = 1
-	slot2.name = tostring(slot1 + 1)
-	slot3 = slot0.optionVOs[slot1 + 1]
-	slot8 = slot2
+function var_0_0.updateOptionItem(arg_17_0, arg_17_1, arg_17_2)
+	GetOrAddComponent(arg_17_2, "CanvasGroup").alpha = 1
+	arg_17_2.name = tostring(arg_17_1 + 1)
 
-	setActive(slot0:findTF("limit", slot8), slot3:IsShowLimit())
+	local var_17_0 = arg_17_0.optionVOs[arg_17_1 + 1]
 
-	slot4 = slot3:GetType()
+	setActive(arg_17_0:findTF("limit", arg_17_2), var_17_0:IsShowLimit())
 
-	for slot8 = 1, 3 do
-		setActive(slot0:findTF("type_" .. slot8, slot2), slot8 == slot4)
+	local var_17_1 = var_17_0:GetType()
+
+	for iter_17_0 = 1, 3 do
+		setActive(arg_17_0:findTF("type_" .. iter_17_0, arg_17_2), iter_17_0 == var_17_1)
 	end
 
-	slot5 = slot0:findTF("type_" .. slot4, slot2)
+	local var_17_2 = arg_17_0:findTF("type_" .. var_17_1, arg_17_2)
+	local var_17_3 = not var_17_0:IsCountLimit() and true or var_17_0:CanTrigger()
 
-	setGray(slot2, not (not slot3:IsCountLimit() and true or slot3:CanTrigger()))
-	switch(slot4, {
-		[EducateSiteOption.TYPE_SHOP] = function ()
-			setText(uv0:findTF("name/Text", uv1), uv2:getConfig("name"))
-			onButton(uv0, uv3, function ()
-				uv0:emit(EducateMapMediator.ON_OPEN_SHOP, uv1:GetLinkId())
+	setGray(arg_17_2, not var_17_3)
+	switch(var_17_1, {
+		[EducateSiteOption.TYPE_SHOP] = function()
+			setText(arg_17_0:findTF("name/Text", var_17_2), var_17_0:getConfig("name"))
+			onButton(arg_17_0, arg_17_2, function()
+				arg_17_0:emit(EducateMapMediator.ON_OPEN_SHOP, var_17_0:GetLinkId())
 			end, SFX_PANEL)
 		end,
-		[EducateSiteOption.TYPE_EVENT] = function ()
-			setText(uv0:findTF("name", uv1), shortenString(uv2:getConfig("name") .. uv2:GetCntText(), 12))
+		[EducateSiteOption.TYPE_EVENT] = function()
+			setText(arg_17_0:findTF("name", var_17_2), shortenString(var_17_0:getConfig("name") .. var_17_0:GetCntText(), 12))
 
-			slot0 = uv2:IsShowPolaroid()
+			local var_20_0 = var_17_0:IsShowPolaroid()
 
-			setActive(uv0:findTF("awards/polaroid", uv1), slot0)
+			setActive(arg_17_0:findTF("awards/polaroid", var_17_2), var_20_0)
 
-			slot1 = slot0 and 2 or 3
-			slot3 = UIItemList.New(uv0:findTF("awards/normal", uv1), uv0:findTF("awards/normal/tpl", uv1))
+			local var_20_1 = var_20_0 and 2 or 3
+			local var_20_2 = var_17_0:GetResults()
+			local var_20_3 = UIItemList.New(arg_17_0:findTF("awards/normal", var_17_2), arg_17_0:findTF("awards/normal/tpl", var_17_2))
 
-			slot3:make(function (slot0, slot1, slot2)
-				if slot0 == UIItemList.EventUpdate then
-					uv0(slot2, uv1[slot1 + 1])
+			var_20_3:make(function(arg_21_0, arg_21_1, arg_21_2)
+				if arg_21_0 == UIItemList.EventUpdate then
+					var_0_1(arg_21_2, var_20_2[arg_21_1 + 1])
 				end
 			end)
-			slot3:align(slot1 < #uv2:GetResults() and slot1 or #slot2)
 
-			slot6 = UIItemList.New(uv0:findTF("costs", uv1), uv0:findTF("costs/tpl", uv1))
+			local var_20_4 = var_20_1 < #var_20_2 and var_20_1 or #var_20_2
 
-			slot6:make(function (slot0, slot1, slot2)
-				if slot0 == UIItemList.EventUpdate then
-					uv0(slot2, uv1[slot1 + 1], "-")
+			var_20_3:align(var_20_4)
+
+			local var_20_5 = var_17_0:GetCost()
+			local var_20_6 = UIItemList.New(arg_17_0:findTF("costs", var_17_2), arg_17_0:findTF("costs/tpl", var_17_2))
+
+			var_20_6:make(function(arg_22_0, arg_22_1, arg_22_2)
+				if arg_22_0 == UIItemList.EventUpdate then
+					var_0_2(arg_22_2, var_20_5[arg_22_1 + 1], "-")
 				end
 			end)
-			slot6:align(#uv2:GetCost())
-			onButton(uv0, uv5, function ()
-				if not uv0 then
+			var_20_6:align(#var_20_5)
+			onButton(arg_17_0, arg_17_2, function()
+				if not var_17_3 then
 					return
 				end
 
-				uv1:emit(EducateMapMediator.ON_MAP_SITE_OPERATE, {
-					siteId = uv1.siteId,
-					optionVO = uv2
+				arg_17_0:emit(EducateMapMediator.ON_MAP_SITE_OPERATE, {
+					siteId = arg_17_0.siteId,
+					optionVO = var_17_0
 				})
 			end, SFX_PANEL)
 		end,
-		[EducateSiteOption.TYPE_SITE] = function ()
-			setText(uv0:findTF("name/Text", uv1), uv2:getConfig("name"))
-			onButton(uv0, uv3, function ()
-				slot0 = uv0:GetLinkId()
+		[EducateSiteOption.TYPE_SITE] = function()
+			setText(arg_17_0:findTF("name/Text", var_17_2), var_17_0:getConfig("name"))
+			onButton(arg_17_0, arg_17_2, function()
+				local var_25_0 = var_17_0:GetLinkId()
 
-				assert(pg.child_site[slot0], "child_site不存在id:" .. slot0)
-				table.insert(uv1.siteQueue, slot0)
-				uv1:showSiteDetailById(slot0)
+				assert(pg.child_site[var_25_0], "child_site不存在id:" .. var_25_0)
+				table.insert(arg_17_0.siteQueue, var_25_0)
+				arg_17_0:showSiteDetailById(var_25_0)
 			end, SFX_PANEL)
 		end
 	})
 end
 
-function slot0.showDetailPanel(slot0)
-	slot0:addTaskProgress()
-	setActive(slot0.windowTF, true)
-	setText(slot0.nameTF, slot0.config.name)
-	setText(slot0.descTF, slot0.config.desc)
-	LoadImageSpriteAsync("educatesite/" .. slot0.config.pic, slot0.picTF, true)
+function var_0_0.showDetailPanel(arg_26_0)
+	arg_26_0:addTaskProgress()
+	setActive(arg_26_0.windowTF, true)
+	setText(arg_26_0.nameTF, arg_26_0.config.name)
+	setText(arg_26_0.descTF, arg_26_0.config.desc)
+	LoadImageSpriteAsync("educatesite/" .. arg_26_0.config.pic, arg_26_0.picTF, true)
 
-	slot0.optionVOs = getProxy(EducateProxy):GetOptionsBySiteId(slot0.siteId)
+	arg_26_0.optionVOs = getProxy(EducateProxy):GetOptionsBySiteId(arg_26_0.siteId)
 
-	slot0.optionUIList:align(#slot0.optionVOs)
+	arg_26_0.optionUIList:align(#arg_26_0.optionVOs)
 end
 
-function slot0.showSitePerform(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = EducateHelper.GetDialogueShowDrops(slot4)
-	slot7 = EducateHelper.GetDialogueShowDrops(slot5)
-	slot8 = table.mergeArray(EducateHelper.GetCommonShowDrops(slot4), EducateHelper.GetCommonShowDrops(slot5))
-	slot10 = pg.child_site_option_branch[slot2].performance
-	slot11 = pg.child_site_option[slot1].name
+function var_0_0.showSitePerform(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4, arg_27_5)
+	local var_27_0 = EducateHelper.GetDialogueShowDrops(arg_27_4)
+	local var_27_1 = EducateHelper.GetDialogueShowDrops(arg_27_5)
+	local var_27_2 = table.mergeArray(EducateHelper.GetCommonShowDrops(arg_27_4), EducateHelper.GetCommonShowDrops(arg_27_5))
+	local var_27_3 = {}
+	local var_27_4 = pg.child_site_option_branch[arg_27_2].performance
+	local var_27_5 = pg.child_site_option[arg_27_1].name
 
-	table.insert({}, function (slot0)
-		pg.PerformMgr.GetInstance():PlayGroupNoHide(uv0, slot0, uv1, uv2)
+	table.insert(var_27_3, function(arg_28_0)
+		pg.PerformMgr.GetInstance():PlayGroupNoHide(var_27_4, arg_28_0, var_27_0, var_27_5)
 	end)
 
-	if slot3 and #slot3 > 0 then
-		for slot15, slot16 in ipairs(slot3) do
-			slot17 = pg.child_event[slot16].performance
+	if arg_27_3 and #arg_27_3 > 0 then
+		for iter_27_0, iter_27_1 in ipairs(arg_27_3) do
+			local var_27_6 = pg.child_event[iter_27_1].performance
 
-			table.insert(slot9, function (slot0)
-				pg.PerformMgr.GetInstance():PlayGroupNoHide(uv0, slot0, uv1)
+			table.insert(var_27_3, function(arg_29_0)
+				pg.PerformMgr.GetInstance():PlayGroupNoHide(var_27_6, arg_29_0, var_27_1)
 			end)
 		end
 	end
 
-	setText(slot0.performName, slot11)
-	setActive(slot0.performTF, true)
+	setText(arg_27_0.performName, var_27_5)
+	setActive(arg_27_0.performTF, true)
+	pg.PerformMgr.GetInstance():Show()
+	seriesAsync(var_27_3, function()
+		setActive(arg_27_0.performTF, false)
 
-	slot12 = pg.PerformMgr.GetInstance()
-
-	slot12:Show()
-	seriesAsync(slot9, function ()
-		setActive(uv0.performTF, false)
-
-		if #uv1 > 0 then
-			uv0:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
-				items = uv1
+		if #var_27_2 > 0 then
+			arg_27_0:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
+				items = var_27_2
 			})
 		end
 
 		pg.PerformMgr.GetInstance():Hide()
-		uv0:showDetailPanel()
+		arg_27_0:showDetailPanel()
 	end)
 end
 
-function slot0.Hide(slot0)
-	slot0.anim:Play("anim_educate_sitedatail_out")
+function var_0_0.Hide(arg_31_0)
+	arg_31_0.anim:Play("anim_educate_sitedatail_out")
 end
 
-function slot0.Show(slot0, slot1)
-	if not slot0:GetLoaded() then
+function var_0_0.Show(arg_32_0, arg_32_1)
+	if not arg_32_0:GetLoaded() then
 		return
 	end
 
-	slot0.siteId = slot1
-	slot0.config = pg.child_site[slot0.siteId]
+	arg_32_0.siteId = arg_32_1
+	arg_32_0.config = pg.child_site[arg_32_0.siteId]
 
-	assert(slot0.config, "child_site不存在id:" .. slot0.siteId)
-	setActive(slot0._tf, true)
-	setActive(slot0.windowTF, false)
+	assert(arg_32_0.config, "child_site不存在id:" .. arg_32_0.siteId)
+	setActive(arg_32_0._tf, true)
+	setActive(arg_32_0.windowTF, false)
 
-	slot0.siteQueue = {
-		slot0.siteId
+	arg_32_0.siteQueue = {
+		arg_32_0.siteId
 	}
 
-	slot0:checkSpecEvent(slot0.siteId, function ()
-		uv0:showDetailPanel()
+	arg_32_0:checkSpecEvent(arg_32_0.siteId, function()
+		arg_32_0:showDetailPanel()
 
-		if uv0.contextData.onEnter then
-			uv0.contextData.onEnter()
+		if arg_32_0.contextData.onEnter then
+			arg_32_0.contextData.onEnter()
 		end
 	end)
-	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_SITE, slot0.siteId)
+	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_SITE, arg_32_0.siteId)
 end
 
-function slot0.onClose(slot0)
-	if #slot0.siteQueue > 1 then
-		table.remove(slot0.siteQueue, #slot0.siteQueue)
-		slot0:showSiteDetailById(slot0.siteQueue[#slot0.siteQueue])
+function var_0_0.onClose(arg_34_0)
+	if #arg_34_0.siteQueue > 1 then
+		table.remove(arg_34_0.siteQueue, #arg_34_0.siteQueue)
+		arg_34_0:showSiteDetailById(arg_34_0.siteQueue[#arg_34_0.siteQueue])
 	else
-		slot0:Hide()
+		arg_34_0:Hide()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.OnDestroy(arg_35_0)
+	arg_35_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_35_0._tf)
 end
 
-return slot0
+return var_0_0

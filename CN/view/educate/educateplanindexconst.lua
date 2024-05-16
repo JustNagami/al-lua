@@ -1,19 +1,20 @@
-slot0 = class("EducatePlanIndexConst")
-slot0.TypeScholl = bit.lshift(1, 0)
-slot0.TypeInterest = bit.lshift(1, 1)
-slot0.TypeCommunity = bit.lshift(1, 2)
-slot0.TypeFreetime = bit.lshift(1, 3)
-slot0.TypeIndexs = {
-	slot0.TypeScholl,
-	slot0.TypeInterest,
-	slot0.TypeCommunity,
-	slot0.TypeFreetime
+﻿local var_0_0 = class("EducatePlanIndexConst")
+
+var_0_0.TypeScholl = bit.lshift(1, 0)
+var_0_0.TypeInterest = bit.lshift(1, 1)
+var_0_0.TypeCommunity = bit.lshift(1, 2)
+var_0_0.TypeFreetime = bit.lshift(1, 3)
+var_0_0.TypeIndexs = {
+	var_0_0.TypeScholl,
+	var_0_0.TypeInterest,
+	var_0_0.TypeCommunity,
+	var_0_0.TypeFreetime
 }
-slot0.TypeAll = IndexConst.BitAll(slot0.TypeIndexs)
+var_0_0.TypeAll = IndexConst.BitAll(var_0_0.TypeIndexs)
 
-table.insert(slot0.TypeIndexs, 1, slot0.TypeAll)
+table.insert(var_0_0.TypeIndexs, 1, var_0_0.TypeAll)
 
-slot0.TypeNames = {
+var_0_0.TypeNames = {
 	i18n("index_all"),
 	i18n("child_plan_type1"),
 	i18n("child_plan_type2"),
@@ -21,45 +22,55 @@ slot0.TypeNames = {
 	i18n("child_plan_type4")
 }
 
-function slot0.filterByType(slot0, slot1)
-	if not slot1 or slot1 == uv0.TypeAll then
+function var_0_0.filterByType(arg_1_0, arg_1_1)
+	if not arg_1_1 or arg_1_1 == var_0_0.TypeAll then
 		return true
 	end
 
-	for slot5 = 2, #uv0.CONFIG.type do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(uv0.CONFIG.type[slot5].types, slot0:GetType()) then
-			return true
+	for iter_1_0 = 2, #var_0_0.CONFIG.type do
+		local var_1_0 = bit.lshift(1, iter_1_0 - 2)
+
+		if bit.band(var_1_0, arg_1_1) > 0 then
+			local var_1_1 = var_0_0.CONFIG.type[iter_1_0].types
+
+			if table.contains(var_1_1, arg_1_0:GetType()) then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-slot0.CostMoney = bit.lshift(1, 0)
-slot0.CostMood = bit.lshift(1, 1)
-slot0.CostIndexs = {
-	slot0.CostMoney,
-	slot0.CostMood
+var_0_0.CostMoney = bit.lshift(1, 0)
+var_0_0.CostMood = bit.lshift(1, 1)
+var_0_0.CostIndexs = {
+	var_0_0.CostMoney,
+	var_0_0.CostMood
 }
-slot0.CostAll = IndexConst.BitAll(slot0.CostIndexs)
+var_0_0.CostAll = IndexConst.BitAll(var_0_0.CostIndexs)
 
-table.insert(slot0.CostIndexs, 1, slot0.CostAll)
+table.insert(var_0_0.CostIndexs, 1, var_0_0.CostAll)
 
-slot0.CostNames = {
+var_0_0.CostNames = {
 	i18n("index_all"),
 	pg.child_resource[EducateChar.RES_MONEY_ID].name,
 	pg.child_resource[EducateChar.RES_MOOD_ID].name
 }
 
-function slot0.filterByCost(slot0, slot1)
-	if not slot1 or slot1 == uv0.CostAll then
+function var_0_0.filterByCost(arg_2_0, arg_2_1)
+	if not arg_2_1 or arg_2_1 == var_0_0.CostAll then
 		return true
 	end
 
-	for slot5 = 2, #uv0.CONFIG.cost do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 then
-			for slot11, slot12 in ipairs(uv0.CONFIG.cost[slot5].names) do
-				if slot0:getConfig(slot12) > 0 then
+	for iter_2_0 = 2, #var_0_0.CONFIG.cost do
+		local var_2_0 = bit.lshift(1, iter_2_0 - 2)
+
+		if bit.band(var_2_0, arg_2_1) > 0 then
+			local var_2_1 = var_0_0.CONFIG.cost[iter_2_0].names
+
+			for iter_2_1, iter_2_2 in ipairs(var_2_1) do
+				if arg_2_0:getConfig(iter_2_2) > 0 then
 					return true
 				end
 			end
@@ -69,72 +80,72 @@ function slot0.filterByCost(slot0, slot1)
 	return false
 end
 
-slot0.AwardRes_Money = bit.lshift(1, 0)
-slot0.AwardRes_Mood = bit.lshift(1, 1)
-slot0.AwardResIndexs = {
-	slot0.AwardRes_Money,
-	slot0.AwardRes_Mood
+var_0_0.AwardRes_Money = bit.lshift(1, 0)
+var_0_0.AwardRes_Mood = bit.lshift(1, 1)
+var_0_0.AwardResIndexs = {
+	var_0_0.AwardRes_Money,
+	var_0_0.AwardRes_Mood
 }
-slot0.AwardResAll = IndexConst.BitAll(slot0.AwardResIndexs)
+var_0_0.AwardResAll = IndexConst.BitAll(var_0_0.AwardResIndexs)
 
-table.insert(slot0.AwardResIndexs, 1, slot0.AwardResAll)
+table.insert(var_0_0.AwardResIndexs, 1, var_0_0.AwardResAll)
 
-slot0.AwardResNames = {
+var_0_0.AwardResNames = {
 	i18n("child_filter_award_res"),
 	pg.child_resource[EducateChar.RES_MONEY_ID].name,
 	pg.child_resource[EducateChar.RES_MOOD_ID].name
 }
 
-function slot0.filterByAwardRes(slot0, slot1)
-	if not slot1 or slot1 == uv0.AwardResAll then
+function var_0_0.filterByAwardRes(arg_3_0, arg_3_1)
+	if not arg_3_1 or arg_3_1 == var_0_0.AwardResAll then
 		return true
 	end
 
-	return uv0.filterByAward(slot0, slot1, "awardRes")
+	return var_0_0.filterByAward(arg_3_0, arg_3_1, "awardRes")
 end
 
-slot0.AwardNature_Wukou = bit.lshift(1, 0)
-slot0.AwardNature_Kailang = bit.lshift(1, 1)
-slot0.AwardNature_Wenrou = bit.lshift(1, 2)
-slot0.AwardNatureIndexs = {
-	slot0.AwardNature_Wukou,
-	slot0.AwardNature_Kailang,
-	slot0.AwardNature_Wenrou
+var_0_0.AwardNature_Wukou = bit.lshift(1, 0)
+var_0_0.AwardNature_Kailang = bit.lshift(1, 1)
+var_0_0.AwardNature_Wenrou = bit.lshift(1, 2)
+var_0_0.AwardNatureIndexs = {
+	var_0_0.AwardNature_Wukou,
+	var_0_0.AwardNature_Kailang,
+	var_0_0.AwardNature_Wenrou
 }
-slot0.AwardNatureAll = IndexConst.BitAll(slot0.AwardNatureIndexs)
+var_0_0.AwardNatureAll = IndexConst.BitAll(var_0_0.AwardNatureIndexs)
 
-table.insert(slot0.AwardNatureIndexs, 1, slot0.AwardNatureAll)
+table.insert(var_0_0.AwardNatureIndexs, 1, var_0_0.AwardNatureAll)
 
-slot0.AwardNatureNames = {
+var_0_0.AwardNatureNames = {
 	i18n("child_filter_award_nature"),
 	pg.child_attr[201].name,
 	pg.child_attr[202].name,
 	pg.child_attr[203].name
 }
 
-function slot0.filterByAwardNature(slot0, slot1)
-	if not slot1 or slot1 == uv0.AwardNatureAll then
+function var_0_0.filterByAwardNature(arg_4_0, arg_4_1)
+	if not arg_4_1 or arg_4_1 == var_0_0.AwardNatureAll then
 		return true
 	end
 
-	return uv0.filterByAward(slot0, slot1, "awardNature")
+	return var_0_0.filterByAward(arg_4_0, arg_4_1, "awardNature")
 end
 
-slot0.AwardAttr1_Meili = bit.lshift(1, 0)
-slot0.AwardAttr1_Tineng = bit.lshift(1, 1)
-slot0.AwardAttr1_Zhishi = bit.lshift(1, 2)
-slot0.AwardAttr1_Ganzhi = bit.lshift(1, 3)
-slot0.AwardAttr1Indexs = {
-	slot0.AwardAttr1_Meili,
-	slot0.AwardAttr1_Tineng,
-	slot0.AwardAttr1_Zhishi,
-	slot0.AwardAttr1_Ganzhi
+var_0_0.AwardAttr1_Meili = bit.lshift(1, 0)
+var_0_0.AwardAttr1_Tineng = bit.lshift(1, 1)
+var_0_0.AwardAttr1_Zhishi = bit.lshift(1, 2)
+var_0_0.AwardAttr1_Ganzhi = bit.lshift(1, 3)
+var_0_0.AwardAttr1Indexs = {
+	var_0_0.AwardAttr1_Meili,
+	var_0_0.AwardAttr1_Tineng,
+	var_0_0.AwardAttr1_Zhishi,
+	var_0_0.AwardAttr1_Ganzhi
 }
-slot0.AwardAttr1All = IndexConst.BitAll(slot0.AwardAttr1Indexs)
+var_0_0.AwardAttr1All = IndexConst.BitAll(var_0_0.AwardAttr1Indexs)
 
-table.insert(slot0.AwardAttr1Indexs, 1, slot0.AwardAttr1All)
+table.insert(var_0_0.AwardAttr1Indexs, 1, var_0_0.AwardAttr1All)
 
-slot0.AwardAttr1Names = {
+var_0_0.AwardAttr1Names = {
 	i18n("child_filter_award_attr1"),
 	pg.child_attr[101].name,
 	pg.child_attr[102].name,
@@ -142,33 +153,33 @@ slot0.AwardAttr1Names = {
 	pg.child_attr[104].name
 }
 
-function slot0.filterByAwardAttr1(slot0, slot1)
-	if not slot1 or slot1 == uv0.AwardAttr1All then
+function var_0_0.filterByAwardAttr1(arg_5_0, arg_5_1)
+	if not arg_5_1 or arg_5_1 == var_0_0.AwardAttr1All then
 		return true
 	end
 
-	return uv0.filterByAward(slot0, slot1, "awardAttr1")
+	return var_0_0.filterByAward(arg_5_0, arg_5_1, "awardAttr1")
 end
 
-slot0.AwardAttr2_Biaoxianli = bit.lshift(1, 0)
-slot0.AwardAttr2_Xiangxiang = bit.lshift(1, 1)
-slot0.AwardAttr2_Yinyue = bit.lshift(1, 2)
-slot0.AwardAttr2_Xixin = bit.lshift(1, 3)
-slot0.AwardAttr2_Yundong = bit.lshift(1, 4)
-slot0.AwardAttr2_Shijian = bit.lshift(1, 5)
-slot0.AwardAttr2Indexs = {
-	slot0.AwardAttr2_Biaoxianli,
-	slot0.AwardAttr2_Xiangxiang,
-	slot0.AwardAttr2_Yinyue,
-	slot0.AwardAttr2_Xixin,
-	slot0.AwardAttr2_Yundong,
-	slot0.AwardAttr2_Shijian
+var_0_0.AwardAttr2_Biaoxianli = bit.lshift(1, 0)
+var_0_0.AwardAttr2_Xiangxiang = bit.lshift(1, 1)
+var_0_0.AwardAttr2_Yinyue = bit.lshift(1, 2)
+var_0_0.AwardAttr2_Xixin = bit.lshift(1, 3)
+var_0_0.AwardAttr2_Yundong = bit.lshift(1, 4)
+var_0_0.AwardAttr2_Shijian = bit.lshift(1, 5)
+var_0_0.AwardAttr2Indexs = {
+	var_0_0.AwardAttr2_Biaoxianli,
+	var_0_0.AwardAttr2_Xiangxiang,
+	var_0_0.AwardAttr2_Yinyue,
+	var_0_0.AwardAttr2_Xixin,
+	var_0_0.AwardAttr2_Yundong,
+	var_0_0.AwardAttr2_Shijian
 }
-slot0.AwardAttr2All = IndexConst.BitAll(slot0.AwardAttr2Indexs)
+var_0_0.AwardAttr2All = IndexConst.BitAll(var_0_0.AwardAttr2Indexs)
 
-table.insert(slot0.AwardAttr2Indexs, 1, slot0.AwardAttr2All)
+table.insert(var_0_0.AwardAttr2Indexs, 1, var_0_0.AwardAttr2All)
 
-slot0.AwardAttr2Names = {
+var_0_0.AwardAttr2Names = {
 	i18n("child_filter_award_attr2"),
 	pg.child_attr[301].name,
 	pg.child_attr[302].name,
@@ -178,19 +189,23 @@ slot0.AwardAttr2Names = {
 	pg.child_attr[306].name
 }
 
-function slot0.filterByAwardAttr2(slot0, slot1)
-	if not slot1 or slot1 == uv0.AwardAttr2All then
+function var_0_0.filterByAwardAttr2(arg_6_0, arg_6_1)
+	if not arg_6_1 or arg_6_1 == var_0_0.AwardAttr2All then
 		return true
 	end
 
-	return uv0.filterByAward(slot0, slot1, "awardAttr2")
+	return var_0_0.filterByAward(arg_6_0, arg_6_1, "awardAttr2")
 end
 
-function slot0.filterByAward(slot0, slot1, slot2)
-	for slot6 = 2, #uv0.CONFIG[slot2] do
-		if bit.band(bit.lshift(1, slot6 - 2), slot1) > 0 then
-			for slot12, slot13 in ipairs(uv0.CONFIG[slot2][slot6].ids) do
-				if slot0:CheckResult(slot8.type, slot13) then
+function var_0_0.filterByAward(arg_7_0, arg_7_1, arg_7_2)
+	for iter_7_0 = 2, #var_0_0.CONFIG[arg_7_2] do
+		local var_7_0 = bit.lshift(1, iter_7_0 - 2)
+
+		if bit.band(var_7_0, arg_7_1) > 0 then
+			local var_7_1 = var_0_0.CONFIG[arg_7_2][iter_7_0]
+
+			for iter_7_1, iter_7_2 in ipairs(var_7_1.ids) do
+				if arg_7_0:CheckResult(var_7_1.type, iter_7_2) then
 					return true
 				end
 			end
@@ -200,7 +215,7 @@ function slot0.filterByAward(slot0, slot1, slot2)
 	return false
 end
 
-slot0.CONFIG = {
+var_0_0.CONFIG = {
 	type = {
 		{
 			types = {}
@@ -377,4 +392,4 @@ slot0.CONFIG = {
 	}
 }
 
-return slot0
+return var_0_0

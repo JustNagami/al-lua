@@ -1,21 +1,28 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleJammingWave = class("BattleJammingWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleJammingWave.__name = "BattleJammingWave"
-slot1 = slot0.Battle.BattleJammingWave
-slot1.JAMMING_ENGAGE = 1
-slot1.JAMMING_DODGE = 2
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleJammingWave = class("BattleJammingWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleJammingWave.__name = "BattleJammingWave"
+
+local var_0_1 = var_0_0.Battle.BattleJammingWave
+
+var_0_1.JAMMING_ENGAGE = 1
+var_0_1.JAMMING_DODGE = 2
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_1.DoWave(arg_2_0)
+	var_0_1.super.DoWave(arg_2_0)
 
-	if uv1.Battle.BattleDataProxy.GetInstance():GetInitData().KizunaJamming and table.contains(slot3, uv0.JAMMING_ENGAGE) then
-		slot1:KizunaJamming()
+	local var_2_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	local var_2_1 = var_2_0:GetInitData().KizunaJamming
+
+	if var_2_1 and table.contains(var_2_1, var_0_1.JAMMING_ENGAGE) then
+		var_2_0:KizunaJamming()
 	end
 
-	slot0:doFinish()
+	arg_2_0:doFinish()
 end

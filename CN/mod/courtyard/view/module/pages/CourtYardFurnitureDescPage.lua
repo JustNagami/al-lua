@@ -1,94 +1,98 @@
-slot0 = class("CourtYardFurnitureDescPage", import(".CourtYardBaseSubPage"))
+﻿local var_0_0 = class("CourtYardFurnitureDescPage", import(".CourtYardBaseSubPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CourtYardFurnitureDescUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.descPanel = slot0._tf:Find("desc")
-	slot0.okBtn = slot0.descPanel:Find("ok_btn")
-	slot0.iconImg = findTF(slot0._tf, "desc/iconframe/icon"):GetComponent(typeof(Image))
-	slot0.nameTxt = findTF(slot0._tf, "desc/Text"):GetComponent(typeof(Text))
-	slot0.typeTxt = findTF(slot0._tf, "desc/container/frame/type"):GetComponent(typeof(Text))
-	slot0.contentTxt = findTF(slot0._tf, "desc/container/frame/content"):GetComponent(typeof(Text))
-	slot0.comtableTxt = findTF(slot0._tf, "desc/container/frame/comfortable_container/Text"):GetComponent(typeof(Text))
-	slot0.approachTxt = findTF(slot0._tf, "desc/container/frame/approach_container/Text"):GetComponent(typeof(Text))
-	slot0.dateTxt = findTF(slot0._tf, "desc/container/frame/date_container/Text"):GetComponent(typeof(Text))
-	slot0.voiceBtn = findTF(slot0._tf, "desc/container/frame/music_btn/voice")
-	slot0.bgVoiceBtn = findTF(slot0._tf, "desc/container/frame/music_btn/bg_voice")
-	slot0.bgVoiceMark = findTF(slot0._tf, "desc/container/frame/music_btn/bg_voice/mark")
-	slot0.musicalInstrumentsBtn = findTF(slot0._tf, "desc/container/frame/music_btn/play")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.descPanel = arg_2_0._tf:Find("desc")
+	arg_2_0.okBtn = arg_2_0.descPanel:Find("ok_btn")
+	arg_2_0.iconImg = findTF(arg_2_0._tf, "desc/iconframe/icon"):GetComponent(typeof(Image))
+	arg_2_0.nameTxt = findTF(arg_2_0._tf, "desc/Text"):GetComponent(typeof(Text))
+	arg_2_0.typeTxt = findTF(arg_2_0._tf, "desc/container/frame/type"):GetComponent(typeof(Text))
+	arg_2_0.contentTxt = findTF(arg_2_0._tf, "desc/container/frame/content"):GetComponent(typeof(Text))
+	arg_2_0.comtableTxt = findTF(arg_2_0._tf, "desc/container/frame/comfortable_container/Text"):GetComponent(typeof(Text))
+	arg_2_0.approachTxt = findTF(arg_2_0._tf, "desc/container/frame/approach_container/Text"):GetComponent(typeof(Text))
+	arg_2_0.dateTxt = findTF(arg_2_0._tf, "desc/container/frame/date_container/Text"):GetComponent(typeof(Text))
+	arg_2_0.voiceBtn = findTF(arg_2_0._tf, "desc/container/frame/music_btn/voice")
+	arg_2_0.bgVoiceBtn = findTF(arg_2_0._tf, "desc/container/frame/music_btn/bg_voice")
+	arg_2_0.bgVoiceMark = findTF(arg_2_0._tf, "desc/container/frame/music_btn/bg_voice/mark")
+	arg_2_0.musicalInstrumentsBtn = findTF(arg_2_0._tf, "desc/container/frame/music_btn/play")
 
-	setText(findTF(slot0._tf, "desc/container/frame/comfortable_container/label"), i18n("word_comfort_level"))
-	setText(findTF(slot0._tf, "desc/container/frame/approach_container/label"), i18n("word_get_way"))
-	setText(findTF(slot0._tf, "desc/container/frame/date_container/label"), i18n("word_get_date"))
-	setText(findTF(slot0._tf, "desc/ok_btn/text"), i18n("word_ok"))
+	setText(findTF(arg_2_0._tf, "desc/container/frame/comfortable_container/label"), i18n("word_comfort_level"))
+	setText(findTF(arg_2_0._tf, "desc/container/frame/approach_container/label"), i18n("word_get_way"))
+	setText(findTF(arg_2_0._tf, "desc/container/frame/date_container/label"), i18n("word_get_date"))
+	setText(findTF(arg_2_0._tf, "desc/ok_btn/text"), i18n("word_ok"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Close()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.okBtn, function ()
-		uv0:Close()
+	onButton(arg_3_0, arg_3_0.okBtn, function()
+		arg_3_0:Close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.voiceBtn, function ()
-		uv0:Emit("PlayFurnitureVoice", uv0.furniture.id)
+	onButton(arg_3_0, arg_3_0.voiceBtn, function()
+		arg_3_0:Emit("PlayFurnitureVoice", arg_3_0.furniture.id)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bgVoiceBtn, function ()
-		uv0:Emit("PlayFurnitureBg", uv0.furniture.id)
-		setActive(uv0.bgVoiceMark, uv0.furniture:GetMusicData())
+	onButton(arg_3_0, arg_3_0.bgVoiceBtn, function()
+		arg_3_0:Emit("PlayFurnitureBg", arg_3_0.furniture.id)
+		setActive(arg_3_0.bgVoiceMark, arg_3_0.furniture:GetMusicData())
 	end, SFX_PANEL)
-	onButton(slot0, slot0.musicalInstrumentsBtn, function ()
-		if uv0.furniture:IsMusicalInstruments() then
-			uv0:Emit("PlayMusicalInstruments", uv0.furniture.id)
+	onButton(arg_3_0, arg_3_0.musicalInstrumentsBtn, function()
+		if arg_3_0.furniture:IsMusicalInstruments() then
+			arg_3_0:Emit("PlayMusicalInstruments", arg_3_0.furniture.id)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	setActive(slot0._tf, true)
+function var_0_0.Show(arg_9_0, arg_9_1)
+	setActive(arg_9_0._tf, true)
 
-	slot0.furniture = slot1
-	slot2, slot3 = slot1:ExistVoice()
+	arg_9_0.furniture = arg_9_1
 
-	setActive(slot0.voiceBtn, slot2 and (slot3 == 1 or slot3 == 3))
-	setActive(slot0.bgVoiceBtn, slot2 and (slot3 == 2 or slot3 == 3))
-	setAnchoredPosition(slot0.voiceBtn, {
-		y = slot3 == 3 and -72 or -22
+	local var_9_0, var_9_1 = arg_9_1:ExistVoice()
+
+	setActive(arg_9_0.voiceBtn, var_9_0 and (var_9_1 == 1 or var_9_1 == 3))
+	setActive(arg_9_0.bgVoiceBtn, var_9_0 and (var_9_1 == 2 or var_9_1 == 3))
+	setAnchoredPosition(arg_9_0.voiceBtn, {
+		y = var_9_1 == 3 and -72 or -22
 	})
-	setActive(slot0.musicalInstrumentsBtn, slot1:IsMusicalInstruments())
-	setActive(slot0.bgVoiceMark, slot0.furniture:GetMusicData())
-	LoadSpriteAsync("FurnitureIcon/" .. slot1:GetIcon(), function (slot0)
-		if not uv0.exited then
-			uv0.iconImg.sprite = slot0
+	setActive(arg_9_0.musicalInstrumentsBtn, arg_9_1:IsMusicalInstruments())
+	setActive(arg_9_0.bgVoiceMark, arg_9_0.furniture:GetMusicData())
+	LoadSpriteAsync("FurnitureIcon/" .. arg_9_1:GetIcon(), function(arg_10_0)
+		if not arg_9_0.exited then
+			arg_9_0.iconImg.sprite = arg_10_0
 		end
 	end)
 
-	slot0.nameTxt.text = shortenString(slot1:GetName(), 6)
-	slot0.dateTxt.text = getProxy(DormProxy):getRawData():GetFurniture(slot1.configId) and slot4:getDate() or slot1:GetAddDate()
-	slot0.comtableTxt.text = "+" .. slot1:GetComfortable()
-	slot0.contentTxt.text = slot1:GetDescription()
-	slot0.approachTxt.text = slot1:GetAddMode()
-	slot0.typeTxt.text = slot1:GetGametipType()
+	arg_9_0.nameTxt.text = shortenString(arg_9_1:GetName(), 6)
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	local var_9_2 = getProxy(DormProxy):getRawData():GetFurniture(arg_9_1.configId)
 
-	slot5 = slot1:IsType(Furniture.TYPE_LUTE)
+	arg_9_0.dateTxt.text = var_9_2 and var_9_2:getDate() or arg_9_1:GetAddDate()
+	arg_9_0.comtableTxt.text = "+" .. arg_9_1:GetComfortable()
+	arg_9_0.contentTxt.text = arg_9_1:GetDescription()
+	arg_9_0.approachTxt.text = arg_9_1:GetAddMode()
+	arg_9_0.typeTxt.text = arg_9_1:GetGametipType()
 
-	setActive(slot0.approachTxt.gameObject.transform.parent, not slot5)
-	setActive(slot0.dateTxt.gameObject.transform.parent, not slot5)
+	pg.UIMgr.GetInstance():BlurPanel(arg_9_0._tf)
+
+	local var_9_3 = arg_9_1:IsType(Furniture.TYPE_LUTE)
+
+	setActive(arg_9_0.approachTxt.gameObject.transform.parent, not var_9_3)
+	setActive(arg_9_0.dateTxt.gameObject.transform.parent, not var_9_3)
 end
 
-function slot0.Close(slot0)
-	setActive(slot0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Close(arg_11_0)
+	setActive(arg_11_0._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf, arg_11_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.exited = true
+function var_0_0.OnDestroy(arg_12_0)
+	arg_12_0.exited = true
 
-	slot0:Close()
+	arg_12_0:Close()
 end
 
-return slot0
+return var_0_0

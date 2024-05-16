@@ -1,192 +1,215 @@
-slot0 = class("ChargeCommodity", import(".BaseCommodity"))
+﻿local var_0_0 = class("ChargeCommodity", import(".BaseCommodity"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.pay_data_display
 end
 
-function slot0.isChargeType(slot0)
+function var_0_0.isChargeType(arg_2_0)
 	return true
 end
 
-function slot0.canPurchase(slot0)
-	return slot0:getLimitCount() <= 0 or slot0.buyCount < slot1
+function var_0_0.canPurchase(arg_3_0)
+	local var_3_0 = arg_3_0:getLimitCount()
+
+	return var_3_0 <= 0 or var_3_0 > arg_3_0.buyCount
 end
 
-function slot0.firstPayDouble(slot0)
-	return slot0:getConfig("first_pay_double") ~= 0
+function var_0_0.firstPayDouble(arg_4_0)
+	return arg_4_0:getConfig("first_pay_double") ~= 0
 end
 
-function slot0.hasExtraGem(slot0)
-	return slot0:getConfig("extra_gem") ~= 0
+function var_0_0.hasExtraGem(arg_5_0)
+	return arg_5_0:getConfig("extra_gem") ~= 0
 end
 
-function slot0.GetGemCnt(slot0)
-	return slot0:getConfig("gem") + slot0:getConfig("extra_gem")
+function var_0_0.GetGemCnt(arg_6_0)
+	return arg_6_0:getConfig("gem") + arg_6_0:getConfig("extra_gem")
 end
 
-function slot0.isGem(slot0)
-	return slot0:getConfig("extra_service") == Goods.GEM
+function var_0_0.isGem(arg_7_0)
+	return arg_7_0:getConfig("extra_service") == Goods.GEM
 end
 
-function slot0.isGiftBox(slot0)
-	return slot0:getConfig("extra_service") == Goods.GIFT_BOX
+function var_0_0.isGiftBox(arg_8_0)
+	return arg_8_0:getConfig("extra_service") == Goods.GIFT_BOX
 end
 
-function slot0.isMonthCard(slot0)
-	return slot0:getConfig("extra_service") == Goods.MONTH_CARD
+function var_0_0.isMonthCard(arg_9_0)
+	return arg_9_0:getConfig("extra_service") == Goods.MONTH_CARD
 end
 
-function slot0.isItemBox(slot0)
-	return slot0:getConfig("extra_service") == Goods.ITEM_BOX
+function var_0_0.isItemBox(arg_10_0)
+	return arg_10_0:getConfig("extra_service") == Goods.ITEM_BOX
 end
 
-function slot0.isPassItem(slot0)
-	return slot0:getConfig("extra_service") == Goods.PASS_ITEM
+function var_0_0.isPassItem(arg_11_0)
+	return arg_11_0:getConfig("extra_service") == Goods.PASS_ITEM
 end
 
-function slot0.getLimitCount(slot0)
-	return slot0:getConfig("limit_arg")
+function var_0_0.getLimitCount(arg_12_0)
+	return arg_12_0:getConfig("limit_arg")
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_13_0)
+	return arg_13_0:getConfig("name")
 end
 
-function slot0.GetDropList(slot0)
-	if #slot0:getConfig("display") == 0 then
-		slot1 = slot0:getConfig("extra_service_item")
+function var_0_0.GetDropList(arg_14_0)
+	local var_14_0 = arg_14_0:getConfig("display")
+
+	if #var_14_0 == 0 then
+		var_14_0 = arg_14_0:getConfig("extra_service_item")
 	end
 
-	slot2 = {}
+	local var_14_1 = {}
 
-	for slot6, slot7 in ipairs(slot1) do
-		table.insert(slot2, Drop.Create(slot7))
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		table.insert(var_14_1, Drop.Create(iter_14_1))
 	end
 
-	return slot2
+	return var_14_1
 end
 
-function slot0.GetExtraServiceItem(slot0)
-	slot1 = {}
-	slot1 = (not slot0:isPassItem() or PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot0:getConfig("sub_display")[1]].drop_client_pay, function (slot0)
-		return Drop.Create(slot0)
-	end))) and underscore.map(slot0:getConfig("extra_service_item"), function (slot0)
-		return Drop.Create(slot0)
-	end)
-	slot2 = slot0:GetGemCnt()
+function var_0_0.GetExtraServiceItem(arg_15_0)
+	local var_15_0 = {}
 
-	if not slot0:isMonthCard() and slot2 > 0 then
-		table.insert(slot1, Drop.New({
+	if arg_15_0:isPassItem() then
+		local var_15_1 = arg_15_0:getConfig("sub_display")[1]
+		local var_15_2 = pg.battlepass_event_pt[var_15_1].drop_client_pay
+
+		var_15_0 = PlayerConst.MergePassItemDrop(underscore.map(var_15_2, function(arg_16_0)
+			return Drop.Create(arg_16_0)
+		end))
+	else
+		local var_15_3 = arg_15_0:getConfig("extra_service_item")
+
+		var_15_0 = underscore.map(var_15_3, function(arg_17_0)
+			return Drop.Create(arg_17_0)
+		end)
+	end
+
+	local var_15_4 = arg_15_0:GetGemCnt()
+
+	if not arg_15_0:isMonthCard() and var_15_4 > 0 then
+		table.insert(var_15_0, Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = PlayerConst.ResDiamond,
-			count = slot2
+			count = var_15_4
 		}))
 	end
 
-	return slot1
+	return var_15_0
 end
 
-function slot0.GetBonusItem(slot0)
-	slot1 = nil
+function var_0_0.GetBonusItem(arg_18_0)
+	local var_18_0
 
-	if slot0:isMonthCard() then
-		slot1 = {
+	if arg_18_0:isMonthCard() then
+		local var_18_1 = arg_18_0:GetGemCnt()
+
+		var_18_0 = {
 			id = 4,
 			type = 1,
-			count = slot0:GetGemCnt()
+			count = var_18_1
 		}
 	end
 
-	return slot1
+	return var_18_0
 end
 
-function slot0.GetChargeTip(slot0)
-	slot1, slot2 = nil
+function var_0_0.GetChargeTip(arg_19_0)
+	local var_19_0
+	local var_19_1
 
-	if slot0:isPassItem() then
-		slot1 = i18n("battlepass_pay_tip")
-	elseif slot0:isMonthCard() then
-		slot1 = i18n("charge_title_getitem_month")
-		slot2 = i18n("charge_title_getitem_soon")
+	if arg_19_0:isPassItem() then
+		var_19_0 = i18n("battlepass_pay_tip")
+	elseif arg_19_0:isMonthCard() then
+		var_19_0 = i18n("charge_title_getitem_month")
+		var_19_1 = i18n("charge_title_getitem_soon")
 	else
-		slot1 = i18n("charge_title_getitem")
+		var_19_0 = i18n("charge_title_getitem")
 	end
 
-	return slot1, slot2
+	return var_19_0, var_19_1
 end
 
-function slot0.GetExtraDrop(slot0)
-	slot1 = nil
+function var_0_0.GetExtraDrop(arg_20_0)
+	local var_20_0
 
-	if slot0:isPassItem() then
-		slot2 = slot0:getConfig("sub_display")
-		slot3 = slot2[1]
-		slot4 = pg.battlepass_event_pt[slot3].pt
-		slot1 = Drop.New({
+	if arg_20_0:isPassItem() then
+		local var_20_1 = arg_20_0:getConfig("sub_display")
+		local var_20_2 = var_20_1[1]
+		local var_20_3 = pg.battlepass_event_pt[var_20_2].pt
+
+		var_20_0 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = pg.battlepass_event_pt[slot3].pt,
-			count = slot2[2]
+			id = pg.battlepass_event_pt[var_20_2].pt,
+			count = var_20_1[2]
 		})
 	end
 
-	return slot1
+	return var_20_0
 end
 
-function slot0.getConfig(slot0, slot1)
-	if slot1 == "money" and PLATFORM_CODE == PLATFORM_CHT then
-		if pg.SdkMgr.GetInstance():GetProduct(slot0:getConfig("id_str")) then
-			return slot2.price
-		else
-			return slot0:RawGetConfig(slot1)
-		end
-	elseif slot1 == "money" and PLATFORM_CODE == PLATFORM_US then
-		slot2 = slot0:RawGetConfig(slot1)
+function var_0_0.getConfig(arg_21_0, arg_21_1)
+	if arg_21_1 == "money" and PLATFORM_CODE == PLATFORM_CHT then
+		local var_21_0 = pg.SdkMgr.GetInstance():GetProduct(arg_21_0:getConfig("id_str"))
 
-		return math.floor(slot2 / 100) .. "." .. slot2 - math.floor(slot2 / 100) * 100
+		if var_21_0 then
+			return var_21_0.price
+		else
+			return arg_21_0:RawGetConfig(arg_21_1)
+		end
+	elseif arg_21_1 == "money" and PLATFORM_CODE == PLATFORM_US then
+		local var_21_1 = arg_21_0:RawGetConfig(arg_21_1)
+
+		return math.floor(var_21_1 / 100) .. "." .. var_21_1 - math.floor(var_21_1 / 100) * 100
 	else
-		return slot0:RawGetConfig(slot1)
+		return arg_21_0:RawGetConfig(arg_21_1)
 	end
 end
 
-function slot0.RawGetConfig(slot0, slot1)
-	return uv0.super.getConfig(slot0, slot1)
+function var_0_0.RawGetConfig(arg_22_0, arg_22_1)
+	return var_0_0.super.getConfig(arg_22_0, arg_22_1)
 end
 
-function slot0.IsLocalPrice(slot0)
-	return slot0:getConfig("money") ~= slot0:RawGetConfig("money")
+function var_0_0.IsLocalPrice(arg_23_0)
+	return arg_23_0:getConfig("money") ~= arg_23_0:RawGetConfig("money")
 end
 
-function slot0.isLevelLimit(slot0, slot1, slot2)
-	slot3, slot4 = slot0:getLevelLimit()
+function var_0_0.isLevelLimit(arg_24_0, arg_24_1, arg_24_2)
+	local var_24_0, var_24_1 = arg_24_0:getLevelLimit()
 
-	if slot2 and slot4 then
+	if arg_24_2 and var_24_1 then
 		return false
 	end
 
-	return slot3 > 0 and slot1 < slot3
+	return var_24_0 > 0 and arg_24_1 < var_24_0
 end
 
-function slot0.getLevelLimit(slot0)
-	for slot5, slot6 in ipairs(slot0:getConfig("limit_args")) do
-		if type(slot6) == "table" and slot6[1] == "level" then
-			return slot6[2], slot6[3]
+function var_0_0.getLevelLimit(arg_25_0)
+	local var_25_0 = arg_25_0:getConfig("limit_args")
+
+	for iter_25_0, iter_25_1 in ipairs(var_25_0) do
+		if type(iter_25_1) == "table" and iter_25_1[1] == "level" then
+			return iter_25_1[2], iter_25_1[3]
 		end
 	end
 
 	return 0
 end
 
-function slot0.isTecShipGift(slot0)
-	if slot0:getConfig("limit_type") == Goods.Tec_Ship_Gift_Type then
+function var_0_0.isTecShipGift(arg_26_0)
+	if arg_26_0:getConfig("limit_type") == Goods.Tec_Ship_Gift_Type then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.isTecShipShowGift(slot0)
-	if slot0:isTecShipGift() then
-		if slot0:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Show then
+function var_0_0.isTecShipShowGift(arg_27_0)
+	if arg_27_0:isTecShipGift() then
+		if arg_27_0:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Show then
 			return true
 		else
 			return false
@@ -196,23 +219,30 @@ function slot0.isTecShipShowGift(slot0)
 	end
 end
 
-function slot0.getSameGroupTecShipGift(slot0)
-	slot1 = {}
-	slot2 = slot0:getConfig("limit_group")
+function var_0_0.getSameGroupTecShipGift(arg_28_0)
+	local var_28_0 = {}
+	local var_28_1 = arg_28_0:getConfig("limit_group")
+	local var_28_2 = arg_28_0:bindConfigTable()
 
-	for slot7, slot8 in ipairs(slot0:bindConfigTable().all) do
-		if slot3[slot8].limit_type == Goods.Tec_Ship_Gift_Type and slot9.limit_group == slot2 then
-			table.insert(slot1, Goods.Create({
-				shop_id = slot8
-			}, Goods.TYPE_CHARGE))
+	for iter_28_0, iter_28_1 in ipairs(var_28_2.all) do
+		local var_28_3 = var_28_2[iter_28_1]
+
+		if var_28_3.limit_type == Goods.Tec_Ship_Gift_Type and var_28_3.limit_group == var_28_1 then
+			local var_28_4 = Goods.Create({
+				shop_id = iter_28_1
+			}, Goods.TYPE_CHARGE)
+
+			table.insert(var_28_0, var_28_4)
 		end
 	end
 
-	return slot1
+	return var_28_0
 end
 
-function slot0.CanViewSkinProbability(slot0)
-	if not slot0:getConfig("skin_inquire_relation") or slot1 <= 0 then
+function var_0_0.CanViewSkinProbability(arg_29_0)
+	local var_29_0 = arg_29_0:getConfig("skin_inquire_relation")
+
+	if not var_29_0 or var_29_0 <= 0 then
 		return false
 	end
 
@@ -223,54 +253,65 @@ function slot0.CanViewSkinProbability(slot0)
 	return true
 end
 
-function slot0.GetSkinProbability(slot0)
-	slot1 = {}
+function var_0_0.GetSkinProbability(arg_30_0)
+	local var_30_0 = {}
 
-	if slot0:CanViewSkinProbability() then
-		slot1 = Item.getConfigData(slot0:getConfig("skin_inquire_relation")).combination_display
+	if arg_30_0:CanViewSkinProbability() then
+		local var_30_1 = arg_30_0:getConfig("skin_inquire_relation")
+
+		var_30_0 = Item.getConfigData(var_30_1).combination_display
 	end
 
-	return slot1
+	return var_30_0
 end
 
-function slot0.GetSkinProbabilityItem(slot0)
-	if not slot0:CanViewSkinProbability() then
+function var_0_0.GetSkinProbabilityItem(arg_31_0)
+	if not arg_31_0:CanViewSkinProbability() then
 		return nil
 	end
+
+	local var_31_0 = arg_31_0:getConfig("skin_inquire_relation")
 
 	return {
 		count = 1,
 		type = DROP_TYPE_ITEM,
-		id = slot0:getConfig("skin_inquire_relation")
+		id = var_31_0
 	}
 end
 
-function slot0.GetDropItem(slot0)
-	if #slot0:getConfig("drop_item") > 0 then
-		return slot1
+function var_0_0.GetDropItem(arg_32_0)
+	local var_32_0 = arg_32_0:getConfig("drop_item")
+
+	if #var_32_0 > 0 then
+		return var_32_0
 	else
 		assert(false, "should exist drop item")
 	end
 end
 
-function slot0.GetLimitDesc(slot0)
-	slot2 = slot0.buyCount or 0
+function var_0_0.GetLimitDesc(arg_33_0)
+	local var_33_0 = arg_33_0:getLimitCount()
+	local var_33_1 = arg_33_0.buyCount or 0
 
-	if slot0:getLimitCount() > 0 then
-		return i18n("charge_limit_all", slot1 - slot2, slot1)
+	if var_33_0 > 0 then
+		return i18n("charge_limit_all", var_33_0 - var_33_1, var_33_0)
 	end
 
-	if slot0:getConfig("group_limit") > 0 then
-		if (slot0:getConfig("group_type") or 0) == 1 then
-			return i18n("charge_limit_daily", slot3 - slot0.groupCount, slot3)
-		elseif slot4 == 2 then
-			return i18n("charge_limit_weekly", slot3 - slot0.groupCount, slot3)
-		elseif slot4 == 3 then
-			return i18n("charge_limit_monthly", slot3 - slot0.groupCount, slot3)
+	local var_33_2 = arg_33_0:getConfig("group_limit")
+
+	if var_33_2 > 0 then
+		local var_33_3 = arg_33_0:getConfig("group_type") or 0
+
+		if var_33_3 == 1 then
+			return i18n("charge_limit_daily", var_33_2 - arg_33_0.groupCount, var_33_2)
+		elseif var_33_3 == 2 then
+			return i18n("charge_limit_weekly", var_33_2 - arg_33_0.groupCount, var_33_2)
+		elseif var_33_3 == 3 then
+			return i18n("charge_limit_monthly", var_33_2 - arg_33_0.groupCount, var_33_2)
 		end
 	end
 
 	return ""
 end
 
-return slot0
+return var_0_0

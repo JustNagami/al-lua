@@ -1,45 +1,50 @@
-slot0 = class("StartCampTecCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("StartCampTecCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.tecID
-	slot5 = pg.TimeMgr.GetInstance():DescCDTime(pg.fleet_tech_template[slot2.levelID].time)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.tecID
+	local var_1_2 = var_1_0.levelID
+	local var_1_3 = pg.TimeMgr.GetInstance():DescCDTime(pg.fleet_tech_template[var_1_2].time)
+	local var_1_4 = getProxy(TechnologyNationProxy)
+	local var_1_5 = var_1_4:getStudyingTecItem()
 
-	if getProxy(TechnologyNationProxy):getStudyingTecItem() then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("technology_uplevel_error_studying", pg.fleet_tech_group[slot7].name))
+	if var_1_5 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("technology_uplevel_error_studying", pg.fleet_tech_group[var_1_5].name))
 
 		return
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("technology_uplevel_error_no_res", pg.fleet_tech_template[slot4].cost, slot5, math.fmod(slot2.levelID, 1000) - 1, math.fmod(slot2.levelID, 1000)),
-		onYes = function ()
-			if getProxy(PlayerProxy):getData().gold < pg.fleet_tech_template[uv0].cost then
+		content = i18n("technology_uplevel_error_no_res", pg.fleet_tech_template[var_1_2].cost, var_1_3, math.fmod(var_1_0.levelID, 1000) - 1, math.fmod(var_1_0.levelID, 1000)),
+		onYes = function()
+			if getProxy(PlayerProxy):getData().gold < pg.fleet_tech_template[var_1_2].cost then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_gold"))
 
 				return
 			end
 
 			pg.ConnectionMgr.GetInstance():Send(64001, {
-				tech_group_id = uv1,
-				tech_id = uv0
-			}, 64002, function (slot0)
-				if slot0.result == 0 then
-					uv1:updateTecItem(uv2, nil, uv0, pg.TimeMgr.GetInstance():GetServerTime() + pg.fleet_tech_template[uv0].time)
-					uv1:setTimer()
-					uv3:sendNotification(TechnologyConst.START_TEC_BTN_SUCCESS, uv2)
-					uv1:refreshRedPoint()
-					uv3:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
+				tech_group_id = var_1_1,
+				tech_id = var_1_2
+			}, 64002, function(arg_3_0)
+				if arg_3_0.result == 0 then
+					local var_3_0 = pg.TimeMgr.GetInstance():GetServerTime() + pg.fleet_tech_template[var_1_2].time
 
-					slot2 = getProxy(PlayerProxy)
-					slot3 = slot2:getData()
+					var_1_4:updateTecItem(var_1_1, nil, var_1_2, var_3_0)
+					var_1_4:setTimer()
+					arg_1_0:sendNotification(TechnologyConst.START_TEC_BTN_SUCCESS, var_1_1)
+					var_1_4:refreshRedPoint()
+					arg_1_0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
 
-					slot3:consume({
-						[id2res(1)] = pg.fleet_tech_template[uv0].cost
+					local var_3_1 = getProxy(PlayerProxy)
+					local var_3_2 = var_3_1:getData()
+
+					var_3_2:consume({
+						[id2res(1)] = pg.fleet_tech_template[var_1_2].cost
 					})
-					slot2:updatePlayer(slot3)
+					var_3_1:updatePlayer(var_3_2)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", slot0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg_3_0.result))
 				end
 			end)
 		end,
@@ -47,4 +52,4 @@ function slot0.execute(slot0, slot1)
 	})
 end
 
-return slot0
+return var_0_0

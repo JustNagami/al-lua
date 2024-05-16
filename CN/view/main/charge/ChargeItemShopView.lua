@@ -1,126 +1,142 @@
-slot0 = class("ChargeItemShopView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ChargeItemShopView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChargeItemShopUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:initData()
-	slot0:initUI()
-	slot0:Show()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:Show()
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in ipairs(slot0.cardList) do
-		slot5:Dispose()
+function var_0_0.OnDestroy(arg_3_0)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0.cardList) do
+		iter_3_1:Dispose()
 	end
 end
 
-function slot0.initData(slot0)
-	slot0.itemGoodsVOList = {}
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.initData(arg_4_0)
+	arg_4_0.itemGoodsVOList = {}
+	arg_4_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateData()
+	arg_4_0:updateData()
 end
 
-function slot0.initUI(slot0)
-	slot0.contextTF = slot0:findTF("content")
-	slot0.lScrollRect = GetComponent(slot0.contextTF, "LScrollRect")
-	slot0.cardTable = {}
-	slot0.cardList = {}
+function var_0_0.initUI(arg_5_0)
+	arg_5_0.contextTF = arg_5_0:findTF("content")
+	arg_5_0.lScrollRect = GetComponent(arg_5_0.contextTF, "LScrollRect")
+	arg_5_0.cardTable = {}
+	arg_5_0.cardList = {}
 
-	slot0:initScrollRect()
-	slot0:updateScrollRect()
+	arg_5_0:initScrollRect()
+	arg_5_0:updateScrollRect()
 end
 
-function slot0.initScrollRect(slot0)
-	slot0.cardTable = {}
-	slot0.cardList = {}
+function var_0_0.initScrollRect(arg_6_0)
+	arg_6_0.cardTable = {}
+	arg_6_0.cardList = {}
 
-	function slot0.lScrollRect.onInitItem(slot0)
-		slot1 = ChargeGoodsCard.New(slot0)
+	local function var_6_0(arg_7_0)
+		local var_7_0 = ChargeGoodsCard.New(arg_7_0)
 
-		table.insert(uv0.cardList, slot1)
-		onButton(uv0, slot1.tr, function ()
-			if uv0.goodsVO:isLevelLimit(uv1.player.level) then
+		table.insert(arg_6_0.cardList, var_7_0)
+		onButton(arg_6_0, var_7_0.tr, function()
+			if var_7_0.goodsVO:isLevelLimit(arg_6_0.player.level) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_level_limit"))
 
 				return
 			end
 
-			slot1 = {}
-			slot2 = nil
+			local var_8_0 = var_7_0.goodsVO:getConfig("effect_args")
+			local var_8_1 = {}
+			local var_8_2
 
-			if uv0.goodsVO:getConfig("effect_args") == "ship_bag_size" then
-				if Player.MAX_SHIP_BAG <= uv1.player:getMaxShipBagExcludeGuild() then
+			if var_8_0 == "ship_bag_size" then
+				if arg_6_0.player:getMaxShipBagExcludeGuild() >= Player.MAX_SHIP_BAG then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("charge_ship_bag_max"))
 
 					return
 				end
 
-				slot2 = ({
+				var_8_1 = {
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = Goods.SHIP_BAG_SIZE_ITEM
-				}).id
-			elseif slot0 == "equip_bag_size" then
-				if Player.MAX_EQUIP_BAG <= uv1.player:getMaxEquipmentBagExcludeGuild() then
+				}
+				var_8_2 = var_8_1.id
+			elseif var_8_0 == "equip_bag_size" then
+				if arg_6_0.player:getMaxEquipmentBagExcludeGuild() >= Player.MAX_EQUIP_BAG then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("charge_equip_bag_max"))
 
 					return
 				end
 
-				slot2 = ({
+				var_8_1 = {
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = Goods.EQUIP_BAG_SIZE_ITEM
-				}).id
-			elseif slot0 == "commander_bag_size" then
-				if Player.MAX_COMMANDER_BAG <= uv1.player.commanderBagMax then
+				}
+				var_8_2 = var_8_1.id
+			elseif var_8_0 == "commander_bag_size" then
+				if arg_6_0.player.commanderBagMax >= Player.MAX_COMMANDER_BAG then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("charge_commander_bag_max"))
 
 					return
 				end
 
-				slot2 = ({
+				var_8_1 = {
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = Goods.COMMANDER_BAG_SIZE_ITEM
-				}).id
-			elseif slot0 == "spweapon_bag_size" then
-				if EquipmentProxy.MAX_SPWEAPON_BAG <= getProxy(EquipmentProxy):GetSpWeaponCapacity() then
+				}
+				var_8_2 = var_8_1.id
+			elseif var_8_0 == "spweapon_bag_size" then
+				if getProxy(EquipmentProxy):GetSpWeaponCapacity() >= EquipmentProxy.MAX_SPWEAPON_BAG then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("charge_equip_bag_max"))
 
 					return
 				end
 
-				slot2 = ({
+				var_8_1 = {
 					count = 1,
 					type = DROP_TYPE_ITEM,
 					id = Goods.SPWEAPON_BAG_SIZE_ITEM
-				}).id
-			else
-				slot1 = {
-					id = uv0.goodsVO:getConfig("effect_args")[1],
-					type = uv0.goodsVO:getConfig("type"),
-					count = uv0.goodsVO:getConfig("num")
 				}
-				slot2 = (uv0.goodsVO:getConfig("type") ~= DROP_TYPE_RESOURCE or id2ItemId(slot1.id)) and slot1.id
+				var_8_2 = var_8_1.id
+			else
+				var_8_1 = {
+					id = var_7_0.goodsVO:getConfig("effect_args")[1],
+					type = var_7_0.goodsVO:getConfig("type"),
+					count = var_7_0.goodsVO:getConfig("num")
+				}
+
+				if var_7_0.goodsVO:getConfig("type") == DROP_TYPE_RESOURCE then
+					var_8_2 = id2ItemId(var_8_1.id)
+				else
+					var_8_2 = var_8_1.id
+				end
 			end
+
+			local var_8_3 = ChargeConst.getGroupLimit(arg_6_0.normalGroupList, var_7_0.goodsVO:getConfig("group"))
+			local var_8_4 = var_7_0.goodsVO:IsGroupSale() and i18n("gem_shop_xinzhi_tip", var_8_3) or ""
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				yesText = "text_buy",
 				type = MSGBOX_TYPE_SINGLE_ITEM,
-				drop = slot1,
-				subIntro = uv0.goodsVO:IsGroupSale() and i18n("gem_shop_xinzhi_tip", ChargeConst.getGroupLimit(uv1.normalGroupList, uv0.goodsVO:getConfig("group"))) or "",
-				onYes = function ()
-					if uv0 then
+				drop = var_8_1,
+				subIntro = var_8_4,
+				onYes = function()
+					if var_8_2 then
+						local var_9_0 = var_7_0.goodsVO:GetPrice()
+						local var_9_1 = Item.New({
+							id = var_8_2
+						}):getConfig("name")
+
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
-							content = i18n("charge_scene_buy_confirm", uv1.goodsVO:GetPrice(), Item.New({
-								id = uv0
-							}):getConfig("name")),
-							onYes = function ()
-								uv0:emit(ChargeMediator.BUY_ITEM, uv1.goodsVO.id, 1)
+							content = i18n("charge_scene_buy_confirm", var_9_0, var_9_1),
+							onYes = function()
+								arg_6_0:emit(ChargeMediator.BUY_ITEM, var_7_0.goodsVO.id, 1)
 							end
 						})
 					end
@@ -128,111 +144,135 @@ function slot0.initScrollRect(slot0)
 			})
 		end)
 
-		uv0.cardTable[slot0] = slot1
+		arg_6_0.cardTable[arg_7_0] = var_7_0
 	end
 
-	function slot0.lScrollRect.onUpdateItem(slot0, slot1)
-		if not uv0.cardTable[slot1] then
-			uv1(slot1)
+	local function var_6_1(arg_11_0, arg_11_1)
+		local var_11_0 = arg_6_0.cardTable[arg_11_1]
 
-			slot2 = uv0.cardTable[slot1]
+		if not var_11_0 then
+			var_6_0(arg_11_1)
+
+			var_11_0 = arg_6_0.cardTable[arg_11_1]
 		end
 
-		slot3 = uv0.itemGoodsVOList[slot0 + 1]
+		local var_11_1 = arg_6_0.itemGoodsVOList[arg_11_0 + 1]
 
-		slot2:update(slot3)
-		slot2:setLevelMask(uv0.player.level)
-		slot2:setGroupMask(ChargeConst.getGroupLimit(uv0.normalGroupList, slot3:getConfig("group")))
+		var_11_0:update(var_11_1)
+		var_11_0:setLevelMask(arg_6_0.player.level)
+
+		local var_11_2 = ChargeConst.getGroupLimit(arg_6_0.normalGroupList, var_11_1:getConfig("group"))
+
+		var_11_0:setGroupMask(var_11_2)
 	end
+
+	arg_6_0.lScrollRect.onInitItem = var_6_0
+	arg_6_0.lScrollRect.onUpdateItem = var_6_1
 end
 
-function slot0.updateScrollRect(slot0)
-	slot0.lScrollRect:SetTotalCount(#slot0.itemGoodsVOList, slot0.lScrollRect.value)
+function var_0_0.updateScrollRect(arg_12_0)
+	arg_12_0.lScrollRect:SetTotalCount(#arg_12_0.itemGoodsVOList, arg_12_0.lScrollRect.value)
 end
 
-function slot0.updateItemGoodsVOList(slot0)
-	slot0.itemGoodsVOList = {}
+function var_0_0.updateItemGoodsVOList(arg_13_0)
+	arg_13_0.itemGoodsVOList = {}
 
-	for slot5, slot6 in pairs(pg.shop_template.all) do
-		if slot1[slot6].genre == "gem_shop" then
-			slot8, slot9, slot10 = ChargeConst.getGoodsLimitInfo(slot6)
-			slot11 = false
+	local var_13_0 = pg.shop_template
 
-			if slot7.effect_args == "ship_bag_size" and slot9 and slot10 then
-				if slot9 <= slot0.player:getMaxShipBagExcludeGuild() and slot13 <= slot10 then
-					slot11 = true
+	for iter_13_0, iter_13_1 in pairs(var_13_0.all) do
+		local var_13_1 = var_13_0[iter_13_1]
+
+		if var_13_1.genre == "gem_shop" then
+			local var_13_2, var_13_3, var_13_4 = ChargeConst.getGoodsLimitInfo(iter_13_1)
+			local var_13_5 = false
+			local var_13_6 = var_13_1.effect_args
+
+			if var_13_6 == "ship_bag_size" and var_13_3 and var_13_4 then
+				local var_13_7 = arg_13_0.player:getMaxShipBagExcludeGuild()
+
+				if var_13_3 <= var_13_7 and var_13_7 <= var_13_4 then
+					var_13_5 = true
 				end
-			elseif slot12 == "equip_bag_max" and slot9 and slot10 then
-				if slot9 <= slot0.player:getMaxEquipmentBag() and slot13 <= slot10 then
-					slot11 = true
+			elseif var_13_6 == "equip_bag_max" and var_13_3 and var_13_4 then
+				local var_13_8 = arg_13_0.player:getMaxEquipmentBag()
+
+				if var_13_3 <= var_13_8 and var_13_8 <= var_13_4 then
+					var_13_5 = true
 				end
-			elseif slot12 == "commander_bag_size" and slot9 and slot10 then
-				if slot9 <= slot0.player.commanderBagMax and slot13 <= slot10 then
-					slot11 = true
+			elseif var_13_6 == "commander_bag_size" and var_13_3 and var_13_4 then
+				local var_13_9 = arg_13_0.player.commanderBagMax
+
+				if var_13_3 <= var_13_9 and var_13_9 <= var_13_4 then
+					var_13_5 = true
 				end
 			else
-				slot11 = true
+				var_13_5 = true
 			end
 
-			if slot11 == true then
-				table.insert(slot0.itemGoodsVOList, Goods.Create({
+			if var_13_5 == true then
+				local var_13_10 = Goods.Create({
 					count = 0,
-					shop_id = slot6
-				}, Goods.TYPE_MILITARY))
+					shop_id = iter_13_1
+				}, Goods.TYPE_MILITARY)
+
+				table.insert(arg_13_0.itemGoodsVOList, var_13_10)
 			end
 		end
 	end
 
-	for slot5 = #slot0.itemGoodsVOList, 1, -1 do
-		slot6 = slot0.itemGoodsVOList[slot5]
+	for iter_13_2 = #arg_13_0.itemGoodsVOList, 1, -1 do
+		local var_13_11 = arg_13_0.itemGoodsVOList[iter_13_2]
+		local var_13_12 = ChargeConst.getGroupLimit(arg_13_0.normalGroupList, var_13_11:getConfig("group"))
 
-		if not slot6:IsShowWhenGroupSale(ChargeConst.getGroupLimit(slot0.normalGroupList, slot6:getConfig("group"))) then
-			table.remove(slot0.itemGoodsVOList, slot5)
+		if not var_13_11:IsShowWhenGroupSale(var_13_12) then
+			table.remove(arg_13_0.itemGoodsVOList, iter_13_2)
 		end
 	end
 end
 
-function slot0.sortItemGoodsVOList(slot0)
-	table.sort(slot0.itemGoodsVOList, function (slot0, slot1)
-		slot2 = slot0:isLevelLimit(uv0.player.level) and 1 or 0
-		slot3 = slot1:isLevelLimit(uv0.player.level) and 1 or 0
+function var_0_0.sortItemGoodsVOList(arg_14_0)
+	table.sort(arg_14_0.itemGoodsVOList, function(arg_15_0, arg_15_1)
+		local var_15_0 = arg_15_0:isLevelLimit(arg_14_0.player.level) and 1 or 0
+		local var_15_1 = arg_15_1:isLevelLimit(arg_14_0.player.level) and 1 or 0
+		local var_15_2 = arg_15_0:getConfig("order")
+		local var_15_3 = arg_15_1:getConfig("order")
 
-		if slot0:getConfig("order") == slot1:getConfig("order") then
-			if slot2 == slot3 then
-				return slot1.id < slot0.id
+		if var_15_2 == var_15_3 then
+			if var_15_0 == var_15_1 then
+				return arg_15_0.id > arg_15_1.id
 			end
 
-			return slot2 < slot3
+			return var_15_0 < var_15_1
 		else
-			return slot4 < slot5
+			return var_15_2 < var_15_3
 		end
 	end)
 end
 
-function slot0.updateGoodsData(slot0)
-	slot0.firstChargeIds = slot0.contextData.firstChargeIds
-	slot0.chargedList = slot0.contextData.chargedList
-	slot0.normalList = slot0.contextData.normalList
-	slot0.normalGroupList = slot0.contextData.normalGroupList
+function var_0_0.updateGoodsData(arg_16_0)
+	arg_16_0.firstChargeIds = arg_16_0.contextData.firstChargeIds
+	arg_16_0.chargedList = arg_16_0.contextData.chargedList
+	arg_16_0.normalList = arg_16_0.contextData.normalList
+	arg_16_0.normalGroupList = arg_16_0.contextData.normalGroupList
 end
 
-function slot0.setGoodData(slot0, slot1, slot2, slot3, slot4)
-	slot0.firstChargeIds = slot1
-	slot0.chargedList = slot2
-	slot0.normalList = slot3
-	slot0.normalGroupList = slot4
+function var_0_0.setGoodData(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4)
+	arg_17_0.firstChargeIds = arg_17_1
+	arg_17_0.chargedList = arg_17_2
+	arg_17_0.normalList = arg_17_3
+	arg_17_0.normalGroupList = arg_17_4
 end
 
-function slot0.updateData(slot0)
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.updateData(arg_18_0)
+	arg_18_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateItemGoodsVOList()
-	slot0:sortItemGoodsVOList()
+	arg_18_0:updateItemGoodsVOList()
+	arg_18_0:sortItemGoodsVOList()
 end
 
-function slot0.reUpdateAll(slot0)
-	slot0:updateData()
-	slot0:updateScrollRect()
+function var_0_0.reUpdateAll(arg_19_0)
+	arg_19_0:updateData()
+	arg_19_0:updateScrollRect()
 end
 
-return slot0
+return var_0_0

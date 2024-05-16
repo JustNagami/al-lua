@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatioByBulletTorpedo",
+				number = -0.05
+			}
+		}
+	},
 	{
 		time = 5,
 		effect_list = {
@@ -168,25 +188,5 @@ return {
 	stack = 1,
 	id = 19332,
 	icon = 19330,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatioByBulletTorpedo",
-				number = -0.05
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,56 +1,54 @@
-slot0 = class("EnemyDeadCellView", import("view.level.cell.StaticCellView"))
+﻿local var_0_0 = class("EnemyDeadCellView", import("view.level.cell.StaticCellView"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.config = nil
-	slot0.chapter = nil
-	slot0._live2death = nil
+	arg_1_0.config = nil
+	arg_1_0.chapter = nil
+	arg_1_0._live2death = nil
 end
 
-function slot0.GetOrder(slot0)
+function var_0_0.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityLittle
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.info
-	slot2 = slot0.config
+function var_0_0.Update(arg_3_0)
+	local var_3_0 = arg_3_0.info
+	local var_3_1 = arg_3_0.config
 
-	if IsNil(slot0.go) then
-		slot3 = slot0:GetLoader()
+	if IsNil(arg_3_0.go) then
+		arg_3_0:GetLoader():GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function(arg_4_0)
+			arg_4_0.name = "enemy_" .. var_3_0.attachmentId
+			arg_3_0.go = arg_4_0
+			arg_3_0.tf = tf(arg_4_0)
 
-		slot3:GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
-			slot0.name = "enemy_" .. uv0.attachmentId
-			uv1.go = slot0
-			uv1.tf = tf(slot0)
+			setParent(arg_4_0, arg_3_0.parent)
+			arg_3_0:OverrideCanvas()
+			arg_3_0:ResetCanvasOrder()
+			setAnchoredPosition(arg_3_0.tf, Vector2.zero)
 
-			setParent(slot0, uv1.parent)
-			uv1:OverrideCanvas()
-			uv1:ResetCanvasOrder()
-			setAnchoredPosition(uv1.tf, Vector2.zero)
-
-			if uv2.icon_type == 1 then
-				setAnchoredPosition(uv1.tf, Vector2(0, 10))
-				uv1:GetLoader():LoadSprite("enemies/" .. uv2.icon .. "_d_blue", "", tf(slot0):Find("icon"))
+			if var_3_1.icon_type == 1 then
+				setAnchoredPosition(arg_3_0.tf, Vector2(0, 10))
+				arg_3_0:GetLoader():LoadSprite("enemies/" .. var_3_1.icon .. "_d_blue", "", tf(arg_4_0):Find("icon"))
 			end
 
-			setActive(findTF(uv1.tf, "effect_not_open"), false)
-			setActive(findTF(uv1.tf, "effect_open"), false)
-			setActive(findTF(uv1.tf, "huoqiubaozha"), false)
-			uv1:Update()
+			setActive(findTF(arg_3_0.tf, "effect_not_open"), false)
+			setActive(findTF(arg_3_0.tf, "effect_open"), false)
+			setActive(findTF(arg_3_0.tf, "huoqiubaozha"), false)
+			arg_3_0:Update()
 		end, "Main")
 
 		return
 	end
 
-	setActive(findTF(slot0.tf, "huoqiubaozha"), slot0._live2death)
+	setActive(findTF(arg_3_0.tf, "huoqiubaozha"), arg_3_0._live2death)
 end
 
-function slot0.Clear(slot0)
-	slot0._live2death = nil
-	slot0.chapter = nil
+function var_0_0.Clear(arg_5_0)
+	arg_5_0._live2death = nil
+	arg_5_0.chapter = nil
 
-	uv0.super.Clear(slot0)
+	var_0_0.super.Clear(arg_5_0)
 end
 
-return slot0
+return var_0_0

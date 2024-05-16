@@ -1,49 +1,51 @@
-slot0 = class("NewProbabilitySkinShopMediator", import(".NewSkinShopMediator"))
-slot0.OPEN_CHARGE_BIRTHDAY = "NewProbabilitySkinShopMediator:OPEN_CHARGE_BIRTHDAY"
-slot0.CHARGE = "NewProbabilitySkinShopMediator:CHARGE"
-slot0.OPEN_CHARGE_ITEM_PANEL = "NewProbabilitySkinShopMediator:OPEN_CHARGE_ITEM_PANEL"
+﻿local var_0_0 = class("NewProbabilitySkinShopMediator", import(".NewSkinShopMediator"))
 
-function slot0.register(slot0)
-	uv0.super.register(slot0)
-	slot0:bind(uv0.OPEN_CHARGE_BIRTHDAY, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+var_0_0.OPEN_CHARGE_BIRTHDAY = "NewProbabilitySkinShopMediator:OPEN_CHARGE_BIRTHDAY"
+var_0_0.CHARGE = "NewProbabilitySkinShopMediator:CHARGE"
+var_0_0.OPEN_CHARGE_ITEM_PANEL = "NewProbabilitySkinShopMediator:OPEN_CHARGE_ITEM_PANEL"
+
+function var_0_0.register(arg_1_0)
+	var_0_0.super.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OPEN_CHARGE_BIRTHDAY, function(arg_2_0, arg_2_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeBirthdayMediator,
 			viewComponent = ChargeBirthdayLayer,
 			data = {}
 		}))
 	end)
-	slot0:bind(uv0.CHARGE, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHARGE_OPERATION, {
-			shopId = slot1
+	arg_1_0:bind(var_0_0.CHARGE, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.CHARGE_OPERATION, {
+			shopId = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.OPEN_CHARGE_ITEM_PANEL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_CHARGE_ITEM_PANEL, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ChargeItemPanelMediator,
 			viewComponent = ChargeItemPanelLayer,
 			data = {
-				panelConfig = slot1
+				panelConfig = arg_4_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
-	slot1 = uv0.super.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
+	local var_5_0 = var_0_0.super.listNotificationInterests(arg_5_0)
 
-	table.insert(slot1, GAME.CHARGE_SUCCESS)
+	table.insert(var_5_0, GAME.CHARGE_SUCCESS)
 
-	return slot1
+	return var_5_0
 end
 
-function slot0.handleNotification(slot0, slot1)
-	uv0.super.handleNotification(slot0, slot1)
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	var_0_0.super.handleNotification(arg_6_0, arg_6_1)
 
-	slot3 = slot1:getBody()
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == GAME.CHARGE_SUCCESS then
-		slot0.viewComponent:OnChargeSuccess(slot3.shopId)
+	if var_6_0 == GAME.CHARGE_SUCCESS then
+		arg_6_0.viewComponent:OnChargeSuccess(var_6_1.shopId)
 	end
 end
 
-return slot0
+return var_0_0

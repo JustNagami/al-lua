@@ -1,4 +1,26 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_Kursk-Mark1",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_Kursk-Mark2",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -249,27 +271,5 @@ return {
 	stack = 1,
 	id = 16593,
 	icon = 16593,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_Kursk-Mark1",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_Kursk-Mark2",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

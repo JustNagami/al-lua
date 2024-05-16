@@ -1,67 +1,73 @@
-slot0 = require
-slot2 = table
+﻿local var_0_0 = require
+local var_0_1 = string
+local var_0_2 = table
+
 int64.zero = int64.new(0, 0)
 uint64.zero = uint64.new(0, 0)
 
-function string.split(slot0, slot1)
-	slot0 = tostring(slot0)
+function var_0_1.split(arg_1_0, arg_1_1)
+	arg_1_0 = tostring(arg_1_0)
+	arg_1_1 = tostring(arg_1_1)
 
-	if tostring(slot1) == "" then
+	if arg_1_1 == "" then
 		return false
 	end
 
-	slot2 = 0
-	slot3 = {}
+	local var_1_0 = 0
+	local var_1_1 = {}
 
-	for slot7, slot8 in function ()
-		return uv0.find(uv1, uv2, uv3, true)
-	end, nil,  do
-		uv1.insert(slot3, uv0.sub(slot0, slot2, slot7 - 1))
+	for iter_1_0, iter_1_1 in function()
+		return var_0_1.find(arg_1_0, arg_1_1, var_1_0, true)
+	end do
+		var_0_2.insert(var_1_1, var_0_1.sub(arg_1_0, var_1_0, iter_1_0 - 1))
 
-		slot2 = slot8 + 1
+		var_1_0 = iter_1_1 + 1
 	end
 
-	uv1.insert(slot3, uv0.sub(slot0, slot2))
+	var_0_2.insert(var_1_1, var_0_1.sub(arg_1_0, var_1_0))
 
-	return slot3
+	return var_1_1
 end
 
-function import(slot0, slot1)
-	slot2 = nil
-	slot3 = slot0
-	slot4 = 1
+function import(arg_3_0, arg_3_1)
+	local var_3_0
+	local var_3_1 = arg_3_0
+	local var_3_2 = 1
 
 	while true do
-		if uv0.byte(slot0, slot4) ~= 46 then
-			slot3 = uv0.sub(slot0, slot4)
+		if var_0_1.byte(arg_3_0, var_3_2) ~= 46 then
+			var_3_1 = var_0_1.sub(arg_3_0, var_3_2)
 
-			if slot2 and #slot2 > 0 then
-				slot3 = uv1.concat(slot2, ".") .. "." .. slot3
+			if var_3_0 and #var_3_0 > 0 then
+				var_3_1 = var_0_2.concat(var_3_0, ".") .. "." .. var_3_1
 			end
 
 			break
 		end
 
-		slot4 = slot4 + 1
+		var_3_2 = var_3_2 + 1
 
-		if not slot2 then
-			if not slot1 then
-				slot5, slot1 = debug.getlocal(3, 1)
+		if not var_3_0 then
+			if not arg_3_1 then
+				local var_3_3, var_3_4 = debug.getlocal(3, 1)
+
+				arg_3_1 = var_3_4
 			end
 
-			slot2 = uv0.split(slot1, ".")
+			var_3_0 = var_0_1.split(arg_3_1, ".")
 		end
 
-		uv1.remove(slot2, #slot2)
+		var_0_2.remove(var_3_0, #var_3_0)
 	end
 
-	return uv2(slot3)
+	return var_0_0(var_3_1)
 end
 
-function reimport(slot0)
-	slot1 = package
-	slot1.loaded[slot0] = nil
-	slot1.preload[slot0] = nil
+function reimport(arg_4_0)
+	local var_4_0 = package
 
-	return uv0(slot0)
+	var_4_0.loaded[arg_4_0] = nil
+	var_4_0.preload[arg_4_0] = nil
+
+	return var_0_0(arg_4_0)
 end

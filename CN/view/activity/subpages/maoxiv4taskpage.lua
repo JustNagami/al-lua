@@ -1,41 +1,45 @@
-slot0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("MaoxiV4TaskPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data3
+function var_0_0.OnUpdateFlush(arg_1_0)
+	arg_1_0.nday = arg_1_0.activity.data3
 
-	if slot0.activity:getConfig("config_client").firstStory then
-		playStory(slot1)
+	local var_1_0 = arg_1_0.activity:getConfig("config_client").firstStory
+
+	if var_1_0 then
+		playStory(var_1_0)
 	end
 
-	slot0:PlayStory()
+	arg_1_0:PlayStory()
 
-	if slot0.dayTF then
-		setText(slot0.dayTF, tostring(slot0.nday))
+	if arg_1_0.dayTF then
+		setText(arg_1_0.dayTF, tostring(arg_1_0.nday))
 	end
 
-	slot0.uilist:align(#slot0.taskGroup[slot0.nday])
+	arg_1_0.uilist:align(#arg_1_0.taskGroup[arg_1_0.nday])
 end
 
-function slot0.PlayStory(slot0)
-	slot1 = slot0.activity:getConfig("config_client").story
-	slot2 = slot0.nday - 1
+function var_0_0.PlayStory(arg_2_0)
+	local var_2_0 = arg_2_0.activity:getConfig("config_client").story
+	local var_2_1 = arg_2_0.nday - 1
 
-	if slot0.nday == 7 then
-		slot4 = slot0.taskGroup[slot0.nday][2]
-		slot6 = slot0.taskProxy:getTaskById(slot4) or slot0.taskProxy:getFinishTaskById(slot4)
+	if arg_2_0.nday == 7 then
+		local var_2_2 = arg_2_0.taskGroup[arg_2_0.nday][1]
+		local var_2_3 = arg_2_0.taskGroup[arg_2_0.nday][2]
+		local var_2_4 = arg_2_0.taskProxy:getTaskById(var_2_2) or arg_2_0.taskProxy:getFinishTaskById(var_2_2)
+		local var_2_5 = arg_2_0.taskProxy:getTaskById(var_2_3) or arg_2_0.taskProxy:getFinishTaskById(var_2_3)
 
-		if (slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][1]) or slot0.taskProxy:getFinishTaskById(slot3)):getTaskStatus() == 2 and slot6:getTaskStatus() == 2 then
-			slot2 = slot2 + 1
+		if var_2_4:getTaskStatus() == 2 and var_2_5:getTaskStatus() == 2 then
+			var_2_1 = var_2_1 + 1
 		end
 	end
 
-	if checkExist(slot1, {
-		slot2
+	if checkExist(var_2_0, {
+		var_2_1
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(slot1[slot2][1])
+		pg.NewStoryMgr.GetInstance():Play(var_2_0[var_2_1][1])
 	end
 end
 
-return slot0
+return var_0_0

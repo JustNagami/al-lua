@@ -1,86 +1,83 @@
-slot0 = class("CourtyardFurnitureState")
+﻿local var_0_0 = class("CourtyardFurnitureState")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0._tf = slot1.transform
-	slot0.rectTF = slot2
-	slot0.rootTF = slot0._tf.parent
-	slot0.furnitureStateImg = slot0._tf:GetComponent(typeof(Image))
-	slot0.furnitureStateAnim = slot0._tf:GetComponent(typeof(Animation))
-	slot0.selectedMat = slot3
-	slot0.canPlaceMat = slot4
-	slot0.cantPlaceMat = slot5
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.rectTF = arg_1_2
+	arg_1_0.rootTF = arg_1_0._tf.parent
+	arg_1_0.furnitureStateImg = arg_1_0._tf:GetComponent(typeof(Image))
+	arg_1_0.furnitureStateAnim = arg_1_0._tf:GetComponent(typeof(Animation))
+	arg_1_0.selectedMat = arg_1_3
+	arg_1_0.canPlaceMat = arg_1_4
+	arg_1_0.cantPlaceMat = arg_1_5
 end
 
-function slot0.Init(slot0, slot1, slot2)
-	slot3 = pg.UIMgr.GetInstance()
-
-	slot3:LoadingOn(false)
-	setActive(slot0._tf, false)
-
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("furnitrues/" .. slot2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+function var_0_0.Init(arg_2_0, arg_2_1, arg_2_2)
+	pg.UIMgr.GetInstance():LoadingOn(false)
+	setActive(arg_2_0._tf, false)
+	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. arg_2_2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if uv0.exited then
+		if arg_2_0.exited then
 			return
 		end
 
-		setActive(uv0._tf, true)
+		setActive(arg_2_0._tf, true)
 
-		uv0.furnitureStateImg.sprite = slot0:GetComponent(typeof(Image)).sprite
-		uv0._tf.sizeDelta = slot0.transform.sizeDelta
-		uv0._tf.localPosition = uv1:GetCenterPoint()
+		arg_2_0.furnitureStateImg.sprite = arg_3_0:GetComponent(typeof(Image)).sprite
+		arg_2_0._tf.sizeDelta = arg_3_0.transform.sizeDelta
+		arg_2_0._tf.localPosition = arg_2_1:GetCenterPoint()
 
-		uv0:OnUpdateScale(uv1)
-		uv0:OnReset()
+		arg_2_0:OnUpdateScale(arg_2_1)
+		arg_2_0:OnReset()
 	end), true, true)
 end
 
-function slot0.OnInit(slot0, slot1, slot2)
-	slot0:Init(slot1, slot2)
-	setParent(slot0._tf, slot0.rectTF)
+function var_0_0.OnInit(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0:Init(arg_4_1, arg_4_2)
+	setParent(arg_4_0._tf, arg_4_0.rectTF)
 end
 
-function slot0.OnUpdateScale(slot0, slot1)
-	slot0._tf.localScale = Vector3(CourtYardCalcUtil.GetSign(slot1._tf.localScale.x), 1, 1)
+function var_0_0.OnUpdateScale(arg_5_0, arg_5_1)
+	local var_5_0 = CourtYardCalcUtil.GetSign(arg_5_1._tf.localScale.x)
+
+	arg_5_0._tf.localScale = Vector3(var_5_0, 1, 1)
 end
 
-function slot0.OnUpdate(slot0, slot1)
-	slot0._tf.localPosition = slot1:GetCenterPoint()
+function var_0_0.OnUpdate(arg_6_0, arg_6_1)
+	arg_6_0._tf.localPosition = arg_6_1:GetCenterPoint()
 end
 
-function slot0.OnCantPlace(slot0)
-	if slot0.furnitureStateImg.material ~= slot0.cantPlaceMat then
-		slot0.furnitureStateImg.material = slot0.cantPlaceMat
+function var_0_0.OnCantPlace(arg_7_0)
+	if arg_7_0.furnitureStateImg.material ~= arg_7_0.cantPlaceMat then
+		arg_7_0.furnitureStateImg.material = arg_7_0.cantPlaceMat
 
-		slot0.furnitureStateAnim:Play("anim_courtyard_iconred")
+		arg_7_0.furnitureStateAnim:Play("anim_courtyard_iconred")
 	end
 end
 
-function slot0.OnCanPlace(slot0)
-	if slot0.furnitureStateImg.material ~= slot0.canPlaceMat then
-		slot0.furnitureStateImg.material = slot0.canPlaceMat
+function var_0_0.OnCanPlace(arg_8_0)
+	if arg_8_0.furnitureStateImg.material ~= arg_8_0.canPlaceMat then
+		arg_8_0.furnitureStateImg.material = arg_8_0.canPlaceMat
 
-		slot0.furnitureStateAnim:Play("anim_courtyard_icongreen")
+		arg_8_0.furnitureStateAnim:Play("anim_courtyard_icongreen")
 	end
 end
 
-function slot0.OnReset(slot0)
-	if slot0.furnitureStateImg.material ~= slot0.selectedMat then
-		slot0.furnitureStateImg.material = slot0.selectedMat
+function var_0_0.OnReset(arg_9_0)
+	if arg_9_0.furnitureStateImg.material ~= arg_9_0.selectedMat then
+		arg_9_0.furnitureStateImg.material = arg_9_0.selectedMat
 
-		slot0.furnitureStateAnim:Play("anim_courtyard_iconwhite")
+		arg_9_0.furnitureStateAnim:Play("anim_courtyard_iconwhite")
 	end
 end
 
-function slot0.OnClear(slot0)
-	slot0.furnitureStateAnim:Stop()
+function var_0_0.OnClear(arg_10_0)
+	arg_10_0.furnitureStateAnim:Stop()
 
-	slot0.furnitureStateImg.sprite = nil
-	slot0.furnitureStateImg.material = nil
+	arg_10_0.furnitureStateImg.sprite = nil
+	arg_10_0.furnitureStateImg.material = nil
 
-	setParent(slot0._tf, slot0.rootTF)
+	setParent(arg_10_0._tf, arg_10_0.rootTF)
 end
 
-return slot0
+return var_0_0

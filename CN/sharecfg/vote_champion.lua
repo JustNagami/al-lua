@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.vote_champion = {
 	{
 		ship_group = 10706,

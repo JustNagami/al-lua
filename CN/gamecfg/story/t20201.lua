@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	noWaitFade = true,
@@ -13,12 +13,7 @@ return {
 			bgFade = true,
 			sequence = {
 				{
-					[[
-          不久前，西部某海域 
-
-
-
-]],
+					"          不久前，西部某海域 \n\n\n\n",
 					2
 				}
 			}

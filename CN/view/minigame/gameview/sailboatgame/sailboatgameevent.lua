@@ -1,8 +1,9 @@
-this = class("SailBoatGameEvent")
-this.PLAYER_EVENT_DAMAGE = "player event damage"
-this.BOAT_EVENT_FIRE = "boat event fire"
-this.CREATE_EFFECT = "create effect"
-this.USE_ITEM = "use item"
-this.PLAYER_DEAD = "player dead"
+﻿local var_0_0 = class("SailBoatGameEvent")
 
-return this
+var_0_0.PLAYER_EVENT_DAMAGE = "player event damage"
+var_0_0.BOAT_EVENT_FIRE = "boat event fire"
+var_0_0.CREATE_EFFECT = "create effect"
+var_0_0.USE_ITEM = "use item"
+var_0_0.PLAYER_DEAD = "player dead"
+
+return var_0_0

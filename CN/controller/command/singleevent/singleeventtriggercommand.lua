@@ -1,28 +1,30 @@
-slot0 = class("SingleEventTriggerCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SingleEventTriggerCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot3:Send(11202, {
+	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = slot2.actId,
-		arg1 = slot2.eventId
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(ActivityProxy):getActivityById(uv0.actId)
+		activity_id = var_1_0.actId,
+		arg1 = var_1_0.eventId
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ActivityProxy):getActivityById(var_1_0.actId)
 
-			slot1:AddFinishEvent(uv0.eventId)
-			getProxy(ActivityProxy):updateActivity(slot1)
+			var_2_0:AddFinishEvent(var_1_0.eventId)
+			getProxy(ActivityProxy):updateActivity(var_2_0)
+
+			local var_2_1 = PlayerConst.addTranDrop(arg_2_0.award_list)
+
 			pg.m02:sendNotification(GAME.SINGLE_EVENT_TRIGGER_DONE, {
-				activity = slot1,
-				eventId = uv0.eventId,
-				awards = PlayerConst.addTranDrop(slot0.award_list)
+				activity = var_2_0,
+				eventId = var_1_0.eventId,
+				awards = var_2_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Trigger single event failed:" .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Trigger single event failed:" .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

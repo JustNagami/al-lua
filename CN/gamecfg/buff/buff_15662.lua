@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffRemoteBone",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				bone_name = "cannon",
+				bone_target = "FlagShip"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,18 +32,5 @@ return {
 	stack = 1,
 	id = 15662,
 	icon = 15660,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffRemoteBone",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				bone_name = "cannon",
-				bone_target = "FlagShip"
-			}
-		}
-	}
+	last_effect = ""
 }

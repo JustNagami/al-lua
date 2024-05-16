@@ -1,11 +1,13 @@
-slot0 = class("MemoryBookLayer", import("...base.BaseUI"))
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot0.PAGE_ONE = 1
-slot0.PAGE_TWO = 2
-slot4 = 12
-slot5 = {
+﻿local var_0_0 = class("MemoryBookLayer", import("...base.BaseUI"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+
+var_0_0.PAGE_ONE = 1
+var_0_0.PAGE_TWO = 2
+
+local var_0_4 = 12
+local var_0_5 = {
 	{
 		-503,
 		83
@@ -104,349 +106,374 @@ slot5 = {
 	}
 }
 
-function slot6(slot0)
-	slot1 = {
-		Get = function (slot0)
-			slot1 = nil
+local function var_0_6(arg_1_0)
+	local var_1_0 = {}
 
-			if #slot0.list == 0 then
-				GameObject("Image"):AddComponent(typeof(Image))
-			else
-				slot1 = table.remove(slot0.list, #slot0.list)
-			end
+	local function var_1_1(arg_2_0)
+		arg_2_0.root = arg_1_0
+		arg_2_0.list = {}
+	end
 
-			setActive(slot1, true)
+	function var_1_0.Get(arg_3_0)
+		local var_3_0
 
-			return slot1
-		end,
-		Return = function (slot0, slot1)
-			slot0:Clear(slot1)
-			setParent(slot1, slot0.root)
-			table.insert(slot0.list, slot1)
-		end,
-		Clear = function (slot0, slot1)
-			slot1:GetComponent(typeof(Image)).sprite = nil
+		if #arg_3_0.list == 0 then
+			var_3_0 = GameObject("Image")
 
-			setActive(slot1, false)
-		end,
-		Dispose = function (slot0)
-			_.each(slot0.list, function (slot0)
-				Destroy(slot0)
-			end)
-
-			slot0.list = nil
+			var_3_0:AddComponent(typeof(Image))
+		else
+			var_3_0 = table.remove(arg_3_0.list, #arg_3_0.list)
 		end
-	}
 
-	(function (slot0)
-		slot0.root = uv0
-		slot0.list = {}
-	end)(slot1)
+		setActive(var_3_0, true)
 
-	return slot1
+		return var_3_0
+	end
+
+	function var_1_0.Return(arg_4_0, arg_4_1)
+		arg_4_0:Clear(arg_4_1)
+		setParent(arg_4_1, arg_4_0.root)
+		table.insert(arg_4_0.list, arg_4_1)
+	end
+
+	function var_1_0.Clear(arg_5_0, arg_5_1)
+		arg_5_1:GetComponent(typeof(Image)).sprite = nil
+
+		setActive(arg_5_1, false)
+	end
+
+	function var_1_0.Dispose(arg_6_0)
+		_.each(arg_6_0.list, function(arg_7_0)
+			Destroy(arg_7_0)
+		end)
+
+		arg_6_0.list = nil
+	end
+
+	var_1_1(var_1_0)
+
+	return var_1_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_8_0)
 	return "MemoryBookUI"
 end
 
-function slot0.setActivity(slot0, slot1)
-	slot0.activity = slot1
-	slot0.targetItems = slot0.activity:getConfig("config_data")
-	slot0.fetchItems = slot0.activity.data1_list
-	slot0.unlockItems = slot0.activity.data2_list
-	slot0.awardVO = slot0.activity:getConfig("config_client")[1]
+function var_0_0.setActivity(arg_9_0, arg_9_1)
+	arg_9_0.activity = arg_9_1
+	arg_9_0.targetItems = arg_9_0.activity:getConfig("config_data")
+	arg_9_0.fetchItems = arg_9_0.activity.data1_list
+	arg_9_0.unlockItems = arg_9_0.activity.data2_list
+	arg_9_0.awardVO = arg_9_0.activity:getConfig("config_client")[1]
 end
 
-function slot0.getMemoryState(slot0, slot1)
-	return table.contains(slot0.unlockItems, slot1) and uv0 or table.contains(slot0.fetchItems, slot1) and uv1 or uv2
+function var_0_0.getMemoryState(arg_10_0, arg_10_1)
+	local var_10_0 = table.contains(arg_10_0.fetchItems, arg_10_1)
+
+	return table.contains(arg_10_0.unlockItems, arg_10_1) and var_0_3 or var_10_0 and var_0_2 or var_0_1
 end
 
-function slot0.updateMemorys(slot0)
-	slot0.memorys = {}
+function var_0_0.updateMemorys(arg_11_0)
+	arg_11_0.memorys = {}
 
-	for slot4, slot5 in ipairs(slot0.targetItems) do
-		table.insert(slot0.memorys, {
-			id = slot5,
-			index = slot4 % uv0 == 0 and uv0 or slot7,
-			pos = uv1[slot4],
-			state = slot0:getMemoryState(slot5)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.targetItems) do
+		local var_11_0 = arg_11_0:getMemoryState(iter_11_1)
+		local var_11_1 = iter_11_0 % var_0_4
+
+		table.insert(arg_11_0.memorys, {
+			id = iter_11_1,
+			index = var_11_1 == 0 and var_0_4 or var_11_1,
+			pos = var_0_5[iter_11_0],
+			state = var_11_0
 		})
 	end
 
-	slot0:updateMemoryBook(slot0.contextData.page or 1, true)
+	local var_11_2 = arg_11_0.contextData.page or 1
+
+	arg_11_0:updateMemoryBook(var_11_2, true)
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("back_btn")
-	slot0.page1 = slot0:findTF("page1")
-	slot0.page2 = slot0:findTF("page2")
-	slot1 = slot0:findTF("get")
+function var_0_0.init(arg_12_0)
+	arg_12_0.backBtn = arg_12_0:findTF("back_btn")
+	arg_12_0.page1 = arg_12_0:findTF("page1")
+	arg_12_0.page2 = arg_12_0:findTF("page2")
 
-	setActive(slot1, false)
+	local var_12_0 = arg_12_0:findTF("get")
 
-	slot0.getSprite = slot1:GetComponent(typeof(Image)).sprite
-	slot0.slider = slot0:findTF("slider"):GetComponent(typeof(Slider))
-	slot0.totalTxt = slot0:findTF("progress"):GetComponent(typeof(Text))
-	slot0.currValueTxt = slot0:findTF("progress/value"):GetComponent(typeof(Text))
-	slot0.awardIcon = slot0:findTF("award_bg/icon")
-	slot0.awardLabel = slot0:findTF("award_bg/label")
-	slot0.awardLabelGot = slot0:findTF("award_bg/label_got")
-	slot0.helpBtn = slot0:findTF("help")
-	slot0.pool = uv0(slot0._tf)
+	setActive(var_12_0, false)
+
+	arg_12_0.getSprite = var_12_0:GetComponent(typeof(Image)).sprite
+	arg_12_0.slider = arg_12_0:findTF("slider"):GetComponent(typeof(Slider))
+	arg_12_0.totalTxt = arg_12_0:findTF("progress"):GetComponent(typeof(Text))
+	arg_12_0.currValueTxt = arg_12_0:findTF("progress/value"):GetComponent(typeof(Text))
+	arg_12_0.awardIcon = arg_12_0:findTF("award_bg/icon")
+	arg_12_0.awardLabel = arg_12_0:findTF("award_bg/label")
+	arg_12_0.awardLabelGot = arg_12_0:findTF("award_bg/label_got")
+	arg_12_0.helpBtn = arg_12_0:findTF("help")
+	arg_12_0.pool = var_0_6(arg_12_0._tf)
 end
 
-function slot0.didEnter(slot0)
-	slot0:addRingDragListenter()
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_13_0)
+	arg_13_0:addRingDragListenter()
+	onButton(arg_13_0, arg_13_0.backBtn, function()
+		arg_13_0:emit(var_0_0.ON_CLOSE)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_13_0, arg_13_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.memorybook_notice.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.page1:Find("switch"), function ()
-		uv0:updateMemoryBook(uv1.PAGE_TWO)
+	onButton(arg_13_0, arg_13_0.page1:Find("switch"), function()
+		arg_13_0:updateMemoryBook(var_0_0.PAGE_TWO)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.page2:Find("switch"), function ()
-		uv0:updateMemoryBook(uv1.PAGE_ONE)
+	onButton(arg_13_0, arg_13_0.page2:Find("switch"), function()
+		arg_13_0:updateMemoryBook(var_0_0.PAGE_ONE)
 	end, SFX_PANEL)
 
-	slot0.sprites = {}
-	slot0.gameObjects = {}
+	arg_13_0.sprites = {}
+	arg_13_0.gameObjects = {}
 
-	slot0:updateMemorys()
-	slot0:updateProgress()
+	arg_13_0:updateMemorys()
+	arg_13_0:updateProgress()
 end
 
-function slot0.getStartAndEndIndex(slot0, slot1)
-	slot2 = (slot1 - 1) * uv0 + 1
+function var_0_0.getStartAndEndIndex(arg_18_0, arg_18_1)
+	local var_18_0 = (arg_18_1 - 1) * var_0_4 + 1
+	local var_18_1 = var_18_0 + var_0_4 - 1
 
-	return slot2, slot2 + uv0 - 1
+	return var_18_0, var_18_1
 end
 
-function slot0.updateMemoryBook(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(slot0.gameObjects) do
-		slot0.pool:Return(slot7)
+function var_0_0.updateMemoryBook(arg_19_0, arg_19_1, arg_19_2)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.gameObjects) do
+		arg_19_0.pool:Return(iter_19_1)
 	end
 
-	slot0.gameObjects = {}
-	slot3 = slot0["page" .. slot1]
-	slot4, slot5 = slot0:getStartAndEndIndex(slot1)
+	arg_19_0.gameObjects = {}
 
-	for slot9 = slot4, slot5 do
-		slot0:updateMemoryItem(slot1, slot0.memorys[slot9])
+	local var_19_0 = arg_19_0["page" .. arg_19_1]
+	local var_19_1, var_19_2 = arg_19_0:getStartAndEndIndex(arg_19_1)
+
+	for iter_19_2 = var_19_1, var_19_2 do
+		local var_19_3 = arg_19_0.memorys[iter_19_2]
+
+		arg_19_0:updateMemoryItem(arg_19_1, var_19_3)
 	end
 
-	slot6 = false
+	local var_19_4 = false
 
-	if slot1 == uv0.PAGE_ONE then
-		slot6 = slot0:updatePageTip(uv0.PAGE_TWO)
-	elseif slot1 == uv0.PAGE_TWO then
-		slot6 = slot0:updatePageTip(uv0.PAGE_ONE)
+	if arg_19_1 == var_0_0.PAGE_ONE then
+		var_19_4 = arg_19_0:updatePageTip(var_0_0.PAGE_TWO)
+	elseif arg_19_1 == var_0_0.PAGE_TWO then
+		var_19_4 = arg_19_0:updatePageTip(var_0_0.PAGE_ONE)
 	end
 
-	setActive(slot3:Find("switch/tip"), slot6)
+	setActive(var_19_0:Find("switch/tip"), var_19_4)
 
-	slot0.page = slot1
-	slot0.contextData.page = slot1
+	arg_19_0.page = arg_19_1
+	arg_19_0.contextData.page = arg_19_1
 
-	if slot2 then
-		if slot1 == uv0.PAGE_TWO then
-			slot0.page2.localPosition = Vector3.New(0, 0)
-			slot0.page1.localPosition = Vector3.New(-1280, 0)
+	if arg_19_2 then
+		if arg_19_1 == var_0_0.PAGE_TWO then
+			local var_19_5 = arg_19_0.page2:Find("switch")
 
-			setActive(slot0.page2:Find("switch"), true)
+			arg_19_0.page2.localPosition = Vector3.New(0, 0)
+			arg_19_0.page1.localPosition = Vector3.New(-1280, 0)
+
+			setActive(var_19_5, true)
 		else
-			slot0.page2.localPosition = Vector3.New(1280, 0)
-			slot0.page1.localPosition = Vector3.New(0, 0)
+			local var_19_6 = arg_19_0.page1:Find("switch")
 
-			setActive(slot0.page1:Find("switch"), true)
+			arg_19_0.page2.localPosition = Vector3.New(1280, 0)
+			arg_19_0.page1.localPosition = Vector3.New(0, 0)
+
+			setActive(var_19_6, true)
 		end
+	elseif arg_19_1 == var_0_0.PAGE_TWO then
+		local var_19_7 = arg_19_0.page2:Find("switch")
+
+		setActive(var_19_7, false)
+
+		arg_19_0.page2.localPosition = Vector3.New(1280, 0)
+		arg_19_0.page1.localPosition = Vector3.New(0, 0)
+
+		LeanTween.moveX(arg_19_0.page2, 0, 0.5)
+		LeanTween.moveX(arg_19_0.page1, -1280, 0.5):setOnComplete(System.Action(function()
+			setActive(var_19_7, true)
+		end))
 	else
-		if slot1 == uv0.PAGE_TWO then
-			slot7 = slot0.page2
+		local var_19_8 = arg_19_0.page1:Find("switch")
 
-			setActive(slot7:Find("switch"), false)
+		setActive(var_19_8, false)
 
-			slot0.page2.localPosition = Vector3.New(1280, 0)
-			slot0.page1.localPosition = Vector3.New(0, 0)
+		arg_19_0.page2.localPosition = Vector3.New(0, 0)
+		arg_19_0.page1.localPosition = Vector3.New(-1280, 0)
 
-			LeanTween.moveX(slot0.page2, 0, 0.5)
-
-			slot8 = LeanTween.moveX(slot0.page1, -1280, 0.5)
-
-			slot8:setOnComplete(System.Action(function ()
-				setActive(uv0, true)
-			end))
-
-			return
-		end
-
-		slot7 = slot0.page1
-
-		setActive(slot7:Find("switch"), false)
-
-		slot0.page2.localPosition = Vector3.New(0, 0)
-		slot0.page1.localPosition = Vector3.New(-1280, 0)
-
-		LeanTween.moveX(slot0.page2, 1280, 0.5)
-
-		slot8 = LeanTween.moveX(slot0.page1, 0, 0.5)
-
-		slot8:setOnComplete(System.Action(function ()
-			setActive(uv0, true)
+		LeanTween.moveX(arg_19_0.page2, 1280, 0.5)
+		LeanTween.moveX(arg_19_0.page1, 0, 0.5):setOnComplete(System.Action(function()
+			setActive(var_19_8, true)
 		end))
 	end
 end
 
-function slot0.addRingDragListenter(slot0)
-	slot1 = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot2 = 0
-	slot3 = nil
+function var_0_0.addRingDragListenter(arg_22_0)
+	local var_22_0 = GetOrAddComponent(arg_22_0._tf, "EventTriggerListener")
+	local var_22_1 = 0
+	local var_22_2
 
-	slot1:AddBeginDragFunc(function ()
-		uv0 = 0
-		uv1 = nil
+	var_22_0:AddBeginDragFunc(function()
+		var_22_1 = 0
+		var_22_2 = nil
 	end)
-	slot1:AddDragFunc(function (slot0, slot1)
-		slot2 = slot1.position
+	var_22_0:AddDragFunc(function(arg_24_0, arg_24_1)
+		local var_24_0 = arg_24_1.position
 
-		if not uv0 then
-			uv0 = slot2
+		if not var_22_2 then
+			var_22_2 = var_24_0
 		end
 
-		uv1 = slot2.x - uv0.x
+		var_22_1 = var_24_0.x - var_22_2.x
 	end)
-	slot1:AddDragEndFunc(function (slot0, slot1)
-		if uv0 < -50 then
-			if uv1.page == uv2.PAGE_ONE then
-				uv1:updateMemoryBook(uv2.PAGE_TWO)
+	var_22_0:AddDragEndFunc(function(arg_25_0, arg_25_1)
+		if var_22_1 < -50 then
+			if arg_22_0.page == var_0_0.PAGE_ONE then
+				arg_22_0:updateMemoryBook(var_0_0.PAGE_TWO)
 			end
-		elseif uv0 > 50 and uv1.page == uv2.PAGE_TWO then
-			uv1:updateMemoryBook(uv2.PAGE_ONE)
+		elseif var_22_1 > 50 and arg_22_0.page == var_0_0.PAGE_TWO then
+			arg_22_0:updateMemoryBook(var_0_0.PAGE_ONE)
 		end
 	end)
 end
 
-function slot0.updatePageTip(slot0, slot1)
-	slot2, slot3 = slot0:getStartAndEndIndex(slot1)
+function var_0_0.updatePageTip(arg_26_0, arg_26_1)
+	local var_26_0, var_26_1 = arg_26_0:getStartAndEndIndex(arg_26_1)
 
-	return _.any(_.slice(slot0.memorys, slot2, uv0), function (slot0)
-		return slot0.state == uv0
+	return _.any(_.slice(arg_26_0.memorys, var_26_0, var_0_4), function(arg_27_0)
+		return arg_27_0.state == var_0_2
 	end)
 end
 
-function slot0.updateMemoryItem(slot0, slot1, slot2)
-	slot4 = slot0["page" .. slot1]
+function var_0_0.updateMemoryItem(arg_28_0, arg_28_1, arg_28_2)
+	local var_28_0 = arg_28_2.state
+	local var_28_1 = arg_28_0["page" .. arg_28_1]
 
-	function slot5()
-		slot0 = uv0.pool:Get()
+	local function var_28_2()
+		local var_29_0 = arg_28_0.pool:Get()
+		local var_29_1 = var_28_0 == var_0_2 and arg_28_0.getSprite or arg_28_0:GetMemorySprite(arg_28_1, arg_28_2.index)
 
-		setImageSprite(slot0, uv1 == uv2 and uv0.getSprite or uv0:GetMemorySprite(uv3, uv4.index), true)
+		setImageSprite(var_29_0, var_29_1, true)
 
-		slot0:GetComponent(typeof(Image)).raycastTarget = uv1 == uv2
+		var_29_0:GetComponent(typeof(Image)).raycastTarget = var_28_0 == var_0_2
 
-		setParent(slot0, uv5:Find("container"))
+		setParent(var_29_0, var_28_1:Find("container"))
 
-		tf(slot0).localPosition = Vector3(uv4.pos[1], uv4.pos[2], 0)
+		tf(var_29_0).localPosition = Vector3(arg_28_2.pos[1], arg_28_2.pos[2], 0)
 
-		table.insert(uv0.gameObjects, slot0)
+		table.insert(arg_28_0.gameObjects, var_29_0)
 
-		return slot0
+		return var_29_0
 	end
 
-	if slot2.state == uv1 then
-		-- Nothing
-	elseif slot3 == uv0 then
-		onButton(slot0, slot5(), function ()
-			uv0:emit(MemoryBookMediator.ON_UNLOCK, uv1.id, uv0.activity.id)
+	if var_28_0 == var_0_1 then
+		-- block empty
+	elseif var_28_0 == var_0_2 then
+		local var_28_3 = var_28_2()
+
+		onButton(arg_28_0, var_28_3, function()
+			arg_28_0:emit(MemoryBookMediator.ON_UNLOCK, arg_28_2.id, arg_28_0.activity.id)
 		end, SFX_PANEL)
-	elseif slot3 == uv2 then
-		slot5()
+	elseif var_28_0 == var_0_3 then
+		var_28_2()
 	end
 end
 
-function slot0.GetMemorySprite(slot0, slot1, slot2)
-	if slot0.sprites[slot1 .. "_" .. slot2] then
-		return slot0.sprites[slot3]
+function var_0_0.GetMemorySprite(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = arg_31_1 .. "_" .. arg_31_2
+
+	if arg_31_0.sprites[var_31_0] then
+		return arg_31_0.sprites[var_31_0]
 	else
-		slot4 = GetSpriteFromAtlas("puzzla/bg_2", slot3)
-		slot0.sprites[slot3] = slot4
+		local var_31_1 = GetSpriteFromAtlas("puzzla/bg_2", var_31_0)
 
-		return slot4
+		arg_31_0.sprites[var_31_0] = var_31_1
+
+		return var_31_1
 	end
 end
 
-function slot0.updateProgress(slot0)
-	slot1 = #slot0.targetItems
-	slot2 = #slot0.unlockItems
-	slot0.slider.value = slot2 / slot1
-	slot0.totalTxt.text = slot1
-	slot0.currValueTxt.text = slot2
+function var_0_0.updateProgress(arg_32_0)
+	local var_32_0 = #arg_32_0.targetItems
+	local var_32_1 = #arg_32_0.unlockItems
 
-	slot0:updateAward(slot2 == slot1)
+	arg_32_0.slider.value = var_32_1 / var_32_0
+	arg_32_0.totalTxt.text = var_32_0
+	arg_32_0.currValueTxt.text = var_32_1
+
+	local var_32_2 = var_32_1 == var_32_0
+
+	arg_32_0:updateAward(var_32_2)
 end
 
-function slot0.updateAward(slot0, slot1)
-	if not slot0.isInitAward then
-		slot0.isInitAward = true
-		slot3 = slot0.awardVO[2]
+function var_0_0.updateAward(arg_33_0, arg_33_1)
+	if not arg_33_0.isInitAward then
+		arg_33_0.isInitAward = true
 
-		if slot0.awardVO[1] == DROP_TYPE_FURNITURE then
-			slot4 = Furniture.New({
-				id = slot3
+		local var_33_0 = arg_33_0.awardVO[1]
+		local var_33_1 = arg_33_0.awardVO[2]
+
+		if var_33_0 == DROP_TYPE_FURNITURE then
+			local var_33_2 = Furniture.New({
+				id = var_33_1
 			})
 
-			GetSpriteFromAtlasAsync("furniture/" .. slot4:getConfig("picture"), "", function (slot0)
-				if uv0.exited then
+			GetSpriteFromAtlasAsync("furniture/" .. var_33_2:getConfig("picture"), "", function(arg_34_0)
+				if arg_33_0.exited then
 					return
 				end
 
-				setImageSprite(uv0.awardIcon, slot0, true)
+				setImageSprite(arg_33_0.awardIcon, arg_34_0, true)
 			end)
 		else
 			assert(false, "this award type is not deal")
 		end
 	end
 
-	slot2 = slot0.activity.data1 == 1
+	local var_33_3 = arg_33_0.activity.data1 == 1
 
-	setGray(slot0.awardIcon, not slot1, false)
-	setActive(slot0.awardLabel, slot1 and not slot2)
-	setActive(slot0.awardLabelGot, slot2)
+	setGray(arg_33_0.awardIcon, not arg_33_1, false)
+	setActive(arg_33_0.awardLabel, arg_33_1 and not var_33_3)
+	setActive(arg_33_0.awardLabelGot, var_33_3)
 
-	if LeanTween.isTweening(go(slot0.awardLabel)) then
-		LeanTween.cancel(go(slot0.awardLabel))
+	if LeanTween.isTweening(go(arg_33_0.awardLabel)) then
+		LeanTween.cancel(go(arg_33_0.awardLabel))
 	end
 
-	if slot1 and not slot2 then
-		blinkAni(slot0.awardLabel, 0.8, nil, 0.5)
+	if arg_33_1 and not var_33_3 then
+		blinkAni(arg_33_0.awardLabel, 0.8, nil, 0.5)
 	end
 
-	removeOnButton(slot0.awardIcon)
+	removeOnButton(arg_33_0.awardIcon)
 
-	if not slot2 then
-		onButton(slot0, slot0.awardIcon, function ()
-			if not uv0 then
+	if not var_33_3 then
+		onButton(arg_33_0, arg_33_0.awardIcon, function()
+			if not arg_33_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("memorybook_get_award_tip"))
 			else
-				uv1:emit(MemoryBookMediator.EVENT_OPERATION, {
+				arg_33_0:emit(MemoryBookMediator.EVENT_OPERATION, {
 					cmd = 1,
-					activity_id = uv1.activity.id
+					activity_id = arg_33_0.activity.id
 				})
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0.pool:Dispose()
+function var_0_0.willExit(arg_36_0)
+	arg_36_0.pool:Dispose()
 
-	slot0.sprites = nil
-	slot0.getSprite = nil
+	arg_36_0.sprites = nil
+	arg_36_0.getSprite = nil
 end
 
-return slot0
+return var_0_0

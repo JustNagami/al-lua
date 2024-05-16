@@ -1,298 +1,319 @@
-slot0 = class("ShipEvaluationLayer", import("..base.BaseUI"))
-slot0.EVENT_LIKE = "event like"
-slot0.EVENT_EVA = "event eva"
-slot0.EVENT_ZAN = "event zan"
-slot0.EVENT_IMPEACH = "event impeach"
+﻿local var_0_0 = class("ShipEvaluationLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.EVENT_LIKE = "event like"
+var_0_0.EVENT_EVA = "event eva"
+var_0_0.EVENT_ZAN = "event zan"
+var_0_0.EVENT_IMPEACH = "event impeach"
+
+function var_0_0.getUIName(arg_1_0)
 	return "EvaluationUI"
 end
 
-function slot0.init(slot0)
-	slot0.mainPanel = slot0:findTF("mainPanel")
-	slot0.head = slot0:findTF("bg/left_panel/ship_tpl", slot0.mainPanel)
-	slot0.labelHeart = slot0:findTF("bg/left_panel/evaluation_count/heart", slot0.mainPanel)
-	slot0.labelEva = slot0:findTF("bg/left_panel/evaluation_count/count", slot0.mainPanel)
-	slot0.btnLike = slot0:findTF("bg/left_panel/btnLike", slot0.mainPanel)
-	slot0.btnEva = slot0:findTF("bg/bottom_panel/send_btn", slot0.mainPanel)
-	slot0.input = slot0:findTF("bg/bottom_panel/Input", slot0.mainPanel)
-	slot0.inputText = slot0:findTF("Text", slot0.input)
-	slot0.list = slot0:findTF("bg/right_panel/list", slot0.mainPanel)
-	slot0.hotContent = slot0:findTF("content/hots", slot0.list)
-	slot0.commonContent = slot0:findTF("content/commons", slot0.list)
-	slot0.hotTpl = slot0:findTF("content/hot_tpl", slot0.list)
-	slot0.commonTpl = slot0:findTF("content/commom_tpl", slot0.list)
-	slot0.iconType = findTF(slot0.head, "content/main_bg/type_mask/type_icon"):GetComponent(typeof(Image))
-	slot0.imageBg = findTF(slot0.head, "content/icon_bg"):GetComponent(typeof(Image))
-	slot0.imageFrame = findTF(slot0.head, "content/main_bg/frame")
-	slot0.iconShip = findTF(slot0.head, "content/icon"):GetComponent(typeof(Image))
-	slot0.labelName = findTF(slot0.head, "content/main_bg/name_mask/name"):GetComponent(typeof(Text))
-	slot0.scrollText = findTF(slot0.head, "content/main_bg/name_mask/name"):GetComponent(typeof(ScrollText))
-	slot0.stars = findTF(slot0.head, "content/main_bg/stars")
-	slot0.star = findTF(slot0.stars, "tpl")
-	slot0.bg = slot0:findTF("BG")
-	slot0.btnHelp = slot0._tf:Find("mainPanel/bg/top_panel/title/help")
+function var_0_0.init(arg_2_0)
+	arg_2_0.mainPanel = arg_2_0:findTF("mainPanel")
+	arg_2_0.head = arg_2_0:findTF("bg/left_panel/ship_tpl", arg_2_0.mainPanel)
+	arg_2_0.labelHeart = arg_2_0:findTF("bg/left_panel/evaluation_count/heart", arg_2_0.mainPanel)
+	arg_2_0.labelEva = arg_2_0:findTF("bg/left_panel/evaluation_count/count", arg_2_0.mainPanel)
+	arg_2_0.btnLike = arg_2_0:findTF("bg/left_panel/btnLike", arg_2_0.mainPanel)
+	arg_2_0.btnEva = arg_2_0:findTF("bg/bottom_panel/send_btn", arg_2_0.mainPanel)
+	arg_2_0.input = arg_2_0:findTF("bg/bottom_panel/Input", arg_2_0.mainPanel)
+	arg_2_0.inputText = arg_2_0:findTF("Text", arg_2_0.input)
+	arg_2_0.list = arg_2_0:findTF("bg/right_panel/list", arg_2_0.mainPanel)
+	arg_2_0.hotContent = arg_2_0:findTF("content/hots", arg_2_0.list)
+	arg_2_0.commonContent = arg_2_0:findTF("content/commons", arg_2_0.list)
+	arg_2_0.hotTpl = arg_2_0:findTF("content/hot_tpl", arg_2_0.list)
+	arg_2_0.commonTpl = arg_2_0:findTF("content/commom_tpl", arg_2_0.list)
+	arg_2_0.iconType = findTF(arg_2_0.head, "content/main_bg/type_mask/type_icon"):GetComponent(typeof(Image))
+	arg_2_0.imageBg = findTF(arg_2_0.head, "content/icon_bg"):GetComponent(typeof(Image))
+	arg_2_0.imageFrame = findTF(arg_2_0.head, "content/main_bg/frame")
+	arg_2_0.iconShip = findTF(arg_2_0.head, "content/icon"):GetComponent(typeof(Image))
+	arg_2_0.labelName = findTF(arg_2_0.head, "content/main_bg/name_mask/name"):GetComponent(typeof(Text))
+	arg_2_0.scrollText = findTF(arg_2_0.head, "content/main_bg/name_mask/name"):GetComponent(typeof(ScrollText))
+	arg_2_0.stars = findTF(arg_2_0.head, "content/main_bg/stars")
+	arg_2_0.star = findTF(arg_2_0.stars, "tpl")
+	arg_2_0.bg = arg_2_0:findTF("BG")
+	arg_2_0.btnHelp = arg_2_0._tf:Find("mainPanel/bg/top_panel/title/help")
 
-	setActive(slot0.btnHelp, getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach())
-	slot0:initImpeachPanel()
-	setActive(slot0.mainPanel, true)
-	setActive(slot0.impackPanel, false)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
-		groupName = slot0:getGroupNameFromData(),
-		weight = slot0:getWeightFromData()
+	setActive(arg_2_0.btnHelp, getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach())
+	arg_2_0:initImpeachPanel()
+	setActive(arg_2_0.mainPanel, true)
+	setActive(arg_2_0.impackPanel, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
+		groupName = arg_2_0:getGroupNameFromData(),
+		weight = arg_2_0:getWeightFromData()
 	})
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.impackPanel) then
-		setActive(slot0.mainPanel, true)
-		setActive(slot0.impackPanel, false)
+function var_0_0.onBackPressed(arg_3_0)
+	if isActive(arg_3_0.impackPanel) then
+		setActive(arg_3_0.mainPanel, true)
+		setActive(arg_3_0.impackPanel, false)
 	else
-		slot0:closeView()
+		arg_3_0:closeView()
 	end
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.bg, function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.bg, function()
+		arg_4_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("mainPanel/bg/top_panel/btnBack"), function ()
-		uv0:onBackPressed()
+	onButton(arg_4_0, arg_4_0:findTF("mainPanel/bg/top_panel/btnBack"), function()
+		arg_4_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnHelp, function ()
+	onButton(arg_4_0, arg_4_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("report_sent_help"),
-			weight = uv0:getWeightFromData()
+			weight = arg_4_0:getWeightFromData()
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnLike, function ()
-		uv0:emit(uv1.EVENT_LIKE)
+	onButton(arg_4_0, arg_4_0.btnLike, function()
+		arg_4_0:emit(var_0_0.EVENT_LIKE)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnEva, function ()
-		if string.len(getInputText(uv0.input)) > 0 then
-			setInputText(uv0.input, "")
-			uv0:emit(uv1.EVENT_EVA, slot0)
+	onButton(arg_4_0, arg_4_0.btnEva, function()
+		local var_9_0 = getInputText(arg_4_0.input)
+
+		if string.len(var_9_0) > 0 then
+			setInputText(arg_4_0.input, "")
+			arg_4_0:emit(var_0_0.EVENT_EVA, var_9_0)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("eva_comment_send_null"))
 		end
 	end, SFX_PANEL)
-	onInputChanged(slot0, slot0.input, function ()
-		slot1, slot2 = nil
+	onInputChanged(arg_4_0, arg_4_0.input, function()
+		local var_10_0 = getInputText(arg_4_0.input)
+		local var_10_1
+		local var_10_2
 
-		if string.len(getInputText(uv0.input)) > 0 then
-			if CollectionProxy.MAX_DAILY_EVA_COUNT <= uv0.shipGroup.evaluation.ievaCount then
-				slot1 = true
-				slot2 = i18n("eva_count_limit")
-			elseif wordVer(slot0) > 0 then
-				slot1 = true
-				slot2 = i18n("invalidate_evaluation")
+		if string.len(var_10_0) > 0 then
+			if arg_4_0.shipGroup.evaluation.ievaCount >= CollectionProxy.MAX_DAILY_EVA_COUNT then
+				var_10_1 = true
+				var_10_2 = i18n("eva_count_limit")
+			elseif wordVer(var_10_0) > 0 then
+				var_10_1 = true
+				var_10_2 = i18n("invalidate_evaluation")
 			end
 		end
 
-		if slot1 then
-			setTextColor(uv0.inputText, Color.red)
-			setButtonEnabled(uv0.btnEva, false)
-			pg.TipsMgr.GetInstance():ShowTips(slot2)
+		if var_10_1 then
+			setTextColor(arg_4_0.inputText, Color.red)
+			setButtonEnabled(arg_4_0.btnEva, false)
+			pg.TipsMgr.GetInstance():ShowTips(var_10_2)
 		else
-			setTextColor(uv0.inputText, Color.white)
-			setButtonEnabled(uv0.btnEva, true)
+			setTextColor(arg_4_0.inputText, Color.white)
+			setButtonEnabled(arg_4_0.btnEva, true)
 		end
 	end)
 end
 
-function slot0.setShipGroup(slot0, slot1)
-	slot0.shipGroup = slot1
+function var_0_0.setShipGroup(arg_11_0, arg_11_1)
+	arg_11_0.shipGroup = arg_11_1
 end
 
-function slot0.setShowTrans(slot0, slot1)
-	slot0.showTrans = slot1
+function var_0_0.setShowTrans(arg_12_0, arg_12_1)
+	arg_12_0.showTrans = arg_12_1
 end
 
-function slot0.flushAll(slot0)
-	slot0:flushShip()
-	slot0:flushHeart()
-	slot0:flushEva()
+function var_0_0.flushAll(arg_13_0)
+	arg_13_0:flushShip()
+	arg_13_0:flushHeart()
+	arg_13_0:flushEva()
 end
 
-function slot0.flushShip(slot0)
-	slot1 = slot0.shipGroup.shipConfig
-	slot3 = slot0.shipGroup:rarity2bgPrint(slot0.showTrans)
+function var_0_0.flushShip(arg_14_0)
+	local var_14_0 = arg_14_0.shipGroup.shipConfig
+	local var_14_1 = arg_14_0.shipGroup:getPainting(arg_14_0.showTrans)
+	local var_14_2 = arg_14_0.shipGroup:rarity2bgPrint(arg_14_0.showTrans)
 
-	setShipCardFrame(slot0.imageFrame, slot3, nil)
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot3, "", slot0.imageBg)
+	setShipCardFrame(arg_14_0.imageFrame, var_14_2, nil)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_14_2, "", arg_14_0.imageBg)
 
-	slot0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
+	arg_14_0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
 
-	LoadImageSpriteAsync("shipYardIcon/" .. slot0.shipGroup:getPainting(slot0.showTrans), slot0.iconShip)
+	LoadImageSpriteAsync("shipYardIcon/" .. var_14_1, arg_14_0.iconShip)
 
-	slot0.labelName.text = slot0.shipGroup:getName(slot0.showTrans)
+	arg_14_0.labelName.text = arg_14_0.shipGroup:getName(arg_14_0.showTrans)
 
-	if slot0.scrollText then
-		slot0.scrollText:SetText(slot0.shipGroup:getName(slot0.showTrans))
+	if arg_14_0.scrollText then
+		arg_14_0.scrollText:SetText(arg_14_0.shipGroup:getName(arg_14_0.showTrans))
 	end
 
-	if not GetSpriteFromAtlas("shiptype", shipType2print(slot0.shipGroup:getShipType(slot0.showTrans))) then
-		warning("找不到船形, shipConfigId: " .. slot1.id)
+	local var_14_3 = GetSpriteFromAtlas("shiptype", shipType2print(arg_14_0.shipGroup:getShipType(arg_14_0.showTrans)))
+
+	if not var_14_3 then
+		warning("找不到船形, shipConfigId: " .. var_14_0.id)
 	end
 
-	slot0.iconType.sprite = slot4
+	arg_14_0.iconType.sprite = var_14_3
 
-	for slot10 = slot0.stars.childCount, pg.ship_data_template[slot1.id].star_max - 1 do
-		slot11 = cloneTplTo(slot0.star, slot0.stars)
+	local var_14_4 = pg.ship_data_template[var_14_0.id].star_max
+
+	for iter_14_0 = arg_14_0.stars.childCount, var_14_4 - 1 do
+		local var_14_5 = cloneTplTo(arg_14_0.star, arg_14_0.stars)
 	end
 end
 
-function slot0.flushHeart(slot0)
-	setButtonEnabled(slot0.btnLike, not slot0.shipGroup.iheart)
-	setText(slot0.labelHeart, slot0.shipGroup.evaluation.hearts)
+function var_0_0.flushHeart(arg_15_0)
+	setButtonEnabled(arg_15_0.btnLike, not arg_15_0.shipGroup.iheart)
+	setText(arg_15_0.labelHeart, arg_15_0.shipGroup.evaluation.hearts)
 end
 
-function slot0.flushEva(slot0)
-	slot1 = slot0.shipGroup.evaluation
+function var_0_0.flushEva(arg_16_0)
+	local var_16_0 = arg_16_0.shipGroup.evaluation
 
-	setText(slot0.labelEva, slot1.evaCount)
+	setText(arg_16_0.labelEva, var_16_0.evaCount)
 
-	slot2 = slot1.evas
+	local var_16_1 = var_16_0.evas
 
-	for slot6 = 1, slot0.hotContent.childCount do
-		if go(slot0.hotContent:GetChild(slot6 - 1)).name ~= "tag" then
-			Destroy(slot7)
+	for iter_16_0 = 1, arg_16_0.hotContent.childCount do
+		local var_16_2 = go(arg_16_0.hotContent:GetChild(iter_16_0 - 1))
+
+		if var_16_2.name ~= "tag" then
+			Destroy(var_16_2)
 		end
 	end
 
-	for slot6 = 1, slot0.commonContent.childCount do
-		if go(slot0.commonContent:GetChild(slot6 - 1)).name ~= "tag" then
-			Destroy(slot7)
+	for iter_16_1 = 1, arg_16_0.commonContent.childCount do
+		local var_16_3 = go(arg_16_0.commonContent:GetChild(iter_16_1 - 1))
+
+		if var_16_3.name ~= "tag" then
+			Destroy(var_16_3)
 		end
 	end
 
-	slot3 = getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach()
+	local var_16_4 = getProxy(PlayerProxy):getRawData():IsOpenShipEvaluationImpeach()
 
-	for slot7 = 1, #slot2 do
-		slot8 = nil
-		slot8 = (not slot2[slot7].hot or cloneTplTo(slot0.hotTpl, slot0.hotContent)) and cloneTplTo(slot0.commonTpl, slot0.commonContent)
-		slot10 = slot0:findTF("bg/evaluation", slot8):GetComponent(typeof(Text))
+	for iter_16_2 = 1, #var_16_1 do
+		local var_16_5
+		local var_16_6 = var_16_1[iter_16_2]
 
-		setText(slot0:findTF("bg/name", slot8), slot9.nick_name .. ":")
-		setText(slot0:findTF("bg/zan_bg/Text", slot8), slot9.good_count - slot9.bad_count)
+		if var_16_6.hot then
+			var_16_5 = cloneTplTo(arg_16_0.hotTpl, arg_16_0.hotContent)
+		else
+			var_16_5 = cloneTplTo(arg_16_0.commonTpl, arg_16_0.commonContent)
+		end
 
-		slot10.supportRichText = false
-		slot10.text = slot9.context
+		local var_16_7 = arg_16_0:findTF("bg/evaluation", var_16_5):GetComponent(typeof(Text))
+		local var_16_8 = arg_16_0:findTF("bg/name", var_16_5)
+		local var_16_9 = arg_16_0:findTF("bg/zan_bg/Text", var_16_5)
 
-		function slot13(slot0)
-			if not uv0.izan then
-				uv1:emit(uv2.EVENT_ZAN, uv0.id, slot0)
+		setText(var_16_8, var_16_6.nick_name .. ":")
+		setText(var_16_9, var_16_6.good_count - var_16_6.bad_count)
+
+		var_16_7.supportRichText = false
+		var_16_7.text = var_16_6.context
+
+		local function var_16_10(arg_17_0)
+			if not var_16_6.izan then
+				arg_16_0:emit(var_0_0.EVENT_ZAN, var_16_6.id, arg_17_0)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("zan_ship_eva_error_7"))
 			end
 		end
 
-		onButton(slot0, slot8:Find("bg/zan_bg/up"), function ()
-			uv0(0)
+		onButton(arg_16_0, var_16_5:Find("bg/zan_bg/up"), function()
+			var_16_10(0)
 		end, SFX_PANEL)
-		onButton(slot0, slot8:Find("bg/zan_bg/down"), function ()
-			uv0(1)
+		onButton(arg_16_0, var_16_5:Find("bg/zan_bg/down"), function()
+			var_16_10(1)
 		end, SFX_PANEL)
-		onButton(slot0, slot8:Find("bg/zan_bg/impeach"), function ()
-			uv0:openImpeachPanel(uv1.id)
+		onButton(arg_16_0, var_16_5:Find("bg/zan_bg/impeach"), function()
+			arg_16_0:openImpeachPanel(var_16_6.id)
 		end, SFX_PANEL)
-		SetActive(slot8:Find("bg/zan_bg/down"), not defaultValue(LOCK_DOWNVOTE, true))
-		setActive(slot8:Find("bg/zan_bg/impeach"), slot3)
+		SetActive(var_16_5:Find("bg/zan_bg/down"), not defaultValue(LOCK_DOWNVOTE, true))
+		setActive(var_16_5:Find("bg/zan_bg/impeach"), var_16_4)
 	end
 
-	slot4 = 1
+	local var_16_11 = 1
 
-	for slot8 = 1, slot0.hotContent.childCount do
-		if go(slot0.hotContent:GetChild(slot8 - 1)).name ~= "tag" then
-			setActive(slot9:Find("print1"), slot4 % 2 ~= 0)
-			setActive(slot9:Find("print2"), slot4 % 2 == 0)
+	for iter_16_3 = 1, arg_16_0.hotContent.childCount do
+		local var_16_12 = arg_16_0.hotContent:GetChild(iter_16_3 - 1)
 
-			slot4 = slot4 + 1
+		if go(var_16_12).name ~= "tag" then
+			setActive(var_16_12:Find("print1"), var_16_11 % 2 ~= 0)
+			setActive(var_16_12:Find("print2"), var_16_11 % 2 == 0)
+
+			var_16_11 = var_16_11 + 1
 		end
 	end
 
-	setActive(slot0.hotContent:Find("tag"), slot0.hotContent.childCount > 1)
-	setActive(slot0.commonContent:Find("tag"), slot0.commonContent.childCount > 1)
-	slot0.hotContent:Find("tag"):SetAsLastSibling()
-	slot0.commonContent:Find("tag"):SetAsLastSibling()
+	setActive(arg_16_0.hotContent:Find("tag"), arg_16_0.hotContent.childCount > 1)
+	setActive(arg_16_0.commonContent:Find("tag"), arg_16_0.commonContent.childCount > 1)
+	arg_16_0.hotContent:Find("tag"):SetAsLastSibling()
+	arg_16_0.commonContent:Find("tag"):SetAsLastSibling()
 end
 
-slot1 = 3
+local var_0_1 = 3
 
-function slot0.initImpeachPanel(slot0)
-	slot1 = slot0._tf
-	slot0.impackPanel = slot1:Find("impeachPanel")
-	slot2 = slot0.impackPanel
+function var_0_0.initImpeachPanel(arg_21_0)
+	arg_21_0.impackPanel = arg_21_0._tf:Find("impeachPanel")
 
-	setText(slot2:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
-
-	slot3 = slot0.impackPanel
-
-	onButton(slot0, slot3:Find("window/top/btnBack"), function ()
-		uv0:onBackPressed()
+	setText(arg_21_0.impackPanel:Find("window/top/bg/impeach/title"), i18n("report_sent_title"))
+	onButton(arg_21_0, arg_21_0.impackPanel:Find("window/top/btnBack"), function()
+		arg_21_0:onBackPressed()
 	end, SFX_CANCEL)
 
-	slot1 = slot0.impackPanel
-	slot1 = slot1:Find("window/msg_panel/content")
+	local var_21_0 = arg_21_0.impackPanel:Find("window/msg_panel/content")
 
-	setText(slot1:Find("title"), i18n("report_sent_desc"))
+	setText(var_21_0:Find("title"), i18n("report_sent_desc"))
 
-	slot2 = UIItemList.New(slot1:Find("options"), slot1:Find("options/tpl"))
+	local var_21_1 = UIItemList.New(var_21_0:Find("options"), var_21_0:Find("options/tpl"))
 
-	slot2:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	var_21_1:make(function(arg_23_0, arg_23_1, arg_23_2)
+		arg_23_1 = arg_23_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			setText(slot2:Find("Text"), i18n("report_type_" .. slot1))
-			setText(slot2:Find("Text_2"), i18n("report_type_" .. slot1 .. "_1"))
-			onToggle(uv0, slot2, function (slot0)
-				uv0.impeachOption = uv1
+		if arg_23_0 == UIItemList.EventUpdate then
+			setText(arg_23_2:Find("Text"), i18n("report_type_" .. arg_23_1))
+			setText(arg_23_2:Find("Text_2"), i18n("report_type_" .. arg_23_1 .. "_1"))
+			onToggle(arg_21_0, arg_23_2, function(arg_24_0)
+				arg_21_0.impeachOption = arg_23_1
 			end)
 		end
 	end)
-	slot2:align(uv0)
-	setText(slot1:Find("other/field/Text"), i18n("report_type_other"))
-	setText(slot1:Find("other/field/input/Placeholder"), i18n("report_type_other_1"))
-	onToggle(slot0, slot1:Find("other"), function (slot0)
-		uv0.impeachOption = "other"
+	var_21_1:align(var_0_1)
+	setText(var_21_0:Find("other/field/Text"), i18n("report_type_other"))
+	setText(var_21_0:Find("other/field/input/Placeholder"), i18n("report_type_other_1"))
+	onToggle(arg_21_0, var_21_0:Find("other"), function(arg_25_0)
+		arg_21_0.impeachOption = "other"
 
-		setActive(uv1:Find("other/field/input"), slot0)
+		setActive(var_21_0:Find("other/field/input"), arg_25_0)
 	end)
-	onInputChanged(slot0, slot1:Find("other/field/input"), function ()
+
+	local var_21_2 = var_21_0:Find("other/field/input")
+
+	onInputChanged(arg_21_0, var_21_2, function()
 		Canvas.ForceUpdateCanvases()
 	end)
+	onButton(arg_21_0, arg_21_0.impackPanel:Find("window/button_container/button"), function()
+		if arg_21_0.impeachOption == "other" then
+			local var_27_0 = getInputText(var_21_2)
 
-	slot6 = slot0.impackPanel
-
-	onButton(slot0, slot6:Find("window/button_container/button"), function ()
-		if uv0.impeachOption == "other" then
-			if string.len(getInputText(uv1)) > 0 then
-				uv0:emit(uv2.EVENT_IMPEACH, uv0.targetEvaId, i18n("report_type_other") .. ":" .. slot0)
+			if string.len(var_27_0) > 0 then
+				arg_21_0:emit(var_0_0.EVENT_IMPEACH, arg_21_0.targetEvaId, i18n("report_type_other") .. ":" .. var_27_0)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("report_type_other_2"))
 
 				return
 			end
 		else
-			uv0:emit(uv2.EVENT_IMPEACH, uv0.targetEvaId, i18n("report_type_" .. uv0.impeachOption))
+			arg_21_0:emit(var_0_0.EVENT_IMPEACH, arg_21_0.targetEvaId, i18n("report_type_" .. arg_21_0.impeachOption))
 		end
 
-		uv0:onBackPressed()
+		arg_21_0:onBackPressed()
 	end, SFX_CONFIRM)
 end
 
-function slot0.openImpeachPanel(slot0, slot1)
-	slot0.targetEvaId = slot1
+function var_0_0.openImpeachPanel(arg_28_0, arg_28_1)
+	arg_28_0.targetEvaId = arg_28_1
 
-	setActive(slot0.mainPanel, false)
-	setActive(slot0.impackPanel, true)
-	triggerToggle(slot0.impackPanel:Find("window/msg_panel/content/other"), true)
-	triggerToggle(slot0.impackPanel:Find("window/msg_panel/content/options/tpl"), true)
+	setActive(arg_28_0.mainPanel, false)
+	setActive(arg_28_0.impackPanel, true)
+	triggerToggle(arg_28_0.impackPanel:Find("window/msg_panel/content/other"), true)
+	triggerToggle(arg_28_0.impackPanel:Find("window/msg_panel/content/options/tpl"), true)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_29_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_29_0._tf)
 end
 
-return slot0
+return var_0_0

@@ -1,44 +1,49 @@
-slot0 = class("NpcShip", import(".Ship"))
+﻿local var_0_0 = class("NpcShip", import(".Ship"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot2 = pg.ship_data_template[slot0.configId]
+	local var_1_0 = pg.ship_data_template[arg_1_0.configId]
 
-	for slot6 = 1, 3 do
-		if not slot0.equipments[slot6] then
-			slot0.equipments[slot6] = slot2["equip_id_" .. slot6] > 0 and Equipment.New({
-				id = slot7
+	for iter_1_0 = 1, 3 do
+		if not arg_1_0.equipments[iter_1_0] then
+			local var_1_1 = var_1_0["equip_id_" .. iter_1_0]
+
+			arg_1_0.equipments[iter_1_0] = var_1_1 > 0 and Equipment.New({
+				id = var_1_1
 			}) or false
 		end
 	end
 
-	slot0.isNpc = true
+	arg_1_0.isNpc = true
 end
 
-function slot0.getExp(slot0)
+function var_0_0.getExp(arg_2_0)
 	return 0
 end
 
-function slot0.addExp(slot0, slot1, slot2)
+function var_0_0.addExp(arg_3_0, arg_3_1, arg_3_2)
+	return
 end
 
-function slot0.getIntimacy(slot0)
-	return pg.intimacy_template[slot0:getIntimacyLevel()].lower_bound
+function var_0_0.getIntimacy(arg_4_0)
+	return pg.intimacy_template[arg_4_0:getIntimacyLevel()].lower_bound
 end
 
-function slot0.getIntimacyLevel(slot0)
+function var_0_0.getIntimacyLevel(arg_5_0)
 	return 2
 end
 
-function slot0.setIntimacy(slot0, slot1)
+function var_0_0.setIntimacy(arg_6_0, arg_6_1)
+	return
 end
 
-function slot0.getEnergy(slot0)
-	return pg.ship_data_template[slot0.configId].energy
+function var_0_0.getEnergy(arg_7_0)
+	return pg.ship_data_template[arg_7_0.configId].energy
 end
 
-function slot0.setEnergy(slot0, slot1)
+function var_0_0.setEnergy(arg_8_0, arg_8_1)
+	return
 end
 
-return slot0
+return var_0_0

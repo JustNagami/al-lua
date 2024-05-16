@@ -1,65 +1,66 @@
-slot0 = class("GuildModiftionPage", import("...base.GuildBasePage"))
+﻿local var_0_0 = class("GuildModiftionPage", import("...base.GuildBasePage"))
 
-function slot0.getTargetUI(slot0)
+function var_0_0.getTargetUI(arg_1_0)
 	return "GuildModiftionBluePage", "GuildModiftionRedPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.nameInput = findTF(slot0._tf, "frame/name_bg/input"):GetComponent(typeof(InputField))
-	slot0.factionBLHXToggle = findTF(slot0._tf, "frame/policy_container/faction/blhx")
-	slot0.factionCSZZToggle = findTF(slot0._tf, "frame/policy_container/faction/cszz")
-	slot0.policyRELAXToggle = findTF(slot0._tf, "frame/policy_container/policy/relax")
-	slot0.policyPOWERToggle = findTF(slot0._tf, "frame/policy_container/policy/power")
-	slot0.manifestoInput = findTF(slot0._tf, "frame/policy_container/input_frame/input"):GetComponent(typeof(InputField))
-	slot0.confirmBtn = findTF(slot0._tf, "frame/confirm_btn")
-	slot0.cancelBtn = findTF(slot0._tf, "frame/cancel_btn")
-	slot0.quitBtn = findTF(slot0._tf, "frame/quit_btn")
-	slot0.dissolveBtn = findTF(slot0._tf, "frame/dissolve_btn")
-	slot0.factionMask = findTF(slot0._tf, "frame/policy_container/faction/mask")
-	slot0.costTF = findTF(slot0._tf, "frame/confirm_btn/print_container/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.nameInput = findTF(arg_2_0._tf, "frame/name_bg/input"):GetComponent(typeof(InputField))
+	arg_2_0.factionBLHXToggle = findTF(arg_2_0._tf, "frame/policy_container/faction/blhx")
+	arg_2_0.factionCSZZToggle = findTF(arg_2_0._tf, "frame/policy_container/faction/cszz")
+	arg_2_0.policyRELAXToggle = findTF(arg_2_0._tf, "frame/policy_container/policy/relax")
+	arg_2_0.policyPOWERToggle = findTF(arg_2_0._tf, "frame/policy_container/policy/power")
+	arg_2_0.manifestoInput = findTF(arg_2_0._tf, "frame/policy_container/input_frame/input"):GetComponent(typeof(InputField))
+	arg_2_0.confirmBtn = findTF(arg_2_0._tf, "frame/confirm_btn")
+	arg_2_0.cancelBtn = findTF(arg_2_0._tf, "frame/cancel_btn")
+	arg_2_0.quitBtn = findTF(arg_2_0._tf, "frame/quit_btn")
+	arg_2_0.dissolveBtn = findTF(arg_2_0._tf, "frame/dissolve_btn")
+	arg_2_0.factionMask = findTF(arg_2_0._tf, "frame/policy_container/faction/mask")
+	arg_2_0.costTF = findTF(arg_2_0._tf, "frame/confirm_btn/print_container/Text"):GetComponent(typeof(Text))
 end
 
-function slot0.OnInit(slot0)
-	slot0.costTF.text = 0
-	slot0.modifyBackBG = slot0:findTF("bg_decorations", slot0._tf)
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.costTF.text = 0
+	arg_3_0.modifyBackBG = arg_3_0:findTF("bg_decorations", arg_3_0._tf)
 
-	setActive(slot0._tf, false)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	setActive(arg_3_0._tf, false)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.dissolveBtn, function ()
-		if uv0.guildVO then
+	onButton(arg_3_0, arg_3_0.dissolveBtn, function()
+		if arg_3_0.guildVO then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("guild_tip_dissolve"),
-				onYes = function ()
-					uv0:emit(GuildMainMediator.DISSOLVE, uv0.guildVO.id)
+				onYes = function()
+					arg_3_0:emit(GuildMainMediator.DISSOLVE, arg_3_0.guildVO.id)
 				end
 			})
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.quitBtn, function ()
+	onButton(arg_3_0, arg_3_0.quitBtn, function()
 		seriesAsync({
-			function (slot0)
-				uv0:DealQuit(slot0)
+			function(arg_8_0)
+				arg_3_0:DealQuit(arg_8_0)
 			end
-		}, function ()
-			uv0:emit(GuildMainMediator.QUIT, uv0.guildVO.id)
+		}, function()
+			arg_3_0:emit(GuildMainMediator.QUIT, arg_3_0.guildVO.id)
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.modifyBackBG, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.modifyBackBG, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		slot0 = Clone(uv0.guildVO)
-		slot2 = uv0.manifestoInput.text
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		local var_11_0 = Clone(arg_3_0.guildVO)
+		local var_11_1 = arg_3_0.nameInput.text
+		local var_11_2 = arg_3_0.manifestoInput.text
 
-		if not uv0.nameInput.text or slot1 == "" then
+		if not var_11_1 or var_11_1 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_error_noname"))
 
 			return
 		end
 
-		if not nameValidityCheck(slot1, 0, 20, {
+		if not nameValidityCheck(var_11_1, 0, 20, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -68,188 +69,210 @@ function slot0.OnInit(slot0)
 			return
 		end
 
-		if slot1 ~= uv0.guildVO:getName() and getProxy(PlayerProxy):getData():getTotalGem() < pg.gameset.modify_guild_cost.key_value then
+		if var_11_1 ~= arg_3_0.guildVO:getName() and pg.gameset.modify_guild_cost.key_value > getProxy(PlayerProxy):getData():getTotalGem() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_rmb"))
 
 			return
 		end
 
-		if not slot2 or slot2 == "" then
+		if not var_11_2 or var_11_2 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_error_nomanifesto"))
 
 			return
 		end
 
-		slot0:setName(slot1)
-		slot0:setPolicy(uv0.policy)
-		slot0:setFaction(uv0.faction)
-		slot0:setManifesto(slot2)
+		var_11_0:setName(var_11_1)
+		var_11_0:setPolicy(arg_3_0.policy)
+		var_11_0:setFaction(arg_3_0.faction)
+		var_11_0:setManifesto(var_11_2)
 
-		function slot3()
-			if uv0:getPolicy() ~= uv1.guildVO:getPolicy() then
-				uv1:emit(GuildMainMediator.MODIFY, 3, uv0:getPolicy(), "")
+		local function var_11_3()
+			if var_11_0:getPolicy() ~= arg_3_0.guildVO:getPolicy() then
+				arg_3_0:emit(GuildMainMediator.MODIFY, 3, var_11_0:getPolicy(), "")
 			end
 
-			if uv0:getManifesto() ~= uv1.guildVO:getManifesto() then
-				uv1:emit(GuildMainMediator.MODIFY, 4, 0, uv0:getManifesto())
+			if var_11_0:getManifesto() ~= arg_3_0.guildVO:getManifesto() then
+				arg_3_0:emit(GuildMainMediator.MODIFY, 4, 0, var_11_0:getManifesto())
 			end
 
-			if uv0:getName() ~= uv1.guildVO:getName() then
-				uv1:emit(GuildMainMediator.MODIFY, 1, 0, uv0:getName())
+			if var_11_0:getName() ~= arg_3_0.guildVO:getName() then
+				arg_3_0:emit(GuildMainMediator.MODIFY, 1, 0, var_11_0:getName())
 			end
 
-			uv1:Hide()
+			arg_3_0:Hide()
 		end
 
-		if slot0:getFaction() ~= uv0.guildVO:getFaction() then
+		if var_11_0:getFaction() ~= arg_3_0.guildVO:getFaction() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("guild_faction_change_tip"),
-				onYes = function ()
-					uv0()
-					uv1:emit(GuildMainMediator.MODIFY, 2, uv2:getFaction(), "")
+				onYes = function()
+					var_11_3()
+					arg_3_0:emit(GuildMainMediator.MODIFY, 2, var_11_0:getFaction(), "")
 				end
 			})
 		else
-			slot3()
+			var_11_3()
 		end
 	end, SFX_CONFIRM)
 
-	function slot1(slot0)
-		onInputChanged(uv0, slot0, function ()
-			slot1, slot2 = wordVer(getInputText(uv0), {
+	local function var_3_0(arg_14_0)
+		onInputChanged(arg_3_0, arg_14_0, function()
+			local var_15_0 = getInputText(arg_14_0)
+			local var_15_1, var_15_2 = wordVer(var_15_0, {
 				isReplace = true
 			})
 
-			if slot1 > 0 then
-				setInputText(uv0, slot2)
+			if var_15_1 > 0 then
+				setInputText(arg_14_0, var_15_2)
 			end
 
-			if getInputText(uv1.nameInput) ~= uv1.guildVO:getName() then
-				setText(uv1.costTF, pg.gameset.modify_guild_cost.key_value)
+			if getInputText(arg_3_0.nameInput) ~= arg_3_0.guildVO:getName() then
+				local var_15_3 = pg.gameset.modify_guild_cost.key_value
+
+				setText(arg_3_0.costTF, var_15_3)
 			else
-				setText(uv1.costTF, 0)
+				setText(arg_3_0.costTF, 0)
 			end
 		end)
 	end
 
-	slot1(slot0.nameInput)
-	slot1(slot0.manifestoInput)
+	var_3_0(arg_3_0.nameInput)
+	var_3_0(arg_3_0.manifestoInput)
 end
 
-function slot0.DealQuit(slot0, slot1)
-	if not slot0.guildVO:GetActiveEvent() or slot2 and not slot2:IsParticipant() then
+function var_0_0.DealQuit(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.guildVO:GetActiveEvent()
+
+	if not var_16_0 or var_16_0 and not var_16_0:IsParticipant() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_tip_quit"),
-			onYes = slot1
+			onYes = arg_16_1
 		})
 	else
+		local var_16_1 = var_16_0:GetJoinCnt()
+		local var_16_2 = var_16_0:GetMaxJoinCnt()
+		local var_16_3 = var_16_2 - var_16_1 + var_16_0:GetExtraJoinCnt()
+		local var_16_4 = var_16_3 <= 0 and COLOR_RED or COLOR_WHITE
+		local var_16_5 = string.format("<color=%s>%d</color>/%d", var_16_4, var_16_3, var_16_2)
+
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("guild_tip_quit_operation", string.format("<color=%s>%d</color>/%d", slot2:GetMaxJoinCnt() - slot2:GetJoinCnt() + slot2:GetExtraJoinCnt() <= 0 and COLOR_RED or COLOR_WHITE, slot5, slot4)),
-			onYes = slot1
+			content = i18n("guild_tip_quit_operation", var_16_5),
+			onYes = arg_16_1
 		})
 	end
 end
 
-function slot0.DealBattleReportAward(slot0, slot1)
-	if #getProxy(GuildProxy):GetCanGetReports() == 0 then
-		slot1()
+function var_0_0.DealBattleReportAward(arg_17_0, arg_17_1)
+	local var_17_0 = getProxy(GuildProxy):GetCanGetReports()
+
+	if #var_17_0 == 0 then
+		arg_17_1()
 
 		return
 	end
 
+	local function var_17_1()
+		pg.m02:sendNotification(GAME.SUBMIT_GUILD_REPORT, {
+			ids = var_17_0,
+			callback = arg_17_1
+		})
+	end
+
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("guild_exist_report_award_when_exit"),
-		onYes = function ()
-			pg.m02:sendNotification(GAME.SUBMIT_GUILD_REPORT, {
-				ids = uv0,
-				callback = uv1
-			})
-		end,
-		onNo = function ()
-			uv0:emit(GuildMainMediator.QUIT, uv0.guildVO.id)
+		onYes = var_17_1,
+		onNo = function()
+			arg_17_0:emit(GuildMainMediator.QUIT, arg_17_0.guildVO.id)
 		end
 	})
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	slot0.guildVO = slot1
-	slot0.playerVO = slot2
+function var_0_0.Show(arg_20_0, arg_20_1, arg_20_2)
+	arg_20_0.guildVO = arg_20_1
+	arg_20_0.playerVO = arg_20_2
 
-	setActive(slot0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0._tf:SetAsLastSibling()
+	setActive(arg_20_0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_20_0._tf)
+	arg_20_0._tf:SetAsLastSibling()
 
-	slot0.isShowModify = true
-	slot0.nameInput.text = slot0.guildVO:getName()
-	slot0.manifestoInput.text = slot0.guildVO.manifesto
-	slot3 = slot0.guildVO:getDutyByMemberId(slot0.playerVO.id) == GuildConst.DUTY_COMMANDER
-	slot0.nameInput.interactable = slot3
-	slot0.manifestoInput.interactable = slot3
+	arg_20_0.isShowModify = true
+	arg_20_0.nameInput.text = arg_20_0.guildVO:getName()
+	arg_20_0.manifestoInput.text = arg_20_0.guildVO.manifesto
 
-	setActive(slot0.confirmBtn, slot3)
-	setActive(slot0.cancelBtn, slot3)
-	setActive(slot0.factionMask, slot0.guildVO:inChangefactionTime())
+	local var_20_0 = arg_20_0.guildVO:getDutyByMemberId(arg_20_0.playerVO.id) == GuildConst.DUTY_COMMANDER
 
-	if slot0.guildVO:inChangefactionTime() then
-		setText(slot0:findTF("timer_container/Text", slot0.factionMask), slot0.guildVO:changeFactionLeftTime())
+	arg_20_0.nameInput.interactable = var_20_0
+	arg_20_0.manifestoInput.interactable = var_20_0
+
+	setActive(arg_20_0.confirmBtn, var_20_0)
+	setActive(arg_20_0.cancelBtn, var_20_0)
+
+	local var_20_1 = arg_20_0.guildVO:inChangefactionTime()
+
+	setActive(arg_20_0.factionMask, arg_20_0.guildVO:inChangefactionTime())
+
+	if var_20_1 then
+		local var_20_2 = arg_20_0.guildVO:changeFactionLeftTime()
+
+		setText(arg_20_0:findTF("timer_container/Text", arg_20_0.factionMask), var_20_2)
 	end
 
-	slot5 = slot0.guildVO
-	slot0.faction = slot5:getFaction()
+	arg_20_0.faction = arg_20_0.guildVO:getFaction()
 
-	onToggle(slot0, slot0.factionBLHXToggle, function (slot0)
-		if slot0 then
-			uv0.faction = GuildConst.FACTION_TYPE_BLHX
+	onToggle(arg_20_0, arg_20_0.factionBLHXToggle, function(arg_21_0)
+		if arg_21_0 then
+			arg_20_0.faction = GuildConst.FACTION_TYPE_BLHX
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.factionCSZZToggle, function (slot0)
-		if slot0 then
-			uv0.faction = GuildConst.FACTION_TYPE_CSZZ
-		end
-	end, SFX_PANEL)
-
-	slot5 = slot0.guildVO
-	slot0.policy = slot5:getPolicy()
-
-	onToggle(slot0, slot0.policyRELAXToggle, function (slot0)
-		if slot0 then
-			uv0.policy = GuildConst.POLICY_TYPE_RELAXATION
-		end
-	end, SFX_PANEL)
-	onToggle(slot0, slot0.policyPOWERToggle, function (slot0)
-		if slot0 then
-			uv0.policy = GuildConst.POLICY_TYPE_POWER
+	onToggle(arg_20_0, arg_20_0.factionCSZZToggle, function(arg_22_0)
+		if arg_22_0 then
+			arg_20_0.faction = GuildConst.FACTION_TYPE_CSZZ
 		end
 	end, SFX_PANEL)
 
-	if slot0.faction == GuildConst.FACTION_TYPE_BLHX then
-		triggerToggle(slot0.factionBLHXToggle, true)
-	elseif slot0.faction == GuildConst.FACTION_TYPE_CSZZ then
-		triggerToggle(slot0.factionCSZZToggle, true)
+	arg_20_0.policy = arg_20_0.guildVO:getPolicy()
+
+	onToggle(arg_20_0, arg_20_0.policyRELAXToggle, function(arg_23_0)
+		if arg_23_0 then
+			arg_20_0.policy = GuildConst.POLICY_TYPE_RELAXATION
+		end
+	end, SFX_PANEL)
+	onToggle(arg_20_0, arg_20_0.policyPOWERToggle, function(arg_24_0)
+		if arg_24_0 then
+			arg_20_0.policy = GuildConst.POLICY_TYPE_POWER
+		end
+	end, SFX_PANEL)
+
+	if arg_20_0.faction == GuildConst.FACTION_TYPE_BLHX then
+		triggerToggle(arg_20_0.factionBLHXToggle, true)
+	elseif arg_20_0.faction == GuildConst.FACTION_TYPE_CSZZ then
+		triggerToggle(arg_20_0.factionCSZZToggle, true)
 	end
 
-	if slot0.policy == GuildConst.POLICY_TYPE_RELAXATION then
-		triggerToggle(slot0.policyRELAXToggle, true)
-	elseif slot0.policy == GuildConst.POLICY_TYPE_POWER then
-		triggerToggle(slot0.policyPOWERToggle, true)
+	if arg_20_0.policy == GuildConst.POLICY_TYPE_RELAXATION then
+		triggerToggle(arg_20_0.policyRELAXToggle, true)
+	elseif arg_20_0.policy == GuildConst.POLICY_TYPE_POWER then
+		triggerToggle(arg_20_0.policyPOWERToggle, true)
 	end
 
-	slot0.policyPOWERToggle:GetComponent(typeof(Toggle)).interactable = slot3
-	slot0.policyRELAXToggle:GetComponent(typeof(Toggle)).interactable = slot3
-	slot0.factionCSZZToggle:GetComponent(typeof(Toggle)).interactable = slot3
-	slot0.factionBLHXToggle:GetComponent(typeof(Toggle)).interactable = slot3
+	arg_20_0.policyPOWERToggle:GetComponent(typeof(Toggle)).interactable = var_20_0
+	arg_20_0.policyRELAXToggle:GetComponent(typeof(Toggle)).interactable = var_20_0
+	arg_20_0.factionCSZZToggle:GetComponent(typeof(Toggle)).interactable = var_20_0
+	arg_20_0.factionBLHXToggle:GetComponent(typeof(Toggle)).interactable = var_20_0
 
-	setActive(slot0.quitBtn, slot0.guildVO:getDutyByMemberId(slot0.playerVO.id) ~= GuildConst.DUTY_COMMANDER)
-	setActive(slot0.dissolveBtn, slot5 == GuildConst.DUTY_COMMANDER)
+	local var_20_3 = arg_20_0.guildVO:getDutyByMemberId(arg_20_0.playerVO.id)
+
+	setActive(arg_20_0.quitBtn, var_20_3 ~= GuildConst.DUTY_COMMANDER)
+	setActive(arg_20_0.dissolveBtn, var_20_3 == GuildConst.DUTY_COMMANDER)
 end
 
-function slot0.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_25_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_25_0._tf, arg_25_0._parentTf)
+	setActive(arg_25_0._tf, false)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_26_0)
+	arg_26_0:Hide()
 end
 
-return slot0
+return var_0_0

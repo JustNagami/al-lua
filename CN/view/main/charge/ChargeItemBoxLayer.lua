@@ -1,119 +1,133 @@
-slot0 = class("ChargeItemBoxLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("ChargeItemBoxLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChargeItemBoxUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
-	slot0:initUIText()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
+	arg_2_0:initUIText()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updatePanel()
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updatePanel()
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
 end
 
-function slot0.initData(slot0)
-	slot0.panelConfig = slot0.contextData.panelConfig
+function var_0_0.initData(arg_5_0)
+	arg_5_0.panelConfig = arg_5_0.contextData.panelConfig
 end
 
-function slot0.initUIText(slot0)
-	setText(slot0:findTF("window/button_container/button_cancel/Image"), i18n("text_cancel"))
-	setText(slot0:findTF("window/button_container/button_ok/Image"), i18n("text_buy"))
+function var_0_0.initUIText(arg_6_0)
+	local var_6_0 = arg_6_0:findTF("window/button_container/button_cancel/Image")
+	local var_6_1 = arg_6_0:findTF("window/button_container/button_ok/Image")
+
+	setText(var_6_0, i18n("text_cancel"))
+	setText(var_6_1, i18n("text_buy"))
 end
 
-function slot0.findUI(slot0)
-	slot0.bg = slot0:findTF("back_sign")
-	slot0.detailWindow = slot0:findTF("window")
-	slot0.cancelBtn = slot0:findTF("button_container/button_cancel", slot0.detailWindow)
-	slot0.confirmBtn = slot0:findTF("button_container/button_ok", slot0.detailWindow)
-	slot0.detailName = slot0:findTF("goods/name", slot0.detailWindow)
-	slot0.detailIcon = slot0:findTF("goods/icon", slot0.detailWindow)
-	slot0.detailRmb = slot0:findTF("prince_bg/contain/icon_rmb", slot0.detailWindow)
-	slot0.detailGem = slot0:findTF("prince_bg/contain/icon_gem", slot0.detailWindow)
-	slot0.detailPrice = slot0:findTF("prince_bg/contain/Text", slot0.detailWindow)
-	slot0.detailTag = slot0:findTF("goods/tag", slot0.detailWindow)
-	slot0.detailTags = {}
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.bg = arg_7_0:findTF("back_sign")
+	arg_7_0.detailWindow = arg_7_0:findTF("window")
+	arg_7_0.cancelBtn = arg_7_0:findTF("button_container/button_cancel", arg_7_0.detailWindow)
+	arg_7_0.confirmBtn = arg_7_0:findTF("button_container/button_ok", arg_7_0.detailWindow)
+	arg_7_0.detailName = arg_7_0:findTF("goods/name", arg_7_0.detailWindow)
+	arg_7_0.detailIcon = arg_7_0:findTF("goods/icon", arg_7_0.detailWindow)
+	arg_7_0.detailRmb = arg_7_0:findTF("prince_bg/contain/icon_rmb", arg_7_0.detailWindow)
+	arg_7_0.detailGem = arg_7_0:findTF("prince_bg/contain/icon_gem", arg_7_0.detailWindow)
+	arg_7_0.detailPrice = arg_7_0:findTF("prince_bg/contain/Text", arg_7_0.detailWindow)
+	arg_7_0.detailTag = arg_7_0:findTF("goods/tag", arg_7_0.detailWindow)
+	arg_7_0.detailTags = {}
 
-	table.insert(slot0.detailTags, slot0:findTF("hot", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("new", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("advice", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("double", slot0.detailTag))
-	table.insert(slot0.detailTags, slot0:findTF("discount", slot0.detailTag))
+	table.insert(arg_7_0.detailTags, arg_7_0:findTF("hot", arg_7_0.detailTag))
+	table.insert(arg_7_0.detailTags, arg_7_0:findTF("new", arg_7_0.detailTag))
+	table.insert(arg_7_0.detailTags, arg_7_0:findTF("advice", arg_7_0.detailTag))
+	table.insert(arg_7_0.detailTags, arg_7_0:findTF("double", arg_7_0.detailTag))
+	table.insert(arg_7_0.detailTags, arg_7_0:findTF("discount", arg_7_0.detailTag))
 
-	slot0.detailTagAdviceTF = slot0.detailTags[3]
-	slot0.detailTagDoubleTF = slot0.detailTags[4]
-	slot0.detailNormalTip = slot0:findTF("NormalTips", slot0.detailWindow)
+	arg_7_0.detailTagAdviceTF = arg_7_0.detailTags[3]
+	arg_7_0.detailTagDoubleTF = arg_7_0.detailTags[4]
+	arg_7_0.detailNormalTip = arg_7_0:findTF("NormalTips", arg_7_0.detailWindow)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.bg, function ()
-		uv0:closeView()
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.bg, function()
+		arg_8_0:closeView()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:closeView()
+	onButton(arg_8_0, arg_8_0.cancelBtn, function()
+		arg_8_0:closeView()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0.panelConfig.onYes then
-			uv0.panelConfig.onYes()
-			uv0:closeView()
+	onButton(arg_8_0, arg_8_0.confirmBtn, function()
+		if arg_8_0.panelConfig.onYes then
+			arg_8_0.panelConfig.onYes()
+			arg_8_0:closeView()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.updatePanel(slot0)
-	slot1 = slot0.panelConfig.icon
-	slot2 = slot0.panelConfig.name and slot0.panelConfig.name or ""
-	slot3 = slot0.panelConfig.tipBonus or ""
-	slot4 = slot0.panelConfig.bonusItem
-	slot5 = slot0.panelConfig.tipExtra and slot0.panelConfig.tipExtra or ""
-	slot6 = slot0.panelConfig.extraItems and slot0.panelConfig.extraItems or {}
-	slot7 = slot0.panelConfig.price and slot0.panelConfig.price or 0
-	slot8 = slot0.panelConfig.isChargeType
-	slot9 = slot0.panelConfig.isLocalPrice
-	slot10 = slot0.panelConfig.isMonthCard
-	slot11 = slot0.panelConfig.tagType
-	slot12 = slot0.panelConfig.normalTip
-	slot13 = slot0.panelConfig.extraDrop
+function var_0_0.updatePanel(arg_12_0)
+	local var_12_0 = arg_12_0.panelConfig.icon
+	local var_12_1 = arg_12_0.panelConfig.name and arg_12_0.panelConfig.name or ""
 
-	if slot0.detailNormalTip then
-		setActive(slot0.detailNormalTip, slot12)
+	if not arg_12_0.panelConfig.tipBonus then
+		local var_12_2 = ""
 	end
 
-	if slot12 then
-		if slot0.detailNormalTip:GetComponent("Text") then
-			setText(slot0.detailNormalTip, slot12)
+	local var_12_3 = arg_12_0.panelConfig.bonusItem
+
+	if not arg_12_0.panelConfig.tipExtra or not arg_12_0.panelConfig.tipExtra then
+		local var_12_4 = ""
+	end
+
+	if not arg_12_0.panelConfig.extraItems or not arg_12_0.panelConfig.extraItems then
+		local var_12_5 = {}
+	end
+
+	local var_12_6 = arg_12_0.panelConfig.price and arg_12_0.panelConfig.price or 0
+	local var_12_7 = arg_12_0.panelConfig.isChargeType
+	local var_12_8 = arg_12_0.panelConfig.isLocalPrice
+	local var_12_9 = arg_12_0.panelConfig.isMonthCard
+	local var_12_10 = arg_12_0.panelConfig.tagType
+	local var_12_11 = arg_12_0.panelConfig.normalTip
+	local var_12_12 = arg_12_0.panelConfig.extraDrop
+
+	if arg_12_0.detailNormalTip then
+		setActive(arg_12_0.detailNormalTip, var_12_11)
+	end
+
+	if var_12_11 then
+		if arg_12_0.detailNormalTip:GetComponent("Text") then
+			setText(arg_12_0.detailNormalTip, var_12_11)
 		else
-			setButtonText(slot0.detailNormalTip, slot12)
+			setButtonText(arg_12_0.detailNormalTip, var_12_11)
 		end
 	end
 
-	setActive(slot0.detailTag, slot11 > 0)
+	setActive(arg_12_0.detailTag, var_12_10 > 0)
 
-	if slot11 > 0 then
-		for slot17, slot18 in ipairs(slot0.detailTags) do
-			setActive(slot18, slot17 == slot11)
+	if var_12_10 > 0 then
+		for iter_12_0, iter_12_1 in ipairs(arg_12_0.detailTags) do
+			setActive(iter_12_1, iter_12_0 == var_12_10)
 		end
 	end
 
-	GetImageSpriteFromAtlasAsync(slot1, "", slot0.detailIcon, false)
-	setText(slot0.detailName, slot2)
+	GetImageSpriteFromAtlasAsync(var_12_0, "", arg_12_0.detailIcon, false)
+	setText(arg_12_0.detailName, var_12_1)
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(slot0.detailRmb, slot8 and not slot9)
+		setActive(arg_12_0.detailRmb, var_12_7 and not var_12_8)
 	else
-		setActive(slot0.detailRmb, slot8)
+		setActive(arg_12_0.detailRmb, var_12_7)
 	end
 
-	setActive(slot0.detailGem, not slot8)
-	setText(slot0.detailPrice, slot7)
+	setActive(arg_12_0.detailGem, not var_12_7)
+	setText(arg_12_0.detailPrice, var_12_6)
 end
 
-return slot0
+return var_0_0

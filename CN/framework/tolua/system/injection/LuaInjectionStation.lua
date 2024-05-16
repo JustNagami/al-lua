@@ -1,79 +1,87 @@
-slot0 = pcall
-slot1 = pairs
-slot2 = error
-slot3 = rawset
-slot4 = rawget
-slot5 = string
-slot6 = tolua_tag
-slot7 = getmetatable
-slot8 = nil
-slot9 = require("Framework.tolua.System.Injection.InjectionBridgeInfo")
+﻿local var_0_0 = pcall
+local var_0_1 = pairs
+local var_0_2 = error
+local var_0_3 = rawset
+local var_0_4 = rawget
+local var_0_5 = string
+local var_0_6 = tolua_tag
+local var_0_7 = getmetatable
+local var_0_8
+local var_0_9 = require("Framework.tolua.System.Injection.InjectionBridgeInfo")
 
-function slot10(slot0)
-	if uv1(uv0(slot0), uv2) ~= 1 then
-		uv3("Can't Inject")
+local function var_0_10(arg_1_0)
+	local var_1_0 = var_0_7(arg_1_0)
+
+	if var_0_4(var_1_0, var_0_6) ~= 1 then
+		var_0_2("Can't Inject")
 	end
 
-	return slot1
+	return var_1_0
 end
 
-function slot11()
-	if uv0 == nil then
-		uv0 = LuaInterface.LuaInjectionStation
+local function var_0_11()
+	if var_0_8 == nil then
+		var_0_8 = LuaInterface.LuaInjectionStation
 	end
 end
 
-function slot12(slot0, slot1)
-	slot2 = slot0.__index
-	slot3 = {}
+local function var_0_12(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0.__index
+	local var_3_1 = {}
 
-	for slot7, slot8 in uv0(slot1) do
-		slot9, slot10 = slot8()
+	for iter_3_0, iter_3_1 in var_0_1(arg_3_1) do
+		local var_3_2, var_3_3 = iter_3_1()
 
-		if slot10 == LuaInterface.InjectType.Replace or slot10 == LuaInterface.InjectType.ReplaceWithPostInvokeBase or slot10 == LuaInterface.InjectType.ReplaceWithPreInvokeBase then
-			uv1(slot3, slot7, slot9)
+		if var_3_3 == LuaInterface.InjectType.Replace or var_3_3 == LuaInterface.InjectType.ReplaceWithPostInvokeBase or var_3_3 == LuaInterface.InjectType.ReplaceWithPreInvokeBase then
+			var_0_3(var_3_1, iter_3_0, var_3_2)
 		end
 	end
 
-	function slot0.__index(slot0, slot1)
-		if uv0(uv1, slot1) ~= nil then
-			return slot2
+	function arg_3_0.__index(arg_4_0, arg_4_1)
+		local var_4_0 = var_0_4(var_3_1, arg_4_1)
+
+		if var_4_0 ~= nil then
+			return var_4_0
 		end
 
-		slot3, slot4 = uv2(uv3, slot0, slot1)
+		local var_4_1, var_4_2 = var_0_0(var_3_0, arg_4_0, arg_4_1)
 
-		if slot3 then
-			return slot4
+		if var_4_1 then
+			return var_4_2
 		else
-			uv4(slot4)
+			var_0_2(var_4_2)
 
 			return nil
 		end
 	end
 end
 
-function InjectByModule(slot0, slot1)
-	slot2 = uv0(slot0)
+function InjectByModule(arg_5_0, arg_5_1)
+	local var_5_0 = var_0_10(arg_5_0)
+	local var_5_1 = var_5_0[".name"]
 
-	InjectByName(slot2[".name"], slot1)
-	uv1(slot2, slot1)
+	InjectByName(var_5_1, arg_5_1)
+	var_0_12(var_5_0, arg_5_1)
 end
 
-function InjectByName(slot0, slot1)
-	uv0()
+function InjectByName(arg_6_0, arg_6_1)
+	var_0_11()
 
-	if uv1(uv2, slot0) == nil then
-		uv3(uv4.format("Module %s Can't Inject", slot0))
+	local var_6_0 = var_0_4(var_0_9, arg_6_0)
+
+	if var_6_0 == nil then
+		var_0_2(var_0_5.format("Module %s Can't Inject", arg_6_0))
 	end
 
-	for slot6, slot7 in uv5(slot1) do
-		slot8, slot9 = slot7()
+	for iter_6_0, iter_6_1 in var_0_1(arg_6_1) do
+		local var_6_1, var_6_2 = iter_6_1()
+		local var_6_3 = var_0_4(var_6_0, iter_6_0)
 
-		if uv1(slot2, slot6) == nil then
-			uv3(uv4.format("Function %s Doesn't Exist In Module %s", slot6, slot0))
+		if var_6_3 == nil then
+			var_0_2(var_0_5.format("Function %s Doesn't Exist In Module %s", iter_6_0, arg_6_0))
 		end
 
-		uv6.CacheInjectFunction(slot10, slot9.ToInt(slot9), slot8)
+		var_0_8.CacheInjectFunction(var_6_3, var_6_2:ToInt(), var_6_1)
 	end
 end
 

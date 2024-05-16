@@ -1,67 +1,65 @@
-slot0 = class("CourtYardBGAgent", import(".CourtYardAgent"))
+﻿local var_0_0 = class("CourtYardBGAgent", import(".CourtYardAgent"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.prefab = nil
+	arg_1_0.prefab = nil
 end
 
-function slot0.Switch(slot0, slot1, slot2)
-	if not slot2 then
+function var_0_0.Switch(arg_2_0, arg_2_1, arg_2_2)
+	if not arg_2_2 then
 		return
 	end
 
-	slot3 = slot0.prefab and slot0.prefab.name or ""
+	local var_2_0 = arg_2_0.prefab and arg_2_0.prefab.name or ""
 
-	if slot1 and slot3 ~= slot2 then
-		slot0:LoadBG(slot2)
-	elseif slot1 and slot3 == slot2 then
-		-- Nothing
-	elseif not slot1 and slot3 == slot2 then
-		slot0:Clear()
+	if arg_2_1 and var_2_0 ~= arg_2_2 then
+		arg_2_0:LoadBG(arg_2_2)
+	elseif arg_2_1 and var_2_0 == arg_2_2 then
+		-- block empty
+	elseif not arg_2_1 and var_2_0 == arg_2_2 then
+		arg_2_0:Clear()
 	else
 		assert(false)
 	end
 end
 
-function slot0.LoadBG(slot0, slot1)
-	slot2 = PoolMgr.GetInstance()
-
-	slot2:GetPrefab("BackyardBG/" .. slot1, slot1, true, function (slot0)
-		if uv0.exited then
-			PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. uv1, uv1, slot0)
+function var_0_0.LoadBG(arg_3_0, arg_3_1)
+	PoolMgr.GetInstance():GetPrefab("BackyardBG/" .. arg_3_1, arg_3_1, true, function(arg_4_0)
+		if arg_3_0.exited then
+			PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. arg_3_1, arg_3_1, arg_4_0)
 		end
 
-		slot0.name = uv1
+		arg_4_0.name = arg_3_1
 
-		setParent(slot0, uv0._tf)
-		slot0.transform:SetAsFirstSibling()
-		setActive(slot0, true)
+		setParent(arg_4_0, arg_3_0._tf)
+		arg_4_0.transform:SetAsFirstSibling()
+		setActive(arg_4_0, true)
 
-		uv0.prefab = slot0
+		arg_3_0.prefab = arg_4_0
 	end)
 end
 
-function slot0.Clear(slot0)
-	if slot0.prefab then
-		slot1 = slot0.prefab.name
+function var_0_0.Clear(arg_5_0)
+	if arg_5_0.prefab then
+		local var_5_0 = arg_5_0.prefab.name
 
-		PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. slot1, slot1, slot0.prefab)
+		PoolMgr.GetInstance():ReturnPrefab("BackyardBG/" .. var_5_0, var_5_0, arg_5_0.prefab)
 
-		slot0.prefab = nil
+		arg_5_0.prefab = nil
 	end
 end
 
-function slot0.ClearByName(slot0, slot1)
-	if slot0.prefab and slot0.prefab.name == slot1 then
-		slot0:Clear()
+function var_0_0.ClearByName(arg_6_0, arg_6_1)
+	if arg_6_0.prefab and arg_6_0.prefab.name == arg_6_1 then
+		arg_6_0:Clear()
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear(true)
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0:Clear(true)
 
-	slot0.exited = true
+	arg_7_0.exited = true
 end
 
-return slot0
+return var_0_0

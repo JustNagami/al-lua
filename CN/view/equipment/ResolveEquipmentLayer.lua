@@ -1,241 +1,245 @@
-slot0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ResolveEquipmentUI"
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_2_0, arg_2_1)
+	arg_2_0.player = arg_2_1
 end
 
-function slot0.setEquipments(slot0, slot1)
-	slot0.equipmentVOs = slot1
+function var_0_0.setEquipments(arg_3_0, arg_3_1)
+	arg_3_0.equipmentVOs = arg_3_1
 
-	slot0:setEquipmentByIds(slot1)
+	arg_3_0:setEquipmentByIds(arg_3_1)
 end
 
-function slot0.setEquipmentByIds(slot0, slot1)
-	slot0.equipmentVOByIds = {}
+function var_0_0.setEquipmentByIds(arg_4_0, arg_4_1)
+	arg_4_0.equipmentVOByIds = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.equipmentVOByIds[slot6.id] = slot6
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
+		arg_4_0.equipmentVOByIds[iter_4_1.id] = iter_4_1
 	end
 end
 
-function slot0.init(slot0)
-	slot0.mainPanel = slot0:findTF("main")
+function var_0_0.init(arg_5_0)
+	arg_5_0.mainPanel = arg_5_0:findTF("main")
 
-	setActive(slot0.mainPanel, true)
+	setActive(arg_5_0.mainPanel, true)
 
-	slot0.viewRect = slot0:findTF("main/frame/view"):GetComponent("LScrollRect")
-	slot0.backBtn = slot0:findTF("main/top/btnBack")
-	slot0.cancelBtn = slot0:findTF("main/cancel_btn")
-	slot0.okBtn = slot0:findTF("main/ok_btn")
+	arg_5_0.viewRect = arg_5_0:findTF("main/frame/view"):GetComponent("LScrollRect")
+	arg_5_0.backBtn = arg_5_0:findTF("main/top/btnBack")
+	arg_5_0.cancelBtn = arg_5_0:findTF("main/cancel_btn")
+	arg_5_0.okBtn = arg_5_0:findTF("main/ok_btn")
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {})
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf, false, {})
 
-	slot0.selectedIds = {}
-	slot0.selecteAllTF = slot0:findTF("main/all_toggle")
-	slot0.selecteAllToggle = slot0.selecteAllTF:GetComponent(typeof(Toggle))
-	slot0.destroyConfirm = slot0:findTF("destroy_confirm")
-	slot0.destroyBonusList = slot0.destroyConfirm:Find("got/scrollview/list")
-	slot0.destroyBonusItem = slot0.destroyConfirm:Find("got/scrollview/item")
+	arg_5_0.selectedIds = {}
+	arg_5_0.selecteAllTF = arg_5_0:findTF("main/all_toggle")
+	arg_5_0.selecteAllToggle = arg_5_0.selecteAllTF:GetComponent(typeof(Toggle))
+	arg_5_0.destroyConfirm = arg_5_0:findTF("destroy_confirm")
+	arg_5_0.destroyBonusList = arg_5_0.destroyConfirm:Find("got/scrollview/list")
+	arg_5_0.destroyBonusItem = arg_5_0.destroyConfirm:Find("got/scrollview/item")
 
-	setActive(slot0.destroyConfirm, false)
-	setActive(slot0.destroyBonusItem, false)
+	setActive(arg_5_0.destroyConfirm, false)
+	setActive(arg_5_0.destroyBonusItem, false)
 
-	slot0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(slot0._tf, slot0.event)
+	arg_5_0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(arg_5_0._tf, arg_5_0.event)
 end
 
-function slot0.didEnter(slot0)
-	slot0:initEquipments()
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_6_0)
+	arg_6_0:initEquipments()
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_6_0, arg_6_0.cancelBtn, function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.okBtn, function ()
-		slot0 = {}
+	onButton(arg_6_0, arg_6_0.okBtn, function()
+		local var_9_0 = {}
 
-		if underscore.any(uv0.selectedIds, function (slot0)
-			return uv0.equipmentVOByIds[slot0[1]]:getConfig("rarity") >= 4 or slot1:getConfig("level") > 1
+		if underscore.any(arg_6_0.selectedIds, function(arg_10_0)
+			local var_10_0 = arg_6_0.equipmentVOByIds[arg_10_0[1]]
+
+			return var_10_0:getConfig("rarity") >= 4 or var_10_0:getConfig("level") > 1
 		end) then
-			table.insert(slot0, function (slot0)
-				slot1 = uv0.equipDestroyConfirmWindow
-
-				slot1:Load()
-
-				slot1 = uv0.equipDestroyConfirmWindow
-
-				slot1:ActionInvoke("Show", underscore.map(uv0.selectedIds, function (slot0)
+			table.insert(var_9_0, function(arg_11_0)
+				arg_6_0.equipDestroyConfirmWindow:Load()
+				arg_6_0.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(arg_6_0.selectedIds, function(arg_12_0)
 					return setmetatable({
-						count = slot0[2]
+						count = arg_12_0[2]
 					}, {
-						__index = uv0.equipmentVOByIds[slot0[1]]
+						__index = arg_6_0.equipmentVOByIds[arg_12_0[1]]
 					})
-				end), slot0)
+				end), arg_11_0)
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			if #uv0.selectedIds <= 0 then
+		seriesAsync(var_9_0, function()
+			if #arg_6_0.selectedIds <= 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("err_resloveequip_nochoice"))
 
 				return
 			end
 
-			setActive(uv0.mainPanel, false)
-			setActive(uv0.destroyConfirm, true)
-			uv0:displayDestroyBonus()
+			setActive(arg_6_0.mainPanel, false)
+			setActive(arg_6_0.destroyConfirm, true)
+			arg_6_0:displayDestroyBonus()
 		end)
 	end, SFX_CONFIRM)
-	onButton(slot0, findTF(slot0.destroyConfirm, "actions/cancel_button"), function ()
-		setActive(uv0.destroyConfirm, false)
-		setActive(uv0.mainPanel, true)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.destroyConfirm, uv0._tf)
+	onButton(arg_6_0, findTF(arg_6_0.destroyConfirm, "actions/cancel_button"), function()
+		setActive(arg_6_0.destroyConfirm, false)
+		setActive(arg_6_0.mainPanel, true)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_6_0.destroyConfirm, arg_6_0._tf)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.destroyConfirm, "actions/destroy_button"), function ()
-		seriesAsync({}, function ()
-			uv0:emit(ResolveEquipmentMediator.ON_RESOLVE, uv0.selectedIds)
+	onButton(arg_6_0, findTF(arg_6_0.destroyConfirm, "actions/destroy_button"), function()
+		local var_15_0 = {}
+
+		seriesAsync(var_15_0, function()
+			arg_6_0:emit(ResolveEquipmentMediator.ON_RESOLVE, arg_6_0.selectedIds)
 		end)
 	end, SFX_UI_EQUIPMENT_RESOLVE)
-	onToggle(slot0, slot0.selecteAllTF, function (slot0)
-		if uv0.isManual then
+	onToggle(arg_6_0, arg_6_0.selecteAllTF, function(arg_17_0)
+		if arg_6_0.isManual then
 			return
 		end
 
-		if slot0 then
-			uv0:selecteAllEquips()
+		if arg_17_0 then
+			arg_6_0:selecteAllEquips()
 		else
-			uv0:unselecteAllEquips()
+			arg_6_0:unselecteAllEquips()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.OnResolveEquipDone(slot0)
-	setActive(slot0.destroyConfirm, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
-	setActive(slot0.mainPanel, false)
-	slot0:unselecteAllEquips()
+function var_0_0.OnResolveEquipDone(arg_18_0)
+	setActive(arg_18_0.destroyConfirm, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_18_0._tf)
+	setActive(arg_18_0.mainPanel, false)
+	arg_18_0:unselecteAllEquips()
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_19_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(slot0.destroyConfirm) then
-		triggerButton(findTF(slot0.destroyConfirm, "actions/cancel_button"))
-	elseif slot0.equipDestroyConfirmWindow:isShowing() then
-		slot0.equipDestroyConfirmWindow:Hide()
+	if isActive(arg_19_0.destroyConfirm) then
+		triggerButton(findTF(arg_19_0.destroyConfirm, "actions/cancel_button"))
+	elseif arg_19_0.equipDestroyConfirmWindow:isShowing() then
+		arg_19_0.equipDestroyConfirmWindow:Hide()
 	else
-		triggerButton(slot0.cancelBtn)
+		triggerButton(arg_19_0.cancelBtn)
 	end
 end
 
-function slot0.selectedLowRarityEquipment(slot0)
-	slot0.selectedIds = {}
+function var_0_0.selectedLowRarityEquipment(arg_20_0)
+	arg_20_0.selectedIds = {}
 
-	for slot4, slot5 in ipairs(slot0.equipmentVOs) do
-		if slot5:getConfig("level") <= 1 and slot5:getConfig("rarity") < 4 then
-			slot0:selectEquip(slot5, slot5.count)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.equipmentVOs) do
+		if iter_20_1:getConfig("level") <= 1 and iter_20_1:getConfig("rarity") < 4 then
+			arg_20_0:selectEquip(iter_20_1, iter_20_1.count)
 		end
 	end
 
-	slot0:updateSelected()
+	arg_20_0:updateSelected()
 end
 
-function slot0.selecteAllEquips(slot0)
-	slot0.selectedIds = {}
+function var_0_0.selecteAllEquips(arg_21_0)
+	arg_21_0.selectedIds = {}
 
-	for slot4, slot5 in ipairs(slot0.equipmentVOs) do
-		slot0:selectEquip(slot5, slot5.count)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.equipmentVOs) do
+		arg_21_0:selectEquip(iter_21_1, iter_21_1.count)
 	end
 
-	slot0:updateSelected()
+	arg_21_0:updateSelected()
 end
 
-function slot0.unselecteAllEquips(slot0)
-	slot0.selectedIds = {}
+function var_0_0.unselecteAllEquips(arg_22_0)
+	arg_22_0.selectedIds = {}
 
-	slot0:updateSelected()
+	arg_22_0:updateSelected()
 end
 
-function slot0.displayDestroyBonus(slot0)
-	slot1 = {}
-	slot2 = 0
+function var_0_0.displayDestroyBonus(arg_23_0)
+	local var_23_0 = {}
+	local var_23_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.selectedIds) do
-		if Equipment.CanInBag(slot7[1]) then
-			slot9 = Equipment.getConfigData(slot7[1]).destory_item or {}
-			slot2 = slot2 + (slot8.destory_gold or 0) * slot7[2]
+	for iter_23_0, iter_23_1 in ipairs(arg_23_0.selectedIds) do
+		if Equipment.CanInBag(iter_23_1[1]) then
+			local var_23_2 = Equipment.getConfigData(iter_23_1[1])
+			local var_23_3 = var_23_2.destory_item or {}
 
-			for slot14, slot15 in ipairs(slot9) do
-				slot16 = false
+			var_23_1 = var_23_1 + (var_23_2.destory_gold or 0) * iter_23_1[2]
 
-				for slot20, slot21 in ipairs(slot1) do
-					if slot15[1] == slot1[slot20].id then
-						slot1[slot20].count = slot1[slot20].count + slot15[2] * slot7[2]
-						slot16 = true
+			for iter_23_2, iter_23_3 in ipairs(var_23_3) do
+				local var_23_4 = false
+
+				for iter_23_4, iter_23_5 in ipairs(var_23_0) do
+					if iter_23_3[1] == var_23_0[iter_23_4].id then
+						var_23_0[iter_23_4].count = var_23_0[iter_23_4].count + iter_23_3[2] * iter_23_1[2]
+						var_23_4 = true
 
 						break
 					end
 				end
 
-				if not slot16 then
-					table.insert(slot1, {
+				if not var_23_4 then
+					table.insert(var_23_0, {
 						type = DROP_TYPE_ITEM,
-						id = slot15[1],
-						count = slot15[2] * slot7[2]
+						id = iter_23_3[1],
+						count = iter_23_3[2] * iter_23_1[2]
 					})
 				end
 			end
 		end
 	end
 
-	if slot2 > 0 then
-		table.insert(slot1, {
+	if var_23_1 > 0 then
+		table.insert(var_23_0, {
 			id = 1,
 			type = DROP_TYPE_RESOURCE,
-			count = slot2
+			count = var_23_1
 		})
 	end
 
-	for slot6 = #slot1, slot0.destroyBonusList.childCount - 1 do
-		Destroy(slot0.destroyBonusList:GetChild(slot6))
+	for iter_23_6 = #var_23_0, arg_23_0.destroyBonusList.childCount - 1 do
+		Destroy(arg_23_0.destroyBonusList:GetChild(iter_23_6))
 	end
 
-	for slot6 = slot0.destroyBonusList.childCount, #slot1 - 1 do
-		cloneTplTo(slot0.destroyBonusItem, slot0.destroyBonusList)
+	for iter_23_7 = arg_23_0.destroyBonusList.childCount, #var_23_0 - 1 do
+		cloneTplTo(arg_23_0.destroyBonusItem, arg_23_0.destroyBonusList)
 	end
 
-	for slot6 = 1, #slot1 do
-		slot7 = slot0.destroyBonusList:GetChild(slot6 - 1)
+	for iter_23_8 = 1, #var_23_0 do
+		local var_23_5 = arg_23_0.destroyBonusList:GetChild(iter_23_8 - 1)
+		local var_23_6 = var_23_0[iter_23_8]
 
-		if slot1[slot6].type == DROP_TYPE_SHIP then
-			slot0.hasShip = true
+		if var_23_6.type == DROP_TYPE_SHIP then
+			arg_23_0.hasShip = true
 		end
 
-		GetComponent(slot7:Find("icon_bg/icon"), typeof(Image)).enabled = true
+		local var_23_7 = var_23_5:Find("icon_bg/icon/icon")
 
-		if not IsNil(slot7:Find("icon_bg/icon/icon")) then
-			setActive(slot9, false)
+		GetComponent(var_23_5:Find("icon_bg/icon"), typeof(Image)).enabled = true
+
+		if not IsNil(var_23_7) then
+			setActive(var_23_7, false)
 		end
 
-		updateDrop(slot7, slot8)
+		updateDrop(var_23_5, var_23_6)
 
-		slot11, slot12 = contentWrap(slot8:getConfig("name"), 10, 2)
+		local var_23_8, var_23_9 = contentWrap(var_23_6:getConfig("name"), 10, 2)
 
-		if slot11 then
-			slot12 = slot12 .. "..."
+		if var_23_8 then
+			var_23_9 = var_23_9 .. "..."
 		end
 
-		setText(slot7:Find("name"), slot12)
-		onButton(slot0, slot7, function ()
-			if uv0.type == DROP_TYPE_RESOURCE or uv0.type == DROP_TYPE_ITEM then
-				uv1:emit(uv2.ON_ITEM, uv0:getConfig("id"))
-			elseif uv0.type == DROP_TYPE_EQUIP then
-				uv1:emit(uv2.ON_EQUIPMENT, {
-					equipmentId = uv0:getConfig("id"),
+		setText(var_23_5:Find("name"), var_23_9)
+		onButton(arg_23_0, var_23_5, function()
+			if var_23_6.type == DROP_TYPE_RESOURCE or var_23_6.type == DROP_TYPE_ITEM then
+				arg_23_0:emit(var_0_0.ON_ITEM, var_23_6:getConfig("id"))
+			elseif var_23_6.type == DROP_TYPE_EQUIP then
+				arg_23_0:emit(var_0_0.ON_EQUIPMENT, {
+					equipmentId = var_23_6:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY
 				})
 			end
@@ -243,70 +247,74 @@ function slot0.displayDestroyBonus(slot0)
 	end
 end
 
-function slot0.initEquipments(slot0)
-	function slot0.viewRect.onInitItem(slot0)
-		uv0:onInitItem(slot0)
+function var_0_0.initEquipments(arg_25_0)
+	function arg_25_0.viewRect.onInitItem(arg_26_0)
+		arg_25_0:onInitItem(arg_26_0)
 	end
 
-	function slot0.viewRect.onUpdateItem(slot0, slot1)
-		uv0:onUpdateItem(slot0, slot1)
+	function arg_25_0.viewRect.onUpdateItem(arg_27_0, arg_27_1)
+		arg_25_0:onUpdateItem(arg_27_0, arg_27_1)
 	end
 
-	function slot0.viewRect.onStart()
-		uv0:selectedLowRarityEquipment()
+	function arg_25_0.viewRect.onStart()
+		arg_25_0:selectedLowRarityEquipment()
 	end
 
-	slot0.cards = {}
+	arg_25_0.cards = {}
 
-	slot0:filterEquipments()
+	arg_25_0:filterEquipments()
 end
 
-function slot0.filterEquipments(slot0)
-	table.sort(slot0.equipmentVOs, CompareFuncs({
-		function (slot0)
-			return -slot0:getConfig("rarity")
+function var_0_0.filterEquipments(arg_29_0)
+	table.sort(arg_29_0.equipmentVOs, CompareFuncs({
+		function(arg_30_0)
+			return -arg_30_0:getConfig("rarity")
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_31_0)
+			return arg_31_0.id
 		end
 	}))
-	slot0.viewRect:SetTotalCount(#slot0.equipmentVOs, -1)
+	arg_29_0.viewRect:SetTotalCount(#arg_29_0.equipmentVOs, -1)
 end
 
-function slot0.onInitItem(slot0, slot1)
-	slot2 = EquipmentItem.New(slot1)
+function var_0_0.onInitItem(arg_32_0, arg_32_1)
+	local var_32_0 = EquipmentItem.New(arg_32_1)
 
-	onButton(slot0, slot2.go, function ()
-		uv0:selectEquip(uv1.equipmentVO, uv1.equipmentVO.count)
+	onButton(arg_32_0, var_32_0.go, function()
+		arg_32_0:selectEquip(var_32_0.equipmentVO, var_32_0.equipmentVO.count)
 	end, SFX_PANEL)
-	onButton(slot0, slot2.reduceBtn, function ()
-		uv0:selectEquip(uv1.equipmentVO, 1)
+	onButton(arg_32_0, var_32_0.reduceBtn, function()
+		arg_32_0:selectEquip(var_32_0.equipmentVO, 1)
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_32_0.cards[arg_32_1] = var_32_0
 end
 
-function slot0.onUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:onInitItem(slot2)
+function var_0_0.onUpdateItem(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = arg_35_0.cards[arg_35_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_35_0 then
+		arg_35_0:onInitItem(arg_35_2)
+
+		var_35_0 = arg_35_0.cards[arg_35_2]
 	end
 
-	slot3:update(slot0.equipmentVOs[slot1 + 1], true)
+	local var_35_1 = arg_35_0.equipmentVOs[arg_35_1 + 1]
+
+	var_35_0:update(var_35_1, true)
 end
 
-function slot0.isSelectedAll(slot0)
-	for slot4, slot5 in pairs(slot0.equipmentVOByIds) do
-		slot6 = false
+function var_0_0.isSelectedAll(arg_36_0)
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.equipmentVOByIds) do
+		local var_36_0 = false
 
-		for slot10, slot11 in pairs(slot0.selectedIds) do
-			if slot11[1] == slot5.id and slot5.count == slot11[2] then
-				slot6 = true
+		for iter_36_2, iter_36_3 in pairs(arg_36_0.selectedIds) do
+			if iter_36_3[1] == iter_36_1.id and iter_36_1.count == iter_36_3[2] then
+				var_36_0 = true
 			end
 		end
 
-		if slot6 == false then
+		if var_36_0 == false then
 			return false
 		end
 	end
@@ -314,92 +322,94 @@ function slot0.isSelectedAll(slot0)
 	return true
 end
 
-function slot0.selectEquip(slot0, slot1, slot2)
-	if not slot0:checkDestroyGold(slot1, slot2) then
+function var_0_0.selectEquip(arg_37_0, arg_37_1, arg_37_2)
+	if not arg_37_0:checkDestroyGold(arg_37_1, arg_37_2) then
 		return
 	end
 
-	if slot1:isImportance() then
+	if arg_37_1:isImportance() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("retire_importantequipment_tips"))
 
 		return
 	end
 
-	slot3 = false
-	slot4 = nil
-	slot5 = 0
+	local var_37_0 = false
+	local var_37_1
+	local var_37_2 = 0
 
-	for slot9, slot10 in pairs(slot0.selectedIds) do
-		if slot10[1] == slot1.id then
-			slot3 = true
-			slot4 = slot9
-			slot5 = slot10[2]
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.selectedIds) do
+		if iter_37_1[1] == arg_37_1.id then
+			var_37_0 = true
+			var_37_1 = iter_37_0
+			var_37_2 = iter_37_1[2]
 
 			break
 		end
 	end
 
-	if not slot3 then
-		table.insert(slot0.selectedIds, {
-			slot1.id,
-			slot2
+	if not var_37_0 then
+		table.insert(arg_37_0.selectedIds, {
+			arg_37_1.id,
+			arg_37_2
 		})
-	elseif slot5 - slot2 > 0 then
-		slot0.selectedIds[slot4][2] = slot5 - slot2
+	elseif var_37_2 - arg_37_2 > 0 then
+		arg_37_0.selectedIds[var_37_1][2] = var_37_2 - arg_37_2
 	else
-		table.remove(slot0.selectedIds, slot4)
+		table.remove(arg_37_0.selectedIds, var_37_1)
 	end
 
-	slot0:updateSelected()
+	arg_37_0:updateSelected()
 
-	slot0.isManual = true
+	local var_37_3 = arg_37_0:isSelectedAll()
 
-	triggerToggle(slot0.selecteAllTF, slot0:isSelectedAll())
+	arg_37_0.isManual = true
 
-	slot0.isManual = nil
+	triggerToggle(arg_37_0.selecteAllTF, var_37_3)
+
+	arg_37_0.isManual = nil
 end
 
-function slot0.updateSelected(slot0)
-	for slot4, slot5 in pairs(slot0.cards) do
-		if slot5.equipmentVO then
-			slot6 = false
-			slot7 = 0
+function var_0_0.updateSelected(arg_38_0)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.cards) do
+		if iter_38_1.equipmentVO then
+			local var_38_0 = false
+			local var_38_1 = 0
 
-			for slot11, slot12 in pairs(slot0.selectedIds) do
-				if slot5.equipmentVO.id == slot12[1] then
-					slot6 = true
-					slot7 = slot12[2]
+			for iter_38_2, iter_38_3 in pairs(arg_38_0.selectedIds) do
+				if iter_38_1.equipmentVO.id == iter_38_3[1] then
+					var_38_0 = true
+					var_38_1 = iter_38_3[2]
 
 					break
 				end
 			end
 
-			slot5:updateSelected(slot6, slot7)
+			iter_38_1:updateSelected(var_38_0, var_38_1)
 		end
 	end
 end
 
-function slot0.checkDestroyGold(slot0, slot1, slot2)
-	slot3 = 0
-	slot4 = false
+function var_0_0.checkDestroyGold(arg_39_0, arg_39_1, arg_39_2)
+	local var_39_0 = 0
+	local var_39_1 = false
 
-	for slot8, slot9 in pairs(slot0.selectedIds) do
-		slot10 = slot9[2]
+	for iter_39_0, iter_39_1 in pairs(arg_39_0.selectedIds) do
+		local var_39_2 = iter_39_1[2]
 
-		if Equipment.CanInBag(slot9[1]) then
-			slot3 = slot3 + (Equipment.getConfigData(slot9[1]).destory_gold or 0) * slot10
+		if Equipment.CanInBag(iter_39_1[1]) then
+			var_39_0 = var_39_0 + (Equipment.getConfigData(iter_39_1[1]).destory_gold or 0) * var_39_2
 		end
 
-		if slot1 and slot9[1] == slot1.configId then
-			slot4 = true
+		if arg_39_1 and iter_39_1[1] == arg_39_1.configId then
+			var_39_1 = true
 		end
 	end
 
-	if not slot4 and slot1 and slot2 > 0 then
-		slot3 = slot3 + (slot1:getConfig("destory_gold") or 0) * slot2
+	if not var_39_1 and arg_39_1 and arg_39_2 > 0 then
+		var_39_0 = var_39_0 + (arg_39_1:getConfig("destory_gold") or 0) * arg_39_2
 	end
 
-	if slot0.player:GoldMax(slot3) then
+	if arg_39_0.player:GoldMax(var_39_0) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_destroy"))
 
 		return false
@@ -408,9 +418,9 @@ function slot0.checkDestroyGold(slot0, slot1, slot2)
 	return true
 end
 
-function slot0.willExit(slot0)
-	slot0.equipDestroyConfirmWindow:Destroy()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
+function var_0_0.willExit(arg_40_0)
+	arg_40_0.equipDestroyConfirmWindow:Destroy()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_40_0._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-return slot0
+return var_0_0

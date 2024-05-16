@@ -1,91 +1,92 @@
-slot0 = class("SculptureMiniMsgBoxPage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("SculptureMiniMsgBoxPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SculptureMiniMsgBoxUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.contentTxt = slot0:findTF("frame/Text"):GetComponent(typeof(Text))
-	slot0.confirmBtn = slot0:findTF("frame/btns/btn_confrim")
-	slot0.btnImg = slot0.confirmBtn:GetComponent(typeof(Image))
-	slot0.cancelBtn = slot0:findTF("frame/btns/btn_cancel")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.contentTxt = arg_2_0:findTF("frame/Text"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0:findTF("frame/btns/btn_confrim")
+	arg_2_0.btnImg = arg_2_0.confirmBtn:GetComponent(typeof(Image))
+	arg_2_0.cancelBtn = arg_2_0:findTF("frame/btns/btn_cancel")
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.confirmBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:Hide()
 
-		if uv0.settings.onYes then
-			uv0.settings.onYes()
+		if arg_3_0.settings.onYes then
+			arg_3_0.settings.onYes()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.settings.model then
+	onButton(arg_3_0, arg_3_0._tf, function()
+		if arg_3_0.settings.model then
 			return
 		end
 
-		uv0:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		if uv0.settings.model then
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		if arg_3_0.settings.model then
 			return
 		end
 
-		uv0:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
-	slot0.settings = slot1
-	slot0.contentTxt.text = HXSet.hxLan(slot1.content)
+	arg_7_0.settings = arg_7_1
+	arg_7_0.contentTxt.text = HXSet.hxLan(arg_7_1.content)
 
-	SetParent(slot0._tf, pg.UIMgr.GetInstance().OverlayMain)
+	SetParent(arg_7_0._tf, pg.UIMgr.GetInstance().OverlayMain)
 
-	slot0.btnImg.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", slot1.yes_text or "btn_confrim")
+	local var_7_0 = arg_7_1.yes_text or "btn_confrim"
+	local var_7_1 = GetSpriteFromAtlas("ui/SculptureUI_atlas", var_7_0)
 
-	if slot1.effect then
-		slot0:LoadEffect()
+	arg_7_0.btnImg.sprite = var_7_1
+
+	if arg_7_1.effect then
+		arg_7_0:LoadEffect()
 	end
 
-	setActive(slot0.cancelBtn, slot1.showNo)
+	setActive(arg_7_0.cancelBtn, arg_7_1.showNo)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
+function var_0_0.Hide(arg_8_0)
+	var_0_0.super.Hide(arg_8_0)
 
-	if slot0.effectGo then
-		Object.Destroy(slot0.effectGo)
+	if arg_8_0.effectGo then
+		Object.Destroy(arg_8_0.effectGo)
 
-		slot0.effectGo = nil
+		arg_8_0.effectGo = nil
 	end
 end
 
-function slot0.LoadEffect(slot0)
-	slot1 = "liwucaijian_caidai"
+function var_0_0.LoadEffect(arg_9_0)
+	local var_9_0 = "liwucaijian_caidai"
 
-	if not slot0.effectGo then
-		slot2 = ResourceMgr.Inst
-
-		slot2:getAssetAsync("ui/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if uv0.exited then
+	if not arg_9_0.effectGo then
+		ResourceMgr.Inst:getAssetAsync("ui/" .. var_9_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_10_0)
+			if arg_9_0.exited then
 				return
 			end
 
-			uv0.effectGo = Object.Instantiate(slot0, uv0._tf)
-			uv0.effectGo.name = uv1
+			arg_9_0.effectGo = Object.Instantiate(arg_10_0, arg_9_0._tf)
+			arg_9_0.effectGo.name = var_9_0
 		end), true, true)
 	else
-		setActive(slot0.effectGo, false)
-		setActive(slot0.effectGo, true)
+		setActive(arg_9_0.effectGo, false)
+		setActive(arg_9_0.effectGo, true)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0:isShowing() then
-		slot0:Hide()
+function var_0_0.OnDestroy(arg_11_0)
+	if arg_11_0:isShowing() then
+		arg_11_0:Hide()
 	end
 end
 
-return slot0
+return var_0_0

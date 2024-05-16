@@ -1,124 +1,133 @@
-slot0 = class("CatteryCard")
+﻿local var_0_0 = class("CatteryCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = tf(slot1)
-	slot0.lockTF = findTF(slot0._tf, "lock")
-	slot0.unlockTF = findTF(slot0._tf, "unlock")
-	slot0.style = slot0.unlockTF:Find("mask/bg"):GetComponent(typeof(Image))
-	slot0.char = findTF(slot0.unlockTF, "char")
-	slot0.empty = findTF(slot0.unlockTF, "empty")
-	slot0.commanderExp = findTF(slot0.unlockTF, "commander_exp")
-	slot0.bubble = findTF(slot0.unlockTF, "bubble")
-	slot0.levelTxt = findTF(slot0.commanderExp, "level/Text"):GetComponent(typeof(Text))
-	slot0.expTxt = findTF(slot0.commanderExp, "exp/Text"):GetComponent(typeof(Text))
-	slot0.clean = findTF(slot0.bubble, "clean")
-	slot0.feed = findTF(slot0.bubble, "feed")
-	slot0.play = findTF(slot0.bubble, "play")
-	slot0.expAddition = findTF(slot0.unlockTF, "exp_addition")
-	slot0.expAdditionTxt = slot0.expAddition:Find("Text"):GetComponent(typeof(Text))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0.lockTF = findTF(arg_1_0._tf, "lock")
+	arg_1_0.unlockTF = findTF(arg_1_0._tf, "unlock")
+	arg_1_0.style = arg_1_0.unlockTF:Find("mask/bg"):GetComponent(typeof(Image))
+	arg_1_0.char = findTF(arg_1_0.unlockTF, "char")
+	arg_1_0.empty = findTF(arg_1_0.unlockTF, "empty")
+	arg_1_0.commanderExp = findTF(arg_1_0.unlockTF, "commander_exp")
+	arg_1_0.bubble = findTF(arg_1_0.unlockTF, "bubble")
+	arg_1_0.levelTxt = findTF(arg_1_0.commanderExp, "level/Text"):GetComponent(typeof(Text))
+	arg_1_0.expTxt = findTF(arg_1_0.commanderExp, "exp/Text"):GetComponent(typeof(Text))
+	arg_1_0.clean = findTF(arg_1_0.bubble, "clean")
+	arg_1_0.feed = findTF(arg_1_0.bubble, "feed")
+	arg_1_0.play = findTF(arg_1_0.bubble, "play")
+	arg_1_0.expAddition = findTF(arg_1_0.unlockTF, "exp_addition")
+	arg_1_0.expAdditionTxt = arg_1_0.expAddition:Find("Text"):GetComponent(typeof(Text))
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.cattery = slot1
+function var_0_0.Update(arg_2_0, arg_2_1)
+	arg_2_0.cattery = arg_2_1
 
-	if slot1:GetState() == Cattery.STATE_LOCK then
-		setActive(slot0.bubble, false)
-	elseif slot2 == Cattery.STATE_EMPTY then
-		slot0:FlushEmpty()
-	elseif slot2 == Cattery.STATE_OCCUPATION then
-		slot0:FlushCommander()
+	local var_2_0 = arg_2_1:GetState()
+	local var_2_1 = var_2_0 == Cattery.STATE_LOCK
+
+	if var_2_1 then
+		setActive(arg_2_0.bubble, false)
+	elseif var_2_0 == Cattery.STATE_EMPTY then
+		arg_2_0:FlushEmpty()
+	elseif var_2_0 == Cattery.STATE_OCCUPATION then
+		arg_2_0:FlushCommander()
 	end
 
-	setActive(slot0.lockTF, slot3)
-	setActive(slot0.unlockTF, not slot3)
-	slot0:UpdateStyle()
+	setActive(arg_2_0.lockTF, var_2_1)
+	setActive(arg_2_0.unlockTF, not var_2_1)
+	arg_2_0:UpdateStyle()
 end
 
-function slot0.UpdateStyle(slot0)
-	if not (slot0.cattery:GetState() == Cattery.STATE_LOCK) then
-		slot4 = slot1:_GetStyle_()
+function var_0_0.UpdateStyle(arg_3_0)
+	local var_3_0 = arg_3_0.cattery
+	local var_3_1 = var_3_0:GetState()
 
-		if slot2 == Cattery.STATE_EMPTY then
-			slot0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. slot4:GetName(false), "")
+	if not (var_3_1 == Cattery.STATE_LOCK) then
+		local var_3_2 = var_3_0:_GetStyle_()
+
+		if var_3_1 == Cattery.STATE_EMPTY then
+			arg_3_0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var_3_2:GetName(false), "")
 		else
-			slot0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. slot4:GetName(slot1:IsDirty()), "")
+			arg_3_0.style.sprite = GetSpriteFromAtlas("CatteryStyle/" .. var_3_2:GetName(var_3_0:IsDirty()), "")
 		end
 	end
 end
 
-function slot0.FlushEmpty(slot0)
-	setActive(slot0.empty, true)
-	setActive(slot0.commanderExp, false)
-	setActive(slot0.bubble, false)
-	slot0:ReturnChar()
-	slot0:InitBubble()
+function var_0_0.FlushEmpty(arg_4_0)
+	setActive(arg_4_0.empty, true)
+	setActive(arg_4_0.commanderExp, false)
+	setActive(arg_4_0.bubble, false)
+	arg_4_0:ReturnChar()
+	arg_4_0:InitBubble()
 end
 
-function slot0.FlushCommander(slot0)
-	setActive(slot0.empty, false)
-	setActive(slot0.commanderExp, true)
-	setActive(slot0.bubble, true)
+function var_0_0.FlushCommander(arg_5_0)
+	setActive(arg_5_0.empty, false)
+	setActive(arg_5_0.commanderExp, true)
+	setActive(arg_5_0.bubble, true)
 
-	slot2 = slot0.cattery:GetCommander()
-	slot0.levelTxt.text = "LV." .. slot2:getLevel()
-	slot0.expTxt.text = slot2.exp .. "/" .. slot2:getNextLevelExp()
+	local var_5_0 = arg_5_0.cattery:GetCommander()
 
-	slot0:LoadChar(slot2)
-	slot0:InitBubble()
+	arg_5_0.levelTxt.text = "LV." .. var_5_0:getLevel()
+	arg_5_0.expTxt.text = var_5_0.exp .. "/" .. var_5_0:getNextLevelExp()
+
+	arg_5_0:LoadChar(var_5_0)
+	arg_5_0:InitBubble()
 end
 
-function slot0.LoadChar(slot0, slot1)
-	slot0.painting = slot1:getPainting()
+function var_0_0.LoadChar(arg_6_0, arg_6_1)
+	arg_6_0.painting = arg_6_1:getPainting()
 
-	setCommanderPaintingPrefab(slot0.char, slot0.painting, "info")
+	setCommanderPaintingPrefab(arg_6_0.char, arg_6_0.painting, "info")
 end
 
-function slot0.ReturnChar(slot0)
-	if slot0.painting then
-		retCommanderPaintingPrefab(slot0.char, slot0.painting)
+function var_0_0.ReturnChar(arg_7_0)
+	if arg_7_0.painting then
+		retCommanderPaintingPrefab(arg_7_0.char, arg_7_0.painting)
 
-		slot0.painting = nil
+		arg_7_0.painting = nil
 	end
 end
 
-function slot0.InitBubble(slot0)
-	slot1 = slot0.cattery
-	slot2 = slot1:ExistCleanOP()
+function var_0_0.InitBubble(arg_8_0)
+	local var_8_0 = arg_8_0.cattery
+	local var_8_1 = var_8_0:ExistCleanOP()
+	local var_8_2 = var_8_0:ExiseFeedOP()
+	local var_8_3 = var_8_0:ExistPlayOP()
 
-	setActive(slot0.clean, slot2)
-	setActive(slot0.feed, slot1:ExiseFeedOP())
-	setActive(slot0.play, slot1:ExistPlayOP())
-	setActive(slot0.bubble, slot2 or slot3 or slot4)
+	setActive(arg_8_0.clean, var_8_1)
+	setActive(arg_8_0.feed, var_8_2)
+	setActive(arg_8_0.play, var_8_3)
+	setActive(arg_8_0.bubble, var_8_1 or var_8_2 or var_8_3)
 end
 
-function slot0.AddExpAnim(slot0, slot1, slot2)
-	slot0:RemoveTimer()
+function var_0_0.AddExpAnim(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0:RemoveTimer()
 
-	slot0.expAdditionTxt.text = slot1
+	arg_9_0.expAdditionTxt.text = arg_9_1
 
-	setActive(slot0.expAddition, true)
+	setActive(arg_9_0.expAddition, true)
 
-	slot0.timer = Timer.New(function ()
-		uv0:RemoveTimer()
-		setActive(uv0.expAddition, false)
-		uv1()
+	arg_9_0.timer = Timer.New(function()
+		arg_9_0:RemoveTimer()
+		setActive(arg_9_0.expAddition, false)
+		arg_9_2()
 	end, 1, 1)
 
-	slot0.timer:Start()
+	arg_9_0.timer:Start()
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_11_0)
+	if arg_11_0.timer then
+		arg_11_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_11_0.timer = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:ReturnChar()
-	slot0:RemoveTimer()
+function var_0_0.Dispose(arg_12_0)
+	arg_12_0:ReturnChar()
+	arg_12_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

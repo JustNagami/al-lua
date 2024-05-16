@@ -1,630 +1,667 @@
-slot0 = class("IcecreamPTPage", import(".TemplatePage.PtTemplatePage"))
-slot0.FADE_TIME = 0.5
-slot0.SHOW_TIME = 1
-slot0.FADE_OUT_TIME = 0.5
-slot0.Menu_Ani_Open_Time = 0.5
-slot0.Menu_Ani_Close_Time = 0.3
-slot0.PosList = {
+﻿local var_0_0 = class("IcecreamPTPage", import(".TemplatePage.PtTemplatePage"))
+
+var_0_0.FADE_TIME = 0.5
+var_0_0.SHOW_TIME = 1
+var_0_0.FADE_OUT_TIME = 0.5
+var_0_0.Menu_Ani_Open_Time = 0.5
+var_0_0.Menu_Ani_Close_Time = 0.3
+var_0_0.PosList = {
 	188,
 	70,
 	-55,
 	-178
 }
-slot0.Icecream_Save_Tag_Pre = "Icecream_Tag_"
+var_0_0.Icecream_Save_Tag_Pre = "Icecream_Tag_"
 
-function slot0.OnDataSetting(slot0)
-	uv0.super.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_1_0)
+	var_0_0.super.OnDataSetting(arg_1_0)
 
-	slot0.specialPhaseList = slot0.activity:getConfig("config_data")
-	slot0.selectedList = slot0:getSelectedList()
-	slot0.curSelectOrder = 0
-	slot0.curSelectIndex = 0
+	arg_1_0.specialPhaseList = arg_1_0.activity:getConfig("config_data")
+	arg_1_0.selectedList = arg_1_0:getSelectedList()
+	arg_1_0.curSelectOrder = 0
+	arg_1_0.curSelectIndex = 0
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	slot0:findUI()
-	slot0:initMainPanel()
-	slot0:addListener()
-	slot0:initSD()
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	arg_2_0:findUI()
+	arg_2_0:initMainPanel()
+	arg_2_0:addListener()
+	arg_2_0:initSD()
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_3_0)
+	var_0_0.super.OnUpdateFlush(arg_3_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
+	local var_3_0, var_3_1, var_3_2 = arg_3_0.ptData:GetLevelProgress()
 
-	setText(slot0.step, slot1)
+	setText(arg_3_0.step, var_3_0)
 
-	if isActive(slot0.specialTF) then
-		setActive(slot0.specialTF, false)
+	if isActive(arg_3_0.specialTF) then
+		setActive(arg_3_0.specialTF, false)
 	end
 
-	slot0:updateIcecream()
-	slot0:updateMainSelectPanel()
-	setActive(slot0.openBtn, slot0:isFinished())
-	setActive(slot0.shareBtn, slot0:isFinished())
+	arg_3_0:updateIcecream()
+	arg_3_0:updateMainSelectPanel()
+	setActive(arg_3_0.openBtn, arg_3_0:isFinished())
+	setActive(arg_3_0.shareBtn, arg_3_0:isFinished())
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.spine then
-		slot0.spine.transform.localScale = Vector3.one
+function var_0_0.OnDestroy(arg_4_0)
+	if arg_4_0.spine then
+		arg_4_0.spine.transform.localScale = Vector3.one
 
-		pg.PoolMgr.GetInstance():ReturnSpineChar("salatuojia_8", slot0.spine)
+		pg.PoolMgr.GetInstance():ReturnSpineChar("salatuojia_8", arg_4_0.spine)
 
-		slot0.spine = nil
+		arg_4_0.spine = nil
 	end
 
-	if slot0.shareGo then
-		PoolMgr.GetInstance():ReturnUI("IcecreamSharePage", slot0.shareGo)
+	if arg_4_0.shareGo then
+		PoolMgr.GetInstance():ReturnUI("IcecreamSharePage", arg_4_0.shareGo)
 
-		slot0.shareGo = nil
+		arg_4_0.shareGo = nil
 	end
 end
 
-function slot0.findUI(slot0)
-	slot0.shareBtn = slot0:findTF("Logo/share_btn", slot0.bg)
-	slot0.icecreamTF = slot0:findTF("Icecream", slot0.bg)
-	slot0.openBtn = slot0:findTF("open_btn", slot0.bg)
-	slot0.helpBtn = slot0:findTF("help_btn", slot0.bg)
-	slot0.specialTF = slot0:findTF("Special")
-	slot0.backBG = slot0:findTF("BG", slot0.specialTF)
-	slot0.menuTF = slot0:findTF("Menu", slot0.specialTF)
-	slot4 = slot0.menuTF
-	slot0.mainPanel = slot0:findTF("MainPanel", slot4)
-	slot0.mainToggleTFList = {}
+function var_0_0.findUI(arg_5_0)
+	arg_5_0.shareBtn = arg_5_0:findTF("Logo/share_btn", arg_5_0.bg)
+	arg_5_0.icecreamTF = arg_5_0:findTF("Icecream", arg_5_0.bg)
+	arg_5_0.openBtn = arg_5_0:findTF("open_btn", arg_5_0.bg)
+	arg_5_0.helpBtn = arg_5_0:findTF("help_btn", arg_5_0.bg)
+	arg_5_0.specialTF = arg_5_0:findTF("Special")
+	arg_5_0.backBG = arg_5_0:findTF("BG", arg_5_0.specialTF)
+	arg_5_0.menuTF = arg_5_0:findTF("Menu", arg_5_0.specialTF)
+	arg_5_0.mainPanel = arg_5_0:findTF("MainPanel", arg_5_0.menuTF)
+	arg_5_0.mainToggleTFList = {}
 
-	for slot4 = 1, 4 do
-		slot0.mainToggleTFList[slot4] = slot0.mainPanel:GetChild(slot4 - 1)
+	for iter_5_0 = 1, 4 do
+		arg_5_0.mainToggleTFList[iter_5_0] = arg_5_0.mainPanel:GetChild(iter_5_0 - 1)
 	end
 
-	slot0.secondPanel = slot0:findTF("SecondList", slot0.menuTF)
-	slot0.selectBtn = slot0:findTF("SelectBtn", slot0.menuTF)
-	slot0.mainPanelCG = GetComponent(slot0.mainPanel, "CanvasGroup")
-	slot0.secondPanelCG = GetComponent(slot0.secondPanel, "CanvasGroup")
-	slot0.selectBtnImg = GetComponent(slot0.selectBtn, "Image")
-	slot0.resTF = slot0:findTF("Res")
-	slot0.iconTable = {
+	arg_5_0.secondPanel = arg_5_0:findTF("SecondList", arg_5_0.menuTF)
+	arg_5_0.selectBtn = arg_5_0:findTF("SelectBtn", arg_5_0.menuTF)
+	arg_5_0.mainPanelCG = GetComponent(arg_5_0.mainPanel, "CanvasGroup")
+	arg_5_0.secondPanelCG = GetComponent(arg_5_0.secondPanel, "CanvasGroup")
+	arg_5_0.selectBtnImg = GetComponent(arg_5_0.selectBtn, "Image")
+	arg_5_0.resTF = arg_5_0:findTF("Res")
+
+	local var_5_0 = arg_5_0:findTF("1/1", arg_5_0.resTF)
+	local var_5_1 = arg_5_0:findTF("1/2", arg_5_0.resTF)
+	local var_5_2 = arg_5_0:findTF("1/3", arg_5_0.resTF)
+	local var_5_3 = arg_5_0:findTF("2/1/1", arg_5_0.resTF)
+	local var_5_4 = arg_5_0:findTF("2/1/2", arg_5_0.resTF)
+	local var_5_5 = arg_5_0:findTF("2/1/3", arg_5_0.resTF)
+	local var_5_6 = arg_5_0:findTF("2/2/1", arg_5_0.resTF)
+	local var_5_7 = arg_5_0:findTF("2/2/2", arg_5_0.resTF)
+	local var_5_8 = arg_5_0:findTF("2/2/3", arg_5_0.resTF)
+	local var_5_9 = arg_5_0:findTF("2/3/1", arg_5_0.resTF)
+	local var_5_10 = arg_5_0:findTF("2/3/2", arg_5_0.resTF)
+	local var_5_11 = arg_5_0:findTF("2/3/3", arg_5_0.resTF)
+	local var_5_12 = arg_5_0:findTF("3/1", arg_5_0.resTF)
+	local var_5_13 = arg_5_0:findTF("3/2", arg_5_0.resTF)
+	local var_5_14 = arg_5_0:findTF("3/3", arg_5_0.resTF)
+	local var_5_15 = arg_5_0:findTF("4/1", arg_5_0.resTF)
+	local var_5_16 = arg_5_0:findTF("4/2", arg_5_0.resTF)
+	local var_5_17 = arg_5_0:findTF("4/3", arg_5_0.resTF)
+
+	arg_5_0.iconTable = {
 		["1"] = {
-			slot0:findTF("1/1", slot0.resTF),
-			slot0:findTF("1/2", slot0.resTF),
-			slot0:findTF("1/3", slot0.resTF)
+			var_5_0,
+			var_5_1,
+			var_5_2
 		},
 		["21"] = {
-			slot0:findTF("2/1/1", slot0.resTF),
-			slot0:findTF("2/1/2", slot0.resTF),
-			slot0:findTF("2/1/3", slot0.resTF)
+			var_5_3,
+			var_5_4,
+			var_5_5
 		},
 		["22"] = {
-			slot0:findTF("2/2/1", slot0.resTF),
-			slot0:findTF("2/2/2", slot0.resTF),
-			slot0:findTF("2/2/3", slot0.resTF)
+			var_5_6,
+			var_5_7,
+			var_5_8
 		},
 		["23"] = {
-			slot0:findTF("2/3/1", slot0.resTF),
-			slot0:findTF("2/3/2", slot0.resTF),
-			slot0:findTF("2/3/3", slot0.resTF)
+			var_5_9,
+			var_5_10,
+			var_5_11
 		},
 		["3"] = {
-			slot0:findTF("3/1", slot0.resTF),
-			slot0:findTF("3/2", slot0.resTF),
-			slot0:findTF("3/3", slot0.resTF)
+			var_5_12,
+			var_5_13,
+			var_5_14
 		},
 		["4"] = {
-			slot0:findTF("4/1", slot0.resTF),
-			slot0:findTF("4/2", slot0.resTF),
-			slot0:findTF("4/3", slot0.resTF)
+			var_5_15,
+			var_5_16,
+			var_5_17
 		}
 	}
-	slot0.icecreamResTF = slot0:findTF("Icecream")
-	slot0.mainToggleSelectedTF = {}
-	slot0.mainToggleUnlockTF = {}
+	arg_5_0.icecreamResTF = arg_5_0:findTF("Icecream")
+	arg_5_0.mainToggleSelectedTF = {}
+	arg_5_0.mainToggleUnlockTF = {}
 
-	for slot22, slot23 in ipairs(slot0.mainToggleTFList) do
-		slot0.mainToggleSelectedTF[slot22] = slot23:GetChild(1)
-		slot0.mainToggleUnlockTF[slot22] = slot23:GetChild(0)
+	for iter_5_1, iter_5_2 in ipairs(arg_5_0.mainToggleTFList) do
+		arg_5_0.mainToggleSelectedTF[iter_5_1] = iter_5_2:GetChild(1)
+		arg_5_0.mainToggleUnlockTF[iter_5_1] = iter_5_2:GetChild(0)
 	end
 end
 
-function slot0.addListener(slot0)
+function var_0_0.addListener(arg_6_0)
 	if IsUnityEditor then
-		onButton(slot0, slot0:findTF("Logo", slot0.bg), function ()
-			for slot3 = 1, 4 do
-				PlayerPrefs.SetInt(uv0.Icecream_Save_Tag_Pre .. slot3, 0)
+		local var_6_0 = arg_6_0:findTF("Logo", arg_6_0.bg)
+
+		onButton(arg_6_0, var_6_0, function()
+			for iter_7_0 = 1, 4 do
+				local var_7_0 = var_0_0.Icecream_Save_Tag_Pre .. iter_7_0
+
+				PlayerPrefs.SetInt(var_7_0, 0)
 			end
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1, slot2 = uv0.ptData:GetLevelProgress()
+	onButton(arg_6_0, arg_6_0.getBtn, function()
+		local var_8_0, var_8_1, var_8_2 = arg_6_0.ptData:GetLevelProgress()
+		local var_8_3 = table.indexof(arg_6_0.specialPhaseList, var_8_0, 1)
 
-		if table.indexof(uv0.specialPhaseList, slot0, 1) then
-			uv0:openMainPanel(slot3)
+		if var_8_3 then
+			arg_6_0:openMainPanel(var_8_3)
 		else
-			slot4 = {}
-			slot7 = getProxy(PlayerProxy):getData()
+			local var_8_4 = {}
+			local var_8_5 = arg_6_0.ptData:GetAward()
+			local var_8_6 = getProxy(PlayerProxy):getData()
 
-			if uv0.ptData:GetAward().type == DROP_TYPE_RESOURCE and slot5.id == PlayerConst.ResGold and slot7:GoldMax(slot5.count) then
-				table.insert(slot4, function (slot0)
+			if var_8_5.type == DROP_TYPE_RESOURCE and var_8_5.id == PlayerConst.ResGold and var_8_6:GoldMax(var_8_5.count) then
+				table.insert(var_8_4, function(arg_9_0)
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
-						onYes = slot0
+						onYes = arg_9_0
 					})
 				end)
 			end
 
-			seriesAsync(slot4, function ()
-				slot0, slot1 = uv0.ptData:GetResProgress()
+			seriesAsync(var_8_4, function()
+				local var_10_0, var_10_1 = arg_6_0.ptData:GetResProgress()
 
-				uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+				arg_6_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 					cmd = 1,
-					activity_id = uv0.ptData:GetId(),
-					arg1 = slot1
+					activity_id = arg_6_0.ptData:GetId(),
+					arg1 = var_10_1
 				})
 			end)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg_6_0, arg_6_0.battleBtn, function()
+		arg_6_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.openBtn, function ()
-		uv0:openMainPanel()
+	onButton(arg_6_0, arg_6_0.openBtn, function()
+		arg_6_0:openMainPanel()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.icecream_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.shareBtn, function ()
-		uv0:share()
+	onButton(arg_6_0, arg_6_0.shareBtn, function()
+		arg_6_0:share()
 	end, SFX_PANEL)
 end
 
-function slot0.initMainPanel(slot0)
-	function slot4()
-		uv0:closeSpecial()
+function var_0_0.initMainPanel(arg_15_0)
+	onButton(arg_15_0, arg_15_0.backBG, function()
+		arg_15_0:closeSpecial()
 
-		if uv0:isFinished() then
-			setActive(uv0.openBtn, true)
+		if arg_15_0:isFinished() then
+			setActive(arg_15_0.openBtn, true)
 		end
-	end
+	end, SFX_CANCEL)
 
-	slot5 = SFX_CANCEL
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.mainToggleTFList) do
+		onToggle(arg_15_0, iter_15_1, function(arg_17_0)
+			if arg_17_0 == true then
+				arg_15_0.curSelectOrder = iter_15_0
 
-	onButton(slot0, slot0.backBG, slot4, slot5)
+				local var_17_0 = var_0_0.PosList[iter_15_0]
 
-	for slot4, slot5 in ipairs(slot0.mainToggleTFList) do
-		onToggle(slot0, slot5, function (slot0)
-			if slot0 == true then
-				uv0.curSelectOrder = uv1
-				slot1 = uv2.PosList[uv1]
-
-				setLocalPosition(uv0.secondPanel, {
-					y = slot1
+				setLocalPosition(arg_15_0.secondPanel, {
+					y = var_17_0
 				})
-				setLocalPosition(uv0.selectBtn, {
-					y = slot1
+				setLocalPosition(arg_15_0.selectBtn, {
+					y = var_17_0
 				})
 
-				slot2 = nil
+				local var_17_1
 
-				if uv1 == 1 then
-					slot2 = uv0.iconTable["1"]
-				elseif uv1 == 2 then
-					slot2 = uv0.iconTable[2 .. uv0.selectedList[1]]
-				elseif uv1 == 3 then
-					slot2 = uv0.iconTable["3"]
-				elseif uv1 == 4 then
-					slot2 = uv0.iconTable["4"]
+				if iter_15_0 == 1 then
+					var_17_1 = arg_15_0.iconTable["1"]
+				elseif iter_15_0 == 2 then
+					local var_17_2 = 2 .. arg_15_0.selectedList[1]
+
+					var_17_1 = arg_15_0.iconTable[var_17_2]
+				elseif iter_15_0 == 3 then
+					var_17_1 = arg_15_0.iconTable["3"]
+				elseif iter_15_0 == 4 then
+					var_17_1 = arg_15_0.iconTable["4"]
 				end
 
-				slot3 = {}
+				local var_17_3 = {}
 
-				for slot7 = 1, 3 do
-					slot3[slot7] = uv0.secondPanel:GetChild(slot7)
+				for iter_17_0 = 1, 3 do
+					var_17_3[iter_17_0] = arg_15_0.secondPanel:GetChild(iter_17_0)
 				end
 
-				for slot7 = 1, 3 do
-					slot10 = uv0
+				for iter_17_1 = 1, 3 do
+					local var_17_4 = getImageSprite(var_17_1[iter_17_1])
 
-					setImageSprite(slot10:findTF("icon", slot3[slot7]), getImageSprite(slot2[slot7]), true)
-					onToggle(uv0, slot3[slot7], function (slot0)
-						if slot0 == true then
-							slot1 = Clone(uv0.selectedList)
-							slot1[uv0.curSelectOrder] = uv1
+					setImageSprite(arg_15_0:findTF("icon", var_17_3[iter_17_1]), var_17_4, true)
+					onToggle(arg_15_0, var_17_3[iter_17_1], function(arg_18_0)
+						if arg_18_0 == true then
+							local var_18_0 = Clone(arg_15_0.selectedList)
 
-							uv0:updateIcecream(slot1)
-							uv0:openSelectBtn()
+							var_18_0[arg_15_0.curSelectOrder] = iter_17_1
 
-							uv0.curSelectIndex = uv1
+							arg_15_0:updateIcecream(var_18_0)
+							arg_15_0:openSelectBtn()
+
+							arg_15_0.curSelectIndex = iter_17_1
 						else
-							setActive(uv0.selectBtn, false)
+							setActive(arg_15_0.selectBtn, false)
 
-							uv0.curSelectIndex = 0
+							arg_15_0.curSelectIndex = 0
 						end
 					end, SFX_PANEL)
 				end
 
-				for slot7 = 1, 3 do
-					triggerToggle(slot3[slot7], false)
+				for iter_17_2 = 1, 3 do
+					triggerToggle(var_17_3[iter_17_2], false)
 				end
 
-				uv0:openSecondPanel()
-				setActive(uv0.selectBtn, false)
+				arg_15_0:openSecondPanel()
+				setActive(arg_15_0.selectBtn, false)
 			else
-				uv0.curSelectOrder = 0
+				arg_15_0.curSelectOrder = 0
 
-				setActive(uv0.secondPanel, false)
-				setActive(uv0.selectBtn, false)
+				setActive(arg_15_0.secondPanel, false)
+				setActive(arg_15_0.selectBtn, false)
 			end
 
-			uv0:updateMainSelectPanel()
+			arg_15_0:updateMainSelectPanel()
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.selectBtn, function ()
-		if not uv0:isFinished() then
-			if uv0.curSelectIndex then
-				slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_15_0, arg_15_0.selectBtn, function()
+		if not arg_15_0:isFinished() then
+			if arg_15_0.curSelectIndex then
+				local var_19_0, var_19_1 = arg_15_0.ptData:GetResProgress()
 
-				uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+				arg_15_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 					cmd = 1,
-					activity_id = uv0.ptData:GetId(),
-					arg1 = slot1,
-					arg2 = uv0.curSelectIndex,
-					callback = function ()
-						uv0.selectedList[uv0.curSelectOrder] = uv0.curSelectIndex
+					activity_id = arg_15_0.ptData:GetId(),
+					arg1 = var_19_1,
+					arg2 = arg_15_0.curSelectIndex,
+					callback = function()
+						arg_15_0.selectedList[arg_15_0.curSelectOrder] = arg_15_0.curSelectIndex
 
-						uv0:closeSpecial()
+						arg_15_0:closeSpecial()
 					end
 				})
 			end
 		else
-			uv0:changeIndexSelect()
-			uv0:updateIcecream()
-			uv0:updateMainSelectPanel()
+			arg_15_0:changeIndexSelect()
+			arg_15_0:updateIcecream()
+			arg_15_0:updateMainSelectPanel()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.openMainPanel(slot0, slot1)
-	slot0.selectedList = slot0:getSelectedList()
+function var_0_0.openMainPanel(arg_21_0, arg_21_1)
+	arg_21_0.selectedList = arg_21_0:getSelectedList()
 
-	setActive(slot0.displayBtn, false)
-	setActive(slot0.slider, false)
-	setActive(slot0.awardTF, false)
-	setActive(slot0.progress, false)
+	setActive(arg_21_0.displayBtn, false)
+	setActive(arg_21_0.slider, false)
+	setActive(arg_21_0.awardTF, false)
+	setActive(arg_21_0.progress, false)
 
-	for slot5 = 1, 4 do
-		triggerToggle(slot0.mainToggleTFList[slot5], false)
+	for iter_21_0 = 1, 4 do
+		triggerToggle(arg_21_0.mainToggleTFList[iter_21_0], false)
 
-		GetComponent(slot0.mainToggleTFList[slot5], "Toggle").interactable = slot0:isFinished()
+		GetComponent(arg_21_0.mainToggleTFList[iter_21_0], "Toggle").interactable = arg_21_0:isFinished()
 	end
 
-	slot0:updateMainSelectPanel()
-	setActive(slot0.specialTF, true)
-
-	slot2 = LeanTween.value(go(slot0.mainPanel), 0, 1, uv0.Menu_Ani_Open_Time)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		uv0.mainPanelCG.alpha = slot0
+	arg_21_0:updateMainSelectPanel()
+	setActive(arg_21_0.specialTF, true)
+	LeanTween.value(go(arg_21_0.mainPanel), 0, 1, var_0_0.Menu_Ani_Open_Time):setOnUpdate(System.Action_float(function(arg_22_0)
+		arg_21_0.mainPanelCG.alpha = arg_22_0
+	end)):setOnComplete(System.Action(function()
+		arg_21_0.mainPanelCG.alpha = 1
 	end))
-
-	slot2:setOnComplete(System.Action(function ()
-		uv0.mainPanelCG.alpha = 1
-	end))
-
-	slot2 = LeanTween.value(go(slot0.mainPanel), -391, -271, uv0.Menu_Ani_Open_Time)
-	slot2 = slot2:setOnUpdate(System.Action_float(function (slot0)
-		setLocalPosition(uv0.mainPanel, {
-			x = slot0
+	LeanTween.value(go(arg_21_0.mainPanel), -391, -271, var_0_0.Menu_Ani_Open_Time):setOnUpdate(System.Action_float(function(arg_24_0)
+		setLocalPosition(arg_21_0.mainPanel, {
+			x = arg_24_0
 		})
-	end))
-
-	slot2:setOnComplete(System.Action(function ()
-		setLocalPosition(uv0.mainPanel, {
+	end)):setOnComplete(System.Action(function()
+		setLocalPosition(arg_21_0.mainPanel, {
 			x = -271
 		})
 
-		if uv1 and uv1 > 0 then
-			triggerToggle(uv0.mainToggleTFList[uv1], true)
+		if arg_21_1 and arg_21_1 > 0 then
+			triggerToggle(arg_21_0.mainToggleTFList[arg_21_1], true)
 		end
 	end))
 end
 
-function slot0.closeMainPanel(slot0)
-	slot1 = LeanTween.value(go(slot0.mainPanel), 1, 0, uv0.Menu_Ani_Close_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		uv0.mainPanelCG.alpha = slot0
+function var_0_0.closeMainPanel(arg_26_0)
+	LeanTween.value(go(arg_26_0.mainPanel), 1, 0, var_0_0.Menu_Ani_Close_Time):setOnUpdate(System.Action_float(function(arg_27_0)
+		arg_26_0.mainPanelCG.alpha = arg_27_0
+	end)):setOnComplete(System.Action(function()
+		arg_26_0.mainPanelCG.alpha = 0
+
+		setActive(arg_26_0.specialTF, false)
 	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		uv0.mainPanelCG.alpha = 0
-
-		setActive(uv0.specialTF, false)
-	end))
-
-	slot1 = LeanTween.value(go(slot0.mainPanel), -271, -391, uv0.Menu_Ani_Close_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		setLocalPosition(uv0.mainPanel, {
-			x = slot0
+	LeanTween.value(go(arg_26_0.mainPanel), -271, -391, var_0_0.Menu_Ani_Close_Time):setOnUpdate(System.Action_float(function(arg_29_0)
+		setLocalPosition(arg_26_0.mainPanel, {
+			x = arg_29_0
 		})
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		setLocalPosition(uv0.mainPanel, {
+	end)):setOnComplete(System.Action(function()
+		setLocalPosition(arg_26_0.mainPanel, {
 			x = -391
 		})
-		setActive(uv0.specialTF, false)
-		uv0:updateIcecream()
-		setActive(uv0.displayBtn, true)
-		setActive(uv0.slider, true)
-		setActive(uv0.awardTF, true)
-		setActive(uv0.progress, true)
+		setActive(arg_26_0.specialTF, false)
+		arg_26_0:updateIcecream()
+		setActive(arg_26_0.displayBtn, true)
+		setActive(arg_26_0.slider, true)
+		setActive(arg_26_0.awardTF, true)
+		setActive(arg_26_0.progress, true)
 	end))
 end
 
-function slot0.openSecondPanel(slot0)
-	setActive(slot0.secondPanel, true)
-
-	slot1 = LeanTween.value(go(slot0.secondPanel), 0, 1, uv0.Menu_Ani_Open_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		uv0.secondPanelCG.alpha = slot0
+function var_0_0.openSecondPanel(arg_31_0)
+	setActive(arg_31_0.secondPanel, true)
+	LeanTween.value(go(arg_31_0.secondPanel), 0, 1, var_0_0.Menu_Ani_Open_Time):setOnUpdate(System.Action_float(function(arg_32_0)
+		arg_31_0.secondPanelCG.alpha = arg_32_0
+	end)):setOnComplete(System.Action(function()
+		arg_31_0.secondPanelCG.alpha = 1
 	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		uv0.secondPanelCG.alpha = 1
-	end))
-
-	slot1 = LeanTween.value(go(slot0.secondPanel), -646, -213, uv0.Menu_Ani_Open_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		setLocalPosition(uv0.secondPanel, {
-			x = slot0
+	LeanTween.value(go(arg_31_0.secondPanel), -646, -213, var_0_0.Menu_Ani_Open_Time):setOnUpdate(System.Action_float(function(arg_34_0)
+		setLocalPosition(arg_31_0.secondPanel, {
+			x = arg_34_0
 		})
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		setLocalPosition(uv0.secondPanel, {
+	end)):setOnComplete(System.Action(function()
+		setLocalPosition(arg_31_0.secondPanel, {
 			x = -213
 		})
 	end))
 end
 
-function slot0.closeSecondPanel(slot0)
-	slot1 = LeanTween.value(go(slot0.secondPanel), 1, 0, uv0.Menu_Ani_Close_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		uv0.secondPanelCG.alpha = slot0
+function var_0_0.closeSecondPanel(arg_36_0)
+	LeanTween.value(go(arg_36_0.secondPanel), 1, 0, var_0_0.Menu_Ani_Close_Time):setOnUpdate(System.Action_float(function(arg_37_0)
+		arg_36_0.secondPanelCG.alpha = arg_37_0
+	end)):setOnComplete(System.Action(function()
+		arg_36_0.secondPanelCG.alpha = 0
+
+		setActive(arg_36_0.secondPanel, false)
 	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		uv0.secondPanelCG.alpha = 0
-
-		setActive(uv0.secondPanel, false)
-	end))
-
-	slot1 = LeanTween.value(go(slot0.secondPanel), -213, -646, uv0.Menu_Ani_Close_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		setLocalPosition(uv0.secondPanel, {
-			x = slot0
+	LeanTween.value(go(arg_36_0.secondPanel), -213, -646, var_0_0.Menu_Ani_Close_Time):setOnUpdate(System.Action_float(function(arg_39_0)
+		setLocalPosition(arg_36_0.secondPanel, {
+			x = arg_39_0
 		})
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		setLocalPosition(uv0.secondPanel, {
+	end)):setOnComplete(System.Action(function()
+		setLocalPosition(arg_36_0.secondPanel, {
 			x = -646
 		})
-		setActive(uv0.secondPanel, false)
-		uv0:closeMainPanel()
+		setActive(arg_36_0.secondPanel, false)
+		arg_36_0:closeMainPanel()
 	end))
 end
 
-function slot0.openSelectBtn(slot0)
-	setLocalPosition(slot0.selectBtn, {
+function var_0_0.openSelectBtn(arg_41_0)
+	setLocalPosition(arg_41_0.selectBtn, {
 		x = 287
 	})
-	setActive(slot0.selectBtn, true)
-
-	slot1 = LeanTween.value(go(slot0.selectBtn), 0, 1, uv0.Menu_Ani_Open_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		setImageAlpha(uv0.selectBtn, slot0)
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		setImageAlpha(uv0.selectBtn, 1)
+	setActive(arg_41_0.selectBtn, true)
+	LeanTween.value(go(arg_41_0.selectBtn), 0, 1, var_0_0.Menu_Ani_Open_Time):setOnUpdate(System.Action_float(function(arg_42_0)
+		setImageAlpha(arg_41_0.selectBtn, arg_42_0)
+	end)):setOnComplete(System.Action(function()
+		setImageAlpha(arg_41_0.selectBtn, 1)
 	end))
 end
 
-function slot0.closeSelectBtn(slot0)
-	slot1 = LeanTween.value(go(slot0.selectBtn), 1, 0, uv0.Menu_Ani_Close_Time)
-	slot1 = slot1:setOnUpdate(System.Action_float(function (slot0)
-		setImageAlpha(uv0.selectBtn, slot0)
-	end))
-
-	slot1:setOnComplete(System.Action(function ()
-		setImageAlpha(uv0.selectBtn, 0)
-		setActive(uv0.selectBtn, false)
+function var_0_0.closeSelectBtn(arg_44_0)
+	LeanTween.value(go(arg_44_0.selectBtn), 1, 0, var_0_0.Menu_Ani_Close_Time):setOnUpdate(System.Action_float(function(arg_45_0)
+		setImageAlpha(arg_44_0.selectBtn, arg_45_0)
+	end)):setOnComplete(System.Action(function()
+		setImageAlpha(arg_44_0.selectBtn, 0)
+		setActive(arg_44_0.selectBtn, false)
 	end))
 end
 
-function slot0.closeSpecial(slot0)
-	slot0:closeSelectBtn()
-	slot0:closeSecondPanel()
+function var_0_0.closeSpecial(arg_47_0)
+	arg_47_0:closeSelectBtn()
+	arg_47_0:closeSecondPanel()
 end
 
-function slot0.updateIcecream(slot0, slot1)
-	slot2 = slot1 or slot0.selectedList
+function var_0_0.updateIcecream(arg_48_0, arg_48_1)
+	local var_48_0 = arg_48_1 or arg_48_0.selectedList
 
-	setActive(slot0.icecreamTF, slot2[1] > 0)
+	setActive(arg_48_0.icecreamTF, var_48_0[1] > 0)
 
-	slot4 = slot0:findTF("Taste", slot0:findTF("1", slot0.icecreamTF))
-	slot5 = slot0:findTF("2", slot0.icecreamTF)
-	slot6 = slot0:findTF("3", slot0.icecreamTF)
-	slot7 = slot0:findTF("4", slot0.icecreamTF)
+	local var_48_1 = arg_48_0:findTF("1", arg_48_0.icecreamTF)
+	local var_48_2 = arg_48_0:findTF("Taste", var_48_1)
+	local var_48_3 = arg_48_0:findTF("2", arg_48_0.icecreamTF)
+	local var_48_4 = arg_48_0:findTF("3", arg_48_0.icecreamTF)
+	local var_48_5 = arg_48_0:findTF("4", arg_48_0.icecreamTF)
+	local var_48_6 = var_48_0[1] and var_48_0[1] > 0
 
-	if slot2[1] and slot2[1] > 0 then
-		for slot12, slot13 in pairs(slot2) do
-			if slot13 > 0 and slot12 > 1 then
-				slot8 = false
+	if var_48_6 then
+		for iter_48_0, iter_48_1 in pairs(var_48_0) do
+			if iter_48_1 > 0 and iter_48_0 > 1 then
+				var_48_6 = false
 			end
 		end
 	end
 
-	setActive(slot3, slot8)
-	setActive(slot5, slot2[2] and slot2[2] > 0)
-	setActive(slot6, slot2[3] and slot2[3] > 0)
-	setActive(slot7, slot2[4] and slot2[4] > 0)
+	setActive(var_48_1, var_48_6)
+	setActive(var_48_3, var_48_0[2] and var_48_0[2] > 0)
+	setActive(var_48_4, var_48_0[3] and var_48_0[3] > 0)
+	setActive(var_48_5, var_48_0[4] and var_48_0[4] > 0)
 
-	if slot8 then
-		setImageSprite(slot4, getImageSprite(slot0:findTF("1_" .. slot2[1], slot0.icecreamResTF)), true)
+	if var_48_6 then
+		local var_48_7 = "1_" .. var_48_0[1]
+		local var_48_8 = getImageSprite(arg_48_0:findTF(var_48_7, arg_48_0.icecreamResTF))
+
+		setImageSprite(var_48_2, var_48_8, true)
 	end
 
-	if slot2[2] and slot2[2] > 0 then
-		setImageSprite(slot5, getImageSprite(slot0:findTF("2_" .. slot2[1] .. slot2[2], slot0.icecreamResTF)), true)
+	if var_48_0[2] and var_48_0[2] > 0 then
+		local var_48_9 = "2_" .. var_48_0[1] .. var_48_0[2]
+		local var_48_10 = getImageSprite(arg_48_0:findTF(var_48_9, arg_48_0.icecreamResTF))
+
+		setImageSprite(var_48_3, var_48_10, true)
 	end
 
-	if slot2[3] and slot2[3] > 0 then
-		setImageSprite(slot6, getImageSprite(slot0:findTF("3_" .. slot2[3], slot0.icecreamResTF)), true)
+	if var_48_0[3] and var_48_0[3] > 0 then
+		local var_48_11 = "3_" .. var_48_0[3]
+		local var_48_12 = getImageSprite(arg_48_0:findTF(var_48_11, arg_48_0.icecreamResTF))
+
+		setImageSprite(var_48_4, var_48_12, true)
 	end
 
-	if slot2[4] and slot2[4] > 0 then
-		setImageSprite(slot7, getImageSprite(slot0:findTF("4_" .. slot2[4], slot0.icecreamResTF)), true)
-	end
-end
+	if var_48_0[4] and var_48_0[4] > 0 then
+		local var_48_13 = "4_" .. var_48_0[4]
+		local var_48_14 = getImageSprite(arg_48_0:findTF(var_48_13, arg_48_0.icecreamResTF))
 
-function slot0.updateMainSelectPanel(slot0)
-	for slot4 = 1, 4 do
-		setActive(slot0.mainToggleUnlockTF[slot4], slot0.selectedList[slot4] and slot0.selectedList[slot4] > 0)
-	end
-
-	if slot0.curSelectOrder > 0 then
-		setActive(slot0.mainToggleUnlockTF[slot0.curSelectOrder], true)
-	end
-
-	if slot0.selectedList[1] and slot0.selectedList[1] > 0 then
-		setImageSprite(slot0.mainToggleSelectedTF[1], getImageSprite(slot0.iconTable["1"][slot0.selectedList[1]]), true)
-		setActive(slot0.mainToggleSelectedTF[1], true)
-	else
-		setActive(slot0.mainToggleSelectedTF[1], false)
-	end
-
-	if slot0.selectedList[2] and slot0.selectedList[2] > 0 then
-		setImageSprite(slot0.mainToggleSelectedTF[2], getImageSprite(slot0.iconTable[2 .. slot0.selectedList[1]][slot0.selectedList[2]]), true)
-		setActive(slot0.mainToggleSelectedTF[2], true)
-	else
-		setActive(slot0.mainToggleSelectedTF[2], false)
-	end
-
-	if slot0.selectedList[3] and slot0.selectedList[3] > 0 then
-		setImageSprite(slot0.mainToggleSelectedTF[3], getImageSprite(slot0.iconTable["3"][slot0.selectedList[3]]), true)
-		setActive(slot0.mainToggleSelectedTF[3], true)
-	else
-		setActive(slot0.mainToggleSelectedTF[3], false)
-	end
-
-	if slot0.selectedList[4] and slot0.selectedList[4] > 0 then
-		setImageSprite(slot0.mainToggleSelectedTF[4], getImageSprite(slot0.iconTable["4"][slot0.selectedList[4]]), true)
-		setActive(slot0.mainToggleSelectedTF[4], true)
-	else
-		setActive(slot0.mainToggleSelectedTF[4], false)
+		setImageSprite(var_48_5, var_48_14, true)
 	end
 end
 
-function slot0.isFinished(slot0)
-	return #slot0.activity.data2_list == 4
+function var_0_0.updateMainSelectPanel(arg_49_0)
+	for iter_49_0 = 1, 4 do
+		setActive(arg_49_0.mainToggleUnlockTF[iter_49_0], arg_49_0.selectedList[iter_49_0] and arg_49_0.selectedList[iter_49_0] > 0)
+	end
+
+	if arg_49_0.curSelectOrder > 0 then
+		setActive(arg_49_0.mainToggleUnlockTF[arg_49_0.curSelectOrder], true)
+	end
+
+	if arg_49_0.selectedList[1] and arg_49_0.selectedList[1] > 0 then
+		local var_49_0 = arg_49_0.selectedList[1]
+		local var_49_1 = arg_49_0.iconTable["1"][var_49_0]
+		local var_49_2 = getImageSprite(var_49_1)
+
+		setImageSprite(arg_49_0.mainToggleSelectedTF[1], var_49_2, true)
+		setActive(arg_49_0.mainToggleSelectedTF[1], true)
+	else
+		setActive(arg_49_0.mainToggleSelectedTF[1], false)
+	end
+
+	if arg_49_0.selectedList[2] and arg_49_0.selectedList[2] > 0 then
+		local var_49_3 = 2 .. arg_49_0.selectedList[1]
+		local var_49_4 = arg_49_0.selectedList[2]
+		local var_49_5 = arg_49_0.iconTable[var_49_3][var_49_4]
+		local var_49_6 = getImageSprite(var_49_5)
+
+		setImageSprite(arg_49_0.mainToggleSelectedTF[2], var_49_6, true)
+		setActive(arg_49_0.mainToggleSelectedTF[2], true)
+	else
+		setActive(arg_49_0.mainToggleSelectedTF[2], false)
+	end
+
+	if arg_49_0.selectedList[3] and arg_49_0.selectedList[3] > 0 then
+		local var_49_7 = arg_49_0.selectedList[3]
+		local var_49_8 = arg_49_0.iconTable["3"][var_49_7]
+		local var_49_9 = getImageSprite(var_49_8)
+
+		setImageSprite(arg_49_0.mainToggleSelectedTF[3], var_49_9, true)
+		setActive(arg_49_0.mainToggleSelectedTF[3], true)
+	else
+		setActive(arg_49_0.mainToggleSelectedTF[3], false)
+	end
+
+	if arg_49_0.selectedList[4] and arg_49_0.selectedList[4] > 0 then
+		local var_49_10 = arg_49_0.selectedList[4]
+		local var_49_11 = arg_49_0.iconTable["4"][var_49_10]
+		local var_49_12 = getImageSprite(var_49_11)
+
+		setImageSprite(arg_49_0.mainToggleSelectedTF[4], var_49_12, true)
+		setActive(arg_49_0.mainToggleSelectedTF[4], true)
+	else
+		setActive(arg_49_0.mainToggleSelectedTF[4], false)
+	end
 end
 
-function slot0.changeIndexSelect(slot0)
-	slot0.selectedList[slot0.curSelectOrder] = slot0.curSelectIndex
-
-	PlayerPrefs.SetInt(uv0.Icecream_Save_Tag_Pre .. slot0.curSelectOrder, slot0.curSelectIndex)
+function var_0_0.isFinished(arg_50_0)
+	return #arg_50_0.activity.data2_list == 4
 end
 
-function slot0.getSelectedList(slot0)
-	slot0.selectedList = {
+function var_0_0.changeIndexSelect(arg_51_0)
+	arg_51_0.selectedList[arg_51_0.curSelectOrder] = arg_51_0.curSelectIndex
+
+	local var_51_0 = var_0_0.Icecream_Save_Tag_Pre .. arg_51_0.curSelectOrder
+
+	PlayerPrefs.SetInt(var_51_0, arg_51_0.curSelectIndex)
+end
+
+function var_0_0.getSelectedList(arg_52_0)
+	arg_52_0.selectedList = {
 		0,
 		0,
 		0,
 		0
 	}
 
-	for slot4, slot5 in ipairs(slot0.activity.data2_list) do
-		slot0.selectedList[slot4] = slot5
+	for iter_52_0, iter_52_1 in ipairs(arg_52_0.activity.data2_list) do
+		arg_52_0.selectedList[iter_52_0] = iter_52_1
 	end
 
-	if slot0:isFinished() then
-		for slot4 = 1, 4 do
-			if PlayerPrefs.GetInt(uv0.Icecream_Save_Tag_Pre .. slot4, 0) > 0 then
-				slot0.selectedList[slot4] = slot6
+	if arg_52_0:isFinished() then
+		for iter_52_2 = 1, 4 do
+			local var_52_0 = var_0_0.Icecream_Save_Tag_Pre .. iter_52_2
+			local var_52_1 = PlayerPrefs.GetInt(var_52_0, 0)
+
+			if var_52_1 > 0 then
+				arg_52_0.selectedList[iter_52_2] = var_52_1
 			end
 		end
 	end
 
-	slot0:saveSelectedList()
+	arg_52_0:saveSelectedList()
 
-	return slot0.selectedList
+	return arg_52_0.selectedList
 end
 
-function slot0.saveSelectedList(slot0)
-	for slot4 = 1, 4 do
-		PlayerPrefs.SetInt(uv0.Icecream_Save_Tag_Pre .. slot4, slot0.selectedList[slot4])
+function var_0_0.saveSelectedList(arg_53_0)
+	for iter_53_0 = 1, 4 do
+		local var_53_0 = var_0_0.Icecream_Save_Tag_Pre .. iter_53_0
+		local var_53_1 = arg_53_0.selectedList[iter_53_0]
+
+		PlayerPrefs.SetInt(var_53_0, var_53_1)
 	end
 end
 
-function slot0.share(slot0)
-	slot1 = PoolMgr.GetInstance()
+function var_0_0.share(arg_54_0)
+	PoolMgr.GetInstance():GetUI("IcecreamSharePage", false, function(arg_55_0)
+		local var_55_0 = GameObject.Find("UICamera/Canvas/UIMain")
 
-	slot1:GetUI("IcecreamSharePage", false, function (slot0)
-		SetParent(slot0, GameObject.Find("UICamera/Canvas/UIMain"), false)
+		SetParent(arg_55_0, var_55_0, false)
 
-		uv0.shareGo = slot0
+		arg_54_0.shareGo = arg_55_0
 
-		setText(uv0:findTF("PlayerName", slot0), i18n("icecream_make_tip", getProxy(PlayerProxy):getData().name))
+		local var_55_1 = arg_54_0:findTF("PlayerName", arg_55_0)
+		local var_55_2 = arg_54_0:findTF("IcecreamContainer", arg_55_0)
+		local var_55_3 = getProxy(PlayerProxy):getData().name
 
-		slot7 = getProxy(PlayerProxy):getRawData()
-		slot9 = getProxy(ServerProxy):getRawData()[getProxy(UserProxy):getRawData() and slot8.server or 0]
-		slot12 = uv0:findTF("deck", slot0)
+		setText(var_55_1, i18n("icecream_make_tip", var_55_3))
 
-		setText(slot12:Find("name/value"), slot7 and slot7.name or "")
-		setText(slot12:Find("server/value"), slot9 and slot9.name or "")
-		setText(slot12:Find("lv/value"), slot7.level)
+		local var_55_4 = getProxy(PlayerProxy):getRawData()
+		local var_55_5 = getProxy(UserProxy):getRawData()
+		local var_55_6 = getProxy(ServerProxy):getRawData()[var_55_5 and var_55_5.server or 0]
+		local var_55_7 = var_55_4 and var_55_4.name or ""
+		local var_55_8 = var_55_6 and var_55_6.name or ""
+		local var_55_9 = arg_54_0:findTF("deck", arg_55_0)
 
-		slot13 = cloneTplTo(uv0.icecreamTF, uv0:findTF("IcecreamContainer", slot0))
+		setText(var_55_9:Find("name/value"), var_55_7)
+		setText(var_55_9:Find("server/value"), var_55_8)
+		setText(var_55_9:Find("lv/value"), var_55_4.level)
 
-		setLocalPosition(tf(slot13), {
+		local var_55_10 = cloneTplTo(arg_54_0.icecreamTF, var_55_2)
+
+		setLocalPosition(tf(var_55_10), {
 			x = 0,
 			y = 0
 		})
-		setLocalScale(tf(slot13), {
+		setLocalScale(tf(var_55_10), {
 			x = 1.4,
 			y = 1.4
 		})
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeIcecream)
 
-		if uv0.shareGo then
-			PoolMgr.GetInstance():ReturnUI("IcecreamSharePage", uv0.shareGo)
+		if arg_54_0.shareGo then
+			PoolMgr.GetInstance():ReturnUI("IcecreamSharePage", arg_54_0.shareGo)
 
-			uv0.shareGo = nil
+			arg_54_0.shareGo = nil
 		end
 	end)
 end
 
-function slot0.initSD(slot0)
-	slot0.sdContainer = slot0:findTF("sdcontainer", slot0.bg)
-	slot0.spine = nil
-	slot0.spineLRQ = GetSpineRequestPackage.New("salatuojia_8", function (slot0)
-		SetParent(slot0, uv0.sdContainer)
+function var_0_0.initSD(arg_56_0)
+	arg_56_0.sdContainer = arg_56_0:findTF("sdcontainer", arg_56_0.bg)
+	arg_56_0.spine = nil
+	arg_56_0.spineLRQ = GetSpineRequestPackage.New("salatuojia_8", function(arg_57_0)
+		SetParent(arg_57_0, arg_56_0.sdContainer)
 
-		uv0.spine = slot0
-		uv0.spine.transform.localScale = Vector3.one
+		arg_56_0.spine = arg_57_0
+		arg_56_0.spine.transform.localScale = Vector3.one
 
-		if uv0.spine:GetComponent("SpineAnimUI") then
-			slot1:SetAction("stand", 0)
+		local var_57_0 = arg_56_0.spine:GetComponent("SpineAnimUI")
+
+		if var_57_0 then
+			var_57_0:SetAction("stand", 0)
 		end
 
-		uv0.spineLRQ = nil
+		arg_56_0.spineLRQ = nil
 	end):Start()
 
-	setActive(slot0.sdContainer, true)
+	setActive(arg_56_0.sdContainer, true)
 end
 
-return slot0
+return var_0_0

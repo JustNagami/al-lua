@@ -1,455 +1,498 @@
-slot0 = class("GuildEventPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("GuildEventPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildEventPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.eventList = UIItemList.New(slot0:findTF("eventlist/content"), slot0:findTF("eventlist/content/tpl"))
-	slot0.reportBtn = slot0:findTF("report_btn")
-	slot0.reportTip = slot0.reportBtn:Find("tip")
-	slot0.reportTipTxt = slot0.reportBtn:Find("tip/Text"):GetComponent(typeof(Text))
-	slot0.formationBtn = slot0:findTF("formation_btn")
-	slot0.missionList = slot0:findTF("missionlist")
-	slot0.pathContains = slot0:findTF("missionlist/path")
-	slot0.tpl = slot0:getTpl("tpl", slot0.pathContains)
-	slot0.line = slot0:findTF("resource/line")
-	slot0.lineHead = slot0:findTF("resource/head")
-	slot0.adapter = slot0:findTF("resource/adapter")
-	slot0.bg = slot0:findTF("bg"):GetComponent(typeof(Image))
-	slot0.titleTF = slot0:findTF("title")
-	slot0.nameTxt = slot0:findTF("title/Text"):GetComponent(typeof(Text))
-	slot0.descPanel = slot0:findTF("missionlist/path/desc_panel")
-	slot0.descPanelTag = slot0.descPanel:Find("Image"):GetComponent(typeof(Image))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.eventList = UIItemList.New(arg_2_0:findTF("eventlist/content"), arg_2_0:findTF("eventlist/content/tpl"))
+	arg_2_0.reportBtn = arg_2_0:findTF("report_btn")
+	arg_2_0.reportTip = arg_2_0.reportBtn:Find("tip")
+	arg_2_0.reportTipTxt = arg_2_0.reportBtn:Find("tip/Text"):GetComponent(typeof(Text))
+	arg_2_0.formationBtn = arg_2_0:findTF("formation_btn")
+	arg_2_0.missionList = arg_2_0:findTF("missionlist")
+	arg_2_0.pathContains = arg_2_0:findTF("missionlist/path")
+	arg_2_0.tpl = arg_2_0:getTpl("tpl", arg_2_0.pathContains)
+	arg_2_0.line = arg_2_0:findTF("resource/line")
+	arg_2_0.lineHead = arg_2_0:findTF("resource/head")
+	arg_2_0.adapter = arg_2_0:findTF("resource/adapter")
+	arg_2_0.bg = arg_2_0:findTF("bg"):GetComponent(typeof(Image))
+	arg_2_0.titleTF = arg_2_0:findTF("title")
+	arg_2_0.nameTxt = arg_2_0:findTF("title/Text"):GetComponent(typeof(Text))
+	arg_2_0.descPanel = arg_2_0:findTF("missionlist/path/desc_panel")
+	arg_2_0.descPanelTag = arg_2_0.descPanel:Find("Image"):GetComponent(typeof(Image))
 
-	setText(slot0:findTF("title/timer/label"), i18n("guild_time_remaining_tip"))
+	setText(arg_2_0:findTF("title/timer/label"), i18n("guild_time_remaining_tip"))
 
-	slot0.endEventTimerTxt = slot0:findTF("title/timer/Text"):GetComponent(typeof(Text))
-	slot0.timeView = GuildEventTimerView.New()
+	arg_2_0.endEventTimerTxt = arg_2_0:findTF("title/timer/Text"):GetComponent(typeof(Text))
+	arg_2_0.timeView = GuildEventTimerView.New()
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.reportBtn, function ()
-		uv0:emit(GuildEventMediator.ON_OPEN_REPORT)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.reportBtn, function()
+		arg_3_0:emit(GuildEventMediator.ON_OPEN_REPORT)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.formationBtn, function ()
-		uv0:emit(GuildEventLayer.ON_OPEN_FORMATION)
+	onButton(arg_3_0, arg_3_0.formationBtn, function()
+		arg_3_0:emit(GuildEventLayer.ON_OPEN_FORMATION)
 	end, SFX_PANEL)
 end
 
-function slot0.OnReportUpdated(slot0)
-	slot0.reports = getProxy(GuildProxy):GetReports()
+function var_0_0.OnReportUpdated(arg_6_0)
+	arg_6_0.reports = getProxy(GuildProxy):GetReports()
 
-	slot0:UpdateReportBtn()
+	arg_6_0:UpdateReportBtn()
 end
 
-function slot0.Show(slot0, slot1, slot2, slot3)
-	uv0.super.Show(slot0)
-	slot0:UpdateData(slot1, slot2, slot3)
-	slot0:SwitchPage()
-	slot0:OnReportUpdated()
-	slot0._tf:SetAsFirstSibling()
+function var_0_0.Show(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	var_0_0.super.Show(arg_7_0)
+	arg_7_0:UpdateData(arg_7_1, arg_7_2, arg_7_3)
+	arg_7_0:SwitchPage()
+	arg_7_0:OnReportUpdated()
+	arg_7_0._tf:SetAsFirstSibling()
 end
 
-function slot0.UpdateData(slot0, slot1, slot2, slot3)
-	slot0.guildVO = slot1
-	slot0.player = slot2
-	slot0.events = slot3
-	slot0.activeEvent = _.detect(slot0.events, function (slot0)
-		return slot0:IsActive()
+function var_0_0.UpdateData(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	arg_8_0.guildVO = arg_8_1
+	arg_8_0.player = arg_8_2
+	arg_8_0.events = arg_8_3
+	arg_8_0.activeEvent = _.detect(arg_8_0.events, function(arg_9_0)
+		return arg_9_0:IsActive()
 	end)
 end
 
-function slot0.SwitchPage(slot0)
-	if slot0.contextData.editFleet then
-		triggerButton(slot0.formationBtn)
+function var_0_0.SwitchPage(arg_10_0)
+	if arg_10_0.contextData.editFleet then
+		triggerButton(arg_10_0.formationBtn)
 	end
 
-	if not slot0.activeEvent or slot1 and not slot1:IsParticipant() then
-		slot0:InitEvents()
+	local var_10_0 = arg_10_0.activeEvent
+	local var_10_1 = not var_10_0 or var_10_0 and not var_10_0:IsParticipant()
+
+	if var_10_1 then
+		arg_10_0:InitEvents()
 	else
-		slot0:BuildTree(slot1)
-		slot0:InitView()
-		slot0:GenTree()
-		slot0:InitTree()
-		slot0:EnterActiveNode()
-		slot0:CheckBossNode()
-		slot0:RefreshLatelyNode()
-		slot0:AddRefreshTime()
-		slot0.timeView:Flush(slot0.endEventTimerTxt, slot1)
+		arg_10_0:BuildTree(var_10_0)
+		arg_10_0:InitView()
+		arg_10_0:GenTree()
+		arg_10_0:InitTree()
+		arg_10_0:EnterActiveNode()
+		arg_10_0:CheckBossNode()
+		arg_10_0:RefreshLatelyNode()
+		arg_10_0:AddRefreshTime()
+		arg_10_0.timeView:Flush(arg_10_0.endEventTimerTxt, var_10_0)
 	end
 
-	setActive(slot0.eventList.container, slot2)
-	setActive(slot0.missionList, not slot2)
-	setActive(slot0.titleTF, not slot2)
+	setActive(arg_10_0.eventList.container, var_10_1)
+	setActive(arg_10_0.missionList, not var_10_1)
+	setActive(arg_10_0.titleTF, not var_10_1)
 end
 
-function slot0.UpdateReportBtn(slot0)
-	slot3 = #_.select(_.values(slot0.reports), function (slot0)
-		return slot0:CanSubmit()
-	end) > 0 and not slot0.guildVO:getMemberById(slot0.player.id):IsRecruit()
+function var_0_0.UpdateReportBtn(arg_11_0)
+	local var_11_0 = _.select(_.values(arg_11_0.reports), function(arg_12_0)
+		return arg_12_0:CanSubmit()
+	end)
+	local var_11_1 = arg_11_0.guildVO:getMemberById(arg_11_0.player.id)
+	local var_11_2 = #var_11_0 > 0 and not var_11_1:IsRecruit()
 
-	setActive(slot0.reportTip, slot3)
+	setActive(arg_11_0.reportTip, var_11_2)
 
-	if slot3 then
-		slot0.reportTipTxt.text = #slot1
+	if var_11_2 then
+		arg_11_0.reportTipTxt.text = #var_11_0
 	end
 end
 
-function slot0.InitEvents(slot0)
-	slot0.bg.sprite = GetSpriteFromAtlas("commonbg/guild_event_bg", "")
-	slot0.displays = {}
-	slot1 = {}
+function var_0_0.InitEvents(arg_13_0)
+	arg_13_0.bg.sprite = GetSpriteFromAtlas("commonbg/guild_event_bg", "")
+	arg_13_0.displays = {}
 
-	for slot5, slot6 in ipairs(slot0.events) do
-		table.insert(slot0.displays, slot6)
+	local var_13_0 = {}
+
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.events) do
+		table.insert(arg_13_0.displays, iter_13_1)
 	end
 
-	table.insert(slot0.displays, false)
-	slot0.eventList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.events[slot1 + 1]
+	table.insert(arg_13_0.displays, false)
+	arg_13_0.eventList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = arg_13_0.events[arg_14_1 + 1]
 
-			uv0:UpdateEvent(slot2, slot3)
+			arg_13_0:UpdateEvent(arg_14_2, var_14_0)
 
-			if slot3 then
-				uv1[slot3.id] = slot2
+			if var_14_0 then
+				var_13_0[var_14_0.id] = arg_14_2
 			end
 		end
 	end)
-	slot0.eventList:align(#slot0.displays)
+	arg_13_0.eventList:align(#arg_13_0.displays)
 
-	if slot0.activeEvent and not slot0.contextData.editFleet then
-		triggerButton(slot1[slot0.activeEvent.id])
+	if arg_13_0.activeEvent and not arg_13_0.contextData.editFleet then
+		triggerButton(var_13_0[arg_13_0.activeEvent.id])
 	end
 end
 
-slot1 = {
+local var_0_1 = {
 	"easy",
 	"normal",
 	"hard"
 }
 
-function slot0.UpdateEvent(slot0, slot1, slot2)
-	slot3 = slot0.activeEvent
-	slot1:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("guildevent/" .. (slot2 and slot2.id or 0), "")
-	slot5 = slot1:Find("tag")
+function var_0_0.UpdateEvent(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_0.activeEvent
+	local var_15_1 = arg_15_2 and arg_15_2.id or 0
 
-	if slot2 then
-		slot8 = slot5:GetComponent(typeof(Image))
-		slot8.sprite = GetSpriteFromAtlas("ui/GuildEventUI_atlas", "tag_" .. uv0[slot2:getConfig("difficulty")])
+	arg_15_1:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("guildevent/" .. var_15_1, "")
 
-		slot8:SetNativeSize()
+	local var_15_2 = arg_15_1:Find("tag")
+
+	if arg_15_2 then
+		local var_15_3 = var_0_1[arg_15_2:getConfig("difficulty")]
+		local var_15_4
+
+		var_15_4.sprite, var_15_4 = GetSpriteFromAtlas("ui/GuildEventUI_atlas", "tag_" .. var_15_3), var_15_2:GetComponent(typeof(Image))
+
+		var_15_4:SetNativeSize()
 	end
 
-	setActive(slot5, slot2)
+	setActive(var_15_2, arg_15_2)
 
-	slot6 = slot3 and slot2 and slot3.id == slot2.id
+	local var_15_5 = var_15_0 and arg_15_2 and var_15_0.id == arg_15_2.id
 
-	setActive(slot1:Find("state"), slot6)
-	setActive(slot1:Find("consume"), slot2 and not slot6)
-	setActive(slot1:Find("timer"), slot6)
+	setActive(arg_15_1:Find("state"), var_15_5)
+	setActive(arg_15_1:Find("consume"), arg_15_2 and not var_15_5)
+	setActive(arg_15_1:Find("timer"), var_15_5)
 
-	if slot6 then
-		slot0.timeView:Flush(slot1:Find("timer/Text"):GetComponent(typeof(Text)), slot3)
+	if var_15_5 then
+		arg_15_0.timeView:Flush(arg_15_1:Find("timer/Text"):GetComponent(typeof(Text)), var_15_0)
 	end
 
-	setText(slot1:Find("timer/label"), slot6 and i18n("guild_time_remaining_tip") or "")
+	setText(arg_15_1:Find("timer/label"), var_15_5 and i18n("guild_time_remaining_tip") or "")
 
-	if not slot2 then
-		removeOnButton(slot1)
+	if not arg_15_2 then
+		removeOnButton(arg_15_1)
 
 		return
 	end
 
-	setText(slot1:Find("consume/label"), i18n("guild_word_consume_for_battle"))
-	setText(slot1:Find("consume/Text"), slot2:GetConsume())
+	setText(arg_15_1:Find("consume/label"), i18n("guild_word_consume_for_battle"))
+	setText(arg_15_1:Find("consume/Text"), arg_15_2:GetConsume())
 
-	if not slot2:IsUnlock(slot0.guildVO.level) then
-		slot1:Find("mask"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("guildevent/" .. "0_0", "")
+	local var_15_6 = arg_15_2:IsUnlock(arg_15_0.guildVO.level)
+
+	if not var_15_6 then
+		arg_15_1:Find("mask"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("guildevent/" .. "0_0", "")
 	end
 
-	setActive(slot1:Find("mask"), not slot7)
-	onButton(slot0, slot1, function ()
-		if not uv0 then
+	setActive(arg_15_1:Find("mask"), not var_15_6)
+	onButton(arg_15_0, arg_15_1, function()
+		if not arg_15_2 then
 			return
 		end
 
-		if not uv0:IsUnlock(uv1.guildVO.level) then
+		if not arg_15_2:IsUnlock(arg_15_0.guildVO.level) then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_level_no_enough"))
 
 			return
 		end
 
-		if uv2 and uv2.id ~= uv0.id then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_open_event_info_when_exist_active", uv2:getConfig("name")))
+		if var_15_0 and var_15_0.id ~= arg_15_2.id then
+			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_open_event_info_when_exist_active", var_15_0:getConfig("name")))
 
 			return
 		end
 
-		uv1:emit(GuildEventLayer.OPEN_EVENT_INFO, uv0)
+		arg_15_0:emit(GuildEventLayer.OPEN_EVENT_INFO, arg_15_2)
 	end, SFX_PANEL)
 end
 
-function slot0.OnRefreshNode(slot0, slot1, slot2)
-	if not slot0.nodes then
+function var_0_0.OnRefreshNode(arg_17_0, arg_17_1, arg_17_2)
+	if not arg_17_0.nodes then
 		return
 	end
 
-	slot0:BuildTree(slot1)
+	arg_17_0:BuildTree(arg_17_1)
 
-	for slot6, slot7 in ipairs(slot0.nodes) do
-		if slot7.data.id == slot2.id or slot7.data:IsBoss() and slot2:IsBoss() then
-			slot7:UpdateData(slot2)
+	for iter_17_0, iter_17_1 in ipairs(arg_17_0.nodes) do
+		if iter_17_1.data.id == arg_17_2.id or iter_17_1.data:IsBoss() and arg_17_2:IsBoss() then
+			iter_17_1:UpdateData(arg_17_2)
 		end
 	end
 
-	if not slot2:IsBoss() then
-		slot0:CheckBossNode()
+	if not arg_17_2:IsBoss() then
+		arg_17_0:CheckBossNode()
 	end
 end
 
-function slot0.EnterActiveNode(slot0)
-	if slot0.contextData.mission then
-		slot0:emit(GuildEventLayer.ON_OPEN_MISSION, slot0.contextData.mission)
+function var_0_0.EnterActiveNode(arg_18_0)
+	if arg_18_0.contextData.mission then
+		arg_18_0:emit(GuildEventLayer.ON_OPEN_MISSION, arg_18_0.contextData.mission)
 	end
 end
 
-function slot0.CheckBossNode(slot0)
-	if slot0.nodes[#slot0.nodes]:ParentIsFinishByServer() and not slot1:IsActive() then
-		slot0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
-	elseif slot1:ParentIFinish() and not slot1:IsActive() then
-		slot0:emit(GuildEventMediator.REFRESH_MISSION, slot1:GetParentId())
+function var_0_0.CheckBossNode(arg_19_0)
+	local var_19_0 = arg_19_0.nodes[#arg_19_0.nodes]
+
+	if var_19_0:ParentIsFinishByServer() and not var_19_0:IsActive() then
+		arg_19_0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
+	elseif var_19_0:ParentIFinish() and not var_19_0:IsActive() then
+		arg_19_0:emit(GuildEventMediator.REFRESH_MISSION, var_19_0:GetParentId())
 	end
 end
 
-function slot0.InitView(slot0)
-	slot0.bg.sprite = GetSpriteFromAtlas("GuildMission/" .. slot0.gevent:GetTheme(), "")
-	slot0.nameTxt.text = slot0.gevent:GetName()
+function var_0_0.InitView(arg_20_0)
+	arg_20_0.bg.sprite = GetSpriteFromAtlas("GuildMission/" .. arg_20_0.gevent:GetTheme(), "")
+	arg_20_0.nameTxt.text = arg_20_0.gevent:GetName()
 end
 
-function slot0.BuildTree(slot0, slot1)
-	slot0.gevent = slot1
-	slot0.missions = {}
-	slot0.bossPosition = slot0.gevent:GetBossMission():GetPosition()
-	slot0.lastPosition = -1
+function var_0_0.BuildTree(arg_21_0, arg_21_1)
+	arg_21_0.gevent = arg_21_1
+	arg_21_0.missions = {}
 
-	for slot7, slot8 in pairs(slot0.gevent:GetMissions()) do
-		slot0.missions[slot7] = slot8
+	local var_21_0 = arg_21_0.gevent:GetMissions()
+	local var_21_1 = arg_21_0.gevent:GetBossMission()
 
-		if _.any(slot8, function (slot0)
-			return slot0:IsMain() and slot0:IsFinish()
+	arg_21_0.bossPosition = var_21_1:GetPosition()
+	arg_21_0.lastPosition = -1
+
+	for iter_21_0, iter_21_1 in pairs(var_21_0) do
+		arg_21_0.missions[iter_21_0] = iter_21_1
+
+		if _.any(iter_21_1, function(arg_22_0)
+			return arg_22_0:IsMain() and arg_22_0:IsFinish()
 		end) then
-			slot0.lastPosition = slot7
+			arg_21_0.lastPosition = iter_21_0
 		end
 	end
 
-	slot0.lastPosition = slot0.lastPosition + 1
-	slot0.missions[slot0.bossPosition] = {
-		slot3
+	arg_21_0.lastPosition = arg_21_0.lastPosition + 1
+	arg_21_0.missions[arg_21_0.bossPosition] = {
+		var_21_1
 	}
 end
 
-function slot0.RefreshLatelyNode(slot0)
-	if slot0.lastPosition <= 0 or slot0.lastPosition == slot0.bossPosition then
+function var_0_0.RefreshLatelyNode(arg_23_0)
+	if arg_23_0.lastPosition <= 0 or arg_23_0.lastPosition == arg_23_0.bossPosition then
 		return
 	end
 
-	slot3 = {}
-	slot4 = slot0.gevent:GetMissions()[slot0.lastPosition] or {}
+	local var_23_0 = arg_23_0.lastPosition
+	local var_23_1 = arg_23_0.gevent:GetMissions()
+	local var_23_2 = {}
+	local var_23_3 = var_23_1[var_23_0] or {}
 
-	for slot8, slot9 in ipairs(slot4) do
-		if not slot9:IsBoss() then
-			table.insert(slot3, function (slot0)
-				uv0:emit(GuildEventMediator.REFRESH_MISSION, uv1.id, slot0)
+	for iter_23_0, iter_23_1 in ipairs(var_23_3) do
+		if not iter_23_1:IsBoss() then
+			table.insert(var_23_2, function(arg_24_0)
+				arg_23_0:emit(GuildEventMediator.REFRESH_MISSION, iter_23_1.id, arg_24_0)
 			end)
 		end
 	end
 
-	seriesAsync(slot3, function ()
-		if uv0 ~= uv1.lastPosition then
-			uv1:RefreshLatelyNode()
+	seriesAsync(var_23_2, function()
+		if var_23_0 ~= arg_23_0.lastPosition then
+			arg_23_0:RefreshLatelyNode()
 		end
 	end)
 end
 
-function slot0.AddRefreshTime(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.AddRefreshTime(arg_26_0)
+	if arg_26_0.timer then
+		arg_26_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_26_0.timer = nil
 	end
 
-	slot0.timer = Timer.New(function ()
-		uv0:RefreshLatelyNode()
-		uv0:AddRefreshTime()
+	arg_26_0.timer = Timer.New(function()
+		arg_26_0:RefreshLatelyNode()
+		arg_26_0:AddRefreshTime()
 	end, GuildConst.FORCE_REFRESH_MISSION_TREE_TIME, 1)
 
-	slot0.timer:Start()
+	arg_26_0.timer:Start()
 end
 
-function slot0.GenTree(slot0)
-	slot0.nodes = {}
+function var_0_0.GenTree(arg_28_0)
+	arg_28_0.nodes = {}
 
-	for slot4, slot5 in pairs(slot0.missions) do
-		table.sort(slot5, function (slot0, slot1)
-			return slot1:GetSubType() < slot0:GetSubType()
+	for iter_28_0, iter_28_1 in pairs(arg_28_0.missions) do
+		table.sort(iter_28_1, function(arg_29_0, arg_29_1)
+			return arg_29_0:GetSubType() > arg_29_1:GetSubType()
 		end)
 
-		for slot9, slot10 in ipairs(slot5) do
-			table.insert(slot0.nodes, slot0:CreateNode(cloneTplTo(slot0.tpl, slot0.pathContains, slot4 .. "-" .. slot9), slot4, slot10))
+		for iter_28_2, iter_28_3 in ipairs(iter_28_1) do
+			local var_28_0 = cloneTplTo(arg_28_0.tpl, arg_28_0.pathContains, iter_28_0 .. "-" .. iter_28_2)
+			local var_28_1 = arg_28_0:CreateNode(var_28_0, iter_28_0, iter_28_3)
+
+			table.insert(arg_28_0.nodes, var_28_1)
 		end
 	end
 end
 
-function slot0.CreateNode(slot0, slot1, slot2, slot3)
-	slot4 = GuildViewMissionNode.New({
-		go = slot1.gameObject,
-		slot = slot2,
-		data = slot3,
-		parent = slot0.last
+function var_0_0.CreateNode(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
+	local var_30_0 = GuildViewMissionNode.New({
+		go = arg_30_1.gameObject,
+		slot = arg_30_2,
+		data = arg_30_3,
+		parent = arg_30_0.last
 	})
 
-	if slot0.last then
-		slot0.last:AddChild(slot4)
+	if arg_30_0.last then
+		arg_30_0.last:AddChild(var_30_0)
 	end
 
-	if slot4:IsMain() then
-		slot0.last = slot4
+	if var_30_0:IsMain() then
+		arg_30_0.last = var_30_0
 	end
 
-	onButton(slot0, slot1, function ()
-		if uv0.prevSelected == uv1 then
+	onButton(arg_30_0, arg_30_1, function()
+		if arg_30_0.prevSelected == var_30_0 then
 			return
 		end
 
-		if not uv1:IsUnLock() then
+		if not var_30_0:IsUnLock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_is_lock"))
 
 			return
 		end
 
-		if uv1:IsFinish() then
+		if var_30_0:IsFinish() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_is_finish"))
 
 			return
 		end
 
-		if uv0.prevSelected then
-			uv0:HideDesc(uv0.prevSelected)
+		if arg_30_0.prevSelected then
+			arg_30_0:HideDesc(arg_30_0.prevSelected)
 		end
 
-		uv0:ShowDesc(uv1)
+		arg_30_0:ShowDesc(var_30_0)
 
-		uv0.prevSelected = uv1
+		arg_30_0.prevSelected = var_30_0
 	end, SFX_PANEL)
 
-	return slot4
+	return var_30_0
 end
 
-function slot0.InitTree(slot0)
-	slot1 = {
+function var_0_0.InitTree(arg_32_0)
+	local var_32_0 = {
 		0,
 		0
 	}
-	slot2 = nil
+	local var_32_1
 
-	for slot6, slot7 in ipairs(slot0.nodes) do
-		slot7:Init()
+	for iter_32_0, iter_32_1 in ipairs(arg_32_0.nodes) do
+		iter_32_1:Init()
 
-		slot8 = slot7._tf.anchoredPosition
-		slot10 = math.abs(slot8.y)
+		local var_32_2 = iter_32_1._tf.anchoredPosition
+		local var_32_3 = math.abs(var_32_2.x)
+		local var_32_4 = math.abs(var_32_2.y)
 
-		if slot1[1] < math.abs(slot8.x) then
-			slot1[1] = slot9 + slot7._tf.sizeDelta.x
+		if var_32_3 > var_32_0[1] then
+			var_32_0[1] = var_32_3 + iter_32_1._tf.sizeDelta.x
 		end
 
-		if slot1[2] < slot10 then
-			slot1[2] = slot10 + slot7._tf.sizeDelta.y / 2
+		if var_32_4 > var_32_0[2] then
+			var_32_0[2] = var_32_4 + iter_32_1._tf.sizeDelta.y / 2
 		end
 
-		if slot7:IsMain() and slot7:IsUnLock() then
-			slot2 = slot7
+		if iter_32_1:IsMain() and iter_32_1:IsUnLock() then
+			var_32_1 = iter_32_1
 		end
 	end
 
-	for slot6, slot7 in ipairs(slot0.nodes) do
-		slot0:CreateLinkLine(slot7)
-		slot7:UpdateLineStyle()
+	for iter_32_2, iter_32_3 in ipairs(arg_32_0.nodes) do
+		arg_32_0:CreateLinkLine(iter_32_3)
+		iter_32_3:UpdateLineStyle()
 	end
 
-	slot0:SetScrollRect(slot1)
+	arg_32_0:SetScrollRect(var_32_0)
 
-	if slot2 then
-		setAnchoredPosition(slot0.pathContains, {
-			x = math.max(-slot2._tf.localPosition.x, -slot0.pathContains.rect.width * 0.5)
+	if var_32_1 then
+		local var_32_5 = -var_32_1._tf.localPosition.x
+		local var_32_6 = math.max(var_32_5, -arg_32_0.pathContains.rect.width * 0.5)
+
+		setAnchoredPosition(arg_32_0.pathContains, {
+			x = var_32_6
 		})
 	end
 end
 
-function slot0.CreateLinkLine(slot0, slot1)
-	function slot2(slot0, slot1)
-		slot2 = Instantiate(slot0)
-		slot2.name = slot1
+function var_0_0.CreateLinkLine(arg_33_0, arg_33_1)
+	local function var_33_0(arg_34_0, arg_34_1)
+		local var_34_0 = Instantiate(arg_34_0)
 
-		return slot2
+		var_34_0.name = arg_34_1
+
+		return var_34_0
 	end
 
-	if slot1:HasChild() then
-		slot1:AddLine(slot2(slot0.adapter, "adapter"), GuildViewMissionNode.LINE_RIGHT, slot1)
+	if arg_33_1:HasChild() then
+		arg_33_1:AddLine(var_33_0(arg_33_0.adapter, "adapter"), GuildViewMissionNode.LINE_RIGHT, arg_33_1)
 	end
 
-	if slot1:HasParent() then
-		slot1:AddLine(slot2(slot0.adapter, "adapter"), GuildViewMissionNode.LINE_LEFT, slot1)
+	if arg_33_1:HasParent() then
+		arg_33_1:AddLine(var_33_0(arg_33_0.adapter, "adapter"), GuildViewMissionNode.LINE_LEFT, arg_33_1)
 	end
 
-	for slot7, slot8 in ipairs(slot1:GetChilds()) do
-		if slot8:GetOffset() > 0 then
-			slot1:AddLine(slot2(slot0.line, "line"), GuildViewMissionNode.TOP_LINK, slot8)
-			slot1:AddLine(slot2(slot0.line, "line"), GuildViewMissionNode.TOP_HRZ_LINK, slot8)
-		elseif slot9 < 0 then
-			slot1:AddLine(slot2(slot0.line, "line"), GuildViewMissionNode.BOTTOM_LINK, slot8)
-			slot1:AddLine(slot2(slot0.line, "line"), GuildViewMissionNode.BOTTOM_HRZ_LINK, slot8)
-		elseif slot9 == 0 then
-			slot1:AddLine(slot2(slot0.line, "line"), GuildViewMissionNode.CENTER_LINK, slot8)
+	local var_33_1 = arg_33_1:GetChilds()
+
+	for iter_33_0, iter_33_1 in ipairs(var_33_1) do
+		local var_33_2 = iter_33_1:GetOffset()
+
+		if var_33_2 > 0 then
+			arg_33_1:AddLine(var_33_0(arg_33_0.line, "line"), GuildViewMissionNode.TOP_LINK, iter_33_1)
+			arg_33_1:AddLine(var_33_0(arg_33_0.line, "line"), GuildViewMissionNode.TOP_HRZ_LINK, iter_33_1)
+		elseif var_33_2 < 0 then
+			arg_33_1:AddLine(var_33_0(arg_33_0.line, "line"), GuildViewMissionNode.BOTTOM_LINK, iter_33_1)
+			arg_33_1:AddLine(var_33_0(arg_33_0.line, "line"), GuildViewMissionNode.BOTTOM_HRZ_LINK, iter_33_1)
+		elseif var_33_2 == 0 then
+			arg_33_1:AddLine(var_33_0(arg_33_0.line, "line"), GuildViewMissionNode.CENTER_LINK, iter_33_1)
 		end
 	end
 end
 
-function slot0.SetScrollRect(slot0, slot1)
-	slot0.pathContains.sizeDelta = Vector2(slot1[1] + 100, slot1[2] * 2 + 100)
+function var_0_0.SetScrollRect(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_1[1] + 100
+	local var_35_1 = arg_35_1[2] * 2 + 100
+
+	arg_35_0.pathContains.sizeDelta = Vector2(var_35_0, var_35_1)
 end
 
-function slot0.ShowDesc(slot0, slot1)
-	slot1:Selected(true)
-	setActive(slot0.descPanel, true)
+function var_0_0.ShowDesc(arg_36_0, arg_36_1)
+	arg_36_1:Selected(true)
+	setActive(arg_36_0.descPanel, true)
 
-	if slot1._tf.localPosition.y + 50 + slot1._tf.rect.height > slot0.pathContains.rect.height / 2 then
-		slot0.chcheSizeDelta = slot0.pathContains.sizeDelta
-		slot0.pathContains.sizeDelta = Vector2(slot0.chcheSizeDelta.x, slot0.chcheSizeDelta.y + slot4 + (slot3 - slot4) * 2)
+	local var_36_0 = arg_36_1._tf.localPosition
+	local var_36_1 = var_36_0.y + 50 + arg_36_1._tf.rect.height
+	local var_36_2 = arg_36_0.pathContains.rect.height / 2
 
-		scrollTo(slot0.missionList, false, 1)
+	if var_36_2 < var_36_1 then
+		local var_36_3 = var_36_2 + (var_36_1 - var_36_2) * 2
+
+		arg_36_0.chcheSizeDelta = arg_36_0.pathContains.sizeDelta
+		arg_36_0.pathContains.sizeDelta = Vector2(arg_36_0.chcheSizeDelta.x, arg_36_0.chcheSizeDelta.y + var_36_3)
+
+		scrollTo(arg_36_0.missionList, false, 1)
 	end
 
-	slot0.descPanel.localPosition = Vector3(slot2.x, slot2.y + 50, 0)
+	arg_36_0.descPanel.localPosition = Vector3(var_36_0.x, var_36_0.y + 50, 0)
 
-	if not slot1.data:IsBoss() then
-		slot0.descPanel:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildMission/" .. slot1.data:GetIcon(), "")
+	if not arg_36_1.data:IsBoss() then
+		arg_36_0.descPanel:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildMission/" .. arg_36_1.data:GetIcon(), "")
 	else
-		slot0.descPanel:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildMission/boss_" .. slot1.data:GetIcon(), "")
+		arg_36_0.descPanel:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildMission/boss_" .. arg_36_1.data:GetIcon(), "")
 	end
 
-	slot5 = slot1.data
-	slot0.descPanelTag.sprite = GetSpriteFromAtlas("ui/GuildMissionUI_atlas", "tag" .. slot5:GetTag())
+	local var_36_4 = arg_36_1.data:GetTag()
 
-	function slot6(slot0)
-		if not slot0:IsUnLock() then
+	arg_36_0.descPanelTag.sprite = GetSpriteFromAtlas("ui/GuildMissionUI_atlas", "tag" .. var_36_4)
+
+	local function var_36_5(arg_37_0)
+		if not arg_37_0:IsUnLock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_is_lock"))
 
 			return false
 		end
 
-		if slot0:IsFinish() then
+		if arg_37_0:IsFinish() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_is_finish"))
 
 			return false
@@ -458,47 +501,45 @@ function slot0.ShowDesc(slot0, slot1)
 		return true
 	end
 
-	onButton(slot0, slot0.descPanel, function ()
-		if uv0.data:IsBoss() then
-			if not uv1(uv0) then
+	onButton(arg_36_0, arg_36_0.descPanel, function()
+		if arg_36_1.data:IsBoss() then
+			if not var_36_5(arg_36_1) then
 				return
 			end
 
-			uv2:emit(GuildEventLayer.ON_OPEN_BOSS, uv0.data)
+			arg_36_0:emit(GuildEventLayer.ON_OPEN_BOSS, arg_36_1.data)
 		else
-			slot0 = uv2
-
-			slot0:emit(GuildEventMediator.REFRESH_MISSION, uv0.data.id, function ()
-				if not uv0(uv1) then
+			arg_36_0:emit(GuildEventMediator.REFRESH_MISSION, arg_36_1.data.id, function()
+				if not var_36_5(arg_36_1) then
 					return
 				end
 
-				uv2.contextData.mission = uv1.data
+				arg_36_0.contextData.mission = arg_36_1.data
 
-				uv2:emit(GuildEventLayer.ON_OPEN_MISSION, uv1.data)
+				arg_36_0:emit(GuildEventLayer.ON_OPEN_MISSION, arg_36_1.data)
 			end)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.HideDesc(slot0, slot1)
-	slot1:Selected(false)
+function var_0_0.HideDesc(arg_40_0, arg_40_1)
+	arg_40_1:Selected(false)
 
-	if slot0.chcheSizeDelta then
-		slot0.pathContains.sizeDelta = slot0.chcheSizeDelta
+	if arg_40_0.chcheSizeDelta then
+		arg_40_0.pathContains.sizeDelta = arg_40_0.chcheSizeDelta
 	end
 
-	setActive(slot0.descPanel, false)
+	setActive(arg_40_0.descPanel, false)
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.OnDestroy(arg_41_0)
+	if arg_41_0.timer then
+		arg_41_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_41_0.timer = nil
 	end
 
-	slot0.timeView:Dispose()
+	arg_41_0.timeView:Dispose()
 end
 
-return slot0
+return var_0_0

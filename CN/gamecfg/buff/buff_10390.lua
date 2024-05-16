@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10391,
+				target = "TargetSelf",
+				time = 20
+			}
+		}
+	},
 	{
 		desc = "每20秒，有40.0%概率触发护盾，每个护盾阻挡10发子弹，护盾持续10秒",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 10390,
 	icon = 10390,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10391,
-				target = "TargetSelf",
-				time = 20
-			}
-		}
-	}
+	last_effect = ""
 }

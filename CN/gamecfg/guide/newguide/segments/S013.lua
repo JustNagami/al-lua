@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"前往<color=#ff7d36>仓库</color>界面",
 	"点击<color=#ff7d36>选择科技箱</color>",
 	"点击<color=#ff7d36>使用</color>打开科技箱"
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -50.56,
 				posX = -163.2,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/equipButton",
@@ -36,7 +36,7 @@ return {
 				mode = 2,
 				posY = 65,
 				posX = -93.8,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			spriteui = {
 				path = "UICamera/Canvas/UIMain/StoreHouseUI(Clone)/item_scrollview/item_grid",
@@ -62,7 +62,7 @@ return {
 				mode = 2,
 				posY = -252,
 				posX = -393,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/ItemInfoUI(Clone)/window/actions/use_button",

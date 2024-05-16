@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.guild_technology_template = {
 	[1000] = {
 		level_max = 20,

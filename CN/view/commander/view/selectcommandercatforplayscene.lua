@@ -1,195 +1,219 @@
-slot0 = class("SelectCommanderCatForPlayScene", import(".CommanderCatScene"))
+﻿local var_0_0 = class("SelectCommanderCatForPlayScene", import(".CommanderCatScene"))
 
-function slot0.emit(slot0, ...)
+function var_0_0.emit(arg_1_0, ...)
 	if unpack({
 		...
-	}) == uv0.ON_BACK then
-		uv0.super.emit(slot0, uv0.ON_CLOSE)
+	}) == var_0_0.ON_BACK then
+		var_0_0.super.emit(arg_1_0, var_0_0.ON_CLOSE)
 	else
-		uv0.super.emit(slot0, ...)
+		var_0_0.super.emit(arg_1_0, ...)
 	end
 end
 
-function slot0.didEnter(slot0)
-	slot1 = slot0.contextData.activeCommander
-	slot0.contextData.mode = uv0.MODE_SELECT
-	slot0.contextData.maxCount = 10
-	slot0.contextData.fleetType = CommanderCatScene.FLEET_TYPE_COMMON
-	slot0.contextData.activeGroupId = slot1.groupId
-	slot0.contextData.ignoredIds = {}
+function var_0_0.didEnter(arg_2_0)
+	local var_2_0 = arg_2_0.contextData.activeCommander
 
-	table.insert(slot0.contextData.ignoredIds, slot1.id)
-	slot0:CollectIgnoredIdsForPlay(slot0.contextData.ignoredIds)
+	arg_2_0.contextData.mode = var_0_0.MODE_SELECT
+	arg_2_0.contextData.maxCount = 10
+	arg_2_0.contextData.fleetType = CommanderCatScene.FLEET_TYPE_COMMON
+	arg_2_0.contextData.activeGroupId = var_2_0.groupId
+	arg_2_0.contextData.ignoredIds = {}
 
-	function slot0.contextData.onCommander(slot0, slot1, slot2, slot3)
-		return uv0:IsLegalForPlay(uv1, slot0, slot1, slot2)
+	table.insert(arg_2_0.contextData.ignoredIds, var_2_0.id)
+	arg_2_0:CollectIgnoredIdsForPlay(arg_2_0.contextData.ignoredIds)
+
+	function arg_2_0.contextData.onCommander(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+		return arg_2_0:IsLegalForPlay(var_2_0, arg_3_0, arg_3_1, arg_3_2)
 	end
 
-	uv0.super.didEnter(slot0)
+	var_0_0.super.didEnter(arg_2_0)
 end
 
-function slot0.RegisterEvent(slot0)
-	uv0.super.RegisterEvent(slot0)
-	slot0:bind(CommanderCatDockPage.ON_SORT, function (slot0)
-		onNextTick(function ()
-			if uv0.pages[CommanderCatScene.PAGE_DOCK] and slot0:GetLoaded() then
-				slot1 = Clone(slot0.sortData)
+function var_0_0.RegisterEvent(arg_4_0)
+	var_0_0.super.RegisterEvent(arg_4_0)
+	arg_4_0:bind(CommanderCatDockPage.ON_SORT, function(arg_5_0)
+		onNextTick(function()
+			local var_6_0 = arg_4_0.pages[CommanderCatScene.PAGE_DOCK]
 
-				if uv0.contextData.OnSort then
-					uv0.contextData.OnSort(slot1)
+			if var_6_0 and var_6_0:GetLoaded() then
+				local var_6_1 = Clone(var_6_0.sortData)
+
+				if arg_4_0.contextData.OnSort then
+					arg_4_0.contextData.OnSort(var_6_1)
 				end
 			end
 		end)
 	end)
 end
 
-function slot0.CollectIgnoredIdsForPlay(slot0, slot1)
-	for slot6, slot7 in pairs(getProxy(CommanderProxy):getRawData()) do
-		if slot7:isLocked() then
-			table.insert(slot1, slot7.id)
+function var_0_0.CollectIgnoredIdsForPlay(arg_7_0, arg_7_1)
+	local var_7_0 = getProxy(CommanderProxy):getRawData()
+
+	for iter_7_0, iter_7_1 in pairs(var_7_0) do
+		if iter_7_1:isLocked() then
+			table.insert(arg_7_1, iter_7_1.id)
 		end
 	end
 
-	if getProxy(ChapterProxy):getActiveChapter() then
-		_.each(slot3.fleets, function (slot0)
-			for slot5, slot6 in pairs(slot0:getCommanders()) do
-				table.insert(uv0, slot6.id)
+	local var_7_1 = getProxy(ChapterProxy):getActiveChapter()
+
+	if var_7_1 then
+		_.each(var_7_1.fleets, function(arg_8_0)
+			local var_8_0 = arg_8_0:getCommanders()
+
+			for iter_8_0, iter_8_1 in pairs(var_8_0) do
+				table.insert(arg_7_1, iter_8_1.id)
 			end
 		end)
 	end
 end
 
-function slot0.IsLegalForPlay(slot0, slot1, slot2, slot3, slot4)
-	if nowWorld():CheckCommanderInFleet(slot2.id) then
+function var_0_0.IsLegalForPlay(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	if nowWorld():CheckCommanderInFleet(arg_9_2.id) then
 		return false, i18n("commander_is_in_bigworld")
 	end
 
-	if slot1:isMaxLevel() and not slot1:isSameGroup(slot2.groupId) then
+	if arg_9_1:isMaxLevel() and not arg_9_1:isSameGroup(arg_9_2.groupId) then
 		return false, i18n("commander_select_matiral_erro")
 	end
 
-	if getProxy(CommanderProxy):IsHome(slot2.id) then
+	if getProxy(CommanderProxy):IsHome(arg_9_2.id) then
 		return false, i18n("cat_sleep_notplay")
 	end
 
-	if not slot0:CheckFormation(slot2, slot4, slot3) then
+	if not arg_9_0:CheckFormation(arg_9_2, arg_9_4, arg_9_3) then
 		return false, nil
 	end
 
-	if not slot0:CheckGuild(slot2, slot4, slot3) then
+	if not arg_9_0:CheckGuild(arg_9_2, arg_9_4, arg_9_3) then
 		return false, nil
 	end
 
-	if not slot0:CheckExtra(slot2, slot4, slot3) then
+	if not arg_9_0:CheckExtra(arg_9_2, arg_9_4, arg_9_3) then
 		return false, nil
 	end
 
 	return true
 end
 
-function slot0.CheckFormation(slot0, slot1, slot2, slot3)
-	slot4 = getProxy(FleetProxy)
+function var_0_0.CheckFormation(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	local var_10_0 = getProxy(FleetProxy)
+	local var_10_1 = var_10_0:getCommanders()
+	local var_10_2 = _.detect(var_10_1, function(arg_11_0)
+		return arg_10_1.id == arg_11_0.commanderId
+	end)
 
-	if not _.detect(slot4:getCommanders(), function (slot0)
-		return uv0.id == slot0.commanderId
-	end) then
+	if not var_10_2 then
 		return true
 	end
 
-	slot0.contextData.msgBox:ExecuteAction("Show", {
+	arg_10_0.contextData.msgBox:ExecuteAction("Show", {
 		content = i18n("commander_material_is_in_fleet_tip"),
-		onYes = function ()
+		onYes = function()
 			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 				commanderId = 0,
-				fleetId = uv0.fleetId,
-				pos = uv0.pos,
-				callback = function ()
-					uv0 = uv1:getCommanders()
+				fleetId = var_10_2.fleetId,
+				pos = var_10_2.pos,
+				callback = function()
+					var_10_1 = var_10_0:getCommanders()
 
-					if uv2 then
-						uv2()
+					if arg_10_2 then
+						arg_10_2()
 					end
 				end
 			})
 		end,
-		onNo = slot3,
-		onClose = slot3
+		onNo = arg_10_3,
+		onClose = arg_10_3
 	})
 
 	return false
 end
 
-function slot0.CheckGuild(slot0, slot1, slot2, slot3)
-	if not getProxy(GuildProxy):getRawData() or not slot4:ExistCommander(slot1.id) then
+function var_0_0.CheckGuild(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	local var_14_0 = getProxy(GuildProxy):getRawData()
+
+	if not var_14_0 or not var_14_0:ExistCommander(arg_14_1.id) then
 		return true
 	end
 
-	slot0.contextData.msgBox:ExecuteAction("Show", {
+	arg_14_0.contextData.msgBox:ExecuteAction("Show", {
 		content = i18n("commander_is_in_guild"),
-		onYes = function ()
-			if not uv0:GetActiveEvent() then
+		onYes = function()
+			local var_15_0 = var_14_0:GetActiveEvent()
+
+			if not var_15_0 then
 				return
 			end
 
-			if not slot0:GetBossMission() or not slot1:IsActive() then
+			local var_15_1 = var_15_0:GetBossMission()
+
+			if not var_15_1 or not var_15_1:IsActive() then
 				return
 			end
 
-			if not slot1:GetFleetCommanderId(uv1.id) then
+			local var_15_2 = var_15_1:GetFleetCommanderId(arg_14_1.id)
+
+			if not var_15_2 then
 				return
 			end
 
-			if not Clone(slot2):GetCommanderPos(uv1.id) then
+			local var_15_3 = Clone(var_15_2)
+			local var_15_4 = var_15_3:GetCommanderPos(arg_14_1.id)
+
+			if not var_15_4 then
 				return
 			end
 
-			slot3:RemoveCommander(slot4)
+			var_15_3:RemoveCommander(var_15_4)
 			pg.m02:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION, {
 				force = true,
 				editFleet = {
-					[slot3.id] = slot3
+					[var_15_3.id] = var_15_3
 				},
-				callback = uv2
+				callback = arg_14_2
 			})
 		end,
-		onNo = slot3,
-		onClose = slot3
+		onNo = arg_14_3,
+		onClose = arg_14_3
 	})
 
 	return false
 end
 
-function slot0.CheckExtra(slot0, slot1, slot2, slot3)
-	slot4 = getProxy(FleetProxy)
-	slot5 = slot4:getCommanders()
+function var_0_0.CheckExtra(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local var_16_0 = getProxy(FleetProxy)
+	local var_16_1 = var_16_0:getCommanders()
+	local var_16_2 = var_16_0:GetExtraCommanders()
+	local var_16_3 = _.detect(var_16_2, function(arg_17_0)
+		return arg_16_1.id == arg_17_0.commanderId
+	end)
 
-	if not _.detect(slot4:GetExtraCommanders(), function (slot0)
-		return uv0.id == slot0.commanderId
-	end) then
+	if not var_16_3 then
 		return true
 	end
 
-	slot0.contextData.msgBox:ExecuteAction("Show", {
+	arg_16_0.contextData.msgBox:ExecuteAction("Show", {
 		content = i18n("commander_material_is_in_fleet_tip"),
-		onYes = function ()
+		onYes = function()
 			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 				commanderId = 0,
-				fleetId = uv0.fleetId,
-				pos = uv0.pos,
-				callback = function ()
-					uv0 = uv1:getCommanders()
+				fleetId = var_16_3.fleetId,
+				pos = var_16_3.pos,
+				callback = function()
+					var_16_1 = var_16_0:getCommanders()
 
-					if uv2 then
-						uv2()
+					if arg_16_2 then
+						arg_16_2()
 					end
 				end
 			})
 		end,
-		onNo = slot3,
-		onClose = slot3
+		onNo = arg_16_3,
+		onClose = arg_16_3
 	})
 
 	return false
 end
 
-return slot0
+return var_0_0

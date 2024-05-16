@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 0.2,
+				target = "TargetSelf",
+				skill_id = 10010,
+				quota = 1
+			}
+		}
+	},
 	{
 		desc = "耐久低于20%时，恢复16.0%耐久，每场战斗只能触发1次",
 		addition = {
@@ -69,19 +83,5 @@ return {
 	stack = 1,
 	id = 10010,
 	icon = 10010,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 0.2,
-				target = "TargetSelf",
-				skill_id = 10010,
-				quota = 1
-			}
-		}
-	}
+	last_effect = "Health"
 }

@@ -1,100 +1,110 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot0.Battle.BattleAidWave = class("BattleAidWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleAidWave.__name = "BattleAidWave"
-slot2 = slot0.Battle.BattleAidWave
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+
+var_0_0.Battle.BattleAidWave = class("BattleAidWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleAidWave.__name = "BattleAidWave"
+
+local var_0_2 = var_0_0.Battle.BattleAidWave
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 end
 
-function slot2.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_2.SetWaveData(arg_2_0, arg_2_1)
+	var_0_2.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._vanguardUnitList = slot0._param.vanguard_unitList
-	slot0._mainUnitList = slot0._param.main_unitList
-	slot0._subUnitList = slot0._param.sub_unitList
-	slot0._killList = slot0._param.kill_list
+	arg_2_0._vanguardUnitList = arg_2_0._param.vanguard_unitList
+	arg_2_0._mainUnitList = arg_2_0._param.main_unitList
+	arg_2_0._subUnitList = arg_2_0._param.sub_unitList
+	arg_2_0._killList = arg_2_0._param.kill_list
 end
 
-function slot2.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_2.DoWave(arg_3_0)
+	var_0_2.super.DoWave(arg_3_0)
 
-	slot1 = uv1.Battle.BattleDataProxy.GetInstance()
+	local var_3_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
 
-	if slot0._killList ~= nil then
-		slot2 = slot1:GetFriendlyShipList()
+	if arg_3_0._killList ~= nil then
+		local var_3_1 = var_3_0:GetFriendlyShipList()
 
-		for slot6, slot7 in ipairs(slot0._killList) do
-			for slot11, slot12 in pairs(slot2) do
-				if slot12:GetTemplateID() == slot7 then
-					slot12:Retreat()
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0._killList) do
+			for iter_3_2, iter_3_3 in pairs(var_3_1) do
+				if iter_3_3:GetTemplateID() == iter_3_1 then
+					iter_3_3:Retreat()
 				end
 			end
 		end
 	end
 
-	if slot0._vanguardUnitList ~= nil then
-		for slot5, slot6 in ipairs(slot0._vanguardUnitList) do
-			slot7 = {}
+	if arg_3_0._vanguardUnitList ~= nil then
+		for iter_3_4, iter_3_5 in ipairs(arg_3_0._vanguardUnitList) do
+			local var_3_2 = {}
 
-			for slot11, slot12 in ipairs(slot6.equipment) do
-				slot7[#slot7 + 1] = {
+			for iter_3_6, iter_3_7 in ipairs(iter_3_5.equipment) do
+				var_3_2[#var_3_2 + 1] = {
 					skin = 0,
-					id = slot12
+					id = iter_3_7
 				}
 			end
 
-			slot8 = Clone(slot6)
-			slot8.equipment = slot7
-			slot8.baseProperties = slot6.properties
-			slot9 = slot1:SpawnVanguard(slot8, uv2.FRIENDLY_CODE)
+			local var_3_3 = Clone(iter_3_5)
 
-			slot1.InitUnitWeaponCD(slot9)
-			slot1:InitAidUnitStatistics(slot9)
+			var_3_3.equipment = var_3_2
+			var_3_3.baseProperties = iter_3_5.properties
+
+			local var_3_4 = var_3_0:SpawnVanguard(var_3_3, var_0_1.FRIENDLY_CODE)
+
+			var_3_0.InitUnitWeaponCD(var_3_4)
+			var_3_0:InitAidUnitStatistics(var_3_4)
 		end
 	end
 
-	if slot0._mainUnitList ~= nil then
-		for slot5, slot6 in ipairs(slot0._mainUnitList) do
-			slot7 = {}
+	if arg_3_0._mainUnitList ~= nil then
+		for iter_3_8, iter_3_9 in ipairs(arg_3_0._mainUnitList) do
+			local var_3_5 = {}
 
-			for slot11, slot12 in ipairs(slot6.equipment) do
-				slot7[#slot7 + 1] = {
+			for iter_3_10, iter_3_11 in ipairs(iter_3_9.equipment) do
+				var_3_5[#var_3_5 + 1] = {
 					skin = 0,
-					id = slot12
+					id = iter_3_11
 				}
 			end
 
-			slot8 = Clone(slot6)
-			slot8.equipment = slot7
-			slot8.baseProperties = slot6.properties
-			slot9 = slot1:SpawnMain(slot8, uv2.FRIENDLY_CODE)
+			local var_3_6 = Clone(iter_3_9)
 
-			slot1.InitUnitWeaponCD(slot9)
-			slot1:InitAidUnitStatistics(slot9)
+			var_3_6.equipment = var_3_5
+			var_3_6.baseProperties = iter_3_9.properties
+
+			local var_3_7 = var_3_0:SpawnMain(var_3_6, var_0_1.FRIENDLY_CODE)
+
+			var_3_0.InitUnitWeaponCD(var_3_7)
+			var_3_0:InitAidUnitStatistics(var_3_7)
 		end
 	end
 
-	if slot0._subUnitList ~= nil then
-		for slot5, slot6 in ipairs(slot0._subUnitList) do
-			slot7 = {}
+	if arg_3_0._subUnitList ~= nil then
+		for iter_3_12, iter_3_13 in ipairs(arg_3_0._subUnitList) do
+			local var_3_8 = {}
 
-			for slot11, slot12 in ipairs(slot6.equipment) do
-				slot7[#slot7 + 1] = {
+			for iter_3_14, iter_3_15 in ipairs(iter_3_13.equipment) do
+				var_3_8[#var_3_8 + 1] = {
 					skin = 0,
-					id = slot12
+					id = iter_3_15
 				}
 			end
 
-			slot8 = Clone(slot6)
-			slot8.equipment = slot7
-			slot8.baseProperties = slot6.properties
+			local var_3_9 = Clone(iter_3_13)
 
-			slot1:InitAidUnitStatistics(slot1:SpawnSub(slot8, uv2.FRIENDLY_CODE))
+			var_3_9.equipment = var_3_8
+			var_3_9.baseProperties = iter_3_13.properties
+
+			local var_3_10 = var_3_0:SpawnSub(var_3_9, var_0_1.FRIENDLY_CODE)
+
+			var_3_0:InitAidUnitStatistics(var_3_10)
 		end
 	end
 
-	slot0:doPass()
+	arg_3_0:doPass()
 end

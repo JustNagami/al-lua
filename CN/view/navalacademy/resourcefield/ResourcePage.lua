@@ -1,76 +1,74 @@
-slot0 = class("ResourcePage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ResourcePage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ResourcePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.titleTxt = slot0:findTF("frame/title/text"):GetComponent(typeof(Text))
-	slot0.iconImg = slot0:findTF("frame/title/icon"):GetComponent(typeof(Image))
-	slot0.closeBtn = slot0:findTF("frame/btnBack")
-	slot0.descTxt = slot0:findTF("frame/content/describe/class"):GetComponent(typeof(Text))
-	slot0.levelTxt = slot0:findTF("frame/title/icon/current"):GetComponent(typeof(Text))
-	slot0.currentLevelTxt = slot0:findTF("frame/content/info/level/curr"):GetComponent(typeof(Text))
-	slot0.nextLevelTxt = slot0:findTF("frame/content/info/level/next"):GetComponent(typeof(Text))
-	slot0.costTxt = slot0:findTF("frame/content/upgrade_btn/cost"):GetComponent(typeof(Text))
-	slot0.spendTimeTxt = slot0:findTF("frame/upgrade_duration/Text"):GetComponent(typeof(Text))
-	slot0.upgradeBtn = slot0:findTF("frame/content/upgrade_btn")
-	slot0.upgradingBtn = slot0:findTF("frame/content/upgrading_block")
-	slot0.attrUIlist = UIItemList.New(slot0:findTF("frame/content/info/conent"), slot0:findTF("frame/content/info/conent/tpl"))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.titleTxt = arg_2_0:findTF("frame/title/text"):GetComponent(typeof(Text))
+	arg_2_0.iconImg = arg_2_0:findTF("frame/title/icon"):GetComponent(typeof(Image))
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/btnBack")
+	arg_2_0.descTxt = arg_2_0:findTF("frame/content/describe/class"):GetComponent(typeof(Text))
+	arg_2_0.levelTxt = arg_2_0:findTF("frame/title/icon/current"):GetComponent(typeof(Text))
+	arg_2_0.currentLevelTxt = arg_2_0:findTF("frame/content/info/level/curr"):GetComponent(typeof(Text))
+	arg_2_0.nextLevelTxt = arg_2_0:findTF("frame/content/info/level/next"):GetComponent(typeof(Text))
+	arg_2_0.costTxt = arg_2_0:findTF("frame/content/upgrade_btn/cost"):GetComponent(typeof(Text))
+	arg_2_0.spendTimeTxt = arg_2_0:findTF("frame/upgrade_duration/Text"):GetComponent(typeof(Text))
+	arg_2_0.upgradeBtn = arg_2_0:findTF("frame/content/upgrade_btn")
+	arg_2_0.upgradingBtn = arg_2_0:findTF("frame/content/upgrading_block")
+	arg_2_0.attrUIlist = UIItemList.New(arg_2_0:findTF("frame/content/info/conent"), arg_2_0:findTF("frame/content/info/conent/tpl"))
 
-	setText(slot0.upgradeBtn:Find("Image"), i18n("word_levelup"))
-	setText(slot0.upgradingBtn:Find("Image"), i18n("class_label_upgrading"))
-	setText(slot0:findTF("frame/content/upgrade_btn/costback/label"), i18n("text_consume"))
-	setText(slot0:findTF("frame/upgrade_duration/Image/Text"), i18n("class_label_upgradetime"))
+	setText(arg_2_0.upgradeBtn:Find("Image"), i18n("word_levelup"))
+	setText(arg_2_0.upgradingBtn:Find("Image"), i18n("class_label_upgrading"))
+	setText(arg_2_0:findTF("frame/content/upgrade_btn/costback/label"), i18n("text_consume"))
+	setText(arg_2_0:findTF("frame/upgrade_duration/Image/Text"), i18n("class_label_upgradetime"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.upgradeBtn, function ()
-		if uv0:CheckUpgrade() then
-			uv0:OnUpgrade()
+	onButton(arg_3_0, arg_3_0.upgradeBtn, function()
+		if arg_3_0:CheckUpgrade() then
+			arg_3_0:OnUpgrade()
 		end
 	end, SFX_PANEL)
-
-	slot1 = slot0.attrUIlist
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateResourceFieldAttr(uv0.attrs[slot1 + 1], slot2)
+	arg_3_0.attrUIlist:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateResourceFieldAttr(arg_3_0.attrs[arg_7_1 + 1], arg_7_2)
 		end
 	end)
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0:Update(slot1)
-	slot0:Show()
+function var_0_0.Flush(arg_8_0, arg_8_1)
+	arg_8_0:Update(arg_8_1)
+	arg_8_0:Show()
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.resourceField = slot1
+function var_0_0.Update(arg_9_0, arg_9_1)
+	arg_9_0.resourceField = arg_9_1
 
-	slot0:Refresh()
+	arg_9_0:Refresh()
 end
 
-function slot0.CheckUpgrade(slot0)
-	if not slot0.resourceField:CanUpgrade() then
-		if slot0.resourceField:IsMaxLevel() then
+function var_0_0.CheckUpgrade(arg_10_0)
+	if not arg_10_0.resourceField:CanUpgrade() then
+		if arg_10_0.resourceField:IsMaxLevel() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("class_res_maxlevel_tip"))
-		elseif not slot0.resourceField:IsReachLevel() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", slot0.resourceField:GetTargetLevel()))
-		elseif not slot0.resourceField:IsReachRes() then
-			slot1 = slot0.resourceField:GetTargetRes()
+		elseif not arg_10_0.resourceField:IsReachLevel() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", arg_10_0.resourceField:GetTargetLevel()))
+		elseif not arg_10_0.resourceField:IsReachRes() then
+			local var_10_0 = arg_10_0.resourceField:GetTargetRes()
+			local var_10_1 = getProxy(PlayerProxy):getRawData().gold
 
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 				{
 					59001,
-					slot1 - getProxy(PlayerProxy):getRawData().gold,
-					slot1
+					var_10_0 - var_10_1,
+					var_10_0
 				}
 			})
 		end
@@ -81,105 +79,131 @@ function slot0.CheckUpgrade(slot0)
 	return true
 end
 
-function slot0.OnUpgrade(slot0)
-	slot0:emit(NavalAcademyMediator.UPGRADE_FIELD, slot0.resourceField:GetUpgradeType())
+function var_0_0.OnUpgrade(arg_11_0)
+	local var_11_0 = arg_11_0.resourceField:GetUpgradeType()
+
+	arg_11_0:emit(NavalAcademyMediator.UPGRADE_FIELD, var_11_0)
 end
 
-function slot0.Refresh(slot0)
-	slot1 = slot0.resourceField
-	slot0.iconImg.sprite = GetSpriteFromAtlas("ui/ResourceFieldUI_atlas", slot1:GetKeyWord())
-	slot0.titleTxt.text = slot1:GetName()
-	slot3 = slot0.resourceField
-	slot0.descTxt.text = slot3:GetDesc()
-	slot0.levelTxt.text = "Lv." .. slot3:GetLevel()
-	slot0.currentLevelTxt.text = slot4
-	slot0.nextLevelTxt.text = slot3:IsMaxLevel() and "Lv.Max" or "Lv." .. slot3:GetLevel() + 1
-	slot0.costTxt.text = "<color=" .. (slot3:IsReachRes() and COLOR_WHITE or COLOR_RED) .. ">" .. (slot5 and "-" or slot3:GetCost().count) .. "</color>"
+function var_0_0.Refresh(arg_12_0)
+	local var_12_0 = arg_12_0.resourceField
+	local var_12_1 = var_12_0:GetKeyWord()
 
-	slot0:FlushState()
+	arg_12_0.iconImg.sprite = GetSpriteFromAtlas("ui/ResourceFieldUI_atlas", var_12_1)
+	arg_12_0.titleTxt.text = var_12_0:GetName()
+
+	local var_12_2 = arg_12_0.resourceField
+
+	arg_12_0.descTxt.text = var_12_2:GetDesc()
+
+	local var_12_3 = "Lv." .. var_12_2:GetLevel()
+
+	arg_12_0.levelTxt.text = var_12_3
+
+	local var_12_4 = var_12_2:IsMaxLevel()
+	local var_12_5 = var_12_4 and "Lv.Max" or "Lv." .. var_12_2:GetLevel() + 1
+
+	arg_12_0.currentLevelTxt.text = var_12_3
+	arg_12_0.nextLevelTxt.text = var_12_5
+
+	local var_12_6 = var_12_4 and "-" or var_12_2:GetCost().count
+	local var_12_7 = var_12_2:IsReachRes() and COLOR_WHITE or COLOR_RED
+
+	arg_12_0.costTxt.text = "<color=" .. var_12_7 .. ">" .. var_12_6 .. "</color>"
+
+	arg_12_0:FlushState()
 end
 
-function slot0.FlushState(slot0)
-	slot1 = slot0.resourceField
-	slot3 = slot1:IsStarting()
+function var_0_0.FlushState(arg_13_0)
+	local var_13_0 = arg_13_0.resourceField
+	local var_13_1 = var_13_0:IsMaxLevel()
+	local var_13_2 = var_13_0:IsStarting()
 
-	setActive(slot0.upgradeBtn, not slot3)
-	setActive(slot0.upgradingBtn, slot3)
-	setGray(slot0.upgradeBtn, slot1:IsMaxLevel(), true)
-	slot0:RemoveTimer()
+	setActive(arg_13_0.upgradeBtn, not var_13_2)
+	setActive(arg_13_0.upgradingBtn, var_13_2)
+	setGray(arg_13_0.upgradeBtn, var_13_1, true)
+	arg_13_0:RemoveTimer()
 
-	if slot3 then
-		slot0:AddTimer()
+	if var_13_2 then
+		arg_13_0:AddTimer()
 	else
-		slot0.spendTimeTxt.text = slot2 and "-" or pg.TimeMgr.GetInstance():DescCDTime(slot1:GetSpendTime())
+		local var_13_3 = var_13_1 and "-" or pg.TimeMgr.GetInstance():DescCDTime(var_13_0:GetSpendTime())
+
+		arg_13_0.spendTimeTxt.text = var_13_3
 	end
 
-	slot0:UpdateResourceFieldAttrs()
+	arg_13_0:UpdateResourceFieldAttrs()
 end
 
-function slot0.UpdateResourceFieldAttrs(slot0)
-	slot0.attrs = slot0.resourceField:GetEffectAttrs()
+function var_0_0.UpdateResourceFieldAttrs(arg_14_0)
+	arg_14_0.attrs = arg_14_0.resourceField:GetEffectAttrs()
 
-	slot0.attrUIlist:align(#slot0.attrs)
+	arg_14_0.attrUIlist:align(#arg_14_0.attrs)
 end
 
-function slot0.UpdateResourceFieldAttr(slot0, slot1, slot2)
-	setText(slot2:Find("label"), slot1:GetName())
-	setText(slot2:Find("advance"), "[+" .. slot1:GetAdditionDesc() .. "]")
+function var_0_0.UpdateResourceFieldAttr(arg_15_0, arg_15_1, arg_15_2)
+	setText(arg_15_2:Find("label"), arg_15_1:GetName())
+	setText(arg_15_2:Find("advance"), "[+" .. arg_15_1:GetAdditionDesc() .. "]")
 
-	slot5 = slot1:GetMaxValue()
+	local var_15_0 = arg_15_1:GetValue()
+	local var_15_1 = arg_15_1:GetNextValue()
+	local var_15_2 = arg_15_1:GetMaxValue()
 
-	setFillAmount(slot2:Find("curr"), slot1:GetValue() / slot5)
-	setFillAmount(slot2:Find("prev"), slot1:GetNextValue() / slot5)
-	LeanTween.cancel(go(slot2:Find("prev")))
-	blinkAni(slot2:Find("prev"), 0.8, -1, 0.3):setFrom(1)
-	setText(slot2:Find("current"), slot1:GetProgressDesc())
+	setFillAmount(arg_15_2:Find("curr"), var_15_0 / var_15_2)
+	setFillAmount(arg_15_2:Find("prev"), var_15_1 / var_15_2)
+	LeanTween.cancel(go(arg_15_2:Find("prev")))
+	blinkAni(arg_15_2:Find("prev"), 0.8, -1, 0.3):setFrom(1)
+	setText(arg_15_2:Find("current"), arg_15_1:GetProgressDesc())
 end
 
-function slot0.AddTimer(slot0)
-	if pg.TimeMgr.GetInstance():GetServerTime() < slot0.resourceField:GetUpgradeTimeStamp() then
-		slot0.timer = Timer.New(function ()
-			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-				uv1:RemoveTimer()
+function var_0_0.AddTimer(arg_16_0)
+	local var_16_0 = arg_16_0.resourceField:GetUpgradeTimeStamp()
+
+	if var_16_0 > pg.TimeMgr.GetInstance():GetServerTime() then
+		arg_16_0.timer = Timer.New(function()
+			local var_17_0 = var_16_0 - pg.TimeMgr.GetInstance():GetServerTime()
+
+			if var_17_0 <= 0 then
+				arg_16_0:RemoveTimer()
 			end
 
-			uv1.spendTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+			arg_16_0.spendTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_17_0)
 		end, 1, -1)
 
-		slot0.timer:Start()
-		slot0.timer.func()
+		arg_16_0.timer:Start()
+		arg_16_0.timer.func()
 	end
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_18_0)
+	if arg_18_0.timer then
+		arg_18_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_18_0.timer = nil
 	end
 end
 
-function slot0.Show(slot0)
-	if not slot0.isOpen then
-		uv0.super.Show(slot0)
-		pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.Show(arg_19_0)
+	if not arg_19_0.isOpen then
+		var_0_0.super.Show(arg_19_0)
+		pg.UIMgr.GetInstance():BlurPanel(arg_19_0._tf)
 
-		slot0.isOpen = true
+		arg_19_0.isOpen = true
 	end
 end
 
-function slot0.Hide(slot0)
-	if slot0.isOpen then
-		slot0.isOpen = false
+function var_0_0.Hide(arg_20_0)
+	if arg_20_0.isOpen then
+		arg_20_0.isOpen = false
 
-		uv0.super.Hide(slot0)
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+		var_0_0.super.Hide(arg_20_0)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_20_0._tf, arg_20_0._parentTf)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
-	slot0:RemoveTimer()
+function var_0_0.OnDestroy(arg_21_0)
+	arg_21_0:Hide()
+	arg_21_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

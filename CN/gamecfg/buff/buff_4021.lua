@@ -1,4 +1,22 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 4021
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,23 +37,5 @@ return {
 	stack = 1,
 	id = 4021,
 	icon = 4020,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 4021
-			}
-		}
-	}
+	last_effect = ""
 }

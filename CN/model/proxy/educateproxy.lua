@@ -1,614 +1,653 @@
-slot0 = class("EducateProxy", import(".NetProxy"))
-slot0.RESOURCE_UPDATED = "EducateProxy.RESOURCE_UPDATED"
-slot0.ATTR_UPDATED = "EducateProxy.ATTR_UPDATED"
-slot0.TIME_UPDATED = "EducateProxy.TIME_UPDATED"
-slot0.TIME_WEEKDAY_UPDATED = "EducateProxy.TIME_WEEKDAY_UPDATED"
-slot0.BUFF_ADDED = "EducateProxy.BUFF_ADDED"
-slot0.OPTION_UPDATED = "EducateProxy.OPTION_UPDATED"
-slot0.ENDING_ADDED = "EducateProxy.ENDING_ADDED"
-slot0.ITEM_ADDED = "EducateProxy.ITEM_ADDED"
-slot0.POLAROID_ADDED = "EducateProxy.POLAROID_ADDED"
-slot0.MEMORY_ADDED = "EducateProxy.MEMORY_ADDED"
-slot0.UNLCOK_NEW_SECRETARY_BY_CNT = "EducateProxy.UNLCOK_NEW_SECRETARY_BY_CNT"
-slot0.GUIDE_CHECK = "EducateProxy.GUIDE_CHECK"
-slot0.MAIN_SCENE_ADD_LAYER = "EducateProxy.MAIN_SCENE_ADD_LAYER"
-slot0.CLEAR_NEW_TIP = "EducateProxy.CLEAR_NEW_TIP"
+﻿local var_0_0 = class("EducateProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.planProxy = EducatePlanProxy.New(slot0)
-	slot0.eventProxy = EducateEventProxy.New(slot0)
-	slot0.shopProxy = EducateShopProxy.New(slot0)
-	slot0.taskProxy = EducateTaskProxy.New(slot0)
-	slot0.endTime = pg.gameset.child_end_data.description
+var_0_0.RESOURCE_UPDATED = "EducateProxy.RESOURCE_UPDATED"
+var_0_0.ATTR_UPDATED = "EducateProxy.ATTR_UPDATED"
+var_0_0.TIME_UPDATED = "EducateProxy.TIME_UPDATED"
+var_0_0.TIME_WEEKDAY_UPDATED = "EducateProxy.TIME_WEEKDAY_UPDATED"
+var_0_0.BUFF_ADDED = "EducateProxy.BUFF_ADDED"
+var_0_0.OPTION_UPDATED = "EducateProxy.OPTION_UPDATED"
+var_0_0.ENDING_ADDED = "EducateProxy.ENDING_ADDED"
+var_0_0.ITEM_ADDED = "EducateProxy.ITEM_ADDED"
+var_0_0.POLAROID_ADDED = "EducateProxy.POLAROID_ADDED"
+var_0_0.MEMORY_ADDED = "EducateProxy.MEMORY_ADDED"
+var_0_0.UNLCOK_NEW_SECRETARY_BY_CNT = "EducateProxy.UNLCOK_NEW_SECRETARY_BY_CNT"
+var_0_0.GUIDE_CHECK = "EducateProxy.GUIDE_CHECK"
+var_0_0.MAIN_SCENE_ADD_LAYER = "EducateProxy.MAIN_SCENE_ADD_LAYER"
+var_0_0.CLEAR_NEW_TIP = "EducateProxy.CLEAR_NEW_TIP"
 
-	slot0:on(27021, function (slot0)
-		for slot4, slot5 in ipairs(slot0.tasks) do
-			uv0.taskProxy:AddTask(slot5)
+function var_0_0.register(arg_1_0)
+	arg_1_0.planProxy = EducatePlanProxy.New(arg_1_0)
+	arg_1_0.eventProxy = EducateEventProxy.New(arg_1_0)
+	arg_1_0.shopProxy = EducateShopProxy.New(arg_1_0)
+	arg_1_0.taskProxy = EducateTaskProxy.New(arg_1_0)
+	arg_1_0.endTime = pg.gameset.child_end_data.description
+
+	arg_1_0:on(27021, function(arg_2_0)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.tasks) do
+			arg_1_0.taskProxy:AddTask(iter_2_1)
 		end
 	end)
-	slot0:on(27022, function (slot0)
-		for slot4, slot5 in ipairs(slot0.ids) do
-			uv0.taskProxy:RemoveTaskById(slot5)
+	arg_1_0:on(27022, function(arg_3_0)
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.ids) do
+			arg_1_0.taskProxy:RemoveTaskById(iter_3_1)
 		end
 	end)
-	slot0:on(27025, function (slot0)
-		for slot4, slot5 in ipairs(slot0.tasks) do
-			uv0.taskProxy:UpdateTask(slot5)
+	arg_1_0:on(27025, function(arg_4_0)
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0.tasks) do
+			arg_1_0.taskProxy:UpdateTask(iter_4_1)
 		end
 	end)
 end
 
-function slot0.initData(slot0, slot1)
-	slot0:sendNotification(GAME.EDUCATE_GET_ENDINGS)
+function var_0_0.initData(arg_5_0, arg_5_1)
+	arg_5_0:sendNotification(GAME.EDUCATE_GET_ENDINGS)
 
-	slot0.exsitEnding = slot1.child.is_ending == 1 or false
-	slot0.gameCount = slot2.new_game_plus_count
-	slot0.curTime = slot2.cur_time or {
+	local var_5_0 = arg_5_1.child
+
+	arg_5_0.exsitEnding = var_5_0.is_ending == 1 or false
+	arg_5_0.gameCount = var_5_0.new_game_plus_count
+	arg_5_0.curTime = var_5_0.cur_time or {
 		week = 1,
 		month = 3,
 		day = 7
 	}
-	slot0.char = EducateChar.New(slot2)
+	arg_5_0.char = EducateChar.New(var_5_0)
 
-	slot0.eventProxy:SetUp({
-		waitTriggerEventIds = slot2.home_events,
-		needRequestHomeEvents = slot2.can_trigger_home_event == 1 or false,
-		finishSpecEventIds = slot2.spec_events
+	arg_5_0.eventProxy:SetUp({
+		waitTriggerEventIds = var_5_0.home_events,
+		needRequestHomeEvents = var_5_0.can_trigger_home_event == 1 or false,
+		finishSpecEventIds = var_5_0.spec_events
 	})
-	slot0.planProxy:SetUp({
-		history = slot2.plan_history,
-		selectedPlans = slot2.plans
+	arg_5_0.planProxy:SetUp({
+		history = var_5_0.plan_history,
+		selectedPlans = var_5_0.plans
 	})
-	slot0.shopProxy:SetUp({
-		shops = slot2.shop,
-		discountEventIds = slot2.discount_event_id
+	arg_5_0.shopProxy:SetUp({
+		shops = var_5_0.shop,
+		discountEventIds = var_5_0.discount_event_id
 	})
-	slot0.taskProxy:SetUp({
-		targetId = slot2.target,
-		tasks = slot2.tasks,
-		finishMindTaskIds = slot2.realized_wish,
-		isGotTargetAward = slot2.had_target_stage_award == 1 or false
+	arg_5_0.taskProxy:SetUp({
+		targetId = var_5_0.target,
+		tasks = var_5_0.tasks,
+		finishMindTaskIds = var_5_0.realized_wish,
+		isGotTargetAward = var_5_0.had_target_stage_award == 1 or false
 	})
-	slot0:initItems(slot2.items)
-	slot0:initPolaroids(slot2.polaroids)
+	arg_5_0:initItems(var_5_0.items)
+	arg_5_0:initPolaroids(var_5_0.polaroids)
 
-	slot0.memories = slot2.memorys
+	arg_5_0.memories = var_5_0.memorys
 
-	slot0:initBuffs(slot2.buffs)
-	slot0:initOptions(slot2.option_records)
+	arg_5_0:initBuffs(var_5_0.buffs)
+	arg_5_0:initOptions(var_5_0.option_records)
 
-	slot0.siteRandomOpts = nil
+	arg_5_0.siteRandomOpts = nil
 
-	slot0:UpdateGameStatus()
-	slot0:initVirtualStage()
-	slot0:initUnlockSecretary(slot2.is_special_secretary_valid == 1)
+	arg_5_0:UpdateGameStatus()
+	arg_5_0:initVirtualStage()
+	arg_5_0:initUnlockSecretary(var_5_0.is_special_secretary_valid == 1)
 
-	slot0.requestDataEnd = true
+	arg_5_0.requestDataEnd = true
 end
 
-function slot0.CheckDataRequestEnd(slot0)
-	return slot0.requestDataEnd
+function var_0_0.CheckDataRequestEnd(arg_6_0)
+	return arg_6_0.requestDataEnd
 end
 
-function slot0.initItems(slot0, slot1)
-	slot0.itemData = {}
+function var_0_0.initItems(arg_7_0, arg_7_1)
+	arg_7_0.itemData = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.itemData[slot6.id] = EducateItem.New(slot6)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
+		arg_7_0.itemData[iter_7_1.id] = EducateItem.New(iter_7_1)
 	end
 end
 
-function slot0.initOptions(slot0, slot1)
-	slot2 = {}
+function var_0_0.initOptions(arg_8_0, arg_8_1)
+	local var_8_0 = {}
 
-	for slot6, slot7 in ipairs(slot1) do
-		slot2[slot7.id] = slot7.count
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		var_8_0[iter_8_1.id] = iter_8_1.count
 	end
 
-	slot0.siteOptionData = {}
+	arg_8_0.siteOptionData = {}
 
-	for slot6, slot7 in ipairs(pg.child_site_option.all) do
-		slot0.siteOptionData[slot7] = EducateSiteOption.New(slot7, slot2[slot7])
-	end
-end
+	for iter_8_2, iter_8_3 in ipairs(pg.child_site_option.all) do
+		local var_8_1 = EducateSiteOption.New(iter_8_3, var_8_0[iter_8_3])
 
-function slot0.initRandomOpts(slot0, slot1)
-	slot0.siteRandomOpts = {}
-
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.siteRandomOpts[slot6.site_id] = slot6.option_ids
+		arg_8_0.siteOptionData[iter_8_3] = var_8_1
 	end
 end
 
-function slot0.NeedRequestOptsData(slot0)
-	return not slot0.siteRandomOpts
-end
+function var_0_0.initRandomOpts(arg_9_0, arg_9_1)
+	arg_9_0.siteRandomOpts = {}
 
-function slot0.initBuffs(slot0, slot1)
-	slot0.buffData = {}
-
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.buffData[slot6.id] = EducateBuff.New(slot6)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_1) do
+		arg_9_0.siteRandomOpts[iter_9_1.site_id] = iter_9_1.option_ids
 	end
 end
 
-function slot0.initPolaroids(slot0, slot1)
-	slot0.polaroidData = {}
+function var_0_0.NeedRequestOptsData(arg_10_0)
+	return not arg_10_0.siteRandomOpts
+end
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot0.polaroidData[slot6.id] = EducatePolaroid.New(slot6)
+function var_0_0.initBuffs(arg_11_0, arg_11_1)
+	arg_11_0.buffData = {}
+
+	for iter_11_0, iter_11_1 in ipairs(arg_11_1) do
+		arg_11_0.buffData[iter_11_1.id] = EducateBuff.New(iter_11_1)
 	end
 end
 
-function slot0.SetEndings(slot0, slot1)
-	slot0.endings = slot1
+function var_0_0.initPolaroids(arg_12_0, arg_12_1)
+	arg_12_0.polaroidData = {}
 
-	slot0:updateSecretaryIDs()
-end
-
-function slot0.IsFirstGame(slot0)
-	return slot0.gameCount == 1
-end
-
-function slot0.UpdateGameStatus(slot0)
-	slot0.gameStatus = EducateConst.STATUES_NORMAL
-
-	if slot0.exsitEnding then
-		slot0.gameStatus = EducateConst.STATUES_RESET
-	elseif slot0:IsEndingTime() then
-		slot0.gameStatus = EducateConst.STATUES_ENDING
-	elseif slot0.taskProxy:CheckTargetSet() then
-		slot0.gameStatus = EducateConst.STATUES_PREPARE
+	for iter_12_0, iter_12_1 in ipairs(arg_12_1) do
+		arg_12_0.polaroidData[iter_12_1.id] = EducatePolaroid.New(iter_12_1)
 	end
 end
 
-function slot0.GetGameStatus(slot0)
-	return slot0.gameStatus
+function var_0_0.SetEndings(arg_13_0, arg_13_1)
+	arg_13_0.endings = arg_13_1
+
+	arg_13_0:updateSecretaryIDs()
 end
 
-function slot0.initVirtualStage(slot0)
-	slot2 = slot0.char:GetStage()
+function var_0_0.IsFirstGame(arg_14_0)
+	return arg_14_0.gameCount == 1
+end
 
-	if getProxy(EducateProxy):GetTaskProxy():GetTargetId() ~= 0 and pg.child_target_set[slot1].stage == slot2 + 1 then
-		slot0.isVirtualStage = true
+function var_0_0.UpdateGameStatus(arg_15_0)
+	arg_15_0.gameStatus = EducateConst.STATUES_NORMAL
+
+	if arg_15_0.exsitEnding then
+		arg_15_0.gameStatus = EducateConst.STATUES_RESET
+	elseif arg_15_0:IsEndingTime() then
+		arg_15_0.gameStatus = EducateConst.STATUES_ENDING
+	elseif arg_15_0.taskProxy:CheckTargetSet() then
+		arg_15_0.gameStatus = EducateConst.STATUES_PREPARE
+	end
+end
+
+function var_0_0.GetGameStatus(arg_16_0)
+	return arg_16_0.gameStatus
+end
+
+function var_0_0.initVirtualStage(arg_17_0)
+	local var_17_0 = getProxy(EducateProxy):GetTaskProxy():GetTargetId()
+	local var_17_1 = arg_17_0.char:GetStage()
+
+	if var_17_0 ~= 0 and pg.child_target_set[var_17_0].stage == var_17_1 + 1 then
+		arg_17_0.isVirtualStage = true
 	else
-		slot0.isVirtualStage = false
+		arg_17_0.isVirtualStage = false
 	end
 end
 
-function slot0.SetVirtualStage(slot0, slot1)
-	slot0.isVirtualStage = slot1
+function var_0_0.SetVirtualStage(arg_18_0, arg_18_1)
+	arg_18_0.isVirtualStage = arg_18_1
 end
 
-function slot0.InVirtualStage(slot0)
-	return slot0.isVirtualStage
+function var_0_0.InVirtualStage(arg_19_0)
+	return arg_19_0.isVirtualStage
 end
 
-function slot0.Reset(slot0, slot1)
+function var_0_0.Reset(arg_20_0, arg_20_1)
 	EducateTipHelper.ClearAllRecord()
-	slot0:GetPlanProxy():ClearLocalPlansData()
-	slot0:sendNotification(GAME.EDUCATE_REQUEST, {
-		callback = slot1
+	arg_20_0:GetPlanProxy():ClearLocalPlansData()
+	arg_20_0:sendNotification(GAME.EDUCATE_REQUEST, {
+		callback = arg_20_1
 	})
 end
 
-function slot0.Refresh(slot0, slot1)
+function var_0_0.Refresh(arg_21_0, arg_21_1)
 	EducateTipHelper.ClearAllRecord()
-	slot0:GetPlanProxy():ClearLocalPlansData()
-	slot0:sendNotification(GAME.EDUCATE_REQUEST, {
-		callback = slot1
+	arg_21_0:GetPlanProxy():ClearLocalPlansData()
+	arg_21_0:sendNotification(GAME.EDUCATE_REQUEST, {
+		callback = arg_21_1
 	})
 end
 
-function slot0.GetCurTime(slot0)
-	return slot0.curTime
+function var_0_0.GetCurTime(arg_22_0)
+	return arg_22_0.curTime
 end
 
-function slot0.UpdateTime(slot0)
-	slot0.curTime.week = slot0.curTime.week + 1
+function var_0_0.UpdateTime(arg_23_0)
+	arg_23_0.curTime.week = arg_23_0.curTime.week + 1
 
-	if slot0.curTime.week > 4 then
-		slot0.curTime.week = 1
-		slot0.curTime.month = slot0.curTime.month + 1
+	if arg_23_0.curTime.week > 4 then
+		arg_23_0.curTime.week = 1
+		arg_23_0.curTime.month = arg_23_0.curTime.month + 1
 	end
 end
 
-function slot0.OnNextWeek(slot0)
-	slot0:SetVirtualStage(false)
-	slot0:UpdateTime()
-	slot0.char:OnNewWeek(slot0.curTime)
-	slot0.planProxy:OnNewWeek(slot0.curTime)
-	slot0.eventProxy:OnNewWeek(slot0.curTime)
-	slot0.shopProxy:OnNewWeek(slot0.curTime)
-	slot0.taskProxy:OnNewWeek(slot0.curTime)
-	slot0:RefreshBuffs()
-	slot0:RefreshOptions()
+function var_0_0.OnNextWeek(arg_24_0)
+	arg_24_0:SetVirtualStage(false)
+	arg_24_0:UpdateTime()
+	arg_24_0.char:OnNewWeek(arg_24_0.curTime)
+	arg_24_0.planProxy:OnNewWeek(arg_24_0.curTime)
+	arg_24_0.eventProxy:OnNewWeek(arg_24_0.curTime)
+	arg_24_0.shopProxy:OnNewWeek(arg_24_0.curTime)
+	arg_24_0.taskProxy:OnNewWeek(arg_24_0.curTime)
+	arg_24_0:RefreshBuffs()
+	arg_24_0:RefreshOptions()
 
-	slot0.siteRandomOpts = nil
+	arg_24_0.siteRandomOpts = nil
 
-	slot0:UpdateGameStatus()
-	slot0:sendNotification(uv0.TIME_UPDATED)
+	arg_24_0:UpdateGameStatus()
+	arg_24_0:sendNotification(var_0_0.TIME_UPDATED)
 end
 
-function slot0.GetCharData(slot0)
-	return slot0.char
+function var_0_0.GetCharData(arg_25_0)
+	return arg_25_0.char
 end
 
-function slot0.GetPersonalityId(slot0)
-	return slot0.char:GetPersonalityId()
+function var_0_0.GetPersonalityId(arg_26_0)
+	return arg_26_0.char:GetPersonalityId()
 end
 
-function slot0.UpdateRes(slot0, slot1, slot2)
-	slot0.char:UpdateRes(slot1, slot2)
-	slot0:sendNotification(uv0.RESOURCE_UPDATED)
+function var_0_0.UpdateRes(arg_27_0, arg_27_1, arg_27_2)
+	arg_27_0.char:UpdateRes(arg_27_1, arg_27_2)
+	arg_27_0:sendNotification(var_0_0.RESOURCE_UPDATED)
 end
 
-function slot0.ReduceResForPlans(slot0)
-	slot1, slot2 = slot0.planProxy:GetCost()
+function var_0_0.ReduceResForPlans(arg_28_0)
+	local var_28_0, var_28_1 = arg_28_0.planProxy:GetCost()
 
-	slot0:UpdateRes(EducateChar.RES_MONEY_ID, -slot1)
-	slot0:UpdateRes(EducateChar.RES_MOOD_ID, -slot2)
+	arg_28_0:UpdateRes(EducateChar.RES_MONEY_ID, -var_28_0)
+	arg_28_0:UpdateRes(EducateChar.RES_MOOD_ID, -var_28_1)
 end
 
-function slot0.ReduceResForCosts(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:UpdateRes(slot6.id, -slot6.num)
+function var_0_0.ReduceResForCosts(arg_29_0, arg_29_1)
+	for iter_29_0, iter_29_1 in ipairs(arg_29_1) do
+		arg_29_0:UpdateRes(iter_29_1.id, -iter_29_1.num)
 	end
 end
 
-function slot0.UpdateAttr(slot0, slot1, slot2)
-	slot0.char:UpdateAttr(slot1, slot2)
-	slot0:sendNotification(uv0.ATTR_UPDATED)
+function var_0_0.UpdateAttr(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0.char:UpdateAttr(arg_30_1, arg_30_2)
+	arg_30_0:sendNotification(var_0_0.ATTR_UPDATED)
 end
 
-function slot0.CheckExtraAttr(slot0)
-	return slot0.char:CheckExtraAttrAdd()
+function var_0_0.CheckExtraAttr(arg_31_0)
+	return arg_31_0.char:CheckExtraAttrAdd()
 end
 
-function slot0.AddExtraAttr(slot0, slot1)
-	slot0:UpdateAttr(slot1, slot0.char:getConfig("attr_2_add"))
-	slot0.char:SetIsAddedExtraAttr(true)
+function var_0_0.AddExtraAttr(arg_32_0, arg_32_1)
+	arg_32_0:UpdateAttr(arg_32_1, arg_32_0.char:getConfig("attr_2_add"))
+	arg_32_0.char:SetIsAddedExtraAttr(true)
 end
 
-function slot0.GetPlanProxy(slot0)
-	return slot0.planProxy
+function var_0_0.GetPlanProxy(arg_33_0)
+	return arg_33_0.planProxy
 end
 
-function slot0.GetEventProxy(slot0)
-	return slot0.eventProxy
+function var_0_0.GetEventProxy(arg_34_0)
+	return arg_34_0.eventProxy
 end
 
-function slot0.GetShopProxy(slot0)
-	return slot0.shopProxy
+function var_0_0.GetShopProxy(arg_35_0)
+	return arg_35_0.shopProxy
 end
 
-function slot0.GetTaskProxy(slot0)
-	return slot0.taskProxy
+function var_0_0.GetTaskProxy(arg_36_0)
+	return arg_36_0.taskProxy
 end
 
-function slot0.GetFinishEndings(slot0)
-	return slot0.endings
+function var_0_0.GetFinishEndings(arg_37_0)
+	return arg_37_0.endings
 end
 
-function slot0.AddEnding(slot0, slot1)
-	slot0.exsitEnding = true
+function var_0_0.AddEnding(arg_38_0, arg_38_1)
+	arg_38_0.exsitEnding = true
 
-	slot0:UpdateGameStatus()
+	arg_38_0:UpdateGameStatus()
 
-	if table.contains(slot0.endings, slot1) then
+	if table.contains(arg_38_0.endings, arg_38_1) then
 		return
 	end
 
-	table.insert(slot0.endings, slot1)
-	slot0:updateSecretaryIDs()
-	getProxy(SettingsProxy):UpdateEducateCharTip(Clone(slot0:GetSecretaryIDs()))
-	slot0:sendNotification(uv0.ENDING_ADDED)
+	table.insert(arg_38_0.endings, arg_38_1)
+
+	local var_38_0 = Clone(arg_38_0:GetSecretaryIDs())
+
+	arg_38_0:updateSecretaryIDs()
+	getProxy(SettingsProxy):UpdateEducateCharTip(var_38_0)
+	arg_38_0:sendNotification(var_0_0.ENDING_ADDED)
 end
 
-function slot0.IsEndingTime(slot0)
-	if slot0.endTime[1] <= slot0:GetCurTime().month and slot0.endTime[2] <= slot1.week and slot0.endTime[3] <= slot1.day then
+function var_0_0.IsEndingTime(arg_39_0)
+	local var_39_0 = arg_39_0:GetCurTime()
+
+	if var_39_0.month >= arg_39_0.endTime[1] and var_39_0.week >= arg_39_0.endTime[2] and var_39_0.day >= arg_39_0.endTime[3] then
 		return true
 	end
 
 	return false
 end
 
-function slot0.GetEndingResult(slot0)
-	slot1 = underscore.detect(pg.child_ending.all, function (slot0)
-		return uv0.char:CheckEndCondition(pg.child_ending[slot0].condition)
+function var_0_0.GetEndingResult(arg_40_0)
+	local var_40_0 = underscore.detect(pg.child_ending.all, function(arg_41_0)
+		local var_41_0 = pg.child_ending[arg_41_0].condition
+
+		return arg_40_0.char:CheckEndCondition(var_41_0)
 	end)
 
-	assert(slot1, "not matching ending")
+	assert(var_40_0, "not matching ending")
 
-	return slot1
+	return var_40_0
 end
 
-function slot0.GetBuffData(slot0)
-	return slot0.buffData
+function var_0_0.GetBuffData(arg_42_0)
+	return arg_42_0.buffData
 end
 
-function slot0.GetBuffList(slot0)
-	slot1 = {}
+function var_0_0.GetBuffList(arg_43_0)
+	local var_43_0 = {}
 
-	for slot5, slot6 in pairs(slot0.buffData) do
-		table.insert(slot1, slot6)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.buffData) do
+		table.insert(var_43_0, iter_43_1)
 	end
 
-	return slot1
+	return var_43_0
 end
 
-function slot0.AddBuff(slot0, slot1)
-	if slot0.buffData[slot1] then
-		slot0.buffData[slot1]:ResetEndTime()
+function var_0_0.AddBuff(arg_44_0, arg_44_1)
+	if arg_44_0.buffData[arg_44_1] then
+		arg_44_0.buffData[arg_44_1]:ResetEndTime()
 	else
-		slot0.buffData[slot1] = EducateBuff.New({
-			id = slot1
+		arg_44_0.buffData[arg_44_1] = EducateBuff.New({
+			id = arg_44_1
 		})
 	end
 
-	slot0:sendNotification(uv0.BUFF_ADDED)
+	arg_44_0:sendNotification(var_0_0.BUFF_ADDED)
 end
 
-function slot0.RefreshBuffs(slot0)
-	for slot4, slot5 in pairs(slot0.buffData) do
-		if slot5:IsEnd() then
-			slot0.buffData[slot5.id] = nil
+function var_0_0.RefreshBuffs(arg_45_0)
+	for iter_45_0, iter_45_1 in pairs(arg_45_0.buffData) do
+		if iter_45_1:IsEnd() then
+			arg_45_0.buffData[iter_45_1.id] = nil
 		end
 	end
 end
 
-function slot0.GetAttrBuffEffects(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetAttrBuffEffects(arg_46_0, arg_46_1)
+	local var_46_0 = {}
 
-	for slot6, slot7 in pairs(slot0.buffData) do
-		if slot7:IsAttrType() and slot7:IsId(slot1) then
-			table.insert(slot2, slot7)
+	for iter_46_0, iter_46_1 in pairs(arg_46_0.buffData) do
+		if iter_46_1:IsAttrType() and iter_46_1:IsId(arg_46_1) then
+			table.insert(var_46_0, iter_46_1)
 		end
 	end
 
-	return EducateBuff.GetBuffEffects(slot2)
+	return EducateBuff.GetBuffEffects(var_46_0)
 end
 
-function slot0.GetResBuffEffects(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetResBuffEffects(arg_47_0, arg_47_1)
+	local var_47_0 = {}
 
-	for slot6, slot7 in pairs(slot0.buffData) do
-		if slot7:IsResType() and slot7:IsId(slot1) then
-			table.insert(slot2, slot7)
+	for iter_47_0, iter_47_1 in pairs(arg_47_0.buffData) do
+		if iter_47_1:IsResType() and iter_47_1:IsId(arg_47_1) then
+			table.insert(var_47_0, iter_47_1)
 		end
 	end
 
-	return EducateBuff.GetBuffEffects(slot2)
+	return EducateBuff.GetBuffEffects(var_47_0)
 end
 
-function slot0.GetOptionById(slot0, slot1)
-	return slot0.siteOptionData[slot1]
+function var_0_0.GetOptionById(arg_48_0, arg_48_1)
+	return arg_48_0.siteOptionData[arg_48_1]
 end
 
-function slot0.UpdateOptionData(slot0, slot1)
-	slot0.siteOptionData[slot1.id] = slot1
+function var_0_0.UpdateOptionData(arg_49_0, arg_49_1)
+	arg_49_0.siteOptionData[arg_49_1.id] = arg_49_1
 
-	slot0:sendNotification(uv0.OPTION_UPDATED)
+	arg_49_0:sendNotification(var_0_0.OPTION_UPDATED)
 end
 
-function slot0.RefreshOptions(slot0)
-	slot1 = slot0:GetCurTime()
+function var_0_0.RefreshOptions(arg_50_0)
+	local var_50_0 = arg_50_0:GetCurTime()
 
-	for slot5, slot6 in pairs(slot0.siteOptionData) do
-		slot6:OnWeekUpdate(slot1)
+	for iter_50_0, iter_50_1 in pairs(arg_50_0.siteOptionData) do
+		iter_50_1:OnWeekUpdate(var_50_0)
 	end
 end
 
-function slot0.GetShowSiteIds(slot0)
-	return underscore.select(pg.child_site.all, function (slot0)
-		return pg.child_site[slot0].type == 1 and EducateHelper.IsSiteUnlock(slot0, uv0:IsFirstGame())
+function var_0_0.GetShowSiteIds(arg_51_0)
+	return underscore.select(pg.child_site.all, function(arg_52_0)
+		return pg.child_site[arg_52_0].type == 1 and EducateHelper.IsSiteUnlock(arg_52_0, arg_51_0:IsFirstGame())
 	end)
 end
 
-function slot0.GetOptionsBySiteId(slot0, slot1)
-	slot3 = slot0:GetCurTime()
-	slot5 = {}
+function var_0_0.GetOptionsBySiteId(arg_53_0, arg_53_1)
+	local var_53_0 = pg.child_site[arg_53_1].option
+	local var_53_1 = arg_53_0:GetCurTime()
+	local var_53_2 = {}
+	local var_53_3 = {}
 
-	underscore.each(pg.child_site[slot1].option, function (slot0)
-		if uv0.siteOptionData[slot0] and slot1:IsShow(uv1) then
-			if slot1:IsReplace() then
-				uv2[slot1:getConfig("replace")] = slot1
+	underscore.each(var_53_0, function(arg_54_0)
+		local var_54_0 = arg_53_0.siteOptionData[arg_54_0]
+
+		if var_54_0 and var_54_0:IsShow(var_53_1) then
+			if var_54_0:IsReplace() then
+				var_53_3[var_54_0:getConfig("replace")] = var_54_0
 			else
-				table.insert(uv3, slot1)
+				table.insert(var_53_2, var_54_0)
 			end
 		end
 	end)
-	underscore.each({}, function (slot0)
-		if uv0[slot0.id] then
-			table.removebyvalue(uv1, slot0)
-			table.insert(uv1, uv0[slot0.id])
+	underscore.each(var_53_2, function(arg_55_0)
+		if var_53_3[arg_55_0.id] then
+			table.removebyvalue(var_53_2, arg_55_0)
+			table.insert(var_53_2, var_53_3[arg_55_0.id])
 		end
 	end)
-	underscore.each(slot0.siteRandomOpts and slot0.siteRandomOpts[slot1] or {}, function (slot0)
-		if uv0.siteOptionData[slot0]:IsShow(uv1) then
-			table.insert(uv2, slot1)
+
+	local var_53_4 = arg_53_0.siteRandomOpts and arg_53_0.siteRandomOpts[arg_53_1] or {}
+
+	underscore.each(var_53_4, function(arg_56_0)
+		local var_56_0 = arg_53_0.siteOptionData[arg_56_0]
+
+		if var_56_0:IsShow(var_53_1) then
+			table.insert(var_53_2, var_56_0)
 		end
 	end)
-	table.sort(slot4, CompareFuncs({
-		function (slot0)
-			return slot0:getConfig("order")
+	table.sort(var_53_2, CompareFuncs({
+		function(arg_57_0)
+			return arg_57_0:getConfig("order")
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_58_0)
+			return arg_58_0.id
 		end
 	}))
 
-	return slot4
+	return var_53_2
 end
 
-function slot0.GetItemData(slot0)
-	return slot0.itemData
+function var_0_0.GetItemData(arg_59_0)
+	return arg_59_0.itemData
 end
 
-function slot0.GetItemList(slot0)
-	slot1 = {}
+function var_0_0.GetItemList(arg_60_0)
+	local var_60_0 = {}
 
-	for slot5, slot6 in pairs(slot0.itemData) do
-		table.insert(slot1, slot6)
+	for iter_60_0, iter_60_1 in pairs(arg_60_0.itemData) do
+		table.insert(var_60_0, iter_60_1)
 	end
 
-	return slot1
+	return var_60_0
 end
 
-function slot0.AddItem(slot0, slot1, slot2)
-	if slot0.itemData[slot1] then
-		slot0.itemData[slot1]:AddCount(slot2)
+function var_0_0.AddItem(arg_61_0, arg_61_1, arg_61_2)
+	if arg_61_0.itemData[arg_61_1] then
+		arg_61_0.itemData[arg_61_1]:AddCount(arg_61_2)
 	else
-		slot0.itemData[slot1] = EducateItem.New({
-			id = slot1,
-			num = slot2
+		arg_61_0.itemData[arg_61_1] = EducateItem.New({
+			id = arg_61_1,
+			num = arg_61_2
 		})
 	end
 
-	slot0:sendNotification(uv0.ITEM_ADDED)
+	arg_61_0:sendNotification(var_0_0.ITEM_ADDED)
 end
 
-function slot0.GetItemCntById(slot0, slot1)
-	return slot0.itemData[slot1] and slot0.itemData[slot1].count or 0
+function var_0_0.GetItemCntById(arg_62_0, arg_62_1)
+	return arg_62_0.itemData[arg_62_1] and arg_62_0.itemData[arg_62_1].count or 0
 end
 
-function slot0.GetPolaroidData(slot0)
-	return slot0.polaroidData
+function var_0_0.GetPolaroidData(arg_63_0)
+	return arg_63_0.polaroidData
 end
 
-function slot0.GetPolaroidList(slot0)
-	slot1 = {}
+function var_0_0.GetPolaroidList(arg_64_0)
+	local var_64_0 = {}
 
-	for slot5, slot6 in pairs(slot0.polaroidData) do
-		table.insert(slot1, slot6)
+	for iter_64_0, iter_64_1 in pairs(arg_64_0.polaroidData) do
+		table.insert(var_64_0, iter_64_1)
 	end
 
-	return slot1
+	return var_64_0
 end
 
-function slot0.GetPolaroidIdList(slot0)
-	slot1 = {}
+function var_0_0.GetPolaroidIdList(arg_65_0)
+	local var_65_0 = {}
 
-	for slot5, slot6 in pairs(slot0.polaroidData) do
-		table.insert(slot1, slot5)
+	for iter_65_0, iter_65_1 in pairs(arg_65_0.polaroidData) do
+		table.insert(var_65_0, iter_65_0)
 	end
 
-	return slot1
+	return var_65_0
 end
 
-function slot0.AddPolaroid(slot0, slot1)
-	if slot0.polaroidData[slot1] then
+function var_0_0.AddPolaroid(arg_66_0, arg_66_1)
+	if arg_66_0.polaroidData[arg_66_1] then
 		return
 	end
 
-	slot0.polaroidData[slot1] = EducatePolaroid.New({
-		id = slot1,
-		time = slot0:GetCurTime()
+	arg_66_0.polaroidData[arg_66_1] = EducatePolaroid.New({
+		id = arg_66_1,
+		time = arg_66_0:GetCurTime()
 	})
 
 	EducateTipHelper.SetNewTip(EducateTipHelper.NEW_POLAROID)
-	slot0:updateSecretaryIDs()
-	getProxy(SettingsProxy):UpdateEducateCharTip(Clone(slot0:GetSecretaryIDs()))
-	slot0:sendNotification(uv0.POLAROID_ADDED)
+
+	local var_66_0 = Clone(arg_66_0:GetSecretaryIDs())
+
+	arg_66_0:updateSecretaryIDs()
+	getProxy(SettingsProxy):UpdateEducateCharTip(var_66_0)
+	arg_66_0:sendNotification(var_0_0.POLAROID_ADDED)
 end
 
-function slot0.IsExistPolaroidByGroup(slot0, slot1)
-	return underscore.any(pg.child_polaroid.get_id_list_by_group[slot1], function (slot0)
-		return uv0.polaroidData[slot0]
+function var_0_0.IsExistPolaroidByGroup(arg_67_0, arg_67_1)
+	local var_67_0 = pg.child_polaroid.get_id_list_by_group[arg_67_1]
+
+	return underscore.any(var_67_0, function(arg_68_0)
+		return arg_67_0.polaroidData[arg_68_0]
 	end)
 end
 
-function slot0.CanGetPolaroidByGroup(slot0, slot1)
-	return underscore.any(pg.child_polaroid.get_id_list_by_group[slot1], function (slot0)
-		return uv0:CanGetPolaroidById(slot0)
+function var_0_0.CanGetPolaroidByGroup(arg_69_0, arg_69_1)
+	local var_69_0 = pg.child_polaroid.get_id_list_by_group[arg_69_1]
+
+	return underscore.any(var_69_0, function(arg_70_0)
+		return arg_69_0:CanGetPolaroidById(arg_70_0)
 	end)
 end
 
-function slot0.CanGetPolaroidById(slot0, slot1)
-	slot3 = slot0:GetPersonalityId()
+function var_0_0.CanGetPolaroidById(arg_71_0, arg_71_1)
+	local var_71_0 = arg_71_0.char:GetStage()
+	local var_71_1 = arg_71_0:GetPersonalityId()
+	local var_71_2 = pg.child_polaroid[arg_71_1]
 
-	if table.contains(pg.child_polaroid[slot1].stage, slot0.char:GetStage()) then
-		if slot4.xingge == "" then
+	if table.contains(var_71_2.stage, var_71_0) then
+		if var_71_2.xingge == "" then
 			return true
 		end
 
-		return table.contains(slot4.xingge, slot3)
+		return table.contains(var_71_2.xingge, var_71_1)
 	end
 
 	return false
 end
 
-function slot0.GetPolaroidGroupCnt(slot0)
-	slot1 = 0
-	slot2 = 0
+function var_0_0.GetPolaroidGroupCnt(arg_72_0)
+	local var_72_0 = 0
+	local var_72_1 = 0
 
-	for slot6, slot7 in pairs(pg.child_polaroid.get_id_list_by_group) do
-		if slot0:IsExistPolaroidByGroup(slot6) then
-			slot1 = slot1 + 1
+	for iter_72_0, iter_72_1 in pairs(pg.child_polaroid.get_id_list_by_group) do
+		if arg_72_0:IsExistPolaroidByGroup(iter_72_0) then
+			var_72_0 = var_72_0 + 1
 		end
 
-		slot2 = slot2 + 1
+		var_72_1 = var_72_1 + 1
 	end
 
-	return slot1, slot2
+	return var_72_0, var_72_1
 end
 
-function slot0.GetMemories(slot0)
-	return slot0.memories
+function var_0_0.GetMemories(arg_73_0)
+	return arg_73_0.memories
 end
 
-function slot0.AddMemory(slot0, slot1)
-	if table.contains(slot0.memories, slot1) then
+function var_0_0.AddMemory(arg_74_0, arg_74_1)
+	if table.contains(arg_74_0.memories, arg_74_1) then
 		return
 	end
 
-	table.insert(slot0.memories, slot1)
-	EducateTipHelper.SetNewTip(EducateTipHelper.NEW_MEMORY, slot1)
-	slot0:sendNotification(uv0.MEMORY_ADDED)
+	table.insert(arg_74_0.memories, arg_74_1)
+	EducateTipHelper.SetNewTip(EducateTipHelper.NEW_MEMORY, arg_74_1)
+	arg_74_0:sendNotification(var_0_0.MEMORY_ADDED)
 end
 
-function slot0.CheckGuide(slot0, slot1)
-	slot0:sendNotification(uv0.GUIDE_CHECK, {
-		view = slot1
+function var_0_0.CheckGuide(arg_75_0, arg_75_1)
+	arg_75_0:sendNotification(var_0_0.GUIDE_CHECK, {
+		view = arg_75_1
 	})
 end
 
-function slot0.MainAddLayer(slot0, slot1)
-	slot0:sendNotification(uv0.MAIN_SCENE_ADD_LAYER, slot1)
+function var_0_0.MainAddLayer(arg_76_0, arg_76_1)
+	arg_76_0:sendNotification(var_0_0.MAIN_SCENE_ADD_LAYER, arg_76_1)
 end
 
-function slot0.initUnlockSecretary(slot0, slot1)
-	slot0.isUnlockSecretary = slot1
-	slot0.unlockSecretaryTaskId = (function ()
-		for slot3, slot4 in ipairs(pg.secretary_special_ship.all) do
-			if pg.secretary_special_ship[slot4].unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_DEFAULT then
-				return pg.secretary_special_ship[slot4].unlock[1]
+function var_0_0.initUnlockSecretary(arg_77_0, arg_77_1)
+	arg_77_0.isUnlockSecretary = arg_77_1
+	arg_77_0.unlockSecretaryTaskId = (function()
+		for iter_78_0, iter_78_1 in ipairs(pg.secretary_special_ship.all) do
+			if pg.secretary_special_ship[iter_78_1].unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_DEFAULT then
+				return pg.secretary_special_ship[iter_78_1].unlock[1]
 			end
 		end
 	end)()
-	slot0.unlcokTipByPolaroidCnt = {}
+	arg_77_0.unlcokTipByPolaroidCnt = {}
 
-	for slot6, slot7 in ipairs(pg.secretary_special_ship.all) do
-		if pg.secretary_special_ship[slot7].unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_POLAROID and not table.contains(slot0.unlcokTipByPolaroidCnt, slot8.unlock[1]) then
-			table.insert(slot0.unlcokTipByPolaroidCnt, slot9)
+	for iter_77_0, iter_77_1 in ipairs(pg.secretary_special_ship.all) do
+		local var_77_0 = pg.secretary_special_ship[iter_77_1]
+
+		if var_77_0.unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_POLAROID then
+			local var_77_1 = var_77_0.unlock[1]
+
+			if not table.contains(arg_77_0.unlcokTipByPolaroidCnt, var_77_1) then
+				table.insert(arg_77_0.unlcokTipByPolaroidCnt, var_77_1)
+			end
 		end
 	end
 end
 
-function slot0.GetUnlockSecretaryTaskId(slot0)
-	return slot0.unlockSecretaryTaskId
+function var_0_0.GetUnlockSecretaryTaskId(arg_79_0)
+	return arg_79_0.unlockSecretaryTaskId
 end
 
-function slot0.SetSecretaryUnlock(slot0)
-	slot0.isUnlockSecretary = true
+function var_0_0.SetSecretaryUnlock(arg_80_0)
+	arg_80_0.isUnlockSecretary = true
 
-	slot0:updateSecretaryIDs()
+	arg_80_0:updateSecretaryIDs()
 end
 
-function slot0.CheckNewSecretaryTip(slot0)
-	if table.contains(slot0.unlcokTipByPolaroidCnt, slot0:GetPolaroidGroupCnt()) then
-		slot0:updateSecretaryIDs()
-		slot0:sendNotification(uv0.UNLCOK_NEW_SECRETARY_BY_CNT)
+function var_0_0.CheckNewSecretaryTip(arg_81_0)
+	local var_81_0 = arg_81_0:GetPolaroidGroupCnt()
+
+	if table.contains(arg_81_0.unlcokTipByPolaroidCnt, var_81_0) then
+		arg_81_0:updateSecretaryIDs()
+		arg_81_0:sendNotification(var_0_0.UNLCOK_NEW_SECRETARY_BY_CNT)
 
 		return true
 	end
@@ -616,18 +655,18 @@ function slot0.CheckNewSecretaryTip(slot0)
 	return false
 end
 
-function slot0.checkSecretaryID(slot0, slot1, slot2)
-	if slot2 == "or" then
-		for slot6, slot7 in ipairs(slot1) do
-			if table.contains(slot0.endings, slot7[1]) then
+function var_0_0.checkSecretaryID(arg_82_0, arg_82_1, arg_82_2)
+	if arg_82_2 == "or" then
+		for iter_82_0, iter_82_1 in ipairs(arg_82_1) do
+			if table.contains(arg_82_0.endings, iter_82_1[1]) then
 				return true
 			end
 		end
 
 		return false
-	elseif slot2 == "and" then
-		for slot6, slot7 in ipairs(slot1) do
-			if not table.contains(slot0.endings, slot7) then
+	elseif arg_82_2 == "and" then
+		for iter_82_2, iter_82_3 in ipairs(arg_82_1) do
+			if not table.contains(arg_82_0.endings, iter_82_3) then
 				return false
 			end
 
@@ -638,38 +677,40 @@ function slot0.checkSecretaryID(slot0, slot1, slot2)
 	return false
 end
 
-function slot0.updateSecretaryIDs(slot0)
-	if not slot0:IsUnlockSecretary() then
-		slot0.unlockSecretaryIds = {}
+function var_0_0.updateSecretaryIDs(arg_83_0)
+	if not arg_83_0:IsUnlockSecretary() then
+		arg_83_0.unlockSecretaryIds = {}
 
 		return
 	end
 
-	slot0.unlockSecretaryIds = {}
-	slot1 = #slot0:GetPolaroidIdList()
+	arg_83_0.unlockSecretaryIds = {}
 
-	for slot5, slot6 in ipairs(pg.secretary_special_ship.all) do
-		slot8 = pg.secretary_special_ship[slot6].unlock
+	local var_83_0 = #arg_83_0:GetPolaroidIdList()
 
-		switch(pg.secretary_special_ship[slot6].unlock_type, {
-			[EducateConst.SECRETARY_UNLCOK_TYPE_DEFAULT] = function ()
-				if uv0:IsUnlockSecretary() then
-					table.insert(uv0.unlockSecretaryIds, uv1)
+	for iter_83_0, iter_83_1 in ipairs(pg.secretary_special_ship.all) do
+		local var_83_1 = pg.secretary_special_ship[iter_83_1].unlock_type
+		local var_83_2 = pg.secretary_special_ship[iter_83_1].unlock
+
+		switch(var_83_1, {
+			[EducateConst.SECRETARY_UNLCOK_TYPE_DEFAULT] = function()
+				if arg_83_0:IsUnlockSecretary() then
+					table.insert(arg_83_0.unlockSecretaryIds, iter_83_1)
 				end
 			end,
-			[EducateConst.SECRETARY_UNLCOK_TYPE_POLAROID] = function ()
-				if uv0[1] and uv0[1] <= uv1 then
-					table.insert(uv2.unlockSecretaryIds, uv3)
+			[EducateConst.SECRETARY_UNLCOK_TYPE_POLAROID] = function()
+				if var_83_2[1] and var_83_0 >= var_83_2[1] then
+					table.insert(arg_83_0.unlockSecretaryIds, iter_83_1)
 				end
 			end,
-			[EducateConst.SECRETARY_UNLCOK_TYPE_ENDING] = function ()
-				if uv0[1] then
-					if type(uv0[1]) == "table" then
-						if uv1:checkSecretaryID(uv0, "or") then
-							table.insert(uv1.unlockSecretaryIds, uv2)
+			[EducateConst.SECRETARY_UNLCOK_TYPE_ENDING] = function()
+				if var_83_2[1] then
+					if type(var_83_2[1]) == "table" then
+						if arg_83_0:checkSecretaryID(var_83_2, "or") then
+							table.insert(arg_83_0.unlockSecretaryIds, iter_83_1)
 						end
-					elseif type(uv0[1]) == "number" and uv1:checkSecretaryID(uv0, "and") then
-						table.insert(uv1.unlockSecretaryIds, uv2)
+					elseif type(var_83_2[1]) == "number" and arg_83_0:checkSecretaryID(var_83_2, "and") then
+						table.insert(arg_83_0.unlockSecretaryIds, iter_83_1)
 					end
 				end
 			end
@@ -677,33 +718,34 @@ function slot0.updateSecretaryIDs(slot0)
 	end
 end
 
-function slot0.GetEducateGroupList(slot0)
-	slot1 = {}
+function var_0_0.GetEducateGroupList(arg_87_0)
+	local var_87_0 = {}
 
-	for slot5, slot6 in pairs(pg.secretary_special_ship.get_id_list_by_group) do
-		table.insert(slot1, EducateCharGroup.New(slot5))
+	for iter_87_0, iter_87_1 in pairs(pg.secretary_special_ship.get_id_list_by_group) do
+		table.insert(var_87_0, EducateCharGroup.New(iter_87_0))
 	end
 
-	return slot1
+	return var_87_0
 end
 
-function slot0.GetStoryInfo(slot0)
-	return slot0.char:GetPaintingName(), slot0.char:GetCallName(), slot0.char:GetBGName()
+function var_0_0.GetStoryInfo(arg_88_0)
+	return arg_88_0.char:GetPaintingName(), arg_88_0.char:GetCallName(), arg_88_0.char:GetBGName()
 end
 
-function slot0.GetSecretaryIDs(slot0)
-	return slot0.unlockSecretaryIds
+function var_0_0.GetSecretaryIDs(arg_89_0)
+	return arg_89_0.unlockSecretaryIds
 end
 
-function slot0.GetPolaroidCnt(slot0)
-	return #slot0:GetPolaroidIdList()
+function var_0_0.GetPolaroidCnt(arg_90_0)
+	return #arg_90_0:GetPolaroidIdList()
 end
 
-function slot0.IsUnlockSecretary(slot0)
-	return slot0.isUnlockSecretary
+function var_0_0.IsUnlockSecretary(arg_91_0)
+	return arg_91_0.isUnlockSecretary
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_92_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,7 +1,7 @@
-slot0 = class("MetaBossRankShip", import(".CheckCustomNameShip"))
+﻿local var_0_0 = class("MetaBossRankShip", import(".CheckCustomNameShip"))
 
-function slot0.IsOwner(slot0)
+function var_0_0.IsOwner(arg_1_0)
 	return false
 end
 
-return slot0
+return var_0_0

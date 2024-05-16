@@ -1,27 +1,27 @@
-slot0 = class("IconFrame", import(".AttireFrame"))
+﻿local var_0_0 = class("IconFrame", import(".AttireFrame"))
 
-function slot0.GetIcon(slot0)
-	return "IconFrame/" .. slot0
+function var_0_0.GetIcon(arg_1_0)
+	return "IconFrame/" .. arg_1_0
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.item_data_frame
 end
 
-function slot0.getType(slot0)
+function var_0_0.getType(arg_3_0)
 	return AttireConst.TYPE_ICON_FRAME
 end
 
-function slot0.getDropType(slot0)
+function var_0_0.getDropType(arg_4_0)
 	return DROP_TYPE_ICON_FRAME
 end
 
-function slot0.getPrefabName(slot0)
-	return slot0:getConfig("id")
+function var_0_0.getPrefabName(arg_5_0)
+	return arg_5_0:getConfig("id")
 end
 
-function slot0.getIcon(slot0)
-	return uv0.GetIcon(slot0:getPrefabName())
+function var_0_0.getIcon(arg_6_0)
+	return var_0_0.GetIcon(arg_6_0:getPrefabName())
 end
 
-return slot0
+return var_0_0

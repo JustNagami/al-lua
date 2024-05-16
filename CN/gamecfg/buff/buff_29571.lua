@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发特殊弹幕-美因茨I"
-	},
-	init_effect = "",
-	name = "特殊弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发特殊弹幕-美因茨I",
-	stack = 1,
-	id = 29571,
-	icon = 29570,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 29570
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发特殊弹幕-美因茨I"
+	},
+	init_effect = "",
+	name = "特殊弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发特殊弹幕-美因茨I",
+	stack = 1,
+	id = 29571,
+	icon = 29570,
+	last_effect = ""
 }

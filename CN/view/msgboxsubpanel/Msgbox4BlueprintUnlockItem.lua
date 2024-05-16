@@ -1,56 +1,61 @@
-slot0 = class("Msgbox4BlueprintUnlockItem", import(".MsgboxSubPanel"))
+﻿local var_0_0 = class("Msgbox4BlueprintUnlockItem", import(".MsgboxSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "Msgbox4BlueprintUnlockItem"
 end
 
-function slot0.OnRefresh(slot0, slot1)
-	rtf(slot0.viewParent._window).sizeDelta = Vector2(1010, 685)
-	slot2 = slot1.item
+function var_0_0.OnRefresh(arg_2_0, arg_2_1)
+	rtf(arg_2_0.viewParent._window).sizeDelta = Vector2(1010, 685)
 
-	updateDrop(slot0._tf:Find("IconTpl"), {
+	local var_2_0 = arg_2_1.item
+	local var_2_1 = arg_2_1.blueprints
+
+	updateDrop(arg_2_0._tf:Find("IconTpl"), {
 		type = DROP_TYPE_ITEM,
-		id = slot2.id
+		id = var_2_0.id
 	})
-	setText(slot0._tf:Find("content_unlock/title/bg/Text"), i18n("tech_select_tip1"))
-	setText(slot0._tf:Find("content_unlock/title/Text"), i18n("tech_select_tip2"))
+	setText(arg_2_0._tf:Find("content_unlock/title/bg/Text"), i18n("tech_select_tip1"))
+	setText(arg_2_0._tf:Find("content_unlock/title/Text"), i18n("tech_select_tip2"))
 
-	slot4 = slot0._tf:Find("content_unlock/list")
-	slot5 = UIItemList.New(slot4, slot4:GetChild(0))
+	local var_2_2 = arg_2_0._tf:Find("content_unlock/list")
+	local var_2_3 = UIItemList.New(var_2_2, var_2_2:GetChild(0))
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	var_2_3:make(function(arg_3_0, arg_3_1, arg_3_2)
+		arg_3_1 = arg_3_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			updateDrop(slot2:Find("IconTpl"), {
+		if arg_3_0 == UIItemList.EventUpdate then
+			updateDrop(arg_3_2:Find("IconTpl"), {
 				type = DROP_TYPE_SHIP,
-				id = ShipGroup.getDefaultShipConfig(uv0[slot1].id).id
+				id = ShipGroup.getDefaultShipConfig(var_2_1[arg_3_1].id).id
 			})
-			setActive(slot2:Find("IconTpl/mask"), uv0[slot1]:isUnlock())
-			setText(slot2:Find("IconTpl/mask/Text"), i18n("tech_select_tip3"))
+			setActive(arg_3_2:Find("IconTpl/mask"), var_2_1[arg_3_1]:isUnlock())
+			setText(arg_3_2:Find("IconTpl/mask/Text"), i18n("tech_select_tip3"))
 		end
 	end)
-	slot5:align(#slot1.blueprints)
-	setText(slot0._tf:Find("content_after/title/bg/Text"), i18n("tech_select_tip4"))
-	setText(slot0._tf:Find("content_after/title/Text"), i18n("tech_select_tip5"))
+	var_2_3:align(#var_2_1)
 
-	slot7 = slot0._tf:Find("content_after/list")
-	slot8 = UIItemList.New(slot7, slot7:GetChild(0))
+	local var_2_4 = var_2_0:getConfig("display_icon")
 
-	slot8:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	setText(arg_2_0._tf:Find("content_after/title/bg/Text"), i18n("tech_select_tip4"))
+	setText(arg_2_0._tf:Find("content_after/title/Text"), i18n("tech_select_tip5"))
 
-		if slot0 == UIItemList.EventUpdate then
-			slot3, slot4, slot5 = unpack(uv0[slot1])
+	local var_2_5 = arg_2_0._tf:Find("content_after/list")
+	local var_2_6 = UIItemList.New(var_2_5, var_2_5:GetChild(0))
 
-			updateDrop(slot2:Find("IconTpl"), {
-				type = slot3,
-				id = slot4,
-				count = slot5
+	var_2_6:make(function(arg_4_0, arg_4_1, arg_4_2)
+		arg_4_1 = arg_4_1 + 1
+
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0, var_4_1, var_4_2 = unpack(var_2_4[arg_4_1])
+
+			updateDrop(arg_4_2:Find("IconTpl"), {
+				type = var_4_0,
+				id = var_4_1,
+				count = var_4_2
 			})
 		end
 	end)
-	slot8:align(#slot2:getConfig("display_icon"))
+	var_2_6:align(#var_2_4)
 end
 
-return slot0
+return var_0_0

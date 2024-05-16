@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.furniture_init_data_template = {
 	[1002] = {
 		dir = 1,

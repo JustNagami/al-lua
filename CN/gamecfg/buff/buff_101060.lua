@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "战斗开始115秒后触发，发射超强弹幕，每场战斗只能触发1次",
-	name = "胜利刺穿",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "战斗开始115秒后触发，发射超强弹幕，每场战斗只能触发1次",
-	stack = 1,
-	id = 101060,
-	icon = 101060,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -42,5 +21,26 @@ return {
 				delay = 125
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "战斗开始115秒后触发，发射超强弹幕，每场战斗只能触发1次",
+	name = "胜利刺穿",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "战斗开始115秒后触发，发射超强弹幕，每场战斗只能触发1次",
+	stack = 1,
+	id = 101060,
+	icon = 101060,
+	last_effect = ""
 }

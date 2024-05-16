@@ -1,134 +1,140 @@
-slot0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
-slot0.ON_DESTROY = "SpWeaponInfoMediator:ON_DESTROY"
-slot0.ON_EQUIP = "SpWeaponInfoMediator:ON_EQUIP"
-slot0.ON_INTENSIFY = "SpWeaponInfoMediator.ON_INTENSIFY"
-slot0.ON_CHANGE = "SpWeaponInfoMediator.ON_CHANGE"
-slot0.ON_UNEQUIP = "SpWeaponInfoMediator:ON_UNEQUIP"
-slot0.ON_MOVE = "SpWeaponInfoMediator:ON_MOVE"
-slot0.ON_MODIFY = "SpWeaponInfoMediator:ON_MODIFY"
+﻿local var_0_0 = class("SpWeaponInfoMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
+var_0_0.ON_DESTROY = "SpWeaponInfoMediator:ON_DESTROY"
+var_0_0.ON_EQUIP = "SpWeaponInfoMediator:ON_EQUIP"
+var_0_0.ON_INTENSIFY = "SpWeaponInfoMediator.ON_INTENSIFY"
+var_0_0.ON_CHANGE = "SpWeaponInfoMediator.ON_CHANGE"
+var_0_0.ON_UNEQUIP = "SpWeaponInfoMediator:ON_UNEQUIP"
+var_0_0.ON_MOVE = "SpWeaponInfoMediator:ON_MOVE"
+var_0_0.ON_MODIFY = "SpWeaponInfoMediator:ON_MODIFY"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 
 	if getProxy(ContextProxy):getCurrentContext().scene == SCENE.SPWEAPON_STOREHOUSE then
-		slot0.viewComponent.fromEquipmentView = true
+		arg_1_0.viewComponent.fromEquipmentView = true
 	end
 
-	slot4 = getProxy(BayProxy):getShipById()
-	slot5, slot6 = unpack(slot0.contextData.shipVO and {
-		slot0.contextData.shipVO:GetSpWeapon(),
-		slot0.contextData.shipVO
+	local var_1_0 = getProxy(BayProxy):getShipById()
+	local var_1_1, var_1_2 = unpack(arg_1_0.contextData.shipVO and {
+		arg_1_0.contextData.shipVO:GetSpWeapon(),
+		arg_1_0.contextData.shipVO
 	} or {
-		EquipmentProxy.StaticGetSpWeapon(slot0.contextData.shipId, slot0.contextData.spWeaponUid)
+		EquipmentProxy.StaticGetSpWeapon(arg_1_0.contextData.shipId, arg_1_0.contextData.spWeaponUid)
 	})
 
-	if slot0.contextData.spWeaponConfigId then
-		slot5 = SpWeapon.New({
-			id = slot0.contextData.spWeaponConfigId
+	if arg_1_0.contextData.spWeaponConfigId then
+		var_1_1 = SpWeapon.New({
+			id = arg_1_0.contextData.spWeaponConfigId
 		})
 	end
 
-	slot7, slot8 = EquipmentProxy.StaticGetSpWeapon(slot0.contextData.oldShipId, slot0.contextData.oldSpWeaponUid)
+	local var_1_3, var_1_4 = EquipmentProxy.StaticGetSpWeapon(arg_1_0.contextData.oldShipId, arg_1_0.contextData.oldSpWeaponUid)
 
-	slot0.viewComponent:setShip(slot6, slot8)
-	slot0.viewComponent:setEquipment(slot5, slot7)
-	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
+	arg_1_0.viewComponent:setShip(var_1_2, var_1_4)
+	arg_1_0.viewComponent:setEquipment(var_1_1, var_1_3)
+
+	local var_1_5 = getProxy(PlayerProxy):getData()
+
+	arg_1_0.viewComponent:setPlayer(var_1_5)
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(uv0.ON_EQUIP, function (slot0)
-		if uv0.contextData.oldShipId then
-			uv0:sendNotification(GAME.EQUIP_SPWEAPON_FROM_SHIP, {
-				spWeaponUid = uv0.contextData.oldSpWeaponUid,
-				oldShipId = uv0.contextData.oldShipId,
-				shipId = uv0.contextData.shipId
+function var_0_0.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.ON_EQUIP, function(arg_3_0)
+		if arg_2_0.contextData.oldShipId then
+			arg_2_0:sendNotification(GAME.EQUIP_SPWEAPON_FROM_SHIP, {
+				spWeaponUid = arg_2_0.contextData.oldSpWeaponUid,
+				oldShipId = arg_2_0.contextData.oldShipId,
+				shipId = arg_2_0.contextData.shipId
 			})
 		else
-			uv0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-				spWeaponUid = uv0.contextData.oldSpWeaponUid,
-				shipId = uv0.contextData.shipId
+			arg_2_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+				spWeaponUid = arg_2_0.contextData.oldSpWeaponUid,
+				shipId = arg_2_0.contextData.shipId
 			})
 		end
 	end)
-	slot0:bind(uv0.ON_UNEQUIP, function (slot0)
-		uv0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-			shipId = uv0.contextData.shipId
+	arg_2_0:bind(var_0_0.ON_UNEQUIP, function(arg_4_0)
+		arg_2_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+			shipId = arg_2_0.contextData.shipId
 		})
-		uv0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg_2_0.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
-	slot0:bind(uv0.ON_MODIFY, function (slot0)
-		uv0:addSubLayers(Context.New({
+	arg_2_0:bind(var_0_0.ON_MODIFY, function(arg_5_0)
+		arg_2_0:addSubLayers(Context.New({
 			mediator = SpWeaponModifyMediator,
 			viewComponent = SpWeaponModifyLayer,
 			data = {
-				spWeaponUid = uv0.contextData.spWeaponUid,
-				shipId = uv0.contextData.shipId
+				spWeaponUid = arg_2_0.contextData.spWeaponUid,
+				shipId = arg_2_0.contextData.shipId
 			}
 		}), true)
-		uv0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg_2_0.viewComponent:emit(BaseUI.ON_CLOSE)
 	end)
-	slot0:bind(uv0.ON_INTENSIFY, function (slot0)
-		if getProxy(BayProxy):getShipById(uv0.contextData.shipId) then
-			slot3, slot4 = ShipStatus.ShipStatusCheck("onModify", slot2)
+	arg_2_0:bind(var_0_0.ON_INTENSIFY, function(arg_6_0)
+		local var_6_0 = getProxy(BayProxy):getShipById(arg_2_0.contextData.shipId)
 
-			if not slot3 then
-				pg.TipsMgr.GetInstance():ShowTips(slot4)
+		if var_6_0 then
+			local var_6_1, var_6_2 = ShipStatus.ShipStatusCheck("onModify", var_6_0)
+
+			if not var_6_1 then
+				pg.TipsMgr.GetInstance():ShowTips(var_6_2)
 
 				return
 			end
 		end
 
-		slot3 = uv0
-
-		slot3:addSubLayers(Context.New({
+		arg_2_0:addSubLayers(Context.New({
 			mediator = SpWeaponUpgradeMediator,
 			viewComponent = SpWeaponUpgradeLayer,
 			data = {
-				spWeaponUid = uv0.contextData.spWeaponUid,
-				shipId = uv0.contextData.shipId
+				spWeaponUid = arg_2_0.contextData.spWeaponUid,
+				shipId = arg_2_0.contextData.shipId
 			}
-		}), true, function ()
-			uv0.viewComponent:emit(BaseUI.ON_CLOSE)
+		}), true, function()
+			arg_2_0.viewComponent:emit(BaseUI.ON_CLOSE)
 		end)
 	end)
-	slot0:bind(uv0.ON_CHANGE, function (slot0)
-		slot3, slot4 = ShipStatus.ShipStatusCheck("onModify", getProxy(BayProxy):getShipById(uv0.contextData.shipId))
+	arg_2_0:bind(var_0_0.ON_CHANGE, function(arg_8_0)
+		local var_8_0 = getProxy(BayProxy):getShipById(arg_2_0.contextData.shipId)
+		local var_8_1, var_8_2 = ShipStatus.ShipStatusCheck("onModify", var_8_0)
 
-		if not slot3 then
-			pg.TipsMgr.GetInstance():ShowTips(slot4)
+		if not var_8_1 then
+			pg.TipsMgr.GetInstance():ShowTips(var_8_2)
 
 			return
 		end
 
-		uv0.viewComponent:emit(BaseUI.ON_CLOSE)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SPWEAPON_STOREHOUSE, {
+		arg_2_0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg_2_0:sendNotification(GAME.GO_SCENE, SCENE.SPWEAPON_STOREHOUSE, {
 			lock = true,
-			shipId = uv0.contextData.shipId,
+			shipId = arg_2_0.contextData.shipId,
 			warp = StoreHouseConst.WARP_TO_WEAPON,
 			mode = StoreHouseConst.EQUIPMENT
 		})
 	end)
-	slot0:bind(uv0.ON_MOVE, function (slot0, slot1)
-		uv0.viewComponent:emit(BaseUI.ON_CLOSE)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+	arg_2_0:bind(var_0_0.ON_MOVE, function(arg_9_0, arg_9_1)
+		arg_2_0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg_2_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 			page = 2,
-			shipId = slot1
+			shipId = arg_9_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_10_0)
 	return {
 		GAME.EQUIP_SPWEAPON_TO_SHIP_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1:getName()
+	local var_11_1 = arg_11_1:getBody()
 
-	if slot1:getName() == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_CLOSE)
+	if var_11_0 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
+		arg_11_0.viewComponent:emit(BaseUI.ON_CLOSE)
 	end
 end
 
-return slot0
+return var_0_0

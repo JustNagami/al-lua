@@ -1,43 +1,47 @@
-slot0 = class("SwichSkinMediator", import("..base.ContextMediator"))
-slot0.CHANGE_SKIN = "SwichSkinMediator:CHANGE_SKIN"
-slot0.BUY_ITEM = "SwichSkinMediator:BUY_ITEM"
-slot0.UPDATE_SKINCONFIG = "SwichSkinMediator:UPDATE_SKINCONFIG"
-slot0.BUY_ITEM_BY_ACT = "SwichSkinMediator:BUY_ITEM_BY_ACT"
+﻿local var_0_0 = class("SwichSkinMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.shipVO = slot0.contextData.shipVO
+var_0_0.CHANGE_SKIN = "SwichSkinMediator:CHANGE_SKIN"
+var_0_0.BUY_ITEM = "SwichSkinMediator:BUY_ITEM"
+var_0_0.UPDATE_SKINCONFIG = "SwichSkinMediator:UPDATE_SKINCONFIG"
+var_0_0.BUY_ITEM_BY_ACT = "SwichSkinMediator:BUY_ITEM_BY_ACT"
 
-	if slot0.shipVO then
-		slot0.viewComponent:setShip(slot0.shipVO)
-		slot0.viewComponent:setSkinList(getProxy(ShipSkinProxy):getSkinList())
+function var_0_0.register(arg_1_0)
+	arg_1_0.shipVO = arg_1_0.contextData.shipVO
+
+	if arg_1_0.shipVO then
+		arg_1_0.viewComponent:setShip(arg_1_0.shipVO)
+
+		local var_1_0 = getProxy(ShipSkinProxy):getSkinList()
+
+		arg_1_0.viewComponent:setSkinList(var_1_0)
 	end
 
-	slot0:bind(uv0.BUY_ITEM_BY_ACT, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
-			shopId = slot1,
-			cnt = slot2
+	arg_1_0:bind(var_0_0.BUY_ITEM_BY_ACT, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
+			shopId = arg_2_1,
+			cnt = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.CHANGE_SKIN, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SET_SHIP_SKIN, {
-			shipId = slot1,
-			skinId = slot2
+	arg_1_0:bind(var_0_0.CHANGE_SKIN, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.SET_SHIP_SKIN, {
+			shipId = arg_3_1,
+			skinId = arg_3_2
 		})
 	end)
-	slot0:bind(uv0.BUY_ITEM, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SKIN_SHOPPIGN, {
-			id = slot1,
-			count = slot2
+	arg_1_0:bind(var_0_0.BUY_ITEM, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.SKIN_SHOPPIGN, {
+			id = arg_4_1,
+			count = arg_4_2
 		})
 	end)
-	slot0:bind(uv0.UPDATE_SKINCONFIG, function (slot0, slot1)
-		uv0:sendNotification(GAME.UPDATE_SKINCONFIG, {
-			skinId = slot1
+	arg_1_0:bind(var_0_0.UPDATE_SKINCONFIG, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.UPDATE_SKINCONFIG, {
+			skinId = arg_5_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_6_0)
 	return {
 		ShipSkinProxy.SHIP_SKINS_UPDATE,
 		GAME.SKIN_SHOPPIGN_DONE,
@@ -46,27 +50,35 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-	if slot1:getName() == GAME.SKIN_SHOPPIGN_DONE or slot2 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		if pg.shop_template[slot3.id] and slot4.genre == ShopArgs.SkinShop then
-			slot0:addSubLayers(Context.New({
+	if var_7_0 == GAME.SKIN_SHOPPIGN_DONE or var_7_0 == GAME.SKIN_COUPON_SHOPPING_DONE then
+		local var_7_2 = pg.shop_template[var_7_1.id]
+
+		if var_7_2 and var_7_2.genre == ShopArgs.SkinShop then
+			arg_7_0:addSubLayers(Context.New({
 				mediator = NewSkinMediator,
 				viewComponent = NewSkinLayer,
 				data = {
-					skinId = slot4.effect_args[1]
+					skinId = var_7_2.effect_args[1]
 				}
 			}))
 		end
-	elseif slot2 == ShipSkinProxy.SHIP_SKINS_UPDATE then
-		slot0.viewComponent:setSkinList(getProxy(ShipSkinProxy):getSkinList())
-		slot0.viewComponent:openSelectSkinPanel()
-	elseif slot2 == BayProxy.SHIP_UPDATED and slot3.id == slot0.shipVO.id then
-		slot0.viewComponent:setShip(slot3)
-		slot0.viewComponent:setSkinList(getProxy(ShipSkinProxy):getSkinList())
-		slot0.viewComponent:openSelectSkinPanel()
+	elseif var_7_0 == ShipSkinProxy.SHIP_SKINS_UPDATE then
+		local var_7_3 = getProxy(ShipSkinProxy):getSkinList()
+
+		arg_7_0.viewComponent:setSkinList(var_7_3)
+		arg_7_0.viewComponent:openSelectSkinPanel()
+	elseif var_7_0 == BayProxy.SHIP_UPDATED and var_7_1.id == arg_7_0.shipVO.id then
+		arg_7_0.viewComponent:setShip(var_7_1)
+
+		local var_7_4 = getProxy(ShipSkinProxy):getSkinList()
+
+		arg_7_0.viewComponent:setSkinList(var_7_4)
+		arg_7_0.viewComponent:openSelectSkinPanel()
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,146 +1,149 @@
-slot0 = class("UserProxy", import(".NetProxy"))
+﻿local var_0_0 = class("UserProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.userIsLogined = false
-	slot0.gateways = {}
-	slot0.canSwitchGateway = false
+function var_0_0.register(arg_1_0)
+	arg_1_0.userIsLogined = false
+	arg_1_0.gateways = {}
+	arg_1_0.canSwitchGateway = false
 end
 
-function slot0.setLastLogin(slot0, slot1)
-	assert(isa(slot1, User), "should be an instance of User")
+function var_0_0.setLastLogin(arg_2_0, arg_2_1)
+	assert(isa(arg_2_1, User), "should be an instance of User")
 
-	if slot1.type == 1 then
+	if arg_2_1.type == 1 then
 		PlayerPrefs.SetString("user.type", "1")
-		PlayerPrefs.SetString("user.arg1", slot1.arg1)
-		PlayerPrefs.SetString("user.arg2", slot1.arg2)
-		PlayerPrefs.SetString("user.arg3", slot1.arg3)
-	elseif slot1.type == 2 then
+		PlayerPrefs.SetString("user.arg1", arg_2_1.arg1)
+		PlayerPrefs.SetString("user.arg2", arg_2_1.arg2)
+		PlayerPrefs.SetString("user.arg3", arg_2_1.arg3)
+	elseif arg_2_1.type == 2 then
 		PlayerPrefs.SetString("user.type", "1")
 		PlayerPrefs.SetString("user.arg1", "yongshi")
-		PlayerPrefs.SetString("user.arg2", slot1.arg1)
-		PlayerPrefs.SetString("user.arg3", slot1.token)
-	elseif slot1.type == 3 then
+		PlayerPrefs.SetString("user.arg2", arg_2_1.arg1)
+		PlayerPrefs.SetString("user.arg3", arg_2_1.token)
+	elseif arg_2_1.type == 3 then
 		PlayerPrefs.SetString("user.type", "3")
-		PlayerPrefs.SetString("user.arg1", slot1.arg1)
+		PlayerPrefs.SetString("user.arg1", arg_2_1.arg1)
 		PlayerPrefs.SetString("user.arg2", "")
 		PlayerPrefs.SetString("user.arg3", "")
-		PlayerPrefs.SetString("guest_uuid", slot1.arg1)
+		PlayerPrefs.SetString("guest_uuid", arg_2_1.arg1)
 	end
 
 	PlayerPrefs.Save()
 
-	slot0.data = slot1:clone()
+	arg_2_0.data = arg_2_1:clone()
 
-	slot0.data:display("logged in")
+	arg_2_0.data:display("logged in")
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		slot0:clearTranscode()
+		arg_2_0:clearTranscode()
 	end
 end
 
-function slot0.getLastLoginUser()
-	slot0 = tonumber(PlayerPrefs.GetString("user.type"))
-	slot2 = PlayerPrefs.GetString("user.arg2")
-	slot3 = PlayerPrefs.GetString("user.arg3")
+function var_0_0.getLastLoginUser()
+	local var_3_0 = tonumber(PlayerPrefs.GetString("user.type"))
+	local var_3_1 = PlayerPrefs.GetString("user.arg1")
+	local var_3_2 = PlayerPrefs.GetString("user.arg2")
+	local var_3_3 = PlayerPrefs.GetString("user.arg3")
 
-	print("last login:", slot0, " arg1:", PlayerPrefs.GetString("user.arg1"))
+	print("last login:", var_3_0, " arg1:", var_3_1)
 
-	if slot0 ~= "" and slot1 ~= "" and slot2 ~= "" then
+	if var_3_0 ~= "" and var_3_1 ~= "" and var_3_2 ~= "" then
 		return User.New({
-			type = slot0,
-			arg1 = slot1,
-			arg2 = slot2,
-			arg3 = slot3
+			type = var_3_0,
+			arg1 = var_3_1,
+			arg2 = var_3_2,
+			arg3 = var_3_3
 		})
 	end
 
 	return nil
 end
 
-function slot0.saveTranscode(slot0, slot1)
-	PlayerPrefs.SetString("transcode", slot1)
+function var_0_0.saveTranscode(arg_4_0, arg_4_1)
+	PlayerPrefs.SetString("transcode", arg_4_1)
 	PlayerPrefs.Save()
 end
 
-function slot0.getTranscode(slot0)
-	if PlayerPrefs.GetString("transcode") then
-		return slot1
+function var_0_0.getTranscode(arg_5_0)
+	local var_5_0 = PlayerPrefs.GetString("transcode")
+
+	if var_5_0 then
+		return var_5_0
 	end
 
 	return ""
 end
 
-function slot0.clearTranscode(slot0)
+function var_0_0.clearTranscode(arg_6_0)
 	PlayerPrefs.DeleteKey("transcode")
 end
 
-function slot0.SetLoginedFlag(slot0, slot1)
-	slot0.userIsLogined = slot1
+function var_0_0.SetLoginedFlag(arg_7_0, arg_7_1)
+	arg_7_0.userIsLogined = arg_7_1
 end
 
-function slot0.GetLoginedFlag(slot0)
-	return slot0.userIsLogined
+function var_0_0.GetLoginedFlag(arg_8_0)
+	return arg_8_0.userIsLogined
 end
 
-slot1 = "#cacheGatewayFlag#"
+local var_0_1 = "#cacheGatewayFlag#"
 
-function slot0.SetDefaultGateway(slot0)
-	if not slot0.gateways[PLATFORM] then
-		slot0.gateways[PLATFORM] = GatewayInfo.New(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, NetConst.PROXY_GATEWAY_HOST, NetConst.PROXY_GATEWAY_PORT)
+function var_0_0.SetDefaultGateway(arg_9_0)
+	if not arg_9_0.gateways[PLATFORM] then
+		arg_9_0.gateways[PLATFORM] = GatewayInfo.New(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, NetConst.PROXY_GATEWAY_HOST, NetConst.PROXY_GATEWAY_PORT)
 	end
 end
 
-function slot0.ShouldSwitchGateway(slot0, slot1, slot2)
-	return slot0:GetCacheGatewayFlag(slot2) ~= slot1
+function var_0_0.ShouldSwitchGateway(arg_10_0, arg_10_1, arg_10_2)
+	return arg_10_0:GetCacheGatewayFlag(arg_10_2) ~= arg_10_1
 end
 
-function slot0.GetGateWayByPlatform(slot0, slot1)
-	return slot0.gateways[slot1]
+function var_0_0.GetGateWayByPlatform(arg_11_0, arg_11_1)
+	return arg_11_0.gateways[arg_11_1]
 end
 
-function slot0.SetGatewayForPlatform(slot0, slot1, slot2)
-	slot0.gateways[slot1] = slot2
+function var_0_0.SetGatewayForPlatform(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0.gateways[arg_12_1] = arg_12_2
 end
 
-function slot0.GetCacheGatewayFlag(slot0, slot1)
-	if not slot0.cachePlatform then
-		slot0.cachePlatform = PlayerPrefs.GetInt(uv0 .. slot1, PLATFORM)
+function var_0_0.GetCacheGatewayFlag(arg_13_0, arg_13_1)
+	if not arg_13_0.cachePlatform then
+		arg_13_0.cachePlatform = PlayerPrefs.GetInt(var_0_1 .. arg_13_1, PLATFORM)
 	end
 
-	return slot0.cachePlatform
+	return arg_13_0.cachePlatform
 end
 
-function slot0.GetCacheGatewayInServerLogined(slot0)
-	return slot0.cachePlatform or PLATFORM
+function var_0_0.GetCacheGatewayInServerLogined(arg_14_0)
+	return arg_14_0.cachePlatform or PLATFORM
 end
 
-function slot0.SetCacheGatewayFlag(slot0, slot1)
-	if slot0.cachePlatform ~= slot1 then
-		slot0.cachePlatform = slot1
+function var_0_0.SetCacheGatewayFlag(arg_15_0, arg_15_1)
+	if arg_15_0.cachePlatform ~= arg_15_1 then
+		arg_15_0.cachePlatform = arg_15_1
 	end
 end
 
-function slot0.SaveCacheGatewayFlag(slot0, slot1)
-	if not slot0.canSwitchGateway then
+function var_0_0.SaveCacheGatewayFlag(arg_16_0, arg_16_1)
+	if not arg_16_0.canSwitchGateway then
 		return
 	end
 
-	if PlayerPrefs.GetInt(uv0 .. slot1, PLATFORM) ~= slot0.cachePlatform then
-		PlayerPrefs.SetInt(uv0 .. slot1, slot0.cachePlatform)
+	if PlayerPrefs.GetInt(var_0_1 .. arg_16_1, PLATFORM) ~= arg_16_0.cachePlatform then
+		PlayerPrefs.SetInt(var_0_1 .. arg_16_1, arg_16_0.cachePlatform)
 		PlayerPrefs.Save()
 	end
 end
 
-function slot0.GetReversePlatform(slot0)
-	return slot0.cachePlatform == PLATFORM_IPHONEPLAYER and PLATFORM_ANDROID or PLATFORM_IPHONEPLAYER
+function var_0_0.GetReversePlatform(arg_17_0)
+	return arg_17_0.cachePlatform == PLATFORM_IPHONEPLAYER and PLATFORM_ANDROID or PLATFORM_IPHONEPLAYER
 end
 
-function slot0.ActiveGatewaySwitcher(slot0)
-	slot0.canSwitchGateway = true
+function var_0_0.ActiveGatewaySwitcher(arg_18_0)
+	arg_18_0.canSwitchGateway = true
 end
 
-function slot0.ShowGatewaySwitcher(slot0)
-	return slot0.canSwitchGateway
+function var_0_0.ShowGatewaySwitcher(arg_19_0)
+	return arg_19_0.canSwitchGateway
 end
 
-return slot0
+return var_0_0

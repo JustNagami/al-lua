@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 10,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 108264,
-	icon = 108260,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			id = 1,
@@ -45,10 +25,10 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(2, 1.5, 0.5)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -63,5 +43,25 @@ return {
 				shieldBuffID = 108264
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 10,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 108264,
+	icon = 108260,
+	last_effect = ""
 }

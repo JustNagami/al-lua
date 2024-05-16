@@ -1,31 +1,31 @@
-slot0 = class("MainForcePlayerNameModificationSequence")
+﻿local var_0_0 = class("MainForcePlayerNameModificationSequence")
 
-function slot0.Execute(slot0, slot1)
+function var_0_0.Execute(arg_1_0, arg_1_1)
 	if getProxy(PlayerProxy):getRawData():WhetherServerModifiesName() then
-		slot0:ShowModityPlayerNameWindow(slot1)
+		arg_1_0:ShowModityPlayerNameWindow(arg_1_1)
 	else
-		slot1()
+		arg_1_1()
 	end
 end
 
-function slot0.ShowModityPlayerNameWindow(slot0, slot1)
-	slot0.renameWindow = slot0.renameWindow or ForcePlayerNameModificationPage.New(pg.UIMgr.GetInstance().OverlayMain)
+function var_0_0.ShowModityPlayerNameWindow(arg_2_0, arg_2_1)
+	arg_2_0.renameWindow = arg_2_0.renameWindow or ForcePlayerNameModificationPage.New(pg.UIMgr.GetInstance().OverlayMain)
 
-	slot0.renameWindow:ExecuteAction("Show", function ()
-		uv0:Clear()
+	arg_2_0.renameWindow:ExecuteAction("Show", function()
+		arg_2_0:Clear()
 	end)
 end
 
-function slot0.Clear(slot0)
-	if slot0.renameWindow then
-		slot0.renameWindow:Destroy()
+function var_0_0.Clear(arg_4_0)
+	if arg_4_0.renameWindow then
+		arg_4_0.renameWindow:Destroy()
 
-		slot0.renameWindow = nil
+		arg_4_0.renameWindow = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_5_0)
+	arg_5_0:Clear()
 end
 
-return slot0
+return var_0_0

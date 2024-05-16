@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffNewWeapon",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				weapon_id = 160111
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -198,17 +210,5 @@ return {
 	stack = 1,
 	id = 109041,
 	icon = 109040,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffNewWeapon",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				weapon_id = 160111
-			}
-		}
-	}
+	last_effect = ""
 }

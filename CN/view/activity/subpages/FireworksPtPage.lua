@@ -1,160 +1,174 @@
-slot0 = class("FireworksPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("FireworksPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.fireworkNameText = slot0:findTF("firework_text", slot0.bg)
-	slot0.fireworkNumText = slot0:findTF("firework_text/num_text", slot0.bg)
-	slot0.ptText = slot0:findTF("pt_text", slot0.bg)
-	slot0.fireBtn = slot0:findTF("fire_btn", slot0.bg)
-	slot0.fireworkPanel = slot0:findTF("frame", slot0.bg)
-	slot0.dots = {
-		slot0:findTF("dots/1", slot0.fireworkPanel),
-		slot0:findTF("dots/2", slot0.fireworkPanel),
-		slot0:findTF("dots/3", slot0.fireworkPanel)
+	arg_1_0.fireworkNameText = arg_1_0:findTF("firework_text", arg_1_0.bg)
+	arg_1_0.fireworkNumText = arg_1_0:findTF("firework_text/num_text", arg_1_0.bg)
+	arg_1_0.ptText = arg_1_0:findTF("pt_text", arg_1_0.bg)
+	arg_1_0.fireBtn = arg_1_0:findTF("fire_btn", arg_1_0.bg)
+	arg_1_0.fireworkPanel = arg_1_0:findTF("frame", arg_1_0.bg)
+	arg_1_0.dots = {
+		arg_1_0:findTF("dots/1", arg_1_0.fireworkPanel),
+		arg_1_0:findTF("dots/2", arg_1_0.fireworkPanel),
+		arg_1_0:findTF("dots/3", arg_1_0.fireworkPanel)
 	}
-	slot0.fireworkPages = {
-		slot0:findTF("content/1", slot0.fireworkPanel),
-		slot0:findTF("content/2", slot0.fireworkPanel),
-		slot0:findTF("content/3", slot0.fireworkPanel)
+	arg_1_0.fireworkPages = {
+		arg_1_0:findTF("content/1", arg_1_0.fireworkPanel),
+		arg_1_0:findTF("content/2", arg_1_0.fireworkPanel),
+		arg_1_0:findTF("content/3", arg_1_0.fireworkPanel)
 	}
-	slot0.nextPageBtn = slot0:findTF("right_btn", slot0.fireworkPanel)
-	slot0.lastPageBtn = slot0:findTF("left_btn", slot0.fireworkPanel)
+	arg_1_0.nextPageBtn = arg_1_0:findTF("right_btn", arg_1_0.fireworkPanel)
+	arg_1_0.lastPageBtn = arg_1_0:findTF("left_btn", arg_1_0.fireworkPanel)
 end
 
-function slot0.OnDataSetting(slot0)
-	uv0.super.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_2_0)
+	var_0_0.super.OnDataSetting(arg_2_0)
 
-	slot0.fireworkActID = slot0.activity:getConfig("config_client").fireworkActID
-	slot1 = pg.activity_template[slot0.fireworkActID].config_data
-	slot0.ptID = slot1[2][1]
-	slot0.ptConsume = slot1[2][2]
-	slot0.fireworkIds = slot1[3]
+	arg_2_0.fireworkActID = arg_2_0.activity:getConfig("config_client").fireworkActID
+
+	local var_2_0 = pg.activity_template[arg_2_0.fireworkActID].config_data
+
+	arg_2_0.ptID = var_2_0[2][1]
+	arg_2_0.ptConsume = var_2_0[2][2]
+	arg_2_0.fireworkIds = var_2_0[3]
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.fireBtn, function ()
+function var_0_0.OnFirstFlush(arg_3_0)
+	var_0_0.super.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.fireBtn, function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SPRING_FESTIVAL_BACKHILL_2023, {
 			openFireworkLayer = true
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.nextPageBtn, function ()
-		uv0:UpdateFrieworkPanel(uv0.pageIndex + 1)
+	onButton(arg_3_0, arg_3_0.nextPageBtn, function()
+		arg_3_0:UpdateFrieworkPanel(arg_3_0.pageIndex + 1)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.lastPageBtn, function ()
-		uv0:UpdateFrieworkPanel(uv0.pageIndex - 1)
+	onButton(arg_3_0, arg_3_0.lastPageBtn, function()
+		arg_3_0:UpdateFrieworkPanel(arg_3_0.pageIndex - 1)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		arg_3_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	setText(slot0.fireworkNameText, i18n("activity_yanhua_tip1"))
-	slot0:UpdataPageIndex()
+	setText(arg_3_0.fireworkNameText, i18n("activity_yanhua_tip1"))
+	arg_3_0:UpdataPageIndex()
 end
 
-function slot0.UpdataPageIndex(slot0)
-	slot0.fireworkAct = getProxy(ActivityProxy):getActivityById(slot0.fireworkActID)
+function var_0_0.UpdataPageIndex(arg_8_0)
+	arg_8_0.fireworkAct = getProxy(ActivityProxy):getActivityById(arg_8_0.fireworkActID)
 
-	assert(slot0.fireworkAct and not slot0.fireworkAct:isEnd(), "烟花活动(type92)已结束")
+	assert(arg_8_0.fireworkAct and not arg_8_0.fireworkAct:isEnd(), "烟花活动(type92)已结束")
 
-	slot0.unlockCount = slot0.fireworkAct:getData1()
-	slot0.unlockIds = slot0.fireworkAct:getData1List()
+	arg_8_0.unlockCount = arg_8_0.fireworkAct:getData1()
+	arg_8_0.unlockIds = arg_8_0.fireworkAct:getData1List()
 
-	for slot4 = #slot0.fireworkPages, 1, -1 do
-		eachChild(slot0.fireworkPages[slot4], function (slot0)
-			if table.contains(uv0.unlockIds, tonumber(slot0.name)) then
-				uv1 = uv1 + 1
+	for iter_8_0 = #arg_8_0.fireworkPages, 1, -1 do
+		local var_8_0 = 0
+
+		eachChild(arg_8_0.fireworkPages[iter_8_0], function(arg_9_0)
+			local var_9_0 = tonumber(arg_9_0.name)
+
+			if table.contains(arg_8_0.unlockIds, var_9_0) then
+				var_8_0 = var_8_0 + 1
 			end
 		end)
 
-		if 0 ~= slot0.fireworkPages[slot4].childCount then
-			slot0.pageIndex = slot4
+		if var_8_0 ~= arg_8_0.fireworkPages[iter_8_0].childCount then
+			arg_8_0.pageIndex = iter_8_0
 		end
 	end
 
-	if #slot0.unlockIds == #slot0.fireworkIds then
-		slot0.pageIndex = 1
+	if #arg_8_0.unlockIds == #arg_8_0.fireworkIds then
+		arg_8_0.pageIndex = 1
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	slot0:UpdateFrieworkPanel(slot0.pageIndex)
+function var_0_0.OnUpdateFlush(arg_10_0)
+	var_0_0.super.OnUpdateFlush(arg_10_0)
+	arg_10_0:UpdateFrieworkPanel(arg_10_0.pageIndex)
 
-	if #slot0.unlockIds == 0 and pg.activity_template[slot0.fireworkActID].config_client.story and type(slot1) == "table" then
-		for slot5, slot6 in ipairs(slot1) do
-			if slot6[1] == 0 then
-				pg.NewStoryMgr.GetInstance():Play(slot6[2])
+	if #arg_10_0.unlockIds == 0 then
+		local var_10_0 = pg.activity_template[arg_10_0.fireworkActID].config_client.story
+
+		if var_10_0 and type(var_10_0) == "table" then
+			for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+				if iter_10_1[1] == 0 then
+					pg.NewStoryMgr.GetInstance():Play(iter_10_1[2])
+				end
 			end
 		end
 	end
 end
 
-function slot0.UpdateFrieworkPanel(slot0, slot1)
-	slot0.fireworkAct = getProxy(ActivityProxy):getActivityById(slot0.fireworkActID)
+function var_0_0.UpdateFrieworkPanel(arg_11_0, arg_11_1)
+	arg_11_0.fireworkAct = getProxy(ActivityProxy):getActivityById(arg_11_0.fireworkActID)
 
-	assert(slot0.fireworkAct and not slot0.fireworkAct:isEnd(), "烟花活动(type92)已结束")
+	assert(arg_11_0.fireworkAct and not arg_11_0.fireworkAct:isEnd(), "烟花活动(type92)已结束")
 
-	slot0.unlockCount = slot0.fireworkAct:getData1()
-	slot0.unlockIds = slot0.fireworkAct:getData1List()
+	arg_11_0.unlockCount = arg_11_0.fireworkAct:getData1()
+	arg_11_0.unlockIds = arg_11_0.fireworkAct:getData1List()
 
-	for slot5 = #slot0.fireworkPages, 1, -1 do
-		eachChild(slot0.fireworkPages[slot5], function (slot0)
-			if table.contains(uv0.unlockIds, tonumber(slot0.name)) then
-				setActive(slot0, false)
+	for iter_11_0 = #arg_11_0.fireworkPages, 1, -1 do
+		eachChild(arg_11_0.fireworkPages[iter_11_0], function(arg_12_0)
+			local var_12_0 = tonumber(arg_12_0.name)
+
+			if table.contains(arg_11_0.unlockIds, var_12_0) then
+				setActive(arg_12_0, false)
 			else
-				setActive(slot0, true)
-				onButton(uv0, slot0, function ()
-					uv0:OnUnlockClick(uv1)
+				setActive(arg_12_0, true)
+				onButton(arg_11_0, arg_12_0, function()
+					arg_11_0:OnUnlockClick(var_12_0)
 				end, SFX_PANEL)
 			end
 		end)
 	end
 
-	if slot1 > #slot0.fireworkPages or slot1 < 1 then
+	local var_11_0 = #arg_11_0.fireworkPages
+
+	if var_11_0 < arg_11_1 or arg_11_1 < 1 then
 		return
 	end
 
-	slot0.pageIndex = slot1
+	arg_11_0.pageIndex = arg_11_1
 
-	for slot6, slot7 in ipairs(slot0.fireworkPages) do
-		setActive(slot7, tonumber(slot7.name) == slot1)
+	for iter_11_1, iter_11_2 in ipairs(arg_11_0.fireworkPages) do
+		setActive(iter_11_2, tonumber(iter_11_2.name) == arg_11_1)
 	end
 
-	for slot6, slot7 in ipairs(slot0.dots) do
-		setActive(slot7, tonumber(slot7.name) == slot1)
+	for iter_11_3, iter_11_4 in ipairs(arg_11_0.dots) do
+		setActive(iter_11_4, tonumber(iter_11_4.name) == arg_11_1)
 	end
 
-	setButtonEnabled(slot0.nextPageBtn, slot1 ~= slot2)
-	setButtonEnabled(slot0.lastPageBtn, slot1 ~= 1)
-	setText(slot0.fireworkNumText, #slot0.unlockIds .. "/" .. #slot0.fireworkIds)
+	setButtonEnabled(arg_11_0.nextPageBtn, arg_11_1 ~= var_11_0)
+	setButtonEnabled(arg_11_0.lastPageBtn, arg_11_1 ~= 1)
+	setText(arg_11_0.fireworkNumText, #arg_11_0.unlockIds .. "/" .. #arg_11_0.fireworkIds)
 
-	slot0.ptNum = getProxy(PlayerProxy):getRawData():getResource(slot0.ptID)
+	arg_11_0.ptNum = getProxy(PlayerProxy):getRawData():getResource(arg_11_0.ptID)
 
-	setText(slot0.ptText, slot0.ptNum)
+	setText(arg_11_0.ptText, arg_11_0.ptNum)
 end
 
-function slot0.OnUnlockClick(slot0, slot1)
-	if slot0.unlockCount <= 0 then
+function var_0_0.OnUnlockClick(arg_14_0, arg_14_1)
+	if arg_14_0.unlockCount <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("activity_yanhua_tip6"))
 
 		return
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("activity_yanhua_tip4", slot0.ptConsume),
-		onYes = function ()
-			if uv0.ptNum < uv0.ptConsume then
+		content = i18n("activity_yanhua_tip4", arg_14_0.ptConsume),
+		onYes = function()
+			if arg_14_0.ptNum < arg_14_0.ptConsume then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("activity_yanhua_tip5"))
 			else
-				uv0:emit(ActivityMediator.EVENT_OPERATION, {
+				arg_14_0:emit(ActivityMediator.EVENT_OPERATION, {
 					cmd = 1,
-					activity_id = uv0.fireworkActID,
-					arg1 = uv1
+					activity_id = arg_14_0.fireworkActID,
+					arg1 = arg_14_1
 				})
 			end
 		end
 	})
 end
 
-return slot0
+return var_0_0

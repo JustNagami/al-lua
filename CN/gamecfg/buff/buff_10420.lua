@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10420
+			}
+		}
+	},
 	{
 		desc = "出击时自身舰载机的第一轮空中支援加载时间缩短20.0%",
 		addition = {
@@ -69,16 +80,5 @@ return {
 	stack = 1,
 	id = 10420,
 	icon = 10420,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10420
-			}
-		}
-	}
+	last_effect = ""
 }

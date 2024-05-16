@@ -1,46 +1,50 @@
-slot0 = class("OtherworldTerminalMediator", import("view.base.ContextMediator"))
-slot0.ON_GET_PT_ALL_AWARD = "OtherworldTerminalMediator.ON_GET_PT_AWARD"
-slot0.ON_BUFF_LIST_CHANGE = "OtherworldTerminalMediator.ON_BUFF_LIST_CHANGE"
+﻿local var_0_0 = class("OtherworldTerminalMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_GET_PT_ALL_AWARD, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_NEW_PT, {
+var_0_0.ON_GET_PT_ALL_AWARD = "OtherworldTerminalMediator.ON_GET_PT_AWARD"
+var_0_0.ON_BUFF_LIST_CHANGE = "OtherworldTerminalMediator.ON_BUFF_LIST_CHANGE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_GET_PT_ALL_AWARD, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACT_NEW_PT, {
 			cmd = 4,
-			activity_id = slot1.actId,
-			arg1 = slot1.arg1
+			activity_id = arg_2_1.actId,
+			arg1 = arg_2_1.arg1
 		})
 	end)
-	slot0:bind(uv0.ON_BUFF_LIST_CHANGE, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, {
+	arg_1_0:bind(var_0_0.ON_BUFF_LIST_CHANGE, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 3,
-			activity_id = slot1.actId,
-			arg_list = slot1.ids
+			activity_id = arg_3_1.actId,
+			arg_list = arg_3_1.ids
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.ACT_NEW_PT_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3.id == TerminalAdventurePage.BIND_PT_ACT_ID then
-			slot0.viewComponent:UpdateAdventurePtAct(slot4)
-		elseif slot4.id == TerminalAdventurePage.BIND_TASK_ACT_ID then
-			slot0.viewComponent:UpdateAdventureTaskAct(slot4)
-		elseif slot4.id == ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID then
-			slot0.viewComponent:UpdateGuardianAct(slot4)
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		local var_5_2 = var_5_1
+
+		if var_5_2.id == TerminalAdventurePage.BIND_PT_ACT_ID then
+			arg_5_0.viewComponent:UpdateAdventurePtAct(var_5_2)
+		elseif var_5_2.id == TerminalAdventurePage.BIND_TASK_ACT_ID then
+			arg_5_0.viewComponent:UpdateAdventureTaskAct(var_5_2)
+		elseif var_5_2.id == ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID then
+			arg_5_0.viewComponent:UpdateGuardianAct(var_5_2)
 		end
-	elseif slot2 == GAME.ACT_NEW_PT_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
-		slot0.viewComponent:UpdateAdventureTip()
+	elseif var_5_0 == GAME.ACT_NEW_PT_DONE then
+		arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_5_1.awards)
+		arg_5_0.viewComponent:UpdateAdventureTip()
 	end
 end
 
-return slot0
+return var_0_0

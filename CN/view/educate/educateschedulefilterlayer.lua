@@ -1,20 +1,20 @@
-slot0 = class("EducateScheduleFilterLayer", import(".base.EducateBaseUI"))
+﻿local var_0_0 = class("EducateScheduleFilterLayer", import(".base.EducateBaseUI"))
 
-function slot1(slot0)
-	slot1 = Clone(slot0)
+local function var_0_1(arg_1_0)
+	local var_1_0 = Clone(arg_1_0)
 
-	table.remove(slot1, 1)
+	table.remove(var_1_0, 1)
 
-	return slot1
+	return var_1_0
 end
 
-slot0.FILTER_CONFIG = {
+var_0_0.FILTER_CONFIG = {
 	{
 		tag = "typeIndex",
 		dropdown = false,
 		title = i18n("child_filter_type1"),
-		options = slot1(EducatePlanIndexConst.TypeIndexs),
-		names = slot1(EducatePlanIndexConst.TypeNames),
+		options = var_0_1(EducatePlanIndexConst.TypeIndexs),
+		names = var_0_1(EducatePlanIndexConst.TypeNames),
 		default = EducatePlanIndexConst.TypeAll
 	},
 	{
@@ -49,239 +49,244 @@ slot0.FILTER_CONFIG = {
 		tag = "costIndex",
 		dropdown = false,
 		title = i18n("child_filter_type3"),
-		options = slot1(EducatePlanIndexConst.CostIndexs),
-		names = slot1(EducatePlanIndexConst.CostNames),
+		options = var_0_1(EducatePlanIndexConst.CostIndexs),
+		names = var_0_1(EducatePlanIndexConst.CostNames),
 		default = EducatePlanIndexConst.CostAll
 	}
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_2_0)
 	return "EducateScheduleIndexUI"
 end
 
-function slot0.init(slot0)
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+function var_0_0.init(arg_3_0)
+	arg_3_0.anim = arg_3_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_3_0.animEvent = arg_3_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	arg_3_0.animEvent:SetEndEvent(function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end)
 
-	slot0.windowTF = slot0:findTF("anim_root/window")
+	arg_3_0.windowTF = arg_3_0:findTF("anim_root/window")
 
-	setText(slot0:findTF("top/title", slot0.windowTF), i18n("child_filter_title"))
+	setText(arg_3_0:findTF("top/title", arg_3_0.windowTF), i18n("child_filter_title"))
 
-	slot0.filterContainer = slot0:findTF("frame/filter_content", slot0.windowTF)
-	slot0.filterTpl = slot0:findTF("anim_root/filter_tpl")
-	slot0.itemTpl = slot0:findTF("anim_root/item_tpl")
+	arg_3_0.filterContainer = arg_3_0:findTF("frame/filter_content", arg_3_0.windowTF)
+	arg_3_0.filterTpl = arg_3_0:findTF("anim_root/filter_tpl")
+	arg_3_0.itemTpl = arg_3_0:findTF("anim_root/item_tpl")
 
-	setActive(slot0.filterTpl, false)
-	setActive(slot0.itemTpl, false)
+	setActive(arg_3_0.filterTpl, false)
+	setActive(arg_3_0.itemTpl, false)
 
-	slot0.dropdownPanel = slot0:findTF("anim_root/dropdown_panel")
-	slot0.dropdownUIList = UIItemList.New(slot0:findTF("dropdown/list", slot0.dropdownPanel), slot0:findTF("dropdown/list/tpl", slot0.dropdownPanel))
+	arg_3_0.dropdownPanel = arg_3_0:findTF("anim_root/dropdown_panel")
+	arg_3_0.dropdownUIList = UIItemList.New(arg_3_0:findTF("dropdown/list", arg_3_0.dropdownPanel), arg_3_0:findTF("dropdown/list/tpl", arg_3_0.dropdownPanel))
 
-	setActive(slot0.dropdownPanel, false)
-	setText(slot0:findTF("sure_btn/Text", slot0.windowTF), i18n("word_ok"))
-	setText(slot0:findTF("reset_btn/Text", slot0.windowTF), i18n("word_reset"))
+	setActive(arg_3_0.dropdownPanel, false)
+	setText(arg_3_0:findTF("sure_btn/Text", arg_3_0.windowTF), i18n("word_ok"))
+	setText(arg_3_0:findTF("reset_btn/Text", arg_3_0.windowTF), i18n("word_reset"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("sure_btn", slot0.windowTF), function ()
-		if uv0.contextData.callback then
-			uv0.contextData.callback(uv0.contextData.indexDatas)
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0:findTF("sure_btn", arg_5_0.windowTF), function()
+		if arg_5_0.contextData.callback then
+			arg_5_0.contextData.callback(arg_5_0.contextData.indexDatas)
 
-			uv0.contextData.callback = nil
+			arg_5_0.contextData.callback = nil
 		end
 
-		uv0:_close()
+		arg_5_0:_close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("reset_btn", slot0.windowTF), function ()
-		uv0.contextData.indexDatas = nil
+	onButton(arg_5_0, arg_5_0:findTF("reset_btn", arg_5_0.windowTF), function()
+		arg_5_0.contextData.indexDatas = nil
 
-		removeAllChildren(uv0.filterContainer)
-		uv0:initFilters()
+		removeAllChildren(arg_5_0.filterContainer)
+		arg_5_0:initFilters()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.dropdownPanel, function ()
-		uv0:closeDropdownPanel()
+	onButton(arg_5_0, arg_5_0.dropdownPanel, function()
+		arg_5_0:closeDropdownPanel()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("anim_root/bg"), function ()
-		uv0:_close()
+	onButton(arg_5_0, arg_5_0:findTF("anim_root/bg"), function()
+		arg_5_0:_close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("top/close_btn", slot0.windowTF), function ()
-		uv0:_close()
+	onButton(arg_5_0, arg_5_0:findTF("top/close_btn", arg_5_0.windowTF), function()
+		arg_5_0:_close()
 	end, SFX_PANEL)
-	slot0:initDropdownPanel()
-	slot0:initFilters()
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+	arg_5_0:initDropdownPanel()
+	arg_5_0:initFilters()
+	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf, {
 		groupName = LayerWeightConst.GROUP_EDUCATE,
 		weight = LayerWeightConst.BASE_LAYER + 1
 	})
 end
 
-function slot0.initDropdownPanel(slot0)
-	slot1 = slot0.dropdownUIList
+function var_0_0.initDropdownPanel(arg_11_0)
+	arg_11_0.dropdownUIList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = arg_12_1 + 1 + 1
+			local var_12_1 = arg_11_0.dropdownCfg.names[arg_11_0.dropdownCfgIndex][var_12_0]
+			local var_12_2 = arg_11_0.dropdownCfg.options[arg_11_0.dropdownCfgIndex][var_12_0]
+			local var_12_3 = arg_11_0.dropdownCfg.tags[arg_11_0.dropdownCfgIndex]
+			local var_12_4 = arg_11_0.dropdownCfg.defaults[arg_11_0.dropdownCfgIndex]
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot1 + 1 + 1
-			slot5 = uv0.dropdownCfg.options[uv0.dropdownCfgIndex][slot3]
-			slot6 = uv0.dropdownCfg.tags[uv0.dropdownCfgIndex]
-			slot7 = uv0.dropdownCfg.defaults[uv0.dropdownCfgIndex]
-
-			setActive(uv0:findTF("line", slot2), slot3 ~= #uv0.dropdownCfg.options[uv0.dropdownCfgIndex])
-			setText(uv0:findTF("Text", slot2), uv0.dropdownCfg.names[uv0.dropdownCfgIndex][slot3])
-			onButton(uv0, slot2, function ()
-				if uv0.contextData.indexDatas[uv1] == uv2 then
-					uv0.contextData.indexDatas[uv1] = uv3
+			setActive(arg_11_0:findTF("line", arg_12_2), var_12_0 ~= #arg_11_0.dropdownCfg.options[arg_11_0.dropdownCfgIndex])
+			setText(arg_11_0:findTF("Text", arg_12_2), var_12_1)
+			onButton(arg_11_0, arg_12_2, function()
+				if arg_11_0.contextData.indexDatas[var_12_3] == var_12_2 then
+					arg_11_0.contextData.indexDatas[var_12_3] = var_12_4
 				else
-					uv0.contextData.indexDatas[uv1] = uv2
+					arg_11_0.contextData.indexDatas[var_12_3] = var_12_2
 				end
 
-				uv0:closeDropdownPanel()
-				uv0.uiList[uv0.updateListIndex]:align(#uv0.dropdownCfg.options)
+				arg_11_0:closeDropdownPanel()
+				arg_11_0.uiList[arg_11_0.updateListIndex]:align(#arg_11_0.dropdownCfg.options)
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function slot0.initFilters(slot0)
-	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
-	slot0.uiList = {}
+function var_0_0.initFilters(arg_14_0)
+	arg_14_0.contextData.indexDatas = arg_14_0.contextData.indexDatas or {}
+	arg_14_0.uiList = {}
 
-	for slot4, slot5 in ipairs(uv0.FILTER_CONFIG) do
-		setText(slot0:findTF("title/title", cloneTplTo(slot0.filterTpl, slot0.filterContainer)), slot5.title)
+	for iter_14_0, iter_14_1 in ipairs(var_0_0.FILTER_CONFIG) do
+		local var_14_0 = cloneTplTo(arg_14_0.filterTpl, arg_14_0.filterContainer)
 
-		if not slot5.dropdown then
-			slot0:initNormal(slot4, slot5, slot6)
+		setText(arg_14_0:findTF("title/title", var_14_0), iter_14_1.title)
+
+		if not iter_14_1.dropdown then
+			arg_14_0:initNormal(iter_14_0, iter_14_1, var_14_0)
 		else
-			slot0:initDropdown(slot4, slot5, slot6)
+			arg_14_0:initDropdown(iter_14_0, iter_14_1, var_14_0)
 		end
 	end
 end
 
-function slot0.initNormal(slot0, slot1, slot2, slot3)
-	slot5 = UIItemList.New(slot0:findTF("content/container", slot3), slot0.itemTpl)
+function var_0_0.initNormal(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
+	local var_15_0 = arg_15_0:findTF("content/container", arg_15_3)
+	local var_15_1 = UIItemList.New(var_15_0, arg_15_0.itemTpl)
 
-	slot5:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot3 = slot1 + 1
-			slot5 = uv0.options[slot3]
+	var_15_1:make(function(arg_16_0, arg_16_1, arg_16_2)
+		if arg_16_0 == UIItemList.EventInit then
+			local var_16_0 = arg_16_1 + 1
+			local var_16_1 = arg_15_2.names[var_16_0]
+			local var_16_2 = arg_15_2.options[var_16_0]
 
-			setText(uv1:findTF("Text", slot2), uv0.names[slot3])
-			setActive(uv1:findTF("line", slot2), slot3 ~= #uv0.names)
-			setActive(uv1:findTF("arrow", slot2), false)
+			setText(arg_15_0:findTF("Text", arg_16_2), var_16_1)
+			setActive(arg_15_0:findTF("line", arg_16_2), var_16_0 ~= #arg_15_2.names)
+			setActive(arg_15_0:findTF("arrow", arg_16_2), false)
 
-			if not uv1.contextData.indexDatas[uv0.tag] then
-				uv1.contextData.indexDatas[uv0.tag] = uv0.default
+			if not arg_15_0.contextData.indexDatas[arg_15_2.tag] then
+				arg_15_0.contextData.indexDatas[arg_15_2.tag] = arg_15_2.default
 			end
 
-			onButton(uv1, slot2, function ()
-				if uv0.contextData.indexDatas[uv1.tag] == uv1.default then
-					uv0.contextData.indexDatas[uv1.tag] = uv2
+			onButton(arg_15_0, arg_16_2, function()
+				if arg_15_0.contextData.indexDatas[arg_15_2.tag] == arg_15_2.default then
+					arg_15_0.contextData.indexDatas[arg_15_2.tag] = var_16_2
 				else
-					uv0.contextData.indexDatas[uv1.tag] = bit.bxor(uv0.contextData.indexDatas[uv1.tag], uv2)
+					arg_15_0.contextData.indexDatas[arg_15_2.tag] = bit.bxor(arg_15_0.contextData.indexDatas[arg_15_2.tag], var_16_2)
 				end
 
-				if uv0.contextData.indexDatas[uv1.tag] == 0 then
-					uv0.contextData.indexDatas[uv1.tag] = uv1.default
+				if arg_15_0.contextData.indexDatas[arg_15_2.tag] == 0 then
+					arg_15_0.contextData.indexDatas[arg_15_2.tag] = arg_15_2.default
 				end
 
-				uv3:align(#uv1.options)
+				var_15_1:align(#arg_15_2.options)
 			end, SFX_PANEL)
+		elseif arg_16_0 == UIItemList.EventUpdate then
+			local var_16_3 = arg_16_1 + 1
+			local var_16_4 = arg_15_2.options[var_16_3]
+			local var_16_5
+			local var_16_6 = (arg_15_0.contextData.indexDatas[arg_15_2.tag] ~= arg_15_2.default or false) and bit.band(arg_15_0.contextData.indexDatas[arg_15_2.tag], var_16_4) > 0
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			slot5 = nil
-			slot5 = (uv1.contextData.indexDatas[uv0.tag] ~= uv0.default or false) and bit.band(uv1.contextData.indexDatas[uv0.tag], uv0.options[slot1 + 1]) > 0
-
-			setActive(uv1:findTF("selected", slot2), slot5)
-			setTextColor(uv1:findTF("Text", slot2), slot5 and Color.white or Color.NewHex("393a3c"))
+			setActive(arg_15_0:findTF("selected", arg_16_2), var_16_6)
+			setTextColor(arg_15_0:findTF("Text", arg_16_2), var_16_6 and Color.white or Color.NewHex("393a3c"))
 		end
 	end)
-	slot5:align(#slot2.options)
+	var_15_1:align(#arg_15_2.options)
 
-	slot0.uiList[slot1] = slot5
+	arg_15_0.uiList[arg_15_1] = var_15_1
 end
 
-function slot0.initDropdown(slot0, slot1, slot2, slot3)
-	slot5 = UIItemList.New(slot0:findTF("content/container", slot3), slot0.itemTpl)
+function var_0_0.initDropdown(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = arg_18_0:findTF("content/container", arg_18_3)
+	local var_18_1 = UIItemList.New(var_18_0, arg_18_0.itemTpl)
 
-	slot5:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot3 = slot1 + 1
-			slot5 = uv0.defaults[slot3]
+	var_18_1:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventInit then
+			local var_19_0 = arg_19_1 + 1
+			local var_19_1 = arg_18_2.tags[var_19_0]
+			local var_19_2 = arg_18_2.defaults[var_19_0]
 
-			setActive(uv1:findTF("line", slot2), slot3 ~= #uv0.tags)
-			setActive(uv1:findTF("arrow", slot2), true)
+			setActive(arg_18_0:findTF("line", arg_19_2), var_19_0 ~= #arg_18_2.tags)
+			setActive(arg_18_0:findTF("arrow", arg_19_2), true)
 
-			if not uv1.contextData.indexDatas[uv0.tags[slot3]] then
-				uv1.contextData.indexDatas[slot4] = slot5
+			if not arg_18_0.contextData.indexDatas[var_19_1] then
+				arg_18_0.contextData.indexDatas[var_19_1] = var_19_2
 			end
 
-			onButton(uv1, slot2, function ()
-				uv0.dropdownCfg = uv1
-				uv0.dropdownCfgIndex = uv2
-				uv0.updateListIndex = uv3
+			onButton(arg_18_0, arg_19_2, function()
+				arg_18_0.dropdownCfg = arg_18_2
+				arg_18_0.dropdownCfgIndex = var_19_0
+				arg_18_0.updateListIndex = arg_18_1
 
-				uv0:showDropdownPanel(uv0._tf:InverseTransformPoint(uv4.position))
+				local var_20_0 = arg_18_0._tf:InverseTransformPoint(arg_19_2.position)
+
+				arg_18_0:showDropdownPanel(var_20_0)
 			end, SFX_PANEL)
+		elseif arg_19_0 == UIItemList.EventUpdate then
+			local var_19_3 = arg_19_1 + 1
+			local var_19_4 = arg_18_2.tags[var_19_3]
+			local var_19_5 = arg_18_2.defaults[var_19_3]
+			local var_19_6 = ""
+			local var_19_7 = true
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot1 + 1
-			slot6 = ""
-			slot7 = true
-
-			if uv1.contextData.indexDatas[uv0.tags[slot3]] == uv0.defaults[slot3] then
-				slot7 = false
-				slot6 = uv0.names[slot3][1]
+			if arg_18_0.contextData.indexDatas[var_19_4] == var_19_5 then
+				var_19_7 = false
+				var_19_6 = arg_18_2.names[var_19_3][1]
 			else
-				for slot12, slot13 in ipairs(uv0.options[slot3]) do
-					if uv1.contextData.indexDatas[slot4] == slot13 then
-						slot6 = uv0.names[slot3][slot12]
+				local var_19_8 = arg_18_2.options[var_19_3]
+
+				for iter_19_0, iter_19_1 in ipairs(var_19_8) do
+					if arg_18_0.contextData.indexDatas[var_19_4] == iter_19_1 then
+						var_19_6 = arg_18_2.names[var_19_3][iter_19_0]
 
 						break
 					end
 				end
 			end
 
-			setText(uv1:findTF("Text", slot2), slot6)
-			setActive(uv1:findTF("selected", slot2), slot7)
-			setTextColor(uv1:findTF("Text", slot2), slot7 and Color.white or Color.NewHex("393a3c"))
-			setImageColor(uv1:findTF("arrow", slot2), slot7 and Color.white or Color.NewHex("393a3c"))
+			setText(arg_18_0:findTF("Text", arg_19_2), var_19_6)
+			setActive(arg_18_0:findTF("selected", arg_19_2), var_19_7)
+			setTextColor(arg_18_0:findTF("Text", arg_19_2), var_19_7 and Color.white or Color.NewHex("393a3c"))
+			setImageColor(arg_18_0:findTF("arrow", arg_19_2), var_19_7 and Color.white or Color.NewHex("393a3c"))
 		end
 	end)
-	slot5:align(#slot2.options)
+	var_18_1:align(#arg_18_2.options)
 
-	slot0.uiList[slot1] = slot5
+	arg_18_0.uiList[arg_18_1] = var_18_1
 end
 
-function slot0.showDropdownPanel(slot0, slot1)
-	setAnchoredPosition(slot0:findTF("dropdown", slot0.dropdownPanel), slot1)
-	setActive(slot0.dropdownPanel, true)
-	slot0.dropdownUIList:align(#slot0.dropdownCfg.options[slot0.dropdownCfgIndex] - 1)
+function var_0_0.showDropdownPanel(arg_21_0, arg_21_1)
+	setAnchoredPosition(arg_21_0:findTF("dropdown", arg_21_0.dropdownPanel), arg_21_1)
+	setActive(arg_21_0.dropdownPanel, true)
+	arg_21_0.dropdownUIList:align(#arg_21_0.dropdownCfg.options[arg_21_0.dropdownCfgIndex] - 1)
 end
 
-function slot0.closeDropdownPanel(slot0)
-	setActive(slot0.dropdownPanel, false)
+function var_0_0.closeDropdownPanel(arg_22_0)
+	setActive(arg_22_0.dropdownPanel, false)
 end
 
-function slot0._close(slot0)
-	slot0.anim:Play("anim_educate_scheduleindex_out")
+function var_0_0._close(arg_23_0)
+	arg_23_0.anim:Play("anim_educate_scheduleindex_out")
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:_close()
+function var_0_0.onBackPressed(arg_24_0)
+	arg_24_0:_close()
 end
 
-function slot0.willExit(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_25_0)
+	arg_25_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_25_0._tf)
 end
 
-return slot0
+return var_0_0

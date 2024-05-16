@@ -1,23 +1,26 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleSkillGridmanFloat = class("BattleSkillGridmanFloat", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillGridmanFloat.__name = "BattleSkillGridmanFloat"
-slot1 = slot0.Battle.BattleSkillGridmanFloat
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
 
-	slot0._iconType = slot0._tempData.arg_list.icon_type
+var_0_0.Battle.BattleSkillGridmanFloat = class("BattleSkillGridmanFloat", var_0_0.Battle.BattleSkillEffect)
+var_0_0.Battle.BattleSkillGridmanFloat.__name = "BattleSkillGridmanFloat"
+
+local var_0_1 = var_0_0.Battle.BattleSkillGridmanFloat
+
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._iconType = arg_1_0._tempData.arg_list.icon_type
 end
 
-function slot1.DoDataEffect(slot0, slot1)
-	slot0:doGridmanSkillFloat(slot1)
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1)
+	arg_2_0:doGridmanSkillFloat(arg_2_1)
 end
 
-function slot1.DoDataEffectWithoutTarget(slot0, slot1)
-	slot0:doGridmanSkillFloat(slot1)
+function var_0_1.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+	arg_3_0:doGridmanSkillFloat(arg_3_1)
 end
 
-function slot1.doGridmanSkillFloat(slot0, slot1)
-	uv0.Battle.BattleDataProxy.GetInstance():DispatchGridmanSkill(slot0._iconType, slot1:GetIFF())
+function var_0_1.doGridmanSkillFloat(arg_4_0, arg_4_1)
+	var_0_0.Battle.BattleDataProxy.GetInstance():DispatchGridmanSkill(arg_4_0._iconType, arg_4_1:GetIFF())
 end

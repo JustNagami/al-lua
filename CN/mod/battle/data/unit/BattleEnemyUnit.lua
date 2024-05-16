@@ -1,154 +1,166 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleConst
-slot3 = slot0.Battle.BattleFormulas
-slot4 = slot0.Battle.BattleAttr
-slot5 = slot0.Battle.BattleConfig
-slot6 = slot0.Battle.BattleUnitEvent
-slot7 = slot0.Battle.UnitState
-slot8 = class("BattleEnemyUnit", slot0.Battle.BattleUnit)
-slot0.Battle.BattleEnemyUnit = slot8
-slot8.__name = "BattleEnemyUnit"
+﻿ys = ys or {}
 
-function slot8.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleFormulas
+local var_0_4 = var_0_0.Battle.BattleAttr
+local var_0_5 = var_0_0.Battle.BattleConfig
+local var_0_6 = var_0_0.Battle.BattleUnitEvent
+local var_0_7 = var_0_0.Battle.UnitState
+local var_0_8 = class("BattleEnemyUnit", var_0_0.Battle.BattleUnit)
 
-	slot0._type = uv1.UnitType.ENEMY_UNIT
-	slot0._level = slot0._battleProxy:GetDungeonLevel()
+var_0_0.Battle.BattleEnemyUnit = var_0_8
+var_0_8.__name = "BattleEnemyUnit"
+
+function var_0_8.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_8.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._type = var_0_2.UnitType.ENEMY_UNIT
+	arg_1_0._level = arg_1_0._battleProxy:GetDungeonLevel()
 end
 
-function slot8.Dispose(slot0)
-	if slot0._aimBias then
-		slot0._aimBias:Dispose()
+function var_0_8.Dispose(arg_2_0)
+	if arg_2_0._aimBias then
+		arg_2_0._aimBias:Dispose()
 	end
 
-	uv0.super.Dispose(slot0)
+	var_0_8.super.Dispose(arg_2_0)
 end
 
-function slot8.SetBound(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	uv0.super.SetBound(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function var_0_8.SetBound(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5, arg_3_6)
+	var_0_8.super.SetBound(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5, arg_3_6)
 
-	slot0._weaponRightBound = slot4
-	slot0._weaponLowerBound = slot2
+	arg_3_0._weaponRightBound = arg_3_4
+	arg_3_0._weaponLowerBound = arg_3_2
 end
 
-function slot8.UpdateAction(slot0)
-	if slot0._oxyState and slot0._oxyState:GetCurrentDiveState() == uv0.OXY_STATE.DIVE then
-		if slot0:GetSpeed().x > 0 then
-			slot0._unitState:ChangeState(uv1.STATE_DIVELEFT)
+function var_0_8.UpdateAction(arg_4_0)
+	if arg_4_0._oxyState and arg_4_0._oxyState:GetCurrentDiveState() == var_0_2.OXY_STATE.DIVE then
+		if arg_4_0:GetSpeed().x > 0 then
+			arg_4_0._unitState:ChangeState(var_0_7.STATE_DIVELEFT)
 		else
-			slot0._unitState:ChangeState(uv1.STATE_DIVE)
+			arg_4_0._unitState:ChangeState(var_0_7.STATE_DIVE)
 		end
-	elseif slot0:GetSpeed().x > 0 then
-		slot0._unitState:ChangeState(uv1.STATE_MOVELEFT)
+	elseif arg_4_0:GetSpeed().x > 0 then
+		arg_4_0._unitState:ChangeState(var_0_7.STATE_MOVELEFT)
 	else
-		slot0._unitState:ChangeState(uv1.STATE_MOVE)
+		arg_4_0._unitState:ChangeState(var_0_7.STATE_MOVE)
 	end
 end
 
-function slot8.UpdateHP(slot0, slot1, slot2, slot3, slot4)
-	slot5 = uv0.super.UpdateHP(slot0, slot1, slot2, slot3, slot4)
+function var_0_8.UpdateHP(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	local var_5_0 = var_0_8.super.UpdateHP(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 
-	if slot0._phaseSwitcher then
-		slot0._phaseSwitcher:UpdateHP(slot0:GetHPRate())
+	if arg_5_0._phaseSwitcher then
+		arg_5_0._phaseSwitcher:UpdateHP(arg_5_0:GetHPRate())
 	end
 
-	return slot5
+	return var_5_0
 end
 
-function slot8.SetMaster(slot0, slot1)
-	slot0._master = slot1
+function var_0_8.SetMaster(arg_6_0, arg_6_1)
+	arg_6_0._master = arg_6_1
 end
 
-function slot8.GetMaster(slot0)
-	return slot0._master
+function var_0_8.GetMaster(arg_7_0)
+	return arg_7_0._master
 end
 
-function slot8.SetTemplate(slot0, slot1, slot2)
-	uv0.super.SetTemplate(slot0, slot1)
+function var_0_8.SetTemplate(arg_8_0, arg_8_1, arg_8_2)
+	var_0_8.super.SetTemplate(arg_8_0, arg_8_1)
 
-	slot0._tmpData = uv1.GetMonsterTmpDataFromID(slot0._tmpID)
+	arg_8_0._tmpData = var_0_1.GetMonsterTmpDataFromID(arg_8_0._tmpID)
 
-	slot0:configWeaponQueueParallel()
-	slot0:InitCldComponent()
-	slot0:SetAttr()
+	arg_8_0:configWeaponQueueParallel()
+	arg_8_0:InitCldComponent()
+	arg_8_0:SetAttr()
 
-	slot2 = slot2 or {}
-	slot3 = slot0:GetExtraInfo()
+	arg_8_2 = arg_8_2 or {}
 
-	for slot7, slot8 in pairs(slot2) do
-		slot3[slot7] = slot8
+	local var_8_0 = arg_8_0:GetExtraInfo()
+
+	for iter_8_0, iter_8_1 in pairs(arg_8_2) do
+		var_8_0[iter_8_0] = iter_8_1
 	end
 
-	slot0:setStandardLabelTag()
+	arg_8_0:setStandardLabelTag()
 end
 
-function slot8.SetTeamVO(slot0, slot1)
-	slot0._team = slot1
+function var_0_8.SetTeamVO(arg_9_0, arg_9_1)
+	arg_9_0._team = arg_9_1
 end
 
-function slot8.SetFormationIndex(slot0, slot1)
-	slot0._formationIndex = slot1
+function var_0_8.SetFormationIndex(arg_10_0, arg_10_1)
+	arg_10_0._formationIndex = arg_10_1
 end
 
-function slot8.SetWaveIndex(slot0, slot1)
-	slot0._waveIndex = slot1
+function var_0_8.SetWaveIndex(arg_11_0, arg_11_1)
+	arg_11_0._waveIndex = arg_11_1
 end
 
-function slot8.SetAttr(slot0)
-	uv0.SetEnemyAttr(slot0)
-	uv0.InitDOTAttr(slot0._attr, slot0._tmpData)
+function var_0_8.SetAttr(arg_12_0)
+	var_0_4.SetEnemyAttr(arg_12_0)
+	var_0_4.InitDOTAttr(arg_12_0._attr, arg_12_0._tmpData)
 end
 
-function slot8.GetTemplate(slot0)
-	return slot0._tmpData
+function var_0_8.GetTemplate(arg_13_0)
+	return arg_13_0._tmpData
 end
 
-function slot8.GetRarity(slot0)
-	return slot0._tmpData.rarity
+function var_0_8.GetRarity(arg_14_0)
+	return arg_14_0._tmpData.rarity
 end
 
-function slot8.GetLevel(slot0)
-	return slot0._overrideLevel or slot0._level or 1
+function var_0_8.GetLevel(arg_15_0)
+	return arg_15_0._overrideLevel or arg_15_0._level or 1
 end
 
-function slot8.GetTeam(slot0)
-	return slot0._team
+function var_0_8.GetTeam(arg_16_0)
+	return arg_16_0._team
 end
 
-function slot8.GetWaveIndex(slot0)
-	return slot0._waveIndex
+function var_0_8.GetWaveIndex(arg_17_0)
+	return arg_17_0._waveIndex
 end
 
-function slot8.IsShowHPBar(slot0)
-	return slot0._IFF ~= uv0.FRIENDLY_CODE
+function var_0_8.IsShowHPBar(arg_18_0)
+	return arg_18_0._IFF ~= var_0_5.FRIENDLY_CODE
 end
 
-function slot8.IsSpectre(slot0)
-	slot1 = nil
-	slot1 = (slot0:GetAttr()[uv0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY] == nil or slot0:GetAttrByName(slot2)) and slot0._tmpData.battle_unit_type
+function var_0_8.IsSpectre(arg_19_0)
+	local var_19_0
+	local var_19_1 = var_0_0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY
 
-	return slot1 <= uv1.SPECTRE_UNIT_TYPE, slot1
+	if arg_19_0:GetAttr()[var_19_1] ~= nil then
+		var_19_0 = arg_19_0:GetAttrByName(var_19_1)
+	else
+		var_19_0 = arg_19_0._tmpData.battle_unit_type
+	end
+
+	return var_19_0 <= var_0_5.SPECTRE_UNIT_TYPE, var_19_0
 end
 
-function slot8.InitCldComponent(slot0)
-	uv0.super.InitCldComponent(slot0)
-	slot0._cldComponent:SetCldData({
-		type = uv1.CldType.SHIP,
-		IFF = slot0:GetIFF(),
-		UID = slot0:GetUniqueID(),
-		Mass = uv1.CldMass.L1,
-		IsBoss = slot0._isBoss
-	})
+function var_0_8.InitCldComponent(arg_20_0)
+	var_0_8.super.InitCldComponent(arg_20_0)
 
-	if slot0:GetTemplate().friendly_cld ~= 0 then
-		slot0._cldComponent:ActiveFriendlyCld()
+	local var_20_0 = {
+		type = var_0_2.CldType.SHIP,
+		IFF = arg_20_0:GetIFF(),
+		UID = arg_20_0:GetUniqueID(),
+		Mass = var_0_2.CldMass.L1,
+		IsBoss = arg_20_0._isBoss
+	}
+
+	arg_20_0._cldComponent:SetCldData(var_20_0)
+
+	if arg_20_0:GetTemplate().friendly_cld ~= 0 then
+		arg_20_0._cldComponent:ActiveFriendlyCld()
 	end
 end
 
-function slot8.ConfigBubbleFX(slot0)
-	slot0._bubbleFX = slot0._tmpData.bubble_fx[1]
+function var_0_8.ConfigBubbleFX(arg_21_0)
+	arg_21_0._bubbleFX = arg_21_0._tmpData.bubble_fx[1]
 
-	slot0._oxyState:SetBubbleTemplate(slot0._tmpData.bubble_fx[2], slot0._tmpData.bubble_fx[3])
+	arg_21_0._oxyState:SetBubbleTemplate(arg_21_0._tmpData.bubble_fx[2], arg_21_0._tmpData.bubble_fx[3])
 end

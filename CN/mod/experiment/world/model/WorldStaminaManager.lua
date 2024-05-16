@@ -1,5 +1,6 @@
-slot0 = class("WorldStaminaManager", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WorldStaminaManager", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	staminaExchangeTimes = "number",
 	staminaLastRecoverTime = "number",
 	staminaExtra = "number",
@@ -9,175 +10,180 @@ slot0.Fields = {
 	stamina = "number",
 	UIMain = "userdata"
 }
-slot0.EventUpdateStamina = "WorldStaminaManager.EventUpdateStamina"
+var_0_0.EventUpdateStamina = "WorldStaminaManager.EventUpdateStamina"
 
-function slot0.Build(slot0)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Build(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.UIMain = pg.UIMgr.GetInstance().OverlayMain
-	slot1 = PoolMgr.GetInstance()
+	arg_1_0.UIMain = pg.UIMgr.GetInstance().OverlayMain
 
-	slot1:GetUI("WorldStaminaRecoverUI", true, function (slot0)
-		if not uv0.UIMain then
-			uv1:ReturnUI("WorldStaminaRecoverUI", slot0)
+	local var_1_0 = PoolMgr.GetInstance()
+
+	var_1_0:GetUI("WorldStaminaRecoverUI", true, function(arg_2_0)
+		if not arg_1_0.UIMain then
+			var_1_0:ReturnUI("WorldStaminaRecoverUI", arg_2_0)
 		else
-			uv0.transform = tf(slot0)
+			arg_1_0.transform = tf(arg_2_0)
 
-			setParent(uv0.transform, uv0.UIMain, false)
-			setActive(uv0.transform, false)
-
-			slot3 = uv0.transform
-
-			onButton(uv0, slot3:Find("bg"), function ()
-				uv0:Hide()
+			setParent(arg_1_0.transform, arg_1_0.UIMain, false)
+			setActive(arg_1_0.transform, false)
+			onButton(arg_1_0, arg_1_0.transform:Find("bg"), function()
+				arg_1_0:Hide()
 			end, SFX_CANCEL)
-
-			slot3 = uv0.transform
-
-			onButton(uv0, slot3:Find("window/top/btnBack"), function ()
-				uv0:Hide()
+			onButton(arg_1_0, arg_1_0.transform:Find("window/top/btnBack"), function()
+				arg_1_0:Hide()
 			end, SFX_CANCEL)
-
-			slot3 = uv0.transform
-
-			onButton(uv0, slot3:Find("window/button_container/custom_button_2"), function ()
-				uv0:Hide()
+			onButton(arg_1_0, arg_1_0.transform:Find("window/button_container/custom_button_2"), function()
+				arg_1_0:Hide()
 			end, SFX_CANCEL)
 		end
 	end)
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.stamina = slot1[1]
-	slot0.staminaExtra = slot1[2]
-	slot0.staminaLastRecoverTime = slot1[3]
-	slot0.staminaExchangeTimes = slot1[4]
+function var_0_0.Setup(arg_6_0, arg_6_1)
+	arg_6_0.stamina = arg_6_1[1]
+	arg_6_0.staminaExtra = arg_6_1[2]
+	arg_6_0.staminaLastRecoverTime = arg_6_1[3]
+	arg_6_0.staminaExchangeTimes = arg_6_1[4]
 
-	if not slot0.updateTimer then
-		slot0.updateTimer = Timer.New(function ()
-			uv0:UpdateStamina()
+	if not arg_6_0.updateTimer then
+		arg_6_0.updateTimer = Timer.New(function()
+			arg_6_0:UpdateStamina()
 		end, 1, -1)
 
-		slot0.updateTimer:Start()
-		slot0.updateTimer.func()
+		arg_6_0.updateTimer:Start()
+		arg_6_0.updateTimer.func()
 	end
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_8_0)
+	pg.DelegateInfo.Dispose(arg_8_0)
 
-	if slot0.updateTimer then
-		slot0.updateTimer:Stop()
+	if arg_8_0.updateTimer then
+		arg_8_0.updateTimer:Stop()
 	end
 
-	if slot0.transform then
-		PoolMgr.GetInstance():ReturnUI("WorldStaminaRecoverUI", go(slot0.transform))
+	if arg_8_0.transform then
+		PoolMgr.GetInstance():ReturnUI("WorldStaminaRecoverUI", go(arg_8_0.transform))
 	end
 
-	slot0:Clear()
+	arg_8_0:Clear()
 end
 
-function slot0.Reset(slot0)
-	slot0.stamina = slot0:GetMaxStamina()
+function var_0_0.Reset(arg_9_0)
+	arg_9_0.stamina = arg_9_0:GetMaxStamina()
 end
 
-function slot0.ChangeStamina(slot0, slot1, slot2)
-	slot0.stamina = slot1
-	slot0.staminaExtra = slot2
+function var_0_0.ChangeStamina(arg_10_0, arg_10_1, arg_10_2)
+	arg_10_0.stamina = arg_10_1
+	arg_10_0.staminaExtra = arg_10_2
 
-	slot0:DispatchEvent(uv0.EventUpdateStamina)
+	arg_10_0:DispatchEvent(var_0_0.EventUpdateStamina)
 end
 
-function slot0.UpdateStamina(slot0)
-	if math.floor((pg.TimeMgr.GetInstance():GetServerTime() - slot0.staminaLastRecoverTime) / pg.gameset.world_movepower_recovery_interval.key_value) > 0 then
-		slot0.staminaLastRecoverTime = slot0.staminaLastRecoverTime + slot3 * slot1
+function var_0_0.UpdateStamina(arg_11_0)
+	local var_11_0 = pg.gameset.world_movepower_recovery_interval.key_value
+	local var_11_1 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_11_2 = math.floor((var_11_1 - arg_11_0.staminaLastRecoverTime) / var_11_0)
 
-		if slot0.stamina < slot0:GetMaxStamina() then
-			slot0.stamina = math.min(slot0.stamina + slot3, slot0:GetMaxStamina())
+	if var_11_2 > 0 then
+		arg_11_0.staminaLastRecoverTime = arg_11_0.staminaLastRecoverTime + var_11_2 * var_11_0
 
-			slot0:DispatchEvent(uv0.EventUpdateStamina)
+		if arg_11_0.stamina < arg_11_0:GetMaxStamina() then
+			arg_11_0.stamina = math.min(arg_11_0.stamina + var_11_2, arg_11_0:GetMaxStamina())
+
+			arg_11_0:DispatchEvent(var_0_0.EventUpdateStamina)
 		end
 	end
 end
 
-function slot0.CheckUpdateShow(slot0)
-	if slot0:IsShowing() then
-		slot0:Show()
+function var_0_0.CheckUpdateShow(arg_12_0)
+	if arg_12_0:IsShowing() then
+		arg_12_0:Show()
 	end
 end
 
-function slot0.Show(slot0)
-	slot1 = slot0.transform:Find("window/world_stamina_panel")
-	slot2 = pg.gameset.world_movepower_recovery_interval.key_value
+function var_0_0.Show(arg_13_0)
+	local var_13_0 = arg_13_0.transform:Find("window/world_stamina_panel")
+	local var_13_1 = pg.gameset.world_movepower_recovery_interval.key_value
+	local var_13_2 = string.format("%.2d:%.2d:%.2d", math.floor(var_13_1 / 3600), math.floor(var_13_1 % 3600 / 60), var_13_1 % 60)
 
-	setText(slot1:Find("content/tip_bg/tip"), i18n("world_stamina_recover", string.format("%.2d:%.2d:%.2d", math.floor(slot2 / 3600), math.floor(slot2 % 3600 / 60), slot2 % 60)))
-	setText(slot1:Find("content/tip_bg/stamina/value"), slot0:GetTotalStamina())
-	setActive(slot1:Find("item"), false)
+	setText(var_13_0:Find("content/tip_bg/tip"), i18n("world_stamina_recover", var_13_2))
+	setText(var_13_0:Find("content/tip_bg/stamina/value"), arg_13_0:GetTotalStamina())
 
-	slot6 = slot0.transform:Find("window/button_container/custom_button_1")
+	local var_13_3 = var_13_0:Find("content/item_list")
+	local var_13_4 = var_13_0:Find("item")
 
-	removeAllChildren(slot1:Find("content/item_list"))
+	setActive(var_13_4, false)
 
-	for slot11, slot12 in ipairs(slot0:GetExchangeItems()) do
-		slot13 = cloneTplTo(slot5, slot4)
+	local var_13_5 = arg_13_0.transform:Find("window/button_container/custom_button_1")
 
-		updateDrop(slot13:Find("IconTpl"), slot12.drop)
-		setText(slot13:Find("IconTpl/icon_bg/count"), slot12.drop.count and slot12.drop.count or "")
-		setText(slot13:Find("name/Text"), shortenString(getText(slot13:Find("IconTpl/name")), 5))
-		onToggle(slot0, slot13, function (slot0)
-			if slot0 then
-				uv0.preSelectIndex = uv1
+	removeAllChildren(var_13_3)
 
-				if uv1 > 1 then
-					setText(uv2:Find("content/Text"), i18n("world_stamina_text2", uv3.name, uv3.stamina))
-					onButton(uv0, uv4, function ()
-						if uv0.drop.count == 0 then
+	local var_13_6 = arg_13_0:GetExchangeItems()
+
+	for iter_13_0, iter_13_1 in ipairs(var_13_6) do
+		local var_13_7 = cloneTplTo(var_13_4, var_13_3)
+
+		updateDrop(var_13_7:Find("IconTpl"), iter_13_1.drop)
+		setText(var_13_7:Find("IconTpl/icon_bg/count"), iter_13_1.drop.count and iter_13_1.drop.count or "")
+		setText(var_13_7:Find("name/Text"), shortenString(getText(var_13_7:Find("IconTpl/name")), 5))
+		onToggle(arg_13_0, var_13_7, function(arg_14_0)
+			if arg_14_0 then
+				arg_13_0.preSelectIndex = iter_13_0
+
+				if iter_13_0 > 1 then
+					setText(var_13_0:Find("content/Text"), i18n("world_stamina_text2", iter_13_1.name, iter_13_1.stamina))
+					onButton(arg_13_0, var_13_5, function()
+						if iter_13_1.drop.count == 0 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 						else
-							slot1 = {}
-							slot2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
+							local var_15_0 = nowWorld()
+							local var_15_1 = {}
+							local var_15_2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 
-							if nowWorld():CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= slot2 and slot0:GetResetWaitingTime() < 259200 and uv1:GetMaxStamina() < uv1:GetTotalStamina() + uv0.stamina then
-								PlayerPrefs.SetString("world_stamina_reset_tip", slot2)
-								table.insert(slot1, function (slot0)
+							if var_15_0:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var_15_2 and var_15_0:GetResetWaitingTime() < 259200 and arg_13_0:GetTotalStamina() + iter_13_1.stamina > arg_13_0:GetMaxStamina() then
+								PlayerPrefs.SetString("world_stamina_reset_tip", var_15_2)
+								table.insert(var_15_1, function(arg_16_0)
 									pg.MsgboxMgr.GetInstance():ShowMsgBox({
-										content = i18n("world_stamina_resetwarning", uv0:GetMaxStamina()),
-										onYes = slot0
+										content = i18n("world_stamina_resetwarning", arg_13_0:GetMaxStamina()),
+										onYes = arg_16_0
 									})
 								end)
 							end
 
-							seriesAsync(slot1, function ()
+							seriesAsync(var_15_1, function()
 								pg.m02:sendNotification(GAME.WORLD_ITEM_USE, {
 									count = 1,
-									itemID = uv0.drop.id,
+									itemID = iter_13_1.drop.id,
 									args = {}
 								})
 							end)
 						end
 					end, SFX_CONFIRM)
-				elseif uv1 == 1 then
-					setText(uv2:Find("content/Text"), i18n("world_stamina_text", uv3.cost, uv3.stamina, uv3.times, uv3.limit))
-					onButton(uv0, uv4, function ()
-						if uv0.drop.count < uv0.cost then
+				elseif iter_13_0 == 1 then
+					setText(var_13_0:Find("content/Text"), i18n("world_stamina_text", iter_13_1.cost, iter_13_1.stamina, iter_13_1.times, iter_13_1.limit))
+					onButton(arg_13_0, var_13_5, function()
+						if iter_13_1.drop.count < iter_13_1.cost then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_oil"))
-						elseif uv0.times == 0 then
+						elseif iter_13_1.times == 0 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 						else
-							slot1 = {}
-							slot2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
+							local var_18_0 = nowWorld()
+							local var_18_1 = {}
+							local var_18_2 = pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 
-							if nowWorld():CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= slot2 and slot0:GetResetWaitingTime() < 259200 and uv1:GetMaxStamina() < uv1:GetTotalStamina() + uv0.stamina then
-								PlayerPrefs.SetString("world_stamina_reset_tip", slot2)
-								table.insert(slot1, function (slot0)
+							if var_18_0:CheckResetProgress() and PlayerPrefs.GetString("world_stamina_reset_tip", "") ~= var_18_2 and var_18_0:GetResetWaitingTime() < 259200 and arg_13_0:GetTotalStamina() + iter_13_1.stamina > arg_13_0:GetMaxStamina() then
+								PlayerPrefs.SetString("world_stamina_reset_tip", var_18_2)
+								table.insert(var_18_1, function(arg_19_0)
 									pg.MsgboxMgr.GetInstance():ShowMsgBox({
-										content = i18n("world_stamina_resetwarning", uv0:GetMaxStamina()),
-										onYes = slot0
+										content = i18n("world_stamina_resetwarning", arg_13_0:GetMaxStamina()),
+										onYes = arg_19_0
 									})
 								end)
 							end
 
-							seriesAsync(slot1, function ()
+							seriesAsync(var_18_1, function()
 								pg.m02:sendNotification(GAME.WORLD_STAMINA_EXCHANGE)
 							end)
 						end
@@ -187,131 +193,130 @@ function slot0.Show(slot0)
 		end, SFX_PANEL)
 	end
 
-	if slot0.preSelectIndex then
-		triggerToggle(slot4:GetChild(slot0.preSelectIndex - 1), true)
+	if arg_13_0.preSelectIndex then
+		triggerToggle(var_13_3:GetChild(arg_13_0.preSelectIndex - 1), true)
 	else
-		slot8 = 1
+		local var_13_8 = 1
 
-		for slot12 = 2, #slot7 do
-			if slot7[slot12].drop.count > 0 then
-				slot8 = slot12
+		for iter_13_2 = 2, #var_13_6 do
+			if var_13_6[iter_13_2].drop.count > 0 then
+				var_13_8 = iter_13_2
 
 				break
 			end
 		end
 
-		triggerToggle(slot4:GetChild(slot8 - 1), true)
+		triggerToggle(var_13_3:GetChild(var_13_8 - 1), true)
 	end
 
-	setActive(slot0.transform, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.transform, false)
+	setActive(arg_13_0.transform, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_13_0.transform, false)
 end
 
-function slot0.Hide(slot0)
-	slot0.preSelectIndex = nil
+function var_0_0.Hide(arg_21_0)
+	arg_21_0.preSelectIndex = nil
 
-	setActive(slot0.transform, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.transform, slot0.UIMain)
+	setActive(arg_21_0.transform, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0.transform, arg_21_0.UIMain)
 end
 
-function slot0.IsShowing(slot0)
-	return slot0.transform and isActive(slot0.transform) or false
+function var_0_0.IsShowing(arg_22_0)
+	return arg_22_0.transform and isActive(arg_22_0.transform) or false
 end
 
-function slot0.GetStamina(slot0)
-	return slot0.stamina
+function var_0_0.GetStamina(arg_23_0)
+	return arg_23_0.stamina
 end
 
-function slot0.GetMaxStamina(slot0)
+function var_0_0.GetMaxStamina(arg_24_0)
 	return pg.gameset.world_movepower_maxvalue.key_value
 end
 
-function slot0.GetExtraStamina(slot0)
-	return slot0.staminaExtra
+function var_0_0.GetExtraStamina(arg_25_0)
+	return arg_25_0.staminaExtra
 end
 
-function slot0.GetTotalStamina(slot0)
-	return slot0:GetStamina() + slot0:GetExtraStamina()
+function var_0_0.GetTotalStamina(arg_26_0)
+	return arg_26_0:GetStamina() + arg_26_0:GetExtraStamina()
 end
 
-function slot0.GetStepStaminaCost(slot0)
+function var_0_0.GetStepStaminaCost(arg_27_0)
 	return pg.gameset.world_cell_cost_movepower.key_value
 end
 
-function slot0.GetMaxMoveStep(slot0)
-	return math.floor(slot0:GetTotalStamina() / slot0:GetStepStaminaCost())
+function var_0_0.GetMaxMoveStep(arg_28_0)
+	return math.floor(arg_28_0:GetTotalStamina() / arg_28_0:GetStepStaminaCost())
 end
 
-function slot0.ConsumeStamina(slot0, slot1)
-	slot0.staminaExtra = slot0.staminaExtra - slot1
+function var_0_0.ConsumeStamina(arg_29_0, arg_29_1)
+	arg_29_0.staminaExtra = arg_29_0.staminaExtra - arg_29_1
 
-	if slot0.staminaExtra < 0 then
-		slot0.stamina = slot0.stamina + slot0.staminaExtra
-		slot0.staminaExtra = 0
+	if arg_29_0.staminaExtra < 0 then
+		arg_29_0.stamina = arg_29_0.stamina + arg_29_0.staminaExtra
+		arg_29_0.staminaExtra = 0
 	end
 
-	assert(slot0.stamina >= 0, "out of stamina.")
-	slot0:DispatchEvent(uv0.EventUpdateStamina)
+	assert(arg_29_0.stamina >= 0, "out of stamina.")
+	arg_29_0:DispatchEvent(var_0_0.EventUpdateStamina)
 end
 
-function slot0.GetExchangeData(slot0)
-	slot1 = pg.gameset.world_supply_value.description
-	slot2 = pg.gameset.world_supply_price.description
+function var_0_0.GetExchangeData(arg_30_0)
+	local var_30_0 = pg.gameset.world_supply_value.description
+	local var_30_1 = pg.gameset.world_supply_price.description
+	local var_30_2 = var_30_0[math.min(#var_30_0, arg_30_0.staminaExchangeTimes + 1)]
+	local var_30_3 = var_30_1[math.min(#var_30_1, arg_30_0.staminaExchangeTimes + 1)]
 
-	return slot1[math.min(#slot1, slot0.staminaExchangeTimes + 1)][1], slot2[math.min(#slot2, slot0.staminaExchangeTimes + 1)][3], #slot2 - slot0.staminaExchangeTimes, #slot2
+	return var_30_2[1], var_30_3[3], #var_30_1 - arg_30_0.staminaExchangeTimes, #var_30_1
 end
 
-function slot0.GetExchangeItems(slot0)
-	slot1 = nowWorld():GetInventoryProxy()
-	slot2, slot3, slot4, slot5 = slot0:GetExchangeData()
-	slot6 = {
+function var_0_0.GetExchangeItems(arg_31_0)
+	local var_31_0 = nowWorld():GetInventoryProxy()
+	local var_31_1, var_31_2, var_31_3, var_31_4 = arg_31_0:GetExchangeData()
+	local var_31_5 = {
 		{
 			drop = Drop.New({
 				id = PlayerConst.ResOil,
 				type = DROP_TYPE_RESOURCE,
-				count = slot10
+				count = getProxy(PlayerProxy):getRawData().oil
 			}),
-			cost = slot3,
-			stamina = slot2,
-			times = slot4,
-			limit = slot5
+			cost = var_31_2,
+			stamina = var_31_1,
+			times = var_31_3,
+			limit = var_31_4
 		}
 	}
-	slot10 = getProxy(PlayerProxy)
-	slot11 = slot10
-	slot10 = slot10.getRawData(slot11).oil
 
-	for slot10, slot11 in ipairs(pg.gameset.world_supply_itemlist.description) do
-		slot12 = Drop.New({
+	for iter_31_0, iter_31_1 in ipairs(pg.gameset.world_supply_itemlist.description) do
+		local var_31_6 = Drop.New({
 			type = DROP_TYPE_WORLD_ITEM,
-			id = slot11,
-			count = slot1:GetItemCount(slot11)
+			id = iter_31_1,
+			count = var_31_0:GetItemCount(iter_31_1)
 		})
 
-		table.insert(slot6, {
+		table.insert(var_31_5, {
 			cost = 1,
-			drop = slot12,
-			name = slot12:getConfig("name"),
-			stamina = slot12:getSubClass():getItemStaminaRecover()
+			drop = var_31_6,
+			name = var_31_6:getConfig("name"),
+			stamina = var_31_6:getSubClass():getItemStaminaRecover()
 		})
 	end
 
-	return slot6
+	return var_31_5
 end
 
-function slot0.ExchangeStamina(slot0, slot1, slot2)
-	slot0.stamina = slot0.stamina + slot1
+function var_0_0.ExchangeStamina(arg_32_0, arg_32_1, arg_32_2)
+	arg_32_0.stamina = arg_32_0.stamina + arg_32_1
 
-	if slot2 then
-		slot0.staminaExchangeTimes = slot0.staminaExchangeTimes + 1
+	if arg_32_2 then
+		arg_32_0.staminaExchangeTimes = arg_32_0.staminaExchangeTimes + 1
 	end
 
-	slot0:DispatchEvent(uv0.EventUpdateStamina)
-	slot0:CheckUpdateShow()
+	arg_32_0:DispatchEvent(var_0_0.EventUpdateStamina)
+	arg_32_0:CheckUpdateShow()
 end
 
-function slot0.GetDisplayStanima(slot0)
-	return slot0:GetTotalStamina()
+function var_0_0.GetDisplayStanima(arg_33_0)
+	return arg_33_0:GetTotalStamina()
 end
 
-return slot0
+return var_0_0

@@ -1,35 +1,37 @@
-slot0 = class("EducateTargetMediator", import(".base.EducateContextMediator"))
-slot0.ON_TASK_SUBMIT = "EducateTargetMediator:ON_TASK_SUBMIT"
-slot0.ON_GET_TARGET_AWARD = "EducateTargetMediator:ON_GET_TARGET_AWARD"
+﻿local var_0_0 = class("EducateTargetMediator", import(".base.EducateContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_TASK_SUBMIT, function (slot0, slot1)
-		uv0:sendNotification(GAME.EDUCATE_SUBMIT_TASK, {
-			id = slot1.id,
-			system = slot1:GetSystemType()
+var_0_0.ON_TASK_SUBMIT = "EducateTargetMediator:ON_TASK_SUBMIT"
+var_0_0.ON_GET_TARGET_AWARD = "EducateTargetMediator:ON_GET_TARGET_AWARD"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.EDUCATE_SUBMIT_TASK, {
+			id = arg_2_1.id,
+			system = arg_2_1:GetSystemType()
 		})
 	end)
-	slot0:bind(uv0.ON_GET_TARGET_AWARD, function (slot0, slot1)
-		uv0:sendNotification(GAME.EDUCATE_GET_TARGET_AWARD)
+	arg_1_0:bind(var_0_0.ON_GET_TARGET_AWARD, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.EDUCATE_GET_TARGET_AWARD)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		GAME.EDUCATE_SUBMIT_TASK_DONE,
 		GAME.EDUCATE_GET_TARGET_AWARD_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == GAME.EDUCATE_SUBMIT_TASK_DONE or slot2 == GAME.EDUCATE_GET_TARGET_AWARD_DONE then
-		slot0.viewComponent:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
-			items = slot3.awards
+	if var_5_0 == GAME.EDUCATE_SUBMIT_TASK_DONE or var_5_0 == GAME.EDUCATE_GET_TARGET_AWARD_DONE then
+		arg_5_0.viewComponent:emit(EducateBaseUI.EDUCATE_ON_AWARD, {
+			items = var_5_1.awards
 		})
-		slot0.viewComponent:updateView()
+		arg_5_0.viewComponent:updateView()
 	end
 end
 
-return slot0
+return var_0_0

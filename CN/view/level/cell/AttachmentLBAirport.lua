@@ -1,43 +1,36 @@
-slot0 = class("AttachmentLBAirport", import("view.level.cell.StaticCellView"))
-slot0.StateOutControl = 1
-slot0.StateUnderControl = 2
+﻿local var_0_0 = class("AttachmentLBAirport", import("view.level.cell.StaticCellView"))
 
-function slot0.GetOrder(slot0)
+var_0_0.StateOutControl = 1
+var_0_0.StateUnderControl = 2
+
+function var_0_0.GetOrder(arg_1_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.extraFlagList
+function var_0_0.Update(arg_2_0)
+	local var_2_0 = arg_2_0.extraFlagList
 
-	if IsNil(slot0.go) then
-		slot0:PrepareBase("airport")
+	if IsNil(arg_2_0.go) then
+		arg_2_0:PrepareBase("airport")
 	end
 
-	if table.contains(slot1, ChapterConst.StatusAirportOutControl) and slot0.state ~= uv0.StateOutControl then
-		slot0.state = uv0.StateOutControl
-		slot2 = slot0:GetLoader()
+	if table.contains(var_2_0, ChapterConst.StatusAirportOutControl) and arg_2_0.state ~= var_0_0.StateOutControl then
+		arg_2_0.state = var_0_0.StateOutControl
 
-		slot2:ClearRequest("Dead", AutoLoader.PartLoading)
-
-		slot2 = slot0:GetLoader()
-
-		slot2:GetPrefab("chapter/dexiv3_2x2_2", "dexiv3_2x2_2", function (slot0)
-			uv0:GetLoader():ClearRequest("Dead")
-			setParent(slot0, uv0.tf)
+		arg_2_0:GetLoader():ClearRequest("Dead", AutoLoader.PartLoading)
+		arg_2_0:GetLoader():GetPrefab("chapter/dexiv3_2x2_2", "dexiv3_2x2_2", function(arg_3_0)
+			arg_2_0:GetLoader():ClearRequest("Dead")
+			setParent(arg_3_0, arg_2_0.tf)
 		end, "Enemy")
-	elseif table.contains(slot1, ChapterConst.StatusAirportUnderControl) and slot0.state ~= uv0.StateUnderControl then
-		slot0.state = uv0.StateUnderControl
-		slot2 = slot0:GetLoader()
+	elseif table.contains(var_2_0, ChapterConst.StatusAirportUnderControl) and arg_2_0.state ~= var_0_0.StateUnderControl then
+		arg_2_0.state = var_0_0.StateUnderControl
 
-		slot2:ClearRequest("Enemy", AutoLoader.PartLoading)
-
-		slot2 = slot0:GetLoader()
-
-		slot2:GetPrefab("chapter/dexiv3_2x2_1", "dexiv3_2x2_1", function (slot0)
-			uv0:GetLoader():ClearRequest("Enemy")
-			setParent(slot0, uv0.tf)
+		arg_2_0:GetLoader():ClearRequest("Enemy", AutoLoader.PartLoading)
+		arg_2_0:GetLoader():GetPrefab("chapter/dexiv3_2x2_1", "dexiv3_2x2_1", function(arg_4_0)
+			arg_2_0:GetLoader():ClearRequest("Enemy")
+			setParent(arg_4_0, arg_2_0.tf)
 		end, "Dead")
 	end
 end
 
-return slot0
+return var_0_0

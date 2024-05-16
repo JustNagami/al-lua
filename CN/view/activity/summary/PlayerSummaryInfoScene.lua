@@ -1,46 +1,46 @@
-slot0 = class("PlayerSummaryInfoScene", import("...base.BaseUI"))
+﻿local var_0_0 = class("PlayerSummaryInfoScene", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "PlayerSummaryUI"
 end
 
-function slot0.setActivity(slot0, slot1)
-	slot0.activityVO = slot1
+function var_0_0.setActivity(arg_2_0, arg_2_1)
+	arg_2_0.activityVO = arg_2_1
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.palyerVO = slot1
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
+	arg_3_0.palyerVO = arg_3_1
 end
 
-function slot0.setSummaryInfo(slot0, slot1)
-	slot0.summaryInfoVO = slot1
+function var_0_0.setSummaryInfo(arg_4_0, arg_4_1)
+	arg_4_0.summaryInfoVO = arg_4_1
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("bg/back_btn")
-	slot0.pageContainer = slot0:findTF("bg/main/pages")
-	slot0.pageFootContainer = slot0:findTF("bg/main/page_foot")
+function var_0_0.init(arg_5_0)
+	arg_5_0.backBtn = arg_5_0:findTF("bg/back_btn")
+	arg_5_0.pageContainer = arg_5_0:findTF("bg/main/pages")
+	arg_5_0.pageFootContainer = arg_5_0:findTF("bg/main/page_foot")
 end
 
-function slot0.didEnter(slot0)
-	if slot0.summaryInfoVO then
-		slot0:initSummaryInfo()
+function var_0_0.didEnter(arg_6_0)
+	if arg_6_0.summaryInfoVO then
+		arg_6_0:initSummaryInfo()
 	else
-		slot0:emit(PlayerSummaryInfoMediator.GET_PLAYER_SUMMARY_INFO)
+		arg_6_0:emit(PlayerSummaryInfoMediator.GET_PLAYER_SUMMARY_INFO)
 	end
 
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0:inAnim() then
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		if arg_6_0:inAnim() then
 			return
 		end
 
-		uv0:emit(uv1.ON_BACK)
+		arg_6_0:emit(var_0_0.ON_BACK)
 	end, SFX_CANCEL)
 end
 
-function slot0.inAnim(slot0)
-	if _.any(slot0.pages or {}, function (slot0)
-		return slot0:inAnim()
+function var_0_0.inAnim(arg_8_0)
+	if _.any(arg_8_0.pages or {}, function(arg_9_0)
+		return arg_9_0:inAnim()
 	end) then
 		return true
 	end
@@ -48,135 +48,142 @@ function slot0.inAnim(slot0)
 	return false
 end
 
-function slot0.initSummaryInfo(slot0)
-	slot0.loadingPage = SummaryPageLoading.New(slot0.pageContainer:Find("loading"))
-	slot0.pages = {
-		SummaryPage1.New(slot0:findTF("page1", slot0.pageContainer)),
-		SummaryPage2.New(slot0:findTF("page2", slot0.pageContainer)),
-		SummaryPage3.New(slot0:findTF("page3", slot0.pageContainer)),
-		SummaryPage4.New(slot0:findTF("page4", slot0.pageContainer)),
-		SummaryPage4.New(slot0:findTF("page4_1", slot0.pageContainer)),
-		SummaryPage4.New(slot0:findTF("page4_2", slot0.pageContainer)),
-		SummaryPage5.New(slot0:findTF("page5", slot0.pageContainer))
+function var_0_0.initSummaryInfo(arg_10_0)
+	arg_10_0.loadingPage = SummaryPageLoading.New(arg_10_0.pageContainer:Find("loading"))
+	arg_10_0.pages = {
+		SummaryPage1.New(arg_10_0:findTF("page1", arg_10_0.pageContainer)),
+		SummaryPage2.New(arg_10_0:findTF("page2", arg_10_0.pageContainer)),
+		SummaryPage3.New(arg_10_0:findTF("page3", arg_10_0.pageContainer)),
+		SummaryPage4.New(arg_10_0:findTF("page4", arg_10_0.pageContainer)),
+		SummaryPage4.New(arg_10_0:findTF("page4_1", arg_10_0.pageContainer)),
+		SummaryPage4.New(arg_10_0:findTF("page4_2", arg_10_0.pageContainer)),
+		SummaryPage5.New(arg_10_0:findTF("page5", arg_10_0.pageContainer))
 	}
 
-	table.remove(slot0.pages, slot0.summaryInfoVO.isProPose and 3 or 2):Hide()
-	setActive(slot0.pageFootContainer, false)
-	seriesAsync({
-		function (slot0)
-			uv0.loadingPage:Init(uv0.summaryInfoVO)
-			slot0()
+	local var_10_0 = arg_10_0.summaryInfoVO.isProPose and 3 or 2
+
+	table.remove(arg_10_0.pages, var_10_0):Hide()
+
+	local var_10_1 = {
+		function(arg_11_0)
+			arg_10_0.loadingPage:Init(arg_10_0.summaryInfoVO)
+			arg_11_0()
 		end,
-		function (slot0)
-			uv0.loadingPage:Show(slot0)
+		function(arg_12_0)
+			arg_10_0.loadingPage:Show(arg_12_0)
 		end,
-		function (slot0)
-			uv0.loadingPage:Hide(slot0)
+		function(arg_13_0)
+			arg_10_0.loadingPage:Hide(arg_13_0)
 		end,
-		function (slot0)
-			for slot4, slot5 in ipairs(uv0.pages) do
-				slot5:Init(uv0.summaryInfoVO)
+		function(arg_14_0)
+			for iter_14_0, iter_14_1 in ipairs(arg_10_0.pages) do
+				iter_14_1:Init(arg_10_0.summaryInfoVO)
 			end
 
-			slot0()
+			arg_14_0()
 		end,
-		function (slot0)
-			uv0:registerFootEvent()
-			slot0()
+		function(arg_15_0)
+			arg_10_0:registerFootEvent()
+			arg_15_0()
 		end,
-		function (slot0)
-			uv0:updatePageFoot(1)
-			slot0()
+		function(arg_16_0)
+			arg_10_0:updatePageFoot(1)
+			arg_16_0()
 		end,
-		function (slot0)
-			uv0:registerDrag()
-			slot0()
+		function(arg_17_0)
+			arg_10_0:registerDrag()
+			arg_17_0()
 		end
-	}, function ()
-		setActive(uv0.pageFootContainer, true)
+	}
+
+	setActive(arg_10_0.pageFootContainer, false)
+	seriesAsync(var_10_1, function()
+		setActive(arg_10_0.pageFootContainer, true)
 	end)
 end
 
-function slot0.registerFootEvent(slot0)
-	slot0.footTFs = {}
+function var_0_0.registerFootEvent(arg_19_0)
+	arg_19_0.footTFs = {}
 
-	for slot4 = 1, #slot0.pages do
-		slot5 = slot0.pageFootContainer
-		slot5 = slot5:Find("dot_" .. slot4)
+	for iter_19_0 = 1, #arg_19_0.pages do
+		local var_19_0 = arg_19_0.pageFootContainer:Find("dot_" .. iter_19_0)
 
-		table.insert(slot0.footTFs, slot5)
-		onToggle(slot0, slot5, function (slot0)
-			if slot0 then
-				uv0.pages[uv1]:Show()
+		table.insert(arg_19_0.footTFs, var_19_0)
 
-				uv0.currPage = uv1
+		local function var_19_1(arg_20_0)
+			if arg_20_0 then
+				arg_19_0.pages[iter_19_0]:Show()
+
+				arg_19_0.currPage = iter_19_0
 			else
-				uv0.pages[uv0.currPage]:Hide()
+				arg_19_0.pages[arg_19_0.currPage]:Hide()
 			end
-		end)
+		end
+
+		onToggle(arg_19_0, var_19_0, var_19_1)
 	end
 end
 
-function slot0.registerDrag(slot0)
-	slot0:addVerticalDrag(slot0:findTF("bg"), function ()
-		uv0:updatePageFoot(uv0.currPage + 1)
-	end, function ()
-		uv0:updatePageFoot(uv0.currPage - 1)
+function var_0_0.registerDrag(arg_21_0)
+	arg_21_0:addVerticalDrag(arg_21_0:findTF("bg"), function()
+		arg_21_0:updatePageFoot(arg_21_0.currPage + 1)
+	end, function()
+		arg_21_0:updatePageFoot(arg_21_0.currPage - 1)
 	end)
 end
 
-function slot0.updatePageFoot(slot0, slot1)
-	if slot0:inAnim() then
+function var_0_0.updatePageFoot(arg_24_0, arg_24_1)
+	if arg_24_0:inAnim() then
 		return
 	end
 
-	if not slot0.footTFs[slot1] then
+	if not arg_24_0.footTFs[arg_24_1] then
 		return
 	end
 
-	triggerToggle(slot0.footTFs[slot1], true)
+	triggerToggle(arg_24_0.footTFs[arg_24_1], true)
 end
 
-function slot0.addVerticalDrag(slot0, slot1, slot2, slot3)
-	slot4 = GetOrAddComponent(slot1, "EventTriggerListener")
-	slot5 = nil
-	slot6 = 0
-	slot7 = 50
+function var_0_0.addVerticalDrag(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+	local var_25_0 = GetOrAddComponent(arg_25_1, "EventTriggerListener")
+	local var_25_1
+	local var_25_2 = 0
+	local var_25_3 = 50
 
-	slot4:AddBeginDragFunc(function ()
-		uv0 = 0
-		uv1 = nil
+	var_25_0:AddBeginDragFunc(function()
+		var_25_2 = 0
+		var_25_1 = nil
 	end)
-	slot4:AddDragFunc(function (slot0, slot1)
-		slot2 = slot1.position
+	var_25_0:AddDragFunc(function(arg_27_0, arg_27_1)
+		local var_27_0 = arg_27_1.position
 
-		if not uv0 then
-			uv0 = slot2
+		if not var_25_1 then
+			var_25_1 = var_27_0
 		end
 
-		uv1 = slot2.y - uv0.y
+		var_25_2 = var_27_0.y - var_25_1.y
 	end)
-	slot4:AddDragEndFunc(function (slot0, slot1)
-		if uv0 < -uv1 then
-			if uv2 then
-				uv2()
+	var_25_0:AddDragEndFunc(function(arg_28_0, arg_28_1)
+		if var_25_2 < -var_25_3 then
+			if arg_25_3 then
+				arg_25_3()
 			end
-		elseif uv1 < uv0 and uv3 then
-			uv3()
+		elseif var_25_2 > var_25_3 and arg_25_2 then
+			arg_25_2()
 		end
 	end)
 end
 
-function slot0.willExit(slot0)
-	for slot4, slot5 in pairs(slot0.pages) do
-		slot5:Dispose()
+function var_0_0.willExit(arg_29_0)
+	for iter_29_0, iter_29_1 in pairs(arg_29_0.pages) do
+		iter_29_1:Dispose()
 	end
 
-	slot0.pages = nil
+	arg_29_0.pages = nil
 
-	slot0.loadingPage:Dispose()
+	arg_29_0.loadingPage:Dispose()
 
-	slot0.loadingPage = nil
+	arg_29_0.loadingPage = nil
 end
 
-return slot0
+return var_0_0

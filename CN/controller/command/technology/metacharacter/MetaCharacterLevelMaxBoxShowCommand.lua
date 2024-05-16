@@ -1,49 +1,61 @@
-slot0 = class("MetaCharacterLevelMaxBoxShowCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MetaCharacterLevelMaxBoxShowCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(MetaCharacterProxy)
 
-	if not getProxy(MetaCharacterProxy) then
+	if not var_1_1 then
 		return
 	end
 
-	slot6 = nil
+	local var_1_2 = getProxy(ChapterProxy)
+	local var_1_3 = var_1_2:getActiveChapter()
+	local var_1_4
 
-	if getProxy(ChapterProxy):getActiveChapter() then
-		slot6 = slot4:GetChapterAutoFlag(slot5.id) == 1
+	if var_1_3 then
+		var_1_4 = var_1_2:GetChapterAutoFlag(var_1_3.id) == 1
 	end
 
-	if slot6 then
+	if var_1_4 then
 		return
 	end
 
-	if slot3:getMetaSkillLevelMaxInfoList() and #slot7 > 0 then
-		slot8 = ""
+	local var_1_5 = var_1_1:getMetaSkillLevelMaxInfoList()
 
-		for slot12, slot13 in ipairs(slot7) do
-			slot15 = slot13.metaSkillID
-			slot16 = setColorStr(slot13.metaShipVO:getName(), COLOR_GREEN)
-			slot8 = slot12 < #slot7 and slot8 .. slot16 .. "、" or slot8 .. slot16 .. "、" .. slot16
+	if var_1_5 and #var_1_5 > 0 then
+		local var_1_6 = ""
+
+		for iter_1_0, iter_1_1 in ipairs(var_1_5) do
+			local var_1_7 = iter_1_1.metaShipVO
+			local var_1_8 = iter_1_1.metaSkillID
+			local var_1_9 = var_1_7:getName()
+			local var_1_10 = setColorStr(var_1_9, COLOR_GREEN)
+
+			if iter_1_0 < #var_1_5 then
+				var_1_6 = var_1_6 .. var_1_10 .. "、"
+			else
+				var_1_6 = var_1_6 .. var_1_10
+			end
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("meta_skill_maxtip", slot8),
-			onYes = function ()
+			content = i18n("meta_skill_maxtip", var_1_6),
+			onYes = function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
 					autoOpenTactics = true,
-					autoOpenShipConfigID = uv0[1].metaShipVO.configId
+					autoOpenShipConfigID = var_1_5[1].metaShipVO.configId
 				})
 			end,
-			onClose = function ()
-				if uv0.closeFunc then
-					uv0.closeFunc()
+			onClose = function()
+				if var_1_0.closeFunc then
+					var_1_0.closeFunc()
 				end
 			end,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end
 
-	slot3:clearMetaSkillLevelMaxInfoList()
+	var_1_1:clearMetaSkillLevelMaxInfoList()
 end
 
-return slot0
+return var_0_0

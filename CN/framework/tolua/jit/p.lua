@@ -1,16 +1,31 @@
-assert(require("jit").version_num == 20100, "LuaJIT core/library version mismatch")
+﻿local var_0_0 = require("jit")
 
-slot1 = require("jit.profile")
-slot2 = require("jit.vmdef")
-slot4 = pairs
-slot5 = ipairs
-slot6 = tonumber
-slot7 = math.floor
-slot8 = table.sort
-slot9 = string.format
-slot10 = io.stdout
-slot11, slot12, slot13, slot14, slot15, slot16, slot17, slot18, slot19, slot20, slot21, slot22, slot23 = nil
-slot24 = {
+assert(var_0_0.version_num == 20100, "LuaJIT core/library version mismatch")
+
+local var_0_1 = require("jit.profile")
+local var_0_2 = require("jit.vmdef")
+local var_0_3 = math
+local var_0_4 = pairs
+local var_0_5 = ipairs
+local var_0_6 = tonumber
+local var_0_7 = var_0_3.floor
+local var_0_8 = table.sort
+local var_0_9 = string.format
+local var_0_10 = io.stdout
+local var_0_11
+local var_0_12
+local var_0_13
+local var_0_14
+local var_0_15
+local var_0_16
+local var_0_17
+local var_0_18
+local var_0_19
+local var_0_20
+local var_0_21
+local var_0_22
+local var_0_23
+local var_0_24 = {
 	G = "Garbage Collector",
 	C = "C code",
 	N = "Compiled",
@@ -18,323 +33,364 @@ slot24 = {
 	I = "Interpreted"
 }
 
-function slot25(slot0, slot1, slot2)
-	uv0 = uv0 + slot1
-	slot3, slot4, slot5 = nil
+local function var_0_25(arg_1_0, arg_1_1, arg_1_2)
+	var_0_23 = var_0_23 + arg_1_1
 
-	if uv1 then
-		slot5 = uv1 == "v" and (uv2[slot2] or slot2) or uv3:get() or "(none)"
+	local var_1_0
+	local var_1_1
+	local var_1_2
+
+	if var_0_14 then
+		if var_0_14 == "v" then
+			var_1_2 = var_0_24[arg_1_2] or arg_1_2
+		else
+			var_1_2 = var_0_11:get() or "(none)"
+		end
 	end
 
-	if uv4 then
-		slot3 = uv5.dumpstack(slot0, uv4, uv6):gsub("%[builtin#(%d+)%]", function (slot0)
-			return uv0.ffnames[uv1(slot0)]
+	if var_0_18 then
+		var_1_0 = var_0_1.dumpstack(arg_1_0, var_0_18, var_0_19)
+		var_1_0 = var_1_0:gsub("%[builtin#(%d+)%]", function(arg_2_0)
+			return var_0_2.ffnames[var_0_6(arg_2_0)]
 		end)
 
-		if uv9 == 2 then
-			slot6, slot7 = slot3:match("(.-) [<>] (.*)")
+		if var_0_15 == 2 then
+			local var_1_3, var_1_4 = var_1_0:match("(.-) [<>] (.*)")
 
-			if slot7 then
-				slot4 = slot7
-				slot3 = slot6
+			if var_1_4 then
+				var_1_0, var_1_1 = var_1_3, var_1_4
 			end
-		elseif uv9 == 3 then
-			slot4 = uv5.dumpstack(slot0, "l", 1)
+		elseif var_0_15 == 3 then
+			var_1_1 = var_0_1.dumpstack(arg_1_0, "l", 1)
 		end
 	end
 
-	slot6, slot7 = nil
+	local var_1_5
+	local var_1_6
 
-	if uv9 == 1 then
-		if slot5 then
-			slot6 = slot5
+	if var_0_15 == 1 then
+		if var_1_2 then
+			var_1_5 = var_1_2
 
-			if slot3 then
-				slot7 = slot3
+			if var_1_0 then
+				var_1_6 = var_1_0
 			end
 		end
-	elseif slot3 then
-		slot6 = slot3
+	elseif var_1_0 then
+		var_1_5 = var_1_0
 
-		if slot4 then
-			slot7 = slot4
-		elseif slot5 then
-			slot7 = slot5
+		if var_1_1 then
+			var_1_6 = var_1_1
+		elseif var_1_2 then
+			var_1_6 = var_1_2
 		end
 	end
 
-	if slot6 then
-		slot8[slot6] = (uv10[slot6] or 0) + slot1
+	if var_1_5 then
+		local var_1_7 = var_0_21
 
-		if slot7 then
-			if not uv11[slot6] then
-				slot9[slot6] = {}
+		var_1_7[var_1_5] = (var_1_7[var_1_5] or 0) + arg_1_1
+
+		if var_1_6 then
+			local var_1_8 = var_0_22
+			local var_1_9 = var_1_8[var_1_5]
+
+			if not var_1_9 then
+				var_1_9 = {}
+				var_1_8[var_1_5] = var_1_9
 			end
 
-			if not slot10[slot7] then
-				slot11 = 0
-			end
-
-			slot10[slot7] = slot11 + slot1
+			var_1_9[var_1_6] = (var_1_9[var_1_6] or 0) + arg_1_1
 		end
 	end
 end
 
-function slot26(slot0, slot1, slot2, slot3)
-	slot4 = {}
-	slot5 = 0
+local function var_0_26(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = {}
+	local var_3_1 = 0
 
-	for slot9 in uv0(slot0) do
-		slot4[slot5 + 1] = slot9
+	for iter_3_0 in var_0_4(arg_3_0) do
+		var_3_1 = var_3_1 + 1
+		var_3_0[var_3_1] = iter_3_0
 	end
 
-	uv1(slot4, function (slot0, slot1)
-		return uv0[slot1] < uv0[slot0]
+	var_0_8(var_3_0, function(arg_4_0, arg_4_1)
+		return arg_3_0[arg_4_0] > arg_3_0[arg_4_1]
 	end)
 
-	for slot9 = 1, slot5 do
-		if uv2(slot0[slot4[slot9]] * 100 / slot2 + 0.5) < uv3 then
+	for iter_3_1 = 1, var_3_1 do
+		local var_3_2 = var_3_0[iter_3_1]
+		local var_3_3 = arg_3_0[var_3_2]
+		local var_3_4 = var_0_7(var_3_3 * 100 / arg_3_2 + 0.5)
+
+		if var_3_4 < var_0_16 then
 			break
 		end
 
-		if not uv4 then
-			uv5:write(uv6("%s%2d%%  %s\n", slot3, slot12, slot10))
-		elseif uv4 == "r" then
-			uv5:write(uv6("%s%5d  %s\n", slot3, slot11, slot10))
+		if not var_0_17 then
+			var_0_12:write(var_0_9("%s%2d%%  %s\n", arg_3_3, var_3_4, var_3_2))
+		elseif var_0_17 == "r" then
+			var_0_12:write(var_0_9("%s%5d  %s\n", arg_3_3, var_3_3, var_3_2))
 		else
-			uv5:write(uv6("%s %d\n", slot10, slot11))
+			var_0_12:write(var_0_9("%s %d\n", var_3_2, var_3_3))
 		end
 
-		if slot1 and slot1[slot10] then
-			uv7(slot13, nil, slot11, (uv8 == 3 or uv8 == 1) and "  -- " or uv9 < 0 and "  -> " or "  <- ")
+		if arg_3_1 then
+			local var_3_5 = arg_3_1[var_3_2]
+
+			if var_3_5 then
+				var_0_26(var_3_5, nil, var_3_3, (var_0_15 == 3 or var_0_15 == 1) and "  -- " or var_0_19 < 0 and "  -> " or "  <- ")
+			end
 		end
 	end
 end
 
-function slot27(slot0, slot1)
-	slot2 = {}
-	slot3 = 0
+local function var_0_27(arg_5_0, arg_5_1)
+	local var_5_0 = {}
+	local var_5_1 = 0
 
-	for slot7, slot8 in uv0(slot0) do
-		slot3 = uv2.max(slot3, slot8)
+	for iter_5_0, iter_5_1 in var_0_4(arg_5_0) do
+		local var_5_2 = var_0_7(iter_5_1 * 100 / arg_5_1 + 0.5)
 
-		if uv3 <= uv1(slot8 * 100 / slot1 + 0.5) then
-			slot10, slot11 = slot7:match("^(.*):(%d+)$")
+		var_5_1 = var_0_3.max(var_5_1, iter_5_1)
 
-			if not slot10 then
-				slot10 = slot7
-				slot11 = 0
+		if var_5_2 >= var_0_16 then
+			local var_5_3, var_5_4 = iter_5_0:match("^(.*):(%d+)$")
+
+			if not var_5_3 then
+				var_5_3 = iter_5_0
+				var_5_4 = 0
 			end
 
-			if not slot2[slot10] then
-				slot2[slot10] = {}
-				slot2[#slot2 + 1] = slot10
+			local var_5_5 = var_5_0[var_5_3]
+
+			if not var_5_5 then
+				var_5_5 = {}
+				var_5_0[var_5_3] = var_5_5
+				var_5_0[#var_5_0 + 1] = var_5_3
 			end
 
-			slot12[uv4(slot11)] = uv5 and slot8 or slot9
+			var_5_5[var_0_6(var_5_4)] = var_0_17 and iter_5_1 or var_5_2
 		end
 	end
 
-	uv6(slot2)
+	var_0_8(var_5_0)
 
-	slot4 = " %3d%% | %s\n"
-	slot5 = "      | %s\n"
+	local var_5_6 = " %3d%% | %s\n"
+	local var_5_7 = "      | %s\n"
 
-	if uv5 then
-		slot6 = uv2.max(5, uv2.ceil(uv2.log10(slot3)))
-		slot4 = "%" .. slot6 .. "d | %s\n"
-		slot5 = (" "):rep(slot6) .. " | %s\n"
+	if var_0_17 then
+		local var_5_8 = var_0_3.max(5, var_0_3.ceil(var_0_3.log10(var_5_1)))
+
+		var_5_6 = "%" .. var_5_8 .. "d | %s\n"
+		var_5_7 = (" "):rep(var_5_8) .. " | %s\n"
 	end
 
-	slot6 = uv7
+	local var_5_9 = var_0_20
 
-	for slot10, slot11 in uv8(slot2) do
-		if slot11:byte() == 40 or slot12 == 91 then
-			uv9:write(uv10([[
+	for iter_5_2, iter_5_3 in var_0_5(var_5_0) do
+		local var_5_10 = iter_5_3:byte()
 
-====== %s ======
-[Cannot annotate non-file]
-]], slot11))
+		if var_5_10 == 40 or var_5_10 == 91 then
+			var_0_12:write(var_0_9("\n====== %s ======\n[Cannot annotate non-file]\n", iter_5_3))
 
 			break
 		end
 
-		slot13, slot14 = io.open(slot11)
+		local var_5_11, var_5_12 = io.open(iter_5_3)
 
-		if not slot13 then
-			uv9:write(uv10("====== ERROR: %s: %s\n", slot11, slot14))
+		if not var_5_11 then
+			var_0_12:write(var_0_9("====== ERROR: %s: %s\n", iter_5_3, var_5_12))
 
 			break
 		end
 
-		uv9:write(uv10("\n====== %s ======\n", slot11))
+		var_0_12:write(var_0_9("\n====== %s ======\n", iter_5_3))
 
-		slot15 = slot2[slot11]
-		slot16 = 1
-		slot17 = false
+		local var_5_13 = var_5_0[iter_5_3]
+		local var_5_14 = 1
+		local var_5_15 = false
 
-		if slot6 ~= 0 then
-			for slot21 = 1, slot6 do
-				if slot15[slot21] then
-					slot17 = true
+		if var_5_9 ~= 0 then
+			for iter_5_4 = 1, var_5_9 do
+				if var_5_13[iter_5_4] then
+					var_5_15 = true
 
-					uv9:write("@@ 1 @@\n")
+					var_0_12:write("@@ 1 @@\n")
 
 					break
 				end
 			end
 		end
 
-		for slot21 in slot13:lines() do
-			if slot21:byte() == 27 then
-				uv9:write("[Cannot annotate bytecode file]\n")
+		for iter_5_5 in var_5_11:lines() do
+			if iter_5_5:byte() == 27 then
+				var_0_12:write("[Cannot annotate bytecode file]\n")
 
 				break
 			end
 
-			slot22 = slot15[slot16]
+			local var_5_16 = var_5_13[var_5_14]
 
-			if slot6 ~= 0 then
-				slot23 = slot15[slot16 + slot6]
+			if var_5_9 ~= 0 then
+				local var_5_17 = var_5_13[var_5_14 + var_5_9]
 
-				if slot17 then
-					if slot23 then
-						slot17 = slot16 + slot6
-					elseif slot22 then
-						slot17 = slot16
-					elseif slot16 > slot17 + slot6 then
-						slot17 = false
+				if var_5_15 then
+					if var_5_17 then
+						var_5_15 = var_5_14 + var_5_9
+					elseif var_5_16 then
+						var_5_15 = var_5_14
+					elseif var_5_14 > var_5_15 + var_5_9 then
+						var_5_15 = false
 					end
-				elseif slot23 then
-					slot17 = slot16 + slot6
+				elseif var_5_17 then
+					var_5_15 = var_5_14 + var_5_9
 
-					uv9:write(uv10("@@ %d @@\n", slot16))
+					var_0_12:write(var_0_9("@@ %d @@\n", var_5_14))
 				end
 
-				if not slot17 then
-					-- Nothing
+				if not var_5_15 then
+					goto label_5_0
 				end
-			elseif slot22 then
-				uv9:write(uv10(slot4, slot22, slot21))
-			else
-				uv9:write(uv10(slot5, slot21))
 			end
 
-			slot16 = slot16 + 1
+			if var_5_16 then
+				var_0_12:write(var_0_9(var_5_6, var_5_16, iter_5_5))
+			else
+				var_0_12:write(var_0_9(var_5_7, iter_5_5))
+			end
+
+			::label_5_0::
+
+			var_5_14 = var_5_14 + 1
 		end
 
-		slot13:close()
+		var_5_11:close()
 	end
 end
 
-function slot29(slot0)
-	slot1 = ""
-	uv0 = 3
-	uv2 = 1
-	slot2 = {}
+local function var_0_28()
+	if var_0_13 then
+		var_0_1.stop()
 
-	for slot6 in slot0:gsub("i%d*", function (slot0)
-		uv0 = slot0
+		local var_6_0 = var_0_23
 
-		return ""
-	end):gsub("m(%d+)", function (slot0)
-		uv0 = uv1(slot0)
+		if var_6_0 == 0 then
+			if var_0_17 ~= true then
+				var_0_12:write("[No samples collected]\n")
+			end
 
-		return ""
-	end):gsub("%-?%d+", function (slot0)
-		uv0 = uv1(slot0)
-
-		return ""
-	end):gmatch(".") do
-		slot2[slot6] = slot6
-	end
-
-	uv3 = slot2.z or slot2.v
-
-	if uv3 == "z" then
-		uv4 = require("jit.zone")
-	end
-
-	slot3 = slot2.l or slot2.f or slot2.F or uv3 and "" or "f"
-	slot4 = slot2.p or ""
-	uv5 = slot2.r
-
-	if slot2.s then
-		uv6 = 2
-
-		if uv2 == -1 or slot2["-"] then
-			uv2 = -2
-		elseif uv2 == 1 then
-			uv2 = 2
+			return
 		end
-	elseif slot0:find("[fF].*l") then
-		slot3 = "l"
-		uv6 = 3
-	else
-		slot5 = (slot3 == "" or slot0:find("[zv].*[lfF]")) and 1 or 0
-		uv6 = slot5
+
+		if var_0_20 then
+			var_0_27(var_0_21, var_6_0)
+		else
+			var_0_26(var_0_21, var_0_22, var_6_0, "")
+		end
+
+		var_0_21 = nil
+		var_0_22 = nil
+		var_0_13 = nil
+	end
+end
+
+local function var_0_29(arg_7_0)
+	local var_7_0 = ""
+
+	arg_7_0 = arg_7_0:gsub("i%d*", function(arg_8_0)
+		var_7_0 = arg_8_0
+
+		return ""
+	end)
+	var_0_16 = 3
+	arg_7_0 = arg_7_0:gsub("m(%d+)", function(arg_9_0)
+		var_0_16 = var_0_6(arg_9_0)
+
+		return ""
+	end)
+	var_0_19 = 1
+	arg_7_0 = arg_7_0:gsub("%-?%d+", function(arg_10_0)
+		var_0_19 = var_0_6(arg_10_0)
+
+		return ""
+	end)
+
+	local var_7_1 = {}
+
+	for iter_7_0 in arg_7_0:gmatch(".") do
+		var_7_1[iter_7_0] = iter_7_0
 	end
 
-	uv7 = slot2.A and 0 or slot2.a and 3
+	var_0_14 = var_7_1.z or var_7_1.v
 
-	if uv7 then
-		slot3 = "l"
-		uv8 = "pl"
-		uv6 = 0
-		uv2 = 1
-	elseif slot2.G and slot3 ~= "" then
-		uv8 = slot4 .. slot3 .. "Z;"
-		uv2 = -100
-		uv5 = true
-		uv0 = 0
-	elseif slot3 == "" then
-		uv8 = false
-	else
-		slot5 = uv6 == 3 and slot2.f or slot2.F or slot3
-		uv8 = slot4 .. slot5 .. (uv2 >= 0 and "Z < " or "Z > ")
+	if var_0_14 == "z" then
+		var_0_11 = require("jit.zone")
 	end
 
-	uv9 = {}
-	uv10 = {}
-	uv11 = 0
+	local var_7_2 = var_7_1.l or var_7_1.f or var_7_1.F or var_0_14 and "" or "f"
+	local var_7_3 = var_7_1.p or ""
 
-	uv12.start(slot3:lower() .. slot1, uv13)
+	var_0_17 = var_7_1.r
 
-	uv14 = newproxy(true)
-	getmetatable(uv14).__gc = uv15
+	if var_7_1.s then
+		var_0_15 = 2
+
+		if var_0_19 == -1 or var_7_1["-"] then
+			var_0_19 = -2
+		elseif var_0_19 == 1 then
+			var_0_19 = 2
+		end
+	elseif arg_7_0:find("[fF].*l") then
+		var_7_2 = "l"
+		var_0_15 = 3
+	else
+		var_0_15 = (var_7_2 == "" or arg_7_0:find("[zv].*[lfF]")) and 1 or 0
+	end
+
+	var_0_20 = var_7_1.A and 0 or var_7_1.a and 3
+
+	if var_0_20 then
+		var_7_2 = "l"
+		var_0_18 = "pl"
+		var_0_15 = 0
+		var_0_19 = 1
+	elseif var_7_1.G and var_7_2 ~= "" then
+		var_0_18 = var_7_3 .. var_7_2 .. "Z;"
+		var_0_19 = -100
+		var_0_17 = true
+		var_0_16 = 0
+	elseif var_7_2 == "" then
+		var_0_18 = false
+	else
+		local var_7_4 = var_0_15 == 3 and var_7_1.f or var_7_1.F or var_7_2
+
+		var_0_18 = var_7_3 .. var_7_4 .. (var_0_19 >= 0 and "Z < " or "Z > ")
+	end
+
+	var_0_21 = {}
+	var_0_22 = {}
+	var_0_23 = 0
+
+	var_0_1.start(var_7_2:lower() .. var_7_0, var_0_25)
+
+	var_0_13 = newproxy(true)
+	getmetatable(var_0_13).__gc = var_0_28
+end
+
+local function var_0_30(arg_11_0, arg_11_1)
+	arg_11_1 = arg_11_1 or os.getenv("LUAJIT_PROFILEFILE")
+
+	if arg_11_1 then
+		var_0_12 = arg_11_1 == "-" and var_0_10 or assert(io.open(arg_11_1, "w"))
+	else
+		var_0_12 = var_0_10
+	end
+
+	var_0_29(arg_11_0 or "f")
 end
 
 return {
-	start = function (slot0, slot1)
-		if slot1 or os.getenv("LUAJIT_PROFILEFILE") then
-			uv0 = slot1 == "-" and uv1 or assert(io.open(slot1, "w"))
-		else
-			uv0 = uv1
-		end
-
-		uv2(slot0 or "f")
-	end,
-	stop = function ()
-		if uv0 then
-			uv1.stop()
-
-			if uv2 == 0 then
-				if uv3 ~= true then
-					uv4:write("[No samples collected]\n")
-				end
-
-				return
-			end
-
-			if uv5 then
-				uv6(uv7, slot0)
-			else
-				uv8(uv7, uv9, slot0, "")
-			end
-
-			uv7 = nil
-			uv9 = nil
-			uv0 = nil
-		end
-	end
+	start = var_0_30,
+	stop = var_0_28
 }

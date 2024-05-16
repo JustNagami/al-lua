@@ -1,52 +1,53 @@
-slot0 = class("GetCommanderCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetCommanderCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
-	slot5 = defaultValue(slot2.notify, true)
-	slot6 = getProxy(CommanderProxy)
-	slot7 = slot6:getBoxById(slot2.id)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = defaultValue(var_1_0.notify, true)
+	local var_1_4 = getProxy(CommanderProxy)
+	local var_1_5 = var_1_4:getBoxById(var_1_1)
 
-	if getProxy(PlayerProxy):getRawData().commanderBagMax <= slot6:getCommanderCnt() then
+	if getProxy(PlayerProxy):getRawData().commanderBagMax <= var_1_4:getCommanderCnt() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_capcity_is_max"))
 
-		if slot4 then
-			slot4()
+		if var_1_2 then
+			var_1_2()
 		end
 
 		return
 	end
 
-	if slot7:getState() ~= CommanderBox.STATE_FINISHED then
+	if var_1_5:getState() ~= CommanderBox.STATE_FINISHED then
 		return
 	end
 
-	slot9 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(25004, {
+		boxid = var_1_1
+	}, 25005, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = Commander.New(arg_2_0.commander)
 
-	slot9:Send(25004, {
-		boxid = slot3
-	}, 25005, function (slot0)
-		if slot0.result == 0 then
-			uv0:addCommander(Commander.New(slot0.commander))
-			uv1:finish()
+			var_1_4:addCommander(var_2_0)
+			var_1_5:finish()
 
-			if uv2 then
-				uv3:sendNotification(GAME.COMMANDER_ON_OPEN_BOX_DONE, {
-					commander = slot1:clone(),
-					boxId = uv4,
-					callback = uv5
+			if var_1_3 then
+				arg_1_0:sendNotification(GAME.COMMANDER_ON_OPEN_BOX_DONE, {
+					commander = var_2_0:clone(),
+					boxId = var_1_1,
+					callback = var_1_2
 				})
-			elseif uv5 then
-				uv5(slot1)
+			elseif var_1_2 then
+				var_1_2(var_2_0)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_acquire_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_acquire_erro", arg_2_0.result))
 
-			if uv5 then
-				uv5()
+			if var_1_2 then
+				var_1_2()
 			end
 		end
 	end)
 end
 
-return slot0
+return var_0_0

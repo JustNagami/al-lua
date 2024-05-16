@@ -1,4 +1,4 @@
-pm = pm or {}
+﻿pm = pm or {}
 pm.VERSION = "1.0.0"
 pm.FRAMEWORK_NAME = "puremvc lua"
 pm.PACKAGE_NAME = "Framework.puremvc"

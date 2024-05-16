@@ -1,15 +1,15 @@
-slot0 = class("ChatRoomBubble", import(".ChatBubble"))
+﻿local var_0_0 = class("ChatRoomBubble", import(".ChatBubble"))
 
-function slot0.init(slot0)
-	slot0.nameTF = findTF(slot0.tf, "desc/name"):GetComponent("Text")
-	slot0.circle = findTF(slot0.tf, "shipicon/frame")
-	slot0.face = findTF(slot0.tf, "face/content")
-	slot0.timeTF = findTF(slot0.tf, "time"):GetComponent("Text")
-	slot0.headTF = findTF(slot0.tf, "shipicon/icon"):GetComponent("Image")
-	slot0.stars = findTF(slot0.tf, "shipicon/stars")
-	slot0.star = findTF(slot0.stars, "star")
-	slot0.frame = findTF(slot0.tf, "shipicon/frame"):GetComponent("Image")
-	slot0.chatBgWidth = 665
+function var_0_0.init(arg_1_0)
+	arg_1_0.nameTF = findTF(arg_1_0.tf, "desc/name"):GetComponent("Text")
+	arg_1_0.circle = findTF(arg_1_0.tf, "shipicon/frame")
+	arg_1_0.face = findTF(arg_1_0.tf, "face/content")
+	arg_1_0.timeTF = findTF(arg_1_0.tf, "time"):GetComponent("Text")
+	arg_1_0.headTF = findTF(arg_1_0.tf, "shipicon/icon"):GetComponent("Image")
+	arg_1_0.stars = findTF(arg_1_0.tf, "shipicon/stars")
+	arg_1_0.star = findTF(arg_1_0.stars, "star")
+	arg_1_0.frame = findTF(arg_1_0.tf, "shipicon/frame"):GetComponent("Image")
+	arg_1_0.chatBgWidth = 665
 end
 
-return slot0
+return var_0_0

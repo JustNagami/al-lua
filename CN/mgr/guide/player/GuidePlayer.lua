@@ -1,414 +1,429 @@
-slot0 = class("GuidePlayer")
+﻿local var_0_0 = class("GuidePlayer")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0.bgCg = slot1:Find("BG"):GetComponent(typeof(CanvasGroup))
-	slot0.windowContainer = slot1:Find("windows")
-	slot0.charContainer = slot1:Find("char")
-	slot0.dialogueWindows = pg.NewGuideMgr.GetInstance().dialogueWindows
-	slot0.counsellors = pg.NewGuideMgr.GetInstance().counsellors
-	slot0.uiFinder = pg.NewGuideMgr.GetInstance().uiFinder
-	slot0.uiDuplicator = pg.NewGuideMgr.GetInstance().uiDuplicator
-	slot0.uiLoader = pg.NewGuideMgr.GetInstance().uiLoader
-	slot0.root = slot1:Find("target")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.bgCg = arg_1_1:Find("BG"):GetComponent(typeof(CanvasGroup))
+	arg_1_0.windowContainer = arg_1_1:Find("windows")
+	arg_1_0.charContainer = arg_1_1:Find("char")
+	arg_1_0.dialogueWindows = pg.NewGuideMgr.GetInstance().dialogueWindows
+	arg_1_0.counsellors = pg.NewGuideMgr.GetInstance().counsellors
+	arg_1_0.uiFinder = pg.NewGuideMgr.GetInstance().uiFinder
+	arg_1_0.uiDuplicator = pg.NewGuideMgr.GetInstance().uiDuplicator
+	arg_1_0.uiLoader = pg.NewGuideMgr.GetInstance().uiLoader
+	arg_1_0.root = arg_1_1:Find("target")
 end
 
-function slot0.Execute(slot0, slot1, slot2)
+function var_0_0.Execute(arg_2_0, arg_2_1, arg_2_2)
 	seriesAsync({
-		function (slot0)
-			uv0:HideDialogueWindows()
-			uv0:UpdateStyle(uv1)
-			uv0:DoDelay(uv1, slot0)
+		function(arg_3_0)
+			arg_2_0:HideDialogueWindows()
+			arg_2_0:UpdateStyle(arg_2_1)
+			arg_2_0:DoDelay(arg_2_1, arg_3_0)
 		end,
-		function (slot0)
-			uv0:WaitUntilSceneEnter(uv1, slot0)
+		function(arg_4_0)
+			arg_2_0:WaitUntilSceneEnter(arg_2_1, arg_4_0)
 		end,
-		function (slot0)
-			uv0:CheckBaseUI(uv1, slot0)
+		function(arg_5_0)
+			arg_2_0:CheckBaseUI(arg_2_1, arg_5_0)
 		end,
-		function (slot0)
-			uv0:CheckSprite(uv1, slot0)
+		function(arg_6_0)
+			arg_2_0:CheckSprite(arg_2_1, arg_6_0)
 		end,
-		function (slot0)
-			uv0:ShowDialogueWindow(uv1, slot0)
+		function(arg_7_0)
+			arg_2_0:ShowDialogueWindow(arg_2_1, arg_7_0)
 		end,
-		function (slot0)
-			uv0:UpdateHighLight(uv1, slot0)
+		function(arg_8_0)
+			arg_2_0:UpdateHighLight(arg_2_1, arg_8_0)
 		end,
-		function (slot0)
-			uv0:OnExecution(uv1, slot0)
+		function(arg_9_0)
+			arg_2_0:OnExecution(arg_2_1, arg_9_0)
 		end,
-		function (slot0)
-			uv0:RegisterEvent(uv1, slot0)
+		function(arg_10_0)
+			arg_2_0:RegisterEvent(arg_2_1, arg_10_0)
 		end,
-		function (slot0)
-			uv0:Clear()
-			slot0()
+		function(arg_11_0)
+			arg_2_0:Clear()
+			arg_11_0()
 		end
-	}, slot2)
+	}, arg_2_2)
 end
 
-function slot0.CheckBaseUI(slot0, slot1, slot2)
-	if not slot1:ShouldCheckBaseUI() then
-		slot2()
+function var_0_0.CheckBaseUI(arg_12_0, arg_12_1, arg_12_2)
+	if not arg_12_1:ShouldCheckBaseUI() then
+		arg_12_2()
 
 		return
 	end
 
-	slot0:SearchUI(slot1:GetBaseUI(), function (slot0)
-		if not slot0 then
+	arg_12_0:SearchUI(arg_12_1:GetBaseUI(), function(arg_13_0)
+		if not arg_13_0 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		uv0()
+		arg_12_2()
 	end)
 end
 
-function slot1(slot0, slot1)
-	return not (IsNil(slot0:GetComponent(typeof(Image)).sprite) or slot1 and slot2.sprite.name == slot1)
+local function var_0_1(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0:GetComponent(typeof(Image))
+
+	return not (IsNil(var_14_0.sprite) or arg_14_1 and var_14_0.sprite.name == arg_14_1)
 end
 
-function slot0.CheckSprite(slot0, slot1, slot2)
-	if not slot1:ShouldCheckSpriteUI() then
-		slot2()
+function var_0_0.CheckSprite(arg_15_0, arg_15_1, arg_15_2)
+	if not arg_15_1:ShouldCheckSpriteUI() then
+		arg_15_2()
 
 		return
 	end
 
-	slot0:SearchUI(slot1:GetSpriteUI(), function (slot0)
-		if not slot0 then
+	local var_15_0 = arg_15_1:GetSpriteUI()
+
+	arg_15_0:SearchUI(var_15_0, function(arg_16_0)
+		if not arg_16_0 then
 			pg.NewGuideMgr.GetInstance():Stop()
 
 			return
 		end
 
-		slot1 = uv0.childPath and slot0:Find(uv0.childPath) or slot0
+		local var_16_0 = var_15_0.childPath and arg_16_0:Find(var_15_0.childPath) or arg_16_0
 
-		uv1:ClearSpriteTimer()
+		arg_15_0:ClearSpriteTimer()
 
-		slot2 = 0
-		slot3 = 10
-		uv1.spriteTimer = Timer.New(function ()
-			uv0 = uv0 + 1
+		local var_16_1 = 0
+		local var_16_2 = 10
 
-			if uv0 == uv1 then
-				uv2:ClearSpriteTimer()
+		arg_15_0.spriteTimer = Timer.New(function()
+			var_16_1 = var_16_1 + 1
+
+			if var_16_1 == var_16_2 then
+				arg_15_0:ClearSpriteTimer()
 
 				return
 			end
 
-			if uv3(uv4, uv5.defaultName) then
-				uv2:ClearSpriteTimer()
-				uv6()
+			if var_0_1(var_16_0, var_15_0.defaultName) then
+				arg_15_0:ClearSpriteTimer()
+				arg_15_2()
 			end
 		end, 0.5, -1)
 
-		uv1.spriteTimer:Start()
+		arg_15_0.spriteTimer:Start()
 	end)
 end
 
-function slot0.ClearSpriteTimer(slot0)
-	if slot0.spriteTimer then
-		slot0.spriteTimer:Stop()
+function var_0_0.ClearSpriteTimer(arg_18_0)
+	if arg_18_0.spriteTimer then
+		arg_18_0.spriteTimer:Stop()
 
-		slot0.spriteTimer = nil
+		arg_18_0.spriteTimer = nil
 	end
 end
 
-function slot0.UpdateStyle(slot0, slot1)
-	slot0.bgCg.alpha = slot1:GetAlpha()
+function var_0_0.UpdateStyle(arg_19_0, arg_19_1)
+	arg_19_0.bgCg.alpha = arg_19_1:GetAlpha()
 end
 
-function slot0.DoDelay(slot0, slot1, slot2)
-	if slot1:GetDelay() <= 0 then
-		slot2()
+function var_0_0.DoDelay(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = arg_20_1:GetDelay()
+
+	if var_20_0 <= 0 then
+		arg_20_2()
 
 		return
 	end
 
-	slot0.delayTimer = Timer.New(slot2, slot3, 1)
+	arg_20_0.delayTimer = Timer.New(arg_20_2, var_20_0, 1)
 
-	slot0.delayTimer:Start()
+	arg_20_0.delayTimer:Start()
 end
 
-function slot0.OnSceneEnter(slot0)
-	if slot0.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(slot0.waitSceneData.sceneName) then
-		slot0:ClearWaitUntilSceneTimer()
-		slot0.waitSceneData.callback()
+function var_0_0.OnSceneEnter(arg_21_0)
+	if arg_21_0.waitSceneData and pg.NewGuideMgr.GetInstance():ExistScene(arg_21_0.waitSceneData.sceneName) then
+		arg_21_0:ClearWaitUntilSceneTimer()
+		arg_21_0.waitSceneData.callback()
 
-		slot0.waitSceneData = nil
+		arg_21_0.waitSceneData = nil
 	end
 end
 
-function slot0.WaitUntilSceneEnter(slot0, slot1, slot2)
-	if not slot1:ShouldWaitScene() then
-		slot2()
+function var_0_0.WaitUntilSceneEnter(arg_22_0, arg_22_1, arg_22_2)
+	if not arg_22_1:ShouldWaitScene() then
+		arg_22_2()
 
 		return
 	end
 
-	slot0:ClearWaitUntilSceneTimer()
+	arg_22_0:ClearWaitUntilSceneTimer()
 
-	if pg.NewGuideMgr.GetInstance():ExistScene(slot1:GetWaitScene()) then
-		slot2()
+	local var_22_0 = arg_22_1:GetWaitScene()
+
+	if pg.NewGuideMgr.GetInstance():ExistScene(var_22_0) then
+		arg_22_2()
 	else
-		slot0.waitSceneData = {
-			sceneName = slot3,
-			callback = slot2
+		arg_22_0.waitSceneData = {
+			sceneName = var_22_0,
+			callback = arg_22_2
 		}
 
-		slot0:AddWaitUntilSceneTimer()
+		arg_22_0:AddWaitUntilSceneTimer()
 	end
 end
 
-function slot0.AddWaitUntilSceneTimer(slot0)
-	slot0.waitUntilSceneTimer = Timer.New(function ()
-		uv0:ClearWaitUntilSceneTimer()
+function var_0_0.AddWaitUntilSceneTimer(arg_23_0)
+	arg_23_0.waitUntilSceneTimer = Timer.New(function()
+		arg_23_0:ClearWaitUntilSceneTimer()
 		pg.NewGuideMgr.GetInstance():Stop()
 	end, 10, 1)
 
-	slot0.waitUntilSceneTimer:Start()
+	arg_23_0.waitUntilSceneTimer:Start()
 end
 
-function slot0.ClearWaitUntilSceneTimer(slot0)
-	if slot0.waitUntilSceneTimer then
-		slot0.waitUntilSceneTimer:Stop()
+function var_0_0.ClearWaitUntilSceneTimer(arg_25_0)
+	if arg_25_0.waitUntilSceneTimer then
+		arg_25_0.waitUntilSceneTimer:Stop()
 
-		slot0.waitUntilSceneTimer = nil
+		arg_25_0.waitUntilSceneTimer = nil
 	end
 end
 
-function slot0.ShowDialogueWindow(slot0, slot1, slot2)
-	if not slot1:ShouldShowDialogue() then
-		slot0:HideDialogueWindows()
-		slot2()
+function var_0_0.ShowDialogueWindow(arg_26_0, arg_26_1, arg_26_2)
+	if not arg_26_1:ShouldShowDialogue() then
+		arg_26_0:HideDialogueWindows()
+		arg_26_2()
 
 		return
 	end
 
-	slot3 = {}
+	local var_26_0 = {}
+	local var_26_1 = arg_26_1:GetDialogueType()
 
-	if not slot0.dialogueWindows[slot1:GetDialogueType()] then
-		table.insert(slot3, function (slot0)
-			uv0:LoadDialogueWindow(uv1, slot0)
+	if not arg_26_0.dialogueWindows[var_26_1] then
+		table.insert(var_26_0, function(arg_27_0)
+			arg_26_0:LoadDialogueWindow(var_26_1, arg_27_0)
 		end)
 	end
 
-	table.insert(slot3, function (slot0)
-		uv0:UpdateDialogue(uv2, uv0.dialogueWindows[uv1], slot0)
+	table.insert(var_26_0, function(arg_28_0)
+		local var_28_0 = arg_26_0.dialogueWindows[var_26_1]
+
+		arg_26_0:UpdateDialogue(arg_26_1, var_28_0, arg_28_0)
 	end)
-	seriesAsync(slot3, slot2)
+	seriesAsync(var_26_0, arg_26_2)
 end
 
-function slot0.UpdateDialogue(slot0, slot1, slot2, slot3)
-	slot0:ActiveDialogueWindow(slot2)
+function var_0_0.UpdateDialogue(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	arg_29_0:ActiveDialogueWindow(arg_29_2)
 
-	slot4 = slot1:GetStyleData()
+	local var_29_0 = arg_29_1:GetStyleData()
 
-	setText(slot2:Find("content"), slot4.text)
+	setText(arg_29_2:Find("content"), var_29_0.text)
 
-	slot2.localScale = slot4.scale
-	slot2.localPosition = slot4.position
-	slot2:Find("content").localScale = slot4.scale
+	arg_29_2.localScale = var_29_0.scale
+	arg_29_2.localPosition = var_29_0.position
+	arg_29_2:Find("content").localScale = var_29_0.scale
 
-	if not IsNil(slot2:Find("hand")) then
-		slot5.localPosition = slot4.handPosition
-		slot5.eulerAngles = slot4.handAngle
+	local var_29_1 = arg_29_2:Find("hand")
+
+	if not IsNil(var_29_1) then
+		var_29_1.localPosition = var_29_0.handPosition
+		var_29_1.eulerAngles = var_29_0.handAngle
 	end
 
-	slot6 = slot4.counsellor
+	local var_29_2 = var_29_0.counsellor
 
 	seriesAsync({
-		function (slot0)
-			uv0:LoadCounsellor(uv1.name, slot0)
+		function(arg_30_0)
+			arg_29_0:LoadCounsellor(var_29_2.name, arg_30_0)
 		end,
-		function (slot0)
-			slot1 = uv0.counsellors[uv1.name]
+		function(arg_31_0)
+			local var_31_0 = arg_29_0.counsellors[var_29_2.name]
 
-			setActive(slot1, true)
+			setActive(var_31_0, true)
 
-			slot1.localPosition = uv2.localPosition + Vector3(uv1.position.x, uv1.position.y, 0)
-			slot1.localScale = Vector3(uv1.scale.x, uv1.scale.y, 1)
+			var_31_0.localPosition = arg_29_2.localPosition + Vector3(var_29_2.position.x, var_29_2.position.y, 0)
+			var_31_0.localScale = Vector3(var_29_2.scale.x, var_29_2.scale.y, 1)
 
-			slot0()
+			arg_31_0()
 		end
-	}, slot3)
+	}, arg_29_3)
 end
 
-function slot0.LoadCounsellor(slot0, slot1, slot2)
-	if not slot0.counsellors[slot1] then
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("guideitem/" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if IsNil(slot0) then
+function var_0_0.LoadCounsellor(arg_32_0, arg_32_1, arg_32_2)
+	if not arg_32_0.counsellors[arg_32_1] then
+		ResourceMgr.Inst:getAssetAsync("guideitem/" .. arg_32_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_33_0)
+			if IsNil(arg_33_0) then
 				return
 			end
 
-			uv0.counsellors[uv1] = Object.Instantiate(slot0, uv0.charContainer).transform
+			local var_33_0 = Object.Instantiate(arg_33_0, arg_32_0.charContainer)
 
-			uv2()
+			arg_32_0.counsellors[arg_32_1] = var_33_0.transform
+
+			arg_32_2()
 		end), true, true)
 	else
-		slot2()
+		arg_32_2()
 	end
 end
 
-function slot0.LoadDialogueWindow(slot0, slot1, slot2)
-	slot3 = ResourceMgr.Inst
-
-	slot3:getAssetAsync("guideitem/window_" .. slot1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if IsNil(slot0) then
+function var_0_0.LoadDialogueWindow(arg_34_0, arg_34_1, arg_34_2)
+	ResourceMgr.Inst:getAssetAsync("guideitem/window_" .. arg_34_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_35_0)
+		if IsNil(arg_35_0) then
 			return
 		end
 
-		uv0.dialogueWindows[uv1] = Object.Instantiate(slot0, uv0.windowContainer).transform
+		local var_35_0 = Object.Instantiate(arg_35_0, arg_34_0.windowContainer)
 
-		if uv2 then
-			uv2()
+		arg_34_0.dialogueWindows[arg_34_1] = var_35_0.transform
+
+		if arg_34_2 then
+			arg_34_2()
 		end
 	end), true, true)
 end
 
-function slot0.ActiveDialogueWindow(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.dialogueWindows) do
-		setActive(slot6, slot6 == slot1)
+function var_0_0.ActiveDialogueWindow(arg_36_0, arg_36_1)
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.dialogueWindows) do
+		setActive(iter_36_1, iter_36_1 == arg_36_1)
 	end
 end
 
-function slot0.HideDialogueWindows(slot0)
-	for slot4, slot5 in pairs(slot0.dialogueWindows) do
-		setActive(slot5, false)
+function var_0_0.HideDialogueWindows(arg_37_0)
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.dialogueWindows) do
+		setActive(iter_37_1, false)
 	end
 end
 
-function slot2(slot0, slot1, slot2, slot3)
-	if slot3.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
-		slot0.uiDuplicator:Duplicate(slot2, {
+local function var_0_2(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
+	if arg_38_3.type == GuideStep.HIGH_TYPE_GAMEOBJECT then
+		arg_38_0.uiDuplicator:Duplicate(arg_38_2, {
 			clearAllEvent = true
 		})
-	elseif slot3.type == GuideStep.HIGH_TYPE_LINE then
-		slot4 = slot1.isWorld and 15 or 55
-		slot5 = slot0._tf:InverseTransformPoint(slot2.position)
+	elseif arg_38_3.type == GuideStep.HIGH_TYPE_LINE then
+		local var_38_0 = arg_38_1.isWorld and 15 or 55
+		local var_38_1 = arg_38_0._tf:InverseTransformPoint(arg_38_2.position)
+		local var_38_2 = (arg_38_2.pivot.x - 0.5) * var_38_0
+		local var_38_3 = (arg_38_2.pivot.y - 0.5) * var_38_0
+		local var_38_4 = Vector2(arg_38_2.sizeDelta.x + var_38_0, arg_38_2.sizeDelta.y + var_38_0)
 
-		slot0.uiLoader:LoadHighLightArea({
-			position = Vector3(slot5.x, slot5.y, 0) + Vector3((slot2.pivot.x - 0.5) * slot4, (slot2.pivot.y - 0.5) * slot4, 0),
-			sizeDelta = Vector2(slot2.sizeDelta.x + slot4, slot2.sizeDelta.y + slot4),
-			pivot = slot2.pivot,
-			isWorld = slot1.isWorld
+		arg_38_0.uiLoader:LoadHighLightArea({
+			position = Vector3(var_38_1.x, var_38_1.y, 0) + Vector3(var_38_2, var_38_3, 0),
+			sizeDelta = var_38_4,
+			pivot = arg_38_2.pivot,
+			isWorld = arg_38_1.isWorld
 		})
 	end
 end
 
-function slot0.UpdateHighLight(slot0, slot1, slot2)
-	if #slot1:GetHighLightTarget() <= 0 then
-		slot2()
+function var_0_0.UpdateHighLight(arg_39_0, arg_39_1, arg_39_2)
+	local var_39_0 = arg_39_1:GetHighLightTarget()
+
+	if #var_39_0 <= 0 then
+		arg_39_2()
 
 		return
 	end
 
-	slot4 = {}
+	local var_39_1 = {}
 
-	for slot8, slot9 in ipairs(slot3) do
-		table.insert(slot4, function (slot0)
-			slot1 = uv0
-
-			slot1:SearchUI(uv1, function (slot0)
-				if not slot0 then
+	for iter_39_0, iter_39_1 in ipairs(var_39_0) do
+		table.insert(var_39_1, function(arg_40_0)
+			arg_39_0:SearchUI(iter_39_1, function(arg_41_0)
+				if not arg_41_0 then
 					pg.NewGuideMgr.GetInstance():Stop()
 
 					return
 				end
 
-				uv0(uv1, uv2, slot0, uv3)
-				uv4()
+				var_0_2(arg_39_0, arg_39_1, arg_41_0, iter_39_1)
+				arg_40_0()
 			end)
 		end)
 	end
 
-	parallelAsync(slot4, slot2)
+	parallelAsync(var_39_1, arg_39_2)
 end
 
-function slot0.SearchUI(slot0, slot1, slot2)
-	slot0.uiFinder:Search({
-		path = slot1.path,
-		delay = slot1.delay,
-		childIndex = slot1.pathIndex,
-		conditionData = slot1.conditionData,
-		callback = slot2
+function var_0_0.SearchUI(arg_42_0, arg_42_1, arg_42_2)
+	arg_42_0.uiFinder:Search({
+		path = arg_42_1.path,
+		delay = arg_42_1.delay,
+		childIndex = arg_42_1.pathIndex,
+		conditionData = arg_42_1.conditionData,
+		callback = arg_42_2
 	})
 end
 
-function slot0.SearchWithoutDelay(slot0, slot1, slot2)
-	slot0.uiFinder:SearchWithoutDelay({
-		path = slot1.path,
-		delay = slot1.delay,
-		childIndex = slot1.pathIndex,
-		conditionData = slot1.conditionData,
-		callback = slot2
+function var_0_0.SearchWithoutDelay(arg_43_0, arg_43_1, arg_43_2)
+	arg_43_0.uiFinder:SearchWithoutDelay({
+		path = arg_43_1.path,
+		delay = arg_43_1.delay,
+		childIndex = arg_43_1.pathIndex,
+		conditionData = arg_43_1.conditionData,
+		callback = arg_43_2
 	})
 end
 
-function slot0.RegisterEvent(slot0, slot1, slot2)
-	if slot1:ExistTrigger() then
-		removeOnButton(slot0._tf)
-		slot2()
+function var_0_0.RegisterEvent(arg_44_0, arg_44_1, arg_44_2)
+	if arg_44_1:ExistTrigger() then
+		removeOnButton(arg_44_0._tf)
+		arg_44_2()
 
 		return
 	end
 
-	onButton(pg.NewGuideMgr.GetInstance(), slot0._tf, function ()
-		if uv0:ShouldGoScene() then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv0.sceneName])
-			uv1()
-		elseif uv0:ShouldTriggerOtherTarget() then
-			slot0 = uv2
-			slot2 = uv0
-
-			slot0:SearchUI(slot2:GetOtherTriggerTarget(), function (slot0)
-				triggerButton(slot0)
-				uv0()
+	onButton(pg.NewGuideMgr.GetInstance(), arg_44_0._tf, function()
+		if arg_44_1:ShouldGoScene() then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg_44_1.sceneName])
+			arg_44_2()
+		elseif arg_44_1:ShouldTriggerOtherTarget() then
+			arg_44_0:SearchUI(arg_44_1:GetOtherTriggerTarget(), function(arg_46_0)
+				triggerButton(arg_46_0)
+				arg_44_2()
 			end)
 		else
-			uv1()
+			arg_44_2()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.NextOne(slot0)
-	triggerButton(slot0._tf)
+function var_0_0.NextOne(arg_47_0)
+	triggerButton(arg_47_0._tf)
 end
 
-function slot0.HideCounsellors(slot0)
-	for slot4, slot5 in pairs(slot0.counsellors) do
-		setActive(slot5, false)
+function var_0_0.HideCounsellors(arg_48_0)
+	for iter_48_0, iter_48_1 in pairs(arg_48_0.counsellors) do
+		setActive(iter_48_1, false)
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0:HideCounsellors()
-	slot0:HideDialogueWindows()
-	slot0:ClearSpriteTimer()
-	removeOnButton(slot0._tf)
-	slot0:OnClear()
+function var_0_0.Clear(arg_49_0)
+	arg_49_0:HideCounsellors()
+	arg_49_0:HideDialogueWindows()
+	arg_49_0:ClearSpriteTimer()
+	removeOnButton(arg_49_0._tf)
+	arg_49_0:OnClear()
 
-	if slot0.delayTimer then
-		slot0.delayTimer:Stop()
+	if arg_49_0.delayTimer then
+		arg_49_0.delayTimer:Stop()
 
-		slot0.delayTimer = nil
+		arg_49_0.delayTimer = nil
 	end
 
-	slot0.uiFinder:Clear()
-	slot0.uiDuplicator:Clear()
-	slot0.uiLoader:Clear()
+	arg_49_0.uiFinder:Clear()
+	arg_49_0.uiDuplicator:Clear()
+	arg_49_0.uiLoader:Clear()
 end
 
-function slot0.OnExecution(slot0, slot1, slot2)
-	slot2()
+function var_0_0.OnExecution(arg_50_0, arg_50_1, arg_50_2)
+	arg_50_2()
 end
 
-function slot0.OnClear(slot0)
+function var_0_0.OnClear(arg_51_0)
+	return
 end
 
-return slot0
+return var_0_0

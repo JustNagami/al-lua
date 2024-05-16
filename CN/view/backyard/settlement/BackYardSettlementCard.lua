@@ -1,107 +1,114 @@
-slot0 = class("BackYardSettlementCard")
+﻿local var_0_0 = class("BackYardSettlementCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0.additionTF = findTF(slot0._go, "addition_bg/Text")
-	slot0.levelText = findTF(slot0._go, "exp/level"):GetComponent(typeof(Text))
-	slot0.additionText = slot0.additionTF:GetComponent(typeof(Text))
-	slot0.nameTxt = findTF(slot0._go, "name_bg/Mask/Text"):GetComponent(typeof(ScrollText))
-	slot0.icon = findTF(slot0._go, "icon"):GetComponent(typeof(Image))
-	slot0.slider = findTF(slot0._go, "exp/value"):GetComponent(typeof(Slider))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0.additionTF = findTF(arg_1_0._go, "addition_bg/Text")
+	arg_1_0.levelText = findTF(arg_1_0._go, "exp/level"):GetComponent(typeof(Text))
+	arg_1_0.additionText = arg_1_0.additionTF:GetComponent(typeof(Text))
+	arg_1_0.nameTxt = findTF(arg_1_0._go, "name_bg/Mask/Text"):GetComponent(typeof(ScrollText))
+	arg_1_0.icon = findTF(arg_1_0._go, "icon"):GetComponent(typeof(Image))
+	arg_1_0.slider = findTF(arg_1_0._go, "exp/value"):GetComponent(typeof(Slider))
 end
 
-function slot0.Update(slot0, slot1, slot2, slot3)
-	slot0:UpdateInfo(slot2)
-	slot0:DoAnimation(slot1, slot2, slot3)
+function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_0:UpdateInfo(arg_2_2)
+	arg_2_0:DoAnimation(arg_2_1, arg_2_2, arg_2_3)
 end
 
-function slot0.UpdateInfo(slot0, slot1)
-	slot0.additionText.text = "EXP+" .. 0
-	slot0.levelText.text = "LEVEL" .. slot1.level
-	slot2 = slot0.nameTxt
+function var_0_0.UpdateInfo(arg_3_0, arg_3_1)
+	arg_3_0.additionText.text = "EXP+" .. 0
+	arg_3_0.levelText.text = "LEVEL" .. arg_3_1.level
 
-	slot2:SetText(slot1:getName())
-	LoadSpriteAtlasAsync("HeroHrzIcon/" .. slot1:getPainting(), "", function (slot0)
-		if uv0.exited then
+	arg_3_0.nameTxt:SetText(arg_3_1:getName())
+	LoadSpriteAtlasAsync("HeroHrzIcon/" .. arg_3_1:getPainting(), "", function(arg_4_0)
+		if arg_3_0.exited then
 			return
 		end
 
-		uv0.icon.sprite = slot0
+		arg_3_0.icon.sprite = arg_4_0
 	end)
 end
 
-function slot0.DoAnimation(slot0, slot1, slot2, slot3)
-	if slot2.level == slot2:getMaxLevel() then
+function var_0_0.DoAnimation(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if arg_5_2.level == arg_5_2:getMaxLevel() then
 		return
 	end
 
-	slot5 = slot3.level - slot2.level
+	local var_5_0 = 0.3
+	local var_5_1 = arg_5_3.level - arg_5_2.level
 
-	TweenValue(slot0.additionTF, 0, slot1, 0.3 * (slot5 + 1), 0, function (slot0)
-		uv0.additionText.text = "EXP+" .. math.floor(slot0)
+	TweenValue(arg_5_0.additionTF, 0, arg_5_1, var_5_0 * (var_5_1 + 1), 0, function(arg_6_0)
+		arg_5_0.additionText.text = "EXP+" .. math.floor(arg_6_0)
 	end)
 
-	slot7 = math.max(slot3:getLevelExpConfig().exp, 0.001)
+	local var_5_2 = var_5_1 > 0
+	local var_5_3 = math.max(arg_5_3:getLevelExpConfig().exp, 0.001)
 
-	if slot5 > 0 then
-		slot0:DoLevelUpAnimation(slot2.exp, math.max(slot2:getLevelExpConfig().exp, 0.001), slot3.exp, slot7, slot3.level, slot5, slot4)
+	if var_5_2 then
+		local var_5_4 = math.max(arg_5_2:getLevelExpConfig().exp, 0.001)
+
+		arg_5_0:DoLevelUpAnimation(arg_5_2.exp, var_5_4, arg_5_3.exp, var_5_3, arg_5_3.level, var_5_1, var_5_0)
 	else
-		TweenValue(slot0.slider, 0, slot3.exp / slot7, slot4, 0, function (slot0)
-			uv0:SetSliderValue(uv0.slider, slot0)
+		TweenValue(arg_5_0.slider, 0, arg_5_3.exp / var_5_3, var_5_0, 0, function(arg_7_0)
+			arg_5_0:SetSliderValue(arg_5_0.slider, arg_7_0)
 		end)
 	end
 end
 
-function slot0.DoLevelUpAnimation(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot8, slot9, slot10 = nil
+function var_0_0.DoLevelUpAnimation(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5, arg_8_6, arg_8_7)
+	local var_8_0
+	local var_8_1
+	local var_8_2
 
-	function slot9()
-		TweenValue(uv0.slider, 0, uv1 / uv2, uv3, 0, function (slot0)
-			uv0:SetSliderValue(uv0.slider, slot0)
+	local function var_8_3()
+		TweenValue(arg_8_0.slider, 0, arg_8_3 / arg_8_4, arg_8_7, 0, function(arg_10_0)
+			arg_8_0:SetSliderValue(arg_8_0.slider, arg_10_0)
 		end)
 	end
 
-	function slot10()
-		TweenValue(uv0.slider, 0, 1, uv1, 0, function (slot0)
-			uv0:SetSliderValue(uv0.slider, slot0)
-		end, uv2)
+	local function var_8_4()
+		TweenValue(arg_8_0.slider, 0, 1, arg_8_7, 0, function(arg_12_0)
+			arg_8_0:SetSliderValue(arg_8_0.slider, arg_12_0)
+		end, var_8_0)
 	end
 
-	TweenValue(slot0.slider, slot1, slot2, slot7, 0, function (slot0)
-		uv0:SetSliderValue(uv0.slider, slot0 / uv1)
-	end, function ()
-		uv0 = uv0 - 1
+	function var_8_0()
+		arg_8_6 = arg_8_6 - 1
 
-		if uv0 == 0 then
-			uv1()
+		if arg_8_6 == 0 then
+			var_8_3()
 		else
-			uv2()
+			var_8_4()
 		end
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOAT_LEVEL_UP)
 
-		uv3.levelText.text = "LEVEL" .. uv4 - uv0
-	end)
-end
-
-function slot0.SetSliderValue(slot0, slot1, slot2)
-	if slot2 ~= 0 and slot2 < 0.03 then
-		slot2 = 0.03
+		arg_8_0.levelText.text = "LEVEL" .. arg_8_5 - arg_8_6
 	end
 
-	slot1.value = slot2
+	TweenValue(arg_8_0.slider, arg_8_1, arg_8_2, arg_8_7, 0, function(arg_14_0)
+		arg_8_0:SetSliderValue(arg_8_0.slider, arg_14_0 / arg_8_2)
+	end, var_8_0)
 end
 
-function slot0.Dispose(slot0)
-	if LeanTween.isTweening(slot0.slider.gameObject) then
-		LeanTween.cancel(slot0.slider.gameObject)
+function var_0_0.SetSliderValue(arg_15_0, arg_15_1, arg_15_2)
+	if arg_15_2 ~= 0 and arg_15_2 < 0.03 then
+		arg_15_2 = 0.03
 	end
 
-	if LeanTween.isTweening(slot0.additionTF.gameObject) then
-		LeanTween.cancel(slot0.additionTF.gameObject)
-	end
-
-	slot0.exited = true
+	arg_15_1.value = arg_15_2
 end
 
-return slot0
+function var_0_0.Dispose(arg_16_0)
+	if LeanTween.isTweening(arg_16_0.slider.gameObject) then
+		LeanTween.cancel(arg_16_0.slider.gameObject)
+	end
+
+	if LeanTween.isTweening(arg_16_0.additionTF.gameObject) then
+		LeanTween.cancel(arg_16_0.additionTF.gameObject)
+	end
+
+	arg_16_0.exited = true
+end
+
+return var_0_0

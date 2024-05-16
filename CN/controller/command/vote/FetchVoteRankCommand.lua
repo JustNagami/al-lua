@@ -1,23 +1,23 @@
-slot0 = class("FetchVoteRankCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FetchVoteRankCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.voteId
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = getProxy(VoteProxy):RawGetTempVoteGroup(var_1_1)
 
-	if getProxy(VoteProxy):RawGetTempVoteGroup(slot2.voteId) and slot5.id == slot3 then
-		slot4()
+	if var_1_3 and var_1_3.id == var_1_1 then
+		var_1_2()
 
 		return
 	end
 
-	slot6 = pg.ConnectionMgr.GetInstance()
-
-	slot6:Send(17203, {
-		type = slot3
-	}, 17204, function (slot0)
-		getProxy(VoteProxy):AddTempVoteGroup(slot0, uv0)
-		uv1()
+	pg.ConnectionMgr.GetInstance():Send(17203, {
+		type = var_1_1
+	}, 17204, function(arg_2_0)
+		getProxy(VoteProxy):AddTempVoteGroup(arg_2_0, var_1_1)
+		var_1_2()
 	end)
 end
 
-return slot0
+return var_0_0

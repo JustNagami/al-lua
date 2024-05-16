@@ -1,120 +1,130 @@
-slot0 = class("NewServerCommodity", import("...BaseVO"))
+﻿local var_0_0 = class("NewServerCommodity", import("...BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.count = slot1.count or slot0:getConfig("goods_purchase_limit")
-	slot0.boughtRecord = {}
-	slot2 = ipairs
-	slot3 = slot1.bought_record or {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.count = arg_1_1.count or arg_1_0:getConfig("goods_purchase_limit")
+	arg_1_0.boughtRecord = {}
 
-	for slot5, slot6 in slot2(slot3) do
-		slot0.boughtRecord[slot6] = true
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.bought_record or {}) do
+		arg_1_0.boughtRecord[iter_1_1] = true
 	end
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.newserver_shop_template
 end
 
-function slot0.CanPurchase(slot0)
-	return slot0.count > 0
+function var_0_0.CanPurchase(arg_3_0)
+	return arg_3_0.count > 0
 end
 
-function slot0.ReduceCnt(slot0, slot1)
-	slot0.count = slot0.count - slot1
+function var_0_0.ReduceCnt(arg_4_0, arg_4_1)
+	arg_4_0.count = arg_4_0.count - arg_4_1
 end
 
-function slot0.CanPurchaseMulTimes(slot0, slot1)
-	return slot1 <= slot0.count
+function var_0_0.CanPurchaseMulTimes(arg_5_0, arg_5_1)
+	return arg_5_1 <= arg_5_0.count
 end
 
-function slot0.CanPurchaseSubGoods(slot0, slot1)
-	if slot0:LimitPurchaseSubGoods() then
-		return not (slot0.boughtRecord[slot1] == true)
+function var_0_0.CanPurchaseSubGoods(arg_6_0, arg_6_1)
+	if arg_6_0:LimitPurchaseSubGoods() then
+		return not (arg_6_0.boughtRecord[arg_6_1] == true)
 	else
 		return true
 	end
 end
 
-function slot0.UpdateBoughtRecord(slot0, slot1)
-	slot0.boughtRecord[slot1] = true
+function var_0_0.UpdateBoughtRecord(arg_7_0, arg_7_1)
+	arg_7_0.boughtRecord[arg_7_1] = true
 end
 
-function slot0.LimitPurchaseSubGoods(slot0)
-	return slot0:getConfig("goods_type") == 4
+function var_0_0.LimitPurchaseSubGoods(arg_8_0)
+	return arg_8_0:getConfig("goods_type") == 4
 end
 
-function slot0.Selectable(slot0)
-	return slot0:getConfig("goods_type") == 2 or slot1 == 4
+function var_0_0.Selectable(arg_9_0)
+	local var_9_0 = arg_9_0:getConfig("goods_type")
+
+	return var_9_0 == 2 or var_9_0 == 4
 end
 
-function slot0.GetConsume(slot0)
+function var_0_0.GetConsume(arg_10_0)
 	return Drop.New({
-		type = slot0:getConfig("resource_category"),
-		id = slot0:getConfig("resource_type"),
-		count = slot0:getConfig("resource_num")
+		type = arg_10_0:getConfig("resource_category"),
+		id = arg_10_0:getConfig("resource_type"),
+		count = arg_10_0:getConfig("resource_num")
 	})
 end
 
-function slot0.GetDesc(slot0)
+function var_0_0.GetDesc(arg_11_0)
 	return {
-		name = slot0:getConfig("goods_name"),
-		icon = slot0:getConfig("goods_icon"),
-		rarity = slot0:getConfig("goods_rarity")
+		name = arg_11_0:getConfig("goods_name"),
+		icon = arg_11_0:getConfig("goods_icon"),
+		rarity = arg_11_0:getConfig("goods_rarity")
 	}
 end
 
-function slot0.IsOpening(slot0, slot1)
-	slot2 = {}
+function var_0_0.IsOpening(arg_12_0, arg_12_1)
+	local var_12_0 = {}
+	local var_12_1 = arg_12_1 + arg_12_0:getConfig("unlock_time")
+	local var_12_2 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_12_3 = var_12_1 <= var_12_2
 
-	if not (slot1 + slot0:getConfig("unlock_time") <= pg.TimeMgr.GetInstance():GetServerTime()) then
-		slot2.day, slot2.hour, slot9, slot10 = pg.TimeMgr.GetInstance():parseTimeFrom(slot4 - slot5)
+	if not var_12_3 then
+		local var_12_4, var_12_5, var_12_6, var_12_7 = pg.TimeMgr.GetInstance():parseTimeFrom(var_12_1 - var_12_2)
+
+		var_12_0.day = var_12_4
+		var_12_0.hour = var_12_5
 	end
 
-	return slot6, slot2
+	return var_12_3, var_12_0
 end
 
-function slot0.GetDropCnt(slot0)
-	return slot0:getConfig("num")
+function var_0_0.GetDropCnt(arg_13_0)
+	return arg_13_0:getConfig("num")
 end
 
-function slot0.GetCanPurchaseCnt(slot0)
-	return slot0.count
+function var_0_0.GetCanPurchaseCnt(arg_14_0)
+	return arg_14_0.count
 end
 
-function slot0.GetCanPurchaseMaxCnt(slot0)
-	return slot0:getConfig("goods_purchase_limit")
+function var_0_0.GetCanPurchaseMaxCnt(arg_15_0)
+	return arg_15_0:getConfig("goods_purchase_limit")
 end
 
-function slot0.GetDropType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.GetDropType(arg_16_0)
+	return arg_16_0:getConfig("type")
 end
 
-function slot0.GetSelectableGoods(slot0)
-	return slot0:getConfig("goods")
+function var_0_0.GetSelectableGoods(arg_17_0)
+	return arg_17_0:getConfig("goods")
 end
 
-function slot0.CheckTimeLimit(slot0)
-	slot1 = false
-	slot2 = false
-	slot3 = nil
-	slot6 = Item.getConfigData(slot0:getConfig("goods")[1])
+function var_0_0.CheckTimeLimit(arg_18_0)
+	local var_18_0 = false
+	local var_18_1 = false
+	local var_18_2
+	local var_18_3 = arg_18_0:getConfig("type")
+	local var_18_4 = arg_18_0:getConfig("goods")[1]
+	local var_18_5 = Item.getConfigData(var_18_4)
 
-	if slot0:getConfig("type") == DROP_TYPE_VITEM and slot6.virtual_type == 22 then
-		slot1 = true
-		slot3 = true
+	if var_18_3 == DROP_TYPE_VITEM and var_18_5.virtual_type == 22 then
+		var_18_0 = true
+		var_18_2 = true
 
-		if getProxy(ActivityProxy):getActivityById(slot6.link_id) and not slot8:isEnd() then
-			slot2 = true
+		local var_18_6 = getProxy(ActivityProxy):getActivityById(var_18_5.link_id)
+
+		if var_18_6 and not var_18_6:isEnd() then
+			var_18_1 = true
 		end
 	end
 
-	return slot1, slot2, slot3
+	return var_18_0, var_18_1, var_18_2
 end
 
-function slot0.GetPurchasableCnt(slot0)
-	return slot0.count
+function var_0_0.GetPurchasableCnt(arg_19_0)
+	return arg_19_0.count
 end
 
-return slot0
+return var_0_0

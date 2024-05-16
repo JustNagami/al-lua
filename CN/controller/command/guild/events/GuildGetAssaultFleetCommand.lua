@@ -1,58 +1,59 @@
-slot0 = class("GuildGetAssaultFleetCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GuildGetAssaultFleetCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
+	local var_1_1 = getProxy(GuildProxy)
 
-	if not getProxy(GuildProxy):ShouldRequestForamtion() then
-		if slot3 then
-			slot3()
+	if not var_1_1:ShouldRequestForamtion() then
+		if var_1_0 then
+			var_1_0()
 		end
 
 		return
 	end
 
-	slot5 = pg.ConnectionMgr.GetInstance()
-
-	slot5:Send(61011, {
+	pg.ConnectionMgr.GetInstance():Send(61011, {
 		type = 0
-	}, 61012, function (slot0)
-		if slot0.result == 0 then
-			slot1 = uv0:getData()
-			slot2 = {}
-			slot3 = ipairs
-			slot4 = slot0.recommends or {}
+	}, 61012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = var_1_1:getData()
+			local var_2_1 = {}
 
-			for slot6, slot7 in slot3(slot4) do
-				if not slot2[slot7.user_id] then
-					slot2[slot7.user_id] = {}
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.recommends or {}) do
+				if not var_2_1[iter_2_1.user_id] then
+					var_2_1[iter_2_1.user_id] = {}
 				end
 
-				table.insert(slot2[slot7.user_id], slot7.ship_id)
+				table.insert(var_2_1[iter_2_1.user_id], iter_2_1.ship_id)
 			end
 
-			for slot6, slot7 in ipairs(slot0.ships) do
-				if slot1:getMemberById(slot7.user_id) then
-					slot10 = GuildAssaultFleet.New(slot7)
+			for iter_2_2, iter_2_3 in ipairs(arg_2_0.ships) do
+				local var_2_2 = iter_2_3.user_id
+				local var_2_3 = var_2_0:getMemberById(var_2_2)
 
-					if slot2[slot9.id] then
-						slot10:SetRecommendList(slot11)
+				if var_2_3 then
+					local var_2_4 = GuildAssaultFleet.New(iter_2_3)
+					local var_2_5 = var_2_1[var_2_3.id]
+
+					if var_2_5 then
+						var_2_4:SetRecommendList(var_2_5)
 					end
 
-					slot9:UpdateAssaultFleet(slot10)
+					var_2_3:UpdateAssaultFleet(var_2_4)
 				end
 			end
 
-			uv0:updateGuild(slot1)
-			uv1:sendNotification(GAME.GUILD_GET_ASSAULT_FLEET_DONE)
+			var_1_1:updateGuild(var_2_0)
+			arg_1_0:sendNotification(GAME.GUILD_GET_ASSAULT_FLEET_DONE)
 			pg.ShipFlagMgr:GetInstance():UpdateFlagShips("inGuildEvent")
 
-			if uv2 then
-				uv2()
+			if var_1_0 then
+				var_1_0()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_skill_template = {
 	[10011] = {
 		desc_world = "所在舰队中有三艘驱逐时，依据指挥喵战术属性，提高所在舰队中先锋舰队的雷击属性（效果中）",

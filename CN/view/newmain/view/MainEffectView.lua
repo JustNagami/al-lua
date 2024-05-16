@@ -1,116 +1,119 @@
-slot0 = class("MainEffectView")
+﻿local var_0_0 = class("MainEffectView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.tr = slot1
-	slot0.loading = false
-	slot0.caches = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.tr = arg_1_1
+	arg_1_0.loading = false
+	arg_1_0.caches = {}
 end
 
-function slot0.GetEffect(slot0, slot1)
-	if slot1.propose then
+function var_0_0.GetEffect(arg_2_0, arg_2_1)
+	if arg_2_1.propose then
 		return "jiehuntexiao"
 	end
 
 	return nil
 end
 
-function slot0.Init(slot0, slot1)
-	slot0:Load(slot0:GetEffect(slot1))
+function var_0_0.Init(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0:GetEffect(arg_3_1)
+
+	arg_3_0:Load(var_3_0)
 end
 
-function slot0.Refresh(slot0, slot1)
-	if slot0:GetEffect(slot1) and slot0.loading then
-		slot0:SetDirty(slot2)
+function var_0_0.Refresh(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0:GetEffect(arg_4_1)
+
+	if var_4_0 and arg_4_0.loading then
+		arg_4_0:SetDirty(var_4_0)
 
 		return
 	end
 
-	slot0:Load(slot2)
+	arg_4_0:Load(var_4_0)
 end
 
-function slot0.Load(slot0, slot1)
-	if slot0.effectName and not slot1 then
-		slot0:Clear()
+function var_0_0.Load(arg_5_0, arg_5_1)
+	if arg_5_0.effectName and not arg_5_1 then
+		arg_5_0:Clear()
 
 		return
 	end
 
-	if not slot1 or slot1 == slot0.effectName then
+	if not arg_5_1 or arg_5_1 == arg_5_0.effectName then
 		return
 	end
 
-	slot0:Clear()
+	arg_5_0:Clear()
 
-	slot0.loading = true
+	arg_5_0.loading = true
 
-	slot0:LoadEffect(slot1, function (slot0)
-		uv0.loading = false
-		slot0.transform.localPosition = Vector3.zero
-		slot0.transform.localScale = Vector3.one
-		uv0.effectGo = slot0
-		uv0.effectName = uv1
+	arg_5_0:LoadEffect(arg_5_1, function(arg_6_0)
+		arg_5_0.loading = false
+		arg_6_0.transform.localPosition = Vector3.zero
+		arg_6_0.transform.localScale = Vector3.one
+		arg_5_0.effectGo = arg_6_0
+		arg_5_0.effectName = arg_5_1
 	end)
 
-	slot0.dirty = nil
+	arg_5_0.dirty = nil
 end
 
-function slot0.LoadEffect(slot0, slot1, slot2)
-	if slot0.caches[slot1] then
-		slot3 = slot0.caches[slot1]
+function var_0_0.LoadEffect(arg_7_0, arg_7_1, arg_7_2)
+	if arg_7_0.caches[arg_7_1] then
+		local var_7_0 = arg_7_0.caches[arg_7_1]
 
-		setActive(slot3, true)
-		slot2(slot3)
+		setActive(var_7_0, true)
+		arg_7_2(var_7_0)
 	else
-		slot3 = ResourceMgr.Inst
-
-		slot3:getAssetAsync("Effect/" .. slot1, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if uv0.exited then
+		ResourceMgr.Inst:getAssetAsync("Effect/" .. arg_7_1, arg_7_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_8_0)
+			if arg_7_0.exited then
 				return
 			end
 
-			if uv0:IsDirty() then
-				uv0:Load(uv0.dirty)
+			if arg_7_0:IsDirty() then
+				arg_7_0:Load(arg_7_0.dirty)
 
 				return
 			end
 
-			slot1 = Object.Instantiate(slot0, uv0.tr)
-			uv0.caches[uv1] = slot1
+			local var_8_0 = Object.Instantiate(arg_8_0, arg_7_0.tr)
 
-			uv2(slot1)
+			arg_7_0.caches[arg_7_1] = var_8_0
+
+			arg_7_2(var_8_0)
 		end), true, true)
 	end
 end
 
-function slot0.SetDirty(slot0, slot1)
-	slot0.dirty = slot1
+function var_0_0.SetDirty(arg_9_0, arg_9_1)
+	arg_9_0.dirty = arg_9_1
 end
 
-function slot0.IsDirty(slot0)
-	return slot0.dirty ~= nil
+function var_0_0.IsDirty(arg_10_0)
+	return arg_10_0.dirty ~= nil
 end
 
-function slot0.Clear(slot0)
-	if slot0.effectGo then
-		setActive(slot0.effectGo, false)
+function var_0_0.Clear(arg_11_0)
+	if arg_11_0.effectGo then
+		setActive(arg_11_0.effectGo, false)
 
-		slot0.effectGo = nil
+		arg_11_0.effectGo = nil
 	end
 
-	slot0.effectName = nil
-	slot0.loading = nil
+	arg_11_0.effectName = nil
+	arg_11_0.loading = nil
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_12_0)
+	arg_12_0:Clear()
 
-	for slot4, slot5 in pairs(slot0.caches) do
-		Object.Destroy(slot5)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.caches) do
+		Object.Destroy(iter_12_1)
 	end
 
-	slot0.caches = nil
-	slot0.exited = true
-	slot0.dirty = nil
+	arg_12_0.caches = nil
+	arg_12_0.exited = true
+	arg_12_0.dirty = nil
 end
 
-return slot0
+return var_0_0

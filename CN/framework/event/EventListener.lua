@@ -1,45 +1,49 @@
-ys = ys or {}
-slot0 = ys
-slot0.EventListener = class("EventListener")
-slot0.EventListener.__name = "EventListener"
+﻿ys = ys or {}
 
-function slot0.EventListener.AttachEventListener(slot0)
-	uv0.EventListener.New(slot0)
+local var_0_0 = ys
+
+var_0_0.EventListener = class("EventListener")
+var_0_0.EventListener.__name = "EventListener"
+
+function var_0_0.EventListener.AttachEventListener(arg_1_0)
+	var_0_0.EventListener.New(arg_1_0)
 end
 
-function slot0.EventListener.DetachEventListener(slot0)
-	if slot0._eventListener_ == nil then
+function var_0_0.EventListener.DetachEventListener(arg_2_0)
+	if arg_2_0._eventListener_ == nil then
 		return
 	end
 
-	slot0._eventListener_:_Destory_()
+	arg_2_0._eventListener_:_Destory_()
 
-	slot0._eventListener_ = nil
+	arg_2_0._eventListener_ = nil
 end
 
-function slot0.EventListener.Ctor(slot0, slot1)
-	slot0._target_ = slot1
-	slot0._target_._eventListener_ = slot0
-	slot0._routeMap_ = {}
+function var_0_0.EventListener.Ctor(arg_3_0, arg_3_1)
+	arg_3_0._target_ = arg_3_1
+	arg_3_0._target_._eventListener_ = arg_3_0
+	arg_3_0._routeMap_ = {}
 end
 
-function slot0.EventListener._Destory_(slot0)
-	slot0._routeMap_ = nil
-	slot0._target_ = nil
+function var_0_0.EventListener._Destory_(arg_4_0)
+	arg_4_0._routeMap_ = nil
+	arg_4_0._target_ = nil
 end
 
-function slot0.EventListener._AddRoute_(slot0, slot1, slot2, slot3)
-	if slot0._routeMap_[slot1] == nil then
-		slot0._routeMap_[slot1] = {}
+function var_0_0.EventListener._AddRoute_(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if arg_5_0._routeMap_[arg_5_1] == nil then
+		arg_5_0._routeMap_[arg_5_1] = {}
 	end
 
-	slot0._routeMap_[slot1][slot2] = slot3
+	arg_5_0._routeMap_[arg_5_1][arg_5_2] = arg_5_3
 end
 
-function slot0.EventListener._RemoveRoute_(slot0, slot1, slot2)
-	slot0._routeMap_[slot1][slot2] = nil
+function var_0_0.EventListener._RemoveRoute_(arg_6_0, arg_6_1, arg_6_2)
+	arg_6_0._routeMap_[arg_6_1][arg_6_2] = nil
 end
 
-function slot0.EventListener._Handle_(slot0, slot1)
-	slot0._routeMap_[slot1.ID][slot1.Dispatcher](slot0._target_, slot1)
+function var_0_0.EventListener._Handle_(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0._target_
+
+	arg_7_0._routeMap_[arg_7_1.ID][arg_7_1.Dispatcher](var_7_0, arg_7_1)
 end

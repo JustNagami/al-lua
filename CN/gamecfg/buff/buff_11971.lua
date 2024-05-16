@@ -1,4 +1,31 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onStack"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.2,
+				index = {
+					-1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "loadSpeed",
+				number = 150
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -297,32 +324,5 @@ return {
 	stack = 4,
 	id = 11971,
 	icon = 11970,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onStack"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.2,
-				index = {
-					-1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "loadSpeed",
-				number = 150
-			}
-		}
-	}
+	last_effect = ""
 }

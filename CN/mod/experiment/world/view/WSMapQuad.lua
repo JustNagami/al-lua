@@ -1,5 +1,6 @@
-slot0 = class("WSMapQuad", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSMapQuad", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	static = "boolean",
 	rtWalkQuad = "userdata",
 	twId = "number",
@@ -10,149 +11,154 @@ slot0.Fields = {
 	rtQuad = "userdata"
 }
 
-function slot0.GetResName()
+function var_0_0.GetResName()
 	return "world_cell_quad"
 end
 
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onAddAttachment = "OnAddAttachment",
 	onUpdate = "Update",
 	onRemoveAttachment = "OnRemoveAttachment",
 	onUpdateAttachment = "OnUpdateAttachment"
 }
 
-function slot0.GetName(slot0, slot1)
-	return "world_quad_" .. slot0 .. "_" .. slot1
+function var_0_0.GetName(arg_2_0, arg_2_1)
+	return "world_quad_" .. arg_2_0 .. "_" .. arg_2_1
 end
 
-function slot0.Setup(slot0, slot1, slot2)
-	slot0.cell = slot1
+function var_0_0.Setup(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.cell = arg_3_1
 
-	slot0.cell:AddListener(WorldMapCell.EventUpdateInFov, slot0.onUpdate)
-	slot0.cell:AddListener(WorldMapCell.EventAddAttachment, slot0.onAddAttachment)
-	slot0.cell:AddListener(WorldMapCell.EventRemoveAttachment, slot0.onRemoveAttachment)
-	slot0.cell:AddListener(WorldMapCell.EventUpdateFog, slot0.onUpdate)
-	_.each(slot0.cell.attachments, function (slot0)
-		uv0:OnAddAttachment(nil, uv0.cell, slot0)
+	arg_3_0.cell:AddListener(WorldMapCell.EventUpdateInFov, arg_3_0.onUpdate)
+	arg_3_0.cell:AddListener(WorldMapCell.EventAddAttachment, arg_3_0.onAddAttachment)
+	arg_3_0.cell:AddListener(WorldMapCell.EventRemoveAttachment, arg_3_0.onRemoveAttachment)
+	arg_3_0.cell:AddListener(WorldMapCell.EventUpdateFog, arg_3_0.onUpdate)
+	_.each(arg_3_0.cell.attachments, function(arg_4_0)
+		arg_3_0:OnAddAttachment(nil, arg_3_0.cell, arg_4_0)
 	end)
 
-	slot0.theme = slot2
+	arg_3_0.theme = arg_3_2
 
-	slot0:Init()
+	arg_3_0:Init()
 end
 
-function slot0.Dispose(slot0)
-	if slot0.twId then
-		LeanTween.cancel(slot0.twId)
+function var_0_0.Dispose(arg_5_0)
+	if arg_5_0.twId then
+		LeanTween.cancel(arg_5_0.twId)
 	end
 
-	slot0.cell:RemoveListener(WorldMapCell.EventUpdateInFov, slot0.onUpdate)
-	slot0.cell:RemoveListener(WorldMapCell.EventAddAttachment, slot0.onAddAttachment)
-	slot0.cell:RemoveListener(WorldMapCell.EventRemoveAttachment, slot0.onRemoveAttachment)
-	slot0.cell:RemoveListener(WorldMapCell.EventUpdateFog, slot0.onUpdate)
-	_.each(slot0.cell.attachments, function (slot0)
-		uv0:OnRemoveAttachment(nil, uv0.cell, slot0)
+	arg_5_0.cell:RemoveListener(WorldMapCell.EventUpdateInFov, arg_5_0.onUpdate)
+	arg_5_0.cell:RemoveListener(WorldMapCell.EventAddAttachment, arg_5_0.onAddAttachment)
+	arg_5_0.cell:RemoveListener(WorldMapCell.EventRemoveAttachment, arg_5_0.onRemoveAttachment)
+	arg_5_0.cell:RemoveListener(WorldMapCell.EventUpdateFog, arg_5_0.onUpdate)
+	_.each(arg_5_0.cell.attachments, function(arg_6_0)
+		arg_5_0:OnRemoveAttachment(nil, arg_5_0.cell, arg_6_0)
 	end)
-	slot0:Clear()
+	arg_5_0:Clear()
 end
 
-function slot0.Init(slot0)
-	slot1 = slot0.cell
-	slot2 = slot0.transform
-	slot0.rtQuad = slot2:Find("quad")
-	slot2.name = uv0.GetName(slot1.row, slot1.column)
-	slot2.anchoredPosition = slot0.theme:GetLinePosition(slot1.row, slot1.column)
-	slot0.rtQuad.sizeDelta = slot0.theme.cellSize
-	slot0.rtWalkQuad = slot2:Find("walk_quad") or cloneTplTo(slot0.rtQuad, slot2, "walk_quad")
+function var_0_0.Init(arg_7_0)
+	local var_7_0 = arg_7_0.cell
+	local var_7_1 = arg_7_0.transform
 
-	slot0.rtWalkQuad:SetSiblingIndex(slot0.rtQuad:GetSiblingIndex())
-	setImageAlpha(slot0.rtWalkQuad, 0)
-	GetImageSpriteFromAtlasAsync("world/cell/base", WorldConst.QuadSpriteWhite, slot0.rtWalkQuad)
-	slot0:Update()
+	arg_7_0.rtQuad = var_7_1:Find("quad")
+	var_7_1.name = var_0_0.GetName(var_7_0.row, var_7_0.column)
+	var_7_1.anchoredPosition = arg_7_0.theme:GetLinePosition(var_7_0.row, var_7_0.column)
+	arg_7_0.rtQuad.sizeDelta = arg_7_0.theme.cellSize
+	arg_7_0.rtWalkQuad = var_7_1:Find("walk_quad") or cloneTplTo(arg_7_0.rtQuad, var_7_1, "walk_quad")
+
+	arg_7_0.rtWalkQuad:SetSiblingIndex(arg_7_0.rtQuad:GetSiblingIndex())
+	setImageAlpha(arg_7_0.rtWalkQuad, 0)
+	GetImageSpriteFromAtlasAsync("world/cell/base", WorldConst.QuadSpriteWhite, arg_7_0.rtWalkQuad)
+	arg_7_0:Update()
 end
 
-function slot0.Update(slot0, slot1)
-	slot2 = slot0.cell
+function var_0_0.Update(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.cell
 
-	if slot1 == nil or slot1 == WorldMapCell.EventUpdateInFov or slot1 == WorldMapCell.EventUpdateFog then
-		slot0:OnUpdateAttachment()
+	if arg_8_1 == nil or arg_8_1 == WorldMapCell.EventUpdateInFov or arg_8_1 == WorldMapCell.EventUpdateFog then
+		arg_8_0:OnUpdateAttachment()
 	end
 end
 
-function slot0.OnAddAttachment(slot0, slot1, slot2, slot3)
-	slot3:AddListener(WorldMapAttachment.EventUpdateFlag, slot0.onUpdateAttachment)
-	slot3:AddListener(WorldMapAttachment.EventUpdateData, slot0.onUpdateAttachment)
-	slot3:AddListener(WorldMapAttachment.EventUpdateLurk, slot0.onUpdateAttachment)
+function var_0_0.OnAddAttachment(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	arg_9_3:AddListener(WorldMapAttachment.EventUpdateFlag, arg_9_0.onUpdateAttachment)
+	arg_9_3:AddListener(WorldMapAttachment.EventUpdateData, arg_9_0.onUpdateAttachment)
+	arg_9_3:AddListener(WorldMapAttachment.EventUpdateLurk, arg_9_0.onUpdateAttachment)
 
-	if slot1 then
-		slot0:OnUpdateAttachment()
+	if arg_9_1 then
+		arg_9_0:OnUpdateAttachment()
 	end
 end
 
-function slot0.OnRemoveAttachment(slot0, slot1, slot2, slot3)
-	slot3:RemoveListener(WorldMapAttachment.EventUpdateFlag, slot0.onUpdateAttachment)
-	slot3:RemoveListener(WorldMapAttachment.EventUpdateData, slot0.onUpdateAttachment)
-	slot3:RemoveListener(WorldMapAttachment.EventUpdateLurk, slot0.onUpdateAttachment)
+function var_0_0.OnRemoveAttachment(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	arg_10_3:RemoveListener(WorldMapAttachment.EventUpdateFlag, arg_10_0.onUpdateAttachment)
+	arg_10_3:RemoveListener(WorldMapAttachment.EventUpdateData, arg_10_0.onUpdateAttachment)
+	arg_10_3:RemoveListener(WorldMapAttachment.EventUpdateLurk, arg_10_0.onUpdateAttachment)
 
-	if slot1 then
-		slot0:OnUpdateAttachment()
+	if arg_10_1 then
+		arg_10_0:OnUpdateAttachment()
 	end
 end
 
-function slot0.UpdateStatic(slot0, slot1, slot2)
-	if slot0.static ~= slot1 then
-		slot0.static = slot1
+function var_0_0.UpdateStatic(arg_11_0, arg_11_1, arg_11_2)
+	if arg_11_0.static ~= arg_11_1 then
+		arg_11_0.static = arg_11_1
 
-		if slot2 then
-			slot0:UpdateScannerQuad()
+		if arg_11_2 then
+			arg_11_0:UpdateScannerQuad()
 		else
-			slot0:OnUpdateAttachment()
+			arg_11_0:OnUpdateAttachment()
 		end
 	end
 end
 
-function slot0.OnUpdateAttachment(slot0)
-	if slot0.twId then
-		LeanTween.cancel(slot0.twId)
+function var_0_0.OnUpdateAttachment(arg_12_0)
+	if arg_12_0.twId then
+		LeanTween.cancel(arg_12_0.twId)
 
-		slot0.twId = nil
+		arg_12_0.twId = nil
 	end
 
-	slot1 = slot0.cell:GetDisplayQuad()
+	local var_12_0 = arg_12_0.cell:GetDisplayQuad()
 
-	if slot0.cell:GetInFOV() and not slot0.static and slot1 and not slot0.cell:InFog() then
-		slot2 = slot1[2] or WorldConst.QuadBlinkDuration
-		slot3 = slot1[3] and slot1[3] / 100 or 1
-		slot4 = slot1[4] and slot1[4] / 100 or 0
+	if arg_12_0.cell:GetInFOV() and not arg_12_0.static and var_12_0 and not arg_12_0.cell:InFog() then
+		local var_12_1 = var_12_0[2] or WorldConst.QuadBlinkDuration
+		local var_12_2 = var_12_0[3] and var_12_0[3] / 100 or 1
+		local var_12_3 = var_12_0[4] and var_12_0[4] / 100 or 0
 
-		GetImageSpriteFromAtlasAsync("world/cell/base", slot1[1], slot0.rtQuad)
-		setLocalScale(slot0.rtQuad, Vector3.one)
+		GetImageSpriteFromAtlasAsync("world/cell/base", var_12_0[1], arg_12_0.rtQuad)
+		setLocalScale(arg_12_0.rtQuad, Vector3.one)
 
-		slot5 = LeanTween.alpha(slot0.rtQuad, slot4, slot2):setFrom(slot3):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
-		slot5.passed = slot0.twTimer.passed
-		slot5.direction = slot0.twTimer.direction
-		slot0.twId = slot5.uniqueId
-		slot6 = slot5.passed / slot2 * (slot3 - slot4) + slot4
+		local var_12_4 = LeanTween.alpha(arg_12_0.rtQuad, var_12_3, var_12_1):setFrom(var_12_2):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-		setImageAlpha(slot0.rtQuad, slot5.direction > 0 and slot6 or 1 - slot6)
+		var_12_4.passed = arg_12_0.twTimer.passed
+		var_12_4.direction = arg_12_0.twTimer.direction
+		arg_12_0.twId = var_12_4.uniqueId
+
+		local var_12_5 = var_12_4.passed / var_12_1 * (var_12_2 - var_12_3) + var_12_3
+
+		setImageAlpha(arg_12_0.rtQuad, var_12_4.direction > 0 and var_12_5 or 1 - var_12_5)
 	else
-		setImageAlpha(slot0.rtQuad, 0)
+		setImageAlpha(arg_12_0.rtQuad, 0)
 	end
 end
 
-function slot0.UpdateScannerQuad(slot0)
-	if slot0.twId then
-		LeanTween.cancel(slot0.twId)
+function var_0_0.UpdateScannerQuad(arg_13_0)
+	if arg_13_0.twId then
+		LeanTween.cancel(arg_13_0.twId)
 
-		slot0.twId = nil
+		arg_13_0.twId = nil
 	end
 
-	if slot0.cell:GetInFOV() and slot0.cell:GetScannerAttachment() then
-		setImageAlpha(slot0.rtQuad, 1)
-		GetImageSpriteFromAtlasAsync("world/cell/base", "cell_yellow", slot0.rtQuad)
+	if arg_13_0.cell:GetInFOV() and arg_13_0.cell:GetScannerAttachment() then
+		local var_13_0 = "cell_yellow"
+
+		setImageAlpha(arg_13_0.rtQuad, 1)
+		GetImageSpriteFromAtlasAsync("world/cell/base", var_13_0, arg_13_0.rtQuad)
 	else
-		setImageAlpha(slot0.rtQuad, 0)
+		setImageAlpha(arg_13_0.rtQuad, 0)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,198 +1,228 @@
-slot0 = class("BossRushFleetSelectMediator", import("view.base.ContextMediator"))
-slot0.ON_OPEN_DECK = "BossRushFleetSelectMediator:ON_OPEN_DECK"
-slot0.ON_FLEET_SHIPINFO = "BossRushFleetSelectMediator:ON_FLEET_SHIPINFO"
-slot0.ON_TRACE = "BossRushFleetSelectMediator:ON_TRACE"
-slot0.ON_UPDATE_CUSTOM_FLEET = "BossRushFleetSelectMediator:ON_UPDATE_CUSTOM_FLEET"
-slot0.ON_PRECOMBAT = "BossRushFleetSelectMediator:ON_PRECOMBAT"
-slot0.ON_ELITE_RECOMMEND = "BossRushFleetSelectMediator:ON_ELITE_RECOMMEND"
-slot0.ON_ELITE_CLEAR = "BossRushFleetSelectMediator:ON_ELITE_CLEAR"
-slot0.OPEN_COMMANDER_PANEL = "BossRushFleetSelectMediator:OPEN_COMMANDER_PANEL"
-slot0.ON_SELECT_COMMANDER = "BossRushFleetSelectMediator:ON_SELECT_COMMANDER"
-slot0.ON_COMMANDER_SKILL = "BossRushFleetSelectMediator:ON_COMMANDER_SKILL"
-slot0.ON_SWITCH_MODE = "BossRushFleetSelectMediator:ON_SWITCH_MODE"
+﻿local var_0_0 = class("BossRushFleetSelectMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_OPEN_DECK, function (slot0, slot1)
-		slot3 = slot1.shipVO
-		slot6, slot7, slot8 = uv0.getDockCallbackFuncs(slot3, uv0.contextData.fleets[slot1.fleetIndex], slot1.teamType, _.flatten(_.map(uv0.contextData.fleets, function (slot0)
-			return slot0:GetRawShipIds()
-		end)), uv0.contextData.actId)
+var_0_0.ON_OPEN_DECK = "BossRushFleetSelectMediator:ON_OPEN_DECK"
+var_0_0.ON_FLEET_SHIPINFO = "BossRushFleetSelectMediator:ON_FLEET_SHIPINFO"
+var_0_0.ON_TRACE = "BossRushFleetSelectMediator:ON_TRACE"
+var_0_0.ON_UPDATE_CUSTOM_FLEET = "BossRushFleetSelectMediator:ON_UPDATE_CUSTOM_FLEET"
+var_0_0.ON_PRECOMBAT = "BossRushFleetSelectMediator:ON_PRECOMBAT"
+var_0_0.ON_ELITE_RECOMMEND = "BossRushFleetSelectMediator:ON_ELITE_RECOMMEND"
+var_0_0.ON_ELITE_CLEAR = "BossRushFleetSelectMediator:ON_ELITE_CLEAR"
+var_0_0.OPEN_COMMANDER_PANEL = "BossRushFleetSelectMediator:OPEN_COMMANDER_PANEL"
+var_0_0.ON_SELECT_COMMANDER = "BossRushFleetSelectMediator:ON_SELECT_COMMANDER"
+var_0_0.ON_COMMANDER_SKILL = "BossRushFleetSelectMediator:ON_COMMANDER_SKILL"
+var_0_0.ON_SWITCH_MODE = "BossRushFleetSelectMediator:ON_SWITCH_MODE"
 
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_OPEN_DECK, function(arg_2_0, arg_2_1)
+		local var_2_0 = arg_2_1.fleetIndex
+		local var_2_1 = arg_2_1.shipVO
+		local var_2_2 = _.flatten(_.map(arg_1_0.contextData.fleets, function(arg_3_0)
+			return arg_3_0:GetRawShipIds()
+		end))
+		local var_2_3 = arg_2_1.teamType
+		local var_2_4, var_2_5, var_2_6 = arg_1_0.getDockCallbackFuncs(var_2_1, arg_1_0.contextData.fleets[var_2_0], var_2_3, var_2_2, arg_1_0.contextData.actId)
+
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMax = 1,
 			useBlackBlock = true,
 			selectedMin = 0,
 			energyDisplay = true,
 			leastLimitMsg = i18n("ship_formationMediator_leastLimit"),
-			quitTeam = slot3 ~= nil,
-			teamFilter = slot5,
+			quitTeam = var_2_1 ~= nil,
+			teamFilter = var_2_3,
 			leftTopInfo = i18n("word_formation"),
-			onShip = slot6,
-			confirmSelect = slot7,
-			onSelected = slot8,
+			onShip = var_2_4,
+			confirmSelect = var_2_5,
+			onSelected = var_2_6,
 			hideTagFlags = setmetatable({
-				inActivity = uv0.contextData.actId
+				inActivity = arg_1_0.contextData.actId
 			}, {
 				__index = ShipStatus.TAG_HIDE_ACTIVITY_BOSS
 			}),
-			otherSelectedIds = slot4,
+			otherSelectedIds = var_2_2,
 			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
 				isActivityNpc = true
 			})
 		})
 	end)
-	slot0:bind(uv0.ON_FLEET_SHIPINFO, function (slot0, slot1)
-		slot2 = uv0.contextData.fleet
+	arg_1_0:bind(var_0_0.ON_FLEET_SHIPINFO, function(arg_4_0, arg_4_1)
+		local var_4_0 = arg_1_0.contextData.fleet
 
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = slot1.shipId,
-			shipVOs = slot1.shipVOs
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+			shipId = arg_4_1.shipId,
+			shipVOs = arg_4_1.shipVOs
 		})
 	end)
-	slot0:bind(uv0.ON_UPDATE_CUSTOM_FLEET, function (slot0)
-		_.each(uv0.contextData.fleets, function (slot0)
-			getProxy(FleetProxy):updateActivityFleet(uv0.contextData.actId, slot0.id, slot0)
+	arg_1_0:bind(var_0_0.ON_UPDATE_CUSTOM_FLEET, function(arg_5_0)
+		_.each(arg_1_0.contextData.fleets, function(arg_6_0)
+			getProxy(FleetProxy):updateActivityFleet(arg_1_0.contextData.actId, arg_6_0.id, arg_6_0)
 		end)
-		_.each(uv0.contextData.fleets, function (slot0)
-			uv0[slot0.id] = slot0
+
+		local var_5_0 = {}
+
+		_.each(arg_1_0.contextData.fleets, function(arg_7_0)
+			var_5_0[arg_7_0.id] = arg_7_0
 		end)
-		uv0:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
-			actID = uv0.contextData.actId,
-			fleets = {}
+		arg_1_0:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
+			actID = arg_1_0.contextData.actId,
+			fleets = var_5_0
 		})
 	end)
-	slot0:bind(uv0.ON_TRACE, function (slot0)
-		uv0.viewComponent:emit(uv1.ON_UPDATE_CUSTOM_FLEET)
-		uv0:sendNotification(GAME.BOSSRUSH_TRACE, {
-			actId = uv0.contextData.actId,
-			seriesId = uv0.contextData.seriesData.id,
-			mode = uv0.contextData.mode
+	arg_1_0:bind(var_0_0.ON_TRACE, function(arg_8_0)
+		arg_1_0.viewComponent:emit(var_0_0.ON_UPDATE_CUSTOM_FLEET)
+		arg_1_0:sendNotification(GAME.BOSSRUSH_TRACE, {
+			actId = arg_1_0.contextData.actId,
+			seriesId = arg_1_0.contextData.seriesData.id,
+			mode = arg_1_0.contextData.mode
 		})
 	end)
-	slot0:bind(uv0.ON_ELITE_RECOMMEND, function (slot0, slot1)
-		slot2 = slot1.index
-		slot4 = slot2 == #uv0.contextData.fleets
-		slot8 = table.shallowCopy(uv0.contextData.fleets[slot2]:GetRawShipIds())
-		slot9 = _.flatten(_.map(uv0.contextData.fleets, function (slot0)
-			return slot0:GetRawShipIds()
+	arg_1_0:bind(var_0_0.ON_ELITE_RECOMMEND, function(arg_9_0, arg_9_1)
+		local var_9_0 = arg_9_1.index
+		local var_9_1 = arg_1_0.contextData.fleets[var_9_0]
+		local var_9_2
+
+		var_9_2 = var_9_0 == #arg_1_0.contextData.fleets
+
+		local var_9_3 = {
+			0,
+			0,
+			0
+		}
+		local var_9_4 = {
+			0,
+			0,
+			0
+		}
+		local var_9_5 = {
+			0,
+			0,
+			0
+		}
+		local var_9_6 = table.shallowCopy(var_9_1:GetRawShipIds())
+		local var_9_7 = _.flatten(_.map(arg_1_0.contextData.fleets, function(arg_10_0)
+			return arg_10_0:GetRawShipIds()
 		end))
-		slot10 = {
-			[TeamType.Main] = {
-				0,
-				0,
-				0
-			},
-			[TeamType.Vanguard] = {
-				0,
-				0,
-				0
-			},
-			[TeamType.Submarine] = {
-				0,
-				0,
-				0
+		local var_9_8 = {
+			[TeamType.Main] = var_9_3,
+			[TeamType.Vanguard] = var_9_4,
+			[TeamType.Submarine] = var_9_5
+		}
+		local var_9_9 = getProxy(BayProxy):getRawData()
+
+		for iter_9_0, iter_9_1 in ipairs(var_9_1:GetRawShipIds()) do
+			local var_9_10 = var_9_9[iter_9_1]:getShipType()
+			local var_9_11 = TeamType.GetTeamFromShipType(var_9_10)
+			local var_9_12 = 0
+			local var_9_13 = var_9_8[var_9_11]
+
+			for iter_9_2, iter_9_3 in ipairs(var_9_13) do
+				if ShipType.ContainInLimitBundle(iter_9_3, var_9_10) then
+					var_9_12 = iter_9_3
+
+					break
+				end
+			end
+
+			for iter_9_4, iter_9_5 in ipairs(var_9_13) do
+				if iter_9_5 == var_9_12 then
+					table.remove(var_9_13, iter_9_4)
+
+					break
+				end
+			end
+		end
+
+		local function var_9_14(arg_11_0, arg_11_1)
+			local var_11_0 = underscore.filter(TeamType.GetShipTypeListFromTeam(arg_11_1), function(arg_12_0)
+				return ShipType.ContainInLimitBundle(arg_11_0, arg_12_0)
+			end)
+			local var_11_1 = arg_1_0:getRecommendShip(var_11_0, var_9_7)
+
+			if var_11_1 then
+				var_9_1:insertShip(var_11_1, nil, var_11_1:getTeamType())
+				table.insert(var_9_6, var_11_1.id)
+				table.insert(var_9_7, var_11_1.id)
+			end
+		end
+
+		local var_9_15
+
+		if var_9_0 == #arg_1_0.contextData.fleets then
+			var_9_15 = {
+				[TeamType.Submarine] = var_9_5
 			}
-		}
-		slot11 = getProxy(BayProxy):getRawData()
+		else
+			var_9_15 = {
+				[TeamType.Main] = var_9_3,
+				[TeamType.Vanguard] = var_9_4
+			}
+		end
 
-		for slot15, slot16 in ipairs(slot3:GetRawShipIds()) do
-			slot20 = 0
-
-			for slot25, slot26 in ipairs(slot10[TeamType.GetTeamFromShipType(slot11[slot16]:getShipType())]) do
-				if ShipType.ContainInLimitBundle(slot26, slot18) then
-					slot20 = slot26
-
-					break
-				end
-			end
-
-			for slot25, slot26 in ipairs(slot21) do
-				if slot26 == slot20 then
-					table.remove(slot21, slot25)
-
-					break
-				end
+		for iter_9_6, iter_9_7 in pairs(var_9_15) do
+			for iter_9_8, iter_9_9 in ipairs(iter_9_7) do
+				var_9_14(iter_9_9, iter_9_6)
 			end
 		end
 
-		function slot12(slot0, slot1)
-			slot3 = uv0
-
-			if slot3:getRecommendShip(underscore.filter(TeamType.GetShipTypeListFromTeam(slot1), function (slot0)
-				return ShipType.ContainInLimitBundle(uv0, slot0)
-			end), uv1) then
-				uv2:insertShip(slot3, nil, slot3:getTeamType())
-				table.insert(uv3, slot3.id)
-				table.insert(uv1, slot3.id)
-			end
-		end
-
-		slot13 = nil
-		slot13 = (slot2 ~= #uv0.contextData.fleets or {
-			[TeamType.Submarine] = slot7
-		}) and {
-			[TeamType.Main] = slot5,
-			[TeamType.Vanguard] = slot6
-		}
-
-		for slot17, slot18 in pairs(slot13) do
-			for slot22, slot23 in ipairs(slot18) do
-				slot12(slot23, slot17)
-			end
-		end
-
-		uv0.viewComponent:updateEliteFleets()
+		arg_1_0.viewComponent:updateEliteFleets()
 	end)
-	slot0:bind(uv0.ON_ELITE_CLEAR, function (slot0, slot1)
-		uv0.contextData.fleets[slot1.index]:clearFleet()
-		uv0.viewComponent:updateEliteFleets()
+	arg_1_0:bind(var_0_0.ON_ELITE_CLEAR, function(arg_13_0, arg_13_1)
+		arg_1_0.contextData.fleets[arg_13_1.index]:clearFleet()
+		arg_1_0.viewComponent:updateEliteFleets()
 	end)
-	slot0:bind(uv0.ON_PRECOMBAT, function (slot0)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_PRECOMBAT, function(arg_14_0)
+		local var_14_0 = table.shallowCopy(arg_1_0.contextData.fleets)
+
+		arg_1_0:addSubLayers(Context.New({
 			mediator = BossRushPreCombatMediator,
 			viewComponent = BossRushPreCombatLayer,
 			data = {
-				seriesData = uv0.contextData.seriesData,
-				actId = uv0.contextData.actId,
-				system = uv0.contextData.system,
-				mode = uv0.contextData.mode,
-				stageIds = uv0.contextData.stageIds,
-				fleets = table.shallowCopy(uv0.contextData.fleets),
-				fleetIndex = uv0.contextData.fleetIndex
+				seriesData = arg_1_0.contextData.seriesData,
+				actId = arg_1_0.contextData.actId,
+				system = arg_1_0.contextData.system,
+				mode = arg_1_0.contextData.mode,
+				stageIds = arg_1_0.contextData.stageIds,
+				fleets = var_14_0,
+				fleetIndex = arg_1_0.contextData.fleetIndex
 			}
 		}), true)
 	end)
-	slot0:bind(uv0.OPEN_COMMANDER_PANEL, function (slot0, slot1)
-		uv0:openCommanderPanel(slot1, uv0.contextData.fleetIndex)
+	arg_1_0:bind(var_0_0.OPEN_COMMANDER_PANEL, function(arg_15_0, arg_15_1)
+		arg_1_0:openCommanderPanel(arg_15_1, arg_1_0.contextData.fleetIndex)
 	end)
-	slot0:bind(uv0.ON_SELECT_COMMANDER, function (slot0, slot1, slot2)
-		slot3 = uv0.contextData.fleets
+	arg_1_0:bind(var_0_0.ON_SELECT_COMMANDER, function(arg_16_0, arg_16_1, arg_16_2)
+		local var_16_0 = arg_1_0.contextData.fleets
+		local var_16_1 = var_16_0[arg_16_1]
+		local var_16_2 = var_16_1:getCommanders()
 
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			maxCount = 1,
 			mode = CommanderCatScene.MODE_SELECT,
-			activeCommander = slot3[slot1]:getCommanders()[slot2],
+			activeCommander = var_16_2[arg_16_2],
 			fleetType = CommanderCatScene.FLEET_TYPE_BOSSRUSH,
-			fleets = slot3,
+			fleets = var_16_0,
 			ignoredIds = {},
-			onCommander = function (slot0)
+			onCommander = function(arg_17_0)
 				return true
 			end,
-			onSelected = function (slot0, slot1)
-				slot4 = getProxy(CommanderProxy):getCommanderById(slot0[1])
+			onSelected = function(arg_18_0, arg_18_1)
+				local var_18_0 = arg_18_0[1]
+				local var_18_1 = getProxy(CommanderProxy):getCommanderById(var_18_0)
 
-				for slot8, slot9 in pairs(uv0) do
-					if slot8 == uv1 then
-						for slot13, slot14 in pairs(uv2) do
-							if slot14.groupId == slot4.groupId and slot13 ~= uv3 then
+				for iter_18_0, iter_18_1 in pairs(var_16_0) do
+					if iter_18_0 == arg_16_1 then
+						for iter_18_2, iter_18_3 in pairs(var_16_2) do
+							if iter_18_3.groupId == var_18_1.groupId and iter_18_2 ~= arg_16_2 then
 								pg.TipsMgr.GetInstance():ShowTips(i18n("commander_can_not_select_same_group"))
 
 								return
 							end
 						end
 					else
-						for slot14, slot15 in pairs(slot9:getCommanders()) do
-							if slot2 == slot15.id then
+						local var_18_2 = iter_18_1:getCommanders()
+
+						for iter_18_4, iter_18_5 in pairs(var_18_2) do
+							if var_18_0 == iter_18_5.id then
 								pg.TipsMgr.GetInstance():ShowTips(i18n("commander_is_in_fleet_already"))
 
 								return
@@ -201,169 +231,185 @@ function slot0.register(slot0)
 					end
 				end
 
-				uv4:updateCommanderByPos(uv3, slot4)
-				slot1()
+				var_16_1:updateCommanderByPos(arg_16_2, var_18_1)
+				arg_18_1()
 			end,
-			onQuit = function (slot0)
-				uv0:updateCommanderByPos(uv1, nil)
-				slot0()
+			onQuit = function(arg_19_0)
+				var_16_1:updateCommanderByPos(arg_16_2, nil)
+				arg_19_0()
 			end
 		})
 	end)
-	slot0:bind(uv0.ON_COMMANDER_SKILL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_COMMANDER_SKILL, function(arg_20_0, arg_20_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = CommanderSkillLayer,
 			data = {
-				skill = slot1
+				skill = arg_20_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.ON_SWITCH_MODE, function (slot0, slot1)
-		uv0:OnSwitchMode(slot1)
+	arg_1_0:bind(var_0_0.ON_SWITCH_MODE, function(arg_21_0, arg_21_1)
+		arg_1_0:OnSwitchMode(arg_21_1)
 	end)
 
-	slot1 = slot0.contextData.seriesData
-	slot0.contextData.stageIds = slot1:GetExpeditionIds()
-	slot0.contextData.fullFleets = slot1:GetFleets()
+	local var_1_0 = arg_1_0.contextData.seriesData
 
-	if not slot0.contextData.mode and PlayerPrefs.GetInt("series_mode_flag" .. slot1.id, -1) ~= -1 then
-		slot0.contextData.mode = slot3
+	arg_1_0.contextData.stageIds = var_1_0:GetExpeditionIds()
+	arg_1_0.contextData.fullFleets = var_1_0:GetFleets()
+
+	if not arg_1_0.contextData.mode then
+		local var_1_1 = "series_mode_flag" .. var_1_0.id
+		local var_1_2 = PlayerPrefs.GetInt(var_1_1, -1)
+
+		if var_1_2 ~= -1 then
+			arg_1_0.contextData.mode = var_1_2
+		end
 	end
 
-	slot0.contextData.mode = slot0.contextData.mode or BossRushSeriesData.MODE.MULTIPLE
+	arg_1_0.contextData.mode = arg_1_0.contextData.mode or BossRushSeriesData.MODE.MULTIPLE
 
-	if not slot1:IsSingleFight() then
-		slot0.contextData.mode = BossRushSeriesData.MODE.MULTIPLE
+	if not var_1_0:IsSingleFight() then
+		arg_1_0.contextData.mode = BossRushSeriesData.MODE.MULTIPLE
 	end
 
-	slot2 = slot0.contextData.fullFleets
+	local var_1_3 = arg_1_0.contextData.fullFleets
 
-	if slot0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
-		slot0.contextData.fleets = {
-			slot2[1],
-			slot2[#slot2]
+	if arg_1_0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
+		arg_1_0.contextData.fleets = {
+			var_1_3[1],
+			var_1_3[#var_1_3]
 		}
 	else
-		slot0.contextData.fleets = slot0.contextData.fleets or table.shallowCopy(slot0.contextData.fullFleets)
+		arg_1_0.contextData.fleets = arg_1_0.contextData.fleets or table.shallowCopy(arg_1_0.contextData.fullFleets)
 	end
 
-	slot0.contextData.fleetIndex = slot0.contextData.fleetIndex or 1
+	arg_1_0.contextData.fleetIndex = arg_1_0.contextData.fleetIndex or 1
 
-	if slot0.contextData.fleetIndex > #slot0.contextData.fleets then
-		slot0.contextData.fleetIndex = 1
+	if arg_1_0.contextData.fleetIndex > #arg_1_0.contextData.fleets then
+		arg_1_0.contextData.fleetIndex = 1
 	end
 
-	slot0.contextData.system = not (slot1:GetType() == BossRushSeriesData.TYPE.EXTRA) and SYSTEM_BOSS_RUSH or SYSTEM_BOSS_RUSH_EX
-	slot0.contextData.actId = slot1.actId
+	local var_1_4 = var_1_0:GetType() == BossRushSeriesData.TYPE.EXTRA
 
-	slot0.viewComponent:setHardShipVOs(getProxy(BayProxy):getRawData())
+	arg_1_0.contextData.system = not var_1_4 and SYSTEM_BOSS_RUSH or SYSTEM_BOSS_RUSH_EX
+	arg_1_0.contextData.actId = var_1_0.actId
+
+	arg_1_0.viewComponent:setHardShipVOs(getProxy(BayProxy):getRawData())
 end
 
-function slot0.OnSwitchMode(slot0, slot1)
-	assert(slot1)
+function var_0_0.OnSwitchMode(arg_22_0, arg_22_1)
+	assert(arg_22_1)
 
-	slot2 = slot0.contextData.mode
-	slot0.contextData.mode = slot1
-	slot3 = slot0.contextData.fullFleets
+	local var_22_0 = arg_22_0.contextData.mode
 
-	if slot0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
-		slot0.contextData.fleets = {
-			slot3[1],
-			slot3[#slot3]
+	arg_22_0.contextData.mode = arg_22_1
+
+	local var_22_1 = arg_22_0.contextData.fullFleets
+
+	if arg_22_0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
+		arg_22_0.contextData.fleets = {
+			var_22_1[1],
+			var_22_1[#var_22_1]
 		}
 
-		if slot1 ~= slot2 then
-			if slot0.contextData.fleetIndex < #slot3 then
-				slot0.contextData.fleetIndex = 1
+		if arg_22_1 ~= var_22_0 then
+			if arg_22_0.contextData.fleetIndex < #var_22_1 then
+				arg_22_0.contextData.fleetIndex = 1
 			else
-				slot0.contextData.fleetIndex = 2
+				arg_22_0.contextData.fleetIndex = 2
 			end
 		end
 	else
-		slot0.contextData.fleets = table.shallowCopy(slot3)
+		arg_22_0.contextData.fleets = table.shallowCopy(var_22_1)
 
-		if slot1 ~= slot2 then
-			if slot0.contextData.fleetIndex == 2 then
-				slot0.contextData.fleetIndex = #slot3
+		if arg_22_1 ~= var_22_0 then
+			if arg_22_0.contextData.fleetIndex == 2 then
+				arg_22_0.contextData.fleetIndex = #var_22_1
 			end
 
-			slot4 = slot0.contextData.fleets[1]
-			slot4 = slot4:GetRawShipIds()
+			local var_22_2 = arg_22_0.contextData.fleets[1]:GetRawShipIds()
 
-			_.each(_.slice(slot0.contextData.fleets, 2, #slot0.contextData.fleets - 2), function (slot0)
-				_.each(uv0, function (slot0)
-					uv0:removeShipById(slot0)
+			_.each(_.slice(arg_22_0.contextData.fleets, 2, #arg_22_0.contextData.fleets - 2), function(arg_23_0)
+				_.each(var_22_2, function(arg_24_0)
+					arg_23_0:removeShipById(arg_24_0)
 				end)
 			end)
 		end
 	end
 
-	PlayerPrefs.SetInt("series_mode_flag" .. slot0.contextData.seriesData.id, slot1)
+	local var_22_3 = "series_mode_flag" .. arg_22_0.contextData.seriesData.id
+
+	PlayerPrefs.SetInt(var_22_3, arg_22_1)
 end
 
-function slot0.getRecommendShip(slot0, slot1, slot2)
-	slot3 = slot0.contextData.actId
-	slot6 = {}
+function var_0_0.getRecommendShip(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = arg_25_0.contextData.actId
+	local var_25_1 = getProxy(BayProxy)
+	local var_25_2 = var_25_1:getShipsByTypes(arg_25_1)
+	local var_25_3 = {}
 
-	for slot10, slot11 in ipairs(getProxy(BayProxy):getShipsByTypes(slot1)) do
-		slot6[slot11] = slot11:getShipCombatPower()
+	for iter_25_0, iter_25_1 in ipairs(var_25_2) do
+		var_25_3[iter_25_1] = iter_25_1:getShipCombatPower()
 	end
 
-	table.sort(slot5, function (slot0, slot1)
-		return uv0[slot0] < uv0[slot1]
+	table.sort(var_25_2, function(arg_26_0, arg_26_1)
+		return var_25_3[arg_26_0] < var_25_3[arg_26_1]
 	end)
 
-	slot7 = {}
-	slot8 = slot4:getRawData()
+	local var_25_4 = {}
+	local var_25_5 = var_25_1:getRawData()
 
-	for slot12, slot13 in ipairs(slot2) do
-		slot7[#slot7 + 1] = slot8[slot13]:getGroupId()
+	for iter_25_2, iter_25_3 in ipairs(arg_25_2) do
+		local var_25_6 = var_25_5[iter_25_3]
+
+		var_25_4[#var_25_4 + 1] = var_25_6:getGroupId()
 	end
 
-	slot9 = #slot5
-	slot10 = nil
+	local var_25_7 = #var_25_2
+	local var_25_8
 
-	while slot9 > 0 do
-		slot11 = slot5[slot9]
-		slot13 = slot11:getGroupId()
+	while var_25_7 > 0 do
+		local var_25_9 = var_25_2[var_25_7]
+		local var_25_10 = var_25_9.id
+		local var_25_11 = var_25_9:getGroupId()
 
-		if not table.contains(slot2, slot11.id) and not table.contains(slot7, slot13) and ShipStatus.ShipStatusCheck("inActivity", slot11, nil, {
-			inActivity = slot3
+		if not table.contains(arg_25_2, var_25_10) and not table.contains(var_25_4, var_25_11) and ShipStatus.ShipStatusCheck("inActivity", var_25_9, nil, {
+			inActivity = var_25_0
 		}) then
-			slot10 = slot11
+			var_25_8 = var_25_9
 
 			break
 		else
-			slot9 = slot9 - 1
+			var_25_7 = var_25_7 - 1
 		end
 	end
 
-	return slot10
+	return var_25_8
 end
 
-function slot0.openCommanderPanel(slot0, slot1, slot2)
-	slot3 = slot0.contextData.actId
+function var_0_0.openCommanderPanel(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_0.contextData.actId
 
-	slot0:addSubLayers(Context.New({
+	arg_27_0:addSubLayers(Context.New({
 		mediator = BossRushCMDFormationMediator,
 		viewComponent = BossRushCMDFormationView,
 		data = {
-			fleet = slot1,
-			callback = function (slot0)
-				if slot0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
-					uv0.viewComponent:emit(uv1.ON_COMMANDER_SKILL, slot0.skill)
-				elseif slot0.type == LevelUIConst.COMMANDER_OP_ADD then
-					uv0:closeCommanderPanel()
-					uv0.viewComponent:emit(uv1.ON_SELECT_COMMANDER, uv2, slot0.pos)
+			fleet = arg_27_1,
+			callback = function(arg_28_0)
+				if arg_28_0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+					arg_27_0.viewComponent:emit(var_0_0.ON_COMMANDER_SKILL, arg_28_0.skill)
+				elseif arg_28_0.type == LevelUIConst.COMMANDER_OP_ADD then
+					arg_27_0:closeCommanderPanel()
+					arg_27_0.viewComponent:emit(var_0_0.ON_SELECT_COMMANDER, arg_27_2, arg_28_0.pos)
 				else
-					uv0:sendNotification(GAME.COMMANDER_FORMATION_OP, {
+					arg_27_0:sendNotification(GAME.COMMANDER_FORMATION_OP, {
 						data = {
 							FleetType = LevelUIConst.FLEET_TYPE_BOSSRUSH,
-							data = slot0,
-							fleetId = uv3.id,
-							actId = uv4,
-							fleets = uv0.contextData.fleets
+							data = arg_28_0,
+							fleetId = arg_27_1.id,
+							actId = var_27_0,
+							fleets = arg_27_0.contextData.fleets
 						}
 					})
 				end
@@ -372,78 +418,90 @@ function slot0.openCommanderPanel(slot0, slot1, slot2)
 	}))
 end
 
-function slot0.closeCommanderPanel(slot0)
-	if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator) then
-		slot0:sendNotification(GAME.REMOVE_LAYERS, {
-			context = slot3
+function var_0_0.closeCommanderPanel(arg_29_0)
+	local var_29_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator)
+
+	if var_29_0 then
+		arg_29_0:sendNotification(GAME.REMOVE_LAYERS, {
+			context = var_29_0
 		})
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_30_0)
 	return {
 		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE,
 		BossRushPreCombatMediator.ON_FLEET_REFRESHED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_1:getName()
+	local var_31_1 = arg_31_1:getBody()
 
-	if slot1:getName() == nil then
-		-- Nothing
-	elseif slot2 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
-		slot0.viewComponent:updateEliteFleets()
-	elseif slot2 == BossRushPreCombatMediator.ON_FLEET_REFRESHED then
-		slot0.viewComponent:updateEliteFleets()
+	if var_31_0 == nil then
+		-- block empty
+	elseif var_31_0 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
+		arg_31_0.viewComponent:updateEliteFleets()
+	elseif var_31_0 == BossRushPreCombatMediator.ON_FLEET_REFRESHED then
+		arg_31_0.viewComponent:updateEliteFleets()
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_32_0)
+	return
 end
 
-function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3, slot4)
-	slot5 = getProxy(BayProxy)
+function var_0_0.getDockCallbackFuncs(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
+	local var_33_0 = getProxy(BayProxy)
 
-	return function (slot0, slot1)
-		slot2, slot3 = ShipStatus.ShipStatusCheck("inActivity", slot0, slot1, {
-			inActivity = uv0
+	local function var_33_1(arg_34_0, arg_34_1)
+		local var_34_0, var_34_1 = ShipStatus.ShipStatusCheck("inActivity", arg_34_0, arg_34_1, {
+			inActivity = arg_33_4
 		})
 
-		if not slot2 then
-			return slot2, slot3
+		if not var_34_0 then
+			return var_34_0, var_34_1
 		end
 
-		if uv1 and uv1:isSameKind(slot0) then
+		if arg_33_0 and arg_33_0:isSameKind(arg_34_0) then
 			return true
 		end
 
-		for slot7, slot8 in ipairs(uv2) do
-			if slot0:isSameKind(uv3:getShipById(slot8)) then
+		for iter_34_0, iter_34_1 in ipairs(arg_33_3) do
+			if arg_34_0:isSameKind(var_33_0:getShipById(iter_34_1)) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
 
 		return true
-	end, function (slot0, slot1, slot2)
-		slot1()
-	end, function (slot0)
-		if uv0 then
-			uv1:removeShip(uv0)
+	end
+
+	local function var_33_2(arg_35_0, arg_35_1, arg_35_2)
+		arg_35_1()
+	end
+
+	local function var_33_3(arg_36_0)
+		if arg_33_0 then
+			arg_33_1:removeShip(arg_33_0)
 		end
 
-		if #slot0 > 0 then
-			if not uv1:containShip(uv2:getShipById(slot0[1])) then
-				uv1:insertShip(slot1, nil, uv3)
-			elseif uv0 then
-				uv1:insertShip(uv0, nil, uv3)
+		if #arg_36_0 > 0 then
+			local var_36_0 = var_33_0:getShipById(arg_36_0[1])
+
+			if not arg_33_1:containShip(var_36_0) then
+				arg_33_1:insertShip(var_36_0, nil, arg_33_2)
+			elseif arg_33_0 then
+				arg_33_1:insertShip(arg_33_0, nil, arg_33_2)
 			end
 
-			uv1:RemoveUnusedItems()
+			arg_33_1:RemoveUnusedItems()
 		end
 
-		getProxy(FleetProxy):updateActivityFleet(uv4, uv1.id, uv1)
+		getProxy(FleetProxy):updateActivityFleet(arg_33_4, arg_33_1.id, arg_33_1)
 	end
+
+	return var_33_1, var_33_2, var_33_3
 end
 
-return slot0
+return var_0_0

@@ -1,562 +1,608 @@
-slot0 = class("SpringCoupletPage", import("...base.BaseActivityPage"))
-slot1 = 7
-slot2 = 7
-slot3 = 7
-slot4 = 400
-slot5 = 78
-slot6 = 1
-slot7 = "ui/activityuipage/springcoupletpage_atlas"
-slot8 = "couplete_activty_desc"
-slot9 = "couplete_click_desc"
-slot10 = "couplet_index_desc"
-slot11 = "couplete_help"
-slot12 = "couplete_drag_tip"
-slot13 = "couplete_remind"
-slot14 = "couplete_complete"
-slot15 = "couplete_enter"
-slot16 = "couplete_stay"
-slot17 = "couplete_task"
-slot18 = {
+﻿local var_0_0 = class("SpringCoupletPage", import("...base.BaseActivityPage"))
+local var_0_1 = 7
+local var_0_2 = 7
+local var_0_3 = 7
+local var_0_4 = 400
+local var_0_5 = 78
+local var_0_6 = 1
+local var_0_7 = "ui/activityuipage/springcoupletpage_atlas"
+local var_0_8 = "couplete_activty_desc"
+local var_0_9 = "couplete_click_desc"
+local var_0_10 = "couplet_index_desc"
+local var_0_11 = "couplete_help"
+local var_0_12 = "couplete_drag_tip"
+local var_0_13 = "couplete_remind"
+local var_0_14 = "couplete_complete"
+local var_0_15 = "couplete_enter"
+local var_0_16 = "couplete_stay"
+local var_0_17 = "couplete_task"
+local var_0_18 = {
 	"couplete_pass_1",
 	"couplete_pass_2"
 }
-slot19 = {
+local var_0_19 = {
 	"couplete_fail_1",
 	"couplete_fail_2"
 }
-slot20 = 20
+local var_0_20 = 20
 
-function slot0.OnInit(slot0)
-	slot0.itemTpl = findTF(slot0._tf, "AD/itemTpl")
-	slot0.iconTpl = findTF(slot0._tf, "AD/iconTpl")
-	slot0.wordTpl = findTF(slot0._tf, "AD/wordTpl")
-	slot0.itemContainer = findTF(slot0._tf, "AD/itemContainer")
-	slot0.taskIcon = findTF(slot0._tf, "AD/task/icon")
-	slot0.taskSlider = findTF(slot0._tf, "AD/task/Slider")
-	slot0.taskBtnGet = findTF(slot0._tf, "AD/task/btnGet")
-	slot0.taskBtnGot = findTF(slot0._tf, "AD/task/btnGot")
-	slot0.taskBtnGo = findTF(slot0._tf, "AD/task/btnGo")
-	slot0.taskDesc = findTF(slot0._tf, "AD/task/desc")
-	slot0.taskCur = findTF(slot0._tf, "AD/task/cur")
-	slot0.taskMax = findTF(slot0._tf, "AD/task/max")
-	slot0.finalAward = findTF(slot0._tf, "AD/finalAward")
-	slot0.charPos = findTF(slot0._tf, "AD/charPos")
-	slot0.charClick = findTF(slot0.charPos, "click")
-	slot0.btnConfirm = findTF(slot0._tf, "AD/btnConfirm")
-	slot0.imgComplete = findTF(slot0._tf, "AD/imgComplete")
-	slot0.charTip = findTF(slot0._tf, "AD/charTip")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.itemTpl = findTF(arg_1_0._tf, "AD/itemTpl")
+	arg_1_0.iconTpl = findTF(arg_1_0._tf, "AD/iconTpl")
+	arg_1_0.wordTpl = findTF(arg_1_0._tf, "AD/wordTpl")
+	arg_1_0.itemContainer = findTF(arg_1_0._tf, "AD/itemContainer")
+	arg_1_0.taskIcon = findTF(arg_1_0._tf, "AD/task/icon")
+	arg_1_0.taskSlider = findTF(arg_1_0._tf, "AD/task/Slider")
+	arg_1_0.taskBtnGet = findTF(arg_1_0._tf, "AD/task/btnGet")
+	arg_1_0.taskBtnGot = findTF(arg_1_0._tf, "AD/task/btnGot")
+	arg_1_0.taskBtnGo = findTF(arg_1_0._tf, "AD/task/btnGo")
+	arg_1_0.taskDesc = findTF(arg_1_0._tf, "AD/task/desc")
+	arg_1_0.taskCur = findTF(arg_1_0._tf, "AD/task/cur")
+	arg_1_0.taskMax = findTF(arg_1_0._tf, "AD/task/max")
+	arg_1_0.finalAward = findTF(arg_1_0._tf, "AD/finalAward")
+	arg_1_0.charPos = findTF(arg_1_0._tf, "AD/charPos")
+	arg_1_0.charClick = findTF(arg_1_0.charPos, "click")
+	arg_1_0.btnConfirm = findTF(arg_1_0._tf, "AD/btnConfirm")
+	arg_1_0.imgComplete = findTF(arg_1_0._tf, "AD/imgComplete")
+	arg_1_0.charTip = findTF(arg_1_0._tf, "AD/charTip")
 
-	setActive(slot0.charTip, false)
+	setActive(arg_1_0.charTip, false)
 
-	slot0.btnHelp = findTF(slot0._tf, "AD/btnHelp")
-	slot0.remindDesc = findTF(slot0._tf, "AD/remindDesc")
+	arg_1_0.btnHelp = findTF(arg_1_0._tf, "AD/btnHelp")
+	arg_1_0.remindDesc = findTF(arg_1_0._tf, "AD/remindDesc")
 
-	setText(slot0.remindDesc, i18n(uv0))
+	setText(arg_1_0.remindDesc, i18n(var_0_9))
 
-	slot0.dragTip = findTF(slot0._tf, "AD/dragTip")
+	arg_1_0.dragTip = findTF(arg_1_0._tf, "AD/dragTip")
 
-	setText(slot0.dragTip, i18n(uv1))
+	setText(arg_1_0.dragTip, i18n(var_0_12))
 
-	slot0.btnPre = findTF(slot0._tf, "AD/pre")
-	slot0.btnNext = findTF(slot0._tf, "AD/next")
-	slot0.activityDesc = findTF(slot0._tf, "AD/desc")
+	arg_1_0.btnPre = findTF(arg_1_0._tf, "AD/pre")
+	arg_1_0.btnNext = findTF(arg_1_0._tf, "AD/next")
+	arg_1_0.activityDesc = findTF(arg_1_0._tf, "AD/desc")
 
-	setText(slot0.activityDesc, i18n(uv2))
+	setText(arg_1_0.activityDesc, i18n(var_0_8))
 
-	slot0.coupletUpImg = GetComponent(findTF(slot0._tf, "AD/coupletUp/contents/img"), typeof(Image))
-	slot0.coupletUpContents = findTF(slot0._tf, "AD/coupletUp/contents")
-	slot0.coupletBottomContents = findTF(slot0._tf, "AD/coupletBottom/contents")
-	slot0.coupletUpLock = findTF(slot0._tf, "AD/coupletUp/lock")
-	slot0.coupletBottomLock = findTF(slot0._tf, "AD/coupletBottom/lock")
-	slot0.awardIcon = tf(instantiate(slot0.iconTpl))
-	slot4 = 0
-	slot0.awardIcon.anchoredPosition = Vector2(0, slot4)
+	arg_1_0.coupletUpImg = GetComponent(findTF(arg_1_0._tf, "AD/coupletUp/contents/img"), typeof(Image))
+	arg_1_0.coupletUpContents = findTF(arg_1_0._tf, "AD/coupletUp/contents")
+	arg_1_0.coupletBottomContents = findTF(arg_1_0._tf, "AD/coupletBottom/contents")
+	arg_1_0.coupletUpLock = findTF(arg_1_0._tf, "AD/coupletUp/lock")
+	arg_1_0.coupletBottomLock = findTF(arg_1_0._tf, "AD/coupletBottom/lock")
+	arg_1_0.awardIcon = tf(instantiate(arg_1_0.iconTpl))
+	arg_1_0.awardIcon.anchoredPosition = Vector2(0, 0)
 
-	setActive(slot0.awardIcon, true)
-	setParent(slot0.awardIcon, slot0.taskIcon)
+	setActive(arg_1_0.awardIcon, true)
+	setParent(arg_1_0.awardIcon, arg_1_0.taskIcon)
 
-	slot0.countDesc = findTF(slot0._tf, "AD/countDesc")
-	slot0.items = {}
+	arg_1_0.countDesc = findTF(arg_1_0._tf, "AD/countDesc")
+	arg_1_0.items = {}
 
-	for slot4 = 1, uv3 do
-		slot5 = tf(instantiate(slot0.itemTpl))
+	for iter_1_0 = 1, var_0_2 do
+		local var_1_0 = tf(instantiate(arg_1_0.itemTpl))
 
-		setActive(slot5, true)
-		setParent(slot5, slot0.itemContainer)
-		table.insert(slot0.items, slot5)
+		setActive(var_1_0, true)
+		setParent(var_1_0, arg_1_0.itemContainer)
+		table.insert(arg_1_0.items, var_1_0)
 	end
 
-	slot0.coupletBottomWords = {}
+	arg_1_0.coupletBottomWords = {}
 
-	for slot4 = 1, uv4 do
-		slot5 = slot0:createWord(slot4, slot0.coupletBottomContents)
+	for iter_1_1 = 1, var_0_3 do
+		local var_1_1 = arg_1_0:createWord(iter_1_1, arg_1_0.coupletBottomContents)
 
-		slot0:addCoupletWordEvent(slot5)
-		table.insert(slot0.coupletBottomWords, slot5)
+		arg_1_0:addCoupletWordEvent(var_1_1)
+		table.insert(arg_1_0.coupletBottomWords, var_1_1)
 	end
 
-	slot1 = GameObject.Find("UICamera")
-	slot0._uiCamera = slot1:GetComponent(typeof(Camera))
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
+	arg_1_0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+	arg_1_0.timer = Timer.New(function()
+		arg_1_0:onTimer()
 	end, 2, -1)
-	slot1 = slot0.timer
 
-	slot1:Start()
-	onButton(slot0, slot0.btnConfirm, function ()
-		uv0:finishCouplete()
+	arg_1_0.timer:Start()
+	onButton(arg_1_0, arg_1_0.btnConfirm, function()
+		arg_1_0:finishCouplete()
 	end)
-	onButton(slot0, slot0.btnPre, function ()
-		uv0.coupletIndex = uv0.coupletIndex - 1
+	onButton(arg_1_0, arg_1_0.btnPre, function()
+		arg_1_0.coupletIndex = arg_1_0.coupletIndex - 1
 
-		uv0:selectCoupletChange()
+		arg_1_0:selectCoupletChange()
 	end)
-	onButton(slot0, slot0.btnNext, function ()
-		uv0.coupletIndex = uv0.coupletIndex + 1
+	onButton(arg_1_0, arg_1_0.btnNext, function()
+		arg_1_0.coupletIndex = arg_1_0.coupletIndex + 1
 
-		uv0:selectCoupletChange()
+		arg_1_0:selectCoupletChange()
 	end)
-	onButton(slot0, slot0.btnHelp, function ()
+	onButton(arg_1_0, arg_1_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.couplete_help.tip
 		})
 	end)
-	onButton(slot0, slot0.charClick, function ()
-		if not uv0.charClickCount then
-			uv0.charClickCount = 0
+	onButton(arg_1_0, arg_1_0.charClick, function()
+		if not arg_1_0.charClickCount then
+			arg_1_0.charClickCount = 0
 		end
 
-		uv0.charClickCount = uv0.charClickCount + 1
+		arg_1_0.charClickCount = arg_1_0.charClickCount + 1
 
-		if uv0.charClickCount % 3 == 0 and not uv0.coupletComplete and uv0.coupletUnLock then
-			uv0:showTips(i18n(uv1, i18n("couplete_pair_" .. uv0.coupletIndex)), true)
+		if arg_1_0.charClickCount % 3 == 0 and not arg_1_0.coupletComplete and arg_1_0.coupletUnLock then
+			arg_1_0:showTips(i18n(var_0_13, i18n("couplete_pair_" .. arg_1_0.coupletIndex)), true)
 		end
 	end)
-	onButton(slot0, slot0.taskBtnGo, function ()
-		uv0:emit(ActivityMediator.ON_TASK_GO, uv0.taskVO)
+	onButton(arg_1_0, arg_1_0.taskBtnGo, function()
+		arg_1_0:emit(ActivityMediator.ON_TASK_GO, arg_1_0.taskVO)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.taskBtnGet, function ()
+	onButton(arg_1_0, arg_1_0.taskBtnGet, function()
 		pg.m02:sendNotification(GAME.SUBMIT_TASK, {
 			virtual = false,
 			normal_submit = true,
-			taskId = uv0.taskVO.id
+			taskId = arg_1_0.taskVO.id
 		})
-		uv0:showTips(i18n(uv1), true)
+		arg_1_0:showTips(i18n(var_0_15), true)
 	end, SFX_PANEL)
 
-	slot1 = Ship.New({
+	local var_1_2 = Ship.New({
 		configId = 502011,
 		skin_id = 502010
-	})
-	slot3 = PoolMgr.GetInstance()
+	}):getPrefab()
 
-	slot3:GetSpineChar(slot1:getPrefab(), true, function (slot0)
-		uv0.model = slot0
-		uv0.model.transform.localScale = Vector3(0.7, 0.7, 0.7)
-		uv0.model.transform.localPosition = Vector3.zero
+	PoolMgr.GetInstance():GetSpineChar(var_1_2, true, function(arg_10_0)
+		arg_1_0.model = arg_10_0
+		arg_1_0.model.transform.localScale = Vector3(0.7, 0.7, 0.7)
+		arg_1_0.model.transform.localPosition = Vector3.zero
 
-		uv0.model.transform:SetParent(findTF(uv0.charPos, "pos"), false)
+		arg_1_0.model.transform:SetParent(findTF(arg_1_0.charPos, "pos"), false)
 
-		uv0.anim = uv0.model:GetComponent(typeof(SpineAnimUI))
+		arg_1_0.anim = arg_1_0.model:GetComponent(typeof(SpineAnimUI))
 
-		uv0.anim:SetAction("stand", 0)
+		arg_1_0.anim:SetAction("stand", 0)
 	end)
 end
 
-function slot0.OnShowFlush(slot0)
-	slot0.tipStayIndex = uv0
+function var_0_0.OnShowFlush(arg_11_0)
+	arg_11_0.tipStayIndex = var_0_20
 
-	if slot0.data1List and slot0.data2List and #slot0.data1List ~= #slot0.data2List then
-		slot0:showTips(i18n(uv1))
-	elseif slot0.data1List and slot0.data2List and #slot0.data1List == #slot0.data2List and not slot0.coupletFinishAll then
-		slot0:showTips(i18n(uv2))
-	elseif slot0.coupletFinishAll then
-		slot0:showTips(i18n(uv3))
+	if arg_11_0.data1List and arg_11_0.data2List and #arg_11_0.data1List ~= #arg_11_0.data2List then
+		arg_11_0:showTips(i18n(var_0_15))
+	elseif arg_11_0.data1List and arg_11_0.data2List and #arg_11_0.data1List == #arg_11_0.data2List and not arg_11_0.coupletFinishAll then
+		arg_11_0:showTips(i18n(var_0_17))
+	elseif arg_11_0.coupletFinishAll then
+		arg_11_0:showTips(i18n(var_0_14))
 	end
 end
 
-function slot0.OnHideFlush(slot0)
-	setActive(slot0.charTip, false)
+function var_0_0.OnHideFlush(arg_12_0)
+	setActive(arg_12_0.charTip, false)
 end
 
-function slot0.OnDataSetting(slot0)
-	if not slot0.coupletIds then
-		slot0.coupletIds = slot0.activity:getConfig("config_client").couplet
-		slot0.coupletDatas = {}
+function var_0_0.OnDataSetting(arg_13_0)
+	if not arg_13_0.coupletIds then
+		arg_13_0.coupletIds = arg_13_0.activity:getConfig("config_client").couplet
+		arg_13_0.coupletDatas = {}
 
-		for slot4 = 1, #slot0.coupletIds do
-			table.insert(slot0.coupletDatas, pg.activity_spring_couplets[slot0.coupletIds[slot4]])
+		for iter_13_0 = 1, #arg_13_0.coupletIds do
+			local var_13_0 = pg.activity_spring_couplets[arg_13_0.coupletIds[iter_13_0]]
+
+			table.insert(arg_13_0.coupletDatas, var_13_0)
 		end
 	end
 
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskActivity = getProxy(ActivityProxy):getActivityById(slot0.activity:getConfig("config_client").linkActID)
-	slot0.taskGroup = slot0.taskActivity:getConfig("config_data")
-	slot0.tipStayIndex = uv0
+	arg_13_0.taskProxy = getProxy(TaskProxy)
 
-	return updateActivityTaskStatus(slot0.taskActivity)
+	local var_13_1 = arg_13_0.activity:getConfig("config_client").linkActID
+
+	arg_13_0.taskActivity = getProxy(ActivityProxy):getActivityById(var_13_1)
+	arg_13_0.taskGroup = arg_13_0.taskActivity:getConfig("config_data")
+	arg_13_0.tipStayIndex = var_0_20
+
+	return updateActivityTaskStatus(arg_13_0.taskActivity)
 end
 
-function slot0.onTimer(slot0)
-	if slot0.tipStayIndex and slot0.tipStayIndex > 0 then
-		slot0.tipStayIndex = slot0.tipStayIndex - 1
-	elseif slot0.tipStayIndex == 0 then
-		slot0.tipStayIndex = -1
+function var_0_0.onTimer(arg_14_0)
+	if arg_14_0.tipStayIndex and arg_14_0.tipStayIndex > 0 then
+		arg_14_0.tipStayIndex = arg_14_0.tipStayIndex - 1
+	elseif arg_14_0.tipStayIndex == 0 then
+		arg_14_0.tipStayIndex = -1
 
-		slot0:showTips(i18n(uv0), true)
+		arg_14_0:showTips(i18n(var_0_16), true)
 	end
 
-	if slot0.charClickCount and slot0.charClickCount > 0 then
-		slot0.charClickCount = slot0.charClickCount - 1
+	if arg_14_0.charClickCount and arg_14_0.charClickCount > 0 then
+		arg_14_0.charClickCount = arg_14_0.charClickCount - 1
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:updateUI()
-	slot0:finishAll()
+function var_0_0.OnFirstFlush(arg_15_0)
+	arg_15_0:updateUI()
+	arg_15_0:finishAll()
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0:updateUI()
+function var_0_0.OnUpdateFlush(arg_16_0)
+	arg_16_0:updateUI()
 end
 
-function slot0.updateUI(slot0)
-	slot0.data1 = slot0.activity.data1
-	slot0.data2 = slot0.activity.data2
-	slot0.data3 = slot0.activity.data3
-	slot0.data1List = slot0.activity.data1_list
-	slot0.data2List = slot0.activity.data2_list
-	slot0.data3List = slot0.activity.data3_list
-	slot0.coupletFinishAll = false
+function var_0_0.updateUI(arg_17_0)
+	arg_17_0.data1 = arg_17_0.activity.data1
+	arg_17_0.data2 = arg_17_0.activity.data2
+	arg_17_0.data3 = arg_17_0.activity.data3
+	arg_17_0.data1List = arg_17_0.activity.data1_list
+	arg_17_0.data2List = arg_17_0.activity.data2_list
+	arg_17_0.data3List = arg_17_0.activity.data3_list
+	arg_17_0.coupletFinishAll = false
 
-	if slot0.data2List and #slot0.data2List == #slot0.coupletIds then
-		slot0.coupletFinishAll = true
+	if arg_17_0.data2List and #arg_17_0.data2List == #arg_17_0.coupletIds then
+		arg_17_0.coupletFinishAll = true
 	end
 
-	slot0.coupletIndex = 1
+	arg_17_0.coupletIndex = 1
 
-	for slot4 = #slot0.coupletIds, 1, -1 do
-		if table.contains(slot0.data1List, slot0.coupletIds[slot4]) and not table.contains(slot0.data2List, slot5) then
-			slot0.coupletIndex = slot4
+	for iter_17_0 = #arg_17_0.coupletIds, 1, -1 do
+		local var_17_0 = arg_17_0.coupletIds[iter_17_0]
+
+		if table.contains(arg_17_0.data1List, var_17_0) and not table.contains(arg_17_0.data2List, var_17_0) then
+			arg_17_0.coupletIndex = iter_17_0
 		end
 
-		slot6 = table.contains(slot0.data2List, slot5) or false
-		slot7 = table.contains(slot0.data1List, slot5) or false
+		local var_17_1 = table.contains(arg_17_0.data2List, var_17_0) or false
+		local var_17_2 = table.contains(arg_17_0.data1List, var_17_0) or false
+		local var_17_3 = arg_17_0.items[iter_17_0]
 
-		setActive(findTF(slot0.items[slot4], "got"), slot6 or false)
-		setActive(findTF(slot8, "bgMask"), not slot7 or slot6 or false)
-		setActive(findTF(slot8, "red"), slot7)
-		setActive(findTF(slot8, "lock"), not slot7 or false)
+		setActive(findTF(var_17_3, "got"), var_17_1 or false)
+		setActive(findTF(var_17_3, "bgMask"), not var_17_2 or var_17_1 or false)
+		setActive(findTF(var_17_3, "red"), var_17_2)
+		setActive(findTF(var_17_3, "lock"), not var_17_2 or false)
 
-		if slot4 == 7 then
-			setActive(findTF(slot0.finalAward, "lock"), not slot7 or false)
-			setActive(findTF(slot0.finalAward, "mask"), not slot7 or slot6 or false)
-			setActive(findTF(slot0.finalAward, "got"), slot0.coupletFinishAll)
+		if iter_17_0 == 7 then
+			setActive(findTF(arg_17_0.finalAward, "lock"), not var_17_2 or false)
+			setActive(findTF(arg_17_0.finalAward, "mask"), not var_17_2 or var_17_1 or false)
+			setActive(findTF(arg_17_0.finalAward, "got"), arg_17_0.coupletFinishAll)
 		end
 	end
 
-	slot0:selectCoupletChange()
-	slot0:updateCoupletWord()
-	slot0:updateTask()
+	arg_17_0:selectCoupletChange()
+	arg_17_0:updateCoupletWord()
+	arg_17_0:updateTask()
 end
 
-function slot0.finishAll(slot0)
-	if #slot0.data2List == #slot0.coupletIds and #slot0.data2List == #slot0.data1List and slot0.activity.data1 == 0 then
+function var_0_0.finishAll(arg_18_0)
+	if #arg_18_0.data2List == #arg_18_0.coupletIds and #arg_18_0.data2List == #arg_18_0.data1List and arg_18_0.activity.data1 == 0 then
 		pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 			cmd = 1,
-			actId = slot0.activity.id
+			actId = arg_18_0.activity.id
 		})
 	end
 end
 
-function slot0.updateTask(slot0)
-	slot0.nday = slot0.taskActivity.data3
-	slot2 = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][1]) or slot0.taskProxy:getFinishTaskById(slot1)
-	slot0.taskVO = slot2
-	slot3 = slot2:getConfig("award_display")[1]
+function var_0_0.updateTask(arg_19_0)
+	arg_19_0.nday = arg_19_0.taskActivity.data3
 
-	updateDrop(slot0.awardIcon, {
-		type = slot3[1],
-		id = slot3[2],
-		count = slot3[3]
-	})
-	onButton(slot0, slot0.taskIcon, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	local var_19_0 = arg_19_0.taskGroup[arg_19_0.nday][1]
+	local var_19_1 = arg_19_0.taskProxy:getTaskById(var_19_0) or arg_19_0.taskProxy:getFinishTaskById(var_19_0)
+
+	arg_19_0.taskVO = var_19_1
+
+	local var_19_2 = var_19_1:getConfig("award_display")[1]
+	local var_19_3 = {
+		type = var_19_2[1],
+		id = var_19_2[2],
+		count = var_19_2[3]
+	}
+
+	updateDrop(arg_19_0.awardIcon, var_19_3)
+	onButton(arg_19_0, arg_19_0.taskIcon, function()
+		arg_19_0:emit(BaseUI.ON_DROP, var_19_3)
 	end, SFX_PANEL)
-	setText(slot0.taskDesc, slot2:getConfig("desc"))
-	setActive(slot0.taskBtnGo, slot2:getTaskStatus() == 0)
-	setActive(slot0.taskBtnGet, slot6 == 1)
-	setActive(slot0.taskBtnGot, slot6 == 2)
 
-	slot7 = slot2:getProgress()
-	slot8 = slot2:getConfig("target_num")
+	local var_19_4 = var_19_1:getConfig("desc")
 
-	setSlider(slot0.taskSlider, 0, slot8, slot7)
-	setText(slot0.taskCur, slot7)
-	setText(slot0.taskMax, "/" .. slot8)
+	setText(arg_19_0.taskDesc, var_19_4)
+
+	local var_19_5 = var_19_1:getTaskStatus()
+
+	setActive(arg_19_0.taskBtnGo, var_19_5 == 0)
+	setActive(arg_19_0.taskBtnGet, var_19_5 == 1)
+	setActive(arg_19_0.taskBtnGot, var_19_5 == 2)
+
+	local var_19_6 = var_19_1:getProgress()
+	local var_19_7 = var_19_1:getConfig("target_num")
+
+	setSlider(arg_19_0.taskSlider, 0, var_19_7, var_19_6)
+	setText(arg_19_0.taskCur, var_19_6)
+	setText(arg_19_0.taskMax, "/" .. var_19_7)
 end
 
-function slot0.finishCouplete(slot0)
-	if slot0.coupletUnLock and not slot0.coupletComplete then
-		slot1 = slot0.coupletIds[slot0.coupletIndex]
-		slot3 = slot0.coupletDatas[slot0.coupletIndex].repeated_jp
+function var_0_0.finishCouplete(arg_21_0)
+	if arg_21_0.coupletUnLock and not arg_21_0.coupletComplete then
+		local var_21_0 = arg_21_0.coupletIds[arg_21_0.coupletIndex]
+		local var_21_1 = arg_21_0.coupletDatas[arg_21_0.coupletIndex].repeated_jp
 
-		for slot7 = 1, #slot0.coupletBottomWords do
-			slot8 = slot0.coupletBottomWords[slot7]
-			slot9 = false
+		for iter_21_0 = 1, #arg_21_0.coupletBottomWords do
+			local var_21_2 = arg_21_0.coupletBottomWords[iter_21_0]
+			local var_21_3 = false
 
-			if slot8.index == slot8.swapIndex then
-				slot9 = true
-			elseif PLATFORM_CODE == PLATFORM_JP and slot3 and #slot3 > 0 then
-				for slot13 = 1, #slot3 do
-					if table.contains(slot3[slot13], slot8.index) and table.contains(slot14, slot8.swapIndex) then
-						slot9 = true
+			if var_21_2.index == var_21_2.swapIndex then
+				var_21_3 = true
+			elseif PLATFORM_CODE == PLATFORM_JP and var_21_1 and #var_21_1 > 0 then
+				for iter_21_1 = 1, #var_21_1 do
+					local var_21_4 = var_21_1[iter_21_1]
+
+					if table.contains(var_21_4, var_21_2.index) and table.contains(var_21_4, var_21_2.swapIndex) then
+						var_21_3 = true
 					end
 				end
 			end
 
-			if not slot9 then
-				slot0:showTips(uv0, true)
+			if not var_21_3 then
+				arg_21_0:showTips(var_0_19, true)
 
 				return
 			end
 		end
 
-		if table.contains(slot0.data1List, slot1) and not table.contains(slot0.activity.data2_list, slot1) then
-			slot4 = nil
+		if table.contains(arg_21_0.data1List, var_21_0) and not table.contains(arg_21_0.activity.data2_list, var_21_0) then
+			local var_21_5
 
-			if #slot0.activity.data2_list == #slot0.coupletIds - 1 then
-				function slot4(slot0)
-					uv0:emit(ActivityMediator.NEXT_DISPLAY_AWARD, slot0)
-					uv0:finishAll()
+			if #arg_21_0.activity.data2_list == #arg_21_0.coupletIds - 1 then
+				function var_21_5(arg_22_0)
+					arg_21_0:emit(ActivityMediator.NEXT_DISPLAY_AWARD, arg_22_0)
+					arg_21_0:finishAll()
 				end
 
-				slot0:showTips(i18n(uv1), true)
+				arg_21_0:showTips(i18n(var_0_14), true)
 			else
-				slot0:showTips(uv2, true)
+				arg_21_0:showTips(var_0_18, true)
 			end
 
 			pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
-				id = slot1,
-				actId = slot0.activity.id,
-				awardCallback = slot4
+				id = var_21_0,
+				actId = arg_21_0.activity.id,
+				awardCallback = var_21_5
 			})
 		end
-	elseif not slot0.coupletUnLock then
-		-- Nothing
-	elseif slot0.coupletComplete then
-		-- Nothing
+	elseif not arg_21_0.coupletUnLock then
+		-- block empty
+	elseif arg_21_0.coupletComplete then
+		-- block empty
 	end
 end
 
-function slot0.selectCoupletChange(slot0)
-	if uv0 < slot0.coupletIndex then
-		slot0.coupletIndex = 1
+function var_0_0.selectCoupletChange(arg_23_0)
+	if arg_23_0.coupletIndex > var_0_1 then
+		arg_23_0.coupletIndex = 1
 	end
 
-	if slot0.coupletIndex <= 0 then
-		slot0.coupletIndex = uv0
+	if arg_23_0.coupletIndex <= 0 then
+		arg_23_0.coupletIndex = var_0_1
 	end
 
-	slot0.coupletComplete = table.contains(slot0.data2List, slot0.coupletIds[slot0.coupletIndex]) or false
-	slot0.coupletUnLock = table.contains(slot0.data1List, slot1) or false
+	local var_23_0 = arg_23_0.coupletIds[arg_23_0.coupletIndex]
 
-	if not slot0.coupletUnLock then
-		slot0.btnConfirm:GetComponent("UIGrayScale").enabled = true
-		slot0.btnConfirm:GetComponent("Image").raycastTarget = false
+	arg_23_0.coupletComplete = table.contains(arg_23_0.data2List, var_23_0) or false
+	arg_23_0.coupletUnLock = table.contains(arg_23_0.data1List, var_23_0) or false
 
-		setActive(slot0.imgComplete, false)
-		setActive(slot0.btnConfirm, true)
-	elseif slot0.coupletComplete then
-		setActive(slot0.imgComplete, true)
-		setActive(slot0.btnConfirm, false)
+	if not arg_23_0.coupletUnLock then
+		arg_23_0.btnConfirm:GetComponent("UIGrayScale").enabled = true
+		arg_23_0.btnConfirm:GetComponent("Image").raycastTarget = false
+
+		setActive(arg_23_0.imgComplete, false)
+		setActive(arg_23_0.btnConfirm, true)
+	elseif arg_23_0.coupletComplete then
+		setActive(arg_23_0.imgComplete, true)
+		setActive(arg_23_0.btnConfirm, false)
 	else
-		slot0.btnConfirm:GetComponent("UIGrayScale").enabled = false
-		slot0.btnConfirm:GetComponent("Image").raycastTarget = true
+		arg_23_0.btnConfirm:GetComponent("UIGrayScale").enabled = false
+		arg_23_0.btnConfirm:GetComponent("Image").raycastTarget = true
 
-		setActive(slot0.imgComplete, false)
-		setActive(slot0.btnConfirm, true)
+		setActive(arg_23_0.imgComplete, false)
+		setActive(arg_23_0.btnConfirm, true)
 	end
 
-	slot0:updateCoupletWord()
+	arg_23_0:updateCoupletWord()
 end
 
-function slot0.updateCoupletWord(slot0)
-	setImageSprite(slot0.coupletUpImg, GetSpriteFromAtlas(uv0, "couplet_" .. slot0.coupletIndex .. "_list"))
-	setActive(slot0.coupletUpContents, slot0.coupletUnLock)
-	setActive(slot0.coupletUpLock, not slot0.coupletUnLock)
+function var_0_0.updateCoupletWord(arg_24_0)
+	local var_24_0 = GetSpriteFromAtlas(var_0_7, "couplet_" .. arg_24_0.coupletIndex .. "_list")
 
-	slot2 = {}
+	setImageSprite(arg_24_0.coupletUpImg, var_24_0)
+	setActive(arg_24_0.coupletUpContents, arg_24_0.coupletUnLock)
+	setActive(arg_24_0.coupletUpLock, not arg_24_0.coupletUnLock)
 
-	if not slot0.coupletComplete then
-		for slot6 = 1, uv1 do
-			table.insert(slot2, slot6)
+	local var_24_1 = {}
+
+	if not arg_24_0.coupletComplete then
+		for iter_24_0 = 1, var_0_3 do
+			table.insert(var_24_1, iter_24_0)
 		end
 	end
 
-	for slot6 = 1, #slot0.coupletBottomWords do
-		slot7 = slot0.coupletBottomWords[slot6]
-		slot8 = nil
-		slot8 = (#slot2 <= 0 or table.remove(slot2, math.random(1, #slot2))) and slot6
-		slot7.swapIndex = slot8
-		slot7.tf.anchoredPosition = slot0:getWordPosition(slot8)
+	for iter_24_1 = 1, #arg_24_0.coupletBottomWords do
+		local var_24_2 = arg_24_0.coupletBottomWords[iter_24_1]
+		local var_24_3
 
-		setImageSprite(findTF(slot7.tf, "img"), GetSpriteFromAtlas(uv0, "couplet_" .. slot0.coupletIndex .. "_" .. slot7.index), true)
+		if #var_24_1 > 0 then
+			var_24_3 = table.remove(var_24_1, math.random(1, #var_24_1))
+		else
+			var_24_3 = iter_24_1
+		end
 
-		slot9 = false
-		slot11 = slot0.coupletDatas[slot0.coupletIndex].repeated_jp
+		var_24_2.swapIndex = var_24_3
+		var_24_2.tf.anchoredPosition = arg_24_0:getWordPosition(var_24_3)
 
-		if slot7.index == slot7.swapIndex then
-			slot9 = slot7.index == slot7.swapIndex
-		elseif PLATFORM_CODE == PLATFORM_JP and slot11 and #slot11 > 0 then
-			for slot15 = 1, #slot11 do
-				if table.contains(slot11[slot15], slot7.index) and table.contains(slot16, slot7.swapIndex) then
-					slot9 = true
+		setImageSprite(findTF(var_24_2.tf, "img"), GetSpriteFromAtlas(var_0_7, "couplet_" .. arg_24_0.coupletIndex .. "_" .. var_24_2.index), true)
+
+		local var_24_4 = false
+		local var_24_5 = arg_24_0.coupletDatas[arg_24_0.coupletIndex].repeated_jp
+
+		if var_24_2.index == var_24_2.swapIndex then
+			var_24_4 = var_24_2.index == var_24_2.swapIndex
+		elseif PLATFORM_CODE == PLATFORM_JP and var_24_5 and #var_24_5 > 0 then
+			for iter_24_2 = 1, #var_24_5 do
+				local var_24_6 = var_24_5[iter_24_2]
+
+				if table.contains(var_24_6, var_24_2.index) and table.contains(var_24_6, var_24_2.swapIndex) then
+					var_24_4 = true
 				end
 			end
 		end
 
-		setActive(findTF(slot7.tf, "bgOn"), slot9)
-		GetComponent(findTF(slot7.tf, "bgOn"), typeof(Image)):SetNativeSize()
-		GetComponent(findTF(slot7.tf, "bgOff"), typeof(Image)):SetNativeSize()
+		setActive(findTF(var_24_2.tf, "bgOn"), var_24_4)
+		GetComponent(findTF(var_24_2.tf, "bgOn"), typeof(Image)):SetNativeSize()
+		GetComponent(findTF(var_24_2.tf, "bgOff"), typeof(Image)):SetNativeSize()
 	end
 
-	setActive(slot0.coupletBottomContents, slot0.coupletUnLock)
-	setActive(slot0.coupletBottomLock, not slot0.coupletUnLock)
-	setText(slot0.countDesc, i18n(uv2, slot0.coupletIndex))
+	setActive(arg_24_0.coupletBottomContents, arg_24_0.coupletUnLock)
+	setActive(arg_24_0.coupletBottomLock, not arg_24_0.coupletUnLock)
+	setText(arg_24_0.countDesc, i18n(var_0_10, arg_24_0.coupletIndex))
 end
 
-function slot0.addCoupletWordEvent(slot0, slot1)
-	slot2 = slot1.event
-	slot3 = slot1.tf
-	slot4 = slot1.parent
+function var_0_0.addCoupletWordEvent(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1.event
+	local var_25_1 = arg_25_1.tf
+	local var_25_2 = arg_25_1.parent
 
-	slot2:AddBeginDragFunc(function (slot0, slot1)
-		if uv0.coupletUnLock and not uv0.coupletComplete and not uv0.swapWord then
-			uv0.swapWord = uv1
+	var_25_0:AddBeginDragFunc(function(arg_26_0, arg_26_1)
+		if arg_25_0.coupletUnLock and not arg_25_0.coupletComplete and not arg_25_0.swapWord then
+			arg_25_0.swapWord = arg_25_1
 		end
 	end)
-	slot2:AddDragFunc(function (slot0, slot1)
-		if uv0.swapWord then
-			slot2 = slot1.position
-			slot2.y = slot2.y
+	var_25_0:AddDragFunc(function(arg_27_0, arg_27_1)
+		if arg_25_0.swapWord then
+			local var_27_0 = arg_27_1.position
 
-			if uv0:getWordByPosition(uv0._uiCamera:ScreenToWorldPoint(slot2)) and uv0.swapWord ~= slot4 then
-				slot4.swapIndex = uv0.swapWord.swapIndex
-				uv0.swapWord.swapIndex = slot4.swapIndex
+			var_27_0.y = var_27_0.y
 
-				uv0:tweenWord(uv0.swapWord)
-				uv0:tweenWord(slot4)
+			local var_27_1 = arg_25_0._uiCamera:ScreenToWorldPoint(var_27_0)
+			local var_27_2 = arg_25_0:getWordByPosition(var_27_1)
+
+			if var_27_2 and arg_25_0.swapWord ~= var_27_2 then
+				local var_27_3 = var_27_2.swapIndex
+
+				var_27_2.swapIndex = arg_25_0.swapWord.swapIndex
+				arg_25_0.swapWord.swapIndex = var_27_3
+
+				arg_25_0:tweenWord(arg_25_0.swapWord)
+				arg_25_0:tweenWord(var_27_2)
 			end
 		end
 	end)
-	slot2:AddDragEndFunc(function (slot0, slot1)
-		uv0.swapWord = nil
+	var_25_0:AddDragEndFunc(function(arg_28_0, arg_28_1)
+		arg_25_0.swapWord = nil
 	end)
 end
 
-function slot0.createWord(slot0, slot1, slot2)
-	slot3 = tf(instantiate(slot0.wordTpl))
+function var_0_0.createWord(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0 = tf(instantiate(arg_29_0.wordTpl))
 
-	setParent(slot3, slot2)
-	setActive(slot3, true)
+	setParent(var_29_0, arg_29_2)
+	setActive(var_29_0, true)
 
-	slot3.anchoredPosition = slot0:getWordPosition(slot1)
+	var_29_0.anchoredPosition = arg_29_0:getWordPosition(arg_29_1)
+
+	local var_29_1 = GetComponent(var_29_0, typeof(EventTriggerListener))
 
 	return {
-		tf = slot3,
-		index = slot1,
-		swapIndex = slot1,
-		event = GetComponent(slot3, typeof(EventTriggerListener)),
-		parent = slot2
+		tf = var_29_0,
+		index = arg_29_1,
+		swapIndex = arg_29_1,
+		event = var_29_1,
+		parent = arg_29_2
 	}
 end
 
-function slot0.getWordByPosition(slot0, slot1)
-	if math.abs(slot0.coupletBottomContents:InverseTransformPoint(slot1).x) < uv0 / 2 then
-		slot3 = math.floor(math.abs((slot2.y - uv1 / 2) / uv1)) + 1
+function var_0_0.getWordByPosition(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_0.coupletBottomContents:InverseTransformPoint(arg_30_1)
 
-		for slot7 = 1, #slot0.coupletBottomWords do
-			if slot0.coupletBottomWords[slot7].swapIndex == slot3 then
-				return slot0.coupletBottomWords[slot7]
+	if math.abs(var_30_0.x) < var_0_4 / 2 then
+		local var_30_1 = math.floor(math.abs((var_30_0.y - var_0_5 / 2) / var_0_5)) + 1
+
+		for iter_30_0 = 1, #arg_30_0.coupletBottomWords do
+			if arg_30_0.coupletBottomWords[iter_30_0].swapIndex == var_30_1 then
+				return arg_30_0.coupletBottomWords[iter_30_0]
 			end
 		end
 	end
 end
 
-function slot0.getWordPosition(slot0, slot1)
-	return Vector2((slot1 - 1) % uv0 * uv1, -math.floor((slot1 - 1) / uv0) * uv2)
+function var_0_0.getWordPosition(arg_31_0, arg_31_1)
+	local var_31_0 = (arg_31_1 - 1) % var_0_6
+	local var_31_1 = math.floor((arg_31_1 - 1) / var_0_6)
+
+	return Vector2(var_31_0 * var_0_4, -var_31_1 * var_0_5)
 end
 
-function slot0.tweenWord(slot0, slot1)
-	slot3 = slot0:getWordPosition(slot1.swapIndex)
+function var_0_0.tweenWord(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_1.swapIndex
+	local var_32_1 = arg_32_0:getWordPosition(var_32_0)
 
-	if LeanTween.isTweening(go(slot1.tf)) then
-		LeanTween.cancel(go(slot1.tf))
+	if LeanTween.isTweening(go(arg_32_1.tf)) then
+		LeanTween.cancel(go(arg_32_1.tf))
 	end
 
-	slot4 = LeanTween.value(go(slot1.tf), slot1.tf.anchoredPosition.y, slot3.y, 0.1)
-	slot4 = slot4:setOnUpdate(System.Action_float(function (slot0)
-		uv0.tf.anchoredPosition = Vector2(uv0.tf.anchoredPosition.x, slot0)
-	end))
+	LeanTween.value(go(arg_32_1.tf), arg_32_1.tf.anchoredPosition.y, var_32_1.y, 0.1):setOnUpdate(System.Action_float(function(arg_33_0)
+		arg_32_1.tf.anchoredPosition = Vector2(arg_32_1.tf.anchoredPosition.x, arg_33_0)
+	end)):setOnComplete(System.Action(function()
+		local var_34_0 = false
+		local var_34_1 = arg_32_0.coupletDatas[arg_32_0.coupletIndex].repeated_jp
 
-	slot4:setOnComplete(System.Action(function ()
-		slot0 = false
-		slot2 = uv0.coupletDatas[uv0.coupletIndex].repeated_jp
+		if arg_32_1.index == arg_32_1.swapIndex then
+			var_34_0 = arg_32_1.index == arg_32_1.swapIndex
+		elseif PLATFORM_CODE == PLATFORM_JP and var_34_1 and #var_34_1 > 0 then
+			for iter_34_0 = 1, #var_34_1 do
+				local var_34_2 = var_34_1[iter_34_0]
 
-		if uv1.index == uv1.swapIndex then
-			slot0 = uv1.index == uv1.swapIndex
-		elseif PLATFORM_CODE == PLATFORM_JP and slot2 and #slot2 > 0 then
-			for slot6 = 1, #slot2 do
-				if table.contains(slot2[slot6], uv1.index) and table.contains(slot7, uv1.swapIndex) then
-					slot0 = true
+				if table.contains(var_34_2, arg_32_1.index) and table.contains(var_34_2, arg_32_1.swapIndex) then
+					var_34_0 = true
 				end
 			end
 		end
 
-		setActive(findTF(uv1.tf, "bgOn"), slot0)
+		setActive(findTF(arg_32_1.tf, "bgOn"), var_34_0)
 	end))
 end
 
-function slot0.clearTween(slot0)
-	for slot4 = 1, #slot0.coupletBottomWords do
-		if LeanTween.isTweening(go(slot0.coupletBottomWords[slot4].tf)) then
-			LeanTween.cancel(go(slot5.tf))
+function var_0_0.clearTween(arg_35_0)
+	for iter_35_0 = 1, #arg_35_0.coupletBottomWords do
+		local var_35_0 = arg_35_0.coupletBottomWords[iter_35_0]
+
+		if LeanTween.isTweening(go(var_35_0.tf)) then
+			LeanTween.cancel(go(var_35_0.tf))
 		end
 	end
 end
 
-function slot0.showTips(slot0, slot1, slot2)
-	if type(slot1) == "table" then
-		if slot1 and #slot1 > 0 then
-			slot0.tipTime = Time.realtimeSinceStartup
+function var_0_0.showTips(arg_36_0, arg_36_1, arg_36_2)
+	if type(arg_36_1) == "table" then
+		if arg_36_1 and #arg_36_1 > 0 then
+			arg_36_0.tipTime = Time.realtimeSinceStartup
 
-			setText(findTF(slot0.charTip, "text"), i18n(slot1[math.random(1, #slot1)]))
-			setActive(slot0.charTip, false)
-			setActive(slot0.charTip, true)
+			local var_36_0 = i18n(arg_36_1[math.random(1, #arg_36_1)])
+
+			setText(findTF(arg_36_0.charTip, "text"), var_36_0)
+			setActive(arg_36_0.charTip, false)
+			setActive(arg_36_0.charTip, true)
 		end
 	else
-		slot0.tipTime = Time.realtimeSinceStartup
+		arg_36_0.tipTime = Time.realtimeSinceStartup
 
-		setText(findTF(slot0.charTip, "text"), slot1)
-		setActive(slot0.charTip, false)
-		setActive(slot0.charTip, true)
+		setText(findTF(arg_36_0.charTip, "text"), arg_36_1)
+		setActive(arg_36_0.charTip, false)
+		setActive(arg_36_0.charTip, true)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.OnDestroy(arg_37_0)
+	if arg_37_0.timer then
+		arg_37_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_37_0.timer = nil
 	end
 
-	if slot0.model then
-		PoolMgr.GetInstance():ReturnSpineChar(502011, slot0.model)
+	if arg_37_0.model then
+		PoolMgr.GetInstance():ReturnSpineChar(502011, arg_37_0.model)
 	end
 
-	slot0:clearTween()
+	arg_37_0:clearTween()
 end
 
-return slot0
+return var_0_0

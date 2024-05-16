@@ -1,56 +1,59 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleConst
-slot3 = slot0.Battle.BattleFormulas
-slot4 = slot0.Battle.BattleAttr
-slot5 = slot0.Battle.BattleConfig
-slot6 = slot0.Battle.BattleUnitEvent
-slot7 = slot0.Battle.UnitState
-slot8 = class("BattleMinionUnit", slot0.Battle.BattleEnemyUnit)
-slot0.Battle.BattleMinionUnit = slot8
-slot8.__name = "BattleMinionUnit"
+﻿ys = ys or {}
 
-function slot8.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleFormulas
+local var_0_4 = var_0_0.Battle.BattleAttr
+local var_0_5 = var_0_0.Battle.BattleConfig
+local var_0_6 = var_0_0.Battle.BattleUnitEvent
+local var_0_7 = var_0_0.Battle.UnitState
+local var_0_8 = class("BattleMinionUnit", var_0_0.Battle.BattleEnemyUnit)
+
+var_0_0.Battle.BattleMinionUnit = var_0_8
+var_0_8.__name = "BattleMinionUnit"
+
+function var_0_8.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_8.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
-function slot8.GetUnitType(slot0)
-	return uv0.UnitType.MINION_UNIT
+function var_0_8.GetUnitType(arg_2_0)
+	return var_0_2.UnitType.MINION_UNIT
 end
 
-function slot8.SetMaster(slot0, slot1)
-	slot0._master = slot1
+function var_0_8.SetMaster(arg_3_0, arg_3_1)
+	arg_3_0._master = arg_3_1
 end
 
-function slot8.InheritMasterAttr(slot0)
-	uv0.SetMinionAttr(slot0)
-	uv0.InitDOTAttr(slot0._attr, slot0._tmpData)
-	slot0:setStandardLabelTag()
+function var_0_8.InheritMasterAttr(arg_4_0)
+	var_0_4.SetMinionAttr(arg_4_0)
+	var_0_4.InitDOTAttr(arg_4_0._attr, arg_4_0._tmpData)
+	arg_4_0:setStandardLabelTag()
 end
 
-function slot8.SetTemplate(slot0, slot1, slot2)
-	slot0._tmpID = slot1
-	slot0._tmpData = uv0.GetMonsterTmpDataFromID(slot0._tmpID)
+function var_0_8.SetTemplate(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0._tmpID = arg_5_1
+	arg_5_0._tmpData = var_0_1.GetMonsterTmpDataFromID(arg_5_0._tmpID)
 
-	slot0:configWeaponQueueParallel()
-	slot0:InitCldComponent()
+	arg_5_0:configWeaponQueueParallel()
+	arg_5_0:InitCldComponent()
 end
 
-function slot8.IsShowHPBar(slot0)
+function var_0_8.IsShowHPBar(arg_6_0)
 	return false
 end
 
-function slot8.GetMaster(slot0)
-	return slot0._master
+function var_0_8.GetMaster(arg_7_0)
+	return arg_7_0._master
 end
 
-function slot8.DispatchVoice(slot0)
+function var_0_8.DispatchVoice(arg_8_0)
+	return
 end
 
-function slot8.Retreat(slot0)
-	uv0.super.Retreat(slot0)
-	slot0:SetDeathReason(uv1.UnitDeathReason.LEAVE)
-	slot0:DeacActionClear()
-	slot0._battleProxy:KillUnit(slot0:GetUniqueID())
+function var_0_8.Retreat(arg_9_0)
+	var_0_8.super.Retreat(arg_9_0)
+	arg_9_0:SetDeathReason(var_0_2.UnitDeathReason.LEAVE)
+	arg_9_0:DeacActionClear()
+	arg_9_0._battleProxy:KillUnit(arg_9_0:GetUniqueID())
 end

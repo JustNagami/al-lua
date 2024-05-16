@@ -1,23 +1,25 @@
-slot0 = class("DebugPanel", import("..base.BaseUI"))
+﻿local var_0_0 = class("DebugPanel", import("..base.BaseUI"))
 
-function slot0.Ctor(slot0)
-	uv0.super.Ctor(slot0)
-	slot0:onUILoaded(DebugMgr.Inst.DebugPanel)
-	setActive(slot0._tf, false)
+function var_0_0.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
+	arg_1_0:onUILoaded(DebugMgr.Inst.DebugPanel)
+	setActive(arg_1_0._tf, false)
 
-	slot0.ctrls = slot0:findTF("ctrls")
-	slot0._customBtnTpl = slot0:getTpl("ctrls/custom_button")
+	arg_1_0.ctrls = arg_1_0:findTF("ctrls")
+	arg_1_0._customBtnTpl = arg_1_0:getTpl("ctrls/custom_button")
 end
 
-function slot0.addCustomBtn(slot0, slot1, slot2)
-	slot3 = cloneTplTo(slot0._customBtnTpl, slot0.ctrls)
+function var_0_0.addCustomBtn(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = cloneTplTo(arg_2_0._customBtnTpl, arg_2_0.ctrls)
 
-	setButtonText(slot3, string.gsub(slot1, "(.)", "%1\n"))
-	onButton(slot0, slot3, slot2)
+	arg_2_1 = string.gsub(arg_2_1, "(.)", "%1\n")
+
+	setButtonText(var_2_0, arg_2_1)
+	onButton(arg_2_0, var_2_0, arg_2_2)
 end
 
-function slot0.hidePanel(slot0)
-	triggerButton(slot0.ctrls:Find("hide_button"))
+function var_0_0.hidePanel(arg_3_0)
+	triggerButton(arg_3_0.ctrls:Find("hide_button"))
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffHP",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 100
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,16 +29,5 @@ return {
 	stack = 1,
 	id = 800864,
 	icon = 800860,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffHP",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 100
-			}
-		}
-	}
+	last_effect = ""
 }

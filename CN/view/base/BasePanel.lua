@@ -1,66 +1,68 @@
-slot0 = class("BasePanel")
+﻿local var_0_0 = class("BasePanel")
 
-function slot0.Ctor(slot0, slot1)
-	assert(slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	assert(arg_1_1)
 
-	slot0._go = slot1
-	slot0._tf = slot1.transform
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
 
-	function slot0.emit()
+	function arg_1_0.emit()
 		assert(false, "can not emit event beforce attach to a parent ui.")
 	end
 
-	slot0:init()
+	arg_1_0:init()
 end
 
-function slot0.init(slot0)
+function var_0_0.init(arg_3_0)
+	return
 end
 
-function slot0.attach(slot0, slot1)
-	assert(slot1)
+function var_0_0.attach(arg_4_0, arg_4_1)
+	assert(arg_4_1)
 
-	slot0.exited = false
-	slot0.parent = slot1
-	slot0.contextData = slot1.contextData
+	arg_4_0.exited = false
+	arg_4_0.parent = arg_4_1
+	arg_4_0.contextData = arg_4_1.contextData
 
-	function slot0.emit(slot0, slot1, ...)
-		if slot0.parent then
-			slot0.parent:emit(slot1, ...)
+	function arg_4_0.emit(arg_5_0, arg_5_1, ...)
+		if arg_5_0.parent then
+			arg_5_0.parent:emit(arg_5_1, ...)
 		end
 	end
 
-	setActive(slot0._go, true)
-	pg.DelegateInfo.New(slot0)
+	setActive(arg_4_0._go, true)
+	pg.DelegateInfo.New(arg_4_0)
 end
 
-function slot0.detach(slot0)
-	if not slot0.exited then
-		setActive(slot0._go, false)
-		pg.DelegateInfo.Dispose(slot0)
-		slot0:clear()
+function var_0_0.detach(arg_6_0)
+	if not arg_6_0.exited then
+		setActive(arg_6_0._go, false)
+		pg.DelegateInfo.Dispose(arg_6_0)
+		arg_6_0:clear()
 
-		slot0.parent = nil
-		slot0.emit = nil
-		slot0.exited = true
+		arg_6_0.parent = nil
+		arg_6_0.emit = nil
+		arg_6_0.exited = true
 	end
 end
 
-function slot0.findTF(slot0, slot1, slot2)
-	assert(slot0._tf, "transform should exist")
+function var_0_0.findTF(arg_7_0, arg_7_1, arg_7_2)
+	assert(arg_7_0._tf, "transform should exist")
 
-	return findTF(slot2 or slot0._tf, slot1)
+	return findTF(arg_7_2 or arg_7_0._tf, arg_7_1)
 end
 
-function slot0.getTpl(slot0, slot1, slot2)
-	slot3 = slot0:findTF(slot1, slot2)
+function var_0_0.getTpl(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = arg_8_0:findTF(arg_8_1, arg_8_2)
 
-	slot3:SetParent(slot0._tf, false)
-	SetActive(slot3, false)
+	var_8_0:SetParent(arg_8_0._tf, false)
+	SetActive(var_8_0, false)
 
-	return slot3
+	return var_8_0
 end
 
-function slot0.clear(slot0)
+function var_0_0.clear(arg_9_0)
+	return
 end
 
-return slot0
+return var_0_0

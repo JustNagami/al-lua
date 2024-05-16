@@ -1,60 +1,65 @@
-slot0 = class("BackYardGetThemeTemplateDataCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardGetThemeTemplateDataCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
-	slot5 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.templateId
+	local var_1_2 = var_1_0.callback
 
-	slot5:Send(19113, {
-		theme_id = slot2.templateId
-	}, 19114, function (slot0)
-		if slot0.result == 0 then
-			slot1 = slot0.theme
-			slot4 = BackYardThemeTemplate.New({
+	pg.ConnectionMgr.GetInstance():Send(19113, {
+		theme_id = var_1_1
+	}, 19114, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = arg_2_0.theme
+			local var_2_1 = arg_2_0.has_fav and 1 or 0
+			local var_2_2 = arg_2_0.has_like and 1 or 0
+			local var_2_3 = BackYardThemeTemplate.New({
 				is_fetch = true,
-				id = slot1.id,
-				name = slot1.name,
-				furniture_put_list = slot1.furniture_put_list,
-				user_id = slot1.user_id,
-				pos = slot1.pos,
-				like_count = slot1.like_count,
-				fav_count = slot1.fav_count,
-				upload_time = slot1.upload_time,
-				is_collection = slot0.has_fav and 1 or 0,
-				is_like = slot0.has_like and 1 or 0,
-				image_md5 = slot1.image_md5,
-				icon_image_md5 = slot1.icon_image_md5
+				id = var_2_0.id,
+				name = var_2_0.name,
+				furniture_put_list = var_2_0.furniture_put_list,
+				user_id = var_2_0.user_id,
+				pos = var_2_0.pos,
+				like_count = var_2_0.like_count,
+				fav_count = var_2_0.fav_count,
+				upload_time = var_2_0.upload_time,
+				is_collection = var_2_1,
+				is_like = var_2_2,
+				image_md5 = var_2_0.image_md5,
+				icon_image_md5 = var_2_0.icon_image_md5
 			})
+			local var_2_4 = getProxy(DormProxy)
 
-			if getProxy(DormProxy):GetShopThemeTemplateById(uv0) then
-				slot5:UpdateShopThemeTemplate(slot4)
+			if var_2_4:GetShopThemeTemplateById(var_1_1) then
+				var_2_4:UpdateShopThemeTemplate(var_2_3)
 			end
 
-			if slot5:GetCollectionThemeTemplateById(uv0) then
-				slot5:UpdateCollectionThemeTemplate(slot4)
+			if var_2_4:GetCollectionThemeTemplateById(var_1_1) then
+				var_2_4:UpdateCollectionThemeTemplate(var_2_3)
 			end
 
-			if uv1 then
-				uv1(slot4)
+			if var_1_2 then
+				var_1_2(var_2_3)
 			end
 
-			uv2:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DATA_DONE, {
-				template = slot4
+			arg_1_0:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DATA_DONE, {
+				template = var_2_3
 			})
-		elseif slot0.result == 20 then
-			if getProxy(DormProxy):GetShopThemeTemplateById(uv0) then
-				slot1:DeleteShopThemeTemplate(uv0)
+		elseif arg_2_0.result == 20 then
+			local var_2_5 = getProxy(DormProxy)
+
+			if var_2_5:GetShopThemeTemplateById(var_1_1) then
+				var_2_5:DeleteShopThemeTemplate(var_1_1)
 			end
 
-			if slot1:GetCollectionThemeTemplateById(uv0) then
-				slot1:DeleteCollectionThemeTemplate(uv0)
+			if var_2_5:GetCollectionThemeTemplateById(var_1_1) then
+				var_2_5:DeleteCollectionThemeTemplate(var_1_1)
 			end
 
 			pg.TipsMgr.GetInstance():ShowTips(i18n("Backyard_theme_template_be_delete_tip"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

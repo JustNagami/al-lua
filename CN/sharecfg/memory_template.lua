@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.memory_template = setmetatable({
 	__name = "memory_template",
 	all = {
@@ -2969,6 +2969,13 @@ pg.memory_template = setmetatable({
 		3520,
 		3521,
 		3522,
+		3531,
+		3532,
+		3533,
+		3534,
+		3535,
+		3536,
+		3537,
 		10011,
 		10012,
 		10013,
@@ -3508,6 +3515,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	[4001] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-1",
+		condition = "进入「异色格」作战 A2/C2",
+		story = "TACT20016",
+		id = 4001,
+		icon = "activity",
+		is_open = 0
+	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3640,6 +3658,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	[4000] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "将杀-1",
+		condition = "进入「异色格」作战B4/D4",
+		story = "TACT20015",
+		id = 4000,
+		icon = "activity",
+		is_open = 0
+	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3648,6 +3677,17 @@ pg.base.memory_template = {
 		condition = "与「异色格」作战 B4/D4 BOSS交战",
 		story = "TACT20013",
 		id = 49,
+		icon = "activity",
+		is_open = 0
+	},
+	[4002] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-2",
+		condition = "通过「异色格」作战 B4/D4",
+		story = "TACT20017",
+		id = 4002,
 		icon = "activity",
 		is_open = 0
 	},
@@ -6630,39 +6670,6 @@ pg.base.memory_template = {
 		story = "ACTRUYUE06",
 		id = 320,
 		icon = "memory_actruyue",
-		is_open = 0
-	},
-	[4001] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-1",
-		condition = "进入「异色格」作战 A2/C2",
-		story = "TACT20016",
-		id = 4001,
-		icon = "activity",
-		is_open = 0
-	},
-	[4000] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "将杀-1",
-		condition = "进入「异色格」作战B4/D4",
-		story = "TACT20015",
-		id = 4000,
-		icon = "activity",
-		is_open = 0
-	},
-	[4002] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-2",
-		condition = "通过「异色格」作战 B4/D4",
-		story = "TACT20017",
-		id = 4002,
-		icon = "activity",
 		is_open = 0
 	},
 	[322] = {
@@ -35747,6 +35754,83 @@ pg.base.memory_template = {
 		story = "SHISHANGTEKANBIEYANGRICHANG3",
 		id = 3522,
 		icon = "memory_shishangtekanbieyangrichang",
+		is_open = 0
+	},
+	[3531] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "枯竭的灵感",
+		condition = "解锁「出发！寻找灵感之旅！」任务1",
+		story = "HAITIAN1",
+		id = 3531,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3532] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "露营的准备",
+		condition = "解锁「出发！寻找灵感之旅！」任务2",
+		story = "HAITIAN2",
+		id = 3532,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3533] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "出发！取材之旅！",
+		condition = "解锁「出发！寻找灵感之旅！」任务3",
+		story = "HAITIAN3",
+		id = 3533,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3534] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "小小插曲",
+		condition = "解锁「出发！寻找灵感之旅！」任务4",
+		story = "HAITIAN4",
+		id = 3534,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3535] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "未知的景色",
+		condition = "解锁「出发！寻找灵感之旅！」任务5",
+		story = "HAITIAN5",
+		id = 3535,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3536] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "与她的距离",
+		condition = "解锁「出发！寻找灵感之旅！」任务6",
+		story = "HAITIAN6",
+		id = 3536,
+		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3537] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "灵感的源泉",
+		condition = "解锁「出发！寻找灵感之旅！」任务7",
+		story = "HAITIAN7",
+		id = 3537,
+		icon = "memory_haitian",
 		is_open = 0
 	},
 	[10011] = {

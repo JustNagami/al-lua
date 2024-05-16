@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.character_voice = {
 	unlock = {
 		resource_key = "get",

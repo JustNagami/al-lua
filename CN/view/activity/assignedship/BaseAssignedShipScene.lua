@@ -1,134 +1,134 @@
-slot0 = class("BaseAssignedShipScene", import("...base.BaseUI"))
-slot0.TipWords = {
+﻿local var_0_0 = class("BaseAssignedShipScene", import("...base.BaseUI"))
+
+var_0_0.TipWords = {
 	login_year = "nine_choose_one",
 	login_santa = "five_choose_one",
 	shrine_year = "seven_choose_one",
 	greeting_year = "spring_invited_2021"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	assert(false)
 end
 
-function slot0.setItemVO(slot0, slot1)
-	slot0.itemVO = slot1
-	slot0.idList = slot0.itemVO:getConfig("usage_arg")
-	slot0.shipIdList = underscore.map(slot0.idList, function (slot0)
-		return pg.item_usage_invitation[slot0].ship_id
+function var_0_0.setItemVO(arg_2_0, arg_2_1)
+	arg_2_0.itemVO = arg_2_1
+	arg_2_0.idList = arg_2_0.itemVO:getConfig("usage_arg")
+	arg_2_0.shipIdList = underscore.map(arg_2_0.idList, function(arg_3_0)
+		return pg.item_usage_invitation[arg_3_0].ship_id
 	end)
-	slot0.style, slot0.title = unpack(slot0.itemVO:getConfig("open_ui"))
-	slot0.strTip = uv0.TipWords[slot0.style]
+	arg_2_0.style, arg_2_0.title = unpack(arg_2_0.itemVO:getConfig("open_ui"))
+	arg_2_0.strTip = var_0_0.TipWords[arg_2_0.style]
 end
 
-function slot0.init(slot0)
-	slot1 = slot0._tf
-	slot1 = slot1:Find("layer")
-	slot0.backBtn = slot1:Find("back")
-	slot0.confirmBtn = slot1:Find("confirm")
-	slot0.print = slot1:Find("print")
-	slot0.rtName = slot1:Find("name")
-	slot0.rtTitle = slot1:Find("title")
-	slot0.selectPanel = slot1:Find("select_panel/layout")
-	slot4 = slot0.selectPanel
-	slot0.itemList = UIItemList.New(slot0.selectPanel, slot4:Find("item"))
-	slot2 = slot0.itemList
+function var_0_0.init(arg_4_0)
+	local var_4_0 = arg_4_0._tf:Find("layer")
 
-	slot2:make(function (slot0, slot1, slot2)
-		slot3 = uv0.shipIdList[slot1 + 1]
+	arg_4_0.backBtn = var_4_0:Find("back")
+	arg_4_0.confirmBtn = var_4_0:Find("confirm")
+	arg_4_0.print = var_4_0:Find("print")
+	arg_4_0.rtName = var_4_0:Find("name")
+	arg_4_0.rtTitle = var_4_0:Find("title")
+	arg_4_0.selectPanel = var_4_0:Find("select_panel/layout")
+	arg_4_0.itemList = UIItemList.New(arg_4_0.selectPanel, arg_4_0.selectPanel:Find("item"))
 
-		if slot0 == UIItemList.EventUpdate then
-			GetImageSpriteFromAtlasAsync("extra_page/" .. uv0.style .. "/i_" .. slot3, "", slot2)
-			GetImageSpriteFromAtlasAsync("extra_page/" .. uv0.style .. "/is_" .. slot3, "", slot2:Find("selected"))
-			onToggle(uv0, slot2, function (slot0)
-				if slot0 and uv0.selectTarget ~= uv1 then
-					LeanTween.cancel(uv0.print)
+	arg_4_0.itemList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		arg_5_1 = arg_5_1 + 1
 
-					if uv0.rtName then
-						LeanTween.cancel(uv0.rtName)
+		local var_5_0 = arg_4_0.shipIdList[arg_5_1]
+
+		if arg_5_0 == UIItemList.EventUpdate then
+			GetImageSpriteFromAtlasAsync("extra_page/" .. arg_4_0.style .. "/i_" .. var_5_0, "", arg_5_2)
+			GetImageSpriteFromAtlasAsync("extra_page/" .. arg_4_0.style .. "/is_" .. var_5_0, "", arg_5_2:Find("selected"))
+			onToggle(arg_4_0, arg_5_2, function(arg_6_0)
+				if arg_6_0 and arg_4_0.selectTarget ~= arg_5_1 then
+					LeanTween.cancel(arg_4_0.print)
+
+					if arg_4_0.rtName then
+						LeanTween.cancel(arg_4_0.rtName)
 					end
 
-					uv0:setSelectTarget(uv1)
+					arg_4_0:setSelectTarget(arg_5_1)
 				end
 			end, SFX_PANEL)
 		end
 	end)
 
-	slot0.selectTarget = nil
-	slot0.count = 1
-	slot0.spList = {}
-	slot0.afterAnima = {}
+	arg_4_0.selectTarget = nil
+	arg_4_0.count = 1
+	arg_4_0.spList = {}
+	arg_4_0.afterAnima = {}
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0.backBtn, function()
+		arg_7_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.confirmBtn, function ()
+	onButton(arg_7_0, arg_7_0.confirmBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n(uv0.strTip, pg.ship_data_statistics[uv0.selectedShipNumber].name),
-			onYes = function ()
-				uv0:emit(AssignedShipMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, {
-					uv0.idList[uv0.selectTarget]
+			content = i18n(arg_7_0.strTip, pg.ship_data_statistics[arg_7_0.selectedShipNumber].name),
+			onYes = function()
+				arg_7_0:emit(AssignedShipMediator.ON_USE_ITEM, arg_7_0.itemVO.id, arg_7_0.count, {
+					arg_7_0.idList[arg_7_0.selectTarget]
 				})
 			end
 		})
 	end, SFX_PANEL)
-	slot0.itemList:align(#slot0.idList)
-	setActive(slot0.rtTitle, slot0.title)
+	arg_7_0.itemList:align(#arg_7_0.idList)
+	setActive(arg_7_0.rtTitle, arg_7_0.title)
 
-	if slot0.title then
-		GetImageSpriteFromAtlasAsync("extra_page/" .. slot0.style .. "/" .. slot0.title, "", slot0.rtTitle, true)
+	if arg_7_0.title then
+		GetImageSpriteFromAtlasAsync("extra_page/" .. arg_7_0.style .. "/" .. arg_7_0.title, "", arg_7_0.rtTitle, true)
 	end
 
-	triggerToggle(slot0.selectPanel:GetChild(0), true)
+	triggerToggle(arg_7_0.selectPanel:GetChild(0), true)
 end
 
-function slot0.checkAndSetSprite(slot0, slot1, slot2)
-	if slot0.spList[slot1] and slot0.afterAnima[slot1] then
-		setImageSprite(slot2, slot0.spList[slot1], true)
+function var_0_0.checkAndSetSprite(arg_11_0, arg_11_1, arg_11_2)
+	if arg_11_0.spList[arg_11_1] and arg_11_0.afterAnima[arg_11_1] then
+		setImageSprite(arg_11_2, arg_11_0.spList[arg_11_1], true)
 
-		slot2:GetComponent(typeof(Image)).enabled = true
-		slot0.spList[slot1] = nil
-		slot0.afterAnima[slot1] = nil
+		arg_11_2:GetComponent(typeof(Image)).enabled = true
+		arg_11_0.spList[arg_11_1] = nil
+		arg_11_0.afterAnima[arg_11_1] = nil
 
-		LeanTween.alpha(slot2, 1, 0.3):setFrom(0)
+		LeanTween.alpha(arg_11_2, 1, 0.3):setFrom(0)
 	end
 end
 
-function slot0.changeShowCharacter(slot0, slot1, slot2, slot3)
-	if slot3 then
-		slot4 = LeanTween.alpha(rtf(slot2), 0, 0.3)
+function var_0_0.changeShowCharacter(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	if arg_12_3 then
+		LeanTween.alpha(rtf(arg_12_2), 0, 0.3):setOnComplete(System.Action(function()
+			arg_12_2:GetComponent(typeof(Image)).enabled = false
+			arg_12_0.afterAnima[arg_12_1] = true
 
-		slot4:setOnComplete(System.Action(function ()
-			uv0:GetComponent(typeof(Image)).enabled = false
-			uv1.afterAnima[uv2] = true
-
-			uv1:checkAndSetSprite(uv2, uv0)
+			arg_12_0:checkAndSetSprite(arg_12_1, arg_12_2)
 		end))
 	else
-		slot2:GetComponent(typeof(Image)).enabled = false
-		slot0.afterAnima[slot1] = true
+		arg_12_2:GetComponent(typeof(Image)).enabled = false
+		arg_12_0.afterAnima[arg_12_1] = true
 	end
 
-	GetSpriteFromAtlasAsync("extra_page/" .. slot0.style .. "/" .. slot1, "", function (slot0)
-		uv0.spList[uv1] = slot0
+	GetSpriteFromAtlasAsync("extra_page/" .. arg_12_0.style .. "/" .. arg_12_1, "", function(arg_14_0)
+		arg_12_0.spList[arg_12_1] = arg_14_0
 
-		uv0:checkAndSetSprite(uv1, uv2)
+		arg_12_0:checkAndSetSprite(arg_12_1, arg_12_2)
 	end)
 end
 
-function slot0.setSelectTarget(slot0, slot1)
-	slot0:changeShowCharacter("p_" .. slot0.shipIdList[slot1], slot0.print, slot0.selectTarget)
+function var_0_0.setSelectTarget(arg_15_0, arg_15_1)
+	arg_15_0:changeShowCharacter("p_" .. arg_15_0.shipIdList[arg_15_1], arg_15_0.print, arg_15_0.selectTarget)
 
-	if slot0.rtName then
-		slot0:changeShowCharacter("n_" .. slot0.shipIdList[slot1], slot0.rtName, slot0.selectTarget)
+	if arg_15_0.rtName then
+		arg_15_0:changeShowCharacter("n_" .. arg_15_0.shipIdList[arg_15_1], arg_15_0.rtName, arg_15_0.selectTarget)
 	end
 
-	slot0.selectTarget = slot1
-	slot0.selectedShipNumber = slot0.shipIdList[slot1]
+	arg_15_0.selectTarget = arg_15_1
+	arg_15_0.selectedShipNumber = arg_15_0.shipIdList[arg_15_1]
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_16_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,11 +1,11 @@
-slot0 = class("LittleChaijunPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("LittleChaijunPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.helpBtn = slot0:findTF("help_btn", slot0.bg)
+	arg_1_0.helpBtn = arg_1_0:findTF("help_btn", arg_1_0.bg)
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.littleChaijun_npc.tip
@@ -13,410 +13,436 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_3_0)
+	var_0_0.super.OnUpdateFlush(arg_3_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
-	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
+	local var_3_0, var_3_1, var_3_2 = arg_3_0.ptData:GetLevelProgress()
+	local var_3_3, var_3_4, var_3_5 = arg_3_0.ptData:GetResProgress()
 
-	setText(slot0.step, setColorStr(slot1, "ebced8") .. " / " .. slot2)
-	setText(slot0.progress, (slot6 >= 1 and setColorStr(slot4, COLOR_GREEN) or setColorStr(slot4, "ebced8")) .. "/" .. slot5)
+	setText(arg_3_0.step, setColorStr(var_3_0, "ebced8") .. " / " .. var_3_1)
+	setText(arg_3_0.progress, (var_3_5 >= 1 and setColorStr(var_3_3, COLOR_GREEN) or setColorStr(var_3_3, "ebced8")) .. "/" .. var_3_4)
 
-	if slot0.firstSliderInit then
-		if LeanTween.isTweening(go(slot0.slider)) then
-			LeanTween.cancel(go(slot0.slider))
+	if arg_3_0.firstSliderInit then
+		if LeanTween.isTweening(go(arg_3_0.slider)) then
+			LeanTween.cancel(go(arg_3_0.slider))
 		end
 
-		slot7 = GetComponent(slot0.slider, typeof(Slider)).value
+		local var_3_6 = GetComponent(arg_3_0.slider, typeof(Slider)).value
+		local var_3_7 = arg_3_0.l1 ~= var_3_0 and 0 or arg_3_0.sliderValue
 
-		LeanTween.value(go(slot0.slider), slot0.l1 ~= slot1 and 0 or slot0.sliderValue, slot6, 1):setOnUpdate(System.Action_float(function (slot0)
-			setSlider(uv0.slider, 0, 1, slot0)
+		LeanTween.value(go(arg_3_0.slider), var_3_7, var_3_5, 1):setOnUpdate(System.Action_float(function(arg_4_0)
+			setSlider(arg_3_0.slider, 0, 1, arg_4_0)
 
-			uv0.sliderValue = slot0
+			arg_3_0.sliderValue = arg_4_0
 		end))
 	else
-		setSlider(slot0.slider, 0, 1, slot6)
+		setSlider(arg_3_0.slider, 0, 1, var_3_5)
 
-		slot0.firstSliderInit = true
-		slot0.sliderValue = slot6
+		arg_3_0.firstSliderInit = true
+		arg_3_0.sliderValue = var_3_5
 	end
 
-	slot0.l1 = slot1
+	arg_3_0.l1 = var_3_0
 
-	slot0:updataTask()
-	slot0:sortTaskGroups()
-	slot0:updateTaskUI()
+	arg_3_0:updataTask()
+	arg_3_0:sortTaskGroups()
+	arg_3_0:updateTaskUI()
 end
 
-function slot0.updataTask(slot0)
-	for slot4, slot5 in ipairs(slot0.taskGroups) do
-		for slot9, slot10 in ipairs(slot5.tasks) do
-			slot11 = slot0.taskProxy:getFinishTaskById(slot10.id) and 1 or 0
-			slot13 = 0
+function var_0_0.updataTask(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.taskGroups) do
+		for iter_5_2, iter_5_3 in ipairs(iter_5_1.tasks) do
+			local var_5_0 = arg_5_0.taskProxy:getFinishTaskById(iter_5_3.id) and 1 or 0
+			local var_5_1 = arg_5_0.taskProxy:getTaskById(iter_5_3.id)
+			local var_5_2 = 0
 
-			if slot0.taskProxy:getTaskById(slot10.id) then
-				slot5.progress = slot12:getProgress() == 0 and slot5.progress or slot13
+			if var_5_1 then
+				var_5_2 = var_5_1:getProgress()
+				iter_5_1.progress = var_5_2 == 0 and iter_5_1.progress or var_5_2
 			else
-				slot13 = slot5.progress
+				var_5_2 = iter_5_1.progress
 			end
 
-			slot10.progress = slot13
+			iter_5_3.progress = var_5_2
 
-			if slot10.finish ~= slot11 then
-				setActive(slot10.tf, false)
-				table.insert(slot0.taskTplPool, slot10.tf)
+			if iter_5_3.finish ~= var_5_0 then
+				setActive(iter_5_3.tf, false)
+				table.insert(arg_5_0.taskTplPool, iter_5_3.tf)
 
-				slot10.tf = nil
+				iter_5_3.tf = nil
 			end
 
-			slot10.finish = slot11
+			iter_5_3.finish = var_5_0
 		end
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.displayBtn, function ()
-		uv0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+function var_0_0.OnFirstFlush(arg_6_0)
+	var_0_0.super.OnFirstFlush(arg_6_0)
+	onButton(arg_6_0, arg_6_0.displayBtn, function()
+		arg_6_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
 			type = 5,
-			dropList = uv0.ptData.dropList,
-			targets = uv0.ptData.targets,
-			level = uv0.ptData.level,
-			count = uv0.ptData.count,
-			resId = uv0.ptData.resId
+			dropList = arg_6_0.ptData.dropList,
+			targets = arg_6_0.ptData.targets,
+			level = arg_6_0.ptData.level,
+			count = arg_6_0.ptData.count,
+			resId = arg_6_0.ptData.resId
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
+	onButton(arg_6_0, arg_6_0.battleBtn, function()
+		arg_6_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
 	end, SFX_PANEL)
-	slot0:initTask()
-	slot0:sortTaskGroups()
-	slot0:updateTaskUI()
+	arg_6_0:initTask()
+	arg_6_0:sortTaskGroups()
+	arg_6_0:updateTaskUI()
 end
 
-function slot0.initTask(slot0)
-	slot0.missionTpl = findTF(slot0.bg, "missionTpl")
+function var_0_0.initTask(arg_9_0)
+	arg_9_0.missionTpl = findTF(arg_9_0.bg, "missionTpl")
 
-	setActive(slot0.missionTpl, false)
+	setActive(arg_9_0.missionTpl, false)
 
-	slot0.missionContainer = findTF(slot0.bg, "mission/content")
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskTplPool = {}
-	slot6 = ScrollRect
-	slot0.taskScroll = GetComponent(findTF(slot0.bg, "mission"), typeof(slot6))
-	slot0.taskGroups = {}
+	arg_9_0.missionContainer = findTF(arg_9_0.bg, "mission/content")
 
-	for slot6 = 1, #pg.activity_template[slot0.activity:getConfig("config_client").task_act_id].config_data do
-		slot8 = pg.task_data_template[slot2[slot6]]
-		slot10 = slot8.sub_type
+	local var_9_0 = arg_9_0.activity:getConfig("config_client").task_act_id
+	local var_9_1 = pg.activity_template[var_9_0].config_data
 
-		if slot8.type == 26 then
-			slot0:insertTaskToGroup(slot7, slot8, slot0:getTaskGroup(slot9, slot10))
+	arg_9_0.taskProxy = getProxy(TaskProxy)
+	arg_9_0.taskTplPool = {}
+	arg_9_0.taskScroll = GetComponent(findTF(arg_9_0.bg, "mission"), typeof(ScrollRect))
+	arg_9_0.taskGroups = {}
+
+	for iter_9_0 = 1, #var_9_1 do
+		local var_9_2 = var_9_1[iter_9_0]
+		local var_9_3 = pg.task_data_template[var_9_2]
+		local var_9_4 = var_9_3.type
+		local var_9_5 = var_9_3.sub_type
+
+		if var_9_4 == 26 then
+			local var_9_6 = arg_9_0:getTaskGroup(var_9_4, var_9_5)
+
+			arg_9_0:insertTaskToGroup(var_9_2, var_9_3, var_9_6)
 		end
 	end
 end
 
-function slot0.updateTaskUI(slot0)
-	slot1 = 0
+function var_0_0.updateTaskUI(arg_10_0)
+	local var_10_0 = 0
 
-	for slot5 = 1, #slot0.taskGroups do
-		for slot11, slot12 in ipairs(slot0.taskGroups[slot5].tasks) do
-			slot0:updateTaskList(slot11, slot1, slot12, slot6)
+	for iter_10_0 = 1, #arg_10_0.taskGroups do
+		local var_10_1 = arg_10_0.taskGroups[iter_10_0]
+		local var_10_2 = var_10_1.tasks
 
-			slot1 = slot1 + 1
+		for iter_10_1, iter_10_2 in ipairs(var_10_2) do
+			arg_10_0:updateTaskList(iter_10_1, var_10_0, iter_10_2, var_10_1)
+
+			var_10_0 = var_10_0 + 1
 		end
 	end
 
-	slot2 = 0
-	slot3 = 0
+	local var_10_3 = 0
+	local var_10_4 = 0
 
-	if slot0.scrollToGroup then
-		for slot7, slot8 in ipairs(slot0.taskGroups) do
-			if slot8 == slot0.scrollToGroup then
-				slot3 = slot2
+	if arg_10_0.scrollToGroup then
+		for iter_10_3, iter_10_4 in ipairs(arg_10_0.taskGroups) do
+			if iter_10_4 == arg_10_0.scrollToGroup then
+				var_10_4 = var_10_3
 			end
 
-			slot2 = slot8.opening and slot2 + #slot8.tasks or slot2 + 1
+			if iter_10_4.opening then
+				var_10_3 = var_10_3 + #iter_10_4.tasks
+			else
+				var_10_3 = var_10_3 + 1
+			end
 		end
 
-		slot0.scrollToGroup = nil
+		arg_10_0.scrollToGroup = nil
 	end
 
-	if slot3 ~= 0 and slot2 ~= 0 then
-		scrollTo(slot0.taskScroll, 0, 1 - slot3 / slot2)
+	if var_10_4 ~= 0 and var_10_3 ~= 0 then
+		scrollTo(arg_10_0.taskScroll, 0, 1 - var_10_4 / var_10_3)
 	else
-		scrollTo(slot0.taskScroll, 0, 1)
+		scrollTo(arg_10_0.taskScroll, 0, 1)
 	end
 end
 
-function slot0.updateTaskList(slot0, slot1, slot2, slot3, slot4)
-	if not slot3.show then
+function var_0_0.updateTaskList(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4)
+	if not arg_11_3.show then
 		return
 	end
 
-	slot6 = slot3.targetNum
-	slot7 = slot3.progress
-	slot8 = slot3.finish == 1
-	slot9 = slot1 == 1
-	slot10 = slot3.desc
-	slot11 = slot3.drop
-	slot12 = slot4.opening
-	slot13 = #slot4.tasks == 1
+	local var_11_0 = arg_11_3.targetNum
+	local var_11_1 = arg_11_3.progress
+	local var_11_2 = arg_11_3.finish == 1
+	local var_11_3 = arg_11_1 == 1
+	local var_11_4 = arg_11_3.desc
+	local var_11_5 = arg_11_3.drop
+	local var_11_6 = arg_11_4.opening
+	local var_11_7 = #arg_11_4.tasks == 1
 
-	if not slot3.tf then
-		slot3.tf = slot0:getTaskTfFromPool()
+	if not arg_11_3.tf then
+		arg_11_3.tf = arg_11_0:getTaskTfFromPool()
 	end
 
-	slot14 = findTF(slot3.tf, "AD")
-	slot3.tf.sizeDelta = Vector2(778, slot9 and 120 or 110)
+	local var_11_8 = findTF(arg_11_3.tf, "AD")
 
-	setActive(findTF(slot14, "bg1"), slot9)
-	setActive(findTF(slot14, "bg2"), not slot9)
+	arg_11_3.tf.sizeDelta = Vector2(778, var_11_3 and 120 or 110)
 
-	if slot9 then
-		setActive(findTF(slot14, "mask1"), slot8)
+	setActive(findTF(var_11_8, "bg1"), var_11_3)
+	setActive(findTF(var_11_8, "bg2"), not var_11_3)
+
+	if var_11_3 then
+		setActive(findTF(var_11_8, "mask1"), var_11_2)
 	else
-		setActive(findTF(slot14, "mask2"), slot8)
+		setActive(findTF(var_11_8, "mask2"), var_11_2)
 	end
 
-	if slot8 then
-		setActive(findTF(slot14, "pahase"), false)
-		setSlider(findTF(slot14, "slider"), 0, 1, 1)
+	if var_11_2 then
+		setActive(findTF(var_11_8, "pahase"), false)
+		setSlider(findTF(var_11_8, "slider"), 0, 1, 1)
 	else
-		setActive(findTF(slot14, "pahase"), true)
-		setSlider(findTF(slot14, "slider"), 0, 1, slot7 / slot6)
+		setActive(findTF(var_11_8, "pahase"), true)
+		setSlider(findTF(var_11_8, "slider"), 0, 1, var_11_1 / var_11_0)
 	end
 
-	setText(findTF(slot14, "desc"), slot10)
+	setText(findTF(var_11_8, "desc"), var_11_4)
 
-	if slot4.subType ~= 33 then
-		setText(findTF(slot14, "pahase"), setColorStr(slot7, "#b35845") .. "/" .. slot6)
+	if arg_11_4.subType ~= 33 then
+		setText(findTF(var_11_8, "pahase"), setColorStr(var_11_1, "#b35845") .. "/" .. var_11_0)
 	else
-		setText(findTF(slot14, "pahase"), "")
+		setText(findTF(var_11_8, "pahase"), "")
 	end
 
-	updateDrop(findTF(slot14, "award"), slot11)
-	onButton(slot0, findTF(slot14, "award"), function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	updateDrop(findTF(var_11_8, "award"), var_11_5)
+	onButton(arg_11_0, findTF(var_11_8, "award"), function()
+		arg_11_0:emit(BaseUI.ON_DROP, var_11_5)
 	end, SFX_PANEL)
-	setActive(findTF(slot14, "got"), false)
-	setActive(findTF(slot14, "get"), false)
-	setActive(findTF(slot14, "go"), false)
+	setActive(findTF(var_11_8, "got"), false)
+	setActive(findTF(var_11_8, "get"), false)
+	setActive(findTF(var_11_8, "go"), false)
 
-	if not slot9 then
-		setActive(findTF(slot14, "go"), not slot8)
-		setActive(findTF(slot14, "got"), slot8)
-	elseif slot8 then
-		setActive(findTF(slot14, "got"), true)
-	elseif slot6 <= slot7 then
-		setActive(findTF(slot14, "get"), true)
-		onButton(slot0, findTF(slot14, "get"), function ()
-			if uv0.taskProxy:getTaskById(uv1.id) then
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, slot0)
+	if not var_11_3 then
+		setActive(findTF(var_11_8, "go"), not var_11_2)
+		setActive(findTF(var_11_8, "got"), var_11_2)
+	elseif var_11_2 then
+		setActive(findTF(var_11_8, "got"), true)
+	elseif var_11_0 <= var_11_1 then
+		setActive(findTF(var_11_8, "get"), true)
+		onButton(arg_11_0, findTF(var_11_8, "get"), function()
+			local var_13_0 = arg_11_0.taskProxy:getTaskById(arg_11_3.id)
+
+			if var_13_0 then
+				arg_11_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_13_0)
 			end
 		end, SFX_CONFIRM)
 	else
-		setActive(findTF(slot14, "go"), true)
-		onButton(slot0, findTF(slot14, "go"), function ()
-			if uv0.taskProxy:getTaskById(uv1.id) then
-				uv0:emit(ActivityMediator.ON_TASK_GO, slot0)
+		setActive(findTF(var_11_8, "go"), true)
+		onButton(arg_11_0, findTF(var_11_8, "go"), function()
+			local var_14_0 = arg_11_0.taskProxy:getTaskById(arg_11_3.id)
+
+			if var_14_0 then
+				arg_11_0:emit(ActivityMediator.ON_TASK_GO, var_14_0)
 			end
 		end, SFX_CONFIRM)
 	end
 
-	if slot13 or not slot9 or slot8 and slot9 then
-		setActive(findTF(slot14, "show"), false)
+	if var_11_7 or not var_11_3 or var_11_2 and var_11_3 then
+		setActive(findTF(var_11_8, "show"), false)
 	else
-		setActive(findTF(slot14, "show"), true)
-		setActive(findTF(slot14, "show/on"), slot12)
-		setActive(findTF(slot14, "show/off"), not slot12)
+		setActive(findTF(var_11_8, "show"), true)
+		setActive(findTF(var_11_8, "show/on"), var_11_6)
+		setActive(findTF(var_11_8, "show/off"), not var_11_6)
 	end
 
-	if slot9 then
-		onButton(slot0, findTF(slot14, "show"), function ()
-			uv0:changeGroupOpening(uv1)
+	if var_11_3 then
+		onButton(arg_11_0, findTF(var_11_8, "show"), function()
+			arg_11_0:changeGroupOpening(arg_11_4)
 		end, SFX_CONFIRM)
 	end
 
-	setActive(slot3.tf, true)
-	slot3.tf:SetSiblingIndex(slot2)
+	setActive(arg_11_3.tf, true)
+	arg_11_3.tf:SetSiblingIndex(arg_11_2)
 end
 
-function slot0.changeGroupOpening(slot0, slot1)
-	slot1.opening = not slot1.opening
+function var_0_0.changeGroupOpening(arg_16_0, arg_16_1)
+	arg_16_1.opening = not arg_16_1.opening
 
-	for slot5 = 1, #slot1.tasks do
-		slot6 = slot1.tasks[slot5]
+	for iter_16_0 = 1, #arg_16_1.tasks do
+		local var_16_0 = arg_16_1.tasks[iter_16_0]
 
-		if slot5 == 1 then
-			slot6.show = true
+		if iter_16_0 == 1 then
+			var_16_0.show = true
 		else
-			slot6.show = slot1.opening
+			var_16_0.show = arg_16_1.opening
 		end
 
-		if not slot6.show and slot6.tf then
-			setActive(slot6.tf, false)
-			table.insert(slot0.taskTplPool, slot6.tf)
+		if not var_16_0.show and var_16_0.tf then
+			setActive(var_16_0.tf, false)
+			table.insert(arg_16_0.taskTplPool, var_16_0.tf)
 
-			slot6.tf = nil
+			var_16_0.tf = nil
 		end
 	end
 
-	slot0.scrollToGroup = slot1
+	arg_16_0.scrollToGroup = arg_16_1
 
-	slot0:updateTaskUI()
+	arg_16_0:updateTaskUI()
 end
 
-function slot0.getTaskTfFromPool(slot0)
-	if #slot0.taskTplPool > 0 then
-		return table.remove(slot0.taskTplPool, 1)
+function var_0_0.getTaskTfFromPool(arg_17_0)
+	if #arg_17_0.taskTplPool > 0 then
+		return table.remove(arg_17_0.taskTplPool, 1)
 	end
 
-	slot1 = tf(Instantiate(slot0.missionTpl))
+	local var_17_0 = tf(Instantiate(arg_17_0.missionTpl))
 
-	SetParent(slot1, slot0.missionContainer)
+	SetParent(var_17_0, arg_17_0.missionContainer)
 
-	return slot1
+	return var_17_0
 end
 
-function slot0.getTaskGroup(slot0, slot1, slot2)
-	for slot6 = 1, #slot0.taskGroups do
-		if slot0.taskGroups[slot6].type == slot1 and slot7.subType == slot2 then
-			return slot7
+function var_0_0.getTaskGroup(arg_18_0, arg_18_1, arg_18_2)
+	for iter_18_0 = 1, #arg_18_0.taskGroups do
+		local var_18_0 = arg_18_0.taskGroups[iter_18_0]
+
+		if var_18_0.type == arg_18_1 and var_18_0.subType == arg_18_2 then
+			return var_18_0
 		end
 	end
 
-	slot3 = {
+	local var_18_1 = {
 		opening = false,
 		progress = 0,
-		type = slot1,
-		subType = slot2,
+		type = arg_18_1,
+		subType = arg_18_2,
 		tasks = {}
 	}
 
-	table.insert(slot0.taskGroups, slot3)
+	table.insert(arg_18_0.taskGroups, var_18_1)
 
-	return slot3
+	return var_18_1
 end
 
-function slot0.insertTaskToGroup(slot0, slot1, slot2, slot3)
-	for slot8 = 1, #slot3.tasks do
-		if slot4[slot8].id == slot1 then
+function var_0_0.insertTaskToGroup(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+	local var_19_0 = arg_19_3.tasks
+
+	for iter_19_0 = 1, #var_19_0 do
+		if var_19_0[iter_19_0].id == arg_19_1 then
 			return
 		end
 	end
 
-	slot5 = slot2.target_num
-	slot6 = slot2.desc
-	slot7 = {
-		type = slot2.award_display[1][1],
-		id = slot2.award_display[1][2],
-		count = slot2.award_display[1][3]
+	local var_19_1 = arg_19_2.target_num
+	local var_19_2 = arg_19_2.desc
+	local var_19_3 = {
+		type = arg_19_2.award_display[1][1],
+		id = arg_19_2.award_display[1][2],
+		count = arg_19_2.award_display[1][3]
 	}
-	slot8 = false
+	local var_19_4 = false
 
-	if #slot3.tasks == 0 then
-		slot8 = true
+	if #arg_19_3.tasks == 0 then
+		var_19_4 = true
 	end
 
-	slot9 = slot0.taskProxy:getFinishTaskById(slot1) and 1 or 0
-	slot11 = 0
+	local var_19_5 = arg_19_0.taskProxy:getFinishTaskById(arg_19_1) and 1 or 0
+	local var_19_6 = arg_19_0.taskProxy:getTaskById(arg_19_1)
+	local var_19_7 = 0
 
-	if slot0.taskProxy:getTaskById(slot1) then
-		slot3.progress = slot10:getProgress() == 0 and slot3.progress or slot11
+	if var_19_6 then
+		var_19_7 = var_19_6:getProgress()
+		arg_19_3.progress = var_19_7 == 0 and arg_19_3.progress or var_19_7
 	else
-		slot11 = slot3.progress
+		var_19_7 = arg_19_3.progress
 	end
 
-	table.insert(slot3.tasks, {
-		id = slot1,
-		targetNum = slot5,
-		show = slot8,
-		finish = slot9,
-		progress = slot11,
-		desc = slot6,
-		drop = slot7
+	table.insert(arg_19_3.tasks, {
+		id = arg_19_1,
+		targetNum = var_19_1,
+		show = var_19_4,
+		finish = var_19_5,
+		progress = var_19_7,
+		desc = var_19_2,
+		drop = var_19_3
 	})
 end
 
-function slot0.sortTaskGroups(slot0)
-	for slot4, slot5 in ipairs(slot0.taskGroups) do
-		table.sort(slot5.tasks, function (slot0, slot1)
-			if slot0.finish ~= slot1.finish then
-				return slot0.finish < slot1.finish
+function var_0_0.sortTaskGroups(arg_20_0)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.taskGroups) do
+		table.sort(iter_20_1.tasks, function(arg_21_0, arg_21_1)
+			if arg_21_0.finish ~= arg_21_1.finish then
+				return arg_21_0.finish < arg_21_1.finish
 			end
 
-			return slot0.targetNum < slot1.targetNum
+			return arg_21_0.targetNum < arg_21_1.targetNum
 		end)
 	end
 
-	table.sort(slot0.taskGroups, function (slot0, slot1)
-		slot3 = slot1.tasks
-		slot4 = 0
-		slot5 = slot0.tasks[1].id
-		slot6 = 0
-		slot7 = 0
-		slot8 = 0
-		slot9 = slot1.tasks[1].id
-		slot10 = 0
-		slot11 = 0
+	table.sort(arg_20_0.taskGroups, function(arg_22_0, arg_22_1)
+		local var_22_0 = arg_22_0.tasks
+		local var_22_1 = arg_22_1.tasks
+		local var_22_2 = 0
+		local var_22_3 = arg_22_0.tasks[1].id
+		local var_22_4 = 0
+		local var_22_5 = 0
+		local var_22_6 = 0
+		local var_22_7 = arg_22_1.tasks[1].id
+		local var_22_8 = 0
+		local var_22_9 = 0
 
-		for slot15, slot16 in ipairs(slot0.tasks) do
-			if slot4 == 0 and slot16.finish == 0 and slot16.targetNum <= slot16.progress then
-				slot4 = 1
-				slot5 = slot16.id
+		for iter_22_0, iter_22_1 in ipairs(var_22_0) do
+			if var_22_2 == 0 and iter_22_1.finish == 0 and iter_22_1.progress >= iter_22_1.targetNum then
+				var_22_2 = 1
+				var_22_3 = iter_22_1.id
 			end
 
-			if slot16.finish == 1 then
-				slot6 = slot6 + 1
-			end
+			var_22_4 = iter_22_1.finish == 1 and var_22_4 + 1 or var_22_4
 		end
 
-		slot7 = slot6 == #slot2 and 1 or 0
+		local var_22_10 = var_22_4 == #var_22_0 and 1 or 0
 
-		for slot15, slot16 in ipairs(slot3) do
-			if slot8 == 0 and slot16.finish == 0 and slot16.targetNum <= slot16.progress then
-				slot8 = 1
-				slot9 = slot16.id
+		for iter_22_2, iter_22_3 in ipairs(var_22_1) do
+			if var_22_6 == 0 and iter_22_3.finish == 0 and iter_22_3.progress >= iter_22_3.targetNum then
+				var_22_6 = 1
+				var_22_7 = iter_22_3.id
 			end
 
-			if slot16.finish == 1 then
-				slot10 = slot10 + 1
-			end
+			var_22_8 = iter_22_3.finish == 1 and var_22_8 + 1 or var_22_8
 		end
 
-		slot11 = slot10 == #slot3 and 1 or 0
+		local var_22_11 = var_22_8 == #var_22_1 and 1 or 0
 
-		if slot4 ~= slot8 then
-			return slot8 < slot4
-		elseif slot7 ~= slot11 then
-			return slot7 < slot11
+		if var_22_2 ~= var_22_6 then
+			return var_22_6 < var_22_2
+		elseif var_22_10 ~= var_22_11 then
+			return var_22_10 < var_22_11
 		else
-			return slot5 < slot9
+			return var_22_3 < var_22_7
 		end
 	end)
 
-	for slot4, slot5 in ipairs(slot0.taskGroups) do
-		slot6 = slot5.opening
+	for iter_20_2, iter_20_3 in ipairs(arg_20_0.taskGroups) do
+		local var_20_0 = iter_20_3.opening
+		local var_20_1 = iter_20_3.tasks
 
-		for slot11 = 1, #slot5.tasks do
-			slot12 = slot7[slot11]
+		for iter_20_4 = 1, #var_20_1 do
+			local var_20_2 = var_20_1[iter_20_4]
 
-			if slot11 == 1 then
-				slot12.show = true
-			elseif slot6 then
-				slot12.show = true
+			if iter_20_4 == 1 then
+				var_20_2.show = true
+			elseif var_20_0 then
+				var_20_2.show = true
 			else
-				slot12.show = false
+				var_20_2.show = false
 			end
 		end
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if LeanTween.isTweening(go(slot0.slider)) then
-		LeanTween.cancel(go(slot0.slider))
+function var_0_0.OnDestroy(arg_23_0)
+	if LeanTween.isTweening(go(arg_23_0.slider)) then
+		LeanTween.cancel(go(arg_23_0.slider))
 	end
 end
 
-return slot0
+return var_0_0

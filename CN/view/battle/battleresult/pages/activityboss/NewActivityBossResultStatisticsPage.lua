@@ -1,206 +1,223 @@
-slot0 = class("NewActivityBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+﻿local var_0_0 = class("NewActivityBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
-function slot0.UpdateCommanders(slot0, slot1)
+function var_0_0.UpdateCommanders(arg_1_0, arg_1_1)
 	parallelAsync({
-		function (slot0)
-			uv0.super.UpdateCommanders(uv1, slot0)
+		function(arg_2_0)
+			var_0_0.super.UpdateCommanders(arg_1_0, arg_2_0)
 		end,
-		function (slot0)
-			uv0:LoadActivityBossRes(slot0)
+		function(arg_3_0)
+			arg_1_0:LoadActivityBossRes(arg_3_0)
 		end
-	}, slot1)
+	}, arg_1_1)
 end
 
-function slot1(slot0, slot1, slot2)
-	slot3 = getProxy(ActivityProxy):RawGetActivityById(slot0)
-	slot7 = 0
-	slot8 = pg.activity_event_worldboss[slot3:getConfig("config_id")].use_oil_limit[slot2]
-	slot12 = getProxy(FleetProxy):getActivityFleets()[slot0][slot2]:GetCostSum().oil
+local function var_0_1(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = getProxy(ActivityProxy):RawGetActivityById(arg_4_0)
+	local var_4_1 = var_4_0:getConfig("config_id")
+	local var_4_2 = pg.activity_event_worldboss[var_4_1]
+	local var_4_3 = var_4_0:IsOilLimit(arg_4_1)
+	local var_4_4 = 0
+	local var_4_5 = var_4_2.use_oil_limit[arg_4_2]
+	local var_4_6 = getProxy(FleetProxy):getActivityFleets()[arg_4_0][arg_4_2]:GetCostSum().oil
 
-	if slot3:IsOilLimit(slot1) and slot8[1] > 0 then
-		slot12 = math.min(slot12, slot8[1])
+	if var_4_3 and var_4_5[1] > 0 then
+		var_4_6 = math.min(var_4_6, var_4_5[1])
 	end
 
-	return slot7 + slot12
+	return var_4_4 + var_4_6
 end
 
-function slot2(slot0, slot1)
-	return getProxy(ActivityProxy):RawGetActivityById(slot0):GetStageBonus(slot1)
+local function var_0_2(arg_5_0, arg_5_1)
+	return (getProxy(ActivityProxy):RawGetActivityById(arg_5_0):GetStageBonus(arg_5_1))
 end
 
-function slot0.GetTicketItemID(slot0, slot1)
-	return pg.activity_event_worldboss[getProxy(ActivityProxy):RawGetActivityById(slot1):getConfig("config_id")].ticket
+function var_0_0.GetTicketItemID(arg_6_0, arg_6_1)
+	local var_6_0 = getProxy(ActivityProxy):RawGetActivityById(arg_6_1):getConfig("config_id")
+
+	return pg.activity_event_worldboss[var_6_0].ticket
 end
 
-function slot0.GetTicketUseCount(slot0)
+function var_0_0.GetTicketUseCount(arg_7_0)
 	return 1
 end
 
-function slot0.GetOilCost(slot0)
-	if not (pg.battle_cost_template[slot0.contextData.system].oil_cost > 0) then
+function var_0_0.GetOilCost(arg_8_0)
+	if not (pg.battle_cost_template[arg_8_0.contextData.system].oil_cost > 0) then
 		return 0
 	end
 
-	return uv0(slot0.contextData.actId, slot0.contextData.stageId, slot0.contextData.mainFleetId)
+	return var_0_1(arg_8_0.contextData.actId, arg_8_0.contextData.stageId, arg_8_0.contextData.mainFleetId)
 end
 
-function slot0.InitActivityPanel(slot0, slot1)
-	slot1:SetAsFirstSibling()
+function var_0_0.InitActivityPanel(arg_9_0, arg_9_1)
+	arg_9_1:SetAsFirstSibling()
 
-	slot0.playAgain = slot1:Find("playAgain")
-	slot0.toggle = slot1:Find("playAgain/ticket/checkbox")
-	slot2 = slot0:GetOilCost()
+	arg_9_0.playAgain = arg_9_1:Find("playAgain")
+	arg_9_0.toggle = arg_9_1:Find("playAgain/ticket/checkbox")
 
-	setActive(slot1:Find("playAgain/bonus"), uv0(slot0.contextData.actId, slot0.contextData.stageId) > 0)
-	setActive(slot1:Find("playAgain/ticket"), slot3 <= 0)
-	setText(slot1:Find("playAgain/bonus/Text"), slot3)
+	local var_9_0 = arg_9_0:GetOilCost()
+	local var_9_1 = var_0_2(arg_9_0.contextData.actId, arg_9_0.contextData.stageId)
 
-	if slot3 <= 0 then
-		slot0:UpdateTicket(slot1)
+	setActive(arg_9_1:Find("playAgain/bonus"), var_9_1 > 0)
+	setActive(arg_9_1:Find("playAgain/ticket"), var_9_1 <= 0)
+	setText(arg_9_1:Find("playAgain/bonus/Text"), var_9_1)
+
+	if var_9_1 <= 0 then
+		arg_9_0:UpdateTicket(arg_9_1)
 	end
 
-	setText(slot1:Find("playAgain/Text"), slot2)
-	setText(slot1:Find("playAgain/Image"), i18n("re_battle"))
-	setText(slot1:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
+	setText(arg_9_1:Find("playAgain/Text"), var_9_0)
+	setText(arg_9_1:Find("playAgain/Image"), i18n("re_battle"))
+	setText(arg_9_1:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
 end
 
-function slot0.UpdateTicket(slot0, slot1)
-	slot2 = slot0:GetTicketItemID(slot0.contextData.actId)
-
-	setImageSprite(slot1:Find("playAgain/ticket/icon"), GetSpriteFromAtlas(Drop.New({
+function var_0_0.UpdateTicket(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0:GetTicketItemID(arg_10_0.contextData.actId)
+	local var_10_1 = GetSpriteFromAtlas(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot2
-	}):getIcon(), ""))
+		id = var_10_0
+	}):getIcon(), "")
 
-	slot6 = getProxy(PlayerProxy):getRawData():getResource(slot2) > 0
+	setImageSprite(arg_10_1:Find("playAgain/ticket/icon"), var_10_1)
 
-	if slot4 < slot0:GetTicketUseCount() then
-		slot4 = setColorStr(slot4, COLOR_RED) or slot4
-	end
+	local var_10_2 = getProxy(PlayerProxy):getRawData():getResource(var_10_0)
+	local var_10_3 = arg_10_0:GetTicketUseCount()
+	local var_10_4 = var_10_2 > 0
 
-	setText(slot1:Find("playAgain/ticket/Text"), slot5 .. "/" .. slot4)
-	setToggleEnabled(slot0.toggle, slot6)
-	triggerToggle(slot0.toggle, slot6 and getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1)
+	var_10_2 = var_10_2 < var_10_3 and setColorStr(var_10_2, COLOR_RED) or var_10_2
+
+	setText(arg_10_1:Find("playAgain/ticket/Text"), var_10_3 .. "/" .. var_10_2)
+
+	local var_10_5 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
+
+	setToggleEnabled(arg_10_0.toggle, var_10_4)
+	triggerToggle(arg_10_0.toggle, var_10_4 and var_10_5)
 end
 
-function slot0.LoadActivityBossRes(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/Activityboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited then
+function var_0_0.LoadActivityBossRes(arg_11_0, arg_11_1)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Activityboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_12_0)
+		if arg_11_0.exited then
 			return
 		end
 
-		uv0:InitActivityPanel(Object.Instantiate(slot0, uv0.bottomPanel).transform)
-		uv1()
+		local var_12_0 = Object.Instantiate(arg_12_0, arg_11_0.bottomPanel)
+
+		arg_11_0:InitActivityPanel(var_12_0.transform)
+		arg_11_1()
 	end), true, true)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
-	uv0.super.RegisterEvent(slot0, slot1)
-	onToggle(slot0, slot0.toggle, function (slot0)
-		getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
+function var_0_0.RegisterEvent(arg_13_0, arg_13_1)
+	var_0_0.super.RegisterEvent(arg_13_0, arg_13_1)
+	onToggle(arg_13_0, arg_13_0.toggle, function(arg_14_0)
+		getProxy(SettingsProxy):setActBossExchangeTicketTip(arg_14_0 and 1 or 0)
 	end, SFX_PANEL, SFX_CANCEL)
-	onButton(slot0, slot0.playAgain, function ()
-		uv0:OnPlayAgain(uv1)
+	onButton(arg_13_0, arg_13_0.playAgain, function()
+		arg_13_0:OnPlayAgain(arg_13_1)
 	end, SFX_PANEL)
 end
 
-function slot0.IsLastBonus(slot0)
-	return slot0.contextData.isLastBonus
+function var_0_0.IsLastBonus(arg_16_0)
+	return arg_16_0.contextData.isLastBonus
 end
 
-function slot0.NotEnoughOilCost(slot0)
-	if getProxy(PlayerProxy):getRawData().oil < slot0:GetOilCost() then
-		return true, slot1
+function var_0_0.NotEnoughOilCost(arg_17_0)
+	local var_17_0 = arg_17_0:GetOilCost()
+
+	if var_17_0 > getProxy(PlayerProxy):getRawData().oil then
+		return true, var_17_0
 	end
 
 	return false
 end
 
-function slot0.NotEnoughShipBag(slot0)
-	if getProxy(PlayerProxy):getRawData():getMaxShipBag() <= getProxy(BayProxy):getShipCount() then
+function var_0_0.NotEnoughShipBag(arg_18_0)
+	if getProxy(BayProxy):getShipCount() >= getProxy(PlayerProxy):getRawData():getMaxShipBag() then
 		return true
 	end
 
 	return false
 end
 
-function slot0.NotEnoughEnergy(slot0)
-	slot1 = getProxy(FleetProxy)
+function var_0_0.NotEnoughEnergy(arg_19_0)
+	local var_19_0 = getProxy(FleetProxy):getActivityFleets()[arg_19_0.contextData.actId][arg_19_0.contextData.mainFleetId]
 
-	if _.any(_.values(slot1:getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId].ships), function (slot0)
-		return getProxy(BayProxy):getShipById(slot0) and slot1.energy == Ship.ENERGY_LOW
+	if _.any(_.values(var_19_0.ships), function(arg_20_0)
+		local var_20_0 = getProxy(BayProxy):getShipById(arg_20_0)
+
+		return var_20_0 and var_20_0.energy == Ship.ENERGY_LOW
 	end) then
-		return true, slot3
+		return true, var_19_0
 	end
 
 	return false
 end
 
-function slot0.NotEnoughTicket(slot0)
-	if uv0(slot0.contextData.actId, slot0.contextData.stageId) > 0 then
+function var_0_0.NotEnoughTicket(arg_21_0)
+	if var_0_2(arg_21_0.contextData.actId, arg_21_0.contextData.stageId) > 0 then
 		return false
 	end
 
-	slot4 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
+	local var_21_0 = arg_21_0:GetTicketItemID(arg_21_0.contextData.actId)
+	local var_21_1 = getProxy(PlayerProxy):getRawData():getResource(var_21_0)
+	local var_21_2 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
 
-	if getProxy(PlayerProxy):getRawData():getResource(slot0:GetTicketItemID(slot0.contextData.actId)) > 0 and slot4 then
+	if var_21_1 > 0 and var_21_2 then
 		return true
 	end
 
 	return false
 end
 
-function slot0.OnPlayAgain(slot0, slot1)
-	if slot0:IsLastBonus() then
-		slot0:PassMsgbox("lastBonus", {
+function var_0_0.OnPlayAgain(arg_22_0, arg_22_1)
+	if arg_22_0:IsLastBonus() then
+		arg_22_0:PassMsgbox("lastBonus", {
 			content = i18n("expedition_drop_use_out")
-		}, slot1)
+		}, arg_22_1)
 
 		return
 	end
 
-	slot2, slot3 = slot0:NotEnoughOilCost()
+	local var_22_0, var_22_1 = arg_22_0:NotEnoughOilCost()
 
-	if slot2 then
-		slot0:PassMsgbox("oil", slot3, slot1)
-
-		return
-	end
-
-	if slot0:NotEnoughShipBag() then
-		slot0:PassMsgbox("shipCapacity", nil, slot1)
+	if var_22_0 then
+		arg_22_0:PassMsgbox("oil", var_22_1, arg_22_1)
 
 		return
 	end
 
-	slot4, slot5 = slot0:NotEnoughEnergy()
-
-	if slot4 then
-		slot0:PassMsgbox("energy", slot5, slot1)
+	if arg_22_0:NotEnoughShipBag() then
+		arg_22_0:PassMsgbox("shipCapacity", nil, arg_22_1)
 
 		return
 	end
 
-	if slot0:NotEnoughTicket() then
+	local var_22_2, var_22_3 = arg_22_0:NotEnoughEnergy()
+
+	if var_22_2 then
+		arg_22_0:PassMsgbox("energy", var_22_3, arg_22_1)
+
+		return
+	end
+
+	if arg_22_0:NotEnoughTicket() then
 		pg.m02:sendNotification(GAME.ACT_BOSS_EXCHANGE_TICKET, {
-			stageId = slot0.contextData.stageId
+			stageId = arg_22_0.contextData.stageId
 		})
 
 		return
 	end
 
-	slot0:emit(NewBattleResultMediator.REENTER_STAGE)
+	arg_22_0:emit(NewBattleResultMediator.REENTER_STAGE)
 end
 
-function slot0.PassMsgbox(slot0, slot1, slot2, slot3)
+function var_0_0.PassMsgbox(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
 	getProxy(ContextProxy):GetPrevContext(1).data.msg = {
-		type = slot1,
-		param = slot2
+		type = arg_23_1,
+		param = arg_23_2
 	}
 
-	slot3()
+	arg_23_3()
 end
 
-return slot0
+return var_0_0

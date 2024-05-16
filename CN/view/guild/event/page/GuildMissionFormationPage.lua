@@ -1,397 +1,442 @@
-slot0 = class("GuildMissionFormationPage", import(".GuildEventBasePage"))
+﻿local var_0_0 = class("GuildMissionFormationPage", import(".GuildEventBasePage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildMissionFormationPage"
 end
 
-function slot0.OnRefreshMission(slot0, slot1)
-	slot0:Flush(slot1)
+function var_0_0.OnRefreshMission(arg_2_0, arg_2_1)
+	arg_2_0:Flush(arg_2_1)
 end
 
-function slot0.OnFormationDone(slot0)
-	slot1 = {}
-	slot0.loading = true
+function var_0_0.OnFormationDone(arg_3_0)
+	local var_3_0 = {}
 
-	for slot5, slot6 in pairs(slot0.shipGos) do
-		table.insert(slot1, function (slot0)
-			slot1 = uv0
-			slot1 = slot1:GetComponent(typeof(SpineAnimUI))
+	arg_3_0.loading = true
 
-			slot1:SetAction("victory", 0)
-			slot1:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0:SetActionCallBack(nil)
-					uv0:SetAction("stand", 0)
-					uv1()
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.shipGos) do
+		table.insert(var_3_0, function(arg_4_0)
+			local var_4_0 = iter_3_1:GetComponent(typeof(SpineAnimUI))
+
+			var_4_0:SetAction("victory", 0)
+			var_4_0:SetActionCallBack(function(arg_5_0)
+				if arg_5_0 == "finish" then
+					var_4_0:SetActionCallBack(nil)
+					var_4_0:SetAction("stand", 0)
+					arg_4_0()
 				end
 			end)
 		end)
 	end
 
-	parallelAsync(slot1, function ()
-		uv0:Hide()
+	parallelAsync(var_3_0, function()
+		arg_3_0:Hide()
 
-		uv0.loading = false
+		arg_3_0.loading = false
 	end)
 
-	slot2 = slot0.canFormationIndex or 1
+	local var_3_1 = arg_3_0.canFormationIndex or 1
 
-	for slot6, slot7 in ipairs(slot0.pageFooter) do
-		setActive(slot7, slot6 <= slot2)
+	for iter_3_2, iter_3_3 in ipairs(arg_3_0.pageFooter) do
+		setActive(iter_3_3, iter_3_2 <= var_3_1)
 	end
 
-	setActive(slot0.pageFooterAdd, false)
+	setActive(arg_3_0.pageFooterAdd, false)
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("frame/close")
-	slot0.titleTxt = slot0:findTF("frame/title"):GetComponent(typeof(Text))
-	slot0.recomBtn = slot0:findTF("frame/recom")
-	slot0.clearBtn = slot0:findTF("frame/clear")
-	slot0.goBtn = slot0:findTF("frame/bottom/go")
-	slot0.inProgressBtn = slot0:findTF("frame/bottom/doingBtn")
-	slot0.battleAreaTxt = slot0:findTF("frame/bottom/desc/area/Text"):GetComponent(typeof(Text))
-	slot0.battleTypeTxt = slot0:findTF("frame/bottom/desc/type/Text"):GetComponent(typeof(Text))
-	slot0.awardList = UIItemList.New(slot0:findTF("frame/bottom/award/list"), slot0:findTF("frame/bottom/award/list/item"))
-	slot0.target1Text = slot0:findTF("frame/bottom/desc/target/content/Text"):GetComponent(typeof(Text))
-	slot0.target2Text = slot0:findTF("frame/bottom/desc/target/content/Text2"):GetComponent(typeof(Text))
-	slot0.target1Text4Effect = slot0:findTF("frame/bottom/desc/target/content1/Text"):GetComponent(typeof(Text))
-	slot0.target2Text4Effect = slot0:findTF("frame/bottom/desc/target/content1/Text2"):GetComponent(typeof(Text))
-	slot0.scoreAdditionTxt = slot0:findTF("frame/bottom/score_addition/Text"):GetComponent(typeof(Text))
-	slot0.effectAdditionTxt = slot0:findTF("frame/bottom/effect_addition/Text"):GetComponent(typeof(Text))
-	slot0.effectTxt = slot0:findTF("frame/bottom/effect/Text"):GetComponent(typeof(Text))
-	slot1 = slot0:findTF("frame/bottom/bg")
-	slot0.bg = slot1:GetComponent(typeof(Image))
-	slot0.pageFooter = {
-		slot0:findTF("frame/single/dot/1"),
-		slot0:findTF("frame/single/dot/2"),
-		slot0:findTF("frame/single/dot/3"),
-		slot0:findTF("frame/single/dot/4")
+function var_0_0.OnLoaded(arg_7_0)
+	arg_7_0.closeBtn = arg_7_0:findTF("frame/close")
+	arg_7_0.titleTxt = arg_7_0:findTF("frame/title"):GetComponent(typeof(Text))
+	arg_7_0.recomBtn = arg_7_0:findTF("frame/recom")
+	arg_7_0.clearBtn = arg_7_0:findTF("frame/clear")
+	arg_7_0.goBtn = arg_7_0:findTF("frame/bottom/go")
+	arg_7_0.inProgressBtn = arg_7_0:findTF("frame/bottom/doingBtn")
+	arg_7_0.battleAreaTxt = arg_7_0:findTF("frame/bottom/desc/area/Text"):GetComponent(typeof(Text))
+	arg_7_0.battleTypeTxt = arg_7_0:findTF("frame/bottom/desc/type/Text"):GetComponent(typeof(Text))
+	arg_7_0.awardList = UIItemList.New(arg_7_0:findTF("frame/bottom/award/list"), arg_7_0:findTF("frame/bottom/award/list/item"))
+	arg_7_0.target1Text = arg_7_0:findTF("frame/bottom/desc/target/content/Text"):GetComponent(typeof(Text))
+	arg_7_0.target2Text = arg_7_0:findTF("frame/bottom/desc/target/content/Text2"):GetComponent(typeof(Text))
+	arg_7_0.target1Text4Effect = arg_7_0:findTF("frame/bottom/desc/target/content1/Text"):GetComponent(typeof(Text))
+	arg_7_0.target2Text4Effect = arg_7_0:findTF("frame/bottom/desc/target/content1/Text2"):GetComponent(typeof(Text))
+	arg_7_0.scoreAdditionTxt = arg_7_0:findTF("frame/bottom/score_addition/Text"):GetComponent(typeof(Text))
+	arg_7_0.effectAdditionTxt = arg_7_0:findTF("frame/bottom/effect_addition/Text"):GetComponent(typeof(Text))
+	arg_7_0.effectTxt = arg_7_0:findTF("frame/bottom/effect/Text"):GetComponent(typeof(Text))
+	arg_7_0.bg = arg_7_0:findTF("frame/bottom/bg"):GetComponent(typeof(Image))
+	arg_7_0.pageFooter = {
+		arg_7_0:findTF("frame/single/dot/1"),
+		arg_7_0:findTF("frame/single/dot/2"),
+		arg_7_0:findTF("frame/single/dot/3"),
+		arg_7_0:findTF("frame/single/dot/4")
 	}
-	slot0.pageFooterAdd = slot0:findTF("frame/single/dot/add")
-	slot0.nextBtn = slot0:findTF("frame/single/next")
-	slot0.prevBtn = slot0:findTF("frame/single/prev")
+	arg_7_0.pageFooterAdd = arg_7_0:findTF("frame/single/dot/add")
+	arg_7_0.nextBtn = arg_7_0:findTF("frame/single/next")
+	arg_7_0.prevBtn = arg_7_0:findTF("frame/single/prev")
 
-	setText(slot0:findTF("frame/bottom/desc/area"), i18n("guild_word_battle_area"))
-	setText(slot0:findTF("frame/bottom/desc/type"), i18n("guild_word_battle_type"))
+	setText(arg_7_0:findTF("frame/bottom/desc/area"), i18n("guild_word_battle_area"))
+	setText(arg_7_0:findTF("frame/bottom/desc/type"), i18n("guild_word_battle_type"))
 end
 
-function slot0.OnInit(slot0)
-	function slot1()
-		if uv0.contextData.index > 1 then
-			triggerToggle(uv0.pageFooter[uv0.contextData.index - 1], true)
+function var_0_0.OnInit(arg_8_0)
+	local function var_8_0()
+		if arg_8_0.contextData.index > 1 then
+			triggerToggle(arg_8_0.pageFooter[arg_8_0.contextData.index - 1], true)
 		end
 	end
 
-	function slot2()
-		if uv0.contextData.index < uv0.mission:GetMaxFleet() then
-			if uv0.mission:GetFleetCnt() < uv0.contextData.index + 1 then
-				triggerToggle(uv0.pageFooterAdd, true)
+	local function var_8_1()
+		if arg_8_0.contextData.index < arg_8_0.mission:GetMaxFleet() then
+			local var_10_0 = arg_8_0.contextData.index + 1
+
+			if var_10_0 > arg_8_0.mission:GetFleetCnt() then
+				triggerToggle(arg_8_0.pageFooterAdd, true)
 			else
-				triggerToggle(uv0.pageFooter[slot0], true)
+				triggerToggle(arg_8_0.pageFooter[var_10_0], true)
 			end
 		end
 	end
 
-	addSlip(SLIP_TYPE_HRZ, slot0:findTF("frame"), slot1, slot2)
-	onButton(slot0, slot0.nextBtn, slot2, SFX_PANEL)
-	onButton(slot0, slot0.prevBtn, slot1, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0.contextData.missionShips = nil
+	addSlip(SLIP_TYPE_HRZ, arg_8_0:findTF("frame"), var_8_0, var_8_1)
+	onButton(arg_8_0, arg_8_0.nextBtn, var_8_1, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.prevBtn, var_8_0, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.closeBtn, function()
+		arg_8_0.contextData.missionShips = nil
 
-		uv0:Hide()
+		arg_8_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.recomBtn, function ()
-		if not uv0:CheckFormation() then
+	onButton(arg_8_0, arg_8_0.recomBtn, function()
+		if not arg_8_0:CheckFormation() then
 			return
 		end
 
-		slot0 = uv0
+		arg_8_0:emit(GuildEventMediator.ON_GET_FORMATION, function()
+			local var_13_0 = getProxy(GuildProxy):GetRecommendShipsForMission(arg_8_0.mission)
 
-		slot0:emit(GuildEventMediator.ON_GET_FORMATION, function ()
-			if #getProxy(GuildProxy):GetRecommendShipsForMission(uv0.mission) == 0 then
+			if #var_13_0 == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_recomm_ship_failed"))
 
 				return
 			end
 
-			uv0.contextData.missionShips = slot0
+			arg_8_0.contextData.missionShips = var_13_0
 
-			uv0:UpdateFleet(uv0.contextData.index)
+			arg_8_0:UpdateFleet(arg_8_0.contextData.index)
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.clearBtn, function ()
-		if not uv0:CheckFormation() then
+	onButton(arg_8_0, arg_8_0.clearBtn, function()
+		if not arg_8_0:CheckFormation() then
 			return
 		end
 
-		uv0.contextData.missionShips = {}
+		arg_8_0.contextData.missionShips = {}
 
-		uv0:UpdateFleet(uv0.contextData.index)
+		arg_8_0:UpdateFleet(arg_8_0.contextData.index)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.goBtn, function ()
-		if uv0.mission:IsFinish() then
+	onButton(arg_8_0, arg_8_0.goBtn, function()
+		if arg_8_0.mission:IsFinish() then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_event_is_finish"))
 
 			return
 		end
 
-		if not uv0:CheckFormation() then
+		if not arg_8_0:CheckFormation() then
 			return
 		end
 
-		if not uv0.contextData.missionShips or #uv0.contextData.missionShips == 0 then
+		if not arg_8_0.contextData.missionShips or #arg_8_0.contextData.missionShips == 0 then
 			return
 		end
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
 			content = i18n("guild_event_start_event_tip"),
-			onYes = function ()
-				uv0:emit(GuildEventMediator.JOIN_MISSION, uv0.mission.id, uv0.contextData.missionShips)
+			onYes = function()
+				arg_8_0:emit(GuildEventMediator.JOIN_MISSION, arg_8_0.mission.id, arg_8_0.contextData.missionShips)
 			end
 		})
 	end, SFX_PANEL)
 
-	slot0.shipGos = {}
+	arg_8_0.shipGos = {}
 end
 
-function slot0.OnShow(slot0)
-	slot0.loading = nil
-	slot0.maxShipCnt = slot0.extraData.shipCnt
+function var_0_0.OnShow(arg_17_0)
+	arg_17_0.loading = nil
+	arg_17_0.maxShipCnt = arg_17_0.extraData.shipCnt
 
-	slot0:UpdateLayout()
-	slot0:Flush(slot0.extraData.mission)
-	slot0:UpdatePageFooter()
-	slot0:AddNextFormationTimer()
+	local var_17_0 = arg_17_0.extraData.mission
+
+	arg_17_0:UpdateLayout()
+	arg_17_0:Flush(var_17_0)
+	arg_17_0:UpdatePageFooter()
+	arg_17_0:AddNextFormationTimer()
 end
 
-function slot0.UpdatePageFooter(slot0)
-	slot1 = slot0.mission
-	slot2 = slot1:CanFormation()
-	slot3 = slot1:GetFleetCnt()
+function var_0_0.UpdatePageFooter(arg_18_0)
+	local var_18_0 = arg_18_0.mission
+	local var_18_1 = var_18_0:CanFormation()
+	local var_18_2 = var_18_0:GetFleetCnt()
 
-	for slot7, slot8 in ipairs(slot0.pageFooter) do
-		setActive(slot8, slot7 <= slot3)
-		onToggle(slot0, slot8, function (slot0)
-			if slot0 then
-				uv0:UpdateFleet(uv1)
-				uv0:UpdateSwitchBtns()
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.pageFooter) do
+		setActive(iter_18_1, iter_18_0 <= var_18_2)
+		onToggle(arg_18_0, iter_18_1, function(arg_19_0)
+			if arg_19_0 then
+				arg_18_0:UpdateFleet(iter_18_0)
+				arg_18_0:UpdateSwitchBtns()
 			end
 		end, SFX_PANEL)
 	end
 
-	setActive(slot0.pageFooterAdd, slot2)
-	onToggle(slot0, slot0.pageFooterAdd, function (slot0)
-		if slot0 then
-			uv0:UpdateFleet(uv1 + 1)
+	setActive(arg_18_0.pageFooterAdd, var_18_1)
+	onToggle(arg_18_0, arg_18_0.pageFooterAdd, function(arg_20_0)
+		if arg_20_0 then
+			arg_18_0:UpdateFleet(var_18_2 + 1)
 		end
 	end, SFX_PANEL)
 
-	if slot3 < (slot0.contextData.index or 1) then
-		triggerToggle(slot0.pageFooterAdd, true)
+	local var_18_3 = arg_18_0.contextData.index or 1
+
+	if var_18_2 < var_18_3 then
+		triggerToggle(arg_18_0.pageFooterAdd, true)
 	else
-		triggerToggle(slot0.pageFooter[slot4], true)
+		triggerToggle(arg_18_0.pageFooter[var_18_3], true)
 	end
 end
 
-function slot0.UpdateSwitchBtns(slot0)
-	setActive(slot0.prevBtn, slot0.contextData.index ~= 1)
-	setActive(slot0.nextBtn, slot3 < slot0.mission:GetMaxFleet())
+function var_0_0.UpdateSwitchBtns(arg_21_0)
+	local var_21_0 = arg_21_0.mission:GetMaxFleet()
+	local var_21_1 = arg_21_0.contextData.index
+
+	setActive(arg_21_0.prevBtn, var_21_1 ~= 1)
+	setActive(arg_21_0.nextBtn, var_21_1 < var_21_0)
 end
 
-function slot0.AddNextFormationTimer(slot0)
-	if slot0.mission:IsMaxFleetCnt() then
+function var_0_0.AddNextFormationTimer(arg_22_0)
+	local var_22_0 = arg_22_0.mission
+
+	if var_22_0:IsMaxFleetCnt() then
 		return
 	end
 
-	function slot2(slot0)
-		uv0.canFormationIndex = uv1:GetCanFormationIndex()
+	local function var_22_1(arg_23_0)
+		arg_22_0.canFormationIndex = var_22_0:GetCanFormationIndex()
 
-		setActive(uv0.pageFooterAdd, true)
+		setActive(arg_22_0.pageFooterAdd, true)
 
-		if slot0 then
-			triggerToggle(uv0.pageFooterAdd, false)
+		if arg_23_0 then
+			triggerToggle(arg_22_0.pageFooterAdd, false)
 		end
 
-		uv1:RecordFormationTip()
-		setActive(uv0.pageFooterAdd:Find("tip"), uv1:ShouldShowFormationTip())
-		uv0:UpdateSwitchBtns()
+		var_22_0:RecordFormationTip()
+		setActive(arg_22_0.pageFooterAdd:Find("tip"), var_22_0:ShouldShowFormationTip())
+		arg_22_0:UpdateSwitchBtns()
 	end
 
-	if not slot1:CanFormation() then
-		slot0.timer = Timer.New(function ()
-			uv0.timer:Stop()
+	if not var_22_0:CanFormation() then
+		local var_22_2 = var_22_0:GetNextFormationTime() - pg.TimeMgr.GetInstance():GetServerTime()
 
-			uv0.timer = nil
+		arg_22_0.timer = Timer.New(function()
+			arg_22_0.timer:Stop()
 
-			uv1(true)
-		end, slot1:GetNextFormationTime() - pg.TimeMgr.GetInstance():GetServerTime(), 1)
+			arg_22_0.timer = nil
 
-		slot0.timer:Start()
+			var_22_1(true)
+		end, var_22_2, 1)
+
+		arg_22_0.timer:Start()
 	else
-		slot2()
+		var_22_1()
 	end
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.mission = slot1
-	slot0.canFormationIndex = slot1:GetCanFormationIndex()
+function var_0_0.Flush(arg_25_0, arg_25_1)
+	arg_25_0.mission = arg_25_1
+	arg_25_0.canFormationIndex = arg_25_1:GetCanFormationIndex()
 
-	slot0:InitView()
+	arg_25_0:InitView()
 end
 
-function slot0.UpdateLayout(slot0)
-	slot0.bg.sprite = GetSpriteFromAtlas("ui/GuildFormationUI_atlas", "bg3")
-	slot1 = slot0:findTF("frame/single")
-	slot0.shipContainer = slot1
-	slot0.bg.gameObject.transform.sizeDelta = Vector2(slot0.bg.gameObject.transform.sizeDelta.x, 212)
+function var_0_0.UpdateLayout(arg_26_0)
+	arg_26_0.bg.sprite = GetSpriteFromAtlas("ui/GuildFormationUI_atlas", "bg3")
 
-	setActive(slot1, true)
+	local var_26_0 = arg_26_0:findTF("frame/single")
+
+	arg_26_0.shipContainer = var_26_0
+	arg_26_0.bg.gameObject.transform.sizeDelta = Vector2(arg_26_0.bg.gameObject.transform.sizeDelta.x, 212)
+
+	setActive(var_26_0, true)
 end
 
-function slot0.InitView(slot0)
-	if slot0.initId ~= slot0.mission.id then
-		slot0.awardList:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				slot3 = uv0[slot1 + 1]
+function var_0_0.InitView(arg_27_0)
+	local var_27_0 = arg_27_0.mission
 
-				updateDrop(slot2, {
-					type = slot3[1],
-					id = slot3[2],
-					count = slot3[3]
-				})
-				onButton(uv1, slot2, function ()
-					uv0:send(BaseUI.ON_DROP, uv1)
+	if arg_27_0.initId ~= var_27_0.id then
+		local var_27_1 = var_27_0:GetAwards()
+
+		arg_27_0.awardList:make(function(arg_28_0, arg_28_1, arg_28_2)
+			if arg_28_0 == UIItemList.EventUpdate then
+				local var_28_0 = var_27_1[arg_28_1 + 1]
+				local var_28_1 = {
+					type = var_28_0[1],
+					id = var_28_0[2],
+					count = var_28_0[3]
+				}
+
+				updateDrop(arg_28_2, var_28_1)
+				onButton(arg_27_0, arg_28_2, function()
+					arg_27_0:send(BaseUI.ON_DROP, var_28_1)
 				end, SFX_PANEL)
 			end
 		end)
-		slot0.awardList:align(#slot1:GetAwards())
+		arg_27_0.awardList:align(#var_27_1)
 
-		slot0.battleAreaTxt.text = slot1:getConfig("ship_camp_display")
-		slot0.battleTypeTxt.text = slot1:getConfig("ship_type_display")
-		slot0.titleTxt.text = slot1:GetName()
-		slot0.initId = slot1.id
+		arg_27_0.battleAreaTxt.text = var_27_0:getConfig("ship_camp_display")
+		arg_27_0.battleTypeTxt.text = var_27_0:getConfig("ship_type_display")
+		arg_27_0.titleTxt.text = var_27_0:GetName()
+		arg_27_0.initId = var_27_0.id
 	end
 end
 
-function slot0.UpdateFleet(slot0, slot1)
-	slot0:ClearSlots()
+function var_0_0.UpdateFleet(arg_30_0, arg_30_1)
+	arg_30_0:ClearSlots()
 
-	slot2 = slot0.mission
-	slot3 = slot0.maxShipCnt
-	slot4 = nil
-	slot5 = {}
-	slot4 = slot1 == slot0.canFormationIndex and (slot0.contextData.missionShips or slot2:GetFleetByIndex(slot1)) or slot2:GetFleetByIndex(slot1) or {}
+	local var_30_0 = arg_30_0.mission
+	local var_30_1 = arg_30_0.maxShipCnt
+	local var_30_2
 
-	for slot9 = 1, slot3 do
-		slot10 = slot0.shipContainer
-		slot10 = slot10:GetChild(slot9 - 1)
+	if arg_30_1 == arg_30_0.canFormationIndex then
+		var_30_2 = arg_30_0.contextData.missionShips or var_30_0:GetFleetByIndex(arg_30_1)
+	else
+		var_30_2 = var_30_0:GetFleetByIndex(arg_30_1)
+	end
 
-		table.insert(slot5, function (slot0)
-			uv0:UpdateShipSlot(uv1, uv2, uv3, slot0)
+	local var_30_3 = {}
+
+	var_30_2 = var_30_2 or {}
+
+	for iter_30_0 = 1, var_30_1 do
+		local var_30_4 = arg_30_0.shipContainer:GetChild(iter_30_0 - 1)
+
+		table.insert(var_30_3, function(arg_31_0)
+			arg_30_0:UpdateShipSlot(iter_30_0, var_30_4, var_30_2, arg_31_0)
 		end)
 	end
 
 	pg.UIMgr:GetInstance():LoadingOn(false)
-	parallelAsync(slot5, function ()
+	parallelAsync(var_30_3, function()
 		pg.UIMgr:GetInstance():LoadingOff()
 	end)
 
-	if slot2:IsEliteType() then
-		slot10 = string.format("%s : (<color=%s>%d/%d</color>)", slot2:GetSquadronDisplay(), slot2:GetSquadronTargetCnt() <= slot0:GetTagShipCnt(slot4) and COLOR_GREEN or COLOR_RED, slot6, slot7)
-		slot0.target2Text.text = HXSet.hxLan(slot10)
-		slot0.target2Text4Effect.text = HXSet.hxLan(slot10)
+	if var_30_0:IsEliteType() then
+		local var_30_5 = arg_30_0:GetTagShipCnt(var_30_2)
+		local var_30_6 = var_30_0:GetSquadronTargetCnt()
+		local var_30_7 = var_30_6 <= var_30_5 and COLOR_GREEN or COLOR_RED
+		local var_30_8 = var_30_0:GetSquadronDisplay()
+		local var_30_9 = string.format("%s : (<color=%s>%d/%d</color>)", var_30_8, var_30_7, var_30_5, var_30_6)
+
+		arg_30_0.target2Text.text = HXSet.hxLan(var_30_9)
+		arg_30_0.target2Text4Effect.text = HXSet.hxLan(var_30_9)
 	else
-		slot0.target2Text.text = ""
-		slot0.target2Text4Effect.text = ""
+		arg_30_0.target2Text.text = ""
+		arg_30_0.target2Text4Effect.text = ""
 	end
 
-	slot0.effectTxt.text = GuildMission.CalcMyEffect(slot4)
-	slot8, slot9, slot10 = slot0:CalcScoreAddition(slot4)
-	slot0.scoreAdditionTxt.text = i18n("guild_word_score_addition") .. slot8
-	slot0.effectAdditionTxt.text = i18n("guild_word_effect_addition") .. slot0:CalcEffectAddition(slot4)
-	slot0.target1Text.text = table.concat(slot0:GetBattleTarget(slot9, slot10), " 、")
-	slot0.target1Text4Effect.text = slot0.target1Text.text
+	local var_30_10 = GuildMission.CalcMyEffect(var_30_2)
 
-	setButtonEnabled(slot0.goBtn, #slot4 > 0)
+	arg_30_0.effectTxt.text = var_30_10
 
-	slot13 = not slot2:CanFormation() or slot1 <= slot2:GetFleetCnt()
+	local var_30_11 = arg_30_0:CalcEffectAddition(var_30_2)
+	local var_30_12, var_30_13, var_30_14 = arg_30_0:CalcScoreAddition(var_30_2)
 
-	setActive(slot0.inProgressBtn, slot13)
-	setActive(slot0.goBtn, not slot13)
+	arg_30_0.scoreAdditionTxt.text = i18n("guild_word_score_addition") .. var_30_12
+	arg_30_0.effectAdditionTxt.text = i18n("guild_word_effect_addition") .. var_30_11
 
-	slot0.contextData.index = slot1
+	local var_30_15 = arg_30_0:GetBattleTarget(var_30_13, var_30_14)
 
-	if slot0.target2Text.text ~= "" and slot0.target1Text.text ~= "" then
-		setText(slot0:findTF("frame/bottom/desc/target/content/title"), i18n("guild_wrod_battle_target"))
+	arg_30_0.target1Text.text = table.concat(var_30_15, " 、")
+	arg_30_0.target1Text4Effect.text = arg_30_0.target1Text.text
+
+	setButtonEnabled(arg_30_0.goBtn, #var_30_2 > 0)
+
+	local var_30_16 = var_30_0:GetFleetCnt()
+	local var_30_17 = not var_30_0:CanFormation() or arg_30_1 <= var_30_16
+
+	setActive(arg_30_0.inProgressBtn, var_30_17)
+	setActive(arg_30_0.goBtn, not var_30_17)
+
+	arg_30_0.contextData.index = arg_30_1
+
+	if arg_30_0.target2Text.text ~= "" and arg_30_0.target1Text.text ~= "" then
+		setText(arg_30_0:findTF("frame/bottom/desc/target/content/title"), i18n("guild_wrod_battle_target"))
 	else
-		setText(slot0:findTF("frame/bottom/desc/target/content/title"), "")
+		setText(arg_30_0:findTF("frame/bottom/desc/target/content/title"), "")
 	end
 end
 
-function slot0.UpdateShipSlot(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot0.mission
-	slot7 = slot2:Find("Image")
-	slot8 = slot2:Find("effect")
-	slot9 = slot2:Find("score")
+function var_0_0.UpdateShipSlot(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
+	local var_33_0 = arg_33_0.mission
+	local var_33_1 = arg_33_3[arg_33_1]
+	local var_33_2 = arg_33_2:Find("Image")
+	local var_33_3 = arg_33_2:Find("effect")
+	local var_33_4 = arg_33_2:Find("score")
 
-	if slot3[slot1] then
-		if getProxy(BayProxy):getShipById(slot6) then
-			PoolMgr.GetInstance():GetSpineChar(slot10:getPrefab(), true, function (slot0)
-				slot0.name = uv0
-				tf(slot0).pivot = Vector2(0.5, 0)
-				tf(slot0).sizeDelta = Vector2(200, 300)
+	if var_33_1 then
+		local var_33_5 = getProxy(BayProxy):getShipById(var_33_1)
 
-				SetParent(slot0, uv1)
+		if var_33_5 then
+			local var_33_6 = var_33_5:getPrefab()
 
-				tf(slot0).localPosition = Vector3(0, 0, 0)
-				tf(slot0).localScale = Vector3(0.6, 0.6, 0.6)
+			PoolMgr.GetInstance():GetSpineChar(var_33_6, true, function(arg_34_0)
+				arg_34_0.name = var_33_6
+				tf(arg_34_0).pivot = Vector2(0.5, 0)
+				tf(arg_34_0).sizeDelta = Vector2(200, 300)
 
-				SetAction(slot0, "stand")
-				GetOrAddComponent(slot0, "EventTriggerListener"):AddPointClickFunc(function (slot0, slot1)
-					uv0:emit(GuildEventMediator.ON_SELECT_MISSION_SHIP, uv1.id, uv2, uv3)
+				SetParent(arg_34_0, arg_33_2)
+
+				tf(arg_34_0).localPosition = Vector3(0, 0, 0)
+				tf(arg_34_0).localScale = Vector3(0.6, 0.6, 0.6)
+
+				SetAction(arg_34_0, "stand")
+				GetOrAddComponent(arg_34_0, "EventTriggerListener"):AddPointClickFunc(function(arg_35_0, arg_35_1)
+					arg_33_0:emit(GuildEventMediator.ON_SELECT_MISSION_SHIP, var_33_0.id, arg_33_1, arg_33_3)
 				end)
 
-				uv2.shipGos[uv6] = slot0
+				arg_33_0.shipGos[var_33_1] = arg_34_0
 
-				if uv7 then
-					uv7()
+				if arg_33_4 then
+					arg_33_4()
 				end
 			end)
-			setActive(slot8, slot0:HasEffectAddition(slot10))
-			setActive(slot9, slot0:HasScoreAddition(slot10))
-		elseif slot4 then
-			slot4()
+			setActive(var_33_3, arg_33_0:HasEffectAddition(var_33_5))
+			setActive(var_33_4, arg_33_0:HasScoreAddition(var_33_5))
+		elseif arg_33_4 then
+			arg_33_4()
 		end
 	else
-		onButton(slot0, slot7, function ()
-			uv0:emit(GuildEventMediator.ON_SELECT_MISSION_SHIP, uv1.id, uv2, uv3)
+		onButton(arg_33_0, var_33_2, function()
+			arg_33_0:emit(GuildEventMediator.ON_SELECT_MISSION_SHIP, var_33_0.id, arg_33_1, arg_33_3)
 		end, SFX_PANEL)
-		setActive(slot8, false)
-		setActive(slot9, false)
+		setActive(var_33_3, false)
+		setActive(var_33_4, false)
 
-		if slot4 then
-			slot4()
+		if arg_33_4 then
+			arg_33_4()
 		end
 	end
 
-	setActive(slot7, not slot6)
+	setActive(var_33_2, not var_33_1)
 end
 
-function slot0.CheckFormation(slot0)
-	slot1 = slot0.mission
+function var_0_0.CheckFormation(arg_37_0)
+	local var_37_0 = arg_37_0.mission
 
-	if slot0.contextData.index ~= slot0.canFormationIndex then
+	if arg_37_0.contextData.index ~= arg_37_0.canFormationIndex then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_curr_fleet_can_not_edit"))
 
 		return false
 	end
 
-	slot2, slot3 = slot0.mission:CanFormation()
+	local var_37_1, var_37_2 = arg_37_0.mission:CanFormation()
 
-	if not slot2 then
-		if slot3 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_next_edit_fleet_time", slot3))
+	if not var_37_1 then
+		if var_37_2 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_next_edit_fleet_time", var_37_2))
 		end
 
 		return false
@@ -400,212 +445,230 @@ function slot0.CheckFormation(slot0)
 	return true
 end
 
-function slot0.emit(slot0, ...)
-	if slot0.loading then
+function var_0_0.emit(arg_38_0, ...)
+	if arg_38_0.loading then
 		return
 	end
 
-	if not slot0:CheckFormation() then
+	if not arg_38_0:CheckFormation() then
 		return
 	end
 
-	uv0.super.emit(slot0, ...)
+	var_0_0.super.emit(arg_38_0, ...)
 end
 
-function slot0.send(slot0, ...)
-	uv0.super.emit(slot0, ...)
+function var_0_0.send(arg_39_0, ...)
+	var_0_0.super.emit(arg_39_0, ...)
 end
 
-function slot0.GetBattleTarget(slot0, slot1, slot2)
-	slot3 = slot0.mission
-	slot5 = slot3:GetAttrAcc()
-	slot6 = {}
+function var_0_0.GetBattleTarget(arg_40_0, arg_40_1, arg_40_2)
+	local var_40_0 = arg_40_0.mission
+	local var_40_1 = var_40_0:GetAttrCntAcc()
+	local var_40_2 = var_40_0:GetAttrAcc()
+	local var_40_3 = {}
 
-	for slot10, slot11 in pairs(slot3:GetAttrCntAcc()) do
-		table.insert(slot6, GuildMissionInfoPage.AttrCnt2Desc(slot10, {
-			value = slot11.value + (slot1[slot10] or 0),
-			total = slot11.total,
-			goal = slot11.goal,
-			score = slot11.score
+	for iter_40_0, iter_40_1 in pairs(var_40_1) do
+		local var_40_4 = arg_40_1[iter_40_0] or 0
+
+		table.insert(var_40_3, GuildMissionInfoPage.AttrCnt2Desc(iter_40_0, {
+			value = iter_40_1.value + var_40_4,
+			total = iter_40_1.total,
+			goal = iter_40_1.goal,
+			score = iter_40_1.score
 		}))
 	end
 
-	for slot10, slot11 in pairs(slot5) do
-		table.insert(slot6, GuildMissionInfoPage.AttrAcc2Desc(slot10, {
-			value = slot11.value + (slot2[slot10] or 0),
-			op = slot11.op,
-			goal = slot11.goal,
-			score = slot11.score
+	for iter_40_2, iter_40_3 in pairs(var_40_2) do
+		local var_40_5 = arg_40_2[iter_40_2] or 0
+
+		table.insert(var_40_3, GuildMissionInfoPage.AttrAcc2Desc(iter_40_2, {
+			value = iter_40_3.value + var_40_5,
+			op = iter_40_3.op,
+			goal = iter_40_3.goal,
+			score = iter_40_3.score
 		}))
 	end
 
-	return slot6
+	return var_40_3
 end
 
-function slot0.GetTagShipCnt(slot0, slot1)
-	slot3 = slot0.mission:GetSquadron()
-	slot4 = 0
-	slot5 = getProxy(BayProxy)
+function var_0_0.GetTagShipCnt(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_0.mission:GetSquadron()
+	local var_41_1 = 0
+	local var_41_2 = getProxy(BayProxy)
 
-	for slot9, slot10 in ipairs(slot1) do
-		if slot5:getShipById(slot10) and slot11:IsTagShip(slot3) then
-			slot4 = slot4 + 1
+	for iter_41_0, iter_41_1 in ipairs(arg_41_1) do
+		local var_41_3 = var_41_2:getShipById(iter_41_1)
+
+		if var_41_3 and var_41_3:IsTagShip(var_41_0) then
+			var_41_1 = var_41_1 + 1
 		end
 	end
 
-	return slot4
+	return var_41_1
 end
 
-function slot0.CalcScoreAddition(slot0, slot1)
-	slot2 = slot0.mission
-	slot3 = slot2:GetAttrCntAcc()
-	slot4 = slot2:GetAttrAcc()
-	slot5 = pg.attribute_info_by_type
-	slot6 = 0
-	slot7 = {}
-	slot8 = {}
-	slot9 = getProxy(BayProxy)
+function var_0_0.CalcScoreAddition(arg_42_0, arg_42_1)
+	local var_42_0 = arg_42_0.mission
+	local var_42_1 = var_42_0:GetAttrCntAcc()
+	local var_42_2 = var_42_0:GetAttrAcc()
+	local var_42_3 = pg.attribute_info_by_type
+	local var_42_4 = 0
+	local var_42_5 = {}
+	local var_42_6 = {}
+	local var_42_7 = getProxy(BayProxy)
 
-	for slot13, slot14 in ipairs(slot1) do
-		slot16 = nil
+	for iter_42_0, iter_42_1 in ipairs(arg_42_1) do
+		local var_42_8 = var_42_7:getShipById(iter_42_1)
+		local var_42_9
 
-		if slot9:getShipById(slot14) then
-			slot16 = _.detect(slot2:getConfig("ship_camp_effect"), function (slot0)
-				return slot0[1] == uv0:getNation()
+		if var_42_8 then
+			var_42_9 = _.detect(var_42_0:getConfig("ship_camp_effect"), function(arg_43_0)
+				return arg_43_0[1] == var_42_8:getNation()
 			end)
 		end
 
-		if slot16 then
-			slot6 = slot6 + slot16[2]
+		if var_42_9 then
+			var_42_4 = var_42_4 + var_42_9[2]
 		end
 
-		slot17 = slot15 and slot15:getProperties() or {}
+		local var_42_10 = var_42_8 and var_42_8:getProperties() or {}
 
-		for slot21, slot22 in pairs(slot3) do
-			if slot22.total <= (slot17[slot5[slot21].name] or 0) then
-				slot7[slot21] = (slot7[slot21] or 0) + 1
+		for iter_42_2, iter_42_3 in pairs(var_42_1) do
+			if (var_42_10[var_42_3[iter_42_2].name] or 0) >= iter_42_3.total then
+				var_42_5[iter_42_2] = (var_42_5[iter_42_2] or 0) + 1
 			end
 		end
 
-		for slot21, slot22 in pairs(slot4) do
-			slot8[slot21] = (slot8[slot21] or 0) + (slot17[slot5[slot21].name] or 0)
+		for iter_42_4, iter_42_5 in pairs(var_42_2) do
+			local var_42_11 = var_42_3[iter_42_4].name
+
+			var_42_6[iter_42_4] = (var_42_6[iter_42_4] or 0) + (var_42_10[var_42_11] or 0)
 		end
 	end
 
-	for slot13, slot14 in pairs(slot3) do
-		if slot14.goal <= (slot7[slot13] or 0) + slot14.value then
-			slot6 = slot6 + slot14.score
+	for iter_42_6, iter_42_7 in pairs(var_42_1) do
+		if (var_42_5[iter_42_6] or 0) + iter_42_7.value >= iter_42_7.goal then
+			var_42_4 = var_42_4 + iter_42_7.score
 		end
 	end
 
-	for slot13, slot14 in pairs(slot4) do
-		slot15 = slot14.value + (slot8[slot13] or 0)
-		slot16 = nil
+	for iter_42_8, iter_42_9 in pairs(var_42_2) do
+		local var_42_12 = iter_42_9.value + (var_42_6[iter_42_8] or 0)
+		local var_42_13
 
-		if slot14.op == 1 then
-			slot16 = slot14.goal <= slot15
-		elseif slot14.op == 2 then
-			slot16 = slot15 <= slot14.goal
+		if iter_42_9.op == 1 then
+			var_42_13 = var_42_12 >= iter_42_9.goal
+		elseif iter_42_9.op == 2 then
+			var_42_13 = var_42_12 <= iter_42_9.goal
 		end
 
-		if slot16 then
-			slot6 = slot6 + slot14.score
+		if var_42_13 then
+			var_42_4 = var_42_4 + iter_42_9.score
 		end
 	end
 
-	return slot6, slot7, slot8
+	return var_42_4, var_42_5, var_42_6
 end
 
-function slot0.CalcEffectAddition(slot0, slot1)
-	slot2 = slot0.mission
-	slot3 = GuildMission.CalcMyEffect(slot1)
-	slot4 = getProxy(BayProxy)
+function var_0_0.CalcEffectAddition(arg_44_0, arg_44_1)
+	local var_44_0 = arg_44_0.mission
+	local var_44_1 = GuildMission.CalcMyEffect(arg_44_1)
+	local var_44_2 = getProxy(BayProxy)
 
-	for slot8, slot9 in ipairs(slot1) do
-		slot11 = nil
+	for iter_44_0, iter_44_1 in ipairs(arg_44_1) do
+		local var_44_3 = var_44_2:getShipById(iter_44_1)
+		local var_44_4
 
-		if slot4:getShipById(slot9) then
-			slot11 = _.detect(slot2:getConfig("ship_type_effect"), function (slot0)
-				return slot0[1] == uv0:getShipType()
+		if var_44_3 then
+			var_44_4 = _.detect(var_44_0:getConfig("ship_type_effect"), function(arg_45_0)
+				return arg_45_0[1] == var_44_3:getShipType()
 			end)
 		end
 
-		if slot11 then
-			slot3 = slot3 + slot11[2]
+		if var_44_4 then
+			var_44_1 = var_44_1 + var_44_4[2]
 		end
 	end
 
-	slot7 = 1
+	local var_44_5 = arg_44_0:GetTagShipCnt(arg_44_1)
+	local var_44_6 = var_44_0:GetSquadronTargetCnt()
+	local var_44_7 = 1
 
-	if slot2:GetSquadronTargetCnt() <= slot0:GetTagShipCnt(slot1) and slot2:IsEliteType() then
-		slot7 = slot2:GetSquadronRatio()
+	if var_44_6 <= var_44_5 and var_44_0:IsEliteType() then
+		var_44_7 = var_44_0:GetSquadronRatio()
 	end
 
-	return slot3 * slot7
+	return var_44_1 * var_44_7
 end
 
-function slot0.HasScoreAddition(slot0, slot1)
-	slot2 = slot0.mission
-	slot4 = slot2:GetAttrCntAcc()
-	slot5 = slot2:GetAttrAcc()
+function var_0_0.HasScoreAddition(arg_46_0, arg_46_1)
+	local var_46_0 = arg_46_0.mission
+	local var_46_1 = var_46_0:GetRecommendShipNation()
+	local var_46_2 = var_46_0:GetAttrCntAcc()
+	local var_46_3 = var_46_0:GetAttrAcc()
 
-	return table.contains(slot2:GetRecommendShipNation(), slot1:getNation()) or (function ()
-		slot0 = uv0:getProperties()
-		slot1 = pg.attribute_info_by_type
+	local function var_46_4()
+		local var_47_0 = arg_46_1:getProperties()
+		local var_47_1 = pg.attribute_info_by_type
 
-		for slot5, slot6 in pairs(uv1) do
-			slot7 = slot1[slot5].name
+		for iter_47_0, iter_47_1 in pairs(var_46_2) do
+			local var_47_2 = var_47_1[iter_47_0].name
 
-			assert(slot0[slot7], slot7)
+			assert(var_47_0[var_47_2], var_47_2)
 
-			if slot6.total <= (slot0[slot7] or 0) then
+			if (var_47_0[var_47_2] or 0) >= iter_47_1.total then
 				return true
 			end
 		end
 
-		for slot5, slot6 in pairs(uv2) do
-			slot7 = slot1[slot5].name
+		for iter_47_2, iter_47_3 in pairs(var_46_3) do
+			local var_47_3 = var_47_1[iter_47_2].name
 
-			assert(slot0[slot7], slot7)
+			assert(var_47_0[var_47_3], var_47_3)
 
-			if slot6.op == 1 then
-				return (slot0[slot7] or 0) > 0
-			elseif slot6.op == 2 then
-				return (slot0[slot7] or 0) == 0
+			if iter_47_3.op == 1 then
+				return (var_47_0[var_47_3] or 0) > 0
+			elseif iter_47_3.op == 2 then
+				return (var_47_0[var_47_3] or 0) == 0
 			end
 		end
 
 		return false
-	end)()
-end
-
-function slot0.HasEffectAddition(slot0, slot1)
-	slot2 = slot0.mission
-
-	return table.contains(slot2:GetRecommendShipTypes(), slot1:getShipType()) or slot1:IsTagShip(slot2:GetSquadron())
-end
-
-function slot0.ClearSlots(slot0)
-	for slot4, slot5 in pairs(slot0.shipGos) do
-		tf(slot5).pivot = Vector2(0.5, 0.5)
-
-		GetOrAddComponent(slot5, "EventTriggerListener"):RemovePointClickFunc()
-		slot5:GetComponent(typeof(SpineAnimUI)):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(slot5.name, slot5)
 	end
 
-	slot0.shipGos = {}
+	return table.contains(var_46_1, arg_46_1:getNation()) or var_46_4()
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	slot0:ClearSlots()
+function var_0_0.HasEffectAddition(arg_48_0, arg_48_1)
+	local var_48_0 = arg_48_0.mission
+	local var_48_1 = var_48_0:GetRecommendShipTypes()
+	local var_48_2 = var_48_0:GetSquadron()
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	return table.contains(var_48_1, arg_48_1:getShipType()) or arg_48_1:IsTagShip(var_48_2)
+end
 
-		slot0.timer = nil
+function var_0_0.ClearSlots(arg_49_0)
+	for iter_49_0, iter_49_1 in pairs(arg_49_0.shipGos) do
+		tf(iter_49_1).pivot = Vector2(0.5, 0.5)
+
+		GetOrAddComponent(iter_49_1, "EventTriggerListener"):RemovePointClickFunc()
+		iter_49_1:GetComponent(typeof(SpineAnimUI)):SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnSpineChar(iter_49_1.name, iter_49_1)
+	end
+
+	arg_49_0.shipGos = {}
+end
+
+function var_0_0.Hide(arg_50_0)
+	var_0_0.super.Hide(arg_50_0)
+	arg_50_0:ClearSlots()
+
+	if arg_50_0.timer then
+		arg_50_0.timer:Stop()
+
+		arg_50_0.timer = nil
 	end
 end
 
-return slot0
+return var_0_0

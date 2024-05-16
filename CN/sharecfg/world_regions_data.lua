@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_regions_data = {
 	{
 		maskid = 101,

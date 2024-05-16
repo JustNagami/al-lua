@@ -1,97 +1,101 @@
-slot0 = class("ChallengeProxy", import(".NetProxy"))
-slot0.MODE_CASUAL = 0
-slot0.MODE_INFINITE = 1
+﻿local var_0_0 = class("ChallengeProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0._curMode = uv0.MODE_CASUAL
-	slot0._challengeInfo = nil
-	slot0._userChallengeList = {}
+var_0_0.MODE_CASUAL = 0
+var_0_0.MODE_INFINITE = 1
 
-	slot0:on(24010, function (slot0)
-		uv0:updateCombatScore(slot0.score)
+function var_0_0.register(arg_1_0)
+	arg_1_0._curMode = var_0_0.MODE_CASUAL
+	arg_1_0._challengeInfo = nil
+	arg_1_0._userChallengeList = {}
+
+	arg_1_0:on(24010, function(arg_2_0)
+		arg_1_0:updateCombatScore(arg_2_0.score)
 	end)
 end
 
-function slot0.userSeaonExpire(slot0, slot1)
-	if slot0._challengeInfo:getSeasonID() ~= slot0._userChallengeList[slot1]:getSeasonID() then
+function var_0_0.userSeaonExpire(arg_3_0, arg_3_1)
+	if arg_3_0._challengeInfo:getSeasonID() ~= arg_3_0._userChallengeList[arg_3_1]:getSeasonID() then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.updateCombatScore(slot0, slot1)
-	slot0:getUserChallengeInfo(slot0._curMode):updateCombatScore(slot1)
+function var_0_0.updateCombatScore(arg_4_0, arg_4_1)
+	arg_4_0:getUserChallengeInfo(arg_4_0._curMode):updateCombatScore(arg_4_1)
 end
 
-function slot0.updateSeasonChallenge(slot0, slot1)
-	if not slot0._challengeInfo then
-		slot0._challengeInfo = ChallengeInfo.New(slot1)
+function var_0_0.updateSeasonChallenge(arg_5_0, arg_5_1)
+	if not arg_5_0._challengeInfo then
+		arg_5_0._challengeInfo = ChallengeInfo.New(arg_5_1)
 	else
-		slot0._challengeInfo:UpdateChallengeInfo(slot1)
+		arg_5_0._challengeInfo:UpdateChallengeInfo(arg_5_1)
 	end
 end
 
-function slot0.updateCurrentChallenge(slot0, slot1)
-	if slot0._userChallengeList[slot1.mode] == nil then
-		slot0._userChallengeList[slot2] = UserChallengeInfo.New(slot1)
+function var_0_0.updateCurrentChallenge(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.mode
+	local var_6_1 = arg_6_0._userChallengeList[var_6_0]
+
+	if var_6_1 == nil then
+		arg_6_0._userChallengeList[var_6_0] = UserChallengeInfo.New(arg_6_1)
 	else
-		slot3:UpdateChallengeInfo(slot1)
+		var_6_1:UpdateChallengeInfo(arg_6_1)
 	end
 end
 
-function slot0.GetCurrentChallenge(slot0, slot1)
-	return slot0._userChallengeList
+function var_0_0.GetCurrentChallenge(arg_7_0, arg_7_1)
+	return arg_7_0._userChallengeList
 end
 
-function slot0.getCurMode(slot0)
-	return slot0._curMode
+function var_0_0.getCurMode(arg_8_0)
+	return arg_8_0._curMode
 end
 
-function slot0.setCurMode(slot0, slot1)
-	if slot1 == uv0.MODE_CASUAL then
-		slot0._curMode = uv0.MODE_CASUAL
-	elseif slot1 == uv0.MODE_INFINITE then
-		slot0._curMode = uv0.MODE_INFINITE
+function var_0_0.setCurMode(arg_9_0, arg_9_1)
+	if arg_9_1 == var_0_0.MODE_CASUAL then
+		arg_9_0._curMode = var_0_0.MODE_CASUAL
+	elseif arg_9_1 == var_0_0.MODE_INFINITE then
+		arg_9_0._curMode = var_0_0.MODE_INFINITE
 	else
 		assert(false, "challenge mode undefined")
 	end
 end
 
-function slot0.getChallengeInfo(slot0)
-	return slot0._challengeInfo
+function var_0_0.getChallengeInfo(arg_10_0)
+	return arg_10_0._challengeInfo
 end
 
-function slot0.getUserChallengeInfoList(slot0)
-	return slot0._userChallengeList
+function var_0_0.getUserChallengeInfoList(arg_11_0)
+	return arg_11_0._userChallengeList
 end
 
-function slot0.getUserChallengeInfo(slot0, slot1)
-	return slot0._userChallengeList[slot1]
+function var_0_0.getUserChallengeInfo(arg_12_0, arg_12_1)
+	return arg_12_0._userChallengeList[arg_12_1]
 end
 
-function slot0.WriteBackOnExitBattleResult(slot0, slot1, slot2)
-	slot3 = slot0:getUserChallengeInfo(slot2)
+function var_0_0.WriteBackOnExitBattleResult(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = arg_13_0:getUserChallengeInfo(arg_13_2)
 
-	if slot1 < ys.Battle.BattleConst.BattleScore.S then
-		slot0:sendNotification(GAME.CHALLENGE2_RESET, {
-			mode = slot2
+	if arg_13_1 < ys.Battle.BattleConst.BattleScore.S then
+		arg_13_0:sendNotification(GAME.CHALLENGE2_RESET, {
+			mode = arg_13_2
 		})
 	else
-		slot4 = slot3:IsFinish()
+		local var_13_1 = var_13_0:IsFinish()
 
-		slot3:updateLevelForward()
+		var_13_0:updateLevelForward()
 
-		if slot3:getMode() == ChallengeProxy.MODE_INFINITE and slot4 then
-			slot3:setInfiniteDungeonIDListByLevel()
+		if var_13_0:getMode() == ChallengeProxy.MODE_INFINITE and var_13_1 then
+			var_13_0:setInfiniteDungeonIDListByLevel()
 		end
 	end
 
-	slot4 = slot0:getChallengeInfo()
+	local var_13_2 = arg_13_0:getChallengeInfo()
 
-	if not slot0:userSeaonExpire(slot3:getMode()) then
-		slot4:checkRecord(slot3)
+	if not arg_13_0:userSeaonExpire(var_13_0:getMode()) then
+		var_13_2:checkRecord(var_13_0)
 	end
 end
 
-return slot0
+return var_0_0

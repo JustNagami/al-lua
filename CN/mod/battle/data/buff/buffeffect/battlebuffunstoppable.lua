@@ -1,17 +1,19 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffUnstoppable", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffUnstoppable = slot1
-slot1.__name = "BattleBuffUnstoppable"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffUnstoppable", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffUnstoppable = var_0_1
+var_0_1.__name = "BattleBuffUnstoppable"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.onAttach(slot0, slot1, slot2)
-	slot1:ActiveUnstoppable(true)
+function var_0_1.onAttach(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_1:ActiveUnstoppable(true)
 end
 
-function slot1.onRemove(slot0, slot1, slot2)
-	slot1:ActiveUnstoppable(false)
+function var_0_1.onRemove(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_1:ActiveUnstoppable(false)
 end

@@ -69,7 +69,7 @@ _G.pg.base.equip_data_statistics[3] = {
 _G.pg.base.equip_data_statistics[4] = {
 	type = 4,
 	name = "序章战巡-胡德",
-	speciality = "炮击",
+	speciality = "<[FP]>",
 	tech = 1,
 	rarity = 5,
 	ammo = 5,
@@ -106,7 +106,7 @@ _G.pg.base.equip_data_statistics[4] = {
 _G.pg.base.equip_data_statistics[5] = {
 	type = 4,
 	name = "序章战列-威尔士亲王",
-	speciality = "炮击",
+	speciality = "<[FP]>",
 	tech = 1,
 	rarity = 3,
 	ammo = 5,
@@ -53334,7 +53334,7 @@ _G.pg.base.equip_data_statistics[25000] = {
 		},
 		{
 			4,
-			1402
+			1419
 		},
 		6,
 		10,
@@ -53467,7 +53467,7 @@ _G.pg.base.equip_data_statistics[25020] = {
 		},
 		{
 			4,
-			1403
+			1420
 		},
 		6,
 		10,
@@ -53637,7 +53637,7 @@ _G.pg.base.equip_data_statistics[25040] = {
 		},
 		{
 			4,
-			1404
+			1421
 		},
 		6,
 		10,
@@ -110571,57 +110571,6 @@ _G.pg.base.equip_data_statistics[71012] = {
 	},
 	hidden_skill_id = {}
 }
-_G.pg.base.equip_data_statistics[71016] = {
-	type = 1,
-	name = "全弹发射-部族级I",
-	speciality = "<[NA]>",
-	tech = 1,
-	rarity = 1,
-	ammo = 10,
-	nationality = 0,
-	descrip = "技能弹幕",
-	id = 71016,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	value_1 = "0",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		71016
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		19,
-		20,
-		21
-	},
-	part_sub = {
-		2,
-		3,
-		4,
-		5,
-		8,
-		13,
-		18
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[71017] = {
-	id = 71017,
-	name = "全弹发射-部族级II",
-	base = 71016,
-	weapon_id = {
-		71017
-	},
-	hidden_skill_id = {}
-}
 _G.pg.base.equip_data_statistics[71021] = {
 	type = 1,
 	name = "全弹发射-B级I",
@@ -110670,57 +110619,6 @@ _G.pg.base.equip_data_statistics[71022] = {
 	base = 71021,
 	weapon_id = {
 		71022
-	},
-	hidden_skill_id = {}
-}
-_G.pg.base.equip_data_statistics[71026] = {
-	type = 1,
-	name = "全弹发射-I级I",
-	speciality = "<[NA]>",
-	tech = 1,
-	rarity = 1,
-	ammo = 10,
-	nationality = 0,
-	descrip = "技能弹幕",
-	id = 71026,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	value_1 = "0",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		71026
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		19,
-		20,
-		21
-	},
-	part_sub = {
-		2,
-		3,
-		4,
-		5,
-		8,
-		13,
-		18
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[71027] = {
-	id = 71027,
-	name = "全弹发射-I级II",
-	base = 71026,
-	weapon_id = {
-		71027
 	},
 	hidden_skill_id = {}
 }
@@ -110928,6 +110826,57 @@ _G.pg.base.equip_data_statistics[71062] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[71026] = {
+	type = 1,
+	name = "全弹发射-I级I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 71026,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		71026
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[71027] = {
+	id = 71027,
+	name = "全弹发射-I级II",
+	base = 71026,
+	weapon_id = {
+		71027
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[71071] = {
 	type = 1,
 	name = "全弹发射-J级I",
@@ -111078,6 +111027,57 @@ _G.pg.base.equip_data_statistics[71092] = {
 	base = 71091,
 	weapon_id = {
 		71092
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[71016] = {
+	type = 1,
+	name = "全弹发射-部族级I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 71016,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		71016
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[71017] = {
+	id = 71017,
+	name = "全弹发射-部族级II",
+	base = 71016,
+	weapon_id = {
+		71017
 	},
 	hidden_skill_id = {}
 }
@@ -121251,11 +121251,206 @@ _G.pg.base.equip_data_statistics[80221] = {
 _G.pg.base.equip_data_statistics[80222] = {
 	id = 80222,
 	name = "专属弹幕-吸血鬼METAII",
-	base = 80101,
+	base = 80221,
 	weapon_id = {
 		61612
 	},
 	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80231] = {
+	type = 1,
+	name = "专属弹幕-{namecode:532}I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80231,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170441
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80232] = {
+	id = 80232,
+	name = "专属弹幕-{namecode:532}II",
+	base = 80231,
+	weapon_id = {
+		170442
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80241] = {
+	type = 1,
+	name = "专属弹幕-鲁莽(μ兵装)I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80241,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61621
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80242] = {
+	id = 80242,
+	name = "专属弹幕-鲁莽(μ兵装)II",
+	base = 80241,
+	weapon_id = {
+		61622
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80251] = {
+	type = 1,
+	name = "专属弹幕-能代μI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80251,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170461
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80252] = {
+	id = 80252,
+	name = "专属弹幕-能代μII",
+	base = 80251,
+	weapon_id = {
+		170462
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80253] = {
+	type = 5,
+	name = "专属弹幕-能代μ鱼雷",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80253,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170463
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
 }
 _G.pg.base.equip_data_statistics[85000] = {
 	tech = 1,
@@ -129668,6 +129863,365 @@ _G.pg.base.equip_data_statistics[89733] = {
 	base = 89720,
 	id = 89733,
 	value_1 = "29",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89740] = {
+	type = 10,
+	name = "μ兵装三期LIVE纪念票",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 15,
+	ammo = 10,
+	nationality = 0,
+	descrip = "说明未填写",
+	rarity = 5,
+	attribute_1 = "antiaircraft",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 89740,
+	icon = "89740",
+	value_1 = "14",
+	attribute_2 = "hit",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60560
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89741] = {
+	id = 89741,
+	value_2 = 16,
+	value_1 = "16",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89742] = {
+	id = 89742,
+	value_2 = 17,
+	value_1 = "18",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89743] = {
+	id = 89743,
+	value_2 = 18,
+	value_1 = "20",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89744] = {
+	id = 89744,
+	value_2 = 19,
+	value_1 = "22",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89745] = {
+	id = 89745,
+	value_2 = 20,
+	value_1 = "24",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89746] = {
+	id = 89746,
+	value_2 = 22,
+	value_1 = "26",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89747] = {
+	id = 89747,
+	value_2 = 24,
+	value_1 = "28",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89748] = {
+	id = 89748,
+	value_2 = 26,
+	value_1 = "30",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89749] = {
+	id = 89749,
+	value_2 = 28,
+	value_1 = "32",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89750] = {
+	id = 89750,
+	value_2 = 30,
+	value_1 = "35",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89751] = {
+	value_2 = 32,
+	anti_siren = 100,
+	base = 89740,
+	id = 89751,
+	value_1 = "38",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89752] = {
+	value_2 = 34,
+	anti_siren = 200,
+	base = 89740,
+	id = 89752,
+	value_1 = "41",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89753] = {
+	value_2 = 36,
+	anti_siren = 300,
+	base = 89740,
+	id = 89753,
+	value_1 = "44",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89760] = {
+	type = 10,
+	name = "「Alizarin」应援毛巾",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "以「Alizarin」的主题色设计，无论是现场应援，还是日常使用，都十分合适哦！",
+	nationality = 0,
+	rarity = 5,
+	id = 89760,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "89760",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60570
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89761] = {
+	id = 89761,
+	value_1 = "280",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89762] = {
+	id = 89762,
+	value_1 = "310",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89763] = {
+	id = 89763,
+	value_1 = "340",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89764] = {
+	id = 89764,
+	value_1 = "370",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89765] = {
+	id = 89765,
+	value_1 = "400",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89766] = {
+	id = 89766,
+	value_1 = "430",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89767] = {
+	id = 89767,
+	value_1 = "460",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89768] = {
+	id = 89768,
+	value_1 = "490",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89769] = {
+	id = 89769,
+	value_1 = "520",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89770] = {
+	id = 89770,
+	value_1 = "550",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89771] = {
+	id = 89771,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89772] = {
+	id = 89772,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89773] = {
+	id = 89773,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89780] = {
+	type = 10,
+	name = "「Cyanidin」应援毛巾",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "以「Cyanidin」的主题色设计，无论是现场应援，还是日常使用，都十分合适哦",
+	nationality = 0,
+	rarity = 5,
+	id = 89780,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "89780",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60580
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89781] = {
+	id = 89781,
+	value_1 = "280",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89782] = {
+	id = 89782,
+	value_1 = "310",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89783] = {
+	id = 89783,
+	value_1 = "340",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89784] = {
+	id = 89784,
+	value_1 = "370",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89785] = {
+	id = 89785,
+	value_1 = "400",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89786] = {
+	id = 89786,
+	value_1 = "430",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89787] = {
+	id = 89787,
+	value_1 = "460",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89788] = {
+	id = 89788,
+	value_1 = "490",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89789] = {
+	id = 89789,
+	value_1 = "520",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89790] = {
+	id = 89790,
+	value_1 = "550",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89791] = {
+	id = 89791,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89792] = {
+	id = 89792,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89793] = {
+	id = 89793,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 89780,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[90000] = {
@@ -143555,6 +144109,112 @@ _G.pg.base.equip_data_statistics[150293] = {
 	base = 150280,
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[150300] = {
+	type = 10,
+	name = "被定格的彼岸花",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "一朵彼岸花，被定格在了最美的瞬间。艳丽、张扬、有毒。",
+	nationality = 3,
+	rarity = 4,
+	id = 150300,
+	value_3 = 0,
+	attribute_1 = "air",
+	icon = "150300",
+	value_1 = "28",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60550
+	},
+	hidden_skill_id = {},
+	part_main = {
+		7
+	},
+	part_sub = {
+		7
+	},
+	equip_parameters = {},
+	label = {
+		"IJN",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150301] = {
+	id = 150301,
+	value_1 = "32",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150302] = {
+	id = 150302,
+	value_1 = "36",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150303] = {
+	id = 150303,
+	value_1 = "40",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150304] = {
+	id = 150304,
+	value_1 = "44",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150305] = {
+	id = 150305,
+	value_1 = "49",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150306] = {
+	id = 150306,
+	value_1 = "53",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150307] = {
+	id = 150307,
+	value_1 = "57",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150308] = {
+	id = 150308,
+	value_1 = "61",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150309] = {
+	id = 150309,
+	value_1 = "65",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150310] = {
+	id = 150310,
+	value_1 = "70",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150311] = {
+	id = 150311,
+	anti_siren = 100,
+	value_1 = "75",
+	base = 150300,
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	type = 1,
 	name = "专属弹幕-古比雪夫I",
@@ -145251,6 +145911,113 @@ _G.pg.base.equip_data_statistics[630062] = {
 	equip_parameters = {},
 	label = {}
 }
+_G.pg.base.equip_data_statistics[630071] = {
+	type = 2,
+	name = "【愚人节活动2024】金布里机甲 钻头导弹",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 630071,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		630071
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[630073] = {
+	type = 5,
+	name = "【愚人节活动2024】金布里机甲 鱼雷触发器",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 630073,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		630073
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
 _G.pg.base.equip_data_statistics[630221] = {
 	type = 4,
 	name = "【2022异世界勇者】拉菲-兔兔火球主炮",
@@ -145758,6 +146525,814 @@ _G.pg.base.equip_data_statistics[650604] = {
 		"MG",
 		"HE"
 	}
+}
+_G.pg.base.equip_data_statistics[841050] = {
+	type = 10,
+	name = "空武器",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 841050,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139701] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】抚顺 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139701,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139701
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139702] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】抚顺 鱼雷剑气",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139702,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139702
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[841051] = {
+	type = 5,
+	name = "空武器（鱼雷触发器）",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 841051,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		841051
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139703] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】利物浦 小天使飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139703,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139703
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139706] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】独角兽 独角兽飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139706,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139706
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139709] = {
+	type = 4,
+	name = "【2024异世界冒险 剧情】努比亚人 药剂投掷",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139709,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139709
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139710] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】鲁莽 主炮火球",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139710,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139710
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139711] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】鲁莽 鱼雷陨石",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139711,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139711
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139712] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】倔强 主炮冰晶",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139712,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139712
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139713] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】倔强 鱼雷冰爆",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139713,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139713
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139716] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】阿尔及利亚 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139716,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139716
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139717] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】阿尔及利亚 鱼雷剑气",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139717,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139717
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139718] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】不屈 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139718,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139718
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139719] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】不屈 鱼雷骑枪",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139719,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139719
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139720] = {
+	type = 4,
+	name = "【2024异世界冒险 剧情】前卫 金色炮弹",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139720,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139720
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139722] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】圣女贞德 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139722,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139722
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139723] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】圣女贞德 鱼雷光弹",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139723,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139723
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139724] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】霞飞 飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139724,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139724
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139728] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】腓特烈·卡尔 激光",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139728,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139728
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
 }
 _G.pg.base.equip_data_statistics[800000] = {
 	base = 100000,
@@ -146737,78 +148312,6 @@ _G.pg.base.equip_data_statistics[820860] = {
 		"TB"
 	}
 }
-_G.pg.base.equip_data_statistics[841050] = {
-	type = 10,
-	name = "空武器",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 841050,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
 _G.pg.base.equip_data_statistics[892914] = {
 	id = 892914,
 	name = "【2022公海舰队剧情用】穿甲战列主炮",
@@ -147491,668 +148994,4 @@ _G.pg.base.equip_data_statistics[960022] = {
 		"CV",
 		"DB"
 	}
-}
-_G.pg.base.equip_data_statistics[3139701] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】抚顺 主炮弹幕",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139701,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139701
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139702] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】抚顺 鱼雷剑气",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139702,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139702
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139703] = {
-	type = 7,
-	name = "【2024异世界冒险 剧情】利物浦 小天使飞机",
-	speciality = "<[BOMB]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139703,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139703
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		6,
-		7
-	},
-	part_sub = {
-		6,
-		7
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139706] = {
-	type = 7,
-	name = "【2024异世界冒险 剧情】独角兽 独角兽飞机",
-	speciality = "<[BOMB]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139706,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139706
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		6,
-		7
-	},
-	part_sub = {
-		6,
-		7
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139709] = {
-	type = 4,
-	name = "【2024异世界冒险 剧情】努比亚人 药剂投掷",
-	speciality = "<[VOL]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139709,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139709
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		4,
-		5,
-		10,
-		13
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139710] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】鲁莽 主炮火球",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139710,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139710
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139711] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】鲁莽 鱼雷陨石",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139711,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139711
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139712] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】倔强 主炮冰晶",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139712,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139712
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139713] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】倔强 鱼雷冰爆",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139713,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139713
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139716] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】阿尔及利亚 主炮弹幕",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139716,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139716
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139717] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】阿尔及利亚 鱼雷剑气",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139717,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139717
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139718] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】不屈 主炮弹幕",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139718,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139718
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139719] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】不屈 鱼雷骑枪",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139719,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139719
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139720] = {
-	type = 4,
-	name = "【2024异世界冒险 剧情】前卫 金色炮弹",
-	speciality = "<[VOL]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139720,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139720
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		4,
-		5,
-		10,
-		13
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139722] = {
-	type = 2,
-	name = "【2024异世界冒险 剧情】圣女贞德 主炮弹幕",
-	speciality = "<[LOCK]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 2,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139722,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {
-		3
-	},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139722
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		5
-	},
-	part_sub = {},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139723] = {
-	type = 5,
-	name = "【2024异世界冒险 剧情】圣女贞德 鱼雷光弹",
-	speciality = "<[TRP]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139723,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139723
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	part_sub = {
-		1,
-		2,
-		3,
-		18,
-		20,
-		21
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139724] = {
-	type = 7,
-	name = "【2024异世界冒险 剧情】霞飞 飞机",
-	speciality = "<[BOMB]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139724,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139724
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		6,
-		7
-	},
-	part_sub = {
-		6,
-		7
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[3139728] = {
-	type = 7,
-	name = "【2024异世界冒险 剧情】腓特烈·卡尔 激光",
-	speciality = "<[BOMB]>",
-	tech = 3,
-	rarity = 5,
-	ammo = 5,
-	nationality = 0,
-	descrip = "说明未填写",
-	id = 3139728,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		3139728
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		6,
-		7
-	},
-	part_sub = {
-		6,
-		7
-	},
-	equip_parameters = {},
-	label = {}
 }

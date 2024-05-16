@@ -1,235 +1,231 @@
-slot0 = class("OreMiniGameController")
+﻿local var_0_0 = class("OreMiniGameController")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.binder = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.binder = arg_1_1
 
-	slot0:InitTimer()
-	slot0:InitGameUI(slot2)
-	slot0:InitControl()
-	slot0:AddListener()
+	arg_1_0:InitTimer()
+	arg_1_0:InitGameUI(arg_1_2)
+	arg_1_0:InitControl()
+	arg_1_0:AddListener()
 end
 
-function slot1(slot0, slot1)
-	for slot6 = 0, slot0:GetComponentsInChildren(typeof(Animator), true).Length - 1 do
-		slot2[slot6].speed = slot1
+local function var_0_1(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_0:GetComponentsInChildren(typeof(Animator), true)
+
+	for iter_2_0 = 0, var_2_0.Length - 1 do
+		var_2_0[iter_2_0].speed = arg_2_1
 	end
 end
 
-function slot0.InitTimer(slot0)
-	slot0.timer = Timer.New(function ()
-		uv0:OnTimer(OreGameConfig.TIME_INTERVAL)
+function var_0_0.InitTimer(arg_3_0)
+	arg_3_0.timer = Timer.New(function()
+		arg_3_0:OnTimer(OreGameConfig.TIME_INTERVAL)
 	end, OreGameConfig.TIME_INTERVAL, -1)
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	if not arg_3_0.handle then
+		arg_3_0.handle = UpdateBeat:CreateListener(arg_3_0.Update, arg_3_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_3_0.handle)
 end
 
-function slot0.Update(slot0)
-	slot0:AddDebugInput()
+function var_0_0.Update(arg_5_0)
+	arg_5_0:AddDebugInput()
 end
 
-function slot0.AddDebugInput(slot0)
+function var_0_0.AddDebugInput(arg_6_0)
 	if IsUnityEditor and Input.GetKeyDown(KeyCode.Space) then
-		slot0:OnCarryBtnClick()
+		arg_6_0:OnCarryBtnClick()
 	end
 end
 
-function slot0.InitGameUI(slot0, slot1)
-	slot0.uiMgr = pg.UIMgr.GetInstance()
-	slot0.rtViewport = slot1:Find("Viewport")
-	slot2 = slot0.rtViewport
-	slot0.rtCharacter = slot2:Find("MainContent/character")
-	slot2 = slot0.rtViewport
-	slot0.bgManjuu = slot2:Find("MainContent/bg_back/Manjuu_SW")
-	slot0.rtController = slot1:Find("Controller")
-	slot0.rtTop = slot1:Find("Controller/top")
-	slot2 = slot0.rtTop
-	slot0.TimeTextM = slot2:Find("title/TIME/Text_M")
-	slot2 = slot0.rtTop
-	slot0.TimeTextS = slot2:Find("title/TIME/Text_S")
-	slot2 = slot0.rtTop
-	slot0.pointText = slot2:Find("title/SCORE/Text")
-	slot0.rtBottom = slot1:Find("Controller/bottom")
-	slot2 = slot0.rtBottom
-	slot0.rtPointer = slot2:Find("capacity/pointer")
-	slot2 = slot0.rtBottom
-	slot0.rtJoyStick = slot2:Find("handle_stick")
-	slot4 = slot0.rtBottom
+function var_0_0.InitGameUI(arg_7_0, arg_7_1)
+	arg_7_0.uiMgr = pg.UIMgr.GetInstance()
+	arg_7_0.rtViewport = arg_7_1:Find("Viewport")
+	arg_7_0.rtCharacter = arg_7_0.rtViewport:Find("MainContent/character")
+	arg_7_0.bgManjuu = arg_7_0.rtViewport:Find("MainContent/bg_back/Manjuu_SW")
+	arg_7_0.rtController = arg_7_1:Find("Controller")
+	arg_7_0.rtTop = arg_7_1:Find("Controller/top")
+	arg_7_0.TimeTextM = arg_7_0.rtTop:Find("title/TIME/Text_M")
+	arg_7_0.TimeTextS = arg_7_0.rtTop:Find("title/TIME/Text_S")
+	arg_7_0.pointText = arg_7_0.rtTop:Find("title/SCORE/Text")
+	arg_7_0.rtBottom = arg_7_1:Find("Controller/bottom")
+	arg_7_0.rtPointer = arg_7_0.rtBottom:Find("capacity/pointer")
+	arg_7_0.rtJoyStick = arg_7_0.rtBottom:Find("handle_stick")
 
-	onButton(slot0.binder, slot4:Find("btn_carry"), function ()
-		uv0:OnCarryBtnClick()
+	onButton(arg_7_0.binder, arg_7_0.rtBottom:Find("btn_carry"), function()
+		arg_7_0:OnCarryBtnClick()
 	end)
 end
 
-function slot0.InitControl(slot0)
-	slot0.collisionMgr = OreCollisionMgr.New(slot0.binder)
-	slot0.akashiControl = OreAkashiControl.New(slot0.binder, slot0.rtCharacter:Find("Akashi"), slot0.collisionMgr)
-	slot0.enemiesControl = OreEnemiesControl.New(slot0.binder, slot0.rtCharacter:Find("Enemies"), slot0.collisionMgr)
-	slot0.minersControl = OreMinersControl.New(slot0.binder, slot0.rtCharacter:Find("Miners"), slot0.collisionMgr)
-	slot0.oreGroupControl = OreGroupControl.New(slot0.binder, slot0.rtViewport:Find("MainContent/ore_group"), slot0.collisionMgr)
-	slot0.containerControl = OreContainerControl.New(slot0.binder, slot0.rtViewport:Find("MainContent/container"))
+function var_0_0.InitControl(arg_9_0)
+	arg_9_0.collisionMgr = OreCollisionMgr.New(arg_9_0.binder)
+	arg_9_0.akashiControl = OreAkashiControl.New(arg_9_0.binder, arg_9_0.rtCharacter:Find("Akashi"), arg_9_0.collisionMgr)
+	arg_9_0.enemiesControl = OreEnemiesControl.New(arg_9_0.binder, arg_9_0.rtCharacter:Find("Enemies"), arg_9_0.collisionMgr)
+	arg_9_0.minersControl = OreMinersControl.New(arg_9_0.binder, arg_9_0.rtCharacter:Find("Miners"), arg_9_0.collisionMgr)
+	arg_9_0.oreGroupControl = OreGroupControl.New(arg_9_0.binder, arg_9_0.rtViewport:Find("MainContent/ore_group"), arg_9_0.collisionMgr)
+	arg_9_0.containerControl = OreContainerControl.New(arg_9_0.binder, arg_9_0.rtViewport:Find("MainContent/container"))
 end
 
-function slot0.AddListener(slot0)
-	slot1 = slot0.binder
+function var_0_0.AddListener(arg_10_0)
+	arg_10_0.binder:bind(OreGameConfig.EVENT_DO_CARRY, function(arg_11_0, arg_11_1)
+		arg_10_0.weight = arg_10_0.weight + arg_11_1.weight
 
-	slot1:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
-		uv0.weight = uv0.weight + slot1.weight
-
-		uv0:UpdateWeightUI()
+		arg_10_0:UpdateWeightUI()
 	end)
+	arg_10_0.binder:bind(OreGameConfig.EVENT_DELIVER, function(arg_12_0, arg_12_1)
+		arg_10_0.point = arg_10_0.point + arg_12_1.point
+		arg_10_0.weight = 0
 
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
-		uv0.point = uv0.point + slot1.point
-		uv0.weight = 0
-
-		uv0:UpdatePointUI()
-		uv0:UpdateWeightUI()
-		uv0.bgManjuu:GetComponent(typeof(Animator)):Play("Happy")
+		arg_10_0:UpdatePointUI()
+		arg_10_0:UpdateWeightUI()
+		arg_10_0.bgManjuu:GetComponent(typeof(Animator)):Play("Happy")
 	end)
+	arg_10_0.binder:bind(OreGameConfig.EVENT_AKASHI_HIT, function(arg_13_0, arg_13_1)
+		arg_10_0.weight = 0
 
-	slot1 = slot0.binder
-
-	slot1:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
-		uv0.weight = 0
-
-		uv0:UpdateWeightUI()
-		uv0.bgManjuu:GetComponent(typeof(Animator)):Play("Shock")
+		arg_10_0:UpdateWeightUI()
+		arg_10_0.bgManjuu:GetComponent(typeof(Animator)):Play("Shock")
 	end)
 end
 
-function slot0.OnCarryBtnClick(slot0)
-	slot0.binder:emit(OreGameConfig.EVENT_CHECK_CARRY, {
-		weight = slot0.weight
+function var_0_0.OnCarryBtnClick(arg_14_0)
+	arg_14_0.binder:emit(OreGameConfig.EVENT_CHECK_CARRY, {
+		weight = arg_14_0.weight
 	})
 end
 
-function slot0.UpdateTimeUI(slot0)
-	if slot0.timeCount < 60 then
-		setText(slot0.TimeTextM, "00")
+function var_0_0.UpdateTimeUI(arg_15_0)
+	if arg_15_0.timeCount < 60 then
+		setText(arg_15_0.TimeTextM, "00")
 	else
-		setText(slot0.TimeTextM, string.format("%02d", slot0.timeCount / 60))
+		setText(arg_15_0.TimeTextM, string.format("%02d", arg_15_0.timeCount / 60))
 	end
 
-	setText(slot0.TimeTextS, string.format("%02d", slot0.timeCount % 60))
+	setText(arg_15_0.TimeTextS, string.format("%02d", arg_15_0.timeCount % 60))
 end
 
-function slot0.UpdateWeightUI(slot0)
-	slot1 = 90
+function var_0_0.UpdateWeightUI(arg_16_0)
+	local var_16_0 = 90
 
-	if slot0.weight == 0 then
-		setLocalEulerAngles(slot0.rtPointer, Vector3(0, 0, 90))
+	if arg_16_0.weight == 0 then
+		setLocalEulerAngles(arg_16_0.rtPointer, Vector3(0, 0, 90))
 
 		return
 	end
 
-	if slot0.weight == OreGameConfig.MAX_WEIGHT then
-		setLocalEulerAngles(slot0.rtPointer, Vector3(0, 0, -90))
+	if arg_16_0.weight == OreGameConfig.MAX_WEIGHT then
+		setLocalEulerAngles(arg_16_0.rtPointer, Vector3(0, 0, -90))
 
 		return
 	end
 
-	setLocalEulerAngles(slot0.rtPointer, Vector3(0, 0, slot0.weight <= OreGameConfig.CAPACITY.WOOD_BOX and 90 - slot0.weight * 40 / slot2.WOOD_BOX or slot0.weight <= slot2.IRON_BOX and 37 - (slot0.weight - slot2.WOOD_BOX) * 60 / (slot2.IRON_BOX - slot2.WOOD_BOX) or -37 - (slot0.weight - slot2.IRON_BOX) * 40 / (slot2.CART - slot2.IRON_BOX)))
-end
+	local var_16_1 = OreGameConfig.CAPACITY
 
-function slot0.UpdatePointUI(slot0)
-	setText(slot0.pointText, slot0.point)
-end
-
-function slot0.ResetGame(slot0)
-	slot0.timeCount = OreGameConfig.PLAY_TIME
-	slot0.point = 0
-	slot0.weight = 0
-
-	slot0.akashiControl:Reset()
-	slot0.minersControl:Reset()
-	slot0.oreGroupControl:Reset()
-	slot0.collisionMgr:Reset()
-	slot0.enemiesControl:Reset()
-	slot0.containerControl:Reset()
-	slot0:UpdatePointUI()
-	slot0:UpdateWeightUI()
-	slot0:UpdateTimeUI()
-end
-
-function slot0.StartGame(slot0)
-	slot0.isStart = true
-
-	slot0:ResetGame()
-	slot0:StartTimer()
-end
-
-function slot0.EndGame(slot0)
-	slot0.isStart = false
-
-	slot0:PauseGame()
-	slot0.binder:openUI("result")
-end
-
-function slot0.StartTimer(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
-		slot0.uiMgr:AttachStickOb(slot0.rtJoyStick)
+	if arg_16_0.weight <= var_16_1.WOOD_BOX then
+		var_16_0 = 90 - arg_16_0.weight * 40 / var_16_1.WOOD_BOX
+	elseif arg_16_0.weight <= var_16_1.IRON_BOX then
+		var_16_0 = 37 - (arg_16_0.weight - var_16_1.WOOD_BOX) * 60 / (var_16_1.IRON_BOX - var_16_1.WOOD_BOX)
+	else
+		var_16_0 = -37 - (arg_16_0.weight - var_16_1.IRON_BOX) * 40 / (var_16_1.CART - var_16_1.IRON_BOX)
 	end
 
-	uv0(slot0.rtViewport, 1)
+	setLocalEulerAngles(arg_16_0.rtPointer, Vector3(0, 0, var_16_0))
 end
 
-function slot0.StopTimer(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
-		slot0.uiMgr:ClearStick()
+function var_0_0.UpdatePointUI(arg_17_0)
+	setText(arg_17_0.pointText, arg_17_0.point)
+end
+
+function var_0_0.ResetGame(arg_18_0)
+	arg_18_0.timeCount = OreGameConfig.PLAY_TIME
+	arg_18_0.point = 0
+	arg_18_0.weight = 0
+
+	arg_18_0.akashiControl:Reset()
+	arg_18_0.minersControl:Reset()
+	arg_18_0.oreGroupControl:Reset()
+	arg_18_0.collisionMgr:Reset()
+	arg_18_0.enemiesControl:Reset()
+	arg_18_0.containerControl:Reset()
+	arg_18_0:UpdatePointUI()
+	arg_18_0:UpdateWeightUI()
+	arg_18_0:UpdateTimeUI()
+end
+
+function var_0_0.StartGame(arg_19_0)
+	arg_19_0.isStart = true
+
+	arg_19_0:ResetGame()
+	arg_19_0:StartTimer()
+end
+
+function var_0_0.EndGame(arg_20_0)
+	arg_20_0.isStart = false
+
+	arg_20_0:PauseGame()
+	arg_20_0.binder:openUI("result")
+end
+
+function var_0_0.StartTimer(arg_21_0)
+	if not arg_21_0.timer.running then
+		arg_21_0.timer:Start()
+		arg_21_0.uiMgr:AttachStickOb(arg_21_0.rtJoyStick)
 	end
 
-	uv0(slot0.rtViewport, 0)
+	var_0_1(arg_21_0.rtViewport, 1)
 end
 
-function slot0.PauseGame(slot0)
-	slot0.isPause = true
-
-	slot0:StopTimer()
-end
-
-function slot0.ResumeGame(slot0)
-	slot0.isPause = false
-
-	slot0:StartTimer()
-end
-
-function slot0.OnTimer(slot0, slot1)
-	slot0.timeCount = slot0.timeCount - slot1
-
-	slot0:UpdateTimeUI()
-
-	if slot0.timeCount <= 0 then
-		slot0:EndGame()
+function var_0_0.StopTimer(arg_22_0)
+	if arg_22_0.timer.running then
+		arg_22_0.timer:Stop()
+		arg_22_0.uiMgr:ClearStick()
 	end
 
-	slot0.akashiControl:OnTimer(slot1)
-	slot0.minersControl:OnTimer(slot1)
-	slot0.oreGroupControl:OnTimer(slot1)
-	slot0.collisionMgr:OnTimer(slot1)
-	slot0.enemiesControl:OnTimer(slot1)
-	slot0.containerControl:OnTimer(slot1)
+	var_0_1(arg_22_0.rtViewport, 0)
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.PauseGame(arg_23_0)
+	arg_23_0.isPause = true
+
+	arg_23_0:StopTimer()
+end
+
+function var_0_0.ResumeGame(arg_24_0)
+	arg_24_0.isPause = false
+
+	arg_24_0:StartTimer()
+end
+
+function var_0_0.OnTimer(arg_25_0, arg_25_1)
+	arg_25_0.timeCount = arg_25_0.timeCount - arg_25_1
+
+	arg_25_0:UpdateTimeUI()
+
+	if arg_25_0.timeCount <= 0 then
+		arg_25_0:EndGame()
 	end
 
-	if slot0.timer.running then
-		slot0.timer:Stop()
+	arg_25_0.akashiControl:OnTimer(arg_25_1)
+	arg_25_0.minersControl:OnTimer(arg_25_1)
+	arg_25_0.oreGroupControl:OnTimer(arg_25_1)
+	arg_25_0.collisionMgr:OnTimer(arg_25_1)
+	arg_25_0.enemiesControl:OnTimer(arg_25_1)
+	arg_25_0.containerControl:OnTimer(arg_25_1)
+end
 
-		slot0.timer = nil
+function var_0_0.willExit(arg_26_0)
+	if arg_26_0.handle then
+		UpdateBeat:RemoveListener(arg_26_0.handle)
+	end
 
-		slot0.uiMgr:ClearStick()
+	if arg_26_0.timer.running then
+		arg_26_0.timer:Stop()
+
+		arg_26_0.timer = nil
+
+		arg_26_0.uiMgr:ClearStick()
 	end
 end
 
-return slot0
+return var_0_0

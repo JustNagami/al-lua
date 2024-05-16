@@ -1,28 +1,27 @@
-slot0 = class("StoryPerformPlayer", import(".BasePerformPlayer"))
+﻿local var_0_0 = class("StoryPerformPlayer", import(".BasePerformPlayer"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.noDrawGraphicCom = slot0._tf.parent:GetComponent("NoDrawingGraphic")
+	arg_1_0.noDrawGraphicCom = arg_1_0._tf.parent:GetComponent("NoDrawingGraphic")
 end
 
-function slot0.Play(slot0, slot1, slot2)
-	slot0:Show()
+function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0:Show()
 
-	slot0.noDrawGraphicCom.enabled = false
-	slot3 = pg.NewStoryMgr.GetInstance()
+	arg_2_0.noDrawGraphicCom.enabled = false
 
-	slot3:Play(slot1.param or "", function ()
-		uv0.noDrawGraphicCom.enabled = true
+	pg.NewStoryMgr.GetInstance():Play(arg_2_1.param or "", function()
+		arg_2_0.noDrawGraphicCom.enabled = true
 
-		if uv1 then
-			uv1()
+		if arg_2_2 then
+			arg_2_2()
 		end
 	end, true)
 end
 
-function slot0.Clear(slot0)
-	slot0:Hide()
+function var_0_0.Clear(arg_4_0)
+	arg_4_0:Hide()
 end
 
-return slot0
+return var_0_0

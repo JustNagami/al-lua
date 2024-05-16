@@ -1,4 +1,50 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160201
+			}
+		},
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillEditFleetAttr",
+			arg_list = {
+				value = -10,
+				attr = "ReisalinAP"
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 109052
+			}
+		},
+		{
+			type = "BattleSkillEditTag",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				tag = "APSkillBoost",
+				operation = -1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -405,51 +451,5 @@ return {
 	painting = 1,
 	id = 109050,
 	picture = "0",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160201
-			}
-		},
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillEditFleetAttr",
-			arg_list = {
-				value = -10,
-				attr = "ReisalinAP"
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 109052
-			}
-		},
-		{
-			type = "BattleSkillEditTag",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				tag = "APSkillBoost",
-				operation = -1
-			}
-		}
-	}
+	desc = ""
 }

@@ -1,263 +1,304 @@
-slot0 = class("ChatProxy", import(".NetProxy"))
-slot0.NEW_MSG = "ChatProxy public msg"
+﻿local var_0_0 = class("ChatProxy", import(".NetProxy"))
 
-function slot0.InjectPublic(slot0, slot1, slot2)
-	if slot1.id == 0 then
-		slot0.text = slot1.args[1] and slot1.args[1].string or ""
+var_0_0.NEW_MSG = "ChatProxy public msg"
+
+function var_0_0.InjectPublic(arg_1_0, arg_1_1, arg_1_2)
+	if arg_1_1.id == 0 then
+		arg_1_0.text = arg_1_1.args[1] and arg_1_1.args[1].string or ""
 
 		return
 	end
 
-	slot3 = i18n("ad_" .. slot1.id)
+	local var_1_0 = i18n("ad_" .. arg_1_1.id)
 
-	for slot7 = 1, #slot1.args do
-		slot9 = nil
+	for iter_1_0 = 1, #arg_1_1.args do
+		local var_1_1 = arg_1_1.args[iter_1_0]
+		local var_1_2
 
-		if slot1.args[slot7].type == PublicArg.TypePlayerName then
-			slot9 = slot8.string
-		elseif slot8.type == PublicArg.TypeShipId then
-			slot10 = pg.ship_data_statistics[slot8.int]
+		if var_1_1.type == PublicArg.TypePlayerName then
+			var_1_2 = var_1_1.string
+		elseif var_1_1.type == PublicArg.TypeShipId then
+			local var_1_3 = pg.ship_data_statistics[var_1_1.int]
+			local var_1_4 = "shiptype" .. iter_1_0
+			local var_1_5 = GetSpriteFromAtlas("shiptype", shipType2print(var_1_3.type))
 
-			slot0:AddSprite("shiptype" .. slot7, GetSpriteFromAtlas("shiptype", shipType2print(slot10.type)))
+			arg_1_0:AddSprite(var_1_4, var_1_5)
 
-			slot3 = string.gsub(slot3, "shipcolor" .. slot7, ShipRarity.Rarity2HexColor(slot10.rarity))
-			slot9 = slot10.name
+			local var_1_6 = "shipcolor" .. iter_1_0
 
-			if slot2 then
-				slot14 = false
+			var_1_0 = string.gsub(var_1_0, var_1_6, ItemRarity.Rarity2HexColor(var_1_3.rarity - 1))
+			var_1_2 = var_1_3.name
+
+			if arg_1_2 then
+				local var_1_7 = false
 
 				if PLATFORM_CODE == PLATFORM_JP then
-					slot14, slot9 = contentWrap(slot9, 18, 1.65)
+					var_1_7, var_1_2 = contentWrap(var_1_2, 18, 1.65)
 				end
 
-				if slot14 then
-					slot9 = slot9 .. "..." or slot9
+				if var_1_7 then
+					var_1_2 = var_1_2 .. "..." or var_1_2
 				end
 			end
+		elseif var_1_1.type == PublicArg.TypeEquipId then
+			var_1_2 = pg.equip_data_statistics[var_1_1.int].name
+		elseif var_1_1.type == PublicArg.TypeItemId then
+			var_1_2 = Item.getConfigData(var_1_1.int).name
+		elseif var_1_1.type == PublicArg.TypeNums then
+			var_1_2 = var_1_1.int
+		elseif var_1_1.type == PublicArg.TypeWorldBoss then
+			var_1_2 = var_1_1.string
 		else
-			slot9 = (slot8.type ~= PublicArg.TypeEquipId or pg.equip_data_statistics[slot8.int].name) and (slot8.type ~= PublicArg.TypeItemId or Item.getConfigData(slot8.int).name) and (slot8.type ~= PublicArg.TypeNums or slot8.int) and (slot8.type ~= PublicArg.TypeWorldBoss or slot8.string) and slot8.string
+			var_1_2 = var_1_1.string
 		end
 
-		slot3 = string.gsub(slot3, "$" .. slot7, slot9)
+		var_1_0 = string.gsub(var_1_0, "$" .. iter_1_0, var_1_2)
 	end
 
-	slot0.text = slot3
+	arg_1_0.text = var_1_0
 end
 
-function slot0.register(slot0)
-	slot0:on(50101, function (slot0)
-		if slot0.type == ChatConst.CODE_BANED then
-			pg.TipsMgr.GetInstance():ShowTips(slot0.content)
-		elseif slot0.type == ChatConst.CODE_ACTOBSS_MSG_WORD then
-			slot1 = {
-				name = slot0.player.name,
-				score = slot0.content
+function var_0_0.register(arg_2_0)
+	arg_2_0:on(50101, function(arg_3_0)
+		if arg_3_0.type == ChatConst.CODE_BANED then
+			pg.TipsMgr.GetInstance():ShowTips(arg_3_0.content)
+		elseif arg_3_0.type == ChatConst.CODE_ACTOBSS_MSG_WORD then
+			local var_3_0 = {
+				name = arg_3_0.player.name,
+				score = arg_3_0.content
 			}
 
-			uv0:sendNotification(GAME.ACTIVITY_BOSS_MSG_ADDED, slot1)
-			table.insert(uv0.actBossMsg, slot1)
+			arg_2_0:sendNotification(GAME.ACTIVITY_BOSS_MSG_ADDED, var_3_0)
+			table.insert(arg_2_0.actBossMsg, var_3_0)
 
-			if #uv0.actBossMsg > 6 then
-				table.remove(uv0.actBossMsg, 1)
+			if #arg_2_0.actBossMsg > 6 then
+				table.remove(arg_2_0.actBossMsg, 1)
 			end
 		else
-			slot1, slot2 = wordVer(slot0.content, {
+			local var_3_1, var_3_2 = wordVer(arg_3_0.content, {
 				isReplace = true
 			})
+			local var_3_3
 
-			string.gsub(slot2, ChatConst.EmojiCodeMatch, function (slot0)
-				uv0 = tonumber(slot0)
+			string.gsub(var_3_2, ChatConst.EmojiCodeMatch, function(arg_4_0)
+				var_3_3 = tonumber(arg_4_0)
 			end)
 
-			if nil then
-				if pg.emoji_template[slot3] then
-					slot2 = slot4.desc
+			if var_3_3 then
+				local var_3_4 = pg.emoji_template[var_3_3]
+
+				if var_3_4 then
+					var_3_2 = var_3_4.desc
 				else
-					slot3 = nil
+					var_3_3 = nil
 				end
 			end
 
-			uv0:addNewMsg(ChatMsg.New(ChatConst.ChannelWorld, {
-				player = Player.New(slot0.player),
-				content = slot2,
-				emojiId = slot3,
+			local var_3_5 = {
+				player = Player.New(arg_3_0.player),
+				content = var_3_2,
+				emojiId = var_3_3,
 				timestamp = pg.TimeMgr.GetInstance():GetServerTime()
-			}))
+			}
+
+			arg_2_0:addNewMsg(ChatMsg.New(ChatConst.ChannelWorld, var_3_5))
 		end
 	end)
-	slot0:on(50103, function (slot0)
-		slot1 = {}
+	arg_2_0:on(50103, function(arg_5_0)
+		local var_5_0 = {}
 
-		for slot5, slot6 in ipairs(slot0.arg_list) do
-			table.insert(slot1, PublicArg.New(slot6))
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0.arg_list) do
+			table.insert(var_5_0, PublicArg.New(iter_5_1))
 		end
 
-		uv0:addNewMsg(ChatMsg.New(ChatConst.ChannelPublic, {
-			id = slot0.ad_id,
-			args = slot1,
+		local var_5_1 = {
+			id = arg_5_0.ad_id,
+			args = var_5_0,
 			timestamp = pg.TimeMgr.GetInstance():GetServerTime()
-		}))
+		}
+
+		arg_2_0:addNewMsg(ChatMsg.New(ChatConst.ChannelPublic, var_5_1))
 	end)
 
-	slot0.informs = {}
-	slot0.actBossMsg = {}
+	arg_2_0.informs = {}
+	arg_2_0.actBossMsg = {}
 end
 
-function slot0.addNewMsg(slot0, slot1)
-	if slot1.id == 0 then
-		slot0.top = slot1
+function var_0_0.addNewMsg(arg_6_0, arg_6_1)
+	if arg_6_1.id == 0 then
+		arg_6_0.top = arg_6_1
 
-		_.each(slot1.args, function (slot0)
-			if slot0.string then
-				pg.TipsMgr.GetInstance():ShowTips(slot0.string)
+		_.each(arg_6_1.args, function(arg_7_0)
+			if arg_7_0.string then
+				pg.TipsMgr.GetInstance():ShowTips(arg_7_0.string)
 			end
 		end)
 	else
-		table.insert(slot0.data, slot1)
+		table.insert(arg_6_0.data, arg_6_1)
 
-		if #slot0.data > 100 then
-			table.remove(slot0.data, 1)
+		if #arg_6_0.data > 100 then
+			table.remove(arg_6_0.data, 1)
 		end
 	end
 
-	slot0:sendNotification(uv0.NEW_MSG, slot1)
+	arg_6_0:sendNotification(var_0_0.NEW_MSG, arg_6_1)
 end
 
-function slot0.UpdateMsg(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.data) do
-		if slot6:IsSame(slot1.uniqueId) then
-			slot0.data[slot5] = slot1
+function var_0_0.UpdateMsg(arg_8_0, arg_8_1)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.data) do
+		if iter_8_1:IsSame(arg_8_1.uniqueId) then
+			arg_8_0.data[iter_8_0] = arg_8_1
 		end
 	end
 end
 
-function slot0.GetMessagesByUniqueId(slot0, slot1)
-	return _.select(slot0.data, function (slot0)
-		return slot0.uniqueId == uv0
+function var_0_0.GetMessagesByUniqueId(arg_9_0, arg_9_1)
+	return _.select(arg_9_0.data, function(arg_10_0)
+		return arg_10_0.uniqueId == arg_9_1
 	end)
 end
 
-function slot0.clearMsg(slot0)
-	slot0.data = {}
+function var_0_0.clearMsg(arg_11_0)
+	arg_11_0.data = {}
 end
 
-function slot0.loadUsedEmoji(slot0)
-	slot0.usedEmoji = {}
+function var_0_0.loadUsedEmoji(arg_12_0)
+	arg_12_0.usedEmoji = {}
 
-	if #string.split(PlayerPrefs.GetString(ChatConst.EMOJI_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id) or "", ":") > 0 then
-		_.each(slot2, function (slot0)
-			if #string.split(slot0, "|") == 2 then
-				uv0.usedEmoji[tonumber(slot1[1])] = tonumber(slot1[2])
+	local var_12_0 = getProxy(PlayerProxy):getRawData().id
+	local var_12_1 = string.split(PlayerPrefs.GetString(ChatConst.EMOJI_SAVE_TAG .. var_12_0) or "", ":")
+
+	if #var_12_1 > 0 then
+		_.each(var_12_1, function(arg_13_0)
+			local var_13_0 = string.split(arg_13_0, "|")
+
+			if #var_13_0 == 2 then
+				arg_12_0.usedEmoji[tonumber(var_13_0[1])] = tonumber(var_13_0[2])
 			end
 		end)
 	end
 end
 
-function slot0.saveUsedEmoji(slot0)
-	slot1 = {}
+function var_0_0.saveUsedEmoji(arg_14_0)
+	local var_14_0 = {}
 
-	for slot5, slot6 in pairs(slot0.usedEmoji) do
-		table.insert(slot1, slot5 .. "|" .. slot6)
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.usedEmoji) do
+		table.insert(var_14_0, iter_14_0 .. "|" .. iter_14_1)
 	end
 
-	PlayerPrefs.SetString(ChatConst.EMOJI_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id, table.concat(slot1, ":"))
+	local var_14_1 = getProxy(PlayerProxy):getRawData().id
+
+	PlayerPrefs.SetString(ChatConst.EMOJI_SAVE_TAG .. var_14_1, table.concat(var_14_0, ":"))
 end
 
-function slot0.getUsedEmoji(slot0)
-	if not slot0.usedEmoji then
-		slot0:loadUsedEmoji()
+function var_0_0.getUsedEmoji(arg_15_0)
+	if not arg_15_0.usedEmoji then
+		arg_15_0:loadUsedEmoji()
 	end
 
-	return slot0.usedEmoji
+	return arg_15_0.usedEmoji
 end
 
-function slot0.addUsedEmoji(slot0, slot1)
-	slot2[slot1] = (slot0:getUsedEmoji()[slot1] or 0) + 1
+function var_0_0.addUsedEmoji(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0:getUsedEmoji()
 
-	slot0:saveUsedEmoji()
+	var_16_0[arg_16_1] = (var_16_0[arg_16_1] or 0) + 1
+
+	arg_16_0:saveUsedEmoji()
 end
 
-function slot0.loadUsedEmojiIcon(slot0)
-	slot0.usedEmojiIcon = {}
+function var_0_0.loadUsedEmojiIcon(arg_17_0)
+	arg_17_0.usedEmojiIcon = {}
 
-	for slot4 = 1, 6 do
-		slot0.usedEmojiIcon[slot4] = pg.emoji_small_template.all[slot4]
+	for iter_17_0 = 1, 6 do
+		arg_17_0.usedEmojiIcon[iter_17_0] = pg.emoji_small_template.all[iter_17_0]
 	end
 
-	if #string.split(PlayerPrefs.GetString(ChatConst.EMOJI_ICON_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id) or "", ":") > 0 then
-		for slot6, slot7 in ipairs(slot2) do
-			slot0.usedEmojiIcon[slot6] = tonumber(slot7)
+	local var_17_0 = getProxy(PlayerProxy):getRawData().id
+	local var_17_1 = string.split(PlayerPrefs.GetString(ChatConst.EMOJI_ICON_SAVE_TAG .. var_17_0) or "", ":")
+
+	if #var_17_1 > 0 then
+		for iter_17_1, iter_17_2 in ipairs(var_17_1) do
+			arg_17_0.usedEmojiIcon[iter_17_1] = tonumber(iter_17_2)
 		end
 	end
 end
 
-function slot0.saveUsedEmojiIcon(slot0)
-	slot1 = {}
+function var_0_0.saveUsedEmojiIcon(arg_18_0)
+	local var_18_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.usedEmojiIcon) do
-		table.insert(slot1, slot6)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.usedEmojiIcon) do
+		table.insert(var_18_0, iter_18_1)
 	end
 
-	PlayerPrefs.SetString(ChatConst.EMOJI_ICON_SAVE_TAG .. getProxy(PlayerProxy):getRawData().id, table.concat(slot1, ":"))
+	local var_18_1 = getProxy(PlayerProxy):getRawData().id
+
+	PlayerPrefs.SetString(ChatConst.EMOJI_ICON_SAVE_TAG .. var_18_1, table.concat(var_18_0, ":"))
 end
 
-function slot0.getUsedEmojiIcon(slot0)
-	if not slot0.usedEmojiIcon then
-		slot0:loadUsedEmojiIcon()
+function var_0_0.getUsedEmojiIcon(arg_19_0)
+	if not arg_19_0.usedEmojiIcon then
+		arg_19_0:loadUsedEmojiIcon()
 	end
 
-	return slot0.usedEmojiIcon
+	return arg_19_0.usedEmojiIcon
 end
 
-function slot0.addUsedEmojiIcon(slot0, slot1)
-	if table.indexof(slot0:getUsedEmojiIcon(), slot1, 1) then
-		table.remove(slot2, slot3)
+function var_0_0.addUsedEmojiIcon(arg_20_0, arg_20_1)
+	local var_20_0 = arg_20_0:getUsedEmojiIcon()
+	local var_20_1 = table.indexof(var_20_0, arg_20_1, 1)
+
+	if var_20_1 then
+		table.remove(var_20_0, var_20_1)
 	else
-		table.remove(slot2, #slot2)
+		table.remove(var_20_0, #var_20_0)
 	end
 
-	table.insert(slot2, 1, slot1)
-	slot0:saveUsedEmojiIcon()
+	table.insert(var_20_0, 1, arg_20_1)
+	arg_20_0:saveUsedEmojiIcon()
 end
 
-function slot0.GetAllTypeChatMessages(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetAllTypeChatMessages(arg_21_0, arg_21_1)
+	local var_21_0 = {}
+	local var_21_1 = getProxy(ChatProxy)
 
-	if not getProxy(ChatProxy) then
+	if not var_21_1 then
 		return
 	end
 
-	_.each(slot3:getRawData(), function (slot0)
-		table.insert(uv0, slot0)
+	_.each(var_21_1:getRawData(), function(arg_22_0)
+		table.insert(var_21_0, arg_22_0)
 	end)
 
-	if getProxy(GuildProxy):getRawData() then
-		_.each(slot4:getChatMsgs(), function (slot0)
-			table.insert(uv0, slot0)
+	local var_21_2 = getProxy(GuildProxy)
+
+	if var_21_2:getRawData() then
+		_.each(var_21_2:getChatMsgs(), function(arg_23_0)
+			table.insert(var_21_0, arg_23_0)
 		end)
 	end
 
-	slot5 = getProxy(FriendProxy)
+	local var_21_3 = getProxy(FriendProxy)
 
-	_.each(slot5:getCacheMsgList(), function (slot0)
-		table.insert(uv0, slot0)
-	end)
-
-	slot6 = _(slot2)
-	slot6 = slot6:chain()
-	slot6 = slot6:filter(function (slot0)
-		return not uv0:isInBlackList(slot0.playerId)
-	end)
-	slot6 = slot6:sort(function (slot0, slot1)
-		return slot0.timestamp < slot1.timestamp
-	end)
-	slot6 = NotificationLayer.ChannelBits.recv
-	slot7 = bit.lshift(1, ChatConst.ChannelAll)
-	slot2 = _.filter(slot6:value(), function (slot0)
-		return uv0 == uv1 or bit.band(uv0, bit.lshift(1, slot0.type)) > 0
+	_.each(var_21_3:getCacheMsgList(), function(arg_24_0)
+		table.insert(var_21_0, arg_24_0)
 	end)
 
-	return _.slice(slot2, #slot2 - slot1 + 1, slot1)
+	var_21_0 = _(var_21_0):chain():filter(function(arg_25_0)
+		return not var_21_3:isInBlackList(arg_25_0.playerId)
+	end):sort(function(arg_26_0, arg_26_1)
+		return arg_26_0.timestamp < arg_26_1.timestamp
+	end):value()
+
+	local var_21_4 = NotificationLayer.ChannelBits.recv
+	local var_21_5 = bit.lshift(1, ChatConst.ChannelAll)
+
+	var_21_0 = _.filter(var_21_0, function(arg_27_0)
+		return var_21_4 == var_21_5 or bit.band(var_21_4, bit.lshift(1, arg_27_0.type)) > 0
+	end)
+	var_21_0 = _.slice(var_21_0, #var_21_0 - arg_21_1 + 1, arg_21_1)
+
+	return var_21_0
 end
 
-return slot0
+return var_0_0

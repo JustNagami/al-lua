@@ -1,28 +1,30 @@
-slot0 = class("NewCommanderSkillLayer", import(".CommanderSkillLayer"))
+﻿local var_0_0 = class("NewCommanderSkillLayer", import(".CommanderSkillLayer"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewCommanderSkillUI"
 end
 
-function slot0.didEnter(slot0)
-	uv0.super.didEnter(slot0)
+function var_0_0.didEnter(arg_2_0)
+	var_0_0.super.didEnter(arg_2_0)
 
-	slot0.commonFlag = defaultValue(slot0.contextData.commonFlag, true)
-	slot1 = slot0:findTF("panel/bg/tags")
+	arg_2_0.commonFlag = defaultValue(arg_2_0.contextData.commonFlag, true)
 
-	onToggle(slot0, slot1, function (slot0)
-		uv0.commonFlag = slot0
+	local var_2_0 = arg_2_0:findTF("panel/bg/tags")
 
-		uv0:UpdateList()
+	onToggle(arg_2_0, var_2_0, function(arg_3_0)
+		arg_2_0.commonFlag = arg_3_0
+
+		arg_2_0:UpdateList()
 	end, SFX_PANEL)
-	triggerToggle(slot1, slot0.commonFlag)
+	triggerToggle(var_2_0, arg_2_0.commonFlag)
 end
 
-function slot0.SetLocaliza(slot0)
+function var_0_0.SetLocaliza(arg_4_0)
+	return
 end
 
-function slot0.GetColor(slot0, slot1)
-	return slot1 and "#66472a" or "#a3a2a2"
+function var_0_0.GetColor(arg_5_0, arg_5_1)
+	return arg_5_1 and "#66472a" or "#a3a2a2"
 end
 
-return slot0
+return var_0_0

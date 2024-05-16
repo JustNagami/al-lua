@@ -1,125 +1,128 @@
-slot0 = class("NewBattleResultDisplayAwardPage", import("view.base.BaseEventLogic"))
+﻿local var_0_0 = class("NewBattleResultDisplayAwardPage", import("view.base.BaseEventLogic"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._tf = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._tf = arg_1_1
 
-	uv0.super.Ctor(slot0, slot2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
 
-	slot0.contextData = slot3
+	arg_1_0.contextData = arg_1_3
 end
 
-function slot0.ExecuteAction(slot0, slot1, slot2)
-	slot0:__slot1_None__(slot2)
+function var_0_0.ExecuteAction(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0[arg_2_1](arg_2_0, arg_2_2)
 end
 
-function slot0.SetUp(slot0, slot1)
-	slot2, slot3 = slot0:CollectDrops()
+function var_0_0.SetUp(arg_3_0, arg_3_1)
+	local var_3_0, var_3_1 = arg_3_0:CollectDrops()
 
 	seriesAsync({
-		function (slot0)
-			uv0:ShowAwards(uv1, uv2, slot0)
+		function(arg_4_0)
+			arg_3_0:ShowAwards(var_3_0, var_3_1, arg_4_0)
 		end,
-		function (slot0)
-			uv0:ShowShips(uv1, slot0)
+		function(arg_5_0)
+			arg_3_0:ShowShips(var_3_0, arg_5_0)
 		end
-	}, slot1)
+	}, arg_3_1)
 end
 
-function slot0.ShowShips(slot0, slot1, slot2)
-	slot4 = getProxy(BayProxy)
-	slot4 = slot4:getNewShip(true)
-	slot5 = {}
+function var_0_0.ShowShips(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = #_.filter(arg_6_1, function(arg_7_0)
+		return arg_7_0.type == DROP_TYPE_SHIP
+	end)
+	local var_6_1 = getProxy(BayProxy):getNewShip(true)
+	local var_6_2 = {}
 
-	_.each(slot4, function (slot0)
-		if slot0:isMetaShip() then
-			table.insert(uv0, slot0.configId)
+	_.each(var_6_1, function(arg_8_0)
+		if arg_8_0:isMetaShip() then
+			table.insert(var_6_2, arg_8_0.configId)
 		end
 	end)
-	_.each(slot1, function (slot0)
-		if Ship.isMetaShipByConfigID(slot0.configId or slot0.id) then
-			if table.indexof(uv0, slot1) then
-				table.remove(uv0, slot2)
+	_.each(arg_6_1, function(arg_9_0)
+		local var_9_0 = arg_9_0.configId or arg_9_0.id
+
+		if Ship.isMetaShipByConfigID(var_9_0) then
+			local var_9_1 = table.indexof(var_6_2, var_9_0)
+
+			if var_9_1 then
+				table.remove(var_6_2, var_9_1)
 			else
-				if getProxy(BayProxy):getMetaTransItemMap(Ship.New({
-					configId = slot1
-				}).configId) then
-					slot3:setReMetaSpecialItemVO(slot4)
+				local var_9_2 = Ship.New({
+					configId = var_9_0
+				})
+				local var_9_3 = getProxy(BayProxy):getMetaTransItemMap(var_9_2.configId)
+
+				if var_9_3 then
+					var_9_2:setReMetaSpecialItemVO(var_9_3)
 				end
 
-				table.insert(uv1, slot3)
+				table.insert(var_6_1, var_9_2)
 			end
 		end
 	end)
 
-	slot6 = {}
+	local var_6_3 = {}
 
-	for slot10 = math.max(1, #slot4 - #_.filter(slot1, function (slot0)
-		return slot0.type == DROP_TYPE_SHIP
-	end) + 1), #slot4 do
-		slot11 = slot4[slot10]
+	for iter_6_0 = math.max(1, #var_6_1 - var_6_0 + 1), #var_6_1 do
+		local var_6_4 = var_6_1[iter_6_0]
 
-		if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or slot11.virgin or ShipRarity.Purple <= slot11:getRarity() then
-			slot13 = slot0.contextData.system == SYSTEM_SCENARIO and slot0.contextData.autoSkipFlag
+		if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var_6_4.virgin or var_6_4:getRarity() >= ShipRarity.Purple then
+			local var_6_5 = arg_6_0.contextData.system == SYSTEM_SCENARIO and arg_6_0.contextData.autoSkipFlag
 
-			table.insert(slot6, function (slot0)
-				uv2:emit(NewBattleResultMediator.GET_NEW_SHIP, uv1, slot0, uv0 and not uv1.virgin and 3 or nil)
+			table.insert(var_6_3, function(arg_10_0)
+				local var_10_0 = var_6_5 and not var_6_4.virgin and 3 or nil
+
+				arg_6_0:emit(NewBattleResultMediator.GET_NEW_SHIP, var_6_4, arg_10_0, var_10_0)
 			end)
 		end
 	end
 
-	seriesAsync(slot6, slot2)
+	seriesAsync(var_6_3, arg_6_2)
 end
 
-function slot0.ShowAwards(slot0, slot1, slot2, slot3)
-	slot4 = slot0.contextData.autoSkipFlag
+function var_0_0.ShowAwards(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = arg_11_0.contextData.autoSkipFlag
 
-	if #slot1 > 0 then
-		slot0:emit(BaseUI.ON_AWARD, {
-			items = slot1,
-			extraBonus = slot2,
-			removeFunc = slot3,
-			closeOnCompleted = slot4
+	if #arg_11_1 > 0 then
+		arg_11_0:emit(BaseUI.ON_AWARD, {
+			items = arg_11_1,
+			extraBonus = arg_11_2,
+			removeFunc = arg_11_3,
+			closeOnCompleted = var_11_0
 		})
 	else
-		slot3()
+		arg_11_3()
 	end
 end
 
-function slot0.CollectDrops(slot0)
-	slot1 = false
-	slot2 = {}
-	slot3 = ipairs
-	slot4 = slot0.contextData.drops or {}
+function var_0_0.CollectDrops(arg_12_0)
+	local var_12_0 = false
+	local var_12_1 = {}
 
-	for slot6, slot7 in slot3(slot4) do
-		table.insert(slot2, slot7)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.contextData.drops or {}) do
+		table.insert(var_12_1, iter_12_1)
 	end
 
-	slot3 = ipairs
-	slot4 = slot0.contextData.extraDrops or {}
+	for iter_12_2, iter_12_3 in ipairs(arg_12_0.contextData.extraDrops or {}) do
+		iter_12_3.riraty = true
 
-	for slot6, slot7 in slot3(slot4) do
-		slot7.riraty = true
-
-		table.insert(slot2, slot7)
+		table.insert(var_12_1, iter_12_3)
 	end
 
-	slot4 = ipairs
-	slot5 = slot0.contextData.extraBuffList or {}
+	local var_12_2 = arg_12_0.contextData.extraBuffList
 
-	for slot7, slot8 in slot4(slot5) do
-		if pg.benefit_buff_template[slot8].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
-			slot1 = true
+	for iter_12_4, iter_12_5 in ipairs(var_12_2 or {}) do
+		if pg.benefit_buff_template[iter_12_5].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
+			var_12_0 = true
 
 			break
 		end
 	end
 
-	return slot2, slot1
+	return var_12_1, var_12_0
 end
 
-function slot0.Destroy(slot0)
-	slot0.exited = true
+function var_0_0.Destroy(arg_13_0)
+	arg_13_0.exited = true
 end
 
-return slot0
+return var_0_0

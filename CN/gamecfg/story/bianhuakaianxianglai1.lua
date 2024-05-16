@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "BIANHUAKAIANXIANGLAI1",
 	mode = 2,
 	fadeOut = 1.5,
@@ -104,7 +104,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			actor = 605010,
-			say = "联盟合并的会议正在我们的协调下正如火如荼地召开。",
+			say = "联盟合并的会议在我们的协调下正如火如荼地召开。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

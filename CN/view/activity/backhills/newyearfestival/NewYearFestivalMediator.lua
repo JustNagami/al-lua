@@ -1,60 +1,67 @@
-slot0 = class("NewYearFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
-slot0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
-slot0.ON_OPEN_PILE_SIGNED = "ON_OPEN_PILE_SIGNED"
+﻿local var_0_0 = class("NewYearFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-function slot0.BindEvent(slot0)
-	uv0.super.BindEvent(slot0)
-	slot0:bind(uv0.ON_OPEN_PILE_SIGNED, function ()
-		uv0:addSubLayers(Context.New({
+var_0_0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
+var_0_0.ON_OPEN_PILE_SIGNED = "ON_OPEN_PILE_SIGNED"
+
+function var_0_0.BindEvent(arg_1_0)
+	var_0_0.super.BindEvent(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_OPEN_PILE_SIGNED, function()
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = PileGameSignedLayer,
 			mediator = PileGameSignedMediator
 		}))
 	end)
-	slot0:bind(uv0.MINIGAME_OPERATION, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot1,
-			cmd = slot2,
-			args1 = slot3
+	arg_1_0:bind(var_0_0.MINIGAME_OPERATION, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+		arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_3_1,
+			cmd = arg_3_2,
+			args1 = arg_3_3
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	if var_5_0 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var_5_2 = {
+			function(arg_6_0)
+				local var_6_0 = var_5_1.awards
+
+				if #var_6_0 > 0 then
+					arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_0, arg_6_0)
 				else
-					slot0()
+					arg_6_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:UpdateView()
+			function(arg_7_0)
+				arg_5_0.viewComponent:UpdateView()
 			end
-		})
-		slot0:OnSendMiniGameOPDone(slot3)
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:UpdateView()
+		}
+
+		seriesAsync(var_5_2)
+		arg_5_0:OnSendMiniGameOPDone(var_5_1)
+	elseif var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_5_0.viewComponent:UpdateView()
 	end
 end
 
-function slot0.OnSendMiniGameOPDone(slot0, slot1)
-	slot2 = slot1.argList
-	slot4 = slot2[2]
+function var_0_0.OnSendMiniGameOPDone(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1.argList
+	local var_8_1 = var_8_0[1]
+	local var_8_2 = var_8_0[2]
 
-	if slot2[1] == 3 and slot4 == 1 then
-		slot0.viewComponent:UpdateView()
+	if var_8_1 == 3 and var_8_2 == 1 then
+		arg_8_0.viewComponent:UpdateView()
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,43 +1,41 @@
-slot0 = class("ObjectBush", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
+﻿local var_0_0 = class("ObjectBush", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
-function slot0.GetBaseOrder(slot0)
+function var_0_0.GetBaseOrder(arg_1_0)
 	return 3
 end
 
-function slot0.CellPassability(slot0)
+function var_0_0.CellPassability(arg_2_0)
 	return true
 end
 
-function slot0.FirePassability(slot0)
+function var_0_0.FirePassability(arg_3_0)
 	return 0
 end
 
-function slot0.InitUI(slot0, slot1)
-	slot0.hideCount = 0
+function var_0_0.InitUI(arg_4_0, arg_4_1)
+	arg_4_0.hideCount = 0
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot2 = slot0._tf
-	slot2 = slot2:Find("Image")
-	slot3 = slot2:GetComponent(typeof(Animator))
+function var_0_0.InitRegister(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0._tf:Find("Image"):GetComponent(typeof(Animator))
 
-	slot0:Register("burn", function ()
-		uv0:Play("New State")
-		uv0:Play("Burn_A")
+	arg_5_0:Register("burn", function()
+		var_5_0:Play("New State")
+		var_5_0:Play("Burn_A")
 	end, {
 		{
 			0,
 			0
 		}
 	})
-	slot0:Register("move", function (slot0)
-		uv0:Play("New State")
-		uv0:Play("Sway")
+	arg_5_0:Register("move", function(arg_7_0)
+		var_5_0:Play("New State")
+		var_5_0:Play("Sway")
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-grass")
-		slot0:SetHide(true)
+		arg_7_0:SetHide(true)
 
-		if not isa(slot0, MoveEnemy) then
-			uv1:ChangeHide(true)
+		if not isa(arg_7_0, MoveEnemy) then
+			arg_5_0:ChangeHide(true)
 		end
 	end, {
 		{
@@ -45,14 +43,14 @@ function slot0.InitRegister(slot0, slot1)
 			0
 		}
 	})
-	slot0:Register("leave", function (slot0)
-		uv0:Play("New State")
-		uv0:Play("Sway")
+	arg_5_0:Register("leave", function(arg_8_0)
+		var_5_0:Play("New State")
+		var_5_0:Play("Sway")
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-grass")
-		slot0:SetHide(false)
+		arg_8_0:SetHide(false)
 
-		if not isa(slot0, MoveEnemy) then
-			uv1:ChangeHide(false)
+		if not isa(arg_8_0, MoveEnemy) then
+			arg_5_0:ChangeHide(false)
 		end
 	end, {
 		{
@@ -62,9 +60,9 @@ function slot0.InitRegister(slot0, slot1)
 	})
 end
 
-function slot0.ChangeHide(slot0, slot1)
-	slot0.hideCount = slot0.hideCount + (slot1 and 1 or -1)
-	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).alpha = slot0.hideCount > 0 and 0.5 or 1
+function var_0_0.ChangeHide(arg_9_0, arg_9_1)
+	arg_9_0.hideCount = arg_9_0.hideCount + (arg_9_1 and 1 or -1)
+	GetOrAddComponent(arg_9_0._tf, typeof(CanvasGroup)).alpha = arg_9_0.hideCount > 0 and 0.5 or 1
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "鱼雷每击中6次敌人，增加自身炮击、雷击，最多叠加3层",
-	name = "持续打击",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "鱼雷每击中6次敌人，增加自身炮击、雷击，最多叠加3层",
-	stack = 1,
-	id = 11220,
-	icon = 11220,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -45,5 +24,26 @@ return {
 				countType = 11220
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "鱼雷每击中6次敌人，增加自身炮击、雷击，最多叠加3层",
+	name = "持续打击",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "鱼雷每击中6次敌人，增加自身炮击、雷击，最多叠加3层",
+	stack = 1,
+	id = 11220,
+	icon = 11220,
+	last_effect = ""
 }

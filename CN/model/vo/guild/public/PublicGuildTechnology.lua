@@ -1,9 +1,11 @@
-slot0 = class("PublicGuildTechnology", import("..GuildTechnology"))
+﻿local var_0_0 = class("PublicGuildTechnology", import("..GuildTechnology"))
 
-function slot0.GetConsume(slot0)
-	slot3 = slot0:getConfig("contribution_multiple")
+function var_0_0.GetConsume(arg_1_0)
+	local var_1_0 = arg_1_0:getConfig("contribution_consume")
+	local var_1_1 = arg_1_0:getConfig("gold_consume")
+	local var_1_2 = arg_1_0:getConfig("contribution_multiple")
 
-	return slot0:getConfig("contribution_consume") * slot3, slot0:getConfig("gold_consume") * slot3
+	return var_1_0 * var_1_2, var_1_1 * var_1_2
 end
 
-return slot0
+return var_0_0

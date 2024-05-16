@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.survey_data_template = {
 	[1001] = {
 		ios_url = "https://usersurvey.biligame.com/vm/eMNHTBq.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6",

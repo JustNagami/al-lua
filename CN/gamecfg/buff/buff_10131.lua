@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10132,
+				target = "TargetSelf",
+				time = 20
+			}
+		}
+	},
 	{
 		desc = "每20秒，有30.0%概率触发专属技能弹幕(依据技能等级)",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 10131,
 	icon = 10130,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10132,
-				target = "TargetSelf",
-				time = 20
-			}
-		}
-	}
+	last_effect = ""
 }

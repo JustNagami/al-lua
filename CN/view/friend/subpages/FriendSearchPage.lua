@@ -1,132 +1,135 @@
-slot0 = class("FriendSearchPage", import("...base.BaseSubView"))
-slot1 = 10
+﻿local var_0_0 = class("FriendSearchPage", import("...base.BaseSubView"))
+local var_0_1 = 10
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FriendSearchUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.addPanel = slot0:findTF("add_panel")
-	slot0.searchPanel = slot0:findTF("search_panel", slot0.addPanel)
-	slot0.searchBar = slot0:findTF("InputField", slot0.searchPanel)
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.addPanel = arg_2_0:findTF("add_panel")
+	arg_2_0.searchPanel = arg_2_0:findTF("search_panel", arg_2_0.addPanel)
+	arg_2_0.searchBar = arg_2_0:findTF("InputField", arg_2_0.searchPanel)
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, findTF(slot0.searchPanel, "copy_btn"), function ()
-		UniPasteBoard.SetClipBoardString(uv0.playerVO.id)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, findTF(arg_3_0.searchPanel, "copy_btn"), function()
+		UniPasteBoard.SetClipBoardString(arg_3_0.playerVO.id)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("friend_id_copy_ok"))
 	end)
-	onButton(slot0, findTF(slot0.searchPanel, "search_btn"), function ()
-		slot0 = pg.TimeMgr.GetInstance():GetServerTime()
+	onButton(arg_3_0, findTF(arg_3_0.searchPanel, "search_btn"), function()
+		local var_5_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		if uv0.waitTimer and uv0.waitTimer - slot0 > 0 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_wait_time", uv0.waitTimer - slot0))
+		if arg_3_0.waitTimer and arg_3_0.waitTimer - var_5_0 > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_wait_time", arg_3_0.waitTimer - var_5_0))
 
 			return
 		end
 
-		uv0.waitTimer = slot0 + uv1
+		arg_3_0.waitTimer = var_5_0 + var_0_1
 
-		if not getInputText(uv0.searchBar) or slot1 == "" then
+		local var_5_1 = getInputText(arg_3_0.searchBar)
+
+		if not var_5_1 or var_5_1 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_inpout_key_tip"))
 
 			return
 		end
 
-		uv0.keyWord = slot1
+		arg_3_0.keyWord = var_5_1
 
-		uv0:emit(FriendMediator.SEARCH_FRIEND, 3, slot1)
+		arg_3_0:emit(FriendMediator.SEARCH_FRIEND, 3, var_5_1)
 	end)
-	onButton(slot0, findTF(slot0.searchPanel, "refresh_btn"), function ()
-		slot0 = pg.TimeMgr.GetInstance():GetServerTime()
+	onButton(arg_3_0, findTF(arg_3_0.searchPanel, "refresh_btn"), function()
+		local var_6_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		if uv0.waitTimer1 and uv0.waitTimer1 - slot0 > 0 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_wait_time", uv0.waitTimer1 - slot0))
+		if arg_3_0.waitTimer1 and arg_3_0.waitTimer1 - var_6_0 > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_wait_time", arg_3_0.waitTimer1 - var_6_0))
 
 			return
 		end
 
-		uv0.waitTimer1 = slot0 + uv1
+		arg_3_0.waitTimer1 = var_6_0 + var_0_1
 
-		uv0:emit(FriendMediator.SEARCH_FRIEND, 1, uv0.keyWord)
+		local var_6_1 = arg_3_0.keyWord
+
+		arg_3_0:emit(FriendMediator.SEARCH_FRIEND, 1, var_6_1)
 	end)
 end
 
-function slot0.UpdateData(slot0, slot1)
-	slot0.searchFriendVOs = slot1.searchResults or {}
-	slot0.playerVO = slot1.playerVO
+function var_0_0.UpdateData(arg_7_0, arg_7_1)
+	arg_7_0.searchFriendVOs = arg_7_1.searchResults or {}
+	arg_7_0.playerVO = arg_7_1.playerVO
 
-	if not slot0.isInit then
-		slot0.isInit = true
+	if not arg_7_0.isInit then
+		arg_7_0.isInit = true
 
-		slot0:initAddPage()
-		slot0:emit(FriendMediator.SEARCH_FRIEND, 1)
+		arg_7_0:initAddPage()
+		arg_7_0:emit(FriendMediator.SEARCH_FRIEND, 1)
 	else
-		slot0:sortSearchResult()
+		arg_7_0:sortSearchResult()
 	end
 end
 
-function slot0.sortSearchResult(slot0)
-	slot0.addRect:SetTotalCount(#slot0.searchFriendVOs, -1)
+function var_0_0.sortSearchResult(arg_8_0)
+	arg_8_0.addRect:SetTotalCount(#arg_8_0.searchFriendVOs, -1)
 end
 
-function slot0.initAddPage(slot0)
-	slot0.searchItems = {}
+function var_0_0.initAddPage(arg_9_0)
+	arg_9_0.searchItems = {}
 
-	setText(slot0:findTF("self_id_bg/Text", slot0.searchPanel), slot0.playerVO.id)
+	setText(arg_9_0:findTF("self_id_bg/Text", arg_9_0.searchPanel), arg_9_0.playerVO.id)
 
-	slot1 = slot0.addPanel
-	slot1 = slot1:Find("mask/view")
-	slot0.addRect = slot1:GetComponent("LScrollRect")
+	arg_9_0.addRect = arg_9_0.addPanel:Find("mask/view"):GetComponent("LScrollRect")
 
-	function slot0.addRect.onInitItem(slot0)
-		uv0:onInitItem(slot0)
+	function arg_9_0.addRect.onInitItem(arg_10_0)
+		arg_9_0:onInitItem(arg_10_0)
 	end
 
-	function slot0.addRect.onUpdateItem(slot0, slot1)
-		uv0:onUpdateItem(slot0, slot1)
+	function arg_9_0.addRect.onUpdateItem(arg_11_0, arg_11_1)
+		arg_9_0:onUpdateItem(arg_11_0, arg_11_1)
 	end
 end
 
-function slot0.onInitItem(slot0, slot1)
-	slot2 = FriendSearchCard.New(slot1)
+function var_0_0.onInitItem(arg_12_0, arg_12_1)
+	local var_12_0 = FriendSearchCard.New(arg_12_1)
 
-	onButton(slot0, slot2.addBtn, function ()
+	onButton(arg_12_0, var_12_0.addBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			yesText = "text_apply",
 			type = MSGBOX_TYPE_INPUT,
 			placeholder = i18n("friend_request_msg_placeholder"),
 			title = i18n("friend_request_msg_title"),
-			onYes = function (slot0)
-				uv0:emit(FriendMediator.ADD_FRIEND, uv1.friendVO.id, slot0)
+			onYes = function(arg_14_0)
+				arg_12_0:emit(FriendMediator.ADD_FRIEND, var_12_0.friendVO.id, arg_14_0)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot2.resumeBtn, function ()
-		uv0:emit(FriendMediator.OPEN_RESUME, uv1.friendVO.id)
+	onButton(arg_12_0, var_12_0.resumeBtn, function()
+		arg_12_0:emit(FriendMediator.OPEN_RESUME, var_12_0.friendVO.id)
 	end, SFX_PANEL)
 
-	slot0.searchItems[slot1] = slot2
+	arg_12_0.searchItems[arg_12_1] = var_12_0
 end
 
-function slot0.onUpdateItem(slot0, slot1, slot2)
-	if not slot0.searchItems[slot2] then
-		slot0:onInitItem(slot2)
+function var_0_0.onUpdateItem(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = arg_16_0.searchItems[arg_16_2]
 
-		slot3 = slot0.searchItems[slot2]
+	if not var_16_0 then
+		arg_16_0:onInitItem(arg_16_2)
+
+		var_16_0 = arg_16_0.searchItems[arg_16_2]
 	end
 
-	slot3:update(slot0.searchFriendVOs[slot1 + 1])
+	local var_16_1 = arg_16_0.searchFriendVOs[arg_16_1 + 1]
+
+	var_16_0:update(var_16_1)
 end
 
-function slot0.OnDestroy(slot0)
-	slot1 = pairs
-	slot2 = slot0.searchItems or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		slot5:dispose()
+function var_0_0.OnDestroy(arg_17_0)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.searchItems or {}) do
+		iter_17_1:dispose()
 	end
 end
 
-return slot0
+return var_0_0

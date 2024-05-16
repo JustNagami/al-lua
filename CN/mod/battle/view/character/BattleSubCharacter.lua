@@ -1,48 +1,52 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleConfig
-slot3 = slot0.Battle.BattleConst
-slot4 = class("BattleSubCharacter", slot0.Battle.BattlePlayerCharacter)
-slot0.Battle.BattleSubCharacter = slot4
-slot4.__name = "BattleSubCharacter"
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = var_0_0.Battle.BattleConst
+local var_0_4 = class("BattleSubCharacter", var_0_0.Battle.BattlePlayerCharacter)
+
+var_0_0.Battle.BattleSubCharacter = var_0_4
+var_0_4.__name = "BattleSubCharacter"
+
+function var_0_4.Ctor(arg_1_0)
+	var_0_4.super.Ctor(arg_1_0)
 end
 
-function slot4.AddArrowBar(slot0, slot1)
-	uv0.super.AddArrowBar(slot0, slot1)
+function var_0_4.AddArrowBar(arg_2_0, arg_2_1)
+	var_0_4.super.AddArrowBar(arg_2_0, arg_2_1)
 
-	slot0._vectorOxygenSlider = slot0._arrowBarTf:Find("submarine/oxygenBar/oxygen"):GetComponent(typeof(Slider))
-	slot0._vectorOxygenSlider.value = 1
-	slot0._vectorAmmoCount = slot0._arrowBarTf:Find("submarine/Count/CountText"):GetComponent(typeof(Text))
-	slot2 = #slot0._unitData:GetTorpedoList()
-	slot0._vectorAmmoCount.text = slot2 .. "/" .. slot2
+	arg_2_0._vectorOxygenSlider = arg_2_0._arrowBarTf:Find("submarine/oxygenBar/oxygen"):GetComponent(typeof(Slider))
+	arg_2_0._vectorOxygenSlider.value = 1
+	arg_2_0._vectorAmmoCount = arg_2_0._arrowBarTf:Find("submarine/Count/CountText"):GetComponent(typeof(Text))
+
+	local var_2_0 = #arg_2_0._unitData:GetTorpedoList()
+
+	arg_2_0._vectorAmmoCount.text = var_2_0 .. "/" .. var_2_0
 end
 
-function slot4.Update(slot0)
-	uv0.super.Update(slot0)
+function var_0_4.Update(arg_3_0)
+	var_0_4.super.Update(arg_3_0)
 
-	if not slot0._inViewArea then
-		slot0:updateOxygenVector()
+	if not arg_3_0._inViewArea then
+		arg_3_0:updateOxygenVector()
 	end
 end
 
-function slot4.updateOxygenVector(slot0)
-	slot0._vectorOxygenSlider.value = slot0._unitData:GetOxygenProgress()
+function var_0_4.updateOxygenVector(arg_4_0)
+	arg_4_0._vectorOxygenSlider.value = arg_4_0._unitData:GetOxygenProgress()
 end
 
-function slot4.onTorpedoWeaponFire(slot0, slot1)
-	uv0.super.onTorpedoWeaponFire(slot0, slot1)
+function var_0_4.onTorpedoWeaponFire(arg_5_0, arg_5_1)
+	var_0_4.super.onTorpedoWeaponFire(arg_5_0, arg_5_1)
 
-	slot2 = 0
+	local var_5_0 = 0
 
-	for slot6, slot7 in ipairs(slot0._unitData:GetTorpedoList()) do
-		if slot7:GetCurrentState() == slot7.STATE_READY then
-			slot2 = slot2 + 1
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0._unitData:GetTorpedoList()) do
+		if iter_5_1:GetCurrentState() == iter_5_1.STATE_READY then
+			var_5_0 = var_5_0 + 1
 		end
 	end
 
-	slot0._vectorAmmoCount.text = slot2 .. "/" .. #slot0._unitData:GetTorpedoList()
+	arg_5_0._vectorAmmoCount.text = var_5_0 .. "/" .. #arg_5_0._unitData:GetTorpedoList()
 end

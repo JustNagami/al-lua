@@ -1,189 +1,198 @@
-slot0 = class("NewyearFestivalScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var_0_0 = class("NewyearFestivalScene", import("..TemplateMV.BackHillTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewyearFestivalUI"
 end
 
-slot0.HUB_ID = 4
+var_0_0.HUB_ID = 4
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0._closeBtn = slot0:findTF("top/back")
-	slot0._homeBtn = slot0:findTF("top/home")
-	slot0._helpBtn = slot0:findTF("top/help")
-	slot0.ticketTimes = slot0.top:Find("ticket/text")
-	slot0.yinhuace = slot0.top:Find("sign")
-	slot0.yinhuaceTimes = slot0.yinhuace:Find("get")
-	slot0.yinhuaceTips = slot0.yinhuace:Find("tip")
-	slot0.shouce = slot0.top:Find("yinhuashouceye")
-	slot0.shouce_bg = slot0.shouce:Find("bg")
-	slot0.layout_shouce = slot0.shouce:Find("yinhuace/layout")
-	slot0.group_get = CustomIndexLayer.Clone2Full(slot0.layout_shouce, 7)
-	slot0.btn_receive = slot0.shouce:Find("yinhuace/receive")
-	slot0.btn_shouce_help = slot0.shouce:Find("yinhuace/help")
-	slot0.img_get = slot0.shouce:Find("yinhuace/get")
+function var_0_0.init(arg_2_0)
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0._closeBtn = arg_2_0:findTF("top/back")
+	arg_2_0._homeBtn = arg_2_0:findTF("top/home")
+	arg_2_0._helpBtn = arg_2_0:findTF("top/help")
+	arg_2_0.ticketTimes = arg_2_0.top:Find("ticket/text")
+	arg_2_0.yinhuace = arg_2_0.top:Find("sign")
+	arg_2_0.yinhuaceTimes = arg_2_0.yinhuace:Find("get")
+	arg_2_0.yinhuaceTips = arg_2_0.yinhuace:Find("tip")
+	arg_2_0.shouce = arg_2_0.top:Find("yinhuashouceye")
+	arg_2_0.shouce_bg = arg_2_0.shouce:Find("bg")
+	arg_2_0.layout_shouce = arg_2_0.shouce:Find("yinhuace/layout")
+	arg_2_0.group_get = CustomIndexLayer.Clone2Full(arg_2_0.layout_shouce, 7)
+	arg_2_0.btn_receive = arg_2_0.shouce:Find("yinhuace/receive")
+	arg_2_0.btn_shouce_help = arg_2_0.shouce:Find("yinhuace/help")
+	arg_2_0.img_get = arg_2_0.shouce:Find("yinhuace/get")
 
-	setActive(slot0.shouce, false)
+	setActive(arg_2_0.shouce, false)
 
-	slot0._map = slot0:findTF("map")
-	slot0.shrine = slot0._map:Find("shrine")
-	slot0.snack_street = slot0._map:Find("snack")
-	slot0.divination = slot0._map:Find("divination")
-	slot0.shop = slot0._map:Find("shop")
-	slot0.cube = slot0._map:Find("magiccube")
-	slot0.bottom2 = slot0._map:Find("bottom2")
-	slot0.bottom = slot0._map:Find("bottom")
-	slot0.middle = slot0._map:Find("middle")
-	slot1 = slot0._map
-	slot0.front = slot1:Find("top")
-	slot0.containers = {
-		slot0.front,
-		slot0.middle,
-		slot0.bottom,
-		slot0.bottom2
+	arg_2_0._map = arg_2_0:findTF("map")
+	arg_2_0.shrine = arg_2_0._map:Find("shrine")
+	arg_2_0.snack_street = arg_2_0._map:Find("snack")
+	arg_2_0.divination = arg_2_0._map:Find("divination")
+	arg_2_0.shop = arg_2_0._map:Find("shop")
+	arg_2_0.cube = arg_2_0._map:Find("magiccube")
+	arg_2_0.bottom2 = arg_2_0._map:Find("bottom2")
+	arg_2_0.bottom = arg_2_0._map:Find("bottom")
+	arg_2_0.middle = arg_2_0._map:Find("middle")
+	arg_2_0.front = arg_2_0._map:Find("top")
+	arg_2_0.containers = {
+		arg_2_0.front,
+		arg_2_0.middle,
+		arg_2_0.bottom,
+		arg_2_0.bottom2
 	}
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestivalGraph"))
-	slot0.effectReq = LoadPrefabRequestPackage.New("ui/xuedichangjing", "xuedichangjing", function (slot0)
-		setParent(slot0, uv0._map, false)
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.NewyearFestivalGraph"))
+	arg_2_0.effectReq = LoadPrefabRequestPackage.New("ui/xuedichangjing", "xuedichangjing", function(arg_3_0)
+		setParent(arg_3_0, arg_2_0._map, false)
 
-		slot2 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
+		local var_3_0 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
+		local var_3_1 = arg_3_0:GetComponentsInChildren(typeof(Renderer))
 
-		for slot7 = 0, slot0:GetComponentsInChildren(typeof(Renderer)).Length - 1 do
-			slot3[slot7].sortingOrder = slot2 + 1
+		for iter_3_0 = 0, var_3_1.Length - 1 do
+			var_3_1[iter_3_0].sortingOrder = var_3_0 + 1
 		end
 	end):Start()
 end
 
-function slot0.didEnter(slot0)
-	slot1 = getProxy(MiniGameProxy)
+function var_0_0.didEnter(arg_4_0)
+	local var_4_0 = getProxy(MiniGameProxy)
 
-	onButton(slot0, slot0._closeBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_4_0, arg_4_0._closeBtn, function()
+		arg_4_0:emit(var_0_0.ON_BACK)
 	end)
-	onButton(slot0, slot0._homeBtn, function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_4_0, arg_4_0._homeBtn, function()
+		arg_4_0:emit(var_0_0.ON_HOME)
 	end)
-	onButton(slot0, slot0._helpBtn, function ()
+	onButton(arg_4_0, arg_4_0._helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_newyear_feast.tip
 		})
 	end)
-	onButton(slot0, slot0.yinhuace, function ()
-		setActive(uv0.shouce, true)
+	onButton(arg_4_0, arg_4_0.yinhuace, function()
+		setActive(arg_4_0.shouce, true)
 	end)
-	onButton(slot0, slot0.shouce_bg, function ()
-		setActive(uv0.shouce, false)
+	onButton(arg_4_0, arg_4_0.shouce_bg, function()
+		setActive(arg_4_0.shouce, false)
 	end)
-	onButton(slot0, slot0.btn_shouce_help, function ()
+	onButton(arg_4_0, arg_4_0.btn_shouce_help, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_newyear_stamp.tip
 		})
 	end)
-	onButton(slot0, slot0.btn_receive, function ()
-		if uv0:GetHubByHubId(uv1.HUB_ID).ultimate ~= 0 or slot0.usedtime < slot0:getConfig("reward_need") then
+	onButton(arg_4_0, arg_4_0.btn_receive, function()
+		local var_11_0 = var_4_0:GetHubByHubId(arg_4_0.HUB_ID)
+
+		if var_11_0.ultimate ~= 0 or var_11_0.usedtime < var_11_0:getConfig("reward_need") then
 			return
 		end
 
-		uv1:emit(NewYearFestivalMediator.MINI_GAME_OPERATOR, {
-			hubid = slot0.id,
+		arg_4_0:emit(NewYearFestivalMediator.MINI_GAME_OPERATOR, {
+			hubid = var_11_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end)
-	slot0:InitFacility(slot0.shrine, function ()
+	arg_4_0:InitFacility(arg_4_0.shrine, function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 3)
 	end)
-	slot0:InitFacility(slot0.snack_street, function ()
+	arg_4_0:InitFacility(arg_4_0.snack_street, function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 8)
 	end)
-	slot0:InitFacility(slot0.divination, function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg_4_0:InitFacility(arg_4_0.divination, function()
+		arg_4_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.CYGNET_BATHROBE_PAGE_ID
 		})
 	end)
-	slot0:InitFacility(slot0.shop, function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
+	arg_4_0:InitFacility(arg_4_0.shop, function()
+		arg_4_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	slot0:InitFacility(slot0.cube, function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
+	arg_4_0:InitFacility(arg_4_0.cube, function()
+		arg_4_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0.top, false)
 
-	slot0.academyStudents = {}
+	arg_4_0.academyStudents = {}
 
-	slot0:InitStudents(ActivityConst.NEWYEAR_ACTIVITY, 3, 5)
-	slot0:UpdateView()
+	arg_4_0:InitStudents(ActivityConst.NEWYEAR_ACTIVITY, 3, 5)
+	arg_4_0:UpdateView()
 
-	if slot0.contextData.isOpenShrine then
-		slot0.contextData.isOpenShrine = nil
+	if arg_4_0.contextData.isOpenShrine then
+		arg_4_0.contextData.isOpenShrine = nil
 
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 3)
 	end
 
-	if slot1:GetMiniGameData(3) and not slot2:GetRuntimeData("isInited") then
-		slot0:emit(NewYearFestivalMediator.MINIGAME_OPERATION, slot0.HUB_ID, MiniGameOPCommand.CMD_SPECIAL_GAME, {
+	local var_4_1 = var_4_0:GetMiniGameData(3)
+
+	if var_4_1 and not var_4_1:GetRuntimeData("isInited") then
+		arg_4_0:emit(NewYearFestivalMediator.MINIGAME_OPERATION, arg_4_0.HUB_ID, MiniGameOPCommand.CMD_SPECIAL_GAME, {
 			3,
 			1
 		})
 	end
 end
 
-function slot0.UpdateView(slot0)
-	slot2 = getProxy(MiniGameProxy):GetHubByHubId(slot0.HUB_ID)
+function var_0_0.UpdateView(arg_17_0)
+	local var_17_0 = getProxy(MiniGameProxy)
+	local var_17_1 = var_17_0:GetHubByHubId(arg_17_0.HUB_ID)
+	local var_17_2 = var_17_1.usedtime
 
-	setText(slot0.ticketTimes, "X " .. slot2.count)
+	setText(arg_17_0.ticketTimes, "X " .. var_17_1.count)
+	setText(arg_17_0.yinhuaceTimes, string.format("%02d", var_17_2))
 
-	slot7 = "%02d"
-	slot8 = slot2.usedtime
-
-	setText(slot0.yinhuaceTimes, string.format(slot7, slot8))
-
-	for slot7, slot8 in ipairs(slot0.group_get) do
-		setActive(slot8, slot7 <= slot3)
+	for iter_17_0, iter_17_1 in ipairs(arg_17_0.group_get) do
+		setActive(iter_17_1, iter_17_0 <= var_17_2)
 	end
 
-	slot4 = slot3 >= #slot0.group_get and slot2.ultimate == 0
+	local var_17_3 = var_17_2 >= #arg_17_0.group_get and var_17_1.ultimate == 0
 
-	setActive(slot0.btn_receive, slot4)
-	setActive(slot0.yinhuaceTips, slot4)
-	setActive(slot0.img_get, slot2.ultimate ~= 0)
+	setActive(arg_17_0.btn_receive, var_17_3)
+	setActive(arg_17_0.yinhuaceTips, var_17_3)
+	setActive(arg_17_0.img_get, var_17_1.ultimate ~= 0)
 
-	if slot2.ultimate == 1 then
-		slot0:TryPlayStory()
+	if var_17_1.ultimate == 1 then
+		arg_17_0:TryPlayStory()
 	end
 
-	setActive(slot0.snack_street:Find("tip"), slot2.count > 0)
+	local var_17_4 = arg_17_0.snack_street:Find("tip")
 
-	slot6 = slot0.shrine:Find("tip")
-	slot8 = false
+	setActive(var_17_4, var_17_1.count > 0)
 
-	if slot1:GetMiniGameData(3) then
-		slot8 = (slot7:GetRuntimeData("count") or 0) > 0 and NewYearShrinePage.IsTip()
+	local var_17_5 = arg_17_0.shrine:Find("tip")
+	local var_17_6 = var_17_0:GetMiniGameData(3)
+	local var_17_7 = false
+
+	if var_17_6 then
+		var_17_7 = (var_17_6:GetRuntimeData("count") or 0) > 0 and NewYearShrinePage.IsTip()
 	end
 
-	setActive(slot6, slot8)
-	setActive(slot0.divination:Find("tip"), CygnetBathrobePage.IsTip())
+	setActive(var_17_5, var_17_7)
+
+	local var_17_8 = arg_17_0.divination:Find("tip")
+
+	setActive(var_17_8, CygnetBathrobePage.IsTip())
 end
 
-slot0.edge2area = {
+var_0_0.edge2area = {
 	["7_8"] = "bottom2",
 	["3_8"] = "bottom",
 	["5_6"] = "front"
 }
 
-function slot0.TryPlayStory(slot0)
+function var_0_0.TryPlayStory(arg_18_0)
+	return
 end
 
-function slot0.willExit(slot0)
-	slot0.effectReq:Stop()
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
-	slot0:clearStudents()
+function var_0_0.willExit(arg_19_0)
+	arg_19_0.effectReq:Stop()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_19_0.top, arg_19_0._tf)
+	arg_19_0:clearStudents()
 end
 
-return slot0
+return var_0_0

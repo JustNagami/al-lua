@@ -1,55 +1,65 @@
-ChargeConst = {}
-slot0 = ChargeConst
+﻿ChargeConst = {}
 
-function slot0.getBuyCount(slot0, slot1)
-	if not slot0 then
+local var_0_0 = ChargeConst
+
+function var_0_0.getBuyCount(arg_1_0, arg_1_1)
+	if not arg_1_0 then
 		return 0
 	end
 
-	return slot0[slot1] and slot2.buyCount or 0
+	local var_1_0 = arg_1_0[arg_1_1]
+
+	return var_1_0 and var_1_0.buyCount or 0
 end
 
-function slot0.getGroupLimit(slot0, slot1)
-	if not slot0 then
+function var_0_0.getGroupLimit(arg_2_0, arg_2_1)
+	if not arg_2_0 then
 		return 0
 	end
 
-	for slot5, slot6 in ipairs(slot0) do
-		if slot6.shop_id == slot1 then
-			return slot6.pay_count
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0) do
+		if iter_2_1.shop_id == arg_2_1 then
+			return iter_2_1.pay_count
 		end
 	end
 
 	return 0
 end
 
-function slot0.getGoodsLimitInfo(slot0)
-	slot1, slot2, slot3 = nil
+function var_0_0.getGoodsLimitInfo(arg_3_0)
+	local var_3_0
+	local var_3_1
+	local var_3_2
+	local var_3_3 = pg.shop_template[arg_3_0]
 
-	if pg.shop_template[slot0] then
-		if type(slot5.limit_args[1]) == "table" then
-			for slot10, slot11 in ipairs(slot5.limit_args) do
-				if slot11[1] == "level" then
-					slot1 = slot11[2]
-				elseif slot12 == "count" then
-					slot2 = slot11[2]
-					slot3 = slot11[3]
+	if var_3_3 then
+		local var_3_4 = var_3_3.limit_args[1]
+
+		if type(var_3_4) == "table" then
+			for iter_3_0, iter_3_1 in ipairs(var_3_3.limit_args) do
+				local var_3_5 = iter_3_1[1]
+
+				if var_3_5 == "level" then
+					var_3_0 = iter_3_1[2]
+				elseif var_3_5 == "count" then
+					var_3_1 = iter_3_1[2]
+					var_3_2 = iter_3_1[3]
 				end
 			end
-		elseif type(slot6) == "string" then
-			if slot6 == "level" then
-				slot1 = slot5.limit_args[2]
-			elseif slot6 == "count" then
-				slot2 = slot5.limit_args[2]
-				slot3 = slot5.limit_args[3]
+		elseif type(var_3_4) == "string" then
+			if var_3_4 == "level" then
+				var_3_0 = var_3_3.limit_args[2]
+			elseif var_3_4 == "count" then
+				var_3_1 = var_3_3.limit_args[2]
+				var_3_2 = var_3_3.limit_args[3]
 			end
 		end
 	end
 
-	return slot1, slot2, slot3
+	return var_3_0, var_3_1, var_3_2
 end
 
-function slot0.isNeedSetBirth()
+function var_0_0.isNeedSetBirth()
 	if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetIsPlatform() and not pg.SdkMgr.GetInstance():GetIsBirthSet() then
 		return true
 	end
@@ -57,4 +67,4 @@ function slot0.isNeedSetBirth()
 	return false
 end
 
-return slot0
+return var_0_0

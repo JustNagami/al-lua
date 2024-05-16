@@ -1,264 +1,273 @@
-slot0 = class("SailBoatEquipUI")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatEquipUI")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1
-	slot0._event = slot2
-	uv0 = SailBoatGameVo
-	slot0._equipUI = findTF(slot0._tf, "ui/equipUI")
-	slot0.btnBack = findTF(slot0._equipUI, "back")
-	slot0.btnBack1 = findTF(slot0._equipUI, "back_1")
-	slot0.btnStart = findTF(slot0._equipUI, "btnStart")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	var_0_1 = SailBoatGameVo
+	arg_1_0._equipUI = findTF(arg_1_0._tf, "ui/equipUI")
+	arg_1_0.btnBack = findTF(arg_1_0._equipUI, "back")
+	arg_1_0.btnBack1 = findTF(arg_1_0._equipUI, "back_1")
+	arg_1_0.btnStart = findTF(arg_1_0._equipUI, "btnStart")
 
-	onButton(slot0._event, slot0.btnBack1, function ()
-		uv0:show(false)
-		uv0._event:emit(SailBoatGameView.BACK_MENU)
+	onButton(arg_1_0._event, arg_1_0.btnBack1, function()
+		arg_1_0:show(false)
+		arg_1_0._event:emit(SailBoatGameView.BACK_MENU)
 	end, SFX_CONFIRM)
-	onButton(slot0._event, slot0.btnStart, function ()
-		uv0._event:emit(SailBoatGameView.READY_START)
+	onButton(arg_1_0._event, arg_1_0.btnStart, function()
+		arg_1_0._event:emit(SailBoatGameView.READY_START)
 	end, SFX_CONFIRM)
 
-	slot0.selectTpl = findTF(slot0._equipUI, "selectItem")
-	slot0.equipTpl = findTF(slot0._equipUI, "equipItem")
-	slot0.selectContent = findTF(slot0._equipUI, "select/ad/list")
-	slot0.equipContent = findTF(slot0._equipUI, "equip/list")
-	slot0.unEquipFlag = false
-	slot0.baseHp = SailBoatGameConst.game_char[uv0.char_id].hp
-	slot0.baseSpeed = SailBoatGameConst.game_char[uv0.char_id].speed.x
-	slot0.speedTf = findTF(slot0._equipUI, "equip/speed")
-	slot0.hpTf = findTF(slot0._equipUI, "equip/hp")
-	slot0.btnUnEquip = findTF(slot0._equipUI, "btnUnEquip")
+	arg_1_0.selectTpl = findTF(arg_1_0._equipUI, "selectItem")
+	arg_1_0.equipTpl = findTF(arg_1_0._equipUI, "equipItem")
+	arg_1_0.selectContent = findTF(arg_1_0._equipUI, "select/ad/list")
+	arg_1_0.equipContent = findTF(arg_1_0._equipUI, "equip/list")
+	arg_1_0.unEquipFlag = false
+	arg_1_0.baseHp = SailBoatGameConst.game_char[var_0_1.char_id].hp
+	arg_1_0.baseSpeed = SailBoatGameConst.game_char[var_0_1.char_id].speed.x
+	arg_1_0.speedTf = findTF(arg_1_0._equipUI, "equip/speed")
+	arg_1_0.hpTf = findTF(arg_1_0._equipUI, "equip/hp")
+	arg_1_0.btnUnEquip = findTF(arg_1_0._equipUI, "btnUnEquip")
 
-	function slot6()
-		if uv0.curSelectItem then
-			uv0.unEquipFlag = true
+	onButton(arg_1_0._event, arg_1_0.btnUnEquip, function()
+		if arg_1_0.curSelectItem then
+			arg_1_0.unEquipFlag = true
 		else
-			uv0.unEquipFlag = not uv0.unEquipFlag
+			arg_1_0.unEquipFlag = not arg_1_0.unEquipFlag
 		end
 
-		if uv0.unEquipFlag then
-			uv0.curSelectData = nil
-			uv0.curSelectItem = nil
+		if arg_1_0.unEquipFlag then
+			arg_1_0.curSelectData = nil
+			arg_1_0.curSelectItem = nil
 		end
 
-		uv0:updateUI()
-	end
+		arg_1_0:updateUI()
+	end)
 
-	onButton(slot0._event, slot0.btnUnEquip, slot6)
+	arg_1_0.selects = {}
 
-	slot0.selects = {}
+	for iter_1_0 = 1, #SailBoatGameConst.equip_data do
+		local var_1_0 = SailBoatGameConst.equip_data[iter_1_0]
+		local var_1_1 = tf(instantiate(arg_1_0.selectTpl))
 
-	for slot6 = 1, #SailBoatGameConst.equip_data do
-		slot8 = tf(instantiate(slot0.selectTpl))
-
-		onButton(slot0._event, slot8, function ()
-			if uv0.curSelectItem == uv1 then
-				uv0.curSelectItem = nil
-				uv0.curSelectData = nil
+		onButton(arg_1_0._event, var_1_1, function()
+			if arg_1_0.curSelectItem == var_1_1 then
+				arg_1_0.curSelectItem = nil
+				arg_1_0.curSelectData = nil
 			else
-				uv0.curSelectItem = uv1
-				uv0.curSelectData = uv2
+				arg_1_0.curSelectItem = var_1_1
+				arg_1_0.curSelectData = var_1_0
 
-				if uv0.unEquipFlag then
-					uv0.unEquipFlag = false
+				if arg_1_0.unEquipFlag then
+					arg_1_0.unEquipFlag = false
 				end
 			end
 
-			uv0:updateUI()
+			arg_1_0:updateUI()
 		end, SFX_CANCEL)
 
-		slot9 = GetComponent(findTF(slot8, "icon"), typeof(Image))
-		slot9.sprite = uv0.GetEquipIcon(SailBoatGameConst.equip_data[slot6].icon)
+		local var_1_2 = GetComponent(findTF(var_1_1, "icon"), typeof(Image))
 
-		slot9:SetNativeSize()
-		SetParent(slot8, slot0.selectContent)
-		table.insert(slot0.selects, slot8)
+		var_1_2.sprite = var_0_1.GetEquipIcon(var_1_0.icon)
+
+		var_1_2:SetNativeSize()
+		SetParent(var_1_1, arg_1_0.selectContent)
+		table.insert(arg_1_0.selects, var_1_1)
 	end
 
-	slot0.equips = {}
-	slot0.equipItems = {}
+	arg_1_0.equips = {}
+	arg_1_0.equipItems = {}
 
-	for slot6 = 1, SailBoatGameConst.max_equip_count do
-		table.insert(slot0.equips, 0)
+	for iter_1_1 = 1, SailBoatGameConst.max_equip_count do
+		table.insert(arg_1_0.equips, 0)
 	end
 
-	for slot6 = 1, SailBoatGameConst.max_equip_count do
-		slot7 = slot6
-		slot8 = tf(instantiate(slot0.equipTpl))
-		slot9 = slot0.equips[slot6]
+	for iter_1_2 = 1, SailBoatGameConst.max_equip_count do
+		local var_1_3 = iter_1_2
+		local var_1_4 = tf(instantiate(arg_1_0.equipTpl))
+		local var_1_5 = arg_1_0.equips[iter_1_2]
 
-		onButton(slot0._event, slot8, function ()
-			slot0 = uv0.GetGameUseTimes()
+		onButton(arg_1_0._event, var_1_4, function()
+			local var_6_0 = var_0_1.GetGameUseTimes()
 
-			if uv0.GetGameTimes() > 0 then
-				slot0 = slot0 + 1
+			if var_0_1.GetGameTimes() > 0 then
+				var_6_0 = var_6_0 + 1
 			end
 
-			if uv1 <= SailBoatGameConst.game_round[slot0].equip_count then
-				if uv2.curSelectData then
-					if not uv2:checkEquipAble(uv2.curSelectData.id) then
+			if SailBoatGameConst.game_round[var_6_0].equip_count >= var_1_3 then
+				if arg_1_0.curSelectData then
+					if not arg_1_0:checkEquipAble(arg_1_0.curSelectData.id) then
 						return
 					end
 
-					uv2.equips[uv3] = uv2.curSelectData.id
-				elseif uv2.unEquipFlag then
-					uv2.equips[uv3] = 0
+					arg_1_0.equips[iter_1_2] = arg_1_0.curSelectData.id
+				elseif arg_1_0.unEquipFlag then
+					arg_1_0.equips[iter_1_2] = 0
 				end
 
-				uv2:updateUI()
+				arg_1_0:updateUI()
 			end
 		end, SFX_CANCEL)
-		SetParent(slot8, slot0.equipContent)
-		table.insert(slot0.equipItems, slot8)
+		SetParent(var_1_4, arg_1_0.equipContent)
+		table.insert(arg_1_0.equipItems, var_1_4)
 	end
 
-	slot0.descTf = findTF(slot0._equipUI, "desc")
-	slot0.descTextTf = findTF(slot0._equipUI, "desc/bg/desc")
-	slot0.curSelectItem = nil
-	slot0.curSelectData = nil
+	arg_1_0.descTf = findTF(arg_1_0._equipUI, "desc")
+	arg_1_0.descTextTf = findTF(arg_1_0._equipUI, "desc/bg/desc")
+	arg_1_0.curSelectItem = nil
+	arg_1_0.curSelectData = nil
 
-	slot0:showUI()
-	slot0:updateUI()
+	arg_1_0:showUI()
+	arg_1_0:updateUI()
 end
 
-function slot0.show(slot0, slot1)
-	setActive(slot0._equipUI, slot1)
-	slot0:showUI()
-	slot0:updateUI()
+function var_0_0.show(arg_7_0, arg_7_1)
+	setActive(arg_7_0._equipUI, arg_7_1)
+	arg_7_0:showUI()
+	arg_7_0:updateUI()
 end
 
-function slot0.showUI(slot0)
-	slot1 = uv0.GetGameUseTimes()
+function var_0_0.showUI(arg_8_0)
+	local var_8_0 = var_0_1.GetGameUseTimes()
 
-	if uv0.GetGameTimes() > 0 then
-		slot1 = slot1 + 1
+	if var_0_1.GetGameTimes() > 0 then
+		var_8_0 = var_8_0 + 1
 	end
 
-	slot0.roundEquipData = SailBoatGameConst.game_equip_round[slot1]
+	arg_8_0.roundEquipData = SailBoatGameConst.game_equip_round[var_8_0]
 
-	for slot6 = 1, #slot0.selects do
-		if slot0.roundEquipData[slot6][2] == 0 then
-			setActive(slot0.selects[slot6], false)
+	for iter_8_0 = 1, #arg_8_0.selects do
+		if arg_8_0.roundEquipData[iter_8_0][2] == 0 then
+			setActive(arg_8_0.selects[iter_8_0], false)
 		else
-			setActive(slot0.selects[slot6], true)
+			setActive(arg_8_0.selects[iter_8_0], true)
 		end
 	end
 end
 
-function slot0.checkEquipAble(slot0, slot1)
-	slot2 = 0
-	slot3 = uv0.GetGameUseTimes()
+function var_0_0.checkEquipAble(arg_9_0, arg_9_1)
+	local var_9_0 = 0
+	local var_9_1 = var_0_1.GetGameUseTimes()
 
-	if uv0.GetGameTimes() > 0 then
-		slot3 = slot3 + 1
+	if var_0_1.GetGameTimes() > 0 then
+		var_9_1 = var_9_1 + 1
 	end
 
-	for slot9 = 1, #SailBoatGameConst.game_equip_round[slot3] do
-		if slot5[slot9][1] == slot1 then
-			slot2 = slot5[slot9][2]
+	local var_9_2 = SailBoatGameConst.game_equip_round[var_9_1]
+
+	for iter_9_0 = 1, #var_9_2 do
+		if var_9_2[iter_9_0][1] == arg_9_1 then
+			var_9_0 = var_9_2[iter_9_0][2]
 		end
 	end
 
-	if slot2 == 0 then
+	if var_9_0 == 0 then
 		return false, 0, 0
 	end
 
-	slot6 = 0
+	local var_9_3 = 0
 
-	for slot10 = 1, #slot0.equips do
-		if slot0.equips[slot10] == slot1 then
-			slot6 = slot6 + 1
+	for iter_9_1 = 1, #arg_9_0.equips do
+		if arg_9_0.equips[iter_9_1] == arg_9_1 then
+			var_9_3 = var_9_3 + 1
 		end
 	end
 
-	if slot2 <= slot6 then
-		return false, slot6, slot2
+	if var_9_0 <= var_9_3 then
+		return false, var_9_3, var_9_0
 	end
 
-	return true, slot6, slot2
+	return true, var_9_3, var_9_0
 end
 
-function slot0.updateUI(slot0)
-	for slot4 = 1, #slot0.selects do
-		slot5 = slot0.selects[slot4]
+function var_0_0.updateUI(arg_10_0)
+	for iter_10_0 = 1, #arg_10_0.selects do
+		local var_10_0 = arg_10_0.selects[iter_10_0]
 
-		setActive(findTF(slot5, "select"), slot0.curSelectItem == slot5)
+		setActive(findTF(var_10_0, "select"), arg_10_0.curSelectItem == var_10_0)
 
-		slot6, slot7, slot8 = slot0:checkEquipAble(slot4)
+		local var_10_1, var_10_2, var_10_3 = arg_10_0:checkEquipAble(iter_10_0)
 
-		setText(findTF(slot5, "amount"), slot8 - slot7)
+		setText(findTF(var_10_0, "amount"), var_10_3 - var_10_2)
 	end
 
-	setActive(slot0.descTf, slot0.curSelectItem ~= nil)
+	setActive(arg_10_0.descTf, arg_10_0.curSelectItem ~= nil)
 
-	if slot0.curSelectItem then
-		slot0.descTf.anchoredPosition = slot0._equipUI:InverseTransformPoint(slot0.curSelectItem.position)
+	if arg_10_0.curSelectItem then
+		arg_10_0.descTf.anchoredPosition = arg_10_0._equipUI:InverseTransformPoint(arg_10_0.curSelectItem.position)
 
-		setText(slot0.descTextTf, i18n(slot0.curSelectData.desc))
+		setText(arg_10_0.descTextTf, i18n(arg_10_0.curSelectData.desc))
 	end
 
-	slot1 = uv0.GetGameUseTimes()
+	local var_10_4 = var_0_1.GetGameUseTimes()
 
-	if uv0.GetGameTimes() > 0 then
-		slot1 = slot1 + 1
+	if var_0_1.GetGameTimes() > 0 then
+		var_10_4 = var_10_4 + 1
 	end
 
-	slot3 = SailBoatGameConst.game_round[slot1].equip_count
+	local var_10_5 = SailBoatGameConst.game_round[var_10_4].equip_count
 
-	for slot7 = 1, SailBoatGameConst.max_equip_count do
-		slot8 = slot7
+	for iter_10_1 = 1, SailBoatGameConst.max_equip_count do
+		local var_10_6 = iter_10_1
+		local var_10_7 = arg_10_0.equips[iter_10_1]
+		local var_10_8 = arg_10_0.equipItems[iter_10_1]
 
-		setActive(findTF(slot0.equipItems[slot7], "lock"), slot3 < slot7)
-		setActive(findTF(slot10, "empty"), false)
-		setActive(findTF(slot10, "bg"), false)
-		setActive(findTF(slot10, "icon"), false)
-		setActive(findTF(slot10, "unEquip"), false)
-		setActive(findTF(slot10, "add"), false)
-		setActive(findTF(slot10, "add_2"), false)
+		setActive(findTF(var_10_8, "lock"), var_10_5 < iter_10_1)
+		setActive(findTF(var_10_8, "empty"), false)
+		setActive(findTF(var_10_8, "bg"), false)
+		setActive(findTF(var_10_8, "icon"), false)
+		setActive(findTF(var_10_8, "unEquip"), false)
+		setActive(findTF(var_10_8, "add"), false)
+		setActive(findTF(var_10_8, "add_2"), false)
 
-		slot11 = true
+		local var_10_9 = true
 
-		if slot0.equips[slot7] ~= 0 then
-			slot13 = GetComponent(findTF(slot10, "icon"), typeof(Image))
-			slot13.sprite = uv0.GetEquipIcon(SailBoatGameConst.equip_data[slot9].icon)
+		if var_10_7 ~= 0 then
+			local var_10_10 = SailBoatGameConst.equip_data[var_10_7]
+			local var_10_11 = GetComponent(findTF(var_10_8, "icon"), typeof(Image))
 
-			slot13:SetNativeSize()
-			setActive(findTF(slot10, "bg"), true)
-			setActive(findTF(slot10, "icon"), true)
+			var_10_11.sprite = var_0_1.GetEquipIcon(var_10_10.icon)
 
-			if slot0.unEquipFlag then
-				setActive(findTF(slot10, "unEquip"), true)
+			var_10_11:SetNativeSize()
+			setActive(findTF(var_10_8, "bg"), true)
+			setActive(findTF(var_10_8, "icon"), true)
+
+			if arg_10_0.unEquipFlag then
+				setActive(findTF(var_10_8, "unEquip"), true)
 			end
 
-			slot11 = false
+			var_10_9 = false
 		else
-			setActive(findTF(slot10, "empty"), true)
+			setActive(findTF(var_10_8, "empty"), true)
 		end
 
-		if slot0.curSelectItem and slot7 <= slot3 then
-			if slot11 then
-				setActive(findTF(slot10, "add"), true)
+		if arg_10_0.curSelectItem and iter_10_1 <= var_10_5 then
+			if var_10_9 then
+				setActive(findTF(var_10_8, "add"), true)
 			else
-				setActive(findTF(slot10, "add_2"), true)
+				setActive(findTF(var_10_8, "add_2"), true)
 			end
 		end
 	end
 
-	slot4 = slot0.baseHp
-	slot5 = slot0.baseSpeed
+	local var_10_12 = arg_10_0.baseHp
+	local var_10_13 = arg_10_0.baseSpeed
 
-	for slot9 = 1, #slot0.equips do
-		if slot0.equips[slot9] ~= 0 then
-			slot11 = SailBoatGameConst.equip_data[slot10]
-			slot4 = slot4 + slot11.hp
-			slot5 = slot5 + slot11.speed
+	for iter_10_2 = 1, #arg_10_0.equips do
+		local var_10_14 = arg_10_0.equips[iter_10_2]
+
+		if var_10_14 ~= 0 then
+			local var_10_15 = SailBoatGameConst.equip_data[var_10_14]
+
+			var_10_12 = var_10_12 + var_10_15.hp
+			var_10_13 = var_10_13 + var_10_15.speed
 		end
 	end
 
-	setText(slot0.speedTf, tostring(slot5))
-	setText(slot0.hpTf, tostring(slot4))
+	setText(arg_10_0.speedTf, tostring(var_10_13))
+	setText(arg_10_0.hpTf, tostring(var_10_12))
 
-	uv0.equips = slot0.equips
+	var_0_1.equips = arg_10_0.equips
 end
 
-return slot0
+return var_0_0

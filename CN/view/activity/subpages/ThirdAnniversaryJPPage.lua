@@ -1,146 +1,153 @@
-slot0 = class("ThirdAnniversaryJPPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("ThirdAnniversaryJPPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0:findUI()
-	slot0:initData()
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0:findUI()
+	arg_1_0:initData()
 end
 
-function slot0.findUI(slot0)
-	slot0.paintBackTF = slot0:findTF("Paints/PaintBack")
-	slot0.paintFrontTF = slot0:findTF("Paints/PaintFront")
-	slot0.skinShopBtn = slot0:findTF("BtnShop")
-	slot0.btnContainer = slot0:findTF("BtnList/Viewport/Content")
-	slot0.btnList1 = {}
+function var_0_0.findUI(arg_2_0)
+	arg_2_0.paintBackTF = arg_2_0:findTF("Paints/PaintBack")
+	arg_2_0.paintFrontTF = arg_2_0:findTF("Paints/PaintFront")
+	arg_2_0.skinShopBtn = arg_2_0:findTF("BtnShop")
+	arg_2_0.btnContainer = arg_2_0:findTF("BtnList/Viewport/Content")
 
-	for slot5 = 0, slot0.btnContainer.childCount / 2 - 1 do
-		slot0.btnList1[slot5 + 1] = slot0.btnContainer:GetChild(slot5)
+	local var_2_0 = arg_2_0.btnContainer.childCount / 2
+
+	arg_2_0.btnList1 = {}
+
+	for iter_2_0 = 0, var_2_0 - 1 do
+		arg_2_0.btnList1[iter_2_0 + 1] = arg_2_0.btnContainer:GetChild(iter_2_0)
 	end
 
-	slot0.btnList2 = {}
+	arg_2_0.btnList2 = {}
 
-	for slot5 = 5, 2 * slot1 - 1 do
-		slot0.btnList2[#slot0.btnList2 + 1] = slot0.btnContainer:GetChild(slot5)
+	for iter_2_1 = 5, 2 * var_2_0 - 1 do
+		arg_2_0.btnList2[#arg_2_0.btnList2 + 1] = arg_2_0.btnContainer:GetChild(iter_2_1)
 	end
 
-	slot0.gridLayoutGroupCom = GetComponent(slot0.btnContainer, "GridLayoutGroup")
+	arg_2_0.gridLayoutGroupCom = GetComponent(arg_2_0.btnContainer, "GridLayoutGroup")
 end
 
-function slot0.initData(slot0)
-	slot0.paintCount = 18
-	slot0.curPaintIndex = 1
-	slot0.paintSwitchTime = 1
-	slot0.paintStaticTime = 3.5
-	slot0.paintStaticCountValue = 0
-	slot0.paintPathPrefix = "thirdanniversaryjppage/"
-	slot0.paintNamePrefix = "paint"
-	slot0.btnCount = slot0.btnContainer.childCount / 2
-	slot0.btnSpeed = 50
-	slot0.btnSizeX = slot0.gridLayoutGroupCom.cellSize.x
-	slot0.btnMarginX = slot0.gridLayoutGroupCom.spacing.x
-	slot0.moveLength = slot0.btnCount * (slot0.btnSizeX + slot0.btnMarginX)
-	slot0.startAnchoredPosX = slot0.btnContainer.anchoredPosition.x
+function var_0_0.initData(arg_3_0)
+	arg_3_0.paintCount = 18
+	arg_3_0.curPaintIndex = 1
+	arg_3_0.paintSwitchTime = 1
+	arg_3_0.paintStaticTime = 3.5
+	arg_3_0.paintStaticCountValue = 0
+	arg_3_0.paintPathPrefix = "thirdanniversaryjppage/"
+	arg_3_0.paintNamePrefix = "paint"
+	arg_3_0.btnCount = arg_3_0.btnContainer.childCount / 2
+	arg_3_0.btnSpeed = 50
+	arg_3_0.btnSizeX = arg_3_0.gridLayoutGroupCom.cellSize.x
+	arg_3_0.btnMarginX = arg_3_0.gridLayoutGroupCom.spacing.x
+	arg_3_0.moveLength = arg_3_0.btnCount * (arg_3_0.btnSizeX + arg_3_0.btnMarginX)
+	arg_3_0.startAnchoredPosX = arg_3_0.btnContainer.anchoredPosition.x
 end
 
-function slot0.switchNextPaint(slot0)
-	slot1 = slot0.frameTimer
+function var_0_0.switchNextPaint(arg_4_0)
+	arg_4_0.frameTimer:Stop()
 
-	slot1:Stop()
+	local var_4_0 = arg_4_0.curPaintIndex % arg_4_0.paintCount + 1
+	local var_4_1 = arg_4_0.paintNamePrefix .. var_4_0
+	local var_4_2 = arg_4_0.paintPathPrefix .. var_4_1
 
-	slot3 = slot0.paintNamePrefix .. slot0.curPaintIndex % slot0.paintCount + 1
+	setImageSprite(arg_4_0.paintBackTF, LoadSprite(var_4_2, var_4_1))
+	LeanTween.value(go(arg_4_0.paintFrontTF), 1, 0, arg_4_0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg_5_0)
+		setImageAlpha(arg_4_0.paintFrontTF, arg_5_0)
+		setImageAlpha(arg_4_0.paintBackTF, 1 - arg_5_0)
+	end)):setOnComplete(System.Action(function()
+		setImageFromImage(arg_4_0.paintFrontTF, arg_4_0.paintBackTF)
+		setImageAlpha(arg_4_0.paintFrontTF, 1)
+		setImageAlpha(arg_4_0.paintBackTF, 0)
 
-	setImageSprite(slot0.paintBackTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+		arg_4_0.curPaintIndex = var_4_0
 
-	slot5 = LeanTween.value(go(slot0.paintFrontTF), 1, 0, slot0.paintSwitchTime)
-	slot5 = slot5:setOnUpdate(System.Action_float(function (slot0)
-		setImageAlpha(uv0.paintFrontTF, slot0)
-		setImageAlpha(uv0.paintBackTF, 1 - slot0)
+		arg_4_0.frameTimer:Start()
 	end))
-
-	slot5:setOnComplete(System.Action(function ()
-		setImageFromImage(uv0.paintFrontTF, uv0.paintBackTF)
-		setImageAlpha(uv0.paintFrontTF, 1)
-		setImageAlpha(uv0.paintBackTF, 0)
-
-		uv0.curPaintIndex = uv1
-
-		uv0.frameTimer:Start()
-	end))
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:initPaint()
-	slot0:initBtnList(slot0.btnList1)
-	slot0:initBtnList(slot0.btnList2)
-	slot0:initTimer()
+function var_0_0.OnFirstFlush(arg_7_0)
+	arg_7_0:initPaint()
+	arg_7_0:initBtnList(arg_7_0.btnList1)
+	arg_7_0:initBtnList(arg_7_0.btnList2)
+	arg_7_0:initTimer()
 end
 
-function slot0.initPaint(slot0)
-	slot1 = slot0.curPaintIndex
-	slot3 = slot0.paintNamePrefix .. slot1
+function var_0_0.initPaint(arg_8_0)
+	local var_8_0 = arg_8_0.curPaintIndex
+	local var_8_1 = (var_8_0 - 1) % arg_8_0.paintCount + 1
+	local var_8_2 = arg_8_0.paintNamePrefix .. var_8_0
+	local var_8_3 = arg_8_0.paintPathPrefix .. var_8_2
 
-	setImageSprite(slot0.paintFrontTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+	setImageSprite(arg_8_0.paintFrontTF, LoadSprite(var_8_3, var_8_2))
 
-	slot3 = slot0.paintNamePrefix .. (slot1 - 1) % slot0.paintCount + 1
+	local var_8_4 = arg_8_0.paintNamePrefix .. var_8_1
+	local var_8_5 = arg_8_0.paintPathPrefix .. var_8_4
 
-	setImageSprite(slot0.paintBackTF, LoadSprite(slot0.paintPathPrefix .. slot3, slot3))
+	setImageSprite(arg_8_0.paintBackTF, LoadSprite(var_8_5, var_8_4))
 end
 
-function slot0.initBtnList(slot0, slot1)
-	onButton(slot0, slot1[1], function ()
-		uv0:emit(ActivityMediator.GO_PRAY_POOL)
+function var_0_0.initBtnList(arg_9_0, arg_9_1)
+	onButton(arg_9_0, arg_9_1[1], function()
+		arg_9_0:emit(ActivityMediator.GO_PRAY_POOL)
 	end, SFX_PANEL)
-	onButton(slot0, slot1[2], function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	onButton(arg_9_0, arg_9_1[2], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
-	onButton(slot0, slot1[3], function ()
-		uv0:emit(ActivityMediator.SELECT_ACTIVITY, getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RETURN_AWARD).id)
+	onButton(arg_9_0, arg_9_1[3], function()
+		local var_12_0 = ActivityConst.ACTIVITY_TYPE_RETURN_AWARD
+
+		arg_9_0:emit(ActivityMediator.SELECT_ACTIVITY, getProxy(ActivityProxy):getActivityByType(var_12_0).id)
 	end, SFX_PANEL)
-	onButton(slot0, slot1[4], function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.THIRD_ANNIVERSARY_AKIBA)
+	onButton(arg_9_0, arg_9_1[4], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.THIRD_ANNIVERSARY_AKIBA)
 	end, SFX_PANEL)
-	onButton(slot0, slot1[5], function ()
-		uv0:emit(ActivityMediator.SELECT_ACTIVITY, pg.activity_const.JIUJIU_ADVENTURE_ID.act_id)
+	onButton(arg_9_0, arg_9_1[5], function()
+		arg_9_0:emit(ActivityMediator.SELECT_ACTIVITY, pg.activity_const.JIUJIU_ADVENTURE_ID.act_id)
 	end, SFX_PANEL)
 end
 
-function slot0.initTimer(slot0)
-	slot1 = 0.016666666666666666
-	slot0.paintStaticCountValue = 0
-	slot0.frameTimer = Timer.New(function ()
-		uv0.paintStaticCountValue = uv0.paintStaticCountValue + uv1
+function var_0_0.initTimer(arg_15_0)
+	local var_15_0 = 0.016666666666666666
 
-		if uv0.paintStaticTime <= uv0.paintStaticCountValue then
-			uv0.paintStaticCountValue = 0
+	arg_15_0.paintStaticCountValue = 0
+	arg_15_0.frameTimer = Timer.New(function()
+		arg_15_0.paintStaticCountValue = arg_15_0.paintStaticCountValue + var_15_0
 
-			uv0:switchNextPaint()
+		if arg_15_0.paintStaticCountValue >= arg_15_0.paintStaticTime then
+			arg_15_0.paintStaticCountValue = 0
+
+			arg_15_0:switchNextPaint()
 		end
-	end, slot1, -1, false)
+	end, var_15_0, -1, false)
 
-	slot0.frameTimer:Start()
+	arg_15_0.frameTimer:Start()
 
-	slot0.frameTimer2 = Timer.New(function ()
-		if uv0.moveLength <= uv0.startAnchoredPosX - (uv0.btnContainer.anchoredPosition.x - uv0.btnSpeed * uv1) then
-			slot0 = uv0.btnContainer.anchoredPosition.x + uv0.moveLength
+	arg_15_0.frameTimer2 = Timer.New(function()
+		local var_17_0 = arg_15_0.btnContainer.anchoredPosition.x - arg_15_0.btnSpeed * var_15_0
+
+		if arg_15_0.startAnchoredPosX - var_17_0 >= arg_15_0.moveLength then
+			var_17_0 = arg_15_0.btnContainer.anchoredPosition.x + arg_15_0.moveLength
 		end
 
-		uv0.btnContainer.anchoredPosition = Vector3(slot0, 0, 0)
-	end, slot1, -1, false)
+		arg_15_0.btnContainer.anchoredPosition = Vector3(var_17_0, 0, 0)
+	end, var_15_0, -1, false)
 
-	slot0.frameTimer2:Start()
+	arg_15_0.frameTimer2:Start()
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.frameTimer then
-		slot0.frameTimer:Stop()
+function var_0_0.OnDestroy(arg_18_0)
+	if arg_18_0.frameTimer then
+		arg_18_0.frameTimer:Stop()
 
-		slot0.frameTimer = nil
+		arg_18_0.frameTimer = nil
 	end
 
-	if slot0.frameTimer2 then
-		slot0.frameTimer2:Stop()
+	if arg_18_0.frameTimer2 then
+		arg_18_0.frameTimer2:Stop()
 
-		slot0.frameTimer2 = nil
+		arg_18_0.frameTimer2 = nil
 	end
 end
 
-return slot0
+return var_0_0

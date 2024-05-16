@@ -1,143 +1,148 @@
-slot0 = class("CastleGamePopUI")
+﻿local var_0_0 = class("CastleGamePopUI")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1
-	slot0._event = slot2
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
 
-	slot0:initCountUI()
-	slot0:initLeavelUI()
-	slot0:initPauseUI()
-	slot0:initSettlementUI()
+	arg_1_0:initCountUI()
+	arg_1_0:initLeavelUI()
+	arg_1_0:initPauseUI()
+	arg_1_0:initSettlementUI()
 end
 
-function slot0.initCountUI(slot0)
-	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
-	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
-	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
-	slot1 = slot0.countDft
+function var_0_0.initCountUI(arg_2_0)
+	arg_2_0.countUI = findTF(arg_2_0._tf, "pop/CountUI")
+	arg_2_0.countAnimator = GetComponent(findTF(arg_2_0.countUI, "count"), typeof(Animator))
+	arg_2_0.countDft = GetOrAddComponent(findTF(arg_2_0.countUI, "count"), typeof(DftAniEvent))
 
-	slot1:SetTriggerEvent(function ()
+	arg_2_0.countDft:SetTriggerEvent(function()
+		return
 	end)
-
-	slot1 = slot0.countDft
-
-	slot1:SetEndEvent(function ()
-		uv0._event:emit(CastleGameView.COUNT_DOWN)
+	arg_2_0.countDft:SetEndEvent(function()
+		arg_2_0._event:emit(CastleGameView.COUNT_DOWN)
 	end)
 end
 
-function slot0.initLeavelUI(slot0)
-	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
+function var_0_0.initLeavelUI(arg_5_0)
+	arg_5_0.leaveUI = findTF(arg_5_0._tf, "pop/LeaveUI")
 
-	setActive(slot0.leaveUI, false)
-	onButton(slot0._event, findTF(slot0.leaveUI, "ad/btnOk"), function ()
-		uv0:resumeGame()
-		uv0._event:emit(CastleGameView.LEVEL_GAME, true)
+	setActive(arg_5_0.leaveUI, false)
+	onButton(arg_5_0._event, findTF(arg_5_0.leaveUI, "ad/btnOk"), function()
+		arg_5_0:resumeGame()
+		arg_5_0._event:emit(CastleGameView.LEVEL_GAME, true)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
-		uv0:resumeGame()
-		uv0._event:emit(CastleGameView.LEVEL_GAME, false)
-	end, SFX_CANCEL)
-end
-
-function slot0.initPauseUI(slot0)
-	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
-
-	setActive(slot0.pauseUI, false)
-	onButton(slot0._event, findTF(slot0.pauseUI, "ad/btnOk"), function ()
-		uv0:resumeGame()
-		uv0._event:emit(CastleGameView.PAUSE_GAME, false)
+	onButton(arg_5_0._event, findTF(arg_5_0.leaveUI, "ad/btnCancel"), function()
+		arg_5_0:resumeGame()
+		arg_5_0._event:emit(CastleGameView.LEVEL_GAME, false)
 	end, SFX_CANCEL)
 end
 
-function slot0.initSettlementUI(slot0)
-	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
+function var_0_0.initPauseUI(arg_8_0)
+	arg_8_0.pauseUI = findTF(arg_8_0._tf, "pop/pauseUI")
 
-	setActive(slot0.settlementUI, false)
-	onButton(slot0._event, findTF(slot0.settlementUI, "ad/btnOver"), function ()
-		uv0:clearUI()
-		uv0._event:emit(CastleGameView.BACK_MENU)
+	setActive(arg_8_0.pauseUI, false)
+	onButton(arg_8_0._event, findTF(arg_8_0.pauseUI, "ad/btnOk"), function()
+		arg_8_0:resumeGame()
+		arg_8_0._event:emit(CastleGameView.PAUSE_GAME, false)
 	end, SFX_CANCEL)
 end
 
-function slot0.updateSettlementUI(slot0)
-	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var_0_0.initSettlementUI(arg_10_0)
+	arg_10_0.settlementUI = findTF(arg_10_0._tf, "pop/SettleMentUI")
 
-	slot3 = CastleGameVo.scoreNum
-	slot4 = CastleGameVo.GetMiniGameData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0
+	setActive(arg_10_0.settlementUI, false)
+	onButton(arg_10_0._event, findTF(arg_10_0.settlementUI, "ad/btnOver"), function()
+		arg_10_0:clearUI()
+		arg_10_0._event:emit(CastleGameView.BACK_MENU)
+	end, SFX_CANCEL)
+end
 
-	setActive(findTF(slot0.settlementUI, "ad/new"), slot4 < slot3)
+function var_0_0.updateSettlementUI(arg_12_0)
+	GetComponent(findTF(arg_12_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	if slot4 < slot3 then
-		slot0._event:emit(CastleGameView.STORE_SERVER, slot3)
+	local var_12_0 = CastleGameVo.GetMiniGameData():GetRuntimeData("elements")
+	local var_12_1 = CastleGameVo.scoreNum
+	local var_12_2 = var_12_0 and #var_12_0 > 0 and var_12_0[1] or 0
+
+	setActive(findTF(arg_12_0.settlementUI, "ad/new"), var_12_2 < var_12_1)
+
+	if var_12_2 < var_12_1 then
+		var_12_2 = var_12_1
+
+		arg_12_0._event:emit(CastleGameView.STORE_SERVER, var_12_2)
 	end
 
-	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
-	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
+	local var_12_3 = findTF(arg_12_0.settlementUI, "ad/highText")
+	local var_12_4 = findTF(arg_12_0.settlementUI, "ad/currentText")
 
-	if CastleGameVo.GetGameTimes() and slot7 > 0 and not slot0.sendSuccessFlag then
-		slot0._event:emit(CastleGameView.SUBMIT_GAME_SUCCESS)
+	setText(var_12_3, var_12_2)
+	setText(var_12_4, var_12_1)
+
+	local var_12_5 = CastleGameVo.GetGameTimes()
+
+	if var_12_5 and var_12_5 > 0 and not arg_12_0.sendSuccessFlag then
+		arg_12_0._event:emit(CastleGameView.SUBMIT_GAME_SUCCESS)
 	end
 end
 
-function slot0.backPressed(slot0)
-	if isActive(slot0.pauseUI) then
-		slot0:resumeGame()
-		slot0._event:emit(CastleGameView.PAUSE_GAME, false)
-	elseif isActive(slot0.leaveUI) then
-		slot0:resumeGame()
-		slot0._event:emit(CastleGameView.LEVEL_GAME, false)
-	elseif not isActive(slot0.pauseUI) and not isActive(slot0.pauseUI) then
-		slot0:popPauseUI()
-		slot0._event:emit(CastleGameView.PAUSE_GAME, true)
+function var_0_0.backPressed(arg_13_0)
+	if isActive(arg_13_0.pauseUI) then
+		arg_13_0:resumeGame()
+		arg_13_0._event:emit(CastleGameView.PAUSE_GAME, false)
+	elseif isActive(arg_13_0.leaveUI) then
+		arg_13_0:resumeGame()
+		arg_13_0._event:emit(CastleGameView.LEVEL_GAME, false)
+	elseif not isActive(arg_13_0.pauseUI) and not isActive(arg_13_0.pauseUI) then
+		arg_13_0:popPauseUI()
+		arg_13_0._event:emit(CastleGameView.PAUSE_GAME, true)
 	else
-		slot0:resumeGame()
+		arg_13_0:resumeGame()
 	end
 end
 
-function slot0.resumeGame(slot0)
-	setActive(slot0.leaveUI, false)
-	setActive(slot0.pauseUI, false)
+function var_0_0.resumeGame(arg_14_0)
+	setActive(arg_14_0.leaveUI, false)
+	setActive(arg_14_0.pauseUI, false)
 end
 
-function slot0.popLeaveUI(slot0)
-	if isActive(slot0.pauseUI) then
-		setActive(slot0.pauseUI, false)
+function var_0_0.popLeaveUI(arg_15_0)
+	if isActive(arg_15_0.pauseUI) then
+		setActive(arg_15_0.pauseUI, false)
 	end
 
-	setActive(slot0.leaveUI, true)
+	setActive(arg_15_0.leaveUI, true)
 end
 
-function slot0.popPauseUI(slot0)
-	if isActive(slot0.leaveUI) then
-		setActive(slot0.leaveUI, false)
+function var_0_0.popPauseUI(arg_16_0)
+	if isActive(arg_16_0.leaveUI) then
+		setActive(arg_16_0.leaveUI, false)
 	end
 
-	setActive(slot0.pauseUI, true)
+	setActive(arg_16_0.pauseUI, true)
 end
 
-function slot0.updateGameUI(slot0, slot1)
-	setText(slot0.scoreTf, slot1.scoreNum)
-	setText(slot0.gameTimeS, math.ceil(slot1.gameTime))
+function var_0_0.updateGameUI(arg_17_0, arg_17_1)
+	setText(arg_17_0.scoreTf, arg_17_1.scoreNum)
+	setText(arg_17_0.gameTimeS, math.ceil(arg_17_1.gameTime))
 end
 
-function slot0.readyStart(slot0)
-	slot0:popCountUI(true)
-	slot0.countAnimator:Play("count")
+function var_0_0.readyStart(arg_18_0)
+	arg_18_0:popCountUI(true)
+	arg_18_0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(CastleGameVo.SFX_COUNT_DOWN)
 end
 
-function slot0.popCountUI(slot0, slot1)
-	setActive(slot0.countUI, slot1)
+function var_0_0.popCountUI(arg_19_0, arg_19_1)
+	setActive(arg_19_0.countUI, arg_19_1)
 end
 
-function slot0.popSettlementUI(slot0, slot1)
-	setActive(slot0.settlementUI, slot1)
+function var_0_0.popSettlementUI(arg_20_0, arg_20_1)
+	setActive(arg_20_0.settlementUI, arg_20_1)
 end
 
-function slot0.clearUI(slot0)
-	setActive(slot0.settlementUI, false)
-	setActive(slot0.countUI, false)
+function var_0_0.clearUI(arg_21_0)
+	setActive(arg_21_0.settlementUI, false)
+	setActive(arg_21_0.countUI, false)
 end
 
-return slot0
+return var_0_0

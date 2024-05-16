@@ -1,35 +1,44 @@
-pg = pg or {}
-slot0 = pg
-slot0.MiniGameTileMgr = singletonClass("MiniGameTileMgr")
-slot1 = slot0.MiniGameTileMgr
+﻿pg = pg or {}
 
-function slot1.Ctor(slot0)
-	slot0.tileDatas = {}
-	slot0.tileDataDic = {}
+local var_0_0 = pg
 
-	for slot5, slot6 in pairs(MiniGameTile.tiles) do
-		slot7 = MiniGameTileData.New(slot6)
+var_0_0.MiniGameTileMgr = singletonClass("MiniGameTileMgr")
 
-		table.insert(slot0.tileDatas, slot7)
+local var_0_1 = var_0_0.MiniGameTileMgr
 
-		slot0.tileDataDic[slot5] = slot7
+function var_0_1.Ctor(arg_1_0)
+	arg_1_0.tileDatas = {}
+	arg_1_0.tileDataDic = {}
+
+	local var_1_0 = MiniGameTile.tiles
+
+	for iter_1_0, iter_1_1 in pairs(var_1_0) do
+		local var_1_1 = MiniGameTileData.New(iter_1_1)
+
+		table.insert(arg_1_0.tileDatas, var_1_1)
+
+		arg_1_0.tileDataDic[iter_1_0] = var_1_1
 	end
 end
 
-function slot1.getData(slot0, slot1)
-	return slot0.tileDataDic[slot1]
+function var_0_1.getData(arg_2_0, arg_2_1)
+	return arg_2_0.tileDataDic[arg_2_1]
 end
 
-function slot1.getDataLayers(slot0, slot1, slot2)
-	if slot0:getData(slot1) then
-		return slot3:getTileDataLayer(slot2)
+function var_0_1.getDataLayers(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_0:getData(arg_3_1)
+
+	if var_3_0 then
+		return var_3_0:getTileDataLayer(arg_3_2)
 	end
 
 	return nil
 end
 
-function slot1.dumpDataLayers(slot0, slot1, slot2, slot3)
-	if slot0:getData(slot1) then
-		slot4:dumpTileDataLayer(slot2, slot3)
+function var_0_1.dumpDataLayers(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	local var_4_0 = arg_4_0:getData(arg_4_1)
+
+	if var_4_0 then
+		var_4_0:dumpTileDataLayer(arg_4_2, arg_4_3)
 	end
 end

@@ -1,5 +1,6 @@
-slot0 = class("WSMapOut", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSMapOut", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	map = "table",
 	transform = "userdata",
 	emotion = "string",
@@ -7,111 +8,115 @@ slot0.Fields = {
 	emotionTFs = "table",
 	fleet = "table"
 }
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet",
 	onUpdateFleetEmotion = "OnUpdateFleetEmotion"
 }
 
-function slot0.Build(slot0)
+function var_0_0.Build(arg_1_0)
+	return
 end
 
-function slot0.Setup(slot0)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Setup(arg_2_0)
+	pg.DelegateInfo.New(arg_2_0)
 
-	slot0.emotionTFs = {}
+	arg_2_0.emotionTFs = {}
 end
 
-function slot0.Dispose(slot0)
-	slot0:RemoveFleetListener(slot0.fleet)
-	slot0:RemoveMapListener()
+function var_0_0.Dispose(arg_3_0)
+	arg_3_0:RemoveFleetListener(arg_3_0.fleet)
+	arg_3_0:RemoveMapListener()
 
-	slot1 = PoolMgr.GetInstance()
+	local var_3_0 = PoolMgr.GetInstance()
 
-	for slot5, slot6 in pairs(slot0.emotionTFs) do
-		slot1:ReturnUI(slot5, go(slot6))
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.emotionTFs) do
+		var_3_0:ReturnUI(iter_3_0, go(iter_3_1))
 	end
 
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
+	pg.DelegateInfo.Dispose(arg_3_0)
+	arg_3_0:Clear()
 end
 
-function slot0.UpdateMap(slot0, slot1)
-	if slot0.map ~= slot1 or slot0.gid ~= slot1.gid then
-		slot0:RemoveMapListener()
+function var_0_0.UpdateMap(arg_4_0, arg_4_1)
+	if arg_4_0.map ~= arg_4_1 or arg_4_0.gid ~= arg_4_1.gid then
+		arg_4_0:RemoveMapListener()
 
-		slot0.map = slot1
-		slot0.gid = slot1.gid
+		arg_4_0.map = arg_4_1
+		arg_4_0.gid = arg_4_1.gid
 
-		slot0:AddMapListener()
-		slot0:OnUpdateSelectedFleet()
-	end
-end
-
-function slot0.AddMapListener(slot0)
-	if slot0.map then
-		slot0.map:AddListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
+		arg_4_0:AddMapListener()
+		arg_4_0:OnUpdateSelectedFleet()
 	end
 end
 
-function slot0.RemoveMapListener(slot0)
-	if slot0.map then
-		slot0.map:RemoveListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
+function var_0_0.AddMapListener(arg_5_0)
+	if arg_5_0.map then
+		arg_5_0.map:AddListener(WorldMap.EventUpdateFIndex, arg_5_0.onUpdateSelectedFleet)
 	end
 end
 
-function slot0.AddFleetListener(slot0, slot1)
-	if slot1 then
-		slot1:AddListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdateFleetEmotion)
+function var_0_0.RemoveMapListener(arg_6_0)
+	if arg_6_0.map then
+		arg_6_0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg_6_0.onUpdateSelectedFleet)
 	end
 end
 
-function slot0.RemoveFleetListener(slot0, slot1)
-	if slot1 then
-		slot1:RemoveListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdateFleetEmotion)
+function var_0_0.AddFleetListener(arg_7_0, arg_7_1)
+	if arg_7_1 then
+		arg_7_1:AddListener(WorldMapFleet.EventUpdateLocation, arg_7_0.onUpdateFleetEmotion)
 	end
 end
 
-function slot0.OnUpdateSelectedFleet(slot0)
-	if slot0.fleet ~= slot0.map:GetFleet() then
-		slot0:RemoveFleetListener(slot0.fleet)
-
-		slot0.fleet = slot1
-
-		slot0:AddFleetListener(slot0.fleet)
+function var_0_0.RemoveFleetListener(arg_8_0, arg_8_1)
+	if arg_8_1 then
+		arg_8_1:RemoveListener(WorldMapFleet.EventUpdateLocation, arg_8_0.onUpdateFleetEmotion)
 	end
-
-	slot0:OnUpdateFleetEmotion()
 end
 
-function slot0.OnUpdateFleetEmotion(slot0)
-	if not slot0.map.active then
+function var_0_0.OnUpdateSelectedFleet(arg_9_0)
+	local var_9_0 = arg_9_0.map:GetFleet()
+
+	if arg_9_0.fleet ~= var_9_0 then
+		arg_9_0:RemoveFleetListener(arg_9_0.fleet)
+
+		arg_9_0.fleet = var_9_0
+
+		arg_9_0:AddFleetListener(arg_9_0.fleet)
+	end
+
+	arg_9_0:OnUpdateFleetEmotion()
+end
+
+function var_0_0.OnUpdateFleetEmotion(arg_10_0)
+	if not arg_10_0.map.active then
 		return
 	end
 
-	slot2 = nil
+	local var_10_0 = arg_10_0.map:GetCell(arg_10_0.fleet.row, arg_10_0.fleet.column):GetEmotion()
+	local var_10_1
 
-	if slot0.emotion ~= slot0.map:GetCell(slot0.fleet.row, slot0.fleet.column):GetEmotion() then
-		slot3 = PoolMgr.GetInstance()
-		slot4 = {}
+	if arg_10_0.emotion ~= var_10_0 then
+		local var_10_2 = PoolMgr.GetInstance()
+		local var_10_3 = {}
 
-		if slot0.emotion and slot0.emotionTFs[slot0.emotion] then
-			setActive(slot0.emotionTFs[slot0.emotion], false)
+		if arg_10_0.emotion and arg_10_0.emotionTFs[arg_10_0.emotion] then
+			setActive(arg_10_0.emotionTFs[arg_10_0.emotion], false)
 		end
 
-		slot0.emotion = slot1
+		arg_10_0.emotion = var_10_0
 
-		if slot1 then
-			if slot0.emotionTFs[slot1] then
-				setActive(slot0.emotionTFs[slot0.emotion], true)
+		if var_10_0 then
+			if arg_10_0.emotionTFs[var_10_0] then
+				setActive(arg_10_0.emotionTFs[arg_10_0.emotion], true)
 			else
-				slot3:GetUI(slot1, true, function (slot0)
-					if uv0.emotion == uv1 then
-						setParent(slot0, uv0.transform)
-						setActive(slot0, true)
+				var_10_2:GetUI(var_10_0, true, function(arg_11_0)
+					if arg_10_0.emotion == var_10_0 then
+						setParent(arg_11_0, arg_10_0.transform)
+						setActive(arg_11_0, true)
 
-						uv0.emotionTFs[uv1] = tf(slot0)
+						arg_10_0.emotionTFs[var_10_0] = tf(arg_11_0)
 					else
-						uv2:ReturnUI(uv1, slot0)
+						var_10_2:ReturnUI(var_10_0, arg_11_0)
 					end
 				end)
 			end
@@ -119,4 +124,4 @@ function slot0.OnUpdateFleetEmotion(slot0)
 	end
 end
 
-return slot0
+return var_0_0

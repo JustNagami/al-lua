@@ -1,86 +1,86 @@
-slot0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var_0_0 = class("EffectFire", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function slot0.GetBaseOrder(slot0)
+function var_0_0.GetBaseOrder(arg_1_0)
 	return "floor"
 end
 
-slot1 = {
+local var_0_1 = {
 	"S",
 	"E",
 	"N",
 	"W"
 }
 
-function slot0.InitUI(slot0, slot1)
-	slot0.power = slot1.power
+function var_0_0.InitUI(arg_2_0, arg_2_1)
+	arg_2_0.power = arg_2_1.power
 
-	eachChild(slot0._tf, function (slot0)
-		setActive(slot0, slot0.name == "C")
+	eachChild(arg_2_0._tf, function(arg_3_0)
+		setActive(arg_3_0, arg_3_0.name == "C")
 	end)
 
-	slot2 = slot0._tf:Find("C/Image"):GetComponent(typeof(DftAniEvent))
+	local var_2_0 = arg_2_0._tf:Find("C/Image"):GetComponent(typeof(DftAniEvent))
 
-	slot2:SetTriggerEvent(function ()
-		uv0.triggerCount = defaultValue(uv0.triggerCount, 0) + 1
+	var_2_0:SetTriggerEvent(function()
+		arg_2_0.triggerCount = defaultValue(arg_2_0.triggerCount, 0) + 1
 
-		switch(uv0.triggerCount, {
-			function ()
-				slot0, slot1, slot2 = uv0.responder:GetCrossFire(uv0.pos, uv0.power)
+		switch(arg_2_0.triggerCount, {
+			function()
+				local var_5_0, var_5_1, var_5_2 = arg_2_0.responder:GetCrossFire(arg_2_0.pos, arg_2_0.power)
 
-				for slot6, slot7 in ipairs(slot0) do
-					for slot12 = uv0._tf:Find(uv1[slot6]).childCount + 1, slot7 do
-						slot13 = cloneTplTo(slot8:Find("7"), slot8, slot12)
+				for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+					local var_5_3 = arg_2_0._tf:Find(var_0_1[iter_5_0])
 
-						if slot6 < 3 then
-							slot13:SetAsLastSibling()
+					for iter_5_2 = var_5_3.childCount + 1, iter_5_1 do
+						local var_5_4 = cloneTplTo(var_5_3:Find("7"), var_5_3, iter_5_2)
+
+						if iter_5_0 < 3 then
+							var_5_4:SetAsLastSibling()
 						end
 					end
 
-					for slot13 = 1, slot8.childCount do
-						setActive(slot8:Find(slot13), slot13 <= slot7)
+					local var_5_5 = var_5_3.childCount
+
+					for iter_5_3 = 1, var_5_5 do
+						setActive(var_5_3:Find(iter_5_3), iter_5_3 <= iter_5_1)
 					end
 
-					setActive(slot8, true)
+					setActive(var_5_3, true)
 				end
 
-				uv0:Calling("burn", {}, slot1)
+				arg_2_0:Calling("burn", {}, var_5_1)
 
-				uv0.lenList = slot0
+				arg_2_0.lenList = var_5_0
 
-				function slot6(slot0)
-					uv0:Calling("burn", {}, slot0)
-				end
+				arg_2_0:Register("move", function(arg_6_0)
+					arg_2_0:Calling("burn", {}, arg_6_0)
+				end, var_5_1)
 
-				slot7 = slot1
-
-				uv0:Register("move", slot6, slot7)
-
-				for slot6, slot7 in pairs(slot2) do
-					uv0:Calling("block", {
-						slot7[2]
-					}, slot7[1])
+				for iter_5_4, iter_5_5 in pairs(var_5_2) do
+					arg_2_0:Calling("block", {
+						iter_5_5[2]
+					}, iter_5_5[1])
 				end
 			end,
-			function ()
-				uv0.lenList = nil
+			function()
+				arg_2_0.lenList = nil
 
-				uv0:Deregister("move")
+				arg_2_0:Deregister("move")
 			end
 		})
 	end)
-	slot2:SetEndEvent(function ()
-		uv0:Destroy()
+	var_2_0:SetEndEvent(function()
+		arg_2_0:Destroy()
 	end)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-bomb")
 end
 
-function slot0.GetCollideRange(slot0)
-	if slot0.lenList then
+function var_0_0.GetCollideRange(arg_9_0)
+	if arg_9_0.lenList then
 		return {
 			{
 				{
-					-0.5 - slot0.lenList[4],
-					0.5 + slot0.lenList[2]
+					-0.5 - arg_9_0.lenList[4],
+					0.5 + arg_9_0.lenList[2]
 				},
 				{
 					-0.5,
@@ -93,8 +93,8 @@ function slot0.GetCollideRange(slot0)
 					0.5
 				},
 				{
-					-0.5 - slot0.lenList[3],
-					0.5 + slot0.lenList[1]
+					-0.5 - arg_9_0.lenList[3],
+					0.5 + arg_9_0.lenList[1]
 				}
 			}
 		}
@@ -103,4 +103,4 @@ function slot0.GetCollideRange(slot0)
 	end
 end
 
-return slot0
+return var_0_0

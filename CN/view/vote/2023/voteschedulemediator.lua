@@ -1,73 +1,83 @@
-slot0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
-slot0.GO_RANK = "VoteScheduleMediator:GO_RANK"
-slot0.FETCH_RANK = "VoteScheduleMediator:FETCH_RANK"
-slot0.ON_VOTE = "VoteScheduleMediator:ON_VOTE"
+﻿local var_0_0 = class("VoteScheduleMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_VOTE, function ()
-		if not (getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()) then
+var_0_0.GO_RANK = "VoteScheduleMediator:GO_RANK"
+var_0_0.FETCH_RANK = "VoteScheduleMediator:FETCH_RANK"
+var_0_0.ON_VOTE = "VoteScheduleMediator:ON_VOTE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_VOTE, function()
+		local var_2_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
+
+		if not var_2_0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_notStartOrEnd"))
 
 			return
 		end
 
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.VOTE, {
-			voteGroup = slot0
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.VOTE, {
+			voteGroup = var_2_0
 		})
 	end)
-	slot0:bind(uv0.FETCH_RANK, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.FETCH_VOTE_RANK, {
-			voteId = slot1,
-			callback = slot2
+	arg_1_0:bind(var_0_0.FETCH_RANK, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.FETCH_VOTE_RANK, {
+			voteId = arg_3_1,
+			callback = arg_3_2
 		})
 	end)
-	slot0:bind(uv0.GO_RANK, function (slot0, slot1)
+	arg_1_0:bind(var_0_0.GO_RANK, function(arg_4_0, arg_4_1)
 		seriesAsync({
-			function (slot0)
-				uv0:CheckPaintingRes(uv1, slot0)
+			function(arg_5_0)
+				arg_1_0:CheckPaintingRes(arg_4_1, arg_5_0)
 			end
-		}, function ()
-			uv0:addSubLayers(Context.New({
+		}, function()
+			arg_1_0:addSubLayers(Context.New({
 				mediator = ContextMediator,
 				viewComponent = VoteRankScene,
 				data = {
-					voteGroup = uv1
+					voteGroup = arg_4_1
 				}
 			}))
 		end)
 	end)
 end
 
-function slot0.CheckPaintingRes(slot0, slot1, slot2)
-	if slot1 and slot1:isFinalsRace() or slot1:IsFunRace() then
-		slot3 = slot1:GetRankList()
-		slot11 = {}
+function var_0_0.CheckPaintingRes(arg_7_0, arg_7_1, arg_7_2)
+	if arg_7_1 and arg_7_1:isFinalsRace() or arg_7_1:IsFunRace() then
+		local var_7_0 = arg_7_1:GetRankList()
+		local var_7_1 = var_7_0[1]
+		local var_7_2 = var_7_0[2]
+		local var_7_3 = var_7_0[3]
+		local var_7_4 = var_7_1:getPainting()
+		local var_7_5 = var_7_2:getPainting()
+		local var_7_6 = var_7_3:getPainting()
+		local var_7_7 = {
+			var_7_4,
+			var_7_5,
+			var_7_6
+		}
+		local var_7_8 = {}
 
-		for slot15, slot16 in ipairs({
-			slot3[1]:getPainting(),
-			slot3[2]:getPainting(),
-			slot3[3]:getPainting()
-		}) do
-			PaintingConst.AddPaintingNameWithFilteMap(slot11, slot16)
+		for iter_7_0, iter_7_1 in ipairs(var_7_7) do
+			PaintingGroupConst.AddPaintingNameWithFilteMap(var_7_8, iter_7_1)
 		end
 
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
-			paintingNameList = slot11,
-			finishFunc = slot2
+			paintingNameList = var_7_8,
+			finishFunc = arg_7_2
 		})
 	else
-		slot2()
+		arg_7_2()
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 end
 
-return slot0
+return var_0_0

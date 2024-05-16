@@ -1,110 +1,119 @@
-slot0 = class("LanternRiddlesModel")
-slot1 = pg.activity_event_question
+﻿local var_0_0 = class("LanternRiddlesModel")
+local var_0_1 = pg.activity_event_question
 
-function slot0.Ctor(slot0, slot1)
-	slot0.controller = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.controller = arg_1_1
 end
 
-function slot0.Init(slot0)
-	slot0.questiones = {}
+function var_0_0.Init(arg_2_0)
+	arg_2_0.questiones = {}
 
-	for slot4, slot5 in ipairs(uv0.all) do
-		table.insert(slot0.questiones, slot0:WrapQuestion(uv0[slot5], slot0:GetNextTime(slot4)))
+	for iter_2_0, iter_2_1 in ipairs(var_0_1.all) do
+		local var_2_0 = var_0_1[iter_2_1]
+		local var_2_1 = arg_2_0:GetNextTime(iter_2_0)
+		local var_2_2 = arg_2_0:WrapQuestion(var_2_0, var_2_1)
+
+		table.insert(arg_2_0.questiones, var_2_2)
 	end
 end
 
-function slot0.WrapQuestion(slot0, slot1, slot2)
-	slot3 = slot0:GetAnswerFlag(slot1.id, {
+function var_0_0.WrapQuestion(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = {
 		{
-			slot1.answer_false1,
+			arg_3_1.answer_false1,
 			false
 		},
 		{
-			slot1.answer_false2,
+			arg_3_1.answer_false2,
 			false
 		},
 		{
-			slot1.answer_false3,
+			arg_3_1.answer_false3,
 			false
 		}
-	})
+	}
+	local var_3_1 = arg_3_0:GetAnswerFlag(arg_3_1.id, var_3_0)
 
-	shuffle(slot3)
-	table.insert(slot3, math.random(1, 4), {
-		slot1.answer_right,
+	shuffle(var_3_1)
+
+	local var_3_2 = math.random(1, 4)
+
+	table.insert(var_3_1, var_3_2, {
+		arg_3_1.answer_right,
 		false
 	})
 
-	slot5 = slot0:IsFinishQuestion(slot1.id)
+	local var_3_3 = arg_3_0:IsFinishQuestion(arg_3_1.id)
+	local var_3_4 = arg_3_0.unlockCount > 0 or var_3_3
 
 	return {
-		id = slot1.id,
-		type = slot1.type,
-		rightIndex = slot4,
-		answers = slot3,
-		text = slot1.question,
-		nextTime = slot2 or 0,
-		waitTime = slot1.wrong_time,
-		isFinish = slot5,
-		isUnlock = slot0.unlockCount > 0 or slot5
+		id = arg_3_1.id,
+		type = arg_3_1.type,
+		rightIndex = var_3_2,
+		answers = var_3_1,
+		text = arg_3_1.question,
+		nextTime = arg_3_2 or 0,
+		waitTime = arg_3_1.wrong_time,
+		isFinish = var_3_3,
+		isUnlock = var_3_4
 	}
 end
 
-function slot0.IsFinishQuestion(slot0, slot1)
-	return table.contains(slot0.finishList, slot1)
+function var_0_0.IsFinishQuestion(arg_4_0, arg_4_1)
+	return table.contains(arg_4_0.finishList, arg_4_1)
 end
 
-function slot0.GetNextTime(slot0, slot1)
-	return slot0.nextTimes[slot1] or 0
+function var_0_0.GetNextTime(arg_5_0, arg_5_1)
+	return arg_5_0.nextTimes[arg_5_1] or 0
 end
 
-function slot0.SetNextTime(slot0, slot1)
-	slot2 = 0
+function var_0_0.SetNextTime(arg_6_0, arg_6_1)
+	local var_6_0 = 0
 
-	for slot6, slot7 in ipairs(slot0.questiones) do
-		if slot7.id == slot1 then
-			slot7.nextTime = pg.TimeMgr.GetInstance():GetServerTime() + slot7.waitTime
-			slot2 = slot7.waitTime
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.questiones) do
+		if iter_6_1.id == arg_6_1 then
+			iter_6_1.nextTime = pg.TimeMgr.GetInstance():GetServerTime() + iter_6_1.waitTime
+			var_6_0 = iter_6_1.waitTime
 
 			break
 		end
 	end
 
-	slot0.lockTime = pg.TimeMgr.GetInstance():GetServerTime() + slot2
+	arg_6_0.lockTime = pg.TimeMgr.GetInstance():GetServerTime() + var_6_0
 end
 
-function slot0.GetLockTime(slot0)
-	return slot0.lockTime
+function var_0_0.GetLockTime(arg_7_0)
+	return arg_7_0.lockTime
 end
 
-function slot0.GetAnswerFlag(slot0, slot1, slot2)
-	slot3 = getProxy(PlayerProxy)
-	slot3 = slot3:getRawData().id
+function var_0_0.GetAnswerFlag(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = getProxy(PlayerProxy):getRawData().id
 
-	function slot4(slot0, slot1)
-		return PlayerPrefs.GetInt(slot0 .. "_" .. slot1 .. "_" .. uv0, 0) > 0
+	local function var_8_1(arg_9_0, arg_9_1)
+		return PlayerPrefs.GetInt(arg_9_0 .. "_" .. arg_9_1 .. "_" .. var_8_0, 0) > 0
 	end
 
-	return _.map(slot2, function (slot0)
+	return _.map(arg_8_2, function(arg_10_0)
+		local var_10_0 = var_8_1(arg_8_1, arg_10_0[1])
+
 		return {
-			slot0[1],
-			uv0(uv1, slot0[1])
+			arg_10_0[1],
+			var_10_0
 		}
 	end)
 end
 
-function slot0.SetAnswerFlag(slot0, slot1, slot2)
-	slot7 = slot2
-	slot8 = "_"
+function var_0_0.SetAnswerFlag(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetInt(slot1 .. "_" .. slot7 .. slot8 .. getProxy(PlayerProxy):getRawData().id, 1)
+	PlayerPrefs.SetInt(arg_11_1 .. "_" .. arg_11_2 .. "_" .. var_11_0, 1)
 	PlayerPrefs.Save()
 
-	for slot7, slot8 in ipairs(slot0.questiones) do
-		if slot8.id == slot1 then
-			for slot12, slot13 in ipairs(slot8.answers) do
-				if slot13[1] == slot2 then
-					slot13[2] = true
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.questiones) do
+		if iter_11_1.id == arg_11_1 then
+			for iter_11_2, iter_11_3 in ipairs(iter_11_1.answers) do
+				if iter_11_3[1] == arg_11_2 then
+					iter_11_3[2] = true
 
 					break
 				end
@@ -113,59 +122,62 @@ function slot0.SetAnswerFlag(slot0, slot1, slot2)
 	end
 end
 
-function slot0.UpdateWrongAnswerFlag(slot0, slot1, slot2)
-	slot0:SetAnswerFlag(slot1, _.detect(slot0.questiones, function (slot0)
-		return slot0.id == uv0
-	end).answers[slot2][1])
-	slot0:SetNextTime(slot1)
+function var_0_0.UpdateWrongAnswerFlag(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = _.detect(arg_12_0.questiones, function(arg_13_0)
+		return arg_13_0.id == arg_12_1
+	end).answers[arg_12_2]
+
+	arg_12_0:SetAnswerFlag(arg_12_1, var_12_0[1])
+	arg_12_0:SetNextTime(arg_12_1)
 end
 
-function slot0.UpdateRightAnswerFlag(slot0, slot1)
-	if not table.contains(slot0.finishList, slot1) then
-		table.insert(slot0.finishList, slot1)
+function var_0_0.UpdateRightAnswerFlag(arg_14_0, arg_14_1)
+	if not table.contains(arg_14_0.finishList, arg_14_1) then
+		table.insert(arg_14_0.finishList, arg_14_1)
 
-		slot0.finishCount = slot0.finishCount + 1
+		arg_14_0.finishCount = arg_14_0.finishCount + 1
 	end
 
-	slot0:GetQuestion(slot1).isFinish = true
-	slot0.unlockCount = slot0.unlockCount - 1
+	arg_14_0:GetQuestion(arg_14_1).isFinish = true
+	arg_14_0.unlockCount = arg_14_0.unlockCount - 1
 
-	if slot0.unlockCount <= 0 then
-		for slot6, slot7 in ipairs(slot0.questiones) do
-			if not slot7.isFinish then
-				slot7.isUnlock = false
+	if arg_14_0.unlockCount <= 0 then
+		for iter_14_0, iter_14_1 in ipairs(arg_14_0.questiones) do
+			if not iter_14_1.isFinish then
+				iter_14_1.isUnlock = false
 			end
 		end
 	end
 end
 
-function slot0.UpdateData(slot0, slot1)
-	slot0.finishCount = slot1.finishCount or 0
-	slot0.unlockCount = slot1.unlockCount or 0
-	slot0.nextTimes = slot1.nextTimes
-	slot0.finishList = slot1.finishList
-	slot0.lockTime = slot0.nextTimes[#slot0.nextTimes]
+function var_0_0.UpdateData(arg_15_0, arg_15_1)
+	arg_15_0.finishCount = arg_15_1.finishCount or 0
+	arg_15_0.unlockCount = arg_15_1.unlockCount or 0
+	arg_15_0.nextTimes = arg_15_1.nextTimes
+	arg_15_0.finishList = arg_15_1.finishList
+	arg_15_0.lockTime = arg_15_0.nextTimes[#arg_15_0.nextTimes]
 
-	slot0:Init()
+	arg_15_0:Init()
 end
 
-function slot0.IsRight(slot0, slot1, slot2)
-	return _.any(slot0.questiones, function (slot0)
-		return uv0 == slot0.id and slot0.rightIndex == uv1
+function var_0_0.IsRight(arg_16_0, arg_16_1, arg_16_2)
+	return _.any(arg_16_0.questiones, function(arg_17_0)
+		return arg_16_1 == arg_17_0.id and arg_17_0.rightIndex == arg_16_2
 	end)
 end
 
-function slot0.GetQuestiones(slot0)
-	return slot0.questiones
+function var_0_0.GetQuestiones(arg_18_0)
+	return arg_18_0.questiones
 end
 
-function slot0.GetQuestion(slot0, slot1)
-	return _.detect(slot0.questiones, function (slot0)
-		return slot0.id == uv0
+function var_0_0.GetQuestion(arg_19_0, arg_19_1)
+	return _.detect(arg_19_0.questiones, function(arg_20_0)
+		return arg_20_0.id == arg_19_1
 	end)
 end
 
-function slot0.Dispose(slot0)
+function var_0_0.Dispose(arg_21_0)
+	return
 end
 
-return slot0
+return var_0_0

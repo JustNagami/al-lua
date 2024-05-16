@@ -1,37 +1,39 @@
-slot0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+﻿local var_0_0 = class("EffectLaser", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function slot0.GetBaseOrder(slot0)
-	if slot0.mark == "N" then
-		return uv0.super.GetBaseOrder(slot0)
+function var_0_0.GetBaseOrder(arg_1_0)
+	if arg_1_0.mark == "N" then
+		return var_0_0.super.GetBaseOrder(arg_1_0)
 	else
 		return 500
 	end
 end
 
-function slot0.InitUI(slot0, slot1)
-	slot0.mark = slot1.mark
+function var_0_0.InitUI(arg_2_0, arg_2_1)
+	arg_2_0.mark = arg_2_1.mark
 
-	slot0:UpdatePos(slot0.pos)
+	arg_2_0:UpdatePos(arg_2_0.pos)
 
-	slot2 = slot0._tf:Find("scale/" .. slot0.mark)
+	local var_2_0 = arg_2_0._tf:Find("scale/" .. arg_2_0.mark)
 
-	setActive(slot2, true)
-	slot2:Find("base"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0:Destroy()
+	setActive(var_2_0, true)
+	var_2_0:Find("base"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_2_0:Destroy()
 	end)
 
-	if slot0.responder:CollideRyza(slot0) then
-		slot0:Calling("hit", {
+	if arg_2_0.responder:CollideRyza(arg_2_0) then
+		arg_2_0:Calling("hit", {
 			1,
-			slot0.realPos
+			arg_2_0.realPos
 		}, MoveRyza)
 	end
 end
 
-function slot0.GetCollideRange(slot0)
-	switch(slot0.mark, {
-		N = function ()
-			uv0 = {
+function var_0_0.GetCollideRange(arg_4_0)
+	local var_4_0
+
+	switch(arg_4_0.mark, {
+		N = function()
+			var_4_0 = {
 				{
 					-0.5,
 					0.5
@@ -42,8 +44,8 @@ function slot0.GetCollideRange(slot0)
 				}
 			}
 		end,
-		S = function ()
-			uv0 = {
+		S = function()
+			var_4_0 = {
 				{
 					-0.5,
 					0.5
@@ -54,8 +56,8 @@ function slot0.GetCollideRange(slot0)
 				}
 			}
 		end,
-		W = function ()
-			uv0 = {
+		W = function()
+			var_4_0 = {
 				{
 					-25,
 					-0.5
@@ -66,8 +68,8 @@ function slot0.GetCollideRange(slot0)
 				}
 			}
 		end,
-		E = function ()
-			uv0 = {
+		E = function()
+			var_4_0 = {
 				{
 					0.5,
 					25
@@ -81,8 +83,8 @@ function slot0.GetCollideRange(slot0)
 	})
 
 	return {
-		nil
+		var_4_0
 	}
 end
 
-return slot0
+return var_0_0

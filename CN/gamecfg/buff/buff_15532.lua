@@ -1,4 +1,58 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "antiAirPower",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				countTarget = 3,
+				countType = 15533
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				countType = 15533,
+				buff_id_list = {
+					15530
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -497,59 +551,5 @@ return {
 	stack = 3,
 	id = 15532,
 	icon = 15530,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "antiAirPower",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				countTarget = 3,
-				countType = 15533
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				countType = 15533,
-				buff_id_list = {
-					15530
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

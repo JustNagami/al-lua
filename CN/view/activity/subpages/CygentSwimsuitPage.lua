@@ -1,36 +1,33 @@
-slot0 = class("CygentSwimsuitPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("CygentSwimsuitPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	PoolMgr.GetInstance():GetSpineChar("xiaotiane_2", false, function(arg_2_0)
+		arg_2_0.transform.localScale = Vector3(0.7, 0.7, 1)
 
-	slot1 = PoolMgr.GetInstance()
+		arg_2_0.transform:SetParent(arg_1_0:findTF("char", arg_1_0.bg), false)
+		arg_2_0:GetComponent(typeof(SpineAnimUI)):SetAction("stand", 0)
 
-	slot1:GetSpineChar("xiaotiane_2", false, function (slot0)
-		slot0.transform.localScale = Vector3(0.7, 0.7, 1)
-
-		slot0.transform:SetParent(uv0:findTF("char", uv0.bg), false)
-		slot0:GetComponent(typeof(SpineAnimUI)):SetAction("stand", 0)
-
-		uv0.model = slot0
+		arg_1_0.model = arg_2_0
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	GetImageSpriteFromAtlasAsync("numbericon/t1/" .. slot0.nday, "", slot0:findTF("day1", slot0.bg))
-	setText(slot0:findTF("progress", slot0.bg), "進度:" .. slot0.nday .. "/10")
+function var_0_0.OnUpdateFlush(arg_3_0)
+	var_0_0.super.OnUpdateFlush(arg_3_0)
+	GetImageSpriteFromAtlasAsync("numbericon/t1/" .. arg_3_0.nday, "", arg_3_0:findTF("day1", arg_3_0.bg))
+	setText(arg_3_0:findTF("progress", arg_3_0.bg), "進度:" .. arg_3_0.nday .. "/10")
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_4_0)
+	var_0_0.super.OnDestroy(arg_4_0)
 
-	if slot0.model then
-		slot0.model.transform.localScale = Vector3.one
+	if arg_4_0.model then
+		arg_4_0.model.transform.localScale = Vector3.one
 
-		PoolMgr.GetInstance():ReturnSpineChar("xiaotiane_2", slot0.model)
+		PoolMgr.GetInstance():ReturnSpineChar("xiaotiane_2", arg_4_0.model)
 
-		slot0.model = nil
+		arg_4_0.model = nil
 	end
 end
 
-return slot0
+return var_0_0

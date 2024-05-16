@@ -1,172 +1,191 @@
-slot0 = class("EducateMsgBoxLayer", import("..base.EducateBaseUI"))
-slot0.TYPE_NORMAL = 1
-slot0.TYPE_SINGLE_ITEM = 2
-slot1 = {
-	[slot0.TYPE_NORMAL] = Vector2(924, 616),
-	[slot0.TYPE_SINGLE_ITEM] = Vector2(1060, 628)
+﻿local var_0_0 = class("EducateMsgBoxLayer", import("..base.EducateBaseUI"))
+
+var_0_0.TYPE_NORMAL = 1
+var_0_0.TYPE_SINGLE_ITEM = 2
+
+local var_0_1 = {
+	[var_0_0.TYPE_NORMAL] = Vector2(924, 616),
+	[var_0_0.TYPE_SINGLE_ITEM] = Vector2(1060, 628)
 }
-slot2 = {
-	[slot0.TYPE_NORMAL] = i18n("child_msg_title_tip"),
-	[slot0.TYPE_SINGLE_ITEM] = i18n("child_msg_title_detail")
+local var_0_2 = {
+	[var_0_0.TYPE_NORMAL] = i18n("child_msg_title_tip"),
+	[var_0_0.TYPE_SINGLE_ITEM] = i18n("child_msg_title_detail")
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateMsgBoxUI"
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+function var_0_0.init(arg_2_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg_2_0.anim = arg_2_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_2_0.animEvent = arg_2_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	arg_2_0.animEvent:SetEndEvent(function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 	end)
 
-	slot0._window = slot0._tf:Find("anim_root/window")
+	arg_2_0._window = arg_2_0._tf:Find("anim_root/window")
 
-	setActive(slot0._window, true)
+	setActive(arg_2_0._window, true)
 
-	slot0._top = slot0._window:Find("top")
-	slot0._titleText = slot0._top:Find("title")
-	slot0._closeBtn = slot0._top:Find("btnBack")
-	slot0._msgPanel = slot0._window:Find("msg_panel")
-	slot0.contentText = slot0._msgPanel:Find("content"):GetComponent("RichText")
-	slot0._sigleItemPanel = slot0._window:Find("single_item_panel")
-	slot0.singleItemTF = slot0._sigleItemPanel:Find("item")
-	slot0.singleItemOwn = slot0._sigleItemPanel:Find("own")
-	slot0.singleItemName = slot0._sigleItemPanel:Find("display_panel/name")
-	slot0.singleItemDesc = slot0._sigleItemPanel:Find("display_panel/desc/Text")
-	slot0._noBtn = slot0._window:Find("button_container/no")
+	arg_2_0._top = arg_2_0._window:Find("top")
+	arg_2_0._titleText = arg_2_0._top:Find("title")
+	arg_2_0._closeBtn = arg_2_0._top:Find("btnBack")
+	arg_2_0._msgPanel = arg_2_0._window:Find("msg_panel")
+	arg_2_0.contentText = arg_2_0._msgPanel:Find("content"):GetComponent("RichText")
+	arg_2_0._sigleItemPanel = arg_2_0._window:Find("single_item_panel")
+	arg_2_0.singleItemTF = arg_2_0._sigleItemPanel:Find("item")
+	arg_2_0.singleItemOwn = arg_2_0._sigleItemPanel:Find("own")
+	arg_2_0.singleItemName = arg_2_0._sigleItemPanel:Find("display_panel/name")
+	arg_2_0.singleItemDesc = arg_2_0._sigleItemPanel:Find("display_panel/desc/Text")
+	arg_2_0._noBtn = arg_2_0._window:Find("button_container/no")
 
-	setText(slot0._noBtn:Find("pic"), i18n("word_cancel"))
+	setText(arg_2_0._noBtn:Find("pic"), i18n("word_cancel"))
 
-	slot0._yesBtn = slot0._window:Find("button_container/yes")
+	arg_2_0._yesBtn = arg_2_0._window:Find("button_container/yes")
 
-	setText(slot0._yesBtn:Find("pic"), i18n("word_ok"))
+	setText(arg_2_0._yesBtn:Find("pic"), i18n("word_ok"))
 end
 
-function slot0.didEnter(slot0)
-	slot0:ShowMsgBox(slot0.contextData)
+function var_0_0.didEnter(arg_4_0)
+	arg_4_0:ShowMsgBox(arg_4_0.contextData)
 end
 
-function slot0.ShowMsgBox(slot0, slot1)
-	slot0:commonSetting(slot1)
-	slot0:showByType(slot1)
+function var_0_0.ShowMsgBox(arg_5_0, arg_5_1)
+	arg_5_0:commonSetting(arg_5_1)
+	arg_5_0:showByType(arg_5_1)
 end
 
-function slot0.commonSetting(slot0, slot1)
-	slot0.settings = slot1
-	slot2 = slot0.settings.type or uv0.TYPE_NORMAL
-	slot0._window.sizeDelta = uv1[slot2]
+function var_0_0.commonSetting(arg_6_0, arg_6_1)
+	arg_6_0.settings = arg_6_1
 
-	setText(slot0._titleText, uv2[slot2])
-	setActive(slot0._msgPanel, false)
-	setActive(slot0._sigleItemPanel, false)
+	local var_6_0 = arg_6_0.settings.type or var_0_0.TYPE_NORMAL
 
-	slot6 = slot0.settings.onYes or function ()
+	arg_6_0._window.sizeDelta = var_0_1[var_6_0]
+
+	setText(arg_6_0._titleText, var_0_2[var_6_0])
+	setActive(arg_6_0._msgPanel, false)
+	setActive(arg_6_0._sigleItemPanel, false)
+
+	local var_6_1 = arg_6_0.settings.hideNo or false
+	local var_6_2 = arg_6_0.settings.hideYes or false
+	local var_6_3 = arg_6_0.settings.hideClose or false
+	local var_6_4 = arg_6_0.settings.onYes or function()
+		return
 	end
-	slot7 = slot0.settings.onNo or function ()
+	local var_6_5 = arg_6_0.settings.onNo or function()
+		return
 	end
-	slot8 = slot0.settings.onClose or function ()
+	local var_6_6 = arg_6_0.settings.onClose or function()
+		return
 	end
 
-	setActive(slot0._noBtn, not (slot0.settings.hideNo or false))
-	onButton(slot0, slot0._noBtn, function ()
-		if uv0 then
-			uv0()
+	setActive(arg_6_0._noBtn, not var_6_1)
+	onButton(arg_6_0, arg_6_0._noBtn, function()
+		if var_6_5 then
+			var_6_5()
 		end
 
-		uv1:_close()
+		arg_6_0:_close()
 	end, SFX_CANCEL)
-	setActive(slot0._yesBtn, not (slot0.settings.hideYes or false))
-	onButton(slot0, slot0._yesBtn, function ()
-		if uv0 then
-			uv0()
+	setActive(arg_6_0._yesBtn, not var_6_2)
+	onButton(arg_6_0, arg_6_0._yesBtn, function()
+		if var_6_4 then
+			var_6_4()
 		end
 
-		uv1:_close()
+		arg_6_0:_close()
 	end, SFX_CANCEL)
-	setActive(slot0._closeBtn, not (slot0.settings.hideClose or false))
-	onButton(slot0, slot0._closeBtn, function ()
-		if uv0 then
-			uv0()
+	setActive(arg_6_0._closeBtn, not var_6_3)
+	onButton(arg_6_0, arg_6_0._closeBtn, function()
+		if var_6_6 then
+			var_6_6()
 		else
-			uv1()
+			var_6_5()
 		end
 
-		uv2:_close()
+		arg_6_0:_close()
 	end, SFX_CANCEL)
-	onButton(slot0, tf(slot0._go):Find("anim_root/bg"), function ()
-		if uv0 then
-			uv0()
+	onButton(arg_6_0, tf(arg_6_0._go):Find("anim_root/bg"), function()
+		if var_6_6 then
+			var_6_6()
 		else
-			uv1()
+			var_6_5()
 		end
 
-		uv2:_close()
+		arg_6_0:_close()
 	end, SFX_CANCEL)
 end
 
-function slot0.showByType(slot0, slot1)
-	switch(slot0.settings.type or uv0.TYPE_NORMAL, {
-		[uv0.TYPE_NORMAL] = function ()
-			uv0:showNormalMsgBox()
+function var_0_0.showByType(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0.settings.type or var_0_0.TYPE_NORMAL
+
+	switch(var_14_0, {
+		[var_0_0.TYPE_NORMAL] = function()
+			arg_14_0:showNormalMsgBox()
 		end,
-		[uv0.TYPE_SINGLE_ITEM] = function ()
-			uv0:showSingleItemBox()
+		[var_0_0.TYPE_SINGLE_ITEM] = function()
+			arg_14_0:showSingleItemBox()
 		end
 	})
 end
 
-function slot0.showNormalMsgBox(slot0)
-	setActive(slot0._msgPanel, true)
+function var_0_0.showNormalMsgBox(arg_17_0)
+	setActive(arg_17_0._msgPanel, true)
 
-	slot0.contentText.text = slot0.settings.content or ""
+	arg_17_0.contentText.text = arg_17_0.settings.content or ""
 end
 
-function slot0.showSingleItemBox(slot0)
-	setActive(slot0._sigleItemPanel, true)
-	setActive(slot0._noBtn, false)
-	EducateHelper.UpdateDropShow(slot0.singleItemTF, slot0.settings.drop)
-	setText(slot0.singleItemName, EducateHelper.GetDropConfig(slot0.settings.drop).name or "")
+function var_0_0.showSingleItemBox(arg_18_0)
+	setActive(arg_18_0._sigleItemPanel, true)
+	setActive(arg_18_0._noBtn, false)
+	EducateHelper.UpdateDropShow(arg_18_0.singleItemTF, arg_18_0.settings.drop)
 
-	if slot0.settings.drop.type == EducateConst.DROP_TYPE_RES and slot1.id == EducateChar.RES_MOOD_ID then
-		setText(slot0.singleItemDesc, slot0:getMoodDesc(slot1.desc))
+	local var_18_0 = EducateHelper.GetDropConfig(arg_18_0.settings.drop)
+
+	setText(arg_18_0.singleItemName, var_18_0.name or "")
+
+	if arg_18_0.settings.drop.type == EducateConst.DROP_TYPE_RES and var_18_0.id == EducateChar.RES_MOOD_ID then
+		setText(arg_18_0.singleItemDesc, arg_18_0:getMoodDesc(var_18_0.desc))
 	else
-		setText(slot0.singleItemDesc, slot1.desc or slot1.name or "")
+		setText(arg_18_0.singleItemDesc, var_18_0.desc or var_18_0.name or "")
 	end
 
-	if slot0.settings.drop.type == EducateConst.DROP_TYPE_ITEM then
-		setText(slot0.singleItemOwn, i18n("child_msg_owned", getProxy(EducateProxy):GetItemCntById(slot1.id)))
-		setActive(slot0.singleItemOwn, true)
+	if arg_18_0.settings.drop.type == EducateConst.DROP_TYPE_ITEM then
+		local var_18_1 = getProxy(EducateProxy):GetItemCntById(var_18_0.id)
+
+		setText(arg_18_0.singleItemOwn, i18n("child_msg_owned", var_18_1))
+		setActive(arg_18_0.singleItemOwn, true)
 	else
-		setActive(slot0.singleItemOwn, false)
+		setActive(arg_18_0.singleItemOwn, false)
 	end
 end
 
-function slot0.getMoodDesc(slot0, slot1)
-	return string.gsub(slot1, "$1", i18n("child_mood_desc" .. getProxy(EducateProxy):GetCharData():GetMoodStage()))
+function var_0_0.getMoodDesc(arg_19_0, arg_19_1)
+	local var_19_0 = getProxy(EducateProxy):GetCharData():GetMoodStage()
+
+	return string.gsub(arg_19_1, "$1", i18n("child_mood_desc" .. var_19_0))
 end
 
-function slot0._close(slot0)
-	slot0.anim:Play("anim_educate_MsgBox_out")
+function var_0_0._close(arg_20_0)
+	arg_20_0.anim:Play("anim_educate_MsgBox_out")
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:_close()
+function var_0_0.onBackPressed(arg_21_0)
+	arg_21_0:_close()
 end
 
-function slot0.willExit(slot0)
-	slot0.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_22_0)
+	arg_22_0.animEvent:SetEndEvent(nil)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_22_0._tf)
 
-	if slot0.contextData.onExit then
-		slot0.contextData.onExit()
+	if arg_22_0.contextData.onExit then
+		arg_22_0.contextData.onExit()
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"指挥官请点击<color=#ff7d36>出击</color>",
 	"敌方旗舰出现！点击目标继续前进！"
 }
@@ -13,7 +13,7 @@ return {
 				mode = 2,
 				posY = -42,
 				posX = 243,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -40,7 +40,7 @@ return {
 				mode = 2,
 				posY = 218.62,
 				posX = 20.04,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/cells/chapter_cell_4_7/attachment",
@@ -78,7 +78,7 @@ return {
 				mode = 2,
 				posY = 218.62,
 				posX = 20.04,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/cells/chapter_cell_4_7/attachment",

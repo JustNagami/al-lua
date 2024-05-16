@@ -1,72 +1,77 @@
-slot0 = class("GuildShop", import(".BaseShop"))
-slot0.AUTO_REFRESH = 1
-slot0.MANUAL_REFRESH = 2
+﻿local var_0_0 = class("GuildShop", import(".BaseShop"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id or 1
-	slot0.configId = slot0.id
-	slot0.goods = {}
+var_0_0.AUTO_REFRESH = 1
+var_0_0.MANUAL_REFRESH = 2
 
-	for slot5, slot6 in ipairs(slot1.good_list) do
-		slot7 = GuildGoods.New(slot6)
-		slot0.goods[slot7.id] = slot7
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id or 1
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.goods = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.good_list) do
+		local var_1_0 = GuildGoods.New(iter_1_1)
+
+		arg_1_0.goods[var_1_0.id] = var_1_0
 	end
 
-	slot0.refreshCount = slot1.refresh_count
-	slot0.nextTime = slot1.next_refresh_time
-	slot0.type = ShopArgs.ShopGUILD
+	arg_1_0.refreshCount = arg_1_1.refresh_count
+	arg_1_0.nextTime = arg_1_1.next_refresh_time
+	arg_1_0.type = ShopArgs.ShopGUILD
 end
 
-function slot0.IsSameKind(slot0, slot1)
-	return isa(slot1, GuildShop)
+function var_0_0.IsSameKind(arg_2_0, arg_2_1)
+	return isa(arg_2_1, GuildShop)
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	return slot0:getGoodsById(slot1)
+function var_0_0.GetCommodityById(arg_3_0, arg_3_1)
+	return arg_3_0:getGoodsById(arg_3_1)
 end
 
-function slot0.GetCommodities(slot0)
-	return slot0:getSortGoods()
+function var_0_0.GetCommodities(arg_4_0)
+	return arg_4_0:getSortGoods()
 end
 
-function slot0.updateNextRefreshTime(slot0, slot1)
-	slot0.nextTime = slot1
+function var_0_0.updateNextRefreshTime(arg_5_0, arg_5_1)
+	arg_5_0.nextTime = arg_5_1
 end
 
-function slot0.CanRefresh(slot0)
-	return slot0.refreshCount <= 0
+function var_0_0.CanRefresh(arg_6_0)
+	return arg_6_0.refreshCount <= 0
 end
 
-function slot0.getSortGoods(slot0)
-	slot1 = {}
+function var_0_0.getSortGoods(arg_7_0)
+	local var_7_0 = {}
 
-	for slot5, slot6 in pairs(slot0.goods) do
-		table.insert(slot1, slot6)
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.goods) do
+		table.insert(var_7_0, iter_7_1)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		if (slot0:getConfig("order") or 0) == (slot1:getConfig("order") or 0) then
-			return slot0.id < slot1.id
+	table.sort(var_7_0, function(arg_8_0, arg_8_1)
+		local var_8_0 = arg_8_0:getConfig("order") or 0
+		local var_8_1 = arg_8_1:getConfig("order") or 0
+
+		if var_8_0 == var_8_1 then
+			return arg_8_0.id < arg_8_1.id
 		else
-			return slot3 < slot2
+			return var_8_1 < var_8_0
 		end
 	end)
 
-	return slot1
+	return var_7_0
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	assert(slot0.goods[slot1], "goods should exist")
+function var_0_0.getGoodsById(arg_9_0, arg_9_1)
+	assert(arg_9_0.goods[arg_9_1], "goods should exist")
 
-	return slot0.goods[slot1]
+	return arg_9_0.goods[arg_9_1]
 end
 
-function slot0.GetResetConsume(slot0)
+function var_0_0.GetResetConsume(arg_10_0)
 	return pg.guildset.store_reset_cost.key_value
 end
 
-function slot0.UpdateGoodsCnt(slot0, slot1, slot2)
-	slot0:getGoodsById(slot1):UpdateCnt(slot2)
+function var_0_0.UpdateGoodsCnt(arg_11_0, arg_11_1, arg_11_2)
+	arg_11_0:getGoodsById(arg_11_1):UpdateCnt(arg_11_2)
 end
 
-return slot0
+return var_0_0

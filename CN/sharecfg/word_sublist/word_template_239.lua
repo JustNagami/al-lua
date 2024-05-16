@@ -1,12 +1,15 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_239 = {}
-slot1 = slot0.word_template_239
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_239 = {}
+
+local var_0_1 = var_0_0.word_template_239
 
 function temp()
-	uv0["钮"] = {
-		["茂"] = {
-			["生"] = {
+	var_0_1.钮 = {
+		茂 = {
+			生 = {
 				this = true
 			}
 		}
@@ -16,12 +19,12 @@ end
 temp()
 
 function temp()
-	uv0["锘"] = {
-		["挎"] = {
-			["瘺"] = {
-				["娉"] = {
-					["戒"] = {
-						["笢"] = {
+	var_0_1.锘 = {
+		挎 = {
+			瘺 = {
+				娉 = {
+					戒 = {
+						笢 = {
 							["1"] = {
 								["2"] = {
 									["3"] = {
@@ -45,10 +48,10 @@ end
 temp()
 
 function temp()
-	uv0["派"] = {
-		["系"] = {
-			["斗"] = {
-				["争"] = {
+	var_0_1.派 = {
+		系 = {
+			斗 = {
+				争 = {
 					this = true
 				}
 			}
@@ -59,15 +62,15 @@ end
 temp()
 
 function temp()
-	uv0["盤"] = {
-		["古"] = {
-			["樂"] = {
-				["隊"] = {
+	var_0_1.盤 = {
+		古 = {
+			樂 = {
+				隊 = {
 					this = true
 				}
 			},
-			["軟"] = {
-				["體"] = {
+			軟 = {
+				體 = {
 					this = true
 				}
 			}
@@ -78,36 +81,36 @@ end
 temp()
 
 function temp()
-	uv0["跑"] = {
-		["官"] = {
-			["要"] = {
-				["官"] = {
+	var_0_1.跑 = {
+		官 = {
+			要 = {
+				官 = {
 					this = true
 				}
 			}
 		},
-		["马"] = {
+		马 = {
 			this = true,
-			["地"] = {
+			地 = {
 				this = true
 			}
 		},
-		["跑"] = {
-			["卡"] = {
-				["丁"] = {
-					["车"] = {
+		跑 = {
+			卡 = {
+				丁 = {
+					车 = {
 						this = true
 					}
 				}
 			}
 		},
-		["事"] = {
+		事 = {
 			this = true
 		},
-		["台"] = {
+		台 = {
 			this = true,
-			["两"] = {
-				["桌"] = {
+			两 = {
+				桌 = {
 					this = true
 				}
 			}
@@ -118,8 +121,8 @@ end
 temp()
 
 function temp()
-	uv0["骗"] = {
-		["局"] = {
+	var_0_1.骗 = {
+		局 = {
 			this = true
 		}
 	}
@@ -128,8 +131,8 @@ end
 temp()
 
 function temp()
-	uv0["騙"] = {
-		["局"] = {
+	var_0_1.騙 = {
+		局 = {
 			this = true
 		}
 	}
@@ -138,39 +141,39 @@ end
 temp()
 
 function temp()
-	uv0["菩"] = {
-		["提"] = {
+	var_0_1.菩 = {
+		提 = {
 			this = true,
-			["功"] = {
+			功 = {
 				this = true
 			},
-			["法"] = {
-				["门"] = {
+			法 = {
+				门 = {
 					this = true
 				}
 			},
-			["教"] = {
-				["会"] = {
+			教 = {
+				会 = {
 					this = true
 				}
 			},
-			["树"] = {
-				["妖"] = {
+			树 = {
+				妖 = {
 					this = true
 				}
 			},
-			["通"] = {
-				["讯"] = {
+			通 = {
+				讯 = {
 					this = true
 				}
 			},
-			["祖"] = {
-				["师"] = {
+			祖 = {
+				师 = {
 					this = true
 				}
 			},
-			["娱"] = {
-				["乐"] = {
+			娱 = {
+				乐 = {
 					this = true
 				}
 			}
@@ -181,9 +184,9 @@ end
 temp()
 
 function temp()
-	uv0["濮"] = {
-		["洪"] = {
-			["九"] = {
+	var_0_1.濮 = {
+		洪 = {
+			九 = {
 				this = true
 			}
 		}
@@ -193,9 +196,9 @@ end
 temp()
 
 function temp()
-	uv0["曝"] = {
-		["光"] = {
-			["王"] = {
+	var_0_1.曝 = {
+		光 = {
+			王 = {
 				this = true
 			}
 		}

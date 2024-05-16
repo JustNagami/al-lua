@@ -1,365 +1,375 @@
-slot0 = class("BuildShipDetailLayer", import("...base.BaseUI"))
-slot1 = 10
-slot2 = 2
-slot3 = 1
-slot4 = {
+﻿local var_0_0 = class("BuildShipDetailLayer", import("...base.BaseUI"))
+local var_0_1 = 10
+local var_0_2 = 2
+local var_0_3 = 1
+local var_0_4 = 2
+local var_0_5 = {
 	"resources/1",
 	"resources/2",
 	"resources/3",
 	"resources/1"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BuildShipDetailUI1"
 end
 
-function slot0.setItems(slot0, slot1)
-	slot0.itemVO = slot1[ITEM_ID_EQUIP_QUICK_FINISH] or {
+function var_0_0.setItems(arg_2_0, arg_2_1)
+	arg_2_0.itemVO = arg_2_1[ITEM_ID_EQUIP_QUICK_FINISH] or {
 		count = 0,
 		id = ITEM_ID_EQUIP_QUICK_FINISH
 	}
 end
 
-function slot0.setWorkCount(slot0, slot1)
-	slot0.workCount = slot1
+function var_0_0.setWorkCount(arg_3_0, arg_3_1)
+	arg_3_0.workCount = arg_3_1
 end
 
-function slot0.setBuildSpeedUpRemind(slot0, slot1)
-	slot0.isStopSpeedUpRemind = slot1
+function var_0_0.setBuildSpeedUpRemind(arg_4_0, arg_4_1)
+	arg_4_0.isStopSpeedUpRemind = arg_4_1
 end
 
-slot0.MODEL_INDEX = 2
+var_0_0.MODEL_INDEX = 2
 
-function slot0.setProjectList(slot0, slot1)
-	slot0.projectList = slot1
-	slot0.MODEL = uv0.MODEL_INDEX < #slot0.projectList and uv1 or uv2
+function var_0_0.setProjectList(arg_5_0, arg_5_1)
+	arg_5_0.projectList = arg_5_1
+	arg_5_0.MODEL = #arg_5_0.projectList > var_0_0.MODEL_INDEX and var_0_2 or var_0_3
 end
 
-function slot0.init(slot0)
-	slot0.UIMgr = pg.UIMgr.GetInstance()
-	slot0.multLineTF = slot0:findTF("list_mult_line")
-	slot0.multLineContain = slot0:findTF("list_mult_line/content")
-	slot0.multLineTpl = slot0:findTF("project_tpl", slot0.multLineContain)
-	slot0.multList = UIItemList.New(slot0.multLineContain, slot0.multLineTpl)
-	slot0.singleLineTF = slot0:findTF("list_single_line")
-	slot0.singleLineContain = slot0:findTF("list_single_line/content")
-	slot0.singleLineTpl = slot0:findTF("project_tpl", slot0.singleLineContain)
-	slot0.singleList = UIItemList.New(slot0.singleLineContain, slot0.singleLineTpl)
-	slot0.listCountTF = slot0:findTF("title/value")
-	slot0.quickCount = slot0:findTF("quick_count")
-	slot0.quickCountTF = slot0:findTF("quick_count/value")
-	slot0.noneBg = slot0:findTF("none_bg")
-	slot0.allLaunch = slot0:findTF("all_launch")
-	slot0.aniBgTF = slot0:findTF("aniBg")
-	slot0.canvasgroup = GetOrAddComponent(slot0._tf, typeof(CanvasGroup))
+function var_0_0.init(arg_6_0)
+	arg_6_0.UIMgr = pg.UIMgr.GetInstance()
+	arg_6_0.multLineTF = arg_6_0:findTF("list_mult_line")
+	arg_6_0.multLineContain = arg_6_0:findTF("list_mult_line/content")
+	arg_6_0.multLineTpl = arg_6_0:findTF("project_tpl", arg_6_0.multLineContain)
+	arg_6_0.multList = UIItemList.New(arg_6_0.multLineContain, arg_6_0.multLineTpl)
+	arg_6_0.singleLineTF = arg_6_0:findTF("list_single_line")
+	arg_6_0.singleLineContain = arg_6_0:findTF("list_single_line/content")
+	arg_6_0.singleLineTpl = arg_6_0:findTF("project_tpl", arg_6_0.singleLineContain)
+	arg_6_0.singleList = UIItemList.New(arg_6_0.singleLineContain, arg_6_0.singleLineTpl)
+	arg_6_0.listCountTF = arg_6_0:findTF("title/value")
+	arg_6_0.quickCount = arg_6_0:findTF("quick_count")
+	arg_6_0.quickCountTF = arg_6_0:findTF("quick_count/value")
+	arg_6_0.noneBg = arg_6_0:findTF("none_bg")
+	arg_6_0.allLaunch = arg_6_0:findTF("all_launch")
+	arg_6_0.aniBgTF = arg_6_0:findTF("aniBg")
+	arg_6_0.canvasgroup = GetOrAddComponent(arg_6_0._tf, typeof(CanvasGroup))
 
-	setText(slot0:findTF("title/text"), i18n("build_detail_intro"))
+	setText(arg_6_0:findTF("title/text"), i18n("build_detail_intro"))
 end
 
-function slot0.updatePlayer(slot0, slot1)
-	slot0._player = slot1
+function var_0_0.updatePlayer(arg_7_0, arg_7_1)
+	arg_7_0._player = arg_7_1
 end
 
-function slot0.didEnter(slot0)
-	slot0.projectTFs = {}
-	slot1 = slot0.multList
+function var_0_0.didEnter(arg_8_0)
+	arg_8_0.projectTFs = {}
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot2.gameObject.name = "project_" .. slot1 + 1
-			uv0.projectTFs[slot1 + 1] = slot2
+	arg_8_0.multList:make(function(arg_9_0, arg_9_1, arg_9_2)
+		if arg_9_0 == UIItemList.EventUpdate then
+			arg_9_2.gameObject.name = "project_" .. arg_9_1 + 1
+			arg_8_0.projectTFs[arg_9_1 + 1] = arg_9_2
 
-			uv0:updateProject(slot1 + 1, uv0.projectList[slot1 + 1])
+			arg_8_0:updateProject(arg_9_1 + 1, arg_8_0.projectList[arg_9_1 + 1])
 		end
 	end)
+	arg_8_0.singleList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			arg_10_2.gameObject.name = "project_" .. arg_10_1 + 1
+			arg_8_0.projectTFs[arg_10_1 + 1] = arg_10_2
 
-	slot1 = slot0.singleList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot2.gameObject.name = "project_" .. slot1 + 1
-			uv0.projectTFs[slot1 + 1] = slot2
-
-			uv0:updateProject(slot1 + 1, uv0.projectList[slot1 + 1])
+			arg_8_0:updateProject(arg_10_1 + 1, arg_8_0.projectList[arg_10_1 + 1])
 		end
 	end)
-	slot0:initProjectList()
-	slot0:updateItem()
-	slot0:updateListCount()
+	arg_8_0:initProjectList()
+	arg_8_0:updateItem()
+	arg_8_0:updateListCount()
 
-	slot2 = slot0.aniBgTF.transform
+	local var_8_0 = GameObject.Find("Overlay/UIOverlay")
 
-	slot2:SetParent(GameObject.Find("Overlay/UIOverlay").transform, false)
-	onButton(slot0, slot0.allLaunch, function ()
-		if uv0:getNeedCount() > 0 and not uv0.isStopSpeedUpRemind then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+	arg_8_0.aniBgTF.transform:SetParent(var_8_0.transform, false)
+	onButton(arg_8_0, arg_8_0.allLaunch, function()
+		local var_11_0 = arg_8_0:getNeedCount()
+
+		if var_11_0 > 0 and not arg_8_0.isStopSpeedUpRemind then
+			local var_11_1 = pg.MsgboxMgr.GetInstance()
+
+			var_11_1:ShowMsgBox({
 				showStopRemind = true,
-				content = i18n("ship_buildShipScene_quest_quickFinish", slot0, uv0.itemVO.count == 0 and COLOR_RED or COLOR_GREEN, uv0.itemVO.count),
+				content = i18n("ship_buildShipScene_quest_quickFinish", var_11_0, arg_8_0.itemVO.count == 0 and COLOR_RED or COLOR_GREEN, arg_8_0.itemVO.count),
 				stopRamindContent = i18n("common_dont_remind_dur_login"),
-				onYes = function ()
-					uv0:emit(BuildShipDetailMediator.LAUNCH_ALL, uv1.stopRemindToggle.isOn)
+				onYes = function()
+					arg_8_0:emit(BuildShipDetailMediator.LAUNCH_ALL, var_11_1.stopRemindToggle.isOn)
 				end
 			})
-
-			return
-		end
-
-		if #uv0.projectList > 0 then
-			uv0:emit(BuildShipDetailMediator.LAUNCH_ALL)
+		elseif #arg_8_0.projectList > 0 then
+			arg_8_0:emit(BuildShipDetailMediator.LAUNCH_ALL)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_getShip_error_noShip"))
 		end
 	end, SFX_UI_BUILDING_FASTBUILDING)
-	onButton(slot0, slot0.quickCount, function ()
+	onButton(arg_8_0, arg_8_0.quickCount, function()
+		local var_13_0 = pg.shop_template[61009]
+
 		shoppingBatch(61009, {
-			id = pg.shop_template[61009].effect_args[1]
+			id = var_13_0.effect_args[1]
 		}, 9, "build_ship_quickly_buy_tool")
 	end)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.isPlayAnim then
+function var_0_0.onBackPressed(arg_14_0)
+	if arg_14_0.isPlayAnim then
 		return
 	end
 
-	slot0:emit(uv0.ON_BACK_PRESSED, true)
+	arg_14_0:emit(var_0_0.ON_BACK_PRESSED, true)
 end
 
-function slot0.getNeedCount(slot0)
-	slot1 = 0
+function var_0_0.getNeedCount(arg_15_0)
+	local var_15_0 = 0
 
-	for slot5, slot6 in ipairs(slot0.projectList) do
-		if slot6.state ~= BuildShip.FINISH then
-			slot1 = slot1 + 1
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.projectList) do
+		if iter_15_1.state ~= BuildShip.FINISH then
+			var_15_0 = var_15_0 + 1
 		end
 	end
 
-	return slot1
+	return var_15_0
 end
 
-function slot0.updateListCount(slot0)
-	setText(slot0.listCountTF, slot0.workCount)
+function var_0_0.updateListCount(arg_16_0)
+	setText(arg_16_0.listCountTF, arg_16_0.workCount)
 end
 
-function slot0.updateItem(slot0)
-	setText(slot0.quickCountTF, slot0.itemVO.count)
+function var_0_0.updateItem(arg_17_0)
+	setText(arg_17_0.quickCountTF, arg_17_0.itemVO.count)
 end
 
-function slot0.initProjectList(slot0)
-	slot1 = pairs
-	slot2 = slot0.buildTimers or {}
-
-	for slot4, slot5 in slot1(slot2) do
-		pg.TimeMgr.GetInstance():RemoveTimer(slot5)
+function var_0_0.initProjectList(arg_18_0)
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.buildTimers or {}) do
+		pg.TimeMgr.GetInstance():RemoveTimer(iter_18_1)
 	end
 
-	slot0.buildTimers = {}
-	slot1 = slot0.MODEL == uv0 and #slot0.projectList or 0
-	slot2 = slot0.MODEL == uv1 and #slot0.projectList or 0
+	arg_18_0.buildTimers = {}
 
-	setActive(slot0.multLineTF, slot1 > 0)
-	setActive(slot0.singleLineTF, slot2 > 0)
-	slot0.multList:align(slot1)
-	slot0.singleList:align(slot2)
-	setActive(slot0.noneBg, #slot0.projectList <= 0)
+	local var_18_0 = arg_18_0.MODEL == var_0_2 and #arg_18_0.projectList or 0
+	local var_18_1 = arg_18_0.MODEL == var_0_3 and #arg_18_0.projectList or 0
+
+	setActive(arg_18_0.multLineTF, var_18_0 > 0)
+	setActive(arg_18_0.singleLineTF, var_18_1 > 0)
+	arg_18_0.multList:align(var_18_0)
+	arg_18_0.singleList:align(var_18_1)
+	setActive(arg_18_0.noneBg, #arg_18_0.projectList <= 0)
 end
 
-function slot0.initMultLine(slot0)
-	slot0.multList:align(#slot0.projectList)
+function var_0_0.initMultLine(arg_19_0)
+	arg_19_0.multList:align(#arg_19_0.projectList)
 end
 
-function slot0.initSingleLine(slot0)
-	slot0.singleList:align(#slot0.projectList)
+function var_0_0.initSingleLine(arg_20_0)
+	arg_20_0.singleList:align(#arg_20_0.projectList)
 end
 
-function slot0.updateProject(slot0, slot1, slot2)
-	assert(isa(slot2, BuildShip), "必须是实例BuildShip")
+function var_0_0.updateProject(arg_21_0, arg_21_1, arg_21_2)
+	assert(isa(arg_21_2, BuildShip), "必须是实例BuildShip")
 
-	if IsNil(slot0.projectTFs[slot1]) then
+	local var_21_0 = arg_21_0.projectTFs[arg_21_1]
+
+	if IsNil(var_21_0) then
 		return
 	end
 
-	setActive(slot0:findTF("frame/waiting", slot3), false)
-	setActive(slot0:findTF("frame/buiding", slot3), slot2.state == BuildShip.ACTIVE)
-	setActive(slot0:findTF("frame/finished", slot3), slot2.state == BuildShip.FINISH)
+	local var_21_1 = arg_21_0:findTF("frame/buiding", var_21_0)
+	local var_21_2 = arg_21_0:findTF("frame/finished", var_21_0)
+	local var_21_3 = arg_21_0:findTF("frame/waiting", var_21_0)
 
-	slot3:GetComponent("CanvasGroup").alpha = slot2.state == BuildShip.INACTIVE and 0.6 or 1
-	slot9 = tonumber(pg.ship_data_create_material[slot2.type].ship_icon)
+	setActive(var_21_3, false)
+	setActive(var_21_1, arg_21_2.state == BuildShip.ACTIVE)
+	setActive(var_21_2, arg_21_2.state == BuildShip.FINISH)
 
-	for slot14 = 0, slot0:findTF("ship_modal", slot4).childCount - 1 do
-		setActive(slot10:GetChild(slot14), false)
+	var_21_0:GetComponent("CanvasGroup").alpha = arg_21_2.state == BuildShip.INACTIVE and 0.6 or 1
+
+	local var_21_4 = pg.ship_data_create_material[arg_21_2.type]
+	local var_21_5 = tonumber(var_21_4.ship_icon)
+	local var_21_6 = arg_21_0:findTF("ship_modal", var_21_1)
+
+	for iter_21_0 = 0, var_21_6.childCount - 1 do
+		local var_21_7 = var_21_6:GetChild(iter_21_0)
+
+		setActive(var_21_7, false)
 	end
 
-	if slot2.state == BuildShip.ACTIVE then
-		if not slot0:findTF("shipModelBuliding" .. slot9, slot10) then
-			slot12 = PoolMgr.GetInstance()
+	if arg_21_2.state == BuildShip.ACTIVE and arg_21_1 <= var_0_4 then
+		local var_21_8 = arg_21_0:findTF("shipModelBuliding" .. var_21_5, var_21_6)
 
-			slot12:GetUI("shipModelBuliding" .. slot9, true, function (slot0)
-				slot0.transform:SetParent(uv0, false)
+		if not var_21_8 then
+			PoolMgr.GetInstance():GetUI("shipModelBuliding" .. var_21_5, true, function(arg_22_0)
+				arg_22_0.transform:SetParent(var_21_6, false)
 
-				slot0.transform.localPosition = Vector3(1, 1, 1)
-				slot0.transform.localScale = Vector3(1, 1, 1)
+				arg_22_0.transform.localPosition = Vector3(1, 1, 1)
+				arg_22_0.transform.localScale = Vector3(1, 1, 1)
 
-				slot0.transform:SetAsFirstSibling()
+				arg_22_0.transform:SetAsFirstSibling()
 
-				slot0.name = "shipModelBuliding" .. uv1
+				arg_22_0.name = "shipModelBuliding" .. var_21_5
 
-				setActive(slot0, true)
+				setActive(arg_22_0, true)
 			end)
 		else
-			setActive(slot11, true)
+			setActive(var_21_8, true)
 		end
 
-		slot12 = slot0:findTF("timer/Text", slot4)
+		local var_21_9 = arg_21_0:findTF("timer/Text", var_21_1)
 
-		onButton(slot0, slot0:findTF("quick_btn", slot4), function ()
-			slot0, slot1, slot2 = BuildShip.canQuickBuildShip(uv0)
+		onButton(arg_21_0, arg_21_0:findTF("quick_btn", var_21_1), function()
+			local var_23_0, var_23_1, var_23_2 = BuildShip.canQuickBuildShip(arg_21_1)
 
-			if not slot0 then
-				if slot2 then
-					GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, slot2)
+			if not var_23_0 then
+				if var_23_2 then
+					GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, var_23_2)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(slot1)
+					pg.TipsMgr.GetInstance():ShowTips(var_23_1)
 				end
 
 				return
 			end
 
-			if uv1.isStopSpeedUpRemind then
-				uv1:emit(BuildShipDetailMediator.ON_QUICK, uv0)
+			if arg_21_0.isStopSpeedUpRemind then
+				arg_21_0:emit(BuildShipDetailMediator.ON_QUICK, arg_21_1)
 			else
-				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				local var_23_3 = pg.MsgboxMgr.GetInstance()
+
+				var_23_3:ShowMsgBox({
 					showStopRemind = true,
-					content = i18n("ship_buildShipScene_quest_quickFinish", 1, uv1.itemVO.count == 0 and COLOR_RED or COLOR_GREEN, uv1.itemVO.count),
+					content = i18n("ship_buildShipScene_quest_quickFinish", 1, arg_21_0.itemVO.count == 0 and COLOR_RED or COLOR_GREEN, arg_21_0.itemVO.count),
 					stopRamindContent = i18n("dont_remind_session"),
-					onYes = function ()
-						uv0:emit(BuildShipDetailMediator.ON_QUICK, uv1, uv2.stopRemindToggle.isOn)
+					onYes = function()
+						arg_21_0:emit(BuildShipDetailMediator.ON_QUICK, arg_21_1, var_23_3.stopRemindToggle.isOn)
 					end
 				})
 			end
 		end, SFX_UI_BUILDING_FASTBUILDING)
 
-		function slot13()
-			pg.TimeMgr.GetInstance():RemoveTimer(uv0.buildTimers[uv1])
+		local function var_21_10()
+			pg.TimeMgr.GetInstance():RemoveTimer(arg_21_0.buildTimers[arg_21_1])
 
-			uv0.buildTimers[uv1] = nil
+			arg_21_0.buildTimers[arg_21_1] = nil
 
-			setActive(uv2, false)
-			setActive(uv3, true)
+			setActive(var_21_1, false)
+			setActive(var_21_2, true)
 		end
 
-		function slot14(slot0)
-			setText(uv0, pg.TimeMgr.GetInstance():DescCDTime(slot0))
+		local function var_21_11(arg_26_0)
+			local var_26_0 = pg.TimeMgr.GetInstance():DescCDTime(arg_26_0)
+
+			setText(var_21_9, var_26_0)
 		end
 
-		if slot0.buildTimers[slot1] then
-			pg.TimeMgr.GetInstance():RemoveTimer(slot0.buildTimers[slot1])
+		if arg_21_0.buildTimers[arg_21_1] then
+			pg.TimeMgr.GetInstance():RemoveTimer(arg_21_0.buildTimers[arg_21_1])
 
-			slot0.buildTimers[slot1] = nil
+			arg_21_0.buildTimers[arg_21_1] = nil
 		end
 
-		slot16 = pg.TimeMgr.GetInstance()
-		slot0.buildTimers[slot1] = slot16:AddTimer("timer" .. slot1, 0, 1, function ()
-			if uv0:getLeftTime() <= 0 then
-				uv1()
+		arg_21_0.buildTimers[arg_21_1] = pg.TimeMgr.GetInstance():AddTimer("timer" .. arg_21_1, 0, 1, function()
+			local var_27_0 = arg_21_2:getLeftTime()
+
+			if var_27_0 <= 0 then
+				var_21_10()
 			else
-				uv2(slot0)
+				var_21_11(var_27_0)
 			end
 		end)
+	elseif arg_21_2.state == BuildShip.FINISH then
+		arg_21_0:setSpriteTo(var_0_5[tonumber(var_21_4.ship_icon)], arg_21_0:findTF("ship_modal", var_21_2), false)
 
-		return
-	end
+		local var_21_12 = findTF(var_21_2, "launched_btn")
 
-	if slot2.state == BuildShip.FINISH then
-		slot0:setSpriteTo(uv0[tonumber(slot8.ship_icon)], slot0:findTF("ship_modal", slot5), false)
-		onButton(slot0, findTF(slot5, "launched_btn"), function ()
-			uv0:emit(BuildShipDetailMediator.ON_LAUNCHED, uv1)
+		onButton(arg_21_0, var_21_12, function()
+			arg_21_0:emit(BuildShipDetailMediator.ON_LAUNCHED, arg_21_1)
 		end, SFX_PANEL)
-		onButton(slot0, slot3, function ()
-			triggerButton(uv0)
+		onButton(arg_21_0, var_21_0, function()
+			triggerButton(var_21_12)
 		end, SFX_PANEL)
-	elseif slot2.state == BuildShip.INACTIVE then
-		setActive(slot6, true)
-		setActive(slot4, false)
-		setActive(slot5, false)
+	elseif arg_21_2.state == BuildShip.INACTIVE then
+		setActive(var_21_3, true)
+		setActive(var_21_1, false)
+		setActive(var_21_2, false)
 	end
 end
 
-function slot0.playGetShipAnimate(slot0, slot1, slot2)
-	slot0.canvasgroup.blocksRaycasts = false
-	slot0.isPlayAnim = true
-	slot0.onLoading = true
-	slot4 = pg.CpkPlayMgr.GetInstance()
+function var_0_0.playGetShipAnimate(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0.canvasgroup.blocksRaycasts = false
 
-	slot4:PlayCpkMovie(function ()
-		uv0.onLoading = false
+	local var_30_0 = pg.ship_data_create_material[arg_30_2]
 
-		if uv1 and uv1.build_voice ~= "" then
-			uv0:playCV(uv1.build_voice)
+	arg_30_0.isPlayAnim = true
+	arg_30_0.onLoading = true
+
+	pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
+		arg_30_0.onLoading = false
+
+		if var_30_0 and var_30_0.build_voice ~= "" then
+			arg_30_0:playCV(var_30_0.build_voice)
 		end
-	end, function ()
-		uv0.isPlayAnim = false
-		uv0.canvasgroup.blocksRaycasts = true
+	end, function()
+		arg_30_0.isPlayAnim = false
+		arg_30_0.canvasgroup.blocksRaycasts = true
 
-		uv1()
-	end, "ui", pg.ship_data_create_material[slot2].build_anim or "Building", true, false, {
+		arg_30_1()
+	end, "ui", var_30_0.build_anim or "Building", true, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	}, 4.5, true)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_33_0)
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 
-	for slot4, slot5 in pairs(slot0.buildTimers) do
-		pg.TimeMgr.GetInstance():RemoveTimer(slot5)
+	for iter_33_0, iter_33_1 in pairs(arg_33_0.buildTimers) do
+		pg.TimeMgr.GetInstance():RemoveTimer(iter_33_1)
 	end
 
-	if slot0.aniBgTF then
-		SetParent(slot0.aniBgTF, slot0._tf)
+	if arg_33_0.aniBgTF then
+		SetParent(arg_33_0.aniBgTF, arg_33_0._tf)
 	end
 
-	slot0.buildTimers = nil
+	arg_33_0.buildTimers = nil
 
-	slot0:stopCV()
+	arg_33_0:stopCV()
 
-	slot0.onLoading = false
-	slot1 = slot0.multList
+	arg_33_0.onLoading = false
 
-	slot1:each(function (slot0, slot1)
-		slot2 = uv0
+	arg_33_0.multList:each(function(arg_34_0, arg_34_1)
+		local var_34_0 = arg_33_0:findTF("frame/buiding/ship_modal", arg_34_1)
 
-		eachChild(slot2:findTF("frame/buiding/ship_modal", slot1), function (slot0)
-			PoolMgr.GetInstance():ReturnUI(slot0.name, slot0)
+		eachChild(var_34_0, function(arg_35_0)
+			PoolMgr.GetInstance():ReturnUI(arg_35_0.name, arg_35_0)
 		end)
 	end)
+	arg_33_0.singleList:each(function(arg_36_0, arg_36_1)
+		local var_36_0 = arg_33_0:findTF("frame/buiding/ship_modal", arg_36_1)
 
-	slot1 = slot0.singleList
-
-	slot1:each(function (slot0, slot1)
-		slot2 = uv0
-
-		eachChild(slot2:findTF("frame/buiding/ship_modal", slot1), function (slot0)
-			PoolMgr.GetInstance():ReturnUI(slot0.name, slot0)
+		eachChild(var_36_0, function(arg_37_0)
+			PoolMgr.GetInstance():ReturnUI(arg_37_0.name, arg_37_0)
 		end)
 	end)
 end
 
-function slot0.playCV(slot0, slot1)
-	slot0:stopCV()
+function var_0_0.playCV(arg_38_0, arg_38_1)
+	arg_38_0:stopCV()
 
-	slot2 = "event:/cv/build/" .. slot1
+	local var_38_0 = "event:/cv/build/" .. arg_38_1
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot2)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_38_0)
 
-	slot0.voiceContent = slot2
+	arg_38_0.voiceContent = var_38_0
 end
 
-function slot0.stopCV(slot0)
-	if slot0.voiceContent then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0.voiceContent)
+function var_0_0.stopCV(arg_39_0)
+	if arg_39_0.voiceContent then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg_39_0.voiceContent)
 	end
 
-	slot0.voiceContent = nil
+	arg_39_0.voiceContent = nil
 end
 
-return slot0
+return var_0_0

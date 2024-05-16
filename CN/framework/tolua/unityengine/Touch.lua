@@ -1,5 +1,7 @@
-slot0 = Vector2.zero
-slot1 = rawget
+﻿local var_0_0 = Vector2.zero
+local var_0_1 = rawget
+local var_0_2 = setmetatable
+
 TouchPhase = {
 	Began = 0,
 	Canceled = 4,
@@ -13,67 +15,78 @@ TouchBits = {
 	RawPosition = 4,
 	ALL = 7
 }
-slot4 = TouchBits
-slot5 = {}
-slot6 = tolua.initget(slot5)
 
-function slot5.__index(slot0, slot1)
-	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
-		return slot2(slot0)
-	end
+local var_0_3 = TouchPhase
+local var_0_4 = TouchBits
+local var_0_5 = {}
+local var_0_6 = tolua.initget(var_0_5)
 
-	return slot2
-end
+function var_0_5.__index(arg_1_0, arg_1_1)
+	local var_1_0 = var_0_1(var_0_5, arg_1_1)
 
-function slot5.New(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	return uv0({
-		fingerId = slot0 or 0,
-		position = slot1 or uv1,
-		rawPosition = slot2 or uv1,
-		deltaPosition = slot3 or uv1,
-		deltaTime = slot4 or 0,
-		tapCount = slot5 or 0,
-		phase = slot6 or 0
-	}, uv2)
-end
+	if var_1_0 == nil then
+		var_1_0 = var_0_1(var_0_6, arg_1_1)
 
-function slot5.Init(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot0.fingerId = slot1
-	slot0.position = slot2
-	slot0.rawPosition = slot3
-	slot0.deltaPosition = slot4
-	slot0.deltaTime = slot5
-	slot0.tapCount = slot6
-	slot0.phase = slot7
-end
-
-function slot5.Destroy(slot0)
-	slot0.position = nil
-	slot0.rawPosition = nil
-	slot0.deltaPosition = nil
-end
-
-function slot5.GetMask(...)
-	slot1 = 0
-
-	for slot5 = 1, #{
-		...
-	} do
-		if (uv0[slot0[slot5]] or 0) ~= 0 then
-			slot1 = slot1 + slot6
+		if var_1_0 ~= nil then
+			return var_1_0(arg_1_0)
 		end
 	end
 
-	if slot1 == 0 then
-		slot1 = uv0.all
-	end
-
-	return slot1
+	return var_1_0
 end
 
-UnityEngine.TouchPhase = TouchPhase
-UnityEngine.Touch = slot5
+function var_0_5.New(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_2_6)
+	return var_0_2({
+		fingerId = arg_2_0 or 0,
+		position = arg_2_1 or var_0_0,
+		rawPosition = arg_2_2 or var_0_0,
+		deltaPosition = arg_2_3 or var_0_0,
+		deltaTime = arg_2_4 or 0,
+		tapCount = arg_2_5 or 0,
+		phase = arg_2_6 or 0
+	}, var_0_5)
+end
 
-setmetatable(slot5, slot5)
+function var_0_5.Init(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5, arg_3_6, arg_3_7)
+	arg_3_0.fingerId = arg_3_1
+	arg_3_0.position = arg_3_2
+	arg_3_0.rawPosition = arg_3_3
+	arg_3_0.deltaPosition = arg_3_4
+	arg_3_0.deltaTime = arg_3_5
+	arg_3_0.tapCount = arg_3_6
+	arg_3_0.phase = arg_3_7
+end
 
-return slot5
+function var_0_5.Destroy(arg_4_0)
+	arg_4_0.position = nil
+	arg_4_0.rawPosition = nil
+	arg_4_0.deltaPosition = nil
+end
+
+function var_0_5.GetMask(...)
+	local var_5_0 = {
+		...
+	}
+	local var_5_1 = 0
+
+	for iter_5_0 = 1, #var_5_0 do
+		local var_5_2 = var_0_4[var_5_0[iter_5_0]] or 0
+
+		if var_5_2 ~= 0 then
+			var_5_1 = var_5_1 + var_5_2
+		end
+	end
+
+	if var_5_1 == 0 then
+		var_5_1 = var_0_4.all
+	end
+
+	return var_5_1
+end
+
+UnityEngine.TouchPhase = var_0_3
+UnityEngine.Touch = var_0_5
+
+var_0_2(var_0_5, var_0_5)
+
+return var_0_5

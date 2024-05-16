@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.player_resource = {
 	{
 		id = 1,
@@ -1079,6 +1079,11 @@ pg.player_resource = {
 		id = 319,
 		name = "xiaoxinnong_pt",
 		itemid = 59572
+	},
+	[320] = {
+		id = 320,
+		name = "xiaosipei_pt2",
+		itemid = 59576
 	},
 	[350] = {
 		id = 350,
@@ -2349,6 +2354,9 @@ pg.player_resource = {
 		xiaoxinnong_pt = {
 			319
 		},
+		xiaosipei_pt2 = {
+			320
+		},
 		liuzhounianhaidao_pt = {
 			350
 		},
@@ -2939,6 +2947,7 @@ pg.player_resource = {
 		317,
 		318,
 		319,
+		320,
 		350,
 		351,
 		352,

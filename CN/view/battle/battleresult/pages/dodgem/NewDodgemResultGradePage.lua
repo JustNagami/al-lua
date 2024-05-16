@@ -1,119 +1,132 @@
-slot0 = class("NewDodgemResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var_0_0 = class("NewDodgemResultGradePage", import("..NewBattleResultGradePage"))
 
-function slot0.LoadBG(slot0, slot1)
-	slot3 = ResourceMgr.Inst
+function var_0_0.LoadBG(arg_1_0, arg_1_1)
+	local var_1_0 = "CommonBg"
 
-	slot3:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_1_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_2_0)
+		if arg_1_0.exited or IsNil(arg_2_0) then
+			if arg_1_1 then
+				arg_1_1()
 			end
 
 			return
 		end
 
-		Object.Instantiate(slot0, uv0.bgTr).transform:SetAsFirstSibling()
+		Object.Instantiate(arg_2_0, arg_1_0.bgTr).transform:SetAsFirstSibling()
 
-		if uv1 then
-			uv1()
+		if arg_1_1 then
+			arg_1_1()
 		end
 	end), false, false)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
+function var_0_0.RegisterEvent(arg_3_0, arg_3_1)
 	seriesAsync({
-		function (slot0)
-			uv0.super.RegisterEvent(uv1, slot0)
+		function(arg_4_0)
+			var_0_0.super.RegisterEvent(arg_3_0, arg_4_0)
 		end,
-		function (slot0)
-			removeOnButton(uv0._tf)
-			uv0:LoadPainitingContainer(slot0)
+		function(arg_5_0)
+			removeOnButton(arg_3_0._tf)
+			arg_3_0:LoadPainitingContainer(arg_5_0)
 		end,
-		function (slot0)
-			uv0:MovePainting(slot0)
+		function(arg_6_0)
+			arg_3_0:MovePainting(arg_6_0)
 		end
-	}, function ()
-		onButton(uv0, uv0._tf, function ()
-			uv0()
+	}, function()
+		onButton(arg_3_0, arg_3_0._tf, function()
+			arg_3_1()
 		end, SFX_PANEL)
 	end)
 end
 
-function slot0.MovePainting(slot0, slot1)
-	slot3 = LeanTween.value(slot0.paintingTr.parent.gameObject, 2500, 587, 0.3)
-	slot3 = slot3:setOnUpdate(System.Action_float(function (slot0)
-		uv0.localPosition = Vector3(slot0, 0, 0)
-	end))
+function var_0_0.MovePainting(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0.paintingTr.parent
 
-	slot3:setOnComplete(System.Action(slot1))
+	LeanTween.value(var_9_0.gameObject, 2500, 587, 0.3):setOnUpdate(System.Action_float(function(arg_10_0)
+		var_9_0.localPosition = Vector3(arg_10_0, 0, 0)
+	end)):setOnComplete(System.Action(arg_9_1))
 
-	slot4 = slot0.gradePanel.anchoredPosition
-	slot5 = LeanTween.value(slot0.gradePanel.gameObject, slot4, slot4 + Vector2(-247, 213), 0.29)
+	local var_9_1 = Vector2(-247, 213)
+	local var_9_2 = arg_9_0.gradePanel.anchoredPosition
 
-	slot5:setOnUpdate(System.Action_UnityEngine_Vector2(function (slot0)
-		uv0.gradePanel.anchoredPosition3D = Vector3(slot0.x, slot0.y, 0)
+	LeanTween.value(arg_9_0.gradePanel.gameObject, var_9_2, var_9_2 + var_9_1, 0.29):setOnUpdate(System.Action_UnityEngine_Vector2(function(arg_11_0)
+		arg_9_0.gradePanel.anchoredPosition3D = Vector3(arg_11_0.x, arg_11_0.y, 0)
 	end))
 end
 
-function slot0.GetGetObjectives(slot0)
-	slot2 = {}
-	slot3 = slot0.contextData.statistics.dodgemResult
+function var_0_0.GetGetObjectives(arg_12_0)
+	local var_12_0 = arg_12_0.contextData
+	local var_12_1 = {}
+	local var_12_2 = var_12_0.statistics.dodgemResult
+	local var_12_3 = i18n("battle_result_total_score")
 
-	table.insert(slot2, {
-		text = setColorStr(i18n("battle_result_total_score"), "#FFFFFFFF"),
-		value = setColorStr(slot3.score, COLOR_BLUE)
-	})
-	table.insert(slot2, {
-		text = setColorStr(i18n("battle_result_max_combo"), "#FFFFFFFF"),
-		value = setColorStr(slot3.maxCombo, COLOR_YELLOW)
+	table.insert(var_12_1, {
+		text = setColorStr(var_12_3, "#FFFFFFFF"),
+		value = setColorStr(var_12_2.score, COLOR_BLUE)
 	})
 
-	return slot2
+	local var_12_4 = i18n("battle_result_max_combo")
+
+	table.insert(var_12_1, {
+		text = setColorStr(var_12_4, "#FFFFFFFF"),
+		value = setColorStr(var_12_2.maxCombo, COLOR_YELLOW)
+	})
+
+	return var_12_1
 end
 
-function slot0.LoadPainitingContainer(slot0, slot1)
-	slot2 = ResourceMgr.Inst
-
-	slot2:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited then
+function var_0_0.LoadPainitingContainer(arg_13_0, arg_13_1)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_14_0)
+		if arg_13_0.exited then
 			return
 		end
 
-		uv0:UpdatePainting(Object.Instantiate(slot0, uv0.bgTr), uv1)
+		local var_14_0 = Object.Instantiate(arg_14_0, arg_13_0.bgTr)
+
+		arg_13_0:UpdatePainting(var_14_0, arg_13_1)
 	end), true, true)
 end
 
-function slot0.UpdatePainting(slot0, slot1, slot2)
-	slot3 = slot1.transform:Find("painting")
-	slot4 = slot0:GetFlagShip()
+function var_0_0.UpdatePainting(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_1.transform:Find("painting")
+	local var_15_1 = arg_15_0:GetFlagShip()
+	local var_15_2 = var_15_1:getPainting()
 
-	setPaintingPrefabAsync(slot3, slot4:getPainting(), "biandui", function ()
-		ShipExpressionHelper.SetExpression(findTF(uv0, "fitter"):GetChild(0), uv1, ShipWordHelper.WORD_TYPE_MVP)
-		uv2()
+	setPaintingPrefabAsync(var_15_0, var_15_2, "biandui", function()
+		ShipExpressionHelper.SetExpression(findTF(var_15_0, "fitter"):GetChild(0), var_15_2, ShipWordHelper.WORD_TYPE_MVP)
+		arg_15_2()
 	end)
-	slot0:DisplayShipDialogue(slot1.transform:Find("chat"), slot4)
+	arg_15_0:DisplayShipDialogue(arg_15_1.transform:Find("chat"), var_15_1)
 
-	slot0.paintingTr = slot3
-	slot1.transform.localPosition = Vector3(2500, 0, 0)
+	arg_15_0.paintingTr = var_15_0
+	arg_15_1.transform.localPosition = Vector3(2500, 0, 0)
 
-	slot1.transform:SetSiblingIndex(2)
-	setActive(slot0.objectiveContainer.parent, false)
+	arg_15_1.transform:SetSiblingIndex(2)
+	setActive(arg_15_0.objectiveContainer.parent, false)
 end
 
-function slot0.DisplayShipDialogue(slot0, slot1, slot2)
-	slot3, slot4, slot5 = nil
+function var_0_0.DisplayShipDialogue(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0
+	local var_17_1
+	local var_17_2
 
-	if slot0.contextData.score > 1 then
-		slot3, slot5, slot4 = ShipWordHelper.GetWordAndCV(slot2.skinId, ShipWordHelper.WORD_TYPE_MVP)
+	if arg_17_0.contextData.score > 1 then
+		local var_17_3, var_17_4
+
+		var_17_3, var_17_4, var_17_1 = ShipWordHelper.GetWordAndCV(arg_17_2.skinId, ShipWordHelper.WORD_TYPE_MVP)
 	else
-		slot3, slot5, slot4 = ShipWordHelper.GetWordAndCV(slot2.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+		local var_17_5, var_17_6
+
+		var_17_5, var_17_6, var_17_1 = ShipWordHelper.GetWordAndCV(arg_17_2.skinId, ShipWordHelper.WORD_TYPE_LOSE)
 	end
 
-	slot1:Find("Text"):GetComponent(typeof(Text)).text = slot4
-	slot6.alignment = CHAT_POP_STR_LEN < #slot4 and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	local var_17_7 = arg_17_1:Find("Text"):GetComponent(typeof(Text))
+
+	var_17_7.text = var_17_1
+	var_17_7.alignment = #var_17_1 > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
 end
 
-function slot0.GetFlagShip(slot0)
+function var_0_0.GetFlagShip(arg_18_0)
 	return Ship.New({
 		id = 9999,
 		configId = 205021,
@@ -121,12 +134,14 @@ function slot0.GetFlagShip(slot0)
 	})
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.paintingTr then
-		retPaintingPrefab(slot0.paintingTr, slot0:GetFlagShip():getPainting())
+function var_0_0.OnDestroy(arg_19_0)
+	if arg_19_0.paintingTr then
+		local var_19_0 = arg_19_0:GetFlagShip()
+
+		retPaintingPrefab(arg_19_0.paintingTr, var_19_0:getPainting())
 	end
 
-	uv0.super.OnDestroy(slot0)
+	var_0_0.super.OnDestroy(arg_19_0)
 end
 
-return slot0
+return var_0_0

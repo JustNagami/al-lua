@@ -1,1 +1,1 @@
-return class("BritainframeRePage", import(".TemplatePage.FrameReTemplatePage"))
+﻿return (class("BritainframeRePage", import(".TemplatePage.FrameReTemplatePage")))

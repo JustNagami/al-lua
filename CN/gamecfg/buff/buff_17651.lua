@@ -1,4 +1,19 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				rant = 4000,
+				buff_id = 17659,
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -178,20 +193,5 @@ return {
 	stack = 1,
 	id = 17651,
 	icon = 17650,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				rant = 4000,
-				buff_id = 17659,
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

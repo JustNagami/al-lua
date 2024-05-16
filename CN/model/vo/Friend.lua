@@ -1,41 +1,42 @@
-slot0 = class("Friend", import(".Player"))
-slot0.ONLINE = 1
-slot0.OFFLINE = 0
+﻿local var_0_0 = class("Friend", import(".Player"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.ONLINE = 1
+var_0_0.OFFLINE = 0
 
-	slot0.shipCount = slot1.ship_count or 0
-	slot0.collectionCount = slot1.collection_count or 0
-	slot0.online = slot1.online or 1
-	slot0.preOnLineTime = slot1.pre_online_time or 0
-	slot0.requestMsg = slot1.request_msg or ""
-	slot0.score = slot0.score + SeasonInfo.INIT_POINT
-	slot0.unreadCount = 0
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0.shipCount = arg_1_1.ship_count or 0
+	arg_1_0.collectionCount = arg_1_1.collection_count or 0
+	arg_1_0.online = arg_1_1.online or 1
+	arg_1_0.preOnLineTime = arg_1_1.pre_online_time or 0
+	arg_1_0.requestMsg = arg_1_1.request_msg or ""
+	arg_1_0.score = arg_1_0.score + SeasonInfo.INIT_POINT
+	arg_1_0.unreadCount = 0
 end
 
-function slot0.increaseUnreadCount(slot0)
-	slot0.unreadCount = slot0.unreadCount + 1
+function var_0_0.increaseUnreadCount(arg_2_0)
+	arg_2_0.unreadCount = arg_2_0.unreadCount + 1
 end
 
-function slot0.resetUnreadCount(slot0)
-	slot0.unreadCount = 0
+function var_0_0.resetUnreadCount(arg_3_0)
+	arg_3_0.unreadCount = 0
 end
 
-function slot0.isOnline(slot0)
-	return slot0.online == uv0.ONLINE
+function var_0_0.isOnline(arg_4_0)
+	return arg_4_0.online == var_0_0.ONLINE
 end
 
-function slot0.hasUnreadMsg(slot0)
-	return slot0.unreadCount > 0
+function var_0_0.hasUnreadMsg(arg_5_0)
+	return arg_5_0.unreadCount > 0
 end
 
-function slot0.GetManifesto(slot0)
+function var_0_0.GetManifesto(arg_6_0)
 	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then
 		return ""
 	else
-		return uv0.super.GetManifesto(slot0)
+		return var_0_0.super.GetManifesto(arg_6_0)
 	end
 end
 
-return slot0
+return var_0_0

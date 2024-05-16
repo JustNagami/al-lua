@@ -1,96 +1,105 @@
-slot0 = class("SpWeaponSkillInfoLayer", import("view.ship.SkillInfoLayer"))
+﻿local var_0_0 = class("SpWeaponSkillInfoLayer", import("view.ship.SkillInfoLayer"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SkillInfoUI"
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_2_0)
+	onButton(arg_2_0, arg_2_0._tf, function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_2_0, arg_2_0.backBtn, function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("panel/buttonList/ok_button"), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_2_0, arg_2_0:findTF("panel/buttonList/ok_button"), function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.upgradeBtn, function ()
-		uv0:emit(SkillInfoMediator.WARP_TO_TACTIC)
+	onButton(arg_2_0, arg_2_0.upgradeBtn, function()
+		arg_2_0:emit(SkillInfoMediator.WARP_TO_TACTIC)
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot0.metaBtn, function ()
-		slot1, slot2 = nil
+	onButton(arg_2_0, arg_2_0.metaBtn, function()
+		local var_7_0 = arg_2_0.contextData.shipId
+		local var_7_1
+		local var_7_2
 
-		if uv0.contextData.shipId then
-			slot1 = getProxy(BayProxy):getShipById(uv0.contextData.shipId):isMetaShip()
+		if var_7_0 then
+			var_7_2 = getProxy(BayProxy):getShipById(arg_2_0.contextData.shipId)
+			var_7_1 = var_7_2:isMetaShip()
 		end
 
-		if slot1 then
-			uv0:emit(SkillInfoMediator.WARP_TO_META_TACTICS, slot2.configId)
+		if var_7_1 then
+			arg_2_0:emit(SkillInfoMediator.WARP_TO_META_TACTICS, var_7_2.configId)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnTypeNormal, function ()
-		uv0:showInfo(false)
-		uv0:flushTypeBtn()
+	onButton(arg_2_0, arg_2_0.btnTypeNormal, function()
+		arg_2_0:showInfo(false)
+		arg_2_0:flushTypeBtn()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnTypeWorld, function ()
-		uv0:showInfo(true)
-		uv0:flushTypeBtn()
+	onButton(arg_2_0, arg_2_0.btnTypeWorld, function()
+		arg_2_0:showInfo(true)
+		arg_2_0:flushTypeBtn()
 	end, SFX_PANEL)
 
-	if tobool(pg.skill_world_display[slot0.contextData.skillId]) then
-		slot0:flushTypeBtn()
+	if tobool(pg.skill_world_display[arg_2_0.contextData.skillId]) then
+		arg_2_0:flushTypeBtn()
 	else
-		setActive(slot0.btnTypeNormal, false)
-		setActive(slot0.btnTypeWorld, false)
+		setActive(arg_2_0.btnTypeNormal, false)
+		setActive(arg_2_0.btnTypeWorld, false)
 	end
 
-	slot0:showBase()
-	slot0:showInfo(false)
+	arg_2_0:showBase()
+	arg_2_0:showInfo(false)
 end
 
-function slot0.flushTypeBtn(slot0)
-	setActive(slot0.btnTypeNormal, slot0.isWorld)
-	setActive(slot0.btnTypeWorld, not slot0.isWorld)
+function var_0_0.flushTypeBtn(arg_10_0)
+	setActive(arg_10_0.btnTypeNormal, arg_10_0.isWorld)
+	setActive(arg_10_0.btnTypeWorld, not arg_10_0.isWorld)
 end
 
-function slot0.showBase(slot0)
-	slot3 = getSkillName(slot0.contextData.skillId)
+function var_0_0.showBase(arg_11_0)
+	local var_11_0 = arg_11_0.contextData.skillId
+	local var_11_1 = arg_11_0.contextData.unlock
+	local var_11_2 = getSkillName(var_11_0)
 
-	if not slot0.contextData.unlock then
-		slot3 = setColorStr(slot3, "#a2a2a2")
+	if not var_11_1 then
+		var_11_2 = setColorStr(var_11_2, "#a2a2a2")
 	end
 
-	setText(slot0.skillInfoName, slot3)
+	setText(arg_11_0.skillInfoName, var_11_2)
 
-	slot4 = getSkillConfig(slot1)
+	local var_11_3 = getSkillConfig(var_11_0)
 
-	assert(slot4)
-	LoadImageSpriteAsync("skillicon/" .. slot4.icon, slot0.skillInfoIcon)
-	setActive(slot0.upgradeBtn, false)
-	setActive(slot0.metaBtn, false)
+	assert(var_11_3)
+	LoadImageSpriteAsync("skillicon/" .. var_11_3.icon, arg_11_0.skillInfoIcon)
+	setActive(arg_11_0.upgradeBtn, false)
+	setActive(arg_11_0.metaBtn, false)
 end
 
-function slot0.showInfo(slot0, slot1)
-	slot0.isWorld = slot1
-	slot5 = slot0.contextData.skillOnShip and slot3.level or 1
+function var_0_0.showInfo(arg_12_0, arg_12_1)
+	arg_12_0.isWorld = arg_12_1
 
-	setText(slot0.skillInfoLv, "Lv." .. slot5)
+	local var_12_0 = arg_12_0.contextData.skillId
+	local var_12_1 = arg_12_0.contextData.skillOnShip
+	local var_12_2 = arg_12_0.contextData.unlock
+	local var_12_3 = var_12_1 and var_12_1.level or 1
 
-	slot6 = getSkillDesc(slot0.contextData.skillId, slot5, slot1)
+	setText(arg_12_0.skillInfoLv, "Lv." .. var_12_3)
 
-	if not slot0.contextData.unlock then
-		slot6 = setColorStr(i18n("spweapon_tip_skill_locked") .. slot6, "#a2a2a2")
+	local var_12_4 = getSkillDesc(var_12_0, var_12_3, arg_12_1)
+
+	if not var_12_2 then
+		var_12_4 = setColorStr(i18n("spweapon_tip_skill_locked") .. var_12_4, "#a2a2a2")
 	end
 
-	setText(slot0.skillInfoIntro, slot6)
+	setText(arg_12_0.skillInfoIntro, var_12_4)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_13_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_13_0._tf)
 
-	if slot0.contextData.onExit then
-		slot0.contextData.onExit()
+	if arg_13_0.contextData.onExit then
+		arg_13_0.contextData.onExit()
 	end
 end
 
-return slot0
+return var_0_0

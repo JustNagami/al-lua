@@ -1,150 +1,163 @@
-slot0 = class("MiniGameShopPage", import(".BaseShopPage"))
+﻿local var_0_0 = class("MiniGameShopPage", import(".BaseShopPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MiniGameShop"
 end
 
-function slot0.CanOpen(slot0, slot1, slot2)
-	return pg.SystemOpenMgr.GetInstance():isOpenSystem(slot2.level, "GameHallMediator")
+function var_0_0.CanOpen(arg_2_0, arg_2_1, arg_2_2)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_2_2.level, "GameHallMediator")
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.mothMaxTF = slot0:findTF("mothMax")
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.mothMaxTF = arg_3_0:findTF("mothMax")
 
-	setText(slot0.mothMaxTF, i18n("game_ticket_current_month") .. getProxy(GameRoomProxy):getMonthlyTicket() .. "/" .. pg.gameset.game_ticket_month.key_value)
+	local var_3_0 = pg.gameset.game_ticket_month.key_value
+	local var_3_1 = getProxy(GameRoomProxy):getMonthlyTicket()
+
+	setText(arg_3_0.mothMaxTF, i18n("game_ticket_current_month") .. var_3_1 .. "/" .. var_3_0)
 end
 
-function slot0.OnInit(slot0)
-	slot0.purchaseWindow = MiniGameShopPurchasePanel.New(slot0._tf, slot0.event)
-	slot0.multiWindow = MiniGameShopMultiWindow.New(slot0._tf, slot0.event)
-	slot0.ticketTf = findTF(slot0._tf, "res/Text")
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.purchaseWindow = MiniGameShopPurchasePanel.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.multiWindow = MiniGameShopMultiWindow.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.ticketTf = findTF(arg_4_0._tf, "res/Text")
 
-	setText(slot0.ticketTf, getProxy(GameRoomProxy):getTicket())
+	local var_4_0 = getProxy(GameRoomProxy):getTicket()
+
+	setText(arg_4_0.ticketTf, var_4_0)
 end
 
-function slot0.OnSetUp(slot0)
-	slot0:RemoveTimer()
-	slot0:AddTimer()
+function var_0_0.OnSetUp(arg_5_0)
+	arg_5_0:RemoveTimer()
+	arg_5_0:AddTimer()
 end
 
-function slot0.OnUpdateAll(slot0)
-	slot0:InitCommodities()
-	slot0:OnSetUp()
+function var_0_0.OnUpdateAll(arg_6_0)
+	arg_6_0:InitCommodities()
+	arg_6_0:OnSetUp()
 
-	if slot0.purchaseWindow:isShowing() then
-		slot0.purchaseWindow:ExecuteAction("Hide")
+	if arg_6_0.purchaseWindow:isShowing() then
+		arg_6_0.purchaseWindow:ExecuteAction("Hide")
 	end
 
-	if slot0.multiWindow:isShowing() then
-		slot0.multiWindow:ExecuteAction("Hide")
+	if arg_6_0.multiWindow:isShowing() then
+		arg_6_0.multiWindow:ExecuteAction("Hide")
 	end
 
-	setText(slot0.ticketTf, getProxy(GameRoomProxy):getTicket())
+	local var_6_0 = getProxy(GameRoomProxy):getTicket()
+
+	setText(arg_6_0.ticketTf, var_6_0)
 end
 
-function slot0.OnUpdateCommodity(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnUpdateCommodity(arg_7_0, arg_7_1)
+	local var_7_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.goodsVO.id == slot1.id then
-			slot2 = slot7
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.cards) do
+		if iter_7_1.goodsVO.id == arg_7_1.id then
+			var_7_0 = iter_7_1
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot2:update(slot1)
+	if var_7_0 then
+		var_7_0:update(arg_7_1)
 	end
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = MiniGameGoodsCard.New(slot1)
+function var_0_0.OnInitItem(arg_8_0, arg_8_1)
+	local var_8_0 = MiniGameGoodsCard.New(arg_8_1)
 
-	onButton(slot0, slot2.go, function ()
-		if not uv0.goodsVO:CanPurchase() then
+	onButton(arg_8_0, var_8_0.go, function()
+		if not var_8_0.goodsVO:CanPurchase() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 			return
 		end
 
-		uv1:OnClickCommodity(uv0.goodsVO)
+		arg_8_0:OnClickCommodity(var_8_0.goodsVO)
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_8_0.cards[arg_8_1] = var_8_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:OnInitItem(slot2)
+function var_0_0.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = arg_10_0.cards[arg_10_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_10_0 then
+		arg_10_0:OnInitItem(arg_10_2)
+
+		var_10_0 = arg_10_0.cards[arg_10_2]
 	end
 
-	slot3:update(slot0.displays[slot1 + 1])
+	local var_10_1 = arg_10_0.displays[arg_10_1 + 1]
+
+	var_10_0:update(var_10_1)
 end
 
-function slot0.OnClickCommodity(slot0, slot1)
-	if slot1:Selectable() then
-		slot0.purchaseWindow:ExecuteAction("Show", {
-			id = slot2.id,
-			count = slot2:GetMaxCnt(),
-			type = slot2:getConfig("type"),
-			price = slot2:getConfig("price"),
-			displays = slot2:getConfig("goods"),
-			num = slot2:getConfig("num"),
-			confirm = function (slot0, slot1)
-				uv0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
-					id = slot0,
-					list = slot1
+function var_0_0.OnClickCommodity(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1
+
+	if var_11_0:Selectable() then
+		arg_11_0.purchaseWindow:ExecuteAction("Show", {
+			id = var_11_0.id,
+			count = var_11_0:GetMaxCnt(),
+			type = var_11_0:getConfig("type"),
+			price = var_11_0:getConfig("price"),
+			displays = var_11_0:getConfig("goods"),
+			num = var_11_0:getConfig("num"),
+			confirm = function(arg_12_0, arg_12_1)
+				arg_11_0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
+					id = arg_12_0,
+					list = arg_12_1
 				})
 			end
 		})
-	elseif slot2:getConfig("goods_type") == 1 then
-		if slot2:GetLimit() > 1 then
-			slot4 = slot0.multiWindow
-
-			slot4:ExecuteAction("Show", slot2, function (slot0)
-				if not uv0:CanPurchaseCnt(slot0) then
+	elseif var_11_0:getConfig("goods_type") == 1 then
+		if var_11_0:GetLimit() > 1 then
+			arg_11_0.multiWindow:ExecuteAction("Show", var_11_0, function(arg_13_0)
+				if not var_11_0:CanPurchaseCnt(arg_13_0) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 					return
 				end
 
-				slot1 = {}
+				local var_13_0 = {}
+				local var_13_1 = var_11_0:getConfig("goods")[1]
 
-				table.insert(slot1, {
-					num = slot0,
-					id = uv0:getConfig("goods")[1]
+				table.insert(var_13_0, {
+					num = arg_13_0,
+					id = var_13_1
 				})
-				uv1:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
-					id = uv0.id,
-					list = slot1
+				arg_11_0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
+					id = var_11_0.id,
+					list = var_13_0
 				})
 			end)
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				yesText = "text_exchange",
 				content = i18n("guild_shop_exchange_tip"),
-				onYes = function ()
-					if not uv0:CanPurchase() then
+				onYes = function()
+					if not var_11_0:CanPurchase() then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 						return
 					end
 
-					slot0 = {}
+					local var_14_0 = {}
+					local var_14_1 = var_11_0:GetFirstDropId()
 
-					for slot5 = 1, #uv0:GetFirstDropId() do
-						table.insert(slot0, {
+					for iter_14_0 = 1, #var_14_1 do
+						table.insert(var_14_0, {
 							num = 1,
-							id = slot1[slot5]
+							id = var_14_1[iter_14_0]
 						})
 					end
 
-					uv1:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
-						id = uv0.id,
-						list = slot0
+					arg_11_0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_BUY, {
+						id = var_11_0.id,
+						list = var_14_0
 					})
 				end
 			})
@@ -152,40 +165,40 @@ function slot0.OnClickCommodity(slot0, slot1)
 	end
 end
 
-function slot0.AddTimer(slot0)
-	slot0.timer = Timer.New(function ()
-		slot0 = tonumber(os.date("%d", pg.TimeMgr.GetInstance():GetServerTime()))
+function var_0_0.AddTimer(arg_15_0)
+	arg_15_0.timer = Timer.New(function()
+		local var_16_0 = tonumber(os.date("%d", pg.TimeMgr.GetInstance():GetServerTime()))
 
-		if not uv0.flush and uv0.day and uv0.day == slot0 then
-			uv0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_FLUSH)
+		if not arg_15_0.flush and arg_15_0.day and arg_15_0.day == var_16_0 then
+			arg_15_0:emit(NewShopsMediator.ON_MINI_GAME_SHOP_FLUSH)
 
-			uv0.flush = true
+			arg_15_0.flush = true
 		end
 
-		uv0.day = slot0
+		arg_15_0.day = var_16_0
 	end, 1, -1)
 
-	slot0.timer:Start()
+	arg_15_0.timer:Start()
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_17_0)
+	if arg_17_0.timer then
+		arg_17_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_17_0.timer = nil
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.purchaseWindow:isShowing() then
-		slot0.purchaseWindow:ExecuteAction("Hide")
+function var_0_0.OnDestroy(arg_18_0)
+	if arg_18_0.purchaseWindow:isShowing() then
+		arg_18_0.purchaseWindow:ExecuteAction("Hide")
 	end
 
-	if slot0.multiWindow:isShowing() then
-		slot0.multiWindow:ExecuteAction("Hide")
+	if arg_18_0.multiWindow:isShowing() then
+		arg_18_0.multiWindow:ExecuteAction("Hide")
 	end
 
-	slot0:RemoveTimer()
+	arg_18_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

@@ -1,60 +1,64 @@
-slot0 = class("SailBoatBulletsControl")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatBulletsControl")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0 = SailBoatGameVo
-	slot0._tf = slot1
-	slot0._event = slot2
-	slot0._bullets = {}
-	slot0._bulletPool = {}
-	slot0._content = findTF(slot0._tf, "scene_front/content")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1 = SailBoatGameVo
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	arg_1_0._bullets = {}
+	arg_1_0._bulletPool = {}
+	arg_1_0._content = findTF(arg_1_0._tf, "scene_front/content")
 end
 
-function slot0.start(slot0)
-	for slot4 = #slot0._bullets, 1, -1 do
-		slot5 = table.remove(slot0._bullets, slot4)
+function var_0_0.start(arg_2_0)
+	for iter_2_0 = #arg_2_0._bullets, 1, -1 do
+		local var_2_0 = table.remove(arg_2_0._bullets, iter_2_0)
 
-		slot5:clear()
-		table.insert(slot0._bulletPool, slot5)
+		var_2_0:clear()
+		table.insert(arg_2_0._bulletPool, var_2_0)
 	end
 
-	slot0._bulletStep = uv0.bullet_step
+	arg_2_0._bulletStep = var_0_1.bullet_step
 end
 
-function slot0.step(slot0, slot1)
-	for slot5 = #slot0._bullets, 1, -1 do
-		slot0._bullets[slot5]:step(slot1)
+function var_0_0.step(arg_3_0, arg_3_1)
+	for iter_3_0 = #arg_3_0._bullets, 1, -1 do
+		arg_3_0._bullets[iter_3_0]:step(arg_3_1)
 	end
 
-	slot0._bulletStep = slot0._bulletStep - 1
+	arg_3_0._bulletStep = arg_3_0._bulletStep - 1
 
-	if slot0._bulletStep > 0 then
+	if arg_3_0._bulletStep > 0 then
 		return
 	end
 
-	slot0._bulletStep = uv0.bullet_step
-	slot2 = uv0.GetGameEnemys()
-	slot4 = uv0.GetGameChar():getGroup()
-	slot5 = 0
+	arg_3_0._bulletStep = var_0_1.bullet_step
 
-	for slot9 = #slot0._bullets, 1, -1 do
-		slot10 = slot0._bullets[slot9]
-		slot11 = slot10:getHitGroup()
-		slot12 = slot10:getWorld()
+	local var_3_0 = var_0_1.GetGameEnemys()
+	local var_3_1 = var_0_1.GetGameChar()
+	local var_3_2 = var_3_1:getGroup()
+	local var_3_3 = 0
 
-		if not slot10:getRemoveFlag() then
-			for slot16, slot17 in ipairs(slot2) do
-				if slot17:getLife() then
-					slot18 = slot17:getGroup()
+	for iter_3_1 = #arg_3_0._bullets, 1, -1 do
+		local var_3_4 = arg_3_0._bullets[iter_3_1]
+		local var_3_5 = var_3_4:getHitGroup()
+		local var_3_6 = var_3_4:getWorld()
 
-					if slot17:getLife() then
-						slot19, slot20 = slot17:getMinMaxPosition()
+		if not var_3_4:getRemoveFlag() then
+			for iter_3_2, iter_3_3 in ipairs(var_3_0) do
+				if iter_3_3:getLife() then
+					local var_3_7 = iter_3_3:getGroup()
 
-						if uv0.PointInRect2(slot12, slot19, slot20) and table.contains(slot11, slot18) then
-							slot10:hit()
+					if iter_3_3:getLife() then
+						local var_3_8, var_3_9 = iter_3_3:getMinMaxPosition()
 
-							if slot17:damage(slot10:getDamage()) then
-								slot0._event(SailBoatGameEvent.DESTROY_ENEMY, slot17:getDestroyData())
+						if var_0_1.PointInRect2(var_3_6, var_3_8, var_3_9) and table.contains(var_3_5, var_3_7) then
+							var_3_4:hit()
+
+							local var_3_10 = var_3_4:getDamage()
+
+							if iter_3_3:damage(var_3_10) then
+								arg_3_0._event(SailBoatGameEvent.DESTROY_ENEMY, iter_3_3:getDestroyData())
 							end
 
 							return
@@ -64,61 +68,72 @@ function slot0.step(slot0, slot1)
 			end
 		end
 
-		if not slot10:getRemoveFlag() and slot3:getLife() and table.contains(slot11, slot4) then
-			slot13, slot14 = slot3:getMinMaxPosition()
+		if not var_3_4:getRemoveFlag() and var_3_1:getLife() and table.contains(var_3_5, var_3_2) then
+			local var_3_11, var_3_12 = var_3_1:getMinMaxPosition()
 
-			if uv0.PointInRect2(slot12, slot13, slot14) then
-				slot10:hit()
-				slot3:damage(slot10:getDamage())
+			if var_0_1.PointInRect2(var_3_6, var_3_11, var_3_12) then
+				var_3_4:hit()
+
+				local var_3_13 = var_3_4:getDamage()
+
+				var_3_1:damage(var_3_13)
 
 				return
 			end
 		end
 
-		if slot10:getRemoveFlag() then
-			slot13 = table.remove(slot0._bullets, slot9)
+		if var_3_4:getRemoveFlag() then
+			local var_3_14 = table.remove(arg_3_0._bullets, iter_3_1)
 
-			slot13:clear()
-			slot0:returnBullet(slot13)
+			var_3_14:clear()
+			arg_3_0:returnBullet(var_3_14)
 		end
 	end
 end
 
-function slot0.returnBullet(slot0, slot1)
-	table.insert(slot0._bulletPool, slot1)
+function var_0_0.returnBullet(arg_4_0, arg_4_1)
+	table.insert(arg_4_0._bulletPool, arg_4_1)
 end
 
-function slot0.createBullet(slot0, slot1)
-	slot2 = nil
+function var_0_0.createBullet(arg_5_0, arg_5_1)
+	local var_5_0
 
-	if #slot0._bulletPool > 0 then
-		slot2 = table.remove(slot0._bulletPool, 1)
+	if #arg_5_0._bulletPool > 0 then
+		var_5_0 = table.remove(arg_5_0._bulletPool, 1)
 	end
 
-	if not slot2 then
-		SailBoatBullet.New(uv0.GetGameBullet(), slot0._event):setContent(slot0._content)
+	if not var_5_0 then
+		local var_5_1 = var_0_1.GetGameBullet()
+
+		var_5_0 = SailBoatBullet.New(var_5_1, arg_5_0._event)
+
+		var_5_0:setContent(arg_5_0._content)
 	end
 
-	slot2:setData(SailBoatGameConst.game_bullet[slot1])
-	table.insert(slot0._bullets, slot2)
+	local var_5_2 = SailBoatGameConst.game_bullet[arg_5_1]
 
-	return slot2
+	var_5_0:setData(var_5_2)
+	table.insert(arg_5_0._bullets, var_5_0)
+
+	return var_5_0
 end
 
-function slot0.onEventCall(slot0, slot1, slot2)
-	if slot1 == SailBoatGameEvent.BOAT_EVENT_FIRE then
-		slot3 = slot0:createBullet(slot2.bullet_id)
+function var_0_0.onEventCall(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_1 == SailBoatGameEvent.BOAT_EVENT_FIRE then
+		local var_6_0 = arg_6_0:createBullet(arg_6_2.bullet_id)
 
-		slot3:setFireData(slot2.fire_data)
-		slot3:setWeapon(slot2.weapon_data)
-		slot3:start()
+		var_6_0:setFireData(arg_6_2.fire_data)
+		var_6_0:setWeapon(arg_6_2.weapon_data)
+		var_6_0:start()
 	end
 end
 
-function slot0.dispose(slot0)
+function var_0_0.dispose(arg_7_0)
+	return
 end
 
-function slot0.clear(slot0)
+function var_0_0.clear(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

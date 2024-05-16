@@ -1,60 +1,64 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffFixDamage = class("BattleBuffFixDamage", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffFixDamage.__name = "BattleBuffFixDamage"
-slot1 = slot0.Battle.BattleBuffFixDamage
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffFixDamage = class("BattleBuffFixDamage", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffFixDamage.__name = "BattleBuffFixDamage"
+
+local var_0_1 = var_0_0.Battle.BattleBuffFixDamage
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._fixProb = slot0._tempData.arg_list.rant or 10000
-	slot0._fixValue = slot0._tempData.arg_list.value
-	slot0._fixRate = slot0._tempData.arg_list.rate
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._fixProb = arg_2_0._tempData.arg_list.rant or 10000
+	arg_2_0._fixValue = arg_2_0._tempData.arg_list.value
+	arg_2_0._fixRate = arg_2_0._tempData.arg_list.rate
 end
 
-function slot1.onBeforeTakeDamage(slot0, slot1, slot2, slot3)
-	if not slot0:damageCheck(slot3) then
+function var_0_1.onBeforeTakeDamage(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if not arg_3_0:damageCheck(arg_3_3) then
 		return
 	end
 
-	slot4 = slot3.damage
-	slot5 = slot3.damage
+	local var_3_0 = arg_3_3.damage
+	local var_3_1 = arg_3_3.damage
 
-	if (slot0._fixProb >= 10000 or uv0.Battle.BattleFormulas.IsHappen(slot0._fixProb)) and (slot0._fixValue or slot0._fixRate) then
-		if slot0._fixRate then
-			slot5 = math.max(1, slot4 * slot0._fixRate)
-			slot3.fixFlag = true
-		elseif slot0._fixValue < slot4 then
-			slot5 = slot0._fixValue
-			slot3.fixFlag = true
+	if (arg_3_0._fixProb >= 10000 or var_0_0.Battle.BattleFormulas.IsHappen(arg_3_0._fixProb)) and (arg_3_0._fixValue or arg_3_0._fixRate) then
+		if arg_3_0._fixRate then
+			var_3_1 = math.max(1, var_3_0 * arg_3_0._fixRate)
+			arg_3_3.fixFlag = true
+		elseif var_3_0 > arg_3_0._fixValue then
+			var_3_1 = arg_3_0._fixValue
+			arg_3_3.fixFlag = true
 		end
 	end
 
-	slot7 = nil
-	slot8, slot9 = slot1:GetHP()
+	local var_3_2 = arg_3_0._tempData.arg_list
+	local var_3_3
+	local var_3_4, var_3_5 = arg_3_1:GetHP()
 
-	if slot0._tempData.arg_list.cap_value then
-		slot7 = slot6.cap_value
-	elseif slot6.cap_hp_rate then
-		slot7 = math.floor(slot8 * slot6.cap_hp_rate)
-	elseif slot6.cap_hp_rate_max then
-		slot7 = math.floor(slot9 * slot6.cap_hp_rate_max)
+	if var_3_2.cap_value then
+		var_3_3 = var_3_2.cap_value
+	elseif var_3_2.cap_hp_rate then
+		var_3_3 = math.floor(var_3_4 * var_3_2.cap_hp_rate)
+	elseif var_3_2.cap_hp_rate_max then
+		var_3_3 = math.floor(var_3_5 * var_3_2.cap_hp_rate_max)
 	end
 
-	if slot7 then
-		if slot6.cap_ceiling then
-			slot7 = math.max(slot7, slot6.cap_ceiling)
-		elseif slot6.cap_ceiling_rate then
-			slot7 = math.max(slot7, math.floor(slot6.cap_ceiling_rate * slot9))
+	if var_3_3 then
+		if var_3_2.cap_ceiling then
+			var_3_3 = math.max(var_3_3, var_3_2.cap_ceiling)
+		elseif var_3_2.cap_ceiling_rate then
+			var_3_3 = math.max(var_3_3, math.floor(var_3_2.cap_ceiling_rate * var_3_5))
 		end
 
-		if slot7 < slot5 then
-			slot3.capFlag = true
-			slot5 = slot7
+		if var_3_3 < var_3_1 then
+			arg_3_3.capFlag = true
+			var_3_1 = var_3_3
 		end
 	end
 
-	slot3.damage = slot5
+	arg_3_3.damage = var_3_1
 end

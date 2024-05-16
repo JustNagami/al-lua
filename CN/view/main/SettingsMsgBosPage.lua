@@ -1,66 +1,69 @@
-slot0 = class("SettingsMsgBosPage", import("..base.BaseSubView"))
-slot0.ALIGN_CENTER = 0
-slot0.ALIGN_LEFT = 1
+﻿local var_0_0 = class("SettingsMsgBosPage", import("..base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.ALIGN_CENTER = 0
+var_0_0.ALIGN_LEFT = 1
+
+function var_0_0.getUIName(arg_1_0)
 	return "SetttingMsgbox"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("window/top/btnBack")
-	slot0.textTr = slot0:findTF("window/view/content/Text")
-	slot0.text = slot0.textTr:GetComponent(typeof(Text))
-	slot0.scrollrect = slot0:findTF("window/view/content")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("window/top/btnBack")
+	arg_2_0.textTr = arg_2_0:findTF("window/view/content/Text")
+	arg_2_0.text = arg_2_0.textTr:GetComponent(typeof(Text))
+	arg_2_0.scrollrect = arg_2_0:findTF("window/view/content")
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_6_0, arg_6_1, arg_6_2)
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
+	var_0_0.super.Show(arg_6_0)
 
-	slot0.text.text = slot1
+	arg_6_0.text.text = arg_6_1
 
-	slot0:UpdateLayout(slot2 or uv0.ALIGN_CENTER)
+	arg_6_0:UpdateLayout(arg_6_2 or var_0_0.ALIGN_CENTER)
 
-	slot0.scrollrect:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
+	arg_6_0.scrollrect:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
 
-	slot0._tf:SetAsLastSibling()
+	arg_6_0._tf:SetAsLastSibling()
 end
 
-function slot0.UpdateLayout(slot0, slot1)
-	slot2 = Vector2(0.5, 0.5)
-	slot3 = TextAnchor.MiddleCenter
+function var_0_0.UpdateLayout(arg_7_0, arg_7_1)
+	local var_7_0 = Vector2(0.5, 0.5)
+	local var_7_1 = TextAnchor.MiddleCenter
 
-	if slot1 == uv0.ALIGN_LEFT then
-		slot2 = Vector2(0, 1)
-		slot3 = TextAnchor.UpperLeft
+	if arg_7_1 == var_0_0.ALIGN_LEFT then
+		var_7_0 = Vector2(0, 1)
+		var_7_1 = TextAnchor.UpperLeft
 	end
 
-	slot0.textTr.pivot = slot2
-	slot0.text.alignment = slot3
+	arg_7_0.textTr.pivot = var_7_0
+	arg_7_0.text.alignment = var_7_1
 
-	setAnchoredPosition(slot0.textTr, {
-		x = slot0.textTr:GetComponent(typeof(LayoutElement)).preferredWidth * (slot2.x - 0.5)
+	local var_7_2 = arg_7_0.textTr:GetComponent(typeof(LayoutElement)).preferredWidth
+
+	setAnchoredPosition(arg_7_0.textTr, {
+		x = var_7_2 * (var_7_0.x - 0.5)
 	})
 end
 
-function slot0.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-	uv0.super.Hide(slot0)
+function var_0_0.Hide(arg_8_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_8_0._tf, arg_8_0._parentTf)
+	var_0_0.super.Hide(arg_8_0)
 
-	slot0.text.text = ""
+	arg_8_0.text.text = ""
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_9_0)
+	arg_9_0:Hide()
 end
 
-return slot0
+return var_0_0

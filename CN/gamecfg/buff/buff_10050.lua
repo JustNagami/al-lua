@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeHit"
+			},
+			arg_list = {
+				rant = 1500,
+				target = "TargetSelf",
+				skill_id = 10050,
+				time = 20
+			}
+		}
+	},
 	{
 		desc = "受到攻击时，有15%的几率触发，5.0秒内使全体先锋完全回避所有攻击",
 		addition = {
@@ -69,19 +83,5 @@ return {
 	stack = 1,
 	id = 10050,
 	icon = 10050,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeHit"
-			},
-			arg_list = {
-				rant = 1500,
-				target = "TargetSelf",
-				skill_id = 10050,
-				time = 20
-			}
-		}
-	}
+	last_effect = ""
 }

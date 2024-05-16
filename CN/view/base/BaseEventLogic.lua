@@ -1,98 +1,101 @@
-slot0 = class("BaseEventLogic")
-slot1 = require("Framework.notify.event")
+﻿local var_0_0 = class("BaseEventLogic")
+local var_0_1 = require("Framework.notify.event")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.eventCounter = 1
-	slot0.eventStore = {}
-	slot0.event = slot1 or uv0.New()
-	slot0.tweenIdList = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.eventCounter = 1
+	arg_1_0.eventStore = {}
+	arg_1_0.event = arg_1_1 or var_0_1.New()
+	arg_1_0.tweenIdList = {}
 end
 
-function slot0.bind(slot0, slot1, slot2)
-	slot0.event:connect(slot1, slot2)
+function var_0_0.bind(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.event:connect(arg_2_1, arg_2_2)
 
-	slot3 = slot0.eventCounter
-	slot0.eventStore[slot3] = {
-		event = slot1,
-		callback = slot2
+	local var_2_0 = arg_2_0.eventCounter
+
+	arg_2_0.eventStore[var_2_0] = {
+		event = arg_2_1,
+		callback = arg_2_2
 	}
-	slot0.eventCounter = slot0.eventCounter + 1
+	arg_2_0.eventCounter = arg_2_0.eventCounter + 1
 
-	return slot3
+	return var_2_0
 end
 
-function slot0.emit(slot0, ...)
-	if slot0.event then
-		slot0.event:emit(...)
+function var_0_0.emit(arg_3_0, ...)
+	if arg_3_0.event then
+		arg_3_0.event:emit(...)
 	end
 end
 
-function slot0.disconnect(slot0, slot1)
-	if slot0.eventStore[slot1] then
-		slot0.event:disconnect(slot2.event, slot2.callback)
+function var_0_0.disconnect(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.eventStore[arg_4_1]
 
-		slot0.eventStore[slot1] = nil
+	if var_4_0 then
+		arg_4_0.event:disconnect(var_4_0.event, var_4_0.callback)
+
+		arg_4_0.eventStore[arg_4_1] = nil
 	end
 end
 
-function slot0.disposeEvent(slot0)
-	for slot4, slot5 in pairs(slot0.eventStore) do
-		slot0.event:disconnect(slot5.event, slot5.callback)
+function var_0_0.disposeEvent(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.eventStore) do
+		arg_5_0.event:disconnect(iter_5_1.event, iter_5_1.callback)
 	end
 
-	slot0.eventStore = {}
+	arg_5_0.eventStore = {}
 end
 
-function slot0.managedTween(slot0, slot1, slot2, ...)
-	slot3 = slot1(...)
+function var_0_0.managedTween(arg_6_0, arg_6_1, arg_6_2, ...)
+	local var_6_0 = arg_6_1(...)
 
-	slot3:setOnComplete(System.Action(function ()
-		table.removebyvalue(uv0.tweenIdList, uv1.uniqueId)
+	var_6_0:setOnComplete(System.Action(function()
+		table.removebyvalue(arg_6_0.tweenIdList, var_6_0.uniqueId)
 
-		if uv2 then
-			uv2()
+		if arg_6_2 then
+			arg_6_2()
 		end
 	end))
 
-	slot0.tweenIdList[#slot0.tweenIdList + 1] = slot3.uniqueId
+	arg_6_0.tweenIdList[#arg_6_0.tweenIdList + 1] = var_6_0.uniqueId
 
-	return slot3
+	return var_6_0
 end
 
-function slot0.cleanManagedTween(slot0, slot1)
-	slot1 = defaultValue(slot1, false)
+function var_0_0.cleanManagedTween(arg_8_0, arg_8_1)
+	arg_8_1 = defaultValue(arg_8_1, false)
 
-	for slot5, slot6 in ipairs(slot0.tweenIdList) do
-		if LeanTween.isTweening(slot6) then
-			LeanTween.cancel(slot6, slot1)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.tweenIdList) do
+		if LeanTween.isTweening(iter_8_1) then
+			LeanTween.cancel(iter_8_1, arg_8_1)
 		end
 	end
 
-	slot0.tweenIdList = {}
+	arg_8_0.tweenIdList = {}
 end
 
-function slot0.pauseManagedTween(slot0)
-	for slot4, slot5 in ipairs(slot0.tweenIdList) do
-		if LeanTween.isTweening(slot5) then
-			LeanTween.pause(slot5)
-		end
-	end
-end
-
-function slot0.resumeManagedTween(slot0)
-	for slot4, slot5 in ipairs(slot0.tweenIdList) do
-		if LeanTween.isTweening(slot5) then
-			LeanTween.resume(slot5)
+function var_0_0.pauseManagedTween(arg_9_0)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.tweenIdList) do
+		if LeanTween.isTweening(iter_9_1) then
+			LeanTween.pause(iter_9_1)
 		end
 	end
 end
 
-function slot0.AddLeanTween(slot0, slot1)
-	slot2 = slot1()
-
-	assert(slot2)
-
-	slot0.tweenIdList[#slot0.tweenIdList + 1] = slot2.uniqueId
+function var_0_0.resumeManagedTween(arg_10_0)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.tweenIdList) do
+		if LeanTween.isTweening(iter_10_1) then
+			LeanTween.resume(iter_10_1)
+		end
+	end
 end
 
-return slot0
+function var_0_0.AddLeanTween(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1()
+
+	assert(var_11_0)
+
+	arg_11_0.tweenIdList[#arg_11_0.tweenIdList + 1] = var_11_0.uniqueId
+end
+
+return var_0_0

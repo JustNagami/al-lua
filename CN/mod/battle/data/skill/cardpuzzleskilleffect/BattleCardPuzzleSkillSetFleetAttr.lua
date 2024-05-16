@@ -1,25 +1,27 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleCardPuzzleFormulas
-slot2 = class("BattleCardPuzzleSkillSetFleetAttr", slot0.Battle.BattleCardPuzzleSkillEffect)
-slot0.Battle.BattleCardPuzzleSkillSetFleetAttr = slot2
-slot2.__name = "BattleCardPuzzleSkillSetFleetAttr"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleCardPuzzleFormulas
+local var_0_2 = class("BattleCardPuzzleSkillSetFleetAttr", var_0_0.Battle.BattleCardPuzzleSkillEffect)
 
-	slot0._attr = slot0._tempData.arg_list.attr
-	slot0._number = slot0._tempData.arg_list.number
-	slot0._enhance = slot0._tempData.arg_list.enhance_formula
+var_0_0.Battle.BattleCardPuzzleSkillSetFleetAttr = var_0_2
+var_0_2.__name = "BattleCardPuzzleSkillSetFleetAttr"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._attr = arg_1_0._tempData.arg_list.attr
+	arg_1_0._number = arg_1_0._tempData.arg_list.number
+	arg_1_0._enhance = arg_1_0._tempData.arg_list.enhance_formula
 end
 
-function slot2.SkillEffectHandler(slot0, slot1)
-	slot2 = slot0._number
+function var_0_2.SkillEffectHandler(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_0._number
 
-	if slot0._enhance then
-		slot2 = slot2 + uv0.parseFormula(slot0._enhance, slot0:GetCardPuzzleComponent():GetAttrManager())
+	if arg_2_0._enhance then
+		var_2_0 = var_2_0 + var_0_1.parseFormula(arg_2_0._enhance, arg_2_0:GetCardPuzzleComponent():GetAttrManager())
 	end
 
-	slot0:GetCardPuzzleComponent():UpdateAttrBySet(slot0._attr, slot2)
-	slot0:Finale()
+	arg_2_0:GetCardPuzzleComponent():UpdateAttrBySet(arg_2_0._attr, var_2_0)
+	arg_2_0:Finale()
 end

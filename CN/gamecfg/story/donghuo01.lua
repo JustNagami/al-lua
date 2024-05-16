@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 0.5,
 	mode = 2,
 	id = "DONGHUO01",

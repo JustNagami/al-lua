@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发专属弹幕-旧金山I"
-	},
-	desc_get = "主炮每进行12次攻击，触发专属弹幕-旧金山I",
-	name = "专属弹幕-旧金山I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发专属弹幕-旧金山I",
-	stack = 1,
-	id = 29711,
-	icon = 29710,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29710
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发专属弹幕-旧金山I"
+	},
+	desc_get = "主炮每进行12次攻击，触发专属弹幕-旧金山I",
+	name = "专属弹幕-旧金山I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发专属弹幕-旧金山I",
+	stack = 1,
+	id = 29711,
+	icon = 29710,
+	last_effect = ""
 }

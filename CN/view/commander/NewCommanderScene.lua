@@ -1,263 +1,269 @@
-slot0 = class("NewCommanderScene", import("..base.BaseUI"))
+﻿local var_0_0 = class("NewCommanderScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GetCommanderUI"
 end
 
-function slot0.init(slot0)
-	slot0.bgTF = slot0:findTF("main/bg")
-	slot0.clickTF = slot0:findTF("click")
-	slot0.paintTF = slot0:findTF("main/paint")
-	slot0.paintTFCG = slot0.paintTF:GetComponent(typeof(CanvasGroup))
-	slot0.infoTF = slot0:findTF("main/info")
-	slot0.leftPanel = slot0:findTF("left_panel")
-	slot0.lockBtn = slot0:findTF("left_panel/btns/lock")
-	slot0.unlockBtn = slot0:findTF("left_panel/btns/unlock")
-	slot0.shareBtn = slot0:findTF("left_panel/btns/share")
-	slot0.nameTF = slot0:findTF("content/name/value", slot0.infoTF):GetComponent(typeof(Text))
-	slot0.nationTF = slot0:findTF("content/nation/value", slot0.infoTF):GetComponent(typeof(Text))
-	slot0.rarityTF = slot0:findTF("content/rarity/value", slot0.infoTF):GetComponent(typeof(Image))
-	slot0.skillTF = slot0:findTF("content/skill/value", slot0.infoTF):GetComponent(typeof(Text))
-	slot0.abilitysTF = slot0:findTF("content/abilitys/attrs", slot0.infoTF)
-	slot0.talentsTF = slot0:findTF("content/talents", slot0.infoTF)
-	slot0.talentsList = UIItemList.New(slot0.talentsTF, slot0.talentsTF:Find("talent"))
-	slot0.dateTF = slot0:findTF("content/copyright/Text", slot0.infoTF)
-	slot0.treePanel = CommanderTreePage.New(slot0._tf, slot0.event)
-	slot0.msgbox = CommanderMsgBoxPage.New(slot0._tf, slot0.event)
-	slot0.antor = slot0._tf:GetComponent(typeof(Animator))
-	slot0.skipBtn = slot0._tf:Find("skip")
-	slot0.getEffect = slot0:findTF("main/effect")
-	slot0.skipAnim = true
+function var_0_0.init(arg_2_0)
+	arg_2_0.bgTF = arg_2_0:findTF("main/bg")
+	arg_2_0.clickTF = arg_2_0:findTF("click")
+	arg_2_0.paintTF = arg_2_0:findTF("main/paint")
+	arg_2_0.paintTFCG = arg_2_0.paintTF:GetComponent(typeof(CanvasGroup))
+	arg_2_0.infoTF = arg_2_0:findTF("main/info")
+	arg_2_0.leftPanel = arg_2_0:findTF("left_panel")
+	arg_2_0.lockBtn = arg_2_0:findTF("left_panel/btns/lock")
+	arg_2_0.unlockBtn = arg_2_0:findTF("left_panel/btns/unlock")
+	arg_2_0.shareBtn = arg_2_0:findTF("left_panel/btns/share")
+	arg_2_0.nameTF = arg_2_0:findTF("content/name/value", arg_2_0.infoTF):GetComponent(typeof(Text))
+	arg_2_0.nationTF = arg_2_0:findTF("content/nation/value", arg_2_0.infoTF):GetComponent(typeof(Text))
+	arg_2_0.rarityTF = arg_2_0:findTF("content/rarity/value", arg_2_0.infoTF):GetComponent(typeof(Image))
+	arg_2_0.skillTF = arg_2_0:findTF("content/skill/value", arg_2_0.infoTF):GetComponent(typeof(Text))
+	arg_2_0.abilitysTF = arg_2_0:findTF("content/abilitys/attrs", arg_2_0.infoTF)
+	arg_2_0.talentsTF = arg_2_0:findTF("content/talents", arg_2_0.infoTF)
+	arg_2_0.talentsList = UIItemList.New(arg_2_0.talentsTF, arg_2_0.talentsTF:Find("talent"))
+	arg_2_0.dateTF = arg_2_0:findTF("content/copyright/Text", arg_2_0.infoTF)
+	arg_2_0.treePanel = CommanderTreePage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.msgbox = CommanderMsgBoxPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.antor = arg_2_0._tf:GetComponent(typeof(Animator))
+	arg_2_0.skipBtn = arg_2_0._tf:Find("skip")
+	arg_2_0.getEffect = arg_2_0:findTF("main/effect")
+	arg_2_0.skipAnim = true
 
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
-		slot0.skipAnim = false
+		arg_2_0.skipAnim = false
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER + 1
 	})
-	setText(slot0:findTF("main/info/content/abilitys/attrs/command/name/Text"), i18n("commander_command_ability"))
-	setText(slot0:findTF("main/info/content/abilitys/attrs/tactic/name/Text"), i18n("commander_tactical_ability"))
-	setText(slot0:findTF("main/info/content/abilitys/attrs/support/name/Text"), i18n("commander_logistics_ability"))
-	setText(slot0:findTF("main/info/content/copyright/title"), i18n("commander_get_commander_coptyright"))
+	setText(arg_2_0:findTF("main/info/content/abilitys/attrs/command/name/Text"), i18n("commander_command_ability"))
+	setText(arg_2_0:findTF("main/info/content/abilitys/attrs/tactic/name/Text"), i18n("commander_tactical_ability"))
+	setText(arg_2_0:findTF("main/info/content/abilitys/attrs/support/name/Text"), i18n("commander_logistics_ability"))
+	setText(arg_2_0:findTF("main/info/content/copyright/title"), i18n("commander_get_commander_coptyright"))
 end
 
-function slot0.openTreePanel(slot0, slot1)
-	function slot2()
-		uv0.treePanel:ActionInvoke("Show", uv1, LayerWeightConst.SECOND_LAYER + 2)
+function var_0_0.openTreePanel(arg_3_0, arg_3_1)
+	local function var_3_0()
+		arg_3_0.treePanel:ActionInvoke("Show", arg_3_1, LayerWeightConst.SECOND_LAYER + 2)
 	end
 
-	if slot0.treePanel:GetLoaded() then
-		slot2()
+	if arg_3_0.treePanel:GetLoaded() then
+		var_3_0()
 	else
-		slot0.treePanel:Load()
-		slot0.treePanel:CallbackInvoke(slot2)
+		arg_3_0.treePanel:Load()
+		arg_3_0.treePanel:CallbackInvoke(var_3_0)
 	end
 end
 
-function slot0.closeTreePanel(slot0)
-	slot0.treePanel:ActionInvoke("closeTreePanel")
+function var_0_0.closeTreePanel(arg_5_0)
+	arg_5_0.treePanel:ActionInvoke("closeTreePanel")
 end
 
-function slot0.onUIAnimEnd(slot0, slot1)
-	slot2 = slot0.antor
+function var_0_0.onUIAnimEnd(arg_6_0, arg_6_1)
+	arg_6_0.antor:SetBool("play", true)
 
-	slot2:SetBool("play", true)
+	arg_6_0.isAnim = true
 
-	slot0.isAnim = true
+	setActive(arg_6_0.clickTF, arg_6_0.skipAnim)
 
-	setActive(slot0.clickTF, slot0.skipAnim)
+	local var_6_0 = arg_6_0._tf:GetComponent(typeof(DftAniEvent))
 
-	slot2 = slot0._tf
-	slot2 = slot2:GetComponent(typeof(DftAniEvent))
-
-	slot2:SetTriggerEvent(function (slot0)
-		if uv0.contextData.commander:isSSR() then
-			uv0:playerEffect()
+	var_6_0:SetTriggerEvent(function(arg_7_0)
+		if arg_6_0.contextData.commander:isSSR() then
+			arg_6_0:playerEffect()
 		end
 
-		uv1:SetTriggerEvent(nil)
+		var_6_0:SetTriggerEvent(nil)
 	end)
-	slot2:SetEndEvent(function ()
-		uv0.isAnim = false
+	var_6_0:SetEndEvent(function()
+		arg_6_0.isAnim = false
 
-		setActive(uv0.clickTF, true)
-		uv1:SetEndEvent(nil)
-		uv2()
-	end)
-end
-
-function slot0.playerEffect(slot0)
-	slot1 = PoolMgr.GetInstance()
-
-	slot1:GetUI("AL_zhihuimiao_zhipian", true, function (slot0)
-		uv0.effect = slot0
-
-		SetParent(slot0, uv0._tf)
-		setActive(slot0, true)
+		setActive(arg_6_0.clickTF, true)
+		var_6_0:SetEndEvent(nil)
+		arg_6_1()
 	end)
 end
 
-function slot0.openMsgBox(slot0, slot1)
-	slot0.isShowMsgBox = true
+function var_0_0.playerEffect(arg_9_0)
+	PoolMgr.GetInstance():GetUI("AL_zhihuimiao_zhipian", true, function(arg_10_0)
+		arg_9_0.effect = arg_10_0
 
-	function slot2()
-		uv0.msgbox:ActionInvoke("Show", uv1)
+		SetParent(arg_10_0, arg_9_0._tf)
+		setActive(arg_10_0, true)
+	end)
+end
+
+function var_0_0.openMsgBox(arg_11_0, arg_11_1)
+	arg_11_0.isShowMsgBox = true
+
+	local function var_11_0()
+		arg_11_0.msgbox:ActionInvoke("Show", arg_11_1)
 	end
 
-	if slot0.msgbox:GetLoaded() then
-		slot2()
+	if arg_11_0.msgbox:GetLoaded() then
+		var_11_0()
 	else
-		slot0.msgbox:Load()
-		slot0.msgbox:CallbackInvoke(slot2)
+		arg_11_0.msgbox:Load()
+		arg_11_0.msgbox:CallbackInvoke(var_11_0)
 	end
 end
 
-function slot0.closeMsgBox(slot0)
-	slot0.isShowMsgBox = nil
+function var_0_0.closeMsgBox(arg_13_0)
+	arg_13_0.isShowMsgBox = nil
 
-	slot0.msgbox:ActionInvoke("Hide")
+	arg_13_0.msgbox:ActionInvoke("Hide")
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateInfo()
-	onButton(slot0, slot0.shareBtn, function ()
+function var_0_0.didEnter(arg_14_0)
+	arg_14_0:updateInfo()
+	onButton(arg_14_0, arg_14_0.shareBtn, function()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeCommander, pg.ShareMgr.PANEL_TYPE_PINK, {
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.skipBtn, function (slot0)
-		if uv0.isAnim then
+	onButton(arg_14_0, arg_14_0.skipBtn, function(arg_16_0)
+		if arg_14_0.isAnim then
 			return
 		end
 
 		getProxy(CommanderProxy).hasSkipFlag = true
 
-		uv0:DoExit()
+		arg_14_0:DoExit()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.lockBtn, function ()
-		uv0:emit(NewCommanderMediator.ON_LOCK, uv0.contextData.commander.id, 1 - getProxy(CommanderProxy):getCommanderById(uv0.contextData.commander.id):getLock())
-	end, SFX_PANEL)
-	onButton(slot0, slot0.unlockBtn, function ()
-		uv0:emit(NewCommanderMediator.ON_LOCK, uv0.contextData.commander.id, 1 - getProxy(CommanderProxy):getCommanderById(uv0.contextData.commander.id):getLock())
-	end, SFX_PANEL)
-	onButton(slot0, slot0.clickTF, function ()
-		if uv0.isAnim then
-			uv0.antor:SetBool("play", false)
+	onButton(arg_14_0, arg_14_0.lockBtn, function()
+		local var_17_0 = getProxy(CommanderProxy):getCommanderById(arg_14_0.contextData.commander.id):getLock()
 
-			if uv0.contextData.commander:isSSR() and not uv0.effect then
-				uv0:playerEffect()
+		arg_14_0:emit(NewCommanderMediator.ON_LOCK, arg_14_0.contextData.commander.id, 1 - var_17_0)
+	end, SFX_PANEL)
+	onButton(arg_14_0, arg_14_0.unlockBtn, function()
+		local var_18_0 = getProxy(CommanderProxy):getCommanderById(arg_14_0.contextData.commander.id):getLock()
+
+		arg_14_0:emit(NewCommanderMediator.ON_LOCK, arg_14_0.contextData.commander.id, 1 - var_18_0)
+	end, SFX_PANEL)
+	onButton(arg_14_0, arg_14_0.clickTF, function()
+		if arg_14_0.isAnim then
+			arg_14_0.antor:SetBool("play", false)
+
+			if arg_14_0.contextData.commander:isSSR() and not arg_14_0.effect then
+				arg_14_0:playerEffect()
 			end
 
-			uv0.isAnim = nil
+			arg_14_0.isAnim = nil
 		else
-			uv0:DoExit()
+			arg_14_0:DoExit()
 		end
 	end, SFX_CANCEL)
 end
 
-function slot0.DoExit(slot0)
-	if slot0.contextData.commander:ShouldTipLock() then
-		slot0:openMsgBox({
+function var_0_0.DoExit(arg_20_0)
+	if arg_20_0.contextData.commander:ShouldTipLock() then
+		arg_20_0:openMsgBox({
 			content = i18n("commander_lock_tip"),
-			onYes = function ()
-				uv0:emit(NewCommanderMediator.ON_LOCK, uv0.contextData.commander.id, 1)
-				uv0:emit(uv1.ON_CLOSE)
+			onYes = function()
+				arg_20_0:emit(NewCommanderMediator.ON_LOCK, arg_20_0.contextData.commander.id, 1)
+				arg_20_0:emit(var_0_0.ON_CLOSE)
 			end,
 			layer = LayerWeightConst.SECOND_LAYER + 2,
-			onNo = function ()
-				uv0:emit(uv1.ON_CLOSE)
+			onNo = function()
+				arg_20_0:emit(var_0_0.ON_CLOSE)
 			end
 		})
 	else
-		slot0:emit(uv0.ON_CLOSE)
+		arg_20_0:emit(var_0_0.ON_CLOSE)
 	end
 end
 
-function slot0.updateLockState(slot0)
-	setActive(slot0.lockBtn, getProxy(CommanderProxy):getCommanderById(slot0.contextData.commander.id):getLock() ~= 0)
-	setActive(slot0.unlockBtn, slot2 == 0)
+function var_0_0.updateLockState(arg_23_0)
+	local var_23_0 = getProxy(CommanderProxy):getCommanderById(arg_23_0.contextData.commander.id):getLock()
+
+	setActive(arg_23_0.lockBtn, var_23_0 ~= 0)
+	setActive(arg_23_0.unlockBtn, var_23_0 == 0)
 end
 
-function slot0.updateInfo(slot0, slot1)
-	slot2 = slot0.contextData.commander
+function var_0_0.updateInfo(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_0.contextData.commander
 
-	slot0:updateLockState(slot2:getLock())
+	arg_24_0:updateLockState(var_24_0:getLock())
 
-	slot0.nameTF.text = slot2:getName()
-	slot0.nationTF.text = Nation.Nation2Name(slot2:getConfig("nationality"))
-	slot0.skillTF.text = slot2:getSkills()[1]:getConfig("name")
+	arg_24_0.nameTF.text = var_24_0:getName()
+	arg_24_0.nationTF.text = Nation.Nation2Name(var_24_0:getConfig("nationality"))
 
-	LoadImageSpriteAsync("CommanderRarity/" .. Commander.rarity2Print(slot2:getRarity()), slot0.rarityTF, true)
-	setCommanderPaintingPrefab(slot0.paintTF, slot2:getPainting(), "get")
+	local var_24_1 = var_24_0:getSkills()[1]
 
-	slot0.painting = slot2
+	arg_24_0.skillTF.text = var_24_1:getConfig("name")
 
-	slot0:updateAbilitys()
-	slot0:updateTalents()
-	setText(slot0.dateTF, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%y%m%d"))
+	local var_24_2 = Commander.rarity2Print(var_24_0:getRarity())
 
-	if slot1 then
-		slot1()
+	LoadImageSpriteAsync("CommanderRarity/" .. var_24_2, arg_24_0.rarityTF, true)
+	setCommanderPaintingPrefab(arg_24_0.paintTF, var_24_0:getPainting(), "get")
+
+	arg_24_0.painting = var_24_0
+
+	arg_24_0:updateAbilitys()
+	arg_24_0:updateTalents()
+	setText(arg_24_0.dateTF, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%y%m%d"))
+
+	if arg_24_1 then
+		arg_24_1()
 	end
 end
 
-function slot0.updateAbilitys(slot0)
-	slot1 = slot0.contextData.commander
-	slot2 = slot1:getAbilitys()
+function var_0_0.updateAbilitys(arg_25_0)
+	local var_25_0 = arg_25_0.contextData.commander:getAbilitys()
 
-	eachChild(slot0.abilitysTF, function (slot0)
-		slot2 = uv0[go(slot0).name]
+	eachChild(arg_25_0.abilitysTF, function(arg_26_0)
+		local var_26_0 = go(arg_26_0).name
+		local var_26_1 = var_25_0[var_26_0]
 
-		setText(slot0:Find("slider/point"), slot2.value)
+		setText(arg_26_0:Find("slider/point"), var_26_1.value)
 
-		slot0:Find("slider"):GetComponent(typeof(Slider)).value = slot2.value / CommanderConst.MAX_ABILITY
+		arg_26_0:Find("slider"):GetComponent(typeof(Slider)).value = var_26_1.value / CommanderConst.MAX_ABILITY
 	end)
 end
 
-function slot0.updateTalents(slot0)
-	slot2 = slot0.contextData.commander:getTalents()
+function var_0_0.updateTalents(arg_27_0)
+	local var_27_0 = arg_27_0.contextData.commander:getTalents()
 
-	slot0.talentsList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	arg_27_0.talentsList:make(function(arg_28_0, arg_28_1, arg_28_2)
+		if arg_28_0 == UIItemList.EventUpdate then
+			local var_28_0 = var_27_0[arg_28_1 + 1]
 
-			setActive(slot2:Find("empty"), not slot3)
-			setActive(slot2:Find("icon"), slot3)
+			setActive(arg_28_2:Find("empty"), not var_28_0)
+			setActive(arg_28_2:Find("icon"), var_28_0)
 
-			if slot3 then
-				GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot3:getConfig("icon"), "", slot2:Find("icon"))
+			if var_28_0 then
+				GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var_28_0:getConfig("icon"), "", arg_28_2:Find("icon"))
 			end
 
-			onButton(uv1, slot2, function ()
-				uv0:openTreePanel(uv1)
+			onButton(arg_27_0, arg_28_2, function()
+				arg_27_0:openTreePanel(var_28_0)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.talentsList:align(3)
+	arg_27_0.talentsList:align(3)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.isShowMsgBox then
-		slot0:closeMsgBox()
+function var_0_0.onBackPressed(arg_30_0)
+	if arg_30_0.isShowMsgBox then
+		arg_30_0:closeMsgBox()
 
 		return
 	end
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
-	slot0.treePanel:Destroy()
-	slot0.msgbox:Destroy()
-	retCommanderPaintingPrefab(slot0.paintTF, slot0.painting:getPainting())
+function var_0_0.willExit(arg_31_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_31_0._tf, pg.UIMgr.GetInstance().UIMain)
+	arg_31_0.treePanel:Destroy()
+	arg_31_0.msgbox:Destroy()
+	retCommanderPaintingPrefab(arg_31_0.paintTF, arg_31_0.painting:getPainting())
 
-	if slot0.effect then
-		PoolMgr.GetInstance():ReturnUI("AL_zhihuimiao_zhipian", slot0.effect)
+	if arg_31_0.effect then
+		PoolMgr.GetInstance():ReturnUI("AL_zhihuimiao_zhipian", arg_31_0.effect)
 	end
 
-	if slot0.contextData.onExit then
-		slot0.contextData.onExit()
+	if arg_31_0.contextData.onExit then
+		arg_31_0.contextData.onExit()
 	end
 end
 
-return slot0
+return var_0_0

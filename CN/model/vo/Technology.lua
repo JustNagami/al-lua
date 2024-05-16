@@ -1,77 +1,82 @@
-slot0 = class("Technology", import(".BaseVO"))
+﻿local var_0_0 = class("Technology", import(".BaseVO"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.technology_data_template
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.poolId = slot1.pool_id
-	slot0.time = slot1.time
-	slot0.isQueue = slot1.queue
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.configId = arg_2_0.id
+	arg_2_0.poolId = arg_2_1.pool_id
+	arg_2_0.time = arg_2_1.time
+	arg_2_0.isQueue = arg_2_1.queue
 end
 
-function slot0.start(slot0, slot1)
-	slot0.time = slot1
+function var_0_0.start(arg_3_0, arg_3_1)
+	arg_3_0.time = arg_3_1
 end
 
-function slot0.isActivate(slot0)
-	return slot0.time > 0
+function var_0_0.isActivate(arg_4_0)
+	return arg_4_0.time > 0
 end
 
-function slot0.isCompleted(slot0)
-	return slot0:isFinish() and slot0:finishCondition()
+function var_0_0.isCompleted(arg_5_0)
+	return arg_5_0:isFinish() and arg_5_0:finishCondition()
 end
 
-function slot0.isStarting(slot0)
-	if not slot0:isActivate() then
+function var_0_0.isStarting(arg_6_0)
+	if not arg_6_0:isActivate() then
 		return false
 	end
 
-	return pg.TimeMgr.GetInstance():GetServerTime() < slot0.time
+	return pg.TimeMgr.GetInstance():GetServerTime() < arg_6_0.time
 end
 
-function slot0.isWaiting(slot0)
-	if not slot0:isActivate() then
+function var_0_0.isWaiting(arg_7_0)
+	if not arg_7_0:isActivate() then
 		return false
 	end
 
-	return pg.TimeMgr.GetInstance():GetServerTime() < slot0.time - slot0:getConfig("time")
+	return pg.TimeMgr.GetInstance():GetServerTime() < arg_7_0.time - arg_7_0:getConfig("time")
 end
 
-function slot0.isDoing(slot0)
-	if not slot0:isActivate() then
+function var_0_0.isDoing(arg_8_0)
+	if not arg_8_0:isActivate() then
 		return false
 	end
 
-	return pg.TimeMgr.GetInstance():GetServerTime() >= slot0.time - slot0:getConfig("time") and slot1 < slot0.time
+	local var_8_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return var_8_0 >= arg_8_0.time - arg_8_0:getConfig("time") and var_8_0 < arg_8_0.time
 end
 
-function slot0.isFinish(slot0)
-	if not slot0:isActivate() then
+function var_0_0.isFinish(arg_9_0)
+	if not arg_9_0:isActivate() then
 		return false
 	end
 
-	return slot0.time <= pg.TimeMgr.GetInstance():GetServerTime()
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_9_0.time
 end
 
-function slot0.finishCondition(slot0)
-	if slot0.isQueue then
+function var_0_0.finishCondition(arg_10_0)
+	if arg_10_0.isQueue then
 		return true
 	end
 
-	return slot0:getConfig("condition") == 0 or getProxy(TaskProxy):getTaskVO(slot1):isFinish()
+	local var_10_0 = arg_10_0:getConfig("condition")
+
+	return var_10_0 == 0 or getProxy(TaskProxy):getTaskVO(var_10_0):isFinish()
 end
 
-function slot0.hasResToStart(slot0)
-	slot2 = getProxy(PlayerProxy):getData()
-	slot3 = getProxy(BagProxy)
+function var_0_0.hasResToStart(arg_11_0)
+	local var_11_0 = arg_11_0:getConfig("consume")
+	local var_11_1 = getProxy(PlayerProxy):getData()
+	local var_11_2 = getProxy(BagProxy)
 
-	for slot7, slot8 in ipairs(slot0:getConfig("consume")) do
-		if slot8[1] == DROP_TYPE_RESOURCE and slot2:getResById(slot8[2]) < slot8[3] then
+	for iter_11_0, iter_11_1 in ipairs(var_11_0) do
+		if iter_11_1[1] == DROP_TYPE_RESOURCE and var_11_1:getResById(iter_11_1[2]) < iter_11_1[3] then
 			return false, i18n("common_no_resource")
-		elseif slot8[1] == DROP_TYPE_ITEM and slot3:getItemCountById(slot8[2]) < slot8[3] then
+		elseif iter_11_1[1] == DROP_TYPE_ITEM and var_11_2:getItemCountById(iter_11_1[2]) < iter_11_1[3] then
 			return false, i18n("common_no_item_1")
 		end
 	end
@@ -79,8 +84,8 @@ function slot0.hasResToStart(slot0)
 	return true
 end
 
-function slot0.reset(slot0)
-	slot0.time = 0
+function var_0_0.reset(arg_12_0)
+	arg_12_0.time = 0
 end
 
-return slot0
+return var_0_0

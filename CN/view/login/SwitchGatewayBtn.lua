@@ -1,42 +1,42 @@
-slot0 = class("SwitchGatewayBtn")
+﻿local var_0_0 = class("SwitchGatewayBtn")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tr = slot1
-	slot0._go = slot1.gameObject
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tr = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
 
-	setActive(slot0._go, false)
+	setActive(arg_1_0._go, false)
 end
 
-function slot0.Flush(slot0)
-	slot1 = getProxy(UserProxy):ShowGatewaySwitcher()
+function var_0_0.Flush(arg_2_0)
+	local var_2_0 = getProxy(UserProxy):ShowGatewaySwitcher()
 
-	setActive(slot0._go, slot1)
+	setActive(arg_2_0._go, var_2_0)
 
-	if slot1 then
-		slot0:RegistSwicher()
+	if var_2_0 then
+		arg_2_0:RegistSwicher()
 	end
 end
 
-function slot0.RegistSwicher(slot0)
-	slot1 = getProxy(UserProxy)
-	slot2 = slot1:getLastLoginUser()
+function var_0_0.RegistSwicher(arg_3_0)
+	local var_3_0 = getProxy(UserProxy)
+	local var_3_1 = var_3_0:getLastLoginUser()
 
-	onButton(nil, slot0._go, function ()
+	onButton(nil, arg_3_0._go, function()
 		pg.m02:sendNotification(GAME.SERVER_INTERCOMMECTION, {
-			user = uv0,
-			platform = uv1:GetReversePlatform()
+			user = var_3_1,
+			platform = var_3_0:GetReversePlatform()
 		})
 	end, SFX_PANEL)
 
-	slot0.isRegist = true
+	arg_3_0.isRegist = true
 end
 
-function slot0.Dispose(slot0)
-	if slot0.isRegist then
-		removeOnButton(slot0._go)
+function var_0_0.Dispose(arg_5_0)
+	if arg_5_0.isRegist then
+		removeOnButton(arg_5_0._go)
 
-		slot0.isRegist = nil
+		arg_5_0.isRegist = nil
 	end
 end
 
-return slot0
+return var_0_0

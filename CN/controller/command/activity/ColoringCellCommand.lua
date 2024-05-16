@@ -1,37 +1,42 @@
-slot0 = class("ColoringCellCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ColoringCellCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot6 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.activityId
+	local var_1_2 = var_1_0.id
+	local var_1_3 = var_1_0.cells
 
-	slot6:Send(26004, {
-		act_id = slot2.activityId,
-		id = slot2.id,
-		cell_list = slot2.cells
-	}, 26005, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(ColoringProxy)
-			slot2 = slot1:getColorItems()
-			slot4 = slot1:getColorGroup(uv0):getConfig("color_id_list")
+	pg.ConnectionMgr.GetInstance():Send(26004, {
+		act_id = var_1_1,
+		id = var_1_2,
+		cell_list = var_1_3
+	}, 26005, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ColoringProxy)
+			local var_2_1 = var_2_0:getColorItems()
+			local var_2_2 = var_2_0:getColorGroup(var_1_2)
+			local var_2_3 = var_2_2:getConfig("color_id_list")
 
-			_.each(uv1, function (slot0)
-				uv0:setFill(slot0.row, slot0.column, slot0.color)
+			_.each(var_1_3, function(arg_3_0)
+				var_2_2:setFill(arg_3_0.row, arg_3_0.column, arg_3_0.color)
 
-				if not uv0:canBeCustomised() and slot0.color > 0 then
-					slot1 = uv1[slot0.color]
-					uv2[slot1] = math.max(uv2[slot1] - 1, 0)
+				if not var_2_2:canBeCustomised() and arg_3_0.color > 0 then
+					local var_3_0 = var_2_3[arg_3_0.color]
+
+					var_2_1[var_3_0] = math.max(var_2_1[var_3_0] - 1, 0)
 				end
 			end)
-			uv2:sendNotification(GAME.COLORING_CELL_DONE, {
-				cells = uv1,
-				stateChange = slot1:checkState()
+
+			local var_2_4 = var_2_0:checkState()
+
+			arg_1_0:sendNotification(GAME.COLORING_CELL_DONE, {
+				cells = var_1_3,
+				stateChange = var_2_4
 			})
-
-			return
+		else
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg_2_0.result))
 		end
-
-		pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", slot0.result))
 	end)
 end
 
-return slot0
+return var_0_0

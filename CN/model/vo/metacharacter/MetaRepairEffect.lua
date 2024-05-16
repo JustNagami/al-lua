@@ -1,39 +1,38 @@
-slot0 = class("MetaRepairEffect", import("..BaseVO"))
+﻿local var_0_0 = class("MetaRepairEffect", import("..BaseVO"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.ship_meta_repair_effect
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.progress = slot1.progress
-	slot0.attrs = {}
-	slot5 = "effect_attr"
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.configId = arg_2_0.id
+	arg_2_0.progress = arg_2_1.progress
+	arg_2_0.attrs = {}
 
-	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
-		slot0.attrs[slot6[1]] = slot6[2]
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0:getConfig("effect_attr")) do
+		arg_2_0.attrs[iter_2_1[1]] = iter_2_1[2]
 	end
 
-	slot0.words = slot0:getConfig("effect_dialog")
-	slot0.descs = string.split(slot0:getConfig("effect_desc"), "|")
-	slot0.descs = ""
+	arg_2_0.words = arg_2_0:getConfig("effect_dialog")
+	arg_2_0.descs = string.split(arg_2_0:getConfig("effect_desc"), "|")
+	arg_2_0.descs = ""
 end
 
-function slot0.getAttrAdditionList(slot0)
-	return slot0:getConfig("effect_attr")
+function var_0_0.getAttrAdditionList(arg_3_0)
+	return arg_3_0:getConfig("effect_attr")
 end
 
-function slot0.getAttrAddition(slot0, slot1)
-	return slot0.attrs[slot1] or 0
+function var_0_0.getAttrAddition(arg_4_0, arg_4_1)
+	return arg_4_0.attrs[arg_4_1] or 0
 end
 
-function slot0.getDescs(slot0)
-	return slot0.descs
+function var_0_0.getDescs(arg_5_0)
+	return arg_5_0.descs
 end
 
-function slot0.getWords(slot0)
-	return slot0.words
+function var_0_0.getWords(arg_6_0)
+	return arg_6_0.words
 end
 
-return slot0
+return var_0_0

@@ -1,48 +1,52 @@
-ys = ys or {}
-slot1 = class("BattleSceneObject")
-ys.Battle.BattleSceneObject = slot1
-slot1.__name = "BattleSceneObject"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = class("BattleSceneObject")
+
+var_0_0.Battle.BattleSceneObject = var_0_1
+var_0_1.__name = "BattleSceneObject"
+
+function var_0_1.Ctor(arg_1_0)
+	return
 end
 
-function slot1.GetGO(slot0)
-	return slot0._go
+function var_0_1.GetGO(arg_2_0)
+	return arg_2_0._go
 end
 
-function slot1.GetTf(slot0)
-	return slot0._tf
+function var_0_1.GetTf(arg_3_0)
+	return arg_3_0._tf
 end
 
-function slot1.SetGO(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
+function var_0_1.SetGO(arg_4_0, arg_4_1)
+	arg_4_0._go = arg_4_1
+	arg_4_0._tf = arg_4_1.transform
 end
 
-function slot1.GetCldBoxSize(slot0)
-	assert(false, slot0.__name .. ".GetCldBoxSize: this function should be override!!!")
+function var_0_1.GetCldBoxSize(arg_5_0)
+	assert(false, arg_5_0.__name .. ".GetCldBoxSize: this function should be override!!!")
 end
 
-function slot1.GetCldBox(slot0)
-	assert(false, slot0.__name .. ".GetCldBox: this function should be override!!!")
+function var_0_1.GetCldBox(arg_6_0)
+	assert(false, arg_6_0.__name .. ".GetCldBox: this function should be override!!!")
 end
 
-function slot1.GetCldData(slot0)
-	assert(false, slot0.__name .. ".GetCldData: this function should be override!!!")
+function var_0_1.GetCldData(arg_7_0)
+	assert(false, arg_7_0.__name .. ".GetCldData: this function should be override!!!")
 end
 
-function slot1.GetGOPosition(slot0)
-	return slot0._tf.localPosition
+function var_0_1.GetGOPosition(arg_8_0)
+	return arg_8_0._tf.localPosition
 end
 
-function slot1.CameraOrthogonal(slot0, slot1)
-	slot0._tf.localRotation = slot1.transform.localRotation
+function var_0_1.CameraOrthogonal(arg_9_0, arg_9_1)
+	arg_9_0._tf.localRotation = arg_9_1.transform.localRotation
 end
 
-function slot1.Dispose(slot0)
-	slot0._tf = nil
+function var_0_1.Dispose(arg_10_0)
+	arg_10_0._tf = nil
 
-	uv0.Battle.BattleResourceManager.GetInstance():DestroyOb(slot0._go)
+	var_0_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg_10_0._go)
 
-	slot0._go = nil
+	arg_10_0._go = nil
 end

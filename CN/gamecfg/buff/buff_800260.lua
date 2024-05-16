@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				buff_id = 800261
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,16 +29,5 @@ return {
 	stack = 1,
 	id = 800260,
 	icon = 800260,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				buff_id = 800261
-			}
-		}
-	}
+	last_effect = ""
 }

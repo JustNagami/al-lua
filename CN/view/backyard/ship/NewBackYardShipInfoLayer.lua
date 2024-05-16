@@ -1,25 +1,24 @@
-slot0 = class("NewBackYardShipInfoLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("NewBackYardShipInfoLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewBackYardShipInfoUI"
 end
 
-function slot0.init(slot0)
-	slot0.descTxt = slot0:findTF("frame/desc"):GetComponent(typeof(Text))
-	slot1 = slot0:findTF("frame/top/value/Text")
-	slot0.counterTxt = slot1:GetComponent(typeof(Text))
-	slot0.cardContainer = slot0:findTF("frame/panel")
-	slot0.closeBtn = slot0:findTF("frame/top/close")
-	slot0.mainPanel = slot0:findTF("frame")
-	slot0.toggles = {
-		[Ship.STATE_REST] = slot0:findTF("frame/top/rest"),
-		[Ship.STATE_TRAIN] = slot0:findTF("frame/top/train")
+function var_0_0.init(arg_2_0)
+	arg_2_0.descTxt = arg_2_0:findTF("frame/desc"):GetComponent(typeof(Text))
+	arg_2_0.counterTxt = arg_2_0:findTF("frame/top/value/Text"):GetComponent(typeof(Text))
+	arg_2_0.cardContainer = arg_2_0:findTF("frame/panel")
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/top/close")
+	arg_2_0.mainPanel = arg_2_0:findTF("frame")
+	arg_2_0.toggles = {
+		[Ship.STATE_REST] = arg_2_0:findTF("frame/top/rest"),
+		[Ship.STATE_TRAIN] = arg_2_0:findTF("frame/top/train")
 	}
-	slot0.animations = {
-		[Ship.STATE_REST] = slot0:findTF("frame/top/rest"):GetComponent(typeof(Animation)),
-		[Ship.STATE_TRAIN] = slot0:findTF("frame/top/train"):GetComponent(typeof(Animation))
+	arg_2_0.animations = {
+		[Ship.STATE_REST] = arg_2_0:findTF("frame/top/rest"):GetComponent(typeof(Animation)),
+		[Ship.STATE_TRAIN] = arg_2_0:findTF("frame/top/train"):GetComponent(typeof(Animation))
 	}
-	slot0.animationName = {
+	arg_2_0.animationName = {
 		[Ship.STATE_REST] = {
 			"anim_backyard_shipinfo_rest_Select",
 			"anim_backyard_shipinfo_rest_unSelect"
@@ -29,156 +28,165 @@ function slot0.init(slot0)
 			"anim_backyard_shipinfo_train_unSelect"
 		}
 	}
-	slot0.addShipTpl = slot0.cardContainer:Find("AddShipTpl")
-	slot0.extendShipTpl = slot0.cardContainer:Find("ExtendShipTpl")
-	slot1 = slot0.cardContainer
-	slot0.shipCardTpl = slot1:Find("ShipCardTpl")
-	slot0.cards = {
+	arg_2_0.addShipTpl = arg_2_0.cardContainer:Find("AddShipTpl")
+	arg_2_0.extendShipTpl = arg_2_0.cardContainer:Find("ExtendShipTpl")
+	arg_2_0.shipCardTpl = arg_2_0.cardContainer:Find("ShipCardTpl")
+	arg_2_0.cards = {
 		{},
 		{},
 		{}
 	}
 
-	table.insert(slot0.cards[1], BackYardShipCard.New(slot0.shipCardTpl, slot0.event))
-	table.insert(slot0.cards[2], BackYardEmptyCard.New(slot0.addShipTpl, slot0.event))
-	table.insert(slot0.cards[3], BackYardExtendCard.New(slot0.extendShipTpl, slot0.event))
-	setText(slot0:findTF("frame/desc1"), i18n("backyard_longpress_ship_tip"))
-	setText(slot0:findTF("frame/top/rest/Text"), i18n("courtyard_label_rest"))
-	setText(slot0:findTF("frame/top/train/Text"), i18n("courtyard_label_train"))
-	setText(slot0:findTF("frame/top/rest/Text_un"), i18n("courtyard_label_rest"))
-	setText(slot0:findTF("frame/top/train/Text_un"), i18n("courtyard_label_train"))
+	table.insert(arg_2_0.cards[1], BackYardShipCard.New(arg_2_0.shipCardTpl, arg_2_0.event))
+	table.insert(arg_2_0.cards[2], BackYardEmptyCard.New(arg_2_0.addShipTpl, arg_2_0.event))
+	table.insert(arg_2_0.cards[3], BackYardExtendCard.New(arg_2_0.extendShipTpl, arg_2_0.event))
+	setText(arg_2_0:findTF("frame/desc1"), i18n("backyard_longpress_ship_tip"))
+	setText(arg_2_0:findTF("frame/top/rest/Text"), i18n("courtyard_label_rest"))
+	setText(arg_2_0:findTF("frame/top/train/Text"), i18n("courtyard_label_train"))
+	setText(arg_2_0:findTF("frame/top/rest/Text_un"), i18n("courtyard_label_rest"))
+	setText(arg_2_0:findTF("frame/top/train/Text_un"), i18n("courtyard_label_train"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
 
-	slot1 = Color.New(0.2235294, 0.227451, 0.2352941, 1)
-	slot6 = 1
-	slot2 = Color.New(0.5137255, 0.5137255, 0.5137255, slot6)
+	local var_3_0 = Color.New(0.2235294, 0.227451, 0.2352941, 1)
+	local var_3_1 = Color.New(0.5137255, 0.5137255, 0.5137255, 1)
 
-	for slot6, slot7 in pairs(slot0.toggles) do
-		onToggle(slot0, slot7, function (slot0)
-			if slot0 then
-				uv0:SwitchToPage(uv1)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.toggles) do
+		onToggle(arg_3_0, iter_3_1, function(arg_6_0)
+			if arg_6_0 then
+				arg_3_0:SwitchToPage(iter_3_0)
 			end
 
-			uv2:Find("icon"):GetComponent(typeof(Image)).color = slot0 and uv3 or uv4
-			slot2 = uv0.animationName[uv1]
-			slot3 = slot0 and 1 or 2
+			iter_3_1:Find("icon"):GetComponent(typeof(Image)).color = arg_6_0 and var_3_0 or var_3_1
 
-			uv0.animations[uv1]:Play(slot2[slot3])
-			print(slot2[slot3])
+			local var_6_0 = arg_3_0.animations[iter_3_0]
+			local var_6_1 = arg_3_0.animationName[iter_3_0]
+			local var_6_2 = arg_6_0 and 1 or 2
+
+			var_6_0:Play(var_6_1[var_6_2])
+			print(var_6_1[var_6_2])
 		end, SFX_PANEL)
 	end
 
-	slot3 = getProxy(DormProxy)
-	slot3 = slot3:getRawData()
+	local var_3_2 = getProxy(DormProxy):getRawData()
 
-	setActive(slot0.toggles[2], slot3:isUnlockFloor(2))
-	onNextTick(function ()
-		if uv0.exited then
+	setActive(arg_3_0.toggles[2], var_3_2:isUnlockFloor(2))
+	onNextTick(function()
+		if arg_3_0.exited then
 			return
 		end
 
-		slot0 = uv0.contextData.type or Ship.STATE_TRAIN
-
-		for slot5, slot6 in ipairs({
+		local var_7_0 = arg_3_0.contextData.type or Ship.STATE_TRAIN
+		local var_7_1 = {
 			Ship.STATE_TRAIN,
 			Ship.STATE_REST
-		}) do
-			triggerToggle(uv0.toggles[slot6], slot6 == slot0)
+		}
+
+		for iter_7_0, iter_7_1 in ipairs(var_7_1) do
+			triggerToggle(arg_3_0.toggles[iter_7_1], iter_7_1 == var_7_0)
 		end
 	end)
 end
 
-function slot0.GetCardTypeCnt(slot0, slot1)
-	slot2 = getProxy(DormProxy):getRawData()
-	slot3 = 0
-	slot4 = 0
-	slot5 = 0
+function var_0_0.GetCardTypeCnt(arg_8_0, arg_8_1)
+	local var_8_0 = getProxy(DormProxy):getRawData()
+	local var_8_1 = 0
+	local var_8_2 = 0
+	local var_8_3 = 0
 
-	if slot1 == Ship.STATE_TRAIN then
-		slot3 = slot2.exp_pos
-		slot4 = slot2:getConfig("training_ship_number")
-	elseif slot1 == Ship.STATE_REST then
-		slot3 = slot2.rest_pos
-		slot4 = slot2:getConfig("fix_ship_number")
+	if arg_8_1 == Ship.STATE_TRAIN then
+		var_8_1 = var_8_0.exp_pos
+		var_8_2 = var_8_0:getConfig("training_ship_number")
+	elseif arg_8_1 == Ship.STATE_REST then
+		var_8_1 = var_8_0.rest_pos
+		var_8_2 = var_8_0:getConfig("fix_ship_number")
 	end
 
-	slot6 = slot2:GetStateShipCnt(slot1)
+	local var_8_4 = var_8_0:GetStateShipCnt(arg_8_1)
+	local var_8_5 = var_8_1 - var_8_4
+	local var_8_6 = var_8_2 - var_8_1
 
 	return {
-		slot6,
-		slot3 - slot6,
-		slot4 - slot3
+		var_8_4,
+		var_8_5,
+		var_8_6
 	}
 end
 
-function slot0.SwitchToPage(slot0, slot1)
-	if slot0.type == slot1 then
+function var_0_0.SwitchToPage(arg_9_0, arg_9_1)
+	if arg_9_0.type == arg_9_1 then
 		return
 	end
 
-	slot0.type = slot1
+	arg_9_0.type = arg_9_1
 
-	slot0:UpdateSlots()
+	arg_9_0:UpdateSlots()
 
-	if slot1 == Ship.STATE_TRAIN then
-		slot0.descTxt.text = i18n("backyard_traning_tip")
-	elseif slot1 == Ship.STATE_REST then
-		slot0.descTxt.text = i18n("backyard_rest_tip")
+	if arg_9_1 == Ship.STATE_TRAIN then
+		arg_9_0.descTxt.text = i18n("backyard_traning_tip")
+	elseif arg_9_1 == Ship.STATE_REST then
+		arg_9_0.descTxt.text = i18n("backyard_rest_tip")
 	end
 end
 
-function slot0.UpdateSlots(slot0)
-	slot1 = slot0.type
-	slot4 = getProxy(DormProxy):getRawData():GetStateShips(slot1)
-	slot5 = 0
-	slot6 = {}
+function var_0_0.UpdateSlots(arg_10_0)
+	local var_10_0 = arg_10_0.type
+	local var_10_1 = arg_10_0:GetCardTypeCnt(var_10_0)
+	local var_10_2 = getProxy(DormProxy):getRawData():GetStateShips(var_10_0)
+	local var_10_3 = 0
+	local var_10_4 = {}
 
-	for slot10, slot11 in ipairs(slot0:GetCardTypeCnt(slot1)) do
-		for slot16, slot17 in ipairs(slot0:GetTypeCards(slot10, slot11)) do
-			slot17:Flush(slot1, slot4[slot16])
-			slot17:SetSiblingIndex(slot5 + 1)
+	for iter_10_0, iter_10_1 in ipairs(var_10_1) do
+		local var_10_5 = arg_10_0:GetTypeCards(iter_10_0, iter_10_1)
+
+		for iter_10_2, iter_10_3 in ipairs(var_10_5) do
+			var_10_3 = var_10_3 + 1
+
+			iter_10_3:Flush(var_10_0, var_10_2[iter_10_2])
+			iter_10_3:SetSiblingIndex(var_10_3)
 		end
 	end
 
-	slot0.counterTxt.text = slot2[1] .. "/" .. slot2[2] + slot2[1]
+	arg_10_0.counterTxt.text = var_10_1[1] .. "/" .. var_10_1[2] + var_10_1[1]
 end
 
-function slot0.GetTypeCards(slot0, slot1, slot2)
-	for slot7 = #slot0.cards[slot1], slot2 - 1 do
-		table.insert(slot3, slot3[1]:Clone())
+function var_0_0.GetTypeCards(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.cards[arg_11_1]
+
+	for iter_11_0 = #var_11_0, arg_11_2 - 1 do
+		table.insert(var_11_0, var_11_0[1]:Clone())
 	end
 
-	for slot7 = #slot3, slot2 + 1, -1 do
-		slot3[slot7]:Disable()
+	for iter_11_1 = #var_11_0, arg_11_2 + 1, -1 do
+		var_11_0[iter_11_1]:Disable()
 	end
 
-	slot4 = {}
+	local var_11_1 = {}
 
-	for slot8 = 1, slot2 do
-		slot9 = slot3[slot8]
+	for iter_11_2 = 1, arg_11_2 do
+		local var_11_2 = var_11_0[iter_11_2]
 
-		slot9:Enable()
+		var_11_2:Enable()
 
-		slot4[slot8] = slot9
+		var_11_1[iter_11_2] = var_11_2
 	end
 
-	return slot4
+	return var_11_1
 end
 
-function slot0.willExit(slot0)
-	for slot4, slot5 in ipairs(slot0.cards) do
-		for slot9, slot10 in ipairs(slot5) do
-			slot10:Dispose()
+function var_0_0.willExit(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.cards) do
+		for iter_12_2, iter_12_3 in ipairs(iter_12_1) do
+			iter_12_3:Dispose()
 		end
 	end
 end
 
-return slot0
+return var_0_0

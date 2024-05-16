@@ -1,431 +1,487 @@
-slot0 = class("ColoringScene", import("view.base.BaseUI"))
-slot1 = 387
-slot2 = 467
-slot3 = 812.5
-slot4 = 1200
-slot5 = Vector2(49, -436.12)
+﻿local var_0_0 = class("ColoringScene", import("view.base.BaseUI"))
+local var_0_1 = 387
+local var_0_2 = 467
+local var_0_3 = 812.5
+local var_0_4 = 1200
+local var_0_5 = Vector2(49, -436.12)
 
-function slot0.getUIName(slot0)
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA) and AcessWithinNull(slot1:getConfig("config_client"), "ui") then
-		return slot2
+function var_0_0.getUIName(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
+
+	if var_1_0 then
+		local var_1_1 = AcessWithinNull(var_1_0:getConfig("config_client"), "ui")
+
+		if var_1_1 then
+			return var_1_1
+		end
 	end
 
-	assert(false, "Not Set PixelDraw Activity config_client ID: " .. (slot1 and slot1.id or 0))
+	local var_1_2 = var_1_0 and var_1_0.id or 0
+
+	assert(false, "Not Set PixelDraw Activity config_client ID: " .. var_1_2)
 end
 
-function slot0.setActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.setActivity(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1
 end
 
-function slot0.setColorItems(slot0, slot1)
-	slot0.colorItems = slot1
+function var_0_0.setColorItems(arg_3_0, arg_3_1)
+	arg_3_0.colorItems = arg_3_1
 end
 
-function slot0.setColorGroups(slot0, slot1)
-	slot0.colorGroups = slot1
+function var_0_0.setColorGroups(arg_4_0, arg_4_1)
+	arg_4_0.colorGroups = arg_4_1
 end
 
-function slot0.init(slot0)
-	slot0.topPanel = slot0:findTF("top")
-	slot0.btnBack = slot0:findTF("top/btnBack")
-	slot0.title = slot0:findTF("center/title_bar/text")
-	slot0.bg = slot0:findTF("center/board/container/bg")
-	slot0.painting = slot0:findTF("center/painting")
-	slot0.paintingCompleted = slot0:findTF("center/painting_completed")
-	slot0.zoom = slot0.bg:GetComponent("Zoom")
-	slot0.zoom.maxZoom = 3
-	slot0.cells = slot0:findTF("cells", slot0.bg)
-	slot0.cell = slot0:findTF("cell", slot0.bg)
-	slot0.lines = slot0:findTF("lines", slot0.bg)
-	slot0.line = slot0:findTF("line", slot0.bg)
-	slot0.btnHelp = slot0:findTF("top/btnHelp")
-	slot0.btnShare = slot0:findTF("top/btnShare")
-	slot0.colorgroupfront = slot0:findTF("center/colorgroupfront")
-	slot0.scrollColor = slot0:findTF("color_bar/scroll")
-	slot0.barExtra = slot0:findTF("color_bar/extra")
-	slot0.toggleEraser = slot0:findTF("eraser", slot0.barExtra)
-	slot0.btnEraserAll = slot0:findTF("eraser_all", slot0.barExtra)
-	slot0.arrowDown = slot0:findTF("arrow", slot0.barExtra)
+function var_0_0.init(arg_5_0)
+	arg_5_0.topPanel = arg_5_0:findTF("top")
+	arg_5_0.btnBack = arg_5_0:findTF("top/btnBack")
+	arg_5_0.title = arg_5_0:findTF("center/title_bar/text")
+	arg_5_0.bg = arg_5_0:findTF("center/board/container/bg")
+	arg_5_0.painting = arg_5_0:findTF("center/painting")
+	arg_5_0.paintingCompleted = arg_5_0:findTF("center/painting_completed")
+	arg_5_0.zoom = arg_5_0.bg:GetComponent("Zoom")
+	arg_5_0.zoom.maxZoom = 3
+	arg_5_0.cells = arg_5_0:findTF("cells", arg_5_0.bg)
+	arg_5_0.cell = arg_5_0:findTF("cell", arg_5_0.bg)
+	arg_5_0.lines = arg_5_0:findTF("lines", arg_5_0.bg)
+	arg_5_0.line = arg_5_0:findTF("line", arg_5_0.bg)
+	arg_5_0.btnHelp = arg_5_0:findTF("top/btnHelp")
+	arg_5_0.btnShare = arg_5_0:findTF("top/btnShare")
+	arg_5_0.colorgroupfront = arg_5_0:findTF("center/colorgroupfront")
+	arg_5_0.scrollColor = arg_5_0:findTF("color_bar/scroll")
+	arg_5_0.barExtra = arg_5_0:findTF("color_bar/extra")
+	arg_5_0.toggleEraser = arg_5_0:findTF("eraser", arg_5_0.barExtra)
+	arg_5_0.btnEraserAll = arg_5_0:findTF("eraser_all", arg_5_0.barExtra)
+	arg_5_0.arrowDown = arg_5_0:findTF("arrow", arg_5_0.barExtra)
 
-	setActive(slot0.cell, false)
-	setActive(slot0.line, false)
-	setActive(slot0.barExtra, false)
+	setActive(arg_5_0.cell, false)
+	setActive(arg_5_0.line, false)
+	setActive(arg_5_0.barExtra, false)
 end
 
-function slot0.DidMediatorRegisterDone(slot0)
-	slot0.colorPlates = CustomIndexLayer.Clone2Full(slot0:findTF("content", slot0.scrollColor), #slot0.colorGroups[1]:getConfig("color_id_list"))
-	slot0.coloringUIGroupName = "ColoringUIGroupSize" .. #slot0.colorGroups
+function var_0_0.DidMediatorRegisterDone(arg_6_0)
+	local var_6_0 = arg_6_0.colorGroups[1]:getConfig("color_id_list")
 
-	PoolMgr.GetInstance():GetUI(slot0.coloringUIGroupName, false, function (slot0)
-		slot3 = uv0
-		slot4 = slot3
+	arg_6_0.colorPlates = CustomIndexLayer.Clone2Full(arg_6_0:findTF("content", arg_6_0.scrollColor), #var_6_0)
 
-		setParent(slot0, slot3.findTF(slot4, "center"))
-		setAnchoredPosition(slot0, uv1)
-		tf(slot0):SetSiblingIndex(1)
-		setActive(slot0, true)
+	local var_6_1 = #arg_6_0.colorGroups
 
-		uv0.colorgroupbehind = tf(slot0)
-		uv0.paintsgroup = {}
+	arg_6_0.coloringUIGroupName = "ColoringUIGroupSize" .. var_6_1
 
-		for slot4 = uv0.colorgroupbehind.childCount - 1, 0, -1 do
-			table.insert(uv0.paintsgroup, uv0.colorgroupbehind:GetChild(slot4))
+	PoolMgr.GetInstance():GetUI(arg_6_0.coloringUIGroupName, false, function(arg_7_0)
+		setParent(arg_7_0, arg_6_0:findTF("center"))
+		setAnchoredPosition(arg_7_0, var_0_5)
+		tf(arg_7_0):SetSiblingIndex(1)
+		setActive(arg_7_0, true)
+
+		arg_6_0.colorgroupbehind = tf(arg_7_0)
+		arg_6_0.paintsgroup = {}
+
+		for iter_7_0 = arg_6_0.colorgroupbehind.childCount - 1, 0, -1 do
+			local var_7_0 = arg_6_0.colorgroupbehind:GetChild(iter_7_0)
+
+			table.insert(arg_6_0.paintsgroup, var_7_0)
 		end
 	end)
-	setActive(slot0.btnShare, not COLORING_ACTIVITY_CUSTOMIZED_BANNED and _.any(slot0.colorGroups, function (slot0)
-		return slot0:canBeCustomised()
-	end))
+
+	local var_6_2 = not COLORING_ACTIVITY_CUSTOMIZED_BANNED and _.any(arg_6_0.colorGroups, function(arg_8_0)
+		return arg_8_0:canBeCustomised()
+	end)
+
+	setActive(arg_6_0.btnShare, var_6_2)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.btnBack, function ()
-		if uv0.exited then
+function var_0_0.didEnter(arg_9_0)
+	onButton(arg_9_0, arg_9_0.btnBack, function()
+		if arg_9_0.exited then
 			return
 		end
 
-		uv0:uiExitAnimating()
-		uv0:emit(uv1.ON_BACK, nil, 0.3)
+		arg_9_0:uiExitAnimating()
+		arg_9_0:emit(var_0_0.ON_BACK, nil, 0.3)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.btnHelp, function ()
+	onButton(arg_9_0, arg_9_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("coloring_help_tip")
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnShare, function ()
+	onButton(arg_9_0, arg_9_0.btnShare, function()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeColoring)
 	end, SFX_PANEL)
-	onNextTick(function ()
-		if uv0.exited then
+	onNextTick(function()
+		if arg_9_0.exited then
 			return
 		end
 
-		uv0:uiStartAnimating()
+		arg_9_0:uiStartAnimating()
 	end)
-	slot0:initColoring()
-	slot0:updatePage()
+	arg_9_0:initColoring()
+	arg_9_0:updatePage()
 end
 
-function slot0.uiStartAnimating(slot0)
-	slot0.topPanel.anchoredPosition = Vector2(0, slot0.topPanel.rect.height)
+function var_0_0.uiStartAnimating(arg_14_0)
+	local var_14_0 = 0
+	local var_14_1 = 0.3
 
-	shiftPanel(slot0.topPanel, nil, 0, 0.3, 0, true, true, nil)
+	arg_14_0.topPanel.anchoredPosition = Vector2(0, arg_14_0.topPanel.rect.height)
+
+	shiftPanel(arg_14_0.topPanel, nil, 0, var_14_1, var_14_0, true, true, nil)
 end
 
-function slot0.uiExitAnimating(slot0)
-	shiftPanel(slot0.topPanel, nil, slot0.topPanel.rect.height, 0.3, 0, true, true, nil)
+function var_0_0.uiExitAnimating(arg_15_0)
+	local var_15_0 = 0
+	local var_15_1 = 0.3
+
+	shiftPanel(arg_15_0.topPanel, nil, arg_15_0.topPanel.rect.height, var_15_1, var_15_0, true, true, nil)
 end
 
-function slot0.initColoring(slot0)
-	onButton(slot0, slot0.btnEraserAll, function ()
+function var_0_0.initColoring(arg_16_0)
+	onButton(arg_16_0, arg_16_0.btnEraserAll, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("coloring_erase_all_warning"),
-			onYes = function ()
-				if uv0.colorGroups[uv0.selectedIndex]:canBeCustomised() then
-					uv0:emit(ColoringMediator.EVENT_COLORING_CLEAR, {
-						activityId = uv0.activity.id,
-						id = slot0.id
+			onYes = function()
+				local var_18_0 = arg_16_0.colorGroups[arg_16_0.selectedIndex]
+
+				if var_18_0:canBeCustomised() then
+					arg_16_0:emit(ColoringMediator.EVENT_COLORING_CLEAR, {
+						activityId = arg_16_0.activity.id,
+						id = var_18_0.id
 					})
 				end
 			end
 		})
 	end, SFX_PANEL)
+	onButton(arg_16_0, arg_16_0.arrowDown, function()
+		arg_16_0.scrollColor:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 0
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
+	local var_16_0 = 1
 
-	onButton(slot0, slot0.arrowDown, function ()
-		uv0.scrollColor:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 0
-	end, slot5)
-
-	slot1 = 1
-
-	for slot5 = 1, #slot0.colorGroups do
-		if slot0.colorGroups[slot5]:getState() == ColorGroup.StateColoring then
-			slot1 = slot5
+	for iter_16_0 = 1, #arg_16_0.colorGroups do
+		if arg_16_0.colorGroups[iter_16_0]:getState() == ColorGroup.StateColoring then
+			var_16_0 = iter_16_0
 
 			break
 		end
 	end
 
-	slot0:initInteractive()
+	local var_16_1 = Mathf.Min(var_16_0, #arg_16_0.paintsgroup)
 
-	slot0.selectedIndex = 0
-	slot0.selectedColorIndex = 0
+	arg_16_0:initInteractive()
 
-	triggerButton(slot0.paintsgroup[Mathf.Min(slot1, #slot0.paintsgroup)])
+	arg_16_0.selectedIndex = 0
+	arg_16_0.selectedColorIndex = 0
+
+	triggerButton(arg_16_0.paintsgroup[var_16_1])
 end
 
-function slot0.initInteractive(slot0)
-	for slot4, slot5 in pairs(slot0.paintsgroup) do
-		slot7 = slot0.colorGroups[slot4]
+function var_0_0.initInteractive(arg_20_0)
+	for iter_20_0, iter_20_1 in pairs(arg_20_0.paintsgroup) do
+		local var_20_0 = iter_20_0
+		local var_20_1 = arg_20_0.colorGroups[var_20_0]
 
-		onButton(slot0, slot5, function ()
-			slot0 = uv0:getState()
+		onButton(arg_20_0, iter_20_1, function()
+			local var_21_0 = var_20_1:getState()
 
-			if uv1.selectedIndex ~= uv2 and slot0 ~= ColorGroup.StateLock then
-				if uv1.paintsgroup[uv1.selectedIndex] then
-					slot1:SetParent(uv1.colorgroupbehind)
+			if arg_20_0.selectedIndex ~= var_20_0 and var_21_0 ~= ColorGroup.StateLock then
+				local var_21_1 = arg_20_0.paintsgroup[arg_20_0.selectedIndex]
+
+				if var_21_1 then
+					var_21_1:SetParent(arg_20_0.colorgroupbehind)
 				end
 
-				uv1.selectedIndex = uv2
+				arg_20_0.selectedIndex = var_20_0
 
-				uv3:SetParent(uv1.colorgroupfront)
-				uv1:SelectColoBar(0)
-				uv1:updateSelectedColoring()
-			elseif slot0 == ColorGroup.StateLock then
+				iter_20_1:SetParent(arg_20_0.colorgroupfront)
+				arg_20_0:SelectColoBar(0)
+				arg_20_0:updateSelectedColoring()
+			elseif var_21_0 == ColorGroup.StateLock then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("coloring_lock"))
 			end
 
-			uv1:updatePage()
+			arg_20_0:updatePage()
 		end, SFX_PANEL)
 	end
 
-	for slot4 = 0, #slot0.colorPlates - 1 do
-		onButton(slot0, slot0.colorPlates[slot4 + 1], function ()
-			uv0:SelectColoBar(uv1 + 1)
+	for iter_20_2 = 0, #arg_20_0.colorPlates - 1 do
+		local var_20_2 = arg_20_0.colorPlates[iter_20_2 + 1]
 
-			if uv0.colorGroups[uv0.selectedIndex]:getState() == ColorGroup.StateColoring and not slot0:canBeCustomised() then
-				if (uv0.colorItems[slot0:getConfig("color_id_list")[uv0.selectedColorIndex]] or 0) ~= 0 then
-					if uv0:SearchValidDiagonalColoringCells(slot0, uv0.selectedColorIndex, slot2) and #slot3 > 0 then
-						uv0:emit(ColoringMediator.EVENT_COLORING_CELL, {
-							activityId = uv0.activity.id,
-							id = slot0.id,
-							cells = slot3
+		onButton(arg_20_0, var_20_2, function()
+			arg_20_0:SelectColoBar(iter_20_2 + 1)
+
+			local var_22_0 = arg_20_0.colorGroups[arg_20_0.selectedIndex]
+
+			if var_22_0:getState() == ColorGroup.StateColoring and not var_22_0:canBeCustomised() then
+				local var_22_1 = var_22_0:getConfig("color_id_list")[arg_20_0.selectedColorIndex]
+				local var_22_2 = arg_20_0.colorItems[var_22_1] or 0
+
+				if var_22_2 ~= 0 then
+					local var_22_3 = arg_20_0:SearchValidDiagonalColoringCells(var_22_0, arg_20_0.selectedColorIndex, var_22_2)
+
+					if var_22_3 and #var_22_3 > 0 then
+						arg_20_0:emit(ColoringMediator.EVENT_COLORING_CELL, {
+							activityId = arg_20_0.activity.id,
+							id = var_22_0.id,
+							cells = var_22_3
 						})
 					end
-				elseif not slot0:isAllFill(uv0.selectedColorIndex) then
+				elseif not var_22_0:isAllFill(arg_20_0.selectedColorIndex) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("coloring_color_not_enough"))
 				end
 			end
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.toggleEraser, function ()
-		uv0:SelectColoBar(0)
+	onButton(arg_20_0, arg_20_0.toggleEraser, function()
+		arg_20_0:SelectColoBar(0)
 	end, SFX_PANEL)
 end
 
-function slot0.SelectColoBar(slot0, slot1)
-	if slot0.selectedColorIndex ~= 0 and slot0.selectedColorIndex ~= slot1 then
-		slot3 = slot0:findTF("icon", slot0.colorPlates[slot0.selectedColorIndex])
-		slot4 = slot3.sizeDelta
-		slot4.x = uv0
-		slot3.sizeDelta = slot4
+function var_0_0.SelectColoBar(arg_24_0, arg_24_1)
+	if arg_24_0.selectedColorIndex ~= 0 and arg_24_0.selectedColorIndex ~= arg_24_1 then
+		local var_24_0 = arg_24_0.colorPlates[arg_24_0.selectedColorIndex]
+		local var_24_1 = arg_24_0:findTF("icon", var_24_0)
+		local var_24_2 = var_24_1.sizeDelta
+
+		var_24_2.x = var_0_1
+		var_24_1.sizeDelta = var_24_2
 	end
 
-	slot0.selectedColorIndex = slot1
+	arg_24_0.selectedColorIndex = arg_24_1
 
-	if slot0.selectedColorIndex ~= 0 then
-		slot3 = slot0:findTF("icon", slot0.colorPlates[slot0.selectedColorIndex])
-		slot4 = slot3.sizeDelta
-		slot4.x = uv1
-		slot3.sizeDelta = slot4
+	if arg_24_0.selectedColorIndex ~= 0 then
+		local var_24_3 = arg_24_0.colorPlates[arg_24_0.selectedColorIndex]
+		local var_24_4 = arg_24_0:findTF("icon", var_24_3)
+		local var_24_5 = var_24_4.sizeDelta
+
+		var_24_5.x = var_0_2
+		var_24_4.sizeDelta = var_24_5
 	end
 end
 
-function slot0.updatePage(slot0)
-	for slot4, slot5 in ipairs(slot0.paintsgroup) do
-		setActive(slot5:Find("lock"), slot0.colorGroups[slot4]:getState() == ColorGroup.StateLock)
-		setActive(slot5:Find("get"), slot7 == ColorGroup.StateAchieved)
+function var_0_0.updatePage(arg_25_0)
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0.paintsgroup) do
+		local var_25_0 = arg_25_0.colorGroups[iter_25_0]:getState()
+
+		setActive(iter_25_1:Find("lock"), var_25_0 == ColorGroup.StateLock)
+		setActive(iter_25_1:Find("get"), var_25_0 == ColorGroup.StateAchieved)
 	end
 
-	slot2 = 0
+	local var_25_1 = #arg_25_0.paintsgroup
+	local var_25_2 = 0
 
-	for slot6 = #slot0.paintsgroup, 1, -1 do
-		if slot6 ~= slot0.selectedIndex then
-			slot0.paintsgroup[slot6]:SetSiblingIndex(slot2)
+	for iter_25_2 = var_25_1, 1, -1 do
+		if iter_25_2 ~= arg_25_0.selectedIndex then
+			arg_25_0.paintsgroup[iter_25_2]:SetSiblingIndex(var_25_2)
 
-			slot2 = slot2 + 1
+			var_25_2 = var_25_2 + 1
 		end
 	end
 
-	if getProxy(ColoringProxy):IsALLAchieve() and not IsNil(slot0.paintingCompleted) then
-		setActive(slot0.painting, false)
-		setActive(slot0.paintingCompleted, true)
+	if getProxy(ColoringProxy):IsALLAchieve() and not IsNil(arg_25_0.paintingCompleted) then
+		setActive(arg_25_0.painting, false)
+		setActive(arg_25_0.paintingCompleted, true)
 	end
 
-	slot0:TryPlayStory()
+	arg_25_0:TryPlayStory()
 end
 
-function slot0.updateSelectedColoring(slot0)
-	slot2 = slot0.colorGroups[slot0.selectedIndex]:getConfig("color_id_list")
+function var_0_0.updateSelectedColoring(arg_26_0)
+	local var_26_0 = arg_26_0.colorGroups[arg_26_0.selectedIndex]
+	local var_26_1 = var_26_0:getConfig("color_id_list")
 
-	for slot6 = 1, #slot0.colorPlates do
-		setText(slot0.colorPlates[slot6]:Find("icon/x/nums"), slot0.colorItems[slot2[slot6]] or 0)
+	for iter_26_0 = 1, #arg_26_0.colorPlates do
+		local var_26_2 = arg_26_0.colorPlates[iter_26_0]
+
+		setText(var_26_2:Find("icon/x/nums"), arg_26_0.colorItems[var_26_1[iter_26_0]] or 0)
 	end
 
-	slot3 = slot1:getConfig("name")
+	local var_26_3 = var_26_0:getConfig("name")
 
-	setText(slot0.title, slot3)
-	setActive(slot0.title.parent, slot3 ~= nil)
-	setActive(slot0.barExtra, slot1:canBeCustomised())
+	setText(arg_26_0.title, var_26_3)
+	setActive(arg_26_0.title.parent, var_26_3 ~= nil)
+	setActive(arg_26_0.barExtra, var_26_0:canBeCustomised())
 
-	slot4 = slot0.scrollColor.sizeDelta
-	slot4.y = slot1:canBeCustomised() and uv0 or uv1
-	slot0.scrollColor.sizeDelta = slot4
-	slot0.scrollColor:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
+	local var_26_4 = arg_26_0.scrollColor.sizeDelta
 
-	setActive(slot0.scrollColor, false)
-	setActive(slot0.scrollColor, true)
+	var_26_4.y = var_26_0:canBeCustomised() and var_0_3 or var_0_4
+	arg_26_0.scrollColor.sizeDelta = var_26_4
+	arg_26_0.scrollColor:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
 
-	slot0.cellSize = slot0:calcCellSize()
+	setActive(arg_26_0.scrollColor, false)
+	setActive(arg_26_0.scrollColor, true)
 
-	slot0:updateCells()
-	slot0:updateLines()
-	getProxy(ColoringProxy):SetViewedPage(slot0.selectedIndex or 1)
+	arg_26_0.cellSize = arg_26_0:calcCellSize()
+
+	arg_26_0:updateCells()
+	arg_26_0:updateLines()
+	getProxy(ColoringProxy):SetViewedPage(arg_26_0.selectedIndex or 1)
 end
 
-function slot0.updateCells(slot0)
-	slot2, slot3 = unpack(slot0.colorGroups[slot0.selectedIndex]:getConfig("theme"))
+function var_0_0.updateCells(arg_27_0)
+	local var_27_0 = arg_27_0.colorGroups[arg_27_0.selectedIndex]
+	local var_27_1, var_27_2 = unpack(var_27_0:getConfig("theme"))
 
-	for slot7 = 0, slot2 do
-		for slot11 = 0, slot3 do
-			slot0:updateCell(slot7, slot11)
+	for iter_27_0 = 0, var_27_1 do
+		for iter_27_1 = 0, var_27_2 do
+			arg_27_0:updateCell(iter_27_0, iter_27_1)
 		end
 	end
 
-	slot4 = slot0.bg
-	slot4 = slot4:GetComponent("EventTriggerListener")
+	local var_27_3 = arg_27_0.bg:GetComponent("EventTriggerListener")
 
-	slot4:RemovePointClickFunc()
-	slot4:RemoveBeginDragFunc()
-	slot4:RemoveDragFunc()
-	slot4:RemoveDragEndFunc()
+	var_27_3:RemovePointClickFunc()
+	var_27_3:RemoveBeginDragFunc()
+	var_27_3:RemoveDragFunc()
+	var_27_3:RemoveDragEndFunc()
 
-	slot5 = false
+	local var_27_4 = false
 
-	slot4:AddPointClickFunc(function (slot0, slot1)
-		if not uv0:canBeCustomised() then
+	var_27_3:AddPointClickFunc(function(arg_28_0, arg_28_1)
+		if not var_27_0:canBeCustomised() then
 			return
 		end
 
-		if uv1 then
+		if var_27_4 then
 			return
 		end
 
-		slot2 = LuaHelper.ScreenToLocal(uv2.bg, slot1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera)))
-		slot3 = math.floor(-slot2.y / uv2.cellSize.y)
-		slot4 = math.floor(slot2.x / uv2.cellSize.x)
+		local var_28_0 = LuaHelper.ScreenToLocal(arg_27_0.bg, arg_28_1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera)))
+		local var_28_1 = math.floor(-var_28_0.y / arg_27_0.cellSize.y)
+		local var_28_2 = math.floor(var_28_0.x / arg_27_0.cellSize.x)
 
-		if uv0:getState() == ColorGroup.StateColoring then
-			function slot5()
-				uv0:emit(ColoringMediator.EVENT_COLORING_CELL, {
-					activityId = uv0.activity.id,
-					id = uv1.id,
-					cells = uv0:searchColoringCells(uv1, uv2, uv3, uv0.selectedColorIndex)
+		if var_27_0:getState() == ColorGroup.StateColoring then
+			local function var_28_3()
+				arg_27_0:emit(ColoringMediator.EVENT_COLORING_CELL, {
+					activityId = arg_27_0.activity.id,
+					id = var_27_0.id,
+					cells = arg_27_0:searchColoringCells(var_27_0, var_28_1, var_28_2, arg_27_0.selectedColorIndex)
 				})
 			end
 
-			if not uv0:canBeCustomised() then
+			if not var_27_0:canBeCustomised() then
 				return
-			elseif uv2.selectedColorIndex == 0 and not uv0:hasFill(slot3, slot4) then
+			elseif arg_27_0.selectedColorIndex == 0 and not var_27_0:hasFill(var_28_1, var_28_2) then
 				return
 			end
 
-			slot5()
+			var_28_3()
 		end
 	end)
-	slot4:AddBeginDragFunc(function ()
-		uv0 = false
+	var_27_3:AddBeginDragFunc(function()
+		var_27_4 = false
 	end)
 
-	slot6 = Vector2.New(slot0.bg.rect.width / UnityEngine.Screen.width, slot0.bg.rect.height / UnityEngine.Screen.height)
+	local var_27_5 = Vector2.New(arg_27_0.bg.rect.width / UnityEngine.Screen.width, arg_27_0.bg.rect.height / UnityEngine.Screen.height)
 
-	slot4:AddDragFunc(function (slot0, slot1)
-		uv0 = true
+	var_27_3:AddDragFunc(function(arg_31_0, arg_31_1)
+		var_27_4 = true
 
 		if not IsUnityEditor then
-			uv1.zoom.enabled = Input.touchCount == 2
+			arg_27_0.zoom.enabled = Input.touchCount == 2
 		end
 
-		if IsUnityEditor or not uv1.zoom.enabled then
-			slot2 = uv1.bg.anchoredPosition
-			slot2.x = slot2.x + slot1.delta.x * uv2.x
-			slot2.x = math.clamp(slot2.x, -uv1.bg.rect.width * (uv1.bg.localScale.x - 1), 0)
-			slot2.y = slot2.y + slot1.delta.y * uv2.y
-			slot2.y = math.clamp(slot2.y, 0, uv1.bg.rect.height * (uv1.bg.localScale.y - 1))
-			uv1.bg.anchoredPosition = slot2
+		if IsUnityEditor or not arg_27_0.zoom.enabled then
+			local var_31_0 = arg_27_0.bg.anchoredPosition
+
+			var_31_0.x = var_31_0.x + arg_31_1.delta.x * var_27_5.x
+			var_31_0.x = math.clamp(var_31_0.x, -arg_27_0.bg.rect.width * (arg_27_0.bg.localScale.x - 1), 0)
+			var_31_0.y = var_31_0.y + arg_31_1.delta.y * var_27_5.y
+			var_31_0.y = math.clamp(var_31_0.y, 0, arg_27_0.bg.rect.height * (arg_27_0.bg.localScale.y - 1))
+			arg_27_0.bg.anchoredPosition = var_31_0
 		end
 	end)
-	slot4:AddDragEndFunc(function ()
-		uv0 = false
+	var_27_3:AddDragEndFunc(function()
+		var_27_4 = false
 	end)
 end
 
-function slot0.updateCell(slot0, slot1, slot2)
-	slot3 = slot0.colorGroups[slot0.selectedIndex]
-	slot4 = slot3:getCell(slot1, slot2)
-	slot5 = slot3:getFill(slot1, slot2)
+function var_0_0.updateCell(arg_33_0, arg_33_1, arg_33_2)
+	local var_33_0 = arg_33_0.colorGroups[arg_33_0.selectedIndex]
+	local var_33_1 = var_33_0:getCell(arg_33_1, arg_33_2)
+	local var_33_2 = var_33_0:getFill(arg_33_1, arg_33_2)
+	local var_33_3 = var_33_0:getState()
 
-	if slot3:getState() == ColorGroup.StateFinish or slot6 == ColorGroup.StateAchieved then
-		slot5 = slot4
+	if var_33_3 == ColorGroup.StateFinish or var_33_3 == ColorGroup.StateAchieved then
+		var_33_2 = var_33_1
 	end
 
-	slot8 = slot0.cells:Find(slot1 .. "_" .. slot2)
+	local var_33_4 = arg_33_1 .. "_" .. arg_33_2
+	local var_33_5 = arg_33_0.cells:Find(var_33_4)
 
-	if slot4 or slot5 then
-		slot8 = slot8 or cloneTplTo(slot0.cell, slot0.cells, slot7)
-		slot8.sizeDelta = slot0.cellSize
-		slot8.anchoredPosition = Vector2((slot5 or slot4).column * slot0.cellSize.x, -((slot5 or slot4).row * slot0.cellSize.y))
-		slot9 = slot8:Find("image")
-		slot10 = slot8:Find("text")
+	if var_33_1 or var_33_2 then
+		var_33_5 = var_33_5 or cloneTplTo(arg_33_0.cell, arg_33_0.cells, var_33_4)
+		var_33_5.sizeDelta = arg_33_0.cellSize
+		var_33_5.anchoredPosition = Vector2((var_33_2 or var_33_1).column * arg_33_0.cellSize.x, -((var_33_2 or var_33_1).row * arg_33_0.cellSize.y))
 
-		if slot5 then
-			setImageColor(slot9, slot3.colors[slot5.type])
+		local var_33_6 = var_33_5:Find("image")
+		local var_33_7 = var_33_5:Find("text")
+
+		if var_33_2 then
+			setImageColor(var_33_6, var_33_0.colors[var_33_2.type])
 		else
-			setText(slot10, string.char(string.byte("A") + slot4.type - 1))
+			setText(var_33_7, string.char(string.byte("A") + var_33_1.type - 1))
 		end
 
-		setActive(slot9, slot5)
-		setActive(slot10, not slot5)
-		setActive(slot8, true)
-	elseif slot8 then
-		setActive(slot8, false)
+		setActive(var_33_6, var_33_2)
+		setActive(var_33_7, not var_33_2)
+		setActive(var_33_5, true)
+	elseif var_33_5 then
+		setActive(var_33_5, false)
 	end
 end
 
-function slot0.calcCellSize(slot0)
-	slot2, slot3 = unpack(slot0.colorGroups[slot0.selectedIndex]:getConfig("theme"))
-	slot4 = slot0.bg.rect
+function var_0_0.calcCellSize(arg_34_0)
+	local var_34_0 = arg_34_0.colorGroups[arg_34_0.selectedIndex]
+	local var_34_1, var_34_2 = unpack(var_34_0:getConfig("theme"))
+	local var_34_3 = arg_34_0.bg.rect
 
-	return Vector2.New(slot4.width / slot3, slot4.height / slot2)
+	return (Vector2.New(var_34_3.width / var_34_2, var_34_3.height / var_34_1))
 end
 
-function slot0.updateLines(slot0)
-	slot2, slot3 = unpack(slot0.colorGroups[slot0.selectedIndex]:getConfig("theme"))
+function var_0_0.updateLines(arg_35_0)
+	local var_35_0 = arg_35_0.colorGroups[arg_35_0.selectedIndex]
+	local var_35_1, var_35_2 = unpack(var_35_0:getConfig("theme"))
 
-	for slot7 = 1, slot3 - 1 do
-		slot9 = slot0.lines:Find("column_" .. slot7) or cloneTplTo(slot0.line, slot0.lines, slot8)
-		slot9.sizeDelta = Vector2.New(1, slot0.lines.rect.height)
-		slot9.anchoredPosition = Vector2.New(slot7 * slot0.cellSize.x - 0.5, 0)
+	for iter_35_0 = 1, var_35_2 - 1 do
+		local var_35_3 = "column_" .. iter_35_0
+		local var_35_4 = arg_35_0.lines:Find(var_35_3) or cloneTplTo(arg_35_0.line, arg_35_0.lines, var_35_3)
+
+		var_35_4.sizeDelta = Vector2.New(1, arg_35_0.lines.rect.height)
+		var_35_4.anchoredPosition = Vector2.New(iter_35_0 * arg_35_0.cellSize.x - 0.5, 0)
 	end
 
-	for slot7 = 1, slot2 - 1 do
-		slot9 = slot0.lines:Find("row_" .. slot7) or cloneTplTo(slot0.line, slot0.lines, slot8)
-		slot9.sizeDelta = Vector2.New(slot0.lines.rect.width, 1)
-		slot9.anchoredPosition = Vector2.New(0, -(slot7 * slot0.cellSize.y - 0.5))
+	for iter_35_1 = 1, var_35_1 - 1 do
+		local var_35_5 = "row_" .. iter_35_1
+		local var_35_6 = arg_35_0.lines:Find(var_35_5) or cloneTplTo(arg_35_0.line, arg_35_0.lines, var_35_5)
+
+		var_35_6.sizeDelta = Vector2.New(arg_35_0.lines.rect.width, 1)
+		var_35_6.anchoredPosition = Vector2.New(0, -(iter_35_1 * arg_35_0.cellSize.y - 0.5))
 	end
 end
 
-function slot0.searchColoringCells(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {
-		row = slot2,
-		column = slot3,
-		color = slot4
+function var_0_0.searchColoringCells(arg_36_0, arg_36_1, arg_36_2, arg_36_3, arg_36_4)
+	local var_36_0 = {
+		row = arg_36_2,
+		column = arg_36_3,
+		color = arg_36_4
 	}
 
-	if slot1:canBeCustomised() then
+	if arg_36_1:canBeCustomised() then
 		return {
-			slot5
+			var_36_0
 		}
 	else
-		slot7 = slot0.colorItems[slot1:getConfig("color_id_list")[slot4]]
-		slot8 = {}
-		slot9 = {}
-		slot10 = {
-			slot5
+		local var_36_1 = arg_36_1:getConfig("color_id_list")[arg_36_4]
+		local var_36_2 = arg_36_0.colorItems[var_36_1]
+		local var_36_3 = {}
+		local var_36_4 = {}
+		local var_36_5 = {
+			var_36_0
 		}
-		slot11 = {
+		local var_36_6 = {
 			{
 				row = -1,
 				column = 0
@@ -460,91 +516,103 @@ function slot0.searchColoringCells(slot0, slot1, slot2, slot3, slot4)
 			}
 		}
 
-		while #slot10 > 0 and slot7 > 0 do
-			slot12 = table.remove(slot10, 1)
+		while #var_36_5 > 0 and var_36_2 > 0 do
+			local var_36_7 = table.remove(var_36_5, 1)
 
-			if not slot1:hasFill(slot12.row, slot12.column) and slot12.color == slot4 then
-				table.insert(slot8, slot12)
+			if not arg_36_1:hasFill(var_36_7.row, var_36_7.column) and var_36_7.color == arg_36_4 then
+				table.insert(var_36_3, var_36_7)
 
-				slot7 = slot7 - 1
+				var_36_2 = var_36_2 - 1
 
-				_.each(slot11, function (slot0)
-					if uv0:getCell(slot0.row + uv1.row, slot0.column + uv1.column) and not (_.any(uv2, function (slot0)
-						return slot0.row == uv0.row and slot0.column == uv0.column
-					end) or _.any(uv3, function (slot0)
-						return slot0.row == uv0.row and slot0.column == uv0.column
+				_.each(var_36_6, function(arg_37_0)
+					local var_37_0 = arg_36_1:getCell(arg_37_0.row + var_36_7.row, arg_37_0.column + var_36_7.column)
+
+					if var_37_0 and not (_.any(var_36_5, function(arg_38_0)
+						return arg_38_0.row == var_37_0.row and arg_38_0.column == var_37_0.column
+					end) or _.any(var_36_4, function(arg_39_0)
+						return arg_39_0.row == var_37_0.row and arg_39_0.column == var_37_0.column
 					end)) then
-						table.insert(uv2, {
-							row = slot1.row,
-							column = slot1.column,
-							color = slot1.type
+						table.insert(var_36_5, {
+							row = var_37_0.row,
+							column = var_37_0.column,
+							color = var_37_0.type
 						})
 					end
 				end)
 			end
 
-			table.insert(slot9, slot12)
+			table.insert(var_36_4, var_36_7)
 		end
 
-		return slot8
+		return var_36_3
 	end
 end
 
-function slot0.SearchValidDiagonalColoringCells(slot0, slot1, slot2, slot3)
-	assert(slot1)
+function var_0_0.SearchValidDiagonalColoringCells(arg_40_0, arg_40_1, arg_40_2, arg_40_3)
+	assert(arg_40_1)
 
-	slot4 = {}
+	local var_40_0 = {}
 
-	if slot1:getState() ~= ColorGroup.StateColoring or slot1:canBeCustomised() or slot3 == 0 then
-		return slot4
+	if arg_40_1:getState() ~= ColorGroup.StateColoring or arg_40_1:canBeCustomised() or arg_40_3 == 0 then
+		return var_40_0
 	else
-		slot5, slot6 = slot1:GetAABB()
-		slot7 = slot6.x - slot5.x
-		slot8 = slot6.y - slot5.y
+		local var_40_1, var_40_2 = arg_40_1:GetAABB()
+		local var_40_3 = var_40_2.x - var_40_1.x
+		local var_40_4 = var_40_2.y - var_40_1.y
 
-		(function ()
-			for slot4 = 0, uv0 + uv1 do
-				for slot8 = 0, slot4 do
-					slot10 = slot8
+		;(function()
+			local var_41_0 = var_40_3 + var_40_4
 
-					if slot4 - slot8 <= uv0 and slot10 <= uv1 and uv3:getCell(slot10 + uv2.y, slot9 + uv2.x) and slot13.type == uv4 and not uv3:getFill(slot11, slot12) then
-						table.insert(uv5, {
-							row = slot11,
-							column = slot12,
-							color = uv4
-						})
+			for iter_41_0 = 0, var_41_0 do
+				for iter_41_1 = 0, iter_41_0 do
+					local var_41_1 = iter_41_0 - iter_41_1
+					local var_41_2 = iter_41_1
 
-						if uv6 <= #uv5 then
-							return
+					if var_41_1 <= var_40_3 and var_41_2 <= var_40_4 then
+						local var_41_3 = var_41_2 + var_40_1.y
+						local var_41_4 = var_41_1 + var_40_1.x
+						local var_41_5 = arg_40_1:getCell(var_41_3, var_41_4)
+
+						if var_41_5 and var_41_5.type == arg_40_2 and not arg_40_1:getFill(var_41_3, var_41_4) then
+							table.insert(var_40_0, {
+								row = var_41_3,
+								column = var_41_4,
+								color = arg_40_2
+							})
+
+							if #var_40_0 >= arg_40_3 then
+								return
+							end
 						end
 					end
 				end
 			end
 		end)()
 
-		return slot4
+		return var_40_0
 	end
 end
 
-function slot0.TryPlayStory(slot0)
-	slot2 = slot0.selectedIndex
+function var_0_0.TryPlayStory(arg_42_0)
+	local var_42_0 = {}
+	local var_42_1 = arg_42_0.selectedIndex
 
-	table.SerialIpairsAsync({}, function (slot0, slot1, slot2)
-		if slot0 <= uv0 and slot1 then
-			pg.NewStoryMgr.GetInstance():Play(slot1, slot2)
+	table.SerialIpairsAsync(var_42_0, function(arg_43_0, arg_43_1, arg_43_2)
+		if arg_43_0 <= var_42_1 and arg_43_1 then
+			pg.NewStoryMgr.GetInstance():Play(arg_43_1, arg_43_2)
 		else
-			slot2()
+			arg_43_2()
 		end
 	end)
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_44_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(slot0.btnBack)
+	triggerButton(arg_44_0.btnBack)
 end
 
-function slot0.willExit(slot0)
-	PoolMgr.GetInstance():ReturnUI(slot0.coloringUIGroupName, slot0.colorgroupbehind)
+function var_0_0.willExit(arg_45_0)
+	PoolMgr.GetInstance():ReturnUI(arg_45_0.coloringUIGroupName, arg_45_0.colorgroupbehind)
 end
 
-return slot0
+return var_0_0

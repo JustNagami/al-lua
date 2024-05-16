@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.expedition_cloud_template = {
 	{
 		map = 1,

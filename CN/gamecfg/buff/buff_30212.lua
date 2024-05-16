@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行24次攻击，触发全弹发射-部族级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 30212,
-	icon = 30210,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +25,18 @@ return {
 				countType = 30211
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行24次攻击，触发全弹发射-部族级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 30212,
+	icon = 30210,
+	last_effect = ""
 }

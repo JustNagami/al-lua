@@ -1,5 +1,6 @@
-slot0 = class("WorldMapOp", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WorldMapOp", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	updateAttachmentCells = "table",
 	fleetUpdates = "table",
 	anim = "string",
@@ -36,284 +37,304 @@ slot0.Fields = {
 	destGridId = "number"
 }
 
-function slot0.Apply(slot0)
-	assert(not slot0.applied, "current op has been applied.")
+function var_0_0.Apply(arg_1_0)
+	assert(not arg_1_0.applied, "current op has been applied.")
 
-	slot0.applied = true
-	slot1 = getProxy(WorldProxy)
-	slot3 = nowWorld():GetActiveMap()
+	arg_1_0.applied = true
 
-	if slot0.op == WorldConst.OpReqMoveFleet then
-		slot2:IncRound()
-	elseif slot0.op == WorldConst.OpReqRound then
-		slot2:IncRound()
-	elseif slot0.op == WorldConst.OpReqEvent then
-		slot4 = slot3:GetFleet(slot0.id)
-		slot5 = slot0.effect
-		slot7 = slot5.effect_paramater
+	local var_1_0 = getProxy(WorldProxy)
+	local var_1_1 = nowWorld()
+	local var_1_2 = var_1_1:GetActiveMap()
 
-		if slot5.effect_type == WorldMapAttachment.EffectEventTeleport or slot6 == WorldMapAttachment.EffectEventTeleportBack then
-			assert(slot0.destMapId and slot0.destMapId > 0)
-			slot1:NetUpdateActiveMap(slot0.entranceId, slot0.destMapId, slot0.destGridId)
-		elseif slot6 == WorldMapAttachment.EffectEventShipBuff then
-			slot8 = slot7[1]
+	if arg_1_0.op == WorldConst.OpReqMoveFleet then
+		var_1_1:IncRound()
+	elseif arg_1_0.op == WorldConst.OpReqRound then
+		var_1_1:IncRound()
+	elseif arg_1_0.op == WorldConst.OpReqEvent then
+		local var_1_3 = var_1_2:GetFleet(arg_1_0.id)
+		local var_1_4 = arg_1_0.effect
+		local var_1_5 = var_1_4.effect_type
+		local var_1_6 = var_1_4.effect_paramater
 
-			_.each(slot4:GetShips(true), function (slot0)
-				slot0:AddBuff(uv0, 1)
+		if var_1_5 == WorldMapAttachment.EffectEventTeleport or var_1_5 == WorldMapAttachment.EffectEventTeleportBack then
+			assert(arg_1_0.destMapId and arg_1_0.destMapId > 0)
+			var_1_0:NetUpdateActiveMap(arg_1_0.entranceId, arg_1_0.destMapId, arg_1_0.destGridId)
+		elseif var_1_5 == WorldMapAttachment.EffectEventShipBuff then
+			local var_1_7 = var_1_6[1]
+
+			_.each(var_1_3:GetShips(true), function(arg_2_0)
+				arg_2_0:AddBuff(var_1_7, 1)
 			end)
-		elseif slot6 == WorldMapAttachment.EffectEventAchieveCarry then
-			_.each(slot7, function (slot0)
-				slot1 = WorldCarryItem.New()
+		elseif var_1_5 == WorldMapAttachment.EffectEventAchieveCarry then
+			_.each(var_1_6, function(arg_3_0)
+				local var_3_0 = WorldCarryItem.New()
 
-				slot1:Setup(slot0)
-				uv0:AddCarry(slot1)
+				var_3_0:Setup(arg_3_0)
+				var_1_3:AddCarry(var_3_0)
 			end)
-		elseif slot6 == WorldMapAttachment.EffectEventConsumeCarry then
-			_.each(slot7[1] or {}, function (slot0)
-				uv0:RemoveCarry(slot0)
-			end)
-		elseif slot6 == WorldMapAttachment.EffectEventConsumeItem then
-			slot2:GetInventoryProxy():RemoveItem(slot7[1], slot7[2])
-		elseif slot6 == WorldMapAttachment.EffectEventDropTreasure then
-			slot2.treasureCount = slot2.treasureCount + 1
-		elseif slot6 == WorldMapAttachment.EffectEventFOV then
-			slot3:EventEffectOpenFOV(slot5)
-		elseif slot6 == WorldMapAttachment.EffectEventProgress then
-			slot2:UpdateProgress(math.max(slot2:GetProgress(), slot7[1]))
-		elseif slot6 == WorldMapAttachment.EffectEventDeleteTask then
-			slot8 = slot2:GetTaskProxy()
+		elseif var_1_5 == WorldMapAttachment.EffectEventConsumeCarry then
+			local var_1_8 = var_1_6[1] or {}
 
-			for slot12, slot13 in ipairs(slot7) do
-				slot8:deleteTask(slot13)
+			_.each(var_1_8, function(arg_4_0)
+				var_1_3:RemoveCarry(arg_4_0)
+			end)
+		elseif var_1_5 == WorldMapAttachment.EffectEventConsumeItem then
+			var_1_1:GetInventoryProxy():RemoveItem(var_1_6[1], var_1_6[2])
+		elseif var_1_5 == WorldMapAttachment.EffectEventDropTreasure then
+			var_1_1.treasureCount = var_1_1.treasureCount + 1
+		elseif var_1_5 == WorldMapAttachment.EffectEventFOV then
+			var_1_2:EventEffectOpenFOV(var_1_4)
+		elseif var_1_5 == WorldMapAttachment.EffectEventProgress then
+			local var_1_9 = math.max(var_1_1:GetProgress(), var_1_6[1])
+
+			var_1_1:UpdateProgress(var_1_9)
+		elseif var_1_5 == WorldMapAttachment.EffectEventDeleteTask then
+			local var_1_10 = var_1_1:GetTaskProxy()
+
+			for iter_1_0, iter_1_1 in ipairs(var_1_6) do
+				var_1_10:deleteTask(iter_1_1)
 			end
-		elseif slot6 == WorldMapAttachment.EffectEventGlobalBuff then
-			slot2:AddGlobalBuff(slot7[1], slot7[2])
-		elseif slot6 == WorldMapAttachment.EffectEventMapClearFlag then
-			slot3:UpdateClearFlag(slot7[1] == 1)
-		elseif slot6 == WorldMapAttachment.EffectEventBrokenClean then
-			for slot11, slot12 in ipairs(slot2:GetShips()) do
-				if slot12:IsBroken() then
-					slot12:RemoveBuff(WorldConst.BrokenBuffId)
+		elseif var_1_5 == WorldMapAttachment.EffectEventGlobalBuff then
+			var_1_1:AddGlobalBuff(var_1_6[1], var_1_6[2])
+		elseif var_1_5 == WorldMapAttachment.EffectEventMapClearFlag then
+			var_1_2:UpdateClearFlag(var_1_6[1] == 1)
+		elseif var_1_5 == WorldMapAttachment.EffectEventBrokenClean then
+			for iter_1_2, iter_1_3 in ipairs(var_1_1:GetShips()) do
+				if iter_1_3:IsBroken() then
+					iter_1_3:RemoveBuff(WorldConst.BrokenBuffId)
 				end
 			end
-		elseif slot6 == WorldMapAttachment.EffectEventCatSalvage then
-			-- Nothing
-		elseif slot6 == WorldMapAttachment.EffectEventAddWorldBossFreeCount then
+		elseif var_1_5 == WorldMapAttachment.EffectEventCatSalvage then
+			-- block empty
+		elseif var_1_5 == WorldMapAttachment.EffectEventAddWorldBossFreeCount then
 			nowWorld():GetBossProxy():AddSummonFree(1)
 		end
 
-		if #slot5.sound_effects > 0 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:" .. slot5.sound_effects)
+		if #var_1_4.sound_effects > 0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:" .. var_1_4.sound_effects)
 		end
-	elseif slot0.op == WorldConst.OpReqDiscover then
-		_.each(slot0.locations, function (slot0)
-			uv0:GetCell(slot0.row, slot0.column):UpdateDiscovered(true)
+	elseif arg_1_0.op == WorldConst.OpReqDiscover then
+		_.each(arg_1_0.locations, function(arg_5_0)
+			var_1_2:GetCell(arg_5_0.row, arg_5_0.column):UpdateDiscovered(true)
 		end)
-		_.each(slot0.hiddenAttachments, function (slot0)
-			slot0:UpdateLurk(false)
+		_.each(arg_1_0.hiddenAttachments, function(arg_6_0)
+			arg_6_0:UpdateLurk(false)
 		end)
-	elseif slot0.op == WorldConst.OpReqTransport then
-		assert(slot0.destMapId and slot0.destMapId > 0)
-		slot1:NetUpdateActiveMap(slot0.entranceId, slot0.destMapId, slot0.destGridId)
+	elseif arg_1_0.op == WorldConst.OpReqTransport then
+		assert(arg_1_0.destMapId and arg_1_0.destMapId > 0)
+		var_1_0:NetUpdateActiveMap(arg_1_0.entranceId, arg_1_0.destMapId, arg_1_0.destGridId)
 
-		if slot2:TreasureMap2ItemId(slot0.destMapId, slot0.entranceId) then
-			slot2:GetInventoryProxy():RemoveItem(slot4, 1)
+		local var_1_11 = var_1_1:TreasureMap2ItemId(arg_1_0.destMapId, arg_1_0.entranceId)
+
+		if var_1_11 then
+			var_1_1:GetInventoryProxy():RemoveItem(var_1_11, 1)
 		end
-	elseif slot0.op == WorldConst.OpReqSub then
-		slot2:ResetSubmarine()
-		slot2:UpdateSubmarineSupport(true)
+	elseif arg_1_0.op == WorldConst.OpReqSub then
+		var_1_1:ResetSubmarine()
+		var_1_1:UpdateSubmarineSupport(true)
 
-		slot4 = slot2:GetActiveMap()
-	elseif slot0.op == WorldConst.OpReqPressingMap then
-		slot4 = slot0.arg1
+		local var_1_12 = var_1_1:GetActiveMap()
+	elseif arg_1_0.op == WorldConst.OpReqPressingMap then
+		local var_1_13 = arg_1_0.arg1
 
-		slot2:FlagMapPressingAward(slot4)
-		slot2:GetAtlas():AddPressingMap(slot4)
+		var_1_1:FlagMapPressingAward(var_1_13)
+		var_1_1:GetAtlas():AddPressingMap(var_1_13)
 
-		if not slot2:GetMap(slot4).visionFlag and nowWorld():IsMapVisioned(slot4) then
-			slot6:UpdateVisionFlag(true)
+		local var_1_14 = var_1_1:GetMap(var_1_13)
+
+		if not var_1_14.visionFlag and nowWorld():IsMapVisioned(var_1_13) then
+			var_1_14:UpdateVisionFlag(true)
 		end
-	elseif slot0.op == WorldConst.OpReqJumpOut then
-		assert(slot0.destMapId and slot0.destMapId > 0)
+	elseif arg_1_0.op == WorldConst.OpReqJumpOut then
+		assert(arg_1_0.destMapId and arg_1_0.destMapId > 0)
 
-		slot5 = slot2:GetInventoryProxy()
+		local var_1_15 = pg.world_chapter_template_reset[var_1_2.gid].reset_item
+		local var_1_16 = var_1_1:GetInventoryProxy()
 
-		_.each(pg.world_chapter_template_reset[slot3.gid].reset_item, function (slot0)
-			uv0:RemoveItem(slot0)
+		_.each(var_1_15, function(arg_7_0)
+			var_1_16:RemoveItem(arg_7_0)
 		end)
-		slot1:NetUpdateActiveMap(slot0.entranceId, slot0.destMapId, slot0.destGridId)
+		var_1_0:NetUpdateActiveMap(arg_1_0.entranceId, arg_1_0.destMapId, arg_1_0.destGridId)
 
-		slot3 = slot2:GetActiveMap()
-	elseif slot0.op == WorldConst.OpReqEnterPort then
-		-- Nothing
-	elseif slot0.op == WorldConst.OpReqCatSalvage then
-		slot3:GetFleet(slot0.id):UpdateCatSalvage(0, nil, 0)
-	elseif slot0.op == WorldConst.OpReqSkipBattle then
-		slot3:WriteBack(true, {
+		var_1_2 = var_1_1:GetActiveMap()
+	elseif arg_1_0.op == WorldConst.OpReqEnterPort then
+		-- block empty
+	elseif arg_1_0.op == WorldConst.OpReqCatSalvage then
+		var_1_2:GetFleet(arg_1_0.id):UpdateCatSalvage(0, nil, 0)
+	elseif arg_1_0.op == WorldConst.OpReqSkipBattle then
+		var_1_2:WriteBack(true, {
 			statistics = {},
 			hpDropInfo = {}
 		})
-	elseif slot0.op == WorldConst.OpActionFleetMove then
-		slot4 = slot0.path[#slot0.path]
+	elseif arg_1_0.op == WorldConst.OpActionFleetMove then
+		local var_1_17 = arg_1_0.path[#arg_1_0.path]
 
-		slot3:UpdateFleetLocation(slot0.id, slot4.row, slot4.column)
+		var_1_2:UpdateFleetLocation(arg_1_0.id, var_1_17.row, var_1_17.column)
 
-		slot2.stepCount = slot2.stepCount + #slot0.path
-	elseif slot0.op == WorldConst.OpActionMoveStep then
-		slot0:ApplyAttachmentUpdate()
-		_.each(slot0.hiddenCells, function (slot0)
-			slot0:UpdateDiscovered(true)
+		var_1_1.stepCount = var_1_1.stepCount + #arg_1_0.path
+	elseif arg_1_0.op == WorldConst.OpActionMoveStep then
+		arg_1_0:ApplyAttachmentUpdate()
+		_.each(arg_1_0.hiddenCells, function(arg_8_0)
+			arg_8_0:UpdateDiscovered(true)
 		end)
 
-		slot4 = slot3:GetFleet(slot0.id)
+		local var_1_18 = var_1_2:GetFleet(arg_1_0.id)
+		local var_1_19 = var_1_2:GetCell(var_1_18.row, var_1_18.column):GetEventAttachment()
 
-		if slot3:GetCell(slot4.row, slot4.column):GetEventAttachment() and slot6:IsTriggered() then
-			slot6.triggered = false
+		if var_1_19 and var_1_19:IsTriggered() then
+			var_1_19.triggered = false
 		end
 
-		if slot0.updateCarryItems and #slot0.updateCarryItems > 0 then
-			assert(#slot4:GetCarries() == #slot0.updateCarryItems)
+		if arg_1_0.updateCarryItems and #arg_1_0.updateCarryItems > 0 then
+			local var_1_20 = var_1_18:GetCarries()
 
-			for slot11, slot12 in ipairs(slot7) do
-				slot12:UpdateOffset(slot0.updateCarryItems[slot11].offsetRow, slot0.updateCarryItems[slot11].offsetColumn)
+			assert(#var_1_20 == #arg_1_0.updateCarryItems)
+
+			for iter_1_4, iter_1_5 in ipairs(var_1_20) do
+				iter_1_5:UpdateOffset(arg_1_0.updateCarryItems[iter_1_4].offsetRow, arg_1_0.updateCarryItems[iter_1_4].offsetColumn)
 			end
 
-			WPool:ReturnArray(slot0.updateCarryItems)
+			WPool:ReturnArray(arg_1_0.updateCarryItems)
 
-			slot0.updateCarryItems = nil
+			arg_1_0.updateCarryItems = nil
 		end
 
-		slot3:UpdateFleetLocation(slot0.id, slot0.pos.row, slot0.pos.column)
-		_.each(slot0.hiddenAttachments, function (slot0)
-			slot0:UpdateLurk(false)
+		var_1_2:UpdateFleetLocation(arg_1_0.id, arg_1_0.pos.row, arg_1_0.pos.column)
+		_.each(arg_1_0.hiddenAttachments, function(arg_9_0)
+			arg_9_0:UpdateLurk(false)
 		end)
-	elseif slot0.op == WorldConst.OpActionAttachmentMove then
-		assert(#slot0.path > 0)
+	elseif arg_1_0.op == WorldConst.OpActionAttachmentMove then
+		assert(#arg_1_0.path > 0)
 
-		slot4 = slot0.attachment:Clone()
-		slot5 = slot0.path[#slot0.path]
+		local var_1_21 = arg_1_0.attachment:Clone()
+		local var_1_22 = arg_1_0.path[#arg_1_0.path]
 
-		slot3:GetCell(slot0.attachment.row, slot0.attachment.column):RemoveAttachment(slot0.attachment)
+		var_1_2:GetCell(arg_1_0.attachment.row, arg_1_0.attachment.column):RemoveAttachment(arg_1_0.attachment)
 
-		slot7 = slot3:GetCell(slot5.row, slot5.column)
+		local var_1_23 = var_1_2:GetCell(var_1_22.row, var_1_22.column)
 
-		assert(slot7, "dest cell not exist: " .. slot5.row .. ", " .. slot5.column)
+		assert(var_1_23, "dest cell not exist: " .. var_1_22.row .. ", " .. var_1_22.column)
 
-		slot4.row = slot5.row
-		slot4.column = slot5.column
+		var_1_21.row = var_1_22.row
+		var_1_21.column = var_1_22.column
 
-		slot7:AddAttachment(slot4)
-	elseif slot0.op == WorldConst.OpActionEventOp then
-		if slot0.effect.effect_type == WorldMapAttachment.EffectEventFOV then
-			slot3:EventEffectOpenFOV(slot4)
+		var_1_23:AddAttachment(var_1_21)
+	elseif arg_1_0.op == WorldConst.OpActionEventOp then
+		local var_1_24 = arg_1_0.effect
+
+		if var_1_24.effect_type == WorldMapAttachment.EffectEventFOV then
+			var_1_2:EventEffectOpenFOV(var_1_24)
 		end
 
-		slot0.attachment:UpdateDataOp(slot0.attachment.dataop - 1)
-	elseif slot0.op == WorldConst.OpActionTaskGoto and slot0.effect.effect_type == WorldMapAttachment.EffectEventFOV then
-		slot3:EventEffectOpenFOV(slot4)
+		arg_1_0.attachment:UpdateDataOp(arg_1_0.attachment.dataop - 1)
+	elseif arg_1_0.op == WorldConst.OpActionTaskGoto then
+		local var_1_25 = arg_1_0.effect
+
+		if var_1_25.effect_type == WorldMapAttachment.EffectEventFOV then
+			var_1_2:EventEffectOpenFOV(var_1_25)
+		end
 	end
 
-	if slot0.childOps then
-		_.each(slot0.childOps, function (slot0)
-			if not slot0.applied then
-				slot0:Apply()
+	if arg_1_0.childOps then
+		_.each(arg_1_0.childOps, function(arg_10_0)
+			if not arg_10_0.applied then
+				arg_10_0:Apply()
 			end
 		end)
 	end
 
-	if slot0.stepOps then
-		_.each(slot0.stepOps, function (slot0)
-			if not slot0.applied then
-				slot0:Apply()
+	if arg_1_0.stepOps then
+		_.each(arg_1_0.stepOps, function(arg_11_0)
+			if not arg_11_0.applied then
+				arg_11_0:Apply()
 			end
 		end)
 	end
 
-	slot0:ApplyAttachmentUpdate()
-	slot0:ApplyNetUpdate()
+	arg_1_0:ApplyAttachmentUpdate()
+	arg_1_0:ApplyNetUpdate()
 
-	if slot0.callbacksWhenApplied then
-		_.each(slot0.callbacksWhenApplied, function (slot0)
-			slot0()
+	if arg_1_0.callbacksWhenApplied then
+		_.each(arg_1_0.callbacksWhenApplied, function(arg_12_0)
+			arg_12_0()
 		end)
 	end
 end
 
-function slot0.ApplyAttachmentUpdate(slot0)
-	slot1 = getProxy(WorldProxy)
-	slot3 = nowWorld():GetActiveMap()
+function var_0_0.ApplyAttachmentUpdate(arg_13_0)
+	local var_13_0 = getProxy(WorldProxy)
+	local var_13_1 = nowWorld():GetActiveMap()
 
-	if slot0.updateAttachmentCells then
-		slot7 = slot0.updateAttachmentCells
+	if arg_13_0.updateAttachmentCells then
+		var_13_0:UpdateMapAttachmentCells(var_13_1.id, arg_13_0.updateAttachmentCells)
 
-		slot1:UpdateMapAttachmentCells(slot3.id, slot7)
+		for iter_13_0, iter_13_1 in pairs(arg_13_0.updateAttachmentCells) do
+			local var_13_2 = var_13_1:GetCell(iter_13_1.pos.row, iter_13_1.pos.column)
 
-		for slot7, slot8 in pairs(slot0.updateAttachmentCells) do
-			slot9 = slot3:GetCell(slot8.pos.row, slot8.pos.column)
-
-			_.each(slot8.attachmentList, function (slot0)
-				if not uv0:ContainsAttachment(slot0) then
-					WPool:Return(slot0)
+			_.each(iter_13_1.attachmentList, function(arg_14_0)
+				if not var_13_2:ContainsAttachment(arg_14_0) then
+					WPool:Return(arg_14_0)
 				end
 			end)
 		end
 
-		slot0.updateAttachmentCells = nil
+		arg_13_0.updateAttachmentCells = nil
 	end
 end
 
-function slot0.ApplyNetUpdate(slot0)
-	slot1 = getProxy(WorldProxy)
-	slot3 = nowWorld():GetActiveMap()
+function var_0_0.ApplyNetUpdate(arg_15_0)
+	local var_15_0 = getProxy(WorldProxy)
+	local var_15_1 = nowWorld()
+	local var_15_2 = var_15_1:GetActiveMap()
 
-	if slot0.staminaUpdate then
-		slot2.staminaMgr:ChangeStamina(slot0.staminaUpdate[1], slot0.staminaUpdate[2])
+	if arg_15_0.staminaUpdate then
+		var_15_1.staminaMgr:ChangeStamina(arg_15_0.staminaUpdate[1], arg_15_0.staminaUpdate[2])
 
-		slot0.staminaUpdate = nil
+		arg_15_0.staminaUpdate = nil
 	end
 
-	if slot0.shipUpdates and #slot0.shipUpdates > 0 then
-		slot1:ApplyShipUpdate(slot0.shipUpdates)
-		WPool:ReturnArray(slot0.shipUpdates)
+	if arg_15_0.shipUpdates and #arg_15_0.shipUpdates > 0 then
+		var_15_0:ApplyShipUpdate(arg_15_0.shipUpdates)
+		WPool:ReturnArray(arg_15_0.shipUpdates)
 
-		slot0.shipUpdates = nil
+		arg_15_0.shipUpdates = nil
 	end
 
-	if slot0.fleetAttachUpdates and #slot0.fleetAttachUpdates > 0 then
-		slot1:ApplyFleetAttachUpdate(slot3.id, slot0.fleetAttachUpdates)
-		WPool:ReturnArray(slot0.fleetAttachUpdates)
+	if arg_15_0.fleetAttachUpdates and #arg_15_0.fleetAttachUpdates > 0 then
+		var_15_0:ApplyFleetAttachUpdate(var_15_2.id, arg_15_0.fleetAttachUpdates)
+		WPool:ReturnArray(arg_15_0.fleetAttachUpdates)
 
-		slot0.fleetAttachUpdates = nil
+		arg_15_0.fleetAttachUpdates = nil
 	end
 
-	if slot0.fleetUpdates and #slot0.fleetUpdates > 0 then
-		slot1:ApplyFleetUpdate(slot3.id, slot0.fleetUpdates)
-		WPool:ReturnArray(slot0.fleetUpdates)
+	if arg_15_0.fleetUpdates and #arg_15_0.fleetUpdates > 0 then
+		var_15_0:ApplyFleetUpdate(var_15_2.id, arg_15_0.fleetUpdates)
+		WPool:ReturnArray(arg_15_0.fleetUpdates)
 
-		slot0.fleetUpdates = nil
+		arg_15_0.fleetUpdates = nil
 	end
 
-	if slot0.terrainUpdates and #slot0.terrainUpdates > 0 then
-		slot1:ApplyTerrainUpdate(slot3.id, slot0.terrainUpdates)
-		WPool:ReturnArray(slot0.terrainUpdates)
+	if arg_15_0.terrainUpdates and #arg_15_0.terrainUpdates > 0 then
+		var_15_0:ApplyTerrainUpdate(var_15_2.id, arg_15_0.terrainUpdates)
+		WPool:ReturnArray(arg_15_0.terrainUpdates)
 
-		slot0.terrainUpdates = nil
+		arg_15_0.terrainUpdates = nil
 	end
 
-	if slot0.salvageUpdates and #slot0.salvageUpdates > 0 then
-		slot1:ApplySalvageUpdate(slot0.salvageUpdates)
-		WPool:ReturnArray(slot0.salvageUpdates)
+	if arg_15_0.salvageUpdates and #arg_15_0.salvageUpdates > 0 then
+		var_15_0:ApplySalvageUpdate(arg_15_0.salvageUpdates)
+		WPool:ReturnArray(arg_15_0.salvageUpdates)
 
-		slot0.salvageUpdates = nil
+		arg_15_0.salvageUpdates = nil
 	end
 end
 
-function slot0.AddCallbackWhenApplied(slot0, slot1)
-	if not slot0.callbacksWhenApplied then
-		slot0.callbacksWhenApplied = {}
+function var_0_0.AddCallbackWhenApplied(arg_16_0, arg_16_1)
+	if not arg_16_0.callbacksWhenApplied then
+		arg_16_0.callbacksWhenApplied = {}
 	end
 
-	table.insert(slot0.callbacksWhenApplied, slot1)
+	table.insert(arg_16_0.callbacksWhenApplied, arg_16_1)
 end
 
-return slot0
+return var_0_0

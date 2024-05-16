@@ -1,291 +1,297 @@
-slot0 = class("SculptureScene", import("view.base.BaseUI"))
-slot0.OPEN_GRATITUDE_PAGE = "SculptureScene:OPEN_GRATITUDE_PAGE"
-slot1 = 5
-slot2 = 6
+﻿local var_0_0 = class("SculptureScene", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.OPEN_GRATITUDE_PAGE = "SculptureScene:OPEN_GRATITUDE_PAGE"
+
+local var_0_1 = 5
+local var_0_2 = 6
+
+function var_0_0.getUIName(arg_1_0)
 	return "SculptureUI"
 end
 
-function slot0.SetActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.SetActivity(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1
 end
 
-function slot0.GetBaseActivity(slot0)
+function var_0_0.GetBaseActivity(arg_3_0)
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 end
 
-function slot0.OnUpdateActivity(slot0, slot1, slot2, slot3)
-	slot0:SetActivity(slot3)
+function var_0_0.OnUpdateActivity(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0:SetActivity(arg_4_3)
 
-	for slot7, slot8 in ipairs(slot0.cards) do
-		if slot8.id == slot2 then
-			slot8:Flush(slot3)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.cards) do
+		if iter_4_1.id == arg_4_2 then
+			iter_4_1:Flush(arg_4_3)
 
 			break
 		end
 	end
 
-	if slot1 == SculptureActivity.STATE_FINSIH then
-		if slot0.gratitudePage and slot0.gratitudePage:GetLoaded() then
-			slot0.gratitudePage:Flush(slot3)
+	if arg_4_1 == SculptureActivity.STATE_FINSIH then
+		if arg_4_0.gratitudePage and arg_4_0.gratitudePage:GetLoaded() then
+			arg_4_0.gratitudePage:Flush(arg_4_3)
 		end
 
-		slot0:UpdateAward()
-	elseif slot1 == SculptureActivity.STATE_UNLOCK then
-		slot0:EnterDrawLinePage(slot2)
-		slot0:UpdateRes()
-	elseif slot1 == SculptureActivity.STATE_DRAW then
-		slot0:EnterPuzzlePage(slot2)
-	elseif slot1 == SculptureActivity.STATE_JOINT then
-		slot0:EnterPresentedPage(slot2)
+		arg_4_0:UpdateAward()
+	elseif arg_4_1 == SculptureActivity.STATE_UNLOCK then
+		arg_4_0:EnterDrawLinePage(arg_4_2)
+		arg_4_0:UpdateRes()
+	elseif arg_4_1 == SculptureActivity.STATE_DRAW then
+		arg_4_0:EnterPuzzlePage(arg_4_2)
+	elseif arg_4_1 == SculptureActivity.STATE_JOINT then
+		arg_4_0:EnterPresentedPage(arg_4_2)
 	end
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("back")
-	slot0.helpBtn = slot0:findTF("help")
-	slot0.awardBtn = slot0:findTF("award")
-	slot1 = slot0:findTF("award/Text")
-	slot0.awardTxt = slot1:GetComponent(typeof(Text))
-	slot0.ore = slot0:findTF("ore")
-	slot1 = slot0:findTF("ore/icon")
-	slot0.oreIcon = slot1:GetComponent(typeof(Image))
-	slot1 = slot0:findTF("ore/Text")
-	slot0.oreTxt = slot1:GetComponent(typeof(Text))
-	slot0.feather = slot0:findTF("feather")
-	slot1 = slot0:findTF("feather/icon")
-	slot0.featherIcon = slot1:GetComponent(typeof(Image))
-	slot1 = slot0:findTF("feather/Text")
-	slot0.featherTxt = slot1:GetComponent(typeof(Text))
-	slot0.tpl = slot0:findTF("frame/content/tpl")
+function var_0_0.init(arg_5_0)
+	arg_5_0.backBtn = arg_5_0:findTF("back")
+	arg_5_0.helpBtn = arg_5_0:findTF("help")
+	arg_5_0.awardBtn = arg_5_0:findTF("award")
+	arg_5_0.awardTxt = arg_5_0:findTF("award/Text"):GetComponent(typeof(Text))
+	arg_5_0.ore = arg_5_0:findTF("ore")
+	arg_5_0.oreIcon = arg_5_0:findTF("ore/icon"):GetComponent(typeof(Image))
+	arg_5_0.oreTxt = arg_5_0:findTF("ore/Text"):GetComponent(typeof(Text))
+	arg_5_0.feather = arg_5_0:findTF("feather")
+	arg_5_0.featherIcon = arg_5_0:findTF("feather/icon"):GetComponent(typeof(Image))
+	arg_5_0.featherTxt = arg_5_0:findTF("feather/Text"):GetComponent(typeof(Text))
+	arg_5_0.tpl = arg_5_0:findTF("frame/content/tpl")
 
-	setActive(slot0.tpl, false)
+	setActive(arg_5_0.tpl, false)
 
-	slot0.tpls = {}
-	slot0.drawLinePage = SculptureDrawLinePage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.puzzlePage = SculpturePuzzlePage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.presentedPage = SculpturePresentedPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.gratitudePage = SculptureGratitudePage.New(slot0._tf, slot0.event, slot0.contextDat)
-	slot0.awardInfoPage = SculptureAwardInfoPage.New(slot0._tf, slot0.event, slot0.contextDat)
-	slot0.resMsgBoxPage = SculptureResMsgBoxPage.New(slot0._tf, slot0.event)
-	slot0.contextData.msgBoxPage = SculptureMsgBoxPage.New(slot0._tf, slot0.event)
-	slot0.contextData.tipPage = SculptureTipPage.New(slot0._tf, slot0.event)
-	slot0.contextData.miniMsgBox = SculptureMiniMsgBoxPage.New(slot0._tf, slot0.event)
+	arg_5_0.tpls = {}
+	arg_5_0.drawLinePage = SculptureDrawLinePage.New(arg_5_0._tf, arg_5_0.event, arg_5_0.contextData)
+	arg_5_0.puzzlePage = SculpturePuzzlePage.New(arg_5_0._tf, arg_5_0.event, arg_5_0.contextData)
+	arg_5_0.presentedPage = SculpturePresentedPage.New(arg_5_0._tf, arg_5_0.event, arg_5_0.contextData)
+	arg_5_0.gratitudePage = SculptureGratitudePage.New(arg_5_0._tf, arg_5_0.event, arg_5_0.contextDat)
+	arg_5_0.awardInfoPage = SculptureAwardInfoPage.New(arg_5_0._tf, arg_5_0.event, arg_5_0.contextDat)
+	arg_5_0.resMsgBoxPage = SculptureResMsgBoxPage.New(arg_5_0._tf, arg_5_0.event)
+	arg_5_0.contextData.msgBoxPage = SculptureMsgBoxPage.New(arg_5_0._tf, arg_5_0.event)
+	arg_5_0.contextData.tipPage = SculptureTipPage.New(arg_5_0._tf, arg_5_0.event)
+	arg_5_0.contextData.miniMsgBox = SculptureMiniMsgBoxPage.New(arg_5_0._tf, arg_5_0.event)
 	Input.multiTouchEnabled = false
 
-	slot0:bind(uv0.OPEN_GRATITUDE_PAGE, function (slot0, slot1)
-		slot2 = uv0.gratitudePage
-
-		slot2:ExecuteAction("Show", slot1, uv0.activity, function ()
-			if uv0.presentedPage and uv0.presentedPage:GetLoaded() then
-				uv0.presentedPage:Hide()
+	arg_5_0:bind(var_0_0.OPEN_GRATITUDE_PAGE, function(arg_6_0, arg_6_1)
+		arg_5_0.gratitudePage:ExecuteAction("Show", arg_6_1, arg_5_0.activity, function()
+			if arg_5_0.presentedPage and arg_5_0.presentedPage:GetLoaded() then
+				arg_5_0.presentedPage:Hide()
 			end
 		end)
 	end)
 end
 
-function slot0.didEnter(slot0)
+function var_0_0.didEnter(arg_8_0)
 	seriesAsync({
-		function (slot0)
-			uv0:UpdateResIcon()
-			uv0:UpdateRes()
-			uv0:UpdateAward()
-			uv0:InitMainView(slot0)
+		function(arg_9_0)
+			arg_8_0:UpdateResIcon()
+			arg_8_0:UpdateRes()
+			arg_8_0:UpdateAward()
+			arg_8_0:InitMainView(arg_9_0)
 		end,
-		function (slot0)
-			uv0:RegisterEvent(slot0)
+		function(arg_10_0)
+			arg_8_0:RegisterEvent(arg_10_0)
 		end
 	})
 end
 
-function slot0.UpdateResIcon(slot0)
-	slot0.oreIcon.sprite = LoadSprite("props/" .. pg.activity_workbench_item[uv0].icon)
-	slot0.featherIcon.sprite = LoadSprite("props/" .. pg.activity_workbench_item[uv1].icon)
-	rtf(slot0.oreIcon.gameObject).sizeDelta = Vector2(80, 80)
-	rtf(slot0.featherIcon.gameObject).sizeDelta = Vector2(80, 80)
+function var_0_0.UpdateResIcon(arg_11_0)
+	local var_11_0 = pg.activity_workbench_item[var_0_1]
+
+	arg_11_0.oreIcon.sprite = LoadSprite("props/" .. var_11_0.icon)
+
+	local var_11_1 = pg.activity_workbench_item[var_0_2]
+
+	arg_11_0.featherIcon.sprite = LoadSprite("props/" .. var_11_1.icon)
+	rtf(arg_11_0.oreIcon.gameObject).sizeDelta = Vector2(80, 80)
+	rtf(arg_11_0.featherIcon.gameObject).sizeDelta = Vector2(80, 80)
 end
 
-function slot0.InitMainView(slot0, slot1)
-	slot0.cards = {}
-	slot2 = {}
-	slot6 = "config_data"
+function var_0_0.InitMainView(arg_12_0, arg_12_1)
+	arg_12_0.cards = {}
 
-	for slot6, slot7 in ipairs(slot0.activity:getConfig(slot6)) do
-		table.insert(slot2, function (slot0)
-			slot1 = #uv0.tpls > 0
-			slot2 = slot1 and table.remove(uv0.tpls, 1) or Object.Instantiate(uv0.tpl, uv0.tpl.parent).transform
+	local var_12_0 = {}
 
-			setActive(slot2, true)
-			table.insert(uv0.cards, uv0:CreateNewCard(slot2, uv1))
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.activity:getConfig("config_data")) do
+		table.insert(var_12_0, function(arg_13_0)
+			local var_13_0 = #arg_12_0.tpls > 0
+			local var_13_1 = var_13_0 and table.remove(arg_12_0.tpls, 1) or Object.Instantiate(arg_12_0.tpl, arg_12_0.tpl.parent).transform
 
-			if not slot1 then
-				onNextTick(slot0)
+			setActive(var_13_1, true)
+
+			local var_13_2 = arg_12_0:CreateNewCard(var_13_1, iter_12_1)
+
+			table.insert(arg_12_0.cards, var_13_2)
+
+			if not var_13_0 then
+				onNextTick(arg_13_0)
 			else
-				slot0()
+				arg_13_0()
 			end
 		end)
 	end
 
-	seriesAsync(slot2, slot1)
+	seriesAsync(var_12_0, arg_12_1)
 end
 
-function slot0.UpdateRes(slot0)
-	slot1 = slot0:GetBaseActivity()
-	slot0.oreTxt.text = slot1:getVitemNumber(uv0)
-	slot0.featherTxt.text = slot1:getVitemNumber(uv1)
+function var_0_0.UpdateRes(arg_14_0)
+	local var_14_0 = arg_14_0:GetBaseActivity()
+
+	arg_14_0.oreTxt.text = var_14_0:getVitemNumber(var_0_1)
+	arg_14_0.featherTxt.text = var_14_0:getVitemNumber(var_0_2)
 end
 
-function slot0.UpdateAward(slot0)
-	slot1, slot2 = slot0.activity:GetAwardProgress()
-	slot0.awardTxt.text = slot1 .. "/" .. slot2
+function var_0_0.UpdateAward(arg_15_0)
+	local var_15_0, var_15_1 = arg_15_0.activity:GetAwardProgress()
+
+	arg_15_0.awardTxt.text = var_15_0 .. "/" .. var_15_1
 end
 
-function slot0.CreateNewCard(slot0, slot1, slot2)
-	slot3 = SculptureCard.New(slot1)
+function var_0_0.CreateNewCard(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = SculptureCard.New(arg_16_1)
 
-	slot3:Update(slot2, slot0.activity)
-	onButton(slot0, slot3.continueBtn, function ()
-		if uv0.activity:GetSculptureState(uv1) == SculptureActivity.STATE_UNLOCK then
-			uv0:EnterDrawLinePage(uv1)
-		elseif slot0 == SculptureActivity.STATE_DRAW then
-			uv0:EnterPuzzlePage(uv1)
+	var_16_0:Update(arg_16_2, arg_16_0.activity)
+	onButton(arg_16_0, var_16_0.continueBtn, function()
+		local var_17_0 = arg_16_0.activity:GetSculptureState(arg_16_2)
+
+		if var_17_0 == SculptureActivity.STATE_UNLOCK then
+			arg_16_0:EnterDrawLinePage(arg_16_2)
+		elseif var_17_0 == SculptureActivity.STATE_DRAW then
+			arg_16_0:EnterPuzzlePage(arg_16_2)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot3.lockBtn, function ()
-		slot0, slot1 = uv0.activity:_GetComsume(uv1)
+	onButton(arg_16_0, var_16_0.lockBtn, function()
+		local var_18_0, var_18_1 = arg_16_0.activity:_GetComsume(arg_16_2)
+		local var_18_2 = arg_16_0.activity:GetResorceName(arg_16_2)
 
-		uv0.contextData.msgBoxPage:ExecuteAction("Show", {
+		arg_16_0.contextData.msgBoxPage:ExecuteAction("Show", {
 			nextBtn = true,
-			content = uv0.activity:getDataConfig(uv1, "describe"),
-			consume = slot1,
-			consumeId = slot0,
-			onYes = function ()
-				uv0:emit(SculptureMediator.ON_UNLOCK_SCULPTURE, uv1)
+			content = arg_16_0.activity:getDataConfig(arg_16_2, "describe"),
+			consume = var_18_1,
+			consumeId = var_18_0,
+			onYes = function()
+				arg_16_0:emit(SculptureMediator.ON_UNLOCK_SCULPTURE, arg_16_2)
 			end,
-			iconName = uv0.activity:GetResorceName(uv1),
-			title = uv0.activity:GetResorceName(uv1) .. "_title"
+			iconName = arg_16_0.activity:GetResorceName(arg_16_2),
+			title = var_18_2 .. "_title"
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot3.finishBtn, function ()
-		uv0.contextData.msgBoxPage:ExecuteAction("Show", {
-			content = uv0.activity:getDataConfig(uv1, "describe"),
-			title = uv0.activity:GetResorceName(uv1) .. "_title"
+	onButton(arg_16_0, var_16_0.finishBtn, function()
+		local var_20_0 = arg_16_0.activity:GetResorceName(arg_16_2)
+
+		arg_16_0.contextData.msgBoxPage:ExecuteAction("Show", {
+			content = arg_16_0.activity:getDataConfig(arg_16_2, "describe"),
+			title = var_20_0 .. "_title"
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot3.tr, function ()
-		if uv0.activity:GetSculptureState(uv1) == SculptureActivity.STATE_FINSIH then
-			triggerButton(uv2.finishBtn)
+	onButton(arg_16_0, var_16_0.tr, function()
+		if arg_16_0.activity:GetSculptureState(arg_16_2) == SculptureActivity.STATE_FINSIH then
+			triggerButton(var_16_0.finishBtn)
 		else
-			triggerButton(uv2.continueBtn)
+			triggerButton(var_16_0.continueBtn)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot3.presentedBtn, function ()
-		uv0:EnterPresentedPage(uv1)
+	onButton(arg_16_0, var_16_0.presentedBtn, function()
+		arg_16_0:EnterPresentedPage(arg_16_2)
 	end, SFX_PANEL)
 
-	return slot3
+	return var_16_0
 end
 
-function slot0.RegisterEvent(slot0, slot1)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.RegisterEvent(arg_23_0, arg_23_1)
+	onButton(arg_23_0, arg_23_0.backBtn, function()
+		arg_23_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.awardBtn, function ()
-		uv0.awardInfoPage:ExecuteAction("Show", uv0.activity)
+	onButton(arg_23_0, arg_23_0.awardBtn, function()
+		arg_23_0.awardInfoPage:ExecuteAction("Show", arg_23_0.activity)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_23_0, arg_23_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.gift_act_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ore, function ()
-		uv0.resMsgBoxPage:ExecuteAction("Show", uv1)
+	onButton(arg_23_0, arg_23_0.ore, function()
+		arg_23_0.resMsgBoxPage:ExecuteAction("Show", var_0_1)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.feather, function ()
-		uv0.resMsgBoxPage:ExecuteAction("Show", uv1)
+	onButton(arg_23_0, arg_23_0.feather, function()
+		arg_23_0.resMsgBoxPage:ExecuteAction("Show", var_0_2)
 	end, SFX_PANEL)
 end
 
-function slot0.EnterDrawLinePage(slot0, slot1)
-	slot0.drawLinePage:ExecuteAction("Show", slot1, slot0.activity)
+function var_0_0.EnterDrawLinePage(arg_29_0, arg_29_1)
+	arg_29_0.drawLinePage:ExecuteAction("Show", arg_29_1, arg_29_0.activity)
 end
 
-function slot0.EnterPresentedPage(slot0, slot1)
-	slot2 = slot0.presentedPage
-
-	slot2:ExecuteAction("Show", slot1, slot0.activity, function ()
-		if uv0.puzzlePage and uv0.puzzlePage:GetLoaded() then
-			uv0.puzzlePage:Hide()
+function var_0_0.EnterPresentedPage(arg_30_0, arg_30_1)
+	arg_30_0.presentedPage:ExecuteAction("Show", arg_30_1, arg_30_0.activity, function()
+		if arg_30_0.puzzlePage and arg_30_0.puzzlePage:GetLoaded() then
+			arg_30_0.puzzlePage:Hide()
 		end
 	end)
 end
 
-function slot0.EnterPuzzlePage(slot0, slot1)
-	slot2 = slot0.puzzlePage
-
-	slot2:ExecuteAction("Show", slot1, slot0.activity, function ()
-		if uv0.drawLinePage and uv0.drawLinePage:GetLoaded() then
-			uv0.drawLinePage:Hide()
+function var_0_0.EnterPuzzlePage(arg_32_0, arg_32_1)
+	arg_32_0.puzzlePage:ExecuteAction("Show", arg_32_1, arg_32_0.activity, function()
+		if arg_32_0.drawLinePage and arg_32_0.drawLinePage:GetLoaded() then
+			arg_32_0.drawLinePage:Hide()
 		end
 	end)
 end
 
-function slot0.onBackPressed(slot0)
-	uv0.super.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_34_0)
+	var_0_0.super.onBackPressed(arg_34_0)
 end
 
-function slot0.willExit(slot0)
-	for slot4, slot5 in ipairs(slot0.cards) do
-		slot5:Dispose()
+function var_0_0.willExit(arg_35_0)
+	for iter_35_0, iter_35_1 in ipairs(arg_35_0.cards) do
+		iter_35_1:Dispose()
 	end
 
-	slot0.cards = nil
+	arg_35_0.cards = nil
 
-	if slot0.contextData.msgBoxPage then
-		slot0.contextData.msgBoxPage:Destroy()
+	if arg_35_0.contextData.msgBoxPage then
+		arg_35_0.contextData.msgBoxPage:Destroy()
 
-		slot0.contextData.msgBoxPage = nil
+		arg_35_0.contextData.msgBoxPage = nil
 	end
 
-	if slot0.drawLinePage then
-		slot0.drawLinePage:Destroy()
+	if arg_35_0.drawLinePage then
+		arg_35_0.drawLinePage:Destroy()
 
-		slot0.drawLinePage = nil
+		arg_35_0.drawLinePage = nil
 	end
 
-	if slot0.contextData.tipPage then
-		slot0.contextData.tipPage:Destroy()
+	if arg_35_0.contextData.tipPage then
+		arg_35_0.contextData.tipPage:Destroy()
 
-		slot0.contextData.tipPage = nil
+		arg_35_0.contextData.tipPage = nil
 	end
 
-	if slot0.puzzlePage then
-		slot0.puzzlePage:Destroy()
+	if arg_35_0.puzzlePage then
+		arg_35_0.puzzlePage:Destroy()
 
-		slot0.puzzlePage = nil
+		arg_35_0.puzzlePage = nil
 	end
 
-	if slot0.contextData.miniMsgBox then
-		slot0.contextData.miniMsgBox:Destroy()
+	if arg_35_0.contextData.miniMsgBox then
+		arg_35_0.contextData.miniMsgBox:Destroy()
 
-		slot0.contextData.miniMsgBox = nil
+		arg_35_0.contextData.miniMsgBox = nil
 	end
 
-	if slot0.awardInfoPage then
-		slot0.awardInfoPage:Destroy()
+	if arg_35_0.awardInfoPage then
+		arg_35_0.awardInfoPage:Destroy()
 
-		slot0.awardInfoPage = nil
+		arg_35_0.awardInfoPage = nil
 	end
 
-	if slot0.resMsgBoxPage then
-		slot0.resMsgBoxPage:Destroy()
+	if arg_35_0.resMsgBoxPage then
+		arg_35_0.resMsgBoxPage:Destroy()
 
-		slot0.resMsgBoxPage = nil
+		arg_35_0.resMsgBoxPage = nil
 	end
 
 	Input.multiTouchEnabled = true
 end
 
-return slot0
+return var_0_0

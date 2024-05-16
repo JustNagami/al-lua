@@ -1,66 +1,69 @@
-slot0 = class("MemoryCard")
+﻿local var_0_0 = class("MemoryCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.go = slot1
-	slot0.tf = slot1.transform
-	slot0.lock = findTF(slot0.tf, "lock")
-	slot0.txCondition = findTF(slot0.lock, "condition")
-	slot0.normal = findTF(slot0.tf, "normal")
-	slot0.txTitle = findTF(slot0.normal, "title")
-	slot0.txSubtitle = findTF(slot0.normal, "subtitle")
-	slot0.group = findTF(slot0.tf, "group")
-	slot0.groupTitle = findTF(slot0.group, "title")
-	slot0.groupCount = findTF(slot0.group, "count")
-	slot0.itemIndexTF = findTF(slot0.tf, "id")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tf = arg_1_1.transform
+	arg_1_0.lock = findTF(arg_1_0.tf, "lock")
+	arg_1_0.txCondition = findTF(arg_1_0.lock, "condition")
+	arg_1_0.normal = findTF(arg_1_0.tf, "normal")
+	arg_1_0.txTitle = findTF(arg_1_0.normal, "title")
+	arg_1_0.txSubtitle = findTF(arg_1_0.normal, "subtitle")
+	arg_1_0.group = findTF(arg_1_0.tf, "group")
+	arg_1_0.groupTitle = findTF(arg_1_0.group, "title")
+	arg_1_0.groupCount = findTF(arg_1_0.group, "count")
+	arg_1_0.itemIndexTF = findTF(arg_1_0.tf, "id")
 end
 
-function slot0.update(slot0, slot1, slot2)
-	slot0.isGroup = slot1
-	slot0.info = slot2
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.isGroup = arg_2_1
+	arg_2_0.info = arg_2_2
 
-	slot0:flush()
+	arg_2_0:flush()
 end
 
-function slot0.flush(slot0)
-	setActive(slot0.lock, false)
-	setActive(slot0.normal, false)
-	setActive(slot0.group, false)
+function var_0_0.flush(arg_3_0)
+	setActive(arg_3_0.lock, false)
+	setActive(arg_3_0.normal, false)
+	setActive(arg_3_0.group, false)
 
-	if slot0.isGroup then
-		setActive(slot0.group, true)
-		setText(slot0.groupTitle, slot0.info.title)
-		GetImageSpriteFromAtlasAsync("memoryicon/" .. slot0.info.icon, "", slot0.group)
+	if arg_3_0.isGroup then
+		setActive(arg_3_0.group, true)
+		setText(arg_3_0.groupTitle, arg_3_0.info.title)
+		GetImageSpriteFromAtlasAsync("memoryicon/" .. arg_3_0.info.icon, "", arg_3_0.group)
 
-		slot1 = 0
-		slot2 = #slot0.info.memories
+		local var_3_0 = 0
+		local var_3_1 = #arg_3_0.info.memories
 
-		for slot6, slot7 in ipairs(slot0.info.memories) do
-			if pg.memory_template[slot7].is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(slot8.story, true) then
-				slot1 = slot1 + 1
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.info.memories) do
+			local var_3_2 = pg.memory_template[iter_3_1]
+
+			if var_3_2.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var_3_2.story, true) then
+				var_3_0 = var_3_0 + 1
 			end
 		end
 
-		setText(slot0.groupCount, slot1 .. "/" .. slot2)
-	elseif slot0.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(slot0.info.story, true) then
-		setActive(slot0.normal, true)
-		setText(slot0.txTitle, slot0.info.title)
-		setText(slot0.txSubtitle, slot0.info.subtitle)
-		GetImageSpriteFromAtlasAsync("memoryicon/" .. slot0.info.icon, "", slot0.normal)
+		setText(arg_3_0.groupCount, var_3_0 .. "/" .. var_3_1)
+	elseif arg_3_0.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg_3_0.info.story, true) then
+		setActive(arg_3_0.normal, true)
+		setText(arg_3_0.txTitle, arg_3_0.info.title)
+		setText(arg_3_0.txSubtitle, arg_3_0.info.subtitle)
+		GetImageSpriteFromAtlasAsync("memoryicon/" .. arg_3_0.info.icon, "", arg_3_0.normal)
 	else
-		setActive(slot0.lock, true)
-		setText(slot0.txCondition, slot0.info.condition)
+		setActive(arg_3_0.lock, true)
+		setText(arg_3_0.txCondition, arg_3_0.info.condition)
 	end
 
-	if slot0.itemIndexTF then
-		setActive(slot0.itemIndexTF, not slot0.isGroup)
+	if arg_3_0.itemIndexTF then
+		setActive(arg_3_0.itemIndexTF, not arg_3_0.isGroup)
 
-		if not slot0.isGroup and slot0.info.index then
-			setText(slot0.itemIndexTF, string.format("%02u", slot0.info.index))
+		if not arg_3_0.isGroup and arg_3_0.info.index then
+			setText(arg_3_0.itemIndexTF, string.format("%02u", arg_3_0.info.index))
 		end
 	end
 end
 
-function slot0.clear(slot0)
+function var_0_0.clear(arg_4_0)
+	return
 end
 
-return slot0
+return var_0_0

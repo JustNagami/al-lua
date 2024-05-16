@@ -1,28 +1,31 @@
-slot0 = import("..facade.Facade")
-slot1 = class("Notifier")
+﻿local var_0_0 = import("..facade.Facade")
+local var_0_1 = class("Notifier")
 
-function slot1.Ctor(slot0)
+function var_0_1.Ctor(arg_1_0)
+	return
 end
 
-function slot1.sendNotification(slot0, slot1, slot2, slot3)
-	if slot0:getFacade() ~= nil then
-		slot4:sendNotification(slot1, slot2, slot3)
+function var_0_1.sendNotification(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = arg_2_0:getFacade()
+
+	if var_2_0 ~= nil then
+		var_2_0:sendNotification(arg_2_1, arg_2_2, arg_2_3)
 	end
 end
 
-function slot1.initializeNotifier(slot0, slot1)
-	slot0.multitonKey = slot1
-	slot0.facade = slot0:getFacade()
+function var_0_1.initializeNotifier(arg_3_0, arg_3_1)
+	arg_3_0.multitonKey = arg_3_1
+	arg_3_0.facade = arg_3_0:getFacade()
 end
 
-function slot1.getFacade(slot0)
-	if slot0.multitonKey == nil then
-		error(uv0.MULTITON_MSG)
+function var_0_1.getFacade(arg_4_0)
+	if arg_4_0.multitonKey == nil then
+		error(var_0_1.MULTITON_MSG)
 	end
 
-	return uv1.getInstance(slot0.multitonKey)
+	return var_0_0.getInstance(arg_4_0.multitonKey)
 end
 
-slot1.MULTITON_MSG = "multitonKey for this Notifier not yet initialized!"
+var_0_1.MULTITON_MSG = "multitonKey for this Notifier not yet initialized!"
 
-return slot1
+return var_0_1

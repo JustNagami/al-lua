@@ -1,178 +1,186 @@
-slot0 = class("PlayerVitaeMediator", import("..base.ContextMediator"))
-slot0.CHANGE_SKIN = "PlayerVitaeMediator:CHANGE_SKIN"
-slot0.ON_ATTIRE = "PlayerVitaeMediator:ON_ATTIRE"
-slot0.CHANGE_MANIFESTO = "PlayerVitaeMediator:CHANGE_MANIFESTO"
-slot0.ON_CHANGE_PLAYER_NAME = "PlayerVitaeMediator:ON_CHANGE_PLAYER_NAME"
-slot0.CHANGE_PAINTS = "PlayerVitaeMediator:CHANGE_PAINTS"
-slot0.CHANGE_PAINT = "PlayerVitaeMediator:CHANGE_PAINT"
-slot0.CHANGE_RANDOM_SETTING = "PlayerVitaeMediator:CHANGE_RANDOM_SETTING"
-slot0.GO_SCENE = "PlayerVitaeMediator:GO_SCENE"
-slot0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN = "PlayerVitaeMediator:ON_SWITCH_RANDOM_FLAG_SHIP_BTN"
-slot0.OPEN_CRYPTOLALIA = "PlayerVitaeMediator:OPEN_CRYPTOLALIA"
-slot0.ON_SEL_EDUCATE_CHAR = "PlayerVitaeMediator:ON_SEL_EDUCATE_CHAR"
+﻿local var_0_0 = class("PlayerVitaeMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_SEL_EDUCATE_CHAR, function (slot0)
-		uv0:addSubLayers(Context.New({
+var_0_0.CHANGE_SKIN = "PlayerVitaeMediator:CHANGE_SKIN"
+var_0_0.ON_ATTIRE = "PlayerVitaeMediator:ON_ATTIRE"
+var_0_0.CHANGE_MANIFESTO = "PlayerVitaeMediator:CHANGE_MANIFESTO"
+var_0_0.ON_CHANGE_PLAYER_NAME = "PlayerVitaeMediator:ON_CHANGE_PLAYER_NAME"
+var_0_0.CHANGE_PAINTS = "PlayerVitaeMediator:CHANGE_PAINTS"
+var_0_0.CHANGE_PAINT = "PlayerVitaeMediator:CHANGE_PAINT"
+var_0_0.CHANGE_RANDOM_SETTING = "PlayerVitaeMediator:CHANGE_RANDOM_SETTING"
+var_0_0.GO_SCENE = "PlayerVitaeMediator:GO_SCENE"
+var_0_0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN = "PlayerVitaeMediator:ON_SWITCH_RANDOM_FLAG_SHIP_BTN"
+var_0_0.OPEN_CRYPTOLALIA = "PlayerVitaeMediator:OPEN_CRYPTOLALIA"
+var_0_0.ON_SEL_EDUCATE_CHAR = "PlayerVitaeMediator:ON_SEL_EDUCATE_CHAR"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_SEL_EDUCATE_CHAR, function(arg_2_0)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = EducateCharDockMediator,
 			viewComponent = EducateCharDockScene,
 			data = {
-				OnSelected = function (slot0)
-					uv0:sendNotification(GAME.CHANGE_EDUCATE, {
-						id = slot0
+				OnSelected = function(arg_3_0)
+					arg_1_0:sendNotification(GAME.CHANGE_EDUCATE, {
+						id = arg_3_0
 					})
 				end
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_CRYPTOLALIA, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
-			groupId = slot1
+	arg_1_0:bind(var_0_0.OPEN_CRYPTOLALIA, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
+			groupId = arg_4_1
 		})
 	end)
-	slot0:bind(uv0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, function (slot0, slot1)
-		uv0:sendNotification(GAME.RANDOM_FLAG_SHIP, {
-			isOn = slot1
+	arg_1_0:bind(var_0_0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.RANDOM_FLAG_SHIP, {
+			isOn = arg_5_1
 		})
 	end)
-	slot0:bind(uv0.GO_SCENE, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.GO_SCENE, slot1, slot2)
+	arg_1_0:bind(var_0_0.GO_SCENE, function(arg_6_0, arg_6_1, arg_6_2)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_6_1, arg_6_2)
 	end)
-	slot0:bind(uv0.CHANGE_RANDOM_SETTING, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHANGE_RANDOM_SHIP_AND_SKIN_SETTING, slot1)
+	arg_1_0:bind(var_0_0.CHANGE_RANDOM_SETTING, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GAME.CHANGE_RANDOM_SHIP_AND_SKIN_SETTING, arg_7_1)
 	end)
-	slot0:bind(uv0.CHANGE_SKIN, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.CHANGE_SKIN, function(arg_8_0, arg_8_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = SwichSkinMediator,
 			viewComponent = SwichSkinLayer,
 			data = {
-				shipVO = slot1
+				shipVO = arg_8_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.CHANGE_PAINTS, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.CHANGE_PLAYER_ICON, {
-			characterId = slot1,
-			callback = slot2
+	arg_1_0:bind(var_0_0.CHANGE_PAINTS, function(arg_9_0, arg_9_1, arg_9_2)
+		arg_1_0:sendNotification(GAME.CHANGE_PLAYER_ICON, {
+			characterId = arg_9_1,
+			callback = arg_9_2
 		})
 	end)
-	slot0:bind(uv0.ON_CHANGE_PLAYER_NAME, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHANGE_PLAYER_NAME, {
-			name = slot1
+	arg_1_0:bind(var_0_0.ON_CHANGE_PLAYER_NAME, function(arg_10_0, arg_10_1)
+		arg_1_0:sendNotification(GAME.CHANGE_PLAYER_NAME, {
+			name = arg_10_1
 		})
 	end)
-	slot0:bind(uv0.ON_ATTIRE, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.ATTIRE)
+	arg_1_0:bind(var_0_0.ON_ATTIRE, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ATTIRE)
 	end)
-	slot0:bind(uv0.CHANGE_MANIFESTO, function (slot0, slot1)
-		uv0:sendNotification(GAME.CHANGE_PLAYER_MANIFESTO, {
-			manifesto = slot1
+	arg_1_0:bind(var_0_0.CHANGE_MANIFESTO, function(arg_12_0, arg_12_1)
+		arg_1_0:sendNotification(GAME.CHANGE_PLAYER_MANIFESTO, {
+			manifesto = arg_12_1
 		})
 	end)
-	slot0:bind(uv0.CHANGE_PAINT, function (slot0, slot1)
-		slot2 = {}
-		uv0.contextData.showSelectCharacters = true
-		slot4 = {}
+	arg_1_0:bind(var_0_0.CHANGE_PAINT, function(arg_13_0, arg_13_1)
+		local var_13_0 = {}
 
-		for slot8, slot9 in ipairs(getProxy(PlayerProxy):getRawData().characters) do
-			if not slot1 or slot9 ~= slot1.id then
-				table.insert(slot2, slot9)
+		arg_1_0.contextData.showSelectCharacters = true
+
+		local var_13_1 = getProxy(PlayerProxy):getRawData()
+		local var_13_2 = {}
+
+		for iter_13_0, iter_13_1 in ipairs(var_13_1.characters) do
+			if not arg_13_1 or iter_13_1 ~= arg_13_1.id then
+				table.insert(var_13_0, iter_13_1)
 			end
 
-			table.insert(slot4, slot9)
+			table.insert(var_13_2, iter_13_1)
 		end
 
-		slot5, slot6 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+		local var_13_3, var_13_4 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+		local var_13_5 = {
+			callbackQuit = true,
+			selectedMax = var_13_4,
+			hideTagFlags = ShipStatus.TAG_HIDE_ADMIRAL,
+			selectedIds = var_13_0,
+			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
+				isActivityNpc = true
+			}),
+			onSelected = function(arg_14_0, arg_14_1)
+				local var_14_0 = arg_1_0:ReSortShipIds(var_13_2, arg_14_0)
 
-		uv0:addSubLayers(Context.New({
+				arg_1_0.contextData.showSelectCharacters = false
+
+				arg_1_0:sendNotification(GAME.CHANGE_PLAYER_ICON, {
+					characterId = var_14_0,
+					callback = arg_14_1
+				})
+			end
+		}
+
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = PlayerVitaeDockyardScene,
 			mediator = DockyardMediator,
-			data = {
-				callbackQuit = true,
-				selectedMax = slot6,
-				hideTagFlags = ShipStatus.TAG_HIDE_ADMIRAL,
-				selectedIds = slot2,
-				ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
-					isActivityNpc = true
-				}),
-				onSelected = function (slot0, slot1)
-					uv0.contextData.showSelectCharacters = false
-
-					uv0:sendNotification(GAME.CHANGE_PLAYER_ICON, {
-						characterId = uv0:ReSortShipIds(uv1, slot0),
-						callback = slot1
-					})
-				end
-			}
+			data = var_13_5
 		}))
 	end)
 end
 
-function slot0.ReSortShipIds(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = math.max(#slot1, #slot2)
+function var_0_0.ReSortShipIds(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = {}
+	local var_15_1 = math.max(#arg_15_1, #arg_15_2)
 
-	for slot8, slot9 in ipairs(slot1) do
-		if table.contains(slot2, slot9) then
-			slot3[slot8] = slot9
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
+		if table.contains(arg_15_2, iter_15_1) then
+			var_15_0[iter_15_0] = iter_15_1
 
-			table.removebyvalue(slot2, slot9)
+			table.removebyvalue(arg_15_2, iter_15_1)
 		end
 	end
 
-	for slot8 = 1, slot4 do
-		if not slot3[slot8] and #slot2 > 0 then
-			slot3[slot8] = table.remove(slot2, 1)
+	for iter_15_2 = 1, var_15_1 do
+		if not var_15_0[iter_15_2] and #arg_15_2 > 0 then
+			var_15_0[iter_15_2] = table.remove(arg_15_2, 1)
 		end
 	end
 
-	slot5 = {}
+	local var_15_2 = {}
 
-	for slot9, slot10 in pairs(slot3) do
-		table.insert(slot5, slot10)
+	for iter_15_3, iter_15_4 in pairs(var_15_0) do
+		table.insert(var_15_2, iter_15_4)
 	end
 
-	return slot5
+	return var_15_2
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_16_0)
 	return {
 		GAME.CHANGE_PLAYER_NAME_DONE,
 		SetShipSkinCommand.SKIN_UPDATED,
 		GAME.UPDATE_SKINCONFIG,
 		GAME.CHANGE_PLAYER_ICON_DONE,
-		PaintingConst.NotifyPaintingDownloadFinish,
+		PaintingGroupConst.NotifyPaintingDownloadFinish,
 		GAME.CHANGE_EDUCATE_DONE,
 		GAME.CLEAR_EDUCATE_TIP
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_1:getName()
+	local var_17_1 = arg_17_1:getBody()
 
-	if slot1:getName() == GAME.CHANGE_PLAYER_NAME_DONE then
-		slot0.viewComponent:OnPlayerNameChange()
-	elseif slot2 == SetShipSkinCommand.SKIN_UPDATED then
-		slot0.viewComponent:OnShipSkinChanged(slot3.ship)
-	elseif slot2 == GAME.UPDATE_SKINCONFIG then
-		slot0.viewComponent:ReloadPanting(slot3.skinId)
-	elseif slot2 == GAME.CHANGE_PLAYER_ICON_DONE then
-		slot0.viewComponent:RefreshShips()
-	elseif slot2 == PaintingConst.NotifyPaintingDownloadFinish then
-		slot0.viewComponent:updateSwitchSkinBtnTag()
+	if var_17_0 == GAME.CHANGE_PLAYER_NAME_DONE then
+		arg_17_0.viewComponent:OnPlayerNameChange()
+	elseif var_17_0 == SetShipSkinCommand.SKIN_UPDATED then
+		arg_17_0.viewComponent:OnShipSkinChanged(var_17_1.ship)
+	elseif var_17_0 == GAME.UPDATE_SKINCONFIG then
+		arg_17_0.viewComponent:ReloadPanting(var_17_1.skinId)
+	elseif var_17_0 == GAME.CHANGE_PLAYER_ICON_DONE then
+		arg_17_0.viewComponent:RefreshShips()
+	elseif var_17_0 == PaintingGroupConst.NotifyPaintingDownloadFinish then
+		arg_17_0.viewComponent:updateSwitchSkinBtnTag()
 
-		if slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
-			slot0.viewComponent.shipsPage:UpdateCardPaintingTag()
+		if arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
+			arg_17_0.viewComponent.shipsPage:UpdateCardPaintingTag()
 		end
-	elseif slot2 == GAME.CHANGE_EDUCATE_DONE then
-		slot0.viewComponent:UpdatePainting(true)
+	elseif var_17_0 == GAME.CHANGE_EDUCATE_DONE then
+		arg_17_0.viewComponent:UpdatePainting(true)
 
-		if slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
-			slot0.viewComponent.shipsPage:UpdateEducateChar()
+		if arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
+			arg_17_0.viewComponent.shipsPage:UpdateEducateChar()
 		end
-	elseif slot2 == GAME.CLEAR_EDUCATE_TIP and slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then
-		slot0.viewComponent.shipsPage:UpdateEducateCharTrTip()
+	elseif var_17_0 == GAME.CLEAR_EDUCATE_TIP and arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
+		arg_17_0.viewComponent.shipsPage:UpdateEducateCharTrTip()
 	end
 end
 
-return slot0
+return var_0_0

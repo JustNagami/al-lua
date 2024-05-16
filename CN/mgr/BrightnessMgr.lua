@@ -1,115 +1,121 @@
-pg = pg or {}
-slot1 = singletonClass("BrightnessMgr")
-pg.BrightnessMgr = slot1
-slot1.AutoIntoDarkModeTime = 10
-slot1.DarkModeBrightness = 0.1
-slot1.BrightnessMode = {
+﻿pg = pg or {}
+
+local var_0_0 = pg
+local var_0_1 = singletonClass("BrightnessMgr")
+
+var_0_0.BrightnessMgr = var_0_1
+var_0_1.AutoIntoDarkModeTime = 10
+var_0_1.DarkModeBrightness = 0.1
+var_0_1.BrightnessMode = {
 	AUTO_ANDROID = 1,
 	MANUAL_ANDROID = 0,
 	MANUAL_IOS = 2
 }
 
-function slot1.Init(slot0, slot1)
-	GlobalClickEventMgr.Inst.OnClick:AddListener(function ()
-		if not uv0.manulStatus then
+function var_0_1.Init(arg_1_0, arg_1_1)
+	GlobalClickEventMgr.Inst:AddPointerDownFunc(function()
+		if not arg_1_0.manulStatus then
 			return
 		end
 
-		uv0:AwakeForAWhile()
+		arg_1_0:AwakeForAWhile()
 	end)
 
-	slot0.manulStatus = false
-	slot0.originalBrightnessValue = 0
-	slot0.originalBrightnessMode = 0
-	slot0.sleepTimeOutCounter = 0
+	arg_1_0.manulStatus = false
+	arg_1_0.originalBrightnessValue = 0
+	arg_1_0.originalBrightnessMode = 0
+	arg_1_0.sleepTimeOutCounter = 0
 
-	slot1()
+	arg_1_1()
 end
 
-function slot1.AwakeForAWhile(slot0)
-	if not slot0:IsPermissionGranted() then
-		slot0:ExitManualMode()
+function var_0_1.AwakeForAWhile(arg_3_0)
+	if not arg_3_0:IsPermissionGranted() then
+		arg_3_0:ExitManualMode()
 
 		return
 	end
 
-	BrightnessHelper.SetScreenBrightness(slot0.originalBrightnessValue)
-	slot0:SetDelayTask()
+	BrightnessHelper.SetScreenBrightness(arg_3_0.originalBrightnessValue)
+	arg_3_0:SetDelayTask()
 end
 
-function slot1.SetDelayTask(slot0)
-	slot0:ClearTask()
+function var_0_1.SetDelayTask(arg_4_0)
+	arg_4_0:ClearTask()
 
-	slot0.task = Timer.New(function ()
-		BrightnessHelper.SetScreenBrightness(math.min(uv0.DarkModeBrightness, uv1.originalBrightnessValue))
-	end, uv0.AutoIntoDarkModeTime)
+	arg_4_0.task = Timer.New(function()
+		BrightnessHelper.SetScreenBrightness(math.min(var_0_1.DarkModeBrightness, arg_4_0.originalBrightnessValue))
+	end, var_0_1.AutoIntoDarkModeTime)
 
-	slot0.task:Start()
+	arg_4_0.task:Start()
 end
 
-function slot1.ClearTask(slot0)
-	if not slot0.task then
+function var_0_1.ClearTask(arg_6_0)
+	if not arg_6_0.task then
 		return
 	end
 
-	slot0.task:Stop()
+	arg_6_0.task:Stop()
 
-	slot0.task = nil
+	arg_6_0.task = nil
 end
 
-function slot1.EnterManualMode(slot0)
-	if slot0.manulStatus then
+function var_0_1.EnterManualMode(arg_7_0)
+	if arg_7_0.manulStatus then
 		return
 	end
 
-	slot1 = BrightnessHelper.GetValue()
-	slot0.originalBrightnessValue = slot1
+	local var_7_0 = BrightnessHelper.GetValue()
 
-	BrightnessHelper.SetScreenBrightness(math.min(uv0.DarkModeBrightness, slot1))
+	arg_7_0.originalBrightnessValue = var_7_0
 
-	slot0.manulStatus = true
+	BrightnessHelper.SetScreenBrightness(math.min(var_0_1.DarkModeBrightness, var_7_0))
+
+	arg_7_0.manulStatus = true
 end
 
-function slot1.ExitManualMode(slot0)
-	if not slot0.manulStatus then
+function var_0_1.ExitManualMode(arg_8_0)
+	if not arg_8_0.manulStatus then
 		return
 	end
 
-	BrightnessHelper.SetScreenBrightness(slot0.originalBrightnessValue)
-	slot0:ClearTask()
+	BrightnessHelper.SetScreenBrightness(arg_8_0.originalBrightnessValue)
+	arg_8_0:ClearTask()
 
-	slot0.manulStatus = false
+	arg_8_0.manulStatus = false
 end
 
-function slot1.IsPermissionGranted(slot0)
+function var_0_1.IsPermissionGranted(arg_9_0)
 	return BrightnessHelper.IsHavePermission()
 end
 
-function slot1.RequestPremission(slot0, slot1)
+function var_0_1.RequestPremission(arg_10_0, arg_10_1)
 	BrightnessHelper.SetScreenBrightness(BrightnessHelper.GetValue())
 
-	if slot1 then
-		FrameTimer.New(function ()
-			uv0(uv1:IsPermissionGranted())
+	if arg_10_1 then
+		FrameTimer.New(function()
+			arg_10_1(arg_10_0:IsPermissionGranted())
 		end, 2):Start()
 	end
 end
 
-function slot1.SetScreenNeverSleep(slot0, slot1)
-	if tobool(slot1) then
-		if slot0.sleepTimeOutCounter == 0 then
+function var_0_1.SetScreenNeverSleep(arg_12_0, arg_12_1)
+	arg_12_1 = tobool(arg_12_1)
+
+	if arg_12_1 then
+		if arg_12_0.sleepTimeOutCounter == 0 then
 			Screen.sleepTimeout = SleepTimeout.NeverSleep
 		end
 
-		slot0.sleepTimeOutCounter = slot0.sleepTimeOutCounter + 1
+		arg_12_0.sleepTimeOutCounter = arg_12_0.sleepTimeOutCounter + 1
 	else
-		slot0.sleepTimeOutCounter = slot0.sleepTimeOutCounter - 1
+		arg_12_0.sleepTimeOutCounter = arg_12_0.sleepTimeOutCounter - 1
 
-		assert(slot0.sleepTimeOutCounter >= 0, "InCorrect Call of SetScreenNeverSleep")
+		assert(arg_12_0.sleepTimeOutCounter >= 0, "InCorrect Call of SetScreenNeverSleep")
 
-		slot0.sleepTimeOutCounter = math.max(0, slot0.sleepTimeOutCounter)
+		arg_12_0.sleepTimeOutCounter = math.max(0, arg_12_0.sleepTimeOutCounter)
 
-		if slot0.sleepTimeOutCounter == 0 then
+		if arg_12_0.sleepTimeOutCounter == 0 then
 			Screen.sleepTimeout = SleepTimeout.SystemSetting
 		end
 	end

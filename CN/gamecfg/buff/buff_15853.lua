@@ -1,4 +1,57 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onStack"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate",
+				"onStack"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onStack"
+			},
+			arg_list = {
+				countTarget = 3,
+				countType = 15853
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				countType = 15853,
+				buff_id_list = {
+					15850
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -489,58 +542,5 @@ return {
 	stack = 3,
 	id = 15853,
 	icon = 15850,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onStack"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate",
-				"onStack"
-			},
-			arg_list = {
-				attr = "criDamage",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onStack"
-			},
-			arg_list = {
-				countTarget = 3,
-				countType = 15853
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				countType = 15853,
-				buff_id_list = {
-					15850
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

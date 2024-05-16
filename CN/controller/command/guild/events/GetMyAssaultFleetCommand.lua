@@ -1,50 +1,48 @@
-slot0 = class("GetMyAssaultFleetCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GetMyAssaultFleetCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
-	slot4 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
 
-	slot4:Send(61009, {
+	pg.ConnectionMgr.GetInstance():Send(61009, {
 		type = 0
-	}, 61010, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(GuildProxy)
-			slot2 = slot1:getData()
-			slot3 = getProxy(PlayerProxy):getRawData().id
-			slot4 = slot2:getMemberById(slot3)
+	}, 61010, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(GuildProxy)
+			local var_2_1 = var_2_0:getData()
+			local var_2_2 = getProxy(PlayerProxy):getRawData().id
+			local var_2_3 = var_2_1:getMemberById(var_2_2)
 
-			assert(slot4)
+			assert(var_2_3)
 
-			slot5 = GuildAssaultFleet.New({})
+			local var_2_4 = GuildAssaultFleet.New({})
+			local var_2_5 = {}
+			local var_2_6 = {}
 
-			_.each(slot0.person_ships, function (slot0)
-				uv0[slot0.pos] = Ship.New(slot0.ship)
-				uv1[slot0.pos] = slot0.last_time
+			_.each(arg_2_0.person_ships, function(arg_3_0)
+				local var_3_0 = Ship.New(arg_3_0.ship)
+
+				var_2_5[arg_3_0.pos] = var_3_0
+				var_2_6[arg_3_0.pos] = arg_3_0.last_time
 			end)
+			var_2_4:InitShips(var_2_2, var_2_5)
+			var_2_3:UpdateExternalAssaultFleet(var_2_4)
+			var_2_0:updateGuild(var_2_1)
 
-			slot11 = {}
+			var_2_0.isFetchAssaultFleet = true
 
-			slot5:InitShips(slot3, slot11)
-			slot4:UpdateExternalAssaultFleet(slot5)
-			slot1:updateGuild(slot2)
-
-			slot1.isFetchAssaultFleet = true
-
-			for slot11, slot12 in ipairs({}) do
-				slot1:UpdatePosCdTime(slot11, slot12)
+			for iter_2_0, iter_2_1 in ipairs(var_2_6) do
+				var_2_0:UpdatePosCdTime(iter_2_0, iter_2_1)
 			end
 
-			uv0:sendNotification(GAME.GUILD_GET_MY_ASSAULT_FLEET_DONE)
+			arg_1_0:sendNotification(GAME.GUILD_GET_MY_ASSAULT_FLEET_DONE)
 
-			if uv1 then
-				uv1()
+			if var_1_0 then
+				var_1_0()
 			end
-
-			return
+		else
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
-
-		pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 	end)
 end
 
-return slot0
+return var_0_0

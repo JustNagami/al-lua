@@ -1,31 +1,34 @@
-slot0 = class("GetMedalShopCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetMedalShopCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
 
 	pg.ConnectionMgr.GetInstance():Send(16106, {
 		type = 0
-	}, 16107, function (slot0)
-		slot1 = nil
+	}, 16107, function(arg_2_0)
+		local var_2_0
 
-		if slot0.result == 0 then
-			uv0:sendNotification(GAME.GET_MEDALSHOP_DONE)
+		if arg_2_0.result == 0 then
+			arg_1_0:sendNotification(GAME.GET_MEDALSHOP_DONE)
 
-			slot1 = MedalShop.New(slot0)
+			var_2_0 = MedalShop.New(arg_2_0)
 
-			if getProxy(ShopsProxy).medalShop then
-				slot2:UpdateMedalShop(slot1)
+			local var_2_1 = getProxy(ShopsProxy)
+
+			if var_2_1.medalShop then
+				var_2_1:UpdateMedalShop(var_2_0)
 			else
-				slot2:SetMedalShop(slot1)
+				var_2_1:SetMedalShop(var_2_0)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
-		if uv1 then
-			uv1(slot1)
+		if var_1_1 then
+			var_1_1(var_2_0)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,83 +1,76 @@
-slot0 = class("BackYardDeleteThemeTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardDeleteThemeTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = getProxy(DormProxy)
-	slot5 = slot4:GetCustomThemeTemplateById(slot1:getBody().templateId)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().templateId
+	local var_1_1 = getProxy(DormProxy)
+	local var_1_2 = var_1_1:GetCustomThemeTemplateById(var_1_0)
 
-	function slot6(slot0)
-		if not uv0:IsPushed() then
-			if slot0 then
-				slot0()
+	local function var_1_3(arg_2_0)
+		if not var_1_2:IsPushed() then
+			if arg_2_0 then
+				arg_2_0()
 			end
 
 			return
 		end
 
-		slot1 = pg.UIMgr.GetInstance()
-
-		slot1:LoadingOn()
+		pg.UIMgr.GetInstance():LoadingOn()
 		seriesAsync({
-			function (slot0)
-				slot2 = uv0
-
-				BackYardThemeTempalteUtil.DeleteTexture(slot2:GetTextureName(), function (slot0)
-					if slot0 then
-						uv0()
+			function(arg_3_0)
+				BackYardThemeTempalteUtil.DeleteTexture(var_1_2:GetTextureName(), function(arg_4_0)
+					if arg_4_0 then
+						arg_3_0()
 					end
 				end)
 			end,
-			function (slot0)
-				slot2 = uv0
-
-				BackYardThemeTempalteUtil.DeleteTexture(slot2:GetTextureIconName(), function (slot0)
-					if slot0 then
-						uv0()
+			function(arg_5_0)
+				BackYardThemeTempalteUtil.DeleteTexture(var_1_2:GetTextureIconName(), function(arg_6_0)
+					if arg_6_0 then
+						arg_5_0()
 					end
 				end)
 			end
-		}, function ()
+		}, function()
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			if uv0 then
-				uv0()
+			if arg_2_0 then
+				arg_2_0()
 			end
 		end)
 	end
 
-	function slot7(slot0)
+	local function var_1_4(arg_8_0)
 		BackYardThemeTempalteUtil.ClearCaches({
-			uv0:GetTextureName(),
-			uv0:GetTextureIconName()
+			var_1_2:GetTextureName(),
+			var_1_2:GetTextureIconName()
 		})
-		uv1:DeleteCustomThemeTemplate(uv2)
+		var_1_1:DeleteCustomThemeTemplate(var_1_0)
 
-		if uv1:IsInitShopThemeTemplates() then
-			if uv1:GetShopThemeTemplateById(uv2) then
-				uv1:DeleteShopThemeTemplate(uv2)
+		if var_1_1:IsInitShopThemeTemplates() then
+			if var_1_1:GetShopThemeTemplateById(var_1_0) then
+				var_1_1:DeleteShopThemeTemplate(var_1_0)
 			end
 
-			if uv1:GetCollectionThemeTemplateById(uv2) then
-				uv1:DeleteCollectionThemeTemplate(uv2)
+			if var_1_1:GetCollectionThemeTemplateById(var_1_0) then
+				var_1_1:DeleteCollectionThemeTemplate(var_1_0)
 			end
 		end
 
-		uv3:sendNotification(GAME.BACKYARD_DELETE_THEME_TEMPLATE_DONE)
+		arg_1_0:sendNotification(GAME.BACKYARD_DELETE_THEME_TEMPLATE_DONE)
 	end
 
-	(function ()
-		slot0 = pg.ConnectionMgr.GetInstance()
-
-		slot0:Send(19123, {
-			pos = uv0.pos
-		}, 19124, function (slot0)
-			if slot0.result == 0 then
-				uv0(slot0)
-				uv1()
+	;(function()
+		pg.ConnectionMgr.GetInstance():Send(19123, {
+			pos = var_1_2.pos
+		}, 19124, function(arg_10_0)
+			if arg_10_0.result == 0 then
+				var_1_4(arg_10_0)
+				var_1_3()
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_10_0.result] .. arg_10_0.result)
 			end
 		end)
 	end)()
 end
 
-return slot0
+return var_0_0

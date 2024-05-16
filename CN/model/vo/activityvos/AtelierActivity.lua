@@ -1,138 +1,149 @@
-slot0 = class("AtelierActivity", import(".VirtualBagActivity"))
+﻿local var_0_0 = class("AtelierActivity", import(".VirtualBagActivity"))
 
-function slot0.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+function var_0_0.Ctor(arg_1_0, ...)
+	var_0_0.super.Ctor(arg_1_0, ...)
 
-	slot0.items = {}
-	slot0.completeAllTools = false
-	slot0.slots = _.map({
+	arg_1_0.items = {}
+	arg_1_0.completeAllTools = false
+	arg_1_0.slots = _.map({
 		1,
 		2,
 		3,
 		4,
 		5
-	}, function ()
+	}, function()
 		return {
 			0,
 			0
 		}
 	end)
 
-	slot0:InitAllFormulas()
+	arg_1_0:InitAllFormulas()
 end
 
-function slot0.GetItems(slot0)
-	return slot0.items
+function var_0_0.GetItems(arg_3_0)
+	return arg_3_0.items
 end
 
-function slot0.InitItems(slot0, slot1)
-	_.each(slot1, function (slot0)
-		uv0.items[slot1] = uv0.items[slot0.key] or AtelierMaterial.New({
-			configId = slot1
+function var_0_0.InitItems(arg_4_0, arg_4_1)
+	_.each(arg_4_1, function(arg_5_0)
+		local var_5_0 = arg_5_0.key
+		local var_5_1 = arg_5_0.value
+
+		arg_4_0.items[var_5_0] = arg_4_0.items[var_5_0] or AtelierMaterial.New({
+			configId = var_5_0
 		})
-		uv0.items[slot1].count = uv0.items[slot1].count + slot0.value
+		arg_4_0.items[var_5_0].count = arg_4_0.items[var_5_0].count + var_5_1
 	end)
 end
 
-function slot0.GetSlots(slot0)
-	return slot0.slots
+function var_0_0.GetSlots(arg_6_0)
+	return arg_6_0.slots
 end
 
-function slot0.UpdateBuffSlots(slot0, slot1)
-	_.each(slot1, function (slot0)
-		uv0.slots[slot0.pos] = {
-			slot0.itemid,
-			slot0.itemnum
+function var_0_0.UpdateBuffSlots(arg_7_0, arg_7_1)
+	_.each(arg_7_1, function(arg_8_0)
+		arg_7_0.slots[arg_8_0.pos] = {
+			arg_8_0.itemid,
+			arg_8_0.itemnum
 		}
 	end)
 end
 
-function slot0.AddItem(slot0, slot1)
-	slot0.items[slot2] = slot0.items[slot1:GetConfigID()] or AtelierMaterial.New({
-		configId = slot2
+function var_0_0.AddItem(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:GetConfigID()
+	local var_9_1 = arg_9_1.count
+
+	arg_9_0.items[var_9_0] = arg_9_0.items[var_9_0] or AtelierMaterial.New({
+		configId = var_9_0
 	})
-	slot0.items[slot2].count = slot0.items[slot2].count + slot1.count
+	arg_9_0.items[var_9_0].count = arg_9_0.items[var_9_0].count + var_9_1
 end
 
-function slot0.GetItemById(slot0, slot1)
-	return slot0.items[slot1]
+function var_0_0.GetItemById(arg_10_0, arg_10_1)
+	return arg_10_0.items[arg_10_1]
 end
 
-function slot0.subItemCount(slot0, slot1, slot2)
-	if not slot0.items[slot1] then
+function var_0_0.subItemCount(arg_11_0, arg_11_1, arg_11_2)
+	if not arg_11_0.items[arg_11_1] then
 		return
 	end
 
-	slot0.items[slot1].count = math.max(0, slot0.items[slot1].count - slot2)
+	arg_11_0.items[arg_11_1].count = math.max(0, arg_11_0.items[arg_11_1].count - arg_11_2)
 end
 
-function slot0.GetAllVitems(slot0)
-	return table.map(slot0:GetItems(), function (slot0)
-		return slot0.count
+function var_0_0.GetAllVitems(arg_12_0)
+	return table.map(arg_12_0:GetItems(), function(arg_13_0)
+		return arg_13_0.count
 	end)
 end
 
-function slot0.getVitemNumber(slot0, slot1)
-	return slot0:GetItemById(slot1) and slot2.count or 0
+function var_0_0.getVitemNumber(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0:GetItemById(arg_14_1)
+
+	return var_14_0 and var_14_0.count or 0
 end
 
-function slot0.addVitemNumber(slot0, slot1, slot2)
-	slot0:AddItem(AtelierMaterial.New({
-		configId = slot1,
-		count = slot2
+function var_0_0.addVitemNumber(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_0:AddItem(AtelierMaterial.New({
+		configId = arg_15_1,
+		count = arg_15_2
 	}))
 end
 
-function slot0.subVitemNumber(slot0, slot1, slot2)
-	slot0:subItemCount(slot1, slot2)
+function var_0_0.subVitemNumber(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_0:subItemCount(arg_16_1, arg_16_2)
 end
 
-function slot0.GetFormulas(slot0)
-	return slot0.formulas
+function var_0_0.GetFormulas(arg_17_0)
+	return arg_17_0.formulas
 end
 
-function slot0.InitAllFormulas(slot0)
-	slot0.formulas = {}
+function var_0_0.InitAllFormulas(arg_18_0)
+	arg_18_0.formulas = {}
 
-	_.each(pg.activity_ryza_recipe.all, function (slot0)
-		uv0.formulas[slot0] = AtelierFormula.New({
-			configId = slot0
+	_.each(pg.activity_ryza_recipe.all, function(arg_19_0)
+		arg_18_0.formulas[arg_19_0] = AtelierFormula.New({
+			configId = arg_19_0
 		})
 	end)
 end
 
-function slot0.InitFormulaUseCounts(slot0, slot1)
-	_.each(slot1, function (slot0)
-		uv0.formulas[slot0.key]:SetUsedCount(slot0.value)
+function var_0_0.InitFormulaUseCounts(arg_20_0, arg_20_1)
+	_.each(arg_20_1, function(arg_21_0)
+		local var_21_0 = arg_21_0.key
+		local var_21_1 = arg_21_0.value
+
+		arg_20_0.formulas[var_21_0]:SetUsedCount(var_21_1)
 	end)
-	slot0:CheckCompleteAllTool()
+	arg_20_0:CheckCompleteAllTool()
 end
 
-function slot0.AddFormulaUseCount(slot0, slot1, slot2)
-	slot0.formulas[slot1]:SetUsedCount(slot0.formulas[slot1]:GetUsedCount() + slot2)
-	slot0:CheckCompleteAllTool()
+function var_0_0.AddFormulaUseCount(arg_22_0, arg_22_1, arg_22_2)
+	arg_22_0.formulas[arg_22_1]:SetUsedCount(arg_22_0.formulas[arg_22_1]:GetUsedCount() + arg_22_2)
+	arg_22_0:CheckCompleteAllTool()
 end
 
-function slot0.CheckCompleteAllTool(slot0)
-	if slot0.completeAllTools then
+function var_0_0.CheckCompleteAllTool(arg_23_0)
+	if arg_23_0.completeAllTools then
 		return
 	end
 
-	slot0.completeAllTools = _.all(_.values(slot0.formulas), function (slot0)
-		if slot0:GetType() ~= AtelierFormula.TYPE.TOOL then
+	arg_23_0.completeAllTools = _.all(_.values(arg_23_0.formulas), function(arg_24_0)
+		if arg_24_0:GetType() ~= AtelierFormula.TYPE.TOOL then
 			return true
 		end
 
-		return not slot0:IsAvaliable()
+		return not arg_24_0:IsAvaliable()
 	end)
 end
 
-function slot0.IsCompleteAllTools(slot0)
-	return slot0.completeAllTools
+function var_0_0.IsCompleteAllTools(arg_25_0)
+	return arg_25_0.completeAllTools
 end
 
-function slot0.IsActivityBuffMap(slot0)
-	return ChapterConst.IsAtelierMap(slot0) and Map.ACTIVITY_EASY < slot0:getMapType()
+function var_0_0.IsActivityBuffMap(arg_26_0)
+	return ChapterConst.IsAtelierMap(arg_26_0) and arg_26_0:getMapType() > Map.ACTIVITY_EASY
 end
 
-return slot0
+return var_0_0

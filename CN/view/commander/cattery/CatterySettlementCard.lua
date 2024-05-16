@@ -1,179 +1,184 @@
-slot0 = class("CatterySettlementCard")
-slot1 = 1
+﻿local var_0_0 = class("CatterySettlementCard")
+local var_0_1 = 1
 
-function slot0.Ctor(slot0, slot1)
-	slot0.tr = slot1
-	slot0.go = slot1.gameObject
-	slot0.emptyTF = findTF(slot0.tr, "empty")
-	slot0.commanderTF = findTF(slot0.tr, "commander")
-	slot0.nameTxt = findTF(slot0.commanderTF, "name"):GetComponent(typeof(Text))
-	slot0.char = findTF(slot0.commanderTF, "mask/char")
-	slot0.expTxt = findTF(slot0.commanderTF, "exp/Text"):GetComponent(typeof(Text))
-	slot0.slider = findTF(slot0.commanderTF, "exp_bar"):GetComponent(typeof(Slider))
-	slot0.levelTxt = findTF(slot0.commanderTF, "level"):GetComponent(typeof(Text))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.tr = arg_1_1
+	arg_1_0.go = arg_1_1.gameObject
+	arg_1_0.emptyTF = findTF(arg_1_0.tr, "empty")
+	arg_1_0.commanderTF = findTF(arg_1_0.tr, "commander")
+	arg_1_0.nameTxt = findTF(arg_1_0.commanderTF, "name"):GetComponent(typeof(Text))
+	arg_1_0.char = findTF(arg_1_0.commanderTF, "mask/char")
+	arg_1_0.expTxt = findTF(arg_1_0.commanderTF, "exp/Text"):GetComponent(typeof(Text))
+	arg_1_0.slider = findTF(arg_1_0.commanderTF, "exp_bar"):GetComponent(typeof(Slider))
+	arg_1_0.levelTxt = findTF(arg_1_0.commanderTF, "level"):GetComponent(typeof(Text))
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.cattery = slot1
-	slot0.exp = slot2
+function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.cattery = arg_2_1
+	arg_2_0.exp = arg_2_2
 
-	if slot1:ExistCommander() then
-		slot0:UpdateCommander()
+	local var_2_0 = arg_2_1:ExistCommander()
+
+	if var_2_0 then
+		arg_2_0:UpdateCommander()
 	end
 
-	setActive(slot0.emptyTF, not slot3)
-	setActive(slot0.commanderTF, slot3)
+	setActive(arg_2_0.emptyTF, not var_2_0)
+	setActive(arg_2_0.commanderTF, var_2_0)
 end
 
-function slot0.UpdateCommander(slot0)
-	slot3 = slot0.cattery:GetCommander()
-	slot4 = slot0:GetOldCommander(slot3, slot0.exp)
-	slot0.oldCommander = slot4
-	slot0.commander = slot3
+function var_0_0.UpdateCommander(arg_3_0)
+	local var_3_0 = arg_3_0.exp
+	local var_3_1 = arg_3_0.cattery:GetCommander()
+	local var_3_2 = arg_3_0:GetOldCommander(var_3_1, var_3_0)
 
-	slot0:LoadCommander(slot3)
+	arg_3_0.oldCommander = var_3_2
+	arg_3_0.commander = var_3_1
 
-	slot0.slider.value = slot4.exp / slot4:getNextLevelExp()
-	slot0.levelTxt.text = "LV." .. slot4:getLevel()
-	slot0.expTxt.text = slot4.exp .. "/" .. slot4:getNextLevelExp()
-	slot0.nameTxt.text = slot4:getName()
+	arg_3_0:LoadCommander(var_3_1)
+
+	arg_3_0.slider.value = var_3_2.exp / var_3_2:getNextLevelExp()
+	arg_3_0.levelTxt.text = "LV." .. var_3_2:getLevel()
+	arg_3_0.expTxt.text = var_3_2.exp .. "/" .. var_3_2:getNextLevelExp()
+	arg_3_0.nameTxt.text = var_3_2:getName()
 end
 
-function slot0.InitAnim(slot0, slot1)
-	slot5 = slot0.commander.exp / slot0.commander:getNextLevelExp()
+function var_0_0.InitAnim(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.commander:getLevel()
+	local var_4_1 = arg_4_0.oldCommander:getLevel()
+	local var_4_2 = arg_4_0.commander:getNextLevelExp()
+	local var_4_3 = arg_4_0.commander.exp / var_4_2
 
-	if slot0.oldCommander:getLevel() < slot0.commander:getLevel() then
-		table.insert(slot1, function (slot0)
-			uv0:DoUpgradeAnim(slot0)
+	if var_4_1 < var_4_0 then
+		table.insert(arg_4_1, function(arg_5_0)
+			arg_4_0:DoUpgradeAnim(arg_5_0)
 		end)
 	else
-		table.insert(slot1, function (slot0)
-			uv0:AddExpAnim(uv0.slider.value, uv1, uv0.oldCommander.exp, uv0.commander.exp, uv2, slot0)
+		table.insert(arg_4_1, function(arg_6_0)
+			arg_4_0:AddExpAnim(arg_4_0.slider.value, var_4_3, arg_4_0.oldCommander.exp, arg_4_0.commander.exp, var_4_2, arg_6_0)
 		end)
 	end
 end
 
-function slot0.Action(slot0, slot1)
-	if not slot0.commander then
-		slot1()
+function var_0_0.Action(arg_7_0, arg_7_1)
+	if not arg_7_0.commander then
+		arg_7_1()
 
 		return
 	end
 
-	slot2 = {}
+	local var_7_0 = {}
 
-	slot0:InitAnim(slot2)
-	parallelAsync(slot2, slot1)
+	arg_7_0:InitAnim(var_7_0)
+	parallelAsync(var_7_0, arg_7_1)
 end
 
-function slot0.DoUpgradeAnim(slot0, slot1)
-	slot2 = slot0.commander
-	slot2 = slot2:getLevel()
-	slot3 = slot0.oldCommander
-	slot3 = slot3:getLevel()
-	slot4 = slot3
-	slot5 = slot0.commander
-	slot6 = slot0.commander.exp / slot5:getNextLevelExp()
+function var_0_0.DoUpgradeAnim(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.commander:getLevel()
+	local var_8_1 = arg_8_0.oldCommander:getLevel()
+	local var_8_2 = var_8_1
+	local var_8_3 = arg_8_0.commander:getNextLevelExp()
+	local var_8_4 = arg_8_0.commander.exp / var_8_3
 
-	function slot7()
-		uv0 = uv0 + 1
-		uv1.levelTxt.text = "LV." .. uv0
+	local function var_8_5()
+		var_8_2 = var_8_2 + 1
+		arg_8_0.levelTxt.text = "LV." .. var_8_2
 	end
 
-	slot3 = slot3 + 1
+	local var_8_6 = {}
+	local var_8_7 = var_8_1 + 1
 
-	table.insert({}, function (slot0)
-		slot1 = uv0.oldCommander
-		slot1 = slot1:getNextLevelExp()
-		slot3 = uv0
+	table.insert(var_8_6, function(arg_10_0)
+		local var_10_0 = arg_8_0.oldCommander:getNextLevelExp()
+		local var_10_1 = arg_8_0.oldCommander.exp
 
-		slot3:AddExpAnim(uv0.slider.value, 1, uv0.oldCommander.exp, slot1, slot1, function ()
-			uv0()
-			uv1()
+		arg_8_0:AddExpAnim(arg_8_0.slider.value, 1, var_10_1, var_10_0, var_10_0, function()
+			var_8_5()
+			arg_10_0()
 		end)
 	end)
 
-	while slot3 ~= slot2 do
-		slot3 = slot3 + 1
+	while var_8_7 ~= var_8_0 do
+		var_8_7 = var_8_7 + 1
 
-		table.insert(slot8, function (slot0)
-			slot1 = uv0.oldCommander
-			slot1 = slot1:getConfigExp(uv1)
-			slot2 = uv0
+		table.insert(var_8_6, function(arg_12_0)
+			local var_12_0 = arg_8_0.oldCommander:getConfigExp(var_8_2)
 
-			slot2:AddExpAnim(0, 1, 0, slot1, slot1, function ()
-				uv0()
-				uv1()
+			arg_8_0:AddExpAnim(0, 1, 0, var_12_0, var_12_0, function()
+				var_8_5()
+				arg_12_0()
 			end)
 		end)
 	end
 
-	table.insert(slot8, function (slot0)
-		uv0:AddExpAnim(0, uv1, 0, uv0.commander.exp, uv2, slot0)
+	table.insert(var_8_6, function(arg_14_0)
+		arg_8_0:AddExpAnim(0, var_8_4, 0, arg_8_0.commander.exp, var_8_3, arg_14_0)
 	end)
-	seriesAsync(slot8, slot1)
+	seriesAsync(var_8_6, arg_8_1)
 end
 
-function slot0.LoadCommander(slot0, slot1)
-	slot0:ReturnCommander()
+function var_0_0.LoadCommander(arg_15_0, arg_15_1)
+	arg_15_0:ReturnCommander()
 
-	slot0.painting = slot1:getPainting()
+	arg_15_0.painting = arg_15_1:getPainting()
 
-	setCommanderPaintingPrefab(slot0.char, slot0.painting, "result")
+	setCommanderPaintingPrefab(arg_15_0.char, arg_15_0.painting, "result")
 end
 
-function slot0.ReturnCommander(slot0)
-	if slot0.painting then
-		retCommanderPaintingPrefab(slot0.char, slot0.painting)
+function var_0_0.ReturnCommander(arg_16_0)
+	if arg_16_0.painting then
+		retCommanderPaintingPrefab(arg_16_0.char, arg_16_0.painting)
 
-		slot0.painting = nil
+		arg_16_0.painting = nil
 	end
 end
 
-function slot0.Clear(slot0)
-	if LeanTween.isTweening(go(slot0.slider)) then
-		LeanTween.cancel(go(slot0.slider))
+function var_0_0.Clear(arg_17_0)
+	if LeanTween.isTweening(go(arg_17_0.slider)) then
+		LeanTween.cancel(go(arg_17_0.slider))
 	end
 
-	if LeanTween.isTweening(go(slot0.expTxt)) then
-		LeanTween.cancel(go(slot0.expTxt))
+	if LeanTween.isTweening(go(arg_17_0.expTxt)) then
+		LeanTween.cancel(go(arg_17_0.expTxt))
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
-	slot0:ReturnCommander()
+function var_0_0.Dispose(arg_18_0)
+	arg_18_0:Clear()
+	arg_18_0:ReturnCommander()
 end
 
-function slot0.GetOldCommander(slot0, slot1, slot2)
-	slot3 = Clone(slot1)
+function var_0_0.GetOldCommander(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = Clone(arg_19_1)
 
-	slot3:ReduceExp(slot2)
+	var_19_0:ReduceExp(arg_19_2)
 
-	return slot3
+	return var_19_0
 end
 
-function slot0.AddExpAnim(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+function var_0_0.AddExpAnim(arg_20_0, arg_20_1, arg_20_2, arg_20_3, arg_20_4, arg_20_5, arg_20_6)
 	parallelAsync({
-		function (slot0)
-			LeanTween.value(go(uv0.slider), uv1, uv2, uv3):setOnUpdate(System.Action_float(function (slot0)
-				uv0.slider.value = slot0
-			end)):setOnComplete(System.Action(slot0))
+		function(arg_21_0)
+			LeanTween.value(go(arg_20_0.slider), arg_20_1, arg_20_2, var_0_1):setOnUpdate(System.Action_float(function(arg_22_0)
+				arg_20_0.slider.value = arg_22_0
+			end)):setOnComplete(System.Action(arg_21_0))
 		end,
-		function (slot0)
-			LeanTween.value(go(uv0.expTxt), uv1, uv2, uv3):setOnUpdate(System.Action_float(function (slot0)
-				uv0.expTxt.text = "<color=#94d53eFF>" .. math.ceil(slot0) .. "/</color>" .. "<color=" .. uv0:GetColor() .. ">" .. uv1 .. "</color>"
-			end)):setOnComplete(System.Action(slot0))
+		function(arg_23_0)
+			LeanTween.value(go(arg_20_0.expTxt), arg_20_3, arg_20_4, var_0_1):setOnUpdate(System.Action_float(function(arg_24_0)
+				local var_24_0 = math.ceil(arg_24_0)
+
+				arg_20_0.expTxt.text = "<color=#94d53eFF>" .. var_24_0 .. "/</color>" .. "<color=" .. arg_20_0:GetColor() .. ">" .. arg_20_5 .. "</color>"
+			end)):setOnComplete(System.Action(arg_23_0))
 		end
-	}, function ()
-		if uv0 then
-			uv0()
+	}, function()
+		if arg_20_6 then
+			arg_20_6()
 		end
 	end)
 end
 
-function slot0.GetColor(slot0)
+function var_0_0.GetColor(arg_26_0)
 	return "#9f9999"
 end
 
-return slot0
+return var_0_0

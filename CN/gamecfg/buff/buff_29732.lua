@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-风云II"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-风云II",
-	name = "专属弹幕-风云II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-风云II",
-	stack = 1,
-	id = 29732,
-	icon = 29730,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 29730
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-风云II"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-风云II",
+	name = "专属弹幕-风云II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-风云II",
+	stack = 1,
+	id = 29732,
+	icon = 29730,
+	last_effect = ""
 }

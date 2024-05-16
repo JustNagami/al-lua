@@ -1,130 +1,121 @@
-slot0 = class("BackYardGetThemeTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardGetThemeTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
-	slot5 = getProxy(DormProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = getProxy(DormProxy)
 
-	function slot6(slot0, slot1)
-		if uv0 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-			slot2 = {}
-			slot3 = ipairs
-			slot4 = slot0.theme_id_list or {}
+	local function var_1_4(arg_2_0, arg_2_1)
+		if var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+			local var_2_0 = {}
 
-			for slot6, slot7 in slot3(slot4) do
-				slot8 = nil
-				slot8 = BackYardThemeTemplate.New({
-					id = slot7
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.theme_id_list or {}) do
+				local var_2_1
+				local var_2_2 = BackYardThemeTemplate.New({
+					id = iter_2_1
 				})
 
-				slot8:SetSortIndex(slot6)
+				var_2_2:SetSortIndex(iter_2_0)
 
-				slot2[slot8.id] = slot8
+				var_2_0[var_2_2.id] = var_2_2
 			end
 
-			uv1:SetShopThemeTemplates(slot2)
-		elseif uv0 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-			slot2 = {}
-			slot3 = ipairs
-			slot4 = slot0.theme_list or {}
+			var_1_3:SetShopThemeTemplates(var_2_0)
+		elseif var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+			local var_2_3 = {}
 
-			for slot6, slot7 in slot3(slot4) do
-				slot8 = nil
-				slot8 = BackYardSelfThemeTemplate.New(slot7)
-				slot2[slot8.id] = slot8
+			for iter_2_2, iter_2_3 in ipairs(arg_2_0.theme_list or {}) do
+				local var_2_4
+				local var_2_5 = BackYardSelfThemeTemplate.New(iter_2_3)
+
+				var_2_3[var_2_5.id] = var_2_5
 			end
 
-			uv1:SetCustomThemeTemplates(slot2)
-		elseif uv0 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-			slot2 = {}
-			slot3 = ipairs
-			slot4 = slot0.theme_profile_list or {}
+			var_1_3:SetCustomThemeTemplates(var_2_3)
+		elseif var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+			local var_2_6 = {}
 
-			for slot6, slot7 in slot3(slot4) do
-				slot8 = nil
-				slot8 = BackYardThemeTemplate.New({
-					id = slot7.id,
-					upload_time = slot7.upload_time
+			for iter_2_4, iter_2_5 in ipairs(arg_2_0.theme_profile_list or {}) do
+				local var_2_7
+				local var_2_8 = BackYardThemeTemplate.New({
+					id = iter_2_5.id,
+					upload_time = iter_2_5.upload_time
 				})
-				slot2[slot8.id] = slot8
+
+				var_2_6[var_2_8.id] = var_2_8
 			end
 
-			uv1:SetCollectionThemeTemplates(slot2)
+			var_1_3:SetCollectionThemeTemplates(var_2_6)
 		end
 
-		if slot1 then
-			slot1()
+		if arg_2_1 then
+			arg_2_1()
 		end
 	end
 
-	function slot7(slot0)
-		uv0:sendNotification(GAME.BACKYARD_GET_IMG_MD5, {
-			type = uv1,
-			callback = slot0
+	local function var_1_5(arg_3_0)
+		arg_1_0:sendNotification(GAME.BACKYARD_GET_IMG_MD5, {
+			type = var_1_1,
+			callback = arg_3_0
 		})
 	end
 
-	function slot8(slot0)
+	local function var_1_6(arg_4_0)
 		seriesAsync({
-			function (slot0)
-				uv0(uv1, slot0)
+			function(arg_5_0)
+				var_1_4(arg_4_0, arg_5_0)
 			end,
-			function (slot0)
-				uv0(slot0)
+			function(arg_6_0)
+				var_1_5(arg_6_0)
 			end
-		}, function ()
-			uv0:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DONE)
+		}, function()
+			arg_1_0:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DONE)
 
-			if uv1 then
-				uv1()
+			if var_1_2 then
+				var_1_2()
 			end
 		end)
 	end
 
-	if slot2.type == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		slot9 = pg.ConnectionMgr.GetInstance()
+	if var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		pg.ConnectionMgr.GetInstance():Send(19105, {
+			typ = var_1_1
+		}, 19106, function(arg_8_0)
+			if arg_8_0.result == 0 then
+				var_1_4(arg_8_0)
+				arg_1_0:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DONE)
 
-		slot9:Send(19105, {
-			typ = slot3
-		}, 19106, function (slot0)
-			if slot0.result == 0 then
-				uv0(slot0)
-				uv1:sendNotification(GAME.BACKYARD_GET_THEME_TEMPLATE_DONE)
-
-				if uv2 then
-					uv2()
+				if var_1_2 then
+					var_1_2()
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_8_0.result] .. arg_8_0.result)
 			end
 		end)
-	elseif slot3 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		slot9 = pg.ConnectionMgr.GetInstance()
-
-		slot9:Send(19117, {
-			typ = slot5.TYPE,
-			page = slot5.PAGE,
+	elseif var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		pg.ConnectionMgr.GetInstance():Send(19117, {
+			typ = var_1_3.TYPE,
+			page = var_1_3.PAGE,
 			num = BackYardConst.THEME_TEMPLATE_SHOP_REFRSH_CNT
-		}, 19118, function (slot0)
-			if slot0.result == 0 then
-				uv0(slot0)
+		}, 19118, function(arg_9_0)
+			if arg_9_0.result == 0 then
+				var_1_6(arg_9_0)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_9_0.result] .. arg_9_0.result)
 			end
 		end)
-	elseif slot3 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		slot9 = pg.ConnectionMgr.GetInstance()
-
-		slot9:Send(19115, {
+	elseif var_1_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		pg.ConnectionMgr.GetInstance():Send(19115, {
 			typ = 3
-		}, 19116, function (slot0)
-			if slot0.result == 0 then
-				uv0(slot0)
+		}, 19116, function(arg_10_0)
+			if arg_10_0.result == 0 then
+				var_1_6(arg_10_0)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_10_0.result] .. arg_10_0.result)
 			end
 		end)
 	end
 end
 
-return slot0
+return var_0_0

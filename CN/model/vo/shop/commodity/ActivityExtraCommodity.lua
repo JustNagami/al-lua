@@ -1,17 +1,19 @@
-slot0 = class("ActivityExtraCommodity", import(".ActivityCommodity"))
+﻿local var_0_0 = class("ActivityExtraCommodity", import(".ActivityCommodity"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.activity_shop_extra
 end
 
-function slot0.ShowMaintenanceTime(slot0)
-	return slot0:getConfig("end_by_maintenance") == 1
+function var_0_0.ShowMaintenanceTime(arg_2_0)
+	return arg_2_0:getConfig("end_by_maintenance") == 1
 end
 
-function slot0.GetMaintenanceMonthAndDay(slot0)
-	slot1 = slot0:getConfig("time")
+function var_0_0.GetMaintenanceMonthAndDay(arg_3_0)
+	local var_3_0 = arg_3_0:getConfig("time")
+	local var_3_1 = var_3_0[2][1][2]
+	local var_3_2 = var_3_0[2][1][3]
 
-	return slot1[2][1][2], slot1[2][1][3]
+	return var_3_1, var_3_2
 end
 
-return slot0
+return var_0_0

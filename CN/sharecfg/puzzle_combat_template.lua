@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.puzzle_combat_template = {
 	[100] = {
 		description = "该测试中，可以学习「信息对抗模拟测试」战斗的基本指令操作与界面功能",

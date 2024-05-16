@@ -1,77 +1,78 @@
-slot0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"))
-slot0.StateLive = 1
-slot0.StateDead = 2
+﻿local var_0_0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"))
 
-function slot0.GetOrder(slot0)
+var_0_0.StateLive = 1
+var_0_0.StateDead = 2
+
+function var_0_0.GetOrder(arg_1_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.info
+function var_0_0.Update(arg_2_0)
+	local var_2_0 = arg_2_0.info
 
-	if IsNil(slot0.go) then
-		slot0:PrepareBase("bomb_enemy_" .. slot1.attachmentId)
+	if IsNil(arg_2_0.go) then
+		arg_2_0:PrepareBase("bomb_enemy_" .. var_2_0.attachmentId)
 	end
 
-	slot2 = slot0.state
+	local var_2_1 = arg_2_0.state
 
-	if slot1.flag == ChapterConst.CellFlagActive and slot0.state ~= uv0.StateLive then
-		slot0.state = uv0.StateLive
-		slot0.dead = nil
+	if var_2_0.flag == ChapterConst.CellFlagActive and arg_2_0.state ~= var_0_0.StateLive then
+		arg_2_0.state = var_0_0.StateLive
+		arg_2_0.dead = nil
 
-		slot0:ClearLoader()
-		assert(pg.specialunit_template[slot1.attachmentId], "specialunit_template not exist: " .. slot1.attachmentId)
+		arg_2_0:ClearLoader()
 
-		slot4 = slot0:GetLoader()
+		local var_2_2 = pg.specialunit_template[var_2_0.attachmentId]
 
-		slot4:GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
-			setParent(slot0, uv0.tf)
+		assert(var_2_2, "specialunit_template not exist: " .. var_2_0.attachmentId)
+		arg_2_0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function(arg_3_0)
+			setParent(arg_3_0, arg_2_0.tf)
 
-			tf(slot0).anchoredPosition = Vector2(0, 10)
+			tf(arg_3_0).anchoredPosition = Vector2(0, 10)
 
-			uv0:GetLoader():GetSprite("enemies/" .. uv1.prefab, "", findTF(slot0, "icon"))
-			setActive(findTF(slot0, "titleContain/bg_s"), uv1.enemy_point == 5)
-			setActive(findTF(slot0, "titleContain/bg_m"), uv1.enemy_point == 8)
-			setActive(findTF(slot0, "titleContain/bg_h"), uv1.enemy_point == 10)
+			arg_2_0:GetLoader():GetSprite("enemies/" .. var_2_2.prefab, "", findTF(arg_3_0, "icon"))
+			setActive(findTF(arg_3_0, "titleContain/bg_s"), var_2_2.enemy_point == 5)
+			setActive(findTF(arg_3_0, "titleContain/bg_m"), var_2_2.enemy_point == 8)
+			setActive(findTF(arg_3_0, "titleContain/bg_h"), var_2_2.enemy_point == 10)
 
-			uv0.enemy = slot0
+			arg_2_0.enemy = arg_3_0
 
-			uv0:ResetCanvasOrder()
-			uv0:Update()
+			arg_2_0:ResetCanvasOrder()
+			arg_2_0:Update()
 		end)
-	elseif slot1.flag == ChapterConst.CellFlagDisabled and slot0.state ~= uv0.StateDead then
-		slot0.state = uv0.StateDead
-		slot0.enemy = nil
+	elseif var_2_0.flag == ChapterConst.CellFlagDisabled and arg_2_0.state ~= var_0_0.StateDead then
+		arg_2_0.state = var_0_0.StateDead
+		arg_2_0.enemy = nil
 
-		slot0:ClearLoader()
-		assert(pg.land_based_template[slot1.attachmentId], "land_based_template not exist: " .. slot1.attachmentId)
+		arg_2_0:ClearLoader()
 
-		slot4 = slot0:GetLoader()
+		local var_2_3 = pg.land_based_template[var_2_0.attachmentId]
 
-		slot4:GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function (slot0)
-			setParent(slot0, uv0.tf)
+		assert(var_2_3, "land_based_template not exist: " .. var_2_0.attachmentId)
+		arg_2_0:GetLoader():GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function(arg_4_0)
+			setParent(arg_4_0, arg_2_0.tf)
 
-			tf(slot0).anchoredPosition = Vector2(0, 10)
+			tf(arg_4_0).anchoredPosition = Vector2(0, 10)
 
-			uv0:GetLoader():GetSprite("enemies/" .. uv1.prefab .. "_d_blue", "", findTF(slot0, "icon"))
-			setActive(findTF(slot0, "effect_not_open"), false)
-			setActive(findTF(slot0, "effect_open"), false)
-			setActive(findTF(slot0, "huoqiubaozha"), uv2 == uv3.StateLive)
+			arg_2_0:GetLoader():GetSprite("enemies/" .. var_2_3.prefab .. "_d_blue", "", findTF(arg_4_0, "icon"))
+			setActive(findTF(arg_4_0, "effect_not_open"), false)
+			setActive(findTF(arg_4_0, "effect_open"), false)
+			setActive(findTF(arg_4_0, "huoqiubaozha"), var_2_1 == var_0_0.StateLive)
 
-			uv0.dead = slot0
+			arg_2_0.dead = arg_4_0
 
-			uv0:ResetCanvasOrder()
-			uv0:Update()
+			arg_2_0:ResetCanvasOrder()
+			arg_2_0:Update()
 		end)
 	end
 
-	if slot1.flag == ChapterConst.CellFlagActive and slot0.enemy then
-		setActive(findTF(slot0.enemy, "effect_found"), slot1.trait == ChapterConst.TraitVirgin)
+	if var_2_0.flag == ChapterConst.CellFlagActive and arg_2_0.enemy then
+		setActive(findTF(arg_2_0.enemy, "effect_found"), var_2_0.trait == ChapterConst.TraitVirgin)
 
-		if slot1.trait == ChapterConst.TraitVirgin then
+		if var_2_0.trait == ChapterConst.TraitVirgin then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 		end
 	end
 end
 
-return slot0
+return var_0_0

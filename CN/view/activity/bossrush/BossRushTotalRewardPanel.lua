@@ -1,118 +1,130 @@
-slot0 = class("BossRushTotalRewardPanel", import("view.activity.worldboss.ActivityBossTotalRewardPanel"))
+﻿local var_0_0 = class("BossRushTotalRewardPanel", import("view.activity.worldboss.ActivityBossTotalRewardPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BossRushTotalRewardPanel"
 end
 
-slot1 = 0.15
+local var_0_1 = 0.15
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, nil, {
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, nil, {
 		lockGlobalBlur = true,
 		weight = LayerWeightConst.SECOND_LAYER
 	})
-	slot0:UpdateView()
+	arg_3_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	onButton(slot0, slot0._tf:Find("BG"), function ()
-		if uv0.isRewardAnimating then
-			uv0:SkipAnim()
+function var_0_0.UpdateView(arg_4_0)
+	local var_4_0 = arg_4_0.contextData
+
+	onButton(arg_4_0, arg_4_0._tf:Find("BG"), function()
+		if arg_4_0.isRewardAnimating then
+			arg_4_0:SkipAnim()
 
 			return
 		end
 
-		existCall(uv1.onClose)
-		uv0:closeView()
+		existCall(var_4_0.onClose)
+		arg_4_0:closeView()
 	end)
-	setText(slot0.window:Find("Fixed/ButtonGO/pic"), i18n("text_confirm"))
-	onButton(slot0, slot0.window:Find("Fixed/ButtonGO"), function ()
-		existCall(uv0.onClose)
-		uv1:closeView()
+	setText(arg_4_0.window:Find("Fixed/ButtonGO/pic"), i18n("text_confirm"))
+	onButton(arg_4_0, arg_4_0.window:Find("Fixed/ButtonGO"), function()
+		existCall(var_4_0.onClose)
+		arg_4_0:closeView()
 	end, SFX_CONFIRM)
-	setText(slot0.window:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
-	onButton(slot0, slot0.window:Find("Fixed/ButtonExit"), function ()
-		existCall(uv0.onClose)
-		uv1:closeView()
+	setText(arg_4_0.window:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
+	onButton(arg_4_0, arg_4_0.window:Find("Fixed/ButtonExit"), function()
+		existCall(var_4_0.onClose)
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
 
-	slot3 = {}
-	slot0.itemList = slot0.boxView:Find("Content/ItemGrid")
+	local var_4_1 = var_4_0.rewards
+	local var_4_2 = {}
+	local var_4_3 = var_4_1 and #var_4_1 > 0
 
-	setActive(slot0.boxView:Find("Content/TextArea2"), false)
-	setActive(slot0.boxView:Find("Content/ItemGrid2"), false)
-	setActive(slot0.boxView:Find("Content/Title"), false)
-	setActive(slot0.itemList, false)
+	arg_4_0.itemList = arg_4_0.boxView:Find("Content/ItemGrid")
 
-	if slot0.contextData.rewards and #slot2 > 0 then
-		slot0.hasRewards = true
+	setActive(arg_4_0.boxView:Find("Content/TextArea2"), false)
+	setActive(arg_4_0.boxView:Find("Content/ItemGrid2"), false)
+	setActive(arg_4_0.boxView:Find("Content/Title"), false)
+	setActive(arg_4_0.itemList, false)
 
-		table.insert(slot3, function (slot0)
-			setActive(uv0.boxView:Find("Content/Title"), true)
-			setActive(uv0.itemList, true)
-			slot0()
+	if var_4_3 then
+		arg_4_0.hasRewards = true
+
+		table.insert(var_4_2, function(arg_8_0)
+			setActive(arg_4_0.boxView:Find("Content/Title"), true)
+			setActive(arg_4_0.itemList, true)
+			arg_8_0()
 		end)
 
-		for slot9, slot10 in ipairs(CustomIndexLayer.Clone2Full(slot0.itemList, #slot2)) do
-			slot12 = slot5[slot9]
+		local var_4_4 = CustomIndexLayer.Clone2Full(arg_4_0.itemList, #var_4_1)
 
-			updateDrop(slot12:Find("Shell/Icon"), slot2[slot9])
-			onButton(slot0, slot12:Find("Shell/Icon"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+		for iter_4_0, iter_4_1 in ipairs(var_4_4) do
+			local var_4_5 = var_4_1[iter_4_0]
+			local var_4_6 = var_4_4[iter_4_0]
+
+			updateDrop(var_4_6:Find("Shell/Icon"), var_4_5)
+			onButton(arg_4_0, var_4_6:Find("Shell/Icon"), function()
+				arg_4_0:emit(BaseUI.ON_DROP, var_4_5)
 			end, SFX_PANEL)
 		end
 
-		slot0.isRewardAnimating = true
-		slot6 = {}
+		arg_4_0.isRewardAnimating = true
 
-		for slot10 = 1, #slot2 do
-			setActive(slot5[slot10], false)
-			table.insert(slot3, function (slot0)
-				if uv0.exited then
+		local var_4_7 = {}
+
+		for iter_4_2 = 1, #var_4_1 do
+			local var_4_8 = var_4_4[iter_4_2]
+
+			setActive(var_4_8, false)
+			table.insert(var_4_2, function(arg_10_0)
+				if arg_4_0.exited then
 					return
 				end
 
-				setActive(uv1, true)
-				scrollTo(uv0.boxView:Find("Content"), {
+				setActive(var_4_8, true)
+				scrollTo(arg_4_0.boxView:Find("Content"), {
 					y = 0
 				})
 
-				uv0.LTid = LeanTween.delayedCall(uv2, System.Action(slot0)).uniqueId
+				arg_4_0.LTid = LeanTween.delayedCall(var_0_1, System.Action(arg_10_0)).uniqueId
 			end)
 		end
 	end
 
-	slot5 = {}
+	local var_4_9 = {}
+	local var_4_10 = arg_4_0.contextData.stopReason
 
-	if not slot0.contextData.stopReason then
-		if slot0.contextData.isAutoFight then
-			table.insert(slot5, i18n("multiple_sorties_finish"))
+	if not var_4_10 then
+		if arg_4_0.contextData.isAutoFight then
+			table.insert(var_4_9, i18n("multiple_sorties_finish"))
 		else
-			table.insert(slot5, i18n("multiple_sorties_stop"))
+			table.insert(var_4_9, i18n("multiple_sorties_stop"))
 		end
 	else
-		table.insert(slot5, slot6 .. i18n("multiple_sorties_stop_tip_end"))
+		table.insert(var_4_9, var_4_10 .. i18n("multiple_sorties_stop_tip_end"))
 	end
 
-	if slot0.contextData.totalBattleTimes then
-		table.insert(slot5, i18n("multiple_sorties_end_status", slot0.contextData.totalBattleTimes, slot0.contextData.totalBattleTimes - slot0.contextData.continuousBattleTimes))
+	if arg_4_0.contextData.totalBattleTimes then
+		table.insert(var_4_9, i18n("multiple_sorties_end_status", arg_4_0.contextData.totalBattleTimes, arg_4_0.contextData.totalBattleTimes - arg_4_0.contextData.continuousBattleTimes))
 
-		if #slot5 > 0 then
-			setText(slot0.boxView:Find("Content/TextArea2/Text"), table.concat(slot5, "\n"))
+		if #var_4_9 > 0 then
+			setText(arg_4_0.boxView:Find("Content/TextArea2/Text"), table.concat(var_4_9, "\n"))
 		end
 	end
 
-	seriesAsync(slot3, function ()
-		uv0:SkipAnim()
+	seriesAsync(var_4_2, function()
+		arg_4_0:SkipAnim()
 	end)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_12_0)
 	pg.m02:sendNotification(BossRushTotalRewardPanelMediator.ON_WILL_EXIT)
 end
 
-return slot0
+return var_0_0

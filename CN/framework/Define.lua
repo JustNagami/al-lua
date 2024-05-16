@@ -1,2 +1,2 @@
-ys = ys or {}
+﻿ys = ys or {}
 ys.Constants = {}

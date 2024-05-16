@@ -1,46 +1,48 @@
-slot0 = class("SkinKisaragiPage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("SkinKisaragiPage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.textProgress = slot0.bg:Find("progress_text")
-	slot0.btnGo = slot0.bg:Find("btn_go")
-	slot0.markGot = slot0.bg:Find("got")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.textProgress = arg_1_0.bg:Find("progress_text")
+	arg_1_0.btnGo = arg_1_0.bg:Find("btn_go")
+	arg_1_0.markGot = arg_1_0.bg:Find("got")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot1 = getProxy(TaskProxy)
-	slot0.taskList = slot0.activity:getConfig("config_data")
-	slot0.taskIndex = #slot0.taskList
-	slot0.taskVO = nil
+function var_0_0.OnDataSetting(arg_2_0)
+	local var_2_0 = getProxy(TaskProxy)
 
-	while slot0.taskIndex > 0 do
-		slot0.taskVO = slot1:getTaskVO(slot0.taskList[slot0.taskIndex])
+	arg_2_0.taskList = arg_2_0.activity:getConfig("config_data")
+	arg_2_0.taskIndex = #arg_2_0.taskList
+	arg_2_0.taskVO = nil
 
-		if slot0.taskVO then
+	while arg_2_0.taskIndex > 0 do
+		arg_2_0.taskVO = var_2_0:getTaskVO(arg_2_0.taskList[arg_2_0.taskIndex])
+
+		if arg_2_0.taskVO then
 			break
 		end
 
-		slot0.taskIndex = slot0.taskIndex - 1
+		arg_2_0.taskIndex = arg_2_0.taskIndex - 1
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.btnGo, function ()
-		if uv0.taskVO and not uv0.taskVO:isReceive() then
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.btnGo, function()
+		if arg_3_0.taskVO and not arg_3_0.taskVO:isReceive() then
+			arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 		else
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
+			arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	setText(slot0.textProgress, slot0.taskIndex .. "/" .. #slot0.taskList)
-	setActive(slot0.btnGo, slot0.taskIndex < #slot0.taskList)
-	setActive(slot0.markGot, slot0.taskIndex == #slot0.taskList)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	setText(arg_5_0.textProgress, arg_5_0.taskIndex .. "/" .. #arg_5_0.taskList)
+	setActive(arg_5_0.btnGo, arg_5_0.taskIndex < #arg_5_0.taskList)
+	setActive(arg_5_0.markGot, arg_5_0.taskIndex == #arg_5_0.taskList)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

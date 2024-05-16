@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_78 = {}
-slot1 = slot0.word_template_78
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_78 = {}
+
+local var_0_1 = var_0_0.word_template_78
 
 function temp()
-	uv0["㎎"] = {
+	var_0_1.㎎ = {
 		this = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["㎜"] = {
+	var_0_1.㎜ = {
 		this = {
 			this = true
 		}
@@ -24,7 +27,7 @@ end
 temp()
 
 function temp()
-	uv0.Z = {
+	var_0_1.Z = {
 		H = {
 			U = {
 				A = {
@@ -53,18 +56,18 @@ function temp()
 		},
 		h = {
 			a = {
-				["药"] = {
-					["制"] = {
-						["造"] = {
-							["进"] = {
-								["程"] = {
+				药 = {
+					制 = {
+						造 = {
+							进 = {
+								程 = {
 									this = true
 								}
 							}
 						}
 					},
-					["自"] = {
-						["造"] = {
+					自 = {
+						造 = {
 							this = true
 						}
 					}
@@ -74,18 +77,18 @@ function temp()
 		X = {
 			["8"] = {
 				["8"] = {
-					["正"] = {
-						["品"] = {
+					正 = {
+						品 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["国"] = {
-			["指"] = {
-				["挥"] = {
-					["官"] = {
+		国 = {
+			指 = {
+				挥 = {
+					官 = {
 						this = true
 					}
 				}
@@ -93,7 +96,7 @@ function temp()
 		},
 		O = {
 			D = {
-				["会"] = {
+				会 = {
 					this = true
 				}
 			},
@@ -102,12 +105,12 @@ function temp()
 					this = true
 				}
 			},
-			["大"] = {
+			大 = {
 				this = true
 			}
 		},
 		["0"] = {
-			["大"] = {
+			大 = {
 				this = true
 			}
 		}
@@ -117,7 +120,7 @@ end
 temp()
 
 function temp()
-	uv0["碡"] = {
+	var_0_1.碡 = {
 		this = {
 			this = true
 		}
@@ -127,7 +130,7 @@ end
 temp()
 
 function temp()
-	uv0["籀"] = {
+	var_0_1.籀 = {
 		this = {
 			this = true
 		}
@@ -137,7 +140,7 @@ end
 temp()
 
 function temp()
-	uv0["邾"] = {
+	var_0_1.邾 = {
 		this = {
 			this = true
 		}
@@ -147,7 +150,7 @@ end
 temp()
 
 function temp()
-	uv0["舳"] = {
+	var_0_1.舳 = {
 		this = {
 			this = true
 		}
@@ -157,7 +160,7 @@ end
 temp()
 
 function temp()
-	uv0["瘃"] = {
+	var_0_1.瘃 = {
 		this = {
 			this = true
 		}
@@ -167,7 +170,7 @@ end
 temp()
 
 function temp()
-	uv0["躅"] = {
+	var_0_1.躅 = {
 		this = {
 			this = true
 		}
@@ -177,7 +180,7 @@ end
 temp()
 
 function temp()
-	uv0["翥"] = {
+	var_0_1.翥 = {
 		this = {
 			this = true
 		}

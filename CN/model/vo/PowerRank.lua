@@ -1,15 +1,16 @@
-slot0 = class("PowerRank", import(".PlayerAttire"))
-slot0.TYPE_POWER = 1
-slot0.TYPE_COLLECTION = 2
-slot0.TYPE_PT = 3
-slot0.TYPE_PLEDGE = 4
-slot0.TYPE_CHALLENGE = 5
-slot0.TYPE_EXTRA_CHAPTER = 6
-slot0.TYPE_ACT_BOSS_BATTLE = 7
-slot0.TYPE_GUILD_BATTLE = 8
-slot0.TYPE_MILITARY_RANK = 9
-slot0.TYPE_BOSSRUSH = 10
-slot0.typeInfo = {
+﻿local var_0_0 = class("PowerRank", import(".PlayerAttire"))
+
+var_0_0.TYPE_POWER = 1
+var_0_0.TYPE_COLLECTION = 2
+var_0_0.TYPE_PT = 3
+var_0_0.TYPE_PLEDGE = 4
+var_0_0.TYPE_CHALLENGE = 5
+var_0_0.TYPE_EXTRA_CHAPTER = 6
+var_0_0.TYPE_ACT_BOSS_BATTLE = 7
+var_0_0.TYPE_GUILD_BATTLE = 8
+var_0_0.TYPE_MILITARY_RANK = 9
+var_0_0.TYPE_BOSSRUSH = 10
+var_0_0.typeInfo = {
 	{
 		title_word = {
 			5,
@@ -101,73 +102,77 @@ slot0.typeInfo = {
 	}
 }
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.id = slot1.user_id or slot1.id
-	slot0.lv = slot1.lv or slot1.level
-	slot0.name = slot1.name
-	slot0.power = slot1.point or slot1.score or 0
-	slot0.rank = slot1.rank or 0
-	slot0.arenaRank = math.min(math.max(slot1.arena_rank or 0, 1), 14)
+	arg_1_0.id = arg_1_1.user_id or arg_1_1.id
+	arg_1_0.lv = arg_1_1.lv or arg_1_1.level
+	arg_1_0.name = arg_1_1.name
+	arg_1_0.power = arg_1_1.point or arg_1_1.score or 0
+	arg_1_0.rank = arg_1_1.rank or 0
+	arg_1_0.arenaRank = math.min(math.max(arg_1_1.arena_rank or 0, 1), 14)
 
-	assert(slot2, "type can not be nil")
+	assert(arg_1_2, "type can not be nil")
 
-	slot0.type = slot2
+	arg_1_0.type = arg_1_2
 end
 
-function slot0.getPainting(slot0)
-	return pg.ship_skin_template[slot0.skinId] and slot1.painting or "unknown"
+function var_0_0.getPainting(arg_2_0)
+	local var_2_0 = pg.ship_skin_template[arg_2_0.skinId]
+
+	return var_2_0 and var_2_0.painting or "unknown"
 end
 
-function slot0.setRank(slot0, slot1)
-	slot0.rank = slot1
+function var_0_0.setRank(arg_3_0, arg_3_1)
+	arg_3_0.rank = arg_3_1
 end
 
-function slot0.setArenaRank(slot0, slot1)
-	slot0.arenaRank = slot1
+function var_0_0.setArenaRank(arg_4_0, arg_4_1)
+	arg_4_0.arenaRank = arg_4_1
 end
 
-function slot0.getPowerTxt(slot0)
-	if slot0.type == uv0.TYPE_POWER then
-		return math.floor(slot0.power^0.667)
-	elseif slot0.type == uv0.TYPE_COLLECTION then
-		return string.format("%0.01f", slot0.power / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%"
-	elseif slot0.type == uv0.TYPE_MILITARY_RANK then
-		return slot0.power + SeasonInfo.INIT_POINT
+function var_0_0.getPowerTxt(arg_5_0)
+	if arg_5_0.type == var_0_0.TYPE_POWER then
+		return math.floor(arg_5_0.power^0.667)
+	elseif arg_5_0.type == var_0_0.TYPE_COLLECTION then
+		local var_5_0 = getProxy(CollectionProxy):getCollectionTotal()
+
+		return string.format("%0.01f", arg_5_0.power / var_5_0 * 100) .. "%"
+	elseif arg_5_0.type == var_0_0.TYPE_MILITARY_RANK then
+		return arg_5_0.power + SeasonInfo.INIT_POINT
 	else
-		return slot0.power
+		return arg_5_0.power
 	end
 end
 
-function slot0.getTitleWord(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.getTitleWord(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = {}
 
-	for slot7 = 1, 4 do
-		table.insert(slot3, i18n("ranking_word_" .. uv0.typeInfo[slot1].title_word[slot7]))
+	for iter_6_0 = 1, 4 do
+		table.insert(var_6_0, i18n("ranking_word_" .. var_0_0.typeInfo[arg_6_1].title_word[iter_6_0]))
 	end
 
-	if slot1 == uv0.TYPE_PT then
-		slot3[4] = Item.getConfigData(id2ItemId(getProxy(ActivityProxy):getActivityById(slot2):getConfig("config_id"))).name
+	if arg_6_1 == var_0_0.TYPE_PT then
+		local var_6_1 = id2ItemId(getProxy(ActivityProxy):getActivityById(arg_6_2):getConfig("config_id"))
+
+		var_6_0[4] = Item.getConfigData(var_6_1).name
 	end
 
-	return slot3
+	return var_6_0
 end
 
-function slot0.getScoreIcon(slot0, slot1)
-	return uv0.typeInfo[slot1].score_icon
+function var_0_0.getScoreIcon(arg_7_0, arg_7_1)
+	return var_0_0.typeInfo[arg_7_1].score_icon
 end
 
-function slot0.getActivityByRankType(slot0, slot1)
-	if not uv0.typeInfo[slot1].act_type then
+function var_0_0.getActivityByRankType(arg_8_0, arg_8_1)
+	if not var_0_0.typeInfo[arg_8_1].act_type then
 		return nil
 	end
 
-	slot3 = getProxy(ActivityProxy)
-
-	return _.detect(slot3:getActivitiesByType(uv0.typeInfo[slot1].act_type), function (slot0)
-		return not slot0:isEnd() and (uv0 ~= uv1.TYPE_PT or tonumber(slot0:getConfig("config_data")) > 0)
+	return _.detect(getProxy(ActivityProxy):getActivitiesByType(var_0_0.typeInfo[arg_8_1].act_type), function(arg_9_0)
+		return not arg_9_0:isEnd() and (arg_8_1 ~= var_0_0.TYPE_PT or tonumber(arg_9_0:getConfig("config_data")) > 0)
 	end)
 end
 
-return slot0
+return var_0_0

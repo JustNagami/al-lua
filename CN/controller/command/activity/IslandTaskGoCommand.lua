@@ -1,90 +1,103 @@
-slot0 = class("IslandTaskGoCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("IslandTaskGoCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if slot1.body.taskVO:getConfig("scene") and #slot4 > 0 then
-		if slot4[1] == "ANNIVERSARY_ISLAND_SEA" then
-			slot7 = slot4[2].nodeIds
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1.body.taskVO:getConfig("scene")
 
-			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(SixthAnniversaryIslandMediator) then
-				slot0:sendNotification(SixthAnniversaryIslandMediator.DISPLAY_NODES, slot7)
+	if var_1_0 and #var_1_0 > 0 then
+		if var_1_0[1] == "ANNIVERSARY_ISLAND_SEA" then
+			local var_1_1 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(SixthAnniversaryIslandMediator)
+			local var_1_2 = var_1_0[2].nodeIds
+
+			if var_1_1 then
+				arg_1_0:sendNotification(SixthAnniversaryIslandMediator.DISPLAY_NODES, var_1_2)
 			else
-				slot0:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
-					nodeIds = slot7
+				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
+					nodeIds = var_1_2
 				})
 			end
-		elseif slot4[1] == "ANNIVERSARY_ISLAND_WORKBENCH" then
-			if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH) or slot5:isEnd() then
+		elseif var_1_0[1] == "ANNIVERSARY_ISLAND_WORKBENCH" then
+			local var_1_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
+
+			if not var_1_3 or var_1_3:isEnd() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 				return
 			end
 
-			if AcessWithinNull(slot4[2], "formulaId") and slot6 > 0 then
-				slot7 = WorkBenchFormula.New({
-					configId = slot6
+			local var_1_4 = AcessWithinNull(var_1_0[2], "formulaId")
+
+			if var_1_4 and var_1_4 > 0 then
+				local var_1_5 = WorkBenchFormula.New({
+					configId = var_1_4
 				})
 
-				slot7:BuildFromActivity()
+				var_1_5:BuildFromActivity()
 
-				if not slot7:IsAvaliable() then
+				if not var_1_5:IsAvaliable() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips1"))
 
 					return
 				end
 
-				if not slot7:IsUnlock() then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips4", slot7:GetLockLimit() and slot8[3]))
+				if not var_1_5:IsUnlock() then
+					local var_1_6 = var_1_5:GetLockLimit()
+
+					pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips4", var_1_6 and var_1_6[3]))
 
 					return
 				end
 			end
 
 			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(AnniversaryIslandComposite2023Mediator) then
-				slot0:sendNotification(AnniversaryIslandComposite2023Mediator.OPEN_FORMULA, slot6)
+				arg_1_0:sendNotification(AnniversaryIslandComposite2023Mediator.OPEN_FORMULA, var_1_4)
 			else
-				slot0:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_WORKBENCH, {
-					formulaId = slot6
+				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_WORKBENCH, {
+					formulaId = var_1_4
 				})
 			end
-		elseif slot4[1] == "ISLAND_BUILDING" then
-			slot8 = Context.New({
+		elseif var_1_0[1] == "ISLAND_BUILDING" then
+			local var_1_7 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(AnniversaryIsland2023Mediator)
+			local var_1_8 = var_1_0[2].build
+			local var_1_9 = Context.New({
 				mediator = AnniversaryIslandBuildingUpgrade2023WindowMediator,
 				viewComponent = AnniversaryIslandBuildingUpgrade2023Window,
 				data = {
 					isLayer = true,
-					buildingID = slot4[2].build
+					buildingID = var_1_8
 				}
 			})
 
-			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(AnniversaryIsland2023Mediator) then
-				slot0:sendNotification(GAME.LOAD_LAYERS, {
-					parentContext = slot6,
-					context = slot8
+			if var_1_7 then
+				arg_1_0:sendNotification(GAME.LOAD_LAYERS, {
+					parentContext = var_1_7,
+					context = var_1_9
 				})
 			else
-				slot6 = Context.New()
+				local var_1_10 = Context.New()
 
-				SCENE.SetSceneInfo(slot6, SCENE.ANNIVERSARY_ISLAND_BACKHILL_2023)
-				slot6:addChild(slot8)
+				SCENE.SetSceneInfo(var_1_10, SCENE.ANNIVERSARY_ISLAND_BACKHILL_2023)
+				var_1_10:addChild(var_1_9)
 				print("load scene: " .. SCENE.ANNIVERSARY_ISLAND_BACKHILL_2023)
-				slot0:sendNotification(GAME.LOAD_SCENE, {
-					context = slot6
+				arg_1_0:sendNotification(GAME.LOAD_SCENE, {
+					context = var_1_10
 				})
 			end
 		else
-			slot5 = Context.New()
+			local var_1_11 = Context.New()
 
-			SCENE.SetSceneInfo(slot5, SCENE[slot4[1]])
+			SCENE.SetSceneInfo(var_1_11, SCENE[var_1_0[1]])
 
-			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(slot5.mediator) then
+			local var_1_12 = var_1_11.mediator
+
+			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(var_1_12) then
 				warning("Enter Current Context")
 
 				return
 			end
 
-			slot0:sendNotification(GAME.GO_SCENE, SCENE[slot4[1]], slot4[2])
+			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE[var_1_0[1]], var_1_0[2])
 		end
 	end
 end
 
-return slot0
+return var_0_0

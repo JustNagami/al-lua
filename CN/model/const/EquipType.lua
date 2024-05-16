@@ -1,84 +1,86 @@
-slot0 = class("EquipType")
-slot0.CannonQuZhu = 1
-slot0.CannonQingXun = 2
-slot0.CannonZhongXun = 3
-slot0.CannonZhanlie = 4
-slot0.Torpedo = 5
-slot0.AntiAircraft = 6
-slot0.FighterAircraft = 7
-slot0.TorpedoAircraft = 8
-slot0.BomberAircraft = 9
-slot0.Equipment = 10
-slot0.CannonZhongXun2 = 11
-slot0.SeaPlane = 12
-slot0.SubmarineTorpedo = 13
-slot0.Sonar = 14
-slot0.AntiSubAircraft = 15
-slot0.Helicopter = 17
-slot0.Goods = 18
-slot0.Missile = 20
-slot0.RangedAntiAircraft = 21
-slot0.AmmoType_1 = 1
-slot0.AmmoType_2 = 2
-slot0.AmmoType_3 = 3
-slot0.AmmoType_4 = 4
-slot0.AmmoType_5 = 5
-slot0.AmmoType_6 = 6
-slot0.AmmoType_7 = 7
-slot0.AmmoType_8 = 8
-slot0.AmmoType_8 = 9
-slot0.AmmoType_8 = 10
-slot0.CannonEquipTypes = {
-	slot0.CannonQuZhu,
-	slot0.CannonQingXun,
-	slot0.CannonZhongXun,
-	slot0.CannonZhanlie,
-	slot0.CannonZhongXun2
+﻿local var_0_0 = class("EquipType")
+
+var_0_0.CannonQuZhu = 1
+var_0_0.CannonQingXun = 2
+var_0_0.CannonZhongXun = 3
+var_0_0.CannonZhanlie = 4
+var_0_0.Torpedo = 5
+var_0_0.AntiAircraft = 6
+var_0_0.FighterAircraft = 7
+var_0_0.TorpedoAircraft = 8
+var_0_0.BomberAircraft = 9
+var_0_0.Equipment = 10
+var_0_0.CannonZhongXun2 = 11
+var_0_0.SeaPlane = 12
+var_0_0.SubmarineTorpedo = 13
+var_0_0.Sonar = 14
+var_0_0.AntiSubAircraft = 15
+var_0_0.Helicopter = 17
+var_0_0.Goods = 18
+var_0_0.Missile = 20
+var_0_0.RangedAntiAircraft = 21
+var_0_0.AmmoType_1 = 1
+var_0_0.AmmoType_2 = 2
+var_0_0.AmmoType_3 = 3
+var_0_0.AmmoType_4 = 4
+var_0_0.AmmoType_5 = 5
+var_0_0.AmmoType_6 = 6
+var_0_0.AmmoType_7 = 7
+var_0_0.AmmoType_8 = 8
+var_0_0.AmmoType_8 = 9
+var_0_0.AmmoType_8 = 10
+var_0_0.CannonEquipTypes = {
+	var_0_0.CannonQuZhu,
+	var_0_0.CannonQingXun,
+	var_0_0.CannonZhongXun,
+	var_0_0.CannonZhanlie,
+	var_0_0.CannonZhongXun2
 }
-slot0.AirProtoEquipTypes = {
-	slot0.FighterAircraft,
-	slot0.TorpedoAircraft,
-	slot0.BomberAircraft
+var_0_0.AirProtoEquipTypes = {
+	var_0_0.FighterAircraft,
+	var_0_0.TorpedoAircraft,
+	var_0_0.BomberAircraft
 }
-slot0.AirEquipTypes = {
-	slot0.FighterAircraft,
-	slot0.TorpedoAircraft,
-	slot0.BomberAircraft,
-	slot0.SeaPlane
+var_0_0.AirEquipTypes = {
+	var_0_0.FighterAircraft,
+	var_0_0.TorpedoAircraft,
+	var_0_0.BomberAircraft,
+	var_0_0.SeaPlane
 }
-slot0.AirExtendEquipTypes = {
-	slot0.FighterAircraft,
-	slot0.TorpedoAircraft,
-	slot0.BomberAircraft,
-	slot0.SeaPlane,
-	slot0.AntiSubAircraft,
-	slot0.Helicopter
+var_0_0.AirExtendEquipTypes = {
+	var_0_0.FighterAircraft,
+	var_0_0.TorpedoAircraft,
+	var_0_0.BomberAircraft,
+	var_0_0.SeaPlane,
+	var_0_0.AntiSubAircraft,
+	var_0_0.Helicopter
 }
-slot0.AirDomainEquip = {
-	slot0.FighterAircraft,
-	slot0.TorpedoAircraft,
-	slot0.BomberAircraft,
-	slot0.SeaPlane
+var_0_0.AirDomainEquip = {
+	var_0_0.FighterAircraft,
+	var_0_0.TorpedoAircraft,
+	var_0_0.BomberAircraft,
+	var_0_0.SeaPlane
 }
-slot0.TorpedoEquipTypes = {
-	slot0.Torpedo,
-	slot0.SubmarineTorpedo
+var_0_0.TorpedoEquipTypes = {
+	var_0_0.Torpedo,
+	var_0_0.SubmarineTorpedo
 }
-slot0.DeviceEquipTypes = {
-	slot0.Equipment,
-	slot0.AntiSubAircraft,
-	slot0.Sonar,
-	slot0.Helicopter,
-	slot0.Goods
+var_0_0.DeviceEquipTypes = {
+	var_0_0.Equipment,
+	var_0_0.AntiSubAircraft,
+	var_0_0.Sonar,
+	var_0_0.Helicopter,
+	var_0_0.Goods
 }
-slot0.AircraftSkinType = {
-	slot0.FighterAircraft,
-	slot0.TorpedoAircraft,
-	slot0.BomberAircraft,
-	slot0.SeaPlane,
-	slot0.AntiSubAircraft
+var_0_0.AircraftSkinType = {
+	var_0_0.FighterAircraft,
+	var_0_0.TorpedoAircraft,
+	var_0_0.BomberAircraft,
+	var_0_0.SeaPlane,
+	var_0_0.AntiSubAircraft
 }
-slot1 = {
+
+local var_0_1 = {
 	i18n("word_primary_weapons"),
 	i18n("word_sub_cannons"),
 	i18n("word_torpedo"),
@@ -97,7 +99,7 @@ slot1 = {
 	i18n("word_equipment"),
 	i18n("word_missile")
 }
-slot2 = {
+local var_0_2 = {
 	"cannon",
 	"cannon",
 	"cannon",
@@ -121,17 +123,17 @@ slot2 = {
 	"antiair"
 }
 
-function slot0.Type2Name(slot0)
-	return pg.equip_data_by_type[slot0].type_name
+function var_0_0.Type2Name(arg_1_0)
+	return pg.equip_data_by_type[arg_1_0].type_name
 end
 
-function slot0.Type2Name2(slot0)
-	return pg.equip_data_by_type[slot0].type_name2
+function var_0_0.Type2Name2(arg_2_0)
+	return pg.equip_data_by_type[arg_2_0].type_name2
 end
 
-function slot0.type2Tag(slot0)
-	if not uv0.tagPrints then
-		uv0.tagPrints = {
+function var_0_0.type2Tag(arg_3_0)
+	if not var_0_0.tagPrints then
+		var_0_0.tagPrints = {
 			"4",
 			"4",
 			"4",
@@ -156,49 +158,51 @@ function slot0.type2Tag(slot0)
 		}
 	end
 
-	return uv0.tagPrints[slot0]
+	return var_0_0.tagPrints[arg_3_0]
 end
 
-function slot0.getCompareGroup(slot0)
-	return pg.equip_data_by_type[Equipment.getConfigData(slot0).type].compare_group
+function var_0_0.getCompareGroup(arg_4_0)
+	local var_4_0 = Equipment.getConfigData(arg_4_0).type
+
+	return pg.equip_data_by_type[var_4_0].compare_group
 end
 
-function slot0.type2Title(slot0, slot1)
-	if slot1 <= 4 then
-		return uv0[slot0]
-	elseif slot1 == uv1.Torpedo then
-		return uv0[3]
-	elseif slot1 == uv1.AntiAircraft or slot1 == uv1.RangedAntiAircraft then
-		return uv0[4]
-	elseif slot1 >= 7 and slot1 <= 9 or slot1 == uv1.SeaPlane then
-		return uv1.Type2Name(slot1)
-	elseif slot1 == uv1.Equipment or slot1 == uv1.AntiSubAircraft then
-		return uv0[6]
-	elseif slot1 == uv1.SubmarineTorpedo then
-		return uv0[7]
-	elseif slot1 == uv1.Missile then
-		return uv0[17]
+function var_0_0.type2Title(arg_5_0, arg_5_1)
+	if arg_5_1 <= 4 then
+		return var_0_1[arg_5_0]
+	elseif arg_5_1 == var_0_0.Torpedo then
+		return var_0_1[3]
+	elseif arg_5_1 == var_0_0.AntiAircraft or arg_5_1 == var_0_0.RangedAntiAircraft then
+		return var_0_1[4]
+	elseif arg_5_1 >= 7 and arg_5_1 <= 9 or arg_5_1 == var_0_0.SeaPlane then
+		return var_0_0.Type2Name(arg_5_1)
+	elseif arg_5_1 == var_0_0.Equipment or arg_5_1 == var_0_0.AntiSubAircraft then
+		return var_0_1[6]
+	elseif arg_5_1 == var_0_0.SubmarineTorpedo then
+		return var_0_1[7]
+	elseif arg_5_1 == var_0_0.Missile then
+		return var_0_1[17]
 	end
 end
 
-slot3 = {
+local var_0_3 = {
 	1,
 	2,
 	3,
 	4,
 	11
 }
-slot4 = {
+local var_0_4 = {
 	7,
 	8,
 	9,
 	12
 }
-slot5 = {
+local var_0_5 = {
 	1,
 	2
 }
-slot6 = {
+local var_0_6 = {
 	10,
 	14,
 	15,
@@ -206,20 +210,20 @@ slot6 = {
 	18
 }
 
-function slot7(slot0)
-	if _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+local function var_0_7(arg_6_0)
+	if _.all(arg_6_0, function(arg_7_0)
+		return table.contains(var_0_6, arg_7_0)
 	end) then
 		return "equipment"
-	elseif _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+	elseif _.all(arg_6_0, function(arg_8_0)
+		return table.contains(var_0_3, arg_8_0)
 	end) then
 		return "main_cannons"
-	elseif #slot0 == 1 then
-		return uv2[slot0[1]]
-	elseif #slot0 > 1 then
-		if _.all(slot0, function (slot0)
-			return table.contains(uv0, slot0)
+	elseif #arg_6_0 == 1 then
+		return var_0_2[arg_6_0[1]]
+	elseif #arg_6_0 > 1 then
+		if _.all(arg_6_0, function(arg_9_0)
+			return table.contains(var_0_4, arg_9_0)
 		end) then
 			return "equipment_aircraft"
 		else
@@ -230,24 +234,24 @@ function slot7(slot0)
 	return ""
 end
 
-function slot8(slot0, slot1)
-	if _.all(slot1, function (slot0)
-		return table.contains(uv0, slot0)
-	end) and _.is_equal(slot0, slot1) then
+local function var_0_8(arg_10_0, arg_10_1)
+	if _.all(arg_10_1, function(arg_11_0)
+		return table.contains(var_0_3, arg_11_0)
+	end) and _.is_equal(arg_10_0, arg_10_1) then
 		return "main_cannons"
-	elseif _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+	elseif _.all(arg_10_0, function(arg_12_0)
+		return table.contains(var_0_6, arg_12_0)
 	end) then
 		return "equipment"
-	elseif _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+	elseif _.all(arg_10_0, function(arg_13_0)
+		return table.contains(var_0_5, arg_13_0)
 	end) then
 		return "sub_cannons"
-	elseif #slot0 == 1 then
-		return uv3[slot0[1]]
-	elseif #slot0 > 1 then
-		if _.all(slot0, function (slot0)
-			return table.contains(uv0, slot0)
+	elseif #arg_10_0 == 1 then
+		return var_0_2[arg_10_0[1]]
+	elseif #arg_10_0 > 1 then
+		if _.all(arg_10_0, function(arg_14_0)
+			return table.contains(var_0_4, arg_14_0)
 		end) then
 			return "equipment_aircraft"
 		else
@@ -258,22 +262,22 @@ function slot8(slot0, slot1)
 	return ""
 end
 
-function slot9(slot0)
-	if _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+local function var_0_9(arg_15_0)
+	if _.all(arg_15_0, function(arg_16_0)
+		return table.contains(var_0_6, arg_16_0)
 	end) then
 		return "equipment"
-	elseif #slot0 == 2 and table.contains(slot0, EquipType.AntiAircraft) and table.contains(slot0, EquipType.RangedAntiAircraft) then
+	elseif #arg_15_0 == 2 and table.contains(arg_15_0, EquipType.AntiAircraft) and table.contains(arg_15_0, EquipType.RangedAntiAircraft) then
 		return "antiair"
-	elseif _.all(slot0, function (slot0)
-		return table.contains(uv0, slot0)
+	elseif _.all(arg_15_0, function(arg_17_0)
+		return table.contains(var_0_5, arg_17_0)
 	end) then
 		return "sub_cannons"
-	elseif #slot0 == 1 then
-		return uv2[slot0[1]]
-	elseif #slot0 > 1 then
-		if _.all(slot0, function (slot0)
-			return table.contains(uv0, slot0)
+	elseif #arg_15_0 == 1 then
+		return var_0_2[arg_15_0[1]]
+	elseif #arg_15_0 > 1 then
+		if _.all(arg_15_0, function(arg_18_0)
+			return table.contains(var_0_4, arg_18_0)
 		end) then
 			return "equipment_aircraft"
 		else
@@ -284,28 +288,31 @@ function slot9(slot0)
 	return ""
 end
 
-function slot0.Types2Title(slot0, slot1)
-	slot3 = pg.ship_data_template[slot1]["equip_" .. slot0]
+function var_0_0.Types2Title(arg_19_0, arg_19_1)
+	local var_19_0 = pg.ship_data_template[arg_19_1]
+	local var_19_1 = var_19_0["equip_" .. arg_19_0]
 
-	if slot0 == 1 then
-		return uv0(slot3)
-	elseif slot0 == 2 then
-		return uv1(slot3, slot2.equip_1)
-	elseif slot0 == 3 then
-		return uv2(slot3)
-	elseif slot0 == 4 or slot0 == 5 then
-		return uv3[slot3[1]]
+	if arg_19_0 == 1 then
+		return var_0_7(var_19_1)
+	elseif arg_19_0 == 2 then
+		local var_19_2 = var_19_0.equip_1
+
+		return var_0_8(var_19_1, var_19_2)
+	elseif arg_19_0 == 3 then
+		return var_0_9(var_19_1)
+	elseif arg_19_0 == 4 or arg_19_0 == 5 then
+		return var_0_2[var_19_1[1]]
 	end
 end
 
-function slot0.LabelToName(slot0)
-	if slot0 == "antiair" then
-		slot0 = "air_defense_artillery"
-	elseif slot0 == "equipment" then
-		slot0 = "device"
+function var_0_0.LabelToName(arg_20_0)
+	if arg_20_0 == "antiair" then
+		arg_20_0 = "air_defense_artillery"
+	elseif arg_20_0 == "equipment" then
+		arg_20_0 = "device"
 	end
 
-	return i18n("word_" .. slot0)
+	return i18n("word_" .. arg_20_0)
 end
 
-return slot0
+return var_0_0

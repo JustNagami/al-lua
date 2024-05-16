@@ -1,80 +1,86 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleCardPuzzleFleetBuffEffect = class("BattleCardPuzzleFleetBuffEffect")
-slot0.Battle.BattleCardPuzzleFleetBuffEffect.__name = "BattleCardPuzzleFleetBuffEffect"
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleFleetBuffEffect
-slot2.FX_TYPE_NOR = 0
-slot2.FX_TYPE_MOD_ATTR = 1
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	slot0._tempData = Clone(slot1)
-	slot0._type = slot0._tempData.type
+local var_0_0 = ys
 
-	slot0:SetActive()
+var_0_0.Battle.BattleCardPuzzleFleetBuffEffect = class("BattleCardPuzzleFleetBuffEffect")
+var_0_0.Battle.BattleCardPuzzleFleetBuffEffect.__name = "BattleCardPuzzleFleetBuffEffect"
+
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleFleetBuffEffect
+
+var_0_2.FX_TYPE_NOR = 0
+var_0_2.FX_TYPE_MOD_ATTR = 1
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tempData = Clone(arg_1_1)
+	arg_1_0._type = arg_1_0._tempData.type
+
+	arg_1_0:SetActive()
 end
 
-function slot2.GetEffectType(slot0)
-	return uv0.FX_TYPE_NOR
+function var_0_2.GetEffectType(arg_2_0)
+	return var_0_2.FX_TYPE_NOR
 end
 
-function slot2.SetArgs(slot0, slot1, slot2)
-	slot0._cardPuzzleComponent = slot1
-	slot0._fleetBuff = slot2
+function var_0_2.SetArgs(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0._cardPuzzleComponent = arg_3_1
+	arg_3_0._fleetBuff = arg_3_2
 end
 
-function slot2.Trigger(slot0, slot1, slot2)
-	slot0:__slot1_None__(slot2)
+function var_0_2.Trigger(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0[arg_4_1](arg_4_0, arg_4_2)
 end
 
-function slot2.onAttach(slot0)
-	slot0:onTrigger()
+function var_0_2.onAttach(arg_5_0)
+	arg_5_0:onTrigger()
 end
 
-function slot2.onRemove(slot0)
-	slot0:onTrigger()
+function var_0_2.onRemove(arg_6_0)
+	arg_6_0:onTrigger()
 end
 
-function slot2.onUpdate(slot0, slot1)
-	if slot0._tempData.arg_list.INR then
-		slot2 = slot0._tempData.arg_list.INR
+function var_0_2.onUpdate(arg_7_0, arg_7_1)
+	if arg_7_0._tempData.arg_list.INR then
+		local var_7_0 = arg_7_0._tempData.arg_list.INR
 
-		if not slot0._lastTimeStamp or slot2 < slot1 - slot0._lastTimeStamp then
-			slot0:onTrigger()
+		if not arg_7_0._lastTimeStamp or var_7_0 < arg_7_1 - arg_7_0._lastTimeStamp then
+			arg_7_0:onTrigger()
 
-			slot0._lastTimeStamp = slot1
+			arg_7_0._lastTimeStamp = arg_7_1
 		end
 	else
-		slot0:onTrigger()
+		arg_7_0:onTrigger()
 	end
 end
 
-function slot2.onPlus(slot0)
-	slot0:onTrigger()
+function var_0_2.onPlus(arg_8_0)
+	arg_8_0:onTrigger()
 end
 
-function slot2.onDeduct(slot0)
-	slot0:onTrigger()
+function var_0_2.onDeduct(arg_9_0)
+	arg_9_0:onTrigger()
 end
 
-function slot2.onStartGame(slot0)
-	slot0:onTrigger()
+function var_0_2.onStartGame(arg_10_0)
+	arg_10_0:onTrigger()
 end
 
-function slot2.IsActive(slot0)
-	return slot0._isActive
+function var_0_2.IsActive(arg_11_0)
+	return arg_11_0._isActive
 end
 
-function slot2.SetActive(slot0)
-	slot0._isActive = true
+function var_0_2.SetActive(arg_12_0)
+	arg_12_0._isActive = true
 end
 
-function slot2.NotActive(slot0)
-	slot0._isActive = false
+function var_0_2.NotActive(arg_13_0)
+	arg_13_0._isActive = false
 end
 
-function slot2.Clear(slot0)
+function var_0_2.Clear(arg_14_0)
+	return
 end
 
-function slot2.Dispose(slot0)
+function var_0_2.Dispose(arg_15_0)
+	return
 end

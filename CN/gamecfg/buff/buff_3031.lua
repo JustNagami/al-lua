@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 3031,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "每次执行空袭后为先锋部队回复3.5%耐久",
 		addition = {
@@ -69,17 +81,5 @@ return {
 	stack = 1,
 	id = 3031,
 	icon = 3030,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 3031,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

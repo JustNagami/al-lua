@@ -1,201 +1,210 @@
-slot0 = class("MainActivityBtnView", import("view.base.BaseEventLogic"))
+﻿local var_0_0 = class("MainActivityBtnView", import("view.base.BaseEventLogic"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
 
-	slot0._tf = slot1
-	slot0._go = slot1.gameObject
-	slot0.initPos = nil
-	slot0.isInit = nil
-	slot3 = slot1:Find("actBtn")
-	slot0.linkBtnTop = slot0._tf.parent:Find("link_top")
-	slot4 = slot0._tf.parent
-	slot0.eventPanel = slot4:Find("eventPanel")
-	slot0.checkNotchRatio = NotchAdapt.CheckNotchRatio
-	slot0.activityBtns = {
-		MainActSummaryBtn.New(slot3, slot2),
-		MainActEscortBtn.New(slot3, slot2),
-		MainActMapBtn.New(slot3, slot2),
-		MainActBossBtn.New(slot3, slot2),
-		MainActBackHillBtn.New(slot3, slot2),
-		MainActAtelierBtn.New(slot3, slot2),
-		MainLanternFestivalBtn.New(slot3, slot2),
-		MainActBossRushBtn.New(slot3, slot2),
-		MainActAprilFoolBtn.New(slot3, slot2),
-		MainActMedalCollectionBtn.New(slot3, slot2),
-		MainActSenranBtn.New(slot3, slot2),
-		MainActBossSingleBtn.New(slot3, slot2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_0.initPos = nil
+	arg_1_0.isInit = nil
+
+	local var_1_0 = arg_1_1:Find("actBtn")
+
+	arg_1_0.linkBtnTop = arg_1_0._tf.parent:Find("link_top")
+	arg_1_0.eventPanel = arg_1_0._tf.parent:Find("eventPanel")
+	arg_1_0.checkNotchRatio = NotchAdapt.CheckNotchRatio
+	arg_1_0.activityBtns = {
+		MainActSummaryBtn.New(var_1_0, arg_1_2),
+		MainActEscortBtn.New(var_1_0, arg_1_2),
+		MainActMapBtn.New(var_1_0, arg_1_2),
+		MainActBossBtn.New(var_1_0, arg_1_2),
+		MainActBackHillBtn.New(var_1_0, arg_1_2),
+		MainActAtelierBtn.New(var_1_0, arg_1_2),
+		MainLanternFestivalBtn.New(var_1_0, arg_1_2),
+		MainActBossRushBtn.New(var_1_0, arg_1_2),
+		MainActAprilFoolBtn.New(var_1_0, arg_1_2),
+		MainActMedalCollectionBtn.New(var_1_0, arg_1_2),
+		MainActSenranBtn.New(var_1_0, arg_1_2),
+		MainActBossSingleBtn.New(var_1_0, arg_1_2)
 	}
-	slot0.specailBtns = {
-		MainActInsBtn.New(slot3.parent, slot2),
-		MainActTraingCampBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
-		MainActRefluxBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
-		MainActNewServerBtn.New(slot0.linkBtnTop:Find("layout"), slot2),
-		MainActDelegationBtn.New(slot0.eventPanel, slot2),
-		MainIslandActDelegationBtn.New(slot0.eventPanel, slot2),
-		MainVoteEntranceBtn.New(slot0.eventPanel, slot2)
+	arg_1_0.specailBtns = {
+		MainActInsBtn.New(var_1_0.parent, arg_1_2),
+		MainActTraingCampBtn.New(arg_1_0.linkBtnTop:Find("layout"), arg_1_2),
+		MainActRefluxBtn.New(arg_1_0.linkBtnTop:Find("layout"), arg_1_2),
+		MainActNewServerBtn.New(arg_1_0.linkBtnTop:Find("layout"), arg_1_2),
+		MainActDelegationBtn.New(arg_1_0.eventPanel, arg_1_2),
+		MainIslandActDelegationBtn.New(arg_1_0.eventPanel, arg_1_2),
+		MainVoteEntranceBtn.New(arg_1_0.eventPanel, arg_1_2)
 	}
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then
-		slot0.specailBtns = {
-			MainActTraingCampBtn.New(slot0.linkBtnTop:Find("layout"), slot2)
+		arg_1_0.specailBtns = {
+			MainActTraingCampBtn.New(arg_1_0.linkBtnTop:Find("layout"), arg_1_2)
 		}
 	end
 
-	slot0:Register()
+	arg_1_0:Register()
 end
 
-function slot0.Register(slot0)
-	slot0:bind(NewMainScene.ON_REMOVE_LAYER, function (slot0, slot1)
-		uv0:OnRemoveLayer(slot1)
+function var_0_0.Register(arg_2_0)
+	arg_2_0:bind(NewMainScene.ON_REMOVE_LAYER, function(arg_3_0, arg_3_1)
+		arg_2_0:OnRemoveLayer(arg_3_1)
 	end)
-	slot0:bind(NewMainScene.ON_ACT_BTN_UPDATE, function (slot0)
-		uv0:Refresh()
+	arg_2_0:bind(NewMainScene.ON_ACT_BTN_UPDATE, function(arg_4_0)
+		arg_2_0:Refresh()
 	end)
-	slot0:bind(NewMainScene.ON_ZERO_HOUR, function (slot0)
-		uv0:Refresh()
+	arg_2_0:bind(NewMainScene.ON_ZERO_HOUR, function(arg_5_0)
+		arg_2_0:Refresh()
 	end)
 end
 
-function slot0.GetBtn(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.activityBtns) do
-		if isa(slot6, slot1) then
-			return slot6
+function var_0_0.GetBtn(arg_6_0, arg_6_1)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.activityBtns) do
+		if isa(iter_6_1, arg_6_1) then
+			return iter_6_1
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot0.specailBtns) do
-		if isa(slot6, slot1) then
-			return slot6
+	for iter_6_2, iter_6_3 in ipairs(arg_6_0.specailBtns) do
+		if isa(iter_6_3, arg_6_1) then
+			return iter_6_3
 		end
 	end
 
 	return nil
 end
 
-function slot0.OnRemoveLayer(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnRemoveLayer(arg_7_0, arg_7_1)
+	local var_7_0
 
-	if slot1.mediator == LotteryMediator then
-		slot2 = slot0:GetBtn(MainActLotteryBtn)
-	elseif slot1.mediator == InstagramMediator then
-		slot2 = slot0:GetBtn(MainActInsBtn)
+	if arg_7_1.mediator == LotteryMediator then
+		var_7_0 = arg_7_0:GetBtn(MainActLotteryBtn)
+	elseif arg_7_1.mediator == InstagramMediator then
+		var_7_0 = arg_7_0:GetBtn(MainActInsBtn)
 	end
 
-	if slot2 and slot2:InShowTime() then
-		slot2:OnInit()
+	if var_7_0 and var_7_0:InShowTime() then
+		var_7_0:OnInit()
 	end
 end
 
-function slot0.Init(slot0)
-	slot0:Flush()
+function var_0_0.Init(arg_8_0)
+	arg_8_0:Flush()
 
-	slot0.isInit = true
+	arg_8_0.isInit = true
 end
 
-function slot0.Flush(slot0)
-	if slot0.checkNotchRatio ~= NotchAdapt.CheckNotchRatio then
-		slot0.checkNotchRatio = NotchAdapt.CheckNotchRatio
-		slot0.initPos = nil
+function var_0_0.Flush(arg_9_0)
+	if arg_9_0.checkNotchRatio ~= NotchAdapt.CheckNotchRatio then
+		arg_9_0.checkNotchRatio = NotchAdapt.CheckNotchRatio
+		arg_9_0.initPos = nil
 	end
 
-	slot1 = {}
-	slot2 = {}
+	local var_9_0 = {}
+	local var_9_1 = {}
 
-	for slot6, slot7 in ipairs(slot0.activityBtns) do
-		if slot7:InShowTime() then
-			table.insert(slot1, slot7)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.activityBtns) do
+		if iter_9_1:InShowTime() then
+			table.insert(var_9_0, iter_9_1)
 		else
-			table.insert(slot2, slot7)
+			table.insert(var_9_1, iter_9_1)
 		end
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		return slot0.config.group_id < slot1.config.group_id
+	table.sort(var_9_0, function(arg_10_0, arg_10_1)
+		return arg_10_0.config.group_id < arg_10_1.config.group_id
 	end)
 
-	for slot6, slot7 in ipairs(slot1) do
-		slot7:Init(slot6)
+	for iter_9_2, iter_9_3 in ipairs(var_9_0) do
+		iter_9_3:Init(iter_9_2)
 	end
 
-	for slot6, slot7 in ipairs(slot2) do
-		slot7:Clear()
+	for iter_9_4, iter_9_5 in ipairs(var_9_1) do
+		iter_9_5:Clear()
 	end
 
-	assert(#slot1 <= 4, "活动按钮不能超过4个")
+	local var_9_2 = #var_9_0
 
-	slot4 = slot3 <= 3
-	slot5 = slot4 and 1 or 0.85
-	slot0._tf.localScale = Vector3(slot5, slot5, 1)
-	slot0.initPos = slot0.initPos or slot0._tf.localPosition
-	slot0._tf.localPosition = Vector3(slot0.initPos.x, slot4 and 390 or 420, 0)
+	assert(var_9_2 <= 4, "活动按钮不能超过4个")
 
-	for slot10, slot11 in ipairs(slot0.specailBtns) do
-		if slot11:InShowTime() then
-			slot11:Init(not slot4)
+	local var_9_3 = var_9_2 <= 3
+	local var_9_4 = var_9_3 and 1 or 0.85
+	local var_9_5 = var_9_3 and 390 or 420
+
+	arg_9_0._tf.localScale = Vector3(var_9_4, var_9_4, 1)
+	arg_9_0.initPos = arg_9_0.initPos or arg_9_0._tf.localPosition
+	arg_9_0._tf.localPosition = Vector3(arg_9_0.initPos.x, var_9_5, 0)
+
+	for iter_9_6, iter_9_7 in ipairs(arg_9_0.specailBtns) do
+		if iter_9_7:InShowTime() then
+			iter_9_7:Init(not var_9_3)
 		else
-			slot11:Clear()
+			iter_9_7:Clear()
 		end
 	end
 end
 
-function slot0.Refresh(slot0)
-	if not slot0.isInit then
+function var_0_0.Refresh(arg_11_0)
+	if not arg_11_0.isInit then
 		return
 	end
 
-	slot0:Flush()
+	arg_11_0:Flush()
 
-	for slot4, slot5 in ipairs(slot0.specailBtns) do
-		if slot5:InShowTime() then
-			slot5:Refresh()
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.specailBtns) do
+		if iter_11_1:InShowTime() then
+			iter_11_1:Refresh()
 		end
 	end
 end
 
-function slot0.Disable(slot0)
-	slot0.lposX = nil
+function var_0_0.Disable(arg_12_0)
+	arg_12_0.lposX = nil
 
-	for slot4, slot5 in ipairs(slot0.specailBtns) do
-		if slot5:InShowTime() then
-			slot5:Disable()
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.specailBtns) do
+		if iter_12_1:InShowTime() then
+			iter_12_1:Disable()
 		end
 	end
 end
 
-function slot0.Fold(slot0, slot1, slot2)
-	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
-	slot3 = slot1 and slot0.lposX + 1200 or slot0.lposX
+function var_0_0.Fold(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0.lposX = arg_13_0.lposX or arg_13_0._tf.localPosition.x
 
-	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot3, slot0._go.transform.localPosition.y, 0)
+	local var_13_0 = arg_13_1 and arg_13_0.lposX + 1200 or arg_13_0.lposX
+
+	if arg_13_2 == 0 then
+		local var_13_1 = arg_13_0._go.transform.localPosition
+
+		arg_13_0._go.transform.localPosition = Vector3(var_13_0, var_13_1.y, 0)
 	else
-		LeanTween.moveLocalX(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalX(arg_13_0._go, var_13_0, arg_13_2):setEase(LeanTweenType.easeInOutExpo)
 	end
 
-	slot0.lposY = slot0.lposY or slot0.linkBtnTop.localPosition.y
-	slot4 = slot1 and slot0.lposY + 200 or slot0.lposY
+	arg_13_0.lposY = arg_13_0.lposY or arg_13_0.linkBtnTop.localPosition.y
 
-	if slot2 == 0 then
-		slot0.linkBtnTop.localPosition = Vector3(0, slot4, 0)
+	local var_13_2 = arg_13_1 and arg_13_0.lposY + 200 or arg_13_0.lposY
+
+	if arg_13_2 == 0 then
+		arg_13_0.linkBtnTop.localPosition = Vector3(0, var_13_2, 0)
 	else
-		LeanTween.moveLocalY(slot0.linkBtnTop.gameObject, slot4, slot2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalY(arg_13_0.linkBtnTop.gameObject, var_13_2, arg_13_2):setEase(LeanTweenType.easeInOutExpo)
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0:disposeEvent()
+function var_0_0.Dispose(arg_14_0)
+	arg_14_0:disposeEvent()
 
-	for slot4, slot5 in ipairs(slot0.activityBtns) do
-		slot5:Dispose()
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.activityBtns) do
+		iter_14_1:Dispose()
 	end
 
-	for slot4, slot5 in ipairs(slot0.specailBtns) do
-		slot5:Dispose()
+	for iter_14_2, iter_14_3 in ipairs(arg_14_0.specailBtns) do
+		iter_14_3:Dispose()
 	end
 
-	slot0.specailBtns = nil
-	slot0.activityBtns = nil
+	arg_14_0.specailBtns = nil
+	arg_14_0.activityBtns = nil
 end
 
-return slot0
+return var_0_0

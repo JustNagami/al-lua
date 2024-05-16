@@ -1,15 +1,16 @@
-slot0 = class("PuzzleActivity", import("model.vo.Activity"))
+﻿local var_0_0 = class("PuzzleActivity", import("model.vo.Activity"))
 
-function slot0.GetPicturePuzzleIds(slot0)
-	slot1 = slot0.id
+function var_0_0.GetPicturePuzzleIds(arg_1_0)
+	local var_1_0 = arg_1_0.id
+	local var_1_1 = pg.activity_event_picturepuzzle[var_1_0]
 
-	assert(pg.activity_event_picturepuzzle[slot1], "Can't Find activity_event_picturepuzzle 's ID : " .. (slot1 or "NIL"))
+	assert(var_1_1, "Can't Find activity_event_picturepuzzle 's ID : " .. (var_1_0 or "NIL"))
 
-	slot3 = Clone(slot2.pickup_picturepuzzle)
+	local var_1_2 = Clone(var_1_1.pickup_picturepuzzle)
 
-	table.insertto(slot3, slot2.drop_picturepuzzle)
+	table.insertto(var_1_2, var_1_1.drop_picturepuzzle)
 
-	return slot3
+	return var_1_2
 end
 
-return slot0
+return var_0_0

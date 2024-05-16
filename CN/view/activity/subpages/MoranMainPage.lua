@@ -1,1 +1,1 @@
-return class("MoranMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("MoranMainPage", import(".TemplatePage.PreviewTemplatePage")))

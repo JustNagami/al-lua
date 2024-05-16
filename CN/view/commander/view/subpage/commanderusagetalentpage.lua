@@ -1,155 +1,171 @@
-slot0 = class("CommanderUsageTalentPage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("CommanderUsageTalentPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderCatUsageTalentUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.usageList = UIItemList.New(slot0:findTF("bg/frame/bg/talents/content"), slot0:findTF("bg/frame/bg/talents/content/talent"))
-	slot0.usageCancelBtn = slot0:findTF("bg/frame/cancel_btn")
-	slot0.usageConfirmBtn = slot0:findTF("bg/frame/confirm_btn")
-	slot0.usageConfirmUpgrade = slot0:findTF("bg/frame/confirm_btn/upgrade")
-	slot0.usageConfirmILearned = slot0:findTF("bg/frame/confirm_btn/learned")
-	slot0.usageTalent = slot0:findTF("bg/frame/bg/talent")
-	slot0.usageCostIconTF = slot0:findTF("bg/frame/consume/Image")
-	slot0.usageCostTxtTF = slot0:findTF("bg/frame/consume/Text")
-	slot0.usageCostTxt = slot0.usageCostTxtTF:GetComponent(typeof(Text))
-	slot0.usageCloseBtn = slot0:findTF("bg/frame/close_btn")
-	slot0.replacePage = CommanderReplaceTalentPage.New(slot0._parentTf.parent, slot0.event)
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.usageList = UIItemList.New(arg_2_0:findTF("bg/frame/bg/talents/content"), arg_2_0:findTF("bg/frame/bg/talents/content/talent"))
+	arg_2_0.usageCancelBtn = arg_2_0:findTF("bg/frame/cancel_btn")
+	arg_2_0.usageConfirmBtn = arg_2_0:findTF("bg/frame/confirm_btn")
+	arg_2_0.usageConfirmUpgrade = arg_2_0:findTF("bg/frame/confirm_btn/upgrade")
+	arg_2_0.usageConfirmILearned = arg_2_0:findTF("bg/frame/confirm_btn/learned")
+	arg_2_0.usageTalent = arg_2_0:findTF("bg/frame/bg/talent")
+	arg_2_0.usageCostIconTF = arg_2_0:findTF("bg/frame/consume/Image")
+	arg_2_0.usageCostTxtTF = arg_2_0:findTF("bg/frame/consume/Text")
+	arg_2_0.usageCostTxt = arg_2_0.usageCostTxtTF:GetComponent(typeof(Text))
+	arg_2_0.usageCloseBtn = arg_2_0:findTF("bg/frame/close_btn")
+	arg_2_0.replacePage = CommanderReplaceTalentPage.New(arg_2_0._parentTf.parent, arg_2_0.event)
 
-	setText(slot0:findTF("bg/frame/bg/title/Text"), i18n("commander_choice_talent_1"))
-	setText(slot0:findTF("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
-	setText(slot0:findTF("bg/frame/consume/label"), i18n("word_consume"))
+	setText(arg_2_0:findTF("bg/frame/bg/title/Text"), i18n("commander_choice_talent_1"))
+	setText(arg_2_0:findTF("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
+	setText(arg_2_0:findTF("bg/frame/consume/label"), i18n("word_consume"))
 end
 
-function slot0.OnInit(slot0)
-	slot0:RegisterEvent()
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0:RegisterEvent()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.usageCancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.usageCancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.usageCloseBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.usageCloseBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.usageConfirmBtn, function ()
-		slot0 = uv0.commanderVO
+	onButton(arg_3_0, arg_3_0.usageConfirmBtn, function()
+		local var_7_0 = arg_3_0.commanderVO
 
-		if uv0.talent and slot0:fullTalentCnt() and not slot0:hasTalent(uv0.talent) then
-			uv0.replacePage:ExecuteAction("Show", slot0, uv0.talent)
-		elseif uv0.talent then
-			uv0:emit(CommanderCatMediator.LEARN_TALENT, slot0.id, uv0.talent.id, 0)
+		if arg_3_0.talent and var_7_0:fullTalentCnt() and not var_7_0:hasTalent(arg_3_0.talent) then
+			arg_3_0.replacePage:ExecuteAction("Show", var_7_0, arg_3_0.talent)
+		elseif arg_3_0.talent then
+			arg_3_0:emit(CommanderCatMediator.LEARN_TALENT, var_7_0.id, arg_3_0.talent.id, 0)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0:bind(CommanderCatScene.MSG_FETCH_TALENT_LIST, function (slot0)
-		if uv0.commanderVO then
-			uv0:Flush(getProxy(CommanderProxy):getCommanderById(uv0.commanderVO.id))
+function var_0_0.RegisterEvent(arg_8_0)
+	arg_8_0:bind(CommanderCatScene.MSG_FETCH_TALENT_LIST, function(arg_9_0)
+		if arg_8_0.commanderVO then
+			local var_9_0 = getProxy(CommanderProxy):getCommanderById(arg_8_0.commanderVO.id)
+
+			arg_8_0:Flush(var_9_0)
 		end
 	end)
-	slot0:bind(CommanderCatScene.MSG_LEARN_TALENT, function (slot0)
-		if uv0.commanderVO then
-			if getProxy(CommanderProxy):getCommanderById(uv0.commanderVO.id):getTalentPoint() <= 0 then
-				uv0:Hide()
+	arg_8_0:bind(CommanderCatScene.MSG_LEARN_TALENT, function(arg_10_0)
+		if arg_8_0.commanderVO then
+			local var_10_0 = getProxy(CommanderProxy):getCommanderById(arg_8_0.commanderVO.id)
+
+			if var_10_0:getTalentPoint() <= 0 then
+				arg_8_0:Hide()
 
 				return
 			end
 
-			uv0:Flush(slot1)
+			arg_8_0:Flush(var_10_0)
 		end
 	end)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
-	slot0._tf:SetAsLastSibling()
-	slot0:Flush(slot1)
-	slot0:UpdateStyle()
+function var_0_0.Show(arg_11_0, arg_11_1)
+	var_0_0.super.Show(arg_11_0)
+	arg_11_0._tf:SetAsLastSibling()
+	arg_11_0:Flush(arg_11_1)
+	arg_11_0:UpdateStyle()
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.commanderVO = slot1
+function var_0_0.Flush(arg_12_0, arg_12_1)
+	arg_12_0.commanderVO = arg_12_1
 
-	if not slot1:getNotLearnedList() or #slot2 == 0 then
-		slot0:FetchList()
+	local var_12_0 = arg_12_1:getNotLearnedList()
+
+	if not var_12_0 or #var_12_0 == 0 then
+		arg_12_0:FetchList()
 	else
-		slot0:UpdateList()
+		arg_12_0:UpdateList()
 	end
 end
 
-function slot0.UpdateStyle(slot0)
-	setActive(slot0.usageCostIconTF, false)
-	setActive(slot0.usageCostTxtTF, false)
+function var_0_0.UpdateStyle(arg_13_0)
+	setActive(arg_13_0.usageCostIconTF, false)
+	setActive(arg_13_0.usageCostTxtTF, false)
 end
 
-function slot0.FetchList(slot0)
-	slot0:emit(CommanderCatMediator.FETCH_NOT_LEARNED_TALENT, slot0.commanderVO.id)
+function var_0_0.FetchList(arg_14_0)
+	arg_14_0:emit(CommanderCatMediator.FETCH_NOT_LEARNED_TALENT, arg_14_0.commanderVO.id)
 end
 
-function slot0.UpdateList(slot0)
-	slot0.usageList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv1:UpdateCard(uv0[slot1 + 1], slot2)
+function var_0_0.UpdateList(arg_15_0)
+	local var_15_0 = arg_15_0.commanderVO:getNotLearnedList()
 
-			if slot1 == 0 then
-				triggerToggle(slot2, true)
+	arg_15_0.usageList:make(function(arg_16_0, arg_16_1, arg_16_2)
+		if arg_16_0 == UIItemList.EventUpdate then
+			local var_16_0 = var_15_0[arg_16_1 + 1]
+
+			arg_15_0:UpdateCard(var_16_0, arg_16_2)
+
+			if arg_16_1 == 0 then
+				triggerToggle(arg_16_2, true)
 			end
 		end
 	end)
-	slot0.usageList:align(#slot0.commanderVO:getNotLearnedList())
+	arg_15_0.usageList:align(#var_15_0)
 end
 
-function slot0.UpdateCard(slot0, slot1, slot2)
-	slot3 = slot0.commanderVO
+function var_0_0.UpdateCard(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_0.commanderVO
+	local var_17_1 = var_17_0:hasTalent(arg_17_1)
 
-	setActive(slot2:Find("up"), slot3:hasTalent(slot1))
-	GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot1:getConfig("icon"), "", slot2)
-	onToggle(slot0, slot2, function (slot0)
-		if slot0 and (not uv0.talent or uv0.talent.id ~= uv1.id) then
-			uv0.talent = uv1
+	setActive(arg_17_2:Find("up"), var_17_1)
+	GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg_17_1:getConfig("icon"), "", arg_17_2)
+	onToggle(arg_17_0, arg_17_2, function(arg_18_0)
+		if arg_18_0 and (not arg_17_0.talent or arg_17_0.talent.id ~= arg_17_1.id) then
+			arg_17_0.talent = arg_17_1
 
-			uv0:UpdateTalentCard(uv0.usageTalent, uv1)
-			setActive(uv0.usageCostIconTF, uv1:getConfig("cost") > 0)
-			setActive(uv0.usageCostTxtTF, slot1 > 0)
+			arg_17_0:UpdateTalentCard(arg_17_0.usageTalent, arg_17_1)
 
-			uv0.usageCostTxt.text = slot1
+			local var_18_0 = arg_17_1:getConfig("cost")
 
-			setActive(uv0.usageConfirmUpgrade, uv2:hasTalent(uv1))
-			setActive(uv0.usageConfirmILearned, not uv2:hasTalent(uv1))
+			setActive(arg_17_0.usageCostIconTF, var_18_0 > 0)
+			setActive(arg_17_0.usageCostTxtTF, var_18_0 > 0)
+
+			arg_17_0.usageCostTxt.text = var_18_0
+
+			setActive(arg_17_0.usageConfirmUpgrade, var_17_0:hasTalent(arg_17_1))
+			setActive(arg_17_0.usageConfirmILearned, not var_17_0:hasTalent(arg_17_1))
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateTalentCard(slot0, slot1, slot2)
-	slot3 = slot1:Find("unlock")
-	slot4 = slot1:Find("lock")
+function var_0_0.UpdateTalentCard(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = arg_19_1:Find("unlock")
+	local var_19_1 = arg_19_1:Find("lock")
 
-	if slot2 then
-		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot2:getConfig("icon"), "", slot3:Find("icon"))
+	if arg_19_2 then
+		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg_19_2:getConfig("icon"), "", var_19_0:Find("icon"))
 
-		if slot3:Find("tree_btn") then
-			onButton(slot0, slot5, function ()
-				uv0.contextData.treePanel:ExecuteAction("Show", uv1)
+		local var_19_2 = var_19_0:Find("tree_btn")
+
+		if var_19_2 then
+			onButton(arg_19_0, var_19_2, function()
+				arg_19_0.contextData.treePanel:ExecuteAction("Show", arg_19_2)
 			end, SFX_PANEL)
 		end
 
-		setText(slot3:Find("name_bg/Text"), slot2:getConfig("name"))
-		setScrollText(slot3:Find("desc/Text"), slot2:getConfig("desc"))
+		setText(var_19_0:Find("name_bg/Text"), arg_19_2:getConfig("name"))
+		setScrollText(var_19_0:Find("desc/Text"), arg_19_2:getConfig("desc"))
 	end
 
-	setActive(slot3, slot2)
+	setActive(var_19_0, arg_19_2)
 
-	if slot4 then
-		setActive(slot4, not slot2)
+	if var_19_1 then
+		setActive(var_19_1, not arg_19_2)
 	end
 end
 
-function slot0.CanBack(slot0)
-	if slot0.replacePage and slot0.replacePage:GetLoaded() and slot0.replacePage:isShowing() then
-		slot0.replacePage:Hide()
+function var_0_0.CanBack(arg_21_0)
+	if arg_21_0.replacePage and arg_21_0.replacePage:GetLoaded() and arg_21_0.replacePage:isShowing() then
+		arg_21_0.replacePage:Hide()
 
 		return false
 	end
@@ -157,12 +173,12 @@ function slot0.CanBack(slot0)
 	return true
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.replacePage then
-		slot0.replacePage:Destroy()
+function var_0_0.OnDestroy(arg_22_0)
+	if arg_22_0.replacePage then
+		arg_22_0.replacePage:Destroy()
 
-		slot0.replacePage = nil
+		arg_22_0.replacePage = nil
 	end
 end
 
-return slot0
+return var_0_0

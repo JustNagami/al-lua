@@ -1,30 +1,33 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleFleetCardPuzzleCardManageComponent
-slot2 = class("BattleCardPuzzleSkillActiveCard", slot0.Battle.BattleCardPuzzleSkillEffect)
-slot0.Battle.BattleCardPuzzleSkillActiveCard = slot2
-slot2.__name = "BattleCardPuzzleSkillActiveCard"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleFleetCardPuzzleCardManageComponent
+local var_0_2 = class("BattleCardPuzzleSkillActiveCard", var_0_0.Battle.BattleCardPuzzleSkillEffect)
 
-	slot0._activeFrom = slot0._tempData.arg_list.active_from or 0
-	slot0._activeID = slot0._tempData.arg_list.active_ID_list
-	slot0._activeLabel = slot0._tempData.arg_list.active_label_list
-	slot0._activeAll = slot0._tempData.arg_list.active_all
+var_0_0.Battle.BattleCardPuzzleSkillActiveCard = var_0_2
+var_0_2.__name = "BattleCardPuzzleSkillActiveCard"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0._activeFrom = arg_1_0._tempData.arg_list.active_from or 0
+	arg_1_0._activeID = arg_1_0._tempData.arg_list.active_ID_list
+	arg_1_0._activeLabel = arg_1_0._tempData.arg_list.active_label_list
+	arg_1_0._activeAll = arg_1_0._tempData.arg_list.active_all
 end
 
-function slot2.SkillEffectHandler(slot0)
-	slot2 = slot0._card:GetClient():GetCardPileByIndex(slot0._activeFrom)
-	slot3 = {
-		value = slot0._activeID or slot0._activeLabel,
-		total = slot0._activeAll,
-		type = slot0._activeID and uv0.SEARCH_BY_ID or uv0.SEARCH_BY_LABEL
+function var_0_2.SkillEffectHandler(arg_2_0)
+	local var_2_0 = arg_2_0._card:GetClient():GetCardPileByIndex(arg_2_0._activeFrom)
+	local var_2_1 = {
+		value = arg_2_0._activeID or arg_2_0._activeLabel,
+		total = arg_2_0._activeAll,
+		type = arg_2_0._activeID and var_0_1.SEARCH_BY_ID or var_0_1.SEARCH_BY_LABEL
 	}
+	local var_2_2 = var_2_0:Search(var_2_1)
 
-	for slot8, slot9 in ipairs(slot2:Search(slot3)) do
-		slot9:Active()
+	for iter_2_0, iter_2_1 in ipairs(var_2_2) do
+		iter_2_1:Active()
 	end
 
-	slot0:Finale()
+	arg_2_0:Finale()
 end

@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 16763,
-	icon = 16760,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffActionKeyOffset",
@@ -61,5 +41,25 @@ return {
 				skill_id = 16762
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 16763,
+	icon = 16760,
+	last_effect = ""
 }

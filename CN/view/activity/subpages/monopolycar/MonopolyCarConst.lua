@@ -1,5 +1,6 @@
-slot0 = class("MonopolyCarConst")
-slot0.map_dic = {
+﻿local var_0_0 = class("MonopolyCarConst")
+
+var_0_0.map_dic = {
 	{
 		2006,
 		2007,
@@ -44,4 +45,4 @@ slot0.map_dic = {
 	}
 }
 
-return slot0
+return var_0_0

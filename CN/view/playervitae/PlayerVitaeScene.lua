@@ -1,310 +1,339 @@
-slot0 = class("PlayerVitaeScene", import("..base.BaseUI"))
-slot0.ON_PAGE_SWTICH = "PlayerVitaeScene:ON_PAGE_SWTICH"
-slot0.PAGE_DEFAULT = 1
-slot0.PAGE_NATIVE_SHIPS = 2
-slot0.PAGE_RANDOM_SHIPS = 3
+﻿local var_0_0 = class("PlayerVitaeScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.ON_PAGE_SWTICH = "PlayerVitaeScene:ON_PAGE_SWTICH"
+var_0_0.PAGE_DEFAULT = 1
+var_0_0.PAGE_NATIVE_SHIPS = 2
+var_0_0.PAGE_RANDOM_SHIPS = 3
+
+function var_0_0.getUIName(arg_1_0)
 	return "PlayerVitaeUI"
 end
 
-function slot0.GetBGM(slot0)
-	slot2 = getProxy(SettingsProxy):IsBGMEnable()
+function var_0_0.GetBGM(arg_2_0)
+	local var_2_0 = arg_2_0:GetFlagShip()
+	local var_2_1 = getProxy(SettingsProxy):IsBGMEnable()
 
-	if slot0:GetFlagShip():IsBgmSkin() and slot2 then
-		return slot1:GetSkinBgm()
+	if var_2_0:IsBgmSkin() and var_2_1 then
+		return var_2_0:GetSkinBgm()
 	else
 		return "main"
 	end
 end
 
-function slot0.OnPlayerNameChange(slot0)
-	if slot0.detailPage and slot0.detailPage:GetLoaded() then
-		slot0.detailPage:OnPlayerNameChange(slot0:GetPlayer())
+function var_0_0.OnPlayerNameChange(arg_3_0)
+	if arg_3_0.detailPage and arg_3_0.detailPage:GetLoaded() then
+		arg_3_0.detailPage:OnPlayerNameChange(arg_3_0:GetPlayer())
 	end
 end
 
-function slot0.OnShipSkinChanged(slot0, slot1)
-	slot0:UpdatePainting()
+function var_0_0.OnShipSkinChanged(arg_4_0, arg_4_1)
+	arg_4_0:UpdatePainting()
 
-	if slot0.shipsPage and slot0.shipsPage:GetLoaded() and slot0.shipsPage:isShowing() then
-		slot0.shipsPage:UpdateCard(slot1.id)
+	if arg_4_0.shipsPage and arg_4_0.shipsPage:GetLoaded() and arg_4_0.shipsPage:isShowing() then
+		arg_4_0.shipsPage:UpdateCard(arg_4_1.id)
 	end
 end
 
-function slot0.ReloadPanting(slot0, slot1)
-	if slot0.displaySkinID and slot0.displaySkinID == slot1 then
-		setPaintingPrefabAsync(slot0.painting, slot0:GetFlagShip():getPainting(), "kanban")
+function var_0_0.ReloadPanting(arg_5_0, arg_5_1)
+	if arg_5_0.displaySkinID and arg_5_0.displaySkinID == arg_5_1 then
+		local var_5_0 = arg_5_0:GetFlagShip()
+
+		setPaintingPrefabAsync(arg_5_0.painting, var_5_0:getPainting(), "kanban")
 	end
 end
 
-function slot0.RefreshShips(slot0)
-	if slot0.shipsPage and slot0.shipsPage:GetLoaded() and slot0.shipsPage:isShowing() then
-		slot0.shipsPage:RefreshShips()
+function var_0_0.RefreshShips(arg_6_0)
+	if arg_6_0.shipsPage and arg_6_0.shipsPage:GetLoaded() and arg_6_0.shipsPage:isShowing() then
+		arg_6_0.shipsPage:RefreshShips()
 	end
 end
 
-function slot0.GetPlayer(slot0)
+function var_0_0.GetPlayer(arg_7_0)
 	return getProxy(PlayerProxy):getRawData()
 end
 
-function slot0.GetFlagShip(slot0)
-	return slot0:GetPlayer():GetFlagShip()
+function var_0_0.GetFlagShip(arg_8_0)
+	return (arg_8_0:GetPlayer():GetFlagShip())
 end
 
-function slot0.init(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.backBtn = slot0:findTF("top/frame/back")
-	slot0.mainViewCg = slot0:findTF("adapt"):GetComponent(typeof(CanvasGroup))
-	slot0.mainTr = slot0.mainViewCg.gameObject.transform
-	slot0.painting = slot0:findTF("adapt/paint")
-	slot0.btnContainer = slot0:findTF("adapt/btns")
-	slot0.switchSkinBtn = slot0:findTF("adapt/btns/swichSkin_btn")
-	slot0.replaceBtn = slot0:findTF("adapt/btns/replace_btn")
-	slot0.replaceBtnTip = slot0.replaceBtn:Find("tip")
-	slot0.cryptolaliaBtn = slot0:findTF("adapt/btns/cryptolalia_btn")
-	slot0.switchSkinBtnTag = slot0:findTF("Tag", slot0.switchSkinBtn)
-	slot0.titlt = slot0:findTF("top/frame/title")
-	slot0.titltNative = slot0:findTF("top/frame/title_native")
-	slot0.titltRandom = slot0:findTF("top/frame/title_random")
-	slot0.detailCg = GetOrAddComponent(slot0:findTF("detail"), typeof(CanvasGroup))
-	slot2 = slot0:findTF("adapt/tpl")
+function var_0_0.init(arg_9_0)
+	arg_9_0.bg = arg_9_0:findTF("bg")
+	arg_9_0.backBtn = arg_9_0:findTF("top/frame/back")
+	arg_9_0.mainViewCg = arg_9_0:findTF("adapt"):GetComponent(typeof(CanvasGroup))
+	arg_9_0.mainTr = arg_9_0.mainViewCg.gameObject.transform
+	arg_9_0.painting = arg_9_0:findTF("adapt/paint")
+	arg_9_0.btnContainer = arg_9_0:findTF("adapt/btns")
+	arg_9_0.switchSkinBtn = arg_9_0:findTF("adapt/btns/swichSkin_btn")
+	arg_9_0.replaceBtn = arg_9_0:findTF("adapt/btns/replace_btn")
+	arg_9_0.replaceBtnTip = arg_9_0.replaceBtn:Find("tip")
+	arg_9_0.cryptolaliaBtn = arg_9_0:findTF("adapt/btns/cryptolalia_btn")
+	arg_9_0.switchSkinBtnTag = arg_9_0:findTF("Tag", arg_9_0.switchSkinBtn)
+	arg_9_0.titlt = arg_9_0:findTF("top/frame/title")
+	arg_9_0.titltNative = arg_9_0:findTF("top/frame/title_native")
+	arg_9_0.titltRandom = arg_9_0:findTF("top/frame/title_random")
 
-	setActive(slot2, false)
+	local var_9_0 = arg_9_0:findTF("detail")
 
-	slot6 = PlayerVitaeBaseBtn.HRZ_TYPE
-	slot0.btns = {
-		PlayerVitaeSpineBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
-		PlayerVitaeBGBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
-		PlayerVitaeBMGBtn.New(slot2, PlayerVitaeBaseBtn.HRZ_TYPE),
-		PlayerVitaeLive2dBtn.New(slot2, slot6)
+	arg_9_0.detailCg = GetOrAddComponent(var_9_0, typeof(CanvasGroup))
+
+	local var_9_1 = arg_9_0:findTF("adapt/tpl")
+
+	setActive(var_9_1, false)
+
+	arg_9_0.btns = {
+		PlayerVitaeSpineBtn.New(var_9_1, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeBGBtn.New(var_9_1, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeBMGBtn.New(var_9_1, PlayerVitaeBaseBtn.HRZ_TYPE),
+		PlayerVitaeLive2dBtn.New(var_9_1, PlayerVitaeBaseBtn.HRZ_TYPE)
 	}
 
-	for slot6 = 1, #slot0.btns do
-		slot0.btns[slot6]:setParent(slot0:findTF("adapt/toggleBtns"), #slot0.btns - slot6)
+	for iter_9_0 = 1, #arg_9_0.btns do
+		arg_9_0.btns[iter_9_0]:setParent(arg_9_0:findTF("adapt/toggleBtns"), #arg_9_0.btns - iter_9_0)
 	end
 
-	slot0.btnLive2dReset = slot0:findTF("adapt/btnLive2dReset")
-	slot3 = GetComponent(findTF(slot0.btnLive2dReset, "img"), typeof(Image))
+	arg_9_0.btnLive2dReset = arg_9_0:findTF("adapt/btnLive2dReset")
 
-	slot3:SetNativeSize()
+	GetComponent(findTF(arg_9_0.btnLive2dReset, "img"), typeof(Image)):SetNativeSize()
+	GetComponent(arg_9_0.btnLive2dReset, typeof(Image)):SetNativeSize()
+	SetParent(arg_9_0.btnLive2dReset, arg_9_0:findTF("adapt/toggleBtns"))
 
-	slot3 = GetComponent(slot0.btnLive2dReset, typeof(Image))
+	arg_9_0.shipsPage = PlayerVitaeShipsPage.New(arg_9_0._tf, arg_9_0.event, arg_9_0.contextData)
+	arg_9_0.detailPage = PlayerVitaeDetailPage.New(var_9_0, arg_9_0.event, arg_9_0.contextData)
 
-	slot3:SetNativeSize()
-	SetParent(slot0.btnLive2dReset, slot0:findTF("adapt/toggleBtns"))
+	setParent(arg_9_0:findTF("adapt/toggleBtns"), arg_9_0:findTF("detail"), true)
 
-	slot0.shipsPage = PlayerVitaeShipsPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.detailPage = PlayerVitaeDetailPage.New(slot1, slot0.event, slot0.contextData)
+	arg_9_0.contextData.renamePage = PlayerVitaeRenamePage.New(arg_9_0._tf, arg_9_0.event)
+	arg_9_0.topFrame = arg_9_0:findTF("top/frame")
 
-	setParent(slot0:findTF("adapt/toggleBtns"), slot0:findTF("detail"), true)
+	local var_9_2 = PlayerVitaeDetailPage.PreCalcAspect(var_9_0, 1080)
 
-	slot0.contextData.renamePage = PlayerVitaeRenamePage.New(slot0._tf, slot0.event)
-	slot0.topFrame = slot0:findTF("top/frame")
-	slot0.detailPosx = slot0._tf.rect.width * 0.5 - 937 * PlayerVitaeDetailPage.PreCalcAspect(slot1, 1080)
+	arg_9_0.detailPosx = arg_9_0._tf.rect.width * 0.5 - 937 * var_9_2
 
-	LoadSpriteAsync("CommonBG/bg_admiral", function (slot0)
-		if IsNil(uv0.bg) then
+	LoadSpriteAsync("CommonBG/bg_admiral", function(arg_10_0)
+		if IsNil(arg_9_0.bg) then
 			return
 		end
 
-		slot1 = uv0.bg:GetComponent(typeof(Image))
-		slot1.sprite = slot0
-		slot1.color = Color.New(1, 1, 1, 1)
+		local var_10_0 = arg_9_0.bg:GetComponent(typeof(Image))
+
+		var_10_0.sprite = arg_10_0
+		var_10_0.color = Color.New(1, 1, 1, 1)
 	end)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0.shipsPage:GetLoaded() and uv0.shipsPage:isShowing() then
-			uv0.shipsPage:Hide()
-			uv0:ShowOrHideMainView(true)
+function var_0_0.didEnter(arg_11_0)
+	onButton(arg_11_0, arg_11_0.backBtn, function()
+		if arg_11_0.shipsPage:GetLoaded() and arg_11_0.shipsPage:isShowing() then
+			arg_11_0.shipsPage:Hide()
+			arg_11_0:ShowOrHideMainView(true)
 		else
-			uv0:emit(uv1.ON_BACK)
+			arg_11_0:emit(var_0_0.ON_BACK)
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.switchSkinBtn, function ()
-		uv0:emit(PlayerVitaeMediator.CHANGE_SKIN, uv0:GetFlagShip())
+	onButton(arg_11_0, arg_11_0.switchSkinBtn, function()
+		local var_13_0 = arg_11_0:GetFlagShip()
+
+		arg_11_0:emit(PlayerVitaeMediator.CHANGE_SKIN, var_13_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.replaceBtn, function ()
-		uv0.shipsPage:ExecuteAction("Update")
-		uv0:ShowOrHideMainView(false)
+	onButton(arg_11_0, arg_11_0.replaceBtn, function()
+		arg_11_0.shipsPage:ExecuteAction("Update")
+		arg_11_0:ShowOrHideMainView(false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cryptolaliaBtn, function ()
-		uv0:emit(PlayerVitaeMediator.OPEN_CRYPTOLALIA, uv0:GetFlagShip():getGroupId())
+	onButton(arg_11_0, arg_11_0.cryptolaliaBtn, function()
+		local var_15_0 = arg_11_0:GetFlagShip()
+
+		arg_11_0:emit(PlayerVitaeMediator.OPEN_CRYPTOLALIA, var_15_0:getGroupId())
 	end, SFX_PANEL)
-	slot0:bind(uv0.ON_PAGE_SWTICH, function (slot0, slot1)
-		setActive(uv0.titlt, slot1 == uv1.PAGE_DEFAULT)
-		setActive(uv0.titltNative, slot1 == uv1.PAGE_NATIVE_SHIPS)
-		setActive(uv0.titltRandom, slot1 == uv1.PAGE_RANDOM_SHIPS)
+	arg_11_0:bind(var_0_0.ON_PAGE_SWTICH, function(arg_16_0, arg_16_1)
+		setActive(arg_11_0.titlt, arg_16_1 == var_0_0.PAGE_DEFAULT)
+		setActive(arg_11_0.titltNative, arg_16_1 == var_0_0.PAGE_NATIVE_SHIPS)
+		setActive(arg_11_0.titltRandom, arg_16_1 == var_0_0.PAGE_RANDOM_SHIPS)
 	end)
 
-	slot1 = false
+	local var_11_0 = false
 
-	if slot0.contextData.showSelectCharacters then
-		slot0.contextData.showSelectCharacters = nil
+	if arg_11_0.contextData.showSelectCharacters then
+		arg_11_0.contextData.showSelectCharacters = nil
 
-		triggerButton(slot0.replaceBtn)
+		triggerButton(arg_11_0.replaceBtn)
 	else
-		slot0:DoEnterAnimation()
+		arg_11_0:DoEnterAnimation()
 
-		slot1 = true
+		var_11_0 = true
 	end
 
-	slot0:UpdatePainting()
-	slot0:UpdateReplaceTip()
-	slot0.detailPage:ExecuteAction("Show", slot0:GetPlayer(), slot1)
-	slot0:emit(uv0.ON_PAGE_SWTICH, uv0.PAGE_DEFAULT)
-	slot0:checkShowResetL2dBtn()
+	arg_11_0:UpdatePainting()
+	arg_11_0:UpdateReplaceTip()
+	arg_11_0.detailPage:ExecuteAction("Show", arg_11_0:GetPlayer(), var_11_0)
+	arg_11_0:emit(var_0_0.ON_PAGE_SWTICH, var_0_0.PAGE_DEFAULT)
+	arg_11_0:checkShowResetL2dBtn()
 end
 
-function slot0.UpdateReplaceTip(slot0)
-	setActive(slot0.replaceBtnTip, getProxy(SettingsProxy):ShouldEducateCharTip())
+function var_0_0.UpdateReplaceTip(arg_17_0)
+	setActive(arg_17_0.replaceBtnTip, getProxy(SettingsProxy):ShouldEducateCharTip())
 end
 
-function slot0.DoEnterAnimation(slot0)
-	function slot1(slot0)
-		slot1 = slot0.anchoredPosition3D
-		slot0.anchoredPosition3D = Vector3(slot1.x - 1200, slot1.y, 0)
+function var_0_0.DoEnterAnimation(arg_18_0)
+	local function var_18_0(arg_19_0)
+		local var_19_0 = arg_19_0.anchoredPosition3D
 
-		LeanTween.value(slot0.gameObject, slot1.x - 1200, slot1.x, 0.2):setOnUpdate(System.Action_float(function (slot0)
-			uv0.anchoredPosition3D = Vector3(slot0, uv1.y, 0)
+		arg_19_0.anchoredPosition3D = Vector3(var_19_0.x - 1200, var_19_0.y, 0)
+
+		LeanTween.value(arg_19_0.gameObject, var_19_0.x - 1200, var_19_0.x, 0.2):setOnUpdate(System.Action_float(function(arg_20_0)
+			arg_19_0.anchoredPosition3D = Vector3(arg_20_0, var_19_0.y, 0)
 		end)):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
 	end
 
-	for slot6, slot7 in ipairs({
-		slot0.btnContainer,
-		slot0.painting
-	}) do
-		slot1(slot7)
+	local var_18_1 = {
+		arg_18_0.btnContainer,
+		arg_18_0.painting
+	}
+
+	for iter_18_0, iter_18_1 in ipairs(var_18_1) do
+		var_18_0(iter_18_1)
 	end
 
-	(function (slot0)
-		slot1 = slot0.localPosition
-		slot0.localPosition = Vector3(slot1.x, slot1.y + 150, 0)
+	;(function(arg_21_0)
+		local var_21_0 = arg_21_0.localPosition
 
-		LeanTween.moveLocalY(slot0.gameObject, slot1.y, 0.2):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
-	end)(slot0.topFrame)
+		arg_21_0.localPosition = Vector3(var_21_0.x, var_21_0.y + 150, 0)
+
+		LeanTween.moveLocalY(arg_21_0.gameObject, var_21_0.y, 0.2):setDelay(0.1):setEase(LeanTweenType.easeInOutSine)
+	end)(arg_18_0.topFrame)
 end
 
-function slot0.ShowOrHideMainView(slot0, slot1)
-	slot0.mainViewCg.alpha = slot1 and 1 or 0
-	slot0.mainViewCg.blocksRaycasts = slot1
-	slot0.detailCg.alpha = slot1 and 1 or 0
-	slot0.detailCg.blocksRaycasts = slot1
+function var_0_0.ShowOrHideMainView(arg_22_0, arg_22_1)
+	arg_22_0.mainViewCg.alpha = arg_22_1 and 1 or 0
+	arg_22_0.mainViewCg.blocksRaycasts = arg_22_1
+	arg_22_0.detailCg.alpha = arg_22_1 and 1 or 0
+	arg_22_0.detailCg.blocksRaycasts = arg_22_1
 
-	if slot1 then
-		slot0:UpdatePainting()
-		slot0:UpdateReplaceTip()
+	if arg_22_1 then
+		arg_22_0:UpdatePainting()
+		arg_22_0:UpdateReplaceTip()
 	end
 end
 
-function slot0.UpdatePainting(slot0, slot1)
-	slot2 = slot0:GetFlagShip()
-	slot3 = false
-	slot4 = {}
+function var_0_0.UpdatePainting(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0:GetFlagShip()
+	local var_23_1 = false
+	local var_23_2 = {}
 
-	for slot8, slot9 in ipairs(slot0.btns) do
-		if slot9:IsActive(slot2) then
-			table.insert(slot4, slot9)
+	for iter_23_0, iter_23_1 in ipairs(arg_23_0.btns) do
+		local var_23_3 = iter_23_1:IsActive(var_23_0)
+
+		if var_23_3 then
+			table.insert(var_23_2, iter_23_1)
 		end
 
-		slot9:Update(slot10, #slot4, slot2)
+		iter_23_1:Update(var_23_3, #var_23_2, var_23_0)
 
-		if slot10 and not slot3 and slot9:IsOverlap(slot0.detailPosx) then
-			slot3 = true
+		if var_23_3 and not var_23_1 and iter_23_1:IsOverlap(arg_23_0.detailPosx) then
+			var_23_1 = true
 		end
 	end
 
-	if slot3 then
-		for slot8, slot9 in ipairs(slot4) do
-			slot9:SwitchToVecLayout()
+	if var_23_1 then
+		for iter_23_2, iter_23_3 in ipairs(var_23_2) do
+			iter_23_3:SwitchToVecLayout()
 		end
 	end
 
-	if not slot0.displaySkinID or slot0.displaySkinID ~= slot2.skinId or slot1 then
-		setPaintingPrefabAsync(slot0.painting, slot2:getPainting(), "kanban")
-		setActive(slot0.switchSkinBtn, not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(slot2) and not isa(slot2, VirtualEducateCharShip))
+	if not arg_23_0.displaySkinID or arg_23_0.displaySkinID ~= var_23_0.skinId or arg_23_1 then
+		setPaintingPrefabAsync(arg_23_0.painting, var_23_0:getPainting(), "kanban")
 
-		slot0.displaySkinID = slot2.skinId
+		local var_23_4 = not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(var_23_0)
+
+		setActive(arg_23_0.switchSkinBtn, var_23_4 and not isa(var_23_0, VirtualEducateCharShip))
+
+		arg_23_0.displaySkinID = var_23_0.skinId
 	end
 
-	setActive(slot0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(slot2:getGroupId()))
-	slot0:updateSwitchSkinBtnTag()
-	slot0:checkShowResetL2dBtn()
+	local var_23_5 = var_23_0:getGroupId()
+
+	setActive(arg_23_0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(var_23_5))
+	arg_23_0:updateSwitchSkinBtnTag()
+	arg_23_0:checkShowResetL2dBtn()
 end
 
-function slot0.updateSwitchSkinBtnTag(slot0)
-	setActive(slot0.switchSkinBtnTag, #PaintingConst.GetPaintingNameListByShipVO(slot0:GetFlagShip()) > 0)
+function var_0_0.updateSwitchSkinBtnTag(arg_24_0)
+	local var_24_0 = arg_24_0:GetFlagShip()
+
+	setActive(arg_24_0.switchSkinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(var_24_0) > 0)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.shipsPage and slot0.shipsPage:GetLoaded() and slot0.shipsPage:isShowing() then
-		triggerButton(slot0.backBtn)
+function var_0_0.onBackPressed(arg_25_0)
+	if arg_25_0.shipsPage and arg_25_0.shipsPage:GetLoaded() and arg_25_0.shipsPage:isShowing() then
+		triggerButton(arg_25_0.backBtn)
 
 		return
 	end
 
-	if slot0.contextData.renamePage and slot0.contextData.renamePage:GetLoaded() and slot0.contextData.renamePage:isShowing() then
-		slot0.contextData.renamePage:Hide()
+	if arg_25_0.contextData.renamePage and arg_25_0.contextData.renamePage:GetLoaded() and arg_25_0.contextData.renamePage:isShowing() then
+		arg_25_0.contextData.renamePage:Hide()
 
 		return
 	end
 
-	uv0.super.onBackPressed(slot0)
+	var_0_0.super.onBackPressed(arg_25_0)
 end
 
-function slot0.checkShowResetL2dBtn(slot0)
-	if slot0:GetFlagShip() and slot1:GetSkinConfig().spine_use_live2d == 1 then
-		setActive(slot0.btnLive2dReset, false)
+function var_0_0.checkShowResetL2dBtn(arg_26_0)
+	local var_26_0 = arg_26_0:GetFlagShip()
+
+	if var_26_0 and var_26_0:GetSkinConfig().spine_use_live2d == 1 then
+		setActive(arg_26_0.btnLive2dReset, false)
 
 		return
 	end
 
-	if not PathMgr.FileExists(PathMgr.getAssetBundle(HXSet.autoHxShiftPath("live2d/" .. string.lower(slot1:getPainting()), nil, true))) then
-		setActive(slot0.btnLive2dReset, false)
+	local var_26_1 = "live2d/" .. string.lower(var_26_0:getPainting())
+	local var_26_2 = HXSet.autoHxShiftPath(var_26_1, nil, true)
+
+	if not PathMgr.FileExists(PathMgr.getAssetBundle(var_26_2)) then
+		setActive(arg_26_0.btnLive2dReset, false)
 
 		return
 	end
 
-	setActive(slot0.btnLive2dReset, true)
-	onButton(slot0, slot0.btnLive2dReset, function ()
-		if uv0:GetFlagShip() then
-			slot0 = uv0:GetFlagShip()
+	setActive(arg_26_0.btnLive2dReset, true)
+	onButton(arg_26_0, arg_26_0.btnLive2dReset, function()
+		if arg_26_0:GetFlagShip() then
+			local var_27_0 = arg_26_0:GetFlagShip()
 
-			Live2dConst.ClearLive2dSave(slot0.skinId, slot0.id)
+			Live2dConst.ClearLive2dSave(var_27_0.skinId, var_27_0.id)
 		end
 	end, SFX_CONFIRM)
 end
 
-function slot0.willExit(slot0)
-	if LeanTween.isTweening(slot0.painting.gameObject) then
-		LeanTween.cancel(slot0.painting.gameObject)
+function var_0_0.willExit(arg_28_0)
+	if LeanTween.isTweening(arg_28_0.painting.gameObject) then
+		LeanTween.cancel(arg_28_0.painting.gameObject)
 	end
 
-	for slot4, slot5 in ipairs(slot0.btns) do
-		slot5:Dispose()
+	for iter_28_0, iter_28_1 in ipairs(arg_28_0.btns) do
+		iter_28_1:Dispose()
 	end
 
-	slot0.btns = nil
+	arg_28_0.btns = nil
 
-	if slot0.shipsPage then
-		slot0.shipsPage:Destroy()
+	if arg_28_0.shipsPage then
+		arg_28_0.shipsPage:Destroy()
 
-		slot0.shipsPage = nil
+		arg_28_0.shipsPage = nil
 	end
 
-	if slot0.detailPage then
-		slot0.detailPage:Destroy()
+	if arg_28_0.detailPage then
+		arg_28_0.detailPage:Destroy()
 
-		slot0.detailPage = nil
+		arg_28_0.detailPage = nil
 	end
 
-	if slot0.contextData.renamePage then
-		slot0.contextData.renamePage:Destroy()
+	if arg_28_0.contextData.renamePage then
+		arg_28_0.contextData.renamePage:Destroy()
 
-		slot0.contextData.renamePage = nil
+		arg_28_0.contextData.renamePage = nil
 	end
 end
 
-return slot0
+return var_0_0

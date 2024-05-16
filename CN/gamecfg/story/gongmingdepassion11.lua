@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "GONGMINGDEPASSION11",
 	mode = 2,
 	fadeOut = 1.5,
@@ -198,7 +198,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 207140,
-			say = "（哼哼~可畏在上台之前可是好好有练习过表情管理，绝对能好好呈现C位的魅力的！）",
+			say = "（哼哼~可畏在上台之前可是有好好练习过表情管理，绝对能好好呈现C位的魅力的！）",
 			painting = {
 				alpha = 0.3,
 				time = 1

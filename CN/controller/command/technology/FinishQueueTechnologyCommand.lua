@@ -1,48 +1,51 @@
-slot0 = class("FinishQueueTechnologyCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FinishQueueTechnologyCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(TechnologyProxy)
 
-	if #getProxy(TechnologyProxy).queue == 0 or not slot3.queue[1]:isCompleted() then
+	if #var_1_1.queue == 0 or not var_1_1.queue[1]:isCompleted() then
 		return
 	end
 
-	slot4 = pg.ConnectionMgr.GetInstance()
-
-	slot4:Send(63015, {
+	pg.ConnectionMgr.GetInstance():Send(63015, {
 		id = 0
-	}, 63016, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(ActivityProxy)
-			slot2 = {}
+	}, 63016, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ActivityProxy)
+			local var_2_1 = {}
 
-			for slot6, slot7 in ipairs(slot0.drops) do
-				underscore.each(({
-					items = PlayerConst.addTranDrop(slot7.common_list),
-					commons = PlayerConst.addTranDrop(slot7.drop_list),
-					catchupItems = PlayerConst.addTranDrop(slot7.catchup_list),
-					catchupActItems = PlayerConst.addTranDrop(slot7.catchupact_list)
-				}).catchupItems, function (slot0)
-					uv0:addCatupPrintsNum(slot0.count)
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.drops) do
+				local var_2_2 = {
+					items = PlayerConst.addTranDrop(iter_2_1.common_list),
+					commons = PlayerConst.addTranDrop(iter_2_1.drop_list),
+					catchupItems = PlayerConst.addTranDrop(iter_2_1.catchup_list),
+					catchupActItems = PlayerConst.addTranDrop(iter_2_1.catchupact_list)
+				}
+
+				underscore.each(var_2_2.catchupItems, function(arg_3_0)
+					var_1_1:addCatupPrintsNum(arg_3_0.count)
 				end)
 
-				if slot1:getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP) and not slot9:isEnd() then
-					underscore.each(slot8.catchupActItems, function (slot0)
-						uv0.data1 = uv0.data1 + slot0.count
+				local var_2_3 = var_2_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP)
+
+				if var_2_3 and not var_2_3:isEnd() then
+					underscore.each(var_2_2.catchupActItems, function(arg_4_0)
+						var_2_3.data1 = var_2_3.data1 + arg_4_0.count
 					end)
 				end
 
-				table.insert(slot2, PlayerConst.MergeTechnologyAward(slot8))
-				uv0:removeFirstQueueTechnology()
+				table.insert(var_2_1, PlayerConst.MergeTechnologyAward(var_2_2))
+				var_1_1:removeFirstQueueTechnology()
 			end
 
-			uv1:sendNotification(GAME.FINISH_QUEUE_TECHNOLOGY_DONE, {
-				dropInfos = slot2
+			arg_1_0:sendNotification(GAME.FINISH_QUEUE_TECHNOLOGY_DONE, {
+				dropInfos = var_2_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_stop_erro") .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_stop_erro") .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

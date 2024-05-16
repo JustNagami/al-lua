@@ -1,56 +1,64 @@
-slot0 = class("GuildShopCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildShopCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.goodsId
+	local var_1_2 = var_1_0.selectedId
+	local var_1_3 = #var_1_2
+	local var_1_4 = getProxy(PlayerProxy)
+	local var_1_5 = var_1_4:getData()
+	local var_1_6 = var_1_5:getResource(8)
+	local var_1_7 = getProxy(ShopsProxy)
+	local var_1_8 = var_1_7:getGuildShop():getGoodsById(var_1_1)
+	local var_1_9 = var_1_8:GetPrice()
 
-	if getProxy(PlayerProxy):getData():getResource(8) < getProxy(ShopsProxy):getGuildShop():getGoodsById(slot2.goodsId):GetPrice() * #slot2.selectedId then
+	if var_1_6 < var_1_9 * var_1_3 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	if not slot11:CanPurchaseCnt(slot5) then
+	if not var_1_8:CanPurchaseCnt(var_1_3) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_shop_cnt_no_enough"))
 
 		return
 	end
 
-	slot13 = {}
+	local var_1_10 = {}
 
-	for slot17, slot18 in ipairs(slot4) do
-		if not slot13[slot18] then
-			slot13[slot18] = {
+	for iter_1_0, iter_1_1 in ipairs(var_1_2) do
+		if not var_1_10[iter_1_1] then
+			var_1_10[iter_1_1] = {
 				count = 1,
-				id = slot18
+				id = iter_1_1
 			}
 		else
-			slot13[slot18].count = slot13[slot18].count + 1
+			var_1_10[iter_1_1].count = var_1_10[iter_1_1].count + 1
 		end
 	end
 
-	slot14 = pg.ConnectionMgr.GetInstance()
+	pg.ConnectionMgr.GetInstance():Send(60035, {
+		goodsid = var_1_8.configId,
+		index = var_1_8.index,
+		selected = _.values(var_1_10)
+	}, 60036, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_1 = var_1_7:getGuildShop()
 
-	slot14:Send(60035, {
-		goodsid = slot11.configId,
-		index = slot11.index,
-		selected = _.values(slot13)
-	}, 60036, function (slot0)
-		if slot0.result == 0 then
-			slot2 = uv0:getGuildShop()
-
-			slot2:UpdateGoodsCnt(uv1, uv2)
-			uv0:updateGuildShop(slot2)
-			uv3:consume({
-				guildCoin = uv4 * uv2
+			var_2_1:UpdateGoodsCnt(var_1_1, var_1_3)
+			var_1_7:updateGuildShop(var_2_1)
+			var_1_5:consume({
+				guildCoin = var_1_9 * var_1_3
 			})
-			uv5:updatePlayer(uv3)
-			uv6:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.drop_list)
+			var_1_4:updatePlayer(var_1_5)
+			arg_1_0:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE_DONE, {
+				awards = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

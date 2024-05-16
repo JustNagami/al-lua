@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"关闭奖励界面",
 	"返回主界面"
 }
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -341,
 				posX = 431,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			spriteui = {
 				defaultName = "white_dot",
@@ -41,7 +41,7 @@ return {
 				mode = 2,
 				posY = 223.26,
 				posX = -136.21,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/TaskScene(Clone)/blur_panel/adapt/top/back_btn",

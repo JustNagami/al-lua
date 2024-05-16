@@ -1,39 +1,40 @@
-slot0 = class("ServerNoticeProxy", import(".NetProxy"))
-slot0.SERVER_NOTICES_UPDATE = "server notices update"
-slot0.KEY_NEWLY_ID = "server_notice.newly_id"
-slot0.KEY_STOP_REMIND = "server_notice.dont_remind"
+﻿local var_0_0 = class("ServerNoticeProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.data = {}
+var_0_0.SERVER_NOTICES_UPDATE = "server notices update"
+var_0_0.KEY_NEWLY_ID = "server_notice.newly_id"
+var_0_0.KEY_STOP_REMIND = "server_notice.dont_remind"
 
-	slot0:on(11300, function (slot0)
-		for slot4, slot5 in ipairs(slot0.notice_list) do
-			slot6 = false
+function var_0_0.register(arg_1_0)
+	arg_1_0.data = {}
 
-			for slot10 = 1, #uv0.data do
-				if uv0.data[slot10].id == slot5.id then
-					uv0.data[slot10] = ServerNotice.New(slot5)
-					slot6 = true
+	arg_1_0:on(11300, function(arg_2_0)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.notice_list) do
+			local var_2_0 = false
+
+			for iter_2_2 = 1, #arg_1_0.data do
+				if arg_1_0.data[iter_2_2].id == iter_2_1.id then
+					arg_1_0.data[iter_2_2] = ServerNotice.New(iter_2_1)
+					var_2_0 = true
 
 					break
 				end
 			end
 
-			if not slot6 then
-				if #slot0.notice_list == 1 then
-					table.insert(uv0.data, 1, ServerNotice.New(slot5))
+			if not var_2_0 then
+				if #arg_2_0.notice_list == 1 then
+					table.insert(arg_1_0.data, 1, ServerNotice.New(iter_2_1))
 				else
-					table.insert(uv0.data, ServerNotice.New(slot5))
+					table.insert(arg_1_0.data, ServerNotice.New(iter_2_1))
 				end
 			end
 		end
 
-		uv0:sendNotification(uv1.SERVER_NOTICES_UPDATE)
+		arg_1_0:sendNotification(var_0_0.SERVER_NOTICES_UPDATE)
 	end)
 end
 
-function slot0.testData(slot0, slot1)
-	table.insert(slot1, ServerNotice.New({
+function var_0_0.testData(arg_3_0, arg_3_1)
+	table.insert(arg_3_1, ServerNotice.New({
 		btn_title = "DEWENJUN layer test",
 		title_image = "<config type = 2 param = {'OTHERWORLD_MAP', {openTerminal = true,terminalPage = 2, testData = asddws}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
 		id = 1301,
@@ -44,7 +45,7 @@ function slot0.testData(slot0, slot1)
 		tag_type = 1,
 		version = tostring(1)
 	}))
-	table.insert(slot1, ServerNotice.New({
+	table.insert(arg_3_1, ServerNotice.New({
 		btn_title = "DEWENJUN test",
 		title_image = "<config type = 2 param = {'OTHERWORLD_MAP'} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
 		id = 1302,
@@ -55,7 +56,7 @@ function slot0.testData(slot0, slot1)
 		tag_type = 1,
 		version = tostring(2)
 	}))
-	table.insert(slot1, ServerNotice.New({
+	table.insert(arg_3_1, ServerNotice.New({
 		btn_title = "URL test",
 		title_image = "<config type = 1 param = 'https://www.google.com' />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
 		id = 1303,
@@ -66,7 +67,7 @@ function slot0.testData(slot0, slot1)
 		tag_type = 1,
 		version = tostring(3)
 	}))
-	table.insert(slot1, ServerNotice.New({
+	table.insert(arg_3_1, ServerNotice.New({
 		btn_title = "URL test",
 		title_image = "<config type = 2 param = {'scene court yard', {OpenShop = true}} />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
 		id = 1304,
@@ -77,7 +78,7 @@ function slot0.testData(slot0, slot1)
 		tag_type = 1,
 		version = tostring(4)
 	}))
-	table.insert(slot1, ServerNotice.New({
+	table.insert(arg_3_1, ServerNotice.New({
 		btn_title = "URL test",
 		title_image = "<config type = 3 param = 5292 />https://blhxusstatic.oss-us-east-1.aliyuncs.com/bulletinboard_test.png",
 		id = 1305,
@@ -90,69 +91,69 @@ function slot0.testData(slot0, slot1)
 	}))
 end
 
-function slot0.getServerNotices(slot0, slot1)
-	slot2 = {}
+function var_0_0.getServerNotices(arg_4_0, arg_4_1)
+	local var_4_0 = {}
 
-	for slot6, slot7 in ipairs(slot0.data) do
-		if not slot1 or not slot7.isRead then
-			table.insert(slot2, slot7)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.data) do
+		if not arg_4_1 or not iter_4_1.isRead then
+			table.insert(var_4_0, iter_4_1)
 		end
 	end
 
-	return slot2
+	return var_4_0
 end
 
-function slot0.needAutoOpen(slot0)
-	slot1 = true
+function var_0_0.needAutoOpen(arg_5_0)
+	local var_5_0 = true
 
-	if PlayerPrefs.HasKey(uv0.KEY_STOP_REMIND) then
-		slot2 = PlayerPrefs.GetInt(uv0.KEY_STOP_REMIND)
-		slot3 = pg.TimeMgr.GetInstance()
+	if PlayerPrefs.HasKey(var_0_0.KEY_STOP_REMIND) then
+		local var_5_1 = PlayerPrefs.GetInt(var_0_0.KEY_STOP_REMIND)
+		local var_5_2 = pg.TimeMgr.GetInstance()
 
-		if not slot0:hasNewNotice() and slot3:IsSameDay(slot2, slot3:GetServerTime()) then
-			slot1 = false
+		if not arg_5_0:hasNewNotice() and var_5_2:IsSameDay(var_5_1, var_5_2:GetServerTime()) then
+			var_5_0 = false
 		end
-	elseif slot0.runtimeUniqueCode and slot0.runtimeUniqueCode == slot0:getUniqueCode() then
-		slot1 = false
+	elseif arg_5_0.runtimeUniqueCode and arg_5_0.runtimeUniqueCode == arg_5_0:getUniqueCode() then
+		var_5_0 = false
 	end
 
-	slot0.runtimeUniqueCode = slot0:getUniqueCode()
+	arg_5_0.runtimeUniqueCode = arg_5_0:getUniqueCode()
 
-	return slot1
+	return var_5_0
 end
 
-function slot0.setStopRemind(slot0, slot1)
-	if slot1 then
-		PlayerPrefs.SetInt(uv0.KEY_STOP_REMIND, pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.setStopRemind(arg_6_0, arg_6_1)
+	if arg_6_1 then
+		PlayerPrefs.SetInt(var_0_0.KEY_STOP_REMIND, pg.TimeMgr.GetInstance():GetServerTime())
 	else
-		PlayerPrefs.DeleteKey(uv0.KEY_STOP_REMIND)
+		PlayerPrefs.DeleteKey(var_0_0.KEY_STOP_REMIND)
 	end
 
 	PlayerPrefs.Save()
 end
 
-function slot0.getStopRemind(slot0)
-	return PlayerPrefs.HasKey(uv0.KEY_STOP_REMIND)
+function var_0_0.getStopRemind(arg_7_0)
+	return PlayerPrefs.HasKey(var_0_0.KEY_STOP_REMIND)
 end
 
-function slot0.setStopNewTip(slot0)
-	PlayerPrefs.SetInt(uv0.KEY_NEWLY_ID, slot0:getUniqueCode())
+function var_0_0.setStopNewTip(arg_8_0)
+	PlayerPrefs.SetInt(var_0_0.KEY_NEWLY_ID, arg_8_0:getUniqueCode())
 	PlayerPrefs.Save()
-	slot0:sendNotification(uv0.SERVER_NOTICES_UPDATE)
+	arg_8_0:sendNotification(var_0_0.SERVER_NOTICES_UPDATE)
 end
 
-function slot0.hasNewNotice(slot0)
-	if PlayerPrefs.HasKey(uv0.KEY_NEWLY_ID) and PlayerPrefs.GetInt(uv0.KEY_NEWLY_ID) == slot0:getUniqueCode() then
+function var_0_0.hasNewNotice(arg_9_0)
+	if PlayerPrefs.HasKey(var_0_0.KEY_NEWLY_ID) and PlayerPrefs.GetInt(var_0_0.KEY_NEWLY_ID) == arg_9_0:getUniqueCode() then
 		return false
 	end
 
 	return true
 end
 
-function slot0.getUniqueCode(slot0)
-	return _.reduce(slot0.data, 0, function (slot0, slot1)
-		return slot0 + slot1:getUniqueCode()
+function var_0_0.getUniqueCode(arg_10_0)
+	return _.reduce(arg_10_0.data, 0, function(arg_11_0, arg_11_1)
+		return arg_11_0 + arg_11_1:getUniqueCode()
 	end)
 end
 
-return slot0
+return var_0_0

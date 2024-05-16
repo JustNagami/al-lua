@@ -1,4 +1,4 @@
-return {
+﻿return {
 	tilewidth = 124,
 	height = 11,
 	tileheight = 124,

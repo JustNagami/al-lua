@@ -1,115 +1,121 @@
-slot0 = class("CurrentWorldBossChallengePage", import(".BaseWorldBossChallengePage"))
-slot0.Listeners = {
+﻿local var_0_0 = class("CurrentWorldBossChallengePage", import(".BaseWorldBossChallengePage"))
+
+var_0_0.Listeners = {
 	onPtUpdated = "OnPtUpdated",
 	onRankListUpdated = "OnRankListUpdated",
 	onCacheBossUpdated = "OnCacheBossUpdated"
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CurrentWorldBossChallengeUI"
 end
 
-function slot0.OnFilterBoss(slot0, slot1)
-	return WorldBossConst._IsCurrBoss(slot1)
+function var_0_0.OnFilterBoss(arg_2_0, arg_2_1)
+	return WorldBossConst._IsCurrBoss(arg_2_1)
 end
 
-function slot0.Setup(slot0, slot1)
-	for slot5, slot6 in pairs(uv0.Listeners) do
-		slot0[slot5] = function (...)
-			uv0[uv1](uv2, ...)
+function var_0_0.Setup(arg_3_0, arg_3_1)
+	for iter_3_0, iter_3_1 in pairs(var_0_0.Listeners) do
+		arg_3_0[iter_3_0] = function(...)
+			var_0_0[iter_3_1](arg_3_0, ...)
 		end
 	end
 
-	slot0.proxy = slot1
+	arg_3_0.proxy = arg_3_1
 end
 
-function slot0.AddListeners(slot0, slot1)
-	uv0.super.AddListeners(slot0, slot1)
-	slot1:AddListener(WorldBossProxy.EventPtUpdated, slot0.onPtUpdated)
+function var_0_0.AddListeners(arg_5_0, arg_5_1)
+	var_0_0.super.AddListeners(arg_5_0, arg_5_1)
+	arg_5_1:AddListener(WorldBossProxy.EventPtUpdated, arg_5_0.onPtUpdated)
 end
 
-function slot0.RemoveListeners(slot0, slot1)
-	uv0.super.RemoveListeners(slot0, slot1)
-	slot1:RemoveListener(WorldBossProxy.EventPtUpdated, slot0.onPtUpdated)
+function var_0_0.RemoveListeners(arg_6_0, arg_6_1)
+	var_0_0.super.RemoveListeners(arg_6_0, arg_6_1)
+	arg_6_1:RemoveListener(WorldBossProxy.EventPtUpdated, arg_6_0.onPtUpdated)
 end
 
-function slot0.OnPtUpdated(slot0, slot1)
-	if slot0.ptBtn then
-		slot0.ptBtn:Update()
+function var_0_0.OnPtUpdated(arg_7_0, arg_7_1)
+	if arg_7_0.ptBtn then
+		arg_7_0.ptBtn:Update()
 	end
 end
 
-function slot0.OnLoaded(slot0)
-	uv0.super.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_8_0)
+	var_0_0.super.OnLoaded(arg_8_0)
 
-	slot0.awardPage = WorldBossAwardPage.New(slot0._tf.parent.parent, slot0.event)
-	slot0.switchBtn = slot0:findTF("detail_btn")
-	slot0.archivesChallengeBtn = slot0:findTF("archives_list_btn")
-	slot0.awardBtn = slot0:findTF("main/award_btn")
+	arg_8_0.awardPage = WorldBossAwardPage.New(arg_8_0._tf.parent.parent, arg_8_0.event)
+	arg_8_0.switchBtn = arg_8_0:findTF("detail_btn")
+	arg_8_0.archivesChallengeBtn = arg_8_0:findTF("archives_list_btn")
+	arg_8_0.awardBtn = arg_8_0:findTF("main/award_btn")
 
-	setActive(slot0.archivesChallengeBtn, not LOCK_WORLDBOSS_ARCHIVES)
+	setActive(arg_8_0.archivesChallengeBtn, not LOCK_WORLDBOSS_ARCHIVES)
 end
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
-	onButton(slot0, slot0.switchBtn, function ()
-		if nowWorld():GetBossProxy():GetSelfBoss() and not WorldBossConst._IsCurrBoss(slot0) then
+function var_0_0.OnInit(arg_9_0)
+	var_0_0.super.OnInit(arg_9_0)
+	onButton(arg_9_0, arg_9_0.switchBtn, function()
+		local var_10_0 = nowWorld():GetBossProxy():GetSelfBoss()
+
+		if var_10_0 and not WorldBossConst._IsCurrBoss(var_10_0) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("archives_boss_was_opened"))
 		else
-			uv0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_CURRENT)
+			arg_9_0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_CURRENT)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.archivesChallengeBtn, function ()
-		uv0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
+	onButton(arg_9_0, arg_9_0.archivesChallengeBtn, function()
+		arg_9_0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 	end, SFX_PANEL)
-	onToggle(slot0, slot0:findTF("list_panel/frame/filter/toggles/world"), function (slot0)
-		uv0.filterFlags[1] = slot0 and WorldBoss.BOSS_TYPE_WORLD or -1
+	onToggle(arg_9_0, arg_9_0:findTF("list_panel/frame/filter/toggles/world"), function(arg_12_0)
+		arg_9_0.filterFlags[1] = arg_12_0 and WorldBoss.BOSS_TYPE_WORLD or -1
 
-		uv0:CheckToggle()
-		uv0:UpdateNonProcessList()
+		arg_9_0:CheckToggle()
+		arg_9_0:UpdateNonProcessList()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("point/help"), function ()
+	onButton(arg_9_0, arg_9_0:findTF("point/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_boss_help_meta.tip
 		})
 	end, SFX_PANEL)
 
-	slot0.ptBtn = WorldbossPtBtn.New(slot0:findTF("point"))
+	arg_9_0.ptBtn = WorldbossPtBtn.New(arg_9_0:findTF("point"))
 end
 
-function slot0.CheckToggle(slot0)
-	uv0.super.CheckToggle(slot0)
+function var_0_0.CheckToggle(arg_14_0)
+	var_0_0.super.CheckToggle(arg_14_0)
 
-	if _.all(slot0.filterFlags, function (slot0)
-		return slot0 == -1
+	if _.all(arg_14_0.filterFlags, function(arg_15_0)
+		return arg_15_0 == -1
 	end) then
-		triggerToggle(slot0:findTF("list_panel/frame/filter/toggles/world"), true)
+		triggerToggle(arg_14_0:findTF("list_panel/frame/filter/toggles/world"), true)
 	end
 end
 
-function slot0.UpdateMainView(slot0, slot1, slot2)
-	uv0.super.UpdateMainView(slot0, slot1, slot2)
-	setActive(slot0.awardBtn, not slot1:isDeath())
-	onButton(slot0, slot0.awardBtn, function ()
-		uv0.awardPage:ExecuteAction("Update", uv1)
+function var_0_0.UpdateMainView(arg_16_0, arg_16_1, arg_16_2)
+	var_0_0.super.UpdateMainView(arg_16_0, arg_16_1, arg_16_2)
+
+	local var_16_0 = arg_16_1:isDeath()
+
+	setActive(arg_16_0.awardBtn, not var_16_0)
+	onButton(arg_16_0, arg_16_0.awardBtn, function()
+		arg_16_0.awardPage:ExecuteAction("Update", arg_16_1)
 	end, SFX_PANEL)
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_18_0)
+	var_0_0.super.OnDestroy(arg_18_0)
 
-	if slot0.awardPage then
-		slot0.awardPage:Destroy()
+	if arg_18_0.awardPage then
+		arg_18_0.awardPage:Destroy()
 
-		slot0.awardPage = nil
+		arg_18_0.awardPage = nil
 	end
 
-	if slot0.ptBtn then
-		slot0.ptBtn:Dispose()
+	if arg_18_0.ptBtn then
+		arg_18_0.ptBtn:Dispose()
 
-		slot0.ptBtn = nil
+		arg_18_0.ptBtn = nil
 	end
 end
 
-return slot0
+return var_0_0

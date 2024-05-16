@@ -1,67 +1,68 @@
-slot0 = class("SenrankaguraMedalMediator", import("..base.ContextMediator"))
-slot0.SUBMIT_TASK_ALL = "activity submit task all"
-slot0.SUBMIT_TASK = "activity submit task "
-slot0.TASK_GO = "task go "
+﻿local var_0_0 = class("SenrankaguraMedalMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.SUBMIT_TASK, function (slot0, slot1)
-		uv0.displayAwards = {}
-		slot2 = uv0
+var_0_0.SUBMIT_TASK_ALL = "activity submit task all"
+var_0_0.SUBMIT_TASK = "activity submit task "
+var_0_0.TASK_GO = "task go "
 
-		slot2:sendNotification(GAME.SUBMIT_TASK, slot1, function (slot0)
-			if not slot0 then
-				-- Nothing
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SUBMIT_TASK, function(arg_2_0, arg_2_1)
+		arg_1_0.displayAwards = {}
+
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_2_1, function(arg_3_0)
+			if not arg_3_0 then
+				-- block empty
 			end
 		end)
 	end)
-	slot0:bind(uv0.SUBMIT_TASK_ALL, function (slot0, slot1)
-		slot2 = getProxy(TaskProxy)
-		slot3 = false
-		slot4 = {}
+	arg_1_0:bind(var_0_0.SUBMIT_TASK_ALL, function(arg_4_0, arg_4_1)
+		local var_4_0 = getProxy(TaskProxy)
+		local var_4_1 = false
+		local var_4_2 = {}
 
-		for slot8 = 1, #slot1 do
-			slot9 = slot2:getTaskById(slot1[slot8])
+		for iter_4_0 = 1, #arg_4_1 do
+			local var_4_3 = var_4_0:getTaskById(arg_4_1[iter_4_0])
 
-			table.insert(slot4, slot9)
+			table.insert(var_4_2, var_4_3)
 
-			if not slot9 then
+			if not var_4_3 then
 				return
 			end
 
-			if not slot3 and slot9:IsOverflowShipExpItem() then
-				slot3 = true
+			if not var_4_1 and var_4_3:IsOverflowShipExpItem() then
+				var_4_1 = true
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("player_expResource_mail_fullBag"),
-					onYes = function ()
-						uv0.displayAwards = {}
+					onYes = function()
+						arg_1_0.displayAwards = {}
 
-						uv0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-							resultList = uv1
+						arg_1_0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+							resultList = var_4_2
 						})
 					end,
-					onNo = function ()
+					onNo = function()
+						return
 					end
 				})
 			end
 		end
 
-		if not slot3 then
-			uv0.displayAwards = {}
+		if not var_4_1 then
+			arg_1_0.displayAwards = {}
 
-			uv0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-				resultList = slot4
+			arg_1_0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+				resultList = var_4_2
 			})
 		end
 	end)
-	slot0:bind(uv0.TASK_GO, function (slot0, slot1)
-		uv0:sendNotification(GAME.TASK_GO, {
-			taskVO = slot1
+	arg_1_0:bind(var_0_0.TASK_GO, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
+			taskVO = arg_7_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {
 		GAME.SUBMIT_TASK_DONE,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -71,39 +72,42 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	if slot1:getName() == GAME.SUBMIT_TASK_DONE then
-		if #slot3 > 0 then
-			for slot7 = 1, #slot3 do
-				if slot3[slot7].configId ~= slot0.viewComponent.ptId then
-					table.insert(slot0.displayAwards, slot3[slot7])
+	if var_9_0 == GAME.SUBMIT_TASK_DONE then
+		if #var_9_1 > 0 then
+			for iter_9_0 = 1, #var_9_1 do
+				if var_9_1[iter_9_0].configId == arg_9_0.viewComponent.ptId then
+					-- block empty
+				else
+					table.insert(arg_9_0.displayAwards, var_9_1[iter_9_0])
 				end
 			end
 		end
 
-		slot0:checkShowTaskAward()
-	elseif slot2 == GAME.ACTIVITY_UPDATED then
-		-- Nothing
-	elseif slot2 == GAME.MEMORYBOOK_UNLOCK_DONE then
-		slot0.viewComponent:updateUI()
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
-		slot0.viewComponent:updateUI()
-	elseif slot2 == GAME.MEMORYBOOK_UNLOCK_AWARD_DONE then
-		-- Nothing
+		arg_9_0:checkShowTaskAward()
+	elseif var_9_0 == GAME.ACTIVITY_UPDATED then
+		-- block empty
+	elseif var_9_0 == GAME.MEMORYBOOK_UNLOCK_DONE then
+		arg_9_0.viewComponent:updateUI()
+	elseif var_9_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_1.awards, var_9_1.callback)
+		arg_9_0.viewComponent:updateUI()
+	elseif var_9_0 == GAME.MEMORYBOOK_UNLOCK_AWARD_DONE then
+		-- block empty
 	end
 end
 
-function slot0.checkShowTaskAward(slot0)
-	if #slot0.displayAwards > 0 then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot0.displayAwards)
+function var_0_0.checkShowTaskAward(arg_10_0)
+	if #arg_10_0.displayAwards > 0 then
+		arg_10_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_10_0.displayAwards)
 	end
 
-	slot0.viewComponent:updateUI()
+	arg_10_0.viewComponent:updateUI()
 
-	slot0.displayAwards = {}
+	arg_10_0.displayAwards = {}
 end
 
-return slot0
+return var_0_0

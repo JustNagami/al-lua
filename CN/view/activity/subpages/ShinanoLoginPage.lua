@@ -1,49 +1,45 @@
-slot0 = class("ShinanoLoginPage", import(".TemplatePage.LoginTemplatePage"))
+﻿local var_0_0 = class("ShinanoLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.bar = slot0:findTF("bar", slot0.bg)
+	arg_1_0.bar = arg_1_0:findTF("bar", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	setActive(slot0.item, false)
+function var_0_0.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.item, false)
+	arg_2_0.itemList:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventInit then
+			local var_3_0 = arg_2_0:findTF("item", arg_3_2)
+			local var_3_1 = arg_2_0.config.front_drops[arg_3_1 + 1]
+			local var_3_2 = {
+				type = var_3_1[1],
+				id = var_3_1[2],
+				count = var_3_1[3]
+			}
 
-	slot1 = slot0.itemList
-
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot4 = uv0.config.front_drops[slot1 + 1]
-
-			updateDrop(uv0:findTF("item", slot2), {
-				type = slot4[1],
-				id = slot4[2],
-				count = slot4[3]
-			})
-			onButton(uv0, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_3_0, var_3_2)
+			onButton(arg_2_0, arg_3_2, function()
+				arg_2_0:emit(BaseUI.ON_DROP, var_3_2)
 			end, SFX_PANEL)
-			GetImageSpriteFromAtlasAsync("ui/share/light_login_atlas", "DAY" .. slot1 + 1, uv0:findTF("day", slot2), true)
+			GetImageSpriteFromAtlasAsync("ui/share/light_login_atlas", "DAY" .. arg_3_1 + 1, arg_2_0:findTF("day", arg_3_2), true)
+		elseif arg_3_0 == UIItemList.EventUpdate then
+			local var_3_3 = arg_3_1 < arg_2_0.nday
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot1 < uv0.nday
-
-			setActive(uv0:findTF("got", slot2), slot3)
-			setActive(uv0:findTF("get", slot2), slot3)
-			setActive(uv0:findTF("bg", slot2), not slot3)
+			setActive(arg_2_0:findTF("got", arg_3_2), var_3_3)
+			setActive(arg_2_0:findTF("get", arg_3_2), var_3_3)
+			setActive(arg_2_0:findTF("bg", arg_3_2), not var_3_3)
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setFillAmount(slot0.bar, slot0.nday / slot0.Day)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	var_0_0.super.OnUpdateFlush(arg_5_0)
+	setFillAmount(arg_5_0.bar, arg_5_0.nday / arg_5_0.Day)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

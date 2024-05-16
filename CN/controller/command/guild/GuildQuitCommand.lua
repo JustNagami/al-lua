@@ -1,25 +1,25 @@
-slot0 = class("GuildQuitCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildQuitCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = pg.ConnectionMgr.GetInstance()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot3:Send(60018, {
-		id = slot1:getBody()
-	}, 60019, function (slot0)
-		if slot0.result == 0 then
+	pg.ConnectionMgr.GetInstance():Send(60018, {
+		id = var_1_0
+	}, 60019, function(arg_2_0)
+		if arg_2_0.result == 0 then
 			getProxy(GuildProxy):exitGuild()
-			uv0:sendNotification(GAME.GUILD_QUIT_DONE)
+			arg_1_0:sendNotification(GAME.GUILD_QUIT_DONE)
 
-			slot2 = getProxy(PlayerProxy)
-			slot3 = slot2:getData()
+			local var_2_0 = getProxy(PlayerProxy)
+			local var_2_1 = var_2_0:getData()
 
-			slot3:setGuildWaitTime(pg.TimeMgr.GetInstance():GetServerTime() + 86400)
-			slot2:updatePlayer(slot3)
+			var_2_1:setGuildWaitTime(pg.TimeMgr.GetInstance():GetServerTime() + 86400)
+			var_2_0:updatePlayer(var_2_1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_quit_sucess"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_quit_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_quit_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

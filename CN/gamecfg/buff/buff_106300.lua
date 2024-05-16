@@ -1,4 +1,4 @@
-return {
+﻿return {
 	time = 21,
 	name = "",
 	init_effect = "jinengchufared",

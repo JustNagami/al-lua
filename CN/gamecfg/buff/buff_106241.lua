@@ -1,4 +1,38 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFoeDying"
+			},
+			arg_list = {
+				quota = 3,
+				target = "TargetSelf",
+				killer = "self",
+				skill_id = 106240
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.035
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -378,39 +412,5 @@ return {
 	stack = 1,
 	id = 106241,
 	icon = 106060,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFoeDying"
-			},
-			arg_list = {
-				quota = 3,
-				target = "TargetSelf",
-				killer = "self",
-				skill_id = 106240
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.035
-			}
-		}
-	}
+	last_effect = ""
 }

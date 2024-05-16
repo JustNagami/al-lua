@@ -1,51 +1,55 @@
-slot0 = class("PermanentYamashiroSkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("PermanentYamashiroSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = slot0.uilist
+function var_0_0.OnFirstFlush(arg_1_0)
+	arg_1_0.uilist:make(function(arg_2_0, arg_2_1, arg_2_2)
+		if arg_2_0 == UIItemList.EventUpdate then
+			local var_2_0 = arg_2_1 + 1
+			local var_2_1 = arg_1_0:findTF("item", arg_2_2)
+			local var_2_2 = arg_1_0.taskGroup[arg_1_0.nday][var_2_0]
+			local var_2_3 = arg_1_0.taskProxy:getTaskById(var_2_2) or arg_1_0.taskProxy:getFinishTaskById(var_2_2)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0:findTF("item", slot2)
-			slot6 = uv0.taskProxy:getTaskById(uv0.taskGroup[uv0.nday][slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot5)
+			assert(var_2_3, "without this task by id: " .. var_2_2)
 
-			assert(slot6, "without this task by id: " .. slot5)
+			local var_2_4 = var_2_3:getConfig("award_display")[1]
+			local var_2_5 = {
+				type = var_2_4[1],
+				id = var_2_4[2],
+				count = var_2_4[3]
+			}
 
-			slot7 = slot6:getConfig("award_display")[1]
-
-			updateDrop(slot4, {
-				type = slot7[1],
-				id = slot7[2],
-				count = slot7[3]
-			})
-			onButton(uv0, slot4, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_2_1, var_2_5)
+			onButton(arg_1_0, var_2_1, function()
+				arg_1_0:emit(BaseUI.ON_DROP, var_2_5)
 			end, SFX_PANEL)
 
-			slot9 = slot6:getProgress()
-			slot10 = slot6:getConfig("target_num")
+			local var_2_6 = var_2_3:getProgress()
+			local var_2_7 = var_2_3:getConfig("target_num")
 
-			setText(uv0:findTF("description", slot2), slot6:getConfig("desc"))
-			setText(uv0:findTF("progressText", slot2), setColorStr(slot9, "#36AF41FF") .. "/" .. slot10)
-			setSlider(uv0:findTF("progress", slot2), 0, slot10, slot9)
+			setText(arg_1_0:findTF("description", arg_2_2), var_2_3:getConfig("desc"))
+			setText(arg_1_0:findTF("progressText", arg_2_2), setColorStr(var_2_6, "#36AF41FF") .. "/" .. var_2_7)
+			setSlider(arg_1_0:findTF("progress", arg_2_2), 0, var_2_7, var_2_6)
 
-			slot12 = uv0:findTF("get_btn", slot2)
+			local var_2_8 = arg_1_0:findTF("go_btn", arg_2_2)
+			local var_2_9 = arg_1_0:findTF("get_btn", arg_2_2)
+			local var_2_10 = arg_1_0:findTF("got_btn", arg_2_2)
+			local var_2_11 = var_2_3:getTaskStatus()
 
-			setActive(uv0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
-			setActive(slot12, slot14 == 1)
-			setActive(uv0:findTF("got_btn", slot2), slot14 == 2)
-			onButton(uv0, slot11, function ()
-				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
+			setActive(var_2_8, var_2_11 == 0)
+			setActive(var_2_9, var_2_11 == 1)
+			setActive(var_2_10, var_2_11 == 2)
+			onButton(arg_1_0, var_2_8, function()
+				arg_1_0:emit(ActivityMediator.ON_TASK_GO, var_2_3)
 			end, SFX_PANEL)
-			onButton(uv0, slot12, function ()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+			onButton(arg_1_0, var_2_9, function()
+				arg_1_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_2_3)
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setText(slot0.dayTF, setColorStr(tostring(slot0.nday), "#36AF41FF") .. "/" .. #slot0.activity:getConfig("config_data"))
+function var_0_0.OnUpdateFlush(arg_6_0)
+	var_0_0.super.OnUpdateFlush(arg_6_0)
+	setText(arg_6_0.dayTF, setColorStr(tostring(arg_6_0.nday), "#36AF41FF") .. "/" .. #arg_6_0.activity:getConfig("config_data"))
 end
 
-return slot0
+return var_0_0

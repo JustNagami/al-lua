@@ -1,10 +1,10 @@
-slot0 = class("LevelContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
+﻿local var_0_0 = class("LevelContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelContinuousOperationWindowUI"
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_2_0)
 	return {
 		reset = true,
 		gemOffsetX = 628,
@@ -12,100 +12,108 @@ function slot0.ResUISettings(slot0)
 	}
 end
 
-function slot0.init(slot0)
-	slot0.panel = slot0._tf:Find("window/panel")
-	slot0._countSelect = slot0.panel:Find("content")
-	slot0._pageUtil = PageUtil.New(slot0._countSelect:Find("value_bg/left"), slot0._countSelect:Find("value_bg/right"), slot0._countSelect:Find("max"), slot0._countSelect:Find("value_bg/value"))
-	slot0.consumeText = slot0.panel:Find("content/consume"):GetComponent("RichText")
+function var_0_0.init(arg_3_0)
+	arg_3_0.panel = arg_3_0._tf:Find("window/panel")
+	arg_3_0._countSelect = arg_3_0.panel:Find("content")
+	arg_3_0._pageUtil = PageUtil.New(arg_3_0._countSelect:Find("value_bg/left"), arg_3_0._countSelect:Find("value_bg/right"), arg_3_0._countSelect:Find("max"), arg_3_0._countSelect:Find("value_bg/value"))
+	arg_3_0.consumeText = arg_3_0.panel:Find("content/consume"):GetComponent("RichText")
 
-	setText(slot0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
-	setText(slot0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
-	setText(slot0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
-	setText(slot0.panel:Find("Tip"), i18n("multiple_sorties_main_tip"))
-	setText(slot0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
-	setText(slot0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
-	setText(slot0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
+	setText(arg_3_0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
+	setText(arg_3_0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
+	setText(arg_3_0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
+	setText(arg_3_0.panel:Find("Tip"), i18n("multiple_sorties_main_tip"))
+	setText(arg_3_0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
+	setText(arg_3_0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
+	setText(arg_3_0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf:Find("window/top/btnBack"), function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("window/top/btnBack"), function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0._tf:Find("bg"), function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0._tf:Find("bg"), function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
 
-	slot2 = slot0.contextData.extraRate.enabled
-	slot0.contextData.useTicket = defaultValue(slot0.contextData.useTicket, slot2)
+	local var_4_0 = arg_4_0.contextData.extraRate.enabled
 
-	triggerToggle(slot0.panel:Find("ticket/checkbox"), slot2)
-	onToggle(slot0, slot0.panel:Find("ticket/checkbox"), function (slot0)
-		uv0.contextData.useTicket = slot0
+	arg_4_0.contextData.useTicket = defaultValue(arg_4_0.contextData.useTicket, var_4_0)
 
-		uv0:emit(LevelMediator2.ON_SPITEM_CHANGED, slot0)
-		uv0:UpdateContent()
+	triggerToggle(arg_4_0.panel:Find("ticket/checkbox"), var_4_0)
+	onToggle(arg_4_0, arg_4_0.panel:Find("ticket/checkbox"), function(arg_7_0)
+		arg_4_0.contextData.useTicket = arg_7_0
+
+		arg_4_0:emit(LevelMediator2.ON_SPITEM_CHANGED, arg_7_0)
+		arg_4_0:UpdateContent()
 	end, SFX_PANEL, SFX_CANCEL)
-	slot0._pageUtil:setNumUpdate(function (slot0)
-		uv0.contextData.battleTimes = slot0
+	arg_4_0._pageUtil:setNumUpdate(function(arg_8_0)
+		arg_4_0.contextData.battleTimes = arg_8_0
 
-		uv0:UpdateContent()
+		arg_4_0:UpdateContent()
 	end)
 
-	slot3 = slot0.contextData.maxCount
+	local var_4_1 = arg_4_0.contextData.maxCount
 
-	slot0._pageUtil:setMaxNum(slot3)
+	arg_4_0._pageUtil:setMaxNum(var_4_1)
 
-	if slot3 >= 0 then
-		slot0.contextData.battleTimes = math.min(slot3, slot0.contextData.battleTimes or 1)
+	if var_4_1 >= 0 then
+		arg_4_0.contextData.battleTimes = math.min(var_4_1, arg_4_0.contextData.battleTimes or 1)
 	end
 
-	slot0._pageUtil:setDefaultNum(slot0.contextData.battleTimes)
-	slot0:UpdateContent()
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	arg_4_0._pageUtil:setDefaultNum(arg_4_0.contextData.battleTimes)
+	arg_4_0:UpdateContent()
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf)
 end
 
-function slot0.UpdateContent(slot0)
-	slot2 = slot0.contextData.extraRate
-	slot7 = slot0.contextData.useTicket and math.clamp(slot0.contextData.battleTimes - slot2.freeBonus, 0, slot2.extraCount) or 0
+function var_0_0.UpdateContent(arg_9_0)
+	local var_9_0 = arg_9_0.contextData.battleTimes
+	local var_9_1 = arg_9_0.contextData.extraRate
+	local var_9_2 = var_9_1.extraCount
+	local var_9_3 = var_9_1.freeBonus
+	local var_9_4 = math.clamp(var_9_0 - var_9_3, 0, var_9_2)
+	local var_9_5 = arg_9_0.contextData.useTicket and var_9_4 or 0
+	local var_9_6 = var_9_5
 
-	if slot0.contextData.useTicket then
-		setText(slot0.panel:Find("ticket/Number"), setColorStr(slot7, slot1 <= slot3 and COLOR_GREEN or COLOR_RED) .. "/" .. slot3)
+	if arg_9_0.contextData.useTicket then
+		local var_9_7 = setColorStr(var_9_6, var_9_0 <= var_9_2 and COLOR_GREEN or COLOR_RED)
+
+		setText(arg_9_0.panel:Find("ticket/Number"), var_9_7 .. "/" .. var_9_2)
 	else
-		setText(slot0.panel:Find("ticket/Number"), slot3)
+		setText(arg_9_0.panel:Find("ticket/Number"), var_9_2)
 	end
 
-	slot8 = slot3 > 0 and slot5 > 0
+	local var_9_8 = var_9_2 > 0 and var_9_4 > 0
 
-	setActive(slot0.panel:Find("ticket/checkboxBan"), not slot8)
-	setToggleEnabled(slot0.panel:Find("ticket/checkbox"), slot8)
+	setActive(arg_9_0.panel:Find("ticket/checkboxBan"), not var_9_8)
+	setToggleEnabled(arg_9_0.panel:Find("ticket/checkbox"), var_9_8)
 
-	if slot0.contextData.useTicket and not slot8 then
-		triggerToggle(slot0.panel:Find("ticket/checkbox"), false)
+	if arg_9_0.contextData.useTicket and not var_9_8 then
+		triggerToggle(arg_9_0.panel:Find("ticket/checkbox"), false)
 	end
 
-	slot9 = slot0.contextData.oilCost * (slot1 + (slot2.rate - 1) * slot6)
-	slot10 = i18n("multiple_sorties_cost1", slot9)
+	local var_9_9 = arg_9_0.contextData.oilCost * (var_9_0 + (var_9_1.rate - 1) * var_9_5)
+	local var_9_10 = i18n("multiple_sorties_cost1", var_9_9)
+	local var_9_11 = getProxy(PlayerProxy):getRawData()
 
-	if getProxy(PlayerProxy):getRawData().oil < slot9 then
-		slot10 = string.gsub(slot10, "#92fc63", COLOR_RED)
+	if var_9_9 > var_9_11.oil then
+		var_9_10 = string.gsub(var_9_10, "#92fc63", COLOR_RED)
 	end
 
-	if slot6 > 0 then
-		slot10 = slot10 .. i18n("multiple_sorties_cost3", slot6)
+	if var_9_5 > 0 then
+		var_9_10 = var_9_10 .. i18n("multiple_sorties_cost3", var_9_5)
 	end
 
-	slot0.consumeText.text = slot10
-	slot14 = slot0.panel
+	arg_9_0.consumeText.text = var_9_10
 
-	onButton(slot0, slot14:Find("battle"), function ()
-		if uv1.oil < uv0 then
+	onButton(arg_9_0, arg_9_0.panel:Find("battle"), function()
+		if var_9_9 > var_9_11.oil then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 			return
 		end
 
-		uv2:emit(PreCombatMediator.CONTINUOUS_OPERATION)
+		arg_9_0:emit(PreCombatMediator.CONTINUOUS_OPERATION)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0
